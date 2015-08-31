@@ -1,0 +1,278 @@
+<?php
+    $title = 'Magento API - SOAP - giftmessage.setForQuoteProduct';
+    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
+?>
+
+				    <h3><a name="giftmessage.setForQuoteProduct-Module%3AGiftMessageAPI"></a>Module: GiftMessage API</h3>
+
+<h4><a name="giftmessage.setForQuoteProduct-Resource%3Agiftmessage"></a>Resource: giftmessage</h4>
+
+<h5><a name="giftmessage.setForQuoteProduct-Method%3A"></a>Method:</h5>
+
+<ul>
+	<li>giftmessage.setForQuoteProduct (SOAP V1)</li>
+	<li>giftMessageSetForQuoteProduct (SOAP V2)</li>
+</ul>
+
+
+<p>Allows you to set a gift message for a product in the shopping cart (quote).</p>
+
+<p><b>Arguments:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> quoteId </td>
+<td class='confluenceTd'> Shopping cart ID (quote ID) </td>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> productsAndMessages <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Array of giftMessageAssociativeProductsEntity </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> store </td>
+<td class='confluenceTd'> Store view ID or code (optional) </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Return:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> result </td>
+<td class='confluenceTd'> Array of giftMessageResponse </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>giftMessageAssociativeProductsEntity</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> product </td>
+<td class='confluenceTd'> Array of shoppingCartProductEntity </td>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> message <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Array of giftMessageEntity </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>giftMessageResponse</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> entityId <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Entity ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> boolean </td>
+<td class='confluenceTd'> result <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Result </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> error <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Error </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>shoppingCartProductEntity</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> product_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> ID of the product <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sku <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> SKU of the product <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> double </td>
+<td class='confluenceTd'> qty <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Number of products <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> associativeArray <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> options <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> An array of options </td>
+</tr>
+<tr>
+<td class='confluenceTd'> associativeArray <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> bundle_option <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> An array of bundle item options <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> associativeArray <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> bundle_option_qty <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> An array of bundle items quantity <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> ArrayOfString </td>
+<td class='confluenceTd'> links <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> An array of links <br class="atl-forced-newline" /> </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>giftMessageEntity</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> from <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Gift message sender </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> to <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Gift message recipient </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> message <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Gift message </td>
+</tr>
+</tbody></table>
+</div>
+
+<p><b>Faults:</b><br/>
+<em>No Faults.</em></p>
+
+<h4><a name="giftmessage.setForQuoteProduct-Examples"></a>Examples</h4>
+
+<h5><a name="giftmessage.setForQuoteProduct-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/soap/?wsdl');
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey');
+ 
+$result = $proxy-&gt;call($sessionId, 'giftmessage.setForQuoteProduct', array(10, array(
+'product' =&gt; array(
+ 'product_id' =&gt; '5',
+ 'sku' =&gt; 'sku',
+ 'qty' =&gt; '1',
+ 'options' =&gt; null,
+ 'bundle_option' =&gt; null,
+ 'bundle_option_qty' =&gt; null,
+ 'links' =&gt; null), 
+'message' =&gt; array(
+ 'from' =&gt; 'Sara', 'to' =&gt; 'John', 'message' =&gt; 'Gift message text')
+)));
+ 
+ 
+var_dump($result);</pre>
+		</div>
+</div></div>
+
+
+
+<h5><a name="giftmessage.setForQuoteProduct-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); 
+
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey'); 
+ 
+$result = $proxy-&gt;giftMessageSetForQuoteProduct($sessionId, '10', array(array(
+'product' =&gt; array(
+ 'product_id' =&gt; '5',
+ 'sku' =&gt; 'sku',
+ 'qty' =&gt; '1',
+ 'options' =&gt; null,
+ 'bundle_option' =&gt; null,
+ 'bundle_option_qty' =&gt; null,
+ 'links' =&gt; null), 
+'message' =&gt; array(
+ 'from' =&gt; 'Sara', 'to' =&gt; 'John', 'message' =&gt; 'Gift message text')
+)));
+ 
+var_dump($result);</pre>
+		</div>
+</div></div>
+
+
+
+
+
+<h5><a name="giftmessage.setForQuoteProduct-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); 
+
+$sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey')); 
+ 
+$result = $proxy-&gt;giftMessageSetForQuoteProduct((object)array('sessionId' =&gt; $sessionId-&gt;result, 'quoteId' =&gt; '10', 'productsAndMessages' =&gt; array(array(
+'product' =&gt; array(
+ 'product_id' =&gt; '5',
+ 'sku' =&gt; 'sku',
+ 'qty' =&gt; '1',
+ 'options' =&gt; null,
+ 'bundle_option' =&gt; null,
+ 'bundle_option_qty' =&gt; null,
+ 'links' =&gt; null), 
+'message' =&gt; array(
+ 'from' =&gt; 'Sara', 'to' =&gt; 'John', 'message' =&gt; 'Gift message text')
+))));
+ 
+var_dump($result-&gt;result);</pre>
+		</div>
+</div></div>
+
+
+<?php include(__ROOT__ . 'footer.php'); ?>

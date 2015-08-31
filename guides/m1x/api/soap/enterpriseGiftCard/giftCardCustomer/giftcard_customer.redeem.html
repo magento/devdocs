@@ -1,0 +1,149 @@
+<?php
+    $title = 'Magento API - SOAP - giftcard_customer.redeem';
+    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
+?>
+
+				    <h3><a name="giftcard_customer.redeem-Module%3AGiftCardAPI"></a>Module: GiftCard API</h3>
+
+<h4><a name="giftcard_customer.redeem-Resource%3Agiftcardcustomer"></a>Resource: giftcard_customer</h4>
+
+
+<h5><a name="giftcard_customer.redeem-Method%3A"></a>Method:</h5>
+
+<ul>
+	<li>giftcard_customer.redeem (SOAP V1)</li>
+	<li>giftcardCustomerRedeem (SOAP V2)</li>
+</ul>
+
+
+<p>Allows you to redeem amount from a giftcard to the customer store credit.</p>
+
+<p><b>Arguments:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> code </td>
+<td class='confluenceTd'> Gift card code </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> customer_id </td>
+<td class='confluenceTd'> Customer ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> store_id </td>
+<td class='confluenceTd'> Store view ID </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Return:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> boolean </td>
+<td class='confluenceTd'> True if the amount is redeemed </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Faults:</b></p>
+
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Fault Code </th>
+<th class='confluenceTh'> Fault Message </th>
+</tr>
+<tr>
+<td class='confluenceTd'> 100 </td>
+<td class='confluenceTd'> Gift card does not exists. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 101 </td>
+<td class='confluenceTd'> Gift card is not valid. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 103 </td>
+<td class='confluenceTd'> Redemption functionality is disabled. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 104 </td>
+<td class='confluenceTd'> Unable to redeem gift card. </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<h4><a name="giftcard_customer.redeem-Examples"></a>Examples</h4>
+
+<h5><a name="giftcard_customer.redeem-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/soap/?wsdl');
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey');
+
+$code = "giftcardcode";
+$customerId = 1;
+$storeId = 1;
+
+$giftcardInfo = $proxy-&gt;call(
+    $sessionId,
+    "giftcard_customer.redeem",
+    array(
+         $code,
+         $customerId,
+         $storeId
+    )
+);</pre>
+		</div>
+</div></div>
+
+<h5><a name="giftcard_customer.redeem-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); // TODO : change url
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey'); // TODO : change login and pwd if necessary
+
+$result = $proxy-&gt;giftcardCustomerRedeem($sessionId, 'giftcardcode', '1', '1');
+var_dump($result);</pre>
+		</div>
+</div></div>
+
+
+
+<h5><a name="giftcard_customer.redeem-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); 
+
+$sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey')); 
+ 
+$result = $proxy-&gt;giftcardCustomerRedeem((object)array('sessionId' =&gt; $sessionId-&gt;result, 'code' =&gt; 'giftcardcode', 'customerId' =&gt; '1', 'storeId' =&gt; '1'));   
+
+var_dump($result-&gt;result);</pre>
+		</div>
+</div></div>
+
+<?php include(__ROOT__ . 'footer.php'); ?>
