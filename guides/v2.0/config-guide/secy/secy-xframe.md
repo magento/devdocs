@@ -22,13 +22,26 @@ The `X-Frame-Options` header enables you to specify whether or not a browser sho
     <p>For security reasons, Magento strongly recommends against running the Magento storefront in a frame.</p>
 </div>
 
-## Implementing `X-Frame-Options`
-TBD
+## Implement `X-Frame-Options`
+Set a value for `X-Frame-Options` in `<your Magento install dir>/app/etc/env.php`. Following is the default value:
 
-## Verifying your setting for `X-Frame-Options`
-TBD
+	  'x-frame-options' => 'SAMEORIGIN',
+
+We require you to edit `env.php` because it's more secure than setting a value in the Magento Admin.
+
+## Verify your setting for `X-Frame-Options`
+To verify your setting, view HTTP headers on any storefront page. There are several ways to do this, including using a web browser inspector.
+
+The following example uses curl, which you can run from any machine that can connect to your Magento server over the HTTP protocol.
+
+Use the following command:
+
+	curl -I -v --location-trusted '<your Magento storefront URL>'
+
+Look for the `X-Frame-Options` value in the headers.
 
 ## For more information
 *	<a href="https://developer.mozilla.org/en-US/docs/HTTP/X-Frame-Options" target="_blank">mozilla.org</a>
-*	TBD
+*	<a href="http://security.stackexchange.com/questions/67889/why-do-browsers-enforce-the-same-origin-security-policy-on-iframes" target="_blank">security.stackexchange.com</a>
+*	<a href="http://blogs.msdn.com/b/ieinternals/archive/2010/03/30/combating-clickjacking-with-x-frame-options.aspx" target="_blank">MSDN blog</a>
 
