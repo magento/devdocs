@@ -55,7 +55,9 @@ To choose whether to upgrade or uninstall components:
 		<td><img src="{{ site.baseurl }}common/images/cman_actions.png" alt="You can enable, disable, or update components">
 			<p>A component has one or more of the following actions available from the <strong>Actions</strong> list:</p>
 			<ul><li><a href="#compman-access-sync">Update a component</a></li>
-				<li><a href="#compman-uninst">Uninstall a component</a></li></ul>
+				<li><a href="#compman-uninst">Uninstall a component</a></li>
+				<li>Enable or disable a component</li>
+			</ul>
 	<tr>
 		<td><p>Pagination</p></td>
 		<td><p>Enables you to:</p>
@@ -63,6 +65,60 @@ To choose whether to upgrade or uninstall components:
 			<p><img src="{{ site.baseurl }}common/images/cman_page_move.png" width="100px" alt="Move back and forward or specify a page number">From left to right, move back one page, go to a specific page, or move forward one page.</p></td>
 	</tr>
 	</tbody>
+	</table>
+
+<h3 id="compman-access-types">Supported actions per type</h3>
+The following table shows which actions are supported for each Magento component type.
+<table>
+	<col width="40%">
+  	<col width="15%">
+  	<col width="15%">
+  	<col width="15%">
+  	<col width="15%">
+		<tbody>
+		<tr>
+			<th>Type</th>
+			<th>Enable</th>
+			<th>Disable</th>
+			<th>Update</th>
+			<th>Uninstall</th>
+		</tr>
+		<tr>
+			<td>magento2-module</td>
+			<td>Yes</td>
+			<td>Yes</td>
+			<td>Yes</td>
+			<td>Yes</td>
+		</tr>
+		<tr>
+			<td>magento2-language and magento2-theme</td>
+			<td>No</td>
+			<td>No</td>
+			<td>Yes</td>
+			<td>Yes</td>
+		</tr>
+		<tr>
+			<td>magento2-library</td>
+			<td>No</td>
+			<td>No</td>
+			<td>Yes</td>
+			<td>Yes</td>
+		</tr>
+		<tr>
+			<td>metapackage</td>
+			<td>No</td>
+			<td>No</td>
+			<td>Yes</td>
+			<td>Yes</td>
+		</tr>
+		<tr>
+			<td>component</td>
+			<td>No</td>
+			<td>No</td>
+			<td>Yes</td>
+			<td>Yes</td>
+		</tr>
+		</tbody>
 	</table>
 
 <h2 id="compman-access-sync">Update a component</h2>
