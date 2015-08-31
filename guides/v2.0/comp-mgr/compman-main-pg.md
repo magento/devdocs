@@ -52,11 +52,10 @@ To choose whether to upgrade or uninstall components:
 	</tr>
 	<tr>
 		<td><p>Actions</p></td>
-		<td><img src="{{ site.baseurl }}common/images/cman_actions.png" alt="You can enable, disable, or update components">
-			<p>A component has one or more of the following actions available from the <strong>Actions</strong> list:</p>
-			<ul><li><a href="#compman-access-sync">Update a component</a></li>
-				<li><a href="#compman-uninst">Uninstall a component</a></li>
-				<li>Enable or disable a component</li>
+		<td><p>Displays a list of actions available for that component type. <a href="#compman-access-types">Details about available actions</a>.</p>
+			<p>The following figure shows an example.</p>
+			<img src="{{ site.baseurl }}common/images/cman_actions.png" alt="You can enable, disable, or update components">
+			</li>
 			</ul>
 	<tr>
 		<td><p>Pagination</p></td>
@@ -120,6 +119,10 @@ The following table shows which actions are supported for each Magento component
 		</tr>
 		</tbody>
 	</table>
+
+	<div class="bs-callout bs-callout-info" id="info">
+      <p>Enable and disable will be supported soon.</p>
+    </div>
 
 <h2 id="compman-access-sync">Update a component</h2>
 To see if any of your components can be updated, click **Sync**.
