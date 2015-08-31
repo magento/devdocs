@@ -120,9 +120,10 @@ The following table shows which actions are supported for each Magento component
 		</tbody>
 	</table>
 
-	<div class="bs-callout bs-callout-info" id="info">
-      <p>Enable and disable will be supported soon.</p>
-    </div>
+<div class="bs-callout bs-callout-info" id="info">
+      <ul><li>Enable and disable will be supported soon.</li>
+      <li>A magento2-module has no <strong>Uninstall</strong> option if it's part of a metapackage. To uninstall this component type, you must uninstall the metapackage (and all other components in it). According to the <a href="https://getcomposer.org/doc/04-schema.md" target="_blank">composer schema</a>, a <em>metapackage</em> is "An empty package that contains requirements and will trigger their installation, but contains no files and will not write anything to the filesystem."</li></ul>
+</div>
 
 <h2 id="compman-access-sync">Update a component</h2>
 To see if any of your components can be updated, click **Sync**.
