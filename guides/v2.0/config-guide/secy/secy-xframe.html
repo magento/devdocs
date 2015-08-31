@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Convert layout XML files</title>
+	<title>X-Frame-Options header</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/config-guide/cli/config-cli-subcommands-layout-xml.html">
+	<link rel="canonical" href="//guides/v2.0/config-guide/secy/secy-xframe.html">
 
 
 
@@ -154,9 +154,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Convert layout XML files</h1>
+		<h1 class="page-heading">X-Frame-Options header</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/config-guide/cli/config-cli-subcommands-layout-xml.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/config-guide/secy/secy-xframe.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -165,70 +165,48 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h4 id="contents">Contents</h4>
+		<h2 id="overview">Overview</h2>
+<p>To help prevent <a href="https://www.owasp.org/index.php/Clickjacking" target="_blank">clickjacking</a> exploits, we added an option to use the <a href="https://tools.ietf.org/html/rfc7034" target="_blank">X-Frame-Options</a> HTTP request header in requests to your storefront.</p>
+
+<p>The <code>X-Frame-Options</code> header enables you to specify whether or not a browser should be allowed to render a page in a <code>&lt;frame&gt;</code>, <code>&lt;iframe&gt;</code>, or <code>&lt;object&gt;</code> as follows:</p>
 
 <ul>
-  <li><a href="#config-cli-xml-overview">Overview of layout XML conversion</a></li>
-  <li><a href="#config-cli-before">First steps</a></li>
-  <li><a href="#config-cli-xml-run">Convert layout XML files</a></li>
+  <li><code>DENY</code>: Page cannot be displayed in a frame.</li>
+  <li><code>SAMEORIGIN</code>: (The default Magento setting.) Page can be displayed only in a frame on the same origin as the page itself.</li>
+  <li><code>ALLOW-FROM &lt;uri&gt;</code>: Page can be displayed only in a frame on the specified origin.</li>
 </ul>
 
-<h2 id="config-cli-xml-overview">Overview of layout XML conversion</h2>
-<p>When XML schema are updated, you should update your layout XML files to match the new Extensible Stylesheet Language Transformations (XSLT) stylesheet. This command enables you to perform these updates.</p>
-
-<p>For more information about layout XML files, see:</p>
-
-<ul>
-  <li><a href="/guides/v2.0/frontend-dev-guide/layouts/xml-instructions.html">Layout instructions</a></li>
-  <li><a href="/guides/v2.0/frontend-dev-guide/layouts/layout-types.html">Layout file types</a></li>
-</ul>
-
-<h2 id="config-cli-before">First steps</h2>
-<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
-<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
-Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
-bash shell example for CentOS:<br />
-<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You can also run the commands in the following ways:</p>
-<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
-<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
-<p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
+<div class="bs-callout bs-callout-warning">
+    <p>For security reasons, Magento strongly recommends against running the Magento storefront in a frame.</p>
 </div>
 
-<p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+<h2 id="implement-x-frame-options">Implement <code>X-Frame-Options</code></h2>
+<p>Set a value for <code>X-Frame-Options</code> in <code>&lt;your Magento install dir&gt;/app/etc/env.php</code>. Following is the default value:</p>
 
-<h2 id="config-cli-xml-run">Convert layout XML files</h2>
-<p>Command options:</p>
-
-<pre><code>magento dev:xml:convert [-o|--overwrite] {xml file} {xslt stylesheet}
+<pre><code>  'x-frame-options' =&gt; 'SAMEORIGIN',
 </code></pre>
 
-<p>where</p>
+<p>We require you to edit <code>env.php</code> because it’s more secure than setting a value in the Magento Admin.</p>
 
+<h2 id="verify-your-setting-for-x-frame-options">Verify your setting for <code>X-Frame-Options</code></h2>
+<p>To verify your setting, view HTTP headers on any storefront page. There are several ways to do this, including using a web browser inspector.</p>
+
+<p>The following example uses curl, which you can run from any machine that can connect to your Magento server over the HTTP protocol.</p>
+
+<p>Use the following command:</p>
+
+<pre><code>curl -I -v --location-trusted '&lt;your Magento storefront URL&gt;'
+</code></pre>
+
+<p>Look for the <code>X-Frame-Options</code> value in the headers.</p>
+
+<h2 id="for-more-information">For more information</h2>
 <ul>
-  <li><code>{xml file}</code> is the full path and file name of a layout XML file to convert (required)</li>
-  <li><code>{xslt stylesheet}</code> is the full path and file name of an XSLT schema file to use for conversion (required)</li>
-  <li><code>-o|--overwrite</code> include this option to overwrite the existing XML file</li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/HTTP/X-Frame-Options" target="_blank">mozilla.org</a></li>
+  <li><a href="http://security.stackexchange.com/questions/67889/why-do-browsers-enforce-the-same-origin-security-policy-on-iframes" target="_blank">security.stackexchange.com</a></li>
+  <li><a href="http://blogs.msdn.com/b/ieinternals/archive/2010/03/30/combating-clickjacking-with-x-frame-options.aspx" target="_blank">MSDN blog</a></li>
 </ul>
 
-<h4 id="related-topics">Related topics</h4>
-
-<ul>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create LESS from CSS</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-test.html">Run tests</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
-</ul>
 
 
 		</div>
@@ -335,7 +313,7 @@ bash shell example for CentOS:<br />
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/secy/secy-xframe.html">X-Frame-Options header</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/config-guide/secy/secy-xframe.html">X-Frame-Options header</a></li>
 						
 								
 								
@@ -461,7 +439,7 @@ bash shell example for CentOS:<br />
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
 						
 								
 							
@@ -736,8 +714,8 @@ bash shell example for CentOS:<br />
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/config-guide/cli/config-cli-subcommands-layout-xml.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/config-guide/cli/config-cli-subcommands-layout-xml.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/config-guide/secy/secy-xframe.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/config-guide/secy/secy-xframe.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>
