@@ -46,16 +46,17 @@ To choose whether to upgrade or uninstall components:
 		<td><p>For each component, one of the following status indicators displays in the left column:</p>
 			<ul><li><img src="{{ site.baseurl }}common/images/cman_comp-status-green.png" alt="A green icon means that the component is enabled and is current as of the last sync">Green, which means the component is enabled and its status was current the last time you synchronized with Connect.</li>
 				<li><img src="{{ site.baseurl }}common/images/cman_comp-status-info.png" alt="An info icon means there is an update available">An update is available.</li>
-				<!-- <li><img src="{{ site.baseurl }}common/images/cman_comp-status-red.png" alt="A red icon means the component is disabled">The component is disabled.</li> --></ul>
+				<li><img src="{{ site.baseurl }}common/images/cman_comp-status-red.png" alt="A red icon means the component is disabled">The component is disabled.</li> </ul>
 				<p>Middle columns display information about the component we obtained from its Composer package.</p>
 				<p>The right column displays available actions for each component. </p></td>
 	</tr>
 	<tr>
 		<td><p>Actions</p></td>
-		<td><img src="{{ site.baseurl }}common/images/cman_actions.png" alt="You can enable, disable, or update components">
-			<p>A component has one or more of the following actions available from the <strong>Actions</strong> list:</p>
-			<ul><li><a href="#compman-access-sync">Update a component</a></li>
-				<li><a href="#compman-uninst">Uninstall a component</a></li></ul>
+		<td><p>Displays a list of actions available for that component type. <a href="#compman-access-types">Details about available actions</a>.</p>
+			<p>The following figure shows an example.</p>
+			<img src="{{ site.baseurl }}common/images/cman_actions.png" alt="You can enable, disable, or update components">
+			</li>
+			</ul>
 	<tr>
 		<td><p>Pagination</p></td>
 		<td><p>Enables you to:</p>
@@ -64,6 +65,64 @@ To choose whether to upgrade or uninstall components:
 	</tr>
 	</tbody>
 	</table>
+
+<h3 id="compman-access-types">Supported actions per type</h3>
+The following table shows which actions are supported for each Magento component type.
+<table>
+	<col width="40%">
+  	<col width="15%">
+  	<col width="15%">
+  	<col width="15%">
+  	<col width="15%">
+		<tbody>
+		<tr>
+			<th>Type</th>
+			<th>Enable</th>
+			<th>Disable</th>
+			<th>Update</th>
+			<th>Uninstall</th>
+		</tr>
+		<tr>
+			<td>magento2-module</td>
+			<td>Yes</td>
+			<td>Yes</td>
+			<td>Yes</td>
+			<td>Yes</td>
+		</tr>
+		<tr>
+			<td>magento2-language and magento2-theme</td>
+			<td>No</td>
+			<td>No</td>
+			<td>Yes</td>
+			<td>Yes</td>
+		</tr>
+		<tr>
+			<td>magento2-library</td>
+			<td>No</td>
+			<td>No</td>
+			<td>Yes</td>
+			<td>Yes</td>
+		</tr>
+		<tr>
+			<td>metapackage</td>
+			<td>No</td>
+			<td>No</td>
+			<td>Yes</td>
+			<td>Yes</td>
+		</tr>
+		<tr>
+			<td>component</td>
+			<td>No</td>
+			<td>No</td>
+			<td>Yes</td>
+			<td>Yes</td>
+		</tr>
+		</tbody>
+	</table>
+
+	<div class="bs-callout bs-callout-info" id="info">
+      <p>Enable and disable will be supported soon.</p>
+    </div>
 
 <h2 id="compman-access-sync">Update a component</h2>
 To see if any of your components can be updated, click **Sync**.
@@ -77,6 +136,15 @@ The following figure shows an example.
 To update the component, click **Update** from the **Actions** list. A sample follows.
 
 <img src="{{ site.baseurl }}common/images/cman_actions_update.png" alt="Click Update from the Actions menu">
+
+Continue with <a href="{{ site.gdeurl }}comp-mgr/compman-readiness.html">Readiness check</a>.
+
+<h2 id="compman-endis">Enable or disable a component</h2>
+To enable or disable a component, click the appropriate choice from the **Actions** list.
+
+The following figure shows an example of disabling a component.
+
+<img src="{{ site.baseurl }}common/images/cman_actions-disable.png" alt="Click Disable from the Actions menu">
 
 Continue with <a href="{{ site.gdeurl }}comp-mgr/compman-readiness.html">Readiness check</a>.
 
