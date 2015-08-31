@@ -1,0 +1,278 @@
+<?php
+    $title = 'Magento API - SOAP - customer.list';
+    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
+?>
+
+				    <h2><a name="customer.list-Module%3AMageCustomer"></a>Module: Mage_Customer</h2>
+
+
+<h3><a name="customer.list-Resource%3Acustomer"></a>Resource: customer</h3>
+
+
+<h4><a name="customer.list-Method%3A"></a>Method:</h4>
+
+<ul>
+	<li>customer.list (SOAP V1)</li>
+	<li>customerCustomerList (SOAP V2)</li>
+</ul>
+
+
+<p>Allows you to retrieve the list of customers.</p>
+
+<p><b>Arguments:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> filters </td>
+<td class='confluenceTd'> Array of filters by customer attributes (optional) </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Returns</b>:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> storeView </td>
+<td class='confluenceTd'> Array of customerCustomerEntity </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>customerCustomerEntity</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> customer_id </td>
+<td class='confluenceTd'> ID of the customer </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> created_at </td>
+<td class='confluenceTd'> Date when the customer was created </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> updated_at </td>
+<td class='confluenceTd'> Date of when the customer was updated </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> increment_id </td>
+<td class='confluenceTd'> Increment ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> store_id </td>
+<td class='confluenceTd'> Store ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> website_id </td>
+<td class='confluenceTd'> Website ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> created_in </td>
+<td class='confluenceTd'> Created in </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> email </td>
+<td class='confluenceTd'> Customer email </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> firstname </td>
+<td class='confluenceTd'> Customer first name </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> middlename </td>
+<td class='confluenceTd'> Customer middle name </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> lastname </td>
+<td class='confluenceTd'> Customer last name </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> group_id </td>
+<td class='confluenceTd'> Group ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> prefix </td>
+<td class='confluenceTd'> Customer prefix </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> suffix </td>
+<td class='confluenceTd'> Customer suffix </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> dob </td>
+<td class='confluenceTd'> Customer date of birth </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> taxvat </td>
+<td class='confluenceTd'> Taxvat value </td>
+</tr>
+<tr>
+<td class='confluenceTd'> boolean </td>
+<td class='confluenceTd'> confirmation </td>
+<td class='confluenceTd'> Confirmation flag </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> password_hash </td>
+<td class='confluenceTd'> Password hash </td>
+</tr>
+</tbody></table>
+</div>
+
+<p><b>Note</b>: The password_hash parameter will only match exactly with the same MD5 and salt as was used when Magento stored the value. If you try to match with an unsalted MD5 hash, or any salt other than what Magento used, it will not match. This is just a straight string comparison.</p>
+
+<h4><a name="customer.list-Examples"></a>Examples</h4>
+
+<h5><a name="customer.list-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/api/soap/?wsdl');
+
+// If somestuff requires api authentification,
+// then get a session token
+$session = $client-&gt;login('apiUser', 'apiKey');
+
+$result = $client-&gt;call($session, 'customer.list');
+var_dump ($result);
+
+// If you don't need the session anymore
+//$client-&gt;endSession($session);</pre>
+		</div>
+</div></div>
+
+
+<h5><a name="customer.list-RequestExampleSOAPV2%28ListofAllCustomers%29"></a>Request Example SOAP V2 (List of All Customers)</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); // TODO : change url
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey'); // TODO : change login and pwd if necessary
+
+$result = $proxy-&gt;customerCustomerList($sessionId);
+var_dump($result);</pre>
+		</div>
+</div></div>
+
+
+<h5><a name="customer.list-RequestExampleSOAPV2%28ComplexFilter%29"></a>Request Example SOAP V2 (Complex Filter)</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/api/v2_soap/?wsdl');
+
+// If some stuff requires api authentification,
+// then get a session token
+$session = $client-&gt;login('apiUser', 'apiKey');
+$complexFilter = array(
+    'complex_filter' =&gt; array(
+        array(
+            'key' =&gt; 'group_id',
+            'value' =&gt; array('key' =&gt; 'in', 'value' =&gt; '1,3')
+        )
+    )
+);
+$result = $client-&gt;customerCustomerList($session, $complexFilter);
+
+var_dump ($result);</pre>
+		</div>
+</div></div>
+
+
+<h5><a name="customer.list-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl');
+
+$sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey'));
+
+$result = $proxy-&gt;customerCustomerList((object)array('sessionId' =&gt; $sessionId-&gt;result, 'filters' =&gt; null));
+var_dump($result-&gt;result);</pre>
+		</div>
+</div></div>
+
+
+<h5><a name="customer.list-ResponseExampleSOAPV1"></a>Response Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: java; gutter: false">array
+  0 =&gt;
+    array
+      'customer_id' =&gt; string '2' (length=1)
+      'created_at' =&gt; string '2012-03-29 12:37:23' (length=19)
+      'updated_at' =&gt; string '2012-04-03 11:20:18' (length=19)
+      'store_id' =&gt; string '2' (length=1)
+      'website_id' =&gt; string '2' (length=1)
+      'created_in' =&gt; string 'English' (length=7)
+      'default_billing' =&gt; string '3' (length=1)
+      'default_shipping' =&gt; string '3' (length=1)
+      'disable_auto_group_change' =&gt; string '0' (length=1)
+      'email' =&gt; string 'test@example.com' (length=16)
+      'firstname' =&gt; string 'John' (length=4)
+      'group_id' =&gt; string '1' (length=1)
+      'lastname' =&gt; string 'Doe' (length=3)
+      'password_hash' =&gt; string 'cccfb3ecf54c9644a34106783148eff2:sp' (length=35)
+      'rp_token' =&gt; string '15433dd072f1f4e5aae83231b93f72d0' (length=32)
+      'rp_token_created_at' =&gt; string '2012-03-30 15:10:31' (length=19)
+  1 =&gt;
+    array
+      'customer_id' =&gt; string '4' (length=1)
+      'created_at' =&gt; string '2012-04-03 11:21:15' (length=19)
+      'updated_at' =&gt; string '2012-04-03 11:22:57' (length=19)
+      'store_id' =&gt; string '0' (length=1)
+      'website_id' =&gt; string '2' (length=1)
+      'created_in' =&gt; string 'Admin' (length=5)
+      'default_billing' =&gt; string '8' (length=1)
+      'default_shipping' =&gt; string '8' (length=1)
+      'disable_auto_group_change' =&gt; string '0' (length=1)
+      'email' =&gt; string 'shon@example.com' (length=16)
+      'firstname' =&gt; string 'Shon' (length=4)
+      'group_id' =&gt; string '1' (length=1)
+      'lastname' =&gt; string 'McMiland' (length=8)
+      'password_hash' =&gt; string '5670581cabba4e2189e5edee99ed0c86:5q' (length=35)</pre>
+		</div>
+</div></div>
+
+<?php include(__ROOT__ . 'footer.php'); ?>

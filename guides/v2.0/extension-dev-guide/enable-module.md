@@ -18,12 +18,12 @@ After you have built the module and are ready to enable it in your Magento envir
 
 where `Module_Name` is the name of the module you are enabling.
 
+
 The general order of operations for `setup:upgrade` is:
 
 42. __Schema install/upgrade__.
 42. __Schema post-upgrade__ &#8212; handles any additional updates. These recurring upgrades occur independently and regardless of any changes to the schema.
 42. __Data install/upgrade__ &#8212; installs the data. Taken from `setup/InstallData.php`.
-
 
 
 ##Disable a module
@@ -34,5 +34,3 @@ To disable a module, enter the following at the command line:
 
 
 For more on enabling and disabling modules, see [enable or disable modules]({{ site.gdeurl}}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable).
-
-

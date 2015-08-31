@@ -1,0 +1,161 @@
+<?php
+    $title = 'Magento API - SOAP - giftcard_customer.info';
+    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
+?>
+
+				    <h3><a name="giftcard_customer.info-Module%3AGiftCardAPI"></a>Module: GiftCard API</h3>
+
+<h4><a name="giftcard_customer.info-Resource%3Agiftcardcustomer"></a>Resource: giftcard_customer</h4>
+
+
+<h5><a name="giftcard_customer.info-Method%3A"></a>Method:</h5>
+
+<ul>
+	<li>giftcard_customer.info (SOAP V1)</li>
+	<li>giftcardCustomerInfo (SOAP V2)</li>
+</ul>
+
+
+<p>Allows you to receive information about the gift card for a selected customer.</p>
+
+<p><b>Arguments:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> code </td>
+<td class='confluenceTd'> Gift card code </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Return:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> result </td>
+<td class='confluenceTd'> Array of giftcardCustomerEntity </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>giftcardCustomerEntity</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> double </td>
+<td class='confluenceTd'> balance <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Gift card balance </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> expire_date <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Gift card expiration date in the YYYY-MM-DD format </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Faults:</b></p>
+
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Fault Code </th>
+<th class='confluenceTh'> Fault Message </th>
+</tr>
+<tr>
+<td class='confluenceTd'> 100 </td>
+<td class='confluenceTd'> Gift card does not exists. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 101 </td>
+<td class='confluenceTd'> Gift card is not valid. </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<h4><a name="giftcard_customer.info-Examples"></a>Examples</h4>
+
+<h5><a name="giftcard_customer.info-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/soap/?wsdl');
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey');
+
+$code = "code";
+
+$giftcardInfo = $proxy-&gt;call(
+    $sessionId,
+    "giftcard_customer.info",
+    array(
+         $code
+    )
+);</pre>
+		</div>
+</div></div>
+
+<h5><a name="giftcard_customer.info-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); // TODO : change url
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey'); // TODO : change login and pwd if necessary
+
+$result = $proxy-&gt;giftcardCustomerInfo($sessionId, 'code');
+var_dump($result);</pre>
+		</div>
+</div></div>
+
+
+
+<h5><a name="giftcard_customer.info-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl');
+
+$sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey'));
+
+$result = $proxy-&gt;giftcardCustomerInfo((object)array('sessionId' =&gt; $sessionId-&gt;result, 'code' =&gt; 'code'));
+
+var_dump($result-&gt;result);</pre>
+		</div>
+</div></div>
+
+<h5><a name="giftcard_customer.info-ResponseExampleSOAPV1"></a>Response Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">array
+  'balance' =&gt; string '500.0000' (length=8)
+  'expire_date' =&gt; string '2012-04-25' (length=10)</pre>
+		</div>
+</div></div>
+
+<?php include(__ROOT__ . 'footer.php'); ?>

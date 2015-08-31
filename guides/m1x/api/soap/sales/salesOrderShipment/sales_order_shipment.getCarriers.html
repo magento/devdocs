@@ -1,0 +1,135 @@
+<?php
+    $title = 'Magento API - SOAP - sales_order_shipment.getCarriers';
+    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
+?>
+
+				    <h2><a name="sales_order_shipment.getCarriers-Module%3AMageSales"></a>Module: Mage_Sales</h2>
+
+
+<h4><a name="sales_order_shipment.getCarriers-Resource%3Asalesordershipment"></a>Resource: sales_order_shipment</h4>
+
+<p><b>Aliases</b>:</p>
+<ul>
+	<li>order_shipment</li>
+</ul>
+
+
+<h5><a name="sales_order_shipment.getCarriers-Method%3A"></a>Method:</h5>
+
+<ul>
+	<li>sales_order_shipment.getCarriers (SOAP V1)</li>
+	<li>salesOrderShipmentGetCarriers (SOAP V2)</li>
+</ul>
+
+
+<p>Allows you to retrieve the list of allowed carriers for an order.</p>
+
+<p><b>Aliases</b>:</p>
+<ul>
+	<li>order_shipment.getCarriers</li>
+</ul>
+
+
+
+<p><b>Arguments</b>:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> orderIncrementId <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Order increment ID </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Returns</b>:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> associativeArray </td>
+<td class='confluenceTd'> result </td>
+<td class='confluenceTd'> Array of carriers </td>
+</tr>
+</tbody></table>
+</div>
+
+
+
+<h4><a name="sales_order_shipment.getCarriers-Examples"></a>Examples</h4>
+
+<h5><a name="sales_order_shipment.getCarriers-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/api/soap/?wsdl');
+
+// If somestuff requires api authentification,
+// then get a session token
+$session = $client-&gt;login('apiUser', 'apiKey');
+
+$result = $client-&gt;call($session, 'sales_order_shipment.getCarriers', '200000010');
+var_dump($result);
+
+// If you don't need the session anymore
+//$client-&gt;endSession($session);</pre>
+		</div>
+</div></div>
+
+<h5><a name="sales_order_shipment.getCarriers-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); // TODO : change url
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey'); // TODO : change login and pwd if necessary
+
+$result = $proxy-&gt;salesOrderShipmentGetCarriers($sessionId, '200000010');
+var_dump($result);</pre>
+		</div>
+</div></div>
+
+
+<h5><a name="sales_order_shipment.getCarriers-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); 
+
+$sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey')); 
+ 
+$result = $proxy-&gt;salesOrderShipmentGetCarriers((object)array('sessionId' =&gt; $sessionId-&gt;result, 'orderIncrementId' =&gt; '200000010'));   
+var_dump($result-&gt;result);</pre>
+		</div>
+</div></div>
+
+
+<h5><a name="sales_order_shipment.getCarriers-ResponseExampleSOAPV1"></a>Response Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: java; gutter: false">array
+  'custom' =&gt; string 'Custom Value' (length=12)
+  'dhl' =&gt; string 'DHL (Deprecated)' (length=16)
+  'fedex' =&gt; string 'Federal Express' (length=15)
+  'ups' =&gt; string 'United Parcel Service' (length=21)
+  'usps' =&gt; string 'United States Postal Service' (length=28)
+  'dhlint' =&gt; string 'DHL' (length=3)</pre>
+		</div>
+</div></div>
+
+<?php include(__ROOT__ . 'footer.php'); ?>

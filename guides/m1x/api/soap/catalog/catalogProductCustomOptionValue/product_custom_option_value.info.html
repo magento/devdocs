@@ -1,0 +1,222 @@
+<?php
+    $title = 'Magento API - SOAP - product_custom_option_value.info';
+    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
+?>
+
+				    <h3><a name="product_custom_option_value.info-Module%3AComplexProductAPI"></a><b>Module: Complex Product API</b></h3>
+
+
+<h4><a name="product_custom_option_value.info-Resource%3Aproductcustomoptionvalue"></a><b>Resource: product_custom_option_value</b></h4>
+
+
+<h5><a name="product_custom_option_value.info-Method%3A"></a>Method:</h5>
+
+<ul>
+	<li>product_custom_option_value.info (SOAP V1)</li>
+	<li>catalogProductCustomOptionValueInfo (SOAP V2)</li>
+</ul>
+
+
+<p>Allows you to retrieve full information about the specified product custom option value.</p>
+
+<p><b>Arguments:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> valueId </td>
+<td class='confluenceTd'> Value ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> store </td>
+<td class='confluenceTd'> Store view ID or code (optional) </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Return:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> array <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> result </td>
+<td class='confluenceTd'> Array of catalogProductCustomOptionValueInfoEntity </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>catalogProductCustomOptionValueInfoEntity</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> value_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Option value ID <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> option_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Option ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> sku <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Custom option value row SKU <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> sort_order <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Option value sort order </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> default_price <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Option value default price <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> default_price_type <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Default price type. Possible values are as follows: "fixed" or "percent" <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> store_price <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Option value store price <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> store_price_type <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Store price type. Possible values are as follows: "fixed" or "percent" <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> price <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Option value price </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> price_type <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Price type. Possible values are as follows: "fixed" or "percent" </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> default_title <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Option value default title </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> store_title <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Option value store title </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> title <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Option value title </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Faults:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Fault Code </th>
+<th class='confluenceTh'> Fault Message </th>
+</tr>
+<tr>
+<td class='confluenceTd'> 101 </td>
+<td class='confluenceTd'> Option value with requested id does not exist. <br class="atl-forced-newline" /> </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<h4><a name="product_custom_option_value.info-Examples"></a>Examples</h4>
+
+<h5><a name="product_custom_option_value.info-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/api/soap/?wsdl');
+
+// If somestuff requires api authentification,
+// then get a session token
+$session = $client-&gt;login('apiUser', 'apiKey');
+
+$result = $client-&gt;call($session, 'product_custom_option_value.info', '5');
+var_dump($result);</pre>
+		</div>
+</div></div>
+
+<h5><a name="product_custom_option_value.info-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); // TODO : change url
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey'); // TODO : change login and pwd if necessary
+
+$result = $proxy-&gt;catalogProductCustomOptionValueInfo($sessionId, '5');
+var_dump($result);</pre>
+		</div>
+</div></div>
+
+<h5><a name="product_custom_option_value.info-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl');
+
+$sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey'));
+
+$result = $proxy-&gt;catalogProductCustomOptionValueInfo((object)array('sessionId' =&gt; $sessionId-&gt;result, 'valueId' =&gt; '5'));
+
+var_dump($result-&gt;result);</pre>
+		</div>
+</div></div>
+
+<h5><a name="product_custom_option_value.info-ResponseExampleSOAPV1"></a>Response Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: java; gutter: false">array
+  'option_id' =&gt; string '5' (length=1)
+  'sku' =&gt; string 'slider' (length=6)
+  'sort_order' =&gt; string '0' (length=1)
+  'default_title' =&gt; string 'slider' (length=6)
+  'store_title' =&gt; string 'slider' (length=6)
+  'title' =&gt; string 'slider' (length=6)
+  'default_price' =&gt; string '239.9900' (length=8)
+  'default_price_type' =&gt; string 'fixed' (length=5)
+  'store_price' =&gt; string '239.9900' (length=8)
+  'store_price_type' =&gt; string 'fixed' (length=5)
+  'price' =&gt; string '239.9900' (length=8)
+  'price_type' =&gt; string 'fixed' (length=5)
+  'value_id' =&gt; string '2' (length=1)</pre>
+		</div>
+</div></div>
+
+<?php include(__ROOT__ . 'footer.php'); ?>

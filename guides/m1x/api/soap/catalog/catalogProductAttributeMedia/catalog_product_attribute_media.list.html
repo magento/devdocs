@@ -1,0 +1,197 @@
+<?php
+    $title = 'Magento API - SOAP - catalog_product_attribute_media.list';
+    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
+?>
+
+				    <h2><a name="catalog_product_attribute_media.list-Module%3AMageCatalog"></a>Module: Mage_Catalog</h2>
+
+
+<h4><a name="catalog_product_attribute_media.list-Resource%3Acatalogproductattributemedia"></a>Resource:catalog_product_attribute_media</h4>
+
+<p><b>Aliases:</b></p>
+<ul>
+	<li>product_attribute_media</li>
+	<li>product_media</li>
+</ul>
+
+
+<h4><a name="catalog_product_attribute_media.list-Method%3A"></a>Method:</h4>
+
+<ul>
+	<li>catalog_product_attribute_media.list (SOAP V1)</li>
+	<li>catalogProductAttributeMediaList (SOAP V2)</li>
+</ul>
+
+
+<p>Allows you to retrieve the list of product images.</p>
+
+<p><b>Aliases:</b></p>
+<ul>
+	<li>product_attribute_media.list</li>
+	<li>product_media.list</li>
+</ul>
+
+
+
+<p><b>Arguments:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> product\productId <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Product ID or SKU </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> storeView <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Store view ID or code (optional) </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> identifierType </td>
+<td class='confluenceTd'> Defines whether the product ID or SKU is passed in the 'product' parameter </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Returns</b>:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> result </td>
+<td class='confluenceTd'> Array of catalogProductImageEntity </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>catalogProductImageEntity</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> file <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Image file name </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> label <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Image label </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> position <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Image position </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> exclude <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Defines whether the image will associate only to one of three image types </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> url <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Image URL </td>
+</tr>
+<tr>
+<td class='confluenceTd'> ArrayOfString </td>
+<td class='confluenceTd'> types <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Array of types </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<h4><a name="catalog_product_attribute_media.list-Examples"></a>Examples</h4>
+
+<h5><a name="catalog_product_attribute_media.list-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
+
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/api/soap/?wsdl');
+
+// If somestuff requires api authentification,
+// then get a session token
+$session = $client-&gt;login('apiUser', 'apiKey');
+
+$result = $client-&gt;call($session, 'catalog_product_attribute_media.list', '2');
+var_dump($result);
+
+// If you don't need the session anymore
+//$client-&gt;endSession($session);</pre>
+		</div>
+</div></div>
+
+<h5><a name="catalog_product_attribute_media.list-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
+
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); // TODO : change url
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey'); // TODO : change login and pwd if necessary
+
+$result = $proxy-&gt;catalogProductAttributeMediaList($sessionId, '2');
+var_dump($result);</pre>
+		</div>
+</div></div>
+
+
+<h5><a name="catalog_product_attribute_media.list-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
+
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl');
+
+$sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey'));
+
+$result = $proxy-&gt;catalogProductAttributeMediaList((object)array('sessionId' =&gt; $sessionId-&gt;result, 'productId' =&gt; '2'));
+
+var_dump($result-&gt;result);</pre>
+		</div>
+</div></div>
+
+<h5><a name="catalog_product_attribute_media.list-ResponseExampleSOAPV1"></a>Response Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: java; gutter: false">array
+  0 =&gt;
+    array
+      'file' =&gt; string '/b/l/blackberry8100_2.jpg' (length=25)
+      'label' =&gt; string '' (length=0)
+      'position' =&gt; string '1' (length=1)
+      'exclude' =&gt; string '0' (length=1)
+      'url' =&gt; string 'http://magentopath/blackberry8100_2.jpg' (length=71)
+      'types' =&gt;
+        array
+          0 =&gt; string 'image' (length=5)
+          1 =&gt; string 'small_image' (length=11)
+          2 =&gt; string 'thumbnail' (length=9)</pre>
+		</div>
+</div></div>
+
+<?php include(__ROOT__ . 'footer.php'); ?>

@@ -1,0 +1,176 @@
+<?php
+    $title = 'Magento API - SOAP - catalog_product_tag.update';
+    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
+?>
+
+				    <h3><a name="product_tag.update-Module%3ATagAPI"></a>Module: Tag API</h3>
+
+<h4><a name="product_tag.update-Resource%3Acatalogproducttag"></a>Resource: catalog_product_tag</h4>
+
+<p><b>Aliases</b>: product_tag</p>
+
+
+<h5><a name="product_tag.update-Method%3A"></a>Method:</h5>
+
+<ul>
+	<li>catalog_product_tag.update (SOAP V1)</li>
+	<li>catalogProductTagUpdate (SOAP V2)</li>
+</ul>
+
+
+<p>Allows you to update information about an existing product tag.</p>
+
+<p><b>Arguments:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> tagId </td>
+<td class='confluenceTd'> ID of the tag to be updated </td>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> data </td>
+<td class='confluenceTd'> Array of catalogProductTagUpdateEntity </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> store </td>
+<td class='confluenceTd'> Store view code or ID (optional; required for WS-I compliance mode) </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Return:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> boolean </td>
+<td class='confluenceTd'> True if the product tag is updated </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>catalogProductTagUpdateEntity</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> name <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Tag name </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> status <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Tag status. Can have the following values: &#45;1 - Disabled, 0 - Pending, 1&#45; Approved </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_popularity <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Tag base popularity </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Faults:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Fault Code </th>
+<th class='confluenceTh'> Fault Message </th>
+</tr>
+<tr>
+<td class='confluenceTd'> 101 </td>
+<td class='confluenceTd'> Requested store does not exist. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 104 </td>
+<td class='confluenceTd'> Requested tag does not exist. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 105 </td>
+<td class='confluenceTd'> Provided data is invalid. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 106 </td>
+<td class='confluenceTd'> Error while saving tag. Details in error message. </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<h4><a name="product_tag.update-Examples"></a>Examples</h4>
+
+<h5><a name="product_tag.update-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/api/soap/?wsdl');
+
+// If somestuff requires api authentification,
+// then get a session token
+$session = $client-&gt;login('apiUser', 'apiKey');
+
+$result = $client-&gt;call($session, 'catalog_product_tag.update', array('tagId' =&gt; '4', 'data' =&gt; array('name' =&gt; 'digital_1')));
+var_dump ($result);</pre>
+		</div>
+</div></div>
+
+<h5><a name="product_tag.update-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); 
+
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey'); 
+ 
+$result = $proxy-&gt;catalogProductTagUpdate($sessionId, '1', array(
+'name' =&gt; 'tag',
+'status' =&gt; '1'
+));   
+var_dump($result);</pre>
+		</div>
+</div></div>
+
+
+
+<h5><a name="product_tag.update-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl');
+
+$sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey'));
+
+$result = $proxy-&gt;catalogProductTagUpdate((object)array('sessionId' =&gt; $sessionId-&gt;result, 'tagId' =&gt; '1', 'store' =&gt; '0', 'data' =&gt; ((object)array(
+'name' =&gt; 'tag',
+'status' =&gt; '1',
+'base_popularity' =&gt; null
+))));
+var_dump($result-&gt;result);</pre>
+		</div>
+</div></div>
+
+<?php include(__ROOT__ . 'footer.php'); ?>
