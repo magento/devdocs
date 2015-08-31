@@ -1,0 +1,267 @@
+<?php
+    $title = 'Magento API - SOAP - product_custom_option.info';
+    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
+?>
+
+				    <h3><a name="product_custom_option.info-Module%3AComplexProductAPI"></a>Module: Complex Product API</h3>
+
+<h4><a name="product_custom_option.info-Resource%3Aproductcustomoption"></a>Resource: product_custom_option</h4>
+
+
+<h5><a name="product_custom_option.info-Method%3A"></a>Method:</h5>
+
+<ul>
+	<li>product_custom_option.info (SOAP V1)</li>
+	<li>catalogProductCustomOptionInfo (SOAP V2)</li>
+</ul>
+
+
+<p>Allows you to retrieve full information about the custom option in a product.</p>
+
+<p><b>Arguments:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> optionId </td>
+<td class='confluenceTd'> Option ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> store </td>
+<td class='confluenceTd'> Store view ID or code (optional) </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Return:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> result </td>
+<td class='confluenceTd'> Array of catalogProductCustomOptionInfoEntity </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>catalogProductCustomOptionInfoEntity</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> title <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Custom option title </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> type <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Custom option type. Can have one of the following values: "fixed" or "percent" <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> sort_order <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Custom option sort order </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> is_require <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Defines whether the custom option is required </td>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> additional_fields <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Array of catalogProductCustomOptionAdditionalFields </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>catalogProductCustomOptionAdditionalFields</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> title <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Custom option title </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> price <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Custom option price </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> price_type <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Price type. Possible values are as follows: "fixed" or "percent" <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> sku <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Custom option SKU <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> max_characters <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Maximum number of characters for the customer input on the frontend (optional) <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> sort_order <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Custom option sort order </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> file_extension <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> List of file extensions allowed to upload by the user on the frontend (optional; for the <b>File</b> input type) <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> image_size_x <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Width limit for uploaded images (optional; for the <b>File</b> input type) <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> image_size_y <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Height limit for uploaded images (optional; for the <b>File</b> input type) <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> value_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Value ID </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Faults:</b></p>
+
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Fault Code </th>
+<th class='confluenceTh'> Fault Message </th>
+</tr>
+<tr>
+<td class='confluenceTd'> 101 </td>
+<td class='confluenceTd'> Product with requested id does not exist. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 104 </td>
+<td class='confluenceTd'> Store with requested code/id does not exist. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 105 </td>
+<td class='confluenceTd'> Option with requested id does not exist. </td>
+</tr>
+</tbody></table>
+</div>
+
+
+
+<h4><a name="product_custom_option.info-Examples"></a>Examples</h4>
+
+<h5><a name="product_custom_option.info-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
+
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/api/soap/?wsdl');
+
+// If somestuff requires api authentification,
+// then get a session token
+$session = $client-&gt;login('apiUser', 'apiKey');
+
+$result = $client-&gt;call($session, 'product_custom_option.info', '1');
+var_dump($result);
+
+// If you don't need the session anymore
+//$client-&gt;endSession($session);</pre>
+		</div>
+</div></div>
+
+<h5><a name="product_custom_option.info-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
+
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); // TODO : change url
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey'); // TODO : change login and pwd if necessary
+
+$result = $proxy-&gt;catalogProductCustomOptionInfo($sessionId, '1');
+var_dump($result);</pre>
+		</div>
+</div></div>
+
+<h5><a name="product_custom_option.info-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
+
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl');
+
+$sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey'));
+
+$result = $proxy-&gt;catalogProductCustomOptionInfo((object)array('sessionId' =&gt; $sessionId-&gt;result, 'optionId' =&gt; '1'));
+var_dump($result-&gt;result);</pre>
+		</div>
+</div></div>
+
+<h5><a name="product_custom_option.info-ResponseExampleSOAPV1"></a>Response Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: java; gutter: false">array
+  'title' =&gt; string 'model' (length=5)
+  'type' =&gt; string 'drop_down' (length=9)
+  'is_require' =&gt; string '1' (length=1)
+  'sort_order' =&gt; string '0' (length=1)
+  'additional_fields' =&gt;
+    array
+      0 =&gt;
+        array
+          'value_id' =&gt; string '1' (length=1)
+          'title' =&gt; string 'monoblock' (length=9)
+          'price' =&gt; string '139.9900' (length=8)
+          'price_type' =&gt; string 'fixed' (length=5)
+          'sku' =&gt; string 'monoblock' (length=9)
+          'sort_order' =&gt; string '0' (length=1)
+      1 =&gt;
+        array
+          'value_id' =&gt; string '2' (length=1)
+          'title' =&gt; string 'slider' (length=6)
+          'price' =&gt; string '239.9900' (length=8)
+          'price_type' =&gt; string 'fixed' (length=5)
+          'sku' =&gt; string 'slider' (length=6)
+          'sort_order' =&gt; string '0' (length=1)</pre>
+		</div>
+</div></div>
+
+<?php include(__ROOT__ . 'footer.php'); ?>
