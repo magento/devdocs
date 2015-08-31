@@ -51,13 +51,7 @@ In addition to those files, a Magento 2 module also has nested configuration fol
 
 
 
-
-
-###Magento 2 Module File Structure
-
-
-A typical file structure for a Magento 2 module:
-<p><img src="{{ site.baseurl }}common/images/pdg-config-file-structure.png" width="300" alt="A filesystem view of a typical file structure"></p>
+###Configuration files
 
 
 * Configuration files that are in the top level of that module&#8217;s `etc` folder are global to that module.

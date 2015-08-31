@@ -15,9 +15,19 @@ github_link: extension-dev-guide/build.md
 Building your module involves laying out the file structure, creating the necessary configuration files, building out any needed API interfaces and services, and adding any frontend parts needed.
 
 
-* [Create your module](create_module.html)
-* [Build the file structure](create_module.html#create-module-file-structure)
+
+* [Set up module file structure](module-file-structure.html)
 * [Define your configuration files](required-configuration-files.html)
+* [Create your module](create_module.html)
+
+* [Enable your module](enable-module.html)
+
+
+
+
+
+
+
 
 The following topics will be added in upcoming sprints:
 
@@ -25,4 +35,3 @@ The following topics will be added in upcoming sprints:
 * __Build API data interfaces__
 * __Build API service interfaces__
 * __Add any frontend you need__
-* __Enable your module__
