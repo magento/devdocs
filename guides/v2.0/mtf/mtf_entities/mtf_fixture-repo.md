@@ -79,12 +79,16 @@ Assume that we have the following fixture:
 
 {% endhighlight %}
 
-Assume that we want to specify data sets for two cases of filling out Widget forms: `default` with minimum data, and `cms_page_link` with data needed to create new CMS page link. Let's see details of second one. To create new CMS page link user must enter data of all required fields. Widget has three forms with fields to specify: **Settings**, **Storefront Properties**, **Frontend Apps Options**. The following text along with pictures gives an example of how to create a dataset of repository.
+We want to specify data sets for two cases of filling out Widget forms: `default` with minimum data, and `cms_page_link` with data needed to create new CMS page link. Let's see details of second one. To create new CMS page link user must enter data of all required fields. Widget has three forms with fields to specify: **Settings**, **Storefront Properties**, **Frontend Apps Options**. The following text along with pictures gives an example of how to create a dataset of repository.
+
+<h4>Settings form</h4>
 
 ![cms_page_link "Settings" data set for entire fixture view on GUI]({{ site.baseurl }}common/images/mtf_ent_fixt_repo_cms_set_ui.png)
 
-- Set **Type** field (`field name="code"`) to *CMS Page Link*. It corresponds to the following code `<field name="code" xsi:type="string">CMS Page Link</field>`.
+- Set **Type** field (`field name="code"`) to *CMS Page Link*. It corresponds to the following code in the repository data set `<field name="code" xsi:type="string">CMS Page Link</field>`.
 - Set **Design Theme** field (`field name="theme_id"`) to *Magento Blank*. It corresponds to the following code `<field name="theme_id" xsi:type="string">Magento Blank</field>`.
+
+<h4>Storefront Properties form</h4>
 
 ![cms_page_link "Storefront properties" dataset for entire fixture view on GUI]({{ site.baseurl }}common/images/mtf_ent_fixt_repo_cms_set_ui_storefront.png)
 
@@ -103,7 +107,9 @@ Assume that we want to specify data sets for two cases of filling out Widget for
   - Set **Display on** field to *All pages*. It corresponds to the following code `<item name="page_group" xsi:type="string">All Pages</item>`. Depending on value of this field, different fields to define this value appears. That's why all daughter fields must be wrapped in `<item name="all_pages" xsi:type="array"></item>`.
     - Set **Container** field to *Main content area*. It corresponds to the following code `<item name="block" xsi:type="string">Main Content Area</item>`.
     - Set **Template** field to *CMS Page Link Block Template*. It corresponds to the following code `<item name="template" xsi:type="string">CMS Page Link Block Template</item>`.
-  
+
+<h4>Frontend App Options</h4>  
+
 ![cms_page_link "Frontend App Options" dataset for entire fixture view on GUI]({{ site.baseurl }}common/images/mtf_ent_fixt_repo_cms_set_ui_frontend-app.png)
 
 **Anchor Custom Text** and **Anchor Custom Title** can be coded as complex fields as `<field name="parameters" xsi:type="array"></field>`:
@@ -132,10 +138,12 @@ Assume that we want to specify data sets for two cases of filling out Widget for
 
 {% endhighlight xml %}
 
-Then, create repository XML file by the path specified in `repository_class` attribute. 
+<h4>Widget.xml</h4>
+
+Now we can create repository XML file by the path specified in `repository_class` attribute. 
 In our case it is `magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget.xml`.
 
-And now let's see the whole repository example.
+Let's see the whole repository example:
 
 {% highlight xml %}
 
@@ -204,40 +212,36 @@ And now let's see the whole repository example.
 
 <h3 id="mtf_repository_structure">Repository structure</h3>
 
-Let's look at repository structure.
+Let's look at the repository structure.
 
 - `<config>` is a root node that defines path to the `repository.xsd` schema.
-- `<repository>` specifies a repository class in required `class` attribute and stores the defined data sets. `class` contains the full name of repository class, so you can guess where to place your repository. The repository contains datasets.
+- `<repository>` specifies a repository class in required `class` attribute and stores data sets. `class` contains the full name of repository class. The repository contains data sets.
   - In case of entire fixture repository the full name of class (including namespace) must be built as `<path to module where the fixture is placed>\Repository\<file with the name of fixture>`. Example: `Magento\Widget\Test\Repository\Widget`
   - In case of fixture field repository the full name of class (including namespace) must be built as `<path to module where the fixture is placed>\Repository\<directory with the name of fixture>\<file with the name of field>`. Example: `Magento\Widget\Test\Repository\Widget\LayoutUpdates`.
-- `<dataset>` specifies name of data set in required `name` attribute. This name serves as a reference of which data set will be used in the test. Dataset contains fields.
+- `<dataset>` specifies the name of data set in required `name` attribute. This name serves as a reference to the data set that will be used in the test. Each data set contains fields.
 - `<field>` defines value of the field. Field may contain either value, or items if the field is complex.
     
 |`field` attribute   |Semantics   | Is required?  |
 |---|---|---|
-| `name`  | field name in fixture |Required  |
-| `xsi:type` |type of field value |Required|
+| `name`  | Field name in fixture |Required  |
+| `xsi:type` |Type of field value |Required|
 
 |`field` daughter element   |Semantics   | Is required?  |
 |---|---|---|
-| `<item>`  | array item (when field type is array) |Required if `<field xsi:type="array" ...>` |
+| `<item>`  | Element of complex field. Items can be complex like fields. Complex items contain items. Item has `key=>value` structure.  |Required if `<field xsi:type="array" ...>` |
 
 |`item` attribute |Semantics   | Is required?  |
 |---|---|---|
-| `name`  | key name of array item  |Required  |
-| `xsi:type` |type of item value |Required|
+| `name`  | Key name of the item  |Required  |
+| `xsi:type` |Type of the item value |Required|
 
-`default` dataset is used by the test when the repository hasn't been specified in the test. Though you can explicitly specify 'default'. If repository name in the test is `cms_page_link`, then fields will be filled with data from `<dataset name="cms_page_link">`.
+`default` data set is used in the test when repository hasn't been specified in the test. Though you can explicitly specify `default`. If repository name in the test is `cms_page_link`, then fields will be filled with data from `<dataset name="cms_page_link">`.
 
 <h2 id="mtf_repository_create-field"> Create repository for the fixture field</h2>
 
-In Widget fixture code above there are fields with the links for repositories. Let's see closer at the field `layout` with `repository="Magento\Widget\Test\Repository\Widget\LayoutUpdates`.
+In preceding section Widget fixture code contains fields with the links for repositories. Let's consider the field `layout` with `repository="Magento\Widget\Test\Repository\Widget\LayoutUpdates`.
 
-The repository value is a reference to the repository XML file.
-
-Therefore, we should create `magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/LayoutUpdates.xml`.
-
-The XML structure of this repository is the same as of <a href="#mtf_repository_create">repository for the entire fixture</a>.
+The repository value is a reference to the repository XML file. Therefore, we should create `magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/LayoutUpdates.xml`. XML structure of this repository is the same as of <a href="#mtf_repository_create">repository for the entire fixture</a>.
 
 Assume that we want to fill out the Layout Update block for the following cases shown on the pictures (name of datasets have orange font, fields defined in repository are highlighted in orange):
 
@@ -395,10 +399,10 @@ Each field contains 4 items:
 
 |Item name|Semantics|
 |---|---|
-|scope|Magento configuration section|
-|scope_id|Magento scope identifier. UI representation is shown on the picture following this table. |
-|label|Text represented in the UI field.|
-|value|Value of the field.|
+|`scope`|Magento configuration section|
+|`scope_id`|Magento scope identifier. UI representation is shown on the picture following this table. |
+|`label`|Text represented in the UI field.|
+|`value`|Value of the field.|
 
 The following picture helps to understand the `scope_id` attibute.
 
@@ -410,13 +414,13 @@ Let's see `authorizenet` data set in action. Fields defined in repository are in
 
 <h2 id="mtf_repository_merge">Merge of repositories</h2>
 
-The MTF enables you to split data sets between different modules. Configuration repository is a good example.
+The MTF enables you to split data sets among different modules. Configuration repository is a good example.
 
-Modules that require configuration adjustment stores `ConfigData.xml` in their `Repository`. All `ConfigData.xml` repositories have reference to the `Config` repository class. See example on the following picture:
+Modules that require configuration adjustment stores `ConfigData.xml` in their `Repository` directory. All `ConfigData.xml` repositories have reference to the `Config` repository class. See example on the following picture:
 
 <a href="{{site.baseurl}}common/images/mtf_repo_merge_ex.png"><img src="{{site.baseurl}}common/images/mtf_repo_merge_ex.png" /></a>
 
-As you can see, `ConfigData.xml` of the `Authorizenet` module and `ConfigData.xml` of the `Backend` module have same reference to the repository class, that is `Magento\Config\Test\Repository\ConfigData`.
+As you can see, `ConfigData.xml` of the `Authorizenet` module and `ConfigData.xml` of the `Backend` module have the same reference to the repository class, that is `Magento\Config\Test\Repository\ConfigData`.
 
 `ConfigData.php` will be generated in `magento2ce/dev/tests/functional/generated/Magento/Config/Test/Repository`. This PHP repository will contain repository data sets from all Magento modules that have `ConfigData.xml` repository.
 
@@ -424,7 +428,7 @@ To run generator, enter the following command:
 
     php magento2ce/dev/tests/functional/utils/generate.php
 
-Preceding is the example of a use case of the repository merging. Using approach from example you can merge repositories for any other fixture, not `Congig` only.
+Preceding is the example of a use case of the repository merging. Using approach from example you can merge repositories for any other fixture, not `Config` only.
 
 <h2 id="mtf_repository_credentials">Credentials and %isolation% in repository</h2>
 
@@ -435,8 +439,8 @@ You can find a template for credentials in `magento2ce/dev/tests/functional/cred
 Credentials always should stay invisible for security reasons. The MTF implicitly pastes credentials during the test run only. 
 There are two ways to paste credentials:
 
-- Using path. If field in repository has `name` that matches field `path` in `credentials.xml`, then value of this field will be substituted to the value from `credential.xml` during the test.
-- Using placeholder. If field in repository has value wrapped in `% %` that matches the value of field `replace` attribute in `credentials.xml`, then value of this field will be substituted to the value from `credential.xml` during the test.
+- **Using path**. If field in repository has `name` that matches field `path` in `credentials.xml`, then value of this field will be substituted to the value from `credential.xml` during the test.
+- **Using placeholder**. If field in repository has value wrapped in `% %` that matches the value of `replace` field attribute in `credentials.xml`, then value of this field will be substituted to the value from `credential.xml` during the test.
 
 <h3 id="mtf_repo_credent_path">Example with substitution by <code>path</code></h3>
 
@@ -521,7 +525,7 @@ Then you should define repository fields as the following:
 
 {%endhighlight%}
 
-When the test is run, credentials from `credentials.xml` are transfered to defined fields.
+When the test is run, credentials from `credentials.xml` are transfered to the defined fields.
 
 <h3 id="mtf_repo_isolation"><code>%isolation%</code> placeholder</h3>
 
@@ -536,4 +540,4 @@ Some examples:
 
 {%endhighlight%}
 
-All placeholders `%isolation%` will be replaced with [mt_rand()](http://php.net/manual/en/function.mt-rand.php) function during test run.
+All placeholders `%isolation%` will be replaced with [mt_rand()](http://php.net/manual/en/function.mt-rand.php) function during the test run.
