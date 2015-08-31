@@ -1,0 +1,118 @@
+<?php
+    $title = 'Magento API - SOAP - sales_order.cancel';
+    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
+?>
+
+				    <h2><a name="sales_order.cancel-Module%3AMageSales"></a>Module: Mage_Sales</h2>
+
+
+<h4><a name="sales_order.cancel-Resource%3Asalesorder"></a>Resource: sales_order</h4>
+
+<p><b>Aliases</b>:</p>
+<ul>
+	<li>order</li>
+</ul>
+
+
+<h5><a name="sales_order.cancel-Method%3A"></a>Method:</h5>
+
+<ul>
+	<li>sales_order.cancel (SOAP V1)</li>
+	<li>salesOrderCancel (SOAP V2)</li>
+</ul>
+
+
+<p>Allows you to cancel the required order.</p>
+
+<p><b>Aliases</b>:</p>
+<ul>
+	<li>order.cancel</li>
+</ul>
+
+
+
+<p><b>Arguments</b>:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> orderIncrementId <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Order increment ID </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Returns</b>:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> boolean </td>
+<td class='confluenceTd'> True if the order is canceled </td>
+</tr>
+</tbody></table>
+</div>
+
+
+
+<h4><a name="sales_order.cancel-Examples"></a>Examples</h4>
+
+<h5><a name="sales_order.cancel-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/api/soap/?wsdl');
+
+// If somestuff requires api authentification,
+// then get a session token
+$session = $client-&gt;login('apiUser', 'apiKey');
+
+$result = $client-&gt;call($session, 'sales_order.cancel', '200000004');
+var_dump($result);
+
+// If you don't need the session anymore
+//$client-&gt;endSession($session);</pre>
+		</div>
+</div></div>
+
+<h5><a name="sales_order.cancel-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); // TODO : change url
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey'); // TODO : change login and pwd if necessary
+
+$result = $proxy-&gt;salesOrderCancel($sessionId, '200000004');
+var_dump($result);</pre>
+		</div>
+</div></div>
+
+
+<h5><a name="sales_order.cancel-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); 
+
+$sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey')); 
+ 
+$result = $proxy-&gt;salesOrderCancel((object)array('sessionId' =&gt; $sessionId-&gt;result, 'orderIncrementId' =&gt; '200000004'));   
+var_dump($result-&gt;result);</pre>
+		</div>
+</div></div>
+
+<?php include(__ROOT__ . 'footer.php'); ?>

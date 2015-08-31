@@ -1,0 +1,169 @@
+<?php
+    $title = 'Magento API - SOAP - cataloginventory_stock_item.list';
+    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
+?>
+
+				    <h2><a name="cataloginventory_stock_item.list-Module%3AMageCatalogInventory"></a>Module: Mage_CatalogInventory</h2>
+
+
+<h4><a name="cataloginventory_stock_item.list-Resource%3Acataloginventorystockitem"></a>Resource: cataloginventory_stock_item</h4>
+
+<p><b>Aliases</b>:</p>
+<ul>
+	<li>product_stock</li>
+</ul>
+
+
+<h5><a name="cataloginventory_stock_item.list-Method%3A"></a>Method:</h5>
+
+<ul>
+	<li>cataloginventory_stock_item.list (SOAP V1)</li>
+	<li>catalogInventoryStockItemList (SOAP V2)</li>
+</ul>
+
+
+<p>Allows you to retrieve the list of stock data by product IDs.</p>
+
+<p><b>Aliases</b>:</p>
+<ul>
+	<li>product_stock.list</li>
+</ul>
+
+
+
+<p><b>Arguments</b>:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> ArrayOfString <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> products/productIds (for WS-I mode) <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> List of product IDs or SKUs </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Returns</b>:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> result </td>
+<td class='confluenceTd'> Array of catalogInventoryStockItemEntity </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>catalogInventoryStockItemEntity</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> product_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Product ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sku <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Product SKU </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> qty <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Product quantity </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> is_in_stock <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Defines whether the product is in stock </td>
+</tr>
+</tbody></table>
+</div>
+
+
+
+<h4><a name="cataloginventory_stock_item.list-Examples"></a>Examples</h4>
+
+<h5><a name="cataloginventory_stock_item.list-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
+
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/api/soap/?wsdl');
+
+// If somestuff requires api authentification,
+// then get a session token
+$session = $client-&gt;login('apiUser', 'apiKey');
+
+$result = $client-&gt;call($session, 'cataloginventory_stock_item.list', '1');
+var_dump($result);
+
+// If you don't need the session anymore
+//$client-&gt;endSession($session);</pre>
+		</div>
+</div></div>
+
+<h5><a name="cataloginventory_stock_item.list-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
+
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); // TODO : change url
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey'); // TODO : change login and pwd if necessary
+
+$result = $proxy-&gt;catalogInventoryStockItemList($sessionId, array('1', '2'));
+var_dump($result);</pre>
+		</div>
+</div></div>
+
+
+<h5><a name="cataloginventory_stock_item.list-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
+
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); 
+
+$sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey')); 
+ 
+$result = $proxy-&gt;catalogInventoryStockItemList((object)array('sessionId' =&gt; $sessionId-&gt;result, 'productIds' =&gt; array(1,2)));   
+var_dump($result-&gt;result);</pre>
+		</div>
+</div></div>
+
+<h5><a name="cataloginventory_stock_item.list-ResponseExampleSOAPV1"></a>Response Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: java; gutter: false">array
+  0 =&gt;
+    array
+      'product_id' =&gt; string '1' (length=1)
+      'sku' =&gt; string 'n2610' (length=5)
+      'qty' =&gt; string '98.0000' (length=7)
+      'is_in_stock' =&gt; string '1' (length=1)</pre>
+		</div>
+</div></div>
+
+<?php include(__ROOT__ . 'footer.php'); ?>

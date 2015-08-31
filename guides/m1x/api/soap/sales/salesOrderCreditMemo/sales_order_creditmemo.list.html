@@ -1,0 +1,846 @@
+<?php
+    $title = 'Magento API - SOAP - order_creditmemo.list';
+    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
+?>
+
+				    <h3><a name="order_creditmemo.list-Module%3AOrderCreditMemoAPI"></a>Module: Order Credit Memo API</h3>
+
+<h4><a name="order_creditmemo.list-Resource%3Asalesordercreditmemo"></a>Resource: sales_order_creditmemo</h4>
+
+<h5><a name="order_creditmemo.list-Aliases%3Aordercreditmemo"></a>Aliases: order_creditmemo</h5>
+
+
+<h5><a name="order_creditmemo.list-Method%3A"></a>Method:</h5>
+
+<ul>
+	<li>order_creditmemo.list (SOAP V1)</li>
+	<li>salesOrderCreditmemoList (SOAP V2)</li>
+</ul>
+
+
+<p>Allows you to retrieve the list of credit memos by filters.</p>
+
+<p><b>Arguments:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> associative array </td>
+<td class='confluenceTd'> filters </td>
+<td class='confluenceTd'> Filters (optional) </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Return:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> result </td>
+<td class='confluenceTd'> Array of salesOrderCreditmemoEntity </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>salesOrderCreditmemoEntity</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> updated_at </td>
+<td class='confluenceTd'> Date of updating </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> created_at <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Date of creation </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> increment_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Increment ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> transaction_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Transaction ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> global_currency_code <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Global currency code </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_currency_code <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base currency code </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> order_currency_code <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Order currency code </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> store_currency_code <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Store currency code </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> cybersource_token <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Cybersource token </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> invoice_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> ID of the invoice for which the credit memo was created </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> billing_address_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Billing address ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> shipping_address_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Shipping address ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> state <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> State </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> creditmemo_status <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Credit memo status </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> email_sent <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Defines whether the email is sent </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> order_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> ID of the order for which the credit memo was created </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> tax_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Tax amount </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> shipping_tax_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Shipping tax amount </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_tax_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base tax amount </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_adjustment_positive <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Adjustment refund amount (using base currency) <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_grand_total <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base grand total </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> adjustment <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Adjustment </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> subtotal <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Subtotal </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> discount_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Discount amount </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_subtotal <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base subtotal </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_adjustment <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base adjustment </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_to_global_rate <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base to global rate </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> store_to_base_rate <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Store to base rate </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_shipping_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base shipping amount </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> adjustment_negative <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Adjustment fee amount <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> subtotal_incl_tax <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Subtotal including tax </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> shipping_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Shipping amount </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_subtotal_incl_tax <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base subtotal including tax </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_adjustment_negative <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Adjustment fee amount (using base currency) <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> grand_total <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Grand total </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_discount_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base discount amount </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_to_order_rate <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base to order rate </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> store_to_order_rate <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Store to order rate </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_shipping_tax_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base shipping tax amount </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> adjustment_positive <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Adjustment refund amount <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> store_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Store ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> hidden_tax_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Hidden tax amount </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_hidden_tax_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base hidden tax amount </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> shipping_hidden_tax_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Shipping hidden tax amount </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_shipping_hidden_tax_amnt <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base shipping hidden tax amount </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> shipping_incl_tax <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Shipping including tax </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_shipping_incl_tax <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base shipping including tax </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_customer_balance_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base customer balance amount </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> customer_balance_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Customer balance amount </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> bs_customer_bal_total_refunded <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Refunded base customer balance amount <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> customer_bal_total_refunded <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Customer balance total refunded </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_gift_cards_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base gift cards amount </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> gift_cards_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Gift cards amount </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> gw_base_price <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Gift wrapping price refunded amount (using base currency) <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> gw_price <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Gift wrapping price refunded amount <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> gw_items_base_price <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Gift wrapping items base price </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> gw_items_price <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Gift wrapping items&nbsp;price </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> gw_card_base_price <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Gift wrapping card base price </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> gw_card_price <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Gift wrapping card price </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> gw_base_tax_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Gift wrapping tax amount refunded (using base currency) <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> gw_tax_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Gift wrapping tax amount refunded <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> gw_items_base_tax_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Gift wrapping items&nbsp;base tax amount </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> gw_items_tax_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Gift wrapping items&nbsp;tax amount </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> gw_card_base_tax_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Gift wrapping card base tax amount </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> gw_card_tax_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Gift wrapping card tax amount </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_reward_currency_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base reward currency amount </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> reward_currency_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Reward currency amount </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> reward_points_balance <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Reward points balance </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> reward_points_balance_refund <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Reward points balance refund </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> creditmemo_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Credit memo ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> items <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Array of salesOrderCreditmemoItemEntity </td>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> comments <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Array of salesOrderCreditmemoCommentEntity </td>
+</tr>
+</tbody></table>
+</div>
+
+
+
+<p>The <b>salesOrderCreditmemoItemEntity</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> item_id </td>
+<td class='confluenceTd'> Credit memo item ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> parent_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Parent ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> weee_tax_applied_row_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Applied fixed product tax row amount <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_price <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base price </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_weee_tax_row_disposition <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Fixed product tax row disposition (in base currency) <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> tax_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Tax amount </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_weee_tax_applied_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Applied fixed product tax amount (in base currency) <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> weee_tax_row_disposition <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Fixed product tax row disposition <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_row_total <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base row total </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> discount_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Discount amount </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> row_total <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Row total </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> weee_tax_applied_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Applied fixed product tax amount <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_discount_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base discount amount </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_weee_tax_disposition <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Fixed product tax disposition (in base currency) <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> price_incl_tax <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Price including tax </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_tax_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base tax amount </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> weee_tax_disposition <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Fixed product tax disposition <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_price_incl_tax <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base price including tax </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> qty <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Quantity </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_cost <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base cost </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_weee_tax_applied_row_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Applied fixed product tax row amount (in base currency) <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> price <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Price </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_row_total_incl_tax <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base row total including tax </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> row_total_incl_tax <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Row total including tax </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> product_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Product ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> order_item_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Order item ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> additional_data <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Additional data </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> description <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Description </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> weee_tax_applied <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Applied fixed product tax <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> sku <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Item SKU </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> name <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Name </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> hidden_tax_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Hidden tax amount </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_hidden_tax_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base hidden tax amount </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>salesOrderCreditmemoCommentEntity</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> parent_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Parent ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> created_at <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Date of creation </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> comment <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Comment data </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> is_customer_notified <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Defines whether the customer is notified </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> comment_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Comment ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> is_visible_on_front <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Defines whether the comment is visible on the frontend </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Faults:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Fault Code </th>
+<th class='confluenceTh'> Fault Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> 101 </td>
+<td class='confluenceTd'> Invalid filter given. Details in error message. </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<h4><a name="order_creditmemo.list-Examples"></a>Examples</h4>
+
+<h5><a name="order_creditmemo.list-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/soap/?wsdl');
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey');
+$filter = array(
+    'order_id' =&gt; array(
+        'or' =&gt; array(
+            array(
+                'from' =&gt; '673',
+                'to' =&gt; '674',
+            ),
+            array(
+                'from' =&gt; '677',
+                'to' =&gt; NULL,
+            )
+        )
+    ),
+    'increment_id' =&gt; array(
+        'or' =&gt; array(
+            array(
+                'from' =&gt; '100000617',
+                'to' =&gt; '100000619',
+            ),
+            array(
+                'from' =&gt; '100000619',
+                'to' =&gt; NULL,
+            )
+        )
+    )
+);
+$creditmemoList = $proxy-&gt;call($sessionId, 'order_creditmemo.list', array($filter));</pre>
+		</div>
+</div></div>
+
+<h5><a name="order_creditmemo.list-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); // TODO : change url
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey'); // TODO : change login and pwd if necessary
+
+$result = $proxy-&gt;salesOrderCreditmemoList($sessionId, '200000001');
+var_dump($result);</pre>
+		</div>
+</div></div>
+
+
+<h5><a name="order_creditmemo.list-RequestExampleSOAPV2%28ComplexFilter%29"></a>Request Example SOAP V2 (Complex Filter)</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/api/v2_soap/?wsdl');
+
+// If some stuff requires api authentification,
+// then get a session token
+$session = $client-&gt;login('apiUser', 'apiKey');
+$complexFilter = array(
+    'complex_filter' =&gt; array(
+        array(
+            'key' =&gt; 'state',
+            'value' =&gt; array('key' =&gt; 'in', 'value' =&gt; '2,3')
+        )
+    )
+);
+$result = $client-&gt;salesOrderCreditmemoList($session, $complexFilter);
+
+var_dump ($result);</pre>
+		</div>
+</div></div>
+
+
+
+<h5><a name="order_creditmemo.list-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); 
+
+$sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey')); 
+ 
+$result = $proxy-&gt;salesOrderCreditmemoList((object)array('sessionId' =&gt; $sessionId-&gt;result));   
+var_dump($result-&gt;result);</pre>
+		</div>
+</div></div>
+
+
+<h5><a name="order_creditmemo.list-ResponseExampleSOAPV1"></a>Response Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">array(
+    0 =&gt; array(
+        'store_id' =&gt; '1',
+        'adjustment_positive' =&gt; NULL,
+        'base_shipping_tax_amount' =&gt; '0.0000',
+        'store_to_order_rate' =&gt; '1.0000',
+        'base_discount_amount' =&gt; '0.0000',
+        'base_to_order_rate' =&gt; '1.0000',
+        'grand_total' =&gt; '60.0000',
+        'base_adjustment_negative' =&gt; NULL,
+        'base_subtotal_incl_tax' =&gt; '55.0000',
+        'shipping_amount' =&gt; '5.0000',
+        'subtotal_incl_tax' =&gt; '55.0000',
+        'adjustment_negative' =&gt; NULL,
+        'base_shipping_amount' =&gt; '5.0000',
+        'store_to_base_rate' =&gt; '1.0000',
+        'base_to_global_rate' =&gt; '1.0000',
+        'base_adjustment' =&gt; '0.0000',
+        'base_subtotal' =&gt; '55.0000',
+        'discount_amount' =&gt; '0.0000',
+        'subtotal' =&gt; '55.0000',
+        'adjustment' =&gt; '0.0000',
+        'base_grand_total' =&gt; '60.0000',
+        'base_adjustment_positive' =&gt; NULL,
+        'base_tax_amount' =&gt; '0.0000',
+        'shipping_tax_amount' =&gt; '0.0000',
+        'tax_amount' =&gt; '0.0000',
+        'order_id' =&gt; '674',
+        'email_sent' =&gt; NULL,
+        'creditmemo_status' =&gt; NULL,
+        'state' =&gt; '2',
+        'shipping_address_id' =&gt; '1348',
+        'billing_address_id' =&gt; '1347',
+        'invoice_id' =&gt; NULL,
+        'cybersource_token' =&gt; NULL,
+        'store_currency_code' =&gt; 'USD',
+        'order_currency_code' =&gt; 'USD',
+        'base_currency_code' =&gt; 'USD',
+        'global_currency_code' =&gt; 'USD',
+        'transaction_id' =&gt; NULL,
+        'increment_id' =&gt; '100000617',
+        'created_at' =&gt; '2011-05-26 10:49:45',
+        'updated_at' =&gt; '2011-05-26 10:49:45',
+        'hidden_tax_amount' =&gt; '0.0000',
+        'base_hidden_tax_amount' =&gt; '0.0000',
+        'shipping_hidden_tax_amount' =&gt; NULL,
+        'base_shipping_hidden_tax_amnt' =&gt; NULL,
+        'shipping_incl_tax' =&gt; '5.0000',
+        'base_shipping_incl_tax' =&gt; '5.0000',
+        'base_customer_balance_amount' =&gt; NULL,
+        'customer_balance_amount' =&gt; NULL,
+        'bs_customer_bal_total_refunded' =&gt; '0.0000',
+        'customer_bal_total_refunded' =&gt; '0.0000',
+        'base_gift_cards_amount' =&gt; NULL,
+        'gift_cards_amount' =&gt; NULL,
+        'gw_base_price' =&gt; NULL,
+        'gw_price' =&gt; NULL,
+        'gw_items_base_price' =&gt; NULL,
+        'gw_items_price' =&gt; NULL,
+        'gw_card_base_price' =&gt; NULL,
+        'gw_card_price' =&gt; NULL,
+        'gw_base_tax_amount' =&gt; NULL,
+        'gw_tax_amount' =&gt; NULL,
+        'gw_items_base_tax_amount' =&gt; NULL,
+        'gw_items_tax_amount' =&gt; NULL,
+        'gw_card_base_tax_amount' =&gt; NULL,
+        'gw_card_tax_amount' =&gt; NULL,
+        'base_reward_currency_amount' =&gt; NULL,
+        'reward_currency_amount' =&gt; NULL,
+        'reward_points_balance' =&gt; NULL,
+        'reward_points_balance_refund' =&gt; NULL,
+        'creditmemo_id' =&gt; '617',
+    ),
+    1 =&gt; array(
+        'store_id' =&gt; '1',
+        'adjustment_positive' =&gt; NULL,
+        .......................................
+        'creditmemo_id' =&gt; '620',
+    )
+);</pre>
+		</div>
+</div></div>
+
+<?php include(__ROOT__ . 'footer.php'); ?>

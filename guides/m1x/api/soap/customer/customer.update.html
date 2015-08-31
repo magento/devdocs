@@ -1,0 +1,191 @@
+<?php
+    $title = 'Magento API - SOAP - customer.update';
+    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
+?>
+
+				    <h2><a name="customer.update-Module%3AMageCustomer"></a>Module: Mage_Customer</h2>
+
+
+<h3><a name="customer.update-Resource%3Acustomer"></a>Resource: customer</h3>
+
+
+<h4><a name="customer.update-Method%3A"></a>Method:</h4>
+
+<ul>
+	<li>customer.update (SOAP V1)</li>
+	<li>customerCustomerUpdate (SOAP V2)</li>
+</ul>
+
+
+<p>Update information about the required customer. Note that you need to pass only those arguments which you want to be updated.</p>
+
+<p><b>Arguments:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> customerId </td>
+<td class='confluenceTd'> Customer ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> customerData </td>
+<td class='confluenceTd'> Array of customerCustomerEntityToCreate </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Returns</b>:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> boolean </td>
+<td class='confluenceTd'> True if the customer is updated </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>customerCustomerEntityToCreate</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> customer_id </td>
+<td class='confluenceTd'> Customer ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> email </td>
+<td class='confluenceTd'> Customer email </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> firstname </td>
+<td class='confluenceTd'> Customer first name </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> lastname </td>
+<td class='confluenceTd'> Customer last name </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> password </td>
+<td class='confluenceTd'> Customer password </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> group_id </td>
+<td class='confluenceTd'> Group ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> prefix </td>
+<td class='confluenceTd'> Customer prefix </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> suffix </td>
+<td class='confluenceTd'> Customer suffix </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> dob </td>
+<td class='confluenceTd'> Customer date of birth </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> taxvat </td>
+<td class='confluenceTd'> Customer tax/VAT number </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> gender </td>
+<td class='confluenceTd'> Customer gender: 1 - Male, 2 - Female </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> middlename </td>
+<td class='confluenceTd'> Customer middle name/initial </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<h4><a name="customer.update-Examples"></a>Examples</h4>
+
+<h5><a name="customer.update-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/api/soap/?wsdl');
+
+// If somestuff requires api authentification,
+// then get a session token
+$session = $client-&gt;login('apiUser', 'apiKey');
+
+$result = $client-&gt;call($session, 'customer.update', array('customerId' =&gt; '2', 'customerData' =&gt; array('firstname' =&gt; 'John', 'lastname' =&gt; 'Doe', 'email' =&gt; 'test@example.com', 'password' =&gt; 'john22')));
+var_dump ($result);
+
+// If you don't need the session anymore
+//$client-&gt;endSession($session);</pre>
+		</div>
+</div></div>
+
+<h5><a name="customer.update-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/api/v2_soap/?wsdl');
+
+// If some stuff requires api authentification,
+// then get a session token
+$session = $client-&gt;login('apiUser', 'apiKey');
+$result = $client-&gt;customerCustomerUpdate($session, '2', array('email' =&gt; 'customer-mail@example.org', 'firstname' =&gt; 'Dough', 'lastname' =&gt; 'Deekson', 'password' =&gt; 'password', 'website_id' =&gt; 1, 'store_id' =&gt; 1, 'group_id' =&gt; 1));
+
+var_dump ($result);</pre>
+		</div>
+</div></div>
+
+
+
+
+<h5><a name="customer.update-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); 
+
+$sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey')); 
+ 
+$result = $proxy-&gt;customerCustomerUpdate((object)array('sessionId' =&gt; $sessionId-&gt;result, 'customerId' =&gt; '2', 'customerData' =&gt;  ((object)array(
+'email' =&gt; 'customer-mail@example.org',
+'firstname' =&gt; 'Dough',
+'lastname' =&gt; 'Deekson'
+))));   
+var_dump($result-&gt;result);</pre>
+		</div>
+</div></div>
+
+<?php include(__ROOT__ . 'footer.php'); ?>

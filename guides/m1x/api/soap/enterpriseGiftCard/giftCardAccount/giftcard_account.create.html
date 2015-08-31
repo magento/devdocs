@@ -1,0 +1,232 @@
+<?php
+    $title = 'Magento API - SOAP - giftcard_account.create';
+    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
+?>
+
+				    <h3><a name="giftcard_account.create-Module%3AGiftCardAPI"></a>Module: GiftCard API</h3>
+
+<h4><a name="giftcard_account.create-Resource%3Agiftcardaccount"></a>Resource: giftcard_account</h4>
+
+
+<h5><a name="giftcard_account.create-Method%3A"></a>Method:</h5>
+
+<ul>
+	<li>giftcard_account.create (SOAP V1)</li>
+	<li>giftcardAccountCreate (SOAP V2)</li>
+</ul>
+
+
+<p>Allows you to create a new gift card account.</p>
+
+<p><b>Arguments:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> giftcardAccountData </td>
+<td class='confluenceTd'> Array of giftcardAccountCreateGiftcardAccountData </td>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> notificationData </td>
+<td class='confluenceTd'> Array of giftcardAccountCreateNotificationData (optional) </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Return:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> ID of the created gift card account </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>giftcardAccountCreateGiftcardAccountData</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> status <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Gift card status: available, used, redeemed, expired </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> date_expires <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Gift card expiration date in the YYYY-MM-DD format <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> website_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Gift card website ID <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> balance <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Initial gift card balance <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> state <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> State: active or not active </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> is_redeemable <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Defines whether the gift card is redeemable </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>giftcardAccountCreateNotificationData</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> recipient_name <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Recipient name </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> recipient_email <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Recipient email address </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> recipient_store <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Recipient store </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Faults:</b></p>
+
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Fault Code </th>
+<th class='confluenceTh'> Fault Message </th>
+</tr>
+<tr>
+<td class='confluenceTd'> 105 </td>
+<td class='confluenceTd'> Provided gift card account data is invalid. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 104 </td>
+<td class='confluenceTd'> Provided email notification data is invalid </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<h4><a name="giftcard_account.create-Examples"></a>Examples</h4>
+
+<h5><a name="giftcard_account.create-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/soap/?wsdl');
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey');
+
+$giftcardToCreate = array(
+    "status" =&gt; 'available',
+    "is_redeemable" =&gt; 1,
+    "balance" =&gt; 200,
+    "website_id" =&gt; 2,
+    "date_expires" =&gt; null
+);
+
+$giftcardId = $proxy-&gt;call(
+    $sessionId,
+    "giftcard_account.create",
+    array(
+         $giftcardToCreate
+    )
+);</pre>
+		</div>
+</div></div>
+
+
+<h5><a name="giftcard_account.create-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); 
+
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey'); 
+ 
+$result = $proxy-&gt;giftcardAccountCreate($sessionId, array(
+'status' =&gt; 'available', 
+'date_expires' =&gt; null, 
+'website_id' =&gt; '2', 
+'balance' =&gt; '200', 
+'state' =&gt; '1', 
+'is_redeemable' =&gt; '1'), 
+array(
+'recipient_name' =&gt; 'name', 
+'recipient_email' =&gt; 'email', 
+'recipient_store' =&gt; null)
+);   
+
+var_dump($result);</pre>
+		</div>
+</div></div>
+
+
+
+<h5><a name="giftcard_account.create-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); 
+
+$sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey')); 
+ 
+$result = $proxy-&gt;giftcardAccountCreate((object)array('sessionId' =&gt; $sessionId-&gt;result, 'giftcardAccountData' =&gt; array(
+'status' =&gt; 'available', 
+'date_expires' =&gt; null, 
+'website_id' =&gt; '2', 
+'balance' =&gt; '200', 
+'state' =&gt; '1', 
+'is_redeemable' =&gt; '1'), 
+'notificationData' =&gt; array(
+'recipient_name' =&gt; 'name', 
+'recipient_email' =&gt; 'email', 
+'recipient_store' =&gt; null)
+));   
+
+var_dump($result-&gt;result);</pre>
+		</div>
+</div></div>
+
+<?php include(__ROOT__ . 'footer.php'); ?>
