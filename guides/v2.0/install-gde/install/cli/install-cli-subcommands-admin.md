@@ -85,8 +85,6 @@ where the following table defines parameters and values.
 <h2 id="instgde-cli-admin-unlock">Unlock an administrator account</h2>
 Use this command to unlock the account of an administrator that was locked, typically because of multiple incorrect login attempts.
 
-To view the list of locked users in the Admin, log in as an administrator and click **System** > Permissions > **Locked Users**.
-
 	magento admin:user:unlock {user name}
 
 You must specify the administrator's user name. Example:
@@ -98,13 +96,11 @@ If the account is either not unlocked or if there was a problem, the following m
 
 	The user account "admin" was not locked or could not be unlocked
 
-Verify the user is an administrator, the user is active, and that the account is currently locked.
+Verify the user is an administrator, the user is active, and that the account is currently locked. To view the list of locked users in the Admin, log in as an administrator and click **System** > Permissions > **Locked Users**.
 
-If the administrator account doesn't exist, the following message displays:
+If the account doesn't exist, the following message displays:
 
 	Couldn't find the user account "bob"
-
-Verify the administrator account exists.
 
 #### Related topics
 
