@@ -163,13 +163,13 @@ Sample result:
 <h2 id="config-cli-subcommands-cache-clean">Clean and flush cache types</h2>
 To purge out-of-date items from the cache, you can *clean* or *flush* cache types:
 
-*	Cleaning a cache type deletes all items from enabled cache types only.
+*	Cleaning a cache type deletes all items from enabled Magento cache types only. In other words, this option does not affect other processes or applications because it cleans only the cache that Magento uses.
 
 	Disabled cache types are not cleaned.
 
-*	Flushing a cache type purges the cache storage.
+*	Flushing a cache type purges the cache storage, which might affect other processes applications that are using the same storage.
 
-	All cache types that use the specified storage are flushed.
+	Flush cache types if you've already tried cleaning the cache and you're still having issues that you cannot isolate.
 
 Command usage:
 
@@ -178,9 +178,9 @@ Command usage:
 
 where
 
-omitting `[type] cleans or flushes all cache types at the same time.
+`[type]` is a space-separated list of cache types. Omitting `[type]` cleans or flushes all cache types at the same time.
 
-`type` is a space-separated list of cache types.
+
 
 <!-- `--bootstrap=` is a URL-encoded associative array of Magento <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview">application bootstrap parameters</a> and values.
  -->

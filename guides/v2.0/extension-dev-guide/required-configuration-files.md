@@ -7,8 +7,8 @@ menu_title: Define your configuration files
 menu_order: 3
 github_link: extension-dev-guide/required-configuration-files.md
 redirect_from: 
-  -/guides/v1.0/extension-dev-guide/template_create_req_config_files.html
-  -/guides/v2.0/extension-dev-guide/template_create_req_config_files.html
+  - /guides/v1.0/extension-dev-guide/template_create_req_config_files.html
+  - /guides/v2.0/extension-dev-guide/template_create_req_config_files.html
 ---
 
 ##{{page.menu_title}}

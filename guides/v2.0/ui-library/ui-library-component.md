@@ -423,7 +423,9 @@ Redefine link to constructor.
 
 <h3 id="treemass">UI Library TreeMassAction Component</h3>
 
-TreeMassAction Component is extension to MassAction component that provides nested sub-menu.
+TreeMassAction Component is extension to MassAction component that provides nested sub-menu. 
+
+The TreeMassAction JS component is used by the TwoStepMassAction component.
 
 ####PHP Implementation of TreeMassAction
 
@@ -505,7 +507,7 @@ Dependency on the following component:
 
 The following options are available:
 
-* noItemsMsg - message which will be show if user tries to apply action without any selected items
+* noItemsMsg - message which will be shown if user tries to apply action without any selected items
 * selectProvider - option which defines the component with selections data
 * actions - array which contains initially available actions
 
@@ -934,7 +936,16 @@ The configuration of the component can include:
     
   * bulkConfig - in current implementation on cms_pages, includes Bulk Edit component as a plugin
     
-  * clientConfig - is responsible for editor communication with backend
+  * clientConfig - is responsible for editor communication with backend. Contains nodes with url's where requests for storing and validating data are sent:
+
+    {% highlight XML%}
+    <item name="clientConfig" xsi:type="array">
+        <item name="saveUrl" xsi:type="string">cms/page/inlineEdit</item>
+        <item name="validateUrl" xsi:type="string">/path/to</item>
+        <item name="validateBeforeSave" xsi:type="boolean">false</item>
+    </item>
+    {% endhighlight%}
+
     
   * viewConfig - is responsible for editor UI
     
@@ -1482,4 +1493,4 @@ This topic is planned for the near future.
         </argument>
     </bookmark>
 </components>
-{% endhighlight %}
+{% endhighlight %}    

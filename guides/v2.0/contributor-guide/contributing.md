@@ -41,6 +41,10 @@ The Magento 2 development team reviews all issues and contributions submitted by
 
 Often when the Magento 2 team works on reviewing the suggested changes, we will add a label to the issue to indicate to our internal team certain information, like status or who is working the issue. If you're ever curious what the different labels mean, see the <a href="#labels">table</a> below for an explanation of each one.
 
+<div class="bs-callout bs-callout-info" id="info">
+<p>Please refer to <a href="http://www.magento.com/legaldocuments/mca">Magento Contributor Agreement</a> for detailed information about the License Agreement. All contributors are required to submit a click-through form to agree to the terms. </p>
+</div>
+
 <h2 id="requirements">Contribution requirements</h2>
 
 1. Contributions must adhere to <a href="{{ site.gdeurl }}coding-standards/bk-coding-standards.html" target="_blank">Magento coding standards</a>.

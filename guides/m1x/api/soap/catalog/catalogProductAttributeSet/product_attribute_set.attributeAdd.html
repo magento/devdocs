@@ -1,0 +1,163 @@
+<?php
+    $title = 'Magento API - SOAP - product_attribute_set.attributeAdd';
+    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
+?>
+
+				    <h3><a name="product_attribute_set.attributeAdd-Module%3AProductAttributeSetAPI"></a>Module: Product Attribute Set API</h3>
+
+<h4><a name="product_attribute_set.attributeAdd-Resource%3Aproductattributeset"></a>Resource: product_attribute_set</h4>
+
+
+<h5><a name="product_attribute_set.attributeAdd-Method%3A"></a>Method:</h5>
+
+<ul>
+	<li>product_attribute_set.attributeAdd (SOAP V1)</li>
+	<li>catalogProductAttributeSetAttributeAdd (SOAP V2)</li>
+</ul>
+
+
+<p>Allows you to add an existing attribute to an attribute set.</p>
+
+<p><b>Arguments:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> attributeId </td>
+<td class='confluenceTd'> Attribute ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> attributeSetId </td>
+<td class='confluenceTd'> Attribute set ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> attributeGroupId </td>
+<td class='confluenceTd'> Group ID (optional) </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> sortOrder </td>
+<td class='confluenceTd'> Sort order (optional) </td>
+</tr>
+</tbody></table>
+</div>
+
+<p><b>Note</b>: If the <em>attributeGroupId</em> parameter is not passed, the attribute is added to the <em>General</em> group by default.</p>
+
+<p><b>Returns:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> boolean </td>
+<td class='confluenceTd'> isAdded </td>
+<td class='confluenceTd'> True if the attribute is added to an attribute set </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Faults:</b></p>
+
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Fault Code </th>
+<th class='confluenceTh'> Fault Message </th>
+</tr>
+<tr>
+<td class='confluenceTd'> 104 </td>
+<td class='confluenceTd'> Attribute set with requested id does not exist. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 106 </td>
+<td class='confluenceTd'> Attribute with requested id does not exist. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 107 </td>
+<td class='confluenceTd'> Error while adding attribute to attribute set. Details in error message. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 108 </td>
+<td class='confluenceTd'> Attribute group with requested id does not exist. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 109 </td>
+<td class='confluenceTd'> Requested attribute is already in requested attribute set. </td>
+</tr>
+</tbody></table>
+</div>
+
+
+
+<h4><a name="product_attribute_set.attributeAdd-Examples"></a>Examples</h4>
+
+<h5><a name="product_attribute_set.attributeAdd-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/soap/?wsdl');
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey');
+
+$setId = 5;
+$attributeId = 83;
+
+$result = $proxy-&gt;call(
+    $sessionId,
+    "product_attribute_set.attributeAdd",
+    array(
+         $attributeId,
+         $setId
+    )
+);</pre>
+		</div>
+</div></div>
+
+<h5><a name="product_attribute_set.attributeAdd-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl');
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey');
+
+$setId = 5;
+$attributeId = 83;
+
+$result = $proxy-&gt;catalogProductAttributeSetAttributeAdd(
+    $sessionId,
+    $attributeId,
+    $setId
+);</pre>
+		</div>
+</div></div>
+
+<h5><a name="product_attribute_set.attributeAdd-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl');
+
+$sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey'));
+
+$result = $proxy-&gt;catalogProductAttributeSetAttributeAdd((object)array('sessionId' =&gt; $sessionId-&gt;result, 'attributeId' =&gt; '5', 'attributeSetId' =&gt; '83'));
+var_dump($result-&gt;result);</pre>
+		</div>
+</div></div>
+
+<?php include(__ROOT__ . 'footer.php'); ?>

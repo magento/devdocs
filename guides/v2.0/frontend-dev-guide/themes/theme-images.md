@@ -226,3 +226,12 @@ The color for the images background. Not applied to images with transparency, if
 </tbody>
 </table>
 
+####Catalog image resize command
+
+The Magento_Catalog module provides Magento CLI command for resize all product images. Resized images are stored in `/pub/media/catalog/product/cache` directory.
+
+The catalog:images:resize command has no options or arguments. 
+
+Basic syntax:
+
+`bin/magento catalog:images:resize`

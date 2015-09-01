@@ -1,0 +1,254 @@
+<?php
+    $title = 'Magento API - SOAP - giftcard_account.info';
+    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
+?>
+
+				    <h3><a name="giftcard_account.info-Module%3AGiftCardAPI"></a>Module: GiftCard API</h3>
+
+<h4><a name="giftcard_account.info-Resource%3Agiftcardaccount"></a>Resource: giftcard_account</h4>
+
+
+<h5><a name="giftcard_account.info-Method%3A"></a>Method:</h5>
+
+<ul>
+	<li>giftcard_account.info (SOAP V1)</li>
+	<li>giftcardAccountInfo (SOAP V2)</li>
+</ul>
+
+
+<p>Allows you to receive full information about the selected gift card account.</p>
+
+<p><b>Arguments:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> giftcardAccountId </td>
+<td class='confluenceTd'> Gift card account ID </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Return:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> result </td>
+<td class='confluenceTd'> Array of giftcardAccountEntity </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>giftcardAccountEntity</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> giftcard_id </td>
+<td class='confluenceTd'> Gift card account ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> code <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Gift card account code </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> store_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Gift card account store ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> date_created <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Creation date in the&nbsp;YYYY-MM-DD format </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> expire_date <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Expiration date in the&nbsp;YYYY-MM-DD format </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> is_active <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Defines whether the gift card account is active </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> is_redeemable <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Defines whether the gift card account is redeemable </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> status <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Gift card account status </td>
+</tr>
+<tr>
+<td class='confluenceTd'> double </td>
+<td class='confluenceTd'> balance <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Gift card account initial balance </td>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> history <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Array of&nbsp;giftcardAccountEntityHistory </td>
+</tr>
+</tbody></table>
+</div>
+
+<p>The&nbsp;<b>giftcardAccountEntityHistory</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> record_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Record ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> date <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Date </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> action <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> History action <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> double </td>
+<td class='confluenceTd'> balance_delta <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Balance delta </td>
+</tr>
+<tr>
+<td class='confluenceTd'> double </td>
+<td class='confluenceTd'> balance <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Balance </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> info <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Record comment <br class="atl-forced-newline" /> </td>
+</tr>
+</tbody></table>
+</div>
+
+<p><b>Faults:</b></p>
+
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Fault Code </th>
+<th class='confluenceTh'> Fault Message </th>
+</tr>
+<tr>
+<td class='confluenceTd'> 100 </td>
+<td class='confluenceTd'> Gift card does not exists. </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<h4><a name="giftcard_account.info-Examples"></a>Examples</h4>
+
+<h5><a name="giftcard_account.info-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/soap/?wsdl');
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey');
+
+$giftcardId = 1;
+$giftcardInfo = $proxy-&gt;call(
+    $sessionId,
+    "giftcard_account.info",
+    array(
+         $giftcardId
+    )
+);</pre>
+		</div>
+</div></div>
+
+<h5><a name="giftcard_account.info-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); // TODO : change url
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey'); // TODO : change login and pwd if necessary
+
+$result = $proxy-&gt;giftcardAccountInfo($sessionId, '1');
+var_dump($result);</pre>
+		</div>
+</div></div>
+
+
+
+<h5><a name="giftcard_account.info-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); 
+
+$sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey')); 
+ 
+$result = $proxy-&gt;giftcardAccountInfo((object)array('sessionId' =&gt; $sessionId-&gt;result, 'giftcardAccountId' =&gt; '1'));   
+
+var_dump($result-&gt;result);</pre>
+		</div>
+</div></div>
+
+
+<h5><a name="giftcard_account.info-ResponseExampleSOAPV1"></a>Response Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">array
+  'giftcard_id' =&gt; string '1' (length=1)
+  'code' =&gt; string '02DQ9T1K0Y0V' (length=12)
+  'store_id' =&gt; string '0' (length=1)
+  'date_created' =&gt; string '2012-04-06' (length=10)
+  'expire_date' =&gt; null
+  'is_active' =&gt; string '0' (length=1)
+  'status' =&gt; string 'Available' (length=9)
+  'balance' =&gt; string '0.0000' (length=6)
+  'is_redeemable' =&gt; string '1' (length=1)
+  'history' =&gt;
+    array
+      0 =&gt;
+        array
+          'record_id' =&gt; string '1' (length=1)
+          'date' =&gt; string '2012-04-06 14:31:57' (length=19)
+          'action' =&gt; string 'Created' (length=7)
+          'balance_delta' =&gt; string '0.0000' (length=6)
+          'balance' =&gt; string '0.0000' (length=6)
+          'info' =&gt; null</pre>
+		</div>
+</div></div>
+
+<?php include(__ROOT__ . 'footer.php'); ?>

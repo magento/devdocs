@@ -1,0 +1,348 @@
+---
+layout: m1x
+title: Category Info
+---
+<p><a href="{{ site.m1xgithuburl }}api/soap/catalog/catalogCategory/catalog_category.info.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}common/images/github_icon.png" height="15px"></a></p>
+
+
+<h2><a name="catalog_category.info-Module%3AMageCatalog"></a>Module: Mage_Catalog</h2>
+
+<p>The Mage_Catalog module allows you to manage categories and products.</p>
+
+<h4><a name="catalog_category.info-ResourceName%3Acatalogcategory"></a>Resource Name: catalog_category</h4>
+
+<p><b>Aliases:</b></p>
+<ul>
+	<li>category</li>
+</ul>
+
+
+<h5><a name="catalog_category.info-Method%3A"></a>Method:</h5>
+
+<ul>
+	<li>catalog_category.info (SOAP V1)</li>
+	<li>catalogCategoryInfo (SOAP V2)</li>
+</ul>
+
+
+<p>Allows you to retrieve information about the required category.</p>
+
+<p><b>Aliases:</b></p>
+<ul>
+	<li>category.info</li>
+</ul>
+
+
+
+<p><b>Arguments:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> categoryId </td>
+<td class='confluenceTd'> Category ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> storeView </td>
+<td class='confluenceTd'> Store view ID or code (optional) </td>
+</tr>
+<tr>
+<td class='confluenceTd'> ArrayOfString </td>
+<td class='confluenceTd'> attributes </td>
+<td class='confluenceTd'> Array of attributes (optional) </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Returns</b>:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> info </td>
+<td class='confluenceTd'> Array of catalogCategoryInfo </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>catalogCategoryInfo</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> category_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Category ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> is_active <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Defines whether the category is active </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> position <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Category position </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> level <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Category level </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> parent_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Parent category ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> all_children <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> All child categories of the current category </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> children <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Names of direct child categories </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> created_at <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Date when the category was created </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> updated_at <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Date when the category was updated </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> name <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Category name </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> url_key <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> A relative URL path which can be entered in place of the standard target path (optional) <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> description <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Category description </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> meta_title <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Category meta title </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> meta_keywords <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Category meta keywords </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> meta_description <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Category meta description </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> path <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Path </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> url_path <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> URL path </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> children_count <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Number of child categories </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> display_mode <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Content that will be displayed on the category view page (optional) <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> is_anchor <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Defines whether the category is anchored </td>
+</tr>
+<tr>
+<td class='confluenceTd'> ArrayOfString </td>
+<td class='confluenceTd'> available_sort_by <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> All available options by which products in the category can be sorted <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> custom_design <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> The custom design for the category (optional) <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> custom_apply_to_products&nbsp; <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Apply the custom design to all products assigned to the category (optional) <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> custom_design_from <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Date starting from which the custom design will be applied to the category (optional) <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> custom_design_to <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Date till which the custom design will be applied to the category (optional) <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> page_layout <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Type of page layout that the category should use (optional) <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> custom_layout_update <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Custom layout update (optional) <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> default_sort_by <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> The default option by which products in the category are sorted <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> landing_page <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Landing page (optional) <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> include_in_menu <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Defines whether the category is available on the Magento top menu bar <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> filter_price_range <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Price range of each price level displayed in the layered navigation block <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> custom_use_parent_settings <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Defines whether the category will inherit custom design settings of the category to which it is assigned. 1 - Yes, 0 - No <br class="atl-forced-newline" /> </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<h4><a name="catalog_category.info-Examples"></a>Examples</h4>
+
+<h5><a name="catalog_category.info-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/api/soap/?wsdl');
+
+// If somestuff requires api authentification,
+// then get a session token
+$session = $client-&gt;login('apiUser', 'apiKey');
+
+$result = $client-&gt;call($session, 'catalog_category.info', '5');
+var_dump($result);
+
+// If you don't need the session anymore
+//$client-&gt;endSession($session);</pre>
+		</div>
+</div></div>
+
+
+<h5><a name="catalog_category.info-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); // TODO : change url
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey'); // TODO : change login and pwd if necessary
+
+$result = $proxy-&gt;catalogCategoryInfo($sessionId, '5');
+var_dump($result);</pre>
+		</div>
+</div></div>
+
+<h5><a name="catalog_category.info-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl');
+
+$sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey'));
+
+$result = $proxy-&gt;catalogCategoryInfo((object)array('sessionId' =&gt; $sessionId-&gt;result, 'categoryId' =&gt; '5'));
+var_dump($result-&gt;result);</pre>
+		</div>
+</div></div>
+
+<h5><a name="catalog_category.info-ResponseExampleSOAPV1"></a>Response Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: java; gutter: false">array
+  'category_id' =&gt; string '5' (length=1)
+  'is_active' =&gt; string '1' (length=1)
+  'position' =&gt; string '1' (length=1)
+  'level' =&gt; string '2' (length=1)
+  'parent_id' =&gt; int 3
+  'increment_id' =&gt; null
+  'created_at' =&gt; string '2012-03-29 12:30:51' (length=19)
+  'updated_at' =&gt; string '2012-03-29 14:25:08' (length=19)
+  'name' =&gt; string 'Mobile Phones' (length=13)
+  'url_key' =&gt; string 'mobile-phones' (length=13)
+  'thumbnail' =&gt; null
+  'description' =&gt; string 'Category for cell phones' (length=24)
+  'image' =&gt; null
+  'meta_title' =&gt; string 'Cell Phones' (length=11)
+  'meta_keywords' =&gt; string 'cell, phone' (length=11)
+  'meta_description' =&gt; null
+  'include_in_menu' =&gt; string '1' (length=1)
+  'path' =&gt; string '1/3/4' (length=5)
+  'all_children' =&gt; string '4' (length=1)
+  'path_in_store' =&gt; null
+  'children' =&gt; string '' (length=0)
+  'url_path' =&gt; string 'mobile-phones.html' (length=18)
+  'children_count' =&gt; string '0' (length=1)
+  'display_mode' =&gt; string 'PRODUCTS' (length=8)
+  'landing_page' =&gt; null
+  'is_anchor' =&gt; string '1' (length=1)
+  'available_sort_by' =&gt; null
+  'default_sort_by' =&gt; null
+  'filter_price_range' =&gt; null
+  'custom_use_parent_settings' =&gt; string '1' (length=1)
+  'custom_apply_to_products' =&gt; null
+  'custom_design' =&gt; null
+  'custom_design_from' =&gt; null
+  'custom_design_to' =&gt; null
+  'page_layout' =&gt; null
+  'custom_layout_update' =&gt; null</pre>
+		</div>
+</div></div>
+
+<?php include(__ROOT__ . 'footer.php'); ?>

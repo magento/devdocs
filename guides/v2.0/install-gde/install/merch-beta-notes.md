@@ -15,7 +15,7 @@ We want you to be aware of the following important notes about the Merchant Beta
 *	<a href="#merchbeta-cache">You might need to clear your local Composer cache</a>
 
 
-<h2 id="merchbeta-inst">You must uninstall and reinstall the Magento software</a>
+<h2 id="merchbeta-inst">You must uninstall and reinstall the Magento software</h2>
 {% include install/schema-change_merchbeta.html %}
 
 <h2 id="merchbeta-cache">You might need to clear your local Composer cache</h2>

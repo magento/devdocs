@@ -1,0 +1,215 @@
+<?php
+    $title = 'Magento API - SOAP - product_attribute.addOption';
+    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
+?>
+				    
+				    <h3><a name="product_attribute.addOption-Module%3AProductAttributesAPI"></a>Module: Product Attributes API</h3>
+
+<h4><a name="product_attribute.addOption-Resource%3Aproductattribute"></a>Resource: product_attribute</h4>
+
+
+<h5><a name="product_attribute.addOption-Method%3A"></a>Method:</h5>
+
+<ul>
+	<li>product_attribute.addOption (SOAP V1)</li>
+	<li>catalogProductAttributeAddOption (SOAP V2)</li>
+</ul>
+
+
+<p>Allows you to add a new option for attributes with selectable fields.</p>
+
+<p><b>Arguments:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> attribute <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Attribute code or ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> data </td>
+<td class='confluenceTd'> Array of catalogProductAttributeOptionEntityToAdd </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Return:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> boolean </td>
+<td class='confluenceTd'> result </td>
+<td class='confluenceTd'> True on success </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>catalogProductAttributeOptionEntityToAdd</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> label </td>
+<td class='confluenceTd'> Array of catalogProductAttributeOptionLabel </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> order </td>
+<td class='confluenceTd'> Option order </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> is_default </td>
+<td class='confluenceTd'> Defines whether the option is a default one </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>catalogProductAttributeOptionLabel</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> ArrayOfString </td>
+<td class='confluenceTd'> store_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Array of store view IDs </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> value <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Text label </td>
+</tr>
+</tbody></table>
+</div>
+
+<p><b>Faults:</b></p>
+
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Fault Code </th>
+<th class='confluenceTh'> Fault Message </th>
+</tr>
+<tr>
+<td class='confluenceTd'> 101 </td>
+<td class='confluenceTd'> Requested attribute not found. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 104 </td>
+<td class='confluenceTd'> Incorrect attribute type. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 108 </td>
+<td class='confluenceTd'> Unable to add option. </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<h4><a name="product_attribute.addOption-Examples"></a>Examples</h4>
+
+<h5><a name="product_attribute.addOption-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/soap/?wsdl');
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey');
+
+$attributeCode = "new_attribute";
+$optionToAdd = array(
+    "label" =&gt; array(
+        array(
+            "store_id" =&gt; 0,
+            "value" =&gt; "New Option"
+        )
+    ),
+    "order" =&gt; 0,
+    "is_default" =&gt; 0
+);
+
+$result = $proxy-&gt;call(
+    $sessionId,
+    "product_attribute.addOption",
+    array(
+         $attributeCode,
+         $optionToAdd
+    )
+);</pre>
+		</div>
+</div></div>
+
+<h5><a name="product_attribute.addOption-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">&lt;?php
+$client = new SoapClient('http://magentohost/api/v2_soap/?wsdl');
+
+//V2
+$session = $client-&gt;login('apiUser', 'apiKey');
+
+// V2 WS-I Mode
+//$response = $client-&gt;login(array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey'));
+//$session = $response-&gt;result;
+
+$attributeCode = "new_attribute";
+
+//v2
+
+$label = array (
+   array(
+    "store_id" =&gt; array("0"),
+    "value" =&gt; "some random data"
+   )
+  );
+
+$data = array(
+   "label" =&gt; $label,
+   "order" =&gt; "10",
+   "is_default" =&gt; "1"
+  );
+
+$orders = $client-&gt;catalogProductAttributeAddOption($session, $attributeCode, $data); 
+
+
+
+//V2 WSI
+//WSDL WSI does not describe this method
+//$result = $client-&gt;catalogProductAttributeAddOption(...);
+//$orders = $result-&gt;result-&gt;complexObjectArray;
+
+var_dump ($orders);
+?&gt;</pre>
+		</div>
+</div></div>
+
+				    
+<?php include(__ROOT__ . 'footer.php'); ?>                    			    
