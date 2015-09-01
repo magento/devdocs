@@ -1,6 +1,6 @@
 ---
 layout: default
-group: config-topic
+group: config-guide
 subgroup: Solr
 title: Install and configure Solr
 menu_title: Install and configure Solr
@@ -208,33 +208,46 @@ To install the Java 6 SDK, enter the following command as a user with <tt>root</
 To install Java 7, enter the following command as a user with <tt>root</tt> privileges:
 
 <pre>apt-get install openjdk-7-jdk</pre>
-<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Java version 7 might not be available for all operating systems. For example, you can search the list of available packages for Ubuntu <a href="http://packages.ubuntu.com/" target="_blank">here</a>.</div>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Java version 7 might not be available for all operating systems. For example, you can search the list of available packages for Ubuntu <a href="http://packages.ubuntu.com/" target="_blank">here</a>.</p>
+</div>
 
 <h3 id="install-prereq-solr">Install Solr 4 and Jetty</h3>
 The Apache Solr package installs both Solr and Jetty. If Jetty is already installed, see the <a href="http://wiki.apache.org/solr/SolrJetty" target="_blank">Solr with Jetty Wiki</a> for more information.
 
-<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Tomcat is also a supported servlet container for Solr but discussing how to set up Tomcat with Solr is beyond the scope of this topic. For more information, see the <a href="http://wiki.apache.org/solr/SolrTomcat" target="_blank">Solr With Tomcat Wiki</a>.</div>
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Tomcat is also a supported servlet container for Solr but discussing how to set up Tomcat with Solr is beyond the scope of this topic. For more information, see the <a href="http://wiki.apache.org/solr/SolrTomcat" target="_blank">Solr With Tomcat Wiki</a>.</p>
+</div>
+
 To install Solr and Jetty:
 
-<ol>*	As a user with <tt>root</tt> privileges, use <tt>wget</tt> or a similar command to download the latest version of Solr 4 to an empty directory such as <tt>/etc/solr</tt>. An example follows.
-  cd <em>empty-directory</em>
-  wget http://www.trieuvan.com/apache/lucene/solr/4.10.4/solr-4.10.4.tgz
+1.  As a user with <tt>root</tt> privileges, use <tt>wget</tt> or a similar command to download the latest version of Solr 4 to an empty directory such as <tt>/etc/solr</tt>. 
 
-Messages similar to the following display to confirm a successful download.
-  wget http://www.trieuvan.com/apache/lucene/solr/4.10.4/solr-4.10.4.tgz
-  --2015-07-11 14:39:05--  http://www.trieuvan.com/apache/lucene/solr/4.10.4/solr-4.10.4.tgz
-  Resolving www.trieuvan.com... 66.201.46.168
-  Connecting to www.trieuvan.com|66.201.46.168|:80... connected.
-  HTTP request sent, awaiting response... 200 OK
-  Length: 35866329 (34M) [application/x-gzip]
-  Saving to: “solr-4.10.4.tgz”
+    An example follows.
 
-  100%[==============================================================================================>] 35,866,329  8.63M/s   in 4.3s
+        mkdir -p <em>empty-directory</em>  
+        cd <em>directory</em>
+        wget http://www.trieuvan.com/apache/lucene/solr/4.10.4/solr-4.10.4.tgz
 
-  2015-07-11 14:39:09 (8.04 MB/s) - "solr-4.10.4.tgz" saved [35866329/35866329]
-*	Unpack the Solr installation; an example follows.<br><br>
-  tar -xvf solr-4.10.4.tgz
-*	Continue with the next section.</ol>
+    Messages similar to the following display to confirm a successful download.
+
+        wget http://www.trieuvan.com/apache/lucene/solr/4.10.4/solr-4.10.4.tgz
+        --2015-07-11 14:39:05--  http://www.trieuvan.com/apache/lucene/solr/4.10.4/solr-4.10.4.tgz
+        Resolving www.trieuvan.com... 66.201.46.168
+        Connecting to www.trieuvan.com|66.201.46.168|:80... connected.
+        HTTP request sent, awaiting response... 200 OK
+        Length: 35866329 (34M) [application/x-gzip]
+        Saving to: “solr-4.10.4.tgz”
+
+        100%[==============================================================================================>] 35,866,329  8.63M/s   in 4.3s
+        2015-07-11 14:39:09 (8.04 MB/s) - "solr-4.10.4.tgz" saved [35866329/35866329]0
+
+2.  Unpack the Solr installation; an example follows.
+
+        tar -xvf solr-4.10.4.tgz
+
+3.  Continue with the next section.
 
 <h2 id="config-solr">Configuring Solr to Work With Magento</h2>
 The following topics discuss how to configure Solr to work with Magento EE:
@@ -245,17 +258,20 @@ The following topics discuss how to configure Solr to work with Magento EE:
 <h3 id="config-solr-copy-config-files">Copying the Magento Solr Configuration and Starting Solr
 Magento comes packaged with a sample Solr configuration you can use and customize. To get started, you'll copy the Magento configuration to Solr, replacing any existing files. After that you can start Solr and begin configuring Magento to work with it.
 
-<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: The example Solr configuration is <em>not</em> intended to be used in a production site. It's for testing and development only. It's simple to use which makes it a great way for you to learn more about Solr.</div>
-To copy the Magento Solr configuration:
+<div class="bs-callout bs-callout-info" id="info">
+  <p>The example Solr configuration is <em>not</em> intended to be used in a production site. It's for testing and development only. It's simple to use which makes it a great way for you to learn more about Solr.</p>
+</div>
 
-<ol>*	As a user with <tt>root</tt> privileges, enter the following commands in the order shown to copy over the Solr configuration with the one packaged with Magento EE:<br><br>
-    cd <your Solr install dir>/example/solr
-    mkdir -p magento2/conf magento2/data
-    cd magento2/conf
-    cp -R ../../collection1/conf .
-    cp <your Magento EE install dir>/app/code/Magento/Solr/conf/* .
+As a user with <tt>root</tt> privileges, enter the following commands in the order shown to copy over the Solr configuration with the one packaged with Magento EE:
+
+  cd <your Solr install dir>/example/solr
+  mkdir -p magento2/conf magento2/data
+  cd magento2/conf
+  cp -R ../../collection1/conf .
+  cp <your Magento EE install dir>/app/code/Magento/Solr/conf/* .
 
 For example, if Solr is installed in <tt>/etc/solr/solr-4.10.4</tt> and Magento EE is installed in <tt>/var/www/magento/html/magento2ee</tt>, enter:
+
   cd /etc/solr/solr-4.10.4/solr/example/solr/magento/conf
   cp /var/www/html/magento2ee/app/code/Magento/Solr/conf/* .
 
