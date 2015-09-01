@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Installation dependencies not met</title>
+	<title>MassAction Component</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/install-gde/trouble/tshoot_install_depend.html">
+	<link rel="canonical" href="//guides/v2.0/ui-library/ui-secondary-massaction.html">
 
 
 
@@ -154,9 +154,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Installation dependencies not met</h1>
+		<h1 class="page-heading">MassAction Component</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/install-gde/trouble/tshoot_install_depend.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/uilibrary/ui-secondary-massaction.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -165,42 +165,134 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="trouble-install-depend">Installation dependencies not met</h2>
+		<h3 id="massaction">UI Library MassAction Component</h3>
 
-<h3 id="details">Details</h3>
+<h3 id="massaction-js-component-structure">MassAction JS component structure</h3>
 
-<p>Errors similar to the following display when you run the installer:</p>
+<p>MassActions component adds ability to be selectable (by attaching it’s template to each item in Listing) to items in Listing and creates actions to perform with selected items (for example: ‘Delete’, ‘Update attributes’ and so on).</p>
 
-<pre> Magento\Framework\Exception
- Command returned non-zero exit code:
-`/usr/bin/php5 -f '/var/www/magento2/dev/shell/run_data_fixtures.php' -- --bootstrap='MAGE_DIRS[base][path]=/var/www/magento2' 2&gt;&amp;1`
+<p>“Select all” functionality is improved in Magento 2. Instead of creating a list of all selected items they are now flagged and list is created only for excluded elements.</p>
 
-[other errors]
+<h4 id="component-elements-classes-files">Component Elements (classes, files)</h4>
 
-Exception
- PHP Fatal error:  Class 'Magento\Framework\Stdlib\DateTime\TimezoneInterface' not found in /var/www/magento2/app/bootstrap.php on line 56</pre>
+<p>The following are the component elements:</p>
 
-<pre>Dependencies not installed. Please run 'composer install' under /setup directory.</pre>
+<ul>
+  <li>Constructor <code>app\code\Magento\Ui\view\base\web\js\grid\massactions.js</code></li>
+  <li>Template: <code>app\code\Magento\Ui\view\base\web\templates\grid\actions.html</code></li>
+</ul>
 
-<pre>Whoops, it looks like setup tool dependencies are not installed.</pre>
+<h4 id="dependencies-on-other-components">Dependencies on Other Components</h4>
 
-<pre>`/usr/bin/php -f '/var/www/html/magento2/dev/shell/run_data_fixtures.php' -- --bootstrap='MAGE_DIRS[base][path]=/var/www/html/magento2' 2&gt;&amp;1`</pre>
-<pre> Exception
- PHP Fatal error:  Class 'Magento\Framework\Stdlib\DateTime\TimezoneInterface' not found in /var/www/html/magento2/app/bootstrap.php on line 56</pre>
+<p>Dependency on the following components:</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>If the web installer stops, informs you that the installation is incomplete, but does not display an error in the console log, the likely cause is you did not run `composer install` from the `<your magento="" install="" dir="">/setup` directory. The web installer message is <code>Installation is incomplete. Check the console log for errors before trying again.</code>
+<ul>
+  <li>Collapsible: <code>app\code\Magento\Ui\view\base\web\js\lib\collapsible.js</code></li>
+  <li>Modal window with confirmation: <code>app\code\Magento\Ui\view\base\web\js\modal\confirm.js</code></li>
+  <li>Modal window with alert: <code>app\code\Magento\Ui\view\base\web\js\modal\alert.js</code></li>
+</ul>
 
- 
-### Description
+<h4 id="component-options">Component Options</h4>
 
-You must run `composer install` from *both* the `<your magento="" install="" dir="">` and `<your magento="" install="" dir="">/setup` directories before installer.
+<p>The following options are available:</p>
 
-### Suggestion
+<ul>
+  <li>noItemsMsg - message that is displayed if user tries to apply action without any selected items</li>
+  <li>selectProvider - option that defines the component with selections data</li>
+  <li>actions - array that contains initially available actions</li>
+</ul>
 
-<a href="/guides/v2.0/install-gde/install/prepare-install.html">Run composer install</a> from both of the preceding directories and try the installation again.
-</your></your></your></p></span></div>
+<h5>Methods and Events</h5>
+
+<p>The following API methods are available:</p>
+
+<ul>
+  <li>getAction - returns action instance found by the provided identifier</li>
+  <li>addAction - adds new action to the actions</li>
+  <li>applyAction - applies specified as identifier action</li>
+  <li>getSelections - returns object with current selections</li>
+</ul>
+
+<h4 id="example-of-configuration-modifications">Example of configuration modifications:</h4>
+
+<ul>
+  <li>Redefining the link to the template</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">massaction</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;listing_massaction&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;data&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
+        <span class="p">...</span>
+        <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;config&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;template&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="o">&gt;</span><span class="nx">product</span><span class="o">/</span><span class="nx">grid</span><span class="o">/</span><span class="nx">columns</span><span class="o">/</span><span class="nx">massactions</span><span class="o">&lt;</span><span class="err">/item&gt;</span>
+        <span class="o">&lt;</span><span class="err">/item&gt;</span>
+    <span class="o">&lt;</span><span class="err">/argument&gt;</span>
+<span class="o">&lt;</span><span class="err">/massaction&gt;</span></code></pre></div>
+
+<ul>
+  <li>Specifying action with confirmation</li>
+</ul>
+
+<pre>
+&lt;massaction name="listing_massaction"&gt;
+    &lt;argument name="data" xsi:type="array"&gt;
+        ...
+        &lt;item name="config" xsi:type="array"&gt;
+            &lt;item name="actions" xsi:type="array"&gt;
+                &lt;item name="edit" xsi:type="array"&gt;
+                    &lt;item name="type" xsi:type="string"&gt;edit&lt;/item&gt;
+                    &lt;item name="label" xsi:type="string" translate="true"&gt;Edit&lt;/item&gt;
+                    &lt;item name="confirm" xsi:type="array"&gt;
+                        &lt;item name="title" xsi:type="string" translate="true"&gt;Edit items&lt;/item&gt;
+                        &lt;item name="message" xsi:type="string" translate="true"&gt;Are you sure you wan't to edit selected items?&lt;/item&gt;
+                    &lt;/item&gt;
+                &lt;/item&gt;
+            &lt;/item&gt;
+        &lt;/item&gt;
+    &lt;/argument&gt;
+&lt;/massaction&gt;
+</pre>
+
+<ul>
+  <li>Action with a custom callback</li>
+</ul>
+
+<p>Callback is provided by another component.</p>
+
+<pre>
+&lt;massaction name="listing_massaction"&gt;
+    &lt;argument name="data" xsi:type="array"&gt;
+        ...
+        &lt;item name="config" xsi:type="array"&gt;
+            &lt;item name="actions" xsi:type="array"&gt;
+                &lt;item name="edit" xsi:type="array"&gt;
+                    &lt;item name="type" xsi:type="string"&gt;edit&lt;/item&gt;
+                    &lt;item name="label" xsi:type="string" translate="true"&gt;Edit&lt;/item&gt;
+                    &lt;item name="callback" xsi:type="array"&gt;
+                        &lt;item name="provider" xsi:type="string"&gt;cms_page_listing.inline_editing&lt;/item&gt;
+                        &lt;item name="target" xsi:type="string"&gt;startEdit&lt;/item&gt;
+                    &lt;/item&gt;
+                &lt;/item&gt;
+            &lt;/item&gt;
+        &lt;/item&gt;
+    &lt;/argument&gt;
+&lt;/massaction&gt;
+</pre>
+
+<ul>
+  <li>Instance replacement: one instance of a component</li>
+</ul>
+
+<p>Redefine link to constructor.</p>
+
+<pre>
+&lt;massaction name="listing_massaction"&gt;
+    &lt;argument name="data" xsi:type="array"&gt;
+        &lt;item name="js_config" xsi:type="array"&gt;
+            &lt;item name="component" xsi:type="string"&gt;Magento_Products/js/grid/massactions&lt;/item&gt;
+        &lt;/item&gt;
+    &lt;/argument&gt;
+&lt;/massaction&gt;
+</pre>
 
 
 		</div>
@@ -310,14 +402,6 @@ You must run `composer install` from *both* the `<your magento="" install="" dir
 			
 				
 				
-			
-			
-				
-				
-			
-			
-				
-				
 					
 					
 					
@@ -333,7 +417,7 @@ You must run `composer install` from *both* the `<your magento="" install="" dir
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/trouble/tshoot.html">Troubleshooting suggestions</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/ui-library/overview.html">Overview</a></li>
 									
 								
 								
@@ -358,179 +442,7 @@ You must run `composer install` from *both* the `<your magento="" install="" dir
 							
 								
 								
-								
-								
-							
-									<li class=""><span class="nav-header">Access issues</span></li>
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_access-browser.html">Cannot access Magento software in a web browser</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_mod_access_compat.html">503 (Service Unavailable) errors accessing Magento software in a web browser</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_exceptions.html">Exceptions during installation</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_admin.html">Error after logging in to the Magento Admin</a></li>
-						
-								
-							
-									<li class="level-2  active "><a href="/guides/v2.0/install-gde/trouble/tshoot_install_depend.html">Installation dependencies not met</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-								
-								
-							
-									<li class=""><span class="nav-header">Errors during installation</span></li>
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_pdo.html">During installation, fatal PDO error displays</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_wrong-mysql.html">During installation, Reflection Exception error</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_install-log.html">Installation fails; cannot create install.log</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_sample-data.html">Errors installing optional sample data</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_xdebug.html">During installation, xdebug maximum function nesting level error</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-								
-								
-							
-									<li class=""><span class="nav-header">GitHub issues</span></li>
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/git/tshoot_git-pull-origin.html">git pull origin develop fails when updating the Magento software</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/git/tshoot_clone.html">Cannot clone the Magento GitHub repository</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/git/tshoot_rate-limit.html">GitHub API rate limit</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-								
-								
-							
-									<li class=""><span class="nav-header">PHP issues</span></li>
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_php-set.html">PHP settings errors</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_mcrypt.html">The PHP mcrypt extension is not installed properly</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_php-date.html">During installation, PHP date warning</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/trouble/tshoot_other.html">Other issues</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/ui-library/ui-listing-grid.html">Listing/Grid Component</a></li>
 									
 								
 								
@@ -539,16 +451,173 @@ You must run `composer install` from *both* the `<your magento="" install="" dir
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_composer-install.html">Cannot run 'composer install'</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/ui-library/ui-listing-grid-search.html">Grid search indexing</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/ui-library/ui-library-secondary.html">Listing/Grid Secondary Components</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/ui-library/ui-secondary-filter.html">Filter Component</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_mysql_table-open-cache.html">Error 'MySQL server has gone away' during installation</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/ui-library/ui-secondary-pagination.html">Pagination Component</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_phpini.html">SQLSTATE[HY000] [2002] No such file or directory</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/ui-library/ui-secondary-massaction.html">MassAction Component</a></li>
 						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/ui-library/ui-secondary-treemass.html">TreeMassAction Component</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/ui-library/ui-secondary-column.html">Column Component</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/ui-library/ui-secondary-uiselect.html">UI-select Component</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/ui-library/ui-secondary-multi.html">Multiselect Component</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/ui-library/ui-secondary-inline.html">Inline Edit Component</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/ui-library/ui-secondary-bookmark.html">Bookmark Component</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/ui-library/ui-secondary-resize.html">Resize Component</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/ui-library/ui-form.html">Form Component</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/ui-library/ui-export.html">Export Button Component</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/ui-library/ui-container.html">Container Component</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/ui-library/ui-definition.html">definition.xml</a></li>
+									
+								
+								
+								
+							
+								
 								
 								
 								
@@ -559,6 +628,14 @@ You must run `composer install` from *both* the `<your magento="" install="" dir
 					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			
@@ -645,8 +722,8 @@ You must run `composer install` from *both* the `<your magento="" install="" dir
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/install-gde/trouble/tshoot_install_depend.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/install-gde/trouble/tshoot_install_depend.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/ui-library/ui-secondary-massaction.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/ui-library/ui-secondary-massaction.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>

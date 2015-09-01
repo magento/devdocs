@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Installation dependencies not met</title>
+	<title>UI-select Component</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/install-gde/trouble/tshoot_install_depend.html">
+	<link rel="canonical" href="//guides/v2.0/ui-library/ui-secondary-uiselect.html">
 
 
 
@@ -154,9 +154,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Installation dependencies not met</h1>
+		<h1 class="page-heading">UI-select Component</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/install-gde/trouble/tshoot_install_depend.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/uilibrary/ui-secondary-uiselect.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -165,42 +165,113 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="trouble-install-depend">Installation dependencies not met</h2>
+		<h3 id="uiselect">UI-select component</h3>
 
-<h3 id="details">Details</h3>
+<p>The UI-select component is used to provide check box interface for a specific listing or a specific data set. The component allows selecting a collection of items.</p>
 
-<p>Errors similar to the following display when you run the installer:</p>
+<p>The UI-select component has extended from the Abstract component.</p>
 
-<pre> Magento\Framework\Exception
- Command returned non-zero exit code:
-`/usr/bin/php5 -f '/var/www/magento2/dev/shell/run_data_fixtures.php' -- --bootstrap='MAGE_DIRS[base][path]=/var/www/magento2' 2&gt;&amp;1`
+<p>Example integration:</p>
 
-[other errors]
+<p><code>app/code/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml</code></p>
 
-Exception
- PHP Fatal error:  Class 'Magento\Framework\Stdlib\DateTime\TimezoneInterface' not found in /var/www/magento2/app/bootstrap.php on line 56</pre>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../Ui/etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;filterSelect</span> <span class="na">name=</span><span class="s">&quot;uiSelect&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;optionsProvider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;configurableObject&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;class&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento\Cms\Model\Page\Source\PageLayout<span class="nt">&lt;/argument&gt;</span>
+                <span class="nt">&lt;/argument&gt;</span>
+                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/form/element/ui-select<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;template&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>ui/grid/filters/elements/ui-select<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;dataScope&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>uiSelect<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>uiSelect<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;/filterSelect&gt;</span>
+<span class="nt">&lt;/listing&gt;</span></code></pre></div>
 
-<pre>Dependencies not installed. Please run 'composer install' under /setup directory.</pre>
+<h4 id="configuration">Configuration</h4>
 
-<pre>Whoops, it looks like setup tool dependencies are not installed.</pre>
+<p>The following configuration can be passed in arguments:</p>
 
-<pre>`/usr/bin/php -f '/var/www/html/magento2/dev/shell/run_data_fixtures.php' -- --bootstrap='MAGE_DIRS[base][path]=/var/www/html/magento2' 2&gt;&amp;1`</pre>
-<pre> Exception
- PHP Fatal error:  Class 'Magento\Framework\Stdlib\DateTime\TimezoneInterface' not found in /var/www/html/magento2/app/bootstrap.php on line 56</pre>
+<ul>
+  <li>Link to any of the following templates</li>
+  <li>Link to the constructor</li>
+  <li>Label to ui-select</li>
+  <li>Default caption</li>
+  <li>Caption if selected more then one elements</li>
+</ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>If the web installer stops, informs you that the installation is incomplete, but does not display an error in the console log, the likely cause is you did not run `composer install` from the `<your magento="" install="" dir="">/setup` directory. The web installer message is <code>Installation is incomplete. Check the console log for errors before trying again.</code>
+<h4 id="navigation">Navigation</h4>
 
- 
-### Description
+<p>The UI-select component supports keyboard navigation.</p>
 
-You must run `composer install` from *both* the `<your magento="" install="" dir="">` and `<your magento="" install="" dir="">/setup` directories before installer.
+<p>Navigation keys:</p>
 
-### Suggestion
+<ul>
+  <li>Enter key: if focus on the caption - a list of options opens, if focus on the some option - selected or unselected current option</li>
+  <li>Space key: copy ‘Enter key’ functionality</li>
+  <li>Escape key: closes the list of options</li>
+  <li>PageUp key: sets focus to previous option</li>
+  <li>PageDown key: sets focus to next option</li>
+</ul>
 
-<a href="/guides/v2.0/install-gde/install/prepare-install.html">Run composer install</a> from both of the preceding directories and try the installation again.
-</your></your></your></p></span></div>
+<h4 id="ui-select-js-component-structure">UI-select JS component structure</h4>
+
+<ul>
+  <li>
+    <p>Component elements</p>
+
+    <p>The Ui-select component is implemented in the class <code>app\code\Magento\Ui\view\base\web\js\form\element\ui-select.js</code></p>
+
+    <p>Templates used by this component are:</p>
+
+    <p><code>app\code\Magento\Ui\view\base\web\templates\grid\filters\elements\ui-select.html</code></p>
+  </li>
+  <li>
+    <p>Dependencies on Other Components</p>
+
+    <p>Abstract</p>
+
+    <p>uiLayout</p>
+  </li>
+  <li>
+    <p>imports option</p>
+
+    <p>The option defines from where the component receives its data.</p>
+
+    <p>Code samples available in the default configuration:</p>
+  </li>
+</ul>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">imports</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">options</span><span class="o">:</span> <span class="s1">&#39;${ $.optionsConfig.name }:options&#39;</span>
+    <span class="p">}</span></code></pre></div>
+
+<ul>
+  <li>
+    <p>actions option</p>
+
+    <p>You can modify the default actions by renaming their storefront labels</p>
+
+    <p>Code samples available in the default configuration:</p>
+  </li>
+</ul>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">actions</span><span class="o">:</span> <span class="p">[{</span>
+                    <span class="nx">value</span><span class="o">:</span> <span class="s1">&#39;selectAll&#39;</span><span class="p">,</span>
+                    <span class="nx">label</span><span class="o">:</span> <span class="nx">$t</span><span class="p">(</span><span class="s1">&#39;Select all&#39;</span><span class="p">)</span>
+                <span class="p">},</span> <span class="p">{</span>
+                    <span class="nx">value</span><span class="o">:</span> <span class="s1">&#39;deselectAll&#39;</span><span class="p">,</span>
+                    <span class="nx">label</span><span class="o">:</span> <span class="nx">$t</span><span class="p">(</span><span class="s1">&#39;Deselect all&#39;</span><span class="p">)</span>
+                <span class="p">},</span> <span class="p">{</span>
+                    <span class="nx">value</span><span class="o">:</span> <span class="s1">&#39;selectPage&#39;</span><span class="p">,</span>
+                    <span class="nx">label</span><span class="o">:</span> <span class="nx">$t</span><span class="p">(</span><span class="s1">&#39;Select all on this page&#39;</span><span class="p">)</span>
+                <span class="p">},</span> <span class="p">{</span>
+                    <span class="nx">value</span><span class="o">:</span> <span class="s1">&#39;deselectPage&#39;</span><span class="p">,</span>
+                    <span class="nx">label</span><span class="o">:</span> <span class="nx">$t</span><span class="p">(</span><span class="s1">&#39;Deselect all on this page&#39;</span><span class="p">)</span>
+                <span class="p">}],</span></code></pre></div>
 
 
 		</div>
@@ -310,14 +381,6 @@ You must run `composer install` from *both* the `<your magento="" install="" dir
 			
 				
 				
-			
-			
-				
-				
-			
-			
-				
-				
 					
 					
 					
@@ -333,7 +396,7 @@ You must run `composer install` from *both* the `<your magento="" install="" dir
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/trouble/tshoot.html">Troubleshooting suggestions</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/ui-library/overview.html">Overview</a></li>
 									
 								
 								
@@ -358,179 +421,7 @@ You must run `composer install` from *both* the `<your magento="" install="" dir
 							
 								
 								
-								
-								
-							
-									<li class=""><span class="nav-header">Access issues</span></li>
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_access-browser.html">Cannot access Magento software in a web browser</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_mod_access_compat.html">503 (Service Unavailable) errors accessing Magento software in a web browser</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_exceptions.html">Exceptions during installation</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_admin.html">Error after logging in to the Magento Admin</a></li>
-						
-								
-							
-									<li class="level-2  active "><a href="/guides/v2.0/install-gde/trouble/tshoot_install_depend.html">Installation dependencies not met</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-								
-								
-							
-									<li class=""><span class="nav-header">Errors during installation</span></li>
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_pdo.html">During installation, fatal PDO error displays</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_wrong-mysql.html">During installation, Reflection Exception error</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_install-log.html">Installation fails; cannot create install.log</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_sample-data.html">Errors installing optional sample data</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_xdebug.html">During installation, xdebug maximum function nesting level error</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-								
-								
-							
-									<li class=""><span class="nav-header">GitHub issues</span></li>
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/git/tshoot_git-pull-origin.html">git pull origin develop fails when updating the Magento software</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/git/tshoot_clone.html">Cannot clone the Magento GitHub repository</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/git/tshoot_rate-limit.html">GitHub API rate limit</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-								
-								
-							
-									<li class=""><span class="nav-header">PHP issues</span></li>
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_php-set.html">PHP settings errors</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_mcrypt.html">The PHP mcrypt extension is not installed properly</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_php-date.html">During installation, PHP date warning</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/trouble/tshoot_other.html">Other issues</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/ui-library/ui-listing-grid.html">Listing/Grid Component</a></li>
 									
 								
 								
@@ -539,16 +430,173 @@ You must run `composer install` from *both* the `<your magento="" install="" dir
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_composer-install.html">Cannot run 'composer install'</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/ui-library/ui-listing-grid-search.html">Grid search indexing</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/ui-library/ui-library-secondary.html">Listing/Grid Secondary Components</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/ui-library/ui-secondary-filter.html">Filter Component</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_mysql_table-open-cache.html">Error 'MySQL server has gone away' during installation</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/ui-library/ui-secondary-pagination.html">Pagination Component</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_phpini.html">SQLSTATE[HY000] [2002] No such file or directory</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/ui-library/ui-secondary-massaction.html">MassAction Component</a></li>
 						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/ui-library/ui-secondary-treemass.html">TreeMassAction Component</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/ui-library/ui-secondary-column.html">Column Component</a></li>
+						
+								
+							
+									<li class="level-2  active "><a href="/guides/v2.0/ui-library/ui-secondary-uiselect.html">UI-select Component</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/ui-library/ui-secondary-multi.html">Multiselect Component</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/ui-library/ui-secondary-inline.html">Inline Edit Component</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/ui-library/ui-secondary-bookmark.html">Bookmark Component</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/ui-library/ui-secondary-resize.html">Resize Component</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/ui-library/ui-form.html">Form Component</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/ui-library/ui-export.html">Export Button Component</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/ui-library/ui-container.html">Container Component</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/ui-library/ui-definition.html">definition.xml</a></li>
+									
+								
+								
+								
+							
+								
 								
 								
 								
@@ -559,6 +607,14 @@ You must run `composer install` from *both* the `<your magento="" install="" dir
 					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			
@@ -645,8 +701,8 @@ You must run `composer install` from *both* the `<your magento="" install="" dir
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/install-gde/trouble/tshoot_install_depend.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/install-gde/trouble/tshoot_install_depend.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/ui-library/ui-secondary-uiselect.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/ui-library/ui-secondary-uiselect.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>
