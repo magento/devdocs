@@ -48,5 +48,5 @@ A single XSD is shared between all components (both definitions and instance con
 
 You can configure component and all filter types in the following ways:
 
-* Globally: using any module's <a href="#example">`view/*/ui_component/etc/definition.xml`</a> file. All settings declared in this file will be applied to all component's instances
+* Globally: using any module's <a href="{{ site.gdeurl }}ui-library/ui-definition.html">`view/*/ui_component/etc/definition.xml`</a> file. All settings declared in this file will be applied to all component's instances
 * Locally: using concrete component instance configuration, such as `app/code/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml`

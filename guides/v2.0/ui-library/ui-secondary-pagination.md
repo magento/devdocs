@@ -15,7 +15,7 @@ The UI library pagination component is a plugin for the listing component. Respo
 
 You can configure pagination in several ways:
 
-* Globally: using any module's <a href="#example">`view/*/ui_component/etc/definition.xml`</a> file. All settings declared in this file are applied to all component's instances.
+* Globally: using any module's <a href="{{ site.gdeurl }}ui-library/ui-definition.html">`view/*/ui_component/etc/definition.xml`</a> file. All settings declared in this file are applied to all component's instances.
 * Locally: using concrete component instance configuration, such as `app/code/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml`
 
 To enable pagination for the listing component, the pagination component is declared as a child of the listing component in component instance configuration.
