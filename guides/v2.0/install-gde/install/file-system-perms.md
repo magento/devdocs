@@ -9,58 +9,60 @@ menu_order: 1
 github_link: install-gde/install/file-system-perms.md
 ---
 
-<!-- Being used as a redirect from the old wiki. Create a temporary redirect from guides/v2.0 > guides/v1.0 until 2.0 is available -->
+#### Contents
+*	TBD
+*	TBD
 
-After you get the Magento software, set ownership of all Magento files and directories and make sure they are writable by that user.
+<h2 id="install-perms-import">Why we recommend you set file system permissions</h2>
+Malicious exploits are a way of life in the internet age. To help prevent exploits that take advantage of the file system, we recommend you set Magento file system ownership and permissions in a particular way. For more information, see <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-over">Overview of ownership and permissions</a>.
 
-Typically, Magento files and directories should be owned by the web server user; however, the choice of user is up to you. The important thing is that the owner of the Magento file system must have write access to all files and directories.
+The important things:
+
+*	The owner of the Magento file system must have full control (read/write/execute) of all files and directories.
+*	The web server user must have write access to the `var`, `app/etc`, and `pub/static` files and directories
+
+In addition, the web server's *group* must own the Magento file system so that the Magento user (who is in the group) can modify files created using the Magento Admin and other web-based tools.
 
 We recommend setting the permissions as follows:
 
-*	All directories have 700 permissions `(drwx------)`.
+*	All directories have 770 permissions.
 
-	700 permissions give full control (that is, read/write/execute) to the owner and no permissions to anyone else.
+	770 permissions give full control (that is, read/write/execute) to the owner and to the group and no permissions to anyone else.
 
-*	All files have 600 permissions `(-rw-------)`.
+*	All files have 660 permissions.
 
-	600 permissions mean the owner can read and write but other users have no permissions.
+	600 permissions mean the owner and the group can read and write but other users have no permissions.
 
-Assuming the web server user owns the Magento 2 file system, use the following steps:
+Use the following steps:
 
 1.	Change to the Magento directory:
 
 		cd <web server docroot>/<magento2 base dir>
 
-	Cloning the Magento 2 GitHub repository creates a directory, typically `magento2`, under your web server's docroot. Need help locating the docroot? Click <a href="{{ site.gdeurl }}install-gde/basics/basics_docroot.html">here</a>.
+	The base directory is typically a subdirectory named `magento2` under your web server's docroot. Need help locating the docroot? Click <a href="{{ site.gdeurl }}install-gde/basics/basics_docroot.html">here</a>.
 
 	Examples:
 
 	*	Ubuntu: `/var/www/magento2`
 	*	CentOS: `/var/www/html/magento2`
 
-2.	Find the web server user:
-
-	Ubuntu: `ps -ef | grep apache2`
-
-	CentOS: `grep User /etc/httpd/conf/httpd.conf`
-
 3.	Set ownership:
 
-		chown -R [your web server user name] .
+		chown -R :[your web server group name] .
 
 	Typical examples:
 
-	CentOS: `chown -R apache .`
+	CentOS: `chown -R :apache .`
 
-	Ubuntu: `chown -R www-data .`
+	Ubuntu: `chown -R :www-data .`
 
 4.	Set permissions:
 
-		find . -type d -exec chmod 700 {} \; && find . -type f -exec chmod 600 {} \; && chmod +x bin/magento
+		find . -type d -exec chmod 770 {} \; && find . -type f -exec chmod 660 {} \; && chmod +x bin/magento
 
 	If you must enter the commands as `sudo`, use:
 
-		sudo find . -type d -exec chmod 700 {} \; && sudo find . -type f -exec chmod 600 {} \; && sudo chmod +x bin/magento
+		sudo find . -type d -exec chmod 770 {} \; && sudo find . -type f -exec chmod 670 {} \; && sudo chmod +x bin/magento
 
 #### Next step
 Install the Magento software:
