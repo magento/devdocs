@@ -15,3 +15,4 @@ Repositories are stored in the `Repository` directory in the module to which the
 Reference to the repository is placed in fixture XML file in attribute named `repository`.
 
 In this topic you will learn how to create, use and merge a repository.
+
