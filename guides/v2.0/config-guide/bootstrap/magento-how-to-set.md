@@ -44,7 +44,7 @@ The following table discusses the bootstrap parameters you can set:
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <ul><li>Not all bootstrap parameters are documented at this time.</li>
-  	<li>You now set the Magento mode (developer, default, production) using the <a href="{{ site.gdeurl }}config-guide/config-guide/cli/config-cli-subcommands-mode.html">magento application</a> command.</li></ul></span>
+  	<li>You now set the Magento mode (developer, default, production) using the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html">magento application</a> command.</li></ul></span>
 </div>
 
 <h2 id="mode-specify-var">Specifying a parameter value using an environment variable</h2>
