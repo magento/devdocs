@@ -15,7 +15,7 @@ github_link: install-gde/prereq/apache-user.md
 *	<a href="#install-update-depend-user-group">Add the user to the web server group</a>
 
 <h2 id="install-update-depend-user-over">Overview of ownership and permissions</h2>
-Even in a development environment, you want your Magento installation to be secure. To help prevent issues related to unauthorized people or processes doing potentially harmful things to your system, we've come up with some security guidelines related to file system ownership and security.
+Even in a development environment, you want your Magento installation to be secure. To help prevent issues related to unauthorized people or processes doing potentially harmful things to your system, we recommend some guidelines related to file system ownership and security:
 
 *	The web server user should *not* own the files and directories on the Magento file system; however, the web server user must have write access to some directories.
 
@@ -51,7 +51,7 @@ This section discusses how to find the name of the web server user's group and t
 See one of the following sections:
 
 *	<a href="#install-update-depend-user-findgroup">Find the web server group</a>
-*	
+*	<a href="#install-update-depend-user-add2group">Add the user to the web server group</a>
 
 <h3 id="install-update-depend-user-findgroup">Find the web server group</h3>
 To find the web server user's group:
@@ -72,6 +72,11 @@ To add a user to the web server's group (assuming the typical Apache group name 
 For example, to add the user `deborah` to the `apache` group on CentOS:
 
 	usermod -a -G apache deborah
+
+<h3 id="install-update-depend-user-group-confirm">Confirm the user's group</h3>
+To confirm your Magento user is a member of the web server group, enter the following command:
+
+	groups <user name>
 
 ### Next steps
 *	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Optional software</a>
