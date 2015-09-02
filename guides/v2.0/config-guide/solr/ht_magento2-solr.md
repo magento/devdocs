@@ -255,7 +255,7 @@ The following topics discuss how to configure Solr to work with Magento EE:
 * <a href="#config-solr-copy-config-files">Copying the Magento Solr Configuration and Starting Solr</a>
 * <a href="#config-solr-magento">Configuring Magento to Work With Solr</a>
 
-<h3 id="config-solr-copy-config-files">Copying the Magento Solr Configuration and Starting Solr
+<h3 id="config-solr-copy-config-files">Copying the Magento Solr Configuration and Starting Solr</h3>
 Magento comes packaged with a sample Solr configuration you can use and customize. To get started, you'll copy the Magento configuration to Solr, replacing any existing files. After that you can start Solr and begin configuring Magento to work with it.
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -264,30 +264,39 @@ Magento comes packaged with a sample Solr configuration you can use and customiz
 
 As a user with <tt>root</tt> privileges, enter the following commands in the order shown to copy over the Solr configuration with the one packaged with Magento EE:
 
-  cd <your Solr install dir>/example/solr
-  mkdir -p magento2/conf magento2/data
-  cd magento2/conf
-  cp -R ../../collection1/conf .
-  cp <your Magento EE install dir>/app/code/Magento/Solr/conf/* .
+    cd <your Solr install dir>/example/solr
+    mkdir -p magento2/conf magento2/data
+    cd magento2/conf
+    cp -R ../../collection1/conf .
+    cp <your Magento EE install dir>/app/code/Magento/Solr/conf/* .
 
 For example, if Solr is installed in <tt>/etc/solr/solr-4.10.4</tt> and Magento EE is installed in <tt>/var/www/magento/html/magento2ee</tt>, enter:
 
-  cd /etc/solr/solr-4.10.4/solr/example/solr/magento/conf
-  cp /var/www/html/magento2ee/app/code/Magento/Solr/conf/* .
+    cd /etc/solr/solr-4.10.4/solr/example/solr/magento/conf
+    cp /var/www/html/magento2ee/app/code/Magento/Solr/conf/* .
 
-<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: If you're prompted to overwrite files, try the command <tt>\cp -R [your Magento install dir]/lib/Apache/Solr/conf/* .</tt></div>
+<div class="bs-callout bs-callout-info" id="info">
+  <p>If you're prompted to overwrite files, try the command <code>\cp -R [your Magento install dir]/lib/Apache/Solr/conf/* .</code></p>
+</div>
 
 
-*	<em>CentOS with Tomcat 6 only</em>. If you're using Tomcat 6 on CentOS, you must modify <tt>[your Solr install dir]/example/solr/conf/solrconfig.xml</tt><br />
-Locate the following line:<br />
-<pre>&lt;dataDir>${solr.data.dir:./solr/data}&lt;/dataDir></pre>
-Change it to:<br />
-<pre>&lt;dataDir>${solr.data.dir:}&lt;/dataDir></pre>
+<em>CentOS with Tomcat 6 only</em>. If you're using Tomcat 6 on CentOS, you must modify <tt>[your Solr install dir]/example/solr/conf/solrconfig.xml</tt><br />
 
-*	As a user with <tt>root</tt> privileges, enter the following command to start Solr:
-  java -jar <your Solr install dir>/example/start.jar
+Locate the following line:
 
-<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: This method for starting Solr is for convenience and testing purposes only. In a production environment, you should start and stop Solr using a script as discussed in <a href="#solr-script">Script Solr startup and shutdown</a>.</div>
+    &lt;dataDir>${solr.data.dir:./solr/data}&lt;/dataDir>
+
+Change it to:
+
+    &lt;dataDir>${solr.data.dir:}&lt;/dataDir>
+
+As a user with <tt>root</tt> privileges, enter the following command to start Solr:
+
+    java -jar <your Solr install dir>/example/start.jar
+
+<div class="bs-callout bs-callout-warning">
+    <p>This method for starting Solr is for convenience and testing purposes only. In a production environment, you should start and stop Solr using a script as discussed in <a href="#solr-script">Script Solr startup and shutdown</a>.</p>
+</div>
 
 Enter the following URL in your browser's location or address bar to start the Solr management console:
 
@@ -304,19 +313,17 @@ Enter the following information:
 
 Leave all other fields at their default values or see TBD for more information about changing them.
 
-Click **Save Core**.
-
-You must resolve any issues before you continue.
+Click **Add Core**.
 
 <h3 id="config-solr-magento"></a>Configuring Magento to Work With Solr</h3>
 This section discusses how to configure Magento EE to use the Solr search engine.
 
 To configure Magento to work with Solr:
 
-<ol>*	Log in to the Magento Admin as an administrator.
-*	Click <strong>Stores</strong> > <strong>Configuration</strong> > CATALOG > <strong>Catalog Search</strong>.
-*	In the right pane, expand <strong>Catalog Search</strong>.
-*	The following table shows the minimum amount of information to enter to test the connection to your Solr search engine. Leave all other values at their defaults.<br />
+1.  Log in to the Magento Admin as an administrator.
+2.  Click <strong>Stores</strong> > <strong>Configuration</strong> > CATALOG > <strong>Catalog Search</strong>.
+3.  In the right pane, expand <strong>Catalog Search</strong>.
+4.  The following table shows the minimum amount of information to enter to test the connection to your Solr search engine. Leave all other values at their defaults.<br />
 <table>
 <!-- <colgroup><col width="200">
 <col width="300">
