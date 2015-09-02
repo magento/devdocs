@@ -49,11 +49,6 @@ After you create a directory for your theme, you must create `theme.xml` contain
 	&nbsp;&nbsp;&nbsp;&nbsp;&lt;/media&gt;
 	&lt;/theme&gt;</pre>
 
-To make sure the theme is recognized by the Magento application, log in to the Magento Admin and check if the theme is displayed in the grid under **Content** > **Design** > **Themes**.
-
-<img src= "{{ site.baseurl }}common/images/fdg_create_theme.jpg" alt ="List of themes stored in the database"/>
-
-Clicking on a theme record on Themes opens a page containing the information from the theme declaration file, and a preview image if available.
 
 <h2 id="fedg_create_theme_composer">Make your theme a Composer package (optional)</h2>
 
