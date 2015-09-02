@@ -24,37 +24,29 @@ Example:
 
 `app/code/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml`
 
-<pre>
-&lt;listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Ui/etc/ui_configuration.xsd"&gt;
-    &lt;container name="page_listing_top"&gt;
-        &lt;paging name="listing_paging"&gt;
-            &lt;argument name="data" xsi:type="array"&gt;
-                &lt;item name="config" xsi:type="array"&gt;
-                    &lt;item name="options" xsi:type="array"&gt;
-                        &lt;item name="20" xsi:type="array"&gt;
-                            &lt;item name="value" xsi:type="number"&gt;20&lt;/item&gt;
-                            &lt;item name="label" xsi:type="string" translate="true"&gt;20&lt;/item&gt;
-                        &lt;/item&gt;
-                        &lt;item name="30" xsi:type="array"&gt;
-                            &lt;item name="value" xsi:type="number"&gt;30&lt;/item&gt;
-                            &lt;item name="label" xsi:type="string" translate="true"&gt;30&lt;/item&gt;
-                        &lt;/item&gt;
-                        &lt;item name="50" xsi:type="array"&gt;
-                            &lt;item name="value" xsi:type="number"&gt;50&lt;/item&gt;
-                            &lt;item name="label" xsi:type="string" translate="true"&gt;50&lt;/item&gt;
-                        &lt;/item&gt;
-                        &lt;item name="100" xsi:type="array"&gt;
-                            &lt;item name="value" xsi:type="number"&gt;100&lt;/item&gt;
-                            &lt;item name="label" xsi:type="string" translate="true"&gt;100&lt;/item&gt;
-                        &lt;/item&gt;
-                        &lt;item name="200" xsi:type="array"&gt;
-                            &lt;item name="value" xsi:type="number"&gt;200&lt;/item&gt;
-                            &lt;item name="label" xsi:type="string" translate="true"&gt;200&lt;/item&gt;
-                        &lt;/item&gt;
-                    &lt;/item&gt;
-                &lt;/item&gt;
-            &lt;/argument&gt;
-        &lt;/paging&gt;
-    &lt;/container&gt;
-&lt;/listing&gt;
-</pre>
+{% highlight xml %}
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Ui/etc/ui_configuration.xsd">
+    <container name="page_listing_top">
+        <paging name="listing_paging">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="storageConfig" xsi:type="array">
+                        <item name="provider" xsi:type="string">cms_block_listing.cms_block_listing.listing_top.bookmarks</item>
+                        <item name="namespace" xsi:type="string">current.paging</item>
+                    </item>
+                    <item name="selectProvider" xsi:type="string">cms_block_listing.cms_block_listing.cms_block_columns.ids</item>
+                </item>
+            </argument>
+        </paging>
+    </container>
+</listing>
+{% endhighlight %}
+
+The configuration of the component can include:
+
+* storageConfig - storageConfig is a base component property. Here it is configured to take stored page sizes list from bookmarks
+
+* sizesConfig - configuration of sizes component
+  * component - component which manages available page sizes. By default it is `Magento_Ui/js/grid/paging/sizes`
+ 
+* selectProvider - component with selections data
