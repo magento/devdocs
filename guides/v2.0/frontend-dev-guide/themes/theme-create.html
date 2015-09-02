@@ -193,7 +193,7 @@ app/design/frontend/
 │&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──&nbsp;...
 </pre>
 
-<p>The folder name conventionally equals to the theme code, any alphanumeric set of characters as the vendor sees fit. This convention is merely a recommendation, so nothing prevents calling this directory in any other way.</p>
+<p>The folder name conventionally matches naming used in the theme’s code: any alphanumeric set of characters, as the vendor sees fit, is acceptable. This convention is merely a recommendation, so nothing prevents naming this directory in another way.</p>
 
 <h2 id="fedg_create_theme_how-to_declare">Declare your theme</h2>
 
@@ -264,9 +264,9 @@ app/design/frontend/
 
 <h2 id="fedg_create_theme_how-to-images">Configure images</h2>
 
-<p>Product images sizes and other properties used on the storefront are configured in a <code>view.xml</code> configuration file. It is required for a theme, but is optional if exists in the parent theme.</p>
+<p>Product image sizes and other properties used on the storefront are configured in a <code>view.xml</code> configuration file. It is required for a theme, but is optional if exists in the parent theme.</p>
 
-<p>If product images sizes of your theme differ from those of the parent theme, or in case your theme does not inherit from any theme, add <code>view.xml</code> using the following steps:</p>
+<p>If the product image sizes of your theme differ from those of the parent theme, or if your theme does not inherit from any theme, add <code>view.xml</code> using the following steps:</p>
 
 <ol>
   <li>
@@ -309,8 +309,8 @@ app/design/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
- <p>In the <code>...&lt;theme&gt;/web/images</code> you store the general theme related static files, for example a theme logo is stored in <code>...&lt;theme&gt;/web/images</code>.
-Most probably your theme will also contain module-specific files, which are stored in the corresponding sub-directories, like <code>.../&lt;theme&gt;/&lt;Namespace_Module&gt;/web/css</code> and similar. Managing the module-specific theme files is discussed in the following sections of this Guide.</p></span>
+ <p>In the <code>...&lt;theme&gt;/web/images</code> you store the general theme related static files. For example, a theme logo is stored in <code>...&lt;theme&gt;/web/images</code>.
+It is likely that your theme will also contain module-specific files, which are stored in the corresponding sub-directories, like <code>.../&lt;theme&gt;/&lt;Namespace_Module&gt;/web/css</code> and similar. Managing the module-specific theme files is discussed in the following sections of this Guide.</p></span>
 </div>
 
 <h2 id="fedg_theme_how-to_structure">Your theme directory structure now</h2>
@@ -331,9 +331,9 @@ app/design/frontend/&lt;Vendor&gt;/
 
 <h2>Theme logo</h2>
 
-<p>In the Magento application, the default format and name of a logo image is <code>logo.svg</code>. When you put a <code>logo.svg</code> image to the conventional location, which is <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/images</code> directory, it is automatically recognized as theme logo. It is displayed in your store page header once the theme is <a href="/guides/v2.0/frontend-dev-guide/themes/theme-apply.html" target="_blank">applied</a>.</p>
+<p>In the Magento application, the default format and name of a logo image is <code>logo.svg</code>. When you put a <code>logo.svg</code> image in the conventional location, which is <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/images</code> directory, it is automatically recognized as theme logo. It is displayed in your store page header once the theme is <a href="/guides/v2.0/frontend-dev-guide/themes/theme-apply.html" target="_blank">applied</a>.</p>
 
-<p>In your custom theme, you can use a logo file with other name and format, but you might need to declare it. </p>
+<p>In your custom theme, you can use a logo file with a different name and format, but you might need to declare it. </p>
 
 <p>The necessity of declaration depends on whether your theme has a <a href="/guides/v2.0/frontend-dev-guide/themes/theme-inherit.html" target="_blank">parent</a> theme and its logo image. The following cases are possible:</p>
 <ul>
