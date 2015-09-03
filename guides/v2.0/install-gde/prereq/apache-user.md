@@ -19,7 +19,7 @@ Even in a development environment, you want your Magento installation to be secu
 
 *	The web server user should *not* own the files and directories on the Magento file system; however, the web server user must have write access to some directories.
 
-	The *web server user* runs the web-based Setup Wizard installer and everything you do in the Magento Admin. This user must have the ability to write media files and so. However, the user cannot *own* the files because that can potentially lead to security issues because any web-based process could potentially attack the Magento file system.
+	The *web server user* runs the web-based Setup Wizard installer and everything you do in the Magento Admin. This user must have the ability to write media files and so on. However, the user cannot *own* the files because that can potentially lead to security issues because any web-based process could potentially attack the Magento file system.
 
 *	Another user should own the Magento files and directories; this user must not be `root`.
 
@@ -42,11 +42,11 @@ To give the user a password, enter the following command as a user with `root` p
 Follow the prompts on your screen to create a password for the user.
 
 <div class="bs-callout bs-callout-warning">
-    <p>Because the point of creating this user is to provided added security, make sure you create a <a href="https://en.wikipedia.org/wiki/Password_strength" target="_blank">strong password</a>.</p>
+    <p>Because the point of creating this user is to provide added security, make sure you create a <a href="https://en.wikipedia.org/wiki/Password_strength" target="_blank">strong password</a>.</p>
 </div>
 
 <h2 id="install-update-depend-user-group">Add the user to the web server group</h2>
-This section discusses how to find the name of the web server user's group and to add your Magento user to that group. The user must belong to the web server group so the user can access files created by the Magento Admin or other web-based utilities.
+This section discusses how to find the name of the web server user's group and to add your Magento user to that group. The user must belong to the web server group so the user can share access to files with the web server user. (This includes files created by the Magento Admin or other web-based utilities.)
 
 See one of the following sections:
 

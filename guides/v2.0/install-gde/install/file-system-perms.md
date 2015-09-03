@@ -18,11 +18,18 @@ Malicious exploits are unfortunate reality in the internet age. To help prevent 
 
 The important things:
 
-*	The owner of the Magento file system must have full control (read/write/execute) of all files and directories.
-*	The web server user must have write access to the `var`, `app/etc`, and `pub/static` files and directories
-*	The Magento file system owner is *not* the web server user; it should be a different user
+*	The owner of the Magento file system:
 
-In addition, the web server's *group* must own the Magento file system so that the Magento user (who is in the group) can modify files created using the Magento Admin and other web-based tools.
+	*	Must have full control (read/write/execute) of all files and directories.
+	*	Must *not* the web server user; it should be a different user.
+
+*	The web server user must have write access to the following files and directories:
+
+	*	`var`
+	*	`app/etc
+	*	`pub` files 
+
+In addition, the web server's *group* must own the Magento file system so that the Magento user (who is in the group) can share access to the files created using the Magento Admin and other web-based tools.
 
 We recommend setting the permissions as follows:
 
@@ -32,7 +39,7 @@ We recommend setting the permissions as follows:
 
 *	All files have 660 permissions.
 
-	600 permissions mean the owner and the group can read and write but other users have no permissions.
+	660 permissions mean the owner and the group can read and write but other users have no permissions.
 
 <h2 id="install-perms-set">File system permissions and ownership</h2>
 Use the following steps:
@@ -64,7 +71,7 @@ Use the following steps:
 
 	If you must enter the commands as `sudo`, use:
 
-		sudo find . -type d -exec chmod 770 {} \; && sudo find . -type f -exec chmod 670 {} \; && sudo chmod +x bin/magento
+		sudo find . -type d -exec chmod 770 {} \; && sudo find . -type f -exec chmod 660 {} \; && sudo chmod +x bin/magento
 
 #### Next steps
 Install the Magento software:
