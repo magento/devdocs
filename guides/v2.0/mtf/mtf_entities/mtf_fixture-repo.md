@@ -81,6 +81,8 @@ Assume that we have the following fixture:
 
 {% endhighlight %}
 
+The `repository_class="Magento\Widget\Test\Repository\Widget"` attribute tells us that this fixture uses data from the `magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget.xml` repository. In this section we will show the logic of how to create this repository. Also `layout` and `widgetOptions` fields use `magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/LayoutUpdates.xml` and `magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/WidgetOptions.xml` repositories respectively. <a href="#mtf_repository_create-field"> Learn how to create repository for the fixture field</a>.
+
 We want to specify data sets for two cases of submitting Widget forms: `default` with minimum data, and `cms_page_link` with data needed to create new CMS page link.
 
 To create a new CMS page link the user must enter data of all required fields. Widget has three forms with fields to specify: <a href="#mtf_repo_ex_set">**Settings**</a>, <a href="#mtf_repo_ex_store">**Storefront Properties**</a>, <a href="#mtf_repo_ex_front">**Frontend Apps Options**</a>. The following text along with screenshots gives an example of how to create a dataset of repository.
@@ -122,7 +124,7 @@ To create a new CMS page link the user must enter data of all required fields. W
 
 - Set the **Anchor Custom Text** field to "text". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="anchor_text" xsi:type="string">text</item>`.
 - Set the **Anchor Custom Title** field to "anchor title". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="title" xsi:type="string">anchor title</item>`.
-- Create CMS Page using `default` data set, where data set is not repository data set, but data set entity. <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_dataset.html">Learn more about data set entity.</a>
+- Create CMS Page using `default` data set. The test will take data from the <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_dataset.html"> data set entity</a> with the `default` name and use this data for creation of new CMS page. This field is destined to be used by <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_handler.html">handler</a> only.
 
 {% highlight xml %}
 
@@ -132,7 +134,7 @@ To create a new CMS page link the user must enter data of all required fields. W
 
 {% endhighlight xml %}
 
-- Choose in the **CMS Page** grid newly created "cmsPageLink".
+- Choose in the **CMS Page** grid newly created "cmsPageLink". The test will take data from the <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_dataset.html"> data set entity</a> with the `cmsPageLink` name and use this data for creation of new CMS page.
 
 {% highlight xml %}
 
@@ -146,8 +148,7 @@ To create a new CMS page link the user must enter data of all required fields. W
 
 <h4 id="mtf_repo_widgetxml">Widget.xml</h4>
 
-Now we can create a repository XML file by the path specified in the `repository_class` attribute. 
-In our case it is `magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget.xml`.
+Now we can create a repository XML file `Widget.xml`. In our case it should be placed in `magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Repository`. The full name must be specified in the `repository_class` attribute of the fixture: `repository_class="Magento\Widget\Test\Repository\Widget"`.
 
 See the entire repository sample so far:
 
