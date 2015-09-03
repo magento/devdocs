@@ -71,7 +71,7 @@ H1 CODE, H2 CODE, H3 CODE, H4 CODE, H5 CODE {
 p.q 	{
 	font-size: 15pt;
 	color: red;
-	display: none;
+	display: none; 
 	}
 
 /* SRJ - fix Firefox bug */
