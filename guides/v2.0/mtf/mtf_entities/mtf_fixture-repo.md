@@ -436,7 +436,7 @@ To run the generator, enter the following command:
 
 The preceding is an example of repository merging. Using the approach from the example you can merge repositories for any other fixture, not `Config` only.
 
-<h2 id="mtf_repository_credentials">Credentials and <code>%isolation%</code> in repository</h2>
+<h2 id="mtf_repository_credent_iso">Credentials and %isolation% in repository</h2>
 
 Credentials are stored in XML file specified in `phpunit.xml`.
 
