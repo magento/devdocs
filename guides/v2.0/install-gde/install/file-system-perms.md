@@ -10,16 +10,17 @@ github_link: install-gde/install/file-system-perms.md
 ---
 
 #### Contents
-*	TBD
-*	TBD
+*	<a href="#install-perms-import">Why we recommend you set file system permissions</a>
+*	<a href="#install-perms-set">File system permissions and ownership</a>
 
 <h2 id="install-perms-import">Why we recommend you set file system permissions</h2>
-Malicious exploits are a way of life in the internet age. To help prevent exploits that take advantage of the file system, we recommend you set Magento file system ownership and permissions in a particular way. For more information, see <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-over">Overview of ownership and permissions</a>.
+Malicious exploits are unfortunate reality in the internet age. To help prevent exploits that take advantage of the file system, we recommend you set Magento file system ownership and permissions in a particular way. For more information, see <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-over">Overview of ownership and permissions</a>.
 
 The important things:
 
 *	The owner of the Magento file system must have full control (read/write/execute) of all files and directories.
 *	The web server user must have write access to the `var`, `app/etc`, and `pub/static` files and directories
+*	The Magento file system owner is *not* the web server user; it should be a different user
 
 In addition, the web server's *group* must own the Magento file system so that the Magento user (who is in the group) can modify files created using the Magento Admin and other web-based tools.
 
@@ -33,6 +34,7 @@ We recommend setting the permissions as follows:
 
 	600 permissions mean the owner and the group can read and write but other users have no permissions.
 
+<h2 id="install-perms-set">File system permissions and ownership</h2>
 Use the following steps:
 
 1.	Change to the Magento directory:
@@ -64,7 +66,7 @@ Use the following steps:
 
 		sudo find . -type d -exec chmod 770 {} \; && sudo find . -type f -exec chmod 670 {} \; && sudo chmod +x bin/magento
 
-#### Next step
+#### Next steps
 Install the Magento software:
 
 *	Using the web-based <a href="{{ site.gdeurl }}install-gde/install/web/install-web.html">Setup Wizard</a>, which is better for less experienced users or anyone who has a hosting provider (especially if you don't have access to the Magento server)

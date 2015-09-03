@@ -19,7 +19,7 @@ Even in a development environment, you want your Magento installation to be secu
 
 *	The web server user should *not* own the files and directories on the Magento file system; however, the web server user must have write access to some directories.
 
-	The *web server user* runs the web-based Setup Wizard installer and everything you do in the Magento Admin. This user must have the ability to write media files and so on but cannot *own* the files because that can potentially lead to security issues. Any process that runs in the web server could potentially attack the Magento file system.
+	The *web server user* runs the web-based Setup Wizard installer and everything you do in the Magento Admin. This user must have the ability to write media files and so. However, the user cannot *own* the files because that can potentially lead to security issues because any web-based process could potentially attack the Magento file system.
 
 *	Another user should own the Magento files and directories; this user must not be `root`.
 
