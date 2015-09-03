@@ -26,10 +26,10 @@ The important things:
 *	The web server user must have write access to the following files and directories:
 
 	*	`var`
-	*	`app/etc
-	*	`pub` files 
+	*	`app/etc`
+	*	`pub` 
 
-In addition, the web server's *group* must own the Magento file system so that the Magento user (who is in the group) can share access to the files created using the Magento Admin and other web-based tools.
+In addition, the web server's *group* must own the Magento file system so that the Magento user (who is in the group) can share access to files with the web server user. (This includes files created by the Magento Admin or other web-based utilities.)
 
 We recommend setting the permissions as follows:
 
