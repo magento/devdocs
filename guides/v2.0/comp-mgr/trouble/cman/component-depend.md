@@ -36,7 +36,7 @@ Typically, component dependency conflicts result from someone manually editing t
 Edit `composer.json` to make any of these changes and try the readiness check again.
 
 <h3 id="trouble-depend-permission">File system permissions issues</h3>
-If the web server user doesn't have permissions to write to directories on the Magento file system, a message similar to the following displays:
+If the Magento file system owner doesn't have permissions to write to directories on the Magento file system, a message similar to the following displays:
 
 	file_put_contents(/var/www/html/magento2ce/var/composer_home/cache/repo/https---
 	packagist.org/provider-doctrine$instantiator.json): failed to open stream: Permission denied

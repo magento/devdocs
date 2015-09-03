@@ -25,7 +25,7 @@ Composer is a separate application that manages PHP dependencies. Before you can
 
 	The Magento root directory is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="{{ site.gdeurl }}install-gde/basics/basics_docroot.html">here</a>.
 
-For you to be able to run the Magento application, make sure you perform all tasks as a user with privileges to write to the web server docroot. One way to do this is to log in as or switch to the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">web server user</a>.
+For you to be able to run the Magento application, make sure you perform all tasks as a user with privileges to write to the web server docroot. One way to do this is to log in as or switch to the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.
 
 <h2 id="install-composer-install">Running Composer to update dependencies</h2>
 Update installation dependencies as follows:

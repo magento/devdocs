@@ -29,20 +29,20 @@ To verify whether or not your crontab is set up:
 1.	Log in to your Magento server.
 1.	As a user with `root` privileges, see if a crontab is already set up.
 
-		crontab -u <web server user name> -l
+		crontab -u <Magento file system owner name> -l
 
 	For example, on CentOS
 
-		crontab -u apache -l
+		crontab -u magento_user -l
 
 	If no crontab has been set up for the user, the following message displays:
 
-		no crontab for apache
+		no crontab for magento_user
 
 	See one of the following sections for a solution to your issue.
 
 <h3 id="trouble-cron-none">Solution: crontab not set up</h3>
-If the web server user has no configured cron job, see <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_compman-updater.html">Set up cron jobs</a>.
+If the Magento file system owner has no configured cron job, see <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_compman-updater.html">Set up cron jobs</a>.
 
 <h3 id="trouble-cron-errors">Solution: cron running with errors</h3>
 Try running each command manually because the command might display helpful error messages.

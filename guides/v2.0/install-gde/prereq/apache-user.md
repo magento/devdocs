@@ -78,6 +78,12 @@ To confirm your Magento user is a member of the web server group, enter the foll
 
 	groups <user name>
 
+<h2 id="install-update-depend-user-switch">Switch to the Magento file system owner</h2>
+After you've performed the other tasks in this topic, enter one of the following commands to switch to that user:
+
+*	Ubuntu: `su <username>`
+*	CentOS: `us - <username>`
+
 ### Next steps
 *	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Optional software</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">Security-related prerequisites</a>
