@@ -110,7 +110,7 @@ To create a new CMS page link the user must enter data of all required fields. W
 {% endhighlight xml %}
 
 - Provide data for the **Layout Updates** complex field. In the repository code, complex field are represented as arrays of items. An item can be an array of items also, depending on the hierarchy of fields. This field is defined as `<field name="widget_instance" xsi:type="array"></field>`. As it is possible to create more than one instance of a layout update, we define our instance as first element of array with index "0" as `<item name="0" xsi:type="array"></item>`.
-  - Set the **Display on** field to "All pages:. It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="page_group" xsi:type="string">All Pages</item>`. Depending on value of this field, different fields to define this value appears. That's why all daughter fields must be wrapped in `<item name="all_pages" xsi:type="array"></item>`.
+  - Set the **Display on** field to "All pages:. It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="page_group" xsi:type="string">All Pages</item>`. Depending on value of this field, different fields to define this value appear. That's why all daughter fields must be wrapped in `<item name="all_pages" xsi:type="array"></item>`.
     - Set the **Container** field to "Main content area". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="block" xsi:type="string">Main Content Area</item>`.
     - Set the **Template** field to "CMS Page Link Block Template". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="template" xsi:type="string">CMS Page Link Block Template</item>`.
 
@@ -149,7 +149,7 @@ To create a new CMS page link the user must enter data of all required fields. W
 Now we can create a repository XML file by the path specified in the `repository_class` attribute. 
 In our case it is `magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget.xml`.
 
-See the entire repository sample so far::
+See the entire repository sample so far:
 
 {% highlight xml %}
 
@@ -249,29 +249,29 @@ In the preceding section, the Widget fixture code contains fields with the links
 
 The repository value is a reference to the repository XML file. Therefore, we should create `magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/LayoutUpdates.xml`. The XML structure of this repository is the same as of <a href="#mtf_repository_create">repository for the entire fixture</a>.
 
-Assume that we want to provide data for the Layout Update block for the following cases shown on the screenshots (name of datasets have orange font, fields defined in repository are highlighted in orange):
+Assume that we want to provide data for the Layout Update block for the following cases shown on the screenshots (name of datasets have orange font, fields defined in repository are highlighted in orange).
 
 Case 1. **all_pages** data set:
 
-* Set the **Display on** field (item name="page_group") to "All Pages", which is the subcategory of "Generic Pages" (see drop-down menu on the following sceenshot). It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="page_group" xsi:type="string">Generic Pages/All Pages</item>`
-* Set the **Container** field (item name="block") to "Main content Area". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a>  `<item name="block" xsi:type="string">Main Content Area</item>`
+* Set the **Display on** field (`item name="page_group"`) to "All Pages", which is the subcategory of "Generic Pages" (see drop-down menu on the following sceenshot). It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="page_group" xsi:type="string">Generic Pages/All Pages</item>`
+* Set the **Container** field (`item name="block"`) to "Main content Area". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a>  `<item name="block" xsi:type="string">Main Content Area</item>`
 
 ![all_pages dataset view on GUI]({{ site.baseurl }}common/images/mtf_repository_layout-allpages_w_dropd.png)
 
 Case 2. **on_category** data set:
 
 * Set the **Display on** field (`item name="page_group"`) to "Non-Anchor Categories" that is item of "Categories". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="page_group" xsi:type="string">Categories/Non-Anchor Categories</item>`.
-* Set the **Categories** field (item name="for") to "Specific Categories". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="for" xsi:type="string">Yes</item>`.
-* Set the in a tree of categories the **Default Category** (item name="entities"). It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="entities" xsi:type="string">category::default_subcategory</item>`.
-* Set the **Container** field (item name="block") to "Main content Area". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="block" xsi:type="string">Main Content Area</item>`.
+* Set the **Categories** field (`item name="for"`) to "Specific Categories". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="for" xsi:type="string">Yes</item>`.
+* Set the in a tree of categories the **Default Category** (`item name="entities"`). It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="entities" xsi:type="string">category::default_subcategory</item>`.
+* Set the **Container** field (`item name="block"`) to "Main content Area". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="block" xsi:type="string">Main Content Area</item>`.
 
 ![on_category dataset view on GUI]({{site.baseurl}}common/images/mtf_repository_layout-oncategory_w_dropd.png)
 
 Case 3. **for_cms_page_link** data set:
 
-* Set the **Display on** field (item name="page_group") to "All Pages" that is item of "Generic Pages". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="page_group" xsi:type="string">Generic Pages/All Pages</item>`.
-* Set the **Container** field (item name="block") to "Main content Area". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="block" xsi:type="string">Main Content Area</item>`.
-* Set the **Template** field (item name="template") to "CMS Page Link Block Template". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="template" xsi:type="string">CMS Page Link Block Template</item>`.
+* Set the **Display on** field (`item name="page_group"`) to "All Pages" that is item of "Generic Pages". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="page_group" xsi:type="string">Generic Pages/All Pages</item>`.
+* Set the **Container** field (`item name="block"`) to "Main content Area". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="block" xsi:type="string">Main Content Area</item>`.
+* Set the **Template** field (`item name="template"`) to "CMS Page Link Block Template". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<`item name="template" xsi:type="string"`>CMS Page Link Block Template</item>`.
 
 ![layout_for_cms_page_link dataset view on GUI]({{site.baseurl}}common/images/mtf_repository_layout-for-cms-page-link_w_dropd.png)
 
@@ -318,7 +318,7 @@ The repository code for these cases follows:
 
 <h2 id="mtf_repository_config">Configuration repository</h2>
 
-The configuration repository is a `ConfigData.xml` file that is the repository for the `Config` module. It stores predefined data sets of the Magento configuration settings.
+The configuration repository file has name `ConfigData.xml`. It is the repository for the `Config` module. It stores predefined data sets of the Magento configuration settings.
 
 Let's see the following example of configuration settings for <a href="https://github.com/magento/magento2/tree/develop/app/code/Magento/Authorizenet">Authorize.Net module</a> `magento2ce/dev/tests/functional/tests/app/Magento/Authorizenet/Test/Repository/ConfigData.xml`.
 
@@ -390,7 +390,7 @@ Let's see the following example of configuration settings for <a href="https://g
 
 {% endhighlight %}
 
-Path to the `Authorizenet` UI form in Admin is **STORES > Configuration > SALES > Payment Methods > Authorize.net Direct Post**).
+Path to the `Authorizenet` UI form in Admin is **STORES > Configuration > SALES > Payment Methods > Authorize.net Direct Post**.
 
 This repository contains two datasets: `authorizenet` that covers seven fields, and `authorizenet_rollback` that covers one field.
 
@@ -407,8 +407,8 @@ Each field contains 4 items:
 |---|---|
 |`scope`|Magento configuration section|
 |`scope_id`|Magento scope identifier. UI representation is shown on the screenshot following this table. |
-|`label`|Text represented in the UI field.|
-|`value`|Value of the field.|
+|`label`|Text represented in the UI field|
+|`value`|Value of the field|
 
 The following screenshot helps to understand the `scope_id` attribute.
 
