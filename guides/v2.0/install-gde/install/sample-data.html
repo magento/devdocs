@@ -74,6 +74,7 @@
             <a href="/guides/v2.0/install-gde/bk-install-guide.html">System Administrator</a>
             <ul class="menu nav">
                <li class="first leaf"><a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and Upgrade Guide</a></li>
                <li class="leaf"><a href="/guides/v2.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
                <li class="leaf"><a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a></li>
             </ul>
@@ -174,7 +175,6 @@
   <li><a href="#instgde-install-sample-intro">Introduction to Magento sample data</a></li>
   <li><a href="#instgde-install-sample-enable-before">Enable sample data before you install the Magento software</a></li>
   <li><a href="#instgde-install-sample-enable-after">Enable sample data after you install the Magento software</a></li>
-  <li><a href="#installgde-install-sample-old">Sample data for earlier Magento versions</a></li>
 </ul>
 
 <h2 id="instgde-prereq-sample-intro">Introduction to Magento sample data</h2>
@@ -186,12 +186,6 @@
   <li>Find the exact version you want at <a href="http://packages.magento.com/#magento/sample-data" target="_blank">packages.magento.com</a>.</li>
   <li>Install the latest version using Composer <a href="https://getcomposer.org/doc/01-basic-usage.md#next-significant-release-tilde-and-caret-operators-" target="_blank">next significant release syntax</a>.</li>
 </ul>
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Magento 2 versions 0.74.0-beta9 and later require you to install only one sample data package instead of two. This package is currently named <code>"magento/sample-data": "0.74.0-beta9"</code>. Be sure to confirm the current version at <a href="http://packages.magento.com/#magento/sample-data" target="_blank">packages.magento.com</a>.</p>
-<p>If you're installing sample data for an earlier version, see <a href="#installgde-install-sample-old">Sample data for earlier Magento versions</a>.</p></span>
-</div>
 
 <h2 id="instgde-install-sample-enable-before">Enable sample data before you install the Magento software</h2>
 <p>This section discusses how to install optional sample data <em>before</em> you install the Magento software. If you’ve already installed, see <a href="#instgde-install-sample-enable-after">Enable sample data after you install the Magento software</a>.</p>
@@ -232,7 +226,7 @@ Next significant release example:<br />
 <p>Continue with one of the following topics:</p>
 
 <ul>
-  <li><a href="/guides/v2.0/install-gde/install/install-cli-install.html">Install the Magento software using the command line</a></li>
+  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html">Install the Magento software using the command line</a></li>
   <li><a href="/guides/v2.0/install-gde/install/install-web.html">Setup Wizard installation</a></li>
 </ul>
 
@@ -284,15 +278,6 @@ Next significant release example:<br />
 /var/www/magento2/bin/magento sampledata:install admin
 </code></pre>
 
-<h2 id="installgde-install-sample-old">Sample data for earlier Magento versions</h2>
-<p>If you're installing sample data for a version of Magento 2 earlier than 0.42.0-beta10, you must install the <code>sample-data-media</code> package as well.</p>
-<p>Examples:</p>
-<pre>composer require magento/sample-data:&lt;version&gt; magento/sample-data-media:&lt;version&gt;</pre>
-<p>where <code>&lt;version&gt;</code> is either an exact version or semantic version syntax.<br />
-Exact version example:<br /></p>
-<pre>composer require magento/sample-data:0.42.0-beta6 magento/sample-data-media:0.42.0-beta1</pre>
-<p>Next significant release example:<br /></p>
-<pre>composer require magento/sample-data:~0.42.0-beta5 magento/sample-data-media:~0.42.0-beta1</pre>
 
 
 		</div>
@@ -308,6 +293,10 @@ Exact version example:<br /></p>
 		
 		
 		
+				
+				
+			
+			
 				
 				
 			

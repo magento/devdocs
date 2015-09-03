@@ -74,6 +74,7 @@
             <a href="/guides/v2.0/install-gde/bk-install-guide.html">System Administrator</a>
             <ul class="menu nav">
                <li class="first leaf"><a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="first leaf"><a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and Upgrade Guide</a></li>
                <li class="leaf"><a href="/guides/v2.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
                <li class="leaf"><a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a></li>
             </ul>
@@ -175,30 +176,34 @@
 
 <p>Backups are stored in the <code>var/backups</code> directory and can be restored at any time using the <a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">magento setup:rollback</a> command.</p>
 
-<p>The following figure shows an example of backing up everything.</p>
-
-<p><img src="/common/images/cman_create-backup.png" alt="You can back up the Magento 2 file system, media directory, and database" /></p>
-
 <p>To back up:</p>
 
 <ol>
   <li>
     <p>Select the check box of each item to back up and click <strong>Create Backup</strong>.</p>
 
-    <p>(If you choose not to back up, clear all check boxes and click <strong>Next</strong>).</p>
+    <p>The following figure shows an example of backing up everything.</p>
+
+    <p><img src="/common/images/cman_create-backup.png" width="650px" alt="You can back up the Magento 2 file system, media directory, and database" /></p>
+
+    <p>(If you choose not to back up, clear all check boxes and click <strong>Next</strong>.)</p>
 
     <div class="bs-callout bs-callout-info" id="info">
   <p>We strongly recommend you <em>do</em> back up in the event of issues.</p>
 </div>
   </li>
   <li>
-    <p>Wait while backups are created.</p>
+    <p>Wait while backups are created and continue with any of the following:</p>
+
+    <ul>
+      <li>Updating components: <a href="/guides/v2.0/comp-mgr/compman-update.html">Step 3. Update components</a></li>
+      <li>Uninstalling components: <a href="/guides/v2.0/comp-mgr/compman-uninst-data.html">Step 3. Data Option</a></li>
+    </ul>
   </li>
 </ol>
 
-<p>The following page displays to confirm a successful backup. If errors display, see <a href="/guides/v2.0/comp-mgr/trouble/cman/tshoot_backup.html">Troubleshoot backups</a>.
-<img src="/common/images/cman_backup-success.png" alt="A page displays to confirm your backup was a success" /><br />
-3.	<a href="/guides/v2.0/comp-mgr/compman-update.html">Step 3. Update components</a>.</p>
+<p>The following page displays to confirm a successful backup. If errors display, see <a href="/guides/v2.0/comp-mgr/trouble/cman/tshoot_backup.html">Troubleshoot backups</a>.<br /><br />
+<img src="/common/images/cman_backup-success.png" width="650px" alt="A page displays to confirm your backup was a success" /></p>
 
 
 		</div>
@@ -256,42 +261,6 @@
 			
 				
 				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
 					
 					
 					
@@ -307,14 +276,71 @@
 							
 								
 								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Getting started with the Component Manager and System Upgrade</a></li>
+									
+								
 								
 								
 							
-									<li class=""><span class="nav-header">C_UseCompMan</span></li>
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/comp-mgr/prereq/prereq_compman-updater.html">Prerequisites</a></li>
+									
+								
 								
 								
 							
 								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/comp-mgr/compman-start.html">Run the Component Manager</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/compman-main-pg.html">Manage your components</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/compman-readiness.html">Step 1. Readiness check</a></li>
+						
 								
 							
 									<li class="level-2  active "><a href="/guides/v2.0/comp-mgr/compman-backup.html">Step 2. Back up the file system and database</a></li>
@@ -327,8 +353,198 @@
 						
 
 					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">Uninstall</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/compman-uninst-data.html">Step 3. Data Option</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/compman-uninst-final.html">Step 4. Uninstall</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">Update</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/compman-update.html">Step 3. Component Update</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">Run System Upgrade</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-main-pg.html">Step 1. Select versions to upgrade</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-readiness.html">Step 2. Readiness check</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-backup.html">Step 3. Back up the file system and database</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/upgrader/upgrade.html">Step 4. Upgrade</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/comp-mgr/trouble/tshoot.html">Troubleshooting suggestions</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/update-fail.html">Roll back after update failure</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/component-depend.html">Resolve component dependencies</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/cron.html">Troubleshoot cron</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/updater.html">Troubleshoot the updater application</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/tshoot_backup.html">Troubleshoot backups</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			
