@@ -103,13 +103,6 @@ The following table shows which actions are supported for each Magento component
 			<td>Yes</td>
 			<td>Yes</td>
 		</tr>
-		<!-- <tr>
-			<td>metapackage</td>
-			<td>No</td>
-			<td>No</td>
-			<td>Yes</td>
-			<td>No</td>
-		</tr> -->
 		<tr>
 			<td>component</td>
 			<td>No</td>
@@ -124,7 +117,6 @@ The following table shows which actions are supported for each Magento component
       <ul><li>Enable and disable will be supported soon.</li>
       <li>A magento2-module has no <strong>Uninstall</strong> option if it's part of a metapackage. Currently, uninstalling a metapackage is not supported.</li></ul>
 </div>
-
 <h2 id="compman-access-sync">Update a component</h2>
 To see if any of your components can be updated, click **Sync**.
 

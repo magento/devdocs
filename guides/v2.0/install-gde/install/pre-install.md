@@ -31,7 +31,7 @@ You can think of it as a three-step process&mdash;where steps 2 and 3 are interc
 This guide discusses installation. After you install Magento, you can manage components and upgrade as discussed in the following guides:
 
 *	<a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html">Component Manager Guide</a>
-*	<a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">Upgrade Guide</a>
+*	<a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">Upgrade Guide</a> -->
 
 <h2 id="install-overview-audience">Identify yourself and get started</h2>
 Before you start your installation, take a moment to figure out which type of user you are. It's important because the installation procedure is very different for each type:
