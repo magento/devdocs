@@ -31,7 +31,7 @@ app/design/frontend/
 │&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──&nbsp;...
 </pre>
 
-The folder name conventionally equals to the theme code, any alphanumeric set of characters as the vendor sees fit. This convention is merely a recommendation, so nothing prevents calling this directory in any other way.
+The folder name conventionally matches naming used in the theme's code: any alphanumeric set of characters, as the vendor sees fit, is acceptable. This convention is merely a recommendation, so nothing prevents naming this directory in another way.
 
 <h2 id="fedg_create_theme_how-to_declare">Declare your theme</h2>
 
@@ -49,11 +49,6 @@ After you create a directory for your theme, you must create `theme.xml` contain
 	&nbsp;&nbsp;&nbsp;&nbsp;&lt;/media&gt;
 	&lt;/theme&gt;</pre>
 
-To make sure the theme is recognized by the Magento application, log in to the Magento Admin and check if the theme is displayed in the grid under **Content** > **Design** > **Themes**.
-
-<img src= "{{ site.baseurl }}common/images/fdg_create_theme.jpg" alt ="List of themes stored in the database"/>
-
-Clicking on a theme record on Themes opens a page containing the information from the theme declaration file, and a preview image if available.
 
 <h2 id="fedg_create_theme_composer">Make your theme a Composer package (optional)</h2>
 
@@ -99,9 +94,9 @@ Example of a theme `composer.json`:
 
 <h2 id="fedg_create_theme_how-to-images">Configure images</h2>
 
-Product images sizes and other properties used on the storefront are configured in a `view.xml` configuration file. It is required for a theme, but is optional if exists in the parent theme.
+Product image sizes and other properties used on the storefront are configured in a `view.xml` configuration file. It is required for a theme, but is optional if exists in the parent theme.
 
-If product images sizes of your theme differ from those of the parent theme, or in case your theme does not inherit from any theme, add `view.xml` using the following steps:
+If the product image sizes of your theme differ from those of the parent theme, or if your theme does not inherit from any theme, add `view.xml` using the following steps:
 
 1.	Log in to your Magento server as a user with permissions to create directories and files in the Magento installation directory. (Typically, this is the web server user.)
 
@@ -139,8 +134,8 @@ app/design/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
- <p>In the <code>...&lt;theme&gt;/web/images</code> you store the general theme related static files, for example a theme logo is stored in <code>...&lt;theme&gt;/web/images</code>.
-Most probably your theme will also contain module-specific files, which are stored in the corresponding sub-directories, like <code>.../&lt;theme&gt;/&lt;Namespace_Module&gt;/web/css</code> and similar. Managing the module-specific theme files is discussed in the following sections of this Guide.</p></span>
+ <p>In the <code>...&lt;theme&gt;/web/images</code> you store the general theme related static files. For example, a theme logo is stored in <code>...&lt;theme&gt;/web/images</code>.
+It is likely that your theme will also contain module-specific files, which are stored in the corresponding sub-directories, like <code>.../&lt;theme&gt;/&lt;Namespace_Module&gt;/web/css</code> and similar. Managing the module-specific theme files is discussed in the following sections of this Guide.</p></span>
 </div>
 
 
@@ -164,9 +159,9 @@ app/design/frontend/&lt;Vendor&gt;/
 
 <h2>Theme logo</h2>
 
-In the Magento application, the default format and name of a logo image is <code>logo.svg</code>. When you put a <code>logo.svg</code> image to the conventional location, which is <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/images</code> directory, it is automatically recognized as theme logo. It is displayed in your store page header once the theme is <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html" target="_blank">applied</a>.
+In the Magento application, the default format and name of a logo image is <code>logo.svg</code>. When you put a <code>logo.svg</code> image in the conventional location, which is <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/images</code> directory, it is automatically recognized as theme logo. It is displayed in your store page header once the theme is <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html" target="_blank">applied</a>.
 
-In your custom theme, you can use a logo file with other name and format, but you might need to declare it. 
+In your custom theme, you can use a logo file with a different name and format, but you might need to declare it. 
 
 The necessity of declaration depends on whether your theme has a <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">parent</a> theme and its logo image. The following cases are possible:
 <ul>

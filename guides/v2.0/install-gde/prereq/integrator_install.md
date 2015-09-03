@@ -29,7 +29,7 @@ To get started:
 2.	Change to the web server docroot directory, or to a directory you've configured as a virtual host docroot.
 3.	Enter the following command:
 
-		composer create-project magento/product-community-edition --stability="beta" <installation directory name>
+		composer create-project magento/project-community-edition --stability="beta" <installation directory name>
 
 	This command creates the project defined in <a href="http://packages.magento.com/#!/community" target="_blank">packages.magento.com</a> and downloads dependencies for it. The project is in a directory named `<installation directory name>` if you provided the parameter or `product-community-edition` if you did not.
 
