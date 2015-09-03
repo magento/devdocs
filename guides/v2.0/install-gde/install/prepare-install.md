@@ -15,8 +15,7 @@ redirect_from: /guides/v1.0/install-gde/install/prepare-install.html
 
   
 <h2 id="install-update-depend">Introduction to Magento installation dependencies</h2>
-
-For the first time, Magento uses <a href="http://getcomposer.org">Composer</a> to resolve dependencies before you install the Magento software and extensions.
+We now use <a href="http://getcomposer.org">Composer</a> to resolve dependencies before you install the Magento software and extensions.
 
 Composer is a separate application that manages PHP dependencies. Before you can install the Magento software, you must perform the following tasks in the order shown:
 
