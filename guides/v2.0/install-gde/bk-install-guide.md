@@ -78,7 +78,6 @@ After verifying your prerequisites, perform the following tasks in the order sho
 2.	<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>
 
 <h2>Required server permissions</h2>
-
-Unless otherwise noted, all commands in this guide must be entered as a user with `root` privileges or as a user with permission to write to the web server docroot. Depending on your system, that might mean you must use different user accounts or add users to the web server user group&mdash;provided that group has sufficient privileges.
+Unless otherwise noted, all commands in this guide must be entered as a user with `root` privileges or as a user with permission to write to the web server docroot. Depending on your system, that might mean you must use different user accounts or add users to the web server user group&mdash;provided that group has sufficient privileges. For more information, see <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Create a Magento user and add to the web server group</a>.
 
 Installing software on Linux typically requires `root` privileges. You should generally not install the Magento software in the web server docroot as the `root` user because the web server might not be able to interact with those files. However, that is up to you.
