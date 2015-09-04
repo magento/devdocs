@@ -155,7 +155,7 @@ The following table describes `<field>` attributes.
 
 The following image shows how XML is connected with GUI of your new widget.
 
-![XML and GUI relation]({{ site.baseurl }}common/images/mtf_fixture_xml_pic.png)
+<a href="{{ site.baseurl }}common/images/mtf_fixture_xml_pic.png"><img src="{{ site.baseurl }}common/images/mtf_fixture_xml_pic.png" /></a>
 
 Orange arrows show relations between `<field>` nodes of fixture and GUI element of Magento widget, that we are going to test.
 
