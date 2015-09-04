@@ -11,7 +11,7 @@ github_link: mtf/mtf_entities/mtf_fixture-repo.md
 
 - <a href="#mtf_repository_overview">Repository overview</a>
 
-- <a href="#mtf_repository_create">Create a repository for entire fixture</a>
+- <a href="#mtf_repository_create">Create a repository for the entire fixture</a>
 
 - <a href="#mtf_repository_create-field"> Create a repository for the fixture field</a>
 
