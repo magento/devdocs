@@ -25,13 +25,13 @@ Use only spaces for indentation:
 * Continuation indent: 4 spaces
 
 ##### Correct:
-<pre>
-    .nav {
-        .nav-item {
-            ...
+
+        .nav {
+            .nav-item {
+                ...
+            }
         }
-    }
-</pre>
+
 
 ### Formatting
 
