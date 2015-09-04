@@ -26,13 +26,11 @@ Use spaces instead tabs:
 * Continuation indent: 4 spaces
 
 {% highlight css %}
-```
     .nav {
         .nav-item {
             ...
         }
     }
-```
 {% endhighlight%}
 
 ### Formatting
