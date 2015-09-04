@@ -2,8 +2,8 @@
 layout: default
 group: install_pre
 subgroup: Prerequisites
-title: Create a Magento user and add to the web server group
-menu_title: Create a Magento user and add to the web server group
+title: Create the Magento file system owner
+menu_title: Create the Magento file system owner
 menu_node:
 menu_order: 6
 github_link: install-gde/prereq/apache-user.md
@@ -13,6 +13,7 @@ github_link: install-gde/prereq/apache-user.md
 *	<a href="#install-update-depend-user-over">Overview of ownership and permissions</a>
 *	<a href="#install-update-depend-user-create">Create a user and give the user a strong password</a>
 *	<a href="#install-update-depend-user-group">Add the user to the web server group</a>
+*	<a href="#install-update-depend-user-switch">Switch to the Magento file system owner</a>
 
 <h2 id="install-update-depend-user-over">Overview of ownership and permissions</h2>
 Even in a development environment, you want your Magento installation to be secure. To help prevent issues related to unauthorized people or processes doing potentially harmful things to your system, we recommend some guidelines related to file system ownership and security:
@@ -82,7 +83,11 @@ To confirm your Magento user is a member of the web server group, enter the foll
 After you've performed the other tasks in this topic, enter one of the following commands to switch to that user:
 
 *	Ubuntu: `su <username>`
-*	CentOS: `us - <username>`
+*	CentOS: `su - <username>`
+
+For example,
+
+	su magento_user
 
 ### Next steps
 *	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Optional software</a>
