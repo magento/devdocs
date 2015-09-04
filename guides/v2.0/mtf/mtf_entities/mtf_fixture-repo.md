@@ -120,21 +120,9 @@ To create a new CMS page link the user must enter data of all required fields. W
 
 ![cms_page_link "Frontend App Options" dataset for entire fixture view on GUI]({{ site.baseurl }}common/images/mtf_ent_fixt_repo_cms_set_ui_frontend-app.png)
 
-**Anchor Custom Text** and **Anchor Custom Title** can be coded as complex fields as `<field name="parameters" xsi:type="array"></field>`:
-
-- Set the **Anchor Custom Text** field to "text". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="anchor_text" xsi:type="string">text</item>`.
-- Set the **Anchor Custom Title** field to "anchor title". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="title" xsi:type="string">anchor title</item>`.
-- Create CMS Page using `default` data set. The test will take data from the <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_dataset.html"> data set entity</a> with the `default` name and use this data for creation of new CMS page. This field is destined to be used by <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_handler.html">handler</a> only.
-
-{% highlight xml %}
-
-<field name="page_id" xsi:type="array">
-    <item name="dataset" xsi:type="string">default</item>
-</field>
-
-{% endhighlight xml %}
-
-- Choose in the **CMS Page** grid newly created "cmsPageLink". The test will take data from the <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_dataset.html"> data set entity</a> with the `cmsPageLink` name and use this data for creation of new CMS page.
+- Set the **Anchor Custom Text** field to "text".
+- Set the **Anchor Custom Title** field to "anchor title".
+- Choose in the **CMS Page** grid newly created CMS page.
 
 {% highlight xml %}
 
@@ -145,6 +133,24 @@ To create a new CMS page link the user must enter data of all required fields. W
 </field>
 
 {% endhighlight xml %}
+
+This simple code contains a bit more complex logic, where <a href="#mtf_repository_create-field">the repository is applied to the fixture field</a>. Just to remind you, how this field is represented in the fixture: `<field name="widgetOptions" source="Magento\Widget\Test\Fixture\Widget\WidgetOptions" repository="Magento\Widget\Test\Repository\Widget\WidgetOptions" group="widget_options" />`. In brief, we reference to another repository `magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/WidgetOptions.xml`, and a <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">source</a> that is `magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget/WidgetOptions.php`.
+
+The `WidgetOptions.xml` repository includes `cmsPageLink` dataset:
+
+{% highlight xml %}
+
+<dataset name="cmsPageLink">
+    <field name="anchor_text" xsi:type="string">text</field>
+    <field name="title" xsi:type="string">anchor title/field>
+    <field name="entities" xsi:type="array">
+        <item name="0" xsi:type="string">cmsPage::default</item>
+    </field>
+</dataset>
+
+{% endhighlight xml %}
+
+The source understands the `entities` field as instruction to create CMS Page using `<dataset name="default">` from the `magento2ce/dev/tests/functional/tests/app/Magento/Cms/Test/Repository/CmsPage.xml` repository.
 
 <h4 id="mtf_repo_widgetxml">Widget.xml</h4>
 
@@ -196,14 +202,6 @@ See the entire repository sample so far:
                         <item name="template" xsi:type="string">CMS Page Link Block Template</item>
                     </item>
                 </item>
-            </field>
-            <field name="parameters" xsi:type="array">
-                <item name="display_mode" xsi:type="string">fixed</item>
-                <item name="anchor_text" xsi:type="string">text</item>
-                <item name="title" xsi:type="string">anchor title</item>
-            </field>
-            <field name="page_id" xsi:type="array">
-                <item name="dataset" xsi:type="string">default</item>
             </field>
             <field name="theme_id" xsi:type="string">Magento Blank</field>
             <field name="widgetOptions" xsi:type="array">
