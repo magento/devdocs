@@ -25,7 +25,7 @@ Use spaces instead tabs:
 * Indent size: 4 spaces
 * Continuation indent: 4 spaces
 
-{% highlight less%}
+{% highlight less %}
 ```
     .nav {
         .nav-item {
@@ -33,7 +33,7 @@ Use spaces instead tabs:
         }
     }
 ```
-{% endhighlight less%}
+{% endhighlight%}
 
 ### Formatting
 
