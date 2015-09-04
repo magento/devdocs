@@ -25,7 +25,7 @@ Use spaces instead tabs:
 * Indent size: 4 spaces
 * Continuation indent: 4 spaces
 
-{% highlight less %}
+{% highlight css %}
 ```
     .nav {
         .nav-item {
