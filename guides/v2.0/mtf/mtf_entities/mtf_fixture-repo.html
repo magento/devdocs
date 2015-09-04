@@ -173,10 +173,10 @@
     <p><a href="#mtf_repository_overview">Repository overview</a></p>
   </li>
   <li>
-    <p><a href="#mtf_repository_create">Create repository for entire fixture</a></p>
+    <p><a href="#mtf_repository_create">Create a repository for entire fixture</a></p>
   </li>
   <li>
-    <p><a href="#mtf_repository_create-field"> Create repository for the fixture field</a></p>
+    <p><a href="#mtf_repository_create-field"> Create a repository for the fixture field</a></p>
   </li>
   <li>
     <p><a href="#mtf_repository_config">Configuration repository</a></p>
@@ -198,7 +198,7 @@ Reference to the repository is placed in the fixture XML file in attribute named
 
 <p>In this topic you will learn how to create, use, and merge a repository.</p>
 
-<h2 id="mtf_repository_create">Create repository for the entire fixture</h2>
+<h2 id="mtf_repository_create">Create a repository for the entire fixture</h2>
 
 <p>Let’s create a repository for the Widget fixture <code>magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml</code>.</p>
 
@@ -245,9 +245,17 @@ Reference to the repository is placed in the fixture XML file in attribute named
     <span class="nt">&lt;/fixture&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></div>
 
+<p>The <code>repository_class="Magento\Widget\Test\Repository\Widget"</code> attribute tells us that this fixture uses data from the <code>magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget.xml</code> repository.</p>
+
+<p>In this section we will show the logic of how to create this repository.</p>
+
+<p>Also <code>layout</code> and <code>widgetOptions</code> fields use <code>magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/LayoutUpdates.xml</code> and <code>magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/WidgetOptions.xml</code> repositories respectively.</p>
+
+<p><a href="#mtf_repository_create-field"> Learn how to create repository for the fixture field</a>.</p>
+
 <p>We want to specify data sets for two cases of submitting Widget forms: <code>default</code> with minimum data, and <code>cms_page_link</code> with data needed to create new CMS page link.</p>
 
-<p>To create a new CMS page link the user must enter data of all required fields. Widget has three forms with fields to specify: <a href="#mtf_repo_ex_set"><strong>Settings</strong></a>, <a href="#mtf_repo_ex_store"><strong>Storefront Properties</strong></a>, <a href="#mtf_repo_ex_front"><strong>Frontend Apps Options</strong></a>. The following text along with screenshots gives an example of how to create a dataset of repository.</p>
+<p>To create a new CMS page link the user must enter data of all required fields. The widget has three forms with fields to specify: <a href="#mtf_repo_ex_set"><strong>Settings</strong></a>, <a href="#mtf_repo_ex_store"><strong>Storefront Properties</strong></a>, <a href="#mtf_repo_ex_front"><strong>Frontend Apps Options</strong></a>. The following text along with screenshots gives an example of how to create a dataset of the repository.</p>
 
 <p><a href="#mtf_repo_widgetxml">See entire repository code</a>.</p>
 
@@ -274,9 +282,9 @@ Reference to the repository is placed in the fixture XML file in attribute named
 <span class="nt">&lt;/field&gt;</span></code></pre></div>
 
 <ul>
-  <li>Provide data for the <strong>Layout Updates</strong> complex field. In the repository code, complex field are represented as arrays of items. An item can be an array of items also, depending on the hierarchy of fields. This field is defined as <code>&lt;field name="widget_instance" xsi:type="array"&gt;&lt;/field&gt;</code>. As it is possible to create more than one instance of a layout update, we define our instance as first element of array with index “0” as <code>&lt;item name="0" xsi:type="array"&gt;&lt;/item&gt;</code>.
+  <li>Provide data for the <strong>Layout Updates</strong> complex field. In the repository code, complex fields are represented as arrays of items. An item can be an array of items also, depending on the hierarchy of fields. This field is defined as <code>&lt;field name="widget_instance" xsi:type="array"&gt;&lt;/field&gt;</code>. As it is possible to create more than one instance of a layout update, we define our instance as the first element of an array with index “0” as <code>&lt;item name="0" xsi:type="array"&gt;&lt;/item&gt;</code>.
     <ul>
-      <li>Set the <strong>Display on</strong> field to “All pages:. It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> <code>&lt;item name="page_group" xsi:type="string"&gt;All Pages&lt;/item&gt;</code>. Depending on value of this field, different fields to define this value appear. That’s why all daughter fields must be wrapped in <code>&lt;item name="all_pages" xsi:type="array"&gt;&lt;/item&gt;</code>.
+      <li>Set the <strong>Display on</strong> field to “All pages:. It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> <code>&lt;item name="page_group" xsi:type="string"&gt;All Pages&lt;/item&gt;</code>. Daughter fields are appeared, when <strong>Display on</strong> field is specified. All daughter fields must be wrapped in <code>&lt;item name="all_pages" xsi:type="array"&gt;&lt;/item&gt;</code>.
         <ul>
           <li>Set the <strong>Container</strong> field to “Main content area”. It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> <code>&lt;item name="block" xsi:type="string"&gt;Main Content Area&lt;/item&gt;</code>.</li>
           <li>Set the <strong>Template</strong> field to “CMS Page Link Block Template”. It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> <code>&lt;item name="template" xsi:type="string"&gt;CMS Page Link Block Template&lt;/item&gt;</code>.</li>
@@ -290,20 +298,10 @@ Reference to the repository is placed in the fixture XML file in attribute named
 
 <p><img src="/common/images/mtf_ent_fixt_repo_cms_set_ui_frontend-app.png" alt="cms_page_link &quot;Frontend App Options&quot; dataset for entire fixture view on GUI" /></p>
 
-<p><strong>Anchor Custom Text</strong> and <strong>Anchor Custom Title</strong> can be coded as complex fields as <code>&lt;field name="parameters" xsi:type="array"&gt;&lt;/field&gt;</code>:</p>
-
 <ul>
-  <li>Set the <strong>Anchor Custom Text</strong> field to “text”. It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> <code>&lt;item name="anchor_text" xsi:type="string"&gt;text&lt;/item&gt;</code>.</li>
-  <li>Set the <strong>Anchor Custom Title</strong> field to “anchor title”. It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> <code>&lt;item name="title" xsi:type="string"&gt;anchor title&lt;/item&gt;</code>.</li>
-  <li>Create CMS Page using <code>default</code> data set, where data set is not repository data set, but data set entity. <a href="/guides/v2.0/mtf/mtf_entities/mtf_dataset.html">Learn more about data set entity.</a></li>
-</ul>
-
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;page_id&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;dataset&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>default<span class="nt">&lt;/item&gt;</span>
-<span class="nt">&lt;/field&gt;</span></code></pre></div>
-
-<ul>
-  <li>Choose in the <strong>CMS Page</strong> grid newly created “cmsPageLink”.</li>
+  <li>Set the <strong>Anchor Custom Text</strong> field to “text”.</li>
+  <li>Set the <strong>Anchor Custom Title</strong> field to “anchor title”.</li>
+  <li>Choose in the <strong>CMS Page</strong> grid newly created CMS page.</li>
 </ul>
 
 <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;widgetOptions&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
@@ -312,10 +310,25 @@ Reference to the repository is placed in the fixture XML file in attribute named
     <span class="nt">&lt;/item&gt;</span>
 <span class="nt">&lt;/field&gt;</span></code></pre></div>
 
+<p>This simple code contains a bit more complex logic, where <a href="#mtf_repository_create-field">the repository is applied to the fixture field</a>. Just to remind you, how this field is represented in the fixture: <code>&lt;field name="widgetOptions" source="Magento\Widget\Test\Fixture\Widget\WidgetOptions" repository="Magento\Widget\Test\Repository\Widget\WidgetOptions" group="widget_options" /&gt;</code>.</p>
+
+<p>In brief, we reference another repository <code>magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/WidgetOptions.xml</code>, and a <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">source</a> that is <code>magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget/WidgetOptions.php</code>.</p>
+
+<p>The <code>WidgetOptions.xml</code> repository includes <code>cmsPageLink</code> dataset:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;dataset</span> <span class="na">name=</span><span class="s">&quot;cmsPageLink&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;anchor_text&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>text<span class="nt">&lt;/field&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;title&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>anchor title/field&gt;
+    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;entities&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;0&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>cmsPage::default<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;/field&gt;</span>
+<span class="nt">&lt;/dataset&gt;</span></code></pre></div>
+
+<p>The source understands the <code>entities</code> field as an instruction to create a CMS Page using <code>&lt;dataset name="default"&gt;</code> from the <code>magento2ce/dev/tests/functional/tests/app/Magento/Cms/Test/Repository/CmsPage.xml</code> repository.</p>
+
 <h4 id="mtf_repo_widgetxml">Widget.xml</h4>
 
-<p>Now we can create a repository XML file by the path specified in the <code>repository_class</code> attribute. 
-In our case it is <code>magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget.xml</code>.</p>
+<p>Now we can create a repository XML file <code>Widget.xml</code>. In our case it should be placed in <code>magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Repository</code>. The full name must be specified in the <code>repository_class</code> attribute of the fixture: <code>repository_class="Magento\Widget\Test\Repository\Widget"</code>.</p>
 
 <p>See the entire repository sample so far:</p>
 
@@ -362,14 +375,6 @@ In our case it is <code>magento2ce/dev/tests/functional/tests/app/Magento/Widget
                     <span class="nt">&lt;/item&gt;</span>
                 <span class="nt">&lt;/item&gt;</span>
             <span class="nt">&lt;/field&gt;</span>
-            <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;parameters&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;display_mode&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>fixed<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;anchor_text&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>text<span class="nt">&lt;/item&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;title&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>anchor title<span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;/field&gt;</span>
-            <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;page_id&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;dataset&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>default<span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;/field&gt;</span>
             <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;theme_id&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento Blank<span class="nt">&lt;/field&gt;</span>
             <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;widgetOptions&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;0&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
@@ -388,11 +393,11 @@ In our case it is <code>magento2ce/dev/tests/functional/tests/app/Magento/Widget
   <li><code>&lt;config&gt;</code> is a root node that defines the path to the <code>repository.xsd</code> schema.</li>
   <li><code>&lt;repository&gt;</code> specifies a repository class in the required <code>class</code> attribute and stores data sets. <code>class</code> contains the full name of the repository class. The repository contains data sets.
     <ul>
-      <li>In case of an entire fixture repository the full name of class (including the namespace) must be built as <code>&lt;path to module where the fixture is placed&gt;\Repository\&lt;file with the name of fixture&gt;</code>. Example: <code>Magento\Widget\Test\Repository\Widget</code></li>
-      <li>In case of an fixture field repository the full name of class (including the namespace) must be built as <code>&lt;path to module where the fixture is placed&gt;\Repository\&lt;directory with the name of fixture&gt;\&lt;file with the name of field&gt;</code>. Example: <code>Magento\Widget\Test\Repository\Widget\LayoutUpdates</code>.</li>
+      <li>In case of an entire fixture repository, the full name of the class (including the namespace) must be built as <code>&lt;path to module where the fixture is placed&gt;\Repository\&lt;file with the name of fixture&gt;</code>. Example: <code>Magento\Widget\Test\Repository\Widget</code></li>
+      <li>In case of a fixture field repository, the full name of the class (including the namespace) must be built as <code>&lt;path to module where the fixture is placed&gt;\Repository\&lt;directory with the name of fixture&gt;\&lt;file with the name of field&gt;</code>. Example: <code>Magento\Widget\Test\Repository\Widget\LayoutUpdates</code>.</li>
     </ul>
   </li>
-  <li><code>&lt;dataset&gt;</code> specifies the name of data set in required <code>name</code> attribute. This name serves as a reference to the data set that will be used in the test. Each data set contains fields.</li>
+  <li><code>&lt;dataset&gt;</code> specifies the name of data set in the required <code>name</code> attribute. This name serves as a reference to the data set that will be used in the test. Each data set contains fields.</li>
   <li><code>&lt;field&gt;</code> defines the value of the field. Field can contain either value, or items if the field is complex.</li>
 </ul>
 
@@ -459,7 +464,7 @@ In our case it is <code>magento2ce/dev/tests/functional/tests/app/Magento/Widget
 
 <p>The <code>default</code> data set is used in the test when the repository hasn’t been specified in the test, although you can explicitly specify <code>default</code>. If repository name in the test is <code>cms_page_link</code>, then fields will be filled with data from <code>&lt;dataset name="cms_page_link"&gt;</code>.</p>
 
-<h2 id="mtf_repository_create-field"> Create repository for the fixture field</h2>
+<h2 id="mtf_repository_create-field"> Create a repository for the fixture field</h2>
 
 <p>In the preceding section, the Widget fixture code contains fields with the links for repositories. Let’s consider the field <code>layout</code> with <code>repository="Magento\Widget\Test\Repository\Widget\LayoutUpdates</code>.</p>
 
@@ -537,7 +542,7 @@ In our case it is <code>magento2ce/dev/tests/functional/tests/app/Magento/Widget
 
 <h2 id="mtf_repository_config">Configuration repository</h2>
 
-<p>The configuration repository file has name <code>ConfigData.xml</code>. It is the repository for the <code>Config</code> module. It stores predefined data sets of the Magento configuration settings.</p>
+<p>The configuration repository stores predefined data sets for Magento configuration settings. It is the repository for the <a href="https://github.com/magento/magento2/tree/master/app/code/Magento/Config">Magento_Config module</a> and is named <code>ConfigData.xml</code>.</p>
 
 <p>Let’s see the following example of configuration settings for <a href="https://github.com/magento/magento2/tree/develop/app/code/Magento/Authorizenet">Authorize.Net module</a> <code>magento2ce/dev/tests/functional/tests/app/Magento/Authorizenet/Test/Repository/ConfigData.xml</code>.</p>
 
@@ -664,7 +669,7 @@ In our case it is <code>magento2ce/dev/tests/functional/tests/app/Magento/Widget
 
 <p>The following screenshot helps to understand the <code>scope_id</code> attribute.</p>
 
-<p><img src="/common/images/mtf_admin_scope-id.png" alt="authorizenet dataset view on GUI" />]</p>
+<p><img src="/common/images/mtf_ent_fixt_repo_config_scope-id.png" alt="authorizenet dataset view on GUI" /></p>
 
 <p>Let’s see the <code>authorizenet</code> data set in action. Fields defined in repository are in orange. Other fields are set in default values.</p>
 
@@ -678,7 +683,7 @@ In our case it is <code>magento2ce/dev/tests/functional/tests/app/Magento/Widget
 
 <p><a href="/common/images/mtf_repo_merge_ex.png"><img src="/common/images/mtf_repo_merge_ex.png" /></a></p>
 
-<p>As you can see, the <code>ConfigData.xml</code> of the <code>Authorizenet</code> module and the <code>ConfigData.xml</code> of the <code>Backend</code> module have the same reference to the repository class; that is <code>Magento\Config\Test\Repository\ConfigData</code>.</p>
+<p>As you can see, the <code>ConfigData.xml</code> of the <code>Authorizenet</code> module and the <code>ConfigData.xml</code> of <a href="https://github.com/magento/magento2/tree/master/app/code/Magento/Backend">the <code>Magento_Backend</code> module</a> have the same reference to the repository class; that is <code>Magento\Config\Test\Repository\ConfigData</code>.</p>
 
 <p><code>ConfigData.php</code> will be generated in <code>magento2ce/dev/tests/functional/generated/Magento/Config/Test/Repository</code>. This PHP repository will contain repository data sets from all Magento modules that have a <code>ConfigData.xml</code> repository.</p>
 
