@@ -7,9 +7,8 @@ menu_title: Less coding standard
 menu_order: 7
 github_link: coding-standards/code-standard-less.md
 ---
-# Less Coding Standard
 
-This standard defines Magento requirements for code formatting and style for teams that develop LESS and CSS code. 
+This standard defines Magento requirements for code formatting and style for teams that develop LESS and CSS code.
 
 Some parts of Magento code might not comply with this coding standard.
 
@@ -19,32 +18,33 @@ This coding standard is optional for third-party Magento developers.
 
 ### Indentation
 
-Use spaces instead tabs:
+Use only spaces for indentation:
 
 * Tab size: 4 spaces
 * Indent size: 4 spaces
 * Continuation indent: 4 spaces
 
-{% highlight css %}
+##### Correct:
+<pre>
     .nav {
         .nav-item {
             ...
         }
     }
-{% endhighlight%}
+</pre>
 
 ### Formatting
 
 #### Braces
 
-Add space before opening brace and line break after. And line break before closing brace.
+Add one space before opening braces and line break after. Add line break before closing braces.
 
-##### Not recommended:
+##### Incorrect:
 ```
     .nav{color: @nav__color;}
 ```
 
-##### Recommended:
+##### Correct:
 
 ```
     .nav {
@@ -54,17 +54,9 @@ Add space before opening brace and line break after. And line break before closi
 
 #### Selector delimiters
 
-Add line break after each selector delimiter. Delimeter shouldn't have spaces before and after.
+Add line break after each selector delimiter. Do not add spaces before and after delimiters.
 
-##### Not recommended:
-
-```
-    .nav, .bar {
-        color: @color__base;
-    }
-```
-
-##### Recommended:
+##### Correct:
 
 ```
     .nav,
@@ -73,19 +65,21 @@ Add line break after each selector delimiter. Delimeter shouldn't have spaces be
     }
 ```
 
+##### Incorrect:
+
+```
+    .nav, .bar {
+        color: @color__base;
+    }
+```
+
+
+
 #### Quotes
 
 Use single quotes.
 
-##### Not recommended:
-
-```
-    .nav {
-        content: "lorem ipsum";
-    }
-```
-
-##### Recommended:
+##### Correct:
 
 ```
     .nav {
@@ -93,11 +87,28 @@ Use single quotes.
     }
 ```
 
+##### Incorrect:
+
+```
+    .nav {
+        content: "lorem ipsum";
+    }
+```
+
+
 #### Combinator indents
 
-Use spaces before and after combinators.
+Add spaces around combinators.
 
-##### Not recommended:
+##### Correct:
+
+```
+    .nav + .bar {
+        color: @bar__color;
+    }
+```
+
+##### Incorrect:
 
 ```
     .nav+.bar {
@@ -113,19 +124,11 @@ Use spaces before and after combinators.
     }
 ```
 
-##### Recommended:
-
-```
-    .nav + .bar {
-        color: @bar__color;
-    }
-```
-
 #### Properties line break
 
-Use line break for each property declaration.
+Start each property declaration in a new line.
 
-##### Not recommended:
+##### Incorrect:
 
 ```
     .nav {
@@ -133,7 +136,7 @@ Use line break for each property declaration.
     }
 ```
 
-##### Recommended:
+##### Correct:
 
 ```
     .nav {
@@ -144,9 +147,17 @@ Use line break for each property declaration.
 
 #### Properties colon indents
 
-Use no space before property colon, and space after.
+Do not add spaces around property colon.
 
-##### Not recommended:
+##### Correct:
+
+```
+    .nav {
+        color: @nav__color;
+    }
+```
+
+##### Incorrect:
 
 ```
     .nav {
@@ -162,34 +173,16 @@ Use no space before property colon, and space after.
     }
 ```
 
-##### Recommended:
-
-```
-    .nav {
-        color: @nav__color;
-    }
-```
 
 #### End of file
 
-Each less file should be finished with new line.
+Add a blank line in the end of file.
 
 #### End of the selector
 
-Each selector should be finished with new line.
+Add a blank line after selector.
 
-##### Not recommended:
-
-```css
-    .nav {
-        background-color: @nav__background-color;
-    }
-    .bar {
-        background-color: @bar__background-color;
-    }
-```
-
-##### Recommended:
+##### Correct:
 
 ```css
     .nav {
@@ -200,12 +193,32 @@ Each selector should be finished with new line.
         background-color: @bar__background-color;
     }
 ```
+
+##### Incorrect:
+
+```css
+    .nav {
+        background-color: @nav__background-color;
+    }
+    .bar {
+        background-color: @bar__background-color;
+    }
+```
+
 
 #### End of the property line
 
-Each property should be finished with semicolon.
+Add semicolon after property.
 
-##### Not recommended:
+##### Correct:
+
+```
+    .nav {
+        background-color: @nav__background-color;
+    }
+```
+
+##### Incorrect:
 
 ```
     .nav {
@@ -213,19 +226,19 @@ Each property should be finished with semicolon.
     }
 ```
 
-##### Recommended:
-
-```
-    .nav {
-        background-color: @nav__background-color;
-    }
-```
 
 #### !important property
 
-Basically avoid use this property at all, but if you really really need it use the following format:
+Avoid using the `!important` property if possible. If it is required, use the notation similar to the following:
 
-##### Not recommended:
+```
+    .jquery-ui-calendar-item {
+        background-color: @nav__background-color !important;
+    }
+```
+<p class="q">what exactly is important in this notation?</p>
+
+##### Incorrect:
 
 ```
     .jquery-ui-calendar-item {
@@ -233,18 +246,10 @@ Basically avoid use this property at all, but if you really really need it use t
     }
 ```
 
-##### Recommended:
-
-```
-    .jquery-ui-calendar-item {
-        background-color: @nav__background-color !important;
-    }
-```
 
 ### Comments
 
-Please follow the next format of comments:
-First and second level comment should have an empty line before and after the comment. 
+First and second level comments must be surrounded have an empty line before and after the comment.
 First, second and third level comment should have 2 spaces after "//" before the text. Inline comment should have 1 space after "//" before the text.
 
 ```
@@ -279,7 +284,7 @@ First, second and third level comment should have 2 spaces after "//" before the
 According to browser support standards the oldest browser that we support is IE9+, it means that you can feel free to use almost all CSS3 selectors: descendants, attributes, pseudo classes, structural, pseudo elements, etc.
 Exeption: Please avoid to use id selector.
 
-##### Not recommended:
+##### Incorrect:
 
 ```
     #foo {
@@ -287,7 +292,7 @@ Exeption: Please avoid to use id selector.
     }
 ```
 
-##### Recommended:
+##### Correct:
 
 ```
     .nav {
@@ -309,7 +314,7 @@ Exeption: Please avoid to use id selector.
 
 All classes should be written in lowercase, starts with letter (exept helper classes), words in classes should be separated with dash (minus sign '-').
 
-##### Not recommended:
+##### Incorrect:
 
 ```
     .navBar {
@@ -317,7 +322,7 @@ All classes should be written in lowercase, starts with letter (exept helper cla
     }
 ```
 
-##### Not recommended: underscore separation
+##### Incorrect: underscore separation
 
 ```
     .nav_bar {
@@ -325,7 +330,7 @@ All classes should be written in lowercase, starts with letter (exept helper cla
     }
 ```
 
-##### Recommended:
+##### Correct:
 
 ```
     .nav-bar {
@@ -351,7 +356,7 @@ Use class names that are as short as possible but as long as necessary.
 Try to convey what class is about while being as brief as possible.
 Using class names this way contributes to acceptable levels of understandability and code efficiency.
 
-##### Not recommended: too long
+##### Incorrect: too long
 
 ```
     .navigation-panel-in-footer {
@@ -359,7 +364,7 @@ Using class names this way contributes to acceptable levels of understandability
     }
 ```
 
-##### Not recommended: too short
+##### Incorrect: too short
 
 ```
     .nvpf {
@@ -367,7 +372,7 @@ Using class names this way contributes to acceptable levels of understandability
     }
 ```
 
-##### Recommended:
+##### Correct:
 
 ```
     .nav-bar {
@@ -379,7 +384,7 @@ Using class names this way contributes to acceptable levels of understandability
 
 Write selector name together in single line, don't use concatenation.
 
-##### Not recommended:
+##### Incorrect:
 
 ```
     .product {
@@ -393,7 +398,7 @@ Write selector name together in single line, don't use concatenation.
     }
 ```
 
-##### Recommended:
+##### Correct:
 
 ```
     .product-list-item {
@@ -412,14 +417,14 @@ Generic names are simply a fallback for elements that have no particular or no m
 
 Using functional or generic names reduces the probability of unnecessary document or template changes.
 
-##### Not recommended:
+##### Incorrect:
 ```
     .foo-1901 {
         ...
     }
 ```
 
-##### Not recommended: presentational
+##### Incorrect: presentational
 
 ```
     .button-green {
@@ -431,7 +436,7 @@ Using functional or generic names reduces the probability of unnecessary documen
     }
 ```
 
-##### Recommended: specific
+##### Correct: specific
 
 ```
     .category {
@@ -450,7 +455,7 @@ Unless necessary (for example with helper classes), do not use element names in 
 
 Avoiding unnecessary ancestor selectors is useful for performance reasons.
 
-##### Not recommended:
+##### Incorrect:
 
 ```
     div.error {
@@ -458,7 +463,7 @@ Avoiding unnecessary ancestor selectors is useful for performance reasons.
     }
 ```
 
-##### Recommended:
+##### Correct:
 
 ```
     .error {
@@ -468,7 +473,7 @@ Avoiding unnecessary ancestor selectors is useful for performance reasons.
 
 Use type selectors in lowercase
 
-##### Not recommended:
+##### Incorrect:
 
 ```
     .nav > LI {
@@ -476,7 +481,7 @@ Use type selectors in lowercase
     }
 ```
 
-##### Recommended:
+##### Correct:
 
 ```
     .nav > li {
@@ -490,7 +495,7 @@ Be careful with selectors nesting. In general try to use 3 nested levels as max.
 
 Exception are pseudo elements and states.
 
-##### Not recommended:
+##### Incorrect:
 
 ```
     .footer {
@@ -507,7 +512,7 @@ Exception are pseudo elements and states.
     }
 ```
 
-##### Recommended:
+##### Correct:
 
 ```
     .footer {
@@ -530,7 +535,7 @@ Exception are pseudo elements and states.
 
 Sort all properties alphabetical. Mixins, variables etc. should go first.
 
-##### Not recommended:
+##### Incorrect:
 
 ```
     .nav {
@@ -540,7 +545,7 @@ Sort all properties alphabetical. Mixins, variables etc. should go first.
     }
 ```
 
-##### Recommended:
+##### Correct:
 
 ```
     .nav {
@@ -557,7 +562,7 @@ Use shortland properties where possible.
 CSS offers a variety of shorthand properties that should be used whenever possible, even in cases where only one value is explicitly set.
 Using shorthand properties is useful for code efficiency and understandability.
 
-##### Not recommended:
+##### Incorrect:
 
 ```
     border-top-style: none;
@@ -567,7 +572,7 @@ Using shorthand properties is useful for code efficiency and understandability.
     padding-top: 0;
 ```
 
-##### Recommended:
+##### Correct:
 
 ```
     border-top: 0;
@@ -578,14 +583,14 @@ Using shorthand properties is useful for code efficiency and understandability.
 
 Omit unit specification after "0" values.
 
-##### Not recommended:
+##### Incorrect:
 
 ```
     border-width: 0px;
     margin: 0rem;
 ```
 
-##### Recommended:
+##### Correct:
 
 ```
     border-width: 0;
@@ -596,13 +601,13 @@ Omit unit specification after "0" values.
 
 Omit leading "0"s in values, use dot instead.
 
-##### Not recommended:
+##### Incorrect:
 
 ```
     margin-left: 0.5rem;
 ```
 
-##### Recommended:
+##### Correct:
 
 ```
     margin-left: .5rem;
@@ -615,7 +620,7 @@ Omit leading "0"s in values, use dot instead.
 * For color values that permit it, 3 character hexadecimal notation is shorter and more compact.
 * Also please avoid hex color in properties, use only variables instead.
 
-##### Not recommended:
+##### Incorrect:
 
 ```
     color: #ff0000;
@@ -623,7 +628,7 @@ Omit leading "0"s in values, use dot instead.
     @nav-item__color: red;
 ```
 
-##### Recommended:
+##### Correct:
 
 ```
     @nav__color: #fafafa;
