@@ -11,9 +11,9 @@ github_link: mtf/mtf_entities/mtf_fixture-repo.md
 
 - <a href="#mtf_repository_overview">Repository overview</a>
 
-- <a href="#mtf_repository_create">Create repository for entire fixture</a>
+- <a href="#mtf_repository_create">Create a repository for entire fixture</a>
 
-- <a href="#mtf_repository_create-field"> Create repository for the fixture field</a>
+- <a href="#mtf_repository_create-field"> Create a repository for the fixture field</a>
 
 - <a href="#mtf_repository_config">Configuration repository</a>
 
@@ -30,7 +30,7 @@ Reference to the repository is placed in the fixture XML file in attribute named
 
 In this topic you will learn how to create, use, and merge a repository.
 
-<h2 id="mtf_repository_create">Create repository for the entire fixture</h2>
+<h2 id="mtf_repository_create">Create a repository for the entire fixture</h2>
 
 Let's create a repository for the Widget fixture `magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml`.
 
@@ -81,11 +81,17 @@ Assume that we have the following fixture:
 
 {% endhighlight %}
 
-The `repository_class="Magento\Widget\Test\Repository\Widget"` attribute tells us that this fixture uses data from the `magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget.xml` repository. In this section we will show the logic of how to create this repository. Also `layout` and `widgetOptions` fields use `magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/LayoutUpdates.xml` and `magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/WidgetOptions.xml` repositories respectively. <a href="#mtf_repository_create-field"> Learn how to create repository for the fixture field</a>.
+The `repository_class="Magento\Widget\Test\Repository\Widget"` attribute tells us that this fixture uses data from the `magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget.xml` repository.
+
+In this section we will show the logic of how to create this repository.
+
+Also `layout` and `widgetOptions` fields use `magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/LayoutUpdates.xml` and `magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/WidgetOptions.xml` repositories respectively.
+
+<a href="#mtf_repository_create-field"> Learn how to create repository for the fixture field</a>.
 
 We want to specify data sets for two cases of submitting Widget forms: `default` with minimum data, and `cms_page_link` with data needed to create new CMS page link.
 
-To create a new CMS page link the user must enter data of all required fields. Widget has three forms with fields to specify: <a href="#mtf_repo_ex_set">**Settings**</a>, <a href="#mtf_repo_ex_store">**Storefront Properties**</a>, <a href="#mtf_repo_ex_front">**Frontend Apps Options**</a>. The following text along with screenshots gives an example of how to create a dataset of repository.
+To create a new CMS page link the user must enter data of all required fields. The widget has three forms with fields to specify: <a href="#mtf_repo_ex_set">**Settings**</a>, <a href="#mtf_repo_ex_store">**Storefront Properties**</a>, <a href="#mtf_repo_ex_front">**Frontend Apps Options**</a>. The following text along with screenshots gives an example of how to create a dataset of the repository.
 
 <a href="#mtf_repo_widgetxml">See entire repository code</a>.
 
@@ -111,8 +117,8 @@ To create a new CMS page link the user must enter data of all required fields. W
 
 {% endhighlight xml %}
 
-- Provide data for the **Layout Updates** complex field. In the repository code, complex field are represented as arrays of items. An item can be an array of items also, depending on the hierarchy of fields. This field is defined as `<field name="widget_instance" xsi:type="array"></field>`. As it is possible to create more than one instance of a layout update, we define our instance as first element of array with index "0" as `<item name="0" xsi:type="array"></item>`.
-  - Set the **Display on** field to "All pages:. It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="page_group" xsi:type="string">All Pages</item>`. Depending on value of this field, different fields to define this value appear. That's why all daughter fields must be wrapped in `<item name="all_pages" xsi:type="array"></item>`.
+- Provide data for the **Layout Updates** complex field. In the repository code, complex fields are represented as arrays of items. An item can be an array of items also, depending on the hierarchy of fields. This field is defined as `<field name="widget_instance" xsi:type="array"></field>`. As it is possible to create more than one instance of a layout update, we define our instance as the first element of an array with index "0" as `<item name="0" xsi:type="array"></item>`.
+  - Set the **Display on** field to "All pages:. It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="page_group" xsi:type="string">All Pages</item>`. Daughter fields are appeared, when **Display on** field is specified. All daughter fields must be wrapped in `<item name="all_pages" xsi:type="array"></item>`.
     - Set the **Container** field to "Main content area". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="block" xsi:type="string">Main Content Area</item>`.
     - Set the **Template** field to "CMS Page Link Block Template". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="template" xsi:type="string">CMS Page Link Block Template</item>`.
 
@@ -134,7 +140,9 @@ To create a new CMS page link the user must enter data of all required fields. W
 
 {% endhighlight xml %}
 
-This simple code contains a bit more complex logic, where <a href="#mtf_repository_create-field">the repository is applied to the fixture field</a>. Just to remind you, how this field is represented in the fixture: `<field name="widgetOptions" source="Magento\Widget\Test\Fixture\Widget\WidgetOptions" repository="Magento\Widget\Test\Repository\Widget\WidgetOptions" group="widget_options" />`. In brief, we reference to another repository `magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/WidgetOptions.xml`, and a <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">source</a> that is `magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget/WidgetOptions.php`.
+This simple code contains a bit more complex logic, where <a href="#mtf_repository_create-field">the repository is applied to the fixture field</a>. Just to remind you, how this field is represented in the fixture: `<field name="widgetOptions" source="Magento\Widget\Test\Fixture\Widget\WidgetOptions" repository="Magento\Widget\Test\Repository\Widget\WidgetOptions" group="widget_options" />`.
+
+In brief, we reference another repository `magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/WidgetOptions.xml`, and a <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">source</a> that is `magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget/WidgetOptions.php`.
 
 The `WidgetOptions.xml` repository includes `cmsPageLink` dataset:
 
@@ -150,7 +158,7 @@ The `WidgetOptions.xml` repository includes `cmsPageLink` dataset:
 
 {% endhighlight xml %}
 
-The source understands the `entities` field as instruction to create CMS Page using `<dataset name="default">` from the `magento2ce/dev/tests/functional/tests/app/Magento/Cms/Test/Repository/CmsPage.xml` repository.
+The source understands the `entities` field as an instruction to create a CMS Page using `<dataset name="default">` from the `magento2ce/dev/tests/functional/tests/app/Magento/Cms/Test/Repository/CmsPage.xml` repository.
 
 <h4 id="mtf_repo_widgetxml">Widget.xml</h4>
 
@@ -221,9 +229,9 @@ Let's look at the repository structure.
 
 - `<config>` is a root node that defines the path to the `repository.xsd` schema.
 - `<repository>` specifies a repository class in the required `class` attribute and stores data sets. `class` contains the full name of the repository class. The repository contains data sets.
-  - In case of an entire fixture repository the full name of class (including the namespace) must be built as `<path to module where the fixture is placed>\Repository\<file with the name of fixture>`. Example: `Magento\Widget\Test\Repository\Widget`
-  - In case of an fixture field repository the full name of class (including the namespace) must be built as `<path to module where the fixture is placed>\Repository\<directory with the name of fixture>\<file with the name of field>`. Example: `Magento\Widget\Test\Repository\Widget\LayoutUpdates`.
-- `<dataset>` specifies the name of data set in required `name` attribute. This name serves as a reference to the data set that will be used in the test. Each data set contains fields.
+  - In case of an entire fixture repository, the full name of the class (including the namespace) must be built as `<path to module where the fixture is placed>\Repository\<file with the name of fixture>`. Example: `Magento\Widget\Test\Repository\Widget`
+  - In case of a fixture field repository, the full name of the class (including the namespace) must be built as `<path to module where the fixture is placed>\Repository\<directory with the name of fixture>\<file with the name of field>`. Example: `Magento\Widget\Test\Repository\Widget\LayoutUpdates`.
+- `<dataset>` specifies the name of data set in the required `name` attribute. This name serves as a reference to the data set that will be used in the test. Each data set contains fields.
 - `<field>` defines the value of the field. Field can contain either value, or items if the field is complex.
     
 |`field` attribute   |Semantics   | Is required?  |
@@ -242,7 +250,7 @@ Let's look at the repository structure.
 
 The `default` data set is used in the test when the repository hasn't been specified in the test, although you can explicitly specify `default`. If repository name in the test is `cms_page_link`, then fields will be filled with data from `<dataset name="cms_page_link">`.
 
-<h2 id="mtf_repository_create-field"> Create repository for the fixture field</h2>
+<h2 id="mtf_repository_create-field"> Create a repository for the fixture field</h2>
 
 In the preceding section, the Widget fixture code contains fields with the links for repositories. Let's consider the field `layout` with `repository="Magento\Widget\Test\Repository\Widget\LayoutUpdates`.
 
@@ -317,7 +325,7 @@ The repository code for these cases follows:
 
 <h2 id="mtf_repository_config">Configuration repository</h2>
 
-The configuration repository file has name `ConfigData.xml`. It is the repository for the `Config` module. It stores predefined data sets of the Magento configuration settings.
+The configuration repository stores predefined data sets for Magento configuration settings. It is the repository for the <a href="https://github.com/magento/magento2/tree/master/app/code/Magento/Config">Magento_Config module</a> and is named `ConfigData.xml`.
 
 Let's see the following example of configuration settings for <a href="https://github.com/magento/magento2/tree/develop/app/code/Magento/Authorizenet">Authorize.Net module</a> `magento2ce/dev/tests/functional/tests/app/Magento/Authorizenet/Test/Repository/ConfigData.xml`.
 
@@ -411,7 +419,7 @@ Each field contains 4 items:
 
 The following screenshot helps to understand the `scope_id` attribute.
 
-![authorizenet dataset view on GUI]({{site.baseurl}}common/images/mtf_admin_scope-id.png)]
+![authorizenet dataset view on GUI]({{site.baseurl}}common/images/mtf_ent_fixt_repo_config_scope-id.png)
 
 Let's see the `authorizenet` data set in action. Fields defined in repository are in orange. Other fields are set in default values.
 
@@ -425,7 +433,7 @@ Modules that require configuration adjustment store `ConfigData.xml` in their `R
 
 <a href="{{site.baseurl}}common/images/mtf_repo_merge_ex.png"><img src="{{site.baseurl}}common/images/mtf_repo_merge_ex.png" /></a>
 
-As you can see, the `ConfigData.xml` of the `Authorizenet` module and the `ConfigData.xml` of the `Backend` module have the same reference to the repository class; that is `Magento\Config\Test\Repository\ConfigData`.
+As you can see, the `ConfigData.xml` of the `Authorizenet` module and the `ConfigData.xml` of <a href="https://github.com/magento/magento2/tree/master/app/code/Magento/Backend">the `Magento_Backend` module</a> have the same reference to the repository class; that is `Magento\Config\Test\Repository\ConfigData`.
 
 `ConfigData.php` will be generated in `magento2ce/dev/tests/functional/generated/Magento/Config/Test/Repository`. This PHP repository will contain repository data sets from all Magento modules that have a `ConfigData.xml` repository.
 
