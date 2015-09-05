@@ -20,7 +20,7 @@ in ../magento2/lib/internal/Magento/Framework/App/ErrorHandler.php:67
 
 ### Solution:
 
-This happens when your `session.save_handler` PHP parameter is set to some another session storage tha `files` (for example, `redis`, `memcached`, and so on). This is a known issue we're working to resolve.
+This happens when your `session.save_handler` PHP parameter is set to some another session storage than `files` (for example, `redis`, `memcached`, and so on). This is a known issue we're working to resolve.
 
 Until a fix is available, as a workaround you can make changes to `php.ini` discussed in the following sections.
 
