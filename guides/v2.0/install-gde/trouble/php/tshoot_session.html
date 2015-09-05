@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>During installation, fatal PDO error displays</title>
+	<title>During installation, exception SessionHandler::read()</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/install-gde/trouble/php/tshoot_pdo.html">
+	<link rel="canonical" href="//guides/v2.0/install-gde/trouble/php/tshoot_session.html">
 
 
 
@@ -155,9 +155,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">During installation, fatal PDO error displays</h1>
+		<h1 class="page-heading">During installation, exception SessionHandler::read()</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/install-gde/trouble/tshoot_pdo.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/install-gde/trouble/tshoot_session.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -166,14 +166,55 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="install-trouble-pdo">During installation, fatal PDO error displays</h2>
+		<h2>During installation, Exception - SessionHandler::read</h2>
+<p><strong>Symptom</strong>: At the last step of installing Magento 2, the following exception displays:</p>
 
-<pre><code>PHP Fatal error:  Class 'PDO' not found in /var/www/html/magento2/setup/module/Magento/Setup/src/Module/Setup/ConnectionFactory.php on line 44
-</code></pre>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">exception &#39;Exception&#39; with message &#39;Warning: SessionHandler::read():</span>
+<span class="x">open(..) failed: No such file or directory (2) ../magento2/lib/internal/Magento/Framework/Session/SaveHandler.php on line 74&#39; </span>
+<span class="x">in ../magento2/lib/internal/Magento/Framework/App/ErrorHandler.php:67</span></code></pre></div>
 
 <h3 id="solution">Solution:</h3>
 
-<p>Make sure you installed all required PHP extensions (<a href="/guides/v2.0/install-gde/prereq/php-centos.html">CentOS</a>, <a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">Ubuntu</a>). </p>
+<p>This happens when your <code>session.save_handler</code> PHP parameter is set to some another session storage than <code>files</code> (for example, <code>redis</code>, <code>memcached</code>, and so on). This is a known issue we’re working to resolve.</p>
+
+<p>Until a fix is available, as a workaround you can make changes to <code>php.ini</code> discussed in the following sections.</p>
+
+<h3 id="locate-phpini">Locate <code>php.ini</code></h3>
+<p>Locate <code>php.ini</code> by entering the following command:</p>
+
+<pre><code>php -i | grep "Loaded Configuration File"
+</code></pre>
+
+<p>Typical locations follow:</p>
+
+<ul>
+  <li>Ubuntu: <code>/etc/php5/cli/php.ini</code></li>
+  <li>CentOS: <code>/etc/php.ini</code></li>
+</ul>
+
+<h3 id="workaround">Workaround</h3>
+<ol>
+  <li>As a user with <code>root</code> privileges, open <code>php.ini</code> in a text editor.</li>
+  <li>Locate <code>session.save_handler</code></li>
+  <li>
+    <p>Set it in any of the following ways:</p>
+
+    <ul>
+      <li>
+        <p>To comment it out:</p>
+
+        <pre><code>;session.save_path = &lt;path&gt;
+</code></pre>
+      </li>
+      <li>
+        <p>To set it to a file system path:</p>
+
+        <pre><code>session.save_handler = files
+</code></pre>
+      </li>
+    </ul>
+  </li>
+</ol>
 
 
 
@@ -392,7 +433,7 @@
 								
 								
 							
-									<li class="level-2  active "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_pdo.html">During installation, fatal PDO error displays</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_pdo.html">During installation, fatal PDO error displays</a></li>
 						
 								
 							
@@ -400,7 +441,7 @@
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_session.html">During installation, exception SessionHandler::read()</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_session.html">During installation, exception SessionHandler::read()</a></li>
 						
 								
 							
@@ -627,8 +668,8 @@
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/install-gde/trouble/php/tshoot_pdo.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/install-gde/trouble/php/tshoot_pdo.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/install-gde/trouble/php/tshoot_session.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/install-gde/trouble/php/tshoot_session.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>

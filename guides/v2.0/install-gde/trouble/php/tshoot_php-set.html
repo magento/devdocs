@@ -188,7 +188,7 @@
 </code></pre>
 
 <h4 id="solution-set-codeasptags--offcode-in-codephpinicode">Solution: Set <code>asp_tags = off</code> in <code>php.ini</code></h4>
-<p>Multiple templates have syntax for support abstract level on templates (use different templates engines like Twig) wraped in <code>&lt;% %&gt;</code> tags, like this <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/view/frontend/templates/product/view/base-image.phtml" target="_blank">template</a> for displaying a product image:</p>
+<p>Multiple templates have syntax for support abstract level on templates (use different templates engines like Twig) wrapped in <code>&lt;% %&gt;</code> tags, like this <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/view/frontend/templates/product/view/base-image.phtml" target="_blank">template</a> for displaying a product image:</p>
 
 <div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="o">&lt;</span><span class="nx">a</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&quot;product photo&lt;% if (typeof data.hasImg !== &#39;undefined&#39;) { %&gt; placeholder&lt;% } %&gt;&quot;</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;&lt;%- data.large %&gt;&quot;</span><span class="o">&gt;</span>
@@ -432,6 +432,10 @@
 								
 							
 									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_wrong-mysql.html">During installation, Reflection Exception error</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_session.html">During installation, exception SessionHandler::read()</a></li>
 						
 								
 							
