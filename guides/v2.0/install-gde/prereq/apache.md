@@ -160,7 +160,7 @@ For example:
 		AllowOverride <value from Apache site>
 		Order allow,deny
 		Require all granted
-	<Directory>
+	</Directory>
 
 <h4 id="install-apache-403_2.2">Solving 403 Forbidden errors for Apache 2.2</h4>
 To enable web site visitors to access your site, use the <a href="http://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#allow" target="_blank">Allow directive</a>.
@@ -172,7 +172,7 @@ For example:
 		AllowOverride <value from Apache site>
 		Order allow,deny
 		Allow from all
-	<Directory>
+	</Directory>
 
 
 

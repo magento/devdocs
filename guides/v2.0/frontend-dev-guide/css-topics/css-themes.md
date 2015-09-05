@@ -58,7 +58,7 @@ Contains the following:
 <li><code>/source</code>: this subdirectory contains LESS configuration files that invoke mixins from the Magento UI library
 </li>
 <li>
-<code>/source/_theme.less</code>: overrides the default LESS variables values.
+<code>/source/_theme.less</code>: overrides the default Magento UI library variables values.
 </li>
 
   </ul>
