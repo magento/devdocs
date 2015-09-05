@@ -49,13 +49,21 @@ For example, to use the Chrome inspector:
 
 	The page load time displays next to the page URL. In this case, the load time is 5 ms. This helps confirm that Varnish cached the page.
 
-7.	To view HTTP response headers, click the page URL.
+7.	To view HTTP response headers, click the page URL (in the Name column).
 
 	You can view HTTP headers which are discussed in more detail in <a href="#config-varnish-final-verify-headers">Verify HTTP response headers</a>.
 
 <h3 id="config-varnish-final-verify-cache">Verify the Magento cache</h3>
-The final step to make sure Varnish is working properly is to make sure the `<your Magento install dir>/var/page_cache` directory is empty even after you access several cacheable Magento pages.
+Make sure the `<your Magento install dir>/var/page_cache` directory is empty:
 
-If the directory is empty, congratulations! You successfully configured Varnish and Magento to work together!
+1.	Log in to your Magento server, or switch to, the Magento file system owner.
+2.	Enter the following command:
+
+		rm -rf `<your Magento install dir>/var/page_cache/*`
+
+3.	Access one or more cacheable Magento pages.
+4.	Check the `var/page_cache/` directory.
+
+	If the directory is empty, congratulations! You successfully configured Varnish and Magento to work together!
 
 

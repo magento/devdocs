@@ -13,14 +13,14 @@ github_link: config-guide/varnish/config-varnish-magento.md
 To configure Magento to use Varnish:
 
 1.	Log in to the Magento Admin as an administrator.
-2.	Click **Stores** > **Configuration** > ADVANCED > **System** > **Full Page Cache**
+2.	Click **STORES** > **Configuration** > ADVANCED > **System** > **Full Page Cache**
 3.	From the **Caching Application** list, click **Varnish Caching**
 4.	Enter a value in the **TTL for public content** field.
 5.	Expand **Varnish Configuration** and enter the following information:
 
 	<table>
-	<col width="40%">
-  	<col width="30%">
+	<col width="30%">
+  	<col width="70%">
 	<tbody>
 		<tr>
 			<th>Field</th>
