@@ -9,25 +9,42 @@ menu_order: 26
 github_link: install-gde/trouble/tshoot_session.md
 ---
 
-<h2>During last step of installation Exception - SessionHandler::read</h2>
+<h2>During installation, Exception - SessionHandler::read</h2>
+**Symptom**: At the last step of installing Magento 2, the following exception displays:
 
 {% highlight PHP %} 
 exception 'Exception' with message 'Warning: SessionHandler::read():
 open(..) failed: No such file or directory (2) ../magento2/lib/internal/Magento/Framework/Session/SaveHandler.php on line 74' 
 in ../magento2/lib/internal/Magento/Framework/App/ErrorHandler.php:67
-{% highlight PHP %} 
+{% endhighlight %} 
 
 ### Solution:
 
-This happens when your session.save_handler php parameter set to some another session storage that "files" (redis, memcached etc.), to fix that you need 
-to edit your php.ini and set 
+This happens when your `session.save_handler` PHP parameter is set to some another session storage tha `files` (for example, `redis`, `memcached`, and so on). This is a known issue we're working to resolve.
 
-{% highlight PHP %} 
-session.save_handler = files
-{% highlight PHP %} 
+Until a fix is available, as a workaround you can make changes to `php.ini` discussed in the following sections.
 
-session.save_path can be just disabled for use default parameters or set to valid folder in your file system 
+### Locate `php.ini`
+Locate `php.ini` by entering the following command:
 
-{% highlight PHP %} 
-;session.save_path = /some/patch/here
-{% highlight PHP %} 
+	php -i | grep "Loaded Configuration File"
+
+Typical locations follow:
+
+*	Ubuntu: `/etc/php5/cli/php.ini`
+*	CentOS: `/etc/php.ini`
+
+### Workaround
+1.	As a user with `root` privileges, open `php.ini` in a text editor.
+2.	Locate `session.save_handler`
+3.	Set it in any of the following ways:
+
+	*	To comment it out:
+
+			;session.save_path = <path>
+		
+	*	To set it to a file system path:
+		
+			session.save_handler = files
+
+

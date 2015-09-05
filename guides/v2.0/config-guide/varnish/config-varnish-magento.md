@@ -53,7 +53,10 @@ To configure Magento to use Varnish:
 	<img src="{{ site.baseurl }}common/images/config_varnish_admin.png" alt="Configure Magento to use Varnish in the Admin">
 
 8.	Replace your existing <code>default.vcl</code> with the one you just exported.
-9.	Restart Varnish and your web server.
+9.	Restart Varnish and your web server:
+
+		service varnish restart
+		service httpd restart
 
 #### Last step
 <a href="{{ site.gdeurl }}config-guide/varnish/config-varnish-final.html">Final verification</a>

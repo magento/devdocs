@@ -59,7 +59,7 @@ Make sure the `<your Magento install dir>/var/page_cache` directory is empty:
 1.	Log in to your Magento server, or switch to, the Magento file system owner.
 2.	Enter the following command:
 
-		rm -rf `<your Magento install dir>/var/page_cache/*`
+		rm -rf <your Magento install dir>/var/page_cache/*
 
 3.	Access one or more cacheable Magento pages.
 4.	Check the `var/page_cache/` directory.
