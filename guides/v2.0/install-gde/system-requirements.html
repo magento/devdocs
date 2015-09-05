@@ -178,13 +178,20 @@
     <p>Linux distributions such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and so on</p>
   </li>
   <li><a href="https://getcomposer.org/download/" target="_blank">Composer</a> (latest stable version)</li>
-  <li>
-    <p><a href="http://httpd.apache.org/download.cgi" target="_blank">Apache 2.2 or 2.4</a></p>
+  <li>Web servers
+    <ul>
+      <li>
+        <p><a href="http://httpd.apache.org/download.cgi" target="_blank">Apache 2.2 or 2.4</a></p>
 
-    <p>In addition, the apache <code>mod_rewrite</code> module must be enabled. <code>mod_rewrite</code> enables the server to perform URL rewriting. For more information, see <a href="/guides/v2.0/install-gde/prereq/apache.html">Apache</a>.</p>
+        <p>In addition, the apache <code>mod_rewrite</code> module must be enabled. <code>mod_rewrite</code> enables the server to perform URL rewriting. For more information, see <a href="/guides/v2.0/install-gde/prereq/apache.html">Apache</a>.</p>
+      </li>
+      <li>
+        <p>nginx 1.8 (or latest stable version)</p>
+      </li>
+    </ul>
   </li>
   <li>
-    <p>PHP:</p>
+    <p>PHP (<a href="/guides/v2.0/install-gde/prereq/php-centos.html" target="_blank">CentOS</a>, <a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html" target="_blank">Ubuntu</a>):</p>
 
     <ul>
       <li>5.6.x</li>
@@ -220,6 +227,15 @@
   </li>
   <li><a href="http://dev.mysql.com/doc/refman/5.6/en/installing.html" target="_blank">MySQL 5.6.x</a></li>
   <li>Mail Transfer Agent (MTA) or an SMTP server</li>
+  <li>
+    <p>Optional caching technologies</p>
+
+    <ul>
+      <li><a href="/guides/v2.0/config-guide/redis/config-redis.html" target="_blank">Redis version 3.0</a></li>
+      <li><a href="/guides/v2.0/config-guide/varnish/config-varnish.html" target="_blank">Varnish version 3.5 or latest stable 4.x version</a></li>
+      <li>memcached latest stable version</li>
+    </ul>
+  </li>
   <li>
     <p>Optional but recommended:</p>
 
