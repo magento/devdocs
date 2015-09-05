@@ -1,42 +1,10 @@
 ---
 layout: m1x
-title: Magento 1.x API
+title: Magento 1.x SOAP API
 ---
 
-<p>Welcome to the Magento 1.x API home page. Here you'll find REST and SOAP documentation for Magento 1.x.</p>
+<p>Welcome to the Magento 1.x SOAP API home page.</p>
 
-<h2>REST API</h2>
-	<ul><li><a href="{{ site.m1xgdeurl }}api/rest/introduction.html" target="_blank">Introduction to the Magento 1.x REST API</a></li>
-		<li><a href="{{ site.m1xgdeurl }}api/rest/authentication/oauth_authentication.html" target="_blank">Authentication</a></li>
-		<ul><li><a href="{{ site.m1xgdeurl }}api/rest/authentication/oauth_configuration.html" target="_blank">OAuth Configuration</a></li></ul>
-		<li><a href="{{ site.m1xgdeurl }}api/rest/common_http_status_codes.html" target="_blank">Common HTTP Status Codes</a></li>
-		<li><a href="{{ site.m1xgdeurl }}api/rest/http_methods.html" target="_blank">HTTP Methods</a></li>
-		<li><a href="{{ site.m1xgdeurl }}api/rest/get_filters.html" target="_blank">GET Filters</a></li>
-		<li><a href="{{ site.m1xgdeurl }}api/rest/permission_settings/permission_settings.html" target="_blank">Permission Settings</a></li>
-		<ul><li><a href="{{ site.m1xgdeurl }}api/rest/permission_settings/roles_configuration.html" target="_blank">Roles Configuration</a></li>
-			<li><a href="{{ site.m1xgdeurl }}api/rest/permission_settings/attributes_configuration.html" target="_blank">Attributes Configuration</a></li>
-			<li><a href="{{ site.m1xgdeurl }}api/rest/permission_settings/attributes_description.html" target="_blank">Attributes Description</a></li></ul>
-		<li><a href="{{ site.m1xgdeurl }}api/rest/Resources/resources.html" target="_blank">Resources</a></li>
-		<ul><li><a href="{{ site.m1xgdeurl }}api/rest/Resources/inventory.html" target="_blank">Inventory</a></li>
-			<li><a href="{{ site.m1xgdeurl }}api/rest/Resources/Orders/sales_orders.html" target="_blank">Sales Orders</a>
-			<ul><li><a href="{{ site.m1xgdeurl }}api/rest/Resources/Orders/order_addresses.html" target="_blank">Order Addresses</a></li>
-				<li><a href="{{ site.m1xgdeurl }}api/rest/Resources/Orders/order_comments.html" target="_blank">Order Comments</a></li>
-				<li><a href="{{ site.m1xgdeurl }}api/rest/Resources/Orders/order_items.html" target="_blank">Order Items</a></li></ul>
-		</li>
-		<li><a href="{{ site.m1xgdeurl }}api/rest/Resources/Products/products.html" target="_blank">Products</a></li>
-		<ul><li><a href="{{ site.m1xgdeurl }}api/rest/Resources/Products/product_categories.html" target="_blank">Product Categories</a></li>
-			<li><a href="{{ site.m1xgdeurl }}api/rest/Resources/Products/product_images.html" target="_blank">Product Images</a></li>
-			<li><a href="{{ site.m1xgdeurl }}api/rest/Resources/Products/product_websites.html" target="_blank">Product Websites</a></li></ul>
-			<li><a href="{{ site.m1xgdeurl }}api/rest/Resources/resource_customer_addresses.html" target="_blank">Customer Addresses</a></li>
-			<li><a href="{{ site.m1xgdeurl }}api/rest/Resources/resource_customers.html" target="_blank">Customers</a></li>
-			<li><a href="{{ site.m1xgdeurl }}api/rest/response_formats.html" target="_blank">Response Formats</a></li>
-			<li><a href="{{ site.m1xgdeurl }}api/rest/testing_rest_resources.html" target="_blank">Testing REST Resources</a></li>
-
-	</li>
-
-	</ul>
-	
-	<h2>SOAP API</h2>
 	<ul><li><a href="{{ site.m1xgdeurl }}api/soap/introduction.html" target="_blank">Introduction to the Magento 1.x SOAP API</a></li>
 		<li><a href="{{ site.m1xgdeurl }}api/soap/catalog/catalog.html" target="_blank">Catalog</a></li>
 		<ul><li><a href="{{ site.m1xgdeurl }}api/soap/catalog/catalogCategory/catalogCategory.html" target="_blank">Catalog Category</a></li>
@@ -85,6 +53,25 @@ title: Magento 1.x API
 					<li><a href="{{ site.m1xgdeurl }}api/soap/catalog/catalogProductAttributeMedia/catalog_product_attribute_media.remove.html" target="_blank">Media Remove</a></li>
 					<li><a href="{{ site.m1xgdeurl }}api/soap/catalog/catalogProductAttributeMedia/catalog_product_attribute_media.types.html" target="_blank">Media Types</a></li>
 					<li><a href="{{ site.m1xgdeurl }}api/soap/catalog/catalogProductAttributeMedia/catalog_product_attribute_media.update.html" target="_blank">Media Update</a></li></ul>
+				<li><a href="{{ site.m1xgdeurl }}api/soap/catalog/catalogProductAttributeSet/productAttributeSet.html" target="_blank">Product Attribute Set</a></li>
+				<ul><li><a href="{{ site.m1xgdeurl }}api/soap/catalog/catalogProductAttributeSet/product_attribute_set.attributeAdd.html" target="_blank">Attribute Add</a></li>
+					<li><a href="{{ site.m1xgdeurl }}api/soap/catalog/catalogProductAttributeSet/product_attribute_set.attributeRemove.html" target="_blank">Attribute Remove</a></li>
+					<li><a href="{{ site.m1xgdeurl }}api/soap/catalog/catalogProductAttributeSet/product_attribute_set.create.html" target="_blank">Attribute Set Create</a></li>
+					<li><a href="{{ site.m1xgdeurl }}api/soap/catalog/catalogProductAttributeSet/product_attribute_set.groupAdd.html" target="_blank">Attribute Set Group Add</a></li>
+					<li><a href="{{ site.m1xgdeurl }}api/soap/catalog/catalogProductAttributeSet/product_attribute_set.groupRemove.html" target="_blank">Attribute Set Group Remove</a></li>
+					<li><a href="{{ site.m1xgdeurl }}api/soap/catalog/catalogProductAttributeSet/product_attribute_set.groupRename.html" target="_blank">Attribute Set Group Rename</a></li>
+					<li><a href="{{ site.m1xgdeurl }}api/soap/catalog/catalogProductAttributeSet/product_attribute_set.list.html" target="_blank">Attribute Set List</a></li>
+					<li><a href="{{ site.m1xgdeurl }}api/soap/catalog/catalogProductAttributeSet/product_attribute_set.remove.html" target="_blank">Attribute Set Remove</a></li></ul>
+				<li><a href="{{ site.m1xgdeurl }}api/soap/catalog/catalogProductCustomOption/catalogProductCustomOption.html" target="_blank">Catalog Product Custom Option</a></li>
+				<ul><li><a href="{{ site.m1xgdeurl }}api/soap/catalog/catalogProductCustomOption/product_custom_option.add.html" target="_blank">Product Custom Option Add</a></li>
+					<li><a href="{{ site.m1xgdeurl }}api/soap/catalog/catalogProductCustomOption/product_custom_option.info.html" target="_blank">Product Custom Option Info</a></li>
+					<li><a href="{{ site.m1xgdeurl }}api/soap/catalog/catalogProductCustomOption/product_custom_option.list.html" target="_blank">Product Custom Option List</a></li>
+					<li><a href="{{ site.m1xgdeurl }}api/soap/catalog/catalogProductCustomOption/product_custom_option.remove.html" target="_blank">Product Custom Option Remove</a></li>
+					<li><a href="{{ site.m1xgdeurl }}api/soap/catalog/catalogProductCustomOption/product_custom_option.types.html" target="_blank">Product Custom Option Types</a></li>
+					<li><a href="{{ site.m1xgdeurl }}api/soap/catalog/catalogProductCustomOption/product_custom_option.update.html" target="_blank">Product Custom Option Update</a></li></ul>
+					
+
+
 	</ul>
 </ul>
 
