@@ -17,7 +17,7 @@ The following sections discuss how to configure your web server and Magento to u
 *	<a href="#config-varnish-config-default">Modify <code>default.vcl</code></a>
 *	<a href="#config-varnish-verify">Verify Varnish is working</a>
 *	<a href="#config-varnish-install">Install the Magento 2 software</a>
-*	<a href="#config-varnish-verify-headers">HTTP response headers</a>
+*	<a href="#config-varnish-verify-headers">Verify HTTP response headers</a>
 
 
 <h2 id="config-varnish-config-web">Configure your web server</h2>
@@ -60,7 +60,7 @@ To modify the Varnish system configuration:
 4.	Save your changes to `/etc/sysconfig/varnish` and exit the text editor.
 
 <h3 id="config-varnish-config-default">Modify <code>default.vcl</code></h3>
-This section discusses how to provide minimal configuration so Varnish caches Magento pages. You can then verify Varnish works before you configure Magento to use Varnish.
+This section discusses how to provide minimal configuration so Varnish returns HTTP response headers. This enables you to verify Varnish works before you configure Magento to use Varnish.
 
 To minimally configure Varnish:
 
@@ -76,17 +76,23 @@ To minimally configure Varnish:
 	      .port = "80";
 		}
 
-4.	Replace the value of `.host` with the fully qualified host name or IP address and listen port of the Varnish *backend* or *origin server*; that is, the server providing the content Varnish will accelerate. Typically, this is your web server. 
+4.	Replace the value of `.host` with the fully qualified host name or IP address and listen port of the Varnish *backend* or *origin server*; that is, the server providing the content Varnish will accelerate. 
+
+	Typically, this is your web server. 
 
 	<a href="https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html" target="_blank">More information</a>
 5.	Replace the value of `.port` with the web server's listen port (8080 in this example).
 
-	Example: Varnish and Apache are both installed on host 192.0.2.55 and Apache is listening on port 8080:
+	Example: Apache is installed on host 192.0.2.55 and Apache is listening on port 8080:
 
 		backend default {
 	      .host = "192.0.2.55"; 
 	      .port = "8080";
 		}		
+
+	<div class="bs-callout bs-callout-info" id="info">
+		<p>If Varnish and Apache are running on the same host, we recommend you use an IP address or host name and not <code>localhost</code>.</p>
+	</div>
 		
 7.	Save your changes to `default.vcl` and exit the text editor.
 8.	Restart Apache:
@@ -150,17 +156,17 @@ If you don't see output for `varnishd`, make sure Varnish is running.
 <a href="http://tldp.org/LDP/nag2/x-087-2-iface.netstat.html" target="_blank">More information about netstat options</a>
 
 <h2 id="config-varnish-install">Install the Magento 2 software</h2>
-Install the Magento 2 software if you haven't already done so. When prompted for a Base URL, use port 80 (for Varnish) rather than port 8080 (for Apache) because Varnish receives all incoming HTTP requests.
+Install the Magento 2 software if you haven't already done so. When prompted for a Base URL, use the Varnish host and port 80 (for Varnish) because Varnish receives all incoming HTTP requests.
 
-<h2 id="config-varnish-verify-headers">HTTP response headers</h2>
+<h2 id="config-varnish-verify-headers">Verify HTTP response headers</h2>
 Now you can verify that Varnish is serving pages by looking at HTML response headers returned from any Magento page.
 
-Before you can look at headers, you must set Magento for developer mode. There are several ways to do it, the simplest of which is to modify `.htaccess` in the Magento 2 root. You can also use the <a href="{{ site.gdeurl }}#">`magento deploy:mode:set`</a> command.
+Before you can look at headers, you must set Magento for developer mode. There are several ways to do it, the simplest of which is to modify `.htaccess` in the Magento 2 root. You can also use the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html">`magento deploy:mode:set`</a> command.
 
 #### Set Magento for developer mode
 To set Magento for developer mode using its `.htaccess` file:
 
-1.	Log in to the Magento server as, or switch to, a user who has permissions to modify files in the Magento file system.
+1.	Log in to the Magento server as, or switch to, the Magento file system owner.
 2.	Open `<your Magento install dir>/.htaccess` in a text editor.
 3.	Uncomment the following line:
 
@@ -174,7 +180,7 @@ Make sure Varnish is running then enter the following command on the Varnish ser
 
 In a web browser, go to any Magento 2 page.
 
-A long list of response headers display. Look for headers like the following:
+A long list of response headers display in your command prompt window. Look for headers like the following:
 
 	-   BereqHeader    X-Varnish: 3
 	-   VCL_call       BACKEND_FETCH
@@ -192,7 +198,7 @@ A long list of response headers display. Look for headers like the following:
 If headers like these do *not* display, stop Varnish, check your `default.vcl`, and try again.
 
 #### Look at HTML response headers
-There are several ways to look at response headers, including using a browser plug-in like Live HTTP Headers, or a browser inspector.
+There are several ways to look at response headers, including using a browser plug-in like Live HTTP Headers (<a href="https://addons.mozilla.org/en-GB/firefox/addon/live-http-headers/" target="_blank">Firefox</a>, <a href="https://chrome.google.com/webstore/detail/live-http-headers/iaiioopjkcekapmldfgbebdclcnpgnlo?hl=en" target="_blank">Chrome</a>), or a browser inspector.
 
 The following example uses `curl`. You can enter this command from any machine that can access the Magento server using HTTP.
 
