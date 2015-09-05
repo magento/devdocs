@@ -1,11 +1,11 @@
 ---
 layout: default
 group: Contributor Guide
-subgroup: 
+subgroup: Contributor Guide
 title: Contributor Guide
 menu_title: Magento Definition of Done
-menu_order: 1
-menu_node: parent
+menu_order: 2
+menu_node: 
 github_link: contributor-guide/contributing_dod.md
 redirect_from: /guides/v1.0/contributor-guide/contributing_dod.html
 ---
@@ -24,9 +24,9 @@ At a high level, the criteria defined in our "definition of done" revolve around
 
 The following sections provide additional details about each of these criteria: 
 
-<h3>Functional Backwards Compatibility</h3>
+<h3>Functional Backward Compatibility</h3>
 
-Existing product features and functionality must be retained during any changes to the code. If backwards incompatible functional changes are made, the documentation should explain the justification and provide the "business value". 
+Existing product features and functionality must be retained during any changes to the code. If backward-incompatible functional changes are made, the documentation should explain the justification and provide the "business value". 
 
 For more information, see <a href="{{ site.gdeurl }}architecture/backward-compatibility.html">Magento's backward compatibility policy</a>.
 
@@ -49,13 +49,11 @@ Any backwards-incompatible changes must also be recorded in the accompanying doc
 <th><u>Became in Magento 2.x</u></th>
 </tr>
 <tr>
-<th>description</th>
-<th>example</th>	
-<th>example</th>
+<td>description</td>
+<td>example</td>	
+<td>example</td>
 </tr>
 </table>
-
-
 
 <h3>Tests</h3>
 
@@ -76,9 +74,10 @@ Code to cover:
 * new code (except auto-generated code) MUST BE covered by unit tests
 * modified legacy code:
 
-New and modified code MUST BE covered if it changes the system's behaviour, and MAY BE covered if it does not change system's behaviour (class/method renamed, class moved, other minor changes)
+New and modified code MUST BE covered if it changes the system's behavior, and MAY BE covered if it does not change system's behavior (class/method renamed, class moved, other minor changes)
 
-In cases where it is impossible to cover – replace with integration tests
+In cases where it is impossible to cover, replace with integration tests.
+
 It is not necessary to cover classes created by auto-generation and methods that don't have any business logic.
 
 <h5>Integration Tests</h5>
@@ -88,14 +87,15 @@ Code to cover:
 * Must cover code that interacts with operating system environment, database or any other 3rd-party system directly
 * Must cover code in "Model" layer that interacts with database indirectly
 * Must be used as alternative of unit tests in legacy code in the following cases:
-** If it is impossible to cover due to high code coupling
-** If code had only minor modification and in order to cover it with unit test it would require refactoring of code, not related to the original modification
+
+	*	If it is impossible to cover due to high code coupling
+	*	If code had only minor modification and in order to cover it with unit test it would require refactoring of code, not related to the original modification
 
 <h5>Integrity Tests</h5>
 
 Code to cover: 
 
-* must cover any code which introduces convention in scope of a particular implementation, violation of which would lead to runtime error.
+* Must cover any code which introduces convention in scope of a particular implementation, violation of which would lead to runtime error.
 
 Expected code coverage: must cover all files applicable to this convention.
 
@@ -107,6 +107,7 @@ Scan for declarations of templates and invoke "fallback" mechanism to ensure the
 **Static Code Analysis**
 
 Code to cover: 
+
 * must cover all new code files (or whatever qualifies as "new").
 
 Expected code coverage: must cover all applicable files in entire code base.
@@ -115,15 +116,15 @@ Expected code coverage: must cover all applicable files in entire code base.
 
 Code to cover: 
 
-* must cover any formal backwards-incompatible changes on code level. For more information, see 
+* Must cover any formal backwards-incompatible changes on code level. For more information, see 
 <a href="{{ site.gdeurl }}architecture/backward-compatibility.html">Magento's backward compatibility policy</a>.
 
 A failure in legacy test must provide comprehensive explanation of an alternative, if there is any.
 
 Expected code coverage:
 
-* must cover majority of occurrences of the backwards-incompatible change
-* should cover 100% of occurrences
+* Must cover majority of occurrences of the backwards-incompatible change
+* Should cover 100% of occurrences
 
 Not all changes can be covered. For example, it is possible to scan a file for literals, but it is unfeasible to analyze string concatenation or any other dynamic way of building variable.
 
@@ -134,9 +135,9 @@ Added/updated functionality should be covered by a functional Zephyr test(s) rel
 <h3>Review</h3>
 A task, when complete by the author, should be reviewed by another Magento community member through a process of formal code review. The reviewer should check whether the task meets the original acceptance criteria and verify that there are no code defects and that other points of this definition of done are met:
 
-* there are no unauthorized backwards incompatible functional changes 
-* all changes are documented properly 
-* all changes are covered with automated tests
-* determine if code changes caused any failure in continuous integration builds.
+* There are no unauthorized backward-incompatible functional changes 
+* All changes are documented properly 
+* All changes are covered with automated tests
+* Determine if code changes caused any failure in continuous integration builds.
 
 The work cannot be considered as complete unless all the criteria are verified.

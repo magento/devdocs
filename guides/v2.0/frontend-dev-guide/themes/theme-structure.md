@@ -290,6 +290,7 @@ app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/
 │	│	├──&nbsp;override/
 │	├──&nbsp;templates/
 ├──&nbsp;web/
-│	├──source
+│	├──&nbsp;css/
+│	│	├──&nbsp;source/
 
 </pre>
