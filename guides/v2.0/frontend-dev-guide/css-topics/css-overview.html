@@ -176,7 +176,7 @@ To define styles of a Magento store, you can use both - CSS and LESS stylesheets
 <p>To customize storefront styles, you need to <a href="/guides/v2.0/frontend-dev-guide/themes/theme-create.html" target="_blank">create a custom design theme</a>. Then you can use one of the following approaches:</p>
 
 <ul>
-  <li>If your theme <a href="/guides/v2.0/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from the default Blank or any other theme, you can override the default LESS files; for example to <a href="/guides/v2.0/frontend-dev-guide/css-topics/theme-ui-lib.html#fedg_using-ui-lib_predef-vars" target="_blank">change the values of the variables</a> used in the default files. </li>
+  <li>If your theme <a href="/guides/v2.0/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from the Magento out-of-the-box Blank or Luma theme, you can override the default LESS files; for example to <a href="/guides/v2.0/frontend-dev-guide/css-topics/theme-ui-lib.html#fedg_using-ui-lib_predef-vars" target="_blank">change the values of the variables</a> used in the default files. </li>
   <li>Create your own LESS files using the built-in LESS preprocessor. </li>
   <li>Create your own CSS files, optionally having compiled them using third-party CSS preprocessor.</li>
 </ul>
@@ -184,7 +184,7 @@ To define styles of a Magento store, you can use both - CSS and LESS stylesheets
 <h2 id="css_walk">Change styles: walkthrough</h2>
 
 <p>Here is a simple illustration of changing styles using the first approach: changing the color of the buttons of a certain class.
-In the default Blank theme, the buttons of the <code>.action.primary</code> class, so called <em>primary</em> buttons, are blue. The following image illustrates this:</p>
+In the Blank theme, the buttons of the <code>.action.primary</code> class, so called <em>primary</em> buttons, are blue. The following image illustrates this:</p>
 
 <div style="border: 1px solid #ABABAB">
 <img src="/common/images/css_over1.png" alt="The default view of a product page, with the orange Add to Cart button" />
@@ -193,7 +193,7 @@ In the default Blank theme, the buttons of the <code>.action.primary</code> clas
 <p>OrangeCo wants to change the color of the primary buttons to orange. To achieve this, they do the following:</p>
 
 <ol>
-  <li>Create a new Orange theme, which inherits from the default Blank theme.</li>
+  <li>Create a new Orange theme, which inherits from the Blank theme.</li>
   <li>In the Orange theme directory add the overriding <code>app/design/frontend/OrangeCo/orange/web/css/source/_theme.less</code> file with the following code:</li>
 </ol>
 <pre>

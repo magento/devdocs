@@ -229,8 +229,8 @@ For example, using a browser debug tool, you can define that the minicart block 
 <p>Let’s search for the layout following the fallback scheme:</p>
 
 <ol>
-  <li>Check the <code>app/design/frontend/Magento/blank/Magento_Checkout/</code>layout. To locate the required layout, search this directory for occurrences of the template name, “ minicart.phtml “. No matching file is found, so we proceed to the next fallback level, which is the parent theme layouts.</li>
-  <li>We can find the info about parent theme in a theme configuration file theme.xml, the parent theme name is specified there in the <code>&lt;parent&gt;&lt;/parent&gt;</code> node. In the <code>app/design/frontend/Magento/blank/theme.xml</code> there’s no <code>&lt;parent&gt;</code> node, which means the Blank theme has no parents. So we should search on the next fallback level which is the module layouts.</li>
+  <li>Check the <code>app/design/frontend/Magento/blank/Magento_Checkout/</code> layout. To locate the required layout, search this directory for occurrences of the template name, “ minicart.phtml “. No matching file is found, so we proceed to the next fallback level, which is the parent theme layouts.</li>
+  <li>We can find the info about parent theme in a theme configuration file <code>theme.xml</code>, the parent theme name is specified there in the <code>&lt;parent&gt;&lt;/parent&gt;</code> node. In the <code>app/design/frontend/Magento/blank/theme.xml</code> there’s no <code>&lt;parent&gt;</code> node, which means the Blank theme has no parents. So we should search on the next fallback level which is the module layouts.</li>
   <li>The Magento_Checkout layouts are located in <code>app/code/Magento/Checkout/view/frontend/layout/</code>. After searching this directory for occurrences of “<code>minicart.phtml</code>”, we define that the layout we are looking for is <code>app/code/Magento/Checkout/view/frontend/layout/default.xml</code>.</li>
 </ol>
 

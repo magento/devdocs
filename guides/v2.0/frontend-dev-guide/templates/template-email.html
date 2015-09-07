@@ -293,7 +293,7 @@ Make note of this path because you will need it later when you configure this ne
 
 <p>The <code>inlinecss</code> directive tells Magento which files to apply as inline styles on the email template. </p>
 
-<p>For example, let’s say an email is being sent from a store configured with the <code>Magento/luma</code> theme. The <code>inlinecss</code> directive first looks for a <code>email-inline.less</code> file in <code>app/design/frontend/Magento/luma/web/css/email-inline.less</code>. However because that file doesn’t exist, it will fall back to the <code>app/design/frontend/Magento/blank/web/css/email-inline.less</code> file. The contents of that file will then be compiled and its contents are applied as inline styles to the email template.</p>
+<p>For example, let’s say an email is being sent from a store configured with the Magento Luma theme. The <code>inlinecss</code> directive first looks for a <code>email-inline.less</code> file in <code>app/design/frontend/Magento/luma/web/css/email-inline.less</code>. However because that file doesn’t exist, it will fall back to the <code>app/design/frontend/Magento/blank/web/css/email-inline.less</code> file. The contents of that file will then be compiled and its contents are applied as inline styles to the email template.</p>
 
 <p>Refer to the <a href="https://github.com/jjriv/emogrifier#supported-css-selectors" target="_blank">Emogrifier README</a> to see what CSS selectors are supported.</p>
 
@@ -425,7 +425,7 @@ Make note of this path because you will need it later when you configure this ne
 <p>When implementing a custom theme, you should be able to fully customize email templates by copying the <code>app/design/frontend/Magento/blank/web/css/source/_email-extend.less</code> and <code>app/design/frontend/Magento/blank/web/css/source/_email-variables.less</code> files to your custom theme and editing those files.</p>
 
 <h3 id="custom-fonts">Custom fonts</h3>
-<p>Emails inherit the custom fonts that are defined by the frontend theme. The Magento blank theme uses the <strong>Open Sans</strong> font. Because <strong>Open Sans</strong> is not a standard system font, <code>@font-face</code> rules are used to include web fonts.</p>
+<p>Emails inherit the custom fonts that are defined by the frontend theme. The Magento Blank theme uses the <strong>Open Sans</strong> font. Because <strong>Open Sans</strong> is not a standard system font, <code>@font-face</code> rules are used to include web fonts.</p>
 
 <p>Here is an overview of how the font structure for emails works:</p>
 
