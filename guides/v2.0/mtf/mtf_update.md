@@ -16,10 +16,10 @@ Two types of updates are available.
 -     <a href="#mtf_update_install">Install a new version of the Magento Testing Framework</a>
 
 <div class="bs-callout bs-callout-info" id="info">
-<p>Use this type of update if the version of the Magento Testing Framework in <code>&lt;magento_root&gt;/dev/tests/functional/composer.json</code> and last version in <code>&lt;magento_root&gt;/dev/tests/functional/vendor/magento/mtf/CHANGELOG.md</code> are different. For example, when you updated Magento.</p>
+<p>Use this type of update if the version of the Magento Testing Framework in <code>magento2ce/dev/tests/functional/composer.json</code> and last version in <code>magento2ce/dev/tests/functional/vendor/magento/mtf/CHANGELOG.md</code> are different. For example, when you updated Magento.</p>
 </div>
 
--    <a href="#mtf_update_depend">Update components from dependencies in <code>&lt;magento_root&gt;/dev/tests/functional/composer.json</code></a>
+-    <a href="#mtf_update_depend">Update components from dependencies in <code>magento2ce/dev/tests/functional/composer.json</code></a>
 
 <div class="bs-callout bs-callout-info" id="info">
 <p>Use this type of update if you want to update dependent software from <code>composer.json</code>, or changed <code>composer.json</code> dependencies.</p>
@@ -28,10 +28,10 @@ Two types of updates are available.
 
 <h3 id="mtf_update_install">Install a new version of the Magento Testing Framework</h3>
 
-Step 1.    To avoid conflicts with the previous version, remove directory `<magento_root>/dev/tests/functional/generate`.
+Step 1.    To avoid conflicts with the previous version, remove directory `magento2ce/dev/tests/functional/generate`.
 
 
-Step 2.    Remove file `<magento_root>/dev/tests/functional/composer.lock`.
+Step 2.    Remove file `magento2ce/dev/tests/functional/composer.lock`.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p><b>Why:</b> Composer reads dependencies from <code>composer.lock</code> instead of reading <code>composer.json</code>. File <code>composer.lock</code> currently is not maintained.</p>
@@ -43,5 +43,5 @@ Step 3.    <a href="{{ site.gdeurl }}mtf/mtf_installation.html#mtf_install_perfo
 
 Enter in terminal:
 
-    cd <magento_root>/dev/tests/functional/
+    cd magento2ce/dev/tests/functional/
     composer update
