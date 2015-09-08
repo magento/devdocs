@@ -30,6 +30,6 @@ Making changes in the Magento out of the box themes is a bad idea, because can r
 <h2>High-level steps to create a theme and change styles</h2>
 
 1. In the file system, add a new theme inheriting from Magento Blank or Luma.
-2. Decide which CSS compilation mode you will use. 
 3. Apply your theme.
+2. Decide which CSS compilation mode you will use. 
 4. Customize styles.

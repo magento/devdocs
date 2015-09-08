@@ -5,7 +5,7 @@ subgroup: D_CSS_G
 title: Simple ways to customize a theme's styles
 menu_title: Simple ways to customize a theme's styles
 menu_order: 1
-github_link: frontend-dev-guide/css-guide/css_quick_guide_overview.md
+github_link: frontend-dev-guide/css-guide/css_quick_guide_approach.md
 ---
 <h2>Overview</h2>
 Let's say you created a new theme inheriting from Magento Blank or Luma, and chose the compilation mode. What's next? Where to add the style changes? This topic gives the quick answers.
