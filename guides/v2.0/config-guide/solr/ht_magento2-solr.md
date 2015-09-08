@@ -9,10 +9,6 @@ menu_node: parent
 github_link: config-topic/solr/ht_magento2-solr.md
 ---
 
-
-<!-- Title: How to Use the Solr Search Engine With Magento Enterprise Edition -->
-<!-- URL: how-to-use-the-solr-search-engine-with-magento-enterprise-edition -->
-
 #### Contents
 
 *	<a href="#overview">Overview</a>
@@ -24,6 +20,8 @@ github_link: config-topic/solr/ht_magento2-solr.md
 *	<a href="#solr-script">Script Solr startup and shutdown</a>
 *	<a href="#next">Next steps</a>
 *	<a href="#related">Related information</a>
+
+<img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only">
 
 <h2 id="overview">Overview</h2>
 Magento Enterprise Edition (EE) versions 2.x enable you to configure either of the following as a catalog search engine:
