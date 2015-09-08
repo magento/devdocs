@@ -83,6 +83,6 @@ Before you start your installation, take a moment to figure out which type of us
 #### Related topics
 After you finish installing the Magento software, you can:
 
-*	<a href="{{ site.gdeurl" }}comp-mgr/bk-compman-upgrader-guide.html">Manage components</a>
+*	<a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html">Manage components</a>
 *	<a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrader-guide.html">Upgrade</a>
 
