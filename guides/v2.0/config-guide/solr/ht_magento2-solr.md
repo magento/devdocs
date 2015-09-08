@@ -277,17 +277,18 @@ For example, if Solr is installed in <tt>/etc/solr/solr-4.10.4</tt> and Magento 
   <p>If you're prompted to overwrite files, try the command <code>\cp -R [your Magento install dir]/lib/Apache/Solr/conf/* .</code></p>
 </div>
 
-
-<em>CentOS with Tomcat 6 only</em>. If you're using Tomcat 6 on CentOS, you must modify <tt>[your Solr install dir]/example/solr/conf/solrconfig.xml</tt><br />
+#### Task for Tomcat 6 with CentOS only
+If you're using Tomcat 6 on CentOS, you must modify <tt><your Solr install dir>/example/solr/conf/solrconfig.xml</tt><br />
 
 Locate the following line:
 
-    &lt;dataDir>${solr.data.dir:./solr/data}&lt;/dataDir>
+    <dataDir>${solr.data.dir:./solr/data}</dataDir>
 
 Change it to:
 
-    &lt;dataDir>${solr.data.dir:}&lt;/dataDir>
+    <dataDir>${solr.data.dir:}</dataDir>
 
+#### Start Solr
 As a user with <tt>root</tt> privileges, enter the following command to start Solr:
 
     java -jar <your Solr install dir>/example/start.jar
@@ -319,7 +320,7 @@ This section discusses how to configure Magento EE to use the Solr search engine
 To configure Magento to work with Solr:
 
 1.  Log in to the Magento Admin as an administrator.
-2.  Click <strong>Stores</strong> > <strong>Configuration</strong> > CATALOG > <strong>Catalog Search</strong>.
+2.  Click <strong>STORES</strong> > <strong>Configuration</strong> > CATALOG > <strong>Catalog</strong> > <strong>Catalog Search</strong>.
 3.  In the right pane, expand <strong>Catalog Search</strong>.
 4.  The following table shows the minimum amount of information to enter to test the connection to your Solr search engine. Leave all other values at their defaults.<br />
 <table>
