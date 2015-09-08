@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Manage the cache</title>
+	<title>Use Varnish with Magento</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html">
+	<link rel="canonical" href="//guides/v2.0/config-guide/varnish/config-use-varnish.html">
 
 
 
@@ -155,9 +155,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Manage the cache</h1>
+		<h1 class="page-heading">Use Varnish with Magento</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/config-guide/varnish/config-use-varnish.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -167,239 +167,56 @@
 		<div class="content-wrap">
 		
 		<h4 id="contents">Contents</h4>
-
 <ul>
-  <li><a href="#config-cli-subcommands-cache-clean-over">Overview of cache types</a></li>
-  <li><a href="#config-cli-before">First steps</a></li>
-  <li><a href="#config-cli-subcommands-cache-status">View the cache status</a></li>
-  <li><a href="#config-cli-subcommands-cache-en">Enable or disable the cache</a> </li>
-  <li><a href="#config-cli-subcommands-cache-clean">Clean and flush cache types</a></li>
+  <li><a href="#use-varnish-magento-purge">Varnish purging</a></li>
+  <li><a href="#use-varnish-cache">Refresh the Magento cache</a></li>
+  <li><a href="#use-varnish-magento-purge">Purge multiple Varnish hosts</a></li>
 </ul>
 
-<h2 id="config-cli-subcommands-cache-clean-over">Overview of cache types</h2>
-<p>Magento 2 has the following cache types:</p>
+<p>This topic discusses the basics of using Varnish as a web caching accelerator for Magento.</p>
 
-<table>
-  <tbody>
-    <tr>
-      <th>Cache type "friendly" name</th>
-      <th>Cache type code name</th>
-      <th>Description</th>
-    </tr>
-    <tr>
-      <td><p>Configuration</p></td>
-      <td><p>config</p></td>
-      <td><p>Magento collects configuration from all modules, merges it, and saves the merged result to the cache. This cache also contains store-specific settings stored in the file system and database. </p>
-	<p>Clean or flush this cache type after modifying configuration files.</p></td>
-    </tr>
-    <tr>
-      <td><p>Layout</p></td>
-      <td><p>layout</p></td>
-      <td><p>Compiled page layouts (that is, the layout components from all components).</p>
-	<p>Clean or flush this cache type after modifying layout files.</p></td>
-    </tr>
-    <tr>
-      <td><p>Block HTML output</p></td>
-      <td><p>block_html</p></td>
-      <td><p>HTML page fragments per block.</p>
-	<p>Clean or flush this cache type after modifying the view layer.</p></td>
-    </tr>
-    <tr>
-      <td><p>Collections data</p></td>
-      <td><p>collections</p></td>
-      <td><p>Results of database queries.</p>
-      	<p>If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. </p>
-      	<p>Clean or flush this cache type if your custom module uses logic that results in cache entries that Magento cannot clean.</p></td>
-    </tr>
-    <tr>
-      <td><p>DDL</p></td>
-      <td><p>db_ddl</p></td>
-      <td><p>Database schema. </p>
-      	<p>If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. </p>
-      	<p>Clean or flush this cache type after you make custom changes to the database schema. (In other words, updates that Magento does not make itself.)</p>
-      	<p>One way to update the database schema automatically is using the <a href="/guides/v2.0/install-gde/install/install-cli-subcommands-db.html">magento setup:db-schema:upgrade</a> command.</p></td>
-    </tr>
-    <tr>
-      <td><p>Entity attribute value (EAV)</p></td>
-      <td><p>eav</p></td>
-      <td><p>Metadata related to EAV attributes (for example, store labels, links to related PHP code, attribute rendering, search settings, and so on).</p>
-        <p>You should not typically need to clean or flush this cache type.</p></td>
-    </tr>
-    <tr>
-      <td><p>Page cache</p></td>
-      <td><p>full_page</p></td>
-      <td><p>Generated HTML pages. </p>
-      	<p>If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. </p>
-      	<p>Clean or flush this cache type after modifying code level that affects HTML output. It’s recommended to keep this cache enabled to because caching HTML improves performance significantly.</p></td>
-    </tr>
-    <tr>
-      <td><p>Translations</p></td>
-      <td><p>translate</p></td>
-      <td><p>Merged translations from all modules.</p></td>
-    </tr>
-    <tr>
-      <td><p>Integration configuration</p></td>
-      <td><p>config_integration</p></td>
-      <td><p>Compiled integrations.</p>
-      	<p>Clean or flush this cache after changing or adding integrations.</p></td>
-    </tr>
-    <tr>
-      <td><p>Integration API configuration</p></td>
-      <td><p>config_integration_api</p></td>
-      <td><p>Compiled integration APIs.</p></td>
-    </tr>
-    <tr>
-      <td><p>Web services configuration</p></td>
-      <td><p>config_webservice</p></td>
-      <td><p>Web API structure.</p></td>
-    </tr>
+<h2 id="use-varnish-magento-purge">Varnish purging</h2>
+<p>According to <a href="https://www.varnish-cache.org/docs/trunk/users-guide/purging.html" target="_blank">Varnish documentation</a>, “A <em>purge</em> is what happens when you pick out an object from the cache and discard it along with its variants.” A Varnish purge is very similar to a Magento cache clean command (or clicking <strong>Flush Magento Cache</strong> in the Magento Admin).</p>
 
-  </tbody>
-</table>
+<p>In fact, as discussed in this section, when you manually refresh the Magento cache, Varnish purges as well.</p>
 
-<h2 id="config-cli-before">First steps</h2>
-<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
-<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
-Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
-bash shell example for CentOS:<br />
-<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You can also run the commands in the following ways:</p>
-<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
-<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
-<p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
-</div>
-
-<p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
-
-<h2 id="config-cli-subcommands-cache-status">View the cache status</h2>
-<p>To view the status of the cache, enter</p>
-
-<pre><code>magento cache:status 
-</code></pre>
-
-<!-- where `--bootstrap=` is a URL-encoded associative array of Magento <a href="/guides/v2.0/config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview">application bootstrap parameters</a> and values. -->
-
-<p>A sample follows:</p>
-
-<pre><code>                    config: 1
-                    layout: 1
-                block_html: 1
-               collections: 1
-                    db_ddl: 1
-                       eav: 1
-                 full_page: 1
-                 translate: 1
-        config_integration: 1
-    config_integration_api: 1
-         config_webservice: 1
-</code></pre>
-
-<h2 id="config-cli-subcommands-cache-en">Enable or disable cache types</h2>
-<p>This command enables you to enable or disable all cache types or only the ones you specify. Disabling cache types is useful during development because you see the results of your changes without having to flush the cache; however, disabling cache types has an adverse affect on performance.</p>
-
-<p>Command options:</p>
-
-<pre><code>magento cache:enable [type] ... [type]
-magento cache:disable [type] ... [type] 
-</code></pre>
-
-<p>where</p>
-
-<p>omitting <code>[type]</code> enables or disables all cache types at the same time.</p>
-
-<p><code>type</code> is a space-separated list of cache types.</p>
-
-<!-- `--bootstrap=` is a URL-encoded associative array of Magento <a href="/guides/v2.0/config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview">application bootstrap parameters</a> and values. -->
-
-<p>To list cache types and their status, enter</p>
-
-<pre><code>magento cache:status
-</code></pre>
-
-<p>For example, to disable the full page cache and the DDL cache, enter </p>
-
-<pre><code>magento cache:disable db_ddl full_page
-</code></pre>
-
-<p>Sample result:</p>
-
-<pre><code>Changed cache status:	
-                    db_ddl: 1 -&gt; 0
-                 full_page: 1 -&gt; 0
-</code></pre>
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Enabling a cache type automatically clears that cache type.</p></span>
-</div>
-
-<h2 id="config-cli-subcommands-cache-clean">Clean and flush cache types</h2>
-<p>To purge out-of-date items from the cache, you can <em>clean</em> or <em>flush</em> cache types:</p>
+<p>After you’ve installed and configured Varnish to work with Magento, the following actions can result in a Varnish purge:</p>
 
 <ul>
   <li>
-    <p>Cleaning a cache type deletes all items from enabled Magento cache types only. In other words, this option does not affect other processes or applications because it cleans only the cache that Magento uses.</p>
+    <p>Maintaining a website</p>
 
-    <p>Disabled cache types are not cleaned.</p>
+    <p>For example, anything you do in the Admin in:</p>
+
+    <ul>
+      <li><strong>STORES</strong> &gt; <strong>Configuration</strong> &gt; GENERAL &gt; <strong>General</strong></li>
+      <li><strong>STORES</strong> &gt; <strong>Configuration</strong> &gt; GENERAL &gt; <strong>Currency Setup</strong></li>
+      <li><strong>STORES</strong> &gt; <strong>Configuration</strong> &gt; GENERAL &gt; <strong>Store Email Addresses</strong></li>
+    </ul>
+
+    <p>When Magento detects such a change, a message displays informing you to refresh the cache. To do this, see <a href="#use-varnish-cache">Refresh the Magento cache</a>.</p>
   </li>
   <li>
-    <p>Flushing a cache type purges the cache storage, which might affect other processes applications that are using the same storage.</p>
+    <p>Maintaining a store (for example, adding or editing categories, prices, products, and promotional pricing rules)</p>
 
-    <p>Flush cache types if you’ve already tried cleaning the cache and you’re still having issues that you cannot isolate.</p>
+    <p>Varnish is purged automatically when you perform any of these tasks.</p>
+  </li>
+  <li>
+    <p>Maintaining source code. </p>
+
+    <p>You should refresh the cache and periodically delete everything in the <code>var/generation</code> and <code>var/di</code> directories. For information on refreshing the cache, see <a href="#use-varnish-cache">Refresh the Magento cache</a>.</p>
   </li>
 </ul>
 
-<p>Command usage:</p>
+<h2 id="use-varnish-cache">Refresh the Magento cache</h2>
+<p>You can refresh the Magento cache (also referred to as <em>cleaning</em> the cache) in the Magento Admin or using the command line.</p>
 
-<pre><code>magento cache:clean [type] ... [type]
-magento cache:flush [type] ... [type]
-</code></pre>
+<p>To refresh the cache using the Admin, click <strong>SYSTEM</strong> &gt; Tools &gt; <strong>Cache Management</strong>, then click <strong>Flush Magento Cache</strong> at the top of the page. (You can also refresh individual cache types.)</p>
 
-<p>where</p>
+<p>To refresh the cache using the command line, you typically use the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean"><code>magento cache:clean [type]</code></a> command as the Magento file system owner.</p>
 
-<p><code>[type]</code> is a space-separated list of cache types. Omitting <code>[type]</code> cleans or flushes all cache types at the same time.</p>
-
-<!-- `--bootstrap=` is a URL-encoded associative array of Magento <a href="/guides/v2.0/config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview">application bootstrap parameters</a> and values.
- -->
-<p>For example, to flush all cache types, enter</p>
-
-<pre><code>magento cache:flush 
-</code></pre>
-
-<p>Sample result:</p>
-
-<pre><code>Flushed cache types:
-config
-layout
-block_html
-collections
-db_ddl
-eav
-full_page
-translate
-config_integration
-config_integration_api
-config_webservice
-</code></pre>
-
-<h4 id="related-topics">Related topics</h4>
-
-<ul>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create LESS from CSS</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-test.html">Run tests</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
-</ul>
+<h2 id="use-varnish-magento-purge">Purge multiple Varnish hosts</h2>
+<p><em>Coming soon</em>. You’ll be able to configure Magento to purge multiple Varnish hosts in the same request. Watch this space.</p>
 
 
 		</div>
@@ -588,7 +405,7 @@ config_webservice
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
 						
 								
 							
@@ -798,7 +615,7 @@ config_webservice
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-use-varnish.html">Use Varnish with Magento</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/config-guide/varnish/config-use-varnish.html">Use Varnish with Magento</a></li>
 						
 								
 								
@@ -956,8 +773,8 @@ config_webservice
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/config-guide/varnish/config-use-varnish.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/config-guide/varnish/config-use-varnish.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>
