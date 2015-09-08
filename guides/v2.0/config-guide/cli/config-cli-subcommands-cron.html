@@ -190,6 +190,8 @@
   <li>All Magento e-mails (including order confirmation and transactional)</li>
 </ul>
 
+<p>We recommend you run cron as the <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-over">Magento file system owner</a>. Do <em>not</em> run cron as <code>root</code>; we recommend against running cron as the web server user.</p>
+
 <div class="bs-callout bs-callout-warning">
     <p>You can no longer run <code>dev/tools/cron.sh</code> because the script has been removed.</p>
 </div>
@@ -211,7 +213,7 @@
 </ul>
 
 <h2 id="config-cli-before">First steps</h2>
-<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
+<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.</li>
 <li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
 Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
 bash shell example for CentOS:<br />
@@ -229,20 +231,15 @@ bash shell example for CentOS:<br />
 <h2 id="config-cli-cron-bkg">Run cron in the background</h2>
 <p>This section discusses how to run all Magento cron jobs every minute, which is the recommended interval for both Magento Community Edition (CE) and Enterprise Edition (EE).</p>
 
-<p>First, determine the user cron should run as. For Magento, you should run cron as the web server user. To determine your web server’s user ID, enter the following command:</p>
+<p>Run Magento cron jobs as the <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-over">Magento file system owner</a>. </p>
 
-<pre><code>ps -o "user group command" -C httpd,apache2
-</code></pre>
-
-<p>In CentOS, the Apache user is typically <code>apache</code>; in Ubuntu, it’s typically <code>www-data</code></p>
-
-<p>To create a cron job as the user who runs Apache, the following commands in the order shown:</p>
+<p>To create a cron job as the Magento file system owner, the following commands in the order shown:</p>
 
 <ol>
   <li>
     <p>Create or edit a crontab for the Apache user:</p>
 
-    <pre><code>crontab -u &lt;apache user name&gt; -e
+    <pre><code>crontab -u &lt;Magento file system owner user name&gt; -e
 </code></pre>
 
     <p>A text editor displays. (You might need to choose a text editor first.)</p>
@@ -272,8 +269,8 @@ bash shell example for CentOS:<br />
   <li>
     <p>Open any of the following in a text editor (depending on your entry point to Magento):</p>
 
-    <pre><code>`&lt;your Magento install dir&gt;/pub/.htaccess`
-`&lt;your Magento install dir&gt;/.htaccess`
+    <pre><code>&lt;your Magento install dir&gt;/pub/.htaccess
+&lt;your Magento install dir&gt;/.htaccess
 </code></pre>
   </li>
   <li>

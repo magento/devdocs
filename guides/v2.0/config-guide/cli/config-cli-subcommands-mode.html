@@ -219,7 +219,7 @@ pub/static
 
 <ul>
   <li><code>.htaccess</code> files are not removed</li>
-  <li>A file that specifies the version of static content is not removed from <code>pub/static</code></li>
+  <li><code>pub/static</code> contains a file that specifies the version of static content; this file is not removed</li>
 </ul>
 
 <h3 id="config-mode-over-dirs">Permissions and ownership for production mode</h3>
@@ -234,8 +234,16 @@ var/di
 <p>When you change to production mode, we set the following permissions on these directories and subdirectories:</p>
 
 <ul>
-  <li>Directories: 750</li>
-  <li>Files: 640</li>
+  <li>
+    <p>Directories: 750</p>
+
+    <p>750 permissions give full control to the owner, read and execute permissions to the group, and no permissions to anyone else.</p>
+  </li>
+  <li>
+    <p>Files: 640</p>
+
+    <p>640 permissions give read-write permissions to the owner, read-only permissions to the group, and no permissions to anyone else.</p>
+  </li>
 </ul>
 
 <!-- <table style="width:350px">
@@ -264,8 +272,6 @@ var/di
 
 770 permissions give full control (read, write, execute) to the owner and group and no permissions to anyone else. -->
 
-<p>750 permissions give full control to the owner, read and execute permissions to the group, and no permissions to anyone else.</p>
-
 <p>For more information about UNIX permissions, see:</p>
 
 <ul>
@@ -281,6 +287,8 @@ var/di
   <li>
     <p>The directories and files in the Magento file system should be <em>owned</em> by a user other than the web server user but must be <em>writable</em> by the web server user. </p>
 
+    <p>We refer to this other user as the <a href="/guides/v2.0/install-gde/prereq/apache-user.html#nstall-update-depend-user-over">Magento file system owner</a>.</p>
+
     <p>Exceptions: <code>var/di</code>, <code>var/generation</code>, and <code>var/preprocessed</code></p>
   </li>
   <li>
@@ -288,34 +296,7 @@ var/di
   </li>
 </ul>
 
-<p>The easiest way to do that is to run this command as a user in the same group as the web server user.</p>
-
-<p>To find the web server user’s group:</p>
-
-<ul>
-  <li>
-    <p>CentOS: <code>egrep -i '^user|^group' /etc/httpd/conf/httpd.conf</code></p>
-
-    <p>Typically, the user and group name are both <code>apache</code></p>
-  </li>
-  <li>
-    <p>Ubuntu: <code>ps aux | grep apache</code> to find the apache user, then <code>groups &lt;apache user&gt;</code> to find the group</p>
-
-    <p>Typically, the user name and the group name are both <code>www-data</code></p>
-  </li>
-</ul>
-
-<p>To add a user to the web server’s group (assuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with <code>root</code> privileges:</p>
-
-<ul>
-  <li>CentOS: <code>usermod -a -G apache &lt;username&gt;</code></li>
-  <li>Ubuntu: <code>useradd -G www-data &lt;username&gt;</code></li>
-</ul>
-
-<p>For example, to add the user <code>deborah</code> to the <code>apache</code> group on CentOS:</p>
-
-<pre><code>usermod -a -G apache deborah
-</code></pre>
+<p>The easiest way to do that is to run this command as a user in the same group as the web server user. For details, see <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Create the Magento file system owner</a>.</p>
 
 <h2 id="config-mode-show">Display the current mode</h2>
 <p>Command usage:</p>

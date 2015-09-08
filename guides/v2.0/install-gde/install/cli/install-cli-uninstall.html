@@ -180,7 +180,7 @@
 </ul>
 
 <h2 id="instgde-cli-before">First steps</h2>
-<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
+<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.</li>
 <li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
 Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
 bash shell example for CentOS:<br />
@@ -206,7 +206,7 @@ bash shell example for CentOS:<br />
 <p>To update the Magento software:</p>
 
 <ol>
-  <li>Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">web server user</a>).</li>
+  <li>Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>).</li>
   <li>
     <p>Save any changes you made to <code>composer.json</code> because the following steps will overwrite it:</p>
 
@@ -268,7 +268,7 @@ bash shell example for CentOS:<br />
 <p>To reinstall the Magento software:</p>
 
 <ol>
-  <li>Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">web server user</a>).</li>
+  <li>Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>).</li>
   <li>
     <p>Enter the following commands in the order shown:</p>
 
@@ -356,7 +356,7 @@ php bin/magento setup:uninstall
 
 <ol>
   <li>
-    <p>Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">web server user</a>).</p>
+    <p>Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>).</p>
   </li>
   <li>
     <p>Change to the following directory:</p>

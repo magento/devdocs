@@ -189,17 +189,17 @@ Cron Job has not been configured yet
   <li>
     <p>As a user with <code>root</code> privileges, see if a crontab is already set up.</p>
 
-    <pre><code>crontab -u &lt;web server user name&gt; -l
+    <pre><code>crontab -u &lt;Magento file system owner name&gt; -l
 </code></pre>
 
     <p>For example, on CentOS</p>
 
-    <pre><code>crontab -u apache -l
+    <pre><code>crontab -u magento_user -l
 </code></pre>
 
     <p>If no crontab has been set up for the user, the following message displays:</p>
 
-    <pre><code>no crontab for apache
+    <pre><code>no crontab for magento_user
 </code></pre>
 
     <p>See one of the following sections for a solution to your issue.</p>
@@ -207,7 +207,7 @@ Cron Job has not been configured yet
 </ol>
 
 <h3 id="trouble-cron-none">Solution: crontab not set up</h3>
-<p>If the web server user has no configured cron job, see <a href="/guides/v2.0/comp-mgr/prereq/prereq_compman-updater.html">Set up cron jobs</a>.</p>
+<p>If the Magento file system owner has no configured cron job, see <a href="/guides/v2.0/comp-mgr/prereq/prereq_compman-updater.html">Set up cron jobs</a>.</p>
 
 <h3 id="trouble-cron-errors">Solution: cron running with errors</h3>
 <p>Try running each command manually because the command might display helpful error messages.</p>
