@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Create a Magento administrator</title>
+	<title>Create or unlock a Magento administrator account</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
@@ -155,7 +155,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Create a Magento administrator</h1>
+		<h1 class="page-heading">Create or unlock a Magento administrator account</h1>
 			
 			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/install-gde/install/cli/install-cli-subcommands-admin.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -167,13 +167,13 @@
 		<div class="content-wrap">
 		
 		<h4>Contents</h4>
-
 <p>See one of the following sections:</p>
 
 <ul>
   <li><a href="#instgde-install-cli-first">First steps</a></li>
   <li><a href="#instgde-cli-admin-prereq">Prerequisites</a></li>
   <li><a href="#instgde-cli-admin">Create an administrator</a></li>
+  <li><a href="#instgde-cli-admin-unlock">Unlock an administrator account</a></li>
 </ul>
 
 <h2 id="instgde-cli-before">First steps</h2>
@@ -256,6 +256,30 @@ bash shell example for CentOS:<br />
 
 	</tbody>
 </table>
+
+<h2 id="instgde-cli-admin-unlock">Unlock an administrator account</h2>
+<p>Use this command to unlock the account of an administrator that was locked, typically because of multiple incorrect login attempts.</p>
+
+<pre><code>magento admin:user:unlock {user name}
+</code></pre>
+
+<p>You must specify the administrator’s user name. Example:</p>
+
+<pre><code>magento admin:user:unlock admin
+The user account "admin" has been unlocked
+</code></pre>
+
+<p>If the account is either not unlocked or if there was a problem, the following message displays:</p>
+
+<pre><code>The user account "admin" was not locked or could not be unlocked
+</code></pre>
+
+<p>Verify the user is an administrator, the user is active, and that the account is currently locked. To view the list of locked users in the Admin, log in as an administrator and click <strong>System</strong> &gt; Permissions &gt; <strong>Locked Users</strong>.</p>
+
+<p>If the account doesn’t exist, the following message displays:</p>
+
+<pre><code>Couldn't find the user account "bob"
+</code></pre>
 
 <h4 id="related-topics">Related topics</h4>
 
@@ -439,7 +463,7 @@ bash shell example for CentOS:<br />
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-admin.html">Create a Magento administrator</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-admin.html">Create or unlock a Magento administrator account</a></li>
 						
 								
 							
