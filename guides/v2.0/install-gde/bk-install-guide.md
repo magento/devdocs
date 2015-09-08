@@ -63,18 +63,18 @@ Use the following table to verify you have the correct prerequisites to install 
 </table>
 
 <h2>Step 2: Prepare to install</h2>
-
 After verifying your prerequisites, determine <a href="{{ site.gdeurl }}install-gde/install/pre-install.html">how to get started</a> with your installation.
 
 <h2>Step 3: Install and verify the installation</h2>
 
-2.	Install Magento:
+1.	Install Magento:
 	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>
 	*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">Install Magento software using the command line</a>
 2.	<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>
 
 <h2>Required server permissions</h2>
+UNIX systems require `root` privileges to install and configure software like a web server, PHP, and so on. If you need to install this software, make sure you have `root` access.
 
-Unless otherwise noted, all commands in this guide must be entered as a user with `root` privileges or as a user with permission to write to the web server docroot. Depending on your system, that might mean you must use different user accounts or add users to the web server user group&mdash;provided that group has sufficient privileges.
+You should *not* install the Magento software in the web server docroot as the `root` user because the web server might not be able to interact with those files. 
 
-Installing software on Linux typically requires `root` privileges. You should generally not install the Magento software in the web server docroot as the `root` user because the web server might not be able to interact with those files. However, that is up to you.
+You'll also need `root` privileges to create the Magento file system owner and add that owner to the web server's group. You'll use the Magento file system owner to run any commands from the command line and to set up the Magento cron job, which schedules tasks for you.
