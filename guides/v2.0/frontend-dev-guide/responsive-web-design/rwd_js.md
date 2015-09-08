@@ -11,7 +11,7 @@ redirect_from: /guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_js.html
 
 <h2>Overview</h2>
 
-This topic describes the JavaScript used in Magento default Blank and Luma themes to relocate certain elements and change their behavior depending on the <a href="{{site.gdeurl}}frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms" target="_blank">breakpoint</a>.
+This topic describes the JavaScript used in Magento out-of-the-box Blank and Luma themes to relocate certain elements and change their behavior depending on the <a href="{{site.gdeurl}}frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms" target="_blank">breakpoint</a>.
 
 
 <h2>Scripts general overview</h2>

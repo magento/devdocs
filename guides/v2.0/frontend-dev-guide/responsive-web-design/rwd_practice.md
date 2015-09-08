@@ -9,16 +9,16 @@ github_link: frontend-dev-guide/responsive-web-design/rwd_practice.md
 redirect_from: /guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_practice.html
 ---
 <h2>Overview</h2>
-This topic features a step-by-step illustration of how to change the number of products displayed in a row on a product page, keeping up with the responsive design approach used by Magento default themes. 
+This topic features a step-by-step illustration of how to change the number of products displayed in a row on a product page, keeping up with the responsive design approach used by Magento out-of-the-box themes. 
 
-The described flow is applicable only for themes that <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherit</a> from the default Blank or Luma theme.
+The described flow is applicable only for themes that <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherit</a> from the out-of-the-box Blank or Luma theme.
 
 <h2 id="rwd_practice">Changing the number of products in a row</h2>
 
 
-OrangeCo wants to make their products more visible by decreasing the quantity of products in a row displayed on a catalog page, so that each product takes more space. 
+OrangeCo wants to make their products more visible by decreasing the quantity of products in a row displayed on a catalog page, so that each product takes more space.
 
-In the default Blank theme, the number of products in a row for each breakpoint is the following (for the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-page" target="_blank">2-column page layout</a>):
+In the basic Blank theme, the number of products in a row for each breakpoint is the following (for the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-page" target="_blank">2-column page layout</a>):
 
 <ul>
 <li>1024px and more (desktop): four products</li>
