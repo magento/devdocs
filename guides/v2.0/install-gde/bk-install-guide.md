@@ -64,14 +64,10 @@ Use the following table to verify you have the correct prerequisites to install 
 
 <h2>Step 2: Prepare to install</h2>
 
-After verifying your prerequisites, perform the following tasks in the order shown to prepare to install the Magento software.
-
-1.	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html#instgde-prereq-compose-install">Install Composer</a>
-2.	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html#instgde-prereq-compose-clone">Clone the Magento repository</a>
+After verifying your prerequisites, determine <a href="{{ site.gdeurl }}install-gde/install/pre-install.html">how to get started</a> with your installation.
 
 <h2>Step 3: Install and verify the installation</h2>
 
-1.	<a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Update installation dependencies</a>
 2.	Install Magento:
 	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>
 	*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">Install Magento software using the command line</a>
