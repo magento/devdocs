@@ -220,7 +220,6 @@
 </table>
 
 <h2>Step 2: Prepare to install</h2>
-
 <p>After verifying your prerequisites, determine <a href="/guides/v2.0/install-gde/install/pre-install.html">how to get started</a> with your installation.</p>
 
 <h2>Step 3: Install and verify the installation</h2>
@@ -236,10 +235,11 @@
 </ol>
 
 <h2>Required server permissions</h2>
+<p>UNIX systems require <code>root</code> privileges to install and configure software like a web server, PHP, and so on. If you need to install this software, make sure you have <code>root</code> access.</p>
 
-<p>Unless otherwise noted, all commands in this guide must be entered as a user with <code>root</code> privileges or as a user with permission to write to the web server docroot. Depending on your system, that might mean you must use different user accounts or add users to the web server user group—provided that group has sufficient privileges.</p>
+<p>You should <em>not</em> install the Magento software in the web server docroot as the <code>root</code> user because the web server might not be able to interact with those files. </p>
 
-<p>Installing software on Linux typically requires <code>root</code> privileges. You should generally not install the Magento software in the web server docroot as the <code>root</code> user because the web server might not be able to interact with those files. However, that is up to you.</p>
+<p>You’ll also need <code>root</code> privileges to create the Magento file system owner and add that owner to the web server’s group. You’ll use the Magento file system owner to run any commands from the command line and to set up the Magento cron job, which schedules tasks for you.</p>
 
 
 		</div>
