@@ -224,8 +224,8 @@ To install Solr and Jetty:
 
     An example follows.
 
-        mkdir -p <em>empty-directory</em>  
-        cd <em>directory</em>
+        mkdir -p <empty-directory<>  
+        cd <directory>
         wget http://www.trieuvan.com/apache/lucene/solr/4.10.4/solr-4.10.4.tgz
 
     Messages similar to the following display to confirm a successful download.
