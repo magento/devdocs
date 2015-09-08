@@ -123,6 +123,12 @@ The following table discusses the meanings of installation parameters and values
 			<p>Consult a reference similar to <a href="http://dev.mysql.com/doc/refman/5.6/en/server-options.html" target="_blank">this one</a> before you set any values.</p></td>
 		<td><p>No</p></td>
 	</tr>
+	<tr>
+		<td><p>--cache-hosts</p></td>
+		<td><p><em>Varnish only</em>. Comma-separated list of Varnish hosts to which to send purge requests. If you have more than one Varnish server, use this parameter to purge the cache from all hosts in the same request.</p>
+			<p>Format must be <code>&lt;hostname or ip>:&lt;listen port></code>. For example, <code>--cache-hosts=192.0.2.100:80, 192.0.2.110:6081</code></p> </td>
+		<td><p>No</p></td>
+	</tr>
 	</tbody>
 </table>
 
