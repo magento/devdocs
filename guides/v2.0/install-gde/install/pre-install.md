@@ -25,8 +25,8 @@ The Magento software enables you to install, manage, and upgrade the core softwa
 You can think of it as a three-step process&mdash;where steps 2 and 3 are interchangeable:
 
 1.	Install the Magento software
-2.	Install, uninstall, update, enable, or disable any component (<em>available soon</em>)
-3.	Upgrade the Magento software or components to a newer version (<em>available soon</em>)
+2.	<a href="{{ site.gdeurl }}comp-mgr/compman-start.html">Manage components</a> (install, uninstall, update, enable, or disable)
+3.	<a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">Upgrade</a> the Magento software or components to a newer version
 
 <!-- This guide discusses installation. After you install Magento, you can manage components and upgrade as discussed in the following guides:
 
