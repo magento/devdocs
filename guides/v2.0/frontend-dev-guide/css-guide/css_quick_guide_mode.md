@@ -23,7 +23,7 @@ For making changes in theme styles when illustrating the different modes, the si
 
 Server-side is the default mode for LESS compilation, so if you do not change this, your Magento instance is using server-side compilation mode. 
 
-<h2>Making simple style changes in Server-side compilation with oyejorge</h2>
+<h2>Making simple style changes in Server-side compilation</h2>
 
 The following is an illustration of how the process of making simple changes looks like with the server-side mode:
 <ol>
@@ -37,7 +37,7 @@ The following is an illustration of how the process of making simple changes loo
 </li>
 <li>Refresh the page, and view the changes applied. 
 <p class="q">screenshot from Bogdan goes here</p></li>
-<li>Change the font of the buttons by adding the following code in `_extend.less`:
+<li>Change the font of the buttons by adding the following code in <code>_extend.less</code>:
 <p class="q">code from Bogdan goes here</p></li>
 <li>Delete all files in the following directories:
 	- <code>pub/static/frontend/&lt;Your_Vendor&gt;/&lt;your_theme&gt;</code>
