@@ -125,8 +125,8 @@ The following table discusses the meanings of installation parameters and values
 	</tr>
 	<tr>
 		<td><p>--http-cache-hosts</p></td>
-		<td><p><em>Varnish only</em>. Comma-separated list of Varnish hosts to which to send purge requests. If you have more than one Varnish server, use this parameter to purge the cache from all hosts in the same request.</p>
-			<p>Format must be <code>&lt;hostname or ip>:&lt;listen port></code>. For example, <code>--cache-hosts=192.0.2.100:80, 192.0.2.110:6081</code></p> </td>
+		<td><p>Comma-separated list of HTTP cache gateway hosts to which to send purge requests. (For example, Varnish servers.) If you have more than one server, use this parameter to purge the cache from all hosts in the same request.</p>
+			<p>Format must be <code>&lt;hostname or ip>:&lt;listen port></code>, where you can omit <code>&lt;listen port></code> if it's port 80. For example, <code>--cache-hosts=192.0.2.100, 192.0.2.155:6081</code></p> </td>
 		<td><p>No</p></td>
 	</tr>
 	</tbody>
