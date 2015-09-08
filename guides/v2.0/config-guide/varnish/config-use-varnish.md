@@ -23,7 +23,7 @@ In fact, as discussed in this section, when you manually refresh the Magento cac
 
 After you've installed and configured Varnish to work with Magento, the following actions can result in a Varnish purge:
 
-*	Maintaining a website
+*	Maintaining a website.
 
 	For example, anything you do in the Admin in:
 
@@ -33,7 +33,7 @@ After you've installed and configured Varnish to work with Magento, the followin
 
 	When Magento detects such a change, a message displays informing you to refresh the cache. To do this, see <a href="#use-varnish-cache">Refresh the Magento cache</a>.
 
-*	Maintaining a store (for example, adding or editing categories, prices, products, and promotional pricing rules)
+*	Maintaining a store (for example, adding or editing categories, prices, products, and promotional pricing rules).
 
 	Varnish is purged automatically when you perform any of these tasks.
 
