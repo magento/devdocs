@@ -12,7 +12,7 @@ redirect_from: /guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_overvie
 
 Responsive web design (RWD, also referred as <i>responsive design</i>) crafts web sites to provide an optimal viewing experience across a wide range of devices (from large, high-resolution desktop computer monitors to mobile phones).
 
-The built-in Magento Blank and Luma themes (Luma <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from Blank) use the mobile first RWD approach. It is ensured mostly by means of CSS and JavaScript.
+The out-of-the-box Magento Blank and Luma themes (Luma <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from Blank) use the mobile first RWD approach. It is ensured mostly by means of CSS and JavaScript.
 
 
 The following image illustrates how the same page built on the Blank theme looks on mobile, tablet and desktop devices.
