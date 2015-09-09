@@ -256,8 +256,8 @@ Further, memcached itself has limitations such as a maximum object size and fixe
 <tr>
 	<td>page_cache</td>
 	<td><p>Specify the segment name to use a particular segment or a default shortcut for all other caches.</p>
-		<p>The <code>default</code> cache segment enables you to configure all cache segments except for <code>page_cache</code>.
-
+		<p>The <code>default</code> cache segment enables you to configure all cache segments except for <code>page_cache</code>.</p></td>
+</tr>
 <tr>
 	<td>server</td>
 	<td>Absolute URL to your Redis server, or <code>127.0.0.1</code> if Redis is installed on the Magento server, or a an absolute path to a UNIX socket.</td>
@@ -268,9 +268,8 @@ Further, memcached itself has limitations such as a maximum object size and fixe
 </tr>
 <tr>
 	<td>persistent</td>
-	<td>Specify a unique string to enable persistent connections. For example, <code>sess-db0</code>.
-
-		Note that there are <a href="https://github.com/nicolasff/phpredis/issues/70" target="_blank">known issues phpredis and php-fpm</a>.</td>
+	<td><p>Specify a unique string to enable persistent connections. For example, <code>sess-db0</code>.</p>
+		<p>Note that there are <a href="https://github.com/nicolasff/phpredis/issues/70" target="_blank">known issues phpredis and php-fpm</a>.</p></td>
 </tr>
 <tr>
 	<td>database</td>
@@ -282,27 +281,30 @@ Further, memcached itself has limitations such as a maximum object size and fixe
 </tr>
 <tr>
 	<td>force_standalone</td>
-	<td>Use <code>0</code> for phpredis or <code>1</code> for standalone PHP</td>
+	<td>Use <code>0</code> for phpredis or <code>1</code> for standalone PHP.</td>
 </tr>
 <tr>
 	<td>connect_retries</td>
 	<td>Reduces errors due to random connection failures. Specify <code>1</code> to not retry after the first failure.</td>
 </tr>
-
-
+</tbody>
+</table>
 
 <h2 id="config-redis-info">For more information</h2>
-You can find more information about configuring Redis from the following:
+<p>You can find more information about configuring Redis from the following:</p>
 
-*	<a href="http://davidalger.com/development/magento/configuring-magento-2-to-use-redis-cache-backend/" target="_blank">David Alger</a>
-*	<a href="http://www.techytalk.info/configuring-cache-storage-backends-magento-2-redis/" target="_blank">TechyTalk</a>
-*	<a href="http://info2.magento.com/rs/magentoenterprise/images/MagentoECG-UsingRedisasaCacheBackendinMagento.pdf" target="_blank">Magento Expert Consulting Group (ECG) article <em>written for Magento 1.x</em>
+<ul>
+  <li><a href="http://davidalger.com/development/magento/configuring-magento-2-to-use-redis-cache-backend/" target="_blank">David Alger</a></li>
+  <li><a href="http://www.techytalk.info/configuring-cache-storage-backends-magento-2-redis/" target="_blank">TechyTalk</a></li>
+  <li><a href="http://info2.magento.com/rs/magentoenterprise/images/MagentoECG-UsingRedisasaCacheBackendinMagento.pdf" target="_blank">Magento Expert Consulting Group (ECG) article <em>written for Magento 1.x</em></a></li>
+</ul>
 
-#### Related topics
+<h4 id="related-topics">Related topics</h4>
 
- *  <a href="/guides/v2.0/config-guide/config/config-create.html">Create or extend configuration types</a>
- *  <a href="/guides/v2.0/config-guide/config/config-php.html">Magento's deployment configuration</a>
-</a></p></td></tr></tbody></table>
+<ul>
+  <li><a href="/guides/v2.0/config-guide/config/config-create.html">Create or extend configuration types</a></li>
+  <li><a href="/guides/v2.0/config-guide/config/config-php.html">Magento’s deployment configuration</a></li>
+</ul>
 
 
 		</div>
