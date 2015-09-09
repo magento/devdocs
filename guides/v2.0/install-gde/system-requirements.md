@@ -60,7 +60,7 @@ Before you install Magento, make sure your system meets or exceeds the following
 *	Optional caching technologies
 
 	*	<a href="http://redis.io/topics/quickstart" target="_blank">Redis version 3.0</a>
-	*	<a href="http://wiki.mikejung.biz/Varnish" target="_blank">Varnish version 3.5 or latest stable 4.x version</a>
+	*	<a href="https://www.varnish-cache.org/docs" target="_blank">Varnish version 3.5 or latest stable 4.x version</a>
 	*	memcached latest stable version
 *	Optional but recommended:
 

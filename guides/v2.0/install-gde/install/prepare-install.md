@@ -55,4 +55,4 @@ Update installation dependencies as follows:
 	*	(CentOS) `chown -R apache .`
 
 #### Next step
-<a href="{{ site.gdeurl }}install-gde/install/file-system-perms.html">Set file system ownership and permissions</a>
+<a href="{{ site.gdeurl }}install-gde/install/dev_updater.html">Set up the updater</a>
