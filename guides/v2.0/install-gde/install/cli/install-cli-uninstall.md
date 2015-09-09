@@ -36,7 +36,18 @@ This section discusses how to update your Magento software without reinstalling 
 
 You might do this in an development environment especially to get all the latest code changes.
 
-To update the Magento software:
+The way you update the Magento application from the command line depends on your role:
+
+*	If you're a contributing developer (that is, you started using `composer clone`), see <a href="#instgde-install-magento-update-dev">Update as a contributing developer</a>.
+*	If you're a system integrator (that is, you started using `composer create-project`), see <a href="#instgde-install-magento-update-sys">Update as a system integrator</a>.
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+   <p>To upgrade system software using the web-based Upgrade Manager, see <a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">Run System Upgrade</a>.</p> </span>
+</div>
+
+<h3 id="instgde-install-magento-update-dev">Update as a contributing developer</h3>
+To update the Magento software as a contributing developer:
 
 2.	Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>).
 3. Save any changes you made to `composer.json` because the following steps will overwrite it:
@@ -58,12 +69,54 @@ To update the Magento software:
 	</div>
 				
 3.	Diff and merge your `composer.json.old` with `composer.json` installed with the Magento software.
-
 4.	Enter the following command:
 
 		composer update
 
-4.	Update the Magento database.
+5.	<a href="instgde-install-magento-update-db">Update the Magento database</a>.
+
+<h3 id="instgde-install-magento-update-sys">Update as a system integrator</h3>
+To update the Magento software as a system integrator:
+
+1.	Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>).
+
+3. Save any changes you made to `composer.json` because the following steps will overwrite it:
+
+		cd <your Magento install dir>
+		cp composer.json composer.json.old
+
+3.	If you previously installed the optional sample data, enter the following command:
+
+		rm -rf dev/tools/Magento/Tools/SampleData/
+
+4.	Change to your Magento installation directory.
+3.	Make a backup copy of `composer.json` in your Magento installation directory:
+
+		cd <your Magento install dir>
+		cp composer.json composer.json.bak
+
+4.	Open `composer.json` in a text editor.
+5.	Locate the following line:
+
+		 "require": {
+        	"magento/product-community-edition": "<version>"
+    	},
+
+5.	Replace `<version>` with the version to which you want to upgrade, where `<version>` is the `magento/product-community-edition` version from <a href="http://packages.magento.com/#magento/product-community-edition" target="_blank">packages.magento.com</a>.
+5.	Save your changes to `composer.json` and exit the text editor.
+6.	Enter the following command:
+
+		composer update
+
+	Wait for dependencies to update.
+
+3.	Diff and merge your `composer.json.old` with `composer.json` installed with the Magento software.
+4.	Update the Magento database as discussed in the next section.
+
+<h3 id="instgde-install-magento-update-db">Update the Magento database</h3>
+After you update the Magento software, you must update the database schema and database data as follows:
+
+1.	Update the Magento database.
 
 		php bin/magento setup:upgrade
 
@@ -79,7 +132,13 @@ To update the Magento software:
 <h2 id="instgde-install-magento-reinstall">Reinstall the Magento software</h2>
 This section discusses how to uninstall and then reinstall the Magento software with the latest version.
 
-To reinstall the Magento software:
+The way you reinstall the Magento application from the command line depends on your role:
+
+*	If you're a contributing developer (that is, you started using `composer clone`), see <a href="#instgde-install-magento-reinst-dev">Reinstall as a contributing developer</a>.
+*	If you're a system integrator (that is, you started using `composer create-project`), see <a href="#instgde-install-reinst-update-sys">Reinstall as a system integrator</a>.
+
+<h3 id="instgde-install-magento-reinst-dev">Reinstall as a contributing developer</h3>
+To reinstall the Magento software as a contributing developer:
 
 2.	Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>).
 3.	Enter the following commands in the order shown:
@@ -93,6 +152,35 @@ To reinstall the Magento software:
   			<ul><li>If <code>git pull origin develop</code> fails, see <a href="{{ site.gdeurl }}install-gde/trouble/trouble/git/tshoot_git-pull-origin.html">troubleshooting</a>. </li>
   				<li>To use your existing Magento software version , omit the <code>git pull origin develop</code> command.</li></ul></span>
 	</div>
+
+4.	Install the Magento software:
+
+	*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento">Install the Magento software using the command line</a>
+	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>
+
+<h3 id="instgde-install-reinst-update-sys">Reinstall as a system integrator</h3>
+To reinstall the Magento software as a contributing developer:
+
+2.	Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>).
+3.	Make a backup copy of `composer.json` in your Magento installation directory:
+
+		cd <your Magento install dir>
+		cp composer.json composer.json.bak
+
+4.	Open `composer.json` in a text editor.
+5.	Locate the following line:
+
+		 "require": {
+        	"magento/product-community-edition": "<version>"
+    	},
+
+5.	Replace `<version>` with the version to which you want to upgrade, where `<version>` is the `magento/product-community-edition` version from <a href="http://packages.magento.com/#magento/product-community-edition" target="_blank">packages.magento.com</a>.
+5.	Save your changes to `composer.json` and exit the text editor.
+6.	Enter the following command:
+
+		composer update
+
+	Wait for dependencies to update.
 
 4.	Install the Magento software:
 

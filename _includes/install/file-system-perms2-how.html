@@ -13,6 +13,6 @@ Typical examples:<br><br>
 CentOS: <code>chown -R :apache .</code><br>
 Ubuntu: <code>chown -R :www-data .</code></li>
 <li>Set permissions:<br>
-	<pre>find . -type d -exec chmod 770 {} \; && find . -type f -exec chmod 660 {} \; && chmod +x bin/magento</pre>
+	<pre>find . -type d -exec chmod 770 {} \; && find . -type f -exec chmod 660 {} \; && chmod u+x bin/magento</pre>
 	If you must enter the commands as <code>sudo</code>, use:<br>
-	<pre>sudo find . -type d -exec chmod 770 {} \; && sudo find . -type f -exec chmod 660 {} \; && sudo chmod +x bin/magento</pre></li></ol>
+	<pre>sudo find . -type d -exec chmod 770 {} \; && sudo find . -type f -exec chmod 660 {} \; && sudo chmod u+x bin/magento</pre></li></ol>
