@@ -127,55 +127,54 @@ $client-&gt;call('endSession', array($session));</pre>
 <p>The following table contains the API methods that can be called from your SOAP or XML-RPC client on the Magento v1 API.</p>
 
 
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Method </th>
-<th class='confluenceTh'> Description </th>
-<th class='confluenceTh'> Return Value </th>
+<th> Method </th>
+<th> Description </th>
+<th> Return Value </th>
 </tr>
 <tr>
-<td class='confluenceTd'> startSession() </td>
-<td class='confluenceTd'> Start the API session and return session ID. </td>
-<td class='confluenceTd'> string </td>
+<td> startSession() </td>
+<td> Start the API session and return session ID. </td>
+<td> string </td>
 </tr>
 <tr>
-<td class='confluenceTd'> endSession(sessionId) </td>
-<td class='confluenceTd'> End the API session. </td>
-<td class='confluenceTd'> boolean </td>
+<td> endSession(sessionId) </td>
+<td> End the API session. </td>
+<td> boolean </td>
 </tr>
 <tr>
-<td class='confluenceTd'> login(apiUser, apiKey) </td>
-<td class='confluenceTd'> Start the API session, return the session ID, and authorize the API user. </td>
-<td class='confluenceTd'> string </td>
+<td> login(apiUser, apiKey) </td>
+<td> Start the API session, return the session ID, and authorize the API user. </td>
+<td> string </td>
 </tr>
 <tr>
-<td class='confluenceTd'> call(sessionId, resourcePath,array arguments) </td>
-<td class='confluenceTd'> Call the API resource that is allowed in the current session. See Note below. </td>
-<td class='confluenceTd'> mixed </td>
+<td> call(sessionId, resourcePath,array arguments) </td>
+<td> Call the API resource that is allowed in the current session. See Note below. </td>
+<td> mixed </td>
 </tr>
 <tr>
-<td class='confluenceTd'> multiCall(sessionId, array calls,array options) </td>
-<td class='confluenceTd'> Call the API resource’s methods that are allowed for current session. See Notes below. </td>
-<td class='confluenceTd'> array </td>
+<td> multiCall(sessionId, array calls,array options) </td>
+<td> Call the API resource’s methods that are allowed for current session. See Notes below. </td>
+<td> array </td>
 </tr>
 <tr>
-<td class='confluenceTd'> resources(sessionId) </td>
-<td class='confluenceTd'> Return a list of available API resources and methods allowed for the current session. </td>
-<td class='confluenceTd'> array </td>
+<td> resources(sessionId) </td>
+<td> Return a list of available API resources and methods allowed for the current session. </td>
+<td> array </td>
 </tr>
 <tr>
-<td class='confluenceTd'> globalFaults(sessionId) </td>
-<td class='confluenceTd'> Return a list of fault messages and their codes that do not depend on any resource. </td>
-<td class='confluenceTd'> array </td>
+<td> globalFaults(sessionId) </td>
+<td> Return a list of fault messages and their codes that do not depend on any resource. </td>
+<td> array </td>
 </tr>
 <tr>
-<td class='confluenceTd'> resourceFaults(sessionId, resourceName) </td>
-<td class='confluenceTd'> Return a list of the specified resource fault messages, if this resource is allowed in the current session. </td>
-<td class='confluenceTd'> array </td>
+<td> resourceFaults(sessionId, resourceName) </td>
+<td> Return a list of the specified resource fault messages, if this resource is allowed in the current session. </td>
+<td> array </td>
 </tr>
 </tbody></table>
-</div>
 
 <p><b>Note:</b> For <b>call</b> and <b>multiCall</b>, if no session is specified, you can call only resources that are not protected by ACL.</p>
 
@@ -186,34 +185,33 @@ $client-&gt;call('endSession', array($session));</pre>
 <h2><a name="Introduction-GlobalAPIFaults"></a>Global API Faults</h2>
 
 <p>The following table contains fault codes that apply to all SOAP/XML-RPC API calls.</p>
-<div class='table-wrap'>
-<table class='confluenceTable'><tbody>
+
+<table><tbody>
 <tr>
-<th class='confluenceTh'> Fault Code </th>
-<th class='confluenceTh'> Fault Message </th>
+<th> Fault Code </th>
+<th> Fault Message </th>
 </tr>
 <tr>
-<td class='confluenceTd'> 0 </td>
-<td class='confluenceTd'> Unknown Error </td>
+<td> 0 </td>
+<td> Unknown Error </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 1 </td>
-<td class='confluenceTd'> Internal Error. Please see log for details. </td>
+<td> 1 </td>
+<td> Internal Error. Please see log for details. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 2 </td>
-<td class='confluenceTd'> Access denied. </td>
+<td> 2 </td>
+<td> Access denied. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 3 </td>
-<td class='confluenceTd'> Invalid api path. </td>
+<td> 3 </td>
+<td> Invalid api path. </td>
 </tr>
 <tr>
-<td class='confluenceTd'> 4 </td>
-<td class='confluenceTd'> Resource path is not callable. </td>
+<td> 4 </td>
+<td> Resource path is not callable. </td>
 </tr>
 </tbody></table>
-</div>
 
 
 <h2><a name="Introduction-SOAPAPIVersionv2"></a>SOAP API Version v2</h2>

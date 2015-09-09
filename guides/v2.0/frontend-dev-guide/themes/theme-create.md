@@ -157,7 +157,7 @@ app/design/frontend/&lt;Vendor&gt;/
 
 
 
-<h2>Theme logo</h2>
+<h2 id="theme_logo">Theme logo</h2>
 
 In the Magento application, the default format and name of a logo image is <code>logo.svg</code>. When you put a <code>logo.svg</code> image in the conventional location, which is <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/images</code> directory, it is automatically recognized as theme logo. It is displayed in your store page header once the theme is <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html" target="_blank">applied</a>.
 
