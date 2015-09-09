@@ -174,9 +174,10 @@
 
 <h2 id="install-perms-import">Why we recommend you set file system permissions</h2>
 <p>Malicious exploits are unfortunate reality in the internet age. To help prevent exploits that take advantage of the file system, we recommend you set Magento file system ownership and permissions in a particular way. For more information, see <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-over">Overview of ownership and permissions</a>.</p>
+
 <div class="bs-callout bs-callout-info" id="info">
-  <p>This topic covers permissions for a development environment. In production, the web server user should have limited write privileges. To help manage you production and developer modes, we provide the <code><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">magento deploy:mode:set</a> command.
- 
+  <p>This topic covers permissions for a development environment. In production, the web server user should have limited write privileges. To help manage you production and developer modes, we provide the <code><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">magento deploy:mode:set</a></code> command.</p>
+</div>
 
 <p>The important things:</p>
 <ul><li>The owner of the Magento file system:
@@ -216,13 +217,14 @@ Ubuntu: <code>chown -R :www-data .</code></li>
 	If you must enter the commands as <code>sudo</code>, use:<br />
 	<pre>sudo find . -type d -exec chmod 770 {} \; &amp;&amp; sudo find . -type f -exec chmod 660 {} \; &amp;&amp; sudo chmod u+x bin/magento</pre></li></ol>
 
-#### Next steps
-Install the Magento software:
+<h4 id="next-steps">Next steps</h4>
+<p>Install the Magento software:</p>
 
-*	Using the web-based <a href="/guides/v2.0/install-gde/install/web/install-web.html">Setup Wizard</a>, which is better for less experienced users or anyone who has a hosting provider (especially if you don't have access to the Magento server)
-*	<a href="/guides/v2.0/install-gde/install/cli/install-cli.html">Command line</a>, which gives you more control but requires more experience and also access to the Magento server
+<ul>
+  <li>Using the web-based <a href="/guides/v2.0/install-gde/install/web/install-web.html">Setup Wizard</a>, which is better for less experienced users or anyone who has a hosting provider (especially if you don’t have access to the Magento server)</li>
+  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli.html">Command line</a>, which gives you more control but requires more experience and also access to the Magento server</li>
+</ul>
 
-</code></p></div>
 
 
 		</div>
