@@ -190,7 +190,7 @@
 <p>Update installation dependencies as follows:</p>
 
 <ol>
-  <li>Log in to your Magento server as the web server user or <a href="/guides/v2.0/install-gde/prereq/apache-user.html">switch to that user</a>.</li>
+  <li>Log in to your Magento server as the Magento file system owner or <a href="/guides/v2.0/install-gde/prereq/apache-user.html">switch to that user</a>.</li>
   <li>
     <p>Change to the Magento installation directory and run <code>composer install</code>. Examples:</p>
 
@@ -210,14 +210,6 @@
     <span class="glyphicon-class">
   		<p>The Magento installation directory is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
 </div>
-  </li>
-  <li>
-    <p>(Secure environment). Change ownership to the web server user as follows:</p>
-
-    <ul>
-      <li>(Ubuntu) <code>chown -R www-data .</code></li>
-      <li>(CentOS) <code>chown -R apache .</code></li>
-    </ul>
   </li>
 </ol>
 
