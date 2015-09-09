@@ -90,16 +90,25 @@ To update the Magento software as a system integrator:
 		rm -rf dev/tools/Magento/Tools/SampleData/
 
 4.	Change to your Magento installation directory.
-4.	Enter the following command:
+3.	Make a backup copy of `composer.json` in your Magento installation directory:
 
-		composer require magento/product-community-edition:<version>
+		cd <your Magento install dir>
+		cp composer.json composer.json.bak
 
-	where `<version>` is the `magento/product-community-edition` version from <a href="http://packages.magento.com/#magento/product-community-edition" target="_blank">packages.magento.com</a>.
+4.	Open `composer.json` in a text editor.
+5.	Locate the following line:
 
-	<div class="bs-callout bs-callout-info" id="info">
-		<span class="glyphicon-class">
-  			<p>If the command fails with the error <code>The requested package magento/product-community-edition could not be found in any version</code>, check the command syntax, including the version. If both are correct, try clearing your Composer cache: <code>composer clear-cache</code></p> </span>
-	</div>
+		 "require": {
+        	"magento/product-community-edition": "<version>"
+    	},
+
+5.	Replace `<version>` with the version to which you want to upgrade, where `<version>` is the `magento/product-community-edition` version from <a href="http://packages.magento.com/#magento/product-community-edition" target="_blank">packages.magento.com</a>.
+5.	Save your changes to `composer.json` and exit the text editor.
+6.	Enter the following command:
+
+		composer update
+
+	Wait for dependencies to update.
 
 3.	Diff and merge your `composer.json.old` with `composer.json` installed with the Magento software.
 4.	Update the Magento database as discussed in the next section.
@@ -153,16 +162,25 @@ To reinstall the Magento software as a contributing developer:
 To reinstall the Magento software as a contributing developer:
 
 2.	Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>).
-3.	Enter the following command:
+3.	Make a backup copy of `composer.json` in your Magento installation directory:
 
-		composer require magento/product-community-edition:<version>
+		cd <your Magento install dir>
+		cp composer.json composer.json.bak
 
-	where `<version>` is the `magento/product-community-edition` version from <a href="http://packages.magento.com/#magento/product-community-edition" target="_blank">packages.magento.com</a>.
+4.	Open `composer.json` in a text editor.
+5.	Locate the following line:
 
-	<div class="bs-callout bs-callout-info" id="info">
-		<span class="glyphicon-class">
-  			<p>If the command fails with the error <code>The requested package magento/product-community-edition could not be found in any version</code>, check the command syntax, including the version. If both are correct, try clearing your Composer cache: <code>composer clear-cache</code></p> </span>
-	</div>
+		 "require": {
+        	"magento/product-community-edition": "<version>"
+    	},
+
+5.	Replace `<version>` with the version to which you want to upgrade, where `<version>` is the `magento/product-community-edition` version from <a href="http://packages.magento.com/#magento/product-community-edition" target="_blank">packages.magento.com</a>.
+5.	Save your changes to `composer.json` and exit the text editor.
+6.	Enter the following command:
+
+		composer update
+
+	Wait for dependencies to update.
 
 4.	Install the Magento software:
 
