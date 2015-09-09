@@ -1,30 +1,38 @@
-<p>After you copy the Magento software to your server, set ownership of all Magento files and directories and make sure they are writable by that user.</p>
-<p>Typically, Magento files and directories should be owned by the web server user; however, the choice of user is up to you. The important thing is that the owner of the Magento file system must have write access to all files and directories.</p>
+<h2 id="install-perms-import">Why we recommend you set file system permissions</h2>
+<P>Malicious exploits are unfortunate reality in the internet age. To help prevent exploits that take advantage of the file system, we recommend you set Magento file system ownership and permissions in a particular way. For more information, see <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-over">Overview of ownership and permissions</a>.</p>
+<p>The important things:</p>
+<ul><li>The owner of the Magento file system:
+<ul><li>Must have full control (read/write/execute) of all files and directories.</li>
+<li>Must <em>not</em> be the web server user; it should be a different user.</li></ul>
+</li>
+<li>The web server user must have write access to the following files and directories:
+<ul><li><code>var</code></li>
+<li><code>app/etc</code></li>
+<li><code>pub</code></li></ul>
+</li>
+</ul>
+<p>In addition, the web server's <em>group</em> must own the Magento file system so that the Magento user (who is in the group) can share access to files with the web server user. (This includes files created by the Magento Admin or other web-based utilities.)</p>
 <p>We recommend setting the permissions as follows:</p>
-<ul><li>All directories have 700 permissions <code>(drwx------)</code><br>
-	700 permissions give full control (that is, read/write/execute) to the owner and no permissions to anyone else.</li>
-<li>All files have 600 permissions <code>(-rw-------)</code><br>
-	600 permissions mean the owner can read and write but other users have no permissions.</li></ul>
-<p>Assuming the web server user owns the Magento 2 file system, use the following steps:</p>
-<ol><li>Change to the Magento directory:<br>
-<pre>cd &lt;web server docroot>/&lt;magento2 dir></pre>
-&lt;magento2 dir> is typically named <code>magento2</code> and it's located under your web server's docroot. Need help locating the docroot? Click <a href="{{ site.gdeurl }}install-gde/basics/basics_docroot.html">here</a>.<br>
-Examples:<br>
-<ul><li>Ubuntu: <code>/var/www/magento2</code></li>
-<li>CentOS: <code>/var/www/html/magento2</code></li></ul>
-</li>
-<li>Find the web server user name:<br>
-<ul><li>Ubuntu: <code>ps -ef | grep apache2</code></li>
-<li>CentOS: <code>grep User /etc/httpd/conf/httpd.conf</code></li></ul>
-</li>
+<ul><li>All directories have 770 permissions.<br>
+770 permissions give full control (that is, read/write/execute) to the owner and to the group and no permissions to anyone else.</li>
+<li>All files have 660 permissions.<br>
+660 permissions mean the owner and the group can read and write but other users have no permissions.</li></ul>
+
+<h2 id="install-perms-set">File system permissions and ownership</h2>
+<p>Use the following steps:</p>
+<ol><li>Change to the Magento installation directory:<br>
+	<pre>cd &lt;web server docroot>/&lt;magento2 base dir></pre>
+	The base directory is typically a subdirectory named <code>magento2</code> under your web server's docroot. Need help locating the docroot? Click <a href="{{ site.gdeurl }}install-gde/basics/basics_docroot.html">here</a>.<br>
+
+	Examples:
+	<ul><li>Ubuntu: <code>/var/www/magento2</code>
+	<li>CentOS: <code>/var/www/html/magento2</code></li>
 <li>Set ownership:<br>
-<code>chown -R &lt;your web server user name> .</code><br>
+<pre>chown -R :&lt;your web server group name> .</pre>
 Typical examples:<br>
-<ul><li>CentOS: <code>chown -R apache .</code></li>
-<li>Ubuntu: <code>chown -R www-data .</code></li></ul>
-</li>
+CentOS: <code>chown -R :apache .</code><br>
+Ubuntu: <code>chown -R :www-data .</code></li>
 <li>Set permissions:<br>
-<pre>find . -type d -exec chmod 700 {} \; && find . -type f -exec chmod 600 {} \; && chmod +x bin/magento</pre>
+	<pre>find . -type d -exec chmod 770 {} \; && find . -type f -exec chmod 660 {} \; && chmod +x bin/magento</pre>
 	If you must enter the commands as <code>sudo</code>, use:<br>
-<pre>sudo find . -type d -exec chmod 700 {} \; && sudo find . -type f -exec chmod 600 {} \; && sudo chmod +x bin/magento</pre></li>
-</ol>
+	<pre>sudo find . -type d -exec chmod 770 {} \; && sudo find . -type f -exec chmod 660 {} \; && sudo chmod +x bin/magento</pre></li></ol>

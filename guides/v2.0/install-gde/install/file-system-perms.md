@@ -14,64 +14,10 @@ github_link: install-gde/install/file-system-perms.md
 *	<a href="#install-perms-set">File system permissions and ownership</a>
 
 <h2 id="install-perms-import">Why we recommend you set file system permissions</h2>
-Malicious exploits are unfortunate reality in the internet age. To help prevent exploits that take advantage of the file system, we recommend you set Magento file system ownership and permissions in a particular way. For more information, see <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-over">Overview of ownership and permissions</a>.
-
-The important things:
-
-*	The owner of the Magento file system:
-
-	*	Must have full control (read/write/execute) of all files and directories.
-	*	Must *not* the web server user; it should be a different user.
-
-*	The web server user must have write access to the following files and directories:
-
-	*	`var`
-	*	`app/etc`
-	*	`pub` 
-
-In addition, the web server's *group* must own the Magento file system so that the Magento user (who is in the group) can share access to files with the web server user. (This includes files created by the Magento Admin or other web-based utilities.)
-
-We recommend setting the permissions as follows:
-
-*	All directories have 770 permissions.
-
-	770 permissions give full control (that is, read/write/execute) to the owner and to the group and no permissions to anyone else.
-
-*	All files have 660 permissions.
-
-	660 permissions mean the owner and the group can read and write but other users have no permissions.
+{% include install/file-system-perms1-why.html %}
 
 <h2 id="install-perms-set">File system permissions and ownership</h2>
-Use the following steps:
-
-1.	Change to the Magento directory:
-
-		cd <web server docroot>/<magento2 base dir>
-
-	The base directory is typically a subdirectory named `magento2` under your web server's docroot. Need help locating the docroot? Click <a href="{{ site.gdeurl }}install-gde/basics/basics_docroot.html">here</a>.
-
-	Examples:
-
-	*	Ubuntu: `/var/www/magento2`
-	*	CentOS: `/var/www/html/magento2`
-
-3.	Set ownership:
-
-		chown -R :[your web server group name] .
-
-	Typical examples:
-
-	CentOS: `chown -R :apache .`
-
-	Ubuntu: `chown -R :www-data .`
-
-4.	Set permissions:
-
-		find . -type d -exec chmod 770 {} \; && find . -type f -exec chmod 660 {} \; && chmod +x bin/magento
-
-	If you must enter the commands as `sudo`, use:
-
-		sudo find . -type d -exec chmod 770 {} \; && sudo find . -type f -exec chmod 660 {} \; && sudo chmod +x bin/magento
+{% include install/file-system-perms2-how.html %}
 
 #### Next steps
 Install the Magento software:
