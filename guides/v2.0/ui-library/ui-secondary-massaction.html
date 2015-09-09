@@ -233,25 +233,23 @@
   <li>Specifying action with confirmation</li>
 </ul>
 
-<pre>
-&lt;massaction name="listing_massaction"&gt;
-    &lt;argument name="data" xsi:type="array"&gt;
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;massaction</span> <span class="na">name=</span><span class="s">&quot;listing_massaction&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
         ...
-        &lt;item name="config" xsi:type="array"&gt;
-            &lt;item name="actions" xsi:type="array"&gt;
-                &lt;item name="edit" xsi:type="array"&gt;
-                    &lt;item name="type" xsi:type="string"&gt;edit&lt;/item&gt;
-                    &lt;item name="label" xsi:type="string" translate="true"&gt;Edit&lt;/item&gt;
-                    &lt;item name="confirm" xsi:type="array"&gt;
-                        &lt;item name="title" xsi:type="string" translate="true"&gt;Edit items&lt;/item&gt;
-                        &lt;item name="message" xsi:type="string" translate="true"&gt;Are you sure you wan't to edit selected items?&lt;/item&gt;
-                    &lt;/item&gt;
-                &lt;/item&gt;
-            &lt;/item&gt;
-        &lt;/item&gt;
-    &lt;/argument&gt;
-&lt;/massaction&gt;
-</pre>
+    <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;action</span> <span class="na">name=</span><span class="s">&quot;edit&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;confirm&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;title&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Edit items<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;message&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Are you sure you wan&#39;t to edit selected items?<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;type&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>edit<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Edit<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/action&gt;</span>
+<span class="nt">&lt;/massaction&gt;</span></code></pre></div>
 
 <ul>
   <li>Action with a custom callback</li>
@@ -259,25 +257,23 @@
 
 <p>Callback is provided by another component.</p>
 
-<pre>
-&lt;massaction name="listing_massaction"&gt;
-    &lt;argument name="data" xsi:type="array"&gt;
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;massaction</span> <span class="na">name=</span><span class="s">&quot;listing_massaction&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
         ...
-        &lt;item name="config" xsi:type="array"&gt;
-            &lt;item name="actions" xsi:type="array"&gt;
-                &lt;item name="edit" xsi:type="array"&gt;
-                    &lt;item name="type" xsi:type="string"&gt;edit&lt;/item&gt;
-                    &lt;item name="label" xsi:type="string" translate="true"&gt;Edit&lt;/item&gt;
-                    &lt;item name="callback" xsi:type="array"&gt;
-                        &lt;item name="provider" xsi:type="string"&gt;cms_page_listing.inline_editing&lt;/item&gt;
-                        &lt;item name="target" xsi:type="string"&gt;startEdit&lt;/item&gt;
-                    &lt;/item&gt;
-                &lt;/item&gt;
-            &lt;/item&gt;
-        &lt;/item&gt;
-    &lt;/argument&gt;
-&lt;/massaction&gt;
-</pre>
+    <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;action</span> <span class="na">name=</span><span class="s">&quot;edit&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;type&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>edit<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Edit<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;callback&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;provider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>product_listing.inline_editing<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;target&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>startEdit<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/action&gt;</span>
+<span class="nt">&lt;/massaction&gt;</span></code></pre></div>
 
 <ul>
   <li>Instance replacement: one instance of a component</li>
