@@ -30,7 +30,7 @@ For you to be able to run the Magento application, make sure you perform all tas
 <h2 id="install-composer-install">Running Composer to update dependencies</h2>
 Update installation dependencies as follows:
 
-1.	Log in to your Magento server as the web server user or <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">switch to that user</a>.
+1.	Log in to your Magento server as the Magento file system owner or <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">switch to that user</a>.
 2.	Change to the Magento installation directory and run `composer install`. Examples:
 
 	CentOS:
@@ -47,12 +47,6 @@ Update installation dependencies as follows:
 		<span class="glyphicon-class">
   		<p>The Magento installation directory is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="{{ site.gdeurl }}install-gde/basics/basics_docroot.html">here</a>.</p></span>
 	</div>
-
-
-3.	(Secure environment). Change ownership to the web server user as follows:
-
-	*	(Ubuntu) `chown -R www-data .`
-	*	(CentOS) `chown -R apache .`
 
 #### Next step
 <a href="{{ site.gdeurl }}install-gde/install/dev_updater.html">Set up the updater</a>
