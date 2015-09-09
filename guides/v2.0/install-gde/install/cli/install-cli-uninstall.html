@@ -203,7 +203,20 @@ bash shell example for CentOS:<br />
 
 <p>You might do this in an development environment especially to get all the latest code changes.</p>
 
-<p>To update the Magento software:</p>
+<p>The way you update the Magento application from the command line depends on your role:</p>
+
+<ul>
+  <li>If you’re a contributing developer (that is, you started using <code>composer clone</code>), see <a href="#instgde-install-magento-update-dev">Update as a contributing developer</a>.</li>
+  <li>If you’re a system integrator (that is, you started using <code>composer create-project</code>), see <a href="#instgde-install-magento-update-sys">Update as a system integrator</a>.</li>
+</ul>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+   <p>To upgrade system software using the web-based Upgrade Manager, see <a href="/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">Run System Upgrade</a>.</p> </span>
+</div>
+
+<h3 id="instgde-install-magento-update-dev">Update as a contributing developer</h3>
+<p>To update the Magento software as a contributing developer:</p>
 
 <ol>
   <li>Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>).</li>
@@ -231,15 +244,71 @@ bash shell example for CentOS:<br />
   			<p>If <code>git pull origin develop</code> fails, see <a href="/guides/v2.0/install-gde/trouble/trouble/git/tshoot_git-pull-origin.html">troubleshooting</a>.</p> </span>
 </div>
   </li>
-  <li>
-    <p>Diff and merge your <code>composer.json.old</code> with <code>composer.json</code> installed with the Magento software.</p>
-  </li>
+  <li>Diff and merge your <code>composer.json.old</code> with <code>composer.json</code> installed with the Magento software.</li>
   <li>
     <p>Enter the following command:</p>
 
     <pre><code>composer update
 </code></pre>
   </li>
+  <li><a href="instgde-install-magento-update-db">Update the Magento database</a>.</li>
+</ol>
+
+<h3 id="instgde-install-magento-update-sys">Update as a system integrator</h3>
+<p>To update the Magento software as a system integrator:</p>
+
+<ol>
+  <li>
+    <p>Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>).</p>
+  </li>
+  <li>
+    <p>Save any changes you made to <code>composer.json</code> because the following steps will overwrite it:</p>
+
+    <pre><code> cd &lt;your Magento install dir&gt;
+ cp composer.json composer.json.old
+</code></pre>
+  </li>
+  <li>
+    <p>If you previously installed the optional sample data, enter the following command:</p>
+
+    <pre><code>rm -rf dev/tools/Magento/Tools/SampleData/
+</code></pre>
+  </li>
+  <li>Change to your Magento installation directory.</li>
+  <li>
+    <p>Make a backup copy of <code>composer.json</code> in your Magento installation directory:</p>
+
+    <pre><code>cd &lt;your Magento install dir&gt;
+cp composer.json composer.json.bak
+</code></pre>
+  </li>
+  <li>Open <code>composer.json</code> in a text editor.</li>
+  <li>
+    <p>Locate the following line:</p>
+
+    <pre><code> "require": {
+	"magento/product-community-edition": "&lt;version&gt;"
+},
+</code></pre>
+  </li>
+  <li>Replace <code>&lt;version&gt;</code> with the version to which you want to upgrade, where <code>&lt;version&gt;</code> is the <code>magento/product-community-edition</code> version from <a href="http://packages.magento.com/#magento/product-community-edition" target="_blank">packages.magento.com</a>.</li>
+  <li>Save your changes to <code>composer.json</code> and exit the text editor.</li>
+  <li>
+    <p>Enter the following command:</p>
+
+    <pre><code>composer update
+</code></pre>
+
+    <p>Wait for dependencies to update.</p>
+  </li>
+  <li>Diff and merge your <code>composer.json.old</code> with <code>composer.json</code> installed with the Magento software.</li>
+  <li>Update the Magento database as discussed in the next section.</li>
+</ol>
+
+<h3 id="instgde-install-magento-update-db">Update the Magento database</h3>
+<p>After you update the Magento software, you must update the database schema and database data as follows:</p>
+
+<ol>
   <li>
     <p>Update the Magento database.</p>
 
@@ -265,7 +334,15 @@ bash shell example for CentOS:<br />
 <h2 id="instgde-install-magento-reinstall">Reinstall the Magento software</h2>
 <p>This section discusses how to uninstall and then reinstall the Magento software with the latest version.</p>
 
-<p>To reinstall the Magento software:</p>
+<p>The way you reinstall the Magento application from the command line depends on your role:</p>
+
+<ul>
+  <li>If you’re a contributing developer (that is, you started using <code>composer clone</code>), see <a href="#instgde-install-magento-reinst-dev">Reinstall as a contributing developer</a>.</li>
+  <li>If you’re a system integrator (that is, you started using <code>composer create-project</code>), see <a href="#instgde-install-reinst-update-sys">Reinstall as a system integrator</a>.</li>
+</ul>
+
+<h3 id="instgde-install-magento-reinst-dev">Reinstall as a contributing developer</h3>
+<p>To reinstall the Magento software as a contributing developer:</p>
 
 <ol>
   <li>Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>).</li>
@@ -282,6 +359,47 @@ php bin/magento setup:uninstall
   			<ul><li>If <code>git pull origin develop</code> fails, see <a href="/guides/v2.0/install-gde/trouble/trouble/git/tshoot_git-pull-origin.html">troubleshooting</a>. </li>
   				<li>To use your existing Magento software version , omit the <code>git pull origin develop</code> command.</li></ul></span>
 </div>
+  </li>
+  <li>
+    <p>Install the Magento software:</p>
+
+    <ul>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento">Install the Magento software using the command line</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a></li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="instgde-install-reinst-update-sys">Reinstall as a system integrator</h3>
+<p>To reinstall the Magento software as a contributing developer:</p>
+
+<ol>
+  <li>Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>).</li>
+  <li>
+    <p>Make a backup copy of <code>composer.json</code> in your Magento installation directory:</p>
+
+    <pre><code>cd &lt;your Magento install dir&gt;
+cp composer.json composer.json.bak
+</code></pre>
+  </li>
+  <li>Open <code>composer.json</code> in a text editor.</li>
+  <li>
+    <p>Locate the following line:</p>
+
+    <pre><code> "require": {
+	"magento/product-community-edition": "&lt;version&gt;"
+},
+</code></pre>
+  </li>
+  <li>Replace <code>&lt;version&gt;</code> with the version to which you want to upgrade, where <code>&lt;version&gt;</code> is the <code>magento/product-community-edition</code> version from <a href="http://packages.magento.com/#magento/product-community-edition" target="_blank">packages.magento.com</a>.</li>
+  <li>Save your changes to <code>composer.json</code> and exit the text editor.</li>
+  <li>
+    <p>Enter the following command:</p>
+
+    <pre><code>composer update
+</code></pre>
+
+    <p>Wait for dependencies to update.</p>
   </li>
   <li>
     <p>Install the Magento software:</p>
