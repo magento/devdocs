@@ -2,19 +2,19 @@
 layout: default
 group: fedg
 subgroup: D_CSS_G
-title: Client-side compilation vs server-side
-menu_title: Client-side compilation vs server-side
+title: Simple style changes with client-side LESS compilation vs. server-side
+menu_title: Simple style changes with client-side LESS compilation vs. server-side
 menu_order: 2
 github_link: frontend-dev-guide/css-guide/css_quick_guide_mode.md
 ---
 <h2> Overview </h2>
 
-One of the pre-steps you need to take before starting to change your theme styles is deciding, which LESS compilation mode you will use. There are <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css-preprocess.html#LESS compilation modes" target="_blank">two modes available in Magento</a>: server-side compilation mode (the default one, recommended for production) and client-side (recommended for theme development). 
+One of the pre-steps you need to take before starting to change your theme styles, is deciding, which LESS compilation mode you will use. There are <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css-preprocess.html#LESS compilation modes" target="_blank">two modes available in Magento</a>: server-side compilation mode (the default one, recommended for production) and client-side (recommended for theme development). 
 This topic demonstrates on a practical example how the choice of the mode influences the styles development.
 
 The first step, creating and applying a theme is done before the compilation mode is chosen, so it is described only once, but is required whatever compilation mode you will further use.
 
-For making changes in theme styles when illustrating the different modes, the simplest approach is used: changes are done in the `_extend.less` of the new theme. Learn more about possible approaches in <a href="{{site.gdeurl}}frontend-dev-guide/css-guide/css_quick_guide_approach.md">Simple ways to customize a theme's styles</a>.
+In the examples in this topic the simplest approach for customizing theme styles is used: changes are done in the `_extend.less` of the new theme. Learn more about possible approaches in <a href="{{site.gdeurl}}frontend-dev-guide/css-guide/css_quick_guide_approach.md">Simple ways to customize a theme's styles</a>.
 
 <h2>First step: Create and apply a theme</h2>
 
@@ -23,9 +23,9 @@ For making changes in theme styles when illustrating the different modes, the si
 
 Server-side is the default mode for LESS compilation, so if you do not change this, your Magento instance is using server-side compilation mode. 
 
-<h2>Making simple style changes in Server-side compilation</h2>
+<h2>Making simple style changes in server-side LESS compilation mode</h2>
 
-The following is an illustration of how the process of making simple changes looks like with the server-side mode:
+The following is an illustration of how the process of making simple changes looks like with the server-side LESS compilation mode:
 <ol>
 <li>Create and apply a theme.</li>
 <li>In your theme directory, add <code>web/css/source/_extend.less</code>.</li>
@@ -54,8 +54,13 @@ If your Magento instance uses the server-side compilation mode, you need to manu
 <li>In your theme directory, add <code>web/css/source/_extend.less</code>.</li>
 <li>Install Grunt as described in <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css_debug.html#grunt_prereq" target="_blank">Installing and configuring Grunt</a>, steps 1-4.</li>
 <li>Register your theme in Grunt as described in <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css_debug.html#grunt_prereq" target="_blank">Installing and configuring Grunt</a>, step 5.</li>
-<li>Run <code>grunt refresh</code> from your Magento installation directory.</li>
-<li>Run <code>grunt watch</code> from your Magento installation directory.</li>
+<li>From your Magento installation directory, run the following commands:
+<ul>
+<li><code>grunt exec: &lt;your_theme&gt;</code></li>
+<li><code>grunt less: &lt;your_theme&gt;</code></li>
+<li><code>grunt watch</code></li>
+</ul>
+</li>
 <li>Change the color of the buttons by adding the following code in <code>_extend.less</code>:
 <p class="q">code from Bogdan goes here</p></li>
 <li>Refresh the page and view your changes applied:

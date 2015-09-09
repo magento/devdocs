@@ -8,16 +8,21 @@ menu_order: 1
 github_link: frontend-dev-guide/css-guide/css_quick_guide_approach.md
 ---
 <h2>Overview</h2>
-Let's say you created a new theme inheriting from Magento Blank or Luma, and chose the compilation mode. What's next? Where to add the style changes? This topic gives the quick answers.
-<p class="q">Add TOC</p>
+Let's say you created a new theme inheriting from Magento Blank or Luma, and chose the <a href="{{site.gdeurl}}frontend-dev-guide/css-guide/css_quick_guide_mode.html">LESS compilation mode</a>. What's next? Where to add the style changes? This topic gives the quick answers.
 
-<h2>Simple ways to customize a theme, which inherits from the Magento out of the box themes</h2>
+<h3>Contents</h3>
+- <a href="#simple_extend">Simplest way to extend parent styles</a> 
+- <a href="#simple_override">Simplest way to override parent styles (that is, override default Magento UI library variables)</a>
+- <a href="#structured_changes">Adding structured changes</a>
+	- <a href="#structured_extend">Extend component's styles</a>
+	- <a href="structured_override">Override component's styles</a>
 
-<h3>Simplest way to extend parent styles</h3> 
+
+<h2 id="simple_extend">Simplest way to extend parent styles</h2> 
 
 To extend the parent theme's styles in your theme:
 <ol>
-<li>In your theme directory, create a `web/css/source` sub-directory. </li>
+<li>In your theme directory, create a <code>web/css/source</code> sub-directory. </li>
 <li>Create a <code>_extend.less</code> file here. The path to it looks like following: 
 
 <pre>
@@ -33,13 +38,13 @@ app/design/frontend/&lt;Vendor&gt;/
 <li>Add your LESS code in this file.</li>
 </ol>
 
-Extending a theme using `_extend.less` is the simplest option when you are happy with everything the parent theme has, but want to add more styles.
+Extending a theme using <code>_extend.less</code> is the simplest option when you are happy with everything the parent theme has, but want to add more styles.
 
-<h3> Simplest way to override parent styles (that is, override default Magento UI library variables)</h3>
+<h2 id="simple_override">Simplest way to override parent styles (that is, override default Magento UI library variables)</h2>
 
 <ol>
-<li>In your theme directory, create a `web/css/source` sub-directory. </li>
-<li>Create a `_theme.less` file here. The path to it looks like following: 
+<li>In your theme directory, create a <code>web/css/source</code> sub-directory. </li>
+<li>Create a <code>_theme.less</code> file here. The path to it then looks like following: 
 
 <pre>
 app/design/frontend/&lt;Vendor&gt;/
@@ -52,21 +57,21 @@ app/design/frontend/&lt;Vendor&gt;/
 </pre>
 </li>
 
-It is important to remember, that it overrides the parent <code>_theme.less</code>. 
+It is important to remember, that your <code>_theme.less</code> overrides the parent <code>_theme.less</code>. 
 
-<li>Copy all variables you need from the parent <code>_theme.less</code>, including those which will not be changed. If your theme inherits from Blank, the <code>_theme.less</code> you should copy from is located at <code>app/design/frontend/Magento/balnk/web/css/source/_theme.less</code></li>
+<li>Copy all variables you need from the parent <code>_theme.less</code>, including those which will not be changed. For example if your theme inherits from Blank, the <code>_theme.less</code> you should copy from is located at <code>app/design/frontend/Magento/balnk/web/css/source/_theme.less</code></li>
 <li>Make the necessary changes.</li>
 </ol>
 
-The drawback of this approach is that you will need to monitor and manually update your files in case the parent's `_theme.less` is updated.
+The drawback of this approach is that you will need to monitor and manually update your files in case the parent's <code>_theme.less</code> is updated.
 
-<h3>Adding structured changes</h3>
+<h2 id="structured_changes">Adding structured changes</h2>
 
-To make your changes easier to read and support, structure them by adding a separate overriding or extending `.less` files for each <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/theme-ui-lib.html#library_elements" target="_blank">Magento UI library component</a> you change. Let's use the `button` component implemented in `_button.less` as an illustration.
+To make your changes easier to read and support, structure them by adding a separate overriding or extending <code>.less</code> files for each <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/theme-ui-lib.html#library_elements" target="_blank">Magento UI library component</a> you change. Let's use the <code>button</code> component implemented in <code>_button.less</code> as an illustration.
 
-<h4>Extend component's styles</h4>
+<h3 id="structured_extend">Extend component's styles</h3>
 <ol>
-<li>In your theme directory, create a `web/css/source` sub-directory. </li>
+<li>In your theme directory, create a <code>web/css/source</code> sub-directory. </li>
 <li>Add <code>_buttons_extend.less</code> and <code>_extend.less</code> here. The path to the files looks like following: 
 
 <pre>
@@ -89,8 +94,8 @@ In <code>_extend.less</code> register the <code>_buttons_extend.less</code> by a
 </li>
 </ol>
 
-<h4>Override component's styles</h4>
-To extend the parent theme's styles in your theme:
+<h3 id="structured_override">Override component's styles</h3>
+To extend the parent theme's styles for buttons in your theme:
 <ol>
 <li>In your theme directory, create a <code>web/css/source</code> sub-directory. </li>
 <li>Create a <code>_extend.less</code> file here. The path to it looks like following: 
