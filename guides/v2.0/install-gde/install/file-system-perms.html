@@ -174,89 +174,43 @@
 
 <h2 id="install-perms-import">Why we recommend you set file system permissions</h2>
 <p>Malicious exploits are unfortunate reality in the internet age. To help prevent exploits that take advantage of the file system, we recommend you set Magento file system ownership and permissions in a particular way. For more information, see <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-over">Overview of ownership and permissions</a>.</p>
-
 <p>The important things:</p>
-
-<ul>
-  <li>
-    <p>The owner of the Magento file system:</p>
-
-    <ul>
-      <li>Must have full control (read/write/execute) of all files and directories.</li>
-      <li>Must <em>not</em> the web server user; it should be a different user.</li>
-    </ul>
-  </li>
-  <li>
-    <p>The web server user must have write access to the following files and directories:</p>
-
-    <ul>
-      <li><code>var</code></li>
-      <li><code>app/etc</code></li>
-      <li><code>pub</code> </li>
-    </ul>
-  </li>
+<ul><li>The owner of the Magento file system:
+<ul><li>Must have full control (read/write/execute) of all files and directories.</li>
+<li>Must <em>not</em> be the web server user; it should be a different user.</li></ul>
+</li>
+<li>The web server user must have write access to the following files and directories:
+<ul><li><code>var</code></li>
+<li><code>app/etc</code></li>
+<li><code>pub</code></li></ul>
+</li>
 </ul>
-
-<p>In addition, the web server’s <em>group</em> must own the Magento file system so that the Magento user (who is in the group) can share access to files with the web server user. (This includes files created by the Magento Admin or other web-based utilities.)</p>
-
+<p>In addition, the web server's <em>group</em> must own the Magento file system so that the Magento user (who is in the group) can share access to files with the web server user. (This includes files created by the Magento Admin or other web-based utilities.)</p>
 <p>We recommend setting the permissions as follows:</p>
-
-<ul>
-  <li>
-    <p>All directories have 770 permissions.</p>
-
-    <p>770 permissions give full control (that is, read/write/execute) to the owner and to the group and no permissions to anyone else.</p>
-  </li>
-  <li>
-    <p>All files have 660 permissions.</p>
-
-    <p>660 permissions mean the owner and the group can read and write but other users have no permissions.</p>
-  </li>
-</ul>
+<ul><li>All directories have 770 permissions.<br />
+770 permissions give full control (that is, read/write/execute) to the owner and to the group and no permissions to anyone else.</li>
+<li>All files have 660 permissions.<br />
+660 permissions mean the owner and the group can read and write but other users have no permissions.</li></ul>
 
 <h2 id="install-perms-set">File system permissions and ownership</h2>
 <p>Use the following steps:</p>
+<ol><li>Change to the Magento installation directory:<br />
+	<pre>cd &lt;web server docroot&gt;/&lt;magento2 base dir&gt;</pre>
+	The base directory is typically a subdirectory named <code>magento2</code> under your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.<br />
 
-<ol>
-  <li>
-    <p>Change to the Magento directory:</p>
-
-    <pre><code>cd &lt;web server docroot&gt;/&lt;magento2 base dir&gt;
-</code></pre>
-
-    <p>The base directory is typically a subdirectory named <code>magento2</code> under your web server’s docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p>
-
-    <p>Examples:</p>
-
-    <ul>
-      <li>Ubuntu: <code>/var/www/magento2</code></li>
-      <li>CentOS: <code>/var/www/html/magento2</code></li>
-    </ul>
-  </li>
-  <li>
-    <p>Set ownership:</p>
-
-    <pre><code>chown -R :[your web server group name] .
-</code></pre>
-
-    <p>Typical examples:</p>
-
-    <p>CentOS: <code>chown -R :apache .</code></p>
-
-    <p>Ubuntu: <code>chown -R :www-data .</code></p>
-  </li>
-  <li>
-    <p>Set permissions:</p>
-
-    <pre><code>find . -type d -exec chmod 770 {} \; &amp;&amp; find . -type f -exec chmod 660 {} \; &amp;&amp; chmod +x bin/magento
-</code></pre>
-
-    <p>If you must enter the commands as <code>sudo</code>, use:</p>
-
-    <pre><code>sudo find . -type d -exec chmod 770 {} \; &amp;&amp; sudo find . -type f -exec chmod 660 {} \; &amp;&amp; sudo chmod +x bin/magento
-</code></pre>
-  </li>
-</ol>
+	Examples:
+	<ul><li>Ubuntu: <code>/var/www/magento2</code></li>
+	<li>CentOS: <code>/var/www/html/magento2</code></li></ul>
+</li>
+<li>Set ownership:<br />
+<pre>chown -R :&lt;your web server group name&gt; .</pre>
+Typical examples:<br /><br />
+CentOS: <code>chown -R :apache .</code><br />
+Ubuntu: <code>chown -R :www-data .</code></li>
+<li>Set permissions:<br />
+	<pre>find . -type d -exec chmod 770 {} \; &amp;&amp; find . -type f -exec chmod 660 {} \; &amp;&amp; chmod +x bin/magento</pre>
+	If you must enter the commands as <code>sudo</code>, use:<br />
+	<pre>sudo find . -type d -exec chmod 770 {} \; &amp;&amp; sudo find . -type f -exec chmod 660 {} \; &amp;&amp; sudo chmod +x bin/magento</pre></li></ol>
 
 <h4 id="next-steps">Next steps</h4>
 <p>Install the Magento software:</p>
