@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>PHP 5.5 or 5.6&mdash;Ubuntu</title>
+	<title>Set up the updater</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/install-gde/prereq/php-ubuntu.html">
+	<link rel="canonical" href="//guides/v2.0/install-gde/install/dev_updater.html">
 
 
 
@@ -155,9 +155,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">PHP 5.5 or 5.6&mdash;Ubuntu</h1>
+		<h1 class="page-heading">Set up the updater</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/install-gde/prereq/php-ubuntu.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/install-gde/install/dev_updater.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -166,252 +166,152 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
-<!-- Referring file: README.md owned by core -->
-
-<h4 id="instgde-php-prereq-contents">Contents</h4>
+		<h4 id="contents">Contents</h4>
 
 <ul>
-  <li><a href="#php-support">PHP versions supported</a></li>
-  <li><a href="#php-ubuntu-help-beginner">Help if you’re just starting out</a></li>
-  <li><a href="#ubuntu-verify-php">Verify PHP is installed</a></li>
-  <li><a href="#instgde-prereq-php56-install-ubuntu">PHP 5.6 on Ubuntu 14</a></li>
-  <li><a href="#instgde-prereq-php56-install-ubuntu12">PHP 5.6 on Ubuntu 12</a></li>
-  <li><a href="#instgde-prereq-php55-install-ubuntu">PHP 5.5 on Ubuntu 14 or Ubuntu 12</a></li>
-  <li><a href="#instgde-prereq-timezone">Set PHP configuration options</a></li>
+  <li><a href="#compman-updater-over">Overview of the updater</a></li>
+  <li><a href="#compman-updater-clone">Cloning the updater repository</a></li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>If you must install both Apache and PHP, <a href="/guides/v2.0/install-gde/prereq/apache.html">install Apache</a> first.</p></span>
-</div>
+<h2 id="compman-updater-over">Overview of the updater</h2>
+<p>The updater synchronizes with Magento Connect for updating components and upgrading the Magento software. Contributing developers must clone the updater GitHub repository and copy the files to <code>&lt;your Magento install dir&gt;/update</code></p>
 
-<h2 id="php-support">PHP versions supported</h2>
-<p>Magento requires:</p>
+<h2 id="compman-updater-clone">Cloning the updater repository</h2>
+<p>You can clone the Magento 2 Updater repository using either SSH or HTTPS protocols:</p>
 
 <ul>
-  <li>PHP 5.6.x</li>
-  <li>PHP 5.5.x </li>
+  <li>Use SSH for better security (no user name and password are exchanged). This requires you to <a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank">share a public key</a> with GitHub.</li>
+  <li>Use HTTPS if you don’t share an SSH key with GitHub (your user name and password are encrypted before being sent to GitHub).</li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Magento no longer supports PHP 5.4.</p></span>
-</div>
-
-<h2 id="php-ubuntu-help-beginner">Help if you're just starting out</h2>
-<p>If you’re new to all this and need some help getting started, we suggest the following:</p>
+<p>See one of the following section:</p>
 
 <ul>
-  <li><a href="/guides/v2.0/install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a></li>
-  <li><a href="/guides/v2.0/install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a></li>
-  <li><a href="/guides/v2.0/install-gde/basics/basics_os-version.html">What operating system is my server running?</a></li>
-  <li><a href="/guides/v2.0/install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a></li>
+  <li><a href="#compman-clone-ssh">Clone with SSH</a></li>
+  <li><a href="#compman-clone-https">Clone with HTTPS</a></li>
+  <li><a href="#compman-clone-composer">Update installation dependencies</a></li>
+  <li><a href="#compman-copy">Copy the files</a></li>
 </ul>
 
-<h2 id="ubuntu-verify-php">Verify PHP is installed</h2>
-<p>To verify if PHP is installed already, enter <code>php -v</code>. If PHP is installed, messages similar to the following display:</p>
-
-<pre><code>PHP 5.6.4-1+deb.sury.org~precise+1 (cli) (built: Dec 21 2014 19:26:25)
-Copyright (c) 1997-2014 The PHP Group
-Zend Engine v2.6.0, Copyright (c) 1998-2014 Zend Technologies
-with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
-</code></pre>
-
-<p>If PHP is installed, continue with the next prerequisite, <a href="/guides/v2.0/install-gde/prereq/mysql.html">MySQL</a>.</p>
-
-<p>If PHP is <em>not</em> installed, see one of the following sections:</p>
-
-<ul>
-  <li><a href="#instgde-prereq-php56-install-ubuntu">PHP 5.6 on Ubuntu 14<!--  or Ubuntu 12 --></a></li>
-  <li><a href="#instgde-prereq-php56-install-ubuntu12">PHP 5.6 on Ubuntu 12</a></li>
-  <li><a href="#instgde-prereq-php55-install-ubuntu">PHP 5.5 on Ubuntu 14 or Ubuntu 12</a></li>
-</ul>
-
-<h2 id="instgde-prereq-php56-install-ubuntu">PHP 5.6 on Ubuntu 14</h2>
-<p>To install PHP 5.6 or to upgrade from PHP 5.5 on Ubuntu 14:</p>
+<h3 id="compman-clone-ssh">Clone with SSH</h3>
+<p>To clone the Magento 1 Updater repository using the SSH protocol:</p>
 
 <ol>
   <li>
-    <p>Enter the following commands in the order shown:</p>
+    <p>Copy to the clipboard the Magento 2 Updater repository SSH clone URL.</p>
 
-    <pre><code>apt-get -y update
-add-apt-repository ppa:ondrej/php5-5.6
-apt-get -y update
-apt-get -y install php5 php5-mhash php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl php5-xsl
-</code></pre>
+    <p>a.	In a web browser, go to <a href="https://github.com/magento/magento2-updater" target="_blank">the Magento 2 Updater repository</a>.</p>
+
+    <p>b.	On the right side of the page, under the <em>clone URL</em> field, click <strong>SSH</strong>.</p>
+
+    <p>c.	Click the <strong>Copy to clipboard</strong> button.</p>
+
+    <p>The following figure shows an example.</p>
+
+    <p><img src="/common/images/install_mage2_clone-ssh.png" alt="Clone the Magento 2 Updater repository using SSH" /></p>
   </li>
   <li>
-    <p>Enter the following command to verify PHP 5.6 installed properly:</p>
+    <p>Change to your web server’s docroot directory.</p>
 
-    <pre><code>php -v
-</code></pre>
+    <p>Typically, for Ubuntu, it’s <code>/var/www</code> and for CentOS it’s <code>/var/www/html</code>.</p>
 
-    <p>Following is a sample response that indicates PHP 5.6 is installed:</p>
-
-    <pre><code>PHP 5.6.4-1+deb.sury.org~trusty+1 (cli) (built: Dec 21 2014 19:28:16)
-Copyright (c) 1997-2014 The PHP Group
-Zend Engine v2.6.0, Copyright (c) 1998-2014 Zend Technologies
-with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
-</code></pre>
+    <p>Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here.</a></p>
   </li>
-  <li>
-    <p><a href="#instgde-prereq-timezone">Set the PHP timezone and memory limit</a>.</p>
-  </li>
-</ol>
-
-<h2 id="instgde-prereq-php56-install-ubuntu12">PHP 5.6 on Ubuntu 12</h2>
-<p>Before continuing, enter the following command to make sure you’re running Apache 2.4:</p>
-
-<pre><code>apache2 -v
-</code></pre>
-
-<p>The result should be similar to the following:</p>
-
-<pre><code>Server version: Apache/2.4.10 (Ubuntu)
-Server built:   Jul 22 2014 22:46:25
-</code></pre>
-
-<p>If you’re running an earlier Apache version, see <a href="/guides/v2.0/install-gde/prereq/apache.html#install-prereq-apache-ubuntu-upgrade">Upgrading Apache on Ubuntu 12</a> first.</p>
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Ubuntu 12 comes with PHP 5.3 by default. PHP 5.3 is not supported by Magento and upgrading to it might involve additional tasks not discussed here. For more information, consult a resource like <a href="http://phpave.com/upgrade-php-53-to-php-56-on-ubuntu-1204-lts" target="_blank">phpave</a>.</p></span>
-</div>
-
-<p>To install or upgrade to PHP 5.6 on Ubuntu 12:</p>
-
-<ol>
-  <li>
-    <p>Enter the following commands in the order shown:</p>
-
-    <pre><code>apt-get -y update
-add-apt-repository ppa:ondrej/php5-5.6
-apt-get -y update
-apt-get -y install php5 php5-mhash php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl php5-xsl
-</code></pre>
-  </li>
-  <li>
-    <p>Verify that PHP 5.6 installed properly:</p>
-
-    <pre><code>php -v
-</code></pre>
-
-    <p>Messages similar to the following should display:</p>
-
-    <pre><code>PHP 5.6.4-1+deb.sury.org~precise+1 (cli) (built: Dec 21 2014 19:26:25)
-Copyright (c) 1997-2014 The PHP Group
-Zend Engine v2.6.0, Copyright (c) 1998-2014 Zend Technologies
-with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
-</code></pre>
-  </li>
-  <li>
-    <p><a href="#instgde-prereq-timezone">Set the PHP timezone and memory limit</a>.</p>
-  </li>
-</ol>
-
-<h2 id="instgde-prereq-php55-install-ubuntu">PHP 5.5 on Ubuntu 14 or Ubuntu 12</h2>
-
-<p>See one of the following sections for more information:</p>
-
-<ul>
-  <li><a href="#instgde-prereq-php55-install-ubuntu14">PHP 5.5 on Ubuntu 14</a></li>
-  <li><a href="#instgde-prereq-php55-install-ubuntu12">PHP 5.5 on Ubuntu 12</a></li>
-</ul>
-
-<h3 id="instgde-prereq-php55-install-ubuntu14">PHP 5.5 on Ubuntu 14 or Ubuntu 12 14</h3>
-<p>To install PHP 5.5 on Ubuntu 14 or Ubuntu 12 14:</p>
-
-<ol>
   <li>
     <p>Enter the following command:</p>
 
-    <pre><code>apt-get -y install php5 php5-mhash php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl php5-xsl
+    <pre><code>git clone git@github.com:magento/magento2-updater.git
 </code></pre>
   </li>
   <li>
-    <p>Verify the PHP version by entering <code>php -v</code>. Messages similar to the following should display:</p>
+    <p>Wait for the repository to clone on your server.</p>
 
-    <pre><code>PHP 5.5.9-1ubuntu4.4 (cli) (built: Sep  4 2014 06:56:34)
-Copyright (c) 1997-2014 The PHP Group
-Zend Engine v2.5.0, Copyright (c) 1998-2014 Zend Technologies
-with Zend OPcache v7.0.3, Copyright (c) 1999-2014, by Zend Technologies
-</code></pre>
+    <div class="bs-callout bs-callout-info" id="info">
+    <p>If the following error displays, make sure you <a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank">shared your SSH key</a> with GitHub: </p>
+        <pre>Cloning into 'magento2'...
+Permission denied (publickey).
+fatal: The remote end hung up unexpectedly</pre>
+</div>
   </li>
   <li>
-    <p><a href="#instgde-prereq-timezone">Set the PHP timezone and memory limit</a>.</p>
+    <p>Continue with <a href="#compman-clone-composer">Update installation dependencies</a>.</p>
   </li>
 </ol>
 
-<h3 id="instgde-prereq-php55-install-ubuntu12">PHP 5.5 on Ubuntu 14 or Ubuntu 12</h3>
+<h3 id="compman-clone-https">Clone with HTTPS</h3>
+<p>To clone the Magento 2 Updater repository using the HTTPS protocol:</p>
+
 <ol>
   <li>
-    <p>Use the following commands from <a href="http://www.dev-metal.com/how-to-setup-latest-version-of-php-5-5-on-ubuntu-12-04-lts/" target="_blank">dev-metal</a>:</p>
+    <p>Copy to the clipboard the Magento 2 Updater repository HTTPS clone URL.</p>
 
-    <pre><code>apt-get -y update
-add-apt-repository ppa:ondrej/php5
-apt-get update
-apt-get -y install php5 php5-mhash php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl php5-xsl
+    <p>a.	In a web browser, go to <a href="https://github.com/magento/magento2-updater" target="_blank">the Magento 2 Updater repository</a>.</p>
+
+    <p>b.	On the right side of the page, under the <em>clone URL</em> field, click <strong>HTTPS</strong>.</p>
+
+    <p>c.	Click the <strong>Copy to clipboard</strong> button.</p>
+
+    <p>The following figure shows an example.</p>
+
+    <p><img src="/common/images/install_mage2_clone-https.png" alt="Clone the Magento 2 Updater repository using HTTPS" /></p>
+  </li>
+  <li>
+    <p>Change to your web server’s docroot directory.</p>
+
+    <p>Typically, for Ubuntu, it’s <code>/var/www</code> and for CentOS it’s <code>/var/www/html</code>.</p>
+  </li>
+  <li>
+    <p>Enter the following command:</p>
+
+    <pre><code>git clone https://github.com/magento/magento2-updater.git
+</code></pre>
+
+    <p>If the command fails with an authentication error, try</p>
+
+    <pre><code>git clone https://&lt;your GitHub user name&gt;:&lt;your password&gt;@github.com/magento/magento2-updater.git
 </code></pre>
   </li>
   <li>
-    <p>Verify the PHP version by entering <code>php -v</code>. Messages similar to the following should display:</p>
-
-    <pre><code>PHP 5.5.18-1+deb.sury.org~precise+1 (cli) (built: Oct 17 2014 15:11:34)
-Copyright (c) 1997-2014 The PHP Group
-Zend Engine v2.5.0, Copyright (c) 1998-2014 Zend Technologies
-with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
-</code></pre>
+    <p>Wait for the repository to clone on your server.</p>
   </li>
   <li>
-    <p>Set the PHP timezone and memory limit as discussed in the next section.</p>
+    <p>Continue with the next section.</p>
   </li>
 </ol>
 
-<h2 id="instgde-prereq-timezone">Set PHP configuration options</h2>
-<p>This section discusses how to:</p>
-<ul><li>Set the system time zone for PHP; otherwise, errors like the following display during the installation and time-related operations like cron might not work:<br />
-<pre>PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more messages follow]</pre></li>
-<li>Increase the PHP memory limit to at least 512MB for normal operation or 2GB for testing.</li>
-<li>Set <code>always_populate_raw_post_data = -1</code><br />
-<a href="http://php.net/manual/en/ini.core.php#ini.always-populate-raw-post-data" target="_blank">always_populate_raw_post_data</a> is deprecated in PHP 5.6. This setting causes PHP to always populate <code>$HTTP_RAW_POST_DATA</code> with raw POST data. Failure to set this properly in PHP 5.6 results in errors when connecting to the database.</li>
-<li>Disable <a href="http://php.net/manual/en/ini.core.php#ini.asp-tags" target="_blank">asp_tags</a>. If asp_tags are enabled, errors display when accessing PHTML templates.<br />
-<code>asp_tags</code> will be removed in PHP 7.</li></ul>
-<p>To set PHP options:</p>
-<ol><li>Locate your server's time zone in the available <a href="http://php.net/manual/en/timezones.php" target="_blank">time zone settings</a>.</li>
-<li>Locate <code>php.ini</code> by entering the following command:<br />
-<pre>php -i | grep "Loaded Configuration File"</pre>
-Typical locations follow:<br /><br />
-Ubuntu: <code>/etc/php5/cli/php.ini</code><br />
-CentOS: <code>/etc/php.ini</code></li>
-<li>Open <code>php.ini</code> in a text editor.</li>
-<li>Locate the following setting and uncomment it if necessary:
-<pre>date.timezone =</pre></li>
-<li>Add the time zone setting you found in step 1.</li>
-<li>Change <code>memory_limit</code> to:<br /><br />
-	<code>memory_limit = 512M</code> or more for normal operation<br />
-<code>memory_limit = 2G</code> or more for testing</li>
-<li><em>Required for PHP 5.6, recommended for PHP 5.5</em>. Locate <code>always_populate_raw_post_data</code>, uncomment it if necessary, and set it as follows:<br />
-<pre>always_populate_raw_post_data = -1</pre></li>
-<li>Locate the following setting:
-	<pre>asp_tags =</pre></li>
-<li>Make sure its value is set to <code>off</code></li>
-<li>Save your changes and exit the text editor.</li>
-<li>Restart Apache:<br /><br />
-Ubuntu: <code>service apache2 restart</code><br />
-CentOS: <code>service httpd restart</code></li></ol>
+<h3 id="compman-clone-composer">Update installation dependencies</h3>
+<p>The updater application has dependencies specified in its <code>composer.json</code> file. Before you continue, resolve those dependencies as follows:</p>
 
-<h4 id="related-topics">Related topics</h4>
+<ol>
+  <li>Change to the directory to which you cloned the updater application.</li>
+  <li>
+    <p>As a user with permissions to write to the directory, enter</p>
+
+    <pre><code>composer install
+</code></pre>
+
+    <p>Wait for dependencies to resolve and continue with the next section.</p>
+  </li>
+</ol>
+
+<h3 id="compman-copy">Copy the files</h3>
+<p>As a user with privileges to write files to the Magento file system, enter the following command:</p>
+
+<pre><code>mkdir -p &lt;your Magento install dir&gt;/update
+cp -R &lt;updater-clone-directory&gt;/* &lt;your Magento install dir&gt;/update
+</code></pre>
+
+<p>For example, if you cloned the updater to <code>/var/www/html/magento2-updater</code> and Magento is installed in <code>/var/www/html/magento2</code>, enter</p>
+
+<pre><code>mkdir -p /var/www/html/magento2/update
+cp -R /var/www/html/magento2-updater/* /var/www/html/magento2/update
+</code></pre>
+
+<h4 id="next-step">Next step</h4>
 
 <ul>
-  <li><a href="/guides/v2.0/install-gde/prereq/mysql.html">MySQL</a></li>
-  <li><a href="/guides/v2.0/install-gde/prereq/apache.html">Apache</a></li>
-  <li><a href="/guides/v2.0/install-gde/prereq/php-centos.html">PHP 5.5 or 5.6—CentOS</a></li>
-  <li><a href="/guides/v2.0/install-gde/prereq/security.html">Configuring security options</a></li>
-  <li><a href="/guides/v2.0/install-gde/prereq/optional.html">Installing optional software</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/pre-install.html">Ways to install the Magento software</a></li>
+  <li><a href="/guides/v2.0/install-gde/install/file-system-perms.html">Set file system ownership and permissions</a></li>
 </ul>
-
 
 
 		</div>
@@ -523,7 +423,7 @@ CentOS: <code>service httpd restart</code></li></ol>
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a></li>
 						
 								
 							
@@ -655,7 +555,7 @@ CentOS: <code>service httpd restart</code></li></ol>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/dev_updater.html">Set up the updater</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/install-gde/install/dev_updater.html">Set up the updater</a></li>
 						
 								
 								
@@ -891,8 +791,8 @@ CentOS: <code>service httpd restart</code></li></ol>
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/install-gde/prereq/php-ubuntu.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/install-gde/prereq/php-ubuntu.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/install-gde/install/dev_updater.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/install-gde/install/dev_updater.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>
