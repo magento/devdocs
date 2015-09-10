@@ -16,7 +16,7 @@ redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-sin
 *	<a href="#config-cli-subcommands-compile-overview">Overview of code compilation</a>
 *	<a href="#config-cli-subcommands-single-overview">Overview of the single-tenant compiler</a>
 *	<a href="#config-cli-before">First steps</a>
-*	<a href="#config-cli-subcommands-single-run">Run the single-tenant compiler</a>
+*	<a href="#config-cli-subcommands-single">Run the single-tenant compiler</a>
 
 
 <h2 id="config-cli-subcommands-compile-overview">Overview of code compilation</h2>
