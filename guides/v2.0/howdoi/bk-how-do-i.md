@@ -18,4 +18,4 @@ Please help us keep this list up-to-date by providing feedback in any of the fol
 *	Send us a <a href="https://twitter.com/MagentoDevDocs" target="_blank">tweet</a> or <a href="<a href="mailto:DL-Magento-Doc-Feedback@ebay.com">e-mail</a>.
 
 ## PHP developers
-*	TBD
+*	<a href="{{ site.gdeurl }}howdoi/php/php_clear-dirs.html">Clear directories during development</a>
