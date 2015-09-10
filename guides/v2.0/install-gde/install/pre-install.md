@@ -28,7 +28,7 @@ You can think of it as a three-step process&mdash;where steps 2 and 3 are interc
 2.	<a href="{{ site.gdeurl }}comp-mgr/compman-start.html">Manage components</a> (install, uninstall, update, enable, or disable)
 3.	<a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">Upgrade</a> the Magento software or components to a newer version
 
-<!-- This guide discusses installation. After you install Magento, you can manage components and upgrade as discussed in the following guides:
+This guide discusses installation. After you install Magento, you can manage components and upgrade as discussed in the following guides:
 
 *	<a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html">Component Manager Guide</a>
 *	<a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">Upgrade Guide</a> -->

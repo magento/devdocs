@@ -12,7 +12,7 @@ github_link: comp-mgr/compman-uninst-data.md
 ## Data option
 After backing up, you have the choice of removing component data from the Magento 2 database.
 
-If the component has no data to remove, the following message displays.
+If the component has no data to remove, the following message displays. (If a component has data but no uninstall script, the same prompt displays. In that case, you must remove database data manually.)
 
 	The selected component has no data to remove.
 

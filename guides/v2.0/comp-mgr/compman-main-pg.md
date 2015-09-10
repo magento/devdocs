@@ -46,7 +46,7 @@ To choose whether to upgrade or uninstall components:
 		<td><p>For each component, one of the following status indicators displays in the left column:</p>
 			<ul><li><img src="{{ site.baseurl }}common/images/cman_comp-status-green.png" alt="A green icon means that the component is enabled and is current as of the last sync">Green, which means the component is enabled and its status was current the last time you synchronized with Connect.</li>
 				<li><img src="{{ site.baseurl }}common/images/cman_comp-status-info.png" alt="An info icon means there is an update available">An update is available.</li>
-				<!-- <li><img src="{{ site.baseurl }}common/images/cman_comp-status-red.png" alt="A red icon means the component is disabled">The component is disabled.</li> --></ul>
+				<li><img src="{{ site.baseurl }}common/images/cman_comp-status-red.png" alt="A red icon means the component is disabled">The component is disabled.</li> </ul>
 				<p>Middle columns display information about the component we obtained from its Composer package.</p>
 				<p>The right column displays available actions for each component. </p></td>
 	</tr>
@@ -104,13 +104,6 @@ The following table shows which actions are supported for each Magento component
 			<td>Yes</td>
 		</tr>
 		<tr>
-			<td>metapackage</td>
-			<td>No</td>
-			<td>No</td>
-			<td>Yes</td>
-			<td>Yes</td>
-		</tr>
-		<tr>
 			<td>component</td>
 			<td>No</td>
 			<td>No</td>
@@ -120,10 +113,10 @@ The following table shows which actions are supported for each Magento component
 		</tbody>
 	</table>
 
-	<div class="bs-callout bs-callout-info" id="info">
-      <p>Enable and disable will be supported soon.</p>
-    </div>
-
+<div class="bs-callout bs-callout-info" id="info">
+      <ul><li>Enable and disable will be supported soon.</li>
+      <li>A magento2-module has no <strong>Uninstall</strong> option if it's part of a metapackage. Currently, uninstalling a metapackage is not supported.</li></ul>
+</div>
 <h2 id="compman-access-sync">Update a component</h2>
 To see if any of your components can be updated, click **Sync**.
 
@@ -136,6 +129,15 @@ The following figure shows an example.
 To update the component, click **Update** from the **Actions** list. A sample follows.
 
 <img src="{{ site.baseurl }}common/images/cman_actions_update.png" alt="Click Update from the Actions menu">
+
+Continue with <a href="{{ site.gdeurl }}comp-mgr/compman-readiness.html">Readiness check</a>.
+
+<h2 id="compman-endis">Enable or disable a component</h2>
+To enable or disable a component, click the appropriate choice from the **Actions** list.
+
+The following figure shows an example of disabling a component.
+
+<img src="{{ site.baseurl }}common/images/cman_actions-disable.png" alt="Click Disable from the Actions menu">
 
 Continue with <a href="{{ site.gdeurl }}comp-mgr/compman-readiness.html">Readiness check</a>.
 
