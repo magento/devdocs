@@ -18,7 +18,7 @@ In the examples in this topic the simplest approach for customizing theme styles
 
 Learn more about possible approaches in <a href="{{site.gdeurl}}frontend-dev-guide/css-guide/css_quick_guide_approach.md">Simple ways to customize a theme's styles</a>.
 
-In our examples we will change the color and font of the primary buttons. The default view of the primary buttons is the following:
+In our examples we will change the color and font of the primary buttons. The default view of the primary buttons can be illustrated by the **Create an Account** button view on the Admin login page:
 
 <img src="{{site.baseurl}}common/images/extend_less_screenshot0.png" alt="Admin login page with the default view of the primary buttons">
 
