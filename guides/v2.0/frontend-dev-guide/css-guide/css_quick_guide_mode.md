@@ -14,40 +14,55 @@ This topic demonstrates on a practical example how the choice of the mode influe
 
 The first step, creating and applying a theme is done before the compilation mode is chosen, so it is described only once, but is required whatever compilation mode you will further use.
 
-In the examples in this topic the simplest approach for customizing theme styles is used: changes are done in the `_extend.less` of the new theme. Learn more about possible approaches in <a href="{{site.gdeurl}}frontend-dev-guide/css-guide/css_quick_guide_approach.md">Simple ways to customize a theme's styles</a>.
+In the examples in this topic the simplest approach for customizing theme styles is used: changes are done in the `_extend.less` of the new theme. 
 
-<h2>First step: Create and apply a theme</h2>
+Learn more about possible approaches in <a href="{{site.gdeurl}}frontend-dev-guide/css-guide/css_quick_guide_approach.md">Simple ways to customize a theme's styles</a>.
+
+In our examples we will change the color and font of the primary buttons. The default view of the primary buttons is the following:
+
+<img src="{{site.baseurl}}common/images/extend_less_screenshot0.png" alt="Admin login page with the default view of the primary buttons">
+
+<h3>Contents</h3>
+- <a href="#first_step">First step: Create and apply a theme</a>
+- <a href="#server-side">Making simple style changes in server-side compilation mode</a>
+- <a href="#server-side-grunt">Making simple style changes in server-side compilation mode using Grunt</a>
+- <a href="#client-side">Making simple style changes in client-side compilation mode</a>
+
+<h2 id="first_step">First step: Create and apply a theme</h2>
 
 1. Create a new theme as described in the <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-create.html" target="_blank">Create a theme</a> topic. In your `theme.xml` specify Magento Luma or Magento Blank as a parent theme.
 2. <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html#theme-apply-apply">Apply your theme</a> in the Magento Admin.
 
 Server-side is the default mode for LESS compilation, so if you do not change this, your Magento instance is using server-side compilation mode. 
 
-<h2>Making simple style changes in server-side LESS compilation mode</h2>
+<h2 id="server-side">Making simple style changes in server-side compilation mode</h2>
 
 The following is an illustration of how the process of making simple changes looks like with the server-side LESS compilation mode:
 <ol>
 <li>Create and apply a theme.</li>
 <li>In your theme directory, add <code>web/css/source/_extend.less</code>.</li>
 <li>Change the color of the buttons by adding the following code in <code>_extend.less</code>:
-<p class="q">code from Bogdan goes here</p></li>
+<img src="{{ site.baseurl }}common/images/extend_less_code_1.png" alt="Less code redefining the color of the primary buttons">
 <li>Delete all files in the following directories:
 	- <code>pub/static/frontend/&lt;Your_Vendor&gt;/&lt;your_theme&gt;</code>
 	- <code>var/view_preprocessed/less</code>
 </li>
-<li>Refresh the page, and view the changes applied. 
-<p class="q">screenshot from Bogdan goes here</p></li>
+<li>Refresh the page, and view the changes applied. For example:
+<img src="{{ site.baseurl }}common/images/extend_less_screenshot1.png" alt="Less code redefining the color of the primary buttons">
+</li>
 <li>Change the font of the buttons by adding the following code in <code>_extend.less</code>:
-<p class="q">code from Bogdan goes here</p></li>
+<img src="{{ site.baseurl }}common/images/extend_less_code_2.png" alt="Less code redefining the font of the primary buttons">
+</li>
 <li>Delete all files in the following directories:
 	- <code>pub/static/frontend/&lt;Your_Vendor&gt;/&lt;your_theme&gt;</code>
 	- <code>var/view_preprocessed/less</code> </li>
 <li>Refresh the page, and view the changes applied. 
-<p class="q">code from Bogdan goes here</p></li>
+<img src="{{ site.baseurl }}common/images/extend_less_screenshot2.png" alt="Admin login page where the font of the buttons was changed">
+</li>
 </ol>
 If your Magento instance uses the server-side compilation mode, you need to manually clean sub-directories in <code>pub/static</code> and <code>var/view_preprocessed/less</code> to make your changes apply. You can automate this process by additionally installing Grunt, and using the built-in Grunt commands to watch the changes and clean the directories. The flow of making changes using Grunt is described in the following section.
 
-<h2>Making simple style changes in server-side compilation mode using Grunt</h2>
+<h2 id="#server-side-grunt">Making simple style changes in server-side compilation mode using Grunt</h2>
 
 <ol>
 <li>Create and apply a theme. </li>
@@ -62,16 +77,20 @@ If your Magento instance uses the server-side compilation mode, you need to manu
 </ul>
 </li>
 <li>Change the color of the buttons by adding the following code in <code>_extend.less</code>:
-<p class="q">code from Bogdan goes here</p></li>
+<img src="{{ site.baseurl }}common/images/extend_less_code_1.png" alt="Less code redefining the color of the primary buttons">
+</li>
 <li>Refresh the page and view your changes applied:
-<p class="q">screenshot from Bogdan goes here</p></li>
+<img src="{{ site.baseurl }}common/images/extend_less_screenshot1.png" alt="Admin login page where the color of the button was changed">
+</li>
 <li>Change the font of the buttons by adding the following code in <code>_extend.less</code>:
-<p class="q">code from Bogdan goes here</p></li>
+<img src="{{ site.baseurl }}common/images/extend_less_code_2.png" alt="Less code redefining the font of the primary buttons">
+</li>
 <li>Refresh the page and view your changes applied:
-<p class="q">screenshot from Bogdan goes here</p></li>
+<img src="{{ site.baseurl }}common/images/extend_less_screenshot2.png" alt="Admin login page where the font of the buttons was changed">
+</li>
 </ol>
 
-<h2>Making simple style changes in client-side compilation mode</h2>
+<h2 id="client-side">Making simple style changes in client-side compilation mode</h2>
 
 <ol>
 <li>Create and apply a theme.</li>
@@ -81,13 +100,17 @@ If your Magento instance uses the server-side compilation mode, you need to manu
 	- <code>pub/static/frontend/&lt;Your_Vendor&gt;/&lt;your_theme&gt;</code>
 	- <code>var/view_preprocessed/less</code> </li>
 <li>Change the color of the buttons by adding the following code in <code>_extend.less</code>:
-<p class="q">code from Bogdan goes here</p></li>
+<img src="{{ site.baseurl }}common/images/extend_less_code_1.png" alt="Less code redefining the color of the primary buttons">
+</li>
 <li>Refresh the page and view your changes applied:
-<p class="q">screenshot from Bogdan goes here</p></li>
+<img src="{{ site.baseurl }}common/images/extend_less_screenshot1.png" alt="Admin login page where the font of the buttons was changed">
+</li>
 <li>Change the font of the buttons by adding the following code in <code>_extend.less</code>:
-<p class="q">code from Bogdan goes here</p></li>
+<img src="{{ site.baseurl }}common/images/extend_less_code_2.png" alt="Less code redefining the font of the primary buttons">
+</li>
 <li>Refresh the page and view your changes applied:
-<p class="q">screenshot from Bogdan goes here</p></li>
+<img src="{{ site.baseurl }}common/images/extend_less_screenshot2.png" alt="Admin login page where the font of the buttons was changed">
+</li>
 </ol>
 
 If your Magento instance uses the client-side compilation mode, simple changes are applied at once. In case of more sophisticated changes, you might need to manually clean the theme sub-directory in the <code>pub/static/frontend</code> directory. There are more details about these types of changes and about the client-side mode implementation in the <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css_debug.html#css_debug_client" target="_blank">Styles debugging</a> topic.

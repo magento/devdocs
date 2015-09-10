@@ -14,7 +14,6 @@ This chapter combines the topics aiming to help you to quickly start working wit
 - <a href="{{site.gdeurl}}frontend-dev-guide/css-guide/css_quick_guide_approach.html">Simple ways to customize a theme's styles</a>
 - <a href="{{site.gdeurl}}frontend-dev-guide/css-guide/css_quick_guide_mode.html">Simple style changes with client-side LESS compilation vs. server-side</a>
 
-
 The topics give the information you might need on the steps 3 and 4 of the general theme customization procedure (described briefly in the following paragraph).
 
 <h2>High-level steps to create a theme and change styles</h2>
@@ -28,13 +27,11 @@ The topics give the information you might need on the steps 3 and 4 of the gener
 	- <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/frontend-dev-guide/css-topics/css-overview.html">CSS chapter of this book</a>
 	- <a href="{{site.gdeurl}}frontend-dev-guide/css-guide/css_quick_guide_approach.html">Simple ways to customize a theme's styles</a>
 
-
-
 <h2>Why do you need to create a custom theme</h2>
 
 Magento provides two themes out of the box: Blank and Luma. The one you see applied after installation is Luma. 
 
-<img src="{{site.baseurl}}common/images/css_guide_luma.png">
+<img src="{{ site.baseurl }}common/images/css_guide_luma_.png" alt="Storefront with Luma applied">
 
 Luma inherits from Blank, which contains all the basic functionality and styling required for a theme.
 
