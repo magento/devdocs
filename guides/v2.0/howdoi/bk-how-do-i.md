@@ -15,7 +15,7 @@ Please help us keep this list up-to-date by providing feedback in any of the fol
 
 *	Click **Edit this page in GitHub** to open a pull request with a solution of your own.
 *	Open an <a href="https://github.com/magento/devdocs/issues" target="_blank">issue</a> in the devdocs GitHub repository.
-*	Send us a <a href="https://twitter.com/MagentoDevDocs" target="_blank">tweet</a> or <a href="<a href="mailto:DL-Magento-Doc-Feedback@ebay.com">e-mail</a>.
+*	Send us a <a href="https://twitter.com/MagentoDevDocs" target="_blank">tweet</a> or <a href="mailto:DL-Magento-Doc-Feedback@ebay.com">e-mail</a>.
 
 ## PHP developers
 *	<a href="{{ site.gdeurl }}howdoi/php/php_clear-dirs.html">Clear directories during development</a>
