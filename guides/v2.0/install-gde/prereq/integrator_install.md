@@ -35,6 +35,12 @@ To get started:
 
 	If you configured a virtual host, `<installation directory name>` must match the docroot directory defined for it.
 
+4.	Change to `<installation directory name>`.
+5.	Open `composer.json` in a text editor.
+6.	
+
+	where `<version>` is the `magento/product-community-edition` version from <a href="http://packages.magento.com/#magento/product-community-edition" target="_blank">packages.magento.com</a>.
+
 4.	Continue with <a href="{{ site.gdeurl }}install-gde/install/file-system-perms.html">Set file system ownership and permissions</a>.
 
 <h2 id="integrator-first-issue">Known issue: you might need to clear your Composer cache</h2>

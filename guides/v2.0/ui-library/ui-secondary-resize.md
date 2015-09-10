@@ -28,9 +28,13 @@ Resize can be switched on for any listing column like this:
 </column>
 {% endhighlight %}
 
+resizeDefaultWidth - set width value in pixels.
+
+resizeEnabled - value can be set `true`, meaning the resize is switched on, or `false`, , meaning the resize is switched off for the column.
+
 ####Configuration
 
-The Resize component is currently configured as a plugin for the Listing component. It has the following options:
+The Resize component is currently configured as a plugin for the Listing component in `app/code/Magento/Ui/view/base/web/js/grid/listing.js`. It has the following options:
 
 * resizeConfig
 

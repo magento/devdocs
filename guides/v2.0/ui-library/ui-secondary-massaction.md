@@ -66,50 +66,50 @@ The following API methods are available:
 
 * Specifying action with confirmation
 
-<pre>
-&lt;massaction name="listing_massaction"&gt;
-    &lt;argument name="data" xsi:type="array"&gt;
+{% highlight xml %}
+<massaction name="listing_massaction">
+    <argument name="data" xsi:type="array">
         ...
-        &lt;item name="config" xsi:type="array"&gt;
-            &lt;item name="actions" xsi:type="array"&gt;
-                &lt;item name="edit" xsi:type="array"&gt;
-                    &lt;item name="type" xsi:type="string"&gt;edit&lt;/item&gt;
-                    &lt;item name="label" xsi:type="string" translate="true"&gt;Edit&lt;/item&gt;
-                    &lt;item name="confirm" xsi:type="array"&gt;
-                        &lt;item name="title" xsi:type="string" translate="true"&gt;Edit items&lt;/item&gt;
-                        &lt;item name="message" xsi:type="string" translate="true"&gt;Are you sure you wan't to edit selected items?&lt;/item&gt;
-                    &lt;/item&gt;
-                &lt;/item&gt;
-            &lt;/item&gt;
-        &lt;/item&gt;
-    &lt;/argument&gt;
-&lt;/massaction&gt;
-</pre>
+    </argument>
+    <action name="edit">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="confirm" xsi:type="array">
+                    <item name="title" xsi:type="string" translate="true">Edit items</item>
+                    <item name="message" xsi:type="string" translate="true">Are you sure you wan't to edit selected items?</item>
+                </item>
+                <item name="type" xsi:type="string">edit</item>
+                <item name="label" xsi:type="string" translate="true">Edit</item>
+            </item>
+        </argument>
+    </action>
+</massaction>
+{% endhighlight %}
 
 * Action with a custom callback
 
 
 Callback is provided by another component.
 
-<pre>
-&lt;massaction name="listing_massaction"&gt;
-    &lt;argument name="data" xsi:type="array"&gt;
+{% highlight xml %}
+<massaction name="listing_massaction">
+    <argument name="data" xsi:type="array">
         ...
-        &lt;item name="config" xsi:type="array"&gt;
-            &lt;item name="actions" xsi:type="array"&gt;
-                &lt;item name="edit" xsi:type="array"&gt;
-                    &lt;item name="type" xsi:type="string"&gt;edit&lt;/item&gt;
-                    &lt;item name="label" xsi:type="string" translate="true"&gt;Edit&lt;/item&gt;
-                    &lt;item name="callback" xsi:type="array"&gt;
-                        &lt;item name="provider" xsi:type="string"&gt;cms_page_listing.inline_editing&lt;/item&gt;
-                        &lt;item name="target" xsi:type="string"&gt;startEdit&lt;/item&gt;
-                    &lt;/item&gt;
-                &lt;/item&gt;
-            &lt;/item&gt;
-        &lt;/item&gt;
-    &lt;/argument&gt;
-&lt;/massaction&gt;
-</pre>
+    </argument>
+    <action name="edit">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="type" xsi:type="string">edit</item>
+                <item name="label" xsi:type="string" translate="true">Edit</item>
+                <item name="callback" xsi:type="array">
+                    <item name="provider" xsi:type="string">product_listing.inline_editing</item>
+                    <item name="target" xsi:type="string">startEdit</item>
+                </item>
+            </item>
+        </argument>
+    </action>
+</massaction>
+{% endhighlight %}
 
 * Instance replacement: one instance of a component
 

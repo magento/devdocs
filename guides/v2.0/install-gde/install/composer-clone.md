@@ -132,7 +132,16 @@ To clone the Magento GitHub repository using the HTTPS protocol:
 4.	Continue with the next section.
 
 <h2 id="instgde-prereq-compose-access">Set file system permissions and ownership</h2>
-{% include install/file-system-perms.html %}
+The following sections discuss how to set file system permissions and ownership:
+
+*	<a href="#install-perms-import">Why we recommend you set file system permissions</a>
+*	<a href="#install-perms-set">File system permissions and ownership</a>
+
+<h3 id="install-perms-import">Why we recommend you set file system permissions</h3>
+{% include install/file-system-perms1-why.html %}
+
+<h3 id="install-perms-set">File system permissions and ownership</h3>
+{% include install/file-system-perms2-how.html %}
 
 #### Next step
 
