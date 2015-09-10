@@ -57,7 +57,7 @@ The Magento Testing Framework requires Composer, which downloads libraries defin
 </div>
 
 1.    <a href="{{ site.gdeurl }}install-gde/basics/basics_login.html">Open a command prompt</a>.
-1.    Log in to your Magento server as a user with permissions to modify the Magento file system. (This is typically <a href="{{ site.gdeurl }}install-gde//install/prepare-install.html#install-update-depend-apache">the web server user</a>.)
+1.    Log in to your Magento server as a user with permissions to modify the Magento file system. (This is typically <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">the Magento file system owner</a>.)
 
     cd magento2ce/dev/tests/functional/
     composer install

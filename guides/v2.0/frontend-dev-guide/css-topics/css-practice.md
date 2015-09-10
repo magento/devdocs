@@ -15,7 +15,7 @@ This topic features a step-by-step illustration of how to change a theme's color
 
 <h2>Changing theme color scheme</h2>
 
-OrangeCo created a custom theme that inherits from the default Blank theme.
+OrangeCo created a custom theme that inherits from the Magento basic Blank theme.
 The following image illustrates how store pages look when the Blank theme is applied:
 
 <div style="border: 1px solid #ABABAB">

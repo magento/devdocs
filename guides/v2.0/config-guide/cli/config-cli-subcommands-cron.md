@@ -32,6 +32,8 @@ Several Magento features require at least one cron job, which schedules activiti
 *	Automatic updating of currency rates
 *	All Magento e-mails (including order confirmation and transactional)
 
+We recommend you run cron as the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-over">Magento file system owner</a>. Do *not* run cron as `root`; we recommend against running cron as the web server user.
+
 <div class="bs-callout bs-callout-warning">
     <p>You can no longer run <code>dev/tools/cron.sh</code> because the script has been removed.</p>
 </div>
@@ -57,17 +59,13 @@ In addition to the command arguments discussed here, see <a href="{{ site.gdeurl
 <h2 id="config-cli-cron-bkg">Run cron in the background</h2>
 This section discusses how to run all Magento cron jobs every minute, which is the recommended interval for both Magento Community Edition (CE) and Enterprise Edition (EE).
 
-First, determine the user cron should run as. For Magento, you should run cron as the web server user. To determine your web server's user ID, enter the following command:
+Run Magento cron jobs as the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-over">Magento file system owner</a>. 
 
-	ps -o "user group command" -C httpd,apache2
-
-In CentOS, the Apache user is typically `apache`; in Ubuntu, it's typically `www-data`
-
-To create a cron job as the user who runs Apache, the following commands in the order shown:
+To create a cron job as the Magento file system owner, the following commands in the order shown:
 
 1.	Create or edit a crontab for the Apache user:
 
-		crontab -u <apache user name> -e
+		crontab -u <Magento file system owner user name> -e
 
 	A text editor displays. (You might need to choose a text editor first.)
 2.	In the editor, enter the following:
@@ -88,8 +86,8 @@ Before you run cron in the browser, remove the restriction from `.htaccess` as f
 1.	Log in to your Magento server as a user with permissions to write to the Magento file system.
 2.	Open any of the following in a text editor (depending on your entry point to Magento):
 
-		`<your Magento install dir>/pub/.htaccess`
-		`<your Magento install dir>/.htaccess`
+		<your Magento install dir>/pub/.htaccess
+		<your Magento install dir>/.htaccess
 
 3.	Delete or comment out the following:
 

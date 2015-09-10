@@ -28,7 +28,7 @@ Error text is typically:
     Parse error: syntax error, unexpected 'data' (T_STRING)
 
 #### Solution: Set <code>asp_tags = off</code> in <code>php.ini</code>
-Multiple templates have syntax for support abstract level on templates (use different templates engines like Twig) wraped in `<% %>` tags, like this <a href="{{ site.mage2000url }}app/code/Magento/Catalog/view/frontend/templates/product/view/base-image.phtml" target="_blank">template</a> for displaying a product image:
+Multiple templates have syntax for support abstract level on templates (use different templates engines like Twig) wrapped in `<% %>` tags, like this <a href="{{ site.mage2000url }}app/code/Magento/Catalog/view/frontend/templates/product/view/base-image.phtml" target="_blank">template</a> for displaying a product image:
 
 {% highlight PHP %} 
 <?php
