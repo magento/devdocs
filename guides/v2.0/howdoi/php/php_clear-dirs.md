@@ -32,41 +32,6 @@ When you're developing Magento components (modules, themes, and language package
 <table>
 	<tbody>
 		<tr>
-			<th>Tool name</th>
-			<th>Brief description</th>
-			<th>What it clears</th>
-		</tr>
-	<tr>
-		<td>magento setup:upgrade</td>
-		<td>TBD</td>
-		<td>var/di, var/generation</td>
-		
-	<tr>
-		<tr>
-		<td>magento setup:di:compile</td>
-		<td>TBD</td>
-		<td>var/di, var/generation (after which compiles code again)</td>
-		
-	<tr>
-	<tr>
-		<td>magento deploy:mode:set {mode}</td>
-		<td>TBD</td>
-		<td>var/di, var/generation</td>
-	</tr>
-	<tr>
-		<td>magento cache:clean [type]</td>
-		<td>TBD</td>
-		<td>var/cache, var/page_cache</td>
-	</tr>
-</tbody>
-</table>
-
-<h3 id="howdoi-clear-over-cmds">Overview of development-related commands</h3>
-The following command-line tools clear some directories for you.
-
-<table>
-	<tbody>
-		<tr>
 			<th>Directory</th>
 			<th>What it contains</th>
 		</tr>
@@ -93,6 +58,42 @@ The following command-line tools clear some directories for you.
 	<tr>
 		<td>var/view_preprocessed</td>
 	<td>Minified templates, compiled LESS (meaning LESS, CSS, and HTML).</td>
+	</tr>
+</tbody>
+</table>
+
+
+<h3 id="howdoi-clear-over-cmds">Overview of development-related commands</h3>
+The following command-line tools clear some directories for you.
+
+<table>
+	<tbody>
+		<tr>
+			<th>Tool name</th>
+			<th>Brief description</th>
+			<th>What it clears</th>
+		</tr>
+	<tr>
+		<td>magento setup:upgrade</td>
+		<td>TBD</td>
+		<td>var/di, var/generation</td>
+		
+	<tr>
+		<tr>
+		<td>magento setup:di:compile</td>
+		<td>TBD</td>
+		<td>var/di, var/generation (after which compiles code again)</td>
+		
+	<tr>
+	<tr>
+		<td>magento deploy:mode:set {mode}</td>
+		<td>TBD</td>
+		<td>var/di, var/generation</td>
+	</tr>
+	<tr>
+		<td>magento cache:clean [type]</td>
+		<td>TBD</td>
+		<td>var/cache, var/page_cache</td>
 	</tr>
 </tbody>
 </table>
