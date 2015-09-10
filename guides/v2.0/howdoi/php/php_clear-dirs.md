@@ -32,12 +32,47 @@ When you're developing Magento components (modules, themes, and language package
 <table>
 	<tbody>
 		<tr>
+			<th>Tool name</th>
+			<th>Brief description</th>
+			<th>What it clears</th>
+		</tr>
+	<tr>
+		<td>magento setup:upgrade</td>
+		<td>TBD</td>
+		<td>var/di, var/generation</td>
+		
+	<tr>
+		<tr>
+		<td>magento setup:di:compile</td>
+		<td>TBD</td>
+		<td>var/di, var/generation (after which compiles code again)</td>
+		
+	<tr>
+	<tr>
+		<td>magento deploy:mode:set {mode}</td>
+		<td>TBD</td>
+		<td>var/di, var/generation</td>
+	</tr>
+	<tr>
+		<td>magento cache:clean [type]</td>
+		<td>TBD</td>
+		<td>var/cache, var/page_cache</td>
+	</tr>
+</tbody>
+</table>
+
+<h3 id="howdoi-clear-over-cmds">Overview of development-related commands</h3>
+The following command-line tools clear some directories for you.
+
+<table>
+	<tbody>
+		<tr>
 			<th>Directory</th>
 			<th>What it contains</th>
 		</tr>
 	<tr>
 		<td>var/cache</td>
-		<td>All cacheable elements <em>except</em> the page cache.</td>
+		<td>All cacheable objects <em>except</em> the page cache.</td>
 		
 	<tr>
 		<tr>
@@ -47,24 +82,17 @@ When you're developing Magento components (modules, themes, and language package
 		
 	<tr>
 	<tr>
-		<td>var/di</td>
+		<td>var/di, var/generation</td>
 		<td><p>Together with <code>var/generation</code>, contains <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html#config-cli-subcommands-compile-overview">compiled code</a> (also referred to as <em>generated code</em>).</p>
-			<p><code>var/di</code> contains TBD.</p></td>
+			<p>Code is compiled automatically when you change Magento <a href="{{ site.gdeurl }}extension-dev-guide/depend-inj.html#dep-inj-intro">factory classes, proxies</a>, or <a href="{{ site.gdeurl }}extension-dev-guide/plugins.html">plug-ins</a>. Also, code compiles automatically anytime you change a <code>di.xml</code>.</p></td>
 		
 	<tr>
-		<td>var/generation</td>
-		<td>Contains TBD.</p></td>
-	</tr>
-	<tr>
 		<td>var/page_cache</td>
-	<td>TBD</td>
+	<td>Cached pages. (This directory is empty if you use a third-party caching accelerator like Varnish.)</td>
 	</tr>
 	<tr>
 		<td>var/view_preprocessed</td>
-	<td>TBD</td>
+	<td>Minified templates, compiled LESS (meaning LESS, CSS, and HTML).</td>
 	</tr>
 </tbody>
 </table>
-
-<h3 id="howdoi-clear-over-cmds">Overview of development-related commands</h3>
-TBD
