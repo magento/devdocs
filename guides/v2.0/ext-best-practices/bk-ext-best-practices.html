@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>What is the web API framework?</title>
+	<title>Best Practices for Extension Developers</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/extension-dev-guide/service-contracts/add-later/what-is-webapi.html">
+	<link rel="canonical" href="//guides/v2.0/ext-best-practices/bk-ext-best-practices.html">
 
 
 
@@ -155,7 +155,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">What is the web API framework?</h1>
+		<h1 class="page-heading">Best Practices for Extension Developers</h1>
+			
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/ext-best-practices/ext-best-practices-bk.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -164,68 +166,62 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<p>The web API framework gives third-party developers access to the service framework using REST or SOAP calls. Currently, Web API access is limited to Customer objects but we plan to expand access in time to include any Magento object.</p>
+		<h2 id="introduction">Introduction</h2>
 
-<p>Although REST and SOAP use different payloads and routing, they use the same authorization mechanisms to provide access to Magento services.</p>
+<p>This document provides best practices, guidelines, and tips for creating Magento modules, or extensions.</p>
 
-<h2 id="exposing-a-service-using-rest-or-soap">Exposing a Service Using REST or SOAP</h2>
+<p>Magento consists of the core product code plus optional modules, or extensions.  These modules enhance or replace the basic product code. There are over 100 out-of-the-box modules in Magento 2, and it is also typical for developers to create new, custom modules for their storefront.</p>
 
-<p>A Magento service can be exposed using REST only or using both SOAP and REST. In othe words, you cannot expose a service using SOAP without also exposing it using REST.</p>
+<p>Magento provides an easy way to find and install custom modules; </p>
 
-<h3 id="configuring-webapixml">Configuring webapi.xml</h3>
-
-<p>To start, you must configure your service using <code>app/code/[Vendor]/&lt;ModuleName&gt;/etc/webapi.xml</code>. Each REST API call must have a corresponding <code>&lt;rest route&gt;</code> in <code>webapi.xml</code>. In other words, to access a method using REST, the method must have a <code>&lt;rest route&gt;</code> in <code>webapi.xml</code>; otherwise, the method cannot be accssed.</p>
-
-<p>If a REST route is sensitive and is expected to be executed over HTTPS only, the method must use the <code>secure = true</code> attribute. Attempting to access a <code>secure</code> route using non-secure means results in an exception.</p>
-
-<h3 id="sample-webapixml">Sample webapi.xml</h3>
-
-<p>A sample <code>webapi.xml</code> follows:</p>
-
-<script src="https://gist.github.com/xcomSteveJohnson/3d01cdea721b623b5264.js"></script>
-
-<p>In this <code>webapi.xml</code>:</p>
+<p>The following sections cover Best Practices in three main categories:</p>
 
 <ul>
-  <li>
-    <p>The first route is accessible only by secure HTTP POST calls to <code>/V1/customers/me</code></p>
-  </li>
-  <li>
-    <p>The first route calls the <code>getCustomer</code> method of <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">CustomerAccountServiceInterface</a></p>
-  </li>
-  <li>
-    <p><code>&lt;resource ref&gt;</code> means that the caller must be authorized to call <code>Magento_Customer::customer_self</code></p>
-  </li>
-  <li>
-    <p>The second route is accessible only using HTTP GET calls to <code>/V1/customer/:id</code>, where <code>:id</code> is the ID of the customer you wish to retrieve</p>
-  </li>
-  <li>
-    <p>The parameter <code>id</code> is required</p>
-  </li>
-  <li>
-    <p>This second route also calls the ‘getCustomer’ method of <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">CustomerAccountServiceInterface</a></p>
-  </li>
-  <li>
-    <p>The caller must be authorized to call <code>Magento_Customer::read</code></p>
-  </li>
+  <li>Architecture and PHP coding</li>
+  <li>Frontend development with layouts, blocks, and themes</li>
+  <li>Admin UI; icons, menus, and more.</li>
 </ul>
 
-<p>For comparison, refer to Customer’s <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Customer/etc/webapi.xml" target="_blank">webapi.xml</a>.</p>
+<h2 id="archi_php">Architectural structure and PHP coding </h2>
 
-<h3 id="sample-webapixsd">Sample webapi.xsd</h3>
+<p>Best Practices about architectural structure of a new extension (module.xml), with info like required config files, optimizing a module for certain environments (small store, et)</p>
 
-<p>Your <code>webapi.xml</code> must be validated by an <code>app/code/_Vendor_/Webapi/etc/webapi.xsd</code>. For comparision see Customer’s, <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Webapi/etc/webapi.xsd" target="_blank">webapi.xsd</a>.</p>
+<p>Fundamental programming designs/concepts, like how MVC architecture works in our code</p>
 
-<p>Your module can use <code>webapi.xsd</code> or you can create a customized validation.</p>
+<h3 id="know_arch">Know your architecure</h3>
+<p>Provide a link to AG.</p>
 
-<h4 id="related-topics">Related Topics:</h4>
+<h3 id="bp_arch_1">Best Practice 1</h3>
 
-<ul>
-  <li><a href="/guides/v2.0/config-guide/integration/cg-authorization.html">Authorizing Web API Requests</a></li>
-  <li><a href="/guides/v2.0/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
-  <li><a href="/guides/v2.0/get-started/gs-web-api-request.html">Step 2. Construct a request</a></li>
-</ul>
+<p>abc</p>
 
+<h3 id="bp_arch_2">Best Practice 2</h3>
+
+<p>abc</p>
+
+<h2 id="frontend">Frontend development with layouts, blocks, and themes</h2>
+
+<p>Using best practices when working with the frontend components of an module produces an extension that is easier to create and maintain. </p>
+
+<h3 id="bp_frontend_1">Best Practice 1</h3>
+
+<p>abc</p>
+
+<h3 id="bp_frontend_2">Best Practice 2</h3>
+
+<p>abc</p>
+
+<h2 id="Admin">Admin UI: icons, menus, and more</h2>
+
+<p>How to navigate to and display extensions in the Admin is a great place for using Best Practices; what extensin developers choose to do (or not do) when integrating their extensions has a big impact on the look-n-feel of the Admin UI.</p>
+
+<h3 id="bp_admin_1">Best Practice 1</h3>
+
+<p>abc</p>
+
+<h3 id="bp_admin_2">Best Practice 2</h3>
+
+<p>abc</p>
 
 
 		</div>
@@ -290,6 +286,44 @@
 			
 			
 				
+				
+					
+					
+					
+					
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">5_Package</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2  active "><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Introduction</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+
+
 				
 			
 			
@@ -436,8 +470,8 @@
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/extension-dev-guide/service-contracts/add-later/what-is-webapi.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/extension-dev-guide/service-contracts/add-later/what-is-webapi.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/ext-best-practices/bk-ext-best-practices.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/ext-best-practices/bk-ext-best-practices.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>
