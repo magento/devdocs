@@ -11,8 +11,6 @@ redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-overview.html
 
 <h2>Security measures against XSS attacks</h2>
 
-Overview of XSS-safe output rules
-
 To prevent <a href="https://en.wikipedia.org/wiki/Cross-site_scripting">XSS</a> issues Magento recommends the following rules of escaping HTML content in templates:
 
 * If a method indicates that the contents are escaped, do not escape: `getTitleHtml()`, `getHtmlTitle()` (the title is ready for the HTML output)
