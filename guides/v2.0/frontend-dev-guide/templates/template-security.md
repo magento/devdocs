@@ -1,0 +1,76 @@
+---
+layout: default  
+group: fedg
+subgroup: C_Templates
+title: Templates XSS security
+menu_title: Templates XSS security
+menu_order: 5
+github_link: frontend-dev-guide/templates/template-overview.md
+redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-overview.html
+---
+
+<h2>Security measures against XSS attacks</h2>
+
+<h4>Overview of XSS safe output rules</h4>
+
+To prevent XSS issues Magento has defined and applied rules by making sure content is always escaped when needed.
+
+The logic is as follows: escape all data should be applied. Exceptions are anticipated HTML. For example when the administrator enters CMS-page content, this should be an output without escaping.
+
+The following output rules must be used in templates:
+
+* If a method indicates that the contents is escaped, do not escape: `getTitleHtml()`, `getHtmlTitle()` (the title is ready for the HTML output)
+
+* Data are escaped using the `$block→escapeHtml()`,  `$block→escapeQuote()`,  `$block→escapeUrl()`, `$block→escapeXssInUrl()` methods
+
+* Type casting and php function count() don't need escaping  (for example `echo (int)$var`, `echo (bool)$var`, `echo count($var)`)
+
+* Output in single quotes don't need escaping (for example `echo 'some text'`)
+
+* Output in double quotes without variables don't need escaping (for example `echo "some text"`)
+
+* Otherwise, escape the data using the `$block→escapeHtml()` method
+
+XSS safe output rules in templates:
+
+{% highlight php %}
+<?php echo $block->getTitleHtml() ?>
+<?php echo $block->getHtmlTitle() ?>
+<?php echo $block->escapeHtml($block->getTitle()) ?>
+<h1><?php echo (int)$block->getId() ?></h1>
+<?php echo count($var); ?>
+<?php echo 'some text' ?>
+<?php echo "some text" ?>
+<a href="<?php echo $block->escapeXssInUrl($block->getUrl()) ?>"><?php echo $block->getAnchorTextHtml() ?
+></a>
+{% endhighlight %}
+
+<h4>Static Test</h4>
+
+In order to improve security against XSS injections, a static test is added to `dev\tests\static\testsuite\Magento\Test\Php\`.
+
+While running static test finds all echo calls in phtml-templates and determines if it is properly escaped or not.
+
+It will cover the following cases:
+
+* `/* @noEscape */` before output. Output doesn't require escaping. Test is green.
+
+* `/* @escapeNotVerified */` before output. Output escaping is not checked and should be verified. Test is green.
+
+* Methods which contain `"html"` in their names (for example `echo $object->{suffix}Html{postfix}()`). Data is ready for the HTML output. Test is green.
+
+* AbstractBlock methods `escapeHtml`, `escapeUrl`, `escapeQuote`, `escapeXssInUrl` are allowed. Test is green.
+
+* Type casting and php function `count()` are allowed (for example `echo (int)$var`, `(bool)$var`, `count($var)`). Test is green.
+
+* Output in single quotes (for example `echo 'some text'`). Test is green.
+
+* Output in double quotes without variables (for example `echo "some text"`). Test is green.
+
+* Other of previously mentioned. Output is not escaped. Test is red.
+
+Developers should filter phtml-templates of their modules by `/* @escapeNotVerified */` annotation and check "echo" output in them.
+
+In case output doesn't need escaping, replace `/* @escapeNotVerified */` by`/* @noEscape */` annotation.
+
+Otherwise, make changes according to xss-safe output rules and remove `/* @escapeNotVerified */` annotation.
