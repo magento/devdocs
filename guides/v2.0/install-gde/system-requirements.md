@@ -59,8 +59,8 @@ Before you install Magento, make sure your system meets or exceeds the following
 *	Mail Transfer Agent (MTA) or an SMTP server
 *	Optional caching technologies
 
-	*	<a href="{{ site.gdeurl }}config-guide/redis/config-redis.html" target="_blank">Redis version 3.0</a>
-	*	<a href="{{ site.gdeurl }}config-guide/varnish/config-varnish.html" target="_blank">Varnish version 3.5 or latest stable 4.x version</a>
+	*	<a href="http://redis.io/topics/quickstart" target="_blank">Redis version 3.0</a>
+	*	<a href="https://www.varnish-cache.org/docs" target="_blank">Varnish version 3.5 or latest stable 4.x version</a>
 	*	memcached latest stable version
 *	Optional but recommended:
 
