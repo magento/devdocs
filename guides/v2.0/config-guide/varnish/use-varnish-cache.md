@@ -2,11 +2,12 @@
 layout: default
 group: config-guide
 subgroup: Varnish
-title: Use Varnish with Magento
-menu_title: Use Varnish with Magento
-menu_order: 500
+title: Magento caching and Varnish purging
+menu_title: Magento caching and Varnish purging
+menu_order: 100
 menu_node: 
-github_link: config-guide/varnish/config-use-varnish.md
+github_link: config-guide/varnish/use-varnish-cache.md
+redirect_from: guides/v2.0/config-guide/varnish/config-use-varnish.html
 ---
 
 #### Contents
@@ -57,4 +58,4 @@ The parameter format must be `<hostname or ip>:<listen port>`, where you can omi
 
 For example, 
 
-	--http-cache-hosts=192.0.2.100,192.0.2.155:6081
+	magento setup:config:set --http-cache-hosts=192.0.2.100,192.0.2.155:6081

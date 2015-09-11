@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: Varnish
-title: Configure Varnish
-menu_title: Configure Varnish
+title: Configure and use Varnish
+menu_title: Configure and use Varnish
 menu_order: 1
 menu_node: parent
 github_link: config-guide/varnish/config-varnish.md
