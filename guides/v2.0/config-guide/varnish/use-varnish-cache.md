@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: Varnish
-title: Magento caching and Varnish purging
-menu_title: Magento caching and Varnish purging
+title: How Magento cache clearing works with Varnish
+menu_title: How Magento cache clearing works with Varnish
 menu_order: 100
 menu_node: 
 github_link: config-guide/varnish/use-varnish-cache.md
