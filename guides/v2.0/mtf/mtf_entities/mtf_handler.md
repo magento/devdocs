@@ -11,12 +11,12 @@ github_link: mtf/mtf_entities/mtf_handler.md
 - <a href="#mtf_handler_overview">Handler overview</a>
 - <a href="#mtf_handler_types">Types of handlers</a>
 - <a href="#mtf_handler_config">Configuration</a>
-  - <a href="mtf_handler_configxml">config.xml</a>
+  - <a href="#mtf_handler_configxml">config.xml</a>
   - <a href="#mtf_handler_interface">Handler interface</a>
   - <a href="#mtf_handler_di">di.xml</a>
   - <a href="#mtf_handler_conf_hand">Handler</a>
   - <a href="#mtf_handler_decor">BackendDecorator and FrontendDecorator</a>
-- <a id="#mtf_handler_howto-create-curl">How to create a cURL Handler</h2>
+- <a id="#mtf_handler_howto-create-curl">How to create a cURL Handler</a>
 - <a href="#mtf_handler_howto-create-ui">How to create a UI Handler</a>
   
 <h2 id="mtf_handler_overview">Handler overview</h2>
@@ -48,7 +48,7 @@ One fixture can have various handlers. When we create an entity in the test we d
 
 <h3 id="mtf_handler_configxml">config.xml</h3>
 
-The default configuration for handlers is set in <a href="https://github.com/magento/magento2/blob/master/dev/tests/functional/etc/config.xml.dist"><code>magento2ce/dev/tests/functional/etc/config.xml.dist</code></a>. It should be saved as `config.xml`to be used by system:
+The default configuration for handlers is set in <code>magento2ce/dev/tests/functional/etc/config.xml.dist</code>. It should be saved as `config.xml`to be used by system:
 
     cp config.xml.dist config.xml
 
@@ -78,13 +78,13 @@ Each handler must implement a handler interface.
 
 You should mention in a fixture the `handler_interface` attribute with a reference to the PHP class: `Magento\[module_name]\Test\Handler\[object_name]\[object_name]Interface` (example for the Widget: `Magento\Widget\Test\Handler\Widget\WidgetInterface`).
 
-Example of `WidgetInterface.php` (should be placed in `magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget):
+Example of `WidgetInterface.php` (should be placed in `magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget`):
 
 <script src="https://gist.github.com/dshevtsov/dbe9b588ffe91bbb5622.js"></script>
 
 <h3 id="mtf_handler_di">di.xml</h3>
 
-The `di.xml` file declares relation between the <a href="">interface and the handler. It must be placed in `magento2ce/dev/tests/functional/tests/app/Magento/[module_name]/Test/etc/[handler_type]/di.xml`.
+The `di.xml` file declares relation between the <a href="#mtf_handler_interface">interface</a> and the <a href="#mtf_handler_conf_hand">handler</a>. It must be placed in `magento2ce/dev/tests/functional/tests/app/Magento/[module_name]/Test/etc/[handler_type]`.
 
 See an example for the Widget cURL handler (`magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml`):
 
@@ -109,12 +109,12 @@ It says, "substitute the `WidgetInterface` interface with the `cURL` class".
 
 <h3 id="mtf_handler_conf_hand">Handler</h3>
 
-We can determine the handler class using <a href="#mtf_handler_interface">an interface</a>, <a href="#mtf_handler_config">Configuration</a>a fallback</a>, and dependencies from the <a href="#mtf_handler_di"><code>di.xml</code></h3>`. When this class is created, we can call the `persist()` method and transfer the current fixture in a method's argument. The method returns data that will be matched with fixture fields. All fields that are matched will be assigned with values from handler.
+We can determine the handler class using <a href="#mtf_handler_interface">an interface</a>, <a href="#mtf_handler_config">a fallback</a>, and dependencies from the <a href="#mtf_handler_di"><code>di.xml</code></a>. When this class is created, we can call the `persist()` method and transfer the current fixture in a method's argument. The method returns data that will be matched with fixture fields. All fields that are matched will be assigned with values from handler.
 
 <script src="https://gist.github.com/dshevtsov/3ed7ce601d3b23e94ccd.js"></script>
 
 <div class="bs-callout bs-callout-tip">
-  <p>The <code>persist()</code> method is declared in <code>InjectableFixture</code> class (<code>magento2ce/dev/tests/functional/vendor/magento/mtf/Magento/Mtf/Fixture/InjectableFixture.php</code>). </p>
+  <p>The <code>persist()</code> method is declared in the <code>InjectableFixture</code> class by path <code>magento2ce/dev/tests/functional/vendor/magento/mtf/Magento/Mtf/Fixture/InjectableFixture.php</code>. </p>
 </div>
 
 Create the handler in the same directory where the interface is stored: `magento2ce/dev/tests/functional/tests/app/Magento/[module_name]/Test/Handler/[object_name]/[type_of_handler].php`
