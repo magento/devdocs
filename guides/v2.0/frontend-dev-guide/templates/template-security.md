@@ -13,11 +13,7 @@ redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-overview.html
 
 <h4>Overview of XSS safe output rules</h4>
 
-To prevent XSS issues Magento has defined and applied rules by making sure content is always escaped when needed.
-
-The logic is as follows: escape all data should be applied. Exceptions are anticipated HTML. For example when the administrator enters CMS-page content, this should be an output without escaping.
-
-The following output rules must be used in templates:
+To prevent XSS issues Magento has defined and applied the following rules of escaping HTML content in templates:
 
 * If a method indicates that the contents is escaped, do not escape: `getTitleHtml()`, `getHtmlTitle()` (the title is ready for the HTML output)
 
@@ -25,13 +21,13 @@ The following output rules must be used in templates:
 
 * Type casting and php function count() don't need escaping  (for example `echo (int)$var`, `echo (bool)$var`, `echo count($var)`)
 
-* Output in single quotes don't need escaping (for example `echo 'some text'`)
+* Output in single quotes doesn't need escaping (for example `echo 'some text'`)
 
-* Output in double quotes without variables don't need escaping (for example `echo "some text"`)
+* Output in double quotes without variables doesn't need escaping (for example `echo "some text"`)
 
 * Otherwise, escape the data using the `$block→escapeHtml()` method
 
-XSS safe output rules in templates:
+The following code sample illustrates the XSS safe output in templates:
 
 {% highlight php %}
 <?php echo $block->getTitleHtml() ?>
