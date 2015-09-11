@@ -52,6 +52,14 @@ In addition to those files, a Magento 2 module also has nested configuration fol
 * _YourModule_/etc/webapi_soap/
 
 
+If you want to just create the basic set of folders and files in etc that you might need, you could enter the following at the command line:
+
+
+     cd etc 
+
+     mkdir adminhtml && mkdir frontend && mkdir webapi_rest && mkdir webapi_soap && touch acl.xml config.xml di.xml module.xml webapi.xml
+
+
 
 ###Configuration files
 
@@ -90,6 +98,9 @@ Keep in mind that you may be able to handle your module&#8217;s configuration so
 
 
 </div> -->
+
+
+
 
 
 ##Next

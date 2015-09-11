@@ -4,7 +4,7 @@ group: extension-dev-guide
 subgroup: 3_Build
 title: PHP developer guide
 menu_title: Enable a module
-menu_order: 8
+menu_order: 6
 github_link: extension-dev-guide/enable-module.md
 
 ---

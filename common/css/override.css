@@ -192,7 +192,8 @@ TABLE {
 .main-container DIV.sidebar-wrapper H4 {
 
     margin: 1.5em 10px 0.5em 14px;
-    color: rgba(187, 63, 12, 0.99)
+    color: rgba(97, 57, 42, 0.99);
+    
 }
 
 
@@ -256,5 +257,5 @@ outline:none
   width: 60%;*/
 }
 
-
+#searcharoo {display: none;}
 

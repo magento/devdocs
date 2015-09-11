@@ -12,7 +12,7 @@ github_link: extension-dev-guide/test-module.md
 
 ##{{page.menu_title}}
 
-Test your module by deploying a Magento Community Edition and adding the module to the project's <code>composer.json</code>. Marshall the module into the <code>app/code</code> directory.
+Test your module by deploying Magento Community Edition and adding the module to the project's <code>composer.json</code>. Marshall the module into the <code>app/code</code> directory.
 
 {% highlight JSON %}
 "require": {

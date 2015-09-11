@@ -12,7 +12,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/create_module.html
 
 Now that you have [determined your module&#8217;s initial file structure](module-file-structure.html) and have an idea of the [configuration files](required-configuration-files.html) you&#8217;ll need, you can create the module.
 
-##Create the module&#8217;s `module.xml` file
+##Add the module&#8217;s `module.xml` file
 Declare the module itself by adding a module.xml file in the `/etc` folder of your module.
 
 A module declares itself (i.e. defines its name and existence) in the `module.xml` file, located in the Magento install directory at `<ModuleName>/etc/`. 
@@ -23,11 +23,11 @@ The smallest working module.xml file would look something like this:
        <module name="Vendor_ModuleName" setup_version="2.0.0"/>
 	</config>
 
-...where you name your module, and provide the setup version number.
+...where `name`  is the name of your module, and `setup_version` is the version of Magento the module uses. Both of these attributes are required.
 
 
 
-##Create the module&#8217;s `composer.json` file
+##Add the module&#8217;s `composer.json` file
 
 
 	{

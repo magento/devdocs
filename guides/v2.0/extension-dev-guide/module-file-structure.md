@@ -36,24 +36,32 @@ Additionally, there are folders for configuration and other ancillary functions 
 * Api
 * etc
 * il8n
+* Plugin
 * view
 
 
 ####Add your own
 
-You can also add other folders you need for your module.
+You can also add any other folders you need for your module.
 
 
 
 ##Build the file structure
 
-Add a folder and give it the name of your module. Use a module name that is descriptive, and not too long.  
+Add a folder and give it the name of your module. Use a module name that is descriptive, but not too long. For example,
 
-Add the subfolders inside your module folder as you need them (Block, Controller, Model, view, and so on). 
+    mkdir module-catalog
+    cd module-catalog
+
+You can add subfolders inside your module folder as you need them (Block, Controller, Model, view, and so on).
+
+Or, you could just add them at once:
+
+    mkdir Api && mkdir Block && mkdir Controller && mkdir etc && mkdir Helper && mkdir il8n && mkdir Model && mkdir view
 
 Make sure you add the `etc` folder; it is required, and is where most of the configuration files, including `module.xml`, are kept.
 
-Along with the directories for those main components, you may need some additional directories for important things like configuration files, optional plugins, i18n files, APIs, and other files.
+
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Be aware that the standard placement of the &lt;ModuleName> directory within the overall Magento file structure is <code>app/code/&lt;Vendor>/&lt;ModuleName>/etc/</code>. However, if you are creating a new module for distribution, you can just create the &lt;ModuleName> directory and the required directories within it. </p> 
