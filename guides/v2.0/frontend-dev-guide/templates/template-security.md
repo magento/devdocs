@@ -11,15 +11,15 @@ redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-overview.html
 
 <h2>Security measures against XSS attacks</h2>
 
-<h4>Overview of XSS safe output rules</h4>
+Overview of XSS-safe output rules
 
-To prevent XSS issues Magento has defined and applied the following rules of escaping HTML content in templates:
+To prevent <a href="https://en.wikipedia.org/wiki/Cross-site_scripting">XSS</a> issues Magento recommends the following rules of escaping HTML content in templates:
 
-* If a method indicates that the contents is escaped, do not escape: `getTitleHtml()`, `getHtmlTitle()` (the title is ready for the HTML output)
+* If a method indicates that the contents are escaped, do not escape: `getTitleHtml()`, `getHtmlTitle()` (the title is ready for the HTML output)
 
-* Data are escaped using the `$block→escapeHtml()`,  `$block→escapeQuote()`,  `$block→escapeUrl()`, `$block→escapeXssInUrl()` methods
+* Escape data using the `$block→escapeHtml()`,  `$block→escapeQuote()`,  `$block→escapeUrl()`, `$block→escapeXssInUrl()` methods
 
-* Type casting and php function count() don't need escaping  (for example `echo (int)$var`, `echo (bool)$var`, `echo count($var)`)
+* Type casting and php function `count()` don't need escaping  (for example `echo (int)$var`, `echo (bool)$var`, `echo count($var)`)
 
 * Output in single quotes doesn't need escaping (for example `echo 'some text'`)
 
@@ -27,7 +27,7 @@ To prevent XSS issues Magento has defined and applied the following rules of esc
 
 * Otherwise, escape the data using the `$block→escapeHtml()` method
 
-The following code sample illustrates the XSS safe output in templates:
+The following code sample illustrates the XSS-safe output in templates:
 
 {% highlight php %}
 <?php echo $block->getTitleHtml() ?>
@@ -43,11 +43,11 @@ The following code sample illustrates the XSS safe output in templates:
 
 <h4>Static Test</h4>
 
-In order to improve security against XSS injections, a static test `XssPhtmlTemplateTest.php` is added to `dev\tests\static\testsuite\Magento\Test\Php\`.
+To improve security against XSS injections, a static test `XssPhtmlTemplateTest.php` is added to `dev\tests\static\testsuite\Magento\Test\Php\`.
 
-While running static test finds all echo calls in phtml-templates and determines if it is properly escaped or not.
+This static test finds all echo calls in PHTML-templates and determines if it is properly escaped or not.
 
-It will cover the following cases:
+It covers the following cases:
 
 * `/* @noEscape */` before output. Output doesn't require escaping. Test is green.
 
@@ -65,8 +65,8 @@ It will cover the following cases:
 
 * Other of previously mentioned. Output is not escaped. Test is red.
 
-Developers should filter phtml-templates of their modules by `/* @escapeNotVerified */` annotation and check "echo" output in them.
+Developers should filter PHTML-templates of their modules by `/* @escapeNotVerified */` annotation and check "echo" output in them.
 
 In case output doesn't need escaping, replace `/* @escapeNotVerified */` by`/* @noEscape */` annotation.
 
-Otherwise, make changes according to xss-safe output rules and remove `/* @escapeNotVerified */` annotation.
+Otherwise, make changes according to xss-safe output rules and remove `/* @escapeNotVerified */`.
