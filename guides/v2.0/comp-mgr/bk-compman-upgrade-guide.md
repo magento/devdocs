@@ -14,11 +14,13 @@ Magento provides two applications you can use after installing the Magento appli
 
 *	<a href="{{ site.gdeurl }}comp-mgr/compman-start.html">Component Manager</a>
 
-	Updates or uninstalls *components*, which can be any of the following:
+	Updates *components*, which can be any of the following:
 
 	*	Modules (extend Magento capabilities)
 	*	Themes (change the look and feel of your storefront and Admin)
 	*	Language packages (localize the storefront and Admin)
+
+	*Update* means updating the component version, uninstalling it, enabling it, or disabling it.
 
 *	<a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">System Upgrade</a>
 

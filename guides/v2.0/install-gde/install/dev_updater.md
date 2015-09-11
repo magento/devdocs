@@ -1,12 +1,13 @@
 ---
 layout: default
 group: install_pre
-subgroup: Prerequisites
+subgroup: T_Developer
 title: Set up the updater
 menu_title: Set up the updater
-menu_order: 10
+menu_order: 100
 menu_node: 
-github_link: install-gde/prereq/prereq_updater.md
+github_link: install-gde/install/dev_updater.md
+redirect_from: /guides/v2.0/install-gde/prereq/prereq_updater.html
 ---
 
 #### Contents
@@ -120,4 +121,4 @@ For example, if you cloned the updater to `/var/www/html/magento2-updater` and M
 
 #### Next step
 
-*	<a href="{{ site.gdeurl }}install-gde/continue-to-install.html">Installation options</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/file-system-perms.html">Set file system ownership and permissions</a>
