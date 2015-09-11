@@ -2,7 +2,7 @@
 layout: default
 group: extension-dev-guide
 subgroup: 5_Package
-title: PHP developer guide
+title: Package a module
 menu_title: Package a module
 menu_order: 2
 github_link: extension-dev-guide/package_module.md
