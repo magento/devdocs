@@ -43,7 +43,7 @@ The following code sample illustrates the XSS safe output in templates:
 
 <h4>Static Test</h4>
 
-In order to improve security against XSS injections, a static test is added to `dev\tests\static\testsuite\Magento\Test\Php\`.
+In order to improve security against XSS injections, a static test `XssPhtmlTemplateTest.php` is added to `dev\tests\static\testsuite\Magento\Test\Php\`.
 
 While running static test finds all echo calls in phtml-templates and determines if it is properly escaped or not.
 
