@@ -209,10 +209,16 @@
 
 <p>To give the user a password, enter the following command as a user with <code>root</code> privileges:</p>
 
-<pre><code>passwd
+<pre><code>passwd &lt;username&gt;
 </code></pre>
 
 <p>Follow the prompts on your screen to create a password for the user.</p>
+
+<p>For example, to create a user named <code>magento_user</code> and give the user a password, enter:</p>
+
+<pre><code>sudo adduser magento_user
+sudo passwd magento_user
+</code></pre>
 
 <div class="bs-callout bs-callout-warning">
     <p>Because the point of creating this user is to provide added security, make sure you create a <a href="https://en.wikipedia.org/wiki/Password_strength" target="_blank">strong password</a>.</p>
