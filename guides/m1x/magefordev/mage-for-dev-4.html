@@ -208,9 +208,9 @@ public function indexAction() {
 
 <p>The URI references a location in the (say it with me) global config.  The first portion of the URI (in the above examples <tt>page</tt>) will be used to query the global config to find the page class name.  The second portion of the URI (in the two examples above, <tt>html</tt> and <tt>template_links</tt>) will be appended to the base class name to create the class name Magento should instantiate.</p>
 
-<p>We'll go through <tt>page/html</tt> as an example.  First, Magento looks for the global config node at </p>
+<p>We'll go through <tt>page/html</tt> as an example.  First, Magento looks for the global config node at file</p>
 
-<pre>global/blocks/page</pre>
+<pre>app/code/core/Mage/Page/etc/config.xml</pre>
 
 <p>and finds
 <pre>
@@ -235,7 +235,7 @@ public function indexAction() {
 
 <h2>Using references</h2>
 
-<p>&lt;refernce name="" /&gt; will hook all contained XML declarations into an existing block with the specified name. Contained &lt;block /&gt; nodes will be assigned as child blocks to the referenced parent block.</p>
+<p>&lt;reference name="" /&gt; will hook all contained XML declarations into an existing block with the specified name. Contained &lt;block /&gt; nodes will be assigned as child blocks to the referenced parent block.</p>
 
 <pre>
 &lt;layout version="0.1.0">
