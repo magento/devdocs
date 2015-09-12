@@ -15,7 +15,7 @@ To prevent <a href="https://en.wikipedia.org/wiki/Cross-site_scripting">XSS</a> 
 
 * If a method indicates that the contents are escaped, do not escape: `getTitleHtml()`, `getHtmlTitle()` (the title is ready for the HTML output)
 
-* Escape data using the `$block→escapeHtml()`,  `$block→escapeQuote()`,  `$block→escapeUrl()`, `$block→escapeXssInUrl()` methods
+* Escape data using the `$block->escapeHtml()`,  `$block->escapeQuote()`,  `$block->escapeUrl()`, `$block->escapeXssInUrl()` methods
 
 * Type casting and php function `count()` don't need escaping  (for example `echo (int)$var`, `echo (bool)$var`, `echo count($var)`)
 
@@ -23,7 +23,7 @@ To prevent <a href="https://en.wikipedia.org/wiki/Cross-site_scripting">XSS</a> 
 
 * Output in double quotes without variables doesn't need escaping (for example `echo "some text"`)
 
-* Otherwise, escape the data using the `$block→escapeHtml()` method
+* Otherwise, escape the data using the `$block->escapeHtml()` method
 
 The following code sample illustrates the XSS-safe output in templates:
 
