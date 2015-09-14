@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Set up the updater</title>
+	<title>Update components</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
@@ -155,7 +155,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Set up the updater</h1>
+		<h1 class="page-heading">Update components</h1>
 			
 			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/install-gde/install/dev_updater.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -166,152 +166,53 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h4 id="contents">Contents</h4>
+		<p>Contributing developers update components by specifying components in Magento’s <code>composer.json</code>. You <em>cannot</em> use the graphical Component Manager or System Upgrade utilities to do this.</p>
 
-<ul>
-  <li><a href="#compman-updater-over">Overview of the updater</a></li>
-  <li><a href="#compman-updater-clone">Cloning the updater repository</a></li>
-</ul>
-
-<h2 id="compman-updater-over">Overview of the updater</h2>
-<p>The updater synchronizes with Magento Connect for updating components and upgrading the Magento software. Contributing developers must clone the updater GitHub repository and copy the files to <code>&lt;your Magento install dir&gt;/update</code></p>
-
-<h2 id="compman-updater-clone">Cloning the updater repository</h2>
-<p>You can clone the Magento 2 Updater repository using either SSH or HTTPS protocols:</p>
-
-<ul>
-  <li>Use SSH for better security (no user name and password are exchanged). This requires you to <a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank">share a public key</a> with GitHub.</li>
-  <li>Use HTTPS if you don’t share an SSH key with GitHub (your user name and password are encrypted before being sent to GitHub).</li>
-</ul>
-
-<p>See one of the following section:</p>
-
-<ul>
-  <li><a href="#compman-clone-ssh">Clone with SSH</a></li>
-  <li><a href="#compman-clone-https">Clone with HTTPS</a></li>
-  <li><a href="#compman-clone-composer">Update installation dependencies</a></li>
-  <li><a href="#compman-copy">Copy the files</a></li>
-</ul>
-
-<h3 id="compman-clone-ssh">Clone with SSH</h3>
-<p>To clone the Magento 1 Updater repository using the SSH protocol:</p>
+<p>You can either add a <code>require</code> section do <code>composer.json</code> or you can use the <code>composer require</code> command as follows:</p>
 
 <ol>
+  <li>Log in to the Magento server, or switch to, the Magento file system owner.</li>
   <li>
-    <p>Copy to the clipboard the Magento 2 Updater repository SSH clone URL.</p>
+    <p>Change to the directory to which you cloned the Magento application. For example,</p>
 
-    <p>a.	In a web browser, go to <a href="https://github.com/magento/magento2-updater" target="_blank">the Magento 2 Updater repository</a>.</p>
-
-    <p>b.	On the right side of the page, under the <em>clone URL</em> field, click <strong>SSH</strong>.</p>
-
-    <p>c.	Click the <strong>Copy to clipboard</strong> button.</p>
-
-    <p>The following figure shows an example.</p>
-
-    <p><img src="/common/images/install_mage2_clone-ssh.png" alt="Clone the Magento 2 Updater repository using SSH" /></p>
-  </li>
-  <li>
-    <p>Change to your web server’s docroot directory.</p>
-
-    <p>Typically, for Ubuntu, it’s <code>/var/www</code> and for CentOS it’s <code>/var/www/html</code>.</p>
-
-    <p>Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here.</a></p>
-  </li>
-  <li>
-    <p>Enter the following command:</p>
-
-    <pre><code>git clone git@github.com:magento/magento2-updater.git
+    <pre><code>cd /var/www/magento2
 </code></pre>
-  </li>
-  <li>
-    <p>Wait for the repository to clone on your server.</p>
-
-    <div class="bs-callout bs-callout-info" id="info">
-    <p>If the following error displays, make sure you <a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank">shared your SSH key</a> with GitHub: </p>
-        <pre>Cloning into 'magento2'...
-Permission denied (publickey).
-fatal: The remote end hung up unexpectedly</pre>
-</div>
-  </li>
-  <li>
-    <p>Continue with <a href="#compman-clone-composer">Update installation dependencies</a>.</p>
   </li>
 </ol>
 
-<h3 id="compman-clone-https">Clone with HTTPS</h3>
-<p>To clone the Magento 2 Updater repository using the HTTPS protocol:</p>
+<p>You have the following options:</p>
 
-<ol>
-  <li>
-    <p>Copy to the clipboard the Magento 2 Updater repository HTTPS clone URL.</p>
+<h3 id="use-the-composer-require-command">Use the <code>composer require</code> command</h3>
+<p>Command usage:</p>
 
-    <p>a.	In a web browser, go to <a href="https://github.com/magento/magento2-updater" target="_blank">the Magento 2 Updater repository</a>.</p>
-
-    <p>b.	On the right side of the page, under the <em>clone URL</em> field, click <strong>HTTPS</strong>.</p>
-
-    <p>c.	Click the <strong>Copy to clipboard</strong> button.</p>
-
-    <p>The following figure shows an example.</p>
-
-    <p><img src="/common/images/install_mage2_clone-https.png" alt="Clone the Magento 2 Updater repository using HTTPS" /></p>
-  </li>
-  <li>
-    <p>Change to your web server’s docroot directory.</p>
-
-    <p>Typically, for Ubuntu, it’s <code>/var/www</code> and for CentOS it’s <code>/var/www/html</code>.</p>
-  </li>
-  <li>
-    <p>Enter the following command:</p>
-
-    <pre><code>git clone https://github.com/magento/magento2-updater.git
+<pre><code>composer require &lt;vendor&gt;/&lt;name&gt;:&lt;version&gt;
 </code></pre>
 
-    <p>If the command fails with an authentication error, try</p>
+<p>For example,</p>
 
-    <pre><code>git clone https://&lt;your GitHub user name&gt;:&lt;your password&gt;@github.com/magento/magento2-updater.git
-</code></pre>
-  </li>
-  <li>
-    <p>Wait for the repository to clone on your server.</p>
-  </li>
-  <li>
-    <p>Continue with the next section.</p>
-  </li>
-</ol>
-
-<h3 id="compman-clone-composer">Update installation dependencies</h3>
-<p>The updater application has dependencies specified in its <code>composer.json</code> file. Before you continue, resolve those dependencies as follows:</p>
-
-<ol>
-  <li>Change to the directory to which you cloned the updater application.</li>
-  <li>
-    <p>As a user with permissions to write to the directory, enter</p>
-
-    <pre><code>composer install
+<pre><code>composer require example/module:1.0.0
 </code></pre>
 
-    <p>Wait for dependencies to resolve and continue with the next section.</p>
-  </li>
-</ol>
+<p>Wait while Composer updates dependencies and installs the component.</p>
 
-<h3 id="compman-copy">Copy the files</h3>
-<p>As a user with privileges to write files to the Magento file system, enter the following command:</p>
+<h3 id="add-a-require-section-to-composerjson">Add a <code>require</code> section to <code>composer.json</code></h3>
+<p>Open <code>composer.json</code> in a text editor.</p>
 
-<pre><code>mkdir -p &lt;your Magento install dir&gt;/update
-cp -R &lt;updater-clone-directory&gt;/* &lt;your Magento install dir&gt;/update
+<p>Add a <code>require</code> section like the following:</p>
+
+<pre><code>"require": {
+    &lt;vendor&gt;/&lt;name&gt;:&lt;version&gt;,
+    &lt;vendor&gt;/&lt;name&gt;:&lt;version&gt;"
+}
 </code></pre>
 
-<p>For example, if you cloned the updater to <code>/var/www/html/magento2-updater</code> and Magento is installed in <code>/var/www/html/magento2</code>, enter</p>
+<p>Save your changes to <code>composer.json</code>, exit the text editor, and enter <code>composer update</code></p>
 
-<pre><code>mkdir -p /var/www/html/magento2/update
-cp -R /var/www/html/magento2-updater/* /var/www/html/magento2/update
-</code></pre>
+<h3 id="for-more-information">For more information</h3>
+<p>If you have issues, see <a href="https://getcomposer.org/doc/articles/troubleshooting.md" target="_blank">Composer troubleshooting</a>.</p>
 
 <h4 id="next-step">Next step</h4>
-
-<ul>
-  <li><a href="/guides/v2.0/install-gde/install/file-system-perms.html">Set file system ownership and permissions</a></li>
-</ul>
+<p><a href="/guides/v2.0/install-gde/install/file-system-perms.html">Set file system ownership and permissions</a></p>
 
 
 		</div>
@@ -610,7 +511,7 @@ cp -R /var/www/html/magento2-updater/* /var/www/html/magento2/update
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v2.0/install-gde/install/dev_updater.html">Set up the updater</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/install-gde/install/dev_updater.html">Update components</a></li>
 						
 								
 								
