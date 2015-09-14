@@ -25,9 +25,9 @@ This topic discusses how Varnish caching works with Magento using:
 	<p>This topic covers only the default options in the preceding list. There are many other ways to configure caching in complex scenarios (for example, using a Content Delivery Network); those methods are beyond the scope of this guide.</p>
 </div>
 
-On the first browser request, cacheable assets are delivered to the client browser from Varnish. On the second request for the same object, the assets are cached in the client's browser. 
+On the first browser request, cacheable assets are delivered to the client browser from Varnish and cached on the browser.  
 
-In addition, Varnish uses an Entity Tag (<a href="https://en.wikipedia.org/wiki/HTTP_ETag" target="_blank">ETag</a>) for static assets. The ETag provides a way to determine when static files change on the server. As a result, static assets are sent to the client when they change on the server or when the client chooses to refresh the browser cache, typically by pressing F5 or Control+F5.
+In addition, Varnish uses an Entity Tag (<a href="https://en.wikipedia.org/wiki/HTTP_ETag" target="_blank">ETag</a>) for static assets. The ETag provides a way to determine when static files change on the server. As a result, static assets are sent to the client when they change on the server&mdash;either on a new request from a browser or when the client refreshes the browser cache, typically by pressing F5 or Control+F5.
 
 More detail is provided in the sections that follow.
 
@@ -41,7 +41,7 @@ The following figure shows an example using a browser inspector.
 
 <img src="{{ site.baseurl }}common/images/varnish_apache_first_visit.png" alt="The first time a request is made for a cacheable object, Varnish delivers it to the browser">
 
-The preceding example shows a request for the storefront main page (`m2_ce_my`). CSS and JavaScript assets are delivered to the client browser.
+The preceding example shows a request for the storefront main page (`m2_ce_my`). CSS and JavaScript assets are cached on the client browser.
 
 <div class="bs-callout bs-callout-info" id="info">
 	<p>Most static assets have an HTTP 200 (OK) status code, indicating the asset was retrieved from the server.</p>
@@ -64,7 +64,7 @@ In addition, static assets are returned with a 304 (Not Modified) HTTP status co
 
 <p><img src="{{ site.baseurl }}common/images/varnish_304.png" alt="The HTTP 304 (Not Modified) response code indicates the static asset in the local cache is the same as on the server"></p>
 
-Because of the 304 response code, the static asset *content* is not transferred; only HTTP headers are downloaded to the browser. 
+The 304 status code occurs because the user invalidated their local cache and the content on the server did not change. Because of the 304 status code, the static asset *content* is not transferred; only HTTP headers are downloaded to the browser. 
 
-If the user invalidates their browser's cache, or if the content changes on the server, the client downloads the static asset with an HTTP 200 (OK) status code and a new ETag.
+If the content changes on the server, the client downloads the static asset with an HTTP 200 (OK) status code and a new ETag.
 
