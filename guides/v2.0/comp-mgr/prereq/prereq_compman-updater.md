@@ -23,25 +23,23 @@ Before you can use the Component Manager and System Upgrade, you must do all of 
 <h2 id="compman-prereq-cron">Set up cron jobs</h2>
 To enable the updater to work for both the Component Manager and System Upgrade, you must configure two cron jobs. Each cron job should run every minute.
 
-Enable the cron jobs as <a href="http://ss64.com/bash/crontab.html" target="_blank">crontabs</a> for the web server user because that user runs the Component Manager and System Upgrade. In this topic, it's assumed that the web server user name is `apache` for CentOS and `www-data` for Ubuntu.
-
-If you're not sure, enter `ps aux | egrep '(apache|httpd)'`
+Enable the cron jobs as <a href="http://ss64.com/bash/crontab.html" target="_blank">crontabs</a> for the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a> because that user runs the updater application for the Component Manager and System Upgrade. 
 
 1.	As a user with `root` privileges, see if a crontab is already set up.
 
-		crontab -u <web server user name> -l
+		crontab -u <Magento file system owner user name> -l
 
 	For example, on CentOS
 
-		crontab -u apache -l
+		crontab -u magento_user -l
 
 	If no crontab has been set up for the user, the following message displays:
 
-		no crontab for apache
+		no crontab for magento_user
 
 2.	If necessary, set up the crontabs as follows as a user with root privileges:
 
-		crontab -u <web server user name> -e
+		crontab -u <Magento file system owner user name> -e
 
 	An editor displays. In the editor, enter the following:
 

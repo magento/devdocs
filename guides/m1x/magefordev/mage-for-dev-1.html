@@ -258,7 +258,7 @@ $model-&gt;save();
 <p>You'll also notice it's possible to chain together several calls to the  set method: <br/>
 <tt>$model-&gt;setPrice($price)-&gt;setSku('SK83293432');</tt>
 
-<p>That's because each set method returns and instance of the Model.  This is a pattern you'll see used in much of the Magento codebase.</p>
+<p>That's because each set method returns an instance of the Model.  This is a pattern you'll see used in much of the Magento codebase.</p>
 
 <p>Magento's ORM also contains a way to query for multiple Objects via a Collections interface.  The following would get us a collection of all products that cost $5.00</p>
 
