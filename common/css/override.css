@@ -193,6 +193,7 @@ TABLE {
 
     margin: 1.5em 10px 0.5em 14px;
     color: rgba(97, 57, 42, 0.99);
+    text-transform: capitalize;
     
 }
 
@@ -257,5 +258,76 @@ outline:none
   width: 60%;*/
 }
 
-#searcharoo {display: none;}
+#searchResultsBox {
+    display: none;
+ overflow: auto;
+ position: absolute;
+ top: 8%;
+ left: 6%;
+ right: 6%;
+ bottom: 8%;
+ padding-top: 20px;
+ padding-right: 4%;
+ padding-bottom: 4%;
+ z-index: 1001;
+    }
+
+
+DIV.searchResultsBoxClose {
+    width: 48px;
+    margin-top: 69px;
+    
+    position: fixed;
+top: 2%;
+/* left: 88%; */
+right: 2.5%;
+bottom: 98%;
+    z-index: 5000;
+/*  background-color: #2a2929; */
+    margin: 2% 2% 2% 2%;
+    padding:.3%;
+/*top right bottom left */
+/*  border: 3px rgba(240, 234, 234, 0.82) solid;
+    border-radius: 4px;*/
+    cursor: hand; cursor: pointer;
+
+}
+
+#test {
+    position: absolute;
+    top: 170px;
+    z-index: 1001;
+   
+    }
+
+
+
+.searchResultsBack {
+display: none;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+min-width: 100%;
+min-height: 100%;
+height: 100%;
+opacity: .75;
+z-index: 1000;
+background-color:#6d86b3;
+cursor: hand; cursor: pointer;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 

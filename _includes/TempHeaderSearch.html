@@ -14,7 +14,6 @@
 	<link rel="stylesheet" href="{{ site.baseurl }}common/css/override.css" />
 	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="{{ site.baseurl }}common/js/devdocs.js"></script>
 
 <script>
   (function() {
@@ -27,14 +26,19 @@
 </script>
 
 
-<script>
-devdocs();
-</script>
 
 </head>	
 <body>
 
-<div id="searcharoo"><gcse:searchresults-only></gcse:searchresults-only></div>
+
+
+<div class="searchResultsBack"></div>
+<div id="searchResultsBox">
+	<div class="searchResultsBoxClose"><img src="{{ site.baseurl }}common/images/close.png" alt="Close"></div>
+
+	<gcse:searchresults-only></gcse:searchresults-only>
+</div>
+
 <header id="nav-main" class="nav-main">
 
 	<!--Top Navigation-->
