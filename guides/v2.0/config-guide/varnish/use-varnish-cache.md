@@ -50,9 +50,7 @@ To refresh the cache using the Admin, click **SYSTEM** > Tools > **Cache Managem
 To refresh the cache using the command line, you typically use the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean">`magento cache:clean [type]`</a> command as the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
 
 <h2 id="use-varnish-magento-purge">Purge multiple Varnish hosts</h2>
-Coming soon.
-
-<!-- If you use more than one Varnish server to accelerate Magento web caching, you can purge all Varnish hosts request using the <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-deployment.html">`magento setup:config:set`</a> command. 
+If you use more than one Varnish server to accelerate Magento web caching, you can purge all Varnish hosts request using the <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-deployment.html">`magento setup:config:set`</a> command. 
 
 You can use the optional parameter `--http-cache-hosts` parameter to specify a comma-separated list of Varnish hosts and listen ports. (Do not separate hosts with a space character.)
 
@@ -60,4 +58,4 @@ The parameter format must be `<hostname or ip>:<listen port>`, where you can omi
 
 For example, 
 
-	magento setup:config:set --http-cache-hosts=192.0.2.100,192.0.2.155:6081 -->
+	magento setup:config:set --http-cache-hosts=192.0.2.100,192.0.2.155:6081
