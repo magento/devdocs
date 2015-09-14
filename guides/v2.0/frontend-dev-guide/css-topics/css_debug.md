@@ -112,7 +112,7 @@ Where the following notation is used:
 </ul>
 </li>
 <li id="livereload">
-(Optional) If you want to use Grunt for "watching" changes automatically, without reloading pages in a browser each time, install the <a href="http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions" target="_blank">LiveReload extension</a> in your browser. 
+(Optional) If you want to use Grunt for "watching" changes automatically, without reloading pages in a browser each time, install the <a href="http://livereload.com/extensions/" target="_blank">LiveReload extension</a> in your browser. 
 
 </li>
 </ol>
