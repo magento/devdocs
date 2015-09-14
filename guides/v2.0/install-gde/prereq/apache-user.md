@@ -2,63 +2,105 @@
 layout: default
 group: install_pre
 subgroup: Prerequisites
-title: Switch to the Apache user
-menu_title: Switch to the Apache user
+title: Create the Magento file system owner
+menu_title: Create the Magento file system owner
 menu_node:
 menu_order: 6
 github_link: install-gde/prereq/apache-user.md
 ---
 
-<h2 id="install-update-depend-apache">Switch to the Apache user</h2>
+#### Contents
+*	<a href="#install-update-depend-user-over">Overview of ownership and permissions</a>
+*	<a href="#install-update-depend-user-create">Create a user and give the user a strong password</a>
+*	<a href="#install-update-depend-user-group">Add the Magento file system owner to the web server group</a>
+*	<a href="#install-update-depend-user-switch">Switch to the Magento file system owner</a>
 
-For the installation to work properly, all files written by Composer *must* be owned by the web server user. There are at least two ways to do this:
+<h2 id="install-update-depend-user-over">Overview of ownership and permissions</h2>
+Even in a development environment, you want your Magento installation to be secure. To help prevent issues related to unauthorized people or processes doing potentially harmful things to your system, we recommend some guidelines related to file system ownership and security:
 
-*	Run Composer as the web server user as discussed in this section
-*	Run Composer as another user and change file ownership afterward (more secure)
+*	The web server user should *not* own the files and directories on the Magento file system; however, the web server user must have write access to some directories.
+
+	The *web server user* runs the web-based Setup Wizard installer and everything you do in the Magento Admin. This user must have the ability to write media files and so on. However, the user cannot *own* the files because that can potentially lead to security issues because any web-based process could potentially attack the Magento file system.
+
+*	Another user should own the Magento files and directories; this user must not be `root`.
+
+	This user runs the Magento cron job, command-line utilities, and has full control over all Magento files and directories. Because the user exists only on the server, it's very difficult for a malicious process to exploit it.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>We suggest running Composer in a web server shell in a development environment <em>only</em>. In a more secure environment, you should change ownership to the web server user after you run Composer.</p></span>
+  <p>Although you can install and use the Magento software as the web server user, for the preceding reasons, we don't recommend it and don't discuss it in this guide.</p></span>
 </div>
 
-In the discussion that follows, it's assumed that the CentOS web server user is `apache` and the Ubuntu web server user is `www-data`.
+<h2 id="install-update-depend-user-create">Create a user and give the user a strong password</h2>
+This section discusses how to create the Magento file system owner.
 
-<h3 id="install-update-depend-apache-ubuntu">Ubuntu</h3>
+<div class="bs-callout bs-callout-warning">
+    <p>If you don't have <code>root</code> privileges on your Magento server, you can use another local user account. Make sure the user has a strong password and continue with <a href="#install-update-depend-user-group">Add the Magento file system owner to the web server group</a>.</p>
+</div>
 
-To switch to the web server user on Ubuntu:
+To create a user on CentOS or Ubuntu, enter the following command as a user with `root` privileges:
 
-1.	Enter the following command:
+	adduser <username>
 
-		su www-data
+To give the user a password, enter the following command as a user with `root` privileges:
 
-2.	If a password prompt displays but you don't know the user's password, continue with the next step; otherwise, continue with <a href="#install-composer-install">Running Composer to update dependencies</a>.
+	passwd <username>
 
-3.	To enable the `www-data` user's shell and to set a password, enter the following commands in the order shown:
+Follow the prompts on your screen to create a password for the user.
 
-		sudo chsh -s /bin/bash www-data && sudo passwd www-data
+For example, to create a user named `magento_user` and give the user a password, enter:
 
-4.	Run the following command again and enter the user's password:
+	sudo adduser magento_user
+	sudo passwd magento_user
 
-		su www-data
+<div class="bs-callout bs-callout-warning">
+    <p>Because the point of creating this user is to provide added security, make sure you create a <a href="https://en.wikipedia.org/wiki/Password_strength" target="_blank">strong password</a>.</p>
+</div>
 
-5.	Continue with <a href="#install-composer-install">Running Composer to update dependencies</a>.
+<h2 id="install-update-depend-user-group">Add the Magento file system owner to the web server group</h2>
+This section discusses how to find the name of the web server user's group and to add your Magento user to that group. The user must belong to the web server group so the user can share access to files with the web server user. (This includes files created by the Magento Admin or other web-based utilities.)
 
-<h3 id="install-update-depend-apache-centos">CentOS</h3>
+See one of the following sections:
 
-To switch to the web server user on CentOS:
+*	<a href="#install-update-depend-user-findgroup">Find the web server group</a>
+*	<a href="#install-update-depend-user-add2group">Add the Magento file system owner to the web server group</a>
 
-1.	Enter the following command:
+<h3 id="install-update-depend-user-findgroup">Find the web server group</h3>
+To find the web server user's group:
 
-		su - apache
+*	CentOS: `egrep -i '^user|^group' /etc/httpd/conf/httpd.conf`
 
-	If you don't know the user's password or if the following error displays, continue with the next step; otherwise, continue with <a href="#install-composer-install">Running Composer to update dependencies</a>.
+	Typically, the user and group name are both `apache`
+*	Ubuntu: `ps aux | grep apache` to find the apache user, then `groups <apache user>` to find the group
 
-		This account is currently not available.
+	Typically, the user name and the group name are both `www-data`
 
-2.	To give `apache` a valid shell account so you can switch to it, enter the following command:
+<h3 id="install-update-depend-user-add2group">Add the Magento file system owner to the web server group</h3>
+To add a user to the web server's group (assuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with `root` privileges:
 
-		sudo chsh -s /bin/bash apache && sudo passwd apache
+*	CentOS: `usermod -a -G apache <username>`
+*	Ubuntu: `useradd -G www-data <username>`
 
-3.	Run the following command again; this time, it should work:
+For example, to add the user `deborah` to the `apache` group on CentOS:
 
-		su - apache
+	usermod -a -G apache deborah
+
+<h3 id="install-update-depend-user-group-confirm">Confirm the user's group</h3>
+To confirm your Magento user is a member of the web server group, enter the following command:
+
+	groups <user name>
+
+<h2 id="install-update-depend-user-switch">Switch to the Magento file system owner</h2>
+After you've performed the other tasks in this topic, enter one of the following commands to switch to that user:
+
+*	Ubuntu: `su <username>`
+*	CentOS: `su - <username>`
+
+For example,
+
+	su magento_user
+
+### Next steps
+*	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Optional software</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">Security-related prerequisites</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Your install or upgrade path</a>

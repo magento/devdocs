@@ -81,7 +81,7 @@ where
 <tr>
 	<td>page_cache</td>
 	<td><p>Specify the segment name to use a particular segment or a default shortcut for all other caches.</p>
-		<p>The <code>default</code> cache segment enables you to configure all cache segments except for <code>page_cache</code>.</td>
+		<p>The <code>default</code> cache segment enables you to configure all cache segments except for <code>page_cache</code>.</p></td>
 </tr>
 <tr>
 	<td>server</td>
@@ -93,9 +93,8 @@ where
 </tr>
 <tr>
 	<td>persistent</td>
-	<td>Specify a unique string to enable persistent connections. For example, <code>sess-db0</code>.
-
-		Note that there are <a href="https://github.com/nicolasff/phpredis/issues/70" target="_blank">known issues phpredis and php-fpm</a>.</td>
+	<td><p>Specify a unique string to enable persistent connections. For example, <code>sess-db0</code>.</p>
+		<p>Note that there are <a href="https://github.com/nicolasff/phpredis/issues/70" target="_blank">known issues phpredis and php-fpm</a>.</p></td>
 </tr>
 <tr>
 	<td>database</td>
@@ -107,7 +106,7 @@ where
 </tr>
 <tr>
 	<td>force_standalone</td>
-	<td>Use <code>0</code> for phpredis or <code>1</code> for standalone PHP</td>
+	<td>Use <code>0</code> for phpredis or <code>1</code> for standalone PHP.</td>
 </tr>
 <tr>
 	<td>connect_retries</td>
@@ -121,7 +120,7 @@ You can find more information about configuring Redis from the following:
 
 *	<a href="http://davidalger.com/development/magento/configuring-magento-2-to-use-redis-cache-backend/" target="_blank">David Alger</a>
 *	<a href="http://www.techytalk.info/configuring-cache-storage-backends-magento-2-redis/" target="_blank">TechyTalk</a>
-*	<a href="http://info2.magento.com/rs/magentoenterprise/images/MagentoECG-UsingRedisasaCacheBackendinMagento.pdf" target="_blank">Magento Expert Consulting Group (ECG) article <em>written for Magento 1.x</em>
+<!-- *	<a href="http://info2.magento.com/rs/magentoenterprise/images/MagentoECG-UsingRedisasaCacheBackendinMagento.pdf" target="_blank">Magento Expert Consulting Group (ECG) article <em>written for Magento 1.x</em> -->
 
 #### Related topics
 

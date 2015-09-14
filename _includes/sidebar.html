@@ -2,6 +2,97 @@
 <aside class="sidebar">
 	<div class="sidebar-wrapper">
 
+{% if page.group == "compman" %}
+<h4>Component Manager and System Upgrade Guide</h4>
+{% endif %}
+
+{% if page.group == "coding-standards" %}
+<h4>Coding standards</h4>
+{% endif %}
+
+
+{% if page.group == "rest" %}
+<h4>REST reference</h4>
+{% endif %}
+
+
+{% if page.group == "get-started" %}
+<h4>Getting started with web APIs</h4>
+{% endif %}
+
+
+
+{% if page.group == "pattern" %}
+<h4>Admin pattern Library</h4>
+{% endif %}
+
+
+
+{% if page.group == "mtf-guide" %}
+<h4>Testing framework guide</h4>
+{% endif %}
+
+
+
+{% if page.group == "migration" %}
+<h4>Migration guide</h4>
+{% endif %}
+
+{% if page.group == "release-notes" %}
+<h4>Release Notes</h4>
+{% endif %}
+
+{% if page.group == "extension-dev-guide" %}
+<h4>PHP developer guide</h4>
+{% endif %}
+
+{% if page.group == "arch-guide" %}
+<h4>Architecture guide</h4>
+{% endif %}
+
+{% if page.group == "fedg" %}
+<h4>Frontend developer guide</h4>
+{% endif %}
+
+{% if page.group == "UI Library" %}
+<h4>UI Library Components</h4>
+{% endif %}
+
+{% if page.group == "jsdg" %}
+<h4>JavaScript developer guide</h4>
+{% endif %}
+
+{% if page.group == "install2" %}
+<h4>Installation guide</h4>
+{% endif %}
+
+{% if page.group == "install_cli" %}
+<h4>Installation guide</h4>
+{% endif %}
+
+{% if page.group == "install_pre" %}
+<h4>Installation guide</h4>
+{% endif %}
+
+{% if page.group == "install" %}
+<h4>Installation guide</h4>
+{% endif %}
+
+{% if page.group == "install_wiz" %}
+<h4>Installation guide</h4>
+{% endif %}
+
+{% if page.group == "install_trouble" %}
+<h4>Installation guide</h4>
+{% endif %}
+
+{% if page.group == "config-guide" %}
+<h4>Configuration guide</h4>
+{% endif %}
+
+
+
+
 		<ul role="navigation">
 		
 		{% assign categories = site.articles | group_by:"group" %}
