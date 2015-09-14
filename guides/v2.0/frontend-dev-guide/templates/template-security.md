@@ -6,7 +6,7 @@ title: Templates XSS security
 menu_title: Templates XSS security
 menu_order: 5
 github_link: frontend-dev-guide/templates/template-overview.md
-redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-overview.html
+redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-security.html
 ---
 
 <h2>Security measures against XSS attacks</h2>
@@ -62,9 +62,3 @@ It covers the following cases:
 * Output in double quotes without variables (for example `echo "some text"`). Test is green.
 
 * Other of previously mentioned. Output is not escaped. Test is red.
-
-Developers should filter PHTML-templates of their modules by `/* @escapeNotVerified */` annotation and check "echo" output in them.
-
-In case output doesn't need escaping, replace `/* @escapeNotVerified */` by`/* @noEscape */` annotation.
-
-Otherwise, make changes according to xss-safe output rules and remove `/* @escapeNotVerified */`.
