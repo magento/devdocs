@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Final verification</title>
+	<title>How Magento cache clearing works with Varnish</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/config-guide/varnish/config-varnish-final.html">
+	<link rel="canonical" href="//guides/v2.0/config-guide/varnish/use-varnish-cache.html">
 
 
 
@@ -155,9 +155,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Final verification</h1>
+		<h1 class="page-heading">How Magento cache clearing works with Varnish</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/config-guide/varnish/config-varnish-final.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/config-guide/varnish/use-varnish-cache.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -166,81 +166,66 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="config-varnish-final-verify">Final verification</h2>
-<p>Now that you’re using the <code>default.vcl</code> generated for you by Magento, you can perform some final verifications to make sure Varnish is working.</p>
-
-<h3 id="config-varnish-final-verify-headers">Verify HTTP response headers</h3>
-<p>Use <code>curl</code> or another utility to view HTTP response headers when you visit any Magento page in a web browser.</p>
-
-<p>For example,</p>
-
-<pre><code>curl -I -v --location-trusted 'http://192.0.2.55/magento2'
-</code></pre>
-
-<p>Important headers:</p>
-
-<pre><code>X-Magento-Cache-Control: max-age=86400, public, s-maxage=86400
-Age: 0
-X-Magento-Cache-Debug: MISS
-</code></pre>
-
-<div class="bs-callout bs-callout-info" id="info">
-	<p>This value is also acceptable: <code>X-Magento-Cache-Debug: HIT</code></p>
-</div>
-
-<h3 id="config-varnish-final-response">Check page load times</h3>
-<p>If Varnish is working, any Magento page with cacheable blocks should load in less than 150ms. Examples of such pages are the front door and storefront category pages.</p>
-
-<p>Use a browser inspector to measure page load times.</p>
-
-<p>For example, to use the Chrome inspector:</p>
-
-<ol>
-  <li>Access any cacheable Magento page in Chrome.</li>
-  <li>Right-click anywhere on the page.</li>
-  <li>From the pop-up menu, click <strong>Inspect Element</strong></li>
-  <li>In the inspector pane, click the <strong>Network</strong> tab.</li>
-  <li>Refresh the page.</li>
-  <li>
-    <p>Scroll to the top of the inspector pane so you can see the URL of the page you are viewing.</p>
-
-    <p>The following figure shows an example of loading the <code>magento2</code> index page.<br /><br />
-<img src="/common/images/config_varnish_inspector.png" alt="Click the page you're viewing" /></p>
-
-    <p>The page load time displays next to the page URL. In this case, the load time is 5 ms. This helps confirm that Varnish cached the page.</p>
-  </li>
-  <li>
-    <p>To view HTTP response headers, click the page URL (in the Name column).</p>
-
-    <p>You can view HTTP headers which are discussed in more detail in <a href="#config-varnish-final-verify-headers">Verify HTTP response headers</a>.</p>
-  </li>
-</ol>
-
-<h3 id="config-varnish-final-verify-cache">Verify the Magento cache</h3>
-<p>Make sure the <code>&lt;your Magento install dir&gt;/var/page_cache</code> directory is empty:</p>
-
-<ol>
-  <li>Log in to your Magento server, or switch to, the Magento file system owner.</li>
-  <li>
-    <p>Enter the following command:</p>
-
-    <pre><code>rm -rf &lt;your Magento install dir&gt;/var/page_cache/*
-</code></pre>
-  </li>
-  <li>Access one or more cacheable Magento pages.</li>
-  <li>
-    <p>Check the <code>var/page_cache/</code> directory.</p>
-
-    <p>If the directory is empty, congratulations! You successfully configured Varnish and Magento to work together!</p>
-  </li>
-  <li>If you cleared the <code>var/page_cache/</code> directory, restart Varnish.</li>
-</ol>
-
-<h4 id="next-steps">Next steps</h4>
+		<h4 id="contents">Contents</h4>
 <ul>
-  <li><a href="/guides/v2.0/config-guide/varnish/use-varnish-cache.html">How Magento cache clearing works with Varnish</a></li>
-  <li><a href="/guides/v2.0/config-guide/varnish/use-varnish-cache-how.html">How Varnish caching works</a></li>
+  <li><a href="#use-varnish-magento-purge">Varnish purging</a></li>
+  <li><a href="#use-varnish-cache">Refresh the Magento cache</a></li>
+  <li><a href="#use-varnish-magento-purge">Purge multiple Varnish hosts</a></li>
 </ul>
+
+<p>This topic discusses the basics of using Varnish as a web caching accelerator for Magento.</p>
+
+<h2 id="use-varnish-magento-purge">Varnish purging</h2>
+<p>According to <a href="https://www.varnish-cache.org/docs/trunk/users-guide/purging.html" target="_blank">Varnish documentation</a>, “A <em>purge</em> is what happens when you pick out an object from the cache and discard it along with its variants.” A Varnish purge is very similar to a Magento cache clean command (or clicking <strong>Flush Magento Cache</strong> in the Magento Admin).</p>
+
+<p>In fact, as discussed in this section, when you clean, flush, or refresh the Magento cache, Varnish purges as well.</p>
+
+<p>After you’ve installed and configured Varnish to work with Magento, the following actions can result in a Varnish purge:</p>
+
+<ul>
+  <li>
+    <p>Maintaining a website.</p>
+
+    <p>For example, anything you do in the Admin in:</p>
+
+    <ul>
+      <li><strong>STORES</strong> &gt; <strong>Configuration</strong> &gt; GENERAL &gt; <strong>General</strong></li>
+      <li><strong>STORES</strong> &gt; <strong>Configuration</strong> &gt; GENERAL &gt; <strong>Currency Setup</strong></li>
+      <li><strong>STORES</strong> &gt; <strong>Configuration</strong> &gt; GENERAL &gt; <strong>Store Email Addresses</strong></li>
+    </ul>
+
+    <p>When Magento detects such a change, a message displays informing you to refresh the cache. To do this, see <a href="#use-varnish-cache">Refresh the Magento cache</a>.</p>
+  </li>
+  <li>
+    <p>Maintaining a store (for example, adding or editing categories, prices, products, and promotional pricing rules).</p>
+
+    <p>Varnish is purged automatically when you perform any of these tasks.</p>
+  </li>
+  <li>
+    <p>Maintaining source code. </p>
+
+    <p>You should refresh the cache and also periodically delete everything in the <code>var/generation</code> and <code>var/di</code> directories. For information on refreshing the cache, see <a href="#use-varnish-cache">Refresh the Magento cache</a>.</p>
+  </li>
+</ul>
+
+<h2 id="use-varnish-cache">Refresh the Magento cache</h2>
+<p>You can refresh the Magento cache (also referred to as <em>cleaning</em> the cache) in the Magento Admin or using the command line.</p>
+
+<p>To refresh the cache using the Admin, click <strong>SYSTEM</strong> &gt; Tools &gt; <strong>Cache Management</strong>, then click <strong>Flush Magento Cache</strong> at the top of the page. (You can also refresh individual cache types.)</p>
+
+<p>To refresh the cache using the command line, you typically use the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean"><code>magento cache:clean [type]</code></a> command as the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a>.</p>
+
+<h2 id="use-varnish-magento-purge">Purge multiple Varnish hosts</h2>
+<p>If you use more than one Varnish server to accelerate Magento web caching, you can purge all Varnish hosts request using the <a href="/guides/v2.0/install-gde/install/install-cli-subcommands-deployment.html"><code>magento setup:config:set</code></a> command. </p>
+
+<p>You can use the optional parameter <code>--http-cache-hosts</code> parameter to specify a comma-separated list of Varnish hosts and listen ports. (Do not separate hosts with a space character.)</p>
+
+<p>The parameter format must be <code>&lt;hostname or ip&gt;:&lt;listen port&gt;</code>, where you can omit <code>&lt;listen port&gt;</code> if it’s port 80. </p>
+
+<p>For example, </p>
+
+<pre><code>magento setup:config:set --http-cache-hosts=192.0.2.100,192.0.2.155:6081
+</code></pre>
 
 
 		</div>
@@ -610,11 +595,11 @@ X-Magento-Cache-Debug: MISS
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v2.0/config-guide/varnish/config-varnish-final.html">Final verification</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-final.html">Final verification</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/use-varnish-cache.html">How Magento cache clearing works with Varnish</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/config-guide/varnish/use-varnish-cache.html">How Magento cache clearing works with Varnish</a></li>
 						
 								
 							
@@ -780,8 +765,8 @@ X-Magento-Cache-Debug: MISS
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/config-guide/varnish/config-varnish-final.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/config-guide/varnish/config-varnish-final.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/config-guide/varnish/use-varnish-cache.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/config-guide/varnish/use-varnish-cache.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>

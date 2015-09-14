@@ -278,7 +278,7 @@
   <li>
     <p>Restart Varnish:</p>
 
-    <pre><code>service varnish start
+    <pre><code>service varnish restart
 </code></pre>
   </li>
 </ol>
@@ -289,6 +289,13 @@
 </code></pre>
 
 <p>This should display error messages.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+	<p>If Varnish does not start as a service, you must configure SELinux rules to allow it to run. Consult the following resources:</p>
+		<ul><li><a href="http://flatlinesecurity.com/posts/varnish-4-selinux/" target="_blank">flatlinesecurity</a></li>
+			<li><a href="https://wiki.centos.org/HowTos/SELinux" target="_blank">CentOS wiki</a></li>
+			<li><a href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/sec-sel-policy-customizing.html" target="_blank">CentOS documentation</a></li></ul>
+</div>
 
 <h2 id="config-varnish-verify">Verify Varnish is working</h2>
 <p>The following sections discuss how you can verify that Varnish is working but <em>without</em> configuring Magento to use it. You should try this before you configure Magento.</p>
@@ -350,6 +357,23 @@ tcp        0      0 ::1:48509                   :::*                        LIST
 
 <h2 id="config-varnish-install">Install the Magento 2 software</h2>
 <p>Install the Magento 2 software if you haven’t already done so. When prompted for a Base URL, use the Varnish host and port 80 (for Varnish) because Varnish receives all incoming HTTP requests.</p>
+
+<p>Possible error installing Magento:</p>
+
+<pre><code>Error 503 Service Unavailable
+Service Unavailable
+XID: 303394517
+Varnish cache server
+</code></pre>
+
+<p>If you experience this error, edit <code>default.vcl</code> and add a timeout to the <code>backend</code> stanza as follows:</p>
+
+<pre><code>backend default {
+     .host = "127.0.0.1";
+     .port = "8080";
+     .first_byte_timeout = 600s;
+}
+</code></pre>
 
 <h2 id="config-varnish-verify-headers">Verify HTTP response headers</h2>
 <p>Now you can verify that Varnish is serving pages by looking at HTML response headers returned from any Magento page.</p>
@@ -769,7 +793,7 @@ X-Magento-Cache-Debug: HIT
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/config-guide/varnish/config-varnish.html">Configure Varnish</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/config-guide/varnish/config-varnish.html">Configure and use Varnish</a></li>
 									
 								
 								
@@ -794,7 +818,11 @@ X-Magento-Cache-Debug: HIT
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-use-varnish.html">Use Varnish with Magento</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/use-varnish-cache.html">How Magento cache clearing works with Varnish</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/use-varnish-cache-how.html">How Varnish caching works</a></li>
 						
 								
 								
