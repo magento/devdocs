@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Customizing RWD illustration</title>
+	<title>Simple style changes with client-side LESS compilation vs. server-side</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/frontend-dev-guide/responsive-web-design/rwd_practice.html">
+	<link rel="canonical" href="//guides/v2.0/frontend-dev-guide/css-guide/css_quick_guide_mode.html">
 
 
 
@@ -155,9 +155,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Customizing RWD illustration</h1>
+		<h1 class="page-heading">Simple style changes with client-side LESS compilation vs. server-side</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/frontend-dev-guide/responsive-web-design/rwd_practice.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/frontend-dev-guide/css-guide/css_quick_guide_mode.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -166,47 +166,127 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2>Overview</h2>
-<p>This topic features a step-by-step illustration of how to change the number of products displayed in a row on a product page, keeping up with the responsive design approach used by Magento out-of-the-box themes. </p>
+		<h2> Overview </h2>
 
-<p>The described flow is applicable only for themes that <a href="/guides/v2.0/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherit</a> from the out-of-the-box Blank or Luma theme.</p>
+<p>After you <a href="/guides/v2.0/frontend-dev-guide/themes/theme-create.html" target="_blank">create a theme</a>, before starting to change the styles, is deciding, which LESS compilation mode you will use. There are <a href="/guides/v2.0/frontend-dev-guide/css-topics/css-preprocess.html#LESS compilation modes" target="_blank">two modes available in Magento</a>: server-side compilation mode (the default one, recommended for production) and client-side (recommended for theme development). 
+This topic demonstrates on a practical example how the choice of the mode influences the styles development.</p>
 
-<h2 id="rwd_practice">Changing the number of products in a row</h2>
+<p>The first step, creating and applying a theme is done before the compilation mode is chosen, so it is described only once, but is required whatever compilation mode you will further use.</p>
 
-<p>OrangeCo wants to make their products more visible by decreasing the quantity of products in a row displayed on a catalog page, so that each product takes more space.</p>
+<p>In the examples in this topic the <a href="/guides/v2.0/frontend-dev-guide/css-guide/css_quick_guide_approach.md#simple_extend">simplest approach for customizing theme styles</a> is used: changes are done in the <code>_extend.less</code> of the new theme. </p>
 
-<p>In the basic Blank theme, the number of products in a row for each breakpoint is the following (for the <a href="/guides/v2.0/frontend-dev-guide/layouts/layout-types.html#layout-types-page" target="_blank">2-column page layout</a>):</p>
+<p>In our examples we will change the color and font of the primary buttons. The default view of the primary buttons can be illustrated by the <strong>Create an Account</strong> button view on the Admin login page:</p>
 
+<p><img src="/common/images/extend_less_screenshot0.png" alt="Admin login page with the default view of the primary buttons" /></p>
+
+<h3>Contents</h3>
 <ul>
-<li>1024px and more (desktop): four products</li>
-<li>768px (tablet): three products</li>
-<li>640px and less (mobile): two products</li>
+  <li><a href="#first_step">First step: Create and apply a theme</a></li>
+  <li><a href="#server-side">Making simple style changes in server-side compilation mode</a></li>
+  <li><a href="#server-side-grunt">Making simple style changes in server-side compilation mode using Grunt</a></li>
+  <li><a href="#client-side">Making simple style changes in client-side compilation mode</a></li>
 </ul>
 
-<p>In their custom Orange theme, OrangeCo wants to have the least number of products in a row for the desktop and tablet view, namely:</p>
-<ul>
-<li>Desktop: three products</li>
-<li>Tablet: two products</li>
-<li>Mobile: two products</li>
-</ul>
+<h2 id="first_step">First step: Create and apply a theme</h2>
 
-<p>The Orange theme inherits from the Blank theme.</p>
-
-<p>To change the products quantity, OrangeCo take the following steps:</p>
 <ol>
-<li>Copy the <a href="https://github.com/magento/magento2/blob/develop/app/design/frontend/Magento/blank/Magento_Catalog/web/css/source/module/_listings.less" target="_blank"><code>app/design/frontend/Magento/blank/Magento_Catalog/web/css/source/module/_listings.less</code></a> file.
+  <li>Create a new theme as described in the <a href="/guides/v2.0/frontend-dev-guide/themes/theme-create.html" target="_blank">Create a theme</a> topic. In your <code>theme.xml</code> specify Magento Luma or Magento Blank as a parent theme.</li>
+  <li><a href="/guides/v2.0/frontend-dev-guide/themes/theme-apply.html#theme-apply-apply">Apply your theme</a> in the Magento Admin.</li>
+</ol>
 
-<li>Put it in the corresponding location in their Orange theme directory: <code>app/design/frontend/OrangeCo/orange/Magento_Catalog/web/css/source/module/_listings.less </code> </li>
+<p>Server-side is the default mode for LESS compilation, so if you do not change this, your Magento instance is using server-side compilation mode. </p>
 
-<li>Make the changes in the code. The following image illustrates which section of the file they change, the modified lines are highlighted:</li>
+<h2 id="server-side">Making simple style changes in server-side compilation mode</h2>
 
-<p><img src="/common/images/rwd_pract1.png" /></p>
+<p>The following is an illustration of how the process of making simple changes looks like with the server-side LESS compilation mode:</p>
+<ol>
+<li>Create and apply a theme.</li>
+<li>In your theme directory, add <code>web/css/source/_extend.less</code>.</li>
+<li>Change the color of the buttons by adding the following code in <code>_extend.less</code>:
+<img src="/common/images/extend_less_code_1.png" alt="Less code redefining the color of the primary buttons" />
+<li>Delete all files in the following directories:
+	- <code>pub/static/frontend/&lt;Your_Vendor&gt;/&lt;your_theme&gt;</code>
+	- <code>var/view_preprocessed/less</code>
+</li>
+<li>Refresh the page, and view the changes applied. For example:
+<img src="/common/images/extend_less_screenshot1.png" alt="Less code redefining the color of the primary buttons" />
+</li>
+<li>Change the font of the buttons by adding the following code in <code>_extend.less</code>:
+<img src="/common/images/extend_less_code_2.png" alt="Less code redefining the font of the primary buttons" />
+</li>
+<li>Delete all files in the following directories:
+<ul>
+<li><code>pub/static/frontend/&lt;Your_Vendor&gt;/&lt;your_theme&gt;</code></li>
+<li><code>var/view_preprocessed/less</code> </li>
+</ul>
+</li>
+<li>Refresh the page, and view the changes applied. 
+<img src="/common/images/extend_less_screenshot2.png" alt="Admin login page where the font of the buttons was changed" />
+</li>
 
-After OrangeCo <a href="/guides/v2.0/frontend-dev-guide/themes/theme-apply.html" target="_blank">applies their theme</a>, the catalog page of their store looks like following:
+If your Magento instance uses the server-side compilation mode, you need to manually clean sub-directories in <code>pub/static</code> and <code>var/view_preprocessed/less</code> to make your changes apply. You can automate this process by additionally installing Grunt, and using the built-in Grunt commands to watch the changes and clean the directories. The flow of making changes using Grunt is described in the following section.
 
-<p><img src="/common/images/rwd_practice.jpg" /></p>
+<h2 id="#server-side-grunt">Making simple style changes in server-side compilation mode using Grunt</h2>
 
-(compare to the <a href="/guides/v2.0/frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_blank_ex" target="_blank">same page for the Blank theme</a>.)
+<ol>
+<li>Create and apply a theme. </li>
+<li>In your theme directory, add <code>web/css/source/_extend.less</code>.</li>
+<li>Install Grunt and register your theme as described in <a href="/guides/v2.0/frontend-dev-guide/css-topics/css_debug.html#grunt_prereq" target="_blank">Installing and configuring Grunt</a>.</li>
+<li>From your Magento installation directory, run the following commands:
+<ul>
+<li><code>grunt exec: &lt;your_theme&gt;</code></li>
+<li><code>grunt less: &lt;your_theme&gt;</code></li>
+<li><code>grunt watch</code></li>
+</ul>
+Where <code>&lt;your_theme&gt;</code> is the code of your theme. Conventionally it should coincide with the theme directory name.
+</li>
+<li>Change the color of the buttons by adding the following code in <code>_extend.less</code>:
+<img src="/common/images/extend_less_code_1.png" alt="Less code redefining the color of the primary buttons" />
+</li>
+<li>Refresh the page and view your changes applied:
+<img src="/common/images/extend_less_screenshot1.png" alt="Admin login page where the color of the button was changed" />
+</li>
+<li>Change the font of the buttons by adding the following code in <code>_extend.less</code>:
+<img src="/common/images/extend_less_code_2.png" alt="Less code redefining the font of the primary buttons" />
+</li>
+<li>Refresh the page and view your changes applied:
+<img src="/common/images/extend_less_screenshot2.png" alt="Admin login page where the font of the buttons was changed" />
+</li>
+</ol>
+
+<h2 id="client-side">Making simple style changes in client-side compilation mode</h2>
+
+<ol>
+<li>Create and apply a theme.</li>
+<li>In your theme directory, add <code>web/css/source/_extend.less</code>.</li>
+<li>In the Magento Admin, change the LESS compilation mode to client-side under <b>STORES</b> &gt; <b>Configuration</b> &gt; <b>ADVANCED</b> &gt; <b>Developer</b> &gt; <b>Front-end development workflow</b> &gt; <b>Workflow type</b>. For detailed description see the <a href="/guides/v2.0/frontend-dev-guide/css-topics/css-preprocess.html#less_modes">CSS preprocessing</a> topic.</li>
+<li>Delete all files in the following directories:
+<ul>
+<li><code>pub/static/frontend/&lt;Your_Vendor&gt;/&lt;your_theme&gt;</code></li>
+<li><code>var/view_preprocessed/less</code></li>
+</ul>
+</li>
+<li>Change the color of the buttons by adding the following code in <code>_extend.less</code>:
+<img src="/common/images/extend_less_code_1.png" alt="Less code redefining the color of the primary buttons" />
+</li>
+<li>Refresh the page and view your changes applied:
+<img src="/common/images/extend_less_screenshot1.png" alt="Admin login page where the font of the buttons was changed" />
+</li>
+<li>Change the font of the buttons by adding the following code in <code>_extend.less</code>:
+<img src="/common/images/extend_less_code_2.png" alt="Less code redefining the font of the primary buttons" />
+</li>
+<li>Refresh the page and view your changes applied:
+<img src="/common/images/extend_less_screenshot2.png" alt="Admin login page where the font of the buttons was changed" />
+</li>
+</ol>
+
+If your Magento instance uses the client-side compilation mode, simple changes are applied at once. In case of more sophisticated changes, you might need to manually clean the theme sub-directory in the <code>pub/static/frontend</code> directory. There are more details about these types of changes and about the client-side mode implementation in the <a href="/guides/v2.0/frontend-dev-guide/css-topics/css_debug.html#css_debug_client" target="_blank">Styles debugging</a> topic.
+
+<h2>Recommended reading</h2>
+<ul>
+<li><a href="/guides/v2.0/frontend-dev-guide/css-topics/css_debug.html" target="_blank">Styles debugging</a></li>
+<li><a href="/guides/v2.0/frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">CSS preprocessing</a></li>
+</ul>
 </li></ol>
 
 
@@ -511,7 +591,7 @@ After OrangeCo <a href="/guides/v2.0/frontend-dev-guide/themes/theme-apply.html"
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/css-guide/css_quick_guide_mode.html">Simple style changes with client-side LESS compilation vs. server-side</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/frontend-dev-guide/css-guide/css_quick_guide_mode.html">Simple style changes with client-side LESS compilation vs. server-side</a></li>
 						
 								
 								
@@ -552,7 +632,7 @@ After OrangeCo <a href="/guides/v2.0/frontend-dev-guide/themes/theme-apply.html"
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v2.0/frontend-dev-guide/responsive-web-design/rwd_practice.html">Customizing RWD illustration</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/responsive-web-design/rwd_practice.html">Customizing RWD illustration</a></li>
 						
 								
 								
@@ -735,8 +815,8 @@ After OrangeCo <a href="/guides/v2.0/frontend-dev-guide/themes/theme-apply.html"
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/responsive-web-design/rwd_practice.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/responsive-web-design/rwd_practice.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/css-guide/css_quick_guide_mode.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/css-guide/css_quick_guide_mode.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>

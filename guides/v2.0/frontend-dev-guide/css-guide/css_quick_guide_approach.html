@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Customizing RWD illustration</title>
+	<title>Simple ways to customize a theme's styles</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/frontend-dev-guide/responsive-web-design/rwd_practice.html">
+	<link rel="canonical" href="//guides/v2.0/frontend-dev-guide/css-guide/css_quick_guide_approach.html">
 
 
 
@@ -155,9 +155,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Customizing RWD illustration</h1>
+		<h1 class="page-heading">Simple ways to customize a theme's styles</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/frontend-dev-guide/responsive-web-design/rwd_practice.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/frontend-dev-guide/css-guide/css_quick_guide_approach.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -167,47 +167,124 @@
 		<div class="content-wrap">
 		
 		<h2>Overview</h2>
-<p>This topic features a step-by-step illustration of how to change the number of products displayed in a row on a product page, keeping up with the responsive design approach used by Magento out-of-the-box themes. </p>
+<p>Let’s say you created a new theme inheriting from Magento Blank or Luma, and chose the <a href="/guides/v2.0/frontend-dev-guide/css-guide/css_quick_guide_mode.html">LESS compilation mode</a>. What’s next? Where to add the style changes? This topic gives quick answers.</p>
 
-<p>The described flow is applicable only for themes that <a href="/guides/v2.0/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherit</a> from the out-of-the-box Blank or Luma theme.</p>
-
-<h2 id="rwd_practice">Changing the number of products in a row</h2>
-
-<p>OrangeCo wants to make their products more visible by decreasing the quantity of products in a row displayed on a catalog page, so that each product takes more space.</p>
-
-<p>In the basic Blank theme, the number of products in a row for each breakpoint is the following (for the <a href="/guides/v2.0/frontend-dev-guide/layouts/layout-types.html#layout-types-page" target="_blank">2-column page layout</a>):</p>
-
+<h3>Contents</h3>
 <ul>
-<li>1024px and more (desktop): four products</li>
-<li>768px (tablet): three products</li>
-<li>640px and less (mobile): two products</li>
+  <li><a href="#simple_extend">Simplest way to extend parent styles</a> </li>
+  <li><a href="#simple_override">Simplest way to override parent styles (that is, override default Magento UI library variables)</a></li>
+  <li><a href="#structured_changes">Adding structured changes</a>
+    <ul>
+      <li><a href="#structured_extend">Extend component’s styles</a></li>
+      <li><a href="structured_override">Override component’s styles</a></li>
+    </ul>
+  </li>
 </ul>
 
-<p>In their custom Orange theme, OrangeCo wants to have the least number of products in a row for the desktop and tablet view, namely:</p>
-<ul>
-<li>Desktop: three products</li>
-<li>Tablet: two products</li>
-<li>Mobile: two products</li>
-</ul>
+<h2 id="simple_extend">Simplest way to extend parent styles</h2>
 
-<p>The Orange theme inherits from the Blank theme.</p>
-
-<p>To change the products quantity, OrangeCo take the following steps:</p>
+<p>To extend the parent theme’s styles in your theme:</p>
 <ol>
-<li>Copy the <a href="https://github.com/magento/magento2/blob/develop/app/design/frontend/Magento/blank/Magento_Catalog/web/css/source/module/_listings.less" target="_blank"><code>app/design/frontend/Magento/blank/Magento_Catalog/web/css/source/module/_listings.less</code></a> file.
+<li>In your theme directory, create a <code>web/css/source</code> sub-directory. </li>
+<li>Create a <code>_extend.less</code> file there. The path to it looks like following: 
 
-<li>Put it in the corresponding location in their Orange theme directory: <code>app/design/frontend/OrangeCo/orange/Magento_Catalog/web/css/source/module/_listings.less </code> </li>
+<pre>
+app/design/frontend/&lt;Vendor&gt;/
+├──&nbsp;&lt;theme&gt;/
+│&nbsp;&nbsp;&nbsp;├──&nbsp;web/
+│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──&nbsp;css/
+│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──&nbsp;source/
+│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──_extend.less
+...
+</pre>
+</li>
+<li>Add your LESS code in this file.</li>
+</ol>
 
-<li>Make the changes in the code. The following image illustrates which section of the file they change, the modified lines are highlighted:</li>
+<p>Extending a theme using <code>_extend.less</code> is the simplest option when you are happy with everything the parent theme has, but want to add more styles.</p>
 
-<p><img src="/common/images/rwd_pract1.png" /></p>
+<h2 id="simple_override">Simplest way to override parent styles</h2>
 
-After OrangeCo <a href="/guides/v2.0/frontend-dev-guide/themes/theme-apply.html" target="_blank">applies their theme</a>, the catalog page of their store looks like following:
+<p>To override parent styles (that is, override default Magento UI library variables):</p>
+<ol>
+<li>In your theme directory, create a <code>web/css/source</code> sub-directory. </li>
+<li>Create a <code>_theme.less</code> file here. The path to it then looks like following: 
 
-<p><img src="/common/images/rwd_practice.jpg" /></p>
+<pre>
+app/design/frontend/&lt;Vendor&gt;/
+├──&nbsp;&lt;theme&gt;/
+│&nbsp;&nbsp;&nbsp;├──&nbsp;web/
+│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──&nbsp;css/
+│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──&nbsp;source/
+│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──_theme.less
+...
+</pre>
+</li>
 
-(compare to the <a href="/guides/v2.0/frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_blank_ex" target="_blank">same page for the Blank theme</a>.)
-</li></ol>
+It is important to remember that your <code>_theme.less</code> overrides the parent <code>_theme.less</code>. 
+
+<li>Copy all variables you need from the parent <code>_theme.less</code>, including those which will not be changed. For example if your theme inherits from Blank, the <code>_theme.less</code> you should copy from is located at <code>app/design/frontend/Magento/balnk/web/css/source/_theme.less</code></li>
+<li>Make the necessary changes.</li>
+</ol>
+
+<p>The drawback of this approach is that you need to monitor and manually update your files whenever the parent’s <code>_theme.less</code> is updated.</p>
+
+<h2 id="structured_changes">Adding structured changes</h2>
+
+<p>To make your changes easier to read and support, structure them by adding a separate overriding or extending <code>.less</code> files for each <a href="/guides/v2.0/frontend-dev-guide/css-topics/theme-ui-lib.html#library_elements" target="_blank">Magento UI library component</a> you change. Let’s use the <code>button</code> component implemented in <code>_button.less</code> as an illustration.</p>
+
+<h3 id="structured_extend">Extend component's styles</h3>
+<ol>
+<li>In your theme directory, create a <code>web/css/source</code> sub-directory. </li>
+<li>Add <code>_buttons_extend.less</code> and <code>_extend.less</code> here. The path to the files looks like following: 
+
+<pre>
+app/design/frontend/&lt;Vendor&gt;/
+├──&nbsp;&lt;theme&gt;/
+│&nbsp;&nbsp;&nbsp;├──&nbsp;web/
+│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──&nbsp;css/
+│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──&nbsp;source/
+│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──_buttons_extend.less
+│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──_extend.less
+...
+</pre>
+</li>
+<li>In <code>_buttons_extend.less</code> add your styles for the button component.</li>
+<li>
+In <code>_extend.less</code> register the <code>_buttons_extend.less</code> by adding the following code: 
+<pre>
+@import '_buttons_extend.less'; 
+</pre>
+</li>
+</ol>
+
+<h3 id="structured_override">Override component's styles</h3>
+<p>To extend the parent theme’s styles for buttons in your theme:</p>
+<ol>
+<li>In your theme directory, create a <code>web/css/source</code> sub-directory. </li>
+<li>Create a <code>_extend.less</code> file here. The path to it looks like following: 
+
+<pre>
+app/design/frontend/&lt;Vendor&gt;/
+├──&nbsp;&lt;theme&gt;/
+│&nbsp;&nbsp;&nbsp;├──&nbsp;web/
+│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──&nbsp;css/
+│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──&nbsp;source/
+│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├──_buttons.less
+...
+</pre>
+This file overrides the <code>_buttons.less</code> of the parent theme.
+</li>
+
+<li>Add your styles for the button component. If the file is left blank, then no styles are applied for the component.</li>
+</ol>
+
+<h2>Recommended reading</h2>
+<ul>
+<li><a href="/guides/v2.0/frontend-dev-guide/css-topics/css_debug.html" target="_blank">Styles debugging</a></li>
+<li><a href="/guides/v2.0/frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">CSS preprocessing</a></li>
+<li><a href="/guides/v2.0/http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/css-topics/theme-ui-lib.html" target="_blank">Magento UI library</a></li>
+</ul>
 
 
 		</div>
@@ -507,7 +584,7 @@ After OrangeCo <a href="/guides/v2.0/frontend-dev-guide/themes/theme-apply.html"
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/css-guide/css_quick_guide_approach.html">Simple ways to customize a theme's styles</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/frontend-dev-guide/css-guide/css_quick_guide_approach.html">Simple ways to customize a theme's styles</a></li>
 						
 								
 							
@@ -552,7 +629,7 @@ After OrangeCo <a href="/guides/v2.0/frontend-dev-guide/themes/theme-apply.html"
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v2.0/frontend-dev-guide/responsive-web-design/rwd_practice.html">Customizing RWD illustration</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/responsive-web-design/rwd_practice.html">Customizing RWD illustration</a></li>
 						
 								
 								
@@ -735,8 +812,8 @@ After OrangeCo <a href="/guides/v2.0/frontend-dev-guide/themes/theme-apply.html"
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/responsive-web-design/rwd_practice.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/responsive-web-design/rwd_practice.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/css-guide/css_quick_guide_approach.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/css-guide/css_quick_guide_approach.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>
