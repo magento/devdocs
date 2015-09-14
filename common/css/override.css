@@ -193,5 +193,6 @@ TABLE {
 
     margin: 1.5em 10px 0.5em 14px;
     color: rgba(97, 57, 42, 0.99);
+    text-transform: capitalize;
     
 }
