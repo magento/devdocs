@@ -14,6 +14,9 @@ Some parts of Magento code might not comply with this coding standard.
 
 This coding standard is optional for third-party Magento developers.
 
+* TOC
+{:toc}
+
 ## General rules
 
 ### Indentation
@@ -24,7 +27,7 @@ Use only spaces for indentation:
 * Indent size: 4 spaces
 * Continuation indent: 4 spaces
 
-##### Correct:
+**Correct**:
 
         .nav {
             .nav-item {
@@ -39,12 +42,12 @@ Use only spaces for indentation:
 
 Add one space before opening braces and line break after. Add line break before closing braces.
 
-##### Incorrect:
+**Incorrect**:
 ```
     .nav{color: @nav__color;}
 ```
 
-##### Correct:
+**Correct**:
 
 ```
     .nav {
@@ -56,7 +59,7 @@ Add one space before opening braces and line break after. Add line break before 
 
 Add line break after each selector delimiter. Do not add spaces before and after delimiters.
 
-##### Correct:
+**Correct**:
 
 ```
     .nav,
@@ -65,7 +68,7 @@ Add line break after each selector delimiter. Do not add spaces before and after
     }
 ```
 
-##### Incorrect:
+**Incorrect**:
 
 ```
     .nav, .bar {
@@ -79,7 +82,7 @@ Add line break after each selector delimiter. Do not add spaces before and after
 
 Use single quotes.
 
-##### Correct:
+**Correct**:
 
 ```
     .nav {
@@ -87,7 +90,7 @@ Use single quotes.
     }
 ```
 
-##### Incorrect:
+**Incorrect**:
 
 ```
     .nav {
@@ -100,7 +103,7 @@ Use single quotes.
 
 Add spaces around combinators.
 
-##### Correct:
+**Correct**:
 
 ```
     .nav + .bar {
@@ -108,7 +111,7 @@ Add spaces around combinators.
     }
 ```
 
-##### Incorrect:
+**Incorrect**:
 
 ```
     .nav+.bar {
@@ -128,7 +131,7 @@ Add spaces around combinators.
 
 Start each property declaration in a new line.
 
-##### Incorrect:
+**Incorrect**:
 
 ```
     .nav {
@@ -136,7 +139,7 @@ Start each property declaration in a new line.
     }
 ```
 
-##### Correct:
+**Correct**:
 
 ```
     .nav {
@@ -149,7 +152,7 @@ Start each property declaration in a new line.
 
 Do not add spaces around property colon.
 
-##### Correct:
+**Correct**:
 
 ```
     .nav {
@@ -157,7 +160,7 @@ Do not add spaces around property colon.
     }
 ```
 
-##### Incorrect:
+**Incorrect**:
 
 ```
     .nav {
@@ -182,7 +185,7 @@ Add a blank line in the end of file.
 
 Add a blank line after selector.
 
-##### Correct:
+**Correct**:
 
 ```css
     .nav {
@@ -194,7 +197,7 @@ Add a blank line after selector.
     }
 ```
 
-##### Incorrect:
+**Incorrect**:
 
 ```css
     .nav {
@@ -210,7 +213,7 @@ Add a blank line after selector.
 
 Add semicolon after property.
 
-##### Correct:
+**Correct**:
 
 ```
     .nav {
@@ -218,7 +221,7 @@ Add semicolon after property.
     }
 ```
 
-##### Incorrect:
+**Incorrect**:
 
 ```
     .nav {
@@ -238,7 +241,7 @@ Avoid using the `!important` property if possible. If it is required, use the no
 ```
 <p class="q">what exactly is important in this notation?</p>
 
-##### Incorrect:
+**Incorrect**:
 
 ```
     .jquery-ui-calendar-item {
@@ -249,8 +252,10 @@ Avoid using the `!important` property if possible. If it is required, use the no
 
 ### Comments
 
-First and second level comments must be surrounded have an empty line before and after the comment.
-First, second and third level comment should have 2 spaces after "//" before the text. Inline comment should have 1 space after "//" before the text.
+First and second level comments must be surrounded by empty lines.
+First, second and third level comments should have two spaces after "//"  Inline comments should have one space after "//".
+
+**Correct**
 
 ```
     //
@@ -281,18 +286,17 @@ First, second and third level comment should have 2 spaces after "//" before the
 
 #### Types
 
-According to browser support standards the oldest browser that we support is IE9+, it means that you can feel free to use almost all CSS3 selectors: descendants, attributes, pseudo classes, structural, pseudo elements, etc.
-Exeption: Please avoid to use id selector.
+Magento supports the following browser versions:
 
-##### Incorrect:
+- IE9+
+<p class="q">What about other browsers?</p>
 
-```
-    #foo {
-        ...
-    }
-```
+You can use almost all CSS3 selectors: descendants, attributes, pseudo classes, structural, pseudo elements, an so on.
 
-##### Correct:
+Exeption: Please avoid the `id` selector.
+
+
+**Correct**:
 
 ```
     .nav {
@@ -308,29 +312,22 @@ Exeption: Please avoid to use id selector.
     }
 ```
 
+**Incorrect**:
+
+```
+    #foo {
+        ...
+    }
+```
+
+
 ### Naming
 
 #### Standard classes
 
-All classes should be written in lowercase, starts with letter (exept helper classes), words in classes should be separated with dash (minus sign '-').
+Class names should be in lowercase, start with a letter (exept helper classes), words in classes should be separated with dash (minus sign '-').
 
-##### Incorrect:
-
-```
-    .navBar {
-       ...
-    }
-```
-
-##### Incorrect: underscore separation
-
-```
-    .nav_bar {
-       ...
-    }
-```
-
-##### Correct:
+**Correct**:
 
 ```
     .nav-bar {
@@ -338,11 +335,29 @@ All classes should be written in lowercase, starts with letter (exept helper cla
     }
 ```
 
+
+**Incorrect**:
+
+```
+    .navBar {
+       ...
+    }
+```
+
+**Incorrect**: underscore separation
+
+```
+    .nav_bar {
+       ...
+    }
+```
+
+
 #### Helper classes
 
-Helper classes should be written in lowercase, starts with underscore ("_").
+Helper class names should be lowercase and start with underscore ("_").
 
-##### Example:
+**Example**:
 
 ```
     ._active {
@@ -356,7 +371,7 @@ Use class names that are as short as possible but as long as necessary.
 Try to convey what class is about while being as brief as possible.
 Using class names this way contributes to acceptable levels of understandability and code efficiency.
 
-##### Incorrect: too long
+**Incorrect**: too long
 
 ```
     .navigation-panel-in-footer {
@@ -364,7 +379,7 @@ Using class names this way contributes to acceptable levels of understandability
     }
 ```
 
-##### Incorrect: too short
+**Incorrect**: too short
 
 ```
     .nvpf {
@@ -372,7 +387,7 @@ Using class names this way contributes to acceptable levels of understandability
     }
 ```
 
-##### Correct:
+**Correct**:
 
 ```
     .nav-bar {
@@ -384,7 +399,7 @@ Using class names this way contributes to acceptable levels of understandability
 
 Write selector name together in single line, don't use concatenation.
 
-##### Incorrect:
+**Incorrect**:
 
 ```
     .product {
@@ -398,7 +413,7 @@ Write selector name together in single line, don't use concatenation.
     }
 ```
 
-##### Correct:
+**Correct**:
 
 ```
     .product-list-item {
@@ -417,14 +432,14 @@ Generic names are simply a fallback for elements that have no particular or no m
 
 Using functional or generic names reduces the probability of unnecessary document or template changes.
 
-##### Incorrect:
+**Incorrect**:
 ```
     .foo-1901 {
         ...
     }
 ```
 
-##### Incorrect: presentational
+**Incorrect**: presentational
 
 ```
     .button-green {
@@ -436,7 +451,7 @@ Using functional or generic names reduces the probability of unnecessary documen
     }
 ```
 
-##### Correct: specific
+**Correct**: specific
 
 ```
     .category {
@@ -455,7 +470,7 @@ Unless necessary (for example with helper classes), do not use element names in 
 
 Avoiding unnecessary ancestor selectors is useful for performance reasons.
 
-##### Incorrect:
+**Incorrect**:
 
 ```
     div.error {
@@ -463,7 +478,7 @@ Avoiding unnecessary ancestor selectors is useful for performance reasons.
     }
 ```
 
-##### Correct:
+**Correct**:
 
 ```
     .error {
@@ -473,7 +488,7 @@ Avoiding unnecessary ancestor selectors is useful for performance reasons.
 
 Use type selectors in lowercase
 
-##### Incorrect:
+**Incorrect**:
 
 ```
     .nav > LI {
@@ -481,7 +496,7 @@ Use type selectors in lowercase
     }
 ```
 
-##### Correct:
+**Correct**:
 
 ```
     .nav > li {
@@ -495,7 +510,7 @@ Be careful with selectors nesting. In general try to use 3 nested levels as max.
 
 Exception are pseudo elements and states.
 
-##### Incorrect:
+**Incorrect**:
 
 ```
     .footer {
@@ -512,7 +527,7 @@ Exception are pseudo elements and states.
     }
 ```
 
-##### Correct:
+**Correct**:
 
 ```
     .footer {
@@ -535,7 +550,7 @@ Exception are pseudo elements and states.
 
 Sort all properties alphabetical. Mixins, variables etc. should go first.
 
-##### Incorrect:
+**Incorrect**:
 
 ```
     .nav {
@@ -545,7 +560,7 @@ Sort all properties alphabetical. Mixins, variables etc. should go first.
     }
 ```
 
-##### Correct:
+**Correct**:
 
 ```
     .nav {
@@ -562,7 +577,7 @@ Use shortland properties where possible.
 CSS offers a variety of shorthand properties that should be used whenever possible, even in cases where only one value is explicitly set.
 Using shorthand properties is useful for code efficiency and understandability.
 
-##### Incorrect:
+**Incorrect**:
 
 ```
     border-top-style: none;
@@ -572,7 +587,7 @@ Using shorthand properties is useful for code efficiency and understandability.
     padding-top: 0;
 ```
 
-##### Correct:
+**Correct**:
 
 ```
     border-top: 0;
@@ -583,14 +598,14 @@ Using shorthand properties is useful for code efficiency and understandability.
 
 Omit unit specification after "0" values.
 
-##### Incorrect:
+**Incorrect**:
 
 ```
     border-width: 0px;
     margin: 0rem;
 ```
 
-##### Correct:
+**Correct**:
 
 ```
     border-width: 0;
@@ -601,13 +616,13 @@ Omit unit specification after "0" values.
 
 Omit leading "0"s in values, use dot instead.
 
-##### Incorrect:
+**Incorrect**:
 
 ```
     margin-left: 0.5rem;
 ```
 
-##### Correct:
+**Correct**:
 
 ```
     margin-left: .5rem;
@@ -620,7 +635,7 @@ Omit leading "0"s in values, use dot instead.
 * For color values that permit it, 3 character hexadecimal notation is shorter and more compact.
 * Also please avoid hex color in properties, use only variables instead.
 
-##### Incorrect:
+**Incorrect**:
 
 ```
     color: #ff0000;
@@ -628,7 +643,7 @@ Omit leading "0"s in values, use dot instead.
     @nav-item__color: red;
 ```
 
-##### Correct:
+**Correct**:
 
 ```
     @nav__color: #fafafa;
@@ -676,7 +691,7 @@ All variables should be written in lowercase.
     @property-name
 ```
 
-##### Examples:
+** Examples **:
 
 ```
     @primary__color: @color-phoenix;
@@ -696,7 +711,7 @@ Please mention that component can be not only element name, it also can be prima
 
 "Base" is a modifier.
 
-##### Examples:
+** Examples **:
 
 ```
     @color-orange: '';
@@ -731,7 +746,7 @@ Theme mixins (except extends) should be saved in **source/utilities** folder.
 In name creation you can follow the same rules as for the creation of class names.
 For mixins grouping use prefix__.
 
-##### Example:
+**Example**:
 
 ```
     .extend__clearfix (...) {
