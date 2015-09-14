@@ -2,7 +2,7 @@
 layout: default
 group: 
 subgroup: 
-title: PHP developer guide
+title: Introduction
 menu_title: Introduction
 menu_order: 1
 github_link: extension-dev-guide/introduction.md
