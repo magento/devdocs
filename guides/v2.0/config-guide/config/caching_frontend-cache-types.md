@@ -12,8 +12,9 @@ github_link: config-guide/config/caching_frontend-cache-types.md
 #### Contents 
 
 *	<a href="#cache-mage-over">Overview of Magento caching</a>
-*	TBD
-* TBD
+*	<a href="#cache-mage-frontend">Step 1: Define a cache frontend</a>
+*   <a href="#cache-mage-types">Step 2: Associate cache types with your frontend</a>
+*   <a href="#cache-mage-adv">Step 3: Configure the cache</a>
 
 <h2 id="cache-mage-over">Overview of Magento caching</h2>
 Magento uses the following caching terminology:
