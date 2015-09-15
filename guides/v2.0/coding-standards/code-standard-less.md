@@ -3,7 +3,7 @@ layout: default
 group: coding-standards
 subgroup: Coding standards
 title: Less coding standard
-menu_title: Less coding standard
+menu_title: LESS coding standard
 menu_order: 7
 github_link: coding-standards/code-standard-less.md
 ---
@@ -206,13 +206,14 @@ Add semicolon after property.
 
 #### !important property
 
-Avoid using the `!important` property if possible. If it is required, use the notation similar to the following:
+Avoid using the `!important` property if possible. If it is required, add a space before the property.
+
+**Correct**
 
     .jquery-ui-calendar-item {
         background-color: @nav__background-color !important;
     }
 
-<p class="q">what exactly is important in this notation?</p>
 
 **Incorrect**:
 
@@ -257,14 +258,11 @@ First, second and third level comments should have two spaces after "//"  Inline
 
 #### Types
 
-Magento supports the following browser versions:
+Magento at least supports the last two versions of all major browsers. Internet Explorer is supported from version 9 and later. 
 
-- IE9+
-<p class="q">What about other browsers?</p>
+You can use almost all CSS3 selectors: descendants, attributes, pseudo classes, structural, pseudo elements, and so on.
 
-You can use almost all CSS3 selectors: descendants, attributes, pseudo classes, structural, pseudo elements, an so on.
-
-Exeption: Please avoid the `id` selector.
+Exception: Avoid the `id` selector.
 
 
 **Correct**:
@@ -293,7 +291,7 @@ Exeption: Please avoid the `id` selector.
 
 #### Standard classes
 
-Classes names should be lowercase, start with a letter (exept helper classes), words should be separated with dash '-'.
+Classes' names should be lowercase, start with a letter (except helper classes), words should be separated with dash '-'.
 
 **Correct**:
 
@@ -317,7 +315,7 @@ Classes names should be lowercase, start with a letter (exept helper classes), w
 
 #### Helper classes
 
-Helper classes names should be lowercase and start with underscore ("_").
+Helper classes' names should be lowercase and start with underscore ("_").
 
 **Example**:
 
@@ -352,17 +350,9 @@ Try to convey what class is about while being as brief as possible.
 
 #### Meaning
 
-Use meaningful or generic class names.
 
-Instead of presentational or cryptic names, always use class names that reflect the purpose of the element in question, or that are otherwise generic.
+Use meaningful specific class names that reflect the purpose of the element. Class names should not be presentational or cryptic. 
 
-<p class="q">what is meant by generic name?</p>
-
-Names must be specific and reflect the purpose of the element.
-
-Generic names are simply a fallback for elements that have no particular or no meaning different from their siblings. They are typically needed as “helpers.”
-
-Using functional or generic names reduces the probability of unnecessary document or template changes.
 
 **Correct**: specific
 
@@ -399,9 +389,6 @@ Avoid qualifying class names with type selectors.
 
 Unless necessary (for example with helper classes), do not use element names in conjunction with IDs or classes.
 
-<p class="q">class names with classes?</p>
-
-Avoiding unnecessary ancestor selectors contributes to better performance.
 
 **Correct**:
 
@@ -416,9 +403,8 @@ Avoiding unnecessary ancestor selectors contributes to better performance.
     }
 
 
-Use type selectors in lowercase
+Type selectors must be lowercase.
 
-<p class="q">Why "use"?</p>
 
 **Correct**:
 
@@ -459,9 +445,9 @@ Write selector in one line, do not use concatenation.
 
 #### Nesting
 
-Preferrably do not use more than three levels of nesting.
+Preferably do not use more than three levels of nesting.
 
-Exception are pseudo elements and states.
+Exceptions are pseudo elements and states.
 
 **Correct**:
 
@@ -519,7 +505,7 @@ Sort all properties in the alphabetical order. Mixins, variables and so on shoul
 
 ### Shorthand
 
-Use shortland properties where possible.
+Use shorthand properties where possible.
 
 CSS offers a variety of shorthand properties that should be used whenever possible, even in cases where only one value is explicitly set.
 
@@ -569,7 +555,7 @@ Omit leading "0"s in values, use dot instead.
 ### Hexadecimal notation
 
 * Use lowercase only.
-* Use three-characters hexadecimal notation where possible.
+* Use three-character hexadecimal notation where possible.
 * Avoid using hexadecimal values for color in properties, use only variables instead.
 
 **Correct**:
@@ -593,7 +579,7 @@ Omit leading "0"s in values, use dot instead.
 
 #### Local variables
 
-If variables are local and used only in a module scope, they should be located in the module file, in the beginning of its with general comment.
+If variables are local and used only in a module scope, they should be located in the module file, in the beginning of the general comment.
 
 **Example** `_module.less`:
 
@@ -637,11 +623,9 @@ General model is the following:
 
     @component-element__state__property__modifier
 
-Component can be not only element name, it also can be primary, secondary, tertiary.
+Component name must meaningful. It can contain the `primary`, `secondary`, `tertiary` names.
 
-<p class="q">??<p>
-
-"Base" is a modifier.
+`base` is a modifier.
 
 ** Examples **:
 

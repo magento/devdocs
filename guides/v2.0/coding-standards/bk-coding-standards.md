@@ -23,5 +23,6 @@ redirect_from: /guides/v1.0/coding-standards/bk-coding-standards.html
 <li><a href="{{ site.gdeurl }}coding-standards/docblock-standard-general.html">DocBlock standard</a></li>
 <li><a href="{{ site.gdeurl }}coding-standards/docblock-standard-javascript.html">JavaScript DocBlock standard</a></li>
 </ul>
-
+<li><a href="{{ site.gdeurl }}coding-standards/code-standard-less.html">LESS coding standard</a></li>
+</ul>
 
