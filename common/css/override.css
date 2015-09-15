@@ -145,19 +145,6 @@ p.q 	{
     height: 42px;
 }
 
-/* Adjust footer padding TDD */
-
-#footer-wrap {
-   
-    padding-left: 66px;
-}
-
-#footer-wrap #copyright {
-    padding-right: 12%;
-}
-
-
-
 
 /*FIX for table font sizes TDD*/
 
