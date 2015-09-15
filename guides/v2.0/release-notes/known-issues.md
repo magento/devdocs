@@ -16,6 +16,7 @@ We have identified the following known issues in this release:
 
 <!-- *   <a href="#known-devbeta-sampledata">Magento sample data is available only if you edit composer.json</a>
  -->
+*   <a href="known-composer-clear-cache">You might need to clear your Composer cache</a>
 *   <a href="#known-devrc-php">Known issue with timezone in certain PHP versions</a>
 *   <a href="#known-devbeta-xdebug">Known issue with xdebug</a>
 *   <a href="#known-devbeta-storefront-err">Access errors</a>
@@ -26,6 +27,9 @@ We have identified the following known issues in this release:
 <!-- <h3 id="known-issue-sample">Issue installing optional sample data</h3> -->
 <!-- https://jira.corp.x.com/browse/MAGETWO-32879 -->
 <!-- Errors display when you attempt to install optional Magento sample data. We are working on this issue and expect a resolution in the near future. -->
+
+<h3 id="known-composer-clear-cache">You might need to clear your Composer cache</h3>
+{% include install/composer-clear-cache.html %}
 
 <h3 id="known-devrc-php">Known issue with timezone in certain PHP versions</h3>
 This issue affects builds *earlier than* 0.74-beta10 only. If you have a later build, you can ignore this issue.

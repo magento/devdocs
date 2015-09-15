@@ -1,18 +1,19 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: Fundamentals
+subgroup: 6_Module Development
 title: EAV and extension attributes
-menu_title: Attributes
-menu_order: 4
+menu_title: EAV and extension attributes
+menu_order: 5
 github_link: extension-dev-guide/attributes.md
 redirect_from: /guides/v1.0/extension-dev-guide/attributes.html
 
 ---
+##{{page.menu_title}}
 
 Magento provides two types of attributes that integrators can use to extend the functionality provided out-of-the-box:
 
-* Custom and EAV (Entity-Attribute-Value) attributes. Custom attributes are those added on behalf of a merchant. For example, merchant might need to add attributes to describe products, such as shape or volume. A merchant can add these attributes on the admin panel, and these attributes can be displayed on the GUI. See the merchant documentation for information about information about managing custom attributes.
+* Custom and EAV (Entity-Attribute-Value) attributes. Custom attributes are those added on behalf of a merchant. For example, a merchant might need to add attributes to describe products, such as shape or volume. A merchant can add these attributes on the admin panel, and these attributes can be displayed. See the merchant documentation for information about information about managing custom attributes.
 
 	Custom attributes are a subset of EAV attributes. Objects that use EAV attributes typically store values in several MySQL tables. The `Customer` and `Catalog` modules have the primary models that use EAV attributes. Other modules, such as `ConfigurableProduct`, `GiftMessage`, and `Tax`, use the EAV functionality for `Catalog`.
 
@@ -41,7 +42,7 @@ A module has a set of built-in attributes that are always available. The `Catalo
 
 In this case, when `getCustomAttributes()` is called, the system returns only custom attributes that are not in this list.
 
-The `Customer` module does not have treat its EAV attributes in a special manner. As a result, the `getCustomAttributes()` method returns all EAV attributes.
+The `Customer` module does not treat its EAV attributes in a special manner. As a result, the `getCustomAttributes()` method returns all EAV attributes.
 
 <h2 id="extension">Extension attributes</h2>
 
@@ -51,10 +52,7 @@ Use `ExtensibleDataInterface` to implement extension attributes. In your code, y
 
 Most likely, you'll want to extend interfaces defined in the `Api/Data` directory of an Magento module. 
 
-
-
 <h3 id="declare">Declare extension attributes</h3>
-
 
 You must create an `<Module>/etc/extension_attributes.xml` file to define the extension attributes for a module:
 
@@ -130,8 +128,6 @@ where:
 
 </table>
 
-
-
 <h3 id="search">Searching extension attributes</h3>
 
 The system uses a join directive to add external attributes to a collection and to make the collection filterable. The `join` element in the `extension_attributes.xml` file defines which object fields and the database table/column to use as the source of a search. 
@@ -154,7 +150,7 @@ When `getList()` is called, it returns a list of `ProductInterface`s. When it do
 
 Individual fields that are defined as extension attributes can be restricted, based on existing permissions. This feature allows extension developers to restrict access to data. See <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication.html">Web API authentication overview</a> for general information about authentication in Magento.
 
-The following [code sample](https://github.com/magento/magento2/blob/develop/app/code/Magento/CatalogInventory/etc/extension_attributes.xml) defines `stock_item` as an extension attribute of the `CatalogInventory` module. `CatalogInventory` is treated as a “3rd-party extension”. Access to the inventory data is restricted because the quantity of in-stock item may be competitive information.
+The following [code sample](https://github.com/magento/magento2/blob/develop/app/code/Magento/CatalogInventory/etc/extension_attributes.xml) defines `stock_item` as an extension attribute of the `CatalogInventory` module. `CatalogInventory` is treated as a “third-party extension”. Access to the inventory data is restricted because the quantity of in-stock item may be competitive information.
 
 {% highlight XML %}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/Api/etc/extension_attributes.xsd">
@@ -168,7 +164,7 @@ The following [code sample](https://github.com/magento/magento2/blob/develop/app
 </config>
 {% endhighlight %}
 
-In this example, the `stock_item` attribute is restricted to only the users who have the `Magento_CatalogInventory::cataloginventory` permission. As a result, an anonymous or unauthenticated user issuing a `GET http://<MAGENTO_BASE_URL>/rest/V1/products/<sku>` request will receive product information similar to the following:
+In this example, the `stock_item` attribute is restricted to only the users who have the `Magento_CatalogInventory::cataloginventory` permission. As a result, an anonymous or unauthenticated user issuing a `GET http://<magento_base_url>/rest/V1/products/<sku>` request will receive product information similar to the following:
 
     {
       "sku": “tshirt1”,
@@ -201,6 +197,25 @@ However, an authenticated user with the permission `Magento_CatalogInventory::ca
     }
 
 This only works for extension attributes (those attributes defined in an `extension_attributes.xml` file). There are no permission restrictions on the rest of the returned data. For example, there is no way to restrict `custom_attributes`.
+
+<h3>ExtensionInterfaces</h3>
+
+An `ExtensionInterface` will be empty if no extension attributes have been added. In the following example, in an unmodified installation, `CustomerExtensionInterface` will be generated, but will be empty:
+
+
+`interface CustomerExtensionInterface extends \Magento\Framework\Api\ExtensionAttributesInterface
+{
+}`
+
+However, if an extension similar to the following has been defined, the interface will not be empty.
+
+{% highlight XML %}
+
+<extension_attributes for=“Magento\Customer\Api\Data\CustomerInterface">
+    <attribute code=“attributeName" type=“Magento\Some\Type[]" />
+</extension_attributes>
+{% endhighlight %}
+
 
 <h2 id="related">Related topics</h2>
 <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication.html">Web API authentication overview</a>

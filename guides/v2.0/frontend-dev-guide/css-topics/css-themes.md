@@ -58,7 +58,7 @@ Contains the following:
 <li><code>/source</code>: this subdirectory contains LESS configuration files that invoke mixins from the Magento UI library
 </li>
 <li>
-<code>/source/_theme.less</code>: overrides the default LESS variables values.
+<code>/source/_theme.less</code>: overrides the default Magento UI library variables values.
 </li>
 
   </ul>
@@ -77,7 +77,8 @@ The recommended way to do this is adding an <a href="{{site.gdeurl}}frontend-dev
 
 Your custom <code>default_head_blocks.xml</code> should be located as follows:
 
-<code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Theme/layout/default_head_blocks.xml</code>. <br>
+<code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Theme/layout/default_head_blocks.xml</code>.
+
 Where <code>&lt;Vendor&gt;</code> is your company name (or similar), and <code>&lt;theme&gt;</code> is your theme name.
 
 <p>To include a CSS file, add the <code>&lt;css src=&quot;&lt;path&gt;/&lt;file&gt;&quot; media=&quot;print|&lt;option&gt;&quot;/&gt;</code> block in <code>&lt;head&gt;</code> section in a layout file. <code>&lt;path&gt;</code> is specified relative to the theme web directory (<code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web</code>)

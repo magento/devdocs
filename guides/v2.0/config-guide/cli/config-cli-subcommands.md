@@ -26,7 +26,7 @@ See one of the following sections:
 {% include install/before-you-begin-cli.html %}
 
 <h2 id="config-cli-before">First steps</h2>
-<ol><li>Log in to the Magento server as, or <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">switch to</a>, the web server user.</li>
+<ol><li>Log in to the Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-over">Magento file system owner</a>.</li>
 <li>Change to the following directory:<br>
 <pre>cd &lt;your Magento install dir>/bin</pre>
 Examples:
@@ -48,7 +48,7 @@ The following table summarizes the available commands. Commands are shown in sum
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>Before you run any of these commands, you must either <a href="{{ site.gdeurl }}install-gde/install/install-cli.html">install the Magento application</a> or <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">enable some modules</a>.</p></span>
+  <p>Before you run any of these commands, you must either <a href="{{ site.gdeurl }}install-gde/install/install-cli.html">install the Magento application</a> or <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-enable.html">enable some modules</a>.</p></span>
 </div>
 
 <table>

@@ -34,7 +34,7 @@ Before you begin, make sure that:
 1.	Your system meets the requirements discussed in <a href="{{ site.gdeurl }}install-gde/system-requirements.html">Magento system requirements</a>.
 2.	You completed all prerequisite tasks discussed in <a href="{{ site.gdeurl }}install-gde/prereq/prereq-overview.html">Prerequisites</a>.
 3.	You installed Composer and cloned the Magento GitHub repository as discussed in <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and clone the Magento GitHub repository</a>.
-4.	After you log in to the Magento server, switch to the web server user as discussed in <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Switching to the Apache user</a>.
+4.	After you log in to the Magento server, switch to the Magento file system owner as discussed in <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-switch">Create the Magento file system owner</a>.
 5.	Review the information discussed in <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">Command line installation</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -100,7 +100,7 @@ The following table discusses the meanings of installation option names and valu
 </div>
 <table>
 	<col width="35%">
-	<col width="55">
+	<col width="55%">
 	<col width="10%">
 	<tbody>
 		<tr>
@@ -158,7 +158,7 @@ The following table discusses the meanings of installation option names and valu
 		<td><p>--db-host</p></td>
 		<td><p>Use any of the following:</p>
 		<ul><li>The database server's fully qualified host name or IP address.</li>
-		<li><code>localhost</code> )default) if your database server is on the same host as your web server.</li>
+		<li><code>localhost</code> (default) if your database server is on the same host as your web server.</li>
 		<li>UNIX socket; for example, <code>/var/run/mysqld/mysqld.sock</code></li></ul>
 		<p><strong>Note</strong>: You can optionally specify the database server port in its host name like <code>www.example.com:9000</code></p>
 </td>

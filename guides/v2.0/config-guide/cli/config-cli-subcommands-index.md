@@ -43,9 +43,9 @@ This command enables you to view the status of all or selected indexers (for exa
 
 Command options:
 
-	magento indexer:status <indexer>
+	magento indexer:status [indexer]
 
-where `<indexer>` is either `--all` to display the status of all indexers, or a space-separated list of indexers.
+where `[indexer]` is a space-separated list of indexers. Omit `[indexer]` to view status of all indexers.
 
 To view the list of indexers, enter
 
@@ -53,7 +53,7 @@ To view the list of indexers, enter
 
 A sample follows:
 
-	magento indexer:status --all
+	magento indexer:status
 
 Sample result:
 
@@ -73,9 +73,9 @@ This command enables you to reindex all or selected indexers.
 
 Command options:
 
-	magento reindex <indexer>
+	magento reindex [indexer]
 
-where `<indexer>` is either `--all` to reindex all indexers, or a space-separated list of indexers.
+where `[indexer]` is a space-separated list of indexers. Omit `[indexer]` to reindex all indexers.
 
 To view the list of indexers, enter
 
@@ -83,7 +83,7 @@ To view the list of indexers, enter
 
 A sample follows:
 
-	magento indexer:reindex --all
+	magento indexer:reindex
 
 Sample result:
 
@@ -112,13 +112,13 @@ This command enables you to set the following indexer options:
 <h3 id="config-cli-subcommands-index-conf-show">Display the current configuration</h3>
 To view the current indexer configuration, enter
 
-	magento indexer:show-mode <indexer> [--all]
+	magento indexer:show-mode [indexer]
 
-where `<indexer>` is either `--all` to display the configuration of all indexers, or a space-separated list of indexers.
+where `[indexer]` is a space-separated list of indexers or omit `[indexer]` to show all indexers' modes.
 
 For example, to show the mode of all indexers:
 
-	magento indexer:show-mode --all
+	magento indexer:show-mode 
 
 Sample result:
 
@@ -134,13 +134,13 @@ Sample result:
 <h3 id="config-cli-subcommands-index-conf-set">Configure indexers</h3>
 To specify the indexer configuration, enter
 
-	magento indexer:set-mode {realtime|schedule} <indexer>
+	magento indexer:set-mode {realtime|schedule} [indexer]
 
 where
 
 `realtime` sets the selected indexers to update on save.
 `schedule` sets the specified indexers to save according to the cron schedule.
-`indexer` is either `--all` to display the status of all indexers, or a space-separated list of indexers.
+`indexer` is a space-separated list of indexers or omit `indexer` to configure all indexers the same way.
 
 To view the list of indexers, enter
 

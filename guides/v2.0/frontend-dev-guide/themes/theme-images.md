@@ -19,7 +19,7 @@ The conventional location of `view.xml` for a theme is:
 	app/design/frontend/<Vendor>/<theme>/etc/view.xml
 {% endraw %}
 
-For example, here is the path view.xml of the Magento Blank theme: <a href="{{site.mage2000url}}app/design/frontend/Magento/blank/etc/view.xml" target="_blank"><code>app/design/frontend/Magento/blank/etc/view.xml</code></a>.
+For example, here is the path to `view.xml` of the Magento Blank theme: <a href="{{site.mage2000url}}app/design/frontend/Magento/blank/etc/view.xml" target="_blank"><code>app/design/frontend/Magento/blank/etc/view.xml</code></a>.
 
 In `view.xml`, image properties are configured in the scope of `<images module="Magento_Catalog">` element:
 
@@ -226,3 +226,12 @@ The color for the images background. Not applied to images with transparency, if
 </tbody>
 </table>
 
+####Catalog image resize command
+
+The Magento_Catalog module provides Magento CLI command for resize all product images. Resized images are stored in `/pub/media/catalog/product/cache` directory.
+
+The catalog:images:resize command has no options or arguments. 
+
+Basic syntax:
+
+`bin/magento catalog:images:resize`

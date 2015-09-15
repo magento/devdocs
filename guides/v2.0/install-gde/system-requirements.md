@@ -20,11 +20,13 @@ Before you install Magento, make sure your system meets or exceeds the following
 	Linux distributions such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and so on
 
 *	<a href="https://getcomposer.org/download/" target="_blank">Composer</a> (latest stable version)
-*	<a href="http://httpd.apache.org/download.cgi" target="_blank">Apache 2.2 or 2.4</a>
+*	Web servers
+	*	<a href="http://httpd.apache.org/download.cgi" target="_blank">Apache 2.2 or 2.4</a>
 	
-	In addition, the apache `mod_rewrite` module must be enabled. `mod_rewrite` enables the server to perform URL rewriting. For more information, see <a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Apache</a>.
+		In addition, the apache `mod_rewrite` module must be enabled. `mod_rewrite` enables the server to perform URL rewriting. For more information, see <a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Apache</a>.
+	*	nginx 1.8 (or latest stable version)
 	
-*	PHP:
+*	PHP (<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html" target="_blank">CentOS</a>, <a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html" target="_blank">Ubuntu</a>):
 
 	*	5.6.x
 	*	5.5.x 
@@ -46,15 +48,20 @@ Before you install Magento, make sure your system meets or exceeds the following
 	*	<a href="http://php.net/manual/en/book.mbstring.php" target="_blank">mbstring</a>
 	*	<a href="http://php.net/manual/en/book.mcrypt.php" target="_blank">mcrypt</a>
 	*	<a href="http://php.net/manual/en/book.mhash.php" target="_blank">mhash</a>
-	*	<a href="http://php.net/manual/en/book.simplexml.php" target="_blank">simplexml</a>
+	*	<a href="http://php.net/manual/en/book.simplexml.php" target="_blank">SimpleXML</a>
 	*	<a href="http://php.net/manual/en/book.curl.php" target="_blank">curl</a>
-	*	<a href="http://php.net/manual/en/book.xsl.php" target="_blank">ext-xsl</a> 
-	*	<a href="http://php.net/manual/en/book.image.php" target="_blank">gd2</a>, <a href="http://php.net/manual/en/book.imagick.php" target="_blank">ImageMagick 6.3.7</a> (or later) or both
+	*	<a href="http://php.net/manual/en/book.xsl.php" target="_blank">xsl</a> 
+	*	<a href="http://php.net/manual/en/book.image.php" target="_blank">gd</a>, <a href="http://php.net/manual/en/book.imagick.php" target="_blank">ImageMagick 6.3.7</a> (or later) or both
 	*	<a href="http://php.net/manual/en/book.soap.php" target="_blank">soap</a>
 	*	<a href="http://php.net/manual/en/book.intl.php" target="_blank">intl</a>
 
 *	<a href="http://dev.mysql.com/doc/refman/5.6/en/installing.html" target="_blank">MySQL 5.6.x</a>
 *	Mail Transfer Agent (MTA) or an SMTP server
+*	Optional caching technologies
+
+	*	<a href="http://redis.io/topics/quickstart" target="_blank">Redis version 3.0</a>
+	*	<a href="https://www.varnish-cache.org/docs" target="_blank">Varnish version 3.5 or latest stable 4.x version</a>
+	*	memcached latest stable version
 *	Optional but recommended:
 
 	*	<a href="http://xdebug.org/download.php" target="_blank">php_xdebug2.2.0</a> or later (development environments only; can have an adverse effect on performance)

@@ -1,0 +1,9 @@
+<p>We introduced a change on <a href="http://packages.magento.com/" target="_blank">packages.magento.com</a> that had the unintended result of causing errors with certain Magento packages.</p>
+<p>This affects <em>only</em> users who used <code>composer create-project</code> to create their Magento project between the dates of August 13 and August 17, 2015.</p>
+<p>A user reported one symptom on <a href="https://github.com/magento/magento2/issues/1680" target="_blank">GitHub</a> about an error that occurred during the installation:</p>
+<pre>[UnexpectedValueException]
+The checksum verification of the file failed (downloaded from https://packages.magento.com/_packages/magento_framework-1.0.0-beta.zip)</pre>
+<p>The cause is a conflict between packages on <code>packages.magento.com</code> compared to the local Composer cache. To resolve the issue, clear your Composer cache as follows:</p>
+<ol><li>Log in to your Magento server as a user with permissions to run <code>composer</code> in the Magento installation directory.</li>
+	<li><code>cd &lt;your Magento install dir></code></li>
+	<li>Enter <code>composer clear-cache</code></li></ol>

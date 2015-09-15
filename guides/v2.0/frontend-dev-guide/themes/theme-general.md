@@ -27,7 +27,7 @@ The Create a new theme chapter provides all information, including theoretical c
 The high-level steps required to add a new theme in the Magento system are the following:
 
 1. Create a folder for the theme under `app/design/frontend/<your_vendor_name>/<your_theme_name>`.
-2. Add a declaration file `theme.xml` and optionally `view.xml` to the theme folder.
+2. Add a declaration file `theme.xml` and optionally create `etc` directory and create a file named `view.xml` to the theme folder.
 3. Add a `composer.json` file.
 3. Create folders for CSS, JavaScript, images, and fonts.
 4. Configure your theme in the Admin panel.

@@ -1,15 +1,14 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: How to
-title: Create a Module
-menu_title: Create a Module
+subgroup: 3_Build
+title: Create a module
+menu_title: Create a module
 menu_order: 2
 github_link: extension-dev-guide/create_module.md
 redirect_from: /guides/v1.0/extension-dev-guide/create_module.html
 ---
-
-<h2 id="create-module-overview">Overview</h2>
+##{{page.menu_title}}
 
 This topic covers the basic steps of creating a new module. Subsequent sections in this Developer's Guide explain how to verify your new module and how to use Composer to package and distribute the module.
 
@@ -62,8 +61,7 @@ A module declares itself (i.e. defines its name and existence) in the `module.xm
 Minimal declaration sample:
 
 	<config>
-       <module name="Vendor_ModuleName" setup_version="2.0.0">
-       </module>
+       <module name="Vendor_ModuleName" setup_version="2.0.0"/>
 	</config>
 
 <div class="bs-callout bs-callout-info" id="info">
