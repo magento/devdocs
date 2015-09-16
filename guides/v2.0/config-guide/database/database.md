@@ -56,26 +56,34 @@ To modify `di.xml`:
            </arguments>
         </type>
 
-        The first `<type name="Magento\Framework\App\Cache\Frontend\Pool">` node configures options for full page caching.
+	The `<type name="Magento\Framework\App\Cache\Frontend\Pool">` node configures options for the in-memory pool of all frontend cache instances.
 
-        The second `<type name="Magento\Framework\App\Cache\Frontend\Pool">` node configures options for other kinds of caching (that is, what is cached in `var/cache` when file system caching is enabled).
+	The `<type name="Magento\Framework\App\Cache\Type\FrontendPool">` node configures cache frontend options specific to each cache type.
 
-4.	To use the database instead of the `var/page_cache` directory on the file system, replace these lines in the first node:
+4.	Replace the entire block with the following:
 
-		<item name="backend_options" xsi:type="array">
-           	<item name="cache_dir" xsi:type="string">page_cache</item>
-          </item>
+		<type name="Magento\Framework\App\Cache\Frontend\Pool">
+        <arguments>
+            <argument name="frontendSettings" xsi:type="array">
+                <item name="page_cache" xsi:type="array">
+                  <item name="backend" xsi:type="string">database</item>
+                    </item>
+                  <item name="<your cache id>" xsi:type="array">
+                  <item name="backend" xsi:type="string">database</item>
+                  </item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\App\Cache\Type\FrontendPool">
+        <arguments>
+            <argument name="typeFrontendMap" xsi:type="array">
+                <item name="backend" xsi:type="string">database</item>
+            </argument>
+        </arguments>
+    </type>
 
-    with the following:
-
-		<item name="backend" xsi:type="string">database</item>
-
-5. To use the database instead of the `var/cache` directory on the file system, add the following before `</argument>` in the second node:
-
-		<item name="default" xsi:type="array">
-       		<item name="backend" xsi:type="string">database</item>
-    	</item>
-
+    where `<your cache id>` is your unique cache identifier.
+    
 5.	Save your changes to `di.xml` and exit the text editor.
 
 7.	Continue with the next section.
@@ -189,12 +197,19 @@ return array (
         <arguments>
             <argument name="frontendSettings" xsi:type="array">
                 <item name="page_cache" xsi:type="array">
-                    <item name="backend" xsi:type="string">database</item>
+                  <item name="backend" xsi:type="string">database</item>
                     </item>
-                <item name="default" xsi:type="array">
-                    <item name="backend" xsi:type="string">database</item>
-                </item>
+                  <item name="default" xsi:type="array">
+                  <item name="backend" xsi:type="string">database</item>
+                  </item>
             </argument>
         </arguments>
     </type>
+    <type name="Magento\Framework\App\Cache\Type\FrontendPool">
+        <arguments>
+            <argument name="typeFrontendMap" xsi:type="array">
+                <item name="backend" xsi:type="string">database</item>
+            </argument>
+        </arguments>
+ </type>
 {% endhighlight %}
