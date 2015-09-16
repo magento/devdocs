@@ -145,19 +145,6 @@ p.q 	{
     height: 42px;
 }
 
-/* Adjust footer padding TDD */
-
-#footer-wrap {
-   
-    padding-left: 66px;
-}
-
-#footer-wrap #copyright {
-    padding-right: 12%;
-}
-
-
-
 
 /*FIX for table font sizes TDD*/
 
@@ -197,7 +184,6 @@ TABLE {
     
 }
 
-
 /*Search styling */
 
 
@@ -207,6 +193,7 @@ background-color: rgb(49, 48, 43);
     top: 0px;
     height: 41px;
     width: 300px;
+    margin-right: 10px;
 }
 
 
@@ -310,10 +297,3 @@ background-color:#CACACA;;
 cursor: hand; cursor: pointer;
 
 }
-
-
-
-
-
-
-

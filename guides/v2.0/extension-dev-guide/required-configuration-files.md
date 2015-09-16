@@ -2,7 +2,7 @@
 layout: default
 group: extension-dev-guide
 subgroup: 3_Build
-title: PHP developer guide
+title: Define your configuration files
 menu_title: Define your configuration files
 menu_order: 3
 github_link: extension-dev-guide/required-configuration-files.md

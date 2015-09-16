@@ -2,7 +2,7 @@
 layout: default
 group: 
 subgroup: 
-title: PHP developer guide
+title: Build a Module
 menu_title: Build a Module
 menu_order: 1
 github_link: extension-dev-guide/build_a_simple_module.md

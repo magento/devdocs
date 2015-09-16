@@ -2,7 +2,7 @@
 layout: default
 group: extension-dev-guide
 subgroup: 3_Build
-title: PHP developer guide
+title: Create a module
 menu_title: Create a module
 menu_order: 4
 github_link: extension-dev-guide/create_module.md
@@ -71,7 +71,7 @@ where:
 * `type` &#8212; is the ??
 * `version` &#8212; lists the version of the module?
 * `license` &#8212; lists applicable licenses that apply to your module
-* `extra.map` &#8212; gives the path for Composer to
+* `extra.map` &#8212; gives the path for Composer to...?
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Take a look at a <a href="https://github.com/magento/magento2-samples/tree/master/sample-module-minimal"> sample module</a> created by the Magento Core Team. </p>
@@ -82,7 +82,8 @@ where:
 
 ##Next
 
-[Enable&#8212;or disable&#8212;a module](enable-module.html)
+[Module Load Order](module-load-order.html)
+
 
 
 

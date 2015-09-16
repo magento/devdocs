@@ -100,13 +100,20 @@ To minimally configure Varnish:
 		service httpd restart
 8.	Restart Varnish:
 
-		service varnish start
+		service varnish restart
 
 If Varnish fails to start, try running it from the command line as follows:
 
 	varnishd -d -f /etc/varnish/default.vcl
 
 This should display error messages.
+
+<div class="bs-callout bs-callout-info" id="info">
+	<p>If Varnish does not start as a service, you must configure SELinux rules to allow it to run. Consult the following resources:</p>
+		<ul><li><a href="http://flatlinesecurity.com/posts/varnish-4-selinux/" target="_blank">flatlinesecurity</a></li>
+			<li><a href="https://wiki.centos.org/HowTos/SELinux" target="_blank">CentOS wiki</a></li>
+			<li><a href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/sec-sel-policy-customizing.html" target="_blank">CentOS documentation</a></li></ul>
+</div>
 
 <h2 id="config-varnish-verify">Verify Varnish is working</h2>
 The following sections discuss how you can verify that Varnish is working but *without* configuring Magento to use it. You should try this before you configure Magento.
@@ -157,6 +164,21 @@ If you don't see output for `varnishd`, make sure Varnish is running.
 
 <h2 id="config-varnish-install">Install the Magento 2 software</h2>
 Install the Magento 2 software if you haven't already done so. When prompted for a Base URL, use the Varnish host and port 80 (for Varnish) because Varnish receives all incoming HTTP requests.
+
+Possible error installing Magento:
+
+	Error 503 Service Unavailable
+	Service Unavailable
+	XID: 303394517
+	Varnish cache server
+
+If you experience this error, edit `default.vcl` and add a timeout to the `backend` stanza as follows:
+
+	backend default {
+	     .host = "127.0.0.1";
+	     .port = "8080";
+	     .first_byte_timeout = 600s;
+	}
 
 <h2 id="config-varnish-verify-headers">Verify HTTP response headers</h2>
 Now you can verify that Varnish is serving pages by looking at HTML response headers returned from any Magento page.

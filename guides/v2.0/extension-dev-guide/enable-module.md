@@ -2,7 +2,7 @@
 layout: default
 group: extension-dev-guide
 subgroup: 3_Build
-title: PHP developer guide
+title: Enable a module
 menu_title: Enable a module
 menu_order: 6
 github_link: extension-dev-guide/enable-module.md
