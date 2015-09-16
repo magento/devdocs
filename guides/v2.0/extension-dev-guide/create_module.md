@@ -63,8 +63,8 @@ The smallest working module.xml file would look something like this:
 
 where:
 
-* `name` &#8212; is the name of your module
-* `description` &#8212; is a concise explanation of your module
+* `name` &#8212; is the name of your module.
+* `description` &#8212; is a concise explanation of your module's purpose.
 * `require` &#8212; lists any modules your module depends on.
 * `suggest` &#8212; lists any modules it is recommended to have loaded prior to this module.
 

@@ -26,7 +26,7 @@ Each Magento 2 module has its own set of configuration files, gathered into the 
 </div>
 
 
-##Use etc for your configuration files  
+##Use /etc for your configuration files  
 
 Magento 2 looks for configuration information for each module in that module&#8217;s `etc` folder. Depending on the needs of your module, you might have the following configuration files at the top level of your module&#8217;s `etc` folder:
 
