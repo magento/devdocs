@@ -1,28 +1,30 @@
 function devdocs(){
 
+$('.gse-control-cse').css('background-color', '');
+
 
 if ($.cookie('searchResultsState') ==1) {
 	//show search results page
-	$('#searchResultsBox').show(300);
-	$('.searchResultsBack').show(1200);
+	$('#searchResultsBox').fadeIn(300);
+	$('.searchResultsBack').fadeIn(1200);
 } else {
 	$.cookie('searchResultsState', '0');
-	$('#searchResultsBox').hide(300);
-	$('.searchResultsBack').hide(1200);
+	$('#searchResultsBox').fadeOut(300);
+	$('.searchResultsBack').fadeOut(1200);
 }
 
 
 $('form').submit(function(event) {
 	console.log("submit called");
-	$('#searchResultsBox').show(300);
-	$('.searchResultsBack').show(1200);
+	$('#searchResultsBox').fadeIn(300);
+	$('.searchResultsBack').fadeIn(1200);
 	$.cookie('searchResultsState', '1');
 	
 });
 
 $('DIV.searchResultsBoxClose').click(function(){
-	$('#searchResultsBox').hide(300);
-	$('.searchResultsBack').hide(1200);
+	$('#searchResultsBox').fadeOut(300);
+	$('.searchResultsBack').fadeOut(1200);
 	$.cookie('searchResultsState','0');
     console.log($.cookie('searchResultsState'));
 });

@@ -66,7 +66,7 @@ where:
 * `name` &#8212; is the name of your module
 * `description` &#8212; is a concise explanation of your module
 * `require` &#8212; lists any modules your module depends on.
-* `suggest` &#8212; ??
+* `suggest` &#8212; lists any modules it is recommended to have loaded prior to this module.
 
 * `type` &#8212; is the ??
 * `version` &#8212; lists the version of the module?
@@ -75,7 +75,7 @@ where:
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Take a look at a <a href="https://github.com/magento/magento2-samples/tree/master/sample-module-minimal"> sample module</a> created by the Magento Core Team. </p>
-  <p>The team is creating a <a href="https://github.com/magento/magento2-samples"> collection of samples</a> to demonstrate technologies introduced in Magento 2. You can edit your Magento 2 <code>composer.json</code> file to declare a dependency upon this package of sample modules, and then run <code>composer update</code> to download them. Look for more sample modules as we build them!</p>
+  <p>The team is creating a <a href="https://github.com/magento/magento2-samples"> collection of samples</a> to demonstrate technologies introduced in Magento 2. You can edit your Magento 2 <code>composer.json</code> file to declare a dependency upon this package of sample modules, and then run <code>composer update</code> to download them. Look for more sample modules as we build them.</p>
  </div>
 
 

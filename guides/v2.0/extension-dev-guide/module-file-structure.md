@@ -28,16 +28,31 @@ The main component folders are:
 * Controller
 * Helper
 * Model
+* __Setup__ &#8212; contains classes for module database structure and data setup which are invoked when installing or upgrading.
+
+
 
 ####Additional directories
 
 Additionally, there are folders for configuration and other ancillary functions for items like plug-ins, internationalization, and front-end layout files.
 
 * Api
-* etc
+* __etc__ &#8212; contains configuration files. 
 * il8n
 * Plugin
-* view
+* __view__ &#8212; contains non-object-oriented and non-static view level parts of the module such as design templates, email templates, and layout files.
+
+
+
+
+A module contains multiple folders and files. On the top level there can be folders such as:
+- Block,* *Controller,* *Helper,* *Model which contain files with PHP classes that implement a full MVC vertical of module logic. These folders follow autoloading requirements and comply with Magento coding standard file naming conventions.
+- controllers which contains PHP classes with controllers. These classes don't participate in autoloading and don't comply with Magento coding standard naming conventions, but follow ZF controller naming conventions.
+- Setup which contain classes for module database structure and data setup which are invoked when installing or upgrading.
+- etc which contains various configuration files.
+- view which contains non-object-oriented and non-static view level parts of the module such as design templates, email templates and layout files.
+- Other files containing PHP classes that participate in autoload, such as Magento\Core\Exception, Magento\Customer\Exception.
+- Other files used explicitly by the module -- for example, <root>/app/code/Magento/Core/functions.php is included explicitly.
 
 
 ####Add your own
