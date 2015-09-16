@@ -20,12 +20,16 @@ github_link: config-guide/config/caching_frontend-cache-types.md
 Magento uses the following caching terminology:
 
 * *Frontend*: Similar to an interface or gateway to cache storage, implemented by <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Frontend" target="_blank">Magento\Framework\Cache\Frontend</a>.
-* *Cache types*: Can be one of the types provided with Magento or you can create your own. <a href="{{ site.gdeurl }}config-guide/config/caching-cache-type.html">More information</a>
+* *Cache types*: Can be one of the types provided with Magento or you can <a href="{{ site.gdeurl }}config-guide/config/caching-cache-type.html">create your own</a>.
 * *Backend*: Specifies details about <a href="http://framework.zend.com/manual/1.12/en/zend.cache.backends.html" target="_blank">cache storage</a>, implemented by <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Backend" target="_blank">Magento\Framework\Cache\Backend</a>
 * *Two-level backend*: Stores cache records in two backends&mdash;a faster one and a slower one.
 
 <h2 id="cache-mage-frontend">Step 1: Define a cache frontend</h2>
-Magento provides a `default` frontend you can use for any cache type. This section discusses how to optionally define a cache frontend with a different name, which is preferable if you expect to customize your frontend.
+The Magento application has a `default` frontend you can use for any <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean-over">cache type</a>. This section discusses how to optionally define a cache frontend with a different name, which is preferable if you expect to customize your frontend.
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>To use the <code>default</code> cache type, you don't need to modify <code>env.php</code> at all. For details about modifying <code>di.xml</code> for other cache types, see the topics referenced in <a href="{{ site.gdeurl }}config-guide/config/caching_low-level.html">Low-level cache options</a>. </p>
+</div>
  
 To use your own frontend, you must specify it in both `app/etc/env.php` and in your module's `di.xml` as the following examples show:
 
@@ -58,10 +62,10 @@ To use your own frontend, you must specify it in both `app/etc/env.php` and in y
 </type>
 {% endhighlight %}
 
-where `<unique frontend name>` is a unique name to identify your frontend and `<cache options>` are options discussed in TBD.
+where `<unique frontend name>` is a unique name to identify your frontend and `<cache options>` are options discussed in the topics specific to each type of caching (database, Redis, Varnish, and so on).
 
 <h2 id="cache-mage-types">Step 2: Associate cache types with your frontend</h2>
-You can now associate your frontend with cache types. You can associate one cache frontend with multiple cache types. For a list of cache types, see TBD.
+You can now associate your frontend with cache types. You can associate one cache frontend with multiple <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean-over">cache types</a>. 
 
 Update `env.php` and `di.xml` as shown in the following examples.
 
@@ -137,3 +141,5 @@ where
 *   `<backend_type>` is the low-level backend cache type. Specify the name of a class that is compatible with <a href="http://framework.zend.com/apidoc/1.7/Zend_Cache/Zend_Cache_Backend/Zend_Cache_Backend.html" target="_blank">Zend_Cache_Backend</a> and that implements <a href="http://framework.zend.com/apidoc/1.6/Zend_Cache/Zend_Cache_Backend/Zend_Cache_Backend_Interface.html" target="_blank">Zend_Cache_Backend_Interface</a>.
 *   `<backend_option>`, `<backend_option_value>` are the name and value of options the Magento framework passes as an associative array to backend cache upon its creation.
 
+#### Next step
+<a href="{{ site.gdeurl }}config-guide/config/caching_low-level.html">Low-level cache options</a>
