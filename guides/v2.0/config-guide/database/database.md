@@ -11,18 +11,25 @@ github_link: config-guide/memcache/database.md
 
 #### Contents
 *	<a href="#mage-cache-db-over">Overview of database caching</a>
-*	<a href="#mage-cache-db-prereq">Prerequisites</a>
+
+<!-- *	<a href="#mage-cache-db-prereq">Prerequisites</a> -->
+
 *	<a href="#mage-cache-db-di">Modify `di.xml`</a>
 *	<a href="#mage-cache-db-verify">Verify database caching is working</a>
 *	<a href="#mage-cache-db-config">Configuration example</a>
 
 <h2 id="mage-cache-db-over">Overview of database caching</h2>
-This topic discusses how to use the Magento 2 database for caching. You can cache either the contents of the `var/cache` directory or both the `var/cache` and `var/page_cache` directories in the `cache` and `cache_tag` database tables.
+This topic discusses how to use the Magento 2 database for caching. After you complete these tasks, cached objects are stored in the `cache` and `cache_tag` Magento 2 database tables. Nothing is stored `var/cache` or `var/page_cache`.
 
-This topic discusses how to set up caching, how to verify database caching is working, and we provide sample a `env.php` and `di.xml` for reference.
+This topic discusses how to set up caching, how to verify database caching is working, and we provide a sample `di.xml` snippet for reference.
 
-<h2 id="mage-cache-db-prereq">Prerequisites</h2>
-Before you continue, if you're using your own frontend cache, make sure you <a href="{{ site.gdeurl }}config-guide/config/caching_frontend-cache-types.html">associate cache frontends with cache types</a>. If you're using the `default` frontend cache, you don't have to do that.
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>This discusses how to configure database caching for the <code>default</code> cache frontend. Discussing how to configure database caching for a custom cache frontend is beyond the scope of this topic currently.</p></span>
+</div>
+
+<!-- <h2 id="mage-cache-db-prereq">Prerequisites</h2>
+Before you continue, if you're using your own frontend cache, make sure you <a href="{{ site.gdeurl }}config-guide/config/caching_frontend-cache-types.html">associate cache frontends with cache types</a>. If you're using the `default` frontend cache, you don't have to do that. -->
 
 <h2 id="mage-cache-db-di">Modify <code>di.xml</code></h2>
 To enable database caching, you must modify `<your Magento install dir>/app/etc/di.xml`, which is the global deployment injection configuration for the Magento application.
@@ -83,7 +90,7 @@ To modify `di.xml`:
     </type>
 
     where `<your cache id>` is your unique cache identifier.
-    
+
 5.	Save your changes to `di.xml` and exit the text editor.
 
 7.	Continue with the next section.

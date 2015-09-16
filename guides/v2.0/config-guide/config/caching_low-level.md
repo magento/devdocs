@@ -19,7 +19,7 @@ In general, the Magento application works with any backend cache that <a href="h
 
 *   <a href="{{ site.gdeurl }}config-guide/redis/config-redis.html">Redis</a>
 *   <a href="{{ site.gdeurl }}config-guide/varnish/config-varnish.html">Varnish</a>
-*   <a href="{{ site.gdeurl }}config-guide/memcache/database.html">Database</a>
+*   <a href="{{ site.gdeurl }}config-guide/database/database.html">Database</a>
 *   File system (default): No configuration is necessary to use file system caching.
 
 <div class="bs-callout bs-callout-info" id="info">

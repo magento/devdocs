@@ -13,10 +13,20 @@ github_link: config-guide/config/caching_frontend-cache-types.md
 
 *	<a href="#cache-mage-over">Overview of Magento caching</a>
 *	<a href="#cache-mage-frontend">Step 1: Define a cache frontend</a>
-*   <a href="#cache-mage-types">Step 2: Associate cache types with your frontend</a>
-*   <a href="#cache-mage-adv">Step 3: Configure the cache</a>
+*   <a href="#cache-mage-adv">Step 2: Configure the cache</a>
 
 <h2 id="cache-mage-over">Overview of Magento caching</h2>
+Magento enables you to configure alternatives to the default file system caching. This guide discusses some of those alternatives; namely,
+
+*   <a href="{{ site.gdeurl }}config-guide/redis/config-redis.html">Redis</a>
+*   <a href="{{ site.gdeurl }}config-guide/varnish/config-varnish.html">Varnish</a>
+*   <a href="{{ site.gdeurl }}config-guide/memcache/database.html">Database</a>
+*   File system (default): No configuration is necessary to use file system caching.
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>We'll periodically add more alternatives so watch this space.</p>
+</div> 
+
 Magento uses the following caching terminology:
 
 * *Frontend*: Similar to an interface or gateway to cache storage, implemented by <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Frontend" target="_blank">Magento\Framework\Cache\Frontend</a>.
@@ -24,81 +34,51 @@ Magento uses the following caching terminology:
 * *Backend*: Specifies details about <a href="http://framework.zend.com/manual/1.12/en/zend.cache.backends.html" target="_blank">cache storage</a>, implemented by <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Backend" target="_blank">Magento\Framework\Cache\Backend</a>
 * *Two-level backend*: Stores cache records in two backends&mdash;a faster one and a slower one.
 
+    Two-level backend cache configuration is beyond the scope of this guide but we might add it later.
+
+This topic discusses the following options for configuring caching:
+
+*   Modifying the provided "default" cache frontend, which means you modify only `<your Magento install dir>/app/etc/di.xml` (the Magento application's dependency injection configuration)
+*   Configuring your own custom cache frontend, which means you modify only `<your Magento install dir>/app/etc/env.php` because it overrides the equivalent configuration in `di.xml`
+
 <h2 id="cache-mage-frontend">Step 1: Define a cache frontend</h2>
-The Magento application has a `default` frontend you can use for any <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean-over">cache type</a>. This section discusses how to optionally define a cache frontend with a different name, which is preferable if you expect to customize your frontend.
+The Magento application has a `default` cache frontend you can use for any <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean-over">cache type</a>. This section discusses how to optionally define a cache frontend with a different name, which is preferable if you expect to customize your frontend.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>To use the <code>default</code> cache type, you don't need to modify <code>env.php</code> at all. For details about modifying <code>di.xml</code> for other cache types, see the topics referenced in <a href="{{ site.gdeurl }}config-guide/config/caching_low-level.html">Low-level cache options</a>. </p>
+  <p>To use the <code>default</code> cache type, you don't need to modify <code>env.php</code> at all; you modify Magento's global <code>di.xml</code>. See the topics referenced in <a href="{{ site.gdeurl }}config-guide/config/caching_low-level.html">Low-level cache options</a>. </p>
 </div>
  
-To use your own frontend, you must specify it in both `app/etc/env.php` and in your module's `di.xml` as the following examples show:
+To use your own frontend, you must specify it in either `app/etc/env.php` or Magento's global `app/etc/di.xml`. 
 
-`env.php` example:
+The following example shows how to define it in `env.php` (which overrides `di.xml`):
 
 {% highlight PHP %}
 <? php
 'cache' => [
     'frontend' => [
-        "<unique frontend name>" = [
-             <cache options>,
+        '<unique frontend id>' => [
+             <cache options>
         ],
     ],
 ],
-?>
-{% endhighlight %}
-
-`di.xml` example:
-
-{% highlight XML %}
-<type name="Magento\App\Cache\Frontend\Pool">
-    <arguments>
-        <argument name="frontendSettings" xsi:type="array">
-            <item name="<unique frontend name>" xsi:type="string">
-               <cache options>
-            </item>
-            ...
-        </argument>
-    </arguments>
-</type>
-{% endhighlight %}
-
-where `<unique frontend name>` is a unique name to identify your frontend and `<cache options>` are options discussed in the topics specific to each type of caching (database, Redis, Varnish, and so on).
-
-<h2 id="cache-mage-types">Step 2: Associate cache types with your frontend</h2>
-You can now associate your frontend with cache types. You can associate one cache frontend with multiple <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean-over">cache types</a>. 
-
-Update `env.php` and `di.xml` as shown in the following examples.
-
-`env.php` example:
-
-{% highlight PHP %}
-<? php
-'cache' => [
     'type' => [
-         <cache type> => [
-             'frontend' => "<unique frontend name>"
+         <cache type 1> => [
+             'frontend' => '<unique frontend id>'
+        ],
+    ],
+    'type' => [
+         <cache type 2> => [
+             'frontend' => '<unique frontend id>'
         ],
     ],
 ],
 ?>
 {% endhighlight %}
 
-`di.xml` example:
+where `<unique frontend id>` is a unique name to identify your frontend and `<cache options>` are options discussed in the topics specific to each type of caching (database, Redis, and so on).
 
-{% highlight XML %}
-<type name="Magento\App\Cache\Type\FrontendPool">
-    <arguments>
-        <argument name="typeFrontendMap" xsi:type="array">
-            <item name="<cache type>" xsi:type="string"><unique frontend name></item>
-            ...
-        </argument>
-    </arguments>
-</type>
-{% endhighlight %}
-
-
-<h2 id="cache-mage-adv">Step 3: Configure the cache</h2>
-You can specify frontend and backend cache configuration options in `env.php` and `di.xml` in the form of an associative array. This task is optional.
+<h2 id="cache-mage-adv">Step 2: Configure the cache</h2>
+You can specify frontend and backend cache configuration options in `env.php` or `di.xml` in the form of an associative array. This task is optional.
 
 `env.php` example:
 
@@ -115,21 +95,6 @@ You can specify frontend and backend cache configuration options in `env.php` an
     ...
 ],
 ?>
-{% endhighlight %}
-
-`di.xml` example:
-
-{% highlight XML %}
-<item name="frontend" xsi:type="string"><frontend_type></item>
-<item name="frontend_options" xsi:type="array">
-    <item name="<frontend_option>" xsi:type="string"><frontend_option_value></item>
-    ...
-</item>
-<item name="backend" xsi:type="string"><backend_type></item>
-<item name="backend_options" xsi:type="array">
-    <item name="<backend_option>" xsi:type="string"><backend_option_value></item>
-    ...
-</item>
 {% endhighlight %}
 
 where
