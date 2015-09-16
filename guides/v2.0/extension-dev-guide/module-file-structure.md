@@ -2,7 +2,7 @@
 layout: default
 group: extension-dev-guide
 subgroup: 3_Build
-title: PHP developer guide
+title: Module File Structure
 menu_title: Module File Structure
 menu_order: 2
 github_link: extension-dev-guide/module-file-structure.md

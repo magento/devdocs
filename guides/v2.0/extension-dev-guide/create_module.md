@@ -66,12 +66,14 @@ where:
 * `name` &#8212; is the name of your module.
 * `description` &#8212; is a concise explanation of your module's purpose.
 * `require` &#8212; lists any modules your module depends on.
-* `suggest` &#8212; lists any modules it is recommended to have loaded prior to this module.
+* `suggest` &#8212; lists soft dependencies. The module can operate without them, but if the modules are active, they should be loaded before.
 
-* `type` &#8212; is the ??
+* `type` &#8212; determines what type of magento component your module is. Choose from *magento2-library*, *magento2-theme*, *magento2-language*, or *magento2-module*.
 * `version` &#8212; lists the version of the module?
-* `license` &#8212; lists applicable licenses that apply to your module
-* `extra.map` &#8212; gives the path for Composer to...?
+* `license` &#8212; lists applicable licenses that apply to your module.
+* `extra.map` &#8212; gives the path for Magento&#8217;s Composer installer so it can marshall your component&#8217;s files to the appropriate locations under the main instance of Magento.
+
+
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Take a look at a <a href="https://github.com/magento/magento2-samples/tree/master/sample-module-minimal"> sample module</a> created by the Magento Core Team. </p>
