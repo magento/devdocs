@@ -13,7 +13,6 @@ redirect_from: /guides/v1.0/config-guide/config/caching.html
 #### Contents 
 
 *	<a href="#m2devgde-cache-explore">Overview of caching</a>
-*	<a href="#m2devgde-cache-type">Create a cache type</a>
 * <a href="#m2devgde-cache-more">More information about caching</a>
 
 <h2 id="m2devgde-cache-explore">Overview of caching</h2>
@@ -43,13 +42,14 @@ The cache configuration is an associative array similar to the following:
 		'config_webservice' => 1,
 		'config_integration_api' => 1,
 	),
-); ?>
+); 
+?>
 {% endhighlight %}
 
 <h2 id="m2devgde-cache-more">More information about caching</h2>
 The following topics discuss how to set up caching:
 
-*	<a href="{{ site.gdeurl }}config-guide/config/caching-cache-type.html">Creating a cache type</a>
+*	<a href="{{ site.gdeurl }}config-guide/config/caching-cache-type.html">Create a cache type</a>
 *	<a href="{{ site.gdeurl }}config-guide/config/config-create.html">Create or extend configuration types</a>
 *	<a href="{{ site.gdeurl }}config-guide/config/caching_frontend-cache-types.html">Associate cache frontends with cache types</a>
 *	<a href="{{ site.gdeurl }}config-guide/config/caching_low-level.html">Low-level cache options</a>

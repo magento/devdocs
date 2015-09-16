@@ -12,7 +12,7 @@ github_link: config-guide/config/caching_low-level.md
 The Magento application uses a low-level cache frontend and backend to provide access to the cache storage.
 
 <h2 id="cache-lowlevel-front">Low-level frontend cache</h2>
-Magento extends <a href="http://framework.zend.com/manual/1.12/en/zend.cache.frontends.html" target="_blank">Zend_Cache_Core</a> by implementing uses our own <a href="{{ site.mage2000url }}internal/Magento/Framework/Cache/Core.php" target="_blank">Magento\Framework\Cache\Core</a> frontend cache. 
+Magento extends <a href="http://framework.zend.com/manual/1.12/en/zend.cache.frontends.html" target="_blank">Zend_Cache_Core</a> by implementing uses our own <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Core.php" target="_blank">Magento\Framework\Cache\Core</a> frontend cache. 
 
 <h2 id="cache-lowlevel-front">Low-level backend cache</h2>
 In general, the Magento application works with any backend cache that <a href="http://framework.zend.com/manual/1.12/en/zend.cache.backends.html" target="_blank">Zend_Cache Backends</a> supports. However, this guide covers only the following low-level backend caches:

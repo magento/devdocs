@@ -11,28 +11,27 @@ github_link: config-guide/memcache/database.md
 
 #### Contents
 *	<a href="#mage-cache-db-over">Overview of database caching</a>
-
-<!-- *	<a href="#mage-cache-db-prereq">Prerequisites</a> -->
-
-*	<a href="#mage-cache-db-di">Modify `di.xml`</a>
+*	<a href="#mage-cache-db-prereq">Prerequisites</a>
+*	<a href="#mage-cache-db-di">Database caching using the <code>default</code> cache frontend</a>
+*	<a href="#mage-cache-db-env">Database caching using a custom cache frontend</a>
 *	<a href="#mage-cache-db-verify">Verify database caching is working</a>
-*	<a href="#mage-cache-db-config">Configuration example</a>
+*	<a href="#mage-cache-db-config">Configuration examples</a>
 
 <h2 id="mage-cache-db-over">Overview of database caching</h2>
 This topic discusses how to use the Magento 2 database for caching. After you complete these tasks, cached objects are stored in the `cache` and `cache_tag` Magento 2 database tables. Nothing is stored `var/cache` or `var/page_cache`.
 
-This topic discusses how to set up caching, how to verify database caching is working, and we provide a sample `di.xml` snippet for reference.
+This topic discusses how to set up database caching, how to verify database caching is working. We discuss the following options:
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>This discusses how to configure database caching for the <code>default</code> cache frontend. Discussing how to configure database caching for a custom cache frontend is beyond the scope of this topic currently.</p></span>
-</div>
+*	Using the `default` cache frontend, in which case you modify `di.xml` only.
+*	Using custom cache frontend, in which case you modify `env.php` only.
 
-<!-- <h2 id="mage-cache-db-prereq">Prerequisites</h2>
-Before you continue, if you're using your own frontend cache, make sure you <a href="{{ site.gdeurl }}config-guide/config/caching_frontend-cache-types.html">associate cache frontends with cache types</a>. If you're using the `default` frontend cache, you don't have to do that. -->
+<h2 id="mage-cache-db-prereq">Prerequisites</h2>
+Before you continue, if you're using your own frontend cache, make sure you <a href="{{ site.gdeurl }}config-guide/config/caching_frontend-cache-types.html">associate cache frontends with cache types</a>. If you're using the `default` frontend cache, you don't have to do that.
 
-<h2 id="mage-cache-db-di">Modify <code>di.xml</code></h2>
-To enable database caching, you must modify `<your Magento install dir>/app/etc/di.xml`, which is the global deployment injection configuration for the Magento application.
+We provide sample configurations at the end of this topic.
+
+<h2 id="mage-cache-db-di">Database caching using the <code>default</code> cache frontend</h2>
+To enable database caching using the `default` frontend, you must modify `<your Magento install dir>/app/etc/di.xml`, which is the global deployment injection configuration for the Magento application.
 
 To modify `di.xml`:
 
@@ -70,30 +69,72 @@ To modify `di.xml`:
 4.	Replace the entire block with the following:
 
 		<type name="Magento\Framework\App\Cache\Frontend\Pool">
-        <arguments>
-            <argument name="frontendSettings" xsi:type="array">
-                <item name="page_cache" xsi:type="array">
-                  <item name="backend" xsi:type="string">database</item>
-                    </item>
-                  <item name="<your cache id>" xsi:type="array">
-                  <item name="backend" xsi:type="string">database</item>
-                  </item>
-            </argument>
-        </arguments>
-    </type>
-    <type name="Magento\Framework\App\Cache\Type\FrontendPool">
-        <arguments>
-            <argument name="typeFrontendMap" xsi:type="array">
-                <item name="backend" xsi:type="string">database</item>
-            </argument>
-        </arguments>
-    </type>
+        	<arguments>
+            	<argument name="frontendSettings" xsi:type="array">
+            	    <item name="page_cache" xsi:type="array">
+            	      <item name="backend" xsi:type="string">database</item>
+             	       </item>
+             	     <item name="<your cache id>" xsi:type="array">
+             	     <item name="backend" xsi:type="string">database</item>
+             	     </item>
+           		</argument>
+        	</arguments>
+    	</type>
+    	<type name="Magento\Framework\App\Cache\Type\FrontendPool">
+        	<arguments>
+         	   <argument name="typeFrontendMap" xsi:type="array">
+         	       <item name="backend" xsi:type="string">database</item>
+         	   </argument>
+        	</arguments>
+    	</type>
 
     where `<your cache id>` is your unique cache identifier.
 
 5.	Save your changes to `di.xml` and exit the text editor.
 
-7.	Continue with the next section.
+7.	Continue with <a href="#mage-cache-db-verify">Verify database caching is working</a>.
+
+<h2 id="mage-cache-db-env">Database caching using a custom cache frontend</h2>
+This section discusses how to set up database caching with a custom cache frontend.
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Due to a known issue, a custom cache frontend still results in some objects being cached to the file system; however, fewer assets are cached compared to file system caching.</p></span>
+</div>
+
+To enable database caching using a custom cache frontend, you must modify `<your Magento install dir>/app/etc/env.php` as follows:
+
+1.	Log in to the Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+2.	Enter the following commands to make a copy of `env.php`:
+
+		cd <your Magento install dir>/app/etc
+		cp env.php env.php.bak
+
+3.	Open `env.php` in a text editor and add the following anywhere, such as before `'cache_types' =>`:
+
+		'cache' => [
+		    'frontend' => [
+		        '<unique frontend id>' => [
+		             <cache options>
+		        ],
+		    ],
+		],
+		    'type' => [
+		         <cache type 1> => [
+		             'frontend' => '<unique frontend id>'
+		        ],
+		    ],
+		    'type' => [
+		         <cache type 2> => [
+		             'frontend' => '<unique frontend id>'
+		        ],
+		    ],
+		],
+
+	An example is shown in <a href="#mage-cache-db-config">Configuration examples</a>.
+
+4.	Save your changes to `env.php` and exit the text editor.
+5.	Continue with the next section.
 
 <h2 id="mage-cache-db-verify">Verify database caching is working</h2>
 To verify database caching is working, clear the current cache directories, go to any cacheable page in a web browser, and verify that data is written to the database and not to the file system.
@@ -127,77 +168,11 @@ Use the following steps:
 	<img src="{{ site.baseurl }}common/images/config-db_cache-tag-table.png" alt="Sample contents of the cache tag table with database caching enabled">
 
 
-<h2 id="mage-cache-db-config">Configuration example</h2>
-TBD
+<h2 id="mage-cache-db-config">Configuration examples</h2>
+This section contains code sample snippets to refer to when configuring database caching.
 
-`env.php`
-
-{% highlight PHP %}
-<?php
-return array (
-  'backend' => 
-  array (
-    'frontName' => 'admin',
-  ),
-  'install' => 
-  array (
-    'date' => 'Mon, 24 Aug 2015 14:49:48 -0500',
-  ),
-  'crypt' => 
-  array (
-    'key' => '6d6ed6daaf625c2fe18e39f9bb51791f',
-  ),
-  'session' => 
-  array (
-    'save' => 'files',
-  ),
-  'db' => 
-  array (
-    'table_prefix' => '',
-    'connection' => 
-    array (
-      'default' => 
-      array (
-        'host' => 'localhost',
-        'dbname' => 'magento',
-        'username' => 'magento',
-        'password' => 'magento',
-        'model' => 'mysql4',
-        'engine' => 'innodb',
-        'initStatements' => 'SET NAMES utf8;',
-        'active' => '1',
-      ),
-    ),
-  ),
-  'resource' => 
-  array (
-    'default_setup' => 
-    array (
-      'connection' => 'default',
-    ),
-  ),
-  'x-frame-options' => 'SAMEORIGIN',
-  'cache_types' => 
-  array (
-    'config' => 1,
-    'layout' => 1,
-    'block_html' => 1,
-    'view_files_fallback' => 1,
-    'view_files_preprocessing' => 1,
-    'collections' => 1,
-    'db_ddl' => 1,
-    'eav' => 1,
-    'full_page' => 1,
-    'translate' => 1,
-    'config_integration' => 1,
-    'config_integration_api' => 1,
-    'config_webservice' => 1,
-  ),
-);
-?>
-{% endhighlight %}
-
-`di.xml` (snippet):
+<h3 id="mage-cache-db-config-default">Sample <code>di.xml</code> for the default cache frontend</h3>
+`di.xml` snippet:
 
 {% highlight XML %}
  <type name="Magento\Framework\App\Cache\Frontend\Pool">
@@ -220,3 +195,60 @@ return array (
         </arguments>
  </type>
 {% endhighlight %}
+
+<h3 id="mage-cache-db-config-custom">Sample <code>env.php</code> for a custom cache frontend</h3>
+`env.php` snippet:
+
+{% highlight PHP %}
+<?php
+ 'cache' => [
+     'frontend' => [
+        'magento_cache' => [
+             'backend' => 'database'
+         ],
+      ],
+      'type' => [
+         'config' => [
+            'frontend' => 'magento_cache'
+          ],
+         'layout' => [
+            'frontend' => 'magento_cache'
+          ],
+         'block_html' => [
+            'frontend' => 'magento_cache'
+          ],
+         'view_files_fallback' => [
+            'frontend' => 'magento_cache'
+          ],
+         'view_files_preprocessing' => [
+            'frontend' => 'magento_cache'
+          ],
+         'collections' => [
+            'frontend' => 'magento_cache'
+          ],
+         'db_ddl' => [
+            'frontend' => 'magento_cache'
+          ],
+         'eav' => [
+            'frontend' => 'magento_cache'
+          ],
+         'full_page' => [
+            'frontend' => 'magento_cache'
+          ],
+         'translate' => [
+            'frontend' => 'magento_cache'
+          ],
+         'config_integration' => [
+            'frontend' => 'magento_cache'
+          ],
+         'config_integration_api' => [
+            'frontend' => 'magento_cache'
+          ],
+         'config_webservice' => [
+            'frontend' => 'magento_cache'
+          ],
+      ],
+  ],
+?>
+{% endhighlight %}
+

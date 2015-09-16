@@ -38,7 +38,7 @@ Magento uses the following caching terminology:
 
 This topic discusses the following options for configuring caching:
 
-*   Modifying the provided "default" cache frontend, which means you modify only `<your Magento install dir>/app/etc/di.xml` (the Magento application's dependency injection configuration)
+*   Modifying the provided `default` cache frontend, which means you modify only `<your Magento install dir>/app/etc/di.xml` (the Magento application's dependency injection configuration)
 *   Configuring your own custom cache frontend, which means you modify only `<your Magento install dir>/app/etc/env.php` because it overrides the equivalent configuration in `di.xml`
 
 <h2 id="cache-mage-frontend">Step 1: Define a cache frontend</h2>
@@ -48,7 +48,7 @@ The Magento application has a `default` cache frontend you can use for any <a hr
   <p>To use the <code>default</code> cache type, you don't need to modify <code>env.php</code> at all; you modify Magento's global <code>di.xml</code>. See the topics referenced in <a href="{{ site.gdeurl }}config-guide/config/caching_low-level.html">Low-level cache options</a>. </p>
 </div>
  
-To use your own frontend, you must specify it in either `app/etc/env.php` or Magento's global `app/etc/di.xml`. 
+You must specify a custom cache frontend either `app/etc/env.php` or Magento's global `app/etc/di.xml`. 
 
 The following example shows how to define it in `env.php` (which overrides `di.xml`):
 
