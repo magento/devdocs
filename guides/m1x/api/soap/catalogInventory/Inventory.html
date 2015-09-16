@@ -64,7 +64,7 @@
 
 <p>Change manage_stock setting to ‘off’ in the inventory area.</p>
 
-<p>$attributeSets = $client→call($session, ‘product_stock.update’, array(’SKU’,array(’manage_stock’⇒‘0’,’use_config_manage_stock’⇒‘0’)));</p>
+<p>$attributeSets = $client-&gt;call($session, ‘product_stock.update’, array(’SKU’,array(’manage_stock’=&gt;'0’,’use_config_manage_stock’=&gt;'0’)));</p>
 
 <p>The use_config_manage_stock unchecks the ‘Use Config Settings’ box which allows you to make changes to this product and not to use the global settings that are set by default.</p>
 

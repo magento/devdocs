@@ -175,7 +175,7 @@
     <p>If a method indicates that the contents are escaped, do not escape: <code>getTitleHtml()</code>, <code>getHtmlTitle()</code> (the title is ready for the HTML output)</p>
   </li>
   <li>
-    <p>Escape data using the <code>$block→escapeHtml()</code>,  <code>$block→escapeQuote()</code>,  <code>$block→escapeUrl()</code>, <code>$block→escapeXssInUrl()</code> methods</p>
+    <p>Escape data using the <code>$block-&gt;escapeHtml()</code>,  <code>$block-&gt;escapeQuote()</code>,  <code>$block-&gt;escapeUrl()</code>, <code>$block-&gt;escapeXssInUrl()</code> methods</p>
   </li>
   <li>
     <p>Type casting and php function <code>count()</code> don’t need escaping  (for example <code>echo (int)$var</code>, <code>echo (bool)$var</code>, <code>echo count($var)</code>)</p>
@@ -187,7 +187,7 @@
     <p>Output in double quotes without variables doesn’t need escaping (for example <code>echo "some text"</code>)</p>
   </li>
   <li>
-    <p>Otherwise, escape the data using the <code>$block→escapeHtml()</code> method</p>
+    <p>Otherwise, escape the data using the <code>$block-&gt;escapeHtml()</code> method</p>
   </li>
 </ul>
 
