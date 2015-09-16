@@ -303,7 +303,7 @@ This would make the product page look like following:
 
 <h2 id="layout_markup_remove_elements">Remove elements</h2>
 
-Elements are removed using the `<remove>` instruction.
+Elements are removed using the `remove` attribute.
 
 Example: remove the Compare Products sidebar block from all store pages. This block is declared in `app/code/Magento/Catalog/view/frontend/layout/default.xml`:
 
