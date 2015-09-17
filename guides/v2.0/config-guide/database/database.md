@@ -118,7 +118,6 @@ To enable database caching using a custom cache frontend, you must modify `<your
 		             <cache options>
 		        ],
 		    ],
-		],
 		    'type' => [
 		         <cache type 1> => [
 		             'frontend' => '<unique frontend id>'

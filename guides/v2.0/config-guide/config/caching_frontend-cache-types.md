@@ -60,7 +60,6 @@ The following example shows how to define it in `env.php` (which overrides `di.x
              <cache options>
         ],
     ],
-],
     'type' => [
          <cache type 1> => [
              'frontend' => '<unique frontend id>'
