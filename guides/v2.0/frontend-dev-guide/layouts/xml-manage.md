@@ -303,9 +303,11 @@ This would make the product page look like following:
 
 <h2 id="layout_markup_remove_elements">Remove elements</h2>
 
-Elements are removed using the `<remove>` instruction.
+Elements are removed using the `remove` attribute for the `<referenceBlock>` and `<referenceContainer>`. 
 
-Example: remove the Compare Products sidebar block from all store pages. This block is declared in `app/code/Magento/Catalog/view/frontend/layout/default.xml`:
+**Example**: remove the Compare Products sidebar block from all store pages. 
+
+This block is declared in `app/code/Magento/Catalog/view/frontend/layout/default.xml`:
 
 <pre>
 &lt;page&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
@@ -322,14 +324,14 @@ Example: remove the Compare Products sidebar block from all store pages. This bl
 To remove the block, add the extending `default.xml` in your theme:
 `app/design/frontend/<Vendor>/<theme>/Magento_Catalog/layout/default.xml`
 
-In this file, add the `<remove>` instruction:
+In this file, reference the element having added the `remove` attribute:
 <pre>
-&lt;page&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;
+&lt;page xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
+    &lt;body&gt;
 ...
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;remove&nbsp;name=&quot;catalog.compare.sidebar&quot;&nbsp;/&gt;
+        &lt;referenceBlock name=&quot;catalog.compare.sidebar&quot; remove=&quot;true&quot; /&gt;
 ...
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;
+    &lt;/body&gt;
 &lt;/page&gt;
 </pre>
 
