@@ -16,7 +16,7 @@ redirect_from: /guides/v1.0/config-guide/config/caching.html
 * <a href="#m2devgde-cache-more">More information about caching</a>
 
 <h2 id="m2devgde-cache-explore">Overview of caching</h2>
-Magento uses <a href="http://framework.zend.com/manual/1.12/en/zend.cache.html" target="_blank">Zend_Cache</a> component for interaction with the cache storage. However, Magento also has <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache" target="_blank">Magento\Cache</a> library component for implementing Magento-specific caching.
+Magento uses <a href="http://framework.zend.com/manual/1.12/en/zend.cache.html" target="_blank">Zend_Cache</a> to interact with the cache storage. However, Magento also has the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache" target="_blank">Magento\Cache</a> library for implementing Magento-specific caching. These topics discuss how to configure caching and cache types.
 
 <div class="bs-callout bs-callout-info" id="info">
 	<p>By default, file system caching is enabled; no configuration is necessary to use it. This means the cache is located under <code>&lt;your Magento install dir>/var</code>.</p>
@@ -45,6 +45,8 @@ The cache configuration is an associative array similar to the following:
 ); 
 ?>
 {% endhighlight %}
+
+The preceding lists all cache types and shows they are all enabled.
 
 <h2 id="m2devgde-cache-more">More information about caching</h2>
 The following topics discuss how to set up caching:

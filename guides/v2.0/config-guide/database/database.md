@@ -6,7 +6,7 @@ title: Database caching
 menu_title: Database caching
 menu_order: 10
 menu_node: 
-github_link: config-guide/memcache/database.md
+github_link: config-guide/database/database.md
 ---
 
 #### Contents
@@ -23,12 +23,12 @@ This topic discusses how to use the Magento 2 database for caching. After you co
 This topic discusses how to set up database caching, how to verify database caching is working. We discuss the following options:
 
 *	Using the `default` cache frontend, in which case you modify `di.xml` only.
-*	Using custom cache frontend, in which case you modify `env.php` only.
+*	Using a custom cache frontend, in which case you modify `env.php` only.
 
 <h2 id="mage-cache-db-prereq">Prerequisites</h2>
 Before you continue, if you're using your own frontend cache, make sure you <a href="{{ site.gdeurl }}config-guide/config/caching_frontend-cache-types.html">associate cache frontends with cache types</a>. If you're using the `default` frontend cache, you don't have to do that.
 
-We provide sample configurations at the end of this topic.
+We provide <a href="#mage-cache-db-config">sample configurations</a> at the end of this topic.
 
 <h2 id="mage-cache-db-di">Database caching using the <code>default</code> cache frontend</h2>
 To enable database caching using the `default` frontend, you must modify `<your Magento install dir>/app/etc/di.xml`, which is the global deployment injection configuration for the Magento application.
@@ -148,16 +148,21 @@ Use the following steps:
 
 3.	In a web browser, go to any cacheable page (such as the storefront front door page).
 
-	If exceptions display, verify `di.xml` syntax and try again. (To see exceptions in the browser, you must <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html##config-mode">enable developer mode</a>.)
+	If exceptions display, verify `di.xml` syntax and try again. (To see exceptions in the browser, you must <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html#config-mode">enable developer mode</a>.)
 4.	Enter the following commands:
 
 		ls <your Magento install dir>/var/cache/*
 		ls <your Magento install dir>/var/page_cache/*
 
+    <div class="bs-callout bs-callout-info" id="info">
+      <span class="glyphicon-class">
+      <p>Due to a known issue, a custom cache frontend still results in some objects being cached to the file system; however, fewer assets are cached compared to file system caching.</p>
+      <p>If you use the <code>default</code> cache frontend, you don't have this issue.</p></span>
+    </div>
 3.	Verify both directories are empty; if not, edit `di.xml` again and correct any issues.
 4.	Use a database tool such as <a href="{{ site.gdeurl }}install-gde/prereq/optional.html#install-optional-phpmyadmin">phpMyAdmin</a> to verify there is data in the `cache` and `cache_tag` tables.
 
-	The following figures show examples. The important thing is that there are rows in the tables *The data in your tables will be different than the following*.
+	The following figures show examples. The important thing is that there are rows in the tables. *The data in your tables will be different than the following*.
 
 	`cache` table example.
 
@@ -197,7 +202,7 @@ This section contains code sample snippets to refer to when configuring database
 {% endhighlight %}
 
 <h3 id="mage-cache-db-config-custom">Sample <code>env.php</code> for a custom cache frontend</h3>
-`env.php` snippet:
+`env.php` snippet that enables all cache types with a custom frontend named `magento_cache`:
 
 {% highlight PHP %}
 <?php

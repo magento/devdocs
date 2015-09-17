@@ -24,7 +24,7 @@ Magento enables you to configure alternatives to the default file system caching
 *   File system (default): No configuration is necessary to use file system caching.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>We'll periodically add more alternatives so watch this space.</p>
+  <p>We'll periodically add more cache alternatives so watch this space.</p>
 </div> 
 
 Magento uses the following caching terminology:
@@ -38,7 +38,7 @@ Magento uses the following caching terminology:
 
 This topic discusses the following options for configuring caching:
 
-*   Modifying the provided `default` cache frontend, which means you modify only `<your Magento install dir>/app/etc/di.xml` (the Magento application's dependency injection configuration)
+*   Modifying the provided `default` cache frontend, which means you modify only `<your Magento install dir>/app/etc/di.xml` (the Magento application's global dependency injection configuration)
 *   Configuring your own custom cache frontend, which means you modify only `<your Magento install dir>/app/etc/env.php` because it overrides the equivalent configuration in `di.xml`
 
 <h2 id="cache-mage-frontend">Step 1: Define a cache frontend</h2>
@@ -78,7 +78,7 @@ The following example shows how to define it in `env.php` (which overrides `di.x
 where `<unique frontend id>` is a unique name to identify your frontend and `<cache options>` are options discussed in the topics specific to each type of caching (database, Redis, and so on).
 
 <h2 id="cache-mage-adv">Step 2: Configure the cache</h2>
-You can specify frontend and backend cache configuration options in `env.php` or `di.xml` in the form of an associative array. This task is optional.
+You can specify frontend and backend cache configuration options in `env.php` or `di.xml`. This task is optional.
 
 `env.php` example:
 
