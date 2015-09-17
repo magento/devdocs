@@ -33,7 +33,6 @@ Allowed layout instructions:
 * <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_cont" target="_blank">&nbsp;&lt;container&gt;</a>
 * <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref" target="_blank">&nbsp;&lt;referenceContainer&gt;</a>
 * <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv" target="_blank">&nbsp;&lt;move&gt;</a>
-* <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_rem" target="_blank">&nbsp;&lt;remove&gt;</a>
 * <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_upd" target="_blank">&nbsp;&lt;update&gt;</a> 
 
 Sample page layout:
@@ -192,7 +191,6 @@ The following table describes the instructions specific for page configuration f
         <ul>
           <li><code>&lt;block&gt;</code></li>
           <li><code>&lt;container&gt;</code></li>
-          <li><code>&lt;remove&gt;</code></li>
           <li><code>&lt;move&gt;</code></li>
        <li><code>&lt;attribute&gt;</code></li>
           <li><code>&lt;referenceBlock&gt;</code></li>
