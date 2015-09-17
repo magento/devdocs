@@ -180,17 +180,12 @@
   <li>Log in to your Magento 2 server as a user with privileges to write to the Magento 2 file system or <a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.</li>
   <li>Change to Magento 2 root directory.</li>
   <li>
-    <p>Enter either of the following commands:</p>
+    <p>Enter the following commands in the order shown:</p>
 
     <pre><code>    composer config repositories.data-migration-tool git https://github.com/magento/data-migration-tool-ce
-</code></pre>
-
-    <p>or</p>
-
-    <pre><code>    composer require magento/data-migration-tool:dev-master
+    composer require magento/data-migration-tool:dev-master
 </code></pre>
   </li>
-  <li>If necessary, enter <code>composer update</code>.</li>
   <li>Wait while dependencies are updated.</li>
 </ol>
 
