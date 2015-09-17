@@ -29,7 +29,7 @@ Examples of customizations that involve overriding layouts:
 	</div>
 
 *	Modifying method arguments.
-*	Canceling block/container removal using the remove directive.
+*	Canceling block/container removal using the `remove` attribute.
 *	Setting XML attributes of blocks and containers.
 
 	<div class="bs-callout bs-callout-info" id="info">

@@ -100,6 +100,12 @@ Blocks employ templates to generate HTML. Examples of blocks include a category 
          <td><code>true</code> or <code>false</code></td>
          <td>no</td>
       </tr>
+      <tr class="odd">
+         <td>remove</td>
+         <td>Allows to remove.or cancel the removal of the element</td>
+         <td><code>true</code> or <code>false</code></td>
+         <td>no</td>
+      </tr>
    </tbody>
 </table>
 
@@ -168,6 +174,12 @@ A structure without content that holds other layout elements such as blocks and 
          <td>htmlClass</td>
          <td>Output parameter. If specified, the value is added to the wrapper element. If there is no wrapper element, this attribute has no effect.</td>
          <td>Any valid HTML 5  <code>&lt;class></code> value.</td>
+         <td>no</td>
+      </tr>
+      <tr class="odd">
+         <td>remove</td>
+         <td>Allows to remove.or cancel the removal of the element.</td>
+         <td><code>true</code> or <code>false</code></td>
          <td>no</td>
       </tr>
    </tbody>
@@ -314,21 +326,21 @@ To pass parameters to a block use the <a href="#argument">`<argument></argument>
       </tr>
       <tr class="even">
          <td>remove</td>
-         <td>Allows you to cancel removal of a block or container in your layout by setting remove attribute value to false.</td>
-         <td>block/container name</td>
+         <td>Allows to remove.or cancel the removal of the element.</td>
+         <td>true/false</td>
          <td>no</td>
       </tr>
       <tr class="even">
          <td>display</td>
          <td>Allows you to disable rendering of specific block or container with all its children (both set directly and by reference). The block's/container's and its children' respective PHP objects are still generated and available for manipulation.</td>
-         <td>block/container name</td>
+         <td>true/false</td>
          <td>no</td>
       </tr>
    </tbody>
 </table>
 
 <ul>
-<li>remove attribute is optional and its default value is false.</li>
+<li>The <code>remove</code> attribute is optional and its default value is false.</li>
 
     This implementation allows you to cancel removal of a block or container in your layout by setting remove attribute value to false.
     
@@ -336,7 +348,7 @@ To pass parameters to a block use the <a href="#argument">`<argument></argument>
     
     <pre>&lt;referenceBlock name="block.name" remove="true" /&gt;</pre>
 
-<li>display attribute is optional and its default value is true.</li>
+<li>The <code>display</code> attribute is optional and its default value is true.</li>
 
     You are always able to overwrite this value in your layout.
     In situation when remove value is true, the display attribute is ignored.
