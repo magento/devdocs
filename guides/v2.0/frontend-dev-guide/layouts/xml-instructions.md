@@ -102,7 +102,7 @@ Blocks employ templates to generate HTML. Examples of blocks include a category 
       </tr>
       <tr class="odd">
          <td>remove</td>
-         <td>Allows to remove.or cancel the removal of the element</td>
+         <td>Allows to remove or cancel the removal of the element</td>
          <td><code>true</code> or <code>false</code></td>
          <td>no</td>
       </tr>
@@ -178,7 +178,7 @@ A structure without content that holds other layout elements such as blocks and 
       </tr>
       <tr class="odd">
          <td>remove</td>
-         <td>Allows to remove.or cancel the removal of the element.</td>
+         <td>Allows to remove or cancel the removal of the element.</td>
          <td><code>true</code> or <code>false</code></td>
          <td>no</td>
       </tr>
@@ -326,7 +326,7 @@ To pass parameters to a block use the <a href="#argument">`<argument></argument>
       </tr>
       <tr class="even">
          <td>remove</td>
-         <td>Allows to remove.or cancel the removal of the element.</td>
+         <td>Allows to remove or cancel the removal of the element.</td>
          <td>true/false</td>
          <td>no</td>
       </tr>
