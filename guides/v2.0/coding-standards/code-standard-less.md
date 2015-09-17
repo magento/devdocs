@@ -2,13 +2,13 @@
 layout: default
 group: coding-standards
 subgroup: Coding standards
-title: Less coding standard
+title: LESS coding standard
 menu_title: LESS coding standard
 menu_order: 7
 github_link: coding-standards/code-standard-less.md
 ---
 
-This standard defines Magento requirements for code formatting and style for teams that develop LESS and CSS code.
+This standard defines Magento internal requirements for code formatting and style for teams that develop LESS and CSS code.
 
 Some parts of Magento code might not comply with this coding standard.
 
@@ -40,7 +40,7 @@ Use only spaces for indentation:
 
 #### Braces
 
-Add one space before opening braces and line break after. Add line break before closing braces.
+Add one space before opening braces and a line break after. Add a line break before closing braces.
 
 **Correct**:
 
@@ -54,7 +54,7 @@ Add one space before opening braces and line break after. Add line break before 
 
 #### Selector delimiters
 
-Add line break after each selector delimiter. Do not add spaces before and after delimiters.
+Add a line break after each selector delimiter. Do not add spaces before or after delimiters.
 
 **Correct**:
 
@@ -89,7 +89,7 @@ Use single quotes.
 
 #### Combinator indents
 
-Add spaces around combinators.
+Add spaces before and after combinators.
 
 **Correct**:
 
@@ -132,7 +132,7 @@ Start each property declaration in a new line.
 
 #### Properties colon indents
 
-Do not add spaces around property colon.
+Do not add spaces before or after the colon that separates property names from values.
 
 **Correct**:
 
@@ -157,11 +157,11 @@ Do not add spaces around property colon.
 
 #### End of file
 
-Add a blank line in the end of file.
+Add a blank line at the end of file.
 
 #### End of selector
 
-Add a blank line after selector.
+Add a blank line after a selector.
 
 **Correct**:
 
@@ -188,7 +188,7 @@ Add a blank line after selector.
 
 #### End of the property line
 
-Add semicolon after property.
+Add a semicolon after property.
 
 **Correct**:
 
@@ -227,7 +227,7 @@ Avoid using the `!important` property if possible. If it is required, add a spac
 ### Comments
 
 First and second level comments must be surrounded by empty lines.
-First, second and third level comments should have two spaces after "//"  Inline comments should have one space after "//".
+First, second and third level comments should have two spaces after "//". Inline comments should have one space after "//".
 
 **Correct**
 
@@ -258,7 +258,7 @@ First, second and third level comments should have two spaces after "//"  Inline
 
 #### Types
 
-Magento at least supports the last two versions of all major browsers. Internet Explorer is supported from version 9 and later. 
+Magento supports the two most recent versions of all major browsers. Internet Explorer is supported from version 9 and later. 
 
 You can use almost all CSS3 selectors: descendants, attributes, pseudo classes, structural, pseudo elements, and so on.
 
@@ -291,7 +291,7 @@ Exception: Avoid the `id` selector.
 
 #### Standard classes
 
-Classes' names should be lowercase, start with a letter (except helper classes), words should be separated with dash '-'.
+Class names should be lowercase, start with a letter (except helper classes), words should be separated with dash '-'.
 
 **Correct**:
 
@@ -315,7 +315,7 @@ Classes' names should be lowercase, start with a letter (except helper classes),
 
 #### Helper classes
 
-Helper classes' names should be lowercase and start with underscore ("_").
+Helper class names should be lowercase and start with underscore ("_").
 
 **Example**:
 
@@ -351,7 +351,7 @@ Try to convey what class is about while being as brief as possible.
 #### Meaning
 
 
-Use meaningful specific class names that reflect the purpose of the element. Class names should not be presentational or cryptic. 
+Use meaningful, specific class names that reflect the purpose of the element. Class names should not be presentational or cryptic. 
 
 
 **Correct**: specific
@@ -364,7 +364,7 @@ Use meaningful specific class names that reflect the purpose of the element. Cla
     }
 
 
-**Incorrect**:
+**Incorrect**: cryptic
 
     .foo-1901 {
         ...
@@ -445,7 +445,7 @@ Write selector in one line, do not use concatenation.
 
 #### Nesting
 
-Preferably do not use more than three levels of nesting.
+Avoid using more than three levels of nesting.
 
 Exceptions are pseudo elements and states.
 
@@ -484,7 +484,7 @@ Exceptions are pseudo elements and states.
 
 ### Sorting
 
-Sort all properties in the alphabetical order. Mixins, variables and so on should go first.
+Sort all properties in the alphabetical order. Mixins, variables, and so on should go first.
 
 **Correct**:
 
