@@ -303,12 +303,7 @@ This would make the product page look like following:
 
 <h2 id="layout_markup_remove_elements">Remove elements</h2>
 
-Elements are removed using the `remove="true"` attribute. The attribute is available for all instructions defining an element:
-
-- `<block>`
-- `<container>`
-- `<referenceBlock>`
-- `<referenceContainer>`
+Elements are removed using the `remove` attribute for the `<referenceBlock>` and `<referenceContainer>`. 
 
 **Example**: remove the Compare Products sidebar block from all store pages. 
 

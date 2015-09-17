@@ -100,12 +100,6 @@ Blocks employ templates to generate HTML. Examples of blocks include a category 
          <td><code>true</code> or <code>false</code></td>
          <td>no</td>
       </tr>
-      <tr class="odd">
-         <td>remove</td>
-         <td>Allows to remove or cancel the removal of the element</td>
-         <td><code>true</code> or <code>false</code></td>
-         <td>no</td>
-      </tr>
    </tbody>
 </table>
 
@@ -174,12 +168,6 @@ A structure without content that holds other layout elements such as blocks and 
          <td>htmlClass</td>
          <td>Output parameter. If specified, the value is added to the wrapper element. If there is no wrapper element, this attribute has no effect.</td>
          <td>Any valid HTML 5  <code>&lt;class></code> value.</td>
-         <td>no</td>
-      </tr>
-      <tr class="odd">
-         <td>remove</td>
-         <td>Allows to remove or cancel the removal of the element.</td>
-         <td><code>true</code> or <code>false</code></td>
          <td>no</td>
       </tr>
    </tbody>
@@ -326,7 +314,7 @@ To pass parameters to a block use the <a href="#argument">`<argument></argument>
       </tr>
       <tr class="even">
          <td>remove</td>
-         <td>Allows to remove or cancel the removal of the element.</td>
+         <td>Allows to remove or cancel the removal of the element. When a container is removed, its child elements are removed as well.</td>
          <td>true/false</td>
          <td>no</td>
       </tr>
