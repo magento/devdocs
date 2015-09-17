@@ -66,7 +66,7 @@ H1 CODE, H2 CODE, H3 CODE, H4 CODE, H5 CODE {
     font-size: 16px;
 }
 
-/* SRJ - reviewer question 
+/* SRJ - reviewer question */
 
 p.q 	{
 	font-size: 15pt;
@@ -145,19 +145,6 @@ p.q 	{
     height: 42px;
 }
 
-/* Adjust footer padding TDD */
-
-#footer-wrap {
-   
-    padding-left: 66px;
-}
-
-#footer-wrap #copyright {
-    padding-right: 12%;
-}
-
-
-
 
 /*FIX for table font sizes TDD*/
 
@@ -187,3 +174,12 @@ TABLE {
     width: 99%;
 }
 
+
+/* Add style for TOC Header in sidebar.html include */
+.main-container DIV.sidebar-wrapper H4 {
+
+    margin: 1.5em 10px 0.5em 14px;
+    color: rgba(97, 57, 42, 0.99);
+    text-transform: capitalize;
+    
+}
