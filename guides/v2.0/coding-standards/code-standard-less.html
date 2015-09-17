@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>DocBlock standard</title>
+	<title>LESS coding standard</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/coding-standards/docblock-standard-general.html">
+	<link rel="canonical" href="//guides/v2.0/coding-standards/code-standard-less.html">
 
 
 
@@ -155,9 +155,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">DocBlock standard</h1>
+		<h1 class="page-heading">LESS coding standard</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/coding-standards/docblock-standard-general.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/coding-standards/code-standard-less.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -166,490 +166,763 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="m2devgde-code-DocBlock-intro">Overview</h2>
+		<p>This standard defines Magento internal requirements for code formatting and style for teams that develop LESS and CSS code.</p>
 
-<p>This standard defines Magento requirements and conventions for adding code inline documentation, known as <i>DocBlock</i>s.</p>
-<p>Some parts of Magento code might not comply with this standard, but we are working to gradually improve this.</p>
-<p>Following these standard is optional for third-party Magento developers, but doing so helps to create consistent, clean, and easy to read inline documentation.</p>
-<p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a> to interpret the "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NOT," "SHOULD," "SHOULD NOT," "RECOMMENDED," "MAY," and "OPTIONAL keywords."</p>
+<p>Some parts of Magento code might not comply with this coding standard.</p>
 
-<h2 id="scope">Scope of the standard</h2>
+<p>This coding standard is optional for third-party Magento developers.</p>
 
-<p>The goal of this standard is to unify usage of code DocBlocks for all files, not specific to a particular language. The following is assumed by default:</p>
-
-<ul>
-  <li>Formatting according phpDocumentor standard</li>
-  <li>Requirements apply for all files regardless of programming language, but a DocBlock standard for the particular language may override it.</li>
+<ul id="markdown-toc">
+  <li><a href="#general-rules">General rules</a>    <ul>
+      <li><a href="#indentation">Indentation</a></li>
+      <li><a href="#formatting">Formatting</a>        <ul>
+          <li><a href="#braces">Braces</a></li>
+          <li><a href="#selector-delimiters">Selector delimiters</a></li>
+          <li><a href="#quotes">Quotes</a></li>
+          <li><a href="#combinator-indents">Combinator indents</a></li>
+          <li><a href="#properties-line-break">Properties line break</a></li>
+          <li><a href="#properties-colon-indents">Properties colon indents</a></li>
+          <li><a href="#end-of-file">End of file</a></li>
+          <li><a href="#end-of-selector">End of selector</a></li>
+          <li><a href="#end-of-the-property-line">End of the property line</a></li>
+          <li><a href="#important-property">!important property</a></li>
+        </ul>
+      </li>
+      <li><a href="#comments">Comments</a></li>
+      <li><a href="#selectors">Selectors</a>        <ul>
+          <li><a href="#types">Types</a></li>
+        </ul>
+      </li>
+      <li><a href="#classes-naming">Classes Naming</a>        <ul>
+          <li><a href="#standard-classes">Standard classes</a></li>
+          <li><a href="#helper-classes">Helper classes</a></li>
+          <li><a href="#size">Size</a></li>
+          <li><a href="#meaning">Meaning</a></li>
+        </ul>
+      </li>
+      <li><a href="#selectors-naming">Selectors naming</a>        <ul>
+          <li><a href="#formatting-1">Formatting</a></li>
+          <li><a href="#nesting">Nesting</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#properties">Properties</a>    <ul>
+      <li><a href="#sorting">Sorting</a></li>
+      <li><a href="#shorthand">Shorthand</a></li>
+      <li><a href="#and-units">0 and units</a></li>
+      <li><a href="#floating-values">Floating values</a></li>
+      <li><a href="#hexadecimal-notation">Hexadecimal notation</a></li>
+    </ul>
+  </li>
+  <li><a href="#variables">Variables</a>    <ul>
+      <li><a href="#location">Location</a>        <ul>
+          <li><a href="#local-variables">Local variables</a></li>
+          <li><a href="#theme-variables">Theme variables</a></li>
+        </ul>
+      </li>
+      <li><a href="#naming">Naming</a>        <ul>
+          <li><a href="#value-variables">Value variables</a></li>
+          <li><a href="#parameter-variables">Parameter variables</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#mixins">Mixins</a>    <ul>
+      <li><a href="#location-1">Location</a></li>
+      <li><a href="#naming-1">Naming</a></li>
+    </ul>
+  </li>
+  <li><a href="#extends">Extends</a>    <ul>
+      <li><a href="#location-2">Location</a></li>
+      <li><a href="#naming-2">Naming</a></li>
+    </ul>
+  </li>
 </ul>
 
-<h2 id="files">Files</h2>
+<h2 id="general-rules">General rules</h2>
 
-<p>Each Magento source code file must have a DocBlock header with short description of the file. After the short description, there can be a long description.</p>
+<h3 id="indentation">Indentation</h3>
 
-<p>Both short and long descriptions (for file headers and herein) must be separated from other elements using one empty line (implied empty line in terms of DocBlock syntax, where any line within DocBlock starts from <code>*</code>.</p>
-
-<p>If description or short description happens to be the first one after DocBlock opening tag (<code>/**</code>) or last one before closing tag (<code>*/</code>), it should not be separated with an empty line.</p>
-
-<p><strong>DocBlock Header in a PHP-file</strong></p>
-
-<pre>
-&lt;?php
-/**
- * Short description...
- *
- * Long description
- * Broken down into several lines
- *
- * License notice...
- */
- </pre>
-
-<p><strong>DocBlock Header in an XML-file</strong></p>
-
-<pre>
-&lt;!--
-/**
- * Short description...
- *
- * Long description
- * Broken down into several lines
- *
- * License notice...
- */
---&gt;
-</pre>
-
-<h2 id="code-elements">Code structural elements</h2>
-
-<p>A structural element is defined in <a href="http://phpdoc.org/">phpDocumentor</a> as part of imperative source code, such as PHP or JavaScript, or procedural SQL. For example: namespace, class, interface, function, property, method, and so on.</p>
-
-<p>If the source code file has one and only one standalone structural element (class, interface, function, and so on), as it may be required by language-specific coding standard, the file DocBlock is to be reused for this element.</p>
-
-<p>So in general case, classes that are declared in dedicated files, must have one DocBlock, which refers to the class and file at the same time.</p>
-
-<p><strong>DocBlock for a Class</strong></p>
-
-<pre>
-&lt;?php
-/**
- * Autoloader with class map capability
- *
- * ...
- */
-class Autoload
-{
-</pre>
-
-<p>But if along with declaring class or function there must be another file with source code included, the inclusion construct must not be before file header and it must not separate element DocBlock from the element. So there are two solutions possible:</p>
+<p>Use only spaces for indentation:</p>
 
 <ul>
-  <li>Have file header DocBlock separately, then inclusion construct, then a DocBlock for the element with duplicated short description.</li>
-  <li>Or include after declaring the element (it is possible in PHP and won’t cause issues before execution).</li>
+  <li>Tab size: 4 spaces</li>
+  <li>Indent size: 4 spaces</li>
+  <li>Continuation indent: 4 spaces</li>
 </ul>
 
-<p><strong>DocBlock with Included Script File</strong></p>
+<p><strong>Correct</strong>:</p>
 
-<pre>
-&lt;?php
-/**
- * Magento integration Magento test framework (MTF) bootstrap
- *
- * ...
- */
-
-require __DIR__ . '/../bootstrap.php';
-
-namespace Magento\Test;
-
-/**
- * Magento integration Magento test framework (MTF) bootstrap
- */
-class Bootstrap
-{
-</pre>
-
-<p><strong>DocBlock with Included Class File</strong></p>
-
-<pre>
-namespace Magento\Framework\Profiler\Adapter;
-
-/**
- * Profiler CSV adapter
- *
- * ...
- */
-class Csv extends \Magento\Framework\Profiler\AdapterAbstract
-{
-// ...
-    public function setFile($file)
-    {
-        if (!isValidFile($file)) {
-            throw new \ArgumentException('A valid file name is expected.');
-        }
-        // ...
+<pre><code>.nav {
+    .nav-item {
+        ...
     }
 }
+</code></pre>
 
-require_once __DIR__ . '/../../functions.php';
-</pre>
+<h3 id="formatting">Formatting</h3>
 
-<h3 id="classes-interfaces">Classes and interfaces</h3>
+<h4 id="braces">Braces</h4>
 
-<p>Classes and interfaces must have short description.</p>
+<p>Add one space before opening braces and a line break after. Add a line break before closing braces.</p>
 
-<h3 id="short-name-form">Short name form</h3>
+<p><strong>Correct</strong>:</p>
 
-<p>It is encouraged to use the short form of the name to encourage readability and consistency with the type hint. The only exception is in the <code>Service/DTO</code> classes due to tooling requirements.</p>
-
-<p><strong>Example of a Method DocBlock</strong></p>
-
-<pre>
-use Magento\Logger;
-use Magento\Math\Random;
-use Magento\Stdlib\DateTime as StdlibDateTime;
-
-/**
- * @var Logger
- */
-protected $_logger;
-
-/**
- * Description of method here.
- *
- * @param Random $mathRandom
- * @param StdlibDateTime $dateTime
- * @param int $number
- */
-protected function doSomething(Random $mathRandom, StdlibDateTime $dateTime, $number)
-{
-
+<pre><code>.nav {
+    color: @nav__color;
 }
-</pre>
+</code></pre>
 
-<h3 id="class-attributes">Class attributes</h3>
+<p><strong>Incorrect</strong>:</p>
 
-<p>Class attributes must have type declaration using <code>@var</code> tag.</p>
+<pre><code>.nav{color: @nav__color;}
+</code></pre>
 
-<p><strong>Example of Class Attribute</strong></p>
+<h4 id="selector-delimiters">Selector delimiters</h4>
 
-<pre>
-// ...
-namespace Magento;
+<p>Add a line break after each selector delimiter. Do not add spaces before or after delimiters.</p>
 
-class Profiler
-{
-    /**
-     * @var Profiler
-     */
-    protected static $_instance = null;
-</pre>
+<p><strong>Correct</strong>:</p>
 
-<h3 id="functions-methods">Functions and methods</h3>
+<pre><code>.nav,
+.bar {
+    color: @color__base;
+}
+</code></pre>
 
-<p>Functions and methods must have:</p>
+<p><strong>Incorrect</strong>:</p>
 
-<ul>
-  <li>Short description</li>
-  <li>Declaration of all arguments (if any) using <code>@param</code> tag. Appropriate argument type must be specified.</li>
-  <li>Declaration of return type using <code>@return</code> tag. If there is no such operator, the <code>@return</code> tag must have <code>void</code> as the return value.</li>
-  <li>Declaration of possibly thrown exception using <code>@throws</code> tag, if the actual body of function triggers throwing an exception. All occurrences of <code>@throws</code> in a DocBlock must be after <code>@param</code> and <code>@return</code> (if any).</li>
-</ul>
+<pre><code>.nav, .bar {
+    color: @color__base;
+}
+</code></pre>
 
-<p>It is encouraged to supply <code>@para</code>m and <code>@throws</code> tags with additional description, which comes after the formal declaration of the tag.</p>
+<h4 id="quotes">Quotes</h4>
 
-<p><strong>Example of a Method DocBlock</strong></p>
+<p>Use single quotes.</p>
 
-<pre>
-/**
- * Merge the config XML-files
- *
- * @param array $configFiles
- * @return void
- * @throws \Magento\Exception if a non-existing or invalid XML-file passed
- */
-protected function _merge($configFiles)
-{
-    $domConfig = new \Magento\Config\Dom($this-&gt;_getInitialXml(), $this-&gt;_getIdAttributes());
-    foreach ($configFiles as $file) {
-        if (!file_exists($file)) {
-            throw new \Magento\Exception("File does not exist: {$file}");
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav {
+    content: 'lorem ipsum';
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>.nav {
+    content: "lorem ipsum";
+}
+</code></pre>
+
+<h4 id="combinator-indents">Combinator indents</h4>
+
+<p>Add spaces before and after combinators.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav + .bar {
+    color: @bar__color;
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>.nav+.bar {
+    color: @bar__color;
+}
+
+.nav +.bar {
+    color: @bar__color;
+}
+
+.nav+ .bar {
+    color: @bar__color;
+}
+</code></pre>
+
+<h4 id="properties-line-break">Properties line break</h4>
+
+<p>Start each property declaration in a new line.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav {
+    background-color: @nav__background-color;
+    color: @nav__color;
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>.nav {
+    color: @nav__color; background-color: @nav__background-color;
+}
+</code></pre>
+
+<h4 id="properties-colon-indents">Properties colon indents</h4>
+
+<p>Do not add spaces before or after the colon that separates property names from values.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav {
+    color: @nav__color;
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>.nav {
+    color : @nav__color;
+}
+
+.bar {
+    color:@bar__color;
+}
+
+.item {
+    color :@item__color;
+}
+</code></pre>
+
+<h4 id="end-of-file">End of file</h4>
+
+<p>Add a blank line at the end of file.</p>
+
+<h4 id="end-of-selector">End of selector</h4>
+
+<p>Add a blank line after a selector.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>css
+    .nav {
+        background-color: @nav__background-color;
+    }
+
+    .bar {
+        background-color: @bar__background-color;
+    }
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>css
+    .nav {
+        background-color: @nav__background-color;
+    }
+    .bar {
+        background-color: @bar__background-color;
+    }
+</code></pre>
+
+<h4 id="end-of-the-property-line">End of the property line</h4>
+
+<p>Add a semicolon after property.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav {
+    background-color: @nav__background-color;
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>.nav {
+    background-color: @nav__background-color
+}
+</code></pre>
+
+<h4 id="important-property">!important property</h4>
+
+<p>Avoid using the <code>!important</code> property if possible. If it is required, add a space before the property.</p>
+
+<p><strong>Correct</strong></p>
+
+<pre><code>.jquery-ui-calendar-item {
+    background-color: @nav__background-color !important;
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<p><code>
+    .jquery-ui-calendar-item {
+        background-color: @nav__background-color!important;
+    }
+</code></p>
+
+<h3 id="comments">Comments</h3>
+
+<p>First and second level comments must be surrounded by empty lines.
+First, second and third level comments should have two spaces after “//”. Inline comments should have one space after “//”.</p>
+
+<p><strong>Correct</strong></p>
+
+<pre><code>//
+//  First level comment
+//  _____________________________________________
+
+.nav {
+    background-color: @nav__background-color;
+}
+
+//
+//  Second level comment
+//  ---------------------------------------------
+
+.nav {
+    background-color: @nav__background-color;
+}
+
+//  Comment
+.nav {
+    //  New line comment
+    background-color: @nav__background-color; // ToDo UI: todo inline comment
+    color: @nav__color; // inline comment
+}
+</code></pre>
+
+<h3 id="selectors">Selectors</h3>
+
+<h4 id="types">Types</h4>
+
+<p>Magento supports the two most recent versions of all major browsers. Internet Explorer is supported from version 9 and later. </p>
+
+<p>You can use almost all CSS3 selectors: descendants, attributes, pseudo classes, structural, pseudo elements, and so on.</p>
+
+<p>Exception: Avoid the <code>id</code> selector.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav {
+    ...
+}
+
+.nav + bar {
+    ...
+}
+
+.nav:not(.bar) {
+    ...
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>#foo {
+    ...
+}
+</code></pre>
+
+<h3 id="classes-naming">Classes Naming</h3>
+
+<h4 id="standard-classes">Standard classes</h4>
+
+<p>Class names should be lowercase, start with a letter (except helper classes), words should be separated with dash ‘-‘.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav-bar {
+    ...
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>.navBar {
+   ...
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>: underscore separation</p>
+
+<pre><code>.nav_bar {
+   ...
+}
+</code></pre>
+
+<h4 id="helper-classes">Helper classes</h4>
+
+<p>Helper class names should be lowercase and start with underscore (“_”).</p>
+
+<p><strong>Example</strong>:</p>
+
+<pre><code>._active {
+    ...
+}
+</code></pre>
+
+<h4 id="size">Size</h4>
+
+<p>Use class names that are as short as possible, but as long as necessary.
+Try to convey what class is about while being as brief as possible.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav-bar {
+    ...
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>: too long</p>
+
+<pre><code>.navigation-panel-in-footer {
+   ...
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>: too short</p>
+
+<pre><code>.nvpf {
+   ...
+}
+</code></pre>
+
+<h4 id="meaning">Meaning</h4>
+
+<p>Use meaningful, specific class names that reflect the purpose of the element. Class names should not be presentational or cryptic. </p>
+
+<p><strong>Correct</strong>: specific</p>
+
+<pre><code>.category {
+    ...
+}
+.category-title {
+    ...
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>: cryptic</p>
+
+<pre><code>.foo-1901 {
+    ...
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>: presentational</p>
+
+<pre><code>.button-green {
+   ...
+}
+
+.clear {
+   ...
+}
+</code></pre>
+
+<h3 id="selectors-naming">Selectors naming</h3>
+<p>#### Type selectors</p>
+
+<p>Avoid qualifying class names with type selectors.</p>
+
+<p>Unless necessary (for example with helper classes), do not use element names in conjunction with IDs or classes.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.error {
+    ...
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>div.error {
+   ...
+}
+</code></pre>
+
+<p>Type selectors must be lowercase.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav &gt; li {
+    ...
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>.nav &gt; LI {
+   ...
+}
+</code></pre>
+
+<h4 id="formatting-1">Formatting</h4>
+
+<p>Write selector in one line, do not use concatenation.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.product-list-item {
+    ...
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>.product {
+    ...
+    &amp;-list {
+        ...
+        &amp;-item {
+            ...
         }
-        $domConfig-&gt;merge(file_get_contents($file));
-        if (!$domConfig-&gt;validate($this-&gt;getSchemaFile(), $errors)) {
-            $message = "Invalid XML-file: {$file}\n";
-            /** @var libXMLError $error */
-            foreach ($errors as $error) {
-                $message .= "{$error-&gt;message} Line: {$error-&gt;line}\n";
+    }
+}
+</code></pre>
+
+<h4 id="nesting">Nesting</h4>
+
+<p>Avoid using more than three levels of nesting.</p>
+
+<p>Exceptions are pseudo elements and states.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.footer {
+    ...
+    .nav {
+        ...
+    }
+    .nav-list {
+        ...
+    }
+    .nav-list-item {
+        ...
+     }
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>.footer {
+    ...
+    .nav {
+        ...
+        .nav-list {
+            ...
+            .nav-list-item {
+                ...
             }
-            throw new \Magento\Exception($message);
         }
     }
-    $this-&gt;_dom = $domConfig-&gt;getDom();
 }
-</pre>
+</code></pre>
 
-<h4 id="throws">Divergence in @throws tag</h4>
+<h2 id="properties">Properties</h2>
 
-<p>A general case when <code>@throws</code> tag must be used is if <em>throw</em> language construct is used – for example:</p>
+<h3 id="sorting">Sorting</h3>
 
-<p><strong>Example of Throwing Exception Explicitly</strong></p>
+<p>Sort all properties in the alphabetical order. Mixins, variables, and so on should go first.</p>
 
-<pre>
-/**
- * Set an arbitrary value to specified element
- *
- * @param string $elementId
- * @param string $attribute
- * @param mixed $value
- * @return Magento_Data_Structure
- * @throws \InvalidArgumentException
- */
-public function setAttribute($elementId, $attribute, $value)
-{
-    $this-&gt;_assertElementExists($elementId);
-    switch ($attribute) {
-        case self::PARENT: // break is intentionally omitted
-        case self::CHILDREN:
-        case self::GROUPS:
-            throw new \InvalidArgumentException("Attribute '{$attribute}' is reserved and cannot be set.");
-        default:
-            $this-&gt;_elements[$elementId][$attribute] = $value;
-    }
-    return $this;
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav {
+    background-color: @nav__background-color;
+    color: @nav__color;
+    text-align: center;
 }
-</pre>
+</code></pre>
 
-<p>In this general case, if an exception is thrown in a sub-routine, then <code>@throws</code> must not be used in the parent method.</p>
+<p><strong>Incorrect</strong>:</p>
 
-<p>However, if the only purpose of the referred sub-routine is to throw a specific exception – then <code>@throws</code> must be used in the parent method. For example:</p>
-
-<p><strong>Throwing Exception Implicitly</strong></p>
-
-<pre>
-/**
- * Recursively delete directory from storage
- *
- * @param string $path Target dir
- * @return void
- * @throws Mage_Core_Exception when directories cannot be deleted
- */
-public function deleteDirectory($path)
-{
-    // prevent accidental root directory deleting
-    $rootCmp = rtrim($this-&gt;getHelper()-&gt;getStorageRoot(), DS);
-    $pathCmp = rtrim($path, DS);
-
-    if ($rootCmp == $pathCmp) {
-        Mage::throwException(Mage::helper('Mage_Cms_Helper_Data')-&gt;__('Cannot delete root directory %s.', $path));
-    }
-
-    $io = new Varien_Io_File();
-
-    if (Mage::helper('Mage_Core_Helper_File_Storage_Database')-&gt;checkDbUsage()) {
-        Mage::getModel('Mage_Core_Model_File_Storage_Directory_Database')-&gt;deleteDirectory($path);
-    }
-    if (!$io-&gt;rmdir($path, true)) {
-        Mage::throwException(Mage::helper('Mage_Cms_Helper_Data')-&gt;__('Cannot delete directory %s.', $path));
-    }
-
-    if (strpos($pathCmp, $rootCmp) === 0) {
-        $io-&gt;rmdir($this-&gt;getThumbnailRoot() . DS . ltrim(substr($pathCmp, strlen($rootCmp)), '\\/'), true);
-    }
+<pre><code>.nav {
+    color: @nav__color;
+    text-align: center;
+    background-color: @nav__background-color;
 }
-</pre>
+</code></pre>
 
-<h4 id="return">@return tag</h4>
+<h3 id="shorthand">Shorthand</h3>
 
-<p>If there is no explicit return statement in a method or function, a <code>@return void</code> should be used in the documentation.</p>
+<p>Use shorthand properties where possible.</p>
 
-<p>If the method returns itself, <code>return $this</code> should be used.</p>
+<p>CSS offers a variety of shorthand properties that should be used whenever possible, even in cases where only one value is explicitly set.</p>
 
-<h3 id="constants">Constants</h3>
+<p><strong>Correct</strong>:</p>
 
-<p>Constants must have short description.</p>
+<pre><code>border-top: 0;
+padding: 0 1em 2em;
+</code></pre>
 
-<p>For example, a global constant:</p>
+<p><strong>Incorrect</strong>:</p>
 
-<pre>
-/**
- * Directory separator shorthand
- */
-define('DS', DIRECTORY_SEPARATOR);
+<pre><code>border-top-style: none;
+padding-bottom: 2rem;
+padding-left: 1rem;
+padding-right: 1rem;
+padding-top: 0;
+</code></pre>
 
-Or constants in a class:
-class Profiler
-{
-    /**
-     * Separator literal to assemble timer identifier from timer names
-     */
-    const NESTING_SEPARATOR = '-&gt;';
-</pre>
+<h3 id="and-units">0 and units</h3>
 
-<h3 id="DocBlock-templates">DocBlock templates</h3>
+<p>Do not specify units “0” value.</p>
 
-<p>If there is declaration of multiple consecutive elements of same type, the same contents of DocBlock may be relevant to all of them. In this case individual DocBlocks for those elements they may be replaced by a DocBlock template.</p>
+<p><strong>Correct</strong>:</p>
 
-<p>DocBlock template consists of two DocBlock comments:</p>
+<pre><code>border-width: 0;
+margin: 0;
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>border-width: 0px;
+margin: 0rem;
+</code></pre>
+
+<h3 id="floating-values">Floating values</h3>
+
+<p>Omit leading “0”s in values, use dot instead.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code> margin-left: .5rem;
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>margin-left: 0.5rem;
+</code></pre>
+
+<h3 id="hexadecimal-notation">Hexadecimal notation</h3>
 
 <ul>
-  <li>Starting comment is before first element of the group, distinguished using <code>#@+</code> and formatted as follows:</li>
+  <li>Use lowercase only.</li>
+  <li>Use three-character hexadecimal notation where possible.</li>
+  <li>Avoid using hexadecimal values for color in properties, use only variables instead.</li>
 </ul>
 
-<pre>
-/**#@+
- *
- */
-</pre>
+<p><strong>Correct</strong>:</p>
 
-<ul>
-  <li>Ending comment is after the last element of the group, distinguished using <code>#@-</code> and formatted as follows:<code>/**#@-*/</code></li>
-</ul>
+<pre><code>@nav__color: #fafafa;
+@nav-item__color: #f00;
+...
+color: @nav-item__color;
+</code></pre>
 
-<p>For example, declaration of multiple class constants or attributes:</p>
+<p><strong>Incorrect</strong>:</p>
 
-<pre>
-class Mage_Core_Model_Layout extends Varien_Simplexml_Config
-{
-    /**#@+
-     * Supported layout directives
-     */
-    const TYPE_BLOCK = 'block';
-    const TYPE_CONTAINER = 'container';
-    /**#@-*/
+<pre><code>color: #ff0000;
+@nav__color: #FAFAFA;
+@nav-item__color: red;
+</code></pre>
 
-    /**#@+
-     * Scheduled structure elements operations
-     *
-     * @var array
-     */
-    protected $_scheduledMoves = array();
-    protected $_scheduledRemoves = array();
-    /**#@-*/
-    </pre>
+<h2 id="variables">Variables</h2>
 
-<h2 id="documentation-space">Structure of documentation space</h2>
+<h3 id="location">Location</h3>
 
-<p><code>@category</code>, <code>@package</code>, and <code>@subpackage</code> MUST NOT be used. Documentation is organized with the use of namespaces.</p>
+<h4 id="local-variables">Local variables</h4>
 
-<h2 id="other-DocBlock-tags">Other DocBlock tags</h2>
-<h3 id="api">@api tag</h3>
-<p>The <code>@api</code> tag indicates the code is part of the public API and is subject to the <a href="../extension-dev-guide/backward-compatibility.html">Magento Backward Compatibility Policy</a>.</p>
+<p>If variables are local and used only in a module scope, they should be located in the module file, in the beginning of the general comment.</p>
 
-<p>The <code>@api</code> tag can be applied to a constant, a method, or to the entire class/interface.  If the <code>@api</code> tag is applied at the file level, then all methods within the file are part of the public API. You do not need to annotate each method individually.</p>
+<p><strong>Example</strong> <code>_module.less</code>:</p>
 
-<p>See <a href="http://semver.org/">Semantic Versioning 2.0.0</a> for information about changing and updating code while maintaining backward compatibility.</p>
+<pre><code>...
 
-<h3 id="deprecated">@deprecated tag</h3>
+//
+//  Variables
+//  _____________________________________________
 
-<p>A deprecated class or method is one that has been superseded and may cease to exist in the future.  It will be retained to provide backward compatibility until next major component release.</p>
+    //  Colors
+@btn__color: @color-brownie;
+@btn-primary__color: @color-white;
+@btn-secondary__color: @color-white;
+...
+</code></pre>
 
-<p>Use the <code>@deprecated</code> tag to indicate an element is to be deprecated. The text of the <code>@deprecated</code> tag should indicate the version the element was deprecated as well as the version it will be removed. If applicable, also specify what has replaced the deprecated element.</p>
+<h4 id="theme-variables">Theme variables</h4>
 
-<p>To maintain backward compatibility, an element should be removed only on major revisions.  </p>
+<p>If variables are common for several modules they should be specified in the <code>_theme.less</code> file</p>
 
-<h3 id="var">@var inline tag</h3>
+<h3 id="naming">Naming</h3>
 
-<p>For purpose of automatic type hinting in an IDE, an inline notation of <code>@var</code> tag can be used wherever the IDE is unable to resolve variable type. This tag declares variables that will emerge in next lines of code as follows:</p>
+<p>All variable names must be lowercase.</p>
 
-<p><strong>Inline Type Hinting</strong></p>
+<h4 id="value-variables">Value variables</h4>
 
-<pre>
-/** @var libXMLError $error */
-foreach ($errors as $error) {
-</pre>
+<p>General model is the following:</p>
 
-<p>Some IDEs understand a different notation, where type is specified after variable name. This notation is also valid:</p>
+<pre><code>@property-name
+</code></pre>
 
-<p><strong>Inline Type Hinting Variation</strong></p>
+<p>** Examples **:</p>
 
-<pre>
-/** @var $error libXMLError */
-foreach ($errors as $error) {
-</pre>
+<pre><code>@primary__color: @color-phoenix;
+@indent__base: 2rem;
+@border-radius-round: 100%;
+</code></pre>
 
-<h3 id="see">@see tag</h3>
+<h4 id="parameter-variables">Parameter variables</h4>
 
-<p>Besides the normal way of using <code>@see</code> tag as <a href="http://www.phpdoc.org/docs/latest/references/phpdoc/tags/see.html">recommended by phpDocumentor</a>, it may be used as an addition to <code>@var</code>, when the <code>@var</code> is already used in this comment.</p>
+<p>General model is the following:</p>
 
-<p>Specifically, this is possible when a PHP-file composed from multiple file includes, as result variables may contain objects of different types depending on context:</p>
+<pre><code>@component-element__state__property__modifier
+</code></pre>
 
-<pre>
-/**
- * @var $this ClassOne
- * @see ClassTwo
- * @see FooInterface
- */
-</pre>
+<p>Component name must meaningful. It can contain the <code>primary</code>, <code>secondary</code>, <code>tertiary</code> names.</p>
 
-<h3 id="other-tags">Other tags</h3>
+<p><code>base</code> is a modifier.</p>
 
-<p>Any other valid DocBlock tags may be specified, if author deems necessary, but only if they bring any valuable not obvious information.</p>
+<p>** Examples **:</p>
 
-<h2 id="format-conventions">Formatting conventions</h2>
+<pre><code>@color-orange: '';
 
-<h3 id="padding-tags">Padding tags</h3>
+@link__hover__color: '';
 
-<p>If there are two or more tags together in one DocBlock, their values may be padded, so that they could be visually aligned.</p>
+@nav-element__background-color: '';
 
-<pre>
-/**
- * ...
- *
- * @param  string $argument
- * @return bool
- * @link   http://example.com
- */
-</pre>
+@secondary__color: '';
 
-<h3 id="format-consistency">Formatting consistency</h3>
+@side-nav__indent__s: '';
 
-<p>In a given DocBlock, style of formatting must be consistent.</p>
+@side-nav-el__background-color: '';
 
-<p>For example, padding for visual alignment can be done in two ways consistently:</p>
+@side-nav-el__active__background-color: '';
 
-<p><strong>Correct – align everything:</strong></p>
+@side-nav-el__active-focus__background-color: '';
 
-<pre>
-/**
- * ...
- *
- * @param  string $parentId
- * @param  string $childId
- * @param  int|null $position
- * @return int
- * @see    _insertChild() for position explanation
- */
- </pre>
+@side-nav-el__active-focus__font-size__xl: '';
 
-<p><strong>Also correct – don’t align anything:</strong></p>
+@text__color__base: '';
+</code></pre>
 
-<pre>
-/**
- * ...
- *
- * @param string $parentId
- * @param string $childId
- * @param int|null $position
- * @return int
- * @see _insertChild() for position explanation
- */
-public function reorderChild($parentId, $childId, $position)
-</pre>
+<h2 id="mixins">Mixins</h2>
 
-<p><strong>Incorrect – align only partially:</strong></p>
+<h3 id="location-1">Location</h3>
 
-<pre>
-/**
- * ...
- *
- * @param  string $parentId
- * @param  string $childId
- * @param  int|null $position
- * @return int
- * @see _insertChild() for position explanation
- */
-</pre>
+<p>Theme mixins (except extends) should be located in the <code>source/utilities</code> directory.</p>
 
+<h3 id="naming-1">Naming</h3>
+
+<p>For mixin naming apply the class naming rules. </p>
+
+<p>For mixins grouping use the double underscore “__” prefix.</p>
+
+<p><strong>Example</strong>:</p>
+
+<pre><code>.extend__clearfix (...) {
+    ...
+}
+
+.vendor-prefix__flex-direction (...) {
+    ...
+}
+</code></pre>
+
+<h2 id="extends">Extends</h2>
+
+<h3 id="location-2">Location</h3>
+
+<p>Local extends used only in one file, should be specified in this file. 
+Extends that are used in several files should be specified in the theme’s <code>source/_extend.less</code> file.</p>
+
+<h3 id="naming-2">Naming</h3>
+
+<p>Extend names should start with the <code>.abs-</code> prefix.</p>
 
 
 		</div>
@@ -824,7 +1097,7 @@ public function reorderChild($parentId, $childId, $position)
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v2.0/coding-standards/docblock-standard-general.html">DocBlock standard</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/coding-standards/docblock-standard-general.html">DocBlock standard</a></li>
 						
 								
 							
@@ -832,7 +1105,7 @@ public function reorderChild($parentId, $childId, $position)
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/coding-standards/code-standard-less.html">LESS coding standard</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/coding-standards/code-standard-less.html">LESS coding standard</a></li>
 						
 								
 								
