@@ -2,25 +2,53 @@
 layout: default
 group: config-guide
 subgroup: CLI
-title: Multi-tenant compiler
-menu_title: Multi-tenant compiler
+title: Code compiler
+menu_title: Code compiler
 menu_node: 
-menu_order: 10
-github_link: config-guide/cli/config-cli-subcommands-compiler-multi.md
-redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-multi.html
+menu_order: 11
+github_link: config-guide/cli/config-cli-subcommands-compiler.md
+redirect_from: 
+  - /guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-single.html
+  - /guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-single.html
+  - /guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-multi.html
 ---
+
 
 #### Contents
 
 *	<a href="#config-cli-subcommands-compile-overview">Overview of code compilation</a>
-*	<a href="#config-cli-subcommands-multi">Overview of the multi-tenant compiler</a>
 *	<a href="#config-cli-before">First steps</a>
+*	<a href="#config-cli-subcommands-single">Run the single-tenant compiler</a>
 *	<a href="#config-cli-subcommands-run">Run the multi-tenant compiler</a>
 
-<h2 id="config-cli-subcommands-compile-overview">Overview of code compilation</h2>
-{% include config/cli_code-generation.html %}
 
-<h2 id="config-cli-subcommands-multi">Overview of the multi-tenant compiler</h2>
+<h2 id="config-cli-subcommands-compile-overview">Overview of code compilation</h2>
+<p>This section discusses the basics of code compilation.</p>
+<p>Code compilation consists of all of the following in no particular order:</p>
+<ul><li>Application code generation (factories, proxies, and so on)</li>
+<li>Area configuration aggregation (that is, optimized dependency injection configurations per area)</li>
+<li>Interceptor generation (that is, optimized code generation of interceptors)</li>
+<li>Interception cache generation</li>
+<li>Repositories code generation (that is, generated code for APIs)</li>
+<li>Service data attributes generation (that is, generated extension classes for data objects)</li></ul>
+<p>You can find code compilation in classes in the <a href="{{ site.mage2000url }}setup/src/Magento/Setup/Module/Di/App/Task/Operation" target="_blank">\Magento\Setup\Module\Di\App\Task\Operation</a> namespace.</p> 
+
+<h2 id="config-cli-before">First steps</h2>
+{% include install/first-steps-cli.html %}
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
+
+<h2 id="config-cli-subcommands-single">Run the single-tenant compiler</h2>
+Use this command if you have one website and store. If you have multiple websites and stores, use the <a href="#config-cli-subcommands-run">multi-tenant compiler</a> instead.
+
+Run the command as follows (there are no options):
+
+	magento setup:di:compile
+
+The following message displays to confirm success:
+
+	Generated code and dependency injection configuration successfully.
+
+<h2 id="config-cli-subcommands-run">Run the multi-tenant compiler</h2>
 Use this command if you have multiple *tenants*, which means more than one independent Magento application. In other words:
 
 *	There is one Magento 2 code base instance
@@ -28,46 +56,8 @@ Use this command if you have multiple *tenants*, which means more than one indep
 *	Independent configurations in the Magneto Admin per tenant
 *	The storefronts are independent of each other
 
-If you do not have multiple tenants, use the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">single-tenant compiler</a> instead.
+If you do not have multiple tenants, use the <a href="#config-cli-subcommands-single">single-tenant compiler</a> instead.
 
-{% include install/cli_tenant-compiler.html %}
-
-
-
-<!-- The multi-tenant compiler does the following:
-
-*	Generates factories declared in `<your Magento install dir>/app/code`
-*	Generates proxies declared in `di.xml` files
-*	Generates interceptors for all classes that have plug-ins declared in the `di.xml` configuration
-*	Automatically compiles definitions for all modules and `<your Magento install dir>/lib/internal/Magento` directories.
-*	Compiles class inheritance implementation relations to increase performance of configuration inheritance
-*	Compiles plug-in definitions (that is, the list of declared public methods)
-
-<div class="bs-callout bs-callout-warning">
-    <p>The multi-tenant compiler does not analyze usage of auto-generated factory classes in files that are located in the <code>lib/internal/Magento</code> directory structure because use of auto-generated factory classes on the library level is prohibited. If you need to use a factory on the library level, please generate the class manually.</p>
-</div>
-
-### Tips
-
-*	The only place where you can declare proxy is `di.xml`. It's better to use a type for virtualType or as an instance of the type parameter.
-*	The only place where factory classes can be declared is in a `__construct` of PHP classes located under `app/code`.
-
-### Naming rules
-Naming Rules for auto-generated classes for a module:
-
-*	Proxy classes: `VendorName\ModuleName\ModelName\Proxy`
-*	Factory classes: `VendorName\ModuleName\ModelName\NameFactory`
-
-<div class="bs-callout bs-callout-warning">
-    <p>Failure to follow the preceding naming convention results in exceptions.</p>
-</div> -->
-
-
-<h2 id="config-cli-before">First steps</h2>
-{% include install/first-steps-cli.html %}
-In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
-
-<h2 id="config-cli-subcommands-run">Run the multi-tenant compiler</h2>
 Command options:
 
 	magento setup:di:compile-multi-tenant [--serializer="{serialize|igbinary}"] [--extra-classes-file="<path>"] [--generation="<path and 
@@ -143,13 +133,14 @@ Messages similar to the following display:
         (example command: "chown -R www-data:www-data <MAGENTO_ROOT>/var" where MAGENTO_ROOT is the Magento root directory).
 
 
+
 #### Related topics
 
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>

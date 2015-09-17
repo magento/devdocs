@@ -1,3 +1,13 @@
+---
+layout: default
+group: config-guide
+subgroup: CLI
+title: About code compilation
+menu_title: About code compilation
+menu_node: 
+menu_order: 5000
+github_link: config-guide/cli/code-generation.md
+---
 
 
 <h3>Why generate code?</h3>
