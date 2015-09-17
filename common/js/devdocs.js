@@ -1,7 +1,5 @@
 function devdocs(){
 
-$('.gse-control-cse').css('background-color', '');
-
 
 if ($.cookie('searchResultsState') ==1) {
 	//show search results page

@@ -31,8 +31,8 @@ For each particular scenario, files of the same type are loaded from different m
 
 You want to load all of the layout files with the name *default.xml*. __Module A__ specifies __module B__ in `<sequence>`. The files load in the following order:
 
-42. *module X/view/frontend/layout/default.xml* &#8212; Either we don&#8217;t care about sequence for module X or perhaps module B requires it to be loaded before it.
-42. *module B/view/frontend/layout/default.xml*
+42. *module X/view/frontend/layout/default.xml* &#8212; Either we don&#8217;t care about when module X loads or perhaps module B requires it to be loaded before it.
+42. *module B/view/frontend/layout/default.xml* 
 42. *module A/view/frontend/layout/default.xml* &#8212; Loads after __module B__ because __module B__ is listed in __module A&#8217;s__ `<sequence>` tag.
 42. *module Z/view/frontend/layout/default.xml* &#8212; Either we don&#8217;t care about the sequence for module Z or perhaps module Z requires module A files to be loaded before it.
 
