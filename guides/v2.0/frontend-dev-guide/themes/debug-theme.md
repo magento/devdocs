@@ -51,6 +51,8 @@ Just like templates, layouts are saved on a per-module basis. You can easily loc
 
 After you have determined the module, you can search for the layout in the following locations according to the layout fallback logic:
 
+<p class="q">Don't we have to be more specific about <area> = frontend?</p>
+
 1. `app/design/<area>/<vendor>/<current_theme>/<Namespace>_<Module>/layout`
 2. `app/design/<area>/<vendor>/<parent_theme(s)>/<Namespace>_<Module>/layout`
 3. `app/code/<Namespace>/<Module>/view/<area>/layout`
