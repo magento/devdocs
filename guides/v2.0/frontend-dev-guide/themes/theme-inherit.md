@@ -55,7 +55,7 @@ The particular directories, where the system searches in the course of the fallb
 
 If module context is not defined for a file:
 
-<p class="q">Should we add pub/static/frontend/<Vendor>/<theme>/i18n/<Namespace>_<Module>/web/
+<p class="q">Should we add pub/static/frontend/Vendor/theme/i18n/Namespace_Module/web/
  here? and about the base area?</p>
 
 1. Theme static files: `app/design/frontend/<Vendor>/<theme>/web/`
