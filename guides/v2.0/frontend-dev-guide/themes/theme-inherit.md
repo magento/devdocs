@@ -55,10 +55,9 @@ The particular directories, where the system searches in the course of the fallb
 
 If module context is not defined for a file:
 
-<p class="q">Should we add pub/static/frontend/Vendor/theme/i18n/Namespace_Module/web/
- here? and about the base area?</p>
 
-1. Theme static files: `app/design/frontend/<Vendor>/<theme>/web/`
+1. Published theme files: `pub/static/frontend/<Vendor>/<theme>/<locale>/`
+2. Current theme static files: `app/design/frontend/<Vendor>/<theme>/web/`
 2. Ancestor's static files, recursively, until a theme with no parent is reached:
 	 `app/design/frontend/<parent_theme_path>/web/`
 
@@ -66,11 +65,13 @@ If module context is not defined for a file:
 
 If module context is defined for a file:
 
-1. Current theme module static files `app/design/frontend/<Vendor>/<theme>/<Namespace>_<Module>/web/`. Example: `app/design/frontend/OrangeCorp/orange/Magento_Catalog/web/`
+1. 1. Published theme module files: `pub/static/frontend/<Vendor>/<theme>/<locale>/`
+2. Current theme module static files `app/design/frontend/<Vendor>/<theme>/<Namespace>_<Module>/web/`. Example: `app/design/frontend/OrangeCorp/orange/Magento_Catalog/web/`
 3. Ancestor themes module static files, recursively, until a theme with no ancestor is reached:
 	`app/design/frontend/<parent_theme_path>/<Namespace>_<Module>/web/`
 
-3. Module static view files: `app/code/<Namespace>/<Module>/view/frontend/web/`
+3. Module static view files for the `frontend` area: `app/code/<Namespace>/<Module>/view/frontend/web/`
+4. Module static view files for the `base` area: `app/code/<Namespace>/<Module>/view/base/web/`
 
 
 <u>Example</u>
@@ -136,9 +137,9 @@ You can find out what exactly code changes are required to perform this and othe
 
 The layouts processing mechanism does not involve fallback. The system collects layout files in the following order:
 
-1. Current theme layouts: `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout`
-2. Ancestor themes layouts, starting from the  most distant ancestor, recursively until a theme with no parent is reached: `app/design/frontend/<parent_theme_path>/<Vendor>_<Module>/layout`
-3. Module layouts: `app/code/<Vendor>/<Module>/view/frontend/layout`
+1. Current theme layouts: `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout/`
+2. Ancestor themes layouts, starting from the  most distant ancestor, recursively until a theme with no parent is reached: `app/design/frontend/<parent_theme_path>/<Vendor>_<Module>/layout/`
+3. Module layouts: `app/code/<Vendor>/<Module>/view/frontend/layout/`
 
 Unlike templates or images, layout can be not only overridden, but also extended. And the recommended way to customize layout is to extend it by creating theme extending layout files.
 
