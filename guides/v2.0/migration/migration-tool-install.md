@@ -22,14 +22,10 @@ To install the Data Migration Tool from GitHub, use the following steps:
 
 1.	Log in to your Magento 2 server as a user with privileges to write to the Magento 2 file system or <a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.
 2.	Change to Magento 2 root directory.
-3.	Enter either of the following commands:
+3.	Enter the following commands in the order shown:
 
 			composer config repositories.data-migration-tool git https://github.com/magento/data-migration-tool-ce
-
-	or
-
 			composer require magento/data-migration-tool:dev-master
-4.	If necessary, enter `composer update`.
 3.	Wait while dependencies are updated.
 
 ### Install the tool from packages.magento.com
