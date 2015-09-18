@@ -17,8 +17,9 @@ github_link: mtf/mtf_entities/mtf_handler.md
   - <a href="#mtf_handler_conf_hand">Handler class</a>
   - <a href="#mtf_handler_di">di.xml</a>
 - <a id="#mtf_handler_howto-create-curl">How to create a cURL Handler</a>
-  - <a href="#mtf_handler_decor">cURL authenticationation facilities</a>
+  - <a href="#mtf_handler_decor">cURL authentication classes</a>
 - <a href="#mtf_handler_howto-create-ui">How to create a UI Handler</a>
+- <a href="#mtf_handler_howto-create-ui">How to create a WebAPI Handler</a>
   
 <h2 id="mtf_handler_overview">Handler overview</h2>
 
@@ -38,7 +39,7 @@ Magento uses the following handlers:
 |cURL|Sends POST or PUT requests to a server of an application under the test. |HTTP POST request to the application server, that transfers Widget fixture fields and corresponding values from the dataset.|Browser is not involved, that's why it works much faster than the UI handler.|
 |WebAPI|Sends a POST request using the REST API. <a href="{{site.gdeurl}}rest/bk-rest.html">See REST API reference documentation.</a> |Similar to curl but uses the REST API entry point. |Has the advantage of testing the API, faster than curl.|
 
-Furthermore, you can create your own handlers, such as **Direct** that is very fast, because it sends a direct call to the Magento application using Magento models.
+Furthermore, you can create your own handlers, such as **Direct** that is very fast, because it sends a direct call to the Magento application using Magento models. It is difficult to create for QA, because requires deep understanding of the Magento application, and requires access to the Magento code and the database. Difficulties can be caused when the Magento code and Magento tests are run on different hosts.
 
 <h2 id="mtf_handler_config">Configuration</h2>
 
@@ -57,7 +58,7 @@ The following nodes influence handlers:
 <tr><td><code>&lt;backendLoginUrl&gt;</code></td><td>Reference to the login form of the Admin.</td><td><code>&lt;backendLoginUrl&gt;admin/auth/login&lt;/backendLoginUrl&gt;</code></td></tr>
 <tr><td><code>&lt;backendLogin&gt;</code></td><td>A username to access the Admin as a Magento administrator.</td><td><code>&lt;backendLogin&gt;admin&lt;/backendLogin&gt;</code></td></tr>
 <tr><td><code>&lt;backendPassword&gt;</code></td><td>A password to access the Admin as a Magento administrator.</td><td><code>&lt;backendPassword&gt;pas$worD&lt;/backendPassword&gt;</code></td></tr>
-<tr><td><code>&lt;handler&gt;</code></td><td>Specifies priorities for different types of handler. The less the value, the higher the priority. The highest priority has value <code>0</code>. <code>token</code> contains <a href="{{site.gdeurl}}get-started/authentication/gs-authentication.html">access token</a>.</td>
+<tr><td><code>&lt;handler&gt;</code></td><td>Specifies priorities for different types of handler. The less the value, the higher the priority. The highest priority has value <code>0</code>. <code>token</code> contains <a href="{{site.gdeurl}}get-started/authentication/gs-authentication.html">access token</a> (used by WebAPI handlers only).</td>
 <td><pre>
 &lt;handler&gt;
   &lt;webapi priority=&quot;0&quot;&gt;
@@ -84,19 +85,13 @@ Example of `WidgetInterface.php` (should be placed in `magento2/dev/tests/functi
 
 <h3 id="mtf_handler_conf_hand">Handler class</h3>
 
-You can determine the handler class using <a href="#mtf_handler_interface">an interface</a>, <a href="#mtf_handler_config">a fallback</a>, and relations from the <a href="#mtf_handler_di"><code>di.xml</code></a>. When this class is created, you can call the `persist()` method to create Magento entity (for example, widget). The method returns data that are matched with fixture fields. All fixture fields that are matched are assigned values from the handler.
+To use the handler class you should <a href="#mtf_handler_interface">an interface</a>, <a href="#mtf_handler_config">a fallback</a>, and relations from the <a href="#mtf_handler_di"><code>di.xml</code></a>. When this class is created, you can call the `persist()` method to create Magento entity (for example, widget). The method returns data that are matched with fixture fields. All fixture fields that are matched are assigned values from the handler.
+
+The `persist()` method is declared in the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php"><code>InjectableFixture</code></a> class by path `magento2/dev/tests/functional/vendor/magento/mtf/Magento/Mtf/Fixture/InjectableFixture.php`.
 
 <script src="https://gist.github.com/dshevtsov/3ed7ce601d3b23e94ccd.js"></script>
 
-<div class="bs-callout bs-callout-tip">
-  <p>The <code>persist()</code> method is declared in the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php"><code>InjectableFixture</code></a> class by path <code>magento2/dev/tests/functional/vendor/magento/mtf/Magento/Mtf/Fixture/InjectableFixture.php</code>. </p>
-</div>
-
 Create the handler in the same directory where the interface is stored: `magento2/dev/tests/functional/tests/app/Magento/[module_name]/Test/Handler/[object_name]/[type_of_handler].php`
-
-See the tree of files mentioned for the case with the Widget cURL handler:
-
-<img src="{{ site.baseurl }}common/images/mtf_widget_handler_tree.png">
 
 <h3 id="mtf_handler_di">di.xml</h3>
 
@@ -122,6 +117,10 @@ See an example for the Widget cURL handler (`magento2/dev/tests/functional/tests
 {%endhighlight%}
 
 It says, "substitute the `WidgetInterface` interface with the `cURL` class".
+
+See the tree of files mentioned for the case with the Widget cURL handler:
+
+<img src="{{ site.baseurl }}common/images/mtf_widget_handler_tree.png">
 
 <h2 id="mtf_handler_howto-create-curl">How to create a cURL Handler</h2>
 
@@ -315,17 +314,11 @@ Let's create a WebAPI handler that will create a new tax rule.
 <script src="https://gist.github.com/dshevtsov/15708f0530aaa70789e0.js"></script>
 
 
-* Create `Webapi.php` in the same directory. This file contains a <a href="#mtf_handler_conf_hand">handler class</a>.
+* Create `Webapi.php` in the same directory. The file contains a <a href="#mtf_handler_conf_hand">handler class</a>.
 
-The code has detailed comments for better understanding.
+<script src="https://gist.github.com/dshevtsov/e06d8a4241d14738df01.js"></script>
 
-
-
-
-
-
-
-* Create <a href="#mtf_handler_di"><code>di.xml</code></a> in the `etc/ui` directory of the Magento_Widget module.
+* Create <a href="#mtf_handler_di"><code>di.xml</code></a> in the `etc/webapi` directory of the Magento_TaxRule module.
 
 {%highlight xml%}
 
@@ -343,9 +336,3 @@ The code has detailed comments for better understanding.
 </config>
 
 {%endhighlight%}
-
-
-
-
-
-
