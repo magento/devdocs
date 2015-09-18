@@ -51,7 +51,7 @@ Just like templates, layouts are saved on a per-module basis. You can easily loc
 
 After you have determined the module, you can search for the layout in the following locations according to the layout fallback logic:
 
-<p class="q">Don't we have to be more specific about <area> = frontend?</p>
+<p class="q">Don't we have to be more specific about <area> = frontend? Is it correct to talk about layout fallback? Aren't layout files merged? + questions about the scheme in the presentation (slides 36-37)</p>
 
 1. `app/design/<area>/<vendor>/<current_theme>/<Namespace>_<Module>/layout`
 2. `app/design/<area>/<vendor>/<parent_theme(s)>/<Namespace>_<Module>/layout`
@@ -76,7 +76,9 @@ After you located the necessary layout file, you can create your custom layout f
 
 <h2 id="debug-theme-style">Locate styles</h2>
 To locate a CSS rule that is applied to a certain element, find the template for the page that contains the element. Or you can use browser debugging tools, to locate the class name.
-After you find the class name, use text search in the theme and module styles directories to locate the .less or .css file that defines the class. Perform the search according to the following fallback scheme:
+After you find the class name, use text search in the theme and module styles directories to locate the `.less` or `.css` file that defines the class. Perform the search according to the following fallback scheme:
+
+<p class="q">Should we replace <area> with frontend? Does it fallback to the base area in module?</p>
 
 1. Theme styles `app/design/<area>/<Vendor>/<current_theme>/web/css`
 2. Module theme styles `app/design/<area>/<Vendor>/<current_theme>/<Namespace>_<Module>/web/css`
