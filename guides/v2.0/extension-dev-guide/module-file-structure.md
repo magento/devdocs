@@ -2,8 +2,8 @@
 layout: default
 group: extension-dev-guide
 subgroup: 3_Build
-title: Module File Structure
-menu_title: Module File Structure
+title: Module file Structure
+menu_title: Module file Structure
 menu_order: 2
 github_link: extension-dev-guide/module-file-structure.md
 

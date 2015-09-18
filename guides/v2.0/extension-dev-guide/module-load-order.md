@@ -2,8 +2,8 @@
 layout: default
 group: extension-dev-guide
 subgroup: 3_Build
-title: Module Load Order
-menu_title: Module Load Order
+title: Module load order
+menu_title: Module load order
 menu_order: 5
 github_link: extension-dev-guide/module-load-order.md
 

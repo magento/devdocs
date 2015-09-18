@@ -69,7 +69,7 @@ where:
 * `suggest` &#8212; lists soft dependencies. The module can operate without them, but if the modules are active, they should be loaded before.
 
 * `type` &#8212; determines what type of magento component your module is. Choose from *magento2-library*, *magento2-theme*, *magento2-language*, or *magento2-module*.
-* `version` &#8212; lists the version of the module?
+* `version` &#8212; lists the version of the module.
 * `license` &#8212; lists applicable licenses that apply to your module.
 * `extra.map` &#8212; gives the path for Magento&#8217;s Composer installer so it can marshall your component&#8217;s files to the appropriate locations under the main instance of Magento.
 

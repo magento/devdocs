@@ -2,11 +2,10 @@
 layout: default
 group: extension-dev-guide
 subgroup: 1_Introduction
-title: Introduction to the PHP developer guide
+title: Introduction
 menu_title: Introduction
 menu_order: 1
 menu_node: parent
-book_title: PHP developer guide
 github_link: extension-dev-guide/bk-extension-dev-guide.md
 redirect_from: /guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html
 ---
