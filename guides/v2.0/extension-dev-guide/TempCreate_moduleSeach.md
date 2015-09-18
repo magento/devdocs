@@ -1,8 +1,8 @@
 ---
 layout: tempDefaultSearch
 group: extension-dev-guide
-subgroup: 3_Build
-title: PHP developer guide
+subgroup: 
+title: Search
 menu_title: Search
 menu_order: 20
 github_link: extension-dev-guide/searching.md
