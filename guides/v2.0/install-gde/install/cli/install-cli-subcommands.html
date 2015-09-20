@@ -210,26 +210,20 @@
 </ul>
 
 <h2 id="instgde-cli-before">First steps</h2>
-<ol><li>Log in to the Magento server as, or <a href="/guides/v2.0/install-gde/prereq/apache-user.html">switch to</a>, the Magento file system owner.</li>
-<li>Change to the following directory:<br />
-<pre>cd &lt;your Magento install dir&gt;/bin</pre>
-Examples:
-<ul><li>Ubuntu: <code>cd /var/www/magento2/bin</code></li>
-<li>CentOS: <code>cd /var/www/html/magento2/bin</code></li>
-</ul>
-</li>
-</ol>
-<div class="bs-callout bs-callout-info" id="info">
-		<span class="glyphicon-class">
-  		<p>The Magento installation directory is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
-</div>
-
+<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.</li>
+<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
+Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
+bash shell example for CentOS:<br />
+<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>You can run the commands in any of the following ways:</p>
-<ul><li><code>magento &lt;command&gt;</code></li>
-<li><code>php magento &lt;command&gt;</code></li></ul></span>
+  <p>You can also run the commands in the following ways:</p>
+<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
+<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
+<p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
 </div>
+
+<p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
 
 <h2 id="instgde-cli-summary">Command summary</h2>
 <p>The following table summarizes the available commands. Commands are shown in summary form only; for more information about a command, click the link in the Command column.</p>
