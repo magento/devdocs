@@ -2,8 +2,8 @@
 layout: default
 group:  migration
 subgroup: Migrate using data migration tool
-title: Migrate Settings
-menu_title: Migrate Settings
+title: Migrate settings
+menu_title: Migrate settings
 menu_node:
 menu_order: 1
 github_link: migration/migration-migrate-settings.md
@@ -16,14 +16,31 @@ You should migrate settings first. This mode migrates stores; websites; and diff
 
 To change how settings are migrated:
 
-1. Rename or copy `settings.xml.dist` in a folder `"etc/<ce or ee version>/"` to remove the .dist extension.
-2. Make your changes in settings.xml file.
-3. Make changes to config.xml `<settings_map_file>` tag so it would have a new file name of the settings file.
+1.	Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl }}nstall-gde/prereq/apache-user.html">Magento file system owner</a>.
+2.	Change to the following directory:
 
-Command usage:
+		`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<migration edition>/<ce or version>
+1. 	Enter the following command to create `settings.xml` from the provided sample:
 
-	cd <your Magento 2 install dir>/vendor/magento/data-migration-tool/bin
-	php migrate settings --config=<path to config.xml>
+		cp sample.xml.dist sample.xml
+2. Make your changes in `settings.xml`.
+3. Make changes to the `<settings_map_file>` tag in `<ce or ee version>/config.xml` to specify the new name of the settings file.
+
+<h2 id="migrate-first">First steps</h2>
+{% include install/first-steps-cli.html %}
+
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
+
+<h2 id="migrate-data-cmd">Run the settings migration command</h2>
+To migrate settings, use the following command:
+
+	magento migrate:settings [-r|--reset] {<path to config.xml>}
+
+where
+
+`{<path to config.xml>}` is the absolute file system path to `config.xml`; this argument is required.
+
+`[-r|--reset]` is an optional argument that starts migration from the beginning. You can use this argument for testing migration.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
