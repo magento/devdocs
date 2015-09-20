@@ -13,7 +13,10 @@ redirect_from:
 
 <h2 id="js_init_overview">Overview</h2>
 
-This topic talks about how to initialize a JavaScript component in the Magento 2 application. It covers initializing JavaScript components in a `.phtml` template and jQuery widget initialization in a JS script.
+This topic talks about how to initialize a JavaScript component in the Magento 2 application. 
+It covers initializing JavaScript components in a `.phtml` template and jQuery widget initialization in a JS script. We strongly recommend that you use the described approaches and do not add inline JavaScript.
+
+Do not add JavaScript inline. Instead use the approaches described further.
 
 <h2 id="init_phtml">Initialize a JS component in a PHTML template</h2>
 In Magento 2, there are two ways to initialize a JS component in a `.phtml` template: using the `data-mage-init` attribute and using the `<script>` tag. Both ways are described in the following sections.
