@@ -42,26 +42,8 @@ The installer is designed to be run multiple times if necessary so you can:
 *	Install Magento in a different database instance
 
 <h2 id="instgde-cli-before">First steps</h2>
-<ol><li>Log in to the Magento server as, or <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">switch to</a>, the Magento file system owner.</li>
-<li>Change to the following directory:<br>
-<pre>cd &lt;your Magento install dir>/bin</pre>
-Examples:
-<ul><li>Ubuntu: <code>cd /var/www/magento2/bin</code></li>
-<li>CentOS: <code>cd /var/www/html/magento2/bin</code></li>
-</ul>
-</li>
-</ol>
-<div class="bs-callout bs-callout-info" id="info">
-		<span class="glyphicon-class">
-  		<p>The Magento installation directory is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="{{ site.gdeurl }}install-gde/basics/basics_docroot.html">here</a>.</p></span>
-</div>
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You can run the commands in any of the following ways:</p>
-<ul><li><code>magento &lt;command></code></li>
-<li><code>php magento &lt;command></code></li></ul></span>
-</div>
+{% include install/first-steps-cli.html %}
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="instgde-cli-summary">Command summary</h2>
 The following table summarizes the available commands. Commands are shown in summary form only; for more information about a command, click the link in the Command column.
