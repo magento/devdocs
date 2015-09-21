@@ -113,6 +113,12 @@ p.q 	{
     padding-left: 0px
 } 
 
+
+.container, .navbar-static-top, .navbar-fixed-top .container, .navbar-fixed-bottom .container, .nav-main #global-nav, .nav-main #subnav-wrap #subnav {
+    width: auto,
+    max-width: 100%;
+}
+
 /*.sidebar {
     margin-left: 66px
 }

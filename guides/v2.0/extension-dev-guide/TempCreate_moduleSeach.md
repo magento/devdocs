@@ -1,6 +1,6 @@
 ---
 layout: tempDefaultSearch
-group: extension-dev-guide
+group: 
 subgroup: 
 title: Search
 menu_title: Search
