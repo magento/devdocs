@@ -139,7 +139,8 @@ The layouts processing mechanism does not involve fallback. The system collects 
 
 1. Current theme layouts: `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout/`
 2. Ancestor themes layouts, starting from the  most distant ancestor, recursively until a theme with no parent is reached: `app/design/frontend/<parent_theme_path>/<Vendor>_<Module>/layout/`
-3. Module layouts: `app/code/<Vendor>/<Module>/view/frontend/layout/`
+3. Module layouts for the `frontend` area: `app/code/<Vendor>/<Module>/view/frontend/layout/`
+4. Module layouts for the `base` area: `app/code/<Vendor>/<Module>/view/base/layout/`
 
 Unlike templates or images, layout can be not only overridden, but also extended. And the recommended way to customize layout is to extend it by creating theme extending layout files.
 
