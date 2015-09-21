@@ -212,11 +212,9 @@ the Orange theme by OrangeCo inherits from the Magento Blank theme. The inherita
 <p>If module context is not defined for a file:</p>
 
 <ol>
-  <li>Theme static files: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/</code></li>
-  <li>
-    <p>Ancestor’s static files, recursively, until a theme with no parent is reached:
-  <code>app/design/frontend/&lt;parent_theme_path&gt;/web/</code></p>
-  </li>
+  <li>Current theme static files: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/</code></li>
+  <li>Ancestor’s static files, recursively, until a theme with no parent is reached:
+  <code>app/design/frontend/&lt;parent_theme_path&gt;/web/</code></li>
   <li>Library static view files: <code>lib/web/</code></li>
 </ol>
 
@@ -224,11 +222,10 @@ the Orange theme by OrangeCo inherits from the Magento Blank theme. The inherita
 
 <ol>
   <li>Current theme module static files <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web/</code>. Example: <code>app/design/frontend/OrangeCorp/orange/Magento_Catalog/web/</code></li>
-  <li>
-    <p>Ancestor themes module static files, recursively, until a theme with no ancestor is reached:
- <code>app/design/frontend/&lt;parent_theme_path&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web/</code></p>
-  </li>
-  <li>Module static view files: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/web/</code></li>
+  <li>Ancestor themes module static files, recursively, until a theme with no ancestor is reached:
+ <code>app/design/frontend/&lt;parent_theme_path&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web/</code></li>
+  <li>Module static view files for the <code>frontend</code> area: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/web/</code></li>
+  <li>Module static view files for the <code>base</code> area: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/base/web/</code></li>
 </ol>
 
 <p><u>Example</u></p>
@@ -236,7 +233,7 @@ the Orange theme by OrangeCo inherits from the Magento Blank theme. The inherita
 <p>A company named OrangeCo created a theme named Orange. The theme files are located in <code>app/design/frontend/OrangeCo/orange</code>.
 Orange inherits from the Magento Blank theme.</p>
 
-<p>Let’s imagine OrangeCo needs to add some winter holidays decor. So it creates a new orange_winter theme, which inherits from Orange. The theme is located in <code>app/design/frontend/OrangeCo/orange_winter</code>.</p>
+<p>Let’s imagine OrangeCo needs to add some winter holidays decor. So it creates a new <code>orange_winter</code> theme, which inherits from Orange. The theme is located in <code>app/design/frontend/OrangeCo/orange_winter</code>.</p>
 
 <!--
 orange_winter configuration file looks like following:
@@ -295,9 +292,10 @@ Having changed the order or elements in the templates, OrangeCo got the minicart
 <p>The layouts processing mechanism does not involve fallback. The system collects layout files in the following order:</p>
 
 <ol>
-  <li>Current theme layouts: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Vendor&gt;_&lt;Module&gt;/layout</code></li>
-  <li>Ancestor themes layouts, starting from the  most distant ancestor, recursively until a theme with no parent is reached: <code>app/design/frontend/&lt;parent_theme_path&gt;/&lt;Vendor&gt;_&lt;Module&gt;/layout</code></li>
-  <li>Module layouts: <code>app/code/&lt;Vendor&gt;/&lt;Module&gt;/view/frontend/layout</code></li>
+  <li>Current theme layouts: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Vendor&gt;_&lt;Module&gt;/layout/</code></li>
+  <li>Ancestor themes layouts, starting from the  most distant ancestor, recursively until a theme with no parent is reached: <code>app/design/frontend/&lt;parent_theme_path&gt;/&lt;Vendor&gt;_&lt;Module&gt;/layout/</code></li>
+  <li>Module layouts for the <code>frontend</code> area: <code>app/code/&lt;Vendor&gt;/&lt;Module&gt;/view/frontend/layout/</code></li>
+  <li>Module layouts for the <code>base</code> area: <code>app/code/&lt;Vendor&gt;/&lt;Module&gt;/view/base/layout/</code></li>
 </ol>
 
 <p>Unlike templates or images, layout can be not only overridden, but also extended. And the recommended way to customize layout is to extend it by creating theme extending layout files.</p>
