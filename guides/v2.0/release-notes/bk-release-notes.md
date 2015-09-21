@@ -13,7 +13,7 @@ redirect_from: /guides/v1.0/release-notes/bk-release-notes.html
 
 Welcome to Magento 2.0 documentation! And welcome to Magento 2.0!
 
-Following is is a summary of important
+Following is a summary of important
 features of all Magento 2 releases starting with Developer Beta in December 2014.
 
 <h3 id="highlights-devrc">Highlights of this release</h3>
