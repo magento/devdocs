@@ -55,21 +55,16 @@ The particular directories, where the system searches in the course of the fallb
 
 If module context is not defined for a file:
 
-
-1. Published theme files: `pub/static/frontend/<Vendor>/<theme>/<locale>/`
 2. Current theme static files: `app/design/frontend/<Vendor>/<theme>/web/`
 2. Ancestor's static files, recursively, until a theme with no parent is reached:
 	 `app/design/frontend/<parent_theme_path>/web/`
-
 3. Library static view files: `lib/web/`
 
 If module context is defined for a file:
 
-1. 1. Published theme module files: `pub/static/frontend/<Vendor>/<theme>/<locale>/`
 2. Current theme module static files `app/design/frontend/<Vendor>/<theme>/<Namespace>_<Module>/web/`. Example: `app/design/frontend/OrangeCorp/orange/Magento_Catalog/web/`
 3. Ancestor themes module static files, recursively, until a theme with no ancestor is reached:
 	`app/design/frontend/<parent_theme_path>/<Namespace>_<Module>/web/`
-
 3. Module static view files for the `frontend` area: `app/code/<Namespace>/<Module>/view/frontend/web/`
 4. Module static view files for the `base` area: `app/code/<Namespace>/<Module>/view/base/web/`
 
@@ -79,7 +74,7 @@ If module context is defined for a file:
 A company named OrangeCo created a theme named Orange. The theme files are located in `app/design/frontend/OrangeCo/orange`.
 Orange inherits from the Magento Blank theme.
 
-Let's imagine OrangeCo needs to add some winter holidays decor. So it creates a new orange_winter theme, which inherits from Orange. The theme is located in `app/design/frontend/OrangeCo/orange_winter`.
+Let's imagine OrangeCo needs to add some winter holidays decor. So it creates a new `orange_winter` theme, which inherits from Orange. The theme is located in `app/design/frontend/OrangeCo/orange_winter`.
 
 <!--
 orange_winter configuration file looks like following:
