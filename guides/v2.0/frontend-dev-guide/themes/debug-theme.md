@@ -43,17 +43,18 @@ For example, using a browser debug tool, you can define that the minicart block 
 
 A search through the app directory for occurrences of "minicart-wrapper" in `.phtml` files returns the `app/code/Magento/Checkout/view/frontend/templates/cart/minicart.phtml` template.
 
-Since it is not recommended to edit the default files, you need to add overriding files if you want to customize the template. For details about overriding templates please refer to Customizing Theme Template.
-<!-- ADDLINK -->
+Since it is not recommended to edit the default files, you need to add overriding files if you want to customize the template. For details about overriding templates please refer to <a href="{{site.gdeurl}}frontend-dev-guide/templates/template-walkthrough.html">Customizing Theme Template</a>.
+
 
 <h2 id="debug-theme-layout" >Locate layouts</h2>
 Just like templates, layouts are saved on a per-module basis. You can easily locate the layout file by determining in which module the templates for the element you are interested in reside in. To locate the template, you can use Template Hints or text search in the app directory, as described previously .
 
-After you have determined the module, you can search for the layout in the following locations according to the layout fallback logic:
+After you have determined the module, you can search for the layout in the following locations:
 
-1. `app/design/<area>/<vendor>/<current_theme>/<Namespace>_<Module>/layout`
-2. `app/design/<area>/<vendor>/<parent_theme(s)>/<Namespace>_<Module>/layout`
-3. `app/code/<Namespace>/<Module>/view/<area>/layout`
+1. `app/design/frontend/<Vendor>/<current_theme>/<Namespace>_<Module>/layout/`
+2. `app/design/frontend/<Vendor>/<parent_theme(s)>/<Namespace>_<Module>/layout/`
+3. `app/code/<Namespace>/<Module>/view/frontend/layout/`
+4. `app/code/<Namespace>/<Module>/view/base/layout/`
 
 There is no straightforward algorithm how to define at once the exact layout file, but in most cases layout file names are self descriptive. Also you can search them for mentions of the corresponding templates.
 
@@ -74,12 +75,15 @@ After you located the necessary layout file, you can create your custom layout f
 
 <h2 id="debug-theme-style">Locate styles</h2>
 To locate a CSS rule that is applied to a certain element, find the template for the page that contains the element. Or you can use browser debugging tools, to locate the class name.
-After you find the class name, use text search in the theme and module styles directories to locate the .less or .css file that defines the class. Perform the search according to the following fallback scheme:
+After you find the class name, use text search in the theme and module styles directories to locate the `.less` or `.css` file that defines the class. Perform the search according to the following fallback scheme:
 
-1. Theme styles `app/design/<area>/<Vendor>/<current_theme>/web/css`
-2. Module theme styles `app/design/<area>/<Vendor>/<current_theme>/<Namespace>_<Module>/web/css`
-3. Parent theme styles `app/design/<area>/<Vendor>/<parent_theme>/web/css`
-4. Module styles `app/code/<Vendor>/<Module>/view/<area>/web/`
+<p class="q">Should we replace <area> with frontend? Does it fallback to the base area in module?</p>
+
+2. Theme styles `app/design/frontend/<Vendor>/<current_theme>/web/css/`
+2. Module theme styles `app/design/frontend/<Vendor>/<current_theme>/<Namespace>_<Module>/web/css/`
+3. Parent theme styles `app/design/frontend/<Vendor>/<parent_theme>/web/css/`
+4. Module styles for the `frontend` area `app/code/<Vendor>/<Module>/view/frontend/web/css/`
+5. Module styles for the `base` area `app/code/<Vendor>/<Module>/view/base/web/css/`
 
 Example:
 
