@@ -34,6 +34,11 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/service-contra
    Data entities in a service contract reveal a simpler data model than the data model in an underlying relational database schema.
    Eventually, you will be able to use different storage technologies for different data collections. For example, you could use a NoSQL database to replace product tables.
 </p>
+
+##Using the @api tag
+
+Backward compatibility can be indicated by the use of `@api`. For more information, see <a href="backward-compatibility.html">Backward compatibility</a>.
+
 <h3 id="related-topics">Related topics</h3>
 <ul>
    <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/design-patterns.html">Service contract design patterns</a></li>
