@@ -74,7 +74,6 @@
             <a href="/guides/v2.0/install-gde/bk-install-guide.html">System Administrator</a>
             <ul class="menu nav">
                <li class="first leaf"><a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
-               <li class="first leaf"><a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and Upgrade Guide</a></li>
                <li class="leaf"><a href="/guides/v2.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
                <li class="leaf"><a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a></li>
             </ul>
@@ -172,15 +171,17 @@
 
 <p>To help mitigate these concerns, this release introduces a backward compatibility (BC) policy for PHP code. Magento 2.0 uses Semantic Versioning 2.0.0 to indicate whether a change breaks backward compatibility. Version numbers are in the format MAJOR.MINOR.PATCH, where:</p>
 
-<p>MAJOR indicates incompatible API changes</p>
+<ul>
+  <li>MAJOR indicates incompatible API changes</li>
+  <li>MINOR indicates backward-compatible functionality has been added</li>
+  <li>PATCH indicates backward-compatible bug fixes</li>
+</ul>
 
-<p>MINOR indicates backward-compatible functionality has been added</p>
+<p>The backward compatibility policy applies to PHP code annotated with <code>@api</code>.</p>
 
-<p>PATCH indicates backward-compatible bug fixes</p>
+<p>We promise to be backward compatible for classes and methods annotated with <code>@api</code> within MINOR and PATCH updates to our components. As changes are introduced, we annotate methods with <code>@deprecated</code>. The methods are removed only with the next MAJOR component version. MAJOR changes are scheduled no more than once per year; most likely during the holiday season when site changes are unlikely.</p>
 
-<p>The backward compatibility policy applies to PHP code annotated with @api</p>
-
-<p>We promise to be backward compatible for classes and methods annotated with @api within MINOR and PATCH updates to our components. As changes are introduced, we will annotate methods with @deprecated. The methods will be removed only with the next MAJOR component version. MAJOR changes will be scheduled no more than once per year; likely during the holiday season when site changes are unlikely.</p>
+<p>For more information, see <a href="/guides/v2.0//extension-dev-guide/backward-compatibility.html">Backward compatibility</a> in the PHP Developer Guide.</p>
 
 <h3>Related topics</h3>
 
@@ -197,14 +198,6 @@
 	<div class="sidebar-wrapper">
 		
  
-
-
-
-
-
-
-
-
 
 
 
@@ -646,6 +639,16 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+
+
+
+<script>
+devdocs();
+</script>
+
 
 <script src="/js/classie.js"></script>
 <script src="/js/uislideform.js"></script>

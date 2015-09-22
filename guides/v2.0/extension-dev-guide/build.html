@@ -74,7 +74,6 @@
             <a href="/guides/v2.0/install-gde/bk-install-guide.html">System Administrator</a>
             <ul class="menu nav">
                <li class="first leaf"><a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
-               <li class="first leaf"><a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and Upgrade Guide</a></li>
                <li class="leaf"><a href="/guides/v2.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
                <li class="leaf"><a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a></li>
             </ul>
@@ -168,12 +167,21 @@
 		
 		<h2 id="build">Build</h2>
 
-<p>Building your module involves laying out the file structure, creating the necessary configuration files, building out any needed API interfaces and services, and adding any frontend parts needed.</p>
+<p>Building your module involves laying out the file structure, creating the necessary configuration files, building out any needed API interfaces and services, and adding any frontend parts needed for your module.</p>
+
+<h2 id="create-module-basics">Basic Pre-Requisites</h2>
+<p>Before you begin creating your new module, make sure that you have a working installation of Magento 2.0, and the Magento <a href="/guides/v2.0/install-gde/system-requirements.html">System Requirements</a>.</p>
+
+<p>Also, Magento recommends that you disable caching while setting up the module file structure and adding configuration files. </p>
+
+<p>The following details the module building process:</p>
 
 <ul>
-  <li><a href="create_module.html">Create your module</a></li>
-  <li><a href="create_module.html#create-module-file-structure">Build the file structure</a></li>
+  <li><a href="module-file-structure.html">Module file structure</a></li>
   <li><a href="required-configuration-files.html">Define your configuration files</a></li>
+  <li><a href="create_module.html">Create your module</a></li>
+  <li><a href="module-load-order.html">Module load order</a></li>
+  <li><a href="enable-module.html">Enable your module</a></li>
 </ul>
 
 <p>The following topics will be added in upcoming sprints:</p>
@@ -183,7 +191,6 @@
   <li><strong>Build API data interfaces</strong></li>
   <li><strong>Build API service interfaces</strong></li>
   <li><strong>Add any frontend you need</strong></li>
-  <li><strong>Enable your module</strong></li>
 </ul>
 
 
@@ -196,14 +203,6 @@
 	<div class="sidebar-wrapper">
 		
  
-
-
-
-
-
-
-
-
 
 
 
@@ -359,11 +358,19 @@
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/create_module.html">Create a module</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/module-file-structure.html">Module file Structure</a></li>
 						
 								
 							
 									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/required-configuration-files.html">Define your configuration files</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/create_module.html">Create a module</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/module-load-order.html">Module load order</a></li>
 						
 								
 							
@@ -487,6 +494,10 @@
 								
 							
 									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/backward-compatibility.html">Backward compatibility</a></li>
 						
 								
 								
@@ -693,6 +704,16 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+
+
+
+<script>
+devdocs();
+</script>
+
 
 <script src="/js/classie.js"></script>
 <script src="/js/uislideform.js"></script>

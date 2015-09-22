@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Module file Structure</title>
+	<meta name="description" content="Magento 2 Developer's Guide">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/common/css/override.css" />
+	<link rel="canonical" href="//guides/v2.0/extension-dev-guide/module-file-structure.html">
+
+
+
+</head>	
+<body>
+
+<header id="nav-main" class="nav-main">
+
+	<!--Top Navigation-->
+	<nav role="navigation">
+		<!-- <div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div> -->
+			
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/"><span>Developer Documentation (2.0)</span></a>
+				</div>
+			</div>
+			
+			<div class="right-header">
+				<!--
+				<div class="sales-login">
+					<ul class="menu nav">
+						<li class="first last leaf"><a href="https://www.magentocommerce.com/products/customer/account/login">My Account</a></li>
+					</ul>
+				</div>
+				
+				
+				<div class="head-search" id="head-search">
+					<div id="sb-search" class="sb-search">
+						<form action="http://www.magentocommerce.com/search/results/">
+							<span class="sb-icon-search btn btn-search"></span>
+							<input name="q" class="sb-search-input" placeholder="Search docs" type="search" style="display: none;" id="search" />
+							<span class="sb-search-submit btn btn-search"></span>
+						</form>
+					</div>
+				</div><!-- #head-search --> 
+				
+			</div>
+			
+		</div><!-- #global-nav -->
+	</nav>
+
+	<!--Sub Navigation-->
+<div id="subnav-wrap">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first expanded">
+            <a href="/guides/v2.0/bk-get-started-magento.html">Get Started</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Notes</a></li>
+               <li class="leaf"><a href="/guides/v2.0/architecture/bk-architecture.html">Magento Architecture</a></li>
+            </ul>
+         </li>
+         <li class="first expanded">
+            <a href="/guides/v2.0/install-gde/bk-install-guide.html">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a></li>
+            </ul>
+         </li>
+         <li class="first expanded">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a>
+               <li class="first leaf"><a href="/guides/v2.0/ui-library/ui-library-component.html">UI Library Components</a>
+   			   <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a>
+               <div id="divcentered"><img src="/common/images/horiz-line.png"></div></li>
+               <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+
+               <li class="leaf"><a href="/guides/v2.0/mtf/mtf_introduction.html">Magento Testing Framework Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <div id="divcentered"><img src="/common/images/horiz-line.png"></div></li>
+               <li class="first leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a>
+               <div id="divcentered"><img src="/common/images/horiz-line.png"></div></li>
+               <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+
+
+            </ul>
+         </li>   
+    
+         
+         
+         
+         
+         <li class="first expanded">
+            <a href="/guides/v2.0/contributor-guide/contributing.html">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+      </ul>
+
+
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+
+	
+</header>	
+
+
+<div id="gl-wrapper">
+	
+	<!-- #sidemenu -->
+	<div id="sidemenu" style="display:none;">
+		<a class="menu-trigger menu-close" href="#" title=""></a>
+		<div class="h8 site-title">Our Sites</div>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://go.magento.com/" title="Small Business Storefront">Magento Go</a><span class="description">Small Business Storefront</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+	<!-- /#sidemenu -->
+	
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+
+
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Module file Structure</h1>
+			
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/extension-dev-guide/module-file-structure.md" target="_blank">Edit this page on GitHub</a>
+		
+	</div>
+</section>
+
+<div class="container">
+	<section class="content">
+		<div class="content-wrap">
+		
+		<h2 id="module-file-structure">Module file Structure</h2>
+
+<p>Magento 2 looks for the files that make up a module, including configuration files, in particular places. Follow the predefined file structure to ensure that your module works as expected.</p>
+
+<h3 id="magento-2-module-file-structure">Magento 2 Module File Structure</h3>
+
+<p>A typical file structure for a Magento 2 module:</p>
+<p><img src="/common/images/pdg-config-file-structure.png" width="300" alt="A filesystem view of a typical file structure" /></p>
+
+<h4 id="main-components">Main components</h4>
+
+<p>The main component folders are:</p>
+
+<ul>
+  <li>Block</li>
+  <li>Controller</li>
+  <li>Helper</li>
+  <li>Model</li>
+  <li><strong>Setup</strong> — contains classes for module database structure and data setup which are invoked when installing or upgrading.</li>
+</ul>
+
+<h4 id="additional-directories">Additional directories</h4>
+
+<p>Additionally, there are folders for configuration and other ancillary functions for items like plug-ins, internationalization, and front-end layout files.</p>
+
+<ul>
+  <li>Api</li>
+  <li><strong>etc</strong> — contains configuration files. </li>
+  <li>il8n</li>
+  <li>Plugin</li>
+  <li><strong>view</strong> — contains non-object-oriented and non-static view level parts of the module such as design templates, email templates, and layout files.</li>
+</ul>
+
+<p>A module contains multiple folders and files. On the top level there can be folders such as:
+- Block,* <em>Controller,</em> <em>Helper,</em> *Model which contain files with PHP classes that implement a full MVC vertical of module logic. These folders follow autoloading requirements and comply with Magento coding standard file naming conventions.
+- controllers which contains PHP classes with controllers. These classes don’t participate in autoloading and don’t comply with Magento coding standard naming conventions, but follow ZF controller naming conventions.
+- Setup which contain classes for module database structure and data setup which are invoked when installing or upgrading.
+- etc which contains various configuration files.
+- view which contains non-object-oriented and non-static view level parts of the module such as design templates, email templates and layout files.
+- Other files containing PHP classes that participate in autoload, such as Magento\Core\Exception, Magento\Customer\Exception.
+- Other files used explicitly by the module – for example, <root>/app/code/Magento/Core/functions.php is included explicitly.</root></p>
+
+<h4 id="add-your-own">Add your own</h4>
+
+<p>You can also add any other folders you need for your module.</p>
+
+<h2 id="build-the-file-structure">Build the file structure</h2>
+
+<p>Add a folder and give it the name of your module. Use a module name that is descriptive, but not too long. For example,</p>
+
+<pre><code>mkdir module-catalog
+cd module-catalog
+</code></pre>
+
+<p>You can add subfolders inside your module folder as you need them (Block, Controller, Model, view, and so on).</p>
+
+<p>Or, you could just add them at once:</p>
+
+<pre><code>mkdir Api &amp;&amp; mkdir Block &amp;&amp; mkdir Controller &amp;&amp; mkdir etc &amp;&amp; mkdir Helper &amp;&amp; mkdir il8n &amp;&amp; mkdir Model &amp;&amp; mkdir view
+</code></pre>
+
+<p>Make sure you add the <code>etc</code> folder; it is required, and is where most of the configuration files, including <code>module.xml</code>, are kept.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Be aware that the standard placement of the &lt;ModuleName&gt; directory within the overall Magento file structure is <code>app/code/&lt;Vendor&gt;/&lt;ModuleName&gt;/etc/</code>. However, if you are creating a new module for distribution, you can just create the &lt;ModuleName&gt; directory and the required directories within it. </p> 
+</div>
+
+<h2 id="next">Next</h2>
+
+<p><a href="required-configuration-files.html">Define your configuration files</a></p>
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+<!-- sidebar -->
+<aside class="sidebar">
+	<div class="sidebar-wrapper">
+		
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h4>PHP developer guide</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<ul role="navigation">
+		
+		
+		
+		
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+					
+					
+					
+					
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">Introduction</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/developers_roadmap.html">Developer roadmap</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/prepare.html">Prepare</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/composer-integration.html">Composer integration</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/build.html">Build</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2  active "><a href="/guides/v2.0/extension-dev-guide/module-file-structure.html">Module file Structure</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/required-configuration-files.html">Define your configuration files</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/create_module.html">Create a module</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/module-load-order.html">Module load order</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/enable-module.html">Enable a module</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/validate.html">Validate</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/test-module.html">Test your module</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/package.html">Package</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/package_module.html">Package a module</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/module-development.html">Module development</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/api-concepts.html">Public interfaces & APIs</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/service-contracts/design-patterns.html">Service contract design patterns</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/attributes.html">EAV and extension attributes</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/depend-inj.html">Dependency injection</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/plugins.html">Magento plug-ins</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/routing.html">Routing</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/indexing.html">Indexing</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/backward-compatibility.html">Backward compatibility</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+
+
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+		
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+<div class="footer">
+    <div id="magento-com">
+        <div class="intro-paragraph">
+            <div class="container">
+                <a href="http://www.magento.com/"><img src="/i/logo-gl-footer.png" id="logo" alt="Magento an ebay inc company" /></a>
+                <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
+            </div>
+        </div>
+        <div class="container">
+            <div id="f-col-1">
+                <h4>Learn more</h4>
+                <ul class="nav" style="margin-bottom: 40px;">
+                    <li><a href="http://magento.com/company/overview" title="Company" >Company</a></li>
+                    <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
+                    <li><a href="http://www.magentocommerce.com/company/press-releases" title="Press Room">Press Room</a></li>
+                </ul>
+            </div>
+            <div id="f-col-2">
+                <div id="social-network">
+                    <h4>Find us on</h4>
+                    <ul>
+                        <li><a class="btn-facebook" target="_blank" href="http://www.facebook.com/magento">Magento Facebook</a>
+                        </li>
+                        <li><a class="btn-twitter" target="_blank" href="https://twitter.com/magento">Magento Twitter</a></li>
+                        <li><a class="btn-lnkdn" target="_blank" href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm">Magento Linkedin</a></li>
+                        <li><a class="btn-gplus" target="_blank" href="https://plus.google.com/+magento/posts">Magento Google+</a></li>
+                        <li><a class="btn-youtube" target="_blank" href="http://www.youtube.com/user/magentocommerce/featured">Magento
+                            Youtube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="f-col-3">
+                <div id="newsletter">
+                    <h4>GET THE LATEST NEWS</h4>
+                    <p>See Magento in the news, find press<br/> releases and resources for media.</p>
+                    <div class="hold-form">
+                        <div id="nws-notsubscribed">
+                            <div id="sb-email" class="sb-email">
+                                <form method="post" enctype="application/x-www-form-urlencoded"
+                                      action="//info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform"
+                                      name="mktForm_1182" onsubmit="return validateForm();">
+                                    <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email"
+                                           placeholder="Email Address">
+                                    <input type="hidden" name="formid" value="1182" />
+                                    <button type="submit" class="sb-icon-submit btn outline">
+                                        Submit
+                                    </button>
+          <span class="sb-icon-email btn outline">
+              Sign Up
+          </span>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="email-invalid hide">
+                        <p>Please submit a valid email.</p>
+                    </div>
+                    <div class="email-ty hide">
+                        <p>Thank you for submitting your email.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="f-col-4">
+                <div class="contact-us">
+                    <h4>Get in touch</h4>
+                    <p>We'd like to hear from you! Call us, <br />send us an email or talk to sales.</p>
+                    <a href="http://magento.com/company/contact-us" class="btn btn-outline">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="copyright">
+    <div class="container">
+        <div class="copyright-links">
+            <ul class="nav">
+                <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark
+                    FAQ</a></li>
+            </ul>
+        </div>
+        <div class="copyright-date">&copy; 2015 Magento, Inc. All rights reserved.</div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+
+
+
+<script>
+devdocs();
+</script>
+
+
+<script src="/js/classie.js"></script>
+<script src="/js/uislideform.js"></script>
+<script type="text/javascript">
+    new UISlideform( document.getElementById( 'sb-email' ), 'email' );
+    var newsFlag = window.location.hash.indexOf("newsletter");
+    if(newsFlag == 1) {
+        jQuery('#Emailemail_msg').fadeOut('slow');
+        jQuery('#nws-subscribed').fadeIn('slow');
+        jQuery('#sb-email').css('display', 'none');
+    }
+    else {
+        jQuery('#nws-subscribed').fadeOut('slow');
+    }
+    function validateForm() {
+        var x = document.forms["mktForm_1182"]["Email"].value;
+        var atpos = x.indexOf("@");
+        var dotpos = x.lastIndexOf(".");
+        if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length) {
+            jQuery('.email-invalid').show();
+            return false;
+        }
+        else {
+            jQuery.cookie('mage_drupal_newsletter', 10);
+            jQuery('.email-invalid').hide();
+            jQuery('.email-ty').show();
+            return true;
+        }
+    }
+</script>
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('318-XBX-392', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<!-- Docs scripts (just in case) -->
+<script src="/js/app-min.js"></script>
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>

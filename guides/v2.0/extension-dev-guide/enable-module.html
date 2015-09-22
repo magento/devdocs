@@ -74,7 +74,6 @@
             <a href="/guides/v2.0/install-gde/bk-install-guide.html">System Administrator</a>
             <ul class="menu nav">
                <li class="first leaf"><a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
-               <li class="first leaf"><a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and Upgrade Guide</a></li>
                <li class="leaf"><a href="/guides/v2.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
                <li class="leaf"><a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a></li>
             </ul>
@@ -168,21 +167,34 @@
 		
 		<h2 id="enable-a-module">Enable a module</h2>
 
-<p>After you have built the module and are ready to enable it in your Magento environment, enter the following at the command line:</p>
-
-<pre><code>bin/magento module:enable --clear-static-content Module_Name
-bin/magento setup:upgrade
-</code></pre>
-
-<p>where <code>Module_Name</code> is the name of the module you are enabling.</p>
-
-<p>The general order of operation for the <code>setup:upgrade</code> operation is:</p>
+<p>After you have built the module and are ready to enable it in your Magento environment, do the following: </p>
 
 <ol>
-  <li><strong>Schema install/upgrade</strong>.</li>
-  <li><strong>Schema post-upgrade</strong> — handles any additional updates. These recurring upgrades occur independently and regardless of any changes to the schema.</li>
-  <li><strong>Data install/upgrade</strong> — installs the data. Taken from <code>setup/InstallData.php</code>.</li>
+<li>Disable the cache under <code>System-&gt;Cache Management</code>.</li>
+<li>Enter the following at the command line:
+
+		<pre>bin/magento module:enable --clear-static-content Module_Name
+    	bin/magento setup:upgrade
+    	</pre>
+
+where <code>Module_Name</code> is the name of the module you are enabling.
+
+</li>
+
+<li>Check under <code>Stores-&gt;Configuration-&gt;Advanced-&gt;Advanced</code> that the module is present.</li>
+ </ol>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>The general order of operations for <code>setup:upgrade</code> is:</p>
+
+<ol>
+<li><strong>Schema install/upgrade.</strong></li>
+	<li><strong>Schema post-upgrade</strong>&#8212; handles any additional updates. These recurring upgrades occur independently and regardless of any changes to the schema.</li>
+	<li><strong>Data install/upgrade</strong> &#8212; installs the data. Taken from <code>setup/InstallData.php</code>.</li>
 </ol>
+</span>
+</div>
 
 <h2 id="disable-a-module">Disable a module</h2>
 
@@ -194,7 +206,6 @@ bin/magento setup:upgrade
 <p>For more on enabling and disabling modules, see <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">enable or disable modules</a>.</p>
 
 
-
 		</div>
 	</section>
 <!-- /main content -->
@@ -204,14 +215,6 @@ bin/magento setup:upgrade
 	<div class="sidebar-wrapper">
 		
  
-
-
-
-
-
-
-
-
 
 
 
@@ -367,11 +370,19 @@ bin/magento setup:upgrade
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/create_module.html">Create a module</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/module-file-structure.html">Module file Structure</a></li>
 						
 								
 							
 									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/required-configuration-files.html">Define your configuration files</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/create_module.html">Create a module</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/module-load-order.html">Module load order</a></li>
 						
 								
 							
@@ -495,6 +506,10 @@ bin/magento setup:upgrade
 								
 							
 									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/backward-compatibility.html">Backward compatibility</a></li>
 						
 								
 								
@@ -701,6 +716,16 @@ bin/magento setup:upgrade
 </div>
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+
+
+
+<script>
+devdocs();
+</script>
+
 
 <script src="/js/classie.js"></script>
 <script src="/js/uislideform.js"></script>

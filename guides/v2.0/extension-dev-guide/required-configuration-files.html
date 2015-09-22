@@ -74,7 +74,6 @@
             <a href="/guides/v2.0/install-gde/bk-install-guide.html">System Administrator</a>
             <ul class="menu nav">
                <li class="first leaf"><a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
-               <li class="first leaf"><a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and Upgrade Guide</a></li>
                <li class="leaf"><a href="/guides/v2.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
                <li class="leaf"><a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a></li>
             </ul>
@@ -170,14 +169,13 @@
 
 <p>Each Magento 2 module has its own set of configuration files, gathered into the module’s <code>etc/</code> folder.  </p>
 
-<p><span class="editor"></span></p>
-
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Unlike Magento 1, there is no monolithic configuration file in Magento 2. </p></span>
+	<span class="glyphicon-class">
+  	<p>Unlike Magento 1, there is no monolithic configuration file in Magento 2. </p>
+  </span>
 </div>
 
-<h2 id="use-etc-for-your-configuration-files">Use etc for your configuration files</h2>
+<h2 id="use-etc-for-your-configuration-files">Use /etc for your configuration files</h2>
 
 <p>Magento 2 looks for configuration information for each module in that module’s <code>etc</code> folder. Depending on the needs of your module, you might have the following configuration files at the top level of your module’s <code>etc</code> folder:</p>
 
@@ -190,8 +188,10 @@
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Additions you make to those configuration files are applied <em>globally</em> to your module.</p></span></div>
+	<span class="glyphicon-class">
+  		<p>Additions you make to those configuration files are applied <em>globally</em> to your module.</p>
+  </span>
+ </div>
 
 <p>In addition to those files, a Magento 2 module also has nested configuration folders in the <code>etc</code> folder for any required administration html, frontend, API REST, or API SOAP specific configuration. Additions you make to files in these folders override the settings in the global configuration files for the respective functionality only. That is, if you add a <code>config.xml</code> file to <code>etc/frontend</code>, the settings you make in that file overrides the settings in <code>etc/config.xml</code> <strong>only for frontend</strong> functionality.</p>
 
@@ -202,10 +202,14 @@
   <li><em>YourModule</em>/etc/webapi_soap/</li>
 </ul>
 
-<h3 id="magento-2-module-file-structure">Magento 2 Module File Structure</h3>
+<p>If you want to just create the basic set of folders and files in etc that you might need, you could enter the following at the command line:</p>
 
-<p>A typical file structure for a Magento 2 module:</p>
-<p><img src="/common/images/pdg-config-file-structure.png" width="300" alt="A filesystem view of a typical file structure" /></p>
+<pre><code> cd etc 
+
+ mkdir adminhtml &amp;&amp; mkdir frontend &amp;&amp; mkdir webapi_rest &amp;&amp; mkdir webapi_soap &amp;&amp; touch acl.xml config.xml di.xml module.xml webapi.xml
+</code></pre>
+
+<h3 id="configuration-files">Configuration files</h3>
 
 <ul>
   <li>Configuration files that are in the top level of that module’s <code>etc</code> folder are global to that module.</li>
@@ -214,7 +218,7 @@
 
 <h3 id="tailor-your-configuration-files-for-what-your-module-does">Tailor your configuration files for what your module does</h3>
 
-<p>The exact set of configuration files required for your module depends on what your new module does. For example, if your module performs a function in the Admin, you should add any necessary configuration files for those functions to <code>etc/adminhtml/</code>, for example:</p>
+<p>The exact set of configuration files required for your module depends on what your new module does. The required configuration files depend on how you plan to use the module: will the module be manifested on the storefront UI, or in the Magento Admin panel, or as a backend extension that makes a service call? Or all of the above. For example, if your module performs a function in the Admin, you should add any necessary configuration files for those functions to <code>etc/adminhtml/</code>, like:</p>
 
 <ul>
   <li><code><em>YourModule</em>/etc/adminhtml/di.xml</code></li>
@@ -246,6 +250,11 @@
 
 </div> -->
 
+<h2 id="next">Next</h2>
+
+<p><a href="create_module.html">Create a module</a></p>
+
+
 
 		</div>
 	</section>
@@ -256,14 +265,6 @@
 	<div class="sidebar-wrapper">
 		
  
-
-
-
-
-
-
-
-
 
 
 
@@ -419,11 +420,19 @@
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/create_module.html">Create a module</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/module-file-structure.html">Module file Structure</a></li>
 						
 								
 							
 									<li class="level-2  active "><a href="/guides/v2.0/extension-dev-guide/required-configuration-files.html">Define your configuration files</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/create_module.html">Create a module</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/module-load-order.html">Module load order</a></li>
 						
 								
 							
@@ -547,6 +556,10 @@
 								
 							
 									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/backward-compatibility.html">Backward compatibility</a></li>
 						
 								
 								
@@ -753,6 +766,16 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+
+
+
+<script>
+devdocs();
+</script>
+
 
 <script src="/js/classie.js"></script>
 <script src="/js/uislideform.js"></script>
