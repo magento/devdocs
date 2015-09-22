@@ -41,12 +41,13 @@ $('#modal_content').modal({
 });
 </pre>
 
-For details about how to initialize the widget in a` .phtml` template, refer to the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.
+For details about how to initialize the widget in a`.phtml` template, refer to the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.
 
 <h2 id="modal_options">Options</h2>
 The modal widget has the following options:
 <ul>
 <li><a href="#modal_buttons">buttons</a></li>
+<li><a href="#modal_focus">focus</a></li>
 <li><a href="#modal_innerScroll">innerScroll</a></li>
 <li><a href="#modal_modalClass">modalClass</a></li>
 <li><a href="#modal_modalLeftMargin">modalLeftMargin</a></li>
@@ -79,6 +80,16 @@ buttons: [{
     }
 }]
 </pre>
+
+<h3 id="modal_focus"><code>focus</code></h3>
+Selector to focusing when a modal window opens or 'none' if focusing is not necessary.
+
+<p class="q">??</p>
+
+**Type**: String 
+
+**Default value**: `''`
+
 
 <h3 id="modal_innerScroll"><code>innerScroll</code></h3>
 Modal scroll position.
@@ -152,4 +163,7 @@ Triggered when the modal window is closed.
 <h3 id="modal_opened"><code>modalopened</code></h3>
 Triggered when the modal window is opened.
 
-
+<h2 id="key_navigation">Keyboard navigation</h2>
+- the ESC key: close the current modal window
+- the TAB key: set focus to the next focusable element (looped inside the modal window)
+- the SHIFT+TAB keys combination: set focus to the previous focusable element (looped inside the modal window)
