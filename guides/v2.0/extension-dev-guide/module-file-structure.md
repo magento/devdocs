@@ -24,10 +24,10 @@ A typical file structure for a Magento 2 module:
 The main component folders are:
 
 
-* Block
-* Controller
-* Helper
-* Model
+* __Block__ &#8212; contains PHP classes as part of MVC vertical implementation of module logic.
+* __Controller__ &#8212; contains PHP classes as part of MVC vertical implementation of module logic.
+* __Helper__ &#8212; contains PHP classes as part of MVC vertical implementation of module logic.
+* __Model__ &#8212; contains PHP classes as part of MVC vertical implementation of module logic.
 * __Setup__ &#8212; contains classes for module database structure and data setup which are invoked when installing or upgrading.
 
 
@@ -36,23 +36,11 @@ The main component folders are:
 
 Additionally, there are folders for configuration and other ancillary functions for items like plug-ins, internationalization, and front-end layout files.
 
-* Api
+* __Api__&#8212; contains any PHP classes exposed to the API.	
 * __etc__ &#8212; contains configuration files. 
-* il8n
-* Plugin
+* __il8n__ &#8212; contains localization files.
+* __Plugin__ &#8212; contains any needed plugin files.
 * __view__ &#8212; contains non-object-oriented and non-static view level parts of the module such as design templates, email templates, and layout files.
-
-
-
-
-A module contains multiple folders and files. On the top level there can be folders such as:
-- Block,* *Controller,* *Helper,* *Model which contain files with PHP classes that implement a full MVC vertical of module logic. These folders follow autoloading requirements and comply with Magento coding standard file naming conventions.
-- controllers which contains PHP classes with controllers. These classes don't participate in autoloading and don't comply with Magento coding standard naming conventions, but follow ZF controller naming conventions.
-- Setup which contain classes for module database structure and data setup which are invoked when installing or upgrading.
-- etc which contains various configuration files.
-- view which contains non-object-oriented and non-static view level parts of the module such as design templates, email templates and layout files.
-- Other files containing PHP classes that participate in autoload, such as Magento\Core\Exception, Magento\Customer\Exception.
-- Other files used explicitly by the module -- for example, <root>/app/code/Magento/Core/functions.php is included explicitly.
 
 
 ####Add your own
