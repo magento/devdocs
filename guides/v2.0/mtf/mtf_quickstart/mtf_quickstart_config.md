@@ -38,6 +38,11 @@ For `<env name="basedir"` set `value="<full_path_to_directory>" />` (that is dir
 For `name="credentials_file_path" ` set `value="<full_path_to_directory>"` (that is file with credentials for Magento modules, if required). For example, `<env name="credentials_file_path" value="C:\magento2\dev\tests\functional\credentials.xml" />`.
 
 <h3 id="mtf_quickstart_config_configxml">2. Edit <code>config.xml</code> to configure Magento Testing Framework</h3>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>The default configuration is set in <a href="{{site.mage2000url}}dev/tests/functional/etc/config.xml.dist"><code>magento2/dev/tests/functional/etc/config.xml.dist</code></a>. It should be copied as <code>config.xml</code> for further changes.</p>
+</div>
+
 Find `config.xml` in `magento2/dev/tests/functional/etc`, and open it in editor.
 
 <h4 id="mtf_quickstart_config_configxml_credent-backend">Set credentials for Magento Admin under test</h4>
@@ -45,10 +50,6 @@ In `<application>` element find elements `<backendLogin>` and `<backendPassword>
 
 <h4 id="mtf_quickstart_config_configxml_browser">Set browser that MTF will use for tests</h4>
 The default browser is **Mozilla Firefox**.
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The default configuration for handlers is set in <a href="{{site.mage2000url}}dev/tests/functional/etc/config.xml.dist"><code>magento2/dev/tests/functional/etc/config.xml.dist</code></a>. It should be saved as <code>config.xml</code> to be used by system.</p>
-</div>
 
 If you want to use another browser for tests you have to specify it in `config.xml`.
 

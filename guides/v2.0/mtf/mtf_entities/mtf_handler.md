@@ -43,11 +43,11 @@ Furthermore, you can create your own handlers, such as **Direct** that is very f
 
 <h2 id="mtf_handler_config">Configuration</h2>
 
-One fixture can have various handlers. When we create an entity in the test we do not indicate which handler to use. We use a fallback, which is a queue of handlers in the priority order specified in <a href="#mtf_handler_configxml"><code>config.xml</code></a>.
+One fixture can have various handlers. When we create an entity in the test we do not indicate which handler to use. This work is delegated to a fallback, which is a queue of handlers in the priority order specified in <a href="#mtf_handler_configxml"><code>config.xml</code></a>.
 
 <h3 id="mtf_handler_configxml">config.xml</h3>
 
-The default configuration for handlers is set in <a href="{{site.mage2000url}}dev/tests/functional/etc/config.xml.dist"><code>magento2/dev/tests/functional/etc/config.xml.dist</code></a>. It should be saved as `config.xml` to be used by system:
+The default configuration for handlers is set in <a href="{{site.mage2000url}}dev/tests/functional/etc/config.xml.dist"><code>magento2/dev/tests/functional/etc/config.xml.dist</code></a>. Copy it as `config.xml`, that will be used to add further changes:
 
     cp config.xml.dist config.xml
 
@@ -132,7 +132,7 @@ Full class name is `Mtf\Util\Protocol\CurlTransport\FrontendDecorator`.
 
 Decorator helps to authorize the customer and saves his session.
 
-Add to the `Curl.php` the following code:
+Use in the `Curl.php` the following code:
 
 {% highlight php %}
 $curl = new FrontendDecorator(new CurlTransport(), $this->customer);
