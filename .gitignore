@@ -15,10 +15,10 @@ Thumbs.db
 ###########################
 _site
 CNAME
-_config.yml
+
 /Readme.md
 ignore
-/_config.yml
+
 /_config.brad.yml
 /_config.sasha.yml
 /_config.tana.yml
