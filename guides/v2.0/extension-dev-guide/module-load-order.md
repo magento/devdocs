@@ -21,15 +21,15 @@ If you know that your module&#8217;s logic depends on something in another modul
 
 ###Examples
 
-You have a module that needs a configuration file from another module:
+Assume you have a module that needs a configuration file from another module:
 
-__Module A__ introduces `gadgetlayout.xml`, which updates block `gadgetBlock` from __module B__. Layout files from __module A__ should be loaded before __module B__.
+__Module A__ introduces `gadgetlayout.xml`, which updates block `gadgetBlock` from __module B__. In this case, layout files from __module A__ should be loaded before __module B__, so you should specify that in __module B&#8217;s__ `<sequence>` entry in module.xml.
 
 
 
 For each particular scenario, files of the same type are loaded from different modules taking into account the sequence information provided in each module&#8217;s module.xml file. 
 
-You want to load all of the layout files with the name *default.xml*. __Module A__ specifies __module B__ in `<sequence>`. The files load in the following order:
+In another scenario, let&#8217;s say you want to load all of the layout files with the name *default.xml*. __Module A__ specifies __module B__ in `<sequence>`. The files load in the following order:
 
 42. *module X/view/frontend/layout/default.xml* &#8212; Either we don&#8217;t care about when module X loads or perhaps module B requires it to be loaded before it.
 42. *module B/view/frontend/layout/default.xml* 
