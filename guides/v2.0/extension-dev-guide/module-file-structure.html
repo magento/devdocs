@@ -179,10 +179,10 @@
 <p>The main component folders are:</p>
 
 <ul>
-  <li>Block</li>
-  <li>Controller</li>
-  <li>Helper</li>
-  <li>Model</li>
+  <li><strong>Block</strong> — contains PHP classes as part of MVC vertical implementation of module logic.</li>
+  <li><strong>Controller</strong> — contains PHP classes as part of MVC vertical implementation of module logic.</li>
+  <li><strong>Helper</strong> — contains PHP classes as part of MVC vertical implementation of module logic.</li>
+  <li><strong>Model</strong> — contains PHP classes as part of MVC vertical implementation of module logic.</li>
   <li><strong>Setup</strong> — contains classes for module database structure and data setup which are invoked when installing or upgrading.</li>
 </ul>
 
@@ -191,21 +191,12 @@
 <p>Additionally, there are folders for configuration and other ancillary functions for items like plug-ins, internationalization, and front-end layout files.</p>
 
 <ul>
-  <li>Api</li>
+  <li><strong>Api</strong>— contains any PHP classes exposed to the API.	</li>
   <li><strong>etc</strong> — contains configuration files. </li>
-  <li>il8n</li>
-  <li>Plugin</li>
+  <li><strong>il8n</strong> — contains localization files.</li>
+  <li><strong>Plugin</strong> — contains any needed plugin files.</li>
   <li><strong>view</strong> — contains non-object-oriented and non-static view level parts of the module such as design templates, email templates, and layout files.</li>
 </ul>
-
-<p>A module contains multiple folders and files. On the top level there can be folders such as:
-- Block,* <em>Controller,</em> <em>Helper,</em> *Model which contain files with PHP classes that implement a full MVC vertical of module logic. These folders follow autoloading requirements and comply with Magento coding standard file naming conventions.
-- controllers which contains PHP classes with controllers. These classes don’t participate in autoloading and don’t comply with Magento coding standard naming conventions, but follow ZF controller naming conventions.
-- Setup which contain classes for module database structure and data setup which are invoked when installing or upgrading.
-- etc which contains various configuration files.
-- view which contains non-object-oriented and non-static view level parts of the module such as design templates, email templates and layout files.
-- Other files containing PHP classes that participate in autoload, such as Magento\Core\Exception, Magento\Customer\Exception.
-- Other files used explicitly by the module – for example, <root>/app/code/Magento/Core/functions.php is included explicitly.</root></p>
 
 <h4 id="add-your-own">Add your own</h4>
 

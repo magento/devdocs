@@ -176,13 +176,13 @@
 
 <h3 id="examples">Examples</h3>
 
-<p>You have a module that needs a configuration file from another module:</p>
+<p>Assume you have a module that needs a configuration file from another module:</p>
 
-<p><strong>Module A</strong> introduces <code>gadgetlayout.xml</code>, which updates block <code>gadgetBlock</code> from <strong>module B</strong>. Layout files from <strong>module A</strong> should be loaded before <strong>module B</strong>.</p>
+<p><strong>Module A</strong> introduces <code>gadgetlayout.xml</code>, which updates block <code>gadgetBlock</code> from <strong>module B</strong>. In this case, layout files from <strong>module A</strong> should be loaded before <strong>module B</strong>, so you should specify that in <strong>module B’s</strong> <code>&lt;sequence&gt;</code> entry in module.xml.</p>
 
 <p>For each particular scenario, files of the same type are loaded from different modules taking into account the sequence information provided in each module’s module.xml file. </p>
 
-<p>You want to load all of the layout files with the name <em>default.xml</em>. <strong>Module A</strong> specifies <strong>module B</strong> in <code>&lt;sequence&gt;</code>. The files load in the following order:</p>
+<p>In another scenario, let’s say you want to load all of the layout files with the name <em>default.xml</em>. <strong>Module A</strong> specifies <strong>module B</strong> in <code>&lt;sequence&gt;</code>. The files load in the following order:</p>
 
 <ol>
   <li><em>module X/view/frontend/layout/default.xml</em> — Either we don’t care about when module X loads or perhaps module B requires it to be loaded before it.</li>
