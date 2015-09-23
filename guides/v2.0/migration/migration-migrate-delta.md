@@ -24,7 +24,7 @@ To migrate incremental changes, use the following command:
 
 Command usage:
 
-	magento migrate:delta [-r|--reset] {<path to config.xml>}
+	bin/magento migrate:delta [-r|--reset] {<path to config.xml>}
 
 where
 

@@ -34,7 +34,7 @@ In addition to the command arguments discussed here, see <a href="{{ site.gdeurl
 <h2 id="migrate-data-cmd">Run the settings migration command</h2>
 To migrate settings, use the following command:
 
-	magento migrate:settings [-r|--reset] {<path to config.xml>}
+	bin/magento migrate:settings [-r|--reset] {<path to config.xml>}
 
 where
 

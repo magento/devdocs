@@ -31,7 +31,7 @@ To migrate data, use the following command:
 
 Command usage:
 
-	magento migrate:data [-r|--reset] {<path to config.xml>}
+	bin/magento migrate:data [-r|--reset] {<path to config.xml>}
 
 where
 

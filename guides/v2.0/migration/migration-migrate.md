@@ -11,9 +11,9 @@ redirect_from: /guides/v1.0/migration/migration-migrate.html
 ---
 
 #### Contents
-*	TBD
-*	TBD
-*	TBD
+*	<a href="#migration-command-gen">General rules for successful migration</a>
+*	<a href="#migration-command-run">Run the Data Migration Tool</a>
+*	<a href="#migration-command-run-syntax">Command syntax</a>
 
 <h2 id="migration-command-gen">General rules for successful migration</h2>
 
@@ -37,7 +37,7 @@ In addition to the command arguments discussed here, see <a href="{{ site.gdeurl
 <h3 id="migration-command-run-syntax">Command syntax</h3>
 Command syntax:
 
-	magento migrate:<mode> [-r|--reset] {<path to config.xml>}
+	bin/magento migrate:<mode> [-r|--reset] {<path to config.xml>}
 
 where
 
