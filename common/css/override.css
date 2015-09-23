@@ -115,7 +115,7 @@ p.q 	{
 
 
 .container, .navbar-static-top, .navbar-fixed-top .container, .navbar-fixed-bottom .container, .nav-main #global-nav, .nav-main #subnav-wrap #subnav {
-    width: auto,
+    width: auto;
     max-width: 100%;
 }
 
