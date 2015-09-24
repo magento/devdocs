@@ -167,3 +167,7 @@ Triggered when the modal window is opened.
 - the ESC key: close the current modal window
 - the TAB key: set focus to the next focusable element (looped inside the modal window)
 - the SHIFT+TAB keys combination: set focus to the previous focusable element (looped inside the modal window)
+
+<p class="q">Would it be appropriate to list the extending widgets here? 
+(confirmation, prompt, alert)</p>
+<p class="q">Would it be appropriate to add a link to http://devdocs.magento.com/guides/v2.0/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals here?</p>
