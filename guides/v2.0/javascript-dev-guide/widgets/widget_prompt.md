@@ -18,6 +18,7 @@ The confirmation widget source is <a href="{{site.baseurl}}app/code/Magento/Ui/v
 
 Example:
 
+{% highlight js %}
 $('#prompt_content').prompt({
     title: 'Some title',
     actions: {
@@ -26,7 +27,7 @@ $('#prompt_content').prompt({
         always: function(){}
     }
 });
-{% endhighlight %}
+{% endhighlight js %}
 
 For details about how to initialize the widget in a`.phtml` template, refer to the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.
 
