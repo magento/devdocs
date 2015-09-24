@@ -233,8 +233,7 @@ Let's create a WebAPI handler that creates a new tax rule.
 
 <script src="https://gist.github.com/dshevtsov/15708f0530aaa70789e0.js"></script>
 
-
-* Create `Webapi.php` in the same directory. The file contains a <a href="#mtf_handler_conf_hand">handler class</a>.
+* Create `Webapi.php` in the same directory. The file contains a <a href="#mtf_handler_conf_hand">handler class</a>. In the following example WebAPI handler uses some cURL handler methods to prepare data. 
 
 <script src="https://gist.github.com/dshevtsov/e06d8a4241d14738df01.js"></script>
 
