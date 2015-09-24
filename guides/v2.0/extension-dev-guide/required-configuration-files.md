@@ -17,16 +17,16 @@ redirect_from:
 Each Magento 2 module has its own set of configuration files, gathered into the module&#8217;s `etc/` folder.  
 
 
-<span class="editor">
 
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Unlike Magento 1, there is no monolithic configuration file in Magento 2. </p></span>
+	<span class="glyphicon-class">
+  	<p>Unlike Magento 1, there is no monolithic configuration file in Magento 2. </p>
+  </span>
 </div>
 
 
-##Use etc for your configuration files  
+##Use /etc for your configuration files  
 
 Magento 2 looks for configuration information for each module in that module&#8217;s `etc` folder. Depending on the needs of your module, you might have the following configuration files at the top level of your module&#8217;s `etc` folder:
 
@@ -38,8 +38,10 @@ Magento 2 looks for configuration information for each module in that module&#82
 
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Additions you make to those configuration files are applied <em>globally</em> to your module.</p></span></div>
+	<span class="glyphicon-class">
+  		<p>Additions you make to those configuration files are applied <em>globally</em> to your module.</p>
+  </span>
+ </div>
 
 In addition to those files, a Magento 2 module also has nested configuration folders in the `etc` folder for any required administration html, frontend, API REST, or API SOAP specific configuration. Additions you make to files in these folders override the settings in the global configuration files for the respective functionality only. That is, if you add a `config.xml` file to `etc/frontend`, the settings you make in that file overrides the settings in `etc/config.xml` __only for frontend__ functionality.
 
@@ -50,14 +52,16 @@ In addition to those files, a Magento 2 module also has nested configuration fol
 * _YourModule_/etc/webapi_soap/
 
 
+If you want to just create the basic set of folders and files in etc that you might need, you could enter the following at the command line:
+
+
+     cd etc 
+
+     mkdir adminhtml && mkdir frontend && mkdir webapi_rest && mkdir webapi_soap && touch acl.xml config.xml di.xml module.xml webapi.xml
 
 
 
-###Magento 2 Module File Structure
-
-
-A typical file structure for a Magento 2 module:
-<p><img src="{{ site.baseurl }}common/images/pdg-config-file-structure.png" width="300" alt="A filesystem view of a typical file structure"></p>
+###Configuration files
 
 
 * Configuration files that are in the top level of that module&#8217;s `etc` folder are global to that module.
@@ -68,7 +72,7 @@ A typical file structure for a Magento 2 module:
 ###Tailor your configuration files for what your module does
 
 
-The exact set of configuration files required for your module depends on what your new module does. For example, if your module performs a function in the Admin, you should add any necessary configuration files for those functions to `etc/adminhtml/`, for example:
+The exact set of configuration files required for your module depends on what your new module does. The required configuration files depend on how you plan to use the module: will the module be manifested on the storefront UI, or in the Magento Admin panel, or as a backend extension that makes a service call? Or all of the above. For example, if your module performs a function in the Admin, you should add any necessary configuration files for those functions to `etc/adminhtml/`, like:
 
 * <code><em>YourModule</em>/etc/adminhtml/di.xml</code>
 * <code><em>YourModule</em>/etc/adminhtml/routes.xml</code>
@@ -94,3 +98,13 @@ Keep in mind that you may be able to handle your module&#8217;s configuration so
 
 
 </div> -->
+
+
+
+
+
+##Next
+
+[Create a module](create_module.html)
+
+
