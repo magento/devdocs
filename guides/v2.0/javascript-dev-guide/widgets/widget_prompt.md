@@ -9,8 +9,9 @@ github_link: javascript-dev-guide/widgets/widget_prompt.md
 ---
 
 <h2>Overview </h2>
-The Magento propmp widget is an extension for modal window widget It contains a cancel and a confirmation button. Prompt widget require a callback functions.
+The Magento propmp widget implements a modal pop-up window with a cancel and a confirmation button. 
 
+It extends the <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html">Magento modal widget</a>.
 
 The confirmation widget source is <a href="{{site.baseurl}}app/code/Magento/Ui/view/base/web/js/modal/prompt.js">app/code/Magento/Ui/view/base/web/js/modal/prompt.js</a>
 
@@ -33,7 +34,58 @@ For details about how to initialize the widget in a`.phtml` template, refer to t
 
 <h2 id="prompt_options">Options</h2>
 
-<p class="q">Similar to confirmation?</p>
+<ul>
+<li><a href="#prompt_actions">actions</a></li>
+<li><a href="#prompt_content">content</a></li>
+<li><a href="#prompt_focus">focus</a></li>
+<li><a href="#prompt_title">title</a></li>
+</ul>
 
-<h2 id="key_navigation">Keyboard navigation</h2>
+<h3 id="prompt_actions"><code>actions</code></h3>
+The array of buttons for the action panel.
+
+
+**Type**: Object.
+
+**Default value**: 
+{% highlight js %}
+actions: {
+    confirm: function(){},
+    cancel: function(){},
+    always: function(){}
+}
+{% endhighlight %}
+
+<h3 id="prompt_content"><code>content</code></h3>
+
+The prompt window content.
+<p class="q">Is it the text dispayed in the window?</p>
+
+**Type**: String.
+
+<h3 id="alert_focus"><code>focus</code></h3>
+The selector of the element to be in focus when the modal window opens.
+If `focus` is not specified or set to empty string, the focus is on close button. If focusing is not requried, set `focus` to `none`.
+
+**Type**: String.
+
+**Default value**: `''`
+
+<h3 id="alert_content"><code>title</code></h3>
+The title of the modal window.
+
+
+**Type**: String.
+
+**Default value**: `''`
+
+<h2 id="prompt_events">Events</h2>
+
+The prompt widget implements the following events:
+- `confirm` callback: called when the confirmation button is clicked.
+- `cancel` callback: called when the cancel button is clicked.
+- `always` callback.
+
+
+<h2 id="prompt_key_navigation">Keyboard navigation</h2>
 The keyboard navigation for the prompt windows the <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html#Keyboard navigation">general modal windows navigation implemented by the modal widget</a>.

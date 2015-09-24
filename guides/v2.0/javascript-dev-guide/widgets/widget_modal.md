@@ -153,15 +153,18 @@ Close the modal window.
 
 The modal widget is subscribed to the following events:
 <ul>
-<li><a href="#modal_closed">modalclosed</a></li>
-<li><a href="#modal_opened">modalopened</a></li>
+<li><a href="#modal_closed">closed</a></li>
+<li><a href="#modal_opened">opened</a></li>
 </ul>
 
-<h3 id="modal_closed"><code>modalclosed</code></h3>
-Triggered when the modal window is closed.
+<h3 id="modal_closed"><code>closed</code></h3>
+Called when the modal window is closed.
 
-<h3 id="modal_opened"><code>modalopened</code></h3>
-Triggered when the modal window is opened.
+<h3 id="modal_opened"><code>opened</code></h3>
+Called when the modal window is opened.
+
+<h3 id="modal_opened"><code>always</code></h3>
+....
 
 <h2 id="key_navigation">Keyboard navigation</h2>
 - the ESC key: close the current modal window

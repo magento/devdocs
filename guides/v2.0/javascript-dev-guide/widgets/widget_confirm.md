@@ -58,5 +58,12 @@ For details about how to initialize the widget in a`.phtml` template, refer to t
 <h2 id="confirm_options">Options</h2>
 <p class="q">According to the internal doc, they are similar to alert, except for the actions, true?</p>
 
-<h2 id="key_navigation">Keyboard navigation</h2>
+<h2 id="confirm_events">Events</h2>
+
+The confirmation widget implements the following events:
+- `confirm` callback: called when the confirmation button is clicked.
+- `cancel` callback: called when the cancel button is clicked.
+- `always` callback.
+
+<h2 id="confirm_key_navigation">Keyboard navigation</h2>
 The keyboard navigation for the alert windows the <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html#Keyboard navigation">general modal windows navigation implemented by the modal widget</a>.
