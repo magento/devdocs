@@ -92,4 +92,4 @@ The title of the modal window.
 The alert widget implements a single event: the `always` callback.
 
 <h2 id="alert_key_navigation">Keyboard navigation</h2>
-The keyboard navigation for the alert windows the <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html#Keyboard navigation">general modal windows navigation implemented by the modal widget</a>.
+The keyboard navigation for the alert windows is similar to the <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html#Keyboard navigation">general modal windows navigation implemented by the modal widget</a>.

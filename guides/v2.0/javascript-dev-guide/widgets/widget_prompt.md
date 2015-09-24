@@ -63,7 +63,7 @@ The prompt window content.
 
 **Type**: String.
 
-<h3 id="alert_focus"><code>focus</code></h3>
+<h3 id="prompt_focus"><code>focus</code></h3>
 The selector of the element to be in focus when the modal window opens.
 If `focus` is not specified or set to empty string, the focus is on close button. If focusing is not requried, set `focus` to `none`.
 
@@ -71,7 +71,7 @@ If `focus` is not specified or set to empty string, the focus is on close button
 
 **Default value**: `''`
 
-<h3 id="alert_content"><code>title</code></h3>
+<h3 id="prompt_content"><code>title</code></h3>
 The title of the modal window.
 
 
@@ -88,4 +88,4 @@ The prompt widget implements the following events:
 
 
 <h2 id="prompt_key_navigation">Keyboard navigation</h2>
-The keyboard navigation for the prompt windows the <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html#Keyboard navigation">general modal windows navigation implemented by the modal widget</a>.
+The keyboard navigation for the prompt windows is similar to the <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html#Keyboard navigation">general modal windows navigation implemented by the modal widget</a>.

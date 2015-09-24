@@ -10,26 +10,20 @@ github_link: javascript-dev-guide/widgets/widget_confirm.md
 
 <h2>Overview</h2>
 
-The Magento confirmation widget implements a modal window the the cancel and confirmation button.Is an extension of the <a href="{{site.gdeurl}}">Magento modal widget</a>.
+The Magento confirm widget implements a modal window the the cancel and confirmation button.Is an extension of the <a href="{{site.gdeurl}}">Magento modal widget</a>.
 
-Confirmation widget require a callback functions.
-Specifically, the confirmation widgets implements:
-Ability to simple initialization
-Three types of callback(confirm, cancel, always)
-
-
-<p class="q">need clarification</p>
+<p class="q">what's the </p>
 
 The confirmation widget source is <a href="{{site.baseurl}}app/code/Magento/Ui/view/base/web/js/modal/confirm.js">app/code/Magento/Ui/view/base/web/js/modal/confirm.js</a>
 
 <h2 id="confirm_initialize">Initialize the confirmation widget</h2>
 
-Examples of the confirmation widget initialization.
+The confirmation widget can be initialized with or without binding to a certain element.
 
-Example 1:
+**Example1**: initialization on the element
 
 {% highlight js %}
-$('#confirm_content').confirm({
+$('#element1').confirm({
     title: 'Some title',
     actions: {
         confirm: function(){}, //callback on 'Ok' button click
@@ -39,6 +33,7 @@ $('#confirm_content').confirm({
 });
 {% endhighlight %}
 
+**Example2**: standalone initialization
 {% highlight js %}
 new Confirm({
     title: 'Some title',
@@ -51,12 +46,56 @@ new Confirm({
 });
 {% endhighlight %}
 
-<p class="q">need clarification</p>
 
 For details about how to initialize the widget in a`.phtml` template, refer to the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.
 
 <h2 id="confirm_options">Options</h2>
-<p class="q">According to the internal doc, they are similar to alert, except for the actions, true?</p>
+
+<ul>
+<li><a href="#confirm_actions">actions</a></li>
+<li><a href="#confirm_content">content</a></li>
+<li><a href="#confirm_focus">focus</a></li>
+<li><a href="#confirm_title">title</a></li>
+</ul>
+
+<h3 id="confirm_actions"><code>actions</code></h3>
+The array of buttons for the action panel.
+
+
+**Type**: Object.
+
+**Default value**: 
+{% highlight js %}
+actions: {
+    confirm: function(){},
+    cancel: function(){},
+    always: function(){}
+}
+{% endhighlight %}
+
+<h3 id="confirm_content"><code>content</code></h3>
+
+The confirmation window content.
+<p class="q">Is it the text dispayed in the window?</p>
+
+**Type**: String.
+
+<h3 id="confirm_focus"><code>focus</code></h3>
+The selector of the element to be in focus when the confirmation window opens.
+If `focus` is not specified or set to empty string, the focus is on close button. If focusing is not requried, set `focus` to `none`.
+
+**Type**: String.
+
+**Default value**: `''`
+
+<h3 id="alert_content"><code>title</code></h3>
+The title of the modal window.
+
+
+**Type**: String.
+
+**Default value**: `''`
+
 
 <h2 id="confirm_events">Events</h2>
 
@@ -66,4 +105,4 @@ The confirmation widget implements the following events:
 - `always` callback.
 
 <h2 id="confirm_key_navigation">Keyboard navigation</h2>
-The keyboard navigation for the alert windows the <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html#Keyboard navigation">general modal windows navigation implemented by the modal widget</a>.
+The keyboard navigation for the confirmation windows is similar to the <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html#Keyboard navigation">general modal windows navigation implemented by the modal widget</a>.
