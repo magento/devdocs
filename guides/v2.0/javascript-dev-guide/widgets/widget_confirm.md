@@ -3,18 +3,20 @@ layout: default
 group: jsdg
 subgroup: Widgets
 title: Confirmation widget
-menu_order: 2
+menu_order: 5
 menu_title: Confirmation widget
 github_link: javascript-dev-guide/widgets/widget_confirm.md
 ---
 
 <h2>Overview</h2>
 
-The Magento confirm widget implements a modal window the the cancel and confirmation button.Is an extension of the <a href="{{site.gdeurl}}">Magento modal widget</a>.
+The Magento confirm widget implements a modal pop-up window the the cancel and confirmation button.Is an extension of the <a href="{{site.gdeurl}}">Magento modal widget</a>.
 
-<p class="q">what's the </p>
+<p class="q">what's the difference between confirmation and prompt?</p>
 
 The confirmation widget source is <a href="{{site.baseurl}}app/code/Magento/Ui/view/base/web/js/modal/confirm.js">app/code/Magento/Ui/view/base/web/js/modal/confirm.js</a>
+
+The design patterns for the modal pop-up windows in the Admin are described in the <a href="{{site.gdeurl}}pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a> 
 
 <h2 id="confirm_initialize">Initialize the confirmation widget</h2>
 

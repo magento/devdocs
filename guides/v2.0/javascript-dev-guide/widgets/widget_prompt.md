@@ -3,7 +3,7 @@ layout: default
 group: jsdg
 subgroup: Widgets
 title: Prompt widget
-menu_order: 2
+menu_order: 12
 menu_title: Prompt widget
 github_link: javascript-dev-guide/widgets/widget_prompt.md
 ---
@@ -14,6 +14,8 @@ The Magento propmp widget implements a modal pop-up window with a cancel and a c
 It extends the <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html">Magento modal widget</a>.
 
 The confirmation widget source is <a href="{{site.baseurl}}app/code/Magento/Ui/view/base/web/js/modal/prompt.js">app/code/Magento/Ui/view/base/web/js/modal/prompt.js</a>
+
+The design patterns for the modal pop-up windows in the Admin are described in the <a href="{{site.gdeurl}}pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a> 
 
 <h2>Initialize the prompt widget</h2>
 

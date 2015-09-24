@@ -13,6 +13,7 @@ The Magento alert widget implements a modal pop-up window with a confirmation bu
 
 The alert widget source is <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/modal/alert.js" target="_blank">app/code/Magento/Ui/view/base/web/js/modal/alert.js</a>
 
+The design patterns for the pop-up modal windows in the Admin are described in the <a href="{{site.gdeurl}}pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a> 
 
 <h2 id="modal_initialize">Initialize the alert widget</h2>
 

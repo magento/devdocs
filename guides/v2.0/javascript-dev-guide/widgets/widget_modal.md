@@ -3,7 +3,7 @@ layout: default
 group: jsdg
 subgroup: Widgets
 title: Modal widget
-menu_order: 8
+menu_order: 10
 menu_title: Modal widget
 github_link: javascript-dev-guide/widgets/widget_modal.md
 redirect_from:
@@ -29,6 +29,8 @@ The widget uses the following templates:
 
 - <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/modal/modal-popup.html" target="_blank">app/code/Magento/Ui/view/base/web/templates/modal/modal-popup.html</a> popup type template.
 - <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/modal/modal-slide.html" target="_blank">app/code/Magento/Ui/view/base/web/templates/modal/modal-slide.html</a> slide type template.
+
+The design patterns for the modal pop-up windows in the Admin are described in the <a href="{{site.gdeurl}}pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a> 
 
 <h2 id="modal_initialize">Initialize the modal widget</h2>
 
