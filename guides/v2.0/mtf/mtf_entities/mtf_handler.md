@@ -95,7 +95,7 @@ Create the handler in the same directory where the interface is stored: `magento
 
 <h3 id="mtf_handler_di">di.xml</h3>
 
-The `di.xml` file declares relation between the <a href="#mtf_handler_interface">interface</a> and the <a href="#mtf_handler_conf_hand">handler</a> class. It must be placed in `magento2/dev/tests/functional/tests/app/Magento/[module_name]/Test/etc/di`.
+The `di.xml` file declares relation between the <a href="#mtf_handler_interface">interface</a> and the <a href="#mtf_handler_conf_hand">handler</a> class. It must be placed in `magento2/dev/tests/functional/tests/app/Magento/[module_name]/Test/etc/[handler_type]`.
 
 See an example for the Widget cURL handler (`magento2/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml`):
 
@@ -160,25 +160,15 @@ The following code includes detailed comments for better understanding.
 
 <h3 id="mtf_handler_decor">cURL authentication classes</h3>
 
-In the previously mentioned example of the <a href="#mtf_curl_script">Curl.php</a> code, authentication in the storefront and Admin is realized using the `FrontendDecorator` class and the `BackendDecorator` class.
+In the previously mentioned example of the <a href="#mtf_curl_script">Curl.php</a> code, authentication in the Admin is realized using the the `BackendDecorator` class. 
 
-<h4>FrontendDecorator class</h4>
-
-Full class name is `Mtf\Util\Protocol\CurlTransport\FrontendDecorator`.
-
-Decorator helps to authorize the customer and saves his session.
-
-Use in the `Curl.php` the following code:
-
-{% highlight php %}
-$curl = new FrontendDecorator(new CurlTransport(), $this->customer);
-{% endhighlight %}
+The <a href="#mtf_handler_curl_frontdecor">FrontendDecorator class</a> can help you accessing a storefront.
 
 <h4>BackendDecorator class</h4>
 
-Full class name is `Mtf\Util\Protocol\CurlTransport\BackendDecorator`. 
+`BackendDecorator` helps to authorize an Admin and saves the Admin's session.
 
-BackendDecorator helps to authorize an admin and saves the admin's session.
+Full class name is `Mtf\Util\Protocol\CurlTransport\BackendDecorator`. 
 
 Add to the `Curl.php` the following code:
 
@@ -186,7 +176,19 @@ Add to the `Curl.php` the following code:
 $curl = new BackendDecorator(new CurlTransport(), new Config());
 {% endhighlight %}
 
-`Config()` takes admin's configuration from <a href="#mtf_handler_configxml">config.xml</a>, where the username and the password are stored.
+`Config()` takes Admin's configuration from <a href="#mtf_handler_configxml">config.xml</a>, where the username and the password are stored.
+
+<h4 id="mtf_handler_cirl_frontdecor">FrontendDecorator class</h4>
+
+`FrontendDecorator` helps to authorize the customer and saves his session.
+
+Full class name is `Mtf\Util\Protocol\CurlTransport\FrontendDecorator`.
+
+Use in the `Curl.php` the following code:
+
+{% highlight php %}
+$curl = new FrontendDecorator(new CurlTransport(), $this->customer);
+{% endhighlight %}
 
 <h2 id="mtf_handler_howto-create-ui">How to create a UI Handler</h2>
 
