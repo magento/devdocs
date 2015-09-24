@@ -16,8 +16,8 @@ github_link: mtf/mtf_entities/mtf_handler.md
   - <a href="#mtf_handler_interface">Handler interface</a>
   - <a href="#mtf_handler_conf_hand">Handler class</a>
   - <a href="#mtf_handler_di">di.xml</a>
-  - <a href="#mtf_handler_decor">cURL authentication classes</a>
 - <a id="#mtf_handler_howto-create-curl">How to create a cURL Handler</a>
+  - <a href="#mtf_handler_decor">cURL authentication classes</a>
 - <a href="#mtf_handler_howto-create-ui">How to create a UI Handler</a>
 - <a href="#mtf_handler_howto-create-ui">How to create a WebAPI Handler</a>
   
@@ -95,7 +95,7 @@ Create the handler in the same directory where the interface is stored: `magento
 
 <h3 id="mtf_handler_di">di.xml</h3>
 
-The `di.xml` file declares relation between the <a href="#mtf_handler_interface">interface</a> and the <a href="#mtf_handler_conf_hand">handler</a> class. It must be placed in `magento2/dev/tests/functional/tests/app/Magento/[module_name]/Test/etc/[handler_type]`.
+The `di.xml` file declares relation between the <a href="#mtf_handler_interface">interface</a> and the <a href="#mtf_handler_conf_hand">handler</a> class. It must be placed in `magento2/dev/tests/functional/tests/app/Magento/[module_name]/Test/etc/di`.
 
 See an example for the Widget cURL handler (`magento2/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml`):
 
@@ -122,9 +122,45 @@ See the tree of files mentioned for the case with the Widget cURL handler:
 
 <img src="{{ site.baseurl }}common/images/mtf_widget_handler_tree.png">
 
+<h2 id="mtf_handler_howto-create-curl">How to create a cURL Handler</h2>
+
+Let's create a cURL handler that creates a new widget.
+
+* Create a directory with the name `Widget` in the `Handler` directory of the Magento_Widget module - `magento2/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget`.
+* In the same directory, create <a href="#mtf_handler_interface">the interface</a> for the cURL handler, and call it `WidgetInterface.php`. Our new interface extends `HandlerInterface` class.
+
+<script src="https://gist.github.com/dshevtsov/dbe9b588ffe91bbb5622.js"></script>
+
+* Create `Curl.php` in the same directory. This file contains a <a href="#mtf_handler_conf_hand">handler class</a>, that defines preparation of a data to create a new widget.
+
+The following code includes detailed comments for better understanding.
+
+<div id="mtf_curl_script">
+<script src="https://gist.github.com/dshevtsov/ff1aad2e5f11b76af9fb.js"></script>
+</div>
+
+* Create <a href="#mtf_handler_di"><code>di.xml</code></a> in the `etc/curl` directory of the Magento_Widget module.
+
+{%highlight xml%}
+
+<?xml version="1.0" ?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../../../../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <preference for="Magento\Widget\Test\Handler\Widget\WidgetInterface"
+                type="\Magento\Widget\Test\Handler\Widget\Curl" />
+</config>
+
+{%endhighlight%}
+
 <h3 id="mtf_handler_decor">cURL authentication classes</h3>
 
-When you want to pass authentication in the storefront or Admin using the cURL, you can use the `FrontendDecorator` and the `BackendDecorator` classes.
+In the previously mentioned example of the <a href="#mtf_curl_script">Curl.php</a> code, authentication in the storefront and Admin is realized using the `FrontendDecorator` class and the `BackendDecorator` class.
 
 <h4>FrontendDecorator class</h4>
 
@@ -151,42 +187,6 @@ $curl = new BackendDecorator(new CurlTransport(), new Config());
 {% endhighlight %}
 
 `Config()` takes admin's configuration from <a href="#mtf_handler_configxml">config.xml</a>, where the username and the password are stored.
-
-As an example you can see the <a href="https://github.com/magento/magento2/blob/develop/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget/Curl.php">cURL handler for the widget</a>.
-
-<h2 id="mtf_handler_howto-create-curl">How to create a cURL Handler</h2>
-
-Let's create a cURL handler that creates a new widget.
-
-* Create a directory with the name `Widget` in the `Handler` directory of the Magento_Widget module - `magento2/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget`.
-* In the same directory, create <a href="#mtf_handler_interface">the interface</a> for the cURL handler, and call it `WidgetInterface.php`. Our new interface extends `HandlerInterface` class.
-
-<script src="https://gist.github.com/dshevtsov/dbe9b588ffe91bbb5622.js"></script>
-
-* Create `Curl.php` in the same directory. This file contains a <a href="#mtf_handler_conf_hand">handler class</a>, that defines preparation of a data for creation of the new widget using a POST request.
-
-The following code includes detailed comments for better understanding.
-
-<script src="https://gist.github.com/dshevtsov/ff1aad2e5f11b76af9fb.js"></script>
-
-* Create <a href="#mtf_handler_di"><code>di.xml</code></a> in the `etc/curl` directory of the Magento_Widget module.
-
-{%highlight xml%}
-
-<?xml version="1.0" ?>
-<!--
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
--->
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="../../../../../../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
-    <preference for="Magento\Widget\Test\Handler\Widget\WidgetInterface"
-                type="\Magento\Widget\Test\Handler\Widget\Curl" />
-</config>
-
-{%endhighlight%}
 
 <h2 id="mtf_handler_howto-create-ui">How to create a UI Handler</h2>
 

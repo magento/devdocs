@@ -14,6 +14,11 @@ redirect_from: /guides/v1.0/mtf/mtf_quickstart/mtf_quickstart_environmemt.html
 The Selenium Server will drive a browser to execute your tests.
 You can download the Selenium Server from [Selenium project website](http://www.seleniumhq.org/download/).
 
+<div class="bs-callout bs-callout-warning">
+    <p>Install <a href="https://help.ubuntu.com/community/Java">Java</a> to work with Selenium.</p>
+</div>
+
+
 Specific versions of the Selenium Server are compatible with specific versions of browsers. <a href="http://docs.seleniumhq.org/about/platforms.jsp">Read more about compatibility of browser version and Selenium server version.</a>
 
 Enter in terminal:
