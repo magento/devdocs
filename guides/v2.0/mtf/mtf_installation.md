@@ -35,7 +35,7 @@ To install the Magento application, see <a href="{{ site.gdeurl }}install-gde/bk
 
 <h3 id="mtf_install_pre_tools">3. Check if all required software installed and configured</h3>
 
-<h4 id="mtf_install_pre_tools_apache">PHP</h4>
+<h4 id="mtf_install_pre_tools_php">PHP</h4>
 
 For more details about PHP verification, installation and configuration (<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">Ubuntu</a>, <a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">CentOS</a>).
 
