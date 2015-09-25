@@ -12,7 +12,7 @@ redirect_from: /guides/v2.0/install-gde/prereq/prereq_updater.html
 
 Contributing developers update components by specifying components in Magento's `composer.json`. You *cannot* use the graphical Component Manager or System Upgrade utilities to do this.
 
-You can either add a `require` section do `composer.json` or you can use the `composer require` command as follows:
+You can either add a `require` section to `composer.json` or you can use the `composer require` command as follows:
 
 1.	Log in to the Magento server, or switch to, the Magento file system owner.
 2.	Change to the directory to which you cloned the Magento application. For example,
