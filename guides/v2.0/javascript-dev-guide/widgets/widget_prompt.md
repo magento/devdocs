@@ -9,7 +9,9 @@ github_link: javascript-dev-guide/widgets/widget_prompt.md
 ---
 
 <h2>Overview </h2>
-The Magento propmp widget implements a modal pop-up window with a cancel and a confirmation button. 
+
+
+The Magento propmp widget implements a modal pop-up window with an input field, and a cancel and a confirmation button. 
 
 It extends the <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html">Magento modal widget</a>.
 
@@ -17,9 +19,18 @@ The confirmation widget source is <a href="{{site.baseurl}}app/code/Magento/Ui/v
 
 The design patterns for the modal pop-up windows in the Admin are described in the <a href="{{site.gdeurl}}pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a> 
 
-<h2>Initialize the prompt widget</h2>
+<h3>Contents</h3>
 
-Example:
+- <a href="#prompt_init">Initialize the prompt widget</a>
+- <a href="#prompt_options">Options</a>
+- <a href="#prompt_events">Events</a>
+- <a href="prompt_key_navigation">Keyboard navigation</a>
+
+<h2 id="prompt_init">Initialize the prompt widget</h2>
+
+The prompt widget can be initialized with or without binding to a certain element.
+
+**Example1**: initialization on an element
 
 {% highlight js %}
 $('#prompt_content').prompt({
@@ -31,6 +42,19 @@ $('#prompt_content').prompt({
     }
 });
 {% endhighlight js %}
+
+**Example2**: standalone initialization
+
+{% highlight js %}
+new Prompt({
+    title: 'Some title',
+    actions: {
+        confirm: function(){},
+        cancel: function(){},
+        always: function(){}
+    }
+});
+{% endhighlight %}
 
 For details about how to initialize the widget in a`.phtml` template, refer to the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.
 
@@ -44,8 +68,7 @@ For details about how to initialize the widget in a`.phtml` template, refer to t
 </ul>
 
 <h3 id="prompt_actions"><code>actions</code></h3>
-The array of buttons for the action panel.
-
+Widget callbacks.
 
 **Type**: Object.
 
@@ -61,7 +84,6 @@ actions: {
 <h3 id="prompt_content"><code>content</code></h3>
 
 The prompt window content.
-<p class="q">Is it the text dispayed in the window?</p>
 
 **Type**: String.
 
@@ -84,7 +106,8 @@ The title of the modal window.
 <h2 id="prompt_events">Events</h2>
 
 The prompt widget implements the following events:
-- `confirm` callback: called when the confirmation button is clicked.
+
+- `confirm` callback: called when the confirmation button is clicked. The first argument is the value of the input field.
 - `cancel` callback: called when the cancel button is clicked.
 - `always` callback.
 

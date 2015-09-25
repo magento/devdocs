@@ -12,17 +12,23 @@ github_link: javascript-dev-guide/widgets/widget_confirm.md
 
 The Magento confirm widget implements a modal pop-up window the the cancel and confirmation button.Is an extension of the <a href="{{site.gdeurl}}">Magento modal widget</a>.
 
-<p class="q">what's the difference between confirmation and prompt?</p>
-
 The confirmation widget source is <a href="{{site.baseurl}}app/code/Magento/Ui/view/base/web/js/modal/confirm.js">app/code/Magento/Ui/view/base/web/js/modal/confirm.js</a>
 
 The design patterns for the modal pop-up windows in the Admin are described in the <a href="{{site.gdeurl}}pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a> 
 
+<h3>Contents</h3>
+
+- <a href="#confirm_initialize">Initialize the confirmation widget</a>
+- <a href="#confirm_options">Options</a>
+- <a href="#confirm_events">Events</a>
+- <a href="#confirm_key_navigation">Keyboard navigation</a>
+
+
 <h2 id="confirm_initialize">Initialize the confirmation widget</h2>
 
-The confirmation widget can be initialized with or without binding to a certain element.
+The confirm widget can be initialized with or without binding to a certain element.
 
-**Example1**: initialization on the element
+**Example1**: initialization on an element
 
 {% highlight js %}
 $('#element1').confirm({
@@ -102,6 +108,7 @@ The title of the modal window.
 <h2 id="confirm_events">Events</h2>
 
 The confirmation widget implements the following events:
+
 - `confirm` callback: called when the confirmation button is clicked.
 - `cancel` callback: called when the cancel button is clicked.
 - `always` callback.

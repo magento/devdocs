@@ -15,19 +15,18 @@ The alert widget source is <a href="{{site.mage2000url}}app/code/Magento/Ui/view
 
 The design patterns for the pop-up modal windows in the Admin are described in the <a href="{{site.gdeurl}}pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a> 
 
-<h2 id="modal_initialize">Initialize the alert widget</h2>
+<h3>Contents</h3>
 
-To initialize the widget on a certain element in your script, use the following general notation:
-<pre>
-$('#element_id').alert({
-    &lt;option1&gt;: &lt;value1&gt;,
-    &lt;option2&gt;: &lt;value2&gt;,
-    ...
-});
-</pre>
+- <a href="#alert_initialize">Initialize the alert widget</a>
+- <a href="#alert_options">Options</a>
+- <a href="#alert_events">Events</a>
+- <a href="#alert_key_navigation">Keyboard navigation</a>
 
+<h2 id="alert_initialize">Initialize the alert widget</h2>
 
-Example:
+The alert widget can be initialized with or without binding to a certain element.
+
+**Example1**: initialization on an element
 
 {% highlight js %}
 $('#modal_content').alert({
@@ -39,9 +38,21 @@ $('#modal_content').alert({
 });
 {% endhighlight %}
 
+**Example2**: standalone initialization
+
+{% highlight js %}
+new Alert({
+    title: 'Some title',
+    content: 'Some content',
+    actions: {
+        always: function(){}
+    }
+});
+{% endhighlight %}
+
 For details about how to initialize the widget in a`.phtml` template, refer to the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.
 
-<h2 id="modal_options">Options</h2>
+<h2 id="alert_options">Options</h2>
 The alert widget has the following options:
 
 <ul>
@@ -52,9 +63,8 @@ The alert widget has the following options:
 </ul>
 
 <h3 id="alert_actions"><code>actions</code></h3>
-The array of buttons for the action pane.
 
-<p class="q">What is this pane??</p>
+Widget callbacks.
 
 **Type**: Object.
 
