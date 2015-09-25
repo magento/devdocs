@@ -167,11 +167,11 @@
 		
 		<h2 id="debug-theme-intro">Introduction</h2>
 
-<p>When you create a Magento theme, you might need to create override files for default theme and module view files. To do so, you must determine which template, layout, and style files that a Magento storefront uses.</p>
+<p>When you create a Magento theme, you might need to create override files for default theme and module view files. To do so, you must determine which template, layout, and style files Magento uses.</p>
 
 <h2 id="debug-theme-templ">Locate templates</h2>
 
-<p>To locate the template that is responsible for a specific part of the storefront, you can use Magento built-in template hints.</p>
+<p>To locate the template that is responsible for a specific part of the storefront or Admin, you can use Magento built-in template hints.</p>
 
 <p>To enable template hints:</p>
 
@@ -180,12 +180,12 @@
     <p>Click <strong>Stores</strong> &gt; <strong>Configuration</strong> &gt; ADVANCED &gt; <strong>Developer</strong>.</p>
   </li>
   <li>
-    <p>In the <strong>Scope</strong> dropdown in the upper-left corner select the store view you for which you want the template hints.</p>
+    <p>In the <strong>Scope</strong> dropdown in the upper-left corner select the view for which you want the template hints.</p>
   </li>
-  <li>In the <strong>Debug</strong> tab, set <strong>Template Path Hints</strong> to <strong>Yes</strong>.</li>
+  <li>In the <strong>Debug</strong> tab, set <strong>Template Path Hints for storefront</strong> to <strong>Yes</strong>. To enable path hints for Admin set <strong>Template Path Hints for Admin</strong> to <strong>Yes</strong>.</li>
   <li>To save the changes, click <strong>Save Config</strong> in the upper-right corner.</li>
 </ol>
-<p><img src="/common/images/fdg_debug_theme.jpg" alt="Enabling template hints" /></p>
+<p><img src="/common/images/fdg_debug_theme.png" alt="Enabling template hints" /></p>
 
 <p>Now that you have enabled template hints, reload the page that you want to modify, and review the path for the template file or files that template hints show.</p>
 
@@ -196,6 +196,9 @@
 
 <p><img src="/common/images/theme_debug3.png" alt="A hint with template name for minishopping cart" /></p>
 <p>(the template name is above the element)</p>
+
+<p>Here is how Customers page looks with enabled template hints in Admin:</p>
+<p><img src="/common/images/theme_debug5.png" alt="Admin page with enabled template hints" /></p>
 
 <p>Alternatively, you can perform a text search in the file system by using system generated titles, CSS class names, block titles, labels, or links text as search terms.
 For example, using a browser debug tool, you can define that the minicart block css class is <code>minicart-wrapper</code>.</p>
