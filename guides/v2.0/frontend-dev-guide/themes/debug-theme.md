@@ -21,7 +21,7 @@ To enable template hints:
 
 1. Click **Stores** > **Configuration** > ADVANCED > **Developer**.
 
-2. In the **Scope** dropdown in the upper-left corner select the store view you for which you want the template hints.
+2. In the **Scope** dropdown in the upper-left corner select the view for which you want the template hints.
 
 3. In the **Debug** tab, set **Template Path Hints for storefront** to **Yes**. To enable path hints for Admin set **Template Path Hints for Admin** to **Yes**.
 4. To save the changes, click **Save Config** in the upper-right corner.
