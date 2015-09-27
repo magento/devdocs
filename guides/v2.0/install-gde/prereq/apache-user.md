@@ -79,7 +79,7 @@ To find the web server user's group:
 To add a user to the web server's group (assuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with `root` privileges:
 
 *	CentOS: `usermod -a -G apache <username>`
-*	Ubuntu: `useradd -G www-data <username>`
+*	Ubuntu: `usermod -a -G www-data <username>`
 
 For example, to add the user `deborah` to the `apache` group on CentOS:
 
