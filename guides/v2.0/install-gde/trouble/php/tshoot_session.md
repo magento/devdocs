@@ -18,6 +18,13 @@ open(..) failed: No such file or directory (2) ../magento2/lib/internal/Magento/
 in ../magento2/lib/internal/Magento/Framework/App/ErrorHandler.php:67
 {% endhighlight %} 
 
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+	<p>This error occurs only in versions earlier than TBD. If you installed version TBD or later, this error should not occur.</p>
+	<p>For more information about PHP configuration options for Redis, see TBD.</p>
+	<p>For more information about specifying Redis using the command-line installer, see TBD.</p></span>
+</div>
+
 ### Solution:
 
 This happens when your `session.save_handler` PHP parameter is set to some another session storage than `files` (for example, `redis`, `memcached`, and so on). This is a known issue we're working to resolve.
