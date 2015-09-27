@@ -119,7 +119,7 @@ The following table provides details about each `env.php` segment and its struct
       <td><code>cache</code></td>
       <td><pre>__/cache
  |__/frontend
-   |__/&lt;for future documentation></pre></td>
+   |__/See <a href="{{ site.gdeurl }}config-guide/config/caching_frontend-cache-types.html">frontend options</a></pre></td>
     </tr>
     <tr>
       <td>Installation date</td>
