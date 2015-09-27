@@ -20,7 +20,7 @@ github_link: config-guide/database/database.md
 <h2 id="mage-cache-db-over">Overview of database caching</h2>
 This topic discusses how to use the Magento 2 database for caching. After you complete these tasks, cached objects are stored in the `cache` and `cache_tag` Magento 2 database tables. Nothing is stored `var/cache` or `var/page_cache`.
 
-This topic discusses how to set up database caching, how to verify database caching is working. We discuss the following options:
+This topic discusses how to set up database caching and how to verify database caching is working. We discuss the following options:
 
 *	Using the `default` cache frontend, in which case you modify `di.xml` only.
 *	Using a custom cache frontend, in which case you modify `env.php` only.

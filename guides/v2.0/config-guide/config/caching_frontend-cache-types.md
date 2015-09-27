@@ -18,10 +18,13 @@ github_link: config-guide/config/caching_frontend-cache-types.md
 <h2 id="cache-mage-over">Overview of Magento caching</h2>
 Magento enables you to configure alternatives to the default file system caching. This guide discusses some of those alternatives; namely,
 
-*   <a href="{{ site.gdeurl }}config-guide/redis/config-redis.html">Redis</a>
-*   <a href="{{ site.gdeurl }}config-guide/varnish/config-varnish.html">Varnish</a>
-*   <a href="{{ site.gdeurl }}config-guide/memcache/database.html">Database</a>
-*   File system (default): No configuration is necessary to use file system caching.
+*   Set up the following cache mechanisms in the Magento configuration:
+
+    *   <a href="{{ site.gdeurl }}config-guide/memcache/database.html">Database</a>
+    *   <a href="{{ site.gdeurl }}config-guide/redis/config-redis.html">Redis</a>
+    *   File system (default): No configuration is necessary to use file system caching.
+
+*   Set up the <a href="{{ site.gdeurl }}config-guide/varnish/config-varnish.html">Varnish</a> without modifying the Magento configuration.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>We'll periodically add more cache alternatives so watch this space.</p>
@@ -34,12 +37,16 @@ Magento uses the following caching terminology:
 * *Backend*: Specifies details about <a href="http://framework.zend.com/manual/1.12/en/zend.cache.backends.html" target="_blank">cache storage</a>, implemented by <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Backend" target="_blank">Magento\Framework\Cache\Backend</a>
 * *Two-level backend*: Stores cache records in two backends&mdash;a faster one and a slower one.
 
-    Two-level backend cache configuration is beyond the scope of this guide but we might add it later.
+    Two-level backend cache configuration is beyond the scope of this guide at this time.
 
 This topic discusses the following options for configuring caching:
 
 *   Modifying the provided `default` cache frontend, which means you modify only `<your Magento install dir>/app/etc/di.xml` (the Magento application's global dependency injection configuration)
 *   Configuring your own custom cache frontend, which means you modify only `<your Magento install dir>/app/etc/env.php` because it overrides the equivalent configuration in `di.xml`
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Varnish requires no changes to the Magento configuration. For more information, see <a href="{{ site.gdeurl }}config-guide/varnish/config-varnish.html">Configure and use Varnish</a>.</p>
+</div> 
 
 <h2 id="cache-mage-frontend">Step 1: Define a cache frontend</h2>
 The Magento application has a `default` cache frontend you can use for any <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean-over">cache type</a>. This section discusses how to optionally define a cache frontend with a different name, which is preferable if you expect to customize your frontend.
