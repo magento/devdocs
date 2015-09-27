@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>How Varnish caching works</title>
+	<title>Associate cache frontends with cache types</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/config-guide/varnish/use-varnish-cache-how.html">
+	<link rel="canonical" href="//guides/v2.0/config-guide/config/caching_frontend-cache-types.html">
 
 
 
@@ -154,9 +154,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">How Varnish caching works</h1>
+		<h1 class="page-heading">Associate cache frontends with cache types</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/config-guide/varnish/use-varnish-cache-how.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/config-guide/config/caching_frontend-cache-types.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -166,68 +166,125 @@
 		<div class="content-wrap">
 		
 		<h4 id="contents">Contents</h4>
+
 <ul>
-  <li><a href="#config-varnish-cache-over">Overview of Varnish caching</a></li>
-  <li><a href="#config-varnish-cache-browser">Caching by browser request</a></li>
-  <li><a href="#config-varnish-cache-etag">How Magento uses Etag</a></li>
+  <li><a href="#cache-mage-over">Overview of Magento caching</a></li>
+  <li><a href="#cache-mage-frontend">Step 1: Define a cache frontend</a></li>
+  <li><a href="#cache-mage-adv">Step 2: Configure the cache</a></li>
 </ul>
 
-<h2 id="config-varnish-cache-over">Overview of Varnish caching</h2>
-<p>This topic discusses how Varnish caching works with Magento using:</p>
+<h2 id="cache-mage-over">Overview of Magento caching</h2>
+<p>Magento enables you to configure alternatives to the default file system caching. This guide discusses some of those alternatives; namely,</p>
 
 <ul>
-  <li><a href="https://github.com/magento/magento2/blob/develop/nginx.conf.sample" target="_blank"><code>nginx.conf.sample</code></a> from the Magento 2 GitHub repository</li>
-  <li><code>.htaccess</code> distributed configuration file for Apache provided with Magento</li>
-  <li><code>default.vcl</code> configuration for Varnish generated using the <a href="/guides/v2.0/config-guide/varnish/config-varnish-magento.html">Magento Admin</a></li>
+  <li>
+    <p>Set up the following cache mechanisms in the Magento configuration:</p>
+
+    <ul>
+      <li><a href="/guides/v2.0/config-guide/memcache/database.html">Database</a></li>
+      <li><a href="/guides/v2.0/config-guide/redis/config-redis.html">Redis</a></li>
+      <li>File system (default): No configuration is necessary to use file system caching.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Set up the <a href="/guides/v2.0/config-guide/varnish/config-varnish.html">Varnish</a> without modifying the Magento configuration.</p>
+  </li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
-	<p>This topic covers only the default options in the preceding list. There are many other ways to configure caching in complex scenarios (for example, using a Content Delivery Network); those methods are beyond the scope of this guide.</p>
+  <p>We'll periodically add more cache alternatives so watch this space.</p>
 </div>
 
-<p>On the first browser request, cacheable assets are delivered to the client browser from Varnish and cached on the browser.  </p>
+<p>Magento uses the following caching terminology:</p>
 
-<p>In addition, Varnish uses an Entity Tag (<a href="https://en.wikipedia.org/wiki/HTTP_ETag" target="_blank">ETag</a>) for static assets. The ETag provides a way to determine when static files change on the server. As a result, static assets are sent to the client when they change on the server—either on a new request from a browser or when the client refreshes the browser cache, typically by pressing F5 or Control+F5.</p>
+<ul>
+  <li><em>Frontend</em>: Similar to an interface or gateway to cache storage, implemented by <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Cache/Frontend" target="_blank">Magento\Framework\Cache\Frontend</a>.</li>
+  <li><em>Cache types</em>: Can be one of the types provided with Magento or you can <a href="/guides/v2.0/config-guide/config/caching-cache-type.html">create your own</a>.</li>
+  <li><em>Backend</em>: Specifies details about <a href="http://framework.zend.com/manual/1.12/en/zend.cache.backends.html" target="_blank">cache storage</a>, implemented by <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Cache/Backend" target="_blank">Magento\Framework\Cache\Backend</a></li>
+  <li>
+    <p><em>Two-level backend</em>: Stores cache records in two backends—a faster one and a slower one.</p>
 
-<p>More detail is provided in the sections that follow.</p>
+    <p>Two-level backend cache configuration is beyond the scope of this guide at this time.</p>
+  </li>
+</ul>
 
-<h2 id="config-varnish-cache-browser">Caching by browser request</h2>
-<p>This section uses a browser inspector to show how assets are delivered to the browser in the first request and afterward loaded from the browser’s local cache.</p>
+<p>This topic discusses the following options for configuring caching:</p>
 
-<h3 id="config-varnish-cache-browser-first">First browser request</h3>
-<p><code>nginx.conf.sample</code> and <code>.htaccess</code> provide options for client caching. When the first request is made from a browser for a cacheable object, Varnish delivers it to the client.</p>
-
-<p>The following figure shows an example using a browser inspector.</p>
-
-<p><img src="/common/images/varnish_apache_first_visit.png" alt="The first time a request is made for a cacheable object, Varnish delivers it to the browser" /></p>
-
-<p>The preceding example shows a request for the storefront main page (<code>m2_ce_my</code>). CSS and JavaScript assets are cached on the client browser.</p>
+<ul>
+  <li>Modifying the provided <code>default</code> cache frontend, which means you modify only <code>&lt;your Magento install dir&gt;/app/etc/di.xml</code> (the Magento application’s global dependency injection configuration)</li>
+  <li>Configuring your own custom cache frontend, which means you modify only <code>&lt;your Magento install dir&gt;/app/etc/env.php</code> because it overrides the equivalent configuration in <code>di.xml</code></li>
+</ul>
 
 <div class="bs-callout bs-callout-info" id="info">
-	<p>Most static assets have an HTTP 200 (OK) status code, indicating the asset was retrieved from the server.</p>
+  <p>Varnish requires no changes to the Magento configuration. For more information, see <a href="/guides/v2.0/config-guide/varnish/config-varnish.html">Configure and use Varnish</a>.</p>
 </div>
 
-<h3 id="config-varnish-cache-browser-second">Second browser request</h3>
-<p>If the same browser requests the same page again, these assets are delivered from the local browser cache, as the following figure shows.</p>
+<h2 id="cache-mage-frontend">Step 1: Define a cache frontend</h2>
+<p>The Magento application has a <code>default</code> cache frontend you can use for any <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean-over">cache type</a>. This section discusses how to optionally define a cache frontend with a different name, which is preferable if you expect to customize your frontend.</p>
 
-<p><img src="/common/images/varnish_apache_second_visit.png" alt="The next time the same object is requested, assets load from the local browser cache" /></p>
+<div class="bs-callout bs-callout-info" id="info">
+  <p>To use the <code>default</code> cache type, you don't need to modify <code>env.php</code> at all; you modify Magento's global <code>di.xml</code>. See the topics referenced in <a href="/guides/v2.0/config-guide/config/caching_low-level.html">Low-level cache options</a>. </p>
+</div>
 
-<p>Note the difference in response time between the first and second request. Again, static assets have a 200 (OK) response code because they’re delivered from local cache for the first time.</p>
+<p>You must specify a custom cache frontend either <code>app/etc/env.php</code> or Magento’s global <code>app/etc/di.xml</code>. </p>
 
-<h2 id="config-varnish-cache-etag">How Magento uses Etag</h2>
-<p>The following example shows response headers for a particular static asset. </p>
+<p>The following example shows how to define it in <code>env.php</code> (which overrides <code>di.xml</code>):</p>
 
-<p><img src="/common/images/varnish_etag.png" alt="The ETag makes it easier to determine whether a static asset has changed or not" /></p>
-<p><code>calendar.css</code> has an ETag response header which means the CSS file on the client browser can be compared to the one on the server.</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?</span> <span class="nx">php</span>
+<span class="s1">&#39;cache&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+    <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">&#39;&lt;unique frontend id&gt;&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+             <span class="o">&lt;</span><span class="nx">cache</span> <span class="nx">options</span><span class="o">&gt;</span>
+        <span class="p">],</span>
+    <span class="p">],</span>
+    <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+         <span class="o">&lt;</span><span class="nx">cache</span> <span class="nx">type</span> <span class="mi">1</span><span class="o">&gt;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+             <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&lt;unique frontend id&gt;&#39;</span>
+        <span class="p">],</span>
+    <span class="p">],</span>
+    <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+         <span class="o">&lt;</span><span class="nx">cache</span> <span class="nx">type</span> <span class="mi">2</span><span class="o">&gt;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+             <span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&lt;unique frontend id&gt;&#39;</span>
+        <span class="p">],</span>
+    <span class="p">],</span>
+<span class="p">],</span>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
 
-<p>In addition, static assets are returned with a 304 (Not Modified) HTTP status code, as the following figure shows.</p>
+<p>where <code>&lt;unique frontend id&gt;</code> is a unique name to identify your frontend and <code>&lt;cache options&gt;</code> are options discussed in the topics specific to each type of caching (database, Redis, and so on).</p>
 
-<p><img src="/common/images/varnish_304.png" alt="The HTTP 304 (Not Modified) response code indicates the static asset in the local cache is the same as on the server" /></p>
+<h2 id="cache-mage-adv">Step 2: Configure the cache</h2>
+<p>You can specify frontend and backend cache configuration options in <code>env.php</code> or <code>di.xml</code>. This task is optional.</p>
 
-<p>The 304 status code occurs because the user invalidated their local cache and the content on the server did not change. Because of the 304 status code, the static asset <em>content</em> is not transferred; only HTTP headers are downloaded to the browser. </p>
+<p><code>env.php</code> example:</p>
 
-<p>If the content changes on the server, the client downloads the static asset with an HTTP 200 (OK) status code and a new ETag.</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?</span> <span class="nx">php</span>
+<span class="s1">&#39;frontend&#39;</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">frontend_type</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="s1">&#39;frontend_options&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+    <span class="o">&lt;</span><span class="nx">frontend_option</span><span class="o">&gt;</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">frontend_option_value</span><span class="o">&gt;</span><span class="p">,</span>
+    <span class="o">...</span>
+<span class="p">],</span>
+<span class="s1">&#39;backend&#39;</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">backend_type</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="s1">&#39;backend_options&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+    <span class="o">&lt;</span><span class="nx">backend_option</span><span class="o">&gt;</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">backend_option_value</span><span class="o">&gt;</span><span class="p">,</span>
+    <span class="o">...</span>
+<span class="p">],</span>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
 
+<p>where</p>
+
+<ul>
+  <li>
+    <p><code>&lt;frontend_type&gt;</code> is the low-level frontend cache type. Specify the name of a class that is compatible with <a href="http://framework.zend.com/apidoc/1.7/Zend_Cache/Zend_Cache_Core.html" target="_blank">Zend_Cache_Core</a>. </p>
+
+    <p>If you omit <code>&lt;frontend_type&gt;</code>, <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Cache/Core.php" target="_blank">Magento\Framework\Cache\Core</a> is used.</p>
+  </li>
+  <li><code>&lt;frontend_option&gt;</code>, <code>&lt;frontend_option_value&gt;</code> are the name and value of options the Magento framework passes as an associative array to the frontend cache upon its creation. </li>
+  <li><code>&lt;backend_type&gt;</code> is the low-level backend cache type. Specify the name of a class that is compatible with <a href="http://framework.zend.com/apidoc/1.7/Zend_Cache/Zend_Cache_Backend/Zend_Cache_Backend.html" target="_blank">Zend_Cache_Backend</a> and that implements <a href="http://framework.zend.com/apidoc/1.6/Zend_Cache/Zend_Cache_Backend/Zend_Cache_Backend_Interface.html" target="_blank">Zend_Cache_Backend_Interface</a>.</li>
+  <li><code>&lt;backend_option&gt;</code>, <code>&lt;backend_option_value&gt;</code> are the name and value of options the Magento framework passes as an associative array to backend cache upon its creation.</li>
+</ul>
+
+<h4 id="next-step">Next step</h4>
+<p><a href="/guides/v2.0/config-guide/config/caching_low-level.html">Low-level cache options</a></p>
 
 
 		</div>
@@ -544,7 +601,7 @@
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/caching_frontend-cache-types.html">Associate cache frontends with cache types</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/config-guide/config/caching_frontend-cache-types.html">Associate cache frontends with cache types</a></li>
 						
 								
 							
@@ -668,7 +725,7 @@
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v2.0/config-guide/varnish/use-varnish-cache-how.html">How Varnish caching works</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/use-varnish-cache-how.html">How Varnish caching works</a></li>
 						
 								
 								
