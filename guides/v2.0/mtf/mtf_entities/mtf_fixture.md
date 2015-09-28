@@ -7,7 +7,7 @@ menu_title: Fixture
 menu_order: 1
 github_link: mtf/mtf_entities/mtf_fixture.md
 ---
-<h2 id="mtf_fixture_content">Content</h2>
+<h2 id="mtf_fixture_content">Contents</h2>
 
 - <a href="#mtf_fixture_overview">Fixture overview</a>
 

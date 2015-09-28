@@ -8,7 +8,7 @@ menu_node: parent
 menu_order: 2
 github_link: mtf/mtf_installation.md
 ---
-
+<h2>Preface</h2>
 Well, you are on the way to install the Magento testing Framework!
 
 Follow the next three steps:

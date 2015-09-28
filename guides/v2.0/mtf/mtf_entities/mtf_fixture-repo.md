@@ -7,7 +7,7 @@ menu_title: Fixture Repository
 menu_order: 2
 github_link: mtf/mtf_entities/mtf_fixture-repo.md
 ---
-<h2>Content</h2>
+<h2>Contents</h2>
 
 - <a href="#mtf_repository_overview">Repository overview</a>
 
@@ -162,7 +162,7 @@ The source understands the `entities` field as an instruction to create a CMS Pa
 
 <h4 id="mtf_repo_widgetxml">Widget.xml</h4>
 
-Now we can create a repository XML file `Widget.xml`. In our case it should be placed in `magento2/dev/tests/functional/tests/app/Magento/Widget/Test/Repository`. The full name must be specified in the `repository_class` attribute of the fixture: `repository_class="Magento\Widget\Test\Repository\Widget"`.
+Now we can create a repository XML file `Widget.xml`. In our case the file should be placed in `magento2/dev/tests/functional/tests/app/Magento/Widget/Test/Repository`. The full name must be specified in the `repository_class` attribute of the fixture: `repository_class="Magento\Widget\Test\Repository\Widget"`.
 
 See the entire repository sample so far:
 
