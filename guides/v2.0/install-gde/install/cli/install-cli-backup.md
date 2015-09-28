@@ -49,8 +49,8 @@ The command performs the following tasks:
 
 	<table>
 	<col width="25%">
-	<col width="50%">
-	<col width="25%">
+	<col width="40%">
+	<col width="35%">
 	<tbody>
 		<tr>
 			<th>Option</th>
