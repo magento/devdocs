@@ -20,20 +20,19 @@ A block can have the following features:
 
 This topic shows how to create new block and explore its structure. It discusses renders, form mapping, and merging pages.
 
-<h2 id="mtf_block_types">How to work with block</h2>
+<h2 id="mtf_block_types">Create block for the test</h2>
 
-In general a basic flow is the following:
+A basic flow is the following:
 
-* create page
-* create block in the page
-* create methods to do something with the block during the test (for example, get data, push the button, choose tab)
-* call the page
-* locate the block
-* call the method you need
+* see name and path of the block you want to test
+* create block class with logic you need fo the tests
+* add block to the page
+* run page generator
 
-<h2 id="mtf_block_path">How to determine block name and a path</h2>
+<h3 id="mtf_block_path">How to determine a block name and a path</h3>
+To work with block you need its name and path. Magento has a feature that shows you this data right on the Magento page or implicitly in the code of a web page.
 
-To work with block you need its name and path. Magento has a feature that shows you this data right on the Magento page.
+<h4 id="mtf_block_path_ui">See name and path of blocks in GUI</h4>
 
 To enable this feature go through the following steps:
 
@@ -47,20 +46,53 @@ To enable this feature go through the following steps:
 1. **Save Config**
 
 Voilà!
- 
-<a href="{{ site.baseurl }}common/images/mtf_block_path-feature.png"><img src="{{ site.baseurl }}common/images/mtf_block_path-feature.png" /></a>
 
+<a href="{{ site.baseurl }}common/images/mtf_block_name_path_in_ui.png"><img src="{{ site.baseurl }}common/images/mtf_block_name_path_in_ui.png" /></a>
 
+<h4 id="mtf_block_path_code">See name and path of blocks in code</h4>
 
+To enable this feature go through the following steps:
 
+* Open <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/View/Element/Template.php"><code>magento2/lib/internal/Magento/Framework/View/Element/Template.php</code></a>
 
+* Find line
 
+{% highlight php %}
 
+return $this->fetchView($this->getTemplateFile());
+
+{% endhighlight php %}
+
+* Replace it with code 
+
+{% highlight php %}
+
+$name = $this->getNameInLayout();
+$template = $this->getTemplateFile();
+$class = get_class($this);
+return "<!-- BEGIN $name using $template \n" . $class . "-->"
+    . $this->fetchView($template)
+    . "<!-- END $name using $template -->";
+    
+{% endhighlight php %}
+
+* Save file
+
+<a href="{{ site.baseurl }}common/images/mtf_block_name_path_in_code.png"><img src="{{ site.baseurl }}common/images/mtf_block_name_path_in_code.png" /></a>
+
+<h3 id="mtf_block_ceate">Create block class</h3>
+
+<h3 id="mtf_block_to-page">Add block to the page<h3>
+
+<h3 id="mtf_block_gen">Run page generator</h3>
+
+<h2 id="mtf_block_struct">Block structure</h2>
 
 
 <h2 id="mtf_block_mapping">Mapping</h2>
 
+<h3 id="mtf_block_mapping">Forms</h3>
+
+<h3 id="mtf_block_mapping">Form Tabs</h3>
+
 <h2 id="mtf_block_mapping_merdge">Merdge of mappings</h2>
-
-<h2 id="mtf_block_create">How to create block for the test</h2>
-
