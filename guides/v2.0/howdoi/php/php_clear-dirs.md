@@ -1,11 +1,11 @@
 ---
 layout: default
-group: howdoi
-subgroup: PHP Developers
-title: How do I...?
+group: install_trouble
+subgroup: Z_Other issues
+title: Clear directories during development
 menu_title: Clear directories during development
 menu_node: 
-menu_order: 1
+menu_order: 500
 github_link: howdoi/php/php_clear-dirs.md
 ---
 
