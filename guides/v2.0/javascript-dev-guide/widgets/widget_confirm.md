@@ -112,4 +112,4 @@ The confirmation widget implements the following events:
 - `always` callback.
 
 <h2 id="confirm_key_navigation">Keyboard navigation</h2>
-The keyboard navigation for the confirmation windows is similar to the <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html#Keyboard navigation">general modal windows navigation implemented by the modal widget</a>.
+The keyboard navigation for the confirmation windows is similar to the <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html#key_navigation">general modal windows navigation implemented by the modal widget</a>.

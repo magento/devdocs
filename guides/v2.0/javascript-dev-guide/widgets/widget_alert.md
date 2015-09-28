@@ -90,7 +90,7 @@ If `focus` is not specified or set to empty string, the focus is on close button
 
 **Default value**: `''`
 
-<h3 id="alert_content"><code>title</code></h3>
+<h3 id="alert_title"><code>title</code></h3>
 The title of the alert window.
 
 
@@ -103,4 +103,4 @@ The title of the alert window.
 The alert widget implements a single event: the `always` callback.
 
 <h2 id="alert_key_navigation">Keyboard navigation</h2>
-The keyboard navigation for the alert windows is similar to the <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html#Keyboard navigation">general modal windows navigation implemented by the modal widget</a>.
+The keyboard navigation for the alert windows is similar to the <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html#key_navigation">general modal windows navigation implemented by the modal widget</a>.

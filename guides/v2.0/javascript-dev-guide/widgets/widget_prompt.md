@@ -113,4 +113,4 @@ The prompt widget implements the following events:
 
 
 <h2 id="prompt_key_navigation">Keyboard navigation</h2>
-The keyboard navigation for the prompt windows is similar to the <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html#Keyboard navigation">general modal windows navigation implemented by the modal widget</a>.
+The keyboard navigation for the prompt windows is similar to the <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html#key_navigation">general modal windows navigation implemented by the modal widget</a>.

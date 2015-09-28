@@ -86,7 +86,6 @@ buttons: [{
 <h3 id="modal_focus"><code>focus</code></h3>
 Selector to focusing when a modal window opens or 'none' if focusing is not necessary.
 
-<p class="q">??</p>
 
 **Type**: String 
 
@@ -173,6 +172,3 @@ Called when the modal window is opened.
 - the TAB key: set focus to the next focusable element (looped inside the modal window)
 - the SHIFT+TAB keys combination: set focus to the previous focusable element (looped inside the modal window)
 
-<p class="q">Would it be appropriate to list the extending widgets here? 
-(confirmation, prompt, alert)</p>
-<p class="q">Would it be appropriate to add a link to http://devdocs.magento.com/guides/v2.0/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals here?</p>
