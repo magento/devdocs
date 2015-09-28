@@ -15,9 +15,9 @@ The Magento propmp widget implements a modal pop-up window with an input field, 
 
 It extends the <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html">Magento modal widget</a>.
 
-The confirmation widget source is <a href="{{site.baseurl}}app/code/Magento/Ui/view/base/web/js/modal/prompt.js">app/code/Magento/Ui/view/base/web/js/modal/prompt.js</a>
+The prompt widget source is <a href="{{site.baseurl}}app/code/Magento/Ui/view/base/web/js/modal/prompt.js">app/code/Magento/Ui/view/base/web/js/modal/prompt.js</a>
 
-The design patterns for the modal pop-up windows in the Admin are described in the <a href="{{site.gdeurl}}pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a> 
+The widget can be used for implementing prompt windows for both, Admin and storefront. The design patterns for the modal pop-up windows in the Admin are described in the <a href="{{site.gdeurl}}pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a> 
 
 <h3>Contents</h3>
 
@@ -33,7 +33,7 @@ The prompt widget can be initialized with or without binding to a certain elemen
 **Example1**: initialization on an element
 
 {% highlight js %}
-$('#prompt_content').prompt({
+$('#prompt_init').prompt({
     title: 'Some title',
     actions: {
         confirm: function(){}, //callback on 'Ok' button click
@@ -56,7 +56,7 @@ new Prompt({
 });
 {% endhighlight %}
 
-For details about how to initialize the widget in a`.phtml` template, refer to the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.
+For details about how to initialize a widget in a `.phtml` template, refer to the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.
 
 <h2 id="prompt_options">Options</h2>
 
@@ -88,7 +88,7 @@ The prompt window content.
 **Type**: String.
 
 <h3 id="prompt_focus"><code>focus</code></h3>
-The selector of the element to be in focus when the modal window opens.
+The selector of the element to be in focus when the prompt window opens.
 If `focus` is not specified or set to empty string, the focus is on close button. If focusing is not requried, set `focus` to `none`.
 
 **Type**: String.
@@ -96,7 +96,7 @@ If `focus` is not specified or set to empty string, the focus is on close button
 **Default value**: `''`
 
 <h3 id="prompt_content"><code>title</code></h3>
-The title of the modal window.
+The title of the prompt window.
 
 
 **Type**: String.

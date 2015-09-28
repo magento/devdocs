@@ -13,7 +13,7 @@ The Magento alert widget implements a modal pop-up window with a confirmation bu
 
 The alert widget source is <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/modal/alert.js" target="_blank">app/code/Magento/Ui/view/base/web/js/modal/alert.js</a>
 
-The design patterns for the pop-up modal windows in the Admin are described in the <a href="{{site.gdeurl}}pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a> 
+The widget can be used for implementing alert windows for both, Admin and storefront. The design patterns for the pop-up modal windows in the Admin are described in the <a href="{{site.gdeurl}}pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a> 
 
 <h3>Contents</h3>
 
@@ -29,7 +29,7 @@ The alert widget can be initialized with or without binding to a certain element
 **Example1**: initialization on an element
 
 {% highlight js %}
-$('#modal_content').alert({
+$('#init_element').alert({
     title: 'Warning',
     content: 'Warning content',
     actions: {
@@ -42,15 +42,15 @@ $('#modal_content').alert({
 
 {% highlight js %}
 new Alert({
-    title: 'Some title',
-    content: 'Some content',
+    title: 'Warning',
+    content: 'Warning content',
     actions: {
         always: function(){}
     }
 });
 {% endhighlight %}
 
-For details about how to initialize the widget in a`.phtml` template, refer to the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.
+For details about how to initialize a widget in a`.phtml` template, refer to the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.
 
 <h2 id="alert_options">Options</h2>
 The alert widget has the following options:
@@ -77,13 +77,13 @@ actions: {
 
 <h3 id="alert_content"><code>content</code></h3>
 
-"Set content for confirmation widget(just for second example)."
-<p class="q">obviously "alert", what else???</p>
+The text displayed in the alert window.
+
 
 **Type**: String.
 
 <h3 id="alert_focus"><code>focus</code></h3>
-The selector of the element to be in focus when the modal window opens.
+The selector of the element to be in focus when the alert window opens.
 If `focus` is not specified or set to empty string, the focus is on close button. If focusing is not requried, set `focus` to `none`.
 
 **Type**: String.
@@ -91,7 +91,7 @@ If `focus` is not specified or set to empty string, the focus is on close button
 **Default value**: `''`
 
 <h3 id="alert_content"><code>title</code></h3>
-The title of the modal window.
+The title of the alert window.
 
 
 **Type**: String.
