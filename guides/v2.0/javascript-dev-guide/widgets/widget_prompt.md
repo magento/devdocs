@@ -34,7 +34,7 @@ The prompt widget can be initialized with or without binding to a certain elemen
 
 {% highlight js %}
 $('#prompt_init').prompt({
-    title: 'Some title',
+    title: 'Prompt title',
     actions: {
         confirm: function(){}, //callback on 'Ok' button click
         cancel: function(){}, //callback on 'Cancel' button click
@@ -47,7 +47,7 @@ $('#prompt_init').prompt({
 
 {% highlight js %}
 new Prompt({
-    title: 'Some title',
+    title: 'Prompt title',
     actions: {
         confirm: function(){},
         cancel: function(){},
