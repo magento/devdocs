@@ -1,10 +1,21 @@
+ADD: Sample data as module, two ways to install
+
+
+
+<h2 id="instgde-prereq-sample-intro">Introduction to Magento sample data</h2>
+<p>Magento sample data provides a storefront based on the Luma theme outfitted with products, categories, customer registration, and so on. It functions just like a Magento storefront and you can manipulate prices, inventory, and promotional pricing rules using the Magento Admin.</p>
+<p>Installing sample data is optional; be aware that if you do install it, there is no way to uninstall only the sample data. You must uninstall and reinstall the Magento software.</p>
+<p>This section discusses how to enable you to install the optional Magento sample data. To enable sample data, you must update <code>composer.json</code> in the Magento root installation directory to provide the location of the sample data package. After that you can either run the Magento software installer or you can run a script to install the sample data.
+<p>Sample data is versioned like Magento code. Before you begin, you can either:</p>
+<ul><li>Find the exact version you want at <a href="http://packages.magento.com/#magento/sample-data" target="_blank">packages.magento.com</a>.</li>
+<li>Install the latest version using Composer <a href="https://getcomposer.org/doc/01-basic-usage.md#next-significant-release-tilde-and-caret-operators-" target="_blank">next significant release syntax</a>.</li>
+<h2 id="instgde-prereq-sample-start">Get started</h2>
 <p>To enable sample data, you must:</p>
 <ol><li>Decide the version of <code>magento/sample-data</code> you want as discussed in <a href="{{ site.gdeurl }}install-gde/install/sample-data.html#instgde-prereq-sample-intro">Introduction to Magento sample data</a>.</li>
 <li>Run the <code>composer config</code> and <code>composer require</code> commands to update <code>composer.json</code>.</li></ol>
-
+<h3 id="instgde-prereq-sample-start-comp">Update <code>composer.json</code></h3>
 <p>To update <code>composer.json</code>:</p> 
-
-<ol><li>Log in to your Magento server as the <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apacheweb">web server user</a> or as a user with <code>root</code> privileges.</li>
+<ol><li>Log in to your Magento server as the <a href="{{ site.gdeurl }}install-gde/install/install-gde/prereq/apache-user.html">Magento file system owner</a> or as a user with <code>root</code> privileges.</li>
 <li>Change to your Magento installation directory.</li>
 <li>Make a backup copy of <code>composer.json</code>.
 	<pre>cp composer.json composer.json.bak</pre></li>

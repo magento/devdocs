@@ -1,6 +1,6 @@
 ---
 layout: default 
-group: install
+group: 
 subgroup: T_SampleData
 title: Optional Magento sample data
 menu_title: Optional Magento sample data
@@ -21,13 +21,6 @@ redirect_from: /guides/v1.0/install-gde/install/sample-data.html
 *	<a href="#instgde-install-sample-enable-after">Enable sample data after you install the Magento software</a>
  
 
-<h2 id="instgde-prereq-sample-intro">Introduction to Magento sample data</h2>
-This section discusses how to enable you to install the optional Magento sample data. To enable sample data, you must update `composer.json` in the Magento root installation directory to provide the location of the sample data package. After that you can either run the Magento software installer or you can run a script to install the sample data.
-
-Sample data is versioned like Magento code. Before you begin, you can either:
-
-*	Find the exact version you want at <a href="http://packages.magento.com/#magento/sample-data" target="_blank">packages.magento.com</a>.
-*	Install the latest version using Composer <a href="https://getcomposer.org/doc/01-basic-usage.md#next-significant-release-tilde-and-caret-operators-" target="_blank">next significant release syntax</a>.
 
 <h2 id="instgde-install-sample-enable-before">Enable sample data before you install the Magento software</h2>
 This section discusses how to install optional sample data *before* you install the Magento software. If you've already installed, see <a href="#instgde-install-sample-enable-after">Enable sample data after you install the Magento software</a>.
