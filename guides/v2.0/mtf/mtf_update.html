@@ -175,11 +175,11 @@
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
-<p>Use this type of update if the version of the Magento Testing Framework in <code>magento2ce/dev/tests/functional/composer.json</code> and last version in <code>magento2ce/dev/tests/functional/vendor/magento/mtf/CHANGELOG.md</code> are different. For example, when you updated Magento.</p>
+<p>Use this type of update if the version of the Magento Testing Framework in <code>magento2/dev/tests/functional/composer.json</code> and last version in <code>magento2/dev/tests/functional/vendor/magento/mtf/CHANGELOG.md</code> are different. For example, when you updated Magento.</p>
 </div>
 
 <ul>
-  <li><a href="#mtf_update_depend">Update components from dependencies in <code>magento2ce/dev/tests/functional/composer.json</code></a></li>
+  <li><a href="#mtf_update_depend">Update components from dependencies in <code>magento2/dev/tests/functional/composer.json</code></a></li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -188,9 +188,9 @@
 
 <h3 id="mtf_update_install">Install a new version of the Magento Testing Framework</h3>
 
-<p>Step 1.    To avoid conflicts with the previous version, remove directory <code>magento2ce/dev/tests/functional/generate</code>.</p>
+<p>Step 1.    To avoid conflicts with the previous version, remove directory <code>magento2/dev/tests/functional/generate</code>.</p>
 
-<p>Step 2.    Remove file <code>magento2ce/dev/tests/functional/composer.lock</code>.</p>
+<p>Step 2.    Remove file <code>magento2/dev/tests/functional/composer.lock</code>.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p><b>Why:</b> Composer reads dependencies from <code>composer.lock</code> instead of reading <code>composer.json</code>. File <code>composer.lock</code> currently is not maintained.</p>
@@ -202,7 +202,7 @@
 
 <p>Enter in terminal:</p>
 
-<pre><code>cd magento2ce/dev/tests/functional/
+<pre><code>cd magento2/dev/tests/functional/
 composer update
 </code></pre>
 
