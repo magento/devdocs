@@ -16,7 +16,7 @@ This document provides best practices, guidelines, and tips for creating Magento
 
 Magento consists of the core product code plus optional modules, or extensions.  These modules enhance or replace the basic product code. There are over 100 out-of-the-box modules in Magento 2, and it is also typical for developers to create new, custom modules for their storefront.
 
-Magento provides an easy way to find and install custom modules; 
+Magento provides an easy way to find and install custom modules. 
 
 The following sections cover Best Practices in three main categories:
 

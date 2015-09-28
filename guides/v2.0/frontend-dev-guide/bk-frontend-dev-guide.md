@@ -9,9 +9,11 @@ redirect_from: /guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html
 ---
 
 <h2 id="overview-introduction">Introduction</h2>
-This document describes Magento's content rendering process, explains the view layer of the system, and provides instructions for creating and installing themes. It also walks through everyday frontend developer's tasks.
+This document provides instructions for creating and installing custom storefront themes for a Magento application. It describes Magento's content rendering process and explains the view layer of the system to the extent required to build a theme efficiently. The document also walks through everyday frontend developer's tasks.
 
-Frontend developers can use this guide to create custom themes to tailor the Magento frontend for a specific customer.
+Developing the view part of a custom module and customizing the Magento Admin panel design is out of the scope of this guide.
+
+Frontend developers can use this guide to create custom themes to tailor the Magento storefront for a specific customer.
 
 <p>You can apply these levels of customization to your site, where the levels require different development skills:</p>
 <ul>
