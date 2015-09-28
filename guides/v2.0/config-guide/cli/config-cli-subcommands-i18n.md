@@ -50,7 +50,7 @@ After that,
 
 Command options:
 
-	magento i18n:collect-phrases [-o|--output "<csv file path and name>"] [-m|--magento] <path to directory to translate>
+	magento i18n:collect-phrases [-o|--output="<csv file path and name>"] [-m|--magento] <path to directory to translate>
 
 The following table discusses the meanings of this command's parameters and values. 
 
@@ -79,7 +79,7 @@ The following table discusses the meanings of this command's parameters and valu
 			<td><p>No</p></td>
 </tr>
 <tr>
-		<td><p>-o|--output=</p></td>
+		<td><p>-o|--output="&lt;path></p></td>
 		<td><p>Specifies the absolute file system path and file name of the translation dictionary .csv file to create. <em>The value you enter is case-sensitive</em>.</p>
 			<p>If you omit this parameter, the output is directed to stdout.</p>
 		</td>
