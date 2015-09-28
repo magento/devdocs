@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Clear directories during development</title>
+	<meta name="description" content="Magento 2 Developer's Guide">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/common/css/override.css" />
+	<link rel="canonical" href="//guides/v2.0/howdoi/php/php_clear-dirs.html">
+
+
+
+</head>	
+<body>
+
+<header id="nav-main" class="nav-main">
+
+	<!--Top Navigation-->
+	<nav role="navigation">
+		<!-- <div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div> -->
+			
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/"><span>Developer Documentation (2.0)</span></a>
+				</div>
+			</div>
+			
+			<div class="right-header">
+				<!--
+				<div class="sales-login">
+					<ul class="menu nav">
+						<li class="first last leaf"><a href="https://www.magentocommerce.com/products/customer/account/login">My Account</a></li>
+					</ul>
+				</div>
+				
+				
+				<div class="head-search" id="head-search">
+					<div id="sb-search" class="sb-search">
+						<form action="http://www.magentocommerce.com/search/results/">
+							<span class="sb-icon-search btn btn-search"></span>
+							<input name="q" class="sb-search-input" placeholder="Search docs" type="search" style="display: none;" id="search" />
+							<span class="sb-search-submit btn btn-search"></span>
+						</form>
+					</div>
+				</div><!-- #head-search --> 
+				
+			</div>
+			
+		</div><!-- #global-nav -->
+	</nav>
+
+	<!--Sub Navigation-->
+<div id="subnav-wrap">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first expanded">
+            <a href="/guides/v2.0/bk-get-started-magento.html">Get Started</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Notes</a></li>
+               <li class="leaf"><a href="/guides/v2.0/architecture/bk-architecture.html">Magento Architecture</a></li>
+            </ul>
+         </li>
+         <li class="first expanded">
+            <a href="/guides/v2.0/install-gde/bk-install-guide.html">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a></li>
+            </ul>
+         </li>
+         <li class="first expanded">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a>
+               <li class="first leaf"><a href="/guides/v2.0/ui-library/ui-library-component.html">UI Library Components</a>
+   			   <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a>
+               <div id="divcentered"><img src="/common/images/horiz-line.png"></div></li>
+               <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+
+               <li class="leaf"><a href="/guides/v2.0/mtf/mtf_introduction.html">Magento Testing Framework Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <div id="divcentered"><img src="/common/images/horiz-line.png"></div></li>
+               <li class="first leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a>
+               <div id="divcentered"><img src="/common/images/horiz-line.png"></div></li>
+               <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         
+         <li class="first expanded">
+            <a href="/guides/v2.0/contributor-guide/contributing.html">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+         
+      </ul>
+
+
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+
+	
+</header>	
+
+
+<div id="gl-wrapper">
+	
+	<!-- #sidemenu -->
+	<div id="sidemenu" style="display:none;">
+		<a class="menu-trigger menu-close" href="#" title=""></a>
+		<div class="h8 site-title">Our Sites</div>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://go.magento.com/" title="Small Business Storefront">Magento Go</a><span class="description">Small Business Storefront</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+	<!-- /#sidemenu -->
+	
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+
+
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Clear directories during development</h1>
+			
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/howdoi/php/php_clear-dirs.md" target="_blank">Edit this page on GitHub</a>
+		
+	</div>
+</section>
+
+<div class="container">
+	<section class="content">
+		<div class="content-wrap">
+		
+		<h4 id="contents">Contents</h4>
+<ul>
+  <li><a href="#howdoi-clear-over">Overview of directory clearing</a></li>
+  <li><a href="#howdoi-clear-what">What directories to clear</a></li>
+  <li><a href="#howdoi-clear-how">How to clear the directories</a></li>
+</ul>
+
+<h2 id="howdoi-clear-over">Overview of directory clearing</h2>
+<p>While you’re developing Magento components (modules, themes, and language packages), your rapidly changing environment requires you to periodically clear certain directories and caches. Otherwise, your code runs with exceptions and won’t function properly.</p>
+
+<p>This topic provides guidelines on what directories to clear and when to clear them.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <ul><li>All directories discussed in this topic are default locations. It's possible to customize these locations but doing so is beyond the scope of this topic.</li>
+  	<li>This topic is not comprehensive. Please help us improve it by clicking <strong>Edit this page on GitHub</strong> at the top of this page. Watch this page for updates.</li></ul>
+</div>
+
+<p>When you’re developing Magento components (modules, themes, and language packages), the following directories contain temporary or generated files you can clear periodically:</p>
+
+<table>
+	<col width="25%" />
+	<col width="75%" />
+	<tbody>
+		<tr>
+			<th>Directory</th>
+			<th>What it contains</th>
+		</tr>
+	<tr>
+		<td>var/page_cache</td>
+		<td>Cached pages. (This directory is empty if you use a third-party caching accelerator like Varnish.)</td>
+	</tr>
+	<tr>
+		<td>var/cache</td>
+		<td>All cacheable objects <em>except</em> the page cache. (This directory is empty if you use a third-party caching accelerator like Varnish.)</td>
+	</tr>
+	<tr>
+		<td>var/composer_home</td>
+		<td><p>Home directory for the Setup Wizard artifacts. Typically, you shouldn't touch this directory; clear it only if you're an experienced developer and are familiar with the Magento plug-in.</p>
+			<p>For example, if the Component Manager or System Upgrade web-based utilities cannot find the correct components you can try clearing this directory; however, doing so adversely affects the performance of those utilities.</p></td>
+	</tr>
+	<tr>
+		<td>var/generation</td>
+		<td>Contains generated classes.</td>
+	</tr>
+	<tr>
+		<td>var/di</td>
+		<td>Contains the compiled dependency injection configuration for all modules.</td>
+	</tr>
+	<tr>
+		<td>var/view_preprocessed</td>
+	<td>Minified templates and compiled LESS (meaning LESS, CSS, and HTML).</td>
+	</tr>
+</tbody>
+</table>
+
+<h2 id="howdoi-clear-what">What directories to clear</h2>
+<p>The following table provides guidelines on what you should clear and when.</p>
+
+<table>
+	<tbody>
+		<tr>
+			<th>For this activity...</th>
+			<th>you should clear these directories</th>
+		</tr>
+	<tr>
+		<td><ul><li>Change a class if there is a plug-in related to it.</li>
+		<li>A change that results in generated factories or proxies (for example, a non-existent <a href="https://github.com/magento/magento2/blob/develop/https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/Controller/Adminhtml/Category/Add.php#L22" target="_blank">factory</a> declared in a class or a proxy declared in <a href="https://github.com/magento/magento2/blob/develop/https://github.com/magento/magento2/blob/develop/app/etc/di.xml#L25" target="_blank"><code>di.xml</code></a>)</li></ul> </td>
+		<td>var/di, var/generation</td>
+	</tr>
+	<tr>
+		<td>Change any <code>di.xml</code></td>
+		<td>var/di, var/generation; also, run the code compiler again</td>
+	</tr>
+	<tr>
+		<td>Add, remove, enable, or disable modules</td>
+		<td>var/di, var/generation, var/cache, var/page_cache</td>
+	</tr>
+	<tr>
+		<td>Add or edit a layout or theme</td>
+		<td>var/view_preprocessed, var/cache, var/page_cache</td>
+	</tr>
+	<tr>
+		<td>Change LESS or templates</td>
+		<td>var/view_preprocessed, var/cache, var/page_cache as well</td>
+	</tr>
+	<tr>
+		<td>Add or edit a CMS page, cacheable block, or use the Magento Admin to change the configuration</td>
+		<td>var/cache, var/page_cache</td>
+	</tr>
+</tbody>
+</table>
+
+<h2 id="howdoi-clear-how">How to clear the directories</h2>
+<p>To only clear directories and not perform other actions, log in to the Magento server as the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a> and clear directories using a command like the following:</p>
+
+<pre><code>rm -rf &lt;your Magento install dir&gt;/var/di/* &lt;your Magento install dir&gt;/var/generation/*
+</code></pre>
+
+<p>You can also use the following command-line tools clear some directories for you. These commands perform other tasks as well; consult the linked documentation for more details.</p>
+
+<table>
+	<tbody>
+		<tr>
+			<th>Tool name</th>
+			<th>Brief description</th>
+			<th>What it clears</th>
+		</tr>
+	<tr>
+		<td><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">magento setup:upgrade</a></td>
+		<td>Updates the Magento database schema and data.</td>
+		<td>var/di, var/generation</td>
+	</tr>
+	<tr>
+		<td><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-single.html">magento setup:di:compile</a></td>
+		<td>Generates code.</td>
+		<td>var/di, var/generation (after which compiles code again).</td>
+	</tr>
+	<tr>
+		<td><a href="/guides/v2.0/http://devdocs.magento.com/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">magento deploy:mode:set {mode}</a></td>
+		<td>Changes from developer mode to production mode and vice versa.</td>
+		<td>var/di, var/generation, var/view_preprocessed</td>
+	</tr>
+	<tr>
+		<td><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html">magento cache:clean [type]</a></td>
+		<td>Cleans the cache.</td>
+		<td>var/cache, var/page_cache</td>
+	</tr>
+</tbody>
+</table>
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+<!-- sidebar -->
+<aside class="sidebar">
+	<div class="sidebar-wrapper">
+		
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h4>Installation guide</h4>
+
+
+
+
+
+
+
+		<ul role="navigation">
+		
+		
+		
+		
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+					
+					
+					
+					
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/trouble/tshoot.html">Troubleshooting suggestions</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">Access issues</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_access-browser.html">Cannot access Magento software in a web browser</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_mod_access_compat.html">503 (Service Unavailable) errors accessing Magento software in a web browser</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_exceptions.html">Exceptions during installation</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_admin.html">Error after logging in to the Magento Admin</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_install_depend.html">Installation dependencies not met</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">Errors during installation</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_pdo.html">During installation, fatal PDO error displays</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_wrong-mysql.html">During installation, Reflection Exception error</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_session.html">During installation, exception SessionHandler::read()</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_install-log.html">Installation fails; cannot create install.log</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_sample-data.html">Errors installing optional sample data</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_xdebug.html">During installation, xdebug maximum function nesting level error</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">GitHub issues</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/git/tshoot_git-pull-origin.html">git pull origin develop fails when updating the Magento software</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/git/tshoot_clone.html">Cannot clone the Magento GitHub repository</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/git/tshoot_rate-limit.html">GitHub API rate limit</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">PHP issues</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_php-set.html">PHP settings errors</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_mcrypt.html">The PHP mcrypt extension is not installed properly</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_php-date.html">During installation, PHP date warning</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/trouble/tshoot_other.html">Other issues</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_composer-install.html">Cannot run 'composer install'</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_mysql_table-open-cache.html">Error 'MySQL server has gone away' during installation</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_phpini.html">SQLSTATE[HY000] [2002] No such file or directory</a></li>
+						
+								
+							
+									<li class="level-2  active "><a href="/guides/v2.0/howdoi/php/php_clear-dirs.html">Clear directories during development</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+
+
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+		
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+<!--Global footer-->
+<div id="footer-wrap">
+<div class="footer">
+    <div id="magento-com">
+        <div class="intro-paragraph">
+            <div class="container">
+                <a href="http://www.magento.com/"><img src="/i/logo-gl-footer.png" id="logo" alt="Magento an ebay inc company" /></a>
+                <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
+            </div>
+        </div>
+        <div class="container">
+            <div id="f-col-1">
+                <h4>Learn more</h4>
+                <ul class="nav" style="margin-bottom: 40px;">
+                    <li><a href="http://magento.com/company/overview" title="Company" >Company</a></li>
+                    <li><a href="http://magento.com/company/careers" title="Careers">Careers</a></li>
+                    <li><a href="http://www.magentocommerce.com/company/press-releases" title="Press Room">Press Room</a></li>
+                </ul>
+            </div>
+            <div id="f-col-2">
+                <div id="social-network">
+                    <h4>Find us on</h4>
+                    <ul>
+                        <li><a class="btn-facebook" target="_blank" href="http://www.facebook.com/magento">Magento Facebook</a>
+                        </li>
+                        <li><a class="btn-twitter" target="_blank" href="https://twitter.com/magento">Magento Twitter</a></li>
+                        <li><a class="btn-lnkdn" target="_blank" href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm">Magento Linkedin</a></li>
+                        <li><a class="btn-gplus" target="_blank" href="https://plus.google.com/+magento/posts">Magento Google+</a></li>
+                        <li><a class="btn-youtube" target="_blank" href="http://www.youtube.com/user/magentocommerce/featured">Magento
+                            Youtube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="f-col-3">
+                <div id="newsletter">
+                    <h4>GET THE LATEST NEWS</h4>
+                    <p>See Magento in the news, find press<br/> releases and resources for media.</p>
+                    <div class="hold-form">
+                        <div id="nws-notsubscribed">
+                            <div id="sb-email" class="sb-email">
+                                <form method="post" enctype="application/x-www-form-urlencoded"
+                                      action="//info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform"
+                                      name="mktForm_1182" onsubmit="return validateForm();">
+                                    <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email"
+                                           placeholder="Email Address">
+                                    <input type="hidden" name="formid" value="1182" />
+                                    <button type="submit" class="sb-icon-submit btn outline">
+                                        Submit
+                                    </button>
+          <span class="sb-icon-email btn outline">
+              Sign Up
+          </span>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="email-invalid hide">
+                        <p>Please submit a valid email.</p>
+                    </div>
+                    <div class="email-ty hide">
+                        <p>Thank you for submitting your email.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="f-col-4">
+                <div class="contact-us">
+                    <h4>Get in touch</h4>
+                    <p>We'd like to hear from you! Call us, <br />send us an email or talk to sales.</p>
+                    <a href="http://magento.com/company/contact-us" class="btn btn-outline">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="copyright">
+    <div class="container">
+        <div class="copyright-links">
+            <ul class="nav">
+                <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
+                <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
+                <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark
+                    FAQ</a></li>
+            </ul>
+        </div>
+        <div class="copyright-date">&copy; 2015 Magento, Inc. All rights reserved.</div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
+
+
+
+<script>
+devdocs();
+</script>
+
+
+<script src="/js/classie.js"></script>
+<script src="/js/uislideform.js"></script>
+<script type="text/javascript">
+    new UISlideform( document.getElementById( 'sb-email' ), 'email' );
+    var newsFlag = window.location.hash.indexOf("newsletter");
+    if(newsFlag == 1) {
+        jQuery('#Emailemail_msg').fadeOut('slow');
+        jQuery('#nws-subscribed').fadeIn('slow');
+        jQuery('#sb-email').css('display', 'none');
+    }
+    else {
+        jQuery('#nws-subscribed').fadeOut('slow');
+    }
+    function validateForm() {
+        var x = document.forms["mktForm_1182"]["Email"].value;
+        var atpos = x.indexOf("@");
+        var dotpos = x.lastIndexOf(".");
+        if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length) {
+            jQuery('.email-invalid').show();
+            return false;
+        }
+        else {
+            jQuery.cookie('mage_drupal_newsletter', 10);
+            jQuery('.email-invalid').hide();
+            jQuery('.email-ty').show();
+            return true;
+        }
+    }
+</script>
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('318-XBX-392', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+<!-- Docs scripts (just in case) -->
+<script src="/js/app-min.js"></script>
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+</body>
+</html>
