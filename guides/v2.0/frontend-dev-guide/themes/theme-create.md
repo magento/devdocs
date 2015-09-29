@@ -186,13 +186,17 @@ To declare a theme logo, add an <a href="{{site.gdeurl}}frontend-dev-guide/layou
 
 For example, if your logo file is <code>my_logo.png</code>, you need to declare it as follows: 
 
-<pre>
-&lt;referenceBlock name=&quot;logo&quot;&gt;
-	&lt;arguments&gt;
-		&lt;argument name=&quot;logo_file&quot; xsi:type=&quot;string&quot;&gt;images/my_logo.png&lt;/argument&gt;
-	&lt;/arguments&gt;
-&lt;/referenceBlock&gt;
-</pre>
+{% highlight xml %}
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <body>
+	    <referenceBlock name="logo">
+	        <arguments>
+		        <argument name="logo_file" xsi:type="string">images/my_logo.png</argument>
+	        </arguments>
+        </referenceBlock>
+    </body>
+</page>		
+{% endhighlight %}
 
 
 
