@@ -61,6 +61,8 @@ For details about how to initialize a widget in a`.phtml` template, refer to the
 
 <ul>
 <li><a href="#confirm_actions">actions</a></li>
+<li><a href="#confirm_autoopen">autoOpen</a></li>
+<li><a href="#confirm_clickableOverlay">clickableOverlay</a></li>
 <li><a href="#confirm_content">content</a></li>
 <li><a href="#confirm_focus">focus</a></li>
 <li><a href="#confirm_title">title</a></li>
@@ -79,6 +81,21 @@ actions: {
     always: function(){}
 }
 {% endhighlight %}
+
+<h3 id="confirm_autoopen">autoOpen</h3>
+Automatically open the confirmation window when the widget is initialized.
+
+**Type**: Boolean 
+
+**Default value**: `false`
+
+<h3 id="confirm_clickableOverlay">clickableOverlay</h3>
+Close the confirmation window when a user clicks on the overlay.
+
+**Type**: Boolean 
+
+**Default value**: `true`
+
 
 <h3 id="confirm_content"><code>content</code></h3>
 

@@ -62,6 +62,8 @@ For details about how to initialize a widget in a `.phtml` template, refer to th
 
 <ul>
 <li><a href="#prompt_actions">actions</a></li>
+<li><a href="#prompt_autoopen">autoOpen</a></li>
+<li><a href="#prompt_clickableOverlay">clickableOverlay</a></li>
 <li><a href="#prompt_content">content</a></li>
 <li><a href="#prompt_focus">focus</a></li>
 <li><a href="#prompt_title">title</a></li>
@@ -80,6 +82,20 @@ actions: {
     always: function(){}
 }
 {% endhighlight %}
+
+<h3 id="prompt_autoopen">autoOpen</h3>
+Automatically open the prompt window when the widget is initialized.
+
+**Type**: Boolean 
+
+**Default value**: `false`
+
+<h3 id="prompt_clickableOverlay">clickableOverlay</h3>
+Close the prompt window when a user clicks on the overlay.
+
+**Type**: Boolean 
+
+**Default value**: `true`
 
 <h3 id="prompt_content"><code>content</code></h3>
 

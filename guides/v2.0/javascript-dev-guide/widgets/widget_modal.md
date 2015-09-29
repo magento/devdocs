@@ -48,7 +48,9 @@ For details about how to initialize the widget in a`.phtml` template, refer to t
 <h2 id="modal_options">Options</h2>
 The modal widget has the following options:
 <ul>
+<li><a href="#modal_autoopen">autoOpen</a></li>
 <li><a href="#modal_buttons">buttons</a></li>
+<li><a href="#modal_clickableOverlay">clickableOverlay</a></li>
 <li><a href="#modal_focus">focus</a></li>
 <li><a href="#modal_innerScroll">innerScroll</a></li>
 <li><a href="#modal_modalClass">modalClass</a></li>
@@ -57,6 +59,14 @@ The modal widget has the following options:
 <li><a href="#modal_title">title</a></li>
 <li><a href="#modal_type">type</a></li>
 </ul>
+
+
+<h3 id="modal_autoopen">autoOpen</h3>
+Automatically open the modal window when the widget is initialized.
+
+**Type**: Boolean 
+
+**Default value**: `false`
 
 <h3 id="modal_buttons"><code>buttons</code></h3>
 Array of buttons for action pane.
@@ -82,6 +92,14 @@ buttons: [{
     }
 }]
 </pre>
+
+<h3 id="modal_clickableOverlay">clickableOverlay</h3>
+Close the modal window when a user clicks on the overlay.
+
+**Type**: Boolean 
+
+**Default value**: `true`
+
 
 <h3 id="modal_focus"><code>focus</code></h3>
 Selector to focusing when a modal window opens or 'none' if focusing is not necessary.

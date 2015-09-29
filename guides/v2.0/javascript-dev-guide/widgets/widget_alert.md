@@ -57,6 +57,8 @@ The alert widget has the following options:
 
 <ul>
 <li><a href="#alert_actions">actions</a></li>
+<li><a href="#alert_autoopen">autoOpen</a></li>
+<li><a href="#alert_clickableOverlay">clickableOverlay</a></li>
 <li><a href="#alert_content">content</a></li>
 <li><a href="#alert_focus">focus</a></li>
 <li><a href="#alert_title">title</a></li>
@@ -74,6 +76,20 @@ actions: {
     always: function(){}
 }
 {% endhighlight %}
+
+<h3 id="alert_autoopen">autoOpen</h3>
+Automatically open the alert window when the widget is initialized.
+
+**Type**: Boolean 
+
+**Default value**: `false`
+
+<h3 id="alert_clickableOverlay">clickableOverlay</h3>
+Close the alert window when a user clicks on the overlay.
+
+**Type**: Boolean 
+
+**Default value**: `true`
 
 <h3 id="alert_content"><code>content</code></h3>
 
