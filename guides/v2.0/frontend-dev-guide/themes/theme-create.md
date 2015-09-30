@@ -90,10 +90,7 @@ Example of a theme `composer.json`:
 }
 {% endhighlight %}
 
-
-<!-- If your theme supports Composer, the end users can install or uninstall it on their Magento systems. -->
-
-<!--ADDLINK You can find details about the Composer integration in the Magento system in Composer Integration. -->
+You can find details about the Composer integration in the Magento system in <a href="{{site.gdeurl}}extension-dev-guide/composer-integration.html">Composer integration</a>.
 
 <h2 id="fedg_create_theme_how-to-images">Configure images</h2>
 
