@@ -23,3 +23,8 @@ Your Checkout Progress -> Checkout Progress
 Shop By -> Filter
 
 The default Magento locale is en_US. 
+
+So OrangeCo take the following steps:
+
+1. Run the i18n tool to generate the en_US dictionary for the `orange` theme:
+ php <PathToMagneto>/bin/magento i18n:...
