@@ -17,7 +17,7 @@ This section discusses how to start the Component Manager, which updates or unin
 *	Language packages (localize the storefront and Admin)
 
 <h2 id="compman-prereq">Prerequisites</h2>
-Before continuing, complete all tasks discussed in <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_compman-updater.html">Prerequisites</a>.
+Before continuing, complete all tasks discussed in <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.
 
 <h2 id="compman-access">Start the Component Manager from the Magento Admin</h2>
 To run the Component Manager:
