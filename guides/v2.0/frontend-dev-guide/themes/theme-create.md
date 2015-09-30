@@ -62,32 +62,33 @@ To distribute your theme as a package, add a `composer.json` file to the theme d
 `composer.json` provides theme dependency information.
 
 Example of a theme `composer.json`:
-<pre>
+
+{% highlight json %}
 {
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;name&quot;:&nbsp;&quot;magento/theme-frontend-luma&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;description&quot;:&nbsp;&quot;N/A&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;require&quot;:&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;php&quot;:&nbsp;&quot;~5.4.11|~5.5.0&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;magento/theme-frontend-blank&quot;:&nbsp;&quot;0.42.0-beta1&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;magento/framework&quot;:&nbsp;&quot;0.42.0-beta1&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;magento/magento-composer-installer&quot;:&nbsp;&quot;*&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;},
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;type&quot;:&nbsp;&quot;magento2-theme&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;version&quot;:&nbsp;&quot;0.42.0-beta1&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;license&quot;:&nbsp;[
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;OSL-3.0&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;AFL-3.0&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;],
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;extra&quot;:&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;map&quot;:&nbsp;[
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;*&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;Magento/luma&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]
-&nbsp;&nbsp;&nbsp;&nbsp;}
+    "name": "magento/theme-frontend-luma",
+    "description": "N/A",
+    "require": {
+        "php": "~5.5.0|~5.6.0|~7.0.0",
+        "magento/theme-frontend-blank": "1.0.0-beta",
+        "magento/framework": "1.0.0-beta",
+        "magento/magento-composer-installer": "*"
+    },
+    "type": "magento2-theme",
+    "version": "1.0.0-beta",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "extra": {
+        "map": [
+            [
+                "*",
+                "frontend/Magento/luma"
+            ]
+        ]
+    }
 }
-</pre> 
+{% endhighlight %}
 
 
 <!-- If your theme supports Composer, the end users can install or uninstall it on their Magento systems. -->
