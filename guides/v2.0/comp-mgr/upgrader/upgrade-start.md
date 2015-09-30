@@ -13,6 +13,10 @@ github_link: comp-mgr/upgrader/upgrade-start.md
 <h2 id="compman-overview">Overview of System Upgrade</h2>
 This section discusses how to start System Upgrade, which upgrades the version of Magento core components as well as any other installed components.
 
+<div class="bs-callout bs-callout-info" id="info">
+	<p><em>System upgrade</em> refers to updating the Magento 2.x core components and other installed components. To migrate from Magento 1.x to Magento 2, see the <a href="{{ site.gdeurl }}migration/bk-migration-guide.html">Migration Guide</a>.</p>
+</div>
+
 <h2 id="compman-prereq">Prerequisites</h2>
 Before continuing, complete all tasks discussed in <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_compman-updater.html">Prerequisites</a>.
 
