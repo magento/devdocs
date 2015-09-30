@@ -210,7 +210,7 @@ However, in some situations (particularly, deploying Magento to production), you
 
 <div class="bs-callout bs-callout-warning">
     <p>The optional <code>--keep-generated</code> option should be used <em>only</em> in limited circumstances by experienced system integrators. <code>--keep-generated</code> should <em>never</em> be used in a development environment.</p>
-    <p>Improper use of this optional paramter can cause errors during code execution..</p>
+    <p>Improper use of this optional parameter can cause errors during code execution.</p>
 </div>
 
 <h2 id="instgde-install-magento-updatebeta11">Update to version 0.42.0-beta11 or later from beta10 or earlier</h2>
