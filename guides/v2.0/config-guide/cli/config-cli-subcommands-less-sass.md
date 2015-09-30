@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: CLI
-title: Create LESS from CSS
-menu_title: Create LESS from CSS
+title: Create symlinks to LESS files
+menu_title: Create symlinks to LESS files
 menu_node: 
 menu_order: 50
 github_link: config-guide/cli/config-cli-subcommands-less-sass.md
