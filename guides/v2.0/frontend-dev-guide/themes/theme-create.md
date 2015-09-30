@@ -41,13 +41,15 @@ After you create a directory for your theme, you must create `theme.xml` contain
 
 2. Configure it using the following example:
 
-	<pre>&lt;theme&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../lib/internal/Magento/Framework/Config/etc/theme.xsd&quot;&gt;
-	&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;New&nbsp;theme&lt;/title&gt;&nbsp;&lt;!--&nbsp;your&nbsp;theme's&nbsp;name&nbsp;--&gt;
-	&nbsp;&nbsp;&nbsp;&nbsp;&lt;parent&gt;Magento/blank&lt;/parent&gt;&nbsp;&lt;!--&nbsp;the&nbsp;parent&nbsp;theme,&nbsp;in&nbsp;case&nbsp;your&nbsp;theme&nbsp;inherits&nbsp;from&nbsp;an&nbsp;existing&nbsp;theme&nbsp;--&gt;
-	&nbsp;&nbsp;&nbsp;&nbsp;&lt;media&gt;
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;preview_image&gt;media/preview.jpg&lt;/preview_image&gt;&nbsp;&lt;!--&nbsp;the&nbsp;path&nbsp;to&nbsp;your&nbsp;theme's&nbsp;preview&nbsp;image&nbsp;--&gt;
-	&nbsp;&nbsp;&nbsp;&nbsp;&lt;/media&gt;
-	&lt;/theme&gt;</pre>
+{% highlight xml %}
+<theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/Config/etc/theme.xsd">
+     <title>New theme</title> <!-- your theme's name -->
+     <parent>Magento/blank</parent> <!-- the parent theme, in case your theme inherits from an existing theme -->
+     <media>
+         <preview_image>media/preview.jpg</preview_image> <!-- the path to your theme's preview image -->
+     </media>
+ </theme>
+{% endhighlight %}
 
 
 <h2 id="fedg_create_theme_composer">Make your theme a Composer package (optional)</h2>
@@ -60,37 +62,35 @@ To distribute your theme as a package, add a `composer.json` file to the theme d
 `composer.json` provides theme dependency information.
 
 Example of a theme `composer.json`:
-<pre>
+
+{% highlight json %}
 {
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;name&quot;:&nbsp;&quot;magento/theme-frontend-luma&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;description&quot;:&nbsp;&quot;N/A&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;require&quot;:&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;php&quot;:&nbsp;&quot;~5.4.11|~5.5.0&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;magento/theme-frontend-blank&quot;:&nbsp;&quot;0.42.0-beta1&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;magento/framework&quot;:&nbsp;&quot;0.42.0-beta1&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;magento/magento-composer-installer&quot;:&nbsp;&quot;*&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;},
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;type&quot;:&nbsp;&quot;magento2-theme&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;version&quot;:&nbsp;&quot;0.42.0-beta1&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;license&quot;:&nbsp;[
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;OSL-3.0&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;AFL-3.0&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;],
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;extra&quot;:&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;map&quot;:&nbsp;[
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;*&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;Magento/luma&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]
-&nbsp;&nbsp;&nbsp;&nbsp;}
+    "name": "magento/theme-frontend-luma",
+    "description": "N/A",
+    "require": {
+        "php": "~5.5.0|~5.6.0|~7.0.0",
+        "magento/theme-frontend-blank": "1.0.0-beta",
+        "magento/framework": "1.0.0-beta",
+        "magento/magento-composer-installer": "*"
+    },
+    "type": "magento2-theme",
+    "version": "1.0.0-beta",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "extra": {
+        "map": [
+            [
+                "*",
+                "frontend/Magento/luma"
+            ]
+        ]
+    }
 }
-</pre> 
+{% endhighlight %}
 
-
-<!-- If your theme supports Composer, the end users can install or uninstall it on their Magento systems. -->
-
-<!--ADDLINK You can find details about the Composer integration in the Magento system in Composer Integration. -->
+You can find details about the Composer integration in the Magento system in <a href="{{site.gdeurl}}extension-dev-guide/composer-integration.html">Composer integration</a>.
 
 <h2 id="fedg_create_theme_how-to-images">Configure images</h2>
 
@@ -184,18 +184,23 @@ Your theme does not have a parent theme:
 
 To declare a theme logo, add an <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Theme/layout/default.xml</code> layout. 
 
-For example, if your logo file is <code>my_logo.png</code>, you need to declare it as follows: 
+For example, if your logo file is <code>my_logo.png</code> sized 300x300px, you need to declare it as follows:  
 
-<pre>
-&lt;referenceBlock name=&quot;logo&quot;&gt;
-	&lt;arguments&gt;
-		&lt;argument name=&quot;logo_file&quot; xsi:type=&quot;string&quot;&gt;images/my_logo.png&lt;/argument&gt;
-	&lt;/arguments&gt;
-&lt;/referenceBlock&gt;
-</pre>
+{% highlight xml %}
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_file" xsi:type="string">images/my_logo.png</argument>
+                <argument name="logo_img_width" xsi:type="number">300</argument> 
+                <argument name="logo_img_height" xsi:type="number">300</argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>		
+{% endhighlight %}
 
-
-
+Declaring the logo size is optional.
 
 To learn more about theme layouts, refer to the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html" target="_blank">Layout section</a> of this guide.
 
