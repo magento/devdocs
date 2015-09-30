@@ -26,5 +26,18 @@ The default Magento locale is en_US.
 
 So OrangeCo take the following steps:
 
-1. Run the i18n tool to generate the en_US dictionary for the `orange` theme:
- php <PathToMagneto>/bin/magento i18n:...
+<ol>
+
+<li>
+Run the i18n (internationalization) tool to generate the en_US dictionary for the `orange` theme:
+<pre>
+php magento2/bin/magento i18n:collect-phrases --output="magento2/app/design/frontend/OrangeCo/orange/i18n/en_US.csv" magento2/app/design/frontend/OrangeCo/orange
+</pre>
+
+For general information about usage of the i18n tool see the <a href="{{site.gdeurl}}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">Translation dictionaries and language packages</a> topic.
+</li>
+<li>
+Add the following strings to the `magento2/app/design/frontend/OrangeCo/orange/i18n/en_US.csv` file:
+
+</li>
+</ol>
