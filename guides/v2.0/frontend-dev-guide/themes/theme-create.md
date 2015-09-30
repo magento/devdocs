@@ -41,13 +41,15 @@ After you create a directory for your theme, you must create `theme.xml` contain
 
 2. Configure it using the following example:
 
-	<pre>&lt;theme&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../lib/internal/Magento/Framework/Config/etc/theme.xsd&quot;&gt;
-	&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;New&nbsp;theme&lt;/title&gt;&nbsp;&lt;!--&nbsp;your&nbsp;theme's&nbsp;name&nbsp;--&gt;
-	&nbsp;&nbsp;&nbsp;&nbsp;&lt;parent&gt;Magento/blank&lt;/parent&gt;&nbsp;&lt;!--&nbsp;the&nbsp;parent&nbsp;theme,&nbsp;in&nbsp;case&nbsp;your&nbsp;theme&nbsp;inherits&nbsp;from&nbsp;an&nbsp;existing&nbsp;theme&nbsp;--&gt;
-	&nbsp;&nbsp;&nbsp;&nbsp;&lt;media&gt;
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;preview_image&gt;media/preview.jpg&lt;/preview_image&gt;&nbsp;&lt;!--&nbsp;the&nbsp;path&nbsp;to&nbsp;your&nbsp;theme's&nbsp;preview&nbsp;image&nbsp;--&gt;
-	&nbsp;&nbsp;&nbsp;&nbsp;&lt;/media&gt;
-	&lt;/theme&gt;</pre>
+{% highlight xml %}
+<theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/Config/etc/theme.xsd">
+     <title>New theme</title> <!-- your theme's name -->
+     <parent>Magento/blank</parent> <!-- the parent theme, in case your theme inherits from an existing theme -->
+     <media>
+         <preview_image>media/preview.jpg</preview_image> <!-- the path to your theme's preview image -->
+     </media>
+ </theme>
+{% endhighlight %}
 
 
 <h2 id="fedg_create_theme_composer">Make your theme a Composer package (optional)</h2>
