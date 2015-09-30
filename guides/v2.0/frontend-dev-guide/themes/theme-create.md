@@ -184,22 +184,23 @@ Your theme does not have a parent theme:
 
 To declare a theme logo, add an <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Theme/layout/default.xml</code> layout. 
 
-For example, if your logo file is <code>my_logo.png</code>, you need to declare it as follows: 
+For example, if your logo file is <code>my_logo.png</code> sized 300x300px, you need to declare it as follows:  
 
 {% highlight xml %}
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
     <body>
-	    <referenceBlock name="logo">
-	        <arguments>
-		        <argument name="logo_file" xsi:type="string">images/my_logo.png</argument>
-	        </arguments>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_file" xsi:type="string">images/my_logo.png</argument>
+                <argument name="logo_img_width" xsi:type="number">300</argument> 
+                <argument name="logo_img_height" xsi:type="number">300</argument>
+            </arguments>
         </referenceBlock>
     </body>
 </page>		
 {% endhighlight %}
 
-
-
+Declaring the logo size is optional.
 
 To learn more about theme layouts, refer to the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html" target="_blank">Layout section</a> of this guide.
 
