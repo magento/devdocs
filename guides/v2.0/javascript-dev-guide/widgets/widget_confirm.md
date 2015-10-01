@@ -2,17 +2,17 @@
 layout: default
 group: jsdg
 subgroup: Widgets
-title: Confirm widget
+title: Confirmation widget
 menu_order: 5
-menu_title: Confirm widget
+menu_title: Confirmation widget
 github_link: javascript-dev-guide/widgets/widget_confirm.md
 ---
 
 <h2>Overview</h2>
 
-The Magento confirm widget implements a modal pop-up window with the cancel and confirmation button.It is an extension of the <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html">Magento modal widget</a>.
+The Magento confirmation widget implements a modal pop-up window with the cancel and confirmation button.It is an extension of the <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html">Magento modal widget</a>.
 
-The confirm widget source is <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/modal/confirm.js">app/code/Magento/Ui/view/base/web/js/modal/confirm.js</a>
+The confirmation widget source is <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/modal/confirm.js">app/code/Magento/Ui/view/base/web/js/modal/confirm.js</a>
 
 The widget can be used for implementing confirmation windows for both, Admin and storefront. The design patterns for the modal pop-up windows in the Admin are described in the <a href="{{site.gdeurl}}pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a> 
 
@@ -24,9 +24,9 @@ The widget can be used for implementing confirmation windows for both, Admin and
 - <a href="#confirm_key_navigation">Keyboard navigation</a>
 
 
-<h2 id="confirm_initialize">Initialize the confirm widget</h2>
+<h2 id="confirm_initialize">Initialize the confirmation widget</h2>
 
-The confirm widget can be initialized with or without binding to a certain element.
+The confirmation widget can be initialized with or without binding to a certain element.
 
 **Example1**: initialization on an element
 
@@ -71,7 +71,7 @@ For details about how to initialize a widget in a`.phtml` template, refer to the
 <h3 id="confirm_actions"><code>actions</code></h3>
 Widget callbacks.
 
-**Type**: Object.
+**Type**: Object
 
 **Default value**: 
 {% highlight js %}
