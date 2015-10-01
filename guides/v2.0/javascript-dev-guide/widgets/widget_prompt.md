@@ -11,7 +11,7 @@ github_link: javascript-dev-guide/widgets/widget_prompt.md
 <h2>Overview </h2>
 
 
-The Magento propmp widget implements a modal pop-up window with an input field, and a cancel and a confirmation button. 
+The Magento prompt widget implements a modal pop-up window with an input field, and a cancel and a confirmation button. 
 
 It extends the <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html">Magento modal widget</a>.
 
@@ -105,7 +105,7 @@ The prompt window content.
 
 <h3 id="prompt_focus"><code>focus</code></h3>
 The selector of the element to be in focus when the prompt window opens.
-If `focus` is not specified or set to empty string, the focus is on close button. If focusing is not requried, set `focus` to `none`.
+If `focus` is not specified or set to empty string, the focus is on the close button. If focusing is not requried, set `focus` to `none`.
 
 **Type**: String.
 
@@ -129,4 +129,4 @@ The prompt widget implements the following events:
 
 
 <h2 id="prompt_key_navigation">Keyboard navigation</h2>
-The keyboard navigation for the prompt windows is similar to the <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html#key_navigation">general modal windows navigation implemented by the modal widget</a>.
+The keyboard navigation for the alert windows is similar to the <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html#key_navigation">navigation of the modal widget</a>.

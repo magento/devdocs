@@ -10,9 +10,9 @@ github_link: javascript-dev-guide/widgets/widget_confirm.md
 
 <h2>Overview</h2>
 
-The Magento confirm widget implements a modal pop-up window the the cancel and confirmation button.It is an extension of the <a href="{{site.gdeurl}}">Magento modal widget</a>.
+The Magento confirm widget implements a modal pop-up window with the cancel and confirmation button.It is an extension of the <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html">Magento modal widget</a>.
 
-The confirm widget source is <a href="{{site.baseurl}}app/code/Magento/Ui/view/base/web/js/modal/confirm.js">app/code/Magento/Ui/view/base/web/js/modal/confirm.js</a>
+The confirm widget source is <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/modal/confirm.js">app/code/Magento/Ui/view/base/web/js/modal/confirm.js</a>
 
 The widget can be used for implementing confirmation windows for both, Admin and storefront. The design patterns for the modal pop-up windows in the Admin are described in the <a href="{{site.gdeurl}}pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a> 
 
@@ -129,4 +129,4 @@ The confirmation widget implements the following events:
 - `always` callback.
 
 <h2 id="confirm_key_navigation">Keyboard navigation</h2>
-The keyboard navigation for the confirmation windows is similar to the <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html#key_navigation">general modal windows navigation implemented by the modal widget</a>.
+The keyboard navigation for the alert windows is similar to the <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html#key_navigation">navigation of the modal widget</a>

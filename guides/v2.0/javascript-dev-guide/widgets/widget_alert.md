@@ -13,7 +13,7 @@ The Magento alert widget implements a modal pop-up window with a confirmation bu
 
 The alert widget source is <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/modal/alert.js" target="_blank">app/code/Magento/Ui/view/base/web/js/modal/alert.js</a>
 
-The widget can be used for implementing alert windows for both, Admin and storefront. The design patterns for the pop-up modal windows in the Admin are described in the <a href="{{site.gdeurl}}pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a> 
+The widget can be used for implementing alert windows for both Admin and storefront. The design patterns for the pop-up modal windows in the Admin are described in the <a href="{{site.gdeurl}}pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a> 
 
 <h3>Contents</h3>
 
@@ -100,7 +100,7 @@ The text displayed in the alert window.
 
 <h3 id="alert_focus"><code>focus</code></h3>
 The selector of the element to be in focus when the alert window opens.
-If `focus` is not specified or set to empty string, the focus is on close button. If focusing is not requried, set `focus` to `none`.
+If `focus` is not specified or set to empty string, the focus is on the close button. If focusing is not requried, set `focus` to `none`.
 
 **Type**: String.
 
@@ -119,4 +119,4 @@ The title of the alert window.
 The alert widget implements a single event: the `always` callback.
 
 <h2 id="alert_key_navigation">Keyboard navigation</h2>
-The keyboard navigation for the alert windows is similar to the <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html#key_navigation">general modal windows navigation implemented by the modal widget</a>.
+The keyboard navigation for the alert windows is similar to the <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html#key_navigation">navigation of the modal widget</a>.
