@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Set up cron for Component Manager and System Upgrade</title>
+	<title>Set ulimit for the web server user</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/comp-mgr/prereq/prereq_compman-updater.html">
+	<link rel="canonical" href="//guides/v2.0/comp-mgr/prereq/prereq_compman-ulimit.html">
 
 
 
@@ -150,9 +150,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Set up cron for Component Manager and System Upgrade</h1>
+		<h1 class="page-heading">Set ulimit for the web server user</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/comp-mgr/prereq/prereq_compman-updater.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/comp-mgr/prereq/prereq_compman-ulimit.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -161,73 +161,31 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="compman-prereq-overview">Prerequisites for the Component Manager and System Upgrade</h2>
-<p>Before you can use the Component Manager and System Upgrade, you must do all of the following:</p>
+		<h2 id="issue">Issue</h2>
+<p>Rolling back to a previous backup using either the Component Manager or System Upgrade can silently fail, resulting in incomplete data being written to the file system or database.</p>
 
-<ul>
-  <li>
-    <p><a href="#compman-prereq-cron">Set up cron jobs</a></p>
+<h3 id="details">Details</h3>
+<p>In some cases, a very long query string causes the user’s allocated memory space to run out of memory because of too many recursive calls. We’re aware of this issue and are working on a solution.</p>
 
-    <p>Cron should scan for component and core module updates every minute.</p>
-  </li>
-  <li>
-    <p><em>Contributing developers only</em>. Set up the Magento updater application</p>
-
-    <p>This is required only if you are a contributing developer; that is, you cloned the Magento 2 GitHub repository. Contributing developers already cloned the updater repository as part of installation; to review, see <a href="/guides/v2.0/install-gde/prereq/prereq_updater.html">Set up the updater</a>.</p>
-  </li>
-</ul>
-
-<h2 id="compman-prereq-cron">Set up cron jobs</h2>
-<p>To enable the updater to work for both the Component Manager and System Upgrade, you must configure two cron jobs. Each cron job should run every minute.</p>
-
-<p>Enable the cron jobs as <a href="http://ss64.com/bash/crontab.html" target="_blank">crontabs</a> for the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a> because that user runs the updater application for the Component Manager and System Upgrade. </p>
+<h3 id="workaround">Workaround</h3>
+<p>Until a solution is available, we recommend setting the <a href="http://ss64.com/bash/ulimit.html" target="_blank"><code>ulimit</code></a> for the web server user to a value of 65536 or more. One way to do this is to edit the user’s shell script. For example, for the Bash shell:</p>
 
 <ol>
+  <li>If you haven’t done so already, switch to the web server user.</li>
+  <li>Open <code>/home/&lt;username&gt;/.bashrc</code> in a text editor.</li>
   <li>
-    <p>As a user with <code>root</code> privileges, see if a crontab is already set up.</p>
+    <p>Add the following line:</p>
 
-    <pre><code>crontab -u &lt;Magento file system owner user name&gt; -l
+    <pre><code>ulimit -s 65536
 </code></pre>
 
-    <p>For example, on CentOS</p>
-
-    <pre><code>crontab -u magento_user -l
-</code></pre>
-
-    <p>If no crontab has been set up for the user, the following message displays:</p>
-
-    <pre><code>no crontab for magento_user
-</code></pre>
-  </li>
-  <li>
-    <p>If necessary, set up the crontabs as follows as a user with root privileges:</p>
-
-    <pre><code>crontab -u &lt;Magento file system owner user name&gt; -e
-</code></pre>
-
-    <p>An editor displays. In the editor, enter the following:</p>
-
-    <pre><code>*/1 * * * * php &lt;your Magento install dir&gt;/update/cron.php &amp;
-*/1 * * * * php &lt;your Magento install dir&gt;/bin/magento setup:cron:run &amp;
-</code></pre>
-
-    <p>For example,</p>
-
-    <pre><code>*/1 * * * * php /var/www/html/magento2/update/cron.php &amp;
-*/1 * * * * php /var/www/html/magento2/bin/magento setup:cron:run &amp;	
-</code></pre>
-  </li>
-  <li>
-    <p>Save your changes to cron and exit the editor.</p>
+    <p>You can change this to a larger value if needed.</p>
   </li>
 </ol>
 
-<h4 id="next-step">Next step</h4>
-
-<ul>
-  <li><a href="/guides/v2.0/comp-mgr/compman-start.html">Run the Component Manager</a></li>
-  <li><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">Run System Upgrade</a></li>
-</ul>
+<div class="bs-callout bs-callout-warning">
+    <p>We recommend you avoid setting a value for <code>pcre.recursion_limit</code> in <code>php.ini</code> because it can result in incomplete rollbacks with no failure notice.</p>
+</div>
 
 
 		</div>
@@ -381,11 +339,11 @@
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/prereq/prereq_compman-ulimit.html">Set ulimit for the web server user</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/comp-mgr/prereq/prereq_compman-ulimit.html">Set ulimit for the web server user</a></li>
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v2.0/comp-mgr/prereq/prereq_compman-updater.html">Set up cron for Component Manager and System Upgrade</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/prereq/prereq_compman-updater.html">Set up cron for Component Manager and System Upgrade</a></li>
 						
 								
 								
