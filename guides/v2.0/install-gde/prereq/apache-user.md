@@ -44,9 +44,14 @@ To create a user on CentOS or Ubuntu, enter the following command as a user with
 
 To give the user a password, enter the following command as a user with `root` privileges:
 
-	passwd
+	passwd <username>
 
 Follow the prompts on your screen to create a password for the user.
+
+For example, to create a user named `magento_user` and give the user a password, enter:
+
+	sudo adduser magento_user
+	sudo passwd magento_user
 
 <div class="bs-callout bs-callout-warning">
     <p>Because the point of creating this user is to provide added security, make sure you create a <a href="https://en.wikipedia.org/wiki/Password_strength" target="_blank">strong password</a>.</p>
@@ -74,7 +79,7 @@ To find the web server user's group:
 To add a user to the web server's group (assuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with `root` privileges:
 
 *	CentOS: `usermod -a -G apache <username>`
-*	Ubuntu: `useradd -G www-data <username>`
+*	Ubuntu: `usermod -a -G www-data <username>`
 
 For example, to add the user `deborah` to the `apache` group on CentOS:
 

@@ -2,7 +2,7 @@
 layout: default
 group: extension-dev-guide
 subgroup: 5_Package
-title: PHP developer guide
+title: Package a module
 menu_title: Package a module
 menu_order: 2
 github_link: extension-dev-guide/package_module.md
@@ -72,7 +72,7 @@ The following example is a `composer.json` file for a module:
 {% endhighlight %}
 
 
-<h2 id="packaging">Package and publish an module</h2>
+<h2 id="packaging">Package and publish a module</h2>
 
 After you have created the module's `composer.json` file in the root directory of the module, Composer can recognize your package as compatible with its deployment strategy. Such packages can be published to a code repository (GitHub, SVN, etc.), packagist.org, or on your own private package repository.
 

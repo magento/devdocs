@@ -2,78 +2,93 @@
 layout: default
 group: extension-dev-guide
 subgroup: 3_Build
-title: PHP developer guide
+title: Create a module
 menu_title: Create a module
-menu_order: 2
+menu_order: 4
 github_link: extension-dev-guide/create_module.md
 redirect_from: /guides/v1.0/extension-dev-guide/create_module.html
 ---
 ##{{page.menu_title}}
 
-This topic covers the basic steps of creating a new module. Subsequent sections in this Developer's Guide explain how to verify your new module and how to use Composer to package and distribute the module.
+Now that you have [determined your module&#8217;s initial file structure](module-file-structure.html) and have an idea of the [configuration files](required-configuration-files.html) you&#8217;ll need, you can create the module.
 
-<h2 id="create-module-basics">Basic Pre-Requisites</h2>
-Before you begin creating your new module, make sure that you have a working installation of Magento 2.0, and the Magento [System Requirements]({{ site.gdeurl }}install-gde/system-requirements.html).
-
-Also, Magento recommends that you disable caching while performing the following steps. 
-
-<h2 id="create-module-code-setup">Get started</h2>
-The main steps to create a module are:
-
-1. Build the file structure for the module, with the appropriate "building block" directories
-2. Create the `module.xml` file, with a namespace and name for the new module 
-3. Install the module
-
-In subsequent topics, we will discuss which configuration files are needed for your new module. The required configuration files depend on how you plan to use the module: will it be manifested on the storefront UI, or in the Magento Admin panel, or as a backend extension that makes a service call?
-
-
-<h2 id="create-module-file-structure">Build the file structure</h2>
-First let's create the &lt;ModuleName> directory. Use a module name that is descriptive, and not too long.
-
-Next, you can create the `/etc` directory within the `<ModuleName>` directory:
-
-Example: 
-
-	<ModuleName>
-	  /etc
-
-The `/etc` directory is where the `module.xml` file resides, and this directory is required no matter how you plan to use the module. Additional directories may be needed under the `<ModuleName>` directory, depending on how you plan to use the module. 
-
-We will look at the additional directories in the next topic, and link to some sample modules showing these directories and the configuration files in each. Typically these components are:
-
-* Blocks
-* Controllers
-* Helpers
-* Models
-
-Along with the directories for those main components, you may need some additional directories for important things like configuration files, optional plugins, i18n files, APIs, and other files.
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Be aware that the standard placement of the &lt;ModuleName> directory within the overall Magento file structure is <code>app/code/&lt;Vendor>/&lt;ModuleName>/etc/</code>. However, if you are creating a new module for distribution, you can just create the &lt;ModuleName> directory and the required directories within it. </p> 
-</div>                
-
-
-<h2 id="create-module-naming">Create the new module.xml file</h2>
-Now let's create the module itself, in the /etc directory of the module you just created.
+##Add the module&#8217;s `module.xml` file
+Declare the module itself by adding a module.xml file in the `/etc` folder of your module.
 
 A module declares itself (i.e. defines its name and existence) in the `module.xml` file, located in the Magento install directory at `<ModuleName>/etc/`. 
 
-Minimal declaration sample:
+The smallest working module.xml file would look something like this:
 
 	<config>
        <module name="Vendor_ModuleName" setup_version="2.0.0"/>
 	</config>
 
+...where `name`  is the name of your module, and `setup_version` is the version of Magento the module uses. Both of these attributes are required.
+
+
+
+##Add the module&#8217;s `composer.json` file
+
+
+	{
+    "name": "your-name/module-foobar",
+    "description": "Test module for Magento 2",
+    "require": {
+        "php": "~5.5.0|~5.6.0",
+        "magento/module-store": "1.0.0-beta",
+        "magento/module-catalog": "1.0.0-beta",
+        "magento/module-catalog-inventory": "1.0.0-beta",
+        "magento/module-ui": "self.version",
+        "magento/magento-composer-installer": "*"
+    },
+    "suggest": {
+      "magento/module-webapi": "1.0.0-beta"
+    },
+    "type": "magento2-module",
+     "version": "1.0.0-beta",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "extra": {
+        "map": [
+            [
+                "*",
+                "YourName/FooBar"
+            ]
+        ]
+    }
+}
+
+
+where:
+
+* `name` &#8212; is the name of your module.
+* `description` &#8212; is a concise explanation of your module's purpose.
+* `require` &#8212; lists any modules your module depends on.
+* `suggest` &#8212; lists soft dependencies. The module can operate without them, but if the modules are active, they should be loaded before.
+
+* `type` &#8212; determines what type of magento component your module is. Choose from *magento2-library*, *magento2-theme*, *magento2-language*, or *magento2-module*.
+* `version` &#8212; lists the version of the module.
+* `license` &#8212; lists applicable licenses that apply to your module.
+* `extra.map` &#8212; gives the path for Magento&#8217;s Composer installer so it can marshall your component&#8217;s files to the appropriate locations under the main instance of Magento.
+
+
+
 <div class="bs-callout bs-callout-info" id="info">
   <p>Take a look at a <a href="https://github.com/magento/magento2-samples/tree/master/sample-module-minimal"> sample module</a> created by the Magento Core Team. </p>
-  <p>The team is creating a <a href="https://github.com/magento/magento2-samples"> collection of samples</a> to demonstrate technologies introduced in Magento 2. You can edit your Magento 2 <code>composer.json</code> file to declare a dependency upon this package of sample modules, and then run <code>composer update</code> to download them. Look for more sample modules as we build them!</p>
+  <p>The team is creating a <a href="https://github.com/magento/magento2-samples"> collection of samples</a> to demonstrate technologies introduced in Magento 2. You can edit your Magento 2 <code>composer.json</code> file to declare a dependency upon this package of sample modules, and then run <code>composer update</code> to download them. Look for more sample modules as we build them.</p>
  </div>
 
-<h2 id="install-module">Install Module</h2>
-The last step is to install the module.
- 
- 1. Disable the Cache under System->Cache Management
- 2. In base directory run bin/magento setup:upgrade
- 3. Check under Stores->Configuration->Advanced->Advanced that the module is present
- 
-Your module is now installed.
+
+
+##Next
+
+[Module Load Order](module-load-order.html)
+
+
+
+
+
+
+

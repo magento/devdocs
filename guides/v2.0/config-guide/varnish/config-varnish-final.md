@@ -65,5 +65,8 @@ Make sure the `<your Magento install dir>/var/page_cache` directory is empty:
 4.	Check the `var/page_cache/` directory.
 
 	If the directory is empty, congratulations! You successfully configured Varnish and Magento to work together!
+5.	If you cleared the `var/page_cache/` directory, restart Varnish.
 
-
+#### Next steps
+*	<a href="{{ site.gdeurl }}config-guide/varnish/use-varnish-cache.html">How Magento cache clearing works with Varnish</a>
+*	<a href="{{ site.gdeurl }}config-guide/varnish/use-varnish-cache-how.html">How Varnish caching works</a>

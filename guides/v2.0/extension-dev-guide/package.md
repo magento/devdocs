@@ -2,7 +2,7 @@
 layout: default
 group: extension-dev-guide
 subgroup: 5_Package
-title: PHP developer guide
+title: Package
 menu_title: Package
 menu_order: 1
 menu_node: parent
