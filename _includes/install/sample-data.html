@@ -35,7 +35,8 @@ Next significant release example:<br>
 <p>This section discusses how to install Magento sample data by cloning the sample data repository. You might find this method simpler than modifying <code>composer.json</code> but in all other ways, they are the same.</p>
 <p>You can clone the sample data repository in any of the following ways:</p>
 <ul><li>Clone with the <a href="#instgde-prereq-sample-clone-ssh">SSH protocol</a></li>
-    <li>Clone with the <a href="#instgde-prereq-compose-clone-https">HTTPS protocol</a></li></ul>
+    <li>Clone with the <a href="#instgde-prereq-compose-clone-https">HTTPS protocol</a></li>
+<li><a href="#instgde-prereq-compose-clone-perms">Set file system permissions and ownership</a></li></ul>
 
 <h3 id="instgde-prereq-sample-clone-ssh">Clone with SSH</h3>
 <p>To clone the Magento sample data GitHub repository using the SSH protocol:</p>
@@ -64,7 +65,7 @@ fatal: The remote end hung up unexpectedly</pre>
 <li>Enter the following command:<br>
 <pre>php build-sample-data.php -- --ce-source="&lt;your Magento install dir>"</pre></li>
 <li>Wait for the command to complete.</li>
-<li>See <a href="#sample-next-steps">Next steps</a>.</li></ol>
+<li>See <a href="#instgde-prereq-compose-clone-perms">Set file system permissions and ownership</a>.</li></ol>
 
 <h3 id="instgde-prereq-compose-clone-https">Clone with HTTPS</h3>
 <p>To clone the Magento sample data GitHub repository using the HTTPS protocol:</p>
@@ -86,4 +87,19 @@ An example follows:<br>
 <li>Enter the following command:<br>
 <pre>php build-sample-data.php -- --ce-source="&lt;your Magento install dir>"</pre></li>
 <li>Wait for the command to complete.</li>
+<li>See the next section.</li></ol>
+
+<h3 id="instgde-prereq-compose-clone-perms">Set file system permissions and ownership</h3>
+<p>Because the <code>php build-sample-data.php</code> script creates symlinks between the sample data repository and your Magento 2 repository, you must set file system permissions and ownership in the sample data repository. Failure to do so will result in errors accessing the storefront.</p>
+<p>To set file system permissions and ownership on the sample data repository:</p>
+<ol><li>Change to your sample data clone directory.</li>
+<li>Set ownership:<br>
+<pre>chown -R :&lt;your web server group name> .</pre>
+Typical examples:<br><br>
+CentOS: <code>chown -R :apache .</code><br>
+Ubuntu: <code>chown -R :www-data .</code></li>
+<li>Set permissions:<br>
+    <pre>find . -type d -exec chmod 770 {} \; && find . -type f -exec chmod 660 {}</pre>
+    If you must enter the commands as <code>sudo</code>, use:<br>
+    <pre>sudo find . -type d -exec chmod 770 {} \; && sudo find . -type f -exec chmod 660 {}</pre></li>
 <li>See <a href="#sample-next-steps">Next steps</a>.</li></ol>
