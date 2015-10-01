@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: CLI
-title: Create LESS from CSS
-menu_title: Create LESS from CSS
+title: Create symlinks to LESS files
+menu_title: Create symlinks to LESS files
 menu_node: 
 menu_order: 50
 github_link: config-guide/cli/config-cli-subcommands-less-sass.md
@@ -21,7 +21,7 @@ redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-less-sass.ht
 In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="config-cli-subcommands-less-sass">Create LESS files</h2>
-This command enables you to create LESS files from existing CSS files.
+This command enables you to create symlinks to LESS files from existing CSS files.
 
 Command options:
 
