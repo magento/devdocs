@@ -22,6 +22,7 @@ See one of the following sections:
 *	<a href="#instgde-install-magento-update">Update the Magento software</a>
 *	<a href="#instgde-install-magento-reinstall">Reinstall the Magento software</a>
 *	<a href="#instgde-install-uninstall">Uninstall the Magento software</a>
+*	<a href="#instgde-install-keep">Optionally keeping generated files</a>
 *	<a href="#instgde-install-magento-updatebeta11">Update to version 0.42.0-beta11 or later from beta10 or earlier</a>
 
 <h2 id="instgde-cli-before">First steps</h2>
@@ -118,7 +119,9 @@ After you update the Magento software, you must update the database schema and d
 
 1.	Update the Magento database.
 
-		php bin/magento setup:upgrade
+		php bin/magento setup:upgrade [--keep-generated]
+
+	For more information about the optional `--keep-generated` parameter, see <a href="#instgde-install-keep">Optionally keeping generated files</a>.
 
 5.	Clear `var` directory contents:
 
@@ -197,6 +200,18 @@ To uninstall the Magento software, enter the following command:
 The following message displays to confirm a successful uninstallation:
 
 	[SUCCESS]: Magento uninstallation complete.
+
+<h2 id="instgde-install-keep">Optionally keeping generated files</h2>
+By default, `magento setup:upgrade` clears compiled code and the cache. Typically, you use `magento setup:upgrade` to update components and each component can require different compiled classes.
+
+However, in some situations (particularly, deploying Magento to production), you might wish to avoid clearing compiled code because it can take some time. (The cache is still cleared.) To update the Magento database schema and data *without* clearing compiled code, enter:
+
+	magento setup:upgrade --keep-generated
+
+<div class="bs-callout bs-callout-warning">
+    <p>The optional <code>--keep-generated</code> option should be used <em>only</em> in limited circumstances by experienced system integrators. <code>--keep-generated</code> should <em>never</em> be used in a development environment.</p>
+    <p>Improper use of this optional parameter can cause errors during code execution.</p>
+</div>
 
 <h2 id="instgde-install-magento-updatebeta11">Update to version 0.42.0-beta11 or later from beta10 or earlier</h2>
 This section applies to you in the following situation only:

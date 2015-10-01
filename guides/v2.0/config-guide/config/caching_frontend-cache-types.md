@@ -20,7 +20,7 @@ Magento enables you to configure alternatives to the default file system caching
 
 *   Set up the following cache mechanisms in the Magento configuration:
 
-    *   <a href="{{ site.gdeurl }}config-guide/memcache/database.html">Database</a>
+    *   <a href="{{ site.gdeurl }}config-guide/database/database.html">Database</a>
     *   <a href="{{ site.gdeurl }}config-guide/redis/config-redis.html">Redis</a>
     *   File system (default): No configuration is necessary to use file system caching.
 
