@@ -35,9 +35,10 @@ php magento2/bin/magento i18n:collect-phrases --output="magento2/app/design/fron
 </pre>
 
 For general information about usage of the i18n tool see the <a href="{{site.gdeurl}}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">Translation dictionaries and language packages</a> topic.
+If the custom theme files do not contain any additional strings, the i18n tool does not create a dictionary for this theme. 
 </li>
 <li>
-Add the following strings to the `magento2/app/design/frontend/OrangeCo/orange/i18n/en_US.csv` file:
-
+If the Add the following strings to the `magento2/app/design/frontend/OrangeCo/orange/i18n/en_US.csv` file:
+"Add to Compare", "Compare"
 </li>
 </ol>
