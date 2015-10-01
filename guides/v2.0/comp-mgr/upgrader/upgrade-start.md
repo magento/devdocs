@@ -18,7 +18,7 @@ This section discusses how to start System Upgrade, which upgrades the version o
 </div>
 
 <h2 id="compman-prereq">Prerequisites</h2>
-Before continuing, complete all tasks discussed in <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_compman-updater.html">Prerequisites</a>.
+Before continuing, complete all tasks discussed in <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.
 
 <h2 id="compman-access">Start System Upgrade from the Magento Admin</h2>
 To run System Upgrade:

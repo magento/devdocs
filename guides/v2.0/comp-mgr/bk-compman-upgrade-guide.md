@@ -31,4 +31,4 @@ Magento provides two applications you can use after installing the Magento appli
 	</div>
 
 ### Next step
-Complete the tasks discussed in <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_compman-updater.html">Prerequisites</a>.
+Complete the tasks discussed in <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.
