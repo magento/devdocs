@@ -18,7 +18,14 @@ Components are responsible for rendering result page fragments and providing/sup
 
 
 ###General structure
-In Magento 2 there are basic and secondary UI components. Basic components are UI Library Listing component and UI Library Form component. Secondary components are extensions of basic components  
+In Magento 2 there are basic and secondary UI components. 
+
+Basic components are: 
+
+* Listing component
+* Form component
+
+Secondary components are extensions of basic components.  
 
 <h3>Using UI library component in layout file</h3>
 
