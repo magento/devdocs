@@ -52,9 +52,7 @@ If the code generator implementation itself is changed, you must regenerate all 
 <h3 id="codegen-over-adv">Advantages of generating code</h3>
 Code generation is required in Magento 2. Generating code assures you of the following:
 
-*	The code is correct.
-	
-	You won’t have to worry that the generated code is delegating to the wrong method or forgetting a semicolon. You don’t have to write tests for the generated code.
+*	The code is correct. You don’t have to worry that the generated code is delegating to the wrong method or forgetting a semicolon, and you don’t have to write tests for the generated code.
 *	Code generation writes the boilerplate code to enable you to write more challenging and interesting code.
 *	Consistent implementation.
 	
@@ -64,15 +62,14 @@ Code generation is required in Magento 2. Generating code assures you of the fol
 <h2 id="codegen-om">Object Manager responsibility for code compilation</h2>
 When code changes as discussed in the preceding section, one of two Object Manager classes compiles it. The class is chosen based on whether or not the single-tenant compiler or the multi-tenant compiler has been run before.
 
-*	The single-tenant compiler creates `var/di/global.ser`.
-    
-	`var/di/global.ser`, which is a PHP serialized map of all constructor definitions mixed with object linking configuration defined in di.xml. `di.xml` is the dependency injection configuration. There is a global `app/etc/di.xml` and there can one defined for every module.
+The single-tenant and multi-tenant compiler create `var/di/global.ser`, which is a PHP serialized map of all constructor definitions mixed with object linking configuration defined in di.xml. `di.xml` is the dependency injection configuration. There is a global `app/etc/di.xml` and there can one defined for every module.
+
+
 
 	<div class="bs-callout bs-callout-warning">
     	<p>if you&#8217;re preparing to deploy to production, you must use the multi-tenant compiler. There is a known issue with the single-tenant compiler that prevents it from compiling proxies.</p>
 	</div>
 
-*	The multi-tenant compiler creates a number of artifacts that serve the same purpose as `global.ser`.
 
 Depending on whether or not one of the compilers has been run before, the Magento application consumes the compilation using one of the following classes:
 
