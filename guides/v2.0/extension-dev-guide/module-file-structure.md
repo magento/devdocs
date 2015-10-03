@@ -38,7 +38,7 @@ Additionally, there are folders for configuration and other ancillary functions 
 
 * __Api__&#8212; contains any PHP classes exposed to the API.	
 * __etc__ &#8212; contains configuration files. 
-* __il8n__ &#8212; contains localization files.
+* __i18n__ &#8212; contains localization files.
 * __Plugin__ &#8212; contains any needed plugin files.
 * __view__ &#8212; contains non-object-oriented and non-static view level parts of the module such as design templates, email templates, and layout files.
 
@@ -60,7 +60,7 @@ You can add subfolders inside your module folder as you need them (Block, Contro
 
 Or, you could just add them at once:
 
-    mkdir Api && mkdir Block && mkdir Controller && mkdir etc && mkdir Helper && mkdir il8n && mkdir Model && mkdir view
+    mkdir Api && mkdir Block && mkdir Controller && mkdir etc && mkdir Helper && mkdir i18n && mkdir Model && mkdir view
 
 Make sure you add the `etc` folder; it is required, and is where most of the configuration files, including `module.xml`, are kept.
 
