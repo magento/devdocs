@@ -23,24 +23,19 @@ By the way, if you're new to Magento installation or you don't know what some of
 2.	<a href="{{ site.gdeurl }}install-gde/prereq/prereq-overview.html">Prerequisites</a>
 3.	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Identify your installation path</a>
 
-At any time (before or after installation), you can <a href="{{ site.gdeurl }}install-gde/install/sample-data.html">install optional Magento sample data</a>.
+<h2 id="install-overview-all">Overview of installing, managing, and upgrading Magento</h2>
+The Magento software enables you to install, manage, and upgrade the core software itself and any *component* you installed. A component can be:
 
-After the installation is complete, <a href="{{ site.gdeurl }}install-gde/install/verify.html">verify it</a>.
+*	A module (code that extends the Magento application in some way)
+*	A language package (used to localize your Admin or storefront)
+*	A theme (used to change the look of your Admin or storefront)
+*	A library (common code)
 
-If you encounter issues, <a href="{{ site.gdeurl }}install-gde/trouble/tshoot.html">Troubleshoot the installation</a>.
+You can think of it as a three-step process&mdash;where steps 2 and 3 are interchangeable:
 
-## What if Magento is installed?
+1.	Install the Magento software
+2.	<a href="{{ site.gdeurl }}comp-mgr/compman-start.html">Manage components</a> (install, uninstall, update, enable, or disable)
+3.	<a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">Upgrade</a> the Magento software or components to a newer version
 
-If Magento *is* installed and you want to manage or upgrade components, see the following guides instead:
-
-*	<a href="{{ site.gdeurl" }}comp-mgr/bk-compman-upgrade-guide.html">Component Manager Guide</a>
-
-	A Magento *component* is an extension, language package, or theme. The Component Manager installs, uninstalls, updates, enables, or disables components.
-*	<a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">Upgrade Guide</a>
-
-	Upgrade the Magento software or components.
-
-<div class="bs-callout bs-callout-warning">
-    <p>Because of database changes in the Merchant Beta release (1.0.0-beta), you <em>must</em> uninstall the Magento software and reinstall it. Details are provided in <a href="{{ site.gdeurl }}release-notes/changes_1.0.0-beta.html#1.0.0-beta-changes-schema">the Merchant Beta Release Notes</a>.</p>
-</div>
-
+#### Next step
+We recommend you continue with <a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Your install or upgrade path</a>.
