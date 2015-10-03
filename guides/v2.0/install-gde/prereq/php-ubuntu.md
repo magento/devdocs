@@ -133,11 +133,12 @@ See one of the following sections for more information:
 *	<a href="#instgde-prereq-php55-install-ubuntu14">PHP 5.5 on Ubuntu 14</a>
 *	<a href="#instgde-prereq-php55-install-ubuntu12">PHP 5.5 on Ubuntu 12</a>
 
-<h3 id="instgde-prereq-php55-install-ubuntu14">PHP 5.5 on Ubuntu 14 or Ubuntu 12 14</h3>
-To install PHP 5.5 on Ubuntu 14 or Ubuntu 12 14:
+<h3 id="instgde-prereq-php55-install-ubuntu14">PHP 5.5 on Ubuntu 14</h3>
+To install PHP 5.5 on Ubuntu 14:
 
 1.	Enter the following command:
 
+		apt-get -y update
 		apt-get -y install php5 php5-mhash php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl php5-xsl
 
 2.	Verify the PHP version by entering `php -v`. Messages similar to the following should display:
@@ -149,12 +150,14 @@ To install PHP 5.5 on Ubuntu 14 or Ubuntu 12 14:
 
 3.	<a href="#instgde-prereq-timezone">Set PHP configuration options</a>.
 
-<h3 id="instgde-prereq-php55-install-ubuntu12">PHP 5.5 on Ubuntu 14 or Ubuntu 12</h3>
-1.	Use the following commands from <a href="http://www.dev-metal.com/how-to-setup-latest-version-of-php-5-5-on-ubuntu-12-04-lts/" target="_blank">dev-metal</a>:
+<h3 id="instgde-prereq-php55-install-ubuntu12">PHP 5.5 on Ubuntu 12</h3>
+We can't verify this procedure; if you know how to install PHP 5.5 on Ubuntu 12, please click **Edit this page on GitHub** at the top of this page and let us know.
+
+<!-- 1.	Use the following commands from <a href="http://www.dev-metal.com/how-to-setup-latest-version-of-php-5-5-on-ubuntu-12-04-lts/" target="_blank">dev-metal</a>:
 
 		apt-get -y update
 		add-apt-repository ppa:ondrej/php5
-		apt-get update
+		apt-get -y update
 		apt-get -y install php5 php5-mhash php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl php5-xsl
 
 2.	Verify the PHP version by entering `php -v`. Messages similar to the following should display:
@@ -164,7 +167,7 @@ To install PHP 5.5 on Ubuntu 14 or Ubuntu 12 14:
 		Zend Engine v2.5.0, Copyright (c) 1998-2014 Zend Technologies
     	with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
 
-3.	Set the PHP timezone and memory limit as discussed in the next section.
+3.	Set the PHP configuration options as discussed in the next section. -->
 
 <h2 id="instgde-prereq-timezone">Set PHP configuration options</h2>
 {% include install/php-config.html %}
