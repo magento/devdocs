@@ -168,11 +168,23 @@
 <span class="x">open(..) failed: No such file or directory (2) ../magento2/lib/internal/Magento/Framework/Session/SaveHandler.php on line 74&#39; </span>
 <span class="x">in ../magento2/lib/internal/Magento/Framework/App/ErrorHandler.php:67</span></code></pre></div>
 
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+	<p>This error occurs only in code versions earlier than September 28, 2015. If you installed code dated September 29 or later, this error should not occur.</p>
+	<p>For more information about configuration options for Redis, see <a href="/guides/v2.0/config-guide/redis/config-redis.html">Configure Redis</a>.</p>
+	<p>For more information about specifying Redis using the command-line installer, see the <a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html">installation topic</a> or the <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-deployment.html#instgde-cli-subcommands-configphp">deployment configuration topic</a>.</p></span>
+</div>
+
 <h3 id="solution">Solution:</h3>
 
 <p>This happens when your <code>session.save_handler</code> PHP parameter is set to some another session storage than <code>files</code> (for example, <code>redis</code>, <code>memcached</code>, and so on). This is a known issue we’re working to resolve.</p>
 
-<p>Until a fix is available, as a workaround you can make changes to <code>php.ini</code> discussed in the following sections.</p>
+<p>Solutions:</p>
+
+<ul>
+  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">Upgrade your Magento 2 code</a></li>
+  <li>Use the following workaround with existing code.</li>
+</ul>
 
 <h3 id="locate-phpini">Locate <code>php.ini</code></h3>
 <p>Locate <code>php.ini</code> by entering the following command:</p>
