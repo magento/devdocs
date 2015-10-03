@@ -85,7 +85,7 @@ To install PHP 5.6 or to upgrade from PHP 5.5 on Ubuntu 14:
 		Zend Engine v2.6.0, Copyright (c) 1998-2014 Zend Technologies
 		with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
 
-3.	<a href="#instgde-prereq-timezone">Set the PHP timezone and memory limit</a>.
+3.	<a href="#instgde-prereq-timezone">Set PHP configuration options</a>.
 
 <h2 id="instgde-prereq-php56-install-ubuntu12">PHP 5.6 on Ubuntu 12</h2>
 Before continuing, enter the following command to make sure you're running Apache 2.4:
@@ -124,7 +124,7 @@ To install or upgrade to PHP 5.6 on Ubuntu 12:
 		Zend Engine v2.6.0, Copyright (c) 1998-2014 Zend Technologies
     	with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
 
-3.	<a href="#instgde-prereq-timezone">Set the PHP timezone and memory limit</a>.
+3.	<a href="#instgde-prereq-timezone">Set PHP configuration options</a>.
 
 <h2 id="instgde-prereq-php55-install-ubuntu">PHP 5.5 on Ubuntu 14 or Ubuntu 12</h2>
 
@@ -147,7 +147,7 @@ To install PHP 5.5 on Ubuntu 14 or Ubuntu 12 14:
 		Zend Engine v2.5.0, Copyright (c) 1998-2014 Zend Technologies
 	    with Zend OPcache v7.0.3, Copyright (c) 1999-2014, by Zend Technologies
 
-3.	<a href="#instgde-prereq-timezone">Set the PHP timezone and memory limit</a>.
+3.	<a href="#instgde-prereq-timezone">Set PHP configuration options</a>.
 
 <h3 id="instgde-prereq-php55-install-ubuntu12">PHP 5.5 on Ubuntu 14 or Ubuntu 12</h3>
 1.	Use the following commands from <a href="http://www.dev-metal.com/how-to-setup-latest-version-of-php-5-5-on-ubuntu-12-04-lts/" target="_blank">dev-metal</a>:
