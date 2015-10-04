@@ -3,7 +3,7 @@ layout: default
 group: config-guide
 subgroup: Solr
 title: Install and configure Solr
-menu_title: Install and configure Solr
+menu_title: Install and configure Solr (Enterprise Edition only)
 menu_order: 1
 menu_node: parent
 github_link: config-topic/solr/ht_magento2-solr.md
@@ -25,7 +25,7 @@ github_link: config-topic/solr/ht_magento2-solr.md
 <!-- *	<a href="#related">Related information</a> -->
 
 <h2 id="overview">Overview</h2>
-Magento Enterprise Edition (EE) versions 2.x enable you to configure either of the following as a catalog search engine:
+Magento Enterprise Edition (EE) version 2.x enables you to configure either of the following as a catalog search engine:
 
 *	Full text search using the MySQL database (the default)
 *	The <a href="http://lucene.apache.org/solr/" target="_blank">Apache Solr search engine</a>
@@ -123,7 +123,7 @@ The following table provides a quick comparison between Magento with the default
 <h3 id="overview-solr">More information about the Solr solution</h3>
 Solr runs as a standalone full-text search server in a servlet container such as Jetty (which is used by the Solr example configuration) and Tomcat.
 
-Solr uses the Lucene Java search library for full-text indexing and search. Your applications interact with Solr using <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.5" target="_blank">HTTP POST</a> (in JSON, <a href="http://wiki.apache.org/solr/UpdateXmlMessages" target="_blank">XML</a>, CSV, or binary formats) to index documents and using <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.3" target="_blank">HTTP GET</a> to retrieve search results back as <a href="http://wiki.apache.org/solr/SolJSON?highlight=%28json%29%7C%28solr%29" target="_blank">JSON</a>, XML, or a variety of other formats (Python, Ruby, <a href="http://wiki.apache.org/solr/SolPHP?highlight=%28php%29%7C%28solr%29" target="_blank">PHP</a>, <a href="http://wiki.apache.org/solr/CSVResponseWriter?highlight=%28solr%29%7C%28csv%29" target="_blank">CSV</a>, binary, and so on). If you're a programmer, try the <a href="http://lucene.apache.org/solr/api-3_6_2/doc-files/tutorial.html" target="_blank">Solr tutorial</a>. Whether you're a programmer or not, read the <a href="http://wiki.apache.org/solr/FAQ" target="_blank">Solr FAQ</a>.
+Solr uses the Lucene Java search library for full-text indexing and search. Your applications interact with Solr using <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.5" target="_blank">HTTP POST</a> (in JSON, <a href="http://wiki.apache.org/solr/UpdateXmlMessages" target="_blank">XML</a>, CSV, or binary formats) to index documents and using <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.3" target="_blank">HTTP GET</a> to retrieve search results back as <a href="http://wiki.apache.org/solr/SolJSON?highlight=%28json%29%7C%28solr%29" target="_blank">JSON</a>, XML, or a variety of other formats (Python, Ruby, <a href="http://wiki.apache.org/solr/SolPHP?highlight=%28php%29%7C%28solr%29" target="_blank">PHP</a>, <a href="http://wiki.apache.org/solr/CSVResponseWriter?highlight=%28solr%29%7C%28csv%29" target="_blank">CSV</a>, binary, and so on). If you're a programmer, try the <a href="https://lucene.apache.org/solr/4_10_0/tutorial.html" target="_blank">Solr tutorial</a>. Whether you're a programmer or not, read the <a href="http://wiki.apache.org/solr/FAQ" target="_blank">Solr FAQ</a>.
 
 No programming is required to implement Solr as discussed in this topic.
 
@@ -153,7 +153,9 @@ The tasks discussed in this topic require the following:
     java -version
 
 If the message <code>java: command not found</code> displays, you must install the Java SDK as discussed in the next section. 
-*	Tomcat or Jetty servlet container. This topic discusses using Jetty, which comes with Solr. Consult another resource, such as the <a href="http://wiki.apache.org/solr/SolrTomcat" target="_blank">Solr Wiki</a>, to use Tomcat with Solr.<br />
+
+This topic discusses using Jetty, which comes with Solr. Consult another resource, such as the <a href="http://wiki.apache.org/solr/SolrTomcat" target="_blank">Solr Wiki</a>, to use Tomcat with Solr.
+
 To see if you're currently running Jetty and to check the version, see <a href="https://wiki.eclipse.org/Jetty/FAQ#How_do_I_know_which_version_of_Jetty_I_am_running.3F" target="_blank">How to find out the version of Jetty</a>.
 
 <h2 id="install-prereq-software">Installing prerequisite software</h2>
@@ -194,7 +196,7 @@ The Apache Solr package installs both Solr and Jetty. If Jetty is already instal
 
 To install Solr and Jetty:
 
-1.  As a user with <code>root</code> privileges, use <code>wget</code> or a similar command to download the latest version of Solr 4 to an empty directory such as <code>/etc/solr</code>. 
+1.  As a user with `root` privileges, use `wget` or a similar command to download the latest version of Solr 4 to an empty directory such as `/opt/solr`. 
 
     An example follows.
 
@@ -225,7 +227,7 @@ To install Solr and Jetty:
 The following topics discuss how to configure Solr to work with Magento EE:
 
 * <a href="#config-solr-copy-config-files">Copy the Magento Solr configuration and start Solr</a>
-* <a href="#config-solr-magento">Configuring Magento to Work With Solr</a>
+* <a href="#config-solr-magento">Configure Magento to work with Solr</a>
 
 <h3 id="config-solr-copy-config-files">Copy the Magento Solr configuration and start Solr</h3>
 Magento comes packaged with a sample Solr configuration you can use and customize. To get started, you'll copy the Magento configuration to Solr, replacing any existing files. After that you can start Solr and begin configuring Magento to work with it.
@@ -248,7 +250,7 @@ For example, if Solr is installed in <code>/etc/solr/solr-4.10.4</code> and Mage
     cp -R /var/www/html/magento2ee/app/code/Magento/Solr/conf/* .
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>If you're prompted to overwrite files, try the command <code>\cp -R [your Magento install dir]/lib/Apache/Solr/conf/* .</code></p>
+  <p>If you're prompted to overwrite files, try the command <code>\cp -R &lt;your Magento EE install dir>/app/code/Magento/Solr/conf/* .</code></p>
 </div>
 
 #### Task for Tomcat 6 with CentOS only
@@ -268,7 +270,7 @@ As a user with <code>root</code> privileges, enter the following command to star
     java -jar <your Solr install dir>/example/start.jar
 
 <div class="bs-callout bs-callout-warning">
-    <p>This method for starting Solr is for convenience and testing purposes only. In a production environment, you should start and stop Solr using a script as discussed in <a href="#solr-script">Script Solr startup and shutdown</a>.</p>
+    <p>This method for starting Solr is for convenience and testing purposes only. <!-- In a production environment, you should start and stop Solr using a script as discussed in <a href="#solr-script">Script Solr startup and shutdown</a>. --></p>
 </div>
 
 1.  Enter the following URL in your browser's location or address bar to start the Solr management console:
@@ -288,7 +290,7 @@ As a user with <code>root</code> privileges, enter the following command to star
     * **name** field: Enter `magento2`
     * **instanceDir** field: Enter `magento2/conf`
 
-    Leave all other fields at their default values or see TBD for more information about changing them.
+    Leave all other fields at their default values or see <a href="https://cwiki.apache.org/confluence/display/solr/Overview+of+the+Solr+Admin+UI" target="_blank">Solr documentation</a> for more information about changing them.
 5.  Click **Add Core**.
 
 <h3 id="config-solr-magento">Configure Magento to work with Solr</h3>
@@ -301,10 +303,9 @@ To configure Magento to work with Solr:
 3.  In the right pane, expand <strong>Catalog Search</strong>.
 4.  The following table shows the minimum amount of information to enter to test the connection to your Solr search engine. Leave all other values at their defaults.<br />
 <table>
-<!-- <colgroup><col width="200">
-<col width="300">
-</colgroup> --><tbody>
-<!-- <tr> -->
+<col width="30%">
+<col width="70%">
+<tbody>
   <tr><th>Option</th>
   <th>Description</th>
 </tr>
@@ -336,7 +337,7 @@ To configure Magento to work with Solr:
   <td>Solr Server Path</td>
   <td>Specifies the path and name of the Solr web application. The path used by the example Solr configuration is <code>solr/magento2</code>.
 
-  If you customized Solr, the value you enter in this field must exactly match the value of <code>webapp_name=&lt;value> in <code>&lt;your Solr install dir]/example/solr/conf/scripts.conf</code>.</code>
+  If you customized Solr, the value you enter in this field must exactly match the value of <code>webapp_name=&lt;value></code> in <code>&lt;your Solr install dir>/example/solr/magento2/conf/conf/scripts.conf</code>.
 </td>
 </tr>
 </tbody>
@@ -392,9 +393,13 @@ To refresh the cache using the Admin:
 2.  Select the check box next to <strong>Page Cache</strong>. 
 3.  From the <strong>Actions</strong> list in the upper right, click <strong>Refresh</strong>.<br />
     The following figure shows an example.<br />
-    <img src="{{ site.baseurl }}common/images/solr_refresh-cache.png">
+    <img src="{{ site.baseurl }}common/images/solr_refresh-cache.png" width="500px">
 
 To clean the cache using the command line, use the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean">`magento cache:clean`</a> command.
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Unlike the cache, indexers are updated by a cron job. Make sure <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cron.html">cron is enabled</a> before you start using Solr.</p>
+</div>
 
 <h2 id="next"></a>Next steps</h2>
 For additional information about Solr, see the following:
