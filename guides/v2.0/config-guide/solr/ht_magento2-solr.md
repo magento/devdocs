@@ -17,7 +17,7 @@ github_link: config-topic/solr/ht_magento2-solr.md
 *	<a href="#overview">Overview</a>
 <!-- *	<a href="#simple-demo">Simple comparison of Solr and MySQL search engines</a> -->
 *	<a href="#prereq">Prerequisites</a>
-*	<a href="#install-prereq-software">Installing prerequisite software</a>
+*	<a href="#install-prereq-software">Install prerequisite software</a>
 <!-- *	<a href="#solr-config-tweaks">Basic Solr configuration</a> -->
 *	<a href="#solr-reindex">Reindexing catalog search and refreshing the full page cache</a>
 <!-- *	<a href="#solr-script">Script Solr startup and shutdown</a> -->
@@ -159,8 +159,8 @@ To see if you're currently running Jetty and to check the version, see <a href="
 <h2 id="install-prereq-software">Installing prerequisite software</h2>
 The following sections discuss how to install the prerequisite software: 
 
-*	<a href="#install-prereq-java">Installing Java</a>
-*	<a href="#install-prereq-solr">Installing Solr 4 and Jetty</a>
+*	<a href="#install-prereq-java">Install Java</a>
+*	<a href="#install-prereq-solr">Install Solr 4 and Jetty</a>
 
 <h3 id="install-prereq-java">Install the latest Java JDK</h3>
 See one of the following sections:
@@ -221,13 +221,13 @@ To install Solr and Jetty:
 
 3.  Continue with the next section.
 
-<h2 id="config-solr">Configuring Solr to Work With Magento</h2>
+<h2 id="config-solr">Configure Solr to work with Magento</h2>
 The following topics discuss how to configure Solr to work with Magento EE:
 
-* <a href="#config-solr-copy-config-files">Copying the Magento Solr Configuration and Starting Solr</a>
+* <a href="#config-solr-copy-config-files">Copy the Magento Solr configuration and start Solr</a>
 * <a href="#config-solr-magento">Configuring Magento to Work With Solr</a>
 
-<h3 id="config-solr-copy-config-files">Copying the Magento Solr Configuration and Starting Solr</h3>
+<h3 id="config-solr-copy-config-files">Copy the Magento Solr configuration and start Solr</h3>
 Magento comes packaged with a sample Solr configuration you can use and customize. To get started, you'll copy the Magento configuration to Solr, replacing any existing files. After that you can start Solr and begin configuring Magento to work with it.
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -240,12 +240,12 @@ As a user with <code>root</code> privileges, enter the following commands in the
     mkdir -p magento2/conf magento2/data
     cd magento2/conf
     cp -R ../../collection1/conf .
-    cp <your Magento EE install dir>/app/code/Magento/Solr/conf/* .
+    cp -R <your Magento EE install dir>/app/code/Magento/Solr/conf/* .
 
 For example, if Solr is installed in <code>/etc/solr/solr-4.10.4</code> and Magento EE is installed in <code>/var/www/magento/html/magento2ee</code>, enter:
 
-    cd /etc/solr/solr-4.10.4/solr/example/solr/magento/conf
-    cp /var/www/html/magento2ee/app/code/Magento/Solr/conf/* .
+    cd /etc/solr/solr-4.10.4/solr/example/solr/magento2/conf
+    cp -R /var/www/html/magento2ee/app/code/Magento/Solr/conf/* .
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>If you're prompted to overwrite files, try the command <code>\cp -R [your Magento install dir]/lib/Apache/Solr/conf/* .</code></p>
@@ -273,11 +273,15 @@ As a user with <code>root</code> privileges, enter the following command to star
 
 1.  Enter the following URL in your browser's location or address bar to start the Solr management console:
 
-      http://<solr host or ip>:8983/solr
+        http://<solr host or ip>:8983/solr
 
 2.  In the left navigation bar, click **Core Admin**.
 
 3.  Click **Add Core**.
+
+    The following figure shows an example.
+
+    <img src="{{ site.baseurl }}common/images/solr_admin_add-core.png" alt="Add a new Solr core">
 
 4.  Enter the following information:
 
@@ -287,7 +291,7 @@ As a user with <code>root</code> privileges, enter the following command to star
     Leave all other fields at their default values or see TBD for more information about changing them.
 5.  Click **Add Core**.
 
-<h3 id="config-solr-magento">Configuring Magento to Work With Solr</h3>
+<h3 id="config-solr-magento">Configure Magento to work with Solr</h3>
 This section discusses how to configure Magento EE to use the Solr search engine.
 
 To configure Magento to work with Solr:
@@ -330,9 +334,7 @@ To configure Magento to work with Solr:
 </tr>
 <tr>
   <td>Solr Server Path</td>
-  <td><!-- Unless you customized the Solr web application or changed its deployment path, leave the value of this field at its default.
- -->
-  Specifies the path and name of the Solr web application. The path used by the example Solr configuration is <code>magento2/solr</code>.
+  <td>Specifies the path and name of the Solr web application. The path used by the example Solr configuration is <code>solr/magento2</code>.
 
   If you customized Solr, the value you enter in this field must exactly match the value of <code>webapp_name=&lt;value> in <code>&lt;your Solr install dir]/example/solr/conf/scripts.conf</code>.</code>
 </td>
@@ -341,25 +343,26 @@ To configure Magento to work with Solr:
 </table>
 
 The following figure shows an example.
-<img src="{{ site.baseurl }}#" alt="Configure Magento to use Solr">
+<img src="{{ site.baseurl }}common/images/solr_config-admin.png" alt="Configure Magento to use Solr">
 
-*	Click <strong>Test Connection</strong>.
+Click <strong>Test Connection</strong>.
+
 The button changes as follows.
 
 <table>
-<!-- <col width="100">
-<col width="300"> -->
+<col width="20%">
+<col width="80%">
 <tbody>
 <tr>
   <th>Button state</th>
   <th>Meaning</th>
 </tr>
 <tr>
-  <td><img src="{{ site.baseurl }}#" width="97px" height="17px"></td>
+  <td><img src="{{ site.baseurl }}common/images/solr_test-success.png" width="97px" height="17px"></td>
   <td>The test connection succeeded. Click <strong>Save Config</strong> and continue with the next section.</td>
 </tr>
 <tr>
- <td><img src="{{ site.baseurl }}#" width="116px" height="16px"></td>
+ <td><img src="{{ site.baseurl }}common/images/solr_test-fail.png" width="116px" height="16px"></td>
  <td><p>The test connection failed. Try the following:</p>
   <ul><li>Examine the command window in which you started Solr for stack traces and exceptions. You must resolve those before you continue.<br />
   In particular, make sure you started Solr as a user with <code>root</code> privileges.</li>
@@ -389,11 +392,11 @@ To refresh the cache using the Admin:
 2.  Select the check box next to <strong>Page Cache</strong>. 
 3.  From the <strong>Actions</strong> list in the upper right, click <strong>Refresh</strong>.<br />
     The following figure shows an example.<br />
-    <img src="{{ site.baseurl }}###" height="188px" width="600px">
+    <img src="{{ site.baseurl }}common/images/solr_refresh-cache.png">
 
 To clean the cache using the command line, use the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean">`magento cache:clean`</a> command.
 
-<h2 id="next"></a>Next Steps</h2>
+<h2 id="next"></a>Next steps</h2>
 For additional information about Solr, see the following:
 
 *	For more information about performance, see "Using Solr as a Search Engine" in <a href="http://info.magento.com/rs/magentocommerce/images/Magento_PerformanceWhitepaper-EEv1-9.1.pdf" target="_blank">Maximizing Performance and Scalability with Magento Enterprise Edition</a>
