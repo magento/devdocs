@@ -15,14 +15,14 @@ github_link: config-topic/solr/ht_magento2-solr.md
 #### Contents
 
 *	<a href="#overview">Overview</a>
-*	<a href="#simple-demo">Simple comparison of Solr and MySQL search engines</a>
+<!-- *	<a href="#simple-demo">Simple comparison of Solr and MySQL search engines</a> -->
 *	<a href="#prereq">Prerequisites</a>
 *	<a href="#install-prereq-software">Installing prerequisite software</a>
-*	<a href="#solr-config-tweaks">Basic Solr configuration</a>
-*	<a href="#solr-reindex">Reindexing catalog search and refreshing the fll page cache</a>
-*	<a href="#solr-script">Script Solr startup and shutdown</a>
-*	<a href="#next">Next steps</a>
-*	<a href="#related">Related information</a>
+<!-- *	<a href="#solr-config-tweaks">Basic Solr configuration</a> -->
+*	<a href="#solr-reindex">Reindexing catalog search and refreshing the full page cache</a>
+<!-- *	<a href="#solr-script">Script Solr startup and shutdown</a> -->
+<!-- *	<a href="#next">Next steps</a> -->
+<!-- *	<a href="#related">Related information</a> -->
 
 <h2 id="overview">Overview</h2>
 Magento Enterprise Edition (EE) versions 2.x enable you to configure either of the following as a catalog search engine:
@@ -118,7 +118,7 @@ The following table provides a quick comparison between Magento with the default
 </tr>
 </tbody>
 </table>
-&dagger;&mdash;"Like" searching is supported by MySQL full text search but not by Solr. Defined by the <a href="http://doc4dev.net/doc/Magento/1/class-Mage_CatalogSearch_Model_Resource_Fulltext.html" target="_blank"><code>Mage_CatalogSearch_Model_Resource_Fulltext::prepareResult()</code></a> class, like searching joins each term in your search using LIKE statements combined by OR. Like searching is best used in stores that have simple products where users search for specific terms.
+&dagger;&mdash;"Like" searching is supported by MySQL full text search but not by Solr. <!-- Defined by the <a href="http://doc4dev.net/doc/Magento/1/class-Mage_CatalogSearch_Model_Resource_Fulltext.html" target="_blank"><code>Mage_CatalogSearch_Model_Resource_Fulltext::prepareResult()</code></a> class, like searching joins each term in your search using LIKE statements combined by OR. Like searching is best used in stores that have simple products where users search for specific terms. -->
 
 <h3 id="overview-solr">More information about the Solr solution</h3>
 Solr runs as a standalone full-text search server in a servlet container such as Jetty (which is used by the Solr example configuration) and Tomcat.
@@ -141,32 +141,6 @@ Some reasons to use Solr with Magento include:
 *	Magento ships with a sample Solr configuration that enables you to provide users with a powerful search engine without your needing to customize any code.
 *	You get better performance of search, catalog views, and <a href="http://www.magentocommerce.com/knowledge-base/entry/how-does-layered-navigation-work" target="_blank">layered navigation</a>.
 *	When the system is under load, Solr avoids frequent updates of the MySQL <code>catalogsearch_fulltext</code> table and alleviates issues with database table locks.
-<!-- The options discussed in this topic start with you reindexing catalog search index as follows:
-
-1.  Make a change to a product&mdash;anything, including adding products, removing products, adding or removing attributes, changing prices, descriptions, and so on.
-2.  In the Admin, click <strong>System</strong> > <strong>Index Management</strong>.
-3.  Select the <strong>Catalog Search Index</strong> check box.
-4.  From the <strong>Actions</strong> list, click <strong>Reindex Data</strong>.
-5.  Click <strong>Submit</strong>.
-
-<h2 id="simple-demo">Simple comparison of Solr and MySQL search engines</h2>
-Following is a simple comparison of the default MySQL full-text search and Solr search using Magento EE 2.0 and Solr 4.TBD. Magento EE catalog content is provided by sample data you can download from Magento.
-
-Among the many options Solr gives you is the option to <em>suggest</em> names of products in the event the user enters an incomplete or incorrect search term in your Magento store's <strong>Search</strong> field.
-
-
-<h4 id="overview-example-default"></a>Default MySQL Full-Text Search Using an Incorrect Search Term</h4>
-Using the default MySQL full-text search, if a user enters an incorrect search term (such as <code>shirrt</code> instead of <code>shirt</code>, no results display as the following figure shows.
-
-<img src="{{ site.baseurl }}common/images/TBD" width="650px" height="469px">
-
-<h4 id="overview-example-solr"></a>Solr Search Using an Incorrect Search Term</h4>
-Using Solr, if a user enters an incorrect search term, suggestions display as the following figure shows.
-
-<img src="{{ site.baseurl }}common/images/TBD" width="650px" height="469px">
-In addition, if a user enters an incomplete search term, Magento provides dictionary-based suggestions as the following figure shows.
-
-<img src="{{ site.baseurl }}common/images/TBD" width="650px" height="469px">
 
 <h2 id="prereq">Prerequisites</h2>
 The tasks discussed in this topic require the following:
@@ -181,7 +155,6 @@ The tasks discussed in this topic require the following:
 If the message <code>java: command not found</code> displays, you must install the Java SDK as discussed in the next section. 
 *	Tomcat or Jetty servlet container. This topic discusses using Jetty, which comes with Solr. Consult another resource, such as the <a href="http://wiki.apache.org/solr/SolrTomcat" target="_blank">Solr Wiki</a>, to use Tomcat with Solr.<br />
 To see if you're currently running Jetty and to check the version, see <a href="https://wiki.eclipse.org/Jetty/FAQ#How_do_I_know_which_version_of_Jetty_I_am_running.3F" target="_blank">How to find out the version of Jetty</a>.
-
 
 <h2 id="install-prereq-software">Installing prerequisite software</h2>
 The following sections discuss how to install the prerequisite software: 
@@ -298,24 +271,23 @@ As a user with <code>root</code> privileges, enter the following command to star
     <p>This method for starting Solr is for convenience and testing purposes only. In a production environment, you should start and stop Solr using a script as discussed in <a href="#solr-script">Script Solr startup and shutdown</a>.</p>
 </div>
 
-Enter the following URL in your browser's location or address bar to start the Solr management console:
+1.  Enter the following URL in your browser's location or address bar to start the Solr management console:
 
-  http://<solr host or ip>:8983/solr
+      http://<solr host or ip>:8983/solr
 
-In the left navigation bar, click **Core Admin**.
+2.  In the left navigation bar, click **Core Admin**.
 
-Click **Add Core**.
+3.  Click **Add Core**.
 
-Enter the following information:
+4.  Enter the following information:
 
-* **name** field: Enter `magento2`
-* **instanceDir** field: Enter `magento2/conf`
+    * **name** field: Enter `magento2`
+    * **instanceDir** field: Enter `magento2/conf`
 
-Leave all other fields at their default values or see TBD for more information about changing them.
+    Leave all other fields at their default values or see TBD for more information about changing them.
+5.  Click **Add Core**.
 
-Click **Add Core**.
-
-<h3 id="config-solr-magento"></a>Configuring Magento to Work With Solr</h3>
+<h3 id="config-solr-magento">Configuring Magento to Work With Solr</h3>
 This section discusses how to configure Magento EE to use the Solr search engine.
 
 To configure Magento to work with Solr:
@@ -365,294 +337,61 @@ To configure Magento to work with Solr:
   If you customized Solr, the value you enter in this field must exactly match the value of <code>webapp_name=&lt;value> in <code>&lt;your Solr install dir]/example/solr/conf/scripts.conf</code>.</code>
 </td>
 </tr>
-<tr>
-  <td>Indexation Mode</td>
-  <td>Specifies how Solr processes indexed content.
-
-  From the <strong>Indexation Mode</strong> list, click one of the following:
-
-  *	<strong>Final commit</strong> (<em>Default, recommended</em>): After you reindex the content search index, Solr starts processing content. Users see results from content that was searchable before indexing started and the Magento store remains available for other requests.
-
-  Final commit has much better performance then partial commit, and does not require any additional Solr configuration as does engine autocommit.
-  
-  Indexing begins after all unneeded data is removed and new data is added. At that point, users see results from newly indexed data immediately.
-
-  *	<strong>Partial commit</strong>: All content is removed from Solr after you reindex the content search index and users at that time see no search results. As content is gradually reindexed, users see only the results of content that has been indexed.
-  *	<strong>Engine autocommit</strong>: Content is put in the index queue but is not committed. You must configure Solr to commit at regular intervals (for example, every 5 minutes) or when a certain number of uncommitted items is reached.
-
-  For more information, see the discussion of the <code>&lt;autoCommit&gt;</code> XML element in the <a href="http://wiki.apache.org/solr/SolrConfigXml" target="_blank"><code>solrconfig.xml</code> section of the Solr Wiki</a>.
-
-    
-  </td>
-</tr>
 </tbody>
-</table><br />
-The following figure shows an example.<br />
+</table>
+
+The following figure shows an example.
 <img src="{{ site.baseurl }}#" alt="Configure Magento to use Solr">
-*	Click <strong>Test Connection</strong>.<br />
-The button changes as follows.<br />
+
+*	Click <strong>Test Connection</strong>.
+The button changes as follows.
+
 <table>
-<col width="100">
-<col width="300">
+<!-- <col width="100">
+<col width="300"> -->
 <tbody>
 <tr>
   <th>Button state</th>
   <th>Meaning</th>
 </tr>
 <tr>
-  <td><img src="{{ site.baseurl }}common/images/m1x/ht_magento-solr_test-connect_succeed.png" width="97px" height="17px"></td>
+  <td><img src="{{ site.baseurl }}#" width="97px" height="17px"></td>
   <td>The test connection succeeded. Click <strong>Save Config</strong> and continue with the next section.</td>
 </tr>
 <tr>
- <td><img src="{{ site.baseurl }}common/images/m1x/ht_magento-solr_test-connect_fail.png" width="116px" height="16px"></td>
- <td>The test connection failed. Try the following:
-  *	Examine the command window in which you started Solr for stack traces and exceptions. You must resolve those before you continue.<br />
-  In particular, make sure you started Solr as a user with <code>root</code> privileges.
-  *	Verify that <a href="http://php.net/manual/en/filesystem.configuration.php" target="_blank"><code>allow_url_fopen = On</code></a> is present in your server's <code>php.ini</code>.<br />
-  If you are not sure where <code>php.ini</code> is located, you can <a href="http://kb.mediatemple.net/questions/764/How+can+I+create+a+phpinfo.php+page%3F#gs" target="_blank">create a <code>phpinfo.php</code> page</a> to locate it.
-  *	Verify the value of the <strong>Solr Server Hostname</strong> field. Make sure the server is available. You can try the server's IP address instead.
-  *	Use the command <code>netstat -an | grep <em>listen-port</em></code> command to verify that the port specified in the <strong>Solr Server Port</strong> field is not being used by another process.<br />
+ <td><img src="{{ site.baseurl }}#" width="116px" height="16px"></td>
+ <td><p>The test connection failed. Try the following:</p>
+  <ul><li>Examine the command window in which you started Solr for stack traces and exceptions. You must resolve those before you continue.<br />
+  In particular, make sure you started Solr as a user with <code>root</code> privileges.</li>
+  <li>Verify that <a href="http://php.net/manual/en/filesystem.configuration.php" target="_blank"><code>allow_url_fopen = On</code></a> is present in your server's <code>php.ini</code>.<br />
+  If you are not sure where <code>php.ini</code> is located, you can <a href="http://kb.mediatemple.net/questions/764/How+can+I+create+a+phpinfo.php+page%3F#gs" target="_blank">create a <code>phpinfo.php</code> page</a> to locate it.</li>
+  <li>Verify the value of the <strong>Solr Server Hostname</strong> field. Make sure the server is available. You can try the server's IP address instead.</li>
+  <li>Use the command <code>netstat -an | grep <em>listen-port</em></code> command to verify that the port specified in the <strong>Solr Server Port</strong> field is not being used by another process.<br />
   For example, to see if Solr is running on its default port, use the following command:
   <pre>netstat -an | grep 8983</pre>
-  If Solr is running on port 8983, it displays similar to the following:<br />
-  <code>tcp        0      0 :::8983            :::*          LISTEN</code>
-  *	If Solr is installed on a remote machine, use the <code>ping</code> command to verify that machine is reachable from your Magento instance.
-  *	If SELinux is enabled, make sure the Solr servlet container's listen port is available; otherwise, Magento cannot communicate with the servlet container. For example, you can consult the <a href="http://wiki.centos.org/HowTos/SELinux" target="_blank">SELinux Centos wiki</a>.
+  If Solr is running on port 8983, it displays similar to the following:
+  <pre>tcp        0      0 :::8983            :::*          LISTEN</pre></li>
+  <li>If Solr is installed on a remote machine, use the <code>ping</code> command to verify that machine is reachable from your Magento server.</li>
+  <li>If SELinux is enabled, make sure the Solr servlet container's listen port is available; otherwise, Magento cannot communicate with the servlet container. For example, you can consult the <a href="http://wiki.centos.org/HowTos/SELinux" target="_blank">SELinux Centos wiki</a>.</li></ul>
   </td>
 </tr>
 </tbody>
 </table>
-*	Only after the test connection succeeds, click <strong>Save Config</strong> and continue with the next section.
-</ol>
 
-<h2 id="solr-config-tweaks"></a>Basic Solr configuration</h2>
-This section discusses how to configure Magento to work with Solr using options in the Admin. Although additional Solr customization is possible, it is beyond the scope of this topic.
+Only after the test connection succeeds, click <strong>Save Config</strong> and continue with the next section.
 
-<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Customize the Solr search engine at your own risk. Magento supports only the options displayed in the Admin. Customizing the Solr engine itself, while potentially useful, can cause issues with Magento. If you encounter problems with your customizations, do not contact Magento Support; instead, consult the resources available from the <a href="http://wiki.apache.org/solr/" target="_blank">Apache Solr Wiki</a>.</span></div>
-To configure Magento to work with Solr:
+<h2 id="solr-reindex">Reindexing catalog search and refreshing the full page cache</h2>
+After you change the Solr configuration, you must reindex the catalog search index and refresh the full page using the Admin or command line.
 
-<ol>*	Start the Magento Admin and log in as an administrator.
-*	Click <strong>System</strong> > <strong>Configuration</strong>.
-*	In the left navigation bar, under the CATALOG group, click <strong>Catalog</strong> > <strong>Catalog Search</strong>.
-*	The following table shows the minimum amount of information to enter to test the connection to your Solr search engine. Leave all other values at their defaults.<br />
-<table>
-<col width="200">
-<col width="300">
-<tbody>
-<tr>
-  <th>Option</th>
-  <th>Description</th>
-</tr>
-<tr>
- <td>Minimal Query Length</td>
- <td>Enter the minimum number of characters permitted for a catalog search.</font>
-</td>
-</tr>
-<tr>
- <td>Maximum Query Length</td>
- <td>Enter the maximum number of characters permitted for a catalog search.</td>
-</tr>
-<tr>
- <td>Search Engine<br />
-  Solr Server Hostname<br />
-  Solr Server Port<br />
-  Solr Server Username<br />
-  Solr Server Password<br />
-  Solr Server Timeout<br />
-  Solr Server Path<br />
-  Indexation Mode  
-  </td>
- <td>Discussed in <a href="#config-solr">Configuring Solr to Work With Magento</a>.</td>
-</tr>
-<tr>
- <td>Enable Search Suggestions</td>
- <td><em>Suggestions</em> are the native Solr mechanism of advising users in the event they enter incomplete or incorrect user input. Suggestions, when enabled, are automatically provided as part of any search request.
+To refresh the cache using the Admin:
 
-  Solr completes incomplete or incorrect input using a dictionary that is based on the main index (and can be customized using configuration files to use any other arbitrary dictionary). Suggestions display with default text "Did you mean:" in the search results page if needed.
+1.  In the Admin, click <strong>System</strong> > <strong>Cache Management</strong>.
+2.  Select the check box next to <strong>Page Cache</strong>. 
+3.  From the <strong>Actions</strong> list in the upper right, click <strong>Refresh</strong>.<br />
+    The following figure shows an example.<br />
+    <img src="{{ site.baseurl }}###" height="188px" width="600px">
 
-  <strong>Notes</strong>:
-  *	Search suggestions are not the same as AJAX hints.
-  *	Enabling suggestions negatively affects performance because they result in more complex queries to Solr.
-</td>
-</tr>
-<tr>
- <td>Search Suggestions Count</td>
- <td>Enter the maximum number of suggestions to return.</td>
-</tr>
-<tr>
- <td>Show Results Count for Each Suggestion</td>
- <td>The default option, <strong>No</strong>, displays only the suggestion and not the number of results for each suggestion.
-
-  Click <strong>Yes</strong> to display the number of results for each suggestion.
-</td>
-</tr>
-<tr>
- <td>Enable Search Recommendations</td>
- <td><em>Recommendations</em> display terms related to a requested word or phrase on the search results page.
-
-  This functionality is not based on third party engine functionality, but is implemented as part of the <code>Enterprise_Search</code> module and can be shown with the Solr search suggestions block.
-
-  By default, Magento uses the <code>Enterprise_Search_Model_Adapter_HttpStream</code> module for recommendations. If you install the <a href="http://pecl.php.net/package/solr" target="_blank">Apache Solr PHP extension</a>, Magento automatically uses the <code>Enterprise_Search_Model_Adapter_PhpExtension</code> adapter instead. Both adapters function in the same way with no difference in performance. However, the <code>PhpExtension</code> adapter is not tested by Magento so you must thoroughly test any modifications you make to it before deploying it in a production environment.
-
-<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Enabling recommendations negatively affects performance because they result in more complex queries to Solr and more database calls.</div>
-  </td>
-</tr>
-<tr>
- <td>Search Recommendations Count</td>
- <td>Enter the maximum number of recommendations to return.</td>
-</tr>
-<tr>
- <td>Show Results Count for Each Recommendation</td>
- <td>The default option, <strong>No</strong>, displays only the recommendation and not the number of results for each recommendation.
-
-  Click <strong>Yes</strong> to display the number of results for each recommendation.
-</td>
-</tr>
-<tr>
- <td>Enable Solr Engine for Catalog Navigation</td>
- <td>Click <strong>Yes</strong> (the default) to use Solr to enable <a href="http://www.magentocommerce.com/knowledge-base/entry/how-does-layered-navigation-work" target="_blank">layered navigation</a> in the category view.
-
-  Click <strong>No</strong> to use the database for layered navigation in the category view.
-</td>
-</tr>
-</tbody>
-</table></ol>
-
-<h2 id="solr-reindex">Reindexing catalog search and refreshing the fll page cache</h2>
-After you change the Solr configuration, you must reindex the catalog search index and refresh the full page cache as follows:
-
-<ol>*	In the Admin, click <strong>System</strong> > <strong>Cache Management</strong>.
-*	Select the check box next to <strong>Page Cache</strong>. 
-*	From the <strong>Actions</strong> list in the upper right, click <strong>Refresh</strong>.<br />
-The following figure shows an example.<br />
-<img src="{{ site.baseurl }}common/images/m1x/ht_magento-solr_refresh-fpc.png" height="188px" width="600px">
-*	To update the catalog search index, open a command prompt window.
-*	Change to the <code>shell</code> subdirectory of your Magento installation directory.<br />
-For example, on CentOS:
-<pre>cd /var/www/html/magento/shell</pre>
-*	Enter the following command:
-<pre>php indexer.php --reindex catalogsearch_fulltext</code>
-</ol>
-
-<h2 id="solr-script"></a>Script Solr startup and shutdown</h2>
-In a production environment, you should start and stop Solr using a script.
-
-<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: You must perform all tasks discussed in this section as a user with <code>root</code> privileges.</div>
-Create a script named <code>/etc/init.d/solr</code> with options similar to the following:
-
-<pre>#!/bin/sh
- 
-#Starts, stops, and restarts Apache Solr.
-#chkconfig: 35 92 08
-#description: Starts and stops Apache Solr
- 
-SOLR_DIR="[your Solr install dir]"
-JAVA_OPTIONS="-Xmx1024m -DSTOP.PORT=<em>jetty-stop-port</em> -DSTOP.KEY=<em>jetty-stop-key</em> -jar  start.jar"
-LOG_FILE="<em>path-to-solr-log-file</em>"
-JAVA="<em>java_home</em>"
- 
-case $1 in
-start)
-echo -n "Starting Solr"
-cd $SOLR_DIR
-$JAVA $JAVA_OPTIONS 2> $LOG_FILE &
-;;
-stop)
-echo -n "Stopping Solr"
-cd $SOLR_DIR
-$JAVA $JAVA_OPTIONS --stop
-;;
-restart)
-$0 stop
-sleep 1
-$0 start
-;;
-*)
-echo "Usage: $0 {start|stop|restart}" >&2
-exit 1
-;;
-esac</pre>
-All parameters shown in the following table are required.
- 
-<table>
-<col width="200">
-<col width="300">
-<tbody>
-<tr>
-  <th>Value</th>
-  <th>Description</th>
-</tr>
-<tr>
-  <td>[your Solr install dir]</td>
-  <td>The absolute file system path to your Solr installation. (For example, <code>/etc/solr/apache-solr-3.6.2</code></td>
-</tr>
-<tr>
-  <td><em>jetty-stop-port</em><br />
-  <em>jetty-stop-key</em></td>
-  <td>Security parameters used to prevent malicious attempts to stop Jetty.
-
-  For <code>-DSTOP.PORT=</code>, specify any unused port.
-
-  For <code>-DSTOP.KEY=</code>, specify a string. If you omit a value for <code>-DSTOP.KEY=</code>, Jetty generates a random key you must enter to stop Jetty.
- 
-  For more information, see <a href="https://wiki.eclipse.org/Jetty/Howto/Configure_SSL" target="_blank">Securing Jetty</a>.
-</td>
-</tr>
-<tr>
-  <td><em>path-to-solr-log-file</em></td>
-  <td>Absolute file system path to the Solr log file. (For example, <code>/var/log/solr.log</code>)</td>
-</tr>
-<tr>
-  <td><em>java_home</em></td>
-  <td>Absolute file system path to your Java executable. (For example, <code>/usr/bin/java</code>)</td>
-</tr>
-</tbody>
-</table>
-
-An example follows:
-
-<pre>#!/bin/sh
- 
-#Starts, stops, and restarts Apache Solr.
-#chkconfig: 35 92 08
-#description: Starts and stops Apache Solr
- 
-SOLR_DIR="/etc/solr/apache-solr-3.6.2/example"
-JAVA_OPTIONS="-Xmx1024m -DSTOP.PORT=8079 -DSTOP.KEY=mykey -jar  start.jar"
-LOG_FILE="/var/log/solr.log"
-JAVA="/usr/bin/java"
- 
-case $1 in
-start)
-echo -n "Starting Solr"
-cd $SOLR_DIR
-$JAVA $JAVA_OPTIONS 2> $LOG_FILE &
-;;
-stop)
-echo -n "Stopping Solr"
-cd $SOLR_DIR
-$JAVA $JAVA_OPTIONS --stop
-;;
-restart)
-$0 stop
-sleep 1
-$0 start
-;;
-*)
-echo "Usage: $0 {start|stop|restart}" >&2
-exit 1
-;;
-esac</pre>
-To complete the script:
-
-<ol>*	Make sure you saved the edited version of the script.
-*	Give the script executable permissions as follows:<br>
-<pre>chmod +x /etc/init.d/solr</pre>
-*	You can now start, stop, and restart Solr as follows:
-<ul class="level2">*	Start Solr: <code>/etc/init.d/solr start</code>
-*	Stop Solr: <code>/etc/init.d/solr stop</code>
-*	Restart Solr: <code>/etc/init.d/solr restart</code>
-</ol>
+To clean the cache using the command line, use the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean">`magento cache:clean`</a> command.
 
 <h2 id="next"></a>Next Steps</h2>
 For additional information about Solr, see the following:
