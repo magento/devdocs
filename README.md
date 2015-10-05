@@ -27,6 +27,7 @@ If you have questions, open an issue and ask us. We're looking forward to hearin
 
 *	<a href="http://devdocs.magento.com">Visit our documentation site</a>, built on GitHub using [Jekyll](http://jekyllrb.com/).
 
-  change 1
-  change 2
-  change 3
+* change 1
+* change 2
+* change 3
+* change 4
