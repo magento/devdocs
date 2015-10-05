@@ -180,6 +180,8 @@
   <li><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/templates/modal/modal-slide.html" target="_blank">app/code/Magento/Ui/view/base/web/templates/modal/modal-slide.html</a> slide type template.</li>
 </ul>
 
+<p>The design patterns for the modal pop-up windows in the Admin are described in the <a href="/guides/v2.0/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a> </p>
+
 <h2 id="modal_initialize">Initialize the modal widget</h2>
 
 <p>To initialize the widget in your script, use the following general notation:</p>
@@ -191,12 +193,15 @@ $('#modal_content').modal({
 });
 </pre>
 
-<p>For details about how to initialize the widget in a<code> .phtml</code> template, refer to the <a href="/guides/v2.0/frontend-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.</p>
+<p>For details about how to initialize the widget in a<code>.phtml</code> template, refer to the <a href="/guides/v2.0/frontend-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.</p>
 
 <h2 id="modal_options">Options</h2>
 <p>The modal widget has the following options:</p>
 <ul>
+<li><a href="#modal_autoopen">autoOpen</a></li>
 <li><a href="#modal_buttons">buttons</a></li>
+<li><a href="#modal_clickableOverlay">clickableOverlay</a></li>
+<li><a href="#modal_focus">focus</a></li>
 <li><a href="#modal_innerScroll">innerScroll</a></li>
 <li><a href="#modal_modalClass">modalClass</a></li>
 <li><a href="#modal_modalLeftMargin">modalLeftMargin</a></li>
@@ -204,6 +209,13 @@ $('#modal_content').modal({
 <li><a href="#modal_title">title</a></li>
 <li><a href="#modal_type">type</a></li>
 </ul>
+
+<h3 id="modal_autoopen">autoOpen</h3>
+<p>Automatically open the modal window when the widget is initialized.</p>
+
+<p><strong>Type</strong>: Boolean </p>
+
+<p><strong>Default value</strong>: <code>false</code></p>
 
 <h3 id="modal_buttons"><code>buttons</code></h3>
 <p>Array of buttons for action pane.</p>
@@ -229,6 +241,20 @@ buttons: [{
     }
 }]
 </pre>
+
+<h3 id="modal_clickableOverlay">clickableOverlay</h3>
+<p>Close the modal window when a user clicks on the overlay.</p>
+
+<p><strong>Type</strong>: Boolean </p>
+
+<p><strong>Default value</strong>: <code>true</code></p>
+
+<h3 id="modal_focus"><code>focus</code></h3>
+<p>Selector to focusing when a modal window opens or ‘none’ if focusing is not necessary.</p>
+
+<p><strong>Type</strong>: String </p>
+
+<p><strong>Default value</strong>: <code>''</code></p>
 
 <h3 id="modal_innerScroll"><code>innerScroll</code></h3>
 <p>Modal scroll position.</p>
@@ -290,15 +316,25 @@ buttons: [{
 
 <p>The modal widget is subscribed to the following events:</p>
 <ul>
-<li><a href="#modal_closed">modalclosed</a></li>
-<li><a href="#modal_opened">modalopened</a></li>
+<li><a href="#modal_closed">closed</a></li>
+<li><a href="#modal_opened">opened</a></li>
 </ul>
 
-<h3 id="modal_closed"><code>modalclosed</code></h3>
-<p>Triggered when the modal window is closed.</p>
+<h3 id="modal_closed"><code>closed</code></h3>
+<p>Called when the modal window is closed.</p>
 
-<h3 id="modal_opened"><code>modalopened</code></h3>
-<p>Triggered when the modal window is opened.</p>
+<h3 id="modal_opened"><code>opened</code></h3>
+<p>Called when the modal window is opened.</p>
+
+<h3 id="modal_opened"><code>always</code></h3>
+<p>….</p>
+
+<h2 id="key_navigation">Keyboard navigation</h2>
+<ul>
+  <li>the ESC key: close the current modal window</li>
+  <li>the TAB key: set focus to the next focusable element (looped inside the modal window)</li>
+  <li>the SHIFT+TAB keys combination: set focus to the previous focusable element (looped inside the modal window)</li>
+</ul>
 
 
 
@@ -515,11 +551,19 @@ buttons: [{
 						
 								
 							
+									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_alert.html">Alert widget</a></li>
+						
+								
+							
 									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_calendar.html">Calendar widget</a></li>
 						
 								
 							
 									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_collapsible.html">Collapsible widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_confirm.html">Confirmation widget</a></li>
 						
 								
 							
@@ -544,6 +588,10 @@ buttons: [{
 								
 							
 									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_navigation.html">Navigation widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_prompt.html">Prompt widget</a></li>
 						
 								
 							
