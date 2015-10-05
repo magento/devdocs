@@ -3,7 +3,7 @@ layout: default
 group: jsdg
 subgroup: Widgets
 title: QuickSearch widget
-menu_order: 10
+menu_order: 13
 menu_title: QuickSearch widget
 github_link: javascript-dev-guide/widgets/widget_quickSearch.md
 redirect_from:
