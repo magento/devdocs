@@ -38,6 +38,10 @@ Next significant release example:<br>
     <li>Clone with the <a href="#instgde-prereq-compose-clone-https">HTTPS protocol</a></li>
 <li><a href="#instgde-prereq-compose-clone-perms">Set file system permissions and ownership</a></li></ul>
 
+<div class="bs-callout bs-callout-info" id="info">
+    <p><img src="{{ site.baseurl }}common/images/ee-only_small.png"> Enterprise Edition (EE) requires an additional repository with EE sample data. Contact your support representative for details.</p>
+</div>
+
 <h3 id="instgde-prereq-sample-clone-ssh">Clone with SSH</h3>
 <p>To clone the Magento sample data GitHub repository using the SSH protocol:</p>
 <ol><li>Copy to the clipboard the Magento GitHub repository SSH clone URL.
@@ -63,8 +67,11 @@ fatal: The remote end hung up unexpectedly</pre>
     </div></li>
 <li>Change to the <code>&lt;your Magento sample data clone dir>/dev/tools</code> directory.</li>
 <li>Enter the following command:<br>
-<pre>php build-sample-data.php -- --ce-source="&lt;your Magento install dir>"</pre></li>
-<li>Wait for the command to complete.</li>
+<pre>php build-sample-data.php -- --ce-source="&lt;your Magento CE install dir>"</pre></li>
+<li>Wait for the command to complete.
+   <div class="bs-callout bs-callout-info" id="info">
+    <p><img src="{{ site.baseurl }}common/images/ee-only_small.png"> You must run the same command from the EE sample data repositor's <code>dev/tools</code> directory.</p>
+    </div></li>
 <li>See <a href="#instgde-prereq-compose-clone-perms">Set file system permissions and ownership</a>.</li></ol>
 
 <h3 id="instgde-prereq-compose-clone-https">Clone with HTTPS</h3>
@@ -85,12 +92,20 @@ An example follows:<br>
 <li>Wait for the repository to clone on your server.</li>
 <li>Change to the <code>&lt;your Magento sample data clone dir>/dev/tools</code> directory.</li>
 <li>Enter the following command:<br>
-<pre>php build-sample-data.php -- --ce-source="&lt;your Magento install dir>"</pre></li>
+<pre>php build-sample-data.php -- --ce-source="&lt;your Magento CE install dir>"</pre>
+    <div class="bs-callout bs-callout-info" id="info">
+    <p><img src="{{ site.baseurl }}common/images/ee-only_small.png"> You must run the same command from the EE sample data repositor's <code>dev/tools</code> directory.</p>
+    </div></li>
 <li>Wait for the command to complete.</li>
 <li>See the next section.</li></ol>
 
 <h3 id="instgde-prereq-compose-clone-perms">Set file system permissions and ownership</h3>
 <p>Because the <code>php build-sample-data.php</code> script creates symlinks between the sample data repository and your Magento 2 repository, you must set file system permissions and ownership in the sample data repository. Failure to do so will result in errors accessing the storefront.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+    <p><img src="{{ site.baseurl }}common/images/ee-only_small.png"> Don't forget to clone the Enterprise Edition (EE) sample data repository and link it to your Magento CE repository.</p>
+</div>
+
 <p>To set file system permissions and ownership on the sample data repository:</p>
 <ol><li>Change to your sample data clone directory.</li>
 <li>Set ownership:<br>
@@ -101,5 +116,12 @@ Ubuntu: <code>chown -R :www-data .</code></li>
 <li>Set permissions:<br>
     <pre>find . -type d -exec chmod 770 {} \; && find . -type f -exec chmod 660 {} \;</pre>
     If you must enter the commands as <code>sudo</code>, use:<br>
-    <pre>sudo find . -type d -exec chmod 770 {} \; && sudo find . -type f -exec chmod 660 {} \;</pre></li>
+    <pre>sudo find . -type d -exec chmod 770 {} \; && sudo find . -type f -exec chmod 660 {} \;</pre>
+    <div class="bs-callout bs-callout-info" id="info">
+    <p><img src="{{ site.baseurl }}common/images/ee-only_small.png"> You must set ownership and permissions on both the CE and the EE sample data repositories.</p>
+    </div></li>
+<li>Clear directories:
+    <pre>cd &lt;your Magento CE install dir>/var
+        rm -rf cache/* page_cache/* generation/*</pre></li>
 <li>See <a href="#sample-next-steps">Next steps</a>.</li></ol>
+
