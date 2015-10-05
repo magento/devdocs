@@ -94,10 +94,12 @@ To upgrade to PHP 5.5:
 
 1.	Enter the following commands in the order shown.
 
+		yum -y update
 		rpm -Uvh https://mirror.webtatic.com/yum/el6/latest.rpm
 		yum -y remove php-common-5.3.3-40.el6_6.x86_64
 		yum -y install php55w php55w-opcache
 		yum -y install php55w-xml php55w-mcrypt php55w-gd php55w-devel php55w-mysql php55w-intl php55w-mbstring
+		yum -y update
 
 2.	Restart Apache: `service httpd restart`
 

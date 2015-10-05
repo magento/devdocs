@@ -2,10 +2,10 @@
 layout: default
 group: compman
 subgroup: B_prereq
-title: Prerequisites
-menu_title: Prerequisites
-menu_order: 1
-menu_node: parent
+title: Set up cron for Component Manager and System Upgrade
+menu_title: Set up cron for Component Manager and System Upgrade
+menu_order: 2
+menu_node: 
 github_link: comp-mgr/prereq/prereq_compman-updater.md
 ---
 

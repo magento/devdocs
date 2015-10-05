@@ -37,7 +37,7 @@ When you change modes, we do the following:
 *	Change to production mode: Clear directories and set permissions on files and directories
 *	Change to developer mode: Clear directories only; we don't set specific permissions on files.
 
-	When you generate classes or generate static files, they have 777 (world-writeable permissions) and are owned by the user who runs this command.
+	When you generate classes or generate static files, they have 777 (world-writable permissions) and are owned by the user who runs this command.
 
 <h3 id="config-mode-over-clear">Cleared directories</h3>
 We clear the the contents of following directories when you change modes:
