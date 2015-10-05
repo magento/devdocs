@@ -152,7 +152,7 @@ To install the Magento software using the Setup Wizard:
 		<td>Magento Admin Address</td>
 		<td><p>Path to access the Magento Admin. Initially, a random value displays.</p>
 			<p>We recommend a random URL for security purposes. A random URL is harder for hackers or malicious software to exploit.</p>
-			<p>After the installation completes, we recommend you bookmark the Magento Admin URL so you don't forget it. You can display this value at any time using the TBD command.</p>
+			<p>After the installation completes, we recommend you bookmark the Magento Admin URL so you don't forget it. You can display this value at any time using the <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-adminurl.html#instgde-cli-displayurl">`magento info:adminuri`</a> command.</p>
 			<p>If you choose to enter another value, we recommend you <em>not</em> use a common word like <code>admin</code>, <code>backend</code>, and so on. The Admin URL can contain alphanumeric values, the underscore character (<code>_</code>), and the dash character (<code>-</code>) only.</p></td>
 	</tr>
 	</tbody>

@@ -91,7 +91,7 @@ To set a variable:
 
 		#   SetEnv MAGE_PROFILER firebug
 
-2.	Set the value of `MAGE_PROFiLER` to any of the following:
+2.	Set the value of `MAGE_PROFILER` to any of the following:
 
 		firebug
 		csv
