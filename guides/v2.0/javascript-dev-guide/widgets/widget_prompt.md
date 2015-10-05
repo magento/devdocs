@@ -46,14 +46,21 @@ $('#prompt_init').prompt({
 **Example2**: standalone initialization
 
 {% highlight js %}
-new Prompt({
-    title: 'Prompt title',
-    actions: {
-        confirm: function(){},
-        cancel: function(){},
-        always: function(){}
-    }
-});
+require([
+    'Magento_Ui/js/modal/prompt'
+], function(prompt) { // Variable that represents the `prompt` function
+ 
+    prompt({
+        title: 'Some title',
+        content: 'Some content',
+        actions: {
+            confirm: function(){},
+            cancel: function(){},
+            always: function(){}
+        }
+    });
+ 
+}); 
 {% endhighlight %}
 
 For details about how to initialize a widget in a `.phtml` template, refer to the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.

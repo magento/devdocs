@@ -41,12 +41,18 @@ $('#init_element').alert({
 **Example2**: standalone initialization
 
 {% highlight js %}
-new Alert({
-    title: 'Warning',
-    content: 'Warning content',
-    actions: {
-        always: function(){}
-    }
+require([
+    'Magento_Ui/js/modal/alert'
+], function(alert) { // Variable that represents the `alert` function
+ 
+    alert({
+        title: 'Some title',
+        content: 'Some content',
+        actions: {
+            always: function(){}
+        }
+    });
+ 
 });
 {% endhighlight %}
 

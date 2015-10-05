@@ -43,14 +43,21 @@ $('#confirm_init').confirm({
 
 **Example2**: standalone initialization
 {% highlight js %}
-new Confirm({
-    title: 'Confirmation title',
-    content: 'Confirmation content',
-    actions: {
-        confirm: function(){},
-        cancel: function(){},
-        always: function(){}
-    }
+
+require([
+    'Magento_Ui/js/modal/confirm'
+], function(confirmation) { // Variable that represents the `confirm` widget
+  
+    confirmation({
+        title: 'Some title',
+        content: 'Some content',
+        actions: {
+            confirm: function(){},
+            cancel: function(){},
+            always: function(){}
+        }
+    });
+  
 });
 {% endhighlight %}
 
