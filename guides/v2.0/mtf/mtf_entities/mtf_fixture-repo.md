@@ -437,7 +437,7 @@ As you can see, the `ConfigData.xml` of the `Authorizenet` module and the `Confi
 
 `ConfigData.php` will be generated in `magento2/dev/tests/functional/generated/Magento/Config/Test/Repository`. This PHP repository will contain repository data sets from all Magento modules that have a `ConfigData.xml` repository.
 
-To run the generator, enter the following command:
+To run the generator, enter the following command in your terminal:
 
     php magento2/dev/tests/functional/utils/generate.php
 
