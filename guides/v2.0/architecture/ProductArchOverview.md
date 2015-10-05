@@ -21,3 +21,5 @@ themes, modules that perform site-specific reconfiguration 
 <h3>Non-commercial components</h3>
  modules that do not provide direct e-commerce functionality but which are needed to support a site, such as theme management   <h2>Architectural Layers view</h2>
   Architectural layers diagram
+  
+  change 5
