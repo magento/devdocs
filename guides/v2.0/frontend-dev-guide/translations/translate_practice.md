@@ -12,18 +12,18 @@ github_link: frontend-dev-guide/translations/translate_practice.md
 
 This topic is a step-by-step illustration of creating a default locale <a href="{{site.gdeurl}}frontend-dev-guide/translations/#translate_terms">dictionary</a> for a custom theme. 
 
-<h2 id="theme">The custom theme</h2>
+<h2 id="theme">Changing default strings</h2>
 OrangeCo created a custom `orange` theme that inherits from the Magento basic Blank theme.
 Among the other changes, they want to re-phrase certain strings used in the Blank theme and modules. 
 
 Namely, they need the following changes:
 
 - Change "Add to Compare" label to "Compare"
-<img>
+<p class="q"> image here</p>
 - Change "Your Checkout Progress" label to "Checkout Progress"
-<img>
+<p class="q"> image here</p>
 - Change the "Shop By" label to "Filter"
-<img>
+<p class="q"> image here</p>
 
 To overwrite the strings, OrangeCo plan to use the "en_US" dictionary file. 
 
