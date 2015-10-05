@@ -23,3 +23,4 @@ themes, modules that perform site-specific reconfiguration 
   Architectural layers diagram
   
   change 5
+  change 6
