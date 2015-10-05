@@ -4,7 +4,7 @@ group: jsdg
 subgroup: Widgets
 title: Calendar widget
 menu_title: Calendar widget
-menu_order: 2
+menu_order: 3
 github_link: javascript-dev-guide/widgets/widget_calendar.md
 redirect_from:
   - guides/v2.0/frontend-dev-guide/javascript/widget_calendar.html
