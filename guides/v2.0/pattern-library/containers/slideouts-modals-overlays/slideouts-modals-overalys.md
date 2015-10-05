@@ -180,6 +180,13 @@ The distance of the modal to the top of the browser should have a fixed distance
 
 (Sample of progress bar in modal)<br>
 
+**Implementation**
+Modal windows are implemented by the following Magento jQuery widgets:
+- <a href="{{site.gdeurl}}">javascript-dev-guide/widgets/widget_modal.html">modal</a>
+- <a href="{{site.gdeurl}}">javascript-dev-guide/widgets/widget_alert.html">alert</a> (extends modal)
+- <a href="{{site.gdeurl}}">javascript-dev-guide/widgets/widget_confirm.html">confirm</a> (extends modal)
+- <a href="{{site.gdeurl}}">javascript-dev-guide/widgets/widget_prompt.html">propmt</a> (extends modal)
+
 
 <h3 id="overlays">Overlays</h3>
 

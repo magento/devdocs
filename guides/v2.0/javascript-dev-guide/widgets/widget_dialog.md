@@ -3,7 +3,7 @@ layout: default
 group: jsdg
 subgroup: Widgets
 title: DropdownDialog widget
-menu_order: 4
+menu_order: 6
 menu_title: DropdownDialog widget
 github_link: javascript-dev-guide/widgets/widget_dialog.md
 redirect_from:
