@@ -17,14 +17,17 @@ OrangeCo created a custom `orange` theme that inherits from the Magento basic Bl
 Among the other changes, they want to re-phrase certain strings used in the Blank theme and modules. 
 
 Namely, they need the following changes:
-
-- Change "Add to Compare" label to "Compare"
-<p class="q"> image here</p>
-- Change "Your Checkout Progress" label to "Checkout Progress"
-<p class="q"> image here</p>
-- Change the "Shop By" label to "Filter"
-<p class="q"> image here</p>
-
+<ul>
+<li>
+Change "Add to Compare" label to "Compare"
+<p class="q"> image here</p> </li>
+<li>
+Change "Your Checkout Progress" label to "Checkout Progress"
+<p class="q"> image here</p> </li>
+<li>
+Change the "Shop By" label to "Filter"
+<p class="q"> image here</p></li>
+</ul>
 To overwrite the strings, OrangeCo plan to use the "en_US" dictionary file. 
 
 So OrangeCo take the following steps:
