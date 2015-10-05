@@ -12,13 +12,13 @@ redirect_from: /guides/v1.0/rest/list.html
 
 <h2 id="list">List of REST APIs</h2>
 
-Updated July 30, 2015. Additions since the last update are marked with asterisks (*).
+Updated October 2, 2015. Additions since the last update are marked with asterisks (*).
 
-<h3>Magento/Backend</h3>
+<h3>Backend</h3>
 
     GET    /V1/modules
 
-<h3>Magento/Bundle</h3>
+<h3>Bundle</h3>
 
     POST   /V1/bundle-products/:sku/links/:optionId
     PUT    /V1/bundle-products/:sku/links/:id
@@ -31,7 +31,7 @@ Updated July 30, 2015. Additions since the last update are marked with asterisks
     PUT    /V1/bundle-products/options/:optionId
     DELETE /V1/bundle-products/:sku/options/:optionId
 
-<h3>Magento/Catalog</h3>
+<h3>Catalog</h3>
 
     POST   /V1/products
     PUT    /V1/products/:sku
@@ -64,14 +64,11 @@ Updated July 30, 2015. Additions since the last update are marked with asterisks
     POST   /V1/products/attributes/:attributeCode/options
     DELETE /V1/products/attributes/:attributeCode/options/:optionId
     GET    /V1/products/media/types/:attributeSetName
-    GET    /V1/products/:sku/media/:imageId
+    * GET    /V1/products/:sku/media/:entryId
     POST   /V1/products/:sku/media
     PUT    /V1/products/:sku/media/:entryId
     DELETE /V1/products/:sku/media/:entryId
     GET    /V1/products/:sku/media
-    GET    /V1/products/:sku/group-prices/
-    POST   /V1/products/:sku/group-prices/:customerGroupId/price/:price
-    DELETE /V1/products/:sku/group-prices/:customerGroupId/
     GET    /V1/products/:sku/group-prices/:customerGroupId/tiers
     POST   /V1/products/:sku/group-prices/:customerGroupId/tiers/:qty/price/:price
     DELETE /V1/products/:sku/group-prices/:customerGroupId/tiers/:qty
@@ -90,35 +87,40 @@ Updated July 30, 2015. Additions since the last update are marked with asterisks
     GET    /V1/products/links/types
     GET    /V1/products/links/:type/attributes
     GET    /V1/products/:sku/links/:type
-    * POST   /V1/products/:sku/links
+    POST   /V1/products/:sku/links
     DELETE /V1/products/:sku/links/:type/:linkedProductSku
-    * PUT    /V1/products/:sku/links
+    PUT    /V1/products/:sku/links
     GET    /V1/categories/:categoryId/products
     POST   /V1/categories/:categoryId/products
     PUT    /V1/categories/:categoryId/products
     DELETE /V1/categories/:categoryId/products/:sku
-    
-<h3>Magento/CatalogInventory</h3>
+
+<h3>CatalogInventory</h3>
 
     GET    /V1/stockItems/:productSku
-    PUT    /V1/stockItems/:productSku
+    * PUT    /V1/products/:productSku/stockItems/:itemId
     GET    /V1/stockItems/lowStock/
     GET    /V1/stockStatuses/:productSku
-    
-<h3>Magento/Checkout</h3>
-    * POST   /V1/carts/:cartId/shipping-information
-    * POST   /V1/carts/mine/shipping-information
-    * POST   /V1/guest-carts/:cartId/payment-information
-    * POST   /V1/carts/mine/payment-information
-    * POST   /V1/guest-carts/:cartId/set-payment-information
-    * POST   /V1/carts/mine/set-payment-information
 
+<h3>Checkout</h3>
 
-<h3>Magento/CheckoutAgreements</h3>
+    POST   /V1/carts/:cartId/shipping-information
+    POST   /V1/carts/mine/shipping-information
+    POST   /V1/carts/:cartId/totals-information
+    POST   /V1/guest-carts/:cartId/totals-information
+    POST   /V1/carts/mine/totals-information
+    POST   /V1/guest-carts/:cartId/payment-information
+    GET    /V1/guest-carts/:cartId/payment-information
+    POST   /V1/carts/mine/payment-information
+    GET    /V1/carts/mine/payment-information
+    POST   /V1/guest-carts/:cartId/set-payment-information
+    POST   /V1/carts/mine/set-payment-information
+
+<h3>CheckoutAgreements</h3>
 
     GET    /V1/carts/licence
 
-<h3>Magento/Cms</h3>
+<h3>Cms</h3>
 
     GET    /V1/cmsPage/:pageId
     GET    /V1/cmsPage/search
@@ -131,7 +133,7 @@ Updated July 30, 2015. Additions since the last update are marked with asterisks
     PUT    /V1/cmsBlock/:id
     DELETE /V1/cmsBlock/:blockId
 
-<h3>Magento/ConfigurableProduct</h3>
+<h3>ConfigurableProduct</h3>
 
     GET    /V1/configurable-products/:sku/children
     DELETE /V1/configurable-products/:sku/children/:childSku
@@ -143,7 +145,7 @@ Updated July 30, 2015. Additions since the last update are marked with asterisks
     PUT    /V1/configurable-products/:sku/options/:id
     DELETE /V1/configurable-products/:sku/options/:id
 
-<h3>Magento/Customer</h3>
+<h3>Customer</h3>
 
     GET    /V1/customerGroups/:id
     GET    /V1/customerGroups/default/:storeId
@@ -185,7 +187,13 @@ Updated July 30, 2015. Additions since the last update are marked with asterisks
     GET    /V1/customers/:customerId/shippingAddress
     DELETE /V1/addresses/:addressId
 
-<h3>Magento/Downloadable</h3>
+<h3>Directory</h3>
+
+    * GET    /V1/directory/currency
+    * GET    /V1/directory/countries
+    * GET    /V1/directory/countries/:countryId
+
+<h3>Downloadable</h3>
 
     GET    /V1/products/:sku/downloadable-links
     GET    /V1/products/:sku/downloadable-links/samples
@@ -196,7 +204,7 @@ Updated July 30, 2015. Additions since the last update are marked with asterisks
     PUT    /V1/products/:sku/downloadable-links/samples/:id
     DELETE /V1/products/downloadable-links/samples/:id
 
-<h3>Magento/Eav</h3>
+<h3>Eav</h3>
 
     GET    /V1/eav/attribute-sets/list
     GET    /V1/eav/attribute-sets/:attributeSetId
@@ -204,28 +212,27 @@ Updated July 30, 2015. Additions since the last update are marked with asterisks
     POST   /V1/eav/attribute-sets
     PUT    /V1/eav/attribute-sets/:attributeSetId
 
-<h3>Magento/GiftMessage</h3>
+<h3>GiftMessage</h3>
 
     GET    /V1/carts/:cartId/gift-message
     GET    /V1/carts/:cartId/gift-message/:itemId
     POST   /V1/carts/:cartId/gift-message
     POST   /V1/carts/:cartId/gift-message/:itemId
-    * GET    /V1/carts/mine/gift-message
-    * GET    /V1/carts/mine/gift-message/:itemId
-    * POST   /V1/carts/mine/gift-message
-    * POST   /V1/carts/mine/gift-message/:itemId
-    * GET    /V1/guest-carts/:cartId/gift-message
-    * GET    /V1/guest-carts/:cartId/gift-message/:itemId
-    * POST   /V1/guest-carts/:cartId/gift-message
-    * POST   /V1/guest-carts/:cartId/gift-message/:itemId
+    GET    /V1/carts/mine/gift-message
+    GET    /V1/carts/mine/gift-message/:itemId
+    POST   /V1/carts/mine/gift-message
+    POST   /V1/carts/mine/gift-message/:itemId
+    GET    /V1/guest-carts/:cartId/gift-message
+    GET    /V1/guest-carts/:cartId/gift-message/:itemId
+    POST   /V1/guest-carts/:cartId/gift-message
+    POST   /V1/guest-carts/:cartId/gift-message/:itemId
 
-
-<h3>Magento/Integration</h3>
+<h3>Integration</h3>
 
     POST   /V1/integration/admin/token
     POST   /V1/integration/customer/token
 
-<h3>Magento/Quote</h3>
+<h3>Quote</h3>
 
     GET    /V1/carts/:cartId
     GET    /V1/carts
@@ -245,12 +252,12 @@ Updated July 30, 2015. Additions since the last update are marked with asterisks
     PUT    /V1/carts/mine/selected-shipping-method
     GET    /V1/carts/mine/selected-shipping-method
     GET    /V1/carts/mine/shipping-methods
-    * POST   /V1/carts/mine/estimate-shipping-methods
-    * POST   /V1/carts/mine/estimate-shipping-methods-by-address-id
+    POST   /V1/carts/mine/estimate-shipping-methods
+    POST   /V1/carts/mine/estimate-shipping-methods-by-address-id
     PUT    /V1/guest-carts/:cartId/selected-shipping-method
     GET    /V1/guest-carts/:cartId/selected-shipping-method
     GET    /V1/guest-carts/:cartId/shipping-methods
-    * POST   /V1/guest-carts/:cartId/estimate-shipping-methods
+    POST   /V1/guest-carts/:cartId/estimate-shipping-methods
     GET    /V1/carts/:cartId/items
     POST   /V1/carts/items
     PUT    /V1/carts/items/:itemId
@@ -300,7 +307,7 @@ Updated July 30, 2015. Additions since the last update are marked with asterisks
     GET    /V1/carts/mine/totals
     PUT    /V1/carts/mine/collect-totals
 
-<h3>Magento/Sales</h3>
+<h3>Sales</h3>
 
     GET    /V1/orders/:id
     GET    /V1/orders
@@ -341,11 +348,34 @@ Updated July 30, 2015. Additions since the last update are marked with asterisks
     GET    /V1/transactions/:id
     GET    /V1/transactions
 
-<h3>Magento/Search</h3>
-    * GET    /V1/search
+<h3>SalesRule</h3>
 
+    * GET    /V1/salesRules/:ruleId
+    * GET    /V1/salesRules/search
+    * POST   /V1/salesRules
+    * PUT    /V1/salesRules/:ruleId
+    * DELETE /V1/salesRules/:ruleId
+    * GET    /V1/coupons/:couponId
+    * GET    /V1/coupons/search
+    * POST   /V1/coupons
+    * PUT    /V1/coupons/:couponId
+    * DELETE /V1/coupons/:couponId
+    * POST   /V1/coupons/generate
+    * POST   /V1/coupons/deleteByIds
+    * POST   /V1/coupons/deleteByCodes
 
-<h3>Magento/Tax</h3>
+<h3>Search</h3>
+
+    GET    /V1/search
+
+<h3>Store</h3>
+
+    * GET    /V1/store/storeViews
+    * GET    /V1/store/storeGroups
+    * GET    /V1/store/websites
+    * GET    /V1/store/storeConfigs
+
+<h3>Tax</h3>
 
     POST   /V1/taxRates
     GET    /V1/taxRates/:rateId
@@ -362,3 +392,4 @@ Updated July 30, 2015. Additions since the last update are marked with asterisks
     PUT    /V1/taxClasses/:classId
     DELETE /V1/taxClasses/:taxClassId
     GET    /V1/taxClasses/search
+
