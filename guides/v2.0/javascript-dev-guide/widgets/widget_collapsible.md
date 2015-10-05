@@ -3,7 +3,7 @@ layout: default
 group: jsdg
 subgroup: Widgets
 title: Collapsible widget
-menu_order: 3
+menu_order: 4
 menu_title: Collapsible widget
 github_link: javascript-dev-guide/widgets/widget_collapsible.md
 redirect_from:
