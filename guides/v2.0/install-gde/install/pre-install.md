@@ -10,30 +10,7 @@ github_link: install-gde/install/pre-install.md
 redirect_from: /guides/v1.0/install-gde/install/pre-install.html
 ---
 
-#### Contents
-
-*	<a href="#install-overview-all">Overview of installing, managing, and upgrading Magento</a>
-*	<a href="#install-overview-audience">Identify yourself and get started</a>
-
-<h2 id="install-overview-all">Overview of installing, managing, and upgrading Magento</h2>
-The Magento software enables you to install, manage, and upgrade the core software itself and any *component* you installed. A component can be:
-
-*	An module (code that extends the Magento application in some way)
-*	A language package (used to localize your Admin or storefront)
-*	A theme (used to change the look of your Admin or storefront)
-
-You can think of it as a three-step process&mdash;where steps 2 and 3 are interchangeable:
-
-1.	Install the Magento software
-2.	<a href="{{ site.gdeurl }}comp-mgr/compman-start.html">Manage components</a> (install, uninstall, update, enable, or disable)
-3.	<a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">Upgrade</a> the Magento software or components to a newer version
-
-This guide discusses installation. After you install Magento, you can manage components and upgrade as discussed in the following guides:
-
-*	<a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html">Component Manager Guide</a>
-*	<a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">Upgrade Guide</a> -->
-
-<h2 id="install-overview-audience">Identify yourself and get started</h2>
+<h2 id="install-overview-audience">Your install or upgrade path</h2>
 Before you start your installation, take a moment to figure out which type of user you are. It's important because the installation procedure is very different for each type:
 
 <table>

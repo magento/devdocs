@@ -54,6 +54,11 @@ Before you install Magento, make sure your system meets or exceeds the following
 	*	<a href="http://php.net/manual/en/book.image.php" target="_blank">gd</a>, <a href="http://php.net/manual/en/book.imagick.php" target="_blank">ImageMagick 6.3.7</a> (or later) or both
 	*	<a href="http://php.net/manual/en/book.soap.php" target="_blank">soap</a>
 	*	<a href="http://php.net/manual/en/book.intl.php" target="_blank">intl</a>
+	*	<a href="http://php.net/manual/en/book.openssl.php" target="_blank">openssl</a>
+
+		<div class="bs-callout bs-callout-info" id="info">
+  		<p>The PHP <code>openssl</code> extension is installed automatically in some cases. To check to see whether you have it or not, use a <a href="{{ site.gdeurl }}install-gde/prereq/optional.html#install-optional-phpinfo">phpinfo.php</a> page.
+		</div>
 
 *	<a href="http://dev.mysql.com/doc/refman/5.6/en/installing.html" target="_blank">MySQL 5.6.x</a>
 *	Mail Transfer Agent (MTA) or an SMTP server

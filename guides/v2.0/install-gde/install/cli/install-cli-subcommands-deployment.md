@@ -95,8 +95,10 @@ The following table discusses the meanings of installation parameters and values
 	<tr>
 		<td><p>--session-save</p></td>
 		<td><p>Use any of the following:</p>
-		<ul><li><code>files</code> to store session data in the file system. File-based session storage is appropriate unless access to the Magento file system is slow or if you have a clustered database.</li>
-		<li><code>db</code> to store session data in the database. Choose database storage if you have a clustered database; otherwise, there might not be much benefit compared to file-based storage.</li></ul></td>
+		<ul><li><code>db</code> to store session data in the <a href="{{ site.gdeurl }}config-guide/database/database.html">database</a>. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.</li>
+			<li><code>redis</code> if you use the <a href="{{ site.gdeurl }}config-guide/redis/config-redis.html">Redis</a> backend.</li>
+			<li><code>files</code> to store session data in the file system. File-based session storage is appropriate unless the Magento file system access is slow or you have a clustered database.</li>
+	</ul></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
@@ -121,6 +123,12 @@ The following table discusses the meanings of installation parameters and values
 		<td><p>Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database.</p>
 			<p>Default is <code>SET NAMES utf8;</code>.</p> 
 			<p>Consult a reference similar to <a href="http://dev.mysql.com/doc/refman/5.6/en/server-options.html" target="_blank">this one</a> before you set any values.</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--http-cache-hosts</p></td>
+		<td><p>Comma-separated list of HTTP cache gateway hosts to which to send purge requests (do not separate hosts with a space character). (For example, Varnish servers.) If you have more than one server, use this parameter to purge the cache from all hosts in the same request.</p>
+			<p>Format must be <code>&lt;hostname or ip>:&lt;listen port></code>, where you can omit <code>&lt;listen port></code> if it's port 80. For example, <code>--http-cache-hosts=192.0.2.100,192.0.2.155:6081</code></p> </td>
 		<td><p>No</p></td>
 	</tr>
 	</tbody>
