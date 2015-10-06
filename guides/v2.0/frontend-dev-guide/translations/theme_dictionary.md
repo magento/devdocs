@@ -10,24 +10,24 @@ github_link: frontend-dev-guide/translations/theme_dictionary.md
 
 <h2>Overview</h2>
 
-This topic describes how default string can be changed in your custom theme using <a href="{{site.gdeurl}}frontend-dev-guide/translations/#translate_terms">translation dictionaries</a>. It also gives a short overview f the order in which translations are searched and applied by Magento application.
+This topic describes how default strings can be changed in your custom theme using <a href="{{site.gdeurl}}frontend-dev-guide/translations/#translate_terms">translation dictionaries</a>. It also gives a short overview of the order in which translations are searched and applied by Magento application.
 
 <h2>How Magento applies locales</h2>
 
 When the locale is changed for a store, Magento searches for translations in the corresponding dictionaries in the following locations:
 
-4. Module tranlsations: `app/code/<Vendor>/<Module/i18n/>`.
+4. Module translations: `app/code/<Vendor>/<Module>/i18n/`
 4. Theme translations: 
 	1. `app/design/frontend/<Vendor>/<parent_theme>/i18n/` (iterated through all ancestor themes)
 	2. `app/design/frontend/<Vendor>/<current_theme>/i18n/`
-4. Translation package: `app/i18n/`.
-5. Magento database.
+4. Translation package: `app/i18n/`
+5. Magento database
 
-The translations in theme dictionaries have priority over the module dictionaries, and child theme tranlsations have priority over parent theme translations.
+If there are different translations for one string, the theme dictionary translations have priority over the module translations, and child theme translations have priority over parent theme translations.
 
 <h2>Creating a theme dictionary to override the default strings</h2>
 
-The translations priority described earlier is applied for the default en_US locale as well. So your can use the `en_US.csv` to customize the strings used in the default locale.
+The translations priority described earlier is applied for the default en_US locale as well. So your can use the `en_US.csv` dictionary to customize the strings used in the default locale.
 
 <span id="luma_example">For example, this approach is used in the Magento Luma theme. It has the 
 <a href="{{site.mage2000url}}app/design/frontend/Magento/luma/i18n/en_US.csv"><code>app/design/frontend/Magento/luma/i18n/en_US.csv</code></a> file, where the left column contains the default values (keys), and the right columns contains the values to be used instead when the Luma theme is applied:
@@ -52,6 +52,7 @@ See the <a href="{{site.gdeurl}}frontend-dev-guide/translations/translate_practi
 Even if your theme uses the en_US.csv to overwrite certain default strings, the dictionaries for other locales for your theme, should contain the default strings as keys, not the custom ones. 
 
 Continuing the <a href="#luma_example">previous example</a> with the Luma theme, if the `de_DE.csv` dictionary will be added for the Luma theme, it will look like following:
+
     Add to Wish List	<translation>
     Add to Compare	<translation>
     Your Checkout Progress	<translation>
