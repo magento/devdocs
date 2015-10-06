@@ -565,3 +565,40 @@ a.image:hover {
 /* CODE COMMENTS AND MANDATORY STEPS */
 .comments { color:#339900 }
 .mandatory { color:#EE6933 }
+
+.rest-api-menu {
+    float: left;
+    margin-left: -45px;
+    width: 250px;
+}
+.rest-api-menu > ul {
+    margin-left: 0;
+}
+.rest-api-menu ul {
+    margin-top: 0;
+}
+.rest-api-menu > ul > ul {
+    margin-left: 0;
+}
+.rest-api-menu ul li {
+    background: none;
+    margin-bottom: 0;
+    padding-left: 0;
+    margin-left: 0;
+    font-weight: bold;
+}
+.rest-api-menu ul li ul li ul li {
+    font-weight: normal;
+}
+.rest-api-menu ul li a {
+    color: #444;
+}
+.rest-api-menu ul li a:hover {
+    color: #f47027;
+}
+.rest-api-content {
+    float: right;
+    width: 750px;
+    clear: right;
+    margin-right: -45px;
+}
