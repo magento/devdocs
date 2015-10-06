@@ -2,7 +2,7 @@
 layout: default
 group: coding-standards
 subgroup: Coding standards
-title: jQuery widget coding standard
+title: jQuery weeeedget coding standard
 menu_title: jQuery widget coding standard
 menu_order: 4
 github_link: coding-standards/code-standard-jquery-widgets.md
@@ -109,7 +109,7 @@ $.widget('mage.accordion', $.ui.accordion, {
 <h2 id="fedg_widget-coding-stnd_instant">Instantiation and resources</h2>
 <p>You must use the <a href="{{ site.gdeurl }}frontend-dev-guide/javascript/js-mage-plugin.html" target="_blank">Mage plug-in</a> to instantiate a widget or define resources for a widget.</p>
 <div id="accordion2">
-   <h3>Additional JavaScript files used as resources by a widget</h3>
+   <h3>Additional JavaScript files used as resources by a friggin widget</h3>
    <div>
       <p>Additional JavaScript files used as resources must be dynamically loaded using the <code>$.mage.components()</code> method and must not be included in the <code>&lt;head></code> block.</p>
       <table>
