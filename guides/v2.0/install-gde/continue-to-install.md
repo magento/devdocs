@@ -9,6 +9,8 @@ menu_order: 1
 github_link: install-gde/continue-to-install.md
 ---
 
+
+
 ## Before you continue
 Did you remember to set file system ownership and permissions? If not, <a href="{{ site.gdeurl }}install-gde/install/file-system-perms.html">go back</a> and do that now.
 

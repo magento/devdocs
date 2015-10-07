@@ -82,7 +82,7 @@ To ensure validation of an XML file by appropriate XSD file, you must specify th
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
 
-Your IDE can validate your configuration files at both runtime during development.
+Your IDE can validate your configuration files at both runtime and during development.
 
 #### Related topics
 

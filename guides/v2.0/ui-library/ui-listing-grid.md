@@ -45,8 +45,6 @@ Example configuration of Listing Component instance:
 </listing>
 {% endhighlight %}
 
-
-
 ####Data Source
 
 The listing component requires the data source to be properly configured and associated with it:

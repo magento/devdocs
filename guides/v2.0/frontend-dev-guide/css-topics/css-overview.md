@@ -38,12 +38,12 @@ OrangeCo wants to change the color of the primary buttons to orange. To achieve 
 2. In the Orange theme directory add the overriding <code>app/design/frontend/OrangeCo/orange/web/css/source/_theme.less</code> file with the following code:
 <pre>
 //  Primary button
-@button-primary-color: @color-white;
-@button-primary-color-hover: @color-white;
-@button-primary-background: @color-orange-red1;
-@button-primary-background-hover: @color-orange-red4;
-@button-primary-border: 1px solid @color-orange-red2;
-@button-primary-border-hover: 1px solid @color-orange-red2;
+@button-primary__color: @color-white;
+@button-primary__hover__color: @color-white;
+@button-primary__background: @color-orange-red1;
+@button-primary__hover__background: @color-orange-red4;
+@button-primary__border: 1px solid @color-orange-red2;
+@button-primary__hover__border: 1px solid @color-orange-red2;
 </pre>
 
 When OrangeCo <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html" target="_blank">applies their theme</a>, the primary buttons will look like on the following image:

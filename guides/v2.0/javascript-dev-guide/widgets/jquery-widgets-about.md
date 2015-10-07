@@ -16,14 +16,17 @@ The Magento system uses a jQuery JavaScript library to implement client function
 This guide discusses the following widgets:
 <ul>
 <li><a href="{{ site.gdeurl }}javascript-dev-guide/widgets/widget_accordion.html" target="_blank">Accordion widget</a> </li>
+<li><a href="{{ site.gdeurl }}javascript-dev-guide/widgets/widget_alert.html" target="_blank">Alert widget</a> </li>
 <li><a href="{{ site.gdeurl }}javascript-dev-guide/widgets/widget_calendar.html" target="_blank">Calendar widget</a></li>
 <li><a href="{{ site.gdeurl }}javascript-dev-guide/widgets/widget_collapsible.html" target="_blank">Collapsible widget</a></li>
+<li><a href="{{ site.gdeurl }}javascript-dev-guide/widgets/widget_confirm.html" target="_blank">Confirm widget</a></li>
 <li><a href="{{ site.gdeurl }}javascript-dev-guide/widgets/widget_dialog.html" target="_blank">DropdownDialog widget</a></li>
 <li><a href="{{ site.gdeurl }}javascript-dev-guide/widgets/widget_list.html" target="_blank">List widget</a></li>
 <li><a href="{{ site.gdeurl }}javascript-dev-guide/widgets/widget_loader.html" target="_blank">Loader widget</a></li>
 <li><a href="{{ site.gdeurl }}javascript-dev-guide/widgets/widget_menu.html" target="_blank">Menu widget</a></li>
 <li><a href="{{ site.gdeurl }}javascript-dev-guide/widgets/widget_modal.html" target="_blank">Modal widget</a></li>
 <li><a href="{{ site.gdeurl }}javascript-dev-guide/widgets/widget_navigation.html" target="_blank">Navigation widget</a></li>
+<li><a href="{{ site.gdeurl }}javascript-dev-guide/widgets/widget_prompt.html" target="_blank">Prompt widget</a></li>
 <li><a href="{{ site.gdeurl }}javascript-dev-guide/widgets/widget_quickSearch.html" target="_blank">QuickSearch widget</a></li>
 <li><a href="{{ site.gdeurl }}javascript-dev-guide/widgets/widget_tabs.html" target="_blank">Tabs widget</a></li>
 
