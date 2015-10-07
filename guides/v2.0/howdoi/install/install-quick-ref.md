@@ -19,7 +19,7 @@ This topic assumes:
 
 	(You can use the same instructions to install on other UNIX distributions like RedHat Enterprise Linux (RHEL), or Debian, but these instructions aren't for Mac or Windows.)
 *	Your host's IP address is 192.0.2.5
-*	You're installing to the `magento2` subdirectory under your web server's docroot
+*	You're installing to the `magento2` subdirectory under your web server's docroot (full path is `/var/www/html/magento2`)
 
 	You can optionally set up static routing or a virtual host to install to a host name instead of an IP but that's beyond the scope of this topic.
 
@@ -54,7 +54,7 @@ You can choose to install the Magento software using either a <a href="{{ site.g
 
 The following example shows how to install using the command line with the following options:
 
-*	The Magento software is installed in the `magento2` directory relative to the web server docroot on `localhost` and the path to the Magento Admin is `admin`; therefore:
+*	The Magento software is installed in the `/var/www/html/magento2` directory and the path to the Magento Admin is `admin`; therefore:
 
 	Your storefront URL is `http://192.0.2.5`
 
@@ -74,7 +74,7 @@ The following example shows how to install using the command line with the follo
 *	Default currency is U.S. dollars
 *	Default time zone is U.S. Central (America/Chicago)
 
-		php <your Magento install dir>/bin/magento setup:install --base-url=http://192.0.2.5/magento2/ \
+		php /var/www/html/magento2/bin/magento setup:install --base-url=http://192.0.2.5/magento2/ \
 		--db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
 		--admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
 		--admin-user=admin --admin-password=admin123 --language=en_US \
