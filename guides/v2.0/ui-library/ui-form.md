@@ -10,11 +10,11 @@ github_link: uilibrary/ui-library-components.md
 
 <h2 id="form">Form Component</h2>
 
-Form component allows performing <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> operations on an entity (SUCH AS....). 
+Form component allows performing <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> operations on an entity. 
 
 <h4>Related UI components</h4>
 
-The following components are used to (build the interface shape?!) extend the Form component:
+The following components are used to extend the Form component:
 
 * DataSource
 * FieldSet
