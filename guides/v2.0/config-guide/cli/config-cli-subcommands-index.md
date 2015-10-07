@@ -73,7 +73,7 @@ This command enables you to reindex all or selected indexers.
 
 Command options:
 
-	magento reindex [indexer]
+	magento indexer:reindex [indexer]
 
 where `[indexer]` is a space-separated list of indexers. Omit `[indexer]` to reindex all indexers.
 
