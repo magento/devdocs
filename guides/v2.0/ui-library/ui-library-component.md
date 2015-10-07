@@ -18,7 +18,14 @@ Components are responsible for rendering result page fragments and providing/sup
 
 
 ###General structure
-In Magento 2 there are basic and secondary UI components. Basic components are UI Library Listing component and UI Library Form component. Secondary components are extensions of basic components  
+In Magento 2 there are basic and secondary UI components. 
+
+Basic components are: 
+
+* Listing component
+* Form component
+
+Secondary components are extensions of basic components.  
 
 <h3>Using UI library component in layout file</h3>
 
@@ -26,7 +33,7 @@ Using UI Library component is as simple as adding the following code to the appr
 
 `<ui_component name="some_ui_component_instance_name"/>`
 
-All UI Library components have base declaration in <a href="{{ site.gdeurl }}ui-library/ui-definition.html">`Magento/Ui/view/base/ui_component/etc/definition.xml`</a>.
+All UI Library components have base declaration in <a href="{{ site.gdeurl }}ui-library/ui-definition.html">`Magento/Ui/view/base/ui_component/etc/definition.xml`</a>. 
 
 Any module can introduce its own set of custom components or modify initial configuration for existing components in a common to Magento way.
 
@@ -40,13 +47,17 @@ And concrete instances of the components each in separate XML configuration file
 
 `app/code/<vendor>/<module>/view/<area>/ui_component/<component_instance_name>.xml`
 
-A single XSD is shared between all components (both definitions and instance configurations):
+###Configuration
+
+Extension developers cannot introduce new components but can customize existing ones locally. 
+
+XSD file contains rules and limitations shared between all components (both definitions and instance configurations):
 
 `app/code/Magento/Ui/etc/ui_definition.xsd`
 
-###Configuration
+It is possible to create custom component by setting `class`, `component` and `template` parameters of the <a href="{{ site.gdeurl }}ui-library/ui-container.html">Container component</a>.
 
-You can configure component and all filter types in the following ways:
+You can configure existing component and all filter types in the following ways:
 
 * Globally: using any module's <a href="{{ site.gdeurl }}ui-library/ui-definition.html">`view/*/ui_component/etc/definition.xml`</a> file. All settings declared in this file will be applied to all component's instances
 * Locally: using concrete component instance configuration, such as `app/code/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml`
