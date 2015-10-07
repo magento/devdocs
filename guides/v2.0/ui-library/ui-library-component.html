@@ -170,7 +170,16 @@
 <p>Components are responsible for rendering result page fragments and providing/supporting further interactions of JavaScript components and server.</p>
 
 <h3 id="general-structure">General structure</h3>
-<p>In Magento 2 there are basic and secondary UI components. Basic components are UI Library Listing component and UI Library Form component. Secondary components are extensions of basic components  </p>
+<p>In Magento 2 there are basic and secondary UI components. </p>
+
+<p>Basic components are: </p>
+
+<ul>
+  <li>Listing component</li>
+  <li>Form component</li>
+</ul>
+
+<p>Secondary components are extensions of basic components.  </p>
 
 <h3>Using UI library component in layout file</h3>
 
@@ -178,7 +187,7 @@
 
 <p><code>&lt;ui_component name="some_ui_component_instance_name"/&gt;</code></p>
 
-<p>All UI Library components have base declaration in <a href="/guides/v2.0/ui-library/ui-definition.html"><code>Magento/Ui/view/base/ui_component/etc/definition.xml</code></a>.</p>
+<p>All UI Library components have base declaration in <a href="/guides/v2.0/ui-library/ui-definition.html"><code>Magento/Ui/view/base/ui_component/etc/definition.xml</code></a>. </p>
 
 <p>Any module can introduce its own set of custom components or modify initial configuration for existing components in a common to Magento way.</p>
 
@@ -190,13 +199,17 @@
 
 <p><code>app/code/&lt;vendor&gt;/&lt;module&gt;/view/&lt;area&gt;/ui_component/&lt;component_instance_name&gt;.xml</code></p>
 
-<p>A single XSD is shared between all components (both definitions and instance configurations):</p>
+<h3 id="configuration">Configuration</h3>
+
+<p>Extension developers cannot introduce new components but can customize existing ones locally. </p>
+
+<p>XSD file contains rules and limitations shared between all components (both definitions and instance configurations):</p>
 
 <p><code>app/code/Magento/Ui/etc/ui_definition.xsd</code></p>
 
-<h3 id="configuration">Configuration</h3>
+<p>It is possible to create custom component by setting <code>class</code>, <code>component</code> and <code>template</code> parameters of the <a href="/guides/v2.0/ui-library/ui-container.html">Container component</a>.</p>
 
-<p>You can configure component and all filter types in the following ways:</p>
+<p>You can configure existing component and all filter types in the following ways:</p>
 
 <ul>
   <li>Globally: using any module’s <a href="/guides/v2.0/ui-library/ui-definition.html"><code>view/*/ui_component/etc/definition.xml</code></a> file. All settings declared in this file will be applied to all component’s instances</li>
