@@ -13,7 +13,7 @@ redirect_from:
 
 <h2>Overview</h2>
 
-Magento accordion widget is an extension of the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/jquery-widget-tabs.html" target="_blank">Magento Tabs widget</a>.
+Magento accordion widget is an extension of the <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_tabs.html" target="_blank">Magento Tabs widget</a>.
 
 Accordions are generally used to break content into multiple sections that can be swapped to save space.
 
