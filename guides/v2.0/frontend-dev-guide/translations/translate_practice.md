@@ -62,8 +62,11 @@ For example:
 
 <img src="{{ site.baseurl }}common/images/fdg_translations_bag2.png" alt="Product page where the customized Compare string is displayed"> 
 
-For general information about usage of the i18n tool see the <a href="{{site.gdeurl}}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">Translation dictionaries and language packages</a> topic.
 
-## Recommended reading ##
-- <a href="{{site.gdeurl}}frontend-dev-guide/translations/xlate.html">Translations overview</a>
-- <a href="{{site.gdeurl}}frontend-dev-guide/translations/theme_dictionary.html">Using translation dictionary to customize strings</a>
+<h2> Recommended reading </h2>
+
+<ul>
+<li><a href="{{site.gdeurl}}frontend-dev-guide/translations/xlate.html">Translations overview</a></li>
+<li><a href="{{site.gdeurl}}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">Translation dictionaries and language packages</a></li>
+<li><a href="{{site.gdeurl}}frontend-dev-guide/translations/theme_dictionary.html">Using translation dictionary to customize strings</a></li>
+</ul>
