@@ -59,5 +59,36 @@ To configure a MySQL database instance:
 
 	If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.
 
+<h2 id="config-ee-multidb-master-cli">Configure Magento EE to use the master databases</h2>
+After setting up a total of three master databases, use the Magento command line to configure Magento to use them. (The command sets up database connections and distributes tables among the master databases.)
+
+{% include install/first-steps-cli.html %}
+
+<h3 id="config-ee-multidb-master-cli-check">Configure the checkout database</h3>
+Command syntax:
+
+	magento setup:db-schema:split-quote --host="<checkout db host or ip>" --dbname="<name>" --username="<checkout db username>" --password="<password>"
+
+For example,
+
+	magento setup:db-schema:split-quote --host="localhost" --dbname="magento_checkout" --username="magento_checkout" --password="magento_checkout"
+
+The following message displays to confirm a successful setup:
+
+	Migration has been finished successfully!
+
+<h3 id="config-ee-multidb-master-cli-oms">Configure the OMS database</h3>
+Command syntax:
+
+	magento setup:db-schema:split-sales --host="<checkout db host or ip>" --dbname="<name>" --username="<checkout db username>" --password="<password>"
+
+For example,
+
+	magento setup:db-schema:split-sales --host="localhost" --dbname="magento_oms" --username="magento_oms" --password="magento_oms"
+
+The following message displays to confirm a successful setup:
+
+	Migration has been finished successfully!
+
 #### Next step
 TBD
