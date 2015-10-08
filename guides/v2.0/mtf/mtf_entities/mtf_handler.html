@@ -161,7 +161,7 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="mtf_handler_overview">Contents</h2>
+		<h3 id="mtf_handler_overview">Contents</h3>
 
 <ul>
   <li><a href="#mtf_handler_overview">Handler overview</a></li>
@@ -178,13 +178,13 @@
       <li><a href="#mtf_handler_di">di.xml</a></li>
     </ul>
   </li>
-  <li><a id="#mtf_handler_howto-create-curl">How to create a cURL Handler</a>
+  <li><a href="#mtf_handler_howto-create-curl">How to create a cURL handler</a>
     <ul>
       <li><a href="#mtf_handler_decor">cURL authentication classes</a></li>
     </ul>
   </li>
-  <li><a href="#mtf_handler_howto-create-ui">How to create a UI Handler</a></li>
-  <li><a href="#mtf_handler_howto-create-ui">How to create a WebAPI Handler</a></li>
+  <li><a href="#mtf_handler_howto-create-ui">How to create a UI handler</a></li>
+  <li><a href="#mtf_handler_howto-create-webapi">How to create a WebAPI handler</a></li>
 </ul>
 
 <h2 id="mtf_handler_overview">Handler overview</h2>
@@ -310,7 +310,7 @@
 
 <p><img src="/common/images/mtf_widget_handler_tree.png" /></p>
 
-<h2 id="mtf_handler_howto-create-curl">How to create a cURL Handler</h2>
+<h2 id="mtf_handler_howto-create-curl">How to create a cURL handler</h2>
 
 <p>Let’s create a cURL handler that creates a new widget.</p>
 
@@ -376,7 +376,7 @@
 
 <div class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">$curl = new FrontendDecorator(new CurlTransport(), $this-&gt;customer);</span></code></pre></div>
 
-<h2 id="mtf_handler_howto-create-ui">How to create a UI Handler</h2>
+<h2 id="mtf_handler_howto-create-ui">How to create a UI handler</h2>
 
 <p>Let’s create a UI handler that creates a new widget.</p>
 
@@ -412,7 +412,7 @@
                 <span class="na">type=</span><span class="s">&quot;\Magento\Widget\Test\Handler\Widget\Ui&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></div>
 
-<h2 id="mtf_handler_howto-create-ui">How to create a WebAPI Handler</h2>
+<h2 id="mtf_handler_howto-create-webapi">How to create a WebAPI handler</h2>
 
 <p>Let’s create a WebAPI handler that creates a new tax rule.</p>
 
