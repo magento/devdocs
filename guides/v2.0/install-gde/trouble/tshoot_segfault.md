@@ -28,7 +28,7 @@ Until a solution is available, we recommend setting the <a href="http://ss64.com
 2.	Open `/home/magento_user/.bashrc` in a text editor.
 3.	Add the following line:
 	
-		ulimit -s 65536
+		ulimit -S 65532
 
 <div class="bs-callout bs-callout-warning">
     <p>We recommend you avoid setting a value for <code>pcre.recursion_limit</code> in <code>php.ini</code> because it can result in incomplete rollbacks with no failure notice.</p>
