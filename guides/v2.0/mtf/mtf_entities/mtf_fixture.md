@@ -7,7 +7,7 @@ menu_title: Fixture
 menu_order: 1
 github_link: mtf/mtf_entities/mtf_fixture.md
 ---
-<h2 id="mtf_fixture_content">Contents</h2>
+<h3 id="mtf_fixture_content">Contents</h3>
 
 - <a href="#mtf_fixture_overview">Fixture overview</a>
 
@@ -15,7 +15,7 @@ github_link: mtf/mtf_entities/mtf_fixture.md
 
 - <a href="#mtf_fixture_read">Read and update new fixture</a>
 
-- <a href="#mtf_fixture_repositoy">Add repository to the fixture field</a>
+- <a href="#mtf_fixture_repositoy">Add a repository to the fixture field</a>
 
 - <a href="#mtf_fixture_source">Add the data source to the fixture field</a>
 
