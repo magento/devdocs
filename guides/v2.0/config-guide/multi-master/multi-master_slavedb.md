@@ -26,7 +26,7 @@ An in-depth discussion of database replication is beyond the scope of this guide
 *	<a href="https://dev.mysql.com/doc/refman/5.6/en/replication.html" target="_blank">MySQL documentation</a>
 *	<a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-master-slave-replication-in-mysql" target="_blank">How To Set Up Master Slave Replication in MySQL (digitalocean)</a>
 
-Magento provides sample MySQL configurations for your slave databases. A simple configuration is provided with the <a href="{{ site.mage2000url }}app/code/Magento/ResourceConnections/README.md" target="_blank">ResourceConnections class README</a>.
+Magento provides sample MySQL configurations for your slave databases. A simple configuration is provided with the `ResourceConnections` class README..md</a>.
 
 The following is more advanced and is provided for your information only:
 
