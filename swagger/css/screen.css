@@ -82,7 +82,7 @@
 .swagger-section pre .vhdl .attribute,
 .swagger-section pre .clojure .attribute,
 .swagger-section pre .coffeescript .property {
-  color: #8888ff;
+  color: #88F;
 }
 .swagger-section pre .keyword,
 .swagger-section pre .id,
@@ -674,7 +674,7 @@
   font-weight: bold;
 }
 .swagger-section .swagger-ui-wrap ul#resources li.resource div.heading h2 a {
-  color: #999999;
+  color: #ef672f;
 }
 .swagger-section .swagger-ui-wrap ul#resources li.resource div.heading h2 a:hover {
   color: black;
@@ -806,6 +806,9 @@
 .swagger-section .swagger-ui-wrap ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation div.content form input[type='text'].error {
   outline: 2px solid black;
   outline-color: #cc0000;
+}
+.swagger-section .swagger-ui-wrap ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation div.content form select[name='parameterContentType'] {
+  max-width: 300px;
 }
 .swagger-section .swagger-ui-wrap ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation div.content div.response div.block pre {
   font-family: "Anonymous Pro", "Menlo", "Consolas", "Bitstream Vera Sans Mono", "Courier New", monospace;
@@ -1216,14 +1219,14 @@
   cursor: pointer;
 }
 .swagger-section #header {
-  background-color: #89bf04;
+  background-color: #ef672f;
   padding: 14px;
 }
 .swagger-section #header a#logo {
   font-size: 1.5em;
   font-weight: bold;
   text-decoration: none;
-  background: transparent url(../images/logo_small.png) no-repeat left center;
+  background: transparent url(../images/magento_32.png) no-repeat left center;
   padding: 20px 0 20px 40px;
   color: white;
 }
@@ -1251,7 +1254,7 @@
   padding: 6px 8px;
   font-size: 0.9em;
   color: white;
-  background-color: #547f00;
+  background-color: #bf5225;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   -o-border-radius: 4px;
