@@ -22,7 +22,7 @@ Until a solution is available, we recommend setting the <a href="http://ss64.com
 2.	Open `/home/<username>/.bashrc` in a text editor.
 3.	Add the following line:
 	
-		ulimit -s 65536
+		ulimit -S 65532
 
 	You can change this to a larger value if needed.
 
