@@ -27,6 +27,12 @@ Basic components are:
 
 Secondary components are extensions of basic components.  
 
+All components can be configured both for Admin and storefront.
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>You need to configure styles manually for components on storefront.</p>
+</div>
+
 <h3>Using UI library component in layout file</h3>
 
 Using UI Library component is as simple as adding the following code to the appropriate layout section:
