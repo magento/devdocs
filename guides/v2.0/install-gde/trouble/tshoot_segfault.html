@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Error after logging in to the Magento Admin</title>
+	<title>Segmentation fault during rollback</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/install-gde/trouble/tshoot_admin.html">
+	<link rel="canonical" href="//guides/v2.0/install-gde/trouble/tshoot_segfault.html">
 
 
 
@@ -150,9 +150,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Error after logging in to the Magento Admin</h1>
+		<h1 class="page-heading">Segmentation fault during rollback</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/install-gde/install/composer-clone.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/install-gde/trouble/tshoot_segfault.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -161,17 +161,36 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="install-trouble-admin-login">Error after logging in to the Magento Admin</h2>
+		<h2 id="install-trouble-segfault">Segmentation fault during rollback</h2>
 
-<pre><code>The requested URL /magento2index.php/admin/admin/dashboard/index/key/0c81957145a968b697c32a846598dc2e/ was not found on this server.
+<h3 id="symptom">Symptom</h3>
+<p>When you attempt to roll back using the command line, the following error displays:</p>
+
+<pre><code>Segmentation fault
 </code></pre>
 
-<p>Note the lack of a slash character between <tt>magento2</tt> and <tt>index.php</tt> in the URL.</p>
+<p>As a result, the rollback does not complete.</p>
 
-<h3 id="solution">Solution</h3>
+<h3 id="details">Details</h3>
+<p>In some cases, a very long query string causes the user’s allocated memory space to run out of memory because of too many recursive calls. We’re aware of this issue and are working on a solution.</p>
 
-<p>The base URL is not correct. The base URL must start with <tt>http://</tt> or <tt>https://</tt> <em>and</em> it must end with a slash (/). Run the installation again with a valid value.</p>
+<h3 id="workaround">Workaround</h3>
+<p>Until a solution is available, we recommend setting the <a href="http://ss64.com/bash/ulimit.html" target="_blank"><code>ulimit</code></a> for the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a> to a value of 65536 or more. One way to do this is to edit the user’s shell script. For example, for the Bash shell:</p>
 
+<ol>
+  <li>If you haven’t done so already, switch to the <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">Magento file system owner</a>.</li>
+  <li>Open <code>/home/magento_user/.bashrc</code> in a text editor.</li>
+  <li>
+    <p>Add the following line:</p>
+
+    <pre><code>ulimit -S 65532
+</code></pre>
+  </li>
+</ol>
+
+<div class="bs-callout bs-callout-warning">
+    <p>We recommend you avoid setting a value for <code>pcre.recursion_limit</code> in <code>php.ini</code> because it can result in incomplete rollbacks with no failure notice.</p>
+</div>
 
 
 		</div>
@@ -402,7 +421,7 @@
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v2.0/install-gde/trouble/tshoot_admin.html">Error after logging in to the Magento Admin</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_admin.html">Error after logging in to the Magento Admin</a></li>
 						
 								
 							
@@ -569,7 +588,7 @@
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_segfault.html">Segmentation fault during rollback</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/install-gde/trouble/tshoot_segfault.html">Segmentation fault during rollback</a></li>
 						
 								
 							
