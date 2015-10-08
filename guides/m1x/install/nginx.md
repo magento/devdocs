@@ -15,6 +15,6 @@ We support nginx version 1.7.x. Installing the nginx software is beyond the scop
 
 To avoid this issue, you can use <a href="https://gist.github.com/gwillem/cd5ae6845fa33aa0d481" target="_blank">this nginx configuration</a> provided by Willem de Groot.
 
-We also recommend you review the <a href="http://merch.docs.magento.com/ee/user_guide/Magento_Enterprise_Edition_User_Guide.html" target="_blank">Magento Security Best Practicies</a>.
+We also recommend you review the <a href="http://merch.docs.magento.com/ee/user_guide/Magento_Enterprise_Edition_User_Guide.html" target="_blank">Magento Security Best Practices</a>.
 
 Additionally, you can also check your site for other security vulnerabilities at <a href="http://magereport.com" target="_blank">http://magereport.com</a>. This is a Magento community project that is not affiliated with Magento.
