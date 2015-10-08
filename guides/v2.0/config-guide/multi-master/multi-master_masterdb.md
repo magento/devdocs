@@ -25,7 +25,7 @@ This topic discusses how to get started with the split database solution by:
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>This guide assumes all three databases are on the same host as the Magento application and that they're named <code>magento</code>, <code>magento_checkout</code>, and <code>magento_oms</code>. However, the choice of where to locate the databases and what they're named is up to you. We're providing examples to make the instructions easier to follow.</p></span>
+  <p>This guide assumes all three databases are on the same host as the Magento application and that they're named <code>magento</code>, <code>magento_checkout</code>, and <code>magento_oms</code>. However, the choice of where to locate the databases and what they're named is up to you. We hope our examples make the instructions easier to follow.</p></span>
 </div>
 
 <h2 id="config-ee-multidb-master-install">Install the Magento EE software</h2>
@@ -34,15 +34,13 @@ You can enable split databases at any time after you install the Magento EE soft
 <h2 id="config-ee-multidb-master-masters">Set up additional master databases</h2>
 Create checkout and OMS master databases as follows:
 
-To configure a MySQL database instance:
-
 1.	Log in to your database server as any user.
 2.	Enter the following command to get to a MySQL command prompt:
 
 		mysql -u root -p
 
 3.	Enter the MySQL `root` user's password when prompted.
-4.	Enter the following commands in the order shown to create database instances named `magento_checkout` and `magento_oms` with user names `magento_checkout` and `magento_oms`, respectively:
+4.	Enter the following commands in the order shown to create database instances named `magento_checkout` and `magento_oms` with the same user names and passwords:
 
 		create database magento_checkout;
 		GRANT ALL ON magento_checkout.* TO magento_checkout@localhost IDENTIFIED BY 'magento_checkout';

@@ -21,7 +21,7 @@ github_link: config-guide/multi-master/multi-master.md
 <h2 id="config-ee-multidb-over">Overview of the split database solution</h2>
 *This feature is available in Magento Enterprise Edition (EE) only.*
 
-Split databases offer a performance and scalability benefit for merchants who expect to process large numbers of transactions on their storefront. With split databases, we apply the unified connection to three separate *master* databases: one for checkout tables, one for order management system (OMS) tables, and one for the remainder of Magento tables. This enables reads and writes to these tables to occur independently over separate connections, enabling better performance.
+Split databases offer a performance and scalability benefit for merchants who expect to process large numbers of transactions on their storefront. With split databases, we apply the unified connection to three separate *master* databases. Having three master databases enables reads and writes to these tables to occur independently over separate connections, enabling better performance.
 
 In addition, if you set up optional database replication, you get the following advantages:
 
@@ -40,7 +40,7 @@ The split database requires you to set up three MySQL master databases on any ho
 *	One master database for order management system (OMS) tables
 *	One master database for the remainder of the Magento 2 application tables
 
-In addition, you can optionally set up any number of *slave* databases that serve as load balancers. 
+In addition, you can optionally set up any number of *slave* databases that serve as load balancers and backups.
 
 This guide discusses how to set up the master databases only. We provide sample configurations and references for you to set up slave databases if you wish.
 
@@ -49,6 +49,8 @@ In this guide, the three master databases are named:
 *	`magento_checkout`
 *	`magento_oms`
 *	`magento`
+
+(You can name your databases anything you wish.)
 
 #### Next step
 <a href="{{ site.gdeurl }}config-guide/multi-master/multi-master_masterdb.html">Set up master databases</a>
