@@ -6,14 +6,15 @@ title: Set up master databases
 menu_title: Set up master databases
 menu_order: 2
 menu_node: 
-github_link: config-guide/mult-master/multi-masterdb.md
+github_link: config-guide/multi-master/multi-master_masterdb.md
 ---
 
 <img src="{{ site.baseurl }}common/images/ee-only_large.png">
 
 #### Contents
-*	TBD
-*	TBD
+*	<a href="#config-ee-multidb-master-over">Overview of master databases</a>
+*	<a href="#config-ee-multidb-master-install">Install the Magento EE software</a>
+*	<a href="#config-ee-multidb-master-masters">Set up additional master databases</a>
 
 <h2 id="config-ee-multidb-master-over">Overview of master databases</h2>
 This topic discusses how to get started with the split database solution by:
@@ -93,4 +94,4 @@ The following message displays to confirm a successful setup:
 	Migration has been finished successfully!
 
 #### Next step
-TBD
+<a href="{{ site.gdeurl }}config-guide/multi-master/multi-master_verify.html">Verify split databases</a>

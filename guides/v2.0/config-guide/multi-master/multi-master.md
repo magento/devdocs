@@ -6,19 +6,32 @@ title: Split database performance solution (Enterprise Edition only)
 menu_title: Split database performance solution (Enterprise Edition only)
 menu_order: 1
 menu_node: parent
-github_link: config-guide/mult-master/multi-master.md
+github_link: config-guide/multi-master/multi-master.md
 ---
 
 <img src="{{ site.baseurl }}common/images/ee-only_large.png">
 
 #### Contents
-*	TBD
-*	TBD
+*	<a href="#config-ee-multidb-over">Overview of the split database solution</a>
+*	<a href="#config-ee-multidb-prereq">Prerequisites</a>
+*	<a href="{{ site.gdeurl }}config-guide/multi-master/multi-master_masterdb.html">Set up master databases</a>
+*	<a href="{{ site.gdeurl }}config-guide/multi-master/multi-master_verify.html">Verify split databases</a>
+*	<a href="{{ site.gdeurl }}config-guide/multi-master/multi-master_slavedb.html">Set up optional database replication</a>
 
 <h2 id="config-ee-multidb-over">Overview of the split database solution</h2>
 *This feature is available in Magento Enterprise Edition (EE) only.*
 
-TBD
+Split databases offer a performance and scalability benefit for merchants who expect to process large numbers of transactions on their storefront. The <a href="{{ site.mage2000url }}app/code/Magento/ResourceConnections" target="_blank">`ResourceConnections`</a> class enables MySQL databases a unified connection to the Magento application.
+
+With split databases, we apply the unified connection to three separate *master* databases: one for checkout tables, one for order management system (OMS) tables, and one for the remainder of Magento tables. This enables reads and writes to these tables to occur independently over separate connections, enabling better performance.
+
+In addition, if you set up optional database replication, you get the following advantages:
+
+*	Data backup
+*	Data analysis without affecting the master database
+*	Scalability
+
+MySQL databases replicate asynchronously, which means slaves do not need to be connected permanently to receive updates from the master.
 
 <h2 id="config-ee-multidb-prereq">Prerequisites</h2>
 The split database requires you to set up three MySQL master databases on any host (all three on the Magento server, each database on a separate server, and so on). These are the *master* databases and they're used as follows:
@@ -38,4 +51,4 @@ In this guide, the three master databases are named:
 *	`magento`
 
 #### Next step
-TBD
+<a href="{{ site.gdeurl }}config-guide/multi-master/multi-master_masterdb.html">Set up master databases</a>

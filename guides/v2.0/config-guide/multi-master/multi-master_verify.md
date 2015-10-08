@@ -6,7 +6,7 @@ title: Verify split databases
 menu_title: Verify split databases
 menu_order: 5
 menu_node: 
-github_link: config-guide/mult-master/multi-verify.md
+github_link: config-guide/multi-master/multi-master_verify.md
 ---
 
 <img src="{{ site.baseurl }}common/images/ee-only_large.png">
@@ -21,20 +21,23 @@ To verify your split databases are working properly, perform the following tasks
 
 <table>
 <tbody>
+	<col width="25%">
+	<col width="75%">
 	<tr>
 		<th>What to verify</th>
 		<th>How to verify</th>
 	</tr>
 <tr>
 	<td>Checkout database is working</td>
-	<td>Add items to a cart and verify that rows have been added to your checkout database's <code>quote</code>, <code>quote_address</code>, and <code>quote_item</code> tables.</td>
+	<td>Add items to a cart. Verify that rows have been added to your checkout database's <code>quote</code>, <code>quote_address</code>, and <code>quote_item</code> tables.</td>
 </tr>
 <tr>
-	<td>OMS tables are working</td>
-	<td>TBD</td>
+	<td>OMS database is working</td>
+	<td>Complete an order (any payment method, including check/money order). Verify that rows have been added to your OMS database's <code>sales_order_address</code>, <code>sales_order_item</code>, and <code>sales_order_payment</code> tables.</td>
 </tr>
 </tbody>
 </table>
 
 
-#### Next step
+#### Next step (optional)
+<a href="{{ site.gdeurl }}config-guide/multi-master/multi-master_slavedb.html">Set up optional database replication</a>
