@@ -73,7 +73,7 @@ This command enables you to reindex all or selected indexers.
 
 Command options:
 
-	magento reindex [indexer]
+	magento indexer:reindex [indexer]
 
 where `[indexer]` is a space-separated list of indexers. Omit `[indexer]` to reindex all indexers.
 
@@ -158,7 +158,6 @@ Sample result:
 #### Related topics
 
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a>

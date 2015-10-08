@@ -9,6 +9,8 @@ menu_order: 1
 github_link: install-gde/continue-to-verify_cli.md
 ---
 
+
+
 ## Now that you've finished your installation
 We suggest the following:
 
