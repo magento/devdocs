@@ -11,15 +11,30 @@ github_link: config-guide/mult-master/multi-verify.md
 
 <img src="{{ site.baseurl }}common/images/ee-only_large.png">
 
-#### Contents
-*	TBD
-*	TBD
+After configuration, the master databases are configured as follows:
 
-<h2 id="config-ee-multidb-slave-over">Overview of slave databases</h2>
-The Magento split database performance solution enables you to set up database replication with any number of slave databases.
+*	Main magento database: 250 tables
+*	Magento checkout database: 10 tables
+*	Magento OMS database: 54 tables
 
-Configuring databae replication is optional; to skip this step
+To verify your split databases are working properly, perform the following tasks and verify that data is added to the database tables:
 
+<table>
+<tbody>
+	<tr>
+		<th>What to verify</th>
+		<th>How to verify</th>
+	</tr>
+<tr>
+	<td>Checkout database is working</td>
+	<td>Add items to a cart and verify that rows have been added to your checkout database's <code>quote</code>, <code>quote_address</code>, and <code>quote_item</code> tables.</td>
+</tr>
+<tr>
+	<td>OMS tables are working</td>
+	<td>TBD</td>
+</tr>
+</tbody>
+</table>
 
 
 #### Next step

@@ -62,6 +62,8 @@ To configure a MySQL database instance:
 <h2 id="config-ee-multidb-master-cli">Configure Magento EE to use the master databases</h2>
 After setting up a total of three master databases, use the Magento command line to configure Magento to use them. (The command sets up database connections and distributes tables among the master databases.)
 
+### First steps
+
 {% include install/first-steps-cli.html %}
 
 <h3 id="config-ee-multidb-master-cli-check">Configure the checkout database</h3>
