@@ -17,7 +17,7 @@ After configuration, the master databases are configured as follows:
 *	Magento checkout database: 10 tables
 *	Magento OMS database: 54 tables
 
-To verify your split databases are working properly, perform the following tasks and verify that data is added to the database tables:
+To verify your split databases are working properly, perform the following tasks and verify that data is added to the database tables using a database tool like <a href="{{ site.gdeurl }}install-gde/prereq/optional.html#install-optional-phpmyadmin" target="_blank">phpmyadmin</a>:
 
 <table>
 <tbody>
