@@ -31,32 +31,33 @@ The translations priority described earlier is applied for the default en_US loc
 
 <span id="luma_example">For example, this approach is used in the Magento Luma theme. It has the 
 <a href="{{site.mage2000url}}app/design/frontend/Magento/luma/i18n/en_US.csv"><code>app/design/frontend/Magento/luma/i18n/en_US.csv</code></a> file, where the left column contains the default values (keys), and the right columns contains the values to be used instead when the Luma theme is applied:
-
-    Add to Wish List	Wish List
-    Add to Compare	Compare
-    Your Checkout Progress	Checkout Progress
-    Card Verification Number	CVV
-    ...
 </span>
+
+    "Add to Wish List",	"Wish List"
+    "Add to Compare",	"Compare"
+    "Your Checkout Progress",	"Checkout Progress"
+    "Card Verification Number",	"CVV"
+    ...
+
 It is important to remember that if you generate a dictionary for your theme using the i18n tool with the conventional names and locations for the dictionary, the existing dictionary gets overwritten. 
 
 That is why the recommended flow for adding custom strings is the following:
 
 1. <a href="{{site.gdeurl}}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">Generate the dictionary</a> for your theme.
-2. Change the necessary values in the left column, or add rows if the strings you want to replace are not in the dictionary. 
+2. Change the necessary values in the right column, or add rows if the strings you want to replace are not in the dictionary. 
 The i18n tool does not create a dictionary, if the theme files do not contain any strings for translation. In this case, add the file manually. 
 
 See the <a href="{{site.gdeurl}}frontend-dev-guide/translations/translate_practice.html">Create a translation dictionary for a theme</a> topic for the practical illustration of this procedure.
 
 <h3>Custom strings and dictionaries for not default locales</h3>
-Even if your theme uses the en_US.csv to overwrite certain default strings, the dictionaries for other locales for your theme, should contain the default strings as keys, not the custom ones. 
+Even if your theme uses `en_US.csv` to overwrite certain default strings, the dictionaries for other locales for your theme should contain the default strings as keys, not the custom ones. 
 
 Continuing the <a href="#luma_example">previous example</a> with the Luma theme, if the `de_DE.csv` dictionary will be added for the Luma theme, it will look like following:
 
-    Add to Wish List	<translation>
-    Add to Compare	<translation>
-    Your Checkout Progress	<translation>
-    Card Verification Number	<translation>
+    "Add to Wish List",	<translation>
+    "Add to Compare",	<translation>
+    "Your Checkout Progress",	<translation>
+    "Card Verification Number",	<translation>
     ...
 
 The default values (keys) are used in the left column.
