@@ -56,3 +56,31 @@ Please help us keep this list up-to-date by providing feedback in any of the fol
 
 ## Migration
 *	<a href="{{ site.gdeurl }}howdoi/migrate/migrate.html">Migrate to Magento 2 store</a>
+
+## QA
+
+### Functional testing using the Magento Testing Framework
+
+* <a href="{{site.gdeurl}}mtf/mtf_installation.html">Install the MTF</a>
+* <a href="{{site.gdeurl}}mtf/mtf_quickstart/mtf_quickstart_config.html#mtf_quickstart_config_phpunitxml">Edit phpunit.xml to configure PHPUnit</a>
+* <a href="{{site.gdeurl}}mtf/mtf_quickstart/mtf_quickstart_config.html#mtf_quickstart_config_configxml">Edit config.xml to start using Magento Testing Framework</a>
+* <a href="{{site.gdeurl}}mtf/mtf_quickstart/mtf_quickstart_config.html#mtf_quickstart_config_credentialsxml">Edit credentials.xml to work with Magento modules that requires credentials </a>
+* <a href="{{site.gdeurl}}mtf/mtf_quickstart/mtf_quickstart_environmemt.html#mtf_quickstart_env_selenium">Run the Selenium Server </a>
+* <a href="{{site.gdeurl}}mtf/mtf_quickstart/mtf_quickstart_environmemt.html#mtf_quickstart_env_selenium-non-def">Run the Selenium Server with WebDriver </a>
+* <a href="{{site.gdeurl}}mtf/mtf_quickstart/mtf_quickstart_environmemt.html#mtf_quickstart_env_generator">Run the MTF generator </a>
+* <a href="{{site.gdeurl}}mtf/mtf_quickstart/mtf_quickstart_runtest.html#mtf_quickstart_testrun_all">Run all functional tests </a>
+* <a href="{{site.gdeurl}}mtf/mtf_quickstart/mtf_quickstart_runtest.html#mtf_quickstart_testrun_one">Run one functional test </a>
+* <a href="{{site.gdeurl}}mtf/mtf_quickstart/mtf_quickstart_logs.html">See logs for failed functional tests </a>
+* <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_merge#mtf_fixture_create">Create new fixture with generateFixtureXml tool in the MTF </a>
+* <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_repositoy">Add a repository to the fixture field in the MTF </a>
+* <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">Add the data source to the fixture field in the MTF </a>
+* <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_merge">Merge fixtures in the MTF </a>
+* <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_extend">Extend fixture in the MTF </a>
+* <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_fixture-repo.html#mtf_repository_create">Create a repository for the entire fixture in the MTF </a>
+* <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_fixture-repo.html#mtf_repository_create">Create a repository for the fixture field in the MTF </a>
+* <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_fixture-repo.html#mtf_repository_merge">Merge repositories in the MTF </a>
+* <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_fixture-repo.html#mtf_repository_credent_iso">Use credentials and placeholders in the MTF repositories </a>  
+* <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_handler.html#mtf_handler_howto-create-curl">Create cURL handler in the MTF </a>
+* <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_handler.html#mtf_handler_decor">Use BackendDecorator and FrontendDecorator classes </a>  
+* <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_handler.html#mtf_handler_howto-create-ui">Create a UI Handler in the MTF </a>
+* <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_handler.html#mtf_handler_howto-create-webapi">Create a WebAPI Handler </a>
