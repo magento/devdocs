@@ -53,3 +53,6 @@ Please help us keep this list up-to-date by providing feedback in any of the fol
 - <a href="{{site.gdeurl}}javascript-dev-guide/javascript/custom_js.html#extend_js">Extend a default JS component</a>
 - <a href="{{site.gdeurl}}javascript-dev-guide/javascript/custom_js.html#disable_default_js">Disable default Magento JS</a>
 - <a href="{{site.gdeurl}}javascript-dev-guide/javascript/js_debug.html">Define which JavaScript components and widgets are used on a particular page.</a>
+
+## Migration
+*	<a href="{{ site.gdeurl }}howdoi/migrate/migrate.html">Migrate to Magento 2 store</a>
