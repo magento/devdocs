@@ -2,7 +2,7 @@
 layout: default
 group: install_pre
 subgroup: Z_continue
-title: Continue to installing the Magento software
+title: Continue installing the Magento software
 menu_title: Continue to installing the Magento software
 menu_node: parent
 menu_order: 1
