@@ -106,7 +106,8 @@ p.q 	{
 
 
 .container {
-    padding-left: 66px
+    padding-left: 66px;
+    padding-right: 66px
 }
 
 .copyright .container {
