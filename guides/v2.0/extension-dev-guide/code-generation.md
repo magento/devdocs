@@ -1,15 +1,14 @@
 ---
 layout: default
-group: config-guide
-subgroup: CLI
-title: About code compilation
-menu_title: About code compilation
-menu_node: 
-menu_order: 5000
-github_link: config-guide/cli/code-generation.md
----
+group: extension-dev-guide
+subgroup: 6_Module Development
+title: Code generation
+menu_title: Code generation
+menu_order: 6
+github_link: extension-dev-guide/code-generation.md
 
-<!-- This topic should move to the PHP guide; it's here just so it can be reviewed. The purpose of this topic is to answer questions about details regarding how code compilation works. It should address Alan Storm's points from  https://github.com/magento/devdocs/issues/325 -->
+---
+##{{page.menu_title}} 
 
 #### Contents
 *	<a href="#codegen-over">Overview of code generation</a>

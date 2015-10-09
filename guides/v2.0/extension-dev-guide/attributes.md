@@ -4,7 +4,7 @@ group: extension-dev-guide
 subgroup: 6_Module Development
 title: EAV and extension attributes
 menu_title: EAV and extension attributes
-menu_order: 5
+menu_order: 7
 github_link: extension-dev-guide/attributes.md
 redirect_from: /guides/v1.0/extension-dev-guide/attributes.html
 

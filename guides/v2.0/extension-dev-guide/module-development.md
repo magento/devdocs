@@ -22,6 +22,7 @@ Magento 2 is flexible and as a result has varied functionality, so developing a 
   
 * [Working With Public Interfaces and APIs](api-concepts.html)
 * [Object Manager / Dependency Injection](depend-inj.html)
+* [Code Generation](code-generation.html)
 * [EAV Attributes](attributes.html)
 * [Plug-ins (aka interceptors)](plugins.html)
 * [Routing](routing.html)
@@ -36,13 +37,8 @@ The following topics will be added in upcoming sprints:
 * System Configuration
 * Scoping Configuration
 * Global vs Stores vs Websites vs. Storeview
-
 * Abstract Objects / Base Classes
-* Code Generation Classes
-
 * Factories
 * Magic Methods (Framework + Object)
-
 * Proxies
-
 * View Layer
