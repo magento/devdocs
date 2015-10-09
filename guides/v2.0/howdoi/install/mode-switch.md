@@ -4,8 +4,8 @@ group: howdoi
 subgroup: Installation and configuration
 title: Magento mode switch
 menu_title: Magento mode switch
-menu_node: 
-menu_order: 3
+menu_node: parent
+menu_order: 1
 github_link: howdoi/install/mode-switch.md
 ---
 

@@ -4,8 +4,8 @@ group: howdoi
 subgroup: Installation and configuration
 title: Installation quick reference
 menu_title: Installation quick reference
-menu_node: 
-menu_order: 2
+menu_node: parent
+menu_order: 1
 github_link: howdoi/install/install-quick-ref.md
 ---
 

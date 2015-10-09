@@ -4,8 +4,8 @@ group: howdoi
 subgroup: Installation and configuration
 title: Configure caching options
 menu_title: Configure caching options
-menu_node: 
-menu_order: 5
+menu_node: parent
+menu_order: 1
 github_link: howdoi/install/config-cache.md
 ---
 

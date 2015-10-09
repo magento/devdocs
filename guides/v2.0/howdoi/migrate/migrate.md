@@ -4,8 +4,8 @@ group: howdoi
 subgroup: Migration
 title: Migrate from Magento 1 to Magento 2
 menu_title: Migrate from Magento 1 to Magento 2
-menu_node: 
-menu_order: 2
+menu_node: parent
+menu_order: 1
 github_link: howdoi/migration/migrate.md
 ---
 
