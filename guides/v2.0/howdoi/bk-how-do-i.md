@@ -19,3 +19,6 @@ Please help us keep this list up-to-date by providing feedback in any of the fol
 
 ## PHP developers
 *	<a href="{{ site.gdeurl }}howdoi/php/php_clear-dirs.html">Clear directories during development</a>
+
+## Migration
+*	<a href="{{ site.gdeurl }}howdoi/migrate/migrate.html">Migrate to Magento 2 store</a>
