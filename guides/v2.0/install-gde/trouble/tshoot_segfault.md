@@ -1,16 +1,22 @@
 ---
 layout: default
-group: compman
-subgroup: B_prereq
-title: Set ulimit for the web server user
-menu_title: Set ulimit for the web server user
-menu_order: 2
+group: install_trouble
+subgroup: Z_Other issues
+title: Segmentation fault during rollback
+menu_title: Segmentation fault during rollback
 menu_node: 
-github_link: comp-mgr/prereq/prereq_compman-ulimit.md
+menu_order: 100
+github_link: install-gde/trouble/tshoot_segfault.md
 ---
 
-## Issue
-Rolling back to a previous backup using either the Component Manager or System Upgrade can silently fail, resulting in incomplete data being written to the file system or database.
+<h2 id="install-trouble-segfault">Segmentation fault during rollback</h2>
+
+### Symptom
+When you attempt to roll back using the command line, the following error displays:
+
+	Segmentation fault
+
+As a result, the rollback does not complete.
 
 ### Details
 In some cases, a very long query string causes the user's allocated memory space to run out of memory because of too many recursive calls. We're aware of this issue and are working on a solution.

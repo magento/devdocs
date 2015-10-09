@@ -69,10 +69,7 @@ The following table summarizes the available commands. Commands are shown in sum
 		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-index.html">magento setup:indexer:{status|show-mode|set-mode|reindex|info}</a></td>
 		<td><p>Manages the indexers</p></td>
 	</tr>
-	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-log.html">magento log {status|clean}</a></td>
-		<td><p>Cleans logs older than a specified number of days</p></td>
-	</tr>
+	
 	<tr>
 		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cron.html">magento cron:run</a></td>
 		<td><p>Runs Magento cron jobs</p></td>
