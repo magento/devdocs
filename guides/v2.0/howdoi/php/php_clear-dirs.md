@@ -1,7 +1,7 @@
 ---
 layout: default
 group: howdoi
-subgroup: PHP
+subgroup: PHP Developers
 title: Clear directories during development
 menu_title: Clear directories during development
 menu_node: 
