@@ -197,6 +197,7 @@ app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/
 │	├──&nbsp;images/
 │	├──&nbsp;js/
 ├──&nbsp;composer.json&nbsp;
+├──&nbsp;registration.php&nbsp;
 ├──&nbsp;theme.xml&nbsp;
 </pre>
 <p>Let’s have a closer look at each particular sub-directory.</p>
@@ -375,25 +376,33 @@ app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/
     </tr>
     <tr>
       <td colspan="1">
-        <code>/theme.xml</code>
-
-      </td>
-      <td colspan="1">required</td>
-      <td colspan="1">
-        The file is mandatory as it declares a theme as a system component. It contains the basic meta-information, like the theme name and the parent theme name, is the theme is inherited from an existing theme. The file is used by the Magento system to recognize the theme.
-           <!--ADDLINK-->
-
-      </td>
-    </tr>
-    <tr>
-      <td colspan="1">
         <code>
           /composer.json
         </code>
       </td>
       <td colspan="1">optional</td>
       <td colspan="1">
-        Describes the theme dependencies and some meta-information. Will be here if your theme is a Composer package<!--ADDLINK-->
+        Describes the theme dependencies and some meta-information. Will be here if your theme is a Composer package.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <code>/registration.php</code>
+      </td>
+      <td colspan="1">required</td>
+      <td colspan="1">
+        Required to register your theme in the system.
+           
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <code>/theme.xml</code>
+      </td>
+      <td colspan="1">required</td>
+      <td colspan="1">
+        The file is mandatory as it declares a theme as a system component. It contains the basic meta-information, like the theme name and the parent theme name, is the theme is inherited from an existing theme. The file is used by the Magento system to recognize the theme.
+           
       </td>
     </tr>
   </tbody>

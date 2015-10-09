@@ -165,6 +165,19 @@
 
 <p>This topic discusses how to create the files that make up a theme, how to add a logo to a theme, and how to size images.</p>
 
+<h3>Contents</h3>
+
+<ul>
+  <li><a href="#layout_theme_how-to_dirs">Create a theme directory</a></li>
+  <li><a href="#fedg_create_theme_how-to_declare">Declare your theme</a></li>
+  <li><a href="#fedg_create_theme_composer">Make your theme a Composer package (optional)</a></li>
+  <li><a href="#fedg_create_theme_reg">Add <code>registration.php</code></a></li>
+  <li><a href="#fedg_create_theme_how-to-images">Configure images</a></li>
+  <li><a href="#fedg_theme_how-to_static">Create directories for static files</a></li>
+  <li><a href="#fedg_theme_how-to_structure">Your theme directory structure now</a></li>
+  <li><a href="#logo_declare">Declaring theme logo</a></li>
+</ul>
+
 <h2 id="layout_theme_how-to_dirs">Create a theme directory</h2>
 
 <p>To create the directory for your theme:</p>
@@ -248,6 +261,25 @@ app/design/frontend/
 <span class="p">}</span></code></pre></div>
 
 <p>You can find details about the Composer integration in the Magento system in <a href="/guides/v2.0/extension-dev-guide/composer-integration.html">Composer integration</a>.</p>
+
+<h2 id="fedg_create_theme_reg">Add registration.php</h2>
+
+<p>To register your theme in the system, in your theme directory add a <code>registration.php</code> file with the following content:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="sd">/**</span>
+<span class="sd"> * Copyright © 2015 Magento. All rights reserved.</span>
+<span class="sd"> * See COPYING.txt for license details.</span>
+<span class="sd"> */</span>
+<span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">register</span><span class="p">(</span>
+    <span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">THEME</span><span class="p">,</span>
+    <span class="s1">&#39;frontend/&lt;Vendor&gt;/&lt;theme&gt;&#39;</span><span class="p">,</span>
+    <span class="nx">__DIR__</span>
+<span class="p">);</span></code></pre></div>
+
+<p>Where <code>&lt;Vendor&gt;</code> is your vendor name, <code>&lt;theme&gt;</code> is the theme code.</p>
+
+<p>For illustration, see the <a href="https://github.com/magento/magento2/blob/develop/app/design/frontend/Magento/luma/registration.php">registration.php</a> file of the Magento Luma theme.</p>
 
 <h2 id="fedg_create_theme_how-to-images">Configure images</h2>
 
