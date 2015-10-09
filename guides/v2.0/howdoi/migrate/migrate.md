@@ -1,6 +1,6 @@
 ---
 layout: default
-group: howdoi
+group: 
 subgroup: Migration
 title: Migrate from Magento 1 to Magento 2
 menu_title: Migrate from Magento 1 to Magento 2

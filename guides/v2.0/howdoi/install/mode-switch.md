@@ -1,6 +1,6 @@
 ---
 layout: default
-group: howdoi
+group: 
 subgroup: Installation and configuration
 title: Magento mode switch
 menu_title: Magento mode switch

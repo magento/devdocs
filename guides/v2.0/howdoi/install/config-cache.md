@@ -1,6 +1,6 @@
 ---
 layout: default
-group: howdoi
+group: 
 subgroup: Installation and configuration
 title: Configure caching options
 menu_title: Configure caching options

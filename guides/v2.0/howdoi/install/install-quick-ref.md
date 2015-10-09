@@ -1,6 +1,6 @@
 ---
 layout: default
-group: howdoi
+group: 
 subgroup: Installation and configuration
 title: Installation quick reference
 menu_title: Installation quick reference
