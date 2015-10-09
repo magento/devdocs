@@ -161,9 +161,14 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="migration-command">Migrating settings, data, and changes</h2>
+		<h4 id="contents">Contents</h4>
+<ul>
+  <li><a href="#migration-command-gen">General rules for successful migration</a></li>
+  <li><a href="#migration-command-run">Run the Data Migration Tool</a></li>
+  <li><a href="#migration-command-run-syntax">Command syntax</a></li>
+</ul>
 
-<h3 id="general-rules-for-successful-migration">General rules for successful migration</h3>
+<h2 id="migration-command-gen">General rules for successful migration</h2>
 
 <p>During the time you’re migrating:</p>
 
@@ -176,35 +181,42 @@
 
 <p>All operations in Magento 1 storefront are allowed at this time.</p>
 
-<h3 id="run-data-migration-tool">Run Data Migration Tool</h3>
+<h2 id="migration-command-run">Run the Data Migration Tool</h2>
+<p>This section discusses how to run the migration tool to migrate settings, data, or incremental changes.</p>
 
-<p>Run the Data Migration Tool from <code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/bin</code></p>
+<h3 id="migration-command-run-first">First steps</h3>
+<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.</li>
+<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
+Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
+bash shell example for CentOS:<br />
+<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You can also run the commands in the following ways:</p>
+<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
+<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
+<p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
+</div>
 
+<p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
+
+<h3 id="migration-command-run-syntax">Command syntax</h3>
 <p>Command syntax:</p>
 
-<pre><code>php migrate &lt;mode&gt; --config=path/to/config.xml [options]
+<pre><code>bin/magento migrate:&lt;mode&gt; [-r|--reset] {&lt;path to config.xml&gt;}
 </code></pre>
 
-<p>where <code>&lt;mode&gt;</code> can be:</p>
+<p>where</p>
 
-<ul>
-  <li><code>data</code> to migrate database data</li>
-  <li><code>delta</code> to migrate data that is added to the database since you last ran the tool with the <code>data</code> option</li>
-  <li><code>settings</code> to migrate Magento Admin settings</li>
-</ul>
+<p><code>&lt;mode&gt;</code> is <a href="/guides/v2.0/migration/migration-migrate-settings.html"><code>settings</code></a>, <a href="/guides/v2.0/migration/migration-migrate-data.html"><code>data</code></a>, or <a href="/guides/v2.0/migration/migration-migrate-delta.html"><code>delta</code></a></p>
 
-<p>where <code>[options]</code> can be:</p>
+<p><code>{&lt;path to config.xml&gt;}</code> is the absolute file system path to <code>config.xml</code>; this argument is required.</p>
 
-<ul>
-  <li><code>--reset</code> to start the migration from the beginning</li>
-  <li><code>--config &lt;value&gt;</code> path to <code>config.xml</code></li>
-  <li><code>--verbose &lt;level&gt;</code> DEBUG, INFO, NONE (default is INFO)</li>
-  <li><code>--help</code> Displays help for the command</li>
-</ul>
+<p><code>[-r|--reset]</code> is an optional argument that starts migration from the beginning. You can use this argument for testing migration.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>Logs are written to the <code>&lt;your Magento install dir&gt;/vendor/magento/migration-tool/var</code></p></span>
+  <p>Logs are written to the <code>&lt;your Magento install dir&gt;/vendor/magento/migration-tool/var</code> directory.</p></span>
 </div>
 
 <p>The following sections should be performed in a specific order:</p>
@@ -471,15 +483,15 @@
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/migration/migration-migrate-settings.html">Migrate Settings</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/migration/migration-migrate-settings.html">Migrate settings</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/migration/migration-migrate-data.html">Migrate Data</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/migration/migration-migrate-data.html">Migrate data</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/migration/migration-migrate-delta.html">Migrate Changes</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/migration/migration-migrate-delta.html">Migrate changes</a></li>
 						
 								
 								

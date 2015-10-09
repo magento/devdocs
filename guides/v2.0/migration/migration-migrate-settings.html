@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Migrate Settings</title>
+	<title>Migrate settings</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
@@ -150,7 +150,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Migrate Settings</h1>
+		<h1 class="page-heading">Migrate settings</h1>
 			
 			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/migration/migration-migrate-settings.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -167,16 +167,50 @@
 <p>To change how settings are migrated:</p>
 
 <ol>
-  <li>Rename or copy <code>settings.xml.dist</code> in a folder <code>"etc/&lt;ce or ee version&gt;/"</code> to remove the .dist extension.</li>
-  <li>Make your changes in settings.xml file.</li>
-  <li>Make changes to config.xml <code>&lt;settings_map_file&gt;</code> tag so it would have a new file name of the settings file.</li>
+  <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.0/nstall-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
+  <li>
+    <p>Change to the following directory:</p>
+
+    <pre><code>`&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc/&lt;migration edition&gt;/&lt;ce or version&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>Enter the following command to create <code>settings.xml</code> from the provided sample:</p>
+
+    <pre><code>cp sample.xml.dist sample.xml
+</code></pre>
+  </li>
+  <li>Make your changes in <code>settings.xml</code>.</li>
+  <li>Make changes to the <code>&lt;settings_map_file&gt;</code> tag in <code>&lt;ce or ee version&gt;/config.xml</code> to specify the new name of the settings file.</li>
 </ol>
 
-<p>Command usage:</p>
+<h2 id="migrate-first">First steps</h2>
+<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.</li>
+<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
+Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
+bash shell example for CentOS:<br />
+<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You can also run the commands in the following ways:</p>
+<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
+<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
+<p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
+</div>
 
-<pre><code>cd &lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/bin
-php migrate settings --config=&lt;path to config.xml&gt;
+<p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
+
+<h2 id="migrate-data-cmd">Run the settings migration command</h2>
+<p>To migrate settings, use the following command:</p>
+
+<pre><code>bin/magento migrate:settings [-r|--reset] {&lt;path to config.xml&gt;}
 </code></pre>
+
+<p>where</p>
+
+<p><code>{&lt;path to config.xml&gt;}</code> is the absolute file system path to <code>config.xml</code>; this argument is required.</p>
+
+<p><code>[-r|--reset]</code> is an optional argument that starts migration from the beginning. You can use this argument for testing migration.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -444,15 +478,15 @@ php migrate settings --config=&lt;path to config.xml&gt;
 								
 								
 							
-									<li class="level-2  active "><a href="/guides/v2.0/migration/migration-migrate-settings.html">Migrate Settings</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/migration/migration-migrate-settings.html">Migrate settings</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/migration/migration-migrate-data.html">Migrate Data</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/migration/migration-migrate-data.html">Migrate data</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/migration/migration-migrate-delta.html">Migrate Changes</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/migration/migration-migrate-delta.html">Migrate changes</a></li>
 						
 								
 								
