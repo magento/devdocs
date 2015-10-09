@@ -8,11 +8,9 @@ menu_order: 6
 github_link: extension-dev-guide/code-generation.md
 
 ---
-##{{page.menu_title}} 
-
 
 <h2 id="codegen-over">Overview of code generation</h2>
-The Magento application generates code to create non-existent classes. As an example, look at the <a href="{{ site.mage2000url }}app/code/Magento/Customer/Model/Resource/AddressRepository.php" target="_blank">\Magento\Customer\Model\Resource\AddressRepository</a> constructor. A snippet follows:
+The Magento application generates code to create non-existent classes. As an example, look at the <a href="{{ site.mage2000url }}/app/code/Magento/Customer/Model/ResourceModel/AddressRepository.php" target="_blank">\Magento\Customer\Model\Resource\AddressRepository</a> constructor. A snippet follows:
 
 	...
 	    public function __construct(
