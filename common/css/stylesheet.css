@@ -566,20 +566,32 @@ a.image:hover {
 .comments { color:#339900 }
 .mandatory { color:#EE6933 }
 
+
+.soap-api-menu,
 .rest-api-menu {
     float: left;
     margin-left: -45px;
     width: 250px;
 }
+.soap-api-menu {
+    border-top: 1px solid #cac2b5;
+    border-bottom: 1px solid #cac2b5;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+.soap-api-menu > ul,
 .rest-api-menu > ul {
     margin-left: 0;
 }
+.soap-api-menu ul,
 .rest-api-menu ul {
     margin-top: 0;
 }
+.soap-api-menu > ul > ul,
 .rest-api-menu > ul > ul {
     margin-left: 0;
 }
+.soap-api-menu ul li,
 .rest-api-menu ul li {
     background: none;
     margin-bottom: 0;
@@ -587,15 +599,19 @@ a.image:hover {
     margin-left: 0;
     font-weight: bold;
 }
+.soap-api-menu ul li ul li ul li,
 .rest-api-menu ul li ul li ul li {
     font-weight: normal;
 }
+.soap-api-menu ul li a,
 .rest-api-menu ul li a {
     color: #444;
 }
+.soap-api-menu ul li a:hover,
 .rest-api-menu ul li a:hover {
     color: #f47027;
 }
+.soap-api-content,
 .rest-api-content {
     float: right;
     width: 750px;
