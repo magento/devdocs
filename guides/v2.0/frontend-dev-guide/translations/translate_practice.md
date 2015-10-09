@@ -19,16 +19,17 @@ Among the other changes, they want to re-phrase certain strings used in the Blan
 Namely, they need the following changes:
 <ul>
 <li>
+Change "Add to Cart" label to "Purchase"
+</li>
+<li>
 Change "Add to Compare" label to "Compare"
 </li>
 <li>
-Change "Your Checkout Progress" label to "Checkout Progress"
-<li>
-Change the "Shop By" label to "Filter"
-</li>
+Change "Add to Wish List" label to "Wishlist"
+
 </ul>
 
-The following image illustrates the first change OrangeCo want to make, replacing "Add to Compare" with shorter option "Compare":
+The following image shows a page where the strings meant to be changed are used:
 <img src="{{ site.baseurl }}common/images/fdg_trans_bag.png" alt="Product page where the Add to Compare string is displayed"> 
 
 To overwrite the strings, OrangeCo plan to use the en_US dictionary file. 
@@ -48,9 +49,9 @@ php magento2/bin/magento i18n:collect-phrases --output="magento2/app/design/fron
 Open the newly generated `magento2/app/design/frontend/OrangeCo/orange/i18n/en_US.csv` file and add the following rows:
 
 <pre>
+"Add to Cart", "Purchase"
 "Add to Compare", "Compare"
-"Your Checkout Progress", "Checkout Progress"
-"Shop By", "Filter"
+"Add to Wish List", "Wishlist"
 </pre>
 </li>
 
