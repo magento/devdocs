@@ -7,7 +7,7 @@ menu_title: Fixture Repository
 menu_order: 2
 github_link: mtf/mtf_entities/mtf_fixture-repo.md
 ---
-<h2>Contents</h2>
+<h3>Contents</h3>
 
 - <a href="#mtf_repository_overview">Repository overview</a>
 
