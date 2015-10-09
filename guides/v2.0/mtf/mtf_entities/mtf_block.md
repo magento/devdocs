@@ -8,34 +8,12 @@ menu_order: 4
 github_link: mtf/mtf_entities/mtf_block.md
 ---
 
-<h2>Contents</h2>
+<h3>Contents</h3>
 
-* <a href="#mtf_block_overview">Block overview</a>
+* TOC
+{:toc}
 
-* <a id="#mtf_block_types">Create block for the test</a>
-
-  * <a href="#mtf_block_path">How to determine a block name and a path</a>
-
-    * <a href="#mtf_block_path_ui">Get name and path of blocks in the GUI</a>
-
-    * <a href="#mtf_block_path_code">Get name and path of blocks in the code</a>
-
-  * <a href="#mtf_block_ceate">Create a block class</a>
-
-  * <a href="#mtf_block_to-page">Add block to the page</a>
-
-  * <a href="#mtf_block_gen">Run the page generator</a>
-
-* <a href="#mtf_block_struct">Block structure</a>
-
-* <a href="#mtf_block_mapping">Mapping</a>
-
-  * <a href="#mtf_block_mapping">Forms</a>
-
-  * <a href="#mtf_block_mapping">Form Tabs</a>
-
-
-<h2 id="mtf_block_overview">Block overview</h2>
+## Block overview {#mtf_block_overview}
 
 Block is the area of user interface aimed to perform concrete functionality, for example, Search Box, Header, Footer.
 
@@ -48,7 +26,7 @@ A block can have the following features:
 
 This topic shows how to create new block and explore its structure. It discusses how to use mapping for forms in blocks and forms in tabs.
 
-<h2 id="mtf_block_types">Create block for the test</h2>
+## Create block for the test {#mtf_block_types} 
 
 A basic flow is the following:
 
@@ -57,11 +35,11 @@ A basic flow is the following:
 * add block to the page
 * run page generator
 
-<h3 id="mtf_block_path">How to determine a block name and a path</h3>
+### How to determine a block name and a path {#mtf_block_path}
 
 Magento can show you a full class name of the block and path to the PHTML template right on the UI  of the Magento page (influences web design) or implicitly in the HTML code of the page.
 
-<h4 id="mtf_block_path_ui">See name and path of blocks in GUI</h4>
+#### Get the name and the path of blocks in UI {#mtf_block_path_ui}
 
 To enable this feature follow:
 
@@ -82,9 +60,9 @@ Voilà!
   <p>If name and path cover partially each other, then navigate on the name or the path (whatever you need) with mouse pointer to see the full phrase.</p>
 </div>
 
-<h4 id="mtf_block_path_code">Get the name and the path of blocks in the code</h4>
+#### Get the name and the path of blocks in the code {#mtf_block_path_code}
 
-If you want to see block details in the code, you can change a <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/View/Element/Template.php"><code>Template.php</code></a>:
+If you want to see block details in the code, you can change a <a href="{{site.mage2000url}}lib/internal/Magento/Framework/View/Element/Template.php"><code>Template.php</code></a>:
 
 * Open `magento2/lib/internal/Magento/Framework/View/Element/Template.php`
 
@@ -127,16 +105,16 @@ protected function _toHtml()
 
 Ta-da!
 
-<h3 id="mtf_block_class">Block class</h3>
+### Block class {#mtf_block_class}
 
 The block class contains all logic you want to apply to the Magento block under test.
 
-<h4 id="mtf_block_name_path">Name and path</h4>
+#### Name and path {#mtf_block_name_path}
 
-The testing block name and path in the MTF (`magento2/dev/tests/functional/tests/app`) should reflect a <a href="#mtf_block_path">corresponding block in the Magento code base</a> (`magento2/app/code`) for your convenience.
+The testing block name and path in the MTF (`magento2/dev/tests/functional/tests/app`) should reflect a [corresponding block in the Magento code base](#mtf_block_path) (`magento2/app/code`) for your convenience.
 For example, you develop a functional test for the bundle product creation, that uses the Bundle Items section. In the Magento code base, the block, which is responsible for the bundle option, is the `Magento\Bundle\Block\Adminhtml\Catalog\Product\Edit\Tab\Bundle\Option.php`, so in the MTF you can create a new file `Magento\Bundle\Block\Test\Adminhtml\Catalog\Product\Edit\Tab\Bundle\Option.php`.
 
-<h4>Block locator</h4>
+#### Block locator {#mtf_block_locator}
 
 To find an element in the block use the block context `_rootElement`, that is a locator of the block used in the block initialization process.
 
@@ -165,7 +143,7 @@ public function clickToWidget(Widget $widget, $widgetText)
 ?>
 {%endhighlight%}
 
-<h4>Use blocks inside blocks</h4>
+#### Use blocks inside blocks {#mtf_block_in_block}
 
 You can get other blocks in the block.
 
@@ -183,27 +161,27 @@ protected function getTemplateBlock()
 ?>
 {%endhighlight%}
 
-<h4>Basic blocks</h4>
+#### Basic blocks {#mtf_block_basic}
 
 As a class, a block can be extended from the other block. The basic blocks in the MTF are:
 
 * [Magento\Mtf\Block\Block](https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Block.php)
 * [Magento\Mtf\Block\Form](https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php)
-* [Magento\Backend\Test\Block\Widget\Tab](https://github.com/magento/magento2/blob/master/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php)
-* [Magento\Backend\Test\Block\Widget\FormTabs](https://github.com/magento/magento2/blob/master/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php)
-* [Magento\Backend\Test\Block\Widget\Grid](https://github.com/magento/magento2/blob/master/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Grid.php)
+* [Magento\Backend\Test\Block\Widget\Tab]({{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php)
+* [Magento\Backend\Test\Block\Widget\FormTabs]({{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php)
+* [Magento\Backend\Test\Block\Widget\Grid]({{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Grid.php)
 
-<h4>Examples</h4>
+#### Examples {#mtf_block_examples}
 
-Let's consider <a href="https://github.com/magento/magento2/blob/9d4c58e77126ae448eda81aa5e3206a16568fc5c/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/WidgetGrid.php"><code>WidgetGrid.php</code></a>. This block simply reuses methods of <a href="https://github.com/magento/magento2/blob/master/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Grid.php"><code>Magento\Backend\Test\Block\Widget\Grid</code></a> class.
+Let's consider <a href="https://github.com/magento/magento2/blob/9d4c58e77126ae448eda81aa5e3206a16568fc5c/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/WidgetGrid.php"><code>WidgetGrid.php</code></a>. This block simply reuses methods of <a href="{{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Grid.php"><code>Magento\Backend\Test\Block\Widget\Grid</code></a> class.
 
 For more complex example, see the <a href="https://github.com/magento/magento2/blob/9d4c58e77126ae448eda81aa5e3206a16568fc5c/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/ChosenOption.php"><code>ChosenOption.php</code></a> block. The block reuses the methods of the other classes and contains own public method `setValue()`.
 
-<h3 id="mtf_block_to-page">Add block to the page</h3>
+### Add block to the page {#mtf_block_to-page}
 
 The block can be tested only inside the page object. To add the block to the page you must add a corresponding node to the XML file of the page object.
 
-For example, the <a href="https://github.com/magento/magento2/blob/master/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/WidgetGrid.php">WidgetGrid.php</a> is a part of the page that is defined in <a href="{{site.mage2000url}}dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml"><code>WidgetInstanceIndex.xml</code></a>.
+For example, the <a href="{{site.mage2000url}}dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/WidgetGrid.php">WidgetGrid.php</a> is a part of the page that is defined in <a href="{{site.mage2000url}}dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml"><code>WidgetInstanceIndex.xml</code></a>.
 
 `block` is the node that adds the block to the page:
 
@@ -224,18 +202,18 @@ See the `block` node attributes details in the following table:
 
 |Attribute | Description | Is required|Values| Example|
 |---|---|---|---|---|
-|`name`| Name of the block| Required|Name of Magento block . <a href="#mtf_block_name_path"> More details about block name and path</a> |`widgetGrid`|
-|`class`| Full name of the block class |Required| The name structure is similar to the Magento block class name. <a href="#mtf_block_name_path"> More details about block name and path</a>| `Magento\Widget\Test\Block\Adminhtml\Widget\WidgetGrid`|
+|`name`| Name of the block| Required|Name of Magento block . [More details about block name and path](#mtf_block_name_path)|`widgetGrid`|
+|`class`| Full name of the block class |Required| The name structure is similar to the Magento block class name. [More details about block name and path](#mtf_block_name_path)| `Magento\Widget\Test\Block\Adminhtml\Widget\WidgetGrid`|
 |`locator`| CSS selector or XPath locator of the block.|Required|[CSS Selectors](http://www.w3.org/TR/selectors/), <a href="http://www.w3.org/TR/xpath-31/">XPath</a>|CSS: `#widgetInstanceGrid`, XPath: `//*[@id="widgetInstanceGrid"`]|
 |`strategy` |locating strategy| Required|`css selector` or `xpath`| `css selector`|
 
-<h3 id="mtf_run_page_gen">Run the page generator</h3>
+### Run the page generator {#mtf_run_page_gen}
 
 {% include /mtf/page-generator.html %}
 
 The page will be updated in the `magento2\tests\functional\generated` directory.
 
-<h2 id="mtf_block_mapping">Form mapping</h2>
+## Form mapping {#mtf_block_mapping}
 
 Some blocks requires entering a data in the fields. You can get data from <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html">fixtures</a> and <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_dataset.html">data sets</a> using mapping.
 
@@ -272,9 +250,8 @@ The mapping file defines the fields from the form.
 </mapping>
 {%endhighlight%}
 
-<div id="mtf_block_form_xml_nodes">
 See a description of the nodes in the following table.
-</div>
+{:#mtf_block_form_xml_nodes}
 
 |Node|Description|Value from example|
 |---|---|---|
@@ -289,7 +266,7 @@ The general structure of the form mapping file:
 
 <img src="{{site.baseurl}}common/images/mtf_block_map_form_xml.png" />
 
-<h3 id="mtf_block_mapping">Form tab mapping</h3>
+### Form tab mapping {#mtf_block_map_form_tab}
 
 You can use form tab mapping, when the form that you want to enter data in is split on a few tabs in UI. To get the block class with form tab mapping you should extend from the <a href="{{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php" ><code>Magento\Backend\Test\Block\Widget\FormTabs</code></a> or <a href="{{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php"><code>Magento\Backend\Test\Block\Widget\Tab</code></a> class.
 
@@ -358,8 +335,7 @@ See the following table to understand the nodes purpose.
 |`class`|Reference to the class that handles tab's behavior.|
 |`selector`| Selector or locator of the tab in the HTML code, used to open the tab.|
 |`strategy`|Strategy of the selector. Can be `css selector` or `xpath`.|
-|`fields`|List of fields with parameters, that are the same as in the [form mapping](#mtf_block_form_xml_nodes)|
-
+|`fields`|List of fields with parameters, that are the same as in the [form mapping](#mtf_block_form_xml_nodes).|
 
 The general structure of the form tab mapping file:
 
