@@ -6,13 +6,22 @@ title: Magento test development
 menu_title: Magento test development
 menu_node: parent
 menu_order: 1
-github_link: howdoi/mtf/mtf-heading.md
+github_link: howdoi/mtf/mtf.md
 ---
 
 ## Magento test development
 
 * <a href="{{site.gdeurl}}mtf/mtf_installation.html">Install the MTF</a>
-* <a href="{{site.gdeurl}}mtf/mtf_quickstart/mtf_quickstart_environmemt.html#mtf_quickstart_env_selenium">Run the Selenium Server </a>
+* <a href="{{site.gdeurl}}mtf/mtf_quickstart.html">MTF quick start</a>
+*	Entities
+
+	*	<a href="{{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_overview">Fixture</a>
+	*	<a href="{{ site.gdeurl }}mtf/mtf_entities/mtf_fixture-repo.html">Fixture repository</a>
+	*	<a href="{{ site.gdeurl }}mtf/mtf_entities/mtf_handler.html">Handler</a>
+	*	<a href="{{ site.gdeurl }}mtf/mtf_entities/mtf_block.html">Block</a>
+
+Common tasks:
+
 * <a href="{{site.gdeurl}}mtf/mtf_quickstart/mtf_quickstart_environmemt.html#mtf_quickstart_env_generator">Run the MTF generator </a>
 * <a href="{{site.gdeurl}}mtf/mtf_quickstart/mtf_quickstart_runtest.html#mtf_quickstart_testrun_all">Run all functional tests </a>
 * <a href="{{site.gdeurl}}mtf/mtf_quickstart/mtf_quickstart_runtest.html#mtf_quickstart_testrun_one">Run one functional test </a>
