@@ -9,6 +9,7 @@ menu_order: 1
 github_link: howdoi/frontend/front-js.md
 ---
 
+## JavaScript development
 - <a href="{{site.gdeurl}}javascript-dev-guide/javascript/js-resources.html">Configure JavaScript resources</a>
 - <a href="{{site.gdeurl}}javascript-dev-guide/javascript/custom_js.html#js_replace">Replace a default JS component</a>
 - <a href="{{site.gdeurl}}javascript-dev-guide/javascript/custom_js.html#extend_js">Extend a default JS component</a>

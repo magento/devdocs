@@ -9,6 +9,8 @@ menu_order: 1
 github_link: howdoi/frontend/front-layout.md
 ---
 
+## Layout development
+
 - <a href="{{site.gdeurl}}frontend-dev-guide/themes/xml-manage.html#layout_markup_columns">Set the page layout</a>
 - <a href="{{site.gdeurl}}frontend-dev-guide/themes/template-walkthrough.html">Customize theme .phtml templates</a>
 - <a href="{{site.gdeurl}}frontend-dev-guide/themes/template-email.html">Customize email templates</a>

@@ -9,8 +9,7 @@ menu_order: 1
 github_link: howdoi/php/php_devs.md
 ---
 
-## PHP Developers
-
+## PHP development
 *	<a href="{{ site.gdeurl }}extension-dev-guide/composer-integration.html">Get to know Composer</a>
 *	<a href="{{ site.gdeurl }}extension-dev-guide/build.html">Build a module</a>
 *	<a href="{{ site.gdeurl }}extension-dev-guide/validate.html">Validate a module</a>
