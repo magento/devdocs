@@ -19,10 +19,10 @@ The Magento cron job runs a number of scheduled tasks, including reindexing, gen
 
 You can run a Magento cron job in the following ways:
 
-*	Using the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group"><code>magento cron:run</code></a> command
-*	Running `<your Magento install dir>/pub/cron.php` either in a web browser or using a crontab
+*	Using the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group"><code>magento cron:run</code></a> command, either from the command line or in a crontab
+*	Running `<your Magento install dir>/pub/cron.php` in a web browser
 
-This topic discusses securing `pub/cron.php` to prevent it from being used in a malicious exploit. Any user could potentially use cron to attack your Magento application; securing cron as discussed in this topic helps prevent that.
+This topic discusses securing `pub/cron.php` to prevent it from being used in a malicious exploit. If cron is unsecured, any user could potentially run cron to attack your Magento application.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -45,7 +45,7 @@ The instructions that follow are based on Apache 2.2 with CentOS 6:
 *	<a href="#config-cron-secure-apache-verify">Step 4: Verify cron is secure</a>
 
 <h3 id="config-cron-secure-apache-pwd">Step 1: Create a password file</h3>
-For security reasons, you can locate the password file anywhere except your Magento file system directory. In this example, we show how to store the password file in a new directory.
+For security reasons, you can locate the password file anywhere except your web server docroot. In this example, we show how to store the password file in a new directory.
 
 Enter the following commands as a user with `root` privileges:
 
@@ -55,6 +55,10 @@ Enter the following commands as a user with `root` privileges:
 where `<username>` can be the web server user or another user. In this example, we use the web server user but the choice of user is up to you.
 
 Follow the prompts on your screen to create a password for the user.
+
+To add another user to your password file, enter the following command as a user with `root` privileges:
+
+	htpasswd /usr/local/apache/password/passwords <username>
 
 <h3 id="config-cron-secure-apache-group">Step 2: Optionally add users to create an authorized cron group</h3>
 You can optionally enable more than one user to run cron by adding these users to your password file and to a group file you'll configure in the next section.
@@ -101,44 +105,7 @@ To add security for cron in Magento's `.htaccess`:
 	CentOS: `service httpd restart`
 	Ubuntu: `service apache2 restart`
 
-<h3 id="config-cron-secure-apache-verify">Step 4: Verify cron is secure</h3>
-To verify cron is secure, perform some task that requires scheduling, then run cron from a web browser and verify the action succeeded.
-
-This example shows how to verify cron by verifying the indexers are being reindexed:
-
-1.	Perform some task that causes the indexers to need to be reindexed (for example, add or edit a customer, customer group; product or product attribute; website; or store.)
-2.	Verify indexers need to be reindexed.
-
-	As the Magento file system owner, run the following command:
-
-		php <your Magento install dir>/bin/magento indexer:status
-
-	Look for at least one indexer with the status `Reindex required`
-
-3.	Run cron from a browser:
-
-		http[s]://<magento hose name or ip>/pub/cron.php
-
-	For example,
-
-		http://magento.example.com/pub/cron.php
-
-	<div class="bs-callout bs-callout-info" id="info">
-		<span class="glyphicon-class">
-		<p>You must run cron twice: the first time to discover tasks to run and the second time to run the tasks themselves.</p></span>
-	</div>
-
-	When prompted, enter the authorized user's name and password. (Some authentication methods might not require a login; consult the Apache documentation for details.)
-
-	If an HTTP 500 (Server Error) response displays in the browser and the following error displays in the Apache `error_log`, look for syntax or accented characters in `pub/.htaccess` (for example, non-UNIX line breaks or smart quotes instead of straight quotes):
-
-		AuthName takes one argument, The authentication realm
-
-5.	As the Magento file system owner, run the following command:
-
-		php <your Magento install dir>/bin/magento indexer:status
-
-	Make sure all indexers have the status `Ready`
+6.	Continue with <a href="#config-cron-secure-apache-verify">Verify cron is secure</a>.
 
 <h2 id="config-cron-secure-nginx">Secure cron with nginx</h2>
 This section discusses how to secure cron using the nginx web server. You must perform the following tasks:
@@ -157,20 +124,34 @@ Add the following to your `nginx.conf`:
 
 	location cron\.php {
 		auth_basic "Cron Authentication";
- 		auth_basic_user_file <path to password file>;
+		auth_basic_user_file <path to password file>;
 	} 
 
-Restart nginx.
+Restart nginx and continue with the next section.
 
-<h3 id="config-cron-secure-nginx-verify">Step 4: Verify cron is secure</h3>
-To verify cron is secure, perform some task that requires scheduling, then run cron from a web browser and verify the action succeeded.
+<h2 id="config-cron-secure-apache-verify">Verify cron is secure</h2>
+To verify cron is secure, perform some task that requires scheduling, then run cron from a web browser and verify the action succeeded. This example shows how to cause the Stock indexer to be reindexed by adding a store.
 
 This example shows how to verify cron by verifying the indexers are being reindexed:
 
-1.	Perform some task that causes the indexers to need to be reindexed (for example, add or edit a customer, customer group; product or product attribute; website; or store.)
-2.	Verify indexers need to be reindexed.
+1.	Set at least one indexer to update by schedule (the default is to update on save).
 
 	As the Magento file system owner, run the following command:
+
+		php <your Magento install dir>/bin/magento indexer:set-mode schedule [indexer]
+
+	Omit `[indexer]` to set all indexers to update by schedule. (cron is the indexer scheduler.)
+
+	For example, if you add a new store, the `cataloginventory_stock` indexer must be reindexed, so you can enter:
+
+		php <your Magento install dir>/bin/magento indexer:set-mode schedule cataloginventory_stock
+
+1.	In the Magento Admin, perform some task that causes the indexers to need to be reindexed (for example, add a store or website).
+
+	To add a store, click **Stores** > ** All Stores **, then click **Create Store** and follow the prompts on your screen to complete the task.
+2.	Verify at least one indexer need to be reindexed.
+
+	Enter the following command:
 
 		php <your Magento install dir>/bin/magento indexer:status
 
@@ -189,7 +170,13 @@ This example shows how to verify cron by verifying the indexers are being reinde
 		<p>You must run cron twice: the first time to discover tasks to run and the second time to run the tasks themselves.</p></span>
 	</div>
 
-	When prompted, enter the authorized user's name and password. (Some authentication methods might not require a login; consult the nginx documentation for details.)
+	When prompted, enter an authorized user's name and password. The following figure shows an example.
+
+	<img src="{{ site.baseurl }}common/images/cron_auth.png" alt="Authorizing cron using HTTP Basic">
+
+	*Apache*. If an HTTP 500 (Server Error) response displays in the browser and the following error displays in the Apache `error_log`, look for improper syntax or non-keyboard characters in `pub/.htaccess` (for example, non-UNIX line breaks or smart quotes instead of straight quotes):
+
+		AuthName takes one argument, The authentication realm
 
 5.	As the Magento file system owner, run the following command:
 
