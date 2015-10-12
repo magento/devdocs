@@ -1,4 +1,4 @@
----
+---.
 layout: default
 group: jsdg
 subgroup: Widgets
@@ -11,6 +11,10 @@ github_link: javascript-dev-guide/widgets/widget_gallery.md
 <h2>Overview</h2>
 
 The gallery widget is used to display product photos on product pages. Gallery implements content area with images organized into preview and thumbnails blocks.
+
+<p class="q">Do we need to mention that it uses fotorama?</p>
+<p class="q">Are the default values of options the same as for fotorama?</p>
+
 In addition, integrated Gallery Magnifier can be used to demonstrate images in 100% scaled size in separate dedicated layer,
 or Gallery Fullscreen mode can be used to navigate the entire full sized photo.
 
@@ -26,40 +30,64 @@ The magnifier widget source is <a href="{{site.mage2000url}}lib/web/magnifier/ma
 
 <h2>Options</h2>
 <ul>
-<li><a href="#gallery_width">width</a></li>
+<li><a href="#gallery_allowfullscreen">allowfullscreen</a></li>
+<li><a href="#gallery_captions">captions</a></li>
+<li><a href="#gallery_click">click</a></li>
 <li><a href="#gallery_height">height</a></li>
-<li><a href="#gallery_maxwidth">maxwidth</a></h3>
-<li><a href="#gallery_mindwidth">minwidth</a></h3>
-<h3 id="gallery_minheigth">minheigth</h3>
-<h3 id="gallery_maxheight">maxheight</h3>
-<h3 id="gallery_ratio">ratio</h3>
-<h3 id="gallery_nav">nav</h3>
-<h3 id="gallery_thumbwidth">thumbwidth</h3>
-<h3 id="gallery_thumbheight">thumbheight</h3>
-<h3 id="gallery_allowfullscreen">allowfullscreen</h3>
-<h3 id="gallery_captions">captions</h3>
-<h3 id="gallery_startindex">startindex</h3>
-<h3 id="gallery_loop">loop</h3>
-<h3 id="gallery_click">click</h3>
-<h3 id="gallery_swipe">swipe</h3>
+<li><a href="#gallery_loop">loop</a></li>
+<li><a href="#gallery_maxheight">maxheight</a></li>
+<li><a href="#gallery_maxwidth">maxwidth</a></li>
+<li><a href="#gallery_mindwidth">minwidth</a></li>
+<li><a href="#gallery_minheigth">minheigth</a></li>
+<li><a href="#gallery_nav">nav</a></li>
+<li><a href="#gallery_ratio">ratio</a></li>
+<li><a href="#gallery_thumbheight">thumbheight</a></li>
+<li><a href="#gallery_thumbwidth">thumbwidth</a></li>
+<li><a href="#gallery_startindex">startindex</a></li>
+<li><a href="#gallery_swipe">swipe</a></li>
+<li><a href="#gallery_width">width</a></li>
 </ul>
 
-<h3 id="gallery_width">width</h3>
-Set width for preview in gallery.
-Type: Number, String
-Default value: null
-Example of the initialization with the width option specified:
-$("#element").fotorama({ width: 600});
-$("#element").fotorama({ width: "100%"});
+<h3 id="gallery_allowfullscreen"><code>allowfullscreen</code></h3>
+Show the button that toggles full screen view of the gallery.
 
+**Type**: Boolean
 
-<h3 id="gallery_height">height</h3>
+Example of the initialization with the allowfullscreen option specified:
+
+     $("#element").fotorama({ thumbwidth: 90});
+
+<p class="q">thumbwidth??</p>
+
+<h3 id="gallery_captions"><code>captions</code></h3>
+
+Defines if the text in caption is visible in preview.
+
+**Type**: Boolean
+
+Example of the initialization with the captions option specified:
+     $("#element").fotorama({ captions: false});
+
+<h3 id="gallery_click"><code>click</code></h3>
+    Enable navigation through preview. Preview divided into 3 parts. Click on first part like Previous button. Click on other parts like Next button.
+    Type: boolean
+    Example of the initialization with the click option specified:
+     $("#element").fotorama({ click: false});
+
+<h3 id="gallery_height"><code>height</code></h3>
      Set height for preview in gallery.
      Type: Number, String
      Default value: null
      Example of the initialization with the height option specified:
      $("#element").fotorama({ height: 400});
      $("#element").fotorama({ height: "50%"});
+
+<h3 id="gallery_loop"><code>loop</code></h3>
+    Property toggle infinite loop of images in gallery
+    Type: boolean
+    default: false
+    Example of the initialization with the loop option specified:
+     $("#element").fotorama({ loop: true});
 
 <h3 id="gallery_maxwidth">maxwidth</h3>
      Set maxwidth for preview in gallery.
@@ -69,15 +97,14 @@ $("#element").fotorama({ width: "100%"});
      $("#element").fotorama({ maxwidth: 400});
      $("#element").fotorama({ maxwidth: "50%"});
 
-
-<h3 id="gallery_mindwidth">minwidth</h3>
-     Set minwidth for preview in gallery.
+<h3 id="gallery_maxheight">maxheight</h3>
+     Set maxheight for preview in gallery.
      Type: Number, String
      Default value: null
-     Example of the initialization with the minwidth option specified:
-     $("#element").fotorama({ minwidth: 400});
-     $("#element").fotorama({ minwidth: "50%"});
- 
+     Example of the initialization with the maxheight option specified:
+     $("#element").fotorama({ maxheight: 400});
+     $("#element").fotorama({ maxheight: "50%"});
+
 <h3 id="gallery_minheigth">minheigth</h3>
      Set minheight for preview in gallery.
      Type: Number, String
@@ -86,13 +113,18 @@ $("#element").fotorama({ width: "100%"});
      $("#element").fotorama({ minheight: 400});
      $("#element").fotorama({ minheight: "50%"});
 
-<h3 id="gallery_maxheight">maxheight</h3>
-     Set maxheight for preview in gallery.
+<h3 id="gallery_mindwidth">minwidth</h3>
+     Set minwidth for preview in gallery.
      Type: Number, String
      Default value: null
-     Example of the initialization with the maxheight option specified:
-     $("#element").fotorama({ maxheight: 400});
-     $("#element").fotorama({ maxheight: "50%"});
+     Example of the initialization with the minwidth option specified:
+     $("#element").fotorama({ minwidth: 400});
+     $("#element").fotorama({ minwidth: "50%"});
+
+<h3 id="gallery_nav">nav</h3>
+    Variation of thumbnails in navigation. Can be 'thumbs', 'dots' or false
+    Type: String, boolean
+    Default: 'dots'
 
 <h3 id="gallery_ratio">ratio</h3>
      Make gallery responsive, define width in percents and aspect ratio:
@@ -103,11 +135,26 @@ $("#element").fotorama({ width: "100%"});
      $("#element").fotorama({ ratio: 1.5 });
      $("#element").fotorama({ ratio: 800/600 });
 
-<h3 id="gallery_nav">nav</h3>
-    Variation of thumbnails in navigation. Can be 'thumbs', 'dots' or false
-    Type: String, boolean
-    Default: 'dots'
- 
+<h3 id="gallery_showcaption">showcaption</h3>
+    Enable view of caption in preview. Can be for initialized for specific image. Can work globally.
+    Type: boolean
+    Example of the initialization with the showcaption option specified:
+     $("#element").fotorama({ showcaption: 90});
+
+<h3 id="gallery_startindex">startindex</h3>
+    Set number, which number of image will be visible when gallery loaded.
+    Type: Number
+    default: 0 
+    Example of the initialization with the startindex option specified:
+     $("#element").fotorama({ startindex: 3});
+
+
+<h3 id="gallery_swipe">swipe</h3>
+    Enable swipe preview in left and right.
+    Type: boolean
+    Example of the initialization with the swipe option specified:
+     $("#element").fotorama({ swipe: 90});
+
 <h3 id="gallery_thumbwidth">thumbwidth</h3>
     Set width of thumbnails in navigation
     Type: Number, String
@@ -118,44 +165,12 @@ $("#element").fotorama({ width: "100%"});
     Type: Number, String
     Example of the initialization with the thumbheight option specified:
      $("#element").fotorama({ thumbheight: 90});
- 
-<h3 id="gallery_allowfullscreen">allowfullscreen</h3>
-    Show the button, which can toggle full screen view of gallery.
-    Type: boolean
-    Example of the initialization with the allowfullscreen option specified:
- 
-     $("#element").fotorama({ thumbwidth: 90});
 
-<h3 id="gallery_captions">captions</h3>
-    If yes text in caption will be visible in preview.
-    Type: boolean
-    Example of the initialization with the captions option specified:
-     $("#element").fotorama({ captions: false});
-<h3 id="gallery_startindex">startindex</h3>
-    Set number, which number of image will be visible when gallery loaded.
-    Type: Number
-    default: 0 
-    Example of the initialization with the startindex option specified:
-     $("#element").fotorama({ startindex: 3});
-<h3 id="gallery_loop">loop</h3>
-    Property toggle infinite loop of images in gallery
-    Type: boolean
-    default: false
-    Example of the initialization with the loop option specified:
-     $("#element").fotorama({ loop: true});
 
-<h3 id="gallery_click">click</h3>
-    Enable navigation through preview. Preview divided into 3 parts. Click on first part like Previous button. Click on other parts like Next button.
-    Type: boolean
-    Example of the initialization with the click option specified:
-     $("#element").fotorama({ click: false});
-<h3 id="gallery_swipe">swipe</h3>
-    Enable swipe preview in left and right.
-    Type: boolean
-    Example of the initialization with the swipe option specified:
-     $("#element").fotorama({ swipe: 90});
-<h3 id="gallery_showcaption">showcaption</h3>
-    Enable view of caption in preview. Can be for initialized for specific image. Can work globally.
-    Type: boolean
-    Example of the initialization with the showcaption option specified:
-     $("#element").fotorama({ showcaption: 90});
+<h3 id="gallery_width">width</h3>
+Set width for preview in gallery.
+Type: Number, String
+Default value: null
+Example of the initialization with the width option specified:
+$("#element").fotorama({ width: 600});
+$("#element").fotorama({ width: "100%"});
