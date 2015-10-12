@@ -10,7 +10,7 @@ github_link: howdoi/install/install-topics.md
 ---
 
 ## Installation
-*	<a href="{{ site.gdeurl }}install-gde/install/install-quick-ref.html">Installation quick reference</a>
+*	<a href="{{ site.gdeurl }}install-gde/install-quick-ref.html">Installation quick reference</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">Command line installation</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/web/install-web.html">Setup Wizard installation</a>
 *	<a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade (post-installation)</a>
