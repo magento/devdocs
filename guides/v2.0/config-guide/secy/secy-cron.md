@@ -20,7 +20,7 @@ The Magento cron job runs a number of scheduled tasks, including reindexing, gen
 You can run a Magento cron job in the following ways:
 
 *	Using the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group"><code>magento cron:run</code></a> command, either from the command line or in a crontab
-*	Running `<your Magento install dir>/pub/cron.php` in a web browser
+*	Running `<your Magento install dir>/pub/cron.php?[group=<name>]` in a web browser
 
 This topic discusses securing `pub/cron.php` to prevent it from being used in a malicious exploit. If cron is unsecured, any user could potentially run cron to attack your Magento application.
 
@@ -103,6 +103,7 @@ To add security for cron in Magento's `.htaccess`:
 5.	Restart Apache:
 
 	CentOS: `service httpd restart`
+
 	Ubuntu: `service apache2 restart`
 
 6.	Continue with <a href="#config-cron-secure-apache-verify">Verify cron is secure</a>.
@@ -148,7 +149,7 @@ This example shows how to verify cron by verifying the indexers are being reinde
 
 1.	In the Magento Admin, perform some task that causes the indexers to need to be reindexed (for example, add a store or website).
 
-	To add a store, click **Stores** > ** All Stores **, then click **Create Store** and follow the prompts on your screen to complete the task.
+	To add a store, click **Stores** > **All Stores**, then click **Create Store** and follow the prompts on your screen to complete the task.
 2.	Verify at least one indexer need to be reindexed.
 
 	Enter the following command:
@@ -159,11 +160,11 @@ This example shows how to verify cron by verifying the indexers are being reinde
 
 3.	Run cron from a browser:
 
-		http[s]://<magento hose name or ip>/pub/cron.php
+		http[s]://<magento hose name or ip>/pub/cron.php?group=index
 
 	For example,
 
-		http://magento.example.com/pub/cron.php
+		http://magento.example.com/pub/cron.php?group=index
 
 	<div class="bs-callout bs-callout-info" id="info">
 		<span class="glyphicon-class">
