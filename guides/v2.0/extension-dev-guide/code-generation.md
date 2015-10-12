@@ -39,7 +39,7 @@ A proxy is a wrapper for a base class, and the proxy must implement all function
 You can use the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler.html">code compiler</a> to compile code at any time.
 
 <h3 id="codegen-over-why">Why should you regenerate code?</h3>
-Suppose a Customer or Proxy class for a Customer class is generated and the Customer class has new methods added to it. Because a Customer or Proxy exists on the file system, it is not re-generated. However, the Customer or Proxy implementation is incomplete now because it does not have the new methods. In this case, you must regenerate the Customer or Proxy class.
+Suppose a Customer or Proxy class for a Customer class is generated and the Customer class has new methods added to it. Because a Customer or Proxy exists on the file system, it is not regenerated. However, the Customer or Proxy implementation is incomplete now because it does not have the new methods. In this case, you must regenerate the Customer or Proxy class.
 
 If the code generator implementation itself is changed, you must regenerate all the classes. This is rare, however.
 
@@ -60,7 +60,7 @@ The single-tenant and multi-tenant compiler create `var/di/global.ser`, which is
 
 
 
-	<div class="bs-callout bs-callout-warning">
+<div class="bs-callout bs-callout-warning">
     	<p>if you&#8217;re preparing to deploy to production, you must use the multi-tenant compiler. There is a known issue with the single-tenant compiler that prevents it from compiling proxies.</p>
 	</div>
 
