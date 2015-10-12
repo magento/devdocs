@@ -12,7 +12,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/depend-inj.html
 
 
 *	<a href="#dep-inj-intro">Overview of dependency injection</a>
-*	<a href="#dep-inj-preview">Preview of using constructor injection</a>
+*	<a href="#dep-inj-preview-cons">Preview of constructor injection</a>
 *	<a href="#dep-inj-mod">Configuration overview</a>
 *	<a href="#dep-inj-mod-class">Class definitions</a>
 *	<a href="#dep-inj-mod-type">Type configurations</a>

@@ -3,7 +3,7 @@ layout: default
 group: jsdg
 subgroup: Widgets
 title: Navigation widget
-menu_order: 9
+menu_order: 11
 menu_title: Navigation widget
 github_link: javascript-dev-guide/widgets/widget_navigation.md
 redirect_from:
