@@ -21,17 +21,19 @@ github_link: config-guide/multi-master/multi-master.md
 <h2 id="config-ee-multidb-over">Overview of the split database solution</h2>
 *This feature is available in Magento Enterprise Edition (EE) only.*
 
-Split databases offer a performance and scalability benefit for merchants who expect to process large numbers of transactions on their storefront. With split databases, we apply the unified connection to three separate *master* databases. Having three master databases enables reads and writes to these tables to occur independently over separate connections, enabling better performance.
+Magento 2 EE offers number of scalability advantages, including the ability to use three separate master databases for different functional areas of the Magento application.
 
-In addition, if you set up optional database replication, you get the following advantages:
+Checkout, orders, and product data can all each use a separate master databases that you can optionally replicate. This separation allows load from website checkouts, order management activities, website browsing, and merchandising activities to be scaled independently depending on the system needs.  These changes provide considerable flexibility in how the database tier can be scaled.
+
+The `ResourceConnections` class provides the unified MySQL database connection to the Magento application. For queries to the master databases, we implement the <a href="https://en.wikipedia.org/wiki/Command%E2%80%93query_separation" target="_blank">Command Query Responsibility Segregation (CQRS)</a> database pattern. This pattern handles the logic for routing the read and write queries to the appropriate databases. Developers do not need to know which configuration is being used and there are no separate read and write database connections.
+
+If you set up optional database replication, you get the following advantages:
 
 *	Data backup
 *	Data analysis without affecting the master database
 *	Scalability
 
 MySQL databases replicate asynchronously, which means slaves do not need to be connected permanently to receive updates from the master.
-
-The `ResourceConnections` class provides the unified MySQL database connection to the Magento application.
 
 The following figure shows how this feature works.
 
@@ -40,8 +42,6 @@ The following figure shows how this feature works.
 In Magento Community Edition (CE), only one master database is used.
 
 Magento EE uses three master databases and a configurable number of slave databases for replication. Magento EE has a single interface for database connections, resulting in faster performance and better scalability.
-
-
 
 <h2 id="config-ee-multidb-prereq">Prerequisites</h2>
 The split database requires you to set up three MySQL master databases on any host (all three on the Magento server, each database on a separate server, and so on). These are the *master* databases and they're used as follows:
