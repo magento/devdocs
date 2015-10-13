@@ -134,6 +134,11 @@ Restart nginx and continue with the next section.
 <h2 id="config-cron-secure-apache-verify">Verify cron is secure</h2>
 This section discusses how to verify that `pub/cron.php` is working by verifying that it's creating rows in the `cron_schedule` database table. This section shows how to use SQL commands but you can also use a tool like <a href="{{ site.gdeurl }}install-gde/prereq/optional.html#install-optional-phpmyadmin">phpmyadmin</a>.
 
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>The <code>default</code> cron you're running in this example runs according to the schedule defined in <code>crontab.xml</code>. Some cron job runs only once a day. The first time you run cron from the browser, the <code>cron_schedule</code> table is updated but subsequent <code>pub/cron.php</code> requests run at the configured schedule.</p></span>
+</div>
+
 To verify cron:
 
 1.	Log in to your Magento database as either the Magento database user or as `root`. 
