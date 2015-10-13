@@ -239,19 +239,28 @@ Magento comes packaged with a sample Solr configuration you can use and customiz
 As a user with <code>root</code> privileges, enter the following commands in the order shown to copy over the Solr configuration with the one packaged with Magento EE:
 
     cd <your Solr install dir>/example/solr
-    mkdir -p magento2/conf magento2/data
-    cd magento2/conf
-    cp -R ../../collection1/conf .
+    cp -R collection1 magento2
+    cd magento2
     cp -R <your Magento EE install dir>/app/code/Magento/Solr/conf/* .
 
-For example, if Solr is installed in <code>/etc/solr/solr-4.10.4</code> and Magento EE is installed in <code>/var/www/magento/html/magento2ee</code>, enter:
+For example, if Solr is installed in <code>/opt/solr/solr-4.10.4</code> and Magento EE is installed in <code>/var/www/magento/html/magento2ee</code>, enter:
 
-    cd /etc/solr/solr-4.10.4/solr/example/solr/magento2/conf
+    cd /opt/solr/solr/solr-4.10.4
+    cp -R collection1 magento2
+    cd magento2
     cp -R /var/www/html/magento2ee/app/code/Magento/Solr/conf/* .
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>If you're prompted to overwrite files, try the command <code>\cp -R &lt;your Magento EE install dir>/app/code/Magento/Solr/conf/* .</code></p>
 </div>
+
+After copying files, open `example/solr/core.properties` in a text editor and change:
+
+  name=collection1
+
+to
+
+  name=magento2
 
 #### Task for Tomcat 6 with CentOS only
 If you're using Tomcat 6 on CentOS, you must modify `<your Solr install dir>/example/solr/conf/solrconfig.xml`
@@ -273,25 +282,7 @@ As a user with <code>root</code> privileges, enter the following command to star
     <p>This method for starting Solr is for convenience and testing purposes only. <!-- In a production environment, you should start and stop Solr using a script as discussed in <a href="#solr-script">Script Solr startup and shutdown</a>. --></p>
 </div>
 
-1.  Enter the following URL in your browser's location or address bar to start the Solr management console:
 
-        http://<solr host or ip>:8983/solr
-
-2.  In the left navigation bar, click **Core Admin**.
-
-3.  Click **Add Core**.
-
-    The following figure shows an example.
-
-    <img src="{{ site.baseurl }}common/images/solr_admin_add-core.png" alt="Add a new Solr core">
-
-4.  Enter the following information:
-
-    * **name** field: Enter `magento2`
-    * **instanceDir** field: Enter `magento2/conf`
-
-    Leave all other fields at their default values or see <a href="https://cwiki.apache.org/confluence/display/solr/Overview+of+the+Solr+Admin+UI" target="_blank">Solr documentation</a> for more information about changing them.
-5.  Click **Add Core**.
 
 <h3 id="config-solr-magento">Configure Magento to work with Solr</h3>
 This section discusses how to configure Magento EE to use the Solr search engine.
