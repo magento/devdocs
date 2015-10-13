@@ -19,12 +19,12 @@ Follow the next three steps:
 
 - <a href="#mtf_install_check">Check the installation</a>
 
-<h2 id="mtf_install_pre">Check pre-installation conditions</h2>
+## Check pre-installation conditions {#mtf_install_pre}
 
-<h3 id="mtf_install_pre_inst-magento">1. Install the Magento application you want to test</h3>
+### 1. Install the Magento application you want to test {#mtf_install_pre_inst-magento}
 To install the Magento application, see <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">Magento Installation Guide</a>.
 
-<h3 id="mtf_install_pre_adj-magento">2. Adjust Magento application preferences</h3>
+### 2. Adjust Magento application preferences {#mtf_install_pre_adj-magento}
 
 -    Log in to the Magento Admin as an administrator. Example of Magento Admin URL: `http://magento.example.com/admin_1sgfym`.
 -    On the vertical navigation bar click **Stores &gt; Configuration &gt; Advanced &gt; Admin &gt; Security**.
@@ -33,9 +33,9 @@ To install the Magento application, see <a href="{{ site.gdeurl }}install-gde/bk
 -    Click **Stores &gt; Configuration &gt; General &gt; Content Management &gt; WYSIWYG Options**.
 -    Set **Enable WYSIWYG Editor** to **Disabled Completely** to enable you to work with Selenium. You can change the setting later after you're finished testing.
 
-<h3 id="mtf_install_pre_tools">3. Check if all required software installed and configured</h3>
+### 3. Check if all required software installed and configured {#mtf_install_pre_tools}
 
-<h4 id="mtf_install_pre_tools_php">PHP</h4>
+#### PHP {#mtf_install_pre_tools_php}
 
 For more details about PHP verification, installation and configuration (<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">Ubuntu</a>, <a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">CentOS</a>).
 
@@ -43,12 +43,12 @@ For more details about PHP verification, installation and configuration (<a href
     <p>In <code>php.ini</code> file, make sure <code>extension=php_openssl.dll</code> is not commented out.</p>
 </div>
 
-<h3 id="mtf_install_pre_mtf-check">Check if the Magento Testing Framework has been already installed</h3>
+#### Check if the Magento Testing Framework has been already installed {#mtf_install_pre_mtf-check}
 
 1. Find directory `magento2/dev/tests/functional/`.
 1. Find the `vendor` directory. If the directory exists, you already have the Magento Testing Framework installed in `vendor/magento/mtf`.
 
-<h2 id="mtf_install_perform">Perform the installation</h2>
+## Perform the installation {#mtf_install_perform}
 
 The Magento Testing Framework requires Composer, which downloads libraries defined in `magento2/dev/tests/functional/composer.json`.
 
@@ -70,9 +70,9 @@ And run from this directory <code>php composer.phar install</code>.</p>
 </div>
 
 
-<h2 id="mtf_install_check">Check the installation</h2>
+## Check the installation {#mtf_install_check}
 
-<h3 id="mtf_install_check_dir">Find the Magento Testing Framework directory</h3>
+### Find the Magento Testing Framework directory {#mtf_install_check_dir}
 
 Check whether the `vendor` directory exists in `magento2/dev/tests/functional/`.
 
@@ -84,8 +84,8 @@ Find the `mtf` directory.
     cd vendor/magento
     ls
 
-<h3 id="mtf_install_check_verify">Verify the Magento Testing Framework version</h3>
+### Verify the Magento Testing Framework version {#mtf_install_check_verify}
+
 Open `magento2/dev/tests/functional/vendor/magento/mtf/CHANGELOG.md`. The latest version in `CHANGELOG.md` is version of the MTF you installed.
 
 <h2 id="mtf_install_next">Next Steps</h2> <a href="{{ site.gdeurl }}mtf/mtf_quickstart/mtf_quickstart_config.html">Adjust MTF configuration </a>
-

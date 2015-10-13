@@ -10,26 +10,16 @@ github_link: mtf/mtf_entities/mtf_handler.md
 
 <h3 id="mtf_handler_overview">Contents</h3>
 
-- <a href="#mtf_handler_overview">Handler overview</a>
-- <a href="#mtf_handler_types">Types of handlers</a>
-- <a href="#mtf_handler_config">Configuration</a>
-  - <a href="#mtf_handler_configxml">config.xml</a>
-- <a href="#mtf_handler-components">Handler components</a>
-  - <a href="#mtf_handler_interface">Handler interface</a>
-  - <a href="#mtf_handler_conf_hand">Handler class</a>
-  - <a href="#mtf_handler_di">di.xml</a>
-- <a href="#mtf_handler_howto-create-curl">How to create a cURL handler</a>
-  - <a href="#mtf_handler_decor">cURL authentication classes</a>
-- <a href="#mtf_handler_howto-create-ui">How to create a UI handler</a>
-- <a href="#mtf_handler_howto-create-webapi">How to create a WebAPI handler</a>
+* TOC
+{:toc}
   
-<h2 id="mtf_handler_overview">Handler overview</h2>
+## Handler overview {#mtf_handler_overview}
 
 You can use a handler to set up preconditions and prepare an initial testing environment for particular tests. For example, your scenario requires a particular widget that must be implicitly created before the test is started. You need <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html">a fixture</a>, a data set, and a handler. The handler transfers data to the application being tested. The data is a list of fields from a fixture and values from data sets.
 
 This topic focuses on handlers, and we'll discuss types of handlers as well as how to create and use one.
 
-<h2 id="mtf_handler_types">Types of handlers</h2>
+## Types of handlers {#mtf_handler_types}
 
 The MTF enables you to use any type of handler.
 
@@ -43,11 +33,11 @@ Magento uses the following handlers:
 
 Furthermore, you can create your own handlers, such as **Direct**, which is very fast because the **Direct** handler sends a direct call to the Magento application using Magento models. The **Direct** handler requires deep understanding of the Magento application, and also requires access to the Magento code and the database. Difficulties can be caused when the Magento code and Magento tests are run on different hosts.
 
-<h2 id="mtf_handler_config">Configuration</h2>
+## Configuration {#mtf_handler_config}
 
 One fixture can have various handlers. When we create an entity in the test we do not indicate which handler to use. This work is delegated to a fallback, which is a queue of handlers in the priority order specified in <a href="#mtf_handler_configxml"><code>config.xml</code></a>.
 
-<h3 id="mtf_handler_configxml">config.xml</h3>
+### `config.xml` {#mtf_handler_configxml}
 
 The default configuration for handlers is set in <a href="{{site.mage2000url}}dev/tests/functional/etc/config.xml.dist"><code>magento2/dev/tests/functional/etc/config.xml.dist</code></a>.  Create a duplicate of the file, and keep both, but make changes to the new one, which is called `config.xml`:
 
@@ -73,9 +63,9 @@ The following nodes influence handlers:
 </td></tr>
 </table>
 
-<h2 id="mtf_handler-components">Handler components</h2>
+## Handler components {#mtf_handler-components}
 
-<h3 id="mtf_handler_interface">Handler interface</h3>
+### Handler interface {#mtf_handler_interface}
 
 Each handler must implement a handler interface.
 
@@ -85,7 +75,7 @@ Example of `WidgetInterface.php` (should be placed in `magento2/dev/tests/functi
 
 <script src="https://gist.github.com/dshevtsov/dbe9b588ffe91bbb5622.js"></script>
 
-<h3 id="mtf_handler_conf_hand">Handler class</h3>
+### Handler class {#mtf_handler_conf_hand}
 
 To use the handler class, create <a href="#mtf_handler_interface">an interface</a>, declare a fallback in the <a href="#mtf_handler_config"><code>config.xml</code></a>, and declare interface/class relationships in the <a href="#mtf_handler_di"><code>di.xml</code></a>. When this class is created, you can call the `persist()` method to create Magento entity (for example, widget). The method returns data that are matched with fixture fields. All fixture fields that are matched are assigned values from the handler.
 
@@ -95,7 +85,7 @@ The `persist()` method is declared in the <a href="https://github.com/magento/mt
 
 Create the handler in the same directory where the interface is stored: `magento2/dev/tests/functional/tests/app/Magento/[module_name]/Test/Handler/[object_name]/[type_of_handler].php`
 
-<h3 id="mtf_handler_di">di.xml</h3>
+### `di.xml` {#mtf_handler_di}
 
 The `di.xml` file declares relationship between the <a href="#mtf_handler_interface">interface</a> and the <a href="#mtf_handler_conf_hand">handler</a> class. The file must be placed in `magento2/dev/tests/functional/tests/app/Magento/[module_name]/Test/etc/[handler_type]`.
 
@@ -124,7 +114,7 @@ See the directory structure mentioned for the case with the Widget cURL handler:
 
 <img src="{{ site.baseurl }}common/images/mtf_widget_handler_tree.png">
 
-<h2 id="mtf_handler_howto-create-curl">How to create a cURL handler</h2>
+## How to create a cURL handler {#mtf_handler_howto-create-curl}
 
 Let's create a cURL handler that creates a new widget.
 
@@ -160,13 +150,13 @@ The following code includes detailed comments for better understanding.
 
 {%endhighlight%}
 
-<h3 id="mtf_handler_decor">cURL authentication classes</h3>
+### cURL authentication classes {#mtf_handler_decor}
 
 In the previously mentioned example of the <a href="#mtf_curl_script">Curl.php</a> code, authentication in the Admin is realized using the the `BackendDecorator` class. 
 
 The <a href="#mtf_handler_curl_frontdecor">FrontendDecorator class</a> manages authentication in the storefront.
 
-<h4>BackendDecorator class</h4>
+#### BackendDecorator class {#mtf_handler_curl_backdecor}
 
 `BackendDecorator` manages authentication in Admin and saves the Admin's session.
 
@@ -180,7 +170,7 @@ $curl = new BackendDecorator(new CurlTransport(), new Config());
 
 `Config()` takes Admin's configuration from <a href="#mtf_handler_configxml">config.xml</a>, where the username and the password are stored.
 
-<h4 id="mtf_handler_cirl_frontdecor">FrontendDecorator class</h4>
+#### FrontendDecorator class {#mtf_handler_cirl_frontdecor}
 
 `FrontendDecorator` helps to authorize the customer and saves his session.
 
@@ -192,7 +182,7 @@ Use the following code in the `Curl.php` file:
 $curl = new FrontendDecorator(new CurlTransport(), $this->customer);
 {% endhighlight %}
 
-<h2 id="mtf_handler_howto-create-ui">How to create a UI handler</h2>
+## How to create a UI handler {#mtf_handler_howto-create-ui}
 
 Let's create a UI handler that creates a new widget.
 
@@ -226,7 +216,7 @@ The code has detailed comments for better understanding.
 
 {%endhighlight%}
 
-<h2 id="mtf_handler_howto-create-webapi">How to create a WebAPI handler</h2>
+## How to create a WebAPI handler {#mtf_handler_howto-create-webapi}
 
 Let's create a WebAPI handler that creates a new tax rule.
 

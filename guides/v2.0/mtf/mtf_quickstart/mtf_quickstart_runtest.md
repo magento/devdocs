@@ -9,6 +9,7 @@ github_link: mtf/mtf_quickstart/mtf_quickstart_runtest.md
 redirect_from: /guides/v1.0/mtf/mtf_quickstart/mtf_quickstart_runtest.html
 ---
 <h2 id="mtf_quickstart_testrun">Test run</h2>
+
 All tests classified by categories in corresponding directories in `magento2/dev/tests/functional/tests/app/Magento`.
 
 MTF uses PHPUnit, which is located in `magento2/dev/tests/functional/vendor/bin` directory.
@@ -20,7 +21,7 @@ Be sure that your system is ready for test run.
 - <a href="{{site.gdeurl}}mtf/mtf_quickstart/mtf_quickstart_config.html">The Magento Testing Framework is configured</a>
 - <a href="{{site.gdeurl}}mtf/mtf_quickstart/mtf_quickstart_environmemt.html">Environment is ready to test run</a>
 
-<h3 id="mtf_quickstart_testrun_all">Run all tests</h3>
+### Run all tests {#mtf_quickstart_testrun_all}
 
 Enter in terminal:
 
@@ -28,7 +29,7 @@ Enter in terminal:
 
 This command will run all tests from `magento2/dev/tests/functional/tests/app/Magento/`.
 
-<h3 id="mtf_quickstart_testrun_one">Run particular test</h3>
+### Run particular test {#mtf_quickstart_testrun_one}
 
 Enter in terminal
 

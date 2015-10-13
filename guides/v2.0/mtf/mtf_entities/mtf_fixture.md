@@ -9,21 +9,10 @@ github_link: mtf/mtf_entities/mtf_fixture.md
 ---
 <h3 id="mtf_fixture_content">Contents</h3>
 
-- <a href="#mtf_fixture_overview">Fixture overview</a>
+* TOC
+{:toc}
 
-- <a href="#mtf_fixture_create">Create new fixture</a>
-
-- <a href="#mtf_fixture_read">Read and update new fixture</a>
-
-- <a href="#mtf_fixture_repositoy">Add a repository to the fixture field</a>
-
-- <a href="#mtf_fixture_source">Add the data source to the fixture field</a>
-
-- <a href="#mtf_fixture_merge">Merge fixtures</a>
-
-- <a href="#mtf_fixture_extend">Extend fixture</a>
-
-<h2 id="mtf_fixture_overview">Fixture overview</h2>
+## Fixture overview {#mtf_fixture_overview}
 
 An MTF fixture is a list of properties of the Magento entity under test.
 
@@ -47,7 +36,7 @@ This tool creates PHP classes that are used by the test.
 
 You can check fixture PHP class in corresponding module in the `magento2/dev/tests/functional/generated/Magento` directory.
 
-<h2 id="mtf_fixture_create">Create new fixture</h2>
+## Create new fixture {#mtf_fixture_create}
 
 Let's imagine that we want to create new fixture to test our Widget module.
 
@@ -118,7 +107,7 @@ That's it!
 
 For a detailed description of XML structure see the next section.
 
-<h2 id="mtf_fixture_read">Read and update your new fixture</h2>
+## Read and update your new fixture {#mtf_fixture_read}
 
 Let's look closer at fixture structure.
 
@@ -204,7 +193,7 @@ To apply the changes, enter the following commands:
     cd magento2/dev/tests/functional/utils
     php generate.php
 
-<h2 id="mtf_fixture_repositoy">Add a repository to the fixture field </h2>
+## Add a repository to the fixture field {#mtf_fixture_repositoy}
 
 Now we have a new fixture for Widget. All fields are defined and ready to take test data. Let's assume that we are not focused on layout updates functionality and want to use pre-defined data.
 
@@ -258,7 +247,7 @@ To apply the changes, enter the following commands:
     cd magento2/dev/tests/functional/utils
     php generate.php
 
-<h2 id="mtf_fixture_source">Add the data source to the fixture field</h2>
+## Add the data source to the fixture field {#mtf_fixture_source}
 
 Our new field `layout_updates` is complex and contains different elements and logic, depending on the type of layout chosen.
 
@@ -296,7 +285,7 @@ Example from <code>LayoutUpdates.php</code><br/>
 <code>$this->data = $repositoryFactory->get($this->params['repository'])->get($data['dataset']);</code></p>
 </div>
 
-<h2 id="mtf_fixture_merge">Merge fixtures</h2>
+## Merge fixtures {#mtf_fixture_merge}
 
 We have a module that adds new field to Widget module.
 
@@ -327,7 +316,7 @@ To apply the changes, enter the following commands:
 
 `new_field` has been added in fixture `Widget.php`.
 
-<h2 id="mtf_fixture_extend">Extend fixture</h2>
+## Extend fixture {#mtf_fixture_extend}
 
 Let's assume that you want to add new fixture based on our `Widget.xml` fixture to another Magento entity.
 

@@ -10,7 +10,10 @@ redirect_from: /guides/v1.0/mtf/mtf_quickstart/mtf_quickstart_config.html
 ---
 <h2 id="mtf_quickstart_config">Adjust configuration</h2>
 
-<h3 id="mtf_quickstart_config_phpunitxml">1. Edit <code>phpunit.xml</code> to configure PHPUnit</h3>
+* TOC
+{:toc}
+
+### Edit `phpunit.xml` to configure PHPUnit {#mtf_quickstart_config_phpunitxml}
 
 Find `phpunit.xml` in `magento2/dev/tests/functional`, and open it in editor.
 
@@ -18,26 +21,27 @@ Find `phpunit.xml` in `magento2/dev/tests/functional`, and open it in editor.
   <p>If you cannot find <code>phpunit.xml</code>, create it from <code>phpunit.xml.dist</code>.</p>
 </div>
 
-<h4 id="mtf_quickstart_config_phpunitxml_frontend">Set URL for Magento storefront under test</h4>
+#### Set URL for Magento storefront under test {#mtf_quickstart_config_phpunitxml_frontend}
 
 Find `<php>` element.
 For `name="app_frontend_url"` set `value` that is your actual URL for Magento storefront under test.
 
-<h4 id="mtf_quickstart_config_phpunitxml_backend">Set URL for Magento Admin URL under test</h4>
+#### Set URL for Magento Admin URL under test {#mtf_quickstart_config_phpunitxml_backend}
 
 For `name="app_backend_url"` set `value` that is your actual URL for Magento Admin URL under test.
 
 Example:
 `<env name="app_backend_url" value="http://example.com/magento2/admin"/>`.
 
-<h4 id="mtf_quickstart_config_phpunitxml_win-credent">Windows only! Set full path for <code>basedir</code> and <code>credentials_file_path</code> parameters</h4>
+#### Windows only! Set full path for `basedir` and `credentials_file_path` parameters {#mtf_quickstart_config_phpunitxml_win-credent}
+
 Find `<php>` element.
 
 For `<env name="basedir"` set `value="<full_path_to_directory>" />` (that is directory for error logs). For example, `<env name="basedir" value="C:\magento2\dev\tests\functional\var\log" />`.
 
 For `name="credentials_file_path" ` set `value="<full_path_to_directory>"` (that is file with credentials for Magento modules, if required). For example, `<env name="credentials_file_path" value="C:\magento2\dev\tests\functional\credentials.xml" />`.
 
-<h3 id="mtf_quickstart_config_configxml">2. Edit <code>config.xml</code> to configure Magento Testing Framework</h3>
+### Edit `config.xml` to configure Magento Testing Framework {#mtf_quickstart_config_configxml}
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>The default configuration is set in <a href="{{site.mage2000url}}dev/tests/functional/etc/config.xml.dist"><code>magento2/dev/tests/functional/etc/config.xml.dist</code></a>. It should be copied as <code>config.xml</code> for further changes.</p>
@@ -45,10 +49,10 @@ For `name="credentials_file_path" ` set `value="<full_path_to_directory>"` (that
 
 Find `config.xml` in `magento2/dev/tests/functional/etc`, and open it in editor.
 
-<h4 id="mtf_quickstart_config_configxml_credent-backend">Set credentials for Magento Admin under test</h4>
+#### Set credentials for Magento Admin under test {#mtf_quickstart_config_configxml_credent-backend}
 In `<application>` element find elements `<backendLogin>` and `<backendPassword>`. Change content of these elements to your actual credentials for Magento Admin URL.
 
-<h4 id="mtf_quickstart_config_configxml_browser">Set browser that MTF will use for tests</h4>
+#### Set browser that the MTF will use for tests {#mtf_quickstart_config_configxml_browser}
 The default browser is **Mozilla Firefox**.
 
 If you want to use another browser for tests you have to specify it in `config.xml`.
@@ -79,7 +83,7 @@ Example for Google Chrome:
 {% endhighlight %}
 
 
-<h3 id="mtf_quickstart_config_credentialsxml">3. Edit <code>credentials.xml</code> to work with Magento modules that requires credentials</h3>
+### Edit `credentials.xml` to work with Magento modules that requires credentials {#mtf_quickstart_config_credentialsxml}
 
 Find `credentials.xml` in `magento2/dev/tests/functional`, and open it in editor.
 
@@ -87,7 +91,7 @@ Find `credentials.xml` in `magento2/dev/tests/functional`, and open it in editor
   <p>If you cannot find <code>credentials.xml</code>, create it from <code>credentials.xml.dist</code>.</p>
 </div>
 
-<h4 id="mtf_quickstart_config_credentialsxml-set">Set credentials for Magento modules under test</h4>
+#### Set credentials for Magento modules under test {#mtf_quickstart_config_credentialsxml-set}
 Open `credentials.xml`.
 
 Find block of elements for the Magento module you want to test.
