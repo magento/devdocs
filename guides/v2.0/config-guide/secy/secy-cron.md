@@ -13,6 +13,7 @@ github_link: config-guide/secy/secy-cron.md
 *	<a href="#config-cron-secure-over">Overview of securing cron</a>
 *	<a href="#config-cron-secure-apache">Secure cron with Apache</a>
 *	<a href="#config-cron-secure-nginx">Secure cron with nginx</a>
+*	<a href="#config-cron-secure-apache-verify">Verify cron is secure</a>
 
 <h2 id="config-cron-secure-over">Overview of securing cron</h2>
 The Magento cron job runs a number of scheduled tasks, including reindexing, generating e-mails, generating newsletters, generating sitemaps, and so on. cron is a vital part of your Magento configuration.
@@ -131,56 +132,39 @@ Add the following to your `nginx.conf`:
 Restart nginx and continue with the next section.
 
 <h2 id="config-cron-secure-apache-verify">Verify cron is secure</h2>
-To verify cron is secure, perform some task that requires scheduling, then run cron from a web browser and verify the action succeeded. This example shows how to cause the Stock indexer to be reindexed by adding a store.
+This section discusses how to verify that `pub/cron.php` is working by verifying that it's creating rows in the `cron_schedule` database table. This section shows how to use SQL commands but you can also use a tool like <a href="{{ site.gdeurl }}install-gde/prereq/optional.html#install-optional-phpmyadmin">phpmyadmin</a>.
 
-This example shows how to verify cron by verifying the indexers are being reindexed:
+To verify cron:
 
-1.	Set at least one indexer to update by schedule (the default is to update on save).
-
-	As the Magento file system owner, run the following command:
-
-		php <your Magento install dir>/bin/magento indexer:set-mode schedule [indexer]
-
-	Omit `[indexer]` to set all indexers to update by schedule. (cron is the indexer scheduler.)
-
-	For example, if you add a new store, the `cataloginventory_stock` indexer must be reindexed, so you can enter:
-
-		php <your Magento install dir>/bin/magento indexer:set-mode schedule cataloginventory_stock
-
-1.	In the Magento Admin, perform some task that causes the indexers to need to be reindexed (for example, add a store or website).
-
-	To add a store, click **Stores** > **All Stores**, then click **Create Store** and follow the prompts on your screen to complete the task.
-2.	Verify at least one indexer need to be reindexed.
-
-	Enter the following command:
-
-		php <your Magento install dir>/bin/magento indexer:status
-
-	Look for at least one indexer with the status `Reindex required`
-
-3.	Run cron from a browser:
-
-		http[s]://<magento hose name or ip>/pub/cron.php?group=index
+1.	Log in to your Magento database as either the Magento database user or as `root`. 
 
 	For example,
 
-		http://magento.example.com/pub/cron.php?group=index
+		mysql -u magento -p
 
-	<div class="bs-callout bs-callout-info" id="info">
-		<span class="glyphicon-class">
-		<p>You must run cron twice: the first time to discover tasks to run and the second time to run the tasks themselves.</p></span>
-	</div>
+2.	Use the Magento database:
+
+		use <magento database name>;
+
+	For example,
+
+		use magento;
+1.	Delete all rows from the `cron_schedule` database table:
+	
+		TRUNCATE TABLE cron_schedule 
+3.	Run cron from a browser:
+
+		http[s]://<magento hose name or ip>/pub/cron.php?group=default
+
+	For example,
+
+		http://magento.example.com/pub/cron.php?group=default
 
 	When prompted, enter an authorized user's name and password. The following figure shows an example.
 
 	<img src="{{ site.baseurl }}common/images/cron_auth.png" alt="Authorizing cron using HTTP Basic">
+5.	Verify rows were added to the table:
 
-	*Apache*. If an HTTP 500 (Server Error) response displays in the browser and the following error displays in the Apache `error_log`, look for improper syntax or non-keyboard characters in `pub/.htaccess` (for example, non-UNIX line breaks or smart quotes instead of straight quotes):
+		SELECT * from cron_schedule
 
-		AuthName takes one argument, The authentication realm
-
-5.	As the Magento file system owner, run the following command:
-
-		php <your Magento install dir>/bin/magento indexer:status
-
-	Make sure all indexers have the status `Ready`
+	Verify that some rows are returned. If so, you're done!
