@@ -3,7 +3,7 @@ layout: default
 group: jsdg
 subgroup: Widgets
 title: Menu widget
-menu_order: 7
+menu_order: 8
 menu_title: Menu widget
 github_link: javascript-dev-guide/widgets/widget_menu.md
 redirect_from:

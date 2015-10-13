@@ -9,6 +9,8 @@ menu_order: 1
 github_link: install-gde/continue-to-cm-updater_cli.md
 ---
 
+
+
 ## Need to make changes?
 After installing the Magento software, you might need to:
 

@@ -4,7 +4,7 @@ group: jsdg
 subgroup: Widgets
 title: Tabs widget
 menu_title: Tabs widget
-menu_order: 11
+menu_order: 14
 github_link: javascript-dev-guide/widgets/widget_tabs.md
 redirect_from:
   - guides/v2.0/frontend-dev-guide/javascript/widget_tabs.html

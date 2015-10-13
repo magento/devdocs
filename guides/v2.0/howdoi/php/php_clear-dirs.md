@@ -1,11 +1,11 @@
 ---
 layout: default
-group: install_trouble
-subgroup: Z_Other issues
+group: extension-dev-guide
+subgroup: 6_Module Development
 title: Clear directories during development
 menu_title: Clear directories during development
 menu_node: 
-menu_order: 500
+menu_order: 200
 github_link: howdoi/php/php_clear-dirs.md
 ---
 

@@ -131,7 +131,8 @@ The following table discusses the meanings of installation option names and valu
 	<tr>
 		<td><p>--admin-password</p></td>
 		<td><p>Magento administrator user password.</p>
-			<p>The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character.</p></td>
+			<p>The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character.</p>
+			<p>We recommend a longer, more complex password. Enclose the entire password string in single quotes and escape special characters with <code>/</code>. For example, <code>--admin-password='A0b9\%t_3\`g'</code></p></td>
 		<td><p>Yes</p></td>
 	</tr>
 		<tr>
@@ -158,8 +159,7 @@ The following table discusses the meanings of installation option names and valu
 		<td><p>--db-host</p></td>
 		<td><p>Use any of the following:</p>
 		<ul><li>The database server's fully qualified host name or IP address.</li>
-		<li><code>localhost</code> (default) if your database server is on the same host as your web server.</li>
-		<li>UNIX socket; for example, <code>/var/run/mysqld/mysqld.sock</code></li></ul>
+		<li><code>localhost</code> (default) or <code>127.0.0.1</code> if your database server is on the same host as your web server.<br><code>localhost</code> means the MySQL client library uses UNIX sockets to connect to the database. <code>127.0.0.1</code> causes the client library to use the TCP protocol. For more information about sockets, see the <a href="http://php.net/manual/en/ref.pdo-mysql.php" target="_blank">PHP <code>PDO_MYSQL</code> documentation</a>.</li></ul>
 		<p><strong>Note</strong>: You can optionally specify the database server port in its host name like <code>www.example.com:9000</code></p>
 </td>
 		<td><p>No</p></td>
