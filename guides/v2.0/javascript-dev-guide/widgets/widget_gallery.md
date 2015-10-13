@@ -11,6 +11,7 @@ github_link: javascript-dev-guide/widgets/widget_gallery.md
 <h2>Overview</h2>
 
 The gallery widget is used to display product photos on product pages. Gallery implements content area with images organized into preview and thumbnails blocks.
+http://fotorama.io/customize/options/
 
 <p class="q">Do we need to mention that it uses fotorama?</p>
 <p class="q">Are the default values of options the same as for fotorama?</p>
@@ -61,7 +62,7 @@ Example of the initialization with the allowfullscreen option specified:
 
 <h3 id="gallery_captions"><code>captions</code></h3>
 
-Defines if the text in caption is visible in preview.
+Defines if the caption is visible.
 
 **Type**: Boolean
 
