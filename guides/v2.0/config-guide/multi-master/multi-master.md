@@ -33,6 +33,16 @@ MySQL databases replicate asynchronously, which means slaves do not need to be c
 
 The `ResourceConnections` class provides the unified MySQL database connection to the Magento application.
 
+The following figure shows how this feature works.
+
+<img src="{{ site.baseurl }}common/images/ee_split-db-diagram.png" alt="Magento EE uses different databases to store tables">
+
+In Magento Community Edition (CE), only one master database is used.
+
+Magento EE uses three master databases and a configurable number of slave databases for replication. Magento EE has a single interface for database connections, resulting in faster performance and better scalability.
+
+
+
 <h2 id="config-ee-multidb-prereq">Prerequisites</h2>
 The split database requires you to set up three MySQL master databases on any host (all three on the Magento server, each database on a separate server, and so on). These are the *master* databases and they're used as follows:
 
