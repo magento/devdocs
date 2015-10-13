@@ -10,11 +10,7 @@ github_link: javascript-dev-guide/widgets/widget_gallery.md
 
 <h2>Overview</h2>
 
-The gallery widget is used to display product photos on product pages. Gallery implements content area with images organized into preview and thumbnails blocks.
-http://fotorama.io/customize/options/
-
-<p class="q">Do we need to mention that it uses fotorama?</p>
-<p class="q">Are the default values of options the same as for fotorama?</p>
+The gallery widget is used to display product photos on product pages. Gallery implements content area with images organized into preview and thumbnails blocks. It uses the <a href="http://fotorama.io/">jQuery Fotorama library</a>
 
 In addition, integrated Gallery Magnifier can be used to demonstrate images in 100% scaled size in separate dedicated layer,
 or Gallery Fullscreen mode can be used to navigate the entire full sized photo.
@@ -23,7 +19,7 @@ Gallery is displayed consistently across all supported browsers and is responsiv
 
 The gallery widget source is <a href="{{site.mage2000url}}lib/web/mage/gallery/gallery.js">lib/web/mage/gallery/gallery.js</a>
 
-The magnifier widget source is <a href="{{site.mage2000url}}lib/web/magnifier/magnify.js"> lib/web/magnifier/magnify.js</a>.
+The gallery magnifier source is <a href="{{site.mage2000url}}lib/web/magnifier/magnify.js"> lib/web/magnifier/magnify.js</a>.
  
 <p class="q">is it a widget as well?</p>
 
@@ -80,18 +76,15 @@ Example of the initialization with the click option specified:
 
 <h3 id="gallery_height"><code>height</code></h3>
 
-Height of the preview in gallery.
+Height of the preview block in pixels or percents.
 
 **Type**: Number|String
      
 **Default value**: null
-     Example of the initialization with the height option specified:
-     $("#element").fotorama({ height: 400});
-     $("#element").fotorama({ height: "50%"});
 
 <h3 id="gallery_loop"><code>loop</code></h3>
 
-Property toggle infinite loop of images in gallery
+Define whether images are displayed in a loop.
     Type: boolean
     default: false
     Example of the initialization with the loop option specified:
