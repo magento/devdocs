@@ -21,6 +21,7 @@ This guide discusses the following widgets:
 <li><a href="{{ site.gdeurl }}javascript-dev-guide/widgets/widget_collapsible.html" target="_blank">Collapsible widget</a></li>
 <li><a href="{{ site.gdeurl }}javascript-dev-guide/widgets/widget_confirm.html" target="_blank">Confirm widget</a></li>
 <li><a href="{{ site.gdeurl }}javascript-dev-guide/widgets/widget_dialog.html" target="_blank">DropdownDialog widget</a></li>
+<li><a href="{{ site.gdeurl }}javascript-dev-guide/widgets/widget_gallery.html" target="_blank">Gallery widget</a></li>
 <li><a href="{{ site.gdeurl }}javascript-dev-guide/widgets/widget_list.html" target="_blank">List widget</a></li>
 <li><a href="{{ site.gdeurl }}javascript-dev-guide/widgets/widget_loader.html" target="_blank">Loader widget</a></li>
 <li><a href="{{ site.gdeurl }}javascript-dev-guide/widgets/widget_menu.html" target="_blank">Menu widget</a></li>

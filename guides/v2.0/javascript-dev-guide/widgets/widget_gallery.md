@@ -1,4 +1,4 @@
----.
+---
 layout: default
 group: jsdg
 subgroup: Widgets
@@ -70,21 +70,28 @@ Example of the initialization with the captions option specified:
      $("#element").fotorama({ captions: false});
 
 <h3 id="gallery_click"><code>click</code></h3>
-    Enable navigation through preview. Preview divided into 3 parts. Click on first part like Previous button. Click on other parts like Next button.
-    Type: boolean
-    Example of the initialization with the click option specified:
+
+Enable navigation through preview frames by clicking the Next and Previous buttons. 
+
+**Type**: Boolean
+
+Example of the initialization with the click option specified:
      $("#element").fotorama({ click: false});
 
 <h3 id="gallery_height"><code>height</code></h3>
-     Set height for preview in gallery.
-     Type: Number, String
-     Default value: null
+
+Height of the preview in gallery.
+
+**Type**: Number|String
+     
+**Default value**: null
      Example of the initialization with the height option specified:
      $("#element").fotorama({ height: 400});
      $("#element").fotorama({ height: "50%"});
 
 <h3 id="gallery_loop"><code>loop</code></h3>
-    Property toggle infinite loop of images in gallery
+
+Property toggle infinite loop of images in gallery
     Type: boolean
     default: false
     Example of the initialization with the loop option specified:
