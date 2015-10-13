@@ -4,7 +4,7 @@ group: extension-dev-guide
 subgroup: 6_Module Development
 title: PHP developer guide
 menu_title: Backward compatibility
-menu_order: 10
+menu_order: 12
 github_link: extension-dev-guide/backward-compatibility.md
 redirect_from: 
   - /guides/v1.0/architecture/index-cache/backward-compatibility.html
