@@ -61,7 +61,7 @@ The single-tenant and multi-tenant compiler create `var/di/global.ser`, which is
 
 
 <div class="bs-callout bs-callout-warning">
-    	<p>if you&#8217;re preparing to deploy to production, you must use the multi-tenant compiler. There is a known issue with the single-tenant compiler that prevents it from compiling proxies.</p>
+    	<p>If you&#8217;re preparing to deploy to production, you must use the multi-tenant compiler. There is a known issue with the single-tenant compiler that prevents it from compiling proxies.</p>
 	</div>
 
 
