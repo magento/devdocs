@@ -321,7 +321,7 @@ See the following table to understand the nodes purpose.
 |`class`|Reference to the class that handles tab's behavior.|
 |`selector`| Identifier for the locator of the tab in the HTML code, used to open the tab.|
 |`strategy`|Strategy of the selector. Can be `css selector` or `xpath`.|
-|`fields`|List of fields with parameters, that are the same as in the [form mapping](#mtf_block_form_xml_nodes). Also field in tab can consist of more then one field, in this case add `field` attribute `composite="1"`.|
+|`fields`|List of fields with parameters, that are the same as in the [form mapping](#mtf_block_form_xml_nodes). Also field in tab can include more then one field, in this case add `field` attribute `composite="1"`.|
 
 Example of `composite` field from [ProductForm.xml]({{site.mage2000url}}dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Adminhtml/Product/ProductForm.xml):
 
