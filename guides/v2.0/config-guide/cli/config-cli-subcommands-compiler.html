@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Configuration Guide</title>
+	<title>Code compiler</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/config-guide/bk-config-guide.html">
+	<link rel="canonical" href="//guides/v2.0/config-guide/cli/config-cli-subcommands-compiler.html">
 
 
 
@@ -155,9 +155,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Configuration Guide</h1>
+		<h1 class="page-heading">Code compiler</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/config-guide/bk-config-guide.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -166,16 +166,162 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="configuration">Configure the Magento application</h2>
-<p>You can configure the Magento application in any of the following ways:</p>
+		<h4 id="contents">Contents</h4>
 
 <ul>
-  <li>Using a <a href="/guides/v2.0/config-guide/cli/config-cli.html">command-line utility</a> (for example, enable or disable cache types, run indexers, set up translations, and so on)</li>
-  <li>Manually to set up <a href="/guides/v2.0/config-guide/bootstrap/magento-bootstrap.html">bootstrap parameters</a></li>
-  <li><a href="/guides/v2.0/config-guide/config/caching.html">Set up caching</a></li>
-  <li><a href="/guides/v2.0/config-guide/database/database.html">Set up database caching</a></li>
-  <li><a href="/guides/v2.0/config-guide/redis/config-redis.html">Set up Redis</a></li>
-  <li><a href="/guides/v2.0/config-guide/varnish/config-varnish.html">Set up Varnish</a></li>
+  <li><a href="#config-cli-subcommands-compile-overview">Overview of code compilation</a></li>
+  <li><a href="#config-cli-before">First steps</a></li>
+  <li><a href="#config-cli-subcommands-single">Run the single-tenant compiler</a></li>
+  <li><a href="#config-cli-subcommands-run">Run the multi-tenant compiler</a></li>
+</ul>
+
+<h2 id="config-cli-subcommands-compile-overview">Overview of code compilation</h2>
+<p>This section discusses the basics of code compilation.</p>
+<p>Code compilation consists of all of the following in no particular order:</p>
+<ul><li>Application code generation (factories, proxies, and so on)</li>
+<li>Area configuration aggregation (that is, optimized dependency injection configurations per area)</li>
+<li>Interceptor generation (that is, optimized code generation of interceptors)</li>
+<li>Interception cache generation</li>
+<li>Repositories code generation (that is, generated code for APIs)</li>
+<li>Service data attributes generation (that is, generated extension classes for data objects)</li></ul>
+<p>You can find code compilation in classes in the <a href="https://github.com/magento/magento2/blob/develop/setup/src/Magento/Setup/Module/Di/App/Task/Operation" target="_blank">\Magento\Setup\Module\Di\App\Task\Operation</a> namespace.</p>
+
+<h2 id="config-cli-before">First steps</h2>
+<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.</li>
+<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
+Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
+bash shell example for CentOS:<br />
+<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You can also run the commands in the following ways:</p>
+<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
+<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
+<p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
+</div>
+
+<p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+
+<h2 id="config-cli-subcommands-single">Run the single-tenant compiler</h2>
+<p>Use this command if you have one website and store. If you have multiple websites and stores, use the <a href="#config-cli-subcommands-run">multi-tenant compiler</a> instead.</p>
+
+<div class="bs-callout bs-callout-warning">
+    <p>There is a known issue with the single-tenant compiler; it does not currently compile proxies. Therefore, if you're preparing to deploy to production, you must use the multi-tenant compiler.</p>
+</div>
+
+<p>Run the command as follows (there are no options):</p>
+
+<pre><code>magento setup:di:compile
+</code></pre>
+
+<p>The following message displays to confirm success:</p>
+
+<pre><code>Generated code and dependency injection configuration successfully.
+</code></pre>
+
+<h2 id="config-cli-subcommands-run">Run the multi-tenant compiler</h2>
+<p>Use this command if you have multiple <em>tenants</em>, which means more than one independent Magento application. In other words:</p>
+
+<ul>
+  <li>There is one Magento 2 code base instance</li>
+  <li>There is one database instance per tenant</li>
+  <li>Independent configurations in the Magneto Admin per tenant</li>
+  <li>The storefronts are independent of each other</li>
+</ul>
+
+<p>If you do not have multiple tenants, use the <a href="#config-cli-subcommands-single">single-tenant compiler</a> instead.</p>
+
+<p>Command options:</p>
+
+<pre><code>magento setup:di:compile-multi-tenant [--serializer="{serialize|igbinary}"] [--extra-classes-file="&lt;path&gt;"] [--generation="&lt;path and 
+filename&gt;"] [--di="&lt;path and filename&gt;"] [--exclude-pattern="&lt;regex&gt;"]
+</code></pre>
+
+<p>The following table discusses the meanings of this command’s parameters and values. </p>
+
+<table>
+	<col width="25%" />
+	<col width="65%" />
+	<col width="10%" />
+	<tbody>
+		<tr>
+			<th>Parameter</th>
+			<th>Value</th>
+			<th>Required?</th>
+		</tr>
+		
+	<tr>
+		<td><p>--serializer</p></td>
+		<td><p>Specify either <code>serialize</code> or <a href="https://github.com/phadej/igbinary" target="_blank">igbinary</a>. Default is <code>serialize</code>.</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--extra-classes-file</p></td>
+		<td><p>Specify the absolute file system path to proxies and factories that are not declared in the dependency injection or code..</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--generation</p></td>
+		<td><p>Absolute file system path to a directory for generated classes. Default is <code>&lt;your Magento install dir&gt;/var/generation</code></p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--di</p></td>
+		<td><p>Absolute file system path to a directory to generate the object manager configuration. Default is <code>&lt;your Magento install dir&gt;/var/di</code></p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--exclude-pattern</p></td>
+		<td><p>Regular expression that enables you to exclude paths from compilation. Default is <code>#[\\/]m1[\\/]#i)</code></p></td>
+		<td><p>No</p></td>
+	</tr>
+	
+	</tbody>
+</table>
+
+<p>For example, to run the compiler and specify the <code>igbinary</code> serializer:</p>
+
+<pre><code>magento setup:di:compile-multi-tenant --serializer=igbinary
+</code></pre>
+
+<p>Messages similar to the following display:</p>
+
+<pre><code>Generated classes:
+    Magento\Rss\Controller\Adminhtml\Feed\Interceptor
+    Magento\Quote\Model\Quote\Config\Interceptor
+    Magento\Checkout\Block\Cart\Shipping\Interceptor
+    Magento\Framework\View\Layout\Interceptor
+    Magento\Integration\Service\V1\Integration\Interceptor
+    Magento\Catalog\Block\Product\Compare\ListCompare\Interceptor
+    Magento\Framework\View\TemplateEngineFactory\Interceptor
+    Magento\Catalog\Model\Product\Attribute\Backend\Price\Interceptor
+    Magento\Catalog\Api\ProductRepositoryInterface\Interceptor
+    Magento\Catalog\Model\Product\Interceptor
+    Magento\Quote\Model\Quote\Item\ToOrderItem\Interceptor
+    Magento\Catalog\Controller\Adminhtml\Product\Initialization\Helper\Interceptor
+    Magento\Catalog\Model\Product\CartConfiguration\Interceptor
+    Magento\Catalog\Model\Product\TypeTransitionManager\Interceptor
+    Magento\Catalog\Model\Product\Type\Interceptor
+    ... more messages ...
+    On *nix systems, verify the Magento application has permissions to modify files created by the compiler in the "var" directory. 
+    For instance, if you run the Magento application using Apache, the owner of the files in the "var" directory should be the Apache user 
+    (example command: "chown -R www-data:www-data &lt;MAGENTO_ROOT&gt;/var" where MAGENTO_ROOT is the Magento root directory).
+</code></pre>
+
+<h4 id="related-topics">Related topics</h4>
+
+<ul>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a></li>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create LESS from CSS</a></li>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-test.html">Run tests</a></li>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
 </ul>
 
 
@@ -300,7 +446,7 @@
 							
 								
 								
-									<li class="  active "><a class="nav-header" href="/guides/v2.0/config-guide/bk-config-guide.html">Introduction</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/config-guide/bk-config-guide.html">Introduction</a></li>
 									
 								
 								
@@ -424,7 +570,7 @@
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
 						
 								
 							

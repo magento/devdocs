@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Configuration Guide</title>
+	<title>Code generation</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/config-guide/bk-config-guide.html">
+	<link rel="canonical" href="//guides/v2.0/extension-dev-guide/code-generation.html">
 
 
 
@@ -155,9 +155,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Configuration Guide</h1>
+		<h1 class="page-heading">Code generation</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/config-guide/bk-config-guide.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/extension-dev-guide/code-generation.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -166,17 +166,86 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="configuration">Configure the Magento application</h2>
-<p>You can configure the Magento application in any of the following ways:</p>
+		<h2 id="codegen-over">Overview of code generation</h2>
+<p>The Magento application generates code to create non-existent classes. As an example, look at the <a href="https://github.com/magento/magento2/blob/develop//app/code/Magento/Customer/Model/ResourceModel/AddressRepository.php" target="_blank">\Magento\Customer\Model\Resource\AddressRepository</a> constructor. A snippet follows:</p>
+
+<pre><code>...
+    public function __construct(
+        \Magento\Customer\Model\AddressFactory $addressFactory,	
+...
+</code></pre>
+
+<p>The first constructor parameter has a type of <code>Magento\Customer\Model\AddressFactory</code>. However, this class does not exist in <code>\Magento\Customer\Model</code> in the Magento 2 codebase. The Magento application <em>generates</em> this class because its name uses a recognized convention (in this case, because the name ends with <code>Factory</code>).</p>
+
+<p>Unlike some other languages or libraries, you can look at the generated code on the file system to see what really happens and still debug the code.</p>
+
+<h3 id="codegen-over-when">When is code compiled?</h3>
+<p>Provided the Magento application is not set for <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>, code is compiled when the Magento application cannot find a class when executing code.</p>
+
+<p>In particular,</p>
 
 <ul>
-  <li>Using a <a href="/guides/v2.0/config-guide/cli/config-cli.html">command-line utility</a> (for example, enable or disable cache types, run indexers, set up translations, and so on)</li>
-  <li>Manually to set up <a href="/guides/v2.0/config-guide/bootstrap/magento-bootstrap.html">bootstrap parameters</a></li>
-  <li><a href="/guides/v2.0/config-guide/config/caching.html">Set up caching</a></li>
-  <li><a href="/guides/v2.0/config-guide/database/database.html">Set up database caching</a></li>
-  <li><a href="/guides/v2.0/config-guide/redis/config-redis.html">Set up Redis</a></li>
-  <li><a href="/guides/v2.0/config-guide/varnish/config-varnish.html">Set up Varnish</a></li>
+  <li>
+    <p>A <a href="/guides/v2.0/extension-dev-guide/depend-inj.html#dep-inj-mod-type-fact">Factory</a> class creates instances of a type. For example, a generated <code>\Magento\Customer\Model\AddressFactory</code> creates new instances of <code>\Magento\Customer\Model\Address</code>. The code in <code>AddressFactory</code> provides “typeSafety” (@return annotation) so IDEs understand the type of returned object for the <code>Address</code> type.</p>
+  </li>
+  <li>
+    <p>You can designate a <a href="/guides/v2.0/extension-dev-guide/depend-inj.html#dep-inj-preview-cons">Proxy</a> to be generated for a type.
+A proxy is a wrapper for a base class, and the proxy must implement all functions of the base class to delegate those functions to the class. </p>
+
+    <p>A proxy results in better performance because a proxy can be instantiated without instantiating its base class. The base class is instantiated only if one of its methods  gets called. Therefore, if a class is used as a dependency, but takes a long time to instantiate and the class methods are used only during some paths of execution, using the proxy instead saves time.</p>
+
+    <p>As a practical example, you can see the <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Store/Model/StoreManager.php" target="_blank">StoreManager</a> class and then see the generated StoreManager Proxy class.</p>
+  </li>
 </ul>
+
+<p>You can use the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler.html">code compiler</a> to compile code at any time.</p>
+
+<h3 id="codegen-over-why">Why should you regenerate code?</h3>
+<p>Suppose a Customer or Proxy class for a Customer class is generated and the Customer class has new methods added to it. Because a Customer or Proxy exists on the file system, it is not regenerated. However, the Customer or Proxy implementation is incomplete now because it does not have the new methods. In this case, you must regenerate the Customer or Proxy class.</p>
+
+<p>If the code generator implementation itself is changed, you must regenerate all the classes. This is rare, however.</p>
+
+<h3 id="codegen-over-adv">Advantages of generating code</h3>
+<p>Code generation is required in Magento 2. Generating code assures you of the following:</p>
+
+<ul>
+  <li>The code is correct. You don’t have to worry that the generated code is delegating to the wrong method or forgetting a semicolon, and you don’t have to write tests for the generated code.</li>
+  <li>Code generation writes the boilerplate code to enable you to write more challenging and interesting code.</li>
+  <li>
+    <p>Consistent implementation.</p>
+
+    <p>All generated Factories work the same way. After you learn know how one Factory works, you know how they all work.</p>
+  </li>
+</ul>
+
+<h2 id="codegen-om">Object Manager responsibility for code compilation</h2>
+<p>When code changes as discussed in the preceding section, one of two Object Manager classes compiles it. The class is chosen based on whether or not the single-tenant compiler or the multi-tenant compiler has been run before.</p>
+
+<p>The single-tenant and multi-tenant compiler create <code>var/di/global.ser</code>, which is a PHP serialized map of all constructor definitions mixed with object linking configuration defined in di.xml. <code>di.xml</code> is the dependency injection configuration. There is a global <code>app/etc/di.xml</code> and there can one defined for every module.</p>
+
+<!--synced-->
+<div class="bs-callout bs-callout-warning">
+<p>If you&#8217;re preparing to deploy to production, you must use the multi-tenant compiler. There is a known issue with the single-tenant compiler that prevents it from compiling proxies.</p>
+</div>
+
+<p>Depending on whether or not one of the compilers has been run before, the Magento application consumes the compilation using one of the following classes:</p>
+
+<ul>
+  <li>
+    <p><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Interception/ObjectManager/Config/Compiled.php" target="_blank">Magento\Framework\Interception\ObjectManager\Config\Compiled</a>, which is used if <code>global.ser</code> exists.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Interception/ObjectManager/Config/Developer.php" target="_blank">Magento\Framework\Interception\ObjectManager\Config\Developer</a>, which is used if <code>global.ser</code> does not exist.</p>
+
+    <p>This class is slower than <code>Magento\Framework\Interception\ObjectManager\Config\Compiled</code>.</p>
+  </li>
+</ul>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>The <code>Developer</code> class has nothing to do with Magento's <em>developer mode</em>.</p></span>
+</div>
+
 
 
 		</div>
@@ -206,6 +275,7 @@
 
 
 
+<h4>PHP developer guide</h4>
 
 
 
@@ -228,7 +298,6 @@
 
 
 
-<h4>Configuration guide</h4>
 
 
 
@@ -261,30 +330,6 @@
 			
 				
 				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
 					
 					
 					
@@ -300,32 +345,7 @@
 							
 								
 								
-									<li class="  active "><a class="nav-header" href="/guides/v2.0/config-guide/bk-config-guide.html">Introduction</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/config-guide/secy/secy.html">Security settings</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">Introduction</a></li>
 									
 								
 								
@@ -334,7 +354,7 @@
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/secy/secy-xframe.html">X-Frame-Options header</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/developers_roadmap.html">Developer roadmap</a></li>
 						
 								
 								
@@ -354,7 +374,7 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/config-guide/bootstrap/magento-bootstrap.html">Magento application initialization and bootstrap</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/prepare.html">Prepare</a></li>
 									
 								
 								
@@ -363,23 +383,7 @@
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html">Set the mode (MAGE_MODE)</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/bootstrap/mage-dirs.html">Customize base directory paths (MAGE_DIRS)</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/bootstrap/mage-profiler.html">Enable an HTML profiler (MAGE_PROFILER)</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/bootstrap/mage-run.html">Multiple websites or stores (MAGE_RUN_TYPE, MAGE_RUN_CODE)</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/composer-integration.html">Composer integration</a></li>
 						
 								
 								
@@ -399,7 +403,7 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/config-guide/cli/config-cli.html">Command line configuration</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/build.html">Build</a></li>
 									
 								
 								
@@ -408,55 +412,23 @@
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html">Get started with command-line configuration</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/module-file-structure.html">Module file Structure</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/required-configuration-files.html">Define your configuration files</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/create_module.html">Create a module</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/module-load-order.html">Module load order</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-test.html">Run tests</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/enable-module.html">Enable a module</a></li>
 						
 								
 								
@@ -476,7 +448,7 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/config-guide/config/caching.html">Caching</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/validate.html">Validate</a></li>
 									
 								
 								
@@ -485,19 +457,7 @@
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/caching_frontend-cache-types.html">Associate cache frontends with cache types</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/caching_low-level.html">Low-level cache options</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/database/database.html">Database caching</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/caching-cache-type.html">Create a cache type</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/test-module.html">Test your module</a></li>
 						
 								
 								
@@ -517,70 +477,7 @@
 							
 								
 								
-								
-								
-							
-									<li class=""><span class="nav-header">Magento configuration files</span></li>
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/config-php.html">Magento's deployment configuration</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/config-files.html">Module configuration files</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/config-create.html">Create or extend configuration types</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/config-guide/redis/config-redis.html">Configure Redis</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/config-guide/varnish/config-varnish.html">Configure and use Varnish</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/package.html">Package</a></li>
 									
 								
 								
@@ -589,27 +486,80 @@
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-install.html">Install Varnish</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/package_module.html">Package a module</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/module-development.html">Module development</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-configure.html">Configure Varnish and your web server</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/api-concepts.html">Public interfaces & APIs</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-magento.html">Configure Magento to use Varnish</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/service-contracts/design-patterns.html">Service contract design patterns</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-final.html">Final verification</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/depend-inj.html">Dependency injection</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/use-varnish-cache.html">How Magento cache clearing works with Varnish</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/extension-dev-guide/code-generation.html">Code generation</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/use-varnish-cache-how.html">How Varnish caching works</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/attributes.html">EAV and extension attributes</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/plugins.html">Magento plug-ins</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/routing.html">Routing</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/indexing.html">Indexing</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/backward-compatibility.html">Backward compatibility</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/howdoi/php/php_clear-dirs.html">Clear directories during development</a></li>
 						
 								
 								
@@ -621,6 +571,30 @@
 					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			
