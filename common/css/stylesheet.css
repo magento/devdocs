@@ -118,7 +118,7 @@ a:active{ color:#0090c0; }
 .msg-box img { position:relative; top:-3px; left:5px; }
 
 	
-pre { font-size:14px; line-height:20px; }
+pre { font-size:14px; line-height:20px; overflow: auto; }
 pre strong{ color:#333333; }
 pre, .link-callout { padding:10px; margin:0 0 20px; 
 	background-color: #F3F6F9; border:1px solid #ebeff2; border-radius: 4px; }
