@@ -63,7 +63,7 @@ The following is an illustration of how the process of making simple changes loo
 </ol>
 If your Magento instance uses the server-side compilation mode, you need to manually clean sub-directories in <code>pub/static</code> and <code>var/view_preprocessed/less</code> to make your changes apply. You can automate this process by additionally installing Grunt, and using the built-in Grunt commands to watch the changes and clean the directories. The flow of making changes using Grunt is described in the following section.
 
-<h2 id="#server-side-grunt">Making simple style changes in server-side compilation mode using Grunt</h2>
+<h2 id="server-side-grunt">Making simple style changes in server-side compilation mode using Grunt</h2>
 
 <ol>
 <li>Create and apply a theme. </li>
