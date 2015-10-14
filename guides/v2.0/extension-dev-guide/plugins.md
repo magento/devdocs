@@ -4,7 +4,7 @@ group: extension-dev-guide
 subgroup: 6_Module Development
 title: Magento plug-ins
 menu_title: Magento plug-ins
-menu_order: 6
+menu_order: 8
 github_link: extension-dev-guide/plugins.md
 redirect_from: 
   - /guides/v1.0/extension-dev-guide/plugins.html

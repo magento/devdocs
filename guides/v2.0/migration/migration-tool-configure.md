@@ -10,8 +10,35 @@ github_link: migration/migration-tool-configure.md
 redirect_from: /guides/v1.0/migration/migration-tool-configure.html
 ---
 
+#### Contents
+*	<a href="#migration-configure-over">Overview of data migration tool configuration</a>
+*	<a href="#migration-configure">Configuring the migration</a>
+*	<a href="#migration-config">Work with configuration and mapping files</a>
+
+<h2 id="migration-configure-over">Overview of data migration tool configuration</h2>
+After you install the data migration tool, the following directories contain mapping and configuration files:
+
+*	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/ce-to-ce`: Configuration and scripts for migrating from Magento 1 CE to Magento 2 CE
+*	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/ce-to-ee`: Configuration and scripts for migrating from Magento 1 CE to Magento 2 EE
+*	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/ee-to-ee`: Configuration and scripts for migrating from Magento 1 EE to Magento 2 EE
+
+Each of the preceding directories contains subdirectories for each supported version.
+
 <h2 id="migration-configure">Configuring the migration</h2>
-Before you migrate any data, you must edit `<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<ce or ee version>/config.xml` to specify at minimum values for the following:
+Before you migrate any data, you must create a `config.xml` configuration file from the provided sample.
+
+To create a configuration file:
+
+1.	Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl }}nstall-gde/prereq/apache-user.html">Magento file system owner</a>.
+2.	Change to the following directory:
+
+		`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<migration edition>/<ce or version>
+3.	Enter the following command to create a `config.xml` from the provided sample:
+
+		cp config.xml.dist config.xml
+
+4.	Open `config.xml` in a text editor.
+4.	Specify the following at minimum:
 
 {% highlight xml %}
 <source version="1.9.1">
@@ -40,6 +67,8 @@ For example, if your database owner's user name is `root` with password `pass` a
     <source_prefix>magento1</source_prefix>
 </options>
 {% endhighlight %}
+
+When you're finished, save your changes to `config.xml` and exit the text editor.
 
 <h2 id="migration-config">Work with configuration and mapping files</h2>
 The Data Migration Tool uses *mapping files* to enable you to perform custom database mapping between your Magento 1 and Magento 2 databases, including:
@@ -144,3 +173,6 @@ Even though you will be working with `map.xml.dist` file most of the time, the f
 </table>
 
 You can refer to <a href="{{ site.gdeurl }}migration/migration-tool-internal-spec.html"> Data Migration Tool Internal Specification</a> for more details.
+
+#### Next step
+<a href="{{ site.gdeurl }}migration/migration-migrate-settings.html">Migrate using data migration tool</a>

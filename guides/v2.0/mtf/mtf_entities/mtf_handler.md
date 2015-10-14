@@ -8,7 +8,7 @@ menu_order: 3
 github_link: mtf/mtf_entities/mtf_handler.md
 ---
 
-<h2 id="mtf_handler_overview">Contents</h2>
+<h3 id="mtf_handler_overview">Contents</h3>
 
 - <a href="#mtf_handler_overview">Handler overview</a>
 - <a href="#mtf_handler_types">Types of handlers</a>
@@ -18,10 +18,10 @@ github_link: mtf/mtf_entities/mtf_handler.md
   - <a href="#mtf_handler_interface">Handler interface</a>
   - <a href="#mtf_handler_conf_hand">Handler class</a>
   - <a href="#mtf_handler_di">di.xml</a>
-- <a id="#mtf_handler_howto-create-curl">How to create a cURL Handler</a>
+- <a href="#mtf_handler_howto-create-curl">How to create a cURL handler</a>
   - <a href="#mtf_handler_decor">cURL authentication classes</a>
-- <a href="#mtf_handler_howto-create-ui">How to create a UI Handler</a>
-- <a href="#mtf_handler_howto-create-ui">How to create a WebAPI Handler</a>
+- <a href="#mtf_handler_howto-create-ui">How to create a UI handler</a>
+- <a href="#mtf_handler_howto-create-webapi">How to create a WebAPI handler</a>
   
 <h2 id="mtf_handler_overview">Handler overview</h2>
 
@@ -124,7 +124,7 @@ See the directory structure mentioned for the case with the Widget cURL handler:
 
 <img src="{{ site.baseurl }}common/images/mtf_widget_handler_tree.png">
 
-<h2 id="mtf_handler_howto-create-curl">How to create a cURL Handler</h2>
+<h2 id="mtf_handler_howto-create-curl">How to create a cURL handler</h2>
 
 Let's create a cURL handler that creates a new widget.
 
@@ -192,7 +192,7 @@ Use the following code in the `Curl.php` file:
 $curl = new FrontendDecorator(new CurlTransport(), $this->customer);
 {% endhighlight %}
 
-<h2 id="mtf_handler_howto-create-ui">How to create a UI Handler</h2>
+<h2 id="mtf_handler_howto-create-ui">How to create a UI handler</h2>
 
 Let's create a UI handler that creates a new widget.
 
@@ -226,7 +226,7 @@ The code has detailed comments for better understanding.
 
 {%endhighlight%}
 
-<h2 id="mtf_handler_howto-create-ui">How to create a WebAPI Handler</h2>
+<h2 id="mtf_handler_howto-create-webapi">How to create a WebAPI handler</h2>
 
 Let's create a WebAPI handler that creates a new tax rule.
 

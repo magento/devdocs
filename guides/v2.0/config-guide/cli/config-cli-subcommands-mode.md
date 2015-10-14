@@ -52,6 +52,11 @@ Exceptions:
 
 *	`.htaccess` files are not removed
 *	`pub/static` contains a file that specifies the version of static content; this file is not removed
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>By default, Magento uses the <code>var</code> directories to store the cache, logs, and compiled code. You can customize this directory but in this guide, it's assumed to be <code>var</code>.</p></span>
+</div>
 	
 <h3 id="config-mode-over-dirs">Permissions and ownership for production mode</h3>
 Changing modes affects permissions and ownership the following subdirectories in your Magento installation:
@@ -201,7 +206,6 @@ When you change from production to developer mode, you should clear generated cl
 
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a>

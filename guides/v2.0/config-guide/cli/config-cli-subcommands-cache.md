@@ -76,6 +76,11 @@ Magento 2 has the following cache types:
       	<p>Clean or flush this cache type after modifying code level that affects HTML output. It’s recommended to keep this cache enabled to because caching HTML improves performance significantly.</p></td>
     </tr>
     <tr>
+      <td><p>Reflection</p></td>
+      <td><p>reflection</p></td>
+      <td>Removes a dependency between the Webapi module and the Customer module.</td>
+    </tr>
+    <tr>
       <td><p>Translations</p></td>
       <td><p>translate</p></td>
       <td><p>Merged translations from all modules.</p></td>
@@ -207,7 +212,6 @@ Sample result:
 #### Related topics
 
 * <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
-* <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a>
 * <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
 * <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a>
 * <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a>
