@@ -18,9 +18,10 @@ github_link: config-topic/solr/ht_magento2-solr.md
 <!-- *	<a href="#simple-demo">Simple comparison of Solr and MySQL search engines</a> -->
 *	<a href="#prereq">Prerequisites</a>
 *	<a href="#install-prereq-software">Install prerequisite software</a>
+* <a href="#config-solr">Configure Solr to work with Magento</a>
 <!-- *	<a href="#solr-config-tweaks">Basic Solr configuration</a> -->
 *	<a href="#solr-reindex">Reindexing catalog search and refreshing the full page cache</a>
-<!-- *	<a href="#solr-script">Script Solr startup and shutdown</a> -->
+*	<a href="#solr-script">Script Solr startup and shutdown</a>
 <!-- *	<a href="#next">Next steps</a> -->
 <!-- *	<a href="#related">Related information</a> -->
 
@@ -47,7 +48,7 @@ This topic is intended for Magento EE administrators and systems integrators who
 This topic discusses a simple Solr configuration that uses the example Solr configuration provided with Solr, default Solr integration options provided with Magento EE, and also explains how to configure Magento EE to use Solr. Advanced configuration tasks&mdash;such as setting up dictionaries&mdash;are beyond the scope of this topic.
 
 <div class="bs-callout bs-callout-warning">
-    <p>The example Solr configuration is <em>not</em> intended to be used in a production site. It's for testing and development only. Because it's simple to use which, it's a great way for you to learn more about Solr.</p>
+		<p>The example Solr configuration is <em>not</em> intended to be used in a production site. It's for testing and development only. Because it's simple to use which, it's a great way for you to learn more about Solr.</p>
 </div>
 
 <h3 id="overview-example">Comparing the search options</h3>
@@ -55,66 +56,66 @@ The following table provides a quick comparison between Magento with the default
 
 <table>
 <tbody>
-  <tr><th>Feature</th>
-  <th>Magento with MySQL full-text search</th>
-  <th>Magento with Solr search</th>
+	<tr><th>Feature</th>
+	<th>Magento with MySQL full-text search</th>
+	<th>Magento with Solr search</th>
 </tr>
 <tr>
-  <td>Full text search</td>
-  <td>Yes and also supports two additional search modes:
-  <ul><li>Like</li>
-      <li>Combined (like and full text)</li></ul></td>
-  <td>Yes&dagger;</td>
+	<td>Full text search</td>
+	<td>Yes and also supports two additional search modes:
+	<ul><li>Like</li>
+			<li>Combined (like and full text)</li></ul></td>
+	<td>Yes&dagger;</td>
 </tr>
 <tr>
-  <td>Search recommendations</td>
-  <td>Yes</td>
-  <td>Yes</td>
+	<td>Search recommendations</td>
+	<td>Yes</td>
+	<td>Yes</td>
 </tr>
 <tr>
-  <td>Faceted search (used in layered navigation)</td>
-  <td>Yes</td>
-  <td>Yes</td>
+	<td>Faceted search (used in layered navigation)</td>
+	<td>Yes</td>
+	<td>Yes</td>
 </tr>
 <tr>
-  <td>Range (such as price range)</td>
-  <td>Yes</td>
-  <td>Yes</td>
+	<td>Range (such as price range)</td>
+	<td>Yes</td>
+	<td>Yes</td>
 </tr>
 <tr>
-  <td>Sort-by options (for example, sort by relevance)</td>
-  <td>Yes</td>
-  <td>Yes</td>
+	<td>Sort-by options (for example, sort by relevance)</td>
+	<td>Yes</td>
+	<td>Yes</td>
 </tr>
 <tr>
-  <td>Zero results tips or results correction</td>
-  <td>No</td>
-  <td>Yes</td>
+	<td>Zero results tips or results correction</td>
+	<td>No</td>
+	<td>Yes</td>
 </tr>
 <tr>
-  <td>Suggestions</td>
-  <td>No</td>
-  <td>Yes</td>
+	<td>Suggestions</td>
+	<td>No</td>
+	<td>Yes</td>
 </tr>
 <tr>
-  <td>Clustering</td>
-  <td>No</td>
-  <td>Yes</td>
+	<td>Clustering</td>
+	<td>No</td>
+	<td>Yes</td>
 </tr>
 <tr>
-  <td>Attribute weight based on attribute settings</td>
-  <td>No</td>
-  <td>Yes</td>
+	<td>Attribute weight based on attribute settings</td>
+	<td>No</td>
+	<td>Yes</td>
 </tr>
 <tr>
-  <td>Search localized characters</td>
-  <td>No</td>
-  <td>Yes</td>
+	<td>Search localized characters</td>
+	<td>No</td>
+	<td>Yes</td>
 </tr>
 <tr>
-  <td>Word delimiter (for example, searching for <code>spider man</code> or <code>spiderman</code> return <code>spider-man</code>)</td>
-  <td>No</td>
-  <td>Yes</td>
+	<td>Word delimiter (for example, searching for <code>spider man</code> or <code>spiderman</code> return <code>spider-man</code>)</td>
+	<td>No</td>
+	<td>Yes</td>
 </tr>
 </tbody>
 </table>
@@ -131,7 +132,7 @@ Solr's powerful external configuration allows it to be tailored to almost any ty
 
 
 <div class="bs-callout bs-callout-warning">
-    <p>Customize the Solr search engine at your own risk. Magento supports only the options displayed in the Admin. Customizing the Solr engine itself, while potentially useful, can cause issues with Magento. If you encounter problems with your customizations, do not contact Magento Support; instead, consult the resources available from the <a href="http://wiki.apache.org/solr/" target="_blank">Apache Solr Wiki</a>.</p>
+		<p>Customize the Solr search engine at your own risk. Magento supports only the options displayed in the Admin. Customizing the Solr engine itself, while potentially useful, can cause issues with Magento. If you encounter problems with your customizations, do not contact Magento Support; instead, consult the resources available from the <a href="http://wiki.apache.org/solr/" target="_blank">Apache Solr Wiki</a>.</p>
 </div>
 
 In this topic, you'll use the example configuration provided with Solr and Magento's provided Solr configuration to implement a simple, quick integration with Solr.
@@ -148,9 +149,9 @@ The tasks discussed in this topic require the following:
 *	Latest available version of Solr 4
 *	Latest available Java version
 
-  To determine if Java is already installed, enter the following command:
+	To determine if Java is already installed, enter the following command:
 
-    java -version
+		java -version
 
 If the message <code>java: command not found</code> displays, you must install the Java SDK as discussed in the next section. 
 
@@ -184,42 +185,42 @@ To install Java 7, enter the following command as a user with <code>root</code> 
 <pre>apt-get install openjdk-7-jdk</pre>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Java version 7 might not be available for all operating systems. For example, you can search the list of available packages for Ubuntu <a href="http://packages.ubuntu.com/" target="_blank">here</a>.</p>
+	<p>Java version 7 might not be available for all operating systems. For example, you can search the list of available packages for Ubuntu <a href="http://packages.ubuntu.com/" target="_blank">here</a>.</p>
 </div>
 
 <h3 id="install-prereq-solr">Install Solr 4 and Jetty</h3>
 The Apache Solr package installs both Solr and Jetty. If Jetty is already installed, see the <a href="http://wiki.apache.org/solr/SolrJetty" target="_blank">Solr with Jetty Wiki</a> for more information.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Tomcat is also a supported servlet container for Solr but discussing how to set up Tomcat with Solr is beyond the scope of this topic. For more information, see the <a href="http://wiki.apache.org/solr/SolrTomcat" target="_blank">Solr With Tomcat Wiki</a>.</p>
+	<p>Tomcat is also a supported servlet container for Solr but discussing how to set up Tomcat with Solr is beyond the scope of this topic. For more information, see the <a href="http://wiki.apache.org/solr/SolrTomcat" target="_blank">Solr With Tomcat Wiki</a>.</p>
 </div>
 
 To install Solr and Jetty:
 
 1.  As a user with `root` privileges, use `wget` or a similar command to download the latest version of Solr 4 to an empty directory such as `/opt/solr`. 
 
-    An example follows.
+		An example follows.
 
-        mkdir -p <empty-directory<>  
-        cd <directory>
-        wget http://www.trieuvan.com/apache/lucene/solr/4.10.4/solr-4.10.4.tgz
+				mkdir -p <empty-directory<>  
+				cd <directory>
+				wget http://www.trieuvan.com/apache/lucene/solr/4.10.4/solr-4.10.4.tgz
 
-    Messages similar to the following display to confirm a successful download.
+		Messages similar to the following display to confirm a successful download.
 
-        wget http://www.trieuvan.com/apache/lucene/solr/4.10.4/solr-4.10.4.tgz
-        --2015-07-11 14:39:05--  http://www.trieuvan.com/apache/lucene/solr/4.10.4/solr-4.10.4.tgz
-        Resolving www.trieuvan.com... 66.201.46.168
-        Connecting to www.trieuvan.com|66.201.46.168|:80... connected.
-        HTTP request sent, awaiting response... 200 OK
-        Length: 35866329 (34M) [application/x-gzip]
-        Saving to: “solr-4.10.4.tgz”
+				wget http://www.trieuvan.com/apache/lucene/solr/4.10.4/solr-4.10.4.tgz
+				--2015-07-11 14:39:05--  http://www.trieuvan.com/apache/lucene/solr/4.10.4/solr-4.10.4.tgz
+				Resolving www.trieuvan.com... 66.201.46.168
+				Connecting to www.trieuvan.com|66.201.46.168|:80... connected.
+				HTTP request sent, awaiting response... 200 OK
+				Length: 35866329 (34M) [application/x-gzip]
+				Saving to: “solr-4.10.4.tgz”
 
-        100%[==============================================================================================>] 35,866,329  8.63M/s   in 4.3s
-        2015-07-11 14:39:09 (8.04 MB/s) - "solr-4.10.4.tgz" saved [35866329/35866329]0
+				100%[==============================================================================================>] 35,866,329  8.63M/s   in 4.3s
+				2015-07-11 14:39:09 (8.04 MB/s) - "solr-4.10.4.tgz" saved [35866329/35866329]0
 
 2.  Unpack the Solr installation; an example follows.
 
-        tar -xvf solr-4.10.4.tgz
+				tar -xvf solr-4.10.4.tgz
 
 3.  Continue with the next section.
 
@@ -233,56 +234,56 @@ The following topics discuss how to configure Solr to work with Magento EE:
 Magento comes packaged with a sample Solr configuration you can use and customize. To get started, you'll copy the Magento configuration to Solr, replacing any existing files. After that you can start Solr and begin configuring Magento to work with it.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>The example Solr configuration is <em>not</em> intended to be used in a production site. It's for testing and development only. It's simple to use which makes it a great way for you to learn more about Solr.</p>
+	<p>The example Solr configuration is <em>not</em> intended to be used in a production site. It's for testing and development only. It's simple to use which makes it a great way for you to learn more about Solr.</p>
 </div>
 
-As a user with <code>root</code> privileges, enter the following commands in the order shown to copy over the Solr configuration with the one packaged with Magento EE:
+1.  As a user with <code>root</code> privileges, enter the following commands in the order shown to copy over the Solr configuration with the one packaged with Magento EE:
 
-    cd <your Solr install dir>/example/solr
-    cp -R collection1 magento2
-    cd magento2
-    cp -R <your Magento EE install dir>/app/code/Magento/Solr/conf/* .
+		 cd <your Solr install dir>/example/solr
+			cp -R collection1 magento2
+			cd magento2
+			cp -R <your Magento EE install dir>/app/code/Magento/Solr/conf/* .
 
-For example, if Solr is installed in <code>/opt/solr/solr-4.10.4</code> and Magento EE is installed in <code>/var/www/magento/html/magento2ee</code>, enter:
+	For example, if Solr is installed in <code>/opt/solr/solr-4.10.4</code> and Magento EE is installed in <code>/var/www/magento/html/magento2ee</code>, enter:
 
-    cd /opt/solr/solr/solr-4.10.4
-    cp -R collection1 magento2
-    cd magento2
-    cp -R /var/www/html/magento2ee/app/code/Magento/Solr/conf/* .
+			cd /opt/solr/solr/solr-4.10.4
+			cp -R collection1 magento2
+			cd magento2
+			cp -R /var/www/html/magento2ee/app/code/Magento/Solr/conf/* .
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>If you're prompted to overwrite files, try the command <code>\cp -R &lt;your Magento EE install dir>/app/code/Magento/Solr/conf/* .</code></p>
-</div>
+	<div class="bs-callout bs-callout-info" id="info">
+	 <p>If you're prompted to overwrite files, try the command <code>\cp -R &lt;your Magento EE install dir>/app/code/Magento/Solr/conf/* .</code></p>
+	</div>
 
-After copying files, open `example/solr/core.properties` in a text editor and change:
+2.  After copying files, open `example/solr/core.properties` in a text editor and change:
 
-  name=collection1
+		 name=collection1
 
-to
+	to
 
-  name=magento2
+			name=magento2
 
-#### Task for Tomcat 6 with CentOS only
-If you're using Tomcat 6 on CentOS, you must modify `<your Solr install dir>/example/solr/conf/solrconfig.xml`
+3.  *Task for Tomcat 6 with CentOS only*
 
-Locate the following line:
+	If you're using Tomcat 6 on CentOS, you must modify `<your Solr install dir>/example/solr/conf/solrconfig.xml`
 
-    <dataDir>${solr.data.dir:./solr/data}</dataDir>
+	Locate the following line:
 
-Change it to:
+		<dataDir>${solr.data.dir:./solr/data}</dataDir>
 
-    <dataDir>${solr.data.dir:}</dataDir>
+	Change it to:
 
-#### Start Solr
-As a user with <code>root</code> privileges, enter the following command to start Solr:
+		<dataDir>${solr.data.dir:}</dataDir>
 
-    java -jar <your Solr install dir>/example/start.jar
+4.  Start Solr
+	
+	As a user with <code>root</code> privileges, enter the following command to start Solr:
 
-<div class="bs-callout bs-callout-warning">
-    <p>This method for starting Solr is for convenience and testing purposes only. <!-- In a production environment, you should start and stop Solr using a script as discussed in <a href="#solr-script">Script Solr startup and shutdown</a>. --></p>
-</div>
+		java -jar <your Solr install dir>/example/start.jar
 
-
+	<div class="bs-callout bs-callout-warning">
+			<p>This method for starting Solr is for convenience and testing purposes only. In a production environment, you should start and stop Solr using a script as discussed in <a href="#solr-script">Script Solr startup and shutdown</a>.</p>
+	</div>
 
 <h3 id="config-solr-magento">Configure Magento to work with Solr</h3>
 This section discusses how to configure Magento EE to use the Solr search engine.
@@ -297,38 +298,38 @@ To configure Magento to work with Solr:
 <col width="30%">
 <col width="70%">
 <tbody>
-  <tr><th>Option</th>
-  <th>Description</th>
+	<tr><th>Option</th>
+	<th>Description</th>
 </tr>
 <tr>
-  <td>Search Engine</td>
-  <td>Click <strong>Solr</strong></td>
+	<td>Search Engine</td>
+	<td>Click <strong>Solr</strong></td>
 </tr>
 <tr>
-  <td>Solr Server Hostname</td>
-  <td>Enter the fully qualified host name or IP address of the machine running Solr. (If Solr is running on the same host as Magento, you can optionally use <code>localhost</code>.)</td>
+	<td>Solr Server Hostname</td>
+	<td>Enter the fully qualified host name or IP address of the machine running Solr. (If Solr is running on the same host as Magento, you can optionally use <code>localhost</code>.)</td>
 </tr>
 <tr>
-  <td>Solr Server Port</td>
-  <td>Enter Solr's listen port. (The example Jetty servlet container uses 8983. The default for Tomcat is usually 8080.)</td>
+	<td>Solr Server Port</td>
+	<td>Enter Solr's listen port. (The example Jetty servlet container uses 8983. The default for Tomcat is usually 8080.)</td>
 </tr>
 <tr>
-  <td>Solr Server Username</td>
-  <td><em>Optional.</em> Enter a user name for <a href="http://wiki.apache.org/solr/SolrSecurity" target="_blank">Solr authentication</a>, if desired.</td>
+	<td>Solr Server Username</td>
+	<td><em>Optional.</em> Enter a user name for <a href="http://wiki.apache.org/solr/SolrSecurity" target="_blank">Solr authentication</a>, if desired.</td>
 </tr>
 <tr>
-  <td>Solr Server Password</td>
-  <td><em>Optional.</em> Enter the user's password, if desired.</td>
+	<td>Solr Server Password</td>
+	<td><em>Optional.</em> Enter the user's password, if desired.</td>
 </tr>
 <tr>
-  <td>Solr Server Timeout</td>
-  <td>Enter a connection timeout value, in seconds.</td>
+	<td>Solr Server Timeout</td>
+	<td>Enter a connection timeout value, in seconds.</td>
 </tr>
 <tr>
-  <td>Solr Server Path</td>
-  <td>Specifies the path and name of the Solr web application. The path used by the example Solr configuration is <code>solr/magento2</code>.
+	<td>Solr Server Path</td>
+	<td>Specifies the path and name of the Solr web application. The path used by the example Solr configuration is <code>solr/magento2</code>.
 
-  If you customized Solr, the value you enter in this field must exactly match the value of <code>webapp_name=&lt;value></code> in <code>&lt;your Solr install dir>/example/solr/magento2/conf/conf/scripts.conf</code>.
+	If you customized Solr, the value you enter in this field must exactly match the value of <code>webapp_name=&lt;value></code> in <code>&lt;your Solr install dir>/example/solr/magento2/conf/conf/scripts.conf</code>.
 </td>
 </tr>
 </tbody>
@@ -346,29 +347,29 @@ The button changes as follows.
 <col width="80%">
 <tbody>
 <tr>
-  <th>Button state</th>
-  <th>Meaning</th>
+	<th>Button state</th>
+	<th>Meaning</th>
 </tr>
 <tr>
-  <td><img src="{{ site.baseurl }}common/images/solr_test-success.png" width="97px" height="17px"></td>
-  <td>The test connection succeeded. Click <strong>Save Config</strong> and continue with the next section.</td>
+	<td><img src="{{ site.baseurl }}common/images/solr_test-success.png" width="97px" height="17px"></td>
+	<td>The test connection succeeded. Click <strong>Save Config</strong> and continue with the next section.</td>
 </tr>
 <tr>
  <td><img src="{{ site.baseurl }}common/images/solr_test-fail.png" width="116px" height="16px"></td>
  <td><p>The test connection failed. Try the following:</p>
-  <ul><li>Examine the command window in which you started Solr for stack traces and exceptions. You must resolve those before you continue.<br />
-  In particular, make sure you started Solr as a user with <code>root</code> privileges.</li>
-  <li>Verify that <a href="http://php.net/manual/en/filesystem.configuration.php" target="_blank"><code>allow_url_fopen = On</code></a> is present in your server's <code>php.ini</code>.<br />
-  If you are not sure where <code>php.ini</code> is located, you can <a href="http://kb.mediatemple.net/questions/764/How+can+I+create+a+phpinfo.php+page%3F#gs" target="_blank">create a <code>phpinfo.php</code> page</a> to locate it.</li>
-  <li>Verify the value of the <strong>Solr Server Hostname</strong> field. Make sure the server is available. You can try the server's IP address instead.</li>
-  <li>Use the command <code>netstat -an | grep <em>listen-port</em></code> command to verify that the port specified in the <strong>Solr Server Port</strong> field is not being used by another process.<br />
-  For example, to see if Solr is running on its default port, use the following command:
-  <pre>netstat -an | grep 8983</pre>
-  If Solr is running on port 8983, it displays similar to the following:
-  <pre>tcp        0      0 :::8983            :::*          LISTEN</pre></li>
-  <li>If Solr is installed on a remote machine, use the <code>ping</code> command to verify that machine is reachable from your Magento server.</li>
-  <li>If SELinux is enabled, make sure the Solr servlet container's listen port is available; otherwise, Magento cannot communicate with the servlet container. For example, you can consult the <a href="http://wiki.centos.org/HowTos/SELinux" target="_blank">SELinux Centos wiki</a>.</li></ul>
-  </td>
+	<ul><li>Examine the command window in which you started Solr for stack traces and exceptions. You must resolve those before you continue.<br />
+	In particular, make sure you started Solr as a user with <code>root</code> privileges.</li>
+	<li>Verify that <a href="http://php.net/manual/en/filesystem.configuration.php" target="_blank"><code>allow_url_fopen = On</code></a> is present in your server's <code>php.ini</code>.<br />
+	If you are not sure where <code>php.ini</code> is located, you can <a href="http://kb.mediatemple.net/questions/764/How+can+I+create+a+phpinfo.php+page%3F#gs" target="_blank">create a <code>phpinfo.php</code> page</a> to locate it.</li>
+	<li>Verify the value of the <strong>Solr Server Hostname</strong> field. Make sure the server is available. You can try the server's IP address instead.</li>
+	<li>Use the command <code>netstat -an | grep <em>listen-port</em></code> command to verify that the port specified in the <strong>Solr Server Port</strong> field is not being used by another process.<br />
+	For example, to see if Solr is running on its default port, use the following command:
+	<pre>netstat -an | grep 8983</pre>
+	If Solr is running on port 8983, it displays similar to the following:
+	<pre>tcp        0      0 :::8983            :::*          LISTEN</pre></li>
+	<li>If Solr is installed on a remote machine, use the <code>ping</code> command to verify that machine is reachable from your Magento server.</li>
+	<li>If SELinux is enabled, make sure the Solr servlet container's listen port is available; otherwise, Magento cannot communicate with the servlet container. For example, you can consult the <a href="http://wiki.centos.org/HowTos/SELinux" target="_blank">SELinux Centos wiki</a>.</li></ul>
+	</td>
 </tr>
 </tbody>
 </table>
@@ -383,14 +384,141 @@ To refresh the cache using the Admin:
 1.  In the Admin, click <strong>System</strong> > <strong>Cache Management</strong>.
 2.  Select the check box next to <strong>Page Cache</strong>. 
 3.  From the <strong>Actions</strong> list in the upper right, click <strong>Refresh</strong>.<br />
-    The following figure shows an example.<br />
-    <img src="{{ site.baseurl }}common/images/solr_refresh-cache.png" width="500px">
+		The following figure shows an example.<br />
+		<img src="{{ site.baseurl }}common/images/solr_refresh-cache.png" width="500px">
 
 To clean the cache using the command line, use the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean">`magento cache:clean`</a> command.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Unlike the cache, indexers are updated by a cron job. Make sure <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cron.html">cron is enabled</a> before you start using Solr.</p>
+	<p>Unlike the cache, indexers are updated by a cron job. Make sure <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cron.html">cron is enabled</a> before you start using Solr.</p>
 </div>
+
+<h2 id="solr-script"></a>Script Solr startup and shutdown</h2>
+In a production environment, you should start and stop Solr using a script.
+
+<div class="bs-callout bs-callout-info" id="info">
+	<p>You must perform all tasks discussed in this section as a user with <code>root</code> privileges.</p>
+</div>
+
+Create a script named <code>/etc/init.d/solr</code> with options similar to the following:
+
+	#!/bin/sh
+ 
+	#Starts, stops, and restarts Apache Solr.
+	#chkconfig: 35 92 08
+	#description: Starts and stops Apache Solr
+ 
+	SOLR_DIR="[your Solr install dir]"
+	JAVA_OPTIONS="-Xmx1024m -DSTOP.PORT=<em>jetty-stop-port</em> -DSTOP.KEY=<em>jetty-stop-key</em> -jar  start.jar"
+	LOG_FILE="<em>path-to-solr-log-file</em>"
+	JAVA="<em>java_home</em>"
+ 
+	case $1 in
+	start)
+	echo -n "Starting Solr"
+	cd $SOLR_DIR
+	$JAVA $JAVA_OPTIONS 2> $LOG_FILE &
+	;;
+	stop)
+	echo -n "Stopping Solr"
+	cd $SOLR_DIR
+	$JAVA $JAVA_OPTIONS --stops
+	;;
+	restart)
+	$0 stop
+	sleep 1
+	$0 start
+	;;
+	*)
+	echo "Usage: $0 {start|stop|restart}" >&2
+	exit 1
+	;;
+	esac
+
+All parameters shown in the following table are required.
+ 
+<table>
+<col width="200">
+<col width="300">
+<tbody>
+<tr>
+  <th>Value</th>
+  <th>Description</th>
+</tr>
+<tr>
+  <td>[your Solr install dir]</td>
+  <td>The absolute file system path to your Solr installation. (For example, <code>/etc/solr/apache-solr-3.6.2</code></td>
+</tr>
+<tr>
+  <td><em>jetty-stop-port</em><br />
+  <em>jetty-stop-key</em></td>
+  <td>Security parameters used to prevent malicious attempts to stop Jetty.
+
+  For <code>-DSTOP.PORT=</code>, specify any unused port.
+
+  For <code>-DSTOP.KEY=</code>, specify a string. If you omit a value for <code>-DSTOP.KEY=</code>, Jetty generates a random key you must enter to stop Jetty.
+ 
+  For more information, see <a href="https://wiki.eclipse.org/Jetty/Howto/Configure_SSL" target="_blank">Securing Jetty</a>.
+</td>
+</tr>
+<tr>
+  <td><em>path-to-solr-log-file</em></td>
+  <td>Absolute file system path to the Solr log file. (For example, <code>/var/log/solr.log</code>)</td>
+</tr>
+<tr>
+  <td><em>java_home</em></td>
+  <td>Absolute file system path to your Java executable. (For example, <code>/usr/bin/java</code>)</td>
+</tr>
+</tbody>
+</table>
+
+An example follows:
+
+<pre>#!/bin/sh
+ 
+#Starts, stops, and restarts Apache Solr.
+#chkconfig: 35 92 08
+#description: Starts and stops Apache Solr
+ 
+SOLR_DIR="/etc/solr/apache-solr-3.6.2/example"
+JAVA_OPTIONS="-Xmx1024m -DSTOP.PORT=8079 -DSTOP.KEY=mykey -jar  start.jar"
+LOG_FILE="/var/log/solr.log"
+JAVA="/usr/bin/java"
+ 
+case $1 in
+start)
+echo -n "Starting Solr"
+cd $SOLR_DIR
+$JAVA $JAVA_OPTIONS 2> $LOG_FILE &
+;;
+stop)
+echo -n "Stopping Solr"
+cd $SOLR_DIR
+$JAVA $JAVA_OPTIONS --stop
+;;
+restart)
+$0 stop
+sleep 1
+$0 start
+;;
+*)
+echo "Usage: $0 {start|stop|restart}" >&2
+exit 1
+;;
+esac</pre>
+To complete the script:
+
+*	Make sure you saved the edited version of the script.
+*	Give the script executable permissions as follows:
+
+		chmod +x /etc/init.d/solr
+*	You can now start, stop, and restart Solr as follows:
+
+	Start Solr: `/etc/init.d/solr start`
+
+	Stop Solr: `/etc/init.d/solr stop`
+*	Restart Solr: `/etc/init.d/solr restart`
+
 
 <h2 id="next"></a>Next steps</h2>
 For additional information about Solr, see the following:
