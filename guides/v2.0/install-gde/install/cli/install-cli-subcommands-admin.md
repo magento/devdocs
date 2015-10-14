@@ -75,7 +75,8 @@ where the following table defines parameters and values.
 	<tr>
 		<td><p>--admin-password</p></td>
 		<td><p>Magento administrator user password.</p>
-		<p>The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character.</p></td>
+		<p>The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character.</p>
+		<p>We recommend a longer, more complex password. Enclose the entire password string in single quotes and escape special characters with <code>/</code>. For example, <code>--admin-password=''A0b9\%t_3\`g'</code></p></td>
 		<td><p>Yes</p></td>
 	</tr>
 

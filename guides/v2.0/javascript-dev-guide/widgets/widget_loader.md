@@ -3,7 +3,7 @@ layout: default
 group: jsdg
 subgroup: Widgets
 title: Loader widget
-menu_order: 6
+menu_order: 8
 menu_title: Loader widget
 github_link: javascript-dev-guide/widgets/widget_loader.md
 redirect_from:
