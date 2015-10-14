@@ -199,28 +199,28 @@ To install Solr and Jetty:
 
 1.  As a user with `root` privileges, use `wget` or a similar command to download the latest version of Solr 4 to an empty directory such as `/opt/solr`. 
 
-		An example follows.
+	An example follows.
 
-				mkdir -p <empty-directory<>  
-				cd <directory>
-				wget http://www.trieuvan.com/apache/lucene/solr/4.10.4/solr-4.10.4.tgz
+		mkdir -p <empty-directory<>  
+		cd <directory>
+		wget http://www.trieuvan.com/apache/lucene/solr/4.10.4/solr-4.10.4.tgz
 
-		Messages similar to the following display to confirm a successful download.
+	Messages similar to the following display to confirm a successful download.
 
-				wget http://www.trieuvan.com/apache/lucene/solr/4.10.4/solr-4.10.4.tgz
-				--2015-07-11 14:39:05--  http://www.trieuvan.com/apache/lucene/solr/4.10.4/solr-4.10.4.tgz
-				Resolving www.trieuvan.com... 66.201.46.168
-				Connecting to www.trieuvan.com|66.201.46.168|:80... connected.
-				HTTP request sent, awaiting response... 200 OK
-				Length: 35866329 (34M) [application/x-gzip]
-				Saving to: “solr-4.10.4.tgz”
+		wget http://www.trieuvan.com/apache/lucene/solr/4.10.4/solr-4.10.4.tgz
+		--2015-07-11 14:39:05--  http://www.trieuvan.com/apache/lucene/solr/4.10.4/solr-4.10.4.tgz
+		Resolving www.trieuvan.com... 66.201.46.168
+		Connecting to www.trieuvan.com|66.201.46.168|:80... connected.
+		HTTP request sent, awaiting response... 200 OK
+		Length: 35866329 (34M) [application/x-gzip]
+		Saving to: “solr-4.10.4.tgz”
 
-				100%[==============================================================================================>] 35,866,329  8.63M/s   in 4.3s
-				2015-07-11 14:39:09 (8.04 MB/s) - "solr-4.10.4.tgz" saved [35866329/35866329]0
+		100%[==============================================================================================>] 35,866,329  8.63M/s   in 4.3s
+		2015-07-11 14:39:09 (8.04 MB/s) - "solr-4.10.4.tgz" saved [35866329/35866329]0
 
 2.  Unpack the Solr installation; an example follows.
 
-				tar -xvf solr-4.10.4.tgz
+		tar -xvf solr-4.10.4.tgz
 
 3.  Continue with the next section.
 
@@ -239,17 +239,17 @@ Magento comes packaged with a sample Solr configuration you can use and customiz
 
 1.  As a user with <code>root</code> privileges, enter the following commands in the order shown to copy over the Solr configuration with the one packaged with Magento EE:
 
-		 cd <your Solr install dir>/example/solr
-			cp -R collection1 magento2
-			cd magento2
-			cp -R <your Magento EE install dir>/app/code/Magento/Solr/conf/* .
+		cd <your Solr install dir>/example/solr
+		cp -R collection1 magento2
+		cd magento2
+		cp -R <your Magento EE install dir>/app/code/Magento/Solr/conf/* .
 
 	For example, if Solr is installed in <code>/opt/solr/solr-4.10.4</code> and Magento EE is installed in <code>/var/www/magento/html/magento2ee</code>, enter:
 
-			cd /opt/solr/solr/solr-4.10.4
-			cp -R collection1 magento2
-			cd magento2
-			cp -R /var/www/html/magento2ee/app/code/Magento/Solr/conf/* .
+		cd /opt/solr/solr/solr-4.10.4
+		cp -R collection1 magento2
+		cd magento2
+		cp -R /var/www/html/magento2ee/app/code/Magento/Solr/conf/* .
 
 	<div class="bs-callout bs-callout-info" id="info">
 	 <p>If you're prompted to overwrite files, try the command <code>\cp -R &lt;your Magento EE install dir>/app/code/Magento/Solr/conf/* .</code></p>
@@ -257,11 +257,12 @@ Magento comes packaged with a sample Solr configuration you can use and customiz
 
 2.  After copying files, open `example/solr/core.properties` in a text editor and change:
 
-		 name=collection1
+		name=collection1
 
 	to
 
-			name=magento2
+		name=magento2
+3.	Save your changes to `core.properties` and exit the text editor.
 
 3.  *Task for Tomcat 6 with CentOS only*
 
@@ -275,7 +276,7 @@ Magento comes packaged with a sample Solr configuration you can use and customiz
 
 		<dataDir>${solr.data.dir:}</dataDir>
 
-4.  Start Solr
+4.  Start Solr.
 	
 	As a user with <code>root</code> privileges, enter the following command to start Solr:
 
@@ -385,9 +386,18 @@ To refresh the cache using the Admin:
 2.  Select the check box next to <strong>Page Cache</strong>. 
 3.  From the <strong>Actions</strong> list in the upper right, click <strong>Refresh</strong>.<br />
 		The following figure shows an example.<br />
-		<img src="{{ site.baseurl }}common/images/solr_refresh-cache.png" width="500px">
+		<img src="{{ site.baseurl }}common/images/solr_refresh-cache.png" width="600px">
 
 To clean the cache using the command line, use the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean">`magento cache:clean`</a> command.
+
+To reindex using the command line:
+
+1.	Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+2.	Enter the following command:
+
+		php <your Magento install dir>/bin magento indexer:reindex
+
+3.	Wait while the indexers are reindexed.
 
 <div class="bs-callout bs-callout-info" id="info">
 	<p>Unlike the cache, indexers are updated by a cron job. Make sure <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cron.html">cron is enabled</a> before you start using Solr.</p>
@@ -408,10 +418,10 @@ Create a script named <code>/etc/init.d/solr</code> with options similar to the 
 	#chkconfig: 35 92 08
 	#description: Starts and stops Apache Solr
  
-	SOLR_DIR="[your Solr install dir]"
-	JAVA_OPTIONS="-Xmx1024m -DSTOP.PORT=<em>jetty-stop-port</em> -DSTOP.KEY=<em>jetty-stop-key</em> -jar  start.jar"
-	LOG_FILE="<em>path-to-solr-log-file</em>"
-	JAVA="<em>java_home</em>"
+	SOLR_DIR="<your Solr install dir>"
+	JAVA_OPTIONS="-Xmx1024m -DSTOP.PORT=<jetty-stop-port> -DSTOP.KEY=<jetty-stop-key> -jar  start.jar"
+	LOG_FILE="<path-to-solr-log-file>"
+	JAVA="<java_home>"
  
 	case $1 in
 	start)
@@ -474,38 +484,39 @@ All parameters shown in the following table are required.
 
 An example follows:
 
-<pre>#!/bin/sh
+	#!/bin/sh
  
-#Starts, stops, and restarts Apache Solr.
-#chkconfig: 35 92 08
-#description: Starts and stops Apache Solr
+	#Starts, stops, and restarts Apache Solr.
+	#chkconfig: 35 92 08
+	#description: Starts and stops Apache Solr
  
-SOLR_DIR="/etc/solr/apache-solr-3.6.2/example"
-JAVA_OPTIONS="-Xmx1024m -DSTOP.PORT=8079 -DSTOP.KEY=mykey -jar  start.jar"
-LOG_FILE="/var/log/solr.log"
-JAVA="/usr/bin/java"
+	SOLR_DIR="/opt/solr/apache-solr-4-10-4/example"
+	JAVA_OPTIONS="-Xmx1024m -DSTOP.PORT=8079 -DSTOP.KEY=mykey -jar  start.jar"
+	LOG_FILE="/var/log/solr.log"
+	JAVA="/usr/bin/java"
  
-case $1 in
-start)
-echo -n "Starting Solr"
-cd $SOLR_DIR
-$JAVA $JAVA_OPTIONS 2> $LOG_FILE &
-;;
-stop)
-echo -n "Stopping Solr"
-cd $SOLR_DIR
-$JAVA $JAVA_OPTIONS --stop
-;;
-restart)
-$0 stop
-sleep 1
-$0 start
-;;
-*)
-echo "Usage: $0 {start|stop|restart}" >&2
-exit 1
-;;
-esac</pre>
+	case $1 in
+	start)
+	echo -n "Starting Solr"
+	cd $SOLR_DIR
+	$JAVA $JAVA_OPTIONS 2> $LOG_FILE &
+	;;
+	stop)
+	echo -n "Stopping Solr"
+	cd $SOLR_DIR
+	$JAVA $JAVA_OPTIONS --stop
+	;;
+	restart)
+	$0 stop
+	sleep 1
+	$0 start
+	;;
+	*)
+	echo "Usage: $0 {start|stop|restart}" >&2
+	exit 1
+	;;
+	esac
+
 To complete the script:
 
 *	Make sure you saved the edited version of the script.
