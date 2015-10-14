@@ -246,11 +246,10 @@
 
 <p>If you have an <code>events.xml</code> file and a first <code>events.xsd</code> file, the XSD files for the merged <code>events.xml</code> file could be named <code>events_merged.xsd</code>.</p>
 
-<p>To ensure validation of an XML file by appropriate XSD file, you must specify the relative path to the XSD file in the XML file. For example:</p>
+<p>To ensure validation of an XML file by appropriate XSD file, you must the Uniform Resource Name (URN) to the XSD file in the XML file. For example:</p>
 
-<pre><code>&lt;config
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd"&gt;
+<pre><code>&lt;config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager:etc/config.xsd"&gt;
 </code></pre>
 
 <p>Your IDE can validate your configuration files at both runtime and during development.</p>
