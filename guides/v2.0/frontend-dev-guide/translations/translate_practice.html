@@ -168,7 +168,7 @@
 		
 		<h2>Overview</h2>
 
-<p>This topic is a step-by-step illustration of creating a default en_US locale <a href="/guides/v2.0/frontend-dev-guide/translations/#translate_terms">dictionary</a> for a custom theme. </p>
+<p>This topic is a step-by-step illustration of creating a default en_US locale <a href="/guides/v2.0/frontend-dev-guide/translations/xlate.html#translate_terms">dictionary</a> for a custom theme. </p>
 
 <h2 id="theme">Changing default strings</h2>
 <p>OrangeCo created a custom <code>orange</code> theme that inherits from the Magento Blank theme.
@@ -177,34 +177,38 @@ Among the other changes, they want to rephrase certain strings used in the Blank
 <p>Namely, they need the following changes:</p>
 <ul>
 <li>
-Change **Add to Cart** label to **Purchase**
+Change <b>Add to Cart</b> label to <b>Purchase</b>
 </li>
 <li>
-Change **Add to Compare** label to **Compare**
+Change <b>Add to Compare</b> label to <b>Compare</b>
 </li>
 <li>
-Change **Add to Wish List** label to **Wishlist**
+Change <b>Add to Wish List</b> label to <b>Wishlist</b>
+</li>
+</ul>
 
+<p>The following image shows a page where the strings meant to be changed are used:</p>
 
+<div style="border: 1px solid #ABABAB">
+<img width="700px" src="/common/images/fdg_trans_bag.png" alt="Product page where the Add to Compare string is displayed" />
 
-The following image shows a page where the strings meant to be changed are used:
-<img width="700px" src="/common/images/fdg_trans_bag.png" alt="Product page where the Add to Compare string is displayed" /> 
+</div>
 
-To override the strings, OrangeCo plan to use the en_US dictionary file. 
+<p>To override the strings, OrangeCo plan to use the en_US dictionary file. </p>
 
-So OrangeCo take the following steps:
+<p>So OrangeCo take the following steps:</p>
 
 <ol>
 
 <li>
-Run the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">i18n (internationalization) tool</a> to generate the en_US dictionary for the `orange` theme:
+Run the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">i18n (internationalization) tool</a> to generate the en_US dictionary for the <code>orange</code> theme:
 <pre>
 php magento2/bin/magento i18n:collect-phrases --output="magento2/app/design/frontend/OrangeCo/orange/i18n/en_US.csv" magento2/app/design/frontend/OrangeCo/orange
 </pre>
 </li>
 <li>
 
-Open the newly generated `magento2/app/design/frontend/OrangeCo/orange/i18n/en_US.csv` file and add the following rows:
+Open the newly generated <code>magento2/app/design/frontend/OrangeCo/orange/i18n/en_US.csv</code> file and add the following rows:
 
 <pre>
 "Add to Cart", "Purchase"
@@ -215,12 +219,13 @@ Open the newly generated `magento2/app/design/frontend/OrangeCo/orange/i18n/en_U
 
 </ol>
 
-When the OrangeCo apply the orange theme, the custom strings are used instead default ones. 
+<p>When the OrangeCo apply the orange theme, the custom strings are used instead default ones. </p>
 
-For example:
+<p>For example:</p>
 
+<div style="border: 1px solid #ABABAB">
 <img width="700px" src="/common/images/fdg_translations_bag2.png" alt="Product page where the customized Compare string is displayed" /> 
-
+</div>
 
 <h2> Recommended reading </h2>
 
@@ -229,7 +234,6 @@ For example:
 <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">Translation dictionaries and language packages</a></li>
 <li><a href="/guides/v2.0/frontend-dev-guide/translations/theme_dictionary.html">Using translation dictionary to customize strings</a></li>
 </ul>
-</li></ul>
 
 
 		</div>
@@ -650,7 +654,7 @@ For example:
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/translations/theme_dictionary.html">Using translation dictionary to customize strings</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/translations/theme_dictionary.html">Use translation dictionary to customize strings</a></li>
 						
 								
 							
