@@ -14,25 +14,25 @@ This topic is a step-by-step illustration of creating a default en_US locale <a 
 
 <h2 id="theme">Changing default strings</h2>
 OrangeCo created a custom `orange` theme that inherits from the Magento Blank theme.
-Among the other changes, they want to re-phrase certain strings used in the Blank theme and modules for the default locale. 
+Among the other changes, they want to rephrase certain strings used in the Blank theme and modules for the default locale. 
 
 Namely, they need the following changes:
 <ul>
 <li>
-Change "Add to Cart" label to "Purchase"
+Change **Add to Cart** label to **Purchase**
 </li>
 <li>
-Change "Add to Compare" label to "Compare"
+Change **Add to Compare** label to **Compare**
 </li>
 <li>
-Change "Add to Wish List" label to "Wishlist"
+Change **Add to Wish List** label to **Wishlist**
 
 </ul>
 
 The following image shows a page where the strings meant to be changed are used:
-<img src="{{ site.baseurl }}common/images/fdg_trans_bag.png" alt="Product page where the Add to Compare string is displayed"> 
+<img width="700px" src="{{ site.baseurl }}common/images/fdg_trans_bag.png" alt="Product page where the Add to Compare string is displayed"> 
 
-To overwrite the strings, OrangeCo plan to use the en_US dictionary file. 
+To override the strings, OrangeCo plan to use the en_US dictionary file. 
 
 So OrangeCo take the following steps:
 
@@ -61,7 +61,7 @@ When the OrangeCo apply the orange theme, the custom strings are used instead de
 
 For example:
 
-<img src="{{ site.baseurl }}common/images/fdg_translations_bag2.png" alt="Product page where the customized Compare string is displayed"> 
+<img width="700px" src="{{ site.baseurl }}common/images/fdg_translations_bag2.png" alt="Product page where the customized Compare string is displayed"> 
 
 
 <h2> Recommended reading </h2>
