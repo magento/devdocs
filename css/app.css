@@ -2946,8 +2946,8 @@ blockquote cite {
 }
 
 .container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container, .nav-main #global-nav, .nav-main #subnav-wrap #subnav {
-    width: 100%;
-    max-width: 1300px
+    width: auto;
+    max-width: 100%;
 }
 
 .nav-main {
