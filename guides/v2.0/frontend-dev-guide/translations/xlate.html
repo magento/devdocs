@@ -230,10 +230,22 @@
 <p>See one of the following sections for more information:</p>
 
 <ul>
+  <li><a href="#m2devgde-xlate-themes">Why you might need to add a dictionary for a theme</a></li>
   <li><a href="#m2devgde-xlate-translating">Manually translate words and phrases</a></li>
   <li><a href="#m2devgde-xlate-dictionaries">Translation dictionaries</a></li>
   <li><a href="#m2devgde-xlate-languagepack">Language packages</a></li>
 </ul>
+
+<h2 id="m2devgde-xlate-themes">Why you might need to add a dictionary for a theme</h2>
+
+<p>You might need to add a dictionary for the default language (en_US) in the following cases:</p>
+
+<ul>
+  <li>if you want to replace certain strings from the <a href="/guides/v2.0/frontend-dev-guide/themes/theme-inherit.html">parent theme</a>. For example, use “Compare” instead of “Add to Compare”.</li>
+  <li>if you want your theme to be ready for localization. </li>
+</ul>
+
+<p>For practical illustration of creating a dictionary for a theme for both cases, see the <a href="/guides/v2.0/frontend-dev-guide/translations/translate_practice.html">Create a translation dictionary for a theme</a> topic.</p>
 
 <h2 id="m2devgde-xlate-translating">Manually translate words and phrases</h2>
 <p>Translating the names, titles and phrases used in Magento involves the following steps:</p>
@@ -258,7 +270,7 @@
   <li>This language is configured by the store administrator to be used in specified scope (that is, storefront)</li>
 </ul>
 
-<p>In a dictionary, every phrase is used only once even if belongs to different modules or themes. The only exception to this is when a duplicate phrase belongs to one or more modules and a themes at the same time.</p>
+<p>In a dictionary, every phrase is used only once even if belongs to different modules or themes. The only exception to this is when a duplicate phrase belongs to one or more modules and themes at the same time.</p>
 
 <p>The Magento application automatically assembles translation dictionaries located in modules’ <code>i18n</code> directory into a dictionary per language. For example, Brazilian Portuguese (<code>pt_BR</code>) translation dictionaries might be located in module and theme directories similar to the following:</p>
 
@@ -744,7 +756,15 @@ app/design/frontend/Magento/demo/i18n/pt_BR.csv
 								
 								
 							
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/translations/theme_dictionary.html">Using translation dictionary to customize strings</a></li>
+						
+								
+							
 									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/translations/translate_theory.html">Translate theme strings</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/translations/translate_practice.html">Create a translation dictionary for a theme, illustration</a></li>
 						
 								
 								
