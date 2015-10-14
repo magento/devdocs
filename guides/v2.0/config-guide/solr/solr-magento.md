@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: Solr
-title: Configure Solr to work with Magento
-menu_title: Configure Solr to work with Magento
+title: Configure Solr and Magento
+menu_title: Configure Solr and Magento
 menu_order: 2
 menu_node: 
 github_link: config-guide/solr/solr-magento.md

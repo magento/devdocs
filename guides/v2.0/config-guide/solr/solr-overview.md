@@ -17,7 +17,7 @@ github_link: config-guide/solr/solr-overview.md
 *	<a href="#overview">Overview</a>
 *	<a href="#prereq">Prerequisites</a>
 *	<a href="#install-prereq-software">Install prerequisite software</a>
-* 	<a href="{{ site.gdeurl }}config-guide/solr/solr-magento.html">Configure Solr to work with Magento</a>
+* 	<a href="{{ site.gdeurl }}config-guide/solr/solr-magento.html">Configure Solr and Magento</a>
 *	<a href="{{ site.gdeurl }}config-guide/solr/solr-script.html">Script Solr startup and shutdown</a>
 
 <h2 id="overview">Overview</h2>
