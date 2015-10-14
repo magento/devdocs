@@ -29,4 +29,3 @@ The following topics discuss the installation errors and suggested solutions:
 *	<a href="{{ site.gdeurl }}install-gde/trouble/php/tshoot_php-date.html">During installation, PHP date warning</a>
 *	<a href="{{ site.gdeurl }}install-gde/trouble/tshoot_composer-install.html">Cannot run <code>composer install</code></a>
 *	<a href="{{ site.gdeurl }}install-gde/trouble/tshoot_mysql_table-open-cache.html">Error 'MySQL server has gone away' during installation</a>
-
