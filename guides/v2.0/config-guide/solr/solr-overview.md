@@ -149,15 +149,45 @@ The following suggestions in this topic should *not* be used in a production env
 *	Turning off your UNIX firewall is not recommended in production. (As an alternative, you can set up firewall rules to allow Magento and Solr to communicate on the default listen port 8983.)
 *	Setting SELinux to `permissive` 
 
+	SELinux settings are entirely up to you. Magento does not recommend particular settings; however, be aware that setting up SELinux is very complex. 
+
 <h2 id="prereq">Prerequisites</h2>
 The tasks discussed in this topic require the following:
 
-*	Latest available version of Solr 4
-*	Latest available Java version
+*	<a href="#prereq-secy">Disable the UNIX firewall and SELinux</a>
+*	<a href="#prereq-java">Latest available Java version</a>
+*	<a href="#install-prereq-solr">Latest available version of Solr 4</a>
 
-	To determine if Java is already installed, enter the following command:
+<h3 id="prereq-secy">Firewall and SELinux</h3>
+By default, UNIX systems generally enable a firewall with restrictive rules and also enable SELinux, which imposes other types of security on the operating system. At the default settings, Magento cannot communicate with Solr using its default listen port 8983.
 
-		java -version
+One solution is to effectively disable these systems; however, if you don't wish to disable them, you can consult the following resources:
+
+*	<a href="https://help.ubuntu.com/community/IptablesHowTo" target="_blank">iptables how-to</a>
+*	<a href="https://fedoraproject.org/wiki/How_to_edit_iptables_rules" target="_blank">How to edit iptables rules (fedora project)</a>
+*	<a href="http://www.thegeekstuff.com/2011/06/iptables-rules-examples/" target="_blank">25 Most Frequently Used Linux IPTables Rules Examples</a>
+*	<a href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/ch-selinux.html" target="_blank">Introduction to SELinux (CentOS.org)</a>
+*	<a href="https://wiki.centos.org/HowTos/SELinux">SELinux How-To Wiki (CentOS.org)</a>
+
+To stop the iptables service, enter the following command as a user with `root` privileges:
+
+	service iptables stop
+
+To set SELinux for permissive mode:
+
+1.	To determine if SELinux is enabled, enter the following command:
+
+		getenforce
+
+	`Enforcing` displays to confirm that SELinux is running. (If `Permissive` displays, continue with the next section.)
+2.	To change to permissive mode, enter:
+
+		setenforce 0
+
+<h3 id="prereq-java">Install the Java Software Development Kit (JDK)</h3>
+To determine if Java is already installed, enter the following command:
+
+	java -version
 
 If the message <code>java: command not found</code> displays, you must install the Java SDK as discussed in the next section. 
 
@@ -165,13 +195,6 @@ This topic discusses using Jetty, which comes with Solr. Consult another resourc
 
 To see if you're currently running Jetty and to check the version, see <a href="https://wiki.eclipse.org/Jetty/FAQ#How_do_I_know_which_version_of_Jetty_I_am_running.3F" target="_blank">How to find out the version of Jetty</a>.
 
-<h2 id="install-prereq-software">Installing prerequisite software</h2>
-The following sections discuss how to install the prerequisite software: 
-
-*	<a href="#install-prereq-java">Install Java</a>
-*	<a href="#install-prereq-solr">Install Solr 4 and Jetty</a>
-
-<h3 id="install-prereq-java">Install the latest Java JDK</h3>
 See one of the following sections:
 
 * <a href="#install-prereq-java-centos">Install the latest JDK on CentOS</a>
