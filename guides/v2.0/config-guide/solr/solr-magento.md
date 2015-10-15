@@ -202,7 +202,7 @@ To verify Solr works, go to the storefront and search for any term (including on
 
 The following figure shows an example.
 
-<img src="{{ site.baseurl }}common/images/solr_verify.png" width="600px" alt="Verify Solr works by searching the storefront">
+<img src="{{ site.baseurl }}common/images/solr_verify.png" width="650px" alt="Verify Solr works by searching the storefront">
 
 The following excerpt from the Solr command window shows the same search:
 
