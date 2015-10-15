@@ -14,10 +14,32 @@
 	<link rel="stylesheet" href="{{ site.baseurl }}common/css/override.css" />
 	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<script>
+  (function() {
+    var cx = '018116925022773002786:klu67apuihk';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
 
 
 </head>	
 <body>
+
+<!--Search Results Overlay -->
+<div class="searchOverride"><link rel="stylesheet" href="{{ site.baseurl }}common/css/search-override.css" /></div>
+<div class="searchResultsBack"></div>
+<div id="searchResultsBox">
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="{{ site.baseurl }}common/images/close.png" alt="Close"> --></div>
+
+	<gcse:search></gcse:search> 
+	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
+</div>
+<!--End Search Results Overlay -->
 
 <header id="nav-main" class="nav-main">
 
