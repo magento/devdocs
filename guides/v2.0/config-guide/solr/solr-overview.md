@@ -15,6 +15,7 @@ github_link: config-guide/solr/solr-overview.md
 #### Contents
 
 *	<a href="#overview">Overview</a>
+*	<a href="#dev">Assumptions for using Solr in a development environment</a>
 *	<a href="#prereq">Prerequisites</a>
 *	<a href="#install-prereq-software">Install prerequisite software</a>
 * 	<a href="{{ site.gdeurl }}config-guide/solr/solr-magento.html">Configure Solr and Magento</a>
@@ -137,6 +138,16 @@ Some reasons to use Solr with Magento include:
 *	Magento ships with a sample Solr configuration that enables you to provide users with a powerful search engine without your needing to customize any code.
 *	You get better performance of search, catalog views, and <a href="http://www.magentocommerce.com/knowledge-base/entry/how-does-layered-navigation-work" target="_blank">layered navigation</a>.
 *	When the system is under load, Solr avoids frequent updates of the MySQL <code>catalogsearch_fulltext</code> table and alleviates issues with database table locks.
+
+<h2 id="dev">Assumptions for using Solr in a development environment</h2>
+This topic discusses a simple way to set up Solr in a development environment. No coding is required.
+
+The following suggestions in this topic should *not* be used in a production environment because they're potentially unsafe:
+
+*	Starting the example Solr web application using `java -jar start.jar` because it's not maintainable. You should script starting and stopping Solr instead.
+*	Using the example Solr web application is not recommended because you probably need to customize a new web application for your use. Also, the provided Jetty application server isn't intended for production use.
+*	Turning off your UNIX firewall is not recommended in production. (As an alternative, you can set up firewall rules to allow Magento and Solr to communicate on the default listen port 8983.)
+*	Setting SELinux to `permissive` 
 
 <h2 id="prereq">Prerequisites</h2>
 The tasks discussed in this topic require the following:
