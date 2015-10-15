@@ -49,7 +49,7 @@ When you're developing Magento components (modules, themes, and language package
 	</tr>
 	<tr>
 		<td>var/generation</td>
-		<td>Contains generated classes.</td>
+		<td>Contains <a href="{{ site.gdeurl }}extension-dev-guide/code-generation.html">generated code</a>.</td>
 	</tr>
 	<tr>
 		<td>var/di</td>
@@ -78,7 +78,7 @@ The following table provides guidelines on what you should clear and when.
 	</tr>
 	<tr>
 		<td>Change any <code>di.xml</code></td>
-		<td>var/di, var/generation; also, run the code compiler again</td>
+		<td>var/di, var/generation; also, run the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler.html">code compiler</a> again</td>
 	</tr>
 	<tr>
 		<td>Add, remove, enable, or disable modules</td>
@@ -121,7 +121,7 @@ You can also use the following command-line tools clear some directories for you
 	<tr>
 		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">magento setup:di:compile</a></td>
 		<td>Generates code.</td>
-		<td>var/di, var/generation (after which compiles code again).</td>
+		<td>var/generation (after which compiles code again)</td>
 	</tr>
 	<tr>
 		<td><a href="{{ site.gdeurl }}http://devdocs.magento.com/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">magento deploy:mode:set {mode}</a></td>
