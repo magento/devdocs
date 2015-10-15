@@ -16,6 +16,7 @@ github_link: config-guide/solr/solr-magento.md
 
 *	<a href="#config-solr">Configure Solr to work with Magento</a>
 *	<a href="#solr-reindex">Reindexing catalog search and refreshing the full page cache</a>
+*	<a href="solr-verify">Verify Solr is working</a>
 
 <h2 id="config-solr">Configure Solr to work with Magento</h2>
 The following topics discuss how to configure Solr to work with Magento EE:
@@ -33,7 +34,7 @@ Magento comes packaged with a sample Solr configuration you can use and customiz
 1.  As a user with <code>root</code> privileges, enter the following commands in the order shown to copy over the Solr configuration with the one packaged with Magento EE:
 
 		cd <your Solr install dir>/example/solr
-		cp -R collection1 magento2
+		cp -R collection1 magento2/conf
 		cd magento2
 		cp -R <your Magento EE install dir>/app/code/Magento/Solr/conf/* .
 
@@ -113,7 +114,7 @@ To configure Magento to work with Solr:
 </tr>
 <tr>
 	<td>Solr Server Password</td>
-	<td><em>Optional.</em> Enter the user's password, if desired.</td>
+	<td><em>Optional.</em> Enter the user's password, if required.</td>
 </tr>
 <tr>
 	<td>Solr Server Timeout</td>
@@ -121,9 +122,8 @@ To configure Magento to work with Solr:
 </tr>
 <tr>
 	<td>Solr Server Path</td>
-	<td>Specifies the path and name of the Solr web application. The path used by the example Solr configuration is <code>solr/magento2</code>.
-
-	If you customized Solr, the value you enter in this field must exactly match the value of <code>webapp_name=&lt;value></code> in <code>&lt;your Solr install dir>/example/solr/magento2/conf/conf/scripts.conf</code>.
+	<td><p>Specifies the path and name of the Solr web application. The path used by the example Solr configuration is <code>solr/magento2</code>.</p>
+	<p>If you customized Solr, the value you enter in this field must exactly match the value of <code>webapp_name=&lt;value></code> in <code>&lt;your Solr install dir>/example/solr/magento2/conf/conf/scripts.conf</code></p>.
 </td>
 </tr>
 </tbody>
@@ -155,6 +155,7 @@ The button changes as follows.
 	In particular, make sure you started Solr as a user with <code>root</code> privileges.</li>
 	<li>Verify that <a href="http://php.net/manual/en/filesystem.configuration.php" target="_blank"><code>allow_url_fopen = On</code></a> is present in your server's <code>php.ini</code>.<br />
 	If you are not sure where <code>php.ini</code> is located, you can <a href="http://kb.mediatemple.net/questions/764/How+can+I+create+a+phpinfo.php+page%3F#gs" target="_blank">create a <code>phpinfo.php</code> page</a> to locate it.</li>
+	<li>Make sure the <a href="prereq-disable">UNIX firewall and SELinux</a> are both disabled, or set up rules to enable Solr and Magento to communicate with each other.</li>
 	<li>Verify the value of the <strong>Solr Server Hostname</strong> field. Make sure the server is available. You can try the server's IP address instead.</li>
 	<li>Use the command <code>netstat -an | grep <em>listen-port</em></code> command to verify that the port specified in the <strong>Solr Server Port</strong> field is not being used by another process.<br />
 	For example, to see if Solr is running on its default port, use the following command:
@@ -196,5 +197,17 @@ To reindex using the command line:
 	<p>Unlike the cache, indexers are updated by a cron job. Make sure <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cron.html">cron is enabled</a> before you start using Solr.</p>
 </div>
 
-#### Next step (optional)
-<a href="{{ site.gdeurl }}config-guide/solr/solr-script.html">Script Solr startup and shutdown</a>
+<h2 id="solr-verify">Verify Solr is working</h2>
+To verify Solr works, go to the storefront and search for any term (including one that won't return results) and to look for the search in the Solr command window.
+
+The following figure shows an example.
+
+<img src="{{ site.baseurl }}common/images/solr_verify.png" width="600px" alt="Verify Solr works by searching the storefront">
+
+The following excerpt from the Solr command window shows the same search:
+
+	497008 [qtp2032251042-13] INFO  org.apache.solr.core.SolrCore  – [magento2] webapp=/solr path=/select params={facet.field={!key%3Dcategory_bucket}category_ids&json.nl=flat&fl=id,score&start=0&fq=store_id:1&rows=10000&q=sku:((hello*+hello))+OR+fulltext_en:((hello*+hello))+OR+attr_color_en:((hello*+hello))+OR+attr_description_en:((hello*+hello))+OR+attr_manufacturer_en:((hello*+hello))+OR+attr_name_en:((hello*+hello))+OR+attr_short_description_en:((hello*+hello))+OR+attr_status_en:((hello*+hello))+OR+attr_tax_class_id_en:((hello*+hello))&f.category_ids.facet.mincount=1&omitHeader=true&stats=true&wt=json&facet=true&stats.field=price_0_1} hits=0 status=0 QTime=58
+
+
+#### Next step
+<a href="{{ site.gdeurl }}config-guide/solr/solr-script.html">Prepare Solr for production</a>

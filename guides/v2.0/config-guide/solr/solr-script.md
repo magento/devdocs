@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: Solr
-title: Script Solr startup and shutdown
-menu_title: Script Solr startup and shutdown
+title: Prepare Solr for production
+menu_title: Prepare Solr for production
 menu_order: 3
 menu_node: 
 github_link: config-guide/solr/solr-script.md

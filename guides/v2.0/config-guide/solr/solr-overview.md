@@ -44,7 +44,7 @@ This topic is intended for Magento EE administrators and systems integrators who
 This topic discusses a simple Solr configuration that uses the example Solr configuration provided with Solr, default Solr integration options provided with Magento EE, and also explains how to configure Magento EE to use Solr. Advanced configuration tasks&mdash;such as setting up dictionaries&mdash;are beyond the scope of this topic.
 
 <div class="bs-callout bs-callout-warning">
-		<p>The example Solr configuration is <em>not</em> intended to be used in a production site. It's for testing and development only. Because it's simple to use which, it's a great way for you to learn more about Solr.</p>
+		<p>The example Solr configuration is <em>not</em> intended to be used in a production site. It's for testing and development only. Because it's simple to use, it's a great way for you to learn more about Solr.</p>
 </div>
 
 <h3 id="overview-example">Comparing the search options</h3>
@@ -145,8 +145,8 @@ This topic discusses a simple way to set up Solr in a development environment. N
 The following suggestions in this topic should *not* be used in a production environment because they're potentially unsafe:
 
 *	Starting the example Solr web application using `java -jar start.jar` because it's not maintainable. You should script starting and stopping Solr instead.
-*	Using the example Solr web application is not recommended because you probably need to customize a new web application for your use. Also, the provided Jetty application server isn't intended for production use.
-*	Turning off your UNIX firewall is not recommended in production. (As an alternative, you can set up firewall rules to allow Magento and Solr to communicate on the default listen port 8983.)
+*	Using the example Solr web application is not recommended because you should customize a new web application for your use. Also, the provided Jetty application server isn't intended for production use.
+*	Turning off your UNIX firewall is not recommended in production. (As an alternative, you can set up firewall rules to allow Magento and Solr to communicate.)
 *	Setting SELinux to `permissive` 
 
 	SELinux settings are entirely up to you. Magento does not recommend particular settings; however, be aware that setting up SELinux is very complex. 
@@ -159,16 +159,11 @@ The tasks discussed in this topic require the following:
 *	<a href="#install-prereq-solr">Latest available version of Solr 4</a>
 
 <h3 id="prereq-secy">Firewall and SELinux</h3>
-By default, UNIX systems generally enable a firewall with restrictive rules and also enable SELinux, which imposes other types of security on the operating system. At the default settings, Magento cannot communicate with Solr using its default listen port 8983.
+By default, UNIX systems generally enable a firewall with restrictive rules and also enable SELinux, which imposes other types of security on the operating system. It's easier to run Solr in development by disabling the firewall and SELinux but that choice is up to you.
 
-One solution is to effectively disable these systems; however, if you don't wish to disable them, you can consult the following resources:
+If you choose to keep your firewall (`iptables` in this example) and SELinux, you must set up rules to allow TCP traffic between Magento and Solr on Solr's listen port (8983 by default).
 
-*	<a href="https://help.ubuntu.com/community/IptablesHowTo" target="_blank">iptables how-to</a>
-*	<a href="https://fedoraproject.org/wiki/How_to_edit_iptables_rules" target="_blank">How to edit iptables rules (fedora project)</a>
-*	<a href="http://www.thegeekstuff.com/2011/06/iptables-rules-examples/" target="_blank">25 Most Frequently Used Linux IPTables Rules Examples</a>
-*	<a href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/ch-selinux.html" target="_blank">Introduction to SELinux (CentOS.org)</a>
-*	<a href="https://wiki.centos.org/HowTos/SELinux">SELinux How-To Wiki (CentOS.org)</a>
-
+#### Disable iptables and SELinux
 To stop the iptables service, enter the following command as a user with `root` privileges:
 
 	service iptables stop
@@ -183,6 +178,15 @@ To set SELinux for permissive mode:
 2.	To change to permissive mode, enter:
 
 		setenforce 0
+
+#### Set up rules for iptables and SELinux
+To set up rules to allow communication, consult the following resources:
+
+*	<a href="https://help.ubuntu.com/community/IptablesHowTo" target="_blank">iptables how-to</a>
+*	<a href="https://fedoraproject.org/wiki/How_to_edit_iptables_rules" target="_blank">How to edit iptables rules (fedora project)</a>
+*	<a href="http://www.thegeekstuff.com/2011/06/iptables-rules-examples/" target="_blank">25 Most Frequently Used Linux IPTables Rules Examples</a>
+*	<a href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/ch-selinux.html" target="_blank">Introduction to SELinux (CentOS.org)</a>
+*	<a href="https://wiki.centos.org/HowTos/SELinux">SELinux How-To Wiki (CentOS.org)</a>
 
 <h3 id="prereq-java">Install the Java Software Development Kit (JDK)</h3>
 To determine if Java is already installed, enter the following command:
@@ -205,7 +209,7 @@ See <a href="https://www.digitalocean.com/community/tutorials/how-to-install-jav
 
 Be sure to install the JDK and *not* the JRE.
 
-<h4 id="install-prereq-java-ubuntu">Install the Java 6 or 7 SDK on Ubuntu</h4>
+<h4 id="install-prereq-java-ubuntu">Install the Java 6 or later SDK on Ubuntu</h4>
 To install the Java 6 SDK, enter the following command as a user with <code>root</code> privileges:
 
 <pre>apt-get install openjdk-6-jdk</pre>
@@ -216,6 +220,8 @@ To install Java 7, enter the following command as a user with <code>root</code> 
 <div class="bs-callout bs-callout-info" id="info">
 	<p>Java version 7 might not be available for all operating systems. For example, you can search the list of available packages for Ubuntu <a href="http://packages.ubuntu.com/" target="_blank">here</a>.</p>
 </div>
+
+To install JDK 1.8 on Ubuntu, see <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html" target="_blank">Oracle documentation</a>.
 
 <h3 id="install-prereq-solr">Install Solr 4 and Jetty</h3>
 The Apache Solr package installs both Solr and Jetty. If Jetty is already installed, see the <a href="https://cwiki.apache.org/confluence/display/solr/Running+Solr+on+Jetty" target="_blank">Solr with Jetty Wiki</a> for more information.
