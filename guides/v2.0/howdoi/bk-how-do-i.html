@@ -14,10 +14,32 @@
 	<link rel="stylesheet" href="/common/css/override.css" />
 	<link rel="canonical" href="//guides/v2.0/howdoi/bk-how-do-i.html">
 
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<script>
+  (function() {
+    var cx = '018116925022773002786:klu67apuihk';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
 
 
 </head>	
 <body>
+
+<!--Search Results Overlay -->
+<div class="searchOverride"><link rel="stylesheet" href="/common/css/search-override.css" /></div>
+<div class="searchResultsBack"></div>
+<div id="searchResultsBox">
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+
+	<gcse:search></gcse:search> 
+	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
+</div>
+<!--End Search Results Overlay -->
 
 <header id="nav-main" class="nav-main">
 
@@ -113,6 +135,29 @@
          
       </ul>
 
+<div class ="search">
+
+
+<svg class="searchImage" width="20px" height="42px" viewBox="0 0 442 440" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+   
+    <title>search</title>
+    <desc>It's the search icon</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="search" sketch:type="MSLayerGroup" transform="translate(24.000000, 24.000000)" stroke="#FFFFFF" stroke-width="47">
+            <circle id="lens" sketch:type="MSShapeGroup" cx="145" cy="145" r="145"></circle>
+            <path d="M263.351331,261.351331 L371.504623,369.504623" id="handle" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>
+
+    <form id="searchbox" name="gs" method="GET" action="#searchResultsBox">
+    <input type="hidden" name="cx" value="018116925022773002786:klu67apuihk" />
+     <input type="hidden" name="ie" value="UTF-8" />
+    <input type="text" name="q" id="searchtext" value="" placeholder="Search">
+           
+                </form>
+            </div>  <!-- END searchbox-->
 
 
    </div> <!--End subnav -->

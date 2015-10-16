@@ -223,3 +223,17 @@ td.gcsc-branding-text {
 .gcsc-branding-text-name {
 	width: 30%;
 }
+
+
+.gsc-results .gsc-cursor-page.gsc-cursor-current-page {
+text-shadow: none;
+
+}
+
+
+.gsc-result .gs-title {
+  
+    white-space: nowrap;
+}
+
+
