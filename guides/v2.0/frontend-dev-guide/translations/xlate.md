@@ -64,9 +64,19 @@ Changes made:
 ### More information
 See one of the following sections for more information:
 
+* <a href="#m2devgde-xlate-themes">Why you might need to add a dictionary for a theme</a>
 *	<a href="#m2devgde-xlate-translating">Manually translate words and phrases</a>
 *	<a href="#m2devgde-xlate-dictionaries">Translation dictionaries</a>
 *	<a href="#m2devgde-xlate-languagepack">Language packages</a>
+
+<h2 id="m2devgde-xlate-themes">Why you might need to add a dictionary for a theme</h2>
+
+You might need to add a dictionary for the default language (en_US) in the following cases:
+
+- if you want to replace certain strings from the <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html">parent theme</a>. For example, use "Compare" instead of "Add to Compare".
+- if you want your theme to be ready for localization. 
+
+For practical illustration of creating a dictionary for a theme for both cases, see the <a href="{{site.gdeurl}}frontend-dev-guide/translations/translate_practice.html">Create a translation dictionary for a theme</a> topic.
 
 <h2 id="m2devgde-xlate-translating">Manually translate words and phrases</h2>
 Translating the names, titles and phrases used in Magento involves the following steps:
@@ -87,7 +97,7 @@ Magento translates words and phrases when all of the following conditions are me
 *	The Magento code base has the necessary translation dictionaries for a language
 *	This language is configured by the store administrator to be used in specified scope (that is, storefront)
 
-In a dictionary, every phrase is used only once even if belongs to different modules or themes. The only exception to this is when a duplicate phrase belongs to one or more modules and a themes at the same time.
+In a dictionary, every phrase is used only once even if belongs to different modules or themes. The only exception to this is when a duplicate phrase belongs to one or more modules and themes at the same time.
 
 The Magento application automatically assembles translation dictionaries located in modules' `i18n` directory into a dictionary per language. For example, Brazilian Portuguese (`pt_BR`) translation dictionaries might be located in module and theme directories similar to the following:
 

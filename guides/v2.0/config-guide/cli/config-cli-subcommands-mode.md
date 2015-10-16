@@ -52,6 +52,11 @@ Exceptions:
 
 *	`.htaccess` files are not removed
 *	`pub/static` contains a file that specifies the version of static content; this file is not removed
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>By default, Magento uses the <code>var</code> directories to store the cache, logs, and compiled code. You can customize this directory but in this guide, it's assumed to be <code>var</code>.</p></span>
+</div>
 	
 <h3 id="config-mode-over-dirs">Permissions and ownership for production mode</h3>
 Changing modes affects permissions and ownership the following subdirectories in your Magento installation:
