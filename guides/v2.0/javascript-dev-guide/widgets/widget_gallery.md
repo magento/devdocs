@@ -85,60 +85,89 @@ Height of the preview block in pixels or percents.
 <h3 id="gallery_loop"><code>loop</code></h3>
 
 Define whether images are displayed in a loop.
-    Type: boolean
-    default: false
-    Example of the initialization with the loop option specified:
+
+Type: Boolean
+
+Default: `false`
+
+Example of the initialization with the loop option specified:
      $("#element").fotorama({ loop: true});
 
 <h3 id="gallery_maxwidth">maxwidth</h3>
-     Set maxwidth for preview in gallery.
-     Type: Number, String
-     Default value: 100%
-     Example of the initialization with the maxwidth option specified:
+
+Maximum width of a preview in pixels or percents.
+
+**Type**: Number, String
+
+**Default value**: 100%
+
+Example of the initialization with the maxwidth option specified:
      $("#element").fotorama({ maxwidth: 400});
      $("#element").fotorama({ maxwidth: "50%"});
 
-<h3 id="gallery_maxheight">maxheight</h3>
-     Set maxheight for preview in gallery.
-     Type: Number, String
-     Default value: null
-     Example of the initialization with the maxheight option specified:
+<h3 id="gallery_maxheight"><code>maxheight</code></h3>
+
+Maximum width of a preview in pixels or percents.
+
+**Type**: Number|String
+
+**Default value**: `null`
+
+Example of the initialization with the maxheight option specified:
      $("#element").fotorama({ maxheight: 400});
      $("#element").fotorama({ maxheight: "50%"});
 
-<h3 id="gallery_minheigth">minheigth</h3>
-     Set minheight for preview in gallery.
-     Type: Number, String
-     Default value: null
-     Example of the initialization with the minheight option specified:
+<h3 id="gallery_minheigth"><code>minheigth</code></h3>
+
+Minimal height of a preview in pixels or percents.
+
+**Type**: Number|String
+
+**Default value**: `null`
+     
+Example of the initialization with the minheight option specified:
      $("#element").fotorama({ minheight: 400});
      $("#element").fotorama({ minheight: "50%"});
 
-<h3 id="gallery_mindwidth">minwidth</h3>
-     Set minwidth for preview in gallery.
+<h3 id="gallery_mindwidth"><code>minwidth</code></h3>
+
+Minimal width of the preview in pixels or percents.
      Type: Number, String
      Default value: null
      Example of the initialization with the minwidth option specified:
      $("#element").fotorama({ minwidth: 400});
      $("#element").fotorama({ minwidth: "50%"});
 
-<h3 id="gallery_nav">nav</h3>
-    Variation of thumbnails in navigation. Can be 'thumbs', 'dots' or false
-    Type: String, boolean
-    Default: 'dots'
+<h3 id="gallery_nav"><code>nav</code></h3>
 
-<h3 id="gallery_ratio">ratio</h3>
-     Make gallery responsive, define width in percents and aspect ratio:
-     Type: Number, String
-     Default value: null
-     Example of the initialization with the ratio option specified:
+Variation of thumbnails in navigation. 
+
+**Possible values**: 
+
+- `dots`: iPhone-style dots
+- `thumbs`: thumbnails
+- `false`: nothing
+
+**Default**: `dots`
+
+<h3 id="gallery_ratio"><code>ratio</code></h3>
+
+Width divided by height. Recommended if you are using percentage width.
+
+Type: Number|String
+
+Default value: `null`
+
+Example of the initialization with the ratio option specified:
      $("#element").fotorama({ ratio: '4/3'});
      $("#element").fotorama({ ratio: 1.5 });
      $("#element").fotorama({ ratio: 800/600 });
 
-<h3 id="gallery_showcaption">showcaption</h3>
-    Enable view of caption in preview. Can be for initialized for specific image. Can work globally.
-    Type: boolean
+<h3 id="gallery_showcaption"><code>showcaption</code></h3>
+
+Enable view of caption in preview. Can be for initialized for specific image. Can work globally.
+
+Type: boolean
     Example of the initialization with the showcaption option specified:
      $("#element").fotorama({ showcaption: 90});
 
