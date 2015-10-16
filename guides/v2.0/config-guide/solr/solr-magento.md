@@ -16,7 +16,7 @@ github_link: config-guide/solr/solr-magento.md
 
 *	<a href="#config-solr">Configure Solr to work with Magento</a>
 *	<a href="#solr-reindex">Reindexing catalog search and refreshing the full page cache</a>
-*	<a href="solr-verify">Verify Solr is working</a>
+*	<a href="#solr-verify">Verify Solr is working</a>
 
 <h2 id="config-solr">Configure Solr to work with Magento</h2>
 The following topics discuss how to configure Solr to work with Magento EE:
@@ -77,7 +77,7 @@ Magento comes packaged with a sample Solr configuration you can use and customiz
 		java -jar <your Solr install dir>/example/start.jar
 
 	<div class="bs-callout bs-callout-warning">
-			<p>This method for starting Solr is for convenience and testing purposes only. In a production environment, you should start and stop Solr using a script as discussed in <a href="#solr-script">Script Solr startup and shutdown</a>.</p>
+			<p>This method for starting Solr is for convenience and testing purposes only. In a production environment, you should start and stop Solr using a script as discussed in <a href="{{ site.gdeurl }}config-guide/solr/solr-script.html#solr-script">Script Solr startup and shutdown</a>.</p>
 	</div>
 
 <h3 id="config-solr-magento">Configure Magento to work with Solr</h3>
@@ -145,25 +145,24 @@ The button changes as follows.
 	<th>Meaning</th>
 </tr>
 <tr>
-	<td><img src="{{ site.baseurl }}common/images/solr_test-success.png" width="97px" height="17px"></td>
+	<td><img src="{{ site.baseurl }}common/images/solr_test-success.png" width="140px" height="17px"></td>
 	<td>The test connection succeeded. Click <strong>Save Config</strong> and continue with the next section.</td>
 </tr>
 <tr>
- <td><img src="{{ site.baseurl }}common/images/solr_test-fail.png" width="116px" height="16px"></td>
+ <td><img src="{{ site.baseurl }}common/images/solr_test-fail.png" width="160px" height="16px"></td>
  <td><p>The test connection failed. Try the following:</p>
 	<ul><li>Examine the command window in which you started Solr for stack traces and exceptions. You must resolve those before you continue.<br />
 	In particular, make sure you started Solr as a user with <code>root</code> privileges.</li>
 	<li>Verify that <a href="http://php.net/manual/en/filesystem.configuration.php" target="_blank"><code>allow_url_fopen = On</code></a> is present in your server's <code>php.ini</code>.<br />
 	If you are not sure where <code>php.ini</code> is located, you can <a href="http://kb.mediatemple.net/questions/764/How+can+I+create+a+phpinfo.php+page%3F#gs" target="_blank">create a <code>phpinfo.php</code> page</a> to locate it.</li>
-	<li>Make sure the <a href="prereq-disable">UNIX firewall and SELinux</a> are both disabled, or set up rules to enable Solr and Magento to communicate with each other.</li>
+	<li>Make sure that <a href="{{ site.gdeurl }}config-guide/solr/solr-overview.html#prereq-secy">UNIX firewall and SELinux</a> are both disabled, or set up rules to enable Solr and Magento to communicate with each other.</li>
 	<li>Verify the value of the <strong>Solr Server Hostname</strong> field. Make sure the server is available. You can try the server's IP address instead.</li>
 	<li>Use the command <code>netstat -an | grep <em>listen-port</em></code> command to verify that the port specified in the <strong>Solr Server Port</strong> field is not being used by another process.<br />
 	For example, to see if Solr is running on its default port, use the following command:
 	<pre>netstat -an | grep 8983</pre>
 	If Solr is running on port 8983, it displays similar to the following:
 	<pre>tcp        0      0 :::8983            :::*          LISTEN</pre></li>
-	<li>If Solr is installed on a remote machine, use the <code>ping</code> command to verify that machine is reachable from your Magento server.</li>
-	<li>If SELinux is enabled, make sure the Solr servlet container's listen port is available; otherwise, Magento cannot communicate with the servlet container. For example, you can consult the <a href="http://wiki.centos.org/HowTos/SELinux" target="_blank">SELinux Centos wiki</a>.</li></ul>
+	<li>If Solr is installed on a remote machine, use the <code>ping</code> command to verify that machine is reachable from your Magento server.</li></ul>
 	</td>
 </tr>
 </tbody>
@@ -187,9 +186,13 @@ To clean the cache using the command line, use the <a href="{{ site.gdeurl }}con
 To reindex using the command line:
 
 1.	Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
-2.	Enter the following command:
+2.	Enter the following command to reindex all indexers:
 
 		php <your Magento install dir>/bin magento indexer:reindex
+
+	Enter the following command to reindex the catalog search index only:
+
+		php <your Magento install dir>/bin magento indexer:reindex catalogsearch_fulltext
 
 3.	Wait while the indexers are reindexed.
 
@@ -198,9 +201,9 @@ To reindex using the command line:
 </div>
 
 <h2 id="solr-verify">Verify Solr is working</h2>
-To verify Solr works, go to the storefront and search for any term (including one that won't return results) and to look for the search in the Solr command window.
+To verify Solr works, go to the storefront and search for any term (including one that won't return results) and look for the search in the Solr command window.
 
-The following figure shows an example.
+The following figure shows an example of a storefront search.
 
 <img src="{{ site.baseurl }}common/images/solr_verify.png" width="650px" alt="Verify Solr works by searching the storefront">
 

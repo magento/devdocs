@@ -11,7 +11,20 @@ github_link: config-guide/solr/solr-script.md
 
 <img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only">
 
-<h2 id="solr-script"></a>Script Solr startup and shutdown</h2>
+<h2 id="solr-prod">Prepare Solr for production</h2>
+After you've tested the Solr solution, you should perform the following tasks to get it ready for production:
+
+*	See more Solr configuration options in the Magento EE User Guide (available with the Magento 2 EE release)
+*	Set up <a href="https://fedoraproject.org/wiki/How_to_edit_iptables_rules" target="_blank">firewall rules</a> to enable Solr and Magento to communicate
+*	Implement a custom web application deployed to a scalable application server
+*	Consider a dedicated Solr server, or at least deploying Solr to a different server than Magento
+*	Consider scalability by <a href="https://cwiki.apache.org/confluence/display/solr/SolrCloud" target="_blank">clustering Solr</a>
+*	If you choose to enable SELinux, set up <a href="http://wiki.centos.org/HowTos/SELinux" target="_blank">rules</a> to allow Magento and Solr to communicate with each other
+
+	SELinux settings are entirely up to you; Magento does not recommend anything in particular. Because SELinux is very complex, make sure you have an experienced system administrator who can set it up for you.
+*	Script Solr startup and shutdown as discussed in the next section
+
+<h3 id="solr-script">Script Solr startup and shutdown</h3>
 In a production environment, you should start and stop Solr using a script.
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -64,12 +77,12 @@ All parameters shown in the following table are required.
   <th>Description</th>
 </tr>
 <tr>
-  <td>[your Solr install dir]</td>
+  <td>&lt;your Solr install dir></td>
   <td>The absolute file system path to your Solr installation. (For example, <code>/etc/solr/apache-solr-3.6.2</code></td>
 </tr>
 <tr>
-  <td><em>jetty-stop-port</em><br />
-  <em>jetty-stop-key</em></td>
+  <td>&lt;jetty-stop-port><br />
+  &lt;jetty-stop-key></td>
   <td>Security parameters used to prevent malicious attempts to stop Jetty.
 
   For <code>-DSTOP.PORT=</code>, specify any unused port.
@@ -80,11 +93,11 @@ All parameters shown in the following table are required.
 </td>
 </tr>
 <tr>
-  <td><em>path-to-solr-log-file</em></td>
+  <td>&lt;path-to-solr-log-file></td>
   <td>Absolute file system path to the Solr log file. (For example, <code>/var/log/solr.log</code>)</td>
 </tr>
 <tr>
-  <td><em>java_home</em></td>
+  <td>&lt;java_home></td>
   <td>Absolute file system path to your Java executable. (For example, <code>/usr/bin/java</code>)</td>
 </tr>
 </tbody>
