@@ -36,11 +36,11 @@ When you're developing Magento components (modules, themes, and language package
 		</tr>
 	<tr>
 		<td>var/page_cache</td>
-		<td>Cached pages. (This directory is empty if you use a third-party caching accelerator like Varnish.)</td>
+		<td>Cached pages from the full page cache mechanism. (This directory is empty if you use a third-party HTTP accelerator like Varnish.)</td>
 	</tr>
 	<tr>
 		<td>var/cache</td>
-		<td>All cacheable objects <em>except</em> the page cache. (This directory is empty if you use a third-party caching accelerator like Varnish.)</td>
+		<td>All cacheable objects <em>except</em> the page cache. (This directory is empty if you use a third-party cache storage like Redis.)</td>
 	</tr>
 	<tr>
 		<td>var/composer_home</td>
