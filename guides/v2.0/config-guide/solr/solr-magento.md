@@ -56,6 +56,8 @@ Magento comes packaged with a sample Solr configuration you can use and customiz
 	to
 
 		name=magento2
+
+	<a href="https://wiki.apache.org/solr/Core%20Discovery%20%284.4%20and%20beyond%29?action=show&redirect=Core+Discovery+%284.3+and+beyond%29" target="_blank">More information about core.properties</a>
 3.	Save your changes to `core.properties` and exit the text editor.
 
 3.  *Task for Tomcat 6 with CentOS only*
@@ -171,7 +173,7 @@ The button changes as follows.
 Only after the test connection succeeds, click <strong>Save Config</strong> and continue with the next section.
 
 <h2 id="solr-reindex">Reindexing catalog search and refreshing the full page cache</h2>
-After you change the Solr configuration, you must reindex the catalog search index and refresh the full page using the Admin or command line.
+After you change MAgento's Solr configuration, you must reindex the catalog search index and refresh the full page using the Admin or command line.
 
 To refresh the cache using the Admin:
 
@@ -205,7 +207,7 @@ To verify Solr works, go to the storefront and search for any term (including on
 
 The following figure shows an example of a storefront search.
 
-<img src="{{ site.baseurl }}common/images/solr_verify.png" width="650px" alt="Verify Solr works by searching the storefront">
+<img src="{{ site.baseurl }}common/images/solr_verify.png" width="750px" alt="Verify Solr works by searching the storefront">
 
 The following excerpt from the Solr command window shows the same search:
 

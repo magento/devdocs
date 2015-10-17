@@ -19,7 +19,7 @@ github_link: config-guide/solr/solr-overview.md
 *	<a href="#prereq">Prerequisites</a>
 *	<a href="#install-prereq-software">Install prerequisite software</a>
 * 	<a href="{{ site.gdeurl }}config-guide/solr/solr-magento.html">Configure Solr and Magento</a>
-*	<a href="{{ site.gdeurl }}config-guide/solr/solr-script.html">Script Solr startup and shutdown</a>
+*	<a href="{{ site.gdeurl }}config-guide/solr/solr-script.html">Prepare Solr for production</a>
 
 <h2 id="overview">Overview</h2>
 Magento Enterprise Edition (EE) version 2.x enables you to configure either of the following as a catalog search engine:
@@ -128,7 +128,7 @@ Solr's powerful external configuration allows it to be tailored to almost any ty
 
 
 <div class="bs-callout bs-callout-warning">
-		<p>Customize the Solr search engine at your own risk. Magento supports only the options displayed in the Admin. Customizing the Solr engine itself, while potentially useful, can cause issues with Magento. If you encounter problems with your customizations, do not contact Magento Support; instead, consult the resources available from the <a href="http://wiki.apache.org/solr/" target="_blank">Apache Solr Wiki</a>.</p>
+	<p>Customize the Solr search engine at your own risk. Magento supports only the options displayed in the Admin. Customizing the Solr engine itself, while potentially useful, can cause issues with Magento. If you encounter problems with your customizations, do not contact Magento Support; instead, consult the resources available from the <a href="http://wiki.apache.org/solr/" target="_blank">Apache Solr Wiki</a>.</p>
 </div>
 
 In this topic, you'll use the example configuration provided with Solr and Magento's provided Solr configuration to implement a simple, quick integration with Solr.
@@ -145,7 +145,7 @@ This topic discusses a simple way to set up Solr in a development environment. N
 The following suggestions in this topic should *not* be used in a production environment because they're potentially unsafe:
 
 *	Starting the example Solr web application using `java -jar start.jar` because it's not maintainable. You should script starting and stopping Solr instead.
-*	Using the example Solr web application is not recommended because you should customize a new web application for your use. You can also <a href="https://dzone.com/articles/top-open-source-javaEE-application-servers" target="_blank">compare application servers</a> to determine if Jetty is appropriate for your needs.
+*	Using the example Solr web application is not recommended because you should customize a new web application for your use. You can also <a href="https://dzone.com/articles/top-open-source-javaEE-application-servers" target="_blank">compare application servers</a> to determine if the bundled Jetty application server is appropriate for your needs.
 *	Turning off your UNIX firewall is not recommended in production. (As an alternative, you can set up firewall rules to allow Magento and Solr to communicate.)
 *	Setting SELinux to `permissive` 
 
