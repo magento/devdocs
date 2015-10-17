@@ -99,7 +99,7 @@ In <code>_extend.less</code> register the <code>_buttons_extend.less</code> by a
 To extend the parent theme's styles for buttons in your theme:
 <ol>
 <li>In your theme directory, create a <code>web/css/source</code> sub-directory. </li>
-<li>Create a <code>_extend.less</code> file here. The path to it looks like following: 
+<li>Create a <code>_buttons.less</code> file here. The path to it looks like following: 
 
 <pre>
 app/design/frontend/&lt;Vendor&gt;/
