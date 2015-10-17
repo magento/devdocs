@@ -173,7 +173,7 @@ The button changes as follows.
 Only after the test connection succeeds, click <strong>Save Config</strong> and continue with the next section.
 
 <h2 id="solr-reindex">Reindexing catalog search and refreshing the full page cache</h2>
-After you change MAgento's Solr configuration, you must reindex the catalog search index and refresh the full page using the Admin or command line.
+After you change Magento's Solr configuration, you must reindex the catalog search index and refresh the full page using the Admin or command line.
 
 To refresh the cache using the Admin:
 

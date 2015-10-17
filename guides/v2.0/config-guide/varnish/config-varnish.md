@@ -31,7 +31,7 @@ Magento 2 supports Varnish versions 3.0.5 or later or any Varnish 4.x version.
 
 <div class="bs-callout bs-callout-warning">
     <p>For performance reasons, we <em>strongly recommend</em> you use Varnish in production instead of the default full-page caching. Full-page caching (to either the file system or database) is much slower than Varnish. Varnish is designed to accelerate the HTTP protocol.</p>
-    <p>Full-page cachine works well in a development environment.</p>
+    <p>Full-page caching works well in a development environment.</p>
 </div>
 
 
