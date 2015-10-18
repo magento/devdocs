@@ -56,11 +56,8 @@ Your *development system* is a dedicated developer or build system where you per
 
 	One way to do this is to run the <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-install.html">command-line installer</a> with the optional `--cleanup-database` command.
 4.	Use the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html">`magento setup:static-content:deploy`</a> command to deploy static view files.
-5.	Compile code using the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-multi.html">multi-tenant compiler</a>.
+5.	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-multi.html">Compile code</a>.
 
-	<div class="bs-callout bs-callout-warning">
-    	<p>Due to a known issue, the single-tenant compiler does not compile proxies. If you have code that depends on proxies, you must use the multi-tenant compiler; otherwise, there will be errors in your production system.</p>
-	</div>
 2.	Clean temporary files that shouldn't be in production.
 
 		cd <your Magento install dir>/var
