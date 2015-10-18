@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: Varnish
+subgroup: CM_Varnish
 title: Final verification
 menu_title: Final verification
 menu_order: 100

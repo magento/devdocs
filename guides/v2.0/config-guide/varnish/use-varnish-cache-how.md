@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: Varnish
+subgroup: CM_Varnish
 title: How Varnish caching works
 menu_title: How Varnish caching works
 menu_order: 105
