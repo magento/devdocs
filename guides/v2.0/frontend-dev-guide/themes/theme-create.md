@@ -13,6 +13,19 @@ redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-create.html
 
 This topic discusses how to create the files that make up a theme, how to add a logo to a theme, and how to size images.
 
+<h3>Contents</h3>
+
+- <a href="#layout_theme_how-to_dirs">Create a theme directory</a>
+- <a href="#fedg_create_theme_how-to_declare">Declare your theme</a>
+- <a href="#fedg_create_theme_composer">Make your theme a Composer package (optional)</a>
+- <a href="#fedg_create_theme_reg">Add <code>registration.php</code></a>
+- <a href="#fedg_create_theme_how-to-images">Configure images</a>
+- <a href="#fedg_theme_how-to_static">Create directories for static files</a>
+- <a href="#fedg_theme_how-to_structure">Your theme directory structure now</a>
+- <a href="#logo_declare">Declaring theme logo</a>
+
+
+
 <h2 id="layout_theme_how-to_dirs">Create a theme directory</h2>
 
 To create the directory for your theme:
@@ -91,6 +104,30 @@ Example of a theme `composer.json`:
 {% endhighlight %}
 
 You can find details about the Composer integration in the Magento system in <a href="{{site.gdeurl}}extension-dev-guide/composer-integration.html">Composer integration</a>.
+
+<h2 id="fedg_create_theme_reg">Add registration.php</h2>
+
+To register your theme in the system, in your theme directory add a `registration.php` file with the following content:
+
+{% highlight php %}
+
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+\Magento\Framework\Component\ComponentRegistrar::register(
+    \Magento\Framework\Component\ComponentRegistrar::THEME,
+    'frontend/<Vendor>/<theme>',
+    __DIR__
+);
+
+{% endhighlight %}
+
+Where `<Vendor>` is your vendor name, `<theme>` is the theme code.
+
+For illustration, see the <a href="{{site.mage2000url}}app/design/frontend/Magento/luma/registration.php">registration.php</a> file of the Magento Luma theme.
+
 
 <h2 id="fedg_create_theme_how-to-images">Configure images</h2>
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: Varnish
+subgroup: CM_Varnish
 title: Configure and use Varnish
 menu_title: Configure and use Varnish
 menu_order: 1
@@ -29,11 +29,19 @@ github_link: config-guide/varnish/config-varnish.md
 
 Magento 2 supports Varnish versions 3.0.5 or later or any Varnish 4.x version.
 
+<div class="bs-callout bs-callout-warning">
+    <p>For performance reasons, we <em>strongly recommend</em> you use Varnish in production instead of the default full-page caching. Full-page caching (to either the file system or database) is much slower than Varnish. Varnish is designed to accelerate the HTTP protocol.</p>
+    <p>Full-page caching works well in a development environment.</p>
+</div>
+
+
 For more information about Varnish, see:
 
 *	<a href="https://en.wikipedia.org/wiki/Varnish_%28software%29" target="_blank">wikipedia</a>
 *	<a href="https://www.varnish-cache.org/about" target="_blank">About Varnish</a>
 *	<a href="https://www.varnish-software.com/book/4.0/chapters/Introduction.html#what-is-varnish" target="_blank">Introduction to Varnish</a>
+*	<a href="https://www.varnish-cache.org/docs/trunk/reference/varnishd.html#ref-varnishd-options" target="_blank">Varnish startup options</a>
+*	<a href="https://www.varnish-software.com/book/3/Tuning.html#threading-parameters" target="_blank">Varnish tuning parameters</a>
 
 <div class="bs-callout bs-callout-info" id="info">
 	<ul><li>Except where noted, you must enter all commands discussed in this topic as a user with <code>root</code> privileges.</li>

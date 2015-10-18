@@ -120,6 +120,10 @@ Messages similar to the following display:
 	Please set file permission of bin/magento to executable
 	Disabling maintenance mode
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>If the command results in a <code>Segmentation fault</code> message, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_segfault.html">Segmentation fault during rollback</a>.</p>
+</div>
+
 #### Related topics
 
 *	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-install.html">Installing the Magento software using the command line</a>
