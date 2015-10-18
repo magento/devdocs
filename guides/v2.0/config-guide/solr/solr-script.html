@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Generate data for performance testing</title>
+	<title>Prepare Solr for production</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/config-guide/cli/config-cli-subcommands-perf-data.html">
+	<link rel="canonical" href="//guides/v2.0/config-guide/solr/solr-script.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Generate data for performance testing</h1>
+		<h1 class="page-heading">Prepare Solr for production</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/config-guide/cli/config-cli-subcommands-perf-data.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/config-guide/solr/solr-script.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -211,210 +211,177 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h4 id="contents">Contents</h4>
+		<p><img src="/common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only" /></p>
+
+<h2 id="solr-prod">Prepare Solr for production</h2>
+<p>After you’ve tested the Solr solution, you should perform the following tasks to get it ready for production:</p>
 
 <ul>
-  <li><a href="#config-cli-perf-overview">Overview of performance testing data</a></li>
-  <li><a href="#config-cli-before">First steps</a></li>
-  <li><a href="#config-cli-perf-prof">About profiles</a></li>
-  <li><a href="#config-cli-perf-run">Run the data generator</a></li>
+  <li>See more Solr configuration options in the Magento EE User Guide (available with the Magento 2 EE release)</li>
+  <li>Set up <a href="https://fedoraproject.org/wiki/How_to_edit_iptables_rules" target="_blank">firewall rules</a> to enable Solr and Magento to communicate</li>
+  <li>Implement a custom web application deployed to a scalable application server</li>
+  <li>Consider a dedicated Solr server, or at least deploying Solr to a different server than Magento</li>
+  <li>Consider scalability by <a href="https://cwiki.apache.org/confluence/display/solr/SolrCloud" target="_blank">clustering Solr</a></li>
+  <li>
+    <p><a href="http://wiki.apache.org/solr/" target="_blank">Apache Solr Wiki</a>Customize Solr&lt;/a&gt;</p>
+
+    <div class="bs-callout bs-callout-warning">
+    <p>Customize the Solr search engine at your own risk. Magento supports only the options displayed in the Admin. Customizing the Solr engine itself, while potentially useful, can cause issues with Magento. If you encounter problems with your customizations, do not contact Magento Support; instead, consult the resources available from the <a href="http://wiki.apache.org/solr/" target="_blank">Apache Solr Wiki</a>.</p>
+</div>
+  </li>
+  <li>
+    <p>If you choose to enable SELinux, set up <a href="http://wiki.centos.org/HowTos/SELinux" target="_blank">rules</a> to allow Magento and Solr to communicate with each other</p>
+
+    <p>SELinux settings are entirely up to you; Magento does not recommend either enabling it or disabling it. Because SELinux is very complex, make sure you have an experienced system administrator who can configure it.</p>
+  </li>
+  <li>Script Solr startup and shutdown as discussed in the next section</li>
 </ul>
 
-<h2 id="config-cli-perf-overview">Overview of performance testing data</h2>
-<p>To use the Magento performance toolkit or another tool for performance testing, you must generate a large amount of data (for example, stores, categories, products, and so on).</p>
+<h3 id="solr-script">Script Solr startup and shutdown</h3>
+<p>In a production environment, you should start and stop Solr using a script.</p>
 
-<p>You can adjust the amount of data you create using <em>profiles</em> (small, medium, large, and extra large). The next section discusses profiles in more detail.</p>
-
-<p>The following figure shows how a product displays on the storefront using the small profile:</p>
-
-<p><img src="/common/images/config_generate-data.png" alt="Sample storefront with generated data" /></p>
-
-<p>This gives you an idea about what the data looks like.</p>
-
-<h2 id="config-cli-before">First steps</h2>
-<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.</li>
-<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
-Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
-bash shell example for CentOS:<br />
-<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You can also run the commands in the following ways:</p>
-<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
-<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
-<p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
+	<p>You must perform all tasks discussed in this section as a user with <code>root</code> privileges.</p>
 </div>
 
-<p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+<p>Create a script named <code>/etc/init.d/solr</code> with options similar to the following:</p>
 
-<h2 id="config-cli-perf-prof">About profiles</h2>
-<p>The following table provides details about the data generator profiles (small, medium, large, and extra large).</p>
+<pre><code>#!/bin/sh
+ 
+#Starts, stops, and restarts Apache Solr.
+#chkconfig: 35 92 08
+#description: Starts and stops Apache Solr
+ 
+SOLR_DIR="&lt;your Solr install dir&gt;"
+JAVA_OPTIONS="-Xmx1024m -DSTOP.PORT=&lt;jetty-stop-port&gt; -DSTOP.KEY=&lt;jetty-stop-key&gt; -jar  start.jar"
+LOG_FILE="&lt;path-to-solr-log-file&gt;"
+JAVA="&lt;java_home&gt;"
+ 
+case $1 in
+start)
+echo -n "Starting Solr"
+cd $SOLR_DIR
+$JAVA $JAVA_OPTIONS 2&gt; $LOG_FILE &amp;
+;;
+stop)
+echo -n "Stopping Solr"
+cd $SOLR_DIR
+$JAVA $JAVA_OPTIONS --stops
+;;
+restart)
+$0 stop
+sleep 1
+$0 start
+;;
+*)
+echo "Usage: $0 {start|stop|restart}" &gt;&amp;2
+exit 1
+;;
+esac
+</code></pre>
 
-<p>Profiles are located in <code>&lt;your Magento install dir&gt;/setup/performance-toolkit/profiles/&lt;ce or ee&gt;</code></p>
-
-<p>For example, <code>/var/www/html/magento2/setup/performance-toolkit/profiles/ce</code></p>
+<p>All parameters shown in the following table are required.</p>
 
 <table>
-	<tbody>
-		<tr>
-			<th>Parameter</th>
-			<th>Small profile</th>
-			<th>Medium profile</th>
-			<th>Large profile</th>
-			<th>Extra large profile</th>
-		</tr>
-		
-	<tr>
-		<td><p>websites</p></td>
-		<td><p>1</p></td>
-		<td><p>1</p></td>
-		<td><p>3</p></td>
-		<td><p>5</p></td>
-	</tr>
-	<tr>
-		<td><p>store_groups</p></td>
-		<td><p>1</p></td>	
-		<td><p>2</p></td>
-		<td><p>3</p></td>
-		<td><p>5</p></td>	
-	</tr>
-	<tr>
-		<td><p>store_views</p></td>
-		<td><p>1</p></td>	
-		<td><p>2</p></td>
-		<td><p>3</p></td>
-		<td><p>5</p></td>	
-	</tr>
-	<tr>
-		<td><p>simple_products</p></td>
-		<td><p>800</p></td>	
-		<td><p>16,000</p></td>
-		<td><p>400,000</p></td>
-		<td><p>800,000</p></td>	
-	</tr>
-	<tr>
-		<td><p>configurable_products</p></td>
-		<td><p>50</p></td>	
-		<td><p>1,000</p></td>
-		<td><p>25,000</p></td>
-		<td><p>50,000</p></td>	
-	</tr>
-	<tr>
-		<td><p>categories</p></td>
-		<td><p>30</p></td>	
-		<td><p>300</p></td>
-		<td><p>1,000</p></td>
-		<td><p>3,000</p></td>	
-	</tr>
-	<tr>
-		<td><p>categories_nesting_level</p></td>
-		<td><p>3</p></td>	
-		<td><p>3</p></td>
-		<td><p>3</p></td>
-		<td><p>6</p></td>	
-	</tr>
-	<tr>
-		<td><p>catalog_price_rules</p></td>
-		<td><p>10</p></td>	
-		<td><p>20</p></td>
-		<td><p>50</p></td>
-		<td><p>100</p></td>	
-	</tr>
-	<tr>
-		<td><p>catalog_target_rules</p></td>
-		<td><p>2</p></td>	
-		<td><p>5</p></td>
-		<td><p>10</p></td>
-		<td><p>50</p></td>	
-	</tr>
-	<tr>
-		<td><p>cart_price_rules</p></td>
-		<td><p>10</p></td>	
-		<td><p>20</p></td>
-		<td><p>50</p></td>
-		<td><p>100</p></td>		
-	</tr>
-	<tr>
-		<td><p>cart_price_rules_floor</p></td>
-		<td><p>2</p></td>	
-		<td><p>2</p></td>
-		<td><p>2</p></td>
-		<td><p>5</p></td>		
-	</tr>
-	<tr>
-		<td><p>customers</p></td>
-		<td><p>20</p></td>	
-		<td><p>200</p></td>
-		<td><p>2,000</p></td>
-		<td><p>5,000</p></td>		
-	</tr>
-	<tr>
-		<td><p>tax rates</p></td>
-		<td><p>40,000</p></td>	
-		<td><p>40,000</p></td>
-		<td><p>40,000</p></td>
-		<td><p>40,000</p></td>		
-	</tr>
-	<tr>
-		<td><p>orders</p></td>
-		<td><p>80</p></td>	
-		<td><p>1,600</p></td>
-		<td><p>40,000</p></td>
-		<td><p>80,000</p></td>		
-	</tr>
-	</tbody>
+<col width="200" />
+<col width="300" />
+<tbody>
+<tr>
+  <th>Value</th>
+  <th>Description</th>
+</tr>
+<tr>
+  <td>&lt;your Solr install dir&gt;</td>
+  <td>The absolute file system path to your Solr installation. (For example, <code>/etc/solr/apache-solr-3.6.2</code></td>
+</tr>
+<tr>
+  <td>&lt;jetty-stop-port&gt;<br />
+  &lt;jetty-stop-key&gt;</td>
+  <td>Security parameters used to prevent malicious attempts to stop Jetty.
+
+  For <code>-DSTOP.PORT=</code>, specify any unused port.
+
+  For <code>-DSTOP.KEY=</code>, specify a string. If you omit a value for <code>-DSTOP.KEY=</code>, Jetty generates a random key you must enter to stop Jetty.
+ 
+  For more information, see <a href="https://wiki.eclipse.org/Jetty/Howto/Configure_SSL" target="_blank">Securing Jetty</a>.
+</td>
+</tr>
+<tr>
+  <td>&lt;path-to-solr-log-file&gt;</td>
+  <td>Absolute file system path to the Solr log file. (For example, <code>/var/log/solr.log</code>)</td>
+</tr>
+<tr>
+  <td>&lt;java_home&gt;</td>
+  <td>Absolute file system path to your Java executable. (For example, <code>/usr/bin/java</code>)</td>
+</tr>
+</tbody>
 </table>
 
-<h3 id="config-cli-perf-run">Run the data generator</h3>
-<p>Run the command as discussed in this section. After the command runs, it rebuilds indexers.</p>
+<p>An example follows:</p>
 
-<p>Command options:</p>
-
-<pre><code>magento setup:perf:generate-fixtures {path to profile}
+<pre><code>#!/bin/sh
+ 
+#Starts, stops, and restarts Apache Solr.
+#chkconfig: 35 92 08
+#description: Starts and stops Apache Solr
+ 
+SOLR_DIR="/opt/solr/apache-solr-4-10-4/example"
+JAVA_OPTIONS="-Xmx1024m -DSTOP.PORT=8079 -DSTOP.KEY=mykey -jar  start.jar"
+LOG_FILE="/var/log/solr.log"
+JAVA="/usr/bin/java"
+ 
+case $1 in
+start)
+echo -n "Starting Solr"
+cd $SOLR_DIR
+$JAVA $JAVA_OPTIONS 2&gt; $LOG_FILE &amp;
+;;
+stop)
+echo -n "Stopping Solr"
+cd $SOLR_DIR
+$JAVA $JAVA_OPTIONS --stop
+;;
+restart)
+$0 stop
+sleep 1
+$0 start
+;;
+*)
+echo "Usage: $0 {start|stop|restart}" &gt;&amp;2
+exit 1
+;;
+esac
 </code></pre>
 
-<p>where <code>&lt;path to profile&gt;</code> specifies the absolute file system path to and name of a profile.</p>
-
-<p>For example,</p>
-
-<pre><code>magento setup:perf:generate-fixtures /var/www/html/magento2/setup/performance-toolkit/profiles/ce/small.xml
-</code></pre>
-
-<p>Sample output for the small profile:</p>
-
-<pre><code>Generating profile with following params:
- |- Websites: 1
- |- Store Groups: 1
- |- Store Views: 1
- |- Categories: 30
- |- Simple products: 800
- |- Configurable products: 50
- |- Customers: 20
- |- Cart Price Rules: 10
- |- Catalog Price Rules: 10
- |- Orders: 80
-Generating websites, stores and store views...  done in &lt;time&gt;
-Generating categories...  done in &lt;time&gt;
-Generating simple products...  done in &lt;time&gt;
-Generating configurable EAV variations...  done in &lt;time&gt;
-... more ...
-</code></pre>
-
-<h4 id="related-topics">Related topics</h4>
+<p>To complete the script:</p>
 
 <ul>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create LESS from CSS</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-test.html">Run tests</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
+  <li>Make sure you saved the edited version of the script.</li>
+  <li>
+    <p>Give the script executable permissions as follows:</p>
+
+    <pre><code>chmod +x /etc/init.d/solr
+</code></pre>
+  </li>
+  <li>
+    <p>You can now start, stop, and restart Solr as follows:</p>
+
+    <p>Start Solr: <code>/etc/init.d/solr start</code></p>
+
+    <p>Stop Solr: <code>/etc/init.d/solr stop</code></p>
+  </li>
+  <li>Restart Solr: <code>/etc/init.d/solr restart</code></li>
 </ul>
+
+<!-- <h2 id="next"></a>Next steps</h2>
+For additional information about Solr, see the following:
+
+*	For more information about performance, see "Using Solr as a Search Engine" in <a href="http://info.magento.com/rs/magentocommerce/images/Magento_PerformanceWhitepaper-EEv1-9.1.pdf" target="_blank">Maximizing Performance and Scalability with Magento Enterprise Edition</a>
+*	<a href="http://wiki.apache.org/solr/#Operations_and_Production" target="_blank">Customize Solr</a> -->
+
+<!-- <h2 id="related">Related Information</h2>
+*	<a href="http://www.magentocommerce.com/knowledge-base/entry/solr-ee-faq" target="_blank">Frequently Asked Questions (FAQ) About Using Solr with Magento Enterprise Edition (EE)</a>
+*	<a href="http://www.magentocommerce.com/knowledge-base/entry/solr-ee-best-practices" target="_blank">Solr and Magento Enterprise Edition (EE) Best Practices</a> -->
 
 
 		</div>
@@ -694,7 +661,7 @@ Generating configurable EAV variations...  done in &lt;time&gt;
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
 						
 								
 								
@@ -880,7 +847,7 @@ Generating configurable EAV variations...  done in &lt;time&gt;
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/solr/solr-script.html">Prepare Solr for production</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/config-guide/solr/solr-script.html">Prepare Solr for production</a></li>
 						
 								
 								

@@ -238,12 +238,19 @@
 
 <p>Magento 2 supports Varnish versions 3.0.5 or later or any Varnish 4.x version.</p>
 
+<div class="bs-callout bs-callout-warning">
+    <p>For performance reasons, we <em>strongly recommend</em> you use Varnish in production instead of the default full-page caching. Full-page caching (to either the file system or database) is much slower than Varnish. Varnish is designed to accelerate the HTTP protocol.</p>
+    <p>Full-page caching works well in a development environment.</p>
+</div>
+
 <p>For more information about Varnish, see:</p>
 
 <ul>
   <li><a href="https://en.wikipedia.org/wiki/Varnish_%28software%29" target="_blank">wikipedia</a></li>
   <li><a href="https://www.varnish-cache.org/about" target="_blank">About Varnish</a></li>
   <li><a href="https://www.varnish-software.com/book/4.0/chapters/Introduction.html#what-is-varnish" target="_blank">Introduction to Varnish</a></li>
+  <li><a href="https://www.varnish-cache.org/docs/trunk/reference/varnishd.html#ref-varnishd-options" target="_blank">Varnish startup options</a></li>
+  <li><a href="https://www.varnish-software.com/book/3/Tuning.html#threading-parameters" target="_blank">Varnish tuning parameters</a></li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -598,6 +605,55 @@ Varnish cache server
 							
 								
 								
+									<li class="  active "><a class="nav-header" href="/guides/v2.0/config-guide/varnish/config-varnish.html">Configure and use Varnish</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-install.html">Install Varnish</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-configure.html">Configure Varnish and your web server</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-magento.html">Configure Magento to use Varnish</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-final.html">Final verification</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/use-varnish-cache.html">How Magento cache clearing works with Varnish</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/use-varnish-cache-how.html">How Varnish caching works</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
 									<li class=" "><a class="nav-header" href="/guides/v2.0/config-guide/config/caching.html">Caching</a></li>
 									
 								
@@ -702,7 +758,7 @@ Varnish cache server
 							
 								
 								
-									<li class="  active "><a class="nav-header" href="/guides/v2.0/config-guide/varnish/config-varnish.html">Configure and use Varnish</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/config-guide/solr/solr-overview.html">Install and configure Solr (Enterprise Edition only)</a></li>
 									
 								
 								
@@ -711,27 +767,11 @@ Varnish cache server
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-install.html">Install Varnish</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/solr/solr-magento.html">Configure Solr and Magento</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-configure.html">Configure Varnish and your web server</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-magento.html">Configure Magento to use Varnish</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-final.html">Final verification</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/use-varnish-cache.html">How Magento cache clearing works with Varnish</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/use-varnish-cache-how.html">How Varnish caching works</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/solr/solr-script.html">Prepare Solr for production</a></li>
 						
 								
 								

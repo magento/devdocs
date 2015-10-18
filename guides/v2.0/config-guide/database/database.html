@@ -231,6 +231,11 @@
   <li>Using a custom cache frontend, in which case you modify <code>env.php</code> only.</li>
 </ul>
 
+<div class="bs-callout bs-callout-warning">
+    <p>Database caching&mdash;like file-based caching&mdash; works well in a development environment but we <em>strongly recommend</em> you use <a href="/guides/v2.0/config-guide/varnish/config-varnish.html">Varnish</a> in production instead.</p>
+    <p>Varnish is designed to accelerate the HTTP protocol.</p>
+</div>
+
 <h2 id="mage-cache-db-prereq">Prerequisites</h2>
 <p>Before you continue, if you’re using your own frontend cache, make sure you <a href="/guides/v2.0/config-guide/config/caching_frontend-cache-types.html">associate cache frontends with cache types</a>. If you’re using the <code>default</code> frontend cache, you don’t have to do that.</p>
 
@@ -782,6 +787,55 @@ ls &lt;your Magento install dir&gt;/var/page_cache/*
 							
 								
 								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/config-guide/varnish/config-varnish.html">Configure and use Varnish</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-install.html">Install Varnish</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-configure.html">Configure Varnish and your web server</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-magento.html">Configure Magento to use Varnish</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-final.html">Final verification</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/use-varnish-cache.html">How Magento cache clearing works with Varnish</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/use-varnish-cache-how.html">How Varnish caching works</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
 									<li class=" "><a class="nav-header" href="/guides/v2.0/config-guide/config/caching.html">Caching</a></li>
 									
 								
@@ -886,7 +940,7 @@ ls &lt;your Magento install dir&gt;/var/page_cache/*
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/config-guide/varnish/config-varnish.html">Configure and use Varnish</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/config-guide/solr/solr-overview.html">Install and configure Solr (Enterprise Edition only)</a></li>
 									
 								
 								
@@ -895,27 +949,11 @@ ls &lt;your Magento install dir&gt;/var/page_cache/*
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-install.html">Install Varnish</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/solr/solr-magento.html">Configure Solr and Magento</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-configure.html">Configure Varnish and your web server</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-magento.html">Configure Magento to use Varnish</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-final.html">Final verification</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/use-varnish-cache.html">How Magento cache clearing works with Varnish</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/use-varnish-cache-how.html">How Varnish caching works</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/solr/solr-script.html">Prepare Solr for production</a></li>
 						
 								
 								
