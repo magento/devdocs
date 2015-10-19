@@ -40,6 +40,7 @@ The gallery magnifier source is <a href="{{site.mage2000url}}lib/web/magnifier/m
 <li><a href="#gallery_ratio">ratio</a></li>
 <li><a href="#gallery_thumbheight">thumbheight</a></li>
 <li><a href="#gallery_thumbwidth">thumbwidth</a></li>
+<li><a href="#gallery_showcaption">showcaption</li>
 <li><a href="#gallery_startindex">startindex</a></li>
 <li><a href="#gallery_swipe">swipe</a></li>
 <li><a href="#gallery_width">width</a></li>
@@ -132,9 +133,12 @@ Example of the initialization with the minheight option specified:
 <h3 id="gallery_mindwidth"><code>minwidth</code></h3>
 
 Minimal width of the preview in pixels or percents.
-     Type: Number, String
-     Default value: null
-     Example of the initialization with the minwidth option specified:
+
+**Type**: Number|String
+
+**Default value**: `null`
+
+Example of the initialization with the minwidth option specified:
      $("#element").fotorama({ minwidth: 400});
      $("#element").fotorama({ minwidth: "50%"});
 
@@ -167,40 +171,63 @@ Example of the initialization with the ratio option specified:
 
 Enable view of caption in preview. Can be for initialized for specific image. Can work globally.
 
-Type: boolean
-    Example of the initialization with the showcaption option specified:
+<p class="q">What is the difference between showcaptions and caption?</p>
+
+**Type**: Boolean
+
+Example of the initialization with the showcaption option specified:
      $("#element").fotorama({ showcaption: 90});
 
-<h3 id="gallery_startindex">startindex</h3>
-    Set number, which number of image will be visible when gallery loaded.
-    Type: Number
-    default: 0 
-    Example of the initialization with the startindex option specified:
+<h3 id="gallery_startindex"><code>startindex</code></h3>
+
+The index number of the image that is displayed once the fotorama is initialized.
+
+<p class="q">Where do we set these numbers</p>
+
+**Type**: Number
+    
+**Default value**: `0` 
+    
+Example of the initialization with the startindex option specified:
      $("#element").fotorama({ startindex: 3});
 
 
-<h3 id="gallery_swipe">swipe</h3>
-    Enable swipe preview in left and right.
-    Type: boolean
-    Example of the initialization with the swipe option specified:
+<h3 id="gallery_swipe"><code>swipe</code></h3>
+
+Moving between preview images by swiping in left and right.
+
+**Type**: Boolean
+    
+Example of the initialization with the swipe option specified:
      $("#element").fotorama({ swipe: 90});
 
-<h3 id="gallery_thumbwidth">thumbwidth</h3>
-    Set width of thumbnails in navigation
-    Type: Number, String
-    Example of the initialization with the thumbwidth option specified:
+<h3 id="gallery_thumbwidth"><code>thumbwidth</code></h3>
+
+Width of thumbnails.
+
+**Type**: Number|String
+
+Example of the initialization with the thumbwidth option specified:
      $("#element").fotorama({ thumbwidth: 90});
-<h3 id="gallery_thumbwidth">thumbheight</h3>
-    Set height of thumbnails in navigation
-    Type: Number, String
-    Example of the initialization with the thumbheight option specified:
+
+<h3 id="gallery_thumbwidth"><code>thumbheight</code></h3>
+
+Height of thumbnails in navigation.
+
+**Type**: Number|String
+    
+Example of the initialization with the thumbheight option specified:
      $("#element").fotorama({ thumbheight: 90});
 
 
-<h3 id="gallery_width">width</h3>
-Set width for preview in gallery.
-Type: Number, String
-Default value: null
+<h3 id="gallery_width"><code>width</code></h3>
+
+Width of the preview in gallery in pixels or percents.
+
+**Type**: Number, String
+
+**Default value**: `null`
+
 Example of the initialization with the width option specified:
 $("#element").fotorama({ width: 600});
 $("#element").fotorama({ width: "100%"});
