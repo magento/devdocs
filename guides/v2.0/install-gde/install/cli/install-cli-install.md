@@ -24,11 +24,6 @@ See one of the following sections:
 
 See also <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall.html">Update, reinstall, uninstall</a>.
 
-<div class="bs-callout bs-callout-warning">
-    <p>Because of database changes in the Merchant Beta release (1.0.0-beta), you <em>must</em> uninstall the Magento software and reinstall it. Details are provided in <a href="{{ site.gdeurl }}install-gde/install/install-merchbeta.html">Merchant Beta&mdash;uninstall and reinstall</a>.</p>
-</div>
-
-
 <h2 id="instgde-install-cli-prereq">Before you start your installation</h2>
 
 Before you begin, make sure that:
