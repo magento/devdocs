@@ -118,7 +118,7 @@ Block locator is an object ([Mtf\Client\Element\Locator](https://github.com/mage
 
 Also, [Magento\Mtf\Block\Block](https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Block.php) class contains the property `_rootElement` that enables you to get an identifier of the block in the scope of the block. As this class is basic to all blocks, you can use `_rootElement` to find an element in any block.
 
-Example from the <a href="https://github.com/magento/magento2/blob/c08a78b50230e6840099530cd57bfaf13902f27d/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/Instance/Edit/Tab/WidgetInstance.php"><code>LayoutUpdates.php</code></a> block:
+Example from the <a href="https://github.com/magento/magento2/blob/c08a78b50230e6840099530cd57bfaf13902f27d/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/Instance/Edit/Tab/WidgetInstance.php"><code>WidgetInstance.php</code></a> block:
 
 {%highlight php%}
 <?php
@@ -129,7 +129,7 @@ protected function addLayoutUpdates()
 ?>
 {%endhighlight%}
 
-This method looks for the `addLayoutUpdates` inside the block and clicks on it.
+This code uses `_rootElement` to search the button element by the `$this->addLayoutUpdates` selector. The advantage of the `_rootElement` is that it enables to search in context of the block to which the element is belong.
 
 #### Use blocks inside blocks {#mtf_block_in_block}
 
@@ -149,9 +149,11 @@ protected function getTemplateBlock()
 ?>
 {%endhighlight%}
 
+In this code we are creating the `Magento\Backend\Test\Block\Template` block with the selector `$this->templateBlock`.
+
 #### Basic blocks {#mtf_block_basic}
 
-The MTF contains basic blocks with a logic that you can reuse. They are the following:
+Magento contains basic blocks for the functional testing with a logic that you can reuse. They are the following:
 
 * [Magento\Mtf\Block\Block](https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Block.php)
 * [Magento\Mtf\Block\Form](https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php)
@@ -194,13 +196,11 @@ See the `block` node attributes details in the following table:
 
 ## Form mapping {#mtf_block_mapping}
 
-Form block requires entering a data in the fields. You can use mapping to transfer data to the block from <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html">fixture</a>.
+Often you need to test the Magento block that contains a form. And of course, tests require entering the data in the forms. The MTF has [Magento\Mtf\Block\Form][] class that enables you to fill the forms automatically. One of the advantages of using this class is that you can list elements that must be automatically filled. This elements can be grouped in separate XML files. In the MTF we call this process "a mapping". You can use mapping to transfer data to the block from the <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html">fixture</a>.
 
-In the MTF you can use mapping in a block form, which is extended from the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php">Magento\Mtf\Block\Form</a> class.
+A mapping file is an XML file which has the same name and path as the block does, and contains fields that represent form fields. Field name in the mapping file shall match the one in the fixture.
 
-The mapping file is an XML file which has the same name and path as the block does, and contains fields that represent form fields. Field name in the mapping file shall match the one in the fixture.
-
-Let's see the <a href="{{site.mage2000url}}app/code/Magento/Customer/Block/Form/Login.php">Customer Login block</a>. The block has two input fields: `email` and `password`.
+Let's see the [Customer Login]({{site.mage2000url}}app/code/Magento/Customer/Block/Form/Login.php) block. The block has two input fields: `email` and `password`.
 
 <a href="{{site.baseurl}}common/images/mtf_block_login_ui.png"><img src="{{site.baseurl}}common/images/mtf_block_login_ui.png" /></a>
 
@@ -235,9 +235,9 @@ See a description of the nodes in the following table.
 |Node|Description|Value from example|
 |---|---|---|
 |`mapping`|Root node with a `strict` attribute. If `strict` equals 0, then all the FIXTURE field data MUST be entered in the block form. If `strict` equals 1, then ONLY the MAPPING file fields data MUST be entered in the block form.| `"1"`. ONLY the MAPPING file fields data MUST be entered in the block form. |
-|`wrapper`|If fields of the form are grouped and have the format `name='group_name[field_name]`, then you can use wrapper that automatically adds `group_name` to the `selector` of each fields, where `group_name` has not been specified.|`login`|
+|`wrapper`|Automatically adds `group_name` to the selector of the field, when `selector` has not been specified.|`login`|
 |`fields`| The node containing mapping fields. |`<email>`, `<password />`. |
-|`selector`|Value for the selector that is used to find the field. Default: `name=wrapper_value[field_node_name]`. Default value is assigned automatically if the node is absent in the field.| For `<email>`, the `[name='login[username]']`. For `<password />`, the default value, where `wrapper="login"` `[name='login[password]']` implicitly.|
+|`selector`|Value for the selector that is used to find the field. Default: `name=group_name[field_node_name]`. Default value is assigned automatically if the node is absent in the field.| For `<email>`, the `[name='login[username]']`. For `<password />`, the default value, where `wrapper="login"` `[name='login[password]']` implicitly.|
 |`strategy`|The strategy of the selection. Available values: `css selector`, `xpath`. Default: `css selector`. |`css selector` as a default value. |
 |`input`|Type of the input element. Available values: `select`, `checkbox`, `typified element`, `simple`. `simple` is for simple input element. Default: `simple`. Do not use `class` node, if you use `input` in the field. | `simple` as a default value. |
 |`class`|Class of the element. Applicable if non of the `input` options fits. Do not use `input`, if you use `class` in the field.| This node has not been used in the example.|
@@ -250,10 +250,10 @@ The general structure of the form mapping file:
 
 ### Form tab mapping {#mtf_block_map_form_tab}
 
-You can use form tab mapping, when the form that you want to enter data in is split on a few tabs in UI, and you don't want to write a code for clicking on the tabs to choose them and enter data manually.
-To get the block class with form tab mapping, extend your class from the <a href="{{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php" ><code>Magento\Backend\Test\Block\Widget\FormTabs</code></a> and <a href="{{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php"><code>Magento\Backend\Test\Block\Widget\Tab</code></a> class.
+You can use mapping for the forms on tabs (a form tab) that enables you to automatize switching between tabs and entering the data.
+To get the block class with form tab mapping, extend your class from <a href="{{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php" ><code>Magento\Backend\Test\Block\Widget\FormTabs</code> </a>. If you want to use custom tab logic you can extend your class from <a href="{{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php"><code>Magento\Backend\Test\Block\Widget\Tab</code></a> class.
 
-For examle, **Settings**, **Storefront properties**, **Frontend App Options**, **Layout Updates** tabs for the Magento Widget.
+For example, let's see tabs for the Magento Widget: **Settings**, **Storefront properties**, **Frontend App Options**, **Layout Updates** .
 
 <img src="{{site.baseurl}}common/images/mtf_block_tabs_ui.png" />
 
@@ -346,6 +346,8 @@ The general structure of the form tab mapping file:
 
 ### Merge of form tab mapping files {#mtf_block_map_form_tab_merge}
 
+When you test a module that extends functionality of the other module by adding a tab to the testing module entity, you can use merge of form tab mapping files. In other words, you can merge mapping files in the MTF to test  merged tabs in Magento.
+
 In the MTF the form tab mapping files that have the same name and path inside different modules are merged automatically.
 
 Form tab mapping files in the following example will be merged automatically:
@@ -356,17 +358,63 @@ Form tab mapping files in the following example will be merged automatically:
 
 Renders help to unify a polymorphic behavior of the block. In other words, when you want to handle one function (for example, "Add to Cart") under object (for example, product), which behavior differs depending on the type of the object (bundle or simple product), you can create a separate class for each type and call the corresponding class using render.
 
-### Handling renders {#mtf_block_render_handl}
+### How to use renders {#mtf_block_render_handl}
 
-Let's look closer at example with products.
+**Use case**: We want to test the "Add to cart" function. To add different types of products we need to configure each type in a different way. For the configuration we need options of the type, which we want to configure. We can use render to get product options. Render will specify which class to use for specific type of product.
 
-You can create render simply adding `render` node to the block in the [Page][] XML file. For example, see [CatalogProductView.xml][].
+Let's see the `CatalogProductView.xml `page. For the better readability we reduced a list of blocks to one block.
 
 {%highlight xml%}
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/pages.xsd">
+    <page name="CatalogProductView" area="Product" mca="catalog/product/view"  module="Magento_Catalog">
+        <block name="viewBlock" class="Magento\Catalog\Test\Block\Product\View" locator="#maincontent" strategy="css selector" module="Magento_Catalog"/>        
+    </page>
+</config>
+{%endhighlight%}
 
-<config ...etc/pages.xsd">
-    <page name="CatalogProductView" ...>
+This page relates to the Magento Catalog module and contains `ViewBlock`. This block has reference to the `Magento\Catalog\Test\Block\Product\View.php` class, that is responsible to enter data in Product form fields. But different types of products such as bundle have own `ViewBlock` in a corresponding module. And that is where you can use render!
+
+#### Create a render {#mtf_block_render_create}
+Let's create render for the bundle product.
+
+**Step 1**. Create `Bundle/Test/Page/Product/CatalogProductView.xml` page to merge with the basic page `Catalog/Test/Page/Product/CatalogProductView.xml`. More details about page merging you can find in the [Page][] topic of the MTF Guide.
+
+**Step 2**. In the `Bundle/Test/Page/Product/CatalogProductView.xml`, copy `page` node from the `Catalog/Test/Page/Product/CatalogProductView.xml` without `module` attribute
+
+{%highlight xml%}
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/pages.xsd">
+    <page name="CatalogProductView" area="Product" mca="catalog/product/view">
+                
+    </page>
+</config>
+{%endhighlight%}
+
+**Step 3**. Insert `block` with the same name of block and add a render that indicates the type of product and the class that processes this block
+
+{%highlight xml%}
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/pages.xsd">
+    <page name="CatalogProductView" area="Product" mca="catalog/product/view">
         <block name="viewBlock">
             <render name="bundle" class="Magento\Bundle\Test\Block\Catalog\Product\View" />
         </block>
@@ -374,7 +422,20 @@ You can create render simply adding `render` node to the block in the [Page][] X
 </config>
 {%endhighlight%}
 
-Let's take a look at the class  `Magento\Catalog\Test\Block\Product\View.php`.
+Details:
+
+* The PHP class for the page will be generated in the Magento Catalog module, because we did not mention module attribute in the `page` node
+* In the viewBlock `block`, we indicate `name` attribute only
+
+**Step 4**. Run the page generator
+
+{%include mtf/page-generator.html%}
+
+#### Use a render {#mtf_block_render_use}
+
+In the following example we have used the render to call the `getOptions()` method from `Magento\Bundle\Test\Block\Catalog\Product\View.php`.
+
+Let's take a look at the basic class `Magento\Catalog\Test\Block\Product\View.php`. It has method `getOptions()` that gets custom options if fixture has them:
 
 {%highlight php5%}
 <?php
@@ -394,17 +455,17 @@ public function getOptions(FixtureInterface $product)
 
  It contains the `getOptions()` method that:
  
- * gets fromm the `Bundle/Test/Fixture/BundleProduct.php` fixture the `type_id` field value - `$dataConfig['type_id']`
+ * gets from the `Bundle/Test/Fixture/BundleProduct.php` fixture the `type_id` field value - `$dataConfig['type_id']`
  
- * calls the `hasRender()` method to check if there is a render for the `bundle` type
+ * calls the `hasRender()` method to check if there is a render with the name `bundle`
  
- * calls the render (if the bundle has the render)
+ * calls the render
  
  {%highlight php5%}
  $this->callRender($typeId, 'getOptions', ['product' => $product])
  {%endhighlight%}
  
-In previous example we have used the render to call the `getOptions()` method from `Magento\Bundle\Test\Block\Catalog\Product\View.php`.
- 
 [page]: {{site.gdeurl}}mtf/mtf_entities/mtf_page.html
-[CatalogProductView.xml]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Bundle/Test/Page/Product/CatalogProductView.xml.
+[CatalogProductView.xml]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Bundle/Test/Page/Product/CatalogProductView.xml
+[Magento\Mtf\Block\Form]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php
+[Magento\Catalog\Test\Block\Product\View]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Product/View.php
