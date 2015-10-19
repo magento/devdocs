@@ -2,15 +2,15 @@
 layout: default 
 group: fedg
 subgroup: G_Translate
-title: Using translation dictionary to customize strings
-menu_title: Using translation dictionary to customize strings
+title: Use translation dictionary to customize strings
+menu_title: Use translation dictionary to customize strings
 menu_order: 1
 github_link: frontend-dev-guide/translations/theme_dictionary.md
 ---
 
 <h2>Overview</h2>
 
-This topic describes how default strings can be changed in your custom theme using <a href="{{site.gdeurl}}frontend-dev-guide/translations/#translate_terms">translation dictionaries</a>. It also gives a short overview of the order in which translations are searched and applied by the Magento application.
+This topic describes how default strings can be changed in your custom theme using <a href="{{site.gdeurl}}frontend-dev-guide/translations/xlate.html#translate_terms">translation dictionaries</a>. It also gives a short overview of the order in which translations are searched and applied by the Magento application.
 
 <h2>How Magento applies locales</h2>
 

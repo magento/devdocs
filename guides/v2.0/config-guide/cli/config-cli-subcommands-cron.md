@@ -63,7 +63,7 @@ Run Magento cron jobs as the <a href="{{ site.gdeurl }}install-gde/prereq/apache
 
 To create a cron job as the Magento file system owner, the following commands in the order shown:
 
-1.	Create or edit a crontab for the Apache user:
+1.	Create or edit a crontab for the Magento file system owner:
 
 		crontab -u <Magento file system owner user name> -e
 
