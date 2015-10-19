@@ -218,13 +218,11 @@
 <ul>
   <li><a href="#instgde-install-cli-prereq">Before you start your installation</a></li>
   <li><a href="#instgde-install-cli-magento">Install the Magento software from the command line</a></li>
+  <li><a href="#install-perms-import">Why we recommend you set file system permissions</a></li>
+  <li><a href="#install-perms-set">File system permissions and ownership</a></li>
 </ul>
 
 <p>See also <a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html">Update, reinstall, uninstall</a>.</p>
-
-<div class="bs-callout bs-callout-warning">
-    <p>Because of database changes in the Merchant Beta release (1.0.0-beta), you <em>must</em> uninstall the Magento software and reinstall it. Details are provided in <a href="/guides/v2.0/install-gde/install/install-merchbeta.html">Merchant Beta&mdash;uninstall and reinstall</a>.</p>
-</div>
 
 <h2 id="instgde-install-cli-prereq">Before you start your installation</h2>
 
@@ -618,12 +616,54 @@ For security, remove write permissions from these directories: '/var/www/html/ma
   <p>The command must be entered either on a single line or, as in the preceding example, with a <code>\</code> character at the end of each line.</p></span>
 </div>
 
-<h4 id="next-steps">Next steps</h4>
+<h2 id="install-perms-import">Why we recommend you set file system permissions</h2>
+<p>Malicious exploits are an unfortunate reality in the internet age. To help prevent exploits that take advantage of the file system, we recommend you set Magento file system ownership and permissions in a particular way. For more information, see <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-over">Overview of ownership and permissions</a>.</p>
 
-<ul>
-  <li><a href="/guides/v2.0/install-gde/install/verify.html">Verify the installation</a>.</li>
-  <li>To install optional Magento sample data (sample store, products, customers, and so on), see <a href="/guides/v2.0/install-gde/install/sample-data.html">Enable optional Magento sample data</a>.</li>
+<div class="bs-callout bs-callout-info" id="info">
+  <p>This topic covers permissions for a development environment. In production, the web server user should have limited write privileges. To help manage you production and developer modes, we provide the <code><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">magento deploy:mode:set</a></code> command.</p>
+</div>
+
+<p>The important things:</p>
+<ul><li>The owner of the Magento file system:
+<ul><li>Must have full control (read/write/execute) of all files and directories.</li>
+<li>Must <em>not</em> be the web server user; it should be a different user.</li></ul>
+</li>
+<li>The web server user must have write access to the following files and directories:
+<ul><li><code>var</code></li>
+<li><code>app/etc</code></li>
+<li><code>pub</code></li></ul>
+</li>
 </ul>
+<p>In addition, the web server's <em>group</em> must own the Magento file system so that the Magento user (who is in the group) can share access to files with the web server user. (This includes files created by the Magento Admin or other web-based utilities.)</p>
+<p>We recommend setting the permissions as follows:</p>
+<ul><li>All directories have 770 permissions.<br />
+770 permissions give full control (that is, read/write/execute) to the owner and to the group and no permissions to anyone else.</li>
+<li>All files have 660 permissions.<br />
+660 permissions mean the owner and the group can read and write but other users have no permissions.</li></ul>
+
+<h2 id="install-perms-set">File system permissions and ownership</h2>
+<p>Use the following steps:</p>
+<ol><li>Change to the Magento installation directory:<br />
+	<pre>cd &lt;web server docroot&gt;/&lt;magento2 base dir&gt;</pre>
+	The base directory is typically a subdirectory named <code>magento2</code> under your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.<br />
+
+	Examples:
+	<ul><li>Ubuntu: <code>/var/www/magento2</code></li>
+	<li>CentOS: <code>/var/www/html/magento2</code></li></ul>
+</li>
+<li>Set ownership:<br />
+<pre>chown -R :&lt;your web server group name&gt; .</pre>
+Typical examples:<br /><br />
+CentOS: <code>chown -R :apache .</code><br />
+Ubuntu: <code>chown -R :www-data .</code></li>
+<li>Set permissions:<br />
+	<pre>find . -type d -exec chmod 770 {} \; &amp;&amp; find . -type f -exec chmod 660 {} \; &amp;&amp; chmod u+x bin/magento</pre>
+	If you must enter the commands as <code>sudo</code>, use:<br />
+	<pre>sudo find . -type d -exec chmod 770 {} \; &amp;&amp; sudo find . -type f -exec chmod 660 {} \; &amp;&amp; sudo chmod u+x bin/magento</pre></li></ol>
+
+<h4 id="next-step">Next step</h4>
+
+<p><a href="/guides/v2.0/install-gde/install/verify.html">Verify the installation</a>.</p>
 
 
 		</div>
@@ -800,6 +840,10 @@ For security, remove write permissions from these directories: '/var/www/html/ma
 								
 								
 							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/cli/install-cli-sample-data.html">Install optional sample data modules</a></li>
+						
+								
+							
 									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands.html">Get started with the command-line installation</a></li>
 						
 								
@@ -872,7 +916,7 @@ For security, remove write permissions from these directories: '/var/www/html/ma
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/continue-to-verify_cli.html">Continue to verify, sample data, or troubleshooting</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/continue-to-verify_cli.html">Continue to verify or troubleshooting</a></li>
 									
 								
 								
@@ -914,6 +958,10 @@ For security, remove write permissions from these directories: '/var/www/html/ma
 					
 
 
+				
+			
+			
+				
 				
 			
 			
