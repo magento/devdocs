@@ -21,7 +21,7 @@ Each component must have a file called `registration.php` in their root director
 
 where __VendorName__ is the name of the company providing the module and __ModuleName__ is the name of the module.
      
-####Example
+#####Example
      ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Magento_AdminNotification', __DIR__);
 
 
@@ -31,10 +31,10 @@ Themes are registered with:
 
      ComponentRegistrar::register(ComponentRegistrar::THEME, 'area/vendor/theme name', __DIR__);
 
-where __area__ is the functional area of the module (front end, controller, etc), __vendor__ is the name of the company providing the theme, and __theme name__ is the name of the theme.
+where __area__ is the functional area of the module (frontend, controller, etc), __vendor__ is the name of the company providing the theme, and __theme name__ is the name of the theme.
 
 
-####Example
+#####Example
      ComponentRegistrar::register(ComponentRegistrar::THEME, 'frontend/Magento/luma', __DIR__);
 
 
@@ -46,7 +46,7 @@ Languages are registered with:
 
 where __VendorName__ is the name of the company providing the package and __packageName__ is the name of the package.
 
-####Example
+#####Example
      ComponentRegistrar::register(ComponentRegistrar::LANGUAGE, 'magento_de_de', __DIR__);
 
 
@@ -66,7 +66,7 @@ After you create your registration.php file and you are creating [your module's 
 
 ##Sample registration.php file
 
-
+{% highlight php startinline=true %}
     <?php
 	/**
  	* Copyright © 2015 Magento. All rights reserved.
@@ -78,7 +78,7 @@ After you create your registration.php file and you are creating [your module's 
     __DIR__
 	);
 
-
+{%endhighlight %}
 
 ##Next
 
