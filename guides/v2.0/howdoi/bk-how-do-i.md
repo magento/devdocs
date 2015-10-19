@@ -9,8 +9,6 @@ menu_order: 1
 github_link: howdoi/bk-how-do-i.md
 ---
 
-These topics provide step-by-step instructions for common tasks you're likely to perform developing the Magento application and deploying it to a live production server.
-
 Please help us keep this list up-to-date by providing feedback in any of the following ways:
 
 *	Click **Edit this page in GitHub** to open a pull request with a solution of your own.
