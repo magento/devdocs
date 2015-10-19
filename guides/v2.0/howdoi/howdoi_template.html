@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Contributor sign-up sheet</title>
+	<title>PAGE TITLE</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/howdoi/howdoi_contribute.html">
+	<link rel="canonical" href="//guides/v2.0/howdoi/howdoi_template.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Contributor sign-up sheet</h1>
+		<h1 class="page-heading">PAGE TITLE</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/howdoi/howdoi_contribute.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/howdoi/PATH/FILENAME.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -211,29 +211,88 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<p>Please sign up to write a How Do I topic for us! We’ll mention you by name, provide links to your web site and blogs, and you’ll get your face and bio in the ring of honor as one of our featured contributors.</p>
+		<!-- Author in Markdown but HTML also welcome -->
 
-<p>All you need to do is to submit a <a href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/howdoi/howdoi_contribute.md">pull request on this page</a> or <a href="mailto:DL-Magento-Doc-Feedback@ebay.com">e-mail us</a>. Use <a href="howdoi/howdoi_template.md">this template</a> if you’d like. Submissions should be Markdown but HTML is welcome also.</p>
+<!-- Start with H2, not H1 -->
+
+<h2 id="your-heading">YOUR HEADING</h2>
+<p>INTRODUCTORY TEXT, EXPLAIN WHAT YOUR ARTICLE IS ABOUT</p>
+
+<p>To have a successful migration, use the following guidelines:</p>
+
+<h2 id="another-heading">ANOTHER HEADING</h2>
+
+<!-- Bulleted list -->
+
+<ul>
+  <li>Text</li>
+  <li>Text</li>
+  <li>Text</li>
+</ul>
+
+<!-- Ordered list -->
+
+<ol>
+  <li>Step 1</li>
+  <li>Step 2</li>
+  <li>Step 3</li>
+</ol>
+
+<!-- Image link -->
+
+<p>Please submit all images to our <a href="https://github.com/magento/devdocs/tree/develop/common/images"><code>common/images</code></a> directory.</p>
+
+<p>Format the link as follows:</p>
+
+<p><img href="/common/images/FILENAME.png" alt="Alt text for the image" /></p>
+
+<!-- Sample HTML cross-reference; don't worry too much about these, we can add or edit them -->
+<!-- /guides/v2.0/ is a site variable that is defined in _config.yml; it's the base path to the devdocs guides/v2.0 directory -->
+
+<p>For full information please see the complete <a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a></p>
+
+<!-- Sample 4 x 3 table -->
 
 <table>
   <thead>
     <tr>
-      <th>Contributor name</th>
-      <th>Description or subject</th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><a href="http://www.maxpronko.com/" title="Max Pronko">Max Pronko</a></td>
-      <td>How do I develop and maintain my custom Magento 2 extension in a separate repository</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
       <td> </td>
       <td> </td>
     </tr>
   </tbody>
 </table>
 
+<!-- Note, Important, Tip: These must be HTML -->
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>This is a note.</p>
+</div>
+
+<div class="bs-callout bs-callout-warning">
+    <p>This is important.</p>
+</div>
+
+<div class="bs-callout bs-callout-tip">
+  <p>This is a tip.</p>
+</div>
 
 
 		</div>
@@ -396,7 +455,7 @@
 							
 								
 								
-									<li class="  active "><a class="nav-header" href="/guides/v2.0/howdoi/howdoi_contribute.html">Contributor sign-up sheet</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/howdoi/howdoi_contribute.html">Contributor sign-up sheet</a></li>
 									
 								
 								
@@ -571,7 +630,7 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/howdoi/howdoi_template.html">NAME ON MENU</a></li>
+									<li class="  active "><a class="nav-header" href="/guides/v2.0/howdoi/howdoi_template.html">NAME ON MENU</a></li>
 									
 								
 								
