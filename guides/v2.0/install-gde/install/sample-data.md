@@ -17,7 +17,10 @@ This topic discusses how to install optional Magento sample data *after* you ins
 {% include install/sample-data.html %} 
 
 <h2 id="sample-next-steps">Next steps</h2>
-Continue with the next section to complete the installation.
+After you install the sample data, log in to your Magento server as, or switch to, the Magento file system owner and enter the following command:
 
+	php <your Magento install dir>/bin magento setup:upgrade
+
+If errors display when you go to the storefront, set file system permissions and ownership again.
 
 
