@@ -2,7 +2,7 @@
 <p>Magento sample data provides a storefront based on the Luma theme outfitted with products, categories, customer registration, and so on. It functions just like a Magento storefront and you can manipulate prices, inventory, and promotional pricing rules using the Magento Admin.</p>
 <p>Installing sample data is optional; be aware that if you do install it, there is no way to uninstall only the sample data. You must uninstall and reinstall the Magento software.</p>
 <div class="bs-callout bs-callout-warning">
-    <p>Due to recent changes, you can now use sample data with either the <code>develop</code> branch (more current) or the <code>master</code> branch but only if you <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html#instgde-prereq-compose-clone">cloned</a> the Magento 2 GitHub repository.</p>
+    <p>Due to recent changes, you can now use sample data with either the <code>develop</code> branch (more current) or the <code>master</code> branch but only if you <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html#instgde-prereq-compose-clone">cloned</a> the corresponding branch of the Magento 2 GitHub repository.</p>
 </div>
 
 <h2 id="instgde-prereq-sample-clone">Clone the sample data repository</h2>
@@ -81,7 +81,8 @@ An example follows:<br>
 </div>
 
 <p>To set file system permissions and ownership on the sample data repository:</p>
-<ol><li>Change to your sample data clone directory.</li>
+<ol><li>Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
+    <li>Change to your sample data clone directory.</li>
 <li>Set ownership:<br>
 <pre>chown -R :&lt;your web server group name> .</pre>
 Typical examples:<br><br>
@@ -96,6 +97,5 @@ Ubuntu: <code>chown -R :www-data .</code></li>
     </div></li>
 <li>Clear directories:
     <pre>cd &lt;your Magento CE install dir>/var
-        rm -rf cache/* page_cache/* generation/*</pre></li>
-<li>See <a href="#sample-next-steps">Next steps</a>.</li></ol>
+        rm -rf cache/* page_cache/* generation/*</pre></li></ol>
 

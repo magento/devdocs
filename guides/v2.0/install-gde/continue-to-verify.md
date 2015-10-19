@@ -15,7 +15,6 @@ github_link: install-gde/continue-to-verify.md
 We suggest the following:
 
 *	<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/sample-data.html">Install optional sample data</a>
 *	<a href="{{ site.gdeurl }}install-gde/trouble/tshoot.html">Troubleshoot the installation</a>
 
 If you're ready to configure the Magento application, see:
