@@ -61,8 +61,7 @@ Constructor injection *must* be used for all optional and required service depen
 
 A sample proxy (which you declare in `di.xml`) follows:
 
-{% highlight PHP %}
-<?php
+{% highlight XML %}
 <type name="Magento\Backend\Model\Config\Structure\Element\Iterator\Field" shared="false">
     <arguments>
         <argument name="groupFlyweight" xsi:type="object">Magento\Backend\Model\Config\Structure\Element\Group\Proxy</argument>
