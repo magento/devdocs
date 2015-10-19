@@ -25,6 +25,11 @@ This topic discusses how to set up database caching and how to verify database c
 *	Using the `default` cache frontend, in which case you modify `di.xml` only.
 *	Using a custom cache frontend, in which case you modify `env.php` only.
 
+<div class="bs-callout bs-callout-warning">
+    <p>Database caching&mdash;like file-based caching&mdash; works well in a development environment but we <em>strongly recommend</em> you use <a href="{{ site.gdeurl }}config-guide/varnish/config-varnish.html">Varnish</a> in production instead.</p>
+    <p>Varnish is designed to accelerate the HTTP protocol.</p>
+</div>
+
 <h2 id="mage-cache-db-prereq">Prerequisites</h2>
 Before you continue, if you're using your own frontend cache, make sure you <a href="{{ site.gdeurl }}config-guide/config/caching_frontend-cache-types.html">associate cache frontends with cache types</a>. If you're using the `default` frontend cache, you don't have to do that.
 
