@@ -12,7 +12,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/composer-integration.html
 ##{{page.menu_title}}
 
 
-Magento components (modules, themes, and languages) are registered in the Magento system through the Magento `ComponentRegistrar` class. 
+Magento components, including modules, must be registered. Components (modules, themes, and languages) are registered in the Magento system through the Magento `ComponentRegistrar` class. 
 
 Each component must have a file called `registration.php` in their root directory. Depending on the type of component, registration is performed through registration.php by adding to it as follows:
 
@@ -28,6 +28,7 @@ where __VendorName__ is the name of the company providing the module and __Modul
 ###Themes
 
 Themes are registered with:
+
      ComponentRegistrar::register(ComponentRegistrar::THEME, 'area/vendor/theme name', __DIR__);
 
 where __area__ is the functional area of the module (front end, controller, etc), __vendor__ is the name of the company providing the theme, and __theme name__ is the name of the theme.
@@ -42,6 +43,8 @@ where __area__ is the functional area of the module (front end, controller, etc)
 Languages are registered with:
 
      ComponentRegistrar::register(ComponentRegistrar::LANGUAGE, 'VendorName_packageName', __DIR__);
+
+where __VendorName__ is the name of the company providing the package and __packageName__ is the name of the package.
 
 ####Example
      ComponentRegistrar::register(ComponentRegistrar::LANGUAGE, 'magento_de_de', __DIR__);

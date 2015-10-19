@@ -14,20 +14,6 @@ Now that you have [determined your module&#8217;s initial file structure](module
 
 
 
-##Create 
-The recommended way to create a module is to use `composer create-project` from the command line. This command 
-
- 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p></p></span>
-</div>
-
-
-##Register your new component
-
-registration.php
-
 ##Add the module&#8217;s `module.xml` file
 Declare the module itself by adding a module.xml file in the `/etc` folder of your module.
 
