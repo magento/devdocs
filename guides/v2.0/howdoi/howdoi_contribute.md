@@ -17,5 +17,4 @@ All you need to do is to submit a <a href="{{ site.githuburl }}howdoi/howdoi_con
 | Contributor name  |  Description or subject |
 |---|---|
 | <a href="http://www.maxpronko.com/" title="Max Pronko">Max Pronko</a>  | How do I develop and maintain my custom Magento 2 extension in a separate repository  |
-|   |   |
 
