@@ -58,7 +58,7 @@ where __VendorName__ is the name of the company providing the package and __pack
 
 ###Invoke registration.php in composer.json
 
-After you create your registration.php file and you are creating [your module's composer.json file](create_module.html#add-the-module8217s-composerjson-file), remember to invoke your registration.php file in the autoload section of composer.json:
+After you create your registration.php file and you are creating [your module's composer.json file](create_module.html#add-the-module8217s-composerjson-file), remember to invoke your `registration.php` file in the autoload section of `composer.json`:
 
      {
     "name": "Acme-vendor/bar-component",
