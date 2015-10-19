@@ -17,6 +17,9 @@ Magento components, including modules, themes, and languages, must be registered
 Each component must have a file called `registration.php` in their root directory. Depending on the type of component, registration is performed through registration.php by adding to it as follows:
 
 ###Modules
+
+Modules are registered with:
+
      ComponentRegistrar::register(ComponentRegistrar::MODULE, 'VendorName_ModuleName', __DIR__);
 
 where __VendorName__ is the name of the company providing the module and __ModuleName__ is the name of the module.
