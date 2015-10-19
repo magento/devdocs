@@ -309,9 +309,9 @@ Ubuntu: <code>chown -R :www-data .</code></li>
     <pre>find . -type d -exec chmod 770 {} \; &amp;&amp; find . -type f -exec chmod 660 {} \;</pre>
     If you must enter the commands as <code>sudo</code>, use:<br />
     <pre>sudo find . -type d -exec chmod 770 {} \; &amp;&amp; sudo find . -type f -exec chmod 660 {} \;</pre>
-    <div class="bs-callout bs-callout-info" id="info">
-    <p><img src="/common/images/ee-only_small.png" /> You must set ownership and permissions on both the CE and the EE sample data repositories.</p>
-    </div></li>
+    <!-- <div class="bs-callout bs-callout-info" id="info">
+    <p><img src="/common/images/ee-only_small.png"> You must set ownership and permissions on both the CE and the EE sample data repositories.</p>
+    </div> --></li>
 <li>Clear directories:
     <pre>cd &lt;your Magento CE install dir&gt;/var
         rm -rf cache/* page_cache/* generation/*</pre></li></ol>
