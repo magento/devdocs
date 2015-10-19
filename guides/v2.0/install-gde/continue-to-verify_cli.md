@@ -17,6 +17,8 @@ We suggest the following:
 *	<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>
 *	<a href="{{ site.gdeurl }}install-gde/trouble/tshoot.html">Troubleshoot the installation</a>
 
+If you haven't already installed optional sample data, you can <a href="{{ site.gdeurl }}install-gde/install/sample-data.html">install it now</a>.
+
 If you're ready to configure the Magento application, see:
 
 *	Learn about Magento's <a href="{{ site.gdeurl }}config-guide/config/config-php.html">deployment configuration</a>

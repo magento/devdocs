@@ -12,7 +12,7 @@ redirect_from: /guides/v1.0/install-gde/install/sample-data.html
 
 ## Install sample data after the Magento software
 
-This topic discusses how to install optional Magento sample data *after* you install the Magento software. If you haven't installed Magento, go <a href="{{ site.gdeurl }}install-gde/install/install-web-sample-data.html">here</a>.
+This topic discusses how to install optional Magento sample data *after* you install the Magento software. If you haven't installed Magento, go <a href="{{ site.gdeurl }}install-gde/install/web/install-web-sample-data.html">here</a>.
 
 {% include install/sample-data.html %} 
 
