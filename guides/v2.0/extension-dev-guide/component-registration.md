@@ -23,6 +23,7 @@ where __VendorName__ is the name of the company providing the module and __Modul
      
 #####Example
      ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Magento_AdminNotification', __DIR__);
+<p>&nbsp;</p>
 
 
 ###Themes
@@ -37,6 +38,7 @@ where __area__ is the functional area of the module (frontend, controller, etc),
 #####Example
      ComponentRegistrar::register(ComponentRegistrar::THEME, 'frontend/Magento/luma', __DIR__);
 
+<p>&nbsp;</p>
 
 
 ###Languages
@@ -49,6 +51,7 @@ where __VendorName__ is the name of the company providing the package and __pack
 #####Example
      ComponentRegistrar::register(ComponentRegistrar::LANGUAGE, 'magento_de_de', __DIR__);
 
+<p>&nbsp;</p>
 
 ###Invoke registration.php in composer.json
 
@@ -62,7 +65,7 @@ After you create your registration.php file and you are creating [your module's 
     }
 }
 
-
+<p>&nbsp;</p>
 
 ##Sample registration.php file
 
