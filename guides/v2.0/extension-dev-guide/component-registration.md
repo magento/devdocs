@@ -1,10 +1,10 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 2_Prepare
+subgroup: 3_Build
 title: Component registration
 menu_title: Component registration
-menu_order: 3
+menu_order: 4
 github_link: extension-dev-guide/composer-integration.md
 redirect_from: /guides/v1.0/extension-dev-guide/composer-integration.html
 
@@ -12,40 +12,56 @@ redirect_from: /guides/v1.0/extension-dev-guide/composer-integration.html
 ##{{page.menu_title}}
 
 
-Magento components (modules, themes, languages) are registered in the Magento system through the Magento ComponentRegistrar class. 
+Magento components (modules, themes, and languages) are registered in the Magento system through the Magento `ComponentRegistrar` class. 
 
 Each component must have a file called `registration.php` in their root directory. Depending on the type of component, registration is performed through registration.php by adding to it as follows:
 
 ###Modules
-     ComponentRegistrar::register(ComponentRegistrar::MODULE, '<VendorName>_<ModuleName>', __DIR__);
+     ComponentRegistrar::register(ComponentRegistrar::MODULE, 'VendorName_ModuleName', __DIR__);
 
+where __VendorName__ is the name of the company providing the module and __ModuleName__ is the name of the module.
      
-For example
-ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Magento_AdminNotification', __DIR__);
-Themes should be registered using
-ComponentRegistrar::register(ComponentRegistrar::THEME, '<area>/<vendor>/<theme name>', __DIR__);
-For example
-ComponentRegistrar::register(ComponentRegistrar::THEME, 'frontend/Magento/luma', __DIR__);
-Languages should be registered using
-ComponentRegistrar::register(ComponentRegistrar::LANGUAGE, '<VendorName>_<packageName>', __DIR__);
-For example
-ComponentRegistrar::register(ComponentRegistrar::LANGUAGE, 'magento_de_de', __DIR__);
-Libraries should be registered using
-ComponentRegistrar::register(ComponentRegistrar::LIBRARY, '<library name>', __DIR__);
-For example
-ComponentRegistrar::register(ComponentRegistrar::LIBRARY, 'magento/framework', __DIR__);
-Also, each component's composer.json file will invoke this file in the autoload section as follow
-{
-    "name": "foo-vendor/bar-component",
+####Example
+     ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Magento_AdminNotification', __DIR__);
+
+
+###Themes
+
+Themes are registered with:
+     ComponentRegistrar::register(ComponentRegistrar::THEME, 'area/vendor/theme name', __DIR__);
+
+where __area__ is the functional area of the module (front end, controller, etc), __vendor__ is the name of the company providing the theme, and __theme name__ is the name of the theme.
+
+
+####Example
+     ComponentRegistrar::register(ComponentRegistrar::THEME, 'frontend/Magento/luma', __DIR__);
+
+
+
+###Languages
+Languages are registered with:
+
+     ComponentRegistrar::register(ComponentRegistrar::LANGUAGE, 'VendorName_packageName', __DIR__);
+
+####Example
+     ComponentRegistrar::register(ComponentRegistrar::LANGUAGE, 'magento_de_de', __DIR__);
+
+
+###Invoke registration.php in composer.json
+
+After you create your registration.php file and you are creating [your module's composer.json file](create_module.html#add-the-module8217s-composerjson-file), remember to invoke your registration.php file in the autoload section of composer.json:
+
+     {
+    "name": "Acme-vendor/bar-component",
     "autoload": {
-        "psr-4": { "FooVendor\\BarComponent\\": "" },
+        "psr-4": { "AcmeVendor\\BarComponent\\": "" },
         "files": [ "registration.php" ]
     }
 }
 
 
 
-##Registration.php
+##Sample registration.php file
 
 
     <?php
@@ -58,3 +74,9 @@ Also, each component's composer.json file will invoke this file in the autoload 
     'Magento_AdminNotification',
     __DIR__
 	);
+
+
+
+##Next
+
+[Create a module](create_module.html)

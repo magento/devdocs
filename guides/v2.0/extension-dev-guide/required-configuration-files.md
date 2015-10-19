@@ -105,6 +105,6 @@ Keep in mind that you may be able to handle your module&#8217;s configuration so
 
 ##Next
 
-[Create a module](create_module.html)
+[Component Registration](component-registration.html)
 
 

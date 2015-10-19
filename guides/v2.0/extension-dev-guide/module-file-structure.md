@@ -10,7 +10,11 @@ github_link: extension-dev-guide/module-file-structure.md
 ---
 ##{{page.menu_title}}
 
-Magento 2 looks for the files that make up a module, including configuration files, in particular places. Follow the predefined file structure to ensure that your module works as expected.
+Magento 2 looks for the files that make up a module, including configuration files, in particular places inside the module file structure. Follow the predefined file structure to ensure that your module works as expected.
+
+Where you place the module file structure is your decision; the recommended location is to add it to the `/vendor` directory. Regardless of where you add it, you must [register the module's location](component-registration.html).
+
+
 
 
 ###Magento 2 Module File Structure

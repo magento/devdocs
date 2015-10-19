@@ -4,13 +4,13 @@ group: extension-dev-guide
 subgroup: 3_Build
 title: Create a module
 menu_title: Create a module
-menu_order: 4
+menu_order: 5
 github_link: extension-dev-guide/create_module.md
 redirect_from: /guides/v1.0/extension-dev-guide/create_module.html
 ---
 ##{{page.menu_title}}
 
-Now that you have [determined your module&#8217;s initial file structure](module-file-structure.html) and have an idea of the [configuration files](required-configuration-files.html) you&#8217;ll need, you can create the module.
+Now that you have [determined your module&#8217;s initial file structure](module-file-structure.html) have an idea of the [configuration files](required-configuration-files.html) you&#8217;ll need, and you've [registered your module](component-registration.html), you can create the module.
 
 
 
@@ -47,7 +47,10 @@ The smallest working module.xml file would look something like this:
 
 
 	{
-    "name": "your-name/module-foobar",
+    "name": "your-name/module-Acme",
+    "autoload": {
+        "psr-4": { "AcmeVendor\\BarComponent\\": "" },
+        "files": [ "registration.php" ],
     "description": "Test module for Magento 2",
     "require": {
         "php": "~5.5.0|~5.6.0",
