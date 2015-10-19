@@ -94,7 +94,7 @@ Default: `false`
 Example of the initialization with the loop option specified:
      $("#element").fotorama({ loop: true});
 
-<h3 id="gallery_maxwidth">maxwidth</h3>
+<h3 id="gallery_maxwidth"><code>maxwidth</code></h3>
 
 Maximum width of a preview in pixels or percents.
 
