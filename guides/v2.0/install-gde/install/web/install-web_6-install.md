@@ -30,6 +30,10 @@ If the installation failed, click **Previous** to review the information you ent
 
 You can also run the installer again.
 
+<div class="bs-callout bs-callout-warning">
+    <p>After installing the Magento software, you must <a href="{{ site.gdeurl }}install-gde/install/file-system-perms.html">set file system permissions and ownership</a>.</p>
+</div>
+
 <h3 id="instgde-install-magento-web-log">Viewing the installation log</h3>
 The Setup Wizard creates a log file, named `install.log`, that you might find useful in debugging issues or in verifying the actions performed by the wizard.
 
@@ -59,5 +63,4 @@ You can reinstall the Magento software in an development environment especially 
 
 #### Next step
 
-*	To install optional Magento sample data (sample store, products, customers, and so on), see <a href="{{ site.gdeurl }}install-gde/install/sample-data.html">Enable optional Magento sample data</a>.
-*	<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>.
+<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>.

@@ -12,9 +12,9 @@
     <li>Clone with the <a href="#instgde-prereq-compose-clone-https">HTTPS protocol</a></li>
 <li><a href="#instgde-prereq-compose-clone-perms">Set file system permissions and ownership</a></li></ul>
 
-<div class="bs-callout bs-callout-info" id="info">
+<!-- <div class="bs-callout bs-callout-info" id="info">
     <p><img src="{{ site.baseurl }}common/images/ee-only_small.png"> Enterprise Edition (EE) requires an additional repository with EE sample data. Contact your support representative for details.</p>
-</div>
+</div> -->
 
 <h3 id="instgde-prereq-sample-clone-ssh">Clone with SSH</h3>
 <p>To clone the Magento sample data GitHub repository using the SSH protocol:</p>
@@ -43,9 +43,9 @@ fatal: The remote end hung up unexpectedly</pre>
 <li>Enter the following command:<br>
 <pre>php -f build-sample-data.php -- --ce-source="&lt;your Magento CE install dir>"</pre></li>
 <li>Wait for the command to complete.
-   <div class="bs-callout bs-callout-info" id="info">
+   <!-- <div class="bs-callout bs-callout-info" id="info">
     <p><img src="{{ site.baseurl }}common/images/ee-only_small.png"> You must run the same command from the EE sample data repository's <code>dev/tools</code> directory.</p>
-    </div></li>
+    </div> --></li>
 <li>See <a href="#instgde-prereq-compose-clone-perms">Set file system permissions and ownership</a>.</li></ol>
 
 <h3 id="instgde-prereq-compose-clone-https">Clone with HTTPS</h3>
@@ -67,18 +67,18 @@ An example follows:<br>
 <li>Change to the <code>&lt;your Magento sample data clone dir>/dev/tools</code> directory.</li>
 <li>Enter the following command:<br>
 <pre>php -f build-sample-data.php -- --ce-source="&lt;your Magento CE install dir>"</pre>
-    <div class="bs-callout bs-callout-info" id="info">
+    <!-- <div class="bs-callout bs-callout-info" id="info">
     <p><img src="{{ site.baseurl }}common/images/ee-only_small.png"> You must run the same command from the EE sample data repositor's <code>dev/tools</code> directory.</p>
-    </div></li>
+    </div> --></li>
 <li>Wait for the command to complete.</li>
 <li>See the next section.</li></ol>
 
 <h3 id="instgde-prereq-compose-clone-perms">Set file system permissions and ownership</h3>
 <p>Because the <code>php build-sample-data.php</code> script creates symlinks between the sample data repository and your Magento 2 repository, you must set file system permissions and ownership in the sample data repository. Failure to do so will result in errors accessing the storefront.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
+<!-- <div class="bs-callout bs-callout-info" id="info">
     <p><img src="{{ site.baseurl }}common/images/ee-only_small.png"> Don't forget to clone the Enterprise Edition (EE) sample data repository and link it to your Magento CE repository.</p>
-</div>
+</div> -->
 
 <p>To set file system permissions and ownership on the sample data repository:</p>
 <ol><li>Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
