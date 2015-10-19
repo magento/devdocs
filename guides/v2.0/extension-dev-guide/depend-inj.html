@@ -268,12 +268,11 @@
 
 <p>A sample proxy (which you declare in <code>di.xml</code>) follows:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="o">&lt;</span><span class="nx">type</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;Magento\Backend\Model\Config\Structure\Element\Iterator\Field&quot;</span> <span class="nx">shared</span><span class="o">=</span><span class="s2">&quot;false&quot;</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nx">arguments</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;groupFlyweight&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;object&quot;</span><span class="o">&gt;</span><span class="nx">Magento\Backend\Model\Config\Structure\Element\Group\Proxy</span><span class="o">&lt;/</span><span class="nx">argument</span><span class="o">&gt;</span>
-    <span class="o">&lt;/</span><span class="nx">arguments</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="nx">type</span><span class="o">&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Backend\Model\Config\Structure\Element\Iterator\Field&quot;</span> <span class="na">shared=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;groupFlyweight&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Backend\Model\Config\Structure\Element\Group\Proxy<span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/type&gt;</span></code></pre></div>
 
 <div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="k">class</span> <span class="nc">Foo</span>
