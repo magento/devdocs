@@ -2,37 +2,11 @@
 <p>Magento sample data provides a storefront based on the Luma theme outfitted with products, categories, customer registration, and so on. It functions just like a Magento storefront and you can manipulate prices, inventory, and promotional pricing rules using the Magento Admin.</p>
 <p>Installing sample data is optional; be aware that if you do install it, there is no way to uninstall only the sample data. You must uninstall and reinstall the Magento software.</p>
 <div class="bs-callout bs-callout-warning">
-    <p>Currently, this procedure works <em>only</em> if you installed Magento CE from either the <a href="https://github.com/magento/magento2/tree/develop" target="_blank">develop</a> or <a href="https://github.com/magento/magento2/tree/master" target="_blank">master</a> branch. If you're using the <code>merchant_beta</code> branch from the <a href="https://github.com/magento/magento2ce/tree/merchant_beta" target="_blank">private GitHub repository</a>, this procedure is not guaranteed to work. We're aware of the issue and we're working to resolve it.</p>
+    <p>Due to recent changes, you can now use sample data with either the <code>develop</code> branch (more current) or the <code>master</code> branch but only if you <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html#instgde-prereq-compose-clone">cloned</a> the Magento 2 GitHub repository.</p>
 </div>
-
-<h2 id="instgde-prereq-sample-start">Get started</h2>
-<p>This section discusses how to enable you to install optional Magento sample data. To install sample data, you can either:</p>
-<ul><li><a href="#instgde-prereq-sample-comp">Modify <code>composer.json</code></a> in the Magento root installation directory to provide the location of the sample data package. After that, you can either run the Magento software installer or you can run a script to install the sample data.</li>
-    <li><a href="#instgde-prereq-sample-clone">Clone the sample data GitHub repository</a> and link the sample data repository to your Magento CE installation directory.</li></ul>
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Sample data is now a Magento module and you can install it, upgrade it, or remove it like any other module.</p>
-</div>
-
-<h2 id="instgde-prereq-sample-comp">Modify <code>composer.json</code></h2>
-<p>Sample data is versioned like Magento code. Before you begin, you can either:</p>
-<ul><li>Find the exact version you want at <a href="http://packages.magento.com/#magento/sample-data" target="_blank">packages.magento.com</a>.</li>
-<li>Install the latest version using Composer <a href="https://getcomposer.org/doc/01-basic-usage.md#next-significant-release-tilde-and-caret-operators-" target="_blank">next significant release syntax</a>.</li></ul>
-<p>To enable sample data:</p>
-<ol><li>Log in to the Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
-    <li>Enter the following command to reference Magento packages in <code>composer.json</code>:<br>
-<pre>composer config repositories.magento composer http://packages.magento.com</pre></li>
-<li>Enter the following command to require the current version of the sample data package:<br>
-<pre>composer require magento/sample-data:&lt;version></pre>
-where <code>&lt;version></code> is either an exact version or semantic version syntax.<br>
-Exact version example:<br>
-<pre>composer require magento/sample-data:1.0.0-beta</pre>
-Next significant release example:<br>
-<pre>composer require magento/sample-data:~1.0.0-beta</pre></li>
-<li>Wait while dependencies are installed.</li>
-<li>See <a href="#sample-next-steps">Next steps</a>.</li></ol>
 
 <h2 id="instgde-prereq-sample-clone">Clone the sample data repository</h2>
-<p>This section discusses how to install Magento sample data by cloning the sample data repository. You might find this method simpler than modifying <code>composer.json</code> but in all other ways, they are the same.</p>
+<p>This section discusses how to install Magento sample data by cloning the sample data repository. </p>
 <p>You can clone the sample data repository in any of the following ways:</p>
 <ul><li>Clone with the <a href="#instgde-prereq-sample-clone-ssh">SSH protocol</a></li>
     <li>Clone with the <a href="#instgde-prereq-compose-clone-https">HTTPS protocol</a></li>
@@ -70,7 +44,7 @@ fatal: The remote end hung up unexpectedly</pre>
 <pre>php build-sample-data.php -- --ce-source="&lt;your Magento CE install dir>"</pre></li>
 <li>Wait for the command to complete.
    <div class="bs-callout bs-callout-info" id="info">
-    <p><img src="{{ site.baseurl }}common/images/ee-only_small.png"> You must run the same command from the EE sample data repositor's <code>dev/tools</code> directory.</p>
+    <p><img src="{{ site.baseurl }}common/images/ee-only_small.png"> You must run the same command from the EE sample data repository's <code>dev/tools</code> directory.</p>
     </div></li>
 <li>See <a href="#instgde-prereq-compose-clone-perms">Set file system permissions and ownership</a>.</li></ol>
 

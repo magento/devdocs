@@ -2,8 +2,8 @@
 layout: default
 group: install_wiz 
 subgroup: Wizard
-title: Install the optional sample data module
-menu_title: Install the optional sample data module
+title: Install optional sample data modules
+menu_title: Install optional sample data modules
 menu_node: 
 menu_order: 2
 github_link: install-gde/install/web/install-web-sample-data.md
