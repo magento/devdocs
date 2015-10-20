@@ -222,6 +222,11 @@
     <p>Due to recent changes, you can now use sample data with either the <code>develop</code> branch (more current) or the <code>master</code> branch but only if you <a href="/guides/v2.0/install-gde/install/composer-clone.html#instgde-prereq-compose-clone">cloned</a> the corresponding branch of the Magento 2 GitHub repository.</p>
 </div>
 
+<h2 id="sample-prereq">Sample data prerequisites</h2>
+<p>Before you install sample data, make sure you have done the following:</p>
+<ol><li><a href="/guides/v2.0/install-gde/install/composer-clone.html">Clone the Magento 2 GitHub repository</a> (preferably the develop branch, which is the default).</li>
+    <li><a href="/guides/v2.0/install-gde/install/prepare-install.html">Update dependencies</a> by running <code>composer install</code>.</li></ol>
+
 <h2 id="instgde-prereq-sample-clone">Clone the sample data repository</h2>
 <p>This section discusses how to install Magento sample data by cloning the sample data repository. </p>
 <p>You can clone the sample data repository in any of the following ways:</p>
@@ -311,10 +316,7 @@ Ubuntu: <code>chown -R :www-data .</code></li>
     <pre>sudo find . -type d -exec chmod 770 {} \; &amp;&amp; sudo find . -type f -exec chmod 660 {} \;</pre>
     <!-- <div class="bs-callout bs-callout-info" id="info">
     <p><img src="/common/images/ee-only_small.png"> You must set ownership and permissions on both the CE and the EE sample data repositories.</p>
-    </div> --></li>
-<li>Clear directories:
-    <pre>cd &lt;your Magento CE install dir&gt;/var
-        rm -rf cache/* page_cache/* generation/*</pre></li></ol>
+    </div> --></li></ol>
 
 <h2 id="sample-next-steps">Next steps</h2>
 <p>Install the Magento software using either the <a href="/guides/v2.0/install-gde/install/web/install-web.html">Setup Wizard</a> or <a href="/guides/v2.0/install-gde/install/cli/install-cli.html">command line</a>.</p>
