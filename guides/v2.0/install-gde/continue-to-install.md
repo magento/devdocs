@@ -2,7 +2,7 @@
 layout: default
 group: install_pre
 subgroup: Z_continue
-title: Next&mdash;Installation part 2, installing
+title: 
 menu_title: Next&mdash;Installation part 2, installing
 menu_node: parent
 menu_order: 1
