@@ -12,6 +12,9 @@ redirect_from:
   - /guides/v2.0/install-gde/install/install-web.html
 ---
 
+<div class="bs-callout bs-callout-tip">
+  <p>Totally lost? Need a helping hand? Try our <a href="{{ site.gdeurl }}install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{ site.gdeurl }}install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
+</div>
 <h4>Contents</h4>   
 
 See one of the following sections:
@@ -26,6 +29,7 @@ This section discusses how to install the Magento software using a web-based wiz
 <div class="bs-callout bs-callout-warning">
     <p>Because of database changes in the Merchant Beta release (1.0.0-beta), you <em>must</em> uninstall the Magento software and reinstall it. Details are provided in <a href="{{ site.gdeurl }}install-gde/install/install-merchbeta.html">Merchant Beta&mdash;uninstall and reinstall</a>.</p>
 </div>
+
 
 <h2 id="instgde-install-prereq">Before you start your installation</h2>
 

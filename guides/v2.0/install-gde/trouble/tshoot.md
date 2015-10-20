@@ -10,11 +10,16 @@ github_link: install-gde/trouble/tshoot.md
 redirect_from: /guides/v1.0/install-gde/trouble/tshoot.html
 ---
 
+<div class="bs-callout bs-callout-tip">
+  <p>Totally lost? Need a helping hand? Try our <a href="{{ site.gdeurl }}install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{ site.gdeurl }}install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
+</div>
+
 The following topics discuss the installation errors and suggested solutions:
 
 *	<a href="{{ site.gdeurl }}install-gde/trouble/tshoot_access-browser.html">You cannot access the Magento software in a web browser</a>
 *	<a href="{{ site.gdeurl }}install-gde/trouble/tshoot_mod_access_compat.html">503 (Service Unavailable) errors accessing Magento software in a web browser</a>
 *	<a href="{{ site.gdeurl }}install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics.</a>
+*	<a href="{{ site.gdeurl }}install-gde/trouble/tshoot_sample-data.html">Errors installing sample data</a>
 *	<a href="{{ site.gdeurl }}install-gde/trouble/tshoot_admin.html">Error after logging in to the Magento Admin</a>
 *	<a href="{{ site.gdeurl }}install-gde/trouble/tshoot_install_depend.html">Installation dependencies not met</a>
 *	<a href="{{ site.gdeurl }}install-gde/trouble/php/tshoot_pdo.html">During installation, fatal PDO error displays</a>

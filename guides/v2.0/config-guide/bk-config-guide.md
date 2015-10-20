@@ -17,7 +17,7 @@ You can configure the Magento application in any of the following ways:
 *  	Manually to set up <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-bootstrap.html">bootstrap parameters</a>
 *	<a href="{{ site.gdeurl }}config-guide/varnish/config-varnish.html">Set up Varnish</a>
 *	<a href="{{ site.gdeurl }}config-guide/redis/config-redis.html">Set up Redis</a>
-*	<img src="{{ site.baseurl }}common/images/ee-only_small.png" alt="Solr search engine is available with Magento EE only"> <a href="{{ site.gdeurl }}config-guide/solr/solr-overview.html">Install and configure Solr</a> 
+*	<a href="{{ site.gdeurl }}config-guide/solr/solr-overview.html">Install and configure Solr</a> <img src="{{ site.baseurl }}common/images/ee-only_small.png" alt="Solr search engine is available with Magento EE only"> 
 *  	<a href="{{ site.gdeurl }}config-guide/config/caching.html">Set up caching</a>
 *	<a href="{{ site.gdeurl }}config-guide/database/database.html">Set up database caching</a>
 
