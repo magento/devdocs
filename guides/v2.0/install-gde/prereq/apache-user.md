@@ -15,6 +15,10 @@ github_link: install-gde/prereq/apache-user.md
 *	<a href="#install-update-depend-user-group">Add the Magento file system owner to the web server group</a>
 *	<a href="#install-update-depend-user-switch">Switch to the Magento file system owner</a>
 
+<div class="bs-callout bs-callout-tip">
+  <p>Totally lost? Need a helping hand? Try our <a href="{{ site.gdeurl }}install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{ site.gdeurl }}install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
+</div>
+
 <h2 id="install-update-depend-user-over">Overview of ownership and permissions</h2>
 Even in a development environment, you want your Magento installation to be secure. To help prevent issues related to unauthorized people or processes doing potentially harmful things to your system, we recommend some guidelines related to file system ownership and security:
 

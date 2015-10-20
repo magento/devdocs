@@ -10,6 +10,10 @@ github_link: install-gde/trouble/tshoot.md
 redirect_from: /guides/v1.0/install-gde/trouble/tshoot.html
 ---
 
+<div class="bs-callout bs-callout-tip">
+  <p>Totally lost? Need a helping hand? Try our <a href="{{ site.gdeurl }}install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{ site.gdeurl }}install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
+</div>
+
 The following topics discuss the installation errors and suggested solutions:
 
 *	<a href="{{ site.gdeurl }}install-gde/trouble/tshoot_access-browser.html">You cannot access the Magento software in a web browser</a>
@@ -29,4 +33,6 @@ The following topics discuss the installation errors and suggested solutions:
 *	<a href="{{ site.gdeurl }}install-gde/trouble/php/tshoot_php-date.html">During installation, PHP date warning</a>
 *	<a href="{{ site.gdeurl }}install-gde/trouble/tshoot_composer-install.html">Cannot run <code>composer install</code></a>
 *	<a href="{{ site.gdeurl }}install-gde/trouble/tshoot_mysql_table-open-cache.html">Error 'MySQL server has gone away' during installation</a>
+
+
 
