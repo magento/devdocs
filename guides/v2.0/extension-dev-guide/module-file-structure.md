@@ -12,12 +12,12 @@ github_link: extension-dev-guide/module-file-structure.md
 
 Magento 2 looks for the files that make up a module, including configuration files, in particular places inside the module file structure. Follow the predefined file structure to ensure that your module works as expected.
 
-Where you place the module file structure is your decision; the recommended location is to add it to the `/vendor` directory. Regardless of where you add it, you must [register the module's location](component-registration.html).
+A module can live anywhere under the Magento root directory. Regardless of where you add it, you must [register the module's location](component-registration.html).
 
 
 
 
-###Magento 2 Module File Structure
+###Magento 2 Module File structure
 
 
 A typical file structure for a Magento 2 module:
@@ -64,7 +64,8 @@ You can add subfolders inside your module folder as you need them (Block, Contro
 
 Or, you could just add them at once:
 
-    mkdir Api && mkdir Block && mkdir Controller && mkdir etc && mkdir Helper && mkdir i18n && mkdir Model && mkdir view
+    mkdir Api Block Controller etc Helper i18n Model view
+
 
 Make sure you add the `etc` folder; it is required, and is where most of the configuration files, including `module.xml`, are kept.
 

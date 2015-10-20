@@ -10,7 +10,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/create_module.html
 ---
 ##{{page.menu_title}}
 
-Now that you have [determined your module&#8217;s initial file structure](module-file-structure.html) have an idea of the [configuration files](required-configuration-files.html) you&#8217;ll need, and you've [registered your module](component-registration.html), you can create the module.
+Now that you have [determined your module&#8217;s initial file structure](module-file-structure.html), have an idea of the [configuration files](required-configuration-files.html) you&#8217;ll need, and you've [registered your module](component-registration.html), you can create the module.
 
 
 
