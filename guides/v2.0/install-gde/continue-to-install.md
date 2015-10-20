@@ -10,11 +10,6 @@ github_link: install-gde/continue-to-install.md
 ---
 
 
-
-## Before you continue
-Did you remember to set file system ownership and permissions? If not, <a href="{{ site.gdeurl }}install-gde/install/file-system-perms.html">go back</a> and do that now.
-
-
 ## Installation options: command line or Setup Wizard
 Now that you've installed prerequisites and taken the first steps (merchant, system integrator, or developer), you're ready to install the Magento software in any of the following ways:
 
