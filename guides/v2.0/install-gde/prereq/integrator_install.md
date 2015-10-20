@@ -35,7 +35,5 @@ To get started:
 
 	If you configured a virtual host, `<installation directory name>` must match the docroot directory defined for it.
 
-4.	Continue with <a href="{{ site.gdeurl }}install-gde/install/file-system-perms.html">Set file system ownership and permissions</a>.
-
 <h2 id="integrator-first-issue">Known issue: you might need to clear your Composer cache</h2>
 {% include install/composer-clear-cache.html %}

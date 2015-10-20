@@ -2,8 +2,8 @@
 layout: default
 group: install_cli
 subgroup: W_continue
-title: Continue to verify, sample data, or troubleshooting
-menu_title: Continue to verify, sample data, or troubleshooting
+title: Continue to verify or troubleshooting
+menu_title: Continue to verify or troubleshooting
 menu_node: parent
 menu_order: 1
 github_link: install-gde/continue-to-verify_cli.md
@@ -15,8 +15,9 @@ github_link: install-gde/continue-to-verify_cli.md
 We suggest the following:
 
 *	<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/sample-data.html">Install optional sample data</a>
 *	<a href="{{ site.gdeurl }}install-gde/trouble/tshoot.html">Troubleshoot the installation</a>
+
+If you haven't already installed optional sample data, you can <a href="{{ site.gdeurl }}install-gde/install/sample-data.html">install it now</a>.
 
 If you're ready to configure the Magento application, see:
 
