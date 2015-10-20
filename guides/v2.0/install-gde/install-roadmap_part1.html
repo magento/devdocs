@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>PHP settings errors</title>
+	<title>Installation roadmap (reference)</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/install-gde/trouble/php/tshoot_php-set.html">
+	<link rel="canonical" href="//guides/v2.0/install-gde/install-roadmap_part1.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">PHP settings errors</h1>
+		<h1 class="page-heading">Installation roadmap (reference)</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/install-gde/trouble/php/tshoot_php-set.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/install-roadmap_part1.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -211,50 +211,30 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
-<!-- Referring file: TBD owned by Ogres -->
+		<p>This roadmap provides a reference for the installation process. Refer to this topic at any time to move back and forth through the stages of installation.</p>
+<p>This is a list of the most common topics you'll need for installation; the list is not comprehensive, however. You'll find additional information using the table of contents on the left side of the page.</p>
+<h2>Precondition: How advanced are you?</h2>
+<p>Do you know what a "terminal" application is? Do you know what operating system your server runs? Do you know what Apache is?</p>
+<p>If not, see the <a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation overview</a>.</p>
 
-<h2 id="trouble-php-set">PHP settings errors</h2>
-<p>See one of the following sections:</p>
+<h2>Installation part 1: Getting started</h2>
+<p>Topics include:</p>
+<ul><li><a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation overview</a></li>
+<li><a href="/guides/v2.0/install-gde/system-requirements.html">System requirements</a></li>
+<li><a href="/guides/v2.0/install-gde/prereq/prereq-overview.html">Prerequisites</a></li>
+<li><a href="/guides/v2.0/install-gde/prereq/apache-user.html">Creating the Magento file system owner</a></li>
+<li><a href="/guides/v2.0/install-gde/install/pre-install.html">Your installation or upgrade path</a></li></ul>
 
-<ul>
-  <li><a href="#trouble-php-xdebug">xdebug maximum function nesting level error</a></li>
-  <li><a href="#trouble-php-asptags">Errors display when you access a PHTML template</a></li>
-</ul>
+<h2>Installation part 2: Installing</h2>
+<p>Topics include:</p>
+<ul><li><a href="/guides/v2.0/install-gde/install/cli/install-cli.html">Command line installation</a></li>
+<li><a href="/guides/v2.0/install-gde/install/web/install-web.html">Setup Wizard installation</a></li></ul>
 
-<h3 id="trouble-php-xdebug">xdebug maximum function nesting level error</h3>
-
-<p>See <a href="/guides/v2.0/install-gde/trouble/tshoot_xdebug.html">During installation, xdebug maximum function nesting level error</a>.</p>
-
-<h3 id="trouble-php-asptags">Errors display when you access a PHTML template</h3>
-<p>Error text is typically:</p>
-
-<pre><code>Parse error: syntax error, unexpected 'data' (T_STRING)
-</code></pre>
-
-<h4 id="solution-set-codeasptags--offcode-in-codephpinicode">Solution: Set <code>asp_tags = off</code> in <code>php.ini</code></h4>
-<p>Multiple templates have syntax for support abstract level on templates (use different templates engines like Twig) wrapped in <code>&lt;% %&gt;</code> tags, like this <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/view/frontend/templates/product/view/base-image.phtml" target="_blank">template</a> for displaying a product image:</p>
-
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="o">&lt;</span><span class="nx">a</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&quot;product photo&lt;% if (typeof data.hasImg !== &#39;undefined&#39;) { %&gt; placeholder&lt;% } %&gt;&quot;</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;&lt;%- data.large %&gt;&quot;</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&quot;img photo container&quot;</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">img</span>
-          <span class="nx">data</span><span class="o">-</span><span class="nx">role</span><span class="o">=</span><span class="s2">&quot;zoom-image&quot;</span>
-          <span class="nx">class</span><span class="o">=</span><span class="s2">&quot;photo image&quot;</span>
-          <span class="nx">itemprop</span><span class="o">=</span><span class="s2">&quot;image&quot;</span>
-          <span class="o">&lt;%</span> <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">data</span><span class="o">.</span><span class="nx">fullSizeMode</span><span class="p">)</span> <span class="p">{</span> <span class="o">%&gt;</span>
-            <span class="nx">data</span><span class="o">-</span><span class="nx">large</span><span class="o">=</span><span class="s2">&quot;&lt;%- data.large %&gt;&quot;</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;&lt;%- data.medium %&gt;&quot;</span>
-          <span class="o">&lt;%</span> <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="o">%&gt;</span>
-          <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;&lt;%- data.large %&gt;&quot;</span>
-          <span class="o">&lt;%</span> <span class="p">}</span> <span class="o">%&gt;</span>
-          <span class="nx">alt</span><span class="o">=</span><span class="s2">&quot;&lt;%- data.title %&gt;&quot;</span><span class="o">/&gt;</span>
-    <span class="o">&lt;/</span><span class="nx">span</span><span class="o">&gt;</span>
-    <span class="o">&lt;/</span><span class="nx">a</span><span class="o">&gt;</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
-
-<p>More information about <a href="http://php.net/manual/en/ini.core.php#ini.asp-tags" target="_blank">asp_tags</a>. </p>
-
-<p>Edit <code>php.ini</code> and set <code>asp_tags = off</code>. For more information, see <a href="/guides/v2.0/install-gde/prereq/php-centos.html#instgde-prereq-timezone">Set PHP configuration options</a>.</p>
+<h2>Installation part 3: Post-installation</h2>
+<p>Topics include:</p>
+<ul><li><a href="/guides/v2.0/install-gde/install/verify.html">Verifying</a></li>
+<li><a href="/guides/v2.0/install-gde/trouble/tshoot.html">Troubleshooting</a></li>
+<li><a href="/guides/v2.0/install-gde/continue-to-verify.html">Configuring</a></li></ul>
 
 
 		</div>
@@ -298,13 +278,13 @@
 
 
 
+<h4>Installation guide<br>Part 1: Getting started</h4>
 
 
 
 
 
 
-<h4>Installation guide<br>Part 3: Post-installation</h4>
 
 
 
@@ -335,86 +315,6 @@
 			
 				
 				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
 					
 					
 					
@@ -430,7 +330,13 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install-roadmap_trouble.html">Installation roadmap (reference)</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install-quick-ref.html">Installation quick reference (tutorial)</a></li>
+									
+								
+									<li class="  active "><a class="nav-header" href="/guides/v2.0/install-gde/install-roadmap_part1.html">Installation roadmap (reference)</a></li>
+									
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/system-requirements.html">Magento system requirements</a></li>
 									
 								
 								
@@ -455,7 +361,60 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/trouble/tshoot.html">Troubleshooting suggestions</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/prereq-overview.html">Prerequisites</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/apache.html">Apache</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/mysql.html">MySQL</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/apache-user.html">Create the Magento file system owner</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/security.html">Security-related prerequisites</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/optional.html">Optional software</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install/pre-install.html">Your install or upgrade path</a></li>
 									
 								
 								
@@ -480,38 +439,13 @@
 							
 								
 								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/merch_install.html">Merchant installation first steps</a></li>
+									
 								
-								
-							
-									<li class=""><span class="nav-header">Access issues</span></li>
-								
-								
-							
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_access-browser.html">Cannot access Magento software in a web browser</a></li>
-						
 								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_mod_access_compat.html">503 (Service Unavailable) errors accessing Magento software in a web browser</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_exceptions.html">Exceptions during installation</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_admin.html">Error after logging in to the Magento Admin</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_install_depend.html">Installation dependencies not met</a></li>
-						
 								
 								
 								
@@ -530,38 +464,13 @@
 							
 								
 								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/integrator_install.html">System Integrator installation first steps</a></li>
+									
 								
-								
-							
-									<li class=""><span class="nav-header">Errors during installation</span></li>
-								
-								
-							
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_pdo.html">During installation, fatal PDO error displays</a></li>
-						
 								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_wrong-mysql.html">During installation, Reflection Exception error</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_session.html">During installation, exception SessionHandler::read()</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_install-log.html">Installation fails; cannot create install.log</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_sample-data.html">Errors installing optional sample data</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_xdebug.html">During installation, xdebug maximum function nesting level error</a></li>
-						
 								
 								
 								
@@ -580,83 +489,7 @@
 							
 								
 								
-								
-								
-							
-									<li class=""><span class="nav-header">GitHub issues</span></li>
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/git/tshoot_git-pull-origin.html">git pull origin develop fails when updating the Magento software</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/git/tshoot_clone.html">Cannot clone the Magento GitHub repository</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/git/tshoot_rate-limit.html">GitHub API rate limit</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-								
-								
-							
-									<li class=""><span class="nav-header">PHP issues</span></li>
-								
-								
-							
-								
-								
-							
-									<li class="level-2  active "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_php-set.html">PHP settings errors</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_mcrypt.html">The PHP mcrypt extension is not installed properly</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_php-date.html">During installation, PHP date warning</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/trouble/tshoot_other.html">Other issues</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/dev_install.html">Contributing developer installation first steps</a></li>
 									
 								
 								
@@ -665,20 +498,41 @@
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_composer-install.html">Cannot run 'composer install'</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_mysql_table-open-cache.html">Error 'MySQL server has gone away' during installation</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/prepare-install.html">Update installation dependencies</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_segfault.html">Segmentation fault during rollback</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/dev_updater.html">Update components</a></li>
 						
 								
+								
+								
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_phpini.html">SQLSTATE[HY000] [2002] No such file or directory</a></li>
+							
 						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/continue-to-install.html">Next&mdash;Installation part 2, installing</a></li>
+									
+								
+								
+								
+							
+								
 								
 								
 								
@@ -689,6 +543,86 @@
 					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			
