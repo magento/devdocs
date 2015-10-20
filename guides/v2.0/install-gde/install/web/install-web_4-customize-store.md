@@ -14,11 +14,11 @@ github_link: install-gde/install/web/install-web_4-customize-store.md
 
 <h2 id="instgde-install-magento-web-step4">Step 4: Customize Your Store</h2>
 
-1.	To install optional sample data, select the **Use Sample Data** check box.
+<!-- 1.	To install optional sample data, select the **Use Sample Data** check box.
 
 	<div class="bs-callout bs-callout-info" id="info">
   	<p>If the <strong>Use Sample Data</strong> check box is not available, see <a href="{{ site.gdeurl }}install-gde/install/sample-data.html">Enable optional Magento sample data</a>.</p>
-	</div>
+	</div> -->
 
 1.	From the **Store Default Time Zone** list, click the name of your store's time zone.
 
