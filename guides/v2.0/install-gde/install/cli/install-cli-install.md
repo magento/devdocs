@@ -12,6 +12,9 @@ redirect_from:
   -  /guides/v2.0/install-gde/install/install-cli-install.html
 ---
 
+<div class="bs-callout bs-callout-tip">
+  <p>Totally lost? Need a helping hand? Try our <a href="{{ site.gdeurl }}install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{ site.gdeurl }}install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
+</div>
   
 <h4>Contents</h4>
 
@@ -23,6 +26,7 @@ See one of the following sections:
 *	<a href="#install-perms-set">File system permissions and ownership</a>
 
 See also <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall.html">Update, reinstall, uninstall</a>.
+
 
 <h2 id="instgde-install-cli-prereq">Before you start your installation</h2>
 
