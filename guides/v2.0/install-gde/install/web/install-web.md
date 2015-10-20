@@ -12,10 +12,6 @@ redirect_from:
   - /guides/v2.0/install-gde/install/install-web.html
 ---
 
-<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
-<!-- Referring file: README.md owned by core and setup\view\magento\setup\landing.phtml owned by Ogres -->
-
-
 <h4>Contents</h4>   
 
 See one of the following sections:
@@ -325,7 +321,8 @@ You can reinstall the Magento software in an development environment especially 
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli.html#instgde-install-magento-update">Update</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli.html#instgde-install-magento-reinstall">Uninstall and reinstall</a>
 
+
+
 #### Next step
 
-*	To install optional Magento sample data (sample store, products, customers, and so on), see <a href="{{ site.gdeurl }}install-gde/install/sample-data.html">Enable optional Magento sample data</a>.
-*	<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>.
+<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>.
