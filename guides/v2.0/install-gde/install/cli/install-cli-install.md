@@ -22,8 +22,6 @@ See one of the following sections:
 
 *	<a href="#instgde-install-cli-prereq">Before you start your installation</a>
 *	<a href="#instgde-install-cli-magento">Install the Magento software from the command line</a>
-*	<a href="#install-perms-import">Why we recommend you set file system permissions</a>
-*	<a href="#install-perms-set">File system permissions and ownership</a>
 
 See also <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall.html">Update, reinstall, uninstall</a>.
 
@@ -391,12 +389,6 @@ Messages similar to the following display to indicate a successful installation:
 <span class="glyphicon-class">
   <p>The command must be entered either on a single line or, as in the preceding example, with a <code>\</code> character at the end of each line.</p></span>
 </div>
-
-<h2 id="install-perms-import">Why we recommend you set file system permissions</h2>
-{% include install/file-system-perms1-why.html %}
-
-<h2 id="install-perms-set">File system permissions and ownership</h2>
-{% include install/file-system-perms2-how.html %}
 
 #### Next step
 
