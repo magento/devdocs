@@ -37,8 +37,8 @@ A basic flow is the following:
 
 ### How to determine a block name and a path {#mtf_block_path}
 
-The testing block name and path in the Magento Testing Framework (`magento2/dev/tests/functional/tests/app`) should reflect a corresponding block in the Magento code base (`magento2/app/code`) for your convenience.
-For example, you develop a functional test for the bundle product creation, that uses the Bundle Items section. In the Magento code base, the block, which is responsible for the bundle option, is the `Magento\Bundle\Block\Adminhtml\Catalog\Product\Edit\Tab\Bundle\Option.php`, so in the MTF you can create a new file `Magento\Bundle\Block\Test\Adminhtml\Catalog\Product\Edit\Tab\Bundle\Option.php`.
+The block name and path in the Magento functional tests (`magento2/dev/tests/functional/tests/app`) should reflect a corresponding block in the Magento code base (`magento2/app/code`) for your convenience.
+For example, you develop a functional test for the bundle product creation, that uses the Bundle Items section. In the Magento code base, the block, which is responsible for the bundle option, is the `Magento\Bundle\Block\Adminhtml\Catalog\Product\Edit\Tab\Bundle\Option.php`, so in the Magento functional tests you can create a new file `Magento\Bundle\Block\Test\Adminhtml\Catalog\Product\Edit\Tab\Bundle\Option.php`.
 
 Magento can show you a full class name of the block and path to the PHTML template right on the UI of the Magento page (influences web design) or implicitly in the HTML code of the page.
 
@@ -167,7 +167,7 @@ For example, <a href="https://github.com/magento/magento2/blob/9d4c58e77126ae448
 
 ### Add block to the page {#mtf_block_to-page}
 
-Blocks are tested as part of the [page object][]. To add the block to the page you must add a corresponding node to the XML file of the page object.
+Blocks are tested as part of the [page][] object. To add the block to the page you must add a corresponding node to the XML file of the page object.
 
 For example, the <a href="{{site.mage2000url}}dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/WidgetGrid.php">WidgetGrid.php</a> is a part of the page that is defined in <a href="{{site.mage2000url}}dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml"><code>WidgetInstanceIndex.xml</code></a>.
 
@@ -379,7 +379,7 @@ This page relates to the Magento_Catalog module and contains `ViewBlock`. This b
 #### Create a render {#mtf_block_render_create}
 Let's create render for the bundle product.
 
-**Step 1**. Create `Bundle/Test/Page/Product/CatalogProductView.xml` page to merge with the basic page `Catalog/Test/Page/Product/CatalogProductView.xml`. More details about page merging you can find in the [Page][] topic of the MTF Guide.
+**Step 1**. Create `Bundle/Test/Page/Product/CatalogProductView.xml` page to merge with the basic page `Catalog/Test/Page/Product/CatalogProductView.xml`. [Learn more about page merging]({{site.gdeurl}}mtf/mtf_entities/mtf_page.html#mtf_page_merge).
 
 **Step 2**. In the `Bundle/Test/Page/Product/CatalogProductView.xml`, copy `page` node from the `Catalog/Test/Page/Product/CatalogProductView.xml` without `module` attribute
 
