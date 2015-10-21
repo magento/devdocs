@@ -213,9 +213,11 @@
 		
 		<h2 id="module-file-structure">Module file Structure</h2>
 
-<p>Magento 2 looks for the files that make up a module, including configuration files, in particular places. Follow the predefined file structure to ensure that your module works as expected.</p>
+<p>Magento 2 looks for the files that make up a module, including configuration files, in particular places inside the module file structure. Follow the predefined file structure to ensure that your module works as expected.</p>
 
-<h3 id="magento-2-module-file-structure">Magento 2 Module File Structure</h3>
+<p>A module can live anywhere under the Magento root directory. Regardless of where you add it, you must <a href="component-registration.html">register the module’s location</a>.</p>
+
+<h3 id="magento-2-module-file-structure">Magento 2 Module File structure</h3>
 
 <p>A typical file structure for a Magento 2 module:</p>
 <p><img src="/common/images/pdg-config-file-structure.png" width="300" alt="A filesystem view of a typical file structure" /></p>
@@ -260,7 +262,7 @@ cd module-catalog
 
 <p>Or, you could just add them at once:</p>
 
-<pre><code>mkdir Api &amp;&amp; mkdir Block &amp;&amp; mkdir Controller &amp;&amp; mkdir etc &amp;&amp; mkdir Helper &amp;&amp; mkdir i18n &amp;&amp; mkdir Model &amp;&amp; mkdir view
+<pre><code>mkdir Api Block Controller etc Helper i18n Model view
 </code></pre>
 
 <p>Make sure you add the <code>etc</code> folder; it is required, and is where most of the configuration files, including <code>module.xml</code>, are kept.</p>
@@ -443,6 +445,10 @@ cd module-catalog
 								
 							
 									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/required-configuration-files.html">Define your configuration files</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/component-registration.html">Component registration</a></li>
 						
 								
 							

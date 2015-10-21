@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Test your module</title>
+	<title>Security overview</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/extension-dev-guide/test-module.html">
+	<link rel="canonical" href="//guides/v2.0/architecture/security_intro.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Test your module</h1>
+		<h1 class="page-heading">Security overview</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/extension-dev-guide/test-module.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/architecture/security_intro.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -211,15 +211,34 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="test-your-module">Test your module</h2>
+		<h2 id="security_intro">Security overview</h2>
+<p>Magento 2.0 includes the following security enhancements: </p>
 
-<p>Test your module by deploying Magento Community Edition and adding the module to the project’s <code>composer.json</code>. Marshall the module into the <code>app/code</code> directory.</p>
+<ul>
+  <li>
+    <p><b>Enhanced password management</b>. Magento has strengthened the hashing algorithms (SHA-256) used in password management. </p>
+  </li>
+  <li>
+    <p><b>Improved prevention of cross-site scripting (XSS) attacks by making escaped data the default</b>. The Magento Framework has adopted conventions that regulate the escaping of data in output. These conventions include the ability to escape  output for HTML pages (HTML, JSON, and JavaScript) and email. Where possible, escaping is transparent to client code. See <a href="/guides/v2.0/frontend-dev-guide/templates/template-security.html">Security measures against XSS attacks</a> in the Frontend Developer Guide. </p>
+  </li>
+  <li>
+    <p><b>Restricted permissions for file access</b>. Ability to set discrete file access for production and developer  modes. This change tightens security on generated files, static files, and any files and directories created by Magento (including logs, backups, and reports). See <a href="/guides/v2.0/install-gde/install/file-system-perms.html"> Set file system ownership and permissions </a> in the Installation Guide.</p>
 
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">&quot;require&quot;</span><span class="err">:</span> <span class="p">{</span>
-    <span class="nt">&quot;magento/magento-composer-installer&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;magento/product-community-edition&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0.0&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;foovendor/module-one&quot;</span><span class="p">:</span> <span class="s2">&quot;0.1.1&quot;</span>
-<span class="p">}</span><span class="err">,</span></code></pre></div>
+    <p>Magento also provides  a CLI command that switches between developer mode and production mode. When you use the command to switch mode, the system also changes file system permissions. In production mode,   directory permissions are set to 750, and file permissions are set to 640. In developer mode, directory permissions are set to 770, and file permissions are set to 660. </p>
+
+    <p>(Permissions need to vary due to user need, of course. For example, the Magento file system owner must own the file system. In contrast, the web server user needs read access only to the file system and write access to some directories (such as <code>pub/media</code>). And the web server user should not have write access to the entire Magento file system. For more information, see <a href="/guides/v2.0/install-gde/prereq/apache-user.html"> Create the magento file system owner</a>.)</p>
+  </li>
+  <li>
+    <p><b>Improved prevention of clickjacking exploits</b>. Magento safeguards your store from clickjacking attacks by using an X-Frame-Options HTTP request header. For more information, see <a href="/guides/v2.0/config-guide/secy/secy-xframe.html"> X-Frame-Options header</a>.</p>
+  </li>
+  <li>
+    <p><b>Use of non-default admin URL</b>. A default admin URL makes it easy to target attacks on specific locations using automated password guessing. To prevent against this type of attack, Magento by default creates a random Admin URI when you install the product. The CLI is provided so that you can  see the password if you forget it. You can also use the CLI change this URI.  Although the use of a non-default admin URL will not secure the site, its use will help prevent large-scale automated attacks. See <a href="/guides/v2.0/install-gde/install/cli/install-cli-adminurl.html"> Display or change the Admin URI</a> in Configuration Guide for more information. </p>
+  </li>
+</ul>
+
+<h2>Related topics</h2>
+<p><a href="/guides/v2.0/config-guide/bk-config-guide.html">Configuration Guide</a></p>
+
 
 
 		</div>
@@ -249,9 +268,9 @@
 
 
 
-<h4>PHP developer guide</h4>
 
 
+<h4>Architecture guide</h4>
 
 
 
@@ -284,30 +303,24 @@
 		
 				
 				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
 					
 					
 					
 					
+					
+					
+						
+						
+						
+						
+							
+							
+								<li class=" active "><a href="/guides/v2.0/architecture/security_intro.html">Security</a></li>
+				
+							
+							
+						
+
 					
 					
 						
@@ -319,17 +332,13 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">Introduction</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/architecture/arch_whatis.html">Introduction</a></li>
 									
 								
 								
 								
 							
 								
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/developers_roadmap.html">Developer roadmap</a></li>
-						
 								
 								
 								
@@ -348,7 +357,7 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/prepare.html">Prepare</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a></li>
 									
 								
 								
@@ -357,56 +366,31 @@
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/composer-integration.html">Composer integration</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/build.html">Build</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/module-file-structure.html">Module file Structure</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/architecture/extensibility.html">Extensibility and modularity</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/required-configuration-files.html">Define your configuration files</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/architecture/storefront_customization.html">Storefront customization strategies</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/component-registration.html">Component registration</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/create_module.html">Create a module</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/architecture/stack-basics.html">Stack basics</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/module-load-order.html">Module load order</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/architecture/tech-stack.html">Technology stack</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/enable-module.html">Enable a module</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/architecture/back-compatibility.html">Backward compatibility</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/architecture/versioning.html">Versioning policy</a></li>
 						
 								
 								
@@ -426,7 +410,7 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/validate.html">Validate</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/architecture/archi_perspectives/ALayers_intro.html">Architectural layers</a></li>
 									
 								
 								
@@ -435,7 +419,19 @@
 								
 								
 							
-									<li class="level-2  active "><a href="/guides/v2.0/extension-dev-guide/test-module.html">Test your module</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/architecture/archi_perspectives/present_layer.html">Presentation layer</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/architecture/archi_perspectives/service_layer.html">Service layer</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/architecture/archi_perspectives/domain_layer.html">Domain layer</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/architecture/archi_perspectives/persist_layer.html">Persistence layer</a></li>
 						
 								
 								
@@ -455,7 +451,7 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/package.html">Package</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/architecture/archi_perspectives/LogicalView_intro.html">Logical View</a></li>
 									
 								
 								
@@ -464,80 +460,23 @@
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/package_module.html">Package a module</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/module-development.html">Module development</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/architecture/archi_perspectives/components.html">Components</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/api-concepts.html">Public interfaces & APIs</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/architecture/archi_perspectives/composer.html">Composer</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/service-contracts/design-patterns.html">Service contract design patterns</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/architecture/archi_perspectives/filesystem.html">Magento filesystem</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/depend-inj.html">Dependency injection</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/architecture/archi_perspectives/framework.html">Magento Framework</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/code-generation.html">Code generation</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/attributes.html">EAV and extension attributes</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/plugins.html">Magento plug-ins</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/routing.html">Routing</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/indexing.html">Indexing</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/backward-compatibility.html">Backward compatibility</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/howdoi/php/php_clear-dirs.html">Clear directories during development</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/architecture/archi_perspectives/third-party-libs.html">Third-Party libraries</a></li>
 						
 								
 								
@@ -549,6 +488,26 @@
 					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			

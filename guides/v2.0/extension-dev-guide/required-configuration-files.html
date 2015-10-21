@@ -242,18 +242,11 @@
 <p>In addition to those files, a Magento 2 module also has nested configuration folders in the <code>etc</code> folder for any required administration html, frontend, API REST, or API SOAP specific configuration. Additions you make to files in these folders override the settings in the global configuration files for the respective functionality only. That is, if you add a <code>config.xml</code> file to <code>etc/frontend</code>, the settings you make in that file overrides the settings in <code>etc/config.xml</code> <strong>only for frontend</strong> functionality.</p>
 
 <ul>
-  <li><em>YourModule</em>/etc/adminhtml/</li>
-  <li><em>YourModule</em>/etc/frontend/</li>
-  <li><em>YourModule</em>/etc/webapi_rest/</li>
-  <li><em>YourModule</em>/etc/webapi_soap/</li>
+  <li>&lt;YourModule&gt;/etc/adminhtml/</li>
+  <li>&lt;YourModule&gt;/etc/frontend/</li>
+  <li>&lt;YourModule&gt;/etc/webapi_rest/</li>
+  <li>&lt;YourModule&gt;/etc/webapi_soap/</li>
 </ul>
-
-<p>If you want to just create the basic set of folders and files in etc that you might need, you could enter the following at the command line:</p>
-
-<pre><code> cd etc 
-
- mkdir adminhtml &amp;&amp; mkdir frontend &amp;&amp; mkdir webapi_rest &amp;&amp; mkdir webapi_soap &amp;&amp; touch acl.xml config.xml di.xml module.xml webapi.xml
-</code></pre>
 
 <h3 id="configuration-files">Configuration files</h3>
 
@@ -267,22 +260,22 @@
 <p>The exact set of configuration files required for your module depends on what your new module does. The required configuration files depend on how you plan to use the module: will the module be manifested on the storefront UI, or in the Magento Admin panel, or as a backend extension that makes a service call? Or all of the above. For example, if your module performs a function in the Admin, you should add any necessary configuration files for those functions to <code>etc/adminhtml/</code>, like:</p>
 
 <ul>
-  <li><code><em>YourModule</em>/etc/adminhtml/di.xml</code></li>
-  <li><code><em>YourModule</em>/etc/adminhtml/routes.xml</code></li>
+  <li><code>&lt;YourModule&gt;/etc/adminhtml/di.xml</code></li>
+  <li><code>&lt;YourModule&gt;/etc/adminhtml/routes.xml</code></li>
 </ul>
 
 <p>Similarly, if your module changes the UI, you should add the needed configuration files to <code>~/etc/frontend/</code>. For example:</p>
 
 <ul>
-  <li><code><em>YourModule</em>/etc/frontend/.xml</code></li>
-  <li><code><em>YourModule</em>/etc/frontend/page_types.xml</code></li>
+  <li><code>&lt;YourModule&gt;/etc/frontend/.xml</code></li>
+  <li><code>&lt;YourModule&gt;/etc/frontend/page_types.xml</code></li>
 </ul>
 
 <p>If the module is a service that may call an API, or does some other work that is not manifested in the UI you should add any needed configuration files in the REST and/or SOAP webapi configuration folders, like this:</p>
 
 <ul>
-  <li><code><em>YourModule</em>/etc/webapi_rest/di.xml</code></li>
-  <li><code><em>YourModule</em>/etc/webapi_soap/di.xml</code></li>
+  <li><code>&lt;YourModule&gt;/etc/webapi_rest/di.xml</code></li>
+  <li><code>&lt;YourModule&gt;/etc/webapi_soap/di.xml</code></li>
 </ul>
 
 <p>Keep in mind that you may be able to handle your module’s configuration solely with configuration files at the top level of your module’s <code>etc</code> folder, but the nested folder is a useful way to keep the configuration neatly compartmentalized.</p>
@@ -298,7 +291,7 @@
 
 <h2 id="next">Next</h2>
 
-<p><a href="create_module.html">Create a module</a></p>
+<p><a href="component-registration.html">Component Registration</a></p>
 
 
 
@@ -471,6 +464,10 @@
 								
 							
 									<li class="level-2  active "><a href="/guides/v2.0/extension-dev-guide/required-configuration-files.html">Define your configuration files</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/component-registration.html">Component registration</a></li>
 						
 								
 							

@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Test your module</title>
+	<title>Component registration</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/extension-dev-guide/test-module.html">
+	<link rel="canonical" href="//guides/v2.0/extension-dev-guide/component-registration.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Test your module</h1>
+		<h1 class="page-heading">Component registration</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/extension-dev-guide/test-module.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/extension-dev-guide/composer-integration.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -211,15 +211,85 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="test-your-module">Test your module</h2>
+		<h2 id="component-registration">Component registration</h2>
 
-<p>Test your module by deploying Magento Community Edition and adding the module to the project’s <code>composer.json</code>. Marshall the module into the <code>app/code</code> directory.</p>
+<p>Magento components, including modules, themes, and languages, must be registered in the Magento system through the Magento <code>ComponentRegistrar</code> class.</p>
 
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">&quot;require&quot;</span><span class="err">:</span> <span class="p">{</span>
-    <span class="nt">&quot;magento/magento-composer-installer&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;magento/product-community-edition&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0.0&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;foovendor/module-one&quot;</span><span class="p">:</span> <span class="s2">&quot;0.1.1&quot;</span>
-<span class="p">}</span><span class="err">,</span></code></pre></div>
+<p>Each component must have a file called <code>registration.php</code> in its root directory. For example, here is the <code>registration.php</code> file for Magento’s <a href="https://github.corp.ebay.com/magento2/magento2ce/blob/develop/app/code/Magento/AdminNotification/registration.php">AdminNotification module</a>. Depending on the type of component, registration is performed through <code>registration.php</code> by adding to it as follows:</p>
+
+<h3 id="modules">Modules</h3>
+
+<p>Modules are registered with:</p>
+
+<pre><code> ComponentRegistrar::register(ComponentRegistrar::MODULE, '&lt;VendorName_ModuleName&gt;', __DIR__);
+</code></pre>
+
+<p>where &lt;VendorName&gt; is the name of the company providing the module and &lt;ModuleName&gt; is the name of the module.</p>
+
+<h5 id="example">Example</h5>
+<pre><code> ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Magento_AdminNotification', __DIR__);
+</code></pre>
+<p>&nbsp;</p>
+
+<h3 id="themes">Themes</h3>
+
+<p>Themes are registered with:</p>
+
+<pre><code> ComponentRegistrar::register(ComponentRegistrar::THEME, '&lt;area&gt;/&lt;vendor&gt;/&lt;theme name&gt;', __DIR__);
+</code></pre>
+
+<p>where &lt;area&gt; is the functional area of the module (frontend, controller, and so on.), &lt;vendor&gt; is the name of the company providing the theme, and &lt;theme name&gt; is the name of the theme.</p>
+
+<h5 id="example-1">Example</h5>
+<pre><code> ComponentRegistrar::register(ComponentRegistrar::THEME, 'frontend/Magento/luma', __DIR__);
+</code></pre>
+
+<p>&nbsp;</p>
+
+<h3 id="languages">Languages</h3>
+<p>Languages are registered with:</p>
+
+<pre><code> ComponentRegistrar::register(ComponentRegistrar::LANGUAGE, '&lt;VendorName&gt;_&lt;packageName&gt;', __DIR__);
+</code></pre>
+
+<p>where &lt;VendorName&gt; is the name of the company providing the package and &lt;packageName&gt; is the name of the package.</p>
+
+<h5 id="example-2">Example</h5>
+<pre><code> ComponentRegistrar::register(ComponentRegistrar::LANGUAGE, 'magento_de_de', __DIR__);
+</code></pre>
+
+<p>&nbsp;</p>
+
+<h3 id="invoke-registrationphp-in-composerjson">Invoke registration.php in composer.json</h3>
+
+<p>After you create your <code>registration.php</code> file and you are creating <a href="create_module.html#add-the-module8217s-composerjson-file">your module’s composer.json file</a>, remember to invoke your <code>registration.php</code> file in the autoload section of <code>composer.json</code>:</p>
+
+<pre><code> {
+"name": "Acme-vendor/bar-component",
+"autoload": {
+    "psr-4": { "AcmeVendor\\BarComponent\\": "" },
+    "files": [ "registration.php" ]
+} }
+</code></pre>
+
+<p>&nbsp;</p>
+
+<h2 id="sample-registrationphp-file">Sample registration.php file</h2>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">&lt;?</span><span class="nx">php</span>
+<span class="sd">/**</span>
+<span class="sd">* Copyright © 2015 Magento. All rights reserved.</span>
+<span class="sd">* See COPYING.txt for license details.</span>
+<span class="sd">*/</span>
+<span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">register</span><span class="p">(</span>
+  <span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">MODULE</span><span class="p">,</span>
+  <span class="s1">&#39;Magento_AdminNotification&#39;</span><span class="p">,</span>
+  <span class="nx">__DIR__</span>
+<span class="p">);</span></code></pre></div>
+
+<h2 id="next">Next</h2>
+
+<p><a href="create_module.html">Create a module</a></p>
 
 
 		</div>
@@ -394,7 +464,7 @@
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/component-registration.html">Component registration</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/extension-dev-guide/component-registration.html">Component registration</a></li>
 						
 								
 							
@@ -435,7 +505,7 @@
 								
 								
 							
-									<li class="level-2  active "><a href="/guides/v2.0/extension-dev-guide/test-module.html">Test your module</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/test-module.html">Test your module</a></li>
 						
 								
 								

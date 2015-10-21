@@ -213,7 +213,7 @@
 		
 		<h2 id="create-a-module">Create a module</h2>
 
-<p>Now that you have <a href="module-file-structure.html">determined your module’s initial file structure</a> and have an idea of the <a href="required-configuration-files.html">configuration files</a> you’ll need, you can create the module.</p>
+<p>Now that you have <a href="module-file-structure.html">determined your module’s initial file structure</a>, have an idea of the <a href="required-configuration-files.html">configuration files</a> you’ll need, and you’ve <a href="component-registration.html">registered your module</a>, you can create the module.</p>
 
 <h2 id="add-the-module8217s-modulexml-file">Add the module’s <code>module.xml</code> file</h2>
 <p>Declare the module itself by adding a module.xml file in the <code>/etc</code> folder of your module.</p>
@@ -232,7 +232,10 @@
 <h2 id="add-the-module8217s-composerjson-file">Add the module’s <code>composer.json</code> file</h2>
 
 <pre><code>{
-"name": "your-name/module-foobar",
+"name": "your-name/module-Acme",
+"autoload": {
+    "psr-4": { "AcmeVendor\\BarComponent\\": "" },
+    "files": [ "registration.php" ],
 "description": "Test module for Magento 2",
 "require": {
     "php": "~5.5.0|~5.6.0",
@@ -456,6 +459,10 @@
 								
 							
 									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/required-configuration-files.html">Define your configuration files</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/component-registration.html">Component registration</a></li>
 						
 								
 							
