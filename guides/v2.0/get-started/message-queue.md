@@ -8,6 +8,8 @@ menu_order: 1
 github_link: get-started/message-queue.md
 
 ---
+![EE](../../../common/images/ee-only_large.png)
+
 <div class="bs-callout bs-callout-info" id="info">
   <p>The Message Queue Framework is an Enterprise Edition (EE) feature.</p>
 </div>
@@ -16,9 +18,9 @@ github_link: get-started/message-queue.md
 
 <h2>Overview</h2>
 
-Message queues allow components within a system to reliably send jobs and messages to each other asynchronously. As a result, the sender and receiver are not required to interact with each other. 
+Message queues provide an asynchronous communications mechanism in which the sender and the receiver of a message do not contact each other. Nor do they need to communicate with the message queue at the same time. When a sender places a messages onto a queue, it is stored until the recipient receives them. 
 
-The Message Queue Framework is a feature of EE that schedules jobs to be invoked asynchronously. [RabbitMQ](http://www.rabbitmq.com) is a messaging broker that provides a scalable platform for sending and receiving messages, as well as a mechanism for storing undelivered messages. It is based on the Advanced Message Queuing Protocol (AMQP) 0.9.1 specification. 
+The Message Queue Framework (MQF) is a feature of Enterprise Edition (EE) that allows an entity to publish messages to the queues and create consumers to receive them asynchronously. The MQF uses [RabbitMQ](http://www.rabbitmq.com) as the messaging broker, which  provides a scalable platform for sending and receiving messages. It also includes a mechanism for storing undelivered messages. RabbitMQ is based on the Advanced Message Queuing Protocol (AMQP) 0.9.1 specification. 
 
 The following diagram illustrates the Message Queue Framework.
 
@@ -36,13 +38,14 @@ The following diagram illustrates the Message Queue Framework.
 
 Message queues can also be implemented using database tables instead of RabbitMQ. In this case, a publisher writes messages to the queue_message table.
 
+See <a href="#ce">Messaging in Community Edition</a> for information about implementing message queues in Magento CE or in EE environments where the MQF with RabbitMQ is not implemented.
 
 <h2>Configure message queues</h2> 
 
-The initial topology of the queues and exchanges should be installed on Rabbit MQ as Magento is installed. Magento can then work with the scalable queues out of the box. The topology is defined in the Magento `queue.xml` file. Each module has its own `queue.xml` file.
+The initial MQF topology should be established before you attempt to publish the first message. Magento provides a default topology  during installation of the Rabbit MQ module. However, using the default configuration is optional, and you can set up everything manually in advance. If the topology is installed automatically, the MQF relies on the configuration of exchanges, queues, and binds, as defined in the topology is defined in the Magento `queue.xml` file. Each module has its own `queue.xml` file.
 
 <h3>Edit the <code>queue.xml</code> file</h3>
-The `queue.xml` file can contain the following elements, in the order listed:
+The `queue.xml` file can contain the following elements:
 
 + publisher
 + topic
@@ -61,28 +64,29 @@ The `publisher` element configures the type of connection and the exchange to pu
 </tr>
 <tr>
 <td>connection</td>
-<td>If RabbitMQ is to used to manage the queue, then the value must be <code>rabbitmq</code>. Otherwise, then the value must be <code>db</code>.</td>
+<td>If RabbitMQ is to used to manage the queue, then the value must be <code>rabbitmq</code>. The value can also be <code>db</code> or the name of a customer adapter.</td>
 </tr>
 <tr>
 <td>exchange</td>
-<td>The name of the exchange to publish to. The value is specified in a <code>bind</code> element.</td>
+<td>The name of the exchange to publish to. The value is referenced from the <code>bind</code> element.
 </tr>
 </table>
 
 <h4>topic element</h4>
-Configuring the `topic` element defines the format of the published message and specifies which processor to invoke.
+Configuring the `topic` element defines the interface that processes the message and assigns a publisher.
 <table>
 <tr>
 <th>Parameter</th><th>Description</th>
 </tr>
 <tr>
 <td>name</td>
-<td><p>The name assigned to the topic. The format should be <code><i>object</i></code><b>.</b><code><i>action</i></code> You can further distinguish topic names by appending <code><b>.</b><i>subaction</i></code> to the end of the name. Examples: <code>customer.created</code>, <code>customer.sent.email</code></p>
+<td><p>The name assigned to the topic. The format should be <code><i>object</i></code><b>.</b><code><i>action</i></code> You can further distinguish topic names by appending <code><b>.</b><i>subaction</i></code> to the end of the name. Use the past tense for all verbs, to indicate the event has already happened. Examples: <code>customer.created</code>, <code>customer.sent.email</code></p>
 <p>The value is specified in a <code>bind</code> element.</p></td>. 
 </tr>
 <tr>
 <td>schema</td>
-<td><p>The interface that is invoked to process the message. For example, <code>Magento\Customer\Api\Data\CustomerInterface</code>.</p>
+<td><p>The interface that describes the structure of the message. It should be in the format of a Data Interface from the Service Contracts. For example, <code>Magento\Customer\Api\Data\CustomerInterface</code>.
+</p>
 <p>You can also specify a service method signature, such as <code>Magento\Customer\Api\CustomerRepositoryInterface::save</code>. In this case, format the message as an array of all service method parameters, like for a <code>call_user_func_array</code> call. The consumer's callback should expect each message part to be passed as a separate parameter.
 </p></td>
 </tr>
@@ -104,11 +108,11 @@ Each `consumer` elements maps the receiver of a message to a specific queue. The
 </tr>
 <tr>
 <td>queue</td>
-<td>Defines the queue name to send the message to. This value is specified in a <code>bind</code> element.</td>
+<td>Defines the queue name to send the message to. This value is used in the definition of a <code>bind</code> element.</td>
 </tr>
 <tr>
 <td>connection</td>
-<td>Must be <code>rabbitmq</code> or other value specified in the `connection` parameter in of a publisher..</td>
+<td>Must be <code>rabbitmq</code> or other value specified in the `connection` parameter in of a publisher.</td>
 </tr>
 <tr>
 <td>class</td>
@@ -120,12 +124,12 @@ Each `consumer` elements maps the receiver of a message to a specific queue. The
 </tr>
 <tr>
 <td>max_messages</td>
-<td>Specifies the maximum number of messages to </td>
+<td>Specifies the maximum number of messages to consume.</td>
 </tr>
 </table>
 
 <h4>bind element</h4>
-The `bind` elements link topics to queues and exchanges. A topic can be sent to any number of queues.
+The `bind` elements link topics to queues and exchanges, defining the message queue topology. A topic can be sent to any number of queues.
 
 <table>
 <tr>
@@ -145,15 +149,18 @@ The `bind` elements link topics to queues and exchanges. A topic can be sent to 
 </tr>
 </table>
 
-<h3>Configure crontab</h3>
+<h2 id="ce">Messaging in Community Edition</h2>
 
-Cron jobs are the default mechanism to restart consumers. Processes started by `cron` consume the specified number of messages, then die after that.Re-running `cron` restarts the consumer.
+You must implement a way to ensure that the consumers are always available to receive messages. 
 
-Configure `cron` to split different queue consumers into groups, with consumers running in parallel. Combine different consumers into one `cron` group if they are prone to race conditions. You could separate one set of consumers into a group that updates Catalog, and create another set that updates Customers. But do not run a few consumers in parallel that update the catalog, unless consumer is verified to be "thread safe".
+<h3>Process managemnt</h3>
+
+Cron jobs are the default mechanism to restart consumers. Processes started by `cron` consume the specified number of messages, then die after that. Re-running `cron` restarts the consumer.
 
 A magic method, whose name is the same as the consumer name, is used as a callback when declaring new `consumer run` job in `crontab.xml`. Using magic methods allows you to pass the name of the consumer implicitly via method name. Alternatively, virtual types based on abstract consumer runner should be declared with concrete consumer name specified as an argument (this approach is more complex and required extra configuration).
 
 The following shows a `crontab` entry:
+
 {% highlight xml %}
 <group id="default">
     <job name="consumerCustomerCreatedListener" instance="Magento\Amqp\Model\ConsumerRunner" method="customerCreatedListener">
@@ -162,11 +169,14 @@ The following shows a `crontab` entry:
 </group>
 {% endhighlight %}
 
+You can also use a process manager such as <a href="http://supervisord.org/index.html">Supervisor</a> to monitor the status of processes. The manager can use the CLI to restart the processes as needed.
+
+
 <h3>Command line interface</h3>
 
 The CLI can be used to start consumers of the messages from the queue. Multiple consumers can be started at a same time.
 
-`./bin/magento queue:consumers:start <consumer_name> [--max-messages=<value>] [--daemon-mode]`
+`./bin/magento queue:consumers:start <consumer_name> [--max-messages=<value>]`
 
 where:
 
@@ -174,33 +184,12 @@ where:
 
 `--max-messages=<value>` defines the maximum number of messages to consume per invocation. If number of messages are less then defined maximum number of messages, then the consumer will receive all the available messages in a queue.
 
-`--daemon-mode` indicates the process should run continuously. 
-
-If `--max-messages` is not defined and `--daemon-mode` is not specified, the consumer tries to receive only one message per invocation.  
-
-If `--max-messages` is not defined and `--daemon-mode` is specified, the consumer continues to receive endless number of new messages  
+If `--max-messages` is not defined, the consumer continues to receive endless number of new messages  
 
 After getting all available messages, the CLI command terminates. It can be lunched again with cron within a configured period of time, or manually.
 
-<div class="bs-callout bs-callout-tip">
-  <p>You can use a process manager such as <a href="http://supervisord.org/index.html">Supervisor</a> to monitor the status of processes. The manager can use the CLI to restart the processes as needed.
-</p>
-</div>
-
 <h2>Programming topics</h2>
 
-
-<h3>Override topic configuration</h3>
-To introduce runtime configuration that allows you to redefine the adapters for a topic.
-{% highlight php startinline=true %}
-'queue' =>
-    array(
-     'topics' => array(
-        'customer.created' => [publisher="default-rabitmq"],
-        'order.created' => [publisher="default-rabitmq"],
-    ),
-),
-{% endhighlight %}
 
 <h3>Send a message from the publisher to a queue</h3>
 Using the topic name, the connection details are retrieved, message encoded and sent to the queue.
@@ -214,6 +203,38 @@ This instantiates a consumer of the `quename` queue. As a part of listening to t
 $this->consumerFactory->get('customer_created_listener')
     ->process();
 {% endhighlight %}
+
+
+<h3>Adding your own adapter</h3>
+
+A new adapter can be introduced in Dependency Injection (DI) configuration:
+
+{% highlight xml %}
+<type name="Magento\Framework\Amqp\ConsumerFactory">
+    <arguments>
+        <argument name="consumers" xsi:type="array">
+            <item name="mysql" xsi:type="array">
+                <item name="type" xsi:type="string">Magento\MysqlMq\Model\Consumer</item>
+                <item name="connectionName" xsi:type="string">db</item>
+            </item>
+        </argument>
+    </arguments>
+</type>
+{% endhighlight %}
+
+<h3>Override topic configuration</h3>
+The following sample introduces a runtime configuration that allows you to redefine the adapters for a topic.
+
+{% highlight php startinline=true %}
+'queue' =>
+    array(
+     'topics' => array(
+        'customer.created' => [publisher="default-rabitmq"],
+        'order.created' => [publisher="default-rabitmq"],
+    ),
+),
+{% endhighlight %}
+
 
 <h2>MySQL and synchronous adapters</h2>
 
