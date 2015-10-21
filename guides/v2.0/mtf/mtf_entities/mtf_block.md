@@ -459,7 +459,7 @@ public function getOptions(FixtureInterface $product)
  $this->callRender($typeId, 'getOptions', ['product' => $product])
  {%endhighlight%}
  
- * calls a default method if the render is absent
+ * Calls a default method if the render is absent
  
  {%highlight php5 startinline=1%}
  $this->getCustomOptionsBlock()->getOptions($product);
