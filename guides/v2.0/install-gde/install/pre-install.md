@@ -10,6 +10,10 @@ github_link: install-gde/install/pre-install.md
 redirect_from: /guides/v1.0/install-gde/install/pre-install.html
 ---
 
+<div class="bs-callout bs-callout-tip">
+  <p>Totally lost? Need a helping hand? Try our <a href="{{ site.gdeurl }}install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{ site.gdeurl }}install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
+</div>
+
 <h2 id="install-overview-audience">Your install or upgrade path</h2>
 Before you start your installation, take a moment to figure out which type of user you are. It's important because the installation procedure is very different for each type:
 
