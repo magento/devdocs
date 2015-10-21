@@ -131,9 +131,6 @@ Define whether images are displayed in a loop.
 
 **Default value**: `false`
 
-Example of the initialization with the loop option specified:
-     $("#element").fotorama({ loop: true});
-
 <h3 id="gallery_maxwidth"><code>maxwidth</code></h3>
 
 Maximum width of a preview in pixels or percents.
@@ -250,58 +247,104 @@ Width of the preview in gallery in pixels or percents.
 
 **Default value**: `null`
 
-## Methods {#gallery_methods}
+## Gallery API {#gallery_api}
+
+Gallery methods are placed in data storage of the `gallery` object. To initialize the API, on the gallery object, call the `data` method with `gallery` as argument. The illustration follows:
+
+{% highlight php%}
+var api = $(element).data('gallery');
+ 
+//or
+ 
+var api = $('[data-gallery-role="gallery"]').data('gallery');
+
+{% endhighlight %}
+
+This method returns JS object that contains api functions.
+
+<p class="q">api functions? wording</p>
+
+To ensure that gallery is fully formed, wrap your code with event handler function and add it to the `gallery:loaded` event:
+
+<p class="q">`gallery:loaded` or `gallery:uploaded`?</p>
+
+{% highlight php %}
+
+    $(element).on('gallery:uploaded', function () {
+        var api = $(element).data('gallery');
+        /* api methods calls */
+    });
+
+{% endhighlight php%}
+
+Then to call a method use the following notation:
+
+{% highlight php %}
+    api.next();
+{% endhighlight php%}
+
+Where `next` is the methods name. All available methods are listed in the following paragraph.
+
+### Methods {#gallery_methods}
 <ul>
 <li><a href="#gallery_next"><code>next</code></a></li>
-</ul>
-<h3 id="gallery_next"><code>next</code></h3>
+<li><a href="#gallery_prev"><code>prev</code></a></li>
+<li><a href="#gallery_last"><code>last</code></a></li>
+<li><a href="#gallery_first"><code>first</code></a></li>
+<li><a href="#gallery_seek"><code>seek</code></a></li>
+<li><a href="#gallery_updateData"><code>updateData</code></a></li>
+<li><a href="#gallery_updateData"><code>updateOptions</code></a></li>
 
-Displays next preview image. If loop is enabled in options displays the first image after the last if this function is called. If loop is disabled doesn't update current image if it's the last item in list.
+</ul>
+
+<h4 id="gallery_next"><code>next</code></h4>
+
+Displays next preview image. If <a href="#gallery_loop">loop</a> is enabled in options, displays the first image after the last. If loop is disabled, then the last image does not get changed.
+
+<h4 id="gallery_prev"><code>prev</code></h4>
+    
+Displays previous preview image. If <a href="#gallery_loop">loop</a> is enabled in options, displays the last image after the first. If loop is disabled the first image does not get changed.
+
+<h4 id="gallery_last"><code>last</code></h4>
+    
+Displays the last preview image.
+
+<h4 id="gallery_first"><code>first</code></h4>
+
+Displays the first preview image.
+
+<h4 id="gallery_seek"><code>seek</code></h4>
+
+Displays the image with the certain ID. The ID is passed as an argument. 
+
+Doesn't update preview if argument isn't correct. seek(0) doesn't update preview. seek(1) shows 1'st image. seek(-1) shows last image. If entered number bigger then items number or less then "-(items number)" gallery shows modulo of "items number / number".  
+
+<p class="q">are these ids?</p>
+<p class="q">what is modulo of "items number / number"?</p>
+
+<h4 id="gallery_updateData"><code>updateData</code></h4>
+   
+Add new items to the gallery. 
 
 Example:
-next
-api.next();
 
-    prev
-         DIsplays previous preview image. If loop is enabled in options, displays the last image after the first if this function is called. If loop is disabled doesn't update current image if it's the first item in list.
-         Example:
-prev
-api.prev();
-
-    last
-         DIsplays the last preview image.
-         Example:
-last
-api.last();
-
-    first
-         Displays the first preview image.
-         Example:
-first
-api.first();
-
-    seek
-         Displays image with appropriate count number on preview. Doesn't update preview if argument isn't correct. seek(0) doesn't update preview. seek(1) shows 1'st image. seek(-1) shows last image. If entered number bigger then items number or less then "-(items number)" gallery shows modulo of "items number / number".  
-         Example:
-seek
-api.seek(1);
-
-   updateData
-         Updates gallery with new set of items. If argument isn't correct or empty gallery stays in current state.
-         Example:
-
-updateData
+{% highlight php %}
 api.updateData([{
     img: 'image1.jpg',
     thumb: 'thumb1.jpg',
     caption: 'caption'
 }]);
+{% endhighlight php %}
 
-   updateOptions
-         Updates options of active breakpoint or default gallery options, if there is no active breakpoint.
-         Example:
+<h4 id="gallery_updateOptions"><code>updateOptions</code></h4>
+Updates options of active breakpoint or default gallery options, if there is no active breakpoint.
 
-updateOptions
+Example:
+
+{% highlight php%}
+
 api.updateOptions([{
     nav: 'dots'
 }]);
+
+{% endhighlight %}
