@@ -453,13 +453,13 @@ public function getOptions(FixtureInterface $product)
  
  * Calls the `hasRender()` method to check if there is a render with the name `bundle`
  
- * Calls the render
+ * Calls the render if there is a render with the name `bundle`
  
  {%highlight php5 startinline=1%}
  $this->callRender($typeId, 'getOptions', ['product' => $product])
  {%endhighlight%}
  
- * If the render is absent then calls default method
+ * calls a default method if the render is absent
  
  {%highlight php5 startinline=1%}
  $this->getCustomOptionsBlock()->getOptions($product);
