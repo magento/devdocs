@@ -299,23 +299,28 @@ sudo passwd magento_user
   </li>
 </ul>
 
-<h3 id="install-update-depend-user-add2group">Add the Magento file system owner to the web server group</h3>
-<p>To add a user to the web server’s group (assuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with <code>root</code> privileges:</p>
+<h3 id="install-update-depend-user-add2group">Add the Magento file system owner to the web server's primary group</h3>
+<p>To add a user to the web server’s primary group (assuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with <code>root</code> privileges:</p>
 
 <ul>
-  <li>CentOS: <code>usermod -a -G apache &lt;username&gt;</code></li>
-  <li>Ubuntu: <code>usermod -a -G www-data &lt;username&gt;</code></li>
+  <li>CentOS: <code>usermod -g apache &lt;username&gt;</code></li>
+  <li>Ubuntu: <code>usermod -g www-data &lt;username&gt;</code></li>
 </ul>
 
-<p>For example, to add the user <code>deborah</code> to the <code>apache</code> group on CentOS:</p>
+<p>For example, to add the user <code>magento_user</code> to the <code>apache</code> primary group on CentOS:</p>
 
-<pre><code>usermod -a -G apache deborah
+<pre><code>usermod -g apache magento_user
 </code></pre>
 
 <h3 id="install-update-depend-user-group-confirm">Confirm the user's group</h3>
 <p>To confirm your Magento user is a member of the web server group, enter the following command:</p>
 
 <pre><code>groups &lt;user name&gt;
+</code></pre>
+
+<p>A sample result follows:</p>
+
+<pre><code>magento_user : apache
 </code></pre>
 
 <h2 id="install-update-depend-user-switch">Switch to the Magento file system owner</h2>
@@ -610,6 +615,31 @@ sudo passwd magento_user
 							
 									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/dev_updater.html">Update components</a></li>
 						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install/file-system-perms.html">Set file system ownership and permissions</a></li>
+									
+								
+								
+								
+							
+								
 								
 								
 								
