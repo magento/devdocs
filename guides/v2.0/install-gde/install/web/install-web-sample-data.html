@@ -225,7 +225,16 @@
 <h2 id="sample-prereq">Sample data prerequisites</h2>
 <p>Before you install sample data, make sure you have done the following:</p>
 <ol><li><a href="/guides/v2.0/install-gde/install/composer-clone.html">Clone the Magento 2 GitHub repository</a> (preferably the develop branch, which is the default).</li>
-    <li><a href="/guides/v2.0/install-gde/install/prepare-install.html">Update dependencies</a> by running <code>composer install</code>.</li></ol>
+    <li><a href="/guides/v2.0/install-gde/install/prepare-install.html">Update dependencies</a> by running <code>composer install</code>.</li>
+<li>Decide which branch of the code to use:
+    <ul><li><code>master</code>, which is more stable (we recommend this branch unless you're contributing code to the Magento 2 project)</li>
+        <li><code>develop</code>, which is more recent</li>
+    <div class="bs-callout bs-callout-warning">
+        <p>You must clone the <em>same branch</em> of both repositories. If you cloned the <code>master</code> branch of the Magento 2 repository, you must clone the <code>master</code> branch of the sample data repository.</p>
+        <p>Use the <code>git branch</code> command in the Magento 2 clone directory to display which branch you have.</p>
+    </div>
+    </ul>
+</li></ol>
 
 <h2 id="instgde-prereq-sample-clone">Clone the sample data repository</h2>
 <p>This section discusses how to install Magento sample data by cloning the sample data repository. </p>
@@ -251,8 +260,11 @@ The following figure shows an example.<br />
 Typically, for Ubuntu, it's <code>/var/www</code> and for CentOS it's <code>/var/www/html</code>.<br />
 Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</li>
 <li>Enter <code>git clone</code> and paste the value you obtained from step 1.<br />
-An example follows:<br />
-<pre>git clone git@github.com:magento/magento2-sample-data.git</pre></li>
+The format of the command follows:<br />
+<pre>git clone {-b master | -b develop} git@github.com:magento/magento2-sample-data.git</pre>
+We recommend you clone the <code>master</code> branch because it's more stable; clone <code>develop</code> if you're contributing code to Magento 2.<br />
+Remember to clone the <em>same branch</em> of sample data as Magento 2 code. Use the <code>git branch</code> command in the Magento 2 clone directory to display which branch you have.<br /><br />
+An example follows: <code>git clone -b master git@github.com:magento/magento2-sample-data.git</code></li>
 <li>Wait for the repository to clone on your server.<br />
 
     <div class="bs-callout bs-callout-info" id="info">
@@ -283,8 +295,12 @@ The following figure shows an example.<br />
 <li>Change to your web server's docroot directory.<br />
 Typically, for Ubuntu, it's <code>/var/www</code> and for CentOS it's <code>/var/www/html</code>.</li>
 <li>Enter <code>git clone</code> and paste the value you obtained from step 1.<br />
+The format of the command follows:<br />
+<pre>git clone {-b master | -b develop} https://github.com/magento/magento2-sample-data.git</pre>
+We recommend you clone the <code>master</code> branch because it's more stable; clone <code>develop</code> if you're contributing code to Magento 2.<br />
+Remember to clone the <em>same branch</em> of sample data as Magento 2 code. Use the <code>git branch</code> command in the Magento 2 clone directory to display which branch you have.<br /><br />
 An example follows:<br />
-<pre>git clone https://github.com/magento/magento2-sample-data.git</pre></li>
+<pre>git clone -b master https://github.com/magento/magento2-sample-data.git</pre></li>
 <li>Wait for the repository to clone on your server.</li>
 <li>Change to the <code>&lt;your Magento sample data clone dir&gt;/dev/tools</code> directory.</li>
 <li>Enter the following command:<br />
