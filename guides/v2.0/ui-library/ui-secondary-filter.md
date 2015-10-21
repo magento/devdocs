@@ -9,7 +9,7 @@ menu_order: 1
 github_link: uilibrary/ui-secondary-filter.md
 ---
 
-<h3 id="filter">UI Library Filter Component</h3>
+<h3 id="filter">UI Filter Component</h3>
 
 The filter component must be declared as a child to the listing component.
 All column filters are declared as children to the filter component.
