@@ -247,6 +247,9 @@ Width of the preview in gallery in pixels or percents.
 
 **Default value**: `null`
 
+## Magnifier options {#gallery_options}
+TBD
+
 ## Gallery API {#gallery_api}
 
 Gallery methods are placed in data storage of the `gallery` object. To initialize the API, on the gallery object, call the `data` method with `gallery` as argument. The illustration follows:
