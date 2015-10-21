@@ -37,9 +37,9 @@ Open `composer.json` in a text editor.
 
 Add a `require` section like the following:
 
-	"require": {
-        <vendor>/<name>:<version>,
-        <vendor>/<name>:<version>"
+    "require": {
+        "<vendor>/<name>": "<version>",
+        "<vendor>/<name>": "<version>"
     }
 
 Save your changes to `composer.json`, exit the text editor, and enter `composer update`
