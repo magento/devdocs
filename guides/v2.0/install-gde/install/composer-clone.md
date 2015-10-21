@@ -19,7 +19,7 @@ redirect_from: /guides/v1.0/install-gde/install/composer-clone.html
 
 *	<a href="#instgde-prereq-compose-install">Install Composer</a>
 *	<a href="#instgde-prereq-compose-clone">Clone the Magento repository</a>
-*	<a href="#instgde-prereq-compose-access">Set file system permissions and ownership</a>
+*	<a href="#instgde-prereq-compose-access">Set file system ownership and permissions</a>
 
 <h2 id="instgde-prereq-compose-install">Install Composer</h2>
 
@@ -99,7 +99,7 @@ Permission denied (publickey).
 fatal: The remote end hung up unexpectedly</pre>
 	</div>
 
-4.	Continue with <a href="#instgde-prereq-compose-access">Set file system permissions and ownership</a>.
+4.	Continue with <a href="#instgde-prereq-compose-access">Set file system ownership and permissions</a>.
 
 <h3 id="instgde-prereq-compose-clone-https">Clone with HTTPS</h3>
 
@@ -131,8 +131,8 @@ To clone the Magento GitHub repository using the HTTPS protocol:
 
 4.	Continue with the next section.
 
-<h2 id="instgde-prereq-compose-access">Set file system permissions and ownership</h2>
-The following sections discuss how to set file system permissions and ownership:
+<h2 id="instgde-prereq-compose-access">Set file system ownership and permissions</h2>
+The following sections discuss how to set file system ownership and permissions:
 
 *	<a href="#install-perms-import">Why we recommend you set file system permissions</a>
 *	<a href="#install-perms-set">File system permissions and ownership</a>
