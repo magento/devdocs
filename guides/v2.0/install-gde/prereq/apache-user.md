@@ -67,7 +67,7 @@ This section discusses how to find the name of the web server user's group and t
 See one of the following sections:
 
 *	<a href="#install-update-depend-user-findgroup">Find the web server group</a>
-*	<a href="#install-update-depend-user-add2group">Add the Magento file system owner to the web server group</a>
+*	<a href="#install-update-depend-user-add2group">Add the Magento file system owner to the web server's primary group</a>
 
 <h3 id="install-update-depend-user-findgroup">Find the web server group</h3>
 To find the web server user's group:
