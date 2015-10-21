@@ -36,13 +36,13 @@ The general flow is the following:
 
 2. Add the previously created blocks presented on this page to the `<page>` node
 
-3. Generate the page
+3. Run the page generator
 
 Let's see an example of the Magento Widget page:
 
 `magento2/dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml`
 
-where four blocks has been added:
+where four blocks have been added:
 
 {%highlight xml%}
 
@@ -70,9 +70,9 @@ The following table explains `<page>` attributes.
 |`<page>` attribute|Description|Example with explanaintion|
 |---|---|---|
 |`name`|Name of the page PHP class, that will be generated in `magento2/dev/tests/functional/generated/Magento/[module]/Page/[area]/[name].php`.|`WidgetInstanceIndex` |
-|`area`|The page usage area. Determines a [type of the page](#mtf_page_types). The directory with the name assigned to `area` will be created in the module. Value can be `Adminhtml` for the Admin area, or any other for another area.|`Adminhtml`. The page class will be generated in the `magento2/dev/tests/functional/gen#mtf_page_typeserated/Magento/Widget/Page/Adminhtml`. |
-|`mca`{:#mca}|Path following the base URL for the Magento pages (storefront or Admin), or full URL for other pages. MCA is an abbreviation of the Module Controller Action.|`admin/widget_instance/index`. Magento page `example.com/admin/admin/widget_instance/index` to which the generated page will be applied|
-|`module`|Module where the page will be generated |`Magento_Widget`. The page will be generated in the 'magento2/dev/tests/functional/Magento/Widget/Page'|
+|`area`|The page usage area. Determines a [type of the page](#mtf_page_types). The directory with the name assigned to `area` will be created in the module. Value can be `Adminhtml` for the Admin area, or any other for another area.|`Adminhtml`. The page class will be generated in the `magento2/dev/tests/functional/generated/Magento/Widget/Page/Adminhtml`. |
+|`mca`{:#mca}|Path following the base URL for the Magento pages (storefront or Admin), or full URL for other pages. MCA is an abbreviation of the Module Controller Action.|`admin/widget_instance/index`. Considering that `area="Adminhtml"`, the Magento page under test is `http://example.com/admin/admin/widget_instance/index`|
+|`module`|Module where the page will be generated |`Magento_Widget`. The page will be generated in the `magento2/dev/tests/functional/Magento/Widget/Page`|
 
 {% include mtf/block_attributes.md %}
 
@@ -92,13 +92,13 @@ Depending on the `area` and `mca` attributes page can be of one of the following
 
 Admin page has `area="Adminhtml"` in the `<page>` of the page XML file. Generated page extends the [Mtf\Page\BackendPage][] class. You will login automatically to the Admin.
 
-The Magento page will be opened as concatenation of `app_backend_url` from `magento2/dev/tests/functional/phpunit.xml` and [mca](#mca) link.
+The page will be opened as concatenation of `app_backend_url` from `magento2/dev/tests/functional/phpunit.xml` and [mca](#mca) link.
 
 ### Storefront page {#mtf_page_storefront}
 
 Storefront page is recognizable by `area` assigned any value except `Adminhtml` AND `mca` doesn't have `http`. This type of page extends [Mtf\Page\FrontendPage][] class.
 
-The Magento page will be opened as concatenation of `app_frontend_url` from `magento2/dev/tests/functional/phpunit.xml` and [mca](#mca) link.
+The page will be opened as concatenation of `app_frontend_url` from `magento2/dev/tests/functional/phpunit.xml` and [mca](#mca) link.
 
 ### External page {#mtf_page_extern}
 
@@ -125,7 +125,7 @@ To add blocks from different modules to the page follow:
 
 For example, we have `dev/tests/functional/tests/app/Magento/Catalog/Test/Page/Product/CatalogProductView.xml` page and want to add three blocks from the Magento_Review module.
 
-`Catalog/Test/Page/Product/CatalogProductView.xml` contains:
+`dev/tests/functional/tests/app/Magento/Catalog/Test/Page/Product/CatalogProductView.xml` contains:
 
 {%highlight xml%}
 <?xml version="1.0" encoding="utf-8"?>
@@ -147,7 +147,7 @@ For example, we have `dev/tests/functional/tests/app/Magento/Catalog/Test/Page/P
 
 {%endhighlight%}
 
-We should create `Review/Test/Page/Product/CatalogProductView.xml` page with blocks we want to add:
+We should create `dev/tests/functional/tests/app/Magento/Review/Test/Page/Product/CatalogProductView.xml` page with blocks we want to add:
 
 {%highlight xml%}
 <?xml version="1.0" encoding="utf-8"?>
@@ -158,7 +158,7 @@ We should create `Review/Test/Page/Product/CatalogProductView.xml` page with blo
  */
  -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/pages.xsd">
-    <page name="CatalogProductView" area="Product" mca="catalog/product/view" module="Magento_Catalog">
+    <page name="CatalogProductView" mca="catalog/product/view">
         <block name="reviewSummary" class="Magento\Review\Test\Block\Product\View\Summary" locator=".product-reviews-summary" strategy="css selector" />
         <block name="customerReviewBlock" class="Magento\Review\Test\Block\Product\View" locator="#customer-reviews" strategy="css selector" />
         <block name="reviewFormBlock" class="Magento\Review\Test\Block\ReviewForm" locator="#review-form" strategy="css selector" />
@@ -169,6 +169,10 @@ We should create `Review/Test/Page/Product/CatalogProductView.xml` page with blo
 And generate the updated page:
 
     php magento2/dev/tests/functional/utils/generate/page.php
+    
+The result is in the `magento2/dev/tests/functional/generated/Magento/Catalog/Test/Page/Product/CatalogProductView.php` with the following code:
+    
+<script src="https://gist.github.com/dshevtsov/d5be380739c696fcb847.js"></script>
 
 [Block]: {{site.gdeurl}}mtf/mtf_entities/mtf_block.html
 [Mtf\Page\BackendPage]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/BackendPage.php
