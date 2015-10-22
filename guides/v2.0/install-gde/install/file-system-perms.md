@@ -1,6 +1,6 @@
 ---
 layout: default
-group: install_wiz
+group: install_pre
 subgroup: Y_perms
 title: Set file system ownership and permissions
 menu_title: Set file system ownership and permissions
