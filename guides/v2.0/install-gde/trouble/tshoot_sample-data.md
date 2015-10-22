@@ -26,7 +26,7 @@ Error in the console log during sample data installation using the Setup Wizard:
 These exceptions result from file system permissions settings.
 
 #### Solution
-<a href="{{ site.gdeurl }}install-gde/install/web/install-web-sample-data.html#instgde-prereq-compose-clone-perms">Set file system permissions and ownership again</a> as a user with `root` privileges.
+<a href="{{ site.gdeurl }}install-gde/install/web/install-web-sample-data.html#instgde-prereq-compose-clone-perms">Set file system ownership and permissions again</a> as a user with `root` privileges.
 
 ### Symptom
 
