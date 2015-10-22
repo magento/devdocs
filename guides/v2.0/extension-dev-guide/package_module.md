@@ -65,21 +65,13 @@ The following example is a `composer.json` file for a module:
 
 {% highlight JSON %}
 {
-    "name": "foovendor/module-one",
+    "name": "Acme/module-one",
     "description": "N/A",
     "require": {
         "php": "5.4.*|5.5.*"
     },
     "type": "magento2-module",
     "version": "0.1.1",
-    "extra": {
-        "map": [
-            [
-                "*",
-                "Foovendor/ModuleOne"
-            ]
-        ]
-    }
 }
 {% endhighlight %}
 
