@@ -12,6 +12,9 @@ redirect_from:
   -  /guides/v2.0/install-gde/install/install-cli-install.html
 ---
 
+<div class="bs-callout bs-callout-tip">
+  <p>Totally lost? Need a helping hand? Try our <a href="{{ site.gdeurl }}install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{ site.gdeurl }}install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
+</div>
   
 <h4>Contents</h4>
 
@@ -21,10 +24,6 @@ See one of the following sections:
 *	<a href="#instgde-install-cli-magento">Install the Magento software from the command line</a>
 
 See also <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall.html">Update, reinstall, uninstall</a>.
-
-<div class="bs-callout bs-callout-warning">
-    <p>Because of database changes in the Merchant Beta release (1.0.0-beta), you <em>must</em> uninstall the Magento software and reinstall it. Details are provided in <a href="{{ site.gdeurl }}install-gde/install/install-merchbeta.html">Merchant Beta&mdash;uninstall and reinstall</a>.</p>
-</div>
 
 
 <h2 id="instgde-install-cli-prereq">Before you start your installation</h2>
@@ -391,7 +390,6 @@ Messages similar to the following display to indicate a successful installation:
   <p>The command must be entered either on a single line or, as in the preceding example, with a <code>\</code> character at the end of each line.</p></span>
 </div>
 
-#### Next steps
+#### Next step
 
-*	<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>.
-*	To install optional Magento sample data (sample store, products, customers, and so on), see <a href="{{ site.gdeurl }}install-gde/install/sample-data.html">Enable optional Magento sample data</a>.
+<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>.

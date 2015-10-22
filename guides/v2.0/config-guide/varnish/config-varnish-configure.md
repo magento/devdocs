@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: Varnish
+subgroup: CM_Varnish
 title: Configure Varnish and your web server
 menu_title: Configure Varnish and your web server
 menu_order: 10
@@ -95,9 +95,7 @@ To minimally configure Varnish:
 	</div>
 		
 7.	Save your changes to `default.vcl` and exit the text editor.
-8.	Restart Apache:
 
-		service httpd restart
 8.	Restart Varnish:
 
 		service varnish restart

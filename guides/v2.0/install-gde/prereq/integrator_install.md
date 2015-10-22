@@ -9,6 +9,10 @@ menu_node: parent
 github_link: install-gde/prereq/integrator_install.md
 ---
 
+<div class="bs-callout bs-callout-tip">
+  <p>Totally lost? Need a helping hand? Try our <a href="{{ site.gdeurl }}install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{ site.gdeurl }}install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
+</div>
+
 #### Contents
 *	<a href="#integrator-first-over">System integration installation first steps</a>
 *	<a href="#integrator-first-composer">Create a Composer project</a>
@@ -35,7 +39,7 @@ To get started:
 
 	If you configured a virtual host, `<installation directory name>` must match the docroot directory defined for it.
 
-4.	Continue with <a href="{{ site.gdeurl }}install-gde/install/file-system-perms.html">Set file system ownership and permissions</a>.
+3.	Continue with <a href="{{ site.gdeurl }}install-gde/install/file-system-perms.html">Set file system ownership and permissions</a>.
 
 <h2 id="integrator-first-issue">Known issue: you might need to clear your Composer cache</h2>
 {% include install/composer-clear-cache.html %}

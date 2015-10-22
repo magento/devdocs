@@ -12,10 +12,9 @@ redirect_from:
   - /guides/v2.0/install-gde/install/install-web.html
 ---
 
-<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
-<!-- Referring file: README.md owned by core and setup\view\magento\setup\landing.phtml owned by Ogres -->
-
-
+<div class="bs-callout bs-callout-tip">
+  <p>Totally lost? Need a helping hand? Try our <a href="{{ site.gdeurl }}install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{ site.gdeurl }}install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
+</div>
 <h4>Contents</h4>   
 
 See one of the following sections:
@@ -26,10 +25,6 @@ See one of the following sections:
 *	<a href="#instgde-install-reinstall">Updating or reinstalling the Magento software</a>
 
 This section discusses how to install the Magento software using a web-based wizard interface. To install Magento from the command line, see <a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Install Magento software using the command line</a>.
-
-<div class="bs-callout bs-callout-warning">
-    <p>Because of database changes in the Merchant Beta release (1.0.0-beta), you <em>must</em> uninstall the Magento software and reinstall it. Details are provided in <a href="{{ site.gdeurl }}install-gde/install/install-merchbeta.html">Merchant Beta&mdash;uninstall and reinstall</a>.</p>
-</div>
 
 <h2 id="instgde-install-prereq">Before you start your installation</h2>
 
@@ -325,7 +320,8 @@ You can reinstall the Magento software in an development environment especially 
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli.html#instgde-install-magento-update">Update</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli.html#instgde-install-magento-reinstall">Uninstall and reinstall</a>
 
+
+
 #### Next step
 
-*	To install optional Magento sample data (sample store, products, customers, and so on), see <a href="{{ site.gdeurl }}install-gde/install/sample-data.html">Enable optional Magento sample data</a>.
-*	<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>.
+<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>.
