@@ -38,7 +38,7 @@ The `composer.json` uses [Composer's generic schema](https://getcomposer.org/doc
 </tr>
 <tr>
 <td><code>type</code> </td>
-<td>For modules, this value must be set to <code>magento2-module</code>. Other possible types are <code>magento2-component</code>, <code>magento2-theme</code>, <code>magento2-language</code>, and <code>magento2-library</code></td>
+<td>For modules, this value must be set to <code>magento2-module</code>. Other possible types are <code>metapackage</code>, <code>magento2-theme</code>, and <code>magento2-language</code>.</td>
 </tr>
 <tr>
 <td><code>extra-&gt;map</code>  </td>
@@ -47,6 +47,15 @@ The `composer.json` uses [Composer's generic schema](https://getcomposer.org/doc
 
 </tbody>
 </table>
+
+
+
+There are four types of packages that you can submit to Marketplace:
+
+* magento2-module:  This will usually contain sources along with the top level composer.json indicating dependencies and so on. This can be sold in the store directly, or it could be a dependent package hierarchy of some parent package.
+* metapackage: A convenient placeholder to group a list  of packages together exactly as it is described in standard composer.json documentation.  It is also convenient to sell a group of packages (and their respective dependencies) using a metapackage.
+*magento2-theme: For theme packages. It can be sold independently in the store directly, or it could a dependent package hierarchy of some parent package.
+*magento2-language: For language packages – usually contains some csv files to aid in translation of certain contents and so on.  It can be sold directly in store, or could be part of a dependent package hierarchy of some parent package.
 
 
 The following example is a `composer.json` file for a module:
@@ -106,4 +115,8 @@ Prerequisite: git must be set up on your machine.
 {% endhighlight %}
 
 All packages on the private packaging repository can now be referenced within the `require` field.
+
+
+
+##Submitting your module to Marketplace
 
