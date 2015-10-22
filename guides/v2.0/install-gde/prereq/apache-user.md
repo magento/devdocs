@@ -67,7 +67,7 @@ This section discusses how to find the name of the web server user's group and t
 See one of the following sections:
 
 *	<a href="#install-update-depend-user-findgroup">Find the web server group</a>
-*	<a href="#install-update-depend-user-add2group">Add the Magento file system owner to the web server group</a>
+*	<a href="#install-update-depend-user-add2group">Add the Magento file system owner to the web server's primary group</a>
 
 <h3 id="install-update-depend-user-findgroup">Find the web server group</h3>
 To find the web server user's group:
@@ -79,20 +79,24 @@ To find the web server user's group:
 
 	Typically, the user name and the group name are both `www-data`
 
-<h3 id="install-update-depend-user-add2group">Add the Magento file system owner to the web server group</h3>
-To add a user to the web server's group (assuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with `root` privileges:
+<h3 id="install-update-depend-user-add2group">Add the Magento file system owner to the web server's primary group</h3>
+To add a user to the web server's primary group (assuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with `root` privileges:
 
-*	CentOS: `usermod -a -G apache <username>`
-*	Ubuntu: `usermod -a -G www-data <username>`
+*	CentOS: `usermod -g apache <username>`
+*	Ubuntu: `usermod -g www-data <username>`
 
-For example, to add the user `deborah` to the `apache` group on CentOS:
+For example, to add the user `magento_user` to the `apache` primary group on CentOS:
 
-	usermod -a -G apache deborah
+	usermod -g apache magento_user
 
 <h3 id="install-update-depend-user-group-confirm">Confirm the user's group</h3>
 To confirm your Magento user is a member of the web server group, enter the following command:
 
 	groups <user name>
+
+A sample result follows:
+
+	magento_user : apache
 
 <h2 id="install-update-depend-user-switch">Switch to the Magento file system owner</h2>
 After you've performed the other tasks in this topic, enter one of the following commands to switch to that user:

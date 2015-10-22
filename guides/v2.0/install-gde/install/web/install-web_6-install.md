@@ -31,7 +31,7 @@ If the installation failed, click **Previous** to review the information you ent
 You can also run the installer again.
 
 <div class="bs-callout bs-callout-warning">
-    <p>After installing the Magento software, you must <a href="{{ site.gdeurl }}install-gde/install/file-system-perms.html">set file system permissions and ownership</a>.</p>
+    <p>After installing the Magento software, you must <a href="{{ site.gdeurl }}install-gde/install/file-system-perms.html">Set file system ownership and permissions</a>.</p>
 </div>
 
 <h3 id="instgde-install-magento-web-log">Viewing the installation log</h3>
