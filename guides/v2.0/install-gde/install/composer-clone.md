@@ -19,7 +19,7 @@ redirect_from: /guides/v1.0/install-gde/install/composer-clone.html
 
 *	<a href="#instgde-prereq-compose-install">Install Composer</a>
 *	<a href="#instgde-prereq-compose-clone">Clone the Magento repository</a>
-*	<a href="#instgde-prereq-compose-access">Set file system permissions and ownership</a>
+*	<a href="#instgde-prereq-compose-access">Set file system ownership and permissions</a>
 
 <h2 id="instgde-prereq-compose-install">Install Composer</h2>
 
@@ -46,7 +46,10 @@ To install Composer:
 	For additional installation options, see the <a href="https://getcomposer.org/download/" target="_blank">Composer installation documentation</a>.
 
 <h2 id="instgde-prereq-compose-clone">Clone the Magento repository</h2>
-This section discusses how to get current code by cloning the Magento GitHub's develop branch.
+This section discusses how to get current code by cloning the Magento GitHub's develop branch. You can clone either the `master` or `develop` branch:
+
+*	`master` is more stable (we recommend this branch unless you're contributing code to the Magento 2 project)
+*	`develop` is more recent
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>You can now use <a href="{{ site.gdeurl }}install-gde/install/sample-data.html">optional sample data</a> with the <code>develop</code> branch.</p>
@@ -88,7 +91,9 @@ To clone the Magento GitHub repository using the SSH protocol:
 
 	An example follows:
 
-		git clone git@github.com:magento/magento2.git
+		git clone [-b master] git@github.com:magento/magento2.git
+
+	Use `-b master` to clone the master branch; omit it to clone the `develop` branch, which is the default.
 
 3.	Wait for the repository to clone on your server.
 
@@ -99,7 +104,7 @@ Permission denied (publickey).
 fatal: The remote end hung up unexpectedly</pre>
 	</div>
 
-4.	Continue with <a href="#instgde-prereq-compose-access">Set file system permissions and ownership</a>.
+4.	Continue with <a href="#instgde-prereq-compose-access">Set file system ownership and permissions</a>.
 
 <h3 id="instgde-prereq-compose-clone-https">Clone with HTTPS</h3>
 
@@ -125,14 +130,16 @@ To clone the Magento GitHub repository using the HTTPS protocol:
 
 	An example follows
 
-		git clone https://github.com/magento/magento2.git
+		git clone [-b master] https://github.com/magento/magento2.git
+
+	Use `-b master` to clone the master branch; omit it to clone the `develop` branch, which is the default.
 
 3.	Wait for the repository to clone on your server.
 
 4.	Continue with the next section.
 
-<h2 id="instgde-prereq-compose-access">Set file system permissions and ownership</h2>
-The following sections discuss how to set file system permissions and ownership:
+<h2 id="instgde-prereq-compose-access">Set file system ownership and permissions</h2>
+The following sections discuss how to set file system ownership and permissions:
 
 *	<a href="#install-perms-import">Why we recommend you set file system permissions</a>
 *	<a href="#install-perms-set">File system permissions and ownership</a>
