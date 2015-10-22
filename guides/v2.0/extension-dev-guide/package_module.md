@@ -42,7 +42,7 @@ The `composer.json` uses [Composer's generic schema](https://getcomposer.org/doc
 </tr>
 <tr>
 <td><code>extra-&gt;map</code>  </td>
-<td>The mapping information for the marshalling of the package. The first line specifies which files to marshall. Specify <code>"*"</code> to marshall all files. The second line specifies where to place them, relative to the <code>app/code/&lt;Vendor&gt;</code> directory. </td>
+<td>The mapping information for the marshalling of the package. The first line specifies which files to marshall. Specify <code>"*"</code> to marshall all files. The second line specifies where to place them, relative to the <code>&lt;Vendor></code> directory. </td>
 </tr>
 
 </tbody>
@@ -50,12 +50,15 @@ The `composer.json` uses [Composer's generic schema](https://getcomposer.org/doc
 
 
 
-There are four types of packages that you can submit to Marketplace:
+A description of the four types of packages that you can submit to Marketplace:
 
-* magento2-module:  This will usually contain sources along with the top level composer.json indicating dependencies and so on. This can be sold in the store directly, or it could be a dependent package hierarchy of some parent package.
-* metapackage: A convenient placeholder to group a list  of packages together exactly as it is described in standard composer.json documentation.  It is also convenient to sell a group of packages (and their respective dependencies) using a metapackage.
-*magento2-theme: For theme packages. It can be sold independently in the store directly, or it could a dependent package hierarchy of some parent package.
-*magento2-language: For language packages – usually contains some csv files to aid in translation of certain contents and so on.  It can be sold directly in store, or could be part of a dependent package hierarchy of some parent package.
+* __magento2-module__&#8212;A package that usually contains source files plus the top level composer.json, which indicates dependencies and so on. This can be sold in the store directly, or it can be a dependent package hierarchy of some parent package.
+
+* __metapackage__&#8212;A placeholder used to group a collection of packages together. This works exactly as described in standard composer.json documentation. If you have an extension that uses more than one package you must use a metapackage as the root package. Otherwise you should not use metapackage.
+
+* __magento2-theme__&#8212;For theme packages. It can be sold independently in the store directly, or it could a dependent package hierarchy of some parent package.
+
+* __magento2-language__&#8212;For language packages. These usually contain .csv files to aid in translation of certain contents and so on.  It can be sold directly in Marketplace, or could be part of a dependent package hierarchy of some parent package.
 
 
 The following example is a `composer.json` file for a module:
