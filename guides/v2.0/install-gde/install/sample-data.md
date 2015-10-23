@@ -21,6 +21,5 @@ After you install the sample data, log in to your Magento server as, or switch t
 
 	php <your Magento install dir>/bin magento setup:upgrade
 
-If errors display when you go to the storefront, set file system permissions and ownership again.
 
 
