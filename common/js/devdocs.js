@@ -1,30 +1,46 @@
-function devdocs(){
+$(function() {
+
+	if ($.cookie('searchResultsState') ==1) {
+		//show search results page
+		showSearchBox();
+	} else {
+		$.cookie('searchResultsState', '0');
+		hideSearchBox();
+	}
 
 
-if ($.cookie('searchResultsState') ==1) {
-	//show search results page
-	$('#searchResultsBox').fadeIn(300);
-	$('.searchResultsBack').fadeIn(1200);
-} else {
-	$.cookie('searchResultsState', '0');
-	$('#searchResultsBox').fadeOut(300);
-	$('.searchResultsBack').fadeOut(1200);
-}
+	$('form').submit(function(event) {
+		showSearchBox();
+	});
 
+	$('.search-trigger').click(function () {
+		showSearchBox();
+	});
 
-$('form').submit(function(event) {
+	$('DIV.searchResultsBoxClose').click(function(){
+		hideSearchBox();
+	});
 
-	$('#searchResultsBox').fadeIn(300);
-	$('.searchResultsBack').fadeIn(1200);
-	$.cookie('searchResultsState', '1');
-	
+	function showSearchBox () {
+
+		$('#searchResultsBox').fadeIn(300, function () {
+			// Callback function that focuses on input
+			$('input.gsc-input').focus();
+		});
+		$('.searchResultsBack').fadeIn(300);
+		$.cookie('searchResultsState', '1');
+
+	}
+
+	function hideSearchBox () {
+
+		$('#searchResultsBox').fadeOut(300, function () {
+			// Callback function that focuses out of input
+			$('input.gsc-input').blur();
+		});
+		$('.searchResultsBack').fadeOut(300);
+		$.cookie('searchResultsState','0');
+
+	}
+
 });
-
-$('DIV.searchResultsBoxClose').click(function(){
-	$('#searchResultsBox').fadeOut(300);
-	$('.searchResultsBack').fadeOut(1200);
-	$.cookie('searchResultsState','0');
-   
-});
-
-}   //end devdocs

@@ -2,16 +2,30 @@ DIV.gsc-control-wrapper-cse tr:nth-child(odd) td { background: transparent;}
 
 
 .gsc-control-cse {
-font-family: 'Open Sans', sans-serif;
-border-color: #FFFFFF;
-background-color: #fff;
+	font-family: 'Open Sans', sans-serif;
+	border-color: #FFFFFF;
+	background-color: #fff;
+	min-height: 100%;
+	padding-top: 60px;
 }
 .gsc-control-cse .gsc-table-result {
-font-family: 'Open Sans', sans-serif;
-margin: 0 0 0 0;
+	font-family: 'Open Sans', sans-serif;
+	margin: 0 0 0 0;
+}
+
+td.gsc-input {
+	padding-top: 0;
+	padding-bottom: 0;
 }
 input.gsc-input {
-border-color: #000;
+	height: 40px;
+	border-radius: 0;
+	padding: 5px 10px;
+	line-height: 1em;
+	border: 1px solid #666;
+	display: block;
+	margin: 0;
+
 }
 input.gsc-search-button {
 
@@ -155,7 +169,7 @@ color: #008000;
 	color: brown;
 }
 
-   
+
 .gs-result .gs-title, .gs-result .gs-title {
 	text-decoration: none;
 	text-transform: capitalize;
@@ -180,12 +194,15 @@ color: #008000;
 	padding: 0 0 0 0;
 }
 
-DIV#searchResultsBox TABLE {
-    margin: 0 0 2 0;
-    border: 0px solid transparent;
-    padding: 0 0 0 0;
+#searchResultsBox table {
+   margin: 0 0 10px 0;
+   border: none;
+   padding: 0;
 }
-
+#___gcse_0 {
+	min-height: 100%;
+	height: auto;
+}
 
 .gssb_c TABLE {
 	   margin: 0 0 0 0;
@@ -198,9 +215,8 @@ DIV#searchResultsBox TABLE {
 }
 
 .gsc-control-wrapper-cse {
-    width: 85%;
-    margin-left: 7%;
- 
+   width: 85%;
+   margin: 0 auto;
 }
 
 .gs-image-box {
@@ -232,8 +248,6 @@ text-shadow: none;
 
 
 .gsc-result .gs-title {
-  
+
     white-space: nowrap;
 }
-
-
