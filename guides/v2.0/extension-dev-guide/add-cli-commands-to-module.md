@@ -12,71 +12,89 @@ github_link: extension-dev-guide/code-generation.md
 ##{{page.menu_title}}
 
 
-http://olgakopylova.espritica.com/naming-conventions-for-cli-commands-in-magento-2/
+<!-- http://olgakopylova.espritica.com/naming-conventions-for-cli-commands-in-magento-2/
+ -->
 
+Magento 2 introduces a new command-line interface (CLI) that enables component developers to plug in commands provided by modules. 
 
-Magento 2 introduces a new command line tool that allows extension developers to plug in commands provided by modules. See the Magento CLI post from Eugene Tulika to know more about the tool.
-Magento CLI is available since 0.74.0-beta4
+As an extension developer, you can now create and distribute your own commands for Magento applications. But as for any implementation, it's also important to follow some general conventions to keep your commands consistent with commands from other developers. Being consistent in this way reduces the user's learning curve.
 
-As an extension developer, you can now create and distribute your own commands for Magento applications. But as for any implementation, it’s also important to follow some general conventions to keep your commands consistent with commands from other developers. Being consistent in this way reduces the user’s learning curve.
+This topic discusses our recommended conventions.
 
-In this post I’d like to describe conventions we’ve just introduced together with bringing to life the new Magento CLI. The final document will be posted on Magento’s official documentation web-site devdocs.magento.com. Until then, you can leave your feedback and start a discussion here.
+A command name is a part of the command, which defines behavior of the tool on the very high level. In the command it goes right after the tool's name.
+For example, in `bin/magento setup:upgrade`, `bin/magento` is the tool's name and `setup:upgrade` is the name of the command.
 
+If you have a Magento installation handy, enter the following to display the current list of commands:
 
-All said here is just my opinion and should not be considered as an official position of Magento company. But it can be a good place for leaving feedback!
-Command Name
+	php <your Magento install dir>/bin/magento --list
 
-A command name is a part of the command, which defines behavior of the tool on the very high level. In the command it goes right after the tool’s name.
-For example, in bin/magento setup:upgrade, bin/magento is the tool’s name and setup:upgrade is the name of the command.
+## Command format
+Format: `group:[subject:]action`
 
-Format: group:[subject:]action
+### group
+`group` represents a group of related commands. Commands in a group display in a list, which in turn makes it easier for the user to find the desired command. To find a group name for a command, imagine an subject area where it can be used. The subject area can be any of the following:
 
-group represents a group of related commands. Commands in a group display in a list, which in turn makes it easier for the user to find the desired command. To find a group name for a command, imagine an area where it can be used. It can be either a domain area (for example, “module” for actions with modules, “info” for commands that provide some information) or a workflow area (for example, “admin” for commands that can be used by an admin user, “dev” for a developer).
-subject is a subject for the action. Subject is optional, but it can be useful for defining sets of commands that work with the same object. If a subject is represented by a compound word, use dash to separate the words.
-action is an action the command does.
-Examples:
+*	*Domain* area (for example, `module` for actions with modules, `info` for commands that provide some information)
+*	*Workflow* area (for example, `admin` for commands that can be used by an administrator, `dev` for a developer)
 
-// general commands: just a group and an action
-magento setup:install
-magento module:status
+### subject
+`subject` is a subject for the action. The subject is optional, but it can be useful for defining sets of commands that work with the same object. If a subject is represented by a compound word, use a dash or hyphen character to separate the words.
 
-// set of commands with a subject
-magento setup:config:set
-magento setup:config:delete
-magento setup:db-schema:upgrade
-magento setup:db-data:upgrade
-Command Options and Arguments
+### action
+`action` is an action the command does.
 
+### Examples
+	// general commands: just a group and an action
+	magento setup:install
+	magento module:status
+
+	// set of commands with a subject
+	magento setup:config:set
+	magento setup:config:delete
+	magento setup:db-schema:upgrade
+	magento setup:db-data:upgrade
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p><code>db-schema</code> and <code>db-data</code> are examples of compound words.</p>
+</div>
+
+### Command options and arguments
 Options and arguments go after the command name and allow to adjust the behavior of the command.
-For example, in
 
-bin/magento module:disable --force Magento_Catalog
-the --force option and the Magento_Catalog argument allow to bypass the restrictions and to define a particular module to be disabled.
+For example, in `bin/magento module:disable --force Magento_Catalog`, the `--force` *option* and the `Magento_Catalog` *argument* bypass the restrictions and specify a particular module to be disabled; in this case, regardless of dependencies on other modules.
 
-Options and arguments create different user experience. As a developer, you can choose which type of input is better in your particular case.
+Options and arguments create different user experiences. As a developer, you can choose which type of input is better for your particular case.
 
-Command Arguments
+## Command arguments
 
 Arguments are values passed by the user in a specified order. The argument name is not visible to the user.
 
-Format: a single word or a compound word separated with a dash
+Format: a single word or a compound word separated with a dash or hyphen character
 
-For example,
+Example:
 
-magento dev:theme:create frontend Foo bar
-Where:
+	magento dev:theme:create frontend vendor themename
 
-frontend is an area argument
-Foo is a vendor argument
-bar is a theme-name argument
-Use arguments in case you need required data from the user. Aim to have as small number of arguments as possible (recommended not more then 3), so the user will not confuse their order.
+where:
 
-To make it simpler for the user:
+`frontend` is a subject area argument
 
-We recommend running the tool multiple times for providing multiple similar values instead of running it once with 20 values
-Use default values for required arguments where possible. You can then use options instead of arguments to minimize the amount of required data the user must enter
-replace arguments with options: options are named, so the user can provide them in any order. This requires additional data validation (by default, all options are optional)
-Command Options
+`vendor` is a vendor argument
+
+`bar` is a theme name argument
+
+Use arguments when you need required data from the user. We recommend as few arguments as possible (no more then three) so the user will not confuse their order.
+
+To make it simpler for the user, we recommend the following:
+
+*	Run the CLI multiple times for providing multiple similar values instead of running it once with 20 values
+*	Use default values for required arguments where possible. 
+
+	You can then use options instead of arguments to minimize the amount of required data the user must enter.
+
+*	Replace arguments with options: options are named, so the user can provide them in any order. This requires additional data validation (by default, all options are optional).
+
+## Command Options
 
 Options are name-value pairs. The sequence of entered values doesn’t matter.
 An option can have a value or no value. An option that does not require a value represents a flag (yes/no).
