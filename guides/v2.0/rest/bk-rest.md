@@ -2,8 +2,8 @@
 layout: default
 group: rest
 subgroup: A_rest
-title: REST Reference
-menu_title: REST Reference
+title: REST API Reference
+menu_title: REST API Reference
 menu_order: 1
 menu_node: parent
 github_link: rest/bk-rest.md
