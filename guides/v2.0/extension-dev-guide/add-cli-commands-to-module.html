@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento 2 Developer Documentation</title>
+	<title>Adding CLI commands</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/install-gde/continue-to-install.html">
+	<link rel="canonical" href="//guides/v2.0/extension-dev-guide/add-cli-commands-to-module.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading"></h1>
+		<h1 class="page-heading">Adding CLI commands</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/install-gde/continue-to-install.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/extension-dev-guide/code-generation.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -211,26 +211,154 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<div class="bs-callout bs-callout-tip">
-  <p>Totally lost? Need a helping hand? Try our <a href="/guides/v2.0/install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="/guides/v2.0/install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
+		<h2 id="adding-cli-commands">Adding CLI commands</h2>
+
+<!-- http://olgakopylova.espritica.com/naming-conventions-for-cli-commands-in-magento-2/
+ -->
+
+<p>Magento 2 introduces a new command-line interface (CLI) that enables component developers to plug in commands provided by modules. </p>
+
+<p>As an extension developer, you can now create and distribute your own commands for Magento applications. But as for any implementation, it’s also important to follow some general conventions to keep your commands consistent with commands from other developers. Being consistent in this way reduces the user’s learning curve.</p>
+
+<p>This topic discusses our recommended conventions.</p>
+
+<p>A command name is a part of the command, which defines behavior of the tool on the very high level. In the command it goes right after the tool’s name.
+For example, in <code>bin/magento setup:upgrade</code>, <code>bin/magento</code> is the tool’s name and <code>setup:upgrade</code> is the name of the command.</p>
+
+<p>If you have a Magento installation handy, enter the following to display the current list of commands:</p>
+
+<pre><code>php &lt;your Magento install dir&gt;/bin/magento --list
+</code></pre>
+
+<h2 id="command-format">Command format</h2>
+<p>Format: <code>group:[subject:]action</code></p>
+
+<h3 id="group">group</h3>
+<p><code>group</code> represents a group of related commands. Commands in a group display in a list, which in turn makes it easier for the user to find the desired command. To find a group name for a command, imagine an subject area where it can be used. The subject area can be any of the following:</p>
+
+<ul>
+  <li><em>Domain</em> area (for example, <code>module</code> for actions with modules, <code>info</code> for commands that provide some information)</li>
+  <li><em>Workflow</em> area (for example, <code>admin</code> for commands that can be used by an administrator, <code>dev</code> for a developer)</li>
+</ul>
+
+<h3 id="subject">subject</h3>
+<p><code>subject</code> is a subject for the action. The subject is optional, but it can be useful for defining sets of commands that work with the same object. If a subject is represented by a compound word, use a dash or hyphen character to separate the words.</p>
+
+<h3 id="action">action</h3>
+<p><code>action</code> is an action the command does.</p>
+
+<h3 id="examples">Examples</h3>
+<pre><code>// general commands: just a group and an action
+magento setup:install
+magento module:status
+
+// set of commands with a subject
+magento setup:config:set
+magento setup:config:delete
+magento setup:db-schema:upgrade
+magento setup:db-data:upgrade
+</code></pre>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p><code>db-schema</code> and <code>db-data</code> are examples of compound words.</p>
 </div>
 
-<h2 id="installation-options-command-line-or-setup-wizard">Installation options: command line or Setup Wizard</h2>
-<p>Now that you’ve installed prerequisites and taken the first steps (merchant, system integrator, or developer), you’re ready to install the Magento software in any of the following ways:</p>
+<h3 id="command-options-and-arguments">Command options and arguments</h3>
+<p>Options and arguments go after the command name and allow to adjust the behavior of the command.</p>
+
+<p>For example, in <code>bin/magento module:disable --force Magento_Catalog</code>, the <code>--force</code> <em>option</em> and the <code>Magento_Catalog</code> <em>argument</em> bypass the restrictions and specify a particular module to be disabled; in this case, regardless of dependencies on other modules.</p>
+
+<p>Options and arguments create different user experiences. As a developer, you can choose which type of input is better for your particular case.</p>
+
+<h2 id="command-arguments">Command arguments</h2>
+
+<p>Arguments are values passed by the user in a specified order. The argument name is not visible to the user.</p>
+
+<p>Format: a single word or a compound word separated with a dash or hyphen character</p>
+
+<p>Example:</p>
+
+<pre><code>magento dev:theme:create frontend vendor themename
+</code></pre>
+
+<p>where:</p>
+
+<p><code>frontend</code> is a subject area argument</p>
+
+<p><code>vendor</code> is a vendor argument</p>
+
+<p><code>bar</code> is a theme name argument</p>
+
+<p>Use arguments when you need required data from the user. We recommend as few arguments as possible (no more then three) so the user will not confuse their order.</p>
+
+<p>To make it simpler for the user, we recommend the following:</p>
 
 <ul>
-  <li>Using the web-based <a href="/guides/v2.0/install-gde/install/web/install-web.html">Setup Wizard</a>, which is better for less experienced users or anyone who has a hosting provider (especially if you don’t have access to the Magento server)</li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli.html">Command line</a>, which gives you more control but requires more experience and also access to the Magento server</li>
+  <li>Run the CLI multiple times for providing multiple similar values instead of running it once with 20 values</li>
+  <li>
+    <p>Use default values for required arguments where possible. </p>
+
+    <p>You can then use options instead of arguments to minimize the amount of required data the user must enter.</p>
+  </li>
+  <li>Replace arguments with options: options are named, so the user can provide them in any order. This requires additional data validation (by default, all options are optional).</li>
 </ul>
 
-<h2 id="already-installed-the-magento-software">Already installed the Magento software?</h2>
-<p>You might want to manage Magento components or to upgrade:</p>
+<h2 id="command-options">Command Options</h2>
 
-<ul>
-  <li><a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager Guide</a></li>
-  <li><a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Upgrade Guide</a></li>
-</ul>
+<p>Options are name-value pairs. The sequence of entered values doesn’t matter.
+An option can have a value or no value. An option that does not require a value represents a flag (yes/no).
+An option can also have a one-letter shortcut as an alternative to its full name. Enable shortcut for an option if it’s often-used option or it’s easy to determine what the shortcut means. Usually, it makes sense to enable shortcuts for options similar to the ones used in widely-used tools (for example, -f for –force, -v for –verbose, -h for –help).</p>
 
+<p>Format: a single word or a compound word separated with a dash</p>
+
+<p>For example,</p>
+
+<p>magento dev:theme:create –parent=Magento/luma frontend Foo bar
+magento dev:theme:create -p=Magento/luma frontend Foo bar
+magento dev:theme:create –extend-from=Magento/luma frontend Foo bar
+magento module:disable -f Magento_Cms
+Where:</p>
+
+<p>–parent is an option, which specifies a parent theme
+-p is a shortcut for –parent option
+-f is a shortcut for a non-value option –force
+frontend, Foo and bar are arguments (see Command Arguments section)
+Use options for:</p>
+
+<p>optional data that the user may provide
+required data that has default value
+Example:</p>
+
+<p>// correct
+magento dev:theme:create –extend-from=Magento/luma frontend Foo bar
+magento module:disable –force Magento_Catalog
+magento module:disable -f Magento_Catalog</p>
+
+<p>//incorrect
+magento module:disable –force=1 Magento_Catalog
+magento module:disable -f=yes Magento_Catalog
+Naming Collisions</p>
+
+<p>We’re still thinking about how to avoid naming collisions between commands from different extension developers and at the same time, how to keep command names simple. There are a few options:</p>
+
+<p>Restricting command names to start with a unique name, such as a vendor name. The usability of the command depends on what you choose for a vendor name. For example, okopylova:dev:theme:create doesn’t look friendly for the end user.
+Automatically adding a vendor name only in the case of collision. But it would produce multiple interfaces for the same command. For example, dev:theme:create and okopylova:dev:theme:create. This would require the developer to describe in the documentation two names of the same command. And it would confuse the users.
+Allow only one command with the same name to be present in the system and automatically skip all others. It’s even more confusing for the user and it’s also unclear, if the command would be chosen randomly.
+Right now I’m thinking about:</p>
+
+<p>Include a vendor name in the command name. And it might not be only at the beginning of the name. In this case it’s possible at least to create commands for an existing group of commands by Symfony grouping. For example, dev:okopylova:theme:create.
+Analyze extensions uploaded to Magento Connect (in the future) and display information about commands’ incompatibility with other extensions. You can also add a feature of disabling commands from specific modules by a user, so the user could choose which command to use.
+Any other options?</p>
+
+<p>Conclusion</p>
+
+<p>So far we have a modular Magento CLI, so you can already try it and implement your custom commands.</p>
+
+<p>The conventions are being created to define the rules and to make the command names consistent.</p>
+
+<p>And there is still an open question about how to solve naming collisions for commands implemented by different extension developers?</p>
+
+<p>Feel free to leave your feedback, if you have any thoughts about the conventions or the Magento CLI itself. Especially, if you try to implement some custom commands.</p>
 
 
 		</div>
@@ -260,6 +388,7 @@
 
 
 
+<h4>PHP developer guide</h4>
 
 
 
@@ -274,7 +403,6 @@
 
 
 
-<h4>Installation guide<br>Part 1: Getting started</h4>
 
 
 
@@ -311,263 +439,259 @@
 			
 				
 				
+					
+					
+					
+					
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">Introduction</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/developers_roadmap.html">Developer roadmap</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/prepare.html">Prepare</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/composer-integration.html">Composer integration</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/build.html">Build</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/module-file-structure.html">Module file Structure</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/required-configuration-files.html">Define your configuration files</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/component-registration.html">Component registration</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/create_module.html">Create a module</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/module-load-order.html">Module load order</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/enable-module.html">Enable a module</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/validate.html">Validate</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/test-module.html">Test your module</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/package.html">Package</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/package_module.html">Package a module</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/module-development.html">Module development</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/api-concepts.html">Public interfaces & APIs</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/service-contracts/design-patterns.html">Service contract design patterns</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/depend-inj.html">Dependency injection</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/code-generation.html">Code generation</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/attributes.html">EAV and extension attributes</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/plugins.html">Magento plug-ins</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/routing.html">Routing</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/indexing.html">Indexing</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/backward-compatibility.html">Backward compatibility</a></li>
+						
+								
+							
+									<li class="level-2  active "><a href="/guides/v2.0/extension-dev-guide/add-cli-commands-to-module.html">Adding CLI commands</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/howdoi/php/php_clear-dirs.html">Clear directories during development</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+
+
+				
 			
 			
 				
-				
-					
-					
-					
-					
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install-quick-ref.html">Installation quick reference (tutorial)</a></li>
-									
-								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install-roadmap_part1.html">Installation roadmap (reference)</a></li>
-									
-								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/system-requirements.html">Magento system requirements</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/prereq-overview.html">Prerequisites</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/apache.html">Apache</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/mysql.html">MySQL</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/apache-user.html">Create the Magento file system owner</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/security.html">Security-related prerequisites</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/optional.html">Optional software</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install/pre-install.html">Your install or upgrade path</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/merch_install.html">Merchant installation first steps</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/integrator_install.html">System Integrator installation first steps</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/dev_install.html">Contributing developer installation first steps</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/prepare-install.html">Update installation dependencies</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/dev_updater.html">Update components</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install/file-system-perms.html">Set file system ownership and permissions</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class="  active "><a class="nav-header" href="/guides/v2.0/install-gde/continue-to-install.html">Next&mdash;Installation part 2, installing</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
-					
-
-
 				
 			
 			
