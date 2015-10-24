@@ -301,44 +301,86 @@ Server built:   Jul 22 2014 14:35:32
 
     <pre><code>apache2 -v
 </code></pre>
+
+    <p>The result displays similar to the following:</p>
+
+    <pre><code>Server version: Apache/2.2.22 (Ubuntu)
+Server built:   Jul 22 2014 14:35:32
+</code></pre>
+  </li>
+  <li>
+    <p>Enable rewrites and <code>.htaccess</code>:</p>
+
+    <ul>
+      <li><a href="#apache-rewrites2.4">Enable rewrites and .htaccess for Apache 2.4</a></li>
+      <li><a href="#apache-rewrites2.2">Enable rewrites and .htaccess for Apache 2.2</a></li>
+    </ul>
   </li>
 </ol>
 
-<p>The result displays similar to the following:</p>
-
-<pre><code>Server version: Apache/2.2.22 (Ubuntu)
-Server built:   Jul 22 2014 14:35:32
-</code></pre>
-
-<h3 id="apache-rewrites2.2">Enable rewrites and .htaccess for Apache 2.2</h3>
-<p>Use this section to enable Apache 2.2 rewrites and specify a setting for the <a href="http://httpd.apache.org/docs/current/howto/htaccess.html" target="_blank">distributed configuration file, <code>.htaccess</code></a></p>
+<h3 id="apache-rewrites2.4">Enable rewrites and .htaccess for Apache 2.4</h3>
+<p>Use this section to enable Apache 2.4 rewrites and specify a setting for the <a href="http://httpd.apache.org/docs/current/howto/htaccess.html" target="_blank">distributed configuration file, <code>.htaccess</code></a></p>
 <p>Magento uses server rewrites and <code>.htaccess</code> to provide directory-level instructions for Apache.</p>
 <div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
 	<p>Failure to enable these settings typically results in no styles displaying on your storefront or Admin.</p></span>
 </div>
-<ol><li>Open the following file for editing.
-<ul><li>Ubuntu: <code>vim /etc/apache2/sites-available/default</code></li>
-<li>CentOS: <code>vim /etc/httpd/conf/httpd.conf</code></li></ul>
-</li>
-<li>Locate the block that starts with:
-<ul><li>Ubuntu 12: <code>&lt;Directory /var/www/&gt;</code></li>
-	<li>Ubuntu 14 or CentOS: <code>&lt;Directory /var/www/html&gt;</code><br /></li></ul>
-</li>
-<li>Change the value of <code>AllowOverride</code> to <code>&lt;value from Apache site&gt;</code>.<br />
-	An example for Ubuntu 12 follows.<br />
-<pre>&lt;Directory /var/www/&gt;
-	Options Indexes FollowSymLinks MultiViews
-	AllowOverride &lt;value from Apache site&gt;
-	Order allow,deny
-	Allow from all
-&lt;Directory&gt;</pre></li>
-<li>Save the file and exit the text editor.</li>
-<li><em>Ubuntu only</em>. Configure Apache to use the <code>mod_rewrite</code> module.
-<pre>cd /etc/apache2/mods-enabled
-ln -s ../mods-available/rewrite.load</pre></li>
-<li>Restart Apache.
-<pre>service apache2 restart</pre></li></ol>
+<ol><li>To enable the Apache rewrite module, enter the following command:
+<pre>a2enmod rewrite</pre></li>
+<li>To enable Magento to use the distributed configuration file <code>.htaccess</code>see the guidelines in the <a href="http://httpd.apache.org/docs/current/mod/mod_rewrite.html" target="_blank">Apache 2.4 documentation</a>.<br />
+	Note that in Apache 2.4, the server's default site configuration file is <code>/etc/apache2/sites-available/000-default.conf</code><br />
+	For example, you can add the following to the end of <code>000-default.conf</code>:
+	<pre>
+&lt;Directory "/var/www/html"&gt;
+	AlowOverride &lt;value from Apache site&gt;
+&lt;/Directory&gt;</pre></li>
+<li>Restart Apache:
+	<pre>service apache2 restart</pre></li></ol>
+
+<div class="bs-callout bs-callout-info" id="info">
+	<span class="glyphicon-class">
+	<ul><li>If you upgraded from an earlier Apache version, first look for <code>&lt;Directory "/var/www/html"&gt;</code> or <code>&lt;Directory "/var/www"&gt;</code> in <code>000-default.conf</code>.</li>
+	<li>You must change the value of <code>AllowOverride</code> in the directive for the directory to which you expect to install the Magento software. For example, to install in the web server docroot, edit the directive in <code>&lt;Directory /var/www&gt;</code>.</li></ul></span>
+</div>
+
+<h4 id="next-steps">Next steps</h4>
+<ul>
+  <li><a href="#403-apache">Solving 403 (Forbidden) errors</a></li>
+  <li>Continue with the next prerequisite (<a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)</li>
+  <li><a href="/guides/v2.0/install-gde/install/pre-install.html">Determine your installation or upgrade path</a></li>
+</ul>
+
+<h3 id="apache-rewrites2.4">Enable rewrites and .htaccess for Apache 2.4</h3>
+<p>Use this section to enable Apache 2.4 rewrites and specify a setting for the <a href="http://httpd.apache.org/docs/current/howto/htaccess.html" target="_blank">distributed configuration file, <code>.htaccess</code></a></p>
+<p>Magento uses server rewrites and <code>.htaccess</code> to provide directory-level instructions for Apache.</p>
+<div class="bs-callout bs-callout-info" id="info">
+	<span class="glyphicon-class">
+	<p>Failure to enable these settings typically results in no styles displaying on your storefront or Admin.</p></span>
+</div>
+<ol><li>To enable the Apache rewrite module, enter the following command:
+<pre>a2enmod rewrite</pre></li>
+<li>To enable Magento to use the distributed configuration file <code>.htaccess</code>see the guidelines in the <a href="http://httpd.apache.org/docs/current/mod/mod_rewrite.html" target="_blank">Apache 2.4 documentation</a>.<br />
+	Note that in Apache 2.4, the server's default site configuration file is <code>/etc/apache2/sites-available/000-default.conf</code><br />
+	For example, you can add the following to the end of <code>000-default.conf</code>:
+	<pre>
+&lt;Directory "/var/www/html"&gt;
+	AlowOverride &lt;value from Apache site&gt;
+&lt;/Directory&gt;</pre></li>
+<li>Restart Apache:
+	<pre>service apache2 restart</pre></li></ol>
+
+<div class="bs-callout bs-callout-info" id="info">
+	<span class="glyphicon-class">
+	<ul><li>If you upgraded from an earlier Apache version, first look for <code>&lt;Directory "/var/www/html"&gt;</code> or <code>&lt;Directory "/var/www"&gt;</code> in <code>000-default.conf</code>.</li>
+	<li>You must change the value of <code>AllowOverride</code> in the directive for the directory to which you expect to install the Magento software. For example, to install in the web server docroot, edit the directive in <code>&lt;Directory /var/www&gt;</code>.</li></ul></span>
+</div>
+
+<h4 id="next-steps-1">Next steps</h4>
+<ul>
+  <li><a href="#403-apache">Solving 403 (Forbidden) errors</a></li>
+  <li>Continue with the next prerequisite (<a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)</li>
+  <li><a href="/guides/v2.0/install-gde/install/pre-install.html">Determine your installation or upgrade path</a></li>
+</ul>
 
 <h3 id="install-prereq-apache-ubuntu-upgrade">Upgrading Apache on Ubuntu 12</h3>
 <p>To use PHP 5.6 on Ubuntu 12, you must upgrade Apache to version 2.4. (By default, Ubuntu 12 comes with Apache 2.2.)</p>
@@ -377,6 +419,9 @@ apt-get -y update
 Server built:   Jul 22 2014 22:46:25
 </code></pre>
   </li>
+  <li>
+    <p>Continue with the next section.</p>
+  </li>
 </ol>
 
 <h3 id="apache-rewrites2.4">Enable rewrites and .htaccess for Apache 2.4</h3>
@@ -404,12 +449,11 @@ Server built:   Jul 22 2014 22:46:25
 	<li>You must change the value of <code>AllowOverride</code> in the directive for the directory to which you expect to install the Magento software. For example, to install in the web server docroot, edit the directive in <code>&lt;Directory /var/www&gt;</code>.</li></ul></span>
 </div>
 
-<p>Next steps:</p>
-
+<h4 id="next-steps-2">Next steps</h4>
 <ul>
   <li><a href="#403-apache">Solving 403 (Forbidden) errors</a></li>
   <li>Continue with the next prerequisite (<a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)</li>
-  <li>Start your installation by going to <a href="/guides/v2.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a>.</li>
+  <li><a href="/guides/v2.0/install-gde/install/pre-install.html">Determine your installation or upgrade path</a></li>
 </ul>
 
 <h2 id="install-prereq-apache-centos">Installing Apache on CentOS</h2>
@@ -419,10 +463,29 @@ Server built:   Jul 22 2014 22:46:25
 <p>Installing and configuring Apache is basically a three-step process: install the software, enable rewrites, and specify <code>.htaccess</code> directives.</p>
 
 <h3 id="apache-install-centos">Installing Apache</h3>
-<p>Install Apache 2 if you haven’t already done so.</p>
+<ol>
+  <li>
+    <p>Install Apache 2 if you haven’t already done so.</p>
 
-<pre><code>yum -y install httpd
+    <pre><code>yum -y install httpd
 </code></pre>
+  </li>
+  <li>
+    <p>Verify the installation:</p>
+
+    <pre><code>httpd -v
+</code></pre>
+
+    <p>Messages similar to the following display to confirm the installation was successful:</p>
+
+    <pre><code>Server version: Apache/2.2.15 (Unix)
+Server built:   Oct 16 2014 14:48:21
+</code></pre>
+  </li>
+  <li>
+    <p>Continue with the next section.</p>
+  </li>
+</ol>
 
 <h3 id="apache-rewrites2.2">Enable rewrites and .htaccess for Apache 2.2</h3>
 <p>Use this section to enable Apache 2.2 rewrites and specify a setting for the <a href="http://httpd.apache.org/docs/current/howto/htaccess.html" target="_blank">distributed configuration file, <code>.htaccess</code></a></p>
@@ -454,12 +517,11 @@ ln -s ../mods-available/rewrite.load</pre></li>
 <li>Restart Apache.
 <pre>service apache2 restart</pre></li></ol>
 
-<p>Next steps:</p>
-
+<h4 id="next-steps-3">Next steps</h4>
 <ul>
   <li><a href="#403-apache">Solving 403 (Forbidden) errors</a></li>
   <li>Continue with the next prerequisite (<a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)</li>
-  <li>Start your installation by going to <a href="/guides/v2.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a>.</li>
+  <li><a href="/guides/v2.0/install-gde/install/pre-install.html">Determine your installation or upgrade path</a></li>
 </ul>
 
 <h2 id="403-apache">Solving 403 (Forbidden) errors</h2>
@@ -504,7 +566,7 @@ ln -s ../mods-available/rewrite.load</pre></li>
   <li><a href="/guides/v2.0/install-gde/prereq/mysql.html">MySQL</a></li>
   <li><a href="/guides/v2.0/install-gde/prereq/security.html">Configuring security options</a></li>
   <li><a href="/guides/v2.0/install-gde/prereq/optional.html">Installing optional software</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/pre-install.html">Ways to install the Magento software</a></li>
+  <li><a href="/guides/v2.0/install-gde/install/pre-install.html">Determine your installation or upgrade path</a></li>
 </ul>
 
 
