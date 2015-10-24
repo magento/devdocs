@@ -139,13 +139,11 @@ p.q 	{
 }
 
 @media (min-width: 1130px){
-    .nav-main #global-nav {
-    padding-left: 66px;
-    }
-
+ .nav-main #global-nav,
  .nav-main #subnav-wrap #subnav {
     padding-left: 66px;
-    }
+    padding-right: 66px;
+ }
 }
 
 .nav-main #subnav-wrap #subnav {
