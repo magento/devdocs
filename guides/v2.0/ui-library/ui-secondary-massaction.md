@@ -9,7 +9,7 @@ menu_order: 3
 github_link: uilibrary/ui-secondary-massaction.md
 ---
 
-<h3 id="massaction">UI Library MassAction Component</h3>
+<h3 id="massaction">UI MassAction Component</h3>
 
 ###MassAction JS component structure
 

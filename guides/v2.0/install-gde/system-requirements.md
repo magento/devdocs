@@ -51,6 +51,7 @@ Before you install Magento, make sure your system meets or exceeds the following
 	*	<a href="http://php.net/manual/en/book.image.php" target="_blank">gd</a>, <a href="http://php.net/manual/en/book.imagick.php" target="_blank">ImageMagick 6.3.7</a> (or later) or both
 	*	<a href="http://php.net/manual/en/book.soap.php" target="_blank">soap</a>
 	*	<a href="http://php.net/manual/en/book.intl.php" target="_blank">intl</a>
+	*	<a href="http://php.net/manual/en/book.bc.php" target="_blank">bc-math</a> <img src="{{ site.baseurl }}common/images/ee-only_small.png">
 	*	<a href="http://php.net/manual/en/book.openssl.php" target="_blank">openssl</a>
 
 		<div class="bs-callout bs-callout-info" id="info">
