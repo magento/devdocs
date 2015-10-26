@@ -8,11 +8,17 @@ menu_order: 1
 github_link: get-started/message-queue.md
 
 ---
+<!--
+
 ![EE](../../../common/images/ee-only_large.png)
+
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>The Message Queue Framework is an Enterprise Edition (EE) feature.</p>
 </div>
+
+
+-->
 
 <b>NOTE TO REVIEWERS:</b> We need information about where to install RabbitMQ. On the same machine(s) as Magento? Is any configuration on the RabbitMQ system required?
 
@@ -20,7 +26,8 @@ github_link: get-started/message-queue.md
 
 Message queues provide an asynchronous communications mechanism in which the sender and the receiver of a message do not contact each other. Nor do they need to communicate with the message queue at the same time. When a sender places a messages onto a queue, it is stored until the recipient receives them. 
 
-The Message Queue Framework (MQF) is a feature of Enterprise Edition (EE) that allows an entity to publish messages to the queues and create consumers to receive them asynchronously. The MQF uses [RabbitMQ](http://www.rabbitmq.com) as the messaging broker, which  provides a scalable platform for sending and receiving messages. It also includes a mechanism for storing undelivered messages. RabbitMQ is based on the Advanced Message Queuing Protocol (AMQP) 0.9.1 specification. 
+<h3>Enterprise Edition (EE)</h3>
+On Magento 2.0 EE, the Message Queue Framework (MQF) is a fully-functional system that allows a module to publish messages to queues. It also creates consumers to receive them asynchronously. The MQF uses [RabbitMQ](http://www.rabbitmq.com) as the messaging broker, which  provides a scalable platform for sending and receiving messages. It also includes a mechanism for storing undelivered messages. RabbitMQ is based on the Advanced Message Queuing Protocol (AMQP) 0.9.1 specification. 
 
 The following diagram illustrates the Message Queue Framework.
 
@@ -38,11 +45,37 @@ The following diagram illustrates the Message Queue Framework.
 
 Message queues can also be implemented using database tables instead of RabbitMQ. In this case, a publisher writes messages to the queue_message table.
 
-See <a href="#ce">Messaging in Community Edition</a> for information about implementing message queues in Magento CE or in EE environments where the MQF with RabbitMQ is not implemented.
+
+
+<h3>Community Edition</h3>
+In Magento 2 CE, the MQF relies on cron jobs and the command line interface to make sure the consumers are able to receive messages. CE uses MySQL tables to store information about the queues. It also uses a MySQL adapter to manage the tables.
+
+See <a href="#ce">Messaging in Community Edition</a> for information about implementing message queues in Magento CE.
+
 
 <h2>Configure message queues</h2> 
 
-The initial MQF topology should be established before you attempt to publish the first message. Magento provides a default topology  during installation of the Rabbit MQ module. However, using the default configuration is optional, and you can set up everything manually in advance. If the topology is installed automatically, the MQF relies on the configuration of exchanges, queues, and binds, as defined in the topology is defined in the Magento `queue.xml` file. Each module has its own `queue.xml` file.
+Each module that is to be a publisher must be configured as such. If you want a module to use the MQF, create a `<module>/etc/queue.xml` file and define the publisher, consumers, exchanges and bindings. 
+
+Magento defines the default publisher as follows:
+
+<table>
+<tr>
+<th></th><th>EE Value</th><th>CE Value</th>
+</tr>
+<tr>
+<td>name</td><td>default</td><td>default_mysql</td>
+</tr>
+<tr>
+<td>connection</td><td>rabbitmq</td><td>db</td>
+</tr>
+<tr>
+<td>exchange</td><td>magento</td><td>magento</td>
+</tr>
+</table>
+
+To change these values, edit the `Amqp/etc/queue.xml` (EE) or the `MysqlMq/etc/queue.xml`(CE) file.
+
 
 <h3>Edit the <code>queue.xml</code> file</h3>
 The `queue.xml` file can contain the following elements:
@@ -51,6 +84,21 @@ The `queue.xml` file can contain the following elements:
 + topic
 + consumer
 + bind
+
+<h4>Required elements</h4>
+
+Each `queue.xml` file must contain the following lines:
+
+{% highlight xml %}
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/queue.xsd">
+.
+.
+.
+</config>
+
+{% endhighlight %}
 
 <h4>publisher element</h4>
 The `publisher` element configures the type of connection and the exchange to publish to. By default, Magento uses one exchange. The name of exchange is a part of the publisher configuration. However multiple exchanges are supported, based on the AMQP model.
@@ -68,7 +116,7 @@ The `publisher` element configures the type of connection and the exchange to pu
 </tr>
 <tr>
 <td>exchange</td>
-<td>The name of the exchange to publish to. The value is referenced from the <code>bind</code> element.
+<td>The name of the exchange to publish to. The value is referenced from the <code>bind</code> element.</td>
 </tr>
 </table>
 
@@ -151,7 +199,7 @@ The `bind` elements link topics to queues and exchanges, defining the message qu
 
 <h2 id="ce">Messaging in Community Edition</h2>
 
-You must implement a way to ensure that the consumers are always available to receive messages. 
+CE installations typically use cron jobs and the CLI to ensure that consumers are retrieving messages. External process managers can be used instead of cron. 
 
 <h3>Process managemnt</h3>
 
@@ -170,7 +218,6 @@ The following shows a `crontab` entry:
 {% endhighlight %}
 
 You can also use a process manager such as <a href="http://supervisord.org/index.html">Supervisor</a> to monitor the status of processes. The manager can use the CLI to restart the processes as needed.
-
 
 <h3>Command line interface</h3>
 
@@ -192,22 +239,86 @@ After getting all available messages, the CLI command terminates. It can be lunc
 
 
 <h3>Send a message from the publisher to a queue</h3>
-Using the topic name, the connection details are retrieved, message encoded and sent to the queue.
+
+Before you begin, you must define the publisher, topics, and schema in the module's `queue.xml` file.
+
+<h4>EE</h4>
+The following code sends a message to the queue.
+
 {% highlight php startinline=true %}
 $publisher->publish($topic, $message)
 {% endhighlight %}
 
+<h4>CE</h4>
+The `publish` method in `PublisherInterface` has the following signature:
+
+{% highlight php startinline=true %}
+/**
+     * Publishes a message to a specific queue or exchange.
+     *
+     * @param string $topicName
+     * @param array|object $data
+     * @return void
+     */
+    public function publish($topicName, $data);
+{% endhighlight %}
+
+
+When a message is published to multiple queues, create a single record in queue_message and a multiple records in queue_message_status, one for each queue. (A join on the queue, queue_message, and queue_message_status tables is required). 
+
+
 <h3>Instantiate a consumer</h3>
-This instantiates a consumer of the `quename` queue. As a part of listening to the queue, it receives all new messages and for every message invoke `Magento\Some\Class::processMessage($message)`
+<h4>EE</h4>
+This instantiates a consumer of the `queuename` queue. The consumer listens to the queue and receives all new messages. For every message, it invokes `Magento\Some\Class::processMessage($message)`
+
 {% highlight php startinline=true %}
 $this->consumerFactory->get('customer_created_listener')
     ->process();
 {% endhighlight %}
 
+<h4>CE</h4>
+
+Implement `\Magento\Framework\Amqp\ConsumerInterface::process($maxNumberOfMessages)` to instantiate a consumer on CE. 
+
+Perform the following actions:
+
+1. Define the queue name associated with current consumer using `\Magento\Framework\Amqp\ConsumerConfigurationInterface::getQueueName`.
+2. Select `$maxNumberOfMessages` message records, filtering on the  `queue_name` field. You must join on all 3 tables. To accompolish this, you may want to extract fewer records at a time to improve load distribution between multiple consumers. 
+3. Decode the message using topic name taken from the `\Magento\Framework\Amqp\ConsumerConfigurationInterface`.
+4. Invoke callback  `Magento\Framework\Amqp\ConsumerConfigurationInterface::getCallback` and pass the decoded data as an argument.
+
+<h3>Override topic configuration</h3>
+The following sample introduces a runtime configuration that allows you to redefine the adapter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ for a topic.
+
+{% highlight php startinline=true %}
+'queue' =>
+    array(
+     'topics' => array(
+        'customer.created' => [publisher="default-rabitmq"],
+        'order.created' => [publisher="default-rabitmq"],
+    ),
+),
+{% endhighlight %}
+
 
 <h3>Adding your own adapter</h3>
 
-A new adapter can be introduced in Dependency Injection (DI) configuration:
+A new adapter can be introduced via Dependency Injection (DI) configuration. Add lines similar to the following in the `di.xml` file for 
 
 {% highlight xml %}
 <type name="Magento\Framework\Amqp\ConsumerFactory">
@@ -222,20 +333,6 @@ A new adapter can be introduced in Dependency Injection (DI) configuration:
 </type>
 {% endhighlight %}
 
-<h3>Override topic configuration</h3>
-The following sample introduces a runtime configuration that allows you to redefine the adapters for a topic.
-
-{% highlight php startinline=true %}
-'queue' =>
-    array(
-     'topics' => array(
-        'customer.created' => [publisher="default-rabitmq"],
-        'order.created' => [publisher="default-rabitmq"],
-    ),
-),
-{% endhighlight %}
-
-
 <h2>MySQL and synchronous adapters</h2>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -243,41 +340,8 @@ The following sample introduces a runtime configuration that allows you to redef
 </div>
 
 <h3>DB schema</h3>
-In Community Edition, all message queues are handled by MySQL and synchronous adapters. The MySQL implementation of message queues is minimalistic, and as a result, only three database tables (queue, queue_message, and queue_message_status) have been created to manage the message queue workload. If better performance is required, then install Enterprise Edition and implement RabbitMQ.
+In Community Edition, all message queues are handled by MySQL and synchronous adapters. The MySQL implementation of message queues is minimalistic, and as a result, three database tables (queue, queue_message, and queue_message_status) have been created to manage the message queue workload. If better performance is required, then install Enterprise Edition and implement RabbitMQ.
 
 MySQL and RabbitMQ queues are configured in `queue.xml` the same way, except that the values of the `connection` parameter in the `publisher` element are different. 
 
 To allow message status tracking and clearing old messages, status and updated_at fields should be added.
-<h3>Publish message workflow</h3>
-
-The `publish` method in PublisherInterface has the following signature:
-
-{% highlight php startinline=true %}
-/**
-     * Publishes a message to a specific queue or exchange.
-     *
-     * @param string $topicName
-     * @param array|object $data
-     * @return void
-     */
-    public function publish($topicName, $data);
-{% endhighlight %}
-
-Taking into account publisher interface which should be implemented and available queue configuration, the following steps should be performed to publish a message:
-
-1. Define the names of all corresponding queues for `$topicName` from the `queue.xml` file. The topic element defines the publisher. The `publisher` element defines the exchange, and the `bind` element defines the list of queues. 
-
-2. Encode the message using the mechanism defined by the `schema` attribute of the topic. 
-3. When a message is published to multiple queues, create a single record in queue_message and a multiple records in queue_message_status, one for each queue. (A join on the queue, queue_message, and queue_message_status tables is required). 
-
-<h3>Consume messages</h3>
-
-`\Magento\Framework\Amqp\ConsumerInterface::process($maxNumberOfMessages)` should be implemented. 
-
-Perform the following actions:
-
-1. Define the queue name associated with current consumer using `\Magento\Framework\Amqp\ConsumerConfigurationInterface::getQueueName`.
-2. Select `$maxNumberOfMessages` message records, filtering on the  `queue_name` field. You must join on all 3 tables. To accompolish this, you may want to extract fewer records at a time to improve load distribution between multiple consumers. 
-3. Decode the message using topic name taken from the `\Magento\Framework\Amqp\ConsumerConfigurationInterface`.
-4. Invoke callback  `Magento\Framework\Amqp\ConsumerConfigurationInterface::getCallback` and pass the decoded data as an argument.
-
