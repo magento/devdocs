@@ -44,7 +44,7 @@ You can also view the the Admin URI in `<your Magento install dir>/app/etc/env.p
 <? php
   'backend' =>
   array (
-    'frontName' => 'admin_e57arp',
+    'frontName' => 'admin_1wgrah',
   ),
   <?
 {% endhighlight %}

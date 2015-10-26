@@ -4,7 +4,7 @@ group: extension-dev-guide
 subgroup: 3_Build
 title: Module load order
 menu_title: Module load order
-menu_order: 5
+menu_order: 6
 github_link: extension-dev-guide/module-load-order.md
 
 ---

@@ -12,6 +12,23 @@ github_link: install-gde/trouble/tshoot_sample-data.md
 <h2 id="install-trouble-sample">Errors installing optional sample data</h2>
 
 ### Symptom
+Error in the console log during sample data installation using the Setup Wizard:
+
+	Module 'Magento_CatalogRuleSampleData':
+	[ERROR] exception 'Magento\Framework\Exception\LocalizedException' with message 'Can't create directory /var/www/html/magento2/var/generation/Magento/CatalogRule/Model/.' in /var/www/html/magento2/lib/internal/Magento/Framework/Code/Generator.php:103
+
+	(more)
+
+	Next exception 'ReflectionException' with message 'Class Magento\CatalogRule\Model\RuleFactory does not exist' in /var/www/html/magento2/lib/internal/Magento/Framework/Code/Reader/ClassReader.php:29
+
+	(more)
+
+These exceptions result from file system permissions settings.
+
+#### Solution
+<a href="{{ site.gdeurl }}install-gde/install/web/install-web-sample-data.html#instgde-prereq-compose-clone-perms">Set file system ownership and permissions again</a> as a user with `root` privileges.
+
+### Symptom
 
 During installation of optional sample data, a  message similar to the following displays: 
 

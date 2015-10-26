@@ -72,6 +72,11 @@ After verifying your prerequisites, determine <a href="{{ site.gdeurl }}install-
 	*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">Install Magento software using the command line</a>
 2.	<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>
 
+<h2>Useful information</h2>
+At any time during your installation, take advantage of our <a href="{{ site.gdeurl }}install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{ site.gdeurl }}install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>. They're really easy to use; the tutorial walks you through a sample installation. The roadmap provides links to common tasks throughout the guide.
+
+Use the links on the left side of the page to navigate topics in each part of the installation.
+
 <h2>Required server permissions</h2>
 UNIX systems require `root` privileges to install and configure software like a web server, PHP, and so on. If you need to install this software, make sure you have `root` access.
 

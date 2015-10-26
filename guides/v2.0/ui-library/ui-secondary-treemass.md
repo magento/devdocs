@@ -9,7 +9,7 @@ menu_order: 4
 github_link: uilibrary/ui-secondary-treemass.md
 ---
 
-<h3 id="treemass">UI Library TreeMassAction Component</h3>
+<h3 id="treemass">UI TreeMassAction Component</h3>
 
 TreeMassAction Component is extension to MassAction component that provides nested sub-menu. 
 
