@@ -9,7 +9,7 @@ menu_order: 10
 github_link: uilibrary/ui-secondary-resize.md
 ---
 
-<h3 id="resize">UI Library Resize component</h3>
+<h3 id="resize">UI Resize component</h3>
 
 The Resize Component is responsible for resizing listing columns. The Resize component is not defined in definition.xml, but can be added if needed.
 

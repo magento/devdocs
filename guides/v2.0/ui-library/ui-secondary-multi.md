@@ -9,7 +9,7 @@ menu_order: 7
 github_link: uilibrary/ui-secondary-multi.md
 ---
 
-####UI Library Multiselect Component
+####UI Multiselect Component
 
 The Multiselect component is used to provide check box interface for a specific listing or a specific data set. The component is an extension for Column component and allows selecting either a collection of items or all items from the given set.
 
@@ -123,7 +123,7 @@ Example of configuration modifications:
 </column>
 {% endhighlight %}
 
-####How to add a new library component
+####How to add a new component
 
 Instance Replacement: One Instance of a Component
 
