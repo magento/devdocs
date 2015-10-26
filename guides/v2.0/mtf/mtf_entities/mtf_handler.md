@@ -8,6 +8,8 @@ menu_order: 3
 github_link: mtf/mtf_entities/mtf_handler.md
 ---
 
+<h2>Handler</h2>
+
 <h3 id="mtf_handler_overview">Contents</h3>
 
 * TOC
@@ -71,7 +73,7 @@ Each handler must implement a handler interface.
 
 You should mention in a fixture the `handler_interface` attribute with a reference to the PHP class: `Magento\[module_name]\Test\Handler\[object_name]\[object_name]Interface` (example for the Widget: `Magento\Widget\Test\Handler\Widget\WidgetInterface`).
 
-Example of `WidgetInterface.php` (should be placed in `magento2/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget`):
+Example of `WidgetInterface.php` (should be placed in `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget`):
 
 <script src="https://gist.github.com/dshevtsov/dbe9b588ffe91bbb5622.js"></script>
 
@@ -79,32 +81,21 @@ Example of `WidgetInterface.php` (should be placed in `magento2/dev/tests/functi
 
 To use the handler class, create <a href="#mtf_handler_interface">an interface</a>, declare a fallback in the <a href="#mtf_handler_config"><code>config.xml</code></a>, and declare interface/class relationships in the <a href="#mtf_handler_di"><code>di.xml</code></a>. When this class is created, you can call the `persist()` method to create Magento entity (for example, widget). The method returns data that are matched with fixture fields. All fixture fields that are matched are assigned values from the handler.
 
-The `persist()` method is declared in the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php"><code>InjectableFixture</code></a> class by path `magento2/dev/tests/functional/vendor/magento/mtf/Magento/Mtf/Fixture/InjectableFixture.php`.
+The `persist()` method is declared in the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php"><code>InjectableFixture</code></a> class by path `<magento2>/dev/tests/functional/vendor/magento/mtf/Magento/Mtf/Fixture/InjectableFixture.php`.
 
 <script src="https://gist.github.com/dshevtsov/3ed7ce601d3b23e94ccd.js"></script>
 
-Create the handler in the same directory where the interface is stored: `magento2/dev/tests/functional/tests/app/Magento/[module_name]/Test/Handler/[object_name]/[type_of_handler].php`
+Create the handler in the same directory where the interface is stored: `<magento2>/dev/tests/functional/tests/app/Magento/[module_name]/Test/Handler/[object_name]/[type_of_handler].php`
 
 ### `di.xml` {#mtf_handler_di}
 
-The `di.xml` file declares relationship between the <a href="#mtf_handler_interface">interface</a> and the <a href="#mtf_handler_conf_hand">handler</a> class. The file must be placed in `magento2/dev/tests/functional/tests/app/Magento/[module_name]/Test/etc/[handler_type]`.
+The `di.xml` file declares relationship between the <a href="#mtf_handler_interface">interface</a> and the <a href="#mtf_handler_conf_hand">handler</a> class. The file must be placed in `<magento2>/dev/tests/functional/tests/app/Magento/[module_name]/Test/etc/[handler_type]`.
 
-See an example for the Widget cURL handler (`magento2/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml`):
+See an example for the Widget cURL handler (`<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml`):
 
 {%highlight xml%}
 
-<?xml version="1.0" ?>
-<!--
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
--->
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="../../../../../../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
-    <preference for="Magento\Widget\Test\Handler\Widget\WidgetInterface"
-                type="\Magento\Widget\Test\Handler\Widget\Curl" />
-</config>
+{% remote_markdown https://raw.githubusercontent.com/magento/magento2/develop/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml %}
 
 {%endhighlight%}
 
@@ -118,7 +109,7 @@ See the directory structure mentioned for the case with the Widget cURL handler:
 
 Let's create a cURL handler that creates a new widget.
 
-* Create a directory with the name `Widget` in the `Handler` directory of the Magento_Widget module - `magento2/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget`.
+* Create a directory with the name `Widget` in the `Handler` directory of the Magento_Widget module - `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget`.
 * In the same directory, create <a href="#mtf_handler_interface">the interface</a> for the cURL handler, and call the file `WidgetInterface.php`. Our new interface extends `HandlerInterface` class.
 
 <script src="https://gist.github.com/dshevtsov/dbe9b588ffe91bbb5622.js"></script>
@@ -135,18 +126,7 @@ The following code includes detailed comments for better understanding.
 
 {%highlight xml%}
 
-<?xml version="1.0" ?>
-<!--
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
--->
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="../../../../../../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
-    <preference for="Magento\Widget\Test\Handler\Widget\WidgetInterface"
-                type="\Magento\Widget\Test\Handler\Widget\Curl" />
-</config>
+{% remote_markdown https://raw.githubusercontent.com/magento/magento2/develop/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml %}
 
 {%endhighlight%}
 
@@ -186,7 +166,7 @@ $curl = new FrontendDecorator(new CurlTransport(), $this->customer);
 
 Let's create a UI handler that creates a new widget.
 
-* Create a directory with the name `Widget` in the `Handler` directory of the Magento_Widget module - `magento2/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget`.
+* Create a directory with the name `Widget` in the `Handler` directory of the Magento_Widget module - `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget`.
 * In the same directory, create <a href="#mtf_handler_interface">interface</a> for the UI handler, and call the file `WidgetInterface.php`. Our new interface extends `HandlerInterface` class.
 
 <script src="https://gist.github.com/dshevtsov/dbe9b588ffe91bbb5622.js"></script>
@@ -209,7 +189,7 @@ The code has detailed comments for better understanding.
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="../../../../../../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <preference for="Magento\Widget\Test\Handler\Widget\WidgetInterface"
                 type="\Magento\Widget\Test\Handler\Widget\Ui" />
 </config>
@@ -220,7 +200,7 @@ The code has detailed comments for better understanding.
 
 Let's create a WebAPI handler that creates a new tax rule.
 
-* Create a directory with the name `TaxRule` in the `Handler` directory of the Magento_Tax module - `magento2/dev/tests/functional/tests/app/Magento/Tax/Test/Handler/TaxRule`.
+* Create a directory with the name `TaxRule` in the `Handler` directory of the Magento_Tax module - `<magento2>/dev/tests/functional/tests/app/Magento/Tax/Test/Handler/TaxRule`.
 * In the same directory, create <a href="#mtf_handler_interface">interface</a> for the WebAPI handler, and call the file `TaxRuleInterface.php`. Our new interface extends `HandlerInterface` class.
 
 <script src="https://gist.github.com/dshevtsov/15708f0530aaa70789e0.js"></script>
@@ -241,7 +221,7 @@ Let's create a WebAPI handler that creates a new tax rule.
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="../../../../../../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <preference for="Magento\Tax\Test\Handler\TaxRule\TaxRuleInterface"
                 type="\Magento\Tax\Test\Handler\TaxRule\Webapi" />
 </config>

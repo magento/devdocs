@@ -8,6 +8,8 @@ menu_order: 6
 github_link: mtf/mtf_entities/mtf_page.md
 ---
 
+<h2>Page</h2>
+
 <h3>Contents</h3>
 
 * TOC
@@ -16,17 +18,18 @@ github_link: mtf/mtf_entities/mtf_page.md
 ## Page overview {#mtf_page_overview}
 
 A page object is a class that serves to interact with the Magento page under test.
-A page serves as container for blocks.
+A page serves as container for [blocks]({{site.gdeurl}}mtf/mtf_entities/mtf_page.html).
 
-Test uses the block methods of the page object class to interact with application under test. The benefit of this approach is that the tests don’t need to be changed after changes in the UI.
+In the functional tests, the Page Object Design Pattern is used. Test uses the block methods of the page object class to interact with application under test. The benefit of this approach is that the tests don’t need to be changed after changes in the UI.
 Only the code in the corresponding block must be changed.
 
-The Page Object Design Pattern provides the following advantages:
+This approach provides the following advantages:
 
 - Clean separation between test code and page specific code like locator.
 - Single repository for the services or operations provided by the page.
+- Decreased duplication of the code.
 
-This topic learns how to create new page, add blocks to the page. Furthermore, it discusses mechanism of extending the page in another module.
+You can learn from this topic how to create new page, add blocks to the page. Furthermore, it discusses mechanism of extending the page in another module.
 
 ## Create page {#mtf_page_create}
 
@@ -40,7 +43,7 @@ The general flow is the following:
 
 Let's see an example of the Magento Widget page:
 
-`magento2/dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml`
+`<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml`
 
 where four blocks have been added:
 
@@ -69,14 +72,14 @@ The following table explains `<page>` attributes.
 
 |`<page>` attribute|Description|Example with explanaintion|
 |---|---|---|
-|`name`|Name of the page PHP class, that will be generated in `magento2/dev/tests/functional/generated/Magento/[module]/Page/[area]/[name].php`.|`WidgetInstanceIndex` |
-|`area`|The page usage area. Determines a [type of the page](#mtf_page_types). The directory with the name assigned to `area` will be created in the module. Value can be `Adminhtml` for the Admin area, or any other for another area.|`Adminhtml`. The page class will be generated in the `magento2/dev/tests/functional/generated/Magento/Widget/Page/Adminhtml`. |
+|`name`|Name of the page PHP class, that will be generated in `<magento2>/dev/tests/functional/generated/Magento/<module>/Page/<area>/<name>.php`.|`WidgetInstanceIndex` |
+|`area`|The page usage area. Determines a [type of the page](#mtf_page_types). The directory with the name assigned to `area` will be created in the module. Value can be `Adminhtml` for the Admin area, or any other for another area.|`Adminhtml`. The page class will be generated in the `<magento2>/dev/tests/functional/generated/Magento/Widget/Page/Adminhtml`. |
 |`mca`{:#mca}|Path following the base URL for the Magento pages (storefront or Admin), or full URL for other pages. MCA is an abbreviation of the Module Controller Action.|`admin/widget_instance/index`. Considering that `area="Adminhtml"`, the Magento page under test is `http://example.com/admin/admin/widget_instance/index`|
-|`module`|Module where the page will be generated |`Magento_Widget`. The page will be generated in the `magento2/dev/tests/functional/Magento/Widget/Page`|
+|`module`|Module where the page will be generated |`Magento_Widget`. The page will be generated in the `<magento2>/dev/tests/functional/Magento/Widget/Page`|
 
 {% include mtf/block_attributes.md %}
 
-Also, block can contain `render` node. [Read about renders in the Block topic]({{site.gdeurl}}mtf/mtf_entities/mtf_block.html#mtf_block_render).
+Also, block can contain a `render` node. [Read about renders in the Block topic]({{site.gdeurl}}mtf/mtf_entities/mtf_block.html#mtf_block_render).
 
 {% include mtf/page-generator.html %}
 
@@ -90,13 +93,13 @@ Depending on the `area` and `mca` attributes page can be of one of the following
 
 ### Admin page {#mtf_page_admin}
 
-Admin page has `area="Adminhtml"` in the `<page>` of the page XML file. Generated page extends the [Mtf\Page\BackendPage][] class. You will login automatically to the Admin.
+Admin page has `area="Adminhtml"` in the `<page>` of the page XML file. Generated page extends the [Mtf\Page\BackendPage][] class. You will log in automatically to the Admin.
 
-The page will be opened as concatenation of `app_backend_url` from `magento2/dev/tests/functional/phpunit.xml` and [mca](#mca) link.
+The page will be opened as a concatenation of `app_backend_url` from `<magento2>/dev/tests/functional/phpunit.xml` and [mca](#mca) link.
 
 ### Storefront page {#mtf_page_storefront}
 
-Storefront page is recognizable by `area` assigned any value except `Adminhtml` AND `mca` doesn't have `http`. This type of page extends [Mtf\Page\FrontendPage][] class.
+Storefront page is recognizable by `area` assigned any value except `Adminhtml` *and* `mca` doesn't have `http`. This type of page extends the [Mtf\Page\FrontendPage][] class.
 
 The page will be opened as concatenation of `app_frontend_url` from `magento2/dev/tests/functional/phpunit.xml` and [mca](#mca) link.
 
@@ -108,20 +111,17 @@ The page will be opened using [mca](#mca) link.
 
 ## Merge pages {#mtf_page_merge}
 
-Sometimes you need to use blocks from different modules in one page.
+Sometimes you need to use blocks from different modules in one page. 
 
-To add blocks from different modules to the page follow:
+To add blocks from different modules to the page, you can merge pages. Just follow the steps:
 
-* [Create an XML page](#mtf_page_create) in the corresponding module
-
-* Assign [page attributes](:#mtf_page_attributes)
-
+1. [Create an XML page](#mtf_page_create) in the corresponding module
+2. Assign [page attributes](#mtf_page_attributes)
   * with the same name as the page you want to merge
   * with the same `mca`
   * without `module` and `area` attributes
-
-* add blocks
-* run the page generator
+3. Add blocks
+4. Run the page generator
 
 For example, we have `dev/tests/functional/tests/app/Magento/Catalog/Test/Page/Product/CatalogProductView.xml` page and want to add three blocks from the Magento_Review module.
 
@@ -170,8 +170,8 @@ And generate the updated page:
 
     php magento2/dev/tests/functional/utils/generate/page.php
     
-The result is in the `magento2/dev/tests/functional/generated/Magento/Catalog/Test/Page/Product/CatalogProductView.php` with the following code:
-    
+The result is in the `<magento2>/dev/tests/functional/generated/Magento/Catalog/Test/Page/Product/CatalogProductView.php` with the following code:
+
 <script src="https://gist.github.com/dshevtsov/d5be380739c696fcb847.js"></script>
 
 [Block]: {{site.gdeurl}}mtf/mtf_entities/mtf_block.html

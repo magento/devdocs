@@ -10,9 +10,9 @@ redirect_from: /guides/v1.0/mtf/mtf_quickstart/mtf_quickstart_runtest.html
 ---
 <h2 id="mtf_quickstart_testrun">Test run</h2>
 
-All tests classified by categories in corresponding directories in `magento2/dev/tests/functional/tests/app/Magento`.
+All tests classified by categories in corresponding directories in `<magento2>/dev/tests/functional/tests/app/Magento`.
 
-MTF uses PHPUnit, which is located in `magento2/dev/tests/functional/vendor/bin` directory.
+MTF uses PHPUnit, which is located in `<magento2>/dev/tests/functional/vendor/bin` directory.
 
 Be sure that your system is ready for test run.
 
@@ -27,7 +27,7 @@ Enter in terminal:
 
     phpunit
 
-This command will run all tests from `magento2/dev/tests/functional/tests/app/Magento/`.
+This command will run all tests from `<magento2>/dev/tests/functional/tests/app/Magento/`.
 
 ### Run particular test {#mtf_quickstart_testrun_one}
 
@@ -39,7 +39,7 @@ Name of test is the name of PHP file with test.
 
 Example:
 
-Let's check creating of new category. For this we should run `magento2/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Category/CreateCategoryEntityTest.php`. To run this test enter the following script in your terminal:
+Let's check creating of new category. For this we should run `<magento2>/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Category/CreateCategoryEntityTest.php`. To run this test enter the following script in your terminal:
 
     phpunit --filter CreateCategoryEntityTest
 

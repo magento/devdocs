@@ -7,6 +7,9 @@ menu_title: Fixture
 menu_order: 1
 github_link: mtf/mtf_entities/mtf_fixture.md
 ---
+
+<h2>Fixture</h3>
+
 <h3 id="mtf_fixture_content">Contents</h3>
 
 * TOC
@@ -16,9 +19,9 @@ github_link: mtf/mtf_entities/mtf_fixture.md
 
 An MTF fixture is a list of properties of the Magento entity under test.
 
-A fixture is represented as an XML file located in the `Fixture` directory that corresponds to a module in `magento2/dev/tests/functional/tests/app/Magento/functional`. Example for `Widget`:
+A fixture is represented as an XML file located in the `Fixture` directory that corresponds to a module in `<magento2>/dev/tests/functional/tests/app/Magento/functional`. Example for `Widget`:
 
--  `magento2/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml`
+-  `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml`
 
 You will need fixture:
 
@@ -34,13 +37,13 @@ To apply any changes of the fixture, you should run generate tool:
 
 This tool creates PHP classes that are used by the test.
 
-You can check fixture PHP class in corresponding module in the `magento2/dev/tests/functional/generated/Magento` directory.
+You can check fixture PHP class in corresponding module in the `<magento2>/dev/tests/functional/generated/Magento` directory.
 
 ## Create new fixture {#mtf_fixture_create}
 
 Let's imagine that we want to create new fixture to test our Widget module.
 
-Magento has a tool that automatically generates your fixture with parameters you indicated in arguments.  That is `generateFixtureXml.php,` located in `magento2/dev/tests/functional/utils`.
+Magento has a tool that automatically generates your fixture with parameters you indicated in arguments.  That is `generateFixtureXml.php,` located in `<magento2>/dev/tests/functional/utils`.
 
     cd magento2/dev/tests/functional/utils
     php -f generateFixtureXml.php -- --name widget --entity_type widget_instance --collection Magento\\Widget\\Model\\Resource\\Widget\\Instance\\Collection
@@ -65,7 +68,7 @@ In the following table see `generateFixtureXml` arguments.
 
 This tool creates a new fixture using data from a database table you specified using the `--entity_type` argument.
 
-Following is the generated Widget fixture located in `magento2/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml`.
+Following is the generated Widget fixture located in `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml`.
 
 {% highlight xml%}
 
@@ -126,7 +129,7 @@ The following table describes `<fixture>` attributes.
 | `type`                | Table type for the entity.     | `eav`, `flat`, `virtual`, `composite` | eav | optional   |
 | `entity_type`         | Database table name where the entity data is stored. Specify more than one database table as a comma-separted list (for example, `"eav_attribute, catalog_eav_attribute"`) and assign `type = "composite"`. |                string  |catalog_product   |   optional   |
 | `product_type`        | Type of product. Applicable only for product fixtures.   | string |simple  |   optional   |
-| `collection`          | Collection to generate data sets. It is taken from `magento2/app/code/Magento`.   |  string | Magento\Catalog\Model\Resource\Product\Collection |   optional   |
+| `collection`          | Collection to generate data sets. It is taken from `<magento2>/app/code/Magento`.   |  string | Magento\Catalog\Model\Resource\Product\Collection |   optional   |
 | `identifier`          | Field used to create data set names in the repository.| string|sku| optional |
 | `repository_class`    | Reference to the repository class.   |  string |Magento\Catalog\Test\Repository\CatalogProductSimple |   optional   |
 | `handler_interface`   | Reference to the handler interface class.    |  string |Magento\Catalog\Test\Handler\CatalogProductSimple\CatalogProductSimpleInterface|   optional   |
@@ -269,7 +272,7 @@ It is located in `Fixture` directory of corresponding module. That contains subd
 
 {% endhighlight xml%}
 
-Let's see our data source file `magento2/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget/LayoutUpdates.php`
+Let's see our data source file `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget/LayoutUpdates.php`
 
 <script src="https://gist.github.com/dshevtsov/908bd242c01aded95308.js"></script>
 
