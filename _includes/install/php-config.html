@@ -7,13 +7,13 @@
 <li>Disable <a href="http://php.net/manual/en/ini.core.php#ini.asp-tags" target="_blank">asp_tags</a>. If asp_tags are enabled, errors display when accessing PHTML templates.<br>
 <code>asp_tags</code> will be removed in PHP 7.</li></ul>
 <p>To set PHP options:</p>
-<ol><li>Locate your server's time zone in the available <a href="http://php.net/manual/en/timezones.php" target="_blank">time zone settings</a>.</li>
-<li>Locate <code>php.ini</code> by entering the following command:<br>
+<ol><li>Locate <code>php.ini</code> by entering the following command:<br>
 <pre>php -i | grep "Loaded Configuration File"</pre>
 Typical locations follow:<br><br>
 Ubuntu: <code>/etc/php5/cli/php.ini</code><br>
 CentOS: <code>/etc/php.ini</code></li>
 <li>Open <code>php.ini</code> in a text editor.</li>
+<li>Locate your server's time zone in the available <a href="http://php.net/manual/en/timezones.php" target="_blank">time zone settings</a>.</li>
 <li>Locate the following setting and uncomment it if necessary:
 <pre>date.timezone =</pre></li>
 <li>Add the time zone setting you found in step 1.</li>
@@ -24,7 +24,7 @@ CentOS: <code>/etc/php.ini</code></li>
 <pre>always_populate_raw_post_data = -1</pre></li>
 <li>Locate the following setting:
 	<pre>asp_tags =</pre></li>
-<li>Make sure its value is set to <code>off</code></li>
+<li>Make sure its value is set to <code>Off</code></li>
 <li>Save your changes and exit the text editor.</li>
 <li>Restart Apache:<br><br>
 Ubuntu: <code>service apache2 restart</code><br>
