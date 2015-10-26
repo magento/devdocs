@@ -1,7 +1,7 @@
 ---
 layout: default
 group: jsdg
-subgroup: Widgets
+subgroup: 2_Widgets
 title: Magento jQuery widgets
 menu_order: 1
 menu_node: parent

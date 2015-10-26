@@ -1,7 +1,7 @@
 ---
 layout: default
 group: jsdg
-subgroup: Widgets
+subgroup: 1_Widgets
 title: Accordion widget
 menu_order: 1
 menu_title: Accordion widget
