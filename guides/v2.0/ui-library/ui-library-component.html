@@ -211,11 +211,11 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="general">Overview of UI library</h2>
+		<h2 id="general">Overview of UI components</h2>
 
-<p>Magento UI components Library is designed for simple and flexible UI rendering. It allows to configure the page manipulating the UI library components.</p>
+<p>Magento UI components are designed for simple and flexible UI rendering. It allows to configure the page manipulating the UI components.</p>
 
-<p>Magento UI components  Library is implemented as a usual module and can be found under Magento\UI namespace.</p>
+<p>Magento UI components are implemented as a usual module and can be found under Magento\UI namespace.</p>
 
 <p>Components are responsible for rendering result page fragments and providing/supporting further interactions of JavaScript components and server.</p>
 
@@ -231,13 +231,19 @@
 
 <p>Secondary components are extensions of basic components.  </p>
 
-<h3>Using UI library component in layout file</h3>
+<p>All components can be configured both for Admin and storefront.</p>
 
-<p>Using UI Library component is as simple as adding the following code to the appropriate layout section:</p>
+<div class="bs-callout bs-callout-info" id="info">
+  <p>You need to configure styles manually for components on storefront.</p>
+</div>
+
+<h3>Using UI component in layout file</h3>
+
+<p>Using UI component is as simple as adding the following code to the appropriate layout section:</p>
 
 <p><code>&lt;ui_component name="some_ui_component_instance_name"/&gt;</code></p>
 
-<p>All UI Library components have base declaration in <a href="/guides/v2.0/ui-library/ui-definition.html"><code>Magento/Ui/view/base/ui_component/etc/definition.xml</code></a>. </p>
+<p>All UI components have base declaration in <a href="/guides/v2.0/ui-library/ui-definition.html"><code>Magento/Ui/view/base/ui_component/etc/definition.xml</code></a>. </p>
 
 <p>Any module can introduce its own set of custom components or modify initial configuration for existing components in a common to Magento way.</p>
 
