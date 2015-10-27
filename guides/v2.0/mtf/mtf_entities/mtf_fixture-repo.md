@@ -7,21 +7,13 @@ menu_title: Fixture Repository
 menu_order: 2
 github_link: mtf/mtf_entities/mtf_fixture-repo.md
 ---
-<h3>Contents</h3>
 
-- <a href="#mtf_repository_overview">Repository overview</a>
+<h2>Fixture repository</h2>
 
-- <a href="#mtf_repository_create">Create a repository for the entire fixture</a>
+* TOC
+{:toc}
 
-- <a href="#mtf_repository_create-field"> Create a repository for the fixture field</a>
-
-- <a href="#mtf_repository_config">Configuration repository</a>
-
-- <a href="#mtf_repository_merge">Merging repositories</a>
-
-- <a href="#mtf_repository_credent_iso">Credentials and <code>%isolation%</code> in repository</a>
-
-<h2 id="mtf_repository_overview">Repository overview</h2>
+## Repository overview {#mtf_repository_overview}
 
 The repository stores pre-defined data for the fixture.
 It contains only data sets that are used in the test along with the associated field data.
@@ -30,9 +22,9 @@ Reference to the repository is placed in the fixture XML file in attribute named
 
 In this topic you will learn how to create, use, and merge a repository.
 
-<h2 id="mtf_repository_create">Create a repository for the entire fixture</h2>
+## Create a repository for the entire fixture {#mtf_repository_create}
 
-Let's create a repository for the Widget fixture `magento2/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml`.
+Let's create a repository for the Widget fixture `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml`.
 
 <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html">More details about fixtures</a>.
 
@@ -81,11 +73,11 @@ Assume that we have the following fixture:
 
 {% endhighlight %}
 
-The `repository_class="Magento\Widget\Test\Repository\Widget"` attribute tells us that this fixture uses data from the `magento2/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget.xml` repository.
+The `repository_class="Magento\Widget\Test\Repository\Widget"` attribute tells us that this fixture uses data from the `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget.xml` repository.
 
 In this section we will show the logic of how to create this repository.
 
-Also `layout` and `widgetOptions` fields use `magento2/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/LayoutUpdates.xml` and `magento2/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/WidgetOptions.xml` repositories respectively.
+Also `layout` and `widgetOptions` fields use `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/LayoutUpdates.xml` and `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/WidgetOptions.xml` repositories respectively.
 
 <a href="#mtf_repository_create-field"> Learn how to create repository for the fixture field</a>.
 
@@ -142,7 +134,7 @@ To create a new CMS page link the user must enter data of all required fields. T
 
 This simple code contains a bit more complex logic, where <a href="#mtf_repository_create-field">the repository is applied to the fixture field</a>. Just to remind you, how this field is represented in the fixture: `<field name="widgetOptions" source="Magento\Widget\Test\Fixture\Widget\WidgetOptions" repository="Magento\Widget\Test\Repository\Widget\WidgetOptions" group="widget_options" />`.
 
-In brief, we reference another repository `magento2/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/WidgetOptions.xml`, and a <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">source</a> that is `magento2/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget/WidgetOptions.php`.
+In brief, we reference another repository `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/WidgetOptions.xml`, and a <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">source</a> that is `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget/WidgetOptions.php`.
 
 The `WidgetOptions.xml` repository includes `cmsPageLink` dataset:
 
@@ -158,11 +150,11 @@ The `WidgetOptions.xml` repository includes `cmsPageLink` dataset:
 
 {% endhighlight xml %}
 
-The source understands the `entities` field as an instruction to create a CMS Page using `<dataset name="default">` from the `magento2/dev/tests/functional/tests/app/Magento/Cms/Test/Repository/CmsPage.xml` repository.
+The source understands the `entities` field as an instruction to create a CMS Page using `<dataset name="default">` from the `<magento2>/dev/tests/functional/tests/app/Magento/Cms/Test/Repository/CmsPage.xml` repository.
 
 <h4 id="mtf_repo_widgetxml">Widget.xml</h4>
 
-Now we can create a repository XML file `Widget.xml`. In our case the file should be placed in `magento2/dev/tests/functional/tests/app/Magento/Widget/Test/Repository`. The full name must be specified in the `repository_class` attribute of the fixture: `repository_class="Magento\Widget\Test\Repository\Widget"`.
+Now we can create a repository XML file `Widget.xml`. In our case the file should be placed in `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Repository`. The full name must be specified in the `repository_class` attribute of the fixture: `repository_class="Magento\Widget\Test\Repository\Widget"`.
 
 See the entire repository sample so far:
 
@@ -223,7 +215,7 @@ See the entire repository sample so far:
 
 {% endhighlight %}
 
-<h3 id="mtf_repository_structure">Repository structure</h3>
+### Repository structure {#mtf_repository_structure}
 
 Let's look at the repository structure.
 
@@ -250,11 +242,11 @@ Let's look at the repository structure.
 
 The `default` data set is used in the test when the repository hasn't been specified in the test, although you can explicitly specify `default`. If repository name in the test is `cms_page_link`, then fields will be filled with data from `<dataset name="cms_page_link">`.
 
-<h2 id="mtf_repository_create-field"> Create a repository for the fixture field</h2>
+## Create a repository for the fixture field {#mtf_repository_create-field}
 
 In the preceding section, the Widget fixture code contains fields with the links for repositories. Let's consider the field `layout` with `repository="Magento\Widget\Test\Repository\Widget\LayoutUpdates`.
 
-The repository value is a reference to the repository XML file. Therefore, we should create `magento2/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/LayoutUpdates.xml`. The XML structure of this repository is the same as of <a href="#mtf_repository_create">repository for the entire fixture</a>.
+The repository value is a reference to the repository XML file. Therefore, we should create `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/LayoutUpdates.xml`. The XML structure of this repository is the same as of <a href="#mtf_repository_create">repository for the entire fixture</a>.
 
 Assume that we want to provide data for the Layout Update block for the following cases shown on the screenshots (name of datasets have orange font, fields defined in repository are highlighted in orange).
 
@@ -323,11 +315,11 @@ The repository code for these cases follows:
 
 {% endhighlight %}
 
-<h2 id="mtf_repository_config">Configuration repository</h2>
+## Configuration repository {#mtf_repository_config}
 
 The configuration repository stores predefined data sets for Magento configuration settings. It is the repository for the <a href="https://github.com/magento/magento2/tree/master/app/code/Magento/Config">Magento_Config module</a> and is named `ConfigData.xml`.
 
-Let's see the following example of configuration settings for <a href="https://github.com/magento/magento2/tree/develop/app/code/Magento/Authorizenet">Authorize.Net module</a> `magento2/dev/tests/functional/tests/app/Magento/Authorizenet/Test/Repository/ConfigData.xml`.
+Let's see the following example of configuration settings for <a href="https://github.com/magento/magento2/tree/develop/app/code/Magento/Authorizenet">Authorize.Net module</a> `<magento2>/dev/tests/functional/tests/app/Magento/Authorizenet/Test/Repository/ConfigData.xml`.
 
 {% highlight xml %}
 
@@ -425,7 +417,7 @@ Let's see the `authorizenet` data set in action. Fields defined in repository ar
 
 ![authorizenet dataset view on GUI]({{site.baseurl}}common/images/mtf_repo_config_ex.png)
 
-<h2 id="mtf_repository_merge">Merging repositories</h2>
+## Merging repositories {#mtf_repository_merge}
 
 The MTF enables you to split data sets among different modules. The configuration repository is a good example.
 
@@ -435,19 +427,19 @@ Modules that require configuration adjustment store `ConfigData.xml` in their `R
 
 As you can see, the `ConfigData.xml` of the `Authorizenet` module and the `ConfigData.xml` of <a href="https://github.com/magento/magento2/tree/master/app/code/Magento/Backend">the `Magento_Backend` module</a> have the same reference to the repository class; that is `Magento\Config\Test\Repository\ConfigData`.
 
-`ConfigData.php` will be generated in `magento2/dev/tests/functional/generated/Magento/Config/Test/Repository`. This PHP repository will contain repository data sets from all Magento modules that have a `ConfigData.xml` repository.
+`ConfigData.php` will be generated in `<magento2>/dev/tests/functional/generated/Magento/Config/Test/Repository`. This PHP repository will contain repository data sets from all Magento modules that have a `ConfigData.xml` repository.
 
-To run the generator, enter the following command:
+To run the generator, enter the following command in your terminal:
 
-    php magento2/dev/tests/functional/utils/generate.php
+    php <magento2>/dev/tests/functional/utils/generate.php
 
 The preceding is an example of repository merging. Using the approach from the example you can merge repositories for any other fixture, not `Config` only.
 
-<h2 id="mtf_repository_credent_iso">Credentials and %isolation% in repository</h2>
+## Credentials and `%isolation%` in repository {#mtf_repository_credent_iso}
 
 Credentials are stored in XML file specified in `phpunit.xml`.
 
-You can find a template for credentials in <a href="https://github.com/magento/magento2/blob/master/dev/tests/functional/credentials.xml.dist"><code>magento2/dev/tests/functional/credentials.xml.dist</code></a>.
+You can find a template for credentials in <a href="https://github.com/magento/magento2/blob/master/dev/tests/functional/credentials.xml.dist"><code>&lt;magento2&gt;/dev/tests/functional/credentials.xml.dist</code></a>.
 
 Credentials always should stay invisible for security reasons. The MTF implicitly pastes credentials during the test run only.
 There are two ways to paste credentials:
@@ -455,7 +447,7 @@ There are two ways to paste credentials:
 - **Using path**. If a field in a repository has a `name` that matches field `path` in `credentials.xml`, then the value of this field will be substituted for the value from `credential.xml` during the test.
 - **Using placeholder**. If a field in a repository has value wrapped in `% %` that matches the value of the `replace` field attribute in `credentials.xml`, then the value of this field will be substituted for the value from `credential.xml` during the test.
 
-<h3 id="mtf_repo_credent_path">Example with substitution by <code>path</code></h3>
+### Example with substitution by <code>path</code> {#mtf_repo_credent_path}
 
 Assume, that you have the following credentials in `credentials.xml`.
 
@@ -501,7 +493,7 @@ In the repository these fields can be defined as:
 
 During the test run these fields are filled with values from `credentials.xml`.
 
-<h3 id="mtf_repo_credent_replace">Example with replacement by <code>replace</code></h3>
+### Example with replacement by <code>replace</code> {#mtf_repo_credent_replace}
 
 For example, you have the following credentials in `credentials.xml`:
 
@@ -540,7 +532,7 @@ Then you should define repository fields as the following:
 
 When the test is run, credentials from `credentials.xml` are transfered to the defined fields.
 
-<h3 id="mtf_repo_isolation"><code>%isolation%</code> placeholder</h3>
+### `%isolation%` placeholder {#mtf_repo_isolation}
 
 You can use `%isolation%` placeholder in repository fields where you want to put a random value. It is useful when you need a unique value, for example `sku`, that has to be unique each test cycle.
 
