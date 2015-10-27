@@ -374,20 +374,20 @@ Only the code in the corresponding block must be changed.</p>
 <p>Depending on the <code>area</code> and <code>mca</code> attributes page can be of one of the following types:</p>
 
 <ul>
-  <li>Admin page is extended from the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/BackendPage.php">Mtf\Page\BackendPage</a> class</li>
-  <li>Storefront page is extended from the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/FrontendPage.php">Mtf\Page\FrontendPage</a> class</li>
+  <li>Admin page is extended from the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/BackendPage.php">Magento\Mtf\Page\BackendPage</a> class</li>
+  <li>Storefront page is extended from the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/FrontendPage.php">Magento\Mtf\Page\FrontendPage</a> class</li>
   <li>External page is extended from the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/ExternalPage.php">Magento\Mtf\Page\ExternalPage</a> class</li>
 </ul>
 
 <h3 id="mtf_page_admin">Admin page</h3>
 
-<p>Admin page has <code>area="Adminhtml"</code> in the <code>&lt;page&gt;</code> of the page XML file. Generated page extends the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/BackendPage.php">Mtf\Page\BackendPage</a> class. You will log in automatically to the Admin.</p>
+<p>Admin page has <code>area="Adminhtml"</code> in the <code>&lt;page&gt;</code> of the page XML file. Generated page extends the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/BackendPage.php">Magento\Mtf\Page\BackendPage</a> class. You will log in automatically to the Admin.</p>
 
 <p>The page will be opened as a concatenation of <code>app_backend_url</code> from <code>&lt;magento2&gt;/dev/tests/functional/phpunit.xml</code> and <a href="#mca">mca</a> link.</p>
 
 <h3 id="mtf_page_storefront">Storefront page</h3>
 
-<p>Storefront page is recognizable by <code>area</code> assigned any value except <code>Adminhtml</code>, <em>and</em> <code>mca</code> doesn’t have <code>http</code>. This type of page extends the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/FrontendPage.php">Mtf\Page\FrontendPage</a> class.</p>
+<p>Storefront page is recognizable by <code>area</code> assigned any value except <code>Adminhtml</code>, <em>and</em> <code>mca</code> doesn’t have <code>http</code>. This type of page extends the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/FrontendPage.php">Magento\Mtf\Page\FrontendPage</a> class.</p>
 
 <p>The page will be opened as concatenation of <code>app_frontend_url</code> from <code>&lt;magento2&gt;/dev/tests/functional/phpunit.xml</code> and <a href="#mca">mca</a> link.</p>
 
