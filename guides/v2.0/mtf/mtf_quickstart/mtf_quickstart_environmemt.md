@@ -46,7 +46,7 @@ Generator generates fixtures, repositories and page objects. Once MTF is initial
 
 Enter in terminal:
 
-    cd magento2/dev/tests/functional/utils
+    cd <magento2>/dev/tests/functional/utils
     php generate.php
 
 <h2 id="mtf_install_pre">Next Steps</h2>

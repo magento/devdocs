@@ -43,5 +43,5 @@ Step 3.    <a href="{{ site.gdeurl }}mtf/mtf_installation.html#mtf_install_perfo
 
 Enter in terminal:
 
-    cd magento2/dev/tests/functional/
+    cd <magento2>/dev/tests/functional/
     composer update

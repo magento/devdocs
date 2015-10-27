@@ -75,7 +75,7 @@ The following table explains `<page>` attributes.
 |`name`|Name of the page PHP class, that will be generated in `<magento2>/dev/tests/functional/generated/Magento/<module>/Page/<area>/<name>.php`.|`WidgetInstanceIndex` |
 |`area`|The page usage area. Determines a [type of the page](#mtf_page_types). The directory with the name assigned to `area` will be created in the module. Value can be `Adminhtml` for the Admin area, or any other for another area.|`Adminhtml`. The page class will be generated in the `<magento2>/dev/tests/functional/generated/Magento/Widget/Page/Adminhtml`. |
 |`mca`{:#mca}|Path following the base URL for the Magento pages (storefront or Admin), or full URL for other pages. MCA is an abbreviation of the Module Controller Action.|`admin/widget_instance/index`. Considering that `area="Adminhtml"`, the Magento page under test is `http://example.com/admin/admin/widget_instance/index`|
-|`module`|Module where the page will be generated |`Magento_Widget`. The page will be generated in the `<magento2>/dev/tests/functional/Magento/Widget/Page`|
+|`module`|Module where the page will be generated. |`Magento_Widget`. The page will be generated in the `<magento2>/dev/tests/functional/Magento/Widget/Page`|
 
 {% include mtf/block_attributes.md %}
 
@@ -99,13 +99,13 @@ The page will be opened as a concatenation of `app_backend_url` from `<magento2>
 
 ### Storefront page {#mtf_page_storefront}
 
-Storefront page is recognizable by `area` assigned any value except `Adminhtml` *and* `mca` doesn't have `http`. This type of page extends the [Mtf\Page\FrontendPage][] class.
+Storefront page is recognizable by `area` assigned any value except `Adminhtml`, *and* `mca` doesn't have `http`. This type of page extends the [Mtf\Page\FrontendPage][] class.
 
 The page will be opened as concatenation of `app_frontend_url` from `magento2/dev/tests/functional/phpunit.xml` and [mca](#mca) link.
 
 ### External page {#mtf_page_extern}
 
-External page has `area` assigned any value except `Adminhtml` AND `mca` containing `http`. The generated page extends [Magento\Mtf\Page\ExternalPage][] class.
+External page has `area` assigned any value except `Adminhtml`, *and* `mca` containing `http`. The generated page extends [Magento\Mtf\Page\ExternalPage][] class.
 
 The page will be opened using [mca](#mca) link.
 
@@ -168,7 +168,7 @@ We should create `dev/tests/functional/tests/app/Magento/Review/Test/Page/Produc
 
 And generate the updated page:
 
-    php magento2/dev/tests/functional/utils/generate/page.php
+    php <magento2>/dev/tests/functional/utils/generate/page.php
     
 The result is in the `<magento2>/dev/tests/functional/generated/Magento/Catalog/Test/Page/Product/CatalogProductView.php` with the following code:
 

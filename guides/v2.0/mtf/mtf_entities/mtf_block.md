@@ -52,7 +52,7 @@ To enable this feature follow:
 
 1. Log in to Magento Admin as administrator
 1. Follow **STORES > Configuration**
-1. Change **Store View** to **Main Website** (the Template Path and Block name will only appear for current website)
+1. Change **Store View** to **Main Website** (the template path and block name will only appear for current website)
 1. Follow **ADVANCED > Developer**
 1. Expand the **Debug** tab
 1. Set **Template Path Hints** to **Yes**
@@ -235,7 +235,7 @@ See a description of the nodes in the following table.
 
 <table><tbody>
 <tr><th>Node </th><th>Description </th><th>Value from example</th></tr>
-<tr><td><code>mapping</code> </td><td>Root node with a <code>strict</code> attribute. If <code>strict</code> equals 0, then all the fixture field data must be entered in the block form. If <code>strict</code> equals 1, then only the mapping file fields data must be entered in the block form. </td><td><code>"1"</code>. *only* the *mapping* file fields data *must* be entered in the block form.</td></tr>
+<tr><td><code>mapping</code> </td><td>Root node with a <code>strict</code> attribute. If <code>strict</code> equals <code>0</code>, then all the fixture field data must be entered in the block form. If <code>strict</code> equals <code>1</code>, then only the mapping file fields data must be entered in the block form. </td><td><code>"1"</code>. <i>Only</i> the <i>mapping</i> file fields data <i>must</i> be entered in the block form.</td></tr>
 <tr><td><code>wrapper</code> </td><td>Automatically adds <code>group_name</code> to the selector of the field, when <code>selector</code> has not been specified. </td><td><code>login</code></td></tr>
 <tr><td><code>fields</code> </td><td>The node containing mapping fields. </td><td><code>&lt;email&gt;</code>, <code>&lt;password /&gt;</code>.</td></tr>
 <tr><td><code>selector</code> </td><td>Value for the selector that is used to find the field. Default: <code>[name='group_name[field_node_name]']</code>. Default value is assigned automatically if the node is absent in the field. </td><td>For the <code>&lt;email&gt;</code>, the <code>[name='login[username]']</code>.<br/> For the <code>&lt;password /&gt;</code>, the <code>[name='login[password]']</code> that is the default value where <code>wrapper="login"</code>.</td></tr>
@@ -323,7 +323,7 @@ See the following table to understand the node's purpose.
 <tr><td><code>class</code> </td><td>Reference to the class that handles tab’s behavior.</td></tr>
 <tr><td><code>selector</code> </td><td>Identifier for the selector of the tab in the HTML code, used to open the tab.</td></tr>
 <tr><td><code>strategy</code> </td><td>Strategy of the selector. Can be <code>css selector</code> or <code>xpath</code>.</td></tr>
-<tr><td><code>fields</code> </td><td>List of fields with parameters, that are the same as in the [form mapping](#mtf_block_form_xml_nodes). Also field in tab can include more then one field, in this case add <code>field</code> attribute <code>composite="1"</code>.</td></tr>
+<tr><td><code>fields</code> </td><td>List of fields with parameters, that are the same as in the <a href="#mtf_block_form_xml_nodes">form mapping</a>. Also field in tab can include more then one field, in this case add <code>field</code> attribute <code>composite="1"</code>.</td></tr>
 </tbody>
 </table>
 
@@ -432,7 +432,7 @@ Let's create render for the bundle product.
 Details:
 
 * The PHP class for the page will be generated in the Magento_Catalog module, because we did not mention module attribute in the `page` node
-* In the viewBlock `block`, we indicate `name` attribute only
+* In the `block`, we indicate `name` attribute only
 
 **Step 4**. Run the page generator
 

@@ -433,7 +433,7 @@ As you can see, the `ConfigData.xml` of the `Authorizenet` module and the `Confi
 
 To run the generator, enter the following command in your terminal:
 
-    php magento2/dev/tests/functional/utils/generate.php
+    php <magento2>/dev/tests/functional/utils/generate.php
 
 The preceding is an example of repository merging. Using the approach from the example you can merge repositories for any other fixture, not `Config` only.
 

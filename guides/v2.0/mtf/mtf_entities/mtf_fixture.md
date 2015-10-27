@@ -32,7 +32,7 @@ In this chapter we will create a new fixture and modify it, considering differen
 
 To apply any changes of the fixture, you should run generate tool:
 
-    cd magento2/dev/tests/functional/utils
+    cd <magento2>/dev/tests/functional/utils
     php generate.php
 
 This tool creates PHP classes that are used by the test.
@@ -45,7 +45,7 @@ Let's imagine that we want to create new fixture to test our Widget module.
 
 Magento has a tool that automatically generates your fixture with parameters you indicated in arguments.  That is `generateFixtureXml.php,` located in `<magento2>/dev/tests/functional/utils`.
 
-    cd magento2/dev/tests/functional/utils
+    cd <magento2>/dev/tests/functional/utils
     php -f generateFixtureXml.php -- --name widget --entity_type widget_instance --collection Magento\\Widget\\Model\\Resource\\Widget\\Instance\\Collection
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -103,7 +103,7 @@ Following is the generated Widget fixture located in `<magento2>/dev/tests/funct
 
 To generate PHP classes, enter the following commands in the order shown:
 
-    cd magento2/dev/tests/functional/utils
+    cd <magento2>/dev/tests/functional/utils
     php generate.php
 
 That's it!
@@ -193,7 +193,7 @@ Let's manually add a new field and `group` attribute to the `Widget.xml`. See wh
 
 To apply the changes, enter the following commands:
 
-    cd magento2/dev/tests/functional/utils
+    cd <magento2>/dev/tests/functional/utils
     php generate.php
 
 ## Add a repository to the fixture field {#mtf_fixture_repositoy}
@@ -247,7 +247,7 @@ Following is the code of `LayoutUpdates.xml`. It specifies two datasets that you
 
 To apply the changes, enter the following commands:
 
-    cd magento2/dev/tests/functional/utils
+    cd <magento2>/dev/tests/functional/utils
     php generate.php
 
 ## Add the data source to the fixture field {#mtf_fixture_source}
@@ -278,7 +278,7 @@ Let's see our data source file `<magento2>/dev/tests/functional/tests/app/Magent
 
 To apply the changes, enter the following commands:
 
-    cd magento2/dev/tests/functional/utils
+    cd <magento2>/dev/tests/functional/utils
     php generate.php
     
 <div class="bs-callout bs-callout-warning">
@@ -314,7 +314,7 @@ We can create file that adds field `new_field` to our widget fixture.
 
 To apply the changes, enter the following commands:
 
-    cd magento2/dev/tests/functional/utils
+    cd <magento2>/dev/tests/functional/utils
     php generate.php
 
 `new_field` has been added in fixture `Widget.php`.
@@ -351,6 +351,6 @@ In this example you will create a new fixture PHP class AdWidget that extends Wi
 
 To generate your new fixture PHP class, enter the following commands:
 
-    cd magento2/dev/tests/functional/utils
+    cd <magento2>/dev/tests/functional/utils
     php generate.php
 
