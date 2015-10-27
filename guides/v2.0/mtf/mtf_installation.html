@@ -212,7 +212,7 @@
 		<div class="content-wrap">
 		
 		<h2>Preface</h2>
-<p>Well, you are on the way to install the Magento testing Framework!</p>
+<p>Well, you are on the way to install the Magento Testing Framework!</p>
 
 <p>Follow the next three steps:</p>
 
@@ -254,16 +254,16 @@
     <p>In <code>php.ini</code> file, make sure <code>extension=php_openssl.dll</code> is not commented out.</p>
 </div>
 
-<h3 id="mtf_install_pre_mtf-check">Check if the Magento Testing Framework has been already installed</h3>
+<h4 id="mtf_install_pre_mtf-check">Check if the Magento Testing Framework has been already installed</h4>
 
 <ol>
-  <li>Find directory <code>magento2/dev/tests/functional/</code>.</li>
+  <li>Find directory <code>&lt;magento2&gt;/dev/tests/functional/</code>.</li>
   <li>Find the <code>vendor</code> directory. If the directory exists, you already have the Magento Testing Framework installed in <code>vendor/magento/mtf</code>.</li>
 </ol>
 
 <h2 id="mtf_install_perform">Perform the installation</h2>
 
-<p>The Magento Testing Framework requires Composer, which downloads libraries defined in <code>magento2/dev/tests/functional/composer.json</code>.</p>
+<p>The Magento Testing Framework requires Composer, which downloads libraries defined in <code>&lt;magento2&gt;/dev/tests/functional/composer.json</code>.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>If you're not sure that Composer is installed, see <a href="/guides/v2.0/install-gde/install/composer-clone.html#instgde-prereq-compose-install">Install Composer</a>.</p>
@@ -274,14 +274,14 @@
   <li>Log in to your Magento server as a user with permissions to modify the Magento file system. (This is typically <a href="/guides/v2.0/install-gde/prereq/apache-user.html">the Magento file system owner</a>.)</li>
 </ol>
 
-<pre><code>cd magento2/dev/tests/functional/
+<pre><code>cd &lt;magento2&gt;/dev/tests/functional/
 composer install
 </code></pre>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>If command failed, maybe <a href="https://getcomposer.org">Composer</a> hasn't been installed globally.<br />
   Copy <code>composer.phar</code> to <code>/usr/local/bin/composer</code>.<br />
-  To run it locally put <code>composer.phar</code> into directory, where <code>composer.json</code> file is located (that is, <code>magento2/dev/tests/functional/</code>).<br />
+  To run it locally put <code>composer.phar</code> into directory, where <code>composer.json</code> file is located (that is, <code>&lt;magento2&gt;/dev/tests/functional/</code>).<br />
 And run from this directory <code>php composer.phar install</code>.</p>
 </div>
 
@@ -289,9 +289,9 @@ And run from this directory <code>php composer.phar install</code>.</p>
 
 <h3 id="mtf_install_check_dir">Find the Magento Testing Framework directory</h3>
 
-<p>Check whether the <code>vendor</code> directory exists in <code>magento2/dev/tests/functional/</code>.</p>
+<p>Check whether the <code>vendor</code> directory exists in <code>&lt;magento2&gt;/dev/tests/functional/</code>.</p>
 
-<pre><code>cd magento2/dev/tests/functional/
+<pre><code>cd &lt;magento2&gt;/dev/tests/functional/
 ls
 </code></pre>
 
@@ -302,11 +302,11 @@ ls
 </code></pre>
 
 <h3 id="mtf_install_check_verify">Verify the Magento Testing Framework version</h3>
-<p>Open <code>magento2/dev/tests/functional/vendor/magento/mtf/CHANGELOG.md</code>. The latest version in <code>CHANGELOG.md</code> is version of the MTF you installed.</p>
+
+<p>Open <code>&lt;magento2&gt;/dev/tests/functional/vendor/magento/mtf/CHANGELOG.md</code>. The latest version in <code>CHANGELOG.md</code> is version of the MTF you installed.</p>
 
 <h2 id="mtf_install_next">Next Steps</h2>
 <p><a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_config.html">Adjust MTF configuration </a></p>
-
 
 
 		</div>

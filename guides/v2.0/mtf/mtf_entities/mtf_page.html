@@ -211,24 +211,258 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="mtf_page_overview">Page overview</h2>
+		<h2>Page</h2>
 
-<p>A page object is a class that serves as an interface to the Magento page under test.
-A page serves as containers for blocks.
-To improve the process of working with page elements the mechanism of pages and blocks was implemented in the MTF.
-Test uses the methods of the blocks of page object class, when it need to interact with Magento page.
-The benefit is that if the UI changes, the tests don’t need to be changed.
-Only the code within the block requires changes.</p>
+<ul id="markdown-toc">
+  <li><a href="#mtf_page_overview">Page overview</a></li>
+  <li><a href="#mtf_page_create">Create page</a></li>
+  <li><a href="#mtf_page_types">Page types</a>    <ul>
+      <li><a href="#mtf_page_admin">Admin page</a></li>
+      <li><a href="#mtf_page_storefront">Storefront page</a></li>
+      <li><a href="#mtf_page_extern">External page</a></li>
+    </ul>
+  </li>
+  <li><a href="#mtf_page_merge">Merge pages</a></li>
+</ul>
 
-<p>The Page Object Design Pattern provides the following advantages:</p>
+<h2 id="mtf_page_overview">Page overview</h2>
+
+<p>A page object is a class that serves to interact with the Magento page under test.
+A page serves as container for <a href="/guides/v2.0/mtf/mtf_entities/mtf_page.html">blocks</a>.</p>
+
+<p>In the functional tests, the Page Object Design Pattern is used. Test uses the block methods of the page object class to interact with application under test. The benefit of this approach is that the tests don’t need to be changed after changes in the UI.
+Only the code in the corresponding block must be changed.</p>
+
+<p>This approach provides the following advantages:</p>
 
 <ul>
   <li>Clean separation between test code and page specific code like locator.</li>
-  <li>Single repository for the services or operations required by the page.</li>
+  <li>Single repository for the services or operations provided by the page.</li>
+  <li>Decreased duplication of the code.</li>
 </ul>
 
-<p>In this topic we will create new page and add blocks to the page.
-You will know about mechanism of extending the page in another module.</p>
+<p>You can learn from this topic how to create new page, add blocks to the page. Furthermore, it discusses mechanism of extending the page in another module.</p>
+
+<h2 id="mtf_page_create">Create page</h2>
+
+<p>The general flow is the following:</p>
+
+<ol>
+  <li>
+    <p>Create an XML file in the Page directory of the module to which it belongs</p>
+  </li>
+  <li>
+    <p>Add the previously created blocks presented on this page to the <code>&lt;page&gt;</code> node</p>
+  </li>
+  <li>
+    <p>Run the page generator</p>
+  </li>
+</ol>
+
+<p>Let’s see an example of the Magento Widget page:</p>
+
+<p><code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml</code></p>
+
+<p>where four blocks have been added:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="c">&lt;!--</span>
+<span class="c">/**</span>
+<span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
+<span class="c"> * See COPYING.txt for license details.</span>
+<span class="c"> */</span>
+<span class="c"> --&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/etc/pages.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">&quot;WidgetInstanceIndex&quot;</span> <span class="na">area=</span><span class="s">&quot;Adminhtml&quot;</span> <span class="na">mca=</span><span class="s">&quot;admin/widget_instance/index&quot;</span> <span class="na">module=</span><span class="s">&quot;Magento_Widget&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;pageActionsBlock&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Backend\Test\Block\GridPageActions&quot;</span> <span class="na">locator=</span><span class="s">&quot;.page-main-actions&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;widgetGrid&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Widget\Test\Block\Adminhtml\Widget\WidgetGrid&quot;</span> <span class="na">locator=</span><span class="s">&quot;#widgetInstanceGrid&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;messagesBlock&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Backend\Test\Block\Messages&quot;</span> <span class="na">locator=</span><span class="s">&quot;#messages&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;systemMessageDialog&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\AdminNotification\Test\Block\System\Messages&quot;</span> <span class="na">locator=</span><span class="s">&#39;[role=&quot;dialog&quot;].ui-popup-message&#39;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/page&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p id="mtf_page_attributes">The following table explains <code>&lt;page&gt;</code> attributes.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><code>&lt;page&gt;</code> attribute</th>
+      <th>Description</th>
+      <th>Example with explanaintion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>name</code></td>
+      <td>Name of the page PHP class, that will be generated in <code>&lt;magento2&gt;/dev/tests/functional/generated/Magento/&lt;module&gt;/Page/&lt;area&gt;/&lt;name&gt;.php</code>.</td>
+      <td><code>WidgetInstanceIndex</code></td>
+    </tr>
+    <tr>
+      <td><code>area</code></td>
+      <td>The page usage area. Determines a <a href="#mtf_page_types">type of the page</a>. The directory with the name assigned to <code>area</code> will be created in the module. Value can be <code>Adminhtml</code> for the Admin area, or any other for another area.</td>
+      <td><code>Adminhtml</code>. The page class will be generated in the <code>&lt;magento2&gt;/dev/tests/functional/generated/Magento/Widget/Page/Adminhtml</code>.</td>
+    </tr>
+    <tr>
+      <td><code id="mca">mca</code></td>
+      <td>Path following the base URL for the Magento pages (storefront or Admin), or full URL for other pages. MCA is an abbreviation of the Module Controller Action.</td>
+      <td><code>admin/widget_instance/index</code>. Considering that <code>area="Adminhtml"</code>, the Magento page under test is <code>http://example.com/admin/admin/widget_instance/index</code></td>
+    </tr>
+    <tr>
+      <td><code>module</code></td>
+      <td>Module where the page will be generated.</td>
+      <td><code>Magento_Widget</code>. The page will be generated in the <code>&lt;magento2&gt;/dev/tests/functional/Magento/Widget/Page</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<div>
+
+  <p>See the <code>block</code> node attributes details in the following table:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th><code>block</code> attribute</th>
+        <th>Description</th>
+        <th>Is required</th>
+        <th>Values</th>
+        <th>Example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>name</code></td>
+        <td>Name of the block</td>
+        <td>Required</td>
+        <td>Unique in the page. The method to get the block class instance is generated using this value.</td>
+        <td><code>widgetGrid</code></td>
+      </tr>
+      <tr>
+        <td><code>class</code></td>
+        <td>Full name of the block class</td>
+        <td>Required</td>
+        <td>Class name</td>
+        <td><code>Magento\Widget\Test\Block\Adminhtml\Widget\WidgetGrid</code></td>
+      </tr>
+      <tr>
+        <td><code>locator</code></td>
+        <td>CSS selector or XPath locator of the block</td>
+        <td>Required</td>
+        <td><a href="http://www.w3.org/TR/selectors/">CSS Selectors</a>, <a href="http://www.w3.org/TR/xpath-31/">XPath</a></td>
+        <td>CSS: <code>#widgetInstanceGrid</code>, XPath: <code>//*[@id="widgetInstanceGrid"]</code></td>
+      </tr>
+      <tr>
+        <td><code>strategy</code></td>
+        <td>Selector strategy</td>
+        <td>Required</td>
+        <td><code>css selector</code> or <code>xpath</code></td>
+        <td><code>css selector</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<p>Also, block can contain a <code>render</code> node. <a href="/guides/v2.0/mtf/mtf_entities/mtf_block.html#mtf_block_render">Read about renders in the Block topic</a>.</p>
+
+<p>To apply all changes you've made to the page (XML file), run the page generator.</p>
+<pre><code>php &lt;magento2&gt;/dev/tests/functional/utils/page.php</code></pre>
+<p>The page will be updated in the <code>&lt;magento2&gt;/dev/tests/functional/generated</code> directory.</p>
+
+<h2 id="mtf_page_types">Page types</h2>
+
+<p>Depending on the <code>area</code> and <code>mca</code> attributes page can be of one of the following types:</p>
+
+<ul>
+  <li>Admin page is extended from the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/BackendPage.php">Mtf\Page\BackendPage</a> class</li>
+  <li>Storefront page is extended from the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/FrontendPage.php">Mtf\Page\FrontendPage</a> class</li>
+  <li>External page is extended from the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/ExternalPage.php">Magento\Mtf\Page\ExternalPage</a> class</li>
+</ul>
+
+<h3 id="mtf_page_admin">Admin page</h3>
+
+<p>Admin page has <code>area="Adminhtml"</code> in the <code>&lt;page&gt;</code> of the page XML file. Generated page extends the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/BackendPage.php">Mtf\Page\BackendPage</a> class. You will log in automatically to the Admin.</p>
+
+<p>The page will be opened as a concatenation of <code>app_backend_url</code> from <code>&lt;magento2&gt;/dev/tests/functional/phpunit.xml</code> and <a href="#mca">mca</a> link.</p>
+
+<h3 id="mtf_page_storefront">Storefront page</h3>
+
+<p>Storefront page is recognizable by <code>area</code> assigned any value except <code>Adminhtml</code>, <em>and</em> <code>mca</code> doesn’t have <code>http</code>. This type of page extends the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/FrontendPage.php">Mtf\Page\FrontendPage</a> class.</p>
+
+<p>The page will be opened as concatenation of <code>app_frontend_url</code> from <code>&lt;magento2&gt;/dev/tests/functional/phpunit.xml</code> and <a href="#mca">mca</a> link.</p>
+
+<h3 id="mtf_page_extern">External page</h3>
+
+<p>External page has <code>area</code> assigned any value except <code>Adminhtml</code>, <em>and</em> <code>mca</code> containing <code>http</code>. The generated page extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/ExternalPage.php">Magento\Mtf\Page\ExternalPage</a> class.</p>
+
+<p>The page will be opened using <a href="#mca">mca</a> link.</p>
+
+<h2 id="mtf_page_merge">Merge pages</h2>
+
+<p>Sometimes you need to use blocks from different modules in one page. </p>
+
+<p>To add blocks from different modules to the page, you can merge pages. Just follow the steps:</p>
+
+<ol>
+  <li><a href="#mtf_page_create">Create an XML page</a> in the corresponding module</li>
+  <li>Assign <a href="#mtf_page_attributes">page attributes</a>
+    <ul>
+      <li>with the same name as the page you want to merge</li>
+      <li>with the same <code>mca</code></li>
+      <li>without <code>module</code> and <code>area</code> attributes</li>
+    </ul>
+  </li>
+  <li>Add blocks</li>
+  <li>Run the page generator</li>
+</ol>
+
+<p>For example, we have <code>dev/tests/functional/tests/app/Magento/Catalog/Test/Page/Product/CatalogProductView.xml</code> page and want to add three blocks from the Magento_Review module.</p>
+
+<p><code>dev/tests/functional/tests/app/Magento/Catalog/Test/Page/Product/CatalogProductView.xml</code> contains:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="c">&lt;!--</span>
+<span class="c">/**</span>
+<span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
+<span class="c"> * See COPYING.txt for license details.</span>
+<span class="c"> */</span>
+<span class="c"> --&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/etc/pages.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">&quot;CatalogProductView&quot;</span> <span class="na">area=</span><span class="s">&quot;Product&quot;</span> <span class="na">mca=</span><span class="s">&quot;catalog/product/view&quot;</span> <span class="na">module=</span><span class="s">&quot;Magento_Catalog&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;viewBlock&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Catalog\Test\Block\Product\View&quot;</span> <span class="na">locator=</span><span class="s">&quot;#maincontent&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;additionalInformationBlock&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Catalog\Test\Block\Product\Additional&quot;</span> <span class="na">locator=</span><span class="s">&quot;#additional&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;customOptionsBlock&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Catalog\Test\Block\Product\View\CustomOptions&quot;</span> <span class="na">locator=</span><span class="s">&quot;#product-options-wrapper&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span> <span class="nt">/&gt;</span>        
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;messagesBlock&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Backend\Test\Block\Messages&quot;</span> <span class="na">locator=</span><span class="s">&quot;.page.messages&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;titleBlock&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Theme\Test\Block\Html\Title&quot;</span> <span class="na">locator=</span><span class="s">&quot;.page-title-wrapper h1.page-title .base&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span> <span class="nt">/&gt;</span>        
+    <span class="nt">&lt;/page&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p>We should create <code>dev/tests/functional/tests/app/Magento/Review/Test/Page/Product/CatalogProductView.xml</code> page with blocks we want to add:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="c">&lt;!--</span>
+<span class="c">/**</span>
+<span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
+<span class="c"> * See COPYING.txt for license details.</span>
+<span class="c"> */</span>
+<span class="c"> --&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/etc/pages.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">&quot;CatalogProductView&quot;</span> <span class="na">mca=</span><span class="s">&quot;catalog/product/view&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;reviewSummary&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Review\Test\Block\Product\View\Summary&quot;</span> <span class="na">locator=</span><span class="s">&quot;.product-reviews-summary&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;customerReviewBlock&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Review\Test\Block\Product\View&quot;</span> <span class="na">locator=</span><span class="s">&quot;#customer-reviews&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;reviewFormBlock&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Review\Test\Block\ReviewForm&quot;</span> <span class="na">locator=</span><span class="s">&quot;#review-form&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/page&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p>And generate the updated page:</p>
+
+<pre><code>php &lt;magento2&gt;/dev/tests/functional/utils/generate/page.php
+</code></pre>
+
+<p>The result is in the <code>&lt;magento2&gt;/dev/tests/functional/generated/Magento/Catalog/Test/Page/Product/CatalogProductView.php</code> with the following code:</p>
+
+<script src="https://gist.github.com/dshevtsov/d5be380739c696fcb847.js"></script>
+
 
 
 		</div>

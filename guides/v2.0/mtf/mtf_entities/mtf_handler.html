@@ -211,26 +211,27 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h3 id="mtf_handler_overview">Contents</h3>
+		<h2>Handler</h2>
 
-<ul>
+<ul id="markdown-toc">
   <li><a href="#mtf_handler_overview">Handler overview</a></li>
   <li><a href="#mtf_handler_types">Types of handlers</a></li>
-  <li><a href="#mtf_handler_config">Configuration</a>
-    <ul>
-      <li><a href="#mtf_handler_configxml">config.xml</a></li>
+  <li><a href="#mtf_handler_config">Configuration</a>    <ul>
+      <li><a href="#mtf_handler_configxml"><code>config.xml</code></a></li>
     </ul>
   </li>
-  <li><a href="#mtf_handler-components">Handler components</a>
-    <ul>
+  <li><a href="#mtf_handler-components">Handler components</a>    <ul>
       <li><a href="#mtf_handler_interface">Handler interface</a></li>
       <li><a href="#mtf_handler_conf_hand">Handler class</a></li>
-      <li><a href="#mtf_handler_di">di.xml</a></li>
+      <li><a href="#mtf_handler_di"><code>di.xml</code></a></li>
     </ul>
   </li>
-  <li><a href="#mtf_handler_howto-create-curl">How to create a cURL handler</a>
-    <ul>
-      <li><a href="#mtf_handler_decor">cURL authentication classes</a></li>
+  <li><a href="#mtf_handler_howto-create-curl">How to create a cURL handler</a>    <ul>
+      <li><a href="#mtf_handler_decor">cURL authentication classes</a>        <ul>
+          <li><a href="#mtf_handler_curl_backdecor">BackendDecorator class</a></li>
+          <li><a href="#mtf_handler_cirl_frontdecor">FrontendDecorator class</a></li>
+        </ul>
+      </li>
     </ul>
   </li>
   <li><a href="#mtf_handler_howto-create-ui">How to create a UI handler</a></li>
@@ -286,9 +287,9 @@
 
 <p>One fixture can have various handlers. When we create an entity in the test we do not indicate which handler to use. This work is delegated to a fallback, which is a queue of handlers in the priority order specified in <a href="#mtf_handler_configxml"><code>config.xml</code></a>.</p>
 
-<h3 id="mtf_handler_configxml">config.xml</h3>
+<h3 id="mtf_handler_configxml"><code>config.xml</code></h3>
 
-<p>The default configuration for handlers is set in <a href="https://github.com/magento/magento2/blob/develop/dev/tests/functional/etc/config.xml.dist"><code>magento2/dev/tests/functional/etc/config.xml.dist</code></a>.  Create a duplicate of the file, and keep both, but make changes to the new one, which is called <code>config.xml</code>:</p>
+<p>The default configuration for handlers is set in <a href="https://github.com/magento/magento2/blob/develop/dev/tests/functional/etc/config.xml.dist"><code>&lt;magento2&gt;/dev/tests/functional/etc/config.xml.dist</code></a>.  Create a duplicate of the file, and keep both, but make changes to the new one, which is called <code>config.xml</code>:</p>
 
 <pre><code>cp config.xml.dist config.xml
 </code></pre>
@@ -321,7 +322,7 @@
 
 <p>You should mention in a fixture the <code>handler_interface</code> attribute with a reference to the PHP class: <code>Magento\[module_name]\Test\Handler\[object_name]\[object_name]Interface</code> (example for the Widget: <code>Magento\Widget\Test\Handler\Widget\WidgetInterface</code>).</p>
 
-<p>Example of <code>WidgetInterface.php</code> (should be placed in <code>magento2/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget</code>):</p>
+<p>Example of <code>WidgetInterface.php</code> (should be placed in <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget</code>):</p>
 
 <script src="https://gist.github.com/dshevtsov/dbe9b588ffe91bbb5622.js"></script>
 
@@ -329,17 +330,17 @@
 
 <p>To use the handler class, create <a href="#mtf_handler_interface">an interface</a>, declare a fallback in the <a href="#mtf_handler_config"><code>config.xml</code></a>, and declare interface/class relationships in the <a href="#mtf_handler_di"><code>di.xml</code></a>. When this class is created, you can call the <code>persist()</code> method to create Magento entity (for example, widget). The method returns data that are matched with fixture fields. All fixture fields that are matched are assigned values from the handler.</p>
 
-<p>The <code>persist()</code> method is declared in the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php"><code>InjectableFixture</code></a> class by path <code>magento2/dev/tests/functional/vendor/magento/mtf/Magento/Mtf/Fixture/InjectableFixture.php</code>.</p>
+<p>The <code>persist()</code> method is declared in the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php"><code>InjectableFixture</code></a> class by path <code>&lt;magento2&gt;/dev/tests/functional/vendor/magento/mtf/Magento/Mtf/Fixture/InjectableFixture.php</code>.</p>
 
 <script src="https://gist.github.com/dshevtsov/3ed7ce601d3b23e94ccd.js"></script>
 
-<p>Create the handler in the same directory where the interface is stored: <code>magento2/dev/tests/functional/tests/app/Magento/[module_name]/Test/Handler/[object_name]/[type_of_handler].php</code></p>
+<p>Create the handler in the same directory where the interface is stored: <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/[module_name]/Test/Handler/[object_name]/[type_of_handler].php</code></p>
 
-<h3 id="mtf_handler_di">di.xml</h3>
+<h3 id="mtf_handler_di"><code>di.xml</code></h3>
 
-<p>The <code>di.xml</code> file declares relationship between the <a href="#mtf_handler_interface">interface</a> and the <a href="#mtf_handler_conf_hand">handler</a> class. The file must be placed in <code>magento2/dev/tests/functional/tests/app/Magento/[module_name]/Test/etc/[handler_type]</code>.</p>
+<p>The <code>di.xml</code> file declares relationship between the <a href="#mtf_handler_interface">interface</a> and the <a href="#mtf_handler_conf_hand">handler</a> class. The file must be placed in <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/[module_name]/Test/etc/[handler_type]</code>.</p>
 
-<p>See an example for the Widget cURL handler (<code>magento2/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml</code>):</p>
+<p>See an example for the Widget cURL handler (<code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml</code>):</p>
 
 <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; ?&gt;</span>
 <span class="c">&lt;!--</span>
@@ -348,10 +349,8 @@
 <span class="c"> * See COPYING.txt for license details.</span>
 <span class="c"> */</span>
 <span class="c">--&gt;</span>
-<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
-        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">&quot;Magento\Widget\Test\Handler\Widget\WidgetInterface&quot;</span>
-                <span class="na">type=</span><span class="s">&quot;\Magento\Widget\Test\Handler\Widget\Curl&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">&quot;Magento\Widget\Test\Handler\Widget\WidgetInterface&quot;</span> <span class="na">type=</span><span class="s">&quot;\Magento\Widget\Test\Handler\Widget\Curl&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></div>
 
 <p>In this example, the <code>di.xml</code> file causes the <code>Curl</code> class to replace the <code>WidgetInterface</code>.</p>
@@ -365,7 +364,7 @@
 <p>Let’s create a cURL handler that creates a new widget.</p>
 
 <ul>
-  <li>Create a directory with the name <code>Widget</code> in the <code>Handler</code> directory of the Magento_Widget module - <code>magento2/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget</code>.</li>
+  <li>Create a directory with the name <code>Widget</code> in the <code>Handler</code> directory of the Magento_Widget module - <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget</code>.</li>
   <li>In the same directory, create <a href="#mtf_handler_interface">the interface</a> for the cURL handler, and call the file <code>WidgetInterface.php</code>. Our new interface extends <code>HandlerInterface</code> class.</li>
 </ul>
 
@@ -392,10 +391,8 @@
 <span class="c"> * See COPYING.txt for license details.</span>
 <span class="c"> */</span>
 <span class="c">--&gt;</span>
-<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
-        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">&quot;Magento\Widget\Test\Handler\Widget\WidgetInterface&quot;</span>
-                <span class="na">type=</span><span class="s">&quot;\Magento\Widget\Test\Handler\Widget\Curl&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">&quot;Magento\Widget\Test\Handler\Widget\WidgetInterface&quot;</span> <span class="na">type=</span><span class="s">&quot;\Magento\Widget\Test\Handler\Widget\Curl&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></div>
 
 <h3 id="mtf_handler_decor">cURL authentication classes</h3>
@@ -404,7 +401,7 @@
 
 <p>The <a href="#mtf_handler_curl_frontdecor">FrontendDecorator class</a> manages authentication in the storefront.</p>
 
-<h4>BackendDecorator class</h4>
+<h4 id="mtf_handler_curl_backdecor">BackendDecorator class</h4>
 
 <p><code>BackendDecorator</code> manages authentication in Admin and saves the Admin’s session.</p>
 
@@ -431,7 +428,7 @@
 <p>Let’s create a UI handler that creates a new widget.</p>
 
 <ul>
-  <li>Create a directory with the name <code>Widget</code> in the <code>Handler</code> directory of the Magento_Widget module - <code>magento2/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget</code>.</li>
+  <li>Create a directory with the name <code>Widget</code> in the <code>Handler</code> directory of the Magento_Widget module - <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget</code>.</li>
   <li>In the same directory, create <a href="#mtf_handler_interface">interface</a> for the UI handler, and call the file <code>WidgetInterface.php</code>. Our new interface extends <code>HandlerInterface</code> class.</li>
 </ul>
 
@@ -457,7 +454,7 @@
 <span class="c"> */</span>
 <span class="c">--&gt;</span>
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
-        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
+        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">&quot;Magento\Widget\Test\Handler\Widget\WidgetInterface&quot;</span>
                 <span class="na">type=</span><span class="s">&quot;\Magento\Widget\Test\Handler\Widget\Ui&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></div>
@@ -467,7 +464,7 @@
 <p>Let’s create a WebAPI handler that creates a new tax rule.</p>
 
 <ul>
-  <li>Create a directory with the name <code>TaxRule</code> in the <code>Handler</code> directory of the Magento_Tax module - <code>magento2/dev/tests/functional/tests/app/Magento/Tax/Test/Handler/TaxRule</code>.</li>
+  <li>Create a directory with the name <code>TaxRule</code> in the <code>Handler</code> directory of the Magento_Tax module - <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Tax/Test/Handler/TaxRule</code>.</li>
   <li>In the same directory, create <a href="#mtf_handler_interface">interface</a> for the WebAPI handler, and call the file <code>TaxRuleInterface.php</code>. Our new interface extends <code>HandlerInterface</code> class.</li>
 </ul>
 
@@ -491,7 +488,7 @@
 <span class="c"> */</span>
 <span class="c">--&gt;</span>
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
-        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
+        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">&quot;Magento\Tax\Test\Handler\TaxRule\TaxRuleInterface&quot;</span>
                 <span class="na">type=</span><span class="s">&quot;\Magento\Tax\Test\Handler\TaxRule\Webapi&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></div>
