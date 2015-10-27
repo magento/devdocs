@@ -8,9 +8,7 @@ menu_order: 1
 github_link: mtf/mtf_entities/mtf_fixture.md
 ---
 
-<h2>Fixture</h3>
-
-<h3 id="mtf_fixture_content">Contents</h3>
+<h2>Fixture</h2>
 
 * TOC
 {:toc}

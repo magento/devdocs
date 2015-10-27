@@ -10,8 +10,6 @@ github_link: mtf/mtf_entities/mtf_fixture-repo.md
 
 <h2>Fixture repository</h2>
 
-<h3>Contents</h3>
-
 * TOC
 {:toc}
 
@@ -441,7 +439,7 @@ The preceding is an example of repository merging. Using the approach from the e
 
 Credentials are stored in XML file specified in `phpunit.xml`.
 
-You can find a template for credentials in <a href="https://github.com/magento/magento2/blob/master/dev/tests/functional/credentials.xml.dist"><code>magento2/dev/tests/functional/credentials.xml.dist</code></a>.
+You can find a template for credentials in <a href="https://github.com/magento/magento2/blob/master/dev/tests/functional/credentials.xml.dist"><code>&lt;magento2&gt;/dev/tests/functional/credentials.xml.dist</code></a>.
 
 Credentials always should stay invisible for security reasons. The MTF implicitly pastes credentials during the test run only.
 There are two ways to paste credentials:

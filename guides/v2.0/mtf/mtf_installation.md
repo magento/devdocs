@@ -9,7 +9,7 @@ menu_order: 2
 github_link: mtf/mtf_installation.md
 ---
 <h2>Preface</h2>
-Well, you are on the way to install the Magento testing Framework!
+Well, you are on the way to install the Magento Testing Framework!
 
 Follow the next three steps:
 
@@ -65,7 +65,7 @@ The Magento Testing Framework requires Composer, which downloads libraries defin
 <div class="bs-callout bs-callout-info" id="info">
   <p>If command failed, maybe <a href="https://getcomposer.org">Composer</a> hasn't been installed globally.<br/>
   Copy <code>composer.phar</code> to <code>/usr/local/bin/composer</code>.<br/>
-  To run it locally put <code>composer.phar</code> into directory, where <code>composer.json</code> file is located (that is, <code>magento2/dev/tests/functional/</code>).<br/>
+  To run it locally put <code>composer.phar</code> into directory, where <code>composer.json</code> file is located (that is, <code>&lt;magento2&gt;/dev/tests/functional/</code>).<br/>
 And run from this directory <code>php composer.phar install</code>.</p>
 </div>
 

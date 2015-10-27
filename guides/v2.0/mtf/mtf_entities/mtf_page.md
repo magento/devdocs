@@ -10,8 +10,6 @@ github_link: mtf/mtf_entities/mtf_page.md
 
 <h2>Page</h2>
 
-<h3>Contents</h3>
-
 * TOC
 {:toc}
 
@@ -101,7 +99,7 @@ The page will be opened as a concatenation of `app_backend_url` from `<magento2>
 
 Storefront page is recognizable by `area` assigned any value except `Adminhtml`, *and* `mca` doesn't have `http`. This type of page extends the [Mtf\Page\FrontendPage][] class.
 
-The page will be opened as concatenation of `app_frontend_url` from `magento2/dev/tests/functional/phpunit.xml` and [mca](#mca) link.
+The page will be opened as concatenation of `app_frontend_url` from `<magento2>/dev/tests/functional/phpunit.xml` and [mca](#mca) link.
 
 ### External page {#mtf_page_extern}
 

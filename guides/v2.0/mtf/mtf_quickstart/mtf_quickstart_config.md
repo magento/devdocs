@@ -44,7 +44,7 @@ For `name="credentials_file_path" ` set `value="<full_path_to_directory>"` (that
 ### Edit `config.xml` to configure Magento Testing Framework {#mtf_quickstart_config_configxml}
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>The default configuration is set in <a href="{{site.mage2000url}}dev/tests/functional/etc/config.xml.dist"><code>magento2/dev/tests/functional/etc/config.xml.dist</code></a>. It should be copied as <code>config.xml</code> for further changes.</p>
+  <p>The default configuration is set in <a href="{{site.mage2000url}}dev/tests/functional/etc/config.xml.dist"><code>&lt;magento2&gt;/dev/tests/functional/etc/config.xml.dist</code></a>. It should be copied as <code>config.xml</code> for further changes.</p>
 </div>
 
 Find `config.xml` in `<magento2>/dev/tests/functional/etc`, and open it in editor.

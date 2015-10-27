@@ -10,8 +10,6 @@ github_link: mtf/mtf_entities/mtf_block.md
 
 <h2>Block</h2>
 
-<h3>Contents</h3>
-
 * TOC
 {:toc}
 
@@ -205,7 +203,7 @@ Let's see the [Customer Login]({{site.mage2000url}}app/code/Magento/Customer/Blo
 
 <a href="{{site.baseurl}}common/images/mtf_block_login_ui.png"><img src="{{site.baseurl}}common/images/mtf_block_login_ui.png" /></a>
 
-The mapping file for the block is stored in `magento2/dev/tests/functional/tests/app/Magento/Customer/Test/Block/Form/Login.xml`, along with the block.
+The mapping file for the block is stored in `<magento2>/dev/tests/functional/tests/app/Magento/Customer/Test/Block/Form/Login.xml`, along with the block.
 
 <img src="{{site.baseurl}}common/images/mtf_block_login_dir.png" />
 
