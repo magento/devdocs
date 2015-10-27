@@ -42,6 +42,7 @@ github_link: install-gde/install/web/install-web_2-db.md
 		<td>Table prefix</td>
 		<td><p>Use only if you're installing the Magento database tables in a database instance that has Magento tables in it already.</p>
 		<p>In that case, use a prefix to identify the Magento tables for this installation. Some customers have more than one Magento instance running on a server with all tables in the same database.</p>
+		<p>The prefix can be a maximum of five characters in length. It must begin with a letter and can include only letters, numbers, and underscore characters.</p>
 		<p>This option enables those customers to share the database server with more than one Magento installation.</p></td>
 	</tr>
 	</tbody>
