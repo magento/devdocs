@@ -13,7 +13,7 @@ github_link: frontend-dev-guide/layouts/xml-instructions.md
    </style>
 </head>
 
-<h2 id="fedg_layout_xml-instruc_overview">Overview</h2>
+<h2 id="fedg_layout_xml-instruc_overview">What's in this topic</h2>
 
 
 Changing layout files is one of the two possible ways to customize page layout in Magento (the second way is altering templates). 
