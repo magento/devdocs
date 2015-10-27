@@ -64,40 +64,43 @@ in Knockout JS templates children  -  keys of the `elems` property
 </li>
 </ul>
 
-## Test
 
-- `component`: the path to the JavaScript implementation of a component 
-path in terms of RequireJS. JS component should return Class
-<p class="q">Not clear about class</p>
+## Ui Components properties used for linking
+The following properties are used for linking observable properties and methods of UI components:
 
-Example:
+<ul>
+<li>-- exports: used to notify some external entity about property changing.
+Exports value is an object, composed of the following:
+<ul>
+<li>key - name of property/method from where "export". Only internal property</li>
+<li>value - name of property/method to where "export". Could use string templates.</li>
+<p class="q">need to add an illustration of a string template</p>
+</ul>
+Example of using <code>export</code> in component.js:
+<pre>
+{
+  'exports': {
+   'visible': '${ $.provider }.visibility'
+  }
+}
+</pre>
 
-{%highlight xml %}
-<argument name="data" xsi:type="array">
-        <item name="component" xsi:type="string">Magento_Ui/js/grid/controls/bookmarks/bookmarks</item>
-</argument>
-{% endhiglight %}
-
-- `template`: path to the html template.The html template is based on top of Knockout
-<p class="q">Not clear</p>
-Example:
-{%highlight xml %}
-<argument name="data" xsi:type="array">
-        <item name="template" xsi:type="string">ui/grid/controls/bookmarks/bookmarks.html</item>
-</argument>
-{% endhighlight %}
-
-- `children` -  is a fantom property that contains nested/linked components. In the xml configuration, all nodes that are not <argument/> are children.
-in Knockout JS templates children  -  keys of the `elems` property 
-
-
-## Properties that links Ui Components on the page
- -- exports 
+Example of using <code>export</code> in configuration .xml file:
+<pre>
+&lt;argument name=&quot;data&quot; xsi:type=&quot;array&quot;&gt;
+       &lt;item name=&quot;config&quot; xsi:type=&quot;array&quot;&gt;
+                    &lt;item name=&quot;links&quot; xsi:type=&quot;array&quot;&gt;
+                        &lt;item name=&quot;visible&quot; xsi:type=&quot;string&quot;&gt;sample_config.sample_provider.visibility&lt;/item&gt;
+                    &lt;/item&gt;
+       &lt;/item&gt;
+&lt;/argument&gt;
+</pre>
+ </li>
  -- imports 
  -- links
  -- listen
 
-
+</ul>
 ## Frequently used components
 - uiElement
 - uiCollection
