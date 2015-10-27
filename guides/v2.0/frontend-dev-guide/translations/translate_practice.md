@@ -8,7 +8,7 @@ menu_order: 2
 github_link: frontend-dev-guide/translations/translate_practice.md
 ---
 
-<h2>Overview</h2>
+<h2>What's in this topic</h2>
 
 This topic is a step-by-step illustration of creating a default en_US locale <a href="{{site.gdeurl}}frontend-dev-guide/translations/xlate.html#translate_terms">dictionary</a> for a custom theme. 
 

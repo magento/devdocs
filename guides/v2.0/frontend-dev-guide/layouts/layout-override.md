@@ -9,7 +9,7 @@ github_link: frontend-dev-guide/layouts/layout-override.md
 redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-override.html
 ---
 
-<h2 id="fedg_layout_override_overview">Overview</h2>
+<h2 id="fedg_layout_override_overview">What's in this topic</h2>
 
 Not all layout customizations can be performed by <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> existing layouts. If the amount of customizations is large, you can use the overriding function for the needed layout file. This means that the new file that you place in the theme will be used instead of the parent <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html#layout-loc" target="_blank">theme</a> layout file of <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html#layout-loc" target="_blank">base</a> layout file.
 
