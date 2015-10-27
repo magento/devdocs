@@ -11,153 +11,80 @@ github_link: install-gde/prereq/rabbitmq.md
 
 ![EE](../../../../common/images/ee-only_large.png)
 
+#### Contents
+*	<a href="#overview">Overview</a>
+*	<a href="#ubuntu-install">Install on Ubuntu</a>
+*	<a href="#centos-install">Install on CentOS</a>
+*	<a href="#config">Configure RabbitMQ</a>
+*	<a href="{{ site.gdeurl }}config-guide/mq/rabbitmq-overview.html">Configure message queues</a>
+	
+*	<a href="{{ site.gdeurl }}config-guide/mq/config-mq.html">Configure message queues</a>
 
-<h2>Configure your message queue topology</h2>
 
-<div class="bs-callout bs-callout-warning">
-  <p>Magento Community Edition must be installed before you can perform this procedure.</p>
+<h2 id="overview">Overview</h2>
+
+RabbitMQ is is an open source message broker that offers a reliable, highly available, scalable and portable messaging system.
+
+Message queues provide an asynchronous communications mechanism in which the sender and the receiver of a message do not contact each other. Nor do they need to communicate with the message queue at the same time. When a sender places a messages onto a queue, it is stored until the recipient receives them. 
+
+Magento 2.0 Enterprise Edition (EE) uses RabbitMQ to manage these message queues. RabbitMQ cannot be used with Community Edition (CE) installations.
+
+The message queue system must be established before you install Magento. The basic sequence is
+
+1. Install RabbitMQ and any prequisites.
+2. Configure RabbitMQ.
+3. Configure your message queue topology.
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>A basic message queue system can be implemented on EE without using RabbitMQ. See <a href="{{ site.gdeurl }}config-guide/mq/solr-magento.html">Configure message queues</a></p>
 </div>
 
-Each module that is to be a publisher must be configured as such. If you want a module to use the MQF, create a `<module>/etc/queue.xml` file and define the publisher, consumers, exchanges and bindings. 
 
-Magento defines the default publisher as follows:
+<h2 id="ubuntu-install">Install RabbitMQ on Ubuntu</h2>
 
-<table>
-<tr>
-<th>Attribute</th><th>Value</th><!--<th>CE Value</th>-->
-</tr>
-<tr>
-<td>name</td><td>default</td><!--<td>default_mysql</td>-->
-</tr>
-<tr>
-<td>connection</td><td>rabbitmq</td><!--<td>db</td>-->
-</tr>
-<tr>
-<td>exchange</td><td>magento</td><!--<td>magento</td>-->
-</tr>
-</table>
+Detailed installation instructions are beyond the scope of this document. See [Installing on Debian/Ubuntu](https://www.rabbitmq.com/install-debian.html) for more information.
 
-<h3>Edit the <code>queue.xml</code> file</h3>
-The `queue.xml` file can contain the following elements:
+The RabbitMQ server is included on Ubuntu, but the version is often old. RabbitMQ recommends installing the package from their website.
 
-+ publisher
-+ topic
-+ consumer
-+ bind
+1. Download [rabbitmq-server_3.5.6-1_all.deb](https://www.rabbitmq.com/releases/rabbitmq-server/v3.5.6/rabbitmq-server_3.5.6-1_all.deb).
+2. Install the package with `dpkg`.
 
-<h4>Required elements</h4>
+<h2 id ="centos-install">Install RabbitMQ on CentOS</h2>
 
-Each `queue.xml` file must contain the following lines:
+Detailed installation instructions are beyond the scope of this document. See [Installing on RPM-based Linux](https://www.rabbitmq.com/install-rpm.html) for more information.
 
-{% highlight xml %}
-<?xml version="1.0"?>
+<h3>Install Erlang</h3>
+RabbitMQ was written using the Erlang programming language, which must be installed on the same system as RabbitMQ
 
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/queue.xsd">
-.
-.
-.
-</config>
+See [https://www.erlang-solutions.com/downloads/download-erlang-otp](Manual installation) for more information.
 
-{% endhighlight %}
+Run the following commands to install this feature.
 
-<h4>publisher element</h4>
-The `publisher` element configures the type of connection and the exchange to publish to. By default, Magento uses one exchange. The name of exchange is a part of the publisher configuration. However multiple exchanges are supported, based on the AMQP model.
-<table>
-<tr>
-<th>Parameter</th><th>Description</th>
-</tr>
-<tr>
-<td>name</td>
-<td>A unique identifer for the publisher. The value is specified in a <code>topic</code> element.</td>
-</tr>
-<tr>
-<td>connection</td>
-<td>If RabbitMQ is to used to manage the queue, then the value must be <code>rabbitmq</code>. The value can also be <code>db</code> or the name of a customer adapter.</td>
-</tr>
-<tr>
-<td>exchange</td>
-<td>The name of the exchange to publish to. The value is referenced from the <code>bind</code> element.</td>
-</tr>
-</table>
+1. `wget http://packages.erlang-solutions.com/erlang-solutions-1.0-1.noarch.rpm`
+2. `rpm -Uvh erlang-solutions-1.0-1.noarch.rpm`
 
-<h4>topic element</h4>
-Configuring the `topic` element defines the interface that processes the message and assigns a publisher.
-<table>
-<tr>
-<th>Parameter</th><th>Description</th>
-</tr>
-<tr>
-<td>name</td>
-<td><p>The name assigned to the topic. The format should be <code><i>object</i></code><b>.</b><code><i>action</i></code> You can further distinguish topic names by appending <code><b>.</b><i>subaction</i></code> to the end of the name. Use the past tense for all verbs, to indicate the event has already happened. Examples: <code>customer.created</code>, <code>customer.sent.email</code></p>
-<p>The value is specified in a <code>bind</code> element.</p></td>. 
-</tr>
-<tr>
-<td>schema</td>
-<td><p>The interface that describes the structure of the message. It should be in the format of a Data Interface from the Service Contracts. For example, <code>Magento\Customer\Api\Data\CustomerInterface</code>.
-</p>
-<p>You can also specify a service method signature, such as <code>Magento\Customer\Api\CustomerRepositoryInterface::save</code>. In this case, format the message as an array of all service method parameters, like for a <code>call_user_func_array</code> call. The consumer's callback should expect each message part to be passed as a separate parameter.
-</p></td>
-</tr>
-<tr>
-<td>publisher</td>
-<td>The <code>name</code> of a <code>publisher</code>.</td>
-</tr>
-</table>
 
-<h4>consumer element</h4>
-Each `consumer` elements maps the receiver of a message to a specific queue. The `class` and `method` parameters indicate what receives and processes the message.
-<table>
-<tr>
-<th>Parameter</th><th>Description</th>
-</tr>
-<tr>
-<td>name</td>
-<td>The name of the consumer. The value should be the same as the magic method that to be used as a callback. </td>
-</tr>
-<tr>
-<td>queue</td>
-<td>Defines the queue name to send the message to. This value is used in the definition of a <code>bind</code> element.</td>
-</tr>
-<tr>
-<td>connection</td>
-<td>Must be <code>rabbitmq</code> or other value specified in the `connection` parameter in of a publisher.</td>
-</tr>
-<tr>
-<td>class</td>
-<td>The path to a Magento class that consumes the message.</td>
-</tr>
-<tr>
-<td>method</td>
-<td>The method within the specified <code>class</code> that processes the message.</td>
-</tr>
-<tr>
-<td>max_messages</td>
-<td>Specifies the maximum number of messages to consume.</td>
-</tr>
-</table>
+<h3>Install RabbitMQ</h3>
+The RabbitMQ server is included on CentOS, but the version is often old. RabbitMQ recommends installing the package from their website.
 
-<h4>bind element</h4>
-The `bind` elements link topics to queues and exchanges, defining the message queue topology. A topic can be sent to any number of queues.
+1. Download [rabbitmq-server-3.5.6-1.noarch.rpm](https://www.rabbitmq.com/releases/rabbitmq-server/v3.5.6/rabbitmq-server-3.5.6-1.noarch.rpm).
+2. Run the following commands as a user with root permissions:
 
-<table>
-<tr>
-<th>Parameter</th><th>Description</th>
-</tr>
-<tr>
-<td>queue</td>
-<td>The <code>name</code> of a queue defined in a <code>consumer</code> element.</td>
-</tr>
-<tr>
-<td>exchange</td>
-<td>The <code>name</code> of an exchange defined in a <code>publisher</code> element.</td>
-</tr>
-<tr>
-<td>topic</td>
-<td>The <code>name</code> of a topic defined in a <code>topic</code> element. You can specify an asterisk (*) or pound sign (#) as wildcards. </td>
-</tr>
-</table>
+`rpm --import https://www.rabbitmq.com/rabbitmq-signing-key-public.asc`
+`yum install rabbitmq-server-3.5.6-1.noarch.rpm`
 
-<h2>Install Magento EE</h2>
+<h2 id="config">Configure RabbitMQ</h2>
+Review the official RabbitMQ documentation to configure and manage RabbitMQ. Pay attention to the following items:
+
+* Environment variables
+* Port access
+* Default user accounts
+* Starting and stopping the broker
+* System limits
+
+
+
+<h2>Install RabbitMQ on Magento EE</h2>
 
 Add the following command line parameters when you install Magento EE:
 
@@ -196,3 +123,14 @@ where:
 *	<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP 5.5 or 5.4&mdash;CentOS</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">Configuring security options</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Ways to install the Magento software</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Ways to install the Magento software</a>
+
+
+{% highlight php startinline=true %}
+$this->consumerFactory->get('customer_created_listener')
+    ->process();
+    <span style="color:yellow">something thing thing</span>
+{% endhighlight %}
+
+
+

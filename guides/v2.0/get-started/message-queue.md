@@ -20,13 +20,12 @@ github_link: get-started/message-queue.md
 
 -->
 
-<b>NOTE TO REVIEWERS:</b> We need information about where to install RabbitMQ. On the same machine(s) as Magento? Is any configuration on the RabbitMQ system required?
 
 <h2>Overview</h2>
 
 Message queues provide an asynchronous communications mechanism in which the sender and the receiver of a message do not contact each other. Nor do they need to communicate with the message queue at the same time. When a sender places a messages onto a queue, it is stored until the recipient receives them. 
 
-<h3>Enterprise Edition (EE)</h3>
+<h3>Using RabbitMQ</h3>
 On Magento 2.0 EE, the Message Queue Framework (MQF) is a fully-functional system that allows a module to publish messages to queues. It also creates consumers to receive them asynchronously. The MQF uses [RabbitMQ](http://www.rabbitmq.com) as the messaging broker, which  provides a scalable platform for sending and receiving messages. It also includes a mechanism for storing undelivered messages. RabbitMQ is based on the Advanced Message Queuing Protocol (AMQP) 0.9.1 specification. 
 
 The following diagram illustrates the Message Queue Framework.
@@ -45,10 +44,8 @@ The following diagram illustrates the Message Queue Framework.
 
 Message queues can also be implemented using database tables instead of RabbitMQ. In this case, a publisher writes messages to the queue_message table.
 
-
-
-<h3>Community Edition</h3>
-In Magento 2 CE, the MQF relies on cron jobs and the command line interface to make sure the consumers are able to receive messages. CE uses MySQL tables to store information about the queues. It also uses a MySQL adapter to manage the tables.
+<h3>Using cron jobs</h3>
+In installations where RabbitMQ is not installed, the MQF relies on cron jobs and the command line interface to make sure the consumers are able to receive messages. Magento uses MySQL tables to store information about the queues. It also uses a MySQL adapter to manage the tables.
 
 See <a href="#ce">Messaging in Community Edition</a> for information about implementing message queues in Magento CE.
 
@@ -197,9 +194,9 @@ The `bind` elements link topics to queues and exchanges, defining the message qu
 </tr>
 </table>
 
-<h2 id="ce">Messaging in Community Edition</h2>
+<h2 id="ce">Messaging without using RabbitMQ</h2>
 
-CE installations typically use cron jobs and the CLI to ensure that consumers are retrieving messages. External process managers can be used instead of cron. 
+If you do not want to implement the RabbitMQ solution, you can use cron jobs and the CLI to ensure that consumers are retrieving messages. External process managers can be used instead of cron. 
 
 <h3>Process managemnt</h3>
 
@@ -216,6 +213,8 @@ The following shows a `crontab` entry:
     </job>
 </group>
 {% endhighlight %}
+
+See <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a> for more information about using cron with Magento.
 
 You can also use a process manager such as <a href="http://supervisord.org/index.html">Supervisor</a> to monitor the status of processes. The manager can use the CLI to restart the processes as needed.
 
