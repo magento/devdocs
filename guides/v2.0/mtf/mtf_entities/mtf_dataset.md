@@ -8,17 +8,21 @@ menu_order: 8
 github_link: mtf/mtf_entities/mtf_dataset.md
 ---
 
-<h2 id="mtf_dataset_overview">Data set overview</h2>
+* TOC
+{:toc}
+
+
+##Data set overview
 Data sets are used for filling test forms with prepared data.
 A data set can have several variations.
 Each variation has constraints that are checked at the end of the test flow.
 
 This topic shows how to prepare data for the test.
 
-<h2 id="mtf_dataset_structure">Data set structure</h2>
+##Data set structure
 First, let's take a look at `CreateSimpleProductEntityTest.xml` file for test. This file is responsible for filling simple product form with prepared data. 
 
-<p><img src="{{ site.baseurl }}common/images/Dataset_mapping.png"></p> 
+<p><a href="{{ site.baseurl }}common/images/Dataset_mapping.png"><img src="{{ site.baseurl }}common/images/Dataset_mapping.png"/></a></p> 
 
 <h4>Data set has the following structure:</h4>
 
@@ -48,11 +52,25 @@ First, let's take a look at `CreateSimpleProductEntityTest.xml` file for test. T
 
 9. Data with name `tag` can be used to customize test suite run.
 
-<h2 id="mtf_dataset_howto">How to add data set to a test</h2>
+The following table describes variation attributes.
+
+| Field | Semantics    |     Value  | Is required? |
+|:--------------------|:----------|:---------------:|-----------|:-----------------:|
+| `description`              | Description of created product     |  string  |  required      |
+| `product/data/url_key`     | Specifies url key to the product  | string | optional     |
+| `product/data/name`    | The name of the product |   string  | optional |
+| `product/data/sku`    | Stock keeping unit   |    string  |     optional      |
+| `product/data/tax_class_id/dataSet` | Tax class |  string  |     optional      |
+| `product/data/price/value`    | Product price |  string  |     optional      |
+| `product/data/weight`    | Weight of product |  string  |     optional      |
+| `product/data/quantity_and_stock_status/qty`    | Quantity |  string  | optional |
+| `product/data/custom_options/preset` | drop_down_with_one_option_fixed_price |  string  |     optional      
+
+##How to add data set to a test
 To create a data set for Create simple product test:
 
 1. Create .xml file with the same name as the test: `CreateSimpleProductEntityTest.xml` within TestCase directory.
 
 2. Put data with different variations for your test into `CreateSimpleProductEntityTest.xml` file. As a result you'll have the following structure:
 
-<p><img src="{{ site.baseurl }}common/images/Data set2.png"></p> 
+<p><a href="{{ site.baseurl }}common/images/Data set2.png"><img src="{{ site.baseurl }}common/images/Data set2.png"/></a></p> 
