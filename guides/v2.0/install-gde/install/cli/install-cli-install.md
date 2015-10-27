@@ -22,8 +22,6 @@ See one of the following sections:
 
 *	<a href="#instgde-install-cli-prereq">Before you start your installation</a>
 *	<a href="#instgde-install-cli-magento">Install the Magento software from the command line</a>
-*	<a href="#install-perms-import">Why we recommend you set file system permissions</a>
-*	<a href="#install-perms-set">File system permissions and ownership</a>
 
 See also <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall.html">Update, reinstall, uninstall</a>.
 
@@ -186,6 +184,7 @@ The following table discusses the meanings of installation option names and valu
 		<td><p>--db-prefix</p></td>
 		<td><p>Use only if you're installing the Magento database tables in a database instance that has Magento tables in it already.</p>
 		<p>In that case, use a prefix to identify the Magento tables for this installation. Some customers have more than one Magento instance running on a server with all tables in the same database.</p>
+		<p>The prefix can be a maximum of five characters in length. It must begin with a letter and can include only letters, numbers, and underscore characters.</p>
 		<p>This option enables those customers to share the database server with more than one Magento installation.</p></td>
 		<td><p>No</p></td>
 	</tr>
@@ -391,12 +390,6 @@ Messages similar to the following display to indicate a successful installation:
 <span class="glyphicon-class">
   <p>The command must be entered either on a single line or, as in the preceding example, with a <code>\</code> character at the end of each line.</p></span>
 </div>
-
-<h2 id="install-perms-import">Why we recommend you set file system permissions</h2>
-{% include install/file-system-perms1-why.html %}
-
-<h2 id="install-perms-set">File system permissions and ownership</h2>
-{% include install/file-system-perms2-how.html %}
 
 #### Next step
 
