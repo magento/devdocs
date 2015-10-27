@@ -8,3 +8,98 @@ menu_order: 1
 menu_node: parent
 github_link: javascript-dev-guide/javascript/ui_components_js.md
 ---
+
+<h2>What's in this topic</h2>
+This topic is aimed for developers, who need to reuse the Magento UI Components. 
+
+The topic 
+covers the following:
+
+- The structure of componenents configuration.
+- The most important component's client-side properties. 
+- Description of the additional UI components.
+- How to link components.
+- How to debug a UI component's client side.
+
+## Component's configuration ##
+
+Component's behavior, configuration and structure is defined by the following:
+<ul>
+<li>The available components configuration options are defined by component.js -> defaults.</li>
+<li> The actual configuration and structure of a particular component's `app/code/Magento/<Module>/view/<area>ui_component/*.xml` configuration from xml  == content from <argument/> node <p class="q">need more explanation</p>
+xml describes structure of components, their real names. Also it extends properties, configures template and component file.</li>
+<li>Componet methods descibed in component.js</li>
+</ul>
+All of these are available in template's scope.
+<p class="q">in what way</p>
+
+<p class="q">Need to add info about how to customize configuration in JS: create a new JS handling this + specify this JS in the XML config</p>
+
+## Main client-side properties of a UI component ##
+The most important client-side properties of a UI component are the following:
+<ul>
+<li><code>component</code>: the path to the JavaScript implementation of a component 
+path in terms of RequireJS. JS component should return Class
+<p class="q">Not clear about class</p>
+
+Example:
+<pre>
+<argument name="data" xsi:type="array">
+        <item name="component" xsi:type="string">Magento_Ui/js/grid/controls/bookmarks/bookmarks</item>
+</argument>
+</pre>
+</li>
+<li><code>template</code>: path to the html template.The html template is based on top of Knockout
+<p class="q">Not clear</p>
+Example:
+<pre>
+<argument name="data" xsi:type="array">
+        <item name="template" xsi:type="string">ui/grid/controls/bookmarks/bookmarks.html</item>
+</argument>
+</pre>
+</li>
+<li>
+children -  is a fantom property that contains nested/linked components. In the xml configuration, all nodes that are not <argument/> are children.
+in Knockout JS templates children  -  keys of the `elems` property 
+</li>
+</ul>
+
+## Test
+
+- `component`: the path to the JavaScript implementation of a component 
+path in terms of RequireJS. JS component should return Class
+<p class="q">Not clear about class</p>
+
+Example:
+
+{%highlight xml %}
+<argument name="data" xsi:type="array">
+        <item name="component" xsi:type="string">Magento_Ui/js/grid/controls/bookmarks/bookmarks</item>
+</argument>
+{% endhiglight %}
+
+- `template`: path to the html template.The html template is based on top of Knockout
+<p class="q">Not clear</p>
+Example:
+{%highlight xml %}
+<argument name="data" xsi:type="array">
+        <item name="template" xsi:type="string">ui/grid/controls/bookmarks/bookmarks.html</item>
+</argument>
+{% endhighlight %}
+
+- `children` -  is a fantom property that contains nested/linked components. In the xml configuration, all nodes that are not <argument/> are children.
+in Knockout JS templates children  -  keys of the `elems` property 
+
+
+## Properties that links Ui Components on the page
+ -- exports 
+ -- imports 
+ -- links
+ -- listen
+
+
+## Frequently used components
+- uiElement
+- uiCollection
+- uiRegistry
+- uiClass
