@@ -118,7 +118,7 @@ The block class contains all logic you want to apply to the Magento block under 
 
 #### Block identifier {#mtf_block_identifier}
 
-Each block has an identifier that includes selector and search strategy. This identifier is determined by [Mtf\Client\Element\Locator](https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Locator.php) class and is stored in the `_rootElement` property of the [Magento\Mtf\Block\Block](https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Block.php) class.
+Each block has an identifier that includes selector and search strategy. This identifier is determined by [Magento\Mtf\Client\Element\Locator](https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Locator.php) class and is stored in the `_rootElement` property of the [Magento\Mtf\Block\Block](https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Block.php) class.
 
 You can use the `_rootElement` to find an element in the current block.
 

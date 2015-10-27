@@ -85,19 +85,19 @@ Also, block can contain a `render` node. [Read about renders in the Block topic]
 
 Depending on the `area` and `mca` attributes page can be of one of the following types:
 
-* Admin page is extended from the [Mtf\Page\BackendPage][] class
-* Storefront page is extended from the [Mtf\Page\FrontendPage][] class
+* Admin page is extended from the [Magento\Mtf\Page\BackendPage][] class
+* Storefront page is extended from the [Magento\Mtf\Page\FrontendPage][] class
 * External page is extended from the [Magento\Mtf\Page\ExternalPage][] class
 
 ### Admin page {#mtf_page_admin}
 
-Admin page has `area="Adminhtml"` in the `<page>` of the page XML file. Generated page extends the [Mtf\Page\BackendPage][] class. You will log in automatically to the Admin.
+Admin page has `area="Adminhtml"` in the `<page>` of the page XML file. Generated page extends the [Magento\Mtf\Page\BackendPage][] class. You will log in automatically to the Admin.
 
 The page will be opened as a concatenation of `app_backend_url` from `<magento2>/dev/tests/functional/phpunit.xml` and [mca](#mca) link.
 
 ### Storefront page {#mtf_page_storefront}
 
-Storefront page is recognizable by `area` assigned any value except `Adminhtml`, *and* `mca` doesn't have `http`. This type of page extends the [Mtf\Page\FrontendPage][] class.
+Storefront page is recognizable by `area` assigned any value except `Adminhtml`, *and* `mca` doesn't have `http`. This type of page extends the [Magento\Mtf\Page\FrontendPage][] class.
 
 The page will be opened as concatenation of `app_frontend_url` from `<magento2>/dev/tests/functional/phpunit.xml` and [mca](#mca) link.
 
@@ -173,8 +173,8 @@ The result is in the `<magento2>/dev/tests/functional/generated/Magento/Catalog/
 <script src="https://gist.github.com/dshevtsov/d5be380739c696fcb847.js"></script>
 
 [Block]: {{site.gdeurl}}mtf/mtf_entities/mtf_block.html
-[Mtf\Page\BackendPage]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/BackendPage.php
-[Mtf\Page\FrontendPage]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/FrontendPage.php
+[Magento\Mtf\Page\BackendPage]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/BackendPage.php
+[Magento\Mtf\Page\FrontendPage]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/FrontendPage.php
 [Magento\Mtf\Page\ExternalPage]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/ExternalPage.php
 
 
