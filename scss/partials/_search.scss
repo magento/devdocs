@@ -28,9 +28,7 @@ input.gsc-input {
 
 }
 input.gsc-search-button {
-
-border-color: ;
-background-color: #fff;
+	background-color: #fff;
 }
 .gsc-tabHeader.gsc-tabhInactive {
 border-color: transparent;
@@ -250,4 +248,109 @@ text-shadow: none;
 .gsc-result .gs-title {
 
     white-space: nowrap;
+}
+
+#searchbox input {
+   background-color: transparent;
+   font-style: normal;
+   border: 0px solid gray;
+   width: 100%;
+   height: 35px;
+   color: #fff;
+   font-size: 1em;
+   line-height: 1em;
+   font-weight: normal;
+   padding: 0 0 0 40px;
+   margin: 0;
+}
+
+#searchbox input:focus{
+   outline: none;
+}
+
+#searchbox {
+   border: 0px solid gray;
+   position: relative;
+   top: -42px;
+   left: 0px;
+   padding: 0 0 0 0;
+   margin: 0 0 0 0;
+}
+
+#searchResultsBox {
+   display: none;
+   overflow: auto;
+   position: fixed;
+   top: 4%;
+   left: 6%;
+   right: 6%;
+   bottom: 2%;
+   padding: 0;
+   z-index: 1001;
+}
+
+.searchResultsBoxClose {
+
+   position: absolute;
+   top: 0;
+   right: 0;
+   width: 64px;
+   margin-top: 69px;
+   z-index: 5000;
+   margin: 0;
+   padding: 20px 10px;
+   cursor: pointer;
+   font-size: .8rem;
+}
+
+#test {
+   position: absolute;
+   top: 170px;
+   z-index: 1001;
+}
+
+
+
+.searchResultsBack {
+   display: none;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   min-width: 100%;
+   min-height: 100%;
+   height: 100%;
+   opacity: .75;
+   z-index: 1000;
+   background-color: #CACACA;
+   cursor: hand;
+   cursor: pointer;
+}
+
+
+
+/*Search styling */
+
+.search-icon {
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-image: url('data:image/svg+xml;base64,PHN2ZyBjbGFzcz0ic2VhcmNoSW1hZ2UiIHdpZHRoPSIyMHB4IiBoZWlnaHQ9IjQycHgiIHZpZXdCb3g9IjAgMCA0NDIgNDQwIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPg0KICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPg0KICAgICAgICA8ZyBpZD0ic2VhcmNoIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNC4wMDAwMDAsIDI0LjAwMDAwMCkiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSI0NyI+DQogICAgICAgICAgICA8Y2lyY2xlIGlkPSJsZW5zIiBjeD0iMTQ1IiBjeT0iMTQ1IiByPSIxNDUiPjwvY2lyY2xlPg0KICAgICAgICAgICAgPHBhdGggZD0iTTI2My4zNTEzMzEsMjYxLjM1MTMzMSBMMzcxLjUwNDYyMywzNjkuNTA0NjIzIiBpZD0iaGFuZGxlIiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIiA+PC9wYXRoPg0KICAgICAgICA8L2c+DQogICAgPC9nPg0KPC9zdmc+');
+}
+
+.search-icon {
+   position: relative;
+   width: 40px;
+   height: 45px;
+   top: -2px;
+}
+
+#subnav .search {
+   background-color: rgb(49, 48, 43);
+   float: right;
+   top: 0px;
+   height: 41px;
+   width: 18%;
+   max-width: 300px;
+   margin-right: 10px;
 }

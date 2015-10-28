@@ -24,5 +24,8 @@ m1xgithuburl: "https://github.corp.ebay.com/Magento/devdocs_internal/tree/develo
 
 # Build settings
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 
+incremental: true
+
+exclude: ['scss']

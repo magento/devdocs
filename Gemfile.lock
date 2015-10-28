@@ -109,6 +109,7 @@ GEM
       ffi (>= 0.5.0)
     rdiscount (2.1.7)
     redcarpet (3.3.1)
+    rouge (1.10.1)
     safe_yaml (1.0.4)
     sass (3.4.16)
     terminal-table (1.5.2)
@@ -126,6 +127,7 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages (= 38)
+  rouge
 
 BUNDLED WITH
    1.10.6
