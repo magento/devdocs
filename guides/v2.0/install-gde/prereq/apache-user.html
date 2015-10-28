@@ -215,7 +215,7 @@
 <ul>
   <li><a href="#install-update-depend-user-over">Overview of ownership and permissions</a></li>
   <li><a href="#install-update-depend-user-create">Create a user and give the user a strong password</a></li>
-  <li><a href="#install-update-depend-user-group">Put the Magento file system owner in the web server group</a></li>
+  <li><a href="#install-update-depend-user-group">Options for shared groups</a></li>
   <li><a href="#install-update-depend-user-switch">Switch to the Magento file system owner</a></li>
 </ul>
 
@@ -273,15 +273,35 @@ sudo passwd magento_user
     <p>Because the point of creating this user is to provide added security, make sure you create a <a href="https://en.wikipedia.org/wiki/Password_strength" target="_blank">strong password</a>.</p>
 </div>
 
-<h2 id="install-update-depend-user-group">Put the Magento file system owner in the web server group</h2>
-<p>This section discusses how to find the name of the web server user’s group and to put your Magento user in that group. This is necessary so both users can share access to Magento files. (This includes files created using the Magento Admin or other web-based utilities.)</p>
+<h2 id="install-update-depend-user-group">Options for shared groups</h2>
+<p>To enable the web server to write files and directories in the Magento file system but to also maintain <em>ownership</em> by the Magento file system owner. This is necessary so both users can share access to Magento files. (This includes files created using the Magento Admin or other web-based utilities.)</p>
 
-<p>See one of the following sections:</p>
+<p>You must share the users’ groups in any of the following ways:</p>
 
 <ul>
-  <li><a href="#install-update-depend-user-findgroup">Find the web server group</a></li>
-  <li><a href="#install-update-depend-user-add2group">Add the Magento file system owner to the web server’s primary group</a></li>
+  <li>
+    <p>Put the Magento file system in the web server’s group</p>
+
+    <p>This method is simpler but otherwise equivalent to the other method.</p>
+  </li>
+  <li>
+    <p>Put each user in the other’s group</p>
+  </li>
 </ul>
+
+<p>See the following sections:</p>
+
+<ol>
+  <li><a href="#install-update-depend-user-findgroup">Find the web server group</a></li>
+  <li>
+    <p>Any of the following:</p>
+
+    <ul>
+      <li><a href="#install-update-depend-user-add2group">Add the Magento file system owner to the web server’s primary group</a></li>
+      <li><a href="#install-update-depend-user-share-groups">Put each user in the other’s group</a></li>
+    </ul>
+  </li>
+</ol>
 
 <h3 id="install-update-depend-user-findgroup">Find the web server group</h3>
 <p>To find the web server user’s group:</p>
@@ -299,6 +319,13 @@ sudo passwd magento_user
   </li>
 </ul>
 
+<p>Continue with either:</p>
+
+<ul>
+  <li><a href="#install-update-depend-user-add2group">Put the Magento file system owner in the web server’s group</a></li>
+  <li><a href="#install-update-depend-user-share-groups">Put each user in the other’s group</a></li>
+</ul>
+
 <h3 id="install-update-depend-user-add2group">Put the Magento file system owner in the web server's group</h3>
 <p>To put the Magento file system owner in the web server’s primary group (assuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with <code>root</code> privileges:</p>
 
@@ -312,7 +339,6 @@ sudo passwd magento_user
 <pre><code>usermod -g apache magento_user
 </code></pre>
 
-<h3 id="install-update-depend-user-group-confirm">Confirm the user's group</h3>
 <p>To confirm your Magento user is a member of the web server group, enter the following command:</p>
 
 <pre><code>groups &lt;user name&gt;
@@ -321,6 +347,32 @@ sudo passwd magento_user
 <p>A sample result follows:</p>
 
 <pre><code>magento_user : apache
+</code></pre>
+
+<h3 id="install-update-depend-user-share-groups">Put each user in the other's group</h3>
+<p>An alternative to setting up group membership is to put the web server user in the Magento file system owner’s group and vice versa. To put each user in the other’s group, as a user with <code>root</code> privileges, enter the following command for each of the two users:</p>
+
+<pre><code>usermod -a -G &lt;groupname&gt; &lt;username&gt;
+</code></pre>
+
+<p>For example,</p>
+
+<pre><code>usermod -a -G apache magento_user
+usermod -a -G magento_user apache
+</code></pre>
+
+<p>To confirm the users’ group membership, enter the following command for each user:</p>
+
+<pre><code>groups &lt;username&gt;
+</code></pre>
+
+<p>Example:</p>
+
+<pre><code>groups apache
+apache : apache magento_user
+
+groups magento_user
+magento_user : magento_user apache
 </code></pre>
 
 <h2 id="install-update-depend-user-switch">Switch to the Magento file system owner</h2>
