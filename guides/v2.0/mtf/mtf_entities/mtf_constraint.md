@@ -28,7 +28,7 @@ A module in functional tests (`<magento2>/dev/tests/app/Magento/`) stores constr
 
 ![]({{site.baseurl}}common/images/mtf_constraint_dir.png)
 
-### Constraint structure {#mtf_constraint_assert}
+### Constraint class {#mtf_constraint_assert}
 
 The constraint PHP class must:
 
@@ -45,7 +45,7 @@ The constraint PHP class must:
   * `pocessAssert` which contains logic of assertion implemented using `PHPUnit_Framework_Assert` class (`<magento2>/dev/tests/functional/vendor/phpunit/phpunit/src/Framework/Assert.php`)
   * `toString` which returns message in case of successful assertion
 
-## Constraint arguments
+### Constraint arguments
 
 In the MTF all arguments that is used in the test case are stored in some kind of buffer shared with test class and constraints. A node name in data set should be the same as an argument name in the `processAssert()` method of the test case.
 
