@@ -2,14 +2,14 @@
 layout: default
 group: extension-dev-guide
 subgroup: 6_Module Development
-title: Adding CLI commands
+title: Message Queues
 menu_title: Message Queues (Enterprise Edition Only)
 menu_order: 15
 github_link: extension-dev-guide/message-queues.md
 
 ---
 
-##{{page.menu_title}}
+##{{page.title}}
 <img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only">
 
 Message queues provide an asynchronous communications mechanism in which the sender and the receiver of a message do not contact each other. Nor do they need to communicate with the message queue at the same time. When a sender places a messages onto a queue, it is stored until the recipient receives them. 
@@ -29,7 +29,7 @@ The following code sends a message to the queue. The `publish` method is defined
 $publisher->publish($topic, $message)
 {% endhighlight %}
 
-In an MySQL adapter environment, when a message is published to multiple queues, create a single record in `queue_message` and multiple records in `queue_message_status`, one for each queue. (A join on the `queue`, `queue_message`, and `queue_message_status` tables is required). 
+In an MySQL adapter environment, when a message is published to multiple queues, create a single record in `queue_message` and multiple records in `queue_message_status`: one for each queue. (A join on the `queue`, `queue_message`, and `queue_message_status` tables is required). 
 
 
 <h2>Instantiate a consumer</h2>
@@ -37,7 +37,7 @@ In an MySQL adapter environment, when a message is published to multiple queues,
 The procedure for instantiating a consumer differs, depending on which message queue system is being used.
 
 <h3>RabbitMQ</h3>
-This instantiates a consumer of the `queuename` queue. The consumer listens to the queue and receives all new messages. For every message, it invokes `Magento\Some\Class::processMessage($message)`
+This instantiates a consumer that is defined in a `queue.xml` file. The consumer (`customer_created_listener`)listens to the queue and receives all new messages. For every message, it invokes `Magento\Some\Class::processMessage($message)`
 
 {% highlight php startinline=true %}
 $this->consumerFactory->get('customer_created_listener')
@@ -46,7 +46,7 @@ $this->consumerFactory->get('customer_created_listener')
 
 <h3>MySQL adapter</h3>
 
-Implement `\Magento\Framework\Amqp\ConsumerInterface::process($maxNumberOfMessages)` to instantiate a consumer on CE. 
+Implement `\Magento\Framework\Amqp\ConsumerInterface::process($maxNumberOfMessages)` to instantiate a consumer. 
 
 Perform the following actions:
 
