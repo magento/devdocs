@@ -57,11 +57,11 @@ The following table describes variation attributes.
 | Field | Semantics    |     Value  | Is required? |
 |:--------------------|:----------|:---------------:|-----------|:-----------------:|
 | `description`              | Description of created product     |  string  |  required      |
-| `product/data/url_key`     | Specifies url key to the product  | string | optional     |
-| `product/data/name`    | The name of the product |   string  | optional |
-| `product/data/sku`    | Stock keeping unit   |    string  |     optional      |
+| `product/data/url_key`     | Specifies url key to the product  | string | TBD     |
+| `product/data/name`    | The name of the product |   string  | required |
+| `product/data/sku`    | Stock keeping unit   |    string  |     required      |
 | `product/data/tax_class_id/dataSet` | Tax class |  string  |     optional      |
-| `product/data/price/value`    | Product price |  string  |     optional      |
+| `product/data/price/value`    | Product price |  string  |     required      |
 | `product/data/weight`    | Weight of product |  string  |     optional      |
 | `product/data/quantity_and_stock_status/qty`    | Quantity |  string  | optional |
 | `product/data/custom_options/preset` | drop_down_with_one_option_fixed_price |  string  |     optional      
