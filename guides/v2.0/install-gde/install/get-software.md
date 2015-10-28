@@ -30,7 +30,7 @@ In the event you have a large, distributed system or you need additional help, c
 </tr>
 <tr> 
   <td>Magento CE</td>
-  <td><a href="http://www.magentocommerce.com/bug-tracking" target="_blank">Submit bug reports</td>
+  <td><a href="http://www.magentocommerce.com/bug-tracking" target="_blank">Submit bug reports</a></td>
 </tr>
 <tr> 
   <td>Magento EE only</td>
@@ -40,7 +40,8 @@ In the event you have a large, distributed system or you need additional help, c
 </table>
 
 <h2 id="get">Get Magento CE or EE</h2>
-<p>The following table discusses where to get the Magento software.</p>
+The following table discusses where to get the Magento software.
+
 <table>
   <col width="30%">
   <col width="70%">
