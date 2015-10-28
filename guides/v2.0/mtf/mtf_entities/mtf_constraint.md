@@ -8,20 +8,23 @@ menu_order: 7
 github_link: mtf/mtf_entities/mtf_constraint.md
 ---
 
-<h3>Content</h3>
+<h2>Constraint</h2>
 
 * TOC
 {:toc}
 
 ## Constraint overview {#mtf_constraint_overview}
+
 The MTF constraint serves for performing assertions after test execution.
 Each constraint name must be unique within application and placed in the module to which the constraint belongs. Constraints run automatically after test flow has been finished.
+
+![Constraints and test flow]({{site.baseurl}}common/images/mtf_constraint_flow.png)
 
 ## Constraint structure {#mtf_constraint_structure}
 
 ### `Constraint` directory {#mtf_constraint_directory}
 
-A module in functional tests (`<magento2>/dev/tests/app/Magento/`) stores constraints as PHP classes in `Constraint` directory. The following image shows `Constraint` directory of the Magento_Widget module.
+A module in functional tests (`<magento2>/dev/tests/app/Magento/`) stores constraints as PHP classes in the `Constraint` directory. The following image shows the `Constraint` directory of the Magento_Widget module.
 
 ![]({{site.baseurl}}common/images/mtf_constraint_dir.png)
 
@@ -41,6 +44,34 @@ The constraint PHP class must:
 
   * `pocessAssert` which contains logic of assertion implemented using `PHPUnit_Framework_Assert` class (`<magento2>/dev/tests/functional/vendor/phpunit/phpunit/src/Framework/Assert.php`)
   * `toString` which returns message in case of successful assertion
+
+## Constraint arguments
+
+In the MTF all arguments that is used in the test case are stored in some kind of buffer shared with test class and constraints. A node name in data set should be the same as an argument name in the `processAssert()` method of the test case.
+
+There are three ways how arguments can be transfered from the data set to `pocessAssert` of the constraint class.
+
+- If date set variable is not used in the test case, it is transfered directly to the constraint.
+
+- If date set variable is used in the test case, but not overwritten, it is transfered as unaltered to the constraint.
+
+- If date set variable is used in the test, and is overwritten, it is transfered as altered to the constraint. Variables can be overwritten in injectable test case class in `test()`, `__inject()` and `__prepare()` methods and then passed to constraint class by `return`.
+
+Object that is not defined in data set or isn't returned from test case is created using Object Manager.
+
+![]({{site.baseurl}}common/images/mtf_constraint_variable.png)
+
+Let's see the following diagram for the `CreateSimpleProductEntityTest` test and `AssertProductPricesOnCategoryPage` constraint:
+
+<a href="{{ site.baseurl }}common/images/mtf_constraint_arguments.png"><img src="{{ site.baseurl }}common/images/mtf_constraint_arguments.png" /></a>
+
+Dataset from diagram contains three variables with data: `product`, `category` and `price`.
+
+- <span style="color: #21610B">Green arrows</span> shows that product variable is transfered to the test and the constraint directly. It is not returned by any method in the test class.
+
+- <span style="color: #FF8000">Orange arrows</span> shows that `category` variable is transfered to the test directly, overwritten by `testCreate()` method and only then transfered to constraint.
+
+- <span style="color: #0000FF">Blue arrow</span> shows that `price` variable is transfered to the test directly, overwritten by `testCreate()` method and only then transfered to constraint.
 
 ### Constraint in the test {#mtf_constraint_variation}
 
