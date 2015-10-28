@@ -17,7 +17,7 @@ Cron jobs are the default mechanism to restart consumers. Processes started by `
 
 A magic method, whose name is the same as the consumer name, is used as a callback when declaring new `consumer run` job in `crontab.xml`. Using magic methods allows you to pass the name of the consumer implicitly via method name. Alternatively, virtual types based on abstract consumer runner should be declared with concrete consumer name specified as an argument (this approach is more complex and required extra configuration).
 
-The following shows a `crontab` entry:
+The following shows a `crontab` group entry:
 
 {% highlight xml %}
 <group id="default">

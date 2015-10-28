@@ -289,23 +289,25 @@ The following table discusses the meanings of installation option names and valu
 		<td><p>Type of definitions used by the Object Manager. Possible values are <a href="https://github.com/phadej/igbinary" target="_blank"><code>igbinary</code></a> or <code>serialized</code>.</p></td>
 		<td><p>No</p></td>
 	</tr> -->
+<tr>
 <td><p>--amqp-host</p></td>
-<td><p>RabbitMQ installation parameter. The host name where RabbitMQ is installed.</p></td>
+<td><p>Enterprise Edition only. Do not use the --amqp options unless you have already set up an installation of RabbitMQ. See <a href="{{ site.gdeurl }}install-gde/prereq/install-rabbitmq.html">RabbitMQ installation</a> for more information about .</p>
+<p>The host name where RabbitMQ is installed.</p></td>
 <td><p>No</p></td>
 </tr>
 <tr>
 <td><p>--amqp-port</p></td>
-<td><p>RabbitMQ installation parameter. The port to use to connect to RabbitMQ. The default is `5672`.</p></td>
+<td><p>Enterprise Edition only. The port to use to connect to RabbitMQ. The default is <code>5672</code>.</p></td>
 <td><p>No</p></td>
 </tr>
 <tr>
 <td><p>--amqp-user</p></td>
-<td><p>RabbitMQ installation parameter. The user name for connecting to RabbitMQ. Do not use the default user <code>guest</code>.</p></td>
+<td><p>Enterprise Edition only. The user name for connecting to RabbitMQ. Do not use the default user <code>guest</code>.</p></td>
 <td><p>No</p></td>
 </tr>
 <tr>
 <td><p>--amqp-password</p></td>
-<td><p>RabbitMQ installation parameter. The password for connecting to RabbitMQ. Do not use the default password <code>guest</code>.</p></td>
+<td><p>Enterprise Edition only. The password for connecting to RabbitMQ. Do not use the default password <code>guest</code>.</p></td>
 <td><p>No</p></td>
 </tr>
 	</tbody>
