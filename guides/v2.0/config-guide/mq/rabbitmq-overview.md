@@ -27,5 +27,10 @@ The following diagram illustrates the Message Queue Framework.
 
 * A consumer receives messages. It knows which queue to consume. It can map processors of the message to a specific queue.
 
-A basic message queue system can also be set up without using RabbitMQ. In this system,  so that 
+A basic message queue system can also be set up without using RabbitMQ. In this system, a MySQL adapter stores messages in the database. Three database tables (`queue`, `queue_message`, and `queue_message_status`) manage the message queue workload. Cron jobs ensure the consumers are able to receive messages. This solution is not very scalable. RabbitMQ should be used whenever possible.
 
+See <a href="{{ site.gdeurl }}config-guide/mq/config-mq.html.html">Configure message queues</a> for information about setting up the message queue system.
+
+#### Related Topics
+*	<a href="{{ site.gdeurl }}config-guide/mq/config-mq.html">Configure message queues</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/install-rabbitmq.html">Install RabbitMQ</a>

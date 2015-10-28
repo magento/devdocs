@@ -5,23 +5,25 @@ subgroup: Prerequisites
 title: RabbitMQ
 menu_title: RabbitMQ (Enterprise Edition)
 menu_order: 6
-github_link: install-gde/prereq/rabbitmq.md
-
+github_link: install-gde/prereq/install-rabbitmq.md
 ---
 
 ![EE](../../../../common/images/ee-only_large.png)
+
+<div class="bs-callout bs-callout-warning">
+  <p><a href="http://rabbitmq.com">RabbitMQ</a> must be installed and configured after Magento Community Edition and before Magento Enterprise Edition.</p>
+</div>
 
 #### Contents
 *	<a href="#overview">Overview</a>
 *	<a href="#ubuntu-install">Install on Ubuntu</a>
 *	<a href="#centos-install">Install on CentOS</a>
 *	<a href="#config">Configure RabbitMQ</a>
-*	<a href="{{ site.gdeurl }}config-guide/mq/rabbitmq-overview.html">Configure message queues</a>
-	
+*	<a href="{{ site.gdeurl }}config-guide/mq/rabbitmq-overview.html">Message queue overview</a>
 *	<a href="{{ site.gdeurl }}config-guide/mq/config-mq.html">Configure message queues</a>
 
 
-<h2 id="overview">Overview</h2>
+<h2 id="overview">RabbitMQ Overview</h2>
 
 RabbitMQ is is an open source message broker that offers a reliable, highly available, scalable and portable messaging system.
 
@@ -123,14 +125,7 @@ where:
 *	<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP 5.5 or 5.4&mdash;CentOS</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">Configuring security options</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Ways to install the Magento software</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Ways to install the Magento software</a>
-
-
-{% highlight php startinline=true %}
-$this->consumerFactory->get('customer_created_listener')
-    ->process();
-    <span style="color:yellow">something thing thing</span>
-{% endhighlight %}
-
+*	<a href="{{ site.gdeurl }}config-guide/mq/rabbitmq-overview.html">Message queue overview</a>
+*	<a href="{{ site.gdeurl }}config-guide/mq/config-mq.html">Configure message queues</a>
 
 

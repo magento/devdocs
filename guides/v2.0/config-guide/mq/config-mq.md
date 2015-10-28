@@ -14,24 +14,8 @@ github_link: config-guide/mq/config-mq.md
 
 Each module that is to be a publisher must be configured as such. If you want a module to use the MQF, create a `<module>/etc/queue.xml` file and define the publisher, consumers, exchanges and bindings. 
 
-Magento defines the default publisher as follows:
 
-<table>
-<tr>
-<th>Attribute</th><th>Value</th><!--<th>CE Value</th>-->
-</tr>
-<tr>
-<td>name</td><td>default</td><!--<td>default_mysql</td>-->
-</tr>
-<tr>
-<td>connection</td><td>rabbitmq</td><!--<td>db</td>-->
-</tr>
-<tr>
-<td>exchange</td><td>magento</td><!--<td>magento</td>-->
-</tr>
-</table>
-
-<h3>Edit the <code>queue.xml</code> file</h3>
+<h2>Edit the <code>queue.xml</code> file</h2>
 The `queue.xml` file can contain the following elements:
 
 + publisher
@@ -39,7 +23,7 @@ The `queue.xml` file can contain the following elements:
 + consumer
 + bind
 
-<h4>Required elements</h4>
+<h3>Required elements</h3>
 
 Each `queue.xml` file must contain the following lines:
 
@@ -54,7 +38,7 @@ Each `queue.xml` file must contain the following lines:
 
 {% endhighlight %}
 
-<h4>publisher element</h4>
+<h3>publisher element</h3>
 The `publisher` element configures the type of connection and the exchange to publish to. By default, Magento uses one exchange. The name of exchange is a part of the publisher configuration. However multiple exchanges are supported, based on the AMQP model.
 <table>
 <tr>
@@ -62,28 +46,29 @@ The `publisher` element configures the type of connection and the exchange to pu
 </tr>
 <tr>
 <td>name</td>
-<td>A unique identifer for the publisher. The value is specified in a <code>topic</code> element.</td>
+<td>A unique identifer for the publisher. The value is specified in a <code>topic</code> element. The default system publisher name is `default`.</td>
 </tr>
 <tr>
 <td>connection</td>
-<td>If RabbitMQ is to used to manage the queue, then the value must be <code>rabbitmq</code>. The value can also be <code>db</code> or the name of a customer adapter.</td>
+<td>If RabbitMQ is to used to manage the queue, then the value must be <code>rabbitmq</code>. The value can also be <code>db</code> or the name of a custom adapter.</td>
 </tr>
 <tr>
 <td>exchange</td>
-<td>The name of the exchange to publish to. The value is referenced from the <code>bind</code> element.</td>
+<td>The name of the exchange to publish to. The value is referenced from the <code>bind</code> element. The default system exchange name is `magento`.</td>
 </tr>
 </table>
 
-<h4>topic element</h4>
+<h3>topic element</h3>
 Configuring the `topic` element defines the interface that processes the message and assigns a publisher.
 <table>
 <tr>
-<th>Parameter</th><th>Description</th>
+<th><p>Parameter</p></th><th><p>Description</p></th>
 </tr>
 <tr>
 <td>name</td>
-<td><p>The name assigned to the topic. The format should be <code><i>object</i></code><b>.</b><code><i>action</i></code> You can further distinguish topic names by appending <code><b>.</b><i>subaction</i></code> to the end of the name. Use the past tense for all verbs, to indicate the event has already happened. Examples: <code>customer.created</code>, <code>customer.sent.email</code></p>
-<p>The value is specified in a <code>bind</code> element.</p></td>. 
+<td><p>The name assigned to the topic. The format should be <code><i>object</i><b>.</b><i>action</i></code> You can further distinguish topic names by appending <code><b>.</b><i>subaction</i></code> to the end of the name. Use the past tense for all verbs, to indicate the event has already happened.</p>
+<p>Examples: <code>customer.created</code>, <code>customer.sent.email</code></p>
+<p>The value is specified in a <code>bind</code> element.</p></td>
 </tr>
 <tr>
 <td>schema</td>
@@ -98,7 +83,7 @@ Configuring the `topic` element defines the interface that processes the message
 </tr>
 </table>
 
-<h4>consumer element</h4>
+<h3>consumer element</h3>
 Each `consumer` elements maps the receiver of a message to a specific queue. The `class` and `method` parameters indicate what receives and processes the message.
 <table>
 <tr>
@@ -130,7 +115,7 @@ Each `consumer` elements maps the receiver of a message to a specific queue. The
 </tr>
 </table>
 
-<h4>bind element</h4>
+<h3>bind element</h3>
 The `bind` elements link topics to queues and exchanges, defining the message queue topology. A topic can be sent to any number of queues.
 
 <table>
@@ -150,3 +135,22 @@ The `bind` elements link topics to queues and exchanges, defining the message qu
 <td>The <code>name</code> of a topic defined in a <code>topic</code> element. You can specify an asterisk (*) or pound sign (#) as wildcards. </td>
 </tr>
 </table>
+
+<h2>Sample `queue.xml` file</h2>
+{% highlight xml %}
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../../../lib/internal/Magento/Framework/Amqp/etc/queue.xsd">
+    <publisher name="test-publisher-1" connection="rabbitmq" exchange="magento"/>
+    <publisher name="test-publisher-2" connection="db" exchange="magento"/>
+    <topic name="customer.created" schema="Magento\Customer\Api\Data\CustomerInterface" publisher="test-publisher-1"/>
+    <topic name="customer.deleted" schema="Magento\Customer\Api\Data\CustomerInterface" publisher="test-publisher-2"/>
+    <consumer name="customerCreatedListener" queue="test-queue-1" connection="rabbitmq" class="Data\Type" method="processMessage"/>
+    <consumer name="customerDeletedListener" queue="test-queue-2" connection="db" class="Other\Type" method="processMessage2" max_messages="98765"/>
+    <bind queue="test-queue-1" exchange="magento" topic="customer.created" />
+    <bind queue="test-queue-2" exchange="magento" topic="customer.deleted" />
+</config>
+{% endhighlight %}
+
+#### Related Topics
+*	<a href="{{ site.gdeurl }}config-guide/mq/rabbitmq-overview.html">RabbitMQ Overview</a>
+*	<a href="{{ site.gdeurl }}config-guide/mq/manage-mysql.html">Manage message queues with MySQL</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/install-rabbitmq.html">Install RabbitMQ</a>
