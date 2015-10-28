@@ -9,7 +9,7 @@ github_link: frontend-dev-guide/css-topics/css-practice.md
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css-practice.html
 ---
 
-<h2 id ="practice_over">Overview</h2>
+<h2 id ="practice_over">What's in this topic</h2>
 
 This topic features a step-by-step illustration of how to change a theme's color scheme using Magento UI library.
 

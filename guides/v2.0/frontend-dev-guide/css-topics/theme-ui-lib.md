@@ -8,7 +8,7 @@ github_link: frontend-dev-guide/css-topics/theme-ui-lib.md
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/theme-ui-lib.html
 ---
 
-<h2 id="fedg_using-ui-lib_overview">Overview</h2>
+<h2 id="fedg_using-ui-lib_overview">What's in this topic</h2>
 
 The Magento UI library is a flexible <a href="http://lesscss.org/" target="_blank">LESS</a>-based frontend library designed to assist Magento theme developers. It employs a set of mixins for base elements to ease frontend theme development and customization. 
 
