@@ -2,8 +2,8 @@
 layout: default
 group:  install_web
 subgroup: Z_continue
-title: Continue to upgrading components
-menu_title: Continue to upgrading components
+title: Manage and upgrade components
+menu_title: Manage and upgrade components
 menu_node: parent
 menu_order: 1
 github_link: install-gde/continue-to-cm-updater.md

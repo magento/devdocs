@@ -24,6 +24,7 @@ The following details the module building process:
 
 * [Module file structure](module-file-structure.html)
 * [Define your configuration files](required-configuration-files.html)
+* [Component registration](component-registration.html)
 * [Create your module](create_module.html)
 * [Module load order](module-load-order.html)
 * [Enable your module](enable-module.html)
