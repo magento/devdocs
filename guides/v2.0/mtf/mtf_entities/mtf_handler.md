@@ -8,28 +8,18 @@ menu_order: 3
 github_link: mtf/mtf_entities/mtf_handler.md
 ---
 
-<h3 id="mtf_handler_overview">Contents</h3>
+<h2>Handler</h2>
 
-- <a href="#mtf_handler_overview">Handler overview</a>
-- <a href="#mtf_handler_types">Types of handlers</a>
-- <a href="#mtf_handler_config">Configuration</a>
-  - <a href="#mtf_handler_configxml">config.xml</a>
-- <a href="#mtf_handler-components">Handler components</a>
-  - <a href="#mtf_handler_interface">Handler interface</a>
-  - <a href="#mtf_handler_conf_hand">Handler class</a>
-  - <a href="#mtf_handler_di">di.xml</a>
-- <a href="#mtf_handler_howto-create-curl">How to create a cURL handler</a>
-  - <a href="#mtf_handler_decor">cURL authentication classes</a>
-- <a href="#mtf_handler_howto-create-ui">How to create a UI handler</a>
-- <a href="#mtf_handler_howto-create-webapi">How to create a WebAPI handler</a>
+* TOC
+{:toc}
   
-<h2 id="mtf_handler_overview">Handler overview</h2>
+## Handler overview {#mtf_handler_overview}
 
 You can use a handler to set up preconditions and prepare an initial testing environment for particular tests. For example, your scenario requires a particular widget that must be implicitly created before the test is started. You need <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html">a fixture</a>, a data set, and a handler. The handler transfers data to the application being tested. The data is a list of fields from a fixture and values from data sets.
 
 This topic focuses on handlers, and we'll discuss types of handlers as well as how to create and use one.
 
-<h2 id="mtf_handler_types">Types of handlers</h2>
+## Types of handlers {#mtf_handler_types}
 
 The MTF enables you to use any type of handler.
 
@@ -43,13 +33,13 @@ Magento uses the following handlers:
 
 Furthermore, you can create your own handlers, such as **Direct**, which is very fast because the **Direct** handler sends a direct call to the Magento application using Magento models. The **Direct** handler requires deep understanding of the Magento application, and also requires access to the Magento code and the database. Difficulties can be caused when the Magento code and Magento tests are run on different hosts.
 
-<h2 id="mtf_handler_config">Configuration</h2>
+## Configuration {#mtf_handler_config}
 
 One fixture can have various handlers. When we create an entity in the test we do not indicate which handler to use. This work is delegated to a fallback, which is a queue of handlers in the priority order specified in <a href="#mtf_handler_configxml"><code>config.xml</code></a>.
 
-<h3 id="mtf_handler_configxml">config.xml</h3>
+### `config.xml` {#mtf_handler_configxml}
 
-The default configuration for handlers is set in <a href="{{site.mage2000url}}dev/tests/functional/etc/config.xml.dist"><code>magento2/dev/tests/functional/etc/config.xml.dist</code></a>.  Create a duplicate of the file, and keep both, but make changes to the new one, which is called `config.xml`:
+The default configuration for handlers is set in <a href="{{site.mage2000url}}dev/tests/functional/etc/config.xml.dist"><code>&lt;magento2&gt;/dev/tests/functional/etc/config.xml.dist</code></a>.  Create a duplicate of the file, and keep both, but make changes to the new one, which is called `config.xml`:
 
     cp config.xml.dist config.xml
 
@@ -73,48 +63,37 @@ The following nodes influence handlers:
 </td></tr>
 </table>
 
-<h2 id="mtf_handler-components">Handler components</h2>
+## Handler components {#mtf_handler-components}
 
-<h3 id="mtf_handler_interface">Handler interface</h3>
+### Handler interface {#mtf_handler_interface}
 
 Each handler must implement a handler interface.
 
 You should mention in a fixture the `handler_interface` attribute with a reference to the PHP class: `Magento\[module_name]\Test\Handler\[object_name]\[object_name]Interface` (example for the Widget: `Magento\Widget\Test\Handler\Widget\WidgetInterface`).
 
-Example of `WidgetInterface.php` (should be placed in `magento2/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget`):
+Example of `WidgetInterface.php` (should be placed in `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget`):
 
 <script src="https://gist.github.com/dshevtsov/dbe9b588ffe91bbb5622.js"></script>
 
-<h3 id="mtf_handler_conf_hand">Handler class</h3>
+### Handler class {#mtf_handler_conf_hand}
 
 To use the handler class, create <a href="#mtf_handler_interface">an interface</a>, declare a fallback in the <a href="#mtf_handler_config"><code>config.xml</code></a>, and declare interface/class relationships in the <a href="#mtf_handler_di"><code>di.xml</code></a>. When this class is created, you can call the `persist()` method to create Magento entity (for example, widget). The method returns data that are matched with fixture fields. All fixture fields that are matched are assigned values from the handler.
 
-The `persist()` method is declared in the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php"><code>InjectableFixture</code></a> class by path `magento2/dev/tests/functional/vendor/magento/mtf/Magento/Mtf/Fixture/InjectableFixture.php`.
+The `persist()` method is declared in the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php"><code>InjectableFixture</code></a> class by path `<magento2>/dev/tests/functional/vendor/magento/mtf/Magento/Mtf/Fixture/InjectableFixture.php`.
 
 <script src="https://gist.github.com/dshevtsov/3ed7ce601d3b23e94ccd.js"></script>
 
-Create the handler in the same directory where the interface is stored: `magento2/dev/tests/functional/tests/app/Magento/[module_name]/Test/Handler/[object_name]/[type_of_handler].php`
+Create the handler in the same directory where the interface is stored: `<magento2>/dev/tests/functional/tests/app/Magento/[module_name]/Test/Handler/[object_name]/[type_of_handler].php`
 
-<h3 id="mtf_handler_di">di.xml</h3>
+### `di.xml` {#mtf_handler_di}
 
-The `di.xml` file declares relationship between the <a href="#mtf_handler_interface">interface</a> and the <a href="#mtf_handler_conf_hand">handler</a> class. The file must be placed in `magento2/dev/tests/functional/tests/app/Magento/[module_name]/Test/etc/[handler_type]`.
+The `di.xml` file declares relationship between the <a href="#mtf_handler_interface">interface</a> and the <a href="#mtf_handler_conf_hand">handler</a> class. The file must be placed in `<magento2>/dev/tests/functional/tests/app/Magento/[module_name]/Test/etc/[handler_type]`.
 
-See an example for the Widget cURL handler (`magento2/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml`):
+See an example for the Widget cURL handler (`<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml`):
 
 {%highlight xml%}
 
-<?xml version="1.0" ?>
-<!--
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
--->
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="../../../../../../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
-    <preference for="Magento\Widget\Test\Handler\Widget\WidgetInterface"
-                type="\Magento\Widget\Test\Handler\Widget\Curl" />
-</config>
+{% remote_markdown https://raw.githubusercontent.com/magento/magento2/develop/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml %}
 
 {%endhighlight%}
 
@@ -124,11 +103,11 @@ See the directory structure mentioned for the case with the Widget cURL handler:
 
 <img src="{{ site.baseurl }}common/images/mtf_widget_handler_tree.png">
 
-<h2 id="mtf_handler_howto-create-curl">How to create a cURL handler</h2>
+## How to create a cURL handler {#mtf_handler_howto-create-curl}
 
 Let's create a cURL handler that creates a new widget.
 
-* Create a directory with the name `Widget` in the `Handler` directory of the Magento_Widget module - `magento2/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget`.
+* Create a directory with the name `Widget` in the `Handler` directory of the Magento_Widget module - `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget`.
 * In the same directory, create <a href="#mtf_handler_interface">the interface</a> for the cURL handler, and call the file `WidgetInterface.php`. Our new interface extends `HandlerInterface` class.
 
 <script src="https://gist.github.com/dshevtsov/dbe9b588ffe91bbb5622.js"></script>
@@ -145,28 +124,17 @@ The following code includes detailed comments for better understanding.
 
 {%highlight xml%}
 
-<?xml version="1.0" ?>
-<!--
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
--->
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="../../../../../../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
-    <preference for="Magento\Widget\Test\Handler\Widget\WidgetInterface"
-                type="\Magento\Widget\Test\Handler\Widget\Curl" />
-</config>
+{% remote_markdown https://raw.githubusercontent.com/magento/magento2/develop/dev/tests/functional/tests/app/Magento/Widget/Test/etc/curl/di.xml %}
 
 {%endhighlight%}
 
-<h3 id="mtf_handler_decor">cURL authentication classes</h3>
+### cURL authentication classes {#mtf_handler_decor}
 
 In the previously mentioned example of the <a href="#mtf_curl_script">Curl.php</a> code, authentication in the Admin is realized using the the `BackendDecorator` class. 
 
 The <a href="#mtf_handler_curl_frontdecor">FrontendDecorator class</a> manages authentication in the storefront.
 
-<h4>BackendDecorator class</h4>
+#### BackendDecorator class {#mtf_handler_curl_backdecor}
 
 `BackendDecorator` manages authentication in Admin and saves the Admin's session.
 
@@ -180,7 +148,7 @@ $curl = new BackendDecorator(new CurlTransport(), new Config());
 
 `Config()` takes Admin's configuration from <a href="#mtf_handler_configxml">config.xml</a>, where the username and the password are stored.
 
-<h4 id="mtf_handler_cirl_frontdecor">FrontendDecorator class</h4>
+#### FrontendDecorator class {#mtf_handler_cirl_frontdecor}
 
 `FrontendDecorator` helps to authorize the customer and saves his session.
 
@@ -192,11 +160,11 @@ Use the following code in the `Curl.php` file:
 $curl = new FrontendDecorator(new CurlTransport(), $this->customer);
 {% endhighlight %}
 
-<h2 id="mtf_handler_howto-create-ui">How to create a UI handler</h2>
+## How to create a UI handler {#mtf_handler_howto-create-ui}
 
 Let's create a UI handler that creates a new widget.
 
-* Create a directory with the name `Widget` in the `Handler` directory of the Magento_Widget module - `magento2/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget`.
+* Create a directory with the name `Widget` in the `Handler` directory of the Magento_Widget module - `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Handler/Widget`.
 * In the same directory, create <a href="#mtf_handler_interface">interface</a> for the UI handler, and call the file `WidgetInterface.php`. Our new interface extends `HandlerInterface` class.
 
 <script src="https://gist.github.com/dshevtsov/dbe9b588ffe91bbb5622.js"></script>
@@ -219,18 +187,18 @@ The code has detailed comments for better understanding.
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="../../../../../../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <preference for="Magento\Widget\Test\Handler\Widget\WidgetInterface"
                 type="\Magento\Widget\Test\Handler\Widget\Ui" />
 </config>
 
 {%endhighlight%}
 
-<h2 id="mtf_handler_howto-create-webapi">How to create a WebAPI handler</h2>
+## How to create a WebAPI handler {#mtf_handler_howto-create-webapi}
 
 Let's create a WebAPI handler that creates a new tax rule.
 
-* Create a directory with the name `TaxRule` in the `Handler` directory of the Magento_Tax module - `magento2/dev/tests/functional/tests/app/Magento/Tax/Test/Handler/TaxRule`.
+* Create a directory with the name `TaxRule` in the `Handler` directory of the Magento_Tax module - `<magento2>/dev/tests/functional/tests/app/Magento/Tax/Test/Handler/TaxRule`.
 * In the same directory, create <a href="#mtf_handler_interface">interface</a> for the WebAPI handler, and call the file `TaxRuleInterface.php`. Our new interface extends `HandlerInterface` class.
 
 <script src="https://gist.github.com/dshevtsov/15708f0530aaa70789e0.js"></script>
@@ -251,7 +219,7 @@ Let's create a WebAPI handler that creates a new tax rule.
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="../../../../../../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <preference for="Magento\Tax\Test\Handler\TaxRule\TaxRuleInterface"
                 type="\Magento\Tax\Test\Handler\TaxRule\Webapi" />
 </config>
