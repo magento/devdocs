@@ -1,7 +1,7 @@
 ---
 layout: default
 group: jsdg
-subgroup: 1_Widgets
+subgroup: 3_Widgets
 title: Alert widget
 menu_order: 2
 menu_title: Alert widget

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: jsdg
-subgroup: Widgets
+subgroup: 3_Widgets
 title: Tabs widget
 menu_title: Tabs widget
 menu_order: 14

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: jsdg
-subgroup: Javascript
+subgroup: 1_Javascript
 title: Locate JavaScript components
 menu_title: Locate JavaScript components
 menu_order: 4

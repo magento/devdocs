@@ -1,7 +1,7 @@
 ---
 layout: default
 group: jsdg
-subgroup: Widgets
+subgroup: 3_Widgets
 title: DropdownDialog widget
 menu_order: 6
 menu_title: DropdownDialog widget
