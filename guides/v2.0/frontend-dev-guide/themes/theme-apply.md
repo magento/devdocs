@@ -9,8 +9,8 @@ github_link: frontend-dev-guide/themes/theme-apply.md
 redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-apply.html
 ---
 
-<h2 id="theme-apply-overview">Overview</h2>
-The article describes how to apply a theme for your store, disable cache and add a theme-independent logo.
+<h2 id="theme-apply-overview">What's in this topic</h2>
+The topic describes how to apply a theme for your store, disable cache and add a theme-independent logo.
 
 <h2 id="theme-apply-cache">Disable the system cache</h2>
 

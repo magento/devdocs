@@ -9,7 +9,7 @@ github_link: frontend-dev-guide/templates/template-overview.md
 redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-overview.html
 ---
 
-<h2>Overview</h2>
+<h2>What's in this topic</h2>
 This topic walks you through how to customize a template.
 
 <h2>Template customization walkthrough</h2>

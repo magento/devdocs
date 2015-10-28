@@ -13,7 +13,7 @@ redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-types.html
 		table tr td, table tr th {border: 1px solid #ABABAB}
 	</style>
 </head>
-<h2>Overview</h2>
+<h2>What's in this topic</h2>
 For a particular page, its layout is defined by two major layout components: *page layout* file and *page configuration* file. 
 
 A page layout file defines the page wireframe, for example, one-column layout. Technically page layout is an .xml file defining the structure inside the `<body>` section of the HTML page markup. Page layouts feature only <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html#layout_overview_blocks" target="_blank">containers</a>. 
