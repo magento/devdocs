@@ -1,19 +1,21 @@
 ---
 layout: default
-group: 
-subgroup: R_Merchant
-title: Merchant installation notes
-menu_title: Merchant installation notes
+group: install_pre
+subgroup: QA_Get
+title: Get the Magento software
+menu_title: Get the Magento software
 menu_order: 1
 menu_node: parent
-github_link: install-gde/prereq/merch_install.md
+github_link: install-gde/install/get-software.md
 ---
 
 
-<h2 id="help">Getting Help With Your Installation or Upgrade</h3>
+<h2 id="help">Getting Help With Your Installation or Upgrade</h2>
 In the event you have a large, distributed system or you need additional help, consult the following resources.
 
 <table>
+  <col width="30%">
+  <col width="70%">
 <tbody>
 <tr> 
   <th>Magento edition</th>
@@ -37,9 +39,11 @@ In the event you have a large, distributed system or you need additional help, c
 </tbody>
 </table>
 
-<h2 id="get">Getting Magento CE or EE</h3>
+<h2 id="get">Get Magento CE or EE</h2>
 <p>The following table discusses where to get the Magento software.</p>
 <table>
+  <col width="30%">
+  <col width="70%">
 <tbody>
 <tr> 
   <th>Magento edition</th>
