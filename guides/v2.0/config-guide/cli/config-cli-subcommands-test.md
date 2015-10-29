@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: CLI
-title: Run tests
-menu_title: Run tests
+title: Run unit tests
+menu_title: Run unit tests
 menu_node: 
 menu_order: 60
 github_link: config-guide/cli/config-cli-subcommands-test.md
@@ -15,6 +15,7 @@ redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-test.html
 
 *	<a href="#config-cli-subcommands-tests-overview">Overview of unit tests</a>
 *	<a href="#config-cli-before">First steps</a>
+*	<a href="#config-cli-subcommands-tests-run">Run unit tests</a>
 
 <h2 id="config-cli-subcommands-tests-overview">Overview of unit tests</h2>
 This command runs a set of unit tests defined in the Magento 2 code base. You can either run all tests or tests you select.
