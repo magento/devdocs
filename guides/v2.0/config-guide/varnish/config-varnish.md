@@ -25,13 +25,13 @@ github_link: config-guide/varnish/config-varnish.md
 	*	<a href="{{ site.gdeurl }}config-guide/varnish/use-varnish-cache-how.html">How Varnish caching works</a>
 
 <h2 id="config-varnish-over">Overview of the Varnish solution</h2>
-<a href="https://www.varnish-cache.org/" target="_blank">Varnish Cache</a> is an open source web application accelerator (also referred to as an *HTTP accelerator* or *caching HTTP reverse proxy*). Varnish stores (or caches) files or fragments of files in memory; this enables Varnish to reduce the response time and network bandwidth consumption on future, equivalent requests. Unlike other servers like Apache and nginx, Varnish was designed for use exclusively with the HTTP protocol.
+<a href="https://www.varnish-cache.org/" target="_blank">Varnish Cache</a> is an open source web application accelerator (also referred to as an *HTTP accelerator* or *caching HTTP reverse proxy*). Varnish stores (or caches) files or fragments of files in memory; this enables Varnish to reduce the response time and network bandwidth consumption on future, equivalent requests. Unlike web servers like Apache and nginx, Varnish was designed for use exclusively with the HTTP protocol.
 
 Magento 2 supports Varnish versions 3.0.5 or later or any Varnish 4.x version.
 
 <div class="bs-callout bs-callout-warning">
-    <p>For performance reasons, we <em>strongly recommend</em> you use Varnish in production instead of the default full-page caching. Full-page caching (to either the file system or database) is much slower than Varnish. Varnish is designed to accelerate the HTTP protocol.</p>
-    <p>Full-page caching works well in a development environment.</p>
+    <p>We <em>strongly recommend</em> you use Varnish in production instead of the default full-page caching. Full-page caching (to either the file system or database) is much slower than Varnish, which is designed to accelerate HTTP traffic.</p>
+    <p>Full-page caching is acceptable in a development environment.</p>
 </div>
 
 
