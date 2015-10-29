@@ -6,7 +6,7 @@ menu_order: 9
 
 
 level3_subgroup: bolts
-
+level3_menu_node: level3child
 
 title: Menu Test, Level 3
 menu_title: Menu Test, Level 3

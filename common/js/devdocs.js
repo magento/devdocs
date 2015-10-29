@@ -27,4 +27,68 @@ $('DIV.searchResultsBoxClose').click(function(){
    
 });
 
+
+
+
+var menustate ="";
+if ( $('LI.level2Child').is("LI.active")) {
+
+	menustate = $('LI.active').attr('data-menunode');
+
+
+	//show parent with id of menustate and add caretdown
+
+	$('#' + menustate).show();
+	$('#' + menustate).removeClass('caretRight').addClass('caretDown')
+
+	//show all with class of menustate
+	$('.' + menustate).show();
+
+}
+
+
+var dog = "";
+
+$('.level2Parent').click(function(){
+dog = $(this).attr('id');
+
+
+if($('.' + dog).is(":visible")) {
+			$(this).removeClass('caretDown').addClass('caretRight')
+			$('.' + dog).slideUp(200);
+		} else {
+			$(this).removeClass('caretRight').addClass('caretDown')
+			$('.' + dog).slideDown(200);
+		}
+
+
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }   //end devdocs
