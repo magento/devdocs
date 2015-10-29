@@ -30,7 +30,7 @@ redirect_from: /guides/v1.0/coding-standards/code-standard-demarcation.html
 &lt;section id="some-id">
    &lt;p> ... &lt;/p>
    &lt;p> ... &lt;/p>
-&lt;/div>
+&lt;/section>
 &lt;a href="#some-id">Scroll to text&lt;/a></a>
 </pre>
 <p><b>Unacceptable PHTML file</b></p>
@@ -38,11 +38,11 @@ redirect_from: /guides/v1.0/coding-standards/code-standard-demarcation.html
 &lt;section id="загаловок">
    &lt;p> ... &lt;/p>
    &lt;p> ... &lt;/p>
-&lt;/div>
+&lt;/section>
 &lt;section id="some_id">
    &lt;p> ... &lt;/p>
    &lt;p> ... &lt;/p>
-&lt;/div>
+&lt;/section>
 &lt;a href="#some_id">Scroll to text&lt;/a>
 </pre>
 <h3>Semantic representation may rely on ID attribute</h3>

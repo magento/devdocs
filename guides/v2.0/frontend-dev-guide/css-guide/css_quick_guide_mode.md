@@ -7,7 +7,7 @@ menu_title: Simple style changes with client-side LESS compilation vs. server-si
 menu_order: 2
 github_link: frontend-dev-guide/css-guide/css_quick_guide_mode.md
 ---
-<h2> Overview </h2>
+<h2> What's in this topic </h2>
 
 After you <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-create.html" target="_blank">create a theme</a>, before starting to change the styles, is deciding, which LESS compilation mode you will use. There are <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css-preprocess.html#LESS compilation modes" target="_blank">two modes available in Magento</a>: server-side compilation mode (the default one, recommended for production) and client-side (recommended for theme development). 
 This topic demonstrates on a practical example how the choice of the mode influences the styles development.

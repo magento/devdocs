@@ -9,7 +9,7 @@ github_link: frontend-dev-guide/layouts/layout-practice.md
 redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-practice.html
 ---
 
-<h2>Introduction</h2>
+<h2>What's in this topic</h2>
 This article features a step-by-step illustration of how a real-life layout customization task is performed. Namely, it illustrates how to change the layout of customer account links in a Magento store page header.
 
 <h2>Moving customer account links</h2>
