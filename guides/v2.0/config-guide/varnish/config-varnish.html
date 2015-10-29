@@ -214,6 +214,7 @@
 		<h4 id="contents">Contents</h4>
 <ul>
   <li><a href="#config-varnish-over">Overview of the Varnish solution</a></li>
+  <li><a href="#varnish-arch">Varnish topology diagram</a></li>
   <li><a href="#config-varnish-process">Process overview</a></li>
   <li><a href="#config-varnish-issues">Known issues</a></li>
   <li>Install Varnish and configure Magento to use it:
@@ -253,10 +254,14 @@
   <li><a href="https://www.varnish-software.com/book/3/Tuning.html#threading-parameters" target="_blank">Varnish tuning parameters</a></li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-	<ul><li>Except where noted, you must enter all commands discussed in this topic as a user with <code>root</code> privileges.</li>
-		<li>This topic is written for Varnish on CentOS and Apache 2.2. If you're setting up Varnish in a different environment, some commands are likely different. Consult Varnish documentation for more information.</li></ul>
-</div>
+<h2 id="varnish-arch">Varnish topology diagram</h2>
+<p>The following figure shows a basic view of Varnish in your Magento topology.</p>
+
+<p><img src="/common/images/varnish_basic.png" width="400px" alt="Basic Varnish diagram" /></p>
+
+<p>In the preceding figure, Varnish is <em>before</em> the web server, which you can picture inside the Magento box. Varnish proxies HTTP traffic and caches content <em>before</em> it reaches the web server.</p>
+
+<p>As a result, Varnish reduces the incoming traffic to Magento.</p>
 
 <h2 id="config-varnish-process">Process overview</h2>
 <p>This topic discusses how to initially install Varnish with a minimal set of parameters and test that it works. Then you’ll export a Varnish configuration from the Magento Admin and test it again.</p>
@@ -273,6 +278,11 @@
     <p>If there is nothing in your <code>&lt;your Magento install dir&gt;/var/page_cache</code> directory, you’ve successfully configured Varnish with Magento!</p>
   </li>
 </ol>
+
+<div class="bs-callout bs-callout-info" id="info">
+	<ul><li>Except where noted, you must enter all commands discussed in this topic as a user with <code>root</code> privileges.</li>
+		<li>This topic is written for Varnish on CentOS and Apache 2.2. If you're setting up Varnish in a different environment, some commands are likely different. Consult Varnish documentation for more information.</li></ul>
+</div>
 
 <h2 id="config-varnish-issues">Known issues</h2>
 <p>We know of the following issues with Varnish:</p>
