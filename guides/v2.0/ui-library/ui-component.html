@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Bookmark Component</title>
+	<title>Overview</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/ui-library/ui-secondary-bookmark.html">
+	<link rel="canonical" href="//guides/v2.0/ui-library/ui-component.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Bookmark Component</h1>
+		<h1 class="page-heading">Overview</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/uilibrary/ui-secondary-bookmark.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/uilibrary/ui-library-overview.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -211,122 +211,66 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h3 id="bookmark">UI Bookmark component</h3>
+		<h2 id="general">Overview of UI components</h2>
 
-<p>Bookmark Component is responsible for storing active and changed states of data grids. It includes state of filters, columns position, applied sorting, pagination, and so on.</p>
+<p>Magento UI components are designed for simple and flexible UI rendering. It allows to configure the page manipulating the UI components.</p>
 
-<p>Bookmark Component use DB as persistence storage for grid`s state.</p>
+<p>Magento UI components are implemented as a usual module and can be found under Magento\UI namespace.</p>
 
-<table>
-<tbody>
-<tr>
-    <th>Field name</th>
-    <th>Type</th>
-    <th>Description</th>
-</tr>
-<tr>
-    <td>(PK) bookmark_id</td>
-    <td>int(10)</td>
-    <td>Bookmark identifier</td>
-</tr>
-<tr>
-    <td>(UX1) user_id</td>
-    <td>int(10)</td>
-    <td>User Id</td>
-</tr>
-<tr>
-    <td>(UX1) namespace</td>
-    <td>varchar(255)</td>
-    <td>Bookmark namespace</td>
-</tr>
-<tr>
-    <td>(UX1) identifier</td>
-    <td>varchar(255)</td>
-    <td>Bookmark identifier</td>
-</tr>
-<tr>
-    <td>current</td>
-    <td>smallint(6)</td>
-    <td>Mark current bookmark per user, namespace and identifier</td>
-</tr>
-<tr>
-    <td>title</td>
-    <td>varchar(255)</td>
-    <td>Bookmark title</td>
-</tr>
-<tr>
-    <td>config</td>
-    <td>longtext</td>
-    <td>Bookmark config (JSON config for Js Bookmark component)</td>
-</tr>
-<tr>
-    <td>created_at</td>
-    <td>datetime</td>
-    <td>Bookmark created at time</td>
-</tr>
-<tr>
-    <td>updated_at</td>
-    <td>datetime</td>
-    <td>Bookmark updated at time</td>
-</tr>
-</tbody>
-</table>
+<p>Components are responsible for rendering result page fragments and providing/supporting further interactions of JavaScript components and server.</p>
 
-<p>PK - increment Id</p>
+<h3 id="general-structure">General structure</h3>
+<p>In Magento 2 there are basic and secondary UI components. </p>
 
-<p>UX1 - unique key</p>
-
-<h4 id="bookmarks-js-component-structure">Bookmarks JS Component Structure</h4>
-
-<p>Bookmark component consists of</p>
+<p>Basic components are: </p>
 
 <ul>
-  <li>
-    <p>Collection of bookmarks located at <code>app\code\Magento\Ui\view\base\web\js\grid\controls\bookmarks\bookmarks.js</code></p>
-
-    <p>Template for collection at <code>app\code\Magento\Ui\view\base\web\templates\grid\controls\bookmarks\bookmarks.html</code></p>
-  </li>
-  <li>
-    <p>Child elements which represent a separate view located at <code>app\code\Magento\Ui\view\base\web\js\grid\controls\bookmarks\view.js</code></p>
-
-    <p>Template for child element at <code>app\code\Magento\Ui\view\base\web\templates\grid\controls\bookmarks\view.html</code></p>
-  </li>
+  <li>Listing component</li>
+  <li>Form component</li>
 </ul>
 
-<p>Bookmarks use <code>app\code\Magento\Ui\view\base\web\js\grid\controls\bookmarks\storage.js</code>
-custom data storage which allows saving bookmark state externally (saved bookmarks are available on any device and in any browser).</p>
+<p>Secondary components are extensions of basic components.  </p>
 
-<p>The Bookmark component provides the following options:</p>
+<p>All components can be configured both for Admin and storefront.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>You need to configure styles manually for components on storefront.</p>
+</div>
+
+<h3>Using UI component in layout file</h3>
+
+<p>Using UI component is as simple as adding the following code to the appropriate layout section:</p>
+
+<p><code>&lt;ui_component name="some_ui_component_instance_name"/&gt;</code></p>
+
+<p>All UI components have base declaration in <a href="/guides/v2.0/ui-library/ui-definition.html"><code>Magento/Ui/view/base/ui_component/etc/definition.xml</code></a>. </p>
+
+<p>Any module can introduce its own set of custom components or modify initial configuration for existing components in a common to Magento way.</p>
+
+<p>UI components configuration reader searches through all active modules and read files:</p>
+
+<p><a href="/guides/v2.0/ui-library/ui-definition.html"><code>app/code/&lt;vendor&gt;/&lt;module&gt;/view/&lt;area&gt;/ui_component/etc/definition.xml</code></a></p>
+
+<p>And concrete instances of the components each in separate XML configuration file:</p>
+
+<p><code>app/code/&lt;vendor&gt;/&lt;module&gt;/view/&lt;area&gt;/ui_component/&lt;component_instance_name&gt;.xml</code></p>
+
+<h3 id="configuration">Configuration</h3>
+
+<p>Extension developers cannot introduce new components but can customize existing ones locally. </p>
+
+<p>XSD file contains rules and limitations shared between all components (both definitions and instance configurations):</p>
+
+<p><code>app/code/Magento/Ui/etc/ui_definition.xsd</code></p>
+
+<p>It is possible to create custom component by setting <code>class</code>, <code>component</code> and <code>template</code> parameters of the <a href="/guides/v2.0/ui-library/ui-container.html">Container component</a>.</p>
+
+<p>You can configure existing component and all filter types in the following ways:</p>
 
 <ul>
-  <li>template option</li>
-  <li>component option</li>
+  <li>Globally: using any module’s <a href="/guides/v2.0/ui-library/ui-definition.html"><code>view/*/ui_component/etc/definition.xml</code></a> file. All settings declared in this file will be applied to all component’s instances</li>
+  <li>Locally: using concrete component instance configuration, such as <code>app/code/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml</code></li>
 </ul>
-
-<pre>
-templates: {
-    view: {
-        component: 'Magento_Ui/js/grid/controls/bookmarks/view'
-        template: 'path/to/template'
-    },
-    newView: {
-        label: 'New View',
-        index: '${ Date.now() }'
-    }
-}
-</pre>
-
-<ul>
-  <li>storageConfig option</li>
-</ul>
-
-<pre>
-storageConfig: {
-    saveUrl: 'path/to/save',
-    deleteUrl: 'path/to/delete',
-    namespace: 'namespace'
-}
-</pre>
 
 
 		</div>
@@ -514,7 +458,7 @@ storageConfig: {
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/ui-library/ui-component.html">Overview</a></li>
+									<li class="  active "><a class="nav-header" href="/guides/v2.0/ui-library/ui-component.html">Overview</a></li>
 									
 								
 								
@@ -609,7 +553,7 @@ storageConfig: {
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v2.0/ui-library/ui-secondary-bookmark.html">Bookmark Component</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/ui-library/ui-secondary-bookmark.html">Bookmark Component</a></li>
 						
 								
 							

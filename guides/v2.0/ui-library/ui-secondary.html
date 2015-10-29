@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Bookmark Component</title>
+	<title>Listing/Grid Secondary Components</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/ui-library/ui-secondary-bookmark.html">
+	<link rel="canonical" href="//guides/v2.0/ui-library/ui-secondary.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Bookmark Component</h1>
+		<h1 class="page-heading">Listing/Grid Secondary Components</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/uilibrary/ui-secondary-bookmark.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/uilibrary/ui-library-secondary.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -211,122 +211,23 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h3 id="bookmark">UI Bookmark component</h3>
+		<h3>UI Listing/Grid Secondary Components</h3>
 
-<p>Bookmark Component is responsible for storing active and changed states of data grids. It includes state of filters, columns position, applied sorting, pagination, and so on.</p>
-
-<p>Bookmark Component use DB as persistence storage for grid`s state.</p>
-
-<table>
-<tbody>
-<tr>
-    <th>Field name</th>
-    <th>Type</th>
-    <th>Description</th>
-</tr>
-<tr>
-    <td>(PK) bookmark_id</td>
-    <td>int(10)</td>
-    <td>Bookmark identifier</td>
-</tr>
-<tr>
-    <td>(UX1) user_id</td>
-    <td>int(10)</td>
-    <td>User Id</td>
-</tr>
-<tr>
-    <td>(UX1) namespace</td>
-    <td>varchar(255)</td>
-    <td>Bookmark namespace</td>
-</tr>
-<tr>
-    <td>(UX1) identifier</td>
-    <td>varchar(255)</td>
-    <td>Bookmark identifier</td>
-</tr>
-<tr>
-    <td>current</td>
-    <td>smallint(6)</td>
-    <td>Mark current bookmark per user, namespace and identifier</td>
-</tr>
-<tr>
-    <td>title</td>
-    <td>varchar(255)</td>
-    <td>Bookmark title</td>
-</tr>
-<tr>
-    <td>config</td>
-    <td>longtext</td>
-    <td>Bookmark config (JSON config for Js Bookmark component)</td>
-</tr>
-<tr>
-    <td>created_at</td>
-    <td>datetime</td>
-    <td>Bookmark created at time</td>
-</tr>
-<tr>
-    <td>updated_at</td>
-    <td>datetime</td>
-    <td>Bookmark updated at time</td>
-</tr>
-</tbody>
-</table>
-
-<p>PK - increment Id</p>
-
-<p>UX1 - unique key</p>
-
-<h4 id="bookmarks-js-component-structure">Bookmarks JS Component Structure</h4>
-
-<p>Bookmark component consists of</p>
+<p>The following components extend the functionality of the Listing component:</p>
 
 <ul>
-  <li>
-    <p>Collection of bookmarks located at <code>app\code\Magento\Ui\view\base\web\js\grid\controls\bookmarks\bookmarks.js</code></p>
-
-    <p>Template for collection at <code>app\code\Magento\Ui\view\base\web\templates\grid\controls\bookmarks\bookmarks.html</code></p>
-  </li>
-  <li>
-    <p>Child elements which represent a separate view located at <code>app\code\Magento\Ui\view\base\web\js\grid\controls\bookmarks\view.js</code></p>
-
-    <p>Template for child element at <code>app\code\Magento\Ui\view\base\web\templates\grid\controls\bookmarks\view.html</code></p>
-  </li>
+  <li><a href="/guides/v2.0/ui-library/ui-secondary-filter.html">Filter component</a></li>
+  <li><a href="/guides/v2.0/ui-library/ui-secondary-pagination.html">Pagination component</a></li>
+  <li><a href="/guides/v2.0/ui-library/ui-secondary-massaction.html">MassAction component</a></li>
+  <li><a href="/guides/v2.0/ui-library/ui-secondary-treemass.html">TreeMassAction component</a></li>
+  <li><a href="/guides/v2.0/ui-library/ui-secondary-column.html">Column component</a></li>
+  <li><a href="/guides/v2.0/ui-library/ui-secondary-uiselect.html">UI-select component</a></li>
+  <li><a href="/guides/v2.0/ui-library/ui-secondary-multi.html">Multiselect component</a></li>
+  <li><a href="/guides/v2.0/ui-library/ui-secondary-inline.html">Inline Edit component</a></li>
+  <li><a href="/guides/v2.0/ui-library/ui-secondary-bookmark.html">Bookmark component</a></li>
+  <li><a href="/guides/v2.0/ui-library/ui-secondary-resize.html">Resize component</a></li>
 </ul>
 
-<p>Bookmarks use <code>app\code\Magento\Ui\view\base\web\js\grid\controls\bookmarks\storage.js</code>
-custom data storage which allows saving bookmark state externally (saved bookmarks are available on any device and in any browser).</p>
-
-<p>The Bookmark component provides the following options:</p>
-
-<ul>
-  <li>template option</li>
-  <li>component option</li>
-</ul>
-
-<pre>
-templates: {
-    view: {
-        component: 'Magento_Ui/js/grid/controls/bookmarks/view'
-        template: 'path/to/template'
-    },
-    newView: {
-        label: 'New View',
-        index: '${ Date.now() }'
-    }
-}
-</pre>
-
-<ul>
-  <li>storageConfig option</li>
-</ul>
-
-<pre>
-storageConfig: {
-    saveUrl: 'path/to/save',
-    deleteUrl: 'path/to/delete',
-    namespace: 'namespace'
-}
-</pre>
 
 
 		</div>
@@ -568,7 +469,7 @@ storageConfig: {
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/ui-library/ui-secondary.html">Listing/Grid Secondary Components</a></li>
+									<li class="  active "><a class="nav-header" href="/guides/v2.0/ui-library/ui-secondary.html">Listing/Grid Secondary Components</a></li>
 									
 								
 								
@@ -609,7 +510,7 @@ storageConfig: {
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v2.0/ui-library/ui-secondary-bookmark.html">Bookmark Component</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/ui-library/ui-secondary-bookmark.html">Bookmark Component</a></li>
 						
 								
 							

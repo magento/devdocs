@@ -211,9 +211,17 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="form">Form Component</h2>
+		<ul id="markdown-toc">
+  <li><a href="#overview">Overview</a></li>
+  <li><a href="#component-options">Component options</a></li>
+  <li><a href="#create-an-instance-of-the-form-component">Create an instance of the Form component</a></li>
+  <li><a href="#configure-the-form-component">Configure the Form component</a></li>
+</ul>
 
+<h2 id="overview">Overview</h2>
 <p>Form component allows performing <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> operations on an entity. </p>
+
+<p>The following are the components element, the constructor: <code>app\code\Magento\Ui\view\base\web\js\form\form.js</code></p>
 
 <h4>Related UI components</h4>
 
@@ -227,7 +235,22 @@
   <li>Container</li>
 </ul>
 
-<h4>Creating an instance of the Form Component</h4>
+<h2 id="component-options">Component options</h2>
+
+<ul>
+  <li>
+    <p>js_config -&gt; deps - sets the dependency on component initialization</p>
+  </li>
+  <li>
+    <p>js_config -&gt; config -&gt; provider - specifies the name of the component data</p>
+  </li>
+  <li>
+    <p>layout - configuration class meets the visualization component
+  (See examples in ‘Configuring’ section)</p>
+  </li>
+</ul>
+
+<h2 id="create-an-instance-of-the-form-component">Create an instance of the Form component</h2>
 
 <ul>
   <li>
@@ -241,7 +264,18 @@
   <li>Add a component in Magento layout as a node: <code>&lt;uiComponent name="customer_form"/&gt;</code></li>
 </ul>
 
-<h4>Configure</h4>
+<p>Example:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>
+            ...
+            <span class="nt">&lt;uiComponent</span> <span class="na">name=</span><span class="s">&quot;customer_form&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/referenceContainer&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/page&gt;</span></code></pre></div>
+
+<h2 id="configure-the-form-component">Configure the Form component</h2>
 
 <p>Component could be configured in two ways:</p>
 
@@ -270,9 +304,15 @@
 <p>Nodes are optional and contain parameters required for component:</p>
 
 <ul>
-  <li>js_config -&gt; deps - sets the dependency on component initialization</li>
-  <li>js_config -&gt; config -&gt; provider - specifies the name of the component data</li>
-  <li>layout - configuration class meets the visualization component. Names for deps and provider are specified with a complete path from the root component with the separator “.”</li>
+  <li>
+    <p>js_config -&gt; deps - sets the dependency on component initialization</p>
+  </li>
+  <li>
+    <p>js_config -&gt; config -&gt; provider - specifies the name of the component data</p>
+  </li>
+  <li>
+    <p>layout - configuration class meets the visualization component. Names for deps and provider are specified with a complete path from the root component with the separator “.”</p>
+  </li>
 </ul>
 
 <p>Add a description of the fields in the form using components and Field Fieldset:</p>
@@ -505,7 +545,7 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/ui-library/ui-library-component.html">Overview</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/ui-library/ui-component.html">Overview</a></li>
 									
 								
 								
@@ -559,7 +599,7 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/ui-library/ui-library-secondary.html">Listing/Grid Secondary Components</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/ui-library/ui-secondary.html">Listing/Grid Secondary Components</a></li>
 									
 								
 								
