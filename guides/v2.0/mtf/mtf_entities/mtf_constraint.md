@@ -15,8 +15,8 @@ github_link: mtf/mtf_entities/mtf_constraint.md
 
 ## Constraint overview {#mtf_constraint_overview}
 
-The MTF constraint serves for performing assertions after test execution.
-Each constraint name must be unique within application and placed in the module to which the constraint belongs. Constraints run automatically after test flow has been finished.
+The MTF constraint serves for performing assertions after test flow.
+Each constraint name must be unique within application and placed in the module to which the constraint is belonged. Constraints run automatically after test flow has been finished.
 
 ![Constraints and test flow]({{site.baseurl}}common/images/mtf_constraint_flow.png)
 
@@ -24,7 +24,7 @@ Each constraint name must be unique within application and placed in the module 
 
 ### `Constraint` directory {#mtf_constraint_directory}
 
-A module in functional tests (`<magento2>/dev/tests/app/Magento/`) stores constraints as PHP classes in the `Constraint` directory. The following image shows the `Constraint` directory of the Magento_Widget module.
+A module in functional tests (`<magento2>/dev/tests/app/Magento/`) stores constraints in the `Constraint` directory. The following image shows the `Constraint` directory of the Magento_Widget module.
 
 ![]({{site.baseurl}}common/images/mtf_constraint_dir.png)
 
@@ -38,28 +38,20 @@ The constraint PHP class must:
   * `AssertOrderPlaced` corresponds to `Assert{entityName}{action}`
   * `AssertProductForm` corresponds to `Assert{entityName}{place}`
 
-* Be extended from the [Mtf\Constraint\AbstractConstraint](https://github.com/magento/mtf/blob/develop/Magento/Mtf/Constraint/AbstractConstraint.php) class.
+* Be extended from the [Magento\Mtf\Constraint\AbstractConstraint](https://github.com/magento/mtf/blob/develop/Magento/Mtf/Constraint/AbstractConstraint.php) class.
 
-* Contain the following methods only: 
+* Contain the following methods: 
 
-  * `pocessAssert` which contains logic of assertion implemented using `PHPUnit_Framework_Assert` class (`<magento2>/dev/tests/functional/vendor/phpunit/phpunit/src/Framework/Assert.php`)
+  * `processAssert` which contains assertions. A `PHPUnit_Framework_Assert` class (`<magento2>/dev/tests/functional/vendor/phpunit/phpunit/src/Framework/Assert.php`) can be used to simplify assertions
   * `toString` which returns message in case of successful assertion
 
 ### Constraint arguments
 
-In the MTF all arguments that is used in the test case are stored in some kind of buffer shared with test class and constraints. A node name in data set should be the same as an argument name in the `processAssert()` method of the test case.
+In the MTF, [data set][] values are shared with test class and constraints. A node name in [data set][] can be complex like `item1/item2/item3`. Argument name in the `processAssert()` must be the same as `item1` to transfer data from [data set][] to constraint.
+ 
+If [data set][] variable is used in the test, and is overwritten, it is transfered as altered to the constraint. Variables can be overwritten in the _injectable_ [test case][]  class in `test()`, `__inject()` and `__prepare()` methods, and then passed to constraint class by `return`. Furthermore, any returned value of these methods can be used as argument in constraint.
 
-There are three ways how arguments can be transfered from the data set to `pocessAssert` of the constraint class.
-
-- If date set variable is not used in the test case, it is transfered directly to the constraint.
-
-- If date set variable is used in the test case, but not overwritten, it is transfered as unaltered to the constraint.
-
-- If date set variable is used in the test, and is overwritten, it is transfered as altered to the constraint. Variables can be overwritten in injectable test case class in `test()`, `__inject()` and `__prepare()` methods and then passed to constraint class by `return`.
-
-Object that is not defined in data set or isn't returned from test case is created using Object Manager.
-
-![]({{site.baseurl}}common/images/mtf_constraint_variable.png)
+Object that is not defined in [data set][] or isn't returned from [test case][]  is created using Object Manager.
 
 Let's see the following diagram for the `CreateSimpleProductEntityTest` test and `AssertProductPricesOnCategoryPage` constraint:
 
@@ -67,19 +59,30 @@ Let's see the following diagram for the `CreateSimpleProductEntityTest` test and
 
 Dataset from diagram contains three variables with data: `product`, `category` and `price`.
 
-- <span style="color: #21610B">Green arrows</span> shows that product variable is transfered to the test and the constraint directly. It is not returned by any method in the test class.
+- <span style="color: #21610B; font-weight:bold">Green arrows</span> show that `product` variable is transfered to the test and the constraint
 
-- <span style="color: #FF8000">Orange arrows</span> shows that `category` variable is transfered to the test directly, overwritten by `testCreate()` method and only then transfered to constraint.
+- <span style="color: #FF8000; font-weight:bold">Orange arrows</span> show that `category` variable is transfered to the test directly, overwritten by `testCreate()` method and only then transfered to constraint
 
-- <span style="color: #0000FF">Blue arrow</span> shows that `price` variable is transfered to the test directly, overwritten by `testCreate()` method and only then transfered to constraint.
+- <span style="color: #0000FF; font-weight:bold">Blue arrow</span> shows that `price` variable is transfered to the constraint only
 
 ### Constraint in the test {#mtf_constraint_variation}
 
-[A test case]({{site.gdeurl}}mtf/mtf_entities/mtf_testcase.html) contains constraints as nodes in variations of [data set]({{site.gdeurl}}mtf/mtf_entities/mtf_dataset.html), that are references on PHP classes with corresponding assertions.
+A [test case][]  contains constraints as nodes in variations of a data set, that are references on the PHP classes with corresponding assertions.
 
-Constraints are performed in the order they listed in the data set.
+Constraints are performed in order they listed in the data set.
 
-The following example shows `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/TestCase/DeleteWidgetEntityTest.xml` data set with two constraints. 
+<div class="bs-callout bs-callout-warning">
+    <p>Constraint failure causes interruption of constraints execution within variation, and a test continues to perform from the next variation.</p>
+</div>
+
+A test can contain constraints from different modules.
+
+<div class="bs-callout bs-callout-danger">
+  <p>Be careful when you use constraints from another module. A module that is referred by constraint can be disabled, that fails in the test execution. It is safe to use constraints of different modules in one test case if that modules have hard dependencies (inseverably dependent from each other).
+  </p>
+</div>
+
+The following example shows the `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/TestCase/DeleteWidgetEntityTest.xml` [data set][] with two constraints. 
 
 {%highlight xml%}
 
@@ -102,30 +105,30 @@ The following example shows `<magento2>/dev/tests/functional/tests/app/Magento/W
 
 {%endhighlight%}
 
-Directly after test, both constraints are performed in the order they listed.
+Directly after test, both constraints are performed in order they listed.
 
-### Constraints tagging
+### Tagging
 
-You can tag constraints in `Test/etc/di.xml` of the module using `severity` argument. Severity tagging of constrains is used for customization of test run.
+Tagging enables you to indicate what constraints must be called.
 
-You can use the following tags:
+You can tag constraints in `<module>/Test/etc/di.xml` using a `severity` argument. Severity tagging of constrains is used for customization of test run.
+
+You can use the following severity tags:
 
 - `high`
 - `middle`
 - `low`
 
-Only one tag can be assigned to the constraint.
-
-To assign tags do the following:
+To assign severity tags do the following:
 
 * Create `di.xml` file in `Test/etc` of the module.
 * Assign `severity` to constraints in the following format:
 
 {%highlight xml%}
 <type name="Magento\[Module_name]\Test\Constraint\Assert...">
-        <arguments>
-            <argument name="severity" xsi:type="string">high|middle|low</argument>
-        </arguments>
+    <arguments>
+        <argument name="severity" xsi:type="string">high|middle|low</argument>
+    </arguments>
 </type>
 {%endhighlight%}
 
@@ -153,13 +156,13 @@ Step 3. Create `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Co
 
 Step 4. Implement assertion in `processAssert()`
 
-**Assertion logic**: Take title of the widget from the widget fixture, open the page with a grid, check if the grid has our title.
+**Assertion logic**: Take title of the widget from the widget [fixture][] , open the page with a grid, check if the grid has our title.
 
 <script src="https://gist.github.com/dshevtsov/c1e2a8437e0d2b2036bd.js"></script>
 
 ## How to use constraint {#mtf_constraint_use}
 
-To add constraint we've created in previous section, add a corresponding node to data set of your test,
+To use constraint we've created in previous section, add a corresponding node to [data set][] of your test,
 
 {%highlight xml%}
 <constraint name="Magento\Widget\Test\Constraint\AssertWidgetInGrid" />
@@ -184,3 +187,7 @@ in order that it must be performed.
     </testCase>
 </config>
 {%endhighlight%}
+
+[data set]: {{site.gdeurl}}mtf/mtf_entities/mtf_dataset.html
+[fixture]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html
+[test case]: {{site.gdeurl}}mtf/mtf_entities/mtf_testcase.html
