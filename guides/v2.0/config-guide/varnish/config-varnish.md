@@ -16,7 +16,6 @@ github_link: config-guide/varnish/config-varnish.md
 *	<a href="#config-varnish-process">Process overview</a>
 *	<a href="#config-varnish-issues">Known issues</a>
 *	Install Varnish and configure Magento to use it:
-	*	<a href="#config-varnish-process">Process overview</a>
 	*	<a href="{{ site.gdeurl }}config-guide/varnish/config-varnish-install.html">Install Varnish</a>
 	*	<a href="{{ site.gdeurl }}config-guide/varnish/config-varnish-configure.html">Configure Varnish and your web server</a>
 	*	<a href="{{ site.gdeurl }}config-guide/varnish/config-varnish-magento.html">Configure Magento to use Varnish</a>
