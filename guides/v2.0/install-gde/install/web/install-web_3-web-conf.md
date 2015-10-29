@@ -56,6 +56,12 @@ github_link: install-gde/install/web/install-web_3-web-conf.md
 		<p>Click <strong>I want to use a Magento generated key</strong> to have Magento generate an encryption key for you.</p>
 		<p>Click <strong>I want to use my own encryption key</strong> if you already have an encryption key.</p></td>
 	</tr>
+	<tr>
+		<td>Session Save</td>
+		<td><p>From the list, click the option corresponding to how to store session data.</p>
+			<p>The default is <strong>Files</strong>, which means session data is saved in the <code>var/session</code> subdirectory of the Magento file system.</p>
+			<p>You can also choose <strong>Db</strong>, which means session data is stored in the database. </td>
+	</tr>
 	</tbody>
 	</table>
 	
