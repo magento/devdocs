@@ -234,13 +234,13 @@
 </ul>
 
 <h2 id="config-varnish-over">Overview of the Varnish solution</h2>
-<p><a href="https://www.varnish-cache.org/" target="_blank">Varnish Cache</a> is an open source web application accelerator (also referred to as an <em>HTTP accelerator</em> or <em>caching HTTP reverse proxy</em>). Varnish stores (or caches) files or fragments of files in memory; this enables Varnish to reduce the response time and network bandwidth consumption on future, equivalent requests. Unlike other servers like Apache and nginx, Varnish was designed for use exclusively with the HTTP protocol.</p>
+<p><a href="https://www.varnish-cache.org/" target="_blank">Varnish Cache</a> is an open source web application accelerator (also referred to as an <em>HTTP accelerator</em> or <em>caching HTTP reverse proxy</em>). Varnish stores (or caches) files or fragments of files in memory; this enables Varnish to reduce the response time and network bandwidth consumption on future, equivalent requests. Unlike web servers like Apache and nginx, Varnish was designed for use exclusively with the HTTP protocol.</p>
 
 <p>Magento 2 supports Varnish versions 3.0.5 or later or any Varnish 4.x version.</p>
 
 <div class="bs-callout bs-callout-warning">
-    <p>For performance reasons, we <em>strongly recommend</em> you use Varnish in production instead of the default full-page caching. Full-page caching (to either the file system or database) is much slower than Varnish. Varnish is designed to accelerate the HTTP protocol.</p>
-    <p>Full-page caching works well in a development environment.</p>
+    <p>We <em>strongly recommend</em> you use Varnish in production instead of the default full-page caching. Full-page caching (to either the file system or database) is much slower than Varnish, which is designed to accelerate HTTP traffic.</p>
+    <p>Full-page caching is acceptable in a development environment.</p>
 </div>
 
 <p>For more information about Varnish, see:</p>
@@ -577,7 +577,7 @@ Varnish cache server
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-test.html">Run tests</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
 						
 								
 							
