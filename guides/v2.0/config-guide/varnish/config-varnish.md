@@ -12,10 +12,10 @@ github_link: config-guide/varnish/config-varnish.md
 
 #### Contents
 *	<a href="#config-varnish-over">Overview of the Varnish solution</a>
+*	<a href="#varnish-arch">Varnish topology diagram</a>
 *	<a href="#config-varnish-process">Process overview</a>
 *	<a href="#config-varnish-issues">Known issues</a>
 *	Install Varnish and configure Magento to use it:
-	*	<a href="#config-varnish-process">Process overview</a>
 	*	<a href="{{ site.gdeurl }}config-guide/varnish/config-varnish-install.html">Install Varnish</a>
 	*	<a href="{{ site.gdeurl }}config-guide/varnish/config-varnish-configure.html">Configure Varnish and your web server</a>
 	*	<a href="{{ site.gdeurl }}config-guide/varnish/config-varnish-magento.html">Configure Magento to use Varnish</a>
@@ -34,7 +34,6 @@ Magento 2 supports Varnish versions 3.0.5 or later or any Varnish 4.x version.
     <p>Full-page caching is acceptable in a development environment.</p>
 </div>
 
-
 For more information about Varnish, see:
 
 *	<a href="https://en.wikipedia.org/wiki/Varnish_%28software%29" target="_blank">wikipedia</a>
@@ -43,10 +42,16 @@ For more information about Varnish, see:
 *	<a href="https://www.varnish-cache.org/docs/trunk/reference/varnishd.html#ref-varnishd-options" target="_blank">Varnish startup options</a>
 *	<a href="https://www.varnish-software.com/book/3/Tuning.html#threading-parameters" target="_blank">Varnish tuning parameters</a>
 
-<div class="bs-callout bs-callout-info" id="info">
-	<ul><li>Except where noted, you must enter all commands discussed in this topic as a user with <code>root</code> privileges.</li>
-		<li>This topic is written for Varnish on CentOS and Apache 2.2. If you're setting up Varnish in a different environment, some commands are likely different. Consult Varnish documentation for more information.</li></ul>
-</div>
+<h2 id="varnish-arch">Varnish topology diagram</h2>
+The following figure shows a basic view of Varnish in your Magento topology.
+
+<img src="{{ site.baseurl }}common/images/varnish_basic.png" width="400px" alt="Basic Varnish diagram">
+
+In the preceding figure, users' web page requests over the internet result in numerous requests for CSS, HTML, JavaScript, and images (referred to collectively as *assets*). Varnish sits in front of the web server and proxies these requests to the web server. 
+
+As the web server returns assets, cacheable assets are stored in Varnish. Any subsequent requests for those assets are fulfilled by Varnish (meaning, the requests don't reach the web server). Varnish returns cached content extremely quickly. The results are faster response times to return the content to users and a reduced number of requests that must be fulfilled by Magneto.  
+
+Assets cached by Varnish expire at a configurable interval or are replaced by newer versions of the same assets. You can also clear the cache manually either using the Magento Admin or the <a href="{{ site.gdeurl }}/config-guide/cli/config-cli-subcommands-cache.html">`magento cache:clean`</a> command. 
 
 <h2 id="config-varnish-process">Process overview</h2>
 This topic discusses how to initially install Varnish with a minimal set of parameters and test that it works. Then you'll export a Varnish configuration from the Magento Admin and test it again.
@@ -60,6 +65,10 @@ The process can be summarized as follows:
 
 	If there is nothing in your `<your Magento install dir>/var/page_cache` directory, you've successfully configured Varnish with Magento!
 
+<div class="bs-callout bs-callout-info" id="info">
+	<ul><li>Except where noted, you must enter all commands discussed in this topic as a user with <code>root</code> privileges.</li>
+		<li>This topic is written for Varnish on CentOS and Apache 2.2. If you're setting up Varnish in a different environment, some commands are likely different. Consult Varnish documentation for more information.</li></ul>
+</div>
 
 <h2 id="config-varnish-issues">Known issues</h2>
 We know of the following issues with Varnish:
