@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Set the Magento mode</title>
+	<title>Secure cron.php</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">
+	<link rel="canonical" href="//guides/v2.0/config-guide/secy/secy-cron.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Set the Magento mode</h1>
+		<h1 class="page-heading">Secure cron.php</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/config-guide/secy/secy-cron.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -213,245 +213,214 @@
 		
 		<h4 id="contents">Contents</h4>
 <ul>
-  <li><a href="#config-mode-over">Overview of setting Magento modes</a></li>
-  <li><a href="#config-mode-show">Display the current mode</a></li>
-  <li><a href="#config-mode">Change modes</a></li>
+  <li><a href="#config-cron-secure-over">Overview of securing cron</a></li>
+  <li><a href="#config-cron-secure-apache">Secure cron with Apache</a></li>
+  <li><a href="#config-cron-secure-nginx">Secure cron with nginx</a></li>
+  <li><a href="#config-cron-secure-apache-verify">Verify cron is secure</a></li>
 </ul>
 
-<h2 id="config-mode-over">Overview of setting Magento modes</h2>
-<p>To improve security and ease-of-use, we added a command that switches <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html">Magento modes</a> from developer to production and vice versa. When doing so, we set file permissions and ownership appropriately.</p>
+<h2 id="config-cron-secure-over">Overview of securing cron</h2>
+<p>The Magento cron job runs a number of scheduled tasks, including reindexing, generating e-mails, generating newsletters, generating sitemaps, and so on. cron is a vital part of your Magento configuration.</p>
 
-<p>Production mode also has better performance because static view files are populated in the <code>pub/static</code> directory and because of code compilation.</p>
-
-<p>Developer mode uses a less restrictive set of permissions than does production mode for the following reasons:</p>
+<p>You can run a Magento cron job in the following ways:</p>
 
 <ul>
-  <li><a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-developer">Developer mode</a> is intended for internal development on a system already secured behind a firewall; also, the system doesn’t need to handle internet traffic</li>
-  <li>
-    <p><a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-production">Production mode</a> servers handle internet traffic, process payments, and so on</p>
-
-    <p>As the name implies, you change to production mode before you deploy your Magento storefront to production and start taking orders.</p>
-  </li>
+  <li>Using the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group"><code>magento cron:run</code></a> command, either from the command line or in a crontab</li>
+  <li>Running <code>&lt;your Magento install dir&gt;/pub/cron.php?[group=&lt;name&gt;]</code> in a web browser</li>
 </ul>
+
+<p>This topic discusses securing <code>pub/cron.php</code> to prevent it from being used in a malicious exploit. If cron is unsecured, any user could potentially run cron to attack your Magento application.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>Unlike other Magento modes, developer and production modes are set in <code>env.php</code>.</p></span>
+  <p>You do not need to do anything if you use the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group"><code>magento cron:run</code></a> command to run cron. This command uses a different process that is already secure.</p></span>
 </div>
 
-<p>When you change modes, we do the following:</p>
+<p>The following sections discuss an example of securing cron using <a href="http://tools.ietf.org/html/rfc2617" target="_blank">HTTP Basic</a> authentication. You can optionally configure other types of authentication as well; we provide references for that information.</p>
+
+<h2 id="config-cron-secure-apache">Secure cron with Apache</h2>
+<p>This section discusses how to secure cron using <a href="http://tools.ietf.org/html/rfc2617" target="_blank">HTTP Basic</a> authentication with Apache. For more options, consult one of the following resources:</p>
 
 <ul>
-  <li>Change to production mode: Clear directories and set permissions on files and directories</li>
-  <li>
-    <p>Change to developer mode: Clear directories only; we don’t set specific permissions on files.</p>
-
-    <p>When you generate classes or generate static files, they have 777 (world-writable permissions) and are owned by the user who runs this command.</p>
-  </li>
+  <li><a href="http://httpd.apache.org/docs/2.2/howto/auth.html" target="_blank">Apache 2.2 authentication and authorization tutorial</a></li>
+  <li><a href="http://httpd.apache.org/docs/2.4/howto/auth.html" target="_blank">Apache 2.4 authentication and authorization tutorial</a></li>
 </ul>
 
-<h3 id="config-mode-over-clear">Cleared directories</h3>
-<p>We clear the the contents of following directories when you change modes:</p>
+<p>The instructions that follow are based on Apache 2.2 with CentOS 6:</p>
 
-<pre><code>var/cache
-var/di
-var/generation
-var/view_preprocessed
-pub/static
+<ul>
+  <li><a href="#config-cron-secure-apache-pwd">Step 1: Create a password file</a></li>
+  <li><a href="#config-cron-secure-apache-group">Step 2: Optionally add users to create an authorized cron group</a></li>
+  <li><a href="#config-cron-secure-apache-htaccess">Step 3: Secure cron in <code>.htaccess</code></a></li>
+  <li><a href="#config-cron-secure-apache-verify">Step 4: Verify cron is secure</a></li>
+</ul>
+
+<h3 id="config-cron-secure-apache-pwd">Step 1: Create a password file</h3>
+<p>For security reasons, you can locate the password file anywhere except your web server docroot. In this example, we show how to store the password file in a new directory.</p>
+
+<p>Enter the following commands as a user with <code>root</code> privileges:</p>
+
+<pre><code>mkdir -p /usr/local/apache/password
+htpasswd -c /usr/local/apache/password/passwords &lt;username&gt;
 </code></pre>
 
-<p>Exceptions:</p>
+<p>where <code>&lt;username&gt;</code> can be the web server user or another user. In this example, we use the web server user but the choice of user is up to you.</p>
+
+<p>Follow the prompts on your screen to create a password for the user.</p>
+
+<p>To add another user to your password file, enter the following command as a user with <code>root</code> privileges:</p>
+
+<pre><code>htpasswd /usr/local/apache/password/passwords &lt;username&gt;
+</code></pre>
+
+<h3 id="config-cron-secure-apache-group">Step 2: Optionally add users to create an authorized cron group</h3>
+<p>You can optionally enable more than one user to run cron by adding these users to your password file and to a group file you’ll configure in the next section.</p>
+
+<p>To add another user to your password file, enter the following command as a user with <code>root</code> privileges:</p>
+
+<pre><code>htpasswd /usr/local/apache/password/passwords &lt;username&gt;
+</code></pre>
+
+<p>To create an authorized group, create a group file anywhere outside the web server docroot. The group file specifies the name of the group and the users in the group. In this example, the group name is <code>MagentoCronGroup</code>.</p>
+
+<pre><code>vim /usr/local/apache/password/group
+</code></pre>
+
+<p>Contents of the file:</p>
+
+<pre><code>MagentoCronGroup: &lt;username1&gt; ... &lt;usernameN&gt;
+</code></pre>
+
+<h3 id="config-cron-secure-apache-htaccess">Step 3: Secure cron in <code>.htaccess</code></h3>
+<p>To add security for cron in Magento’s <code>.htaccess</code>:</p>
+
+<ol>
+  <li>Log in to your Magento server as, or switch to, the Magento file system owner.</li>
+  <li>
+    <p>Open <code>&lt;your Magento install dir&gt;/pub/.htaccess</code> in a text editor.</p>
+
+    <p>(Because <code>cron.php</code> is located in the <code>pub</code> directory, edit this <code>.htaccess</code> only.)</p>
+  </li>
+  <li>
+    <p><em>Cron access for one or more users.</em> Replace the existing <code>&lt;Files cron.php&gt;</code> directive with the following:</p>
+
+    <pre><code>&lt;Files cron.php&gt;
+	AuthType Basic
+	AuthName "Cron Authentication"
+	AuthUserFile /usr/local/apache/password/passwords
+	Require valid-user
+&lt;/Files&gt;
+</code></pre>
+  </li>
+  <li>
+    <p><em>Cron access for a group.</em> Replace the existing <code>&lt;Files cron.php&gt;</code> directive with the following:</p>
+
+    <pre><code>&lt;Files cron.php&gt;
+	AuthType Basic
+	AuthName "Cron Authentication"
+	AuthGroupFile &lt;path to optional group file&gt;
+	Require group &lt;name&gt;
+&lt;/Files&gt;
+</code></pre>
+  </li>
+  <li>Save your changes to <code>.htaccess</code> and exit the text editor.</li>
+  <li>
+    <p>Restart Apache:</p>
+
+    <p>CentOS: <code>service httpd restart</code></p>
+
+    <p>Ubuntu: <code>service apache2 restart</code></p>
+  </li>
+  <li>Continue with <a href="#config-cron-secure-apache-verify">Verify cron is secure</a>.</li>
+</ol>
+
+<h2 id="config-cron-secure-nginx">Secure cron with nginx</h2>
+<p>This section discusses how to secure cron using the nginx web server. You must perform the following tasks:</p>
+
+<ol>
+  <li>Set up an encrypted password file for nginx</li>
+  <li>Modify your nginx configuration to reference the password file when accessing <code>pub/cron.php</code></li>
+</ol>
+
+<h3 id="config-cron-secure-nginx-password">Step 1: Set up an encrypted password file for nginx</h3>
+<p>Consult a resource like the following:</p>
 
 <ul>
-  <li><code>.htaccess</code> files are not removed</li>
-  <li><code>pub/static</code> contains a file that specifies the version of static content; this file is not removed</li>
+  <li><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-password-authentication-with-nginx-on-ubuntu-14-04" target="_blank">How To Set Up Password Authentication with Nginx on Ubuntu 14.04 (digitalocean)</a></li>
+  <li><a href="https://www.howtoforge.com/basic-http-authentication-with-nginx" target="_blank">Basic HTTP Authentication With Nginx (howtoforge)</a></li>
 </ul>
+
+<h3 id="config-cron-secure-nginx-config">Step 2: Modify the nginx configuration</h3>
+<p>Add the following to your <code>nginx.conf</code>:</p>
+
+<pre><code>location cron\.php {
+	auth_basic "Cron Authentication";
+	auth_basic_user_file &lt;path to password file&gt;;
+} 
+</code></pre>
+
+<p>Restart nginx and continue with the next section.</p>
+
+<h2 id="config-cron-secure-apache-verify">Verify cron is secure</h2>
+<p>This section discusses how to verify that <code>pub/cron.php</code> is working by verifying that it’s creating rows in the <code>cron_schedule</code> database table. This section shows how to use SQL commands but you can also use a tool like <a href="/guides/v2.0/install-gde/prereq/optional.html#install-optional-phpmyadmin">phpmyadmin</a>.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>By default, Magento uses the <code>var</code> directories to store the cache, logs, and compiled code. You can customize this directory but in this guide, it's assumed to be <code>var</code>.</p></span>
+  <p>The <code>default</code> cron you're running in this example runs according to the schedule defined in <code>crontab.xml</code>. Some cron job runs only once a day. The first time you run cron from the browser, the <code>cron_schedule</code> table is updated but subsequent <code>pub/cron.php</code> requests run at the configured schedule.</p></span>
 </div>
 
-<h3 id="config-mode-over-dirs">Permissions and ownership for production mode</h3>
-<p>Changing modes affects permissions and ownership the following subdirectories in your Magento installation:</p>
-
-<pre><code>var/view_preprocessed
-var/generation
-var/di
-</code></pre>
-
-<h4 id="config-mode-over-dirs-perm">Permissions for production mode</h4>
-<p>When you change to production mode, we set the following permissions on these directories and subdirectories:</p>
-
-<ul>
-  <li>
-    <p>Directories: 750</p>
-
-    <p>750 permissions give full control to the owner, read and execute permissions to the group, and no permissions to anyone else.</p>
-  </li>
-  <li>
-    <p>Files: 640</p>
-
-    <p>640 permissions give read-write permissions to the owner, read-only permissions to the group, and no permissions to anyone else.</p>
-  </li>
-</ul>
-
-<!-- <table style="width:350px">
-	<tbody>
-		<tr>
-			<td />
-		<td>Developer</td>
-		<td>Production</td>
-	</tr>
-	<tr>
-		<td>File</td>
-		<td>660</td>
-		<td>640</td>
-	</tr>
-	<tr>
-		<td>Directory</td>
-		<td>770</td>
-		<td>750</td>
-	</tr>
-</tbody>
-</table> -->
-
-<!-- 660 permissions give read-write permissions to the owner and group and no permissions to anyone else.
- -->
-<!-- 640 permissions give read-write permissions to the owner, read-only to the group, and no permissions to anybody else.
-
-770 permissions give full control (read, write, execute) to the owner and group and no permissions to anyone else. -->
-
-<p>For more information about UNIX permissions, see:</p>
-
-<ul>
-  <li><a href="http://www.statslab.cam.ac.uk/~eva/unixinfo/perms.html" target="_blank">UNIX File Permissions</a></li>
-  <li><a href="http://permissions-calculator.org/" target="_blank">Unix Permissions Calculator</a></li>
-  <li><a href="http://unix.stackexchange.com/questions/39710/how-to-get-permission-number-by-string-rw-r-r" target="_blank">Article on unix.stackexchange</a></li>
-</ul>
-
-<h4 id="config-mode-over-dirs-own">Ownership for production mode</h4>
-<p>We recommend the following:</p>
-
-<ul>
-  <li>
-    <p>The directories and files in the Magento file system should be <em>owned</em> by a user other than the web server user but must be <em>writable</em> by the web server user. </p>
-
-    <p>We refer to this other user as the <a href="/guides/v2.0/install-gde/prereq/apache-user.html#nstall-update-depend-user-over">Magento file system owner</a>.</p>
-
-    <p>Exceptions: <code>var/di</code>, <code>var/generation</code>, and <code>var/preprocessed</code></p>
-  </li>
-  <li>
-    <p>The directories and files under <code>pub/static</code> should have 770 permissions, which give the owner and the group full control.</p>
-  </li>
-</ul>
-
-<p>The easiest way to do that is to run this command as a user in the same group as the web server user. For details, see <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Create the Magento file system owner</a>.</p>
-
-<h2 id="config-mode-show">Display the current mode</h2>
-<p>Command usage:</p>
-
-<pre><code>magento deploy:mode:show
-</code></pre>
-
-<p>A message similar to the following displays:</p>
-
-<pre><code>Current application mode: developer.
-</code></pre>
-
-<h2 id="config-mode">Change modes</h2>
-<p>Command usage:</p>
-
-<pre><code>magento deploy:mode:set {mode} [-s|--skip-compilation]
-</code></pre>
-
-<p>where </p>
-
-<p><code>{mode}</code> is required; it can be either <code>developer</code> or <code>production</code></p>
-
-<p><code>--skip-compilation</code> is an optional parameter you can use to skip <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-single.html#config-cli-subcommands-single-overview">code compilation</a> when you change to production mode.</p>
-
-<p>Examples follow.</p>
-
-<h3 id="change-to-production-mode">Change to production mode</h3>
-
-<pre><code>magento deploy:mode:set production
-</code></pre>
-
-<p>Following is a summary of messages that display:</p>
-
-<pre><code>Enabled maintenance mode
-Requested languages: en_US
-=== frontend -&gt; Magento/luma -&gt; en_US ===
-... more ...
-Successful: 1884 files; errors: 0
----
-
-=== frontend -&gt; Magento/blank -&gt; en_US ===
-... more ...
-Successful: 1828 files; errors: 0
----
-
-=== adminhtml -&gt; Magento/backend -&gt; en_US ===
-... more ...
----
-
-=== Minify templates ===
-... more ...
-Successful: 897 files modified
----
-
-New version of deployed files: 1440461332
-Static content deployment complete Gathering css/styles-m.less sources. Successfully processed LESS and/or SASS files CSS deployment complete Generated classes:
-    Magento\Sales\Api\Data\CreditmemoCommentInterfacePersistor
-    Magento\Sales\Api\Data\CreditmemoCommentInterfaceFactory
-    Magento\Sales\Api\Data\CreditmemoCommentSearchResultInterfaceFactory
-    Magento\Sales\Api\Data\CreditmemoComment\Repository
-    Magento\Sales\Api\Data\CreditmemoItemInterfacePersistor
-    ... more ...
-Compilation complete
-Disabled maintenance mode
-Enabled production mode.
-</code></pre>
-
-<h3 id="change-to-developer-mode">Change to developer mode</h3>
-<p>When you change from production to developer mode, you should clear generated classes and Object Manager entities like proxies to prevent unexpected errors. After doing so, you can change modes. Use the following steps:</p>
+<p>To verify cron:</p>
 
 <ol>
   <li>
-    <p>If you’re changing from production mode to developer mode, delete the contents of the <code>var/generation</code> and <code>var/di</code> directories:</p>
+    <p>Log in to your Magento database as either the Magento database user or as <code>root</code>. </p>
 
-    <pre><code>rm -rf &lt;your Magento install dir&gt;/var/di/* &lt;your Magento install dir&gt;/var/generation/* 
+    <p>For example,</p>
+
+    <pre><code>mysql -u magento -p
 </code></pre>
   </li>
   <li>
-    <p>Set the mode:</p>
+    <p>Use the Magento database:</p>
 
-    <pre><code>magento deploy:mode:set developer
+    <pre><code>use &lt;magento database name&gt;;
 </code></pre>
 
-    <p>The following message displays:</p>
+    <p>For example,</p>
 
-    <pre><code>Switched to developer mode.
+    <pre><code>use magento;
 </code></pre>
   </li>
+  <li>
+    <p>Delete all rows from the <code>cron_schedule</code> database table:</p>
+
+    <pre><code>TRUNCATE TABLE cron_schedule 
+</code></pre>
+  </li>
+  <li>
+    <p>Run cron from a browser:</p>
+
+    <pre><code>http[s]://&lt;magento hose name or ip&gt;/pub/cron.php?group=default
+</code></pre>
+
+    <p>For example,</p>
+
+    <pre><code>http://magento.example.com/pub/cron.php?group=default
+</code></pre>
+
+    <p>When prompted, enter an authorized user’s name and password. The following figure shows an example.</p>
+
+    <p><img src="/common/images/cron_auth.png" alt="Authorizing cron using HTTP Basic" /></p>
+  </li>
+  <li>
+    <p>Verify rows were added to the table:</p>
+
+    <pre><code>SELECT * from cron_schedule
+</code></pre>
+
+    <p>Verify that some rows are returned. If so, you’re done!</p>
+  </li>
 </ol>
-
-<h4 id="related-topics">Related topics</h4>
-
-<ul>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create LESS from CSS</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-test.html">Run tests</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
-</ul>
 
 
 		</div>
@@ -609,7 +578,7 @@ Enabled production mode.
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/secy/secy-cron.html">Secure cron.php</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/config-guide/secy/secy-cron.html">Secure cron.php</a></li>
 						
 								
 							
@@ -707,7 +676,7 @@ Enabled production mode.
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
 						
 								
 							

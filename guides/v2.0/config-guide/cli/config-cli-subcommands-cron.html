@@ -340,10 +340,9 @@ bash shell example for CentOS:<br />
   <li>Save your changes and exit the text editor.</li>
 </ol>
 
-<p>You can then run cron in a web browser in any of the following ways (depending on your entry point to Magento):</p>
+<p>You can then run cron in a web browser as follows:</p>
 
-<pre><code>&lt;your Magento host name or IP&gt;/&lt;Magento root&gt;/cron.php[?group=&lt;group name&gt;]
-&lt;your Magento host name or IP&gt;/&lt;Magento root&gt;/pub/cron.php[?group=&lt;group name&gt;]
+<pre><code>&lt;your Magento host name or IP&gt;/&lt;Magento root&gt;/pub/cron.php[?group=&lt;group name&gt;]
 </code></pre>
 
 <p>where</p>
@@ -360,7 +359,7 @@ bash shell example for CentOS:<br />
 
 <p>For example,</p>
 
-<pre><code>http://magento.example.com/magento2/pub/cron.php?group=default
+<pre><code>http://magento.example.com/magento2/pub/cron.php?group=index
 </code></pre>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -667,6 +666,10 @@ bash shell example for CentOS:<br />
 								
 							
 								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/secy/secy-cron.html">Secure cron.php</a></li>
+						
 								
 							
 									<li class="level-2 "><a href="/guides/v2.0/config-guide/secy/secy-xframe.html">X-Frame-Options header</a></li>
