@@ -54,11 +54,39 @@ A description of the four types of packages that you can submit to Marketplace:
 
 * __magento2-module__&#8212;A package that usually contains source files plus the top level composer.json, which indicates dependencies and so on. This can be sold in the store directly, or it can be a dependent package hierarchy of some parent package.
 
-* __metapackage__&#8212;A placeholder used to group a collection of packages together. This works exactly as described in standard composer.json documentation. If you have an extension that uses more than one package you must use a metapackage as the root package. Otherwise you should not use metapackage.
+* __metapackage__&#8212;A placeholder used to group a collection of packages together. 
 
 * __magento2-theme__&#8212;For theme packages. It can be sold independently in the store directly, or it could a dependent package hierarchy of some parent package.
 
 * __magento2-language__&#8212;For language packages. These usually contain .csv files to aid in translation of certain contents and so on.  It can be sold directly in Marketplace, or could be part of a dependent package hierarchy of some parent package.
+
+
+
+##Using Metapackages
+
+Metapackages allow you to group extensions with multiple packages into a cohesive unit. This works exactly as described in standard [composer.json documentation](https://getcomposer.org/doc/04-schema.md#type). If you have an extension that uses more than one package you must use a metapackage as the **root package**. Otherwise you should not use metapackage.
+
+
+###Metapackage example 
+
+The following example is a `composer.json` metapackage file for a module:
+
+
+{% highlight JSON %}
+
+{
+    "name": "magento/sample-data",
+    "version": "1.0.0-beta",
+    "type": "metapackage",
+    "require": {
+        "magento/module-sample-data": "self.version",
+        "magento/sample-data-media": "~0.42.0-beta2"
+    }
+}
+
+{% endhighlight %}
+
+##Sample composer.json file
 
 
 The following example is a `composer.json` file for a module:
@@ -113,5 +141,5 @@ All packages on the private packaging repository can now be referenced within th
 
 
 
-##Submitting your module to Marketplace
+<!-- ##Submitting your module to Marketplace -->
 
