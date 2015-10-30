@@ -47,17 +47,17 @@ The constraint PHP class must:
 
 ### Constraint arguments
 
-In the MTF, [data set][] values are shared with test class and constraints. A node name in [data set][] can be complex like `item1/item2/item3`. Argument name in the `processAssert()` must be the same as `item1` to transfer data from [data set][] to constraint.
+In the MTF, [data set][] values are shared with a test class and constraints. A node name in [data set][] can be complex like `item1/item2/item3`. An argument name in the `processAssert()` must be the same as the `item1` to transfer data from [data set][] to constraint.
  
-If [data set][] variable is used in the test, and is overwritten, it is transfered as altered to the constraint. Variables can be overwritten in the _injectable_ [test case][]  class in `test()`, `__inject()` and `__prepare()` methods, and then passed to constraint class by `return`. Furthermore, any returned value of these methods can be used as argument in constraint.
+If a [data set][] variable is used in the test, and is overwritten, it is transfered as altered to the constraint. Variables can be overwritten in the _injectable_ [test case][]  class in `test()`, `__inject()` and `__prepare()` methods, and then passed to constraint class by `return`. Furthermore, any returned value of these methods can be used as argument in constraint.
 
-Object that is not defined in [data set][] or isn't returned from [test case][]  is created using Object Manager.
+An object that is not defined in the [data set][] or isn't returned from the [test case][] is created using the Object Manager.
 
-Let's see the following diagram for the `CreateSimpleProductEntityTest` test and `AssertProductPricesOnCategoryPage` constraint:
+Let's see the following diagram for the `CreateSimpleProductEntityTest` test and the `AssertProductPricesOnCategoryPage` constraint:
 
 <a href="{{ site.baseurl }}common/images/mtf_constraint_arguments.png"><img src="{{ site.baseurl }}common/images/mtf_constraint_arguments.png" /></a>
 
-Dataset from diagram contains three variables with data: `product`, `category` and `price`.
+Data set from the diagram contains three variables with data: `product`, `category` and `price`.
 
 - <span style="color: #21610B; font-weight:bold">Green arrows</span> show that `product` variable is transfered to the test and the constraint
 
@@ -105,13 +105,13 @@ The following example shows the `<magento2>/dev/tests/functional/tests/app/Magen
 
 {%endhighlight%}
 
-Directly after test, both constraints are performed in order they listed.
+Directly after the test flow, both constraints are performed in order they listed.
 
 ### Tagging
 
 Tagging enables you to indicate what constraints must be called.
 
-You can tag constraints in `<module>/Test/etc/di.xml` using a `severity` argument. Severity tagging of constrains is used for customization of test run.
+You can tag constraints in `<module>/Test/etc/di.xml` using a `severity` argument. Severity tagging of constraints is used for the customization of test run.
 
 You can use the following severity tags:
 
@@ -140,11 +140,12 @@ For example, `<magento2>/dev/tests/functional/tests/app/Magento/CatalogRule/Test
 
 ## How to create constraint {#mtf_constraint_create}
 
-Use case: We want to assert widget availability in widget grid.
+Use case: We want to assert widget availability in a widget grid.
 
 Step 1. What module does it belong?
   
-  In our case, we need to create constraint in Magento_Widget module, in `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Constraint`.
+  Widget grid and widget fixture are related to the Magento_Widget module.
+  Thus, we need to create constraint in the Magento_Widget module, in `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Constraint`.
   
 Step 2. What name should constraint have?
   
