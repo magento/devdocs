@@ -62,12 +62,12 @@ A description of the four types of packages that you can submit to Marketplace:
 
 
 
-##Using Metapackages
+###Using Metapackages
 
 Metapackages allow you to group extensions with multiple packages into a cohesive unit. This works exactly as described in standard [composer.json documentation](https://getcomposer.org/doc/04-schema.md#type). If you have an extension that uses more than one package you must use a metapackage as the **root package**. Otherwise you should not use metapackage.
 
 
-###Metapackage example 
+####Metapackage example 
 
 The following example is a `composer.json` metapackage file for a module:
 
@@ -86,7 +86,7 @@ The following example is a `composer.json` metapackage file for a module:
 
 {% endhighlight %}
 
-##Sample composer.json file
+###Sample composer.json file
 
 
 The following example is a `composer.json` file for a module:
