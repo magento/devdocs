@@ -1,6 +1,6 @@
 <div markdown="1">
 
-<h2 id="get">Get Magento Community Edition (CE) or (EE)</h2>
+<h2 id="get">Get Magento Community Edition (CE) or Enterprise Edition (EE)</h2>
 The following table discusses where to get the Magento software.
 
 <table>
