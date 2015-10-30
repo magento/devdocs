@@ -258,9 +258,11 @@
 
 <p><img src="/common/images/varnish_basic.png" width="400px" alt="Basic Varnish diagram" /></p>
 
-<p>In the preceding figure, Varnish is <em>before</em> the web server, which you can picture inside the Magento box. Varnish proxies HTTP traffic and caches content <em>before</em> it reaches the web server.</p>
+<p>In the preceding figure, users’ web page requests over the internet result in numerous requests for CSS, HTML, JavaScript, and images (referred to collectively as <em>assets</em>). Varnish sits in front of the web server and proxies these requests to the web server. </p>
 
-<p>As a result, Varnish reduces the incoming traffic to Magento.</p>
+<p>As the web server returns assets, cacheable assets are stored in Varnish. Any subsequent requests for those assets are fulfilled by Varnish (meaning, the requests don’t reach the web server). Varnish returns cached content extremely quickly. The results are faster response times to return the content to users and a reduced number of requests that must be fulfilled by Magneto.  </p>
+
+<p>(Eventually, assets cached by Varnish expire or are cleared manually.)</p>
 
 <h2 id="config-varnish-process">Process overview</h2>
 <p>This topic discusses how to initially install Varnish with a minimal set of parameters and test that it works. Then you’ll export a Varnish configuration from the Magento Admin and test it again.</p>
