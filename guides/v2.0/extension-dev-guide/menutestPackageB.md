@@ -4,15 +4,15 @@ group: extension-dev-guide
 subgroup: 5_Package
 menu_order: 5
 
-level3_menu: level3child
-level3_subgroup: nuts
+level3_menu_node: level3child
+level3_subgroup: package
 
 
-title: Menu Test, Level 3 package B
-menu_title: Menu Test, Level 3 package B
+title: Level 3 Child B Package
+menu_title: Level 3 Child B Package
 ---
 
 
 
 
-##Testing menu fun Level Two Package B
+##Level 3 Child B Package 

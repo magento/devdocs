@@ -4,7 +4,7 @@ group: extension-dev-guide
 subgroup: 3_Build
 title: Component registration
 menu_title: Component registration
-menu_order: 4
+menu_order: 7
 github_link: extension-dev-guide/composer-integration.md
 redirect_from: /guides/v1.0/extension-dev-guide/composer-integration.html
 

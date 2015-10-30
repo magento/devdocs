@@ -4,7 +4,7 @@ group: extension-dev-guide
 subgroup: 3_Build
 title: Create a module
 menu_title: Create a module
-menu_order: 5
+menu_order: 7
 github_link: extension-dev-guide/create_module.md
 redirect_from: /guides/v1.0/extension-dev-guide/create_module.html
 ---

@@ -2,17 +2,16 @@
 layout: default
 group: extension-dev-guide
 subgroup: 3_Build
-menu_order: 10
+menu_order: 6
 
+level3_menu_node: level3child
+level3_subgroup: build
 
-level3_subgroup: bolts
-level3_menu: level3child
-
-title: Menu Test, Level 3A
-menu_title: Menu Test, Level 3AA
+title: Level 3 Child B Build
+menu_title: Level 3 Child B Build
 ---
 
 
 
 
-##Testing menu fun Level Three AAAAA
+##Level 3 Child B Build

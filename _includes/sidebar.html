@@ -107,15 +107,15 @@
 								
 								{% for article in articles_sorted %}
 
-									{% if article.level3_menu == "level3parent" %}
+									{% if article.level3_menu_node == "level3parent" %}
 
-										<li class="level2Parent {% if page.url == article.url %} active {%endif%}" id="{{ article.level3_subgroup }}"><a href="#">{% if article.menu_title %}{{article.menu_title}}{% else %}{{article.title}}{% endif %}</a>
+										<li class="level3Parent {% if page.url == article.url %} active {%endif%}" id="{{ article.level3_subgroup }}"><a href="#">{% if article.menu_title %}{{article.menu_title}}{% else %}{{article.title}}{% endif %}</a>
 
 
-									{% elsif article.level3_menu == "level3child" %}							
+									{% elsif article.level3_menu_node == "level3child" %}							
 								
 
-											<li class="level2Child {{ article.level3_subgroup }} {% if page.url == article.url %} active {%endif%}" data-menunode="{{ article.level3_subgroup }}"><a href="{{site.toc_baseurl}}{{article.url}}">{% if article.menu_title %}{{article.menu_title}}{% else %}{{article.title}}{% endif %}</a>
+											<li class="level3Child {{ article.level3_subgroup }} {% if page.url == article.url %} active {%endif%}" data-menunode="{{ article.level3_subgroup }}"><a href="{{site.toc_baseurl}}{{article.url}}">{% if article.menu_title %}{{article.menu_title}}{% else %}{{article.title}}{% endif %}</a>
 
 										
 
