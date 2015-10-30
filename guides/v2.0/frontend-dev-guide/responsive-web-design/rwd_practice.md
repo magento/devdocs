@@ -8,7 +8,7 @@ menu_order: 6
 github_link: frontend-dev-guide/responsive-web-design/rwd_practice.md
 redirect_from: /guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_practice.html
 ---
-<h2>Overview</h2>
+<h2>What's in this topic</h2>
 This topic features a step-by-step illustration of how to change the number of products displayed in a row on a product page, keeping up with the responsive design approach used by Magento out-of-the-box themes. 
 
 The described flow is applicable only for themes that <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherit</a> from the out-of-the-box Blank or Luma theme.

@@ -9,7 +9,7 @@ github_link: frontend-dev-guide/css-topics/css-preprocess.md
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css-preprocess.html
 ---
 
-<h2 id="preproc_over">Overview</h2>
+<h2 id="preproc_over">What's in this topic</h2>
 
 The topic describes how stylesheets are preprocessed and compiled to CSS in the Magento application. It provides the theoretical background a frontend developer needs to debug stylesheets effectively. 
 
