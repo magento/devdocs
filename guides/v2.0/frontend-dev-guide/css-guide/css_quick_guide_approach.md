@@ -7,7 +7,7 @@ menu_title: Simple ways to customize a theme's styles
 menu_order: 1
 github_link: frontend-dev-guide/css-guide/css_quick_guide_approach.md
 ---
-<h2>Overview</h2>
+<h2>What's in this topic</h2>
 Let's say you created a new theme inheriting from Magento Blank or Luma, and chose the <a href="{{site.gdeurl}}frontend-dev-guide/css-guide/css_quick_guide_mode.html">LESS compilation mode</a>. What's next? Where to add the style changes? This topic gives quick answers.
 
 <h3>Contents</h3>
@@ -99,7 +99,7 @@ In <code>_extend.less</code> register the <code>_buttons_extend.less</code> by a
 To extend the parent theme's styles for buttons in your theme:
 <ol>
 <li>In your theme directory, create a <code>web/css/source</code> sub-directory. </li>
-<li>Create a <code>_extend.less</code> file here. The path to it looks like following: 
+<li>Create a <code>_buttons.less</code> file here. The path to it looks like following: 
 
 <pre>
 app/design/frontend/&lt;Vendor&gt;/

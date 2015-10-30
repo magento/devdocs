@@ -7,7 +7,7 @@ menu_title: Simple style changes with client-side LESS compilation vs. server-si
 menu_order: 2
 github_link: frontend-dev-guide/css-guide/css_quick_guide_mode.md
 ---
-<h2> Overview </h2>
+<h2> What's in this topic </h2>
 
 After you <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-create.html" target="_blank">create a theme</a>, before starting to change the styles, is deciding, which LESS compilation mode you will use. There are <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css-preprocess.html#LESS compilation modes" target="_blank">two modes available in Magento</a>: server-side compilation mode (the default one, recommended for production) and client-side (recommended for theme development). 
 This topic demonstrates on a practical example how the choice of the mode influences the styles development.
@@ -63,7 +63,7 @@ The following is an illustration of how the process of making simple changes loo
 </ol>
 If your Magento instance uses the server-side compilation mode, you need to manually clean sub-directories in <code>pub/static</code> and <code>var/view_preprocessed/less</code> to make your changes apply. You can automate this process by additionally installing Grunt, and using the built-in Grunt commands to watch the changes and clean the directories. The flow of making changes using Grunt is described in the following section.
 
-<h2 id="#server-side-grunt">Making simple style changes in server-side compilation mode using Grunt</h2>
+<h2 id="server-side-grunt">Making simple style changes in server-side compilation mode using Grunt</h2>
 
 <ol>
 <li>Create and apply a theme. </li>

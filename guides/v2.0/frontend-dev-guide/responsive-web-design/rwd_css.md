@@ -9,7 +9,7 @@ github_link: frontend-dev-guide/responsive-web-design/rwd_css.md
 redirect_from: /guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_css.html
 ---
 
-<h2>Overview</h2>
+<h2>What's in this topic</h2>
 
 Stylesheets are the main tool in responsive web design (RWD) implementation. This topic describes the mechanisms and approaches to building RWD used in the default Magento themes. To re-use them in your custom theme, make your theme <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherit</a> from the Magento basic Blank theme.
 

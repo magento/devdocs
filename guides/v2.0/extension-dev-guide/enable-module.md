@@ -4,7 +4,7 @@ group: extension-dev-guide
 subgroup: 3_Build
 title: Enable a module
 menu_title: Enable a module
-menu_order: 6
+menu_order: 7
 github_link: extension-dev-guide/enable-module.md
 
 ---

@@ -45,7 +45,7 @@ Update installation dependencies as follows:
 
 	<div class="bs-callout bs-callout-info" id="info">
 		<span class="glyphicon-class">
-  		<p>The Magento installation directory is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="{{ site.gdeurl }}install-gde/basics/basics_docroot.html">here</a>.</p></span>
+  		<p>The Magento installation directory is a subdirectory of your web server's docroot. Need help <a href="{{ site.gdeurl }}install-gde/basics/basics_docroot.html">locating the docroot</a>?</p></span>
 	</div>
 
 #### Next step

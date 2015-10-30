@@ -6,7 +6,7 @@ title: Installation quick reference (tutorial)
 menu_title: Installation quick reference (tutorial)
 menu_node: parent
 menu_order: 1
-github_link: howdoi/install/install-quick-ref.md
+github_link: install/install-quick-ref.md
 ---
 
 We know it's challenging to install the Magento software. We'd like to help you by simplifying the process as much as possible.
@@ -47,6 +47,7 @@ If not, see the <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">Ins
 5.	Wait for the download to complete.
 
 	This only downloads Magento code; it doesn't install the software for you.
+
 6.	Set <a href="{{ site.gdeurl }}install-gde/install/file-system-perms.html">file system ownership and permissions</a>.
 
 ## Installation part 2: Installing the Magento software

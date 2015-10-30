@@ -8,7 +8,7 @@ menu_node: parent
 github_link: uilibrary/ui-library-components.md
 ---
 
-<h2 id="export">UI Library ExportButton Component</h2>
+<h2 id="export">UI ExportButton Component</h2>
 
 ExportButton Component is responsible for export grid data to specified data format (cvs, xml, and so on).
 

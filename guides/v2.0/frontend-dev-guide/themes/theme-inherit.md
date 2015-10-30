@@ -9,7 +9,7 @@ github_link: frontend-dev-guide/themes/theme-inherit.md
 redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-inherit.html
 ---
 
-<h2 id="theme-inherit-over">Overview</h2>
+<h2 id="theme-inherit-over">What's in this topic</h2>
 
 Theme inheritance enables you to easily extend themes and minimize the maintenance efforts. You can use an existing theme as a basis for customizations, or minor store design updates, like holidays decoration. Rather than copy extensive theme files and modify what you want to change, you can add overriding and extending files.
 
