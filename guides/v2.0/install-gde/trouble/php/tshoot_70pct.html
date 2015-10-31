@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Troubleshooting suggestions</title>
+	<title>Installation stops at about 70%</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/install-gde/trouble/tshoot.html">
+	<link rel="canonical" href="//guides/v2.0/install-gde/trouble/php/tshoot_70pct.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Troubleshooting suggestions</h1>
+		<h1 class="page-heading">Installation stops at about 70%</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/install-gde/trouble/tshoot.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/install-gde/trouble/tshoot_70pct.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -211,32 +211,31 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<div class="bs-callout bs-callout-tip">
-  <p>Totally lost? Need a helping hand? Try our <a href="/guides/v2.0/install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="/guides/v2.0/install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
-</div>
+		<h2 id="install-trouble-pdo">Setup Wizard installation stops at about 70%</h2>
+<p>During installation using the Setup Wizard, the process stops at about 70% (with or without sample data). No errors display on the screen.</p>
 
-<p>The following topics discuss the installation errors and suggested solutions:</p>
+<p>One common issue is the PHP setting for <a href="http://php.net/manual/en/info.configuration.php#ini.max-execution-time" target="_blank"><code>max_execution_time</code></a>. </p>
 
-<ul>
-  <li><a href="/guides/v2.0/install-gde/trouble/tshoot_access-browser.html">You cannot access the Magento software in a web browser</a></li>
-  <li><a href="/guides/v2.0/install-gde/trouble/tshoot_mod_access_compat.html">503 (Service Unavailable) errors accessing Magento software in a web browser</a></li>
-  <li><a href="/guides/v2.0/install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics.</a></li>
-  <li><a href="/guides/v2.0/install-gde/trouble/tshoot_sample-data.html">Errors installing sample data</a></li>
-  <li><a href="/guides/v2.0/install-gde/trouble/tshoot_admin.html">Error after logging in to the Magento Admin</a></li>
-  <li><a href="/guides/v2.0/install-gde/trouble/tshoot_install_depend.html">Installation dependencies not met</a></li>
-  <li><a href="/guides/v2.0/install-gde/trouble/php/tshoot_pdo.html">During installation, fatal PDO error displays</a></li>
-  <li><a href="/guides/v2.0/install-gde/trouble/tshoot_wrong-mysql.html">During installation, Reflection Exception error</a></li>
-  <li><a href="/guides/v2.0/install-gde/trouble/tshoot_install-log.html">Installation fails; cannot create install.log</a></li>
-  <li><a href="/guides/v2.0/install-gde/trouble/tshoot_xdebug.html">During installation, xdebug maximum function nesting level error</a></li>
-  <li><a href="/guides/v2.0/install-gde/trouble/tshoot_git-pull-origin.html">git pull origin develop fails when updating the Magento software</a></li>
-  <li><a href="/guides/v2.0/install-gde/trouble/git/tshoot_clone.html">Cannot clone the Magento GitHub repository</a></li>
-  <li><a href="/guides/v2.0/install-gde/trouble/git/tshoot_rate-limit.html">When running <code>composer install</code> or <code>composer update</code>, see error <code>enter your GitHub credentials to go over the API rate limit</code></a></li>
-  <li><a href="/guides/v2.0/install-gde/trouble/tshoot_rate-limit.html">GitHub API rate limit</a></li>
-  <li><a href="/guides/v2.0/install-gde/trouble/php/tshoot_mcrypt.html">The PHP mcrypt extension is not installed properly</a></li>
-  <li><a href="/guides/v2.0/install-gde/trouble/php/tshoot_php-date.html">During installation, PHP date warning</a></li>
-  <li><a href="/guides/v2.0/install-gde/trouble/tshoot_composer-install.html">Cannot run <code>composer install</code></a></li>
-  <li><a href="/guides/v2.0/install-gde/trouble/tshoot_mysql_table-open-cache.html">Error ‘MySQL server has gone away’ during installation</a></li>
-</ul>
+<h3 id="solution">Solution:</h3>
+<p>If you encounter this error, we recommend you increase the value in <code>php.ini</code> to 18000 (one hour). You can use a larger or smaller value if it helps.</p>
+
+<ol>
+  <li>Locate your <code>php.ini</code> using a <code>phpinfo.php</code> file.</li>
+  <li>As a user with <code>root</code> privileges, open <code>php.ini</code> in a text editor.</li>
+  <li>Locate the <code>max_execution_time</code> setting.</li>
+  <li>Change its value to <code>18000</code>.</li>
+  <li>Save your changes to <code>php.ini</code> and exit the text editor.</li>
+  <li>
+    <p>Restart your web server.</p>
+
+    <p>Examples for Apache follow:</p>
+
+    <ul>
+      <li>CentOS: <code>service httpd restart</code></li>
+      <li>Ubuntu: <code>service apache2 restart</code>	</li>
+    </ul>
+  </li>
+</ol>
 
 
 
@@ -438,7 +437,7 @@
 							
 								
 								
-									<li class="  active "><a class="nav-header" href="/guides/v2.0/install-gde/trouble/tshoot.html">Troubleshooting suggestions</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/trouble/tshoot.html">Troubleshooting suggestions</a></li>
 									
 								
 								
@@ -523,7 +522,7 @@
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_70pct.html">Installation stops at about 70%</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_70pct.html">Installation stops at about 70%</a></li>
 						
 								
 							
