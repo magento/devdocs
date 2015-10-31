@@ -15,7 +15,7 @@ During installation using the Setup Wizard, the process stops at about 70% (with
 One common issue is the PHP setting for <a href="http://php.net/manual/en/info.configuration.php#ini.max-execution-time" target="_blank">`max_execution_time`</a>. 
 
 ### Solution:
-If you encounter this error, we recommend you increase the value in `php.ini` to 18000 (one hour). You can use a larger or smaller value if it helps.
+If you encounter this error, we recommend you increase the value in `php.ini` to 18000 (30 minutes). You can use a larger or smaller value if it helps.
 
 1.	Locate your `php.ini` using a `phpinfo.php` file.
 2.	As a user with `root` privileges, open `php.ini` in a text editor.
