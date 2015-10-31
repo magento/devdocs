@@ -14,6 +14,14 @@ github_link: install-gde/install/newbie/newbie_get-ftp.md
 *	TBD
 *	TBD
 
+<h2 id="newbie-ftp-overview">Magento installation overview</h2>
+
+1.	Download the software to your computer.
+2.	Set up FTP to your hosted system.
+3.	Upload the package to your system.
+4.	Extract the software.
+4.	Set permissions (?? TBD)
+
 {% include install/get-software.md %}
 
 <h2 id="set-up-ftp">Set up FTP</h2>
@@ -22,3 +30,15 @@ NOTES:
 Files > FTP Accounts
 Create new or go to Special FTP Accounts section, use that one with corresponding user name, password, and either IP addr (on cPanel main page) or host name (on Special FTP accounts section)
 Transfer .zip to public_html directory
+
+<h2 id="extract-perms">Extract the archive and set permissions</h2>
+NOTES:
+
+Files > File Manager
+public_html
+right-click, Extract
+Enter subdir only if you want a longer path; extracts to magento2-ce
+Reload to see result
+Right-click, Set Permissions
+Question: Can set file and dir permissions or only file? Default is 775
+Set 660 (have screen capture)
