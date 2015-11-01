@@ -19,7 +19,7 @@ We now use <a href="http://getcomposer.org">Composer</a> to resolve dependencies
 
 Composer is a separate application that manages PHP dependencies. Before you can install the Magento software, you must perform the following tasks in the order shown:
 
-1.	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install the Composer software</a>.
+1.	<a href="{{ site.gdeurl }}install-gde/install/dev_install.html">Install the Composer software</a>.
 2.	<a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Create the Magento file system owner</a> so Composer writes files to the web server docroot as the correct user.
 2.	Run the <a href="#install-composer-install">`composer install` command</a> from your Magento root directory (for example, `/var/www/magento2/`).
 
@@ -48,5 +48,20 @@ Update installation dependencies as follows:
   		<p>The Magento installation directory is a subdirectory of your web server's docroot. Need help <a href="{{ site.gdeurl }}install-gde/basics/basics_docroot.html">locating the docroot</a>?</p></span>
 	</div>
 
+<h2 id="instgde-prereq-compose-access">Set file system ownership and permissions</h2>
+The following sections discuss how to set file system ownership and permissions:
+
+*	<a href="#install-perms-import">Why we recommend you set file system permissions</a>
+*	<a href="#install-perms-set">File system permissions and ownership</a>
+
+<h3 id="install-perms-import">Why we recommend you set file system permissions</h3>
+{% include install/file-system-perms1-why.html %}
+
+<h3 id="install-perms-set">File system permissions and ownership</h3>
+{% include install/file-system-perms2-how.html %}
+
 #### Next step
-<a href="{{ site.gdeurl }}install-gde/install/dev_updater.html">Set up the updater</a>
+Install the Magento software:
+
+*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">Command line</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/web/install-web.html">Setup Wizard</a>

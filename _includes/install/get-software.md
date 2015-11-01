@@ -1,6 +1,16 @@
 <div markdown="1">
 
-<h2 id="get">Get Magento Community Edition (CE) or Enterprise Edition (EE)</h2>
+#### Contents
+*	<a href="#software-over">Overview of Magento software sources</a>
+*	<a href="#get-archive">Get compressed download packages</a>
+*	<a href="#software-composer-project">Get the Composer metapackage</a>
+*	<a href="#software-composer-clone">Clone the Magento 2 repository</a>
+
+<h2 id="software-over">Overview of Magento software sources</h2>
+TBD
+
+
+<h2 id="get-archive">Get compressed download packages</h2>
 The following table discusses where to get the Magento software. We provide the following downloads:
 
 *	Magento CE or EE software only
@@ -35,32 +45,8 @@ These packages are easy to get and install. You don't need to use Composer, all 
 </tbody>
 </table>
 
+<h2 id="software-composer-project">Get the Composer metapackage</h2>
+See <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html">Get the Composer metapackage</a>
 
-<h2 id="help">Getting help with your installation</h2>
-In the event you need additional help, consult the following resources.
-
-<table>
-	<col width="30%">
-	<col width="70%">
-<tbody>
-<tr> 
-	<th>Magento edition</th>
-	<th>How to get help</th>
-</tr>
-<tr> 
-	<td>Magento CE and Magento EE</td>
-	<td><ul><li><a href="http://community.magento.com/" target="_blank">Magento support forums</a></li>
-	<li><a href="http://magento.stackexchange.com" target="_blank">magento.stackexchange.com</a></li>
-	<li><a href="https://twitter.com/ask_magento" target="_blank">Twitter (<code>@ask_magento</code>)</a></li></ul>
-	</td>
-</tr>
-<tr> 
-	<td>Magento CE</td>
-	<td><a href="http://www.magentocommerce.com/bug-tracking" target="_blank">Submit bug reports</a></td>
-</tr>
-<tr> 
-	<td>Magento EE only</td>
-	<td><a href="http://support.magentocommerce.com" target="_blank">Submit bug reports</a></td>
-</tr>
-</tbody>
-</table>
+<h2 id="software-composer-clone">Clone the Magento 2 repository</h2>
+See <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a>
