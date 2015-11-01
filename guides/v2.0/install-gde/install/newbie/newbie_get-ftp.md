@@ -17,66 +17,35 @@ github_link: install-gde/install/newbie/newbie_get-ftp.md
 <h2 id="newbie-ftp-overview">Magento installation overview</h2>
 1.	Download the software to your computer.
 2.	Set up the File Transfer Protocol (FTP) to your hosted system.
-3.	Upload the package to your system using FTP.
-4.	Extract the software.
+3.	Upload the archive to your system using FTP.
+4.	Extract the archive.
 4.	Set permissions (?? TBD)
 
 {% include install/get-software.md %}
 
 <h2 id="set-up-ftp">Set up FTP and transfer the Magento archive</h2>
-FTP is a way to transfer files from your computer to your managed server. This section discusses how to transfer the Magento archive to your hosted system using the WinSCP client. You can use the same instructions with any FTP software.
-
-### Set up an FTP account
-To transfer the Magento archive, you need an FTP account that has access to the managed server's <a href="https://blog.sucuri.net/create-an-ftp-user-with-public_html-access-in-cpanel" target="_blank">`public_html`</a> directory. You might already have one but if not, use the following steps to create one.
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>This section shows how to use an existing FTP account. To set up a new account, consult the GoDaddy documentation or a tutorial like <a href="https://blog.sucuri.net/create-an-ftp-user-with-public_html-access-in-cpanel" target="_blank">this one</a> for more information. </p>
-</div>
-
-To use an existing FTP account:
-
-1.	If necessary, log in to the cPanel.
-2.	In the Files section, click **FTP Accounts**.
-
-	<img src="{{ site.baseurl }}common/images/install-merch_ftp-accts.png">
-
-3.	In the Special FTP Accounts section at the bottom of the page, click **Configure FTP Account** next to the account of the user you set up.
-
-	Write down the information that displays. The following figure shows an example.
-
-	<img src="{{ site.baseurl }}common/images/install-merch_ftp-accts-conf.png">
+FTP is a way to transfer files from your computer to your managed server. To transfer the Magento archive, you need an FTP account that has access to the managed server's `public_html` directory. You might already have an account. If not, consult the GoDaddy documentation or technical support for more information. You can also use a tutorial like this one from <a href="https://blog.sucuri.net/create-an-ftp-user-with-public_html-access-in-cpanel" target="_blank">sucuri</a>.
 
 ### Transfer the Magento archive to your hosted system
 To transfer the Magento archive:
 
-1.	Start your FTP client software (this example uses WinSCP but you can also use the software listed on the FTP Accounts page).
-6.	In the WinSCP Login dialog box, click **New Site**.
-7.	Enter the information displayed in the cPanel.
+1.	Start your FTP client software.
+2.	Create a connection to your managed server.
 
-	The following figure shows an example. (For other FTP clients, consult the documentation provided with your software for specific information.)
+	Follow the prompts on your screen or consult the documentation provided with your FTP software for more information.
 
-	<img src="{{ site.baseurl }}common/images/install-merch_ftp-winscp.png">
+3.	After you log in to your managed server, browse to locate `magento2-ce.zip` or `magento2-ee.zip` on your local system.
 
-8.	Click **Save** to save the connection information for later use.
-
-	When prompted, choose whether or not to store the password with the connection information.
-
-9.	Click **Login**.
-
-	If an error displays saying that the login failed because the host name couldn't be resolved, click **OK**. Click **Edit** and enter your managed server's IP address in the **Host Name** field.
-
-	The IP address displays on the cPanel home page; click **Home** to go to that page.
-
-10.	After you log in to your managed server, in the left pane of the WinSCP window, browse to locate `magento2-ce.zip`. 
-
-	In the right pane, browse to locate the `public_html` directory.
+	On the remote system, browse to locate the `public_html` directory.
 
 	The following figure shows an example.
 
 	<img src="{{ site.baseurl }}common/images/install-merch_ftp-transfer.png">
 
-11.	Drag the Magento archive from the left pane to the right pane.
-12.	Wait while the transfer completes.
+4.	Transfer the archive from your local system to the `public_html` directory.
+
+	On some FTP client software, you do this by dragging and dropping.
+5.	Wait while the transfer completes.
 
 <h2 id="extract-perms">Extract the archive</h2>
 After transferring the Magento archive to your hosted system, you can use the cPanel to extract it, after which you can run the Magento Setup Wizard to install the software.
@@ -86,7 +55,12 @@ To extract the archive:
 1.	If necessary, log in to the cPanel.
 2.	In the Files section, click **File Manager**.
 
-	<img src="{{ site.baseurl }}common/images/install-merch_file-manager.png">
+
+3.	Click **Web Root**.
+
+	<img src="{{ site.baseurl }}common/images/install-merch_file-manager-setup.png">
+
+4.	Click **Go**.
 
 	The File Manager displays in a separate browser window or tab page.
 
@@ -94,7 +68,9 @@ To extract the archive:
 4.	From the pop-up menu, click **Extract** as the following figure shows.
 
 	<img src="{{ site.baseurl }}common/images/install-merch_file-manager-window.png">
-
+5.	Click **Extract Files**.
 5.	Wait while the archive extracts to either a `magento2-ce` or `magento2-ee` subdirectory, depending on which Magento edition you have.
 
+	The following figure shows an example of an extracted archive.
 
+	<img src="{{ site.baseurl }}common/images/install-merch_file-manager-after.png">
