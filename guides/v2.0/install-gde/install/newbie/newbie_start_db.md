@@ -9,7 +9,7 @@ menu_node:
 github_link: install-gde/install/newbie/newbie_start_db.md
 ---
 
-<h2 id="newbie-db">Step 3. Configure a database and a database user</h2>
+<h2 id="newbie-db">Configure a database and a database user</h2>
 To configure a MySQL database and database user:
 
 1.	In the Databases section, click **MySQL Databases** as the following figure shows.

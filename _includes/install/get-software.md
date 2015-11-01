@@ -19,7 +19,7 @@ These packages are easy to get and install. You don't need to use Composer, all 
 <tr> 
 	<td>Magento CE</td>
 	<td><p><a href="http://www.magento.com/download" target="_blank">www.magento.com/download</a></p>
-		<p>Choose either the software </td>
+		<p>Choose either the software or the software and sample data.</p></td>
 </tr>
 <tr> 
 	<td>Magento EE</td>
@@ -51,7 +51,7 @@ In the event you need additional help, consult the following resources.
 	<td>Magento CE and Magento EE</td>
 	<td><ul><li><a href="http://community.magento.com/" target="_blank">Magento support forums</a></li>
 	<li><a href="http://magento.stackexchange.com" target="_blank">magento.stackexchange.com</a></li>
-	<li><a href="https://twitter.com/ask_magento" target="_blank">Twitter (<tt>@ask_magento</tt>)</a></li></ul>
+	<li><a href="https://twitter.com/ask_magento" target="_blank">Twitter (<code>@ask_magento</code>)</a></li></ul>
 	</td>
 </tr>
 <tr> 

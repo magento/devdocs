@@ -9,4 +9,4 @@ menu_node:
 github_link: install-gde/install/newbie/newbie_start_cron.md
 ---
 
-<h2 id="newbie-db">Step 5. Set up scheduled tasks (cron)</h2>
+<h2 id="newbie-db">Set up scheduled tasks (cron)</h2>
