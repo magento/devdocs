@@ -1,5 +1,8 @@
 <div markdown="1">
 
+<h2 id="sample-clone">Install sample data by cloning repositories</h2>
+TBD
+
 <div class="bs-callout bs-callout-warning">
     <p>Due to recent changes, you can now use sample data with either the <code>develop</code> branch (more current) or the <code>master</code> branch (more stable) but only if you <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html#instgde-prereq-compose-clone">cloned</a> the corresponding branch of the Magento 2 GitHub repository.</p>
     <p>We recommend you use the <code>master</code> branch because it's more stable. If you're contributing code to the Magento 2 repository and you need the most recent code, use the <code>develop</code> branch.</p>
