@@ -42,7 +42,7 @@ Command syntax:
 
 	magento dev:urn-catalog:generate <path>
 
-where `<path>` is the path to the configuration file to generate. For PHPStorm, the default is `.idea/misc.xml`.
+where `<path>` is the path to your `misc.xml` file, which is located relative to your project root. Typically, `<path>` is `.idea/misc.xml`
 
 #### Related topics
 
