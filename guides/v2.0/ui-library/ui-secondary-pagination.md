@@ -9,9 +9,9 @@ menu_order: 2
 github_link: uilibrary/ui-secondary-pagination.md
 ---
 
-<h3 id="pagination">UI Library Pagination Component</h3>
+<h3 id="pagination">UI Pagination Component</h3>
 
-The UI library pagination component is a plugin for the listing component. Responsible for rendering pagination UI and applying pagination criteria to collection.
+The UI pagination component is a plugin for the listing component. Responsible for rendering pagination UI and applying pagination criteria to collection.
 
 You can configure pagination in several ways:
 

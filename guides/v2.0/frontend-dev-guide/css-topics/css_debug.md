@@ -9,7 +9,7 @@ github_link: frontend-dev-guide/css-topics/css_debug.md
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css_debug.html
 ---
 
-<h2>Overview</h2>
+<h2>What's in this topic</h2>
 
 <p>
 The topic describes how the changes you make in stylesheets are applied in the client-side and server-side LESS <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">compilation modes</a>, and suggests the approaches and tools you can use to streamline the process of applying and debugging customizations. </p>

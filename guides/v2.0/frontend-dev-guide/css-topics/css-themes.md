@@ -8,7 +8,7 @@ github_link: frontend-dev-guide/css-topics/css-themes.md
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css-themes.html
 ---
 
-<h2 id="fedg_css-in-themes_overview">Overview</h2>
+<h2 id="fedg_css-in-themes_overview">What's in this topic</h2>
 
 <p>In the Magento application, CSS files are included in <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html" target="_blank">layout files</a>. </p>
 
