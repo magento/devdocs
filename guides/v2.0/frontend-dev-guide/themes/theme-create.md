@@ -9,7 +9,7 @@ github_link: frontend-dev-guide/themes/theme-create.md
 redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-create.html
 ---
 
-<h2 id="layout_theme_how-to_overview">Overview</h2>
+<h2 id="layout_theme_how-to_overview">What's in this topic</h2>
 
 This topic discusses how to create the files that make up a theme, how to add a logo to a theme, and how to size images.
 

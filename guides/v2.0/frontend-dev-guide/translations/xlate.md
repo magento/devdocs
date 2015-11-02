@@ -97,8 +97,6 @@ Magento translates words and phrases when all of the following conditions are me
 *	The Magento code base has the necessary translation dictionaries for a language
 *	This language is configured by the store administrator to be used in specified scope (that is, storefront)
 
-In a dictionary, every phrase is used only once even if belongs to different modules or themes. The only exception to this is when a duplicate phrase belongs to one or more modules and themes at the same time.
-
 The Magento application automatically assembles translation dictionaries located in modules' `i18n` directory into a dictionary per language. For example, Brazilian Portuguese (`pt_BR`) translation dictionaries might be located in module and theme directories similar to the following:
 
 	app/code/Magento/Checkout/i18n/pt_BR.csv

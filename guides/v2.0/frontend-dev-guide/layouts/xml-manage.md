@@ -9,7 +9,7 @@ github_link: frontend-dev-guide/layouts/xml-manage.md
 redirect_from: /guides/v1.0/frontend-dev-guide/layouts/xml-manage.html
 ---
 
-<h2>Introduction</h2>
+<h2>What's in this topic</h2>
 
 This article describes the following typical layout customization tasks:
 
