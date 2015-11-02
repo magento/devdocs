@@ -22,13 +22,79 @@ This topic discusses how to set up a connection from your Magento web node to a 
   <p>This is an advanced topic that should be used only by an experienced network administrator or database administrator. You must have <code>root</code> access to the file system and to the MySQL database on both hosts.</p>
 </div>
 
+### Prerequisites
+Before you begin, you must:
+
+*	Install MySQL server on the remote database host 
+*	Install the MySQL client on your Magento web node. Consult MySQL documentation for details or see TBD.
+*	Create a database instance on the database server
+
+### Connection issues
 If you have issues connecting to either host, you probably need to change your firewall and SELinux rules to allow the hosts to communicate with each other.
 
 <h2 id="instgde-prereq-mysql-remote-create">Create the remote connection</h2>
-TBD
+To create a remote connection:
+
+1.	On your database server, as a user with `root` privileges, open your MySQL configuration file.
+
+	To locate it, enter the following command:
+
+		mysql --help
+
+	The location displays similar to the following:
+
+		Default options are read from the following files in the given order:
+		/etc/my.cnf /etc/mysql/my.cnf /usr/etc/my.cnf ~/.my.cnf
+
+2.	Anywhere except the `[mysqld]` section, add the following:
+
+		bind-address = <ip address of your Magento web node>
+
+	<a href="https://dev.mysql.com/doc/refman/5.1/en/server-options.html" target="_blank">More information about `bind-address`</a>
+
+3.	Save your changes to the configuration file and exit the text editor.
+4.	Restart the MySQL service:
+
+	CentOS: `service mysqld restart`
+
+	Ubuntu: TBD
 
 <h2 id="instgde-prereq-mysql-remote-access">Grant access to a database user</h2>
-TBD
+To enable your web node to connect to the database server, you must grant a web node user access to the database on the remote server.
+
+This example grants the `root` database user full access to the database on the remote host.
+
+To grant access to a database user:
+
+1.	Log in to the database server.
+2.	Connect to the MySQL database as the `root` user.
+3.	Enter the following command:
+
+		GRANT ALL ON <local database name>.* TO <remote web node user name>@<remote web node server ip address> IDENTIFIED BY '<database user password>';
+
+	For example,
+
+		GRANT ALL ON magento_remote.* TO root@192.0.2.50 IDENTIFIED BY 'rootuserpassword';
+
+<h2 id="instgde-prereq-mysql-remote-verify">Verify database access</h2>
+On your web node host, enter the following command to verify the connection works:
+
+	mysql -u <local database user name> -h <database server ip address> -p
+
+If the MySQL monitor displays as follows, you're ready to install the Magento software:
+
+	Welcome to the MySQL monitor.  Commands end with ; or \g.
+	Your MySQL connection id is 213
+	Server version: 5.6.26 MySQL Community Server (GPL)
+
+	Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
+
+	Oracle is a registered trademark of Oracle Corporation and/or its
+	affiliates. Other names may be trademarks of their respective
+	owners.
+
+	Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
 
 <h2 id="instgde-prereq-mysql-remote-install">Install the Magento software</h2>
 TBD
