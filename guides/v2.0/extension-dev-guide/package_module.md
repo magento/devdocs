@@ -40,9 +40,15 @@ The `composer.json` uses [Composer's generic schema](https://getcomposer.org/doc
 <td><code>type</code> </td>
 <td>For modules, this value must be set to <code>magento2-module</code>. Other possible types are <code>metapackage</code>, <code>magento2-theme</code>, and <code>magento2-language</code>.</td>
 </tr>
-<tr>
-<td><code>extra-&gt;map</code>  </td>
-<td>The mapping information for the marshalling of the package. The first line specifies which files to marshall. Specify <code>"*"</code> to marshall all files. The second line specifies where to place them, relative to the <code>&lt;Vendor></code> directory. </td>
+
+
+
+<td><code>autoload </code></td>
+<td>Specify necessary information to be loaded, such as registration.php. For more information, see <a href="https://getcomposer.org/doc/01-basic-usage.md#autoloading">Autoloading</a> from Composer.</td>
+
+<!-- <td><code>extra-&gt;map</code>  </td>
+<td>The mapping information for the marshaling of the package. The first line specifies which files to marshal. Specify <code>"*"</code> to marshal all files. The second line specifies where to place them, relative to the <code>&lt;Vendor></code> directory. </td> -->
+
 </tr>
 
 </tbody>
@@ -50,7 +56,7 @@ The `composer.json` uses [Composer's generic schema](https://getcomposer.org/doc
 
 
 
-A description of the four types of packages that you can submit to Marketplace:
+A description of the types of packages that you can submit to Marketplace:
 
 * __magento2-module__&#8212;A package that usually contains source files plus the top level composer.json, which indicates dependencies and so on. This can be sold in the store directly, or it can be a dependent package hierarchy of some parent package.
 
@@ -64,7 +70,7 @@ A description of the four types of packages that you can submit to Marketplace:
 
 ###Using Metapackages
 
-Metapackages allow you to group extensions with multiple packages into a cohesive unit. This works exactly as described in standard [composer.json documentation](https://getcomposer.org/doc/04-schema.md#type). If you have an extension that uses more than one package you must use a metapackage as the **root package**. Otherwise you should not use metapackage.
+Metapackages allow you to group extensions with multiple packages into a cohesive unit. This works exactly as described in standard [composer.json documentation](https://getcomposer.org/doc/04-schema.md#type). If you have an extension that uses more than one package you must use a metapackage as the **root package**. Otherwise you should not use metapackage. A metapackage that you submit to Magento Marketplace should be a .zip file containing only the metapackage composer.json file.
 
 
 ####Metapackage example 
@@ -80,13 +86,20 @@ The following example is a `composer.json` metapackage file for a module:
     "type": "metapackage",
     "require": {
         "magento/module-sample-data": "self.version",
-        "magento/sample-data-media": "~0.42.0-beta2"
+        "magento/sample-data-media": "~0.42.0-beta2",
+    },
+    "autoload": {
+        "files": [ "registration.php" ],
+        "psr-4": {
+            "Magento\\sample-data": ""
+                }
     }
 }
 
+
 {% endhighlight %}
 
-###Sample composer.json file
+### Sample composer.json file
 
 
 The following example is a `composer.json` file for a module:
@@ -98,15 +111,50 @@ The following example is a `composer.json` file for a module:
     "require": {
         "php": "5.4.*|5.5.*"
     },
+    "autoload": {
+        "files": [ "registration.php" ],
+        "psr-4": {
+            "Magento\\module-one": ""
+                },
+    },
     "type": "magento2-module",
     "version": "0.1.1",
 }
 {% endhighlight %}
 
 
-<h2 id="packaging">Package and publish a module</h2>
+<h2 id="packaging">Package and publish the module</h2>
+
+<!-- 
+
+Plan A (AppC):
+
+1. No github support (yet). 
+2. Package it up with metapackage composer.json into a zip file.
+3. Follow submission process (which is...?), including uploading the zip file. 
+ 
+Plan-B:
+
+1. Based on github.
+2. And then?... -->
+
+
+ 
 
 After you have created the module's `composer.json` file in the root directory of the module, Composer can recognize your package as compatible with its deployment strategy. Such packages can be published to a code repository (GitHub, SVN, etc.), packagist.org, or on your own private package repository.
+
+
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Third party repositories are supported.</p></span>
+</div>
+
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Third party repositories are not supported.</p></span>
+</div>
 
 <h3 id="hosting">Hosting on GitHub and Packagist</h3>
 Prerequisite: git must be set up on your machine.
@@ -119,6 +167,12 @@ Prerequisite: git must be set up on your machine.
     2. Click the Submit Package button and paste your GitHub repository link. Packagist automatically gathers the information from the module's `composer.json` file and link it to the GitHub repository, allowing you to reference the package as `vendor/module` without any additional repository information, as is required solely using GitHub.
 
 <h3 id="private_repos">Hosting on a private packaging repository</h3>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>If you use the Web Setup Wizard, only the Magento Marketplace repository can be used for installation. 
+A private repository can be used for development or private code but a Magento installation is accomplished only through a CLI installation. The Setup Wizard cannot install anything located in a private repository.</p></span>
+</div>
 
 1. Set up your own Composer packaging repository using a system such as [Satis](https://getcomposer.org/doc/articles/handling-private-packages-with-satis.md) or [Toran](https://toranproxy.com/).
 2. Create the package in a way similar to the described above.
@@ -139,7 +193,6 @@ Prerequisite: git must be set up on your machine.
 
 All packages on the private packaging repository can now be referenced within the `require` field.
 
-
-
 <!-- ##Submitting your module to Marketplace -->
+
 

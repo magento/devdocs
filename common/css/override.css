@@ -304,3 +304,7 @@ background-color:#CACACA;;
 cursor: hand; cursor: pointer;
 
 }
+
+p.editor {font-family: fantasy;
+font-size: 1.5em;
+color: #9C2727;}
