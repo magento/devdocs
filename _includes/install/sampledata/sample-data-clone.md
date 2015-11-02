@@ -1,5 +1,10 @@
 <div markdown="1">
 
+<div class="bs-callout bs-callout-warning">
+    <p>Due to recent changes, you can now use sample data with either the <code>develop</code> branch (more current) or the <code>master</code> branch (more stable) but only if you <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html#instgde-prereq-compose-clone">cloned</a> the corresponding branch of the Magento 2 GitHub repository.</p>
+    <p>We recommend you use the <code>master</code> branch because it's more stable. If you're contributing code to the Magento 2 repository and you need the most recent code, use the <code>develop</code> branch.</p>
+</div>
+
 <h2 id="sample-prereq">Sample data prerequisites</h2>
 Before you install sample data, make sure you have done the following:
 1.  <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Clone the Magento 2 GitHub repository</a> (preferably the develop branch, which is the default).
@@ -23,10 +28,6 @@ You can clone the sample data repository in any of the following ways:
 
 *   Clone with the <a href="#instgde-prereq-sample-clone-ssh">SSH protocol</a>
 *   Clone with the <a href="#instgde-prereq-compose-clone-https">HTTPS protocol</a>
-
-<!-- <div class="bs-callout bs-callout-info" id="info">
-    <p><img src="{{ site.baseurl }}common/images/ee-only_small.png"> Enterprise Edition (EE) requires an additional repository with EE sample data. Contact your support representative for details.</p>
-</div> -->
 
 <h3 id="instgde-prereq-sample-clone-ssh">Clone with SSH</h3>
 To clone the Magento sample data GitHub repository using the SSH protocol:
@@ -73,13 +74,10 @@ fatal: The remote end hung up unexpectedly</pre>
 7.  Change to the <code>&lt;your Magento sample data clone dir>/dev/tools</code> directory.
 8.  Enter the following command:
     
-    php -f build-sample-data.php -- --ce-source="&lt;your Magento CE install dir>"
+        php -f build-sample-data.php -- --ce-source="&lt;your Magento CE install dir>"
 
 9.  Wait for the command to complete.
-   <!-- <div class="bs-callout bs-callout-info" id="info">
-    <p><img src="{{ site.baseurl }}common/images/ee-only_small.png"> You must run the same command from the EE sample data repository's <code>dev/tools</code> directory.</p>
-    </div> --></li>
-10. See <a href="#instgde-prereq-compose-clone-perms">Set file system permissions and ownership</a>.</li></ol>
+10. See <a href="#instgde-prereq-compose-clone-perms">Set file system permissions and ownership</a>.
 
 <h3 id="instgde-prereq-compose-clone-https">Clone with HTTPS</h3>
 To clone the Magento sample data GitHub repository using the HTTPS protocol:
@@ -118,18 +116,12 @@ To clone the Magento sample data GitHub repository using the HTTPS protocol:
 6.  Enter the following command:
 
         php -f build-sample-data.php -- --ce-source="&lt;your Magento CE install dir>"
-    <!-- <div class="bs-callout bs-callout-info" id="info">
-    <p><img src="{{ site.baseurl }}common/images/ee-only_small.png"> You must run the same command from the EE sample data repositor's <code>dev/tools</code> directory.</p>
-    </div> -->
+
 7.  Wait for the command to complete.
 8.  See the next section.
 
 <h3 id="instgde-prereq-compose-clone-perms">Set file system permissions and ownership</h3>
 Because the <code>php build-sample-data.php</code> script creates symlinks between the sample data repository and your Magento 2 repository, you must set file system permissions and ownership in the sample data repository. Failure to do so will result in errors accessing the storefront.
-
-<!-- <div class="bs-callout bs-callout-info" id="info">
-    <p><img src="{{ site.baseurl }}common/images/ee-only_small.png"> Don't forget to clone the Enterprise Edition (EE) sample data repository and link it to your Magento CE repository.</p>
-</div> -->
 
 To set file system permissions and ownership on the sample data repository:
 
@@ -152,6 +144,4 @@ To set file system permissions and ownership on the sample data repository:
     If you must enter the commands as <code>sudo</code>, use
 
         sudo find . -type d -exec chmod 770 {} \; && sudo find . -type f -exec chmod 660 {} \;
-    <!-- <div class="bs-callout bs-callout-info" id="info">
-    <p><img src="{{ site.baseurl }}common/images/ee-only_small.png"> You must set ownership and permissions on both the CE and the EE sample data repositories.</p>
-    </div> -->
+    
