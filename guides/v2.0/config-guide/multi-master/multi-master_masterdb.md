@@ -50,11 +50,17 @@ Create checkout and OMS master databases as follows:
 
 5.	Enter `exit` to quit the command prompt.
 
-6.	Verify the databases:
+6.	Verify the databases, one at a time:
+
+	Checkout database:
 
 		mysql -u magento_checkout -p
+		exit
+
+	Order management database:
 
 		mysql -u magento_oms -p
+		exit
 
 	If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.
 
