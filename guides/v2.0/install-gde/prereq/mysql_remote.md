@@ -97,7 +97,11 @@ If the MySQL monitor displays as follows, you're ready to install the Magento so
 
 
 <h2 id="instgde-prereq-mysql-remote-install">Install the Magento software</h2>
-TBD
+When you install the Magento software using either the command line or Setup Wizard, you must specify database information as follows:
+
+*	Database host is the *remote database server* IP address
+*	Database user name is the *local web node* database user to which you gave access
+*	Database password is the local web node user's password
 
 
 #### Related topics
