@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Low-level cache options</title>
+	<title>Set up optional database replication</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/config-guide/config/caching_low-level.html">
+	<link rel="canonical" href="//guides/v2.0/config-guide/multi-master/multi-master_slavedb.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Low-level cache options</h1>
+		<h1 class="page-heading">Set up optional database replication</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/config-guide/config/caching_low-level.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/config-guide/multi-master/multi-master_slavedb.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -211,25 +211,114 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<p>The Magento application uses a low-level cache frontend and backend to provide access to the cache storage.</p>
+		<p><img src="/common/images/ee-only_large.png" /></p>
 
-<h2 id="cache-lowlevel-front">Low-level frontend cache</h2>
-<p>Magento extends <a href="http://framework.zend.com/manual/1.12/en/zend.cache.frontends.html" target="_blank">Zend_Cache_Core</a> by implementing <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Cache/Core.php" target="_blank">Magento\Framework\Cache\Core</a> frontend cache. </p>
-
-<h2 id="cache-lowlevel-front">Low-level backend cache</h2>
-<p>In general, the Magento application works with any backend cache that <a href="http://framework.zend.com/manual/1.12/en/zend.cache.backends.html" target="_blank">Zend_Cache Backends</a> supports. However, this guide covers only the following low-level backend caches:</p>
+<h2 id="config-ee-multidb-slave-over">Overview of database replication</h2>
+<p>Setting up database replication provides the following benefits:</p>
 
 <ul>
-  <li><a href="/guides/v2.0/config-guide/redis/config-redis.html">Redis</a></li>
-  <li><a href="/guides/v2.0/config-guide/database/database.html">Database</a></li>
-  <li>File system (default): No configuration is necessary to use file system caching.</li>
+  <li>Provides data backup</li>
+  <li>Enables data analysis without affecting the master database</li>
+  <li>Scalability</li>
 </ul>
 
-<p><a href="/guides/v2.0/config-guide/varnish/config-varnish.html">Varnish</a> doesn’t require setting up a low-level cache backend.</p>
+<p>MySQL databases replicate asynchronously, which means slaves do not need to be connected permanently to receive updates from the master. </p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>We'll periodically add more low-level cache types so watch this space.</p>
-</div>
+<h2 id="config-ee-multidb-slave-conf">Configure database replication</h2>
+<p>An in-depth discussion of database replication is beyond the scope of this guide. To set it up, you can consult a resource like:</p>
+
+<ul>
+  <li><a href="https://dev.mysql.com/doc/refman/5.6/en/replication.html" target="_blank">MySQL documentation</a></li>
+  <li><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-master-slave-replication-in-mysql" target="_blank">How To Set Up Master Slave Replication in MySQL (digitalocean)</a></li>
+</ul>
+
+<p>Magento provides sample MySQL configurations for your slave databases. A simple configuration is provided with the <code>ResourceConnections</code> class <code>README.md</code>.</p>
+
+<p>The following is more advanced and is provided for your information only:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">return</span> <span class="k">array</span> <span class="p">(</span>
+   <span class="c1">//...</span>
+  <span class="s1">&#39;db&#39;</span> <span class="o">=&gt;</span>
+  <span class="k">array</span> <span class="p">(</span>
+    <span class="s1">&#39;connection&#39;</span> <span class="o">=&gt;</span>
+    <span class="k">array</span> <span class="p">(</span>
+      <span class="s1">&#39;indexer&#39;</span> <span class="o">=&gt;</span>
+      <span class="k">array</span> <span class="p">(</span>
+        <span class="s1">&#39;host&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;default-master-host&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;dbname&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;active&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;persistent&#39;</span> <span class="o">=&gt;</span> <span class="k">NULL</span><span class="p">,</span>
+      <span class="p">),</span>
+      <span class="s1">&#39;default&#39;</span> <span class="o">=&gt;</span>
+      <span class="k">array</span> <span class="p">(</span>
+        <span class="s1">&#39;host&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;default-master-host&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;dbname&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;active&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span>
+      <span class="p">),</span>
+      <span class="s1">&#39;checkout&#39;</span> <span class="o">=&gt;</span>
+      <span class="k">array</span> <span class="p">(</span>
+        <span class="s1">&#39;host&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;checkout-master-host&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;dbname&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;checkout&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;model&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;mysql4&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;engine&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;innodb&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;initStatements&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;SET NAMES utf8;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;active&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span>
+      <span class="p">),</span>
+      <span class="s1">&#39;sales&#39;</span> <span class="o">=&gt;</span>
+      <span class="k">array</span> <span class="p">(</span>
+        <span class="s1">&#39;host&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;sales-master-host&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;dbname&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;sales&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;model&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;mysql4&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;engine&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;innodb&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;initStatements&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;SET NAMES utf8;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;active&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span>
+      <span class="p">),</span>
+    <span class="p">),</span>
+    <span class="s1">&#39;slave_connection&#39;</span> <span class="o">=&gt;</span>
+    <span class="k">array</span> <span class="p">(</span>
+      <span class="s1">&#39;default&#39;</span> <span class="o">=&gt;</span>
+      <span class="k">array</span> <span class="p">(</span>
+        <span class="s1">&#39;host&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;default-slave-host&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;dbname&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;magento&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;read_only&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;password&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;active&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span>
+      <span class="p">),</span>
+      <span class="s1">&#39;checkout&#39;</span> <span class="o">=&gt;</span>
+      <span class="k">array</span> <span class="p">(</span>
+        <span class="s1">&#39;host&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;checkout-slave-host&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;dbname&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;checkout&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;read_only&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;password&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;model&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;mysql4&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;engine&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;innodb&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;initStatements&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;SET NAMES utf8;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;active&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span>
+      <span class="p">),</span>
+      <span class="s1">&#39;sales&#39;</span> <span class="o">=&gt;</span>
+      <span class="k">array</span> <span class="p">(</span>
+        <span class="s1">&#39;host&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;sales-slave-host&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;dbname&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;sales&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;read_only&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;password&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;model&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;mysql4&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;engine&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;innodb&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;initStatements&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;SET NAMES utf8;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;active&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span>
+      <span class="p">),</span>
+    <span class="p">),</span>
+    <span class="s1">&#39;table_prefix&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+  <span class="p">),</span>
+<span class="c1">//.......</span></code></pre></div>
+
 
 
 		</div>
@@ -595,7 +684,7 @@
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v2.0/config-guide/config/caching_low-level.html">Low-level cache options</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/caching_low-level.html">Low-level cache options</a></li>
 						
 								
 							
@@ -736,7 +825,7 @@
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/multi-master/multi-master_slavedb.html">Set up optional database replication</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/config-guide/multi-master/multi-master_slavedb.html">Set up optional database replication</a></li>
 						
 								
 								

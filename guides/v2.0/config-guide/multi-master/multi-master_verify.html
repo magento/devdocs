@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Low-level cache options</title>
+	<title>Verify split databases</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/config-guide/config/caching_low-level.html">
+	<link rel="canonical" href="//guides/v2.0/config-guide/multi-master/multi-master_verify.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Low-level cache options</h1>
+		<h1 class="page-heading">Verify split databases</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/config-guide/config/caching_low-level.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/config-guide/multi-master/multi-master_verify.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -211,25 +211,39 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<p>The Magento application uses a low-level cache frontend and backend to provide access to the cache storage.</p>
+		<p><img src="/common/images/ee-only_large.png" /></p>
 
-<h2 id="cache-lowlevel-front">Low-level frontend cache</h2>
-<p>Magento extends <a href="http://framework.zend.com/manual/1.12/en/zend.cache.frontends.html" target="_blank">Zend_Cache_Core</a> by implementing <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Cache/Core.php" target="_blank">Magento\Framework\Cache\Core</a> frontend cache. </p>
-
-<h2 id="cache-lowlevel-front">Low-level backend cache</h2>
-<p>In general, the Magento application works with any backend cache that <a href="http://framework.zend.com/manual/1.12/en/zend.cache.backends.html" target="_blank">Zend_Cache Backends</a> supports. However, this guide covers only the following low-level backend caches:</p>
+<p>After configuration, the master databases are configured as follows:</p>
 
 <ul>
-  <li><a href="/guides/v2.0/config-guide/redis/config-redis.html">Redis</a></li>
-  <li><a href="/guides/v2.0/config-guide/database/database.html">Database</a></li>
-  <li>File system (default): No configuration is necessary to use file system caching.</li>
+  <li>Main magento database: 250 tables</li>
+  <li>Magento checkout database: 10 tables</li>
+  <li>Magento OMS database: 54 tables</li>
 </ul>
 
-<p><a href="/guides/v2.0/config-guide/varnish/config-varnish.html">Varnish</a> doesn’t require setting up a low-level cache backend.</p>
+<p>To verify your split databases are working properly, perform the following tasks and verify that data is added to the database tables using a database tool like <a href="/guides/v2.0/install-gde/prereq/optional.html#install-optional-phpmyadmin" target="_blank">phpmyadmin</a>:</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>We'll periodically add more low-level cache types so watch this space.</p>
-</div>
+<table>
+<tbody>
+	<col width="25%" />
+	<col width="75%" />
+	<tr>
+		<th>What to verify</th>
+		<th>How to verify</th>
+	</tr>
+<tr>
+	<td>Checkout database is working</td>
+	<td>Add items to a cart. Verify that rows have been added to your checkout database's <code>quote</code>, <code>quote_address</code>, and <code>quote_item</code> tables.</td>
+</tr>
+<tr>
+	<td>OMS database is working</td>
+	<td>Complete an order (any payment method, including check/money order). Verify that rows have been added to your OMS database's <code>sales_order_address</code>, <code>sales_order_item</code>, and <code>sales_order_payment</code> tables.</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="next-step-optional">Next step (optional)</h4>
+<p><a href="/guides/v2.0/config-guide/multi-master/multi-master_slavedb.html">Set up optional database replication</a></p>
 
 
 		</div>
@@ -595,7 +609,7 @@
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v2.0/config-guide/config/caching_low-level.html">Low-level cache options</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/caching_low-level.html">Low-level cache options</a></li>
 						
 								
 							
@@ -732,7 +746,7 @@
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/multi-master/multi-master_verify.html">Verify split databases</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/config-guide/multi-master/multi-master_verify.html">Verify split databases</a></li>
 						
 								
 							
