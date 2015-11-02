@@ -15,8 +15,8 @@ github_link: mtf/mtf_entities/mtf_constraint.md
 
 ## Constraint overview {#mtf_constraint_overview}
 
-The MTF constraint serves for performing assertions after test flow.
-Each constraint name must be unique within application and placed in the module to which the constraint is belonged. Constraints run automatically after test flow has been finished.
+The MTF constraint performs assertions after a test flow. A test flow is a set of test steps without assertions.
+Each constraint name must be globally unique in Magento application and must be placed in the module to which it belongs. Constraints run automatically after test flow has finished.
 
 ![Constraints and test flow]({{site.baseurl}}common/images/mtf_constraint_flow.png)
 
@@ -38,36 +38,38 @@ The constraint PHP class must:
   * `AssertOrderPlaced` corresponds to `Assert{entityName}{action}`
   * `AssertProductForm` corresponds to `Assert{entityName}{place}`
 
-* Be extended from the [Magento\Mtf\Constraint\AbstractConstraint](https://github.com/magento/mtf/blob/develop/Magento/Mtf/Constraint/AbstractConstraint.php) class.
+* Extend the [Magento\Mtf\Constraint\AbstractConstraint](https://github.com/magento/mtf/blob/develop/Magento/Mtf/Constraint/AbstractConstraint.php) class.
 
 * Contain the following methods: 
 
   * `processAssert` which contains assertions. A `PHPUnit_Framework_Assert` class (`<magento2>/dev/tests/functional/vendor/phpunit/phpunit/src/Framework/Assert.php`) can be used to simplify assertions
-  * `toString` which returns message in case of successful assertion
+  * `toString` which returns a success message
 
 ### Constraint arguments
 
-In the MTF, [data set][] values are shared with a test class and constraints. A node name in [data set][] can be complex like `item1/item2/item3`. An argument name in the `processAssert()` must be the same as the `item1` to transfer data from [data set][] to constraint.
+In the MTF, [data set][] values are shared with a test class and constraints. A node name in data set can be complex like `item1/item2/item3`. The argument name in `processAssert()` must be the same as the `item1` to transfer data from data set to constraint.
  
-If a [data set][] variable is used in the test, and is overwritten, it is transfered as altered to the constraint. Variables can be overwritten in the _injectable_ [test case][]  class in `test()`, `__inject()` and `__prepare()` methods, and then passed to constraint class by `return`. Furthermore, any returned value of these methods can be used as argument in constraint.
+If a data set variable is used in the test, and is overwritten, it is transfered as altered to the constraint. Variables can be overwritten in the _injectable_ [test case][]  class in `test()`, `__inject()` and `__prepare()` methods, and then passed to the constraint class by `return`. Furthermore, any returned value of these methods can be used as an argument in constraint.
 
-An object that is not defined in the [data set][] or isn't returned from the [test case][] is created using the Object Manager.
+An object that is not defined in the data set or isn't returned from the test case is created using the Object Manager.
 
-Let's see the following diagram for the `CreateSimpleProductEntityTest` test and the `AssertProductPricesOnCategoryPage` constraint:
+Let's see the following diagrams for the `CreateSimpleProductEntityTest` test and the `AssertProductPricesOnCategoryPage` constraint. Data set from the diagrams contains three variables with data: `product`, `category` and `price`.
 
-<a href="{{ site.baseurl }}common/images/mtf_constraint_arguments.png"><img src="{{ site.baseurl }}common/images/mtf_constraint_arguments.png" /></a>
+<a href="{{ site.baseurl }}common/images/mtf_constraint_arguments_green.png"><img src="{{ site.baseurl }}common/images/mtf_constraint_arguments_green.png" /></a>
 
-Data set from the diagram contains three variables with data: `product`, `category` and `price`.
+<span style="color: #21610B; font-weight:bold">Green arrows</span> show that `product` variable is transfered to the test and the constraint.
 
-- <span style="color: #21610B; font-weight:bold">Green arrows</span> show that `product` variable is transfered to the test and the constraint
+<a href="{{ site.baseurl }}common/images/mtf_constraint_arguments_orange.png"><img src="{{ site.baseurl }}common/images/mtf_constraint_arguments_orange.png" /></a>
 
-- <span style="color: #FF8000; font-weight:bold">Orange arrows</span> show that `category` variable is transfered to the test directly, overwritten by `testCreate()` method and only then transfered to constraint
+<span style="color: #FF8000; font-weight:bold">Orange arrows</span> show that `category` variable is transfered to the test directly, overwritten by `testCreate()` method and only then transfered to constraint.
 
-- <span style="color: #0000FF; font-weight:bold">Blue arrow</span> shows that `price` variable is transfered to the constraint only
+<a href="{{ site.baseurl }}common/images/mtf_constraint_arguments_blue.png"><img src="{{ site.baseurl }}common/images/mtf_constraint_arguments_blue.png" /></a>
+
+<span style="color: #0000FF; font-weight:bold">Blue arrow</span> shows that `price` variable is transfered to the constraint only.
 
 ### Constraint in the test {#mtf_constraint_variation}
 
-A [test case][]  contains constraints as nodes in variations of a data set, that are references on the PHP classes with corresponding assertions.
+A [test case][]'s constraints are nodes in variations of a data set. The data set has references to the PHP classes with assertions.
 
 Constraints are performed in order they listed in the data set.
 
@@ -77,8 +79,8 @@ Constraints are performed in order they listed in the data set.
 
 A test can contain constraints from different modules.
 
-<div class="bs-callout bs-callout-danger">
-  <p>Be careful when you use constraints from another module. A module that is referred by constraint can be disabled, that fails in the test execution. It is safe to use constraints of different modules in one test case if that modules have hard dependencies (inseverably dependent from each other).
+<div class="bs-callout bs-callout-warning">
+  <p>Be careful when you use constraints from another module. A module that is referred by constraint can be disabled, that fails in the test execution. It is safe to use constraints of different modules in one test case if that modules have hard dependencies.
   </p>
 </div>
 
@@ -105,7 +107,7 @@ The following example shows the `<magento2>/dev/tests/functional/tests/app/Magen
 
 {%endhighlight%}
 
-Directly after the test flow, both constraints are performed in order they listed.
+Immediately after the test steps complete, both constraints are performed in the order listed.
 
 ### Tagging
 
@@ -149,7 +151,7 @@ Step 1. What module does it belong?
   
 Step 2. What name should constraint have?
   
-  Using [constraint naming principle](#mtf_constraint_assert) our constraint should be named as `AssertWidgetInGrid`.
+  Using [constraint naming principle](#mtf_constraint_assert), the constraint should be named as `AssertWidgetInGrid`.
 
 Step 3. Create `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Constraint/AssertWidgetInGrid.php` with [required structure](#mtf_constraint_assert)
 
@@ -157,19 +159,19 @@ Step 3. Create `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Co
 
 Step 4. Implement assertion in `processAssert()`
 
-**Assertion logic**: Take title of the widget from the widget [fixture][] , open the page with a grid, check if the grid has our title.
+**Assertion logic**: Take title of the widget from the widget [fixture][], open the page with a grid, check if the grid has our title.
 
 <script src="https://gist.github.com/dshevtsov/c1e2a8437e0d2b2036bd.js"></script>
 
 ## How to use constraint {#mtf_constraint_use}
 
-To use constraint we've created in previous section, add a corresponding node to [data set][] of your test,
+To use constraint we've created in previous section, add a corresponding node to the [data set][] of your test
 
 {%highlight xml%}
 <constraint name="Magento\Widget\Test\Constraint\AssertWidgetInGrid" />
 {%endhighlight%}
 
-in order that it must be performed.
+in the order that it must be performed.
 
 {%highlight xml%}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/mtf/etc/variations.xsd">
