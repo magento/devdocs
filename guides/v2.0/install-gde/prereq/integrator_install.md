@@ -17,6 +17,7 @@ github_link: install-gde/prereq/integrator_install.md
 *	<a href="#int-aud">Intended audience</a>
 *	<a href="#integrator-first-over">First steps</a>
 *	<a href="#integrator-first-composer">Get the metapackage</a>
+*	<a href="#instgde-prereq-compose-access">Set file system ownership and permissions</a>
 
 <h2 id="int-aud">Intended audience</h2>
 The audience for this topic is anyone who downloads the Magento metapackage using `composer create-project`. If that isn't you, go back and <a href="{{ site.gdeurl }}install-gde/continue.html">choose another starting point</a>.
@@ -56,4 +57,8 @@ The following sections discuss how to set file system ownership and permissions:
 <h3 id="install-perms-set">File system permissions and ownership</h3>
 {% include install/file-system-perms2-how.html %}
 
+#### Next step
+Install the Magento software:
 
+*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">Command line</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/web/install-web.html">Setup Wizard</a>

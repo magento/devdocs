@@ -142,8 +142,6 @@ To clone the Magento GitHub repository using the HTTPS protocol:
 
 4.	Continue with the next section.
 
-
-
 #### Next step
 
 After completing the tasks discussed on this page, see <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Update installation dependencies</a>.

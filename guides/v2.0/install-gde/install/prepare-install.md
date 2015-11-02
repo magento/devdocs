@@ -10,8 +10,11 @@ github_link: install-gde/install/prepare-install.md
 redirect_from: /guides/v1.0/install-gde/install/prepare-install.html
 ---
 
-<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
-<!-- Referring file: README.md owned by core -->
+#### Contents
+
+*	<a href="#install-update-depend">Introduction to Magento installation dependencies</a>
+*	<a href="#install-composer-install">Run `composer install` to update dependencies</a>
+*	<a href="#instgde-prereq-compose-access">Set file system ownership and permissions</a>
 
   
 <h2 id="install-update-depend">Introduction to Magento installation dependencies</h2>
@@ -27,7 +30,7 @@ Composer is a separate application that manages PHP dependencies. Before you can
 
 For you to be able to run the Magento application, make sure you perform all tasks as a user with privileges to write to the web server docroot. One way to do this is to log in as or switch to the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.
 
-<h2 id="install-composer-install">Running Composer to update dependencies</h2>
+<h2 id="install-composer-install">Run `composer install` to update dependencies</h2>
 Update installation dependencies as follows:
 
 1.	Log in to your Magento server as the Magento file system owner or <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">switch to that user</a>.
