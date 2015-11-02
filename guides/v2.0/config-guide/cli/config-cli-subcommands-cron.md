@@ -107,9 +107,8 @@ Before you run cron in the browser, remove the restriction from `.htaccess` as f
 
 3.	Save your changes and exit the text editor.
 
-You can then run cron in a web browser in any of the following ways (depending on your entry point to Magento):
+You can then run cron in a web browser as follows:
 
-	<your Magento host name or IP>/<Magento root>/cron.php[?group=<group name>]
 	<your Magento host name or IP>/<Magento root>/pub/cron.php[?group=<group name>]
 
 where
@@ -122,7 +121,7 @@ where
 
 For example,
 
-	http://magento.example.com/magento2/pub/cron.php?group=default
+	http://magento.example.com/magento2/pub/cron.php?group=index
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
