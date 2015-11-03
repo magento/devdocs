@@ -33,14 +33,22 @@ Consult the following table for how to get started.
 		</tr>
 		
 	<tr>
-		<td><p>Easy installation, no command line</p></td>
-		<td><p>Very little technical expertise, limited if any access to the Magento server.</p></td>
+		<td><p>Shared hosting, easy installation, no command line access</p></td>
+		<td><p>Uses a hosting provider like GoDaddy, has very little technical expertise, limited if any access to the Magento server.</p></td>
 		<td><ol><li>Downloads a compressed file that contains the Magento software.</li>
 			<li>Extracts it on the Magento server or asks a network administrator or hosting provider to do so.</li>
 			<li>Installs the Magento software using the Setup Wizard.</li></ol>
 		</td>
-		<td><p><a href="{{ site.gdeurl }}install-gde/install/newbie/newbie_start.html">Easy installation (hosting provider like GoDaddy)</a></p>
-			<p><a href="{{ site.gdeurl }}install-gde/install/zip_install.html">Easy installation (own server)</a></p></td>
+		<td><p><a href="{{ site.gdeurl }}install-gde/install/newbie/newbie_start.html">Easy installation (hosting provider like GoDaddy)</a></p></td>
+	</tr>
+	<tr>
+		<td><p>Easy installation, no command line, has own server</p></td>
+		<td><p>Some technical expertise, command line access to the Magento server.</p></td>
+		<td><ol><li>Downloads a compressed file that contains the Magento software.</li>
+			<li>Extracts it on the Magento server or asks a network administrator or hosting provider to do so.</li>
+			<li>Installs the Magento software using the Setup Wizard.</li></ol>
+		</td>
+		<td><p><a href="{{ site.gdeurl }}install-gde/install/zip_install.html">Easy installation (own server)</a></p></td>
 	</tr>
 	<tr>
 		<td><p>Integrator, packager</p></td>
