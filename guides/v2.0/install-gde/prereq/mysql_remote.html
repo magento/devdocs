@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>PHP 5.5 or 5.6&mdash;CentOS</title>
+	<title>Set up a remote MySQL database connection</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/install-gde/prereq/php-centos.html">
+	<link rel="canonical" href="//guides/v2.0/install-gde/prereq/mysql_remote.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">PHP 5.5 or 5.6&mdash;CentOS</h1>
+		<h1 class="page-heading">Set up a remote MySQL database connection</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/install-gde/prereq/php-centos.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/install-gde/prereq/mysql_remote.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -211,183 +211,160 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
-<!-- Referring file: README.md owned by core -->
-
-<h4 id="instgde-php-prereq-contents">Contents</h4>
+		<h4 id="contents">Contents</h4>
 
 <ul>
-  <li><a href="#php-support">PHP versions supported</a></li>
-  <li><a href="#php-centos-help-beginner">Help if you’re just starting out</a></li>
-  <li><a href="#centos-verify-php">Verify PHP is installed</a></li>
-  <li><a href="#instgde-prereq-php56-install-centos">PHP 5.6 on CentOS</a></li>
-  <li><a href="#instgde-prereq-php55-install-centos">PHP 5.5 on CentOS</a></li>
-  <li><a href="#instgde-prereq-timezone">Set PHP configuration options</a></li>
+  <li><a href="#instgde-prereq-mysql-remote-over">When to set up a remote database connection</a></li>
+  <li><a href="#instgde-prereq-mysql-remote-create">Create the remote connection</a></li>
+  <li><a href="#instgde-prereq-mysql-remote-access">Grant access to a database user</a></li>
+  <li><a href="#instgde-prereq-mysql-remote-verify">Verify database access</a></li>
+  <li><a href="#instgde-prereq-mysql-remote-install">Install the Magento software</a></li>
 </ul>
+
+<h2 id="instgde-prereq-mysql-remote-over">When to set up a remote database connection</h2>
+<p>This topic discusses how to set up a connection from your Magento web node to a MySQL server on another host. If you have a separate database host, you must perform the tasks discussed in this topic to install and use the Magento software. (The Magento <em>web node</em> is the server on which you installed the Magento software and that runs your web server.)</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>If you must install both Apache and PHP, <a href="/guides/v2.0/install-gde/prereq/apache.html">install Apache</a> first.</p></span>
+  <p>This is an advanced topic that should be used only by an experienced network administrator or database administrator. You must have <code>root</code> access to the file system and you must be able to log in to MySQL as <code>root</code>.</p>
 </div>
 
-<h2 id="php-support">PHP versions supported</h2>
-
-<p>Magento requires:</p>
-
-<ul>
-  <li>PHP 5.5.x</li>
-  <li>PHP 5.6.x </li>
-</ul>
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Magento no longer supports PHP 5.4.</p></span>
-</div>
-
-<h2 id="php-centos-help-beginner">Help if you're just starting out</h2>
-<p>If you’re new to all this and need some help getting started, we suggest the following:</p>
+<h3 id="prerequisites">Prerequisites</h3>
+<p>Before you begin, you must:</p>
 
 <ul>
-  <li><a href="/guides/v2.0/install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a></li>
-  <li><a href="/guides/v2.0/install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a></li>
-  <li><a href="/guides/v2.0/install-gde/basics/basics_os-version.html">What operating system is my server running?</a></li>
-  <li><a href="/guides/v2.0/install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a></li>
+  <li><a href="/guides/v2.0/install-gde/prereq/mysql.html">Install MySQL server</a> on the database server </li>
+  <li><a href="/guides/v2.0/install-gde/prereq/mysql.html#instgde-prereq-mysql-config">Create a database instance</a> on the database server</li>
+  <li>Install the MySQL client on your Magento web node. Consult MySQL documentation for details.</li>
 </ul>
 
-<h2 id="centos-verify-php">Verify PHP is installed</h2>
-<p>To verify if PHP is installed already, enter <code>php -v</code>. If PHP is installed, messages similar to the following display:</p>
-
-<pre><code>PHP 5.6.4 (cli) (built: Dec 20 2014 17:30:46)
-Copyright (c) 1997-2014 The PHP Group
-Zend Engine v2.6.0, Copyright (c) 1998-2014 Zend Technologies
-with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
-</code></pre>
-
-<p>If PHP is installed, continue with the next prerequisite, <a href="/guides/v2.0/install-gde/prereq/mysql.html">MySQL</a>.</p>
-
-<p>If PHP is <em>not</em> installed, see one of the following sections:</p>
+<h3 id="high-availability">High availability</h3>
+<p>Use the following guidelines to configure remote database connections if your web server or database server are clustered:</p>
 
 <ul>
-  <li><a href="#instgde-prereq-php56-install-centos">PHP 5.6 on CentOS</a></li>
-  <li><a href="#instgde-prereq-php55-install-centos">PHP 5.5 on CentOS</a></li>
+  <li>You must configure a connection for each web server node</li>
+  <li>
+    <p>Typically, you configure a database connection to the database load balancer; however, database clustering can be complex and configuring it is up to you. Magento makes no specific recommendations for database clustering.</p>
+
+    <p>For more information, see <a href="https://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html" target="_blank">MySQL documentation</a>.</p>
+  </li>
 </ul>
 
-<h2 id="instgde-prereq-php56-install-centos">PHP 5.6 on CentOS</h2>
-<p>There is more than one way to upgrade CentOS 6.5 to PHP 5.6; the following is a suggestion only. Consult a reference for additional options.</p>
+<h3 id="resolving-connection-issues">Resolving connection issues</h3>
+<p>If you have issues connecting to either host, first ping the other host to make sure it’s reachable. You also might need to allow connections from one host to another by modifying firewall and SELinux rules (if you use SELinux).</p>
 
-<p>To upgrade to PHP 5.6:</p>
+<h2 id="instgde-prereq-mysql-remote-create">Create the remote connection</h2>
+<p>To create a remote connection:</p>
 
 <ol>
   <li>
-    <p>Enter the following commands in the order shown:</p>
+    <p>On your database server, as a user with <code>root</code> privileges, open your MySQL configuration file.</p>
 
-    <pre><code>rpm -Uvh https://mirror.webtatic.com/yum/el6/latest.rpm
-yum install -y php56w php56w-opcache php56w-xml php56w-mcrypt php56w-gd php56w-devel php56w-mysql php56w-intl php56w-mbstring php56w-bcmath
+    <p>To locate it, enter the following command:</p>
+
+    <pre><code>mysql --help
 </code></pre>
 
-    <div class="bs-callout bs-callout-info" id="info">
-  		<p>The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.</p>
-</div>
-  </li>
-  <li>
-    <p>Restart Apache: <code>service httpd restart</code></p>
-  </li>
-  <li>
-    <p>Enter the following command to verify that PHP 5.6 is installed:</p>
+    <p>The location displays similar to the following:</p>
 
-    <pre><code>php -v
-</code></pre>
-
-    <p>The following response indicates that PHP 5.6 is installed properly:</p>
-
-    <pre><code>PHP 5.6.4 (cli) (built: Dec 20 2014 17:30:46)
-Copyright (c) 1997-2014 The PHP Group
-Zend Engine v2.6.0, Copyright (c) 1998-2014 Zend Technologies
-with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
+    <pre><code>Default options are read from the following files in the given order:
+/etc/my.cnf /etc/mysql/my.cnf /usr/etc/my.cnf ~/.my.cnf
 </code></pre>
   </li>
   <li>
-    <p><a href="#instgde-prereq-timezone">Set up PHP configuration options</a>.</p>
+    <p>Search the configuration file for <code>bind-address</code>.</p>
+
+    <p>If it exists, change the value as follows. </p>
+
+    <p>If it doesn’t exist, add it anywhere except the <code>[mysqld]</code> section.</p>
+
+    <pre><code>bind-address = &lt;ip address of your Magento web node&gt;
+</code></pre>
+
+    <p>See <a href="https://dev.mysql.com/doc/refman/5.6/en/server-options.html" target="_blank">MySQL documentation</a>, especially if you have a clustered web server.</p>
+  </li>
+  <li>Save your changes to the configuration file and exit the text editor.</li>
+  <li>
+    <p>Restart the MySQL service:</p>
+
+    <p>CentOS: <code>service mysqld restart</code></p>
+
+    <p>Ubuntu: <code>service mysql restart</code></p>
   </li>
 </ol>
 
-<h2 id="instgde-prereq-php55-install-centos">PHP 5.5 on CentOS</h2>
-<p>There is more than one way to upgrade CentOS 6.5 to PHP 5.5; the following is a suggestion only. Consult a reference for additional options.</p>
+<div class="bs-callout bs-callout-info" id="info">
+  	<p>If MySQL fails to start, look in syslog for the source of the issue. Resolve the issue using <a href="https://dev.mysql.com/doc/refman/5.6/en/server-options.html#option_mysqld_bind-address" target="_blank">MySQL documentation</a> or another authoritative source.</p>
+</div>
 
-<p>To upgrade to PHP 5.5:</p>
+<h2 id="instgde-prereq-mysql-remote-access">Grant access to a database user</h2>
+<p>To enable your web node to connect to the database server, you must grant a web node database user access to the database on the remote server.</p>
+
+<p>This example grants the <code>root</code> database user full access to the database on the remote host.</p>
+
+<p>To grant access to a database user:</p>
 
 <ol>
+  <li>Log in to the database server.</li>
+  <li>Connect to the MySQL database as the <code>root</code> user.</li>
   <li>
-    <p>Enter the following commands in the order shown.</p>
+    <p>Enter the following command:</p>
 
-    <pre><code>yum -y update
-rpm -Uvh https://mirror.webtatic.com/yum/el6/latest.rpm
-yum -y remove php-common-5.3.3-40.el6_6.x86_64
-yum -y install php55w php55w-opcache
-yum -y install php55w-xml php55w-mcrypt php55w-gd php55w-devel php55w-mysql php55w-intl php55w-mbstring php55w-bcmath
-yum -y update
+    <pre><code>GRANT ALL ON &lt;local database name&gt;.* TO &lt;remote web node user name&gt;@&lt;remote web node server ip address&gt; IDENTIFIED BY '&lt;database user password&gt;';
 </code></pre>
 
-    <div class="bs-callout bs-callout-info" id="info">
-  		<p>The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.</p>
-</div>
-  </li>
-  <li>
-    <p>Restart Apache: <code>service httpd restart</code></p>
-  </li>
-  <li>
-    <p>Continue with the next section.</p>
+    <p>For example,</p>
+
+    <pre><code>GRANT ALL ON magento_remote.* TO dbuser@192.0.2.50 IDENTIFIED BY 'dbuserpassword';
+</code></pre>
   </li>
 </ol>
 
-<h2 id="instgde-prereq-timezone">Set PHP configuration options</h2>
-<p>This section discusses how to:</p>
-<ul><li>Set the system time zone for PHP; otherwise, errors like the following display during the installation and time-related operations like cron might not work:<br />
-<pre>PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more messages follow]</pre></li>
-<li>Increase the PHP memory limit to at least 512MB for normal operation or 2GB for testing.</li>
-<li>Set <code>always_populate_raw_post_data = -1</code><br />
-<a href="http://php.net/manual/en/ini.core.php#ini.always-populate-raw-post-data" target="_blank">always_populate_raw_post_data</a> is deprecated in PHP 5.6. This setting causes PHP to always populate <code>$HTTP_RAW_POST_DATA</code> with raw POST data. Failure to set this properly in PHP 5.6 results in errors when connecting to the database.</li>
-<li>Disable <a href="http://php.net/manual/en/ini.core.php#ini.asp-tags" target="_blank">asp_tags</a>. If asp_tags are enabled, errors display when accessing PHTML templates.<br />
-<code>asp_tags</code> will be removed in PHP 7.</li></ul>
-<p>To set PHP options:</p>
-<ol><li>Locate <code>php.ini</code> by entering the following command:<br />
-<pre>php -i | grep "Loaded Configuration File"</pre>
-Typical locations follow:<br /><br />
-Ubuntu: <code>/etc/php5/cli/php.ini</code><br />
-CentOS: <code>/etc/php.ini</code></li>
-<li>Open <code>php.ini</code> in a text editor.</li>
-<li>Locate your server's time zone in the available <a href="http://php.net/manual/en/timezones.php" target="_blank">time zone settings</a>.</li>
-<li>Locate the following setting and uncomment it if necessary:
-<pre>date.timezone =</pre></li>
-<li>Add the time zone setting you found in step 1.</li>
-<li>Change <code>memory_limit</code> to:<br /><br />
-	<code>memory_limit = 768M</code> or more for normal operation<br />
-<code>memory_limit = 2G</code> or more for testing</li>
-<li><em>Required for PHP 5.6, recommended for PHP 5.5</em>. Locate <code>always_populate_raw_post_data</code>, uncomment it if necessary, and set it as follows:<br />
-<pre>always_populate_raw_post_data = -1</pre></li>
-<li>Locate the following setting:
-	<pre>asp_tags =</pre></li>
-<li>Make sure its value is set to <code>Off</code></li>
-<li>Save your changes and exit the text editor.</li>
-<li>Restart Apache:<br /><br />
-Ubuntu: <code>service apache2 restart</code><br />
-CentOS: <code>service httpd restart</code></li></ol>
+<div class="bs-callout bs-callout-info" id="info">
+  <p>If your web server is clustered, enter the same command on every web server. You must use the same user name for every web server.</p>
+</div>
 
-<h3 id="prereq-php-redis">Optional: Configure caching alternatives</h3>
-<p>You can optionally specify alternatives to file system caching in <code>php.ini</code> by modifying the value of <code>session.save_handler</code>. Magento supports the following values:</p>
-<ul><li><code>files</code> (the default) for file system caching</li>
-	<li><code>db</code> for <a href="/guides/v2.0/config-guide/database/database.html">database</a> caching</li>
-	<li><code>redis</code> for <a href="/guides/v2.0/config-guide/redis/config-redis.html">Redis</a> caching</li>
-	<li>Any other custom cache type you set up; however, it's up to you to know how to specify it in <code>php.ini</code></li></ul>
+<h2 id="instgde-prereq-mysql-remote-verify">Verify database access</h2>
+<p>On your web node host, enter the following command to verify the connection works:</p>
+
+<pre><code>mysql -u &lt;local database user name&gt; -h &lt;database server ip address&gt; -p
+</code></pre>
+
+<p>If the MySQL monitor displays as follows, the database is ready for the Magento software:</p>
+
+<pre><code>Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 213
+Server version: 5.6.26 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+</code></pre>
+
+<p>If your web server is clustered, enter the command on each web server host.</p>
+
+<h2 id="instgde-prereq-mysql-remote-install">Install the Magento software</h2>
+<p>When you install the Magento software using either the command line or Setup Wizard, you must specify the following:</p>
+
+<ul>
+  <li>The Base URL (also referred to as the <em>store address</em>) specifies the host name or IP address of the <em>webnode</em></li>
+  <li>Database host is the <em>remote database server</em> IP address (or load balancer if the database server is clustered)</li>
+  <li>Database user name is the <em>local web node</em> database user to which you gave access</li>
+  <li>Database password is the local web node user’s password</li>
+  <li>Database name is the name of the database on the remote server</li>
+</ul>
 
 <h4 id="related-topics">Related topics</h4>
 
 <ul>
-  <li><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6—Ubuntu</a></li>
-  <li><a href="/guides/v2.0/install-gde/prereq/apache.html">Apache</a></li>
-  <li><a href="/guides/v2.0/install-gde/prereq/mysql.html">MySQL</a></li>
-  <li><a href="/guides/v2.0/install-gde/prereq/security.html">Configuring security options</a></li>
   <li><a href="/guides/v2.0/install-gde/prereq/optional.html">Installing optional software</a></li>
+  <li><a href="/guides/v2.0/install-gde/prereq/apache.html">Apache</a></li>
+  <li><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6—Ubuntu</a></li>
+  <li><a href="/guides/v2.0/install-gde/prereq/php-centos.html">PHP 5.5 or 5.4—CentOS</a></li>
+  <li><a href="/guides/v2.0/install-gde/prereq/security.html">Configuring security options</a></li>
   <li><a href="/guides/v2.0/install-gde/install/pre-install.html">Ways to install the Magento software</a></li>
 </ul>
 
@@ -537,7 +514,7 @@ CentOS: <code>service httpd restart</code></li></ol>
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v2.0/install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a></li>
 						
 								
 							
@@ -545,7 +522,7 @@ CentOS: <code>service httpd restart</code></li></ol>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a></li>
 						
 								
 							

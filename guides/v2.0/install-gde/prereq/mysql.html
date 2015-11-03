@@ -249,6 +249,11 @@
   <li>If you use MySQL database replication, be aware that Magento does <em>not</em> support MySQL statement-based replication. Make sure you use <em>only</em> <a href="http://dev.mysql.com/doc/refman/5.1/en/replication-formats.html" target="_blank">row-based replication</a>.</li>
 </ul>
 
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>If your web server and database server are on different hosts, perform the tasks discussed in this topic on the database server host then see <a href="/guides/v2.0/install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a>.</p></span>
+</div>
+
 <h2 id="instgde-prereq-mysql-ubuntu">Installing MySQL on Ubuntu</h2>
 <p>See one of the following sections for more information:</p>
 
@@ -432,11 +437,13 @@ GRANT ALL ON magento.* TO magento@localhost IDENTIFIED BY 'magento';
 
     <p>If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.</p>
   </li>
+  <li>If your web server and database server are on different hosts, perform the tasks discussed in this topic on the database server host then see <a href="/guides/v2.0/install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a>.</li>
 </ol>
 
 <h4 id="related-topics">Related topics</h4>
 
 <ul>
+  <li><a href="/guides/v2.0/install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a></li>
   <li><a href="/guides/v2.0/install-gde/prereq/optional.html">Installing optional software</a></li>
   <li><a href="/guides/v2.0/install-gde/prereq/apache.html">Apache</a></li>
   <li><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6—Ubuntu</a></li>
@@ -596,6 +603,10 @@ GRANT ALL ON magento.* TO magento@localhost IDENTIFIED BY 'magento';
 								
 							
 									<li class="level-2  active "><a href="/guides/v2.0/install-gde/prereq/mysql.html">MySQL</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a></li>
 						
 								
 							
