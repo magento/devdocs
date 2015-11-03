@@ -9,7 +9,6 @@ menu_order: 215
 github_link: config-guide/cli/config-cli-subcommands-urn.md
 ---
 
-
 #### Contents
 
 *	<a href="#config-cli-urn-overview">Overview of the URN highlighter</a>
@@ -42,7 +41,7 @@ Command syntax:
 
 	magento dev:urn-catalog:generate <path>
 
-where `<path>` is the path to your `misc.xml` file, which is located relative to your project root. Typically, `<path>` is `.idea/misc.xml`
+where `<path>` is the path to your PHPStorm `misc.xml` file, which is located relative to your project root. Typically, `<path>` is `.idea/misc.xml`
 
 #### Related topics
 
