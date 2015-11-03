@@ -43,7 +43,7 @@ The constraint PHP class must:
 * Contain the following methods: 
 
   * `processAssert` which contains assertions. A `PHPUnit_Framework_Assert` class (`<magento2>/dev/tests/functional/vendor/phpunit/phpunit/src/Framework/Assert.php`) can be used to simplify assertions
-  * `toString` which returns a success message
+  * `toString` which returns a success message if the assertion is performed successfully
 
 ### Constraint arguments
 
@@ -53,25 +53,31 @@ If a data set variable is used in the test, and is overwritten, it is transfered
 
 An object that is not defined in the data set or isn't returned from the test case is created using the Object Manager.
 
-Let's see the following diagrams for the `CreateSimpleProductEntityTest` test and the `AssertProductPricesOnCategoryPage` constraint. Data set from the diagrams contains three variables with data: `product`, `category` and `price`.
+Let's see the following images for the `CreateSimpleProductEntityTest` test and the `AssertProductPricesOnCategoryPage` constraint. Data set from the diagrams contains three variables with data: `product`, `category` and `price`.
 
-<a href="{{ site.baseurl }}common/images/mtf_constraint_arguments_green.png"><img src="{{ site.baseurl }}common/images/mtf_constraint_arguments_green.png" /></a>
+<img src="{{ site.baseurl }}common/images/mtf_constraint_arguments_green.png" width="800" />
 
-<span style="color: #21610B; font-weight:bold">Green arrows</span> show that `product` variable is transfered to the test and the constraint.
+<span style="color: #21610B; font-weight:bold">Green arrows</span> show that `product` value is transfered to the test and the constraint.
 
-<a href="{{ site.baseurl }}common/images/mtf_constraint_arguments_orange.png"><img src="{{ site.baseurl }}common/images/mtf_constraint_arguments_orange.png" /></a>
+<img src="{{ site.baseurl }}common/images/mtf_constraint_arguments_orange.png" width="800" />
 
 <span style="color: #FF8000; font-weight:bold">Orange arrows</span> show that `category` variable is transfered to the test directly, overwritten by `testCreate()` method and only then transfered to constraint.
 
-<a href="{{ site.baseurl }}common/images/mtf_constraint_arguments_blue.png"><img src="{{ site.baseurl }}common/images/mtf_constraint_arguments_blue.png" /></a>
+<img src="{{ site.baseurl }}common/images/mtf_constraint_arguments_blue.png" width="800"/>
 
-<span style="color: #0000FF; font-weight:bold">Blue arrow</span> shows that `price` variable is transfered to the constraint only.
+<span style="color: #0000FF; font-weight:bold">Blue arrow</span> shows that `price` value is transfered to the constraint only.
 
 ### Constraint in the test {#mtf_constraint_variation}
 
 A [test case][]'s constraints are nodes in variations of a data set. The data set has references to the PHP classes with assertions.
 
-Constraints are performed in order they listed in the data set.
+Constraints are performed in order they listed in the data set. However, you can use `prev` and `next` attributes to set your custom order.
+
+{%highlight xml%}
+<constraint name="Magento\Catalog\Test\Constraint\AssertCategorySaveMessage" next="Magento\Catalog\Test\Constraint\AssertCategoryForm"/>
+<constraint name="Magento\Catalog\Test\Constraint\AssertCategoryForm" prev="Magento\Catalog\Test\Constraint\AssertCategorySaveMessage" next="Magento\Catalog\Test\Constraint\AssertCategoryPage"/>
+<constraint name="Magento\Catalog\Test\Constraint\AssertCategoryPage" />
+{%endhighlight%}
 
 <div class="bs-callout bs-callout-warning">
     <p>Constraint failure causes interruption of constraints execution within variation, and a test continues to perform from the next variation.</p>
