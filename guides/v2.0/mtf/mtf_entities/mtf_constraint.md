@@ -76,7 +76,7 @@ Constraints are performed in order they listed in the data set. However, you can
 {%highlight xml%}
 <constraint name="Magento\Catalog\Test\Constraint\AssertCategorySaveMessage" next="Magento\Catalog\Test\Constraint\AssertCategoryForm"/>
 <constraint name="Magento\Catalog\Test\Constraint\AssertCategoryForm" prev="Magento\Catalog\Test\Constraint\AssertCategorySaveMessage" next="Magento\Catalog\Test\Constraint\AssertCategoryPage"/>
-<constraint name="Magento\Catalog\Test\Constraint\AssertCategoryPage" />
+<constraint name="Magento\Catalog\Test\Constraint\AssertCategoryPage" prev="Magento\Catalog\Test\Constraint\AssertCategoryForm" />
 {%endhighlight%}
 
 <div class="bs-callout bs-callout-warning">
