@@ -30,6 +30,14 @@ Before you begin, you must:
 *	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html#instgde-prereq-mysql-config">Create a database instance</a> on the database server
 *	Install the MySQL client on your Magento web node. Consult MySQL documentation for details.
 
+### High availability
+Use the following guidelines to configure remote database connections if your web server or database server are clustered:
+
+*	You must configure a connection for each web server node
+*	Typically, you configure a database connection to the database load balancer; however, database clustering can be complex and configuring it is up to you. Magento makes no specific recommendations for database clustering.
+
+	For more information, see <a href="https://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html" target="_blank">MySQL documentation</a>.
+
 ### Resolving connection issues
 If you have issues connecting to either host, first ping the other host to make sure it's reachable. You also might need to allow connections from one host to another by modifying firewall and SELinux rules (if you use SELinux).
 
@@ -55,7 +63,7 @@ To create a remote connection:
 
 		bind-address = <ip address of your Magento web node>
 
-	<a href="https://dev.mysql.com/doc/refman/5.1/en/server-options.html" target="_blank">More information about `bind-address`</a>
+	See <a href="https://dev.mysql.com/doc/refman/5.6/en/server-options.html" target="_blank">MySQL documentation</a>, especially if you have a clustered web server.
 
 3.	Save your changes to the configuration file and exit the text editor.
 4.	Restart the MySQL service:
@@ -65,7 +73,7 @@ To create a remote connection:
 	Ubuntu: `service mysql restart`
 
 <div class="bs-callout bs-callout-info" id="info">
-  	<p>If MySQL fails to start, look in syslog for the source of the issue. If MySQL is continually restarting, try setting the value of <code>bind-address</code> to <code>0.0.0.0</code>, which enables MySQL to listen on all IP addresses.</p>
+  	<p>If MySQL fails to start, look in syslog for the source of the issue. If MySQL is continually restarting, try setting the value of <code>bind-address</code> to <code>0.0.0.0</code>, or <code>*</code>, which enables MySQL to listen on all IP addresses.</p>
 </div>
 
 <h2 id="instgde-prereq-mysql-remote-access">Grant access to a database user</h2>
@@ -83,7 +91,11 @@ To grant access to a database user:
 
 	For example,
 
-		GRANT ALL ON magento_remote.* TO root@192.0.2.50 IDENTIFIED BY 'rootuserpassword';
+		GRANT ALL ON magento_remote.* TO dbuser@192.0.2.50 IDENTIFIED BY 'dbuserpassword';
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>If your web server is clustered, enter the same command on every web server. You must use the same user name for every web server.</p>
+</div>
 
 <h2 id="instgde-prereq-mysql-remote-verify">Verify database access</h2>
 On your web node host, enter the following command to verify the connection works:
@@ -104,12 +116,14 @@ If the MySQL monitor displays as follows, the database is ready for the Magento 
 
 	Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
+If your web server is clustered, enter the command on each web server host.
+
 
 <h2 id="instgde-prereq-mysql-remote-install">Install the Magento software</h2>
 When you install the Magento software using either the command line or Setup Wizard, you must specify the following:
 
 *	The Base URL (also referred to as the *store address*) specifies the host name or IP address of the *webnode*
-*	Database host is the *remote database server* IP address
+*	Database host is the *remote database server* IP address (or load balancer if the database server is clustered)
 *	Database user name is the *local web node* database user to which you gave access
 *	Database password is the local web node user's password
 *	Database name is the name of the database on the remote server
