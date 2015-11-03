@@ -73,7 +73,7 @@ To create a remote connection:
 	Ubuntu: `service mysql restart`
 
 <div class="bs-callout bs-callout-info" id="info">
-  	<p>If MySQL fails to start, look in syslog for the source of the issue. If MySQL is continually restarting, try setting the value of <code>bind-address</code> to <code>0.0.0.0</code>, or <code>*</code>, which enables MySQL to listen on all IP addresses.</p>
+  	<p>If MySQL fails to start, look in syslog for the source of the issue. Resolve the issue using MySQL documentation or another authoritative source.</p>
 </div>
 
 <h2 id="instgde-prereq-mysql-remote-access">Grant access to a database user</h2>
