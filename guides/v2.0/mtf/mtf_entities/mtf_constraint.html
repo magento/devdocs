@@ -211,12 +211,229 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="mtf_constraint_overview">Constraint overview</h2>
-<p>The MTF constraint serves for performing assertions after test execution.
-Each constraint name must be unique within application and placed in the module to which the constraint belongs.
-Constraints run automatically after test flow has been finished.</p>
+		<h2>Constraint</h2>
 
-<p>This section will discuss constraints. We will create new constraint and learn how to use it.</p>
+<ul id="markdown-toc">
+  <li><a href="#mtf_constraint_overview">Constraint overview</a></li>
+  <li><a href="#mtf_constraint_structure">Constraint structure</a>    <ul>
+      <li><a href="#mtf_constraint_directory"><code>Constraint</code> directory</a></li>
+      <li><a href="#mtf_constraint_assert">Constraint class</a></li>
+      <li><a href="#constraint-arguments">Constraint arguments</a></li>
+      <li><a href="#mtf_constraint_variation">Constraint in the test</a></li>
+      <li><a href="#tagging">Tagging</a></li>
+    </ul>
+  </li>
+  <li><a href="#mtf_constraint_create">How to create constraint</a></li>
+  <li><a href="#mtf_constraint_use">How to use constraint</a></li>
+</ul>
+
+<h2 id="mtf_constraint_overview">Constraint overview</h2>
+
+<p>The MTF constraint performs assertions after a test flow. A test flow is a set of test steps without assertions.
+Each constraint name must be globally unique in Magento application and must be placed in the module to which it belongs. Constraints run automatically after test flow has finished.</p>
+
+<p><img src="/common/images/mtf_constraint_flow.png" alt="Constraints and test flow" /></p>
+
+<h2 id="mtf_constraint_structure">Constraint structure</h2>
+
+<h3 id="mtf_constraint_directory"><code>Constraint</code> directory</h3>
+
+<p>A module in functional tests (<code>&lt;magento2&gt;/dev/tests/app/Magento/</code>) stores constraints in the <code>Constraint</code> directory. The following image shows the <code>Constraint</code> directory of the Magento_Widget module.</p>
+
+<p><img src="/common/images/mtf_constraint_dir.png" alt="" /></p>
+
+<h3 id="mtf_constraint_assert">Constraint class</h3>
+
+<p>The constraint PHP class must:</p>
+
+<ul>
+  <li>
+    <p>Have unique name created using the following template <code>Assert{MagentoEntityName}{verification|action|place}</code>. For example:</p>
+
+    <ul>
+      <li><code>AssertUserSuccessDeleteMessage</code> corresponds to <code>Assert{entityName}{verification}</code></li>
+      <li><code>AssertOrderPlaced</code> corresponds to <code>Assert{entityName}{action}</code></li>
+      <li><code>AssertProductForm</code> corresponds to <code>Assert{entityName}{place}</code></li>
+    </ul>
+  </li>
+  <li>
+    <p>Extend the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Constraint/AbstractConstraint.php">Magento\Mtf\Constraint\AbstractConstraint</a> class.</p>
+  </li>
+  <li>
+    <p>Contain the following methods: </p>
+
+    <ul>
+      <li><code>processAssert</code> which contains assertions. A <code>PHPUnit_Framework_Assert</code> class (<code>&lt;magento2&gt;/dev/tests/functional/vendor/phpunit/phpunit/src/Framework/Assert.php</code>) can be used to simplify assertions</li>
+      <li><code>toString</code> which returns a success message if the assertion is performed successfully</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="constraint-arguments">Constraint arguments</h3>
+
+<p>In the MTF, <a href="/guides/v2.0/mtf/mtf_entities/mtf_dataset.html">data set</a> values are shared with a test class and constraints. A node name in data set can be complex like <code>item1/item2/item3</code>. The argument name in <code>processAssert()</code> must be the same as the <code>item1</code> to transfer data from data set to constraint.</p>
+
+<p>If a data set variable is used in the test, and is overwritten, it is transfered as altered to the constraint. Variables can be overwritten in the <em>injectable</em> <a href="/guides/v2.0/mtf/mtf_entities/mtf_testcase.html">test case</a>  class in <code>test()</code>, <code>__inject()</code> and <code>__prepare()</code> methods, and then passed to the constraint class by <code>return</code>. Furthermore, any returned value of these methods can be used as an argument in constraint.</p>
+
+<p>An object that is not defined in the data set or isn’t returned from the test case is created using the Object Manager.</p>
+
+<p>Let’s see the following images for the <code>CreateSimpleProductEntityTest</code> test and the <code>AssertProductPricesOnCategoryPage</code> constraint. Data set from the diagrams contains three variables with data: <code>product</code>, <code>category</code> and <code>price</code>.</p>
+
+<p><img src="/common/images/mtf_constraint_arguments_green.png" width="800" /></p>
+
+<p><span style="color: #21610B; font-weight:bold">Green arrows</span> show that <code>product</code> value is transfered to the test and the constraint.</p>
+
+<p><img src="/common/images/mtf_constraint_arguments_orange.png" width="800" /></p>
+
+<p><span style="color: #FF8000; font-weight:bold">Orange arrows</span> show that <code>category</code> variable is transfered to the test directly, overwritten by <code>testCreate()</code> method and only then transfered to constraint.</p>
+
+<p><img src="/common/images/mtf_constraint_arguments_blue.png" width="800" /></p>
+
+<p><span style="color: #0000FF; font-weight:bold">Blue arrow</span> shows that <code>price</code> value is transfered to the constraint only.</p>
+
+<h3 id="mtf_constraint_variation">Constraint in the test</h3>
+
+<p>A <a href="/guides/v2.0/mtf/mtf_entities/mtf_testcase.html">test case</a>’s constraints are nodes in variations of a data set. The data set has references to the PHP classes with assertions.</p>
+
+<p>Constraints are performed in order they listed in the data set. However, you can use <code>prev</code> (previous) and <code>next</code> attributes to set your custom order.</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">&quot;Magento\Catalog\Test\Constraint\AssertCategorySaveMessage&quot;</span> <span class="na">next=</span><span class="s">&quot;Magento\Catalog\Test\Constraint\AssertCategoryForm&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">&quot;Magento\Catalog\Test\Constraint\AssertCategoryForm&quot;</span> <span class="na">prev=</span><span class="s">&quot;Magento\Catalog\Test\Constraint\AssertCategorySaveMessage&quot;</span> <span class="na">next=</span><span class="s">&quot;Magento\Catalog\Test\Constraint\AssertCategoryPage&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">&quot;Magento\Catalog\Test\Constraint\AssertCategoryPage&quot;</span> <span class="na">prev=</span><span class="s">&quot;Magento\Catalog\Test\Constraint\AssertCategoryForm&quot;</span> <span class="nt">/&gt;</span></code></pre></div>
+
+<div class="bs-callout bs-callout-warning">
+    <p>Constraint failure causes interruption of constraints execution within variation, and a test continues to perform from the next variation.</p>
+</div>
+
+<p>A test can contain constraints from different modules.</p>
+
+<div class="bs-callout bs-callout-warning">
+  <p>Be careful when you use constraints from another module. A module that is referred by constraint can be disabled, that fails in the test execution. It is safe to use constraints of different modules in one test case if that modules have hard dependencies.
+  </p>
+</div>
+
+<p>The following example shows the <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/TestCase/DeleteWidgetEntityTest.xml</code> <a href="/guides/v2.0/mtf/mtf_entities/mtf_dataset.html">data set</a> with two constraints. </p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="c">&lt;!--</span>
+<span class="c">/**</span>
+<span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
+<span class="c"> * See COPYING.txt for license details.</span>
+<span class="c"> */</span>
+<span class="c"> --&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../vendor/magento/mtf/etc/variations.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;testCase</span> <span class="na">name=</span><span class="s">&quot;Magento\Widget\Test\TestCase\DeleteWidgetEntityTest&quot;</span> <span class="na">summary=</span><span class="s">&quot;Delete Widget&quot;</span> <span class="na">ticketId=</span><span class="s">&quot;MAGETWO-28459&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;variation</span> <span class="na">name=</span><span class="s">&quot;DeleteWidgetEntityTestVariation1&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;widget/dataset&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>default<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">&quot;Magento\Widget\Test\Constraint\AssertWidgetSuccessDeleteMessage&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">&quot;Magento\Widget\Test\Constraint\AssertWidgetAbsentOnFrontendHome&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/variation&gt;</span>
+    <span class="nt">&lt;/testCase&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p>Immediately after the test steps complete, both constraints are performed in the order listed.</p>
+
+<h3 id="tagging">Tagging</h3>
+
+<p>Tagging enables you to indicate what constraints must be called.</p>
+
+<p>You can tag constraints in <code>&lt;module&gt;/Test/etc/di.xml</code> using a <code>severity</code> argument. Severity tagging of constraints is used for the customization of test run.</p>
+
+<p>You can use the following severity tags:</p>
+
+<ul>
+  <li><code>high</code></li>
+  <li><code>middle</code></li>
+  <li><code>low</code></li>
+</ul>
+
+<p>To assign severity tags do the following:</p>
+
+<ul>
+  <li>Create <code>di.xml</code> file in <code>Test/etc</code> of the module.</li>
+  <li>Assign <code>severity</code> to constraints in the following format:</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\[Module_name]\Test\Constraint\Assert...&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;severity&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>high|middle|low<span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/type&gt;</span></code></pre></div>
+
+<p>For example, <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/CatalogRule/Test/etc/di.xml</code>:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="c">&lt;!--</span>
+<span class="c">/**</span>
+<span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
+<span class="c"> * See COPYING.txt for license details.</span>
+<span class="c"> */</span>
+<span class="c"> --&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\CatalogRule\Test\Constraint\AssertCatalogPriceRuleAppliedProductPage&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+      <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;severity&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>high<span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+  <span class="nt">&lt;/type&gt;</span>
+  <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\CatalogRule\Test\Constraint\AssertCatalogPriceRuleAppliedCatalogPage&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+      <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;severity&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>high<span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+  <span class="nt">&lt;/type&gt;</span>
+  <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\CatalogRule\Test\Constraint\AssertCatalogPriceRuleAppliedShoppingCart&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+      <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;severity&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>high<span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+  <span class="nt">&lt;/type&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<h2 id="mtf_constraint_create">How to create constraint</h2>
+
+<p>Use case: We want to assert widget availability in a widget grid.</p>
+
+<p>Step 1. What module does it belong?</p>
+
+<p>Widget grid and widget fixture are related to the Magento_Widget module.
+  Thus, we need to create constraint in the Magento_Widget module, in <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Constraint</code>.</p>
+
+<p>Step 2. What name should constraint have?</p>
+
+<p>Using <a href="#mtf_constraint_assert">constraint naming principle</a>, the constraint should be named as <code>AssertWidgetInGrid</code>.</p>
+
+<p>Step 3. Create <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Constraint/AssertWidgetInGrid.php</code> with <a href="#mtf_constraint_assert">required structure</a></p>
+
+<script src="https://gist.github.com/dshevtsov/c9d9e77e4d48af881f69.js"></script>
+
+<p>Step 4. Implement assertion in <code>processAssert()</code></p>
+
+<p><strong>Assertion logic</strong>: Take title of the widget from the widget <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html">fixture</a>, open the page with a grid, check if the grid has our title.</p>
+
+<script src="https://gist.github.com/dshevtsov/c1e2a8437e0d2b2036bd.js"></script>
+
+<h2 id="mtf_constraint_use">How to use constraint</h2>
+
+<p>To use constraint we’ve created in previous section, add a corresponding node to the <a href="/guides/v2.0/mtf/mtf_entities/mtf_dataset.html">data set</a> of your test</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">&quot;Magento\Widget\Test\Constraint\AssertWidgetInGrid&quot;</span> <span class="nt">/&gt;</span></code></pre></div>
+
+<p>in the order that it must be performed.</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../vendor/magento/mtf/etc/variations.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;testCase</span> <span class="na">name=</span><span class="s">&quot;Magento\Widget\Test\TestCase\CreateWidgetEntityTest&quot;</span> <span class="na">summary=</span><span class="s">&quot;Create Widget&quot;</span> <span class="na">ticketId=</span><span class="s">&quot;MAGETWO-27916&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;variation</span> <span class="na">name=</span><span class="s">&quot;CreateWidgetEntityTestVariation1&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;widget/data/code&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>CMS Static Block<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;widget/data/theme_id&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento Luma<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;widget/data/title&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Title_%isolation%<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;widget/data/store_ids/dataset&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>all_store_views<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;widget/data/widget_instance/dataset&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>on_category<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;widget/data/parameters/dataset&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>cmsStaticBlock<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">&quot;Magento\Widget\Test\Constraint\AssertWidgetSuccessSaveMessage&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">&quot;Magento\Widget\Test\Constraint\AssertWidgetInGrid&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">&quot;Magento\Widget\Test\Constraint\AssertWidgetOnFrontendInCatalog&quot;</span> <span class="nt">/&gt;</span>     
+        <span class="nt">&lt;/variation&gt;</span>
+    <span class="nt">&lt;/testCase&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
 
 
 		</div>
