@@ -71,7 +71,7 @@ Let's see the following images for the `CreateSimpleProductEntityTest` test and 
 
 A [test case][]'s constraints are nodes in variations of a data set. The data set has references to the PHP classes with assertions.
 
-Constraints are performed in order they listed in the data set. However, you can use `prev` and `next` attributes to set your custom order.
+Constraints are performed in order they listed in the data set. However, you can use `prev` (previous) and `next` attributes to set your custom order.
 
 {%highlight xml%}
 <constraint name="Magento\Catalog\Test\Constraint\AssertCategorySaveMessage" next="Magento\Catalog\Test\Constraint\AssertCategoryForm"/>
