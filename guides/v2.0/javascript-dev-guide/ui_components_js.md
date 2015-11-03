@@ -34,7 +34,7 @@ All of these are available in template's scope.
 
 <p class="q">Need to add info about how to customize configuration in JS: create a new JS handling this + specify this JS in the XML config</p>
 
-## Main client-side properties of a UI component ##
+## Main UI components' properties ##
 The most important client-side properties of a UI component are the following:
 
  - `component`: the path to the JavaScript implementation of a component path in terms of RequireJS. JS component should return Class
@@ -60,16 +60,17 @@ The most important client-side properties of a UI component are the following:
  - `children` -  is a fantom property that contains nested/linked components. In the xml configuration, all nodes that are not `<argument/>` are children. In Knockout JS templates children are the keys of the `elems` property.
 
 
-## Ui Components properties used for linking
+## UI Components' properties used for linking
 The following properties are used for linking observable properties and methods of UI components:
 
- - exports: used to notify some external entity about property changing.
-	Exports value is an object, composed of the following:
-  - key - name of property/method from where "export". Only internal property</li>
-<li>value - name of property/method to where "export". Could use string templates.</li>
+<ul>
+<li><code>exports</code>: used to notify some external entity about property changing. <code>Exports</code>'s value is an object, composed of the following:
+<ul>
+<li>key - name of the property or method from which is tracked for changes. Only internal property.</li>
+<li>value - name of the property or method which receives the notification. Could use string templates.</li>
 <p class="q">need to add an illustration of a string template</p>
-
-	Example of using <code>export</code> in component.js:
+</ul>
+Example of using <code>export</code> in component.js:
 {% highlight php%}
 {
   'exports': {
@@ -78,7 +79,7 @@ The following properties are used for linking observable properties and methods 
 }
 {% endhighlight php%}
 
-Example of using `export` in configuration.xml file:
+Example of using <code>export</code> in configuration.xml file:
 {% highlight php%}
 &lt;argument name=&quot;data&quot; xsi:type=&quot;array&quot;&gt;
        &lt;item name=&quot;config&quot; xsi:type=&quot;array&quot;&gt;
@@ -88,14 +89,14 @@ Example of using `export` in configuration.xml file:
        &lt;/item&gt;
 &lt;/argument&gt;
 {% endhighlight php%}
- 
+</li>
  -- imports 
 
 -
  -- links
  -- listen
-
 </ul>
+
 ## Frequently used components
 - uiElement
 - uiCollection
