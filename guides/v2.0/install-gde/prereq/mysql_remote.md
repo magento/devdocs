@@ -20,13 +20,13 @@ github_link: install-gde/prereq/mysql_remote.md
 This topic discusses how to set up a connection from your Magento web node to a MySQL server on another host. If you have a separate database host, you must perform the tasks discussed in this topic to install and use the Magento software. (The Magento *web node* is the server on which you installed the Magento software and that runs your web server.)
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>This is an advanced topic that should be used only by an experienced network administrator or database administrator. You must have <code>root</code> access to the file system on both hosts.</p>
+  <p>This is an advanced topic that should be used only by an experienced network administrator or database administrator. You must have <code>root</code> access to the file system and you must be able to log in to MySQL as <code>root</code>.</p>
 </div>
 
 ### Prerequisites
 Before you begin, you must:
 
-*	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">Install MySQL server</a> on the remote database host 
+*	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">Install MySQL server</a> on the database server 
 *	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html#instgde-prereq-mysql-config">Create a database instance</a> on the database server
 *	Install the MySQL client on your Magento web node. Consult MySQL documentation for details.
 
@@ -90,7 +90,7 @@ On your web node host, enter the following command to verify the connection work
 
 	mysql -u <local database user name> -h <database server ip address> -p
 
-If the MySQL monitor displays as follows, you're ready to install the Magento software:
+If the MySQL monitor displays as follows, the database is ready for the Magento software:
 
 	Welcome to the MySQL monitor.  Commands end with ; or \g.
 	Your MySQL connection id is 213
