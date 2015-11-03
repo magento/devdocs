@@ -12,7 +12,13 @@ This topic discusses how to:
 <h2 id="inst-sample-remove">Remove sample data</h2>
 Enter the following command:
 
-	magento sampledata:remove
+	magento sampledata:remove [module-list]
+
+where `[module-list]` is an optional space-separated list of sample data modules to install. Omit this parameter to remove all sample data modules.
+
+The complete list of sample data modules follows:
+
+{% include install/sampledata/sample-data_list-of-modules.md %}
 
 Wait while sample data is removed.
 
