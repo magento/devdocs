@@ -47,7 +47,11 @@ To create a remote connection:
 		Default options are read from the following files in the given order:
 		/etc/my.cnf /etc/mysql/my.cnf /usr/etc/my.cnf ~/.my.cnf
 
-2.	Anywhere except the `[mysqld]` section, add the following:
+3.	Search the configuration file for `bind-address`.
+
+	If it exists, change the value as follows. 
+
+	If it doesn't exist, add it anywhere except the `[mysqld]` section.
 
 		bind-address = <ip address of your Magento web node>
 
@@ -58,7 +62,7 @@ To create a remote connection:
 
 	CentOS: `service mysqld restart`
 
-	Ubuntu: TBD
+	Ubuntu: `service mysql restart`
 
 <h2 id="instgde-prereq-mysql-remote-access">Grant access to a database user</h2>
 To enable your web node to connect to the database server, you must grant a web node user access to the database on the remote server.
@@ -100,7 +104,7 @@ If the MySQL monitor displays as follows, you're ready to install the Magento so
 <h2 id="instgde-prereq-mysql-remote-install">Install the Magento software</h2>
 When you install the Magento software using either the command line or Setup Wizard, you must specify the following:
 
-*	The Base URL specifies the host name or IP address of the *webnode*
+*	The Base URL (also referred to as the *store address*) specifies the host name or IP address of the *webnode*
 *	Database host is the *remote database server* IP address
 *	Database user name is the *local web node* database user to which you gave access
 *	Database password is the local web node user's password
