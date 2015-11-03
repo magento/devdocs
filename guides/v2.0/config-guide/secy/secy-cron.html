@@ -318,6 +318,7 @@ htpasswd -c /usr/local/apache/password/passwords &lt;username&gt;
     <pre><code>&lt;Files cron.php&gt;
 	AuthType Basic
 	AuthName "Cron Authentication"
+	AuthUserFile /usr/local/apache/password/passwords
 	AuthGroupFile &lt;path to optional group file&gt;
 	Require group &lt;name&gt;
 &lt;/Files&gt;
