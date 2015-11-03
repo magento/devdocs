@@ -17,21 +17,21 @@ github_link: install-gde/prereq/mysql_remote.md
 *	<a href="#instgde-prereq-mysql-remote-install">Install the Magento software</a>
 
 <h2 id="instgde-prereq-mysql-remote-over">When to set up a remote database connection</h2>
-This topic discusses how to set up a connection from your Magento web node to a MySQL server on another host. If you have a separate database host, you must perform the tasks discussed in this topic to install and use the Magento software.
+This topic discusses how to set up a connection from your Magento web node to a MySQL server on another host. If you have a separate database host, you must perform the tasks discussed in this topic to install and use the Magento software. (The Magento *web node* is the server on which you installed the Magento software and that runs your web server.)
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>This is an advanced topic that should be used only by an experienced network administrator or database administrator. You must have <code>root</code> access to the file system and to the MySQL database on both hosts.</p>
+  <p>This is an advanced topic that should be used only by an experienced network administrator or database administrator. You must have <code>root</code> access to the file system on both hosts.</p>
 </div>
 
 ### Prerequisites
 Before you begin, you must:
 
 *	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">Install MySQL server</a> on the remote database host 
-*	Install the MySQL client on your Magento web node. Consult MySQL documentation for details.
 *	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html#instgde-prereq-mysql-config">Create a database instance</a> on the database server
+*	Install the MySQL client on your Magento web node. Consult MySQL documentation for details.
 
 ### Resolving connection issues
-If you have issues connecting to either host, you might need to configure firewall and SELinux rules to allow the hosts to communicate with each other.
+If you have issues connecting to either host, first ping the other host to make sure it's reachable. You also might need to allow connections from one host to another by modifying firewall and SELinux rules (if you use SELinux).
 
 <h2 id="instgde-prereq-mysql-remote-create">Create the remote connection</h2>
 To create a remote connection:
@@ -64,8 +64,12 @@ To create a remote connection:
 
 	Ubuntu: `service mysql restart`
 
+<div class="bs-callout bs-callout-info" id="info">
+  	<p>If MySQL fails to start, look in syslog for the source of the issue. If MySQL is continually restarting, try setting the value of <code>bind-address</code> to <code>0.0.0.0</code>, which enables MySQL to listen on all IP addresses.</p>
+</div>
+
 <h2 id="instgde-prereq-mysql-remote-access">Grant access to a database user</h2>
-To enable your web node to connect to the database server, you must grant a web node user access to the database on the remote server.
+To enable your web node to connect to the database server, you must grant a web node database user access to the database on the remote server.
 
 This example grants the `root` database user full access to the database on the remote host.
 
