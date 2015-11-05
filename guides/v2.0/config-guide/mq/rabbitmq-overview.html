@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Introduction</title>
+	<title>Message Queues</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">
+	<link rel="canonical" href="//guides/v2.0/config-guide/mq/rabbitmq-overview.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Introduction</h1>
+		<h1 class="page-heading">Message Queues</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/config-guide/mq/rabbitmq-overview.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -211,40 +211,40 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="introduction">Introduction</h2>
+		<p><img src="/common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only" /></p>
 
-<p>This guide contains information for developers who want to extend, or customize, any of the components in the Magento platform. That includes building a new module from scratch for custom extension of Magento functionality. This guide is also for those who want to create an extension for Magento Connect, although it does not cover the publishing process.</p>
+<p>The Message Queue Framework (MQF) is a system within Magento Enterprise Edition that allows a module to publish messages to queues. It also defines the consumers that will receive the messages asynchronously. The MQF uses <a href="http://www.rabbitmq.com">RabbitMQ</a> as the messaging broker, which provides a scalable platform for sending and receiving messages. It also includes a mechanism for storing undelivered messages. RabbitMQ is based on the Advanced Message Queuing Protocol (AMQP) 0.9.1 specification. </p>
 
-<h2 id="magento-components">Magento components</h2>
+<p>The following diagram illustrates the Message Queue Framework.</p>
 
-<p>Magento is made up of components:</p>
+<p><img src="mq.png" alt="MQ Architecture" /></p>
 
 <ul>
-  <li>Modules</li>
-  <li>Themes</li>
-  <li>Language packages</li>
+  <li>
+    <p>A publisher is a component that sends messages to an exchange. It knows which exchange to publish to and the format of the messages it sends.</p>
+  </li>
+  <li>
+    <p>An exchange receives messages from publishers and sends them to queues. Although RabbitMQ supports multiple types of exchanges, Magento uses topic exchanges only. A topic includes a routing key, which contains text strings separated by dots. The format for a topic name is <code><i>string1</i>.<i>string2</i></code>…, for example, <code>customer.created</code> or <code>customer.sent.email</code>.</p>
+
+    <p>The broker allows you to use wildcards when setting rules for forwarding messages.  You can use an asterisk (<code>*</code>) to replace <em>one</em> string or a pound sign (<code>#</code>) to replace 0 or more strings. For example, <code>customer.*</code> would filter on <code>customer.create</code> and <code>customer.delete</code>, but not <code>customer.sent.email</code>. However <code>customer.#</code> would filter on <code>customer.create</code>,  <code>customer.delete</code>, and<code>customer.sent.email</code>.</p>
+  </li>
+  <li>
+    <p>A queue is a buffer that stores messages.</p>
+  </li>
+  <li>
+    <p>A consumer receives messages. It knows which queue to consume. It can map processors of the message to a specific queue.</p>
+  </li>
 </ul>
 
-<p>A Magento <em>module</em> is code that accomplishes a particular business function or handles a Magento feature. A module is a collection <code>.php</code> and <code>.xml</code> files, but may also contain other files such as <code>.phtml</code> and image files. Modules are interactive with each other. A module also contains any user interface required for a user’s interaction with the module, and any application interfaces that another module or code chunk might call, if you decide to expose any application interface to other Magento modules.</p>
+<p>A basic message queue system can also be set up without using RabbitMQ. In this system, a MySQL adapter stores messages in the database. Three database tables (<code>queue</code>, <code>queue_message</code>, and <code>queue_message_status</code>) manage the message queue workload. Cron jobs ensure the consumers are able to receive messages. This solution is not very scalable. RabbitMQ should be used whenever possible.</p>
 
-<p><em>Themes</em> applied to your Magento development can change your modules appearance. 
-<em>Language Packages</em> provides translations for strings that display on the frontend and Administration panels.</p>
+<p>See <a href="/guides/v2.0/config-guide/mq/config-mq.html.html">Configure message queues</a> for information about setting up the message queue system.</p>
 
-<p>This guide focuses on Magento modules.</p>
-
-<h3 id="modules">Modules</h3>
-
-<p>A <em>package</em> is a module that is wrapped up in a distributable form using Composer.</p>
-
-<p>An <em>extension</em> is a module—plus any themes and/or language packages needed for the extension—that is packaged for sale on Magento Connect.</p>
-
-<div class="bs-callout bs-callout-info" id="info">
-<p>You must follow a <a href="http://www.php-fig.org/psr/psr-4/">PSR compliant</a> structure when building a module.</p>
-</div>
-
-<h2 id="m2arch-related">Related topic</h2>
-
-<p><a href="/guides/v2.0/architecture/modules/mod_intro.html">Modules</a> in the Magento Architecture Guide.</p>
+<h4 id="related-topics">Related Topics</h4>
+<ul>
+  <li><a href="/guides/v2.0/config-guide/mq/config-mq.html">Configure message queues</a></li>
+  <li><a href="/guides/v2.0/install-gde/prereq/install-rabbitmq.html">Install RabbitMQ</a></li>
+</ul>
 
 
 		</div>
@@ -274,7 +274,6 @@
 
 
 
-<h4>PHP developer guide</h4>
 
 
 
@@ -297,6 +296,7 @@
 
 
 
+<h4>Configuration guide</h4>
 
 
 
@@ -325,6 +325,34 @@
 			
 				
 				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
 					
 					
 					
@@ -340,17 +368,13 @@
 							
 								
 								
-									<li class="  active "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">Introduction</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/config-guide/bk-config-guide.html">Introduction</a></li>
 									
 								
 								
 								
 							
 								
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/developers_roadmap.html">Developer roadmap</a></li>
-						
 								
 								
 								
@@ -369,7 +393,7 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/prepare.html">Prepare</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/config-guide/secy/secy.html">Security settings</a></li>
 									
 								
 								
@@ -378,56 +402,11 @@
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/composer-integration.html">Composer integration</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/build.html">Build</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/module-file-structure.html">Module file Structure</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/secy/secy-cron.html">Secure cron.php</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/required-configuration-files.html">Define your configuration files</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/component-registration.html">Component registration</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/create_module.html">Create a module</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/module-load-order.html">Module load order</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/enable-module.html">Enable a module</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/secy/secy-xframe.html">X-Frame-Options header</a></li>
 						
 								
 								
@@ -447,7 +426,7 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/validate.html">Validate</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/config-guide/bootstrap/magento-bootstrap.html">Magento application initialization and bootstrap</a></li>
 									
 								
 								
@@ -456,7 +435,23 @@
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/test-module.html">Test your module</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html">Set the mode (MAGE_MODE)</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/bootstrap/mage-dirs.html">Customize base directory paths (MAGE_DIRS)</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/bootstrap/mage-profiler.html">Enable an HTML profiler (MAGE_PROFILER)</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/bootstrap/mage-run.html">Multiple websites or stores (MAGE_RUN_TYPE, MAGE_RUN_CODE)</a></li>
 						
 								
 								
@@ -476,7 +471,7 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/package.html">Package</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/config-guide/cli/config-cli.html">Command line configuration</a></li>
 									
 								
 								
@@ -485,7 +480,59 @@
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/package_module.html">Package a module</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html">Get started with command-line configuration</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
 						
 								
 								
@@ -505,7 +552,7 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/module-development.html">Module development</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/config-guide/varnish/config-varnish.html">Configure and use Varnish</a></li>
 									
 								
 								
@@ -514,59 +561,234 @@
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-install.html">Install Varnish</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/api-concepts.html">Public interfaces & APIs</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-configure.html">Configure Varnish and your web server</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/service-contracts/design-patterns.html">Service contract design patterns</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-magento.html">Configure Magento to use Varnish</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/depend-inj.html">Dependency injection</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-final.html">Final verification</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/code-generation.html">Code generation</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/use-varnish-cache.html">How Magento cache clearing works with Varnish</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/attributes.html">EAV and extension attributes</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/use-varnish-cache-how.html">How Varnish caching works</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/config-guide/config/caching.html">Caching</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/caching_frontend-cache-types.html">Associate cache frontends with cache types</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/plugins.html">Magento plug-ins</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/caching_low-level.html">Low-level cache options</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/routing.html">Routing</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/database/database.html">Database caching</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/indexing.html">Indexing</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/caching-cache-type.html">Create a cache type</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">Magento configuration files</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/config-php.html">Magento's deployment configuration</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/config-files.html">Module configuration files</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/backward-compatibility.html">Backward compatibility</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/config-create.html">Create or extend configuration types</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class="  active "><a class="nav-header" href="/guides/v2.0/config-guide/mq/rabbitmq-overview.html">Message Queues (Enterprise Edition only)</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/mq/config-mq.html">Configure message queue topology</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/add-cli-commands-to-module.html">Adding CLI commands</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/mq/manage-mysql.html">MySQL message queues</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/config-guide/redis/config-redis.html">Configure Redis</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/config-guide/solr/solr-overview.html">Install and configure Solr (Enterprise Edition only)</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/solr/solr-magento.html">Configure Solr and Magento</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/message-queues.html">Message Queues (Enterprise Edition Only)</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/solr/solr-script.html">Prepare Solr for production</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/config-guide/multi-master/multi-master.html">Split database performance solution (Enterprise Edition only)</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/multi-master/multi-master_masterdb.html">Set up master databases</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/howdoi/php/php_clear-dirs.html">Clear directories during development</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/multi-master/multi-master_verify.html">Verify split databases</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/multi-master/multi-master_slavedb.html">Set up optional database replication</a></li>
 						
 								
 								
@@ -578,34 +800,6 @@
 					
 
 
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
 				
 			
 			
