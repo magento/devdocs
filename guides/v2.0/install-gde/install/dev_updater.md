@@ -50,4 +50,4 @@ Save your changes to `composer.json`, exit the text editor, and enter `composer 
 If you have issues, see <a href="https://getcomposer.org/doc/articles/troubleshooting.md" target="_blank">Composer troubleshooting</a>.
 
 #### Next step
-<a href="{{ site.gdeurl }}continue-to-install.html">Install the Magento software</a>
+<a href="{{ site.gdeurl }}install-gde/continue-to-install.html">Install the Magento software</a>
