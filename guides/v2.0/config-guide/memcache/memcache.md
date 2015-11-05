@@ -172,7 +172,7 @@ To install and configure memcached on Ubuntu:
 1.  As a user with `root` privileges, enter the following command:
 
       apt-get -y update
-      apt-get -y install php5-memcached memcached
+      apt-get -y install php5-memcache memcached
 
 2.  Restart your web server.
 
@@ -234,7 +234,7 @@ if ($result) {
     echo $result;
 } else {
     echo "No matching key found.  Refresh the browser to add it!";
-    $mem->set("test", "Succesfully retrieved the data!") or die("Couldn't save anything to memcached...");
+    $mem->set("test", "Successfully retrieved the data!") or die("Couldn't save anything to memcached...");
 }
 ?>
 {% endhighlight %}
