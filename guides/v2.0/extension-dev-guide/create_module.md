@@ -71,7 +71,7 @@ where:
 * `name` &#8212; is the name of your module.
 * `description` &#8212; is a concise explanation of your module's purpose.
 * `require` &#8212; lists any modules your module depends on.
-* `suggest` &#8212; lists soft dependencies. The module can operate without them, but if the modules are active, they should be loaded before.
+* `suggest` &#8212; lists soft dependencies. The module can operate without them, but if the modules are active, this module may impact their functionality. `Suggest` does not affect module load order.
 
 * `type` &#8212; determines what type of magento component your module is. Choose from *magento2-library*, *magento2-theme*, *magento2-language*, or *magento2-module*.
 * `version` &#8212; lists the version of the module.
