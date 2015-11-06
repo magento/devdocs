@@ -271,7 +271,7 @@
   <li><code>description</code> — is a concise explanation of your module’s purpose.</li>
   <li><code>require</code> — lists any modules your module depends on.</li>
   <li>
-    <p><code>suggest</code> — lists soft dependencies. The module can operate without them, but if the modules are active, they should be loaded before.</p>
+    <p><code>suggest</code> — lists soft dependencies. The module can operate without them, but if the modules are active, this module may impact their functionality. <code>Suggest</code> does not affect module load order.</p>
   </li>
   <li><code>type</code> — determines what type of magento component your module is. Choose from <em>magento2-library</em>, <em>magento2-theme</em>, <em>magento2-language</em>, or <em>magento2-module</em>.</li>
   <li><code>version</code> — lists the version of the module.</li>
