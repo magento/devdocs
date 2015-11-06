@@ -93,7 +93,7 @@ For example, `http://192.0.2.1/cache-test.php`
 
 The first time you go to the page, the following displays: `No matching key found. Refresh the browser to add it!`
 
-Refresh the browser. The message changes to `Succesfully retrieved the data!`
+Refresh the browser. The message changes to `Successfully retrieved the data!`
 
 Finally, you can view the memcache keys using Telnet:
 
