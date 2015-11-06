@@ -2,9 +2,9 @@
 layout: default
 group: rest
 subgroup: A_rest
-title: List of REST APIs
-menu_title: List of REST APIs
-menu_order: 2
+title: List of REST APIs by module
+menu_title: List of REST APIs by module
+menu_order: 3
 menu_node: 
 github_link: rest/list.md
 redirect_from: /guides/v1.0/rest/list.html
