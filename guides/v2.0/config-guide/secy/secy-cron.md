@@ -97,6 +97,7 @@ To add security for cron in Magento's `.htaccess`:
 		<Files cron.php>
     		AuthType Basic
     		AuthName "Cron Authentication"
+    		AuthUserFile /usr/local/apache/password/passwords
     		AuthGroupFile <path to optional group file>
     		Require group <name>
 		</Files>
