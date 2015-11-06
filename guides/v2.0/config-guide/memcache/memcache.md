@@ -11,9 +11,9 @@ github_link: config-guide/memcache/memcache.md
 
 #### Contents
 *	<a href="#config-memcache-over">Overview of memcached session storage</a>
-*	<a href="#config-memcache-install">Install memcached</a>
-*	<a href="#config-memcache-conf">Configure Magento to use memcached</a>
-*	<a href="#config-memcache-verify">Verify memcached is working with Magento</a>
+*	<a href="{{ site.gdeurl }}config-guide/memcache/memcache_ubuntu.html">Install, configure, verify memcached on Ubuntu</a>
+*   <a href="{{ site.gdeurl }}config-guide/memcache/memcache_centos.html">Install, configure, verify memcached on CentOS</a>
+*	<a href="{{ site.gdeurl }}config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a>
 
 <h2 id="config-memcache-over">Overview of memcached session storage</h2>
 TBD
