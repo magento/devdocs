@@ -1,4 +1,4 @@
-<!--
+
 ---
 layout: default
 group: rest
@@ -10,5 +10,3 @@ externalURL: http://devdocs.magento.com/swagger/index.html
 github_link: rest/apis.md
 
 ---
-
--->
