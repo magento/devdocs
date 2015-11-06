@@ -25,6 +25,7 @@ The topic covers the following:
 Component's behavior, configuration and structure is defined by the following:
 
  - The available components configuration options are defined by component.js -> defaults.
+<p class="q">is it really named components.js or is it a generalization? if so, what is the file we are talking about </p>
  - The actual configuration and structure of a particular component's `app/code/Magento/<Module>/view/<area>ui_component/*.xml` configuration from xml  == content from <argument/> node <p class="q">need more explanation</p>
 	xml describes structure of components, their real names. Also it extends properties, configures template and component file.
  - Componet methods descibed in component.js
@@ -64,13 +65,13 @@ The most important client-side properties of a UI component are the following:
 The following properties are used for linking observable properties and methods of UI components:
 
 <ul>
-<li><code>exports</code>: used to notify some external entity about property changing. <code>Exports</code>'s value is an object, composed of the following:
+<li><code>exports</code>: used to notify some external entity about property changing. <code>exports</code>'s value is an object, composed of the following:
 <ul>
-<li>key - name of the property or method from which is tracked for changes. Only internal property.</li>
-<li>value - name of the property or method which receives the notification. Could use string templates.</li>
+<li><code>key</code> - name of the property or method which is tracked for changes. Only internal property.</li>
+<li><code>value</code> - name of the property or method which receives the notification. Could use string templates.</li>
 <p class="q">need to add an illustration of a string template</p>
 </ul>
-Example of using <code>export</code> in component.js:
+Example of setting <code>exports</code> in <code>component.js</code>:
 {% highlight php%}
 {
   'exports': {
@@ -79,22 +80,115 @@ Example of using <code>export</code> in component.js:
 }
 {% endhighlight php%}
 
-Example of using <code>export</code> in configuration.xml file:
+Example of using <code>exports</code> in <code>configuration.xml</code> file:
+
 {% highlight php%}
-&lt;argument name=&quot;data&quot; xsi:type=&quot;array&quot;&gt;
-       &lt;item name=&quot;config&quot; xsi:type=&quot;array&quot;&gt;
-                    &lt;item name=&quot;links&quot; xsi:type=&quot;array&quot;&gt;
-                        &lt;item name=&quot;visible&quot; xsi:type=&quot;string&quot;&gt;sample_config.sample_provider.visibility&lt;/item&gt;
-                    &lt;/item&gt;
-       &lt;/item&gt;
-&lt;/argument&gt;
+<argument name="data" xsi:type="array">
+       <item name="config" xsi:type="array">
+                    <item name="exports" xsi:type="array">
+                        <item name="visible" xsi:type="string">sample_config.sample_provider.visibility</item>
+                    </item>
+       </item>
+</argument>
 {% endhighlight php%}
 </li>
- -- imports 
+<li><code>imports</code>: used for tracking changes of an external entity property. <code>imports</code>'s value is an object, composed of the following:
+<ul>
+<li><code>key</code> - name of the property or method which receives the notifications. Only internal property.</li>
+<li><code>value</code> - name of the property or method which is tracked for changes. Could use string templates.</li>
+<p class="q">need to add an illustration of a string template</p>
+</ul>
 
--
- -- links
- -- listen
+Example of using <code>imports</code> in <code>component.js</code>:
+
+{% highlight php%}
+{
+  'imports': {
+   'visible': '${ $.provider }.visibility'
+  }
+}
+{% endhighlight php%}
+
+Here `visible` is the `key`, `${ $.provider }.visibility` is the `value`.
+
+Example of using <code>exports</code> in <code>configuration.xml</code> file:
+
+{% highlight php%}
+<argument name="data" xsi:type="array">
+       <item name="config" xsi:type="array">
+                    <item name="imports" xsi:type="array">
+                        <item name="visible" xsi:type="string">sample_config.sample_provider.visibility</item>
+                    </item>
+       </item>
+</argument>
+{% endhighlight php%}
+
+In these examples, `visible` is the `key`, `sample_config.sample_provider.visibility` is the value.
+
+</li>
+
+<li>
+<code>links</code> used for mutual tracking property changes. <code>links</code>'s value is an object, composed of the following:
+<p class="q">Is it the same for links? If yes, are both key and value just equivalent properties?</p>
+<ul>
+<li><code>key</code> - name of the property or method which receives the notifications. Only internal property.</li>
+<li><code>value</code> - name of the property or method which is tracked for changes. Could use string templates.</li>
+<p class="q">need to add an illustration of a string template</p>
+</ul>
+
+Example of using <code>links</code> in <code>component.js</code>:
+
+{% highlight php%}
+{
+  'links': {
+   'visible': '${ $.provider }.visibility'
+  }
+}
+{% endhighlight php%}
+
+Example of using <code>links</code> in <code>configuration.xml</code> file:
+
+{% highlight php%}
+<argument name="data" xsi:type="array">
+       <item name="config" xsi:type="array">
+                    <item name="links" xsi:type="array">
+                        <item name="visible" xsi:type="string">sample_config.sample_provider.visibility</item>
+                    </item>
+       </item>
+</argument>
+{% endhighlight php%}
+
+</li>
+<li>
+<code>listens</code> 
+<ul>
+<li><code>key</code> - name of the property which listens to the changes.</li>
+<li><code>value</code> - name of the property or method which is tracked for changes. Could use string templates.</li>
+<p class="q">What is the difference between listens and imports?</p>
+</ul>
+Example of using <code>listens</code> in <code>component.js</code>:
+
+{% highlight php%}
+{
+  'listens': {
+   'visible': '${ $.provider }.visibility'
+  }
+}
+{% endhighlight php%}
+
+Example of using <code>listens</code> in <code>configuration.xml</code> file:
+
+{% highlight php%}
+<argument name="data" xsi:type="array">
+       <item name="config" xsi:type="array">
+                    <item name="listens" xsi:type="array">
+                        <item name="visible" xsi:type="string">sample_config.sample_provider.visibility</item>
+                    </item>
+       </item>
+</argument>
+{% endhighlight php%}
+</li>
+
 </ul>
 
 ## Frequently used components
@@ -104,4 +198,4 @@ Example of using <code>export</code> in configuration.xml file:
 - uiClass
 
 
-- adfdf
+## JS UI components debugging
