@@ -12,9 +12,8 @@ github_link: config-guide/memcache/memcache.md
 #### Contents
 *	<a href="#config-memcache-over">Overview of memcached session storage</a>
 *	<a href="#config-memcache-install">Install memcached</a>
-*   <a href="config-memcache-verify-its">Verify memcached works before installing Magento</a>
 *	<a href="#config-memcache-conf">Configure Magento to use memcached</a>
-*	<a href="#config-memcache-verify">Verify memcached is working</a>
+*	<a href="#config-memcache-verify">Verify memcached is working with Magento</a>
 
 <h2 id="config-memcache-over">Overview of memcached session storage</h2>
 TBD
@@ -42,10 +41,6 @@ To install memcached on CentOS, perform the following tasks as a user with `root
         <p>The syntax of the preceding commands might depend on what package repositories you use. For example, if you use webtatic and PHP 5.6, enter <code>yum install -y php56w-pecl-memcache</code>. Use <code>yum list</code> to find the appropriate package name.</p></span>
     </div>
 
-2.  Restart your web server.
-
-    For Apache, `service httpd restart`
-
 3.  Change the memcached configuration setting for `CACHESIZE` and `OPTIONS`:
 
     1.  Open `/etc/sysconfig/memcached` in a text editor.
@@ -62,6 +57,10 @@ To install memcached on CentOS, perform the following tasks as a user with `root
 5.  Restart memcached.
 
         service memcached restart
+
+2.  Restart your web server.
+
+    For Apache, `service httpd restart`
 
 6.  Continue with the next section.
 
@@ -87,7 +86,7 @@ To verify memcached works:
 
     If memcache does not display, restart the web server and refresh the browser page. If it still does not display, verify you installed the `php-pecl-memcache` extension.
 
-#### Create a memcache test consisting of a MySQL database and PHP script.
+#### Create a memcache test consisting of a MySQL database and PHP script
 
 The test uses a MySQL database, table, and data to verify you can retrieve the database data and store it in memcache. A PHP script first searches the cache. If the result does not exist, the script queries database. After the query has been fulfilled by the original database, the script stores the result in memcache, using the `set` command.
 
@@ -162,9 +161,14 @@ The result is similar to the following:
     STAT items:3:outofmemory 0
     STAT items:3:tailrepairs 0
 
+Flush the memcache storage and quit Telnet:
+
+    flush_all
+    quit
+
 <a href="http://www.darkcoding.net/software/memcached-list-all-keys/" target="_blank">Additional information about the Telnet test</a>
 
-Continue with <a href="#config-memcache-verify">Verify memcached is working</a>.
+Continue with <a href="#config-memcache-conf">Configure Magento to use memcached</a>.
 
 <h3 id="config-memcache-install-ubuntu">Install memcached on Ubuntu</h3>
 To install and configure memcached on Ubuntu:
@@ -174,11 +178,7 @@ To install and configure memcached on Ubuntu:
       apt-get -y update
       apt-get -y install php5-memcache memcached
 
-2.  Restart your web server.
-
-    For Apache, `service apache2 restart`
-
-3.  Change the memcached configuration setting for `CACHESIZE` and `-l`:
+2.  Change the memcached configuration setting for `CACHESIZE` and `-l`:
 
     1.  Open `/etc/memcached.conf` in a text editor.
     2.  Locate the `-m` parameter.
@@ -189,6 +189,10 @@ To install and configure memcached on Ubuntu:
     7.  Restart memcached.
 
             service memcached restart
+
+3.  Restart your web server.
+
+    For Apache, `service apache2 restart`
 
 4.  Continue with the next section.
 
@@ -225,7 +229,7 @@ Create `cache-test.php` in the web server's docroot with the following contents:
 
 {% highlight php %}
 <?php
-$mem = new Memcached();
+$mem = new Memcache();
 $mem->addServer("<memcache host name or ip>", <memcache port>);
 
 $result = $mem->get("test");
@@ -270,7 +274,14 @@ The result is similar to the following:
     STAT items:2:expired_unfetched 0
     STAT items:2:evicted_unfetched 0
 
+Flush memcache storage and quit Telnet:
+
+    flush_all
+    quit
+
 <a href="http://www.darkcoding.net/software/memcached-list-all-keys/" target="_blank">Additional information about the Telnet test</a>
+
+Continue with the next section.
 
 <h2 id="config-memcache-conf">Configure Magento to use memcached</h2>
 To configure Magento to use memcache:
@@ -287,15 +298,14 @@ To configure Magento to use memcache:
 
         'session' =>
            array (
-              'save' => '{memcache|memcached}',
+              'save' => 'memcache',
               'save_path' => 'tcp://<memcache ip or host>:<memcache port>?persistent=1&weight=2&timeout=10&retry_interval=10'
         ),
 
-    use `memcache` on CentOS or `memcached` on Ubuntu.
+    For more information about memcached parameters, see the <a href="http://php.net/manual/en/memcache.addserver.php" target="_blank">PHP documentation</a>.
+3.  Continue with the next section.
 
-For more information about memcached parameters, see the <a href="http://php.net/manual/en/memcache.addserver.php" target="_blank">PHP documentation</a>.
-
-<h2 id="config-memcache-verify">Verify memcached is working</h2>
+<h2 id="config-memcache-verify">Verify memcached is working with Magento</h2>
 To verify memcached works with Magento:
 
 1.  Delete the contents of the following directories under your Magento installation directory:
@@ -306,7 +316,25 @@ To verify memcached works with Magento:
 
 3.  Log in to the Magento Admin and browse to serveral pages.
 
-    If no errors display, congratulations! memcache is working! You can optionally look at the cache as discussed in the following paragraphs.
+    If no errors display, congratulations! memcached is working! You can optionally look at memcached storage as discussed in the next step.
 
     If errors display (such as an HTTP 500 (TBD), enable developer mode and diagnose the issue. Make sure memcached is running, configured properly, and that `env.php` has no syntax errors. 
+
+4.  (Optional.) Use Telnet to look at memcached storage.
+
+        telnet <memcached host or ip> <memcached port>
+        stats items
+
+    The results display similar to the following:
+
+        STAT items:3:number 1
+        STAT items:3:age 7714
+        STAT items:3:evicted 0
+        STAT items:3:evicted_nonzero 0
+        STAT items:3:evicted_time 0
+        STAT items:3:outofmemory 0
+        STAT items:3:tailrepairs 0
+
+    <a href="http://www.darkcoding.net/software/memcached-list-all-keys/" target="_blank">Look at the keys in more detail</a>
+
 
