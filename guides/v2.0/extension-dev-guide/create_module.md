@@ -32,11 +32,12 @@ The smallest working module.xml file would look something like this:
 ##Add the module&#8217;s `composer.json` file
 
 
+
+
+{% highlight JSON %}
+
 	{
     "name": "your-name/module-Acme",
-    "autoload": {
-        "psr-4": { "AcmeVendor\\BarComponent\\": "" },
-        "files": [ "registration.php" ],
     "description": "Test module for Magento 2",
     "require": {
         "php": "~5.5.0|~5.6.0",
@@ -55,16 +56,15 @@ The smallest working module.xml file would look something like this:
         "OSL-3.0",
         "AFL-3.0"
     ],
-    "extra": {
-        "map": [
-            [
-                "*",
-                "YourName/FooBar"
-            ]
-        ]
+    "autoload": {
+        "files": [ "registration.php" ],
+        "psr-4": {
+            "Magento\\CatalogImportExport\\": ""
+        }
     }
 }
 
+{% endhighlight %}
 
 where:
 
@@ -76,7 +76,7 @@ where:
 * `type` &#8212; determines what type of magento component your module is. Choose from *magento2-library*, *magento2-theme*, *magento2-language*, or *magento2-module*.
 * `version` &#8212; lists the version of the module.
 * `license` &#8212; lists applicable licenses that apply to your module.
-* `extra.map` &#8212; gives the path for Magento&#8217;s Composer installer so it can marshall your component&#8217;s files to the appropriate locations under the main instance of Magento.
+* `autoload` &#8212; instructs composer to load the specified files.
 
 
 
