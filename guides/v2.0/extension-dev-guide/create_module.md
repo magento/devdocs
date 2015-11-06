@@ -89,7 +89,7 @@ where:
 
 ##Next
 
-[Module Load Order](module-load-order.html)
+[URN schema validation](XSD-XML-validation.html)
 
 
 
