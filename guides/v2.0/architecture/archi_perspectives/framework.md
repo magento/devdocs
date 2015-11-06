@@ -150,18 +150,19 @@ The Magento Framework (`lib/internal/Magento/Framework/`) provides a robust rang
          </td>
          <td>Contains the code that publishes synchronous events and that handles observers for any Magento event is handled here.
 </td>
-      </t>
+      </tr>
+<tr>
 
-         <td>
-         </td>
-         <tr>
          <td><code>Magento\Framework\Validator</code>
          </td>
          <td>Contains the code that validates data (currencies, not empty) and that handles observers for any Magento event.
 </td>
-      </t>
-
-         <td></td>
+      </tr>
+      <tr>
+      <td><code>Magento\Framework\Amqp</code></td>
+      <td><p>Enterprise Edition only.</p>
+      <p></p>Supports the Advanced Message Queuing Protocol, which is used by the Magento Message Queue Framework.</td>
+      </tr>
 </tbody>
 </table>
 
