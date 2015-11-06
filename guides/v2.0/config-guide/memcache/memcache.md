@@ -251,7 +251,7 @@ For example, `http://192.0.2.1/cache-test.php`
 
 The first time you go to the page, the following displays: `No matching key found. Refresh the browser to add it!`
 
-Refresh the browser. The message changes to `Succesfully retrieved the data!`
+Refresh the browser. The message changes to `Successfully retrieved the data!`
 
 Finally, you can view the memcache keys using Telnet:
 
@@ -314,7 +314,7 @@ To verify memcached works with Magento:
 
 2.  Go to any page on the storefront.
 
-3.  Log in to the Magento Admin and browse to serveral pages.
+3.  Log in to the Magento Admin and browse to several pages.
 
     If no errors display, congratulations! memcached is working! You can optionally look at memcached storage as discussed in the next step.
 
