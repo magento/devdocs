@@ -1,9 +1,20 @@
 <h2 id="instgde-prereq-sample-intro">Introduction to Magento sample data</h2>
 <p>Magento sample data provides a storefront based on the Luma theme outfitted with products, categories, customer registration, and so on. It functions just like a Magento storefront and you can manipulate prices, inventory, and promotional pricing rules using the Magento Admin.</p>
 <p>Installing sample data is optional; be aware that if you do install it, there is no way to uninstall only the sample data. You must uninstall and reinstall the Magento software.</p>
+
+<p>You can install sample data in any of the following ways:</p>
+<ul><li>All users: Command line</li>
+    <li><a href="#sample-data-clone">Contributing developers only</a></li></ul>
+
+
+<h2 id="sample-data-cli">Install sample data using the command line</h2>
+
+
+<h2 id="sample-data-clone">Contributing developers: Install sample data by cloning repositories</h2>
+<p>This method of installing sample data should be used <em>only</em> by developers who contribute code to the Magento GitHub repository.</p>
 <div class="bs-callout bs-callout-warning">
-    <p>Due to recent changes, you can now use sample data with either the <code>develop</code> branch (more current) or the <code>merchant_beta</code> branch (more stable) but only if you <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html#instgde-prereq-compose-clone">cloned</a> the corresponding branch of the Magento 2 GitHub repository.</p>
-    <p>We recommend you use the <code>merchant_beta</code> branch because it's more stable. If you're contributing code to the Magento 2 repository and you need the most recent code, use the <code>develop</code> branch.</p>
+    <p>Due to recent changes, you can now use sample data with either the <code>develop</code> branch (more current) or the <code>master</code> branch (more stable) but only if you <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html#instgde-prereq-compose-clone">cloned</a> the corresponding branch of the Magento 2 GitHub repository.</p>
+    <p>We recommend you use the <code>master</code> branch because it's more stable. If you're contributing code to the Magento 2 repository and you need the most recent code, use the <code>develop</code> branch.</p>
 </div>
 
 <h2 id="sample-prereq">Sample data prerequisites</h2>
@@ -11,10 +22,10 @@
 <ol><li><a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Clone the Magento 2 GitHub repository</a> (preferably the develop branch, which is the default).</li>
     <li><a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Update dependencies</a> by running <code>composer install</code>.</li>
 <li>Decide which branch of the code to use:
-    <ul><li><code>merchant_beta</code>, which is more stable (we recommend this branch unless you're contributing code to the Magento 2 project)</li>
+    <ul><li><code>master</code>, which is more stable (we recommend this branch unless you're contributing code to the Magento 2 project)</li>
         <li><code>develop</code>, which is more recent</li>
     <div class="bs-callout bs-callout-warning">
-        <p>You must clone the <em>same branch</em> of both repositories. If you cloned the <code>merchant_beta</code> branch of the Magento 2 repository, you must clone the <code>merchant_beta</code> branch of the sample data repository.</p>
+        <p>You must clone the <em>same branch</em> of both repositories. If you cloned the <code>master</code> branch of the Magento 2 repository, you must clone the <code>master</code> branch of the sample data repository.</p>
         <p>Use the <code>git branch</code> command in the Magento 2 clone directory to display which branch you have.</p>
     </div>
     </ul>
@@ -45,11 +56,11 @@ Typically, for Ubuntu, it's <code>/var/www</code> and for CentOS it's <code>/var
 Need help locating the docroot? Click <a href="{{ site.gdeurl }}install-gde/basics/basics_docroot.html">here</a>.</li>
 <li>Enter <code>git clone</code> and paste the value you obtained from step 1.<br>
 The format of the command follows:<br>
-<pre>git clone [b merchant_beta] git@github.com:magento/magento2-sample-data.git</pre>
-Use <code>-b merchant_beta</code> to clone the merchant_beta branch; omit it to clone the <code>develop</code> branch, which is the default.<br>
-We recommend you clone the <code>merchant_beta</code> branch because it's more stable; clone <code>develop</code> if you're contributing code to Magento 2.<br>
+<pre>git clone [-b master] git@github.com:magento/magento2-sample-data.git</pre>
+Use <code>-b master</code> to clone the master branch; omit it to clone the <code>develop</code> branch, which is the default.<br>
+We recommend you clone the <code>master</code> branch because it's more stable; clone <code>develop</code> if you're contributing code to Magento 2.<br>
 Remember to clone the <em>same branch</em> of sample data as Magento 2 code. Use the <code>git branch</code> command in the Magento 2 clone directory to display which branch you have.<br><br>
-An example follows: <code>git clone -b merchant_beta git@github.com:magento/magento2-sample-data.git</code></li>
+An example follows: <code>git clone -b master git@github.com:magento/magento2-sample-data.git</code></li>
 <li>Wait for the repository to clone on your server.<br>
 
     <div class="bs-callout bs-callout-info" id="info">
@@ -81,12 +92,12 @@ The following figure shows an example.<br>
 Typically, for Ubuntu, it's <code>/var/www</code> and for CentOS it's <code>/var/www/html</code>.</li>
 <li>Enter <code>git clone</code> and paste the value you obtained from step 1.<br>
 The format of the command follows:<br>
-<pre>git clone [b merchant_beta] https://github.com/magento/magento2-sample-data.git</pre>
-Use <code>-b merchant_beta</code> to clone the merchant beta branch; omit it to clone the <code>develop</code> branch, which is the default.<br>
-We recommend you clone the <code>merchant_beta</code> branch because it's more stable; clone <code>develop</code> if you're contributing code to Magento 2.<br>
+<pre>git clone [-b master] https://github.com/magento/magento2-sample-data.git</pre>
+Use <code>-b master</code> to clone the merchant beta branch; omit it to clone the <code>develop</code> branch, which is the default.<br>
+We recommend you clone the <code>master</code> branch because it's more stable; clone <code>develop</code> if you're contributing code to Magento 2.<br>
 Remember to clone the <em>same branch</em> of sample data as Magento 2 code. Use the <code>git branch</code> command in the Magento 2 clone directory to display which branch you have.<br><br>
 An example follows:<br>
-<pre>git clone -b merchant_beta https://github.com/magento/magento2-sample-data.git</pre></li>
+<pre>git clone -b master https://github.com/magento/magento2-sample-data.git</pre></li>
 <li>Wait for the repository to clone on your server.</li>
 <li>Change to the <code>&lt;your Magento sample data clone dir>/dev/tools</code> directory.</li>
 <li>Enter the following command:<br>
