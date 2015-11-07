@@ -214,8 +214,7 @@
 		<h4 id="contents">Contents</h4>
 <ul>
   <li><a href="#use-varnish-magento-purge">Varnish purging</a></li>
-  <li><a href="#use-varnish-cache">Refresh the Magento cache</a></li>
-  <li><a href="#use-varnish-magento-purge">Purge multiple Varnish hosts</a></li>
+  <li><a href="#use-varnish-magento-purge">Configure Magento to purge Varnish</a></li>
 </ul>
 
 <p>This topic discusses the basics of using Varnish as a web caching accelerator for Magento.</p>
@@ -249,21 +248,14 @@
   <li>
     <p>Maintaining source code. </p>
 
-    <p>You should refresh the cache and also periodically delete everything in the <code>var/generation</code> and <code>var/di</code> directories. For information on refreshing the cache, see <a href="#use-varnish-cache">Refresh the Magento cache</a>.</p>
+    <p>You should refresh the cache and also periodically delete everything in the <code>var/generation</code> and <code>var/di</code> directories. For information on refreshing the cache, see the next section.</p>
   </li>
 </ul>
 
-<h2 id="use-varnish-cache">Refresh the Magento cache</h2>
-<p>You can refresh the Magento cache (also referred to as <em>cleaning</em> the cache) in the Magento Admin or using the command line.</p>
+<h2 id="use-varnish-magento-purge">Configure Magento to purge Varnish</h2>
+<p>Magento purges Varnish hosts after you configure Varnish hosts using the <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-deployment.html"><code>magento setup:config:set</code></a> command. </p>
 
-<p>To refresh the cache using the Admin, click <strong>SYSTEM</strong> &gt; Tools &gt; <strong>Cache Management</strong>, then click <strong>Flush Magento Cache</strong> at the top of the page. (You can also refresh individual cache types.)</p>
-
-<p>To refresh the cache using the command line, you typically use the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean"><code>magento cache:clean [type]</code></a> command as the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a>.</p>
-
-<h2 id="use-varnish-magento-purge">Purge multiple Varnish hosts</h2>
-<p>If you use more than one Varnish server to accelerate Magento web caching, you can purge all Varnish hosts request using the <a href="/guides/v2.0/install-gde/install/install-cli-subcommands-deployment.html"><code>magento setup:config:set</code></a> command. </p>
-
-<p>You can use the optional parameter <code>--http-cache-hosts</code> parameter to specify a comma-separated list of Varnish hosts and listen ports. (Do not separate hosts with a space character.)</p>
+<p>You can use the optional parameter <code>--http-cache-hosts</code> parameter to specify a comma-separated list of Varnish hosts and listen ports. Configure all Varnish hosts, whether you have one or many. (Do not separate hosts with a space character.)</p>
 
 <p>The parameter format must be <code>&lt;hostname or ip&gt;:&lt;listen port&gt;</code>, where you can omit <code>&lt;listen port&gt;</code> if it’s port 80. </p>
 
@@ -271,6 +263,13 @@
 
 <pre><code>magento setup:config:set --http-cache-hosts=192.0.2.100,192.0.2.155:6081
 </code></pre>
+
+<p>You can then purge Varnish hosts when you refresh the Magento cache (also referred to as <em>cleaning</em> the cache) in the Magento Admin or using the command line.</p>
+
+<p>To refresh the cache using the Admin, click <strong>SYSTEM</strong> &gt; Tools &gt; <strong>Cache Management</strong>, then click <strong>Flush Magento Cache</strong> at the top of the page. (You can also refresh individual cache types.)</p>
+
+<p>To refresh the cache using the command line, you typically use the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean"><code>magento cache:clean [type]</code></a> command as the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a>.</p>
+
 
 
 		</div>
