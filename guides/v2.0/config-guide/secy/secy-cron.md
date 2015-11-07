@@ -180,7 +180,7 @@ To verify cron:
 You can run cron anytime using a web browser (for example, during development).
 
 <div class="bs-callout bs-callout-warning">
-    <p>Do <em>not</e> run cron in a browser without securing it as discussed earlier in this topic.</p>
+    <p>Do <em>not</em> run cron in a browser without securing it as discussed earlier in this topic.</p>
 </div>
 
 Before you run cron in the browser, remove the restriction from `.htaccess` as follows:
