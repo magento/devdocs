@@ -16,7 +16,16 @@ github_link: config-guide/memcache/memcache.md
 *	<a href="{{ site.gdeurl }}config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a>
 
 <h2 id="config-memcache-over">Overview of memcached session storage</h2>
-TBD
+memcached is a general-purpose distributed memory caching system. It is often used to speed up dynamic database-driven websites by caching data and objects in RAM to reduce the number of times an external data source (such as a database or API) must be read. (Source: <a href="https://en.wikipedia.org/wiki/Memcached" target="_blank">Wikipedia</a>)
+
+memcache provides a very large hash table that can be distributed across multiple machines. When the table is full, subsequent inserts cause older data to be purged in least recently used (LRU) order. The size of this hash table is often very large. (Source: <a href="http://memcached.org/" target="_blank">memcached.org</a>)
+
+Magento uses memcached for session storage but not for page caching. For page caching, we recommend <a href="{{ site.gdeurl }}config-guide/redis/config-redis.html">Redis</a> or <a href="{{ site.gdeurl }}config-guide/varnish/config-varnish.html">Varnish</a>.
+
+<div class="bs-callout bs-callout-info" id="info">
+   <span class="glyphicon-class">
+   <p>There is currently a known issue with using Redis for session storage. Magento doesn't support file locking, which causes issues with distributed systems and applications that rely on Ajax. We're actively working on a solution.</p></span>
+</div>
 
 #### Next step
 *   <a href="{{ site.gdeurl }}config-guide/memcache/memcache_ubuntu.html">Install, configure, verify memcached on Ubuntu</a>

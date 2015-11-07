@@ -44,7 +44,7 @@ To verify memcached works with Magento:
 
     If no errors display, congratulations! memcached is working! You can optionally look at memcached storage as discussed in the next step.
 
-    If errors display (such as an HTTP 500 (TBD), enable developer mode and diagnose the issue. Make sure memcached is running, configured properly, and that `env.php` has no syntax errors. 
+    If errors display (such as an HTTP 500 (Internal Server Error)), enable developer mode and diagnose the issue. Make sure memcached is running, configured properly, and that `env.php` has no syntax errors. 
 
 4.  (Optional.) Use Telnet to look at memcached storage.
 
