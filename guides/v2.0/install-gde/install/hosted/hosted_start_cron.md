@@ -6,7 +6,7 @@ title: Set up scheduled tasks (cron)
 menu_title: Set up scheduled tasks (cron)
 menu_order: 10
 menu_node: 
-github_link: install-gde/install/hosted/newbie_start_cron.md
+github_link: install-gde/install/hosted/hosted_start_cron.md
 ---
 
 <h2 id="newbie-db">Set up scheduled tasks (cron)</h2>

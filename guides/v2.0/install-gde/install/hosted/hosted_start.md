@@ -6,7 +6,7 @@ title: Configure your hosted system
 menu_title: Configure your hosted system
 menu_order: 1
 menu_node: parent
-github_link: install-gde/install/hosted/newbie_start.md
+github_link: install-gde/install/hosted/hosted_start.md
 ---
 
 ## Newbie installation
@@ -17,7 +17,7 @@ If you don't use GoDaddy, you might need to contact your hosting provider's tech
 #### Contents
 *	<a href="#newbie-verify">Verify the software on your system</a>
 *	<a href="#newbie-cpanel">Start the cPanel configuration utility</a>
-*	<a href="{{ site.gdeurl }}install-gde/newbie/newbie_start_db.html">Step 3. Configure a database and a database user</a>
+*	<a href="{{ site.gdeurl }}install-gde/newbie/hosted_start_db.html">Step 3. Configure a database and a database user</a>
 
 <h2 id="newbie-verify">Step 1: Verify the software on your system</h2>
 Magento requires the following software to run:

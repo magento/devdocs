@@ -6,7 +6,7 @@ title: Configure PHP
 menu_title: Configure PHP
 menu_order: 3
 menu_node: 
-github_link: install-gde/install/hosted/newbie_start_php.md
+github_link: install-gde/install/hosted/hosted_start_php.md
 ---
 
 <h2 id="newbie-db">Configure PHP</h2>

@@ -39,7 +39,7 @@ Consult the following table for how to get started.
 			<li>Extracts it on the Magento server or asks a network administrator or hosting provider to do so.</li>
 			<li>Installs the Magento software using the Setup Wizard.</li></ol>
 		</td>
-		<td><p><a href="{{ site.gdeurl }}install-gde/install/hosted/newbie_start.html">Easy installation (hosting provider like GoDaddy)</a></p></td>
+		<td><p><a href="{{ site.gdeurl }}install-gde/install/hosted/hosted_start.html">Easy installation (hosting provider like GoDaddy)</a></p></td>
 	</tr>
 	<tr>
 		<td><p>Easy installation, no command line, has own server</p></td>
