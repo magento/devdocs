@@ -2,8 +2,8 @@
 layout: default
 group: install2
 subgroup: Z_continue
-title: Choose how to install the Magento software
-menu_title: Choose how to install the Magento software
+title: Next&mdash;Choose how to install the Magento software
+menu_title: Next&mdash;Choose how to install the Magento software
 menu_node: parent
 menu_order: 1
 github_link: install-gde/continue.md

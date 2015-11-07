@@ -2,8 +2,8 @@
 layout: default 
 group: SampleData
 subgroup: T_SampleData
-title: Install, remove, or update optional sample data modules
-menu_title: Install, remove, or update optional sample data modules
+title: Remove or update optional sample data modules
+menu_title: Remove or update optional sample data modules
 menu_node: 
 menu_order: 1000
 github_link: install-gde/install/sample-data-other-cmds.md
