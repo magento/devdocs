@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: B_Security
-title: Secure cron.php
-menu_title: Secure cron.php
+title: Secure cron.php to run in a browser
+menu_title: Secure cron.php to run in a browser
 menu_order: 2
 menu_node: 
 github_link: config-guide/secy/secy-cron.md
@@ -14,6 +14,7 @@ github_link: config-guide/secy/secy-cron.md
 *	<a href="#config-cron-secure-apache">Secure cron with Apache</a>
 *	<a href="#config-cron-secure-nginx">Secure cron with nginx</a>
 *	<a href="#config-cron-secure-apache-verify">Verify cron is secure</a>
+*	<a href="#config-cli-cron-browser">Run cron from a web browser</a>
 
 <h2 id="config-cron-secure-over">Overview of securing cron</h2>
 The Magento cron job runs a number of scheduled tasks, including reindexing, generating e-mails, generating newsletters, generating sitemaps, and so on. cron is a vital part of your Magento configuration.
@@ -174,3 +175,60 @@ To verify cron:
 		SELECT * from cron_schedule
 
 	Verify that some rows are returned. If so, you're done!
+
+<h2 id="config-cli-cron-browser">Run cron from a web browser</h2>
+You can run cron anytime using a web browser (for example, during development).
+
+<div class="bs-callout bs-callout-warning">
+    <p>Do <em>not</e> run cron in a browser without securing it as discussed earlier in this topic.</p>
+</div>
+
+Before you run cron in the browser, remove the restriction from `.htaccess` as follows:
+
+1.	Log in to your Magento server as a user with permissions to write to the Magento file system.
+2.	Open any of the following in a text editor (depending on your entry point to Magento):
+
+		<your Magento install dir>/pub/.htaccess
+		<your Magento install dir>/.htaccess
+
+3.	Delete or comment out the following:
+
+		## Deny access to cron.php
+    	<Files cron.php>
+        	order allow,deny
+        	deny from all
+    	</Files>
+
+    For example,
+
+    	## Deny access  to cron.php
+    	#<Files cron.php>
+        #	order allow,deny
+        #	deny from all
+    	#</Files>
+
+3.	Save your changes and exit the text editor.
+
+You can then run cron in a web browser as follows:
+
+	<your Magento host name or IP>/<Magento root>/pub/cron.php[?group=<group name>]
+
+where
+
+*	`<your Magento host name or IP>` is the host name or IP address of your Magento installation
+*	`<Magento root>` is the web server docroot-relative directory to which you installed the Magento software
+
+	The exact URL you use to run the Magento application depends on how you configured your web server and virtual host.
+*	`<group name>` is any valid cron group name (optional)
+
+For example,
+
+	http://magento.example.com/magento2/pub/cron.php?group=index
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You must run cron twice: the first time to discover tasks to run and the second time to run the tasks themselves.</p></span>
+</div>
+
+<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group-conf">More information about cron groups</a>
+
