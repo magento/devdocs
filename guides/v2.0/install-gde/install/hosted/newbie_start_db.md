@@ -1,12 +1,12 @@
 ---
 layout: default
-group: install_newbie
+group: install_hosted
 subgroup: 02_config-hosted
 title: Configure a database and a database user
 menu_title: Configure a database and a database user
 menu_order: 2
 menu_node: 
-github_link: install-gde/install/newbie/newbie_start_db.md
+github_link: install-gde/install/hosted/newbie_start_db.md
 ---
 
 <h2 id="newbie-db">Configure a database and a database user</h2>

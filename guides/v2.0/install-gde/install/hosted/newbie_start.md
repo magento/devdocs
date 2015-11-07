@@ -1,12 +1,12 @@
 ---
 layout: default
-group: install_newbie
+group: install_hosted
 subgroup: 02_config-hosted
 title: Configure your hosted system
 menu_title: Configure your hosted system
 menu_order: 1
 menu_node: parent
-github_link: install-gde/install/newbie/newbie_start.md
+github_link: install-gde/install/hosted/newbie_start.md
 ---
 
 ## Newbie installation
