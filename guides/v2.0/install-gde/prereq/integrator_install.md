@@ -2,8 +2,8 @@
 layout: default
 group: install_pre
 subgroup: S_Integrator
-title: Get the Composer metapackage
-menu_title: Get the Composer metapackage
+title: (Integrator) Get the Composer metapackage
+menu_title: (Integrator) Get the Composer metapackage
 menu_order: 1
 menu_node: parent
 github_link: install-gde/prereq/integrator_install.md

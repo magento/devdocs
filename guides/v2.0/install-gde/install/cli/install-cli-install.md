@@ -264,12 +264,6 @@ The following table discusses the meanings of installation option names and valu
 		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td><p>--use-sample-data</p></td>
-		<td><p>Use this parameter to install optional Magento sample data. Magento sample data uses the Luma theme to provide you with a sample storefront, complete with products, customers, CMS pages, and so on. You can use it to get the feel of a Magento storefront.</p>
-		<p>Sample data installs only if you already enabled the package as discussed in <a href="{{ site.gdeurl }}install-gde/install/sample-data.html">Enable optional Magento sample data</a></p>.</td>
-		<td><p>No</p></td>
-	</tr>
-	<tr>
 		<td><p>--cleanup-database</p></td>
 		<td><p>To drop database tables before installing the Magento software, specify this parameter without a value. Otherwise, the Magento database is left intact.</p></td>
 		<td><p>No</p></td>
@@ -334,8 +328,6 @@ The following example installs Magento with the following options:
 
 	The database name is `magento`, and the user name and password are both `magento`
 
-*	Installs optional sample data
-
 *	Uses server rewrites
 
 *	The Magento administrator has the following properties:
@@ -352,7 +344,7 @@ The following example installs Magento with the following options:
 		--db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
 		--admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
 		--admin-user=admin --admin-password=admin123 --language=en_US \
-		--currency=USD --timezone=America/Chicago --use-sample-data --use-rewrites=1
+		--currency=USD --timezone=America/Chicago --use-rewrites=1
 
 Messages similar to the following display to indicate a successful installation:
 

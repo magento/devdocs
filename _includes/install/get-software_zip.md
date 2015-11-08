@@ -3,14 +3,8 @@
 #### Contents
 *	<a href="#software-over">Overview of Magento software sources</a>
 *	<a href="#get-archive">Get compressed download packages</a>
-*	<a href="#software-composer-project">Get the Composer metapackage</a>
-*	<a href="#software-composer-clone">Clone the Magento 2 repository</a>
 
-<h2 id="software-over">Overview of Magento software sources</h2>
-TBD
-
-
-<h2 id="get-archive">Get compressed download packages</h2>
+<h2 id="get-archive">Get the Magento software packages</h2>
 The following table discusses where to get the Magento software. We provide the following downloads:
 
 *	Magento CE or EE software only
@@ -45,8 +39,3 @@ These packages are easy to get and install. You don't need to use Composer, all 
 </tbody>
 </table>
 
-<h2 id="software-composer-project">Get the Composer metapackage</h2>
-See <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html">Get the Composer metapackage</a>
-
-<h2 id="software-composer-clone">Clone the Magento 2 repository</h2>
-See <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a>

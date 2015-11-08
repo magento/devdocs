@@ -9,10 +9,10 @@ menu_node: parent
 github_link: install-gde/install/hosted/hosted_start.md
 ---
 
-## Newbie installation
+## Hosted installation
 Before you can install the Magento software, you must get your hosted system ready. This topic is geared specifically for GoDaddy but you can use the same instructions for any other hosting provider. 
 
-If you don't use GoDaddy, you might need to contact your hosting provider's technical support for specific questions.
+If your hosted system is already set up, go to <a href="{{ site.gdeurl }}install-gde/install/hosted/hosted_get-ftp.html#get-archive">Get the Magento software packages</a>.
 
 #### Contents
 *	<a href="#newbie-verify">Verify the software on your system</a>

@@ -53,10 +53,10 @@ Use the following table to verify you have the correct prerequisites to install 
 <h2>Step 3: Install Magento</h2>
 *	Easy installation: <a href="{{ site.gdeurl }}install-gde/install/web/install-web.html">Install the Magento software using the Setup Wizard</a>
 
-	<a href="{{ site.gdeurl }}install-gde/install/web/install-web-sample-data.html">Install optional sample data (command line)</a>
+	<a href="{{ site.gdeurl }}install-gde/install/web/install-web-sample-data.html">Install optional sample data (Setup Wizard)</a>
 *	Advanced installation with more control: <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">Install Magento software using the command line</a>
 
-	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-sample-data.html">Install optional sample data (Setup Wizard)</a>
+	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-sample-data.html">Install optional sample data (command line)</a>
 
 <h2>Post-installation</h2>
 *	<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>

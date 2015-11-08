@@ -21,7 +21,7 @@ github_link: install-gde/install/hosted/hosted_get-ftp.md
 4.	Extract the archive.
 4.	Set permissions (?? TBD)
 
-{% include install/get-software.md %}
+{% include install/get-software_zip.md %}
 
 <h2 id="set-up-ftp">Set up FTP and transfer the Magento archive</h2>
 FTP is a way to transfer files from your computer to your managed server. To transfer the Magento archive, you need an FTP account that has access to the managed server's `public_html` directory. You might already have an account. If not, consult the GoDaddy documentation or technical support for more information. You can also use a tutorial like this one from <a href="https://blog.sucuri.net/create-an-ftp-user-with-public_html-access-in-cpanel" target="_blank">sucuri</a>.

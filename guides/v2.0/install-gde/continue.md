@@ -48,7 +48,7 @@ Consult the following table for how to get started.
 			<li>Extracts it on the Magento server or asks a network administrator or hosting provider to do so.</li>
 			<li>Installs the Magento software using the Setup Wizard.</li></ol>
 		</td>
-		<td><p><a href="{{ site.gdeurl }}install-gde/install/zip_install.html">Easy installation (own server)</a></p></td>
+		<td><p><a href="{{ site.gdeurl }}install-gde/prereq/zip_install.html">Easy installation (own server)</a></p></td>
 	</tr>
 	<tr>
 		<td><p>Integrator, packager</p></td>

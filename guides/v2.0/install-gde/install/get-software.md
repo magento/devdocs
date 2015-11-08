@@ -13,5 +13,8 @@ github_link: install-gde/install/get-software.md
 
 *	<a href="#all-get">Get the Magento software</a>
 
-<h2 id="all-get">Get the Magento software</h2>
-{% include install/get-software.md %}
+{% include install/get-software_zip.md %}
+
+{% include install/get-software_composer.md %}
+
+{% include install/get-software_clone.md %}

@@ -2,28 +2,24 @@
 layout: default
 group: install_pre
 subgroup: T_Developer
-title: (Contributor) Clone the Magento repository
-menu_title: (Contributor) Clone the Magento repository
-menu_order: 1
-menu_node: parent
-github_link: install-gde/prereq/dev_install.md
-redirect_from: 
-  - /guides/v1.0/install-gde/install/composer-clone.html
-  - /guides/v2.0/install-gde/install/composer-clone.html
+title: Install Composer and clone the Magento repository
+menu_title: Install Composer and clone the Magento repository
+menu_node: 
+menu_order: 5
+github_link: install-gde/install/composer-clone.md
+redirect_from: /guides/v1.0/install-gde/install/composer-clone.html
 ---
 
-<div class="bs-callout bs-callout-tip">
-  <p>Totally lost? Need a helping hand? Try our <a href="{{ site.gdeurl }}install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{ site.gdeurl }}install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
-</div>
-
+<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
+<!-- Referring file: README.md owned by core -->
+<!-- References are to http://devdocs.magento.com/guides/v1.0/install-gde/install/composer-clone.html#instgde-prereq-compose-install, http://devdocs.magento.com/guides/v1.0/install-gde/install/composer-clone.html#instgde-prereq-compose-clone -->
+<!-- Also referred to by view\magento\setup\readiness-check\progress.phtml owned by Ogres. Reference is to http://devdocs.magento.com/guides/v1.0/install-gde/install/composer-clone.html#instgde-prereq-compose-access and http://devdocs.magento.com/guides/v1.0/install-gde/install/composer-clone.html#instgde-prereq-compose-access -->
+ 
 #### Contents 
 
-*	<a href="#integrator-aud">Intended audience</a>
 *	<a href="#instgde-prereq-compose-install">Install Composer</a>
 *	<a href="#instgde-prereq-compose-clone">Clone the Magento repository</a>
-
-<h2 id="integrator-aud">Intended audience</h2>
-The audience for this topic is anyone who contributes to the Magento codebacse. If that isn't you, go back and <a href="{{ site.gdeurl }}install-gde/continue.html">choose another starting point</a>.
+*	<a href="#instgde-prereq-compose-access">Set file system ownership and permissions</a>
 
 <h2 id="instgde-prereq-compose-install">Install Composer</h2>
 
@@ -108,7 +104,7 @@ Permission denied (publickey).
 fatal: The remote end hung up unexpectedly</pre>
 	</div>
 
-4.	Continue with <a href="@@@">Set file system ownership and permissions</a>.
+4.	Continue with <a href="#instgde-prereq-compose-access">Set file system ownership and permissions</a>.
 
 <h3 id="instgde-prereq-compose-clone-https">Clone with HTTPS</h3>
 
@@ -142,8 +138,18 @@ To clone the Magento GitHub repository using the HTTPS protocol:
 
 4.	Continue with the next section.
 
+<h2 id="instgde-prereq-compose-access">Set file system ownership and permissions</h2>
+The following sections discuss how to set file system ownership and permissions:
+
+*	<a href="#install-perms-import">Why we recommend you set file system permissions</a>
+*	<a href="#install-perms-set">File system permissions and ownership</a>
+
+<h3 id="install-perms-import">Why we recommend you set file system permissions</h3>
+{% include install/file-system-perms1-why.html %}
+
+<h3 id="install-perms-set">File system permissions and ownership</h3>
+{% include install/file-system-perms2-how.html %}
+
 #### Next step
 
 After completing the tasks discussed on this page, see <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Update installation dependencies</a>.
-
-
