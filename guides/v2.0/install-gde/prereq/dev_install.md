@@ -55,6 +55,8 @@ This section discusses how to get current code by cloning the Magento GitHub's d
 *	`master` is more stable
 *	`develop` is more recent
 
+Currently, the `develop` branch is the default but you can clone the `master` branch using the optional `[-b master]` argument.
+
 You can clone the Magento 2 GitHub repository using either SSH or HTTPS protocols:
 
 *	Use SSH for better security (no user name and password are exchanged). This requires you to <a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank">share a public key</a> with GitHub.
@@ -104,7 +106,7 @@ Permission denied (publickey).
 fatal: The remote end hung up unexpectedly</pre>
 	</div>
 
-4.	Continue with <a href="@@@">Set file system ownership and permissions</a>.
+4.	Continue with <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Update installation dependencies</a>.
 
 <h3 id="instgde-prereq-compose-clone-https">Clone with HTTPS</h3>
 
@@ -135,8 +137,6 @@ To clone the Magento GitHub repository using the HTTPS protocol:
 	Use `-b master` to clone the master branch; omit it to clone the `develop` branch, which is the default.
 
 3.	Wait for the repository to clone on your server.
-
-4.	Continue with the next section.
 
 #### Next step
 
