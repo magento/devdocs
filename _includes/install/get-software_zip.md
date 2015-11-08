@@ -1,9 +1,5 @@
 <div markdown="1">
 
-#### Contents
-*	<a href="#software-over">Overview of Magento software sources</a>
-*	<a href="#get-archive">Get compressed download packages</a>
-
 <h2 id="get-archive">Get the Magento software packages</h2>
 The following table discusses where to get the Magento software. We provide the following downloads:
 

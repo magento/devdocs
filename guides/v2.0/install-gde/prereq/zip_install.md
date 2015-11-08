@@ -24,6 +24,7 @@ Before you continue, make sure you've done all of the following:
 
 *	Set up a server that meets our <a href="{{ site.gdeurl }}install-gde/system-requirements.html">system requirements</a>
 *	Created the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>	
+*	Downloaded the <a href="{{ site.gdeurl }}install-gde/install/get-software.html">Magento software archive</a>
 
 <h2 id="zip-transfer">Transfer the Magento archive to your server</h2>
 To transfer the Magento software archive to your server:

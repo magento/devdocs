@@ -42,11 +42,11 @@ Consult the following table for how to get started.
 		<td><p><a href="{{ site.gdeurl }}install-gde/install/hosted/hosted_start.html">Easy installation (hosting provider like GoDaddy)</a></p></td>
 	</tr>
 	<tr>
-		<td><p>Easy installation, no command line, has own server</p></td>
+		<td><p>Easy installation, no command line, have your own server</p></td>
 		<td><p>Some technical expertise, command line access to the Magento server.</p></td>
 		<td><ol><li>Downloads a compressed file that contains the Magento software.</li>
-			<li>Extracts it on the Magento server or asks a network administrator or hosting provider to do so.</li>
-			<li>Installs the Magento software using the Setup Wizard.</li></ol>
+			<li>Extracts it on the Magento server or asks a network administrator to do so.</li>
+			<li>Installs the Magento software using the Setup Wizard or command line.</li></ol>
 		</td>
 		<td><p><a href="{{ site.gdeurl }}install-gde/prereq/zip_install.html">Easy installation (own server)</a></p></td>
 	</tr>
@@ -54,7 +54,7 @@ Consult the following table for how to get started.
 		<td><p>Integrator, packager</p></td>
 		<td><p>Wants full control over all components installed, has access to the Magento server, highly technical, might repackage Magento CE with other components.</p></td>
 		<td><ol><li>Creates a Composer <em>project</em> that contains the list of components to use.</li>
-			<li>Uses Composer to update package dependencies; uses `composer create-project` to get the Magento metapackage.</li>
+			<li>Uses Composer to update package dependencies; uses <code>composer create-project</code> to get the Magento metapackage.</li>
 			<li>Installs the Magento software using either a command line or the Setup Wizard.</li></ol>
 		<td><p><a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html">Get the metapackage</a></p></td>
 	</td>

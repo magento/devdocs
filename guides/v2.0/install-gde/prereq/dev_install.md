@@ -52,12 +52,8 @@ To install Composer:
 <h2 id="instgde-prereq-compose-clone">Clone the Magento repository</h2>
 This section discusses how to get current code by cloning the Magento GitHub's develop branch. You can clone either the `master` or `develop` branch:
 
-*	`master` is more stable (we recommend this branch unless you're contributing code to the Magento 2 project)
+*	`master` is more stable
 *	`develop` is more recent
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>You can now use <a href="{{ site.gdeurl }}install-gde/install/sample-data.html">optional sample data</a> with the <code>develop</code> branch.</p>
-</div>
 
 You can clone the Magento 2 GitHub repository using either SSH or HTTPS protocols:
 

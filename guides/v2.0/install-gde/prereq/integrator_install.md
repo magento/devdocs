@@ -16,6 +16,7 @@ github_link: install-gde/prereq/integrator_install.md
 #### Contents
 *	<a href="#int-aud">Intended audience</a>
 *	<a href="#integrator-first-over">First steps</a>
+*	<a href="#instgde-overview-composer">Composer and Magento</a>
 *	<a href="#integrator-first-composer">Get the metapackage</a>
 *	<a href="#instgde-prereq-compose-access">Set file system ownership and permissions</a>
 

@@ -11,6 +11,7 @@ github_link: install-gde/install/hosted/hosted_get-ftp.md
 
 #### Contents
 *	<a href="#newbie-ftp-overview">Magento installation overview</a>
+*	<a href="#get-archive">Get the Magento software packages</a>
 *	<a href="#set-up-ftp">Set up FTP and transfer the Magento archive</a>
 *	<a href="#extract-perms">Extract the archive</a>
 
