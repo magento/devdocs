@@ -148,7 +148,7 @@ Example of using <code>links</code> in <code>component.js</code>:
 
 Example of using <code>links</code> in <code>configuration.xml</code> file:
 
-{% highlight php%}
+{% highlight xml%}
 <argument name="data" xsi:type="array">
        <item name="config" xsi:type="array">
                     <item name="links" xsi:type="array">
@@ -156,7 +156,7 @@ Example of using <code>links</code> in <code>configuration.xml</code> file:
                     </item>
        </item>
 </argument>
-{% endhighlight php%}
+{% endhighlight xml%}
 
 </li>
 <li>
@@ -220,23 +220,25 @@ In-memory storage. Plain storage of entities by keys. Implements the `get()`, `s
 ## JS UI components debugging
 This section describes how to define what UI components are involved for a particular page generation and what data they use.
 
-To define the UI components used on a page, you can use a browser plug-in, like Knockout JS context debugger, or the built-in browser properties. Both approached are described further.
+To define the UI components used on a page, you can analyze the page source a browser plug-in, like Knockout JS context debugger, or the . Both approached are described further.
 
-### Browser plug-in
+### Debug using browser built-in tools
+1. Open the required page in browser
+2. Select to view the page source.
+3. Search for `Magento_Ui/js/core/app`. If found, the string will be located in the scope of the `<script></script>` tag.
+4. In the scope of this tag search for `name`. The value of the `name` attribute is the name of the UI component.
+5. Open developers tools and in the console tab run `require('uiRegistry').get('<component_name>')`. Where `<component_name>` is the name you defined on the previous step.
+<p class="q">I get "undefined" when try to reproduce</p>
+6. View the name and the configuration of the UI component instance.
 
-1. Install the Knockout JS context debugger
-2. Open the required page in the Google Chrome browser.
+Alternatively, on the step 4, copy the content of the `<script></script>` tag to the json viewer/formatter and view the the name and the configuration of the UI component instance.
+
+### Debug using a Google Chrome plug-in
+
+1. Install the Knockout JS context debugger for Google Chrome.
+2. Open the required page in Chrome.
 3. Point to the requiered element on the page, right-click and select Inspect Element. The developer tools panel opens.
 4. In the right column of the panel, click the Knockout context tab. The tab displays the name and the configuration of the UI component instance.
 
 <p class="q">illustration</p>
 
-### Browser built-in tools
-1. Open the required page in browser
-2. Select to view the page source.
-3. Search for the "Magento_Ui/js/core/app". Define the component in the <script></script> tag
-4. Search by 'name'
-5. Open developers tools and in the Console tab run require('uiRegistry').get('<component_name>')
-6. View the name and the configuration of the UI component instance.
-
-Alternativel, on the fourth step, copy the content of the <script></script> tag to the json viewer/forrmatter and view the the name and the configuration of the UI component instance.
