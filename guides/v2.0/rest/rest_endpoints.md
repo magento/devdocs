@@ -2,8 +2,8 @@
 layout: default
 group: rest
 subgroup: A_rest
-title: REST Schema Endpoints
-menu_title: Endpoints
+title: List of service names per module
+menu_title: List of service names per module
 menu_order: 4
 github_link: rest/rest_endpoints.md
 

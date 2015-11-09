@@ -32,6 +32,7 @@ The smallest working module.xml file would look something like this:
 ##Add the module&#8217;s `composer.json` file
 
 
+<<<<<<< HEAD
 
 
 {% highlight JSON %}
@@ -60,9 +61,41 @@ The smallest working module.xml file would look something like this:
         "files": [ "registration.php" ],
         "psr-4": {
             "Magento\\CatalogImportExport\\": ""
+=======
+    {
+        "name": "your-name/module-Acme",
+        "autoload": {
+            "psr-4": { "AcmeVendor\\BarComponent\\": "" },
+            "files": [ "registration.php" ],
+        },
+        "description": "Test module for Magento 2",
+        "require": {
+            "php": "~5.5.0|~5.6.0",
+            "magento/module-store": "1.0.0-beta",
+            "magento/module-catalog": "1.0.0-beta",
+            "magento/module-catalog-inventory": "1.0.0-beta",
+            "magento/module-ui": "self.version",
+            "magento/magento-composer-installer": "*"
+        },
+        "suggest": {
+          "magento/module-webapi": "1.0.0-beta"
+        },
+        "type": "magento2-module",
+         "version": "1.0.0-beta",
+        "license": [
+            "OSL-3.0",
+            "AFL-3.0"
+        ],
+        "extra": {
+            "map": [
+                [
+                    "*",
+                    "YourName/FooBar"
+                ]
+            ]
+>>>>>>> dab006662a791a527217c2895128cfb2504b77d1
         }
     }
-}
 
 {% endhighlight %}
 
@@ -71,7 +104,7 @@ where:
 * `name` &#8212; is the name of your module.
 * `description` &#8212; is a concise explanation of your module's purpose.
 * `require` &#8212; lists any modules your module depends on.
-* `suggest` &#8212; lists soft dependencies. The module can operate without them, but if the modules are active, they should be loaded before.
+* `suggest` &#8212; lists soft dependencies. The module can operate without them, but if the modules are active, this module may impact their functionality. `Suggest` does not affect module load order.
 
 * `type` &#8212; determines what type of magento component your module is. Choose from *magento2-library*, *magento2-theme*, *magento2-language*, or *magento2-module*.
 * `version` &#8212; lists the version of the module.
