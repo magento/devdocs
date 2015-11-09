@@ -248,7 +248,7 @@
 
 <ol>
   <li>Define the queue name associated with current consumer using <code>\Magento\Framework\Amqp\ConsumerConfigurationInterface::getQueueName</code>.</li>
-  <li>Select <code>$maxNumberOfMessages</code> message records, filtering on the  <code>queue_name</code> field. You must join on all 3 tables. To accompolish this, you may want to extract fewer records at a time to improve load distribution between multiple consumers. </li>
+  <li>Select <code>$maxNumberOfMessages</code> message records, filtering on the  <code>queue_name</code> field. You must join on all 3 tables. To accomplish this, you may want to extract fewer records at a time to improve load distribution between multiple consumers. </li>
   <li>Decode the message using topic name taken from the <code>\Magento\Framework\Amqp\ConsumerConfigurationInterface</code>.</li>
   <li>Invoke callback  <code>Magento\Framework\Amqp\ConsumerConfigurationInterface::getCallback</code> and pass the decoded data as an argument.</li>
 </ol>
