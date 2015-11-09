@@ -1,10 +1,10 @@
 ---
 layout: default
 group: howdoi
-subgroup: SUBJECT
-title: PAGE TITLE
-menu_title: NAME ON MENU
-menu_node: parent
+subgroup: 
+title: 
+menu_title: 
+menu_node: 
 menu_order: 1
 github_link: howdoi/PATH/FILENAME.md
 ---
@@ -16,9 +16,9 @@ github_link: howdoi/PATH/FILENAME.md
 ## YOUR HEADING
 INTRODUCTORY TEXT, EXPLAIN WHAT YOUR ARTICLE IS ABOUT
 
-To have a successful migration, use the following guidelines:
-
 ## ANOTHER HEADING
+
+### A SMALLER HEADER
 
 <!-- Bulleted list -->
 
@@ -43,11 +43,10 @@ Format the link as follows:
 <!-- Sample HTML cross-reference; don't worry too much about these, we can add or edit them -->
 <!-- {{ site.gdeurl }} is a site variable that is defined in _config.yml; it's the base path to the devdocs guides/v2.0 directory -->
 
-For full information please see the complete <a href="{{ site.gdeurl }}migration/bk-migration-guide.html">Migration Guide</a>
 
 <!-- Sample 4 x 3 table -->
 
-|   |   |   |
+|  Column Heading  |  Column Heading  |   Column Heading |
 |---|---|---|
 |   |   |   |
 |   |   |   |
