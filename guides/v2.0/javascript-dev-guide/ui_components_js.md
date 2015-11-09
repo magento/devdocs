@@ -14,19 +14,19 @@ This topic is aimed for developers, who need to reuse the Magento UI Components.
 
 The topic covers the following:
 
-- The structure of componenents configuration.
-- The most important component's client-side properties. 
-- Description of the additional UI components.
-- How to link components.
-- How to debug a UI component's client side.
+- [UI componenents' configuration](#config).
+- [The most important UI component's properties](#main_properties). 
+- [UI components’ properties used for linking](#comp_link).
+- [Description of the additional UI components](#comp_additional)
+- [JS UI components debugging](#comp_debug).
 
-## Component's configuration ##
+## UI components' configuration {#config}
 
 Component's behavior, configuration and structure is defined by the following:
 
- - The available components configuration options are defined by component.js -> defaults.
+ - The available components configuration options are defined by a component's JS file -> defaults.
 <p class="q">is it really named components.js or is it a generalization? if so, what is the file we are talking about </p>
- - The actual configuration and structure of a particular component's `app/code/Magento/<Module>/view/<area>ui_component/*.xml` configuration from xml  == content from <argument/> node <p class="q">need more explanation</p>
+ - The actual configuration and structure of a particular component `app/code/Magento/<Module>/view/<area>ui_component/*.xml` configuration from xml  == content from <argument/> node <p class="q">need more explanation</p>
 	xml describes structure of components, their real names. Also it extends properties, configures template and component file.
  - Componet methods descibed in component.js
  
@@ -35,11 +35,11 @@ All of these are available in template's scope.
 
 <p class="q">Need to add info about how to customize configuration in JS: create a new JS handling this + specify this JS in the XML config</p>
 
-## Main UI components' properties ##
+## Basic UI components' properties {#main_properties}
 The most important client-side properties of a UI component are the following:
 
- - `component`: the path to the JavaScript implementation of a component path in terms of RequireJS. JS component should return Class
-<p class="q">Not clear about class</p>
+ - `component`: the path to the JavaScript implementation of a component in terms of RequireJS. <p class="q">JS component file itself should return constructor..(move to improvements)...</p>
+
 
 	Example:
 
@@ -50,18 +50,18 @@ The most important client-side properties of a UI component are the following:
 {% endhighlight xml%}
 
  - `template`: path to the html template.The html template is based on top of Knockout
-<p class="q">Not clear</p>
+<p class="q">Not clear.A: uses Knockout syntax</p>
 	Example:
 {% highlight xml%}
 <argument name="data" xsi:type="array">
-        <item name="template" xsi:type="string">ui/grid/controls/bookmarks/bookmarks.html</item>
+        <item name="template" xsi:type="string">ui/grid/controls/bookmarks/bookmarks</item>
 </argument>
 {% endhighlight xml%}
 
- - `children` -  is a fantom property that contains nested/linked components. In the xml configuration, all nodes that are not `<argument/>` are children. In Knockout JS templates children are the keys of the `elems` property.
+ - children -  is a fantom property (the property with this name does not exist) that contains nested/linked components. In the xml configuration, all nodes that are not `<argument/>` are children. In Knockout JS templates children are the keys of the `elems` property.
 
 
-## UI Components' properties used for linking
+## UI Components' properties used for linking {#comp_link}
 The following properties are used for linking observable properties and methods of UI components:
 
 <ul>
@@ -69,7 +69,8 @@ The following properties are used for linking observable properties and methods 
 <ul>
 <li><code>key</code> - name of the property or method which is tracked for changes. Only internal property.</li>
 <li><code>value</code> - name of the property or method which receives the notification. Could use string templates.</li>
-<p class="q">need to add an illustration of a string template</p>
+<p class="q">need to add an illustration of a string template
+ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/template_strings</p>
 </ul>
 Example of setting <code>exports</code> in <code>component.js</code>:
 {% highlight php%}
@@ -129,7 +130,7 @@ In these examples, `visible` is the `key`, `sample_config.sample_provider.visibi
 
 <li>
 <code>links</code> used for mutual tracking property changes. <code>links</code>'s value is an object, composed of the following:
-<p class="q">Is it the same for links? If yes, are both key and value just equivalent properties?</p>
+<p class="q">Is it the same for links? If yes, are both key and value just equivalent properties? both key and value can change or track changes</p>
 <ul>
 <li><code>key</code> - name of the property or method which receives the notifications. Only internal property.</li>
 <li><code>value</code> - name of the property or method which is tracked for changes. Could use string templates.</li>
@@ -191,7 +192,7 @@ Example of using <code>listens</code> in <code>configuration.xml</code> file:
 
 </ul>
 
-## Frequently used components
+## Frequently used additional components {#comp_additional}
 This section is a brief description of the most frequently used additional UI components.
 
 ### `uiClass`
@@ -202,7 +203,7 @@ Extends `uiClass`. Adds the following:
 
 - the `defaults` property
 - events handling
-- hadling properties linking (the `imports`, `exports`, `links` and `listens` properties)
+- handling properties linking (the `imports`, `exports`, `links` and `listens` properties)
 - ability to add itself to the UI registry
 
 ### `uiCollection`
@@ -217,7 +218,7 @@ Extends uiElement. Adds the following:
 In-memory storage. Plain storage of entities by keys. Implements the `get()`, `set()`, and `has()` methods.
 
 
-## JS UI components debugging
+## JS UI components debugging {#comp_debug}
 This section describes how to define what UI components are involved for a particular page generation and what data they use.
 
 To define the UI components used on a page, you can analyze the page source a browser plug-in, like Knockout JS context debugger, or the . Both approached are described further.
@@ -225,10 +226,9 @@ To define the UI components used on a page, you can analyze the page source a br
 ### Debug using browser built-in tools
 1. Open the required page in browser
 2. Select to view the page source.
-3. Search for `Magento_Ui/js/core/app`. If found, the string will be located in the scope of the `<script></script>` tag.
-4. In the scope of this tag search for `name`. The value of the `name` attribute is the name of the UI component.
-5. Open developers tools and in the console tab run `require('uiRegistry').get('<component_name>')`. Where `<component_name>` is the name you defined on the previous step.
-<p class="q">I get "undefined" when try to reproduce</p>
+3. Search for `data-bind="scope:`. The string after `scope` is the full name of the component.
+5. Open developers tools and in the console tab run `require('uiRegistry').get('<component_component.name')`. Where `<full_component_name>` is the name you defined on the previous step.
+
 6. View the name and the configuration of the UI component instance.
 
 Alternatively, on the step 4, copy the content of the `<script></script>` tag to the json viewer/formatter and view the the name and the configuration of the UI component instance.
