@@ -8,9 +8,13 @@ menu_node: parent
 github_link: uilibrary/ui-library-components.md
 ---
 
-<h2 id="form">Form Component</h2>
+* TOC
+{:toc}
 
+##Overview
 Form component allows performing <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> operations on an entity. 
+
+The following are the components element, the constructor: `app\code\Magento\Ui\view\base\web\js\form\form.js`
 
 <h4>Related UI components</h4>
 
@@ -22,15 +26,37 @@ The following components are used to extend the Form component:
 * Layout
 * Container
 
-<h4>Creating an instance of the Form Component</h4>
+##Component options
+
+* js_config -> deps - sets the dependency on component initialization
+ 
+* js_config -> config -> provider - specifies the name of the component data
+ 
+* layout - configuration class meets the visualization component
+    (See examples in 'Configuring' section)
+
+##Create an instance of the Form component
 
 * Create configuration file for the instance (for example: customer_form.xml)
 
     * Add a set of fields (the Fieldset component with the component of the Field) for entity or to implement the upload of Meta info in the DataProvider. 
 * Create the DataProvider class for the entity that implements DataProviderInterface
 * Add a component in Magento layout as a node: `<uiComponent name="customer_form"/>`
+
+Example:
+
+{% highlight xml %}
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            ...
+            <uiComponent name="customer_form"/>
+        </referenceContainer>
+    </body>
+</page>
+{% endhighlight %}
  
-<h4>Configure</h4>
+##Configure the Form component
 
 Component could be configured in two ways:
 
@@ -59,7 +85,9 @@ Create configuration file: `app/code/Magento/Customer/view/base/ui_component/cus
 Nodes are optional and contain parameters required for component:
 
 * js_config -> deps - sets the dependency on component initialization
+
 * js_config -> config -> provider - specifies the name of the component data
+
 * layout - configuration class meets the visualization component. Names for deps and provider are specified with a complete path from the root component with the separator “.”
 
 Add a description of the fields in the form using components and Field Fieldset:
