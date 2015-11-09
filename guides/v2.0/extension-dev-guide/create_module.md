@@ -32,9 +32,6 @@ The smallest working module.xml file would look something like this:
 ##Add the module&#8217;s `composer.json` file
 
 
-<<<<<<< HEAD
-
-
 {% highlight JSON %}
 
 	{
@@ -61,40 +58,8 @@ The smallest working module.xml file would look something like this:
         "files": [ "registration.php" ],
         "psr-4": {
             "Magento\\CatalogImportExport\\": ""
-=======
-    {
-        "name": "your-name/module-Acme",
-        "autoload": {
-            "psr-4": { "AcmeVendor\\BarComponent\\": "" },
-            "files": [ "registration.php" ],
-        },
-        "description": "Test module for Magento 2",
-        "require": {
-            "php": "~5.5.0|~5.6.0",
-            "magento/module-store": "1.0.0-beta",
-            "magento/module-catalog": "1.0.0-beta",
-            "magento/module-catalog-inventory": "1.0.0-beta",
-            "magento/module-ui": "self.version",
-            "magento/magento-composer-installer": "*"
-        },
-        "suggest": {
-          "magento/module-webapi": "1.0.0-beta"
-        },
-        "type": "magento2-module",
-         "version": "1.0.0-beta",
-        "license": [
-            "OSL-3.0",
-            "AFL-3.0"
-        ],
-        "extra": {
-            "map": [
-                [
-                    "*",
-                    "YourName/FooBar"
-                ]
-            ]
->>>>>>> dab006662a791a527217c2895128cfb2504b77d1
         }
+    }
     }
 
 {% endhighlight %}
