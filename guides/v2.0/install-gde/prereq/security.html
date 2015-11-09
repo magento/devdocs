@@ -214,6 +214,10 @@
 		<h2 id="install-prereq-selinux">SELinux Prerequisite</h2>
 <p><a href="http://selinuxproject.org/page/Main_Page" target="_blank">Security Enhanced Linux (SELinux)</a> enables CentOS and Ubuntu administrators greater access control over their servers. If you’re using SELinux <em>and</em> Apache must initiate a connection to another host, you must run the commands discussed in this section.</p>
 
+<div class="bs-callout bs-callout-tip">
+  <p>Magento has no recommendation about using SELinux; you can use it for enhanced security if you wish. If you use SELinux, you must configure it properly or the Magento application will function unpredictably. If you choose to use SELinux, consult a resource like f<a href="http://wiki.centos.org/HowTos/SELinux" target="_blank">the CentOS wiki</a> to set up rules to enable communication.</p>
+</div>
+
 <p>If Apache and the database server are on the same host, you can skip this section and continue with <a href="#install-iptables">Opening Ports In Your Firewall</a>.</p>
 
 <p>To enable Apache to initiate a connection to another host with SELinux enabled:</p>
@@ -222,7 +226,8 @@
   <li>
     <p>To determine if SELinux is enabled, use the following command:</p>
 
-    <pre>getenforce</pre>
+    <pre><code>getenforce
+</code></pre>
 
     <p><code>Enforcing</code> displays to confirm that SELinux is running.</p>
   </li>
