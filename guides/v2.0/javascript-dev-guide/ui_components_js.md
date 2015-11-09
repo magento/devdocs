@@ -192,10 +192,51 @@ Example of using <code>listens</code> in <code>configuration.xml</code> file:
 </ul>
 
 ## Frequently used components
-- uiElement
-- uiCollection
-- uiRegistry
-- uiClass
+This section is a brief description of the most frequently used additional UI components.
+
+### `uiClass`
+Enables OOP pattern implementation.
+
+### `uiElement`
+Extends `uiClass`. Adds the following:
+
+- the `defaults` property
+- events handling
+- hadling properties linking (the `imports`, `exports`, `links` and `listens` properties)
+- ability to add itself to the UI registry
+
+### `uiCollection`
+
+Extends uiElement. Adds the following:
+
+- managing child elements (the `elems` property)
+- by default uses the <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/collection.html">app/code/Magento/Ui/view/base/web/templates/collection.html</a> template.
+
+
+### `uiRegistry`
+In-memory storage. Plain storage of entities by keys. Implements the `get()`, `set()`, and `has()` methods.
 
 
 ## JS UI components debugging
+This section describes how to define what UI components are involved for a particular page generation and what data they use.
+
+To define the UI components used on a page, you can use a browser plug-in, like Knockout JS context debugger, or the built-in browser properties. Both approached are described further.
+
+### Browser plug-in
+
+1. Install the Knockout JS context debugger
+2. Open the required page in the Google Chrome browser.
+3. Point to the requiered element on the page, right-click and select Inspect Element. The developer tools panel opens.
+4. In the right column of the panel, click the Knockout context tab. The tab displays the name and the configuration of the UI component instance.
+
+<p class="q">illustration</p>
+
+### Browser built-in tools
+1. Open the required page in browser
+2. Select to view the page source.
+3. Search for the "Magento_Ui/js/core/app". Define the component in the <script></script> tag
+4. Search by 'name'
+5. Open developers tools and in the Console tab run require('uiRegistry').get('<component_name>')
+6. View the name and the configuration of the UI component instance.
+
+Alternativel, on the fourth step, copy the content of the <script></script> tag to the json viewer/forrmatter and view the the name and the configuration of the UI component instance.
