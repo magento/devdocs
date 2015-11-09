@@ -87,7 +87,7 @@ Each index can perform the following types of reindex operations:
 
 The type of reindex performed in each particular case depends on the type of changes made in the dictionary or in the system. This dependency is specific for <a href="#m2devgde-indexing-outofbox">each indexer</a>.
 
-The following figure shows the logic for full or partial reindexing.
+The following figure shows the logic for partial reindexing.
 
 <p><img src="{{ site.baseurl }}common/images/index_indexers_flow.png" width="400px" alt="The image displays the partial reindex workflow"></p>
 
