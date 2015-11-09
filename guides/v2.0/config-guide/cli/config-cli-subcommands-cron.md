@@ -58,6 +58,11 @@ In addition to the command arguments discussed here, see <a href="{{ site.gdeurl
 <h2 id="config-cli-cron-bkg">Run cron in the background</h2>
 This section discusses how to run all Magento cron jobs every minute, which is the recommended interval for both Magento Community Edition (CE) and Enterprise Edition (EE).
 
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Cron is critical for Magento operation; among other things, it's the only way to reindex on an ongoing basis, it generates automated e-mails, newsletters, the sitemap, and so on.</p></span>
+</div>
+
 Run Magento cron jobs as the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-over">Magento file system owner</a>. 
 
 To create a cron job as the Magento file system owner, the following commands in the order shown:
