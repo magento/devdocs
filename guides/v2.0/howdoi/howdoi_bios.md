@@ -9,7 +9,9 @@ menu_order: 1
 github_link: howdoi/howdoi_bios.md
 ---
 
-Thank so much to the following community members, partners, and Magento fans who have directly contributed substantial content to the DevDocs site.
+Thanks so much to the following community members, partners, and Magento fans who have directly contributed substantial content to the DevDocs site.
+
+**SAMPLE DATA IN TABLE FOR NOW.**
 
 | Contributor name and image |  Bio and Magento Creds | 
 |---|---|
