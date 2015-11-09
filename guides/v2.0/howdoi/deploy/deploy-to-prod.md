@@ -4,8 +4,8 @@ group: howdoi
 subgroup: Deploy
 title: Deploy to production
 menu_title: Deploy to production
-menu_node: 
-menu_order: 2
+menu_node: parent
+menu_order: 1
 github_link: howdoi/deploy/deploy-to-prod.md
 ---
 
@@ -25,11 +25,10 @@ Assumptions:
 *	Your *production* environment is a separate set of servers in a secure environment.
 *	Your production environment runs the Magento application in <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a> with desired security options enabled.
 *	Your production system has a working, live Magento installation.
-*	Your development and production systems use the same DNS host name.
 
 Deploying to production involves the following essential steps. Each set of steps is discussed in more detail in the sections that follow.
 
-In your development system:
+### In your development system
 
 1.	Test your system in your development environment.
 2.	Put all custom code in source control.
@@ -37,7 +36,7 @@ In your development system:
 3.	Archive file system assets and export the database.
 5.	Transfer file system and database assets to your production system.
 
-In your production system:
+### In your production system
 
 5.	Create the Magento deployment configuration.
 6.	Extract file system and database assets from your archives.
@@ -56,7 +55,7 @@ Your *development system* is a dedicated developer or build system where you per
 
 	One way to do this is to run the <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-install.html">command-line installer</a> with the optional `--cleanup-database` command.
 4.	Use the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html">`magento setup:static-content:deploy`</a> command to deploy static view files.
-5.	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-multi.html">Compile code</a>.
+5.	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler.html">Compile code</a>.
 
 2.	Clean temporary files that shouldn't be in production.
 
@@ -78,6 +77,8 @@ Make sure you do as many as possible of the following before continuing:
 
 *	Set up <a href="{{ site.gdeurl }}config-guide/redis/config-redis.html">Redis caching</a>
 *	Set up <a href="{{ site.gdeurl }}config-guide/varnish/config-varnish.html">Varnish web acceleration</a>
+
+	We *strongly recommend* Varnish for HTTP acceleration, including page caching.
 *	Set up a Content Delivery Network (CDN)
 *	Set up multiple webnodes with load balancing
 *	Configure Magento payment and shipping methods
@@ -89,7 +90,7 @@ This section provides guidelines for deploying a Magento installation to product
 1.	Copy your development file system and database archives to the production system.
 2.	Extract the Magento 2 file system archive to an empty directory.
 4.	Set up persistent storage (for example, media, logs, cache, session, and so on).
-5.	Take your existing system offline by enabling <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-maint.html#instgde-cli-maint">maintenance mode</a>. *(DOWNTIME STARTS)*
+5.	Take your existing system offline by enabling maintenance mode using <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-maint.html#instgde-cli-maint">magento maintenance:enable</a>. *(DOWNTIME STARTS)*
 3.	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-install.html">Install the Magento software</a> in a clean database (optionally using the `--cleanup-database` option).
 5.	Import database data from your development system.
 5.	Move your existing file system to an archive location.
@@ -100,6 +101,7 @@ This section provides guidelines for deploying a Magento installation to product
 
 Best practices in production:
 
+*	Use <a href="{{ site.gdeurl }}config-guide/varnish/config-varnish.html">Varnish</a> to accelerate HTTP traffic, including providing page caching
 *	Use the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html">`magento deploy:mode:set`</a> command to enable developer mode
 *	Use the `pub` directory as the Magento docroot to prevent running the Setup Wizard, Component Manager, or System Upgrade in production. (Set up virtual hosts to point to `<your Magento install dir>/pub`.)
 *	Set up your `robots.txt` to *allow* search engines to index your production site. 
