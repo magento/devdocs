@@ -1,7 +1,7 @@
 ---
 layout: default
 group: howdoi
-subgroup: Config
+subgroup: 02_Config
 title: Configure the Magento application
 menu_title: Configure the Magento application
 menu_node: parent
@@ -11,6 +11,12 @@ github_link: howdoi/config/post-install-config.md
 
 ## Configure the Magento application
 Now that you've finished installing the Magento application, you need to configure it. This topic provides some recommended configuration settings for Magento; the list is not complete so watch this space.
+
+#### Contents
+*	<a href="#post-install-cron">Set up cron</a>
+*	<a href="#post-install-secy">Security settings</a>
+*	<a href="#post-install-rewrites">Enable Apache server rewrites</a>
+*	<a href="#post-install-server">Server settings</a>
 
 <h3 id="post-install-cron">Set up cron</h3>
 cron&mdash;the UNIX task scheduler&mdash;is critical to Magento's day-to-day operations. It schedules things like reindexing, newsletters, e-mails, sitemaps, and so on.
@@ -48,20 +54,56 @@ After installation, we recommend the following:
 *	Take precautions against cross-site scripting (XSS) by <a href="{{ site.gdeurl }}frontend-dev-guide/templates/template-security.html">securing your templates</a>
 <!-- Set up roles and restricted users (Admin) -->
 
+<h3 id="post-install-rewrites">Enable Apache server rewrites</h3>
+If you use the Apache web server, you must enable server rewrites for pages to display properly. Otherwise, you'll see pages without styles and other issues.
 
-Set up the root category at least (Admin) 
+<a href="{{ site.gdeurl }}install-gde/prereq/apache.html#apache-help-rewrite">Section on Apache server rewrites</a>
+
+<h3 id="post-install-server">Server settings</h3>
+This section briefly discusses settings we recommend you consider for the server on which Magento runs. Some of these settings are not directly related to Magento; these are provided as suggestions only.
+
+#### Log rotation
+
+The UNIX `logrotate` utility enables you to administer systems that generate large numbers of log files.  It allows automatic rotation, compression, removal, and mailing of log files.  Each log file can be handled daily, weekly, monthly, or when the log file exceeds a specified size.
+
+For more information, see the <a href="http://linuxconfig.org/logrotate-8-manual-page" target="_blank">logrotate man page</a> or a tutorial like this one on <a href="http://www.thegeekstuff.com/2010/07/logrotate-examples" target="_blank">geekstuff</a>.
+
+#### Set up iptables rules to enable various Magento services to communicate.
+
+Whether you have one server or many, you must open ports in the firewall to enable Magento services to communicate. For example, if you use the Solr search engine with Magento Enterprise Edition (EE), you must enable it to communicate with the web server. If you have multiple web nodes, you must enable them to communicate with each other.
+
+More information:
+
+*	Ubuntu: <a href="https://help.ubuntu.com/community/IptablesHowTo" target="_blank">Ubuntu documentation page</a>.
+*	CentOS: <a href="http://wiki.centos.org/HowTos/Network/IPTables" target="_blank">CentOS how-to</a> and <a href="http://www.centos.org/docs/4/4.5/Security_Guide/s1-firewall-ipt-basic.html" target="_blank">CentOS reference page</a>.
+
+#### Security Enhanced Linux (SELinux) rules
+
+We don't recommend whether or not you use SELinux at all; however, if you use it, you must configure Magento services to communicate with each other similar to configuring iptables.
+
+More information:
+
+*	Ubuntu: <a href="https://debian-handbook.info/browse/stable/sect.selinux.html" target="_blank">Debian handbook</a>
+*	CentOS: <a href="https://wiki.centos.org/HowTos/SELinux" target="_blank">CentOS wiki</a>
+
+#### Set up an e-mail server
+
+Magento requires an e-mail server. We don't recommend a particular server but you can try any of the following:
+
+*	Postfix for CentOS (<a href="https://www.digitalocean.com/community/tutorials/how-to-install-postfix-on-centos-6" target="_blank">digitalocean tutorial</a>, <a href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/ch-email.html" target="_blank">CentOS documentation</a>)	
+*	Postfix for Ubuntu (<a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-setup-postfix-on-ubuntu-14-04" target="_blank">digitalocean tutorial</a>, <a href="https://help.ubuntu.com/community/MailServer" target="_blank">Ubuntu documentation</a>)
+
 
 
 GORDON
 
 Set up payment processors (Admin)
-Enable the flat catalog if it’s not by default (Admin)-->     
+Enable the flat catalog if it’s not by default (Admin)
+Set up the root category at least (Admin)     
 3.       SEO settings; specifically, setting up robots.txt (do not want scans in development, do want scans in production) (combination)
 4.       
-5.       Verify server rewrites (devdocs)
+
 7.       File system permissions in dev and production (other security settings? Gordon?)
-8.       Logging (server config; things like log rotation, archiving, syslog if it still exists) (devdocs)
-9.       Set up an e-mail server (devdocs)
 10.   Various cleanup things like clearing the quotes table periodically, cleaning up flat category table (Admin)
 11.   Caching mainly for production (devdocs)
 
@@ -71,10 +113,10 @@ RICHARD BAIK
 
 Setup email addresses and templates. There are quite a few, located in different spots so they are sometimes overlooked.
 o   Sys > config 
-  Store email addresses
-  Contacts
-  Sales emails
-  ?
+
+	*	Store email addresses
+	*	Contacts
+	*	Sales emails
 -          Tax rules and classes
 -          Shipping settings
 -          Store logo/favicon. I occasionally see EE and CE sites with the default Magento favicon.
