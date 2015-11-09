@@ -43,6 +43,11 @@ Magento _strongly_ recommends you observe the following standard when you set up
 *	Familiarize yourself with <a href="http://dev.mysql.com/doc/mysql-reslimits-excerpt/5.1/en/stored-program-restrictions.html" target="_blank">these potential MySQL trigger limitations</a> before you continue.
 *	If you use MySQL database replication, be aware that Magento does _not_ support MySQL statement-based replication. Make sure you use _only_ <a href="http://dev.mysql.com/doc/refman/5.1/en/replication-formats.html" target="_blank">row-based replication</a>.
 
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>If your web server and database server are on different hosts, perform the tasks discussed in this topic on the database server host then see <a href="{{ site.gdeurl }}install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a>.</p></span>
+</div>
+
 <h2 id="instgde-prereq-mysql-ubuntu">Installing MySQL on Ubuntu</h2>
 See one of the following sections for more information:
 
@@ -182,8 +187,11 @@ To configure a MySQL database instance:
 
 	If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.
 
+7.	If your web server and database server are on different hosts, perform the tasks discussed in this topic on the database server host then see <a href="{{ site.gdeurl }}install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a>.
+
 #### Related topics
 
+*	<a href="{{ site.gdeurl }}install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Installing optional software</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Apache</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a>
