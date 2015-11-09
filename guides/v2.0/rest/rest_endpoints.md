@@ -4,7 +4,7 @@ group: rest
 subgroup: A_rest
 title: REST Schema Endpoints
 menu_title: Endpoints
-menu_order: 3
+menu_order: 4
 github_link: rest/rest_endpoints.md
 
 ---
