@@ -32,6 +32,10 @@ This topic discusses installing the Magento software using the CLI. For informat
 <h2 id="instgde-install-cli-prereq">Before you start your installation</h2>
 {% include install/before-you-begin-cli.html %}
 
+<div class="bs-callout bs-callout-tip">
+  <p>If you chose to enable SELinux, see <a href="{{ site.gdeurl }}install-gde/prereq/security.html">Security-related prerequisites</a>.</p>
+</div>
+
 
 <h2 id="instgde-install-cli-first">First steps</h2>
 {% include install/first-steps-cli.html %}
