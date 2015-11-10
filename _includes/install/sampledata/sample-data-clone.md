@@ -1,7 +1,9 @@
 <div markdown="1">
 
 <h2 id="sample-clone">Install sample data by cloning repositories</h2>
-TBD
+This topic discusses how to get the Magento sample data by cloning the Magento GitHub repository and the sample data repository. This method is intended only for contributing developers (that is, developers who plan to contribute to the Magento 2 codebase).
+
+If you're not a contributing developer, choose one of the other options displayed in the table of contents on the left side of the page.
 
 <div class="bs-callout bs-callout-warning">
     <p>Due to recent changes, you can now use sample data with either the <code>develop</code> branch (more current) or the <code>master</code> branch (more stable) but only if you <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html#instgde-prereq-compose-clone">cloned</a> the corresponding branch of the Magento 2 GitHub repository.</p>
@@ -132,13 +134,13 @@ To set file system permissions and ownership on the sample data repository:
 2.  Change to your sample data clone directory.
 3.  Set ownership:
     
-        chown -R :&lt;your web server group name> .
+        chown -R :<your web server group name> .
 
     Typical examples:
 
-    CentOS: <code>chown -R :apache .</code>
+    CentOS: `chown -R :apache .`
 
-    Ubuntu: <code>chown -R :www-data .</code>
+    Ubuntu: `chown -R :www-data .`
 
 4.  Set permissions:
 
