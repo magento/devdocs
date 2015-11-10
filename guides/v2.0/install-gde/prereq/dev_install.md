@@ -23,7 +23,7 @@ redirect_from:
 *	<a href="#instgde-prereq-compose-clone">Clone the Magento repository</a>
 
 <h2 id="integrator-aud">Intended audience</h2>
-The audience for this topic is anyone who contributes to the Magento codebacse. If that isn't you, go back and <a href="{{ site.gdeurl }}install-gde/continue.html">choose another starting point</a>.
+The audience for this topic is anyone who contributes to the Magento codebase. If that isn't you, go back and <a href="{{ site.gdeurl }}install-gde/continue.html">choose another starting point</a>.
 
 <h2 id="instgde-prereq-compose-install">Install Composer</h2>
 

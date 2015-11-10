@@ -33,7 +33,7 @@ Magento 2.0 Enterprise Edition (EE) uses RabbitMQ to manage these message queues
 
 The message queue system must be established before you install Magento. The basic sequence is
 
-1. Install RabbitMQ and any prequisites.
+1. Install RabbitMQ and any prerequisites.
 2. Configure RabbitMQ.
 3. Configure your message queue topology.
 
