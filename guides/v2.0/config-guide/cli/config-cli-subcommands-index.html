@@ -289,7 +289,12 @@ Catalog Search:                                    Reindex required
 <p>Reindexing is discussed in the next section.</p>
 
 <h2 id="config-cli-subcommands-index-reindex">Reindex</h2>
-<p>This command enables you to reindex all or selected indexers.</p>
+<p>This command enables you to reindex all or selected indexers one time only.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>This command reindexes one time only. To keep indexers up-to-date, you must set up a <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-bkg">cron job</a>.</p></span>
+</div>
 
 <p>Command options:</p>
 
@@ -532,7 +537,7 @@ Index mode for Indexer Product Categories was changed from 'Update on Save' to '
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/secy/secy-cron.html">Secure cron.php</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/secy/secy-cron.html">Secure cron.php to run in a browser</a></li>
 
 									
 						

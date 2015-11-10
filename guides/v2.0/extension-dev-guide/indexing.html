@@ -211,8 +211,15 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="m2devgde-indexing-intro">Introduction to indexing</h2>
+		<h4 id="contents">Contents</h4>
+<ul>
+  <li><a href="#m2devgde-indexing-intro">Introduction to indexing</a></li>
+  <li><a href="#m2devgde-indexing-implementation">How Magento implements indexing</a></li>
+  <li><a href="#m2devgde-indexing-outofbox">Magento indexers</a></li>
+  <li><a href="#m2devgde-indexing-custom">Adding a custom indexer</a></li>
+</ul>
 
+<h2 id="m2devgde-indexing-intro">Introduction to indexing</h2>
 <p><em>Indexing</em> is how Magento transforms data such as products, categories, and so on, to improve the performance of your storefront. As data changes, the transformed data must be updated—or reindexed. Magento has a very sophisticated architecture that stores lots of merchant data (including catalog data, prices, users, stores, and so on) in many database tables. To optimize storefront performance, Magento accumulates data into special tables using indexers.</p>
 
 <p>For example, suppose you change the price of an item from $4.99 to $3.99. Magento must <em>reindex</em> the price change to display it on your storefront.</p>
@@ -240,7 +247,6 @@
 <p>This topic provides a high level description of how indexing is implemented from a developer’s point of view, and practical advice of how to add your own indexer.</p>
 
 <h2 id="m2devgde-indexing-implementation">How Magento implements indexing</h2>
-
 <p>The following components are involved in the indexing process:</p>
 
 <table>
@@ -288,7 +294,7 @@
 
 <p>The type of reindex performed in each particular case depends on the type of changes made in the dictionary or in the system. This dependency is specific for <a href="#m2devgde-indexing-outofbox">each indexer</a>.</p>
 
-<p>The following figure shows the logic for full or partial reindexing.</p>
+<p>The following figure shows the logic for partial reindexing.</p>
 
 <p><img src="/common/images/index_indexers_flow.png" width="400px" alt="The image displays the partial reindex workflow" /></p>
 
@@ -302,7 +308,6 @@ Depending on whether an index data is up to date, an indexer status value is one
 The Magento indexing mechanism uses the status value in reindex triggering process. You can check the status of an indexer in the Admin panel under **System > New Index Management** or manually using the <a href="#m2devgde-indexing-commandline">command line</a>. -->
 
 <h3 id="m2devgde-indexing-modes">Indexing modes</h3>
-
 <p>Reindexing can be performed in two modes:</p>
 
 <ul>
@@ -326,8 +331,15 @@ The Magento indexing mechanism uses the status value in reindex triggering proce
 
 <p>You can also reindex from the <a href="#m2devgde-indexing-commandline">command line</a>.</p>
 
-<h2 id="m2devgde-indexing-outofbox">Magento indexers</h2>
+<h3 id="m2devgde-indexing-how">How to reindex</h3>
+<p>You can reindex in any of the following ways:</p>
 
+<ul>
+  <li>Using a <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-bkg">cron job</a> (preferred because indexing runs every minute)</li>
+  <li>Using the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex"><code>magento indexer:reindex [indexer]</code></a> command, which reindexes selected indexers, or all indexers, one time only</li>
+</ul>
+
+<h2 id="m2devgde-indexing-outofbox">Magento indexers</h2>
 <p>Out of the box the Magento system has the following indexers implemented:</p>
 
 <table>
@@ -389,11 +401,7 @@ The Magento indexing mechanism uses the status value in reindex triggering proce
 
 </tbody></table>
 
-<h2 id="m2devgde-indexing-commandline">Running indexers from the command line</h2>
-<p>To run indexers from the command line, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>.</p>
-
 <h2 id="m2devgde-indexing-custom">Adding a custom indexer</h2>
-
 <p>We strongly recommend you not modify core Magento code; instead, add your own modules.</p>
 
 <p>To implement your own indexer, add the following code in your module:</p>

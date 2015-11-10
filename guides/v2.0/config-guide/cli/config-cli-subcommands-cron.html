@@ -217,9 +217,10 @@
   <li><a href="#config-cli-cron-overview">Overview of cron</a></li>
   <li><a href="#config-cli-before">First steps</a></li>
   <li><a href="#config-cli-cron-bkg">Run cron in the background</a></li>
-  <li><a href="#config-cli-cron-browser">Run cron from a web browser</a></li>
   <li><a href="#config-cli-cron-group">Configure and run cron using the command line</a></li>
 </ul>
+
+<p>To run cron in a web browser, see <a href="/guides/v2.0/config-guide/secy/secy-cron.html">Secure cron.php to run in a browser</a></p>
 
 <h2 id="config-cli-cron-overview">Overview of cron</h2>
 <p>Several Magento features require at least one cron job, which schedules activities to occur in the future. A partial list of these activities follows:</p>
@@ -253,7 +254,6 @@
 <ul>
   <li><a href="#config-cli-before">First steps</a></li>
   <li><a href="#config-cli-cron-bkg">Run cron in the background</a></li>
-  <li><a href="#config-cli-cron-browser">Run cron from a web browser</a></li>
   <li><a href="#config-cli-cron-group">Configure and run cron using the command line</a></li>
 </ul>
 
@@ -275,6 +275,11 @@ bash shell example for CentOS:<br />
 
 <h2 id="config-cli-cron-bkg">Run cron in the background</h2>
 <p>This section discusses how to run all Magento cron jobs every minute, which is the recommended interval for both Magento Community Edition (CE) and Enterprise Edition (EE).</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Cron is critical for Magento operation; among other things, it's the only way to reindex on an ongoing basis, it generates automated e-mails, newsletters, the sitemap, and so on.</p></span>
+</div>
 
 <p>Run Magento cron jobs as the <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-over">Magento file system owner</a>. </p>
 
@@ -303,71 +308,6 @@ bash shell example for CentOS:<br />
 </ol>
 
 <p>Save your changes to the crontab and exit the editor.</p>
-
-<h2 id="config-cli-cron-browser">Run cron from a web browser</h2>
-<p>You can run cron anytime using a web browser (for example, during development).</p>
-
-<p>Before you run cron in the browser, remove the restriction from <code>.htaccess</code> as follows:</p>
-
-<ol>
-  <li>Log in to your Magento server as a user with permissions to write to the Magento file system.</li>
-  <li>
-    <p>Open any of the following in a text editor (depending on your entry point to Magento):</p>
-
-    <pre><code>&lt;your Magento install dir&gt;/pub/.htaccess
-&lt;your Magento install dir&gt;/.htaccess
-</code></pre>
-  </li>
-  <li>
-    <p>Delete or comment out the following:</p>
-
-    <pre><code>## Deny access to cron.php
-&lt;Files cron.php&gt;
-	order allow,deny
-	deny from all
-&lt;/Files&gt;
-</code></pre>
-
-    <p>For example,</p>
-
-    <pre><code>## Deny access  to cron.php
-#&lt;Files cron.php&gt;
-#	order allow,deny
-#	deny from all
-#&lt;/Files&gt;
-</code></pre>
-  </li>
-  <li>Save your changes and exit the text editor.</li>
-</ol>
-
-<p>You can then run cron in a web browser as follows:</p>
-
-<pre><code>&lt;your Magento host name or IP&gt;/&lt;Magento root&gt;/pub/cron.php[?group=&lt;group name&gt;]
-</code></pre>
-
-<p>where</p>
-
-<ul>
-  <li><code>&lt;your Magento host name or IP&gt;</code> is the host name or IP address of your Magento installation</li>
-  <li>
-    <p><code>&lt;Magento root&gt;</code> is the web server docroot-relative directory to which you installed the Magento software</p>
-
-    <p>The exact URL you use to run the Magento application depends on how you configured your web server and virtual host.</p>
-  </li>
-  <li><code>&lt;group name&gt;</code> is any valid cron group name (optional)</li>
-</ul>
-
-<p>For example,</p>
-
-<pre><code>http://magento.example.com/magento2/pub/cron.php?group=index
-</code></pre>
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You must run cron twice: the first time to discover tasks to run and the second time to run the tasks themselves.</p></span>
-</div>
-
-<p><a href="#config-cli-cron-group-conf">More information about cron groups</a></p>
 
 <h2 id="config-cli-cron-group">Configure and run cron using the command line</h2>
 <p>This section discusses how to run cron at any time using the command line. You can optionally configure a cron group for a custom module as discussed in the next section.</p>
@@ -640,7 +580,7 @@ bash shell example for CentOS:<br />
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/secy/secy-cron.html">Secure cron.php</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/secy/secy-cron.html">Secure cron.php to run in a browser</a></li>
 
 									
 						
