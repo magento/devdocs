@@ -2,11 +2,11 @@
 layout: default
 group: install_cli 
 subgroup: 99_contrib
-title: TBD
-menu_title: TBD
-menu_order: 2
+title: Reinstall the Magento software
+menu_title: Reinstall the Magento software
+menu_order: 200
 menu_node: 
-github_link: install-gde/install/dev_reinstall.md
+github_link: install-gde/install/cli/dev_reinstall.md
 ---
 
 

@@ -6,7 +6,8 @@ title: Contributing developers&mdash;update, reinstall Magento
 menu_title: Contributing developers&mdash;update, reinstall Magento
 menu_order: 1
 menu_node: parent
-github_link: install-gde/install/dev_updater.md
+github_link: install-gde/cli/dev_options.md
+redirect_from: guides/v2.0/install-gde/install/dev_updater.md
 ---
 
 Contributing developers update components by specifying components in Magento's `composer.json`. You *cannot* use the graphical Component Manager or System Upgrade utilities to do this.
