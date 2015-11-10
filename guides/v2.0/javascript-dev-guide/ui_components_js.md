@@ -10,7 +10,7 @@ github_link: javascript-dev-guide/javascript/ui_components_js.md
 ---
 
 <h2>What's in this topic</h2>
-This topic is aimed for developers, who need to reuse the Magento UI Components. 
+This topic is aimed for developers, who need to reuse the [Magento UI Components]({{site.gdeurl}}ui-library/ui-library-component.html). 
 
 The topic covers the following:
 
@@ -24,44 +24,46 @@ The topic covers the following:
 
 Component's behavior, configuration and structure is defined by the following:
 
- - The available components configuration options are defined by a component's JS file -> defaults.
-<p class="q">is it really named components.js or is it a generalization? if so, what is the file we are talking about </p>
- - The actual configuration and structure of a particular component `app/code/Magento/<Module>/view/<area>ui_component/*.xml` configuration from xml  == content from <argument/> node <p class="q">need more explanation</p>
-	xml describes structure of components, their real names. Also it extends properties, configures template and component file.
- - Componet methods descibed in component.js
- 
-All of these are available in template's scope.
-<p class="q">in what way</p>
+ - The available configuration options and methods for components of a certain type, defined in the `defaults` section of the component's .js file.
 
-<p class="q">Need to add info about how to customize configuration in JS: create a new JS handling this + specify this JS in the XML config</p>
+ - The actual configuration and structure of a particular component, specified in the component's .xml configuration, in the scope of the `<argument></argument>` node. The configuration file also extends properties, configures template and component file.
+ 
+All these properties, options, and methods are available in a components' templates.
+
 
 ## Basic UI components' properties {#main_properties}
 The most important client-side properties of a UI component are the following:
 
- - `component`: the path to the JavaScript implementation of a component in terms of RequireJS. <p class="q">JS component file itself should return constructor..(move to improvements)...</p>
+ - `component`: the path to the component's .js file in terms of RequireJS.
 
+Example:
+The .js file of the bookmark component is [app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js]({{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js) 
 
-	Example:
-
+So the `component` property  is set in the .xml configuration like following:
 {% highlight xml%}
 <argument name="data" xsi:type="array">
         <item name="component" xsi:type="string">Magento_Ui/js/grid/controls/bookmarks/bookmarks</item>
 </argument>
 {% endhighlight xml%}
 
- - `template`: path to the html template.The html template is based on top of Knockout
-<p class="q">Not clear.A: uses Knockout syntax</p>
-	Example:
+ - `template`: path to the component's `.html` template.
+
+Example:
+
+The .html template of the bookmarks component is [app/code/Magento/Ui/view/base/web/templates/grid/controls/bookmarks/bookmarks.html]({{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/grid/controls/bookmarks/bookmarks.html). 
+
 {% highlight xml%}
 <argument name="data" xsi:type="array">
         <item name="template" xsi:type="string">ui/grid/controls/bookmarks/bookmarks</item>
 </argument>
 {% endhighlight xml%}
 
- - children -  is a fantom property (the property with this name does not exist) that contains nested/linked components. In the xml configuration, all nodes that are not `<argument/>` are children. In Knockout JS templates children are the keys of the `elems` property.
+ - children - is a general name for the nested components for a property. Children can be specified in the .xml configuration of a property (all nodes except `<argument/>` are considered children) and in the Knockout JS templates: children are the keys of the `elems` property.
 
+<p class="q">are these  Knockout JS templates separate files or .html templates?</p>.
 
 ## UI Components' properties used for linking {#comp_link}
+
 The following properties are used for linking observable properties and methods of UI components:
 
 <ul>
