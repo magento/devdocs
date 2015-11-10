@@ -66,15 +66,13 @@ The .html template of the bookmarks component is [app/code/Magento/Ui/view/base/
 
 The following properties are used for linking observable properties and methods of UI components:
 
-<ul>
-<li><code>exports</code>: used to notify some external entity about property changing. <code>exports</code>'s value is an object, composed of the following:
-<ul>
-<li><code>key</code> - name of the property or method which is tracked for changes. Only internal property.</li>
-<li><code>value</code> - name of the property or method which receives the notification. Could use string templates.</li>
-<p class="q">need to add an illustration of a string template
- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/template_strings</p>
-</ul>
-Example of setting <code>exports</code> in <code>component.js</code>:
+
+- `exports`: used to notify some external entity about property changing. `exports`s value is an object, composed of the following:
+
+  - `key`: name of the property or method which is tracked for changes. Only internal property.
+  - `value`: name of the property or method which receives the notification. Can use string templates.
+
+Example of setting exports in component's .js file:
 {% highlight php%}
 {
   'exports': {
@@ -83,7 +81,7 @@ Example of setting <code>exports</code> in <code>component.js</code>:
 }
 {% endhighlight php%}
 
-Example of using <code>exports</code> in <code>configuration.xml</code> file:
+Example of using `exports` in configuration .xml file:
 
 {% highlight php%}
 <argument name="data" xsi:type="array">
@@ -94,15 +92,13 @@ Example of using <code>exports</code> in <code>configuration.xml</code> file:
        </item>
 </argument>
 {% endhighlight php%}
-</li>
-<li><code>imports</code>: used for tracking changes of an external entity property. <code>imports</code>'s value is an object, composed of the following:
-<ul>
-<li><code>key</code> - name of the property or method which receives the notifications. Only internal property.</li>
-<li><code>value</code> - name of the property or method which is tracked for changes. Could use string templates.</li>
-<p class="q">need to add an illustration of a string template</p>
-</ul>
 
-Example of using <code>imports</code> in <code>component.js</code>:
+ - `imports`: used for tracking changes of an external entity property. `imports`'s value is an object, composed of the following:
+
+  - `key`: name of the property or method which receives the notifications. Only internal property.
+  - `value`: name of the property or method which is tracked for changes. Can use string templates.
+
+Example of using `imports` in a component's .js file:
 
 {% highlight php%}
 {
@@ -114,7 +110,7 @@ Example of using <code>imports</code> in <code>component.js</code>:
 
 Here `visible` is the `key`, `${ $.provider }.visibility` is the `value`.
 
-Example of using <code>exports</code> in <code>configuration.xml</code> file:
+Example of using `exports` in the component's configuration .xml file:
 
 {% highlight php%}
 <argument name="data" xsi:type="array">
@@ -128,13 +124,10 @@ Example of using <code>exports</code> in <code>configuration.xml</code> file:
 
 In these examples, `visible` is the `key`, `sample_config.sample_provider.visibility` is the value.
 
-</li>
+ - `links`: used for mutual tracking property changes. `links`'s value is an object, composed of the following:
 
-<li>
-<code>links</code> used for mutual tracking property changes. <code>links</code>'s value is an object, composed of the following:
-<p class="q">Is it the same for links? If yes, are both key and value just equivalent properties? both key and value can change or track changes</p>
-<ul>
-<li><code>key</code> - name of the property or method which receives the notifications. Only internal property.</li>
+ both key and value can change or track changes</p>
+  - `key`: name of the property or method which receives the notifications. Only internal property.</li>
 <li><code>value</code> - name of the property or method which is tracked for changes. Could use string templates.</li>
 <p class="q">need to add an illustration of a string template</p>
 </ul>
