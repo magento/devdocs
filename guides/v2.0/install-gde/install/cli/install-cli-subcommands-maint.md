@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install_cli 
-subgroup: T_Command-line installation
+subgroup: 05_Command-line installation
 title: Enable or disable maintenance mode
 menu_title: Enable or disable maintenance mode
 menu_node: 

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install_cli 
-subgroup: T_Command-line installation
+subgroup: 05_Command-line installation
 title: Remove or update sample data
 menu_title: Remove or update sample data
 menu_node: 

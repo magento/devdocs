@@ -1,13 +1,12 @@
 ---
 layout: default
-group: install_pre
-subgroup: T_Developer
-title: Update components
-menu_title: Update components
-menu_order: 100
-menu_node: 
+group: install_cli 
+subgroup: 99_contrib
+title: Contributing developers&mdash;update, reinstall Magento
+menu_title: Contributing developers&mdash;update, reinstall Magento
+menu_order: 1
+menu_node: parent
 github_link: install-gde/install/dev_updater.md
-redirect_from: /guides/v2.0/install-gde/prereq/prereq_updater.html
 ---
 
 Contributing developers update components by specifying components in Magento's `composer.json`. You *cannot* use the graphical Component Manager or System Upgrade utilities to do this.

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install_cli
-subgroup: T_Command-line installation
+subgroup: 05_Command-line installation
 title: Install the Magento software using the command line
 menu_title: Install the Magento software using the command line
 menu_node: parent

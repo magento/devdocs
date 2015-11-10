@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install_cli 
-subgroup: T_Command-line installation
+subgroup: 05_Command-line installation
 title: Uninstall modules
 menu_title: Uninstall modules
 menu_node: 

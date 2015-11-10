@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install_cli 
-subgroup: T_Command-line installation
+subgroup: 05_Command-line installation
 title: Back up and roll back the file system, media, and database
 menu_title: Back up and roll back the file system, media, and database
 menu_node: 
