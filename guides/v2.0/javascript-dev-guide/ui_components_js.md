@@ -93,9 +93,9 @@ Example of using `exports` in configuration .xml file:
 </argument>
 {% endhighlight php%}
 
- - `imports`: used for tracking changes of an external entity property. `imports`'s value is an object, composed of the following:
+- `imports`: used for tracking changes of an external entity property. `imports`'s value is an object, composed of the following:
 
-  - `key`: name of the property or method which receives the notifications. Only internal property.
+  - `key`: name of the internal property or method which receives the notifications. 
   - `value`: name of the property or method which is tracked for changes. Can use string templates.
 
 Example of using `imports` in a component's .js file:
@@ -110,7 +110,7 @@ Example of using `imports` in a component's .js file:
 
 Here `visible` is the `key`, `${ $.provider }.visibility` is the `value`.
 
-Example of using `exports` in the component's configuration .xml file:
+Example of using `imports` in the component's configuration .xml file:
 
 {% highlight php%}
 <argument name="data" xsi:type="array">
@@ -122,17 +122,15 @@ Example of using `exports` in the component's configuration .xml file:
 </argument>
 {% endhighlight php%}
 
-In these examples, `visible` is the `key`, `sample_config.sample_provider.visibility` is the value.
+In these examples, `visible` is the `key`, `sample_config.sample_provider.visibility` is the `value`.
 
- - `links`: used for mutual tracking property changes. `links`'s value is an object, composed of the following:
+- `links`: used for mutual tracking property changes. `links`'s value is an object, composed of the following:
 
- both key and value can change or track changes</p>
-  - `key`: name of the property or method which receives the notifications. Only internal property.</li>
-<li><code>value</code> - name of the property or method which is tracked for changes. Could use string templates.</li>
-<p class="q">need to add an illustration of a string template</p>
-</ul>
+  - `key`: name of the internal property or method which sends and receives the notifications. 
+  - `value` - name of the property or method which is tracked for changes. Could use string templates.
 
-Example of using <code>links</code> in <code>component.js</code>:
+
+Example of using `links` in component's .js file:
 
 {% highlight php%}
 {
@@ -142,7 +140,7 @@ Example of using <code>links</code> in <code>component.js</code>:
 }
 {% endhighlight php%}
 
-Example of using <code>links</code> in <code>configuration.xml</code> file:
+Example of using `links` in the configuration .xml file:
 
 {% highlight xml%}
 <argument name="data" xsi:type="array">
@@ -154,15 +152,11 @@ Example of using <code>links</code> in <code>configuration.xml</code> file:
 </argument>
 {% endhighlight xml%}
 
-</li>
-<li>
-<code>listens</code> 
-<ul>
-<li><code>key</code> - name of the property which listens to the changes.</li>
-<li><code>value</code> - name of the property or method which is tracked for changes. Could use string templates.</li>
-<p class="q">What is the difference between listens and imports?</p>
-</ul>
-Example of using <code>listens</code> in <code>component.js</code>:
+- `listens`
+  - `key` - name of the property which listens to the changes.
+  - `value` - name of the property or method which is tracked for changes. Can use string templates.
+
+Example of using `listens` in the component's .js file :
 
 {% highlight php%}
 {
@@ -172,9 +166,9 @@ Example of using <code>listens</code> in <code>component.js</code>:
 }
 {% endhighlight php%}
 
-Example of using <code>listens</code> in <code>configuration.xml</code> file:
+Example of using `listens` in the component's configuration .xml file:
 
-{% highlight php%}
+{% highlight xml%}
 <argument name="data" xsi:type="array">
        <item name="config" xsi:type="array">
                     <item name="listens" xsi:type="array">
@@ -182,10 +176,8 @@ Example of using <code>listens</code> in <code>configuration.xml</code> file:
                     </item>
        </item>
 </argument>
-{% endhighlight php%}
-</li>
+{% endhighlight xml%}
 
-</ul>
 
 ## Frequently used additional components {#comp_additional}
 This section is a brief description of the most frequently used additional UI components.
@@ -203,10 +195,12 @@ Extends `uiClass`. Adds the following:
 
 ### `uiCollection`
 
-Extends uiElement. Adds the following:
+Extends `uiElement`. Adds the following:
 
 - managing child elements (the `elems` property)
 - by default uses the <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/collection.html">app/code/Magento/Ui/view/base/web/templates/collection.html</a> template.
+
+<p>is it an important info, about the template? why do we mention it?</p>
 
 
 ### `uiRegistry`
@@ -214,26 +208,25 @@ In-memory storage. Plain storage of entities by keys. Implements the `get()`, `s
 
 
 ## JS UI components debugging {#comp_debug}
-This section describes how to define what UI components are involved for a particular page generation and what data they use.
+This section describes how to define what UI components are used on a particular page and what data they use.
 
-To define the UI components used on a page, you can analyze the page source a browser plug-in, like Knockout JS context debugger, or the . Both approached are described further.
+To define the UI components used on a page, you can use browser built-in developer tools, or install addiotionally a plugin, for example Knockout JS context debugger for Google Chrome. 
+
+**Note**: the similar plugins might exist for other browsers.
 
 ### Debug using browser built-in tools
 1. Open the required page in browser
 2. Select to view the page source.
 3. Search for `data-bind="scope:`. The string after `scope` is the full name of the component.
-5. Open developers tools and in the console tab run `require('uiRegistry').get('<component_component.name')`. Where `<full_component_name>` is the name you defined on the previous step.
+5. Open developers tools and in the console tab run `require('uiRegistry').get('<full_component_name>')`. Where `<full_component_name>` is the name you defined on the previous step. The name and the configuration of the UI component instance is displayed once the command is executed.
 
-6. View the name and the configuration of the UI component instance.
-
-Alternatively, on the step 4, copy the content of the `<script></script>` tag to the json viewer/formatter and view the the name and the configuration of the UI component instance.
 
 ### Debug using a Google Chrome plug-in
 
 1. Install the Knockout JS context debugger for Google Chrome.
 2. Open the required page in Chrome.
-3. Point to the requiered element on the page, right-click and select Inspect Element. The developer tools panel opens.
-4. In the right column of the panel, click the Knockout context tab. The tab displays the name and the configuration of the UI component instance.
+3. Point to the requiered element on the page, right-click and select **Inspect Element**. The developer tools panel opens.
+4. In the right column of the panel, click the **Knockout context** tab. The tab displays the name and the configuration of the UI component instance.
 
-<p class="q">illustration</p>
+
 
