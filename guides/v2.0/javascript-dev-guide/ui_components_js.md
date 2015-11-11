@@ -26,20 +26,23 @@ Component's behavior, configuration and structure is defined by the following:
 
  - The available configuration options and methods for components of a certain type, defined in the `defaults` section of the component's .js file.
 
- - The actual configuration and structure of a particular component, specified in the component's .xml configuration, in the scope of the `<argument></argument>` node. The configuration file also extends properties, configures template and component file.
- 
-All these properties, options, and methods are available in a components' templates.
+ - The actual configuration and structure of a particular component, specified in the component's `.xml` configuration, in the scope of the `<argument></argument>` node. The configuration file also extends properties, configures template and component file.
+
+<p class="q">What is meant by "configure template and component file"? it's clear about the template, but not about the file. The phrase is taken from your internal doc</p>
+
+All these properties, options, and methods are available in components' templates.
 
 
 ## Basic UI components' properties {#main_properties}
 The most important client-side properties of a UI component are the following:
 
- - `component`: the path to the component's .js file in terms of RequireJS.
+ - `component`: the path to the component's `.js` file in terms of RequireJS.
 
 Example:
-The .js file of the bookmark component is [app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js]({{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js) 
+The `.js` file of the bookmark component is [app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js]({{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js) 
 
-So the `component` property  is set in the .xml configuration like following:
+So the `component` property  is set in the `.xml` configuration file like following:
+
 {% highlight xml%}
 <argument name="data" xsi:type="array">
         <item name="component" xsi:type="string">Magento_Ui/js/grid/controls/bookmarks/bookmarks</item>
@@ -50,7 +53,7 @@ So the `component` property  is set in the .xml configuration like following:
 
 Example:
 
-The .html template of the bookmarks component is [app/code/Magento/Ui/view/base/web/templates/grid/controls/bookmarks/bookmarks.html]({{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/grid/controls/bookmarks/bookmarks.html). 
+The `.html` template of the bookmarks component is [app/code/Magento/Ui/view/base/web/templates/grid/controls/bookmarks/bookmarks.html]({{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/grid/controls/bookmarks/bookmarks.html). 
 
 {% highlight xml%}
 <argument name="data" xsi:type="array">
@@ -58,9 +61,9 @@ The .html template of the bookmarks component is [app/code/Magento/Ui/view/base/
 </argument>
 {% endhighlight xml%}
 
- - children - is a general name for the nested components for a property. Children can be specified in the .xml configuration of a property (all nodes except `<argument/>` are considered children) and in the Knockout JS templates: children are the keys of the `elems` property.
+ - children - is a general name for the nested components for a property. Children can be specified in the `.xml` configuration of a property (all nodes except `<argument/>` are considered children) and in the Knockout JS templates: children are the keys of the `elems` property.
 
-<p class="q">are these  Knockout JS templates separate files or .html templates?</p>.
+<p class="q">are these  Knockout JS templates separate files or .html templates?</p>
 
 ## UI Components' properties used for linking {#comp_link}
 
@@ -69,21 +72,22 @@ The following properties are used for linking observable properties and methods 
 
 - `exports`: used to notify some external entity about property changing. `exports`s value is an object, composed of the following:
 
-  - `key`: name of the property or method which is tracked for changes. Only internal property.
+  - `key`: name of the internal property or method which is tracked for changes.
   - `value`: name of the property or method which receives the notification. Can use string templates.
 
-Example of setting exports in component's .js file:
-{% highlight php%}
+Example of setting `exports` in a component's `.js` file:
+
+{% highlight js%}
 {
   'exports': {
    'visible': '${ $.provider }.visibility'
   }
 }
-{% endhighlight php%}
+{% endhighlight js%}
 
-Example of using `exports` in configuration .xml file:
+Example of using `exports` in a component's configuration `.xml` file:
 
-{% highlight php%}
+{% highlight xml%}
 <argument name="data" xsi:type="array">
        <item name="config" xsi:type="array">
                     <item name="exports" xsi:type="array">
@@ -91,28 +95,28 @@ Example of using `exports` in configuration .xml file:
                     </item>
        </item>
 </argument>
-{% endhighlight php%}
+{% endhighlight xml%}
 
 - `imports`: used for tracking changes of an external entity property. `imports`'s value is an object, composed of the following:
 
   - `key`: name of the internal property or method which receives the notifications. 
   - `value`: name of the property or method which is tracked for changes. Can use string templates.
 
-Example of using `imports` in a component's .js file:
+Example of using `imports` in a component's `.js` file:
 
-{% highlight php%}
+{% highlight js%}
 {
   'imports': {
    'visible': '${ $.provider }.visibility'
   }
 }
-{% endhighlight php%}
+{% endhighlight js%}
 
 Here `visible` is the `key`, `${ $.provider }.visibility` is the `value`.
 
-Example of using `imports` in the component's configuration .xml file:
+Example of using `imports` in a component's configuration `.xml` file:
 
-{% highlight php%}
+{% highlight xml%}
 <argument name="data" xsi:type="array">
        <item name="config" xsi:type="array">
                     <item name="imports" xsi:type="array">
@@ -120,27 +124,26 @@ Example of using `imports` in the component's configuration .xml file:
                     </item>
        </item>
 </argument>
-{% endhighlight php%}
+{% endhighlight xml%}
 
-In these examples, `visible` is the `key`, `sample_config.sample_provider.visibility` is the `value`.
+In this example, `visible` is the `key`, `sample_config.sample_provider.visibility` is the `value`.
 
 - `links`: used for mutual tracking property changes. `links`'s value is an object, composed of the following:
 
   - `key`: name of the internal property or method which sends and receives the notifications. 
-  - `value` - name of the property or method which is tracked for changes. Could use string templates.
+  - `value` - name of the internal property or method which sends and receives the notifications. CAn use string templates.
 
+Example of using `links` in a component's `.js` file:
 
-Example of using `links` in component's .js file:
-
-{% highlight php%}
+{% highlight js%}
 {
   'links': {
    'visible': '${ $.provider }.visibility'
   }
 }
-{% endhighlight php%}
+{% endhighlight js%}
 
-Example of using `links` in the configuration .xml file:
+Example of using `links` in a component's configuration `.xml` file:
 
 {% highlight xml%}
 <argument name="data" xsi:type="array">
@@ -156,17 +159,17 @@ Example of using `links` in the configuration .xml file:
   - `key` - name of the property which listens to the changes.
   - `value` - name of the property or method which is tracked for changes. Can use string templates.
 
-Example of using `listens` in the component's .js file :
+Example of using `listens` in a component's `.js` file :
 
-{% highlight php%}
+{% highlight js%}
 {
   'listens': {
    'visible': '${ $.provider }.visibility'
   }
 }
-{% endhighlight php%}
+{% endhighlight js%}
 
-Example of using `listens` in the component's configuration .xml file:
+Example of using `listens` in a component's configuration `.xml` file:
 
 {% highlight xml%}
 <argument name="data" xsi:type="array">
@@ -198,7 +201,7 @@ Extends `uiClass`. Adds the following:
 Extends `uiElement`. Adds the following:
 
 - managing child elements (the `elems` property)
-- by default uses the <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/collection.html">app/code/Magento/Ui/view/base/web/templates/collection.html</a> template.
+- by default uses the <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/collection.html">app/code/Magento/Ui/view/base/web/templates/collection.html</a> template
 
 <p>is it an important info, about the template? why do we mention it?</p>
 
@@ -215,7 +218,7 @@ To define the UI components used on a page, you can use browser built-in develop
 **Note**: the similar plugins might exist for other browsers.
 
 ### Debug using browser built-in tools
-1. Open the required page in browser
+1. Open the required page in a browser.
 2. Select to view the page source.
 3. Search for `data-bind="scope:`. The string after `scope` is the full name of the component.
 5. Open developers tools and in the console tab run `require('uiRegistry').get('<full_component_name>')`. Where `<full_component_name>` is the name you defined on the previous step. The name and the configuration of the UI component instance is displayed once the command is executed.
