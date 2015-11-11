@@ -22,12 +22,22 @@ To configure Magento to use memcache:
 
 3.	Change it as follows:
 
-        'session' =>
-           array (
-              'save' => 'memcache',
-              'save_path' => 'tcp://<memcache ip or host>:<memcache port>?persistent=1&weight=2&timeout=10&retry_interval=10'
-        ),
+    *   PHP `memcache` extension
 
+            'session' =>
+               array (
+                  'save' => 'memcache',
+                  'save_path' => 'tcp://<memcache ip or host>:<memcache port>?persistent=1&weight=2&timeout=10&retry_interval=10'
+            ),
+
+    *   PHP `memcached` extension
+
+            'session' =>
+               array (
+                  'save' => 'memcached’,
+                  'save_path' => 'memcache ip or host>:<memcache port>'
+            ),
+            
     For more information about memcached parameters, see the <a href="http://php.net/manual/en/memcache.addserver.php" target="_blank">PHP documentation</a>.
 3.  Continue with the next section.
 

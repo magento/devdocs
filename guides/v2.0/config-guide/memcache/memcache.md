@@ -24,7 +24,7 @@ Magento uses memcached for session storage but not for page caching. For page ca
 
 <div class="bs-callout bs-callout-info" id="info">
    <span class="glyphicon-class">
-   <p>There is currently a known issue with using Redis for session storage. Magento doesn't support file locking, which causes issues with distributed systems and applications that rely on Ajax. We're actively working on a solution.</p></span>
+   <p>There is currently a known issue with using Redis for session storage. The Magento implementation doesn't support file locking, which causes issues with distributed systems and applications that rely on Ajax. We're actively working on a solution.</p></span>
 </div>
 
 #### Next step

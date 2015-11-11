@@ -10,8 +10,11 @@ github_link: config-guide/memcache/memcache_ubuntu.md
 ---
 
 #### Contents
+*   <a href="#config-memcache-memcached">PHP memcache and memcached extensions</a>
 *   <a href="#config-memcache-install">Install and configure memcached on Ubuntu</a>
 *   <a href="#config-memcache-verify-its-ub">Verify memcached works before installing Magento</a>
+
+{% include config/php-memcache.md %}
 
 <h2 id="config-memcache-install">Install and configure memcached on Ubuntu</h2>
 This section provides instructions to install memcached on Ubuntu. For additional information, consult the <a href="https://code.google.com/p/memcached/wiki/NewStart" target="_blank">memcached wiki</a>.
