@@ -31,42 +31,42 @@
 }
 
 .block h2.block-title {
-    margin-top: 0
+   margin-top: 0;
 }
 
 
 fieldset.search-advanced {
-    padding-bottom: 1.5em;
-    margin-top: 1em
+   padding-bottom: 1.5em;
+   margin-top: 1em;
 }
 
 .navbar-search .control-group {
-    margin-bottom: 0px
+   margin-bottom: 0px;
 }
 
 ul.action-links {
-    margin-bottom: 2em
+   margin-bottom: 2em;
 }
 
 ul.action-links li {
-    display: inline;
-    padding-right: 1.5em
+   display: inline;
+   padding-right: 1.5em;
 }
 
 ul.action-links[class^="icon-"], ul.action-links[class*=" icon-"] {
-    padding-right: 0.5em
+   padding-right: 0.5em;
 }
 
 input, textarea, select, .uneditable-input {
-    max-width: 100%;
-    width: auto
+   max-width: 100%;
+   width: auto
 }
 
 select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    height: auto
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+   height: auto
 }
 
 input.error {
@@ -75,11 +75,11 @@ input.error {
 }
 
 .form-type-checkbox input, .form-type-radio input {
-    float: left
+   float: left;
 }
 
 .form-actions {
-    clear: both
+   clear: both;
 }
 
 .resizable-textarea textarea {
@@ -108,20 +108,20 @@ input.error {
 }
 
 .input-append input, .input-append textarea, .input-append select, .input-append .uneditable-input {
-    width: 100% !important
+   width: 100% !important;
 }
 
 .container-inline div, .container-inline label {
-    display: block
+   display: block;
 }
 
 div.error, table tr.error {
-    background-color: #f2dede;
-    color: #b94a48
+   background-color: #f2dede;
+   color: #b94a48
 }
 
 .control-group.error {
-    background: none
+   background: none
 }
 
 .control-group.error label, .control-group.error .control-label {
@@ -727,19 +727,6 @@ form[id*='workflow-tab'] {
         position: relative
     }
 
-    .nav-main nav .sales-login {
-        position: relative
-    }
-
-    .nav-main nav .menu-btn {
-        position: relative;
-        float: left
-    }
-
-    .nav-main nav .menu-btn .menu-icon, .nav-main nav .menu-btn .menu-label {
-        position: relative;
-        float: left
-    }
 }
 
 body.page-node-add .node-form, body.page-node-add .node-type-list, body.page-node-edit .node-form, body.page-node-edit .node-type-list {
@@ -3044,44 +3031,44 @@ button.close {
     -webkit-appearance: none;
 }
 .pull-right {
-    float: right;
+   float: right;
 }
 .pull-left {
-    float: left;
+   float: left;
 }
 .hide {
-    display: none;
+   display: none;
 }
 .show {
-    display: block;
+   display: block;
 }
 .invisible {
-    visibility: hidden;
+   visibility: hidden;
 }
 .affix {
-    position: fixed;
+   position: fixed;
 }
 .fade {
-    opacity: 0;
-    -webkit-transition: opacity 0.15s linear;
-    -moz-transition: opacity 0.15s linear;
-    -o-transition: opacity 0.15s linear;
-    transition: opacity 0.15s linear;
+   opacity: 0;
+   -webkit-transition: opacity 0.15s linear;
+   -moz-transition: opacity 0.15s linear;
+   -o-transition: opacity 0.15s linear;
+   transition: opacity 0.15s linear;
 }
 .fade.in {
-    opacity: 1;
+   opacity: 1;
 }
 .collapse {
-    position: relative;
-    height: 0;
-    overflow: hidden;
-    -webkit-transition: height 0.35s ease;
-    -moz-transition: height 0.35s ease;
-    -o-transition: height 0.35s ease;
-    transition: height 0.35s ease;
+   position: relative;
+   height: 0;
+   overflow: hidden;
+   -webkit-transition: height 0.35s ease;
+   -moz-transition: height 0.35s ease;
+   -o-transition: height 0.35s ease;
+   transition: height 0.35s ease;
 }
 .collapse.in {
-    height: auto;
+   height: auto;
 }
 
 

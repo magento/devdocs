@@ -1,7 +1,7 @@
 DIV.gsc-control-wrapper-cse tr:nth-child(odd) td { background: transparent;}
 
 
-.gsc-control-cse {
+div.gsc-control-cse {
 	font-family: 'Open Sans', sans-serif;
 	border-color: #FFFFFF;
 	background-color: #fff;
@@ -17,7 +17,7 @@ td.gsc-input {
 	padding-top: 0;
 	padding-bottom: 0;
 }
-input.gsc-input {
+.gsc-input input.gsc-input {
 	height: 40px;
 	border-radius: 0;
 	padding: 5px 10px;
@@ -187,9 +187,9 @@ color: #008000;
 	display: none;
 }
 
-.cse form.gsc-search-box, form.gsc-search-box {
-	margin: 0 0 0 0;
-	padding: 0 0 0 0;
+.gsc-control-cse .cse form.gsc-search-box {
+	margin: 0;
+	padding: 0;
 }
 
 #searchResultsBox table {
