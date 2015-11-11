@@ -9,6 +9,4 @@ menu_order: 1
 github_link: install-gde/install/verify_configure.md
 ---
 
-To configure the Magento application, see:
-
-{% include install/post-install-configure.md %}
+<a href="#">TBD</a>
