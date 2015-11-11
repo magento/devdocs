@@ -1,12 +1,12 @@
 ---
 layout: default
-group: howdoi
-subgroup: 02_Config
+group: install
+subgroup: B_Verify
 title: Configure the Magento application
 menu_title: Configure the Magento application
 menu_node: parent
 menu_order: 1
-github_link: howdoi/config/post-install-config.md
+github_link: install-gde/install/post-install-config.md
 ---
 
 ## Configure the Magento application
@@ -17,6 +17,7 @@ Now that you've finished installing the Magento application, you need to configu
 *	<a href="#post-install-secy">Security settings</a>
 *	<a href="#post-install-rewrites">Enable Apache server rewrites</a>
 *	<a href="#post-install-server">Server settings</a>
+*	<a href="#post-install-ee">Settings for Magento Enterprise Edition (EE) only</a>
 
 <h3 id="post-install-cron">Set up cron</h3>
 cron&mdash;the UNIX task scheduler&mdash;is critical to Magento's day-to-day operations. It schedules things like reindexing, newsletters, e-mails, sitemaps, and so on.
@@ -93,43 +94,12 @@ Magento requires an e-mail server. We don't recommend a particular server but yo
 *	Postfix for CentOS (<a href="https://www.digitalocean.com/community/tutorials/how-to-install-postfix-on-centos-6" target="_blank">digitalocean tutorial</a>, <a href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/ch-email.html" target="_blank">CentOS documentation</a>)	
 *	Postfix for Ubuntu (<a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-setup-postfix-on-ubuntu-14-04" target="_blank">digitalocean tutorial</a>, <a href="https://help.ubuntu.com/community/MailServer" target="_blank">Ubuntu documentation</a>)
 
+<h3 id="post-install-ee">Settings for Magento Enterprise Edition (EE) only</h3>
+<img src="{{ site.baseurl }}common/images/ee-only_large.png">
 
+You can configure the following only if you use Magento EE:
 
-GORDON
-
-Set up payment processors (Admin)
-Enable the flat catalog if it’s not by default (Admin)
-Set up the root category at least (Admin)     
-3.       SEO settings; specifically, setting up robots.txt (do not want scans in development, do want scans in production) (combination)
-4.       
-
-7.       File system permissions in dev and production (other security settings? Gordon?)
-10.   Various cleanup things like clearing the quotes table periodically, cleaning up flat category table (Admin)
-11.   Caching mainly for production (devdocs)
-
-
-
-RICHARD BAIK
-
-Setup email addresses and templates. There are quite a few, located in different spots so they are sometimes overlooked.
-o   Sys > config 
-
-	*	Store email addresses
-	*	Contacts
-	*	Sales emails
--          Tax rules and classes
--          Shipping settings
--          Store logo/favicon. I occasionally see EE and CE sites with the default Magento favicon.
--          Probably more of a best practice and falls under #7 on the list, but maybe suggest changing the admin URL instead of using the default /admin
-
-
-SERGEY NOSOV
-
-1. google tags/analytics;
-2. setup payment/shipment methods with enabled logging;
-3. change default CMS pages
-4. contact us form
-5. SOLR
-6. custom rewrites
-
+*	<a href="{{ site.gdeurl }}config-guide/solr/solr-overview.html">Apache Solr search</a>
+*	<a href="{{ site.gdeurl }}config-guide/multi-master/multi-master.html">Split databases for checkout, order management, and other Magento database tables</a>
+*	<a href="{{ site.gdeurl }}config-guide/mq/rabbitmq-overview.html">Message queues</a>
 
