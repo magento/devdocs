@@ -9,12 +9,9 @@ menu_node: parent
 github_link: install-gde/install/get-software.md
 ---
 
-#### Contents
-
-*	<a href="#all-get">Get the Magento software</a>
-
 {% include install/get-software_zip.md %}
 
-{% include install/get-software_composer.md %}
+#### Related topics
 
-{% include install/get-software_clone.md %}
+*	<a href="{{ site.gdeurl }}install-gde/install/prereq/dev_install.html">Clone the Magento repository</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html">Get the Composer metapackage</a>

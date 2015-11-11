@@ -16,7 +16,7 @@ redirect_from:
   <p>Totally lost? Need a helping hand? Try our <a href="{{ site.gdeurl }}install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{ site.gdeurl }}install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
 </div>
 
-<div class="bs-callout bs-callout-tip">
+<div class="bs-callout bs-callout-info" id="info">
   <p>If you chose to enable SELinux, see <a href="{{ site.gdeurl }}install-gde/prereq/security.html">Security-related prerequisites</a>.</p>
 </div>
 

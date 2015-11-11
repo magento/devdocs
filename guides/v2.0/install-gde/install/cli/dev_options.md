@@ -10,44 +10,13 @@ github_link: install-gde/cli/dev_options.md
 redirect_from: guides/v2.0/install-gde/install/dev_updater.md
 ---
 
-Contributing developers update components by specifying components in Magento's `composer.json`. You *cannot* use the graphical Component Manager or System Upgrade utilities to do this.
+The following topics apply to you *only* if you used `git clone` to install the Magento software. This usually means you're interested in contributing to the Magento codebase.
 
-You can either add a `require` section to `composer.json` or you can use the `composer require` command as follows:
+Contributing developers must add or update components by specifying them in Magento's root `composer.json`. You *cannot* use the graphical Component Manager or System Upgrade utilities to do this.
 
-1.	Log in to the Magento server, or switch to, the Magento file system owner.
-2.	Change to the directory to which you cloned the Magento application. For example,
+Contributing developers update the Magento software by running 'composer update'.
 
-		cd /var/www/magento2
+See the following topics for more information:
 
-You have the following options:
-
-### Use the `composer require` command
-Command usage:
-
-	composer require <vendor>/<name>:<version>
-
-For example,
-
-	composer require example/module:1.0.0
-
-Wait while Composer updates dependencies and installs the component.
-
-### Add a `require` section to `composer.json`
-Open `composer.json` in a text editor.
-
-Add a `require` section like the following:
-
-```JSON
-	"require": {
-		"<vendor>/<name>": "<version>",
-		"<vendor>/<name>": "<version>"
-	}
-```
-
-Save your changes to `composer.json`, exit the text editor, and enter `composer update`
-
-### For more information
-If you have issues, see <a href="https://getcomposer.org/doc/articles/troubleshooting.md" target="_blank">Composer troubleshooting</a>.
-
-#### Next step
-<a href="{{ site.gdeurl }}install-gde/continue-to-install.html">Install the Magento software</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/cli/dev_add-update.html">Add or update components</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/cli/dev_reinstall.html">Reinstall the Magento software</a>

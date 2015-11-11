@@ -16,7 +16,7 @@
 
 3.	Expand **Advanced Modules Configuration** to optionally enable or disable modules before you install the Magento software.
 
-	Before you enable or disable modules, review the information discussed in <a href="#instgde-install-web-enable-mod">Enabling and disabling modules</a>.
+	Before you enable or disable modules, review the information discussed in <a href="{{ site.gdeurl }}install-gde/install/web/install-web.html#instgde-install-web-enable-mod">Enabling and disabling modules</a>.
 
 	See one of the following sections for more information about enabling and disabling modules:
 

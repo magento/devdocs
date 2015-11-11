@@ -9,9 +9,6 @@ menu_order: 5
 github_link: install-gde/install/web/install-web_4-customize-store.md
 ---
 
-## Before you begin
-{% include install/before-you-begin-web.html %}
-
 {% include install/web/install-web_4-customize-store.md %}
 
 #### Next step

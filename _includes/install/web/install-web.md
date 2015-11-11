@@ -17,13 +17,7 @@ Before you begin, make sure that:
 
 1.	Your system meets the requirements discussed in <a href="{{ site.gdeurl }}install-gde/system-requirements.html">Magento System Requirements</a>.
 2.	You completed all prerequisite tasks discussed in <a href="{{ site.gdeurl }}install-gde/prereq/prereq-overview.html">Prerequisites</a>.
-3.	You installed Composer and cloned the Magento GitHub repository as discussed in <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and clone the Magento GitHub repository</a>.
-4.	After you log in to the Magento server, switch to the Magento file system owner as discussed in <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-switch">Create the Magento file system owner</a>.
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You must install Magento from its <code>setup</code> subdirectory.</p></span>
-</div>
+4.	After you log in to the Magento server, <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.
 
 <h3 id="instgde-install-web-enable-mod">Enabling and disabling modules</h3>
 The Setup Wizard enables you to enable or disable modules before you install the Magento software. Before you do so, make sure you understand the following.
@@ -31,7 +25,6 @@ The Setup Wizard enables you to enable or disable modules before you install the
 {% include install/enable-disable-modules.html %}
 
 <h2 id="instgde-install-magento-web">Running the Setup Wizard</h2>
-
 The Setup Wizard is a multi-page wizard that enables you to go back and forward one page at a time. You *cannot* skip pages, and you must enter all required information on every page before you can proceed to the next page.
 
 In the event of errors, you can run the installer again or you can return to a previous page to fix errors on that page.

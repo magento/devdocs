@@ -8,6 +8,8 @@ The following table discusses where to get the Magento software. We provide the 
 
 These packages are easy to get and install. You don't need to use Composer, all you need to do is to upload a package to your Magento server or hosted platform, unpack it, and run the web-based Setup Wizard.
 
+Archives are available in the following formats: `.zip`, `.tar.gz2`, `.tar.gz`
+
 <table>
 	<col width="30%">
 	<col width="70%">
@@ -19,7 +21,9 @@ These packages are easy to get and install. You don't need to use Composer, all 
 <tr> 
 	<td>Magento CE</td>
 	<td><p><a href="http://www.magento.com/download" target="_blank">www.magento.com/download</a></p>
-		<p>Choose either the software or the software and sample data.</p></td>
+		<p>Choose either the software or the software and sample data:</p>
+		<ul><li><code>Magento-CE-2.0.0.*</code> (without sample data)</li>
+			<li><code>Magento-CE-2.0.0+Samples.*</code> (with sample data)</li></ul></td>
 </tr>
 <tr> 
 	<td>Magento EE</td>
@@ -29,9 +33,15 @@ These packages are easy to get and install. You don't need to use Composer, all 
 	<li>Log in with your Magento user name and password.</li>
 	<li>In the left navigation bar, click <strong>Downloads</strong>.</li>
 	<li>In the right pane, click <strong>Magento Enterprise Edition</strong> > <strong>Release</strong> for the software.</li>
-	<li>Follow the instructions on your screen to complete the Magento EE download.</li>
+	<li>Follow the instructions on your screen to complete the Magento EE download:
+		<ul><li><code>Magento-EE-2.0.0.*</code> (without sample data)</li>
+			<li><code>Magento-EE-2.0.0+Samples.*</code> (with sample data)</li></ul>
+
+	</li>
 	<li>Transfer the installation package to your development system.</li></ol></td>
 </tr>
 </tbody>
 </table>
 
+#### Next step
+<a href="{{ site.gdeurl }}install-gde/prereq/zip_install.html">Install the Magento archive on your server</a>

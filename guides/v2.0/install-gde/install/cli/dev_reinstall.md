@@ -34,7 +34,4 @@ To reinstall the Magento software as a contributing developer:
 
 	Wait for dependencies to update.
 
-4.	Install the Magento software:
-
-	*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento">Install the Magento software using the command line</a>
-	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>
+4.	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">Install the Magento software</a>.

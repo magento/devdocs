@@ -9,9 +9,6 @@ menu_order: 6
 github_link: install-gde/install/web/install-web_5-create-admin.md
 ---
 
-## Before you begin
-{% include install/before-you-begin-web.html %}
-
 {% include install/web/install-web_5-create-admin.md %}
 
 #### Next step

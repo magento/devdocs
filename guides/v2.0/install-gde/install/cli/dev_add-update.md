@@ -9,7 +9,6 @@ menu_node:
 github_link: install-gde/install/cli/dev_add-update.md
 ---
 
-The following topics apply to you *only* if you used `git clone` to install the Magento software. This usually means you're interested in contributing to the Magento codebase.
 
 Contributing developers update components by specifying components and their versions in Magento's `composer.json`. You *cannot* use the graphical Component Manager or System Upgrade utilities to do this.
 

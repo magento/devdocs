@@ -9,9 +9,6 @@ menu_order: 10
 github_link: install-gde/install/web/install-web_6-install.md
 ---
 
-## Before you begin
-{% include install/before-you-begin-web.html %}
-
 {% include install/web/install-web_6-install.md %}
 
 {% include install/web/update-reinstall.md %}

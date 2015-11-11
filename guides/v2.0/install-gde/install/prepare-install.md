@@ -24,13 +24,13 @@ Composer is a separate application that manages PHP dependencies. Before you can
 
 1.	<a href="{{ site.gdeurl }}install-gde/install/dev_install.html">Install the Composer software</a>.
 2.	<a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Create the Magento file system owner</a> so Composer writes files to the web server docroot as the correct user.
-2.	Run the <a href="#install-composer-install">`composer install` command</a> from your Magento root directory (for example, `/var/www/magento2/`).
+2.	Run the <a href="#install-composer-install"><code>composer install</code> command</a> from your Magento root directory (for example, `/var/www/magento2/`).
 
 	The Magento root directory is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="{{ site.gdeurl }}install-gde/basics/basics_docroot.html">here</a>.
 
 For you to be able to run the Magento application, make sure you perform all tasks as a user with privileges to write to the web server docroot. One way to do this is to log in as or switch to the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.
 
-<h2 id="install-composer-install">Run `composer install` to update dependencies</h2>
+<h2 id="install-composer-install">Run <code>composer install</code> to update dependencies</h2>
 Update installation dependencies as follows:
 
 1.	Log in to your Magento server as the Magento file system owner or <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">switch to that user</a>.
