@@ -27,6 +27,7 @@ $('DIV.searchResultsBoxClose').click(function(){
    
 });
 
+
 // ** Menu **
 var menustate ="";
 if ( $('LI.level3Child').is("LI.active")) {
@@ -35,6 +36,8 @@ if ( $('LI.level3Child').is("LI.active")) {
 	$('#' + menustate).removeClass('caretRight').addClass('caretDown') //submenu open indication
 	$('.' + menustate).show(); //show submenu
 }
+
+// **optional third tier open/close **
 
 var dog = "";
 $('.level3Parent').click(function(){
@@ -48,30 +51,5 @@ if($('.' + dog).is(":visible")) {
 		}
 return false;
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }   //end devdocs
