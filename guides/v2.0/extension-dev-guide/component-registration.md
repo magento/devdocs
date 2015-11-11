@@ -5,8 +5,8 @@ subgroup: 3_Build
 title: Component registration
 menu_title: Component registration
 menu_order: 4
-github_link: extension-dev-guide/composer-integration.md
-redirect_from: /guides/v1.0/extension-dev-guide/composer-integration.html
+github_link: extension-dev-guide/component-registration.md
+redirect_from: /guides/v1.0/extension-dev-guide/component-registration.html
 
 ---
 ##{{page.menu_title}}
