@@ -3,7 +3,7 @@
 <h2 id="config-memcache-memcached">PHP memcache and memcached extensions</h2>
 Because PHP has no native support for memcache, you must install an extension for PHP to use it. There are two PHP extensions available and it's important to decode which to use:
 
-*	`memcache` (no *d*), an older but very popular extension that is not maintained regularly. The `memcache` extension is known *not to work* with PHP 7.
+*	`memcache` (no *d*), an older but very popular extension that is not maintained regularly. The `memcache` extension currently *does not* with PHP 7.
 
 	<a href="http://php.net/manual/en/book.memcache.php" target="_blank">PHP documentation for memcache</a>
 
