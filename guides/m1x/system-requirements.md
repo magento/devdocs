@@ -27,12 +27,12 @@ MySQL 5.6 (Oracle or Percona)
 #### Magento can utilize the following technologies:
 *   <a href="http://devdocs.magento.com/guides/m1x/ce18-ee113/using_redis.html">Redis</a>
     
-   Redis  can be used for session or cache storage
+	Redis  can be used for session or cache storage
 
 *   memcached
     
     memcached can be used for session or cache storage
  
-*   Apache Solr <img src="{{ site.baseurl }}common/images/ee-only_small.png">
+*   Apache Solr
  
     <a href="http://merch.docs.magento.com/ee/user_guide/search_seo/search-configuration-solr.html">Solr search</a> can be used as a search provider for Magento Enterprise Edition (EE) only
