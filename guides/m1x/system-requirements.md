@@ -1,11 +1,11 @@
 ---
 layout: m1x
-title: System Requirements for Magento Enterprise Edition 1.14.1 and Community Edition 1.9.1
+title: System Requirements for Magento Enterprise Edition and Community Edition (Current Shipping Versions)
 ---
 
 <p>Magento requires a LAMP or LNMP stack</p>
  
-<div><strong>Operating System</strong>
+### Operating System
  
 <ul>
     <li>Linux x86-64</li>
@@ -30,8 +30,8 @@ title: System Requirements for Magento Enterprise Edition 1.14.1 and Community E
 <div><strong>PHP</strong>
  
 <ul>
-    <li>PHP 5.4</li>
-    <li>PHP 5.5</li>
+    <li>PHP 5.4.x</li>
+    <li>PHP 5.5.x</li>
 </ul>
 </div>
  
