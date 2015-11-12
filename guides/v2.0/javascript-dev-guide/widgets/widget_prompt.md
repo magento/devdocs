@@ -1,7 +1,7 @@
 ---
 layout: default
 group: jsdg
-subgroup: Widgets
+subgroup: 3_Widgets
 title: Prompt widget
 menu_order: 12
 menu_title: Prompt widget

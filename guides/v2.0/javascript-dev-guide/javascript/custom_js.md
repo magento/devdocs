@@ -1,7 +1,7 @@
 ---
 layout: default
 group: jsdg
-subgroup: Javascript
+subgroup: 1_Javascript
 title: Use custom JavaScript
 menu_order: 3
 menu_title: Use custom JavaScript
