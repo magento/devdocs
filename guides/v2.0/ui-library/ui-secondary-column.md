@@ -9,7 +9,7 @@ menu_order: 5
 github_link: uilibrary/ui-secondary-column.md
 ---
 
-<h3 id="column">UI Library Column Component</h3>
+<h3 id="column">UI Column Component</h3>
 
 The Column component is a collection of columns and it provides an interface for such actions as showing and hiding columns. The interface contains the following information:
 

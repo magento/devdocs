@@ -9,7 +9,7 @@ menu_order: 9
 github_link: uilibrary/ui-secondary-bookmark.md
 ---
 
-<h3 id="bookmark">UI Library Bookmark component</h3>
+<h3 id="bookmark">UI Bookmark component</h3>
 
 Bookmark Component is responsible for storing active and changed states of data grids. It includes state of filters, columns position, applied sorting, pagination, and so on.
 

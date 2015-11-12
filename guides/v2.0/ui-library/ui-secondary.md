@@ -8,7 +8,7 @@ menu_node: parent
 github_link: uilibrary/ui-library-secondary.md
 ---
 
-<h3>UI Library Listing/Grid Secondary Components</h3>
+<h3>UI Listing/Grid Secondary Components</h3>
 
 The following components extend the functionality of the Listing component:
 

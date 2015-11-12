@@ -8,7 +8,7 @@ menu_order: 4
 github_link: frontend-dev-guide/themes/theme-images.md
 ---
 
-## Overview ##
+## What's in this topic ##
 
 The properties of product images used on the storefront are stored in the `view.xml` configuration file. This topic provides all details about what properties are available and how to configure them.
 

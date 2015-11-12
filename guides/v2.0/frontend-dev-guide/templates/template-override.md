@@ -9,7 +9,7 @@ github_link: frontend-dev-guide/templates/template-override.md
 redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-override.html
 ---
 
-<h2>Overview</h2>
+<h2>What's in this topic</h2>
 This topic discusses the main concepts of how default templates work in the Magento application. 
 The following topics are covered:
 
