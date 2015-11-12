@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>jQuery weeeedget coding standard</title>
+	<title>jQuery widget coding standard</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
@@ -200,7 +200,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">jQuery weeeedget coding standard</h1>
+		<h1 class="page-heading">jQuery widget coding standard</h1>
 			
 			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/coding-standards/code-standard-jquery-widgets.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -311,7 +311,7 @@ $.widget('mage.accordion', $.ui.accordion, {
 <h2 id="fedg_widget-coding-stnd_instant">Instantiation and resources</h2>
 <p>You must use the <a href="/guides/v2.0/frontend-dev-guide/javascript/js-mage-plugin.html" target="_blank">Mage plug-in</a> to instantiate a widget or define resources for a widget.</p>
 <div id="accordion2">
-   <h3>Additional JavaScript files used as resources by a friggin widget</h3>
+   <h3>Additional JavaScript files used as resources by a widget</h3>
    <div>
       <p>Additional JavaScript files used as resources must be dynamically loaded using the <code>$.mage.components()</code> method and must not be included in the <code>&lt;head&gt;</code> block.</p>
       <table>
@@ -723,7 +723,7 @@ $.widget("mage.form," {
    
    <h3>Magento product specific widgets</h3>
    <div>
-      <p>You must locate all of these under the <code><your magento="" install="" dir="">/app/code/<namespace>/<modulename>/view/<areaname>/js directory.
+      <p>You must locate all of these under the <code><your magento="" install="" dir="">/app/code/&lt;namespace&gt;/&lt;ModuleName&gt;/view/&lt;areaname&gt;/js directory.
       <table>
          <tbody>
             <tr>
@@ -938,15 +938,18 @@ menuInstance.element.addClass('ui-state-active');
          </tbody>
       </table>
    </div>
-   <h3>When a widget is destroyed, the element should be left exactly like it was before the widget was attached to it</h3>
-   <div>
-      <p>Common tasks include:</p>
-      <ul>
-         <li>Removing or adding of any CSS classes your widget added/removed from the element.</li>
-         <li>Detaching any elements your widget added to the DOM.</li>
-         <li>Destroying any widgets that your widget applied to other elements.</li>
-      </ul>
+   
+<h3>When a widget is destroyed, the element should be left exactly like it was before the widget was attached to it</h3>
+
+Common tasks include:
+<ul>
+<li>Removing or adding of any CSS classes your widget added/removed from the element.</li>
+<li>Detaching any elements your widget added to the DOM.</li>
+<li>Destroying any widgets that your widget applied to other elements.</li>
+</ul>
       <p>Example:</p>
+         <div>
+
       <script src="https://gist.github.com/xcomSteveJohnson/b9e1fb5a78fe88e510db.js"></script>
    </div>
    <h3>All event handlers must be bound by the <code>_bind()</code> method</h3>
@@ -970,13 +973,12 @@ menuInstance.element.addClass('ui-state-active');
       </table>
    </div>
    <h3>You must use the _on() method to bind events</h3>
-   <div>
       <p>Benefits:</p>
       <ul>
-         <li>Delegation is supported using selectors in the event names; for example, <code>click .foo</code></li>
-         <li>Maintains proper this context inside the handlers, so it is not necessary to use the <code>$.proxy()</code> method.</li>
-         <li>Event handlers are automatically namespaced and cleaned up on destruction.</li>
-      </ul>
+<li>Delegation is supported using selectors in the event names; for example, <code>click .foo</code></li>
+<li>Maintains proper this context inside the handlers, so it is not necessary to use the <code>$.proxy()</code> method.</li>
+<li>Event handlers are automatically namespaced and cleaned up on destruction.</li>
+</ul>
       <table>
          <tbody>
             <tr>
@@ -993,7 +995,6 @@ menuInstance.element.addClass('ui-state-active');
             </tr>
          </tbody>
       </table>
-   </div>
 </div>
 <h4>Related topics</h4>
 <ul>
@@ -1001,7 +1002,7 @@ menuInstance.element.addClass('ui-state-active');
    <li><a href="/guides/v2.0/frontend-dev-guide/javascript/js-mage-plugin.html">Mage JavaScript plugin<a>
 
 
-</a></a></li></ul></areaname></modulename></namespace></your></code></p></div></your></code></p></div></div>
+</a></a></li></ul></your></code></p></div></your></code></p></div></div>
 
 
 		</div>
