@@ -10,8 +10,6 @@ github_link: install-gde/system-requirements.md
 redirect_from: /guides/v1.0/install-gde/system-requirements.html
 ---
 
-Before you install Magento, make sure your system meets or exceeds the following requirements:
-
 ### Operating systems (Linux x86-64)
 
 Linux distributions such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and so on
@@ -34,7 +32,7 @@ MySQL 5.6 (Oracle or Percona)
 *	5.6.x
 *	5.5.x 
 
-Documentation: <a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html" target="_blank">CentOS</a>, <a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html" target="_blank">Ubuntu</a>)
+Documentation: <a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html" target="_blank">CentOS</a>, <a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html" target="_blank">Ubuntu</a>
 
 <div class="bs-callout bs-callout-info" id="info">
    <span class="glyphicon-class">
