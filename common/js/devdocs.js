@@ -8,9 +8,12 @@ $(function() {
 		hideSearchBox();
 	}
 
-
-	$('form').submit(function(event) {
+	$('#searchbox').submit(function(event) {
 		showSearchBox();
+	});
+
+	$('#gsc-search-box').submit(function(){
+		$('input').blur();
 	});
 
 	$('.search-trigger').click(function () {
@@ -29,6 +32,7 @@ $(function() {
 		});
 		$('.searchResultsBack').fadeIn(300);
 		$.cookie('searchResultsState', '1');
+		$('body').addClass('search-active');
 
 	}
 
@@ -40,6 +44,8 @@ $(function() {
 		});
 		$('.searchResultsBack').fadeOut(300);
 		$.cookie('searchResultsState','0');
+
+		$('body').removeClass('search-active');
 
 	}
 

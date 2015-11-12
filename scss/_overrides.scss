@@ -70,12 +70,12 @@ p.q 	{
 /* TDD - Alternate menu appearance */
 
 .nav-main #subnav-wrap #subnav ul li a {
-    font: 1em 'Open Sans',sans-serif;
-    font-weight: 600;
-    text-transform: none;
-    padding: 11px 15px;
-    outline: 0;
-    background: none repeat scroll 0 0 #31302b;
+   font: 1em 'Open Sans',sans-serif;
+   font-weight: 600;
+   text-transform: none;
+   padding: 11px 15px;
+   outline: 0;
+   background: none repeat scroll 0 0 #31302b;
 }
 
 
@@ -196,6 +196,7 @@ body.offcanvas-active {
 
    .nav-main {
       position: fixed;
+      visibility: hidden;
       top: 0;
       left: 0;
       height: 100%;
@@ -319,6 +320,10 @@ body.offcanvas-active {
    .offcanvas-active #gl-wrapper,
    .offcanvas-active #footer-wrap  {
       transform: translate(260px,0);
+   }
+
+   .offcanvas-active .nav-main {
+      visibility: visible;
    }
 
    .nav-main-fader {

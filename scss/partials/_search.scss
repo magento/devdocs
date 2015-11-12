@@ -8,9 +8,9 @@ div.gsc-control-cse {
 	min-height: 100%;
 	padding-top: 60px;
 }
-.gsc-control-cse .gsc-table-result {
+.gsc-control-cse .gsc-wrapper .gsc-table-result {
 	font-family: 'Open Sans', sans-serif;
-	margin: 0 0 0 0;
+	margin: 0;
 }
 
 td.gsc-input {
@@ -18,6 +18,8 @@ td.gsc-input {
 	padding-bottom: 0;
 }
 .gsc-input input.gsc-input {
+	display: block;
+	width: 100%;
 	height: 40px;
 	border-radius: 0;
 	padding: 5px 10px;
@@ -25,141 +27,144 @@ td.gsc-input {
 	border: 1px solid #666;
 	display: block;
 	margin: 0;
-
 }
 input.gsc-search-button {
 	background-color: #fff;
 }
 .gsc-tabHeader.gsc-tabhInactive {
-border-color: transparent;
-background-color: #fff;
+	border-color: transparent;
+	background-color: #fff;
 }
 .gsc-tabHeader.gsc-tabhActive {
-border-color: transparent;
-background-color: #FFFFFF;
+	border-color: transparent;
+	background-color: #FFFFFF;
 }
 .gsc-tabsArea {
-border-color: transparent;
+	border-color: transparent;
 }
-.gsc-webResult.gsc-result,
+.gsc-results .gsc-webResult.gsc-result,
 .gsc-results .gsc-imageResult {
-border-color: transparent;
-background-color: #FFFFFF;
+	border-color: transparent;
+	background-color: #FFFFFF;
+	padding: 0;
+}
+.gsc-results tr td {
+	padding: 0 10px 10px 10px;
 }
 .gsc-webResult.gsc-result:hover,
 .gsc-imageResult:hover {
-border-color: transparent;
-background-color: #FFFFFF;
+	border-color: transparent;
+	background-color: #FFFFFF;
 }
 .gsc-webResult.gsc-result.gsc-promotion:hover {
-border-color: transparent;
-background-color: #FFFFFF;
+	border-color: transparent;
+	background-color: #FFFFFF;
 }
 .gs-webResult.gs-result a.gs-title:link,
 .gs-webResult.gs-result a.gs-title:link b,
 .gs-imageResult a.gs-title:link,
 .gs-imageResult a.gs-title:link b {
-color: #0068b7;
+	color: #0068b7;
 }
 .gs-webResult.gs-result a.gs-title:visited,
 .gs-webResult.gs-result a.gs-title:visited b,
 .gs-imageResult a.gs-title:visited,
 .gs-imageResult a.gs-title:visited b {
-color: #995E33;
+	color: #995E33;
 }
 .gs-webResult.gs-result a.gs-title:hover,
 .gs-webResult.gs-result a.gs-title:hover b,
 .gs-imageResult a.gs-title:hover,
 .gs-imageResult a.gs-title:hover b {
-color: #C14800;
+	color: #C14800;
 }
 .gs-webResult.gs-result a.gs-title:active,
 .gs-webResult.gs-result a.gs-title:active b,
 .gs-imageResult a.gs-title:active,
 .gs-imageResult a.gs-title:active b {
-color: #0000FF;
+	color: #0000FF;
 }
 .gsc-cursor-page {
-color: #0000FF;
+	color: #0000FF;
 }
 a.gsc-trailing-more-results:link {
-color: #0000FF;
+	color: #0000FF;
 }
 .gs-webResult .gs-snippet,
 .gs-imageResult .gs-snippet,
 .gs-fileFormatType {
-color: #000000;
+	color: #000000;
 }
 .gs-webResult div.gs-visibleUrl,
 .gs-imageResult div.gs-visibleUrl {
-color: #000000;
+	color: #000000;
 }
 .gs-webResult div.gs-visibleUrl-short {
-color: #000000;
+	color: #000000;
 }
 .gs-webResult div.gs-visibleUrl-short {
-display: none;
+	display: none;
 }
 .gs-webResult div.gs-visibleUrl-long {
-display: block;
+	display: block;
 }
 .gs-promotion div.gs-visibleUrl-short {
-display: none;
+	display: none;
 }
 .gs-promotion div.gs-visibleUrl-long {
-display: block;
+	display: block;
 }
 .gsc-cursor-box {
-border-color: #FFFFFF;
+	border-color: #FFFFFF;
 }
 .gsc-results .gsc-cursor-box .gsc-cursor-page {
-border-color: transparent;
-background-color: #FFFFFF;
-color: #0000FF;
+	border-color: transparent;
+	background-color: #FFFFFF;
+	color: #0000FF;
 }
 .gsc-results .gsc-cursor-box .gsc-cursor-current-page {
-border-color: #FF9900;
-background-color: #FFFFFF;
-color: #663399;
+	border-color: #FF9900;
+	background-color: #FFFFFF;
+	color: #663399;
 }
 .gsc-webResult.gsc-result.gsc-promotion {
-border-color: #336699;
-background-color: #FFFFFF;
+	border-color: #336699;
+	background-color: #FFFFFF;
 }
 .gsc-completion-title {
-color: #0000FF;
+	color: #0000FF;
 }
 .gsc-completion-snippet {
-color: #000000;
+	color: #000000;
 }
 .gs-promotion a.gs-title:link,
 .gs-promotion a.gs-title:link *,
 .gs-promotion .gs-snippet a:link {
-color: #0000FF;
+	color: #0000FF;
 }
 .gs-promotion a.gs-title:visited,
 .gs-promotion a.gs-title:visited *,
 .gs-promotion .gs-snippet a:visited {
-color: #663399;
+	color: #663399;
 }
 .gs-promotion a.gs-title:hover,
 .gs-promotion a.gs-title:hover *,
 .gs-promotion .gs-snippet a:hover {
-color: #444444;
+	color: #444444;
 }
 .gs-promotion a.gs-title:active,
 .gs-promotion a.gs-title:active *,
 .gs-promotion .gs-snippet a:active {
-color: #00CC00;
+	color: #00CC00;
 }
 .gs-promotion .gs-snippet,
 .gs-promotion .gs-title .gs-promotion-title-right,
 .gs-promotion .gs-title .gs-promotion-title-right * {
-color: #333333;
+	color: #333333;
 }
 .gs-promotion .gs-visibleUrl,
 .gs-promotion .gs-visibleUrl-short {
-color: #008000;
+	color: #008000;
 }
 
 .gsc-control-cse .gs-spelling, .gsc-control-cse .gs-result .gs-title, .gsc-control-cse .gs-result .gs-title * {
@@ -187,13 +192,13 @@ color: #008000;
 	display: none;
 }
 
-.gsc-control-cse .cse form.gsc-search-box {
+.gsc-control-cse .gsc-control-wrapper-cse form.gsc-search-box {
 	margin: 0;
 	padding: 0;
 }
 
 #searchResultsBox table {
-   margin: 0 0 10px 0;
+   margin: 0;
    border: none;
    padding: 0;
 }
@@ -203,13 +208,17 @@ color: #008000;
 }
 
 .gssb_c TABLE {
-	   margin: 0 0 0 0;
-    border: 0px solid transparent;
-    padding: 0 0 0 0;
+	margin: 0 0 0 0;
+   border: 0px solid transparent;
+   padding: 0 0 0 0;
 }
 
 .gsc-above-wrapper-area {
 	padding: 0 0 0 0;
+}
+
+.gsc-above-wrapper-area .gsc-result-info {
+	padding: 0;
 }
 
 .gsc-control-wrapper-cse {
@@ -223,37 +232,39 @@ color: #008000;
 
 .gs-no-results-result .gs-snippet, .gs-error-result .gs-snippet {
 	font-size: 2em;
-    padding: 5px;
-    margin: 5px;
-    border: 0px solid transparent;
-    background-color: transparent;
+   padding: 5px;
+   margin: 5px;
+   border: 0px solid transparent;
+   background-color: transparent;
 }
 
 td.gcsc-branding-text {
-    white-space: nowrap;
-    width: 46%;
+   white-space: nowrap;
+	width: 46%;
 }
 
 .gcsc-branding-text-name {
 	width: 30%;
 }
 
+.gsc-results div.gsc-cursor-page {
+	padding: 10px 5px;
+}
 
-.gsc-results .gsc-cursor-page.gsc-cursor-current-page {
-text-shadow: none;
-
+.gsc-results div.gsc-cursor-page.gsc-cursor-current-page {
+	text-shadow: none;
 }
 
 
 .gsc-result .gs-title {
-
-    white-space: nowrap;
+	white-space: nowrap;
 }
 
 #searchbox input {
    background-color: transparent;
    font-style: normal;
    border: 0px solid gray;
+	border-radius: 0;
    width: 100%;
    height: 35px;
    color: #fff;
@@ -279,7 +290,8 @@ text-shadow: none;
 
 #searchResultsBox {
    display: none;
-   overflow: auto;
+	overflow-y: scroll; /* has to be scroll, not auto */
+	-webkit-overflow-scrolling: touch;
    position: fixed;
    top: 4%;
    left: 6%;
@@ -323,13 +335,16 @@ text-shadow: none;
    opacity: .75;
    z-index: 1000;
    background-color: #CACACA;
-   cursor: hand;
    cursor: pointer;
 }
 
 
+body.search-active {
+	position: fixed;
+}
 
 /*Search styling */
+
 
 .search-icon {
    background-size: contain;

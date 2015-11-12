@@ -28,4 +28,4 @@ highlighter: rouge
 
 incremental: true
 
-exclude: ['scss']
+exclude: ['scss','bin','node_modules','guides']
