@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Enable an HTML profiler (MAGE_PROFILER)</title>
+	<title>Install, configure, verify memcached on Ubuntu</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/config-guide/bootstrap/mage-profiler.html">
+	<link rel="canonical" href="//guides/v2.0/config-guide/memcache/memcache_ubuntu.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Enable an HTML profiler (MAGE_PROFILER)</h1>
+		<h1 class="page-heading">Install, configure, verify memcached on Ubuntu</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/config-guide/bootstrap/mage-profiler.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/config-guide/memcache/memcache_ubuntu.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -213,25 +213,183 @@
 		
 		<h4 id="contents">Contents</h4>
 <ul>
-  <li><a href="#dirs-introduction">Introduction to Magento HTML profiling</a></li>
-  <li><a href="#dirs-set">Set MAGE_PROFILER</a></li>
+  <li><a href="#config-memcache-memcached">PHP memcache and memcached extensions</a></li>
+  <li><a href="#config-memcache-install">Install and configure memcached on Ubuntu</a></li>
+  <li><a href="#config-memcache-verify-its-ub">Verify memcached works before installing Magento</a></li>
 </ul>
 
-<h2 id="dirs-introduction">Introduction to Magento HTML profiling</h2>
-<p>You can use an HTML profiler with Magento to perform tasks such as analyzing performance. (The nature of profiling depends on the analytical tools you use.)</p>
+<div>
 
-<p>Magento provides the base functionality in <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Profiler.php" target="_blank">Magento\Framework\Profiler</a>.</p>
+  <h2 id="config-memcache-memcached">PHP memcache and memcached extensions</h2>
+  <p>Because PHP has no native support for memcache, you must install an extension for PHP to use it. There are two PHP extensions available and it’s important to decode which to use:</p>
 
-<h2 id="dirs-set">Set MAGE_PROFILER</h2>
-<p><code>MAGE_PROFILER</code> supports the following values:</p>
+  <ul>
+    <li>
+      <p><code>memcache</code> (no <em>d</em>), an older but very popular extension that is not maintained regularly. The <code>memcache</code> extension currently <em>does not</em> with PHP 7.</p>
 
-<ul>
-  <li><code>firebug</code> which uses <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Profiler/Driver/Standard/Output/Firebug.php" target="_blank">Magento\Framework\Profiler\Driver\Standard\Output\Firebug</a></li>
-  <li><code>csv</code> which uses <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Profiler/Driver/Standard/Output/Csvfile.php" target="_blank">Magento\Framework\Profiler\Driver\Standard\Output\Csvfile</a></li>
-  <li>Any other value, including an empty value, which uses <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Profiler/Driver/Standard/Output/Html.php" target="_blank">Magento\Framework\Profiler\Driver\Standard\Output\Html</a></li>
-</ul>
+      <p><a href="http://php.net/manual/en/book.memcache.php" target="_blank">PHP documentation for memcache</a></p>
 
-<p>You can set the value of <code>MAGE_PROFILER</code> in any of the ways discussed in <a href="/guides/v2.0/config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a>.</p>
+      <p>The exact name is <code>php5-memcache</code> for Ubuntu and <code>php-pecl-memcache</code> for CentOS</p>
+    </li>
+    <li>
+      <p><code>memcached</code> (with a <code>d</code>), a newer and maintained extension that should be compatible with PHP 7.</p>
+
+      <p><a href="http://php.net/memcached" target="_blank">PHP documentation for memcached</a></p>
+
+      <p>The exact name is <code>php5-memcached</code> for Ubuntu and <code>php-pecl-memcached</code> for CentOS</p>
+    </li>
+  </ul>
+
+  <div class="bs-callout bs-callout-info" id="info">
+   <span class="glyphicon-class">
+   <p>For simplicity, we use the PHP <code>memcache</code> extension in this guide although we provide examples for both when configuring Magento to use memcache.</p></span>
+</div>
+
+  <h2 id="config-memcache-install">Install and configure memcached on Ubuntu</h2>
+  <p>This section provides instructions to install memcached on Ubuntu. For additional information, consult the <a href="https://code.google.com/p/memcached/wiki/NewStart" target="_blank">memcached wiki</a>.</p>
+
+  <div class="bs-callout bs-callout-info" id="info">
+   <span class="glyphicon-class">
+   <p>We recommend using memcached version 3.0.5 or later.</p></span>
+</div>
+
+  <p>To install and configure memcached on Ubuntu:</p>
+
+  <ol>
+    <li>
+      <p>As a user with <code>root</code> privileges, enter the following command:</p>
+
+      <pre><code>apt-get -y update
+apt-get -y install php5-memcache memcached
+</code></pre>
+    </li>
+    <li>
+      <p>Change the memcached configuration setting for <code>CACHESIZE</code> and <code>-l</code>:</p>
+
+      <ol>
+        <li>Open <code>/etc/memcached.conf</code> in a text editor.</li>
+        <li>Locate the <code>-m</code> parameter.</li>
+        <li>Change its value to at least <code>1GB</code></li>
+        <li>Locate the <code>-l</code> parameter.</li>
+        <li>Change its value to <code>127.0.0.1</code> or <code>localhost</code></li>
+        <li>Save your changes to <code>memcached.conf</code> and exit the text editor.</li>
+        <li>
+          <p>Restart memcached.</p>
+
+          <pre><code>service memcached restart
+</code></pre>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <p>Restart your web server.</p>
+
+      <p>For Apache, <code>service apache2 restart</code></p>
+    </li>
+    <li>
+      <p>Continue with the next section.</p>
+    </li>
+  </ol>
+
+  <h2 id="config-memcache-verify-its-ub">Verify memcached works before installing Magento</h2>
+  <p>We recommend testing memcached to make sure it works before you install Magento. Doing so takes only a few minutes and can simplify troubleshooting later.</p>
+
+  <h3 id="verify-memcached-is-recognized-by-the-web-server">Verify memcached is recognized by the web server</h3>
+
+  <p>To verify memcached is recognized by the web server:</p>
+
+  <ol>
+    <li>
+      <p>Create a <code>phpinfo.php</code> file in the web server’s docroot:</p>
+
+      <pre><code>&lt;?php
+
+// Show all information, defaults to INFO_ALL
+phpinfo();
+</code></pre>
+    </li>
+    <li>
+      <p>Go to that page in your web browser.</p>
+
+      <p>For example, <code>http://192.0.2.1/phpinfo.php</code></p>
+    </li>
+    <li>
+      <p>Make sure memcached displays as follows:</p>
+
+      <p><img src="/common/images/config_memcache-ubuntu.png" alt="Confirm memcache is recognized by the web server" /></p>
+
+      <p>Verify you’re using memcached version 3.0.5 or later.</p>
+
+      <p>If memcache does not display, restart the web server and refresh the browser page. If it still does not display, verify you installed the <code>php-pecl-memcache</code> extension.</p>
+    </li>
+  </ol>
+
+  <h3 id="verify-memcached-can-cache-data">Verify memcached can cache data</h3>
+  <p>This test uses a PHP script to verify that memcached can store and retrieve cache data.</p>
+
+  <p>For more information about this test, see <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-memcache-on-ubuntu-14-04" target="_blank">this digitalocean tutorial</a>.</p>
+
+  <p>Create <code>cache-test.php</code> in the web server’s docroot with the following contents:</p>
+
+  <div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="nv">$mem</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Memcache</span><span class="p">();</span>
+<span class="nv">$mem</span><span class="o">-&gt;</span><span class="na">addServer</span><span class="p">(</span><span class="s2">&quot;&lt;memcache host name or ip&gt;&quot;</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">memcache</span> <span class="nx">port</span><span class="o">&gt;</span><span class="p">);</span>
+
+<span class="nv">$result</span> <span class="o">=</span> <span class="nv">$mem</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$result</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="nv">$result</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;No matching key found.  Refresh the browser to add it!&quot;</span><span class="p">;</span>
+    <span class="nv">$mem</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s2">&quot;test&quot;</span><span class="p">,</span> <span class="s2">&quot;Successfully retrieved the data!&quot;</span><span class="p">)</span> <span class="k">or</span> <span class="k">die</span><span class="p">(</span><span class="s2">&quot;Couldn&#39;t save anything to memcached...&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+
+  <p>where <code>&lt;memcache host name or ip&gt;</code> is either <code>localhost</code>, <code>127.0.0.1</code>, or the memcache host name or IP address. <code>&lt;memcache port&gt;</code> is its listen port; by default, <code>11211</code>.</p>
+
+  <p>Go to that page in a web browser.</p>
+
+  <p>For example, <code>http://192.0.2.1/cache-test.php</code></p>
+
+  <p>The first time you go to the page, the following displays: <code>No matching key found. Refresh the browser to add it!</code></p>
+
+  <p>Refresh the browser. The message changes to <code>Successfully retrieved the data!</code></p>
+
+  <p>Finally, you can view the memcache keys using Telnet:</p>
+
+  <pre><code>telnet localhost &lt;memcache port&gt;
+</code></pre>
+
+  <p>At the prompt, enter</p>
+
+  <pre><code>stats items
+</code></pre>
+
+  <p>The result is similar to the following:</p>
+
+  <pre><code>STAT items:2:number 1
+STAT items:2:age 106
+STAT items:2:evicted 0
+STAT items:2:evicted_nonzero 0
+STAT items:2:evicted_time 0
+STAT items:2:outofmemory 0
+STAT items:2:tailrepairs 0
+STAT items:2:reclaimed 0
+STAT items:2:expired_unfetched 0
+STAT items:2:evicted_unfetched 0
+</code></pre>
+
+  <p>Flush memcache storage and quit Telnet:</p>
+
+  <pre><code>flush_all
+quit
+</code></pre>
+
+  <p><a href="http://www.darkcoding.net/software/memcached-list-all-keys/" target="_blank">Additional information about the Telnet test</a></p>
+
+  <h4 id="next-step">Next step</h4>
+  <p><a href="/guides/v2.0/config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a></p>
+</div>
 
 
 		</div>
@@ -427,7 +585,7 @@
 
 									
 							
-									<li class="level-2  active "><a href="/guides/v2.0/config-guide/bootstrap/mage-profiler.html">Enable an HTML profiler (MAGE_PROFILER)</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/bootstrap/mage-profiler.html">Enable an HTML profiler (MAGE_PROFILER)</a></li>
 
 									
 						
@@ -743,7 +901,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/memcache/memcache_ubuntu.html">Install, configure, verify memcached on Ubuntu</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/config-guide/memcache/memcache_ubuntu.html">Install, configure, verify memcached on Ubuntu</a></li>
 
 									
 						

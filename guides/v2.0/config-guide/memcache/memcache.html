@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>memcache</title>
+	<title>Use memcached for session storage</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
@@ -200,7 +200,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">memcache</h1>
+		<h1 class="page-heading">Use memcached for session storage</h1>
 			
 			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/config-guide/memcache/memcache.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -211,7 +211,31 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<p>This topic coming soon. Watch this space.</p>
+		<h4 id="contents">Contents</h4>
+<ul>
+  <li><a href="#config-memcache-over">Overview of memcached session storage</a></li>
+  <li><a href="/guides/v2.0/config-guide/memcache/memcache_ubuntu.html">Install, configure, verify memcached on Ubuntu</a></li>
+  <li><a href="/guides/v2.0/config-guide/memcache/memcache_centos.html">Install, configure, verify memcached on CentOS</a></li>
+  <li><a href="/guides/v2.0/config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a></li>
+</ul>
+
+<h2 id="config-memcache-over">Overview of memcached session storage</h2>
+<p>memcached is a general-purpose distributed memory caching system. It is often used to speed up dynamic database-driven websites by caching data and objects in RAM to reduce the number of times an external data source (such as a database or API) must be read. (Source: <a href="https://en.wikipedia.org/wiki/Memcached" target="_blank">Wikipedia</a>)</p>
+
+<p>memcache provides a very large hash table that can be distributed across multiple machines. When the table is full, subsequent inserts cause older data to be purged in least recently used (LRU) order. The size of this hash table is often very large. (Source: <a href="http://memcached.org/" target="_blank">memcached.org</a>)</p>
+
+<p>Magento uses memcached for session storage but not for page caching. For page caching, we recommend <a href="/guides/v2.0/config-guide/redis/config-redis.html">Redis</a> or <a href="/guides/v2.0/config-guide/varnish/config-varnish.html">Varnish</a>.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+   <span class="glyphicon-class">
+   <p>We recommend you use memcached for session storage. The Redis session handler in the <code>phpredis</code> PHP extension does not support session locking, which might cause issues with distributed systems and applications that rely on Ajax.</p></span>
+</div>
+
+<h4 id="next-step">Next step</h4>
+<ul>
+  <li><a href="/guides/v2.0/config-guide/memcache/memcache_ubuntu.html">Install, configure, verify memcached on Ubuntu</a></li>
+  <li><a href="/guides/v2.0/config-guide/memcache/memcache_centos.html">Install, configure, verify memcached on CentOS</a></li>
+</ul>
 
 
 		</div>
@@ -223,6 +247,8 @@
 	<div class="sidebar-wrapper">
 
 
+
+<h4>Configuration guide</h4>
 
 
 
@@ -282,6 +308,691 @@
 			
 			
 				
+				
+					
+					
+					
+					
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/bk-config-guide.html">Introduction</a></li>
+									
+								
+								
+									
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/secy/secy.html">Security settings</a></li>
+									
+								
+								
+									
+							
+								
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/secy/secy-cron.html">Secure cron.php to run in a browser</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/secy/secy-xframe.html">X-Frame-Options header</a></li>
+
+									
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/bootstrap/magento-bootstrap.html">Magento application initialization and bootstrap</a></li>
+									
+								
+								
+									
+							
+								
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html">Set the mode (MAGE_MODE)</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/bootstrap/mage-dirs.html">Customize base directory paths (MAGE_DIRS)</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/bootstrap/mage-profiler.html">Enable an HTML profiler (MAGE_PROFILER)</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/bootstrap/mage-run.html">Multiple websites or stores (MAGE_RUN_TYPE, MAGE_RUN_CODE)</a></li>
+
+									
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/cli/config-cli.html">Command line configuration</a></li>
+									
+								
+								
+									
+							
+								
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html">Get started with command-line configuration</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
+
+									
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/varnish/config-varnish.html">Configure and use Varnish</a></li>
+									
+								
+								
+									
+							
+								
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-install.html">Install Varnish</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-configure.html">Configure Varnish and your web server</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-magento.html">Configure Magento to use Varnish</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-final.html">Final verification</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/use-varnish-cache.html">How Magento cache clearing works with Varnish</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/use-varnish-cache-how.html">How Varnish caching works</a></li>
+
+									
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/config/caching.html">Caching</a></li>
+									
+								
+								
+									
+							
+								
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/caching_frontend-cache-types.html">Associate cache frontends with cache types</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/caching_low-level.html">Low-level cache options</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/database/database.html">Database caching</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/caching-cache-type.html">Create a cache type</a></li>
+
+									
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+
+
+								
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/config-guide/memcache/memcache.html">Use memcached for session storage</a></li>
+									
+								
+								
+									
+							
+								
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/memcache/memcache_ubuntu.html">Install, configure, verify memcached on Ubuntu</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/memcache/memcache_centos.html">Install, configure, verify memcached on CentOS</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a></li>
+
+									
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+
+
+								
+								
+									
+							
+										<li class="levela1"><span class="nav-header">Magento configuration files</span></li>
+								
+									
+							
+								
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/config-php.html">Magento's deployment configuration</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/config-files.html">Module configuration files</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/config-create.html">Create or extend configuration types</a></li>
+
+									
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/mq/rabbitmq-overview.html">Message Queues (Enterprise Edition only)</a></li>
+									
+								
+								
+									
+							
+								
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/mq/config-mq.html">Configure message queue topology</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/mq/manage-mysql.html">MySQL message queues</a></li>
+
+									
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/redis/config-redis.html">Configure Redis</a></li>
+									
+								
+								
+									
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/solr/solr-overview.html">Install and configure Solr (Enterprise Edition only)</a></li>
+									
+								
+								
+									
+							
+								
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/solr/solr-magento.html">Configure Solr and Magento</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/solr/solr-script.html">Prepare Solr for production</a></li>
+
+									
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/multi-master/multi-master.html">Split database performance solution (Enterprise Edition only)</a></li>
+									
+								
+								
+									
+							
+								
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/multi-master/multi-master_masterdb.html">Set up master databases</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/multi-master/multi-master_verify.html">Verify split databases</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/multi-master/multi-master_slavedb.html">Set up optional database replication</a></li>
+
+									
+						
+								
+								
+								
+							
+							
+						
+
+					
+
+
 				
 			
 			

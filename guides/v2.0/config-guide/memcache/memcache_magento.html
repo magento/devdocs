@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Enable an HTML profiler (MAGE_PROFILER)</title>
+	<title>Configure Magento to use memcached</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/config-guide/bootstrap/mage-profiler.html">
+	<link rel="canonical" href="//guides/v2.0/config-guide/memcache/memcache_magento.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Enable an HTML profiler (MAGE_PROFILER)</h1>
+		<h1 class="page-heading">Configure Magento to use memcached</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/config-guide/bootstrap/mage-profiler.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/config-guide/memcache/memcache_magento.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -211,27 +211,93 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h4 id="contents">Contents</h4>
-<ul>
-  <li><a href="#dirs-introduction">Introduction to Magento HTML profiling</a></li>
-  <li><a href="#dirs-set">Set MAGE_PROFILER</a></li>
-</ul>
+		<h2 id="config-memcache-conf">Configure Magento to use memcached</h2>
+<p>To configure Magento to use memcache:</p>
 
-<h2 id="dirs-introduction">Introduction to Magento HTML profiling</h2>
-<p>You can use an HTML profiler with Magento to perform tasks such as analyzing performance. (The nature of profiling depends on the analytical tools you use.)</p>
+<ol>
+  <li>Open <code>&lt;your Magento install dir&gt;/app/etc/env.php</code> in a text editor.</li>
+  <li>
+    <p>Locate the following:</p>
 
-<p>Magento provides the base functionality in <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Profiler.php" target="_blank">Magento\Framework\Profiler</a>.</p>
+    <pre><code>'session' =&gt;
+    array (
+    'save' =&gt; 'files',
+),
+</code></pre>
+  </li>
+  <li>
+    <p>Change it as follows:</p>
 
-<h2 id="dirs-set">Set MAGE_PROFILER</h2>
-<p><code>MAGE_PROFILER</code> supports the following values:</p>
+    <ul>
+      <li>
+        <p>PHP <code>memcache</code> extension</p>
 
-<ul>
-  <li><code>firebug</code> which uses <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Profiler/Driver/Standard/Output/Firebug.php" target="_blank">Magento\Framework\Profiler\Driver\Standard\Output\Firebug</a></li>
-  <li><code>csv</code> which uses <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Profiler/Driver/Standard/Output/Csvfile.php" target="_blank">Magento\Framework\Profiler\Driver\Standard\Output\Csvfile</a></li>
-  <li>Any other value, including an empty value, which uses <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Profiler/Driver/Standard/Output/Html.php" target="_blank">Magento\Framework\Profiler\Driver\Standard\Output\Html</a></li>
-</ul>
+        <pre><code>'session' =&gt;
+   array (
+      'save' =&gt; 'memcache',
+      'save_path' =&gt; 'tcp://&lt;memcache ip or host&gt;:&lt;memcache port&gt;'
+),
+</code></pre>
+      </li>
+      <li>
+        <p>PHP <code>memcached</code> extension</p>
 
-<p>You can set the value of <code>MAGE_PROFILER</code> in any of the ways discussed in <a href="/guides/v2.0/config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a>.</p>
+        <pre><code>'session' =&gt;
+   array (
+      'save' =&gt; 'memcached’,
+      'save_path' =&gt; '&lt;memcache ip or host&gt;:&lt;memcache port&gt;'
+),
+</code></pre>
+      </li>
+    </ul>
+
+    <p>Both memcache and memcached have optional startup parameters that are beyond the scope of this guide. You can find more information about them in the <a href="http://php.net/manual/en/memcache.ini.php#ini.memcache.save-path" target="_blank">memcache</a> or <a href="http://php.net/manual/en/memcached.sessions.php" target="_blank">memcached</a> documentation, source code, and changelogs.</p>
+  </li>
+  <li>Continue with the next section.</li>
+</ol>
+
+<h2 id="config-memcache-verify">Verify memcached is working with Magento</h2>
+<p>To verify memcached works with Magento:</p>
+
+<ol>
+  <li>
+    <p>Delete the contents of the following directories under your Magento installation directory:</p>
+
+    <pre><code>rm -rf var/cache/* var/page_cache/* var/session/*
+</code></pre>
+  </li>
+  <li>
+    <p>Go to any page on the storefront.</p>
+  </li>
+  <li>
+    <p>Log in to the Magento Admin and browse to several pages.</p>
+
+    <p>If no errors display, congratulations! memcached is working! You can optionally look at memcached storage as discussed in the next step.</p>
+
+    <p>If errors display (such as an HTTP 500 (Internal Server Error)), enable developer mode and diagnose the issue. Make sure memcached is running, configured properly, and that <code>env.php</code> has no syntax errors. </p>
+  </li>
+  <li>
+    <p>(Optional.) Use Telnet to look at memcached storage.</p>
+
+    <pre><code>telnet &lt;memcached host or ip&gt; &lt;memcached port&gt;
+stats items
+</code></pre>
+
+    <p>The results display similar to the following:</p>
+
+    <pre><code>STAT items:3:number 1
+STAT items:3:age 7714
+STAT items:3:evicted 0
+STAT items:3:evicted_nonzero 0
+STAT items:3:evicted_time 0
+STAT items:3:outofmemory 0
+STAT items:3:tailrepairs 0
+</code></pre>
+
+    <p><a href="http://www.darkcoding.net/software/memcached-list-all-keys/" target="_blank">Look at the keys in more detail</a></p>
+  </li>
+</ol>
+
 
 
 		</div>
@@ -427,7 +493,7 @@
 
 									
 							
-									<li class="level-2  active "><a href="/guides/v2.0/config-guide/bootstrap/mage-profiler.html">Enable an HTML profiler (MAGE_PROFILER)</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/bootstrap/mage-profiler.html">Enable an HTML profiler (MAGE_PROFILER)</a></li>
 
 									
 						
@@ -759,7 +825,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a></li>
 
 									
 						
