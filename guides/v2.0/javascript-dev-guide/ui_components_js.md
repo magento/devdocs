@@ -14,11 +14,11 @@ This topic is aimed for developers, who need to reuse the [Magento UI Components
 
 The topic covers the following:
 
-- [UI componenents' configuration](#config).
-- [The most important UI component's properties](#main_properties). 
-- [UI components’ properties used for linking](#comp_link).
+- [UI componenents' configuration](#config)
+- [The most important UI component's properties](#main_properties)
+- [UI components’ properties used for linking](#comp_link)
 - [Description of the additional UI components](#comp_additional)
-- [JS UI components debugging](#comp_debug).
+- [JS UI components debugging](#comp_debug)
 
 ## UI components' configuration {#config}
 
@@ -192,7 +192,7 @@ Enables OOP pattern implementation.
 Extends `uiClass`. Adds the following:
 
 - the `defaults` property
-- events handling
+- events handlingt
 - handling properties linking (the `imports`, `exports`, `links` and `listens` properties)
 - ability to add itself to the UI registry
 
@@ -223,6 +223,21 @@ To define the UI components used on a page, you can use browser built-in develop
 3. Search for `data-bind="scope:`. The string after `scope` is the full name of the component.
 5. Open developers tools and in the console tab run `require('uiRegistry').get('<full_component_name>')`. Where `<full_component_name>` is the name you defined on the previous step. The name and the configuration of the UI component instance is displayed once the command is executed.
 
+For illustration, let's find out what UI components are used on the Catalog page in the Admin Panel:
+
+<img src="{{site.baseurl}}common/images/ui_debug1.png" alt="The catalog page"> 
+
+According to the described procedure, open the page source and search for "`data-bind="scope:`"
+
+<img src="{{site.baseurl}}common/images/ui_debug2.png" alt="searching for data-bind=scope:">
+
+So we find out that the main UI compoonent used on this page is product listing, with `product_listing.product_listing` as a full name. To see its configuration, child components and data source, in the in the **Console** tab we run `require('uiRegistry').get('product_listing.product_listing')`:
+
+<img src="{{site.baseurl}}common/images/ui_debug3.png" alt="run the command in Console">
+
+And we get the component's configuration:
+
+<img src="{{site.baseurl}}common/images/ui_debug4.png" alt="view the configuration">
 
 ### Debug using a Google Chrome plug-in
 
