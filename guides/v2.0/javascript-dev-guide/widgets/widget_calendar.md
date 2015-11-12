@@ -1,7 +1,7 @@
 ---
 layout: default
 group: jsdg
-subgroup: Widgets
+subgroup: 3_Widgets
 title: Calendar widget
 menu_title: Calendar widget
 menu_order: 3
