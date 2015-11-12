@@ -5,7 +5,7 @@ subgroup: CLI
 title: Configure and run cron
 menu_title: Configure and run cron
 menu_node: 
-menu_order: 8
+menu_order: 100
 github_link: config-guide/cli/config-cli-subcommands-cron.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-cron.html
 ---
@@ -16,9 +16,9 @@ redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-cron.html
 *	<a href="#config-cli-cron-overview">Overview of cron</a>
 *	<a href="#config-cli-before">First steps</a>
 *	<a href="#config-cli-cron-bkg">Run cron in the background</a>
-*	<a href="#config-cli-cron-browser">Run cron from a web browser</a>
 *	<a href="#config-cli-cron-group">Configure and run cron using the command line</a>
 
+To run cron in a web browser, see <a href="{{ site.gdeurl }}config-guide/secy/secy-cron.html">Secure cron.php to run in a browser</a>
 
 <h2 id="config-cli-cron-overview">Overview of cron</h2>
 Several Magento features require at least one cron job, which schedules activities to occur in the future. A partial list of these activities follows:
@@ -49,7 +49,6 @@ See one of the following sections:
 
 *	<a href="#config-cli-before">First steps</a>
 *	<a href="#config-cli-cron-bkg">Run cron in the background</a>
-*	<a href="#config-cli-cron-browser">Run cron from a web browser</a>
 *	<a href="#config-cli-cron-group">Configure and run cron using the command line</a>
 
 <h2 id="config-cli-before">First steps</h2>
@@ -58,6 +57,11 @@ In addition to the command arguments discussed here, see <a href="{{ site.gdeurl
 
 <h2 id="config-cli-cron-bkg">Run cron in the background</h2>
 This section discusses how to run all Magento cron jobs every minute, which is the recommended interval for both Magento Community Edition (CE) and Enterprise Edition (EE).
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Cron is critical for Magento operation; among other things, it's the only way to reindex on an ongoing basis, it generates automated e-mails, newsletters, the sitemap, and so on.</p></span>
+</div>
 
 Run Magento cron jobs as the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-over">Magento file system owner</a>. 
 
@@ -77,58 +81,6 @@ To create a cron job as the Magento file system owner, the following commands in
 		*/1 * * * * php /var/www/html/magento2/bin/magento cron:run &
 
 Save your changes to the crontab and exit the editor.
-
-<h2 id="config-cli-cron-browser">Run cron from a web browser</h2>
-You can run cron anytime using a web browser (for example, during development).
-
-Before you run cron in the browser, remove the restriction from `.htaccess` as follows:
-
-1.	Log in to your Magento server as a user with permissions to write to the Magento file system.
-2.	Open any of the following in a text editor (depending on your entry point to Magento):
-
-		<your Magento install dir>/pub/.htaccess
-		<your Magento install dir>/.htaccess
-
-3.	Delete or comment out the following:
-
-		## Deny access to cron.php
-    	<Files cron.php>
-        	order allow,deny
-        	deny from all
-    	</Files>
-
-    For example,
-
-    	## Deny access  to cron.php
-    	#<Files cron.php>
-        #	order allow,deny
-        #	deny from all
-    	#</Files>
-
-3.	Save your changes and exit the text editor.
-
-You can then run cron in a web browser as follows:
-
-	<your Magento host name or IP>/<Magento root>/pub/cron.php[?group=<group name>]
-
-where
-
-*	`<your Magento host name or IP>` is the host name or IP address of your Magento installation
-*	`<Magento root>` is the web server docroot-relative directory to which you installed the Magento software
-
-	The exact URL you use to run the Magento application depends on how you configured your web server and virtual host.
-*	`<group name>` is any valid cron group name (optional)
-
-For example,
-
-	http://magento.example.com/magento2/pub/cron.php?group=index
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You must run cron twice: the first time to discover tasks to run and the second time to run the tasks themselves.</p></span>
-</div>
-
-<a href="#config-cli-cron-group-conf">More information about cron groups</a>
 
 <h2 id="config-cli-cron-group">Configure and run cron using the command line</h2>
 This section discusses how to run cron at any time using the command line. You can optionally configure a cron group for a custom module as discussed in the next section.
@@ -259,12 +211,13 @@ where `--group` specifies the cron group to run (omit this option to run cron fo
 
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-less-sass.html">Create LESS from CSS</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-test.html">Run tests</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>

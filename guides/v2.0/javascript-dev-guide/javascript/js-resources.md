@@ -1,7 +1,7 @@
 ---
 layout: default
 group: jsdg
-subgroup: Javascript
+subgroup: 1_Javascript
 title: Configure JavaScript resources
 menu_title: Configure JavaScript resources
 menu_order: 1

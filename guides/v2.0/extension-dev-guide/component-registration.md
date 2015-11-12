@@ -5,8 +5,8 @@ subgroup: 3_Build
 title: Component registration
 menu_title: Component registration
 menu_order: 4
-github_link: extension-dev-guide/composer-integration.md
-redirect_from: /guides/v1.0/extension-dev-guide/composer-integration.html
+github_link: extension-dev-guide/component-registration.md
+redirect_from: /guides/v1.0/extension-dev-guide/component-registration.html
 
 ---
 ##{{page.menu_title}}
@@ -73,13 +73,11 @@ After you create your `registration.php` file and you are creating [your module'
 ##Sample registration.php file
 
 {% highlight php startinline=true %}
-    <?php
+<?php
 
-\Magento\Framework\Component\ComponentRegistrar::register(
-  \Magento\Framework\Component\ComponentRegistrar::MODULE,
-  'Magento_AdminNotification',
-  __DIR__
-);
+use \Magento\Framework\Component\ComponentRegistrar;
+
+ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Magento_AdminNotification', __DIR__);
 
 {%endhighlight %}
 

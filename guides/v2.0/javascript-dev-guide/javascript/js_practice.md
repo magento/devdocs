@@ -1,7 +1,7 @@
 ---
 layout: default
 group: jsdg
-subgroup: Javascript
+subgroup: 1_Javascript
 title: Customizing JavaScript illustration
 menu_title: Customizing JavaScript illustration
 menu_order: 5
