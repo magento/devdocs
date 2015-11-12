@@ -224,8 +224,8 @@
 
 <p>Unlike some other languages or libraries, you can look at the generated code on the file system to see what really happens and still debug the code.</p>
 
-<h3 id="codegen-over-when">When is code compiled?</h3>
-<p>Provided the Magento application is not set for <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>, code is compiled when the Magento application cannot find a class when executing code.</p>
+<h3 id="codegen-over-when">When is code generated?</h3>
+<p>Provided the Magento application is not set for <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>, code is generated when the Magento application cannot find a class when executing code.</p>
 
 <p>In particular,</p>
 
@@ -243,7 +243,7 @@ A proxy is a wrapper for a base class, and the proxy must implement all function
   </li>
 </ul>
 
-<p>You can use the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler.html">code compiler</a> to compile code at any time.</p>
+<p>You can also use the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler.html">code compiler</a> to generate code at any time.  In Magento 2, “compiling” your application means performing code generation for any eligable class encountered by the configuration/code scanner, as well as performing a number of different dependency injection optimzations. </p>
 
 <h3 id="codegen-over-why">Why should you regenerate code?</h3>
 <p>Suppose a Customer or Proxy class for a Customer class is generated and the Customer class has new methods added to it. Because a Customer or Proxy exists on the file system, it is not regenerated. However, the Customer or Proxy implementation is incomplete now because it does not have the new methods. In this case, you must regenerate the Customer or Proxy class.</p>
