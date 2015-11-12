@@ -33,8 +33,8 @@ Before you begin, make sure that:
 1.	Your system meets the requirements discussed in <a href="{{ site.gdeurl }}install-gde/system-requirements.html">Magento system requirements</a>.
 2.	You completed all prerequisite tasks discussed in <a href="{{ site.gdeurl }}install-gde/prereq/prereq-overview.html">Prerequisites</a>.
 3.	You took your first installation steps as discussed in <a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Your install or upgrade path</a>.
-4.	After you log in to the Magento server, switch to the Magento file system owner as discussed in <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-switch">Create the Magento file system owner</a>.
-5.	Review the information discussed in <a href="{{ site.gdeurl }}install-gde/install/cli/install-subcommands.html">Get started with the command-line installation</a>.
+4.	After you log in to the Magento server, <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.
+5.	Review the information discussed in <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands.html">Get started with the command-line installation</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -184,6 +184,7 @@ The following table discusses the meanings of installation option names and valu
 		<td><p>--db-prefix</p></td>
 		<td><p>Use only if you're installing the Magento database tables in a database instance that has Magento tables in it already.</p>
 		<p>In that case, use a prefix to identify the Magento tables for this installation. Some customers have more than one Magento instance running on a server with all tables in the same database.</p>
+		<p>The prefix can be a maximum of five characters in length. It must begin with a letter and can include only letters, numbers, and underscore characters.</p>
 		<p>This option enables those customers to share the database server with more than one Magento installation.</p></td>
 		<td><p>No</p></td>
 	</tr>
@@ -289,7 +290,27 @@ The following table discusses the meanings of installation option names and valu
 		<td><p>Type of definitions used by the Object Manager. Possible values are <a href="https://github.com/phadej/igbinary" target="_blank"><code>igbinary</code></a> or <code>serialized</code>.</p></td>
 		<td><p>No</p></td>
 	</tr> -->
-
+<tr>
+<td><p>--amqp-host</p></td>
+<td><p>Enterprise Edition only. Do not use the --amqp options unless you have already set up an installation of RabbitMQ. See <a href="{{ site.gdeurl }}install-gde/prereq/install-rabbitmq.html">RabbitMQ installation</a> for more information about .</p>
+<p>The host name where RabbitMQ is installed.</p></td>
+<td><p>No</p></td>
+</tr>
+<tr>
+<td><p>--amqp-port</p></td>
+<td><p>Enterprise Edition only. The port to use to connect to RabbitMQ. The default is <code>5672</code>.</p></td>
+<td><p>No</p></td>
+</tr>
+<tr>
+<td><p>--amqp-user</p></td>
+<td><p>Enterprise Edition only. The user name for connecting to RabbitMQ. Do not use the default user <code>guest</code>.</p></td>
+<td><p>No</p></td>
+</tr>
+<tr>
+<td><p>--amqp-password</p></td>
+<td><p>Enterprise Edition only. The password for connecting to RabbitMQ. Do not use the default password <code>guest</code>.</p></td>
+<td><p>No</p></td>
+</tr>
 	</tbody>
 </table>
 

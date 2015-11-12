@@ -9,9 +9,9 @@ github_link: frontend-dev-guide/themes/debug-theme.md
 redirect_from: /guides/v1.0/frontend-dev-guide/themes/debug-theme.html
 ---
 
-<h2 id="debug-theme-intro">Introduction</h2>
+<h2 id="debug-theme-intro">What's in this topic</h2>
 
-When you create a Magento theme, you might need to create override files for default theme and module view files. To do so, you must determine which template, layout, and style files Magento uses.
+When you create a Magento theme, you might need to create override files for default theme and module view files. To do so, you must determine which template, layout, and style files Magento uses. This topic describes how to do this.
 
 <h2 id="debug-theme-templ">Locate templates</h2>
 

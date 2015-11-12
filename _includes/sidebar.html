@@ -1,88 +1,69 @@
 <!-- sidebar -->
 <aside class="sidebar">
 	<div class="sidebar-wrapper">
-		
+
+
 {% if page.group == "ext-best-practices" %}
-Extension Best Practices
-{% endif %} 
+<h4>Extension Best Practices</h4>
 
-{% if page.group == "compman" %}
+{% elsif page.group == "compman" %}
 <h4>Component Manager and System Upgrade Guide</h4>
-{% endif %}
 
-{% if page.group == "coding-standards" %}
+{% elsif page.group == "coding-standards" %}
 <h4>Coding standards</h4>
-{% endif %}
 
-{% if page.group == "rest" %}
+{% elsif page.group == "rest" %}
 <h4>REST API reference</h4>
-{% endif %}
 
-{% if page.group == "get-started" %}
+{% elsif page.group == "get-started" %}
 <h4>Getting started with web APIs</h4>
-{% endif %}
 
-{% if page.group == "pattern" %}
+{% elsif page.group == "pattern" %}
 <h4>Admin pattern Library</h4>
-{% endif %}
 
-{% if page.group == "mtf-guide" %}
+{% elsif page.group == "mtf-guide" %}
 <h4>Testing framework guide</h4>
-{% endif %}
 
-{% if page.group == "migration" %}
+{% elsif page.group == "migration" %}
 <h4>Migration guide</h4>
-{% endif %}
 
-{% if page.group == "release-notes" %}
+{% elsif page.group == "release-notes" %}
 <h4>Release Notes</h4>
-{% endif %}
 
-{% if page.group == "extension-dev-guide" %}
+{% elsif page.group == "extension-dev-guide" %}
 <h4>PHP developer guide</h4>
-{% endif %}
 
-{% if page.group == "arch-guide" %}
+{% elsif page.group == "arch-guide" %}
 <h4>Architecture guide</h4>
-{% endif %}
 
-{% if page.group == "fedg" %}
+{% elsif page.group == "fedg" %}
 <h4>Frontend developer guide</h4>
-{% endif %}
 
-{% if page.group == "UI Library" %}
-<h4>UI Library Components</h4>
-{% endif %}
+{% elsif page.group == "UI Library" %}
+<h4>UI Components</h4>
 
-{% if page.group == "jsdg" %}
+{% elsif page.group == "jsdg" %}
 <h4>JavaScript developer guide</h4>
-{% endif %}
 
-{% if page.group == "install2" %}
+{% elsif page.group == "install2" %}
 <h4>Installation guide</h4>
-{% endif %}
 
-{% if page.group == "install_cli" %}
+{% elsif page.group == "install_cli" %}
 <h4>Installation guide<br>Part 2: Installing</h4>
-{% endif %}
 
-{% if page.group == "install_pre" %}
+{% elsif page.group == "install_pre" %}
 <h4>Installation guide<br>Part 1: Getting started</h4>
-{% endif %}
 
-{% if page.group == "install" %}
+{% elsif page.group == "install" %}
 <h4>Installation guide<br>Part 3: Post-installation</h4>
-{% endif %}
 
-{% if page.group == "install_wiz" %}
+{% elsif page.group == "install_wiz" %}
 <h4>Installation guide<br>Part 2: Installing</h4>
-{% endif %}
 
-{% if page.group == "install_trouble" %}
+{% elsif page.group == "install_trouble" %}
 <h4>Installation guide<br>Part 3: Post-installation</h4>
-{% endif %}
 
-{% if page.group == "config-guide" %}
+{% elsif page.group == "config-guide" %}
 <h4>Configuration guide</h4>
 {% endif %}
 
@@ -110,21 +91,43 @@ Extension Best Practices
 														
 							
 								{% assign n = 0 %}
+
+
 								{% for parent in parents %}
-									<li class=" {% if page.url == parent.url %} active {%endif%}"><a class="nav-header" href="{{site.toc_baseurl}}{{parent.url}}">{% if parent.menu_title %}{{parent.menu_title}}{% else %}{{parent.title}}{% endif %}</a></li>
+									<li class="level1 {% if page.url == parent.url %} active {%endif%}"><a class="nav-header" href="{{site.toc_baseurl}}{{parent.url}}">{% if parent.menu_title %}{{parent.menu_title}}{% else %}{{parent.title}}{% endif %}</a></li>
 									{% assign n = 1 %}
 								{% endfor %}
 								
-								{% if n == 0 %}
+									{% if n == 0 %}
 							
-									<li class=""><span class="nav-header">{{ subcats.name }}</span></li>
+										<li class="levela1"><span class="nav-header">{{ subcats.name }}</span></li>
 								
-								{% endif %}
+									{% endif %}
 							
 								
 								{% for article in articles_sorted %}
+
+									{% if article.level3_menu_node == "level3parent" %}
+
+										<li class="level3Parent {% if page.url == article.url %} active {%endif%}" id="{{ article.level3_subgroup }}"><a href="#">{% if article.menu_title %}{{article.menu_title}}{% else %}{{article.title}}{% endif %}</a>
+
+
+									{% elsif article.level3_menu_node == "level3child" %}							
+								
+
+											<li class="level3Child {{ article.level3_subgroup }} {% if page.url == article.url %} active {%endif%}" data-menunode="{{ article.level3_subgroup }}"><a href="{{site.toc_baseurl}}{{article.url}}">{% if article.menu_title %}{{article.menu_title}}{% else %}{{article.title}}{% endif %}</a>
+
+									{% elsif article.externalURL %}
+
+									<li class="level-2"><a href="{{article.externalURL}}" target="_blank">{% if article.menu_title %}{{article.menu_title}}{% else %}{{article.title}}{% endif %}</a></li>
+
+
+
+									{% else %}
 							
 									<li class="level-2 {% if page.url == article.url %} active {%endif%}"><a href="{{site.toc_baseurl}}{{article.url}}">{% if article.menu_title %}{{article.menu_title}}{% else %}{{article.title}}{% endif %}</a></li>
+
+									{% endif %}
 						
 								{% endfor %}
 								
@@ -135,7 +138,7 @@ Extension Best Practices
 						
 							{% for article in articles_sorted %}
 							
-								<li class="{% if page.url == article.url %} active {%endif%}"><a href="{{site.toc_baseurl}}{{article.url}}">{% if article.menu_title %}{{article.menu_title}}{% else %}{{article.title}}{% endif %}</a></li>
+								<li class="q {% if page.url == article.url %} active {%endif%}"><a href="{{site.toc_baseurl}}{{article.url}}">{% if article.menu_title %}{{article.menu_title}}{% else %}{{article.title}}{% endif %}</a></li>
 				
 							{% endfor %}
 							

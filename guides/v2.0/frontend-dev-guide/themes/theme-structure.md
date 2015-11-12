@@ -9,8 +9,8 @@ github_link: frontend-dev-guide/themes/theme-structure.md
 redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-structure.html
 ---
 
-<h2 id="theme-structure-intro">Overview</h2>
-A <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-general.html#theme-gen-overview" target="_blank">design theme</a> is an important part of the Magento application. This article describes the file structure of a Magento theme.
+<h2 id="theme-structure-intro">What's in this topic</h2>
+A <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-general.html#theme-gen-overview" target="_blank">design theme</a> is an important part of the Magento application. This topic describes the file structure of a Magento theme.
 
 <h2 id="theme-structure-loc">Magento theme location</h2>
 All Magento storefront themes are located under `app/design/frontend/<Vendor>/`.
