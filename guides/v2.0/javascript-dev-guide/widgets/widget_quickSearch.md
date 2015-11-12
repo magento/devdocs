@@ -1,7 +1,7 @@
 ---
 layout: default
 group: jsdg
-subgroup: Widgets
+subgroup: 3_Widgets
 title: QuickSearch widget
 menu_order: 13
 menu_title: QuickSearch widget

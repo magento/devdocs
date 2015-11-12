@@ -1,7 +1,7 @@
 ---
 layout: default
 group: jsdg
-subgroup: Javascript
+subgroup: 1_Javascript
 title: JavaScript initialization
 menu_title: JavaScript initialization
 menu_order: 2
