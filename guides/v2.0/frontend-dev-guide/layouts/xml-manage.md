@@ -40,11 +40,13 @@ Example:
 Change the layout of Advanced Search page from default "1-column" to "2-column with left bar". To do this, extend `catalogsearch_advanced_index.xml` in your theme by adding the following layout:
 
 <b><code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_CatalogSearch/layout/catalogsearch_advanced_index.xml</code></b>
-<pre>
-&lt;page&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;layout=&quot;2columns-left&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
+
+{%highlight xml%}
+<page layout="2columns-left" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
 ...
-&lt;/page&gt;
-</pre>
+</page>
+{%endhighlight xml%}
+
 
 <h2 id="layout_markup_css">Include static resources (JavaScript, CSS, fonts)</h2>
 
@@ -53,24 +55,24 @@ The following file is a sample of a file you must add:
 
 <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Theme/layout/default_head_blocks.xml</code>
 
-<pre>
-&lt;page xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
-    &lt;head&gt;
-        &lt;!-- Add local resources --&gt;
-	&lt;css src=&quot;css/my-styles.css&quot;/&gt;
+{%highlight xml%}
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <!-- Add local resources -->
+    	<css src="css/my-styles.css"/>
     
-        &lt;!-- The following two ways to add local JavaScript files are equal --&gt;
-        &lt;script src=&quot;Magento_Catalog::js/sample1.js&quot;/&gt;
-        &lt;link src=&quot;js/sample.js&quot;/&gt;
+        <!-- The following two ways to add local JavaScript files are equal -->
+        <script src="Magento_Catalog::js/sample1.js"/>
+        <link src="js/sample.js"/>
 		
-	&lt;!-- Add external resources --&gt;
-	&lt;css src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css&quot; src_type=&quot;url&quot; /&gt;
-        &lt;script src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js&quot; src_type=&quot;url&quot; /&gt;
-        &lt;link src=&quot;http://fonts.googleapis.com/css?family=Montserrat&quot; src_type=&quot;url&quot; /&gt; 
+    	<!-- Add external resources -->
+	    <css src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" src_type="url" />
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" src_type="url" />
+        <link src="http://fonts.googleapis.com/css?family=Montserrat" src_type="url" /> 
+    </head>
+</page>
+{%endhighlight xml%}
 
-    &lt;/head&gt;
-&lt;/page&gt;
-</pre>
 
 When adding external resources, specifying the <code>src_type="url"</code> argument value is a must.
 
@@ -89,21 +91,20 @@ The path to assets is specified relatively to one the following locations:
 In the terms of adding assets, you can add CSS files to be included for a specific version of Internet Explorer. 
 A sample follows:
 
-<pre>
-&lt;page&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;css src=&quot;css/ie-9.css&quot; ie_condition=&quot;IE 9&quot; /&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/head&gt;
-&lt;/page&gt;
-
-</pre>
+{%highlight xml%}
+    <head>
+        <css src="css/ie-9.css" ie_condition="IE 9" />
+    </head>
+</page>
+{%endhighlight xml%}
 
 This adds an IE conditional comment in the generated HTML, like in the following example:
-<pre>
-&lt;!--[if IE 9]&gt;
-&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;all&quot; href=&quot;&lt;your_store_web_address&gt;/pub/static/frontend/OrangeCo/orange/en_US/css/ie-9.css&quot; /&gt;
-&lt;![endif]--&gt;
-</pre>
+
+{%highlight html%}
+<!--[if IE 9]>
+<link rel="stylesheet" type="text/css" media="all" href="<your_store_web_address>/pub/static/frontend/OrangeCo/orange/en_US/css/ie-9.css" />
+<![endif]-->
+{%endhighlight html%}
 
 In this example, <code>orange</code> is a custom theme created by the OrangeCo vendor.
 
@@ -113,21 +114,20 @@ To remove the static resources, linked in a page `<head>`, make a change similar
 
 `app/design/frontend/<Vendor>/<theme>/Magento_Theme/layout/default_head_blocks.xml`
 
-<pre>
-&lt;page&gt;
-   &lt;head&gt;
-        &lt;!-- Remove local resources --&gt;
-        &lt;remove src=&quot;css/styles-m.css&quot; /&gt;
-        &lt;remove src=&quot;my-js.js&quot;/&gt;
-        &lt;remove src=&quot;Magento_Catalog::js/compare.js&quot; /&gt;
+{%highlight xml%}
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+   <head>
+        <!-- Remove local resources -->
+        <remove src="css/styles-m.css" />
+        <remove src="my-js.js"/>
+        <remove src="Magento_Catalog::js/compare.js" />
 								
-	&lt;!-- Remove external resources --&gt;
-        &lt;remove src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css&quot;/&gt;
-        &lt;remove src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js&quot;/&gt;
-        &lt;remove src=&quot;http://fonts.googleapis.com/css?family=Montserrat&quot; /&gt; 
-   &lt;/head&gt;
-&lt;/page&gt;
-</pre>
+	<!-- Remove external resources -->
+        <remove src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"/>
+        <remove src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"/>
+        <remove src="http://fonts.googleapis.com/css?family=Montserrat" /> 
+   </head>
+{%endhighlight xml%}
 
 Note, that if a static asset is added with a module path (for example `Magento_Catalog::js/sample.js`) in the initial layout, you need to specify the module path as well when removing the asset.
 
@@ -135,7 +135,9 @@ Note, that if a static asset is added with a module path (for example `Magento_C
 
 Use the following sample to create (declare) a container:
 
-<pre>&lt;container name="some.container" as="someContainer" label="Some Container" htmlTag="div" htmlClass="some-container" /></pre>
+{%highlight xml%}
+<container name="some.container" as="someContainer" label="Some Container" htmlTag="div" htmlClass="some-container" />
+{%endhighlight xml%}
 
 <h2 id="ref_container">Reference a container</h2>
 
@@ -143,21 +145,24 @@ To update a container use the <a href="{{site.gdeurl}}frontend-dev-guide/layouts
 
 Example: add links to the page header panel.
 
-<pre>
-&lt;referenceContainer&nbsp;name=&quot;header.panel&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Framework\View\Element\Html\Links&quot;&nbsp;name=&quot;header.links&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;arguments&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;css_class&quot;&nbsp;xsi:type=&quot;string&quot;&gt;header&nbsp;links&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/arguments&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/block&gt;
-&lt;/referenceContainer&gt;
-</pre>
+{%highlight xml%}
+<block class="Magento\Catalog\Block\Product\View\Description" name="product.info.sku" template="product/view/attribute.phtml" after="product.info.type">
+    <arguments>
+        <argument name="at_call" xsi:type="string">getSku</argument>
+        <argument name="at_code" xsi:type="string">sku</argument>
+        <argument name="css_class" xsi:type="string">sku</argument>
+    </arguments>
+</block>
+{%endhighlight xml%}
 
 <h2 id="xml-manage-block">Create a block</h2>
 
 Blocks are created (declared) using the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_block" target="_blank">`<block>`</a> instruction.
 
 Example: add a block with a product SKU information.
+
+{%highlight xml%}
+{%endhighlight xml%}
 
 <pre>
 &lt;block&nbsp;class=&quot;Magento\Catalog\Block\Product\View\Description&quot;&nbsp;name=&quot;product.info.sku&quot;&nbsp;template=&quot;product/view/attribute.phtml&quot;&nbsp;after=&quot;product.info.type&quot;&gt;
