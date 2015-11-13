@@ -15,7 +15,7 @@ The Message Queue Framework (MQF) is a system within Magento Enterprise Edition 
 
 The following diagram illustrates the Message Queue Framework.
 
-![MQ Architecture](mq.png)
+<img src="{{ site.baseurl }}common/images/mq.png">
 
 * A publisher is a component that sends messages to an exchange. It knows which exchange to publish to and the format of the messages it sends.
 
