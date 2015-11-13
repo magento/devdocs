@@ -1,7 +1,7 @@
 ---
 layout: default
 group: jsdg
-subgroup: Widgets
+subgroup: 3_Widgets
 title: Confirmation widget
 menu_order: 5
 menu_title: Confirmation widget

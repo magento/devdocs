@@ -1,7 +1,7 @@
 ---
 layout: default
 group: jsdg
-subgroup: Widgets
+subgroup: 3_Widgets
 title: Collapsible widget
 menu_order: 4
 menu_title: Collapsible widget

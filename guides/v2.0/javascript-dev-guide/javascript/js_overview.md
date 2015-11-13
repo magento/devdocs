@@ -1,7 +1,7 @@
 ---
 layout: default
 group: jsdg
-subgroup: Javascript
+subgroup: 1_Javascript
 title: JavaScript
 menu_title: JavaScript
 menu_order: 1

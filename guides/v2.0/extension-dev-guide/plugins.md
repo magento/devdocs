@@ -39,6 +39,7 @@ You cannot use plug-ins for:
 * Final methods
 * Non-public methods
 * Final classes
+* Inherited methods
 
 <h2 id="plugin-declare">Declare a plug-in</h2>
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: jsdg
-subgroup: Widgets
+subgroup: 3_Widgets
 title: Navigation widget
 menu_order: 11
 menu_title: Navigation widget

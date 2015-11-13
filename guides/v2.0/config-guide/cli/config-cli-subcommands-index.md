@@ -69,7 +69,12 @@ Sample result:
 Reindexing is discussed in the next section.
 
 <h2 id="config-cli-subcommands-index-reindex">Reindex</h2>
-This command enables you to reindex all or selected indexers.
+This command enables you to reindex all or selected indexers one time only.
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>This command reindexes one time only. To keep indexers up-to-date, you must set up a <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-bkg">cron job</a>.</p></span>
+</div>
 
 Command options:
 
