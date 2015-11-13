@@ -37,7 +37,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/service-contra
 
 ##Using the @api tag
 
-Backward compatibility can be indicated by the use of `@api`. For more information, see <a href="backward-compatibility.html">Backward compatibility</a>.
+Backward compatibility can be indicated by the use of `@api`. For more information, see <a href="{{ site.gdeurl }}extension-dev-guide/backward-compatibility.html">Backward compatibility</a>.
 
 <h3 id="related-topics">Related topics</h3>
 <ul>

@@ -38,7 +38,7 @@ The message queue system must be established before you install Magento. The bas
 3. Configure your message queue topology.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>A basic message queue system can be implemented on EE without using RabbitMQ. See <a href="{{ site.gdeurl }}config-guide/mq/solr-magento.html">Configure message queues</a></p>
+  <p>A basic message queue system can be implemented on EE without using RabbitMQ. See <a href="{{ site.gdeurl }}config-guide/mq/manage-mysql.html">Configure message queues</a></p>
 </div>
 
 
@@ -58,7 +58,7 @@ Detailed installation instructions are beyond the scope of this document. See [I
 <h3>Install Erlang</h3>
 RabbitMQ was written using the Erlang programming language, which must be installed on the same system as RabbitMQ
 
-See [https://www.erlang-solutions.com/downloads/download-erlang-otp](Manual installation) for more information.
+<a href="https://www.erlang-solutions.com/downloads/download-erlang-otp" target="_blank">Manual installation</a> for more information.
 
 Run the following commands to install this feature.
 
