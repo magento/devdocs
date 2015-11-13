@@ -24,16 +24,16 @@ The topic covers the following:
 
 Component's behavior, configuration and structure is defined by the following:
 
- - The available configuration options and methods for components of a certain type, defined in the `defaults` section of the component's .js file.
+ - The available configuration options and methods for components of a certain type, defined in the component's .js file.
 
  - The actual configuration and structure of a particular component, specified in the component's `.xml` configuration, in the scope of the `<argument></argument>` node. The configuration file also extends properties, configures template and component file.
 
 <p class="q">What is meant by "configure template and component file"? it's clear about the template, but not about the file. The phrase is taken from your internal doc</p>
 
-All these properties, options, and methods are available in components' templates.
+All these properties, options, and methods are available in component template's scope.
 
 
-## Basic UI components' properties {#main_properties}
+## Most important UI components' properties {#main_properties}
 The most important client-side properties of a UI component are the following:
 
  - `component`: the path to the component's `.js` file in terms of RequireJS.
@@ -41,7 +41,7 @@ The most important client-side properties of a UI component are the following:
 Example:
 The `.js` file of the bookmark component is [app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js]({{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js) 
 
-So the `component` property  is set in the `.xml` configuration file like following:
+So the `component` property is set in the `.xml` configuration file like following:
 
 {% highlight xml%}
 <argument name="data" xsi:type="array">
@@ -63,7 +63,6 @@ The `.html` template of the bookmarks component is [app/code/Magento/Ui/view/bas
 
  - children - is a general name for the nested components for a property. Children can be specified in the `.xml` configuration of a property (all nodes except `<argument/>` are considered children) and in the Knockout JS templates: children are the keys of the `elems` property.
 
-<p class="q">are these  Knockout JS templates separate files or .html templates?</p>
 
 ## UI Components' properties used for linking {#comp_link}
 
@@ -225,19 +224,30 @@ To define the UI components used on a page, you can use browser built-in develop
 
 For illustration, let's find out what UI components are used on the Catalog page in the Admin Panel:
 
+<div style="border: 1px solid #ABABAB">
 <img src="{{site.baseurl}}common/images/ui_debug1.png" alt="The catalog page"> 
+</div>
+
 
 According to the described procedure, open the page source and search for "`data-bind="scope:`"
 
+<div style="border: 1px solid #ABABAB">
 <img src="{{site.baseurl}}common/images/ui_debug2.png" alt="searching for data-bind=scope:">
+</div>
+
 
 So we find out that the main UI compoonent used on this page is product listing, with `product_listing.product_listing` as a full name. To see its configuration, child components and data source, in the in the **Console** tab we run `require('uiRegistry').get('product_listing.product_listing')`:
 
+<div style="border: 1px solid #ABABAB">
 <img src="{{site.baseurl}}common/images/ui_debug3.png" alt="run the command in Console">
+</div>
+
 
 And we get the component's configuration:
 
+<div style="border: 1px solid #ABABAB">
 <img src="{{site.baseurl}}common/images/ui_debug4.png" alt="view the configuration">
+</div>
 
 ### Debug using a Google Chrome plug-in
 
