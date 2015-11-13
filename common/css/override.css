@@ -305,6 +305,52 @@ cursor: hand; cursor: pointer;
 
 }
 
-p.editor {font-family: fantasy;
-font-size: 1.5em;
-color: #9C2727;}
+
+.sidebar ul li.level3Child {
+    display: none;
+}
+
+.sidebar ul li.level3Child a {
+    padding-left: 42px;
+}
+
+.sidebar ul li.level3Parent {
+    background-image:url('../../common/css/caret_right.png');
+    text-decoration:none;
+    background-repeat:no-repeat;
+    background-position: 18px 10px;
+    margin: 0 0 0 0%;
+    padding: 0 0 0 7%;
+
+
+
+}
+
+.sidebar ul li.caretDown {
+    background-image:url('../../common/css/caret_down.png');
+    text-decoration:none;
+    background-repeat:no-repeat;
+    background-position: 17px 12px;
+    margin: 0 0 0 0%;
+    padding: 0 0 0 7%;
+}
+
+.sidebar ul li.caretRight {
+    text-decoration:none;
+    background-image:url('../../common/css/caret_right.png');
+    background-repeat:no-repeat;
+    
+    background-position: 18px 10px;
+    margin: 0 0 0 0%;
+    padding: 0 0 0 7%;
+}
+
+.sidebar ul li.level3Parent a:hover {
+    background: none;
+}
+
+.sidebar ul li.level3Parent a {
+    text-decoration: none;
+}
+
+

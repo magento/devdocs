@@ -36,8 +36,6 @@ Delivering a sharply different shopping experience than the default Magento inst
 
 <h3>Related topics</h3>
 
-<a href="{{ site.gdeurl }}architecture/AStorefront_view.html">Magento storefront view</a>
-
 <a href="{{ site.gdeurl }}frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a>
 
 
