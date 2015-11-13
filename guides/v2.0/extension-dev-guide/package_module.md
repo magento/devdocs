@@ -16,9 +16,9 @@ The Magento system uses Composer packages to distribute, install, and upgrade mo
 To package an module, you must:
 
 * Create a Magento Composer file (`composer.json`).
-* Package and publish the module. 
+* Package and publish your module. 
 
-
+Publish your module on the [Magento Marketplace](http://magento.com), Magento&#8217;s eCommerce application marketplace.
 
 <h2 id="composer">Create a Magento Composer file</h2>
 
@@ -34,7 +34,7 @@ The `composer.json` uses [Composer's generic schema](https://getcomposer.org/doc
 </tr>
 <tr>
 <td><code>name</code></td>
-<td>A fully-qualified module name, in the format <code>&lt;vendor_name&gt;/module-&lt;module-name&gt;</code>. All letters must be in lowercase. Use dashes in the <code>&lt;module-name&gt;</code> to separate words.</td>
+<td>A fully-qualified module name, in the format <code>&lt;vendor-name&gt;/module-&lt;module-name&gt;</code>. All letters must be in lowercase. Use dashes in the <code>&lt;module-name&gt;</code> to separate words.</td>
 </tr>
 <tr>
 <td><code>type</code> </td>
@@ -44,7 +44,7 @@ The `composer.json` uses [Composer's generic schema](https://getcomposer.org/doc
 
 
 <td><code>autoload </code></td>
-<td>Specify necessary information to be loaded, such as registration.php. For more information, see <a href="https://getcomposer.org/doc/01-basic-usage.md#autoloading">Autoloading</a> from Composer.</td>
+<td>Specify necessary information to be loaded, such as [registration.php](component-registration.html). For more information, see <a href="https://getcomposer.org/doc/01-basic-usage.md#autoloading">Autoloading</a> from Composer.</td>
 
 <!-- <td><code>extra-&gt;map</code>  </td>
 <td>The mapping information for the marshaling of the package. The first line specifies which files to marshal. Specify <code>"*"</code> to marshal all files. The second line specifies where to place them, relative to the <code>&lt;Vendor></code> directory. </td> -->
@@ -58,19 +58,19 @@ The `composer.json` uses [Composer's generic schema](https://getcomposer.org/doc
 
 A description of the types of packages that you can submit to Marketplace:
 
-* __magento2-module__&#8212;A package that usually contains source files plus the top level composer.json, which indicates dependencies and so on. This can be sold in the store directly, or it can be a dependent package hierarchy of some parent package.
+* __magento2-module__&#8212;A package that usually contains source files plus the top level composer.json, which indicates dependencies. This can be sold in the store directly, or it can be a dependent package hierarchy of some parent package.
 
 * __metapackage__&#8212;A placeholder used to group a collection of packages together. 
 
 * __magento2-theme__&#8212;For theme packages. It can be sold independently in the store directly, or it could a dependent package hierarchy of some parent package.
 
-* __magento2-language__&#8212;For language packages. These usually contain .csv files to aid in translation of certain contents and so on.  It can be sold directly in Marketplace, or could be part of a dependent package hierarchy of some parent package.
+* __magento2-language__&#8212;For language packages. These usually contain .csv files to aid in translation of certain contents.  It can be sold directly in Marketplace, or could be part of a dependent package hierarchy of some parent package.
 
 
 
 ###Using Metapackages
 
-Metapackages allow you to group extensions with multiple packages into a cohesive unit. This works exactly as described in standard [composer.json documentation](https://getcomposer.org/doc/04-schema.md#type). If you have an extension that uses more than one package you must use a metapackage as the **root package**. Otherwise you should not use metapackage. A metapackage that you submit to Magento Marketplace should be a .zip file containing only the metapackage composer.json file.
+Metapackages allow you to group an extension that consists of multiple packages into a cohesive unit. This works exactly as described in standard [composer.json documentation](https://getcomposer.org/doc/04-schema.md#type). If you have an extension that uses more than one package you must use a metapackage as the *root package*. Otherwise you should not use metapackage. A metapackage that you submit to Magento Marketplace should be a .zip file containing only the metapackage composer.json file.
 
 
 ####Metapackage example 
@@ -151,10 +151,6 @@ After you have created the module's `composer.json` file in the root directory o
 </div>
 
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Third party repositories are not supported.</p></span>
-</div>
 
 <h3 id="hosting">Hosting on GitHub and Packagist</h3>
 Prerequisite: git must be set up on your machine.
@@ -166,12 +162,12 @@ Prerequisite: git must be set up on your machine.
     1. Register an account at [packagist.org](https://packagist.org/).
     2. Click the Submit Package button and paste your GitHub repository link. Packagist automatically gathers the information from the module's `composer.json` file and link it to the GitHub repository, allowing you to reference the package as `vendor/module` without any additional repository information, as is required solely using GitHub.
 
-<h3 id="private_repos">Hosting on a private packaging repository</h3>
+<h3 id="private_repos">Hosting on a private repository</h3>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>If you use the Web Setup Wizard, only the Magento Marketplace repository can be used for installation. 
-A private repository can be used for development or private code but a Magento installation is accomplished only through a CLI installation. The Setup Wizard cannot install anything located in a private repository.</p></span>
+  <p>If you use the Setup Wizard, you must use the Magento Marketplace repository. 
+A private repository can be used for development or private code but installation must be done with a command line interface (you can install a module that specifies a private repository only with a command line installation).</p></span>
 </div>
 
 1. Set up your own Composer packaging repository using a system such as [Satis](https://getcomposer.org/doc/articles/handling-private-packages-with-satis.md) or [Toran](https://toranproxy.com/).
@@ -191,7 +187,7 @@ A private repository can be used for development or private code but a Magento i
 }
 {% endhighlight %}
 
-All packages on the private packaging repository can now be referenced within the `require` field.
+All packages on the private repository can now be referenced within the `require` field.
 
 <!-- ##Submitting your module to Marketplace -->
 
