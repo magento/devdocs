@@ -146,13 +146,13 @@ To update a container use the <a href="{{site.gdeurl}}frontend-dev-guide/layouts
 Example: add links to the page header panel.
 
 {%highlight xml%}
-<block class="Magento\Catalog\Block\Product\View\Description" name="product.info.sku" template="product/view/attribute.phtml" after="product.info.type">
-    <arguments>
-        <argument name="at_call" xsi:type="string">getSku</argument>
-        <argument name="at_code" xsi:type="string">sku</argument>
-        <argument name="css_class" xsi:type="string">sku</argument>
-    </arguments>
-</block>
+<referenceContainer name="header.panel">
+        <block class="Magento\Framework\View\Element\Html\Links" name="header.links">
+            <arguments>
+                <argument name="css_class" xsi:type="string">header links</argument>
+            </arguments>
+        </block>
+</referenceContainer>
 {%endhighlight xml%}
 
 <h2 id="xml-manage-block">Create a block</h2>
@@ -162,18 +162,15 @@ Blocks are created (declared) using the <a href="{{site.gdeurl}}frontend-dev-gui
 Example: add a block with a product SKU information.
 
 {%highlight xml%}
+<block class="Magento\Catalog\Block\Product\View\Description" name="product.info.sku" template="product/view/attribute.phtml" after="product.info.type">
+    <arguments>
+        <argument name="at_call" xsi:type="string">getSku</argument>
+        <argument name="at_code" xsi:type="string">sku</argument>
+        <argument name="css_class" xsi:type="string">sku</argument>
+    </arguments>
+</block>
 {%endhighlight xml%}
 
-<pre>
-&lt;block&nbsp;class=&quot;Magento\Catalog\Block\Product\View\Description&quot;&nbsp;name=&quot;product.info.sku&quot;&nbsp;template=&quot;product/view/attribute.phtml&quot;&nbsp;after=&quot;product.info.type&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;arguments&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;at_call&quot;&nbsp;xsi:type=&quot;string&quot;&gt;getSku&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;at_code&quot;&nbsp;xsi:type=&quot;string&quot;&gt;sku&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;css_class&quot;&nbsp;xsi:type=&quot;string&quot;&gt;sku&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/arguments&gt;
-&lt;/block&gt;
-
-</pre>
 
 <h2 id="xml-manage-ref-block">Reference a block</h2>
 
@@ -181,13 +178,13 @@ To update a block use the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml
 
 Example: pass the image to the `logo` block.
 
-<pre>
-&lt;referenceBlock&nbsp;name=&quot;logo&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;arguments&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;logo_file&quot;&nbsp;xsi:type=&quot;string&quot;&gt;images/logo.png&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/arguments&gt;
-&lt;/referenceBlock&gt;
-</pre>
+{%highlight xml%}
+<referenceBlock name="logo">
+        <arguments>
+            <argument name="logo_file" xsi:type="string">images/logo.png</argument>
+        </arguments>
+</referenceBlock>
+{%endhighlight xml%}
 
 <h2 id="set_template">Set the template used by a block</h2>
 
@@ -195,11 +192,9 @@ To setup template for a block, use the `template` attribute.
 
 Example: change template of the page title block.
 
-<pre>
-
-&lt;referenceBlock&nbsp;name=&quot;page.main.title&quot;&nbsp;template=&quot;html/title_new.phtml&quot;/&gt;
-
-</pre>
+{%highlight xml%}
+<referenceBlock name="page.main.title" template="html/title_new.phtml"/>
+{%endhighlight xml%}
 
 <h2 id="layout_markup_modify-block">Modify block arguments</h2>
 
@@ -208,30 +203,31 @@ To modify block arguments, use the `<referenceBlock>` instruction.
 Example: change the value of the existing block argument and add a new argument.
 
 Initial block declaration:
-<pre>
+
+{%highlight xml%}
 ...
-&lt;block&nbsp;class=&quot;Namespace_Module_Block_Type&quot;&nbsp;name=&quot;block.example&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;arguments&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;label&quot;&nbsp;xsi:type=&quot;string&quot;&gt;Block&nbsp;Label&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/arguments&gt;
-&lt;/block&gt;
+<block class="Namespace_Module_Block_Type" name="block.example">
+    <arguments>
+        <argument name="label" xsi:type="string">Block Label</argument>
+    </arguments>
+</block>
 ...
-</pre>
+{%endhighlight xml%}
 
 Extending layout:
 
-<pre>
+{%highlight xml%}
 ...
-&lt;referenceBlock&nbsp;name=&quot;block.example&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;arguments&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Modified&nbsp;block&nbsp;argument&nbsp;-&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;label&quot;&nbsp;xsi:type=&quot;string&quot;&gt;New&nbsp;Block&nbsp;Label&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-&nbsp;Newly&nbsp;added&nbsp;block&nbsp;argument&nbsp;-&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;custom_label&quot;&nbsp;xsi:type=&quot;string&quot;&gt;Custom&nbsp;Block&nbsp;Label&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/arguments&gt;
-&lt;/referenceBlock&gt;&nbsp;
+<referenceBlock name="block.example">
+    <arguments>
+        <!-- Modified block argument -->
+        <argument name="label" xsi:type="string">New Block Label</argument>
+        <!- Newly added block argument -->
+        <argument name="custom_label" xsi:type="string">Custom Block Label</argument>
+    </arguments>
+</referenceBlock> 
 ...
-</pre>
+{%endhighlight xml%}
 
 <h2 id="layout_markup_block-properties">Use block object methods to set block properties</h2>
 
@@ -244,13 +240,14 @@ Example 1: Set a CSS class and add an attribute for the product page using `<arg
 
 Extending layout:
 
+{%highlight xml%}
 	<referenceBlock name="page.main.title">
 		<arguments>
 		    <argument name="css_class" xsi:type="string">product</argument>
 		    <argument name="add_base_attribute" xsi:type="string">itemprop="name"</argument>
 		</arguments>
 	</referenceBlock>
-
+{%endhighlight xml%}
 
 Example 2: Set a page title using `<action>`. 
 
@@ -262,6 +259,7 @@ Example 2: Set a page title using `<action>`.
 
 Extending layout:
 
+{%highlight xml%}
 	...
 	<referenceBlock name="page.main.title">
 	    <action method="setPageTitle">
@@ -269,7 +267,7 @@ Extending layout:
 	    </action>
 	</referenceBlock>
 	...
-
+{%endhighlight xml%}
 
 <h2 id="layout_markup_rearrange">Rearrange elements</h2>
 
@@ -288,14 +286,16 @@ In the Magento Blank theme these elements are located as follows:
 
 Let's place the stock availability and SKU blocks after product price block on a product page, and move the review block out of the product-info-price container.
 To do this, add the extending `catalog_product_view.xml` in the `app/design/frontend/OrangeCo/orange/Magento_Catalog/layout/` directory:
-<pre>
-&lt;page&nbsp;layout=&quot;1column&quot;&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;move&nbsp;element=&quot;product.info.stock.sku&quot;&nbsp;destination=&quot;product.info.price&quot;&nbsp;after=&quot;product.price.final&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;move&nbsp;element=&quot;product.info.review&quot;&nbsp;destination=&quot;product.info.main&quot;&nbsp;before=&quot;product.info.price&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;
-&lt;/page&gt;
-</pre>
+
+{%highlight xml%}
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <move element="product.info.stock.sku" destination="product.info.price" after="product.price.final"/>
+        <move element="product.info.review" destination="product.info.main" before="product.info.price"/>
+    </body>
+</page>
+
+{%endhighlight xml%}
 
 This would make the product page look like following:
 
@@ -314,31 +314,36 @@ Elements are removed using the `remove` attribute for the `<referenceBlock>` and
 
 This block is declared in `app/code/Magento/Catalog/view/frontend/layout/default.xml`:
 
-<pre>
-&lt;page&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;
+{%highlight xml%}
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
 ...
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;referenceContainer&nbsp;name=&quot;sidebar.additional&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Catalog\Block\Product\Compare\Sidebar&quot;&nbsp;name=&quot;catalog.compare.sidebar&quot;&nbsp;template=&quot;product/compare/sidebar.phtml&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/referenceContainer&gt;
+        <referenceContainer name="sidebar.additional">
+            <block class="Magento\Catalog\Block\Product\Compare\Sidebar" name="catalog.compare.sidebar" template="product/compare/sidebar.phtml"/>
+        </referenceContainer>
 ...
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;
-&lt;/page&gt;
-</pre>
+    </body>
+</page>
+{%endhighlight xml%}
+
 
 To remove the block, add the extending `default.xml` in your theme:
 `app/design/frontend/<Vendor>/<theme>/Magento_Catalog/layout/default.xml`
 
 In this file, reference the element having added the `remove` attribute:
-<pre>
-&lt;page xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
-    &lt;body&gt;
+
+{%highlight xml%}
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
 ...
-        &lt;referenceBlock name=&quot;catalog.compare.sidebar&quot; remove=&quot;true&quot; /&gt;
+        <referenceBlock name="catalog.compare.sidebar" remove="true" />
 ...
-    &lt;/body&gt;
-&lt;/page&gt;
-</pre>
+    </body>
+</page>
+
+{%endhighlight xml%}
+
 
 <h2 id="layout_markup_replace_elements">Replace elements</h2>
 
