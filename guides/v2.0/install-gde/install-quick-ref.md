@@ -6,7 +6,7 @@ title: Installation quick reference (tutorial)
 menu_title: Installation quick reference (tutorial)
 menu_node: parent
 menu_order: 1
-github_link: install/install-quick-ref.md
+github_link: install-gde/install-quick-ref.md
 ---
 
 We know it's challenging to install the Magento software. We'd like to help you by simplifying the process as much as possible.

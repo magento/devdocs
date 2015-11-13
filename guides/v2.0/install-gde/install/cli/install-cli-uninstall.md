@@ -58,7 +58,7 @@ To reinstall the Magento software as a system integrator:
 
 	<div class="bs-callout bs-callout-info" id="info">
 		<span class="glyphicon-class">
-  			<ul><li>If <code>git pull origin develop</code> fails, see <a href="{{ site.gdeurl }}install-gde/trouble/trouble/git/tshoot_git-pull-origin.html">troubleshooting</a>. </li>
+  			<ul><li>If <code>git pull origin develop</code> fails, see <a href="{{ site.gdeurl }}install-gde/trouble/git/tshoot_git-pull-origin..html">troubleshooting</a>. </li>
   				<li>To use your existing Magento software version , omit the <code>git pull origin develop</code> command.</li></ul></span>
 	</div>
 
