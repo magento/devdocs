@@ -63,15 +63,20 @@ The `.html` template of the bookmarks component is [app/code/Magento/Ui/view/bas
 
  - children: is a general name for the nested components for a property. Children can be specified in the `.xml` configuration of a property (all nodes except `<argument/>` and `<dataSource/>` are considered children) and in the Knockout JS templates: children are the keys of the `elems` property.
 
- - `name`: the name of the component defined in the 'name' attribute `.xml` configuration file. But in the run-time in a browser this value is transformed to a complex string. This string represents hierarchy of components in the run-time.
-For example, (`app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_listing.xml:57`)[{{site.mage2000url}}app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_listing.xml#L57] 
- <component name="columns_controls">
-but in run-time in browser this name is transformed to complex string: cms_block_listing.cms_block_listing.listing_top.columns_controls. 
-Where 
-cms_block_listing.cms_block_listing - name of root component constructed with name of cms_block_listing.xml 
-listing_top - name attribute of parent <container name="listing_top"> component. 
-columns_controls - name attribute of component itself.
+ - `name`: the name of the component specified in the `.xml` configuration file of the root UI component. In the run-time in a browser this value is transformed to a complex string. This string represents hierarchy of components in the run-time.
+For example, (`app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_listing.xml:57`)[{{site.mage2000url}}app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_listing.xml#L57]:
 
+{%highlight xml%} 
+<component name="columns_controls">
+{%endhighlight xml%} 
+
+In the run-time `columns_controls` is transformed to the following string: `cms_block_listing.cms_block_listing.listing_top.columns_controls`. 
+
+This string is constructed from the following values:
+
+ - `cms_block_listing.cms_block_listing`: - name of root component constructed with name of cms_block_listing.xml 
+ - `listing_top`: the value of the `name` attribute of the parent `<container name="listing_top">` component. 
+ - `columns_controls` - the value of the `name` attribute of the component itself.
 
 ## UI Components' properties used for linking {#comp_link}
 
@@ -192,6 +197,29 @@ Example of using `listens` in a component's configuration `.xml` file:
 
 ## Frequently used additional components {#comp_additional}
 This section is a brief description of the most frequently used additional UI components.
+All the component described in this section are aliases in terms of RequireJS. So they can be directly requested in the component's `.js` file or used in the component's configuration `.xml` file (except `uiRegistry`, which by its nature is not expected to be used in a configuration file). 
+
+Example for the `uiClass` property request:
+
+{%highlight js%}
+define( ['uiClass'], function (abstractClass) {
+    return abstractClass.extend({ 
+      ... // needed methods here
+   };
+});
+{%endhighlight js%}
+
+Example of using the `uiClass` property in a configuration file:
+{%highlight js%}
+  <container name="some_custom_component">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="component" xsi:type="string">uiClass</item>
+            </item>
+        </argument>
+    </container>
+{%endhighlight js%}
+
 
 ### `uiClass`
 Enables OOP pattern implementation.
@@ -210,9 +238,6 @@ Extends `uiElement`. Adds the following:
 
 - managing child elements (the `elems` property)
 - by default uses the <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/collection.html">app/code/Magento/Ui/view/base/web/templates/collection.html</a> template
-
-<p>is it an important info, about the template? why do we mention it?</p>
-
 
 ### `uiRegistry`
 In-memory storage. Plain storage of entities by keys. Implements the `get()`, `set()`, and `has()` methods.
@@ -243,7 +268,7 @@ According to the described procedure, open the page source and search for "`data
 </div>
 
 
-So we find out that the main UI compoonent used on this page is product listing, with `product_listing.product_listing` as a full name. To see its configuration, child components and data source, in the in the **Console** tab we run `require('uiRegistry').get('product_listing.product_listing')`:
+So we find out that the main UI component used on this page is product listing, with `product_listing.product_listing` as a full name. To see its configuration, child components and data source, in the in the **Console** tab we run `require('uiRegistry').get('product_listing.product_listing')`:
 
 <div style="border: 1px solid #ABABAB">
 <img src="{{site.baseurl}}common/images/ui_debug3.png" alt="run the command in Console">
