@@ -240,26 +240,24 @@
 
 <p>OrangeCo <a href="/guides/v2.0/frontend-dev-guide/themes/theme-apply.html" target="_blank">applies the Luma theme</a>. Using the approach described in <a href="/guides/v2.0/frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a> they find out that the blocks responsible for displaying the header links are defined in <code>app/code/Magento/Customer/view/frontend/layout/default.xml</code>:</p>
 
-<pre>
-...
-&lt;page&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;referenceBlock&nbsp;name=&quot;top.links&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Customer\Block\Account\Link&quot;&nbsp;name=&quot;my-account-link&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;arguments&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;label&quot;&nbsp;xsi:type=&quot;string&quot;&nbsp;translate=&quot;true&quot;&gt;My&nbsp;Account&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/arguments&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/block&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Customer\Block\Account\RegisterLink&quot;&nbsp;name=&quot;register-link&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;arguments&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;label&quot;&nbsp;xsi:type=&quot;string&quot;&nbsp;translate=&quot;true&quot;&gt;Register&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/arguments&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/block&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Customer\Block\Account\AuthorizationLink&quot;&nbsp;name=&quot;authorization-link&quot;&nbsp;template=&quot;account/link/authorization.phtml&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/referenceBlock&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;
-&lt;/page&gt;
-</pre>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml">...
+<span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;top.links&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">&quot;Magento\Customer\Block\Account\Link&quot;</span> <span class="na">name=</span><span class="s">&quot;my-account-link&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;arguments&gt;</span>
+                    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>My Account<span class="nt">&lt;/argument&gt;</span>
+                <span class="nt">&lt;/arguments&gt;</span>
+            <span class="nt">&lt;/block&gt;</span>
+            <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">&quot;Magento\Customer\Block\Account\RegisterLink&quot;</span> <span class="na">name=</span><span class="s">&quot;register-link&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;arguments&gt;</span>
+                    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Register<span class="nt">&lt;/argument&gt;</span>
+                <span class="nt">&lt;/arguments&gt;</span>
+            <span class="nt">&lt;/block&gt;</span>
+            <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">&quot;Magento\Customer\Block\Account\AuthorizationLink&quot;</span> <span class="na">name=</span><span class="s">&quot;authorization-link&quot;</span> <span class="na">template=</span><span class="s">&quot;account/link/authorization.phtml&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/referenceBlock&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/page&gt;</span></code></pre></div>
 
 <p><u>Step 2: Define the templates</u></p>
 
@@ -268,21 +266,20 @@ defines the template which is used for rearranging the links:</p>
 
 <p><strong><code>app/code/Magento/Customer/view/frontend/templates/account/customer.phtml</code></strong></p>
 
-<pre>
-&lt;?php&nbsp;if($this-&gt;customerLoggedIn()):&nbsp;?&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&nbsp;class=&quot;customer&nbsp;welcome&nbsp;customer-welcome&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&nbsp;class=&quot;customer&nbsp;name&quot;&nbsp;data-mage-init='{&quot;dropdown&quot;:{}}'&nbsp;data-toggle=&quot;dropdown&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;&lt;?php&nbsp;echo&nbsp;$this-&gt;getCustomerName();&nbsp;?&gt;&lt;/span&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button&nbsp;type=&quot;button&quot;&nbsp;class=&quot;action&nbsp;switch&quot;&gt;&lt;span&gt;&lt;?php&nbsp;echo&nbsp;__('Change')?&gt;&lt;/span&gt;&lt;/button&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/span&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;?php&nbsp;if($this-&gt;getChildHtml()):?&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;class=&quot;customer&nbsp;menu&nbsp;customer-menu&quot;&nbsp;data-target=&quot;dropdown&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;?php&nbsp;echo&nbsp;$this-&gt;getChildHtml();?&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;?php&nbsp;endif;&nbsp;?&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;
-&lt;?php&nbsp;endif;&nbsp;?&gt;
-</pre>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="k">if</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">customerLoggedIn</span><span class="p">())</span><span class="o">:</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">    &lt;li class=&quot;customer welcome customer-welcome&quot;&gt;</span>
+<span class="x">        &lt;span class=&quot;customer name&quot; data-mage-init=&#39;{&quot;dropdown&quot;:{}}&#39; data-toggle=&quot;dropdown&quot;&gt;</span>
+<span class="x">            &lt;span&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCustomerName</span><span class="p">();</span> <span class="cp">?&gt;</span><span class="x">&lt;/span&gt;</span>
+<span class="x">            &lt;button type=&quot;button&quot; class=&quot;action switch&quot;&gt;&lt;span&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Change&#39;</span><span class="p">)</span><span class="cp">?&gt;</span><span class="x">&lt;/span&gt;&lt;/button&gt;</span>
+<span class="x">        &lt;/span&gt;</span>
+<span class="x">        </span><span class="cp">&lt;?php</span> <span class="k">if</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getChildHtml</span><span class="p">())</span><span class="o">:?&gt;</span>
+        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&quot;customer menu customer-menu&quot;</span> <span class="nx">data</span><span class="o">-</span><span class="nx">target</span><span class="o">=</span><span class="s2">&quot;dropdown&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getChildHtml</span><span class="p">();</span><span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">        &lt;/div&gt;</span>
+<span class="x">        </span><span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">    &lt;/li&gt;</span>
+<span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+
 <p><br />
 <u>Step 3: Extend the base layout to add a block</u></p>
 
@@ -291,19 +288,18 @@ defines the template which is used for rearranging the links:</p>
 <p>So the following <a href="/guides/v2.0/frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> layout is added in the Orange theme:</p>
 
 <p><strong>app/design/frontend/OrangeCo/orange/Magento_Theme/layout/default.xml</strong></p>
-<pre>
-&lt;page&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;referenceContainer&nbsp;name=&quot;header.panel&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Framework\View\Element\Html\Links&quot;&nbsp;name=&quot;header.links&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;arguments&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;css_class&quot;&nbsp;xsi:type=&quot;string&quot;&gt;header&nbsp;links&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/arguments&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/block&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/referenceContainer&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;
-&lt;/page&gt;
-</pre>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">&quot;header.panel&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">&quot;Magento\Framework\View\Element\Html\Links&quot;</span> <span class="na">name=</span><span class="s">&quot;header.links&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;arguments&gt;</span>
+                    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;css_class&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>header links<span class="nt">&lt;/argument&gt;</span>
+                <span class="nt">&lt;/arguments&gt;</span>
+            <span class="nt">&lt;/block&gt;</span>
+        <span class="nt">&lt;/referenceContainer&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/page&gt;</span></code></pre></div>
 
 <p><br /></p>
 
@@ -313,19 +309,17 @@ defines the template which is used for rearranging the links:</p>
 
 <p><strong><code>app/design/frontend/OrangeCo/orange/Magento_Customer/layout/default.xml</code></strong></p>
 
-<pre>
-&lt;page&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;referenceBlock&nbsp;name=&quot;header.links&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Customer\Block\Account\Customer&quot;&nbsp;name=&quot;customer&quot;&nbsp;template=&quot;account/customer.phtml&quot;&nbsp;before=&quot;-&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Customer\Block\Account\AuthorizationLink&quot;&nbsp;name=&quot;authorization-link-login&quot;&nbsp;template=&quot;account/link/authorization.phtml&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/referenceBlock&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;move&nbsp;element=&quot;register-link&quot;&nbsp;destination=&quot;header.links&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;move&nbsp;element=&quot;top.links&quot;&nbsp;destination=&quot;customer&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;move&nbsp;element=&quot;authorization-link&quot;&nbsp;destination=&quot;top.links&quot;&nbsp;after=&quot;-&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;
-&lt;/page&gt;
-</pre>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;body&gt;</span>
+            <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;header.links&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">&quot;Magento\Customer\Block\Account\Customer&quot;</span> <span class="na">name=</span><span class="s">&quot;customer&quot;</span> <span class="na">template=</span><span class="s">&quot;account/customer.phtml&quot;</span> <span class="na">before=</span><span class="s">&quot;-&quot;</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">&quot;Magento\Customer\Block\Account\AuthorizationLink&quot;</span> <span class="na">name=</span><span class="s">&quot;authorization-link-login&quot;</span> <span class="na">template=</span><span class="s">&quot;account/link/authorization.phtml&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/referenceBlock&gt;</span>
+            <span class="nt">&lt;move</span> <span class="na">element=</span><span class="s">&quot;register-link&quot;</span> <span class="na">destination=</span><span class="s">&quot;header.links&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;move</span> <span class="na">element=</span><span class="s">&quot;top.links&quot;</span> <span class="na">destination=</span><span class="s">&quot;customer&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;move</span> <span class="na">element=</span><span class="s">&quot;authorization-link&quot;</span> <span class="na">destination=</span><span class="s">&quot;top.links&quot;</span> <span class="na">after=</span><span class="s">&quot;-&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/body&gt;</span>
+    <span class="nt">&lt;/page&gt;</span></code></pre></div>
 
 <p>Now the customer links look like following:</p>
 

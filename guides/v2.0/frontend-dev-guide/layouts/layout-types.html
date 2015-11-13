@@ -244,19 +244,17 @@ All page layouts used for page rendering should be declared in the page layout d
 
 <p><strong><code>magento2/app/code/Magento/Theme/view/frontend/page_layout/2columns-left.xml</code></strong></p>
 
-<pre>
-&lt;layout&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_layout.xsd&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;update&nbsp;handle=&quot;1column&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;referenceContainer&nbsp;name=&quot;columns&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;container&nbsp;name=&quot;div.sidebar.main&quot;&nbsp;htmlTag=&quot;div&quot;&nbsp;htmlClass=&quot;sidebar&nbsp;sidebar-main&quot;&nbsp;after=&quot;main&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;container&nbsp;name=&quot;sidebar.main&quot;&nbsp;as=&quot;sidebar_main&quot;&nbsp;label=&quot;Sidebar&nbsp;Main&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/container&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;container&nbsp;name=&quot;div.sidebar.additional&quot;&nbsp;htmlTag=&quot;div&quot;&nbsp;htmlClass=&quot;sidebar&nbsp;sidebar-additional&quot;&nbsp;after=&quot;div.sidebar.main&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;container&nbsp;name=&quot;sidebar.additional&quot;&nbsp;as=&quot;sidebar_additional&quot;&nbsp;label=&quot;Sidebar&nbsp;Additional&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/container&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/referenceContainer&gt;
-&lt;/layout&gt;
-</pre>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;layout</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_layout.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;update</span> <span class="na">handle=</span><span class="s">&quot;1column&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">&quot;columns&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;div.sidebar.main&quot;</span> <span class="na">htmlTag=</span><span class="s">&quot;div&quot;</span> <span class="na">htmlClass=</span><span class="s">&quot;sidebar sidebar-main&quot;</span> <span class="na">after=</span><span class="s">&quot;main&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;sidebar.main&quot;</span> <span class="na">as=</span><span class="s">&quot;sidebar_main&quot;</span> <span class="na">label=</span><span class="s">&quot;Sidebar Main&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/container&gt;</span>
+        <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;div.sidebar.additional&quot;</span> <span class="na">htmlTag=</span><span class="s">&quot;div&quot;</span> <span class="na">htmlClass=</span><span class="s">&quot;sidebar sidebar-additional&quot;</span> <span class="na">after=</span><span class="s">&quot;div.sidebar.main&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;sidebar.additional&quot;</span> <span class="na">as=</span><span class="s">&quot;sidebar_additional&quot;</span> <span class="na">label=</span><span class="s">&quot;Sidebar Additional&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/container&gt;</span>
+    <span class="nt">&lt;/referenceContainer&gt;</span>
+<span class="nt">&lt;/layout&gt;</span></code></pre></div>
 
 <h3 id="layout-types-page-conv">Page layout files conventional location</h3>
 
@@ -292,22 +290,20 @@ All page layouts used for page rendering should be declared in the page layout d
 
 <p><b><code>app/code/Magento/Theme/view/frontend/layouts.xml</code></b></p>
 
-<pre>
-&lt;page_layouts&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../lib/internal/Magento/Framework/View/PageLayout/etc/layouts.xsd&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;layout&nbsp;id=&quot;1column&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&nbsp;translate=&quot;true&quot;&gt;1&nbsp;column&lt;/label&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/layout&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;layout&nbsp;id=&quot;2columns-left&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&nbsp;translate=&quot;true&quot;&gt;2&nbsp;columns&nbsp;with&nbsp;left&nbsp;bar&lt;/label&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/layout&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;layout&nbsp;id=&quot;2columns-right&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&nbsp;translate=&quot;true&quot;&gt;2&nbsp;columns&nbsp;with&nbsp;right&nbsp;bar&lt;/label&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/layout&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;layout&nbsp;id=&quot;3columns&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&nbsp;translate=&quot;true&quot;&gt;3&nbsp;columns&lt;/label&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/layout&gt;
-&lt;/page_layouts&gt;
-</pre>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page_layouts</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/PageLayout/etc/layouts.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;layout</span> <span class="na">id=</span><span class="s">&quot;1column&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>1 column<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;/layout&gt;</span>
+    <span class="nt">&lt;layout</span> <span class="na">id=</span><span class="s">&quot;2columns-left&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>2 columns with left bar<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;/layout&gt;</span>
+    <span class="nt">&lt;layout</span> <span class="na">id=</span><span class="s">&quot;2columns-right&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>2 columns with right bar<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;/layout&gt;</span>
+    <span class="nt">&lt;layout</span> <span class="na">id=</span><span class="s">&quot;3columns&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>3 columns<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;/layout&gt;</span>
+<span class="nt">&lt;/page_layouts&gt;</span></code></pre></div>
 
 <h2 id="layout-types-conf">Page configuration</h2>
 
@@ -668,16 +664,14 @@ none
 </table>
 
 <p>Sample generic layout:</p>
-<pre>
 
-&lt;layout&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../Core/etc/layout_generic.xsd&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;update&nbsp;handle=&quot;formkey&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;update&nbsp;handle=&quot;adminhtml_googleshopping_types_block&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;container&nbsp;name=&quot;root&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Backend\Block\Widget\Grid\Container&quot;&nbsp;name=&quot;googleshopping.types.container&quot;&nbsp;template=&quot;Magento_Backend::widget/grid/container/empty.phtml&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/container&gt;
-&lt;/layout&gt;
-</pre>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;layout</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/layout_generic.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;update</span> <span class="na">handle=</span><span class="s">&quot;formkey&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;update</span> <span class="na">handle=</span><span class="s">&quot;adminhtml_googleshopping_types_block&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;root&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">&quot;Magento\Backend\Block\Widget\Grid\Container&quot;</span> <span class="na">name=</span><span class="s">&quot;googleshopping.types.container&quot;</span> <span class="na">template=</span><span class="s">&quot;Magento_Backend::widget/grid/container/empty.phtml&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/container&gt;</span>
+<span class="nt">&lt;/layout&gt;</span></code></pre></div>
 
 
 
