@@ -61,7 +61,16 @@ The `.html` template of the bookmarks component is [app/code/Magento/Ui/view/bas
 </argument>
 {% endhighlight xml%}
 
- - children - is a general name for the nested components for a property. Children can be specified in the `.xml` configuration of a property (all nodes except `<argument/>` are considered children) and in the Knockout JS templates: children are the keys of the `elems` property.
+ - children: is a general name for the nested components for a property. Children can be specified in the `.xml` configuration of a property (all nodes except `<argument/>` and `<dataSource/>` are considered children) and in the Knockout JS templates: children are the keys of the `elems` property.
+
+ - `name`: the name of the component defined in the 'name' attribute `.xml` configuration file. But in the run-time in a browser this value is transformed to a complex string. This string represents hierarchy of components in the run-time.
+For example, (`app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_listing.xml:57`)[{{site.mage2000url}}app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_listing.xml#L57] 
+ <component name="columns_controls">
+but in run-time in browser this name is transformed to complex string: cms_block_listing.cms_block_listing.listing_top.columns_controls. 
+Where 
+cms_block_listing.cms_block_listing - name of root component constructed with name of cms_block_listing.xml 
+listing_top - name attribute of parent <container name="listing_top"> component. 
+columns_controls - name attribute of component itself.
 
 
 ## UI Components' properties used for linking {#comp_link}
@@ -213,8 +222,6 @@ In-memory storage. Plain storage of entities by keys. Implements the `get()`, `s
 This section describes how to define what UI components are used on a particular page and what data they use.
 
 To define the UI components used on a page, you can use browser built-in developer tools, or install addiotionally a plugin, for example Knockout JS context debugger for Google Chrome. 
-
-**Note**: the similar plugins might exist for other browsers.
 
 ### Debug using browser built-in tools
 1. Open the required page in a browser.
