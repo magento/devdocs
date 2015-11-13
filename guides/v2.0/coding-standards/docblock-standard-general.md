@@ -33,8 +33,7 @@ If description or short description happens to be the first one after DocBlock o
 
 **DocBlock Header in a PHP-file**
 
-<pre>
-&lt;?php
+{% highlight php startinline=true %}
 /**
  * Short description...
  *
@@ -43,14 +42,14 @@ If description or short description happens to be the first one after DocBlock o
  *
  * License notice...
  */
- </pre>
+{% endhighlight %}
 
 
 **DocBlock Header in an XML-file**
 
 
-<pre>
-&lt;!--
+{% highlight xml %}
+
 /**
  * Short description...
  *
@@ -60,7 +59,7 @@ If description or short description happens to be the first one after DocBlock o
  * License notice...
  */
 -->
-</pre>
+{% endhighlight %}
 
 
 <h2 id="code-elements">Code structural elements</h2>
@@ -73,8 +72,8 @@ So in general case, classes that are declared in dedicated files, must have one 
 
 **DocBlock for a Class**
 
-<pre>
-&lt;?php
+{% highlight php startinline=true %}
+
 /**
  * Autoloader with class map capability
  *
@@ -82,7 +81,7 @@ So in general case, classes that are declared in dedicated files, must have one 
  */
 class Autoload
 {
-</pre>
+{% endhighlight %}
 
 
 But if along with declaring class or function there must be another file with source code included, the inclusion construct must not be before file header and it must not separate element DocBlock from the element. So there are two solutions possible:
@@ -93,8 +92,8 @@ But if along with declaring class or function there must be another file with so
 **DocBlock with Included Script File**
 
 
-<pre>
-&lt;?php
+{% highlight php startinline=true %}
+
 /**
  * Magento integration Magento test framework (MTF) bootstrap
  *
@@ -110,13 +109,13 @@ namespace Magento\Test;
  */
 class Bootstrap
 {
-</pre>
+{% endhighlight %}
 
 
 **DocBlock with Included Class File**
 
 
-<pre>
+{% highlight php startinline=true %}
 namespace Magento\Framework\Profiler\Adapter;
 
 /**
@@ -137,12 +136,12 @@ class Csv extends \Magento\Framework\Profiler\AdapterAbstract
 }
 
 require_once __DIR__ . '/../../functions.php';
-</pre>
+{% endhighlight %}
 
 
 <h3 id="classes-interfaces">Classes and interfaces</h3>
 
-Classes and interfaces must have short description.
+Classes and interfaces must have a short description.
 
 <h3 id="short-name-form">Short name form</h3>
 
@@ -151,7 +150,7 @@ It is encouraged to use the short form of the name to encourage readability and 
 **Example of a Method DocBlock**
 
 
-<pre>
+{% highlight php startinline=true %}
 use Magento\Logger;
 use Magento\Math\Random;
 use Magento\Stdlib\DateTime as StdlibDateTime;
@@ -172,7 +171,7 @@ protected function doSomething(Random $mathRandom, StdlibDateTime $dateTime, $nu
 {
 
 }
-</pre>
+{% endhighlight %}
 
 
 <h3 id="class-attributes">Class attributes</h3>
@@ -182,7 +181,7 @@ Class attributes must have type declaration using `@var` tag.
 **Example of Class Attribute**
 
 
-<pre>
+{% highlight php startinline=true %}
 // ...
 namespace Magento;
 
@@ -192,7 +191,7 @@ class Profiler
      * @var Profiler
      */
     protected static $_instance = null;
-</pre>
+{% endhighlight %}
 
 
 <h3 id="functions-methods">Functions and methods</h3>
@@ -208,7 +207,8 @@ It is encouraged to supply `@para`m and `@throws` tags with additional descripti
 
 **Example of a Method DocBlock**
 
-<pre>
+{% highlight php startinline=true %}
+
 /**
  * Merge the config XML-files
  *
@@ -235,7 +235,7 @@ protected function _merge($configFiles)
     }
     $this->_dom = $domConfig->getDom();
 }
-</pre>
+{% endhighlight %}
 
 
 <h4 id="throws">Divergence in @throws tag</h4>
@@ -245,7 +245,7 @@ A general case when `@throws` tag must be used is if *throw* language construct 
 **Example of Throwing Exception Explicitly**
 
 
-<pre>
+{% highlight php startinline=true %}
 /**
  * Set an arbitrary value to specified element
  *
@@ -268,7 +268,7 @@ public function setAttribute($elementId, $attribute, $value)
     }
     return $this;
 }
-</pre>
+{% endhighlight %}
 
 
 In this general case, if an exception is thrown in a sub-routine, then `@throws` must not be used in the parent method.
@@ -278,7 +278,7 @@ However, if the only purpose of the referred sub-routine is to throw a specific 
 **Throwing Exception Implicitly**
 
 
-<pre>
+{% highlight php startinline=true %}
 /**
  * Recursively delete directory from storage
  *
@@ -309,7 +309,7 @@ public function deleteDirectory($path)
         $io->rmdir($this->getThumbnailRoot() . DS . ltrim(substr($pathCmp, strlen($rootCmp)), '\\/'), true);
     }
 }
-</pre>
+{% endhighlight %}
 
 
 <h4 id="return">@return tag</h4>
@@ -325,7 +325,7 @@ Constants must have short description.
 For example, a global constant:
 
 
-<pre>
+{% highlight php startinline=true %}
 /**
  * Directory separator shorthand
  */
@@ -338,7 +338,7 @@ class Profiler
      * Separator literal to assemble timer identifier from timer names
      */
     const NESTING_SEPARATOR = '->';
-</pre>
+{% endhighlight %}
 
 
 <h3 id="DocBlock-templates">DocBlock templates</h3>
@@ -360,7 +360,7 @@ DocBlock template consists of two DocBlock comments:
 For example, declaration of multiple class constants or attributes:
 
 
-<pre>
+{% highlight php startinline=true %}
 class Mage_Core_Model_Layout extends Varien_Simplexml_Config
 {
     /**#@+
@@ -378,7 +378,7 @@ class Mage_Core_Model_Layout extends Varien_Simplexml_Config
     protected $_scheduledMoves = array();
     protected $_scheduledRemoves = array();
     /**#@-*/
-    </pre>
+{% endhighlight %}
 
 
 <h2 id="documentation-space">Structure of documentation space</h2>
@@ -408,10 +408,10 @@ For purpose of automatic type hinting in an IDE, an inline notation of `@var` ta
 **Inline Type Hinting**
 
 
-<pre>
+{% highlight php startinline=true %}
 /** @var libXMLError $error */
 foreach ($errors as $error) {
-</pre>
+{% endhighlight %}
 
 
 Some IDEs understand a different notation, where type is specified after variable name. This notation is also valid:
@@ -419,11 +419,10 @@ Some IDEs understand a different notation, where type is specified after variabl
 **Inline Type Hinting Variation**
 
 
-<pre>
+{% highlight php startinline=true %}
 /** @var $error libXMLError */
 foreach ($errors as $error) {
-</pre>
-
+{% endhighlight %}
 
 <h3 id="see">@see tag</h3>
 
@@ -432,13 +431,13 @@ Besides the normal way of using `@see` tag as [recommended by phpDocumentor](htt
 Specifically, this is possible when a PHP-file composed from multiple file includes, as result variables may contain objects of different types depending on context:
 
 
-<pre>
+{% highlight php startinline=true %}
 /**
  * @var $this ClassOne
  * @see ClassTwo
  * @see FooInterface
  */
-</pre>
+{% endhighlight %}
 
 
 <h3 id="other-tags">Other tags</h3>
@@ -452,7 +451,7 @@ Any other valid DocBlock tags may be specified, if author deems necessary, but o
 If there are two or more tags together in one DocBlock, their values may be padded, so that they could be visually aligned.
 
 
-<pre>
+{% highlight php startinline=true %}
 /**
  * ...
  *
@@ -460,7 +459,7 @@ If there are two or more tags together in one DocBlock, their values may be padd
  * @return bool
  * @link   http://example.com
  */
-</pre>
+{% endhighlight %}
 
 
 <h3 id="format-consistency">Formatting consistency</h3>
@@ -472,7 +471,7 @@ For example, padding for visual alignment can be done in two ways consistently:
 **Correct – align everything:**
 
 
-<pre>
+{% highlight php startinline=true %}
 /**
  * ...
  *
@@ -482,13 +481,13 @@ For example, padding for visual alignment can be done in two ways consistently:
  * @return int
  * @see    _insertChild() for position explanation
  */
- </pre>
+{% endhighlight %}
 
 
 **Also correct – don't align anything:**
 
 
-<pre>
+{% highlight php startinline=true %}
 /**
  * ...
  *
@@ -499,12 +498,12 @@ For example, padding for visual alignment can be done in two ways consistently:
  * @see _insertChild() for position explanation
  */
 public function reorderChild($parentId, $childId, $position)
-</pre>
+{% endhighlight %}
 
 
 **Incorrect – align only partially:**
 
-<pre>
+{% highlight php startinline=true %}
 /**
  * ...
  *
@@ -514,6 +513,6 @@ public function reorderChild($parentId, $childId, $position)
  * @return int
  * @see _insertChild() for position explanation
  */
-</pre>
+{% endhighlight %}
 
 
