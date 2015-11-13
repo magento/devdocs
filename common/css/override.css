@@ -353,4 +353,6 @@ cursor: hand; cursor: pointer;
     text-decoration: none;
 }
 
-
+.main-container .editor {color: #00A9EF;
+font-family: fantasy;
+font-size: 1.5em}

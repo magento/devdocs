@@ -20,6 +20,8 @@ To package an module, you must:
 
 Publish your module on the [Magento Marketplace](http://magento.com), Magento&#8217;s eCommerce application marketplace.
 
+<p class="editor">What is the URL of the Magento Marketplace?</p>
+
 <h2 id="composer">Create a Magento Composer file</h2>
 
 The Magento `composer.json` file defines the name, requirements, version, and other basic information about the module. This file must be placed in the root directory of the module.
@@ -104,44 +106,44 @@ The following example is a `composer.json` metapackage file for a module:
 
 The following example is a `composer.json` file for a module:
 
+
+
 {% highlight JSON %}
 {
-    "name": "Acme/module-one",
-    "description": "N/A",
-    "require": {
-        "php": "5.4.*|5.5.*"
-    },
-    "autoload": {
-        "files": [ "registration.php" ],
-        "psr-4": {
-            "Magento\\module-one": ""
-                },
-    },
-    "type": "magento2-module",
-    "version": "0.1.1",
+  "name": "magento/sample-module-newpage",
+  "description": "A Magento 2 module that creates a new page",
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "require": {
+    "php": "~5.5.0|~5.6.0|~7.0.0",
+    "magento/framework": "~1.0.0"
+  },
+  "autoload": {
+    "files": [ "registration.php" ],
+    "psr-4": {
+      "Magento\\SampleNewPage\\": ""
+    }
+  }
 }
+
 {% endhighlight %}
 
+<h2 id="packaging">Package and publish your extension</h2>
 
-<h2 id="packaging">Package and publish the module</h2>
+Create a package of your extension by performing a zip operation on the directory with your extension (excluding unnecessary directories). For example:
+ `zip -r vendor-name_package-name-1.0.0.zip package-path/ -x 'package-path/.git/*'`
 
-<!-- 
-
-Plan A (AppC):
-
-1. No github support (yet). 
-2. Package it up with metapackage composer.json into a zip file.
-3. Follow submission process (which is...?), including uploading the zip file. 
+<p class="editor">1. What are the file name requirements?</p>
+<p class="editor">2. If we are using Github (i.e., "Plan B"), what is the URL? Where will extension developers upload their extension?</p>
  
-Plan-B:
-
-1. Based on github.
-2. And then?... -->
-
 
  
 
-After you have created the module's `composer.json` file in the root directory of the module, Composer can recognize your package as compatible with its deployment strategy. Such packages can be published to a code repository (GitHub, SVN, etc.), packagist.org, or on your own private package repository.
+<!-- After you have created the module's `composer.json` file in the root directory of the module, Composer can recognize your package as compatible with its deployment strategy. Such packages can be published to a code repository (GitHub, SVN, etc.), packagist.org, or on your own private package repository. -->
 
 
 
