@@ -37,17 +37,17 @@ if ( $('LI.level3Child').is("LI.active")) {
 	$('.' + menustate).show(); //show submenu
 }
 
-// **optional third tier open/close **
 
-var dog = "";
+
+var thirdTier = "";
 $('.level3Parent').click(function(){
-dog = $(this).attr('id');
-if($('.' + dog).is(":visible")) {
+thirdTier = $(this).attr('id');
+if($('.' + thirdTier).is(":visible")) {
 			$(this).removeClass('caretDown').addClass('caretRight')
-			$('.' + dog).slideUp(200);
+			$('.' + thirdTier).slideUp(200);
 		} else {
 			$(this).removeClass('caretRight').addClass('caretDown')
-			$('.' + dog).slideDown(200);
+			$('.' + thirdTier).slideDown(200);
 		}
 return false;
 });

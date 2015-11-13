@@ -124,7 +124,7 @@ magento/language-de_de</pre>
 
 <h3>Naming conventions</h3>
 
-The namespace of Composer packages is global within a package repository (such as [packagist.org](packagist.org)). The Composer specification requires that a package name use the format: 
+The namespace of Composer packages is global within a package repository (such as [packagist.org](http://packagist.org)). The Composer specification requires that a package name use the format: 
 
 `<vendor_name>/<package_name>` 
 
