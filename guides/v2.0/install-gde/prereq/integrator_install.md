@@ -36,11 +36,17 @@ To get started:
 
 1.	Log in to your Magento server as, or switch to, a user who has privileges to write to the web server docroot.
 2.	Change to the web server docroot directory, or to a directory you've configured as a virtual host docroot.
-3.	Enter the following command:
+3.	Enter one of the following commands:
 
-		composer create-project magento/project-community-edition --stability="beta" <installation directory name>
+	Magento CE:
 
-	This command creates the project defined in <a href="http://packages.magento.com/#!/community" target="_blank">packages.magento.com</a> and downloads dependencies for it. The project is in a directory named `<installation directory name>` if you provided the parameter or `product-community-edition` if you did not.
+		composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition  <installation directory name>
+
+	Magento EE:
+
+		composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition  <installation directory name>
+
+	This command creates the project and downloads dependencies for it. The project is in a directory named `<installation directory name>` if you provided the parameter or `product-community-edition` if you did not.
 
 	If you configured a virtual host, `<installation directory name>` must match the docroot directory defined for it.
 
