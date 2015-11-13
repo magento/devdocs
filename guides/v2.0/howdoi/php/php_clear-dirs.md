@@ -73,7 +73,7 @@ The following table provides guidelines on what you should clear and when.
 		</tr>
 	<tr>
 		<td><ul><li>Change a class if there is a plug-in related to it.</li>
-		<li>A change that results in generated factories or proxies (for example, a non-existent <a href="{{ site.mage2000url }}https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/Controller/Adminhtml/Category/Add.php#L22" target="_blank">factory</a> declared in a class or a proxy declared in <a href="{{ site.mage2000url }}https://github.com/magento/magento2/blob/develop/app/etc/di.xml#L25" target="_blank"><code>di.xml</code></a>)</li></ul> </td>
+		<li>A change that results in generated factories or proxies (for example, a non-existent <a href="{{ site.mage2000url }}app/code/Magento/Catalog/Controller/Adminhtml/Category/Add.php#L22" target="_blank">factory</a> declared in a class or a proxy declared in <a href="{{ site.mage2000url }}app/etc/di.xml#L25" target="_blank"><code>di.xml</code></a>)</li></ul> </td>
 		<td>var/di, var/generation</td>
 	</tr>
 	<tr>
@@ -119,12 +119,12 @@ You can also use the following command-line tools clear some directories for you
 		<td>var/di, var/generation</td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">magento setup:di:compile</a></td>
+		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler.html">magento setup:di:compile</a></td>
 		<td>Generates code.</td>
 		<td>var/generation (after which compiles code again)</td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}http://devdocs.magento.com/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">magento deploy:mode:set {mode}</a></td>
+		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html">magento deploy:mode:set {mode}</a></td>
 		<td>Changes from developer mode to production mode and vice versa.</td>
 		<td>var/di, var/generation, var/view_preprocessed</td>
 	</tr>
