@@ -231,40 +231,33 @@
 
 <h2 id="add-the-module8217s-composerjson-file">Add the module’s <code>composer.json</code> file</h2>
 
-<pre><code>{
-    "name": "your-name/module-Acme",
-    "autoload": {
-        "psr-4": { "AcmeVendor\\BarComponent\\": "" },
-        "files": [ "registration.php" ],
-    },
-    "description": "Test module for Magento 2",
-    "require": {
-        "php": "~5.5.0|~5.6.0",
-        "magento/module-store": "1.0.0-beta",
-        "magento/module-catalog": "1.0.0-beta",
-        "magento/module-catalog-inventory": "1.0.0-beta",
-        "magento/module-ui": "self.version",
-        "magento/magento-composer-installer": "*"
-    },
-    "suggest": {
-      "magento/module-webapi": "1.0.0-beta"
-    },
-    "type": "magento2-module",
-     "version": "1.0.0-beta",
-    "license": [
-        "OSL-3.0",
-        "AFL-3.0"
-    ],
-    "extra": {
-        "map": [
-            [
-                "*",
-                "YourName/FooBar"
-            ]
-        ]
-    }
-}
-</code></pre>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;your-name/module-Acme&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Test module for Magento 2&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;php&quot;</span><span class="p">:</span> <span class="s2">&quot;~5.5.0|~5.6.0&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;magento/module-store&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0-beta&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;magento/module-catalog&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0-beta&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;magento/module-catalog-inventory&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0-beta&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;magento/module-ui&quot;</span><span class="p">:</span> <span class="s2">&quot;self.version&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;magento/magento-composer-installer&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;suggest&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;magento/module-webapi&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0-beta&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;magento2-module&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0-beta&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;license&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;OSL-3.0&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;AFL-3.0&quot;</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;autoload&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;files&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;registration.php&quot;</span> <span class="p">],</span>
+        <span class="nt">&quot;psr-4&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;Magento\\CatalogImportExport\\&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="p">}</span></code></pre></div>
 
 <p>where:</p>
 
@@ -278,7 +271,7 @@
   <li><code>type</code> — determines what type of magento component your module is. Choose from <em>magento2-library</em>, <em>magento2-theme</em>, <em>magento2-language</em>, or <em>magento2-module</em>.</li>
   <li><code>version</code> — lists the version of the module.</li>
   <li><code>license</code> — lists applicable licenses that apply to your module.</li>
-  <li><code>extra.map</code> — gives the path for Magento’s Composer installer so it can marshall your component’s files to the appropriate locations under the main instance of Magento.</li>
+  <li><code>autoload</code> — instructs composer to load the specified files.</li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -288,7 +281,7 @@
 
 <h2 id="next">Next</h2>
 
-<p><a href="module-load-order.html">Module Load Order</a></p>
+<p><a href="XSD-XML-validation.html">URN schema validation</a></p>
 
 
 
@@ -314,14 +307,6 @@
 		
 		
 		
-				
-				
-			
-			
-				
-				
-			
-			
 				
 				
 			
@@ -447,6 +432,14 @@
 									
 							
 									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/component-registration.html">Component registration</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/XSD-XML-validation.html">URN schema validation</a></li>
 
 									
 						
@@ -677,6 +670,14 @@
 					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			
