@@ -13,12 +13,12 @@ redirect_from: /guides/v1.0/extension-dev-guide/package_module.html
 
 The Magento system uses Composer packages to distribute, install, and upgrade modules in an application instance.
 
-To package an module, you must:
+To package a module, you must:
 
 * Create a Magento Composer file (`composer.json`).
 * Package and publish your module. 
 
-Publish your module on the [Magento Marketplace](http://magento.com), Magento&#8217;s eCommerce application marketplace.
+Publish your module on the [Magento Marketplace](http://magentocommerce.com), Magento&#8217;s eCommerce application marketplace.
 
 <p class="editor">What is the URL of the Magento Marketplace?</p>
 
