@@ -25,24 +25,15 @@ Error text is typically:
     Parse error: syntax error, unexpected 'data' (T_STRING)
 
 #### Solution: Set <code>asp_tags = off</code> in <code>php.ini</code>
-Multiple templates have syntax for support abstract level on templates (use different templates engines like Twig) wrapped in `<% %>` tags, like this <a href="{{ site.mage2000url }}app/code/Magento/Catalog/view/frontend/templates/product/view/base-image.phtml" target="_blank">template</a> for displaying a product image:
+Multiple templates have syntax for support abstract level on templates (use different templates engines like Twig) wrapped in `<% %>` tags, like this <a href="{{ site.mage2000url }}app/code/Magento/Catalog/view/adminhtml/templates/product/edit/base_image.phtml" target="_blank">template</a> for displaying a product image:
 
 {% highlight PHP %} 
 <?php
-<a class="product photo<% if (typeof data.hasImg !== 'undefined') { %> placeholder<% } %>" href="<%- data.large %>">
-    <span class="img photo container">
-        <img
-          data-role="zoom-image"
-          class="photo image"
-          itemprop="image"
-          <% if (!data.fullSizeMode) { %>
-            data-large="<%- data.large %>" src="<%- data.medium %>"
-          <% } else { %>
-          src="<%- data.large %>"
-          <% } %>
-          alt="<%- data.title %>"/>
-    </span>
-    </a>
+<img
+    class="product-image"
+    src="<%- data.url %>"
+    data-position="<%- data.position %>"
+    alt="<%- data.label %>" />
 ?>
 {% endhighlight %}
 
