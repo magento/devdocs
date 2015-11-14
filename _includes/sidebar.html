@@ -121,10 +121,10 @@
 
 											<li class="level3Child {{ article.level3_subgroup }} {% if page.url == article.url %} active {%endif%}" data-menunode="{{ article.level3_subgroup }}"><a href="{{site.toc_baseurl}}{{article.url}}">{% if article.menu_title %}{{article.menu_title}}{% else %}{{article.title}}{% endif %}</a>
 
+
 									{% elsif article.externalURL %}
 
-									<li class="level-2"><a href="{{article.externalURL}}" target="_blank">{% if article.menu_title %}{{article.menu_title}}{% else %}{{article.title}}{% endif %}</a></li>
-
+									<li class="level-2"><a href="{{article.externalURL}}">{% if article.menu_title %}{{article.menu_title}}{% else %}{{article.title}}{% endif %}</a></li>
 
 
 									{% else %}
@@ -135,8 +135,6 @@
 						
 								{% endfor %}
 								
-								
-							
 							
 						{% else %}
 						
