@@ -44,16 +44,7 @@ Magento loads configuration files in the following order (all paths are relative
 * Global configurations from modules (`<your module base dir>/<vendorname>/<component-type>-<component-name>/etc/*.xml`). Collects certain configuration files from all modules and merges them together.
 * Area-specific configuration from modules (`<your module base dir>/<vendorname>/<component-type>-<component-name>/etc/<area>/*.xml`). Collects configuration files from all modules and merges them into the global configuration. Some area-specific configurations can override or extend the global configuration.
 
-where
-
-*	`<your module base dir>` is the base directory in which your module is located. Typical values are `app/code` or `vendor` relative to the Magento installation directory.
-*	`<vendorname>` is the module's vendor name; for example, Magento's vendor name is `magento`.
-*	`<component-type>` is one of the following:
-
-	*	`magento2-module`: An extension or module.
-	*	`metapackage`: An empty module except for a `composer.json` that specifies modules and dependencies. For example, Magento CE is a metapackage.
-	*	`magento2-theme`: Theme.
-*	*	`magento2-language`: Language package.
+{% include vendor/types-def.md %}
 
 *	`<component-name>`: Name of your component as defined in `composer.json`.
 
