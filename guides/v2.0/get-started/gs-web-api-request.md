@@ -10,7 +10,7 @@ github_link: get-started/gs-web-api-request.md
 redirect_from: /guides/v1.0/get-started/gs-web-api-request.html
 ---
 
-<p>To configure a web API, developers define some of the elements of each API call in the <code>app/code/Magento/&lt;MODULE&gt;/etc/webapi.xml</code> file, where <code>&lt;MODULE></code> is the module name. For example, the web API for the Customer service is defined in the <code>app/code/Magento/Customer/etc/webapi.xml</code> configuration file. Service data interfaces and builders define the required and optional parameters and the return values for the API calls.</p>
+<p>To configure a web API, developers define some of the elements of each API call in your `<module root dir>/vendor/<vendorname>/module-<name>/etc/webapi.xml file, where `<vendorname>` is your vendor name (for example, `magento`) and `<name>` is your module name (which exactly matches its definition in `composer.json`). For example, the web API for the Customer service is defined in the `<your Magento install dir>/vendor/magento/module-customer/etc/webapi.xml configuration file. Service data interfaces and builders define the required and optional parameters and the return values for the API calls.</p>
 
 <p>To construct a web API request, read these topics:</p>
 <ul>
