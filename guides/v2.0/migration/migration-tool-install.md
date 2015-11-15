@@ -20,7 +20,7 @@ This section discusses how to install the Magento Data Migration Tool. You can i
 ### Install the tool from GitHub
 To install the Data Migration Tool from GitHub, use the following steps:
 
-1.	Log in to your Magento 2 server as a user with privileges to write to the Magento 2 file system or <a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.
+1.	Log in to your Magento 2 server as a user with privileges to write to the Magento 2 file system or <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.
 2.	Change to Magento 2 root directory.
 3.	Enter the following commands in the order shown:
 
@@ -44,7 +44,7 @@ To install the Data Migration Tool, you must:
 
 To update `composer.json`:
 
-1.	Log in to your Magento server as the <a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a> or as a user with privileges to write to the Magento 2 file system.
+1.	Log in to your Magento server as the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a> or as a user with privileges to write to the Magento 2 file system.
 
 2.	Go to Magento 2 root directory.
 
