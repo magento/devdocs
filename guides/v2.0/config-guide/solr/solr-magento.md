@@ -36,17 +36,17 @@ Magento comes packaged with a sample Solr configuration you can use and customiz
 		cd <your Solr install dir>/example/solr
 		cp -R collection1 magento2/conf
 		cd magento2
-		cp -R <your Magento EE install dir>/app/code/Magento/Solr/conf/* .
+		cp -R <your Magento EE install dir>/vendor/magento/module-solr/conf/* .
 
 	For example, if Solr is installed in <code>/opt/solr/solr-4.10.4</code> and Magento EE is installed in <code>/var/www/magento/html/magento2ee</code>, enter:
 
 		cd /opt/solr/solr/solr-4.10.4
 		cp -R collection1 magento2
 		cd magento2
-		cp -R /var/www/html/magento2ee/app/code/Magento/Solr/conf/* .
+		cp -R /var/www/html/magento2ee/vendor/magento/module-solr/conf/* .
 
 	<div class="bs-callout bs-callout-info" id="info">
-	 <p>If you're prompted to overwrite files, try the command <code>\cp -R &lt;your Magento EE install dir>/app/code/Magento/Solr/conf/* .</code></p>
+	 <p>If you're prompted to overwrite files, try the command <code>\cp -R &lt;your Magento EE install dir>/vendor/magento/module-solr/conf/* .</code></p>
 	</div>
 
 2.  After copying files, open `example/solr/core.properties` in a text editor and change:

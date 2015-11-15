@@ -116,7 +116,7 @@ For example, if you attempt to uninstall a module that another module depends on
 		Cannot uninstall module 'Magento_SampleMinimal' because the following module(s) depend on it:
         Magento_SampleModifyContent
 
-One alternative is to uninstall both modules after backing up the Magento `app/code` file system, `pub/media` files, and database tables but *not* removing the module's database schema or data:
+One alternative is to uninstall both modules after backing up the Magento module file system, `pub/media` files, and database tables but *not* removing the module's database schema or data:
 
 	magento module:uninstall Magento_SampleMinimal Magento_SampleModifyContent --backup-code --backup-media --backup-db
 

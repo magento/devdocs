@@ -26,12 +26,12 @@ Multiple modules can declare configuration files that affect the same configurat
 Following are common terms used in this topic:
 
 <dl>
-  <dt>Configuration object</dt>
-  <dd>The Magento library or class that is responsible for defining and validating the configuration type. For example, the configuration object for <code>config.xml</code> is <a href=" {{ site.mage2000url }}lib/internal/Magento/Framework/App/Config.php" target="_blank">Magento\Framework\App\Config</a>.</dd>
-  <dt>Configuration stage</dt>
-  <dd>Stages are defined as <em>primary</em>, <em>global</em>, and <em>area</em>. Each stage determines when configuration type is loaded and merged with same-named configuration types. (For example, <code>module.xml</code> files are merged with other <code>module.xml</code> files.) For more information, see <a href="#config-files-loadmerge">Configuration load and merge</a>.</dd>
-  <dt>Configuration scope</dt>
-  <dd>Complementary to a configuration stages, a scope defines the configuration type model. For example, <code>adminhtml</code> is an area scope that is loaded with at the stage with other modules' <code>adminhtml</code> configurations. For more information, see <a href="{{ site.gdeurl }}architecture/modules/mod_and_areas.html">Modules and areas</a>.</dd>
+	<dt>Configuration object</dt>
+	<dd>The Magento library or class that is responsible for defining and validating the configuration type. For example, the configuration object for <code>config.xml</code> is <a href=" {{ site.mage2000url }}lib/internal/Magento/Framework/App/Config.php" target="_blank">Magento\Framework\App\Config</a>.</dd>
+	<dt>Configuration stage</dt>
+	<dd>Stages are defined as <em>primary</em>, <em>global</em>, and <em>area</em>. Each stage determines when configuration type is loaded and merged with same-named configuration types. (For example, <code>module.xml</code> files are merged with other <code>module.xml</code> files.) For more information, see <a href="#config-files-loadmerge">Configuration load and merge</a>.</dd>
+	<dt>Configuration scope</dt>
+	<dd>Complementary to a configuration stages, a scope defines the configuration type model. For example, <code>adminhtml</code> is an area scope that is loaded with at the stage with other modules' <code>adminhtml</code> configurations. For more information, see <a href="{{ site.gdeurl }}architecture/modules/mod_and_areas.html">Modules and areas</a>.</dd>
 </dl>
 
 <h2 id="config-files-loadmerge">Configuration load and merge</h2>
@@ -41,8 +41,21 @@ This section discusses how configuration files are loaded and merged.
 Magento loads configuration files in the following order (all paths are relative to your Magento installation directory):
 
 * Primary configuration (`app/etc/di.xml`). This file is used to bootstrap Magento.
-* Global configurations from modules (`app/code/<VendorName>/<ModuleName>/etc/*.xml`). Collects certain configuration files from all modules and merges them together.
-* Area-specific configuration from modules (`app/code/<VendorName>/<ModuleName>/etc/<area>/*.xml`). Collects configuration files from all modules and merges them into the global configuration. Some area-specific configurations can override or extend the global configuration.
+* Global configurations from modules (`<your module base dir>/<vendorname>/<component-type>-<component-name>/etc/*.xml`). Collects certain configuration files from all modules and merges them together.
+* Area-specific configuration from modules (`<your module base dir>/<vendorname>/<component-type>-<component-name>/etc/<area>/*.xml`). Collects configuration files from all modules and merges them into the global configuration. Some area-specific configurations can override or extend the global configuration.
+
+where
+
+*	`<your module base dir>` is the base directory in which your module is located. Typical values are `app/code` or `vendor` relative to the Magento installation directory.
+*	`<vendorname>` is the module's vendor name; for example, Magento's vendor name is `magento`.
+*	`<component-type>` is one of the following:
+
+	*	`magento2-module`: An extension or module.
+	*	`metapackage`: An empty module except for a `composer.json` that specifies modules and dependencies. For example, Magento CE is a metapackage.
+	*	`magento2-theme`: Theme.
+*	*	`magento2-language`: Language package.
+
+*	`<component-name>`: Name of your component as defined in `composer.json`.
 
 <h3 id="config-files-load-merge-merge">Configuration file merge</h3>
 Nodes in configuration files are merged based on their fully qualified XPaths, which has a special attribute defined in `$idAttributes` array declared as its identifier. This identifier must be unique for all nodes nested under the same parent node.
@@ -65,49 +78,49 @@ The following sections provide information about configuration types, their corr
 The following table shows each configuration type and the Magento configuration object to which it relates.
 
 <table>
-  <tbody>
-    <tr>
-      <th>Configuration file</th>
-      <th>Description</th>
-      <th>Stage</th>
-      <th>Configuration object</th>
-    </tr>
-    <tr>
-      <td><code>config.php</code> and <code>env.php</code></td>
-      <td><a href="{{ site.gdeurl }}config-guide/config/config-php.html">Deployment configuration</a></td>
-      <td>Loads into memory when Magento initializes</td>
-      <td>Has no object, cannot be customized</td>
-    </tr>
-    <tr>
-      <td><code>config.xml</code></td>
-      <td>System configuration</td>
-      <td>primary, global </td>
-      <td><a href=" {{ site.mage2000url }}lib/internal/Magento/Framework/App/Config.php" target="_blank">\Magento\Framework\App\Config</a></td>
-    </tr>
-    <tr>
-      <td><code>di.xml</code></td>
-      <td><a href="{{ site.gdeurl }}extension-dev-guide/depend-inj.html">Dependency injection</a> configuration</td>
-      <td>primary, global, area</td>
-      <td><a href=" {{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/Config/Config.php" target="_blank">\Magento\Framework\ObjectManager\Config</a></td>
-    </tr>
-    <tr>
-      <td><code>events.xml</code></td>
-      <td>Event/observer configuration</td>
-      <td>global, area</td>
-      <td><a href=" {{ site.mage2000url }}lib/internal/Magento/Framework/Event.php" target="_blank">\Magento\Framework\Event</a></td>
-    </tr>
+	<tbody>
+		<tr>
+			<th>Configuration file</th>
+			<th>Description</th>
+			<th>Stage</th>
+			<th>Configuration object</th>
+		</tr>
+		<tr>
+			<td><code>config.php</code> and <code>env.php</code></td>
+			<td><a href="{{ site.gdeurl }}config-guide/config/config-php.html">Deployment configuration</a></td>
+			<td>Loads into memory when Magento initializes</td>
+			<td>Has no object, cannot be customized</td>
+		</tr>
+		<tr>
+			<td><code>config.xml</code></td>
+			<td>System configuration</td>
+			<td>primary, global </td>
+			<td><a href=" {{ site.mage2000url }}lib/internal/Magento/Framework/App/Config.php" target="_blank">\Magento\Framework\App\Config</a></td>
+		</tr>
+		<tr>
+			<td><code>di.xml</code></td>
+			<td><a href="{{ site.gdeurl }}extension-dev-guide/depend-inj.html">Dependency injection</a> configuration</td>
+			<td>primary, global, area</td>
+			<td><a href=" {{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/Config/Config.php" target="_blank">\Magento\Framework\ObjectManager\Config</a></td>
+		</tr>
+		<tr>
+			<td><code>events.xml</code></td>
+			<td>Event/observer configuration</td>
+			<td>global, area</td>
+			<td><a href=" {{ site.mage2000url }}lib/internal/Magento/Framework/Event.php" target="_blank">\Magento\Framework\Event</a></td>
+		</tr>
 <!--     <tr>
-      <td><code>cache.xml</code></td>
-      <td>global, area</td>
-      <td><a href=" {{ site.mage2000url }}lib/internal/Magento/Framework/Event.php" target="_blank">Magento\Framework\Event</a></td>
-    </tr> -->
-    <tr>
-      <td><code>routes.xml</code></td>
-      <td><a href="{{ site.gdeurl }}extension-dev-guide/routing.html">Route</a> configuration</td>
-      <td>area</td>
-      <td><a href=" {{ site.mage2000url }}lib/internal/Magento/Framework/App/Route/Config.php" target="_blank">Magento\Framework\App\Route\Config</a></td>
-    </tr>
-  </tbody>
+			<td><code>cache.xml</code></td>
+			<td>global, area</td>
+			<td><a href=" {{ site.mage2000url }}lib/internal/Magento/Framework/Event.php" target="_blank">Magento\Framework\Event</a></td>
+		</tr> -->
+		<tr>
+			<td><code>routes.xml</code></td>
+			<td><a href="{{ site.gdeurl }}extension-dev-guide/routing.html">Route</a> configuration</td>
+			<td>area</td>
+			<td><a href=" {{ site.mage2000url }}lib/internal/Magento/Framework/App/Route/Config.php" target="_blank">Magento\Framework\App\Route\Config</a></td>
+		</tr>
+	</tbody>
 </table>
 
 <h3 id="config-files-classes-int">Configuration interfaces</h3>
@@ -120,7 +133,7 @@ You can interact with configuration files using interfaces under <a href="{{ sit
 * <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Config/FileResolverInterface.php" target="_blank">Framework\Config\FileResolverInterface</a>, which identifies the location of files to be read by `\Magento\Framework\Config\ReaderInterface`
 * <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Config/ReaderInterface.php" target="_blank">Framework\Config\ReaderInterface</a>, which reads the configuration data from storage and selects the storage from which it reads.
 
-   That is, the file system, database, other storage merges the configuration files according to the merging rules, and validates the configuration files with the validation schemas.
+	 That is, the file system, database, other storage merges the configuration files according to the merging rules, and validates the configuration files with the validation schemas.
 
 *  <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Config/SchemaLocatorInterface.php" target="_blank">Framework\Config\SchemaLocatorInterface</a>, which locates the XSD schema.
 *  <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Config/ScopeListInterface.php" target="_blank">Framework\Config\ScopeListInterface</a>, which returns a list of scopes.
