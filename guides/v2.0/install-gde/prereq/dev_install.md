@@ -19,35 +19,16 @@ redirect_from:
 #### Contents 
 
 *	<a href="#integrator-aud">Intended audience</a>
+*	<a href="#instgde-overview-composer">Composer and Magento</a>
 *	<a href="#instgde-prereq-compose-install">Install Composer</a>
 *	<a href="#instgde-prereq-compose-clone">Clone the Magento repository</a>
 
 <h2 id="integrator-aud">Intended audience</h2>
 The audience for this topic is anyone who contributes to the Magento codebase. If that isn't you, go back and <a href="{{ site.gdeurl }}install-gde/continue.html">choose another starting point</a>.
 
-<h2 id="instgde-prereq-compose-install">Install Composer</h2>
+{% include install/composer-overview.html %}
 
-First, check  if Composer is already installed: 
-
-In a command prompt, enter any of the following commands:
-
-*	`composer --help`
-*	`composer list --help`
-
-If command help displays, Composer is already installed; in that case, you can skip the next section and continue with <a href="#instgde-prereq-compose-clone">Clone the Magento repository</a>.
-
-If an error displays, use the following steps to install Composer.
-
-To install Composer:
-
-1.	Change to or create an empty directory on your Magento server.
-
-2.	Enter the following commands:
-
-	<pre>curl -sS https://getcomposer.org/installer | php
-	mv composer.phar /usr/local/bin/composer</pre>
-
-	For additional installation options, see the <a href="https://getcomposer.org/download/" target="_blank">Composer installation documentation</a>.
+{% include install/composer-clone.md %}
 
 <h2 id="instgde-prereq-compose-clone">Clone the Magento repository</h2>
 This section discusses how to get current code by cloning the Magento GitHub's develop branch. You can clone either the `master` or `develop` branch:

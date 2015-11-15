@@ -10,7 +10,7 @@ github_link: install-gde/install/hosted/hosted_start.md
 ---
 
 ## Hosted installation
-Before you can install the Magento software, you must get your hosted system ready. This topic is geared specifically for GoDaddy but you can use the same instructions for any other hosting provider. 
+Before you can install the Magento software, you must get your hosted system ready.  
 
 If your hosted system is already set up, go to <a href="{{ site.gdeurl }}install-gde/install/hosted/hosted_get-ftp.html#get-archive">Get the Magento software packages</a>.
 
@@ -31,7 +31,7 @@ Magento requires the following software to run:
 *	Database: MySQL 5.6.x
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>We recommend you contact GoDaddy support to verify all of the preceding are installed and get their assistance if any of the software is not installed.</p>
+  <p>We recommend you contact your shared hosting provider's technical support to verify all of the preceding are installed and get their assistance if any of the software is not installed.</p>
 </div>
 
 For complete details, see <a href="{{ site.gdeurl }}install-gde/system-requirements.html">System requirements</a>.

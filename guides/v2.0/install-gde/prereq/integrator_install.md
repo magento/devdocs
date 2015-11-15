@@ -17,6 +17,7 @@ github_link: install-gde/prereq/integrator_install.md
 *	<a href="#int-aud">Intended audience</a>
 *	<a href="#integrator-first-over">First steps</a>
 *	<a href="#instgde-overview-composer">Composer and Magento</a>
+*	<a href="#instgde-prereq-compose-install">Install Composer</a>
 *	<a href="#integrator-first-composer">Get the metapackage</a>
 *	<a href="#instgde-prereq-compose-access">Set file system ownership and permissions</a>
 
@@ -30,6 +31,8 @@ As an integrator, you want to manage each of your Magento core components and th
 To do so, you start by creating a Composer project from our metapackage. The metapackage installs each component so it can be centrally managed after installation.
 
 {% include install/composer-overview.html %}
+
+{% include install/composer-clone.md %}
 
 <h2 id="integrator-first-composer">Get the metapackage</h2>
 To get started:
