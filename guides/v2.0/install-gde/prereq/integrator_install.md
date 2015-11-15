@@ -36,21 +36,28 @@ To get started:
 
 1.	Log in to your Magento server as, or switch to, a user who has privileges to write to the web server docroot.
 2.	Change to the web server docroot directory, or to a directory you've configured as a virtual host docroot.
-3.	Enter one of the following commands:
-
-	Magento CE:
+3.	*Magento CE*. Enter the following command:
 
 		composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition  <installation directory name>
 
-	Magento EE:
-
-		composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition  <installation directory name>
+	When prompted, enter your magento.com user name and password. (This is the same user name and password you used to register with Magento. You use it to log in to your My Account page at magento.com.)
 
 	This command creates the project and downloads dependencies for it. The project is in a directory named `<installation directory name>` if you provided the parameter or `product-community-edition` if you did not.
 
-	If you configured a virtual host, `<installation directory name>` must match the docroot directory defined for it.
 
-3.	Continue with the next section.
+4.	*Magento EE*. Enter the following command:
+
+		composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition  <installation directory name>
+
+	When prompted, enter your support portal user name and password. 
+
+	The following error indicates your user name or password are incorrect:
+
+		  Could not find package magento/project-enterprise-edition with version 2.0.0-rc2.
+
+	This command creates the project and downloads dependencies for it. The project is in a directory named `<installation directory name>` if you provided the parameter or `product-community-edition` if you did not.
+
+5.	Continue with the next section.
 
 <h2 id="instgde-prereq-compose-access">Set file system ownership and permissions</h2>
 The following sections discuss how to set file system ownership and permissions:

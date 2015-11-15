@@ -40,7 +40,7 @@ To transfer the Magento software archive to your server:
 
 	Follow the prompts on your screen or consult the documentation provided with your FTP software for more information.
 
-3.	After you log in to your server, browse to locate `magento2-ce.zip` or `magento2-ee.zip` on your local system.
+3.	After you log in to your server, browse to locate the Magento CE or EE archive on your local system.
 
 	On the remote system, browse to locate the web server docroot directory.
 
@@ -52,11 +52,56 @@ To transfer the Magento software archive to your server:
 
 	On some FTP client software, you do this by dragging and dropping.
 5.	Wait while the transfer completes.
+6.	Create a subdirectory for the Magento software.
+
+	If you set up a virtual host, the subdirectory name must match the name in your virtual host.
+
+	For example,
+
+		mkdir magento2ce
+		mkdir magento2ee
+
+	You can also use a generic directory name
+
+		mkdir magento2
+
+7.	Copy the Magento archive to that directory.
+
+	For example,
+
+		cp /var/www/Magento-CE-2.0.0-rc2+Samples.tar.bz2 magento2
+
+8.	Continue with the next section.
 
 <h2 id="zip-extract">Extract the software on your server</h2>
-Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a> and extract the software package in the web server docroot. 
+Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a> and extract the software package in the web server docroot using one of the following commands:
 
-The Magento software extracts to a `magento2-ce` or `magento2-ee` subdirectory, which you can rename if you wish. Make sure the directory name matches your virtual host configuration, if any.
+<table>
+<tbody>
+<tr> 
+	<th>File format</th>
+	<th>Command to extract</th>
+</tr>
+<tr> 
+	<td>.tar.gz</td>
+	<td><code>tar zxf &lt;filename></code></td>
+</tr>
+<tr> 
+	<td>.tar.bz2</td>
+	<td><code>tar jxf &lt;filename></code></td>
+</tr>
+<tr> 
+	<td>.zip</td>
+	<td><code>unzip &lt;filename></code></td>
+</tr>
+<tr> 
+	<td>.tar.bz2</td>
+	<td><code>tar jxf &lt;filename></code></td>
+</tr>
+</tbody>
+</table>
+
+The Magento software extracts to the directory you created. After the file has extracted, either delete the Magento archive or move it to another directory.
 
 <h2 id="zip-perms">Set file system ownership and permissions</h2>
 The following sections discuss how to set file system ownership and permissions:
