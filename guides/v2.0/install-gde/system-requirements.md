@@ -31,13 +31,11 @@ MySQL 5.6 (Oracle or Percona)
 
 *	5.6.x
 *	5.5.x 
-*	7 (Magento has been tested with <a href="http://php.net/archive/2015.php" target="_blank">Release Candiate 7</a>&mdash;currently the most recent)
-
-Documentation: <a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html" target="_blank">CentOS</a>, <a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html" target="_blank">Ubuntu</a>
 
 <div class="bs-callout bs-callout-info" id="info">
    <span class="glyphicon-class">
-  	<ul><li>There is a <a href="https://bugs.php.net/bug.php?id=66985" target="_blank">known PHP issue</a> with versions:
+  	<ul><li>Magento has been tested with PHP 7.0 <a href="http://php.net/archive/2015.php" target="_blank">Release Candiate 7</a> (currently the most recent)</li>
+  		<li>There is a <a href="https://bugs.php.net/bug.php?id=66985" target="_blank">known PHP issue</a> with versions:
   		<ul><li>5.5.10&ndash;5.5.16</li>
 		<li>5.6.0</li></ul>
 	</li>
@@ -45,6 +43,8 @@ Documentation: <a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html" tar
 	<p>To work around the issue, see <a href="{{ site.gdeurl }}release-notes/known-issues.html#known-devrc-php">Known issue with certain PHP versions</a>.</p>
 	<li>Magento no longer supports PHP 5.4.</li></ul></span>
 </div>
+
+Documentation: <a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html" target="_blank">CentOS</a>, <a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html" target="_blank">Ubuntu</a>
 
 #### Required PHP extensions:
 
