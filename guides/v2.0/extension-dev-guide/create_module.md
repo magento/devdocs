@@ -4,7 +4,7 @@ group: extension-dev-guide
 subgroup: 3_Build
 title: Create a module
 menu_title: Create a module
-menu_order: 5
+menu_order: 7
 github_link: extension-dev-guide/create_module.md
 redirect_from: /guides/v1.0/extension-dev-guide/create_module.html
 ---
@@ -32,40 +32,37 @@ The smallest working module.xml file would look something like this:
 ##Add the module&#8217;s `composer.json` file
 
 
-    {
-        "name": "your-name/module-Acme",
-        "autoload": {
-            "psr-4": { "AcmeVendor\\BarComponent\\": "" },
-            "files": [ "registration.php" ],
-        },
-        "description": "Test module for Magento 2",
-        "require": {
-            "php": "~5.5.0|~5.6.0",
-            "magento/module-store": "1.0.0-beta",
-            "magento/module-catalog": "1.0.0-beta",
-            "magento/module-catalog-inventory": "1.0.0-beta",
-            "magento/module-ui": "self.version",
-            "magento/magento-composer-installer": "*"
-        },
-        "suggest": {
-          "magento/module-webapi": "1.0.0-beta"
-        },
-        "type": "magento2-module",
-         "version": "1.0.0-beta",
-        "license": [
-            "OSL-3.0",
-            "AFL-3.0"
-        ],
-        "extra": {
-            "map": [
-                [
-                    "*",
-                    "YourName/FooBar"
-                ]
-            ]
+{% highlight JSON %}
+
+	{
+    "name": "your-name/module-Acme",
+    "description": "Test module for Magento 2",
+    "require": {
+        "php": "~5.5.0|~5.6.0",
+        "magento/module-store": "1.0.0-beta",
+        "magento/module-catalog": "1.0.0-beta",
+        "magento/module-catalog-inventory": "1.0.0-beta",
+        "magento/module-ui": "self.version",
+        "magento/magento-composer-installer": "*"
+    },
+    "suggest": {
+      "magento/module-webapi": "1.0.0-beta"
+    },
+    "type": "magento2-module",
+     "version": "1.0.0-beta",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "autoload": {
+        "files": [ "registration.php" ],
+        "psr-4": {
+            "Magento\\CatalogImportExport\\": ""
         }
     }
+    }
 
+{% endhighlight %}
 
 where:
 
@@ -77,7 +74,7 @@ where:
 * `type` &#8212; determines what type of magento component your module is. Choose from *magento2-library*, *magento2-theme*, *magento2-language*, or *magento2-module*.
 * `version` &#8212; lists the version of the module.
 * `license` &#8212; lists applicable licenses that apply to your module.
-* `extra.map` &#8212; gives the path for Magento&#8217;s Composer installer so it can marshall your component&#8217;s files to the appropriate locations under the main instance of Magento.
+* `autoload` &#8212; instructs composer to load the specified files.
 
 
 
@@ -90,7 +87,7 @@ where:
 
 ##Next
 
-[Module Load Order](module-load-order.html)
+[URN schema validation](XSD-XML-validation.html)
 
 
 

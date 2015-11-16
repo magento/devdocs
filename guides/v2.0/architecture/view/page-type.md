@@ -50,7 +50,7 @@ Page types for each module are declared in `page_types.xml`. The declaration is 
 
 `page_types.xml` is typically located in:
 
-	app/code/<VendorName>/<ModuleName>/etc/frontend
+	vendor/<vendorname>/module-<name>/etc/frontend
 
 For example, <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/frontend/page_types.xml" target="_blank">Customer module page_types.xml</a>.
 
