@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Form Component</title>
+	<title>Using UI components' client-side</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/ui-components/ui-form.html">
+	<link rel="canonical" href="//guides/v2.0/ui-components/ui_components_js.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Form Component</h1>
+		<h1 class="page-heading">Using UI components' client-side</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/ui-components/ui-form.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/ui-components/ui_components_js.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -211,153 +211,300 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<ul id="markdown-toc">
-  <li><a href="#overview">Overview</a></li>
-  <li><a href="#component-options">Component options</a></li>
-  <li><a href="#create-an-instance-of-the-form-component">Create an instance of the Form component</a></li>
-  <li><a href="#configure-the-form-component">Configure the Form component</a></li>
-</ul>
+		<h2 id="whats-in-this-topic">What’s in this topic</h2>
+<p>This topic is aimed for developers, who need to reuse the <a href="/guides/v2.0/ui-library/ui-library-component.html">Magento UI Components</a>. </p>
 
-<h2 id="overview">Overview</h2>
-<p>Form component allows performing <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> operations on an entity. </p>
-
-<p>The following are the components element, the constructor: <code>app\code\Magento\Ui\view\base\web\js\form\form.js</code></p>
-
-<h4>Related UI components</h4>
-
-<p>The following components are used to extend the Form component:</p>
+<p>The topic covers the following:</p>
 
 <ul>
-  <li>DataSource</li>
-  <li>FieldSet</li>
-  <li>Field</li>
-  <li>Layout</li>
-  <li>Container</li>
+  <li><a href="#config">UI componenents’ configuration</a></li>
+  <li><a href="#main_properties">The most important UI component’s properties</a></li>
+  <li><a href="#comp_link">UI components’ properties used for linking</a></li>
+  <li><a href="#comp_additional">Description of the additional UI components</a></li>
+  <li><a href="#comp_debug">JS UI components debugging</a></li>
 </ul>
 
-<h2 id="component-options">Component options</h2>
+<h2 id="config">UI components’ configuration</h2>
+
+<p>A UI component’s behavior, configuration and structure is defined by the following:</p>
 
 <ul>
   <li>
-    <p>js_config -&gt; deps - sets the dependency on component initialization</p>
+    <p>The available configuration options and methods for components of a certain type, defined in the component’s .js file.</p>
   </li>
   <li>
-    <p>js_config -&gt; config -&gt; provider - specifies the name of the component data</p>
-  </li>
-  <li>
-    <p>layout - configuration class meets the visualization component
-  (See examples in ‘Configuring’ section)</p>
+    <p>The actual configuration and structure of a particular component, specified in the component’s configuration <code>.xml</code> file, in the scope of the <code>&lt;argument&gt;&lt;/argument&gt;</code> node. The configuration file also extends properties, specifies the component’stemplate and the path to the component’s <code>.js</code> file.</p>
   </li>
 </ul>
 
-<h2 id="create-an-instance-of-the-form-component">Create an instance of the Form component</h2>
+<p>All these properties, options, and methods are available in the component template’s scope.</p>
+
+<h2 id="main_properties">Most important UI components’ properties</h2>
+<p>The most important client-side properties of a UI component are the following:</p>
 
 <ul>
-  <li>
-    <p>Create configuration file for the instance (for example: customer_form.xml)</p>
+  <li><code>component</code>: the path to the component’s <code>.js</code> file in terms of RequireJS.</li>
+</ul>
 
-    <ul>
-      <li>Add a set of fields (the Fieldset component with the component of the Field) for entity or to implement the upload of Meta info in the DataProvider. </li>
-    </ul>
-  </li>
-  <li>Create the DataProvider class for the entity that implements DataProviderInterface</li>
-  <li>Add a component in Magento layout as a node: <code>&lt;uiComponent name="customer_form"/&gt;</code></li>
+<p>Example:
+The <code>.js</code> file of the bookmark component is <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js">Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js</a> </p>
+
+<p>So the <code>component</code> property is set in the <code>.xml</code> configuration file like following:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/grid/controls/bookmarks/bookmarks<span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;/argument&gt;</span></code></pre></div>
+
+<ul>
+  <li><code>template</code>: path to the component’s <code>.html</code> template.</li>
 </ul>
 
 <p>Example:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;body&gt;</span>
-        <span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>
-            ...
-            <span class="nt">&lt;uiComponent</span> <span class="na">name=</span><span class="s">&quot;customer_form&quot;</span><span class="nt">/&gt;</span>
-        <span class="nt">&lt;/referenceContainer&gt;</span>
-    <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/page&gt;</span></code></pre></div>
+<p>The <code>.html</code> template of the bookmarks component is <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/templates/grid/controls/bookmarks/bookmarks.html">Magento/Ui/view/base/web/templates/grid/controls/bookmarks/bookmarks.html</a>. </p>
 
-<h2 id="configure-the-form-component">Configure the Form component</h2>
-
-<p>Component could be configured in two ways:</p>
-
-<ul>
-  <li>globally: using any module’s <code>view//ui_component/etc/definition.xml</code> file. All settings declared in     this file will be applied to all component’s instances</li>
-  <li>locally: using concrete component instance configuration, such as <code>app/code/Magento/Customer/view/base/ui_component/customer_form</code></li>
-</ul>
-
-<p>Create configuration file: <code>app/code/Magento/Customer/view/base/ui_component/customer_form.xml</code></p>
-
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../Ui/etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;js_config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;provider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>customer_form.customer_form_data_source<span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;deps&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>customer_form.customer_form_data_source<span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Customer Information<span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;layout&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;type&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>tabs<span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;navContainerName&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>left<span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;/item&gt;</span>
-...</code></pre></div>
-
-<p>Nodes are optional and contain parameters required for component:</p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;template&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>ui/grid/controls/bookmarks/bookmarks<span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;/argument&gt;</span></code></pre></div>
 
 <ul>
   <li>
-    <p>js_config -&gt; deps - sets the dependency on component initialization</p>
+    <p>children: is a general name for the nested components of a certain component. Children can be specified in the <code>.xml</code> configuration of the parent component (all nodes except <code>&lt;argument/&gt;</code> and <code>&lt;dataSource/&gt;</code> are considered children) and in the Knockout JS templates: children are the keys of the <code>elems</code> property.</p>
   </li>
   <li>
-    <p>js_config -&gt; config -&gt; provider - specifies the name of the component data</p>
-  </li>
-  <li>
-    <p>layout - configuration class meets the visualization component. Names for deps and provider are specified with a complete path from the root component with the separator “.”</p>
+    <p><code>name</code>: the name of the component specified in the <code>.xml</code> configuration file of the parent UI component. In the run-time in a browser this value is transformed to a complex string. This string represents hierarchy of components in the run-time.
+For example, (<code>app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_listing.xml:57</code>)[https://github.com/magento/magento2/blob/develop/app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_listing.xml#L57]:</p>
   </li>
 </ul>
 
-<p>Add a description of the fields in the form using components and Field Fieldset:</p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;component</span> <span class="na">name=</span><span class="s">&quot;columns_controls&quot;</span><span class="nt">&gt;</span></code></pre></div>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml">...
-<span class="nt">&lt;fieldset</span> <span class="na">name=</span><span class="s">&quot;customer&quot;</span><span class="nt">&gt;</span>
-   <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+<p>In the run-time <code>columns_controls</code> is transformed to the following string: <code>cms_block_listing.cms_block_listing.listing_top.columns_controls</code>. </p>
+
+<p>This string is constructed from the following values:</p>
+
+<ul>
+  <li><code>cms_block_listing.cms_block_listing</code>: - the full name of the root component.</li>
+  <li><code>listing_top</code>: the value of the <code>name</code> attribute of the parent <code>&lt;container name="listing_top"&gt;</code> component. </li>
+  <li><code>columns_controls</code> - the value of the <code>name</code> attribute of the component itself.</li>
+</ul>
+
+<h2 id="comp_link">UI Components’ properties used for linking</h2>
+
+<p>The following properties are used for linking observable properties and methods of UI components:</p>
+
+<ul>
+  <li>
+    <p><code>exports</code>: used to notify some external entity about property changing. <code>exports</code>s value is an object, composed of the following:</p>
+
+    <ul>
+      <li><code>key</code>: name of the internal property or method which is tracked for changes.</li>
+      <li><code>value</code>: name of the property or method which receives the notification. Can use string templates.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Example of setting <code>exports</code> in a component’s <code>.js</code> file:</p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
+  <span class="s1">&#39;exports&#39;</span><span class="o">:</span> <span class="p">{</span>
+   <span class="s1">&#39;visible&#39;</span><span class="o">:</span> <span class="s1">&#39;${ $.provider }.visibility&#39;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Here <code>visible</code> is the <code>key</code>, <code>${ $.provider }.visibility</code> is the <code>value</code>.</p>
+
+<p>Example of setting <code>exports</code> in a component’s configuration <code>.xml</code> file:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-           <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Account Information<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;exports&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;visible&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>sample_config.sample_provider.visibility<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;/item&gt;</span>
        <span class="nt">&lt;/item&gt;</span>
-   <span class="nt">&lt;/argument&gt;</span>
-   <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;entity_id&quot;</span><span class="nt">&gt;</span>
-       <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-               <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-               <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;visible&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>false<span class="nt">&lt;/item&gt;</span>
-               <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;dataType&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>text<span class="nt">&lt;/item&gt;</span>
-               <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;formElement&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>input<span class="nt">&lt;/item&gt;</span>
-               <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;source&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>customer<span class="nt">&lt;/item&gt;</span>
-           <span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;/argument&gt;</span>
-    <span class="nt">&lt;/field&gt;</span>
-…</code></pre></div>
+<span class="nt">&lt;/argument&gt;</span></code></pre></div>
 
-<p>To group components you can use the component container as in example below:</p>
+<p>In this example, <code>visible</code> is the <code>key</code>, <code>sample_config.sample_provider.visibility</code> is the <code>value</code>.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;container_group&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;type&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>group<span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;js_config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/form/components/group<span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Group<span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;required&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;dataScope&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>false<span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;sortOrder&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;number&quot;</span><span class="nt">&gt;</span>20<span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;/argument&gt;</span>
-    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;group_id&quot;</span><span class="nt">&gt;</span>
-    ...
-    <span class="nt">&lt;/field&gt;</span>
-    <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;disable_auto_group_change&quot;</span><span class="nt">&gt;</span>
-    ...
-    <span class="nt">&lt;/field&gt;</span>
-<span class="nt">&lt;/container&gt;</span></code></pre></div>
+<ul>
+  <li>
+    <p><code>imports</code>: used for tracking changes of an external entity property. <code>imports</code>’s value is an object, composed of the following:</p>
+
+    <ul>
+      <li><code>key</code>: name of the internal property or method which receives the notifications. </li>
+      <li><code>value</code>: name of the property or method which is tracked for changes. Can use string templates.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Example of using <code>imports</code> in a component’s <code>.js</code> file:</p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
+  <span class="s1">&#39;imports&#39;</span><span class="o">:</span> <span class="p">{</span>
+   <span class="s1">&#39;visible&#39;</span><span class="o">:</span> <span class="s1">&#39;${ $.provider }.visibility&#39;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Example of using <code>imports</code> in a component’s configuration <code>.xml</code> file:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;imports&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;visible&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>sample_config.sample_provider.visibility<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;/item&gt;</span>
+       <span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;/argument&gt;</span></code></pre></div>
+
+<ul>
+  <li>
+    <p><code>links</code>: used for mutual tracking property changes. <code>links</code>’s value is an object, composed of the following:</p>
+
+    <ul>
+      <li><code>key</code>: name of the internal property or method which sends and receives the notifications. </li>
+      <li><code>value</code> - name of the property or method which sends and receives the notifications. Can use string templates.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Example of using <code>links</code> in a component’s <code>.js</code> file:</p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
+  <span class="s1">&#39;links&#39;</span><span class="o">:</span> <span class="p">{</span>
+   <span class="s1">&#39;visible&#39;</span><span class="o">:</span> <span class="s1">&#39;${ $.provider }.visibility&#39;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Example of using <code>links</code> in a component’s configuration <code>.xml</code> file:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;links&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;visible&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>sample_config.sample_provider.visibility<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;/item&gt;</span>
+       <span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;/argument&gt;</span></code></pre></div>
+
+<ul>
+  <li><code>listens</code>: used to track the changes of a component’s proporty.
+    <ul>
+      <li><code>key</code> - name of the internal property which listens to the changes.</li>
+      <li><code>value</code> - name of the property or method which is tracked for changes. Can use string templates.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Example of using <code>listens</code> in a component’s <code>.js</code> file :</p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
+  <span class="s1">&#39;listens&#39;</span><span class="o">:</span> <span class="p">{</span>
+   <span class="s1">&#39;visible&#39;</span><span class="o">:</span> <span class="s1">&#39;${ $.provider }.visibility&#39;</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Example of using <code>listens</code> in a component’s configuration <code>.xml</code> file:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;listens&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;visible&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>sample_config.sample_provider.visibility<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;/item&gt;</span>
+       <span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;/argument&gt;</span></code></pre></div>
+
+<h2 id="comp_additional">Frequently used additional components</h2>
+<p>This section is a brief description of the most frequently used additional UI components.</p>
+
+<h3 id="uiclass"><code>uiClass</code></h3>
+<p>Enables OOP pattern implementation.</p>
+
+<h3 id="uielement"><code>uiElement</code></h3>
+<p>Extends <code>uiClass</code>. Adds the following:</p>
+
+<ul>
+  <li>the <code>defaults</code> property</li>
+  <li>events handling</li>
+  <li>handling properties linking (the <code>imports</code>, <code>exports</code>, <code>links</code> and <code>listens</code> properties)</li>
+  <li>ability to add itself to the UI registry</li>
+</ul>
+
+<h3 id="uicollection"><code>uiCollection</code></h3>
+
+<p>Extends <code>uiElement</code>. Adds the following:</p>
+
+<ul>
+  <li>managing child elements (the <code>elems</code> property)</li>
+  <li>by default uses the <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/templates/collection.html">app/code/Magento/Ui/view/base/web/templates/collection.html</a> template</li>
+</ul>
+
+<h3 id="uiregistry"><code>uiRegistry</code></h3>
+<p>In-memory storage. Plain storage of entities by keys. Implements the <code>get()</code>, <code>set()</code>, and <code>has()</code> methods.</p>
+
+<p>All the components described in this section are aliases in terms of RequireJS. So they can be directly requested in the component’s <code>.js</code> file or used in a component’s configuration <code>.xml</code> file (except <code>uiRegistry</code>, which by its nature is not expected to be used in a configuration file). </p>
+
+<p>Example for the <code>uiClass</code> property request:</p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span> <span class="p">[</span><span class="s1">&#39;uiClass&#39;</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">abstractClass</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">abstractClass</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span> 
+      <span class="p">...</span> <span class="c1">// needed methods here</span>
+   <span class="p">};</span>
+<span class="p">});</span></code></pre></div>
+
+<p>Example of using the <code>uiClass</code> property in a configuration file:</p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">container</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;some_custom_component&quot;</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;data&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;config&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;component&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="o">&gt;</span><span class="nx">uiClass</span><span class="o">&lt;</span><span class="err">/item&gt;</span>
+            <span class="o">&lt;</span><span class="err">/item&gt;</span>
+        <span class="o">&lt;</span><span class="err">/argument&gt;</span>
+    <span class="o">&lt;</span><span class="err">/container&gt;</span></code></pre></div>
+
+<h2 id="comp_debug">JS UI components debugging</h2>
+<p>This section describes how to define what UI components are used on a particular page and what data they use.</p>
+
+<p>To define the UI components used on a page, you can use browser built-in developer tools, or install addiotionally a plugin, for example Knockout JS context debugger for Google Chrome. </p>
+
+<h3 id="debug-using-browser-built-in-tools">Debug using browser built-in tools</h3>
+<ol>
+  <li>Open the required page in a browser.</li>
+  <li>Select to view the page source.</li>
+  <li>Search for <code>data-bind="scope:</code>. The string after <code>scope</code> is the full name of the component.</li>
+  <li>Open developers tools and in the console tab run <code>require('uiRegistry').get('&lt;full_component_name&gt;')</code>. Where <code>&lt;full_component_name&gt;</code> is the name you defined on the previous step. The name and the configuration of the UI component instance is displayed once the command is executed.</li>
+</ol>
+
+<p>For illustration, let’s find out what UI components are used on the Catalog page in the Admin panel:</p>
+
+<div style="border: 1px solid #ABABAB">
+<img src="/common/images/ui_debug1.png" alt="The catalog page" /> 
+</div>
+
+<p>According to the described procedure, open the page source and search for “<code>data-bind="scope:</code>”</p>
+
+<div style="border: 1px solid #ABABAB">
+<img src="/common/images/ui_debug2.png" alt="searching for data-bind=scope:" />
+</div>
+
+<p>So we find out that the main UI component used on this page is product listing, with <code>product_listing.product_listing</code> as a full name. To see its configuration, child components and data source, in the in the <strong>Console</strong> tab we run <code>require('uiRegistry').get('product_listing.product_listing')</code>:</p>
+
+<div style="border: 1px solid #ABABAB">
+<img src="/common/images/ui_debug3.png" alt="run the command in Console" />
+</div>
+
+<p>And we get the component’s configuration:</p>
+
+<div style="border: 1px solid #ABABAB">
+<img src="/common/images/ui_debug4.png" alt="view the configuration" />
+</div>
+
+<h3 id="debug-using-a-google-chrome-plug-in">Debug using a Google Chrome plug-in</h3>
+
+<ol>
+  <li>Install the Knockout JS context debugger for Google Chrome.</li>
+  <li>Open the required page in Chrome.</li>
+  <li>Point to the requiered element on the page, right-click and select <strong>Inspect Element</strong>. The developer tools panel opens.</li>
+  <li>In the right column of the panel, click the <strong>Knockout context</strong> tab. The tab displays the name and the configuration of the UI component instance.</li>
+</ol>
+
 
 
 		</div>
@@ -692,7 +839,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/ui-components/ui-form.html">Form Component</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/ui-components/ui-form.html">Form Component</a></li>
 									
 								
 								
@@ -767,7 +914,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/ui-components/ui_components_js.html">Using UI components' client-side</a></li>
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/ui-components/ui_components_js.html">Using UI components' client-side</a></li>
 									
 								
 								
