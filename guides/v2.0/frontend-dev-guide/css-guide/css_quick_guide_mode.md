@@ -14,7 +14,7 @@ This topic demonstrates on a practical example how the choice of the mode influe
 
 The first step, creating and applying a theme is done before the compilation mode is chosen, so it is described only once, but is required whatever compilation mode you will further use.
 
-In the examples in this topic the <a href="{{site.gdeurl}}frontend-dev-guide/css-guide/css_quick_guide_approach.md#simple_extend">simplest approach for customizing theme styles</a> is used: changes are done in the `_extend.less` of the new theme. 
+In the examples in this topic the <a href="{{site.gdeurl}}frontend-dev-guide/css-guide/css_quick_guide_approach.html#simple_extend">simplest approach for customizing theme styles</a> is used: changes are done in the `_extend.less` of the new theme. 
 
 In our examples we will change the color and font of the primary buttons. The default view of the primary buttons can be illustrated by the **Create an Account** button view on the Admin login page:
 
