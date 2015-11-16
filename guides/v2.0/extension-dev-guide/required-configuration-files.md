@@ -97,6 +97,6 @@ Keep in mind that you may be able to handle your module&#8217;s configuration so
 
 ##Next
 
-[Component Registration](component-registration.html)
+[Component registration](component-registration.html)
 
 
