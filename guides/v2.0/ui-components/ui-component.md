@@ -5,14 +5,14 @@ subgroup: A_Overview
 title: Overview
 menu_title: Overview
 menu_node: parent
-github_link: uilibrary/ui-library-overview.md
+github_link: ui-components/ui-component.md
 ---
 
 <h2 id="general">Overview of UI components</h2>
 
-Magento UI components are designed for simple and flexible UI rendering. It allows to configure the page manipulating the UI components.
+Magento UI components are designed for simple and flexible UI rendering. They allow you to configure the page manipulating the UI components.
 
-Magento UI components are implemented as a usual module and can be found under Magento\UI namespace.
+Magento UI components are implemented as a standard module and can be found under Magento\UI namespace.
 
 Components are responsible for rendering result page fragments and providing/supporting further interactions of JavaScript components and server.
 

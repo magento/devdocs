@@ -6,7 +6,7 @@ title: Filter Component
 menu_title: Filter Component
 menu_node:
 menu_order: 1
-github_link: uilibrary/ui-secondary-filter.md
+github_link: ui-components/ui-secondary-filter.md
 ---
 
 <h3 id="filter">UI Filter Component</h3>
