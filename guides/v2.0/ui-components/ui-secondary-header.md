@@ -6,7 +6,7 @@ title: Sticky Header Component
 menu_title: Sticky Header Component
 menu_node:
 menu_order: 11
-github_link: uilibrary/ui-secondary-header.md
+github_link: ui-components/ui-secondary-header.md
 ---
 
 <h2 id="filter">Overview</h2>
@@ -88,7 +88,7 @@ The sticky header component consists of the following elements:
 - Constructor: <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/grid/sticky/sticky.js">app/code/Magento/Ui/view/base/web/js/grid/sticky/sticky.js</a>
 - Main template: <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/grid/sticky/sticky.html">app/code/Magento/Ui/view/base/web/templates/grid/sticky/sticky.html</a>
 - Elements' templates:
-	- <a href="{{site.mage2000url}}app/code/Magento/Ui/viewbase/web/templates/grid/sticky/toolbar.html">app/code/Magento/Ui/viewbase/web/templates/grid/sticky/toolbar.html</a>
+	- <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/grid/sticky/toolbar.html">app/code/Magento/Ui/viewbase/web/templates/grid/sticky/toolbar.html</a>
 	- <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/grid/sticky/listing.html">app/code/Magento/Ui/view/base/web/templates/grid/sticky/listing.html</a>
 	- <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/grid/sticky/filters.html">app/code/Magento/Ui/view/base/web/templates/grid/sticky/filters.html</a>
 	- <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/grid/sticky/chips.html">app/code/Magento/Ui/view/base/web/templates/grid/sticky/chips.html</a>

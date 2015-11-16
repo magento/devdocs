@@ -5,7 +5,7 @@ subgroup: B_UI Library Listing/Grid Component
 title: Listing/Grid Component
 menu_title: Listing/Grid Component
 menu_node: parent
-github_link: uilibrary/ui-listing-grid.md
+github_link: ui-components/ui-listing-grid.md
 ---
 
 <h2 id="listing">UI Listing/Grid Component</h2>
@@ -47,6 +47,8 @@ Example configuration of Listing Component instance:
 
 ####Data Source
 
+Data Source is another UI Component that provides data in specific format which is shared among all UI Components. 
+
 The listing component requires the data source to be properly configured and associated with it:
 
 `app/code/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml`
@@ -77,5 +79,3 @@ The listing component requires the data source to be properly configured and ass
     </dataSource>
 </listing>
 {% endhighlight %}
-
-Data Source is another UI Component that provides data in specific format which is shared among all UI Components.

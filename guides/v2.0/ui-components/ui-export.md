@@ -1,11 +1,12 @@
 ---
 layout: default
 group:  UI Library
-subgroup: E_UI Library ExportButton Component
+subgroup: C_Listing/Grid Secondary Components
 title: ExportButton Component
 menu_title: Export Button Component
-menu_node: parent
-github_link: uilibrary/ui-library-components.md
+menu_node:
+menu_order: 12
+github_link: ui-components/ui-export.md
 ---
 
 <h2 id="export">UI ExportButton Component</h2>
