@@ -6,7 +6,7 @@ title: UI-select Component
 menu_title: UI-select Component
 menu_node:
 menu_order: 6
-github_link: uilibrary/ui-secondary-uiselect.md
+github_link: ui-components/ui-secondary-uiselect.md
 ---
 
 <h3 id="uiselect">UI-select component</h3>
