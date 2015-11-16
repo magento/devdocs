@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Migrate from Magento 1 to Magento 2</title>
+	<title>Container Component</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/howdoi/migrate/migrate.html">
+	<link rel="canonical" href="//guides/v2.0/ui-components/ui-container.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Migrate from Magento 1 to Magento 2</h1>
+		<h1 class="page-heading">Container Component</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/howdoi/migrate/migrate.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/ui-components/ui-library-components.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -211,62 +211,9 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="migrate-from-magento-1-to-magento-2">Migrate from Magento 1 to Magento 2</h2>
-<p>Migration to Magento 2 involves four components: data, extensions, themes, and customizations. </p>
+		<h2 id="container">Container Component</h2>
 
-<p>To have a successful migration, use the following guidelines:</p>
-
-<h4>Build and test Magento 2</h4>
-
-<p>To prepare for the migration, make sure you do all of the following:</p>
-
-<ul>
-  <li>Set up a Magento 2.0 system using a topology and design that at least matches your existing Magento 1 system</li>
-  <li>To provide redundancy in the event of unexpected issues, we advise you to replicate your Magento 1.x database and use this Magento 1.x data for your migration</li>
-  <li><a href="/guides/v2.0/install-gde/bk-install-guide.html">Install Magento 2</a> on a system that meets our <a href="/guides/v2.0/install-gde/system-requirements.html">system requirements</a></li>
-</ul>
-
-<h4>Start your migration</h4>
-<ol>
-  <li>Make sure that the <a href="/guides/v2.0/migration/migration-tool.html">Data Migration Tool</a> has a network access to connect to Magento 1 and Magento 2 databases. Open ports in your firewall.</li>
-  <li>Stop all activity in the Magento 1.x Admin Panel (except for order management, such as shipping, creating invoice, credit memos etc.)</li>
-<pre>NOTE: Activity cannot resume until your Magento 2 store goes live.</pre>
-  <li>Stop all Magento 1.x cron jobs.</li> 
-  <li>Use the migration tool to <a href="/guides/v2.0/migration/migration-migrate-settings.html">migrate settings</a> and websites.</li>
-  <li>Copy your Magento 1.x media files to Magento 2.0. (You must copy these manually from <code>&lt;magento1-root&gt;/media</code> to <code>&lt;magento2-root&gt;/pub/media</code>)</li> 
-  <li>Use Data Migration Tool to <a href="/guides/v2.0/migration/migration-migrate-data.html">migrate your data</a> from Magento 1 database to Magento 2 database. If some of your extensions have data you want to migrate, you might need to install these extensions adapted for Magento 2. In case the extensions have a different structure in Magento 2 database, use the mapping files provided with the Data Migration Tool.</li>
-  <li>Use the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex">magento indexer:reindex</a> command to reindex all indexers.</li>
-  <li>Thoroughly test your Magento 2.0 site.</li>
-</ol>
-
-<h4>Incremental updates</h4>
-
-<p>Now that you’ve migrated your data, you must incrementally capture data updates that are added in Magento 1 store (such as new orders, reviews and changes in customer profiles) and migrate it to Magento 2 store.</p>
-
-<ul>
-  <li>Start the <a href="/guides/v2.0/migration/migration-migrate-delta.html">incremental migration</a>; updates run continually. 
-You can stop the updates at any time by pressing CTRL+C</li>
-  <li>Test your Magento 2 site during this time so you can catch any issues as soon as possible.
-In case you find any issues, press Control+C to stop incremental migration and start it again after issues are resolved</li>
-</ul>
-
-<h4>Go live</h4>
-
-<p>Now that your Magento 2 site is up-to-date with Magento 1 and is functioning normally, do the following to cut over to the new site:</p>
-
-<ol>
-  <li>Put your Magento 1 system in maintenance mode (DOWNTIME STARTS).</li>
-  <li>Press Control+C in the migration tool command window to stop incremental updates.</li>
-  <li>Start your Magento 2 cron jobs.</li>
-  <li>In your Magento 2 system, reindex the stock indexer using the command <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex"><code>magento indexer:reindex cataloginventory_stock</code></a>.</li>
-  <li>Using a tool of your choice, hit pages in your Magento 2 system to cache pages in advance of customers using your storefront.</li>
-  <li>Perform any final verification of your Magento 2 site.</li>
-  <li>Change DNS, load balancers, and so on to point to new production hardware (DOWNTIME ENDS) </li>
-  <li>Magento 2 store is ready to use. You and Your customers can resume all activities.</li>
-</ol>
-
-<p>For full information please see the complete <a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a></p>
-
+<p>This topic is planned for the near future.</p>
 
 
 		</div>
@@ -277,6 +224,9 @@ In case you find any issues, press Control+C to stop incremental migration and s
 <aside class="sidebar">
 	<div class="sidebar-wrapper">
 
+
+
+<h4>UI Components</h4>
 
 
 
@@ -358,24 +308,54 @@ In case you find any issues, press Control+C to stop incremental migration and s
 			
 				
 				
-					
-					
-					
-					
-					
-					
-						
-						
-						
-						
-							
-							
-								<li class="q "><a href="/guides/v2.0/howdoi/howdoi_template.html"></a></li>
+			
+			
 				
-							
-							
-						
-
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+					
+					
+					
+					
 					
 					
 						
@@ -389,57 +369,7 @@ In case you find any issues, press Control+C to stop incremental migration and s
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/howdoi/bk-how-do-i.html">How do I...?</a></li>
-									
-								
-								
-									
-							
-								
-								
-								
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/howdoi/howdoi_contribute.html">Contributor sign-up sheet</a></li>
-									
-								
-								
-									
-							
-								
-								
-								
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/howdoi/install/install-topics.html">Installation and configuration</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/ui-components/ui-component.html">Overview</a></li>
 									
 								
 								
@@ -464,7 +394,161 @@ In case you find any issues, press Control+C to stop incremental migration and s
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/howdoi/frontend/front-js.html">JavaScript development</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/ui-components/ui-listing-grid.html">Listing/Grid Component</a></li>
+									
+								
+								
+									
+							
+								
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/ui-components/ui-listing-grid-search.html">Grid search indexing</a></li>
+
+									
+						
+								
+								
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/ui-components/ui-secondary.html">Listing/Grid Secondary Components</a></li>
+									
+								
+								
+									
+							
+								
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/ui-components/ui-secondary-filter.html">Filter Component</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/ui-components/ui-secondary-pagination.html">Pagination Component</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/ui-components/ui-secondary-massaction.html">MassAction Component</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/ui-components/ui-secondary-treemass.html">TreeMassAction Component</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/ui-components/ui-secondary-column.html">Column Component</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/ui-components/ui-secondary-uiselect.html">UI-select Component</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/ui-components/ui-secondary-multi.html">Multiselect Component</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/ui-components/ui-secondary-inline.html">Inline Edit Component</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/ui-components/ui-secondary-bookmark.html">Bookmark Component</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/ui-components/ui-secondary-resize.html">Resize Component</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/ui-components/ui-secondary-header.html">Sticky Header Component</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/ui-components/ui-export.html">Export Button Component</a></li>
+
+									
+						
+								
+								
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/ui-components/ui-form.html">Form Component</a></li>
 									
 								
 								
@@ -489,7 +573,7 @@ In case you find any issues, press Control+C to stop incremental migration and s
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/howdoi/frontend/front-layout.html">Layout development</a></li>
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/ui-components/ui-container.html">Container Component</a></li>
 									
 								
 								
@@ -514,82 +598,7 @@ In case you find any issues, press Control+C to stop incremental migration and s
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/howdoi/mtf/mtf.html">Magento test development</a></li>
-									
-								
-								
-									
-							
-								
-								
-								
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-
-
-								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/howdoi/migrate/migrate.html">Migrate from Magento 1 to Magento 2</a></li>
-									
-								
-								
-									
-							
-								
-								
-								
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/howdoi/php/php_devs.html">PHP Development</a></li>
-									
-								
-								
-									
-							
-								
-								
-								
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/howdoi/frontend/front-theme.html">Theme development</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/ui-components/ui-definition.html">definition.xml</a></li>
 									
 								
 								
@@ -604,50 +613,6 @@ In case you find any issues, press Control+C to stop incremental migration and s
 					
 
 
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
 				
 			
 			
