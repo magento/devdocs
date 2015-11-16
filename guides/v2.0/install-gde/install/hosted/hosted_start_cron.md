@@ -1,6 +1,6 @@
 ---
 layout: default
-group: install_hosted
+group: 
 subgroup: 02_config-hosted
 title: Set up scheduled tasks (cron)
 menu_title: Set up scheduled tasks (cron)

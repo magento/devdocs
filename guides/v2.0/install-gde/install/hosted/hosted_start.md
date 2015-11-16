@@ -16,7 +16,7 @@ If your hosted system is already set up, go to <a href="{{ site.gdeurl }}install
 
 #### Contents
 *	<a href="#newbie-verify">Verify the software on your system</a>
-*	<a href="#newbie-cpanel">Start the cPanel configuration utility</a>
+<!-- *	<a href="#newbie-cpanel">Start the cPanel configuration utility</a> -->
 *	<a href="{{ site.gdeurl }}install-gde/newbie/hosted_start_db.html">Configure a database and a database user</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/hosted/hosted_start_php.html">Configure PHP</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/hosted/hosted_get-ftp.html">Transfer the Magento software to your hosted system</a>
@@ -36,11 +36,14 @@ Magento requires the following software to run:
 
 For complete details, see <a href="{{ site.gdeurl }}install-gde/system-requirements.html">System requirements</a>.
 
-<h2 id="newbie-cpanel">Start the cPanel configuration utility</h2>
+#### Next step
+<a href="{{ site.gdeurl }}install-gde/install/hosted/hosted_start_db.html">Configure a database and a database user</a>
+
+<!-- <h2 id="newbie-cpanel">Start the cPanel configuration utility</h2>
 To start configuring your hosted system:
 
 1.	Log in with your provided credentials.
 2.	On the first page, in the Web Hosting row, click **Manage**.
 3.	If necessary, log in to cPanel.
-
+ -->
 

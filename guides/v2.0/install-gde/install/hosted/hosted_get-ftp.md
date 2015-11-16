@@ -35,7 +35,7 @@ To transfer the Magento archive:
 
 	Follow the prompts on your screen or consult the documentation provided with your FTP software for more information.
 
-3.	After you log in to your managed server, browse to locate `magento2-ce.zip` or `magento2-ee.zip` on your local system.
+3.	After you log in to your managed server, browse to locate the Magento archive on your local system.
 
 	On the remote system, browse to locate the `public_html` directory.
 
@@ -59,7 +59,7 @@ To extract the archive:
 
 3.	Click **Web Root**.
 
-	<img src="{{ site.baseurl }}common/images/install-merch_file-manager-setup.png">
+	<img src="{{ site.baseurl }}common/images/install-merch_file-manager-setup.png" width="550px">
 
 4.	Click **Go**.
 
@@ -68,10 +68,13 @@ To extract the archive:
 3.	Right-click the Magento archive in the **public_html** directory.
 4.	From the pop-up menu, click **Extract** as the following figure shows.
 
-	<img src="{{ site.baseurl }}common/images/install-merch_file-manager-window.png">
+	<img src="{{ site.baseurl }}common/images/install-merch_file-manager-window.png" width="750px">
 5.	Click **Extract Files**.
-5.	Wait while the archive extracts to either a `magento2-ce` or `magento2-ee` subdirectory, depending on which Magento edition you have.
+5.	Wait while the archive extracts.
 
 	The following figure shows an example of an extracted archive.
 
-	<img src="{{ site.baseurl }}common/images/install-merch_file-manager-after.png">
+	<img src="{{ site.baseurl }}common/images/install-merch_file-manager-after.png" width="750px">
+
+#### Next step
+<a href="{{ site.gdeurl }}install-gde/install/hosted/hosted_install.html">Install the Magento software</a>

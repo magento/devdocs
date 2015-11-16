@@ -43,5 +43,3 @@ Archives are available in the following formats: `.zip`, `.tar.gz2`, `.tar.gz`
 </tbody>
 </table>
 
-#### Next step
-<a href="{{ site.gdeurl }}install-gde/prereq/zip_install.html">Install the Magento archive on your server</a>

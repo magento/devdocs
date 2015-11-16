@@ -36,7 +36,7 @@ Consult the following table for how to get started.
 		<td><p>Shared hosting, easy installation, no command line access</p></td>
 		<td><p>Uses a hosting provider, has very little technical expertise, limited if any access to the Magento server.</p></td>
 		<td><ol><li>Downloads a compressed file that contains the Magento software.</li>
-			<li>Extracts it on the Magento server or asks a network administrator or hosting provider to do so.</li>
+			<li>Extracts it on the Magento server.</li>
 			<li>Installs the Magento software using the Setup Wizard.</li></ol>
 		</td>
 		<td><p><a href="{{ site.gdeurl }}install-gde/install/hosted/hosted_start.html">Easy installation (shared hosting)</a></p></td>
