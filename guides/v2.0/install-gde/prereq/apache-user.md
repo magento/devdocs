@@ -112,6 +112,11 @@ A sample result follows:
 
 	magento_user : apache
 
+To complete the task, restart the web server:
+
+*	Ubuntu: `service apache2 restart`
+*	CentOS: `service apache restart`
+
 <h3 id="install-update-depend-user-share-groups">Put each user in the other's group</h3>
 An alternative to setting up group membership is to put the web server user in the Magento file system owner's group and vice versa. To put each user in the other's group, as a user with `root` privileges, enter the following command for each of the two users:
 
@@ -133,6 +138,11 @@ Example:
 
 	groups magento_user
 	magento_user : magento_user apache
+
+To complete the task, restart the web server:
+
+*	Ubuntu: `service apache2 restart`
+*	CentOS: `service apache restart`
 
 <h2 id="install-update-depend-user-switch">Switch to the Magento file system owner</h2>
 After you've performed the other tasks in this topic, enter one of the following commands to switch to that user:

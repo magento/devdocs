@@ -28,5 +28,5 @@ If you haven't already installed optional sample data, you can <a href="{{ site.
 *	*Contributing developers only*: <a href="{{ site.gdeurl }}install-gde/cli/dev_options.html">Contributing developers&mdash;update, reinstall Magento</a>
 
 ### Configure
-<a href="#">TBD</a>
+<a href="{{ site.gdeurl }}install-gde/install/post-install-config.html">Configure the Magento application</a>.
 

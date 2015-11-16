@@ -34,17 +34,30 @@ For example,
 
 A text editor displays. Enter the following:
 
-	*/1 * * * * php <your Magento install dir>/bin/magento cron:run &
-	*/1 * * * * php <your Magento install dir>/update/cron.php &
-	*/1 * * * * php <your Magento install dir>/bin/magento setup:cron:run &
+	*/1 * * * * php -c <ini-file-path> <your Magento install dir>/bin/magento cron:run 
+	*/1 * * * * php -c <ini-file-path> <your Magento install dir>/update/cron.php 
+	*/1 * * * * php -c <ini-file-path> <your Magento install dir>/bin/magento setup:cron:run 
 
-The first line enables cron for general use (reindexing, e-mails, and so on). The other lines run cron for the <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade utilities</a>.
+where `<ini-file-path>` is the path to a `php.ini` file to use for the cron job. To see a list of all `php.ini` files on your system, enter
 
-For example, if you installed Magento in `/var/www/html/magento2`, enter
+	php -i | grep php.ini
 
-	*/1 * * * * php /var/www/html/magento2/bin/magento cron:run &
-	*/1 * * * * php /var/www/html/magento2/update/cron.php &
-	*/1 * * * * php /var/www/html/magento2/bin/magento setup:cron:run &
+A sample result follows:
+
+	Configuration File (php.ini) Path => /etc/php5/cli // this is your PHP command-line .ini file
+	Loaded Configuration File => /etc/php5/cli/php.ini // this is the .ini file used by the web server
+
+(To confirm which `.ini` file the web server uses, create a <a href="{{ site.gdeurl }}install-gde/prereq/optional.html#install-optional-phpinfo">`phpinfo.php` file</a>.)
+
+The first command (`magento cron:run`) reindexes indexers, send automated e-mails, generates the sitemap, and so on. Usually it's associated with the PHP command line `.ini` file.
+
+The other commands are used by the <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade utilities</a>. Those command must use the web server's `php.ini`.
+
+For example, if you installed Magento in `/var/www/html/magento2` and all commands use the web server's `php.ini`, enter
+
+	*/1 * * * * php -c /etc/php5/cli/apache2 /var/www/html/magento2/bin/magento cron:run 
+	*/1 * * * * php -c /etc/php5/cli/apache2 /var/www/html/magento2/update/cron.php 
+	*/1 * * * * php -c /etc/php5/cli/apache2 /var/www/html/magento2/bin/magento setup:cron:run 
 
 <h3 id="post-install-secy">Security settings</h3>
 After installation, we recommend the following:

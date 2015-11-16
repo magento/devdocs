@@ -20,7 +20,6 @@ github_link: install-gde/install/hosted/hosted_get-ftp.md
 2.	Set up the File Transfer Protocol (FTP) to your hosted system.
 3.	Upload the archive to your system using FTP.
 4.	Extract the archive.
-4.	Set permissions (?? TBD)
 
 {% include install/get-software_zip.md %}
 
