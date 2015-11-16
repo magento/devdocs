@@ -6,7 +6,7 @@ title: Bookmark Component
 menu_title: Bookmark Component
 menu_node:
 menu_order: 9
-github_link: uilibrary/ui-secondary-bookmark.md
+github_link: ui-components/ui-secondary-bookmark.md
 ---
 
 <h3 id="bookmark">UI Bookmark component</h3>

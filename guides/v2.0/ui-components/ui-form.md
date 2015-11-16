@@ -5,7 +5,7 @@ subgroup: D_UI Library Form Component
 title: Form Component
 menu_title: Form Component
 menu_node: parent
-github_link: uilibrary/ui-library-components.md
+github_link: ui-components/ui-form.md
 ---
 
 * TOC
