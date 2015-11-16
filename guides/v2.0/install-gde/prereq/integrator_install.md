@@ -18,7 +18,8 @@ github_link: install-gde/prereq/integrator_install.md
 *	<a href="#integrator-first-over">First steps</a>
 *	<a href="#instgde-overview-composer">Composer and Magento</a>
 *	<a href="#instgde-prereq-compose-install">Install Composer</a>
-*	<a href="#integrator-first-composer">Get the metapackage</a>
+*	<a href="#integrator-first-composer-ce">Get the Magento CE metapackage</a>
+*	<a href="#integrator-first-composer-ee">Get the Magento EE metapackage</a>
 *	<a href="#instgde-prereq-compose-access">Set file system ownership and permissions</a>
 
 <h2 id="int-aud">Intended audience</h2>
@@ -34,21 +35,27 @@ To do so, you start by creating a Composer project from our metapackage. The met
 
 {% include install/composer-clone.md %}
 
-<h2 id="integrator-first-composer">Get the metapackage</h2>
+<h2 id="integrator-first-composer-ce">Get the Magento CE metapackage</h2>
 To get started:
 
 1.	Log in to your Magento server as, or switch to, a user who has privileges to write to the web server docroot.
 2.	Change to the web server docroot directory, or to a directory you've configured as a virtual host docroot.
-3.	*Magento CE*. Enter the following command:
+3.	Enter the following command:
 
 		composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition  <installation directory name>
 
-	When prompted, enter your magento.com user name and password. (This is the same user name and password you used to register with Magento. You use it to log in to your My Account page at magento.com.)
+	When prompted, enter your <a href="http://www.magento.com" target="_blank">magento.com</a> user name and password. (This is the same user name and password you used to register with Magento. You use it to log in to your My Account page at magento.com.)
 
-	This command creates the project and downloads dependencies for it. The project is in a directory named `<installation directory name>` if you provided the parameter or `product-community-edition` if you did not.
+	This command creates the project and downloads dependencies for it. The project is in a directory named `<installation directory name>` if you provided the parameter or `project-community-edition` if you did not.
 
+4.	Continue with <a href="#instgde-prereq-compose-access">Set file system ownership and permissions</a>.
 
-4.	*Magento EE*. Enter the following command:
+<h2 id="integrator-first-composer-ee">Get the Magento EE metapackage</h2>
+To get started:
+
+1.	Log in to your Magento server as, or switch to, a user who has privileges to write to the web server docroot.
+2.	Change to the web server docroot directory, or to a directory you've configured as a virtual host docroot.
+3.	Enter the following command:
 
 		composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition  <installation directory name>
 
@@ -58,7 +65,7 @@ To get started:
 
 		  Could not find package magento/project-enterprise-edition with version 2.0.0-rc2.
 
-	This command creates the project and downloads dependencies for it. The project is in a directory named `<installation directory name>` if you provided the parameter or `product-community-edition` if you did not.
+	This command creates the project and downloads dependencies for it. The project is in a directory named `<installation directory name>` if you provided the parameter or `project-community-edition` if you did not.
 
 5.	Continue with the next section.
 
