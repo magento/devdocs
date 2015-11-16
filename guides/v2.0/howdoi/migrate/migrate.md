@@ -6,7 +6,7 @@ title: Migrate from Magento 1 to Magento 2
 menu_title: Migrate from Magento 1 to Magento 2
 menu_node: parent
 menu_order: 1
-github_link: howdoi/migration/migrate.md
+github_link: howdoi/migrate/migrate.md
 ---
 
 ## Migrate from Magento 1 to Magento 2

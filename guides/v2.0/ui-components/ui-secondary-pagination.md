@@ -6,7 +6,7 @@ title: Pagination Component
 menu_title: Pagination Component
 menu_node:
 menu_order: 2
-github_link: uilibrary/ui-secondary-pagination.md
+github_link: ui-components/ui-secondary-pagination.md
 ---
 
 <h3 id="pagination">UI Pagination Component</h3>
