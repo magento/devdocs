@@ -120,5 +120,5 @@ This file overrides the <code>_buttons.less</code> of the parent theme.
 <ul>
 <li><a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css_debug.html" target="_blank">Styles debugging</a></li>
 <li><a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">CSS preprocessing</a></li>
-<li><a href="{{site.gdeurl}}http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/css-topics/theme-ui-lib.html" target="_blank">Magento UI library</a></li>
+<li><a href="{{site.gdeurl}}frontend-dev-guide/css-topics/theme-ui-lib.html" target="_blank">Magento UI library</a></li>
 </ul>

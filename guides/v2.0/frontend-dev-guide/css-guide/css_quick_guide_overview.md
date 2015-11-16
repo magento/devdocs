@@ -23,7 +23,7 @@ This chapter combines the topics aiming to help you to quickly start working wit
 	- Detailed description: <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css_debug.html">Styles debugging</a> 
 	- Practical illustration: <a href="{{site.gdeurl}}frontend-dev-guide/css-guide/css_quick_guide_mode.html">Simple style changes with client-side LESS compilation vs. server-side</a> 
 4. Customize styles. To learn how, check out the following sources:
-	- <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/frontend-dev-guide/css-topics/css-overview.html">CSS chapter of this book</a>
+	- <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css-overview.html">CSS chapter of this book</a>
 	- <a href="{{site.gdeurl}}frontend-dev-guide/css-guide/css_quick_guide_approach.html">Simple ways to customize a theme's styles</a>
 
 <h2>Why do you need to create a custom theme?</h2>
@@ -41,6 +41,6 @@ But if there is something you want to improve, the only recommended way is creat
 Making changes in the Magento out-of-the-box themes is a bad idea, because can result in your changes being overwritten during upgrade.
 
 <h2>Related topics</h2>
-- <a href="{{site.gdeurl}}http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/css-topics/css-overview.html"> CSS in Magento themes</a>
+- <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css-overview.html"> CSS in Magento themes</a>
 - <a href="{{site.gdeurl}}frontend-dev-guide/css-guide/css_quick_guide_approach.html">Simple ways to customize a theme's styles</a>
 - <a href="{{site.gdeurl}}frontend-dev-guide/css-guide/css_quick_guide_mode.html">Simple style changes with client-side LESS compilation vs. server-side</a>
