@@ -5,7 +5,7 @@ subgroup: C_Listing/Grid Secondary Components
 title: Listing/Grid Secondary Components
 menu_title: Listing/Grid Secondary Components
 menu_node: parent
-github_link: uilibrary/ui-library-secondary.md
+github_link: ui-components/ui-secondary.md
 ---
 
 <h3>UI Listing/Grid Secondary Components</h3>

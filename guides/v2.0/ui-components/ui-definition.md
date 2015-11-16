@@ -5,7 +5,7 @@ subgroup: G_UI definition.xml
 title: definition.xml
 menu_title: definition.xml
 menu_node: parent
-github_link: uilibrary/ui-library-components.md
+github_link: ui-components/ui-definition.md
 ---
 
 <h2 id="example">definition.xml</h2>
