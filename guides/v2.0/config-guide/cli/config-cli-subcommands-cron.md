@@ -65,50 +65,7 @@ This section discusses how to run all Magento cron jobs every minute, which is t
 
 Run Magento cron jobs as the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-over">Magento file system owner</a>. 
 
-To create a cron job as the Magento file system owner:
-
-Create or edit a crontab for the Magento file system owner:
-
-	crontab -u <Magento file system owner user name> -e
-
-A text editor displays. (You might need to choose a text editor first.)
-
-In the editor, enter the following:
-
-	crontab -u <magento file system owner> -e
-
-For example,
-
-	crontab -u magento_user -e
-
-A text editor displays. Enter the following:
-
-	*/1 * * * * php -c <ini-file-path> <your Magento install dir>/bin/magento cron:run 
-	*/1 * * * * php -c <ini-file-path> <your Magento install dir>/update/cron.php 
-	*/1 * * * * php -c <ini-file-path> <your Magento install dir>/bin/magento setup:cron:run 
-
-where `<ini-file-path>` is the path to a `php.ini` file to use for the cron job. To see a list of all `php.ini` files on your system, enter
-
-	php -i | grep php.ini
-
-A sample result follows:
-
-	Configuration File (php.ini) Path => /etc/php5/cli // this is your PHP command-line .ini file
-	Loaded Configuration File => /etc/php5/cli/php.ini // this is the .ini file used by the web server
-
-(To confirm which `.ini` file the web server uses, create a <a href="{{ site.gdeurl }}install-gde/prereq/optional.html#install-optional-phpinfo">`phpinfo.php` file</a>.)
-
-The first command (`magento cron:run`) reindexes indexers, send automated e-mails, generates the sitemap, and so on. Usually it's associated with the PHP command line `.ini` file.
-
-The other commands are used by the <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade utilities</a>. Those command must use the web server's `php.ini`.
-
-For example, if you installed Magento in `/var/www/html/magento2` and all commands use the web server's `php.ini`, enter
-
-	*/1 * * * * php -c /etc/php5/cli/apache2 /var/www/html/magento2/bin/magento cron:run 
-	*/1 * * * * php -c /etc/php5/cli/apache2 /var/www/html/magento2/update/cron.php 
-	*/1 * * * * php -c /etc/php5/cli/apache2 /var/www/html/magento2/bin/magento setup:cron:run 
-
-Save your changes to the crontab and exit the editor.
+{% include config/setup-cron.md %}
 
 <h2 id="config-cli-cron-group">Configure and run cron using the command line</h2>
 This section discusses how to run cron at any time using the command line. You can optionally configure a cron group for a custom module as discussed in the next section.

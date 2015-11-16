@@ -19,47 +19,14 @@ Now that you've finished installing the Magento application, you need to configu
 *	<a href="#post-install-server">Server settings</a>
 *	<a href="#post-install-ee">Settings for Magento Enterprise Edition (EE) only</a>
 
-<h3 id="post-install-cron">Set up cron</h3>
+<h2 id="post-install-cron">Set up cron</h2>
 cron&mdash;the UNIX task scheduler&mdash;is critical to Magento's day-to-day operations. It schedules things like reindexing, newsletters, e-mails, sitemaps, and so on.
 
 Immediately after finishing your Magento installation, set up a *crontab* for the Magento file system owner.
 
-As a user with `root` privileges, enter the following command:
+{% include config/setup-cron.md %}
 
-	crontab -u <magento file system owner> -e
-
-For example,
-
-	crontab -u magento_user -e
-
-A text editor displays. Enter the following:
-
-	*/1 * * * * php -c <ini-file-path> <your Magento install dir>/bin/magento cron:run 
-	*/1 * * * * php -c <ini-file-path> <your Magento install dir>/update/cron.php 
-	*/1 * * * * php -c <ini-file-path> <your Magento install dir>/bin/magento setup:cron:run 
-
-where `<ini-file-path>` is the path to a `php.ini` file to use for the cron job. To see a list of all `php.ini` files on your system, enter
-
-	php -i | grep php.ini
-
-A sample result follows:
-
-	Configuration File (php.ini) Path => /etc/php5/cli // this is your PHP command-line .ini file
-	Loaded Configuration File => /etc/php5/cli/php.ini // this is the .ini file used by the web server
-
-(To confirm which `.ini` file the web server uses, create a <a href="{{ site.gdeurl }}install-gde/prereq/optional.html#install-optional-phpinfo">`phpinfo.php` file</a>.)
-
-The first command (`magento cron:run`) reindexes indexers, send automated e-mails, generates the sitemap, and so on. Usually it's associated with the PHP command line `.ini` file.
-
-The other commands are used by the <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade utilities</a>. Those command must use the web server's `php.ini`.
-
-For example, if you installed Magento in `/var/www/html/magento2` and all commands use the web server's `php.ini`, enter
-
-	*/1 * * * * php -c /etc/php5/cli/apache2 /var/www/html/magento2/bin/magento cron:run 
-	*/1 * * * * php -c /etc/php5/cli/apache2 /var/www/html/magento2/update/cron.php 
-	*/1 * * * * php -c /etc/php5/cli/apache2 /var/www/html/magento2/bin/magento setup:cron:run 
-
-<h3 id="post-install-secy">Security settings</h3>
+<h2 id="post-install-secy">Security settings</h2>
 After installation, we recommend the following:
 
 *	Make sure your file ownership and permissions are set properly
@@ -68,12 +35,12 @@ After installation, we recommend the following:
 *	Take precautions against cross-site scripting (XSS) by <a href="{{ site.gdeurl }}frontend-dev-guide/templates/template-security.html">securing your templates</a>
 <!-- Set up roles and restricted users (Admin) -->
 
-<h3 id="post-install-rewrites">Enable Apache server rewrites</h3>
+<h2 id="post-install-rewrites">Enable Apache server rewrites</h2>
 If you use the Apache web server, you must enable server rewrites for pages to display properly. Otherwise, you'll see pages without styles and other issues.
 
 <a href="{{ site.gdeurl }}install-gde/prereq/apache.html#apache-help-rewrite">Section on Apache server rewrites</a>
 
-<h3 id="post-install-server">Server settings</h3>
+<h2 id="post-install-server">Server settings</h2>
 This section briefly discusses settings we recommend you consider for the server on which Magento runs. Some of these settings are not directly related to Magento; these are provided as suggestions only.
 
 #### Log rotation
@@ -107,7 +74,7 @@ Magento requires an e-mail server. We don't recommend a particular server but yo
 *	Postfix for CentOS (<a href="https://www.digitalocean.com/community/tutorials/how-to-install-postfix-on-centos-6" target="_blank">digitalocean tutorial</a>, <a href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/ch-email.html" target="_blank">CentOS documentation</a>)	
 *	Postfix for Ubuntu (<a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-setup-postfix-on-ubuntu-14-04" target="_blank">digitalocean tutorial</a>, <a href="https://help.ubuntu.com/community/MailServer" target="_blank">Ubuntu documentation</a>)
 
-<h3 id="post-install-ee">Settings for Magento Enterprise Edition (EE) only</h3>
+<h2 id="post-install-ee">Settings for Magento Enterprise Edition (EE) only</h2>
 <img src="{{ site.baseurl }}common/images/ee-only_large.png">
 
 You can configure the following only if you use Magento EE:

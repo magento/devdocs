@@ -31,6 +31,7 @@ MySQL 5.6 (Oracle or Percona)
 
 *	5.6.x
 *	5.5.x 
+*	7 (Magento has been tested with <a href="http://php.net/archive/2015.php" target="_blank">Release Candiate 7</a>&mdash;currently the most recent)
 
 Documentation: <a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html" target="_blank">CentOS</a>, <a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html" target="_blank">Ubuntu</a>
 
