@@ -99,7 +99,7 @@ A *cron group* is a logical group that enables you to easily run cron for more t
 
 If you're implementing cron for a custom module, it's your choice of whether or not to use the `default` group or a different group.
 
-To configure a cron group for your module, create `<your module base dir>/<vendorname>/module-<name>/etc/crontab.xml` with the following contents:
+To configure a cron group for your module, create `<your component base dir>/<vendorname>/module-<name>/etc/crontab.xml` with the following contents:
 
 	<config>
     	<group id="<group_name>">

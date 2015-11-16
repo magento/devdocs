@@ -41,8 +41,8 @@ This section discusses how configuration files are loaded and merged.
 Magento loads configuration files in the following order (all paths are relative to your Magento installation directory):
 
 * Primary configuration (`app/etc/di.xml`). This file is used to bootstrap Magento.
-* Global configurations from modules (`<your module base dir>/<vendorname>/<component-type>-<component-name>/etc/*.xml`). Collects certain configuration files from all modules and merges them together.
-* Area-specific configuration from modules (`<your module base dir>/<vendorname>/<component-type>-<component-name>/etc/<area>/*.xml`). Collects configuration files from all modules and merges them into the global configuration. Some area-specific configurations can override or extend the global configuration.
+* Global configurations from modules (`<your component base dir>/<vendorname>/<component-type>-<component-name>/etc/*.xml`). Collects certain configuration files from all modules and merges them together.
+* Area-specific configuration from modules (`<your component base dir>/<vendorname>/<component-type>-<component-name>/etc/<area>/*.xml`). Collects configuration files from all modules and merges them into the global configuration. Some area-specific configurations can override or extend the global configuration.
 
 {% include vendor/types-def.md %}
 
