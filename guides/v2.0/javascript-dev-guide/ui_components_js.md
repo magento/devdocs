@@ -22,15 +22,13 @@ The topic covers the following:
 
 ## UI components' configuration {#config}
 
-Component's behavior, configuration and structure is defined by the following:
+A UI component's behavior, configuration and structure is defined by the following:
 
  - The available configuration options and methods for components of a certain type, defined in the component's .js file.
 
- - The actual configuration and structure of a particular component, specified in the component's `.xml` configuration, in the scope of the `<argument></argument>` node. The configuration file also extends properties, configures template and component file.
+ - The actual configuration and structure of a particular component, specified in the component's configuration `.xml` file, in the scope of the `<argument></argument>` node. The configuration file also extends properties, specifies the component'stemplate and the path to the component's `.js` file.
 
-<p class="q">What is meant by "configure template and component file"? it's clear about the template, but not about the file. The phrase is taken from your internal doc</p>
-
-All these properties, options, and methods are available in component template's scope.
+All these properties, options, and methods are available in the component template's scope.
 
 
 ## Most important UI components' properties {#main_properties}
@@ -39,7 +37,7 @@ The most important client-side properties of a UI component are the following:
  - `component`: the path to the component's `.js` file in terms of RequireJS.
 
 Example:
-The `.js` file of the bookmark component is [app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js]({{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js) 
+The `.js` file of the bookmark component is [Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js]({{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js) 
 
 So the `component` property is set in the `.xml` configuration file like following:
 
@@ -53,7 +51,7 @@ So the `component` property is set in the `.xml` configuration file like followi
 
 Example:
 
-The `.html` template of the bookmarks component is [app/code/Magento/Ui/view/base/web/templates/grid/controls/bookmarks/bookmarks.html]({{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/grid/controls/bookmarks/bookmarks.html). 
+The `.html` template of the bookmarks component is [Magento/Ui/view/base/web/templates/grid/controls/bookmarks/bookmarks.html]({{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/grid/controls/bookmarks/bookmarks.html). 
 
 {% highlight xml%}
 <argument name="data" xsi:type="array">
@@ -61,9 +59,9 @@ The `.html` template of the bookmarks component is [app/code/Magento/Ui/view/bas
 </argument>
 {% endhighlight xml%}
 
- - children: is a general name for the nested components for a property. Children can be specified in the `.xml` configuration of a property (all nodes except `<argument/>` and `<dataSource/>` are considered children) and in the Knockout JS templates: children are the keys of the `elems` property.
+ - children: is a general name for the nested components of a certain component. Children can be specified in the `.xml` configuration of the parent component (all nodes except `<argument/>` and `<dataSource/>` are considered children) and in the Knockout JS templates: children are the keys of the `elems` property.
 
- - `name`: the name of the component specified in the `.xml` configuration file of the root UI component. In the run-time in a browser this value is transformed to a complex string. This string represents hierarchy of components in the run-time.
+ - `name`: the name of the component specified in the `.xml` configuration file of the parent UI component. In the run-time in a browser this value is transformed to a complex string. This string represents hierarchy of components in the run-time.
 For example, (`app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_listing.xml:57`)[{{site.mage2000url}}app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_listing.xml#L57]:
 
 {%highlight xml%} 
@@ -74,7 +72,7 @@ In the run-time `columns_controls` is transformed to the following string: `cms_
 
 This string is constructed from the following values:
 
- - `cms_block_listing.cms_block_listing`: - name of root component constructed with name of cms_block_listing.xml 
+ - `cms_block_listing.cms_block_listing`: - the full name of the root component.
  - `listing_top`: the value of the `name` attribute of the parent `<container name="listing_top">` component. 
  - `columns_controls` - the value of the `name` attribute of the component itself.
 
@@ -98,7 +96,9 @@ Example of setting `exports` in a component's `.js` file:
 }
 {% endhighlight js%}
 
-Example of using `exports` in a component's configuration `.xml` file:
+Here `visible` is the `key`, `${ $.provider }.visibility` is the `value`.
+
+Example of setting `exports` in a component's configuration `.xml` file:
 
 {% highlight xml%}
 <argument name="data" xsi:type="array">
@@ -109,6 +109,8 @@ Example of using `exports` in a component's configuration `.xml` file:
        </item>
 </argument>
 {% endhighlight xml%}
+
+In this example, `visible` is the `key`, `sample_config.sample_provider.visibility` is the `value`.
 
 - `imports`: used for tracking changes of an external entity property. `imports`'s value is an object, composed of the following:
 
@@ -125,8 +127,6 @@ Example of using `imports` in a component's `.js` file:
 }
 {% endhighlight js%}
 
-Here `visible` is the `key`, `${ $.provider }.visibility` is the `value`.
-
 Example of using `imports` in a component's configuration `.xml` file:
 
 {% highlight xml%}
@@ -139,12 +139,11 @@ Example of using `imports` in a component's configuration `.xml` file:
 </argument>
 {% endhighlight xml%}
 
-In this example, `visible` is the `key`, `sample_config.sample_provider.visibility` is the `value`.
 
 - `links`: used for mutual tracking property changes. `links`'s value is an object, composed of the following:
 
   - `key`: name of the internal property or method which sends and receives the notifications. 
-  - `value` - name of the internal property or method which sends and receives the notifications. CAn use string templates.
+  - `value` - name of the property or method which sends and receives the notifications. Can use string templates.
 
 Example of using `links` in a component's `.js` file:
 
@@ -168,8 +167,8 @@ Example of using `links` in a component's configuration `.xml` file:
 </argument>
 {% endhighlight xml%}
 
-- `listens`
-  - `key` - name of the property which listens to the changes.
+- `listens`: used to track the changes of a component's proporty.
+  - `key` - name of the internal property which listens to the changes.
   - `value` - name of the property or method which is tracked for changes. Can use string templates.
 
 Example of using `listens` in a component's `.js` file :
@@ -197,7 +196,29 @@ Example of using `listens` in a component's configuration `.xml` file:
 
 ## Frequently used additional components {#comp_additional}
 This section is a brief description of the most frequently used additional UI components.
-All the component described in this section are aliases in terms of RequireJS. So they can be directly requested in the component's `.js` file or used in the component's configuration `.xml` file (except `uiRegistry`, which by its nature is not expected to be used in a configuration file). 
+
+### `uiClass`
+Enables OOP pattern implementation.
+
+### `uiElement`
+Extends `uiClass`. Adds the following:
+
+- the `defaults` property
+- events handling
+- handling properties linking (the `imports`, `exports`, `links` and `listens` properties)
+- ability to add itself to the UI registry
+
+### `uiCollection`
+
+Extends `uiElement`. Adds the following:
+
+- managing child elements (the `elems` property)
+- by default uses the <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/collection.html">app/code/Magento/Ui/view/base/web/templates/collection.html</a> template
+
+### `uiRegistry`
+In-memory storage. Plain storage of entities by keys. Implements the `get()`, `set()`, and `has()` methods.
+
+All the components described in this section are aliases in terms of RequireJS. So they can be directly requested in the component's `.js` file or used in a component's configuration `.xml` file (except `uiRegistry`, which by its nature is not expected to be used in a configuration file). 
 
 Example for the `uiClass` property request:
 
@@ -220,29 +241,6 @@ Example of using the `uiClass` property in a configuration file:
     </container>
 {%endhighlight js%}
 
-
-### `uiClass`
-Enables OOP pattern implementation.
-
-### `uiElement`
-Extends `uiClass`. Adds the following:
-
-- the `defaults` property
-- events handlingt
-- handling properties linking (the `imports`, `exports`, `links` and `listens` properties)
-- ability to add itself to the UI registry
-
-### `uiCollection`
-
-Extends `uiElement`. Adds the following:
-
-- managing child elements (the `elems` property)
-- by default uses the <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/collection.html">app/code/Magento/Ui/view/base/web/templates/collection.html</a> template
-
-### `uiRegistry`
-In-memory storage. Plain storage of entities by keys. Implements the `get()`, `set()`, and `has()` methods.
-
-
 ## JS UI components debugging {#comp_debug}
 This section describes how to define what UI components are used on a particular page and what data they use.
 
@@ -254,7 +252,7 @@ To define the UI components used on a page, you can use browser built-in develop
 3. Search for `data-bind="scope:`. The string after `scope` is the full name of the component.
 5. Open developers tools and in the console tab run `require('uiRegistry').get('<full_component_name>')`. Where `<full_component_name>` is the name you defined on the previous step. The name and the configuration of the UI component instance is displayed once the command is executed.
 
-For illustration, let's find out what UI components are used on the Catalog page in the Admin Panel:
+For illustration, let's find out what UI components are used on the Catalog page in the Admin panel:
 
 <div style="border: 1px solid #ABABAB">
 <img src="{{site.baseurl}}common/images/ui_debug1.png" alt="The catalog page"> 
