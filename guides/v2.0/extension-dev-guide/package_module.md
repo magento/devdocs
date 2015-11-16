@@ -18,9 +18,10 @@ To package a module, you must:
 * Create a Magento Composer file (`composer.json`).
 * Package and publish your module. 
 
-Publish your module on the [Magento Marketplace](http://magentocommerce.com), Magento&#8217;s eCommerce application marketplace.
+Publish your module on the [Magento Marketplace](http://www.magentocommerce.com/magento-connect/), Magento&#8217;s eCommerce application marketplace.
 
-<p class="editor">What is the URL of the Magento Marketplace?</p>
+<!--After AppC, change Magento Marketplace URL to  https://marketplace.magento.com/ -->
+
 
 <h2 id="composer">Create a Magento Composer file</h2>
 
@@ -134,11 +135,13 @@ The following example is a `composer.json` file for a module:
 
 <h2 id="packaging">Package and publish your extension</h2>
 
-Create a package of your extension by performing a zip operation on the directory with your extension (excluding unnecessary directories). For example:
- `zip -r vendor-name_package-name-1.0.0.zip package-path/ -x 'package-path/.git/*'`
 
-<p class="editor">1. What are the file name requirements?</p>
-<p class="editor">2. If we are using Github (i.e., "Plan B"), what is the URL? Where will extension developers upload their extension?</p>
+42. Create a package of your extension by performing a zip operation on the directory with your extension (excluding unnecessary directories). For example:
+ `zip -r vendor-name_package-name-1.0.0.zip package-path/ -x 'package-path/.git/*'`
+Use alphanumeric characters for the package filename with dashes to separate words. Do not use whitespaces.
+
+
+42. Magento can retrieve your extension package from any valid GitHub URL. 
  
 
  
