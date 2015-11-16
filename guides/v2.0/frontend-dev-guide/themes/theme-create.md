@@ -32,7 +32,7 @@ To create the directory for your theme:
 
 1.	Go to `<your Magento install dir>/app/design/frontend`.
 
-3.	Create a new directory named according to your vendor name: `/app/design/frontend/<Vendor>`. For built-in themes this directory is `app/design/frontend/Magento`.
+3.	Create a new directory named according to your vendor name: `/app/design/frontend/<Vendor>`. 
 
 4.	Under the vendor directory, create a directory named according to your theme.
 
@@ -55,7 +55,7 @@ After you create a directory for your theme, you must create `theme.xml` contain
 2. Configure it using the following example:
 
 {% highlight xml %}
-<theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/Config/etc/theme.xsd">
+<theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/theme.xsd">
      <title>New theme</title> <!-- your theme's name -->
      <parent>Magento/blank</parent> <!-- the parent theme, in case your theme inherits from an existing theme -->
      <media>
@@ -92,12 +92,9 @@ Example of a theme `composer.json`:
         "OSL-3.0",
         "AFL-3.0"
     ],
-    "extra": {
-        "map": [
-            [
-                "*",
-                "frontend/Magento/luma"
-            ]
+    "autoload": {
+        "files": [
+            "registration.php"
         ]
     }
 }
@@ -171,7 +168,7 @@ app/design/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
- <p>In the <code>...&lt;theme&gt;/web/images</code> you store the general theme related static files. For example, a theme logo is stored in <code>...&lt;theme&gt;/web/images</code>.
+ <p>In the <code>.../&lt;theme&gt;/web/images</code> you store the general theme related static files. For example, a theme logo is stored in <code>...&lt;theme&gt;/web/images</code>.
 It is likely that your theme will also contain module-specific files, which are stored in the corresponding sub-directories, like <code>.../&lt;theme&gt;/&lt;Namespace_Module&gt;/web/css</code> and similar. Managing the module-specific theme files is discussed in the following sections of this Guide.</p></span>
 </div>
 
