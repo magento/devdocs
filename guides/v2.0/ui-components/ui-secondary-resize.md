@@ -6,7 +6,7 @@ title: Resize Component
 menu_title: Resize Component
 menu_node:
 menu_order: 10
-github_link: uilibrary/ui-secondary-resize.md
+github_link: ui-components/ui-secondary-resize.md
 ---
 
 <h3 id="resize">UI Resize component</h3>

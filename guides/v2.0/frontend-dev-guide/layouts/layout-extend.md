@@ -72,6 +72,5 @@ Where a `handle ID` is defined by the name of the corresponding layout file, and
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-override.html" target="_blank">Override a layout</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html" target="_blank">XML instructions</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-create.html" target="_blank">Create a theme</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/theme-best-practices.html" target="_blank">Theme design best practices</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/theme-ui-lib.html" target="_blank">Magento UI library</a>
 
