@@ -1,15 +1,14 @@
 ---
 layout: default
-group: jsdg
-subgroup: 2_UI_Components
+group:  UI Library
+subgroup: H_Using_UI
 title: Using UI components' client-side
 menu_title: Using UI components' client-side
-menu_order: 1
 menu_node: parent
-github_link: javascript-dev-guide/javascript/ui_components_js.md
+github_link: ui-components/ui_components_js.md
 ---
 
-<h2>What's in this topic</h2>
+## What's in this topic
 This topic is aimed for developers, who need to reuse the [Magento UI Components]({{site.gdeurl}}ui-library/ui-library-component.html). 
 
 The topic covers the following:
