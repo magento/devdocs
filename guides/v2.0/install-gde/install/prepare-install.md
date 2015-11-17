@@ -46,10 +46,12 @@ Update installation dependencies as follows:
 
 	This command updates package dependencies and can take a few minutes to complete.
 
-	<div class="bs-callout bs-callout-info" id="info">
-		<span class="glyphicon-class">
-  		<p>The Magento installation directory is a subdirectory of your web server's docroot. Need help <a href="{{ site.gdeurl }}install-gde/basics/basics_docroot.html">locating the docroot</a>?</p></span>
-	</div>
+	The following error might display:
+
+		[Composer\Downloader\TransportException]
+			The "https://repo.magento.com/archives/magento/composer/magento-composer-1.0.2.0.zip" file could not be downloaded (HTTP/1.1 404 Not Found)
+
+	If so, create <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html#instgde-prereq-compose-clone-auth">`auth.json`</a> in the Magento file system owner's `<home>/.composer` directory and run `composer install` again.
 
 <h2 id="instgde-prereq-compose-access">Set file system ownership and permissions</h2>
 The following sections discuss how to set file system ownership and permissions:
