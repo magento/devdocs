@@ -39,7 +39,7 @@ Use the following table to verify you have the correct prerequisites to install 
 	</tr>
 	<tr>
 		<td><p>PHP 5.6.x or 5.5.x (PHP 5.4 is not supported)</p>
-			<p>See <a href="{{ site.gdeurl }}release-notes/known-issues.html#known-devrc-php">Known issue with certain PHP versions</a></p></td>
+			<p>See <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_install-issues.html#known-devrc-php">Known issue with certain PHP versions</a></p></td>
 		<td><p><code>php -v</code></p></td>
 		<td><a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a><br><a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP CentOS</a></td>
 	</tr>

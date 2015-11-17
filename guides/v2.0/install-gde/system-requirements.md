@@ -40,7 +40,7 @@ MySQL 5.6 (Oracle or Percona)
 		<li>5.6.0</li></ul>
 	</li>
 	<p>This issue prevents users from being able to set their timezones to Greenwich time and several other time zones. </p>
-	<p>To work around the issue, see <a href="{{ site.gdeurl }}release-notes/known-issues.html#known-devrc-php">Known issue with certain PHP versions</a>.</p>
+	<p>To work around the issue, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_install-issues.html#known-devrc-php">Known issue with certain PHP versions</a>.</p>
 	<li>Magento no longer supports PHP 5.4.</li></ul></span>
 </div>
 
@@ -97,7 +97,7 @@ Mail Transfer Agent (MTA) or an SMTP server
 
 <div class="bs-callout bs-callout-info" id="info">
 	<p>There is a known issue with <code>xdebug</code> that can affect Magento installations or access to the storefront or Magento Admin after installation.</p>
-	<p>For details, see <a href="{{ site.gdeurl }}release-notes/known-issues.html#known-devbeta-xdebug">Known issue with xdebug</a>.</p>
+	<p>For details, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_install-issues.html#known-devbeta-xdebug">Known issue with xdebug</a>.</p>
 </div>
 
 *	PHPUnit (as a command-line tool) 4.1 or later
