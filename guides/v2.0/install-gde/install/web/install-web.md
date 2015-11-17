@@ -17,7 +17,7 @@ redirect_from:
 </div>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>If you chose to enable SELinux, see <a href="{{ site.gdeurl }}install-gde/prereq/security.html">Security-related prerequisites</a>.</p>
+  <p>If you chose to enable SELinux, see <a href="{{ site.gdeurl }}install-gde/prereq/security.html">SELinux and iptables</a>.</p>
 </div>
 
 {% include install/web/install-web.md %}

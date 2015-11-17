@@ -4,13 +4,13 @@
 Magento uses cron for two sets of tasks, and for each, cron can be run with a different configuration:
 
 *	The general cron job that reindexes indexers, generates e-mails, generates the sitemap, and so on, typically runs as the PHP command-line user's `php.ini`
-*	Two other cron jobs are used by the <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade utilities</a>. Those command must use the web server's `php.ini`.
+*	Two other cron jobs are used by the <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade utilities</a>. Those commands must use the web server's `php.ini`.
 
 If you're not very experienced with running cron, you can run all commands with the web server's configuration; however, we leave the decision up to you.
 
 #### Find the web server configuration
 
-To find the web server configuration, run a <a href="{{ site.gdeurl }}install-gde/prereq/optional.html#install-optional-phpinfo">`phpinfo.php` file</a> in your web browser and look for the following:
+To find the web server configuration, run a <a href="{{ site.gdeurl }}install-gde/prereq/optional.html#install-optional-phpinfo">`phpinfo.php` file</a> in your web browser and look for the Loaded Configuration File as follows:
 
 <img src="{{ site.baseurl }}common/images/config_phpini-webserver.png" width="700px">
 
@@ -45,7 +45,7 @@ where `<ini-file-path>` is the path to a `php.ini` file to use for the cron job.
 
 (To confirm which `.ini` file the web server uses, create a .)
 
-The first command (`magento cron:run`) reindexes indexers, send automated e-mails, generates the sitemap, and so on. Usually it's associated with the PHP command line `.ini` file.
+The first command (`magento cron:run`) reindexes indexers, send automated e-mails, generates the sitemap, and so on. Usually it's associated with the PHP command line `.ini` file. The other two commands are used by the Component Manager and System Upgrade.
 
 For example, if you installed Magento in `/var/www/html/magento2` and all commands use the web server's `php.ini`, enter
 

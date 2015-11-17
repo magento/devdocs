@@ -33,7 +33,7 @@ Go to the storefront in a web browser. For example, if your Magento installation
 
 The following figure shows a sample storefront page. If it displays as follows, your installation was a success!
 
-<p><img src="{{ site.baseurl }}common/images/install-success_store.png" alt="Magento storefront which verifies a successful installation"></p>
+<p><img src="{{ site.baseurl }}common/images/install-success_store.png" width="450px" alt="Magento storefront which verifies a successful installation"></p>
 
 If the page displays unconfigured (no styles, only text), see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics</a>.
 

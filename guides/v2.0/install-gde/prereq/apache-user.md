@@ -156,5 +156,5 @@ For example,
 
 ### Next steps
 *	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Optional software</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">Security-related prerequisites</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">SELinux and iptables</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Your install or upgrade path</a>
