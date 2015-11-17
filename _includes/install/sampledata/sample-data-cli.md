@@ -43,8 +43,3 @@ The complete list of sample data modules follows:
 
 {% include install/sampledata/sample-data_list-of-modules.md %}
 
-Wait while the command completes.
-
-
-
-
