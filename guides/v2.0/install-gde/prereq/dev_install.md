@@ -50,9 +50,14 @@ To set up authentication:
 
 		If you already have an account, make sure you know your user name and password, then continue with the next step.
 2.	Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
-3.	Create `auth.json` in the user's home directory with the following contents:
+3.	Edit or create `auth.json` in the user's home directory.
+
+	The following example shows how to add `repo.magento.com` authentication to an existing file:
 
         {
+           "github-oauth": {
+             "github.com": "804d4ab968ia8vk0Uar263a1cbd40d82da7464aa7"
+        },
            "http-basic": {
               "repo.magento.com": {
                  "username": "<username>",
@@ -61,7 +66,7 @@ To set up authentication:
            }
         }
 
-       	For example, if your user name is `magento_user`, create `/home/magento_user/.composer/auth.json`
+       	For example, if your user name is `magento_user`, create or edit `/home/magento_user/.composer/auth.json`
 
 <h3 id="instgde-prereq-compose-clone-ways">How to clone the Magento 2 GitHub repository</h3>
 You can clone the Magento 2 GitHub repository using either SSH or HTTPS protocols:
@@ -91,7 +96,6 @@ To clone the Magento GitHub repository using the SSH protocol:
 	<p><img src="{{ site.baseurl }}common/images/install_mage2_clone-ssh.png" alt="Clone the Magento GitHub repository using SSH"></p>
 
 1.	Change to your web server's docroot directory.
-
 	Typically, for Ubuntu, it's `/var/www` and for CentOS it's `/var/www/html`.
 
 	Need help locating the docroot? Click <a href="{{ site.gdeurl }}install-gde/basics/basics_docroot.html">here.
