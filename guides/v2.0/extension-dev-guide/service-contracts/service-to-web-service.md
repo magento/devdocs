@@ -38,30 +38,47 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/service-to-web
    For example, the web API for the Customer service is defined in the <code>app/code/Magento/Customer/etc/webapi.xml</code> configuration file.
 </p>
 <h2 id="service-interface-requirements">Service Interface Requirements</h2>
-<p>Once a service class is configured using the <code>webapi.xml</code> file, Magento dynamically makes the service method available through the web API. Because this is automatically generated, it is important that the Service class be formatted a very specific way.</p>
-<p>This makes sense when you consider that while a service class will possibly expect objects of a specific class type (as with a save method) and will possibly return a result that is a class or array of classes, neither SOAP nor REST are guaranteed to have that class defined on the client end or even to have a concept similar to a PHP class. Because of this, Magento, using reflection, automatically creates these classes and sets data that you have submitted in JSON or HTTP array syntax onto an instance of the expected PHP class when calling the service method.  Conversely, if an object is returned from one of these methods, Magento automatically converts that PHP object into a JSON or SOAP object before sending it over the web API.</p>
-<p>In order to do this conversion, Magento has to know information about both the parameters the service method is expecting and the return type of the result the service method will be delivering. PHP 5.x does not allow for type-hinting for scalar parameters or for return types so in order to convert the array or JSON object to or from the appropriate class type, PHP relies on the PHP doc block. Specifically, the lines containing @param and @return must follow certain rules for Magento to be able to correctly convert between types.</p>
-<p>The following rules must be followed by the service interface's doc block in order for SOAP and REST to work correctly.</p>
-<ul>
-    <li>All methods exposed by the web API must follow these rules</li>
-    <li>All methods on objects expected as parameters or returned must follow these rules</li>
-    <li>Parameters must be defined in the doc block as <br /><code> * @param <em>type</em> $paramName</code></li>
-    <li>Return type must be defined in the doc block as <br /><code> * @return <em>type</em></code></li>
-    <li>Valid scalar types include: mixed (or anyType), bool (or boolean), str (or string), integer (or int), float, and double.</li>
-    <li>Valid object types include: a fully qualified class name or a fully qualified interface name.</li>
-    <li>Any parameters or return values of type array can be denoted by following any of the previous types by an empty set of square brackets []</li>
-</ul>
-<p>Below are some examples of various types and what they would look like in the doc block:</p>
-<ul>
-    <li>A parameter $types which can be an array of strings: <br /><code> * @param string[] $types</code></li>
-    <li>A parameter $id which can be an integer: <br /><code> * @param int $id</code></li>
-    <li>A parameter $customer which is an object of class \Magento\Customer\Api\Data\CustomerInterface: <br /><code> * @param \Magento\Customer\Api\Data\CustomerInterface $customer</code>
-        <ul>
-            <li>Note that even if the class \Magento\Customer\Api\Data\CustomerInterface is in the same namespace (or a sub-namespace) of the current class or a use statement has exists at the top of the class, the fully qualified namespace must be used or the web API will throw an exception.</li>
-        </ul>
-    </li>
-    <li>A return which is an array of objects of type \Magento\Customer\Api\Data\CustomerInterface: <br /><code> * @return \Magento\Customer\Api\Data\CustomerInterface[]</code></li>
-</ul>
+
+After a service class is configured using the `webapi.xml` file, Magento dynamically makes the service method available using the web API. Because this is automatically generated, it is important that the service class be formatted a very specific way.
+
+This makes sense when you consider that while a service class possibly expects objects of a specific class type (such a save method) and possibly returns a result that is a class or array of classes, neither SOAP nor REST are guaranteed to have that class defined on the client end or even to have a concept similar to a PHP class. Because of this, Magento uses reflection to automatically create these classes and sets data that you have submitted in JSON or HTTP array syntax onto an instance of the expected PHP class when calling the service method.  
+
+Conversely, if an object is returned from one of these methods, Magento automatically converts that PHP object into a JSON or SOAP object before sending it over the web API.
+
+To do this conversion, the Magento application must know information about both the parameters the service method is expecting and the return type of the result the service method delivers. PHP 5.x does not allow for type-hinting for scalar parameters or for return types so in order to convert the array or JSON object to or from the appropriate class type, PHP relies on the PHP doc block. Specifically, the lines containing `@param` and `@return` must follow certain rules for Magento to be able to correctly convert between types.
+
+For SOAP and REST to work correctly, the following rules must be followed by the service interface's doc block:
+
+*   All methods exposed by the web API must follow these rules
+*   All methods on objects expected as parameters or returned must follow these rules
+*   Parameters must be defined in the doc block as
+
+        * @param <type<> $paramName
+*   Return type must be defined in the doc block as
+
+        * @return <em>type</em></code>
+*   Valid scalar types include: `mixed` (or `anyType`), `bool` (or `boolean`), `str` (or `string`), `integer` (or `int`), `float`, and `double`.
+*   Valid object types include a fully qualified class name or a fully qualified interface name.
+*   Any parameters or return values of type array can be denoted by following any of the previous types by an empty set of square brackets `[]`
+
+Following are some examples of various types and what they would look like in the doc block:
+
+*   A parameter $types which can be an array of strings:
+
+        * @param string[] $types
+*   A parameter $id which can be an integer: 
+
+        * @param int $id
+*   A parameter $customer which is an object of class `\Magento\Customer\Api\Data\CustomerInterface`: 
+
+        * @param \Magento\Customer\Api\Data\CustomerInterface $customer</code>
+
+    Note that even if the class `\Magento\Customer\Api\Data\CustomerInterface` is in the same namespace (or a sub-namespace) of the current class or a use statement has exists at the top of the class, the fully qualified namespace must be used or the web API throws an exception.
+
+*   A return which is an array of objects of type `\Magento\Customer\Api\Data\CustomerInterface`: 
+
+        * @return \Magento\Customer\Api\Data\CustomerInterface[]</code>
+
 <h2 id="configuration-options">webapi.xml configuration options</h2>
 <p>To define web API components, set these attributes on these XML elements in the
    <code>webapi.xml</code> configuration file, as follows:
@@ -155,12 +172,10 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/service-to-web
                <p><code>ref</code>.
                   Required. Referenced resource. Valid values are <code>self</code>, <code>anonymous</code>, or a Magento resource, such as <code>Magento_Customer::group</code>.
                </p>
-               <div class="bs-callout bs-callout-info" id="info">
-                  <p>The Magento web API framework enables guest users to access resources that are configured with <code>anonymous</code> permission.</p>
+               <strong>Note</strong>:The Magento web API framework enables guest users to access resources that are configured with <code>anonymous</code> permission.</p>
                   <p>Any user that the framework cannot authenticate through existing <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication.html">authentication
-                     mechanisms</a> is considered a guest user.
-                  </p>
-               </div>
+                     mechanisms</a> is considered a guest user.</p>
+                  
             </li>
          </ul>
       </td>
