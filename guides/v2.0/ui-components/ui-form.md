@@ -61,9 +61,9 @@ Example:
 Component could be configured in two ways:
 
 * globally: using any module's `view//ui_component/etc/definition.xml` file. All settings declared in     this file will be applied to all component's instances
-* locally: using concrete component instance configuration, such as `app/code/Magento/Customer/view/base/ui_component/customer_form`
+* locally: using concrete component instance configuration, such as `<your module root dir>/Magento/Customer/view/base/ui_component/customer_form`
 
-Create configuration file: `app/code/Magento/Customer/view/base/ui_component/customer_form.xml`
+Create configuration file: `<your module root dir>/Magento/Customer/view/base/ui_component/customer_form.xml`
 
 {% highlight xml%}
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Ui/etc/ui_configuration.xsd">

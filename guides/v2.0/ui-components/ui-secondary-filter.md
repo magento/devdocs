@@ -24,7 +24,7 @@ Currently the following filter types are supported:
 * range filter
 
 Example:
-`app/code/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml`
+`<your module root dir>/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml`
 
 <pre>
 &lt;listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Ui/etc/ui_configuration.xsd"&gt;

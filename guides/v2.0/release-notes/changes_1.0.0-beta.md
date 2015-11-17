@@ -1,6 +1,6 @@
 ---
 layout: default
-group: release-notes
+group: 
 title: Release Notes
 menu_title: Changes in 1.0.0-beta (Merchant Beta)
 menu_node: 
