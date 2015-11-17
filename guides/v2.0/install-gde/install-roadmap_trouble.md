@@ -9,4 +9,4 @@ menu_order: 1
 github_link: install-roadmap_trouble.md
 ---
 
-{% include install/install-roadmap.html %}
+{% include install/install-roadmap.md %}

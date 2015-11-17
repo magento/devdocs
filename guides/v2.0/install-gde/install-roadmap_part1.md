@@ -9,4 +9,4 @@ menu_order: 1
 github_link: install-gde/install-roadmap_part1.md
 ---
 
-{% include install/install-roadmap.html %}
+{% include install/install-roadmap.md %}
