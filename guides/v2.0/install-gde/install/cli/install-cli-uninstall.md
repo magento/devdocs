@@ -35,7 +35,7 @@ Before you use this command, you must <a href="{{ site.gdeurl }}install-gde/inst
 To update the Magento software:
 
 *	If you installed the software from an archive or if you used 'composer-create-project', use the Component Manager or System Upgrade utilities.
-*	If you are a contributing developer (that is, you used `git clone`), see TBD.
+*	If you are a contributing developer (that is, you used `git clone`), see <a href="{{ site.gdeurl }}install-gde/install/cli/dev_options.html">Contributing developers&mdash;update, reinstall Magento</a>.
 
 <h2 id="instgde-install-magento-reinstall">Reinstall the Magento software</h2>
 This section discusses how to uninstall and then reinstall the Magento software with the latest version.
@@ -43,7 +43,7 @@ This section discusses how to uninstall and then reinstall the Magento software 
 The way you reinstall the Magento application from the command line depends on your role:
 
 *	If you installed the software from an archive or if you used 'composer-create-project', see <a href="#instgde-install-reinst-update-sys">Reinstall as a system integrator</a>.
-*	If you're a contributing developer (that is, you started using `composer clone`), see TBD.
+*	If you're a contributing developer (that is, you started using `composer clone`), see <a href="{{ site.gdeurl }}install-gde/install/cli/dev_options.html">Contributing developers&mdash;update, reinstall Magento</a>.
 
 
 <h3 id="instgde-install-magento-reinst-dev">Reinstall as a system integrator</h3>
