@@ -13,11 +13,38 @@ To install sample data using the command line, enter the following command as th
 
 	php <your Magento install dir>/bin/magento sampledata:deploy [module-list]
 
-where `[module-list]` is an optional space-separated list of sample data modules to install. Omit this parameter to install all sample data modules.
+where `[module-list]` is an optional space-separated list of <a href="#sample-data-modules">sample data modules</a> to install. Omit this parameter to install all sample data modules.
+
+### Authentication error
+
+The following error might display:
+
+	[Composer\Downloader\TransportException]
+	The 'https://repo.magento.com/packages.json' URL required authentication.
+	You must be using the interactive console to authenticate
+
+If so, you can either:
+
+*	Change to your Magento installation directory and run `composer update`, which will prompt you for your credentials.
+*	Create `auth.json` in the Magento file system owner's home directory with the following contents:
+
+        {
+           "http-basic": {
+              "repo.magento.com": {
+                 "username": "<username>",
+                 "password": "<password>"
+              }
+            }
+        }
+
+<h3 id="sample-data-modules">Complete list of modules</h3>
 
 The complete list of sample data modules follows:
 
 {% include install/sampledata/sample-data_list-of-modules.md %}
 
 Wait while the command completes.
+
+
+
 
