@@ -1,12 +1,12 @@
 ---
 layout: default
 group: install_cli 
-subgroup: T_Command-line installation
+subgroup: 05_Command-line installation
 title: Create or update the deployment configuration
 menu_title: Create or update the deployment configuration
 menu_node: 
 menu_order: 9
-github_link: install-gde/install/install-cli-subcommands-deployment.md
+github_link: install-gde/install/cli/install-cli-subcommands-deployment.md
 redirect_from:
   -  /guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html
   -  /guides/v2.0/install-gde/install/install-cli-subcommands-deployment.html

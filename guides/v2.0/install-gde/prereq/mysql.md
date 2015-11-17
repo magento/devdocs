@@ -4,7 +4,7 @@ group: install_pre
 subgroup: Prerequisites
 title: MySQL
 menu_title: MySQL
-menu_order: 5
+menu_order: 10
 github_link: install-gde/prereq/mysql.md
 redirect_from: /guides/v1.0/install-gde/prereq/mysql.html
 ---

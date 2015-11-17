@@ -27,6 +27,4 @@ If you haven't already installed optional sample data, you can <a href="{{ site.
 *	<a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">System upgrade (upgrade the Magento software)</a>
 
 ### Configure
-If you're ready to configure the Magento application, see:
-
-{% include install/post-install-configure.md %}
+<a href="{{ site.gdeurl }}install-gde/install/post-install-config.html">Configure the Magento application</a>.
