@@ -14,6 +14,7 @@ github_link: install-gde/prereq/zip_install.md
 
 *	<a href="#integrator-aud">Intended audience</a>
 *	<a href="#zip-prereq">Prerequisites</a>
+*	<a href="#get-archive">Get the Magento software package</a>
 *	<a href="#zip-perms">Set file system ownership and permissions</a>
 
 <h2 id="integrator-aud">Intended audience</h2>
@@ -24,7 +25,8 @@ Before you continue, make sure you've done all of the following:
 
 *	Set up a server that meets our <a href="{{ site.gdeurl }}install-gde/system-requirements.html">system requirements</a>
 *	Created the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>	
-*	Downloaded the <a href="{{ site.gdeurl }}install-gde/install/get-software.html">Magento software archive</a>
+
+{% include install/get-software_zip.md %}
 
 <h2 id="zip-transfer">Transfer the Magento archive to your server</h2>
 To transfer the Magento software archive to your server:
@@ -85,10 +87,6 @@ Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl }}in
 <tr> 
 	<td>.tar.gz</td>
 	<td><code>tar zxf &lt;filename></code></td>
-</tr>
-<tr> 
-	<td>.tar.bz2</td>
-	<td><code>tar jxf &lt;filename></code></td>
 </tr>
 <tr> 
 	<td>.zip</td>

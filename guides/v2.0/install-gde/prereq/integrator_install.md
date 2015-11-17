@@ -38,7 +38,13 @@ To do so, you start by creating a Composer project from our metapackage. The met
 <h2 id="integrator-first-composer-ce">Get the Magento CE metapackage</h2>
 To get started:
 
-1.	Log in to your Magento server as, or switch to, a user who has privileges to write to the web server docroot.
+1.	If you haven't done so already, create an account on <a href="http://www.magento.com" target="_blank">magento.com</a>.
+
+	*	Click **My Account** in the upper right corner of the page.
+	*	In the New Customer section, click **Register**.
+
+		If you already have an account, make sure you know your user name and password, then continue with the next step.
+1.	Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
 2.	Change to the web server docroot directory, or to a directory you've configured as a virtual host docroot.
 3.	Enter the following command:
 
@@ -53,7 +59,10 @@ To get started:
 <h2 id="integrator-first-composer-ee">Get the Magento EE metapackage</h2>
 To get started:
 
-1.	Log in to your Magento server as, or switch to, a user who has privileges to write to the web server docroot.
+1.	Make sure you know your support portal user name and password.
+
+	If you don't remember it, contact Magento Support before you continue.
+1.	Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
 2.	Change to the web server docroot directory, or to a directory you've configured as a virtual host docroot.
 3.	Enter the following command:
 
@@ -63,9 +72,9 @@ To get started:
 
 	The following error indicates your user name or password are incorrect:
 
-		  Could not find package magento/project-enterprise-edition with version 2.0.0-rc2.
+		  Could not find package magento/project-enterprise-edition with version 2.0.0
 
-	This command creates the project and downloads dependencies for it. The project is in a directory named `<installation directory name>` if you provided the parameter or `project-community-edition` if you did not.
+	This command creates the project and downloads dependencies for it. The project is in a directory named `<installation directory name>` if you provided the parameter or `project-enterprise-edition` if you did not.
 
 5.	Continue with the next section.
 
