@@ -244,7 +244,7 @@
 
 <p><strong>Example</strong></p>
 
-<p>Enabling a sticky header for the CMS pages grid, configured in <code>app/code/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml</code>:</p>
+<p>Enabling a sticky header for the CMS pages grid, configured in <code>&lt;your module root dir&gt;/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml</code>:</p>
 
 <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../Ui/etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;listing_top&quot;</span><span class="nt">&gt;</span>
@@ -267,7 +267,7 @@
 
 <p><strong>Example</strong>
 The toolbar component should use the <code>ui/grid/sticky/toolbar</code> template for the sticky header.
-<code>app/code/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml</code>:</p>
+<code>&lt;your module root dir&gt;/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml</code>:</p>
 
 <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../Ui/etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;listing_top&quot;</span><span class="nt">&gt;</span>
@@ -285,14 +285,14 @@ The toolbar component should use the <code>ui/grid/sticky/toolbar</code> templat
 <p>The sticky header component consists of the following elements:</p>
 
 <ul>
-  <li>Constructor: <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/js/grid/sticky/sticky.js">app/code/Magento/Ui/view/base/web/js/grid/sticky/sticky.js</a></li>
-  <li>Main template: <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/templates/grid/sticky/sticky.html">app/code/Magento/Ui/view/base/web/templates/grid/sticky/sticky.html</a></li>
+  <li>Constructor: <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/js/grid/sticky/sticky.js"><code>&lt;your module root dir&gt;/Magento/Ui/view/base/web/js/grid/sticky/sticky.js</code></a></li>
+  <li>Main template: <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/templates/grid/sticky/sticky.html"><code>&lt;your module root dir&gt;/Magento/Ui/view/base/web/templates/grid/sticky/sticky.html</code></a></li>
   <li>Elements’ templates:
     <ul>
-      <li><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/templates/grid/sticky/toolbar.html">app/code/Magento/Ui/viewbase/web/templates/grid/sticky/toolbar.html</a></li>
-      <li><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/templates/grid/sticky/listing.html">app/code/Magento/Ui/view/base/web/templates/grid/sticky/listing.html</a></li>
-      <li><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/templates/grid/sticky/filters.html">app/code/Magento/Ui/view/base/web/templates/grid/sticky/filters.html</a></li>
-      <li><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/templates/grid/sticky/chips.html">app/code/Magento/Ui/view/base/web/templates/grid/sticky/chips.html</a></li>
+      <li><a href="https://github.com/magento/magento2/blob/develop//Magento/Ui/view/base/web/templates/grid/sticky/toolbar.html"><code>&lt;your module root dir&gt;/Magento/Ui/viewbase/web/templates/grid/sticky/toolbar.html</code></a></li>
+      <li><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/templates/grid/sticky/listing.html"><code>&lt;your module root dir&gt;/Magento/Ui/view/base/web/templates/grid/sticky/listing.html</code></a></li>
+      <li><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view/base/web/templates/grid/sticky/filters.html"><code>&lt;your module root dir&gt;/Magento/Ui/view/base/web/templates/grid/sticky/filters.html</code></a></li>
+      <li><a href="https://github.com/magento/magento2/blob/develop//Magento/Ui/view/base/web/templates/grid/sticky/chips.html"><code>&lt;your module root dir&gt;/Magento/Ui/view/base/web/templates/grid/sticky/chips.html</code></a></li>
     </ul>
   </li>
 </ul>

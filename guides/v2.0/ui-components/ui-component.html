@@ -249,11 +249,11 @@
 
 <p>UI components configuration reader searches through all active modules and read files:</p>
 
-<p><a href="/guides/v2.0/ui-library/ui-definition.html"><code>app/code/&lt;vendor&gt;/&lt;module&gt;/view/&lt;area&gt;/ui_component/etc/definition.xml</code></a></p>
+<p><a href="/guides/v2.0/ui-library/ui-definition.html"><code>&lt;your module root dir&gt;/&lt;vendor&gt;/&lt;module&gt;/view/&lt;area&gt;/ui_component/etc/definition.xml</code></a></p>
 
 <p>And concrete instances of the components each in separate XML configuration file:</p>
 
-<p><code>app/code/&lt;vendor&gt;/&lt;module&gt;/view/&lt;area&gt;/ui_component/&lt;component_instance_name&gt;.xml</code></p>
+<p><code>&lt;your module root dir&gt;/&lt;vendor&gt;/&lt;module&gt;/view/&lt;area&gt;/ui_component/&lt;component_instance_name&gt;.xml</code></p>
 
 <h3 id="configuration">Configuration</h3>
 
@@ -261,7 +261,7 @@
 
 <p>XSD file contains rules and limitations shared between all components (both definitions and instance configurations):</p>
 
-<p><code>app/code/Magento/Ui/etc/ui_definition.xsd</code></p>
+<p><code>&lt;your module root dir&gt;/Magento/Ui/etc/ui_definition.xsd</code></p>
 
 <p>It is possible to create custom component by setting <code>class</code>, <code>component</code> and <code>template</code> parameters of the <a href="/guides/v2.0/ui-library/ui-container.html">Container component</a>.</p>
 
@@ -269,7 +269,7 @@
 
 <ul>
   <li>Globally: using any module’s <a href="/guides/v2.0/ui-library/ui-definition.html"><code>view/*/ui_component/etc/definition.xml</code></a> file. All settings declared in this file will be applied to all component’s instances</li>
-  <li>Locally: using concrete component instance configuration, such as <code>app/code/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml</code></li>
+  <li>Locally: using concrete component instance configuration, such as <code>&lt;your module root dir&gt;/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml</code></li>
 </ul>
 
 
