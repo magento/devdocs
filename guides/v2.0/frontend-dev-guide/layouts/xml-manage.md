@@ -53,7 +53,7 @@ Change the layout of Advanced Search page from default "1-column" to "2-column w
 JavaScript, CSS and other static assets are added in the `<head>` section of a <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> file. The default look of a Magento store page `<head>` is defined by `app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml`. The recommended way to add CSS and JavaScript is to extend this file in your custom theme, and add the assets there.
 The following file is a sample of a file you must add:
 
-<code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Theme/layout/default_head_blocks.xml</code>
+<code>&lt;theme_dir&gt;/Magento_Theme/layout/default_head_blocks.xml</code>
 
 {%highlight xml%}
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
@@ -81,8 +81,8 @@ You can use either `<link src="js/sample.js"/>` or `<script src="js/sample.js"/>
 
 The path to assets is specified relatively to one the following locations:
 <ul>
-<li><code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web</code></li>
-<li><code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web</code></li>
+<li><code>&lt;theme_dir&gt;/web</code></li>
+<li><code>&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web</code></li>
 
 </ul>
 
@@ -328,7 +328,7 @@ This block is declared in `app/code/Magento/Catalog/view/frontend/layout/default
 
 
 To remove the block, add the extending `default.xml` in your theme:
-`app/design/frontend/<Vendor>/<theme>/Magento_Catalog/layout/default.xml`
+`<theme_dir>/Magento_Catalog/layout/default.xml`
 
 In this file, reference the element having added the `remove` attribute:
 

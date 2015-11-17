@@ -37,7 +37,7 @@ Allowed layout instructions:
 
 Sample page layout:
 
-**`magento2/app/code/Magento/Theme/view/frontend/page_layout/2columns-left.xml`**
+`<Magento_Theme_module_dir>/view/frontend/page_layout/2columns-left.xml`
 
 {%highlight xml%}
 <layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_layout.xsd">
@@ -57,8 +57,8 @@ Sample page layout:
 
 Conventionally page layouts must be located as follows:
 
-* Module page layouts: `app/code/<Namespace>/<Module>/view/frontend/page_layout`
-* Theme page layouts: `app/design/frontend/<Vendor>/<theme>/<Namespace>_<Module>/page_layout`
+* Module page layouts: `<module_dir>/view/frontend/page_layout`
+* Theme page layouts: `<theme_dir>/<Namespace>_<Module>/page_layout`
 
 <h3 id="layout-types-page-dec">Page layouts declaration</h3>
 
@@ -68,8 +68,8 @@ Conventionally layout declaration file can be located in one of the following lo
 
 
 <ul>
-<li>Module layout declarations: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/layouts.xml</code></li>
-<li>Theme layout declaration: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layouts.xml</code></li>
+<li>Module layout declarations: <code>&lt;module_dir&gt;/view/frontend/layouts.xml</code></li>
+<li>Theme layout declaration: <code>&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layouts.xml</code></li>
 
 </ul>
 
@@ -85,7 +85,7 @@ Conventionally layout declaration file can be located in one of the following lo
 
 Sample page layout declaration file:
 
-<p><b><code>app/code/Magento/Theme/view/frontend/layouts.xml</code></b></p>
+    <Magento_Theme_module_dir>/view/frontend/layouts.xml
 
 {%highlight xml%}
 <page_layouts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/PageLayout/etc/layouts.xsd">
@@ -113,8 +113,8 @@ The page configuration adds content to the wireframe defined in a page layout fi
 Conventionally page configuration files must be located as follows:
 
 <ul>
-<li> Module page configurations: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/layout</code></li>
-<li> Theme page configurations: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout</code></li>
+<li> Module page configurations: <code>&lt;module_dir&gt;/view/frontend/layout</code></li>
+<li> Theme page configurations: <code>&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout</code></li>
 </ul>
 
 
@@ -385,8 +385,8 @@ Generic layouts define the contents and detailed structure inside the <code>&lt;
 Conventionally generic layout files must be located as follows:
 
 <ul>
-<li>Module generic layouts: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/layout</code></li>
-<li>Theme generic layouts: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout</code></li>
+<li>Module generic layouts: <code>&lt;module_dir&gt;/view/frontend/layout</code></li>
+<li>Theme generic layouts: <code>&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout</code></li>
 </ul>
 
 
