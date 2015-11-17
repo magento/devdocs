@@ -48,7 +48,7 @@ To get started:
 2.	Change to the web server docroot directory, or to a directory you've configured as a virtual host docroot.
 3.	Enter the following command:
 
-		composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition  <installation directory name>
+		composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition <installation directory name>
 
 	When prompted, enter your <a href="http://www.magento.com" target="_blank">magento.com</a> user name and password. (This is the same user name and password you used to register with Magento. You use it to log in to your My Account page at magento.com.)
 
@@ -66,7 +66,7 @@ To get started:
 2.	Change to the web server docroot directory, or to a directory you've configured as a virtual host docroot.
 3.	Enter the following command:
 
-		composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition  <installation directory name>
+		composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition <installation directory name>
 
 	When prompted, enter your support portal user name and password. 
 

@@ -23,7 +23,7 @@ To enable sample data using Composer:
 	
 	Exact version example:
 
-		composer require magento/sample-data:1.0.0-beta
+		composer require magento/sample-data:2.0.0
 
 	Next significant release example:
 
@@ -32,4 +32,3 @@ To enable sample data using Composer:
 4.	Wait while dependencies are installed.
 
 #### Next step
-TBD

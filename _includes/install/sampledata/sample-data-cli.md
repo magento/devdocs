@@ -3,7 +3,7 @@
 <h2 id="install-sample-cli">Install sample data using the command line</h2>
 This topic discusses how to install optional Magento 2 sample data using the command line. You can use this method either before or after you install the Magento software.
 
-First, you must get the Magento software in one of the ways discussed in TBD.
+First, you must <a href="{{ site.gdeurl }}install-gde/install/get-software.html">get the Magento software</a>.
 
 <h2 id="install sample-cli-first">First steps</h2>
 {% include install/first-steps-cli.html %}
