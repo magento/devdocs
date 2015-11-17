@@ -11,13 +11,9 @@ github_link: howdoi/howdoi_bios.md
 
 Thanks so much to the following community members, partners, and Magento fans who have directly contributed substantial content to the DevDocs site.
 
-**SAMPLE DATA IN TABLE FOR NOW.**
-
 | Contributor name and image |  Bio and Magento Creds | 
 |---|---|
-| <a href="http://www.___.com/" title="company name">Contributor's Name</a>  | _____ has been working with Magento since the early days of Magento 1.  |
-|  <a href="http://www.___.com/" title="company name">Contributor's Name</a> | A preeminent member of the Magento eco-system and creator of the ____, ___ knows Magento like no one else.  | 
-|  <a href="http://www.___.com/" title="company name">Contributor's Name</a> | ____, a member of the original Magento 1 core devlopment team. continues to .... |
+| <a href="http://www.classyllama.com/" title="Classy Llamas">Contributor&#8217;s Name</a>  | When it comes down to it, Classy Llama offers only one service: helping eCommerce merchants succeed. As a full-service agency, they have the tools to help you build, grow, and support your Magento site. Every engagement with Classy Llama is as unique as the needs of the businesses we serve. With over 100 Magento sites and 350 customizations and integrations under their belt, they know what it takes to create a great eCommerce experience. They pair high-efficiency, high-visibility processes with dedicated teams and some of the best developers in the world. Considering Magento 2? Outside of Magento itself, the Classy Llama team was one of the biggest contributors of code to the new platform. Contact them to learn how they can help your business grow. |
 
 
 To join these contributors, please sign up on the <a href="{{ site.gdeurl }}howdoi/howdoi_contribute.html">Contributor's page</a>, and the follow the easy instructions to submit a pull request to submit your work!
