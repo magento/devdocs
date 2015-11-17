@@ -1,8 +1,8 @@
 ---
 layout: default
 group: release-notes
-title: Release Notes
-menu_title: Highlights
+title: Release Notes redirect
+menu_title: Release Notes redirect
 menu_order: 1
 menu_node: 
 github_link: release-notes/bk-release-notes.md
