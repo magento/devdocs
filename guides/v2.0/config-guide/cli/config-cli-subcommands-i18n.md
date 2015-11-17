@@ -280,7 +280,7 @@ To add a German translation to module or theme you want to distribute to other m
 
 1.	Collect phrases from your module:
 
-		magento i18n:collect-phrases -o "/var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n/XX_XX.csv" /var/www/html/magento2/ExampleCorp/SampleModule
+		magento i18n:collect-phrases -o "/var/www/html/magento2/vendor/examplecorp/module-samplemodule/i18n/XX_XX.csv" /var/www/html/magento2/ExampleCorp/SampleModule
 
 2.	Translate the words and phrases using <a href="#config-cli-subcommands-xlate-dict-trans">these guidelines</a>.
 3.	If necessary, copy `XX_XX.csv` to `/var/www/html/magento2/ExampleCorp/SampleModule` or to the module's theme directory.

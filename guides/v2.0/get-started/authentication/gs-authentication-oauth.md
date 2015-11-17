@@ -222,5 +222,5 @@ redirect_from: /guides/v1.0/get-started/authentication/gs-authentication-oauth.h
 <h2>Related topic</h2>
 <ul>
 
-   <li><a href="{{ site.githuburl }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
+   <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
 </ul>
