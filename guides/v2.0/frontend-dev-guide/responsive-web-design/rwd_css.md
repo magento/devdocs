@@ -15,7 +15,7 @@ Stylesheets are the main tool in responsive web design (RWD) implementation. Thi
 
 <h2 id="lib_rwd">Media queries in Magento default themes</h2>
 
-The Blank and Luma theme styles are based on the <a href="{{site.gdeurl}}/css-topics/theme-ui-lib.html" target="_blank">Magento UI library</a>. The library uses <a href="http://en.wikipedia.org/wiki/Media_queries" target="_blank">CSS3 media queries</a>, an extension of the <code>@media</code> rule, to adapt the layout to the screen width.
+The Blank and Luma theme styles are based on the <a href="{{site.gdeurl}}frontend-dev-guide//css-topics/theme-ui-lib.html" target="_blank">Magento UI library</a>. The library uses <a href="http://en.wikipedia.org/wiki/Media_queries" target="_blank">CSS3 media queries</a>, an extension of the <code>@media</code> rule, to adapt the layout to the screen width.
 
 According to the approach implemented in the library, the <code>.media-width()</code> mixin can be used in any <code>.less</code> file in your theme, as many times as you need, but it is invoked only once, in <code>lib/web/css/source/lib/_responsive.less</code>. The resulting <code>styles.css</code> has only one call of each media query with all the rules there, instead of multiple calls for the same query.
 
