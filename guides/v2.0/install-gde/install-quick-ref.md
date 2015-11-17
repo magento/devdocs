@@ -13,7 +13,7 @@ We know it's challenging to install the Magento software. We'd like to help you 
 
 This topic assumes:
 
-*	You have your own Magento server (you're not using a hosting provider).
+*	You have your own Magento server (you're not using a shared hosting provider).
 *	You're starting the installation using `composer create-project`, which enables you to get the most recent Magento software and to add your own customizations to it, if desired.
 *	Everything is installed on one host (database, web server, and so on).
 *	The host you're installing on is either Ubuntu or CentOS. 
@@ -46,14 +46,13 @@ If not, see the <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">Ins
 When all prerequisites have been met, get the Magento software using Composer as follows:
 
 	cd <web server docroot directory>
-	composer create-project magento/project-community-edition --stability="beta" magento2
+	composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition
 
-This downloads Magento code only; it doesn't install the software for you.
+You're required to authenticate; see <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html#integrator-first-composer-ce">Get the Magento CE metapackage</a> for details. This downloads Magento code only; it doesn't install the software for you.
 
 <div class="bs-callout bs-callout-tip">
 	<p>Alternatively, you can also download a <a href="{{ site.gdeurl }}install-gde/install/get-software.html">Magento software archive</a>.</p>
 </div>
-
 
 ### Set file system ownership and permissions
 
