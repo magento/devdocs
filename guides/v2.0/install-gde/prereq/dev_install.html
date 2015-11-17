@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Contributing developer installation first steps</title>
+	<title>(Contributor) Clone the Magento repository</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
@@ -200,7 +200,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Contributing developer installation first steps</h1>
+		<h1 class="page-heading">(Contributor) Clone the Magento repository</h1>
 			
 			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/install-gde/prereq/dev_install.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -215,22 +215,226 @@
   <p>Totally lost? Need a helping hand? Try our <a href="/guides/v2.0/install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="/guides/v2.0/install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
 </div>
 
-<h2 id="contributing-developer-installation">Contributing developer installation</h2>
-<p>As a contributing developer, you start by cloning the Magento 2 GitHub repository. You use Composer to manage your components.</p>
+<h4 id="contents">Contents</h4>
 
-<h2 id="instgde-overview-composer">Composer and Magento</h2>
-<p>We now use <a href="https://getcomposer.org/" target="_blank">Composer</a> to install the Magento software. Composer enables us to manage the Magento components and their dependencies.</p>
-<p>Composer provides you with the following advantages:</p>
-<ul><li>Enables you to reuse third-party libraries without bundling them with source code</li>
-<li>Component-based architecture with robust dependency management</li>
-<li>Manages dependencies to reduce extension conflicts and compatibility issues</li>
-<li>Versioned dependencies</li>
-<li><a href="https://getcomposer.org/doc/01-basic-usage.md#package-versions" target="_blank">Semantic versioning</a></li>
-<li>Supports PHP Framework Interoperability standard</li></ul>
+<ul>
+  <li><a href="#integrator-aud">Intended audience</a></li>
+  <li><a href="#instgde-overview-composer">Composer and Magento</a></li>
+  <li><a href="#instgde-prereq-compose-install">Install Composer</a></li>
+  <li><a href="#instgde-prereq-compose-clone">Clone the Magento repository</a></li>
+</ul>
 
-<h4 id="next-step">Next step</h4>
-<p><a href="/guides/v2.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a>.</p>
+<h2 id="integrator-aud">Intended audience</h2>
+<p>The audience for this topic is anyone who contributes to the Magento codebase. If that isn’t you, go back and <a href="/guides/v2.0/install-gde/continue.html">choose another starting point</a>.</p>
 
+<div>
+
+  <h2 id="instgde-overview-composer">Composer and Magento</h2>
+  <p>We now use <a href="https://getcomposer.org/" target="_blank">Composer</a> to install the Magento software. Composer enables us to manage the Magento components and their dependencies.</p>
+
+  <div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Everyone who uses the Magento software must install Composer to update components and Magento. If you install Magento using an archive, you don't need Composer to <em>install</em> Magento, but you do need Composer for updates.</p></span>
+</div>
+
+  <p>Composer provides you with the following advantages:</p>
+
+  <ul>
+    <li>Enables you to reuse third-party libraries without bundling them with source code</li>
+    <li>Component-based architecture with robust dependency management</li>
+    <li>Manages dependencies to reduce extension conflicts and compatibility issues</li>
+    <li>Versioned dependencies</li>
+    <li><a href="https://getcomposer.org/doc/01-basic-usage.md#package-versions" target="_blank">Semantic versioning</a></li>
+    <li>Supports PHP Framework Interoperability standard</li>
+  </ul>
+
+  <div>
+
+    <h2 id="instgde-prereq-compose-install">Install Composer</h2>
+    <p>First, check  if Composer is already installed: </p>
+
+    <p>In a command prompt, enter any of the following commands:</p>
+
+    <ul>
+      <li><code>composer --help</code></li>
+      <li><code>composer list --help</code></li>
+    </ul>
+
+    <p>If command help displays, Composer is already installed; in that case, you can skip the next section and continue with <a href="#instgde-prereq-compose-clone">Clone the Magento repository</a>.</p>
+
+    <p>If an error displays, use the following steps to install Composer.</p>
+
+    <p>To install Composer:</p>
+
+    <ol>
+      <li>
+        <p>Change to or create an empty directory on your Magento server.</p>
+      </li>
+      <li>
+        <p>Enter the following commands:</p>
+
+        <pre>curl -sS https://getcomposer.org/installer | php
+mv composer.phar /usr/local/bin/composer</pre>
+
+        <p>For additional installation options, see the <a href="https://getcomposer.org/download/" target="_blank">Composer installation documentation</a>.</p>
+      </li>
+    </ol>
+
+    <h2 id="instgde-prereq-compose-clone">Clone the Magento repository</h2>
+    <p>This section discusses how to get current code by cloning the Magento GitHub’s develop branch. You can clone either the <code>master</code> or <code>develop</code> branch:</p>
+
+    <ul>
+      <li><code>master</code> is more stable</li>
+      <li><code>develop</code> is more recent</li>
+    </ul>
+
+    <p>Currently, the <code>develop</code> branch is the default but you can clone the <code>master</code> branch using the optional <code>[-b master]</code> argument.</p>
+
+    <h3 id="instgde-prereq-compose-clone-auth">Creating an authorization file</h3>
+    <p>The Magento 2 GitHub repository requires you to authenticate. The <code>composer install</code> commands fails if you do not. To authenticate, you must first create an account on <code>magento.com</code>, after which you create an <code>auth.json</code> file in the home directory of the Magento file system owner.</p>
+
+    <p>To set up authentication:</p>
+
+    <ol>
+      <li>
+        <p>If you haven’t done so already, create an account on <a href="http://www.magento.com" target="_blank">magento.com</a>.</p>
+
+        <ul>
+          <li>Click <strong>My Account</strong> in the upper right corner of the page.</li>
+          <li>
+            <p>In the New Customer section, click <strong>Register</strong>.</p>
+
+            <p>If you already have an account, make sure you know your user name and password, then continue with the next step.</p>
+          </li>
+        </ul>
+      </li>
+      <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
+      <li>
+        <p>Create <code>auth.json</code> in the user’s home directory with the following contents:</p>
+
+        <pre><code>{
+   "http-basic": {
+      "repo.magento.com": {
+         "username": "&lt;username&gt;",
+         "password": "&lt;password&gt;"
+      }
+   }
+}
+</code></pre>
+
+   	For example, if your user name is <code>magento_user</code>, create <code>/home/magento_user/.composer/auth.json</code>
+      </li>
+    </ol>
+
+    <h3 id="instgde-prereq-compose-clone-ways">How to clone the Magento 2 GitHub repository</h3>
+    <p>You can clone the Magento 2 GitHub repository using either SSH or HTTPS protocols:</p>
+
+    <ul>
+      <li>Use SSH for better security (no user name and password are exchanged). This requires you to <a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank">share a public key</a> with GitHub.</li>
+      <li>Use HTTPS if you don’t share an SSH key with GitHub (your user name and password are encrypted before being sent to GitHub).</li>
+    </ul>
+
+    <p>See one of the following section:</p>
+
+    <ul>
+      <li><a href="#instgde-prereq-compose-clone-ssh">Clone with SSH</a></li>
+      <li><a href="#instgde-prereq-compose-clone-https">Clone with HTTPS</a></li>
+    </ul>
+
+    <h4 id="instgde-prereq-compose-clone-ssh">Clone with SSH</h4>
+
+    <p>To clone the Magento GitHub repository using the SSH protocol:</p>
+
+    <ol>
+      <li>
+        <p>Copy to the clipboard the Magento GitHub repository SSH clone URL.</p>
+
+        <p>a.	In a web browser, go to <a href="https://github.com/magento/magento2" target="_blank">the Magento GitHub repository</a>.</p>
+
+        <p>b.	On the right side of the page, under the <em>clone URL</em> field, click <strong>SSH</strong>.</p>
+
+        <p>c.	Click the <strong>Copy to clipboard</strong> button.</p>
+
+        <p>The following figure shows an example.</p>
+
+        <p><img src="/common/images/install_mage2_clone-ssh.png" alt="Clone the Magento GitHub repository using SSH" /></p>
+      </li>
+      <li>
+        <p>Change to your web server’s docroot directory.</p>
+
+        <p>Typically, for Ubuntu, it’s <code>/var/www</code> and for CentOS it’s <code>/var/www/html</code>.</p>
+
+        <p>Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here.</a></p>
+      </li>
+      <li>
+        <p>Enter <code>git clone</code> and paste the value you obtained from step 1.</p>
+
+        <p>An example follows:</p>
+
+        <pre><code>git clone [-b master] git@github.com:magento/magento2.git
+</code></pre>
+
+        <p>Use <code>-b master</code> to clone the master branch; omit it to clone the <code>develop</code> branch, which is the default.</p>
+      </li>
+      <li>
+        <p>Wait for the repository to clone on your server.</p>
+
+        <div class="bs-callout bs-callout-info" id="info">
+    <p>If the following error displays, make sure you <a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank">shared your SSH key</a> with GitHub: </p>
+        <pre>Cloning into 'magento2'...
+Permission denied (publickey).
+fatal: The remote end hung up unexpectedly</pre>
+</div>
+      </li>
+      <li>
+        <p>Continue with <a href="/guides/v2.0/install-gde/install/prepare-install.html">Update installation dependencies</a>.</p>
+      </li>
+    </ol>
+
+    <h4 id="instgde-prereq-compose-clone-https">Clone with HTTPS</h4>
+
+    <p>To clone the Magento GitHub repository using the HTTPS protocol:</p>
+
+    <ol>
+      <li>
+        <p>Copy to the clipboard the Magento GitHub repository HTTPS clone URL.</p>
+
+        <p>a.	In a web browser, go to <a href="https://github.com/magento/magento2" target="_blank">the Magento GitHub repository</a>.</p>
+
+        <p>b.	On the right side of the page, under the <em>clone URL</em> field, click <strong>HTTPS</strong>.</p>
+
+        <p>c.	Click the <strong>Copy to clipboard</strong> button.</p>
+
+        <p>The following figure shows an example.</p>
+
+        <p><img src="/common/images/install_mage2_clone-https.png" alt="Clone the Magento GitHub repository using HTTPS" /></p>
+      </li>
+      <li>
+        <p>Change to your web server’s docroot directory.</p>
+
+        <p>Typically, for Ubuntu, it’s <code>/var/www</code> and for CentOS it’s <code>/var/www/html</code>.</p>
+      </li>
+      <li>
+        <p>Enter <code>git clone</code> and paste the value you obtained from step 1.</p>
+
+        <p>An example follows</p>
+
+        <pre><code>git clone [-b master] https://github.com/magento/magento2.git
+</code></pre>
+
+        <p>Use <code>-b master</code> to clone the master branch; omit it to clone the <code>develop</code> branch, which is the default.</p>
+      </li>
+      <li>
+        <p>Wait for the repository to clone on your server.</p>
+      </li>
+    </ol>
+
+    <h4 id="next-step">Next step</h4>
+
+    <p>After completing the tasks discussed on this page, see <a href="/guides/v2.0/install-gde/install/prepare-install.html">Update installation dependencies</a>.</p>
+
+  </div>
+</div>
 
 
 		</div>
@@ -344,7 +548,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/apache-user.html">Create the Magento file system owner</a></li>
 
 									
 						
@@ -360,7 +564,23 @@
 
 									
 							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a></li>
+
+									
+						
+								
+
+									
+							
 									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/mysql.html">MySQL</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/composer.html">Install Composer</a></li>
 
 									
 						
@@ -384,15 +604,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/apache-user.html">Create the Magento file system owner</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/security.html">Security-related prerequisites</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/security.html">SELinux and iptables</a></li>
 
 									
 						
@@ -422,7 +634,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install/pre-install.html">Your install or upgrade path</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install/get-software.html">Get the Magento software</a></li>
 									
 								
 								
@@ -447,7 +659,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/merch_install.html">Merchant installation first steps</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/zip_install.html">(Easy) Install the Magento archive on your server</a></li>
 									
 								
 								
@@ -472,7 +684,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/integrator_install.html">System Integrator installation first steps</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/integrator_install.html">(Integrator) Get the Composer metapackage</a></li>
 									
 								
 								
@@ -497,21 +709,13 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/dev_install.html">Contributing developer installation first steps</a></li>
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/dev_install.html">(Contributor) Clone the Magento repository</a></li>
 									
 								
 								
 									
 							
 								
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a></li>
-
-									
-						
 								
 
 									
@@ -521,14 +725,6 @@
 									
 						
 								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/dev_updater.html">Update components</a></li>
-
-									
-						
-								
 								
 							
 						
@@ -546,7 +742,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install/file-system-perms.html">Set file system ownership and permissions</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install/get-help.html">Get help with your installation</a></li>
 									
 								
 								
@@ -586,6 +782,14 @@
 					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			

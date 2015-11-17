@@ -420,7 +420,7 @@ with Zend OPcache v7.0.3, Copyright (c) 1999-2014, by Zend Technologies
 <p>This section discusses how to:</p>
 <ul><li>Set the system time zone for PHP; otherwise, errors like the following display during the installation and time-related operations like cron might not work:<br />
 <pre>PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more messages follow]</pre></li>
-<li>Increase the PHP memory limit to at least 512MB for normal operation or 2GB for testing.</li>
+<li>Increase the PHP memory limit to at least 768MB for normal operation or 2GB for testing.</li>
 <li>Set <code>always_populate_raw_post_data = -1</code><br />
 <a href="http://php.net/manual/en/ini.core.php#ini.always-populate-raw-post-data" target="_blank">always_populate_raw_post_data</a> is deprecated in PHP 5.6. This setting causes PHP to always populate <code>$HTTP_RAW_POST_DATA</code> with raw POST data. Failure to set this properly in PHP 5.6 results in errors when connecting to the database.</li>
 <li>Disable <a href="http://php.net/manual/en/ini.core.php#ini.asp-tags" target="_blank">asp_tags</a>. If asp_tags are enabled, errors display when accessing PHTML templates.<br />
@@ -580,7 +580,7 @@ CentOS: <code>service httpd restart</code></li></ol>
 
 									
 							
-									<li class="level-2  active "><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/apache-user.html">Create the Magento file system owner</a></li>
 
 									
 						
@@ -596,7 +596,23 @@ CentOS: <code>service httpd restart</code></li></ol>
 
 									
 							
+									<li class="level-2  active "><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a></li>
+
+									
+						
+								
+
+									
+							
 									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/mysql.html">MySQL</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/composer.html">Install Composer</a></li>
 
 									
 						
@@ -620,15 +636,7 @@ CentOS: <code>service httpd restart</code></li></ol>
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/apache-user.html">Create the Magento file system owner</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/security.html">Security-related prerequisites</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/security.html">SELinux and iptables</a></li>
 
 									
 						
@@ -658,7 +666,7 @@ CentOS: <code>service httpd restart</code></li></ol>
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install/pre-install.html">Your install or upgrade path</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install/get-software.html">Get the Magento software</a></li>
 									
 								
 								
@@ -683,7 +691,7 @@ CentOS: <code>service httpd restart</code></li></ol>
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/merch_install.html">Merchant installation first steps</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/zip_install.html">(Easy) Install the Magento archive on your server</a></li>
 									
 								
 								
@@ -708,7 +716,7 @@ CentOS: <code>service httpd restart</code></li></ol>
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/integrator_install.html">System Integrator installation first steps</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/integrator_install.html">(Integrator) Get the Composer metapackage</a></li>
 									
 								
 								
@@ -733,21 +741,13 @@ CentOS: <code>service httpd restart</code></li></ol>
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/dev_install.html">Contributing developer installation first steps</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/dev_install.html">(Contributor) Clone the Magento repository</a></li>
 									
 								
 								
 									
 							
 								
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a></li>
-
-									
-						
 								
 
 									
@@ -757,14 +757,6 @@ CentOS: <code>service httpd restart</code></li></ol>
 									
 						
 								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/dev_updater.html">Update components</a></li>
-
-									
-						
-								
 								
 							
 						
@@ -782,7 +774,7 @@ CentOS: <code>service httpd restart</code></li></ol>
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install/file-system-perms.html">Set file system ownership and permissions</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install/get-help.html">Get help with your installation</a></li>
 									
 								
 								
@@ -822,6 +814,14 @@ CentOS: <code>service httpd restart</code></li></ol>
 					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			

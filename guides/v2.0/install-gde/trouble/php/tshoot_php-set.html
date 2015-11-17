@@ -211,10 +211,7 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
-<!-- Referring file: TBD owned by Ogres -->
-
-<h2 id="trouble-php-set">PHP settings errors</h2>
+		<h2 id="trouble-php-set">PHP settings errors</h2>
 <p>See one of the following sections:</p>
 
 <ul>
@@ -233,23 +230,14 @@
 </code></pre>
 
 <h4 id="solution-set-codeasptags--offcode-in-codephpinicode">Solution: Set <code>asp_tags = off</code> in <code>php.ini</code></h4>
-<p>Multiple templates have syntax for support abstract level on templates (use different templates engines like Twig) wrapped in <code>&lt;% %&gt;</code> tags, like this <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/view/frontend/templates/product/view/base-image.phtml" target="_blank">template</a> for displaying a product image:</p>
+<p>Multiple templates have syntax for support abstract level on templates (use different templates engines like Twig) wrapped in <code>&lt;% %&gt;</code> tags, like this <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/view/adminhtml/templates/product/edit/base_image.phtml" target="_blank">template</a> for displaying a product image:</p>
 
 <div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="o">&lt;</span><span class="nx">a</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&quot;product photo&lt;% if (typeof data.hasImg !== &#39;undefined&#39;) { %&gt; placeholder&lt;% } %&gt;&quot;</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;&lt;%- data.large %&gt;&quot;</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&quot;img photo container&quot;</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">img</span>
-          <span class="nx">data</span><span class="o">-</span><span class="nx">role</span><span class="o">=</span><span class="s2">&quot;zoom-image&quot;</span>
-          <span class="nx">class</span><span class="o">=</span><span class="s2">&quot;photo image&quot;</span>
-          <span class="nx">itemprop</span><span class="o">=</span><span class="s2">&quot;image&quot;</span>
-          <span class="o">&lt;%</span> <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">data</span><span class="o">.</span><span class="nx">fullSizeMode</span><span class="p">)</span> <span class="p">{</span> <span class="o">%&gt;</span>
-            <span class="nx">data</span><span class="o">-</span><span class="nx">large</span><span class="o">=</span><span class="s2">&quot;&lt;%- data.large %&gt;&quot;</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;&lt;%- data.medium %&gt;&quot;</span>
-          <span class="o">&lt;%</span> <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="o">%&gt;</span>
-          <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;&lt;%- data.large %&gt;&quot;</span>
-          <span class="o">&lt;%</span> <span class="p">}</span> <span class="o">%&gt;</span>
-          <span class="nx">alt</span><span class="o">=</span><span class="s2">&quot;&lt;%- data.title %&gt;&quot;</span><span class="o">/&gt;</span>
-    <span class="o">&lt;/</span><span class="nx">span</span><span class="o">&gt;</span>
-    <span class="o">&lt;/</span><span class="nx">a</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">img</span>
+    <span class="nx">class</span><span class="o">=</span><span class="s2">&quot;product-image&quot;</span>
+    <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;&lt;%- data.url %&gt;&quot;</span>
+    <span class="nx">data</span><span class="o">-</span><span class="nx">position</span><span class="o">=</span><span class="s2">&quot;&lt;%- data.position %&gt;&quot;</span>
+    <span class="nx">alt</span><span class="o">=</span><span class="s2">&quot;&lt;%- data.label %&gt;&quot;</span> <span class="o">/&gt;</span>
 <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
 
 <p>More information about <a href="http://php.net/manual/en/ini.core.php#ini.asp-tags" target="_blank">asp_tags</a>. </p>
@@ -279,6 +267,10 @@
 		
 		
 		
+				
+				
+			
+			
 				
 				
 			
@@ -731,6 +723,14 @@
 
 									
 							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_install-issues.html">Known issues that affect installation</a></li>
+
+									
+						
+								
+
+									
+							
 									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_segfault.html">Segmentation fault during rollback</a></li>
 
 									
@@ -751,6 +751,10 @@
 					
 
 
+				
+			
+			
+				
 				
 			
 			

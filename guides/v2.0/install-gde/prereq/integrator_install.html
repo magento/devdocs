@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>System Integrator installation first steps</title>
+	<title>(Integrator) Get the Composer metapackage</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
@@ -200,7 +200,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">System Integrator installation first steps</h1>
+		<h1 class="page-heading">(Integrator) Get the Composer metapackage</h1>
 			
 			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/install-gde/prereq/integrator_install.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -217,56 +217,198 @@
 
 <h4 id="contents">Contents</h4>
 <ul>
-  <li><a href="#integrator-first-over">System integration installation first steps</a></li>
-  <li><a href="#integrator-first-composer">Create a Composer project</a></li>
-  <li><a href="#integrator-first-issue">Known issue: you might need to clear your Composer cache</a></li>
+  <li><a href="#int-aud">Intended audience</a></li>
+  <li><a href="#integrator-first-over">First steps</a></li>
+  <li><a href="#instgde-overview-composer">Composer and Magento</a></li>
+  <li><a href="#instgde-prereq-compose-install">Install Composer</a></li>
+  <li><a href="#integrator-first-composer-ce">Get the Magento CE metapackage</a></li>
+  <li><a href="#integrator-first-composer-ee">Get the Magento EE metapackage</a></li>
+  <li><a href="#instgde-prereq-compose-access">Set file system ownership and permissions</a></li>
 </ul>
 
-<h2 id="integrator-first-over">System integration installation first steps</h2>
-<p>As an integrator, you want to manage each of your Magento core components and third-party components using the Component Manager and System Upgrade (<em>not released yet</em>.)</p>
+<h2 id="int-aud">Intended audience</h2>
+<p>The audience for this topic is anyone who downloads the Magento metapackage using <code>composer create-project</code>. If that isn’t you, go back and <a href="/guides/v2.0/install-gde/continue.html">choose another starting point</a>.</p>
 
-<p>To do so, you start by creating a Composer project, which installs each component so it can be centrally managed after installation.</p>
+<h2 id="integrator-first-over">First steps</h2>
+<p>As an integrator, you want to manage each of your Magento core components and third-party components using the Component Manager and System Upgrade.</p>
 
-<h2 id="instgde-overview-composer">Composer and Magento</h2>
-<p>We now use <a href="https://getcomposer.org/" target="_blank">Composer</a> to install the Magento software. Composer enables us to manage the Magento components and their dependencies.</p>
-<p>Composer provides you with the following advantages:</p>
-<ul><li>Enables you to reuse third-party libraries without bundling them with source code</li>
-<li>Component-based architecture with robust dependency management</li>
-<li>Manages dependencies to reduce extension conflicts and compatibility issues</li>
-<li>Versioned dependencies</li>
-<li><a href="https://getcomposer.org/doc/01-basic-usage.md#package-versions" target="_blank">Semantic versioning</a></li>
-<li>Supports PHP Framework Interoperability standard</li></ul>
+<p>To do so, you start by creating a Composer project from our metapackage. The metapackage installs each component so it can be centrally managed after installation.</p>
 
-<h2 id="integrator-first-composer">Create a Composer project</h2>
-<p>To get started:</p>
+<div>
 
-<ol>
-  <li>Log in to your Magento server as, or switch to, a user who has privileges to write to the web server docroot.</li>
-  <li>Change to the web server docroot directory, or to a directory you’ve configured as a virtual host docroot.</li>
-  <li>
-    <p>Enter the following command:</p>
+  <h2 id="instgde-overview-composer">Composer and Magento</h2>
+  <p>We now use <a href="https://getcomposer.org/" target="_blank">Composer</a> to install the Magento software. Composer enables us to manage the Magento components and their dependencies.</p>
 
-    <pre><code>composer create-project magento/project-community-edition --stability="beta" &lt;installation directory name&gt;
+  <div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Everyone who uses the Magento software must install Composer to update components and Magento. If you install Magento using an archive, you don't need Composer to <em>install</em> Magento, but you do need Composer for updates.</p></span>
+</div>
+
+  <p>Composer provides you with the following advantages:</p>
+
+  <ul>
+    <li>Enables you to reuse third-party libraries without bundling them with source code</li>
+    <li>Component-based architecture with robust dependency management</li>
+    <li>Manages dependencies to reduce extension conflicts and compatibility issues</li>
+    <li>Versioned dependencies</li>
+    <li><a href="https://getcomposer.org/doc/01-basic-usage.md#package-versions" target="_blank">Semantic versioning</a></li>
+    <li>Supports PHP Framework Interoperability standard</li>
+  </ul>
+
+  <div>
+
+    <h2 id="instgde-prereq-compose-install">Install Composer</h2>
+    <p>First, check  if Composer is already installed: </p>
+
+    <p>In a command prompt, enter any of the following commands:</p>
+
+    <ul>
+      <li><code>composer --help</code></li>
+      <li><code>composer list --help</code></li>
+    </ul>
+
+    <p>If command help displays, Composer is already installed; in that case, you can skip the next section and continue with <a href="#instgde-prereq-compose-clone">Clone the Magento repository</a>.</p>
+
+    <p>If an error displays, use the following steps to install Composer.</p>
+
+    <p>To install Composer:</p>
+
+    <ol>
+      <li>
+        <p>Change to or create an empty directory on your Magento server.</p>
+      </li>
+      <li>
+        <p>Enter the following commands:</p>
+
+        <pre>curl -sS https://getcomposer.org/installer | php
+mv composer.phar /usr/local/bin/composer</pre>
+
+        <p>For additional installation options, see the <a href="https://getcomposer.org/download/" target="_blank">Composer installation documentation</a>.</p>
+      </li>
+    </ol>
+
+    <h2 id="integrator-first-composer-ce">Get the Magento CE metapackage</h2>
+    <p>To get started:</p>
+
+    <ol>
+      <li>
+        <p>If you haven’t done so already, create an account on <a href="http://www.magento.com" target="_blank">magento.com</a>.</p>
+
+        <ul>
+          <li>Click <strong>My Account</strong> in the upper right corner of the page.</li>
+          <li>
+            <p>In the New Customer section, click <strong>Register</strong>.</p>
+
+            <p>If you already have an account, make sure you know your user name and password, then continue with the next step.</p>
+          </li>
+        </ul>
+      </li>
+      <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
+      <li>Change to the web server docroot directory, or to a directory you’ve configured as a virtual host docroot.</li>
+      <li>
+        <p>Enter the following command:</p>
+
+        <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition &lt;installation directory name&gt;
 </code></pre>
 
-    <p>This command creates the project defined in <a href="http://packages.magento.com/#!/community" target="_blank">packages.magento.com</a> and downloads dependencies for it. The project is in a directory named <code>&lt;installation directory name&gt;</code> if you provided the parameter or <code>product-community-edition</code> if you did not.</p>
+        <p>When prompted, enter your <a href="http://www.magento.com" target="_blank">magento.com</a> user name and password. (This is the same user name and password you used to register with Magento. You use it to log in to your My Account page at magento.com.)</p>
 
-    <p>If you configured a virtual host, <code>&lt;installation directory name&gt;</code> must match the docroot directory defined for it.</p>
-  </li>
-  <li>Continue with <a href="/guides/v2.0/install-gde/install/file-system-perms.html">Set file system ownership and permissions</a>.</li>
-</ol>
+        <p>This command creates the project and downloads dependencies for it. The project is in a directory named <code>&lt;installation directory name&gt;</code> if you provided the parameter or <code>project-community-edition</code> if you did not.</p>
+      </li>
+      <li>Continue with <a href="#instgde-prereq-compose-access">Set file system ownership and permissions</a>.</li>
+    </ol>
 
-<h2 id="integrator-first-issue">Known issue: you might need to clear your Composer cache</h2>
-<p>We introduced a change on <a href="http://packages.magento.com/" target="_blank">packages.magento.com</a> that had the unintended result of causing errors with certain Magento packages.</p>
-<p>This affects <em>only</em> users who used <code>composer create-project</code> to create their Magento project between the dates of August 13 and August 17, 2015.</p>
-<p>A user reported one symptom on <a href="https://github.com/magento/magento2/issues/1680" target="_blank">GitHub</a> about an error that occurred during the installation:</p>
-<pre>[UnexpectedValueException]
-The checksum verification of the file failed (downloaded from https://packages.magento.com/_packages/magento_framework-1.0.0-beta.zip)</pre>
-<p>The cause is a conflict between packages on <code>packages.magento.com</code> compared to the local Composer cache. To resolve the issue, clear your Composer cache as follows:</p>
-<ol><li>Log in to your Magento server as a user with permissions to run <code>composer</code> in the Magento installation directory.</li>
-	<li><code>cd &lt;your Magento install dir&gt;</code></li>
-	<li>Enter <code>composer clear-cache</code></li></ol>
+    <h2 id="integrator-first-composer-ee">Get the Magento EE metapackage</h2>
+    <p>To get started:</p>
 
+    <ol>
+      <li>
+        <p>Make sure you know your support portal user name and password.</p>
+
+        <p>If you don’t remember it, contact Magento Support before you continue.</p>
+      </li>
+      <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
+      <li>Change to the web server docroot directory, or to a directory you’ve configured as a virtual host docroot.</li>
+      <li>
+        <p>Enter the following command:</p>
+
+        <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition &lt;installation directory name&gt;
+</code></pre>
+
+        <p>When prompted, enter your support portal user name and password. </p>
+
+        <p>The following error indicates your user name or password are incorrect:</p>
+
+        <pre><code>  Could not find package magento/project-enterprise-edition with version 2.0.0
+</code></pre>
+
+        <p>This command creates the project and downloads dependencies for it. The project is in a directory named <code>&lt;installation directory name&gt;</code> if you provided the parameter or <code>project-enterprise-edition</code> if you did not.</p>
+      </li>
+      <li>Continue with the next section.</li>
+    </ol>
+
+    <h2 id="instgde-prereq-compose-access">Set file system ownership and permissions</h2>
+    <p>The following sections discuss how to set file system ownership and permissions:</p>
+
+    <ul>
+      <li><a href="#install-perms-import">Why we recommend you set file system permissions</a></li>
+      <li><a href="#install-perms-set">File system permissions and ownership</a></li>
+    </ul>
+
+    <h3 id="install-perms-import">Why we recommend you set file system permissions</h3>
+    <p>Malicious exploits are an unfortunate reality in the internet age. To help prevent exploits that take advantage of the file system, we recommend you set Magento file system ownership and permissions in a particular way. For more information, see <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-over">Overview of ownership and permissions</a>.</p>
+
+    <div class="bs-callout bs-callout-info" id="info">
+  <p>This topic covers permissions for a development environment. In production, the web server user should have limited write privileges. To help manage you production and developer modes, we provide the <code><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">magento deploy:mode:set</a></code> command.</p>
+</div>
+
+    <p>The important things:</p>
+    <ul><li>The owner of the Magento file system:
+<ul><li>Must have full control (read/write/execute) of all files and directories.</li>
+<li>Must <em>not</em> be the web server user; it should be a different user.</li></ul>
+</li>
+<li>The web server user must have write access to the following files and directories:
+<ul><li><code>var</code></li>
+<li><code>app/etc</code></li>
+<li><code>pub</code></li></ul>
+</li>
+</ul>
+    <p>In addition, the web server's <em>group</em> must own the Magento file system so that the Magento user (who is in the group) can share access to files with the web server user. (This includes files created by the Magento Admin or other web-based utilities.)</p>
+    <p>We recommend setting the permissions as follows:</p>
+    <ul><li>All directories have 770 permissions.<br />
+770 permissions give full control (that is, read/write/execute) to the owner and to the group and no permissions to anyone else.</li>
+<li>All files have 660 permissions.<br />
+660 permissions mean the owner and the group can read and write but other users have no permissions.</li></ul>
+
+    <h3 id="install-perms-set">File system permissions and ownership</h3>
+    <p>Use the following steps:</p>
+    <ol><li>Change to the Magento installation directory:<br />
+	<pre>cd &lt;web server docroot&gt;/&lt;magento2 base dir&gt;</pre>
+	The base directory is typically a subdirectory named <code>magento2</code> under your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.<br />
+
+	Examples:
+	<ul><li>Ubuntu: <code>/var/www/magento2</code></li>
+	<li>CentOS: <code>/var/www/html/magento2</code></li></ul>
+</li>
+<li>Set ownership:<br />
+<pre>chown -R :&lt;your web server group name&gt; .</pre>
+Typical examples:<br /><br />
+CentOS: <code>chown -R :apache .</code><br />
+Ubuntu: <code>chown -R :www-data .</code></li>
+<li>Set permissions:<br />
+	<pre>find . -type d -exec chmod 770 {} \; &amp;&amp; find . -type f -exec chmod 660 {} \; &amp;&amp; chmod u+x bin/magento</pre>
+	If you must enter the commands as <code>sudo</code>, use:<br />
+	<pre>sudo find . -type d -exec chmod 770 {} \; &amp;&amp; sudo find . -type f -exec chmod 660 {} \; &amp;&amp; sudo chmod u+x bin/magento</pre></li></ol>
+
+    <h4 id="next-step">Next step</h4>
+    <p>Install the Magento software:</p>
+
+    <ul>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli.html">Command line</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/web/install-web.html">Setup Wizard</a></li>
+    </ul>
+  </div>
+</div>
 
 
 		</div>
@@ -380,7 +522,7 @@ The checksum verification of the file failed (downloaded from https://packages.m
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/apache-user.html">Create the Magento file system owner</a></li>
 
 									
 						
@@ -396,7 +538,23 @@ The checksum verification of the file failed (downloaded from https://packages.m
 
 									
 							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a></li>
+
+									
+						
+								
+
+									
+							
 									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/mysql.html">MySQL</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/composer.html">Install Composer</a></li>
 
 									
 						
@@ -420,15 +578,7 @@ The checksum verification of the file failed (downloaded from https://packages.m
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/apache-user.html">Create the Magento file system owner</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/security.html">Security-related prerequisites</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/security.html">SELinux and iptables</a></li>
 
 									
 						
@@ -458,7 +608,7 @@ The checksum verification of the file failed (downloaded from https://packages.m
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install/pre-install.html">Your install or upgrade path</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install/get-software.html">Get the Magento software</a></li>
 									
 								
 								
@@ -483,7 +633,7 @@ The checksum verification of the file failed (downloaded from https://packages.m
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/merch_install.html">Merchant installation first steps</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/zip_install.html">(Easy) Install the Magento archive on your server</a></li>
 									
 								
 								
@@ -508,7 +658,7 @@ The checksum verification of the file failed (downloaded from https://packages.m
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/integrator_install.html">System Integrator installation first steps</a></li>
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/integrator_install.html">(Integrator) Get the Composer metapackage</a></li>
 									
 								
 								
@@ -533,21 +683,13 @@ The checksum verification of the file failed (downloaded from https://packages.m
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/dev_install.html">Contributing developer installation first steps</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/dev_install.html">(Contributor) Clone the Magento repository</a></li>
 									
 								
 								
 									
 							
 								
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a></li>
-
-									
-						
 								
 
 									
@@ -557,14 +699,6 @@ The checksum verification of the file failed (downloaded from https://packages.m
 									
 						
 								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/dev_updater.html">Update components</a></li>
-
-									
-						
-								
 								
 							
 						
@@ -582,7 +716,7 @@ The checksum verification of the file failed (downloaded from https://packages.m
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install/file-system-perms.html">Set file system ownership and permissions</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install/get-help.html">Get help with your installation</a></li>
 									
 								
 								
@@ -622,6 +756,14 @@ The checksum verification of the file failed (downloaded from https://packages.m
 					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			

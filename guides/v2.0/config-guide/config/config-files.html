@@ -229,12 +229,12 @@
 <p>Following are common terms used in this topic:</p>
 
 <dl>
-  <dt>Configuration object</dt>
-  <dd>The Magento library or class that is responsible for defining and validating the configuration type. For example, the configuration object for <code>config.xml</code> is <a href=" https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Config.php" target="_blank">Magento\Framework\App\Config</a>.</dd>
-  <dt>Configuration stage</dt>
-  <dd>Stages are defined as <em>primary</em>, <em>global</em>, and <em>area</em>. Each stage determines when configuration type is loaded and merged with same-named configuration types. (For example, <code>module.xml</code> files are merged with other <code>module.xml</code> files.) For more information, see <a href="#config-files-loadmerge">Configuration load and merge</a>.</dd>
-  <dt>Configuration scope</dt>
-  <dd>Complementary to a configuration stages, a scope defines the configuration type model. For example, <code>adminhtml</code> is an area scope that is loaded with at the stage with other modules' <code>adminhtml</code> configurations. For more information, see <a href="/guides/v2.0/architecture/modules/mod_and_areas.html">Modules and areas</a>.</dd>
+	<dt>Configuration object</dt>
+	<dd>The Magento library or class that is responsible for defining and validating the configuration type. For example, the configuration object for <code>config.xml</code> is <a href=" https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Config.php" target="_blank">Magento\Framework\App\Config</a>.</dd>
+	<dt>Configuration stage</dt>
+	<dd>Stages are defined as <em>primary</em>, <em>global</em>, and <em>area</em>. Each stage determines when configuration type is loaded and merged with same-named configuration types. (For example, <code>module.xml</code> files are merged with other <code>module.xml</code> files.) For more information, see <a href="#config-files-loadmerge">Configuration load and merge</a>.</dd>
+	<dt>Configuration scope</dt>
+	<dd>Complementary to a configuration stages, a scope defines the configuration type model. For example, <code>adminhtml</code> is an area scope that is loaded with at the stage with other modules' <code>adminhtml</code> configurations. For more information, see <a href="/guides/v2.0/architecture/modules/mod_and_areas.html">Modules and areas</a>.</dd>
 </dl>
 
 <h2 id="config-files-loadmerge">Configuration load and merge</h2>
@@ -245,105 +245,130 @@
 
 <ul>
   <li>Primary configuration (<code>app/etc/di.xml</code>). This file is used to bootstrap Magento.</li>
-  <li>Global configurations from modules (<code>app/code/&lt;VendorName&gt;/&lt;ModuleName&gt;/etc/*.xml</code>). Collects certain configuration files from all modules and merges them together.</li>
-  <li>Area-specific configuration from modules (<code>app/code/&lt;VendorName&gt;/&lt;ModuleName&gt;/etc/&lt;area&gt;/*.xml</code>). Collects configuration files from all modules and merges them into the global configuration. Some area-specific configurations can override or extend the global configuration.</li>
+  <li>Global configurations from modules (<code>&lt;your component base dir&gt;/&lt;vendorname&gt;/&lt;component-type&gt;-&lt;component-name&gt;/etc/*.xml</code>). Collects certain configuration files from all modules and merges them together.</li>
+  <li>Area-specific configuration from modules (<code>&lt;your component base dir&gt;/&lt;vendorname&gt;/&lt;component-type&gt;-&lt;component-name&gt;/etc/&lt;area&gt;/*.xml</code>). Collects configuration files from all modules and merges them into the global configuration. Some area-specific configurations can override or extend the global configuration.</li>
 </ul>
 
-<h3 id="config-files-load-merge-merge">Configuration file merge</h3>
-<p>Nodes in configuration files are merged based on their fully qualified XPaths, which has a special attribute defined in <code>$idAttributes</code> array declared as its identifier. This identifier must be unique for all nodes nested under the same parent node.</p>
+<div>
 
-<p>Magento’s merge algorithm follows:</p>
+  <p>where</p>
 
-<ul>
-  <li>If node identifiers are equal (or if there is no identifier defined), all underlying content in the node (attributes, child nodes, and scalar content) is overridden.</li>
-  <li>If node identifiers are not equal, the node is a new child of the parent node.</li>
-  <li>If the original document has multiple nodes with the same identifier, an error is triggered because the identifiers cannot be distinguished.</li>
-</ul>
+  <ul>
+    <li><code>&lt;your component base dir&gt;</code> is the base directory in which your component is located. Typical values are <code>app/code</code> or <code>vendor</code> relative to the Magento installation directory.</li>
+    <li><code>&lt;vendorname&gt;</code> is the component’s vendor name; for example, Magento’s vendor name is <code>magento</code>.</li>
+    <li>
+      <p><code>&lt;component-type&gt;</code> is one of the following:</p>
 
-<p>After configuration files are merged, the resulting document contains all nodes from the original files. </p>
+      <ul>
+        <li><code>module-</code>: An extension or module.</li>
+        <li><code>theme-</code>: Theme.</li>
+        <li><code>language-</code>: Language package.</li>
+      </ul>
 
-<h2 id="config-files-classes">Configuration types, objects, and interfaces</h2>
-<p>The following sections provide information about configuration types, their corresponding configuration objects, and interfaces you can use to work with the objects:</p>
+      <div class="bs-callout bs-callout-info" id="info">
+    <span class="glyphicon-class">
+  		<p>Currently, themes are located under <code>&lt;your Magento install dir&gt;/app/design/frontend</code> or <code>&lt;your Magento install dir&gt;/app/design/adminhtml</code></p></span>
+</div>
+    </li>
+    <li><code>&lt;component-name&gt;</code>: Name of your component as defined in <code>composer.json</code>.</li>
+  </ul>
 
-<ul>
-  <li><a href="#config-files-classes-objects">Configuration types and objects</a></li>
-  <li><a href="#config-files-classes-int">Configuration interfaces</a></li>
-</ul>
+  <h3 id="config-files-load-merge-merge">Configuration file merge</h3>
+  <p>Nodes in configuration files are merged based on their fully qualified XPaths, which has a special attribute defined in <code>$idAttributes</code> array declared as its identifier. This identifier must be unique for all nodes nested under the same parent node.</p>
 
-<h3 id="config-files-classes-objects">Configuration types and objects</h3>
-<p>The following table shows each configuration type and the Magento configuration object to which it relates.</p>
+  <p>Magento’s merge algorithm follows:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <th>Configuration file</th>
-      <th>Description</th>
-      <th>Stage</th>
-      <th>Configuration object</th>
-    </tr>
-    <tr>
-      <td><code>config.php</code> and <code>env.php</code></td>
-      <td><a href="/guides/v2.0/config-guide/config/config-php.html">Deployment configuration</a></td>
-      <td>Loads into memory when Magento initializes</td>
-      <td>Has no object, cannot be customized</td>
-    </tr>
-    <tr>
-      <td><code>config.xml</code></td>
-      <td>System configuration</td>
-      <td>primary, global </td>
-      <td><a href=" https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Config.php" target="_blank">\Magento\Framework\App\Config</a></td>
-    </tr>
-    <tr>
-      <td><code>di.xml</code></td>
-      <td><a href="/guides/v2.0/extension-dev-guide/depend-inj.html">Dependency injection</a> configuration</td>
-      <td>primary, global, area</td>
-      <td><a href=" https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/ObjectManager/Config/Config.php" target="_blank">\Magento\Framework\ObjectManager\Config</a></td>
-    </tr>
-    <tr>
-      <td><code>events.xml</code></td>
-      <td>Event/observer configuration</td>
-      <td>global, area</td>
-      <td><a href=" https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Event.php" target="_blank">\Magento\Framework\Event</a></td>
-    </tr>
+  <ul>
+    <li>If node identifiers are equal (or if there is no identifier defined), all underlying content in the node (attributes, child nodes, and scalar content) is overridden.</li>
+    <li>If node identifiers are not equal, the node is a new child of the parent node.</li>
+    <li>If the original document has multiple nodes with the same identifier, an error is triggered because the identifiers cannot be distinguished.</li>
+  </ul>
+
+  <p>After configuration files are merged, the resulting document contains all nodes from the original files. </p>
+
+  <h2 id="config-files-classes">Configuration types, objects, and interfaces</h2>
+  <p>The following sections provide information about configuration types, their corresponding configuration objects, and interfaces you can use to work with the objects:</p>
+
+  <ul>
+    <li><a href="#config-files-classes-objects">Configuration types and objects</a></li>
+    <li><a href="#config-files-classes-int">Configuration interfaces</a></li>
+  </ul>
+
+  <h3 id="config-files-classes-objects">Configuration types and objects</h3>
+  <p>The following table shows each configuration type and the Magento configuration object to which it relates.</p>
+
+  <table>
+	<tbody>
+		<tr>
+			<th>Configuration file</th>
+			<th>Description</th>
+			<th>Stage</th>
+			<th>Configuration object</th>
+		</tr>
+		<tr>
+			<td><code>config.php</code> and <code>env.php</code></td>
+			<td><a href="/guides/v2.0/config-guide/config/config-php.html">Deployment configuration</a></td>
+			<td>Loads into memory when Magento initializes</td>
+			<td>Has no object, cannot be customized</td>
+		</tr>
+		<tr>
+			<td><code>config.xml</code></td>
+			<td>System configuration</td>
+			<td>primary, global </td>
+			<td><a href=" https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Config.php" target="_blank">\Magento\Framework\App\Config</a></td>
+		</tr>
+		<tr>
+			<td><code>di.xml</code></td>
+			<td><a href="/guides/v2.0/extension-dev-guide/depend-inj.html">Dependency injection</a> configuration</td>
+			<td>primary, global, area</td>
+			<td><a href=" https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/ObjectManager/Config/Config.php" target="_blank">\Magento\Framework\ObjectManager\Config</a></td>
+		</tr>
+		<tr>
+			<td><code>events.xml</code></td>
+			<td>Event/observer configuration</td>
+			<td>global, area</td>
+			<td><a href=" https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Event.php" target="_blank">\Magento\Framework\Event</a></td>
+		</tr>
 <!--     <tr>
-      <td><code>cache.xml</code></td>
-      <td>global, area</td>
-      <td><a href=" https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Event.php" target="_blank">Magento\Framework\Event</a></td>
-    </tr> -->
-    <tr>
-      <td><code>routes.xml</code></td>
-      <td><a href="/guides/v2.0/extension-dev-guide/routing.html">Route</a> configuration</td>
-      <td>area</td>
-      <td><a href=" https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Route/Config.php" target="_blank">Magento\Framework\App\Route\Config</a></td>
-    </tr>
-  </tbody>
+			<td><code>cache.xml</code></td>
+			<td>global, area</td>
+			<td><a href=" https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Event.php" target="_blank">Magento\Framework\Event</a></td>
+		</tr> -->
+		<tr>
+			<td><code>routes.xml</code></td>
+			<td><a href="/guides/v2.0/extension-dev-guide/routing.html">Route</a> configuration</td>
+			<td>area</td>
+			<td><a href=" https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Route/Config.php" target="_blank">Magento\Framework\App\Route\Config</a></td>
+		</tr>
+	</tbody>
 </table>
 
-<h3 id="config-files-classes-int">Configuration interfaces</h3>
-<p>You can interact with configuration files using interfaces under <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Config" target="_blank">Magento\Framework\Config</a>. You can also use these interfaces if you create a new configuration types.</p>
+  <h3 id="config-files-classes-int">Configuration interfaces</h3>
+  <p>You can interact with configuration files using interfaces under <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Config" target="_blank">Magento\Framework\Config</a>. You can also use these interfaces if you create a new configuration types.</p>
 
-<p><code>Magento\Framework\Config</code> provides the following interfaces:</p>
+  <p><code>Magento\Framework\Config</code> provides the following interfaces:</p>
 
-<ul>
-  <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Config/ConverterInterface.php" target="_blank">Framework\Config\ConverterInterface</a>, which converts the XML into an in-memory array representation of the configurations.</li>
-  <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Config/DataInterface.php" target="_blank">Framework\Config\DataInterface</a>, which retrieves the configuration data in a specified scope.</li>
-  <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Config/FileResolverInterface.php" target="_blank">Framework\Config\FileResolverInterface</a>, which identifies the location of files to be read by <code>\Magento\Framework\Config\ReaderInterface</code></li>
-  <li>
-    <p><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Config/ReaderInterface.php" target="_blank">Framework\Config\ReaderInterface</a>, which reads the configuration data from storage and selects the storage from which it reads.</p>
+  <ul>
+    <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Config/ConverterInterface.php" target="_blank">Framework\Config\ConverterInterface</a>, which converts the XML into an in-memory array representation of the configurations.</li>
+    <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Config/DataInterface.php" target="_blank">Framework\Config\DataInterface</a>, which retrieves the configuration data in a specified scope.</li>
+    <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Config/FileResolverInterface.php" target="_blank">Framework\Config\FileResolverInterface</a>, which identifies the location of files to be read by <code>\Magento\Framework\Config\ReaderInterface</code></li>
+    <li>
+      <p><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Config/ReaderInterface.php" target="_blank">Framework\Config\ReaderInterface</a>, which reads the configuration data from storage and selects the storage from which it reads.</p>
 
-    <p>That is, the file system, database, other storage merges the configuration files according to the merging rules, and validates the configuration files with the validation schemas.</p>
-  </li>
-  <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Config/SchemaLocatorInterface.php" target="_blank">Framework\Config\SchemaLocatorInterface</a>, which locates the XSD schema.</li>
-  <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Config/ScopeListInterface.php" target="_blank">Framework\Config\ScopeListInterface</a>, which returns a list of scopes.</li>
-  <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Config/ValidationStateInterface.php" target="_blank">Framework\Config\ValidationStateInterface</a>, which retrieves the validation state.</li>
-</ul>
+      <p>That is, the file system, database, other storage merges the configuration files according to the merging rules, and validates the configuration files with the validation schemas.</p>
+    </li>
+    <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Config/SchemaLocatorInterface.php" target="_blank">Framework\Config\SchemaLocatorInterface</a>, which locates the XSD schema.</li>
+    <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Config/ScopeListInterface.php" target="_blank">Framework\Config\ScopeListInterface</a>, which returns a list of scopes.</li>
+    <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Config/ValidationStateInterface.php" target="_blank">Framework\Config\ValidationStateInterface</a>, which retrieves the validation state.</li>
+  </ul>
 
-<h4 id="related-topics">Related topics</h4>
+  <h4 id="related-topics">Related topics</h4>
 
-<ul>
-  <li><a href="/guides/v2.0/config-guide/config/config-create.html">Create or extend configuration types</a></li>
-  <li><a href="/guides/v2.0/config-guide/config/config-php.html">Magento’s deployment configuration</a></li>
-</ul>
+  <ul>
+    <li><a href="/guides/v2.0/config-guide/config/config-create.html">Create or extend configuration types</a></li>
+    <li><a href="/guides/v2.0/config-guide/config/config-php.html">Magento’s deployment configuration</a></li>
+  </ul>
+</div>
 
 
 		</div>
@@ -1077,6 +1102,14 @@
 					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			

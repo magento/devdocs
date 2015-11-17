@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Install the Magento software using the command line</title>
+	<title>Install the Magento software</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Install the Magento software using the command line</h1>
+		<h1 class="page-heading">Install the Magento software</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/install-gde/install/install-cli-install.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/install-gde/install/cli/install-cli-install.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -470,12 +470,6 @@
 		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td><p>--use-sample-data</p></td>
-		<td><p>Use this parameter to install optional Magento sample data. Magento sample data uses the Luma theme to provide you with a sample storefront, complete with products, customers, CMS pages, and so on. You can use it to get the feel of a Magento storefront.</p>
-		<p>Sample data installs only if you already enabled the package as discussed in <a href="/guides/v2.0/install-gde/install/sample-data.html">Enable optional Magento sample data</a></p>.</td>
-		<td><p>No</p></td>
-	</tr>
-	<tr>
 		<td><p>--cleanup-database</p></td>
 		<td><p>To drop database tables before installing the Magento software, specify this parameter without a value. Otherwise, the Magento database is left intact.</p></td>
 		<td><p>No</p></td>
@@ -544,9 +538,6 @@
     <p>The database name is <code>magento</code>, and the user name and password are both <code>magento</code></p>
   </li>
   <li>
-    <p>Installs optional sample data</p>
-  </li>
-  <li>
     <p>Uses server rewrites</p>
   </li>
   <li>
@@ -567,7 +558,7 @@
 --db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
 --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
 --admin-user=admin --admin-password=admin123 --language=en_US \
---currency=USD --timezone=America/Chicago --use-sample-data --use-rewrites=1
+--currency=USD --timezone=America/Chicago --use-rewrites=1
 </code></pre>
   </li>
 </ul>
@@ -655,6 +646,8 @@ For security, remove write permissions from these directories: '/var/www/html/ma
 
 
 <h4>Installation guide<br>Part 2: Installing</h4>
+
+
 
 
 
@@ -806,6 +799,55 @@ For security, remove write permissions from these directories: '/var/www/html/ma
 
 
 								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install/cli/install-cli-sample-data.html">Install optional sample data modules</a></li>
+									
+								
+								
+									
+							
+								
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/cli/install-cli-sample-data-cli.html">Install using the command line</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/cli/install-cli-sample-data-composer.html">Install using Composer</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/cli/install-cli-sample-data-clone.html">Install by cloning repositories</a></li>
+
+									
+						
+								
+								
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+
+
+								
 									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install/cli/install-cli.html">Install the Magento software using the command line</a></li>
 									
 								
@@ -813,14 +855,6 @@ For security, remove write permissions from these directories: '/var/www/html/ma
 									
 							
 								
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/cli/install-cli-sample-data.html">Install optional sample data modules</a></li>
-
-									
-						
 								
 
 									
@@ -833,7 +867,15 @@ For security, remove write permissions from these directories: '/var/www/html/ma
 
 									
 							
-									<li class="level-2  active "><a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html">Install the Magento software using the command line</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html">Install the Magento software</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html">Uninstall or reinstall Magento</a></li>
 
 									
 						
@@ -849,7 +891,7 @@ For security, remove write permissions from these directories: '/var/www/html/ma
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html">Update, reinstall, uninstall Magento</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/cli/install-cli-sample-data-other.html">Remove or update sample data</a></li>
 
 									
 						
@@ -951,6 +993,47 @@ For security, remove write permissions from these directories: '/var/www/html/ma
 
 
 								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install/cli/dev_options.html">Contributing developers&mdash;update, reinstall Magento</a></li>
+									
+								
+								
+									
+							
+								
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/cli/dev_add-update.html">Add or update components</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/cli/dev_reinstall.html">Reinstall the Magento software</a></li>
+
+									
+						
+								
+								
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+
+
+								
 									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/continue-to-verify_cli.html">Next&mdash;Installation part 3, post-installation</a></li>
 									
 								
@@ -966,6 +1049,14 @@ For security, remove write permissions from these directories: '/var/www/html/ma
 					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			

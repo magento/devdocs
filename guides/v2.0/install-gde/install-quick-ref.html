@@ -202,7 +202,7 @@
 	<div class="container">
 		<h1 class="page-heading">Installation quick reference (tutorial)</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/install/install-quick-ref.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/install-gde/install-quick-ref.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -216,6 +216,7 @@
 <p>This topic assumes:</p>
 
 <ul>
+  <li>You have your own Magento server (you’re not using a hosting provider).</li>
   <li>You’re starting the installation using <code>composer create-project</code>, which enables you to get the most recent Magento software and to add your own customizations to it, if desired.</li>
   <li>Everything is installed on one host (database, web server, and so on).</li>
   <li>
@@ -253,20 +254,41 @@
   </li>
   <li>Just as importantly, set up the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a> on the server.</li>
   <li>Switch to the Magento file system owner.</li>
-  <li>
-    <p>When all prerequisites have been met, get the Magento software using Composer as follows:</p>
+</ol>
 
-    <pre><code>cd &lt;web server docroot directory&gt;
+<h3 id="get-the-magento-software">Get the Magento software</h3>
+<p>When all prerequisites have been met, get the Magento software using Composer as follows:</p>
+
+<pre><code>cd &lt;web server docroot directory&gt;
 composer create-project magento/project-community-edition --stability="beta" magento2
 </code></pre>
-  </li>
-  <li>
-    <p>Wait for the download to complete.</p>
 
-    <p>This only downloads Magento code; it doesn’t install the software for you.</p>
-  </li>
-  <li>Set <a href="/guides/v2.0/install-gde/install/file-system-perms.html">file system ownership and permissions</a>.</li>
-</ol>
+<p>This downloads Magento code only; it doesn’t install the software for you.</p>
+
+<div class="bs-callout bs-callout-tip">
+	<p>Alternatively, you can also download a <a href="/guides/v2.0/install-gde/install/get-software.html">Magento software archive</a>.</p>
+</div>
+
+<h3 id="set-file-system-ownership-and-permissions">Set file system ownership and permissions</h3>
+
+<p>Use the following steps:</p>
+<ol><li>Change to the Magento installation directory:<br />
+	<pre>cd &lt;web server docroot&gt;/&lt;magento2 base dir&gt;</pre>
+	The base directory is typically a subdirectory named <code>magento2</code> under your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.<br />
+
+	Examples:
+	<ul><li>Ubuntu: <code>/var/www/magento2</code></li>
+	<li>CentOS: <code>/var/www/html/magento2</code></li></ul>
+</li>
+<li>Set ownership:<br />
+<pre>chown -R :&lt;your web server group name&gt; .</pre>
+Typical examples:<br /><br />
+CentOS: <code>chown -R :apache .</code><br />
+Ubuntu: <code>chown -R :www-data .</code></li>
+<li>Set permissions:<br />
+	<pre>find . -type d -exec chmod 770 {} \; &amp;&amp; find . -type f -exec chmod 660 {} \; &amp;&amp; chmod u+x bin/magento</pre>
+	If you must enter the commands as <code>sudo</code>, use:<br />
+	<pre>sudo find . -type d -exec chmod 770 {} \; &amp;&amp; sudo find . -type f -exec chmod 660 {} \; &amp;&amp; sudo chmod u+x bin/magento</pre></li></ol>
 
 <h2 id="installation-part-2-installing-the-magento-software">Installation part 2: Installing the Magento software</h2>
 <p>You can choose to install the Magento software using either a <a href="/guides/v2.0/install-gde/install/web/install-web.html">web-based Setup Wizard</a> or using the <a href="/guides/v2.0/install-gde/install/cli/install-cli.html">command line</a>.</p>
@@ -435,7 +457,7 @@ php magento deploy:mode:set developer
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/apache-user.html">Create the Magento file system owner</a></li>
 
 									
 						
@@ -451,7 +473,23 @@ php magento deploy:mode:set developer
 
 									
 							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a></li>
+
+									
+						
+								
+
+									
+							
 									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/mysql.html">MySQL</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/composer.html">Install Composer</a></li>
 
 									
 						
@@ -475,15 +513,7 @@ php magento deploy:mode:set developer
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/apache-user.html">Create the Magento file system owner</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/security.html">Security-related prerequisites</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/security.html">SELinux and iptables</a></li>
 
 									
 						
@@ -513,7 +543,7 @@ php magento deploy:mode:set developer
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install/pre-install.html">Your install or upgrade path</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install/get-software.html">Get the Magento software</a></li>
 									
 								
 								
@@ -538,7 +568,7 @@ php magento deploy:mode:set developer
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/merch_install.html">Merchant installation first steps</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/zip_install.html">(Easy) Install the Magento archive on your server</a></li>
 									
 								
 								
@@ -563,7 +593,7 @@ php magento deploy:mode:set developer
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/integrator_install.html">System Integrator installation first steps</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/integrator_install.html">(Integrator) Get the Composer metapackage</a></li>
 									
 								
 								
@@ -588,21 +618,13 @@ php magento deploy:mode:set developer
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/dev_install.html">Contributing developer installation first steps</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/dev_install.html">(Contributor) Clone the Magento repository</a></li>
 									
 								
 								
 									
 							
 								
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a></li>
-
-									
-						
 								
 
 									
@@ -612,14 +634,6 @@ php magento deploy:mode:set developer
 									
 						
 								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/dev_updater.html">Update components</a></li>
-
-									
-						
-								
 								
 							
 						
@@ -637,7 +651,7 @@ php magento deploy:mode:set developer
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install/file-system-perms.html">Set file system ownership and permissions</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install/get-help.html">Get help with your installation</a></li>
 									
 								
 								
@@ -677,6 +691,14 @@ php magento deploy:mode:set developer
 					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			

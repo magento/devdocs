@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Continue with your installation</title>
+	<title>Next&mdash;Choose how to install the Magento software</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
@@ -200,7 +200,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Continue with your installation</h1>
+		<h1 class="page-heading">Next&mdash;Choose how to install the Magento software</h1>
 			
 			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/install-gde/continue.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -214,38 +214,64 @@
 		<h2 id="lets-get-started">Let’s get started!</h2>
 <p>This Installation Guide helps you install the Magento software on a server that doesn’t have Magento installed already. (Not sure? Go <a href="/guides/v2.0/install-gde/basics/basics_magento-installed.html">here</a> first.)</p>
 
-<h2 id="high-level-installation-roadmap">High-level installation roadmap</h2>
+<h2 id="install-overview-audience">Choose how to install the Magento software</h2>
+<p>Want an easy installation with a compressed software archive or do you use <a href="https://getcomposer.org/doc/00-intro.md" target="_blank">Composer</a> to download a metapackage or contribute code to the Magento 2 codebase?</p>
 
-<p>We’ve broken down instructions for installing the Magento software into the following groups. We suggest you follow these in order, although you can install optional sample data before or after you install the Magento 2 system itself.</p>
+<p>Consult the following table for how to get started.</p>
 
-<p>By the way, if you’re new to Magento installation or you don’t know what some of these options means, you can <a href="/guides/v2.0/install-gde/back-intro.html">go back to the installation overview</a>. We have some helpful information there to get you started.</p>
+<table>
+	<!-- <col width="25%">
+	<col width="65%">
+	<col width="10%"> -->
+	<tbody>
+		<tr>
+			<th>User needs</th>
+			<th>Description</th>
+			<th>High-level installation steps</th>
+			<th>Get started link</th>
+		</tr>
+		
+	<tr>
+		<td><p>Shared hosting, easy installation, no command line access</p></td>
+		<td><p>Uses a hosting provider, has very little technical expertise, limited if any access to the Magento server.</p></td>
+		<td><ol><li>Downloads a compressed file that contains the Magento software.</li>
+			<li>Extracts it on the Magento server.</li>
+			<li>Installs the Magento software using the Setup Wizard.</li></ol>
+		</td>
+		<td><p><a href="/guides/v2.0/install-gde/install/hosted/hosted_start.html">Easy installation (shared hosting)</a></p></td>
+	</tr>
+	<tr>
+		<td><p>Easy installation, no command line, have your own server</p></td>
+		<td><p>Some technical expertise, command line access to the Magento server.</p></td>
+		<td><ol><li>Downloads a compressed file that contains the Magento software.</li>
+			<li>Extracts it on the Magento server or asks a network administrator to do so.</li>
+			<li>Installs the Magento software using the Setup Wizard or command line.</li></ol>
+		</td>
+		<td><p><a href="/guides/v2.0/install-gde/prereq/zip_install.html">Easy installation (own server)</a></p></td>
+	</tr>
+	<tr>
+		<td><p>Integrator, packager</p></td>
+		<td><p>Wants full control over all components installed, has access to the Magento server, highly technical, might repackage Magento CE with other components.</p></td>
+		<td><ol><li>Creates a Composer <em>project</em> that contains the list of components to use.</li>
+			<li>Uses Composer to update package dependencies; uses <code>composer create-project</code> to get the Magento metapackage.</li>
+			<li>Installs the Magento software using either a command line or the Setup Wizard.</li></ol>
+		<td><p><a href="/guides/v2.0/install-gde/prereq/integrator_install.html">Get the metapackage</a></p></td>
+	</td>
 
-<ol>
-  <li><a href="/guides/v2.0/install-gde/system-requirements.html">Magento system requirements</a></li>
-  <li><a href="/guides/v2.0/install-gde/prereq/prereq-overview.html">Prerequisites</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/pre-install.html">Identify your installation path</a></li>
-</ol>
-
-<h2 id="install-overview-all">Overview of installing, managing, and upgrading Magento</h2>
-<p>The Magento software enables you to install, manage, and upgrade the core software itself and any <em>component</em> you installed. A component can be:</p>
-
-<ul>
-  <li>A module (code that extends the Magento application in some way)</li>
-  <li>A language package (used to localize your Admin or storefront)</li>
-  <li>A theme (used to change the look of your Admin or storefront)</li>
-  <li>A library (common code)</li>
-</ul>
-
-<p>You can think of it as a three-step process—where steps 2 and 3 are interchangeable:</p>
-
-<ol>
-  <li>Install the Magento software</li>
-  <li><a href="/guides/v2.0/comp-mgr/compman-start.html">Manage components</a> (install, uninstall, update, enable, or disable)</li>
-  <li><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">Upgrade</a> the Magento software or components to a newer version</li>
-</ol>
-
-<h4 id="next-step">Next step</h4>
-<p>We recommend you continue with <a href="/guides/v2.0/install-gde/install/pre-install.html">Your install or upgrade path</a>.</p>
+	</tr>
+	<tr>
+		<td><p>Contributing developer</p></td>
+		<td><p>Contributes to the Magento codebase, highly technical, has their own Magento development server, understands Composer and GitHub.</p></td>
+		<td><ol><li>Clones the Magento 2 GitHub repository.</li>
+			<li>Uses Composer to update package dependencies.</li>
+			<li>Installs the Magento software using either a command line or the Setup Wizard.</li></ol>
+		<td><p><a href="/guides/v2.0/install-gde/prereq/dev_install.html">Clone the Magento repository</a></p></td>
+	</td>
+	</tr>
+	
+	
+	</tbody>
+</table>
 
 
 		</div>
@@ -407,7 +433,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/install-gde/continue.html">Continue with your installation</a></li>
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/install-gde/continue.html">Next&mdash;Choose how to install the Magento software</a></li>
 									
 								
 								
@@ -422,6 +448,14 @@
 					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			

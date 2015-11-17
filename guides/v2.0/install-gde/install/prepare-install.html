@@ -211,8 +211,13 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
-<!-- Referring file: README.md owned by core -->
+		<h4 id="contents">Contents</h4>
+
+<ul>
+  <li><a href="#install-update-depend">Introduction to Magento installation dependencies</a></li>
+  <li><a href="#install-composer-install">Run <code>composer install</code> to update dependencies</a></li>
+  <li><a href="#instgde-prereq-compose-access">Set file system ownership and permissions</a></li>
+</ul>
 
 <h2 id="install-update-depend">Introduction to Magento installation dependencies</h2>
 <p>We now use <a href="http://getcomposer.org">Composer</a> to resolve dependencies before you install the Magento software and extensions.</p>
@@ -220,7 +225,7 @@
 <p>Composer is a separate application that manages PHP dependencies. Before you can install the Magento software, you must perform the following tasks in the order shown:</p>
 
 <ol>
-  <li><a href="/guides/v2.0/install-gde/install/composer-clone.html">Install the Composer software</a>.</li>
+  <li><a href="/guides/v2.0/install-gde/install/dev_install.html">Install the Composer software</a>.</li>
   <li><a href="/guides/v2.0/install-gde/prereq/apache-user.html">Create the Magento file system owner</a> so Composer writes files to the web server docroot as the correct user.</li>
   <li>
     <p>Run the <a href="#install-composer-install"><code>composer install</code> command</a> from your Magento root directory (for example, <code>/var/www/magento2/</code>).</p>
@@ -231,7 +236,7 @@
 
 <p>For you to be able to run the Magento application, make sure you perform all tasks as a user with privileges to write to the web server docroot. One way to do this is to log in as or switch to the <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.</p>
 
-<h2 id="install-composer-install">Running Composer to update dependencies</h2>
+<h2 id="install-composer-install">Run <code>composer install</code> to update dependencies</h2>
 <p>Update installation dependencies as follows:</p>
 
 <ol>
@@ -251,15 +256,76 @@
 
     <p>This command updates package dependencies and can take a few minutes to complete.</p>
 
-    <div class="bs-callout bs-callout-info" id="info">
-    <span class="glyphicon-class">
-  		<p>The Magento installation directory is a subdirectory of your web server's docroot. Need help <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">locating the docroot</a>?</p></span>
-</div>
+    <p>The following error might display:</p>
+
+    <pre><code>[Composer\Downloader\TransportException]
+    The "https://repo.magento.com/archives/magento/composer/magento-composer-1.0.2.0.zip" file could not be downloaded (HTTP/1.1 404 Not Found)
+</code></pre>
+
+    <p>If so, create <a href="/guides/v2.0/install-gde/prereq/dev_install.html#instgde-prereq-compose-clone-auth"><code>auth.json</code></a> in the Magento file system owner’s <code>&lt;home&gt;/.composer</code> directory and run <code>composer install</code> again.</p>
   </li>
 </ol>
 
+<h2 id="instgde-prereq-compose-access">Set file system ownership and permissions</h2>
+<p>The following sections discuss how to set file system ownership and permissions:</p>
+
+<ul>
+  <li><a href="#install-perms-import">Why we recommend you set file system permissions</a></li>
+  <li><a href="#install-perms-set">File system permissions and ownership</a></li>
+</ul>
+
+<h3 id="install-perms-import">Why we recommend you set file system permissions</h3>
+<p>Malicious exploits are an unfortunate reality in the internet age. To help prevent exploits that take advantage of the file system, we recommend you set Magento file system ownership and permissions in a particular way. For more information, see <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-over">Overview of ownership and permissions</a>.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>This topic covers permissions for a development environment. In production, the web server user should have limited write privileges. To help manage you production and developer modes, we provide the <code><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">magento deploy:mode:set</a></code> command.</p>
+</div>
+
+<p>The important things:</p>
+<ul><li>The owner of the Magento file system:
+<ul><li>Must have full control (read/write/execute) of all files and directories.</li>
+<li>Must <em>not</em> be the web server user; it should be a different user.</li></ul>
+</li>
+<li>The web server user must have write access to the following files and directories:
+<ul><li><code>var</code></li>
+<li><code>app/etc</code></li>
+<li><code>pub</code></li></ul>
+</li>
+</ul>
+<p>In addition, the web server's <em>group</em> must own the Magento file system so that the Magento user (who is in the group) can share access to files with the web server user. (This includes files created by the Magento Admin or other web-based utilities.)</p>
+<p>We recommend setting the permissions as follows:</p>
+<ul><li>All directories have 770 permissions.<br />
+770 permissions give full control (that is, read/write/execute) to the owner and to the group and no permissions to anyone else.</li>
+<li>All files have 660 permissions.<br />
+660 permissions mean the owner and the group can read and write but other users have no permissions.</li></ul>
+
+<h3 id="install-perms-set">File system permissions and ownership</h3>
+<p>Use the following steps:</p>
+<ol><li>Change to the Magento installation directory:<br />
+	<pre>cd &lt;web server docroot&gt;/&lt;magento2 base dir&gt;</pre>
+	The base directory is typically a subdirectory named <code>magento2</code> under your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.<br />
+
+	Examples:
+	<ul><li>Ubuntu: <code>/var/www/magento2</code></li>
+	<li>CentOS: <code>/var/www/html/magento2</code></li></ul>
+</li>
+<li>Set ownership:<br />
+<pre>chown -R :&lt;your web server group name&gt; .</pre>
+Typical examples:<br /><br />
+CentOS: <code>chown -R :apache .</code><br />
+Ubuntu: <code>chown -R :www-data .</code></li>
+<li>Set permissions:<br />
+	<pre>find . -type d -exec chmod 770 {} \; &amp;&amp; find . -type f -exec chmod 660 {} \; &amp;&amp; chmod u+x bin/magento</pre>
+	If you must enter the commands as <code>sudo</code>, use:<br />
+	<pre>sudo find . -type d -exec chmod 770 {} \; &amp;&amp; sudo find . -type f -exec chmod 660 {} \; &amp;&amp; sudo chmod u+x bin/magento</pre></li></ol>
+
 <h4 id="next-step">Next step</h4>
-<p><a href="/guides/v2.0/install-gde/install/dev_updater.html">Set up the updater</a></p>
+<p>Install the Magento software:</p>
+
+<ul>
+  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli.html">Command line</a></li>
+  <li><a href="/guides/v2.0/install-gde/install/web/install-web.html">Setup Wizard</a></li>
+</ul>
 
 
 		</div>
@@ -373,7 +439,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/apache-user.html">Create the Magento file system owner</a></li>
 
 									
 						
@@ -389,7 +455,23 @@
 
 									
 							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a></li>
+
+									
+						
+								
+
+									
+							
 									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/mysql.html">MySQL</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/composer.html">Install Composer</a></li>
 
 									
 						
@@ -413,15 +495,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/apache-user.html">Create the Magento file system owner</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/security.html">Security-related prerequisites</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/security.html">SELinux and iptables</a></li>
 
 									
 						
@@ -451,7 +525,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install/pre-install.html">Your install or upgrade path</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install/get-software.html">Get the Magento software</a></li>
 									
 								
 								
@@ -476,7 +550,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/merch_install.html">Merchant installation first steps</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/zip_install.html">(Easy) Install the Magento archive on your server</a></li>
 									
 								
 								
@@ -501,7 +575,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/integrator_install.html">System Integrator installation first steps</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/integrator_install.html">(Integrator) Get the Composer metapackage</a></li>
 									
 								
 								
@@ -526,21 +600,13 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/dev_install.html">Contributing developer installation first steps</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/dev_install.html">(Contributor) Clone the Magento repository</a></li>
 									
 								
 								
 									
 							
 								
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a></li>
-
-									
-						
 								
 
 									
@@ -550,14 +616,6 @@
 									
 						
 								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/dev_updater.html">Update components</a></li>
-
-									
-						
-								
 								
 							
 						
@@ -575,7 +633,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install/file-system-perms.html">Set file system ownership and permissions</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install/get-help.html">Get help with your installation</a></li>
 									
 								
 								
@@ -615,6 +673,14 @@
 					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			

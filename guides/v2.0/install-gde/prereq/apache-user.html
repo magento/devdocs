@@ -349,6 +349,13 @@ sudo passwd magento_user
 <pre><code>magento_user : apache
 </code></pre>
 
+<p>To complete the task, restart the web server:</p>
+
+<ul>
+  <li>Ubuntu: <code>service apache2 restart</code></li>
+  <li>CentOS: <code>service apache restart</code></li>
+</ul>
+
 <h3 id="install-update-depend-user-share-groups">Put each user in the other's group</h3>
 <p>An alternative to setting up group membership is to put the web server user in the Magento file system owner’s group and vice versa. To put each user in the other’s group, as a user with <code>root</code> privileges, enter the following command for each of the two users:</p>
 
@@ -375,6 +382,13 @@ groups magento_user
 magento_user : magento_user apache
 </code></pre>
 
+<p>To complete the task, restart the web server:</p>
+
+<ul>
+  <li>Ubuntu: <code>service apache2 restart</code></li>
+  <li>CentOS: <code>service apache restart</code></li>
+</ul>
+
 <h2 id="install-update-depend-user-switch">Switch to the Magento file system owner</h2>
 <p>After you’ve performed the other tasks in this topic, enter one of the following commands to switch to that user:</p>
 
@@ -391,7 +405,7 @@ magento_user : magento_user apache
 <h3 id="next-steps">Next steps</h3>
 <ul>
   <li><a href="/guides/v2.0/install-gde/prereq/optional.html">Optional software</a></li>
-  <li><a href="/guides/v2.0/install-gde/prereq/security.html">Security-related prerequisites</a></li>
+  <li><a href="/guides/v2.0/install-gde/prereq/security.html">SELinux and iptables</a></li>
   <li><a href="/guides/v2.0/install-gde/install/pre-install.html">Your install or upgrade path</a></li>
 </ul>
 
@@ -507,7 +521,7 @@ magento_user : magento_user apache
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/install-gde/prereq/apache-user.html">Create the Magento file system owner</a></li>
 
 									
 						
@@ -523,7 +537,23 @@ magento_user : magento_user apache
 
 									
 							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a></li>
+
+									
+						
+								
+
+									
+							
 									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/mysql.html">MySQL</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/composer.html">Install Composer</a></li>
 
 									
 						
@@ -547,15 +577,7 @@ magento_user : magento_user apache
 
 									
 							
-									<li class="level-2  active "><a href="/guides/v2.0/install-gde/prereq/apache-user.html">Create the Magento file system owner</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/security.html">Security-related prerequisites</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/security.html">SELinux and iptables</a></li>
 
 									
 						
@@ -585,7 +607,7 @@ magento_user : magento_user apache
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install/pre-install.html">Your install or upgrade path</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install/get-software.html">Get the Magento software</a></li>
 									
 								
 								
@@ -610,7 +632,7 @@ magento_user : magento_user apache
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/merch_install.html">Merchant installation first steps</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/zip_install.html">(Easy) Install the Magento archive on your server</a></li>
 									
 								
 								
@@ -635,7 +657,7 @@ magento_user : magento_user apache
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/integrator_install.html">System Integrator installation first steps</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/integrator_install.html">(Integrator) Get the Composer metapackage</a></li>
 									
 								
 								
@@ -660,21 +682,13 @@ magento_user : magento_user apache
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/dev_install.html">Contributing developer installation first steps</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/dev_install.html">(Contributor) Clone the Magento repository</a></li>
 									
 								
 								
 									
 							
 								
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a></li>
-
-									
-						
 								
 
 									
@@ -684,14 +698,6 @@ magento_user : magento_user apache
 									
 						
 								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/dev_updater.html">Update components</a></li>
-
-									
-						
-								
 								
 							
 						
@@ -709,7 +715,7 @@ magento_user : magento_user apache
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install/file-system-perms.html">Set file system ownership and permissions</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install/get-help.html">Get help with your installation</a></li>
 									
 								
 								
@@ -749,6 +755,14 @@ magento_user : magento_user apache
 					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			
