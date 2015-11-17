@@ -36,7 +36,7 @@ Needed:
 <br>
 <u>Step 1: Define the blocks</u>
 
-OrangeCo <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html" target="_blank">applies the Luma theme</a>. Using the approach described in <a href="{{site.gdeurl}}frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a> they find out that the blocks responsible for displaying the header links are defined in `app/code/Magento/Customer/view/frontend/layout/default.xml`:
+OrangeCo <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html" target="_blank">applies the Luma theme</a>. Using the approach described in <a href="{{site.gdeurl}}frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a> they find out that the blocks responsible for displaying the header links are defined in `<Magento_Customer_module_dir>/view/frontend/layout/default.xml`:
 
 {%highlight xml%}
 ...
@@ -65,7 +65,7 @@ OrangeCo <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html" tar
 Similar to the way they defined the layout on the previous step, OrangeCo 
 defines the template which is used for rearranging the links:
 
-**`app/code/Magento/Customer/view/frontend/templates/account/customer.phtml`**
+`<Magento_Customer_module_dir>/view/frontend/templates/account/customer.phtml`
 
 {%highlight php%}
 <?php if($this->customerLoggedIn()): ?>
@@ -90,7 +90,7 @@ OrangeCo needs to create a new block, say, `header.links`, in the `header.panel`
 
 So the following <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> layout is added in the Orange theme:
 
-**app/design/frontend/OrangeCo/orange/Magento_Theme/layout/default.xml**
+    app/design/frontend/OrangeCo/orange/Magento_Theme/layout/default.xml
 
 {%highlight xml%}
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
@@ -112,7 +112,7 @@ So the following <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-exten
 
 To move the links to the `header.links` block, OrangeCo adds an extending layout:
 
-**`app/design/frontend/OrangeCo/orange/Magento_Customer/layout/default.xml`**
+`app/design/frontend/OrangeCo/orange/Magento_Customer/layout/default.xml`
 
 
 {%highlight xml%}

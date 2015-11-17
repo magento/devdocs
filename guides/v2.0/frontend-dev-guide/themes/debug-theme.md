@@ -32,7 +32,7 @@ Now that you have enabled template hints, reload the page that you want to modif
 For example, here is how a storefront category page looks with enabled template hints:
 <p><img src="{{ site.baseurl }}common/images/theme_debug2.png" alt="A storefront page with enabled template hints"></p>
 
-In this example mini shopping cart page element is defined by the `app/code/Magento/Checkout/view/frontend/templates/cart/minicart.phtml` template:
+In this example mini shopping cart page element is defined by the `<Magento_Checkout_module_dir>/view/frontend/templates/cart/minicart.phtml` template:
 
 <p><img src="{{ site.baseurl }}common/images/theme_debug3.png" alt="A hint with template name for minishopping cart"></p>
 (the template name is above the element)
@@ -54,10 +54,10 @@ Just like templates, layouts are saved on a per-module basis. You can easily loc
 
 After you have determined the module, you can search for the layout in the following locations:
 
-1. `app/design/frontend/<Vendor>/<current_theme>/<Namespace>_<Module>/layout/`
-2. `app/design/frontend/<Vendor>/<parent_theme(s)>/<Namespace>_<Module>/layout/`
-3. `app/code/<Namespace>/<Module>/view/frontend/layout/`
-4. `app/code/<Namespace>/<Module>/view/base/layout/`
+1. `<current_theme_dir>/<Namespace>_<Module>/layout/`
+2. `<parent_theme(s)_dir>/<Namespace>_<Module>/layout/`
+3. `<module_dir>/frontend/layout/`
+4. `<module_dir>/view/base/layout/`
 
 There is no straightforward algorithm how to define at once the exact layout file, but in most cases layout file names are self descriptive. Also you can search them for mentions of the corresponding templates.
 
@@ -73,20 +73,19 @@ Let's search for the layout following the fallback scheme:
 2. We can find the info about parent theme in a theme configuration file `theme.xml`, the parent theme name is specified there in the `<parent></parent>` node. In the `app/design/frontend/Magento/blank/theme.xml` there's no `<parent>` node, which means the Blank theme has no parents. So we should search on the next fallback level which is the module layouts.
 3. The Magento_Checkout layouts are located in `app/code/Magento/Checkout/view/frontend/layout/`. After searching this directory for occurrences of "`minicart.phtml`", we define that the layout we are looking for is `app/code/Magento/Checkout/view/frontend/layout/default.xml`.
 
-After you located the necessary layout file, you can create your custom layout file with the corresponding name in your theme folder to add <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> or <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-override.html" target="_blank">overriding</a> content. Please see Customizing Theme Layouts for more details.
-<!-- ADDLINK -->
+After you located the necessary layout file, you can create your custom layout file with the corresponding name in your theme folder to add <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> or <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-override.html" target="_blank">overriding</a> content. Please see <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html">Customizing Theme Layouts</a> for more details.
+
 
 <h2 id="debug-theme-style">Locate styles</h2>
 To locate a CSS rule that is applied to a certain element, find the template for the page that contains the element. Or you can use browser debugging tools, to locate the class name.
 After you find the class name, use text search in the theme and module styles directories to locate the `.less` or `.css` file that defines the class. Perform the search according to the following fallback scheme:
 
-<p class="q">Should we replace <area> with frontend? Does it fallback to the base area in module?</p>
 
-2. Theme styles `app/design/frontend/<Vendor>/<current_theme>/web/css/`
-2. Module theme styles `app/design/frontend/<Vendor>/<current_theme>/<Namespace>_<Module>/web/css/`
-3. Parent theme styles `app/design/frontend/<Vendor>/<parent_theme>/web/css/`
-4. Module styles for the `frontend` area `app/code/<Vendor>/<Module>/view/frontend/web/css/`
-5. Module styles for the `base` area `app/code/<Vendor>/<Module>/view/base/web/css/`
+2. Theme styles `<current_theme_dir>/web/css/`
+2. Module theme styles `<current_theme_dir>/<Namespace>_<Module>/web/css/`
+3. Parent theme styles `<parent_theme_dir>/web/css/`
+4. Module styles for the `frontend` area `<module_dir>/view/frontend/web/css/`
+5. Module styles for the `base` area `<module_dir>/view/base/web/css/`
 
 Example:
 

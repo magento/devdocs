@@ -38,7 +38,7 @@ The Orange theme inherits from the Blank theme.
 
 To change the products quantity, OrangeCo take the following steps:
 <ol>
-<li>Copy the <a href="{{site.mage2000url}}app/design/frontend/Magento/blank/Magento_Catalog/web/css/source/module/_listings.less" target="_blank"><code>app/design/frontend/Magento/blank/Magento_Catalog/web/css/source/module/_listings.less</code></a> file.
+<li>Copy the <a href="{{site.mage2000url}}app/design/frontend/Magento/blank/Magento_Catalog/web/css/source/module/_listings.less" target="_blank"><code>&lt;Magento_Blank_theme_dir>/Magento_Catalog/web/css/source/module/_listings.less</code></a> file.
 
 <li>Put it in the corresponding location in their Orange theme directory: <code>app/design/frontend/OrangeCo/orange/Magento_Catalog/web/css/source/module/_listings.less </code> </li>
 
