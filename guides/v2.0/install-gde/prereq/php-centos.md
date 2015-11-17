@@ -4,7 +4,7 @@ group: install_pre
 subgroup: Prerequisites
 title: PHP 5.5 or 5.6&mdash;CentOS
 menu_title: PHP 5.5 or 5.6&mdash;CentOS
-menu_order: 4
+menu_order: 05
 github_link: install-gde/prereq/php-centos.md
 redirect_from: /guides/v1.0/install-gde/prereq/php-centos.html
 ---

@@ -6,13 +6,14 @@ title: Installation quick reference (tutorial)
 menu_title: Installation quick reference (tutorial)
 menu_node: parent
 menu_order: 1
-github_link: install/install-quick-ref.md
+github_link: install-gde/install-quick-ref.md
 ---
 
 We know it's challenging to install the Magento software. We'd like to help you by simplifying the process as much as possible.
 
 This topic assumes:
 
+*	You have your own Magento server (you're not using a hosting provider).
 *	You're starting the installation using `composer create-project`, which enables you to get the most recent Magento software and to add your own customizations to it, if desired.
 *	Everything is installed on one host (database, web server, and so on).
 *	The host you're installing on is either Ubuntu or CentOS. 
@@ -40,15 +41,23 @@ If not, see the <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">Ins
 	*	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">MySQL</a>
 3.	Just as importantly, set up the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a> on the server.
 4.	Switch to the Magento file system owner.
-4.	When all prerequisites have been met, get the Magento software using Composer as follows:
 
-		cd <web server docroot directory>
-		composer create-project magento/project-community-edition --stability="beta" magento2
-5.	Wait for the download to complete.
+### Get the Magento software
+When all prerequisites have been met, get the Magento software using Composer as follows:
 
-	This only downloads Magento code; it doesn't install the software for you.
+	cd <web server docroot directory>
+	composer create-project magento/project-community-edition --stability="beta" magento2
 
-6.	Set <a href="{{ site.gdeurl }}install-gde/install/file-system-perms.html">file system ownership and permissions</a>.
+This downloads Magento code only; it doesn't install the software for you.
+
+<div class="bs-callout bs-callout-tip">
+	<p>Alternatively, you can also download a <a href="{{ site.gdeurl }}install-gde/install/get-software.html">Magento software archive</a>.</p>
+</div>
+
+
+### Set file system ownership and permissions
+
+{% include install/file-system-perms2-how.html %}
 
 ## Installation part 2: Installing the Magento software
 You can choose to install the Magento software using either a <a href="{{ site.gdeurl }}install-gde/install/web/install-web.html">web-based Setup Wizard</a> or using the <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">command line</a>.
