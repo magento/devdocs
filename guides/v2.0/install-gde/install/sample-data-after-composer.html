@@ -230,33 +230,56 @@
   <ol>
     <li>Log in to the Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
     <li>
-      <p>Enter the following command to reference Magento packages in <code>composer.json</code>:</p>
+      <p>Enter the following commands to require the current version of sample data packages:</p>
 
-      <pre><code>composer config repositories.magento composer http://repo.magento.com
+      <pre><code>composer require magento/&lt;package name&gt;:&lt;version&gt;
 </code></pre>
+
+      <p><code>&lt;version&gt;</code> can be <code>2.0.0</code> or you can use Composer next significant release syntax to specify a later release; for example, <code>~2.0.0+</code></p>
+
+      <p>The complete list of <code>&lt;package name&gt;</code> follows:</p>
+
+      <div>
+
+      </div>
     </li>
-    <li>
-      <p>Enter the following command to require the current version of the sample data package:</p>
-
-      <pre><code>composer require magento/sample-data:&amp;lt;version&gt;
-</code></pre>
-
-      <p>where <code>&lt;version&gt;</code> is either an exact version or semantic version syntax.</p>
-
-      <p>Exact version example:</p>
-
-      <pre><code>composer require magento/sample-data:2.0.0
-</code></pre>
-
-      <p>Next significant release example:</p>
-
-      <pre><code>composer require magento/sample-data:~1.0.0-beta
-</code></pre>
-    </li>
-    <li>Wait while dependencies are installed.</li>
   </ol>
+  <p>Magento CE and Magento EE:</p>
 
-  <h4 id="next-step">Next step</h4>
+  <ul>
+    <li>magento/module-bundle-sample-data</li>
+    <li>magento/module-catalog-rule-sample-data</li>
+    <li>magento/module-catalog-sample-data</li>
+    <li>magento/module-cms-sample-data</li>
+    <li>magento/module-configurable-sample-data</li>
+    <li>magento/module-customer-sample-data</li>
+    <li>magento/module-downloadable-sample-data</li>
+    <li>magento/module-grouped-product-sample-data</li>
+    <li>magento/module-msrp-sample-data</li>
+    <li>magento/module-offline-shipping-sample-data</li>
+    <li>magento/module-product-links-sample-data</li>
+    <li>magento/module-review-sample-data</li>
+    <li>magento/module-sales-rule-sample-data</li>
+    <li>magento/module-sales-sample-data</li>
+    <li>magento/module-sample-data</li>
+    <li>magento/module-swatches-sample-data</li>
+    <li>magento/module-tax-sample-data</li>
+    <li>magento/module-theme-sample-data</li>
+    <li>magento/module-widget-sample-data</li>
+    <li>magento/module-wishlist-sample-data</li>
+    <li>magento/sample-data</li>
+    <li>magento/sample-data-media</li>
+  </ul>
+
+  <p>Magento EE only:</p>
+
+  <ul>
+    <li>magento/module-customer-balance-sample-data</li>
+    <li>magento/module-gift-card-sample-data</li>
+    <li>magento/module-gift-registry-sample-data</li>
+    <li>magento/module-multiple-wishlist-sample-data</li>
+    <li>magento/module-target-rule-sample-data</li>
+  </ul>
 
   <div>
 

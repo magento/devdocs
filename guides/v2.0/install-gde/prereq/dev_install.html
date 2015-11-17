@@ -311,9 +311,14 @@ mv composer.phar /usr/local/bin/composer</pre>
       </li>
       <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
       <li>
-        <p>Create <code>auth.json</code> in the user’s home directory with the following contents:</p>
+        <p>Edit or create <code>auth.json</code> in the user’s home directory.</p>
+
+        <p>The following example shows how to add <code>repo.magento.com</code> authentication to an existing file:</p>
 
         <pre><code>{
+   "github-oauth": {
+     "github.com": "804d4ab968ia8vk0Uar263a1cbd40d82da7464aa7"
+},
    "http-basic": {
       "repo.magento.com": {
          "username": "&lt;username&gt;",
@@ -323,7 +328,7 @@ mv composer.phar /usr/local/bin/composer</pre>
 }
 </code></pre>
 
-   	For example, if your user name is <code>magento_user</code>, create <code>/home/magento_user/.composer/auth.json</code>
+   	For example, if your user name is <code>magento_user</code>, create or edit <code>/home/magento_user/.composer/auth.json</code>
       </li>
     </ol>
 
@@ -361,9 +366,8 @@ mv composer.phar /usr/local/bin/composer</pre>
         <p><img src="/common/images/install_mage2_clone-ssh.png" alt="Clone the Magento GitHub repository using SSH" /></p>
       </li>
       <li>
-        <p>Change to your web server’s docroot directory.</p>
-
-        <p>Typically, for Ubuntu, it’s <code>/var/www</code> and for CentOS it’s <code>/var/www/html</code>.</p>
+        <p>Change to your web server’s docroot directory.
+Typically, for Ubuntu, it’s <code>/var/www</code> and for CentOS it’s <code>/var/www/html</code>.</p>
 
         <p>Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here.</a></p>
       </li>
