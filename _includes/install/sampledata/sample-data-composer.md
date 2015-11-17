@@ -12,23 +12,13 @@ Sample data is versioned like Magento code. Before you begin, you can either:
 To enable sample data using Composer:
 
 1.	Log in to the Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
-2.	Enter the following command to reference Magento packages in <code>composer.json</code>:
-		
-		composer config repositories.magento composer http://repo.magento.com
-3.	Enter the following command to require the current version of the sample data package:
+2.	Enter the following commands to require the current version of sample data packages:
 
-		composer require magento/sample-data:&lt;version>
+		composer require magento/<package name>:<version>
 
-	where <code>&lt;version></code> is either an exact version or semantic version syntax.
-	
-	Exact version example:
+	`<version>` can be `2.0.0` or you can use Composer next significant release syntax to specify a later release; for example, `~2.0.0+`
 
-		composer require magento/sample-data:2.0.0
+	The complete list of `<package name>` follows:
 
-	Next significant release example:
+	{% include install/sampledata/sample-data_list-of-modules.md %}
 
-		composer require magento/sample-data:~1.0.0-beta
-
-4.	Wait while dependencies are installed.
-
-#### Next step
