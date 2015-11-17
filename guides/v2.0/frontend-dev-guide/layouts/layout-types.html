@@ -242,7 +242,7 @@ All page layouts used for page rendering should be declared in the page layout d
 
 <p>Sample page layout:</p>
 
-<p><strong><code>magento2/app/code/Magento/Theme/view/frontend/page_layout/2columns-left.xml</code></strong></p>
+<p><code>&lt;Magento_Theme_module_dir&gt;/view/frontend/page_layout/2columns-left.xml</code></p>
 
 <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;layout</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_layout.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;update</span> <span class="na">handle=</span><span class="s">&quot;1column&quot;</span><span class="nt">/&gt;</span>
@@ -261,8 +261,8 @@ All page layouts used for page rendering should be declared in the page layout d
 <p>Conventionally page layouts must be located as follows:</p>
 
 <ul>
-  <li>Module page layouts: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/page_layout</code></li>
-  <li>Theme page layouts: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/page_layout</code></li>
+  <li>Module page layouts: <code>&lt;module_dir&gt;/view/frontend/page_layout</code></li>
+  <li>Theme page layouts: <code>&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/page_layout</code></li>
 </ul>
 
 <h3 id="layout-types-page-dec">Page layouts declaration</h3>
@@ -272,8 +272,8 @@ All page layouts used for page rendering should be declared in the page layout d
 <p>Conventionally layout declaration file can be located in one of the following locations: </p>
 
 <ul>
-<li>Module layout declarations: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/layouts.xml</code></li>
-<li>Theme layout declaration: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layouts.xml</code></li>
+<li>Module layout declarations: <code>&lt;module_dir&gt;/view/frontend/layouts.xml</code></li>
+<li>Theme layout declaration: <code>&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layouts.xml</code></li>
 
 </ul>
 
@@ -288,7 +288,8 @@ All page layouts used for page rendering should be declared in the page layout d
 
 <p>Sample page layout declaration file:</p>
 
-<p><b><code>app/code/Magento/Theme/view/frontend/layouts.xml</code></b></p>
+<pre><code>&lt;Magento_Theme_module_dir&gt;/view/frontend/layouts.xml
+</code></pre>
 
 <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page_layouts</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/PageLayout/etc/layouts.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;layout</span> <span class="na">id=</span><span class="s">&quot;1column&quot;</span><span class="nt">&gt;</span>
@@ -314,8 +315,8 @@ All page layouts used for page rendering should be declared in the page layout d
 <p>Conventionally page configuration files must be located as follows:</p>
 
 <ul>
-<li> Module page configurations: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/layout</code></li>
-<li> Theme page configurations: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout</code></li>
+<li> Module page configurations: <code>&lt;module_dir&gt;/view/frontend/layout</code></li>
+<li> Theme page configurations: <code>&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout</code></li>
 </ul>
 
 <h3>Page configuration structure and allowed layout instructions</h3>
@@ -585,8 +586,8 @@ All page layouts used for page rendering should be declared in the page layout d
 <p>Conventionally generic layout files must be located as follows:</p>
 
 <ul>
-<li>Module generic layouts: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/layout</code></li>
-<li>Theme generic layouts: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout</code></li>
+<li>Module generic layouts: <code>&lt;module_dir&gt;/view/frontend/layout</code></li>
+<li>Theme generic layouts: <code>&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout</code></li>
 </ul>
 
 <h3>Generic layout structure and allowed layout instructions</h3>
@@ -768,6 +769,10 @@ none
 							
 							
 								<li class="q "><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Introduction</a></li>
+				
+							
+							
+								<li class="q "><a href="/guides/v2.0/frontend-dev-guide/conventions.html">Conventional notations used in this Guide</a></li>
 				
 							
 							

@@ -220,11 +220,11 @@
 <p>When the locale is changed for a store, Magento searches for translations in the corresponding dictionaries in the following locations:</p>
 
 <ol>
-  <li>Module translations: <code>app/code/&lt;Vendor&gt;/&lt;Module&gt;/i18n/</code></li>
+  <li>Module translations: <code>&lt;module_dir&gt;/i18n/</code></li>
   <li>Theme translations: 
     <ol>
-      <li><code>app/design/frontend/&lt;Vendor&gt;/&lt;parent_theme&gt;/i18n/</code> (iterated through all ancestor themes)</li>
-      <li><code>app/design/frontend/&lt;Vendor&gt;/&lt;current_theme&gt;/i18n/</code></li>
+      <li><code>&lt;parent_theme_dir&gt;/i18n/</code> (iterated through all ancestor themes)</li>
+      <li><code>&lt;current_theme_dir&gt;/i18n/</code></li>
     </ol>
   </li>
   <li>Translation package: <code>app/i18n/</code></li>
@@ -238,7 +238,7 @@
 <p>The translations priority described earlier is applied for the default en_US locale as well. So you can use the <code>en_US.csv</code> dictionary to customize the strings used in the default locale.</p>
 
 <p><span id="luma_example">For example, this approach is used in the Magento Luma theme. It has the 
-<a href="https://github.com/magento/magento2/blob/develop/app/design/frontend/Magento/luma/i18n/en_US.csv"><code>app/design/frontend/Magento/luma/i18n/en_US.csv</code></a> file, where the left column contains the default values (keys), and the right columns contains the values to be used instead when the Luma theme is applied:
+<a href="https://github.com/magento/magento2/blob/develop/app/design/frontend/Magento/luma/i18n/en_US.csv"><code>&lt;Magento_Luma_theme_dir&gt;/i18n/en_US.csv</code></a> file, where the left column contains the default values (keys), and the right columns contains the values to be used instead when the Luma theme is applied:
 </span></p>
 
 <pre><code>"Add to Wish List",	"Wish List"
@@ -373,6 +373,10 @@
 							
 							
 								<li class="q "><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Introduction</a></li>
+				
+							
+							
+								<li class="q "><a href="/guides/v2.0/frontend-dev-guide/conventions.html">Conventional notations used in this Guide</a></li>
 				
 							
 							

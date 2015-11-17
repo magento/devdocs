@@ -238,7 +238,7 @@
 <p><br />
 <u>Step 1: Define the blocks</u></p>
 
-<p>OrangeCo <a href="/guides/v2.0/frontend-dev-guide/themes/theme-apply.html" target="_blank">applies the Luma theme</a>. Using the approach described in <a href="/guides/v2.0/frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a> they find out that the blocks responsible for displaying the header links are defined in <code>app/code/Magento/Customer/view/frontend/layout/default.xml</code>:</p>
+<p>OrangeCo <a href="/guides/v2.0/frontend-dev-guide/themes/theme-apply.html" target="_blank">applies the Luma theme</a>. Using the approach described in <a href="/guides/v2.0/frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a> they find out that the blocks responsible for displaying the header links are defined in <code>&lt;Magento_Customer_module_dir&gt;/view/frontend/layout/default.xml</code>:</p>
 
 <div class="highlight"><pre><code class="language-xml" data-lang="xml">...
 <span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
@@ -264,7 +264,7 @@
 <p>Similar to the way they defined the layout on the previous step, OrangeCo 
 defines the template which is used for rearranging the links:</p>
 
-<p><strong><code>app/code/Magento/Customer/view/frontend/templates/account/customer.phtml</code></strong></p>
+<p><code>&lt;Magento_Customer_module_dir&gt;/view/frontend/templates/account/customer.phtml</code></p>
 
 <div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="k">if</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">customerLoggedIn</span><span class="p">())</span><span class="o">:</span> <span class="cp">?&gt;</span><span class="x"></span>
 <span class="x">    &lt;li class=&quot;customer welcome customer-welcome&quot;&gt;</span>
@@ -287,7 +287,8 @@ defines the template which is used for rearranging the links:</p>
 
 <p>So the following <a href="/guides/v2.0/frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> layout is added in the Orange theme:</p>
 
-<p><strong>app/design/frontend/OrangeCo/orange/Magento_Theme/layout/default.xml</strong></p>
+<pre><code>app/design/frontend/OrangeCo/orange/Magento_Theme/layout/default.xml
+</code></pre>
 
 <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;body&gt;</span>
@@ -307,7 +308,7 @@ defines the template which is used for rearranging the links:</p>
 
 <p>To move the links to the <code>header.links</code> block, OrangeCo adds an extending layout:</p>
 
-<p><strong><code>app/design/frontend/OrangeCo/orange/Magento_Customer/layout/default.xml</code></strong></p>
+<p><code>app/design/frontend/OrangeCo/orange/Magento_Customer/layout/default.xml</code></p>
 
 <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;body&gt;</span>
@@ -428,6 +429,10 @@ defines the template which is used for rearranging the links:</p>
 							
 							
 								<li class="q "><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Introduction</a></li>
+				
+							
+							
+								<li class="q "><a href="/guides/v2.0/frontend-dev-guide/conventions.html">Conventional notations used in this Guide</a></li>
 				
 							
 							

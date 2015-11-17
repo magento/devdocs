@@ -219,20 +219,19 @@
 <p>To use all the responsive approaches implemented in the Magento out-of-the-box Blank and Luma themes, your theme should declare one of them as a <a href="/guides/v2.0/frontend-dev-guide/themes/theme-inherit.html" target="_blank">parent</a>. </p>
 
 <p>To create a mobile-specific theme:</p>
-<ol>
-<li>Create a theme as described in <a href="/guides/v2.0/frontend-dev-guide/themes/theme-create.html" target="_blank">Create a theme</a>, having specified Blank or Luma as a parent theme.</li>
-<li>Add a <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Theme/layout/default_head_blocks.xml</code> layout file with the following content:
-<pre>
-&lt;page xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
-    &lt;head&gt;
-        &lt;remove src=&quot;css/styles-l.css&quot; /&gt;
-    &lt;/head&gt;
-&lt;/page&gt;
-</pre>
 
-This will remove the desktop-specific files from your theme.
-</li>
+<ol>
+  <li>Create a theme as described in <a href="/guides/v2.0/frontend-dev-guide/themes/theme-create.html" target="_blank">Create a theme</a>, having specified Blank or Luma as a parent theme.</li>
+  <li>Add a <code>&lt;theme_dir&gt;/Magento_Theme/layout/default_head_blocks.xml</code> layout file with the following content:</li>
 </ol>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;remove</span> <span class="na">src=</span><span class="s">&quot;css/styles-l.css&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;/page&gt;</span></code></pre></div>
+
+<p>This will remove the desktop-specific files from your theme.</p>
 
 <h2>Recommended reading</h2>
 <ul>
@@ -333,6 +332,10 @@ This will remove the desktop-specific files from your theme.
 							
 							
 								<li class="q "><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Introduction</a></li>
+				
+							
+							
+								<li class="q "><a href="/guides/v2.0/frontend-dev-guide/conventions.html">Conventional notations used in this Guide</a></li>
 				
 							
 							

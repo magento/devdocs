@@ -221,16 +221,16 @@
   <li>Put the layout file in the following location:</li>
 </ol>
 <pre>
-app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;
+&lt;theme_dir&gt;
 &nbsp;|__/&lt;Namespace&gt;_&lt;Module&gt;
 &nbsp;&nbsp;&nbsp;|__/layout
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&lt;layout1&gt;.xml
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&lt;layout2&gt;.xml
 </pre>
 
-<p>For example, to customize the layout defined in <code>magento2/app/code/Magento/Catalog/view/frontend/layout/catalog_product_view.xml</code>, you need to add a layout files with the same name in your custom theme, like following:</p>
+<p>For example, to customize the layout defined in <code>&lt;Magento_Catalog_module_dir&gt;/view/frontend/layout/catalog_product_view.xml</code>, you need to add a layout files with the same name in your custom theme, like following:</p>
 
-<p><code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Catalog/layout/catalog_product_view.xml</code></p>
+<p><code>&lt;theme_dir&gt;/Magento_Catalog/layout/catalog_product_view.xml</code></p>
 
 <p>To add an extending <a href="/guides/v2.0/frontend-dev-guide/layouts/layout-types.html#layout-types-page" target="_blank">page layout</a> file:</p>
 
@@ -238,7 +238,7 @@ app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;
   <li>Put the file in the following location:</li>
 </ol>
 <pre>
-app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;
+&lt;theme_dir&gt;
 &nbsp;|__/&lt;Namespace&gt;_&lt;Module&gt;
 &nbsp;&nbsp;&nbsp;|__/page_layout
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&lt;layout1&gt;.xml
@@ -374,6 +374,10 @@ Where a `handle ID` is defined by the name of the corresponding layout file, and
 							
 							
 								<li class="q "><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Introduction</a></li>
+				
+							
+							
+								<li class="q "><a href="/guides/v2.0/frontend-dev-guide/conventions.html">Conventional notations used in this Guide</a></li>
 				
 							
 							

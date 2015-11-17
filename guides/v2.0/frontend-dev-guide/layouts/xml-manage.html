@@ -254,7 +254,7 @@ Change the layout of Advanced Search page from default “1-column” to “2-co
 <p>JavaScript, CSS and other static assets are added in the <code>&lt;head&gt;</code> section of a <a href="/guides/v2.0/frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> file. The default look of a Magento store page <code>&lt;head&gt;</code> is defined by <code>app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml</code>. The recommended way to add CSS and JavaScript is to extend this file in your custom theme, and add the assets there.
 The following file is a sample of a file you must add:</p>
 
-<p><code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Theme/layout/default_head_blocks.xml</code></p>
+<p><code>&lt;theme_dir&gt;/Magento_Theme/layout/default_head_blocks.xml</code></p>
 
 <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;head&gt;</span>
@@ -278,8 +278,8 @@ The following file is a sample of a file you must add:</p>
 
 <p>The path to assets is specified relatively to one the following locations:</p>
 <ul>
-<li><code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web</code></li>
-<li><code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web</code></li>
+<li><code>&lt;theme_dir&gt;/web</code></li>
+<li><code>&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web</code></li>
 
 </ul>
 
@@ -497,7 +497,7 @@ To do this, add the extending <code>catalog_product_view.xml</code> in the <code
 <span class="nt">&lt;/page&gt;</span></code></pre></div>
 
 <p>To remove the block, add the extending <code>default.xml</code> in your theme:
-<code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Catalog/layout/default.xml</code></p>
+<code>&lt;theme_dir&gt;/Magento_Catalog/layout/default.xml</code></p>
 
 <p>In this file, reference the element having added the <code>remove</code> attribute:</p>
 
@@ -615,6 +615,10 @@ To do this, add the extending <code>catalog_product_view.xml</code> in the <code
 							
 							
 								<li class="q "><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Introduction</a></li>
+				
+							
+							
+								<li class="q "><a href="/guides/v2.0/frontend-dev-guide/conventions.html">Conventional notations used in this Guide</a></li>
 				
 							
 							

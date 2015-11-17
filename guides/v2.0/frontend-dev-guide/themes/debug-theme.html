@@ -238,7 +238,7 @@
 <p>For example, here is how a storefront category page looks with enabled template hints:</p>
 <p><img src="/common/images/theme_debug2.png" alt="A storefront page with enabled template hints" /></p>
 
-<p>In this example mini shopping cart page element is defined by the <code>app/code/Magento/Checkout/view/frontend/templates/cart/minicart.phtml</code> template:</p>
+<p>In this example mini shopping cart page element is defined by the <code>&lt;Magento_Checkout_module_dir&gt;/view/frontend/templates/cart/minicart.phtml</code> template:</p>
 
 <p><img src="/common/images/theme_debug3.png" alt="A hint with template name for minishopping cart" /></p>
 <p>(the template name is above the element)</p>
@@ -260,10 +260,10 @@ For example, using a browser debug tool, you can define that the minicart block 
 <p>After you have determined the module, you can search for the layout in the following locations:</p>
 
 <ol>
-  <li><code>app/design/frontend/&lt;Vendor&gt;/&lt;current_theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout/</code></li>
-  <li><code>app/design/frontend/&lt;Vendor&gt;/&lt;parent_theme(s)&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout/</code></li>
-  <li><code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/layout/</code></li>
-  <li><code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/base/layout/</code></li>
+  <li><code>&lt;current_theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout/</code></li>
+  <li><code>&lt;parent_theme(s)_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout/</code></li>
+  <li><code>&lt;module_dir&gt;/frontend/layout/</code></li>
+  <li><code>&lt;module_dir&gt;/view/base/layout/</code></li>
 </ol>
 
 <p>There is no straightforward algorithm how to define at once the exact layout file, but in most cases layout file names are self descriptive. Also you can search them for mentions of the corresponding templates.</p>
@@ -282,21 +282,18 @@ For example, using a browser debug tool, you can define that the minicart block 
   <li>The Magento_Checkout layouts are located in <code>app/code/Magento/Checkout/view/frontend/layout/</code>. After searching this directory for occurrences of “<code>minicart.phtml</code>”, we define that the layout we are looking for is <code>app/code/Magento/Checkout/view/frontend/layout/default.xml</code>.</li>
 </ol>
 
-<p>After you located the necessary layout file, you can create your custom layout file with the corresponding name in your theme folder to add <a href="/guides/v2.0/frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> or <a href="/guides/v2.0/frontend-dev-guide/layouts/layout-override.html" target="_blank">overriding</a> content. Please see Customizing Theme Layouts for more details.
-<!-- ADDLINK --></p>
+<p>After you located the necessary layout file, you can create your custom layout file with the corresponding name in your theme folder to add <a href="/guides/v2.0/frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> or <a href="/guides/v2.0/frontend-dev-guide/layouts/layout-override.html" target="_blank">overriding</a> content. Please see <a href="/guides/v2.0/frontend-dev-guide/layouts/layout-overview.html">Customizing Theme Layouts</a> for more details.</p>
 
 <h2 id="debug-theme-style">Locate styles</h2>
 <p>To locate a CSS rule that is applied to a certain element, find the template for the page that contains the element. Or you can use browser debugging tools, to locate the class name.
 After you find the class name, use text search in the theme and module styles directories to locate the <code>.less</code> or <code>.css</code> file that defines the class. Perform the search according to the following fallback scheme:</p>
 
-<p class="q">Should we replace <area /> with frontend? Does it fallback to the base area in module?</p>
-
 <ol>
-  <li>Theme styles <code>app/design/frontend/&lt;Vendor&gt;/&lt;current_theme&gt;/web/css/</code></li>
-  <li>Module theme styles <code>app/design/frontend/&lt;Vendor&gt;/&lt;current_theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web/css/</code></li>
-  <li>Parent theme styles <code>app/design/frontend/&lt;Vendor&gt;/&lt;parent_theme&gt;/web/css/</code></li>
-  <li>Module styles for the <code>frontend</code> area <code>app/code/&lt;Vendor&gt;/&lt;Module&gt;/view/frontend/web/css/</code></li>
-  <li>Module styles for the <code>base</code> area <code>app/code/&lt;Vendor&gt;/&lt;Module&gt;/view/base/web/css/</code></li>
+  <li>Theme styles <code>&lt;current_theme_dir&gt;/web/css/</code></li>
+  <li>Module theme styles <code>&lt;current_theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web/css/</code></li>
+  <li>Parent theme styles <code>&lt;parent_theme_dir&gt;/web/css/</code></li>
+  <li>Module styles for the <code>frontend</code> area <code>&lt;module_dir&gt;/view/frontend/web/css/</code></li>
+  <li>Module styles for the <code>base</code> area <code>&lt;module_dir&gt;/view/base/web/css/</code></li>
 </ol>
 
 <p>Example:</p>
@@ -408,6 +405,10 @@ After you find the class name, use text search in the theme and module styles di
 							
 							
 								<li class="q "><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Introduction</a></li>
+				
+							
+							
+								<li class="q "><a href="/guides/v2.0/frontend-dev-guide/conventions.html">Conventional notations used in this Guide</a></li>
 				
 							
 							
