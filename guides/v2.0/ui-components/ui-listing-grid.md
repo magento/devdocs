@@ -16,7 +16,7 @@ Listing is a basic component responsible for rendering grids, lists and tiles, p
 
 Example configuration of Listing Component instance:
 
-`app/code/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml`
+`<your module root dir>/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml`
 
 
 {% highlight xml%}
@@ -51,7 +51,7 @@ Data Source is another UI Component that provides data in specific format which 
 
 The listing component requires the data source to be properly configured and associated with it:
 
-`app/code/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml`
+`<your module root dir>/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml`
 
 {% highlight xml %}
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Ui/etc/ui_configuration.xsd">
