@@ -32,18 +32,19 @@ MySQL 5.6 (Oracle or Percona)
 *	5.6.x
 *	5.5.x 
 
-Documentation: <a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html" target="_blank">CentOS</a>, <a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html" target="_blank">Ubuntu</a>
-
 <div class="bs-callout bs-callout-info" id="info">
    <span class="glyphicon-class">
-  	<ul><li>There is a <a href="https://bugs.php.net/bug.php?id=66985" target="_blank">known PHP issue</a> with versions:
+  	<ul><li>Magento has been tested with PHP 7.0 <a href="http://php.net/archive/2015.php" target="_blank">Release Candidate 7</a> (currently the most recent)</li>
+  		<li>There is a <a href="https://bugs.php.net/bug.php?id=66985" target="_blank">known PHP issue</a> with versions:
   		<ul><li>5.5.10&ndash;5.5.16</li>
 		<li>5.6.0</li></ul>
 	</li>
 	<p>This issue prevents users from being able to set their timezones to Greenwich time and several other time zones. </p>
-	<p>To work around the issue, see <a href="{{ site.gdeurl }}release-notes/known-issues.html#known-devrc-php">Known issue with certain PHP versions</a>.</p>
+	<p>To work around the issue, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_install-issues.html#known-devrc-php">Known issue with certain PHP versions</a>.</p>
 	<li>Magento no longer supports PHP 5.4.</li></ul></span>
 </div>
+
+Documentation: <a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html" target="_blank">CentOS</a>, <a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html" target="_blank">Ubuntu</a>
 
 #### Required PHP extensions:
 
@@ -96,7 +97,7 @@ Mail Transfer Agent (MTA) or an SMTP server
 
 <div class="bs-callout bs-callout-info" id="info">
 	<p>There is a known issue with <code>xdebug</code> that can affect Magento installations or access to the storefront or Magento Admin after installation.</p>
-	<p>For details, see <a href="{{ site.gdeurl }}release-notes/known-issues.html#known-devbeta-xdebug">Known issue with xdebug</a>.</p>
+	<p>For details, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_install-issues.html#known-devbeta-xdebug">Known issue with xdebug</a>.</p>
 </div>
 
 *	PHPUnit (as a command-line tool) 4.1 or later

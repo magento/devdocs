@@ -4,7 +4,7 @@ group: install_pre
 subgroup: Prerequisites
 title: Apache
 menu_title: Apache
-menu_order: 2
+menu_order: 01
 github_link: install-gde/prereq/apache.md
 redirect_from: /guides/v1.0/install-gde/prereq/apache.html
 ---

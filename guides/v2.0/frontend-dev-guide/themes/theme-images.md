@@ -16,10 +16,11 @@ The properties of product images used on the storefront are stored in the `view.
 
 The conventional location of `view.xml` for a theme is:
 {% raw %}
-	app/design/frontend/<Vendor>/<theme>/etc/view.xml
+	<theme_dir>/etc/view.xml
 {% endraw %}
 
-For example, here is the path to `view.xml` of the Magento Blank theme: <a href="{{site.mage2000url}}app/design/frontend/Magento/blank/etc/view.xml" target="_blank"><code>app/design/frontend/Magento/blank/etc/view.xml</code></a>.
+For example, here is the `view.xml` of the Magento Blank theme: <a href="{{site.mage2000url}}app/design/frontend/Magento/blank/etc/view.xml" target="_blank"><code>app/design/frontend/Magento/blank/etc/view.xml</code></a>.
+
 
 In `view.xml`, image properties are configured in the scope of `<images module="Magento_Catalog">` element:
 

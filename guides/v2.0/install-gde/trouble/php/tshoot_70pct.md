@@ -6,7 +6,7 @@ title: Installation stops at about 70%
 menu_title: Installation stops at about 70%
 menu_node: 
 menu_order: 2
-github_link: install-gde/trouble/tshoot_70pct.md
+github_link: install-gde/trouble/php/tshoot_70pct.md
 ---
 
 <h2 id="install-trouble-pdo">Setup Wizard installation stops at about 70%</h2>
