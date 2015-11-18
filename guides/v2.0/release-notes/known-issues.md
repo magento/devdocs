@@ -1,6 +1,6 @@
 ---
 layout: default
-group: release-notes
+group: 
 title: Release Notes
 menu_title: Known issues
 menu_node: 

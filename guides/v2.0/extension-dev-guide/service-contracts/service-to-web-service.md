@@ -5,6 +5,8 @@ subgroup: 6_Module Development
 title: Configure services as web APIs
 menu_title: Configure services as web APIs
 menu_order: 11
+contributor_name: Classy Llama
+contributor_link: http://www.classyllama.com/
 github_link: extension-dev-guide/service-contracts/service-to-web-service.md
 redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/service-to-web-service.html
 ---

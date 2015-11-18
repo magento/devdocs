@@ -4,11 +4,11 @@ group: install_pre
 subgroup: Prerequisites
 title: RabbitMQ
 menu_title: RabbitMQ (Enterprise Edition)
-menu_order: 6
+menu_order: 13
 github_link: install-gde/prereq/install-rabbitmq.md
 ---
 
-![EE](../../../../common/images/ee-only_large.png)
+![EE]({{ site.baseurl }}common/images/ee-only_large.png)
 
 <div class="bs-callout bs-callout-warning">
   <p><a href="http://rabbitmq.com">RabbitMQ</a> must be installed and configured after Magento Community Edition and before Magento Enterprise Edition.</p>
@@ -33,7 +33,7 @@ Magento 2.0 Enterprise Edition (EE) uses RabbitMQ to manage these message queues
 
 The message queue system must be established before you install Magento. The basic sequence is
 
-1. Install RabbitMQ and any prequisites.
+1. Install RabbitMQ and any prerequisites.
 2. Configure RabbitMQ.
 3. Configure your message queue topology.
 

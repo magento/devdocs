@@ -1,12 +1,12 @@
 ---
 layout: default
 group: install_cli 
-subgroup: T_Command-line installation
+subgroup: 05_Command-line installation
 title: Enable or disable maintenance mode
 menu_title: Enable or disable maintenance mode
 menu_node: 
 menu_order: 10
-github_link: install-gde/install/install-cli-subcommands-maint.md
+github_link: install-gde/install/cli/install-cli-subcommands-maint.md
 redirect_from:
   -  /guides/v1.0/install-gde/install/install-cli-subcommands-maint.html
   -  /guides/v2.0/install-gde/install/install-cli-subcommands-maint.html

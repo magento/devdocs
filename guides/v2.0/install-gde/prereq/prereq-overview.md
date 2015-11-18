@@ -104,7 +104,7 @@ To install or upgrade MySQL, see <a href="{{ site.gdeurl }}install-gde/prereq/my
 
 #### Next step
 
-Either install <a href="{{ site.gdeurl }}install-gde/prereq/security.html">security-related software</a> or see <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and Clone the Magento repository</a>.
+Either install <a href="{{ site.gdeurl }}install-gde/prereq/security.html">security-related software</a> or see <a href="{{ site.gdeurl }}install-gde/install/dev_install.html">Install Composer and Clone the Magento repository</a>.
 
 #### Related topics
 

@@ -1,16 +1,16 @@
 ---
 layout: default
-group: install_pre
-subgroup: T_Developer
-title: Update components
-menu_title: Update components
-menu_order: 100
+group: install_cli 
+subgroup: 99_contrib
+title: Add or update components
+menu_title: Add or update components
+menu_order: 2
 menu_node: 
-github_link: install-gde/install/dev_updater.md
-redirect_from: /guides/v2.0/install-gde/prereq/prereq_updater.html
+github_link: install-gde/install/cli/dev_add-update.md
 ---
 
-Contributing developers update components by specifying components in Magento's `composer.json`. You *cannot* use the graphical Component Manager or System Upgrade utilities to do this.
+
+Contributing developers update components by specifying components and their versions in Magento's `composer.json`. You *cannot* use the graphical Component Manager or System Upgrade utilities to do this.
 
 You can either add a `require` section to `composer.json` or you can use the `composer require` command as follows:
 
@@ -49,5 +49,3 @@ Save your changes to `composer.json`, exit the text editor, and enter `composer 
 ### For more information
 If you have issues, see <a href="https://getcomposer.org/doc/articles/troubleshooting.md" target="_blank">Composer troubleshooting</a>.
 
-#### Next step
-<a href="{{ site.gdeurl }}install-gde/continue-to-install.html">Install the Magento software</a>
