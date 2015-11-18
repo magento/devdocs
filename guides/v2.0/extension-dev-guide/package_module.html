@@ -216,12 +216,16 @@
 
 <p>The Magento system uses Composer packages to distribute, install, and upgrade modules in an application instance.</p>
 
-<p>To package an module, you must:</p>
+<p>To package a module, you must:</p>
 
 <ul>
   <li>Create a Magento Composer file (<code>composer.json</code>).</li>
-  <li>Package and publish the module. </li>
+  <li>Package and publish your module. </li>
 </ul>
+
+<p>Publish your module on the <a href="http://www.magentocommerce.com/magento-connect/">Magento Marketplace</a>, Magento’s eCommerce application marketplace.</p>
+
+<!--After AppC, change Magento Marketplace URL to  https://marketplace.magento.com/ -->
 
 <h2 id="composer">Create a Magento Composer file</h2>
 
@@ -237,43 +241,111 @@
 </tr>
 <tr>
 <td><code>name</code></td>
-<td>A fully-qualified module name, in the format <code>&lt;vendor_name&gt;/module-&lt;module-name&gt;</code>. All letters must be in lowercase. Use dashes in the <code>&lt;module-name&gt;</code> to separate words.</td>
+<td>A fully-qualified module name, in the format <code>&lt;vendor-name&gt;/module-&lt;module-name&gt;</code>. All letters must be in lowercase. Use dashes in the <code>&lt;module-name&gt;</code> to separate words.</td>
 </tr>
 <tr>
 <td><code>type</code> </td>
-<td>For modules, this value must be set to <code>magento2-module</code>. Other possible types are <code>magento2-component</code>, <code>magento2-theme</code>, <code>magento2-language</code>, and <code>magento2-library</code></td>
+<td>For modules, this value must be set to <code>magento2-module</code>. Other possible types are <code>metapackage</code>, <code>magento2-theme</code>, and <code>magento2-language</code>.</td>
 </tr>
-<tr>
-<td><code>extra-&gt;map</code>  </td>
-<td>The mapping information for the marshalling of the package. The first line specifies which files to marshall. Specify <code>"*"</code> to marshall all files. The second line specifies where to place them, relative to the <code>app/code/&lt;Vendor&gt;</code> directory. </td>
-</tr>
+
+
+
+<td><code>autoload </code></td>
+<td>Specify necessary information to be loaded, such as [registration.php](component-registration.html). For more information, see <a href="https://getcomposer.org/doc/01-basic-usage.md#autoloading">Autoloading</a> from Composer.</td>
+
+<!-- <td><code>extra-&gt;map</code>  </td>
+<td>The mapping information for the marshaling of the package. The first line specifies which files to marshal. Specify <code>"*"</code> to marshal all files. The second line specifies where to place them, relative to the <code>&lt;Vendor></code> directory. </td> -->
+
+
 
 </tbody>
 </table>
 
-<p>The following example is a <code>composer.json</code> file for a module:</p>
+<p>A description of the types of packages that you can submit to Marketplace:</p>
+
+<ul>
+  <li>
+    <p><strong>magento2-module</strong>—A package that usually contains source files plus the top level composer.json, which indicates dependencies. This can be sold in the store directly, or it can be a dependent package hierarchy of some parent package.</p>
+  </li>
+  <li>
+    <p><strong>metapackage</strong>—A placeholder used to group a collection of packages together. </p>
+  </li>
+  <li>
+    <p><strong>magento2-theme</strong>—For theme packages. It can be sold independently in the store directly, or it could a dependent package hierarchy of some parent package.</p>
+  </li>
+  <li>
+    <p><strong>magento2-language</strong>—For language packages. These usually contain .csv files to aid in translation of certain contents.  It can be sold directly in Marketplace, or could be part of a dependent package hierarchy of some parent package.</p>
+  </li>
+</ul>
+
+<h3 id="using-metapackages">Using Metapackages</h3>
+
+<p>Metapackages allow you to group an extension that consists of multiple packages into a cohesive unit. This works exactly as described in standard <a href="https://getcomposer.org/doc/04-schema.md#type">composer.json documentation</a>. If you have an extension that uses more than one package you must use a metapackage as the <em>root package</em>. Otherwise you should not use metapackage. A metapackage that you submit to Magento Marketplace should be a .zip file containing only the metapackage composer.json file.</p>
+
+<h4 id="metapackage-example">Metapackage example</h4>
+
+<p>The following example is a <code>composer.json</code> metapackage file for a module:</p>
 
 <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;foovendor/module-one&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;N/A&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;magento/sample-data&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0-beta&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;metapackage&quot;</span><span class="p">,</span>
     <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;php&quot;</span><span class="p">:</span> <span class="s2">&quot;5.4.*|5.5.*&quot;</span>
+        <span class="nt">&quot;magento/module-sample-data&quot;</span><span class="p">:</span> <span class="s2">&quot;self.version&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;magento/sample-data-media&quot;</span><span class="p">:</span> <span class="s2">&quot;~0.42.0-beta2&quot;</span><span class="p">,</span>
     <span class="p">},</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;magento2-module&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;0.1.1&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;extra&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;map&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">[</span>
-                <span class="s2">&quot;*&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;Foovendor/ModuleOne&quot;</span>
-            <span class="p">]</span>
-        <span class="p">]</span>
+    <span class="nt">&quot;autoload&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;files&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;registration.php&quot;</span> <span class="p">],</span>
+        <span class="nt">&quot;psr-4&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;Magento\\sample-data&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+                <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></div>
 
-<h2 id="packaging">Package and publish a module</h2>
+<h3 id="sample-composerjson-file">Sample composer.json file</h3>
 
-<p>After you have created the module’s <code>composer.json</code> file in the root directory of the module, Composer can recognize your package as compatible with its deployment strategy. Such packages can be published to a code repository (GitHub, SVN, etc.), packagist.org, or on your own private package repository.</p>
+<p>The following example is a <code>composer.json</code> file for a module:</p>
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;magento/sample-module-newpage&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A Magento 2 module that creates a new page&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;magento2-module&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;license&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;OSL-3.0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;AFL-3.0&quot;</span>
+  <span class="p">],</span>
+  <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;php&quot;</span><span class="p">:</span> <span class="s2">&quot;~5.5.0|~5.6.0|~7.0.0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;magento/framework&quot;</span><span class="p">:</span> <span class="s2">&quot;~1.0.0&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;autoload&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;files&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;registration.php&quot;</span> <span class="p">],</span>
+    <span class="nt">&quot;psr-4&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;Magento\\SampleNewPage\\&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<h2 id="packaging">Package and publish your extension</h2>
+
+<ol>
+  <li>
+    <p>Create a package of your extension by performing a zip operation on the directory with your extension (excluding unnecessary directories). For example:
+ <code>zip -r vendor-name_package-name-1.0.0.zip package-path/ -x 'package-path/.git/*'</code>
+Use alphanumeric characters for the package filename with dashes to separate words. Do not use whitespaces.</p>
+  </li>
+  <li>
+    <p>Magento can retrieve your extension package from any valid GitHub URL. </p>
+  </li>
+</ol>
+
+<!-- After you have created the module's `composer.json` file in the root directory of the module, Composer can recognize your package as compatible with its deployment strategy. Such packages can be published to a code repository (GitHub, SVN, etc.), packagist.org, or on your own private package repository. -->
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Third party repositories are supported.</p></span>
+</div>
 
 <h3 id="hosting">Hosting on GitHub and Packagist</h3>
 <p>Prerequisite: git must be set up on your machine.</p>
@@ -293,7 +365,13 @@
   </li>
 </ol>
 
-<h3 id="private_repos">Hosting on a private packaging repository</h3>
+<h3 id="private_repos">Hosting on a private repository</h3>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>If you use the Setup Wizard, you must use the Magento Marketplace repository. 
+A private repository can be used for development or private code but installation must be done with a command line interface (you can install a module that specifies a private repository only with a command line installation).</p></span>
+</div>
 
 <ol>
   <li>Set up your own Composer packaging repository using a system such as <a href="https://getcomposer.org/doc/articles/handling-private-packages-with-satis.md">Satis</a> or <a href="https://toranproxy.com/">Toran</a>.</li>
@@ -311,7 +389,9 @@
     <span class="p">]</span>
 <span class="p">}</span></code></pre></div>
 
-<p>All packages on the private packaging repository can now be referenced within the <code>require</code> field.</p>
+<p>All packages on the private repository can now be referenced within the <code>require</code> field.</p>
+
+<!-- ##Submitting your module to Marketplace -->
 
 
 

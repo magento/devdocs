@@ -216,7 +216,7 @@
 
 <p>Magento components, including modules, themes, and languages, must be registered in the Magento system through the Magento <code>ComponentRegistrar</code> class.</p>
 
-<p>Each component must have a file called <code>registration.php</code> in its root directory. For example, here is the <code>registration.php</code> file for Magento’s <a href="https://github.corp.ebay.com/magento2/magento2ce/blob/develop/app/code/Magento/AdminNotification/registration.php">AdminNotification module</a>. Depending on the type of component, registration is performed through <code>registration.php</code> by adding to it as follows:</p>
+<p>Each component must have a file called <code>registration.php</code> in its root directory. For example, here is the <code>registration.php</code> file for Magento’s <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/AdminNotification/registration.php">AdminNotification module</a>. Depending on the type of component, registration is performed through <code>registration.php</code> by adding to it as follows:</p>
 
 <h3 id="modules">Modules</h3>
 
@@ -261,7 +261,7 @@
 
 <p>&nbsp;</p>
 
-<h3 id="invoke-registrationphp-in-composerjson">Invoke registration.php in composer.json</h3>
+<h3 id="invoke-registrationphp-in-composerjson-with-autoload">Invoke registration.php in composer.json with autoload</h3>
 
 <p>After you create your <code>registration.php</code> file and you are creating <a href="create_module.html#add-the-module8217s-composerjson-file">your module’s composer.json file</a>, remember to invoke your <code>registration.php</code> file in the autoload section of <code>composer.json</code>:</p>
 
