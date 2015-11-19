@@ -32,7 +32,7 @@ For further testing with Magento testing frameworks, see
 PHPUnit is a PHP testing framework ideal for Magento programmers. Test your module with [PHPUnit](https://phpunit.de/){:target="_blank"}, available on GitHub at [https://github.com/sebastianbergmann/phpunit](https://github.com/sebastianbergmann/phpunit){:target="_blank"}.
 
 ##More Information
-For more information on testing in PHP and validating Magento modules, see the following.
+For more information on testing in PHP and validating Magento modules, see the following:
 
 * [PHP Reflection](http://php.net/manual/en/book.reflection.php){:target="_blank"}
 * [PHP Reflection Tutorial](http://code.tutsplus.com/tutorials/reflection-in-php--net-31408){:target="_blank"}
