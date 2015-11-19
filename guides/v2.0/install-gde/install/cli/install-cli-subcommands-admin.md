@@ -16,6 +16,7 @@ See one of the following sections:
 *	<a href="#instgde-install-cli-first">First steps</a>
 *	<a href="#instgde-cli-admin-prereq">Prerequisites</a>
 *	<a href="#instgde-cli-admin">Create an administrator</a>
+*	<a href="#instgde-cli-admin-update">Update an administrator</a>
 *	<a href="#instgde-cli-admin-unlock">Unlock an administrator account</a>
 
 
@@ -82,6 +83,14 @@ where the following table defines parameters and values.
 
 	</tbody>
 </table>
+
+<h2 id="instgde-cli-admin-update">Update an administrator</h2>
+Command usage:
+
+	magento admin:user:create [--<parameter_name>=<value>, ...]
+
+where admin-user and admin-email both need to match an existing user.
+
 
 <h2 id="instgde-cli-admin-unlock">Unlock an administrator account</h2>
 Use this command to unlock the account of an administrator that was locked, typically because of multiple incorrect login attempts.
