@@ -5,7 +5,7 @@ subgroup: B_prereq
 title: Enter your authentication tokens in the Admin
 menu_title: Enter your authentication tokens in the Admin
 menu_order: 10
-menu_node: parent
+menu_node: 
 github_link: comp-mgr/prereq/prereq_auth-token.md
 ---
 
@@ -21,9 +21,9 @@ To enter your authentication tokens:
 2.	Click **System** > Tools > **Web Setup Wizard**.
 3.	Click **System Configuration**.
 
-	<img src="{{ site.baseurl }}common/images/cman_system-config.png">
+	<img src="{{ site.baseurl }}common/images/cman_system-config.png" width="500px">
 
 4.	Enter your public and private access keys in the provided fields.
 5.	Click **Save Config**.
 
-	<img src="{{ site.baseurl }}common/images/cman_keys.png">
+	<img src="{{ site.baseurl }}common/images/cman_keys.png" width="500px">

@@ -4,10 +4,10 @@ group: install_pre
 subgroup: Prerequisites
 title: Get your authentication tokens
 menu_title: Get your authentication tokens
-menu_order: 08
+menu_order: 12
+menu_node: 
 github_link: install-gde/prereq/connect-auth.md
 ---
-
 
 #### Contents
 
@@ -17,7 +17,7 @@ github_link: install-gde/prereq/connect-auth.md
 <h2 id="auth-overview">Overview of Magento Connect authentication</h2>
 The <a href="https://repo.magento.com">repo.magento.com</a> repository, where Magento 2 and third-party component Composer packages are stored, requires authentication. To provide secure authentication, we enable to to generate a pair 32-character *authentication tokens* you can use to access the repository.
 
-You get your credentials by logging in to <a href="http://www.magentocommerce.com/magento-connect/">Magento Connect</a> with a user name and password, then going to TBD > TBD. There, you can generate, regenerate, or delete your authentication tokens to use to:
+You get your credentials by logging in to <a href="http://www.magentocommerce.com/magento-connect" target="_blank">Magento Connect</a> with a user name and password, then going to TBD > TBD. There, you can generate, regenerate, or delete your authentication tokens to use to:
 
 *	Download the Magento software using Composer
 *	Install, update, or upgrade third-party components; and upgrade the Magento software using the <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade</a> utilities.

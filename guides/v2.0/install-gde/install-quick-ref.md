@@ -48,7 +48,7 @@ When all prerequisites have been met, get the Magento software using Composer as
 	cd <web server docroot directory>
 	composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition
 
-You're required to authenticate; see <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html#integrator-first-composer-ce">Get the Magento CE metapackage</a> for details. This downloads Magento code only; it doesn't install the software for you.
+You're required to authenticate; see <a href="{{ site.gdeurl }}install-gde/prereq/connect-auth.html">Get your authentication tokens</a> for details. This downloads Magento code only; it doesn't install the software for you.
 
 <div class="bs-callout bs-callout-tip">
 	<p>Alternatively, you can also download a <a href="{{ site.gdeurl }}install-gde/install/get-software.html">Magento software archive</a>.</p>
