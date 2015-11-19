@@ -214,13 +214,31 @@
 		
 		<h2 id="test-your-module">Test your module</h2>
 
-<p>Test your module by deploying Magento Community Edition and adding the module to the project’s <code>composer.json</code>. Marshall the module into the <code>app/code</code> directory.</p>
+<p>Test your module by deploying Magento Community Edition and adding the module to the project’s <code>composer.json</code>. </p>
 
 <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">&quot;require&quot;</span><span class="err">:</span> <span class="p">{</span>
     <span class="nt">&quot;magento/magento-composer-installer&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span>
     <span class="nt">&quot;magento/product-community-edition&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0.0&quot;</span><span class="p">,</span>
     <span class="nt">&quot;foovendor/module-one&quot;</span><span class="p">:</span> <span class="s2">&quot;0.1.1&quot;</span>
 <span class="p">}</span><span class="err">,</span></code></pre></div>
+
+<p>Remember to <a href="component-registration.html">register</a> your module as well, adding the location of your module. Confirm that your module works as expected and Magento functionality is not compromised.</p>
+
+<p>For further testing with Magento testing frameworks, see 
+<a href="/guides/v2.0/mtf/mtf_introduction.html">Magento Testing Framework</a>.</p>
+
+<h2 id="phpunit">PHPUnit</h2>
+
+<p>PHPUnit is a PHP testing framework ideal for Magento programmers. Test your module with <a href="https://phpunit.de/" target="_blank">PHPUnit</a>, available on GitHub at <a href="https://github.com/sebastianbergmann/phpunit" target="_blank">https://github.com/sebastianbergmann/phpunit</a>.</p>
+
+<h2 id="more-information">More Information</h2>
+<p>For more information on testing in PHP and validating Magento modules, see the following:</p>
+
+<ul>
+  <li><a href="http://php.net/manual/en/book.reflection.php" target="_blank">PHP Reflection</a></li>
+  <li><a href="http://code.tutsplus.com/tutorials/reflection-in-php--net-31408" target="_blank">PHP Reflection Tutorial</a></li>
+  <li><a href="http://www.gorillagroup.com/trending/insight/validating-magento-extensions-phpunit/" target="_blank">Validating Magento Extensions</a></li>
+</ul>
 
 
 		</div>
