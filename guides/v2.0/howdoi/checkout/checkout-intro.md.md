@@ -9,7 +9,8 @@ menu_order: 1
 github_link: howdoi/checkout/checkout-intro.md
 ---
 
-Checkout contains only user specific data. All the UI rendering can happen on frontend.  Communication with server happens in model using asynchronous calls. All views displays UI using templates. Subscribes action controllers to user actions. Subscribes to model state changes and reacts to them.
+Checkout contains only user specific data. All the UI rendering happens on frontend (browser). Communication with server happens in JS models using asynchronous calls. All views displays UI using templates. 
+
 Currently checkout has two steps 
 * shipping
 * billing.
@@ -23,7 +24,7 @@ The default Checkout flow consists of two steps:
 They are implemented using...(what modules?)
 
 This section describes how to perform the following Checkout customization tasks:
- - Adding a new checkout step view
+ - Custom checkout step: create the view files and add the step to checkout flow.
  - Changing the UI part of a checkout step
  - Adding a new payment method to checkout
  - Adding a new form 
