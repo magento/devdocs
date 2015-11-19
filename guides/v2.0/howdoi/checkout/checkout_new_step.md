@@ -25,7 +25,7 @@ To create the view part of the new checkout step:
 1. Create the `.js` file implementing the model.
 2. Create an `.html` template for the component.
 
-Each step 
+Each step is described in details in the folowing paragraphs. 
 
 ### Add the JavaScript file implementing the new step {#component}
 
