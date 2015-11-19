@@ -38,12 +38,7 @@ To do so, you start by creating a Composer project from our metapackage. The met
 <h2 id="integrator-first-composer-ce">Get the Magento CE metapackage</h2>
 To get started:
 
-1.	If you haven't done so already, create an account on <a href="http://www.magento.com" target="_blank">magento.com</a>.
-
-	*	Click **My Account** in the upper right corner of the page.
-	*	In the New Customer section, click **Register**.
-
-		If you already have an account, make sure you know your user name and password, then continue with the next step.
+1.	If you haven't done so already, <a href="{{ site.gdeurl }}install-gde/prereq/connect-auth.html">get your authentication tokens</a>.
 1.	Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
 2.	Change to the web server docroot directory, or to a directory you've configured as a virtual host docroot.
 3.	Enter the following command:
