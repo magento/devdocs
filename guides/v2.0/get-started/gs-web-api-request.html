@@ -216,8 +216,9 @@
 
 <p>To construct a web API request, read these topics:</p>
 <ul>
-<li><a href="#requests">Overview</a></li>
+<li><a href="#request-overview">Overview</a></li>
 <li><a href="#construct-request">Construct a request</a></li>
+<li><a href="#customers-search-api-request-example">Customers Search API Request Example</a></li>
 </ul>
 
 <h2 id="request-overview">Overview</h2>
@@ -330,13 +331,13 @@ See <a href="/guides/v2.0/get-started/authentication/gs-authentication.html">Aut
    <tr>
       <td><pre>Accept</pre>
       </td>
-      <td><p>Optional. Specifies the format of the response body. Default is <code>json</code>.</p></td>
+      <td><p>Optional. Specifies the format of the response body. Default is <code>JSON</code>.</p></td>
       <td>
       <pre>Accept: application/&lt;FORMAT&gt;</pre>
       <p>Where
          <code>&lt;FORMAT&gt;</code> is either
-         <code>json</code>or
-         <code>xml</code>.</p>
+         <code>JSON</code>or
+         <code>XML</code>.</p>
          <p>If you omit this header, the response is returned in JSON format.</p></td>
    </tr>
    <tr>
@@ -350,8 +351,8 @@ See <a href="/guides/v2.0/get-started/authentication/gs-authentication.html">Aut
      <pre>Content-Type:application/&lt;FORMAT&gt;</pre>
      <p>Where
          <code>&lt;FORMAT&gt;</code>is either
-         <code>json</code>or
-         <code>xml</code>.
+         <code>JSON</code>or
+         <code>XML</code>.
       </p></td>
    </tr>
 </table>
@@ -400,7 +401,7 @@ See <a href="/guides/v2.0/get-started/authentication/gs-authentication.html">Aut
 <h2 id="construct-request">Construct a request</h2>
 <p>This example shows you how to construct a REST web API call to create an account.</p>
 
-<ol><li>Open the <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Customer/etc/webapi.xml" target="_blank">webapi.xml</a> configuration file.</li>
+<ol><li>Open the <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Customer/etc/webapi.xml" target="_blank">Magento/Customer/etc/webapi.xml</a> configuration file.</li>
 <li><p>Find the route element that defines the <code>createAccount</code> call:</p>
 <pre>
 &lt;route url="/V1/customers" method="POST"&gt;
@@ -424,6 +425,48 @@ See <a href="/guides/v2.0/get-started/authentication/gs-authentication.html">Aut
 <p>The <code>createAccount</code> call requires a <code>customer</code> data object. The <code>password</code> and <code>redirectUrl</code> values are optional. The default <code>password</code> value is <code>null</code> and the default <code>redirectUrl</code> value is blank.</p>
 </li>
 <li><p>To pass the <code>customer</code> data object in the POST call payload, specify a <a href="http://www.json.com/" target="_blank">JSON</a> or XML request body on the call.</p></li>
+</ol>
+
+<h3 id="customers-search-api-request-example">Customers Search API Request Example</h3>
+<p>The following example builds a Customers Search request based on search criteria. It returns a list of customers that match given search criteria.</p>
+<ol>
+<li><p>Prepare <code>Authorization</code>, <code>Accept</code> and <code>Content-Type</code> headers to be passed to a request object. Use the Authorization token returned by the Magento token service.</p></li>
+<pre>
+$token = 'token';
+$httpHeaders = new \Zend\Http\Headers();
+$httpHeaders-&gt;addHeaders([
+   'Authorization' =&gt; 'Bearer ' . $token,
+   'Accept' =&gt; 'application/json',
+   'Content-Type' =&gt; 'application/json'
+]);
+</pre>
+<li><p>Open the <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Customer/etc/webapi.xml" target="_blank">Magento/Customer/etc/webapi.xml</a> configuration file and find the <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Customer/Api/CustomerRepositoryInterface.php" target="_blank">CustomerRepositoryInterface</a> interface with the <code>getList</code> method.</p></li>
+<li><p>Set the headers, URI and method to a request object. Use URI <code>/V1/customers/search</code> and method <code>GET</code> values. Also, the <code>searchCriteria</code> parameter should be used to complete the Customer Search query. See <a href="http://devdocs.magento.com/guides/v2.0/get-started/usage.html" target="_blank">searchCriteria usage</a>.</p></li>
+<pre>
+$request = new \Zend\Http\Request();
+$request-&gt;setHeaders($httpHeaders);
+$request-&gt;setUri('http://magento.ll/rest/V1/customers/search');
+$request-&gt;setMethod(\Zend\Http\Request::METHOD_GET);
+
+$params = new \Zend\Stdlib\Parameters([
+   'searchCriteria' =&gt; '*'
+]);
+$request-&gt;setQuery($params);
+</pre>
+<li><p>Prepare a HTTP Curl client object and pass the request object to <code>Client::send()</code> method.</p></li>
+<pre>
+$client = new \Zend\Http\Client();
+$options = [
+   'adapter'   =&gt; 'Zend\Http\Client\Adapter\Curl',
+   'curloptions' =&gt; [CURLOPT_FOLLOWLOCATION =&gt; true],
+   'maxredirects' =&gt; 0,
+   'timeout' =&gt; 30
+];
+$client-&gt;setOptions($options);
+
+$response = $this-&gt;client-&gt;send($request);
+</pre>
+<li><p>This request returns a list of all customers in JSON format. You can also specify XML format by changing <code>Accept</code> header of the request.</p></li>
 </ol>
 
 <h2>Next step</h2>
