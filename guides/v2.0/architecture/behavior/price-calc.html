@@ -202,7 +202,7 @@
 	<div class="container">
 		<h1 class="page-heading">How Magento calculates prices</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/architecture/behavior/price-calc.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/architecture/behavior/price-calc.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -213,11 +213,11 @@
 		<div class="content-wrap">
 		
 		<h2 id="m2devgde-pricecalc-intro">Introduction to the Magento pricing library</h2>
-<p>This article provides in-depth information about Magento price calculation logic implemented in the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Pricing" target="_blank">Magento\Framework\Pricing</a> library.</p>
+<p>This article provides in-depth information about Magento price calculation logic implemented in the <a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Pricing" target="_blank">Magento\Framework\Pricing</a> library.</p>
 
 <h2 id="m2devgde-pricecalc-gen">Price Calculation General Flow</h2>
 
-<p>To use the Pricing library for a product (<code>SaleableItem</code>), the product model should implement <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Pricing/Object/SaleableInterface.php" target="_blank">Magento\Framework\Pricing\Object\SaleableInterface</a>.</p>
+<p>To use the Pricing library for a product (<code>SaleableItem</code>), the product model should implement <a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Pricing/Object/SaleableInterface.php" target="_blank">Magento\Framework\Pricing\Object\SaleableInterface</a>.</p>
 
 <p>The implementation of <code>SaleableItemInterface</code> gives access to the <code>PriceInfo</code> object of a product, which in turn provides all available <code>Price</code> objects or <code>Adjustments</code> specific to the product.</p>
 
@@ -241,7 +241,7 @@
 
 <h3 id="m2devgde-pricecalc-api_adj">AdjustmentInterface</h3>
 
-<p><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Pricing/Adjustment/AdjustmentInterface.php" target="_blank">Magento\Framework\Pricing\Adjustment\AdjustmentInterface</a> contains the business logic responsible for applying adjustment to the <code>SaleableItem</code> final price.</p>
+<p><a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Pricing/Adjustment/AdjustmentInterface.php" target="_blank">Magento\Framework\Pricing\Adjustment\AdjustmentInterface</a> contains the business logic responsible for applying adjustment to the <code>SaleableItem</code> final price.</p>
 
 <table>
   <tbody>
@@ -345,7 +345,7 @@
 
 <h3 id="m2devgde-pricecalc-calcint">CalculatorInterface</h3>
 
-<p><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Pricing/Adjustment/CalculatorInterface.php" target="_blank">Magento\Framework\Pricing\Adjustment\CalculatorInterface</a> prepares <code>Amount</code> (applies and extracts adjustments) according to the saleable item (product) configuration.</p>
+<p><a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Pricing/Adjustment/CalculatorInterface.php" target="_blank">Magento\Framework\Pricing\Adjustment\CalculatorInterface</a> prepares <code>Amount</code> (applies and extracts adjustments) according to the saleable item (product) configuration.</p>
 <table>
   <tbody>
     <tr>
@@ -397,7 +397,7 @@
 
 <h3 id="m2devgde-pricecalc-amint">AmountInterface</h3>
 
-<p><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Pricing/Amount/AmountInterface.php" target="_blank">Magento\Framework\Pricing\Amount\AmountInterface</a> is a container of a composite price value information. Price is represented as base amount value and an array of adjustment codes.</p>
+<p><a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Pricing/Amount/AmountInterface.php" target="_blank">Magento\Framework\Pricing\Amount\AmountInterface</a> is a container of a composite price value information. Price is represented as base amount value and an array of adjustment codes.</p>
 <table>
   <tbody>
     <tr>
@@ -516,7 +516,7 @@
 
 <h3 id="m2devgde-pricecalc-absprice">AbstractPrice</h3>
 
-<p><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Pricing/Price/AbstractPrice.php" target="_blank">Magento\Framework\Pricing\Price\AbstractPrice</a> is responsible for providing information about specific price type.</p>
+<p><a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Pricing/Price/AbstractPrice.php" target="_blank">Magento\Framework\Pricing\Price\AbstractPrice</a> is responsible for providing information about specific price type.</p>
 <table>
   <tbody>
     <tr>
@@ -606,10 +606,10 @@
 </table>
 
 <h4 id="m2devgde-pricecalc-abs-type">Price Types</h4>
-<p>Every class implementing a price type should extend <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Pricing/Price/AbstractPrice.php" target="_blank"><code>Magento\Framework\Pricing\Price\AbstractPrice</code></a>.</p>
+<p>Every class implementing a price type should extend <a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Pricing/Price/AbstractPrice.php" target="_blank"><code>Magento\Framework\Pricing\Price\AbstractPrice</code></a>.</p>
 
 <h3 id="m2devgde-pricecalc-abs-priceinfo">PriceInfo</h3>
-<p><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Pricing/PriceInfoInterface.php" target="_blank">Magento\Framework\Pricing\PriceInfoInterface</a> holds prices and adjustments collections and provides access to them.</p>
+<p><a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Pricing/PriceInfoInterface.php" target="_blank">Magento\Framework\Pricing\PriceInfoInterface</a> holds prices and adjustments collections and provides access to them.</p>
 
 <table>
   <tbody>

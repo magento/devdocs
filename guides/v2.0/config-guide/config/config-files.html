@@ -202,7 +202,7 @@
 	<div class="container">
 		<h1 class="page-heading">Module configuration files</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/config-guide/config/config-files.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/config/config-files.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -231,7 +231,7 @@
 
 <dl>
 	<dt>Configuration object</dt>
-	<dd>The Magento library or class that is responsible for defining and validating the configuration type. For example, the configuration object for <code>config.xml</code> is <a href=" https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Config.php" target="_blank">Magento\Framework\App\Config</a>.</dd>
+	<dd>The Magento library or class that is responsible for defining and validating the configuration type. For example, the configuration object for <code>config.xml</code> is <a href=" https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/App/Config.php" target="_blank">Magento\Framework\App\Config</a>.</dd>
 	<dt>Configuration stage</dt>
 	<dd>Stages are defined as <em>primary</em>, <em>global</em>, and <em>area</em>. Each stage determines when configuration type is loaded and merged with same-named configuration types. (For example, <code>module.xml</code> files are merged with other <code>module.xml</code> files.) For more information, see <a href="#config-files-loadmerge">Configuration load and merge</a>.</dd>
 	<dt>Configuration scope</dt>
@@ -316,51 +316,51 @@
 			<td><code>config.xml</code></td>
 			<td>System configuration</td>
 			<td>primary, global </td>
-			<td><a href=" https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Config.php" target="_blank">\Magento\Framework\App\Config</a></td>
+			<td><a href=" https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/App/Config.php" target="_blank">\Magento\Framework\App\Config</a></td>
 		</tr>
 		<tr>
 			<td><code>di.xml</code></td>
 			<td><a href="/guides/v2.0/extension-dev-guide/depend-inj.html">Dependency injection</a> configuration</td>
 			<td>primary, global, area</td>
-			<td><a href=" https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/ObjectManager/Config/Config.php" target="_blank">\Magento\Framework\ObjectManager\Config</a></td>
+			<td><a href=" https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/ObjectManager/Config/Config.php" target="_blank">\Magento\Framework\ObjectManager\Config</a></td>
 		</tr>
 		<tr>
 			<td><code>events.xml</code></td>
 			<td>Event/observer configuration</td>
 			<td>global, area</td>
-			<td><a href=" https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Event.php" target="_blank">\Magento\Framework\Event</a></td>
+			<td><a href=" https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Event.php" target="_blank">\Magento\Framework\Event</a></td>
 		</tr>
 <!--     <tr>
 			<td><code>cache.xml</code></td>
 			<td>global, area</td>
-			<td><a href=" https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Event.php" target="_blank">Magento\Framework\Event</a></td>
+			<td><a href=" https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Event.php" target="_blank">Magento\Framework\Event</a></td>
 		</tr> -->
 		<tr>
 			<td><code>routes.xml</code></td>
 			<td><a href="/guides/v2.0/extension-dev-guide/routing.html">Route</a> configuration</td>
 			<td>area</td>
-			<td><a href=" https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Route/Config.php" target="_blank">Magento\Framework\App\Route\Config</a></td>
+			<td><a href=" https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/App/Route/Config.php" target="_blank">Magento\Framework\App\Route\Config</a></td>
 		</tr>
 	</tbody>
 </table>
 
   <h3 id="config-files-classes-int">Configuration interfaces</h3>
-  <p>You can interact with configuration files using interfaces under <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Config" target="_blank">Magento\Framework\Config</a>. You can also use these interfaces if you create a new configuration types.</p>
+  <p>You can interact with configuration files using interfaces under <a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Config" target="_blank">Magento\Framework\Config</a>. You can also use these interfaces if you create a new configuration types.</p>
 
   <p><code>Magento\Framework\Config</code> provides the following interfaces:</p>
 
   <ul>
-    <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Config/ConverterInterface.php" target="_blank">Framework\Config\ConverterInterface</a>, which converts the XML into an in-memory array representation of the configurations.</li>
-    <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Config/DataInterface.php" target="_blank">Framework\Config\DataInterface</a>, which retrieves the configuration data in a specified scope.</li>
-    <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Config/FileResolverInterface.php" target="_blank">Framework\Config\FileResolverInterface</a>, which identifies the location of files to be read by <code>\Magento\Framework\Config\ReaderInterface</code></li>
+    <li><a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Config/ConverterInterface.php" target="_blank">Framework\Config\ConverterInterface</a>, which converts the XML into an in-memory array representation of the configurations.</li>
+    <li><a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Config/DataInterface.php" target="_blank">Framework\Config\DataInterface</a>, which retrieves the configuration data in a specified scope.</li>
+    <li><a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Config/FileResolverInterface.php" target="_blank">Framework\Config\FileResolverInterface</a>, which identifies the location of files to be read by <code>\Magento\Framework\Config\ReaderInterface</code></li>
     <li>
-      <p><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Config/ReaderInterface.php" target="_blank">Framework\Config\ReaderInterface</a>, which reads the configuration data from storage and selects the storage from which it reads.</p>
+      <p><a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Config/ReaderInterface.php" target="_blank">Framework\Config\ReaderInterface</a>, which reads the configuration data from storage and selects the storage from which it reads.</p>
 
       <p>That is, the file system, database, other storage merges the configuration files according to the merging rules, and validates the configuration files with the validation schemas.</p>
     </li>
-    <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Config/SchemaLocatorInterface.php" target="_blank">Framework\Config\SchemaLocatorInterface</a>, which locates the XSD schema.</li>
-    <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Config/ScopeListInterface.php" target="_blank">Framework\Config\ScopeListInterface</a>, which returns a list of scopes.</li>
-    <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Config/ValidationStateInterface.php" target="_blank">Framework\Config\ValidationStateInterface</a>, which retrieves the validation state.</li>
+    <li><a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Config/SchemaLocatorInterface.php" target="_blank">Framework\Config\SchemaLocatorInterface</a>, which locates the XSD schema.</li>
+    <li><a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Config/ScopeListInterface.php" target="_blank">Framework\Config\ScopeListInterface</a>, which returns a list of scopes.</li>
+    <li><a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Config/ValidationStateInterface.php" target="_blank">Framework\Config\ValidationStateInterface</a>, which retrieves the validation state.</li>
   </ul>
 
   <h4 id="related-topics">Related topics</h4>
@@ -460,7 +460,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/bk-config-guide.html">Introduction</a></li>
+									<li class="level1 "><a class="nav-header" href="//guides/v2.0/config-guide/bk-config-guide.html">Introduction</a></li>
 									
 								
 								
@@ -485,7 +485,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/secy/secy.html">Security settings</a></li>
+									<li class="level1 "><a class="nav-header" href="//guides/v2.0/config-guide/secy/secy.html">Security settings</a></li>
 									
 								
 								
@@ -496,7 +496,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/secy/secy-cron.html">Secure cron.php to run in a browser</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/secy/secy-cron.html">Secure cron.php to run in a browser</a></li>
 
 									
 						
@@ -504,72 +504,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/secy/secy-xframe.html">X-Frame-Options header</a></li>
-
-									
-						
-								
-								
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/bootstrap/magento-bootstrap.html">Magento application initialization and bootstrap</a></li>
-									
-								
-								
-									
-							
-								
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html">Set the mode (MAGE_MODE)</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/bootstrap/mage-dirs.html">Customize base directory paths (MAGE_DIRS)</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/bootstrap/mage-profiler.html">Enable an HTML profiler (MAGE_PROFILER)</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/bootstrap/mage-run.html">Multiple websites or stores (MAGE_RUN_TYPE, MAGE_RUN_CODE)</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/secy/secy-xframe.html">X-Frame-Options header</a></li>
 
 									
 						
@@ -591,7 +526,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/cli/config-cli.html">Command line configuration</a></li>
+									<li class="level1 "><a class="nav-header" href="//guides/v2.0/config-guide/bootstrap/magento-bootstrap.html">Magento application initialization and bootstrap</a></li>
 									
 								
 								
@@ -602,7 +537,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html">Get started with command-line configuration</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a></li>
 
 									
 						
@@ -610,7 +545,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/bootstrap/magento-modes.html">Set the mode (MAGE_MODE)</a></li>
 
 									
 						
@@ -618,7 +553,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/bootstrap/mage-dirs.html">Customize base directory paths (MAGE_DIRS)</a></li>
 
 									
 						
@@ -626,7 +561,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/bootstrap/mage-profiler.html">Enable an HTML profiler (MAGE_PROFILER)</a></li>
 
 									
 						
@@ -634,79 +569,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/bootstrap/mage-run.html">Multiple websites or stores (MAGE_RUN_TYPE, MAGE_RUN_CODE)</a></li>
 
 									
 						
@@ -728,7 +591,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/varnish/config-varnish.html">Configure and use Varnish</a></li>
+									<li class="level1 "><a class="nav-header" href="//guides/v2.0/config-guide/cli/config-cli.html">Command line configuration</a></li>
 									
 								
 								
@@ -739,7 +602,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-install.html">Install Varnish</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/cli/config-cli-subcommands.html">Get started with command-line configuration</a></li>
 
 									
 						
@@ -747,7 +610,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-configure.html">Configure Varnish and your web server</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
 
 									
 						
@@ -755,7 +618,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-magento.html">Configure Magento to use Varnish</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
 
 									
 						
@@ -763,7 +626,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/config-varnish-final.html">Final verification</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
 
 									
 						
@@ -771,7 +634,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/use-varnish-cache.html">How Magento cache clearing works with Varnish</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
 
 									
 						
@@ -779,7 +642,71 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/use-varnish-cache-how.html">How Varnish caching works</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
 
 									
 						
@@ -801,7 +728,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/config/caching.html">Caching</a></li>
+									<li class="level1 "><a class="nav-header" href="//guides/v2.0/config-guide/varnish/config-varnish.html">Configure and use Varnish</a></li>
 									
 								
 								
@@ -812,7 +739,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/caching_frontend-cache-types.html">Associate cache frontends with cache types</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/varnish/config-varnish-install.html">Install Varnish</a></li>
 
 									
 						
@@ -820,7 +747,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/caching_low-level.html">Low-level cache options</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/varnish/config-varnish-configure.html">Configure Varnish and your web server</a></li>
 
 									
 						
@@ -828,7 +755,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/database/database.html">Database caching</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/varnish/config-varnish-magento.html">Configure Magento to use Varnish</a></li>
 
 									
 						
@@ -836,7 +763,23 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/caching-cache-type.html">Create a cache type</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/varnish/config-varnish-final.html">Final verification</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/varnish/use-varnish-cache.html">How Magento cache clearing works with Varnish</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/varnish/use-varnish-cache-how.html">How Varnish caching works</a></li>
 
 									
 						
@@ -858,7 +801,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/memcache/memcache.html">Use memcached for session storage</a></li>
+									<li class="level1 "><a class="nav-header" href="//guides/v2.0/config-guide/config/caching.html">Caching</a></li>
 									
 								
 								
@@ -869,7 +812,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/memcache/memcache_ubuntu.html">Install, configure, verify memcached on Ubuntu</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/config/caching_frontend-cache-types.html">Associate cache frontends with cache types</a></li>
 
 									
 						
@@ -877,7 +820,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/memcache/memcache_centos.html">Install, configure, verify memcached on CentOS</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/config/caching_low-level.html">Low-level cache options</a></li>
 
 									
 						
@@ -885,7 +828,64 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/database/database.html">Database caching</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/config/caching-cache-type.html">Create a cache type</a></li>
+
+									
+						
+								
+								
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="//guides/v2.0/config-guide/memcache/memcache.html">Use memcached for session storage</a></li>
+									
+								
+								
+									
+							
+								
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/memcache/memcache_ubuntu.html">Install, configure, verify memcached on Ubuntu</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/memcache/memcache_centos.html">Install, configure, verify memcached on CentOS</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a></li>
 
 									
 						
@@ -919,7 +919,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/config-php.html">Magento's deployment configuration</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/config/config-php.html">Magento's deployment configuration</a></li>
 
 									
 						
@@ -927,7 +927,7 @@
 
 									
 							
-									<li class="level-2  active "><a href="/guides/v2.0/config-guide/config/config-files.html">Module configuration files</a></li>
+									<li class="level-2  active "><a href="//guides/v2.0/config-guide/config/config-files.html">Module configuration files</a></li>
 
 									
 						
@@ -935,48 +935,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/config-create.html">Create or extend configuration types</a></li>
-
-									
-						
-								
-								
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/mq/rabbitmq-overview.html">Message Queues (Enterprise Edition only)</a></li>
-									
-								
-								
-									
-							
-								
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/mq/config-mq.html">Configure message queue topology</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/mq/manage-mysql.html">MySQL message queues</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/config/config-create.html">Create or extend configuration types</a></li>
 
 									
 						
@@ -998,7 +957,48 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/redis/config-redis.html">Configure Redis</a></li>
+									<li class="level1 "><a class="nav-header" href="//guides/v2.0/config-guide/mq/rabbitmq-overview.html">Message Queues (Enterprise Edition only)</a></li>
+									
+								
+								
+									
+							
+								
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/mq/config-mq.html">Configure message queue topology</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/mq/manage-mysql.html">MySQL message queues</a></li>
+
+									
+						
+								
+								
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="//guides/v2.0/config-guide/redis/config-redis.html">Configure Redis</a></li>
 									
 								
 								
@@ -1023,7 +1023,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/solr/solr-overview.html">Install and configure Solr (Enterprise Edition only)</a></li>
+									<li class="level1 "><a class="nav-header" href="//guides/v2.0/config-guide/solr/solr-overview.html">Install and configure Solr (Enterprise Edition only)</a></li>
 									
 								
 								
@@ -1034,7 +1034,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/solr/solr-magento.html">Configure Solr and Magento</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/solr/solr-magento.html">Configure Solr and Magento</a></li>
 
 									
 						
@@ -1042,7 +1042,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/solr/solr-script.html">Prepare Solr for production</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/solr/solr-script.html">Prepare Solr for production</a></li>
 
 									
 						
@@ -1064,7 +1064,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/multi-master/multi-master.html">Split database performance solution (Enterprise Edition only)</a></li>
+									<li class="level1 "><a class="nav-header" href="//guides/v2.0/config-guide/multi-master/multi-master.html">Split database performance solution (Enterprise Edition only)</a></li>
 									
 								
 								
@@ -1075,7 +1075,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/multi-master/multi-master_masterdb.html">Set up master databases</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/multi-master/multi-master_masterdb.html">Set up master databases</a></li>
 
 									
 						
@@ -1083,7 +1083,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/multi-master/multi-master_verify.html">Verify split databases</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/multi-master/multi-master_verify.html">Verify split databases</a></li>
 
 									
 						
@@ -1091,7 +1091,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/multi-master/multi-master_slavedb.html">Set up optional database replication</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/config-guide/multi-master/multi-master_slavedb.html">Set up optional database replication</a></li>
 
 									
 						

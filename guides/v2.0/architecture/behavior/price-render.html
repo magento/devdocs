@@ -202,7 +202,7 @@
 	<div class="container">
 		<h1 class="page-heading">How Magento renders prices</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/architecture/behavior/price-render.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/architecture/behavior/price-render.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -231,7 +231,7 @@
 
 <h3 id="m2devgde-pricerend-base-rend">Base Renderer</h3>
 
-<p><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Pricing/Render.php" target="_blank">Magento\Framework\Pricing\Render</a> extends <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/View/Element/AbstractBlock.php" target="_blank">Magento\Framework\View\Element\AbstractBlock</a> and serves as an entry point.</p>
+<p><a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Pricing/Render.php" target="_blank">Magento\Framework\Pricing\Render</a> extends <a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/View/Element/AbstractBlock.php" target="_blank">Magento\Framework\View\Element\AbstractBlock</a> and serves as an entry point.</p>
 
 <table>
   <tbody>
@@ -316,9 +316,9 @@
 
 <h3 id="m2devgde-pricerend-adjrendint">AdjustmentRenderInterface</h3>
 
-<p><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Pricing/Render/AdjustmentRenderInterface.php" target="_blank">Magento\Framework\Pricing\Render\AdjustmentRenderInterface</a> is responsible for showing price adjustments according to the system configuration. It has a flexible internal config which allows specifying a separate template for each combination of price type and product type.</p>
+<p><a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Pricing/Render/AdjustmentRenderInterface.php" target="_blank">Magento\Framework\Pricing\Render\AdjustmentRenderInterface</a> is responsible for showing price adjustments according to the system configuration. It has a flexible internal config which allows specifying a separate template for each combination of price type and product type.</p>
 
-<p><code>AdjustmentRender</code> extends <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/View/Element/Template.php" target="_blank">Magento\View\Element\Template</a> and implements its behavior as well.</p>
+<p><code>AdjustmentRender</code> extends <a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/View/Element/Template.php" target="_blank">Magento\View\Element\Template</a> and implements its behavior as well.</p>
 
 <table>
   <tbody>
@@ -413,7 +413,7 @@
 
 <h3 id="m2devgde-pricerend-amrendint">AmountRenderInterface</h3>
 
-<p><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Pricing/Render/AmountRenderInterface.php">Magento\Framework\Pricing\Render\AmountRenderInterface</a> gets the Price Amount object from Price objects and represents the exact price value to be rendered.</p>
+<p><a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Pricing/Render/AmountRenderInterface.php">Magento\Framework\Pricing\Render\AmountRenderInterface</a> gets the Price Amount object from Price objects and represents the exact price value to be rendered.</p>
 
 <table>
   <tbody>
@@ -480,7 +480,7 @@
 
 <h3 id="m2devgde-pricerend-pricebox">PriceBox</h3>
 
-<p><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Pricing/Render/PriceBox.php" target="_blank">Magento\Framework\Pricing\Render\PriceBox</a> is a main block that wraps all price rendering related content of particular Price Type.</p>
+<p><a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Pricing/Render/PriceBox.php" target="_blank">Magento\Framework\Pricing\Render\PriceBox</a> is a main block that wraps all price rendering related content of particular Price Type.</p>
 
 <p>This is a private class, it cannot be accessed from general layout blocks or templates.</p>
 <table>

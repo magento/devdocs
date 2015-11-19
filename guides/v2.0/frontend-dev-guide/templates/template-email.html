@@ -202,7 +202,7 @@
 	<div class="container">
 		<h1 class="page-heading">Customize email templates</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/frontend-dev-guide/templates/template-email.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/frontend-dev-guide/templates/template-email.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -246,7 +246,7 @@
 </ul>
 
 <h2 id="customize-email-templates">Customize email templates</h2>
-<p>Email templates are stored in the <code>&lt;module_dir&gt;/view/&lt;area&gt;/email</code> directory of their respective modules. For example, the template for the new order transactional email for the Sales module is located in <a href="https://github.com/magento/magento2/blob/develop/&lt;Magento_Sales_module_dir&gt;/view/frontend/email/order_new.html" target="_blank">app/code/Magento/Sales/view/frontend/email/order_new.html</a>. </p>
+<p>Email templates are stored in the <code>&lt;module_dir&gt;/view/&lt;area&gt;/email</code> directory of their respective modules. For example, the template for the new order transactional email for the Sales module is located in <a href="https://github.com/magento/magento2/tree/2.0.0/&lt;Magento_Sales_module_dir&gt;/view/frontend/email/order_new.html" target="_blank">app/code/Magento/Sales/view/frontend/email/order_new.html</a>. </p>
 
 <p>We strongly recommend you not change the default Magento files. If you want to customize the default templates, you should create your custom templates and configure Magento to use them instead of the default templates. </p>
 
@@ -293,8 +293,8 @@ Make note of this path because you will need it later when you configure this ne
 <p>Every frontend email template includes a header and footer template using these two directives: <code>{{template config_path="design/email/header_template"}}</code> and <code>{{template config_path="design/email/footer_template"}}</code>. By default, those two directives load contents from these files:</p>
 
 <ul>
-  <li><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Email/view/frontend/email/header.html" target="_blank"><magento_email_module_dir>/view/frontend/email/header.html&lt;/a&gt;</magento_email_module_dir></a></li>
-  <li><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Email/view/frontend/email/footer.html" target="_blank"><magento_email_module_dir>/view/frontend/email/footer.html&lt;/a&gt;</magento_email_module_dir></a></li>
+  <li><a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Email/view/frontend/email/header.html" target="_blank"><magento_email_module_dir>/view/frontend/email/header.html&lt;/a&gt;</magento_email_module_dir></a></li>
+  <li><a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Email/view/frontend/email/footer.html" target="_blank"><magento_email_module_dir>/view/frontend/email/footer.html&lt;/a&gt;</magento_email_module_dir></a></li>
 </ul>
 
 <p>You can customize header and footer templates using either the <a href="#customize-email-theme">theme</a> or <a href="#customize-email-admin">admin</a> customization methods discussed previously.</p>
@@ -323,7 +323,7 @@ Make note of this path because you will need it later when you configure this ne
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
- <p>The selection of available variables depends on which template you use as a basis. The template-specific variables are contained in a <code>&lt;!--@vars @--&gt;</code> comment at the top of each template on the file system. (For example, look at <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Customer/view/frontend/email/account_new.html#L8">app/code/Magento/Customer/view/frontend/email/account_new.html</a>.</p></span>
+ <p>The selection of available variables depends on which template you use as a basis. The template-specific variables are contained in a <code>&lt;!--@vars @--&gt;</code> comment at the top of each template on the file system. (For example, look at <a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Customer/view/frontend/email/account_new.html#L8">app/code/Magento/Customer/view/frontend/email/account_new.html</a>.</p></span>
 </div>
 
 <h2 id="email-styles">Styles for email templates</h2>
@@ -477,15 +477,15 @@ Make note of this path because you will need it later when you configure this ne
 
 <ul>
   <li>
-    <p><a href="https://github.com/magento/magento2/blob/develop/app/design/frontend/Magento/blank/web/css/source/_email-extend.less" target="_blank"><code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-extend.less</code></a> contains the <code>@import</code> directive that requests the <code>email-fonts.css</code> file.</p>
+    <p><a href="https://github.com/magento/magento2/tree/2.0.0/app/design/frontend/Magento/blank/web/css/source/_email-extend.less" target="_blank"><code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-extend.less</code></a> contains the <code>@import</code> directive that requests the <code>email-fonts.css</code> file.</p>
 
     <p>The reason the contents of <code>email-fonts.css</code> are loaded using <code>@import</code> rather than being output directly into a <code>&lt;style&gt;</code> tag in the <code>&lt;head&gt;</code> of an email is that if a user is reading their email offline, some email clients don’t render the text because the web fonts can’t be loaded.</p>
   </li>
   <li>
     <p>The <code>&lt;Magento_Blank_theme_dir&gt;/web/css/email-fonts.less</code> file imports <code>source/_variables.less</code> and <code>source/_typography.less</code> files:</p>
     <ul>
-      <li><a href="https://github.com/magento/magento2/blob/develop/app/design/frontend/Magento/blank/web/css/source/_variables.less" target="_blank">app/design/frontend/Magento/blank/web/css/source/_variables.less</a> defines which font is used in the <code>@font-family-name__base</code> variable.</li>
-      <li><a href="https://github.com/magento/magento2/blob/develop/app/design/frontend/Magento/blank/web/css/source/_typography.less" target="_blank">app/design/frontend/Magento/blank/web/css/source/_typography.less</a> generates the <code>@font-face</code> rules which import the custom fonts.</li>
+      <li><a href="https://github.com/magento/magento2/tree/2.0.0/app/design/frontend/Magento/blank/web/css/source/_variables.less" target="_blank">app/design/frontend/Magento/blank/web/css/source/_variables.less</a> defines which font is used in the <code>@font-family-name__base</code> variable.</li>
+      <li><a href="https://github.com/magento/magento2/tree/2.0.0/app/design/frontend/Magento/blank/web/css/source/_typography.less" target="_blank">app/design/frontend/Magento/blank/web/css/source/_typography.less</a> generates the <code>@font-face</code> rules which import the custom fonts.</li>
     </ul>
   </li>
 </ul>
@@ -757,11 +757,11 @@ Exception: argument value can contain spaces if it is enclosed in brackets.
 						
 							
 							
-								<li class="q "><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Introduction</a></li>
+								<li class="q "><a href="//guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Introduction</a></li>
 				
 							
 							
-								<li class="q "><a href="/guides/v2.0/frontend-dev-guide/conventions.html">Conventional notations used in this Guide</a></li>
+								<li class="q "><a href="//guides/v2.0/frontend-dev-guide/conventions.html">Conventional notations used in this Guide</a></li>
 				
 							
 							
@@ -780,7 +780,7 @@ Exception: argument value can contain spaces if it is enclosed in brackets.
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/frontend-dev-guide/themes/theme-general.html">Themes</a></li>
+									<li class="level1 "><a class="nav-header" href="//guides/v2.0/frontend-dev-guide/themes/theme-general.html">Themes</a></li>
 									
 								
 								
@@ -791,7 +791,7 @@ Exception: argument value can contain spaces if it is enclosed in brackets.
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/themes/theme-create.html">Create a theme</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/frontend-dev-guide/themes/theme-create.html">Create a theme</a></li>
 
 									
 						
@@ -799,7 +799,7 @@ Exception: argument value can contain spaces if it is enclosed in brackets.
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/themes/theme-structure.html">Magento theme structure</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/frontend-dev-guide/themes/theme-structure.html">Magento theme structure</a></li>
 
 									
 						
@@ -807,7 +807,7 @@ Exception: argument value can contain spaces if it is enclosed in brackets.
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a></li>
 
 									
 						
@@ -815,7 +815,7 @@ Exception: argument value can contain spaces if it is enclosed in brackets.
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/themes/theme-images.html">Configure images properties for a theme</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/frontend-dev-guide/themes/theme-images.html">Configure images properties for a theme</a></li>
 
 									
 						
@@ -823,7 +823,7 @@ Exception: argument value can contain spaces if it is enclosed in brackets.
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/themes/theme-inherit.html">Theme inheritance</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/frontend-dev-guide/themes/theme-inherit.html">Theme inheritance</a></li>
 
 									
 						
@@ -831,80 +831,7 @@ Exception: argument value can contain spaces if it is enclosed in brackets.
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/themes/debug-theme.html">Locate templates, layouts, and styles</a></li>
-
-									
-						
-								
-								
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/frontend-dev-guide/layouts/layout-overview.html">Layout</a></li>
-									
-								
-								
-									
-							
-								
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/layouts/xml-instructions.html">Layout instructions</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/layouts/layout-types.html">Layout file types</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/layouts/layout-override.html">Override a layout</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/layouts/xml-manage.html">Common layout customization tasks</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/layouts/layout-practice.html">Customizing layout illustration</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/frontend-dev-guide/themes/debug-theme.html">Locate templates, layouts, and styles</a></li>
 
 									
 						
@@ -926,7 +853,7 @@ Exception: argument value can contain spaces if it is enclosed in brackets.
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/frontend-dev-guide/templates/template-overview.html">Templates</a></li>
+									<li class="level1 "><a class="nav-header" href="//guides/v2.0/frontend-dev-guide/layouts/layout-overview.html">Layout</a></li>
 									
 								
 								
@@ -937,7 +864,7 @@ Exception: argument value can contain spaces if it is enclosed in brackets.
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/templates/template-walkthrough.html">Templates customization walkthrough</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/frontend-dev-guide/layouts/xml-instructions.html">Layout instructions</a></li>
 
 									
 						
@@ -945,7 +872,7 @@ Exception: argument value can contain spaces if it is enclosed in brackets.
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/templates/template-override.html">Templates basic concepts</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/frontend-dev-guide/layouts/layout-types.html">Layout file types</a></li>
 
 									
 						
@@ -953,7 +880,7 @@ Exception: argument value can contain spaces if it is enclosed in brackets.
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/templates/template-sample.html">Illustration of customizing templates</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a></li>
 
 									
 						
@@ -961,7 +888,7 @@ Exception: argument value can contain spaces if it is enclosed in brackets.
 
 									
 							
-									<li class="level-2  active "><a href="/guides/v2.0/frontend-dev-guide/templates/template-email.html">Customize email templates</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/frontend-dev-guide/layouts/layout-override.html">Override a layout</a></li>
 
 									
 						
@@ -969,40 +896,7 @@ Exception: argument value can contain spaces if it is enclosed in brackets.
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/templates/template-security.html">Templates XSS security</a></li>
-
-									
-						
-								
-								
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS)</a></li>
-									
-								
-								
-									
-							
-								
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/css-topics/css-themes.html">Include CSS</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/frontend-dev-guide/layouts/xml-manage.html">Common layout customization tasks</a></li>
 
 									
 						
@@ -1010,39 +904,7 @@ Exception: argument value can contain spaces if it is enclosed in brackets.
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/css-topics/css-preprocess.html">CSS preprocessing</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/css-topics/css_debug.html">Styles debugging</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/css-topics/css-practice.html">Customizing styles illustration</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/css-topics/using-fonts.html">Using custom fonts</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/frontend-dev-guide/layouts/layout-practice.html">Customizing layout illustration</a></li>
 
 									
 						
@@ -1064,7 +926,7 @@ Exception: argument value can contain spaces if it is enclosed in brackets.
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/frontend-dev-guide/css-guide/css_quick_guide_overview.html">Quick start guide to styles</a></li>
+									<li class="level1 "><a class="nav-header" href="//guides/v2.0/frontend-dev-guide/templates/template-overview.html">Templates</a></li>
 									
 								
 								
@@ -1075,7 +937,7 @@ Exception: argument value can contain spaces if it is enclosed in brackets.
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/css-guide/css_quick_guide_approach.html">Simple ways to customize a theme's styles</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/frontend-dev-guide/templates/template-walkthrough.html">Templates customization walkthrough</a></li>
 
 									
 						
@@ -1083,40 +945,7 @@ Exception: argument value can contain spaces if it is enclosed in brackets.
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/css-guide/css_quick_guide_mode.html">Simple style changes with client-side LESS compilation vs. server-side</a></li>
-
-									
-						
-								
-								
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/frontend-dev-guide/responsive-web-design/rwd_overview.html">How to Make Your Theme Responsive and Mobile</a></li>
-									
-								
-								
-									
-							
-								
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/responsive-web-design/rwd_css.html">CSS in responsive design</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/frontend-dev-guide/templates/template-override.html">Templates basic concepts</a></li>
 
 									
 						
@@ -1124,7 +953,7 @@ Exception: argument value can contain spaces if it is enclosed in brackets.
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/responsive-web-design/rwd_js.html">JavaScript in Magento responsive design</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/frontend-dev-guide/templates/template-sample.html">Illustration of customizing templates</a></li>
 
 									
 						
@@ -1132,7 +961,7 @@ Exception: argument value can contain spaces if it is enclosed in brackets.
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/responsive-web-design/rwd_mobile.html">Create a responsive mobile theme based on a default theme</a></li>
+									<li class="level-2  active "><a href="//guides/v2.0/frontend-dev-guide/templates/template-email.html">Customize email templates</a></li>
 
 									
 						
@@ -1140,7 +969,7 @@ Exception: argument value can contain spaces if it is enclosed in brackets.
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/responsive-web-design/rwd_practice.html">Customizing RWD illustration</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/frontend-dev-guide/templates/template-security.html">Templates XSS security</a></li>
 
 									
 						
@@ -1162,7 +991,7 @@ Exception: argument value can contain spaces if it is enclosed in brackets.
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/frontend-dev-guide/translations/xlate.html">Translations</a></li>
+									<li class="level1 "><a class="nav-header" href="//guides/v2.0/frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS)</a></li>
 									
 								
 								
@@ -1173,7 +1002,7 @@ Exception: argument value can contain spaces if it is enclosed in brackets.
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/translations/theme_dictionary.html">Use translation dictionary to customize strings</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/frontend-dev-guide/css-topics/css-themes.html">Include CSS</a></li>
 
 									
 						
@@ -1181,7 +1010,7 @@ Exception: argument value can contain spaces if it is enclosed in brackets.
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/translations/translate_theory.html">Translate theme strings</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/frontend-dev-guide/css-topics/css-preprocess.html">CSS preprocessing</a></li>
 
 									
 						
@@ -1189,7 +1018,178 @@ Exception: argument value can contain spaces if it is enclosed in brackets.
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/translations/translate_practice.html">Create a translation dictionary for a theme, illustration</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/frontend-dev-guide/css-topics/css_debug.html">Styles debugging</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/frontend-dev-guide/css-topics/css-practice.html">Customizing styles illustration</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/frontend-dev-guide/css-topics/using-fonts.html">Using custom fonts</a></li>
+
+									
+						
+								
+								
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="//guides/v2.0/frontend-dev-guide/css-guide/css_quick_guide_overview.html">Quick start guide to styles</a></li>
+									
+								
+								
+									
+							
+								
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/frontend-dev-guide/css-guide/css_quick_guide_approach.html">Simple ways to customize a theme's styles</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/frontend-dev-guide/css-guide/css_quick_guide_mode.html">Simple style changes with client-side LESS compilation vs. server-side</a></li>
+
+									
+						
+								
+								
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="//guides/v2.0/frontend-dev-guide/responsive-web-design/rwd_overview.html">How to Make Your Theme Responsive and Mobile</a></li>
+									
+								
+								
+									
+							
+								
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/frontend-dev-guide/responsive-web-design/rwd_css.html">CSS in responsive design</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/frontend-dev-guide/responsive-web-design/rwd_js.html">JavaScript in Magento responsive design</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/frontend-dev-guide/responsive-web-design/rwd_mobile.html">Create a responsive mobile theme based on a default theme</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/frontend-dev-guide/responsive-web-design/rwd_practice.html">Customizing RWD illustration</a></li>
+
+									
+						
+								
+								
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="//guides/v2.0/frontend-dev-guide/translations/xlate.html">Translations</a></li>
+									
+								
+								
+									
+							
+								
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/frontend-dev-guide/translations/theme_dictionary.html">Use translation dictionary to customize strings</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/frontend-dev-guide/translations/translate_theory.html">Translate theme strings</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/frontend-dev-guide/translations/translate_practice.html">Create a translation dictionary for a theme, illustration</a></li>
 
 									
 						

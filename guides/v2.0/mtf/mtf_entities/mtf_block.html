@@ -202,7 +202,7 @@
 	<div class="container">
 		<h1 class="page-heading">Entities of the Magento Testing Framework</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/mtf/mtf_entities/mtf_block.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/mtf/mtf_entities/mtf_block.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -311,7 +311,7 @@ For example, you develop a functional test for the bundle product creation, that
 
 <h4 id="mtf_block_path_code">Get the name and the path of blocks in the code</h4>
 
-<p>If you want to change the representation of block details, you can change a <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/View/Element/Template.php"><code>Template.php</code></a>:</p>
+<p>If you want to change the representation of block details, you can change a <a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/View/Element/Template.php"><code>Template.php</code></a>:</p>
 
 <ul>
   <li>
@@ -405,21 +405,21 @@ For example, you develop a functional test for the bundle product creation, that
 <ul>
   <li><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Block.php">Magento\Mtf\Block\Block</a></li>
   <li><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php">Magento\Mtf\Block\Form</a></li>
-  <li><a href="https://github.com/magento/magento2/blob/develop/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php">Magento\Backend\Test\Block\Widget\Tab</a></li>
-  <li><a href="https://github.com/magento/magento2/blob/develop/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php">Magento\Backend\Test\Block\Widget\FormTabs</a></li>
+  <li><a href="https://github.com/magento/magento2/tree/2.0.0/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php">Magento\Backend\Test\Block\Widget\Tab</a></li>
+  <li><a href="https://github.com/magento/magento2/tree/2.0.0/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php">Magento\Backend\Test\Block\Widget\FormTabs</a></li>
   <li>
-    <p><a href="https://github.com/magento/magento2/blob/develop/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Grid.php">Magento\Backend\Test\Block\Widget\Grid</a></p>
+    <p><a href="https://github.com/magento/magento2/tree/2.0.0/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Grid.php">Magento\Backend\Test\Block\Widget\Grid</a></p>
   </li>
-  <li><a href="https://github.com/magento/magento2/blob/develop/dev/tests/functional/tests/app/Magento/Ui/Test/Block/Adminhtml/DataGrid.php">Magento\Ui\Test\Block\Adminhtml\DataGrid</a></li>
+  <li><a href="https://github.com/magento/magento2/tree/2.0.0/dev/tests/functional/tests/app/Magento/Ui/Test/Block/Adminhtml/DataGrid.php">Magento\Ui\Test\Block\Adminhtml\DataGrid</a></li>
 </ul>
 
-<p>For example, <a href="https://github.com/magento/magento2/blob/9d4c58e77126ae448eda81aa5e3206a16568fc5c/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/WidgetGrid.php"><code>WidgetGrid.php</code></a>. This block simply reuses methods of <a href="https://github.com/magento/magento2/blob/develop/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Grid.php"><code>Magento\Backend\Test\Block\Widget\Grid</code></a> class.</p>
+<p>For example, <a href="https://github.com/magento/magento2/blob/9d4c58e77126ae448eda81aa5e3206a16568fc5c/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/WidgetGrid.php"><code>WidgetGrid.php</code></a>. This block simply reuses methods of <a href="https://github.com/magento/magento2/tree/2.0.0/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Grid.php"><code>Magento\Backend\Test\Block\Widget\Grid</code></a> class.</p>
 
 <h3 id="mtf_block_to-page">Add a block to the page</h3>
 
 <p>Blocks are tested as part of the <a href="/guides/v2.0/mtf/mtf_entities/mtf_page.html">page</a> object. To add the block to the page you must add a corresponding node to the XML file of the page object.</p>
 
-<p>For example, the <a href="https://github.com/magento/magento2/blob/develop/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/WidgetGrid.php">WidgetGrid.php</a> is a part of the page that is defined in <a href="https://github.com/magento/magento2/blob/develop/dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml"><code>WidgetInstanceIndex.xml</code></a>.</p>
+<p>For example, the <a href="https://github.com/magento/magento2/tree/2.0.0/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/WidgetGrid.php">WidgetGrid.php</a> is a part of the page that is defined in <a href="https://github.com/magento/magento2/tree/2.0.0/dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml"><code>WidgetInstanceIndex.xml</code></a>.</p>
 
 <p><code>block</code> is the node that adds the block to the page:</p>
 
@@ -491,7 +491,7 @@ For example, you develop a functional test for the bundle product creation, that
 
 <p>A mapping file is an XML file which has the same name and path as the block does, and contains fields that represent form fields. Field name in the mapping file shall match the one in the fixture.</p>
 
-<p>Let’s see the <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Customer/Block/Form/Login.php">Customer Login</a> block. The block has two input fields: <code>email</code> and <code>password</code>.</p>
+<p>Let’s see the <a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Customer/Block/Form/Login.php">Customer Login</a> block. The block has two input fields: <code>email</code> and <code>password</code>.</p>
 
 <p><a href="/common/images/mtf_block_login_ui.png"><img src="/common/images/mtf_block_login_ui.png" /></a></p>
 
@@ -540,7 +540,7 @@ For example, you develop a functional test for the bundle product creation, that
 <h3 id="mtf_block_map_form_tab">Form tab mapping</h3>
 
 <p>You can use mapping for the forms on tabs (a form tab) that enables you to automate switching between tabs and entering the data.
-To get the block class with form tab mapping, extend your class from <a href="https://github.com/magento/magento2/blob/develop/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php"><code>Magento\Backend\Test\Block\Widget\FormTabs</code> </a>. If you want to use custom tab logic you can extend your class from <a href="https://github.com/magento/magento2/blob/develop/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php"><code>Magento\Backend\Test\Block\Widget\Tab</code></a> class.</p>
+To get the block class with form tab mapping, extend your class from <a href="https://github.com/magento/magento2/tree/2.0.0/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php"><code>Magento\Backend\Test\Block\Widget\FormTabs</code> </a>. If you want to use custom tab logic you can extend your class from <a href="https://github.com/magento/magento2/tree/2.0.0/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php"><code>Magento\Backend\Test\Block\Widget\Tab</code></a> class.</p>
 
 <p>For example, let’s see tabs for the Magento Widget: <strong>Settings</strong>, <strong>Storefront properties</strong>, <strong>Frontend App Options</strong>, <strong>Layout Updates</strong> .</p>
 
@@ -612,7 +612,7 @@ To get the block class with form tab mapping, extend your class from <a href="ht
 </tbody>
 </table>
 
-<p>Example of <code>composite</code> field from <a href="https://github.com/magento/magento2/blob/develop/dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Adminhtml/Product/ProductForm.xml">ProductForm.xml</a>:</p>
+<p>Example of <code>composite</code> field from <a href="https://github.com/magento/magento2/tree/2.0.0/dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Adminhtml/Product/ProductForm.xml">ProductForm.xml</a>:</p>
 
 <p>In the mapping file: </p>
 
@@ -915,7 +915,7 @@ To get the block class with form tab mapping, extend your class from <a href="ht
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/mtf/mtf_introduction.html">INTRODUCTION</a></li>
+									<li class="level1 "><a class="nav-header" href="//guides/v2.0/mtf/mtf_introduction.html">INTRODUCTION</a></li>
 									
 								
 								
@@ -940,7 +940,7 @@ To get the block class with form tab mapping, extend your class from <a href="ht
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/mtf/mtf_installation.html">INSTALLATION</a></li>
+									<li class="level1 "><a class="nav-header" href="//guides/v2.0/mtf/mtf_installation.html">INSTALLATION</a></li>
 									
 								
 								
@@ -965,7 +965,7 @@ To get the block class with form tab mapping, extend your class from <a href="ht
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/mtf/mtf_quickstart.html">QUICK START</a></li>
+									<li class="level1 "><a class="nav-header" href="//guides/v2.0/mtf/mtf_quickstart.html">QUICK START</a></li>
 									
 								
 								
@@ -976,7 +976,7 @@ To get the block class with form tab mapping, extend your class from <a href="ht
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_config.html">Adjust configuration</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_config.html">Adjust configuration</a></li>
 
 									
 						
@@ -984,7 +984,7 @@ To get the block class with form tab mapping, extend your class from <a href="ht
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_environmemt.html">Prepare environment for test run</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_environmemt.html">Prepare environment for test run</a></li>
 
 									
 						
@@ -992,7 +992,7 @@ To get the block class with form tab mapping, extend your class from <a href="ht
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_runtest.html">Test run</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_runtest.html">Test run</a></li>
 
 									
 						
@@ -1000,112 +1000,7 @@ To get the block class with form tab mapping, extend your class from <a href="ht
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_logs.html">See logs for failed tests</a></li>
-
-									
-						
-								
-								
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/mtf/mtf_entities.html">ENTITIES</a></li>
-									
-								
-								
-									
-							
-								
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html">Fixture</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture-repo.html">Fixture Repository</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/mtf/mtf_entities/mtf_handler.html">Handler</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2  active "><a href="/guides/v2.0/mtf/mtf_entities/mtf_block.html">Block</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/mtf/mtf_entities/mtf_typified-element.html">Typified element</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/mtf/mtf_entities/mtf_page.html">Page</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/mtf/mtf_entities/mtf_constraint.html">Constraint</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/mtf/mtf_entities/mtf_dataset.html">Data set</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/mtf/mtf_entities/mtf_testcase.html">Test case</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/mtf/mtf_entities/mtf_scenariotest.html">Scenario test</a></li>
+									<li class="level-2 "><a href="//guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_logs.html">See logs for failed tests</a></li>
 
 									
 						
@@ -1127,7 +1022,112 @@ To get the block class with form tab mapping, extend your class from <a href="ht
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/mtf/mtf_update.html">UPDATE</a></li>
+									<li class="level1 "><a class="nav-header" href="//guides/v2.0/mtf/mtf_entities.html">ENTITIES</a></li>
+									
+								
+								
+									
+							
+								
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/mtf/mtf_entities/mtf_fixture.html">Fixture</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/mtf/mtf_entities/mtf_fixture-repo.html">Fixture Repository</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/mtf/mtf_entities/mtf_handler.html">Handler</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2  active "><a href="//guides/v2.0/mtf/mtf_entities/mtf_block.html">Block</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/mtf/mtf_entities/mtf_typified-element.html">Typified element</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/mtf/mtf_entities/mtf_page.html">Page</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/mtf/mtf_entities/mtf_constraint.html">Constraint</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/mtf/mtf_entities/mtf_dataset.html">Data set</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/mtf/mtf_entities/mtf_testcase.html">Test case</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="//guides/v2.0/mtf/mtf_entities/mtf_scenariotest.html">Scenario test</a></li>
+
+									
+						
+								
+								
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="//guides/v2.0/mtf/mtf_update.html">UPDATE</a></li>
 									
 								
 								
@@ -1152,7 +1152,7 @@ To get the block class with form tab mapping, extend your class from <a href="ht
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/mtf/mtf_changelog.html">CHANGELOG</a></li>
+									<li class="level1 "><a class="nav-header" href="//guides/v2.0/mtf/mtf_changelog.html">CHANGELOG</a></li>
 									
 								
 								
