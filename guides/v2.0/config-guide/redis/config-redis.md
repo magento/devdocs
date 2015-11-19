@@ -9,7 +9,7 @@ menu_node: parent
 github_link: config-guide/redis/config-redis.md
 ---
 
-Hello
+Hello Hello
 
 #### Contents
 *	<a href="#config-redis-over">Overview of the Redis solution</a>
