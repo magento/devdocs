@@ -62,6 +62,7 @@ Use the following table to verify you have the correct prerequisites to install 
 *	<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>
 *	<a href="{{ site.gdeurl }}install-gde/trouble/tshoot.html">Troubleshooting</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/sample-data-after-magento.html">Install optional sample data after Magento</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/post-install-config.html">Configuring</a>
 
 <h2>Useful information</h2>
 At any time during your installation, take advantage of our <a href="{{ site.gdeurl }}install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{ site.gdeurl }}install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>. They're really easy to use; the tutorial walks you through a sample installation. The roadmap provides links to common tasks throughout the guide.
