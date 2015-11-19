@@ -107,7 +107,7 @@ $.widget('mage.accordion', $.ui.accordion, {
    </div>
 </div>
 <h2 id="fedg_widget-coding-stnd_instant">Instantiation and resources</h2>
-<p>You must use the <a href="{{ site.gdeurl }}frontend-dev-guide/javascript/js-mage-plugin.html" target="_blank">Mage plug-in</a> to instantiate a widget or define resources for a widget.</p>
+<!-- <p>You must use the <a href="{{ site.gdeurl }}frontend-dev-guide/javascript/js-mage-plugin.html" target="_blank">Mage plug-in</a> to instantiate a widget or define resources for a widget.</p> -->
 <div id="accordion2">
    <h3>Additional JavaScript files used as resources by a widget</h3>
    <div>
