@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Step 4. Upgrade</title>
+	<title>Get your authentication keys</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/comp-mgr/upgrader/upgrade.html">
+	<link rel="canonical" href="//guides/v2.0/install-gde/prereq/connect-auth.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Step 4. Upgrade</h1>
+		<h1 class="page-heading">Get your authentication keys</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/comp-mgr/upgrader/upgrade.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/prereq/connect-auth.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -212,44 +212,75 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="upgrade">Upgrade</h2>
-<p>After backing up, the components you’re upgrading display. The following figure shows an example.</p>
+		<h4 id="contents">Contents</h4>
 
-<p><img src="/common/images/upgr_upgrade.png" width="350px" alt="Click upgrade to complete the task" /></p>
+<ul>
+  <li><a href="#auth-overview">Overview of Magento Connect authentication</a></li>
+  <li><a href="#auth-get">Get your authentication keys</a></li>
+</ul>
 
-<p>To complete the upgrade, click <strong>Upgrade</strong>. If the upgrade is successful, a page similar to the following displays.</p>
+<div>
 
-<p><img src="/common/images/upgr_success.png" width="200px" alt="Your upgrade was successful" /></p>
+  <h2 id="auth-overview">Overview of Magento Connect authentication</h2>
+  <p>The <code>repo.magento.com</code> repository, where Magento 2 and third-party component Composer packages are stored, requires authentication. To provide secure authentication, we enable to to generate a pair 32-character <em>authentication tokens</em> you can use to access the repository.</p>
 
-<p>Messages similar to the following display in the Console Log:</p>
+  <p>You get your credentials by logging in to <a href="http://www.magentocommerce.com/magento-connect" target="_blank">Magento Connect</a> with a user name and password, then going to <strong>My Account</strong> &gt; <strong>Developers</strong> &gt; <strong>Secure Keys</strong>. There, you can generate, regenerate, or delete your authentication tokens to use to:</p>
 
-<pre><code>[2015-08-06 11:26:02 CDT] Job "update {"require":[{"name":"magento/product-community-edition","version":"1.2.0"},
-{"name":"3rdp/a","version":"1.1.0"},{"name":"3rdp/b","version":"1.1.0"}]}" has been started
-[2015-08-06 11:26:02 CDT] Starting composer update...
-[2015-08-06 11:26:02 CDT] ./composer.json has been updated
+  <ul>
+    <li><a href="/guides/v2.0/install-gde/prereq/integrator_install.html">Download the Magento software using Composer</a></li>
+    <li>Install, update, or upgrade third-party components; and upgrade the Magento software using the <a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade</a> utilities.</li>
+  </ul>
 
-[2015-08-06 11:26:23 CDT] Loading composer repositories with package information
-Updating dependencies (including require-dev)
-- Removing 3rdp/c (1.0.0)
-- Installing 3rdp/c (1.1.0)
-Downloading: Connecting... Downloading: 100%
+  <h2 id="auth-get">Get your authentication tokens</h2>
+  <p>To get your authentication tokens:</p>
 
-- Removing 3rdp/a (1.0.0)
-- Installing 3rdp/a (1.1.0)
-Downloading: Connecting... Downloading: 100%
+  <ol>
+    <li>
+      <p>If you haven’t done so already, create an account on <a href="http://www.magentocommerce.com/magento-connect">Magento Connect</a>.</p>
 
-- Removing 3rdp/b (1.0.0)
-- Installing 3rdp/b (1.1.0)
-Downloading: Connecting... Downloading: 100%
+      <p>(It’s the same as an account on <code>magento.com</code>.)</p>
 
-Writing lock file
-Generating autoload files
+      <ul>
+        <li>Click <strong>My Account</strong> in the upper right corner of the page.</li>
+        <li>
+          <p>In the New Customer section, click <strong>Register</strong>.</p>
 
-[2015-08-06 11:26:23 CDT] Composer update completed successfully
-[2015-08-06 11:26:23 CDT] Job "update {"require":[{"name":"magento/product-community-edition","version":"1.2.0"},
-{"name":"3rdp/a","version":"1.1.0"},{"name":"3rdp/b","version":"1.1.0"}]}" has successfully completed
-</code></pre>
+          <p>If you already have an account, make sure you know your user name and password, then continue with the next step.</p>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <p>In the left pane, expand <strong>Developers</strong> as the following figure shows.</p>
 
+      <p><img src="/common/images/connect_keys1.png" /></p>
+    </li>
+    <li>Click <strong>Developers</strong> &gt; <strong>Secure Keys</strong>.</li>
+    <li>
+      <p>You have the following options in the right pane:</p>
+
+      <ul>
+        <li>New key: In the <strong>Name</strong> field, enter a name to identify the keys and click <strong>Generate new</strong>.</li>
+        <li>Save an existing key after you made changes: Click <strong>Save</strong>.</li>
+        <li>Regenerate existing keys: Click <strong>Regenerte</strong>. </li>
+        <li>Disable keys: Click <strong>Disable</strong>. You can do this if you want to suspend use of your keys temporarily.</li>
+        <li>Delete keys: Click <strong>Delete</strong>.</li>
+      </ul>
+    </li>
+    <li>Come back to this page anytime to view or change your keys.</li>
+  </ol>
+
+  <h4 id="related-topics">Related topics:</h4>
+
+  <ul>
+    <li><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6—Ubuntu</a></li>
+    <li><a href="/guides/v2.0/install-gde/prereq/php-centos.html">PHP 5.5 or 5.6—CentOS</a></li>
+    <li><a href="/guides/v2.0/install-gde/prereq/mysql.html">MySQL</a></li>
+    <li><a href="/guides/v2.0/install-gde/prereq/security.html">Configuring security options</a></li>
+    <li><a href="/guides/v2.0/install-gde/prereq/optional.html">Installing optional software</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/pre-install.html">Determine your installation or upgrade path</a></li>
+  </ul>
+
+</div>
 
 
 		</div>
@@ -262,7 +293,7 @@ Generating autoload files
 
 
 
-<h4>Component Manager and System Upgrade Guide</h4>
+<h4>Installation guide<br>Part 1: Getting started</h4>
 
 
 
@@ -296,30 +327,6 @@ Generating autoload files
 			
 				
 				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
 					
 					
 					
@@ -337,7 +344,13 @@ Generating autoload files
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Getting started with the Component Manager and System Upgrade</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install-quick-ref.html">Installation quick reference (tutorial)</a></li>
+									
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install-roadmap_part1.html">Installation roadmap (reference)</a></li>
+									
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/system-requirements.html">Magento system requirements</a></li>
 									
 								
 								
@@ -362,7 +375,7 @@ Generating autoload files
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/comp-mgr/prereq/prereq_compman.html">Prerequisites</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/prereq-overview.html">Prerequisites</a></li>
 									
 								
 								
@@ -373,7 +386,7 @@ Generating autoload files
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/prereq/prereq_compman-ulimit.html">Set ulimit for the web server user</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/apache.html">Apache</a></li>
 
 									
 						
@@ -381,7 +394,7 @@ Generating autoload files
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/prereq/prereq_compman-updater.html">Set up cron for Component Manager and System Upgrade</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/apache-user.html">Create the Magento file system owner</a></li>
 
 									
 						
@@ -389,40 +402,7 @@ Generating autoload files
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/prereq/prereq_auth-token.html">Enter your authentication keys in the Admin</a></li>
-
-									
-						
-								
-								
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/comp-mgr/compman-start.html">Run the Component Manager</a></li>
-									
-								
-								
-									
-							
-								
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/compman-main-pg.html">Manage your components</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a></li>
 
 									
 						
@@ -430,7 +410,7 @@ Generating autoload files
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/compman-readiness.html">Step 1. Readiness check</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a></li>
 
 									
 						
@@ -438,41 +418,55 @@ Generating autoload files
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/compman-backup.html">Step 2. Back up the file system and database</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/mysql.html">MySQL</a></li>
 
 									
 						
 								
-								
-							
-						
 
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-
-
-								
-								
 									
 							
-										<li class="levela1"><span class="nav-header">Enable/Disable</span></li>
-								
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/composer.html">Install Composer</a></li>
+
 									
-							
-								
+						
 								
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/compman-enable-disable.html">Step 3. Enable/Disable</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/install-gde/prereq/connect-auth.html">Get your authentication keys</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/install-rabbitmq.html">RabbitMQ (Enterprise Edition)</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/security.html">SELinux and iptables</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/optional.html">Optional software</a></li>
 
 									
 						
@@ -494,27 +488,93 @@ Generating autoload files
 
 
 								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install/get-software.html">Get the Magento software</a></li>
+									
+								
 								
 									
 							
-										<li class="levela1"><span class="nav-header">Uninstall</span></li>
 								
-									
+								
+								
 							
-								
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/compman-uninst-data.html">Step 3. Data Option</a></li>
-
-									
 						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/zip_install.html">(Easy) Install the Magento archive on your server</a></li>
+									
+								
+								
+									
+							
+								
+								
+								
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/integrator_install.html">(Integrator) Get the Composer metapackage</a></li>
+									
+								
+								
+									
+							
+								
+								
+								
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/dev_install.html">(Contributor) Clone the Magento repository</a></li>
+									
+								
+								
+									
+							
+								
 								
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/compman-uninst-final.html">Step 4. Uninstall</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/prepare-install.html">Update installation dependencies</a></li>
 
 									
 						
@@ -536,22 +596,13 @@ Generating autoload files
 
 
 								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install/get-help.html">Get help with your installation</a></li>
+									
+								
 								
 									
 							
-										<li class="levela1"><span class="nav-header">Update</span></li>
 								
-									
-							
-								
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/compman-update.html">Step 3. Component Update</a></li>
-
-									
-						
 								
 								
 							
@@ -570,110 +621,13 @@ Generating autoload files
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">Run System Upgrade</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/continue-to-install.html">Next&mdash;Installation part 2, installing</a></li>
 									
 								
 								
 									
 							
 								
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-main-pg.html">Step 1. Select versions to upgrade</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-readiness.html">Step 2. Readiness check</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-backup.html">Step 3. Back up the file system and database</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2  active "><a href="/guides/v2.0/comp-mgr/upgrader/upgrade.html">Step 4. Upgrade</a></li>
-
-									
-						
-								
-								
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/comp-mgr/trouble/tshoot.html">Troubleshooting suggestions</a></li>
-									
-								
-								
-									
-							
-								
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/update-fail.html">Roll back after update failure</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/component-depend.html">Resolve component dependencies</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/cron.html">Troubleshoot cron</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/updater.html">Troubleshoot the updater application</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/tshoot_backup.html">Troubleshoot backups</a></li>
-
-									
-						
 								
 								
 							
@@ -682,6 +636,30 @@ Generating autoload files
 					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			

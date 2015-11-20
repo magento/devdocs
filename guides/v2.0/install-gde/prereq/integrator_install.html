@@ -292,18 +292,7 @@ mv composer.phar /usr/local/bin/composer</pre>
     <p>To get started:</p>
 
     <ol>
-      <li>
-        <p>If you haven’t done so already, create an account on <a href="http://www.magento.com" target="_blank">magento.com</a>.</p>
-
-        <ul>
-          <li>Click <strong>My Account</strong> in the upper right corner of the page.</li>
-          <li>
-            <p>In the New Customer section, click <strong>Register</strong>.</p>
-
-            <p>If you already have an account, make sure you know your user name and password, then continue with the next step.</p>
-          </li>
-        </ul>
-      </li>
+      <li>If you haven’t done so already, <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">get your authentication keys</a>.</li>
       <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
       <li>Change to the web server docroot directory, or to a directory you’ve configured as a virtual host docroot.</li>
       <li>
@@ -312,7 +301,7 @@ mv composer.phar /usr/local/bin/composer</pre>
         <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition &lt;installation directory name&gt;
 </code></pre>
 
-        <p>When prompted, enter your <a href="http://www.magento.com" target="_blank">magento.com</a> user name and password. (This is the same user name and password you used to register with Magento. You use it to log in to your My Account page at magento.com.)</p>
+        <p>When prompted, enter your <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">authentication keys</a>. Your <em>public key</em> is your username; your <em>private key</em> is your password.</p>
 
         <p>This command creates the project and downloads dependencies for it. The project is in a directory named <code>&lt;installation directory name&gt;</code> if you provided the parameter or <code>project-community-edition</code> if you did not.</p>
       </li>
@@ -336,9 +325,9 @@ mv composer.phar /usr/local/bin/composer</pre>
         <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition &lt;installation directory name&gt;
 </code></pre>
 
-        <p>When prompted, enter your support portal user name and password. </p>
+        <p>When prompted, enter your <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">authentication keys</a>. Your <em>public key</em> is your username; your <em>private key</em> is your password.</p>
 
-        <p>The following error indicates your user name or password are incorrect:</p>
+        <p>The following error indicates your tokens are incorrect:</p>
 
         <pre><code>  Could not find package magento/project-enterprise-edition with version 2.0.0
 </code></pre>
@@ -556,6 +545,14 @@ Ubuntu: <code>chown -R :www-data .</code></li>
 									
 							
 									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/composer.html">Install Composer</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/connect-auth.html">Get your authentication keys</a></li>
 
 									
 						
