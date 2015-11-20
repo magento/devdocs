@@ -45,7 +45,7 @@ To get started:
 
 		composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition <installation directory name>
 
-	When prompted, enter your <a href="http://www.magento.com" target="_blank">magento.com</a> user name and password. (This is the same user name and password you used to register with Magento. You use it to log in to your My Account page at magento.com.)
+	When prompted, enter your <a href="{{ site.gdeurl }}install-gde/prereq/connect-auth.html">authentication tokens</a>.
 
 	This command creates the project and downloads dependencies for it. The project is in a directory named `<installation directory name>` if you provided the parameter or `project-community-edition` if you did not.
 
@@ -63,9 +63,9 @@ To get started:
 
 		composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition <installation directory name>
 
-	When prompted, enter your support portal user name and password. 
+	When prompted, enter your <a href="{{ site.gdeurl }}install-gde/prereq/connect-auth.html">authentication tokens</a>.
 
-	The following error indicates your user name or password are incorrect:
+	The following error indicates your tokens are incorrect:
 
 		  Could not find package magento/project-enterprise-edition with version 2.0.0
 

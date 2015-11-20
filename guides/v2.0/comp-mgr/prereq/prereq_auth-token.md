@@ -9,21 +9,24 @@ menu_node:
 github_link: comp-mgr/prereq/prereq_auth-token.md
 ---
 
-## Prerequisite
-This topic discusses how to enter your Magento authentication tokens in the Admin so you can use the Component Manager and System Upgrade utilities.
+#### Contents
 
-Generate your authentication tokens as discussed in <a href="{{ site.gdeurl }}install-gde/prereq/connect-auth.html">Get your authentication tokens</a>.
+*	<a href="#auth-overview">Overview of Magento Connect authentication</a>
+*	<a href="#auth-get">Get your authentication tokens</a>
+*	<a href="#compman-token-admin">Enter the tokens in the Admin</a>
 
-## Enter the tokens in the Admin
+{% include install/auth-tokens.md %}
+
+<h2 id="compman-token-admin">Enter the tokens in the Admin</h2>
 To enter your authentication tokens:
 
 1.	Log in to the Magento Admin as an administrator.
 2.	Click **System** > Tools > **Web Setup Wizard**.
 3.	Click **System Configuration**.
 
-	<img src="{{ site.baseurl }}common/images/cman_system-config.png" width="500px">
+	<img src="{{ site.baseurl }}common/images/cman_system-config.png" width="550px">
 
 4.	Enter your public and private access keys in the provided fields.
 5.	Click **Save Config**.
 
-	<img src="{{ site.baseurl }}common/images/cman_keys.png" width="500px">
+	<img src="{{ site.baseurl }}common/images/cman_keys.png" width="550px">
