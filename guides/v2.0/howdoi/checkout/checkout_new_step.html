@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Theme development</title>
+	<title>Add a new checkout step</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/howdoi/frontend/front-theme.html">
+	<link rel="canonical" href="//guides/v2.0/howdoi/checkout/checkout_new_step.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Theme development</h1>
+		<h1 class="page-heading">Add a new checkout step</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/howdoi/frontend/front-theme.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/frontend-dev-guide/howdoi/checkout/checkout_new_step.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -212,13 +212,179 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="theme-development">Theme development</h2>
+		<p>The default Magento Checkout consists of two steps:</p>
+
 <ul>
-  <li><a href="/guides/v2.0/frontend-dev-guide/themes/theme-create.html">Add a theme</a></li>
-  <li><a href="/guides/v2.0/frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a></li>
-  <li><a href="/guides/v2.0/frontend-dev-guide/themes/theme-images.html">Configure product images</a></li>
-  <li><a href="/guides/v2.0/frontend-dev-guide/themes/debug-theme.html">Define which layouts, templates and stylesheets are used for a certain page</a></li>
+  <li>Shipping Information</li>
+  <li>Review and Paymetns Information</li>
 </ul>
+
+<p>You can add a custom checkout step, it should be implemented as a UI component. For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. </p>
+
+<p>This topic describes how to create the frontend part of the component, implementing a checkout step, and how to add it to the checkout flow.</p>
+
+<h2 id="create-the-view-part-of-the-checkout-step-component">Create the view part of the checkout step component</h2>
+
+<p>To create the view part of the new checkout step:</p>
+
+<ol>
+  <li>Add a module directory (not covered in this topic). See <a href="/guides/v2.0/extension-dev-guide/build.html">Build your module</a> for details). All custom files must be stored there.</li>
+  <li>Create the <code>.js</code> file implementing the view model.</li>
+  <li>Create an <code>.html</code> template for the component.</li>
+</ol>
+
+<p>Each step is described in details in the folowing paragraphs. </p>
+
+<h3 id="component">Add the JavaScript file implementing the new step</h3>
+
+<p>A new checkout step must be implemented as UI component. That is, its JavaScript implementation must be a JavaScript module. </p>
+
+<p>The file must be stored under the <code>&lt;your_module_dir&gt;/view</code> directory.</p>
+
+<p>A sample <code>view/my-step-view.js</code> with comments follows:</p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="s1">&#39;ko&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;uiComponent&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;underscore&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Magento_Checkout/js/model/step-navigator&#39;</span>
+    <span class="p">],</span>
+    <span class="kd">function</span> <span class="p">(</span>
+        <span class="nx">ko</span><span class="p">,</span>
+        <span class="nx">Component</span><span class="p">,</span>
+        <span class="nx">_</span><span class="p">,</span>
+        <span class="nx">stepNavigator</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+        <span class="cm">/**</span>
+<span class="cm">        *</span>
+<span class="cm">        * mystep - is the name of the component&#39;s .html template, </span>
+<span class="cm">        * your_module_dir - is the name of the your module directory.</span>
+<span class="cm">        * </span>
+<span class="cm">        */</span>
+        <span class="k">return</span> <span class="nx">Component</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+            <span class="nx">defaults</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">template</span><span class="o">:</span> <span class="s1">&#39;your_module_dir/mystep&#39;</span>
+            <span class="p">},</span>
+ 
+            <span class="c1">//add here your logic to display step,</span>
+            <span class="nx">isVisible</span><span class="o">:</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observable</span><span class="p">(</span><span class="kc">true</span><span class="p">),</span>
+ 
+            <span class="cm">/**</span>
+<span class="cm">			*</span>
+<span class="cm">			* @returns {*}</span>
+<span class="cm">			*/</span>
+            <span class="nx">initialize</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">_super</span><span class="p">();</span>
+                <span class="c1">// register your step</span>
+                <span class="nx">stepNavigator</span><span class="p">.</span><span class="nx">registerStep</span><span class="p">(</span>
+                    <span class="c1">//step code will be used as step content id in the component template</span>
+                    <span class="s1">&#39;step_code&#39;</span><span class="p">,</span>
+                    <span class="c1">//step alias</span>
+                    <span class="kc">null</span><span class="p">,</span>
+                    <span class="c1">//step title value</span>
+                    <span class="s1">&#39;Step Title&#39;</span><span class="p">,</span>
+                    <span class="c1">//observable property with logic when display step or hide step</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">isVisible</span><span class="p">,</span>
+                     
+                    <span class="nx">_</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">navigate</span><span class="p">,</span> <span class="k">this</span><span class="p">),</span>
+ 
+                    <span class="cm">/**</span>
+<span class="cm">					* sort order value</span>
+<span class="cm">					* &#39;sort order value&#39; &lt; 10: step displays before shipping step;</span>
+<span class="cm">					* 10 &lt; &#39;sort order value&#39; &lt; 20 : step displays between shipping and payment step</span>
+<span class="cm">					* &#39;sort order value&#39; &gt; 20 : step displays after payment step</span>
+<span class="cm">					*/</span>
+                    <span class="mi">15</span>
+                <span class="p">);</span>
+ 
+                <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+            <span class="p">},</span>
+ 
+            <span class="cm">/**</span>
+<span class="cm">			* The navigate() method is responsible for navigation between checkout step</span>
+<span class="cm">			* during checkout. You can add custom logic, for example some conditions</span>
+<span class="cm">			* for switching to your custom step </span>
+<span class="cm">			*/</span>
+            <span class="nx">navigate</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+ 
+            <span class="p">},</span>
+ 
+            <span class="cm">/**</span>
+<span class="cm">			* @returns void</span>
+<span class="cm">			*/</span>
+            <span class="nx">navigateToNextStep</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                <span class="nx">stepNavigator</span><span class="p">.</span><span class="nx">next</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+<span class="p">);</span></code></pre></div>
+
+<h3 id="add-the-html-template">Add the .html template</h3>
+
+<p>In the module directory, add the <code>.html</code> template for the component. It must be located under the &lt;<code>your_module_dir&gt;/view/frontend/web/template</code> directory.</p>
+
+<p>A sample <code>mystep.html</code> follows:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!--The &#39;step_code&#39; value from the .js file should be used--&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;step_code&quot;</span> <span class="na">data-bind=</span><span class="s">&quot;fadeVisible: isVisible&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;step-title&quot;</span> <span class="na">data-bind=</span><span class="s">&quot;i18n: &#39;Step Title&#39;&quot;</span> <span class="na">data-role=</span><span class="s">&quot;title&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;checkout-step-title&quot;</span>
+         <span class="na">class=</span><span class="s">&quot;step-content&quot;</span>
+         <span class="na">data-role=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>
+ 
+        <span class="nt">&lt;form</span> <span class="na">data-bind=</span><span class="s">&quot;submit: navigateToNextStep&quot;</span> <span class="na">novalidate=</span><span class="s">&quot;novalidate&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;actions-toolbar&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;primary&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;button</span> <span class="na">data-role=</span><span class="s">&quot;opc-continue&quot;</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;button action continue primary&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;span&gt;</span><span class="c">&lt;!-- ko i18n: &#39;Next&#39;--&gt;&lt;!-- /ko --&gt;</span><span class="nt">&lt;/span&gt;</span>
+                    <span class="nt">&lt;/button&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/form&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/li&gt;</span></code></pre></div>
+
+<h2 id="add-your-step-to-the-checkout-page-layout">Add your step to the Checkout page layout</h2>
+
+<p>For the new step to be displayed on the page, you need to declare it in the Checkout page layout, which is defined in <code>checkout_index_index.xml</code>. </p>
+
+<p>So you need to add an <a href="/guides/v2.0/frontend-dev-guide/layouts/layout-extend.html">extending</a> <code>checkout_index_index.xml</code> layout file in the following location: <code>&lt;your_module_dir&gt;/view/frontend/layout/checkout_index_index.xml</code></p>
+
+<p>A sample <code>checkout_index_index.xml</code> follows:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">layout=</span><span class="s">&quot;1column&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;checkout.root&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;arguments&gt;</span>
+                    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;jsLayout&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;components&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;checkout&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;steps&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;my-new-step&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Your_Module_Name/js/view/my-step-view<span class="nt">&lt;/item&gt;</span>
+                                                    <span class="c">&lt;!--To display step content before shipping step &quot;sortOrder&quot; value should be &lt; 1--&gt;</span>
+                                                    <span class="c">&lt;!--To display step content between shipping step and payment step  1 &lt; &quot;sortOrder&quot; &lt; 2 --&gt;</span>
+                                                    <span class="c">&lt;!--To display step content after payment step &quot;sortOrder&quot; &gt; 2 --&gt;</span>
+                                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;sortOrder&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>2<span class="nt">&lt;/item&gt;</span>
+                                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                                    <span class="c">&lt;!--add here child component declaration for your step--&gt;</span>
+                                                <span class="nt">&lt;/item&gt;</span>
+                                            <span class="nt">&lt;/item&gt;</span>
+                                        <span class="nt">&lt;/item&gt;</span>
+                                    <span class="nt">&lt;/item&gt;</span>
+                                <span class="nt">&lt;/item&gt;</span>
+                            <span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;/argument&gt;</span>
+                <span class="nt">&lt;/arguments&gt;</span>
+        <span class="nt">&lt;/referenceBlock&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/page&gt;</span></code></pre></div>
+
 
 
 		</div>
@@ -591,7 +757,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/howdoi/frontend/front-theme.html">Theme development</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/howdoi/frontend/front-theme.html">Theme development</a></li>
 									
 								
 								
@@ -616,7 +782,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/howdoi/checkout/checkout_new_step.html">Add a new checkout step</a></li>
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/howdoi/checkout/checkout_new_step.html">Add a new checkout step</a></li>
 									
 								
 								
