@@ -7,6 +7,7 @@ menu_title: Sticky Header Component
 menu_node:
 menu_order: 11
 github_link: ui-components/ui-secondary-header.md
+redirect_from: /guides/v2.0/ui-library/ui-secondary-header.html
 ---
 
 <h2 id="filter">Overview</h2>

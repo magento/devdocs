@@ -6,6 +6,8 @@ title: definition.xml
 menu_title: definition.xml
 menu_node: parent
 github_link: ui-components/ui-definition.md
+redirect_from: /guides/v2.0/ui-library/ui-definition.html
+
 ---
 
 <h2 id="example">definition.xml</h2>
