@@ -57,7 +57,7 @@ To set up authentication:
         {
            "github-oauth": {
              "github.com": "804d4ab968ia8vk0Uar263a1cbd40d82da7464aa7"
-        },
+           },
            "http-basic": {
               "repo.magento.com": {
                  "username": "<username>",
