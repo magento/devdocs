@@ -12,7 +12,7 @@ github_link: extension-dev-guide/test-module.md
 
 ##{{page.menu_title}}
 
-Test your module by deploying Magento Community Edition and adding the module to the project's <code>composer.json</code>. Marshall the module into the <code>app/code</code> directory.
+Test your module by deploying Magento Community Edition and adding the module to the project's <code>composer.json</code>. 
 
 {% highlight JSON %}
 "require": {
@@ -21,3 +21,19 @@ Test your module by deploying Magento Community Edition and adding the module to
     "foovendor/module-one": "0.1.1"
 },
 {% endhighlight %}
+
+Remember to [register](component-registration.html) your module as well, adding the location of your module. Confirm that your module works as expected and Magento functionality is not compromised.
+
+For further testing with Magento testing frameworks, see 
+[Magento Testing Framework]({{ site.gdeurl }}mtf/mtf_introduction.html).
+
+##PHPUnit
+
+PHPUnit is a PHP testing framework ideal for Magento programmers. Test your module with [PHPUnit](https://phpunit.de/){:target="_blank"}, available on GitHub at [https://github.com/sebastianbergmann/phpunit](https://github.com/sebastianbergmann/phpunit){:target="_blank"}.
+
+##More Information
+For more information on testing in PHP and validating Magento modules, see the following:
+
+* [PHP Reflection](http://php.net/manual/en/book.reflection.php){:target="_blank"}
+* [PHP Reflection Tutorial](http://code.tutsplus.com/tutorials/reflection-in-php--net-31408){:target="_blank"}
+* [Validating Magento Extensions](http://www.gorillagroup.com/trending/insight/validating-magento-extensions-phpunit/){:target="_blank"}
