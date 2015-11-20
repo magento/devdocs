@@ -38,14 +38,14 @@ To do so, you start by creating a Composer project from our metapackage. The met
 <h2 id="integrator-first-composer-ce">Get the Magento CE metapackage</h2>
 To get started:
 
-1.	If you haven't done so already, <a href="{{ site.gdeurl }}install-gde/prereq/connect-auth.html">get your authentication tokens</a>.
+1.	If you haven't done so already, <a href="{{ site.gdeurl }}install-gde/prereq/connect-auth.html">get your authentication keys</a>.
 1.	Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
 2.	Change to the web server docroot directory, or to a directory you've configured as a virtual host docroot.
 3.	Enter the following command:
 
 		composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition <installation directory name>
 
-	When prompted, enter your <a href="{{ site.gdeurl }}install-gde/prereq/connect-auth.html">authentication tokens</a>.
+	When prompted, enter your <a href="{{ site.gdeurl }}install-gde/prereq/connect-auth.html">authentication keys</a>. Your *public key* is your username; your *private key* is your password.
 
 	This command creates the project and downloads dependencies for it. The project is in a directory named `<installation directory name>` if you provided the parameter or `project-community-edition` if you did not.
 
@@ -63,7 +63,7 @@ To get started:
 
 		composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition <installation directory name>
 
-	When prompted, enter your <a href="{{ site.gdeurl }}install-gde/prereq/connect-auth.html">authentication tokens</a>.
+	When prompted, enter your <a href="{{ site.gdeurl }}install-gde/prereq/connect-auth.html">authentication keys</a>. Your *public key* is your username; your *private key* is your password.
 
 	The following error indicates your tokens are incorrect:
 

@@ -28,14 +28,9 @@ To get your authentication tokens:
 4.	You have the following options in the right pane:
 
 	*	New key: In the **Name** field, enter a name to identify the keys and click **Generate new**.
-	*	Save an existing key: Click **Save**.
-	*	Generate existing keys: Click **Regenerte**. You can do this if you suspect your keys have been compromised, to stop sharing them with someone else, or anytime you want to replace keys with that name.
+	*	Save an existing key after you made changes: Click **Save**.
+	*	Regenerate existing keys: Click **Regenerte**. 
 	*	Disable keys: Click **Disable**. You can do this if you want to suspend use of your keys temporarily.
 	*	Delete keys: Click **Delete**.
 
 5.	Come back to this page anytime to view or change your keys.
-
-6.	You can now do any of the following:
-
-	*	<a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html">Download the Magento software using Composer</a>
-	*	Install, update, or upgrade third-party components; and upgrade the Magento software using the <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade</a> utilities.

@@ -2,8 +2,8 @@
 layout: default
 group: install_pre
 subgroup: Prerequisites
-title: Get your authentication tokens
-menu_title: Get your authentication tokens
+title: Get your authentication keys
+menu_title: Get your authentication keys
 menu_order: 12
 menu_node: 
 github_link: install-gde/prereq/connect-auth.md
@@ -12,7 +12,7 @@ github_link: install-gde/prereq/connect-auth.md
 #### Contents
 
 *	<a href="#auth-overview">Overview of Magento Connect authentication</a>
-*	<a href="#auth-get">Get your authentication tokens</a>
+*	<a href="#auth-get">Get your authentication keys</a>
 
 {% include install/auth-tokens.md %}
 

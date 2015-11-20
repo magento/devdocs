@@ -2,8 +2,8 @@
 layout: default
 group: compman
 subgroup: B_prereq
-title: Enter your authentication tokens in the Admin
-menu_title: Enter your authentication tokens in the Admin
+title: Enter your authentication keys in the Admin
+menu_title: Enter your authentication keys in the Admin
 menu_order: 10
 menu_node: 
 github_link: comp-mgr/prereq/prereq_auth-token.md
@@ -26,7 +26,7 @@ To enter your authentication tokens:
 
 	<img src="{{ site.baseurl }}common/images/cman_system-config.png" width="550px">
 
-4.	Enter your public and private access keys in the provided fields.
+4.	Enter your public and private authentication keys in the provided fields.
 5.	Click **Save Config**.
 
 	<img src="{{ site.baseurl }}common/images/cman_keys.png" width="550px">
