@@ -39,18 +39,18 @@ This section discusses how to get current code by cloning the Magento GitHub's d
 Currently, the `develop` branch is the default but you can clone the `master` branch using the optional `[-b master]` argument.
 
 <h3 id="instgde-prereq-compose-clone-auth">Creating an authorization file</h3>
-The Magento 2 GitHub repository requires you to authenticate. The `composer install` commands fails if you do not. To authenticate, you must first create an account on `magento.com`, after which you create an `auth.json` file in the home directory of the Magento file system owner.
+The Magento 2 GitHub repository requires you to authenticate. The `composer install` commands fails if you do not. To authenticate, <a href="{{ site.gdeurl }}install-gde/prereq/connect-auth.html">generate authentication keys</a>, after which you create an `auth.json` file in the home directory of the Magento file system owner.
 
-To set up authentication:
+#### Generate authentication tokens
 
-1.	If you haven't done so already, create an account on <a href="http://www.magento.com" target="_blank">magento.com</a>.
+{% include install/auth-tokens-get.md %}
 
-	*	Click **My Account** in the upper right corner of the page.
-	*	In the New Customer section, click **Register**.
+#### Create `auth.json`
 
-		If you already have an account, make sure you know your user name and password, then continue with the next step.
-2.	Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
-3.	Edit or create `auth.json` in the user's home directory.
+To create `auth.json`:
+
+1.	Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+2.	Edit or create `auth.json` in the user's home directory.
 
 	The following example shows how to add `repo.magento.com` authentication to an existing file:
 
@@ -60,8 +60,8 @@ To set up authentication:
         },
            "http-basic": {
               "repo.magento.com": {
-                 "username": "<username>",
-                 "password": "<password>"
+                 "username": "<public key>",
+                 "password": "<private key>"
               }
            }
         }
