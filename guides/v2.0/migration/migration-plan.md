@@ -32,7 +32,7 @@ To prepare for the migration, make sure you do all of the following:
 
 * Set up a Magento 2.0 system using a topology and design that at least matches your existing Magento 1 system
 * To provide redundancy in the event of unexpected issues, we advise you to replicate your Magento 1.x database and use this Magento 1.x data for your migration
-* Install Magento 2.0 on a system that meets our system requirements
+* Install Magento 2.0 (with all modules of given release) on a system that meets our system requirements
 
 <h4>Step 4: Start your migration</h4>
 
