@@ -17,8 +17,13 @@ github_link: install-gde/prereq/connect-auth.md
 {% include install/auth-tokens.md %}
 
 
-
 #### Related topics:
+
+*	Use your authentication keys:
+
+	*	<a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html">Get the Magento CE or EE metapackage (integrators, packagers)</a>
+	*	<a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">Clone the Magento 2 GitHub (contributing developers only)</a>
+	*	<a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_auth-token.html">Update components, upgrade the Magento software</a>
 
 *	<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a>
