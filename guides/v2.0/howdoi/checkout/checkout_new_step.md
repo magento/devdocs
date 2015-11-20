@@ -1,11 +1,12 @@
 ---
 layout: default
 group: howdoi
-subgroup: Checkout
+subgroup: checkout
 title: Add a new checkout step
 menu_title: Add a new checkout step
+menu_node: parent
 menu_order: 1
-github_link: howdoi/checkout/checkout_new_step.md
+github_link: frontend-dev-guide/howdoi/checkout/checkout_new_step.md
 ---
 
 The default Magento Checkout consists of two steps:
@@ -22,7 +23,7 @@ This topic describes how to create the frontend part of the component, implement
 To create the view part of the new checkout step:
 
 1. Add a module directory (not covered in this topic). See [Build your module]({{site.gdeurl}}extension-dev-guide/build.html) for details). All custom files must be stored there.
-1. Create the `.js` file implementing the model.
+1. Create the `.js` file implementing the view model.
 2. Create an `.html` template for the component.
 
 Each step is described in details in the folowing paragraphs. 
@@ -51,12 +52,12 @@ define(
         stepNavigator
     ) {
         'use strict';
-             /**
-             *
-             * mystep - is the name of the component's .html template, 
-             * your_module_dir - is the name of the your module directory.
-             * 
-             */
+        /**
+        *
+        * mystep - is the name of the component's .html template, 
+        * your_module_dir - is the name of the your module directory.
+        * 
+        */
         return Component.extend({
             defaults: {
                 template: 'your_module_dir/mystep'
@@ -66,9 +67,9 @@ define(
             isVisible: ko.observable(true),
  
             /**
-             *
-             * @returns {*}
-             */
+			*
+			* @returns {*}
+			*/
             initialize: function () {
                 this._super();
                 // register your step
@@ -82,16 +83,14 @@ define(
                     //observable property with logic when display step or hide step
                     this.isVisible,
                      
-                    /**
-                     */
                     _.bind(this.navigate, this),
  
                     /**
-                     * sort order value
-                     * 'sort order value' < 10: step displays before shipping step;
-                     * 10 < 'sort order value' < 20 : step displays between shipping and payment step
-                     * 'sort order value' > 20 : step displays after payment step
-                     */
+					* sort order value
+					* 'sort order value' < 10: step displays before shipping step;
+					* 10 < 'sort order value' < 20 : step displays between shipping and payment step
+					* 'sort order value' > 20 : step displays after payment step
+					*/
                     15
                 );
  
@@ -99,17 +98,17 @@ define(
             },
  
             /**
-             * The navigate() method is responsible for navigation between checkout step
-             * during checkout. You can add custom logic, for example some conditions
-             * for switching to your custom step 
-             */
+			* The navigate() method is responsible for navigation between checkout step
+			* during checkout. You can add custom logic, for example some conditions
+			* for switching to your custom step 
+			*/
             navigate: function () {
  
             },
  
             /**
-             * @returns void
-             */
+			* @returns void
+			*/
             navigateToNextStep: function () {
                 stepNavigator.next();
             }

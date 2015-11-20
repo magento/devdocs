@@ -1,13 +1,4 @@
----
-layout: default
-group: howdoi
-subgroup: Checkout
-title: Customize Checkout
-menu_title: Customize Checkout
-menu_node: parent
-menu_order: 1
-github_link: howdoi/checkout/checkout-intro.md
----
+
 
 Checkout contains only user specific data. All the UI rendering happens on frontend (browser). Communication with server happens in JS models using asynchronous calls. All views displays UI using templates. 
 
