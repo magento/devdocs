@@ -29,12 +29,13 @@ To choose whether to upgrade or uninstall components:
 		<th>Meaning</th>
 	</tr>
 	<tr>
-		<td><p>Magento Connect Account section</p></td>
+		<td><p>Magento Marketplace Account section</p></td>
 		<td><p>Shows when you last synchronized with your Magento Connect account. To get the latest information about available component versions, you must synchronize with Connect.</p>
 			<p>Last Sync shows the last time you synchronized and Sync Status shows whether or not you're currently synchronized.</p>
 			<div class="bs-callout bs-callout-info" id="info">
-  				<p>Magento Connect isn't available yet. Although you can't log in to your account, you can synchronize your components with the ones that <code>composer.json</code> knows about.</p>
+  				<p>Magento Marketplace isn't available yet. For now, Magento Connect takes its place.</p>
  			</div>
+ 			<p>New Updates and New Purchases displays a number; click **Install** to select updates or purchases to install.</p>
 		</td>
 	</tr>
 	<tr>
@@ -83,21 +84,21 @@ The following table shows which actions are supported for each Magento component
 			<th>Uninstall</th>
 		</tr>
 		<tr>
-			<td>magento2-module</td>
+			<td>module</td>
 			<td>Yes</td>
 			<td>Yes</td>
 			<td>Yes</td>
 			<td>Yes</td>
 		</tr>
 		<tr>
-			<td>magento2-language and magento2-theme</td>
+			<td>language and theme</td>
 			<td>No</td>
 			<td>No</td>
 			<td>Yes</td>
 			<td>Yes</td>
 		</tr>
 		<tr>
-			<td>magento2-library</td>
+			<td>library</td>
 			<td>No</td>
 			<td>No</td>
 			<td>Yes</td>
