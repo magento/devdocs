@@ -22,7 +22,7 @@ We now use <a href="http://getcomposer.org">Composer</a> to resolve dependencies
 
 Composer is a separate application that manages PHP dependencies. Before you can install the Magento software, you must perform the following tasks in the order shown:
 
-1.	<a href="{{ site.gdeurl }}install-gde/install/dev_install.html">Install the Composer software</a>.
+1.	<a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">Install the Composer software</a>.
 2.	<a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Create the Magento file system owner</a> so Composer writes files to the web server docroot as the correct user.
 2.	Run the <a href="#install-composer-install"><code>composer install</code> command</a> from your Magento root directory (for example, `/var/www/magento2/`).
 

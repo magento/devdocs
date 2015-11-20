@@ -10,7 +10,7 @@ github_link: howdoi/deploy/deploy-to-prod.md
 ---
 
 #### Contents
-*	<a href="deploy-over">Overview of deployment</a>
+*	<a href="#deploy-over">Overview of deployment</a>
 *	<a href="#deploy-dev">Prepare your development system</a>
 *	<a href="#deploy-prod">Guidelines for deployment to production</a>
 
