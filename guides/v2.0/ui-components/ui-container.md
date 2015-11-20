@@ -5,7 +5,8 @@ subgroup: F_UI Library Container Component
 title: Container Component
 menu_title: Container Component
 menu_node: parent
-github_link: ui-components/ui-library-components.md
+github_link: ui-components/ui-container.md
+redirect_from: /guides/v2.0/ui-library/ui-container.html
 ---
 
 <h2 id="container">Container Component</h2>
