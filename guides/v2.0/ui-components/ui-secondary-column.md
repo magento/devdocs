@@ -7,6 +7,8 @@ menu_title: Column Component
 menu_node:
 menu_order: 5
 github_link: ui-components/ui-secondary-column.md
+redirect_from: /guides/v2.0/ui-library/ui-secondary-column.html
+
 ---
 
 <h3 id="column">UI Column Component</h3>
