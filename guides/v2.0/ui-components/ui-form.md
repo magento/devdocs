@@ -6,6 +6,8 @@ title: Form Component
 menu_title: Form Component
 menu_node: parent
 github_link: ui-components/ui-form.md
+redirect_from: /guides/v2.0/ui-library/ui-form.html
+
 ---
 
 * TOC

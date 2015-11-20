@@ -7,6 +7,7 @@ menu_title: Grid search indexing
 menu_node: 
 menu_order: 1
 github_link: ui-components/ui-listing-grid-search.md
+redirect_from: /guides/v2.0/ui-library/ui-listing-grid-search.html
 ---
 
 <h3 id="search">Grid search indexing</h3>
