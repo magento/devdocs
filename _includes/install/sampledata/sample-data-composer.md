@@ -18,7 +18,7 @@ To enable sample data using Composer:
 
 	`<version>` can be `2.0.0` or you can use Composer next significant release syntax to specify a later release; for example, `~2.0.0+`
 
-	The complete list of `<package name>` follows:
+	The complete `<package name>` list follows:
 
 	{% include install/sampledata/sample-data_list-of-modules.md %}
 

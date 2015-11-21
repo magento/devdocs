@@ -23,7 +23,7 @@ The following error might display:
 	The 'https://repo.magento.com/packages.json' URL required authentication.
 	You must be using the interactive console to authenticate
 
-If the error displays, change to your Magento installation directory and run `composer update`, which will prompt you for your credentials.
+If the error displays, change to your Magento installation directory and run `composer update`, which will prompt you for your <a href="{{ site.gdeurl }}install-gde/prereq/connect-auth.html">authentication keys</a>.
 
 <h3 id="sample-data-modules">Complete list of modules</h3>
 
