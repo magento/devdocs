@@ -25,7 +25,11 @@ Modules are registered with:
 where &lt;VendorName> is the name of the company providing the module and &lt;ModuleName> is the name of the module.
      
 #####Example
-     ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Magento_AdminNotification', __DIR__);
+     \Magento\Framework\Component\ComponentRegistrar::register(
+         \Magento\Framework\Component\ComponentRegistrar::MODULE,
+         'Magento_AdminNotification',
+         __DIR__
+     );
 <p>&nbsp;</p>
 
 
