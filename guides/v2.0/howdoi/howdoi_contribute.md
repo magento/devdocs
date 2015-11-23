@@ -1,17 +1,24 @@
 ---
 layout: default
 group: howdoi
-subgroup: Contributor
+subgroup: BB
 title: Contributor sign-up sheet
 menu_title: Contributor sign-up sheet
 menu_node: parent
 menu_order: 1
+
 github_link: howdoi/howdoi_contribute.md
 ---
 
-Please sign up to write a How Do I topic for us! We'll mention you by name, provide links to your web site and blogs, and you'll get your face and bio in the ring of honor as one of our featured contributors.
+Please sign up to write a How Do I topic for us! 
 
-All you need to do is to submit a <a href="{{ site.githuburl }}howdoi/howdoi_contribute.md">pull request on this page</a> or <a href="mailto:DL-Magento-Doc-Feedback@ebay.com">e-mail us</a>. <!-- Use <a href="{{ site.publicgithuburl }}howdoi/howdoi_template.md">this template</a> if you'd like.  -->Submissions should be Markdown but HTML is welcome also.
+We'll put your name (or company's name) at the top of the page, right under the title, and link it to your blog or website! And you'll get your face and bio in the <a href="{{ site.gdeurl }}howdoi/howdoi_bios.html">ring of honor</a> as one of our featured contributors.
+
+To add your name to this table, all you need to do is to submit a <a href="{{ site.githuburl }}howdoi/howdoi_contribute.md">pull request on this page</a> or <a href="mailto:DL-Magento-Doc-Feedback@ebay.com">e-mail us</a>. 
+
+Use <a href="{{ site.gdeurl }}howdoi/howdoi_template.html">this template</a> if you'd like. You can get a copy of the <a href="{{ site.githuburl }}howdoi/howdoi_template.md">.md file  on Github</a>.
+
+Submissions should be Markdown but HTML is welcome also.
 
 
 | Contributor name  |  Description or subject |

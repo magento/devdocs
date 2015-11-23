@@ -26,25 +26,25 @@ redirect_from: /guides/v1.0/coding-standards/code-standard-demarcation.html
    <li>Helps simplify and unify naming conventions that are used to apply visual styles to page elements.</li>
 </ul>
 <p><b>Acceptable PHTML file</b></p>
-<pre>
-&lt;section id="some-id">
-   &lt;p> ... &lt;/p>
-   &lt;p> ... &lt;/p>
-&lt;/div>
-&lt;a href="#some-id">Scroll to text&lt;/a></a>
-</pre>
+{% highlight html %}
+<section id="some-id">
+   <p> ... </p>
+   <p> ... </p>
+</section>
+<a href="#some-id">Scroll to text</a></a>
+{% endhighlight %}
 <p><b>Unacceptable PHTML file</b></p>
-<pre>
-&lt;section id="загаловок">
-   &lt;p> ... &lt;/p>
-   &lt;p> ... &lt;/p>
-&lt;/div>
-&lt;section id="some_id">
-   &lt;p> ... &lt;/p>
-   &lt;p> ... &lt;/p>
-&lt;/div>
-&lt;a href="#some_id">Scroll to text&lt;/a>
-</pre>
+{% highlight html %}
+<section id="загаловок">
+   <p> ... </p>
+   <p> ... </p>
+</section>
+<section id="some_id">
+   <p> ... </p>
+   <p> ... </p>
+</section>
+<a href="#some_id">Scroll to text</a>
+{% endhighlight %}
 <h3>Semantic representation may rely on ID attribute</h3>
 <ul>
    <li>Forces engineers to think about reusable page components instead of unique singleton components.</li>
@@ -52,37 +52,37 @@ redirect_from: /guides/v1.0/coding-standards/code-standard-demarcation.html
 </ul>
 <p><b>Acceptable PHTML file</b></p>
 <p>The following acceptable example is terse and uses an Accessible Rich Internet Applications (ARIA) approach.</p>
-<pre>
-&lt;ul>
-   &lt;li class="first" type="button" aria-pressed="false" aria-controls="some-id">button 1&lt;/li>
-   &lt;li type="button" aria-pressed="false" aria-controls="some-id">button 2&lt;/li>
-   &lt;li type="button" aria-pressed="true" aria-controls="some-id">button 3&lt;/li>
-&lt;/ul>
-&lt;div>
-   &lt;label for="some-id">Enter text&lt;/label>
-   &lt;textarea id="some-id">&lt;/textarea>
-&lt;/div>
-&lt;a href="#some-id">Scroll to text</a>
-</pre>
+{% highlight html %}
+<ul>
+   <li class="first" type="button" aria-pressed="false" aria-controls="some-id">button 1</li>
+   <li type="button" aria-pressed="false" aria-controls="some-id">button 2</li>
+   <li type="button" aria-pressed="true" aria-controls="some-id">button 3</li>
+</ul>
+<div>
+   <label for="some-id">Enter text</label>
+   <textarea id="some-id"></textarea>
+</div>
+<a href="#some-id">Scroll to text</a>
+{% endhighlight %}
 <p><b>Unacceptable combination of PHTML, JavaScript, and CSS files</b></p>
 <p>The following unacceptable example replaces a single PHTML file with a combination of a PHTML, JavaScript, and CSS files.</p>
 <p><b>PHTML file</b></p>
-<pre>
-&lt;ul id="my-special-menu">
-   &lt;li id="buttonId1" class="first" type="button">button 1&lt;/li>
-   &lt;li id="buttonId2" type="button">button 2&lt;/li>
-   &lt;li id="buttonId3" type="button">button 3&lt;/li>
-&lt;/ul>
-</pre>
+{% highlight html %}
+<ul id="my-special-menu">
+   <li id="buttonId1" class="first" type="button">button 1</li>
+   <li id="buttonId2" type="button">button 2</li>
+   <li id="buttonId3" type="button">button 3</li>
+</ul>
+{% endhighlight %}
 <p><b>JavaScript file</b></p>
-<pre>
+{% highlight javascript %}
 $('#my-special-menu').on('click','li[id^="button"]', function() { ... })
-</pre>
+{% endhighlight %}
 <p><b>CSS file</b></p>
-<pre>
+{% highlight css %}
 #my-special-menu { ... }
 #my-special-menu > li { ... }
-</pre>
+{% endhighlight %}
 <h2>Code demarcation</h2>
 <h3>Visual representation must rely on only form element type attributes, HTML tags, CSS classes, or pseudo-classes</h3>
 <ul>
@@ -92,7 +92,7 @@ $('#my-special-menu').on('click','li[id^="button"]', function() { ... })
    <li>Enables frontend teams to clean up old styles quickly and easily when refactoring.</li>
 </ul>
 <p><b>Acceptable CSS file</b></p>
-<pre>
+{% highlight css %}
 section h1 { ... }
 ul > li.first { ... }
 .caution { ... }  // Actions such as delete, remove, which remove data from the site.
@@ -103,16 +103,16 @@ form input[type="password"] { ... }
 section.content { ... }
 nav li { ... }
 nav li.active { ... }
-</pre>
+{% endhighlight %}
 <p><b>Unacceptable CSS file</b></p>
-<pre>
+{% highlight css %}
 #header { ... }
 [data-action="delete"] { ... }
 form input[name="password"] { ... }
 section[role="main"] { ... }
 [role="menu] [role="menuitem"] { ... }
 [role="menu] [role="menuitem"].active { ... }
-</pre>
+{% endhighlight %}
 
 <h3>You must not hard-code CSS styles in JavaScript files</h3>
 <div class="bs-callout bs-callout-info" id="info">
@@ -124,7 +124,8 @@ section[role="main"] { ... }
    <li>Reduces long-term maintenance efforts by containing CSS styles in a single place.</li>
 </ul>
 <p><b>Acceptable JavaScript widget file</b></p>
-<pre>...
+{% highlight javascript %}
+...
    options: {
       hOffset: 0,
       myCustomElement: '[data-container="my-custom-element"]'
@@ -134,9 +135,10 @@ section[role="main"] { ... }
 ...
    this.options.hOffset = /* calculation based on dimensions of some DOM elements within a widget */
    this.element.find(this.options.myCustomElement).css({'margin-top', this.options.hOffset + 'px'})
-...</pre>
+...
+{% endhighlight %}
 <p><b>Unacceptable JavaScript file</b></p>
-<pre>
+{% highlight javascript %}
 this.element.on('click', function() {
    if ($(this).is(':visible')) {
       $(this).css({ visibility: 'hidden' });
@@ -144,7 +146,7 @@ this.element.on('click', function() {
       $(this).css({ visibility: 'visible' });
    }
 });
-</pre>
+{% endhighlight %}
 
 
 
@@ -154,13 +156,13 @@ this.element.on('click', function() {
 <li>Enforces clean, strict separation between visual presentation and markup.</li>
 <li>Enables frontend teams quickly and easily clean up old styles.</li></ul>
 <p><b>Acceptable PHTML file</b></p>
-<pre>
-&lt;div class="no-display"> ... &lt;/div>
-</pre>
+{% highlight html %}
+<div class="no-display"> ... </div>
+{% endhighlight %}
 <p><b>Unacceptable PHTML file</b></p>
-<pre>
-&lt;div style="display: none;"> ... &lt;/div>
-</pre>
+{% highlight html %}
+<div style="display: none;"> ... </div>
+{% endhighlight %}
 <h2>Business logic and JavaScript</h2>
 <h3>Business logic must rely on only the form, form element name attributes, or data attributes</h3>
 <ul>
@@ -168,11 +170,11 @@ this.element.on('click', function() {
 <li>Allows frontend and backend teams to work independently.</li>
 <li>Allows changing business logic without affecting styling and vice versa.</li></ul>
 <p><b>Acceptable PHTML file</b></p>
-<pre>
-&lt;div data-mage-init="{myWidget: [option1: 'hi']}">&lt;/div>
-</pre>
+{% highlight html %}
+<div data-mage-init="{myWidget: [option1: 'hi']}"></div>
+{% endhighlight %}
 <p><b>Acceptable JavaScript file</b></p>
-<pre>
+{% highlight javascript %}
 ...
 this.element.find('[data-action="delete"]').on( ... );
 this.element.on('click', '[data-action="delete"]', function() { ... });
@@ -180,31 +182,31 @@ this.element.on('click', '[data-action="delete"]', function() { ... });
 // Globally initialized widgets
 $('[data-role="tooltip]').tooltip();  // Globally for ALL tooltip elements
 ...
-</pre>
+{% endhighlight %}
 <p><b>Unacceptable PHTML file</b></p>
-<pre>
-&lt;div id="my-widget">&lt;/div>
-</pre>
+{% highlight html %}
+<div id="my-widget"></div>
+{% endhighlight %}
 <p><b>Unacceptable JavaScript file</b></p>
-<pre>
+{% highlight javascript %}
 $('#my-widget').doSomething();
 $('.parent').on('click', '.button', function() { ... });
 $('form').validate();
 $('[role="menu"]').navigation();
-</pre>
+{% endhighlight %}
 <h3>You must not select DOM elements based on HTML structure</h3>
 <ul>
 <li>Allows frontend teams to modify markup and themes without affecting business logic.</li></ul>
 <p><b>Acceptable JavaScript file</b></p>
-<pre>
+{% highlight javascript %}
 this.element.find('[data-action="edit"]');
 this.elements.closest('[data-container]');
-</pre>
+{% endhighlight %}
 <p><b>Unacceptable JavaScript file</b></p>
-<pre>
+{% highlight javascript %}
 this.element.children().children().html('hello world');
 this.element.parent().find('[data-action="edit"]').data('entity_id');
-</pre>
+{% endhighlight %}
 <h3>You must use jQuery templates to insert recurring markup into DOM structure</h3>
 <ul>
 <li>Reinstates emphasis on jQuery templates. For more information, see JavaScript Coding Best Practices.</li>
@@ -215,35 +217,35 @@ this.element.parent().find('[data-action="edit"]').data('entity_id');
 <li>Reduces long term maintenance by having frontend business logic stored in one place.</li>
 <li>Reduces the number of files to be modified.</li></ul>
 <p><b>Acceptable PHP file</b></p>
-<pre>
+{% highlight php startinline=true %}
 ...
 public function getSelectorOptions()
 {
     return $selectorOptions;
 }
 ...
-</pre>
+{% endhighlight %}
 <p><b>Acceptable PHTML template</b></p>
-<pre>
+{% highlight php startinline=true %}
 ...
-&lt;div data-mage-init="{treeSuggest: [&lt;?php echo $this->getSelectorOptions(); ?>]}">&lt;/div>
+<div data-mage-init="{treeSuggest: [<?php echo $this->getSelectorOptions(); ?>]}"></div>
 ...
-</pre>
+{% endhighlight %}
 <p><b>Unacceptable PHP file</b></p>
-<pre>
+{% highlight php startinline=true %}
 ...
 public function getAfterElementHtml()
 {
-    return &lt;&lt;&lt;HTML
-&lt;script>
+    return <<<HTML
+<script>
 jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
-&lt;/script>
+</script>
 ...
-</pre>
+{% endhighlight %}
 <p><b>Unacceptable PHTML file</b></p>
-<pre>
-&lt;?php echo $this->getAfterElementHtml(); ?>
-</pre>
+{% highlight php startinline=true %}
+<?php echo $this->getAfterElementHtml(); ?>
+{% endhighlight %}
 <h2>PHTML templates and PHP files</h2>
 <h3>You must not hard-code inline CSS styles in PHP classes</h3>
 <ul>
@@ -251,7 +253,8 @@ jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 <li>Simplifies debugging and reduces number of files to be modified.</li>
 <li>Makes styles more extensible and easier to override when needed.</li></ul>
 <p><b>Acceptable PHP file</b></p>
-<pre>...
+{% highlight php startinline=true %}
+...
 $fieldset->addField('new_category_parent', 'text', array(
     'label'    => Mage::helper('Mage_Catalog_Helper_Data')->__('Parent Category'),
     'title'    => Mage::helper('Mage_Catalog_Helper_Data')->__('Parent Category'),
@@ -259,9 +262,10 @@ $fieldset->addField('new_category_parent', 'text', array(
     'class'    => 'parent category',
 ));
 ...
-</pre>
+{% endhighlight %}
 <p><b>Unacceptable PHP file</b></p>
-<pre>...
+{% highlight php startinline=true %}
+...
 $fieldset->addField('new_category_parent', 'text', array(
     'label'    => Mage::helper('Mage_Catalog_Helper_Data')->__('Parent Category'),
     'title'    => Mage::helper('Mage_Catalog_Helper_Data')->__('Parent Category'),
@@ -269,42 +273,42 @@ $fieldset->addField('new_category_parent', 'text', array(
     'style'    => 'border: 1px solid #ccc;',
 ));
 ...
-</pre>
+{% endhighlight %}
 <h3>You must not hard-code inline JavaScript in PHP classes</h3>
 <ul>
 <li>Reduces long term maintenance by having frontend business logic stored in one place.</li>
 <li>Reduces the number of files to be modified.</li></ul>
 <p><b>Acceptable PHP file</b></p>
-<pre>
+{% highlight php startinline=true %}
 ...
 public function getSelectorOptions()
 {
     return $selectorOptions;
 }
 ...
-</pre>
+{% endhighlight %}
 <p><b>Acceptable PHTML template</b></p>
-<pre>
+{% highlight php startinline=true %}
 ...
-&lt;div data-mage-init="{treeSuggest: [&lt;?php echo $this->getSelectorOptions(); ?>]}">&lt;/div>
+<div data-mage-init="{treeSuggest: [<?php echo $this->getSelectorOptions(); ?>]}"></div>
 ...
-</pre>
+{% endhighlight %}
 <p><b>Unacceptable PHP file</b></p>
-<pre>
+{% highlight php startinline=true %}
 ...
 public function getAfterElementHtml()
 {
-    return &lt;&lt;&lt;HTML
-&lt;script>
+    return <<<HTML
+<script>
 jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
-&lt;/script>
+</script>
 ...
-</pre>
+{% endhighlight %}
 <p><b>Unacceptable PHTML file</b></p>
-<pre>
-&lt;?php echo $this->getAfterElementHtml(); ?>
-</pre>
-<h3>You must not hard-code HTML markup (used in the &lt;BODY> tag) in PHP classes</h3>
+{% highlight php startinline=true %}
+<?php echo $this->getAfterElementHtml(); ?>
+{% endhighlight %}
+<h3>You must not hard-code HTML markup (used in the <BODY> tag) in PHP classes</h3>
 <ul>
 <li>Reduces long-term maintenance efforts by having markup stored in one place.</li>
 <li>Reduces the number of files to be modified.</li></ul>
@@ -321,17 +325,19 @@ public function getAttributeId($element)
 }
 </pre>
 <p><b>Acceptable PHTML file</b></p>
-<pre>
-&lt;span class="attribute-change-checkbox">
-&lt;label>
-   &lt;input type="checkbox" 
-      &lt;?php echo ($this->getAttributeName($element)) ? ' name="' . $this->getAttributeName($element) . '"' : NULL; ?>
+
+{% highlight php startinline=true %}
+<span class="attribute-change-checkbox”>
+<label>
+   <input type="checkbox” 
+      <?php echo ($this->getAttributeName($element)) ? ' name="' . $this->getAttributeName($element) . '"' : NULL; ?>
       data-mage-init="{customToggleWidget: [elementSelector: "input[name='someCustomName']"]}" />
-   &lt;?php echo Mage::helper('Mage_Catalog_Helper_Data')->__('Change'); ?>
-&lt;/label>
-&lt;/span>
-&lt;!-- jQuery.hide() code can be either located in the widget itself OR can ask PHP Block class whether or not 'weight_and_type_switcher' should be visible. Based on this condition CSS can be applied to hide/show those elements. -->
-</pre>
+   <?php echo Mage::helper('Mage_Catalog_Helper_Data')->__('Change'); ?>
+</label>
+</span>
+<!-- jQuery.hide() code can be either located in the widget itself OR can ask PHP Block class whether or not 'weight_and_type_switcher' should be visible. Based on this condition CSS can be applied to hide/show those elements. -->
+
+{% endhighlight %}
 
 
 

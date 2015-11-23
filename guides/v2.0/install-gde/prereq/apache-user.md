@@ -5,14 +5,14 @@ subgroup: Prerequisites
 title: Create the Magento file system owner
 menu_title: Create the Magento file system owner
 menu_node:
-menu_order: 6
+menu_order: 02
 github_link: install-gde/prereq/apache-user.md
 ---
 
 #### Contents
 *	<a href="#install-update-depend-user-over">Overview of ownership and permissions</a>
 *	<a href="#install-update-depend-user-create">Create a user and give the user a strong password</a>
-*	<a href="#install-update-depend-user-group">Add the Magento file system owner to the web server group</a>
+*	<a href="#install-update-depend-user-group">Options for shared groups</a>
 *	<a href="#install-update-depend-user-switch">Switch to the Magento file system owner</a>
 
 <div class="bs-callout bs-callout-tip">
@@ -39,7 +39,7 @@ Even in a development environment, you want your Magento installation to be secu
 This section discusses how to create the Magento file system owner.
 
 <div class="bs-callout bs-callout-warning">
-    <p>If you don't have <code>root</code> privileges on your Magento server, you can use another local user account. Make sure the user has a strong password and continue with <a href="#install-update-depend-user-group">Add the Magento file system owner to the web server group</a>.</p>
+    <p>If you don't have <code>root</code> privileges on your Magento server, you can use another local user account. Make sure the user has a strong password and continue with <a href="#install-update-depend-user-group">Put the Magento file system owner in the web server group</a>.</p>
 </div>
 
 To create a user on CentOS or Ubuntu, enter the following command as a user with `root` privileges:
@@ -61,13 +61,23 @@ For example, to create a user named `magento_user` and give the user a password,
     <p>Because the point of creating this user is to provide added security, make sure you create a <a href="https://en.wikipedia.org/wiki/Password_strength" target="_blank">strong password</a>.</p>
 </div>
 
-<h2 id="install-update-depend-user-group">Add the Magento file system owner to the web server group</h2>
-This section discusses how to find the name of the web server user's group and to add your Magento user to that group. The user must belong to the web server group so the user can share access to files with the web server user. (This includes files created by the Magento Admin or other web-based utilities.)
+<h2 id="install-update-depend-user-group">Options for shared groups</h2>
+To enable the web server to write files and directories in the Magento file system but to also maintain *ownership* by the Magento file system owner. This is necessary so both users can share access to Magento files. (This includes files created using the Magento Admin or other web-based utilities.)
 
-See one of the following sections:
+You must share the users' groups in any of the following ways:
 
-*	<a href="#install-update-depend-user-findgroup">Find the web server group</a>
-*	<a href="#install-update-depend-user-add2group">Add the Magento file system owner to the web server group</a>
+*	Put the Magento file system in the web server's group
+
+	This method is simpler but otherwise equivalent to the other method.
+*	Put each user in the other's group
+
+See the following sections:
+
+1.	<a href="#install-update-depend-user-findgroup">Find the web server group</a>
+2.	Any of the following:
+
+	*	<a href="#install-update-depend-user-add2group">Add the Magento file system owner to the web server's primary group</a>
+	*	<a href="#install-update-depend-user-share-groups">Put each user in the other's group</a>
 
 <h3 id="install-update-depend-user-findgroup">Find the web server group</h3>
 To find the web server user's group:
@@ -79,20 +89,60 @@ To find the web server user's group:
 
 	Typically, the user name and the group name are both `www-data`
 
-<h3 id="install-update-depend-user-add2group">Add the Magento file system owner to the web server group</h3>
-To add a user to the web server's group (assuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with `root` privileges:
+Continue with either:
 
-*	CentOS: `usermod -a -G apache <username>`
-*	Ubuntu: `usermod -a -G www-data <username>`
+*	<a href="#install-update-depend-user-add2group">Put the Magento file system owner in the web server's group</a>
+*	<a href="#install-update-depend-user-share-groups">Put each user in the other's group</a>
 
-For example, to add the user `deborah` to the `apache` group on CentOS:
+<h3 id="install-update-depend-user-add2group">Put the Magento file system owner in the web server's group</h3>
+To put the Magento file system owner in the web server's primary group (assuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with `root` privileges:
 
-	usermod -a -G apache deborah
+*	CentOS: `usermod -g apache <username>`
+*	Ubuntu: `usermod -g www-data <username>`
 
-<h3 id="install-update-depend-user-group-confirm">Confirm the user's group</h3>
+For example, to add the user `magento_user` to the `apache` primary group on CentOS:
+
+	usermod -g apache magento_user
+
 To confirm your Magento user is a member of the web server group, enter the following command:
 
 	groups <user name>
+
+A sample result follows:
+
+	magento_user : apache
+
+To complete the task, restart the web server:
+
+*	Ubuntu: `service apache2 restart`
+*	CentOS: `service apache restart`
+
+<h3 id="install-update-depend-user-share-groups">Put each user in the other's group</h3>
+An alternative to setting up group membership is to put the web server user in the Magento file system owner's group and vice versa. To put each user in the other's group, as a user with `root` privileges, enter the following command for each of the two users:
+
+	usermod -a -G <groupname> <username>
+
+For example,
+
+	usermod -a -G apache magento_user
+	usermod -a -G magento_user apache
+
+To confirm the users' group membership, enter the following command for each user:
+
+	groups <username>
+
+Example:
+
+	groups apache
+	apache : apache magento_user
+
+	groups magento_user
+	magento_user : magento_user apache
+
+To complete the task, restart the web server:
+
+*	Ubuntu: `service apache2 restart`
+*	CentOS: `service apache restart`
 
 <h2 id="install-update-depend-user-switch">Switch to the Magento file system owner</h2>
 After you've performed the other tasks in this topic, enter one of the following commands to switch to that user:
@@ -106,5 +156,5 @@ For example,
 
 ### Next steps
 *	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Optional software</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">Security-related prerequisites</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">SELinux and iptables</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Your install or upgrade path</a>

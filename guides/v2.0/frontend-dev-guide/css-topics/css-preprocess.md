@@ -9,7 +9,7 @@ github_link: frontend-dev-guide/css-topics/css-preprocess.md
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css-preprocess.html
 ---
 
-<h2 id="preproc_over">Overview</h2>
+<h2 id="preproc_over">What's in this topic</h2>
 
 The topic describes how stylesheets are preprocessed and compiled to CSS in the Magento application. It provides the theoretical background a frontend developer needs to debug stylesheets effectively. 
 
@@ -45,9 +45,9 @@ For example, in one of the <a href="https://github.com/magento/magento2/blob/dev
 The root source files for the Blank theme:
 
 <ul>
-<li><code><a href="{{site.mage2000url}}app/design/frontend/Magento/blank/web/css/styles-m.less" target="_blank">app/design/frontend/Magento/blank/web/css/styles-m.less</a></code></li>
-<li><code><a href="{{site.mage2000url}}app/design/frontend/Magento/blank/web/css/styles-l.less" target="_blank">app/design/frontend/Magento/blank/web/css/styles-l.less</a></code></li>
-<li><code><a href="{{site.mage2000url}}app/design/frontend/Magento/blank/web/css/print.less" target="_blank">app/design/frontend/Magento/blank/web/css/print.less</a></code></li>
+<li><code><a href="{{site.mage2000url}}app/design/frontend/Magento/blank/web/css/styles-m.less" target="_blank">&lt;Magento_Blank_theme_dir&gt;/web/css/styles-m.less</a></code></li>
+<li><code><a href="{{site.mage2000url}}app/design/frontend/Magento/blank/web/css/styles-l.less" target="_blank">&lt;Magento_Blank_theme_dir&gt;/web/css/styles-l.less</a></code></li>
+<li><code><a href="{{site.mage2000url}}app/design/frontend/Magento/blank/web/css/print.less" target="_blank">&lt;Magento_Blank_theme_dir&gt;/web/css/print.less</a></code></li>
 </ul>
 </p>
 </td>
@@ -155,7 +155,7 @@ In the scope of static resources preprocessing, the built-in LESS preprocessor d
 <li>Searches for all <code>@magento_import</code> directives.</li>
 <li>Replaces the original <code>@magento_import</code> directives with the standard <code>@import</code> directives. The latter specify the paths to the particular files that correspond to the pattern specified in <code>@magento_import</code>.</li>
 </ol>
-Example of how <code>@magento-import</code> is used and processed in <code>app/design/frontend/Magento/blank/web/css/styles-l.less</code>:
+Example of how <code>@magento-import</code> is used and processed in <code>&lt;Magento_Blank_theme_dir&gt;/web/css/styles-l.less</code>:
 
 <table>
    <tbody>
@@ -164,7 +164,7 @@ Example of how <code>@magento-import</code> is used and processed in <code>app/d
          <th>After</th>
       </tr>
       <tr class="even">
-         <td> In <code>app/design/frontend/Magento/blank/web/css/styles-l.less</code> there's a following directive:
+         <td> In <code>&lt;Magento_Blank_theme_dir&gt;/web/css/styles-l.less</code> there's a following directive:
             <pre> ..
 //@magento_import 'source/_widgets.less'; // Theme widgets
 ..

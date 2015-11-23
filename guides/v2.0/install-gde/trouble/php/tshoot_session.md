@@ -6,7 +6,7 @@ title: During installation, exception SessionHandler::read()
 menu_title: During installation, exception SessionHandler::read()
 menu_node: 
 menu_order: 26
-github_link: install-gde/trouble/tshoot_session.md
+github_link: install-gde/trouble/php/tshoot_session.md
 ---
 
 <h2>During installation, Exception - SessionHandler::read</h2>

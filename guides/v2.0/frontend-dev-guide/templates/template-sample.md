@@ -9,7 +9,7 @@ menu_order: 3
 github_link: frontend-dev-guide/templates/template-sample.md
 redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-sample.html
 ---
-<h2>Overview</h2>
+<h2>What's in this topic</h2>
 This topic contains a step-by-step illustration of solving a typical design customization task using templates.
 
 <h2>Sample template customization: changing a layout of the mini shopping cart</h2>
@@ -19,7 +19,7 @@ In the Magento basic Blank theme, in the mini shopping cart, products are listed
 
 OrangeCo decided they want to change this and display the product list before the **Go to Checkout** button.
  
-The template responsible for displaying the mini-shopping cart is <a href="{{site.mage2000url}}app/code/Magento/Checkout/view/frontend/templates/cart/minicart.phtml" target="_blank"><code>app/code/Magento/Checkout/view/frontend/templates/cart/minicart.phtml</code></a>.
+The template responsible for displaying the mini-shopping cart is <a href="{{site.mage2000url}}app/code/Magento/Checkout/view/frontend/templates/cart/minicart.phtml" target="_blank"><code>&lt;Magento_Checkout_module_dir&gt;/view/frontend/templates/cart/minicart.phtml</code></a>.
 Here is the part of the code OrangeCo worked with:
 
 <img src="{{site.baseurl}}common/images/templ_overview_code1.png" alt="code">

@@ -9,7 +9,6 @@ menu_node: parent
 github_link: config-guide/redis/config-redis.md
 ---
 
-
 #### Contents
 *	<a href="#config-redis-over">Overview of the Redis solution</a>
 *	<a href="#config-redis-install">Install Redis</a>
@@ -44,6 +43,11 @@ Advantages of Redis include:
 * Redis supports on-disk save and master/slave replication. 
 
   This is a highly requested feature that is not supported by `memcached`. Replication avoids a single point of failure and provides high  availability.
+
+<div class="bs-callout bs-callout-info" id="info">
+   <span class="glyphicon-class">
+   <p>We recommend you use <a href="{{ site.gdeurl }}config-guide/memcache/memcache.html">memcached</a> for session storage. The Redis session handler in the <code>phpredis</code> PHP extension does not support session locking, which might cause issues with distributed systems and applications that rely on Ajax. We're actively working on a solution.</p></span>
+</div>
 
 <h2 id="config-redis-install">Install Redis</h2>
 Installing and configuring the Redis software is beyond the scope of this guide. Consult resources such as:
