@@ -54,7 +54,9 @@ To transfer the Magento software archive to your server:
 
 	On some FTP client software, you do this by dragging and dropping.
 5.	Wait while the transfer completes.
-6.	Create a subdirectory for the Magento software.
+6.	Log in to your Magento server, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+7.	Change to the web server docroot or the virtual host directory.
+7.	Create a subdirectory for the Magento software.
 
 	If you set up a virtual host, the subdirectory name must match the name in your virtual host.
 
