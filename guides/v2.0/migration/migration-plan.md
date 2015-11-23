@@ -1,7 +1,7 @@
 ---
 layout: default
 group:  migration
-subgroup: Creating a migration plan
+subgroup: B_Creating a migration plan
 title: Creating a migration plan
 menu_title: Creating a migration plan
 menu_node: parent
@@ -32,7 +32,7 @@ To prepare for the migration, make sure you do all of the following:
 
 * Set up a Magento 2.0 system using a topology and design that at least matches your existing Magento 1 system
 * To provide redundancy in the event of unexpected issues, we advise you to replicate your Magento 1.x database and use this Magento 1.x data for your migration
-* Install Magento 2.0 on a system that meets our system requirements
+* Install Magento 2.0 (with all modules of given release) on a system that meets our system requirements
 
 <h4>Step 4: Start your migration</h4>
 
@@ -56,6 +56,10 @@ Now that you’ve migrated your data, you must incrementally capture data update
 You can stop the updates at any time by pressing CTRL+C
 * Test your Magento 2 site during this time so you can catch any issues as soon as possible.
 In case you find any issues, press Control+C to stop incremental migration and start it again after issues are resolved
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Volume check warnings may appear in case you conduct testing of your Magento 2 site and run migration process at the same time. It happens because in Magento 2 you create entities that do not exist in Magento 1 instance.</p>
+</div>
 
 <h4>Step 6: Go live</h4>
 

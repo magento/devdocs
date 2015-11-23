@@ -1,7 +1,7 @@
 ---
 layout: default
 group:  migration
-subgroup: Migrate using the data migration tool
+subgroup: D_Migrate using the data migration tool
 title: Migrate using the data migration tool
 menu_title: Migrate using data migration tool
 menu_node: parent
