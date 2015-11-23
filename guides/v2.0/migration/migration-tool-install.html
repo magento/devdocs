@@ -213,10 +213,10 @@
 		<div class="content-wrap">
 		
 		<h2 id="install-the-data-migration-tool">Install the Data Migration Tool</h2>
-<p>This section discusses how to install the Magento Data Migration Tool. You can install it from either <a href="http://packages.magento.com/#magento/data-migration-tool" target="_blank">packages.magento.com</a> or from a GitHub repository.</p>
+<p>This section discusses how to install the Magento Data Migration Tool. You can install it from either repo.magento.com or from a GitHub repository.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>The versions of both the Data Migration Tool and the Magento 2 code must be identical (for example, 1.0.0-beta). To find the version of either package, open <code>&lt;your Magento install dir&gt;/composer.json</code> and find the value of "version".</p>
+  <p>The versions of both the Data Migration Tool and the Magento 2 code must be identical (for example, 2.0.0). To find the version of either package, open <code>&lt;your Magento install dir&gt;/composer.json</code> and find the value of "version".</p>
 </div>
 
 <h3 id="install-the-tool-from-github">Install the tool from GitHub</h3>
@@ -235,15 +235,8 @@
   <li>Wait while dependencies are updated.</li>
 </ol>
 
-<h3 id="install-the-tool-from-packagesmagentocom">Install the tool from packages.magento.com</h3>
+<h3 id="install-the-tool-from-repomagentocom">Install the tool from repo.magento.com</h3>
 <p>To install the Data Migration Tool, you must update <code>composer.json</code> in the Magento root installation directory to provide the location of the Data Migration Tool package. </p>
-
-<p>The Data Migration Tool is versioned like Magento code. Before you begin, you can either:</p>
-
-<ul>
-  <li>Find the exact version you want at <a href="http://packages.magento.com/#magento/data-migration-tool" target="_blank">packages.magento.com</a></li>
-  <li>Install the latest version using Composer <a href="https://getcomposer.org/doc/01-basic-usage.md#next-significant-release-tilde-and-caret-operators-" target="_blank">next significant release syntax</a></li>
-</ul>
 
 <p>To install the Data Migration Tool, you must:</p>
 
@@ -253,6 +246,9 @@
   </li>
   <li>
     <p>Run the <code>composer config</code> and <code>composer require</code> commands to update <code>composer.json</code>.</p>
+  </li>
+  <li>
+    <p>When prompted, enter your <a href="http://devdocs.magento.com/guides/v2.0/install-gde/prereq/connect-auth.html">authentication keys</a>. Your public key is your username; your private key is your password.</p>
   </li>
 </ol>
 
@@ -266,13 +262,13 @@
     <p>Go to Magento 2 root directory.</p>
   </li>
   <li>
-    <p>Enter the following command to reference Magento packages in <code>composer.json</code>:</p>
+    <p>Enter the following command to reference Magento repo in <code>composer.json</code>:</p>
 
-    <pre><code>composer config repositories.magento composer http://packages.magento.com
+    <pre><code>composer config repositories.magento composer http://repo.magento.com
 </code></pre>
   </li>
   <li>
-    <p>Enter the following command to require the current version of the sample data package:</p>
+    <p>Enter the following command to require the current version of the package:</p>
 
     <pre><code>composer require magento/data-migration-tool:&lt;version&gt;
 </code></pre>
@@ -281,12 +277,12 @@
 
     <p>Exact version example:</p>
 
-    <pre><code>composer require magento/data-migration-tool:0.74.0-beta4
+    <pre><code>composer require magento/data-migration-tool:2.0.0
 </code></pre>
 
     <p>Next significant release example:</p>
 
-    <pre><code>composer require magento/data-migration-tool:~0.74.0-beta4
+    <pre><code>composer require magento/data-migration-tool:~2.0.0
 </code></pre>
   </li>
   <li>
@@ -546,10 +542,9 @@
 
 
 								
-								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/migration/migration-migrate.html">Migrate using data migration tool</a></li>
 									
-							
-										<li class="levela1"><span class="nav-header">Migrate using data migration tool</span></li>
+								
 								
 									
 							
@@ -579,30 +574,13 @@
 									
 						
 								
-								
-							
-						
 
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/migration/migration-migrate.html">Migrate using data migration tool</a></li>
-									
-								
-								
 									
 							
-								
+									<li class="level-2 "><a href="/guides/v2.0/migration/migration-migrate-additional.html">Additional info</a></li>
+
+									
+						
 								
 								
 							

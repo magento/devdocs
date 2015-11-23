@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>How migration works</title>
+	<title>Additional info</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/migration/migration-overview-how.html">
+	<link rel="canonical" href="//guides/v2.0/migration/migration-migrate-additional.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">How migration works</h1>
+		<h1 class="page-heading">Additional info</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/migration/migration-overview-how.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/migration/migration-migrate-additional.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -212,35 +212,21 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2>How migration works</h2>
+		<h2 id="additional-info">Additional Info</h2>
 
-<p>This document uses the following terminology to discuss the Data Migration Tool:</p>
+<p>Some existing behaviour and logic from Magento 1 was implemented in a different way in Magento 2. The Data Migration Tool takes care of it.</p>
 
-<ul>
-  <li>Step: A unique migration task that must be executed in a prescribed order</li>
-  <li>Map: A set of rules that describe connections between Magento 1.x and Magento 2.0 data structures</li>
-  <li>Mode: Represented by a separate Data Migration Tool command, defines the basic mode of operation as:
-    <ul>
-      <li>Settings: Migrates the system configuration and website-related settings</li>
-      <li>Data: Migrates database assets in bulk</li>
-      <li>Delta: Migrates incremental changes (for example, orders and inventory)</li>
-    </ul>
+<ol>
+  <li>
+    <p>All Group Prices were converted to Tier Prices.</p>
   </li>
-</ul>
-
-<p>This guide provides information about migration using Data Migration Tool that can transfer and adapt data from Magento 1 to Magento 2 stores. The migration in overall is split into three phase (or “modes”). Migration of settings, migration of data and migration of delta. Each mode splits into steps. Every step responsible for transferring some particular data. (e.g. URL Rewrite step, EAV step, Settings step …) At the beginning, when is run, step checks tables structure of Magento 1 and Magento 2 for their consistency. Then the actual data is transferred to Magento 2 and in the end this data is checked to ensure that everything was transferred properly.</p>
-
-<p>This section previews your migration experience by providing a high-level overview of the Data Migration Tool. </p>
-
-<h4>Conceptual overview</h4>
-
-<p>There are many differences between Magento 1 and Magento 2 in the structure and format of data that is stored in database. And each version of Magento 1, for example 1.8.0.0 or 1.9.0.0, has its own unique changes in data structure. The Data Migration Tool understands all these changes and can properly transform it for usage in Magento 2 store. Most of these differences are declared in <em>Map files</em>. Using the Map file a Step will know that, for example, a table from Magento 1 was renamed in Magento 2 and will be able to transfer data properly to destination table. In the case where there are no differences in data structure or data format the Data Migration Tool will transfer data as is to the Magento 2 database, including data from tables created by extensions. When differences are not declared in Map files then the Data Migration Tool will not start migration process and will display an error.</p>
-
-<p>Mapping files are discussed in more detail in <a href="/guides/v2.0/migration/migration-tool-internal-spec.html"> Data Migration Tool Internal Specification.</a></p>
-
-<h4 id="the-following-diagram-illustrates-the-migration-flow-in-general">The following diagram illustrates the migration flow in general:</h4>
-
-<p><img src="/common/images/migration_flow.png" alt="Migration Flow" /></p>
+  <li>
+    <p>The numbers of Orders, Invoices, Shipments, Credit Memos and RMA migrate as is. But after migration and switching to Magento 2 the numeration for newly created sales entities will be different.</p>
+  </li>
+  <li>
+    <p>The Data Migration Tool has special handler <code>\Migration\Handler\Timezone</code> for transforming time to a different time zone. Using it you can change time for some fields of database. These fields can be specified in your <code>map.xml</code> file with offset parameter.</p>
+  </li>
+</ol>
 
 
 		</div>
@@ -387,7 +373,7 @@
 
 									
 							
-									<li class="level-2  active "><a href="/guides/v2.0/migration/migration-overview-how.html">How migration works</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/migration/migration-overview-how.html">How migration works</a></li>
 
 									
 						
@@ -518,7 +504,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/migration/migration-migrate-additional.html">Additional info</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/migration/migration-migrate-additional.html">Additional info</a></li>
 
 									
 						
