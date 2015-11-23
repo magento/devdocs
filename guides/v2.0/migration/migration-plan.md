@@ -57,6 +57,10 @@ You can stop the updates at any time by pressing CTRL+C
 * Test your Magento 2 site during this time so you can catch any issues as soon as possible.
 In case you find any issues, press Control+C to stop incremental migration and start it again after issues are resolved
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Volume check warnings may appear in case you conduct testing of your Magento 2 site and run migration process at the same time. It happens because in Magento 2 you create entities that do not exist in Magento 1 instance.</p>
+</div>
+
 <h4>Step 6: Go live</h4>
 
 Now that your Magento 2 site is up-to-date with Magento 1 and is functioning normally, do the following to cut over to the new site:
