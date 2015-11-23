@@ -22,13 +22,3 @@ Magento 2 migration involves four components: data, extensions, themes, and cust
 *	Themes and Customizations: Magento 2 uses several new approaches and technologies that give merchants an unmatched ability to create innovative shopping experiences and scale to new levels. To take advantage of these advances, developers will need to make changes to their themes and customizations. Documentation is available online for creating Magento 2 <a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/themes/theme-general.html">themes</a>, <a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html">layouts</a>, and customizations
 
 Just like an upgrade between 1.x versions (for example, from v1.12 to v1.14), the level of effort to migrate from Magento 1 to Magento 2 depends upon how you have built your site and its level of customization.  Initial estimates indicate that an average Magento 2 migration is only about 20% larger than a Magento 1.x upgrade. Over the coming months, as we proceed with testing and the merchant beta program, we will be able to refine this number so you can plan your budgets and timelines. 
-
-Some existing behaviour and logic from Magento 1 was implemented in a different way in Magento 2. The Data Migration Tool takes care of it
-
-1. All Group Prices were converted to Tier Prices.
-
-2. The numbers of Orders, Invoices, Shipments, Credit Memos and RMA migrate as is. But after migration and switching to Magento 2 the numeration for newly created sales entities will be different.
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The Data Migration Tool has special handler \Migration\Handler\Timezone for transforming time to different time zone. Using it you can change time for some fields of database. These fields can be specified in your map.xml file with offset parameter.</p>
-</div>

@@ -52,6 +52,10 @@ However, do *not* copy `.htaccess` files located in the Magento 1 `media` folder
 *	You must manually re-create all credentials for web services APIs (that is, SOAP, XML-RPC, and REST)
 *	You must manually re-create all administrative users and associate them with access privileges
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>The Data Migration Tool has special handler \Migration\Handler\Timezone for transforming time to different time zone. Using it you can change time for some fields of database. These fields can be specified in your map.xml file with offset parameter.</p>
+</div>
+
 ###Related topics
 
 * <a href="{{ site.gdeurl }}migration/migration-migrate-after.html">After migration</a>
