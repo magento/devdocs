@@ -24,7 +24,7 @@ We define the following *components*:
 *	`language` for a language package used to translate the Magento storefront and Admin
 *	`theme` for a collection of styles that affect the look of the storefront or Admin
 *	`library` for a library&mdash;such as a shared third-party library
-*	`component` for anything that must be installed in the Magento root directory (this is a relatively uncommon type)
+*	`component` for any type of component that must be installed in the Magento root directory (this is a relatively uncommon type)
 
 We also use `metapackage` to group components; Magento Community Edition (CE) and Magento Enterprise Edition (EE) are examples of metapackages.
 
@@ -147,7 +147,7 @@ The following table shows which actions are supported for each non-metapackage c
 To choose whether to upgrade or uninstall components:
 
 1.	After you <a href="{{ site.gdeurl }}comp-mgr/compman-start.html">run the Component Manager</a>, a page similar to the following displays:<br><br>
-	<img src="{{ site.baseurl }}common/images/cman_initial-page.png" width="750px" alt="The Component Manager page enables you to synchronize with Magento Connect to see if updates are available">
+	<img src="{{ site.baseurl }}common/images/cman_initial-page.png" width="750px" alt="The Component Manager page enables you to synchronize with Magento Marketplace to see if updates are available">
 2.	You have the following options:
 	<table>
 	<tbody>
@@ -157,22 +157,22 @@ To choose whether to upgrade or uninstall components:
 	</tr>
 	<tr>
 		<td><p>Magento Marketplace Account section</p></td>
-		<td><p>Shows when you last synchronized with your Magento Connect account. To get the latest information about available component versions, you must synchronize with Connect.</p>
+		<td><p>Shows when you last synchronized with your Magento Marketplace account. To get the latest information about available component versions, you must synchronize with Connect.</p>
 			<p>Last Sync shows the last time you synchronized and Sync Status shows whether or not you're currently synchronized.</p>
 			<div class="bs-callout bs-callout-info" id="info">
-  				<p>Magento Marketplace isn't available yet. For now, Magento Connect takes its place.</p>
+  				<p>Magento Marketplace isn't available yet. For now, Magento Marketplace takes its place.</p>
  			</div>
- 			<p>New Updates and New Purchases displays a number; click **Install** to select updates or purchases to install.</p>
+ 			<p>New Updates and New Purchases displays a number; click <strong>Install</strong> to select updates or purchases to install.</p>
 		</td>
 	</tr>
 	<tr>
 		<td><p>Sync button</p></td>
-		<td><p>Click <strong>Sync</strong> to compare the component versions you're currently using with those available on Connect.</p></td>
+		<td><p>Click <strong>Sync</strong> to compare the component versions you're currently using with those available on Magento Marketplace.</p></td>
 	</tr>
 	<tr>
 		<td><p>List of components</p></td>
 		<td><p>For each component, one of the following status indicators displays in the left column:</p>
-			<ul><li><img src="{{ site.baseurl }}common/images/cman_comp-status-green.png" alt="A green icon means that the component is enabled and is current as of the last sync">Green, which means the component is enabled and its status was current the last time you synchronized with Connect.</li>
+			<ul><li><img src="{{ site.baseurl }}common/images/cman_comp-status-green.png" alt="A green icon means that the component is enabled and is current as of the last sync">Green, which means the component is enabled and its status was current the last time you synchronized with Magento Marketplace.</li>
 				<li><img src="{{ site.baseurl }}common/images/cman_comp-status-info.png" alt="An info icon means there is an update available">An update is available.</li>
 				<li><img src="{{ site.baseurl }}common/images/cman_comp-status-red.png" alt="A red icon means the component is disabled">The component is disabled.</li> </ul>
 				<p>Middle columns display information about the component we obtained from its Composer package.</p>
