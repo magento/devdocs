@@ -12,9 +12,135 @@ github_link: comp-mgr/compman-main-pg.md
 
 <h4>Contents</h4>   
 
+*	<a href="#compman-access-types">Supported actions for each component type</a>
 *	<a href="#compman-access">Component Management options</a>
 *	<a href="#compman-access-sync">Update a component</a>
 *	<a href="#compman-access-enable">Enable or disable a component</a>
+
+<h2 id="compman-access-types">Supported actions for each component type</h2>
+We define the following *components*:
+
+*	`module` for a module or extension (that is, PHP code that modifies Magento behavior)
+*	`language` for a language package used to translate the Magento storefront and Admin
+*	`theme` for a collection of styles that affect the look of the storefront or Admin
+*	`library` for a library&mdash;such as a shared third-party library
+
+We also use `metapackage` to group components; Magento Community Edition (CE) and Magento Enterprise Edition (EE) are examples of metapackages.
+
+You can perform actions on components differently, depending on whether the component is part of a metapackage or not.
+
+The following sections provide details:
+
+*	<a href="#compman-access-types-meta">Actions available for metapackage components</a>
+*	<a href="#compman-access-types-non-meta">Actions available for non-metapackage components</a>
+
+<h3 id="compman-access-types-meta">Actions available for metapackage components</h3>
+Magento requires any component that has more than one type to be a metapackage. For example, if you download a component that contains a module and a theme, we require it to be packaged as a metapackage.
+
+<div class="bs-callout bs-callout-info" id="info">
+      <p>We currently do not support uninstalling a metapackage.</p>
+</div>
+
+The following table shows which actions are available for components that are part of a metapackage.
+
+<table>
+	<col width="40%">
+  	<col width="15%">
+  	<col width="15%">
+  	<col width="15%">
+  	<col width="15%">
+		<tbody>
+		<tr>
+			<th>Type</th>
+			<th>Enable</th>
+			<th>Disable</th>
+			<th>Update</th>
+			<th>Uninstall</th>
+		</tr>
+		<tr>
+			<td>module</td>
+			<td>Yes</td>
+			<td>Yes</td>
+			<td>No</td>
+			<td>No</td>
+		</tr>
+		<tr>
+			<td>language and theme</td>
+			<td>No</td>
+			<td>No</td>
+			<td>Yes</td>
+			<td>Yes</td>
+		</tr>
+		<tr>
+			<td>library</td>
+			<td>No</td>
+			<td>No</td>
+			<td>Yes</td>
+			<td>Yes</td>
+		</tr>
+		<tr>
+			<td>component</td>
+			<td>No</td>
+			<td>No</td>
+			<td>Yes</td>
+			<td>Yes</td>
+		</tr>
+		</tbody>
+	</table>
+
+<div class="bs-callout bs-callout-info" id="info">
+      <p><strong>Update</strong> displays as an action only if an update is available for that component.</p>
+</div>
+
+<h3 id="compman-access-types-non-meta">Actions available for non-metapackage components</h3>
+Typically, a component that you download from Magento Marketplace is not part of a metapackage; in other words, a single module is probably not part of a metapackage.
+
+The following table shows which actions are supported for each non-metapackage component.
+
+<table>
+	<col width="40%">
+  	<col width="15%">
+  	<col width="15%">
+  	<col width="15%">
+  	<col width="15%">
+		<tbody>
+		<tr>
+			<th>Type</th>
+			<th>Enable</th>
+			<th>Disable</th>
+			<th>Update</th>
+			<th>Uninstall</th>
+		</tr>
+		<tr>
+			<td>module</td>
+			<td>Yes</td>
+			<td>Yes</td>
+			<td>Yes</td>
+			<td>Yes</td>
+		</tr>
+		<tr>
+			<td>language and theme</td>
+			<td>No</td>
+			<td>No</td>
+			<td>Yes</td>
+			<td>Yes</td>
+		</tr>
+		<tr>
+			<td>library</td>
+			<td>No</td>
+			<td>No</td>
+			<td>Yes</td>
+			<td>Yes</td>
+		</tr>
+		<tr>
+			<td>component</td>
+			<td>No</td>
+			<td>No</td>
+			<td>Yes</td>
+			<td>Yes</td>
+		</tr>
+		</tbody>
+	</table>
 
 <h2 id="compman-access">Component Management options</h2>
 To choose whether to upgrade or uninstall components:
@@ -67,57 +193,7 @@ To choose whether to upgrade or uninstall components:
 	</tbody>
 	</table>
 
-<h3 id="compman-access-types">Supported actions per type</h3>
-The following table shows which actions are supported for each Magento component type.
-<table>
-	<col width="40%">
-  	<col width="15%">
-  	<col width="15%">
-  	<col width="15%">
-  	<col width="15%">
-		<tbody>
-		<tr>
-			<th>Type</th>
-			<th>Enable</th>
-			<th>Disable</th>
-			<th>Update</th>
-			<th>Uninstall</th>
-		</tr>
-		<tr>
-			<td>module</td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td>Yes</td>
-		</tr>
-		<tr>
-			<td>language and theme</td>
-			<td>No</td>
-			<td>No</td>
-			<td>Yes</td>
-			<td>Yes</td>
-		</tr>
-		<tr>
-			<td>library</td>
-			<td>No</td>
-			<td>No</td>
-			<td>Yes</td>
-			<td>Yes</td>
-		</tr>
-		<tr>
-			<td>component</td>
-			<td>No</td>
-			<td>No</td>
-			<td>Yes</td>
-			<td>Yes</td>
-		</tr>
-		</tbody>
-	</table>
 
-<div class="bs-callout bs-callout-info" id="info">
-      <ul><li>Enable and disable will be supported soon.</li>
-      <li>A magento2-module has no <strong>Uninstall</strong> option if it's part of a metapackage. Currently, uninstalling a metapackage is not supported.</li></ul>
-</div>
 <h2 id="compman-access-sync">Update a component</h2>
 To see if any of your components can be updated, click **Sync**.
 
