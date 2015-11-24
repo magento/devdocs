@@ -30,5 +30,5 @@ To run the Component Manager:
 
 	You have the following options from this page:
 
-	*	To enter your authentication keys so you can use the Component Manager and System Upgrade utilities, see <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_auth-token.html">Enter your authentication keys in the Admin</a>
+	*	To enter your authentication keys so you can use the Component Manager and System Upgrade utilities, see <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_auth-token.html">Enter your authentication keys in the Admin</a>.
 	*	To upgrade Magento instead, see <a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">Run System Upgrade</a>.

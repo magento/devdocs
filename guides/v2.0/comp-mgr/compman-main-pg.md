@@ -24,6 +24,7 @@ We define the following *components*:
 *	`language` for a language package used to translate the Magento storefront and Admin
 *	`theme` for a collection of styles that affect the look of the storefront or Admin
 *	`library` for a library&mdash;such as a shared third-party library
+*	`component` for anything that must be installed in the Magento root directory (this is a relatively uncommon type)
 
 We also use `metapackage` to group components; Magento Community Edition (CE) and Magento Enterprise Edition (EE) are examples of metapackages.
 
