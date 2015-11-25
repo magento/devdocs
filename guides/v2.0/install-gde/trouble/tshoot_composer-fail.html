@@ -222,19 +222,21 @@
 </code></pre>
 
 <h3 id="description">Description</h3>
-<p>This happens because of recent changes in Composer; it is not an issue with the Magento application.</p>
+<p>This happens because of recent changes in Composer.</p>
 
 <p>The workaround is to downgrade Composer to an earlier version and try your Magento download again.</p>
 
-<p>To confirm this issue is related to the Composer version, enter the following command:</p>
+<p>Any version of Composer dated November 21, 2015 or later has this issue. To confirm this issue is related to the Composer version, enter the following command:</p>
 
 <pre><code>composer -v
 </code></pre>
 
-<p>The following version has this issue:</p>
+<p>The version displays similar to the following:</p>
 
 <pre><code>Composer version 1.0-dev (2b14f0a047dd4f3545ec82381f65c36ea93a4c81) 2015-11-25 17:13:09
 </code></pre>
+
+<p>Note the date is 2015-11-25, which indicates Composer has this issue.</p>
 
 <p>To work around it:</p>
 
@@ -247,6 +249,12 @@
   </li>
   <li>Delete your Magento 2 directory and subdirectories.</li>
   <li>Try the download again using either <code>composer create-project</code> or <code>git clone</code>.</li>
+  <li>
+    <p>After successfully downloading the Magento software, update Composer:</p>
+
+    <pre><code>composer self-update
+</code></pre>
+  </li>
 </ol>
 
 
