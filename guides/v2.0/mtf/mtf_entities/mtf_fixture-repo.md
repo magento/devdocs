@@ -530,7 +530,7 @@ Then you should define repository fields as the following:
 
 {%endhighlight%}
 
-When the test is run, credentials from `credentials.xml` are transfered to the defined fields.
+When the test is run, credentials from `credentials.xml` are transferred to the defined fields.
 
 ### `%isolation%` placeholder {#mtf_repo_isolation}
 

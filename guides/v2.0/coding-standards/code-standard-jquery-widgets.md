@@ -332,7 +332,7 @@ $.widget('mage.nonModalDialog', {
     /* ... */
 });</pre>
                   <pre>// Initialization
-$('selector').mage('modalDialod');
+$('selector').mage('modalDialog');
 $('selector').mage('nonModalDialog');</pre>
                </td>
             </tr>

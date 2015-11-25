@@ -13,7 +13,7 @@ This topic is aimed for developers, who need to reuse the [Magento UI Components
 
 The topic covers the following:
 
-- [UI componenents' configuration](#config)
+- [UI components' configuration](#config)
 - [The most important UI component's properties](#main_properties)
 - [UI components’ properties used for linking](#comp_link)
 - [Description of the additional UI components](#comp_additional)
@@ -243,7 +243,7 @@ Example of using the `uiClass` property in a configuration file:
 ## JS UI components debugging {#comp_debug}
 This section describes how to define what UI components are used on a particular page and what data they use.
 
-To define the UI components used on a page, you can use browser built-in developer tools, or install addiotionally a plugin, for example Knockout JS context debugger for Google Chrome. 
+To define the UI components used on a page, you can use browser built-in developer tools, or install additionally a plugin, for example Knockout JS context debugger for Google Chrome.
 
 ### Debug using browser built-in tools
 1. Open the required page in a browser.
@@ -282,7 +282,7 @@ And we get the component's configuration:
 
 1. Install the Knockout JS context debugger for Google Chrome.
 2. Open the required page in Chrome.
-3. Point to the requiered element on the page, right-click and select **Inspect Element**. The developer tools panel opens.
+3. Point to the required element on the page, right-click and select **Inspect Element**. The developer tools panel opens.
 4. In the right column of the panel, click the **Knockout context** tab. The tab displays the name and the configuration of the UI component instance.
 
 

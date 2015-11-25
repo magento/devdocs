@@ -33,7 +33,7 @@ The following table shows structure of the data set:
 <col width="1*">
 <col width="1*">
 <col width="2*">
-<tr><th>Node </th><th>Semantics </th><th>Attibutes </th></tr>
+<tr><th>Node </th><th>Semantics </th><th>Attributes </th></tr>
 <tr>
 <td><code>config</code> </td>
 <td>The root element that defines an XML namespace and an XML Schema. </td>
