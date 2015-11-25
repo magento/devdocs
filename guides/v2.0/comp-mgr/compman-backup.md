@@ -33,6 +33,7 @@ To back up:
 
 2. 	Wait while backups are created and continue with any of the following:
 
+	*	Installing new purchases or updates: <a href="{{ site.gdeurl }}comp-mgr/compman-new-purchase.html">Step 3. Component Install</a>
 	*	Updating components: <a href="{{ site.gdeurl }}comp-mgr/compman-update.html">Step 3. Update components</a>
 	*	Enabling or disabling components: <a href="{{ site.gdeurl }}comp-mgr/compman-enable-disable.html">Step 3. Enable/disable components</a>
 	*	Uninstalling components: <a href="{{ site.gdeurl }}comp-mgr/compman-uninst-data.html">Step 3. Data Option</a>

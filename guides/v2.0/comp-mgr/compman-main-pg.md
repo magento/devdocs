@@ -162,7 +162,7 @@ To choose whether to upgrade or uninstall components:
 			<div class="bs-callout bs-callout-info" id="info">
   				<p>Magento Marketplace isn't available yet. For now, Magento Connect takes its place.</p>
  			</div>
- 			<p>New Updates and New Purchases displays a number; click <strong>Install</strong> to select updates or purchases to install.</p>
+ 			<p>New Updates and New Purchases displays the number of each to install; click <strong>Install</strong> to select updates or purchases to install and see <a href="#compman-access-new">Install new purchases</a>.</p>
 		</td>
 	</tr>
 	<tr>
@@ -218,7 +218,7 @@ To install a new purchase:
 
 	The following figure shows an example of selecting all components.
 
-	<img src="{{ site.baseurl }}common/images/compman_new-purchases2.png">
+	<img src="{{ site.baseurl }}common/images/compman_new-purchases2.png" width="700px">
 3.	Click **Install**.
 4.	Continue with <a href="{{ site.gdeurl }}comp-mgr/compman-readiness.html">Readiness check</a>.
 

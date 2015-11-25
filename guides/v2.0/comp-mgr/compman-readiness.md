@@ -41,4 +41,4 @@ In the event of failure, see one of the following sections:
 *	<a href="{{ site.gdeurl }}install-gde/system-requirements.html">PHP version check failure</a>
 *	<a href="{{ site.gdeurl }}release-notes/known-issues.html#known-devbeta-xdebug">PHP settings check failure</a>
 *	<a href="{{ site.gdeurl }}install-gde/system-requirements.html">PHP extensions check failure</a>
-*	<a href="{{ site.gdeurl }}#">`magento/theme-doc-blank` failure</a>
+*	<a href="{{ site.gdeurl }}comp-mgr/trouble/cman/doc.html">magento/theme-doc-blank failure</a>
