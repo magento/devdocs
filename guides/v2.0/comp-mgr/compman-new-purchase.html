@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Install using Composer</title>
+	<title>Step 3. Component Install</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/install-gde/install/cli/install-cli-sample-data-composer.html">
+	<link rel="canonical" href="//guides/v2.0/comp-mgr/compman-new-purchase.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Install using Composer</h1>
+		<h1 class="page-heading">Step 3. Component Install</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/install/cli/install-cli-sample-data-composer.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/comp-mgr/compman-new-purchase.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -212,71 +212,12 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<div>
+		<h2 id="step-3-component-install">Step 3. Component Install</h2>
+<p>When you’re installing new purchases from Magento Marketplace, the page displays similar to the following:</p>
 
-  <h2 id="install-sample-composer">Install sample data using Composer</h2>
-  <p>This topic discusses how to enable you to install optional Magento sample data using Composer. You <a href="#instgde-prereq-sample-comp">modify <code>composer.json</code></a> in the Magento root installation directory to provide the location of the sample data package. After that, you can either run the Magento software installer or you can run a script to install the sample data.    </p>
+<p><img src="/common/images/compman_new-purchases-step3install.png" /></p>
 
-  <h2 id="instgde-prereq-sample-comp">Modify <code>composer.json</code></h2>
-  <p>Sample data is versioned like Magento components. You can either install the latest version or you can specify a specific version using Composer <a href="https://getcomposer.org/doc/01-basic-usage.md#next-significant-release-tilde-and-caret-operators-" target="_blank">next significant release syntax</a>.</p>
-
-  <p>To enable sample data using Composer:</p>
-
-  <ol>
-    <li>Log in to the Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
-    <li>
-      <p>Enter the following commands to require the current version of sample data packages:</p>
-
-      <pre><code>composer require magento/&lt;package name&gt;:&lt;version&gt;
-</code></pre>
-
-      <p><code>&lt;version&gt;</code> can be a specific version like <code>100.0.2</code> or you can use Composer next significant release syntax to specify a later release; for example, <code>~100.0.1+</code></p>
-
-      <p>The complete <code>&lt;package name&gt;</code> list follows:</p>
-
-      <div>
-
-      </div>
-    </li>
-  </ol>
-  <p>Magento CE and Magento EE:</p>
-
-  <ul>
-    <li>magento/module-bundle-sample-data</li>
-    <li>magento/module-catalog-rule-sample-data</li>
-    <li>magento/module-catalog-sample-data</li>
-    <li>magento/module-cms-sample-data</li>
-    <li>magento/module-configurable-sample-data</li>
-    <li>magento/module-customer-sample-data</li>
-    <li>magento/module-downloadable-sample-data</li>
-    <li>magento/module-grouped-product-sample-data</li>
-    <li>magento/module-msrp-sample-data</li>
-    <li>magento/module-offline-shipping-sample-data</li>
-    <li>magento/module-product-links-sample-data</li>
-    <li>magento/module-review-sample-data</li>
-    <li>magento/module-sales-rule-sample-data</li>
-    <li>magento/module-sales-sample-data</li>
-    <li>magento/module-sample-data</li>
-    <li>magento/module-swatches-sample-data</li>
-    <li>magento/module-tax-sample-data</li>
-    <li>magento/module-theme-sample-data</li>
-    <li>magento/module-widget-sample-data</li>
-    <li>magento/module-wishlist-sample-data</li>
-    <li>magento/sample-data</li>
-    <li>magento/sample-data-media</li>
-  </ul>
-
-  <p>Magento EE only:</p>
-
-  <ul>
-    <li>magento/module-customer-balance-sample-data</li>
-    <li>magento/module-gift-card-sample-data</li>
-    <li>magento/module-gift-registry-sample-data</li>
-    <li>magento/module-multiple-wishlist-sample-data</li>
-    <li>magento/module-target-rule-sample-data</li>
-  </ul>
-
-</div>
+<p>If the list of purchases is correct, click <strong>Install</strong>.</p>
 
 
 		</div>
@@ -289,9 +230,7 @@
 
 
 
-<h4>Installation guide<br>Part 2: Installing</h4>
-
-
+<h4>Component Manager and System Upgrade Guide</h4>
 
 
 
@@ -349,58 +288,6 @@
 			
 				
 				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
 					
 					
 					
@@ -418,7 +305,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install-roadmap_cli.html">Installation roadmap (reference)</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Getting started with the Component Manager and System Upgrade</a></li>
 									
 								
 								
@@ -443,7 +330,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install/cli/install-cli-sample-data.html">Install optional sample data modules</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/comp-mgr/prereq/prereq_compman.html">Prerequisites</a></li>
 									
 								
 								
@@ -454,7 +341,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/cli/install-cli-sample-data-cli.html">Install using the command line</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/prereq/prereq_compman-ulimit.html">Set ulimit for the web server user</a></li>
 
 									
 						
@@ -462,7 +349,7 @@
 
 									
 							
-									<li class="level-2  active "><a href="/guides/v2.0/install-gde/install/cli/install-cli-sample-data-composer.html">Install using Composer</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/prereq/prereq_compman-updater.html">Set up cron for Component Manager and System Upgrade</a></li>
 
 									
 						
@@ -470,152 +357,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/cli/install-cli-sample-data-clone.html">Install by cloning repositories</a></li>
-
-									
-						
-								
-								
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install/cli/install-cli.html">Install the Magento software using the command line</a></li>
-									
-								
-								
-									
-							
-								
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands.html">Get started with the command-line installation</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html">Install the Magento software</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html">Uninstall or reinstall Magento</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/cli/install-cli-adminurl.html">Display or change the Admin URI</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/cli/install-cli-sample-data-other.html">Remove or update sample data</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-mods.html">Uninstall modules</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-db.html">Create the Magento database schema</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-store.html">Configure the store</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-admin.html">Create or unlock a Magento administrator account</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/cli/install-cli-backup.html">Back up and roll back the file system, media, and database</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/cli/install-cli-theme-uninstall.html">Uninstall themes</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-langpk.html">Uninstall language packages</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/prereq/prereq_auth-token.html">Enter your authentication keys in the Admin</a></li>
 
 									
 						
@@ -637,7 +379,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install/cli/dev_options.html">Contributing developers&mdash;update, reinstall Magento</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/comp-mgr/compman-start.html">Run the Component Manager</a></li>
 									
 								
 								
@@ -648,7 +390,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/cli/dev_add-update.html">Add or update components</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/compman-main-pg.html">Manage your components</a></li>
 
 									
 						
@@ -656,7 +398,15 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/cli/dev_reinstall.html">Reinstall the Magento software</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/compman-readiness.html">Step 1. Readiness check</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/compman-backup.html">Step 2. Back up the file system and database</a></li>
 
 									
 						
@@ -678,13 +428,262 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/continue-to-verify_cli.html">Next&mdash;Installation part 3, post-installation</a></li>
+								
+									
+							
+										<li class="levela1"><span class="nav-header">Enable/Disable</span></li>
+								
+									
+							
+								
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/compman-enable-disable.html">Step 3. Enable/Disable</a></li>
+
+									
+						
+								
+								
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+
+
+								
+								
+									
+							
+										<li class="levela1"><span class="nav-header">New Purchase</span></li>
+								
+									
+							
+								
+								
+
+									
+							
+									<li class="level-2  active "><a href="/guides/v2.0/comp-mgr/compman-new-purchase.html">Step 3. Component Install</a></li>
+
+									
+						
+								
+								
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+
+
+								
+								
+									
+							
+										<li class="levela1"><span class="nav-header">Uninstall</span></li>
+								
+									
+							
+								
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/compman-uninst-data.html">Step 3. Data Option</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/compman-uninst-final.html">Step 4. Uninstall</a></li>
+
+									
+						
+								
+								
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+
+
+								
+								
+									
+							
+										<li class="levela1"><span class="nav-header">Update</span></li>
+								
+									
+							
+								
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/compman-update.html">Step 3. Component Update</a></li>
+
+									
+						
+								
+								
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">Run System Upgrade</a></li>
 									
 								
 								
 									
 							
 								
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-main-pg.html">Step 1. Select versions to upgrade</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-readiness.html">Step 2. Readiness check</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-backup.html">Step 3. Back up the file system and database</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/upgrader/upgrade.html">Step 4. Upgrade</a></li>
+
+									
+						
+								
+								
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/comp-mgr/trouble/tshoot.html">Troubleshooting suggestions</a></li>
+									
+								
+								
+									
+							
+								
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/update-fail.html">Roll back after update failure</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/component-depend.html">Resolve component dependencies</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/cron.html">Troubleshoot cron</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/updater.html">Troubleshoot the updater application</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/tshoot_backup.html">Troubleshoot backups</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/doc.html">magento/theme-doc-blank failure</a></li>
+
+									
+						
 								
 								
 							
@@ -693,6 +692,58 @@
 					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			

@@ -215,17 +215,148 @@
 		<h4>Contents</h4>
 
 <ul>
+  <li><a href="#compman-access-types">Supported actions for each component type</a></li>
   <li><a href="#compman-access">Component Management options</a></li>
   <li><a href="#compman-access-sync">Update a component</a></li>
   <li><a href="#compman-access-enable">Enable or disable a component</a></li>
 </ul>
+
+<h2 id="compman-access-types">Supported actions for each component type</h2>
+<p>We define the following <em>components</em>:</p>
+
+<ul>
+  <li><code>module</code> for a module or extension (that is, PHP code that modifies Magento behavior)</li>
+  <li><code>language</code> for a language package used to translate the Magento storefront and Admin</li>
+  <li><code>theme</code> for a collection of styles that affect the look of the storefront or Admin</li>
+  <li><code>library</code> for a library—such as a shared third-party library</li>
+  <li><code>component</code> for any type of component that must be installed in the Magento root directory (this is a relatively uncommon type)</li>
+</ul>
+
+<p>We also use <code>metapackage</code> to group components; Magento Community Edition (CE) and Magento Enterprise Edition (EE) are examples of metapackages.</p>
+
+<p>You can perform actions on components differently, depending on whether the component is part of a metapackage or not.</p>
+
+<p>The following sections provide details:</p>
+
+<ul>
+  <li><a href="#compman-access-types-meta">Actions available for metapackage components</a></li>
+  <li><a href="#compman-access-types-non-meta">Actions available for non-metapackage components</a></li>
+</ul>
+
+<h3 id="compman-access-types-meta">Actions available for metapackage components</h3>
+<p>Magento requires any component that has more than one type to be a metapackage. For example, we require a component that contains a module and a theme to be packaged as a metapackage.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+      <p>We currently do not support uninstalling a metapackage.</p>
+</div>
+
+<p>The following table shows which actions are available for components that are part of a metapackage.</p>
+
+<table>
+	<col width="40%" />
+  	<col width="15%" />
+  	<col width="15%" />
+  	<col width="15%" />
+  	<col width="15%" />
+		<tbody>
+		<tr>
+			<th>Type</th>
+			<th>Enable</th>
+			<th>Disable</th>
+			<th>Update</th>
+			<th>Uninstall</th>
+		</tr>
+		<tr>
+			<td>module</td>
+			<td>Yes</td>
+			<td>Yes</td>
+			<td>No</td>
+			<td>No</td>
+		</tr>
+		<tr>
+			<td>language and theme</td>
+			<td>No</td>
+			<td>No</td>
+			<td>Yes</td>
+			<td>Yes</td>
+		</tr>
+		<tr>
+			<td>library</td>
+			<td>No</td>
+			<td>No</td>
+			<td>Yes</td>
+			<td>Yes</td>
+		</tr>
+		<tr>
+			<td>component</td>
+			<td>No</td>
+			<td>No</td>
+			<td>Yes</td>
+			<td>Yes</td>
+		</tr>
+		</tbody>
+	</table>
+
+<div class="bs-callout bs-callout-info" id="info">
+      <p><strong>Update</strong> displays as an action only if an update is available for that component.</p>
+</div>
+
+<h3 id="compman-access-types-non-meta">Actions available for non-metapackage components</h3>
+<p>Typically, a component that you download from Magento Marketplace is not part of a metapackage; in other words, a single module is probably not part of a metapackage.</p>
+
+<p>The following table shows which actions are supported for each non-metapackage component.</p>
+
+<table>
+	<col width="40%" />
+  	<col width="15%" />
+  	<col width="15%" />
+  	<col width="15%" />
+  	<col width="15%" />
+		<tbody>
+		<tr>
+			<th>Type</th>
+			<th>Enable</th>
+			<th>Disable</th>
+			<th>Update</th>
+			<th>Uninstall</th>
+		</tr>
+		<tr>
+			<td>module</td>
+			<td>Yes</td>
+			<td>Yes</td>
+			<td>Yes</td>
+			<td>Yes</td>
+		</tr>
+		<tr>
+			<td>language and theme</td>
+			<td>No</td>
+			<td>No</td>
+			<td>Yes</td>
+			<td>Yes</td>
+		</tr>
+		<tr>
+			<td>library</td>
+			<td>No</td>
+			<td>No</td>
+			<td>Yes</td>
+			<td>Yes</td>
+		</tr>
+		<tr>
+			<td>component</td>
+			<td>No</td>
+			<td>No</td>
+			<td>Yes</td>
+			<td>Yes</td>
+		</tr>
+		</tbody>
+	</table>
 
 <h2 id="compman-access">Component Management options</h2>
 <p>To choose whether to upgrade or uninstall components:</p>
 
 <ol>
   <li>After you <a href="/guides/v2.0/comp-mgr/compman-start.html">run the Component Manager</a>, a page similar to the following displays:<br /><br />
-<img src="/common/images/cman_initial-page.png" width="750px" alt="The Component Manager page enables you to synchronize with Magento Connect to see if updates are available" /></li>
+<img src="/common/images/cman_initial-page.png" width="750px" alt="The Component Manager page enables you to synchronize with Magento Marketplace to see if updates are available" /></li>
   <li>You have the following options:
     <table>
 <tbody>
@@ -234,22 +365,23 @@
     <th>Meaning</th>
 </tr>
 <tr>
-    <td><p>Magento Connect Account section</p></td>
-    <td><p>Shows when you last synchronized with your Magento Connect account. To get the latest information about available component versions, you must synchronize with Connect.</p>
+    <td><p>Magento Marketplace Account section</p></td>
+    <td><p>Shows when you last synchronized with your Magento Marketplace account. To get the latest information about available component versions, you must synchronize with Connect.</p>
         <p>Last Sync shows the last time you synchronized and Sync Status shows whether or not you're currently synchronized.</p>
         <div class="bs-callout bs-callout-info" id="info">
-  				<p>Magento Connect isn't available yet. Although you can't log in to your account, you can synchronize your components with the ones that <code>composer.json</code> knows about.</p>
+  				<p>Magento Marketplace isn't available yet. For now, Magento Connect takes its place.</p>
  			</div>
+ 			<p>New Updates and New Purchases displays the number of each to install; click <strong>Install</strong> to select updates or purchases to install and see <a href="#compman-access-new">Install new purchases</a>.</p>
     </td>
 </tr>
 <tr>
     <td><p>Sync button</p></td>
-    <td><p>Click <strong>Sync</strong> to compare the component versions you're currently using with those available on Connect.</p></td>
+    <td><p>Click <strong>Sync</strong> to compare the component versions you're currently using with those available on Magento Marketplace.</p></td>
 </tr>
 <tr>
     <td><p>List of components</p></td>
     <td><p>For each component, one of the following status indicators displays in the left column:</p>
-        <ul><li><img src="/common/images/cman_comp-status-green.png" alt="A green icon means that the component is enabled and is current as of the last sync" />Green, which means the component is enabled and its status was current the last time you synchronized with Connect.</li>
+        <ul><li><img src="/common/images/cman_comp-status-green.png" alt="A green icon means that the component is enabled and is current as of the last sync" />Green, which means the component is enabled and its status was current the last time you synchronized with Magento Marketplace.</li>
             <li><img src="/common/images/cman_comp-status-info.png" alt="An info icon means there is an update available" />An update is available.</li>
             <li><img src="/common/images/cman_comp-status-red.png" alt="A red icon means the component is disabled" />The component is disabled.</li> </ul>
             <p>Middle columns display information about the component we obtained from its Composer package.</p>
@@ -274,57 +406,42 @@
 </td></tr></tbody></table>
   </li>
 </ol>
-<h3 id="compman-access-types">Supported actions per type</h3>
-<p>The following table shows which actions are supported for each Magento component type.</p>
-<table>
-	<col width="40%" />
-  	<col width="15%" />
-  	<col width="15%" />
-  	<col width="15%" />
-  	<col width="15%" />
-		<tbody>
-		<tr>
-			<th>Type</th>
-			<th>Enable</th>
-			<th>Disable</th>
-			<th>Update</th>
-			<th>Uninstall</th>
-		</tr>
-		<tr>
-			<td>magento2-module</td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td>Yes</td>
-			<td>Yes</td>
-		</tr>
-		<tr>
-			<td>magento2-language and magento2-theme</td>
-			<td>No</td>
-			<td>No</td>
-			<td>Yes</td>
-			<td>Yes</td>
-		</tr>
-		<tr>
-			<td>magento2-library</td>
-			<td>No</td>
-			<td>No</td>
-			<td>Yes</td>
-			<td>Yes</td>
-		</tr>
-		<tr>
-			<td>component</td>
-			<td>No</td>
-			<td>No</td>
-			<td>Yes</td>
-			<td>Yes</td>
-		</tr>
-		</tbody>
-	</table>
+<h2 id="compman-access-new">Install new purchases</h2>
+<p>A <em>new purchase</em> can be any of the following:</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-      <ul><li>Enable and disable will be supported soon.</li>
-      <li>A magento2-module has no <strong>Uninstall</strong> option if it's part of a metapackage. Currently, uninstalling a metapackage is not supported.</li></ul>
-</div>
+<ul>
+  <li>
+    <p>Magento CE or EE sample data if it hasn’t been installed yet.</p>
+
+    <p>You don’t need to go to Magento Marketplace and request sample data; you can install it at any time.</p>
+  </li>
+  <li>A free component you selected on Magento Marketplace</li>
+  <li>A component you paid for on Magento Marketplace</li>
+</ul>
+
+<p>To install a new purchase:</p>
+
+<ol>
+  <li>
+    <p>Click <strong>Install</strong> under the number of new purchases as the following figure shows.</p>
+
+    <p><img src="/common/images/compman_new-purchases1.png" width="450px" /></p>
+  </li>
+  <li>
+    <p>On the next page, select the components to install.</p>
+
+    <p>To install all of them, click <strong>Select all</strong> from the list.</p>
+
+    <p>To install components individually, either select the check box next to the component or click <strong>Install</strong> in the Action column.</p>
+
+    <p>The following figure shows an example of selecting all components.</p>
+
+    <p><img src="/common/images/compman_new-purchases2.png" width="700px" /></p>
+  </li>
+  <li>Click <strong>Install</strong>.</li>
+  <li>Continue with <a href="/guides/v2.0/comp-mgr/compman-readiness.html">Readiness check</a>.</li>
+</ol>
+
 <h2 id="compman-access-sync">Update a component</h2>
 <p>To see if any of your components can be updated, click <strong>Sync</strong>.</p>
 
@@ -603,6 +720,40 @@
 								
 									
 							
+										<li class="levela1"><span class="nav-header">New Purchase</span></li>
+								
+									
+							
+								
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/compman-new-purchase.html">Step 3. Component Install</a></li>
+
+									
+						
+								
+								
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+
+
+								
+								
+									
+							
 										<li class="levela1"><span class="nav-header">Uninstall</span></li>
 								
 									
@@ -777,6 +928,14 @@
 									
 							
 									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/tshoot_backup.html">Troubleshoot backups</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/doc.html">magento/theme-doc-blank failure</a></li>
 
 									
 						
