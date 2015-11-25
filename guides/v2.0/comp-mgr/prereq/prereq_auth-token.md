@@ -4,7 +4,7 @@ group: compman
 subgroup: B_prereq
 title: Enter your authentication keys in the Admin
 menu_title: Enter your authentication keys in the Admin
-menu_order: 10
+menu_order: 3
 menu_node: 
 github_link: comp-mgr/prereq/prereq_auth-token.md
 ---

@@ -36,7 +36,7 @@ The following sections provide details:
 *	<a href="#compman-access-types-non-meta">Actions available for non-metapackage components</a>
 
 <h3 id="compman-access-types-meta">Actions available for metapackage components</h3>
-Magento requires any component that has more than one type to be a metapackage. For example, if you download a component that contains a module and a theme, we require it to be packaged as a metapackage.
+Magento requires any component that has more than one type to be a metapackage. For example, we require a component that contains a module and a theme to be packaged as a metapackage.
 
 <div class="bs-callout bs-callout-info" id="info">
       <p>We currently do not support uninstalling a metapackage.</p>
@@ -160,7 +160,7 @@ To choose whether to upgrade or uninstall components:
 		<td><p>Shows when you last synchronized with your Magento Marketplace account. To get the latest information about available component versions, you must synchronize with Connect.</p>
 			<p>Last Sync shows the last time you synchronized and Sync Status shows whether or not you're currently synchronized.</p>
 			<div class="bs-callout bs-callout-info" id="info">
-  				<p>Magento Marketplace isn't available yet. For now, Magento Marketplace takes its place.</p>
+  				<p>Magento Marketplace isn't available yet. For now, Magento Connect takes its place.</p>
  			</div>
  			<p>New Updates and New Purchases displays a number; click <strong>Install</strong> to select updates or purchases to install.</p>
 		</td>
@@ -193,6 +193,35 @@ To choose whether to upgrade or uninstall components:
 	</tr>
 	</tbody>
 	</table>
+
+<h2 id="compman-access-new">Install new purchases</h2>
+A *new purchase* can be any of the following:
+
+*	Magento CE or EE sample data if it hasn't been installed yet.
+
+	You don't need to go to Magento Marketplace and request sample data; you can install it at any time.
+
+*	A free component you selected on Magento Marketplace
+*	A component you paid for on Magento Marketplace
+
+To install a new purchase:
+
+1.	Click **Install** under the number of new purchases as the following figure shows.
+
+	<img src="{{ site.baseurl }}common/images/compman_new-purchases1.png" width="450px">
+
+2.	On the next page, select the components to install.
+
+	To install all of them, click **Select all** from the list.
+
+	To install components individually, either select the check box next to the component or click **Install** in the Action column.
+
+	The following figure shows an example of selecting all components.
+
+	<img src="{{ site.baseurl }}common/images/compman_new-purchases2.png">
+3.	Click **Install**.
+4.	Continue with <a href="{{ site.gdeurl }}comp-mgr/compman-readiness.html">Readiness check</a>.
+
 
 
 <h2 id="compman-access-sync">Update a component</h2>
