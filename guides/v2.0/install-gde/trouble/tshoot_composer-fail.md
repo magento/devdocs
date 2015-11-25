@@ -18,17 +18,19 @@ During download, the following error displays:
   	file_get_contents(app/etc/NonComposerComponentRegistration.php): failed to open stream: No such file or directory
 
 ### Description
-This happens because of recent changes in Composer; it is not an issue with the Magento application.
+This happens because of recent changes in Composer.
 
 The workaround is to downgrade Composer to an earlier version and try your Magento download again.
 
-To confirm this issue is related to the Composer version, enter the following command:
+Any version of Composer dated November 21, 2015 or later has this issue. To confirm this issue is related to the Composer version, enter the following command:
 
 	composer -v
 
-The following version has this issue:
+The version displays similar to the following:
 
 	Composer version 1.0-dev (2b14f0a047dd4f3545ec82381f65c36ea93a4c81) 2015-11-25 17:13:09
+
+Note the date is 2015-11-25, which indicates Composer has this issue.
 
 To work around it:
 
@@ -38,3 +40,6 @@ To work around it:
 
 2.	Delete your Magento 2 directory and subdirectories.
 3.	Try the download again using either `composer create-project` or `git clone`.
+4.	After successfully downloading the Magento software, update Composer:
+
+		composer self-update
