@@ -297,7 +297,7 @@ Reference to the repository is placed in the fixture XML file in attribute named
 
 <p>We want to specify data sets for two cases of submitting Widget forms: <code>default</code> with minimum data, and <code>cms_page_link</code> with data needed to create new CMS page link.</p>
 
-<p>To create a new CMS page link the user must enter data of all required fields. The widget has three forms with fields to specify: <a href="#mtf_repo_ex_set"><strong>Settings</strong></a>, <a href="#mtf_repo_ex_store"><strong>Storefront Properties</strong></a>, <a href="#mtf_repo_ex_front"><strong>Frontend Apps Options</strong></a>. The following text along with screenshots gives an example of how to create a dataset of the repository.</p>
+<p>To create a new CMS page link the user must enter data of all required fields. The widget has three forms with fields to specify: <a href="#mtf_repo_ex_set"><strong>Settings</strong></a>, <a href="#mtf_repo_ex_store"><strong>Storefront Properties</strong></a>, <a href="#mtf_repo_ex_front"><strong>Frontend Apps Options</strong></a>. The following text along with screenshots gives an example of how to create a data set of the repository.</p>
 
 <p><a href="#mtf_repo_widgetxml">See entire repository code</a>.</p>
 
@@ -312,7 +312,7 @@ Reference to the repository is placed in the fixture XML file in attribute named
 
 <h4 id="mtf_repo_ex_store">Storefront Properties form</h4>
 
-<p><img src="/common/images/mtf_ent_fixt_repo_cms_set_ui_storefront.png" alt="cms_page_link &quot;Storefront properties&quot; dataset for entire fixture view on GUI" /></p>
+<p><img src="/common/images/mtf_ent_fixt_repo_cms_set_ui_storefront.png" alt="cms_page_link &quot;Storefront properties&quot; data set for entire fixture view on GUI" /></p>
 
 <ul>
   <li>Set the <strong>Frontend App Title</strong> field to “Cms Page Link [random integer value]”. It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> <code>&lt;field name="title" xsi:type="string"&gt;Cms Page Link %isolation%&lt;/field&gt;</code>.</li>
@@ -338,7 +338,7 @@ Reference to the repository is placed in the fixture XML file in attribute named
 
 <h4 id="mtf_repo_ex_front">Frontend App Options</h4>
 
-<p><img src="/common/images/mtf_ent_fixt_repo_cms_set_ui_frontend-app.png" alt="cms_page_link &quot;Frontend App Options&quot; dataset for entire fixture view on GUI" /></p>
+<p><img src="/common/images/mtf_ent_fixt_repo_cms_set_ui_frontend-app.png" alt="cms_page_link &quot;Frontend App Options&quot; data set for entire fixture view on GUI" /></p>
 
 <ul>
   <li>Set the <strong>Anchor Custom Text</strong> field to “text”.</li>
@@ -356,7 +356,7 @@ Reference to the repository is placed in the fixture XML file in attribute named
 
 <p>In brief, we reference another repository <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/WidgetOptions.xml</code>, and a <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">source</a> that is <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget/WidgetOptions.php</code>.</p>
 
-<p>The <code>WidgetOptions.xml</code> repository includes <code>cmsPageLink</code> dataset:</p>
+<p>The <code>WidgetOptions.xml</code> repository includes <code>cmsPageLink</code> data set:</p>
 
 <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;dataset</span> <span class="na">name=</span><span class="s">&quot;cmsPageLink&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;anchor_text&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>text<span class="nt">&lt;/field&gt;</span>
@@ -512,16 +512,16 @@ Reference to the repository is placed in the fixture XML file in attribute named
 
 <p>The repository value is a reference to the repository XML file. Therefore, we should create <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/LayoutUpdates.xml</code>. The XML structure of this repository is the same as of <a href="#mtf_repository_create">repository for the entire fixture</a>.</p>
 
-<p>Assume that we want to provide data for the Layout Update block for the following cases shown on the screenshots (name of datasets have orange font, fields defined in repository are highlighted in orange).</p>
+<p>Assume that we want to provide data for the Layout Update block for the following cases shown on the screenshots (name of data sets have orange font, fields defined in repository are highlighted in orange).</p>
 
 <p>Case 1. <strong>all_pages</strong> data set:</p>
 
 <ul>
-  <li>Set the <strong>Display on</strong> field (<code>item name="page_group"</code>) to “All Pages”, which is the subcategory of “Generic Pages” (see drop-down menu on the following sceenshot). It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> <code>&lt;item name="page_group" xsi:type="string"&gt;Generic Pages/All Pages&lt;/item&gt;</code></li>
+  <li>Set the <strong>Display on</strong> field (<code>item name="page_group"</code>) to “All Pages”, which is the subcategory of “Generic Pages” (see drop-down menu on the following screenshot). It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> <code>&lt;item name="page_group" xsi:type="string"&gt;Generic Pages/All Pages&lt;/item&gt;</code></li>
   <li>Set the <strong>Container</strong> field (<code>item name="block"</code>) to “Main content Area”. It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a>  <code>&lt;item name="block" xsi:type="string"&gt;Main Content Area&lt;/item&gt;</code></li>
 </ul>
 
-<p><img src="/common/images/mtf_repository_layout-allpages_w_dropd.png" alt="all_pages dataset view on GUI" /></p>
+<p><img src="/common/images/mtf_repository_layout-allpages_w_dropd.png" alt="all_pages data set view on GUI" /></p>
 
 <p>Case 2. <strong>on_category</strong> data set:</p>
 
@@ -532,7 +532,7 @@ Reference to the repository is placed in the fixture XML file in attribute named
   <li>Set the <strong>Container</strong> field (<code>item name="block"</code>) to “Main content Area”. It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> <code>&lt;item name="block" xsi:type="string"&gt;Main Content Area&lt;/item&gt;</code>.</li>
 </ul>
 
-<p><img src="/common/images/mtf_repository_layout-oncategory_w_dropd.png" alt="on_category dataset view on GUI" /></p>
+<p><img src="/common/images/mtf_repository_layout-oncategory_w_dropd.png" alt="on_category data set view on GUI" /></p>
 
 <p>Case 3. <strong>for_cms_page_link</strong> data set:</p>
 
@@ -542,7 +542,7 @@ Reference to the repository is placed in the fixture XML file in attribute named
   <li>Set the <strong>Template</strong> field (<code>item name="template"</code>) to “CMS Page Link Block Template”. It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> <code>&lt;</code>item name=”template” xsi:type=”string”<code>&gt;CMS Page Link Block Template&lt;/item&gt;</code>.</li>
 </ul>
 
-<p><img src="/common/images/mtf_repository_layout-for-cms-page-link_w_dropd.png" alt="layout_for_cms_page_link dataset view on GUI" /></p>
+<p><img src="/common/images/mtf_repository_layout-for-cms-page-link_w_dropd.png" alt="layout_for_cms_page_link data set view on GUI" /></p>
 
 <p>The repository code for these cases follows:</p>
 
@@ -584,9 +584,9 @@ Reference to the repository is placed in the fixture XML file in attribute named
 
 <h2 id="mtf_repository_config">Configuration repository</h2>
 
-<p>The configuration repository stores predefined data sets for Magento configuration settings. It is the repository for the <a href="https://github.com/magento/magento2/tree/master/app/code/Magento/Config">Magento_Config module</a> and is named <code>ConfigData.xml</code>.</p>
+<p>The configuration repository stores predefined data sets for Magento configuration settings. It is the repository for the <a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Config">Magento_Config module</a> and is named <code>ConfigData.xml</code>.</p>
 
-<p>Let’s see the following example of configuration settings for <a href="https://github.com/magento/magento2/tree/develop/app/code/Magento/Authorizenet">Authorize.Net module</a> <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Authorizenet/Test/Repository/ConfigData.xml</code>.</p>
+<p>Let’s see the following example of configuration settings for <a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Authorizenet">Authorize.Net module</a> <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Authorizenet/Test/Repository/ConfigData.xml</code>.</p>
 
 <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
 <span class="c">&lt;!--</span>
@@ -654,7 +654,7 @@ Reference to the repository is placed in the fixture XML file in attribute named
 
 <p>Path to the <code>Authorizenet</code> UI form in Admin is <strong>STORES &gt; Configuration &gt; SALES &gt; Payment Methods &gt; Authorize.net Direct Post</strong>.</p>
 
-<p>This repository contains two datasets: <code>authorizenet</code> that covers seven fields, and <code>authorizenet_rollback</code> that covers one field.</p>
+<p>This repository contains two data sets: <code>authorizenet</code> that covers seven fields, and <code>authorizenet_rollback</code> that covers one field.</p>
 
 <p>Semantics of the field attributes:</p>
 
@@ -711,11 +711,11 @@ Reference to the repository is placed in the fixture XML file in attribute named
 
 <p>The following screenshot helps to understand the <code>scope_id</code> attribute.</p>
 
-<p><img src="/common/images/mtf_ent_fixt_repo_config_scope-id.png" alt="authorizenet dataset view on GUI" /></p>
+<p><img src="/common/images/mtf_ent_fixt_repo_config_scope-id.png" alt="authorizenet data set view on GUI" /></p>
 
 <p>Let’s see the <code>authorizenet</code> data set in action. Fields defined in repository are in orange. Other fields are set in default values.</p>
 
-<p><img src="/common/images/mtf_repo_config_ex.png" alt="authorizenet dataset view on GUI" /></p>
+<p><img src="/common/images/mtf_repo_config_ex.png" alt="authorizenet data set view on GUI" /></p>
 
 <h2 id="mtf_repository_merge">Merging repositories</h2>
 
@@ -817,11 +817,11 @@ There are two ways to paste credentials:</p>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;value&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>%carriers_dhl_account_eu%<span class="nt">&lt;/item&gt;</span>
 <span class="nt">&lt;/field&gt;</span></code></pre></div>
 
-<p>When the test is run, credentials from <code>credentials.xml</code> are transfered to the defined fields.</p>
+<p>When the test is run, credentials from <code>credentials.xml</code> are transferred to the defined fields.</p>
 
 <h3 id="mtf_repo_isolation"><code>%isolation%</code> placeholder</h3>
 
-<p>You can use <code>%isolation%</code> placeholder in repository fields where you want to put a random value. It is useful when you need a unique value, for example <code>sku</code>, that has to be unique each test cycle.</p>
+<p>You can use <code>%isolation%</code> placeholder where you want to put a random value. It is useful when you need a unique value, for example <code>sku</code>, that has to be unique each test cycle.</p>
 
 <p>Some examples:</p>
 

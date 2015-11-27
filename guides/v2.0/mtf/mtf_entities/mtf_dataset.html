@@ -217,22 +217,23 @@
 <ul id="markdown-toc">
   <li><a href="#data-set-overview">Data set overview</a></li>
   <li><a href="#data-set-structure">Data set structure</a></li>
-  <li><a href="#how-to-add-data-set-to-a-test">How to add data set to a test</a></li>
 </ul>
 
 <h2 id="data-set-overview">Data set overview</h2>
-<p>Data sets are used for filling test forms with prepared data.
+<p>Data sets contain data used by test case and constraints.
 A data set can have several variations.
-Each variation has constraints that are checked at the end of the test flow.</p>
-
-<p>This topic shows how to prepare data for the test.</p>
+Each variation has constraints that are called at the end of the test flow.</p>
 
 <h2 id="data-set-structure">Data set structure</h2>
 
-<p>Data set is an XML file that contains test variations for a test case.
-Variation includes:
-- Data used during the test run
-- <a href="/guides/v2.0/mtf/mtf_entities/mtf_constraint.html">Constraints</a> that will be called after test flow</p>
+<p>Data set is an XML file that contains test variations for a test case.</p>
+
+<p>Variation includes:</p>
+
+<ul>
+  <li>Data used during the test flow and assertions</li>
+  <li><a href="/guides/v2.0/mtf/mtf_entities/mtf_constraint.html">Constraints</a> that will be called after test flow</li>
+</ul>
 
 <p>The following table shows structure of the data set:</p>
 
@@ -240,7 +241,7 @@ Variation includes:
 <col width="1*" />
 <col width="1*" />
 <col width="2*" />
-<tr><th>Node </th><th>Semantics </th><th>Attibutes </th></tr>
+<tr><th>Node </th><th>Semantics </th><th>Attributes </th></tr>
 <tr>
 <td><code>config</code> </td>
 <td>The root element that defines an XML namespace and an XML Schema. </td>
@@ -251,18 +252,18 @@ Variation includes:
 </tr>
 <tr>
 <td><code>testCase</code> </td>
-<td>Contains configuration data of a test case in attributes, and variations in child elements. </td>
+<td>Contains a reference to the test case class in attribute and variations in child elements. </td>
 <td><ul>
 <li><code>name</code> - full name of a test case class. Required.</li>
-<li><code>summary</code> - description of a test case. Optional.</li>
+<li><code>summary</code> - description of a test case. Required.</li>
 <li><code>ticketId</code> - identifier of related ticket. Optional.</li>
 </ul> </td>
 </tr>
 <tr>
 <td><code>variation</code></td>
-<td>Contains in attributes the configuration data of the variation, and data with constraints in child elements.</td>
+<td>Contains variation description in attributes and data with constraints in child elements.</td>
 <td><ul>
-<li><code>name</code> - a full name of a test case class. Required.</li>
+<li><code>name</code> - a variation name. Required.</li>
 <li><code>firstConstraint</code> - a full name of constraint that is performed first. Optional.</li>
 <li><code>method</code> - a name of the test method from the test class. Optional.</li>
 <li><code>summary</code> - description of the variation. Optional.</li>
@@ -271,10 +272,10 @@ Variation includes:
 </tr>
 <tr>
 <td><code>data</code> </td>
-<td>Data to be used by test case. </td>
+<td>Data to be used by a test case. </td>
 <td><ul>
-<li><code>name</code> - a reference to the element where data must be entered. A format is the following: <i>entity_name</i>/<code>data</code>/<i>name_of_the_field</i>, for example <code>product/data/name</code>. Optional.</li>
-<li><code>xsi:type</code> - a full name of constraint class that is performed next in a queue. 
+<li><code>name</code> - a name of variable with extra data. A format can be the following: <i>entity_name</i>/<code>data</code>/<i>name_of_the_field</i>, for example <code>product/data/name</code>. The processing logic is defined in <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php">InjectableFixture</a> class. Required.</li>
+<li><code>xsi:type</code> - a type of the value. 
 The following data types are available:
 <ul>
 <li><code>array</code></li>
@@ -283,36 +284,76 @@ The following data types are available:
 <li><code>object</code></li>
 <li><code>number</code></li>
 <li><code>null</code></li>
-</ul></li>Optional.
+</ul></li>Required.
 </ul> </td>
 </tr>
 <tr>
 <td><code>constraint</code></td>
-<td>Constraint that contains assertions performed after test flow.  </td>
+<td>Reference to the constraint class performed after the test flow.  </td>
 <td><ul>
-<li><code>name</code> - a full name of a test case class. Required.</li>
-<li><code>next</code> - a full name of constraint class that is performed next in a queue. Optional.</li>
-<li><code>prev</code> - a full name of constraint class that is performed previous in a queue. Optional.</li>
+<li><code>name</code> - a full name of the constraint class. Required.</li>
+<li><code>next</code> - a full name of the constraint class performing next in a queue. Optional.</li>
+<li><code>prev</code> - a full name of the constraint class performing previous in a queue. Optional.</li>
 </ul></td></tr>
 </table>
 
-<p>Variation should contain only data that is required for its flow.</p>
+<div class="bs-callout bs-callout-warning">
+  <p>Variation should contain only data that is required for its flow and constraints.</p>
+</div>
 
 <div class="bs-callout bs-callout-tip">
   <p>Data with name <code>tag</code> can be used to customize test suite run.</p>
 </div>
 
-<h2 id="how-to-add-data-set-to-a-test">How to add data set to a test</h2>
-<p>To create a data set for Create simple product test:</p>
+<p>Let’s see an example:</p>
 
-<ol>
-  <li>
-    <p>Create .xml file with the same name as the test: <code>CreateSimpleProductEntityTest.xml</code> within TestCase directory.</p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/etc/variations.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;testCase</span> <span class="na">name=</span><span class="s">&quot;Magento\Catalog\Test\TestCase\Product\CreateSimpleProductEntityTest&quot;</span> <span class="na">summary=</span><span class="s">&quot;Create Simple Product&quot;</span> <span class="na">ticketId=</span><span class="s">&quot;MAGETWO-23414&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;variation</span> <span class="na">name=</span><span class="s">&quot;CreateSimpleProductEntityTestVariation1&quot;</span> <span class="na">summary=</span><span class="s">&quot;Create product with custom options(fixed price)&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/url_key&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>simple-product-%isolation%<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/name&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Simple Product %isolation%<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/sku&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>simple_sku_%isolation%<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/price/value&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>10000<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/short_description&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Simple Product short_description %isolation%<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/description&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Simple Product description %isolation%<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/weight&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>50<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/quantity_and_stock_status/qty&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>657<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/custom_options/dataset&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>drop_down_with_one_option_fixed_price<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/checkout_data/dataset&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>simple_drop_down_with_one_option_fixed_price<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/price/dataset&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>drop_down_with_one_option_fixed_price<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">&quot;Magento\Catalog\Test\Constraint\AssertProductSaveMessage&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">&quot;Magento\Catalog\Test\Constraint\AssertProductInGrid&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">&quot;Magento\Catalog\Test\Constraint\AssertProductInCategory&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">&quot;Magento\Catalog\Test\Constraint\AssertProductPage&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">&quot;Magento\Catalog\Test\Constraint\AssertProductInCart&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/variation&gt;</span>
+    <span class="nt">&lt;/testCase&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p>This is a data set that:</p>
+
+<ul>
+  <li>corresponds to the XSD schema <code>&lt;magento2&gt;/dev/tests/functional/vendor/magento/mtf/etc/variations.xsd</code></li>
+  <li>relates to the <code>Magento\Catalog\Test\TestCase\Product\CreateSimpleProductEntityTest</code> test (performs creation of the simple product) </li>
+  <li>relates to the ticket <code>MAGETWO-23414</code> in Jira</li>
+  <li>contains variation <code>CreateSimpleProductEntityTestVariation1</code> that creates product with fixed price with the following data (corresponds to the <code>Magento\Catalog\Test\Fixture\CatalogProductSimple</code> fixture):
+    <ul>
+      <li><code>url_key</code> field is assigned with <code>simple-product-%isolation%</code>. <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture-repo.html#mtf_repo_isolation">More info about %isolation% usage</a>.</li>
+      <li><code>name</code> field is assigned with <code>Simple Product %isolation%</code></li>
+      <li><code>sku</code> field is assigned with <code>simple_sku_%isolation%</code></li>
+      <li><code>price</code> field is processed by a <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">data source</a> <code>Magento\Catalog\Test\Fixture\Product\Price</code> and is assigned <code>10000</code></li>
+      <li><code>short_description</code> field is assigned with <code>Simple Product short_description %isolation%</code></li>
+      <li><code>description</code> field is assigned with <code>Simple Product description %isolation%</code></li>
+      <li><code>weight</code> field is assigned with <code>50</code></li>
+      <li><code>quantity_and_stock_status/qty</code> field is assigned with <code>657</code></li>
+      <li><code>custom_options</code> field is processed by a <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">data source</a> <code>Magento\Catalog\Test\Fixture\Product\CustomOptions</code> using a data set <code>drop_down_with_one_option_fixed_price</code> from the repository <code>Magento\Catalog\Test\Repository\Product\CustomOptions</code></li>
+      <li><code>checkout_data</code> fields are assigned with a data set <code>simple_drop_down_with_one_option_fixed_price</code> from the <code>Magento\Catalog\Test\Repository\CatalogProductSimple\CheckoutData</code> repository</li>
+      <li><code>price</code> fields are assigned with a data set <code>drop_down_with_one_option_fixed_price</code> from the <code>Magento\Catalog\Test\Repository\CatalogProductSimple\Price</code> repository. This data set is used by <a href="/guides/v2.0/mtf/mtf_entities/mtf_constraint.html">constraint</a>.</li>
+    </ul>
   </li>
-  <li>
-    <p>Put data with different variations for your test into <code>CreateSimpleProductEntityTest.xml</code> file. As a result you’ll have the following structure:</p>
-  </li>
-</ol>
+</ul>
+
+<p>You’ll have the following structure:</p>
 
 <p><a href="/common/images/Data set2.png"><img src="/common/images/Data set2.png" /></a></p>
 
