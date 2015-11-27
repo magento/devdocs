@@ -14,11 +14,9 @@ github_link: mtf/mtf_entities/mtf_dataset.md
 {:toc}
 
 ##Data set overview
-Data sets are used for filling test forms with prepared data.
+Data sets contain data used by test case and constraints.
 A data set can have several variations.
-Each variation has constraints that are checked at the end of the test flow.
-
-This topic shows how to prepare data for the test.
+Each variation has constraints that are called at the end of the test flow.
 
 ##Data set structure
 
@@ -26,7 +24,7 @@ Data set is an XML file that contains test variations for a test case.
 
 Variation includes:
 
-- Data used during the test run
+- Data used during the test flow and assertions
 - [Constraints][] that will be called after test flow
 
 The following table shows structure of the data set:
@@ -35,7 +33,7 @@ The following table shows structure of the data set:
 <col width="1*">
 <col width="1*">
 <col width="2*">
-<tr><th>Node </th><th>Semantics </th><th>Attibutes </th></tr>
+<tr><th>Node </th><th>Semantics </th><th>Attributes </th></tr>
 <tr>
 <td><code>config</code> </td>
 <td>The root element that defines an XML namespace and an XML Schema. </td>
@@ -46,18 +44,18 @@ The following table shows structure of the data set:
 </tr>
 <tr>
 <td><code>testCase</code> </td>
-<td>Contains configuration data of a test case in attributes, and variations in child elements. </td>
+<td>Contains a reference to the test case class in attribute and variations in child elements. </td>
 <td><ul>
 <li><code>name</code> - full name of a test case class. Required.</li>
-<li><code>summary</code> - description of a test case. Optional.</li>
+<li><code>summary</code> - description of a test case. Required.</li>
 <li><code>ticketId</code> - identifier of related ticket. Optional.</li>
 </ul> </td>
 </tr>
 <tr>
 <td><code>variation</code></td>
-<td>Contains in attributes the configuration data of the variation, and data with constraints in child elements.</td>
+<td>Contains variation description in attributes and data with constraints in child elements.</td>
 <td><ul>
-<li><code>name</code> - a full name of a test case class. Required.</li>
+<li><code>name</code> - a variation name. Required.</li>
 <li><code>firstConstraint</code> - a full name of constraint that is performed first. Optional.</li>
 <li><code>method</code> - a name of the test method from the test class. Optional.</li>
 <li><code>summary</code> - description of the variation. Optional.</li>
@@ -68,8 +66,8 @@ The following table shows structure of the data set:
 <td><code>data</code> </td>
 <td>Data to be used by a test case. </td>
 <td><ul>
-<li><code>name</code> - a reference to the element where data must be entered. A format is the following: <i>entity_name</i>/<code>data</code>/<i>name_of_the_field</i>, for example <code>product/data/name</code>. The processing logic is defined in Injectable???? class. Optional.</li>
-<li><code>xsi:type</code> - a full name of constraint class that is performed next in a queue. 
+<li><code>name</code> - a name of variable with extra data. A format can be the following: <i>entity_name</i>/<code>data</code>/<i>name_of_the_field</i>, for example <code>product/data/name</code>. The processing logic is defined in <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php">InjectableFixture</a> class. Required.</li>
+<li><code>xsi:type</code> - a type of the value. 
 The following data types are available:
 <ul>
 <li><code>array</code></li>
@@ -78,20 +76,22 @@ The following data types are available:
 <li><code>object</code></li>
 <li><code>number</code></li>
 <li><code>null</code></li>
-</ul></li>Optional.
+</ul></li>Required.
 </ul> </td>
 </tr>
 <tr>
 <td><code>constraint</code></td>
-<td>Constraint that contains assertions performed after test flow.  </td>
+<td>Reference to the constraint class performed after the test flow.  </td>
 <td><ul>
-<li><code>name</code> - a full name of a test case class. Required.</li>
-<li><code>next</code> - a full name of constraint class that is performed next in a queue. Optional.</li>
-<li><code>prev</code> - a full name of constraint class that is performed previous in a queue. Optional.</li>
+<li><code>name</code> - a full name of the constraint class. Required.</li>
+<li><code>next</code> - a full name of the constraint class performing next in a queue. Optional.</li>
+<li><code>prev</code> - a full name of the constraint class performing previous in a queue. Optional.</li>
 </ul></td></tr>
 </table>
 
-Variation should contain only data that is required for its flow.
+<div class="bs-callout bs-callout-warning">
+  <p>Variation should contain only data that is required for its flow and constraints.</p>
+</div>
 
 <div class="bs-callout bs-callout-tip">
   <p>Data with name <code>tag</code> can be used to customize test suite run.</p>
@@ -102,8 +102,7 @@ Let's see an example:
 {%highlight xml%}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/variations.xsd">
     <testCase name="Magento\Catalog\Test\TestCase\Product\CreateSimpleProductEntityTest" summary="Create Simple Product" ticketId="MAGETWO-23414">
-        <variation name="CreateSimpleProductEntityTestVariation1">
-            <data name="description" xsi:type="string">Create product with custom options(fixed price)</data>
+        <variation name="CreateSimpleProductEntityTestVariation1" summary="Create product with custom options(fixed price)">
             <data name="product/data/url_key" xsi:type="string">simple-product-%isolation%</data>
             <data name="product/data/name" xsi:type="string">Simple Product %isolation%</data>
             <data name="product/data/sku" xsi:type="string">simple_sku_%isolation%</data>
@@ -128,10 +127,9 @@ Let's see an example:
 This is a data set that:
 
 - corresponds to the XSD schema `<magento2>/dev/tests/functional/vendor/magento/mtf/etc/variations.xsd`
-- relates to the `Magento\Catalog\Test\TestCase\Product\CreateSimpleProductEntityTest` test
-- performs creation of the simple product
-- concerned with ticket `MAGETWO-23414` in Jira
-- contains variation `CreateSimpleProductEntityTestVariation1` that creates product with fixed price with the following data (coresponds to the `Magento\Catalog\Test\Fixture\CatalogProductSimple` fixture):
+- relates to the `Magento\Catalog\Test\TestCase\Product\CreateSimpleProductEntityTest` test (performs creation of the simple product) 
+- relates to the ticket `MAGETWO-23414` in Jira
+- contains variation `CreateSimpleProductEntityTestVariation1` that creates product with fixed price with the following data (corresponds to the `Magento\Catalog\Test\Fixture\CatalogProductSimple` fixture):
   - `url_key` field is assigned with `simple-product-%isolation%`. [More info about %isolation% usage]({{site.gdeurl}}mtf/mtf_entities/mtf_fixture-repo.html#mtf_repo_isolation).
   - `name` field is assigned with `Simple Product %isolation%`
   - `sku` field is assigned with `simple_sku_%isolation%`
@@ -144,14 +142,7 @@ This is a data set that:
   - `checkout_data` fields are assigned with a data set `simple_drop_down_with_one_option_fixed_price` from the `Magento\Catalog\Test\Repository\CatalogProductSimple\CheckoutData` repository
   - `price` fields are assigned with a data set `drop_down_with_one_option_fixed_price` from the `Magento\Catalog\Test\Repository\CatalogProductSimple\Price` repository. This data set is used by [constraint][].
 
-##How to add data set to a test
-Let's observe creation of a data set for a test that checks creation of a simple product:
-
-1. Create XML file `CreateSimpleProductEntityTest.xml` in the `<magento2>/dev/tests/functional/tests/app/Magento/Catalog/Product/TestCase` directory.
-
-2. Put in a file the different variations that contain data and constraints for your test.
-
-As a result you'll have the following structure:
+You'll have the following structure:
 
 <p><a href="{{ site.baseurl }}common/images/Data set2.png"><img src="{{ site.baseurl }}common/images/Data set2.png"/></a></p> 
 
@@ -159,4 +150,5 @@ As a result you'll have the following structure:
 [constraint]: {{site.gdeurl}}mtf/mtf_entities/mtf_constraint.html
 [fixtures]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html
 [data source]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source
+
 *[MTF]: Magento Testing Framework
