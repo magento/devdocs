@@ -5,7 +5,7 @@ subgroup: D_Entities
 title: Entities of the Magento Testing Framework
 menu_title: Typified element
 menu_order: 5
-github_link: mtf/mtf_entities/mtf_typified_element.md
+github_link: mtf/mtf_entities/mtf_typified-element.md
 ---
 
 <h2 id="mtf_typified-element_overview">Typified element overview</h2>
