@@ -317,9 +317,9 @@ The repository code for these cases follows:
 
 ## Configuration repository {#mtf_repository_config}
 
-The configuration repository stores predefined data sets for Magento configuration settings. It is the repository for the <a href="https://github.com/magento/magento2/tree/master/app/code/Magento/Config">Magento_Config module</a> and is named `ConfigData.xml`.
+The configuration repository stores predefined data sets for Magento configuration settings. It is the repository for the <a href="{{site.mage2000url}}app/code/Magento/Config">Magento_Config module</a> and is named `ConfigData.xml`.
 
-Let's see the following example of configuration settings for <a href="https://github.com/magento/magento2/tree/develop/app/code/Magento/Authorizenet">Authorize.Net module</a> `<magento2>/dev/tests/functional/tests/app/Magento/Authorizenet/Test/Repository/ConfigData.xml`.
+Let's see the following example of configuration settings for <a href="{{site.mage2000url}}app/code/Magento/Authorizenet">Authorize.Net module</a> `<magento2>/dev/tests/functional/tests/app/Magento/Authorizenet/Test/Repository/ConfigData.xml`.
 
 {% highlight xml %}
 
@@ -534,7 +534,7 @@ When the test is run, credentials from `credentials.xml` are transfered to the d
 
 ### `%isolation%` placeholder {#mtf_repo_isolation}
 
-You can use `%isolation%` placeholder in repository fields where you want to put a random value. It is useful when you need a unique value, for example `sku`, that has to be unique each test cycle.
+You can use `%isolation%` placeholder where you want to put a random value. It is useful when you need a unique value, for example `sku`, that has to be unique each test cycle.
 
 Some examples:
 

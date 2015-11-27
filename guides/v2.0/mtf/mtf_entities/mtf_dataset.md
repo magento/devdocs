@@ -23,7 +23,9 @@ This topic shows how to prepare data for the test.
 ##Data set structure
 
 Data set is an XML file that contains test variations for a test case.
+
 Variation includes:
+
 - Data used during the test run
 - [Constraints][] that will be called after test flow
 
@@ -64,9 +66,9 @@ The following table shows structure of the data set:
 </tr>
 <tr>
 <td><code>data</code> </td>
-<td>Data to be used by test case. </td>
+<td>Data to be used by a test case. </td>
 <td><ul>
-<li><code>name</code> - a reference to the element where data must be entered. A format is the following: <i>entity_name</i>/<code>data</code>/<i>name_of_the_field</i>, for example <code>product/data/name</code>. Optional.</li>
+<li><code>name</code> - a reference to the element where data must be entered. A format is the following: <i>entity_name</i>/<code>data</code>/<i>name_of_the_field</i>, for example <code>product/data/name</code>. The processing logic is defined in Injectable???? class. Optional.</li>
 <li><code>xsi:type</code> - a full name of constraint class that is performed next in a queue. 
 The following data types are available:
 <ul>
@@ -95,17 +97,66 @@ Variation should contain only data that is required for its flow.
   <p>Data with name <code>tag</code> can be used to customize test suite run.</p>
 </div>
 
+Let's see an example:
+
+{%highlight xml%}
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/variations.xsd">
+    <testCase name="Magento\Catalog\Test\TestCase\Product\CreateSimpleProductEntityTest" summary="Create Simple Product" ticketId="MAGETWO-23414">
+        <variation name="CreateSimpleProductEntityTestVariation1">
+            <data name="description" xsi:type="string">Create product with custom options(fixed price)</data>
+            <data name="product/data/url_key" xsi:type="string">simple-product-%isolation%</data>
+            <data name="product/data/name" xsi:type="string">Simple Product %isolation%</data>
+            <data name="product/data/sku" xsi:type="string">simple_sku_%isolation%</data>
+            <data name="product/data/price/value" xsi:type="string">10000</data>
+            <data name="product/data/short_description" xsi:type="string">Simple Product short_description %isolation%</data>
+            <data name="product/data/description" xsi:type="string">Simple Product description %isolation%</data>
+            <data name="product/data/weight" xsi:type="string">50</data>
+            <data name="product/data/quantity_and_stock_status/qty" xsi:type="string">657</data>
+            <data name="product/data/custom_options/dataset" xsi:type="string">drop_down_with_one_option_fixed_price</data>
+            <data name="product/data/checkout_data/dataset" xsi:type="string">simple_drop_down_with_one_option_fixed_price</data>
+            <data name="product/data/price/dataset" xsi:type="string">drop_down_with_one_option_fixed_price</data>
+            <constraint name="Magento\Catalog\Test\Constraint\AssertProductSaveMessage" />
+            <constraint name="Magento\Catalog\Test\Constraint\AssertProductInGrid" />
+            <constraint name="Magento\Catalog\Test\Constraint\AssertProductInCategory" />
+            <constraint name="Magento\Catalog\Test\Constraint\AssertProductPage" />
+            <constraint name="Magento\Catalog\Test\Constraint\AssertProductInCart" />
+        </variation>
+    </testCase>
+</config>
+{%endhighlight xml%}
+
+This is a data set that:
+
+- corresponds to the XSD schema `<magento2>/dev/tests/functional/vendor/magento/mtf/etc/variations.xsd`
+- relates to the `Magento\Catalog\Test\TestCase\Product\CreateSimpleProductEntityTest` test
+- performs creation of the simple product
+- concerned with ticket `MAGETWO-23414` in Jira
+- contains variation `CreateSimpleProductEntityTestVariation1` that creates product with fixed price with the following data (coresponds to the `Magento\Catalog\Test\Fixture\CatalogProductSimple` fixture):
+  - `url_key` field is assigned with `simple-product-%isolation%`. [More info about %isolation% usage]({{site.gdeurl}}mtf/mtf_entities/mtf_fixture-repo.html#mtf_repo_isolation).
+  - `name` field is assigned with `Simple Product %isolation%`
+  - `sku` field is assigned with `simple_sku_%isolation%`
+  - `price` field is processed by a [data source][] `Magento\Catalog\Test\Fixture\Product\Price` and is assigned `10000`
+  - `short_description` field is assigned with `Simple Product short_description %isolation%`
+  - `description` field is assigned with `Simple Product description %isolation%`
+  - `weight` field is assigned with `50`
+  - `quantity_and_stock_status/qty` field is assigned with `657`
+  - `custom_options` field is processed by a [data source][] `Magento\Catalog\Test\Fixture\Product\CustomOptions` using a data set `drop_down_with_one_option_fixed_price` from the repository `Magento\Catalog\Test\Repository\Product\CustomOptions`
+  - `checkout_data` fields are assigned with a data set `simple_drop_down_with_one_option_fixed_price` from the `Magento\Catalog\Test\Repository\CatalogProductSimple\CheckoutData` repository
+  - `price` fields are assigned with a data set `drop_down_with_one_option_fixed_price` from the `Magento\Catalog\Test\Repository\CatalogProductSimple\Price` repository. This data set is used by [constraint][].
+
 ##How to add data set to a test
-To create a data set for Create simple product test:
+Let's observe creation of a data set for a test that checks creation of a simple product:
 
-1. Create .xml file with the same name as the test: `CreateSimpleProductEntityTest.xml` within TestCase directory.
+1. Create XML file `CreateSimpleProductEntityTest.xml` in the `<magento2>/dev/tests/functional/tests/app/Magento/Catalog/Product/TestCase` directory.
 
-2. Put data with different variations for your test into `CreateSimpleProductEntityTest.xml` file. As a result you'll have the following structure:
+2. Put in a file the different variations that contain data and constraints for your test.
+
+As a result you'll have the following structure:
 
 <p><a href="{{ site.baseurl }}common/images/Data set2.png"><img src="{{ site.baseurl }}common/images/Data set2.png"/></a></p> 
 
 [Constraints]: {{site.gdeurl}}mtf/mtf_entities/mtf_constraint.html
 [constraint]: {{site.gdeurl}}mtf/mtf_entities/mtf_constraint.html
 [fixtures]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html
-
+[data source]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source
 *[MTF]: Magento Testing Framework

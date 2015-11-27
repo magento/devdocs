@@ -256,7 +256,7 @@ Our new field `layout_updates` is complex and contains different elements and lo
 
 You can use a data source that provides additional processing of the field (for example, parsing or creation of new field).
 
-All data source logic defined in a PHP file which must be linked as specified in the field's `source` attribute.
+All data source logic is defined in a PHP file which must be linked as specified in the field's `source` attribute.
 
 It is located in `Fixture` directory of corresponding module. That contains subdirectory with the name of fixture, and source class in it with the name of fixture field. See the following example.
 
