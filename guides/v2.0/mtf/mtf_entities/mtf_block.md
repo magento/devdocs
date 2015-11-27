@@ -39,7 +39,7 @@ A basic flow is the following:
 
 ### How to determine a block name and a path {#mtf_block_path}
 
-The block name and path in the Magento functional tests (`<magento2>/dev/tests/functional/tests/app`) should reflect a corresponding block in the Magento code base (`<magento2>/app/code`) for your convenience.
+The block name and path in the Magento functional tests (`<magento2>/dev/tests/functional/tests/app`) should reflect a corresponding block in the Magento code base for your convenience.
 For example, you develop a functional test for the bundle product creation, that uses the Bundle Items section. In the Magento code base, the block, which is responsible for the bundle option, is the `.../Magento/Bundle/Block/Adminhtml/Catalog/Product/Edit/Tab/Bundle/Option.php`, so in the Magento functional tests you can create a new file `.../Magento/Bundle/Block/Test/Adminhtml/Catalog/Product/Edit/Tab/Bundle/Option.php`.
 
 Magento can show you a full class name of the block and path to the PHTML template on the Magento page (changes web page design) or implicitly in the HTML code of the page.
