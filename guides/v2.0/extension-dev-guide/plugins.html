@@ -250,14 +250,20 @@
 
 <p>You declare a plugin for an object in the <code>di.xml</code> file for a module:</p>
 
-<script src="https://gist.github.com/xcomSteveJohnson/c9a36d9ec887c4bbc34d.js"></script>
+<p>```js</p>
+<config>
+    <type name="{ObservedType}">
+        <plugin name="{pluginName}" type="{PluginClassName}" sortorder="1" disabled="true" />
+    </type>
+</config>
+<p>```</p>
 
 <p>You must specify these elements:</p>
 
 <ul>
   <li><code>type name</code>. A class, interface, or virtual type, which the plug-in observes.</li>
   <li><code>plugin name</code>. An arbitrary plug-in name that identifies a plug-in. Also used to merge the configurations for the plug-in.</li>
-  <li><code>plugin type</code>. The name of a plug-in’s class or its virtual type. Use the following schema when you specify this element: <modelname>\Plugin.</modelname></li>
+  <li><code>plugin type</code>. The name of a plug-in’s class or its virtual type. Use the following schema when you specify this element: <code>\Vendor\Module\Plugin\&lt;ModelName&gt;Plugin</code>.</li>
   <li><code>plugin sortOrder</code>. The order in which plug-ins that call the same method are run.</li>
   <li><code>plugin disabled</code>. To disable a plug-in, set this element to <code>true</code>.</li>
 </ul>
@@ -315,13 +321,13 @@
 
 <div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
-<span class="k">namespace</span> <span class="nx">My\Module\Model\Product</span><span class="p">;</span>
+<span class="k">namespace</span> <span class="nx">My\Module\Plugin</span><span class="p">;</span>
  
-<span class="k">class</span> <span class="nc">Plugin</span>
+<span class="k">class</span> <span class="nc">ProductPlugin</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">beforeSetName</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nv">$name</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="k">return</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;(&#39;</span> <span class="o">.</span> <span class="nv">$name</span> <span class="o">.</span> <span class="s1">&#39;)&#39;</span><span class="p">);</span>
+        <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;(&#39;</span> <span class="o">.</span> <span class="nv">$name</span> <span class="o">.</span> <span class="s1">&#39;)&#39;</span><span class="p">];</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></div>
 
@@ -331,9 +337,9 @@
 
 <div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
-<span class="k">namespace</span> <span class="nx">My\Module\Model\Product</span><span class="p">;</span>
+<span class="k">namespace</span> <span class="nx">My\Module\Plugin</span><span class="p">;</span>
 
-<span class="k">class</span> <span class="nc">Plugin</span>
+<span class="k">class</span> <span class="nc">ProductPlugin</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">afterGetName</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nv">$result</span><span class="p">)</span>
     <span class="p">{</span>
@@ -347,9 +353,9 @@
 
 <div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
-<span class="k">namespace</span> <span class="nx">My\Module\Model\Product</span><span class="p">;</span>
+<span class="k">namespace</span> <span class="nx">My\Module\Plugin</span><span class="p">;</span>
  
-<span class="k">class</span> <span class="nc">Plugin</span>
+<span class="k">class</span> <span class="nc">ProductPlugin</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">aroundSave</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nx">\Closure</span> <span class="nv">$proceed</span><span class="p">)</span>
     <span class="p">{</span>
