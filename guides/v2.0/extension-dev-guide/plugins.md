@@ -38,7 +38,7 @@ You cannot use plug-ins for:
 <!-- * Classes created without dependency injection. That is, you cannot use plugins with classes that you create directly through the new operator. -->
 * Final methods / classes
 * Non-public methods
-* Class methods (aka static methods)
+* Class methods (such as static methods)
 * Inherited methods
 * __construct
 
@@ -46,13 +46,7 @@ You cannot use plug-ins for:
 
 You declare a plugin for an object in the <code>di.xml</code> file for a module:
 
-```js
-<config>
-    <type name="{ObservedType}">
-        <plugin name="{pluginName}" type="{PluginClassName}" sortOrder="1" disabled="true"/>
-    </type>
-</config>
-```
+<script src="https://gist.github.com/xcomSteveJohnson/c9a36d9ec887c4bbc34d.js"></script>
 
 You must specify these elements:
 
