@@ -46,13 +46,19 @@ You cannot use plug-ins for:
 
 You declare a plugin for an object in the <code>di.xml</code> file for a module:
 
-<script src="https://gist.github.com/xcomSteveJohnson/c9a36d9ec887c4bbc34d.js"></script>
+```js
+<config>
+    <type name="{ObservedType}">
+        <plugin name="{pluginName}" type="{PluginClassName}" sortOrder="1" disabled="true"/>
+    </type>
+</config>
+```
 
 You must specify these elements:
 
 * `type name`. A class, interface, or virtual type, which the plug-in observes.
 * `plugin name`. An arbitrary plug-in name that identifies a plug-in. Also used to merge the configurations for the plug-in.
-* `plugin type`. The name of a plug-in's class or its virtual type. Use the following schema when you specify this element: <ModelName>\Plugin.
+* `plugin type`. The name of a plug-in's class or its virtual type. Use the following schema when you specify this element: `\Vendor\Module\Plugin\<ModelName>Plugin`.
 * `plugin sortOrder`. The order in which plug-ins that call the same method are run.
 * `plugin disabled`. To disable a plug-in, set this element to `true`.
 
@@ -97,13 +103,13 @@ Prefix the name of the original method with `before` as the following sample sho
 {% highlight PHP %}
 <?php
 
-namespace My\Module\Model\Product;
+namespace My\Module\Plugin;
  
-class Plugin
+class ProductPlugin
 {
     public function beforeSetName(\Magento\Catalog\Model\Product $subject, $name)
     {
-        return array('(' . $name . ')');
+        return ['(' . $name . ')'];
     }
 }
 {% endhighlight %}
@@ -115,9 +121,9 @@ Prefix the name of the original method with `after` as the following sample show
 {% highlight PHP %}
 <?php
 
-namespace My\Module\Model\Product;
+namespace My\Module\Plugin;
 
-class Plugin
+class ProductPlugin
 {
     public function afterGetName(\Magento\Catalog\Model\Product $subject, $result)
     {
@@ -133,9 +139,9 @@ Prefix the name of the original listener with `around` as the following sample s
 {% highlight PHP %}
 <?php
 
-namespace My\Module\Model\Product;
+namespace My\Module\Plugin;
  
-class Plugin
+class ProductPlugin
 {
     public function aroundSave(\Magento\Catalog\Model\Product $subject, \Closure $proceed)
     {
