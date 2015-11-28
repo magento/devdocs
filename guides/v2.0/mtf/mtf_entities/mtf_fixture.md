@@ -125,7 +125,7 @@ The following table describes `<fixture>` attributes.
 | `module`              | Name of the module in which to place the fixture.                          |                string  |Magento_Catalog   |   required   |
 | `class`               | Path to the PHP class. Generator will use this path to locate automatically generated PHP file.         |                string  |Magento\Catalog\Test\Fixture\CatalogProductSimple      |   required   |
 | `type`                | Table type for the entity.     | `eav`, `flat`, `virtual`, `composite` | eav | optional   |
-| `entity_type`         | Database table name where the entity data is stored. Specify more than one database table as a comma-separted list (for example, `"eav_attribute, catalog_eav_attribute"`) and assign `type = "composite"`. |                string  |catalog_product   |   optional   |
+| `entity_type`         | Database table name where the entity data is stored. Specify more than one database table as a comma-separated list (for example, `"eav_attribute, catalog_eav_attribute"`) and assign `type = "composite"`. |                string  |catalog_product   |   optional   |
 | `product_type`        | Type of product. Applicable only for product fixtures.   | string |simple  |   optional   |
 | `collection`          | Collection to generate data sets. It is taken from `<magento2>/app/code/Magento`.   |  string | Magento\Catalog\Model\Resource\Product\Collection |   optional   |
 | `identifier`          | Field used to create data set names in the repository.| string|sku| optional |

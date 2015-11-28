@@ -12,7 +12,7 @@ github_link: frontend-dev-guide/howdoi/checkout/checkout_new_step.md
 The default Magento Checkout consists of two steps:
 
  - Shipping Information
- - Review and Paymetns Information
+ - Review and Payments Information
 
 You can add a custom checkout step, it should be implemented as a UI component. For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. 
 
@@ -26,7 +26,7 @@ To create the view part of the new checkout step:
 1. Create the `.js` file implementing the view model.
 2. Create an `.html` template for the component.
 
-Each step is described in details in the folowing paragraphs. 
+Each step is described in details in the following paragraphs.
 
 ### Add the JavaScript file implementing the new step {#component}
 

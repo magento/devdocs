@@ -30,7 +30,7 @@ The Magento web API framework provides integrators and developers the means to u
 
 * The framework supports field filtering of web api responses to conserve mobile bandwidth.
 
-* Integration style web API’s enable a sinlge web API call to run multiple services at once for a more efficient integration.  An example of this behavior can be see in the Catalog where one web API call can create a product; if your payload includes the inventory object and media object then the framework will also create the product’s inventory & media in that one API call.
+* Integration style web API’s enable a single web API call to run multiple services at once for a more efficient integration.  An example of this behavior can be see in the Catalog where one web API call can create a product; if your payload includes the inventory object and media object then the framework will also create the product’s inventory & media in that one API call.
 
 
 <h2 id="uses">What can I do with the Magento web APIs?</h2>
