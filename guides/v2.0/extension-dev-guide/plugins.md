@@ -36,10 +36,11 @@ Interception ensures that conflicting extensions run without intervention.
 You cannot use plug-ins for:
 
 <!-- * Classes created without dependency injection. That is, you cannot use plugins with classes that you create directly through the new operator. -->
-* Final methods
+* Final methods / classes
 * Non-public methods
-* Final classes
+* Class methods (aka static methods)
 * Inherited methods
+* __construct
 
 <h2 id="plugin-declare">Declare a plug-in</h2>
 
