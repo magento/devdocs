@@ -38,7 +38,7 @@ You cannot use plug-ins for:
 <!-- * Classes created without dependency injection. That is, you cannot use plugins with classes that you create directly through the new operator. -->
 * Final methods / classes
 * Non-public methods
-* Class methods (aka static methods)
+* Class methods (such as static methods)
 * Inherited methods
 * __construct
 
