@@ -228,7 +228,11 @@
 <p>where &lt;VendorName&gt; is the name of the company providing the module and &lt;ModuleName&gt; is the name of the module.</p>
 
 <h5 id="example">Example</h5>
-<pre><code> ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Magento_AdminNotification', __DIR__);
+<pre><code> \Magento\Framework\Component\ComponentRegistrar::register(
+     \Magento\Framework\Component\ComponentRegistrar::MODULE,
+     'Magento_AdminNotification',
+     __DIR__
+ );
 </code></pre>
 <p>&nbsp;</p>
 
