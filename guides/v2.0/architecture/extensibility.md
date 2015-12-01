@@ -20,7 +20,7 @@ Maximizing extensibility has been our goal through all aspects of Magento develo
 Explore Magento's potential for customization through these topics: 
 
 * <a href="{{ site.gdeurl }}architecture/global_extensibility_features.html">Global product features that support extension development</a>
-* <a href="{{ site.gdeurl }}architecture/frontend_custom_strategies.html">Ease of frontend customization</a>Ease of frontend customization 
+* <a href="{{ site.gdeurl }}architecture/frontend_custom_strategies.html">Ease of frontend customization</a>
 
 
 <h3>What makes a product extensible? </h3>

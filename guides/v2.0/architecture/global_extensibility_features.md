@@ -3,7 +3,7 @@ layout: default
 group: arch-guide
 subgroup: Architectural Basics
 title: Global features that support extensibility
-menu_title:Global features that support extensibility 
+menu_title: Global features that support extensibility 
 menu_node: 
 menu_order:
 github_link: architecture/global_extensibility_features.md 
