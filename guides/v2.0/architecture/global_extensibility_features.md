@@ -24,7 +24,7 @@ Essential qualities foster extensibility throughout the entire set of Magento co
 
 
 <h3>Modularity</h3>
-The concept of the <i>module</i> is the heart of Magento extension development, and modular design of software components (in particular, modules, themes, and language packages) is a core architectural principle of the product. Self-contained modules of discrete code are organized by feature, thereby reducing each module's external dependencies. Themes 
+The concept of the <i>module</i> is the heart of Magento extension development, and modular design of software components (in particular, modules, themes, and language packages) is a core architectural principle of the product. Self-contained modules of discrete code are organized by feature, thereby reducing each module's external dependencies.  
 
 If a module is self-contained, then you can modify or replace it without affecting other areas of the code. This <i>loose coupling</i> of software components reduces the ripple effects throughout your code base of changing code. 
 
@@ -34,7 +34,7 @@ See <a href="{{ site.gdeurl }}architecture/components/modules/mod_intro.md">Modu
 <h3>Reliance on popular design patterns</h3>
 Reliance on known architectural and programming patterns helps PHP developers orient themselves to the specific development issues that affect coding in a particular product ecosystem. This can reduce the learning curve for new Magento developers. 
 
-Design patterns are time-tested, widely recognized software architecture patterns. Magento product architecture incorporates many well known patterns, but the Model-View-Controller (MVC) and module pattern hold particular interest for extension developers. See <a href="{{ site.gdeurl }}architecture/archi_perspectives/Magento_MVC.html">Magento Model-View-Controller Design</a> for more information.
+Design patterns are time-tested, widely recognized software architecture patterns. Magento product architecture incorporates many well known patterns, but the Model-View-Controller (MVC)  holds particular interest for extension developers. See <a href="{{ site.gdeurl }}architecture/archi_perspectives/Magento_MVC.html">Magento Model-View-Controller Design</a> for more information.
 
 See <a href="{{ site.gdeurl }}architecture/archi_perspectives/DesignPatterns.html">Design Patterns</a> for a more detailed discussion of the specific software design patterns used in Magento. 
 
@@ -48,12 +48,12 @@ See <a href="{{ site.gdeurl }}coding-standards/bk-coding-standards.html">Coding 
 
 
 <h3>Rich product ecosystem</h3>
-The wider Magento ecosystem provides an extensive community and rich third-party marketplace for extensions. Visit Magento Extension Marketplace for an overview of the many modules and themes available for download and to buy modules and theme packages, offering more possibilities than you can imagine for extending your storefront.  
+The wider Magento ecosystem provides an extensive community and rich third-party marketplace for extensions. Visit Magento Marketplace for an overview of the many modules and themes available for download and to buy modules and theme packages, which offer more possibilities than you can imagine for extending your storefront.  
  
 
 
 <h3>Flexible attribute types</h3>
-You can enhance your storefront by adding unique attributes to the default product attributes. For example, you might need to add a new attribute to describe a product, such as texture or an industry-specific rating. You can add these attributes from the Admin panel, and the product interface will display them. 
+You can enhance your storefront by adding unique attributes to the default product attributes. For example, you might need to add a new attribute to describe a product, such as texture or an industry-specific rating. You can add these attributes from the Admin panel, and the product interface  displays them. 
 
 
 <table>
@@ -114,7 +114,7 @@ See <a href="{{ site.gdeurl }}extension-dev-guide/bk-extension-dev-guide.html">P
  
 <h3>Plug-ins</h3>
  
-Plug-ins, like modules, are a mechanism for adding features to the core Magento product. <i>Plug-ins</i> enable you to make changes to the behavior of any public  method in a Magento class. You can consider it a form of extension that uses the `Plugin` class. 
+Plug-ins, like modules, are a mechanism for adding features to the core Magento product. <i>Plug-ins</i> enable you to make changes to the behavior of any public method in a Magento class. You can consider it a form of extension that uses the `Plugin` class. 
 
 Plug-ins are also called <i>interceptors</i>.  Applications use the plug-in pattern to change method behavior without modifying the actual class. Plug-ins can typically intercept method processing before or after the method runs, or only when the method throws an exception. 
 
