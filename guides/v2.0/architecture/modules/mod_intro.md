@@ -28,7 +28,7 @@ Modules live in the `/app/code` directory of a Magento installation, in a direct
 
 A module declares itself (i.e. defines its name and existence) in the `module.xml` file, located in `<your Magento install dir>/app/code/<Vendor>/<ModuleName>/etc/`. 
 
-A module should be named according to the Namespace_Module schema, where
+A module should be named according to the Vendor_ModuleName schema, where
 
 * `Vendor` is a name of a module's vendor
 * `ModuleName` is a name assigned to a module by its vendor

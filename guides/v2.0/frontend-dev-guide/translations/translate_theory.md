@@ -8,7 +8,7 @@ menu_order: 1
 github_link: frontend-dev-guide/translations/translate_theory.md
 ---
 
-## Overview ##
+## What's in this topic ##
 
 Your custom theme might contain new strings that are not present in the Magento out of the box themes. To ensure that your theme is displayed correctly with any language applied on a store view, you need to make sure that the unique strings of your theme are added to the translation <a href="{{site.gdeurl}}frontend-dev-guide/translations/xlate.html#translate_terms">dictionary</a> when the <a href="{{site.gdeurl}}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict" target="_blank">i18n tool</a> is run. 
 Then when a new language package is created and used to translate a store view, all theme strings are translated as well.

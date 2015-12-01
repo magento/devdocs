@@ -9,13 +9,13 @@ github_link: frontend-dev-guide/themes/theme-structure.md
 redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-structure.html
 ---
 
-<h2 id="theme-structure-intro">Overview</h2>
-A <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-general.html#theme-gen-overview" target="_blank">design theme</a> is an important part of the Magento application. This article describes the file structure of a Magento theme.
+<h2 id="theme-structure-intro">What's in this topic</h2>
+A <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-general.html#theme-gen-overview" target="_blank">design theme</a> is an important part of the Magento application. This topic describes the file structure of a Magento theme.
 
 <h2 id="theme-structure-loc">Magento theme location</h2>
-All Magento storefront themes are located under `app/design/frontend/<Vendor>/`.
+Storefront themes are conventionally located under `app/design/frontend/<Vendor>/`. Though technically they can be located in other directories. For example Magento built-in themes can located under `vendor/magento/theme-frontend-<theme_code>` when a Magento instance is deployed from the Composer repository.  
 
-Each theme is stored in a separate directory:
+Each theme must be stored in a separate directory:
 <pre>
 app/design/frontend/&lt;Vendor&gt;/
 ├──&nbsp;&lt;theme1&gt;
@@ -27,7 +27,7 @@ app/design/frontend/&lt;Vendor&gt;/
 <h2 id="theme-structure-comp">Theme components</h2>
 The structure of a Magento theme directory typically would be like following:
 <pre>
-app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/
+&lt;theme_dir&gt;/
 ├──&nbsp;&lt;Vendor&gt;_&lt;Module&gt;/&nbsp;
 │	├──&nbsp;web/
 │	│	├──&nbsp;css/
@@ -45,6 +45,7 @@ app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/
 │	├──&nbsp;images/
 │	├──&nbsp;js/
 ├──&nbsp;composer.json&nbsp;
+├──&nbsp;registration.php&nbsp;
 ├──&nbsp;theme.xml&nbsp;
 </pre>
 Let's have a closer look at each particular sub-directory.
@@ -223,32 +224,39 @@ Let's have a closer look at each particular sub-directory.
     </tr>
     <tr>
       <td colspan="1">
-        <code>/theme.xml</code>
-
-      </td>
-      <td colspan="1">required</td>
-      <td colspan="1">
-        The file is mandatory as it declares a theme as a system component. It contains the basic meta-information, like the theme name and the parent theme name, is the theme is inherited from an existing theme. The file is used by the Magento system to recognize the theme.
-           <!--ADDLINK-->
-
-      </td>
-    </tr>
-    <tr>
-      <td colspan="1">
         <code>
           /composer.json
         </code>
       </td>
       <td colspan="1">optional</td>
       <td colspan="1">
-        Describes the theme dependencies and some meta-information. Will be here if your theme is a Composer package<!--ADDLINK-->
+        Describes the theme dependencies and some meta-information. Will be here if your theme is a Composer package.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <code>/registration.php</code>
+      </td>
+      <td colspan="1">required</td>
+      <td colspan="1">
+        Required to register your theme in the system.
+           
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <code>/theme.xml</code>
+      </td>
+      <td colspan="1">required</td>
+      <td colspan="1">
+        The file is mandatory as it declares a theme as a system component. It contains the basic meta-information, like the theme name and the parent theme name, is the theme is inherited from an existing theme. The file is used by the Magento system to recognize the theme.
+           
       </td>
     </tr>
   </tbody>
 </table>
 
 <h2 id="theme-structure-files">Theme files</h2>
-All theme files are stored under `app/design/<area>/<Vendor>/<theme>/`.
 
 Apart from the configuration file and theme metadata file, all theme files fall into the following two categories:
 
@@ -260,7 +268,7 @@ A set of theme files that are returned by the server to a browser as is, without
 
 Static files can be located in a theme directory as follows:
 <pre>
-app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/
+&lt;theme_dir&gt;/
 ├──&nbsp;media/
 ├──&nbsp;web
 │	├──&nbsp;css/&nbsp;(except&nbsp;the&nbsp;&quot;source&quot;&nbsp;sub-directory)
@@ -281,7 +289,7 @@ View files that are processed or executed by the server in order to provide resu
 
 Dynamic view files are located in a theme directory as follows:
 <pre>
-app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/
+&lt;theme_dir&gt;/
 ├──&nbsp;Magento_&lt;module&gt;/&nbsp;
 │	├──&nbsp;web/
 │	│	├──&nbsp;css/

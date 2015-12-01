@@ -30,7 +30,7 @@ Best Practices about architectural structure of a new extension (module.xml), wi
 
 Fundamental programming designs/concepts, like how MVC architecture works in our code
 
-<h3 id="know_arch">Know your architecure</h3>
+<h3 id="know_arch">Know your architecture</h3>
 Provide a link to AG.
 
 <h3 id="bp_arch_1">Best Practice 1</h3>

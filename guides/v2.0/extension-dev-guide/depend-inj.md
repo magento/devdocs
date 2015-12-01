@@ -61,8 +61,7 @@ Constructor injection *must* be used for all optional and required service depen
 
 A sample proxy (which you declare in `di.xml`) follows:
 
-{% highlight PHP %}
-<?php
+{% highlight XML %}
 <type name="Magento\Backend\Model\Config\Structure\Element\Iterator\Field" shared="false">
     <arguments>
         <argument name="groupFlyweight" xsi:type="object">Magento\Backend\Model\Config\Structure\Element\Group\Proxy</argument>
@@ -70,7 +69,7 @@ A sample proxy (which you declare in `di.xml`) follows:
 </type>
 {% endhighlight %}
 
-<p class="q">Reviewer: Can you provide me with another example? Foo/bar examples are not ideal.</p>
+
 
 {% highlight PHP %}
 <?php
@@ -439,7 +438,7 @@ Do not push injectables to non-injectables because it violates the <a href="http
 <h3 id="dep-inj-mod-type-fact">Factories</h3>
 Factories are special objects that have only one purpose: to create an instance of one non-injectable class or interface. Unlike other objects, factories are allowed to depend on the object manager. Factories are used to isolate object manager from business code:
 
-<p class="q">Reviewer: Add a description of what this sample does?</p>
+
 
 {% highlight PHP %}
 <?php

@@ -13,7 +13,7 @@ github_link: frontend-dev-guide/layouts/xml-instructions.md
    </style>
 </head>
 
-<h2 id="fedg_layout_xml-instruc_overview">Overview</h2>
+<h2 id="fedg_layout_xml-instruc_overview">What's in this topic</h2>
 
 
 Changing layout files is one of the two possible ways to customize page layout in Magento (the second way is altering templates). 
@@ -174,13 +174,14 @@ A structure without content that holds other layout elements such as blocks and 
 </table>
 
 Sample of usage in layout:
-<pre>
+{%highlight xml%}
 ...
-&lt;container&nbsp;name=&quot;div.sidebar.additional&quot;&nbsp;htmlTag=&quot;div&quot;&nbsp;htmlClass=&quot;sidebar&nbsp;sidebar-additional&quot;&nbsp;after=&quot;div.sidebar.main&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;container&nbsp;name=&quot;sidebar.additional&quot;&nbsp;as=&quot;sidebar_additional&quot;&nbsp;label=&quot;Sidebar&nbsp;Additional&quot;/&gt;
-&lt;/container&gt;
+<container name="div.sidebar.additional" htmlTag="div" htmlClass="sidebar sidebar-additional" after="div.sidebar.main">
+    <container name="sidebar.additional" as="sidebar_additional" label="Sidebar Additional"/>
+</container>
 ...
-</pre>
+{%endhighlight xml%}
+
 This would add a new column to the page layout.
 
 
@@ -188,7 +189,7 @@ This would add a new column to the page layout.
 <p>To help you to position elements in a specific order suitable for design, SEO, usability, or other requirements, Magento software provides the <code>before</code> and <code>after</code> layout attributes.</p>
 <p>These optional attributes can be used in layout XML files to control the order of elements in their common parent.
 
-The following tables give a detailed description of the results you can get using the `before` and `after` attributes. The first table uses a block a as positioned element.
+The following tables give a detailed description of the results you can get using the <code>before</code> and <code>after</code> attributes. The first table uses a block a as positioned element.
 
 <table>
    <tbody>
@@ -264,21 +265,24 @@ The following tables give a detailed description of the results you can get usin
 
 Calls public methods on the block API.
 <p><b>Details:</b> Used to set up the execution of a certain method of the block during block generation; the <code>&lt;action></code> node must be located in the scope of the <code>&lt;block></code> node.</p>
+
+
 Example:
-<pre>
-&lt;block&nbsp;class=&quot;Magento\Module\Block\Class&quot;&nbsp;name=&quot;block&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;action&nbsp;method=&quot;setText&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;text&quot;&nbsp;translate=&quot;true&quot;&nbsp;xsi:type=&quot;string&quot;&gt;Text&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/action&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;action&nbsp;method=&quot;setEnabled&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;enabled&quot;&nbsp;xsi:type=&quot;boolean&quot;&gt;true&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/action&gt;
-&lt;/block&gt;
-</pre>
+
+{%highlight xml%}
+<block class="Magento\Module\Block\Class" name="block">
+    <action method="setText">
+        <argument name="text" translate="true" xsi:type="string">Text</argument>
+    </action>
+    <action method="setEnabled">
+        <argument name="enabled" xsi:type="boolean">true</argument>
+    </action>
+</block>
+{%endhighlight xml%}
 
 
 <p><code>&lt;action></code> child nodes are translated into block method arguments. Child nodes names are arbitrary. If there are two or more nodes with the same name under <code>&lt;action></code>, they are passed as one array.</p>
-<p>In the previous example, the value of <code>&lt;arg1></code> is passed as the first argument and <code>&lt;arg2></code> values are passed as `array('one', 'two')`. The list of all available methods depends on the block implementation (for example, the public method of the block class).</p>
+<p>In the previous example, the value of <code>&lt;arg1></code> is passed as the first argument and <code>&lt;arg2></code> values are passed as <code>array('one', 'two')</code>. The list of all available methods depends on the block implementation (for example, the public method of the block class).</p>
 <table>
    <tbody>
       <tr>
@@ -302,7 +306,7 @@ To pass parameters, use the <a href="#argument"><code>&lt;argument&gt;&lt;/argum
 <p>Updates in <code>&lt;referenceBlock></code> and <code>&lt;referenceContainer></code> are applied to the corresponding <code>&lt;block></code> or <code>&lt;container></code>.</p>
 <p>For example, if you make a reference by <code>&lt;referenceBlock name="right"></code>, you're targeting the block <code>&lt;block name="right"></code>.</p>
 
-To pass parameters to a block use the <a href="#argument">`<argument></argument>`</a> instruction.
+To pass parameters to a block use the <a href="#argument"><code>&lt;argument>&lt;/argument></code></a> instruction.
 
 <table>
    <tbody>
@@ -349,8 +353,12 @@ To pass parameters to a block use the <a href="#argument">`<argument></argument>
 <h3 id="fedg_layout_xml-instruc_ex_mv">&lt;move></h3>
 Sets the declared block or container element as a child of another element in the specified order.
 <p><b>Example:</b></p>
-<pre>&lt;move element="name.of.an.element" destination="name.of.destination.element" as="new_alias" after="name.of.element.after" before="name.of.element.before"/></pre>
-<p>Keep the following information in mind when using <code>&lt;move></code></p>
+
+{%highlight xml%}
+<move element="name.of.an.element" destination="name.of.destination.element" as="new_alias" after="name.of.element.after" before="name.of.element.before"/>
+{%endhighlight xml%}
+
+
 <ul>
    <li><code>&lt;move></code> is skipped if the element to be moved is not defined.</li>
    <li>If the <code>as</code> attribute is not defined, the current value of the element alias is used. If that is not possible, the value of the <code>name</code> attribute is used instead.</li>
@@ -396,9 +404,11 @@ Sets the declared block or container element as a child of another element in th
 Includes a certain layout file.
 
 Used as follows:
-<pre>
-&lt;update&nbsp;handle=&quot;{name_of_handle_to_include}&quot;/&gt;
-</pre>
+
+{%highlight xml%}
+<update handle="{name_of_handle_to_include}"/>
+{%endhighlight xml%}
+
 The specified <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html#handle" target="_blank">handle</a> is "included" and executed recursively.
 
 <h3 id="argument">&lt;argument&gt;</h3>
@@ -435,40 +445,46 @@ Used to pass an argument.
 </table>
 
 To pass multiple arguments use the following construction:
-<pre>
-&lt;arguments&gt;
-   &lt;argument&gt;&lt;/argument&gt;
-   &lt;argument&gt;&lt;/argument&gt;
+{%highlight xml%}
+<arguments>
+   <argument></argument>
+   <argument></argument>
    ...
-&lt;/arguments&gt;
-</pre>
+</arguments>
+{%endhighlight xml%}
 
 To pass an argument that is an array use the following construction:
-<pre>
-&lt;argument&gt;
-   &lt;item&gt;&lt;/item&gt;
-   &lt;item&gt;&lt;/item&gt;
+
+{%highlight xml%}
+<argument>
+   <item></item>
+   <item></item>
    ...
-&lt;/argument&gt;
-</pre>
+</argument>
+{%endhighlight xml%}
 
 <p id="getter">Arguments values set in a layout file can be accessed in <a href="{{site.gdeurl}}frontend-dev-guide/templates/template-overview.html" target="_blank">templates</a> using the <code>get{ArgumentName}()</code> and <code>has{ArgumentName}()</code> methods. The latter returns a boolean defining whether there's any value set. 
 <code>{ArgumentName}</code> is obtained from the <code>name</code> attribute the following way: for getting the value of <code>&lt;argument name="some_string"&gt;</code> the method name is <code>getSomeString()</code>.
 
 Example:
-Setting a value of `css_class` in the <code><a href="{{site.mage2000url}}app/code/Magento/Theme/view/frontend/layout/default.xml" target="_blank">app/code/Magento/Theme/view/frontend/layout/default.xml</a></code> layout file:
-<pre>
-...
-&lt;arguments&gt;
-    &lt;argument name=&quot;css_class&quot; xsi:type=&quot;string&quot;&gt;header links&lt;/argument&gt;
-&lt;/arguments&gt;
-...
-</pre>
+Setting a value of <code>css_class</code> in the <code><a href="{{site.mage2000url}}app/code/Magento/Theme/view/frontend/layout/default.xml" target="_blank">app/code/Magento/Theme/view/frontend/layout/default.xml</a></code> layout file:
 
-Using the value of `css_class` in <code><a href="{{site.mage2000url}}app/code/Magento/Theme/view/frontend/templates/html/title.phtml" target="_blank">app/code/Magento/Theme/view/frontend/templates/html/title.phtml</a></code>:
-<pre>
+{%highlight xml%}
 ...
-$cssClass&nbsp;=&nbsp;$this-&gt;getCssClass()&nbsp;?&nbsp;'&nbsp;'&nbsp;.&nbsp;$this-&gt;getCssClass()&nbsp;:&nbsp;'';
+<arguments>
+    <argument name="css_class" xsi:type="string">header links</argument>
+</arguments>
 ...
-</pre>
+{%endhighlight xml%}
+
+
+Using the value of <code>css_class</code> in <code><a href="{{site.mage2000url}}app/code/Magento/Theme/view/frontend/templates/html/title.phtml" target="_blank">app/code/Magento/Theme/view/frontend/templates/html/title.phtml</a></code>:
+
+{%highlight php%}
+...
+$cssClass = $this->getCssClass() ? ' ' . $this->getCssClass() : '';
+...
+{%endhighlight %}
+
+
 

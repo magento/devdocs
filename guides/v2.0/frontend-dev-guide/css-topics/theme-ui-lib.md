@@ -8,7 +8,7 @@ github_link: frontend-dev-guide/css-topics/theme-ui-lib.md
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/theme-ui-lib.html
 ---
 
-<h2 id="fedg_using-ui-lib_overview">Overview</h2>
+<h2 id="fedg_using-ui-lib_overview">What's in this topic</h2>
 
 The Magento UI library is a flexible <a href="http://lesscss.org/" target="_blank">LESS</a>-based frontend library designed to assist Magento theme developers. It employs a set of mixins for base elements to ease frontend theme development and customization. 
 
@@ -92,10 +92,10 @@ If your theme <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.ht
 
 The complete list of these variables and their default values are stored in <a href="{{site.mage2000url}}lib/web/css/source/lib/variables" target="_blank"><code>lib/web/css/source/lib/variables</code></a>. This directory contains a set of files, corresponding to the set of UI library elements, and each of the files lists element-specific variables. For example, <a href="{{site.mage2000url}}lib/web/css/source/lib/variables/_breadcrumbs.less" target="_blank"><code>lib/web/css/source/lib/variables/_breadcrumbs.less</code></a> contains variables used in the `breadcrumbs()` mixin.
 
-To change the default library variables values, specify the new values for the required variables in the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/css/source/_theme.less</code> file.
+To change the default library variables values, specify the new values for the required variables in the <code>&lt;theme_dir&gt;/web/css/source/_theme.less</code> file.
 
 <div class="bs-callout bs-callout-info" id="info">
-<p>Please mind, that your <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/css/source/_theme.less</code> file overrides <code>_theme.less</code> of the parent theme (if your theme has a parent). So if you want to inherit the parent theme's variable values additionally to your changes, add the content of parent’s <code>_theme.less</code> to your file as well.</p>
+<p>Please mind, that your <code>&lt;theme_dir&gt;/web/css/source/_theme.less</code> file overrides <code>_theme.less</code> of the parent theme (if your theme has a parent). So if you want to inherit the parent theme's variable values additionally to your changes, add the content of parent’s <code>_theme.less</code> to your file as well.</p>
 </div>
 
 The following figure shows the product page shown earlier in this topic, after a custom theme was applied. The theme customized Blank by redefining variables only.

@@ -1,12 +1,12 @@
 ---
 layout: default
 group: install_cli 
-subgroup: T_Command-line installation
+subgroup: 05_Command-line installation
 title: Create or update the deployment configuration
 menu_title: Create or update the deployment configuration
 menu_node: 
 menu_order: 9
-github_link: install-gde/install/install-cli-subcommands-deployment.md
+github_link: install-gde/install/cli/install-cli-subcommands-deployment.md
 redirect_from:
   -  /guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html
   -  /guides/v2.0/install-gde/install/install-cli-subcommands-deployment.html
@@ -62,8 +62,7 @@ The following table discusses the meanings of installation parameters and values
 		<td><p>--db-host</p></td>
 		<td><p>Use any of the following:</p>
 		<ul><li>The database server's fully qualified host name or IP address.</li>
-		<li><code>localhost</code> (default) if your database server is on the same host as your web server.</li>
-		<li>UNIX socket; for example, <code>/var/run/mysqld/mysqld.sock</code></li></ul>
+		<li><code>localhost</code> (default) or <code>127.0.0.1</code> if your database server is on the same host as your web server.<br><code>localhost</code> means the MySQL client library uses UNIX sockets to connect to the database. <code>127.0.0.1</code> causes the client library to use the TCP protocol. For more information about sockets, see the <a href="http://php.net/manual/en/ref.pdo-mysql.php" target="_blank">PHP <code>PDO_MYSQL</code> documentation</a>.</li></ul>
 		<p><strong>Note</strong>: You can optionally specify the database server port in its host name like <code>www.example.com:9000</code></p>
 </td>
 		<td><p>No</p></td>
@@ -89,6 +88,7 @@ The following table discusses the meanings of installation parameters and values
 		<td><p>--db-prefix</p></td>
 		<td><p>Use only if you're installing the Magento database tables in a database instance that has Magento tables in it already.</p>
 		<p>In that case, use a prefix to identify the Magento tables for this installation. Some customers have more than one Magento instance running on a server with all tables in the same database.</p>
+		<p>The prefix can be a maximum of five characters in length. It must begin with a letter and can include only letters, numbers, and underscore characters.</p>
 		<p>This option enables those customers to share the database server with more than one Magento installation.</p></td>
 		<td><p>No</p></td>
 	</tr>
@@ -127,8 +127,8 @@ The following table discusses the meanings of installation parameters and values
 	</tr>
 	<tr>
 		<td><p>--http-cache-hosts</p></td>
-		<td><p>Comma-separated list of HTTP cache gateway hosts to which to send purge requests (do not separate hosts with a space character). (For example, Varnish servers.) If you have more than one server, use this parameter to purge the cache from all hosts in the same request.</p>
-			<p>Format must be <code>&lt;hostname or ip>:&lt;listen port></code>, where you can omit <code>&lt;listen port></code> if it's port 80. For example, <code>--http-cache-hosts=192.0.2.100,192.0.2.155:6081</code></p> </td>
+		<td><p>Comma-separated list of HTTP cache gateway hosts to which to send purge requests. (For example, Varnish servers.) Use this parameter to specify the host or hosts to purge in the same request. (It doesn't matter if you have only one host or many hosts.)</p>
+			<p>Format must be <code>&lt;hostname or ip>:&lt;listen port></code>, where you can omit <code>&lt;listen port></code> if it's port 80. For example, <code>--http-cache-hosts=192.0.2.100,192.0.2.155:6081</code>. Do not separate hosts with a space character.</p> </td>
 		<td><p>No</p></td>
 	</tr>
 	</tbody>

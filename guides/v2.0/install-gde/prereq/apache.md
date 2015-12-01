@@ -4,7 +4,7 @@ group: install_pre
 subgroup: Prerequisites
 title: Apache
 menu_title: Apache
-menu_order: 2
+menu_order: 01
 github_link: install-gde/prereq/apache.md
 redirect_from: /guides/v1.0/install-gde/prereq/apache.html
 ---
@@ -80,12 +80,29 @@ To install the default version of Apache (Ubuntu 14&mdash;Apache 2.4, Ubuntu 12&
 
 		apache2 -v
 
-The result displays similar to the following:
+	The result displays similar to the following:
 
-	Server version: Apache/2.2.22 (Ubuntu)
-	Server built:   Jul 22 2014 14:35:32
+		Server version: Apache/2.2.22 (Ubuntu)
+		Server built:   Jul 22 2014 14:35:32
 
-{% include install/allowoverrides22.html %}
+3.	Enable rewrites and `.htaccess`:
+
+	*	<a href="#apache-rewrites2.4">Enable rewrites and .htaccess for Apache 2.4</a>
+	*	<a href="#apache-rewrites2.2">Enable rewrites and .htaccess for Apache 2.2</a>
+
+{% include install/allowoverrides24.html %}
+
+#### Next steps
+*	<a href="#403-apache">Solving 403 (Forbidden) errors</a>
+*	Continue with the next prerequisite (<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)
+*	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Determine your installation or upgrade path</a>
+
+{% include install/allowoverrides24.html %}
+
+#### Next steps
+*	<a href="#403-apache">Solving 403 (Forbidden) errors</a>
+*	Continue with the next prerequisite (<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)
+*	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Determine your installation or upgrade path</a>
 
 <h3 id="install-prereq-apache-ubuntu-upgrade">Upgrading Apache on Ubuntu 12</h3>
 To use PHP 5.6 on Ubuntu 12, you must upgrade Apache to version 2.4. (By default, Ubuntu 12 comes with Apache 2.2.)
@@ -116,13 +133,14 @@ To upgrade to Apache 2.4:
 		Server version: Apache/2.4.10 (Ubuntu)
 		Server built:   Jul 22 2014 22:46:25
 
+4.	Continue with the next section.
+
 {% include install/allowoverrides24.html %}
 
-Next steps:
-
+#### Next steps
 *	<a href="#403-apache">Solving 403 (Forbidden) errors</a>
 *	Continue with the next prerequisite (<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)
-*	Start your installation by going to <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a>.
+*	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Determine your installation or upgrade path</a>
 
 <h2 id="install-prereq-apache-centos">Installing Apache on CentOS</h2>
 
@@ -131,17 +149,28 @@ Magento requires Apache use server rewrites. You must also specify the type of d
 Installing and configuring Apache is basically a three-step process: install the software, enable rewrites, and specify <code>.htaccess</code> directives.
 
 <h3 id="apache-install-centos">Installing Apache</h3>
-Install Apache 2 if you haven't already done so.
+1.	Install Apache 2 if you haven't already done so.
 
-	yum -y install httpd
+		yum -y install httpd
+
+2.	Verify the installation:
+
+		httpd -v
+
+	Messages similar to the following display to confirm the installation was successful:
+
+		Server version: Apache/2.2.15 (Unix)
+		Server built:   Oct 16 2014 14:48:21
+
+3.	Continue with the next section.
 
 {% include install/allowoverrides22.html %}
 
-Next steps:
-
+#### Next steps
 *	<a href="#403-apache">Solving 403 (Forbidden) errors</a>
 *	Continue with the next prerequisite (<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)
-*	Start your installation by going to <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a>.
+*	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Determine your installation or upgrade path</a>
+
 
 <h2 id="403-apache">Solving 403 (Forbidden) errors</h2>
 If you encounter 403 Forbidden errors when trying to access the Magento site, you can update your Apache configuration or your virtual host configuration to enable visitors to the site as discussed in one of the following sections:
@@ -183,5 +212,5 @@ For example:
 *	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">MySQL</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">Configuring security options</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Installing optional software</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Ways to install the Magento software</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Determine your installation or upgrade path</a>
 

@@ -17,5 +17,6 @@ Before you start building Magento modules, make sure you&#8217;ve got Magento an
 
 * [Install Magento and any required dependencies]({{ site.gdeurl }}/install-gde/bk-install-guide.html)
 * [Composer integration](composer-integration.html)
-* [Set your mode to developer]({{ site.gdeurl }}/config-guide/bootstrap/magento-how-to-set.html)
+* [Component registration](component-registration.html)
+* [Set your mode to developer]({{ site.gdeurl }}/config-guide/cli/config-cli-subcommands-mode.html)
 <!-- * [Determine your file structure](x) -->

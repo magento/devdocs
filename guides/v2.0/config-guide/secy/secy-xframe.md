@@ -4,7 +4,7 @@ group: config-guide
 subgroup: B_Security
 title: X-Frame-Options header
 menu_title: X-Frame-Options header
-menu_order: 2
+menu_order: 5
 menu_node: 
 github_link: config-guide/secy/secy-xframe.md
 ---

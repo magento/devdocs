@@ -1,17 +1,19 @@
 ---
 layout: default
 group: install_cli 
-subgroup: T_Command-line installation
-title: Install the Magento software using the command line 
-menu_title: Install the Magento software using the command line 
-menu_node: 
+subgroup: 05_Command-line installation
+title: Install the Magento software
+menu_title: Install the Magento software
 menu_order: 4
-github_link: install-gde/install/install-cli-install.md
+github_link: install-gde/install/cli/install-cli-install.md
 redirect_from:
   -  /guides/v1.0/install-gde/install/install-cli-install.html
   -  /guides/v2.0/install-gde/install/install-cli-install.html
 ---
 
+<div class="bs-callout bs-callout-tip">
+  <p>Totally lost? Need a helping hand? Try our <a href="{{ site.gdeurl }}install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{ site.gdeurl }}install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
+</div>
   
 <h4>Contents</h4>
 
@@ -22,10 +24,6 @@ See one of the following sections:
 
 See also <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall.html">Update, reinstall, uninstall</a>.
 
-<div class="bs-callout bs-callout-warning">
-    <p>Because of database changes in the Merchant Beta release (1.0.0-beta), you <em>must</em> uninstall the Magento software and reinstall it. Details are provided in <a href="{{ site.gdeurl }}install-gde/install/install-merchbeta.html">Merchant Beta&mdash;uninstall and reinstall</a>.</p>
-</div>
-
 
 <h2 id="instgde-install-cli-prereq">Before you start your installation</h2>
 
@@ -34,8 +32,8 @@ Before you begin, make sure that:
 1.	Your system meets the requirements discussed in <a href="{{ site.gdeurl }}install-gde/system-requirements.html">Magento system requirements</a>.
 2.	You completed all prerequisite tasks discussed in <a href="{{ site.gdeurl }}install-gde/prereq/prereq-overview.html">Prerequisites</a>.
 3.	You took your first installation steps as discussed in <a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Your install or upgrade path</a>.
-4.	After you log in to the Magento server, switch to the Magento file system owner as discussed in <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-switch">Create the Magento file system owner</a>.
-5.	Review the information discussed in <a href="{{ site.gdeurl }}install-gde/install/cli/install-subcommands.html">Get started with the command-line installation</a>.
+4.	After you log in to the Magento server, <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.
+5.	Review the information discussed in <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands.html">Get started with the command-line installation</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -131,7 +129,8 @@ The following table discusses the meanings of installation option names and valu
 	<tr>
 		<td><p>--admin-password</p></td>
 		<td><p>Magento administrator user password.</p>
-			<p>The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character.</p></td>
+			<p>The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character.</p>
+			<p>We recommend a longer, more complex password. Enclose the entire password string in single quotes and escape special characters with <code>/</code>. For example, <code>--admin-password='A0b9\%t_3\`g'</code></p></td>
 		<td><p>Yes</p></td>
 	</tr>
 		<tr>
@@ -158,8 +157,7 @@ The following table discusses the meanings of installation option names and valu
 		<td><p>--db-host</p></td>
 		<td><p>Use any of the following:</p>
 		<ul><li>The database server's fully qualified host name or IP address.</li>
-		<li><code>localhost</code> (default) if your database server is on the same host as your web server.</li>
-		<li>UNIX socket; for example, <code>/var/run/mysqld/mysqld.sock</code></li></ul>
+		<li><code>localhost</code> (default) or <code>127.0.0.1</code> if your database server is on the same host as your web server.<br><code>localhost</code> means the MySQL client library uses UNIX sockets to connect to the database. <code>127.0.0.1</code> causes the client library to use the TCP protocol. For more information about sockets, see the <a href="http://php.net/manual/en/ref.pdo-mysql.php" target="_blank">PHP <code>PDO_MYSQL</code> documentation</a>.</li></ul>
 		<p><strong>Note</strong>: You can optionally specify the database server port in its host name like <code>www.example.com:9000</code></p>
 </td>
 		<td><p>No</p></td>
@@ -185,6 +183,7 @@ The following table discusses the meanings of installation option names and valu
 		<td><p>--db-prefix</p></td>
 		<td><p>Use only if you're installing the Magento database tables in a database instance that has Magento tables in it already.</p>
 		<p>In that case, use a prefix to identify the Magento tables for this installation. Some customers have more than one Magento instance running on a server with all tables in the same database.</p>
+		<p>The prefix can be a maximum of five characters in length. It must begin with a letter and can include only letters, numbers, and underscore characters.</p>
 		<p>This option enables those customers to share the database server with more than one Magento installation.</p></td>
 		<td><p>No</p></td>
 	</tr>
@@ -264,12 +263,6 @@ The following table discusses the meanings of installation option names and valu
 		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td><p>--use-sample-data</p></td>
-		<td><p>Use this parameter to install optional Magento sample data. Magento sample data uses the Luma theme to provide you with a sample storefront, complete with products, customers, CMS pages, and so on. You can use it to get the feel of a Magento storefront.</p>
-		<p>Sample data installs only if you already enabled the package as discussed in <a href="{{ site.gdeurl }}install-gde/install/sample-data.html">Enable optional Magento sample data</a></p>.</td>
-		<td><p>No</p></td>
-	</tr>
-	<tr>
 		<td><p>--cleanup-database</p></td>
 		<td><p>To drop database tables before installing the Magento software, specify this parameter without a value. Otherwise, the Magento database is left intact.</p></td>
 		<td><p>No</p></td>
@@ -290,7 +283,27 @@ The following table discusses the meanings of installation option names and valu
 		<td><p>Type of definitions used by the Object Manager. Possible values are <a href="https://github.com/phadej/igbinary" target="_blank"><code>igbinary</code></a> or <code>serialized</code>.</p></td>
 		<td><p>No</p></td>
 	</tr> -->
-
+<tr>
+<td><p>--amqp-host</p></td>
+<td><p>Enterprise Edition only. Do not use the --amqp options unless you have already set up an installation of RabbitMQ. See <a href="{{ site.gdeurl }}install-gde/prereq/install-rabbitmq.html">RabbitMQ installation</a> for more information about .</p>
+<p>The host name where RabbitMQ is installed.</p></td>
+<td><p>No</p></td>
+</tr>
+<tr>
+<td><p>--amqp-port</p></td>
+<td><p>Enterprise Edition only. The port to use to connect to RabbitMQ. The default is <code>5672</code>.</p></td>
+<td><p>No</p></td>
+</tr>
+<tr>
+<td><p>--amqp-user</p></td>
+<td><p>Enterprise Edition only. The user name for connecting to RabbitMQ. Do not use the default user <code>guest</code>.</p></td>
+<td><p>No</p></td>
+</tr>
+<tr>
+<td><p>--amqp-password</p></td>
+<td><p>Enterprise Edition only. The password for connecting to RabbitMQ. Do not use the default password <code>guest</code>.</p></td>
+<td><p>No</p></td>
+</tr>
 	</tbody>
 </table>
 
@@ -314,8 +327,6 @@ The following example installs Magento with the following options:
 
 	The database name is `magento`, and the user name and password are both `magento`
 
-*	Installs optional sample data
-
 *	Uses server rewrites
 
 *	The Magento administrator has the following properties:
@@ -332,7 +343,7 @@ The following example installs Magento with the following options:
 		--db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
 		--admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
 		--admin-user=admin --admin-password=admin123 --language=en_US \
-		--currency=USD --timezone=America/Chicago --use-sample-data --use-rewrites=1
+		--currency=USD --timezone=America/Chicago --use-rewrites=1
 
 Messages similar to the following display to indicate a successful installation:
 
@@ -391,7 +402,6 @@ Messages similar to the following display to indicate a successful installation:
   <p>The command must be entered either on a single line or, as in the preceding example, with a <code>\</code> character at the end of each line.</p></span>
 </div>
 
-#### Next steps
+#### Next step
 
-*	<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>.
-*	To install optional Magento sample data (sample store, products, customers, and so on), see <a href="{{ site.gdeurl }}install-gde/install/sample-data.html">Enable optional Magento sample data</a>.
+<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>.

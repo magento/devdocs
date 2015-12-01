@@ -1,7 +1,7 @@
 ---
 layout: default
 group:  migration
-subgroup: Data migration tool
+subgroup: C_Data migration tool
 title: Data migration tool
 menu_title: Data migration tool
 menu_node: parent

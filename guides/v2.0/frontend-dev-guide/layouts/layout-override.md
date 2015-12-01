@@ -9,7 +9,7 @@ github_link: frontend-dev-guide/layouts/layout-override.md
 redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-override.html
 ---
 
-<h2 id="fedg_layout_override_overview">Overview</h2>
+<h2 id="fedg_layout_override_overview">What's in this topic</h2>
 
 Not all layout customizations can be performed by <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> existing layouts. If the amount of customizations is large, you can use the overriding function for the needed layout file. This means that the new file that you place in the theme will be used instead of the parent <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html#layout-loc" target="_blank">theme</a> layout file of <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html#layout-loc" target="_blank">base</a> layout file.
 
@@ -55,7 +55,7 @@ To add an overriding base layout file (to override a base layout provided by the
 2.	Put a layout file with the same name in the following location:
 
 <pre>
-__app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;
+&lt;theme_dir&gt;
 &nbsp;&nbsp;|__/&lt;Namespace_Module&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;|__/layout
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|__/override
@@ -68,8 +68,8 @@ __app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;
 These files override the following layouts:
 
 <ul>
-<li><code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/layout/&lt;layout1&gt;.xml</code></li>
-<li><code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/layout/&lt;layout2&gt;.xml</code></li>
+<li><code>&lt;module_dir&gt;/view/frontend/layout/&lt;layout1&gt;.xml</code></li>
+<li><code>&lt;module_dir&gt;/view/frontend/layout/&lt;layout2&gt;.xml</code></li>
 </ul>
 
 <h3 id="fedg_layout_override_theme">Override theme layouts</h3>
@@ -79,7 +79,7 @@ To add an overriding theme file (to override a parent theme layout):
 2.	Put a layout file with the same name in the following location:
 
 <pre>
-__app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;
+&lt;theme_dir&gt;
 &nbsp;&nbsp;|__/&lt;Namespace_Module&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;|__/layout
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|__/override
@@ -93,8 +93,8 @@ __app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;
 These files override the following layouts:
 
 <ul>
-<li><code>app/design/frontend/&lt;Parent_Vendor&gt;/&lt;parent_theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout/&lt;layout1&gt;.xml</code></li>
-<li><code>app/design/frontend/&lt;Parent_Vendor&gt;/&lt;parent_theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout/&lt;layout1&gt;.xml</code></li>
+<li><code>&lt;parent_theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout/&lt;layout1&gt;.xml</code></li>
+<li><code>&lt;parent_theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout/&lt;layout1&gt;.xml</code></li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">

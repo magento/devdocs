@@ -4,7 +4,7 @@ group: extension-dev-guide
 subgroup: 6_Module Development
 title: Service contract design patterns
 menu_title: Service contract design patterns
-menu_order: 3
+menu_order: 4
 github_link: extension-dev-guide/service-contracts/design-patterns.md
 redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-patterns.html
 ---

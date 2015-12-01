@@ -2,9 +2,14 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Swagger UI</title>
+  <title>Magento REST API documentation</title>
+
+  <link rel="icon" type="image/png" href="{{ site.baseurl }}i/magento.png" />
+ 
+  <!--
   <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
-  <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16" />
+  <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16" /> -->
+
   <link href='css/typography.css' media='screen' rel='stylesheet' type='text/css'/>
   <link href='css/reset.css' media='screen' rel='stylesheet' type='text/css'/>
   <link href='css/screen.css' media='screen' rel='stylesheet' type='text/css'/>
@@ -33,7 +38,7 @@
       if (url && url.length > 1) {
         url = decodeURIComponent(url[1]);
       } else {
-        url = "http://petstore.swagger.io/v2/swagger.json";
+        url = "http://devdocs.magento.com/swagger/schemas/2.0.0-rc-api-schema.json";
       }
 
       // Pre load translate...
@@ -104,12 +109,12 @@
 <body class="swagger-section">
 <div id='header'>
   <div class="swagger-ui-wrap">
-    <a id="logo" href="http://swagger.io">swagger</a>
-    <form id='api_selector'>
-      <div class='input'><input placeholder="http://example.com/api" id="input_baseUrl" name="baseUrl" type="text"/></div>
-      <div class='input'><input placeholder="api_key" id="input_apiKey" name="apiKey" type="text"/></div>
-      <div class='input'><a id="explore" href="#" data-sw-translate>Explore</a></div>
-    </form>
+    <a id="logo" href="http://devdocs.magento.com/guides/v2.0/rest/bk-rest.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;REST APIs</a>
+    <!--  <form id='api_selector'>
+      <div class='input'><input placeholder="http://devdocs.magento.com/swagger/schemas/latest.json" id="input_baseUrl" name="baseUrl" type="text"/></div>
+    <div class='input'><input placeholder="api_key" id="input_apiKey" name="apiKey" type="text"/></div> 
+      <div class='input'><a id="explore" href="#" data-sw-translate>Load a schema</a></div> 
+    </form> -->
   </div>
 </div>
 
