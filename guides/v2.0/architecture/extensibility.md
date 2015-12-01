@@ -12,15 +12,15 @@ github_link: architecture/extensibility.md
 <h2 id="m2arch-whatis-overview">Extensibility and modularity</h2>
 
 
-Product <i>extensibility</i> describes how easy  it is to expand  a product's feature set. An extensible product has been designed from its earliest planning stages for  customization and enhancement. It is designed for ease in  augmenting your installation's feature set, enriching current features, and integrating with third-party software
+Product <i>extensibility</i> describes how easy  it is to expand  a product's feature set. An extensible product has been designed from its earliest planning stages for  customization and enhancement. It is designed for ease in  augmenting your installation's feature set, enriching current features, and integrating with third-party software.
 
 
-Maximizing extensibility has been our goal through all aspects of Magento development.  Core tasks such as Shipping are packaged as discrete modules, and you expand your storefront features by installing modules that you either buy from third-party vendors or create yourself. While logic specific to each shipping carrier is packaged in a discrete module, you can easily add or delete shipping providers by simply adding or deleting modules. The product framework provides common logic to control routing and other core application functions.  
+Maximizing extensibility has been our goal through all aspects of Magento development.  Core tasks such as Shipping are packaged as discrete modules, and you expand your storefront features by installing modules that you either buy from third-party vendors or create yourself. While logic specific to each shipping carrier is packaged in a discrete module, you can easily add or delete shipping providers by simply adding or deleting modules. The Magento Framework provides common logic to control routing and other core application functions.  
 
 Explore Magento's potential for customization through these topics: 
 
-* Global product features that support extension development
-* Ease of frontend customization 
+* <a href="{{ site.gdeurl }}architecture/global_extensibility_features.html">Global product features that support extension development</a>
+* <a href="{{ site.gdeurl }}architecture/frontend_custom_strategies.html">Ease of frontend customization</a>Ease of frontend customization 
 
 
 <h3>What makes a product extensible? </h3>
