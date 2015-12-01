@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Optional software</title>
+	<title>Cannot write to the var/generation directory</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/install-gde/prereq/optional.html">
+	<link rel="canonical" href="//guides/v2.0/install-gde/trouble/tshoot_var-gen-perms.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Optional software</h1>
+		<h1 class="page-heading">Cannot write to the var/generation directory</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/prereq/optional.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/trouble/tshoot_var-gen-perms.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -212,251 +212,65 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h4 id="contents">Contents</h4>
+		<h2 id="trouble-install-gen">Cannot write to the <code>var/generation</code> directory</h2>
 
-<ul>
-  <li><a href="#install-optional-intro">Magento optional software</a></li>
-  <li><a href="#install-optional-ntp">Installing and Configuring Network Time Protocol (NTP)</a></li>
-  <li><a href="#install-optional-phpinfo">Create phpinfo.php</a></li>
-  <li><a href="#install-optional-phpmyadmin">Install phpmyadmin</a></li>
-</ul>
+<h3 id="symptom">Symptom</h3>
+<p>After you successfully install Magento, exceptions display when you try to access the storefront or Admin. (You might have to <a href="/guides/v2.0/http://devdocs.magento.com/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html#config-mode">
+enable developer mode</a> to see the exceptions.)</p>
 
-<h2 id="install-optional-intro">Magento optional software</h2>
-<p>We strongly recommend you install NTP because otherwise, cron-related tasks might not perform properly. (Server dates could be in the past or future, for example.)</p>
+<p>Sample exceptions follow:</p>
 
-<p>The other optional utilities discussed in this topic might assist you with your installation; however, they are not required to install or use Magento.</p>
+<pre><code>Directory "/var/www/html/magento2/pub/static/_requirejs/adminhtml/Magento/backend/en_US" cannot be created Warning!mkdir(): Permission denied
 
-<h2 id="install-optional-ntp">Installing and Configuring Network Time Protocol (NTP)</h2>
-<p><a href="http://www.ntp.org" target="_blank">NTP</a> enables servers to synchronize their system clocks using <a href="http://www.pool.ntp.org/en" target="_blank">globally available pool servers</a>. Magento recommends you use NTP servers you trust, whether they are dedicated hardware solutions your internal network or external, public servers.</p>
+Error filtering template: Unable to write file into directory /var/www/html/magento2/pub/media/catalog/product/cache/1/small_image/240x300/beff4985b56e3afdbeabfc89641a4582/m/b. Access forbidden.
 
-<p>If you are deploying Magento on multiple hosts, NTP is a simple way to guarantee their clocks are all synchronized, no matter what time zone the servers are in. Also, cron-related tasks (such as indexing and transactional e-mails) depend on the server clock being accurate.</p>
-
-<p>See one of the following sections:</p>
-
-<ul>
-  <li><a href="#install-optional-ntp-ubuntu">Install and configure NTP on Ubuntu</a></li>
-  <li><a href="#install-optional-ntp-centos">Install and configure NTP on CentOS</a></li>
-  <li><a href="#install-optional-ntp-servers">Use NTP pool servers</a></li>
-</ul>
-
-<h3 id="install-optional-ntp-ubuntu">Install and configure NTP on Ubuntu</h3>
-
-<p>Enter the following command to install NTP:</p>
-
-<pre><code>apt-get install ntp
+exception 'Magento\Framework\Exception\LocalizedException' with message 'Can't create directory /var/www/html/magento2/var/generation/Magento/Framework/App/ResourceConnection/.' in /var/www/html/magento2/vendor/magento/framework/Code/Generator.php:103 Stack trace: 
+#0 /var/www/html/magento2/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator-&gt;generateClass('Magento\\Framewo...') 
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader-&gt;load('Magento\\Framewo...') 
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...') 
+#3 /var/www/html/magento2/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass-&gt;__construct('Magento\\Framewo...') 
+#4 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader-&gt;getConstructor('Magento\\Framewo...') 
+#5 /var/www/html/magento2/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(71): Magento\Framework\ObjectManager\Definition\Runtime-&gt;getParameters('Magento\\Framewo...') 
+#6 /var/www/html/magento2/vendor/magento/framework/ObjectManager/ObjectManager.php(71): Magento\Framework\ObjectManager\Factory\Dynamic\Developer-&gt;create('Magento\\Framewo...') 
+#7 
+... more ...
 </code></pre>
 
-<p>Continue with <a href="#install-optional-ntp-servers">Use NTP pool servers</a>.</p>
+<h3 id="details">Details</h3>
+<p>For security reasons, Magento recommends a particular set of file system ownership and permissions rules. These rules require you to give ownership and permissions to two users:</p>
 
-<h3 id="install-optional-ntp-centos">Install and configure NTP on CentOS</h3>
+<ul>
+  <li>Web server user</li>
+  <li>A local user on the Magento server</li>
+</ul>
 
-<p>To install and configure NTP:</p>
+<p>In addition, Magento code creates files with permissions consistent with our recommendations. For details, see:</p>
+
+<ul>
+  <li><a href="/guides/v2.0/install-gde/prereq/apache-user.html">Create the Magento file system owner</a></li>
+  <li><a href="/guides/v2.0/install-gde/prereq/integrator_install.html#instgde-prereq-compose-access">Set file system ownership and permissions</a></li>
+</ul>
+
+<h3 id="suggestion">Suggestion</h3>
+<p>First, make sure you completed all tasks discussed in the preceding section. In particular, make sure the Magento file system owner and the web server user share groups in one of the ways discussed in <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-group">Options for shared groups</a>.</p>
+
+<p>If that still does not resolve the issue, try setting the <a href="https://en.wikipedia.org/wiki/Sticky_bit" target="_blank">sticky bit</a> for problem directories, such as <code>var/generation</code>, as follows:</p>
 
 <ol>
+  <li>Identify the directory that does not allow write access.</li>
   <li>
-    <p>Enter the following command to find the appropriate NTP software:</p>
+    <p>As a user with <code>root</code> privileges (or with sufficient privileges to set permissions), enter the following command:</p>
 
-    <pre>yum search ntp</pre>
-  </li>
-  <li>
-    <p>Select a package to install. For example, <code>ntp.x86_64</code>.</p>
-  </li>
-  <li>
-    <p>Install the package.</p>
+    <pre><code>chmod -R g+s &lt;path&gt;
+</code></pre>
 
-    <pre>yum -y install ntp.x86_64</pre>
-  </li>
-  <li>
-    <p>Enter the following command so that NTP starts when the server starts.</p>
+    <p>For example, to set the sticky bit for the <code>/var/www/magento2/var/generation</code> directory, enter:</p>
 
-    <pre>chkconfig ntpd on</pre>
-  </li>
-  <li>
-    <p>Continue with the next section.</p>
+    <pre><code>chmod -R g+s /var/www/magento2/var/generation
+</code></pre>
   </li>
 </ol>
 
-<h3 id="install-optional-ntp-servers">Use NTP pool servers</h3>
-<p>Selecting pool servers is up to you. If you use NTP pool servers, ntp.org recommends you use <a href="http://www.pool.ntp.org/en" target="_blank">pool servers</a> that are close to your servers’ time zone as discussed on the <a href="http://www.pool.ntp.org/en/use.html" target="_blank">NTP pool project help page</a>. If you have a private NTP server that is available to all hosts in your Magento deployment, you can use that server instead.</p>
-
-<ol>
-  <li>
-    <p>Open <code>/etc/ntp.conf</code> in a text editor.</p>
-  </li>
-  <li>
-    <p>Look for lines similar to the following:</p>
-
-    <pre>server 0.centos.pool.ntp.org
-server 1.centos.pool.ntp.org
-server 2.centos.pool.ntp.org</pre>
-  </li>
-  <li>
-    <p>Replace those lines or add additional lines that specify your NTP pool server or other NTP servers. It’s a good idea to specify more than one.</p>
-  </li>
-  <li>
-    <p>An example of using three United States-based NTP servers follows:</p>
-
-    <pre>server 0.us.pool.ntp.org
-server 1.us.pool.ntp.org
-server 2.us.pool.ntp.org</pre>
-  </li>
-  <li>
-    <p>Save your changes to <code>/etc/ntp.conf</code> and exit the text editor.</p>
-  </li>
-  <li>
-    <p>Restart the service.</p>
-
-    <p>Ubuntu: <code>service ntp restart</code></p>
-
-    <p>CentOS: <code>service ntpd restart</code></p>
-  </li>
-  <li>
-    <p>Enter <code>date</code> to check the server’s date.</p>
-
-    <p>If the date is incorrect, make sure the NTP client port (typically, UDP 123) is open in your firewall.</p>
-
-    <p>Try the <code>ntpdate <em>[pool server host name]</em></code> command. If it fails, search for the error it returns.</p>
-
-    <p>If all else fails, try rebooting the server.</p>
-  </li>
-</ol>
-
-<h2 id="install-optional-phpinfo">Create phpinfo.php</h2>
-<p><a href="http://php.net/manual/en/function.phpinfo.php" target="_blank"><code>phpinfo.php</code></a> displays a large amount of information about PHP and its extensions. Add the following code anywhere in your web server’s docroot:</p>
-<pre>&lt;?php
-
-// Show all information, defaults to INFO_ALL
-phpinfo();</pre>
-
-<p>For more information, see the <a href="http://php.net/manual/en/function.phpinfo.php" target="_blank">phpinfo manual page</a>.</p>
-
-<p>To view the results, enter the following URL in your browser’s location or address field:</p>
-
-<pre><code>http://&lt;web server host or IP&gt;/phpinfo.php
-</code></pre>
-
-<p>If a 404 (Not Found) error displays, check the following:</p>
-
-<ul>
-  <li>Start the web server if necessary.</li>
-  <li>
-    <p>Make sure your firewall allows traffic on port 80.</p>
-
-    <p><a href="https://help.ubuntu.com/community/UFW" target="_blank">Help for Ubuntu</a></p>
-
-    <p><a href="http://wiki.centos.org/HowTos/Network/IPTables" target="_blank">Help for CentOS</a></p>
-  </li>
-</ul>
-
-<h2 id="install-optional-phpmyadmin">Install phpmyadmin</h2>
-<p><code>phpmyadmin</code> is an easy-to-use, free database administration utility. You can use it to check and manipulate the contents of your database. You must log in to <code>phpmyadmin</code> as the MySQL database administrative user.</p>
-
-<p>For more information about <code>phpmyadmin</code>, see the <a href="http://www.phpmyadmin.net/home_page/index.php" target="_blank">phpmyadmin home page</a>.</p>
-
-<p>For more detailed information about installation, see the <a href="http://docs.phpmyadmin.net/en/latest/setup.html#quick-install" target="_blank">phpmyadmin installation documentation</a>.</p>
-
-<h2 id="install-optional-phpmyadmin-ubuntu">Install phpmyadmin on Ubuntu</h2>
-<p>To install phpmyadmin on Ubuntu:</p>
-
-<ol>
-  <li>
-    <p>Use the following command:</p>
-
-    <pre><code>apt-get install phpmyadmin
-</code></pre>
-  </li>
-  <li>
-    <p>Follow the prompts on your screen to complete the installation.</p>
-  </li>
-  <li>
-    <p>To use phpmyadmin, enter the following URL in your browser’s address or location field:</p>
-
-    <pre><code>http://&lt;web server host or IP&gt;/phpmyadmin
-</code></pre>
-  </li>
-  <li>
-    <p>When prompted, log in using your MySQL database <code>root</code> or administrative user’s user name and password.</p>
-  </li>
-</ol>
-
-<h2 id="install-optional-phpmyadmin-centos">Install phpmyadmin on CentOS</h2>
-<p>To install phpmyadmin on CentOS:</p>
-
-<ol>
-  <li>
-    <p>Download the epel RPM for the version of CentOS you’re using. A sample follows.</p>
-
-    <pre><code>cd /tmp
-wget http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
-rpm -ivh epel-release-6-8.noarch.rpm
-</code></pre>
-  </li>
-  <li>
-    <p>Install <code>phpmyadmin</code> as follows:</p>
-
-    <pre><code>yum -y install phpmyadmin
-</code></pre>
-  </li>
-  <li>
-    <p>Authorize access to phpmyadmin from your machine’s IP address.</p>
-
-    <p>Open the following file for editing:</p>
-
-    <pre><code>vim /etc/httpd/conf.d/phpMyAdmin.conf
-</code></pre>
-  </li>
-  <li>
-    <p>Replace the following IP address with your IP address</p>
-
-    <pre><code>Require ip localhost
-</code></pre>
-
-    <p>For example,</p>
-
-    <pre><code>Require ip 192.51.100.101
-</code></pre>
-  </li>
-  <li>
-    <p>Replace the following IP with your IP address:</p>
-
-    <pre><code>Allow from localhost
-</code></pre>
-
-    <p>For example,</p>
-
-    <pre><code>Allow from 192.51.100.101
-</code></pre>
-  </li>
-  <li>
-    <p>Save your changes to <code>/etc/httpd/conf.d/phpMyAdmin.conf</code> and exit the text editor.</p>
-  </li>
-  <li>
-    <p>Restart Apache.</p>
-
-    <pre><code>service httpd Restart
-</code></pre>
-  </li>
-  <li>
-    <p>To use phpmyadmin, enter the following command in your browser’s address or location field:</p>
-
-    <pre><code>http://&lt;web server host or IP&gt;/phpmyadmin
-</code></pre>
-  </li>
-  <li>
-    <p>When prompted, log in using your MySQL database <code>root</code> or administrative user’s user name and password.</p>
-  </li>
-</ol>
-
-<h4 id="related-topics">Related topics:</h4>
-
-<ul>
-  <li><a href="/guides/v2.0/install-gde/prereq/apache.html">Apache</a></li>
-  <li><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6—Ubuntu</a></li>
-  <li><a href="/guides/v2.0/install-gde/prereq/php-centos.html">PHP 5.5 or 5.4—CentOS</a></li>
-  <li><a href="/guides/v2.0/install-gde/prereq/mysql.html">MySQL</a></li>
-  <li><a href="/guides/v2.0/install-gde/prereq/security.html">Configuring security options</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/pre-install.html">Ways to install the Magento software</a></li>
-</ul>
 
 
 		</div>
@@ -469,7 +283,7 @@ rpm -ivh epel-release-6-8.noarch.rpm
 
 
 
-<h4>Installation guide<br>Part 1: Getting started</h4>
+<h4>Installation guide<br>Part 3: Post-installation</h4>
 
 
 
@@ -503,6 +317,90 @@ rpm -ivh epel-release-6-8.noarch.rpm
 			
 				
 				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
 					
 					
 					
@@ -520,151 +418,7 @@ rpm -ivh epel-release-6-8.noarch.rpm
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install-quick-ref.html">Installation quick reference (tutorial)</a></li>
-									
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install-roadmap_part1.html">Installation roadmap (reference)</a></li>
-									
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/system-requirements.html">Magento system requirements</a></li>
-									
-								
-								
-									
-							
-								
-								
-								
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/prereq-overview.html">Prerequisites</a></li>
-									
-								
-								
-									
-							
-								
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/apache.html">Apache</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/apache-user.html">Create the Magento file system owner</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/mysql.html">MySQL</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/prereq_updater.html">Set up the updater</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/connect-auth.html">Get your authentication keys</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/install-rabbitmq.html">RabbitMQ (Enterprise Edition)</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/security.html">SELinux and iptables</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2  active "><a href="/guides/v2.0/install-gde/prereq/optional.html">Optional software</a></li>
-
-									
-						
-								
-								
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install/get-software.html">Get the Magento software</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install-roadmap_trouble.html">Installation roadmap (reference)</a></li>
 									
 								
 								
@@ -689,7 +443,7 @@ rpm -ivh epel-release-6-8.noarch.rpm
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/zip_install.html">(Easy) Install the Magento archive on your server</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/trouble/tshoot.html">Troubleshooting suggestions</a></li>
 									
 								
 								
@@ -714,13 +468,70 @@ rpm -ivh epel-release-6-8.noarch.rpm
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/integrator_install.html">(Integrator) Get the Composer metapackage</a></li>
-									
 								
+									
+							
+										<li class="levela1"><span class="nav-header">Access issues</span></li>
 								
 									
 							
 								
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_access-browser.html">Cannot access Magento software in a web browser</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_mod_access_compat.html">503 (Service Unavailable) errors accessing Magento software in a web browser</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_exceptions.html">Exceptions during installation</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2  active "><a href="/guides/v2.0/install-gde/trouble/tshoot_var-gen-perms.html">Cannot write to the var/generation directory</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_admin.html">Error after logging in to the Magento Admin</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_install_depend.html">Installation dependencies not met</a></li>
+
+									
+						
 								
 								
 							
@@ -739,9 +550,10 @@ rpm -ivh epel-release-6-8.noarch.rpm
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/dev_install.html">(Contributor) Clone the Magento repository</a></li>
-									
 								
+									
+							
+										<li class="levela1"><span class="nav-header">Errors during installation</span></li>
 								
 									
 							
@@ -750,7 +562,63 @@ rpm -ivh epel-release-6-8.noarch.rpm
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/prepare-install.html">Update installation dependencies</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_70pct.html">Installation stops at about 70%</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_pdo.html">During installation, fatal PDO error displays</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_wrong-mysql.html">During installation, Reflection Exception error</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_session.html">During installation, exception SessionHandler::read()</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_composer-fail.html">Download fails because of changes in Composer</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_install-log.html">Installation fails; cannot create install.log</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_sample-data.html">Errors installing optional sample data</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_xdebug.html">During installation, xdebug maximum function nesting level error</a></li>
 
 									
 						
@@ -772,13 +640,38 @@ rpm -ivh epel-release-6-8.noarch.rpm
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install/get-help.html">Get help with your installation</a></li>
-									
 								
+									
+							
+										<li class="levela1"><span class="nav-header">GitHub issues</span></li>
 								
 									
 							
 								
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/git/tshoot_git-pull-origin.html">git pull origin develop fails when updating the Magento software</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/git/tshoot_clone.html">Cannot clone the Magento GitHub repository</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/git/tshoot_rate-limit.html">GitHub API rate limit</a></li>
+
+									
+						
 								
 								
 							
@@ -797,13 +690,103 @@ rpm -ivh epel-release-6-8.noarch.rpm
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/continue-to-install.html">Next&mdash;Installation part 2, installing</a></li>
+								
+									
+							
+										<li class="levela1"><span class="nav-header">PHP issues</span></li>
+								
+									
+							
+								
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_php-set.html">PHP settings errors</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_mcrypt.html">The PHP mcrypt extension is not installed properly</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_php-date.html">During installation, PHP date warning</a></li>
+
+									
+						
+								
+								
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/trouble/tshoot_other.html">Other issues</a></li>
 									
 								
 								
 									
 							
 								
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_composer-install.html">Cannot run 'composer install'</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_mysql_table-open-cache.html">Error 'MySQL server has gone away' during installation</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_install-issues.html">Known issues that affect installation</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_segfault.html">Segmentation fault during rollback</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_phpini.html">SQLSTATE[HY000] [2002] No such file or directory</a></li>
+
+									
+						
 								
 								
 							
@@ -812,90 +795,6 @@ rpm -ivh epel-release-6-8.noarch.rpm
 					
 
 
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
 				
 			
 			
