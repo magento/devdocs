@@ -70,8 +70,8 @@ If necessary, copy the existing `index.php` entry point script for your website 
 {% highlight php %}
 <?php
  $params = $_SERVER;
- $params[\Magento\Store\Model\StoreManager::MAGE_RUN_CODE] = '<code>';
- $params[\Magento\Store\Model\StoreManager::MAGE_RUN_TYPE] = '{store|website}';
+ $params[\Magento\Store\Model\StoreManager::PARAM_RUN_CODE] = '<code>';
+ $params[\Magento\Store\Model\StoreManager::PARAM_RUN_TYPE] = '{store|website}';
  $bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $params);
  $app = $bootstrap->createApplication('Magento\Framework\App\Http');
  $bootstrap->run($app);
@@ -83,8 +83,8 @@ Sample `index.php` snippet that starts Magento with a website with the code `fre
 {% highlight php %}
 <?php
  $params = $_SERVER;
- $params[\Magento\Store\Model\StoreManager::MAGE_RUN_CODE] = 'frenchsite.example.com';
- $params[\Magento\Store\Model\StoreManager::MAGE_RUN_TYPE] = 'website';
+ $params[\Magento\Store\Model\StoreManager::PARAM_RUN_CODE] = 'frenchsite.example.com';
+ $params[\Magento\Store\Model\StoreManager::PARAM_RUN_TYPE] = 'website';
  $bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $params);
  $app = $bootstrap->createApplication('Magento\Framework\App\Http');
  $bootstrap->run($app);
