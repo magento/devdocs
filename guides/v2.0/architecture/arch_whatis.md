@@ -57,17 +57,14 @@ The Magento tech stack supplies a robust toolset for deploying large, distribute
 
 For a comprehensive description of the Magento technology stack, see <a href="{{ site.gdeurl }}architecture/tech-stack.html">Magento Technology Stack</a>. 
 
-With Magento 2.0, the Magento product architecture continues its evolution toward increased modularity.
 
 
 <div class="bs-callout bs-callout-info" id="info">
 
-  <p>For more information about designing and extending the Magento components, refer to the <a href="{{ site.gdeurl }}extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a>.</p>
+  <p>For more information about designing and extending the Magento components, refer to the <a href="{{ site.gdeurl }}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a>.</p>
 
 </div>
 
 
-<h3 id="m2arch-related">Related topics</h3>
 
-* <a href="{{ site.gdeurl }}architecture/arch_asmodsys.html">Magento as a modular system</a>
 
