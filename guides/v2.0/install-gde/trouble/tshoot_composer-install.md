@@ -11,11 +11,13 @@ redirect_from: /guides/v1.0/install-gde/trouble/tshoot_composer-install.html
 ---
 
 
-<h2 id="install-trouble-composer-install">Cannot run 'composer install'</h2>
+<h2 id="install-trouble-composer-install">Cannot run <code>composer install</code></h2>
 
 ### Suggestion
 
 Change to the directory in which you installed Composer and enter the following command:
 
 `mv composer.phar /usr/local/bin/composer`
+
+If you have issues with authenticating with the Magento 2 GitHub repository, see <a href="{{ site.gdeurl }}install-gde/prereq/connect-auth.html">Get your authentication keys</a>.
 
