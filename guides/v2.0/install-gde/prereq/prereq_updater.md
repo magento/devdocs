@@ -15,7 +15,11 @@ github_link: install-gde/prereq/prereq_updater.md
 *	<a href="#compman-updater-clone">Cloning the updater repository</a>
 
 <h2 id="compman-updater-over">Overview of the updater</h2>
-The updater synchronizes with Magento Connect for updating components and upgrading the Magento software. Contributing developers must clone the updater GitHub repository and copy the files to `<your Magento install dir>/update`
+The updater synchronizes with Magento Connect for updating components and upgrading the Magento software. Contributing developers must clone the updater GitHub repository and copy the files to `<your Magento install dir>/update`''
+
+<div class="bs-callout bs-callout-info" id="info">
+	<p>Ihis topic is for contributing developers <em>only</em>; that is, anyone who clones the Magento 2 GitHub repository so they can contribute to the Magento 2 codebase. If you did not clone the Magento repository, you should skip this topic.</p>
+</div>
 
 <h2 id="compman-updater-clone">Cloning the updater repository</h2>
 You can clone the Magento 2 Updater repository using either SSH or HTTPS protocols:
