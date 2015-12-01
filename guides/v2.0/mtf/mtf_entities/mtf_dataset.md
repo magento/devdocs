@@ -25,7 +25,7 @@ Data set is an XML file that contains test variations for a test case.
 Variation includes:
 
 - Data used during the test flow and assertions
-- [Constraints][] that will be called after test flow
+- [Constraints][] that are called after test flow
 
 The following table shows structure of the data set:
 {:#dataset_struct_table}
@@ -128,7 +128,7 @@ And you want to assign it with `10` in one of the variations. You can simply add
 
 #### Assign variable a fixture field
 
-Usually you will need to assign variable that inherits a fixture class, for example:
+Usually you need to assign variable that inherits a fixture class, for example:
 
 {%highlight php%}
 <?php
@@ -139,7 +139,7 @@ public function testCreate(Magento/Catalog/Test/Fixture/CatalogProductSimple $pr
 ?>
 {%endhighlight php%}
 
-In this case object manager will use a constructor from the [InjectableFixture][] class. It declares that your data can be passed to the fixture in `$data` variable as an array. For example, to assign `weight` with `50` you can use the following notation:
+In this case object manager uses a constructor from the [InjectableFixture][] class. It declares that your data can be passed to the fixture in `$data` variable as an array. For example, to assign `weight` with `50` you can use the following notation:
 
 {%highlight xml%}
  <data name = "product/data/weight" xsi:type = "string">50</data>
@@ -148,7 +148,11 @@ In this case object manager will use a constructor from the [InjectableFixture][
 It is injected as:
 
 {%highlight php startinline=1%}
-$product[data[weight => '50']
+$product = [
+    'data' => [
+        'weight' => '50'
+    ]
+];
 {%endhighlight php%}
 
 #### Assign variable a fixture field with data from a repository
@@ -162,7 +166,13 @@ $product[data[weight => '50']
 It is injected as:
 
 {%highlight php startinline=1%}
-$product[data[price['dataset' => 'drop_down_with_one_option_fixed_price']]]
+$product = [
+    'data' => [
+        'price' => [
+            'dataset' => 'drop_down_with_one_option_fixed_price'
+        ]
+    ]
+];
 {%endhighlight php%}
 
 If variable is assigned more than one value:
@@ -175,21 +185,29 @@ If variable is assigned more than one value:
 the value is processed as an array:
 
 {%highlight php startinline=1%}
-$product[data['weight' => '50', quantity_and_stock_status['qty' => '657']]]
+$product = [
+    'data' => [
+        'weight' => '50',
+        'quantity_and_stock_status' => [
+            'qty' => '657'
+        ]
+    ]
+];
 {%endhighlight php%}
 
 Also, in similar cases you can use array type in a data set, like:
 
 {%highlight xml%}
-<data name = "product/data/" xsi:type = "array">
-    <item name = "weight" xsi:type = "string">50</item>
-    <item name = "quantity_and_stock_status/qty" xsi:type = "string">657</item>
+<data name = "product" xsi:type = "array">
+    <item name = "data" xsi:type = "array">
+        <item name = "weight" xsi:type = "string">50</item>
+        <item name = "quantity_and_stock_status" xsi:type = "array">
+            <item name = "qty" xsi:type = "string">657</item>
+        </item>
+    </item>
 </data>
 {%endhighlight xml%}
  
- 
-
-
 <div class="bs-callout bs-callout-tip">
   <p>Data with name <code>tag</code> can be used to customize test suite run.</p>
 </div>
@@ -229,7 +247,7 @@ This is a data set that:
 - relates to the `Magento\Catalog\Test\TestCase\Product\CreateSimpleProductEntityTest` test (performs creation of the simple product) 
 - relates to the ticket `MAGETWO-23414` in Jira
 - contains variation `CreateSimpleProductEntityTestVariation1` that creates product with fixed price with the following data (corresponds to the `Magento\Catalog\Test\Fixture\CatalogProductSimple` fixture):
-  - `url_key` field is assigned with `simple-product-%isolation%`. [More info about %isolation% usage]({{site.gdeurl}}mtf/mtf_entities/mtf_fixture-repo.html#mtf_repo_isolation).
+  - `url_key` field is assigned with `simple-product-%isolation%`. [More info about %isolation%]({{site.gdeurl}}mtf/mtf_entities/mtf_fixture-repo.html#mtf_repo_isolation).
   - `name` field is assigned with `Simple Product %isolation%`
   - `sku` field is assigned with `simple_sku_%isolation%`
   - `price` field is processed by a [data source][] `Magento\Catalog\Test\Fixture\Product\Price` and is assigned `10000`
@@ -243,7 +261,35 @@ This is a data set that:
 
 You'll have the following structure:
 
-<p><a href="{{ site.baseurl }}common/images/Data set2.png"><img src="{{ site.baseurl }}common/images/Data set2.png"/></a></p> 
+<p><a href="{{ site.baseurl }}common/images/Data set2.png"><img src="{{ site.baseurl }}common/images/Data set2.png"/></a></p>
+
+##Merge data sets
+
+When you add or remove modules you'd like your tests keep working. For example, you add a new module that adds menu option to existing module. Does it mean that you must edit data set of the existing module? Of course you can but the MTF suggests another solution. You can create data set in new module with data that you want to add to the existing one. The MTF can merge these data sets for you. And when you decide to remove a new module, you don't need to bother about cleaning data sets in other modules.
+   
+There are two options to merge data sets in the MTF:
+ 
+- add a new variation
+- extend a variation with data
+
+###Add a new variation
+
+To add a new variation using merging you should simply use name of test case that you want to merge with. For example, we want to add new variations from the Magento_ProductVideo module to the  `Magento\Catalog\Test\TestCase\Product\UpdateSimpleProductEntityTest` that is placed in the Magento_Catalog module. You can create data set it the Magento_ProductVideo module, containing variations you need, and paste test case name that you want to merge with.
+
+{%highlight xml%}
+<testCase name="Magento\Catalog\Test\TestCase\Product\UpdateSimpleProductEntityTest" summary="Add Video to PCF" ticketId="PV-1">
+{%endhighlight xml%}
+
+###Extend a variation with data
+If you want simply extend variation in another module using merging, you should use a test case name that you want to merge with and a variation name that you want to extend.
+ 
+ For example, see how in `Magento/Catalog/Test/TestCase/Product/ValidateOrderOfProductTypeTest.xml` the variation `ValidateOrderOfProductTypeTestVariation1` is extended by Magento_Bundle module.
+ 
+ {%highlight xml%}
+ 
+ {%remote_markdown https://raw.githubusercontent.com/magento/magento2/develop/dev/tests/functional/tests/app/Magento/Bundle/Test/TestCase/ValidateOrderOfProductTypeTest.xml%}
+  
+ {%endhighlight xml%}
 
 [Constraints]: {{site.gdeurl}}mtf/mtf_entities/mtf_constraint.html
 [constraint]: {{site.gdeurl}}mtf/mtf_entities/mtf_constraint.html
