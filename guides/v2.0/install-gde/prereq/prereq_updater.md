@@ -101,15 +101,12 @@ To clone the Magento 2 Updater repository using the HTTPS protocol:
 The updater application has dependencies specified in its `composer.json` file. To update it, you must authentication. The `composer install` commands fails if you do not. To authenticate, <a href="{{ site.gdeurl }}install-gde/prereq/connect-auth.html">generate authentication keys</a>, after which you create an `auth.json` file in the home directory of the Magento file system owner.
 
 #### Generate authentication tokens
-
 {% include install/auth-tokens-get.md %}
 
 #### Create `auth.json`
-
 {% include install/auth-json.md %}
 
-
-
+#### Resolve updater dependencies
 Before you continue, resolve those dependencies as follows:
 
 1.	Change to the directory to which you cloned the updater application.
@@ -125,10 +122,10 @@ As a user with privileges to write files to the Magento file system, enter the f
 	mkdir -p <your Magento install dir>/update
 	cp -R <updater-clone-directory>/* <your Magento install dir>/update
 
-For example, if you cloned the updater to `/var/www/html/magento2-updater` and Magento is installed in `/var/www/html/magento2`, enter
+For example, if you cloned the updater to `/var/www/html/magento2-community-edition` and Magento is installed in `/var/www/html/magento2`, enter
 
 	mkdir -p /var/www/html/magento2/update
-	cp -R /var/www/html/magento2-updater/* /var/www/html/magento2/update
+	cp -R /var/www/html/magento2-community-edition/* /var/www/html/magento2/update
 
 #### Next step
 
