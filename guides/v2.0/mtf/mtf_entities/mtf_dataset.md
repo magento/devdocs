@@ -28,6 +28,7 @@ Variation includes:
 - [Constraints][] that will be called after test flow
 
 The following table shows structure of the data set:
+{:#dataset_struct_table}
 
 <table>
 <col width="1*">
@@ -93,32 +94,130 @@ The following data types are available:
   <p>Variation should contain only data that is required for its flow and constraints.</p>
 </div>
 
+### How to use `<data>`
+
+Field `<data>` requires more details for better understanding.
+
+As you can see in the [previous table](#dataset_struct_table), data `name` has specific structure. Why? To make your test more flexible. Let's see the logic of the `<data>` processing. 
+
+Slash `/` means array nesting. For example:
+
+- `<data name = var1/var2>value</data>` is converted as `var1[var2 => value]`
+- `var1/var2/var3` is converted as `var1[var2[var3 => value]]`
+
+where `var1` is a name of an argument of a [test case][] or [constraint][].
+
+#### Simple variable
+
+For example, if a test case or constraint uses in argument the `$price` variable, then the test case takes from the data set all the `data` with a name `price`. For example, you have a method with argument `$price`.
+
+{%highlight php%}
+<?php
+public function testCreate($price)
+{
+///
+}
+?>
+{%endhighlight php%}
+
+And you want to assign it with `10` in one of the variations. You can simply add the following field to a variation of the corresponding data set:
+
+{%highlight xml%}
+ `<data name = "price" xsi:type = "string">10</data>`
+{%endhighlight xml%}
+
+#### Assign variable a fixture field
+
+Usually you will need to assign variable that inherits a fixture class, for example:
+
+{%highlight php%}
+<?php
+public function testCreate(Magento/Catalog/Test/Fixture/CatalogProductSimple $product)
+{
+///
+}
+?>
+{%endhighlight php%}
+
+In this case object manager will use a constructor from the [InjectableFixture][] class. It declares that your data can be passed to the fixture in `$data` variable as an array. For example, to assign `weight` with `50` you can use the following notation:
+
+{%highlight xml%}
+ <data name = "product/data/weight" xsi:type = "string">50</data>
+{%endhighlight xml%}
+
+It is injected as:
+
+{%highlight php startinline=1%}
+$product[data[weight => '50']
+{%endhighlight php%}
+
+#### Assign variable a fixture field with data from a repository
+
+[InjectableFixture][] class enables you to use [fixture repository][]. It can be injected in `$dataset` variable. For example, to use `dataset = drop_down_with_one_option_fixed_price` from the repository assigned in the [fixture][], you can use:
+
+{%highlight xml%}
+<data name = "product/data/price/dataset" xsi:type = "string">drop_down_with_one_option_fixed_price</data>
+{%endhighlight xml%}
+
+It is injected as:
+
+{%highlight php startinline=1%}
+$product[data[price['dataset' => 'drop_down_with_one_option_fixed_price']]]
+{%endhighlight php%}
+
+If variable is assigned more than one value:
+
+{%highlight xml%}
+<data name = "product/data/weight" xsi:type = "string">50</data>
+<data name = "product/data/quantity_and_stock_status/qty" xsi:type = "string">657</data>
+{%endhighlight xml%}
+
+the value is processed as an array:
+
+{%highlight php startinline=1%}
+$product[data['weight' => '50', quantity_and_stock_status['qty' => '657']]]
+{%endhighlight php%}
+
+Also, in similar cases you can use array type in a data set, like:
+
+{%highlight xml%}
+<data name = "product/data/" xsi:type = "array">
+    <item name = "weight" xsi:type = "string">50</item>
+    <item name = "quantity_and_stock_status/qty" xsi:type = "string">657</item>
+</data>
+{%endhighlight xml%}
+ 
+ 
+
+
 <div class="bs-callout bs-callout-tip">
   <p>Data with name <code>tag</code> can be used to customize test suite run.</p>
 </div>
+
+##Example
 
 Let's see an example:
 
 {%highlight xml%}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/variations.xsd">
-    <testCase name="Magento\Catalog\Test\TestCase\Product\CreateSimpleProductEntityTest" summary="Create Simple Product" ticketId="MAGETWO-23414">
-        <variation name="CreateSimpleProductEntityTestVariation1" summary="Create product with custom options(fixed price)">
-            <data name="product/data/url_key" xsi:type="string">simple-product-%isolation%</data>
-            <data name="product/data/name" xsi:type="string">Simple Product %isolation%</data>
-            <data name="product/data/sku" xsi:type="string">simple_sku_%isolation%</data>
-            <data name="product/data/price/value" xsi:type="string">10000</data>
-            <data name="product/data/short_description" xsi:type="string">Simple Product short_description %isolation%</data>
-            <data name="product/data/description" xsi:type="string">Simple Product description %isolation%</data>
-            <data name="product/data/weight" xsi:type="string">50</data>
-            <data name="product/data/quantity_and_stock_status/qty" xsi:type="string">657</data>
-            <data name="product/data/custom_options/dataset" xsi:type="string">drop_down_with_one_option_fixed_price</data>
-            <data name="product/data/checkout_data/dataset" xsi:type="string">simple_drop_down_with_one_option_fixed_price</data>
-            <data name="product/data/price/dataset" xsi:type="string">drop_down_with_one_option_fixed_price</data>
-            <constraint name="Magento\Catalog\Test\Constraint\AssertProductSaveMessage" />
-            <constraint name="Magento\Catalog\Test\Constraint\AssertProductInGrid" />
-            <constraint name="Magento\Catalog\Test\Constraint\AssertProductInCategory" />
-            <constraint name="Magento\Catalog\Test\Constraint\AssertProductPage" />
-            <constraint name="Magento\Catalog\Test\Constraint\AssertProductInCart" />
+    <testCase name = "Magento\Catalog\Test\TestCase\Product\CreateSimpleProductEntityTest" summary="Create Simple Product" ticketId="MAGETWO-23414">
+        <variation name = "CreateSimpleProductEntityTestVariation1" summary="Create product with custom options(fixed price)">
+            <data name = "product/data/url_key" xsi:type = "string">simple-product-%isolation%</data>
+            <data name = "product/data/name" xsi:type = "string">Simple Product %isolation%</data>
+            <data name = "product/data/sku" xsi:type = "string">simple_sku_%isolation%</data>
+            <data name = "product/data/price/value" xsi:type = "string">10000</data>
+            <data name = "product/data/short_description" xsi:type = "string">Simple Product short_description %isolation%</data>
+            <data name = "product/data/description" xsi:type = "string">Simple Product description %isolation%</data>
+            <data name = "product/data/weight" xsi:type = "string">50</data>
+            <data name = "product/data/quantity_and_stock_status/qty" xsi:type = "string">657</data>
+            <data name = "product/data/custom_options/dataset" xsi:type = "string">drop_down_with_one_option_fixed_price</data>
+            <data name = "product/data/checkout_data/dataset" xsi:type = "string">simple_drop_down_with_one_option_fixed_price</data>
+            <data name = "product/data/price/dataset" xsi:type = "string">drop_down_with_one_option_fixed_price</data>
+            <constraint name = "Magento\Catalog\Test\Constraint\AssertProductSaveMessage" />
+            <constraint name = "Magento\Catalog\Test\Constraint\AssertProductInGrid" />
+            <constraint name = "Magento\Catalog\Test\Constraint\AssertProductInCategory" />
+            <constraint name = "Magento\Catalog\Test\Constraint\AssertProductPage" />
+            <constraint name = "Magento\Catalog\Test\Constraint\AssertProductInCart" />
         </variation>
     </testCase>
 </config>
@@ -148,7 +247,10 @@ You'll have the following structure:
 
 [Constraints]: {{site.gdeurl}}mtf/mtf_entities/mtf_constraint.html
 [constraint]: {{site.gdeurl}}mtf/mtf_entities/mtf_constraint.html
-[fixtures]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html
+[fixture]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html
 [data source]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source
+[InjectableFixture]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php
+[fixture repository]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture-repo.html
+[test case]: {{site.gdeurl}}mtf/mtf_entities/mtf_testcase.html
 
 *[MTF]: Magento Testing Framework
