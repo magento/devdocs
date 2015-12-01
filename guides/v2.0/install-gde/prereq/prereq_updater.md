@@ -91,11 +91,11 @@ To clone the Magento 2 Updater repository using the HTTPS protocol:
 
 2.	Enter the following command:
 
-		git clone git@github.com:magento/magento2-community-edition.git
+		git clone https://github.com/magento/magento2-community-edition.git
 
 	If the command fails with an authentication error, try
 
-		git clone https://<your GitHub user name>:<your password>@github.com/magento/magento2-updater.git
+		git clone https://<your GitHub user name>:<your password>@github.com/magento//magento2-community-edition.git
 
 3.	Wait for the repository to clone on your server.
 
