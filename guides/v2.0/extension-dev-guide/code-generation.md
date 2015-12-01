@@ -21,8 +21,8 @@ The first constructor parameter has a type of `Magento\Customer\Model\AddressFac
 
 Unlike some other languages or libraries, you can look at the generated code on the file system to see what really happens and still debug the code.
 
-<h3 id="codegen-over-when">When is code compiled?</h3>
-Provided the Magento application is not set for <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>, code is compiled when the Magento application cannot find a class when executing code.
+<h3 id="codegen-over-when">When is code generated?</h3>
+Provided the Magento application is not set for <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>, code is generated when the Magento application cannot find a class when executing code.
 
 In particular,
 
@@ -36,7 +36,7 @@ A proxy is a wrapper for a base class, and the proxy must implement all function
 
 	As a practical example, you can see the <a href="{{ site.mage2000url }}app/code/Magento/Store/Model/StoreManager.php" target="_blank">StoreManager</a> class and then see the generated StoreManager Proxy class.
 
-You can use the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler.html">code compiler</a> to compile code at any time.
+You can also use the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler.html">code compiler</a> to generate code at any time.  In Magento 2, "compiling" your application means performing code generation for any eligible class encountered by the configuration/code scanner, as well as performing a number of different dependency injection optimizations.
 
 <h3 id="codegen-over-why">Why should you regenerate code?</h3>
 Suppose a Customer or Proxy class for a Customer class is generated and the Customer class has new methods added to it. Because a Customer or Proxy exists on the file system, it is not regenerated. However, the Customer or Proxy implementation is incomplete now because it does not have the new methods. In this case, you must regenerate the Customer or Proxy class.

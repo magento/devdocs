@@ -19,22 +19,22 @@ To add an extending <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-ty
 
 2.	Put the layout file in the following location:
 <pre>
-app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;
+&lt;theme_dir&gt;
 &nbsp;|__/&lt;Namespace&gt;_&lt;Module&gt;
 &nbsp;&nbsp;&nbsp;|__/layout
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&lt;layout1&gt;.xml
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&lt;layout2&gt;.xml
 </pre>
 
-For example, to customize the layout defined in `magento2/app/code/Magento/Catalog/view/frontend/layout/catalog_product_view.xml`, you need to add a layout files with the same name in your custom theme, like following:
+For example, to customize the layout defined in `<Magento_Catalog_module_dir>/view/frontend/layout/catalog_product_view.xml`, you need to add a layout files with the same name in your custom theme, like following:
 
-<code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Catalog/layout/catalog_product_view.xml</code>
+<code>&lt;theme_dir&gt;/Magento_Catalog/layout/catalog_product_view.xml</code>
 
 To add an extending <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-page" target="_blank">page layout</a> file:
 
 2.	Put the file in the following location:
 <pre>
-app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;
+&lt;theme_dir&gt;
 &nbsp;|__/&lt;Namespace&gt;_&lt;Module&gt;
 &nbsp;&nbsp;&nbsp;|__/page_layout
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&lt;layout1&gt;.xml
@@ -72,6 +72,5 @@ Where a `handle ID` is defined by the name of the corresponding layout file, and
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-override.html" target="_blank">Override a layout</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html" target="_blank">XML instructions</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-create.html" target="_blank">Create a theme</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/theme-best-practices.html" target="_blank">Theme design best practices</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/theme-ui-lib.html" target="_blank">Magento UI library</a>
 

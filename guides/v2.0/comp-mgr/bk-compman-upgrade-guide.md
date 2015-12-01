@@ -6,7 +6,7 @@ title: Getting started with the Component Manager and System Upgrade
 menu_title: Getting started with the Component Manager and System Upgrade
 menu_node: parent
 menu_order: 1
-github_link: comp-mgr/bk-compman-upgrader-guide.md
+github_link: comp-mgr/bk-compman-upgrade-guide.md
 ---
 
 <h2>Getting started with the Component Manager and System Upgrade</h2>   

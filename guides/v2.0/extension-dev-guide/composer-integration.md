@@ -124,106 +124,75 @@ magento/language-de_de</pre>
 
 <h3>Naming conventions</h3>
 
-The namespace of Composer packages is global within a package repository (such as [packagist.org](packagist.org)). The Composer specification requires that a package name use the format: 
+The namespace of Composer packages is global within a package repository (such as [packagist.org](http://packagist.org)). The Composer specification requires that a package name use the format: 
 
-`<vendor_name>/<package_name>` 
+{% highlight XML %}
+<vendor_name>/<package_name>
+
+{% endhighlight %}
 
 As a result, vendors of different packages are distinguished, and there is a low risk of overlapping (unless different vendors names themselves exactly the same). All letters in the name must be lowercase. Therefore, the format for package names released by Magento Inc is:
 
-`magento/*`
+{% highlight XML %}
+magento/*
+
+{% endhighlight %}
 
 The package name is up to the vendor (as long as it is lowercase). If this name is meant to consist of multiple words, the Composer specification recommends separating them with dash. The convention for Magento package names is this:
 
-`magento/<type-prefix>-<suffix>[-<suffix>]`...
+{% highlight XML %}
+magento/<type-prefix>-<suffix>[-<suffix>]...
+
+{% endhighlight %}
 
 Where:
 
-`type-prefix` stands for a type of component in a Magento-specific domain.
+`type-prefix` is a type of component in a Magento-specific domain.
 
-`suffix` would be anything that allows distinguishing/disambiguating the component within that type.
+`suffix` is anything that allows distinguishing/disambiguating the component within that type.
 
 <h3>Magento-Specific Package Types</h3>
 Each Magento component can be categorized into one of the types listed in the table. If any component does not fit into a specific category, it can be generalized to `magento-component`.
 
-Having an identifier type for each component allows the system to marshall the directories and files of each component to the correct locations, based on the Magento 2 directory structure. 
+Having an identifier type for each component allows the system to marshal the directories and files of each component to the correct locations, based on the Magento 2 directory structure. 
 
-<h3>The <code>extra</code> Section</h3>
-The [Composer specification](https://getcomposer.org/doc/04-schema.md#extra) permits adding an `extra` section in `composer.json` files can be used for any custom needs of the project. 
 
-<h4>Marshalling Map</h4>
-By default, when you install a package, Composer puts it into `vendor/<package>` directory, such as `vendor/magento-module-catalog`.  However, the Magento framework requires Magento components to be in different locations, such as `app/code/Magento/Catalog`. The process of copying or moving contents of packages from default to the necessary location is called *marshalling*.
 
-To enable marshalling, the Magento-Composer integration uses a special component, `magento-composer-installer`. This is a Composer plugin that uses an `extra->map` section in `composer.json` files to perform the marshalling. Each Magento component must include a dependency on the installer in order to be properly marshalled.
 
-For example, in the Catalog module, the `extra->map` section would look as follows:
 
-{% highlight JSON %}
-"type": "magento2-module",
-"require": {
-    "magento/magento-composer-installer": "*"
-},
-"extra": {
-    "map": [
-        [
-            "*",
-            "Magento/Catalog"
-        ]
-    ]
-}
+##Deploying Community Edition
+
+The standard procedure to deploy Magento Community Edition is:
+
+
+     git clone https://github.com/magento/magento2 ./magento2
+     composer install
+
+To update to the latest release do the following:
+     git pull
+     composer install
+
+##Deploying Community Edition with Composer
+Magento Community Edition  can also be deployed through Composer.
+
+###To deploy Magento to the website root
+If your website document root is `/var/www/example.com/htdocs` and you want to deploy a Magento application into it, do the following:
+
+
+
+
+ *  If you are inside the deploying directory:
+ {% highlight XML %}
+     cd /var/www/example.com/htdocs
+     composer create-project "magento/project-community-edition" .
+
 {% endhighlight %}
 
-This code instructs the Composer installer to put everything in this package under the module's `Magento/Catalog` subdirectory. Whenever this package is updated, the map determines which files and directories to delete and replace with new package contents.
 
-The following example is for the root `composer.json` file:
+* If you are outside the deploying directory:
+{% highlight XML %}
+     composer create-project "magento/project-community-edition" /var/www/example.com/htdocs
 
-{% highlight JSON %}
-"type": "magento2-component",
-"require": {
-    "magento/magento-composer-installer": "*"
-},
-"extra": {
-    "map": [
-        [
-            "app/.htaccess",
-            "app/.htaccess"
-        ],
-...
-        [
-            "var/.htaccess",
-            "var/.htaccess"
-        ]
-    ]
-}
 {% endhighlight %}
 
-Instead of using the wildcard character, this sample specifies which files from this package are placed in the target location. In case of the root `composer.json` file, it is the same location. Whenever the root (or "skeleton") package is updated, only the specified paths will be affected and any other files/directories will be preserved.
-
-For more details about marshalling implementation, see the [magento-composer-installer documentation](https://github.com/magento/magento-composer-installer).
-
-<h4>Component Paths Map</h4>
-The section `extra->component_paths` is used in the root `composer.json` file to specify a custom location for the components that are listed in the `replace` section:
-
-{% highlight JSON %}
-{
-    "replace": {
-        "foo/bar": "1.1.0",
-        "bar/baz": "1.2.3",
-        "foo/baz": "dev-master#f33623e228dc03f77c12d39690217baa87370b3d"
-    }
-    "extra": {
-        "component_paths": {
-            "foo/bar": "path/to/bar/directory",
-            "bar/baz": "path/to/baz/file.php",
-            "foo/baz": [
-                "path/to/baz/another_directory",
-                "path/to/baz/another_file.php"
-            ]
-        }
-    }
-}
-{% endhighlight %}
-
-The values may specify the path to a directory or file, or a list of paths. The paths are relative to the root directory of Magento code base.
-
-This is needed when the Magento code base incorporates ("replaces") source code of a library, but it happens to be in a location that is non-compliant to Composer. Declaring these components in `replace` section prevents other components from declaring dependencies on the incompatible versions of the same components. Declaring them in `extra->component_paths` section informs the developer where to look for them.
 

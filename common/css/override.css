@@ -138,6 +138,32 @@ p.q 	{
     
 }
 
+
+
+.main-container a.contributor{
+    position: absolute;
+    left: 66px;
+  text-decoration: none;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.main-container a.contributor:hover{
+    color: #fff;
+    text-decoration: underline;
+}
+
+.main-container a.contributor:after {
+    display: inline-block;
+    position: relative;
+    top: 4px;
+    left: 5px;
+    content: '';
+    background: url(/i/icon-new-window.gif) no-repeat;
+    width: 16px;
+    height: 16px;
+}
+
 @media (min-width: 1130px){
     .nav-main #global-nav {
     padding-left: 66px;
@@ -304,3 +330,55 @@ background-color:#CACACA;;
 cursor: hand; cursor: pointer;
 
 }
+
+
+.sidebar ul li.level3Child {
+    display: none;
+}
+
+.sidebar ul li.level3Child a {
+    padding-left: 42px;
+}
+
+.sidebar ul li.level3Parent {
+    background-image:url('../../common/css/caret_right.png');
+    text-decoration:none;
+    background-repeat:no-repeat;
+    background-position: 18px 10px;
+    margin: 0 0 0 0%;
+    padding: 0 0 0 7%;
+
+
+
+}
+
+.sidebar ul li.caretDown {
+    background-image:url('../../common/css/caret_down.png');
+    text-decoration:none;
+    background-repeat:no-repeat;
+    background-position: 17px 12px;
+    margin: 0 0 0 0%;
+    padding: 0 0 0 7%;
+}
+
+.sidebar ul li.caretRight {
+    text-decoration:none;
+    background-image:url('../../common/css/caret_right.png');
+    background-repeat:no-repeat;
+    
+    background-position: 18px 10px;
+    margin: 0 0 0 0%;
+    padding: 0 0 0 7%;
+}
+
+.sidebar ul li.level3Parent a:hover {
+    background: none;
+}
+
+.sidebar ul li.level3Parent a {
+    text-decoration: none;
+}
+
+.main-container .editor {color: #00A9EF;
+font-family: fantasy;
+font-size: 1.5em}

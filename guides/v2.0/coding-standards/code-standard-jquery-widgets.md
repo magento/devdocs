@@ -2,7 +2,7 @@
 layout: default
 group: coding-standards
 subgroup: Coding standards
-title: jQuery weeeedget coding standard
+title: jQuery widget coding standard
 menu_title: jQuery widget coding standard
 menu_order: 4
 github_link: coding-standards/code-standard-jquery-widgets.md
@@ -107,9 +107,9 @@ $.widget('mage.accordion', $.ui.accordion, {
    </div>
 </div>
 <h2 id="fedg_widget-coding-stnd_instant">Instantiation and resources</h2>
-<p>You must use the <a href="{{ site.gdeurl }}frontend-dev-guide/javascript/js-mage-plugin.html" target="_blank">Mage plug-in</a> to instantiate a widget or define resources for a widget.</p>
+<!-- <p>You must use the <a href="{{ site.gdeurl }}frontend-dev-guide/javascript/js-mage-plugin.html" target="_blank">Mage plug-in</a> to instantiate a widget or define resources for a widget.</p> -->
 <div id="accordion2">
-   <h3>Additional JavaScript files used as resources by a friggin widget</h3>
+   <h3>Additional JavaScript files used as resources by a widget</h3>
    <div>
       <p>Additional JavaScript files used as resources must be dynamically loaded using the <code>$.mage.components()</code> method and must not be included in the <code>&lt;head></code> block.</p>
       <table>
@@ -332,7 +332,7 @@ $.widget('mage.nonModalDialog', {
     /* ... */
 });</pre>
                   <pre>// Initialization
-$('selector').mage('modalDialod');
+$('selector').mage('modalDialog');
 $('selector').mage('nonModalDialog');</pre>
                </td>
             </tr>
@@ -521,7 +521,7 @@ $.widget("mage.form," {
    </div>
    <h3>Magento product specific widgets</h3>
    <div>
-      <p>You must locate all of these under the <code><your Magento install dir>/app/code/<namespace>/<ModuleName>/view/<areaname>/js</code> directory.</p>
+      <p>You must locate all of these under the <code><your Magento install dir>/app/code/&lt;namespace>/&lt;ModuleName>/view/&lt;areaname>/js</code> directory.</p>
       <table>
          <tbody>
             <tr>
@@ -736,15 +736,18 @@ menuInstance.element.addClass('ui-state-active');
          </tbody>
       </table>
    </div>
-   <h3>When a widget is destroyed, the element should be left exactly like it was before the widget was attached to it</h3>
-   <div>
-      <p>Common tasks include:</p>
-      <ul>
-         <li>Removing or adding of any CSS classes your widget added/removed from the element.</li>
-         <li>Detaching any elements your widget added to the DOM.</li>
-         <li>Destroying any widgets that your widget applied to other elements.</li>
-      </ul>
+   
+<h3>When a widget is destroyed, the element should be left exactly like it was before the widget was attached to it</h3>
+
+Common tasks include:
+<ul>
+<li>Removing or adding of any CSS classes your widget added/removed from the element.</li>
+<li>Detaching any elements your widget added to the DOM.</li>
+<li>Destroying any widgets that your widget applied to other elements.</li>
+</ul>
       <p>Example:</p>
+         <div>
+
       <script src="https://gist.github.com/xcomSteveJohnson/b9e1fb5a78fe88e510db.js"></script>
    </div>
    <h3>All event handlers must be bound by the <code>_bind()</code> method</h3>
@@ -768,13 +771,12 @@ menuInstance.element.addClass('ui-state-active');
       </table>
    </div>
    <h3>You must use the _on() method to bind events</h3>
-   <div>
       <p>Benefits:</p>
       <ul>
-         <li>Delegation is supported using selectors in the event names; for example, <code>click .foo</code></li>
-         <li>Maintains proper this context inside the handlers, so it is not necessary to use the <code>$.proxy()</code> method.</li>
-         <li>Event handlers are automatically namespaced and cleaned up on destruction.</li>
-      </ul>
+<li>Delegation is supported using selectors in the event names; for example, <code>click .foo</code></li>
+<li>Maintains proper this context inside the handlers, so it is not necessary to use the <code>$.proxy()</code> method.</li>
+<li>Event handlers are automatically namespaced and cleaned up on destruction.</li>
+</ul>
       <table>
          <tbody>
             <tr>
@@ -791,7 +793,6 @@ menuInstance.element.addClass('ui-state-active');
             </tr>
          </tbody>
       </table>
-   </div>
 </div>
 <h4>Related topics</h4>
 <ul>

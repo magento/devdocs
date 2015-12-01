@@ -1,7 +1,7 @@
 ---
 layout: default
 group: jsdg
-subgroup: Widgets
+subgroup: 3_Widgets
 title: Tabs widget
 menu_title: Tabs widget
 menu_order: 14
@@ -19,7 +19,7 @@ The tabs widget source is <a href="{{site.mage2000url}}lib/web/mage/tabs.js" tar
 
 
 <h2 id="fedg_tabs_init">Initialize the tabs widget</h2>
-For information about how to initilize a widget in a JS component or `.phtml` template, see the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
+For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
 
 
 <h2 id="fedg_tabs_options">Options</h2>
@@ -212,7 +212,7 @@ The tabs widget has the following methods:
 `activate(index)` displays `content` for the tab with the corresponding `index`.
 
 
-<h3 id="fedg_tabs_methods-enable"><code>enbale()</code></h3>
+<h3 id="fedg_tabs_methods-enable"><code>enable()</code></h3>
 `enable(index)` enables the tab with the corresponding `index`.
 
 <h3 id="fedg_tabs_methods-deactivate"><code>deactivate()</code></h3>

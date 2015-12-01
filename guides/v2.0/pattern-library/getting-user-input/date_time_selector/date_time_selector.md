@@ -243,7 +243,7 @@ Keyboard navigation on days that are not included the currently displayed month 
 
 *	Ctrl+End moves the focus to the last day of the year.
 
-*	Shift+Arrow performs continous selection to the next/previous day/week/month.  
+*	Shift+Arrow performs continuous selection to the next/previous day/week/month.
 
 *	Ctrl+Space multiple selection of certain days.
 
