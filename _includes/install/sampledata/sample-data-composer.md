@@ -13,7 +13,7 @@ To enable sample data using Composer:
 
 		composer require magento/<package name>:<version>
 
-	`<version>` can be a specific version like `100.0.2` or you can use Composer next significant release syntax to specify a later release; for example, `~100.0.1+`
+	`<version>` can be a specific version like `100.0.2` or you can use Composer next significant release syntax to specify a later release; for example, `~100.0.1`
 
 	The complete `<package name>` list follows:
 
