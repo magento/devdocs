@@ -47,14 +47,14 @@ In addition, Magento code creates files with permissions consistent with our rec
 ### Suggestion
 First, make sure you completed all tasks discussed in the preceding section. In particular, make sure the Magento file system owner and the web server user share groups in one of the ways discussed in <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-group">Options for shared groups</a>.
 
-If that still does not resolve the issue, try setting the <a href="https://en.wikipedia.org/wiki/Sticky_bit" target="_blank">sticky bit</a> for problem directories, such as `var/generation`, as follows:
+If that still does not resolve the issue, try setting the <a href="https://en.wikipedia.org/wiki/Setuid#setuid_and_setgid_on_directories" target="_blank">setgid bit</a> (set group-id bit) for problem directories, such as `var/generation`, as follows:
 
 1.	Identify the directory that does not allow write access.
 2.	As a user with `root` privileges (or with sufficient privileges to set permissions), enter the following command:
 
-		chmod -R g+s <path>
+		chmod g+s <directory-path>
 
 	For example, to set the sticky bit for the `/var/www/magento2/var/generation` directory, enter:
 
-		chmod -R g+s /var/www/magento2/var/generation
+		find /var/www/magento2/var/generation -type d -exec chmod g+s {} \;
 
