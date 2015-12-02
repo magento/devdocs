@@ -212,7 +212,7 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<p>To configure a web API, developers define some of the elements of each API call in your `<module root="" dir="">/vendor/<vendorname>/module-<name>/etc/webapi.xml file, where `<vendorname>` is your vendor name (for example, `magento`) and `<name>` is your module name (which exactly matches its definition in `composer.json`). For example, the web API for the Customer service is defined in the `<your magento="" install="" dir="">/vendor/magento/module-customer/etc/webapi.xml configuration file. Service data interfaces and builders define the required and optional parameters and the return values for the API calls.
+		<p>To configure a web API, developers define some of the elements of each API call in the <code>&lt;module root dir&gt;/vendor/&lt;vendor-name&gt;/&lt;module-name&gt;/etc/webapi.xml</code> file, where <code>&lt;vendor-name&gt;</code> is your vendor name (for example, <code>magento</code>) and <code>&lt;module-name&gt;</code> is your module name (which exactly matches its definition in <code>composer.json</code>). For example, the web API for the Customer service is defined in the <code>&lt;your Magento install dir&gt;/vendor/magento/module-customer/etc/webapi.xml</code> configuration file. Service data interfaces and builders define the required and optional parameters and the return values for the API calls.</p>
 
 <p>To construct a web API request, read these topics:</p>
 <ul>
@@ -275,7 +275,7 @@
       </td>
    </tr>
 </table>
-<a name="verbs"></a>
+<p><a name="verbs"></a></p>
 <h3>HTTP verb</h3>
 <p>Specify one of these HTTP verbs in the request:</p>
 <ul>
@@ -298,14 +298,13 @@
       resource.
    </li>
 </ul>
-<a name="endpoints"></a>
+<p><a name="endpoints"></a></p>
 <h3>Endpoint</h3>
 <p>An endpoint is a combination of the <i>server</i> that fulfills a request, the web service, the <i>resource</i> against which the request is being made, and any template parameters.</p>
 
 <p>For example, in the <code>http://magento.ll/index.php/rest/V1/customerGroups/:id</code> endpoint, the server is <code>magento.ll/index.php/</code>, the web service is <code>rest</code>, the resource is <code>/V1/customerGroups</code>, and the template parameter is <code>id</code>.</p>
 
-
-<a name="http-headers"></a>
+<p><a name="http-headers"></a></p>
 <h3>HTTP headers</h3>
 <div class="bs-callout bs-callout-info" id="info"><p>To specify an HTTP header in a cURL command, use the <code>-H</code> option.</p></div>
 <p>Specify one or more of the following HTTP headers
@@ -357,7 +356,7 @@ See <a href="/guides/v2.0/get-started/authentication/gs-authentication.html">Aut
    </tr>
 </table>
 
-<a name="payload"></a>
+<p><a name="payload"></a></p>
 <h3>Call payload</h3>
 <p>The call payload is set of input <i>parameters</i> and <i>attributes</i> that you supply with the request.
             API operations have both
@@ -365,7 +364,6 @@ See <a href="/guides/v2.0/get-started/authentication/gs-authentication.html">Aut
             <em>optional</em> inputs.</p>
 <p>You specify input parameters in the URI. For example, in the <code>GET&nbsp;/V1/customers/:customerId</code> URI, you must specify the <code>customerId</code> template parameter. This parameter filters the response by the specified customer ID.</p>
 <p>You specify input attributes in a JSON- or XML-formatted request body. For example, in the <code>POST&nbsp;/V1/customers</code> call, you must specify a request body like this:</p>
-
 
 <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&quot;customers&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -394,7 +392,6 @@ See <a href="/guides/v2.0/get-started/authentication/gs-authentication.html">Aut
         <span class="p">]</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></div>
-
 
 <p>This JSON-formatted request body includes a <code>customer</code> object with the customer email, first name, and last name, and customer address information. The information in this request body is used to populate the new customer account.</p>
 
@@ -471,8 +468,6 @@ $response = $this-&gt;client-&gt;send($request);
 
 <h2>Next step</h2>
 <p>Run the web API call through a <a href="/guides/v2.0/get-started/gs-curl.html">cURL command</a> or a REST client.</p>
-
-</your></name></vendorname></name></vendorname></module></p>
 
 
 		</div>
