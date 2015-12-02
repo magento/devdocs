@@ -2,8 +2,8 @@
 layout: default
 group: extension-dev-guide
 subgroup: 3_Build
-title: Module file Structure
-menu_title: Module file Structure
+title: Module file structure
+menu_title: Module file structure
 menu_order: 2
 github_link: extension-dev-guide/module-file-structure.md
 
@@ -14,12 +14,17 @@ Magento 2 looks for the files that make up a module, including configuration fil
 
 A module can live anywhere under the Magento root directory. Regardless of where you add it, you must [register the module's location](component-registration.html).
 
+##Did you install from GitHub?
+
+If you installed Magento by cloning the GitHub repository, the core Magento modules will appear in the `~/app/code` dierectory. This is likely your approach if you are a developer that wants to contribute code to Magento and you are looking for the latest updates.
+
+##Did you install using Composer from the Marketplace?
+
+If you used [Composer](https://getcomposer.org/) to install Magento from the Magento Marketplace or from a .zip file, then the core Magento modules appear in the `/vendor` directory. This is likely your approach if you are a system integrator or a developer working in a production environment. Note that in this case when you purchase extensions from the Magento Marketplace, those extensions also appear under the `/vendor` directory.
 
 
 
 ###Magento 2 Module File structure
-
-
 A typical file structure for a Magento 2 module:
 <p><img src="{{ site.baseurl }}common/images/pdg-config-file-structure.png" width="300" alt="A filesystem view of a typical file structure"></p>
 
