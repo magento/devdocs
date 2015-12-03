@@ -225,11 +225,11 @@
 
 <h2 id="plugin-intro">Introduction to Magento plug-ins</h2>
 
-<p>Magento enables you to change, or <em>extend</em>, the behavior of any original, public method in any Magento class. You can change the behavior of an <em>original method</em> by creating an extension. These extensions use the <code>Plugin</code> class and are therefore referred to as plug-ins. </p>
+<p>Magento enables you to change, or <em>extend</em>, the behavior of any original, public method in any Magento class. You can change the behavior of an <em>original method</em> by creating an extension. These extensions use the <code>Plugin</code> class and are therefore referred to as plug-ins.</p>
 
 <p>To ensure that plug-ins work correctly, you must follow declaration and naming rules.</p>
 
-<p>You use <em>interception</em> to reduce conflicts among extensions that change the behavior of the same class or method. You implement interception using the <code>Plugin</code> class, which observes public methods, and listener methods in this class. A plug-in changes behavior of an original class, but does not change a class itself. Because they can be called sequentially, according to a configured sort order, these plug-ins do not conflict. </p>
+<p>You use <em>interception</em> to reduce conflicts among extensions that change the behavior of the same class or method. You implement interception using the <code>Plugin</code> class, which observes public methods, and listener methods in this class. A plug-in changes behavior of an original class, but does not change a class itself. Because they can be called sequentially, according to a configured sort order, these plug-ins do not conflict.</p>
 
 <p>Interception ensures that conflicting extensions run without intervention.</p>
 
@@ -244,6 +244,7 @@
   <li>Class methods (such as static methods)</li>
   <li>Inherited methods</li>
   <li>__construct</li>
+  <li>Virtual types</li>
 </ul>
 
 <h2 id="plugin-declare">Declare a plug-in</h2>
@@ -316,7 +317,7 @@
 <div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
 <span class="k">namespace</span> <span class="nx">My\Module\Plugin</span><span class="p">;</span>
- 
+
 <span class="k">class</span> <span class="nc">ProductPlugin</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">beforeSetName</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nv">$name</span><span class="p">)</span>
@@ -348,7 +349,7 @@
 <div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
 <span class="k">namespace</span> <span class="nx">My\Module\Plugin</span><span class="p">;</span>
- 
+
 <span class="k">class</span> <span class="nc">ProductPlugin</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">aroundSave</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nx">\Closure</span> <span class="nv">$proceed</span><span class="p">)</span>
@@ -382,7 +383,6 @@
   <li><a href="/guides/v2.0/extension-dev-guide/depend-inj.html#dep-inj-compile">Definition compiler tool</a></li>
   <li><a href="/guides/v2.0/extension-dev-guide/depend-inj.html">Dependency injection</a></li>
 </ul>
-
 
 
 		</div>
