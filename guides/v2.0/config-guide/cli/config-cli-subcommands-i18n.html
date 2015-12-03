@@ -443,9 +443,9 @@ Product 'Multimeter-2000' has been added to shopping cart.
 
 <p>If a language package descends from two packages, its <code>language.xml</code> might look like the following:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;language</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../&lt;path&gt;/Magento/Framework/App/Language/package.xsd&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;language</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:App/Language/package.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;code&gt;</span>en_GB<span class="nt">&lt;/code&gt;</span>
-    <span class="nt">&lt;vendor&gt;</span>Magento<span class="nt">&lt;/vendor&gt;</span>
+    <span class="nt">&lt;vendor&gt;</span>magento<span class="nt">&lt;/vendor&gt;</span>
     <span class="nt">&lt;package&gt;</span>language_pack<span class="nt">&lt;/package&gt;</span>
     <span class="nt">&lt;sort_order&gt;</span>100<span class="nt">&lt;/sort_order&gt;</span>
     <span class="nt">&lt;use</span> <span class="na">vendor=</span><span class="s">&quot;parent-package-one&quot;</span> <span class="na">package=</span><span class="s">&quot;language_package_one&quot;</span><span class="nt">/&gt;</span>
@@ -463,11 +463,11 @@ Product 'Multimeter-2000' has been added to shopping cart.
 
 <ol>
   <li><code>parent-package-one/language_package_one</code></li>
-  <li><code>&lt;VendorName&gt;/en_au_package</code></li>
-  <li><code>&lt;VendorName&gt;/en_ie_package</code></li>
+  <li><code>&lt;vendorname&gt;/en_au_package</code></li>
+  <li><code>&lt;vendorname&gt;/en_ie_package</code></li>
   <li><code>parent-package-two/language_package_two</code></li>
-  <li><code>&lt;VendorName&gt;/en_ca_package</code></li>
-  <li><code>&lt;VendorName&gt;/en_us_package</code></li>
+  <li><code>&lt;vendorname&gt;/en_ca_package</code></li>
+  <li><code>&lt;vendorname&gt;/en_us_package</code></li>
 </ol>
 
 <p>Specifying all inheritances between the language packages might result in creating circular inheritance chains. Use <a href="https://github.com/magento/magento2/tree/2.0.0/dev/tests/static/testsuite/Magento/Test/Integrity/App/Language/CircularDependencyTest.php" target="_blank">Magento\Test\Integrity\App\Language\CircularDependencyTest</a> test to locate and fix such chains.</p>
@@ -480,7 +480,7 @@ Product 'Multimeter-2000' has been added to shopping cart.
 <p>To declare a package, specify the following information:</p>
 
 <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
-<span class="nt">&lt;language</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../&lt;path&gt;/Magento/Framework/App/Language/package.xsd&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;language</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:App/Language/package.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;code&gt;</span>en_GB<span class="nt">&lt;/code&gt;</span>
     <span class="nt">&lt;vendor&gt;</span>magento<span class="nt">&lt;/vendor&gt;</span>
     <span class="nt">&lt;package&gt;</span>en_gb<span class="nt">&lt;/package&gt;</span>
