@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Step 1. Readiness check</title>
+	<title>Set up the updater (contributing developers only)</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/comp-mgr/compman-readiness.html">
+	<link rel="canonical" href="//guides/v2.0/comp-mgr/prereq/prereq_updater.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Step 1. Readiness check</h1>
+		<h1 class="page-heading">Set up the updater (contributing developers only)</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/comp-mgr/compman-readiness.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/comp-mgr/prereq/prereq_updater.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -212,41 +212,16 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="compman-readiness-over">Readiness check overview</h2>
-<p>The readiness check makes sure your server and environment are set up correctly for updating, enabling, or disabling components. In the event of errors, you can consult troubleshooting suggestions in this guide.</p>
+		<p><em>Contributing developers only</em> must set up the Magento updater application.</p>
 
-<h2 id="compman-readiness-start">Start the readiness check</h2>
-<p>To start, click either <strong>Start Readiness Check</strong> or <strong>Next</strong> on the Magento Component Manager page. A sample follows.</p>
+<div class="bs-callout bs-callout-warning">
+  <p>You must set up the Magento updater application <em>only</em> if you are a contributing developer; that is, you cloned the Magento 2 GitHub repository. To review, see <a href="/guides/v2.0/install-gde/prereq/prereq_updater.html">Set up the updater</a>.</p>
+</div>
 
-<p><img src="/common/images/cman_update_readiness.png" width="650px" alt="The readiness check enables you to find out if your server and environment are ready to proceed" /></p>
-
-<p>See one of the following:</p>
+<h4 id="next-step">Next step</h4>
 
 <ul>
-  <li><a href="#compman-readiness-success">Success</a></li>
-  <li><a href="#compman-readiness-fail">Failure</a></li>
-</ul>
-
-<h3 id="compman-readiness-success">Success</h3>
-<p>The following figure shows an example of a successful readiness check. If all tests passed, click <strong>Next</strong> and continue with <a href="/guides/v2.0/comp-mgr/compman-backup.html">Backup</a>.</p>
-
-<p><img src="/common/images/cman_readiness-success.png" width="700px" alt="If all readiness checks pass, click Next and continue with the next step" /></p>
-
-<h3 id="compman-readiness-fail">Failure</h3>
-<p>Messages similar to the following display if any readiness check fails. </p>
-
-<p><img src="/common/images/cman_readiness-fail-ex.png" alt="You must resolve all readiness check failures before you continue" /></p>
-
-<p>In the event of failure, see one of the following sections:</p>
-
-<ul>
-  <li><a href="/guides/v2.0/comp-mgr/trouble/cman/updater.html">Updater check failure</a></li>
-  <li><a href="/guides/v2.0/comp-mgr/trouble/cman/cron.html">Cron script check failure</a></li>
-  <li><a href="/guides/v2.0/comp-mgr/trouble/cman/component-depend.html">Component dependency check failure</a></li>
-  <li><a href="/guides/v2.0/install-gde/system-requirements.html">PHP version check failure</a></li>
-  <li><a href="/guides/v2.0/release-notes/known-issues.html#known-devbeta-xdebug">PHP settings check failure</a></li>
-  <li><a href="/guides/v2.0/install-gde/system-requirements.html">PHP extensions check failure</a></li>
-  <li><a href="/guides/v2.0/comp-mgr/trouble/cman/doc.html">magento/theme-doc-blank failure</a></li>
+  <li><a href="/guides/v2.0/comp-mgr/prereq/prereq_compman-updater.html">Set up cron for Component Manager and System Upgrade</a></li>
 </ul>
 
 
@@ -395,7 +370,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/prereq/prereq_updater.html">Set up the updater (contributing developers only)</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/comp-mgr/prereq/prereq_updater.html">Set up the updater (contributing developers only)</a></li>
 
 									
 						
@@ -436,7 +411,7 @@
 
 									
 							
-									<li class="level-2  active "><a href="/guides/v2.0/comp-mgr/compman-readiness.html">Step 1. Readiness check</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/compman-readiness.html">Step 1. Readiness check</a></li>
 
 									
 						
