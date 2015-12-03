@@ -9,13 +9,28 @@ github_link: howdoi/checkout/checkout_customize.md
 ---
 
 ## What's in this topic
-Checkout steps are implemented as UI components. So if you want to customize the view of a checkout step, you need to create a new `.js` file, implementing a different component or customizing the existing one, and declare this new component instead of the existing one in the checkout layout file `checkout_index_index.html`. This topic provides the most important information you need to be able to perform this.
+
+This topic contains the basic information about how to customize the view of an existing checkout step. In the Magento application, checkout is implemented using UI components, so step customization means changing the .js implementation or template for a component, adding or disabling a component.
+
+
+## Declare a component's new .js implementation and template in layout
+
+To declare a new .js file and a template for a component used in checkout:
+
+
+1. In you custom module directory create `<your_module_dir>/view/frontend/layout/checkout_index_index.xml`. 
+2. Copy the content from the `<Magento_Checkout_module_dir>/view/frontend/layout/checkout_index_index.xml`.
+3. Leave only the structure related to the component you need to customize, and remove the rest. 
+4. Change the path to the component's .js file in the 
+
+{%highlight xml%}
+{%endhighlight xml%}
 
 ## Create the component's files
 
-Add the `.js` file and the `.html` template (if necessary) as described in [Add a new checkout step]({{site.gdeurl}}howdoi/checkout/checkout_new_step.html)
+Create the component's `.js` file and the `.html` template (if necessary) as described in [Add a new checkout step]({{site.gdeurl}}howdoi/checkout/checkout_new_step.html). 
 
-Extending the existing .js component is described in the [Use custom JavaScript]({{site.gdeurl}}javascript-dev-guide/javascript/custom_js.html#extend_js_component) topic.
+Your component's `.js` file might implement a new component, or extend the existing one. Extending the existing `.js` component is described in the [Use custom JavaScript]({{site.gdeurl}}javascript-dev-guide/javascript/custom_js.html#extend_js_component) topic.
 
 
 ## Add the new component to the checkout page layout
