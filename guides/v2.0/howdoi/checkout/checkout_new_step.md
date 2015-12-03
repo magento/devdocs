@@ -8,6 +8,7 @@ menu_order: 1
 github_link: howdoi/checkout/checkout_new_step.md
 ---
 
+## What's in this topic
 The default Magento Checkout consists of two steps:
 
  - Shipping Information

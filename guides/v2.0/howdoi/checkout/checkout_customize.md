@@ -8,7 +8,8 @@ menu_order: 1
 github_link: howdoi/checkout/checkout_customize.md
 ---
 
-Checkout steps are implemented as UI components. So if you want to customize the view of a checkout step, you need to create a new `.js` file, implementing a different component or customizing the existing one, and declare this new component instead of the existing one in the checkout layout file `index_index_checkout.html`. This topic provides the most important information you need to be able to perform this.
+## What's in this topic
+Checkout steps are implemented as UI components. So if you want to customize the view of a checkout step, you need to create a new `.js` file, implementing a different component or customizing the existing one, and declare this new component instead of the existing one in the checkout layout file `checkout_index_index.html`. This topic provides the most important information you need to be able to perform this.
 
 ## Create the component's files
 
