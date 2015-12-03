@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento jQuery widgets</title>
+	<title>Conventional notations used in this Guide</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/javascript-dev-guide/widgets/jquery-widgets-about.html">
+	<link rel="canonical" href="//guides/v2.0/javascript-dev-guide/conventions_js.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Magento jQuery widgets</h1>
+		<h1 class="page-heading">Conventional notations used in this Guide</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/javascript-dev-guide/widgets/jquery-widgets-about.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/javascript-dev-guide/conventions_js.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -212,30 +212,29 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<p>The Magento system uses a jQuery JavaScript library to implement client functionality. This includes a wide usage of standard, customized, and custom jQuery widgets.</p>
+		<h2 id="conventional-notations-for-paths-to-modules-and-themes">Conventional notations for paths to modules and themes</h2>
 
-<p>This guide discusses the following widgets:</p>
+<p>Magento application components, including modules, themes, and language packages technically can be located anywhere under the Magento root directory. This refers to both, Magento default and custom components. </p>
+
+<p>The following relative paths are used for modules and themes:</p>
+
+<p><strong>- <code>&lt;theme_dir&gt;</code></strong></p>
+
+<p>Theme directory. Usually used when talking about custom themes, or any theme in general.</p>
+
+<p>Possible absolute path: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;</code></p>
+
+<p><strong>- <code>&lt;module_dir&gt;</code></strong></p>
+
+<p>Module directory. When talking about a particular Magento module, also notation similar to the following is used: <code>&lt;Magento_Checkout_module_dir&gt;</code></p>
+
+<p>Possible absolute path: <code>app/code/&lt;Vendor&gt;/&lt;Module&gt;</code>
+For Magento modules, usually one of the following:</p>
+
 <ul>
-<li><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_accordion.html" target="_blank">Accordion widget</a> </li>
-<li><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_alert.html" target="_blank">Alert widget</a> </li>
-<li><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_calendar.html" target="_blank">Calendar widget</a></li>
-<li><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_collapsible.html" target="_blank">Collapsible widget</a></li>
-<li><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_confirm.html" target="_blank">Confirm widget</a></li>
-<li><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_dialog.html" target="_blank">DropdownDialog widget</a></li>
-<li><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_list.html" target="_blank">List widget</a></li>
-<li><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_loader.html" target="_blank">Loader widget</a></li>
-<li><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_menu.html" target="_blank">Menu widget</a></li>
-<li><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_modal.html" target="_blank">Modal widget</a></li>
-<li><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_navigation.html" target="_blank">Navigation widget</a></li>
-<li><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_prompt.html" target="_blank">Prompt widget</a></li>
-<li><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_quickSearch.html" target="_blank">QuickSearch widget</a></li>
-<li><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_tabs.html" target="_blank">Tabs widget</a></li>
-
+  <li><code>app/code/Magento/&lt;Module&gt;</code></li>
+  <li><code>vendor/magento/module-&lt;module&gt;-&lt;name&gt;</code></li>
 </ul>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Magento 2 supports <a href="http://blog.jqueryui.com/2012/11/jquery-ui-1-9-2/" target="_blank">jQuery UI 1.9.2</a>, widget options added in later versions might be unavailable.</p>
-</div>
 
 
 		</div>
@@ -350,7 +349,7 @@
 				
 							
 							
-								<li class="q "><a href="/guides/v2.0/javascript-dev-guide/conventions_js.html">Conventional notations used in this Guide</a></li>
+								<li class="q  active "><a href="/guides/v2.0/javascript-dev-guide/conventions_js.html">Conventional notations used in this Guide</a></li>
 				
 							
 							
@@ -434,7 +433,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/javascript-dev-guide/widgets/jquery-widgets-about.html">Magento jQuery widgets</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/javascript-dev-guide/widgets/jquery-widgets-about.html">Magento jQuery widgets</a></li>
 									
 								
 								

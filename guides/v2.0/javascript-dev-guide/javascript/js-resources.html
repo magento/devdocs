@@ -226,9 +226,9 @@
 
 <ul>
   <li>Library level for all libraries in Magento code base (<code>lib/web</code>)</li>
-  <li>Module level for all libraries in a module (<code>app/code/&lt;VendorName&gt;/&lt;ModuleName&gt;/view/&lt;areaname&gt;/web</code>)</li>
-  <li>Theme for all libraries in a theme (<code>app/design/&lt;areaname&gt;/&lt;VendorName&gt;/[custom theme name]/&lt;VendorName&gt;_&lt;ModuleName&gt;/web</code>)</li>
-  <li>(<em>Not recommended</em>) All libraries in a theme  (<code>app/design/&lt;areaname&gt;/&lt;VendorName&gt;/[custom theme name]/web</code>). We do not recommend using this level to specify JavaScript resources.</li>
+  <li>Module level for all libraries in a module (<code>&lt;module_dir&gt;/view/&lt;areaname&gt;/web</code>)</li>
+  <li>Theme for all libraries in a theme (<code>&lt;theme_dir&gt;/&lt;VendorName&gt;_&lt;ModuleName&gt;/web</code>)</li>
+  <li>(<em>Not recommended</em>) All libraries in a theme  (<code>&lt;theme_dir&gt;/web</code>). We do not recommend using this level to specify JavaScript resources.</li>
 </ul>
 
 <p>We recommend specifying JavaScript resources in the templates rather than in the layout updates to ensure processing of the resources in body of a page.</p>
@@ -460,6 +460,10 @@ require(["magento!Magento_ConfigurableProduct::js/configurable"], function(Confi
 							
 							
 								<li class="q "><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">Introduction</a></li>
+				
+							
+							
+								<li class="q "><a href="/guides/v2.0/javascript-dev-guide/conventions_js.html">Conventional notations used in this Guide</a></li>
 				
 							
 							
