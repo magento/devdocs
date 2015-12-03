@@ -23,8 +23,8 @@ To use a custom implementation of an existing Magento JS component:
 <ol>
 <li>Place the custom component source file in one of the following locations:
 <ul>
-<li>Your theme JS files: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/js</code></li>
-<li>Your module view JS files: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/web/js</code></li>
+<li>Your theme JS files: <code>&lt;theme_dir&gt;/web/js</code></li>
+<li>Your module view JS files: <code>&lt;module_dir&gt;/view/frontend/web/js</code></li>
 </ul>
 </li>
 <li>Create a RequireJS configuration file <code>requirejs-config.js</code>, having specified the following:
@@ -64,8 +64,8 @@ var config = {
 </ul>
 <li>Place your <code>requirejs-config.js</code> file in one of the following directories (according to the location of your custom script, see step 1 of this procedure):
 <ul>
-<li>Your theme files: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;</code></li>
-<li>Your module view files: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend</code></li>
+<li>Your theme files: <code>&lt;theme_dir&gt;</code></li>
+<li>Your module view files: &lt;module_dir&gt;/view/frontend</code></li>
 </ul>
 </li>
 </ol>
@@ -157,8 +157,8 @@ var config = {
 </li>
 <li>Put the <code>requirejs-config.js</code> file in one of the following locations:
 <ul>
-<li>Your custom theme files: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;</code> </li>
-<li>Your custom module files: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend</code></li>
+<li>Your custom theme files: <code>&lt;theme_dir&gt;</code> </li>
+<li>Your custom module files: <code>&lt;module_dir&gt;/view/frontend</code></li>
 </ul>
 </li>
 </ol>
