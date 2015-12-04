@@ -17,7 +17,7 @@ This topic contains the basic information about how to customize the view of an 
 
 To declare a new .js file and a template for a component used in checkout:
 
-1. In you custom module directory create `<your_module_dir>/view/frontend/layout/checkout_index_index.xml`. 
+1. In you custom module directory create `<your_module_dir>/view/frontend/layout/checkout_index_index.xml`. (For your checkout customization to be applied correctly, your custom module should depend on the Magento_Checkout module.)
 2. In this file, add the following:
 
 {%highlight xml%}
