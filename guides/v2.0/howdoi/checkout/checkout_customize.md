@@ -17,31 +17,59 @@ This topic contains the basic information about how to customize the view of an 
 
 To declare a new .js file and a template for a component used in checkout:
 
-
 1. In you custom module directory create `<your_module_dir>/view/frontend/layout/checkout_index_index.xml`. 
-2. Copy the content from the `<Magento_Checkout_module_dir>/view/frontend/layout/checkout_index_index.xml`.
-3. Leave only the structure related to the component you need to customize, and remove the rest. 
-4. Change the path to the component's .js file in the 
+2. In this file, add the following:
 
 {%highlight xml%}
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="checkout.root">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <!-- Your customization will be here -->
+                        ...
+                    </argument>
+                </arguments>
+    </body>
+</page>
 {%endhighlight xml%}
 
-## Create the component's files
+3. Copy the content from the In the `<Magento_Checkout_module_dir>/view/frontend/layout/checkout_index_index.xml` file, find the component you need to customize you need to re-assign and copy this node and all parent nodes up to `<argument>` (no need to leave the attributes and values). Leave only those child nodes which correspond to the properties which you need to re-assign. 
 
-Create the component's `.js` file and the `.html` template (if necessary) as described in [Add a new checkout step]({{site.gdeurl}}howdoi/checkout/checkout_new_step.html). 
+4. Change the path to the component's `.js` file, template or any other property.
 
-Your component's `.js` file might implement a new component, or extend the existing one. Extending the existing `.js` component is described in the [Use custom JavaScript]({{site.gdeurl}}javascript-dev-guide/javascript/custom_js.html#extend_js_component) topic.
+Example:
+
+To change the title property of the Shipping component from "Shipping" to "Shipping Information", the extending checkout_index_index.xml looks like following:
+
+<p class="q">Could you help to add a good illustration</p>
+
+{%highlight xml%}<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="checkout.root">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+
+                        ...
+                    </argument>
+                </arguments>
+    </body>
+</page>
+
+{%endhighlight xml%}
 
 
 ## Add the new component to the checkout page layout
-The Checkout page layout is defined in `checkout_index_index.xml`.
 
-In the layout file, you need to declare the new component file, and disable the previously used component.
+Any UI component is added in the `checkout_index_index.xml` similar to the way a [checkout step component is added]({{site.gdeurl}}howdoi/checkout/checkout_new_step.html#add-your-step-to-the-checkout-page-layout). 
 
-To declare the new component, add it as 
-`<item name="component" xsi:type="string">path_to_file_in_terms_of_RequireJS</item>`, as demonstrated in the code sample in [Add a new checkout step]({{site.gdeurl}}howdoi/checkout/checkout_new_step.html#add-your-step-to-the-checkout-page-layout).
+Make sure that you declare a component so that it will be rendered correctly by the parent component. If a parent component is a general UI component, its child components are rendered without any conditions. But if a parent component is a an extenstion of a general UI components, then children rendering might be restricted in certain way. For example it can render only children from a certain `displayArea`.
 
-To disable the component, use the following instructions:
+<p class="q">How is it called correctly, if not "general"</p>
+In the layout file, you need to declare the new component file, and disable the previously 
+
+## Disable a component
+To disable the component, in your `checkout_index_index.xml` use the following instructions:
 
 {%highlight xml%}
 <item name="%the_previously_used_component%" xsi:type="array">
