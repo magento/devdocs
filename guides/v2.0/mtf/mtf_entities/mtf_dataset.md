@@ -261,12 +261,8 @@ This is a data set that:
       - `quantity_and_stock_status/qty` field is assigned with `657`
       - `custom_options` field is processed by a [data source][] `Magento\Catalog\Test\Fixture\Product\CustomOptions` using a data set `drop_down_with_one_option_fixed_price` from the repository `Magento\Catalog\Test\Repository\Product\CustomOptions`
       - `checkout_data` fields are assigned with a data set `simple_drop_down_with_one_option_fixed_price` from the `Magento\Catalog\Test\Repository\CatalogProductSimple\CheckoutData` repository
-  - defines tag that can be used to customize test suite run
-  - defines constraints that will be performed after test flow in the order they are presented in the data set
-
-<div class="bs-callout bs-callout-tip">
-  <p>Data with the name <code>tag</code> can be used to customize the test suite run.</p>
-</div>
+  - defines tag that can be used to customize the test suite run
+  - defines constraints that will be performed after the test flow in the order they are presented in the data set
 
 ## Merge data sets {#merge}
 
