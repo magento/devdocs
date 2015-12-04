@@ -29,7 +29,7 @@ The concept of the <i>module</i> is the heart of Magento extension development, 
 If a module is self-contained, then you can modify or replace it without affecting other areas of the code. This <i>loose coupling</i> of software components reduces the ripple effects throughout your code base of changing code. 
 
 
-See <a href="{{ site.gdeurl }}architecture/components/modules/mod_intro.md">Modules</a> for an introduction to modules. See the <a href="{{ site.gdeurl }}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for detailed instructions on how to create modules. 
+See <a href="{{ site.gdeurl }}architecture/archi_perspectives/components/modules/mod_intro.md">Modules</a> for an introduction to modules. See the <a href="{{ site.gdeurl }}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for detailed instructions on how to create modules. 
 
 <h3>Reliance on popular design patterns</h3>
 Reliance on known architectural and programming structures helps PHP developers orient themselves to the specific development issues that affect coding in a particular product ecosystem. This can reduce the learning curve for new Magento developers. 
@@ -125,7 +125,7 @@ See Plug-ins in  <a href="{{ site.gdeurl }}extension-dev-guide/bk-extension-dev-
 <h3 id="m2arch-related">Related topics</h3>
 <a href="{{ site.gdeurl }}architecture/extensibility.html">Extensibility and modularity</a>
 
-<a href="{{ site.gdeurl }}architecture/frontend_custom_strategies.md">Frontend customization strategies</a>
+<a href="{{ site.gdeurl }}architecture/view/frontend_custom_strategies.md">Frontend customization strategies</a>
 
 
 

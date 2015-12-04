@@ -26,7 +26,7 @@ Magento provides several tools to help you significantly jumpstart the storefron
 
 
 
-See <a href="{{ site.gdeurl }}architecture/components/arch_themes.html">Themes</a> for background/conceptual information about themes. 
+See <a href="{{ site.gdeurl }}architecture/view/arch_themes.html">Themes</a> for background/conceptual information about themes. 
 
 See <a href="{{ site.gdeurl }}frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a> for information on creating your own themes.  
 
