@@ -216,7 +216,7 @@
 
 <ul>
   <li><a href="#config-cli-before">First steps</a></li>
-  <li><a href="#config-cli-config-cli-subcommands-less-sass">Create LESS files</a></li>
+  <li><a href="#config-cli-subcommands-less-sass">Create LESS files</a></li>
 </ul>
 
 <h2 id="config-cli-before">First steps</h2>
@@ -240,7 +240,7 @@ bash shell example for CentOS:<br />
 
 <p>Command options:</p>
 
-<pre><code>magento dev:css:deploy less &lt;file&gt; [--locale="&lt;locale&gt;" ... "&lt;locale&gt;"] [--area="{adminhtml|frontend}"] [--theme="&lt;theme name&gt;" ... 
+<pre><code>magento dev:source-theme:deploy less &lt;file&gt; [--locale="&lt;locale&gt;" ... "&lt;locale&gt;"] [--area="{adminhtml|frontend}"] [--theme="&lt;theme name&gt;" ... 
 "&lt;theme name&gt;"] 
 </code></pre>
 
@@ -289,7 +289,7 @@ bash shell example for CentOS:<br />
 
 <p>For example, to create LESS files for the frontend theme named <code>VendorName/themeName</code> in the <code>en_US</code> locale using a CSS file named <code>&lt;your Magento install dir&gt;/pub/static/frontend/VendorName/themeName/en_US/css/styles-l.css</code>, enter the following command:</p>
 
-<pre><code>magento dev:css:deploy less css/styles-l --locale="en_US" --area="frontend" --theme="VendorName/themeName"
+<pre><code>magento dev:source-theme:deploy less css/styles-l --locale="en_US" --area="frontend" --theme="VendorName/themeName"
 </code></pre>
 
 <p>The following messages display to confirm success:</p>
