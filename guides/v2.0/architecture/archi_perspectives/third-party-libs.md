@@ -12,12 +12,10 @@ redirect_from: /guides/v1.0/architecture/archi_perspectives/third-party-libs.htm
 
 <h2>Third-party libraries</h2>
 
-Magento is built with a set of external libraries. Composer, the dependency management system that Magento uses,  downloads all of the external libraries that are included in its main configuration file and installs them under its default installation directory (`vendor/`).  
-
-Third-party libraries  include Zend framework files and Symfony libraries. For a complete list of third-party libraries that ship with Magento, look at the main `composer.json` file of your Magento installation.  
+Magento depends on a set of external libraries. You can use Composer to manage these dependencies. Composer downloads all of the external libraries that are included in its main configuration file and installs them under its default installation directory (`vendor/`). Third-party libraries  include Zend framework files and Symfony libraries.   
 
 
-There are some required libraries that Composer does not load. These reside in `lib/` and include JavaScript libraries (none of which are loaded by Composer) and a few PHP libraries. 
+There are some required libraries that Composer does not load. These reside in `lib/` and include JavaScript libraries (none of which are loaded by Composer) and a few PHP libraries. (You can also use Composer  to manage dependencies between various components within Magento.)
 
 
 If you are extending your Magento storefront to interact with third-party applications, you might need to include additional external libraries. These external libraries can be as simple as a wrapper for an API of a third-party product you are integrating with your Magento storefront, or an entire framework. 
