@@ -17,10 +17,10 @@ Essential qualities foster extensibility throughout the entire set of Magento co
 * Modularity
 * Reliance on popular design patterns
 * Coding standards
-* flexible attribute types
-* web APIs
-* service contracts and dependency injection
-* plug-ins
+* Flexible attribute types
+* Web APIs
+* Service contracts and dependency injection
+* Plug-ins
 
 
 <h3>Modularity</h3>
@@ -32,9 +32,9 @@ If a module is self-contained, then you can modify or replace it without affecti
 See <a href="{{ site.gdeurl }}architecture/components/modules/mod_intro.md">Modules</a> for an introduction to modules. See the <a href="{{ site.gdeurl }}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for detailed instructions on how to create modules. 
 
 <h3>Reliance on popular design patterns</h3>
-Reliance on known architectural and programming patterns helps PHP developers orient themselves to the specific development issues that affect coding in a particular product ecosystem. This can reduce the learning curve for new Magento developers. 
+Reliance on known architectural and programming structures helps PHP developers orient themselves to the specific development issues that affect coding in a particular product ecosystem. This can reduce the learning curve for new Magento developers. 
 
-Design patterns are time-tested, widely recognized software architecture patterns. Magento product architecture incorporates many well known patterns, but the Model-View-Controller (MVC)  holds particular interest for extension developers. See <a href="{{ site.gdeurl }}architecture/archi_perspectives/Magento_MVC.html">Magento Model-View-Controller Design</a> for more information.
+Design patterns are time-tested, widely recognized software architecture constructs. Magento product architecture incorporates many well known patterns, but  Model-View-Controller (MVC)  holds particular interest for extension developers. See <a href="{{ site.gdeurl }}architecture/archi_perspectives/Magento_MVC.html">Magento Model-View-Controller Design</a> for more information.
 
 See <a href="{{ site.gdeurl }}architecture/archi_perspectives/DesignPatterns.html">Design Patterns</a> for a more detailed discussion of the specific software design patterns used in Magento. 
 
@@ -48,19 +48,19 @@ See <a href="{{ site.gdeurl }}coding-standards/bk-coding-standards.html">Coding 
 
 
 <h3>Rich product ecosystem</h3>
-The wider Magento ecosystem provides an extensive community and rich third-party marketplace for extensions. Visit Magento Marketplace for an overview of the many modules and themes available for download and to buy modules and theme packages, which offer more possibilities than you can imagine for extending your storefront.  
+The wider Magento ecosystem provides an extensive community and rich third-party marketplace for extensions. Visit Magento Marketplace for an overview of the many modules and themes available for download and to buy modules and theme packages, which offer more possibilities  for extending your storefront.  
  
 
 
 <h3>Flexible attribute types</h3>
-You can enhance your storefront by adding unique attributes to the default product attributes. For example, you might need to add a new attribute to describe a product, such as texture or an industry-specific rating. You can add these attributes from the Admin panel, and the product interface  displays them. 
+You can enhance your storefront by adding unique attributes to the default product attributes. For example, you might need to add a new attribute to describe a product, such as texture or an industry-specific rating. You can add these attributes from the Magento Admin, and the storefront  displays them. 
 
 
 <table>
    <tbody>
       <tr style="background-color: lightgray">
          <th>Attribute type</th>
-         <th>Displayed by GUI?</th>
+         <th>Displayed by Storefront?</th>
          
       </tr>
 <tr>
@@ -86,24 +86,24 @@ You can enhance your storefront by adding unique attributes to the default produ
 
 Attribute types fall into three general categories:
 
-* <b>EAV (Entity-Attribute-Value) attributes</b> are site-specific attributes that you can define for a local site using the Magento Admin interface. 
+* <b>EAV (Entity-Attribute-Value) attributes</b> are site-specific attributes that you can define for a local site using the Magento Admin. 
 
 * <b>Custom attributes</b> are a subset of EAV attributes. Objects that use EAV attributes typically store values in several MySQL tables. The Customer and Catalog modules use EAV attributes. 
 
-* <b>Extension attributes</b>  often use more complex data types than custom attributes. These attributes do not appear in the product interface. Extension attributes are introduced by extension modules.
+* <b>Extension attributes</b>  often use more complex data types than custom attributes. These attributes do not appear in the storefront. Extension attributes are introduced by modules.
 
 See <a href="{{ site.gdeurl }}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for information about using attributes.
 
 
 
 <h3>Web APIs</h3>
-Magento or third-party services can be configured as a web API (REST or SOAP) with some simple XML. You can use these services to integrate your Magento installation into third-party applications, such as CRM (Customer Relationship Management), ERP (Enterprise Resource Planning) back office systems, and CMS (Content Management System). 
+Magento or third-party services can be configured as a web API (REST or SOAP) with some simple XML. You can use these services to integrate your Magento installation into third-party applications, such as CRM (Customer Relationship Management), ERP (Enterprise Resource Planning) back office systems, and CMS (Content Management Systems). 
 
 
 See <a href="{{ site.gdeurl }}get-started/bk-get-started-api.html">Getting Started with Magento Web APIs</a> for more information. 
 
 <h3>Service contracts, dependency injection, and dependency inversion</h3>
-<i>Service contracts</i> provide a new way to access public API endpoints. These PHP interfaces offer robust, stable extension points that clients can connect to.  Service contracts define the endpoints that function as a module's public API. Defining these endpoints is an essential part of adding a module. 
+<i>Service contracts</i> provide a new way to access public API endpoints. These PHP interfaces offer robust, stable extension points to which clients can connect.  Service contracts define the endpoints that function as a module's public API. Defining these endpoints is an essential part of adding a module. 
 
 Service contracts are discussed throughout the Magento documentation set. See <a href="{{ site.gdeurl }}architecture/archi_perspectives/service_layer.html">Service layer</a> for a high-level introduction. See <a href="{{ site.gdeurl }}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for a more detailed discussion of service contracts and dependency injection. 
 
