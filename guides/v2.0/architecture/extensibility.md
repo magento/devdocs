@@ -41,7 +41,9 @@ Maximizing extensibility has been our goal through all aspects of Magento develo
 
 
 <a href="{{ site.gdeurl }}architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>
+
 <a href="{{ site.gdeurl }}architecture/global_extensibility_features.html">Global product features that support extension development</a>
+
 <a href="{{ site.gdeurl }}architecture/frontend_custom_strategies.html">Ease of frontend customization</a>
 
 

@@ -26,8 +26,6 @@ Magento provides several tools to help you significantly jumpstart the storefron
 
 
 
-See Themes for background/conceptual information about themes. 
-
 See <a href="{{ site.gdeurl }}frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a> for information on creating your own themes.  
 
  
