@@ -216,15 +216,58 @@
 
 <p>Magento’s highly modular structure includes the following open-source technologies:</p>
 
-<p>Stack components include:</p>
+<p><b>Web servers</b></p>
 
 <ul>
   <li>
-    <p>PHP (5.5 and 5.6)</p>
+    <p>Apache 2.x</p>
   </li>
   <li>
-    <p>Coding standards PSR-0 (autoloading standard), PSR-1 (basic coding standards), and PSR-2 (coding style guide), PSR-3, PSR-4</p>
+    <p>Nginx 1.7+</p>
   </li>
+</ul>
+
+<p><b>PHP</b></p>
+
+<ul>
+  <li>5.5, 5.6x, 7.0</li>
+</ul>
+
+<p><b>Database</b></p>
+
+<ul>
+  <li>MySQL 5.6.x</li>
+  <li>MySQL Percona 5.6.x</li>
+</ul>
+
+<p><b>Reverse Proxy/Web Accelerator</b></p>
+
+<ul>
+  <li>
+    <p>Varnish 3.x</p>
+  </li>
+  <li>
+    <p>Varnish 4.x</p>
+  </li>
+</ul>
+
+<p><b>Cache Storage</b></p>
+
+<ul>
+  <li>Redis 2.x</li>
+  <li>Redis 3.x</li>
+  <li>Memcache 1.4.x</li>
+</ul>
+
+<p><b>Search</b></p>
+
+<ul>
+  <li>Solr 4.x</li>
+</ul>
+
+<p><b>Additional technologies</b></p>
+
+<ul>
   <li>
     <p>HTML5</p>
   </li>
@@ -239,16 +282,12 @@
     <p>Third-party libraries (Zend Framework 1, Zend Framework 2, Symfony)</p>
   </li>
   <li>
-    <p>Apache 2.2, 2.4</p>
+    <p>Coding standards PSR-0 (autoloading standard), PSR-1 (basic coding standards), and PSR-2 (coding style guide), PSR-3, PSR-4</p>
   </li>
-  <li>
-    <p>Nginx 1.7</p>
-  </li>
-  <li>MySQL 5.6</li>
   <li>Composer (dependency management package for PHP) </li>
 </ul>
 
-<p>Optional stack components include:</p>
+<p><b>Optional stack components</b> include:</p>
 
 <ul>
   <li>Varnish (caching)</li>
@@ -256,12 +295,17 @@
   <li>Solr (search engine)</li>
 </ul>
 
+<p>Magento is <b>compatible with but not supported</b> for:</p>
+
+<ul>
+  <li>HHVM 3.9 PHP interpreter </li>
+</ul>
+
 <p>Magento also provides an automated testing suite that includes test scripts for integration, functional areas, and performance. Components include PHPUnit for the unit test framework and Selenium for the functional test framework. </p>
 
-<p>This framework is included in <code>Magento/mtf</code>. For more information, see Magento Test Framework guide.</p>
+<p>This framework is included in <code>Magento/mtf</code>. For more information, see <a href="/guides/v2.0/mtf/mtf_introduction.html">Magento Testing Framework guide</a>.</p>
 
 <h2>Related topics</h2>
-<p><a href="/guides/v2.0/architecture/stack-basics.html"> Stack basics</a></p>
 
 <p><a href="/guides/v2.0/architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a></p>
 
