@@ -29,14 +29,13 @@ The concept of the <i>module</i> is the heart of Magento extension development, 
 If a module is self-contained, then you can modify or replace it without affecting other areas of the code. This <i>loose coupling</i> of software components reduces the ripple effects throughout your code base of changing code. 
 
 
-See <a href="{{ site.gdeurl }}architecture/archi_perspectives/components/modules/mod_intro.md">Modules</a> for an introduction to modules. See the <a href="{{ site.gdeurl }}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for detailed instructions on how to create modules. 
+ See the <a href="{{ site.gdeurl }}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for detailed instructions on how to create modules. 
 
 <h3>Reliance on popular design patterns</h3>
 Reliance on known architectural and programming structures helps PHP developers orient themselves to the specific development issues that affect coding in a particular product ecosystem. This can reduce the learning curve for new Magento developers. 
 
-Design patterns are time-tested, widely recognized software architecture constructs. Magento product architecture incorporates many well known patterns, but  Model-View-Controller (MVC)  holds particular interest for extension developers. See <a href="{{ site.gdeurl }}architecture/archi_perspectives/Magento_MVC.html">Magento Model-View-Controller Design</a> for more information.
+Design patterns are time-tested, widely recognized software architecture constructs. Magento product architecture incorporates many well known patterns, but  Model-View-Controller (MVC)  holds particular interest for extension developers. 
 
-See <a href="{{ site.gdeurl }}architecture/archi_perspectives/DesignPatterns.html">Design Patterns</a> for a more detailed discussion of the specific software design patterns used in Magento. 
 
 
 <h3>Coding standards</h3>
