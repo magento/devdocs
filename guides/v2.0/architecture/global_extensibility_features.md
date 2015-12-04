@@ -124,7 +124,6 @@ See Plug-ins in  <a href="{{ site.gdeurl }}extension-dev-guide/bk-extension-dev-
 <h3 id="m2arch-related">Related topics</h3>
 <a href="{{ site.gdeurl }}architecture/extensibility.html">Extensibility and modularity</a>
 
-<a href="{{ site.gdeurl }}architecture/frontend_custom_strategies.md">Frontend customization strategies</a>
 
 
 
