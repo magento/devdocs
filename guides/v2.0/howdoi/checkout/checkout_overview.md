@@ -23,4 +23,3 @@ You can customize the defalt checkout in many ways. Here the following customiza
 
 For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a custom module. 
 
-For your checkout customization to be applied correctly, your custom module should depend on the Magento_Checkout module.
