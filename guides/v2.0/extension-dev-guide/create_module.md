@@ -14,7 +14,7 @@ Now that you have [determined your module&#8217;s initial file structure](module
 
 
 
-##Add the module&#8217;s `module.xml` file
+<h2 id="add-module-xml">Add the module's `module.xml` file</h2>
 Declare the module itself by adding a module.xml file in the `/etc` folder of your module.
 
 A module declares itself (i.e. defines its name and existence) in the `module.xml` file, located in the Magento install directory at `<ModuleName>/etc/`. 
