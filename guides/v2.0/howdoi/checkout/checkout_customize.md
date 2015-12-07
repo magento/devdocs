@@ -8,7 +8,7 @@ menu_order: 2
 github_link: howdoi/checkout/checkout_customize.md
 ---
 
-## What's in this topic
+<h2> What's in this topic</h2>
 
 This topic contains the basic information about how to customize the view of an existing checkout step. In the Magento application, checkout is implemented using UI components, so step customization means changing the .js implementation or template for a component, adding or disabling a component.
 
@@ -18,7 +18,7 @@ This topic contains the basic information about how to customize the view of an 
 
 ## Change the component's .js implementation and template 
 
-To change the .js implementation and template used for components rendering, you need to declare the new files in the checkout page layout. To do this, take the following steps:
+To change the `.js` implementation and template used for components rendering, you need to declare the new files in the checkout page layout. To do this, take the following steps:
 
 1. In you custom module directory create `<your_module_dir>/view/frontend/layout/checkout_index_index.xml`. (For your checkout customization to be applied correctly, your custom module should depend on the Magento_Checkout module.)
 2. In this file, add the following:
@@ -43,19 +43,45 @@ To change the .js implementation and template used for components rendering, you
 
 Example:
 
-To change the title property of the Shipping component from "Shipping" to "Shipping Information", the extending checkout_index_index.xml looks like following:
+The Magento_Shipping module adds a component rendered as a link to the Shipping Policy info to the Shipping step:
 
-<p class="q">Could you help to add a good illustration</p>
+`<Magento_Shipping_module_dir>/view/frontend/layout/checkout_index_index.xml` looks like following:
 
-{%highlight xml%}<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+{%highlight xml%}
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="checkout.root">
-                <arguments>
-                    <argument name="jsLayout" xsi:type="array">
-
-                        ...
-                    </argument>
-                </arguments>
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="checkout" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                                <item name="steps" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                        <item name="shipping-step" xsi:type="array">
+                                            <item name="children" xsi:type="array">
+                                                <item name="shippingAddress" xsi:type="array">
+                                                    <item name="children" xsi:type="array">
+                                                        <item name="before-shipping-method-form" xsi:type="array">
+                                                            <item name="children" xsi:type="array">
+                                                                <item name="shipping_policy" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Magento_Shipping/js/view/checkout/shipping/shipping-policy</item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
     </body>
 </page>
 
@@ -66,9 +92,7 @@ To change the title property of the Shipping component from "Shipping" to "Shipp
 
 Any UI component is added in the `checkout_index_index.xml` similar to the way a [checkout step component is added]({{site.gdeurl}}howdoi/checkout/checkout_new_step.html#add-your-step-to-the-checkout-page-layout). 
 
-Make sure that you declare a component so that it is rendered correctly by the parent component. If a parent component is a general UI component, its child components are rendered without any conditions. But if a parent component is a an extenstion of a general UI components, then children rendering might be restricted in certain way. For example it can render only children from a certain `displayArea`.
-
-<p class="q">How is it called correctly, if not "general"</p>
+Make sure that you declare a component so that it is rendered correctly by the parent component. If a parent component is a general UI component (referenced by the `uiComponent` alias), its child components are rendered without any conditions. But if a parent component is a an extenstion of a general UI components, then children rendering might be restricted in certain way. For example it can render only children from a certain `displayArea`.
 
 
 ## Disable a component
