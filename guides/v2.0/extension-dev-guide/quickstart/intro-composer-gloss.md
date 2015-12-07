@@ -11,7 +11,7 @@ github_link: extension-dev-guide/quickstart/intro-composer-gloss.md
 
 ##{{page.menu_title}}
 
-## Component
+### Component
 We refer to what you're coding as *components*. A Magento component can be classified into the following *types*:
 
 *	Module (extend Magento capabilities)
@@ -21,7 +21,7 @@ We refer to what you're coding as *components*. A Magento component can be class
 
 To understand how to define component types `composer.json`, see <a href="{{ site.gdeurl }}extension-dev-guide/composer-integration.html">Composer integration</a>.
 
-## Metapackage, shared package
+### Metapackage, shared package
 We require more than one component to be packaged as a <a href="https://getcomposer.org/doc/04-schema.md#type" target-"_blank">*metapackage*</a>, which consists of a `composer.json` that specifies individual components and their dependencies.
 
 In addition, your components can rely on *shared packages*, which are analogous to libraries. One shared package can be used by many metapackages.
@@ -30,7 +30,7 @@ In addition, your components can rely on *shared packages*, which are analogous 
     <p>You can upload as many shared packages as you want but you must specifically give components access to them. Failure to do so means your components won't work properly after they're installed by merchants. For more information, see the <em>Magento Marketplace User Guide</em>.</p>
 </div>
 
-## Component Manager
+### Component Manager
 Merchants use the <a href="{{ site.gdeurl }}comp-mgr/compman-start.html">Component Manager</a> (part of the Magento Admin) to do any of the following to their components:
 
 *	Install, uninstall

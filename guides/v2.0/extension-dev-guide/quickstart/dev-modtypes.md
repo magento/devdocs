@@ -9,9 +9,12 @@ menu_node:
 github_link: extension-dev-guide/quickstart/dev-modtypes.md
 ---
 
-##{{page.menu_title}}
+#### Contents
+*	<a href="#types-spt">Supported component types</a>
+*	TBD
+*	<a href="#types-vers">Versioning</a>
 
-## Supported component types
+<h2 id="types-spt">Supported component types</h2>
 
 {% include php-dev/composer-types.md %}
 
@@ -20,7 +23,7 @@ github_link: extension-dev-guide/quickstart/dev-modtypes.md
 
 (Do not understand this part.)
 
-## Versioning
+<h2 id="types-vers">Versioning</h2>
 Components have the following types of versions:
 
 *	Marketing version; in other words, the version the merchant interacts with. 
