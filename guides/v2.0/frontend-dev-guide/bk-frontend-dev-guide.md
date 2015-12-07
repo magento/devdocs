@@ -60,7 +60,6 @@ To use this guide, you must be familiar with:
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-general.html">Themes</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS) </a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/js-mage-plugin.html">Mage JavaScript plugin</a>
 *	<a href="{{ site.gdeurl }}coding-standards/code-standard-javascript.html">JavaScript coding standard</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/rwd_overview.html">Responsive web design</a>
 *	<a href="{{ site.gdeurl }}architecture/behavior/xlate.html">Translation</a>

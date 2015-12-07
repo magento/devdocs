@@ -4,9 +4,9 @@ group: extension-dev-guide
 subgroup: 6_Module Development
 title: Magento plug-ins
 menu_title: Magento plug-ins
-menu_order: 6
+menu_order: 8
 github_link: extension-dev-guide/plugins.md
-redirect_from: 
+redirect_from:
   - /guides/v1.0/extension-dev-guide/plugins.html
   - /guides/v1.0/config-guide/config/plugins.html
 ---
@@ -23,11 +23,11 @@ redirect_from:
 
 <h2 id="plugin-intro">Introduction to Magento plug-ins</h2>
 
-Magento enables you to change, or *extend*, the behavior of any original, public method in any Magento class. You can change the behavior of an *original method* by creating an extension. These extensions use the `Plugin` class and are therefore referred to as plug-ins. 
+Magento enables you to change, or *extend*, the behavior of any original, public method in any Magento class. You can change the behavior of an *original method* by creating an extension. These extensions use the `Plugin` class and are therefore referred to as plug-ins.
 
 To ensure that plug-ins work correctly, you must follow declaration and naming rules.
 
-You use *interception* to reduce conflicts among extensions that change the behavior of the same class or method. You implement interception using the `Plugin` class, which observes public methods, and listener methods in this class. A plug-in changes behavior of an original class, but does not change a class itself. Because they can be called sequentially, according to a configured sort order, these plug-ins do not conflict. 
+You use *interception* to reduce conflicts among extensions that change the behavior of the same class or method. You implement interception using the `Plugin` class, which observes public methods, and listener methods in this class. A plug-in changes behavior of an original class, but does not change a class itself. Because they can be called sequentially, according to a configured sort order, these plug-ins do not conflict.
 
 Interception ensures that conflicting extensions run without intervention.
 
@@ -36,9 +36,12 @@ Interception ensures that conflicting extensions run without intervention.
 You cannot use plug-ins for:
 
 <!-- * Classes created without dependency injection. That is, you cannot use plugins with classes that you create directly through the new operator. -->
-* Final methods
+* Final methods / classes
 * Non-public methods
-* Final classes
+* Class methods (such as static methods)
+* Inherited methods
+* __construct
+* Virtual types
 
 <h2 id="plugin-declare">Declare a plug-in</h2>
 
@@ -50,7 +53,7 @@ You must specify these elements:
 
 * `type name`. A class, interface, or virtual type, which the plug-in observes.
 * `plugin name`. An arbitrary plug-in name that identifies a plug-in. Also used to merge the configurations for the plug-in.
-* `plugin type`. The name of a plug-in's class or its virtual type. Use the following schema when you specify this element: <ModelName>\Plugin.
+* `plugin type`. The name of a plug-in's class or its virtual type. Use the following schema when you specify this element: `\Vendor\Module\Plugin\<ModelName>Plugin`.
 * `plugin sortOrder`. The order in which plug-ins that call the same method are run.
 * `plugin disabled`. To disable a plug-in, set this element to `true`.
 
@@ -67,7 +70,7 @@ Several conditions influence how plug-ins apply to the same class or interface:
    *  Change the values returned by an original method through the after-listener.
    *  Change both the arguments and returned values of an original method through the around-listener.
    *  Override an original method (a conflicting change).
-    
+
       <div class="bs-callout bs-callout-info" id="info">
           <p>Overriding a class is a conflicting change. Extending a class's behavior is non-conflicting change.
       </div>
@@ -95,13 +98,13 @@ Prefix the name of the original method with `before` as the following sample sho
 {% highlight PHP %}
 <?php
 
-namespace My\Module\Model\Product;
- 
-class Plugin
+namespace My\Module\Plugin;
+
+class ProductPlugin
 {
     public function beforeSetName(\Magento\Catalog\Model\Product $subject, $name)
     {
-        return array('(' . $name . ')');
+        return ['(' . $name . ')'];
     }
 }
 {% endhighlight %}
@@ -113,9 +116,9 @@ Prefix the name of the original method with `after` as the following sample show
 {% highlight PHP %}
 <?php
 
-namespace My\Module\Model\Product;
+namespace My\Module\Plugin;
 
-class Plugin
+class ProductPlugin
 {
     public function afterGetName(\Magento\Catalog\Model\Product $subject, $result)
     {
@@ -131,9 +134,9 @@ Prefix the name of the original listener with `around` as the following sample s
 {% highlight PHP %}
 <?php
 
-namespace My\Module\Model\Product;
- 
-class Plugin
+namespace My\Module\Plugin;
+
+class ProductPlugin
 {
     public function aroundSave(\Magento\Catalog\Model\Product $subject, \Closure $proceed)
     {
@@ -165,4 +168,3 @@ You can override the plug-ins defined in the global scope by changing `di.xml` f
 
 *  <a href="{{ site.gdeurl }}extension-dev-guide/depend-inj.html#dep-inj-compile">Definition compiler tool</a>
 *  <a href="{{ site.gdeurl }}extension-dev-guide/depend-inj.html">Dependency injection</a>
-

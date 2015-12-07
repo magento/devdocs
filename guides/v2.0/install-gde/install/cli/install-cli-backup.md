@@ -1,12 +1,12 @@
 ---
 layout: default
 group: install_cli 
-subgroup: T_Command-line installation
+subgroup: 05_Command-line installation
 title: Back up and roll back the file system, media, and database
 menu_title: Back up and roll back the file system, media, and database
 menu_node: 
 menu_order: 100
-github_link: install-gde/install/install-cli-backup.md
+github_link: install-gde/install/cli/install-cli-backup.md
 redirect_from:
   -  /guides/v1.0/install-gde/install/install-cli-backup.html
   -  /guides/v2.0/install-gde/install/install-cli-backup.html
@@ -119,6 +119,10 @@ Messages similar to the following display:
 	[SUCCESS]: Media rollback completed successfully.
 	Please set file permission of bin/magento to executable
 	Disabling maintenance mode
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>If the command results in a <code>Segmentation fault</code> message, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_segfault.html">Segmentation fault during rollback</a>.</p>
+</div>
 
 #### Related topics
 

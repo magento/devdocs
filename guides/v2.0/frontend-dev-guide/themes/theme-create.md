@@ -9,9 +9,22 @@ github_link: frontend-dev-guide/themes/theme-create.md
 redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-create.html
 ---
 
-<h2 id="layout_theme_how-to_overview">Overview</h2>
+<h2 id="layout_theme_how-to_overview">What's in this topic</h2>
 
 This topic discusses how to create the files that make up a theme, how to add a logo to a theme, and how to size images.
+
+<h3>Contents</h3>
+
+- <a href="#layout_theme_how-to_dirs">Create a theme directory</a>
+- <a href="#fedg_create_theme_how-to_declare">Declare your theme</a>
+- <a href="#fedg_create_theme_composer">Make your theme a Composer package (optional)</a>
+- <a href="#fedg_create_theme_reg">Add <code>registration.php</code></a>
+- <a href="#fedg_create_theme_how-to-images">Configure images</a>
+- <a href="#fedg_theme_how-to_static">Create directories for static files</a>
+- <a href="#fedg_theme_how-to_structure">Your theme directory structure now</a>
+- <a href="#logo_declare">Declaring theme logo</a>
+
+
 
 <h2 id="layout_theme_how-to_dirs">Create a theme directory</h2>
 
@@ -19,7 +32,7 @@ To create the directory for your theme:
 
 1.	Go to `<your Magento install dir>/app/design/frontend`.
 
-3.	Create a new directory named according to your vendor name: `/app/design/frontend/<Vendor>`. For built-in themes this directory is `app/design/frontend/Magento`.
+3.	Create a new directory named according to your vendor name: `/app/design/frontend/<Vendor>`. 
 
 4.	Under the vendor directory, create a directory named according to your theme.
 
@@ -42,7 +55,7 @@ After you create a directory for your theme, you must create `theme.xml` contain
 2. Configure it using the following example:
 
 {% highlight xml %}
-<theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/Config/etc/theme.xsd">
+<theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/theme.xsd">
      <title>New theme</title> <!-- your theme's name -->
      <parent>Magento/blank</parent> <!-- the parent theme, in case your theme inherits from an existing theme -->
      <media>
@@ -69,28 +82,48 @@ Example of a theme `composer.json`:
     "description": "N/A",
     "require": {
         "php": "~5.5.0|~5.6.0|~7.0.0",
-        "magento/theme-frontend-blank": "1.0.0-beta",
-        "magento/framework": "1.0.0-beta",
-        "magento/magento-composer-installer": "*"
+        "magento/theme-frontend-blank": "100.0.*",
+        "magento/framework": "100.0.*"
     },
     "type": "magento2-theme",
-    "version": "1.0.0-beta",
+    "version": "100.0.1",
     "license": [
         "OSL-3.0",
         "AFL-3.0"
     ],
-    "extra": {
-        "map": [
-            [
-                "*",
-                "frontend/Magento/luma"
-            ]
+    "autoload": {
+        "files": [
+            "registration.php"
         ]
     }
 }
 {% endhighlight %}
 
 You can find details about the Composer integration in the Magento system in <a href="{{site.gdeurl}}extension-dev-guide/composer-integration.html">Composer integration</a>.
+
+<h2 id="fedg_create_theme_reg">Add registration.php</h2>
+
+To register your theme in the system, in your theme directory add a `registration.php` file with the following content:
+
+{% highlight php %}
+
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+\Magento\Framework\Component\ComponentRegistrar::register(
+    \Magento\Framework\Component\ComponentRegistrar::THEME,
+    'frontend/<Vendor>/<theme>',
+    __DIR__
+);
+
+{% endhighlight %}
+
+Where `<Vendor>` is your vendor name, `<theme>` is the theme code.
+
+For illustration, see the <a href="{{site.mage2000url}}app/design/frontend/Magento/luma/registration.php">registration.php</a> file of the Magento Luma theme.
+
 
 <h2 id="fedg_create_theme_how-to-images">Configure images</h2>
 
@@ -134,7 +167,7 @@ app/design/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
- <p>In the <code>...&lt;theme&gt;/web/images</code> you store the general theme related static files. For example, a theme logo is stored in <code>...&lt;theme&gt;/web/images</code>.
+ <p>In the <code>.../&lt;theme&gt;/web/images</code> you store the general theme related static files. For example, a theme logo is stored in <code>...&lt;theme&gt;/web/images</code>.
 It is likely that your theme will also contain module-specific files, which are stored in the corresponding sub-directories, like <code>.../&lt;theme&gt;/&lt;Namespace_Module&gt;/web/css</code> and similar. Managing the module-specific theme files is discussed in the following sections of this Guide.</p></span>
 </div>
 
@@ -159,7 +192,7 @@ app/design/frontend/&lt;Vendor&gt;/
 
 <h2 id="theme_logo">Theme logo</h2>
 
-In the Magento application, the default format and name of a logo image is <code>logo.svg</code>. When you put a <code>logo.svg</code> image in the conventional location, which is <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/images</code> directory, it is automatically recognized as theme logo. It is displayed in your store page header once the theme is <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html" target="_blank">applied</a>.
+In the Magento application, the default format and name of a logo image is `logo.svg`. When you put a `logo.svg` image in the conventional location, which is `<theme_dir>/web/images` directory, it is automatically recognized as theme logo. It is displayed in your store page header once the theme is <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html" target="_blank">applied</a>.
 
 In your custom theme, you can use a logo file with a different name and format, but you might need to declare it. 
 
@@ -182,12 +215,12 @@ Your theme does not have a parent theme:
 
 <h3 id="logo_declare">Declaring theme logo</h3>
 
-To declare a theme logo, add an <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Theme/layout/default.xml</code> layout. 
+To declare a theme logo, add an <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> `<theme_dir>/Magento_Theme/layout/default.xml` layout. 
 
-For example, if your logo file is <code>my_logo.png</code> sized 300x300px, you need to declare it as follows:  
+For example, if your logo file is `my_logo.png` sized 300x300px, you need to declare it as follows:  
 
 {% highlight xml %}
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="logo">
             <arguments>

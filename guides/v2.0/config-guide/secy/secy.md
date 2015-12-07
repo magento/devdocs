@@ -9,4 +9,6 @@ menu_node: parent
 github_link: config-guide/secy/secy.md
 ---
 
-We'll add more topics here so watch this space.
+## Security settings
+*	<a href="{{ site.gdeurl }}config-guide/secy/secy-cron.html">Secure cron.php</a>
+*	<a href="{{ site.gdeurl }}config-guide/secy/secy-xframe.html">X-Frame-Options header</a>

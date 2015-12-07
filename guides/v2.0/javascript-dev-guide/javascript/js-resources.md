@@ -1,7 +1,7 @@
 ---
 layout: default
 group: jsdg
-subgroup: Javascript
+subgroup: 1_Javascript
 title: Configure JavaScript resources
 menu_title: Configure JavaScript resources
 menu_order: 1
@@ -24,9 +24,9 @@ You must specify and configure all JavaScript resources used in modules and them
 JavaScript resources can be specified as follows:
 
 *	Library level for all libraries in Magento code base (`lib/web`)
-*	Module level for all libraries in a module (`app/code/<VendorName>/<ModuleName>/view/<areaname>/web`)
-*	Theme for all libraries in a theme (`app/design/<areaname>/<VendorName>/[custom theme name]/<VendorName>_<ModuleName>/web`)
-*	(_Not recommended_) All libraries in a theme  (`app/design/<areaname>/<VendorName>/[custom theme name]/web`). We do not recommend using this level to specify JavaScript resources.
+*	Module level for all libraries in a module (`<module_dir>/view/<areaname>/web`)
+*	Theme for all libraries in a theme (`<theme_dir>/<VendorName>_<ModuleName>/web`)
+*	(_Not recommended_) All libraries in a theme  (`<theme_dir>/web`). We do not recommend using this level to specify JavaScript resources.
 
 We recommend specifying JavaScript resources in the templates rather than in the layout updates to ensure processing of the resources in body of a page.
 

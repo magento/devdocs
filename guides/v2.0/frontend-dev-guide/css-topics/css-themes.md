@@ -8,7 +8,7 @@ github_link: frontend-dev-guide/css-topics/css-themes.md
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css-themes.html
 ---
 
-<h2 id="fedg_css-in-themes_overview">Overview</h2>
+<h2 id="fedg_css-in-themes_overview">What's in this topic</h2>
 
 <p>In the Magento application, CSS files are included in <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html" target="_blank">layout files</a>. </p>
 
@@ -31,7 +31,7 @@ Conventionally, CSS and LESS files are stored only in themes. Module directories
 
 <table>
 <tr>
-<th>Directory, relative to app/design/frontend/Magento/&lt;theme&gt;</th>
+<th>Directory, relative to <code>&lt;theme_dir&gt;</code></th>
 <th>Description</th>
 </tr>
 <tr>
@@ -77,15 +77,13 @@ The recommended way to do this is adding an <a href="{{site.gdeurl}}frontend-dev
 
 Your custom <code>default_head_blocks.xml</code> should be located as follows:
 
-<code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Theme/layout/default_head_blocks.xml</code>.
+<code>&lt;theme_dir&gt;/Magento_Theme/layout/default_head_blocks.xml</code>.
 
-Where <code>&lt;Vendor&gt;</code> is your company name (or similar), and <code>&lt;theme&gt;</code> is your theme name.
-
-<p>To include a CSS file, add the <code>&lt;css src=&quot;&lt;path&gt;/&lt;file&gt;&quot; media=&quot;print|&lt;option&gt;&quot;/&gt;</code> block in <code>&lt;head&gt;</code> section in a layout file. <code>&lt;path&gt;</code> is specified relative to the theme web directory (<code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web</code>)
+<p>To include a CSS file, add the <code>&lt;css src=&quot;&lt;path&gt;/&lt;file&gt;&quot; media=&quot;print|&lt;option&gt;&quot;/&gt;</code> block in <code>&lt;head&gt;</code> section in a layout file. <code>&lt;path&gt;</code> is specified relative to the theme web directory (<code>&lt;theme_dir&gt;/web</code>)
 
 For example, the following illustrates how stylesheets are included in the default Blank theme: </p>
 
-<p><a href="{{site.mage2000url}}app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml" target="_blank"><code>app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml</code></a></p>
+<p><a href="{{site.mage2000url}}app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml" target="_blank"><code>&lt;Magento_Blank_theme_dir&gt;/Magento_Theme/layout/default_head_blocks.xml</code></a></p>
 
 <pre>
 &lt;head&gt;

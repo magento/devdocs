@@ -5,7 +5,7 @@ subgroup: CLI
 title: Translation dictionaries and language packages
 menu_title: Translation dictionaries and language packages
 menu_node: 
-menu_order: 15
+menu_order: 250
 github_link: config-guide/cli/config-cli-subcommands-i18n.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-i18n.html
 ---
@@ -18,7 +18,6 @@ redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-i18n.html
 *	<a href="#config-cli-subcommands-xlate-dict">Generate a translation dictionary</a>
 *	<a href="#config-cli-subcommands-xlate-pack">Create a language package</a>
 *	<a href="#config-cli-subcommands-xlate-examples">Examples of using translation commands</a>
-
 
 <h2 id="config-cli-xlate-overview">Overview of translations</h2>
 Magento translations enable you to customize and localize your store for multiple regions and markets. We improved the localization and customization of Magento instances by making translation dictionaries easier to update and maintain and reduced amount of code coupling and duplication.
@@ -208,9 +207,9 @@ If a language package descends from two packages, its `language.xml` might look 
 
 {% highlight xml %}
 
-<language xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../<path>/Magento/Framework/App/Language/package.xsd">
+<language xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/Language/package.xsd">
     <code>en_GB</code>
-    <vendor>Magento</vendor>
+    <vendor>magento</vendor>
     <package>language_pack</package>
     <sort_order>100</sort_order>
     <use vendor="parent-package-one" package="language_package_one"/>
@@ -226,11 +225,11 @@ In the preceding example:
 If the Magento application cannot find word or phrase in the `en_GB` package, it looks in other packages in following sequence:
 
 1.	`parent-package-one/language_package_one`
-1.	`<VendorName>/en_au_package`
-1.	`<VendorName>/en_ie_package`
+1.	`<vendorname>/en_au_package`
+1.	`<vendorname>/en_ie_package`
 1.	`parent-package-two/language_package_two`
-1.	`<VendorName>/en_ca_package`
-1.	`<VendorName>/en_us_package`
+1.	`<vendorname>/en_ca_package`
+1.	`<vendorname>/en_us_package`
 
 Specifying all inheritances between the language packages might result in creating circular inheritance chains. Use <a href="{{ site.mage2000url }}dev/tests/static/testsuite/Magento/Test/Integrity/App/Language/CircularDependencyTest.php" target="_blank">Magento\Test\Integrity\App\Language\CircularDependencyTest</a> test to locate and fix such chains.
 
@@ -243,7 +242,7 @@ To declare a package, specify the following information:
 
 {% highlight xml %}
 <?xml version="1.0"?>
-<language xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../<path>/Magento/Framework/App/Language/package.xsd">
+<language xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/Language/package.xsd">
     <code>en_GB</code>
     <vendor>magento</vendor>
     <package>en_gb</package>
@@ -280,7 +279,7 @@ To add a German translation to module or theme you want to distribute to other m
 
 1.	Collect phrases from your module:
 
-		magento i18n:collect-phrases -o "/var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n/XX_XX.csv" /var/www/html/magento2/ExampleCorp/SampleModule
+		magento i18n:collect-phrases -o "/var/www/html/magento2/vendor/examplecorp/module-samplemodule/i18n/XX_XX.csv" /var/www/html/magento2/ExampleCorp/SampleModule
 
 2.	Translate the words and phrases using <a href="#config-cli-subcommands-xlate-dict-trans">these guidelines</a>.
 3.	If necessary, copy `XX_XX.csv` to `/var/www/html/magento2/ExampleCorp/SampleModule` or to the module's theme directory.
@@ -301,13 +300,13 @@ Similar to preceding example, generate a CSV file, but instead of a module or th
 
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-less-sass.html">Create LESS from CSS</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-test.html">Run tests</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>

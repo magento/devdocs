@@ -9,7 +9,7 @@ github_link: frontend-dev-guide/templates/template-overview.md
 redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-overview.html
 ---
 
-<h2>Overview</h2>
+<h2>What's in this topic</h2>
 This topic walks you through how to customize a template.
 
 <h2>Template customization walkthrough</h2>
@@ -37,7 +37,7 @@ The following image illustrates how the default review form looks like:
 
 To add the text, OrangeCo needs to override the default review form template in the Orange theme. 
 
-First, they copy the `form.phtml` template from `app/code/Magento/Review/view/frontend/templates` to the corresponding subdirectory in the Orange theme directory: `app/design/frontend/OrangeCo/orange/Magento_Review/templates`.
+First, they copy the `form.phtml` template from `<Magento_Review_module_dir>/view/frontend/templates` to the corresponding subdirectory in the Orange theme directory: `app/design/frontend/OrangeCo/orange/Magento_Review/templates`.
 
 In the theme `form.phtml` file they add the HTML snippet with the message before the <code>&lt;form&gt;</code>:
 
