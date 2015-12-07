@@ -19,7 +19,6 @@ redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-i18n.html
 *	<a href="#config-cli-subcommands-xlate-pack">Create a language package</a>
 *	<a href="#config-cli-subcommands-xlate-examples">Examples of using translation commands</a>
 
-
 <h2 id="config-cli-xlate-overview">Overview of translations</h2>
 Magento translations enable you to customize and localize your store for multiple regions and markets. We improved the localization and customization of Magento instances by making translation dictionaries easier to update and maintain and reduced amount of code coupling and duplication.
 
@@ -208,9 +207,9 @@ If a language package descends from two packages, its `language.xml` might look 
 
 {% highlight xml %}
 
-<language xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../<path>/Magento/Framework/App/Language/package.xsd">
+<language xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/Language/package.xsd">
     <code>en_GB</code>
-    <vendor>Magento</vendor>
+    <vendor>magento</vendor>
     <package>language_pack</package>
     <sort_order>100</sort_order>
     <use vendor="parent-package-one" package="language_package_one"/>
@@ -226,11 +225,11 @@ In the preceding example:
 If the Magento application cannot find word or phrase in the `en_GB` package, it looks in other packages in following sequence:
 
 1.	`parent-package-one/language_package_one`
-1.	`<VendorName>/en_au_package`
-1.	`<VendorName>/en_ie_package`
+1.	`<vendorname>/en_au_package`
+1.	`<vendorname>/en_ie_package`
 1.	`parent-package-two/language_package_two`
-1.	`<VendorName>/en_ca_package`
-1.	`<VendorName>/en_us_package`
+1.	`<vendorname>/en_ca_package`
+1.	`<vendorname>/en_us_package`
 
 Specifying all inheritances between the language packages might result in creating circular inheritance chains. Use <a href="{{ site.mage2000url }}dev/tests/static/testsuite/Magento/Test/Integrity/App/Language/CircularDependencyTest.php" target="_blank">Magento\Test\Integrity\App\Language\CircularDependencyTest</a> test to locate and fix such chains.
 
@@ -243,7 +242,7 @@ To declare a package, specify the following information:
 
 {% highlight xml %}
 <?xml version="1.0"?>
-<language xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../<path>/Magento/Framework/App/Language/package.xsd">
+<language xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/Language/package.xsd">
     <code>en_GB</code>
     <vendor>magento</vendor>
     <package>en_gb</package>
