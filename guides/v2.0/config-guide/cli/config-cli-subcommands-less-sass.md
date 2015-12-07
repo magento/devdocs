@@ -14,7 +14,7 @@ redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-less-sass.ht
 #### Contents
 
 *	<a href="#config-cli-before">First steps</a>
-*	<a href="#config-cli-config-cli-subcommands-less-sass">Create LESS files</a>
+*	<a href="#config-cli-subcommands-less-sass">Create LESS files</a>
 
 <h2 id="config-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
@@ -25,7 +25,7 @@ This command enables you to create symlinks to LESS files.
 
 Command options:
 
-	magento dev:css:deploy less <file> [--locale="<locale>" ... "<locale>"] [--area="{adminhtml|frontend}"] [--theme="<theme name>" ... 
+	magento dev:source-theme:deploy less <file> [--locale="<locale>" ... "<locale>"] [--area="{adminhtml|frontend}"] [--theme="<theme name>" ... 
 	"<theme name>"] 
 
 The following table discusses the meanings of this command's parameters and values. 
@@ -73,7 +73,7 @@ The following table discusses the meanings of this command's parameters and valu
 
 For example, to create LESS files for the frontend theme named `VendorName/themeName` in the `en_US` locale using a CSS file named `<your Magento install dir>/pub/static/frontend/VendorName/themeName/en_US/css/styles-l.css`, enter the following command:
 
-	magento dev:css:deploy less css/styles-l --locale="en_US" --area="frontend" --theme="VendorName/themeName"
+	magento dev:source-theme:deploy less css/styles-l --locale="en_US" --area="frontend" --theme="VendorName/themeName"
 
 The following messages display to confirm success:
 
