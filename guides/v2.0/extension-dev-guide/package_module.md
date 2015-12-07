@@ -44,7 +44,7 @@ The `composer.json` uses [Composer's generic schema](https://getcomposer.org/doc
 <td>For modules, this value must be set to <code>magento2-module</code>. Other possible types are <code>metapackage</code>, <code>magento2-theme</code>, and <code>magento2-language</code>.</td>
 </tr>
 
-
+{% include php-dev/composer-types.md %}
 
 <td><code>autoload </code></td>
 <td>Specify necessary information to be loaded, such as [registration.php](component-registration.html). For more information, see <a href="https://getcomposer.org/doc/01-basic-usage.md#autoloading">Autoloading</a> from Composer.</td>
@@ -59,15 +59,7 @@ The `composer.json` uses [Composer's generic schema](https://getcomposer.org/doc
 
 
 
-A description of the types of packages that you can submit to Marketplace:
 
-* __magento2-module__&#8212;A package that usually contains source files plus the top level composer.json, which indicates dependencies. This can be sold in the store directly, or it can be a dependent package hierarchy of some parent package.
-
-* __metapackage__&#8212;A placeholder used to group a collection of packages together. 
-
-* __magento2-theme__&#8212;For theme packages. It can be sold independently in the store directly, or it could a dependent package hierarchy of some parent package.
-
-* __magento2-language__&#8212;For language packages. These usually contain .csv files to aid in translation of certain contents.  It can be sold directly in Marketplace, or could be part of a dependent package hierarchy of some parent package.
 
 
 

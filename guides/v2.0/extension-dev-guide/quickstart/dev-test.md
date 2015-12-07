@@ -2,8 +2,8 @@
 layout: default
 group: quickstart
 subgroup: 02_Dev
-title: Test your module
-menu_title: Test your module
+title: Test your component
+menu_title: Test your component
 menu_order: 100
 menu_node: 
 github_link: extension-dev-guide/quickstart/dev-test.md

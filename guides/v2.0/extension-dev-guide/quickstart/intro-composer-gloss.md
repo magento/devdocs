@@ -27,7 +27,7 @@ We require more than one component to be packaged as a <a href="https://getcompo
 In addition, your components can rely on *shared packages*, which are analogous to libraries. One shared package can be used by many metapackages.
 
 <div class="bs-callout bs-callout-warning">
-    <p>You can upload as many shared packages as you want but you must specifically give components access to them. Failure to do so means your components won't work properly after they're installed by merchants. For more information, see the *Magento Marketplace User Guide*.</p>
+    <p>You can upload as many shared packages as you want but you must specifically give components access to them. Failure to do so means your components won't work properly after they're installed by merchants. For more information, see the <em>Magento Marketplace User Guide</em>.</p>
 </div>
 
 ## Component Manager

@@ -11,10 +11,10 @@ github_link: extension-dev-guide/quickstart/dev-summary.md
 
 ##{{page.menu_title}}
 
-Pointers to these topics:
+To develop your component, use the following steps:
 
-*	<a href="{{ site.gdeurl }}extension-dev-guide/create_module.html" target="_blank">Create a Module</a>
-*	<a href="{{ site.gdeurl }}extension-dev-guide/module-load-order.html" target="_blank">Module load order</a>
-*	<a href="{{ site.gdeurl }}xtension-dev-guide/package_module.html" target="_blank">Package a module</a>
+1.	<a href="{{ site.gdeurl }}extension-dev-guide/create_module.html" target="_blank">Create a module</a>
+2.	<a href="{{ site.gdeurl }}extension-dev-guide/module-load-order.html" target="_blank">Module load order</a>
+3.	<a href="{{ site.gdeurl }}xtension-dev-guide/package_module.html" target="_blank">Package a module</a>
 
 

@@ -18,6 +18,8 @@ The following figure summarizes the process:
 INSERT FLOWCHART
 
 #### For more information
-(list of topics in this section)
+*	<a href="{{ site.gdeurl }}extension-dev-guide/quickstart/intro-composer.html">Introduction to Composer</a>
+*	<a href="{{ site.gdeurl }}extension-dev-guide/quickstart/intro-composer-gloss.html">Glossary of common terms</a>
+*	<a href="{{ site.gdeurl }}extension-dev-guide/quickstart/intro-moreinfo.html">For more information</a>
 
 
