@@ -2,8 +2,8 @@
 layout: default
 group: extension-dev-guide
 subgroup: 3_Build
-title: Module file structure
-menu_title: Module file structure
+title: Component file structure
+menu_title: Component file structure
 menu_order: 2
 github_link: extension-dev-guide/module-file-structure.md
 
@@ -17,15 +17,7 @@ github_link: extension-dev-guide/module-file-structure.md
 <h2 id="file-struc-overview">Overview of the Magento component file structure</h2>
 Magento 2 looks for the files that make up a component, including configuration files, in particular places inside the module file structure. Follow the predefined file structure to ensure that your module works as expected.
 
-### Component root directory
-We refer to a component's *root directory* as the top-level directory in which you develop component code. Typically, this directory is located in one of the following directories relative to the Magento root directory:
-
-*	`app/code`: Use this component root directory if you <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">cloned the Magento 2 GitHub repository</a>.
-
-	Typically, you cloned the repository either if you're developing components or to contribute code to the Magento 2 codebase.
-*	`vendor`: Use this component root directory if you used the <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html">`composer create-project`</a> command to download the Magento 2 code or if you extracted a <a href="{{ site.gdeurl }}install-gde/prereq/zip_install.html">compressed Magento 2 archive</a>.
-
-A module can live anywhere under the Magento root directory. Regardless of where you add it, you must [register the module's location](component-registration.html).
+{% include php-dev/component-root.md %}
 
 <h2 id="file-struct-comp">Magento 2 component file structure</h2>
 The following topics discuss a typical file structure for the following components:
@@ -75,7 +67,6 @@ A typical theme file structure follows:
 	├── media
 	│   └── preview.jpg
 	├── registration.php
-	├── theme.xml
 	└── web
 	    ├── css
 	    │   ├── email.less
@@ -103,7 +94,6 @@ A typical theme file structure follows:
 	        └── theme.js
 
 ####Main directories
-
 The main theme directories are: 
 
 *	`etc`: `view.xml` contains image configurations for all images and thumbnails.

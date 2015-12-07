@@ -11,6 +11,12 @@ github_link: extension-dev-guide/quickstart/dev-filesys.md
 
 ##{{page.menu_title}}
 
-(Pointer to <a href="{{ site.gdeurl }}extension-dev-guide/module-file-structure.html" target="_blank">this topic</a>, which must be modified to explain the file system per component type)
+One of the first things you can do to get started with component development is to understand and set up the file system. Each type of component has a different file structure, although all components require certain files.
+
+In addition, you can choose the component root directory to start development. The following sections have more information.
+
+{% include php-dev/component-root.md %}
+
+For more information, see <a href="{{ site.gdeurl }}extension-dev-guide/module-file-structure.html">Component file structure</a>.
 
 

@@ -11,7 +11,24 @@ github_link: extension-dev-guide/quickstart/dev-modtypes.md
 
 ##{{page.menu_title}}
 
-*	Digest of the module types from <a href="{{ site.gdeurl }}extension-dev-guide/package_module.html" target="_blank">this topic</a> with a pointer to it at the end.
-*	Handwaving about pricing (e.g., if you're a developer who's creating some themes, you have a simple pricing structure; if you're a more advanced developer who might be creating a set of related extensions, get more information about pricing from TBD)
+## Supported component types
 
+{% include php-dev/composer-types.md %}
 
+## TBD
+"Different types of packaging: module vs metapackages , pricing considerations and impact on packaging"
+
+(Do not understand this part.)
+
+## Versioning
+Components have the following types of versions:
+
+*	Marketing version; in other words, the version the merchant interacts with. 
+
+	Your initial version might be 1.0.0 or 2.0.0, for example. You should follow TBD guidelines for setting marketing version numbers.
+
+*	Composer version; in other words, the version of each module, theme, language package, and its dependencies. 
+
+	These versions are up to you. 
+
+Using Magento code as an example, Magento CE marketing 2.0.0 includes component versions like 100.0.1, 100.0.2, and so on. These versioning strategy prevents collisions between the marketing version and component versions.
