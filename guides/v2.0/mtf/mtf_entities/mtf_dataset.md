@@ -308,7 +308,7 @@ A `CatalogProductSimple.xml` fixture contains the following declarations:
 <field name="checkout_data" group="null" repository="Magento\Catalog\Test\Repository\CatalogProductSimple\CheckoutData" />
 {%endhighlight xml%}
 
-The `price` fixture field contains the [data source][] that assigns values from a repository. After the [InjectableFixture][] class has passed data to the CatalogProductSimple fixture, `Magento\Catalog\Test\Fixture\Product\Price` data source receives `'dataset' => 'drop_down_with_one_option_fixed_price'` and assigns values from the `'dataset' => 'drop_down_with_one_option_fixed_price'` of the `Magento\Catalog\Test\Repository\CatalogProductSimple\Price` repository.
+The `price` fixture field contains the [data source][] that assigns values from a repository. After the [InjectableFixture][] class has passed data to the CatalogProductSimple fixture, `Magento\Catalog\Test\Fixture\Product\Price` data source receives `['dataset' => 'drop_down_with_one_option_fixed_price']` and assigns values from the `['dataset' => 'drop_down_with_one_option_fixed_price']` of the `Magento\Catalog\Test\Repository\CatalogProductSimple\Price` repository.
 
 The `checkout_data` doesn't contain source and is assigned with values from the `Magento\Catalog\Test\Repository\CatalogProductSimple\CheckoutData` directly.
 
