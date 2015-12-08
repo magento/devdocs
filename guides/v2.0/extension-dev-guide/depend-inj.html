@@ -265,15 +265,7 @@
 </dl>
 
 <h2 id="dep-inj-preview-cons">Preview of constructor injection</h2>
-<p>Constructor injection <em>must</em> be used for all optional and required service dependencies of an object. Service dependencies fulfill business functions of your object. Use a <a href="http://en.wikipedia.org/wiki/Proxy_pattern" target="_blank">proxy</a> for expensive optional dependencies; proxies are auto-generated, no coding is required.</p>
-
-<p>A sample proxy (which you declare in <code>di.xml</code>) follows:</p>
-
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Backend\Model\Config\Structure\Element\Iterator\Field&quot;</span> <span class="na">shared=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;arguments&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;groupFlyweight&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Backend\Model\Config\Structure\Element\Group\Proxy<span class="nt">&lt;/argument&gt;</span>
-    <span class="nt">&lt;/arguments&gt;</span>
-<span class="nt">&lt;/type&gt;</span></code></pre></div>
+<p>Constructor injection <em>must</em> be used for all optional and required service dependencies of an object. Service dependencies fulfill business functions of your object.</p>
 
 <div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="k">class</span> <span class="nc">Test</span>
@@ -297,6 +289,16 @@
  
 <span class="nv">$test</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
 <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+
+<p>Use a <a href="http://en.wikipedia.org/wiki/Proxy_pattern" target="_blank">proxy</a> for expensive optional dependencies; proxies are auto-generated, no coding is required.</p>
+
+<p>A sample proxy (which you declare in <code>di.xml</code>) follows:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Backend\Model\Config\Structure\Element\Iterator\Field&quot;</span> <span class="na">shared=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;groupFlyweight&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Backend\Model\Config\Structure\Element\Group\Proxy<span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/type&gt;</span></code></pre></div>
 
 <h2 id="dep-inj-mod">Configuration overview</h2>
 
