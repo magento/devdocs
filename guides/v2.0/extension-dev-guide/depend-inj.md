@@ -73,28 +73,26 @@ A sample proxy (which you declare in `di.xml`) follows:
 
 {% highlight PHP %}
 <?php
-class Foo
+class Test
 {
-    protected $_bar;
+    protected $_class;
  
-    public function __construct(Bar $bar)
+    public function __construct(Class $class)
     {
-        $this->_bar = $bar;
+        $this->_class = $class;
     }
  
     public function execute()
     {
         //some code
  
-        $this->_bar->execute();
+        $this->_class->execute();
  
         //some code
     }
 }
  
-$bar = new Bar();
-$foo = new Foo($bar);
-$foo->execute();
+$test->execute();
 ?>
 {% endhighlight %}
 
