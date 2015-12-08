@@ -62,7 +62,7 @@ In the following table see `generateFixtureXml` arguments.
 | `--type`        | Table type for the entity. Can be `eav`, `flat`, `composite`. | `flat`                                                           | Default value: `flat`.                     |
 | `--entity_type` | Database table name, where entity data is stored.            | `widget_instance`                                                | Required                                  |
 | `--collection`  | Collection to generate data sets                             | `Magento\\Widget\\Model\\Resource\\Widget\\Instance\\Collection` | Required. Escape all backslashes. |
-| `--help`        | List of arguments with its definitions.                       |                                                                  |                                           |
+| `--help`        | List of arguments with definitions.                       |                                                                  |                                           |
 
 This tool creates a new fixture using data from a database table you specified using the `--entity_type` argument.
 
@@ -210,7 +210,7 @@ The repository is located in the `Repository` directory of the corresponding mod
 
 The repository is located in `<magento_roo>/dev/tests/functional/app/Magento/Widget/Test/Repository/Widget/LayoutUpdates.xml`.
 
-Following is the code of `LayoutUpdates.xml`. It specifies two datasets that you can choose to define in your test.
+Following is the code of `LayoutUpdates.xml`. It specifies two data sets that you can choose to define in your test.
 
 {% highlight xml %}
 <?xml version="1.0" ?>
