@@ -122,8 +122,11 @@ magento/language-de_de</pre>
 </tr>
 </tbody></table>
 
-<h3>Naming conventions</h3>
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Magento does not currently support the <a href="https://getcomposer.org/doc/05-repositories.md#path" target="_blank"><code>path</code></a> repository.</p>
+</div>
 
+<h3>Naming conventions</h3>
 The namespace of Composer packages is global within a package repository (such as [packagist.org](http://packagist.org)). The Composer specification requires that a package name use the format: 
 
 {% highlight XML %}
