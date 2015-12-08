@@ -289,7 +289,7 @@ Each variation has constraints that are called at the end of the test flow.</p>
 <td><code>data</code> </td>
 <td>Data to be used by a test case. </td>
 <td><ul>
-<li><code>name</code> - a name of variable with extra data. The processing logic is defined in the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php">InjectableFixture</a> class. <a href="#data_node">More details.</a> Required.</li>  
+<li><code>name</code> - a name of variable with extra data. <a href="#data_node">More details.</a> Required.</li>
 <li><code>xsi:type</code> - a type of the value. 
 The following data types are available:
 <ul>
@@ -316,7 +316,7 @@ The following data types are available:
   <p>A variation should contain only data that is required for its flow and constraints.</p>
 </div>
 
-<p>A data set must be placed in the same directory with a corresponding test case.</p>
+<p>A data set should be placed in the same directory with a corresponding test case.</p>
 
 <h3 id="example">Example data set</h3>
 
@@ -358,19 +358,19 @@ The following data types are available:
   <li>relates to the ticket <code>MAGETWO-23414</code> in Jira</li>
   <li>contains variation <code>CreateSimpleProductEntityTestVariation1</code> that 
     <ul>
-      <li>contains data to create product with fixed price  </li>
+      <li>contains data to create product with fixed price (see descriptions in the following table) </li>
       <li>defines tag that can be used to customize the test suite run</li>
       <li>defines <a href="/guides/v2.0/mtf/mtf_entities/mtf_constraint.html">constraints</a> that will be performed after the test flow in the order they are presented in the data set</li>
     </ul>
   </li>
 </ul>
 
-<p id="ex_variation_table">The <code>CreateSimpleProductEntityTestVariation1</code> variation contains the following data:</p>
+<p id="ex_variation_table">The <code>CreateSimpleProductEntityTestVariation1</code> variation contains the following <code>$product</code> data:</p>
 
 <table>
 <col width="1*" />
 <col width="2*" />
-<tr><th>Variable</th><th>Description</th></tr>
+<tr><th>Fixture field</th><th>Description</th></tr>
 <tr>
 <td><code>url_key</code> </td>
 <td>field is assigned with <code>simple-product-%isolation%</code>. <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture-repo.html#mtf_repo_isolation">More info about <code>%isolation%</code></a>.</td>
@@ -407,7 +407,7 @@ The following data types are available:
 <td>field is assigned with <code>657</code></td>
 </tr>
 <tr>
-<td><code>custom_options/qty</code></td>
+<td><code>custom_options</code></td>
 <td>field is processed by a data source <code>Magento\Catalog\Test\Fixture\Product\CustomOptions</code> using a data set <code>drop_down_with_one_option_fixed_price</code> from the repository <code>Magento\Catalog\Test\Repository\Product\CustomOptions</code></td>
 </tr>
 <tr>
@@ -418,7 +418,9 @@ The following data types are available:
 
 <h3 id="data_node">How to define <code>name</code> in the <code>&lt;data&gt;</code> node</h3>
 
-<p>As you can see in the <a href="#dataset_struct_table">previous table</a>, the <code>name</code> data has a specific structure. Why? To make your test more flexible. Let’s see the logic of the <code>&lt;data&gt;</code> processing. </p>
+<p>As you can see in the <a href="#dataset_struct_table">previous table</a>, the <code>name</code> data has a specific structure. Why? To make your test more flexible.</p>
+
+<p>Data mapping by <code>name</code> is performed for the test methods in test case  and <code>processAssert()</code> method in constraints. Let’s see the logic of the <code>&lt;data&gt;</code> processing.</p>
 
 <p>Slash <code>/</code> means array nesting. For example:</p>
 
@@ -463,7 +465,7 @@ The following data types are available:
 
 <h4 id="simple_var">Set a simple variable</h4>
 
-<p>For example, if a <a href="/guides/v2.0/mtf/mtf_entities/mtf_testcase.html">test case</a> or constraint has an argument <code>$price</code>, then the test case takes from the data set all the <code>&lt;data&gt;</code> nodes with a name <code>price</code>. Assume a method with argument <code>$price</code>.</p>
+<p>For example, if a <a href="/guides/v2.0/mtf/mtf_entities/mtf_testcase.html">test case</a> or constraint has an argument <code>$price</code>, then the test case takes from the data set all the <code>&lt;data&gt;</code> nodes with a name <code>price</code>. Assume a method with the <code>$price</code> argument.</p>
 
 <div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="k">public</span> <span class="k">function</span> <span class="nf">testCreate</span><span class="p">(</span><span class="nv">$price</span><span class="p">)</span>
@@ -487,7 +489,7 @@ The following data types are available:
 <span class="p">}</span>
 <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
 
-<p>In this case, the <abbr title="Magento Testing Framework">MTF</abbr> uses a constructor from the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php">InjectableFixture</a> class. It declares that your data can be passed to the fixture in <code>$data</code> variable as an array. For example, to assign <code>weight</code> with <code>50</code> you can use the following notation:</p>
+<p>In this case, the ObjectManager sends data to the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php">InjectableFixture</a> constructor. It declares that your data can be passed to the fixture in <code>$data</code> variable as an array. For example, to assign the existing fixture field <code>weight</code> with <code>50</code> you can use the following notation:</p>
 
 <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/weight&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>50<span class="nt">&lt;/data&gt;</span></code></pre></div>
 
@@ -499,17 +501,21 @@ The following data types are available:
 
 <h4 id="fixture_field_repository">Set data to a fixture field from a repository</h4>
 
-<p>You can assign data to a <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html#mtf_repository_create-field">fixture field from its repository</a>. It is possible that a fixture field contains the <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">data source</a> that assigns values from a repository.</p>
+<p>You can assign data to a <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_repositoy">fixture field from its repository</a>.</p>
 
 <p>Let’s see an example:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/price/dataset&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>drop_down_with_one_option_fixed_price<span class="nt">&lt;/data&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/price/dataset&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>drop_down_with_one_option_fixed_price<span class="nt">&lt;/data&gt;</span>
+<span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/checkout_data/dataset&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>simple_drop_down_with_one_option_fixed_price<span class="nt">&lt;/data&gt;</span></code></pre></div>
 
-<p>A <code>CatalogProductSimple.xml</code> fixture contains the following declaration:</p>
+<p>A <code>CatalogProductSimple.xml</code> fixture contains the following declarations:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;price&quot;</span> <span class="na">is_required=</span><span class="s">&quot;1&quot;</span> <span class="na">group=</span><span class="s">&quot;product-details&quot;</span> <span class="na">source=</span><span class="s">&quot;Magento\Catalog\Test\Fixture\Product\Price&quot;</span> <span class="na">repository=</span><span class="s">&quot;Magento\Catalog\Test\Repository\CatalogProductSimple\Price&quot;</span> <span class="nt">/&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;price&quot;</span> <span class="na">is_required=</span><span class="s">&quot;1&quot;</span> <span class="na">group=</span><span class="s">&quot;product-details&quot;</span> <span class="na">source=</span><span class="s">&quot;Magento\Catalog\Test\Fixture\Product\Price&quot;</span> <span class="na">repository=</span><span class="s">&quot;Magento\Catalog\Test\Repository\CatalogProductSimple\Price&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;checkout_data&quot;</span> <span class="na">group=</span><span class="s">&quot;null&quot;</span> <span class="na">repository=</span><span class="s">&quot;Magento\Catalog\Test\Repository\CatalogProductSimple\CheckoutData&quot;</span> <span class="nt">/&gt;</span></code></pre></div>
 
-<p>After the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php">InjectableFixture</a> class has passed data to the CatalogProductSimple fixture, <code>Magento\Catalog\Test\Fixture\Product\Price</code> data source receives <code>'dataset' =&gt; 'drop_down_with_one_option_fixed_price'</code> and assigns values from the <code>'dataset' =&gt; 'drop_down_with_one_option_fixed_price'</code> of the <code>Magento\Catalog\Test\Repository\CatalogProductSimple\Price</code> repository.</p>
+<p>The <code>price</code> fixture field contains the <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">data source</a> that assigns values from a repository. After the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php">InjectableFixture</a> class has passed data to the CatalogProductSimple fixture, <code>Magento\Catalog\Test\Fixture\Product\Price</code> data source receives <code>['dataset' =&gt; 'drop_down_with_one_option_fixed_price']</code> and assigns values from the <code>['dataset' =&gt; 'drop_down_with_one_option_fixed_price']</code> of the <code>Magento\Catalog\Test\Repository\CatalogProductSimple\Price</code> repository.</p>
+
+<p>The <code>checkout_data</code> doesn’t contain source and is assigned with values from the <code>Magento\Catalog\Test\Repository\CatalogProductSimple\CheckoutData</code> directly.</p>
 
 <h2 id="merge">Merge data sets</h2>
 
@@ -539,8 +545,7 @@ The following data types are available:
 <span class="c"> --&gt;</span>
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../vendor/magento/mtf/etc/variations.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;testCase</span> <span class="na">name=</span><span class="s">&quot;Magento\Catalog\Test\TestCase\Product\UpdateSimpleProductEntityTest&quot;</span> <span class="na">summary=</span><span class="s">&quot;Add Video to PCF&quot;</span> <span class="na">ticketId=</span><span class="s">&quot;PV-1&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;variation</span> <span class="na">name=</span><span class="s">&quot;DeleteVideoFromPCFTestVariation1&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;description&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Delete video youtube<span class="nt">&lt;/data&gt;</span>
+        <span class="nt">&lt;variation</span> <span class="na">name=</span><span class="s">&quot;DeleteVideoFromPCFTestVariation1&quot;</span> <span class="na">summary=</span><span class="s">&quot;Delete video youtube&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;initialProduct/dataset&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>product_with_video_youtube<span class="nt">&lt;/data&gt;</span>
             <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/sku&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>sku_simple_product_with_video_%isolation%<span class="nt">&lt;/data&gt;</span>
             <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/media_gallery/images&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="nt">/&gt;</span>
@@ -549,8 +554,7 @@ The following data types are available:
             <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">&quot;Magento\ProductVideo\Test\Constraint\AssertNoVideoCategoryView&quot;</span> <span class="nt">/&gt;</span>
             <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">&quot;Magento\ProductVideo\Test\Constraint\AssertNoVideoProductView&quot;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/variation&gt;</span>
-        <span class="nt">&lt;variation</span> <span class="na">name=</span><span class="s">&quot;DeleteVideoFromPCFTestVariation2&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;description&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Delete video vimeo<span class="nt">&lt;/data&gt;</span>
+        <span class="nt">&lt;variation</span> <span class="na">name=</span><span class="s">&quot;DeleteVideoFromPCFTestVariation2&quot;</span> <span class="na">summary=</span><span class="s">&quot;Delete video vimeo&quot;</span><span class="nt">&gt;</span>
             <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;initialProduct/dataset&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>product_with_video_vimeo<span class="nt">&lt;/data&gt;</span>
             <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/sku&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>sku_simple_product_with_video_%isolation%<span class="nt">&lt;/data&gt;</span>
             <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/media_gallery/images&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="nt">/&gt;</span>
