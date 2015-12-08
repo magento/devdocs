@@ -85,13 +85,16 @@ For example, the following illustrates how stylesheets are included in the defau
 
 <p><a href="{{site.mage2000url}}app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml" target="_blank"><code>&lt;Magento_Blank_theme_dir&gt;/Magento_Theme/layout/default_head_blocks.xml</code></a></p>
 
-<pre>
-&lt;head&gt;
-    &lt;css src=&quot;css/styles-m.css&quot; /&gt;
-    &lt;css src=&quot;css/styles-l.css&quot; media=&quot;screen and (min-width: 768px)&quot;/&gt;
-    &lt;css src=&quot;css/print.css&quot; media=&quot;print&quot; /&gt; 
-&lt;/head&gt;
-</pre>
+{%highlight xml%}
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="css/styles-m.css" />
+        <css src="css/styles-l.css" media="screen and (min-width: 768px)"/>
+        <css src="css/print.css" media="print" />
+    </head>
+</page>
+{%endhighlight xml%}
+
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
