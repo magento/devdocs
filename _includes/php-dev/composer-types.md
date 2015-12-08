@@ -12,7 +12,7 @@ The following table discusses the component types that Magento Marketplace suppo
 <tr>
 <td>Metapackage</td>
 <td>metapackage</td>
-<td><p>A special component type that specifies other components. A metapackage consists of only a <code>composer.json</code> that specifies a list of components and their dependencies. (A metapackage can also be referred to as a <em>shared package</em>.)</p>
+<td><p>A special type that specifies other components. A metapackage consists of only a <code>composer.json</code> that specifies a list of components and their dependencies. </p>
 <p>For example, both Magento CE and Magento EE are metapackages.</p></td>
 </tr>
 <tr>

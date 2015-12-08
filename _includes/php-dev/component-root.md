@@ -5,8 +5,8 @@ We refer to a component's *root directory* as the top-level directory in which y
 
 *	`app/code`: Use this component root directory if you <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">cloned the Magento 2 GitHub repository</a>.
 
-	Typically, you cloned the repository either if you're developing components or to contribute code to the Magento 2 codebase.
-*	`vendor`: Use this component root directory if you used the <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html">`composer create-project`</a> command to download the Magento 2 code or if you extracted a <a href="{{ site.gdeurl }}install-gde/prereq/zip_install.html">compressed Magento 2 archive</a>.
+	Typically, you cloned the repository if you want to to contribute code to the Magento 2 codebase.
+*	`vendor`: Use this component root directory if you used the <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html">`composer create-project`</a> command to get a Magento 2 metapackage (which downloads the CE or EE code), or if you extracted a <a href="{{ site.gdeurl }}install-gde/prereq/zip_install.html">compressed Magento 2 archive</a>.
 
 ### Required files
 The following are required for all components:

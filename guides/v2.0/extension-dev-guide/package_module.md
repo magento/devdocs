@@ -49,21 +49,12 @@ The `composer.json` uses [Composer's generic schema](https://getcomposer.org/doc
 <td><code>autoload </code></td>
 <td>Specify necessary information to be loaded, such as [registration.php](component-registration.html). For more information, see <a href="https://getcomposer.org/doc/01-basic-usage.md#autoloading">Autoloading</a> from Composer.</td>
 
-<!-- <td><code>extra-&gt;map</code>  </td>
-<td>The mapping information for the marshaling of the package. The first line specifies which files to marshal. Specify <code>"*"</code> to marshal all files. The second line specifies where to place them, relative to the <code>&lt;Vendor></code> directory. </td> -->
-
 </tr>
-
 </tbody>
 </table>
 
 
-
-
-
-
-
-###Using Metapackages
+<h3 id="package-metapackage">Using metapackages</h3>
 
 Metapackages allow you to group an extension that consists of multiple packages into a cohesive unit. This works exactly as described in standard [composer.json documentation](https://getcomposer.org/doc/04-schema.md#type). If you have an extension that uses more than one package you must use a metapackage as the *root package*. Otherwise you should not use metapackage. A metapackage that you submit to Magento Marketplace should be a .zip file containing only the metapackage composer.json file.
 

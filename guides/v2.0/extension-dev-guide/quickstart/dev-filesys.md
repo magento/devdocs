@@ -17,6 +17,5 @@ In addition, you can choose the component root directory to start development. T
 
 {% include php-dev/component-root.md %}
 
-For more information, see <a href="{{ site.gdeurl }}extension-dev-guide/module-file-structure.html">Component file structure</a>.
-
-
+#### Related topic
+<a href="{{ site.gdeurl }}extension-dev-guide/module-file-structure.html">Component file structure</a>
