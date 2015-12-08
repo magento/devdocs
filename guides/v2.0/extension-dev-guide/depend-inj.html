@@ -276,28 +276,26 @@
 <span class="nt">&lt;/type&gt;</span></code></pre></div>
 
 <div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="k">class</span> <span class="nc">Foo</span>
+<span class="k">class</span> <span class="nc">Test</span>
 <span class="p">{</span>
-    <span class="k">protected</span> <span class="nv">$_bar</span><span class="p">;</span>
+    <span class="k">protected</span> <span class="nv">$_class</span><span class="p">;</span>
  
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">Bar</span> <span class="nv">$bar</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="k">Class</span> <span class="err">$</span><span class="nc">class</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_bar</span> <span class="o">=</span> <span class="nv">$bar</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_class</span> <span class="o">=</span> <span class="nv">$class</span><span class="p">;</span>
     <span class="p">}</span>
  
     <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="c1">//some code</span>
  
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_bar</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_class</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
  
         <span class="c1">//some code</span>
     <span class="p">}</span>
 <span class="p">}</span>
  
-<span class="nv">$bar</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Bar</span><span class="p">();</span>
-<span class="nv">$foo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Foo</span><span class="p">(</span><span class="nv">$bar</span><span class="p">);</span>
-<span class="nv">$foo</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
+<span class="nv">$test</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
 <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
 
 <h2 id="dep-inj-mod">Configuration overview</h2>
