@@ -57,19 +57,7 @@ Lifecycle
 :	An object's *lifecycle* determines in what scope instances are reused, and when to release them.
 
 <h2 id="dep-inj-preview-cons">Preview of constructor injection</h2>
-Constructor injection *must* be used for all optional and required service dependencies of an object. Service dependencies fulfill business functions of your object. Use a <a href="http://en.wikipedia.org/wiki/Proxy_pattern" target="_blank">proxy</a> for expensive optional dependencies; proxies are auto-generated, no coding is required.
-
-A sample proxy (which you declare in `di.xml`) follows:
-
-{% highlight XML %}
-<type name="Magento\Backend\Model\Config\Structure\Element\Iterator\Field" shared="false">
-    <arguments>
-        <argument name="groupFlyweight" xsi:type="object">Magento\Backend\Model\Config\Structure\Element\Group\Proxy</argument>
-    </arguments>
-</type>
-{% endhighlight %}
-
-
+Constructor injection *must* be used for all optional and required service dependencies of an object. Service dependencies fulfill business functions of your object.
 
 {% highlight PHP %}
 <?php
@@ -94,6 +82,18 @@ class Test
  
 $test->execute();
 ?>
+{% endhighlight %}
+
+ Use a <a href="http://en.wikipedia.org/wiki/Proxy_pattern" target="_blank">proxy</a> for expensive optional dependencies; proxies are auto-generated, no coding is required.
+
+A sample proxy (which you declare in `di.xml`) follows:
+
+{% highlight XML %}
+<type name="Magento\Backend\Model\Config\Structure\Element\Iterator\Field" shared="false">
+    <arguments>
+        <argument name="groupFlyweight" xsi:type="object">Magento\Backend\Model\Config\Structure\Element\Group\Proxy</argument>
+    </arguments>
+</type>
 {% endhighlight %}
 
 
