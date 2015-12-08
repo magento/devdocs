@@ -11,7 +11,7 @@ github_link: extension-dev-guide/XSD-XML-validation.md
 ##{{page.menu_title}}
 
 
-Each Magento component (library or module) can contain XSD files for XML validation.
+Each Magento module can contain XSD files for XML validation.
 
 Magento uses [Uniform Resource Names](https://en.wikipedia.org/wiki/Uniform_Resource_Name) (URNs) to reference XML Schema declarations.
 

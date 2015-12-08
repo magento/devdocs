@@ -1,6 +1,6 @@
 <div markdown="1">
 
-The following table discusses the component types that Magento Marketplace supports. The composer `type` column specifies the value of the `type` field you must add to `composer.json` for that type of component.
+The following table discusses the component types that Magento Marketplace supports. The composer `type` column in the following table specifies the value of the `type` field you must add to `composer.json` for that type of component.
 
 <table>
 <tbody>
@@ -25,8 +25,15 @@ The following table discusses the component types that Magento Marketplace suppo
 <td>magento2-theme</td>
 <td>Code that modifies the look and feel of the storefront or Magento Admin.</td>
 </tr>
+<tr>
 <td>Language package</td>
 <td>magento2-language</td>
 <td>Translations for the storefront or Admin.</td>
+</tr>
+<tr>
+	<td>Library</td>
+	<td>library</td>
+	<td>Common code, such as a third-party library.</td>
+</tr>
 </tbody>
 </table>

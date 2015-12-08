@@ -11,5 +11,5 @@ We refer to a component's *root directory* as the top-level directory in which y
 ### Required files
 The following are required for all components:
 
-*	`registration.php`: Specifies the directory in which the component is installed; by default, components install in the `<Magento root dir>/vendor` directory.
+*	`registration.php`: Specifies the directory in which the component is installed; by default, components install in the `<Magento root dir>/vendor` directory. For more information, see <a href="{{ site.gdeurl }}extension-dev-guide/component-registration.html">Component registration</a>.
 *	`composer.json`: Specifies component dependencies. For more information, see <a href="{{ site.gdeurl }}extension-dev-guide/composer-integration.html">Composer integration</a>.

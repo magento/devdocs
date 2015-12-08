@@ -34,4 +34,4 @@ Components have the following types of versions:
 
 	These versions are up to you. 
 
-Using Magento code as an example, Magento CE marketing 2.0.0 includes component versions like 100.0.1, 100.0.2, and so on. These versioning strategy prevents collisions between the marketing version and component versions.
+Using Magento code as an example, Magento CE marketing version 2.0.0 includes component versions such as 100.0.1, 100.0.2, and so on. These versioning strategy prevents collisions between the marketing version and component versions.

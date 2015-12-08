@@ -15,8 +15,9 @@ The Magento system uses Composer packages to distribute, install, and upgrade mo
 
 To package a module, you must:
 
-* Create a Magento Composer file (`composer.json`).
-* Package and publish your module. 
+*   Create a Magento Composer file (`composer.json`).
+*   Register the component using `registration.php`
+*   Package and publish your module. 
 
 Publish your module on the [Magento Marketplace](http://www.magentocommerce.com/magento-connect/), Magento&#8217;s eCommerce application marketplace.
 
@@ -24,7 +25,6 @@ Publish your module on the [Magento Marketplace](http://www.magentocommerce.com/
 
 
 <h2 id="composer">Create a Magento Composer file</h2>
-
 The Magento `composer.json` file defines the name, requirements, version, and other basic information about the module. This file must be placed in the root directory of the module.
 
 The `composer.json` uses [Composer's generic schema](https://getcomposer.org/doc/04-schema.md), with the following restrictions:
@@ -55,42 +55,59 @@ The `composer.json` uses [Composer's generic schema](https://getcomposer.org/doc
 
 
 <h3 id="package-metapackage">Using metapackages</h3>
-
-Metapackages allow you to group an extension that consists of multiple packages into a cohesive unit. This works exactly as described in standard [composer.json documentation](https://getcomposer.org/doc/04-schema.md#type). If you have an extension that uses more than one package you must use a metapackage as the *root package*. Otherwise you should not use metapackage. A metapackage that you submit to Magento Marketplace should be a .zip file containing only the metapackage composer.json file.
+Metapackages allow you to group an extension that consists of multiple packages into a cohesive unit. This works exactly as described in standard [composer.json documentation](https://getcomposer.org/doc/04-schema.md#type). If you have an extension that uses more than one package you must use a metapackage as the *root package*. Otherwise you should not use metapackage. A metapackage that you submit to Magento Marketplace should be a .zip file containing only the metapackage `composer.json` file.
 
 
 ####Metapackage example 
-
-The following example is a `composer.json` metapackage file for a module:
+The following example is a `composer.json` for a metapackage:
 
 
 {% highlight JSON %}
 
 {
-    "name": "magento/sample-data",
-    "version": "1.0.0-beta",
+    "name": "magento/product-community-edition",
+    "description": "A sample metapackage",
+    "version": "2.0.0",
     "type": "metapackage",
     "require": {
-        "magento/module-sample-data": "self.version",
-        "magento/sample-data-media": "~0.42.0-beta2",
-    },
-    "autoload": {
-        "files": [ "registration.php" ],
-        "psr-4": {
-            "Magento\\sample-data": ""
-                }
-    }
+        "php": "~5.5.0|~5.6.0|~7.0.0",
+        "zendframework/zend-stdlib": "~2.4.6",
+        "zendframework/zend-code": "~2.4.6",
+        "zendframework/zend-server": "~2.4.6",
+        "zendframework/zend-soap": "~2.4.6",
+        "zendframework/zend-uri": "~2.4.6",
+        "zendframework/zend-validator": "~2.4.6",
+        "zendframework/zend-crypt": "~2.4.6",
+        "zendframework/zend-console": "~2.4.6",
+        "zendframework/zend-modulemanager": "~2.4.6",
+        "zendframework/zend-mvc": "~2.4.6",
+        "zendframework/zend-text": "~2.4.6",
+        "zendframework/zend-i18n": "~2.4.6",
+        "ext-ctype": "*",
+        "ext-gd": "*",
+        "ext-spl": "*",
+        "ext-dom": "*",
+        "ext-simplexml": "*",
+        "ext-mcrypt": "*",
+        "ext-hash": "*",
+        "ext-curl": "*",
+        "ext-iconv": "*",
+        "ext-intl": "*",
+        "ext-xsl": "*",
+        "ext-mbstring": "*",
+        "ext-openssl": "*"
+        },
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ]
 }
 
 
 {% endhighlight %}
 
 ### Sample composer.json file
-
-
 The following example is a `composer.json` file for a module:
-
-
 
 {% highlight JSON %}
 {
@@ -117,14 +134,13 @@ The following example is a `composer.json` file for a module:
 {% endhighlight %}
 
 <h2 id="packaging">Package and publish your extension</h2>
+Create a package of your extension by performing a zip operation on the directory with your extension (excluding unnecessary directories). For example:
 
+    zip -r vendor-name_package-name-1.0.0.zip package-path/ -x 'package-path/.git/*'
 
-42. Create a package of your extension by performing a zip operation on the directory with your extension (excluding unnecessary directories). For example:
- `zip -r vendor-name_package-name-1.0.0.zip package-path/ -x 'package-path/.git/*'`
 Use alphanumeric characters for the package filename with dashes to separate words. Do not use whitespaces.
 
-
-42. Magento can retrieve your extension package from any valid GitHub URL. 
+Magento can retrieve your extension package from any valid GitHub URL. 
  
 
  

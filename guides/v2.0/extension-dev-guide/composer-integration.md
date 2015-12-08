@@ -115,10 +115,10 @@ magento/language-de_de</pre>
 <td>
 <pre>magento/framework</pre>
 </td>
-<td>
+<!-- <td>
 <pre>magento2-library</pre>
 </td>
-<td>Currently there is only "magento/framework" package. We don't distinguish particular libraries as separate components. In the future, if we do, we'll use "framework-" prefix (as provided in the example). </td>
+<td>Currently there is only "magento/framework" package. We don't distinguish particular libraries as separate components. In the future, if we do, we'll use "framework-" prefix (as provided in the example). </td> -->
 </tr>
 </tbody></table>
 
