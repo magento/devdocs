@@ -215,27 +215,42 @@
 		<h2>Data set</h2>
 
 <ul id="markdown-toc">
-  <li><a href="#data-set-overview">Data set overview</a></li>
-  <li><a href="#data-set-structure">Data set structure</a></li>
+  <li><a href="#overview">Data set overview</a></li>
+  <li><a href="#structure">Data set structure</a>    <ul>
+      <li><a href="#example">Example data set</a></li>
+      <li><a href="#data_node">How to define <code>name</code> in the <code>&lt;data&gt;</code> node</a>        <ul>
+          <li><a href="#simple_var">Set a simple variable</a></li>
+          <li><a href="#fixture_field">Set data to a fixture field</a></li>
+          <li><a href="#fixture_repository">Set data to a fixture from a repository</a></li>
+          <li><a href="#fixture_field_repository">Set data to a fixture field from a repository</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#merge">Merge data sets</a>    <ul>
+      <li><a href="#add_variation">Add a new variation</a></li>
+      <li><a href="#extend_variation">Extend a variation with data</a></li>
+    </ul>
+  </li>
 </ul>
 
-<h2 id="data-set-overview">Data set overview</h2>
-<p>Data sets contain data used by test case and constraints.
+<h2 id="overview">Data set overview</h2>
+<p>Data set contains data used by a <a href="/guides/v2.0/mtf/mtf_entities/mtf_testcase.html">test case</a> and <a href="/guides/v2.0/mtf/mtf_entities/mtf_constraint.html">constraints</a>.
 A data set can have several variations.
 Each variation has constraints that are called at the end of the test flow.</p>
 
-<h2 id="data-set-structure">Data set structure</h2>
+<h2 id="structure">Data set structure</h2>
 
-<p>Data set is an XML file that contains test variations for a test case.</p>
+<p>A data set is an XML file that contains test variations for a test case.</p>
 
-<p>Variation includes:</p>
+<p>Each variation includes:</p>
 
 <ul>
   <li>Data used during the test flow and assertions</li>
-  <li><a href="/guides/v2.0/mtf/mtf_entities/mtf_constraint.html">Constraints</a> that will be called after test flow</li>
+  <li>Constraints that are called after the test flow</li>
 </ul>
 
-<p>The following table shows structure of the data set:</p>
+<p id="dataset_struct_table">The following table shows structure of the data set:</p>
 
 <table>
 <col width="1*" />
@@ -274,7 +289,7 @@ Each variation has constraints that are called at the end of the test flow.</p>
 <td><code>data</code> </td>
 <td>Data to be used by a test case. </td>
 <td><ul>
-<li><code>name</code> - a name of variable with extra data. A format can be the following: <i>entity_name</i>/<code>data</code>/<i>name_of_the_field</i>, for example <code>product/data/name</code>. The processing logic is defined in <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php">InjectableFixture</a> class. Required.</li>
+<li><code>name</code> - a name of variable with extra data. The processing logic is defined in the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php">InjectableFixture</a> class. <a href="#data_node">More details.</a> Required.</li>  
 <li><code>xsi:type</code> - a type of the value. 
 The following data types are available:
 <ul>
@@ -298,14 +313,18 @@ The following data types are available:
 </table>
 
 <div class="bs-callout bs-callout-warning">
-  <p>Variation should contain only data that is required for its flow and constraints.</p>
+  <p>A variation should contain only data that is required for its flow and constraints.</p>
 </div>
 
-<div class="bs-callout bs-callout-tip">
-  <p>Data with name <code>tag</code> can be used to customize test suite run.</p>
-</div>
+<p>A data set must be placed in the same directory with a corresponding test case.</p>
 
-<p>Let’s see an example:</p>
+<h3 id="example">Example data set</h3>
+
+<p>Let’s see an example for <code>CreateSimpleProductEntityTest</code>. A data set and its corresponding <a href="/guides/v2.0/mtf/mtf_entities/mtf_testcase.html">test case</a> must be placed in the <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product</code> directory.</p>
+
+<p><a href="/common/images/mtf_dataset_dir.png"><img src="/common/images/mtf_dataset_dir.png" /></a></p>
+
+<p>The <code>CreateSimpleProductEntityTest.xml</code> data set contains:</p>
 
 <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/etc/variations.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;testCase</span> <span class="na">name=</span><span class="s">&quot;Magento\Catalog\Test\TestCase\Product\CreateSimpleProductEntityTest&quot;</span> <span class="na">summary=</span><span class="s">&quot;Create Simple Product&quot;</span> <span class="na">ticketId=</span><span class="s">&quot;MAGETWO-23414&quot;</span><span class="nt">&gt;</span>
@@ -314,13 +333,14 @@ The following data types are available:
             <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/name&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Simple Product %isolation%<span class="nt">&lt;/data&gt;</span>
             <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/sku&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>simple_sku_%isolation%<span class="nt">&lt;/data&gt;</span>
             <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/price/value&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>10000<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/price/dataset&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>drop_down_with_one_option_fixed_price<span class="nt">&lt;/data&gt;</span>
             <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/short_description&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Simple Product short_description %isolation%<span class="nt">&lt;/data&gt;</span>
             <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/description&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Simple Product description %isolation%<span class="nt">&lt;/data&gt;</span>
             <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/weight&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>50<span class="nt">&lt;/data&gt;</span>
             <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/quantity_and_stock_status/qty&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>657<span class="nt">&lt;/data&gt;</span>
             <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/custom_options/dataset&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>drop_down_with_one_option_fixed_price<span class="nt">&lt;/data&gt;</span>
             <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/checkout_data/dataset&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>simple_drop_down_with_one_option_fixed_price<span class="nt">&lt;/data&gt;</span>
-            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/price/dataset&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>drop_down_with_one_option_fixed_price<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;tag&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>test_type:acceptance_test<span class="nt">&lt;/data&gt;</span>
             <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">&quot;Magento\Catalog\Test\Constraint\AssertProductSaveMessage&quot;</span> <span class="nt">/&gt;</span>
             <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">&quot;Magento\Catalog\Test\Constraint\AssertProductInGrid&quot;</span> <span class="nt">/&gt;</span>
             <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">&quot;Magento\Catalog\Test\Constraint\AssertProductInCategory&quot;</span> <span class="nt">/&gt;</span>
@@ -334,28 +354,254 @@ The following data types are available:
 
 <ul>
   <li>corresponds to the XSD schema <code>&lt;magento2&gt;/dev/tests/functional/vendor/magento/mtf/etc/variations.xsd</code></li>
-  <li>relates to the <code>Magento\Catalog\Test\TestCase\Product\CreateSimpleProductEntityTest</code> test (performs creation of the simple product) </li>
+  <li>relates to the <code>Magento\Catalog\Test\TestCase\Product\CreateSimpleProductEntityTest</code> test case (performs creation of the simple product). </li>
   <li>relates to the ticket <code>MAGETWO-23414</code> in Jira</li>
-  <li>contains variation <code>CreateSimpleProductEntityTestVariation1</code> that creates product with fixed price with the following data (corresponds to the <code>Magento\Catalog\Test\Fixture\CatalogProductSimple</code> fixture):
+  <li>contains variation <code>CreateSimpleProductEntityTestVariation1</code> that 
     <ul>
-      <li><code>url_key</code> field is assigned with <code>simple-product-%isolation%</code>. <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture-repo.html#mtf_repo_isolation">More info about %isolation% usage</a>.</li>
-      <li><code>name</code> field is assigned with <code>Simple Product %isolation%</code></li>
-      <li><code>sku</code> field is assigned with <code>simple_sku_%isolation%</code></li>
-      <li><code>price</code> field is processed by a <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">data source</a> <code>Magento\Catalog\Test\Fixture\Product\Price</code> and is assigned <code>10000</code></li>
-      <li><code>short_description</code> field is assigned with <code>Simple Product short_description %isolation%</code></li>
-      <li><code>description</code> field is assigned with <code>Simple Product description %isolation%</code></li>
-      <li><code>weight</code> field is assigned with <code>50</code></li>
-      <li><code>quantity_and_stock_status/qty</code> field is assigned with <code>657</code></li>
-      <li><code>custom_options</code> field is processed by a <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">data source</a> <code>Magento\Catalog\Test\Fixture\Product\CustomOptions</code> using a data set <code>drop_down_with_one_option_fixed_price</code> from the repository <code>Magento\Catalog\Test\Repository\Product\CustomOptions</code></li>
-      <li><code>checkout_data</code> fields are assigned with a data set <code>simple_drop_down_with_one_option_fixed_price</code> from the <code>Magento\Catalog\Test\Repository\CatalogProductSimple\CheckoutData</code> repository</li>
-      <li><code>price</code> fields are assigned with a data set <code>drop_down_with_one_option_fixed_price</code> from the <code>Magento\Catalog\Test\Repository\CatalogProductSimple\Price</code> repository. This data set is used by <a href="/guides/v2.0/mtf/mtf_entities/mtf_constraint.html">constraint</a>.</li>
+      <li>contains data to create product with fixed price  </li>
+      <li>defines tag that can be used to customize the test suite run</li>
+      <li>defines <a href="/guides/v2.0/mtf/mtf_entities/mtf_constraint.html">constraints</a> that will be performed after the test flow in the order they are presented in the data set</li>
     </ul>
   </li>
 </ul>
 
-<p>You’ll have the following structure:</p>
+<p id="ex_variation_table">The <code>CreateSimpleProductEntityTestVariation1</code> variation contains the following data:</p>
 
-<p><a href="/common/images/Data set2.png"><img src="/common/images/Data set2.png" /></a></p>
+<table>
+<col width="1*" />
+<col width="2*" />
+<tr><th>Variable</th><th>Description</th></tr>
+<tr>
+<td><code>url_key</code> </td>
+<td>field is assigned with <code>simple-product-%isolation%</code>. <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture-repo.html#mtf_repo_isolation">More info about <code>%isolation%</code></a>.</td>
+</tr>
+<tr>
+<td><code>name</code></td><td>field is assigned with <code>Simple Product %isolation%</code></td>
+</tr>
+<tr>
+<td><code>sku</code></td><td>field is assigned with <code>simple_sku_%isolation%</code></td>
+</tr>
+<tr>
+<td><code>price</code></td>
+<td>
+<ul>
+<li> <code>product/data/price/value</code> is processed by a <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">data source</a> <code>Magento\Catalog\Test\Fixture\Product\Price</code> and is assigned <code>10000</code></li>
+<li><code>product/data/price/dataset</code> is assigned with a data set <code>drop_down_with_one_option_fixed_price</code> from the <code>Magento\Catalog\Test\Repository\CatalogProductSimple\Price</code> repository. This data set is used by a <a href="/guides/v2.0/mtf/mtf_entities/mtf_constraint.html">constraint</a>.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><code>short_description</code></td>
+<td>field is assigned with <code>Simple Product short_description %isolation%</code></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>field is assigned with <code>Simple Product description %isolation%</code></td>
+</tr>
+<tr>
+<td><code>weight</code></td>
+<td>field is assigned with <code>50</code></td>
+</tr>
+<tr>
+<td><code>quantity_and_stock_status/qty</code></td>
+<td>field is assigned with <code>657</code></td>
+</tr>
+<tr>
+<td><code>custom_options/qty</code></td>
+<td>field is processed by a data source <code>Magento\Catalog\Test\Fixture\Product\CustomOptions</code> using a data set <code>drop_down_with_one_option_fixed_price</code> from the repository <code>Magento\Catalog\Test\Repository\Product\CustomOptions</code></td>
+</tr>
+<tr>
+<td><code>checkout_data</code></td>
+<td>fields are assigned with a data set <code>simple_drop_down_with_one_option_fixed_price</code> from the <code>Magento\Catalog\Test\Repository\CatalogProductSimple\CheckoutData</code> repository</td>
+</tr>
+</table>
+
+<h3 id="data_node">How to define <code>name</code> in the <code>&lt;data&gt;</code> node</h3>
+
+<p>As you can see in the <a href="#dataset_struct_table">previous table</a>, the <code>name</code> data has a specific structure. Why? To make your test more flexible. Let’s see the logic of the <code>&lt;data&gt;</code> processing. </p>
+
+<p>Slash <code>/</code> means array nesting. For example:</p>
+
+<ul>
+  <li><code>&lt;data name=var/index1&gt;value&lt;/data&gt;</code> is converted as <code>var[index1 =&gt; value]</code></li>
+  <li><code>&lt;data name=var/index1/index2&gt;value&lt;/data&gt;</code> is converted as <code>var[index1 =&gt; [index2 =&gt; value]]</code></li>
+</ul>
+
+<p>where <code>var</code> is a name of an argument of a <a href="/guides/v2.0/mtf/mtf_entities/mtf_testcase.html">test case</a> or a <a href="/guides/v2.0/mtf/mtf_entities/mtf_constraint.html">constraint</a>.</p>
+
+<p>If a variable is assigned more than one value:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;price/shopping_cart/total&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>50<span class="nt">&lt;/data&gt;</span>
+<span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;price/product_page/special_price/excluding_tax&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>6<span class="nt">&lt;/data&gt;</span></code></pre></div>
+
+<p>the value is processed as an array:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$price</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;data&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">&#39;shopping_cart&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">&#39;total&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;50&#39;</span>
+        <span class="p">],</span>
+        <span class="s1">&#39;product_page&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">&#39;special_price&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                <span class="s1">&#39;excluding_tax&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;6&#39;</span>
+            <span class="p">]</span>   
+        <span class="p">]</span>
+    <span class="p">]</span>
+<span class="p">]</span></code></pre></div>
+
+<p>Also, in similar cases you can use array type in a data set, like:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;price&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;shopping_cart&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;total&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>50<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;product_type&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;special_price&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;excluding_tax&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>6<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;/data&gt;</span></code></pre></div>
+
+<h4 id="simple_var">Set a simple variable</h4>
+
+<p>For example, if a <a href="/guides/v2.0/mtf/mtf_entities/mtf_testcase.html">test case</a> or constraint has an argument <code>$price</code>, then the test case takes from the data set all the <code>&lt;data&gt;</code> nodes with a name <code>price</code>. Assume a method with argument <code>$price</code>.</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">testCreate</span><span class="p">(</span><span class="nv">$price</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">//</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+
+<p>To assign it with <code>10</code> in one of the variations, add the following field to a variation of the corresponding data set:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;price&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>10<span class="nt">&lt;/data&gt;</span></code></pre></div>
+
+<h4 id="fixture_field">Set data to a fixture field</h4>
+
+<p>In your test you often need to use injectable <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html">fixture</a> instances. For example:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">testCreate</span><span class="p">(</span><span class="nx">\Magento\Catalog\Test\Fixture\CatalogProductSimple</span> <span class="nv">$product</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">//</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+
+<p>In this case, the <abbr title="Magento Testing Framework">MTF</abbr> uses a constructor from the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php">InjectableFixture</a> class. It declares that your data can be passed to the fixture in <code>$data</code> variable as an array. For example, to assign <code>weight</code> with <code>50</code> you can use the following notation:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/weight&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>50<span class="nt">&lt;/data&gt;</span></code></pre></div>
+
+<h4 id="fixture_repository">Set data to a fixture from a repository</h4>
+
+<p>The <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php">InjectableFixture</a> class enables you to use a fixture <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture-repo.html">repository</a>. It can be injected in a <code>$dataset</code> variable. For example, to use <code>dataset = product_with_special_symbols_in_name</code> from the repository assigned in the <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html">fixture</a>, you can use:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/dataset&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>product_with_special_symbols_in_name<span class="nt">&lt;/data&gt;</span></code></pre></div>
+
+<h4 id="fixture_field_repository">Set data to a fixture field from a repository</h4>
+
+<p>You can assign data to a <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html#mtf_repository_create-field">fixture field from its repository</a>. It is possible that a fixture field contains the <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">data source</a> that assigns values from a repository.</p>
+
+<p>Let’s see an example:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/price/dataset&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>drop_down_with_one_option_fixed_price<span class="nt">&lt;/data&gt;</span></code></pre></div>
+
+<p>A <code>CatalogProductSimple.xml</code> fixture contains the following declaration:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;price&quot;</span> <span class="na">is_required=</span><span class="s">&quot;1&quot;</span> <span class="na">group=</span><span class="s">&quot;product-details&quot;</span> <span class="na">source=</span><span class="s">&quot;Magento\Catalog\Test\Fixture\Product\Price&quot;</span> <span class="na">repository=</span><span class="s">&quot;Magento\Catalog\Test\Repository\CatalogProductSimple\Price&quot;</span> <span class="nt">/&gt;</span></code></pre></div>
+
+<p>After the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php">InjectableFixture</a> class has passed data to the CatalogProductSimple fixture, <code>Magento\Catalog\Test\Fixture\Product\Price</code> data source receives <code>'dataset' =&gt; 'drop_down_with_one_option_fixed_price'</code> and assigns values from the <code>'dataset' =&gt; 'drop_down_with_one_option_fixed_price'</code> of the <code>Magento\Catalog\Test\Repository\CatalogProductSimple\Price</code> repository.</p>
+
+<h2 id="merge">Merge data sets</h2>
+
+<p>The <abbr title="Magento Testing Framework">MTF</abbr> enables you to merge data sets from different modules. For example, if you create a new module that adds a menu option to an existing module, the <abbr title="Magento Testing Framework">MTF</abbr> allows you to merge the new data with the existing data sets. As a result, you don’t have to edit the existing module to include the new information, and your tests continue to work. If you decide to later remove the same new module, you don’t need to clean the data sets in other modules.</p>
+
+<p>There are two options to merge data sets in the <abbr title="Magento Testing Framework">MTF</abbr>:</p>
+
+<ul>
+  <li>add a new variation</li>
+  <li>extend an existing variation</li>
+</ul>
+
+<h3 id="add_variation">Add a new variation</h3>
+
+<p>To add a new variation using merging, you should simply use the name of a <a href="/guides/v2.0/mtf/mtf_entities/mtf_testcase.html">test case</a> that you want to merge with. For example, you want to add a new variations from the Magento_ProductVideo module to the <code>Magento\Catalog\Test\TestCase\Product\UpdateSimpleProductEntityTest</code> that is placed in the Magento_Catalog module. You can create data set in the Magento_ProductVideo module, containing variations you need, and paste the test case name that you want to merge with:</p>
+
+<ul>
+  <li>Create <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/ProductVideo/Test/TestCase/Product/UpdateSimpleProductEntityTest.xml</code> with the following code:</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="c">&lt;!--</span>
+<span class="c">/**</span>
+<span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
+<span class="c"> * See COPYING.txt for license details.</span>
+<span class="c"> */</span>
+<span class="c"> --&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../vendor/magento/mtf/etc/variations.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;testCase</span> <span class="na">name=</span><span class="s">&quot;Magento\Catalog\Test\TestCase\Product\UpdateSimpleProductEntityTest&quot;</span> <span class="na">summary=</span><span class="s">&quot;Add Video to PCF&quot;</span> <span class="na">ticketId=</span><span class="s">&quot;PV-1&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;variation</span> <span class="na">name=</span><span class="s">&quot;DeleteVideoFromPCFTestVariation1&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;description&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Delete video youtube<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;initialProduct/dataset&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>product_with_video_youtube<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/sku&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>sku_simple_product_with_video_%isolation%<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/media_gallery/images&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">&quot;Magento\Catalog\Test\Constraint\AssertProductNoImageInGrid&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">&quot;Magento\Catalog\Test\Constraint\AssertProductForm&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">&quot;Magento\ProductVideo\Test\Constraint\AssertNoVideoCategoryView&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">&quot;Magento\ProductVideo\Test\Constraint\AssertNoVideoProductView&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/variation&gt;</span>
+        <span class="nt">&lt;variation</span> <span class="na">name=</span><span class="s">&quot;DeleteVideoFromPCFTestVariation2&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;description&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Delete video vimeo<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;initialProduct/dataset&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>product_with_video_vimeo<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/sku&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>sku_simple_product_with_video_%isolation%<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;product/data/media_gallery/images&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">&quot;Magento\Catalog\Test\Constraint\AssertProductNoImageInGrid&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">&quot;Magento\Catalog\Test\Constraint\AssertProductForm&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">&quot;Magento\ProductVideo\Test\Constraint\AssertNoVideoCategoryView&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">&quot;Magento\ProductVideo\Test\Constraint\AssertNoVideoProductView&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/variation&gt;</span>
+    <span class="nt">&lt;/testCase&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p>Variations <code>DeleteVideoFromPCFTestVariation1</code> and <code>DeleteVideoFromPCFTestVariation2</code> will be used by the <code>Magento\Catalog\Test\TestCase\Product\UpdateSimpleProductEntityTest</code> class during the test run.</p>
+
+<h3 id="extend_variation">Extend a variation with data</h3>
+<p>If you want to extend variation in another module using merging, you should use a <a href="/guides/v2.0/mtf/mtf_entities/mtf_testcase.html">test case</a> name that you want to merge with and a variation name that you want to extend.</p>
+
+<p>For example, see how in <code>Magento/Catalog/Test/TestCase/Product/ValidateOrderOfProductTypeTest.xml</code></p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="c">&lt;!--</span>
+<span class="c">/**</span>
+<span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
+<span class="c"> * See COPYING.txt for license details.</span>
+<span class="c"> */</span>
+<span class="c"> --&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/etc/variations.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;testCase</span> <span class="na">name=</span><span class="s">&quot;Magento\Catalog\Test\TestCase\Product\ValidateOrderOfProductTypeTest&quot;</span> <span class="na">summary=</span><span class="s">&quot;Validate product types order on product grid page&quot;</span> <span class="na">ticketId=</span><span class="s">&quot;MAGETWO-37146&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;variation</span> <span class="na">name=</span><span class="s">&quot;ValidateOrderOfProductTypeTestVariation1&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;menu/0&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Simple Product<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;menu/3&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Virtual Product<span class="nt">&lt;/data&gt;</span>
+            <span class="nt">&lt;constraint</span> <span class="na">name=</span><span class="s">&quot;Magento\Catalog\Test\Constraint\AssertProductTypeOrderOnCreate&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/variation&gt;</span>
+    <span class="nt">&lt;/testCase&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p>the variation <code>ValidateOrderOfProductTypeTestVariation1</code> is extended by the Magento_Bundle module:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="c">&lt;!--</span>
+<span class="c">/**</span>
+<span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
+<span class="c"> * See COPYING.txt for license details.</span>
+<span class="c"> */</span>
+<span class="c"> --&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/etc/variations.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;testCase</span> <span class="na">name=</span><span class="s">&quot;Magento\Catalog\Test\TestCase\Product\ValidateOrderOfProductTypeTest&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;variation</span> <span class="na">name=</span><span class="s">&quot;ValidateOrderOfProductTypeTestVariation1&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;data</span> <span class="na">name=</span><span class="s">&quot;menu/4&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Bundle Product<span class="nt">&lt;/data&gt;</span>
+        <span class="nt">&lt;/variation&gt;</span>
+    <span class="nt">&lt;/testCase&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
 
 
 

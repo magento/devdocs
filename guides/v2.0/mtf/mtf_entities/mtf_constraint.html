@@ -274,7 +274,7 @@ Each constraint name must be globally unique in Magento application and must be 
 
 <p>In the MTF, <a href="/guides/v2.0/mtf/mtf_entities/mtf_dataset.html">data set</a> values are shared with a test class and constraints. A node name in data set can be complex like <code>item1/item2/item3</code>. The argument name in <code>processAssert()</code> must be the same as the <code>item1</code> to transfer data from data set to constraint.</p>
 
-<p>If a data set variable is used in the test, and is overwritten, it is transfered as altered to the constraint. Variables can be overwritten in the <em>injectable</em> <a href="/guides/v2.0/mtf/mtf_entities/mtf_testcase.html">test case</a>  class in <code>test()</code>, <code>__inject()</code> and <code>__prepare()</code> methods, and then passed to the constraint class by <code>return</code>. Furthermore, any returned value of these methods can be used as an argument in constraint.</p>
+<p>If a data set variable is used in the test, and is overwritten, it is transferred as altered to the constraint. Variables can be overwritten in the <em>injectable</em> <a href="/guides/v2.0/mtf/mtf_entities/mtf_testcase.html">test case</a>  class in <code>test()</code>, <code>__inject()</code> and <code>__prepare()</code> methods, and then passed to the constraint class by <code>return</code>. Furthermore, any returned value of these methods can be used as an argument in constraint.</p>
 
 <p>An object that is not defined in the data set or isn’t returned from the test case is created using the Object Manager.</p>
 
@@ -282,15 +282,15 @@ Each constraint name must be globally unique in Magento application and must be 
 
 <p><img src="/common/images/mtf_constraint_arguments_green.png" width="800" /></p>
 
-<p><span style="color: #21610B; font-weight:bold">Green arrows</span> show that <code>product</code> value is transfered to the test and the constraint.</p>
+<p><span style="color: #21610B; font-weight:bold">Green arrows</span> show that <code>product</code> value is transferred to the test and the constraint.</p>
 
 <p><img src="/common/images/mtf_constraint_arguments_orange.png" width="800" /></p>
 
-<p><span style="color: #FF8000; font-weight:bold">Orange arrows</span> show that <code>category</code> variable is transfered to the test directly, overwritten by <code>testCreate()</code> method and only then transfered to constraint.</p>
+<p><span style="color: #FF8000; font-weight:bold">Orange arrows</span> show that <code>category</code> variable is transferred to the test directly, overwritten by <code>testCreate()</code> method and only then transferred to constraint.</p>
 
 <p><img src="/common/images/mtf_constraint_arguments_blue.png" width="800" /></p>
 
-<p><span style="color: #0000FF; font-weight:bold">Blue arrow</span> shows that <code>price</code> value is transfered to the constraint only.</p>
+<p><span style="color: #0000FF; font-weight:bold">Blue arrow</span> shows that <code>price</code> value is transferred to the constraint only.</p>
 
 <h3 id="mtf_constraint_variation">Constraint in the test</h3>
 
