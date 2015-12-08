@@ -68,7 +68,7 @@ The following table shows structure of the data set:
 <td><code>data</code> </td>
 <td>Data to be used by a test case. </td>
 <td><ul>
-<li><code>name</code> - a name of variable with extra data. The processing logic is defined in the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php">InjectableFixture</a> class. <a href="#data_node">More details.</a> Required.</li>  
+<li><code>name</code> - a name of variable with extra data. <a href="#data_node">More details.</a> Required.</li>
 <li><code>xsi:type</code> - a type of the value. 
 The following data types are available:
 <ul>
@@ -95,7 +95,7 @@ The following data types are available:
   <p>A variation should contain only data that is required for its flow and constraints.</p>
 </div>
 
-A data set must be placed in the same directory with a corresponding test case.
+A data set should be placed in the same directory with a corresponding test case.
 
 ### Example data set {#example}
 
@@ -137,17 +137,17 @@ This is a data set that:
 - relates to the `Magento\Catalog\Test\TestCase\Product\CreateSimpleProductEntityTest` test case (performs creation of the simple product). 
 - relates to the ticket `MAGETWO-23414` in Jira
 - contains variation `CreateSimpleProductEntityTestVariation1` that 
-  - contains data to create product with fixed price  
+  - contains data to create product with fixed price (see descriptions in the following table) 
   - defines tag that can be used to customize the test suite run
   - defines [constraints][] that will be performed after the test flow in the order they are presented in the data set
 
-The `CreateSimpleProductEntityTestVariation1` variation contains the following data:
+The `CreateSimpleProductEntityTestVariation1` variation contains the following `$product` data:
 {:#ex_variation_table}
 
 <table>
 <col width="1*">
 <col width="2*">
-<tr><th>Variable</th><th>Description</th></tr>
+<tr><th>Fixture field</th><th>Description</th></tr>
 <tr>
 <td><code>url_key</code> </td>
 <td>field is assigned with <code>simple-product-%isolation%</code>. <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_fixture-repo.html#mtf_repo_isolation">More info about <code>%isolation%</code></a>.</td>
@@ -184,7 +184,7 @@ The `CreateSimpleProductEntityTestVariation1` variation contains the following d
 <td>field is assigned with <code>657</code></td>
 </tr>
 <tr>
-<td><code>custom_options/qty</code></td>
+<td><code>custom_options</code></td>
 <td>field is processed by a data source <code>Magento\Catalog\Test\Fixture\Product\CustomOptions</code> using a data set <code>drop_down_with_one_option_fixed_price</code> from the repository <code>Magento\Catalog\Test\Repository\Product\CustomOptions</code></td>
 </tr>
 <tr>
@@ -195,7 +195,9 @@ The `CreateSimpleProductEntityTestVariation1` variation contains the following d
 
 ### How to define `name` in the `<data>` node {#data_node}
 
-As you can see in the [previous table](#dataset_struct_table), the `name` data has a specific structure. Why? To make your test more flexible. Let's see the logic of the `<data>` processing. 
+As you can see in the [previous table](#dataset_struct_table), the `name` data has a specific structure. Why? To make your test more flexible.
+
+Data mapping by `name` is performed for the test methods in test case  and `processAssert()` method in constraints. Let's see the logic of the `<data>` processing.
 
 Slash `/` means array nesting. For example:
 
@@ -244,7 +246,7 @@ Also, in similar cases you can use array type in a data set, like:
 
 #### Set a simple variable {#simple_var}
 
-For example, if a [test case][] or constraint has an argument `$price`, then the test case takes from the data set all the `<data>` nodes with a name `price`. Assume a method with argument `$price`.
+For example, if a [test case][] or constraint has an argument `$price`, then the test case takes from the data set all the `<data>` nodes with a name `price`. Assume a method with the `$price` argument.
 
 {%highlight php%}
 <?php
@@ -274,7 +276,7 @@ public function testCreate(\Magento\Catalog\Test\Fixture\CatalogProductSimple $p
 ?>
 {%endhighlight php%}
 
-In this case, the MTF uses a constructor from the [InjectableFixture][] class. It declares that your data can be passed to the fixture in `$data` variable as an array. For example, to assign `weight` with `50` you can use the following notation:
+In this case, the ObjectManager sends data to the [InjectableFixture][] constructor. It declares that your data can be passed to the fixture in `$data` variable as an array. For example, to assign the existing fixture field `weight` with `50` you can use the following notation:
 
 {%highlight xml%}
  <data name="product/data/weight" xsi:type="string">50</data>
@@ -290,21 +292,25 @@ The [InjectableFixture][] class enables you to use a fixture [repository][]. It 
 
 #### Set data to a fixture field from a repository {#fixture_field_repository}
 
-You can assign data to a [fixture field from its repository][]. It is possible that a fixture field contains the [data source][] that assigns values from a repository.
+You can assign data to a [fixture field from its repository][].
  
 Let's see an example:
 
 {%highlight xml%}
 <data name="product/data/price/dataset" xsi:type="string">drop_down_with_one_option_fixed_price</data>
+<data name="product/data/checkout_data/dataset" xsi:type="string">simple_drop_down_with_one_option_fixed_price</data>
 {%endhighlight xml%}
 
-A `CatalogProductSimple.xml` fixture contains the following declaration:
+A `CatalogProductSimple.xml` fixture contains the following declarations:
 
 {%highlight xml%}
 <field name="price" is_required="1" group="product-details" source="Magento\Catalog\Test\Fixture\Product\Price" repository="Magento\Catalog\Test\Repository\CatalogProductSimple\Price" />
+<field name="checkout_data" group="null" repository="Magento\Catalog\Test\Repository\CatalogProductSimple\CheckoutData" />
 {%endhighlight xml%}
 
-After the [InjectableFixture][] class has passed data to the CatalogProductSimple fixture, `Magento\Catalog\Test\Fixture\Product\Price` data source receives `'dataset' => 'drop_down_with_one_option_fixed_price'` and assigns values from the `'dataset' => 'drop_down_with_one_option_fixed_price'` of the `Magento\Catalog\Test\Repository\CatalogProductSimple\Price` repository.
+The `price` fixture field contains the [data source][] that assigns values from a repository. After the [InjectableFixture][] class has passed data to the CatalogProductSimple fixture, `Magento\Catalog\Test\Fixture\Product\Price` data source receives `['dataset' => 'drop_down_with_one_option_fixed_price']` and assigns values from the `['dataset' => 'drop_down_with_one_option_fixed_price']` of the `Magento\Catalog\Test\Repository\CatalogProductSimple\Price` repository.
+
+The `checkout_data` doesn't contain source and is assigned with values from the `Magento\Catalog\Test\Repository\CatalogProductSimple\CheckoutData` directly.
 
 ## Merge data sets {#merge}
 
@@ -331,8 +337,7 @@ To add a new variation using merging, you should simply use the name of a [test 
  -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/mtf/etc/variations.xsd">
     <testCase name="Magento\Catalog\Test\TestCase\Product\UpdateSimpleProductEntityTest" summary="Add Video to PCF" ticketId="PV-1">
-        <variation name="DeleteVideoFromPCFTestVariation1">
-            <data name="description" xsi:type="string">Delete video youtube</data>
+        <variation name="DeleteVideoFromPCFTestVariation1" summary="Delete video youtube">
             <data name="initialProduct/dataset" xsi:type="string">product_with_video_youtube</data>
             <data name="product/data/sku" xsi:type="string">sku_simple_product_with_video_%isolation%</data>
             <data name="product/data/media_gallery/images" xsi:type="string" />
@@ -341,8 +346,7 @@ To add a new variation using merging, you should simply use the name of a [test 
             <constraint name="Magento\ProductVideo\Test\Constraint\AssertNoVideoCategoryView" />
             <constraint name="Magento\ProductVideo\Test\Constraint\AssertNoVideoProductView" />
         </variation>
-        <variation name="DeleteVideoFromPCFTestVariation2">
-            <data name="description" xsi:type="string">Delete video vimeo</data>
+        <variation name="DeleteVideoFromPCFTestVariation2" summary="Delete video vimeo">
             <data name="initialProduct/dataset" xsi:type="string">product_with_video_vimeo</data>
             <data name="product/data/sku" xsi:type="string">sku_simple_product_with_video_%isolation%</data>
             <data name="product/data/media_gallery/images" xsi:type="string" />
@@ -379,6 +383,6 @@ For example, see how in `Magento/Catalog/Test/TestCase/Product/ValidateOrderOfPr
 [InjectableFixture]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php
 [repository]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture-repo.html
 [test case]: {{site.gdeurl}}mtf/mtf_entities/mtf_testcase.html
-[fixture field from its repository]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_repository_create-field
+[fixture field from its repository]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_repositoy
 
 *[MTF]: Magento Testing Framework
