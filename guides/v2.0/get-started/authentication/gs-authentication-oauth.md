@@ -31,7 +31,7 @@ redirect_from: /guides/v1.0/get-started/authentication/gs-authentication-oauth.h
 <p>An Integration contains details like the endpoint that receives Oauth credentials and list of APIs to which access is requested.</p>
 
 <h2 id="http-post">HTTP POST with OAuth credentials</h3>
-<p>This is the preceding step before the the 2-legged Oauth handshake starts. Only an administrator with access to Integration grid in the backend can initiate this.</p>
+<p>This is the preceding step before the 2-legged Oauth handshake starts. Only an administrator with access to Integration grid in the backend can initiate this.</p>
 <p>An admin may choose to select "Save and Activate" during integration creation or click on "Activate" against a previously saved integration from the Integration grid.</p>
 <p>This action submits the credentials to the endpoint specified when creating the Integration</p>
 <p>The use of an HTTPS for the endpoint to pass credentials eliminates this risk to a certain extent.</p>

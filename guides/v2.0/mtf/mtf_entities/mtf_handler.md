@@ -162,7 +162,7 @@ The following code includes detailed comments for better understanding.
 
 <h3 id="mtf_handler_decor">cURL authentication classes</h3>
 
-In the previously mentioned example of the <a href="#mtf_curl_script">Curl.php</a> code, authentication in the Admin is realized using the the `BackendDecorator` class. 
+In the previously mentioned example of the <a href="#mtf_curl_script">Curl.php</a> code, authentication in the Admin is realized using the `BackendDecorator` class. 
 
 The <a href="#mtf_handler_curl_frontdecor">FrontendDecorator class</a> manages authentication in the storefront.
 
