@@ -3,10 +3,10 @@ DIV.gsc-control-wrapper-cse tr:nth-child(odd) td { background: transparent;}
 
 div.gsc-control-cse {
 	font-family: 'Open Sans', sans-serif;
-	border-color: #FFFFFF;
 	background-color: #fff;
 	min-height: 100%;
-	padding-top: 60px;
+	border: none;
+	padding: 0;
 }
 .gsc-control-cse .gsc-wrapper .gsc-table-result {
 	font-family: 'Open Sans', sans-serif;
@@ -194,7 +194,7 @@ a.gsc-trailing-more-results:link {
 
 .gsc-control-cse .gsc-control-wrapper-cse form.gsc-search-box {
 	margin: 0;
-	padding: 0;
+	padding: 60px 0 0 0;
 }
 
 #searchResultsBox table {
@@ -204,7 +204,7 @@ a.gsc-trailing-more-results:link {
 }
 #___gcse_0 {
 	min-height: 100%;
-	height: auto;
+	height: 100%;
 }
 
 .gssb_c TABLE {

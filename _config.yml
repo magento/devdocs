@@ -28,4 +28,7 @@ highlighter: rouge
 
 incremental: true
 
-exclude: ['scss','bin','node_modules','guides']
+gems:
+  - jekyll-redirect-from
+
+exclude: ['scss','bin','node_modules']
