@@ -31,12 +31,12 @@ The audience for this topic is anyone who contributes to the Magento codebase. I
 {% include install/composer-clone.md %}
 
 <h2 id="instgde-prereq-compose-clone">Clone the Magento repository</h2>
-This section discusses how to get current code by cloning the Magento GitHub's develop branch. You can clone either the `master` or `develop` branch:
+This section discusses how to get current code by cloning the Magento GitHub's develop branch. You can clone either the `2.0` or `develop` branch:
 
-*	`master` is more stable
+*	`2.0` is more stable
 *	`develop` is more recent
 
-Currently, the `develop` branch is the default but you can clone the `master` branch using the optional `[-b master]` argument.
+Currently, the `develop` branch is the default but you can clone the `2.0` branch using the optional `[-b 2.0]` argument.
 
 <h3 id="instgde-prereq-compose-clone-auth">Creating an authorization file</h3>
 The Magento 2 GitHub repository requires you to authenticate. The `composer install` commands fails if you do not. To authenticate, <a href="{{ site.gdeurl }}install-gde/prereq/connect-auth.html">generate authentication keys</a>, after which you create an `auth.json` file in the home directory of the Magento file system owner.
@@ -85,9 +85,9 @@ To clone the Magento GitHub repository using the SSH protocol:
 
 	An example follows:
 
-		git clone [-b master] git@github.com:magento/magento2.git
+		git clone [-b 2.0] git@github.com:magento/magento2.git
 
-	Use `-b master` to clone the master branch; omit it to clone the `develop` branch, which is the default.
+	Use `-b 2.0` to clone the 2.0 branch; omit it to clone the `develop` branch, which is the default.
 
 3.	Wait for the repository to clone on your server.
 
@@ -124,9 +124,9 @@ To clone the Magento GitHub repository using the HTTPS protocol:
 
 	An example follows
 
-		git clone [-b master] https://github.com/magento/magento2.git
+		git clone [-b 2.0] https://github.com/magento/magento2.git
 
-	Use `-b master` to clone the master branch; omit it to clone the `develop` branch, which is the default.
+	Use `-b 2.0` to clone the 2.0 branch; omit it to clone the `develop` branch, which is the default.
 
 3.	Wait for the repository to clone on your server.
 
