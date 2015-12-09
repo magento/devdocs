@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>The PHP mcrypt extension is not installed properly</title>
+	<title>Cannot install using nginx</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/install-gde/trouble/php/tshoot_mcrypt.html">
+	<link rel="canonical" href="//guides/v2.0/install-gde/trouble/php/tshoot_nginx-port.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">The PHP mcrypt extension is not installed properly</h1>
+		<h1 class="page-heading">Cannot install using nginx</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/trouble/php/tshoot_mcrypt.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/trouble/php/tshoot_nginx-port.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -212,49 +212,19 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="trouble-php-mycrypt">The PHP mcrypt extension is not installed properly</h2>
+		<h2 id="install-trouble-pdo">Cannot install using nginx</h2>
+<p>If you use the nginx web server and you attempt to install the Magento software, the installation sometimes fails.</p>
 
 <h3 id="detail">Detail</h3>
+<p>You can confirm the issue by the following error in the <code>var/report</code> directory:</p>
 
-<p>Errors can include the following:</p>
+<pre><code>NOTE: You cannot install Magento using the Setup Wizard because the Magento setup directory cannot be accessed.
+You can install Magento using either the command line or you must restore access to the following directory: /var/www/html/setup
+If you are using the sample nginx configuration, please go to http://ce.mtf03.bcn.magento.com/setup/";i:1;s:641:"#0 /var/www/html/lib/internal/Magento/Framework/App/Http.php(213): Magento\Framework\App\Http-&gt;redirectToSetup(Object(Magento\Framework\App\Bootstrap), Object(Exception))
+</code></pre>
 
-<pre>exception 'Exception' with message 'PHP Warning: PHP Startup: Unable to load dynamic library '/usr/lib/php5/20121212/mcrypt.so' - /usr/lib/php5/20121212/mcrypt.so: cannot open shared object file: No such file or directory</pre>
-<pre>Installing data fixtures:
-/usr/bin/php -f '/Users/username/www/magento/dev/shell/run_data_fixtures.php' -- --bootstrap='MAGE_DIRS[base][path]=/Users/username/www/magento' 2&gt;&amp;1
-[ERROR] exception 'Exception' with message '
-Fatal error: Uncaught exception 'Exception' with message 'Module 'Magento_Core' depends on 'mcrypt' PHP extension that is not loaded.'
-</pre>
-<pre>======================================================================
-   The application has thrown an exception!
-======================================================================
- Magento\Framework\Exception
- Command returned non-zero exit code:
-`/usr/bin/php5 -f '/var/www/magento2/dev/shell/run_data_fixtures.php' -- --bootstrap='MAGE_DIRS[base][path]=/var/www/magento2' 2&gt;&amp;1`</pre>
-
-<h3 id="description">Description</h3>
-
-<p>Particularly on developer systems that include a Linux/Apache/MySQL/PHP (LAMP) “stack” that is separate from the operating system, it’s possible that mcrypt is either not installed at all or it’s installed in the LAMP stack’s path but not the operating system’s path.</p>
-
-<p>As a result, the Magento installer cannot locate the extension and the installation fails.</p>
-
-<h3 id="suggestion">Suggestion</h3>
-
-<p>Determine if the mcrypt extension is loaded in any of the following ways:</p>
-
-<ul>
-  <li>Set up a <a href="http://kb.mediatemple.net/questions/764/How+can+I+create+a+phpinfo.php+page%3F#gs" target="_blank">phpinfo.php</a> file in the web server’s root directory and examine the output in a web browser.</li>
-  <li>
-    <p>Run the following command:</p>
-
-    <pre>php -r "phpinfo();" | grep mcrypt</pre>
-
-    <p>If mycrypt is <em>not</em> installed, messages similar to the following display:</p>
-
-    <pre>PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php5/20121212/mcrypt.so' - /usr/lib/php5/20121212/mcrypt.so: cannot open shared object file: No such file or directory in Unknown on line 0</pre>
-  </li>
-</ul>
-
-<p>In some cases, you might need to install the Magento software from the <a href="/guides/v2.0/install-gde/install/cli/install-cli.html">command line</a> and specify the full path to the LAMP stack that has mcrypt installed.</p>
+<h3 id="workaround">Workaround</h3>
+<p>Append <code>/setup</code> to the URL by which you access the Setup Wizard or install the Magento software using the <a href="/guides/v2.0/install-gde/install/cli/install-cli.html">command line</a>.</p>
 
 
 
@@ -555,7 +525,7 @@ Fatal error: Uncaught exception 'Exception' with message 'Module 'Magento_Core' 
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_nginx-port.html">Cannot install using nginx</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_nginx-port.html">Cannot install using nginx</a></li>
 
 									
 						
@@ -703,7 +673,7 @@ Fatal error: Uncaught exception 'Exception' with message 'Module 'Magento_Core' 
 
 									
 							
-									<li class="level-2  active "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_mcrypt.html">The PHP mcrypt extension is not installed properly</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/php/tshoot_mcrypt.html">The PHP mcrypt extension is not installed properly</a></li>
 
 									
 						

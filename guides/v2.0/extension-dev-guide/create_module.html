@@ -230,7 +230,9 @@
 
 <p>…where <code>name</code>  is the name of your module, and <code>setup_version</code> is the version of Magento the module uses. Both of these attributes are required.</p>
 
-<h2 id="add-the-module8217s-composerjson-file">Add the module’s <code>composer.json</code> file</h2>
+<h2 id="add-the-modules-composerjson-file">Add the modules <code>composer.json</code> file</h2>
+
+<p>A sample follows:</p>
 
 <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
     <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;your-name/module-Acme&quot;</span><span class="p">,</span>
@@ -263,17 +265,21 @@
 <p>where:</p>
 
 <ul>
-  <li><code>name</code> — is the name of your module.</li>
-  <li><code>description</code> — is a concise explanation of your module’s purpose.</li>
-  <li><code>require</code> — lists any modules your module depends on.</li>
+  <li><code>name</code>—is the name of your module.</li>
+  <li><code>description</code>—is a concise explanation of your module’s purpose.</li>
+  <li><code>require</code>—lists any modules your module depends on.</li>
   <li>
-    <p><code>suggest</code> — lists soft dependencies. The module can operate without them, but if the modules are active, this module may impact their functionality. <code>Suggest</code> does not affect module load order.</p>
+    <p><code>suggest</code>—lists soft dependencies. The module can operate without them, but if the modules are active, this module may impact their functionality. <code>Suggest</code> does not affect module load order.</p>
   </li>
-  <li><code>type</code> — determines what type of magento component your module is. Choose from <em>magento2-library</em>, <em>magento2-theme</em>, <em>magento2-language</em>, or <em>magento2-module</em>.</li>
-  <li><code>version</code> — lists the version of the module.</li>
-  <li><code>license</code> — lists applicable licenses that apply to your module.</li>
-  <li><code>autoload</code> — instructs composer to load the specified files.</li>
+  <li><code>type</code>—determines what type of magento component your module is. Choose from <em>magento2-library</em>, <em>magento2-theme</em>, <em>magento2-language</em>, or <em>magento2-module</em>.</li>
+  <li><code>version</code>—lists the version of the module.</li>
+  <li><code>license</code>—lists applicable licenses that apply to your module.</li>
+  <li><code>autoload</code>—instructs composer to load the specified files.</li>
 </ul>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Magento does not currently support the <a href="https://getcomposer.org/doc/05-repositories.md#path" target="_blank"><code>path</code></a> repository.</p>
+</div>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Take a look at a <a href="https://github.com/magento/magento2-samples/tree/master/sample-module-minimal"> sample module</a> created by the Magento Core Team. </p>
