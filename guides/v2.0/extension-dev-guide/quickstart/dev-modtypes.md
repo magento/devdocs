@@ -18,6 +18,10 @@ github_link: extension-dev-guide/quickstart/dev-modtypes.md
 
 {% include php-dev/composer-types.md %}
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Each component type has a different <a href="{{ site.gdeurl }}extension-dev-guide/module-file-structure.html">directory structure</a> and different contents for <a href="{{ site.gdeurl }}extension-dev-guide/composer-integration.html"><code>composer.json</code></a>.</p>
+</div>
+
 ## TBD
 "Different types of packaging: module vs metapackages , pricing considerations and impact on packaging"
 

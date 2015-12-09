@@ -30,29 +30,23 @@ The following topics discuss a typical file structure for the following componen
 A typical file structure for a Magento 2 module:
 <p><img src="{{ site.baseurl }}common/images/pdg-config-file-structure.png" width="300" alt="A filesystem view of a typical file structure"></p>
 
-####Main directories
+####Typical directories
 
-The main module directories are:
+Typical module directories are:
 
-* `Block`: contains PHP classes as part of MVC vertical implementation of module logic.
-* `Controller`: contains PHP classes as part of MVC vertical implementation of module logic.
-* `Helper`: contains PHP classes as part of MVC vertical implementation of module logic.
-* `Model`: contains PHP classes as part of MVC vertical implementation of module logic.
+* `Block`: contains PHP view classes as part of MVC vertical implementation of module logic.
+* `Controller`: contains PHP controller classes as part of MVC vertical implementation of module logic.
+* `etc`: contains configuration files; in particular, `module.xml`, which is required.
+* `Model`: contains PHP model classes as part of MVC vertical implementation of module logic.
 * `Setup`: contains classes for module database structure and data setup which are invoked when installing or upgrading.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Be aware that the standard placement of the &lt;ModuleName> directory within the overall Magento file structure is <code>app/code/&lt;Vendor>/&lt;ModuleName>/etc/</code>. However, if you are creating a new module for distribution, you can just create the &lt;ModuleName> directory and the required directories under it. </p> 
-</div>
-
 ####Additional directories
-
-Additionally, there are directorys for configuration and other ancillary functions for items like plug-ins, internationalization, and front-end layout files.
+Additionally, there are directories for configuration and other ancillary functions for items like <a href="{{ site.gdeurl }}extension-dev-guide/plugins.html">plug-ins</a>, internationalization, and layout files.
 
 * `Api`: contains any PHP classes exposed to the API.	
-* `etc`: contains configuration files. 
 * `i18n`: contains localization files.
-* `Plugin`: contains any needed plugin files.
-* `view`: contains non-object-oriented and non-static view level parts of the module such as design templates, email templates, and layout files.
+* `Plugin`: contains any needed <a href="{{ site.gdeurl }}extension-dev-guide/plugins.html">plug-ins</a>.
+* `view`: contains view files, including static view files, design templates, email templates, and layout files.
 
 <h3 id="file-struct-comp-theme">Magento 2 theme file structure</h3>
 A typical theme file structure follows:
@@ -93,8 +87,8 @@ A typical theme file structure follows:
 	        ├── responsive.js
 	        └── theme.js
 
-####Main directories
-The main theme directories are: 
+####Typical directories
+Typical theme directories are: 
 
 *	`etc`: `view.xml` contains image configurations for all images and thumbnails.
 *	`i18n`: <a href="{{ site.gdeurl }}frontend-dev-guide/translations/xlate.html#m2devgde-xlate-dictionaries">Translation dictionaries</a>, if any.
@@ -129,7 +123,7 @@ A typical directory structure for three language packages follows:
 	│   ├── LICENSE.txt
 	│   └── registration.php
 	
-The only required directory for a language package is one that matches the <a href="http://www.iso.org/iso/home/standards/language_codes.htm" target="_blank">ISO</a> code to identify the locale. (This directory name *must be* lowercase.)
+The only required directory for a language package is the top-level directory. Although not required, we recommend that the directory name match the <a href="http://www.iso.org/iso/home/standards/language_codes.htm" target="_blank">ISO</a> code to identify the locale. (The directory name *must be* lowercase.)
 
 For more information about language packages, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>.	
 

@@ -12,7 +12,7 @@ The following table discusses the component types that Magento Marketplace suppo
 <tr>
 <td>Metapackage</td>
 <td>metapackage</td>
-<td><p>A special type that specifies other components. A metapackage consists of only a <code>composer.json</code> that specifies a list of components and their dependencies. </p>
+<td><p>Technically, a <a href="https://getcomposer.org/doc/04-schema.md#type" target="_blank">Composer <em>package</em> type</a>, not a Magento component type. A metapackage consists of only a <code>composer.json</code> that specifies a list of components and their dependencies. </p>
 <p>For example, both Magento CE and Magento EE are metapackages.</p></td>
 </tr>
 <tr>
@@ -29,11 +29,6 @@ The following table discusses the component types that Magento Marketplace suppo
 <td>Language package</td>
 <td>magento2-language</td>
 <td>Translations for the storefront or Admin.</td>
-</tr>
-<tr>
-	<td>Library</td>
-	<td>library</td>
-	<td>Common code, such as a third-party library.</td>
 </tr>
 </tbody>
 </table>

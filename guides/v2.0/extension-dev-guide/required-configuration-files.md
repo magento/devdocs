@@ -13,11 +13,7 @@ redirect_from:
 
 ##{{page.menu_title}}
 
-
-Each Magento 2 module has its own set of configuration files, gathered into the module&#8217;s `etc/` folder.  
-
-
-
+Each Magento 2 module has its own set of configuration files, gathered into the module's `etc/` directory.  
 
 <div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
@@ -25,10 +21,12 @@ Each Magento 2 module has its own set of configuration files, gathered into the 
   </span>
 </div>
 
+{% include php-dev/component-root.md %}
+
 
 ##Use /etc for your configuration files  
 
-Magento 2 looks for configuration information for each module in that module&#8217;s `etc` folder. Depending on the needs of your module, you might have the following configuration files at the top level of your module&#8217;s `etc` folder:
+Magento 2 looks for configuration information for each module in that module's `etc` directory. Depending on the needs of your module, you might have the following configuration files at the top level of your module's `etc` directory:
 
 * acl.xml
 * config.xml
@@ -43,21 +41,17 @@ Magento 2 looks for configuration information for each module in that module&#82
   </span>
  </div>
 
-In addition to those files, a Magento 2 module also has nested configuration folders in the `etc` folder for any required administration html, frontend, API REST, or API SOAP specific configuration. Additions you make to files in these folders override the settings in the global configuration files for the respective functionality only. That is, if you add a `config.xml` file to `etc/frontend`, the settings you make in that file overrides the settings in `etc/config.xml` __only for frontend__ functionality.
+In addition to those files, a Magento 2 module also has nested configuration directories in the `etc` directory for any required administration html, frontend, API REST, or API SOAP specific configuration. Additions you make to files in these directories override the settings in the global configuration files for the respective functionality only. That is, if you add a `config.xml` file to `etc/frontend`, the settings you make in that file overrides the settings in `etc/config.xml` for storefront functionality *only*.
 
 
-* &lt;YourModule>/etc/adminhtml/
-* &lt;YourModule>/etc/frontend/
-* &lt;YourModule>/etc/webapi_rest/
-* &lt;YourModule>/etc/webapi_soap/
-
-
+*	`<your module root dir>/etc/adminhtml/`
+*	`<your module root dir>/etc/frontend/`
+*	`<your module root dir>/etc/webapi_rest/`
+*	`<your module root dir>/etc/webapi_soap/`
 
 ###Configuration files
-
-
-* Configuration files that are in the top level of that module&#8217;s `etc` folder are global to that module.
-* Configuration files placed in subfolders (adminhtml, frontend, webapi_rest, webapi_soap) apply only to those respective functional areas.
+*	Configuration files that are in the top level of that module's `etc` directory are global to that component.
+*	Configuration files placed in subdirectories (`adminhtml`, `frontend`, `webapi_rest`, `webapi_soa`p) apply only to those respective functional areas.
 
 
 
@@ -66,33 +60,20 @@ In addition to those files, a Magento 2 module also has nested configuration fol
 
 The exact set of configuration files required for your module depends on what your new module does. The required configuration files depend on how you plan to use the module: will the module be manifested on the storefront UI, or in the Magento Admin panel, or as a backend extension that makes a service call? Or all of the above. For example, if your module performs a function in the Admin, you should add any necessary configuration files for those functions to `etc/adminhtml/`, like:
 
-* <code>&lt;YourModule>/etc/adminhtml/di.xml</code>
-* <code>&lt;YourModule>/etc/adminhtml/routes.xml</code>
+*	`<your module root dir>/etc/adminhtml/di.xml`
+*	`<your module root dir>/etc/adminhtml/routes.xml`
 
 Similarly, if your module changes the UI, you should add the needed configuration files to `~/etc/frontend/`. For example:
 
-* <code>&lt;YourModule>/etc/frontend/.xml</code>
-* <code>&lt;YourModule>/etc/frontend/page_types.xml</code>
+*	`<your module root dir>/etc/frontend/.xml`
+*	`<your module root dir>/etc/frontend/page_types.xml`
 
-If the module is a service that may call an API, or does some other work that is not manifested in the UI you should add any needed configuration files in the REST and/or SOAP webapi configuration folders, like this:
+If the module is a service that may call an API, or does some other work that is not manifested in the UI you should add any needed configuration files in the REST and/or SOAP webapi configuration directories, like this:
 
-* <code>&lt;YourModule>/etc/webapi_rest/di.xml</code>
-* <code>&lt;YourModule>/etc/webapi_soap/di.xml</code>
+*	`<your module root dir>/etc/webapi_rest/di.xml`
+*	`<your module root dir>/etc/webapi_soap/di.xml`
 
-Keep in mind that you may be able to handle your module&#8217;s configuration solely with configuration files at the top level of your module&#8217;s `etc` folder, but the nested folder is a useful way to keep the configuration neatly compartmentalized.
-
-
-<!-- <div class="bs-callout bs-callout-info" id="info">
-
-  <p>To look at a sample module that uses these config files, go to
-</p>
-
-
-
-</div> -->
-
-
-
+Keep in mind that you might be able to handle your module's configuration solely with configuration files at the top level of your module's `etc` directory, but the nested directory is a useful way to keep the configuration neatly compartmentalized.
 
 
 ##Next

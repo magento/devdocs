@@ -17,7 +17,6 @@ We refer to what you're coding as *components*. (Composer refers to them as <a h
 *	Module (extend Magento capabilities)
 *	Theme (change the look and feel of your storefront and Admin)
 *	Language package (localize the storefront and Admin)
-*	Library (common code)
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Magento Marketplace uses the blanket term <em>product</em> to refer to a component or a metapackage.</p>
@@ -26,7 +25,7 @@ We refer to what you're coding as *components*. (Composer refers to them as <a h
 You can *package* your components as follows:
 
 *	Individually
-*	As a <a href="https://getcomposer.org/doc/04-schema.md#type" target="_blank">metapackage</a>, which Magento requires to deliver to merchants more than one component in a single package. A metapackage consists of *shared packages*. Examples: a metapackage that consists of a module and a theme, two modules, two themes, and so on. 
+*	As a <a href="https://getcomposer.org/doc/04-schema.md#type" target="_blank">metapackage</a>, which Magento Marketplace requires to deliver to merchants more than one component in a single package. A metapackage consists of *shared packages*. Examples: a metapackage that consists of a module and a theme, two modules, two themes, and so on. 
 
 	More information about metapackages can be found in the next section.
 
