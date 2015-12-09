@@ -10,7 +10,7 @@ github_link: howdoi/checkout/checkout_customize.md
 
 <h2> What's in this topic</h2>
 
-This topic contains the basic information about how to customize the view of an existing checkout step. In the Magento application, checkout is implemented using UI components, so step customization means changing the .js implementation or template for a component, adding or disabling a component.
+This topic contains the basic information about how to customize the view of an existing checkout step. In the Magento application, checkout is implemented using UI components, so you can customize each step in the process by changing the JavaScript implementation or template for a component, adding a component or disabling a component.
 
 * TOC
 {:toc}
@@ -20,7 +20,7 @@ This topic contains the basic information about how to customize the view of an 
 
 To change the `.js` implementation and template used for components rendering, you need to declare the new files in the checkout page layout. To do this, take the following steps:
 
-1. In you custom module directory create `<your_module_dir>/view/frontend/layout/checkout_index_index.xml`. (For your checkout customization to be applied correctly, your custom module should depend on the Magento_Checkout module.)
+1. In your custom module directory, create the following new file: `<your_module_dir>/view/frontend/layout/checkout_index_index.xml`. (For your checkout customization to be applied correctly, your custom module should depend on the Magento_Checkout module.)
 2. In this file, add the following:
 
 {%highlight xml%}
@@ -37,7 +37,7 @@ To change the `.js` implementation and template used for components rendering, y
 </page>
 {%endhighlight xml%}
 
-3. In the `<Magento_Checkout_module_dir>/view/frontend/layout/checkout_index_index.xml` file, find the component you need to customize you need to re-assign and copy this node and all parent nodes up to `<argument>` (no need to leave the attributes and values). Leave only those child nodes which correspond to the properties which you need to customize. 
+3. In the `<Magento_Checkout_module_dir>/view/frontend/layout/checkout_index_index.xml` file, find the component that you need to customize. Copy the corresponding node and all parent nodes up to `<argument>`. There is no need to leave all the attributes and values of parente nodes, as you are not going to change them. 
 
 4. Change the path to the component's `.js` file, template or any other property.
 
@@ -92,11 +92,11 @@ The Magento_Shipping module adds a component rendered as a link to the Shipping 
 
 Any UI component is added in the `checkout_index_index.xml` similar to the way a [checkout step component is added]({{site.gdeurl}}howdoi/checkout/checkout_new_step.html#add-your-step-to-the-checkout-page-layout). 
 
-Make sure that you declare a component so that it is rendered correctly by the parent component. If a parent component is a general UI component (referenced by the `uiComponent` alias), its child components are rendered without any conditions. But if a parent component is a an extenstion of a general UI components, then children rendering might be restricted in certain way. For example it can render only children from a certain `displayArea`.
+Make sure that you declare a component so that it is rendered correctly by the parent component. If a parent component is a general UI component (referenced by the `uiComponent` alias), its child components are rendered without any conditions. But if a parent component is a an extenstion of a general UI components, then children rendering might be restricted in certain way. For example a component can render only children from a certain `displayArea`.
 
 
 ## Disable a component
-To disable the component, in your `checkout_index_index.xml` use the following instructions:
+To disable the component in your `checkout_index_index.xml` use the following instructions:
 
 {%highlight xml%}
 <item name="%the_component_to_be_disabled%" xsi:type="array">

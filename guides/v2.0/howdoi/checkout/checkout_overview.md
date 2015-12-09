@@ -16,10 +16,10 @@ Out of the box, the checkout consists of two steps:
  - Review and Payment Information
 
 
-You can customize the defalt checkout in many ways. Here the following customizations are described:
+You can customize the default checkout in many ways. Here the following customizations are described:
 
  - [Add a new checkout step]({{site.gdeurl}}howdoi/checkout/checkout_new_step.html)
  - [Customize the view of an existing step]({{site.gdeurl}}howdoi/checkout/checkout_new_step.html)
 
-For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a custom module. 
+For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code, add your customizations in a custom module. 
 
