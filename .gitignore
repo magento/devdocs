@@ -10,6 +10,7 @@ _site/
 .Trashes
 ehthumbs.db
 Thumbs.db
+.idea
 
 # Config and output files #
 ###########################

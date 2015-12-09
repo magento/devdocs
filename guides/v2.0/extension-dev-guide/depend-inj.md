@@ -57,7 +57,34 @@ Lifecycle
 :	An object's *lifecycle* determines in what scope instances are reused, and when to release them.
 
 <h2 id="dep-inj-preview-cons">Preview of constructor injection</h2>
-Constructor injection *must* be used for all optional and required service dependencies of an object. Service dependencies fulfill business functions of your object. Use a <a href="http://en.wikipedia.org/wiki/Proxy_pattern" target="_blank">proxy</a> for expensive optional dependencies; proxies are auto-generated, no coding is required.
+Constructor injection *must* be used for all optional and required service dependencies of an object. Service dependencies fulfill business functions of your object.
+
+{% highlight PHP %}
+<?php
+class Test
+{
+    protected $_class;
+ 
+    public function __construct(Class $class)
+    {
+        $this->_class = $class;
+    }
+ 
+    public function execute()
+    {
+        //some code
+ 
+        $this->_class->execute();
+ 
+        //some code
+    }
+}
+ 
+$test->execute();
+?>
+{% endhighlight %}
+
+ Use a <a href="http://en.wikipedia.org/wiki/Proxy_pattern" target="_blank">proxy</a> for expensive optional dependencies; proxies are auto-generated, no coding is required.
 
 A sample proxy (which you declare in `di.xml`) follows:
 
@@ -67,35 +94,6 @@ A sample proxy (which you declare in `di.xml`) follows:
         <argument name="groupFlyweight" xsi:type="object">Magento\Backend\Model\Config\Structure\Element\Group\Proxy</argument>
     </arguments>
 </type>
-{% endhighlight %}
-
-
-
-{% highlight PHP %}
-<?php
-class Foo
-{
-    protected $_bar;
- 
-    public function __construct(Bar $bar)
-    {
-        $this->_bar = $bar;
-    }
- 
-    public function execute()
-    {
-        //some code
- 
-        $this->_bar->execute();
- 
-        //some code
-    }
-}
- 
-$bar = new Bar();
-$foo = new Foo($bar);
-$foo->execute();
-?>
 {% endhighlight %}
 
 
