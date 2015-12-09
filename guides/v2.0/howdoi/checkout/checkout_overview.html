@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento 2 Developer Documentation</title>
+	<title>Customize Checkout</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/howdoi/howdoi_template.html">
+	<link rel="canonical" href="//guides/v2.0/howdoi/checkout/checkout_overview.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading"></h1>
+		<h1 class="page-heading">Customize Checkout</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/howdoi/PATH/FILENAME.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/frontend-dev-guide/howdoi/checkout/checkout_overview.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -212,86 +212,23 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<!-- Author in Markdown but HTML also welcome -->
-
-<!-- Start with H2, not H1 -->
-
-<h2 id="your-heading">YOUR HEADING</h2>
-<p>INTRODUCTORY TEXT, EXPLAIN WHAT YOUR ARTICLE IS ABOUT</p>
-
-<h2 id="another-heading">ANOTHER HEADING</h2>
-
-<h3 id="a-smaller-header">A SMALLER HEADER</h3>
-
-<!-- Bulleted list -->
+		<p>Magento checkout is implemented using the UI components. 
+Out of the box, the checkout consists of two steps:</p>
 
 <ul>
-  <li>Text</li>
-  <li>Text</li>
-  <li>Text</li>
+  <li>Shipping Information</li>
+  <li>Review and Payment Information</li>
 </ul>
 
-<!-- Ordered list -->
+<p>You can customize the default checkout in many ways. Here the following customizations are described:</p>
 
-<ol>
-  <li>Step 1</li>
-  <li>Step 2</li>
-  <li>Step 3</li>
-</ol>
+<ul>
+  <li><a href="/guides/v2.0/howdoi/checkout/checkout_new_step.html">Add a new checkout step</a></li>
+  <li><a href="/guides/v2.0/howdoi/checkout/checkout_new_step.html">Customize the view of an existing step</a></li>
+</ul>
 
-<!-- Image link -->
+<p>For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code, add your customizations in a custom module. </p>
 
-<p>Please submit all images to our <a href="https://github.com/magento/devdocs/tree/develop/common/images"><code>common/images</code></a> directory.</p>
-
-<p>Format the link as follows:</p>
-
-<p><img href="/common/images/FILENAME.png" alt="Alt text for the image" /></p>
-
-<!-- Sample HTML cross-reference; don't worry too much about these, we can add or edit them -->
-<!-- /guides/v2.0/ is a site variable that is defined in _config.yml; it's the base path to the devdocs guides/v2.0 directory -->
-
-<!-- Sample 4 x 3 table -->
-
-<table>
-  <thead>
-    <tr>
-      <th>Column Heading</th>
-      <th>Column Heading</th>
-      <th>Column Heading</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-  </tbody>
-</table>
-
-<!-- Note, Important, Tip: These must be HTML -->
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>This is a note.</p>
-</div>
-
-<div class="bs-callout bs-callout-warning">
-    <p>This is important.</p>
-</div>
-
-<div class="bs-callout bs-callout-tip">
-  <p>This is a tip.</p>
-</div>
 
 
 		</div>
@@ -395,7 +332,7 @@
 						
 							
 							
-								<li class="q  active "><a href="/guides/v2.0/howdoi/howdoi_template.html"></a></li>
+								<li class="q "><a href="/guides/v2.0/howdoi/howdoi_template.html"></a></li>
 				
 							
 							
@@ -689,7 +626,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/howdoi/checkout/checkout_overview.html">Customize Checkout</a></li>
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/howdoi/checkout/checkout_overview.html">Customize Checkout</a></li>
 									
 								
 								

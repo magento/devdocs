@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento 2 Developer Documentation</title>
+	<title>Customize the view of a checkout step</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/howdoi/howdoi_template.html">
+	<link rel="canonical" href="//guides/v2.0/howdoi/checkout/checkout_customize.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading"></h1>
+		<h1 class="page-heading">Customize the view of a checkout step</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/howdoi/PATH/FILENAME.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/howdoi/checkout/checkout_customize.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -212,86 +212,103 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<!-- Author in Markdown but HTML also welcome -->
+		<h2> What's in this topic</h2>
 
-<!-- Start with H2, not H1 -->
+<p>This topic contains the basic information about how to customize the view of an existing checkout step. In the Magento application, checkout is implemented using UI components, so you can customize each step in the process by changing the JavaScript implementation or template for a component, adding a component or disabling a component.</p>
 
-<h2 id="your-heading">YOUR HEADING</h2>
-<p>INTRODUCTORY TEXT, EXPLAIN WHAT YOUR ARTICLE IS ABOUT</p>
-
-<h2 id="another-heading">ANOTHER HEADING</h2>
-
-<h3 id="a-smaller-header">A SMALLER HEADER</h3>
-
-<!-- Bulleted list -->
-
-<ul>
-  <li>Text</li>
-  <li>Text</li>
-  <li>Text</li>
+<ul id="markdown-toc">
+  <li><a href="#change-the-components-js-implementation-and-template">Change the component’s .js implementation and template</a></li>
+  <li><a href="#add-the-new-component-to-the-checkout-page-layout">Add the new component to the checkout page layout</a></li>
+  <li><a href="#disable-a-component">Disable a component</a></li>
 </ul>
 
-<!-- Ordered list -->
+<h2 id="change-the-components-js-implementation-and-template">Change the component’s .js implementation and template</h2>
+
+<p>To change the <code>.js</code> implementation and template used for components rendering, you need to declare the new files in the checkout page layout. To do this, take the following steps:</p>
 
 <ol>
-  <li>Step 1</li>
-  <li>Step 2</li>
-  <li>Step 3</li>
+  <li>In your custom module directory, create the following new file: <code>&lt;your_module_dir&gt;/view/frontend/layout/checkout_index_index.xml</code>. (For your checkout customization to be applied correctly, your custom module should depend on the Magento_Checkout module.)</li>
+  <li>In this file, add the following:</li>
 </ol>
 
-<!-- Image link -->
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">layout=</span><span class="s">&quot;1column&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;checkout.root&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;arguments&gt;</span>
+                    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;jsLayout&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                        <span class="c">&lt;!-- Your customization will be here --&gt;</span>
+                        ...
+                    <span class="nt">&lt;/argument&gt;</span>
+                <span class="nt">&lt;/arguments&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/page&gt;</span></code></pre></div>
 
-<p>Please submit all images to our <a href="https://github.com/magento/devdocs/tree/develop/common/images"><code>common/images</code></a> directory.</p>
+<ol>
+  <li>
+    <p>In the <code>&lt;Magento_Checkout_module_dir&gt;/view/frontend/layout/checkout_index_index.xml</code> file, find the component that you need to customize. Copy the corresponding node and all parent nodes up to <code>&lt;argument&gt;</code>. There is no need to leave all the attributes and values of parente nodes, as you are not going to change them. </p>
+  </li>
+  <li>
+    <p>Change the path to the component’s <code>.js</code> file, template or any other property.</p>
+  </li>
+</ol>
 
-<p>Format the link as follows:</p>
+<p>Example:</p>
 
-<p><img href="/common/images/FILENAME.png" alt="Alt text for the image" /></p>
+<p>The Magento_Shipping module adds a component rendered as a link to the Shipping Policy info to the Shipping step:</p>
 
-<!-- Sample HTML cross-reference; don't worry too much about these, we can add or edit them -->
-<!-- /guides/v2.0/ is a site variable that is defined in _config.yml; it's the base path to the devdocs guides/v2.0 directory -->
+<p><code>&lt;Magento_Shipping_module_dir&gt;/view/frontend/layout/checkout_index_index.xml</code> looks like following:</p>
 
-<!-- Sample 4 x 3 table -->
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">layout=</span><span class="s">&quot;1column&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;checkout.root&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;arguments&gt;</span>
+                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;jsLayout&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;components&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;checkout&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;steps&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;shipping-step&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;shippingAddress&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;before-shipping-method-form&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;shipping_policy&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Shipping/js/view/checkout/shipping/shipping-policy<span class="nt">&lt;/item&gt;</span>
+                                                                <span class="nt">&lt;/item&gt;</span>
+                                                            <span class="nt">&lt;/item&gt;</span>
+                                                        <span class="nt">&lt;/item&gt;</span>
+                                                    <span class="nt">&lt;/item&gt;</span>
+                                                <span class="nt">&lt;/item&gt;</span>
+                                            <span class="nt">&lt;/item&gt;</span>
+                                        <span class="nt">&lt;/item&gt;</span>
+                                    <span class="nt">&lt;/item&gt;</span>
+                                <span class="nt">&lt;/item&gt;</span>
+                            <span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;/arguments&gt;</span>
+        <span class="nt">&lt;/referenceBlock&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/page&gt;</span></code></pre></div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Column Heading</th>
-      <th>Column Heading</th>
-      <th>Column Heading</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-  </tbody>
-</table>
+<h2 id="add-the-new-component-to-the-checkout-page-layout">Add the new component to the checkout page layout</h2>
 
-<!-- Note, Important, Tip: These must be HTML -->
+<p>Any UI component is added in the <code>checkout_index_index.xml</code> similar to the way a <a href="/guides/v2.0/howdoi/checkout/checkout_new_step.html#add-your-step-to-the-checkout-page-layout">checkout step component is added</a>. </p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>This is a note.</p>
-</div>
+<p>Make sure that you declare a component so that it is rendered correctly by the parent component. If a parent component is a general UI component (referenced by the <code>uiComponent</code> alias), its child components are rendered without any conditions. But if a parent component is a an extenstion of a general UI components, then children rendering might be restricted in certain way. For example a component can render only children from a certain <code>displayArea</code>.</p>
 
-<div class="bs-callout bs-callout-warning">
-    <p>This is important.</p>
-</div>
+<h2 id="disable-a-component">Disable a component</h2>
+<p>To disable the component in your <code>checkout_index_index.xml</code> use the following instructions:</p>
 
-<div class="bs-callout bs-callout-tip">
-  <p>This is a tip.</p>
-</div>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;%the_component_to_be_disabled%&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;componentDisabled&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;/item&gt;</span></code></pre></div>
+
 
 
 		</div>
@@ -395,7 +412,7 @@
 						
 							
 							
-								<li class="q  active "><a href="/guides/v2.0/howdoi/howdoi_template.html"></a></li>
+								<li class="q "><a href="/guides/v2.0/howdoi/howdoi_template.html"></a></li>
 				
 							
 							
@@ -708,7 +725,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/howdoi/checkout/checkout_customize.html">Customize the view of a checkout step</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/howdoi/checkout/checkout_customize.html">Customize the view of a checkout step</a></li>
 
 									
 						

@@ -202,7 +202,7 @@
 	<div class="container">
 		<h1 class="page-heading">Add a new checkout step</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/frontend-dev-guide/howdoi/checkout/checkout_new_step.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/howdoi/checkout/checkout_new_step.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -212,11 +212,12 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<p>The default Magento Checkout consists of two steps:</p>
+		<h2 id="whats-in-this-topic">What’s in this topic</h2>
+<p>The default Magento Checkout consists of two steps:</p>
 
 <ul>
   <li>Shipping Information</li>
-  <li>Review and Payments Information</li>
+  <li>Review and Paymetns Information</li>
 </ul>
 
 <p>You can add a custom checkout step, it should be implemented as a UI component. For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. </p>
@@ -228,12 +229,12 @@
 <p>To create the view part of the new checkout step:</p>
 
 <ol>
-  <li>Add a module directory (not covered in this topic). See <a href="/guides/v2.0/extension-dev-guide/build.html">Build your module</a> for details). All custom files must be stored there.</li>
+  <li>Add a module directory (not covered in this topic). See <a href="/guides/v2.0/extension-dev-guide/build.html">Build your module</a> for details). All custom files must be stored there. For your checkout customization to be applied correctly, your custom module should depend on the Magento_Checkout module.</li>
   <li>Create the <code>.js</code> file implementing the view model.</li>
   <li>Create an <code>.html</code> template for the component.</li>
 </ol>
 
-<p>Each step is described in details in the following paragraphs.</p>
+<p>Each step is described in details in the folowing paragraphs. </p>
 
 <h3 id="component">Add the JavaScript file implementing the new step</h3>
 
@@ -323,7 +324,7 @@
 
 <h3 id="add-the-html-template">Add the .html template</h3>
 
-<p>In the module directory, add the <code>.html</code> template for the component. It must be located under the &lt;<code>your_module_dir&gt;/view/frontend/web/template</code> directory.</p>
+<p>In the module directory, add the <code>.html</code> template for the component. It must be located under the ‘<your_module_dir>/view/frontend/web/template` directory.</your_module_dir></p>
 
 <p>A sample <code>mystep.html</code> follows:</p>
 
@@ -364,6 +365,7 @@
                                 <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
                                     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;steps&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
                                         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                            <span class="c">&lt;!-- The new step you add --&gt;</span>
                                             <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;my-new-step&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
                                                 <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Your_Module_Name/js/view/my-step-view<span class="nt">&lt;/item&gt;</span>
                                                     <span class="c">&lt;!--To display step content before shipping step &quot;sortOrder&quot; value should be &lt; 1--&gt;</span>
@@ -782,13 +784,29 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/howdoi/checkout/checkout_new_step.html">Add a new checkout step</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/howdoi/checkout/checkout_overview.html">Customize Checkout</a></li>
 									
 								
 								
 									
 							
 								
+								
+
+									
+							
+									<li class="level-2  active "><a href="/guides/v2.0/howdoi/checkout/checkout_new_step.html">Add a new checkout step</a></li>
+
+									
+						
+								
+
+									
+							
+									<li class="level-2 "><a href="/guides/v2.0/howdoi/checkout/checkout_customize.html">Customize the view of a checkout step</a></li>
+
+									
+						
 								
 								
 							
