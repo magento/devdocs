@@ -214,11 +214,11 @@
 		
 		<h2 id="introduction">Introduction</h2>
 
-<p>This guide contains information for developers who want to extend, or customize, any of the components in the Magento platform. That includes building a new module from scratch for custom extension of Magento functionality. This guide is also for those who want to create an extension for Magento Connect, although it does not cover the publishing process.</p>
+<p>This guide contains information for developers who want to extend, or customize, any of the components in the Magento application. That includes building a new component from to extend Magento functionality. This guide is also for those who want to create components for Magento Marketplace, although it does not cover the publishing process.</p>
 
 <h2 id="magento-components">Magento components</h2>
 
-<p>Magento is made up of components:</p>
+<p>Magento is made up of the following types of components:</p>
 
 <ul>
   <li>Modules</li>
@@ -228,23 +228,17 @@
 
 <p>A Magento <em>module</em> is code that accomplishes a particular business function or handles a Magento feature. A module is a collection <code>.php</code> and <code>.xml</code> files, but may also contain other files such as <code>.phtml</code> and image files. Modules are interactive with each other. A module also contains any user interface required for a user’s interaction with the module, and any application interfaces that another module or code chunk might call, if you decide to expose any application interface to other Magento modules.</p>
 
-<p><em>Themes</em> applied to your Magento development can change your modules appearance. 
-<em>Language Packages</em> provides translations for strings that display on the frontend and Administration panels.</p>
+<p><em>Themes</em> change the look and feel of the Magento storefront or Admin. </p>
+
+<p><em>Language packages</em> provide translations for strings that display on the storefront and Admin.</p>
 
 <p>This guide focuses on Magento modules.</p>
-
-<h3 id="modules">Modules</h3>
-
-<p>A <em>package</em> is a module that is wrapped up in a distributable form using Composer.</p>
-
-<p>An <em>extension</em> is a module—plus any themes and/or language packages needed for the extension—that is packaged for sale on Magento Connect.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
 <p>You must follow a <a href="http://www.php-fig.org/psr/psr-4/">PSR compliant</a> structure when building a module.</p>
 </div>
 
-<h2 id="m2arch-related">Related topic</h2>
-
+<h4 id="related-topic">Related topic</h4>
 <p><a href="/guides/v2.0/architecture/modules/mod_intro.html">Modules</a> in the Magento Architecture Guide.</p>
 
 
@@ -378,7 +372,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/module-file-structure.html">Module file Structure</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/module-file-structure.html">Component file structure</a></li>
 
 									
 						
@@ -410,7 +404,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/create_module.html">Create a module</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/create_component.html">Create a component</a></li>
 
 									
 						
@@ -418,7 +412,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/module-load-order.html">Module load order</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/module-load-order.html">Component load order</a></li>
 
 									
 						
@@ -426,7 +420,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/enable-module.html">Enable a module</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/enable-module.html">Enable a component</a></li>
 
 									
 						
@@ -459,7 +453,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/test-module.html">Test your module</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/test-module.html">Test your component</a></li>
 
 									
 						
@@ -492,7 +486,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/package_module.html">Package a module</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/package_module.html">Package a component</a></li>
 
 									
 						
@@ -514,7 +508,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/module-development.html">Module development</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/module-development.html">Component development</a></li>
 									
 								
 								
@@ -633,6 +627,10 @@
 					
 
 
+				
+			
+			
+				
 				
 			
 			

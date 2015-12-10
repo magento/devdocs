@@ -214,7 +214,7 @@
 		
 		<h2 id="define-your-configuration-files">Define your configuration files</h2>
 
-<p>Each Magento 2 module has its own set of configuration files, gathered into the module’s <code>etc/</code> folder.  </p>
+<p>Each Magento 2 module has its own set of configuration files, gathered into the module’s <code>etc/</code> directory.  </p>
 
 <div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
@@ -222,78 +222,99 @@
   </span>
 </div>
 
-<h2 id="use-etc-for-your-configuration-files">Use /etc for your configuration files</h2>
+<div>
 
-<p>Magento 2 looks for configuration information for each module in that module’s <code>etc</code> folder. Depending on the needs of your module, you might have the following configuration files at the top level of your module’s <code>etc</code> folder:</p>
+  <h3 id="root-directory">Root directory</h3>
+  <p>We refer to a component’s <em>root directory</em> as the top-level directory in which you develop component code. Typically, this directory is located in one of the following directories relative to the Magento root directory:</p>
 
-<ul>
-  <li>acl.xml</li>
-  <li>config.xml</li>
-  <li>di.xml</li>
-  <li>module.xml</li>
-  <li>webapi.xml</li>
-</ul>
+  <ul>
+    <li>
+      <p>Subdirectory of <code>app</code> (<em>recommended</em>.) :</p>
 
-<div class="bs-callout bs-callout-info" id="info">
+      <ul>
+        <li>For modules, use <code>app/code</code></li>
+        <li>For themes, use <code>app/design/frontend</code> (storefront theme) or <code>app/design/adminhtml</code> (Magento Admin theme)</li>
+        <li>For language packages, use <code>app/i18n</code></li>
+      </ul>
+
+      <p>You can easily set up this type of environment by <a href="/guides/v2.0/install-gde/prereq/dev_install.html">cloning the Magento 2 GitHub repository</a>. Typically, you cloned the repository if you want to to contribute code to the Magento 2 codebase.</p>
+    </li>
+    <li>
+      <p><code>vendor</code>: You get this directory structure if you used the <a href="/guides/v2.0/install-gde/prereq/integrator_install.html"><code>composer create-project</code></a> command to get a Magento 2 metapackage (which downloads the CE or EE code), or if you extracted a <a href="/guides/v2.0/install-gde/prereq/zip_install.html">compressed Magento 2 archive</a>.</p>
+    </li>
+  </ul>
+
+  <h3 id="required-files">Required files</h3>
+  <p>The following are required for all components:</p>
+
+  <ul>
+    <li><code>registration.php</code>: Among other things, specifies the directory in which the component is installed; by default, components install in the <code>&lt;Magento root dir&gt;/vendor</code> directory. For more information, see <a href="/guides/v2.0/extension-dev-guide/component-registration.html" target="_blank">Component registration</a>.</li>
+    <li><code>composer.json</code>: Specifies component dependencies. For more information, see <a href="/guides/v2.0/extension-dev-guide/composer-integration.html" target="_blank">Composer integration</a>.</li>
+  </ul>
+
+  <h2 id="use-etc-for-your-configuration-files">Use /etc for your configuration files</h2>
+
+  <p>Magento 2 looks for configuration information for each module in that module’s <code>etc</code> directory. Depending on the needs of your module, you might have the following configuration files at the top level of your module’s <code>etc</code> directory:</p>
+
+  <ul>
+    <li>acl.xml</li>
+    <li>config.xml</li>
+    <li>di.xml</li>
+    <li>module.xml</li>
+    <li>webapi.xml</li>
+  </ul>
+
+  <div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
   		<p>Additions you make to those configuration files are applied <em>globally</em> to your module.</p>
   </span>
  </div>
 
-<p>In addition to those files, a Magento 2 module also has nested configuration folders in the <code>etc</code> folder for any required administration html, frontend, API REST, or API SOAP specific configuration. Additions you make to files in these folders override the settings in the global configuration files for the respective functionality only. That is, if you add a <code>config.xml</code> file to <code>etc/frontend</code>, the settings you make in that file overrides the settings in <code>etc/config.xml</code> <strong>only for frontend</strong> functionality.</p>
+  <p>In addition to those files, a Magento 2 module also has nested configuration directories in the <code>etc</code> directory for any required administration html, frontend, API REST, or API SOAP specific configuration. Additions you make to files in these directories override the settings in the global configuration files for the respective functionality only. That is, if you add a <code>config.xml</code> file to <code>etc/frontend</code>, the settings you make in that file overrides the settings in <code>etc/config.xml</code> for storefront functionality <em>only</em>.</p>
 
-<ul>
-  <li>&lt;YourModule&gt;/etc/adminhtml/</li>
-  <li>&lt;YourModule&gt;/etc/frontend/</li>
-  <li>&lt;YourModule&gt;/etc/webapi_rest/</li>
-  <li>&lt;YourModule&gt;/etc/webapi_soap/</li>
-</ul>
+  <ul>
+    <li><code>&lt;your module root dir&gt;/etc/adminhtml/</code></li>
+    <li><code>&lt;your module root dir&gt;/etc/frontend/</code></li>
+    <li><code>&lt;your module root dir&gt;/etc/webapi_rest/</code></li>
+    <li><code>&lt;your module root dir&gt;/etc/webapi_soap/</code></li>
+  </ul>
 
-<h3 id="configuration-files">Configuration files</h3>
+  <h3 id="configuration-files">Configuration files</h3>
+  <ul>
+    <li>Configuration files that are in the top level of that module’s <code>etc</code> directory are global to that component.</li>
+    <li>Configuration files placed in subdirectories (<code>adminhtml</code>, <code>frontend</code>, <code>webapi_rest</code>, <code>webapi_soap</code>) apply only to those respective functional areas.</li>
+  </ul>
 
-<ul>
-  <li>Configuration files that are in the top level of that module’s <code>etc</code> folder are global to that module.</li>
-  <li>Configuration files placed in subfolders (adminhtml, frontend, webapi_rest, webapi_soap) apply only to those respective functional areas.</li>
-</ul>
+  <h3 id="tailor-your-configuration-files-for-what-your-module-does">Tailor your configuration files for what your module does</h3>
 
-<h3 id="tailor-your-configuration-files-for-what-your-module-does">Tailor your configuration files for what your module does</h3>
+  <p>The exact set of configuration files required for your module depends on what your new module does. The required configuration files depend on how you plan to use the module: will the module be manifested on the storefront UI, or in the Magento Admin panel, or as a backend extension that makes a service call? Or all of the above. For example, if your module performs a function in the Admin, you should add any necessary configuration files for those functions to <code>etc/adminhtml/</code>, like:</p>
 
-<p>The exact set of configuration files required for your module depends on what your new module does. The required configuration files depend on how you plan to use the module: will the module be manifested on the storefront UI, or in the Magento Admin panel, or as a backend extension that makes a service call? Or all of the above. For example, if your module performs a function in the Admin, you should add any necessary configuration files for those functions to <code>etc/adminhtml/</code>, like:</p>
+  <ul>
+    <li><code>&lt;your module root dir&gt;/etc/adminhtml/di.xml</code></li>
+    <li><code>&lt;your module root dir&gt;/etc/adminhtml/routes.xml</code></li>
+  </ul>
 
-<ul>
-  <li><code>&lt;YourModule&gt;/etc/adminhtml/di.xml</code></li>
-  <li><code>&lt;YourModule&gt;/etc/adminhtml/routes.xml</code></li>
-</ul>
+  <p>Similarly, if your module changes the UI, you should add the needed configuration files to <code>~/etc/frontend/</code>. For example:</p>
 
-<p>Similarly, if your module changes the UI, you should add the needed configuration files to <code>~/etc/frontend/</code>. For example:</p>
+  <ul>
+    <li><code>&lt;your module root dir&gt;/etc/frontend/.xml</code></li>
+    <li><code>&lt;your module root dir&gt;/etc/frontend/page_types.xml</code></li>
+  </ul>
 
-<ul>
-  <li><code>&lt;YourModule&gt;/etc/frontend/.xml</code></li>
-  <li><code>&lt;YourModule&gt;/etc/frontend/page_types.xml</code></li>
-</ul>
+  <p>If the module is a service that may call an API, or does some other work that is not manifested in the UI you should add any needed configuration files in the REST and/or SOAP webapi configuration directories, like this:</p>
 
-<p>If the module is a service that may call an API, or does some other work that is not manifested in the UI you should add any needed configuration files in the REST and/or SOAP webapi configuration folders, like this:</p>
+  <ul>
+    <li><code>&lt;your module root dir&gt;/etc/webapi_rest/di.xml</code></li>
+    <li><code>&lt;your module root dir&gt;/etc/webapi_soap/di.xml</code></li>
+  </ul>
 
-<ul>
-  <li><code>&lt;YourModule&gt;/etc/webapi_rest/di.xml</code></li>
-  <li><code>&lt;YourModule&gt;/etc/webapi_soap/di.xml</code></li>
-</ul>
+  <p>Keep in mind that you might be able to handle your module’s configuration solely with configuration files at the top level of your module’s <code>etc</code> directory, but the nested directory is a useful way to keep the configuration neatly compartmentalized.</p>
 
-<p>Keep in mind that you may be able to handle your module’s configuration solely with configuration files at the top level of your module’s <code>etc</code> folder, but the nested folder is a useful way to keep the configuration neatly compartmentalized.</p>
+  <h2 id="next">Next</h2>
 
-<!-- <div class="bs-callout bs-callout-info" id="info">
+  <p><a href="component-registration.html">Component registration</a></p>
 
-  <p>To look at a sample module that uses these config files, go to
-</p>
-
-
-
-</div> -->
-
-<h2 id="next">Next</h2>
-
-<p><a href="component-registration.html">Component registration</a></p>
-
+</div>
 
 
 		</div>
@@ -426,7 +447,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/module-file-structure.html">Module file Structure</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/module-file-structure.html">Component file structure</a></li>
 
 									
 						
@@ -458,7 +479,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/create_module.html">Create a module</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/create_component.html">Create a component</a></li>
 
 									
 						
@@ -466,7 +487,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/module-load-order.html">Module load order</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/module-load-order.html">Component load order</a></li>
 
 									
 						
@@ -474,7 +495,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/enable-module.html">Enable a module</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/enable-module.html">Enable a component</a></li>
 
 									
 						
@@ -507,7 +528,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/test-module.html">Test your module</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/test-module.html">Test your component</a></li>
 
 									
 						
@@ -540,7 +561,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/package_module.html">Package a module</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/package_module.html">Package a component</a></li>
 
 									
 						
@@ -562,7 +583,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/module-development.html">Module development</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/module-development.html">Component development</a></li>
 									
 								
 								
@@ -681,6 +702,10 @@
 					
 
 
+				
+			
+			
+				
 				
 			
 			

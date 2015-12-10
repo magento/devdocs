@@ -218,15 +218,14 @@
 Some third party components that the Magento system uses may be actually not present in the code base. Instead, they are listed as dependencies in the root <code>composer.json</code> file. </p>
 
 <h2>Overview of composer.json files</h2>
-
-<p>Certain Magento components and product editions are represented with <code>composer.json</code> files. A directory with a <code>composer.json</code> file and other component files constitute a package.</p>
+<p>Certain Magento components and product editions are represented with <code>composer.json</code> files. </p>
 
 <table><tbody>
 <tr>
 <th> Type of composer.json </th>
 <th> Location </th>
-<th> Naming Convention </th>
-<th> Type of Package </th>
+<th> Naming convention </th>
+<th> Composer type </th>
 <th> Notes </th>
 </tr>
 <tr>
@@ -238,7 +237,7 @@ Some third party components that the Magento system uses may be actually not pre
 <td>
 <pre>project</pre>
 </td>
-<td>This is the main <tt>composer.json</tt> file. Magento uses this file to declare dependencies on 3rd-party components. This file is used as a template for any other root <tt>composer.json</tt> files 
+<td>This is the main <tt>composer.json</tt> file. Magento uses this file to declare dependencies on third-party components. This file is used as a template for any other root <tt>composer.json</tt> files 
  </td>
 </tr>
 <tr>
@@ -261,7 +260,7 @@ Some third party components that the Magento system uses may be actually not pre
 <td>
 <pre>metapackage</pre>
 </td>
-<td> This file represents Magento Community Edition product. The package only includes composer.json that declares the dependencies on magento components (modules, themes, etc.) and 3rd-party components. This can be used by Magento system integrators to deploy Magento using composer. </td>
+<td> This file represents Magento Community Edition product. The package only includes composer.json that declares the dependencies on magento components (modules, themes, and so on) and third-party components. This can be used by Magento system integrators to deploy Magento using Composer. </td>
 </tr>
 <tr>
 <td>base</td>
@@ -272,7 +271,7 @@ Some third party components that the Magento system uses may be actually not pre
 <td>
 <pre>magento2-component</pre>
 </td>
-<td> This file represents Magento Community Edition base package. This package doesn't include any of Magento components (modules, themes, etc.) The package contains all other files/directories besides the components and lists the latter at the "require" section.</td>
+<td> This file represents Magento Community Edition base package. This package doesn't include any of Magento components (modules, themes, and so on.) The package contains all other files/directories besides the components and lists the latter at the "require" section.</td>
 </tr>
 <tr>
 <td>module </td>
@@ -299,7 +298,7 @@ magento/theme-adminhtml-backend</pre>
 <td> Themes belong to areas, so the area name has to be the first suffix </td>
 </tr>
 <tr>
-<td>language packs</td>
+<td>language packages</td>
 <td> <tt>app/i18n/magento/&lt;language&gt;/composer.json</tt> </td>
 <td>
 <pre>magento/language-en_gb
@@ -311,15 +310,13 @@ magento/language-de_de</pre>
 <td>The language identifier must be lowercase.</td>
 </tr>
 <tr>
-<td>Magento framework/libraries </td>
+<td>Magento framework</td>
 <td> <tt>lib/internal/Magento/Framework/composer.json</tt> </td>
 <td>
 <pre>magento/framework</pre>
 </td>
-<td>
-<pre>magento2-library</pre>
-</td>
-<td>Currently there is only "magento/framework" package. We don't distinguish particular libraries as separate components. In the future, if we do, we'll use "framework-" prefix (as provided in the example). </td>
+<td>n/a</td>
+<td>Used only by the framework</td>
 </tr>
 </tbody></table>
 
@@ -346,41 +343,10 @@ magento/language-de_de</pre>
 
 <p><code>suffix</code> is anything that allows distinguishing/disambiguating the component within that type.</p>
 
-<h3>Magento-Specific Package Types</h3>
-<p>Each Magento component can be categorized into one of the types listed in the table. If any component does not fit into a specific category, it can be generalized to <code>magento-component</code>.</p>
+<h3>Magento-specific package types</h3>
+<p>Each Magento component can be categorized into one of the types listed in the preceding table. If any component does not fit into a specific category, it can be generalized to <code>magento-component</code>.</p>
 
 <p>Having an identifier type for each component allows the system to marshal the directories and files of each component to the correct locations, based on the Magento 2 directory structure. </p>
-
-<h2 id="deploying-community-edition">Deploying Community Edition</h2>
-
-<p>The standard procedure to deploy Magento Community Edition is:</p>
-
-<pre><code> git clone https://github.com/magento/magento2 ./magento2
- composer install
-</code></pre>
-
-<p>To update to the latest release do the following:
-     git pull
-     composer install</p>
-
-<h2 id="deploying-community-edition-with-composer">Deploying Community Edition with Composer</h2>
-<p>Magento Community Edition  can also be deployed through Composer.</p>
-
-<h3 id="to-deploy-magento-to-the-website-root">To deploy Magento to the website root</h3>
-<p>If your website document root is <code>/var/www/example.com/htdocs</code> and you want to deploy a Magento application into it, do the following:</p>
-
-<ul>
-  <li>If you are inside the deploying directory:</li>
-</ul>
-
-<div class="highlight"><pre><code class="language-xml" data-lang="xml">cd /var/www/example.com/htdocs
-     composer create-project &quot;magento/project-community-edition&quot; .</code></pre></div>
-
-<ul>
-  <li>If you are outside the deploying directory:</li>
-</ul>
-
-<div class="highlight"><pre><code class="language-xml" data-lang="xml">composer create-project &quot;magento/project-community-edition&quot; /var/www/example.com/htdocs</code></pre></div>
 
 
 
@@ -514,7 +480,7 @@ magento/language-de_de</pre>
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/module-file-structure.html">Module file Structure</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/module-file-structure.html">Component file structure</a></li>
 
 									
 						
@@ -546,7 +512,7 @@ magento/language-de_de</pre>
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/create_module.html">Create a module</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/create_component.html">Create a component</a></li>
 
 									
 						
@@ -554,7 +520,7 @@ magento/language-de_de</pre>
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/module-load-order.html">Module load order</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/module-load-order.html">Component load order</a></li>
 
 									
 						
@@ -562,7 +528,7 @@ magento/language-de_de</pre>
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/enable-module.html">Enable a module</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/enable-module.html">Enable a component</a></li>
 
 									
 						
@@ -595,7 +561,7 @@ magento/language-de_de</pre>
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/test-module.html">Test your module</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/test-module.html">Test your component</a></li>
 
 									
 						
@@ -628,7 +594,7 @@ magento/language-de_de</pre>
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/package_module.html">Package a module</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/package_module.html">Package a component</a></li>
 
 									
 						
@@ -650,7 +616,7 @@ magento/language-de_de</pre>
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/module-development.html">Module development</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/module-development.html">Component development</a></li>
 									
 								
 								
@@ -769,6 +735,10 @@ magento/language-de_de</pre>
 					
 
 
+				
+			
+			
+				
 				
 			
 			

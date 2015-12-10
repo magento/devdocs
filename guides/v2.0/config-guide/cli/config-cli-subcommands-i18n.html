@@ -345,20 +345,50 @@ Product 'Multimeter-2000' has been added to shopping cart.
 <p>To create a language package, you must perform the tasks discussed in the following sections:</p>
 
 <ol>
+  <li><a href="#file-struct-comp-lang">Create the language package file structure</a>.</li>
   <li><a href="#config-cli-subcommands-xlate-dict">Translate words and phrases</a>.</li>
   <li><a href="#config-cli-subcommands-xlate-pack-cmd">Run the language package command</a>.</li>
   <li><a href="#config-cli-subcommands-xlate-pack-meta">Add meta information to the language package</a>.</li>
 </ol>
 
-<h3 id="config-cli-subcommands-xlate-pack-cmd">Run the language package command</h3>
-<p>Command usage:</p>
+<div>
 
-<pre><code>magento i18n:pack [-m|--mode={merge|replace}] [-d|--allow-duplicates] &lt;source&gt; &lt;pack&gt; &lt;locale&gt;
+  <h3 id="file-struct-comp-lang">Magento 2 language package file structure</h3>
+  <p>A typical directory structure for three language packages follows:</p>
+
+  <pre><code>├── de_de
+│   ├── composer.json
+│   ├── language.xml
+│   ├── LICENSE_AFL.txt
+│   ├── LICENSE.txt
+│   └── registration.php
+├── en_us
+│   ├── composer.json
+│   ├── language.xml
+│   ├── LICENSE_AFL.txt
+│   ├── LICENSE.txt
+│   └── registration.php
+├── pt_br
+│   ├── composer.json
+│   ├── language.xml
+│   ├── LICENSE_AFL.txt
+│   ├── LICENSE.txt
+│   └── registration.php
 </code></pre>
 
-<p>The following table discusses the meanings of this command’s parameters and values. </p>
+  <p>The only required directory for a language package is the top-level directory. Although not required, we recommend that the directory name match the <a href="http://www.iso.org/iso/home/standards/language_codes.htm" target="_blank">ISO</a> code to identify the locale. (The directory name <em>must be</em> lowercase.)</p>
 
-<table>
+  <p>For more information about language packages, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>.	</p>
+
+  <h3 id="config-cli-subcommands-xlate-pack-cmd">Run the language package command</h3>
+  <p>Command usage:</p>
+
+  <pre><code>magento i18n:pack [-m|--mode={merge|replace}] [-d|--allow-duplicates] &lt;source&gt; &lt;pack&gt; &lt;locale&gt;
+</code></pre>
+
+  <p>The following table discusses the meanings of this command’s parameters and values. </p>
+
+  <table>
 	<col width="25%" />
 	<col width="65%" />
 	<col width="10%" />
@@ -409,41 +439,41 @@ Product 'Multimeter-2000' has been added to shopping cart.
 	</tbody>
 </table>
 
-<h3 id="m2devgde-xlate-severalpacks">Configure multiple packages for a language</h3>
-<p>To help you to make your store more flexible, you can upload several language packages for the same language in your store. Thus, you can use different custom packages for different parts of your store because the system compiles a single pack from all packages that are available for a language.</p>
+  <h3 id="m2devgde-xlate-severalpacks">Configure multiple packages for a language</h3>
+  <p>To help you to make your store more flexible, you can upload several language packages for the same language in your store. Thus, you can use different custom packages for different parts of your store because the system compiles a single pack from all packages that are available for a language.</p>
 
-<p>To enable an additional package for an existing language, name the new package any name except for an existing language code name (to avoid confusion). Specify configurations of a package in the language package’s <code>language.xml</code> meta-information file as discussed in the the next section.</p>
+  <p>To enable an additional package for an existing language, name the new package any name except for an existing language code name (to avoid confusion). Specify configurations of a package in the language package’s <code>language.xml</code> meta-information file as discussed in the the next section.</p>
 
-<h3 id="config-cli-subcommands-xlate-pack-meta">Add meta-information to the language package</h3>
-<p>Language package meta-information consists of the following:</p>
+  <h3 id="config-cli-subcommands-xlate-pack-meta">Add meta-information to the language package</h3>
+  <p>Language package meta-information consists of the following:</p>
 
-<ul>
-  <li>
-    <p><code>composer.json</code> that contains any dependencies for the language package and a mapping to its defined locale </p>
+  <ul>
+    <li>
+      <p><code>composer.json</code> that contains any dependencies for the language package and a mapping to its defined locale </p>
 
-    <p><a href="https://github.com/magento/magento2/tree/2.0.0/app/i18n/magento/de_de/composer.json" target="_blank">Sample composer.json</a></p>
-  </li>
-  <li>
-    <p><code>language.xml</code>, in which you declare a language package.</p>
+      <p><a href="https://github.com/magento/magento2/tree/2.0.0/app/i18n/magento/de_de/composer.json" target="_blank">Sample composer.json</a></p>
+    </li>
+    <li>
+      <p><code>language.xml</code>, in which you declare a language package.</p>
 
-    <p><a href="https://github.com/magento/magento2/tree/2.0.0/app/i18n/magento/de_de/language.xml" target="_blank">Sample language.xml</a></p>
-  </li>
-</ul>
+      <p><a href="https://github.com/magento/magento2/tree/2.0.0/app/i18n/magento/de_de/language.xml" target="_blank">Sample language.xml</a></p>
+    </li>
+  </ul>
 
-<p>See one of the following sections for more information:</p>
+  <p>See one of the following sections for more information:</p>
 
-<ul>
-  <li><a href="#m2devgde-xlate-inheritancework">Example of language inheritance</a></li>
-  <li><a href="#config-cli-subcommands-xlate-pack-meta-xml">Language package language.xml</a></li>
-  <li><a href="#config-cli-subcommands-xlate-pack-json">Language package composer.json</a></li>
-</ul>
+  <ul>
+    <li><a href="#m2devgde-xlate-inheritancework">Example of language inheritance</a></li>
+    <li><a href="#config-cli-subcommands-xlate-pack-meta-xml">Language package language.xml</a></li>
+    <li><a href="#config-cli-subcommands-xlate-pack-json">Language package composer.json</a></li>
+  </ul>
 
-<h4 id="m2devgde-xlate-inheritancework">Example of language inheritance</h4>
-<p>Suppose a language package descends from two other packages, and that those packages also have parent and “grandparent” packages.</p>
+  <h4 id="m2devgde-xlate-inheritancework">Example of language inheritance</h4>
+  <p>Suppose a language package descends from two other packages, and that those packages also have parent and “grandparent” packages.</p>
 
-<p>If a language package descends from two packages, its <code>language.xml</code> might look like the following:</p>
+  <p>If a language package descends from two packages, its <code>language.xml</code> might look like the following:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;language</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:App/Language/package.xsd&quot;</span><span class="nt">&gt;</span>
+  <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;language</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:App/Language/package.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;code&gt;</span>en_GB<span class="nt">&lt;/code&gt;</span>
     <span class="nt">&lt;vendor&gt;</span>magento<span class="nt">&lt;/vendor&gt;</span>
     <span class="nt">&lt;package&gt;</span>language_pack<span class="nt">&lt;/package&gt;</span>
@@ -452,34 +482,34 @@ Product 'Multimeter-2000' has been added to shopping cart.
     <span class="nt">&lt;use</span> <span class="na">vendor=</span> <span class="s">&quot;parent-package-two&quot;</span> <span class="na">package=</span><span class="s">&quot;language_package_two&quot;</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/language&gt;</span></code></pre></div>
 
-<p>In the preceding example:</p>
+  <p>In the preceding example:</p>
 
-<ul>
-  <li><code>language_package_one</code> descends from <code>en_au_package</code> and <code>en_au_package</code> descends from <code>en_ie_package</code></li>
-  <li><code>language_package_two</code> descends from <code>en_ca_package</code> and <code>en_ca_package</code> descends from <code>en_us_package</code></li>
-</ul>
+  <ul>
+    <li><code>language_package_one</code> descends from <code>en_au_package</code> and <code>en_au_package</code> descends from <code>en_ie_package</code></li>
+    <li><code>language_package_two</code> descends from <code>en_ca_package</code> and <code>en_ca_package</code> descends from <code>en_us_package</code></li>
+  </ul>
 
-<p>If the Magento application cannot find word or phrase in the <code>en_GB</code> package, it looks in other packages in following sequence:</p>
+  <p>If the Magento application cannot find word or phrase in the <code>en_GB</code> package, it looks in other packages in following sequence:</p>
 
-<ol>
-  <li><code>parent-package-one/language_package_one</code></li>
-  <li><code>&lt;vendorname&gt;/en_au_package</code></li>
-  <li><code>&lt;vendorname&gt;/en_ie_package</code></li>
-  <li><code>parent-package-two/language_package_two</code></li>
-  <li><code>&lt;vendorname&gt;/en_ca_package</code></li>
-  <li><code>&lt;vendorname&gt;/en_us_package</code></li>
-</ol>
+  <ol>
+    <li><code>parent-package-one/language_package_one</code></li>
+    <li><code>&lt;vendorname&gt;/en_au_package</code></li>
+    <li><code>&lt;vendorname&gt;/en_ie_package</code></li>
+    <li><code>parent-package-two/language_package_two</code></li>
+    <li><code>&lt;vendorname&gt;/en_ca_package</code></li>
+    <li><code>&lt;vendorname&gt;/en_us_package</code></li>
+  </ol>
 
-<p>Specifying all inheritances between the language packages might result in creating circular inheritance chains. Use <a href="https://github.com/magento/magento2/tree/2.0.0/dev/tests/static/testsuite/Magento/Test/Integrity/App/Language/CircularDependencyTest.php" target="_blank">Magento\Test\Integrity\App\Language\CircularDependencyTest</a> test to locate and fix such chains.</p>
+  <p>Specifying all inheritances between the language packages might result in creating circular inheritance chains. Use <a href="https://github.com/magento/magento2/tree/2.0.0/dev/tests/static/testsuite/Magento/Test/Integrity/App/Language/CircularDependencyTest.php" target="_blank">Magento\Test\Integrity\App\Language\CircularDependencyTest</a> test to locate and fix such chains.</p>
 
-<h4 id="config-cli-subcommands-xlate-pack-meta-xml">Language package language.xml</h4>
-<p>When declaring a language package in the <code>language.xml</code> configuration file, you must specify the sequence of the language inheritance for this package.</p>
+  <h4 id="config-cli-subcommands-xlate-pack-meta-xml">Language package language.xml</h4>
+  <p>When declaring a language package in the <code>language.xml</code> configuration file, you must specify the sequence of the language inheritance for this package.</p>
 
-<p>Language inheritance enables you to create a new translation based on an existing one (the existing translation is referred to as the <em>parent</em>). The child translations override the parent. However, if the child translation fails to upload or display, the parent is used instead. If some child translation lacks a phrase or a word, this phrase or word is taken from the parent locale. <a href="#m2devgde-xlate-inheritancework">Examples of language package inheritance</a>.</p>
+  <p>Language inheritance enables you to create a new translation based on an existing one (the existing translation is referred to as the <em>parent</em>). The child translations override the parent. However, if the child translation fails to upload or display, the parent is used instead. If some child translation lacks a phrase or a word, this phrase or word is taken from the parent locale. <a href="#m2devgde-xlate-inheritancework">Examples of language package inheritance</a>.</p>
 
-<p>To declare a package, specify the following information:</p>
+  <p>To declare a package, specify the following information:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+  <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
 <span class="nt">&lt;language</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:App/Language/package.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;code&gt;</span>en_GB<span class="nt">&lt;/code&gt;</span>
     <span class="nt">&lt;vendor&gt;</span>magento<span class="nt">&lt;/vendor&gt;</span>
@@ -488,77 +518,78 @@ Product 'Multimeter-2000' has been added to shopping cart.
     <span class="nt">&lt;use</span> <span class="na">vendor=</span><span class="s">&quot;oxford-university&quot;</span> <span class="na">package=</span><span class="s">&quot;en_us&quot;</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/language&gt;</span></code></pre></div>
 
-<p>where</p>
+  <p>where</p>
 
-<ul>
-  <li><code>&lt;code&gt;</code>: Language package locale (required)</li>
-  <li><code>&lt;vendor&gt;</code>: Module’s vendor name (required)</li>
-  <li><code>&lt;package&gt;</code>: Language package name (required)</li>
-  <li><code>&lt;sort_order&gt;</code>: Priority of uploading a package when there are several language packages available for a store</li>
-  <li><code>&lt;use&gt;</code>: Parent language package locale from which to inherit dictionaries </li>
-</ul>
+  <ul>
+    <li><code>&lt;code&gt;</code>: Language package locale (required)</li>
+    <li><code>&lt;vendor&gt;</code>: Module’s vendor name (required)</li>
+    <li><code>&lt;package&gt;</code>: Language package name (required)</li>
+    <li><code>&lt;sort_order&gt;</code>: Priority of uploading a package when there are several language packages available for a store</li>
+    <li><code>&lt;use&gt;</code>: Parent language package locale from which to inherit dictionaries </li>
+  </ul>
 
-<p>If necessary, you can specify several parent packages. The parent packages are applied on a first listed, first used basis.</p>
+  <p>If necessary, you can specify several parent packages. The parent packages are applied on a first listed, first used basis.</p>
 
-<h4 id="config-cli-subcommands-xlate-pack-json">Language package composer.json</h4>
-<p>If a package “uses” another package, then the dependency on it must be declared in the <code>"require"</code> section. </p>
+  <h4 id="config-cli-subcommands-xlate-pack-json">Language package composer.json</h4>
+  <p>If a package “uses” another package, then the dependency on it must be declared in the <code>"require"</code> section. </p>
 
-<p><a href="https://github.com/magento/magento2/tree/2.0.0/app/i18n/magento/de_de/composer.json" target="_blank">Sample composer.json</a></p>
+  <p><a href="https://github.com/magento/magento2/tree/2.0.0/app/i18n/magento/de_de/composer.json" target="_blank">Sample composer.json</a></p>
 
-<p>The format of the name of a language package’s <code>composer.json</code> must be the same as that of the language package.</p>
+  <p>The format of the name of a language package’s <code>composer.json</code> must be the same as that of the language package.</p>
 
-<h2 id="config-cli-subcommands-xlate-examples">Examples of using translation commands</h2>
-<p>The following sections provide end-to-end examples of using the commands discussed in this topic to create translation dictionaries and translation packages:</p>
+  <h2 id="config-cli-subcommands-xlate-examples">Examples of using translation commands</h2>
+  <p>The following sections provide end-to-end examples of using the commands discussed in this topic to create translation dictionaries and translation packages:</p>
 
-<ul>
-  <li><a href="#config-cli-subcommands-xlate-example1">Example: Create a translation dictionary for a module or theme</a></li>
-  <li><a href="#config-cli-subcommands-xlate-example2">Example: Create a language package</a></li>
-</ul>
+  <ul>
+    <li><a href="#config-cli-subcommands-xlate-example1">Example: Create a translation dictionary for a module or theme</a></li>
+    <li><a href="#config-cli-subcommands-xlate-example2">Example: Create a language package</a></li>
+  </ul>
 
-<h3 id="config-cli-subcommands-xlate-example1">Example: Create a translation dictionary for a module or theme</h3>
-<p>To add a German translation to module or theme you want to distribute to other merchants:</p>
+  <h3 id="config-cli-subcommands-xlate-example1">Example: Create a translation dictionary for a module or theme</h3>
+  <p>To add a German translation to module or theme you want to distribute to other merchants:</p>
 
-<ol>
-  <li>
-    <p>Collect phrases from your module:</p>
+  <ol>
+    <li>
+      <p>Collect phrases from your module:</p>
 
-    <pre><code>magento i18n:collect-phrases -o "/var/www/html/magento2/vendor/examplecorp/module-samplemodule/i18n/XX_XX.csv" /var/www/html/magento2/ExampleCorp/SampleModule
+      <pre><code>magento i18n:collect-phrases -o "/var/www/html/magento2/vendor/examplecorp/module-samplemodule/i18n/XX_XX.csv" /var/www/html/magento2/ExampleCorp/SampleModule
 </code></pre>
-  </li>
-  <li>Translate the words and phrases using <a href="#config-cli-subcommands-xlate-dict-trans">these guidelines</a>.</li>
-  <li>If necessary, copy <code>XX_XX.csv</code> to <code>/var/www/html/magento2/ExampleCorp/SampleModule</code> or to the module’s theme directory.</li>
-</ol>
+    </li>
+    <li>Translate the words and phrases using <a href="#config-cli-subcommands-xlate-dict-trans">these guidelines</a>.</li>
+    <li>If necessary, copy <code>XX_XX.csv</code> to <code>/var/www/html/magento2/ExampleCorp/SampleModule</code> or to the module’s theme directory.</li>
+  </ol>
 
-<h3 id="config-cli-subcommands-xlate-example2">Example: Create a language package</h3>
-<p>Similar to preceding example, generate a CSV file, but instead of a module or theme directory, specify the entire Magento application root directory. The resulting .csv contains any phrases that the command could find in the code.</p>
+  <h3 id="config-cli-subcommands-xlate-example2">Example: Create a language package</h3>
+  <p>Similar to preceding example, generate a CSV file, but instead of a module or theme directory, specify the entire Magento application root directory. The resulting .csv contains any phrases that the command could find in the code.</p>
 
-<ol>
-  <li>Edit the file as you see fit (you can break it down into multiple files, delete or add lines, and so on.)</li>
-  <li>Put the result in a directory.</li>
-  <li>
-    <p><a href="#config-cli-subcommands-xlate-pack-meta">Add package meta-information files</a>.</p>
+  <ol>
+    <li>Edit the file as you see fit (you can break it down into multiple files, delete or add lines, and so on.)</li>
+    <li>Put the result in a directory.</li>
+    <li>
+      <p><a href="#config-cli-subcommands-xlate-pack-meta">Add package meta-information files</a>.</p>
 
-    <p>The resulting directory and containing files constitutes the language package. </p>
-  </li>
-  <li>Copy the file to <code>&lt;your Magento install dir&gt;/app/i18n</code> to enable the Magento application to automatically discover it.</li>
-</ol>
+      <p>The resulting directory and containing files constitutes the language package. </p>
+    </li>
+    <li>Copy the file to <code>&lt;your Magento install dir&gt;/app/i18n</code> to enable the Magento application to automatically discover it.</li>
+  </ol>
 
-<h4 id="related-topics">Related topics</h4>
+  <h4 id="related-topics">Related topics</h4>
 
-<ul>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
-</ul>
+  <ul>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
+  </ul>
+</div>
 
 
 		</div>
@@ -572,6 +603,7 @@ Product 'Multimeter-2000' has been added to shopping cart.
 
 
 <h4>Configuration guide</h4>
+
 
 
 
@@ -1292,6 +1324,10 @@ Product 'Multimeter-2000' has been added to shopping cart.
 					
 
 
+				
+			
+			
+				
 				
 			
 			

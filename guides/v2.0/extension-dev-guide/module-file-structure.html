@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Module file Structure</title>
+	<title>Component file structure</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
@@ -200,7 +200,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Module file Structure</h1>
+		<h1 class="page-heading">Component file structure</h1>
 			
 			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/extension-dev-guide/module-file-structure.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -212,69 +212,176 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="module-file-structure">Module file Structure</h2>
+		<h2 id="component-file-structure">Component file structure</h2>
 
-<p>Magento 2 looks for the files that make up a module, including configuration files, in particular places inside the module file structure. Follow the predefined file structure to ensure that your module works as expected.</p>
-
-<p>A module can live anywhere under the Magento root directory. Regardless of where you add it, you must <a href="component-registration.html">register the module’s location</a>.</p>
-
-<h3 id="magento-2-module-file-structure">Magento 2 Module File structure</h3>
-
-<p>A typical file structure for a Magento 2 module:</p>
-<p><img src="/common/images/pdg-config-file-structure.png" width="300" alt="A filesystem view of a typical file structure" /></p>
-
-<h4 id="main-components">Main components</h4>
-
-<p>The main component folders are:</p>
-
+<h4 id="contents">Contents</h4>
 <ul>
-  <li><strong>Block</strong> — contains PHP classes as part of MVC vertical implementation of module logic.</li>
-  <li><strong>Controller</strong> — contains PHP classes as part of MVC vertical implementation of module logic.</li>
-  <li><strong>Helper</strong> — contains PHP classes as part of MVC vertical implementation of module logic.</li>
-  <li><strong>Model</strong> — contains PHP classes as part of MVC vertical implementation of module logic.</li>
-  <li><strong>Setup</strong> — contains classes for module database structure and data setup which are invoked when installing or upgrading.</li>
+  <li><a href="#file-struc-overview">Overview of the Magento component file structure</a></li>
+  <li><a href="#file-struct-comp">Magento 2 component file structure</a></li>
 </ul>
 
-<h4 id="additional-directories">Additional directories</h4>
+<h2 id="file-struc-overview">Overview of the Magento component file structure</h2>
+<p>Magento 2 looks for the files that make up a component, including configuration files, in particular places inside the module file structure. Follow the predefined file structure to ensure that your module works as expected.</p>
 
-<p>Additionally, there are folders for configuration and other ancillary functions for items like plug-ins, internationalization, and front-end layout files.</p>
+<div>
 
-<ul>
-  <li><strong>Api</strong>— contains any PHP classes exposed to the API.	</li>
-  <li><strong>etc</strong> — contains configuration files. </li>
-  <li><strong>i18n</strong> — contains localization files.</li>
-  <li><strong>Plugin</strong> — contains any needed plugin files.</li>
-  <li><strong>view</strong> — contains non-object-oriented and non-static view level parts of the module such as design templates, email templates, and layout files.</li>
-</ul>
+  <h3 id="root-directory">Root directory</h3>
+  <p>We refer to a component’s <em>root directory</em> as the top-level directory in which you develop component code. Typically, this directory is located in one of the following directories relative to the Magento root directory:</p>
 
-<h4 id="add-your-own">Add your own</h4>
+  <ul>
+    <li>
+      <p>Subdirectory of <code>app</code> (<em>recommended</em>.) :</p>
 
-<p>You can also add any other folders you need for your module.</p>
+      <ul>
+        <li>For modules, use <code>app/code</code></li>
+        <li>For themes, use <code>app/design/frontend</code> (storefront theme) or <code>app/design/adminhtml</code> (Magento Admin theme)</li>
+        <li>For language packages, use <code>app/i18n</code></li>
+      </ul>
 
-<h2 id="build-the-file-structure">Build the file structure</h2>
+      <p>You can easily set up this type of environment by <a href="/guides/v2.0/install-gde/prereq/dev_install.html">cloning the Magento 2 GitHub repository</a>. Typically, you cloned the repository if you want to to contribute code to the Magento 2 codebase.</p>
+    </li>
+    <li>
+      <p><code>vendor</code>: You get this directory structure if you used the <a href="/guides/v2.0/install-gde/prereq/integrator_install.html"><code>composer create-project</code></a> command to get a Magento 2 metapackage (which downloads the CE or EE code), or if you extracted a <a href="/guides/v2.0/install-gde/prereq/zip_install.html">compressed Magento 2 archive</a>.</p>
+    </li>
+  </ul>
 
-<p>Add a folder and give it the name of your module. Use a module name that is descriptive, but not too long. For example,</p>
+  <h3 id="required-files">Required files</h3>
+  <p>The following are required for all components:</p>
 
-<pre><code>mkdir module-catalog
-cd module-catalog
+  <ul>
+    <li><code>registration.php</code>: Among other things, specifies the directory in which the component is installed; by default, components install in the <code>&lt;Magento root dir&gt;/vendor</code> directory. For more information, see <a href="/guides/v2.0/extension-dev-guide/component-registration.html" target="_blank">Component registration</a>.</li>
+    <li><code>composer.json</code>: Specifies component dependencies. For more information, see <a href="/guides/v2.0/extension-dev-guide/composer-integration.html" target="_blank">Composer integration</a>.</li>
+  </ul>
+
+  <h2 id="file-struct-comp">Magento 2 component file structure</h2>
+  <p>The following topics discuss a typical file structure for the following components:</p>
+
+  <ul>
+    <li><a href="#file-struct-comp-mod">Magento 2 module file structure</a></li>
+    <li><a href="#file-struct-comp-theme">Magento 2 theme file structure</a></li>
+    <li><a href="#file-struct-comp-lang">Magento 2 language package file structure</a></li>
+  </ul>
+
+  <h3 id="file-struct-comp-mod">Magento 2 module file structure</h3>
+  <p>A typical file structure for a Magento 2 module:</p>
+  <p><img src="/common/images/pdg-config-file-structure.png" width="300" alt="A filesystem view of a typical file structure" /></p>
+
+  <h4 id="typical-directories">Typical directories</h4>
+
+  <p>Typical module directories are:</p>
+
+  <ul>
+    <li><code>Block</code>: contains PHP view classes as part of MVC vertical implementation of module logic.</li>
+    <li><code>Controller</code>: contains PHP controller classes as part of MVC vertical implementation of module logic.</li>
+    <li><code>etc</code>: contains configuration files; in particular, <code>module.xml</code>, which is required.</li>
+    <li><code>Model</code>: contains PHP model classes as part of MVC vertical implementation of module logic.</li>
+    <li><code>Setup</code>: contains classes for module database structure and data setup which are invoked when installing or upgrading.</li>
+  </ul>
+
+  <h4 id="additional-directories">Additional directories</h4>
+  <p>Additionally, there are directories for configuration and other ancillary functions for items like <a href="/guides/v2.0/extension-dev-guide/plugins.html">plug-ins</a>, internationalization, and layout files.</p>
+
+  <ul>
+    <li><code>Api</code>: contains any PHP classes exposed to the API.	</li>
+    <li><code>i18n</code>: contains localization files.</li>
+    <li><code>Plugin</code>: contains any needed <a href="/guides/v2.0/extension-dev-guide/plugins.html">plug-ins</a>.</li>
+    <li><code>view</code>: contains view files, including static view files, design templates, email templates, and layout files.</li>
+  </ul>
+
+  <h3 id="file-struct-comp-theme">Magento 2 theme file structure</h3>
+  <p>A typical theme file structure follows:</p>
+
+  <pre><code>├── composer.json
+├── etc
+│   └── view.xml
+├── i18n
+│   └── en_US.csv
+├── LICENSE_AFL.txt
+├── LICENSE.txt
+├── media
+│   └── preview.jpg
+├── registration.php
+└── web
+    ├── css
+    │   ├── email.less
+    │   ├── print.less
+    │   ├── source
+    │   │   ├── _actions-toolbar.less
+    │   │   ├── _breadcrumbs.less
+    │   │   ├── _buttons.less
+    │   │   ├── components
+    │   │   │   └── _modals_extend.less
+    │   │   ├── _icons.less
+    │   │   ├── _layout.less
+    │   │   ├── _theme.less
+    │   │   ├── _tooltips.less
+    │   │   ├── _typography.less
+    │   │   └── _variables.less
+    │   ├── _styles.less
+    │   ├── styles-l.less
+    │   └── styles-m.less
+    ├── images
+    │   └── logo.svg
+    └── js
+        ├── navigation-menu.js
+        ├── responsive.js
+        └── theme.js
 </code></pre>
 
-<p>You can add subfolders inside your module folder as you need them (Block, Controller, Model, view, and so on).</p>
+  <h4 id="typical-directories-1">Typical directories</h4>
+  <p>Typical theme directories are: </p>
 
-<p>Or, you could just add them at once:</p>
+  <ul>
+    <li><code>etc</code>: <code>view.xml</code> contains image configurations for all images and thumbnails.</li>
+    <li><code>i18n</code>: <a href="/guides/v2.0/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-dictionaries">Translation dictionaries</a>, if any.</li>
+    <li><code>media</code>: Theme preview (a screen capture of your theme).</li>
+    <li>
+      <p><code>web</code>: Optional directory that contains static files organized into the following subdirectories:</p>
 
-<pre><code>mkdir Api Block Controller etc Helper i18n Model view
+      <ul>
+        <li><code>css/source</code>: Theme’s <code>less</code> configuration files that invoke mixins for global elements from the <a href="/guides/v2.0/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a>, and the <code>theme.less</code> file that overrides the default variables values.</li>
+        <li><code>css/source/lib</code>: View files that override the UI library files stored in <code>lib/web/css/source/lib</code></li>
+        <li><code>fonts</code>: Fonts for your theme.</li>
+        <li><code>images</code>: Static images.</li>
+        <li><code>js</code>: JavaScript files.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <div>
+
+    <h3 id="file-struct-comp-lang">Magento 2 language package file structure</h3>
+    <p>A typical directory structure for three language packages follows:</p>
+
+    <pre><code>├── de_de
+│   ├── composer.json
+│   ├── language.xml
+│   ├── LICENSE_AFL.txt
+│   ├── LICENSE.txt
+│   └── registration.php
+├── en_us
+│   ├── composer.json
+│   ├── language.xml
+│   ├── LICENSE_AFL.txt
+│   ├── LICENSE.txt
+│   └── registration.php
+├── pt_br
+│   ├── composer.json
+│   ├── language.xml
+│   ├── LICENSE_AFL.txt
+│   ├── LICENSE.txt
+│   └── registration.php
 </code></pre>
 
-<p>Make sure you add the <code>etc</code> folder; it is required, and is where most of the configuration files, including <code>module.xml</code>, are kept.</p>
+    <p>The only required directory for a language package is the top-level directory. Although not required, we recommend that the directory name match the <a href="http://www.iso.org/iso/home/standards/language_codes.htm" target="_blank">ISO</a> code to identify the locale. (The directory name <em>must be</em> lowercase.)</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Be aware that the standard placement of the &lt;ModuleName&gt; directory within the overall Magento file structure is <code>app/code/&lt;Vendor&gt;/&lt;ModuleName&gt;/etc/</code>. However, if you are creating a new module for distribution, you can just create the &lt;ModuleName&gt; directory and the required directories within it. </p> 
+    <p>For more information about language packages, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>.	</p>
+
+    <h2 id="next">Next</h2>
+
+    <p><a href="required-configuration-files.html">Define your configuration files</a></p>
+  </div>
 </div>
-
-<h2 id="next">Next</h2>
-
-<p><a href="required-configuration-files.html">Define your configuration files</a></p>
 
 
 		</div>
@@ -407,7 +514,7 @@ cd module-catalog
 
 									
 							
-									<li class="level-2  active "><a href="/guides/v2.0/extension-dev-guide/module-file-structure.html">Module file Structure</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/extension-dev-guide/module-file-structure.html">Component file structure</a></li>
 
 									
 						
@@ -439,7 +546,7 @@ cd module-catalog
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/create_module.html">Create a module</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/create_component.html">Create a component</a></li>
 
 									
 						
@@ -447,7 +554,7 @@ cd module-catalog
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/module-load-order.html">Module load order</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/module-load-order.html">Component load order</a></li>
 
 									
 						
@@ -455,7 +562,7 @@ cd module-catalog
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/enable-module.html">Enable a module</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/enable-module.html">Enable a component</a></li>
 
 									
 						
@@ -488,7 +595,7 @@ cd module-catalog
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/test-module.html">Test your module</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/test-module.html">Test your component</a></li>
 
 									
 						
@@ -521,7 +628,7 @@ cd module-catalog
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/package_module.html">Package a module</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/package_module.html">Package a component</a></li>
 
 									
 						
@@ -543,7 +650,7 @@ cd module-catalog
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/module-development.html">Module development</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/module-development.html">Component development</a></li>
 									
 								
 								
@@ -662,6 +769,10 @@ cd module-catalog
 					
 
 
+				
+			
+			
+				
 				
 			
 			
