@@ -12,9 +12,9 @@ redirect_from: /guides/v1.0/extension-dev-guide/package_module.html
 ##{{page.menu_title}}
 
 #### Contents
-*   TBD
-*   TBD
-*   TBD
+*   <a href="#package-over">Overview of packaging</a>
+*   <a href="#composer">Create a Magento Composer file</a>
+*   <a href="#packaging">Package and publish your extension</a>
 
 <h2 id="package-over">Overview of packaging</h2>
 The Magento application uses Composer packages to distribute, install, and upgrade components in an application instance.
@@ -24,8 +24,6 @@ To package a component, you must:
 *   Create a Magento Composer file (`composer.json`).
 *   Register the component using `registration.php`
 *   Package and publish your component. 
-
-Publish your component on the Magento Marketplace as discussed in the *Magento Marketplace User Guide*.
 
 <h2 id="composer">Create a Magento Composer file</h2>
 The Magento `composer.json` file defines the name, requirements, version, and other basic information about the component. This file must be placed in the root directory of the module.
@@ -46,9 +44,6 @@ The `composer.json` uses [Composer's generic schema](https://getcomposer.org/doc
 <td><code>type</code> </td>
 <td>For modules, this value must be set to <code>magento2-module</code>. Other possible types are <code>metapackage</code>, <code>magento2-theme</code>, and <code>magento2-language</code>.</td>
 </tr>
-
-{% include php-dev/composer-types.md %}
-
 <td><code>autoload </code></td>
 <td>Specify necessary information to be loaded, such as [registration.php](component-registration.html). For more information, see <a href="https://getcomposer.org/doc/01-basic-usage.md#autoloading">Autoloading</a> from Composer.</td>
 
@@ -56,6 +51,7 @@ The `composer.json` uses [Composer's generic schema](https://getcomposer.org/doc
 </tbody>
 </table>
 
+{% include php-dev/composer-types.md %}
 
 <h3 id="package-metapackage">Using metapackages</h3>
 Metapackages allow you to group an extension that consists of multiple packages into a cohesive unit. This works exactly as described in standard [composer.json documentation](https://getcomposer.org/doc/04-schema.md#type). If you have an extension that uses more than one package you must use a metapackage as the *root package*. Otherwise you should not use metapackage. A metapackage that you submit to Magento Marketplace should be a .zip file containing only the metapackage `composer.json` file.
