@@ -38,7 +38,7 @@ All components can be configured both for Admin and storefront.
 
 Using UI component is as simple as adding the following code to the appropriate layout section:
 
-`<ui_component name="some_ui_component_instance_name"/>`
+`<uiСomponent name="some_ui_component_instance_name"/>`
 
 All UI components have base declaration in <a href="{{ site.gdeurl }}ui-library/ui-definition.html">`Magento/Ui/view/base/ui_component/etc/definition.xml`</a>. 
 
