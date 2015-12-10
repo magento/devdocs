@@ -26,7 +26,7 @@ A Magento *module* is code that accomplishes a particular business function or h
 
 *Themes* change the look and feel of the Magento storefront or Admin. 
 
-*Language packages* provide translations for strings that display on the storefrent and Admin.
+*Language packages* provide translations for strings that display on the storefront and Admin.
 
 This guide focuses on Magento modules.
 
