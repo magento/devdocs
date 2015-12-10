@@ -25,10 +25,9 @@ The smallest working module.xml file would look something like this:
 
 ...where `name`  is the name of your module, and `setup_version` is the version of Magento the module uses. Both of these attributes are required.
 
+##Add the modules `composer.json` file
 
-
-##Add the module&#8217;s `composer.json` file
-
+A sample follows:
 
 {% highlight JSON %}
 
@@ -64,22 +63,23 @@ The smallest working module.xml file would look something like this:
 
 where:
 
-* `name` &#8212; is the name of your module.
-* `description` &#8212; is a concise explanation of your module's purpose.
-* `require` &#8212; lists any modules your module depends on.
-* `suggest` &#8212; lists soft dependencies. The module can operate without them, but if the modules are active, this module may impact their functionality. `Suggest` does not affect module load order.
-
-* `type` &#8212; determines what type of magento component your module is. Choose from *magento2-theme*, *magento2-language*, or *magento2-module*.
-* `version` &#8212; lists the version of the module.
-* `license` &#8212; lists applicable licenses that apply to your module.
-* `autoload` &#8212; instructs composer to load the specified files.
-
-
+* `name`&mdash;is the name of your module.
+* `description`&mdash;is a concise explanation of your module's purpose.
+* `require`&mdash;lists any modules your module depends on.
+* `suggest`&mdash;lists soft dependencies. The module can operate without them, but if the modules are active, this module might impact their functionality. `Suggest` does not affect module load order.
+* `type`&mdash;determines what type of magento component your module is. Choose from *magento2-library*, *magento2-theme*, *magento2-language*, or *magento2-module*.
+* `version`&mdash;lists the version of the module.
+* `license`&mdash;lists applicable licenses that apply to your module.
+* `autoload`&mdash;instructs composer to load the specified files.
 
 <div class="bs-callout bs-callout-info" id="info">
+  <p>Magento does not currently support the <a href="https://getcomposer.org/doc/05-repositories.md#path" target="_blank"><code>path</code></a> repository.</p>
+</div>
+
+<!-- <div class="bs-callout bs-callout-info" id="info">
   <p>Take a look at a <a href="https://github.com/magento/magento2-samples/tree/master/sample-module-minimal"> sample module</a> created by the Magento Core Team. </p>
   <p>The team is creating a <a href="https://github.com/magento/magento2-samples"> collection of samples</a> to demonstrate technologies introduced in Magento 2. You can edit your Magento 2 <code>composer.json</code> file to declare a dependency upon this package of sample modules, and then run <code>composer update</code> to download them. Look for more sample modules as we build them.</p>
- </div>
+ </div> -->
 
 
 
