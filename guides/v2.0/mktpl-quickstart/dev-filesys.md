@@ -4,7 +4,7 @@ group: quickstart
 subgroup: 02_Dev
 title: Set up your component's file structure
 menu_title: Set up your component's file structure
-menu_order: 2
+menu_order: 5
 menu_node: 
 github_link: extension-dev-guide/quickstart/dev-filesys.md
 ---

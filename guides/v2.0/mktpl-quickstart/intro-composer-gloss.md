@@ -39,7 +39,7 @@ For example, you might want to list two metapackages in the Magento Marketplace&
 Merchants do not need to understand that, under the covers, some packages are shared.
 
 <div class="bs-callout bs-callout-warning">
-    <p>You can upload to Magento Marketplace as many shared packages as you want but you must specifically give components access to them. Failure to do so means your components won't work properly after they're installed by merchants. For more information, see the <em>Magento Marketplace User Guide</em>.</p>
+    <p>You can upload to Magento Marketplace as many shared packages as you want but you must specifically give components access to them. Failure to do so means your components won't work properly after they're installed by merchants. For more information, see the <a href="http://docs.magento.com/marketplace/getting-started.html" target="_blank"><a href="http://docs.magento.com/marketplace/getting-started.html" target="_blank">Magento Marketplace User Guide</a></a>.</p>
 </div>
 
 <a href="{{ site.gdeurl }}extension-dev-guide/package_module.html#package-metapackage">More information about metapackages</a>

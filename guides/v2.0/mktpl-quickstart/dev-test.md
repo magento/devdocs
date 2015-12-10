@@ -1,0 +1,28 @@
+---
+layout: default
+group: quickstart
+subgroup: 02_Dev
+title: Test your component
+menu_title: Test your component
+menu_order: 100
+menu_node: 
+github_link: extension-dev-guide/quickstart/dev-test.md
+---
+
+##{{page.menu_title}}
+
+During development, you should <a href="{{ site.gdeurl }}extension-dev-guide/test-module.html">test your component</a> thoroughly to make sure it works as expected.
+
+Before you upload your component to the Magento Marketplace, you should also test installing your component using the <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">Magento Component Manager</a> (part of the Magento Admin).
+
+One way to do this follows:
+
+1.	<a href="{{ site.gdeurl }}extension-dev-guide/package_module.html">Package your component</a> in a GitHub repository that's accessible by the machine on which you run the Magento Admin.
+2.	On that machine, create a static route from `https://repo.magento.com` to your GitHub repository.
+
+	To create a static route, add a line similar to the following to your `hosts` file:
+
+		<IP or host name of your GitHub repository> https://repo.magento.com 
+
+3.	Use the <a href="{{ site.gdeurl }}comp-mgr/compman-new-purchase.html" target="_blank">new component installation</a> topic to install your component exactly like a merchant.
+4.	Verify the component installed properly.

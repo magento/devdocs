@@ -2,30 +2,32 @@
 layout: default
 group: extension-dev-guide
 subgroup: 3_Build
-title: Create a module
-menu_title: Create a module
+title: Create a component
+menu_title: Create a component
 menu_order: 7
-github_link: extension-dev-guide/create_module.md
-redirect_from: /guides/v1.0/extension-dev-guide/create_module.html
+github_link: extension-dev-guide/create_component.md
+redirect_from: 
+  - /guides/v1.0/extension-dev-guide/create_module.html
+  - /guides/v2.0/extension-dev-guide/create_module.html
 ---
 ##{{page.menu_title}}
 
-Now that you have [determined your module&#8217;s initial file structure](module-file-structure.html), have an idea of the [configuration files](required-configuration-files.html) you&#8217;ll need, and you've [registered your module](component-registration.html), you can create the module.
+Now that you have [determined your component's initial file structure](module-file-structure.html), have an idea of the [configuration files](required-configuration-files.html) you&#8217;ll need, and you've [registered your component](component-registration.html), you can create the component.
 
-<h2 id="add-module-xml">Add the module's <code>module.xml</code> file</h2>
-Declare the module itself by adding a module.xml file in the `/etc` folder of your module.
+<h2 id="add-component-xml">Add the component's <code>module.xml</code> file</h2>
+Declare the component itself by adding a module.xml file in the `/etc` folder of your component.
 
-A module declares itself (i.e. defines its name and existence) in the `module.xml` file, located in the Magento install directory at `<ModuleName>/etc/`. 
+A component declares itself (that is, defines its name and existence) in the `module.xml` file, located in the Magento install directory at `<ComponentName>/etc/`. 
 
 The smallest working module.xml file would look something like this:
 
 	<config>
-       <module name="Vendor_ModuleName" setup_version="2.0.0"/>
+       <module name="Vendor_ComponentName" setup_version="2.0.0"/>
 	</config>
 
-...where `name`  is the name of your module, and `setup_version` is the version of Magento the module uses. Both of these attributes are required.
+...where `name`  is the name of your component, and `setup_version` is the version of Magento the component uses. Both of these attributes are required.
 
-##Add the modules `composer.json` file
+##Add the components `composer.json` file
 
 A sample follows:
 
@@ -33,7 +35,7 @@ A sample follows:
 
 	{
     "name": "your-name/module-Acme",
-    "description": "Test module for Magento 2",
+    "description": "Test component for Magento 2",
     "require": {
         "php": "~5.5.0|~5.6.0",
         "magento/module-store": "1.0.0-beta",
@@ -63,13 +65,13 @@ A sample follows:
 
 where:
 
-* `name`&mdash;is the name of your module.
-* `description`&mdash;is a concise explanation of your module's purpose.
-* `require`&mdash;lists any modules your module depends on.
-* `suggest`&mdash;lists soft dependencies. The module can operate without them, but if the modules are active, this module might impact their functionality. `Suggest` does not affect module load order.
-* `type`&mdash;determines what type of magento component your module is. Choose from *magento2-library*, *magento2-theme*, *magento2-language*, or *magento2-module*.
-* `version`&mdash;lists the version of the module.
-* `license`&mdash;lists applicable licenses that apply to your module.
+* `name`&mdash;is the name of your component.
+* `description`&mdash;is a concise explanation of your component's purpose.
+* `require`&mdash;lists any components your component depends on.
+* `suggest`&mdash;lists soft dependencies. The component can operate without them, but if the components are active, this component might impact their functionality. `Suggest` does not affect component load order.
+* `type`&mdash;determines what the Magento component type. Choose from *magento2-theme*, *magento2-language*, or *magento2-module*.
+* `version`&mdash;lists the version of the component.
+* `license`&mdash;lists applicable licenses that apply to your component.
 * `autoload`&mdash;instructs composer to load the specified files.
 
 <div class="bs-callout bs-callout-info" id="info">
