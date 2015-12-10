@@ -116,9 +116,12 @@ Use the following guidelines when translating words and phrases:
 
 To create a language package, you must perform the tasks discussed in the following sections:
 
+1.	<a href="#file-struct-comp-lang">Create the language package file structure</a>.
 1.	<a href="#config-cli-subcommands-xlate-dict">Translate words and phrases</a>.
 2.	<a href="#config-cli-subcommands-xlate-pack-cmd">Run the language package command</a>.
 2.	<a href="#config-cli-subcommands-xlate-pack-meta">Add meta information to the language package</a>.
+
+{% include php-dev/lang-pack-file-struct.md %}
 
 <h3 id="config-cli-subcommands-xlate-pack-cmd">Run the language package command</h3>
 Command usage:

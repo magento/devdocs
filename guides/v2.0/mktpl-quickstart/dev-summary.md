@@ -13,11 +13,17 @@ github_link: extension-dev-guide/quickstart/dev-summary.md
 
 To develop your component, use the following steps:
 
-1.	<a href="{{ site.gdeurl }}extension-dev-guide/create_component.html" target="_blank">Create a module</a>
-2.	<a href="{{ site.gdeurl }}extension-dev-guide/module-load-order.html" target="_blank">Module load order</a>
-3.	<a href="{{ site.gdeurl }}xtension-dev-guide/package_module.html" target="_blank">Package a module</a>
+1.	Learn about <a href="{{ site.gdeurl }}extension-dev-guide/composer-integration.html">using Composer with your component</a>.
+2.	<a href="{{ site.gdeurl }}extension-dev-guide/build.html" target="_blank">Build your component</a>
+2.	<a href="{{ site.gdeurl }}extension-dev-guide/module-load-order.html" target="_blank">Component load order</a>
+3.	<a href="{{ site.gdeurl }}extension-dev-guide/package_module.html" target="_blank">Package a component</a>
+4.	<a href="{{ site.gdeurl }}mktpl-quickstart/dev-test.html">Validate your component</a>
 4.	Upload the components to the Magento Marketplace.
 
-	See the *Marketplace User Guide* for details.
+	See the <a href="http://docs.magento.com/marketplace/getting-started.html" target="_blank">Magento Marketplace User Guide</a> for details.
+
+<div class="bs-callout bs-callout-warning">
+    <p>The Magento Marketplace is not generally available at this time. </p>
+</div>
 
 
