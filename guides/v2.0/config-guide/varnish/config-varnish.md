@@ -30,7 +30,7 @@ github_link: config-guide/varnish/config-varnish.md
 Magento 2 supports Varnish versions 3.0.5 or later or any Varnish 4.x version.
 
 <div class="bs-callout bs-callout-warning">
-    <p>We <em>strongly recommend</em> you use Varnish in production. Full-page caching (to either the file system or <a href="{{ site.gdeurl }}config-guide/database/database.html">database</a>) is much slower than Varnish, and Varnish is designed to accelerate HTTP traffic.</p>
+    <p>We <em>strongly recommend</em> you use Varnish in production. The built-in full-page caching (to either the file system or <a href="{{ site.gdeurl }}config-guide/database/database.html">database</a>) is much slower than Varnish, and Varnish is designed to accelerate HTTP traffic.</p>
 </div>
 
 For more information about Varnish, see:
