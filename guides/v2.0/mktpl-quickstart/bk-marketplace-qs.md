@@ -11,7 +11,11 @@ github_link: extension-dev-guide/quickstart/bk-marketplace-qs.md
 
 ##{{page.menu_title}}
 
-This quick start helps you understand how to develop, package, and upload your component to the Magento Marketplace. (Markety blurb about what Marketplace is.)
+This quick start helps you understand how to develop, package, and upload your component to the Magento Marketplace. 
+
+<div class="bs-callout bs-callout-warning">
+    <p>The Magento Marketplace is not generally available at this time. </p>
+</div>
 
 The following figure summarizes the process:
 
