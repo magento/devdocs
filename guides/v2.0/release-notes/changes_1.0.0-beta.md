@@ -274,7 +274,7 @@ In `Magento\CatalogUrlRewrite\Model\ProductUrlPathGenerator`, we added a new arg
 	Replace arguments for method `debug` from `($logData, ConfigInterface $config)` to `(array $debugData, array $debugReplaceKeys, $debugFlag);`
 
 ### Magento_Email changes
-Because of changes in the the transactional email feature:
+Because of changes in the transactional email feature:
 
 *	The `\Magento\Email` module was extensively refactored.
 *	The `\Magento\Newsletter` module was also affected.

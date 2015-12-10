@@ -188,13 +188,19 @@ Example: pass the image to the `logo` block.
 
 <h2 id="set_template">Set the template used by a block</h2>
 
-To setup template for a block, use the `template` attribute.
+To set the template for a block, pass it using the `<argument>` instruction.
 
-Example: change template of the page title block.
+Example: change template of the page title block:
 
 {%highlight xml%}
-<referenceBlock name="page.main.title" template="html/title_new.phtml"/>
-{%endhighlight xml%}
+ <referenceBlock name="page.main.title">
+        <arguments>
+            <argument name="template" xsi:type="string">Namespace_Module::title_new.phtml</argument>
+        </arguments>
+ </referenceBlock>
+{%endhighlight%}
+
+The path to the template is specified relatively to the `view/<area>/templates/` directory of the module. The `<area>` corresponds to the area for which the layout file is used.
 
 <h2 id="layout_markup_modify-block">Modify block arguments</h2>
 
