@@ -51,7 +51,7 @@ In addition to those files, a Magento 2 module also has nested configuration dir
 
 ###Configuration files
 *	Configuration files that are in the top level of that module's `etc` directory are global to that component.
-*	Configuration files placed in subdirectories (`adminhtml`, `frontend`, `webapi_rest`, `webapi_soa`p) apply only to those respective functional areas.
+*	Configuration files placed in subdirectories (`adminhtml`, `frontend`, `webapi_rest`, `webapi_soap`) apply only to those respective functional areas.
 
 
 

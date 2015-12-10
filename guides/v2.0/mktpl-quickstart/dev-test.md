@@ -13,7 +13,7 @@ github_link: extension-dev-guide/quickstart/dev-test.md
 
 During development, you should <a href="{{ site.gdeurl }}extension-dev-guide/test-module.html">test your component</a> thoroughly to make sure it works as expected.
 
-Before you upload your component to the Magento Marketplace, you should also test installing your component using the <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">Magento Component Manager</a> (part of the Magento Admin).
+Before you publish your component, you should test installing it using the <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">Magento Component Manager</a> (part of the Magento Admin).
 
 One way to do this follows:
 
@@ -24,5 +24,5 @@ One way to do this follows:
 
 		<IP or host name of your GitHub repository> https://repo.magento.com 
 
-3.	Use the <a href="{{ site.gdeurl }}comp-mgr/compman-new-purchase.html" target="_blank">new component installation</a> topic to install your component exactly like a merchant.
+3.	<a href="{{ site.gdeurl }}comp-mgr/compman-main-pg.html#compman-access" target="_blank">Install your component</a> exactly like a merchant.
 4.	Verify the component installed properly.
