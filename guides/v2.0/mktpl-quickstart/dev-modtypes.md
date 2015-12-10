@@ -18,7 +18,7 @@ github_link: extension-dev-guide/quickstart/dev-modtypes.md
 {% include php-dev/composer-types.md %}
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Each component type has a different <a href="{{ site.gdeurl }}extension-dev-guide/module-file-structure.html">directory structure</a> and different contents for <a href="{{ site.gdeurl }}extension-dev-guide/composer-integration.html"><code>composer.json</code></a>.</p>
+  <p>Each component type has a different <a href="{{ site.gdeurl }}extension-dev-guide/module-file-structure.html" target="_blank">directory structure</a> and different contents for <a href="{{ site.gdeurl }}extension-dev-guide/composer-integration.html" target="_blank"><code>composer.json</code></a>.</p>
 </div>
 
 <h2 id="types-vers">Versioning</h2>
@@ -26,11 +26,9 @@ Components have the following types of versions:
 
 *	Marketing version; in other words, the version the merchant interacts with. 
 
-	Your initial version might be 1.0.0 or 2.0.0, for example. You should follow <a href="{{ site.gdeurl }}architecture/versioning.html">our versioning policy</a> guidelines for setting marketing version numbers.
+	Your initial version might be 1.0.0 or 2.0.0, for example. You should follow <a href="{{ site.gdeurl }}architecture/versioning.html" target="_blank">our versioning policy</a> guidelines when setting your version.
 
-*	Composer version; in other words, the version of each module, theme, language package, and its dependencies. 
-
-	These versions are up to you. 
+*	Composer version; in other words, the version of each module, theme, language package, third-party package, and dependencies. 
 
 Using Magento code as an example, Magento CE marketing version 2.0.0 includes component versions such as 100.0.1, 100.0.2, and so on. These versioning strategy prevents collisions between the marketing version and component versions.
 

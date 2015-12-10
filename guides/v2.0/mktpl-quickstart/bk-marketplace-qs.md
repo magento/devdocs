@@ -17,15 +17,11 @@ Key points:
 
 *	<a href="{{ site.gdeurl }}extension-dev-guide/composer-integration.html" target="_blank">`composer.json`</a> and <a href="{{ site.gdeurl }}extension-dev-guide/component-registration.html" target="_blank">`registration.php`</a> are required for *all* components.
 *	The package you upload to Magento Marketplace should not be more than 30MB in size.
-*	Create the `.zip` file as discussed in the <a href="{{ site.gdeurl }}extension-dev-guide/package_module.html" target="_blank">packaging topic</a>.
+*	`.zip` your extension as discussed in the <a href="{{ site.gdeurl }}extension-dev-guide/package_module.html" target="_blank">packaging topic</a>.
 
 <div class="bs-callout bs-callout-warning">
     <p>The Magento Marketplace is not generally available at this time. </p>
 </div>
-
-The following figure summarizes the process:
-
-INSERT FLOWCHART
 
 #### For more information
 *	<a href="{{ site.gdeurl }}mktpl-quickstart/intro-composer.html">Introduction to Composer</a>
