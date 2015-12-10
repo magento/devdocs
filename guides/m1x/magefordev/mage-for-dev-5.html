@@ -150,7 +150,7 @@ CREATE TABLE `blog_posts` (
 
 <h3>The Global Config and Creating The Model</h3>
 
-<p>There are five individual things we need to setup for a Model in our config.</p>
+<p>There are three individual things we need to setup for a Model in our config.</p>
 
 <ol>
 <li>Enabling Models in our Module</li>
@@ -257,7 +257,7 @@ weblog_resource/blogpost
 &lt;/global>
 </pre>
 
-<p>You're adding the &lt;weblog_resource /&gt; tag, which is the value of the &lt;resourceModel /&gt; tag you just setup.  The value of &lt;class /&gt; is the base name that all your resource modes will have, and should be named with the following format</p>
+<p>You're adding the &lt;weblog_resource /&gt; tag, which is the value of the &lt;resourceModel /&gt; tag you just setup.  The value of &lt;class /&gt; is the base name that all your resource models will have, and should be named with the following format</p>
 
 <pre>
 Packagename_Modulename_Model_Resource
@@ -334,7 +334,7 @@ array
 
 <h2>Basic Model Operations</h2>
 
-<p>All Magento Models inherit from the the Varien_Object class.  This class is part of the Magento system library and <strong>not</strong> part of any Magento core module.  You can find this object at</p>
+<p>All Magento Models inherit from the Varien_Object class.  This class is part of the Magento system library and <strong>not</strong> part of any Magento core module.  You can find this object at</p>
 
 <pre>lib/Varien/Object.php</pre>
 
