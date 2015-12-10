@@ -371,11 +371,17 @@ A sample follows:</p>
 
 <h2 id="set_template">Set the template used by a block</h2>
 
-<p>To setup template for a block, use the <code>template</code> attribute.</p>
+<p>To set the template for a block, pass it using the <code>&lt;argument&gt;</code> instruction.</p>
 
-<p>Example: change template of the page title block.</p>
+<p>Example: change template of the page title block:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;page.main.title&quot;</span> <span class="na">template=</span><span class="s">&quot;html/title_new.phtml&quot;</span><span class="nt">/&gt;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;page.main.title&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;arguments&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;template&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Namespace_Module::title_new.phtml<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;/arguments&gt;</span>
+ <span class="nt">&lt;/referenceBlock&gt;</span></code></pre></div>
+
+<p>The path to the template is specified relatively to the <code>view/&lt;area&gt;/templates/</code> directory of the module. The <code>&lt;area&gt;</code> corresponds to the area for which the layout file is used.</p>
 
 <h2 id="layout_markup_modify-block">Modify block arguments</h2>
 

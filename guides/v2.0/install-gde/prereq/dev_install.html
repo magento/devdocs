@@ -282,14 +282,14 @@ mv composer.phar /usr/local/bin/composer</pre>
     </ol>
 
     <h2 id="instgde-prereq-compose-clone">Clone the Magento repository</h2>
-    <p>This section discusses how to get current code by cloning the Magento GitHub’s develop branch. You can clone either the <code>master</code> or <code>develop</code> branch:</p>
+    <p>This section discusses how to get current code by cloning the Magento GitHub’s develop branch. You can clone either the <code>2.0</code> or <code>develop</code> branch:</p>
 
     <ul>
-      <li><code>master</code> is more stable</li>
+      <li><code>2.0</code> is more stable</li>
       <li><code>develop</code> is more recent</li>
     </ul>
 
-    <p>Currently, the <code>develop</code> branch is the default but you can clone the <code>master</code> branch using the optional <code>[-b master]</code> argument.</p>
+    <p>Currently, the <code>develop</code> branch is the default but you can clone the <code>2.0</code> branch using the optional <code>[-b 2.0]</code> argument.</p>
 
     <h3 id="instgde-prereq-compose-clone-auth">Creating an authorization file</h3>
     <p>The Magento 2 GitHub repository requires you to authenticate. The <code>composer install</code> commands fails if you do not. To authenticate, <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">generate authentication keys</a>, after which you create an <code>auth.json</code> file in the home directory of the Magento file system owner.</p>
@@ -418,10 +418,10 @@ Typically, for Ubuntu, it’s <code>/var/www</code> and for CentOS it’s <code>
 
             <p>An example follows:</p>
 
-            <pre><code>git clone [-b master] git@github.com:magento/magento2.git
+            <pre><code>git clone [-b 2.0] git@github.com:magento/magento2.git
 </code></pre>
 
-            <p>Use <code>-b master</code> to clone the master branch; omit it to clone the <code>develop</code> branch, which is the default.</p>
+            <p>Use <code>-b 2.0</code> to clone the 2.0 release branch; omit it to clone the <code>develop</code> branch, which is the default.</p>
           </li>
           <li>
             <p>Wait for the repository to clone on your server.</p>
@@ -466,10 +466,10 @@ fatal: The remote end hung up unexpectedly</pre>
 
             <p>An example follows</p>
 
-            <pre><code>git clone [-b master] https://github.com/magento/magento2.git
+            <pre><code>git clone [-b 2.0] https://github.com/magento/magento2.git
 </code></pre>
 
-            <p>Use <code>-b master</code> to clone the master branch; omit it to clone the <code>develop</code> branch, which is the default.</p>
+            <p>Use <code>-b 2.0</code> to clone the 2.0 release branch; omit it to clone the <code>develop</code> branch, which is the default.</p>
           </li>
           <li>
             <p>Wait for the repository to clone on your server.</p>
