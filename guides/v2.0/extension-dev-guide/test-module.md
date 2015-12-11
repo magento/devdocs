@@ -2,8 +2,8 @@
 layout: default
 group: extension-dev-guide
 subgroup: 4_Validate
-title: Test your module
-menu_title: Test your module
+title: Test your component
+menu_title: Test your component
 menu_order: 2
 menu_node: 
 github_link: extension-dev-guide/test-module.md
@@ -12,7 +12,7 @@ github_link: extension-dev-guide/test-module.md
 
 ##{{page.menu_title}}
 
-Test your module by deploying Magento Community Edition and adding the module to the project's <code>composer.json</code>. 
+Test your component by deploying Magento Community Edition and adding the component to the project's <code>composer.json</code>. 
 
 {% highlight JSON %}
 "require": {
@@ -22,17 +22,17 @@ Test your module by deploying Magento Community Edition and adding the module to
 },
 {% endhighlight %}
 
-Remember to [register](component-registration.html) your module as well, adding the location of your module. Confirm that your module works as expected and Magento functionality is not compromised.
+Remember to [register](component-registration.html) your component as well, adding the location of your component. Confirm that your component works as expected and Magento functionality is not compromised.
 
 For further testing with Magento testing frameworks, see 
 [Magento Testing Framework]({{ site.gdeurl }}mtf/mtf_introduction.html).
 
 ##PHPUnit
 
-PHPUnit is a PHP testing framework ideal for Magento programmers. Test your module with [PHPUnit](https://phpunit.de/){:target="_blank"}, available on GitHub at [https://github.com/sebastianbergmann/phpunit](https://github.com/sebastianbergmann/phpunit){:target="_blank"}.
+PHPUnit is a PHP testing framework ideal for Magento programmers. Test your component with [PHPUnit](https://phpunit.de/){:target="_blank"}, available on GitHub at [https://github.com/sebastianbergmann/phpunit](https://github.com/sebastianbergmann/phpunit){:target="_blank"}.
 
 ##More Information
-For more information on testing in PHP and validating Magento modules, see the following:
+For more information on testing in PHP and validating Magento components, see the following:
 
 * [PHP Reflection](http://php.net/manual/en/book.reflection.php){:target="_blank"}
 * [PHP Reflection Tutorial](http://code.tutsplus.com/tutorials/reflection-in-php--net-31408){:target="_blank"}

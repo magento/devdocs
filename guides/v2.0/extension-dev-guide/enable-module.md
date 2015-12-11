@@ -2,29 +2,29 @@
 layout: default
 group: extension-dev-guide
 subgroup: 3_Build
-title: Enable a module
-menu_title: Enable a module
+title: Enable a component
+menu_title: Enable a component
 menu_order: 9
 github_link: extension-dev-guide/enable-module.md
 
 ---
 ##{{page.menu_title}}
 
-After you have built the module and are ready to enable it in your Magento environment, do the following: 
+After you have built the component and are ready to enable it in your Magento environment, do the following: 
  
 <ol>
 <li>Disable the cache under <code>System->Cache Management</code>.</li>
 <li>Enter the following at the command line:
 
-		<pre>bin/magento module:enable --clear-static-content Module_Name
+		<pre>bin/magento module:enable --clear-static-content Component_Name
     	bin/magento setup:upgrade
     	</pre>
 
-where <code>Module_Name</code> is the name of the module you are enabling.
+where <code>Component_Name</code> is the name of the component you are enabling.
 
 </li>
 
-<li>Check under <code>Stores->Configuration->Advanced->Advanced</code> that the module is present.</li>
+<li>Check under <code>Stores->Configuration->Advanced->Advanced</code> that the component is present.</li>
  </ol>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -41,11 +41,11 @@ where <code>Module_Name</code> is the name of the module you are enabling.
 
 
 
-##Disable a module
+##Disable a component
 
-To disable a module, enter the following at the command line:
+To disable a component, enter the following at the command line:
 
-    bin/magento module:disable --clear-static-content Module_Name
+    bin/magento module:disable --clear-static-content Component_Name
 
 
-For more on enabling and disabling modules, see [enable or disable modules]({{ site.gdeurl}}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable).
+For more on enabling and disabling components, see [enable or disable modules]({{ site.gdeurl}}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable).
