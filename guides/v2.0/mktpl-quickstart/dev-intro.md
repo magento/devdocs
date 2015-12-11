@@ -6,7 +6,7 @@ title: Develop your component
 menu_title: Develop your component
 menu_order: 1
 menu_node: parent
-github_link: extension-dev-guide/quickstart/dev-intro.md
+github_link: mktpl-quickstart/dev-intro.md
 ---
 
 ##{{page.menu_title}}

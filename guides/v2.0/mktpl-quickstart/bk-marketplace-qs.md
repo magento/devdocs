@@ -6,7 +6,7 @@ title: Introduction
 menu_title: Introduction
 menu_order: 1
 menu_node: parent
-github_link: extension-dev-guide/quickstart/bk-marketplace-qs.md
+github_link: mktpl-quickstart/bk-marketplace-qs.md
 ---
 
 ##{{page.menu_title}}
