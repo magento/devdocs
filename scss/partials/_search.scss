@@ -8,14 +8,20 @@ div.gsc-control-cse {
 	border: none;
 	padding: 0;
 }
+.gsc-control-cse .gsc-wrapper {
+	padding: 0 20px;
+}
 .gsc-control-cse .gsc-wrapper .gsc-table-result {
 	font-family: 'Open Sans', sans-serif;
 	margin: 0;
 }
 
-td.gsc-input {
-	padding-top: 0;
-	padding-bottom: 0;
+.gsc-result-info-container {
+	padding: 0 0 0 20px;
+}
+
+table.gsc-search-box td.gsc-input {
+	padding: 0 20px;
 }
 .gsc-input input.gsc-input {
 	display: block;
@@ -45,11 +51,12 @@ input.gsc-search-button {
 .gsc-results .gsc-webResult.gsc-result,
 .gsc-results .gsc-imageResult {
 	border-color: transparent;
-	background-color: #FFFFFF;
-	padding: 0;
+	background-color: #fff;
+	padding: 0 0 20px 0;
+	margin: 0;
 }
 .gsc-results tr td {
-	padding: 0 10px 10px 10px;
+	padding: 0;
 }
 .gsc-webResult.gsc-result:hover,
 .gsc-imageResult:hover {

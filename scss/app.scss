@@ -14,15 +14,11 @@
    width: 1px
 }
 
-.navbar .logo {
-   margin-top: 5px;
-   margin-right: 10px
-}
-
 
 .page-header {
    margin-top: 0;
 }
+
 
 .block h2.block-title {
    margin-top: 0;
@@ -783,108 +779,23 @@ body.page-node-add .node-form #edit-preview, body.page-node-add .node-form #edit
     border-color: #a6a7a2
 }
 
-.action-links > li > a, .workflow-current-state, #edit-workflow > .control-group > label, #edit-workflow > .control-group > .controls > .form-radios > .form-type-radio > label, .form-item-categories > label, .panels-layouts-checkboxes .panels-layouts-category, .layout-icon .caption, .table, .form-type-password > .control-label, .form-item-name > .control-label, .node-panel-form {
-    font-family: "Open Sans", "Segoe UI", "Helvetica", sans-serif;
-    font-size: 16px;
-    color: #000;
-    font-weight: 300
-}
-
-#edit-categories-button, #edit-name, #edit-pass {
-    border-radius: 0px
-}
-
-.workflow-current-state, form[id*="workflow-tab"] {
-    border: none
-}
-
-#panels-dnd-main div.panel-region {
-    padding: 20px;
-    border: 1px solid #ddd
-}
-
-#panels-dnd-main .panel-pane .pane-title, .panel-portlet .toggle-collapsed, .form-submit[value="Show layout designer"], .form-submit[value="Reuse layout"], html.js div.ctools-dropdown a.ctools-dropdown-text-link {
-    display: none
-}
-
-.panel-portlet .grab-title .text {
-    font-family: "Open Sans", "Segoe UI", "Helvetica", sans-serif;
-    font-size: 16px;
-    color: #fff;
-    font-weight: 300
-}
-
-.panel-portlet .grab-title .text {
-    text-shadow: none
-}
-
-.panel-pane > .grab-title {
-    padding: 8px 0;
-    margin: 0px
-}
-
-.panel-portlet .grabber {
-    background: #b3b3b3
-}
-
-.panel-portlet .grabber:hover {
-    background: #2F78A5
-}
-
-#panels-dnd-main div.panel-region h2.label {
-    background-color: transparent;
-    text-transform: none;
-    padding: 5px 0
-}
-
-.action-links .icon-plus-sign {
-    margin-top: 5px
-}
-
-#panel-node-form input, #page-node-form input, #blog-post-node-form input, #blog-post-gallery-node-form input, #news-article-node-form input, #partners-feed-node-form input, #press-article-node-form input, #tabbed-page-node-form input, #webform-node-form input, #content-tile-node-form input, #article-node-form input, .form-item-categories input {
-    border-radius: 0px;
-    font-family: "Open Sans", "Segoe UI", "Helvetica", sans-serif;
-    font-size: 16px;
-    font-weight: 300
-}
-
-#panel-node-form label, #page-node-form label, #blog-post-node-form label, #blog-post-gallery-node-form label, #news-article-node-form label, #partners-feed-node-form label, #press-article-node-form label, #tabbed-page-node-form label, #webform-node-form label, #content-tile-node-form label, #article-node-form label, .form-item-categories label {
-    font-family: "Open Sans", "Segoe UI", "Helvetica", sans-serif;
-    font-size: 16px;
-    font-weight: 300
-}
-
-#panel-node-form select, #page-node-form select, #blog-post-node-form select, #blog-post-gallery-node-form select, #news-article-node-form select, #partners-feed-node-form select, #press-article-node-form select, #tabbed-page-node-form select, #webform-node-form select, #content-tile-node-form select, #article-node-form select, .form-item-categories select {
-    border-radius: 0px;
-    background: transparent;
-    width: 270px;
-    padding: 5px;
-    font-size: 16px;
-    line-height: 1;
-    border: 0;
-    border-radius: 0;
-    height: 34px;
-    border: 1px solid #ccc;
-    -webkit-appearance: none
-}
-
 
 .btn.btn-info, .btn.form-submit[value="Save"], .btn.form-submit[value="Next"], .form-submit[value="Log in"], .form-submit[value="Finish"] {
-    cursor: pointer;
-    padding: 5px 10px;
-    margin-bottom: 1em;
-    margin-right: 1em;
-    color: #fff;
-    text-align: center;
-    font-weight: normal;
-    font-size: 1.077em;
-    font-family: "Lucida Grande", Verdana, sans-serif;
-    background: #4d8f46;
-    border-radius: 0
+   cursor: pointer;
+   padding: 5px 10px;
+   margin-bottom: 1em;
+   margin-right: 1em;
+   color: #fff;
+   text-align: center;
+   font-weight: normal;
+   font-size: 1.077em;
+   font-family: "Lucida Grande", Verdana, sans-serif;
+   background: #4d8f46;
+   border-radius: 0;
 }
 
 .btn.btn-info:hover, .btn.form-submit[value="Save"]:hover, .btn.form-submit[value="Next"]:hover, .form-submit[value="Log in"]:hover, .form-submit[value="Finish"]:hover {
-    background: #0a6700
+   background: #0a6700;
 }
 
 .btn.form-submit[value="Cancel"], .btn.form-submit[value="Delete"] {
@@ -898,93 +809,93 @@ body.page-node-add .node-form #edit-preview, body.page-node-add .node-form #edit
     font-size: 1.077em;
     font-family: "Lucida Grande", Verdana, sans-serif;
     background: #B73939;
-    border-radius: 0
+    border-radius: 0;
 }
 
 .btn.form-submit[value="Cancel"]:hover, .btn.form-submit[value="Delete"]:hover {
-    background: #990000
+   background: #990000;
 }
 
 .btn.form-submit[value="Preview"], .btn.form-submit[value="Back"], .btn.form-submit[value="Upload"] {
-    cursor: pointer;
-    padding: 5px 10px;
-    margin-bottom: 1em;
-    margin-right: 1em;
-    color: #fff !important;
-    text-align: center;
-    font-weight: normal;
-    font-size: 1.077em;
-    font-family: "Lucida Grande", Verdana, sans-serif;
-    background: #0074BD;
-    border-radius: 0
+   cursor: pointer;
+   padding: 5px 10px;
+   margin-bottom: 1em;
+   margin-right: 1em;
+   color: #fff !important;
+   text-align: center;
+   font-weight: normal;
+   font-size: 1.077em;
+   font-family: "Lucida Grande", Verdana, sans-serif;
+   background: #0074BD;
+   border-radius: 0;
 }
 
 .btn.form-submit[value="Preview"]:hover, .btn.form-submit[value="Back"]:hover, .btn.form-submit[value="Upload"]:hover {
-    background: #004c99
+   background: #004c99;
 }
 
 .form-submit[value="Show layout designer"], .form-submit[value="Reuse layout"], .btn.form-submit[value="Remove"], .btn.form-submit[value="View changes"], input[type="file"] {
-    cursor: pointer;
-    border: none;
-    padding: 5px 10px;
-    margin-bottom: 1em;
-    margin-right: 1em;
-    color: #777;
-    text-align: center;
-    font-weight: normal;
-    font-size: 1.077em;
-    font-family: "Lucida Grande", Verdana, sans-serif;
-    background: #F0F0F0;
-    border-radius: 0
+   cursor: pointer;
+   border: none;
+   padding: 5px 10px;
+   margin-bottom: 1em;
+   margin-right: 1em;
+   color: #777;
+   text-align: center;
+   font-weight: normal;
+   font-size: 1.077em;
+   font-family: "Lucida Grande", Verdana, sans-serif;
+   background: #F0F0F0;
+   border-radius: 0
 }
 
 .form-submit[value="Show layout designer"]:hover, .form-submit[value="Reuse layout"]:hover, .btn.form-submit[value="Remove"]:hover, .btn.form-submit[value="View changes"]:hover, input[type="file"]:hover {
-    background: #0074BD;
-    color: #fff
+   background: #0074BD;
+   color: #fff
 }
 
 
 
 
 .alert-block .element-invisible {
-    display: none
+   display: none;
 }
 
 
 .btn {
-    color: #fff;
-    font: 14px/15px 'Open Sans';
-    font-weight: bold;
-    text-shadow: none;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 2px;
-    border: 0;
-    box-shadow: none;
-    box-sizing: border-box;
-    transition: 0.4s;
-    -webkit-transition: 0.4s
+   color: #fff;
+   font: 14px/15px 'Open Sans';
+   font-weight: bold;
+   text-shadow: none;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   border-radius: 2px;
+   border: 0;
+   box-shadow: none;
+   box-sizing: border-box;
+   transition: 0.4s;
+   -webkit-transition: 0.4s
 }
 
 .btn:hover {
-    transition: 0.7s;
-    -webkit-transition: 0.7s
+   transition: 0.7s;
+   -webkit-transition: 0.7s
 }
 
 .btn.small {
-    padding: 10px 14px
+   padding: 10px 14px
 }
 
 .btn.large {
-    padding: 15px 20px
+   padding: 15px 20px
 }
 
 .btn.copper {
-    color: #fff;
-    background: #ef672f;
-    box-shadow: inset 0 0 0 0 #c14800;
-    transition-duration: 0.7s;
-    -webkit-transition: 0.7s
+   color: #fff;
+   background: #ef672f;
+   box-shadow: inset 0 0 0 0 #c14800;
+   transition-duration: 0.7s;
+   -webkit-transition: 0.7s
 }
 
 .btn.copper:hover {
@@ -994,23 +905,23 @@ body.page-node-add .node-form #edit-preview, body.page-node-add .node-form #edit
 }
 
 .btn.outline {
-    color: #fff;
-    background: transparent;
-    border: 3px solid #fff;
-    box-shadow: inset 0 0 0 0 #fff
+   color: #fff;
+   background: transparent;
+   border: 3px solid #fff;
+   box-shadow: inset 0 0 0 0 #fff
 }
 
 .btn.outline:hover {
-    color: #31302b;
-    box-shadow: inset 0 100px 0 0 #fff
+   color: #31302b;
+   box-shadow: inset 0 100px 0 0 #fff
 }
 
 .btn.charcoal {
-    color: #fff;
-    background: #31302b;
-    box-shadow: inset 0 0 0 0 #fff;
-    transition-duration: 0.7s;
-    -webkit-transition: 0.7s
+   color: #fff;
+   background: #31302b;
+   box-shadow: inset 0 0 0 0 #fff;
+   transition-duration: 0.7s;
+   -webkit-transition: 0.7s
 }
 
 .btn.charcoal:hover {

@@ -28,7 +28,7 @@ $(function() {
 
 		$('#searchResultsBox').fadeIn(300, function () {
 			// Callback function that focuses on input
-			$('input.gsc-input').focus();
+			$('#searchResultsBox input.gsc-input').first().focus();
 		});
 		$('.searchResultsBack').fadeIn(300);
 		$.cookie('searchResultsState', '1');
@@ -40,7 +40,7 @@ $(function() {
 
 		$('#searchResultsBox').fadeOut(300, function () {
 			// Callback function that focuses out of input
-			$('input.gsc-input').blur();
+			$('#searchResultsBox input.gsc-input').first().blur();
 		});
 		$('.searchResultsBack').fadeOut(300);
 		$.cookie('searchResultsState','0');
