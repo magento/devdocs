@@ -26,8 +26,8 @@ As an extension developer, you can now create and distribute your own commands f
 This topic discusses our recommended naming conventions.
 
 <h2 id="cli-name">Command name</h2>
-A command *name* is a part of the command, which defines behavior of the tool on the very high level. In the command it goes right after the tool's name.
-For example, in `bin/magento setup:upgrade`, `bin/magento` is the tool's name and `setup:upgrade` is the name of the command.
+A command *name* is a part of the command, which defines behavior of the command on the very high level. In the command it goes right after the command's name.
+For example, in `bin/magento setup:upgrade`, `bin/magento` is the command's name and `setup:upgrade` is the name of the command.
 
 If you have a Magento installation handy, enter the following to display the current list of commands:
 
@@ -102,13 +102,13 @@ Options are name-value pairs. The sequence of entered values doesn't matter.
 
 An option can have a value or no value. An option that does not require a value represents a flag (`yes` or `no`).
 
-An option can also have a one-letter shortcut as an alternative to its full name. Enable shortcuts for often-used options or if it's easy to determine what the shortcut means. Usually it makes sense to enable shortcuts for options similar to the ones used in widely-used tools (for example, `-f` for `--force`, `-v` for `--verbose`, `-h` for `--help`).
+An option can also have a one-letter shortcut as an alternative to its full name. Enable shortcuts for often-used options or if it's easy to determine what the shortcut means. Usually it makes sense to enable shortcuts for options similar to the ones used in widely-used commands (for example, `-f` for `--force`, `-v` for `--verbose`, `-h` for `--help`).
 
 #### Format: single word or a compound word separated with a dash or hyphen character.
 
 For example,
 
-	magento dev:theme:create --parent=Magento/luma frontend Foo bar
+	magento dev:theme:create --parent=Magento/luma frontend arg1 arg2
 	magento dev:theme:create -p=Magento/luma frontend vendor themename
 	magento dev:theme:create --extend-from=Magento/luma frontend vendor themename
 	magento module:disable -f Magento_Cms
@@ -121,7 +121,7 @@ Where:
 
 `-f` is a shortcut for a non-value option `--force`
 
-`frontend`, `vendor` and `themename` are arguments (see <a href="#cli-args">Command options and arguments</a>).
+`arg1`, `arg2`, `frontend`, `vendor` and `themename` are arguments (see <a href="#cli-args">Command options and arguments</a>).
 
 Use options for:
 
@@ -142,11 +142,11 @@ Example:
 <h2 id="cli-collision">Recommendations to avoid naming collisions</h2>
 To avoid naming your command the same as another command, we recommend:
 
-*	Looking at other extensions on Magento Marketplaces (future) before you choose a name for your commands. By planning ahead, you can avoid naming collisions entirely.
+*	Looking at other extensions on Magento Marketplace (future) before you choose a name for your commands. By planning ahead, you can avoid naming collisions entirely.
 
 *	Restricting command names to start with a unique name, such as a vendor name. The usability of the command depends on what you choose for a vendor name. 
 
-	For example, `myname:dev:theme:create` is not obvious and hard to remember.
+	For example, `myname:dev:theme:create` is not obvious and is hard to remember.
 
 	The vendor name doesn't have to start the command name; it could be in the middle. This way, related commands are grouped together.
 
@@ -154,3 +154,6 @@ To avoid naming your command the same as another command, we recommend:
 
 		dev:myname:theme:create
 		dev:myname:theme:delete
+
+#### Related topic
+<a href="{{ site.gdeurl }}extension-dev-guide/cli-howto.html">How to add CLI commands</a>
