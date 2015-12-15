@@ -16,9 +16,9 @@ redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-cron.html
 *	<a href="#config-cli-cron-overview">Overview of cron</a>
 *	<a href="#config-cli-before">First steps</a>
 *	<a href="#config-cli-cron-bkg">Run cron in the background</a>
-*	<a href="#config-cli-cron-browser">Run cron from a web browser</a>
 *	<a href="#config-cli-cron-group">Configure and run cron using the command line</a>
 
+To run cron in a web browser, see <a href="{{ site.gdeurl }}config-guide/secy/secy-cron.html">Secure cron.php to run in a browser</a>
 
 <h2 id="config-cli-cron-overview">Overview of cron</h2>
 Several Magento features require at least one cron job, which schedules activities to occur in the future. A partial list of these activities follows:
@@ -49,7 +49,6 @@ See one of the following sections:
 
 *	<a href="#config-cli-before">First steps</a>
 *	<a href="#config-cli-cron-bkg">Run cron in the background</a>
-*	<a href="#config-cli-cron-browser">Run cron from a web browser</a>
 *	<a href="#config-cli-cron-group">Configure and run cron using the command line</a>
 
 <h2 id="config-cli-before">First steps</h2>
@@ -59,76 +58,14 @@ In addition to the command arguments discussed here, see <a href="{{ site.gdeurl
 <h2 id="config-cli-cron-bkg">Run cron in the background</h2>
 This section discusses how to run all Magento cron jobs every minute, which is the recommended interval for both Magento Community Edition (CE) and Enterprise Edition (EE).
 
-Run Magento cron jobs as the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-over">Magento file system owner</a>. 
-
-To create a cron job as the Magento file system owner, the following commands in the order shown:
-
-1.	Create or edit a crontab for the Magento file system owner:
-
-		crontab -u <Magento file system owner user name> -e
-
-	A text editor displays. (You might need to choose a text editor first.)
-2.	In the editor, enter the following:
-
-		*/1 * * * * php <your Magento install dir>/bin/magento cron:run &
-
-	For example, for CentOS,
-
-		*/1 * * * * php /var/www/html/magento2/bin/magento cron:run &
-
-Save your changes to the crontab and exit the editor.
-
-<h2 id="config-cli-cron-browser">Run cron from a web browser</h2>
-You can run cron anytime using a web browser (for example, during development).
-
-Before you run cron in the browser, remove the restriction from `.htaccess` as follows:
-
-1.	Log in to your Magento server as a user with permissions to write to the Magento file system.
-2.	Open any of the following in a text editor (depending on your entry point to Magento):
-
-		<your Magento install dir>/pub/.htaccess
-		<your Magento install dir>/.htaccess
-
-3.	Delete or comment out the following:
-
-		## Deny access to cron.php
-    	<Files cron.php>
-        	order allow,deny
-        	deny from all
-    	</Files>
-
-    For example,
-
-    	## Deny access  to cron.php
-    	#<Files cron.php>
-        #	order allow,deny
-        #	deny from all
-    	#</Files>
-
-3.	Save your changes and exit the text editor.
-
-You can then run cron in a web browser as follows:
-
-	<your Magento host name or IP>/<Magento root>/pub/cron.php[?group=<group name>]
-
-where
-
-*	`<your Magento host name or IP>` is the host name or IP address of your Magento installation
-*	`<Magento root>` is the web server docroot-relative directory to which you installed the Magento software
-
-	The exact URL you use to run the Magento application depends on how you configured your web server and virtual host.
-*	`<group name>` is any valid cron group name (optional)
-
-For example,
-
-	http://magento.example.com/magento2/pub/cron.php?group=index
-
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>You must run cron twice: the first time to discover tasks to run and the second time to run the tasks themselves.</p></span>
+  <p>Cron is critical for Magento operation; among other things, it's the only way to reindex on an ongoing basis, it generates automated e-mails, newsletters, the sitemap, and so on.</p></span>
 </div>
 
-<a href="#config-cli-cron-group-conf">More information about cron groups</a>
+Run Magento cron jobs as the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-over">Magento file system owner</a>. 
+
+{% include config/setup-cron.md %}
 
 <h2 id="config-cli-cron-group">Configure and run cron using the command line</h2>
 This section discusses how to run cron at any time using the command line. You can optionally configure a cron group for a custom module as discussed in the next section.
@@ -147,7 +84,7 @@ A *cron group* is a logical group that enables you to easily run cron for more t
 
 If you're implementing cron for a custom module, it's your choice of whether or not to use the `default` group or a different group.
 
-To configure a cron group for your module, create `<your Magento install dir>/app/code/<VendorName>/<ModuleName>/etc/crontab.xml` with the following contents:
+To configure a cron group for your module, create `<your component base dir>/<vendorname>/module-<name>/etc/crontab.xml` with the following contents:
 
 	<config>
     	<group id="<group_name>">

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: jsdg
-subgroup: Widgets
+subgroup: 3_Widgets
 title: Modal widget
 menu_order: 10
 menu_title: Modal widget
@@ -22,13 +22,13 @@ The Magento modal widget implements a secondary window that opens on top of the 
 </ul>
 
 
-The modal widget source is <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/modal/modal.js" target="_blank">app/code/Magento/Ui/view/base/web/js/modal/modal.js</a>
+The modal widget source is <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/modal/modal.js" target="_blank"><code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/modal/modal.js</code></a>
 
 
 The widget uses the following templates:
 
-- <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/modal/modal-popup.html" target="_blank">app/code/Magento/Ui/view/base/web/templates/modal/modal-popup.html</a> popup type template.
-- <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/modal/modal-slide.html" target="_blank">app/code/Magento/Ui/view/base/web/templates/modal/modal-slide.html</a> slide type template.
+- <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/modal/modal-popup.html" target="_blank"><code>&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/modal/modal-popup.html</code></a> popup type template.
+- <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/modal/modal-slide.html" target="_blank"><code>&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/modal/modal-slide.html</code></a> slide type template.
 
 The design patterns for the modal pop-up windows in the Admin are described in the <a href="{{site.gdeurl}}pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a> 
 

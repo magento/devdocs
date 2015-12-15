@@ -1,7 +1,7 @@
 ---
 layout: default
 group: jsdg
-subgroup: Widgets
+subgroup: 3_Widgets
 title: Alert widget
 menu_order: 2
 menu_title: Alert widget
@@ -11,7 +11,7 @@ github_link: javascript-dev-guide/widgets/widget_alert.md
 
 The Magento alert widget implements a modal pop-up window with a confirmation button. It extends the <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html">Magento modal widget</a>.
 
-The alert widget source is <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/modal/alert.js" target="_blank">app/code/Magento/Ui/view/base/web/js/modal/alert.js</a>
+The alert widget source is <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/modal/alert.js" target="_blank"><code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/modal/alert.js</code></a>
 
 The widget can be used for implementing alert windows for both Admin and storefront. The design patterns for the pop-up modal windows in the Admin are described in the <a href="{{site.gdeurl}}pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a> 
 

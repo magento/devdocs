@@ -11,7 +11,7 @@ github_link: config-guide/mq/manage-mysql.md
 
 If you do not want to implement the RabbitMQ solution, you can manage message queues with cron jobs (or an external process manager)and the CLI to ensure that consumers are retrieving messages.
 
-<h2>Process managemnt</h2>
+<h2>Process management</h2>
 
 Cron jobs are the default mechanism to restart consumers. Processes started by `cron` consume the specified number of messages, then die after that. Re-running `cron` restarts the consumer.
 

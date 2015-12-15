@@ -18,7 +18,7 @@ On Magento 2.0 Enterprise Edition, the Message Queue Framework (MQF) is a fully-
 
 A basic message queue system can also be set up without using RabbitMQ. In this system, a MySQL adapter stores messages in the database. Three database tables (`queue`, `queue_message`, and `queue_message_status`) manage the message queue workload. Cron jobs ensure the consumers are able to receive messages. This solution is not very scalable. RabbitMQ should be used whenever possible.
 
-See <a href="{{ site.gdeurl }}config-guide/mq/config-mq.html.html">Configure message queues</a> for information about setting up the message queue system.
+See <a href="{{ site.gdeurl }}config-guide/mq/config-mq.html">Configure message queues</a> for information about setting up the message queue system.
 
 
 <h2>Send a message from the publisher to a queue</h2>
@@ -51,7 +51,7 @@ Implement `\Magento\Framework\Amqp\ConsumerInterface::process($maxNumberOfMessag
 Perform the following actions:
 
 1. Define the queue name associated with current consumer using `\Magento\Framework\Amqp\ConsumerConfigurationInterface::getQueueName`.
-2. Select `$maxNumberOfMessages` message records, filtering on the  `queue_name` field. You must join on all 3 tables. To accompolish this, you may want to extract fewer records at a time to improve load distribution between multiple consumers. 
+2. Select `$maxNumberOfMessages` message records, filtering on the  `queue_name` field. You must join on all 3 tables. To accomplish this, you may want to extract fewer records at a time to improve load distribution between multiple consumers. 
 3. Decode the message using topic name taken from the `\Magento\Framework\Amqp\ConsumerConfigurationInterface`.
 4. Invoke callback  `Magento\Framework\Amqp\ConsumerConfigurationInterface::getCallback` and pass the decoded data as an argument.
 

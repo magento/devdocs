@@ -10,10 +10,6 @@ github_link: install-gde/bk-install-guide.md
 redirect_from: /guides/v1.0/install-gde/bk-install-guide.html
 ---
 
-<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
-<!-- Referring file: README.md owned by core -->
-
-
 <h2>Magento software installation</h2>
 Hi, we're glad you're among the 240,000 merchants worldwide who put their trust in our eCommerce software. We've gathered some information to help you get started with Magento and with your Magento installation. 
 
@@ -21,19 +17,11 @@ We have some resources here to help get you started using the eCommerce platform
 
 It’s what we do.
 
-<h2>New to Magento installation? Need some help?</h2> 
-If you're not sure about the following, you probably need a little help before you get started with your installation:
+<h2 id="install-how-install">Step 1: Find the installation that's right for you</h2>
+<a href="{{ site.gdeurl }}install-gde/continue.html">Choose how to install the Magento software</a>.
 
-*	Is the Magento software <a href="{{ site.gdeurl }}install-gde/basics/basics_magento-installed.html">installed already</a>?
-*	What's a <a href="{{ site.gdeurl }}install-gde/basics/basics_login.html">terminal, command prompt, or Secure Shell (ssh)</a>?
-*	Where's my <a href="{{ site.gdeurl }}install-gde/basics/basics_login.html">Magento server</a> and how do I access it?
-*	What's <a href="{{ site.gdeurl }}install-gde/basics/basics_software.html">PHP</a>?
-*	What's <a href="{{ site.gdeurl }}install-gde/basics/basics_software.html">Apache</a>?
-*	What's <a href="{{ site.gdeurl }}install-gde/basics/basics_software.html">MySQL</a>?
-
-<h2 id="install-verify-prereq">Step 1: Verify your prerequisites</h2>
-
-Use the following table to verify you have the correct prerequisites to install the Magento software.
+<h2 id="install-verify-prereq">Step 2: Verify your prerequisites</h2>
+Use the following table to verify you have the correct prerequisites to install the Magento software. If you used a shared hosting provider, you can skip this step.
 
 <table>
 	<tbody>
@@ -51,7 +39,7 @@ Use the following table to verify you have the correct prerequisites to install 
 	</tr>
 	<tr>
 		<td><p>PHP 5.6.x or 5.5.x (PHP 5.4 is not supported)</p>
-			<p>See <a href="{{ site.gdeurl }}release-notes/known-issues.html#known-devrc-php">Known issue with certain PHP versions</a></p></td>
+			<p>See <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_install-issues.html#known-devrc-php">Known issue with certain PHP versions</a></p></td>
 		<td><p><code>php -v</code></p></td>
 		<td><a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a><br><a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP CentOS</a></td>
 	</tr>
@@ -62,15 +50,19 @@ Use the following table to verify you have the correct prerequisites to install 
 </tbody>
 </table>
 
-<h2>Step 2: Prepare to install</h2>
-After verifying your prerequisites, determine <a href="{{ site.gdeurl }}install-gde/install/pre-install.html">how to get started</a> with your installation.
+<h2>Step 3: Install Magento</h2>
+*	Easy installation: <a href="{{ site.gdeurl }}install-gde/install/web/install-web.html">Install the Magento software using the Setup Wizard</a>
 
-<h2>Step 3: Install and verify the installation</h2>
+	<a href="{{ site.gdeurl }}install-gde/install/web/install-web-sample-data.html">Install optional sample data (Setup Wizard)</a>
+*	Advanced installation with more control: <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">Install Magento software using the command line</a>
 
-1.	Install Magento:
-	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>
-	*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">Install Magento software using the command line</a>
-2.	<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>
+	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-sample-data.html">Install optional sample data (command line)</a>
+
+<h2>Post-installation</h2>
+*	<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>
+*	<a href="{{ site.gdeurl }}install-gde/trouble/tshoot.html">Troubleshooting</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/sample-data-after-magento.html">Install optional sample data after Magento</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/post-install-config.html">Configuring</a>
 
 <h2>Useful information</h2>
 At any time during your installation, take advantage of our <a href="{{ site.gdeurl }}install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{ site.gdeurl }}install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>. They're really easy to use; the tutorial walks you through a sample installation. The roadmap provides links to common tasks throughout the guide.

@@ -51,6 +51,10 @@
 {% elsif page.group == "install_cli" %}
 <h4>Installation guide<br>Part 2: Installing</h4>
 
+{% if page.group == "install_hosted" %}
+<h4>Newbie Installation Guide</h4>
+{% endif %}
+
 {% elsif page.group == "install_pre" %}
 <h4>Installation guide<br>Part 1: Getting started</h4>
 
@@ -65,6 +69,9 @@
 
 {% elsif page.group == "config-guide" %}
 <h4>Configuration guide</h4>
+
+{% elsif page.group == "quickstart" %}
+<h4>Marketplace quick start guide</h4>
 {% endif %}
 
 
@@ -117,10 +124,10 @@
 
 											<li class="level3Child {{ article.level3_subgroup }} {% if page.url == article.url %} active {%endif%}" data-menunode="{{ article.level3_subgroup }}"><a href="{{site.toc_baseurl}}{{article.url}}">{% if article.menu_title %}{{article.menu_title}}{% else %}{{article.title}}{% endif %}</a>
 
+
 									{% elsif article.externalURL %}
 
-									<li class="level-2"><a href="{{article.externalURL}}" target="_blank">{% if article.menu_title %}{{article.menu_title}}{% else %}{{article.title}}{% endif %}</a></li>
-
+									<li class="level-2"><a href="{{article.externalURL}}">{% if article.menu_title %}{{article.menu_title}}{% else %}{{article.title}}{% endif %}</a></li>
 
 
 									{% else %}
@@ -131,8 +138,6 @@
 						
 								{% endfor %}
 								
-								
-							
 							
 						{% else %}
 						

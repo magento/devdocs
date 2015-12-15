@@ -2,8 +2,8 @@
 layout: default
 group: extension-dev-guide
 subgroup: 6_Module Development
-title: Module development
-menu_title: Module development
+title: Component development
+menu_title: Component development
 menu_order: 1
 menu_node: parent
 github_link: extension-dev-guide/module-development.md
@@ -12,7 +12,7 @@ github_link: extension-dev-guide/module-development.md
 
 ##{{page.menu_title}}
 
-Magento 2 is flexible and as a result has varied functionality, so developing a module in Magento may take into account a number of different of the following topics. Please read the information on compatibility &#8212; [Service Contracts](service-contracts/service-contracts.html), [Design Patterns](service-contracts/design-patterns.html), and the information on [Dependency Injection](depend-inj.html), [Routing](routing.html), and [Working With Public Interfaces and APIs](api-concepts.html) closely; they are essential to creating a good Magento 2 module.
+Magento 2 is flexible and as a result has varied functionality, so developing a component in Magento takes into account a number of different of the following topics. Please read the information on compatibility &#8212; [Service Contracts](service-contracts/service-contracts.html), [Design Patterns](service-contracts/design-patterns.html), and the information on [Dependency Injection](depend-inj.html), [Routing](routing.html), and [Working With Public Interfaces and APIs](api-concepts.html) closely; they are essential to creating a good Magento 2 component.
 
 
 
