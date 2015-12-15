@@ -2553,6 +2553,20 @@ body #admin-menu .dropdown li {
     background: #fff
 }
 
+.highlight pre code * {
+    white-space: nowrap;    // this sets all children inside to nowrap
+}
+
+.highlight pre {
+    overflow-x: auto;       // this sets the scrolling in x
+}
+
+.highlight pre code {
+    white-space: pre;       // forces <code> to respect <pre> formatting
+}
+
+.highlight pre, pre, .highlight .hll { background-color: #f8f8f8; border: 1px solid #ccc; padding: 6px 10px; border-radius: 3px; }
+
 .highlight .c {
     color: #998;
     font-style: italic
