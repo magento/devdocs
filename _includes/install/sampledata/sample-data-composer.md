@@ -4,7 +4,7 @@
 This topic discusses how to enable you to install optional Magento sample data using Composer. You <a href="#instgde-prereq-sample-comp">modify <code>composer.json</code></a> in the Magento root installation directory to provide the location of the sample data package. After that, you can either run the Magento software installer or you can run a script to install the sample data.    
 
 <h2 id="instgde-prereq-sample-comp">Modify <code>composer.json</code></h2>
-Sample data is versioned like Magento components. You can either install the latest version or you can specify a specific version using Composer <a href="https://getcomposer.org/doc/01-basic-usage.md#next-significant-release-tilde-and-caret-operators-" target="_blank">next significant release syntax</a>.
+Sample data is versioned like Magento components. You can either install the latest version or you can specify a specific version using Composer <a href="https://getcomposer.org/doc/articles/versions.md#next-significant-release-operators" target="_blank">next significant release syntax</a>.
 
 To enable sample data using Composer:
 
