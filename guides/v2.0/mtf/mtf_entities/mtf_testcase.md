@@ -66,11 +66,12 @@ public function __inject(
 
 The `test()` method must contain test steps described in a [docblock](#docblock). Returned arguments from this method are available in [constraints][]. This method runs for all variations in a [data set][]. The `test()` method is required.
 
-In the following example, the test includes preconditions and test steps. Preconditions contain logic of different scenarios of creating a product, depending on the category state. Test steps implement:
-    - opening of the page creation grid
-    - filtering by `sku`
-    - editing of the founded product
-    - saving of the edited product
+In the following example, the test includes preconditions and test steps. Preconditions contain logic of different scenarios of creating a product, depending on the category state. Test steps perform:
+
+- opening of the page creation grid
+- filtering by `sku`
+- editing of the founded product
+- saving of the edited product
 
 <script src="https://gist.github.com/dshevtsov/27fae7c912604030e574.js"></script>
 
