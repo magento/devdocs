@@ -79,8 +79,7 @@ Returned array is available for the test case methods and constraints within cur
 
 ### `tearDown()` (optional) {#teardown-method}
 
-After constraints have been performed, you can use the `tearDown()` method to get back the testing application to the initial state, to be ready for the next variation execution.  
-If you need to perform some actions after [constraints][] of each [data set][] variation completed you should use the method `tearDown()` (example actions are logging out, clearing data, clearing cache)
+After [constraints][] of the variation have been performed, you can use the `tearDown()` method to get back the testing application to the initial state, to be ready for the next variation execution (for example, logging out, clearing data, clearing cache).
 
 For example, the following code deletes sales rule after each variation:
 
