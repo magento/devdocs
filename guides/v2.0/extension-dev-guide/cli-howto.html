@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Validate</title>
+	<title>How to add CLI commands</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/extension-dev-guide/validate.html">
+	<link rel="canonical" href="//guides/v2.0/extension-dev-guide/cli-howto.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Validate</h1>
+		<h1 class="page-heading">How to add CLI commands</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/extension-dev-guide/validate.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/extension-dev-guide/cli-howto.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -212,13 +212,75 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="validate">Validate</h2>
-<p>After your module is built, you should test it. Read through the Definition of Done to confirm that your module and coding practice is compliant with Magento.</p>
+		<h4 id="contents">Contents</h4>
+<ul>
+  <li><a href="#cli-add-over">Overview of adding CLI commands</a></li>
+  <li><a href="#cli-sample">Add CLI commands using dependency injection</a></li>
+  <li><a href="#cli-autoload">Add CLI commands using the Composer autoloader</a></li>
+</ul>
+
+<h2 id="cli-add-over">Overview of adding CLI commands</h2>
+<p>Magento enables your component to add commands to our Symfony-like command-line interface (CLI). </p>
+
+<h3 id="about-the-magento-cli">About the Magento CLI</h3>
+<p>Magento has one command-line interface that performs both installation and configuration tasks: <code>&lt;your Magento install dir&gt;/bin/magento</code>. The new interface performs multiple tasks, including:</p>
+<ul><li>Installing Magento (and related tasks such as creating or updating the database schema, creating the deployment configuration, and so on)</li>
+	<li>Clearing the cache</li>
+	<li>Managing indexes, including reindexing</li>
+	<li>Creating translation dictionaries and translation packages</li>
+	<li>Generating non-existent classes such as factories and interceptors for plug-ins, generating the dependency injection configuration for the object manager.</li>
+	<li>Deploying static view files</li>
+	<li>Creating CSS from LESS</li></ul>
+<p>Other benefits:</p>
+<ul><li>A single command (php <code>&lt;your Magento install dir&gt;/bin/magento list</code>) lists all available installation and configuration commands</li>
+<li>Consistent user interface based on Symfony</li>
+<li>The CLI is extensible so third party developers can "plug in" to it<br />
+This has the additional benefit of eliminating users' learning curve</li>
+<li>Commands for disabled modules do not display.</li></ul>
+
+<h3 id="prerequisites">Prerequisites</h3>
+<p>Before you begin, make sure you understand the following:</p>
 
 <ul>
-  <li><a href="/guides/v2.0//contributor-guide/contributing_dod.html">Definition of done</a> in the Contributor Guide.</li>
-  <li><a href="test-module.html">Testing</a></li>
+  <li>All Magento command-line interface (CLI) commands rely on the Magento application and must have access to its context, dependency injections, plug-ins, and so on.</li>
+  <li>All CLI commands should be implemented in the scope of your module and should depend on the module’s status.</li>
+  <li>Your command can use the Object Manager and Magento dependency injection features; for example, it can use <a href="/guides/v2.0/extension-dev-guide/depend-inj.html#dep-inj-preview-cons">constructor dependency injection</a>.</li>
+  <li>
+    <p>You must register your commands as discussed in any of the following sections:</p>
+
+    <ul>
+      <li><a href="#cli-sample">Add CLI commands using dependency injection</a></li>
+      <li><a href="#cli-autoload">Add CLI commands using the Composer autoloader</a></li>
+    </ul>
+  </li>
 </ul>
+
+<h2 id="cli-sample">Add CLI commands using dependency injection</h2>
+<p>The Magento 2 sample modules provide a demonstration of many programming techniques, including adding a CLI command using dependency injection. Look at the <a href="https://github.com/magento/magento2-samples/tree/master/sample-module-command" target="_blank"><code>sample-module-command</code></a> for an example.</p>
+
+<p>Following is a summary of the process:</p>
+
+<ol>
+  <li>
+    <p>Create a Command class (the recommended location is <code>&lt;your component root dir&gt;/Console/Command</code>).</p>
+
+    <p>See <code>app/code/Magento/CommandExample/Console/Command</code> for examples.</p>
+  </li>
+  <li>Declare your Command class in <code>Magento\Framework\Console\CommandList</code> using dependency injection (<code>&lt;your component root dir&gt;/etc/di.xml</code>).</li>
+  <li>
+    <p>Clean the cache and compiled code directories:</p>
+
+    <pre><code>cd &lt;your Magento install dir&gt;/var
+rm -rf cache/* page_cache/* di/* generation/* 
+</code></pre>
+  </li>
+</ol>
+
+<h2 id="cli-autoload">Add CLI commands using the Composer autoloader</h2>
+<p>To be added at a later time.</p>
+
+<h4 id="related-topic">Related topic</h4>
+<p><a href="/guides/v2.0/extension-dev-guide/cli-naming-guidelines.html">Command naming guidelines</a></p>
 
 
 
@@ -422,7 +484,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/validate.html">Validate</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/validate.html">Validate</a></li>
 									
 								
 								
@@ -507,7 +569,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/cli-howto.html">How to add CLI commands</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/extension-dev-guide/cli-howto.html">How to add CLI commands</a></li>
 
 									
 						
