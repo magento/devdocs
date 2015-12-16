@@ -112,52 +112,50 @@ If your payment method requires credit cards information, you might use the Mage
 If your renderer extends the `Magento_Payment/js/view/payment/cc-form` component, then the following methods are additionally available:
 
 <table>
-   <tbody>
-      <tr>
-         <th>Method</th>
-         <th>Description</th>
-      </tr>
-      <tr class="even">
-         <td>getData():object/td>
-         <td> Returns an object with the payment data to be sent to the server on selecting a payment method or an extension (on clicking the Continue button). It must contain data according to <code>\Magento\Quote\Api\Data\PaymentInterface</code>. All the payment information except the method code and purchase order number is passed in the <code>additional_data</code> field. Adds credit card data (type, issue date, number, CVV).</td>
-      </tr>
-      <tr class="odd">
-         <td>getCcAvailableTypes():array</td>
-         <td> Returns the list of available credit card types.</td>
-      </tr>
-      <tr class="even">
-         <td>getIcons()</td>
-         <td>Returns links to picture for available credit card types.</td>
-      </tr>
-      <tr class="odd">
-         <td>getCcMonths()</td>
-         <td> Retrieves the month of the credit card expiration date.</td>
-      </tr>
-      <tr class="even">
-         <td>getCcYears()</td>
-         <td> Retrieves the year of the credit card expiration date.</td>
-      </tr>
-      <tr class="odd">
-         <td>hasVerification():bool</td>
-         <td> A flag that shows if the credit card CVV number is required for this payment. </td>
-      </tr>
-      <tr class="even">
-         <td>hasSsCardType():bool</td>
-         <td>Returns <code>true</code> if the Solo and Switch (Maestro) card types are available.</td>
-      </tr>
-      <tr class="odd">
-         <td>getCvvImageUrl():string</td>
-         <td> Retrieves the CVV tooltip image URL.</td>
-      </tr>
-      <tr class="odd">
-         <td>getCvvImageHtml():string</td>
-         <td> Retrieves the CVV tooltip image HTML.</td>
-      </tr>
-      <tr class="even">
-         <td>getSsStartYears()</td>
-         <td>Solo or Switch (Maestro) card start year.</td>
-      </tr>
-   </tbody>
+   <tr>
+      <th>Method</th>
+      <th>Description</th>
+   </tr>
+   +      <tr class="even">
+ +         <td>getData():object</td>
+ +         <td> Returns an object with the payment data to be sent to the server on selecting a payment method and/or an extension (on pressing Continue button). It must contain data according to <code>\Magento\Quote\Api\Data\PaymentInterface</code>. All the payment information except the method code and purchase order number is passed in the <code>additional_data</code> field. Adds credit card data(type, issue date, number, CVV).</td>
+     </tr>
+   <tr class="odd">
+      <td>getCcAvailableTypes():array</td>
+      <td> Returns the list of available credit card types.</td>
+   </tr>
+   <tr class="even">
+      <td>getIcons()</td>
+      <td>Returns links to picture for available credit card types.</td>
+   </tr>
+   <tr class="odd">
+      <td>getCcMonths()</td>
+      <td> Retrieves the month of the credit card expiration date.</td>
+   </tr>
+   <tr class="even">
+      <td>getCcYears()</td>
+      <td> Retrieves the year of the credit card expiration date.</td>
+   </tr>
+   <tr class="odd">
+      <td>hasVerification():bool</td>
+      <td> A flag that shows if the credit card CVV number is required for this payment. </td>
+   </tr>
+   <tr class="even">
+      <td>hasSsCardType():bool</td>
+      <td>Returns <code>true</code> if the Solo and Switch (Maestro) card types are available.</td>
+   </tr>
+   <tr class="odd">
+      <td>getCvvImageUrl():string</td>
+      <td> Retrieves the CVV tooltip image URL.</td>
+   </tr>
+   <tr class="odd">
+      <td>getCvvImageHtml():string</td>
+      <td> Retrieves the CVV tooltip image HTML.</td>
+   </tr>
+   <tr class="even">
+      <td>getSsStartYears()</td>
+      <td>Solo or Switch (Maestro) card start year.</td>
+   </tr>
 </table>
 
 ### Access the system config data
