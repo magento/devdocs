@@ -13,16 +13,122 @@ github_link: mtf/mtf_entities/mtf_testcase.md
 * TOC
 {:toc}
 
+
+<table>
+  <tbody>
+    <tr>
+      <th>
+        Method
+      </th>
+      <th>
+        Description
+      </th>
+    </tr>
+    <tr class="even">
+      <td>
+        getData():object/td&gt;
+      </td>
+      <td>
+        Returns an object with the payment data to be sent to the
+        server on selecting a payment method or an extension (on
+        clicking the Continue button). It must contain data
+        according to
+        <code>\Magento\Quote\Api\Data\PaymentInterface</code>. All
+        the payment information except the method code and purchase
+        order number is passed in the <code>additional_data</code>
+        field. Adds credit card data (type, issue date, number,
+        CVV).
+      </td>
+    </tr>
+    <tr class="odd">
+      <td>
+        getCcAvailableTypes():array
+      </td>
+      <td>
+        Returns the list of available credit card types.
+      </td>
+    </tr>
+    <tr class="even">
+      <td>
+        getIcons()
+      </td>
+      <td>
+        Returns links to picture for available credit card types.
+      </td>
+    </tr>
+    <tr class="odd">
+      <td>
+        getCcMonths()
+      </td>
+      <td>
+        Retrieves the month of the credit card expiration date.
+      </td>
+    </tr>
+    <tr class="even">
+      <td>
+        getCcYears()
+      </td>
+      <td>
+        Retrieves the year of the credit card expiration date.
+      </td>
+    </tr>
+    <tr class="odd">
+      <td>
+        hasVerification():bool
+      </td>
+      <td>
+        A flag that shows if the credit card CVV number is required
+        for this payment.
+      </td>
+    </tr>
+    <tr class="even">
+      <td>
+        hasSsCardType():bool
+      </td>
+      <td>
+        Returns <code>true</code> if the Solo and Switch (Maestro)
+        card types are available.
+      </td>
+    </tr>
+    <tr class="odd">
+      <td>
+        getCvvImageUrl():string
+      </td>
+      <td>
+        Retrieves the CVV tooltip image URL.
+      </td>
+    </tr>
+    <tr class="odd">
+      <td>
+        getCvvImageHtml():string
+      </td>
+      <td>
+        Retrieves the CVV tooltip image HTML.
+      </td>
+    </tr>
+    <tr class="even">
+      <td>
+        getSsStartYears()
+      </td>
+      <td>
+        Solo or Switch (Maestro) card start year.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
 ## Test case overview {#mtf_testcase_overview}
 
 The Magento Testing Framework supports two types of functional tests:
 
-- Injectable test: the main type of the MTF test, that uses XML [data set][] files as inputs.
-- [Scenario test][]: supports a Magento modularity and enables you to inject one step into another test.
+- Injectable test: the main type of the MTF test, that uses XML [data set][] files as inputs
+- [Scenario test][]: supports a Magento modularity and enables you to inject one step into another test
 
 ## Test case structure {#structure}
 
-A test case class extends the [Mtf\TestCase\Injectable][] class.
+A test case class extends the [Mtf\TestCase\Injectable][] class. It contains one `test()` method and can optionally include `__prepare()`, `__inject()`, and `tearDown()` methods.
 
 ### Docblock {#docblock}
 
@@ -32,7 +138,7 @@ The description consists of the test steps and preconditions. Preconditions are 
 
 ### `__prepare()` (optional) {#prepare-method}
 
-The `__prepare()` method can be useful to prepare unchangeable data that is repeatedly used for different test variations. The most popular use case is to create [fixture][] that is used in the test.
+The `__prepare()` method can be useful to prepare unchangeable data that is repeatedly used for different test variations. The most popular use case is to create [fixture][] or configuration setup that is used in the test.
 
 This method is called once during test launch and is optional to use. `__prepare` can return an array of arguments which then can be used as arguments of the `test()` method and the `processAssert()` method in [constraints][]. The following example creates and returns the `$customer` fixture. 
 
@@ -44,7 +150,7 @@ public function __prepare(Customer $customer)
 }
 {%endhighlight%}
 
-Returned argument `$customer` is available in a test globally and also in [constraints][].
+Returned argument `$customer` is available in the test and in [constraints][].
 
 ### `__inject()` (optional) {#inject-method}
 
@@ -60,7 +166,7 @@ public function __inject(
 }
 {%endhighlight%}
 
- This method is run before the [data set][] variations has been run. Returned arguments from this method are available in [constraints][] and in the test as well.
+ This method is run before each [variation][] has been run. Returned arguments from this method are available in [constraints][] and in the test as well.
 
 ### `test()` (required) {#test-method}
 
@@ -68,14 +174,14 @@ The `test()` method must contain test steps described in a [docblock](#docblock)
 
 In the following example, the test includes preconditions and test steps. Preconditions contain logic of different scenarios of creating a product, depending on the category state. Test steps perform:
 
-- opening of the page creation grid
-- filtering by `sku`
+- opening of the product creation grid page
+- searching by `sku` and opening of the product
 - editing of the founded product
 - saving of the edited product
 
 <script src="https://gist.github.com/dshevtsov/27fae7c912604030e574.js"></script>
 
-Returned array is available for the test case methods and constraints within current variation.
+Returned array is available in constraints within current variation.
 
 ### `tearDown()` (optional) {#teardown-method}
 
@@ -95,7 +201,7 @@ public function tearDown()
 
 ## Test case flow {#flow}
 
-All data required for the test are stored in variations of a data set. A `__prepare()` method is run first to prepare entities needed for a whole test. Arguments returned by `__prepare()` are available during all test including constraints. Further, the method `__inject()` injects data in the test from the `variation 1`. The method `test()` performs all the test steps with the data from the `variation 1`. Then, constraints listed in the `variation 1` are run in the order they are listed. After that, `tearDown()` "cleans the territory" to be ready for the `variation 2`, if it exists in a data set. When a variation fails, the test runs for the next variation in a queue.
+All data required for the test are stored in variations of a data set. A `__prepare()` method is run first to prepare entities needed for a whole test. Arguments returned by `__prepare()` are available during all test including constraints. Further, the method `__inject()` injects data in the test. The method `test()` performs all the test steps with the data from the `variation 1`. Then, constraints listed in the `variation 1` are run in the order they are listed. After that, `tearDown()` "cleans the territory" to be ready for the test next test or variation, if it exists in a data set. When a variation fails, the test runs for the next variation in a queue.
 
 ![Test case flow diagram]({{site.baseurl}}common/images/mtf_test_case_flow.png)
 
@@ -123,7 +229,11 @@ __Step 6.__ Implement all the test steps in the [test()](#test-method) method
 __Step 7.__ If you need to perform any actions after constraints run, use a [tearDown()](#teardown-method) method
 
 
+
+
+
 [data set]: {{site.gdeurl}}mtf/mtf_entities/mtf_dataset.html
+[variation]: {{site.gdeurl}}mtf/mtf_entities/mtf_dataset.html
 [Mtf\TestCase\Injectable]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/TestCase/Injectable.php
 [Scenario test]: {{site.gdeurl}}mtf/mtf_entities/mtf_scenariotest.html
 [processAssert()]:{{site.gdeurl}}mtf/mtf_entities/mtf_constraint.html#mtf_constraint_assert
