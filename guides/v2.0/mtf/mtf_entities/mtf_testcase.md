@@ -13,112 +13,6 @@ github_link: mtf/mtf_entities/mtf_testcase.md
 * TOC
 {:toc}
 
-
-<table>
-  <tbody>
-    <tr>
-      <th>
-        Method
-      </th>
-      <th>
-        Description
-      </th>
-    </tr>
-    <tr class="even">
-      <td>
-        getData():object/td&gt;
-      </td>
-      <td>
-        Returns an object with the payment data to be sent to the
-        server on selecting a payment method or an extension (on
-        clicking the Continue button). It must contain data
-        according to
-        <code>\Magento\Quote\Api\Data\PaymentInterface</code>. All
-        the payment information except the method code and purchase
-        order number is passed in the <code>additional_data</code>
-        field. Adds credit card data (type, issue date, number,
-        CVV).
-      </td>
-    </tr>
-    <tr class="odd">
-      <td>
-        getCcAvailableTypes():array
-      </td>
-      <td>
-        Returns the list of available credit card types.
-      </td>
-    </tr>
-    <tr class="even">
-      <td>
-        getIcons()
-      </td>
-      <td>
-        Returns links to picture for available credit card types.
-      </td>
-    </tr>
-    <tr class="odd">
-      <td>
-        getCcMonths()
-      </td>
-      <td>
-        Retrieves the month of the credit card expiration date.
-      </td>
-    </tr>
-    <tr class="even">
-      <td>
-        getCcYears()
-      </td>
-      <td>
-        Retrieves the year of the credit card expiration date.
-      </td>
-    </tr>
-    <tr class="odd">
-      <td>
-        hasVerification():bool
-      </td>
-      <td>
-        A flag that shows if the credit card CVV number is required
-        for this payment.
-      </td>
-    </tr>
-    <tr class="even">
-      <td>
-        hasSsCardType():bool
-      </td>
-      <td>
-        Returns <code>true</code> if the Solo and Switch (Maestro)
-        card types are available.
-      </td>
-    </tr>
-    <tr class="odd">
-      <td>
-        getCvvImageUrl():string
-      </td>
-      <td>
-        Retrieves the CVV tooltip image URL.
-      </td>
-    </tr>
-    <tr class="odd">
-      <td>
-        getCvvImageHtml():string
-      </td>
-      <td>
-        Retrieves the CVV tooltip image HTML.
-      </td>
-    </tr>
-    <tr class="even">
-      <td>
-        getSsStartYears()
-      </td>
-      <td>
-        Solo or Switch (Maestro) card start year.
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-
-
 ## Test case overview {#mtf_testcase_overview}
 
 The Magento Testing Framework supports two types of functional tests:
@@ -209,7 +103,7 @@ All data required for the test are stored in variations of a data set. A `__prep
 
 __Step 1.__ Create a [data set][]
 
-__Step 2.__ Create a PHP class in the `<magento2>/dev/tests/functional/tests/app/Magento/<module>/TestCase` directory.
+__Step 2.__ Create a PHP class in the `<magento2>/dev/tests/functional/tests/app/Magento/<module>/TestCase` directory
 
 __Step 3.__ Give it a name in the following format:
 
@@ -220,16 +114,13 @@ For example:
 - <span style="color:blue">Create</span><span style="color:red">ConfigurableProduct</span>EntityTest
 - <span style="color:blue">Create</span><span style="color:red">CatalogEvent</span>Entity<span style="color:green">FromCategoryPage</span>Test
 
-__Step 4.__ If you have preconditions, prepare data using a [__prepare()](#prepare-method) method
+__Step 4.__ If you have preconditions, prepare the data using a [__prepare()](#prepare-method) method
 
-__Step 5.__ Inject initial data for the test using a [__inject()](#inject-method) method
+__Step 5.__ Inject the initial data for a test using a [__inject()](#inject-method) method
 
 __Step 6.__ Implement all the test steps in the [test()](#test-method) method
  
 __Step 7.__ If you need to perform any actions after constraints run, use a [tearDown()](#teardown-method) method
-
-
-
 
 
 [data set]: {{site.gdeurl}}mtf/mtf_entities/mtf_dataset.html
