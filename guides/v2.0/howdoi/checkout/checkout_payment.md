@@ -17,12 +17,11 @@ Out of the box, checkout in Magento consists of two steps:
 
 On the Review and Payment Information step the enabled payment methods are rendered. This topic describes how to add your custom payment method to this list.
 
-
-To implement the payment method rendering in checkout, you need to take the following steps:
+To implement a payment method rendering in checkout, you need to take the following steps:
 
 1. [Create the `.js` file implementing the component (payment method renderer).](#create)
 
-2. [Create the .js component registering the payment method renderer.](#register)
+2. [Create the `.js` component registering the payment method renderer.](#register)
 
 3. [Create a template for the payment method renderer.](#template)
 
@@ -31,11 +30,11 @@ To implement the payment method rendering in checkout, you need to take the foll
 All the steps are described further.
 
 ## Create the .js component file {#create}
-As any other customizations, adding a custom payment method requires creating a custom module, and all custom files must be stored there. For your checkout customization to be applied correctly, your custom module should depend on the Magento_Checkout module. Module dependencies are specified in the [module's `composer.json`]({{site.gdeurl}}extension-dev-guide/composer-integration.html).
+Your payment method must be implemented as a UI component. For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should depend on the Magento_Checkout module. Module dependencies are specified in the [module's `composer.json`]({{site.gdeurl}}extension-dev-guide/composer-integration.html).
 
 In you custom module directory create the component's `.js` file (payment method renderer). It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory. For example in the Magento modules, the payment methods renderers are stored in the `<your_module_dir>/view/frontend/web/js/view/payment/method-renderer/` directory.
 
-Usually, your component will extend the default payment method component implemented in the `<Magento_Checkout_module_dir>/view/frontend/web/js/view/payment/default.js` file. The following table contains the list of the `default` component's methods.
+Usually, your component will extend the default payment method component (default payment method renderer) implemented in the `<Magento_Checkout_module_dir>/view/frontend/web/js/view/payment/default.js` file. The following table contains the list of the `default` component's methods.
 
 <table>
    <tbody>
@@ -82,7 +81,7 @@ Usually, your component will extend the default payment method component impleme
 
       <tr class="even">
          <td>disposeSubscriptions()</td>
-         <td>Terminates the object's subscription</td>
+         <td>Terminates the object's subscription.</td>
       </tr>
    </tbody>
 </table>
@@ -107,18 +106,17 @@ define(
 );
 {%endhighlight%}
 
-If your payment method requires credit cards information, you might use the Magento renderer implementing a credit card form: [`<Magento_Payment_module_dir>/view/frontend/web/js/view/payment/cc-form.js`]({{site.gdeurl}}app/code/Magento/Payment/view/frontend/web/js/view/payment/cc-form.js). It also extends the default payment renderer.
+If your payment method requires credit cards information, you might use the Magento renderer implementing a credit card form: [`<Magento_Payment_module_dir>/view/frontend/web/js/view/payment/cc-form.js`]({{site.gdeurl}}app/code/Magento/Payment/view/frontend/web/js/view/payment/cc-form.js). It also extends the default payment renderer, but has the following own methods:
 
-If your renderer extends the `Magento_Payment/js/view/payment/cc-form` component, then the following methods are additionally available:
 
 <table>
    <tr>
       <th>Method</th>
       <th>Description</th>
    </tr>
-   +      <tr class="even">
- +         <td>getData():object</td>
- +         <td> Returns an object with the payment data to be sent to the server on selecting a payment method and/or an extension (on pressing Continue button). It must contain data according to <code>\Magento\Quote\Api\Data\PaymentInterface</code>. All the payment information except the method code and purchase order number is passed in the <code>additional_data</code> field. Adds credit card data(type, issue date, number, CVV).</td>
+         <tr class="even">
+          <td>getData():object</td>
+          <td> Returns an object with the payment data to be sent to the server on selecting a payment method and/or an extension (on pressing Continue button). It must contain data according to <code>\Magento\Quote\Api\Data\PaymentInterface</code>. All the payment information except the method code and purchase order number is passed in the <code>additional_data</code> field. Adds credit card data (type, issue date, number, CVV).</td>
      </tr>
    <tr class="odd">
       <td>getCcAvailableTypes():array</td>
@@ -126,7 +124,7 @@ If your renderer extends the `Magento_Payment/js/view/payment/cc-form` component
    </tr>
    <tr class="even">
       <td>getIcons()</td>
-      <td>Returns links to picture for available credit card types.</td>
+      <td>Returns links to the images for available credit card types.</td>
    </tr>
    <tr class="odd">
       <td>getCcMonths()</td>
@@ -162,25 +160,25 @@ If your renderer extends the `Magento_Payment/js/view/payment/cc-form` component
 Your payment method might need to get data that cannot be defined in layout configuration, JS components or templates directly, for example, data from the Magento system config.
 This configuration is stored in the `window.checkoutConfig` variable that is defined in root checkout template.
 
-In order to get access to the system configuration, your payment method or a group of payment methods has to implement the [`\Magento\Checkout\Model\ConfigProviderInterface`]({{site.mage2000url}}app/code/Magento/Checkout/Model/ConfigProviderInterface.php) interface, and the class implementing it must be injected to the composite config provider via DI frontend configuration. The following code samples illustrates this.
+In order to get access to the system configuration, your payment method or a group of payment methods has to implement the [`\Magento\Checkout\Model\ConfigProviderInterface`]({{site.mage2000url}}app/code/Magento/Checkout/Model/ConfigProviderInterface.php) interface, and the class implementing it must be injected to the composite config provider via DI frontend configuration. The following code samples illustrate this.
 
-A .php class implementing `\Magento\Checkout\Model\ConfigProviderInterface`:
+A sample `.php` class implementing `\Magento\Checkout\Model\ConfigProviderInterface`:
 
-{%highlight php%}
+<pre>
 class MyCustomPaymentConfigProvider implements \Magento\Checkout\Model\ConfigProviderInterface
 {
 ...
     public function getConfig()
     {
         return [
-            // 'key' => 'value' pairs of configuration
+            // 'key' =&gt; 'value' pairs of configuration
         ];
     }
 ...
 }
-{%endhighlight%}
+</pre>
 
-In the DI configuration file of your custom module `<your_module_dir>/etc/di.xml`:
+A sample DI configuration file of a custom module `<your_module_dir>/etc/di.xml`:
 
 {%highlight xml%}
 ...
@@ -197,13 +195,12 @@ In the DI configuration file of your custom module `<your_module_dir>/etc/di.xml
 {%endhighlight%}
 
 ### Add other payment-related features
-You can also add payment-related functionality, like reward points, gift registry, an so on. They must be implemented as UI components as well.
-These additional features can be displayed before or after the list of payment methods. You need to declare them in the [checkout page layout file correspondingly](#layout).
+You can also add payment-related features (like reward points, gift registry, an so on) to the Review and Payment Informatio checkout step. They must be implemented as UI components as well, and can be displayed before or after the list of payment methods. This is configured in the [checkout page layout file correspondingly](#layout).
 
-## Create the .js component that registers the renderer {}
+## Create the .js component that registers the renderer {#register}
 In you custom module directory create the `.js` UI component that registers the payment method renderer in the renderers list. It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory. For example in the Magento modules, the payment methods renderers are stored in the `<your_module_dir>/view/frontend/web/js/view/payment/` directory.
 
-The file content must be  content similar to the following:
+The file content must be similar to the following:
 
 {%highlight js%}
 define(
@@ -232,12 +229,12 @@ define(
 If your module adds several payment methods, you can register all payment methods renderers in one file.
 
 ## Create the template for the payment method component {#template}
-In your custom module directory create a new `<your_module_dir>/view/frontend/web/template/<your_template>.html`. The template can use [Knockout JS](http://knockoutjs.com/) syntax. You can find a sample `.html` template in any module implementing payment methods, for example the Magento_Authorizenet module. The template for rendering the Authorize.Net payment method in checkout is [`<Magento_Authorizenet_module_dir>/view/frontend/web/template/payment/authorizenet-directpost.html`]({{site.mage2000url}}app/code/Magento/Authorizenet/view/frontend/web/template/payment/authorizenet-directpost.html).
+In your custom module directory create a new `<your_module_dir>/view/frontend/web/template/<your_template>.html` file. The template can use [Knockout JS](http://knockoutjs.com/) syntax. You can find a sample `.html` template in any module implementing payment methods, for example the Magento_Authorizenet module. The template for rendering the Authorize.Net payment method in checkout is [`<Magento_Authorizenet_module_dir>/view/frontend/web/template/payment/authorizenet-directpost.html`]({{site.mage2000url}}app/code/Magento/Authorizenet/view/frontend/web/template/payment/authorizenet-directpost.html).
 
 
 ## Declare the payment method in layout {#layout}
 
-In your custom module directory, create the following new file: `<your_module_dir>/view/frontend/layout/checkout_index_index.xml`. In this file, add the following:
+In your custom module directory, create a new `<your_module_dir>/view/frontend/layout/checkout_index_index.xml` file. In this file, add the following:
 
 {%highlight xml%}
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
@@ -260,7 +257,9 @@ In your custom module directory, create the following new file: `<your_module_di
                                                             <item name="component" xsi:type="string">uiComponent</item>
                                                             <item name="displayArea" xsi:type="string">beforeMethods</item>
                                                             <item name="children" xsi:type="array">
-                                                            <!-- merge before payment components -->
+                                                                <item name="%your_feature_name%" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">%path/to/your/feature_js_component%</item>
+                                                                </item>
                                                             </item>
                                                         </item>
                                                         <!-- Declare additional before payment components. END -->
@@ -285,7 +284,9 @@ In your custom module directory, create the following new file: `<your_module_di
                                                             <item name="component" xsi:type="string">uiComponent</item>
                                                             <item name="displayArea" xsi:type="string">afterMethods</item>
                                                             <item name="children" xsi:type="array">
-                                                            <!-- merge additional data after payment methods here -->
+                                                                <item name="%your_feature_name%" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">%path/to/your/feature_js_component%</item>
+                                                                </item>
                                                             </item>
                                                         </item>
                                                         <!-- Declare additional after payment components. END -->
