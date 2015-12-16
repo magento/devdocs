@@ -115,7 +115,7 @@ We recommend the following:
 
 	We refer to this other user as the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#nstall-update-depend-user-over">Magento file system owner</a>.
 
-	Exceptions: `var/di`, `var/generation`, and `var/preprocessed`
+	Exceptions: `var/di`, `var/generation`, and `var/view_preprocessed`
 
 *	The directories and files under `pub/static` should have 770 permissions, which give the owner and the group full control.
 
