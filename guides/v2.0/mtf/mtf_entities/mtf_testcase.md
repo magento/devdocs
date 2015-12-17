@@ -60,17 +60,17 @@ public function __inject(
 }
 {%endhighlight%}
 
- This method is run before each [variation][] has been run. Returned arguments from this method are available in [constraints][] and in the test as well.
+ This method is run before each [variation][] test started. Returned arguments from this method are available in [constraints][] and in the test as well.
 
 ### `test()` (required) {#test-method}
 
-The `test()` method must contain test steps described in a [docblock](#docblock). Returned arguments from this method are available in [constraints][]. This method runs for all variations in a [data set][]. The `test()` method is required.
+The `test()` method must contain test steps described in a [docblock](#docblock). Returned arguments from this method are available in [constraints][]. This method runs for each variation in a [data set][]. The `test()` method is required.
 
 In the following example, the test includes preconditions and test steps. Preconditions contain logic of different scenarios of creating a product, depending on the category state. Test steps perform:
 
 - opening of the product creation grid page
 - searching by `sku` and opening of the product
-- editing of the founded product
+- editing of the found product
 - saving of the edited product
 
 <script src="https://gist.github.com/dshevtsov/27fae7c912604030e574.js"></script>
@@ -95,7 +95,7 @@ public function tearDown()
 
 ## Test case flow {#flow}
 
-All data required for the test are stored in variations of a data set. A `__prepare()` method is run first to prepare entities needed for a whole test. Arguments returned by `__prepare()` are available during all test including constraints. Further, the method `__inject()` injects data in the test. The method `test()` performs all the test steps with the data from the `variation 1`. Then, constraints listed in the `variation 1` are run in the order they are listed. After that, `tearDown()` "cleans the territory" to be ready for the test next test or variation, if it exists in a data set. When a variation fails, the test runs for the next variation in a queue.
+All data required for the test are stored in variations of a data set. A `__prepare()` method is run first to prepare entities needed for a whole test. Arguments returned by `__prepare()` are available during all test including constraints. Further, the method `__inject()` injects data in the test. The method `test()` performs all the test steps with the data from the `variation 1`. Then, constraints listed in the `variation 1` are run in the order they are listed. After that, `tearDown()` "cleans the territory" to be ready for the next test or variation. When a variation fails, the test launches for the next variation in a queue.
 
 ![Test case flow diagram]({{site.baseurl}}common/images/mtf_test_case_flow.png)
 
