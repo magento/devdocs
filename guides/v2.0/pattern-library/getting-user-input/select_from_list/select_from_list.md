@@ -15,7 +15,6 @@ github_link: pattern-library/getting-user-input/select_from_list/select_from_lis
 
 * <a href="#overview">Overview</a>
 * <a href="#whentouse">When to Use</a>
-* <a href="#whennottouse">When Not to Use</a>
 * <a href="#variations">Variations</a>
 * <a href="#accessibility">Accessibility</a>
 * <a href="#assets">Assets</a>
@@ -27,24 +26,15 @@ In Magento Admin, user will often times need to select item(s) from a list of it
 <h3 id="whentouse">When to Use</h3>
 * When user need to select item(s) from a list of items, and each item can be identified simply by one label
 
-
-<h3 id="whennottouse">When Not to Use</h3>
-* Do not use if the list items has more than one attributes needed to be shown. In that case, refer to data table or table light for display of the list.
-
-
 <h3 id="variations">Variations</h3>
 
 <h4>1. Multi-select Dropdown (aka ultra-selector)</h4>
-
-<br>
 
 This variation is good for Multi Selection with many options (10+), when the option does not need to be shown immediately or when space needs to be preserved.
 
 <img src="img/forms_multi-select_formElement2.png">
 
 <h4>2. Single Select Dropdown </h4>
-
-<br>
 
 This variation is good for Single Selection with many options (10+), when the option does not need to be shown immediately or when space needs to be preserved.mmediately or when space needs to be preserved.
 
@@ -53,15 +43,11 @@ This variation is good for Single Selection with many options (10+), when the op
 
 <h4>3. Multi-Select List Box</h4>
 
-<br>
-
 The advantage of a list box is that it exposes more options to the user. The list can be made scroll-able when space is a consideration and/or the list is long. A list box is mandatory when the list of options exceeds 6 items.
 
 <img src="img/listbox-multi.png">
 
 <h4>4. Single Select List Box</h4>
-
-<br>
 
 The advantage of a list box is that it exposes more options to the user. The list can be made scroll-able when space is a consideration and/or the list is long. A list box is mandatory when the list of options exceeds 6 items.
 <img src="img/Listbox-single.png">
