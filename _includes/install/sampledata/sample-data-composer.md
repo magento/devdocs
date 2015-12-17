@@ -9,6 +9,7 @@ Sample data is versioned like Magento components. You can either install the lat
 To enable sample data using Composer:
 
 1.	Log in to the Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+
 2.	Enter the following commands to require the current version of sample data packages:
 
 		composer require magento/<package name>:<version>
