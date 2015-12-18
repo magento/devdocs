@@ -78,13 +78,6 @@ where
 </tbody>
 </table>
 
-<h2 id="config-redis-info">For more information</h2>
-You can find more information about configuring Redis from the following:
-
-*	<a href="http://davidalger.com/development/magento/configuring-magento-2-to-use-redis-cache-backend/" target="_blank">David Alger</a>
-*	<a href="http://www.techytalk.info/configuring-cache-storage-backends-magento-2-redis/" target="_blank">TechyTalk</a>
-<!-- *	<a href="http://info2.magento.com/rs/magentoenterprise/images/MagentoECG-UsingRedisasaCacheBackendinMagento.pdf" target="_blank">Magento Expert Consulting Group (ECG) article <em>written for Magento 1.x</em> -->
-
 #### Related topics
 
  *  <a href="{{ site.gdeurl }}config-guide/config/config-create.html">Create or extend configuration types</a>
