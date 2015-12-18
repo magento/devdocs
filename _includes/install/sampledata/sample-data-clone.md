@@ -110,13 +110,13 @@ To clone the Magento sample data GitHub repository using the HTTPS protocol:
 
     Typically, for Ubuntu, it's `/var/www` and for CentOS it's `/var/www/html`.
 
-3.  Enter <code>git clone</code> and paste the value you obtained from step 1.
+3.  Enter `git clone` and paste the value you obtained from step 1.
 
     The format of the command follows:
 
         git clone [-b 2.0] https://github.com/magento/magento2-sample-data.git
 
-    Use <code>-b 2.0</code> to clone the 2.0 branch; omit it to clone the `develop` branch, which is the default.
+    Use `-b 2.0` to clone the 2.0 branch; omit it to clone the `develop` branch, which is the default.
 
     We recommend you clone the <code>2.0</code> branch because it's more stable; clone `develop` if you're contributing code to Magento 2.
 
@@ -155,7 +155,12 @@ To set file system permissions and ownership on the sample data repository:
 
         find . -type d -exec chmod 770 {} \; && find . -type f -exec chmod 660 {} \;
 
-    If you must enter the commands as <code>sudo</code>, use
+    If you must enter the commands as `sudo`, use
 
         sudo find . -type d -exec chmod 770 {} \; && sudo find . -type f -exec chmod 660 {} \;
     
+#### Next step
+Install the Magento software:
+
+*   <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">Command line</a>
+*   <a href="{{ site.gdeurl }}install-gde/install/web/install-web.html">Setup Wizard</a>
