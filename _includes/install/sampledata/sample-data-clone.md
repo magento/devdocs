@@ -27,137 +27,38 @@ Before you install sample data, make sure you have done the following:
 4.  <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Clone the Magento 2 GitHub repository</a>.
 
 5.  <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Update dependencies</a> by running <code>composer install</code>.
+
 2.  Change to your Magento installation directory.
 
     For example, `/var/www/html/magento2`
 3.  Require the `https://repo.magento.com` repository, which contains the sample data code:
 
-        composer config repositories.magento composer https://repo.magento.com
+        composer config repositories.0 composer https://repo.magento.com
+6.  <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#instgde-prereq-compose-access">Set file system ownership and permissions</a>.
 4.  Continue with the next section.
 
-<h2 id="instgde-prereq-sample-clone">Clone the sample data repository</h2>
-This section discusses how to install Magento sample data by cloning the sample data repository. 
+<h2 id="clone-sample-data-deploy">Install sample data modules</h2>
+To install sample data using the command line, enter the following command as the Magento file system owner:
 
-You can clone the sample data repository in any of the following ways:
+    php <your Magento install dir>/bin/magento sampledata:deploy [module-list]
 
-*   Clone with the <a href="#instgde-prereq-sample-clone-ssh">SSH protocol</a>
-*   Clone with the <a href="#instgde-prereq-compose-clone-https">HTTPS protocol</a>
+where `[module-list]` is an optional space-separated list of <a href="#sample-data-modules">sample data modules</a> to install. Omit this parameter to install all sample data modules.
 
-<h3 id="instgde-prereq-sample-clone-ssh">Clone with SSH</h3>
-To clone the Magento sample data GitHub repository using the SSH protocol:
+### Authentication error
 
-1.  Copy to the clipboard the Magento GitHub repository SSH clone URL.
+The following error might display:
 
-    1.  In a web browser, go to <a href="https://github.com/magento/magento2-sample-data" target="_blank">the Magento sample data repository</a>.
-    2.  On the right side of the page, under the <strong>clone URL</strong> field, click <strong>SSH</strong>.
-    3.  Click **Copy to clipboard**.
+    [Composer\Downloader\TransportException]
+    The 'https://repo.magento.com/packages.json' URL required authentication.
+    You must be using the interactive console to authenticate
 
-        The following figure shows an example.
-        <img src="{{ site.baseurl }}common/images/install_mage2_clone-ssh.png" alt="Clone the Magento GitHub repository using SSH">
+If the error displays, change to your Magento installation directory and run `composer update`, which will prompt you for your <a href="{{ site.gdeurl }}install-gde/prereq/connect-auth.html">authentication keys</a>.
 
-4.  Change to your web server's docroot directory.
+<h3 id="sample-data-modules">Complete list of modules</h3>
 
-    Typically, for Ubuntu, it's `/var/www` and for CentOS it's `/var/www/html`.
+The complete list of sample data modules follows:
 
-    <a href="{{ site.gdeurl }}install-gde/basics/basics_docroot.html">Need help locating the docroot</a>?
-
-5.  Enter <code>git clone</code> and paste the value you obtained from step 1.
-
-    The format of the command follows:
-
-        git clone [-b 2.0] git@github.com:magento/magento2-sample-data.git
-
-    Use `-b 2.0` to clone the 2.0 branch; omit it to clone the `develop` branch, which is the default.
-
-    We recommend you clone the `2.0` branch because it's more stable; clone `develop` if you're contributing code to Magento 2.
-
-    Remember to clone the *same branch* of sample data as Magento 2 code. Use the `git branch` command in the Magento 2 clone directory to display which branch you have.
-
-    An example follows: 
-
-        git clone -b 2.0 git@github.com:magento/magento2-sample-data.git
-
-6.  Wait for the repository to clone on your server.
-
-    <div class="bs-callout bs-callout-info" id="info">
-        <p>If the following error displays, make sure you <a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank">shared your SSH key</a> with GitHub: </p>
-            <pre>Cloning into 'magento2'...
-Permission denied (publickey).
-fatal: The remote end hung up unexpectedly</pre>
-    </div>
-7.  Change to the `<your Magento sample data clone dir>/dev/tools` directory.
-8.  Enter the following command:
-    
-        php -f build-sample-data.php -- --ce-source="&lt;your Magento CE install dir>"
-
-9.  Wait for the command to complete.
-10. See <a href="#instgde-prereq-compose-clone-perms">Set file system permissions and ownership</a>.
-
-<h3 id="instgde-prereq-compose-clone-https">Clone with HTTPS</h3>
-To clone the Magento sample data GitHub repository using the HTTPS protocol:
-
-1.  Copy to the clipboard the Magento sample data repository HTTPS clone URL.
-
-    1.  In a web browser, go to <a href="https://github.com/magento/magento2-sample-data" target="_blank">the Magento sample data repository</a>.
-    2.  On the right side of the page, under the <strong>clone URL</strong> field, click <strong>HTTPS</strong>.
-    3.  Click <strong>Copy to clipboard</strong>.
-
-    The following figure shows an example.
-
-    <img src="{{ site.baseurl }}common/images/install_mage2_clone-https.png" alt="Clone the Magento GitHub repository using HTTPS">
-
-2.  Change to your web server's docroot directory.
-
-    Typically, for Ubuntu, it's `/var/www` and for CentOS it's `/var/www/html`.
-
-3.  Enter `git clone` and paste the value you obtained from step 1.
-
-    The format of the command follows:
-
-        git clone [-b 2.0] https://github.com/magento/magento2-sample-data.git
-
-    Use `-b 2.0` to clone the 2.0 branch; omit it to clone the `develop` branch, which is the default.
-
-    We recommend you clone the <code>2.0</code> branch because it's more stable; clone `develop` if you're contributing code to Magento 2.
-
-    Remember to clone the <em>same branch</em> of sample data as Magento 2 code. Use the `git branch` command in the Magento 2 clone directory to display which branch you have.
-
-    An example follows:
-
-        git clone -b 2.0 https://github.com/magento/magento2-sample-data.git
-4.  Wait for the repository to clone on your server.
-5.  Change to the <code>&lt;your Magento sample data clone dir>/dev/tools</code> directory.
-6.  Enter the following command:
-
-        php -f build-sample-data.php -- --ce-source="&lt;your Magento CE install dir>"
-
-7.  Wait for the command to complete.
-8.  See the next section.
-
-<h3 id="instgde-prereq-compose-clone-perms">Set file system permissions and ownership</h3>
-Because the <code>php build-sample-data.php</code> script creates symlinks between the sample data repository and your Magento 2 repository, you must set file system permissions and ownership in the sample data repository. Failure to do so will result in errors accessing the storefront.
-
-To set file system permissions and ownership on the sample data repository:
-
-1.  Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
-2.  Change to your sample data clone directory.
-3.  Set ownership:
-    
-        chown -R :<your web server group name> .
-
-    Typical examples:
-
-    CentOS: `chown -R :apache .`
-
-    Ubuntu: `chown -R :www-data .`
-
-4.  Set permissions:
-
-        find . -type d -exec chmod 770 {} \; && find . -type f -exec chmod 660 {} \;
-
-    If you must enter the commands as `sudo`, use
-
-        sudo find . -type d -exec chmod 770 {} \; && sudo find . -type f -exec chmod 660 {} \;
+{% include install/sampledata/sample-data_list-of-modules.md %}
     
 #### Next step
 Install the Magento software:

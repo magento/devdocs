@@ -7,6 +7,7 @@ menu_title: (Integrator) Get the Composer metapackage
 menu_order: 1
 menu_node: parent
 github_link: install-gde/prereq/integrator_install.md
+redirect_from: /guides/v2.0/install-gde/install/file-system-perms.html
 ---
 
 <div class="bs-callout bs-callout-tip">
