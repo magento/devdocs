@@ -34,7 +34,6 @@ Before you install sample data, make sure you have done the following:
 3.  Require the `https://repo.magento.com` repository, which contains the sample data code:
 
         composer config repositories.0 composer https://repo.magento.com
-6.  <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#instgde-prereq-compose-access">Set file system ownership and permissions</a>.
 4.  Continue with the next section.
 
 <h2 id="clone-sample-data-deploy">Install sample data modules</h2>
@@ -59,6 +58,9 @@ If the error displays, change to your Magento installation directory and run `co
 The complete list of sample data modules follows:
 
 {% include install/sampledata/sample-data_list-of-modules.md %}
+
+<h2 id="clone-file-perms">Set file system ownership and permissions</h2>
+Change to your Magento installation directory and <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#instgde-prereq-compose-access">set file system ownership and permissions</a>.
     
 #### Next step
 Install the Magento software:
