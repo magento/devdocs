@@ -1,7 +1,7 @@
 <div markdown="1">
 
 <h2 id="sample-clone">Install sample data by cloning repositories</h2>
-This topic discusses how to get the Magento sample data by cloning the Magento GitHub repository and the sample data repository. This method is intended only for contributing developers (that is, developers who plan to contribute to the Magento 2 codebase).
+This topic discusses how to get the Magento sample data if you cloned the Magento GitHub repository. This method is intended only for contributing developers (that is, developers who plan to contribute to the Magento 2 codebase).
 
 If you're not a contributing developer, choose one of the other options displayed in the table of contents on the left side of the page.
 
@@ -60,7 +60,7 @@ The complete list of sample data modules follows:
 {% include install/sampledata/sample-data_list-of-modules.md %}
 
 <h2 id="clone-file-perms">Set file system ownership and permissions</h2>
-Change to your Magento installation directory and <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#instgde-prereq-compose-access">set file system ownership and permissions</a>.
+After installing sample data, change to your Magento installation directory and <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#instgde-prereq-compose-access">set file system ownership and permissions</a>.
     
 #### Next step
 Install the Magento software:
