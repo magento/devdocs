@@ -187,7 +187,6 @@ For example:
 	<Directory /var/www/>
 		Options Indexes FollowSymLinks MultiViews
 		AllowOverride <value from Apache site>
-		Order allow,deny
 		Require all granted
 	</Directory>
 
