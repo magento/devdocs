@@ -47,7 +47,7 @@ To update `composer.json`:
 
 7.	Enter the following command to reference Magento repo in `composer.json`:
 
-		composer config repositories.magento composer http://repo.magento.com
+		composer config repositories.magento composer https://repo.magento.com
 
 8.	Enter the following command to require the current version of the package:
 
