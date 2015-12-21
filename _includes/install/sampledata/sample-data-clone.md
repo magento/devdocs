@@ -10,6 +10,12 @@ If you're not a contributing developer, choose one of the other options displaye
     <p>We recommend you use the <code>2.0</code> branch because it's more stable. If you're contributing code to the Magento 2 repository and you need the most recent code, use the <code>develop</code> branch.</p>
 </div>
 
+See the following sections:
+
+*	<a href="#sample-prereq">Sample data prerequisites</a>
+*	<a href="#clone-sample-data-deploy">Install sample data modules</a>
+*	<a href="#clone-file-perms">Set file system ownership and permissions</a>
+
 <h2 id="sample-prereq">Sample data prerequisites</h2>
 Before you install sample data, you must update Magento's `composer.json` to get components from `https://repo.magento.com`.
 
@@ -50,7 +56,7 @@ The complete list of sample data modules follows:
 {% include install/sampledata/sample-data_list-of-modules.md %}
 
 <h2 id="clone-file-perms">Set file system ownership and permissions</h2>
-After installing sample data, change to your Magento installation directory and <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#instgde-prereq-compose-access">set file system ownership and permissions</a>.
+{% include install/file-system-perms2-how.md %}
     
 #### Next step
 Install the Magento software:
