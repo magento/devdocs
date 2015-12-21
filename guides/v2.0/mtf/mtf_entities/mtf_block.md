@@ -15,7 +15,7 @@ github_link: mtf/mtf_entities/mtf_block.md
 
 ## Block overview {#mtf_block_overview}
 
-In functional tests we use Page Object Design Pattern. Under this pattern, a block is an area of the UI that a test interact with, and a [page]({{site.gdeurl}}mtf/mtf_entities/mtf_page.html) is a container for blocks.
+In functional tests we use Page Object Design Pattern. Under this pattern, a block is an area of the UI that a test interacts with, and a [page]({{site.gdeurl}}mtf/mtf_entities/mtf_page.html) is a container for blocks.
 
 The Page Object Design Pattern is used to avoid unnecessary duplication of code and to make tests easier to support.
 
