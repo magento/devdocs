@@ -17,8 +17,10 @@ github_link: mtf/mtf_entities/mtf_testcase.md
 
 The Magento Testing Framework supports two types of functional tests:
 
-- Injectable test: the main type of the MTF test, that uses XML [data set][] files as inputs
+- Injectable test: the main type of the MTF test that uses XML [data set][] files as inputs
 - [Scenario test][]: supports a Magento modularity and enables you to inject one step into another test
+
+This topic discusses the injectable test only. 
 
 ## Test case structure {#structure}
 
@@ -26,15 +28,14 @@ A test case class extends the [Mtf\TestCase\Injectable][] class. It contains one
 
 ### Docblock {#docblock}
 
-All out-of-the-box test cases contain description of a test flow at the beginning of a code. That is a good practice. See [Magento\Catalog\Test\TestCase\Product\UpdateSimpleProductEntityTest][] class as an example.
-
-The description consists of the test steps and preconditions. Preconditions are the conditions that need to be done before steps.
+All out-of-the-box test cases contain description of a test flow at the beginning of a code. The description consists of the test steps and preconditions. Preconditions are the conditions to be performed before steps execution.
+Usage of docblock is a good practice for your new tests. See [Magento\Catalog\Test\TestCase\Product\UpdateSimpleProductEntityTest][] class as an example.
 
 ### `__prepare()` (optional) {#prepare-method}
 
-The `__prepare()` method can be useful to prepare unchangeable data that is repeatedly used for different test variations. The most popular use case is to create [fixture][] or configuration setup that is used in the test.
+The `__prepare()` method can be useful to prepare the unchangeable data that is repeatedly used for different test variations. The most popular use case is to create a [fixture][] or a configuration setup that is used in the test.
 
-This method is called once during test launch and is optional to use. `__prepare` can return an array of arguments which then can be used as arguments of the `test()` method and the `processAssert()` method in [constraints][]. The following example creates and returns the `$customer` fixture. 
+This method is called one time only during the test launch and is optional to use. `__prepare` can return an array of arguments which can be used as arguments in the `test()` method of a test case and the `processAssert()` method in [constraints][]. The following example creates and returns the `$customer` fixture. 
 
 {%highlight php startinline=1%}
 public function __prepare(Customer $customer)
@@ -44,11 +45,11 @@ public function __prepare(Customer $customer)
 }
 {%endhighlight%}
 
-Returned argument `$customer` is available in the test and in [constraints][].
+A returned argument `$customer` is available in the test and in [constraints][].
 
 ### `__inject()` (optional) {#inject-method}
 
-The `__inject()` method is used to inject data in a test (usually pages initialization as in the following example).
+The `__inject()` method is used to inject data in a test (usually to initialize a page). For an example:
 
 {%highlight php startinline=1%}
 public function __inject(
@@ -64,24 +65,24 @@ public function __inject(
 
 ### `test()` (required) {#test-method}
 
-The `test()` method must contain test steps described in a [docblock](#docblock). Returned arguments from this method are available in [constraints][]. This method runs for each variation in a [data set][]. The `test()` method is required.
+The `test()` method must contain the test steps described in a [docblock](#docblock). The returned arguments from this method are available in [constraints][]. This method is run for each variation in a [data set][]. The `test()` method is required.
 
-In the following example, the test includes preconditions and test steps. Preconditions contain logic of different scenarios of creating a product, depending on the category state. Test steps perform:
+In the following example, the test includes preconditions and test steps. Preconditions contain a logic of different scenarios about creating a product (depending on the category state). Test steps are the following:
 
 - opening of the product creation grid page
-- searching by `sku` and opening of the product
+- searching by the `sku` parameter and opening of the product
 - editing of the found product
 - saving of the edited product
 
 <script src="https://gist.github.com/dshevtsov/27fae7c912604030e574.js"></script>
 
-Returned array is available in constraints within current variation.
+A returned array is available in constraints within current variation.
 
 ### `tearDown()` (optional) {#teardown-method}
 
-After [constraints][] of the variation have been performed, you can use the `tearDown()` method to get back the testing application to the initial state, to be ready for the next variation execution (for example, logging out, clearing data, clearing cache).
+When [constraints][] of the variation have been performed, you can use the `tearDown()` method to get back the testing application to the initial state to be ready for the next variation execution (for example, logging out, clearing data, clearing cache).
 
-For example, the following code deletes sales rule after each variation:
+For example, the following code deletes a sales rule after each variation:
 
 {%highlight php startinline=1%}
 public function tearDown()
@@ -95,7 +96,7 @@ public function tearDown()
 
 ## Test case flow {#flow}
 
-All data required for the test are stored in variations of a data set. A `__prepare()` method is run first to prepare entities needed for a whole test. Arguments returned by `__prepare()` are available during all test including constraints. Further, the method `__inject()` injects data in the test. The method `test()` performs all the test steps with the data from the `variation 1`. Then, constraints listed in the `variation 1` are run in the order they are listed. After that, `tearDown()` "cleans the territory" to be ready for the next test or variation. When a variation fails, the test launches for the next variation in a queue.
+All data required for the test are stored in variations of a data set. A `__prepare()` method is run first to prepare entities needed for a whole test. Arguments returned by a `__prepare()` method are available during all test including constraints. Further, the `__inject()` method injects data in the test. The `test()` method performs all the test steps using the data from the `variation 1`. Then, constraints listed in the `variation 1` are run in the order they are listed. After that, the `tearDown()` method "cleans up" to be ready for the next test or variation. When a variation fails, the test launches for the next variation in a queue.
 
 ![Test case flow diagram]({{site.baseurl}}common/images/mtf_test_case_flow.png)
 
@@ -105,7 +106,7 @@ __Step 1.__ Create a [data set][]
 
 __Step 2.__ Create a PHP class in the `<magento2>/dev/tests/functional/tests/app/Magento/<module>/TestCase` directory
 
-__Step 3.__ Give it a name in the following format:
+__Step 3.__ Give it a name using the following format:
 
 <b><span style="color:blue">{action}</span><span style="color:red">{entityName}</span>Entity<span style="color:green">{additional_description_if_needed}</span>Test</b>
 
@@ -118,9 +119,9 @@ __Step 4.__ If you have preconditions, prepare the data using a [__prepare()](#p
 
 __Step 5.__ Inject the initial data for a test using a [__inject()](#inject-method) method
 
-__Step 6.__ Implement all the test steps in the [test()](#test-method) method
+__Step 6.__ Declare all the test steps in the [test()](#test-method) method
  
-__Step 7.__ If you need to perform any actions after constraints run, use a [tearDown()](#teardown-method) method
+__Step 7.__ If you want to perform any actions after constraints, use a [tearDown()](#teardown-method) method
 
 
 [data set]: {{site.gdeurl}}mtf/mtf_entities/mtf_dataset.html
