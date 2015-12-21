@@ -11,17 +11,7 @@ If you're not a contributing developer, choose one of the other options displaye
 </div>
 
 <h2 id="sample-prereq">Sample data prerequisites</h2>
-Before you install sample data, make sure you have done the following:
-
-1.  Decide which branch of the code to use:
-
-    *  `2.0`, which is more stable (we recommend this branch unless you're contributing code to the Magento 2 project)
-    *   `develop`, which is more recent
-    
-    <div class="bs-callout bs-callout-warning">
-        <p>You must clone the <em>same branch</em> of both Magento 2 and sample data repositories. If you cloned the <code>2.0</code> branch of the Magento 2 repository, you must clone the <code>2.0</code> branch of the sample data repository.</p>
-        <p>Use the <code>git branch</code> command in the Magento 2 clone directory to display which branch you have.</p>
-    </div>
+Before you install sample data, you must update Magento's `composer.json` to get components from `https://repo.magento.com`.
 
 1.  Log in to the Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
 4.  <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Clone the Magento 2 GitHub repository</a>.
