@@ -29,7 +29,7 @@ Following is a sample configuration to add to `<your Magento install dir>app/etc
              'password' => '',
              'timeout' => '2.5',
              'persistent_identifier' => '',
-             'db' => '0',
+             'database' => '0',
              'compression_threshold' => '2048',
              'compression_library' => 'gzip',
              'log_level' => '1',
@@ -81,7 +81,7 @@ where
 	<td>empty</td>
 </tr>
 <tr>
-	<td>db</td>
+	<td>database</td>
 	<td>Unique Redis database number, which is recommended to protect against data loss.</td>
 	<td>0</td>
 </tr>
@@ -100,11 +100,14 @@ where
 	<td>log_level</td>
 	<td><p>Set to any of the following, listed in order from least verbose to most verbose:</p>
 		<ul><li><code>0</code> (emergency: only the most severe errors)</li>
+			<li><code>1</code> (alert: immediate action required)</li>
+			<li><code>2</code> (critical: application component unavailable)</li>
+			<li><code>3</code> (error: runtime errors, not critical but must be monitored)</li>
 			<li><code>4</code> (warning: additional information, recommended)</li>
 			<li><code>5</code> (notice: normal but significant condition)</li>
 			<li><code>6</code> (info: informational messages)</li>
 			<li><code>7</code> (debug: the most information for development or testing only)</li></ul></td>
-	<td>TBD</td>
+	<td>1</td>
 </tr>
 <tr>
 	<td>max_concurrency</td>
