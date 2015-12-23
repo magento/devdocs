@@ -1,11 +1,13 @@
 ---
 layout: default
-group: get-started
-subgroup: A_Concepts
-title: Create an integration temp
+group: howdoi
+subgroup: Integration
+title: Create an integration
 menu_title: Create an integration
-menu_order: 9
-github_link: get-started/integrations.md
+menu_node: parent
+menu_order: 1
+github_link: howdoi/webapi/integration.md
+
 ---
 
 
@@ -17,11 +19,12 @@ Before you begin creating a module, make sure that you have a working installati
 
 To create an integration, follow these general steps:
 
-1. Create a module with the minimal structure and configuration.
-2. Add files specific to the integration.
-3. Install the module.
+1. [Create a module with the minimal structure and configuration.](#skeletal)
+2. [Add files specific to the integration.](#files)
+3. [Install the module.](#install)
+4. [Check the integration.](#check)
 
-<h2>Create a skeletal module</h2>
+<h2 id="skeletal">Create a skeletal module</h2>
 
 Magento expects that a component's files be locatedTo develop a module, you must:
 
@@ -137,7 +140,7 @@ Change directories to your `setup` directory. Create a file `InstallData.php` th
     }
     </pre>
 
-<h2>Create integration files</h2>
+<h2 id="files">Create integration files</h2>
 Magento provides the Integration module, which simplifies the process of defining your integration. This module automatically performs functions such as:
 
 * Managing the third-party account that connects to Magento.
@@ -208,11 +211,11 @@ Your module can optionally provide a configuration file so that the integration 
 <th>Description</th>
 </tr>
 <tr>
-<td><code>integrations</code></td>
+<td>integrations</td>
 <td>Contains one or more integration definitions.</td>
 </tr>
 <tr>
-<td><code>integration name=""</code></td>
+<td>integration name=""</td>
 <td>Defines an integration. The <code>name</code> must be specified.</td>
 </tr>
 <tr>
@@ -233,16 +236,17 @@ Use the following steps to install your module:
 
 1. Change directories to the `var` directory and remove its contents.
 
-  `cd <magento_install_dir>/`
-  `rm -rf var/*`
+      <pre>
+  cd <magento_install_dir>/
+  rm -rf var/* </pre>
 
 2. Run the following command to update the Magento database schema and data.
 
-  `bin/magento setup:upgrade`
+    <code>bin/magento setup:upgrade</code>
 
 3. Run the following command to generate the new code.
 
-  `bin/magento setup:di:compile-multi-tenant`
+    <code>bin/magento setup:di:compile-multi-tenant</code>
 
 <h2 id="check">Check your integration</h2>
 Log in to Magento and navigate to **Settings > Extensions > Integrations**. The integration should be displayed in the grid.
