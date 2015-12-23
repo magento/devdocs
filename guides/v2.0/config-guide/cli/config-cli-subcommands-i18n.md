@@ -72,7 +72,7 @@ The following table discusses the meanings of this command's parameters and valu
 	</tr>
 	<tr>
 		<td><p>-m|--magento</p></td>
-		<td><p>If used, indicates the path you specified is the Magento installation root. This option adds themes or modules to each line in the dictionary. <em>Required to create a language package</em>.</p>
+		<td><p>If used, searches the Magento codebase. This option adds themes or modules to each line in the dictionary. <em>Required to create a language package</em>.</p>
 			<p>A sample follows:</p>
 			<p><pre>"No Items Found","No Items Found",module,Magento_Wishlist</pre></p></td>
 			<td><p>No</p></td>
@@ -116,12 +116,9 @@ Use the following guidelines when translating words and phrases:
 
 To create a language package, you must perform the tasks discussed in the following sections:
 
-1.	<a href="#file-struct-comp-lang">Create the language package file structure</a>.
 1.	<a href="#config-cli-subcommands-xlate-dict">Translate words and phrases</a>.
 2.	<a href="#config-cli-subcommands-xlate-pack-cmd">Run the language package command</a>.
 2.	<a href="#config-cli-subcommands-xlate-pack-meta">Add meta information to the language package</a>.
-
-{% include php-dev/lang-pack-file-struct.md %}
 
 <h3 id="config-cli-subcommands-xlate-pack-cmd">Run the language package command</h3>
 Command usage:
@@ -148,11 +145,6 @@ The following table discusses the meanings of this command's parameters and valu
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td><p>&lt;pack></p></td>
-		<td><p>Absolute file system path to the output directory. Files written to that directory replace existing files. All necessary nested directories are created automatically. </p></td>
-			<td><p>Yes</p></td>
-</tr>
-<tr>
 		<td><p>&lt;locale></p></td>
 		<td><p><a href="http://www.iso.org/iso/home/standards/language_codes.htm" target="_blank">ISO 639-1</a> (language) and <a href="http://www.iso.org/iso/country_codes.htm" target="_blank">ISO 3166</a> (country) identifier of language used as file name for all resulting .csv files. Examples: <code>de_DE</code>, <code>pt_PT</code>, <code>pt_BR</code>. </p>
 		</td>
