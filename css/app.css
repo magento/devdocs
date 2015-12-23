@@ -2821,6 +2821,14 @@ pre span {
     white-space: nowrap
 }
 
+pre code.language-php span.sd {
+    white-space: pre
+}
+
+pre code.language-xml span.c {
+    white-space: pre
+}
+
 .main-container {
     padding-top: 0;
     padding-bottom: 60px
