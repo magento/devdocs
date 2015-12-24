@@ -46,11 +46,11 @@ A root class for a typified element is the [`\Magento\Mtf\Client\Element\SimpleE
 | UI element | MTF class | Notes|
 |---|---|---|
 | `<input type="checkbox" />`  |[`/Magento/Mtf/Client/Element/CheckboxElement.php`][]| Extends [SimpleElement][]  |
-| `<select multiple>`  |[`/Magento/Mtf/Client/Element/MultiselectElement.php`][]| Extends [SelectElement][]  |
+| `<select multiple />`  |[`/Magento/Mtf/Client/Element/MultiselectElement.php`][]| Extends [SelectElement][]  |
 |`<input type="radio" />` |[`/Magento/Mtf/Client/Element/RadiobuttonElement.php`][]| Extends [SimpleElement][] |
-| `<select>`  |[`/Magento/Mtf/Client/Element/SelectElement.php`][]| Extends [SimpleElement][] |
-| `<select multiple>`  |[`/Magento/Mtf/Client/Element/StrictmultiselectElement.php`][]| Extends [MultiselectElement][]. `setValue()` sets the exact value, as opposed to [MultiselectElement][]. | 	
-| `<select>` |[`/Magento/Mtf/Client/Element/StrictselectElement.php`][]| Extends [SelectElement][]. `setValue()` sets the exact value, as opposed to [SelectElement][]. |
+| `<select />`  |[`/Magento/Mtf/Client/Element/SelectElement.php`][]| Extends [SimpleElement][] |
+| `<select multiple />`  |[`/Magento/Mtf/Client/Element/StrictmultiselectElement.php`][]| Extends [MultiselectElement][]. `setValue()` sets the exact value, as opposed to [MultiselectElement][]. | 	
+| `<select />` |[`/Magento/Mtf/Client/Element/StrictselectElement.php`][]| Extends [SelectElement][]. `setValue()` sets the exact value, as opposed to [SelectElement][]. |
 
 #### Magento typified elements {#magento_class}
 
@@ -58,21 +58,21 @@ Magento typified elements are the web elements specific to the Magento applicati
 
 | UI element | MTF class | Notes|
 |---|---|---|
-|   | [`/Magento/Mtf/Client/Element/ConditionsElement.php`][]| Extends [SimpleElement][] |
-|  | [`/Magento/Mtf/Client/Element/DatepickerElement.php`][]   | Extends [SimpleElement][]   |
-|  | [`/Magento/Mtf/Client/Element/DropdownmultiselectElement.php`][]   | Extends [MultiselectElement][]   |
-|  | [`/Magento/Mtf/Client/Element/GlobalsearchElement.php`][]   | Extends [SimpleElement][]   |
-|  | [`/Magento/Mtf/Client/Element/JquerytreeElement.php`][]   | Extends [Tree][]   |
-|  | [`/Magento/Mtf/Client/Element/LiselectstoreElement.php`][]   | Extends [SimpleElement][]   |
-|  | [`/Magento/Mtf/Client/Element/MultiselectgrouplistElement.php`][]   | Extends [MultiselectElement][]   |
-|  | [`/Magento/Mtf/Client/Element/MultiselectlistElement.php`][]   | Extends [MultiselectElement][]   |
-|  | [`/Magento/Mtf/Client/Element/MultisuggestElement.php`][]   | Extends [SuggestElement][]   |
-|  | [`/Magento/Mtf/Client/Element/OptgroupselectElement.php`][]   | Extends [SelectElement][]   |
-|  | [`/Magento/Mtf/Client/Element/SelectstoreElement.php`][]   | Extends [SelectElement][]   |
-|  | [`/Magento/Mtf/Client/Element/SimplifiedselectElement.php`][]   | Extends [SelectElement][]   |
-|  | [`/Magento/Mtf/Client/Element/SuggestElement.php`][]   | Extends [SimpleElement][]   |
-|  | [`/Magento/Mtf/Client/Element/Tree.php`][]   | Extends [SimpleElement][]   |
-|  | [`/Magento/Mtf/Client/Element/TreeElement.php`][]   | Extends [Tree][]   |
+| `<div class="rule-tree" />`  | [`/Magento/Mtf/Client/Element/ConditionsElement.php`][]| Extends [SimpleElement][] |
+| `<div id="ui-datepicker-div" />` | [`/Magento/Mtf/Client/Element/DatepickerElement.php`][]   | Extends [SimpleElement][]   |
+| `<div class="action-select admin__action-multiselect" />` | [`/Magento/Mtf/Client/Element/DropdownmultiselectElement.php`][]   | Extends [MultiselectElement][]   |
+| `<div class="search-global" />` | [`/Magento/Mtf/Client/Element/GlobalsearchElement.php`][]   | Extends [SimpleElement][]   |
+| `<div class="tree x-tree jstree" />` | [`/Magento/Mtf/Client/Element/JquerytreeElement.php`][]   | Extends [Tree][]   |
+| `<div class="store-switcher />` | [`/Magento/Mtf/Client/Element/LiselectstoreElement.php`][]   | Extends [SimpleElement][]   |
+| `<select class="admin__control-multiselect">` &nbsp;&nbsp;&nbsp;&nbsp;`<option />` <br/> &nbsp;&nbsp;&nbsp;&nbsp;`<optgroup />` <br/>  `</select>` | [`/Magento/Mtf/Client/Element/MultiselectgrouplistElement.php`][]   | Extends [MultiselectElement][]. Contains `option` and `optgroup` inside.   |
+| `<section class="block mselect-list" />` | [`/Magento/Mtf/Client/Element/MultiselectlistElement.php`][]   | Extends [MultiselectElement][]   |
+| `<div class="mage-suggest" />` | [`/Magento/Mtf/Client/Element/MultisuggestElement.php`][]   | Extends [SuggestElement][]. Allows multiple selection.   |
+| `<select>`   <br/>  &nbsp;&nbsp;&nbsp;&nbsp;`<optgroup />` <br/> &nbsp;&nbsp;&nbsp;&nbsp;`<optgroup />` <br/>  `</select>` | [`/Magento/Mtf/Client/Element/OptgroupselectElement.php`][]   | Extends [SelectElement][]. Contains `optgroup` inside as option elements.|
+| `<select>` <br/>  &nbsp;&nbsp;&nbsp;&nbsp;`<option />` <br/> &nbsp;&nbsp;&nbsp;&nbsp;`<optgroup />` <br/>  `</select>` | [`/Magento/Mtf/Client/Element/SelectstoreElement.php`][]   | Extends [SelectElement][]. Contains `option` and `optgroup` inside.  |
+| `<select class="admin__control-select" />`  <br/>  &nbsp;&nbsp;&nbsp;&nbsp;`<option data-title/>` <br/> &nbsp;&nbsp;&nbsp;&nbsp;`<optgroup />` <br/> `</select>`| [`/Magento/Mtf/Client/Element/SimplifiedselectElement.php`][]   | Extends [SelectElement][]. Contains `option` and `optgroup` inside. Option has `data-title` attribute. |
+| `<div class="mage-suggest" />` | [`/Magento/Mtf/Client/Element/SuggestElement.php`][]   | Extends [SimpleElement][]   |
+| Not available | [`/Magento/Mtf/Client/Element/Tree.php`][]   | Abstract class  |
+| `<div class="tree x-tree" />` | [`/Magento/Mtf/Client/Element/TreeElement.php`][]   | Extends [Tree][]   |
 
 ## Mapping {#mapping}
 
