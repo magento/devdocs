@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: D_Entities
+subgroup: 50_Entities
 title: Entities of the Magento Testing Framework
 menu_title: Constraint
 menu_order: 7

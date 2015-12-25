@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: U_Update
+subgroup: 60_Update
 title: Update the Magento Testing Framework
 menu_title: UPDATE
 menu_order: 4
