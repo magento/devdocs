@@ -215,20 +215,20 @@
 		<h2 id="migrate-command-settings">Migrating settings</h2>
 <p>You should migrate settings first. This mode migrates stores; websites; and different system configuration like shipping, payment, some tax settings etc. </p>
 
-<p>To change how settings are migrated:</p>
+<p>If necessary, here is how to change how settings are migrated:</p>
 
 <ol>
   <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
   <li>
     <p>Change to the following directory:</p>
 
-    <pre><code>`&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc/&lt;migration edition&gt;/&lt;ce or version&gt;
+    <pre><code>`&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc
 </code></pre>
   </li>
   <li>
     <p>Enter the following command to create <code>settings.xml</code> from the provided sample:</p>
 
-    <pre><code>cp sample.xml.dist sample.xml
+    <pre><code>cp settings.xml.dist settings.xml
 </code></pre>
   </li>
   <li>Make your changes in <code>settings.xml</code>.</li>
