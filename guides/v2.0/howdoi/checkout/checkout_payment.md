@@ -164,7 +164,7 @@ In order to get access to the system configuration, your payment method or a gro
 
 A sample `.php` class implementing `\Magento\Checkout\Model\ConfigProviderInterface`:
 
-<pre>
+{%highlight php startinline=1%}
 class MyCustomPaymentConfigProvider implements \Magento\Checkout\Model\ConfigProviderInterface
 {
 ...
@@ -176,7 +176,7 @@ class MyCustomPaymentConfigProvider implements \Magento\Checkout\Model\ConfigPro
     }
 ...
 }
-</pre>
+{% endhighlight %}
 
 A sample DI configuration file of a custom module `<your_module_dir>/etc/di.xml`:
 
