@@ -262,7 +262,7 @@ $options = [
 ];
 $client->setOptions($options);
 
-$response = $this->client->send($request);
+$response = $client->send($request);
 </pre>
 <li><p>This request returns a list of all customers in JSON format. You can also specify XML format by changing <code>Accept</code> header of the request.</p></li>
 </ol>

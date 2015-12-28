@@ -19,7 +19,7 @@ To develop your component, use the following steps:
 4.	<a href="{{ site.gdeurl }}mktpl-quickstart/dev-test.html">Validate your component</a>
 4.	Upload the components to the Magento Marketplace.
 
-	See the <a href="http://docs.magento.com/marketplace/getting-started.html" target="_blank">Magento Marketplace User Guide</a> for details.
+	See the <a href="http://docs.magento.com/marketplace/user_guide/getting-started.html" target="_blank">Magento Marketplace User Guide</a> for details.
 
 <div class="bs-callout bs-callout-warning">
     <p>The Magento Marketplace is not generally available at this time. </p>
