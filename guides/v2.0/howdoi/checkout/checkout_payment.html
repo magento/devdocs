@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Add a payment method rendering to the checkout</title>
+	<title>Add a custom payment method to checkout</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
@@ -200,7 +200,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Add a payment method rendering to the checkout</h1>
+		<h1 class="page-heading">Add a custom payment method to checkout</h1>
 			
 			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/howdoi/checkout/checkout_payment.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -214,7 +214,7 @@
 		
 		<h2> What's in this topic </h2>
 
-<p>Out of the box, checkout in Magento consists of two steps:</p>
+<p>Out of the box, Magento checkout consists of two steps:</p>
 
 <ul>
   <li>Shipping Information</li>
@@ -373,19 +373,17 @@ This configuration is stored in the <code>window.checkoutConfig</code> variable 
 
 <p>A sample <code>.php</code> class implementing <code>\Magento\Checkout\Model\ConfigProviderInterface</code>:</p>
 
-<pre>
-class MyCustomPaymentConfigProvider implements \Magento\Checkout\Model\ConfigProviderInterface
-{
-...
-    public function getConfig()
-    {
-        return [
-            // 'key' =&gt; 'value' pairs of configuration
-        ];
-    }
-...
-}
-</pre>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">MyCustomPaymentConfigProvider</span> <span class="k">implements</span> <span class="nx">\Magento\Checkout\Model\ConfigProviderInterface</span>
+<span class="p">{</span>
+<span class="o">...</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getConfig</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="c1">// &#39;key&#39; =&amp;gt; &#39;value&#39; pairs of configuration</span>
+        <span class="p">];</span>
+    <span class="p">}</span>
+<span class="o">...</span>
+<span class="p">}</span></code></pre></div>
 
 <p>A sample DI configuration file of a custom module <code>&lt;your_module_dir&gt;/etc/di.xml</code>:</p>
 
@@ -933,7 +931,7 @@ class MyCustomPaymentConfigProvider implements \Magento\Checkout\Model\ConfigPro
 
 									
 							
-									<li class="level-2  active "><a href="/guides/v2.0/howdoi/checkout/checkout_payment.html">Add a payment method rendering to the checkout</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/howdoi/checkout/checkout_payment.html">Add a custom payment method to checkout</a></li>
 
 									
 						
