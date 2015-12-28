@@ -2,15 +2,15 @@
 layout: default
 group: howdoi
 subgroup: checkout
-title: Add a payment method rendering to the checkout
-menu_title: Add a payment method rendering to the checkout
+title: Add a custom payment method to checkout
+menu_title: Add a custom payment method to checkout
 menu_order: 3
 github_link: howdoi/checkout/checkout_payment.md
 ---
 
 <h2> What's in this topic </h2>
 
-Out of the box, checkout in Magento consists of two steps:
+Out of the box, Magento checkout consists of two steps:
 
  - Shipping Information
  - Review and Payment Information
