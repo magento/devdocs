@@ -17,7 +17,7 @@ github_link: mtf/mtf_entities/mtf_typified-element.md
 
 A typified element is an element of the GUI (Select, Multiselect etc). Magento has custom typified elements with a special logic, for example: Customized Select, Suggest Dropdown, Store View Selector. Typified elements are often used as elements of a form or a grid.
 
-The MTF enables you to test any typified element.
+Magento Testing Framework (MTF) enables you to test any typified element.
 
 ![A typified element example in the browser]
 
@@ -32,15 +32,20 @@ This topic discusses how to create classes for a typified element and to use the
 A typified element class in the MTF contains methods to be used in the test to manipulate typified elements in the Magento application. You can extend a [basic class](#basic_class) or a [Magento class](#magento_class) to cover your typified element.
 
 <div class="bs-callout bs-callout-tip">
-  <p>The most important methods are <code>setValue()</code> and <code>getValue()</code>. These methods are required when you work with the form.</p>
+  <p>The most important methods are <code>setValue()</code> and <code>getValue()</code>. These methods are required when you work with a form.</p>
 </div>
 
 ### Classes and relations with UI {#classes}
 
+There are two types of typified elements: default typified elements and Magneto custom typified elements.
+ 
+ * Default typified elements are the web elements that are typically used in a web application
+  
+ * Magento custom typified elements are the web elements that are specific to the Magento application
+
 #### Default typified elements {#basic_class}
 
-Basic typified
- elements are the web elements typically used in a web application. They are stored in the `<magento2>/dev/tests/functional/vendor/magento/mtf/Magento/Mtf/Client/Element` directory.
+Default typified elements are stored in the `<magento2>/dev/tests/functional/vendor/magento/mtf/Magento/Mtf/Client/Element` directory.
 
 A root class for a typified element is the [`\Magento\Mtf\Client\Element\SimpleElement`][] class. This class implements [`ElementInterface`][] which contains methods such as `click()`, `doubleClick()`, `isVisible()`, `setValue()`, `getValue()`, `getText()`, `find()`, `dragAndDrop()`, `getElements()` etc.
 
@@ -53,9 +58,9 @@ A root class for a typified element is the [`\Magento\Mtf\Client\Element\SimpleE
 | `<select multiple />`  |[`\Magento\Mtf\Client\Element\StrictmultiselectElement`][]| Extends [MultiselectElement][]. `setValue()` sets the exact value, as opposed to [MultiselectElement][]. | 	
 | `<select />` |[`\Magento\Mtf\Client\Element\StrictselectElement`][]| Extends [SelectElement][]. `setValue()` sets the exact value, as opposed to [SelectElement][]. |
 
-#### Magento typified elements {#magento_class}
+#### Magento custom typified elements {#magento_class}
 
-Magento typified elements are the web elements specific to the Magento application. They are stored in the `<magento2>/dev/tests/functional/lib/Magento/Mtf/Client/Element` directory.
+Magento custom typified elements are stored in the `<magento2>/dev/tests/functional/lib/Magento/Mtf/Client/Element` directory.
 
 | UI element | MTF class | Notes|
 |---|---|---|
@@ -65,25 +70,67 @@ Magento typified elements are the web elements specific to the Magento applicati
 | `<div class="search-global" />` | [`\Magento\Mtf\Client\Element\GlobalsearchElement`][]   | Extends [SimpleElement][]   |
 | `<div class="tree x-tree jstree" />` | [`\Magento\Mtf\Client\Element\JquerytreeElement`][]   | Extends [Tree][]   |
 | `<div class="store-switcher />` | [`\Magento\Mtf\Client\Element\LiselectstoreElement`][]   | Extends [SimpleElement][]   |
-| `<select class="admin__control-multiselect">` &nbsp;&nbsp;&nbsp;&nbsp;`<option />` <br/> &nbsp;&nbsp;&nbsp;&nbsp;`<optgroup />` <br/>  `</select>` | [`\Magento\Mtf\Client\Element\MultiselectgrouplistElement`][]   | Extends [MultiselectElement][]. Contains `option` and `optgroup` inside.   |
+| `<select class="admin__control-multiselect">` &nbsp;&nbsp;&nbsp;&nbsp;`<option />` <br/> &nbsp;&nbsp;&nbsp;&nbsp;`<optgroup />` <br/>  `</select>` | [`\Magento\Mtf\Client\Element\MultiselectgrouplistElement`][]   | Extends [MultiselectElement][]. Contains `option` and `optgroup` elements.   |
 | `<section class="block mselect-list" />` | [`\Magento\Mtf\Client\Element\MultiselectlistElement`][]   | Extends [MultiselectElement][]   |
 | `<div class="mage-suggest" />` | [`\Magento\Mtf\Client\Element\MultisuggestElement`][]   | Extends [SuggestElement][]. Allows multiple selection.   |
-| `<select>`   <br/>  &nbsp;&nbsp;&nbsp;&nbsp;`<optgroup />` <br/> &nbsp;&nbsp;&nbsp;&nbsp;`<optgroup />` <br/>  `</select>` | [`\Magento\Mtf\Client\Element\OptgroupselectElement`][]   | Extends [SelectElement][]. Contains `optgroup` inside as option elements.|
-| `<select>` <br/>  &nbsp;&nbsp;&nbsp;&nbsp;`<option />` <br/> &nbsp;&nbsp;&nbsp;&nbsp;`<optgroup />` <br/>  `</select>` | [`\Magento\Mtf\Client\Element\SelectstoreElement`][]   | Extends [SelectElement][]. Contains `option` and `optgroup` inside.  |
-| `<select class="admin__control-select">`  <br/> &nbsp;&nbsp;&nbsp;&nbsp;`<optgroup>` <br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`<option data-title/>` <br/> &nbsp;&nbsp;&nbsp;&nbsp;`</optgroup>` <br/> `</select>`| [`\Magento\Mtf\Client\Element\SimplifiedselectElement`][]   | Extends [SelectElement][]. Contains `option` and `optgroup` inside. Option has `data-title` attribute. |
+| `<select>`   <br/>  &nbsp;&nbsp;&nbsp;&nbsp;`<optgroup />` <br/> &nbsp;&nbsp;&nbsp;&nbsp;`<optgroup />` <br/>  `</select>` | [`\Magento\Mtf\Client\Element\OptgroupselectElement`][]   | Extends [SelectElement][]. Contains `optgroup` elements.|
+| `<select>` <br/>  &nbsp;&nbsp;&nbsp;&nbsp;`<option />` <br/> &nbsp;&nbsp;&nbsp;&nbsp;`<optgroup />` <br/>  `</select>` | [`\Magento\Mtf\Client\Element\SelectstoreElement`][]   | Extends [SelectElement][]. Contains `option` and `optgroup` elements.  |
+| `<select class="admin__control-select">`  <br/> &nbsp;&nbsp;&nbsp;&nbsp;`<optgroup>` <br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`<option data-title/>` <br/> &nbsp;&nbsp;&nbsp;&nbsp;`</optgroup>` <br/> `</select>`| [`\Magento\Mtf\Client\Element\SimplifiedselectElement`][]   | Extends [SelectElement][]. Contains `option` and `optgroup` elements. `option` has a `data-title` attribute. |
 | `<div class="mage-suggest" />` | [`\Magento\Mtf\Client\Element\SuggestElement`][]   | Extends [SimpleElement][]   |
 | Not available | [`\Magento\Mtf\Client\Element\Tree`][]   | Abstract class  |
 | `<div class="tree x-tree" />` | [`\Magento\Mtf\Client\Element\TreeElement`][]   | Extends [Tree][]   |
 
 ## How to create a class for the typified element {#create}
 
-__Step 1.__ Create a PHP class in the `<magento2>/dev/tests/functional/lib/Magento/Mtf/Client/Element` directory.
+__Step 1.__ Create a PHP class in the `<magento2>/dev/tests/functional/lib/Magento/Mtf/Client/Element` directory
  
- It must be named according to the following naming convention. Two capital letters in the name: the first letter and a capital `E` in the `Element.php`. For example: `MultiselectgrouplistElement.php`.
+ It must be named according to the following naming convention. Two capital letters in the name: the first letter and a capital `E` in the `Element.php`. For example: `OptgroupselectElement.php`.
  
-__Step 2.__ Extend your class from the [default element](#basic_class) or the [Magento element](#magento_class) class
+{%highlight php %}
+ 
+ <?php
+
+ namespace Magento\Mtf\Client\Element;
+ /**
+  * Typified element class for option group selectors.
+  */
+ class OptgroupselectElement
+ {
+    //
+ }
+  {%endhighlight %}
+ 
+__Step 2.__ Extend your class from the [default element](#basic_class) or the [Magento custom element](#magento_class) class
+
+{%highlight php startinline=1%} 
+class OptgroupselectElement extends SelectElement
+{%endhighlight %}
 
 __Step 3.__ Redefine methods of the extended class according to your goals
+
+{%highlight php startinline=1%}
+/**
+ * Option group locator
+ *
+ * @var string
+ */
+protected $optionGroupValue = ".//optgroup[@label = '%s']/option[text() = '%s']";
+
+/**
+ * Select value in dropdown that has option groups
+ *
+ * @param string $value
+ * @return void
+ */
+public function setValue($value)
+{
+    $this->eventManager->dispatchEvent(['set_value'], [__METHOD__, $this->getAbsoluteSelector()]);
+    list($group, $option) = explode('/', $value);
+    $xpath = sprintf($this->optionGroupValue, $group, $option);
+    $option = $this->find($xpath, Locator::SELECTOR_XPATH);
+    $option->click();
+}
+{%endhighlight %}
 
 ## How to use {#use}
 
@@ -92,7 +139,7 @@ Use a `find()` method to find an element. This method is declared in the [Simple
 
 {%highlight php startinline=1%}
 /**
- * Find element by locator in context of current element
+ * Find element using locator in context of current element
  *
  * @param string $selector
  * @param string $strategy [optional]
@@ -109,7 +156,7 @@ The following code is an example of the `find()` method usage from the [\Magento
 
 {%highlight php startinline=1%}
 /**
- * Check category in category tree.
+ * Check category in category tree
  *
  * @param Category $category
  * @return bool
