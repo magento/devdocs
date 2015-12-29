@@ -81,7 +81,7 @@ Context:	server, location, if
 ```
 Sets a ```value``` for the specified ```variable```. The value can contain text, variables, and their combination.
 
-See the <a href="https://github.com/magento/magento2/blob/develop/nginx.conf.sample#L16" target="_blank">nginx sample configuration</a> on GitHub.
+See the <a href="{{ site.mage2000url }}nginx.conf.sample#L16" target="_blank">nginx sample configuration</a> on GitHub.
 
 <h3 id="mode-specify-web-htaccess">Specify a variable using .htaccess (Apache only)</h3>
 One way to set the Magento mode is by editing `.htaccess`. This way, you don't have to change Apache settings.
