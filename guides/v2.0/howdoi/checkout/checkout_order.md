@@ -2,25 +2,31 @@
 layout: default
 group: howdoi
 subgroup: checkout
-title: Customize the view of a checkout step
-menu_title: Customize the view of a checkout step
+title: Additional validations before order placement
+menu_title: Additional validations before order placement
 menu_order: 4
 github_link: howdoi/checkout/checkout_order.md
 ---
 <h2>What's in this topic</h2>
 
-This topic describes how to add custom validations performed before the order is placed during checkout. Namely, the valiations which are performed after a shopper clicks the **Place Order** button. Writing the validator istself is not covered in this topic.
+This topic describes how to add custom validations performed before the order is placed during checkout. Namely, the valiations which are performed after a shopper clicks the **Place Order** button. Writing the validation logic itself is not covered in this topic.
 
-* TOC
-{:toc}
+## Overview
+To add custom validations before the order placement action, you must do the following:
 
-## Create the validator
+1. [Create the validator](#validator).
+2. [Add validator to the pool](#pool).
+3. [Declare the validation in the checkout layout](#layout).
 
-In your custom module directory, create a .js file implementing the validator. It should be located under `<your_module_dir>/js/view/` 
-<p class="q">not sure about the path</p>
+## Create the validator {#validator}
 
-The following is a sample of the valdiation .js file:
-<p class="q">What is the value of this sample?</p>
+For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should depend on the Magento_Checkout module. (Module dependencies are specified in the [module's `composer.json`]({{site.gdeurl}}extension-dev-guide/composer-integration.html)).
+For your checkout customization to be applied correctly, your custom module should depend on the Magento_Checkout module.
+
+In your custom module directory, create a `.js` file implementing the validator. It should be located under `<your_module_dir>/view/frontend/web/js/model` directory.
+
+Following is a sample of the valdiator `.js` file. It must necessarily implement the `validate()` method:
+
 {%highlight js%}
 define(
     [],
@@ -41,9 +47,26 @@ define(
 );
 {%endhighlight%}
 
-For your checkout customization to be applied correctly, your custom module should depend on the Magento_Checkout module.
+## Add validator to the pool {#pool}
 
-## Declare the validator in the checkout layout
+Your custom validator must be added to the pool of "additional validators". To do this, in the `<your_module_dir>/view/frontend/web/js` create a new `<your-validation>.js` file with the following content:
+
+{%highlight js%}
+define(
+    [
+        'uiComponent',
+        'Magento_Checkout/js/model/payment/additional-validators',
+        '<your_module>/js/model/your-validator'
+    ],
+    function (Component, additionalValidators, yourValidator) {
+        'use strict';
+        additionalValidators.registerValidator(yourValidator);
+        return Component.extend({});
+    }
+);
+{%endhighlight%}
+
+## Declare the validation in the checkout layout {#layout}
 
 In your custom module directory, create the following new file: `<your_module_dir>/view/frontend/layout/checkout_index_index.xml`. 
 In this file, add the following:
@@ -64,9 +87,11 @@ In this file, add the following:
                                             <item name="children" xsi:type="array">
                                                 <item name="additional-payment-validators" xsi:type="array">
                                                     <item name="children" xsi:type="array">
-                                                        <item name="module-validator" xsi:type="array">
-                                                            <item name="component" xsi:type="string">%your_module_dir%/js/view/%your_validator%</item>
+                                                        <!-- Declare your validation. START -->
+                                                        <item name="your-validator" xsi:type="array">
+                                                            <item name="component" xsi:type="string">%your_module_dir%/js/view/%your-validation%</item>
                                                         </item>
+                                                        <!-- Declare your validation. END -->
                                                     </item>
                                                 </item>
                                             </item>
@@ -84,5 +109,3 @@ In this file, add the following:
     </body>
 </page>
 {%endhighlight%}
-
-<p class="q">Is it all the required content?</p>
