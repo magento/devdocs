@@ -212,11 +212,312 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="mtf_typified-element_overview">Typified element overview</h2>
+		<h2>Typified element</h2>
 
-<p>A typified element is some customized, specific part of the UI that requires special logic — such as Customized Select, Suggest Dropdown, Store View Selector, and so on.</p>
+<ul id="markdown-toc">
+  <li><a href="#mtf_typified-element_overview">Overview</a></li>
+  <li><a href="#structure">Structure</a>    <ul>
+      <li><a href="#general">General</a></li>
+      <li><a href="#classes">Classes and relations with UI</a>        <ul>
+          <li><a href="#basic_class">Default typified elements</a></li>
+          <li><a href="#magento_class">Magento custom typified elements</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#create">How to create a class for the typified element</a></li>
+  <li><a href="#use">How to use</a>    <ul>
+      <li><a href="#mapping">Mapping</a></li>
+    </ul>
+  </li>
+</ul>
 
-<p>This topic will discuss how to create required classes for a typified element. Also you will learn how to use typified element.</p>
+<h2 id="mtf_typified-element_overview">Overview</h2>
+
+<p>A typified element is an element of the GUI (Select, Multiselect etc). Magento has custom typified elements with a special logic, for example: Customized Select, Suggest Dropdown, Store View Selector. Typified elements are often used as elements of a form or a grid.</p>
+
+<p>Magento Testing Framework (<abbr title="Magento Testing Framework">MTF</abbr>) enables you to test any typified element.</p>
+
+<p><img src="/common/images/mtf_typ_element_brows.png" alt="A typified element example in the browser" /></p>
+
+<p>This example shows the <code>optgroup</code> typified element. You can use the <a href="https://github.com/magento/magento2/tree/2.0.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/OptgroupselectElement.php"><code>\Magento\Mtf\Client\Element\OptgroupselectElement</code></a> class to test it.</p>
+
+<p>This topic discusses how to create classes for a typified element and to use them in tests.</p>
+
+<h2 id="structure">Structure</h2>
+
+<h3 id="general">General</h3>
+
+<p>A typified element class in the <abbr title="Magento Testing Framework">MTF</abbr> contains methods to be used in the test to manipulate typified elements in the Magento application. You can extend a <a href="#basic_class">basic class</a> or a <a href="#magento_class">Magento class</a> to cover your typified element.</p>
+
+<div class="bs-callout bs-callout-tip">
+  <p>The most important methods are <code>setValue()</code> and <code>getValue()</code>. These methods are required when you work with a form.</p>
+</div>
+
+<h3 id="classes">Classes and relations with UI</h3>
+
+<p>There are two types of typified elements: default typified elements and Magneto custom typified elements.</p>
+
+<ul>
+  <li>
+    <p>Default typified elements are the web elements that are typically used in a web application</p>
+  </li>
+  <li>
+    <p>Magento custom typified elements are the web elements that are specific to the Magento application</p>
+  </li>
+</ul>
+
+<h4 id="basic_class">Default typified elements</h4>
+
+<p>Default typified elements are stored in the <code>&lt;magento2&gt;/dev/tests/functional/vendor/magento/mtf/Magento/Mtf/Client/Element</code> directory.</p>
+
+<p>A root class for a typified element is the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SimpleElement.php"><code>\Magento\Mtf\Client\Element\SimpleElement</code></a> class. This class implements <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/ElementInterface.php"><code>ElementInterface</code></a> which contains methods such as <code>click()</code>, <code>doubleClick()</code>, <code>isVisible()</code>, <code>setValue()</code>, <code>getValue()</code>, <code>getText()</code>, <code>find()</code>, <code>dragAndDrop()</code>, <code>getElements()</code> etc.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>UI element</th>
+      <th><abbr title="Magento Testing Framework">MTF</abbr> class</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>&lt;input type="checkbox" /&gt;</code></td>
+      <td><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/CheckboxElement.php"><code>\Magento\Mtf\Client\Element\CheckboxElement</code></a></td>
+      <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SimpleElement.php">SimpleElement</a></td>
+    </tr>
+    <tr>
+      <td><code>&lt;select multiple /&gt;</code></td>
+      <td><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/MultiselectElement.php"><code>\Magento\Mtf\Client\Element\MultiselectElement</code></a></td>
+      <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SelectElement.php">SelectElement</a></td>
+    </tr>
+    <tr>
+      <td><code>&lt;input type="radio" /&gt;</code></td>
+      <td><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/RadiobuttonElement.php"><code>\Magento\Mtf\Client\Element\RadiobuttonElement</code></a></td>
+      <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SimpleElement.php">SimpleElement</a></td>
+    </tr>
+    <tr>
+      <td><code>&lt;select /&gt;</code></td>
+      <td><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SelectElement.php"><code>\Magento\Mtf\Client\Element\SelectElement</code></a></td>
+      <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SimpleElement.php">SimpleElement</a></td>
+    </tr>
+    <tr>
+      <td><code>&lt;select multiple /&gt;</code></td>
+      <td><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/StrictmultiselectElement.php"><code>\Magento\Mtf\Client\Element\StrictmultiselectElement</code></a></td>
+      <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/MultiselectElement.php">MultiselectElement</a>. <code>setValue()</code> sets the exact value, as opposed to <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/MultiselectElement.php">MultiselectElement</a>.</td>
+    </tr>
+    <tr>
+      <td><code>&lt;select /&gt;</code></td>
+      <td><a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/StrictselectElement.php"><code>\Magento\Mtf\Client\Element\StrictselectElement</code></a></td>
+      <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SelectElement.php">SelectElement</a>. <code>setValue()</code> sets the exact value, as opposed to <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SelectElement.php">SelectElement</a>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="magento_class">Magento custom typified elements</h4>
+
+<p>Magento custom typified elements are stored in the <code>&lt;magento2&gt;/dev/tests/functional/lib/Magento/Mtf/Client/Element</code> directory.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>UI element</th>
+      <th><abbr title="Magento Testing Framework">MTF</abbr> class</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>&lt;div class="rule-tree" /&gt;</code></td>
+      <td><a href="https://github.com/magento/magento2/tree/2.0.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/ConditionsElement.php"><code>\Magento\Mtf\Client\Element\ConditionsElement</code></a></td>
+      <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SimpleElement.php">SimpleElement</a></td>
+    </tr>
+    <tr>
+      <td><code>&lt;div id="ui-datepicker-div" /&gt;</code></td>
+      <td><a href="https://github.com/magento/magento2/tree/2.0.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/DatepickerElement.php"><code>\Magento\Mtf\Client\Element\DatepickerElement</code></a></td>
+      <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SimpleElement.php">SimpleElement</a></td>
+    </tr>
+    <tr>
+      <td><code>&lt;div class="action-select admin__action-multiselect" /&gt;</code></td>
+      <td><a href="https://github.com/magento/magento2/tree/2.0.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/DropdownmultiselectElement.php"><code>\Magento\Mtf\Client\Element\DropdownmultiselectElement</code></a></td>
+      <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/MultiselectElement.php">MultiselectElement</a></td>
+    </tr>
+    <tr>
+      <td><code>&lt;div class="search-global" /&gt;</code></td>
+      <td><a href="https://github.com/magento/magento2/tree/2.0.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/GlobalsearchElement.php"><code>\Magento\Mtf\Client\Element\GlobalsearchElement</code></a></td>
+      <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SimpleElement.php">SimpleElement</a></td>
+    </tr>
+    <tr>
+      <td><code>&lt;div class="tree x-tree jstree" /&gt;</code></td>
+      <td><a href="https://github.com/magento/magento2/tree/2.0.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/JquerytreeElement.php"><code>\Magento\Mtf\Client\Element\JquerytreeElement</code></a></td>
+      <td>Extends <a href="https://github.com/magento/magento2/tree/2.0.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/Tree.php">Tree</a></td>
+    </tr>
+    <tr>
+      <td><code>&lt;div class="store-switcher /&gt;</code></td>
+      <td><a href="https://github.com/magento/magento2/tree/2.0.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/LiselectstoreElement.php"><code>\Magento\Mtf\Client\Element\LiselectstoreElement</code></a></td>
+      <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SimpleElement.php">SimpleElement</a></td>
+    </tr>
+    <tr>
+      <td><code>&lt;select class="admin__control-multiselect"&gt;</code>     <code>&lt;option /&gt;</code> <br />     <code>&lt;optgroup /&gt;</code> <br />  <code>&lt;/select&gt;</code></td>
+      <td><a href="https://github.com/magento/magento2/tree/2.0.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/MultiselectgrouplistElement.php"><code>\Magento\Mtf\Client\Element\MultiselectgrouplistElement</code></a></td>
+      <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/MultiselectElement.php">MultiselectElement</a>. Contains <code>option</code> and <code>optgroup</code> elements.</td>
+    </tr>
+    <tr>
+      <td><code>&lt;section class="block mselect-list" /&gt;</code></td>
+      <td><a href="https://github.com/magento/magento2/tree/2.0.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/MultiselectlistElement.php"><code>\Magento\Mtf\Client\Element\MultiselectlistElement</code></a></td>
+      <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/MultiselectElement.php">MultiselectElement</a></td>
+    </tr>
+    <tr>
+      <td><code>&lt;div class="mage-suggest" /&gt;</code></td>
+      <td><a href="https://github.com/magento/magento2/tree/2.0.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/MultisuggestElement.php"><code>\Magento\Mtf\Client\Element\MultisuggestElement</code></a></td>
+      <td>Extends <a href="https://github.com/magento/magento2/tree/2.0.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/SuggestElement.php">SuggestElement</a>. Allows multiple selection.</td>
+    </tr>
+    <tr>
+      <td><code>&lt;select&gt;</code>   <br />      <code>&lt;optgroup /&gt;</code> <br />     <code>&lt;optgroup /&gt;</code> <br />  <code>&lt;/select&gt;</code></td>
+      <td><a href="https://github.com/magento/magento2/tree/2.0.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/OptgroupselectElement.php"><code>\Magento\Mtf\Client\Element\OptgroupselectElement</code></a></td>
+      <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SelectElement.php">SelectElement</a>. Contains <code>optgroup</code> elements.</td>
+    </tr>
+    <tr>
+      <td><code>&lt;select&gt;</code> <br />      <code>&lt;option /&gt;</code> <br />     <code>&lt;optgroup /&gt;</code> <br />  <code>&lt;/select&gt;</code></td>
+      <td><a href="https://github.com/magento/magento2/tree/2.0.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/SelectstoreElement.php"><code>\Magento\Mtf\Client\Element\SelectstoreElement</code></a></td>
+      <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SelectElement.php">SelectElement</a>. Contains <code>option</code> and <code>optgroup</code> elements.</td>
+    </tr>
+    <tr>
+      <td><code>&lt;select class="admin__control-select"&gt;</code>  <br />     <code>&lt;optgroup&gt;</code> <br />         <code>&lt;option data-title/&gt;</code> <br />     <code>&lt;/optgroup&gt;</code> <br /> <code>&lt;/select&gt;</code></td>
+      <td><a href="https://github.com/magento/magento2/tree/2.0.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/SimplifiedselectElement.php"><code>\Magento\Mtf\Client\Element\SimplifiedselectElement</code></a></td>
+      <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SelectElement.php">SelectElement</a>. Contains <code>option</code> and <code>optgroup</code> elements. <code>option</code> has a <code>data-title</code> attribute.</td>
+    </tr>
+    <tr>
+      <td><code>&lt;div class="mage-suggest" /&gt;</code></td>
+      <td><a href="https://github.com/magento/magento2/tree/2.0.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/SuggestElement.php"><code>\Magento\Mtf\Client\Element\SuggestElement</code></a></td>
+      <td>Extends <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SimpleElement.php">SimpleElement</a></td>
+    </tr>
+    <tr>
+      <td>Not available</td>
+      <td><a href="https://github.com/magento/magento2/tree/2.0.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/Tree.php"><code>\Magento\Mtf\Client\Element\Tree</code></a></td>
+      <td>Abstract class</td>
+    </tr>
+    <tr>
+      <td><code>&lt;div class="tree x-tree" /&gt;</code></td>
+      <td><a href="https://github.com/magento/magento2/tree/2.0.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/TreeElement.php"><code>\Magento\Mtf\Client\Element\TreeElement</code></a></td>
+      <td>Extends <a href="https://github.com/magento/magento2/tree/2.0.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/Tree.php">Tree</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="create">How to create a class for the typified element</h2>
+
+<p><strong>Step 1.</strong> Create a PHP class in the <code>&lt;magento2&gt;/dev/tests/functional/lib/Magento/Mtf/Client/Element</code> directory</p>
+
+<p>It must be named according to the following naming convention. Two capital letters in the name: the first letter and a capital <code>E</code> in the <code>Element.php</code>. For example: <code>OptgroupselectElement.php</code>.</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+ <span class="k">namespace</span> <span class="nx">Magento\Mtf\Client\Element</span><span class="p">;</span>
+ <span class="sd">/**</span>
+<span class="sd">  * Typified element class for option group selectors.</span>
+<span class="sd">  */</span>
+ <span class="k">class</span> <span class="nc">OptgroupselectElement</span>
+ <span class="p">{</span>
+    <span class="c1">//</span>
+ <span class="p">}</span></code></pre></div>
+
+<p><strong>Step 2.</strong> Extend your class from the <a href="#basic_class">default element</a> or the <a href="#magento_class">Magento custom element</a> class</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">OptgroupselectElement</span> <span class="k">extends</span> <span class="nx">SelectElement</span></code></pre></div>
+
+<p><strong>Step 3.</strong> Redefine methods of the extended class according to your goals</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<span class="sd"> * Option group locator</span>
+<span class="sd"> *</span>
+<span class="sd"> * @var string</span>
+<span class="sd"> */</span>
+<span class="k">protected</span> <span class="nv">$optionGroupValue</span> <span class="o">=</span> <span class="s2">&quot;.//optgroup[@label = &#39;%s&#39;]/option[text() = &#39;%s&#39;]&quot;</span><span class="p">;</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * Select value in dropdown that has option groups</span>
+<span class="sd"> *</span>
+<span class="sd"> * @param string $value</span>
+<span class="sd"> * @return void</span>
+<span class="sd"> */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">setValue</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eventManager</span><span class="o">-&gt;</span><span class="na">dispatchEvent</span><span class="p">([</span><span class="s1">&#39;set_value&#39;</span><span class="p">],</span> <span class="p">[</span><span class="nx">__METHOD__</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getAbsoluteSelector</span><span class="p">()]);</span>
+    <span class="k">list</span><span class="p">(</span><span class="nv">$group</span><span class="p">,</span> <span class="nv">$option</span><span class="p">)</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="nv">$value</span><span class="p">);</span>
+    <span class="nv">$xpath</span> <span class="o">=</span> <span class="nb">sprintf</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">optionGroupValue</span><span class="p">,</span> <span class="nv">$group</span><span class="p">,</span> <span class="nv">$option</span><span class="p">);</span>
+    <span class="nv">$option</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$xpath</span><span class="p">,</span> <span class="nx">Locator</span><span class="o">::</span><span class="na">SELECTOR_XPATH</span><span class="p">);</span>
+    <span class="nv">$option</span><span class="o">-&gt;</span><span class="na">click</span><span class="p">();</span>
+<span class="p">}</span></code></pre></div>
+
+<h2 id="use">How to use</h2>
+
+<p>Typified elements are used in the <a href="/guides/v2.0/mtf/mtf_entities/mtf_block.html"><abbr title="Magento Testing Framework">MTF</abbr> blocks</a>.
+Use a <code>find()</code> method to find an element. This method is declared in the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SimpleElement.php">SimpleElement</a> class:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<span class="sd"> * Find element using locator in context of current element</span>
+<span class="sd"> *</span>
+<span class="sd"> * @param string $selector</span>
+<span class="sd"> * @param string $strategy [optional]</span>
+<span class="sd"> * @param null|string $type [optional]</span>
+<span class="sd"> * @return ElementInterface</span>
+<span class="sd"> */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">find</span><span class="p">(</span><span class="nv">$selector</span><span class="p">,</span> <span class="nv">$strategy</span> <span class="o">=</span> <span class="nx">Locator</span><span class="o">::</span><span class="na">SELECTOR_CSS</span><span class="p">,</span> <span class="nv">$type</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">driver</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$selector</span><span class="p">,</span> <span class="nv">$strategy</span><span class="p">,</span> <span class="nv">$type</span><span class="p">,</span> <span class="nv">$this</span><span class="p">);</span>
+<span class="p">}</span></code></pre></div>
+
+<p>The following code is an example of the <code>find()</code> method usage from the <a href="https://github.com/magento/magento2/tree/2.0.0/dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Adminhtml/Category/Tree.php">\Magento\Catalog\Test\Block\Adminhtml\Category\Tree</a> block:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<span class="sd"> * Check category in category tree</span>
+<span class="sd"> *</span>
+<span class="sd"> * @param Category $category</span>
+<span class="sd"> * @return bool</span>
+<span class="sd"> */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">isCategoryVisible</span><span class="p">(</span><span class="nx">Category</span> <span class="nv">$category</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nv">$categoryPath</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">prepareFullCategoryPath</span><span class="p">(</span><span class="nv">$category</span><span class="p">);</span>
+    <span class="nv">$categoryPath</span> <span class="o">=</span> <span class="nb">implode</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="nv">$categoryPath</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_rootElement</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">treeElement</span><span class="p">,</span> <span class="nx">Locator</span><span class="o">::</span><span class="na">SELECTOR_CSS</span><span class="p">,</span> <span class="s1">&#39;tree&#39;</span><span class="p">)</span>
+        <span class="o">-&gt;</span><span class="na">isElementVisible</span><span class="p">(</span><span class="nv">$categoryPath</span><span class="p">);</span>
+<span class="p">}</span></code></pre></div>
+
+<h3 id="mapping">Mapping</h3>
+
+<p>Typified elements can be used in the <a href="/guides/v2.0/mtf/mtf_entities/mtf_block.html#mtf_block_mapping">form mapping</a>.</p>
+
+<p><img src="/common/images/mtf_typ_element_map_gui.png" alt="A typified element mapping example in GUI" /></p>
+
+<p>The following code is a corresponding mapping with the typified element <code>optgroupselect</code> from the previous image:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;mapping</span> <span class="na">strict=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;wrapper&gt;</span>store<span class="nt">&lt;/wrapper&gt;</span>
+    <span class="nt">&lt;fields&gt;</span>
+        <span class="nt">&lt;group_id&gt;</span>
+            <span class="nt">&lt;input&gt;</span>optgroupselect<span class="nt">&lt;/input&gt;</span>
+        <span class="nt">&lt;/group_id&gt;</span>
+        <span class="nt">&lt;name</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;code</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;is_active&gt;</span>
+            <span class="nt">&lt;input&gt;</span>select<span class="nt">&lt;/input&gt;</span>
+        <span class="nt">&lt;/is_active&gt;</span>
+    <span class="nt">&lt;/fields&gt;</span>
+<span class="nt">&lt;/mapping&gt;</span></code></pre></div>
+
+<!-- PICTURE DEFINITIONS -->
+
+<!-- LINK DEFINITIONS -->
+
+<!-- General -->
+
+<!-- Basic classes -->
+
+<!-- Magento classes -->
+
+<!-- ABBREVIATIONS -->
 
 
 		</div>
