@@ -120,17 +120,30 @@ This section discusses how to secure cron using the nginx web server. You must p
 <h3 id="config-cron-secure-nginx-password">Step 1: Set up an encrypted password file for nginx</h3>
 Consult a resource like the following:
 
+*	<a href="http://nginx.org/en/docs/http/ngx_http_auth_basic_module.html" target="_blank">Nginx Module:  ngx_http_auth_basic_module</a>
+*	<a href="https://www.nginx.com/resources/admin-guide/restricting-access/" target="_blank">Nginx Blog: Restricting Access</a>
 *	<a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-password-authentication-with-nginx-on-ubuntu-14-04" target="_blank">How To Set Up Password Authentication with Nginx on Ubuntu 14.04 (digitalocean)</a>
 *	<a href="https://www.howtoforge.com/basic-http-authentication-with-nginx" target="_blank">Basic HTTP Authentication With Nginx (howtoforge)</a>
 
 <h3 id="config-cron-secure-nginx-config">Step 2: Modify the nginx configuration</h3>
 Add the following to your `nginx.conf`:
 
-	location cron\.php {
-		auth_basic "Cron Authentication";
-		auth_basic_user_file <path to password file>;
-	} 
+         location ~ cron\.php {
+                satisfy any;
+                allow 192.168.1.0/24;
+                deny  all;
+                auth_basic "Cron Authentication";
+                auth_basic_user_file .htpasswd;
+                fastcgi_pass 127.0.0.1:9000;
+                include fastcgi_params;
+        }
+If you have this line in your configuration:```location ~ (index|get|static|report|404|503)\.php$ {```
+add ```cron``` and also check if ```cron.php``` is not globally denied:
+	 ```location ~ cron\.php {
+		deny all;
+	}``` remove this location then.
 
+Every configuration path is relative to nginx.conf file.
 Restart nginx and continue with the next section.
 
 <h2 id="config-cron-secure-apache-verify">Verify cron is secure</h2>
