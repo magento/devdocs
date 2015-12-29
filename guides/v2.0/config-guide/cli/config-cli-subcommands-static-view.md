@@ -93,6 +93,10 @@ For example, to deploy static view files for the `pt_BR` language, enter
 
 	magento --ansi setup:static-content:deploy pt_BR
 
+If working as root user, switch to another user, who actually owns the files:
+
+	su <files owner> -s /bin/bash -c "magento setup:static-content:deploy pt_BR"
+
 Following are some sample messages that display to indicate successful deployment:
 
 	Requested languages: pt_BR
