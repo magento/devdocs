@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Contributor sign-up sheet</title>
+	<title>Add custom validations before order placement</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/howdoi/howdoi_contribute.html">
+	<link rel="canonical" href="//guides/v2.0/howdoi/checkout/checkout_order.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Contributor sign-up sheet</h1>
+		<h1 class="page-heading">Add custom validations before order placement</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/howdoi/howdoi_contribute.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/howdoi/checkout/checkout_order.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -212,38 +212,104 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<p>Please sign up to write a How Do I topic for us! </p>
+		<h2>What's in this topic</h2>
 
-<p>We’ll put your name (or company’s name) at the top of the page, right under the title, and link it to your blog or website! And you’ll get your face and bio in the <a href="/guides/v2.0/howdoi/howdoi_bios.html">ring of honor</a> as one of our featured contributors.</p>
+<p>This topic describes how to add custom validations to be performed before the order is placed during checkout. Namely, the validations which are performed after a shopper clicks the <strong>Place Order</strong> button. Writing the validation logic itself is not covered in this topic.</p>
 
-<p>To add your name to this table, all you need to do is to submit a <a href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/howdoi/howdoi_contribute.md">pull request on this page</a> or <a href="mailto:DL-Magento-Doc-Feedback@ebay.com">e-mail us</a>. </p>
+<h2 id="overview">Overview</h2>
+<p>To add custom validations before the order placement action, you must do the following:</p>
 
-<p>Use <a href="/guides/v2.0/howdoi/howdoi_template.html">this template</a> if you’d like. You can get a copy of the <a href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/howdoi/howdoi_template.md">.md file  on Github</a>.</p>
+<ol>
+  <li><a href="#validator">Create the validator</a>.</li>
+  <li><a href="#pool">Add validator to the validators pool</a>.</li>
+  <li><a href="#layout">Declare the validation in the checkout layout</a>.</li>
+</ol>
 
-<p>Submissions should be Markdown but HTML is welcome also.</p>
+<h2 id="validator">Create the validator</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Contributor name</th>
-      <th>Description or subject</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="http://www.maxpronko.com/" title="Max Pronko">Max Pronko</a></td>
-      <td>How do I develop and maintain my custom Magento 2 extension in a separate repository</td>
-    </tr>
-    <tr>
-      <td><a href="http://www.alanstorm.com/" title="Alan Storm">Alan Storm</a></td>
-      <td>Which PHP class should I use to read from each <code>app/etc/</code> configuration file “type”? (acl.xml, events.xml, module.xml, etc. – excluding layout XML files)</td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td> </td>
-    </tr>
-  </tbody>
-</table>
+<p>For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should <a href="/guides/v2.0/extension-dev-guide/composer-integration.html">depend</a> on the Magento_Checkout module.</p>
+
+<p>In your custom module directory, create a <code>.js</code> file implementing the validator. It should be located under <code>&lt;your_module_dir&gt;/view/frontend/web/js/model</code> directory.</p>
+
+<p>Following is a sample of the validator <code>.js</code> file. It must necessarily implement the <code>validate()</code> method:</p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span>
+    <span class="p">[],</span>
+    <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="cm">/**</span>
+<span class="cm">             * Validate something</span>
+<span class="cm">             *</span>
+<span class="cm">             * @returns {boolean}</span>
+<span class="cm">             */</span>
+            <span class="nx">validate</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                <span class="c1">//Put your validation logic here</span>
+                <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">);</span></code></pre></div>
+
+<h2 id="pool">Add validator to the validators pool</h2>
+
+<p>Your custom validator must be added to the pool of “additional validators”. To do this, in the <code>&lt;your_module_dir&gt;/view/frontend/web/js</code> directory create a new <code>&lt;your-validation&gt;.js</code> file with the following content:</p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="s1">&#39;uiComponent&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Magento_Checkout/js/model/payment/additional-validators&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;&lt;your_module&gt;/js/model/your-validator&#39;</span>
+    <span class="p">],</span>
+    <span class="kd">function</span> <span class="p">(</span><span class="nx">Component</span><span class="p">,</span> <span class="nx">additionalValidators</span><span class="p">,</span> <span class="nx">yourValidator</span><span class="p">)</span> <span class="p">{</span>
+        <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+        <span class="nx">additionalValidators</span><span class="p">.</span><span class="nx">registerValidator</span><span class="p">(</span><span class="nx">yourValidator</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nx">Component</span><span class="p">.</span><span class="nx">extend</span><span class="p">({});</span>
+    <span class="p">}</span>
+<span class="p">);</span></code></pre></div>
+
+<h2 id="layout">Declare the validation in the checkout layout</h2>
+
+<p>In your custom module directory, create the following new file: <code>&lt;your_module_dir&gt;/view/frontend/layout/checkout_index_index.xml</code>. 
+In this file, add the following:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">layout=</span><span class="s">&quot;1column&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;checkout.root&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;jsLayout&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;components&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;checkout&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;steps&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;billing-step&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;payment&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;additional-payment-validators&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                                        <span class="c">&lt;!-- Declare your validation. START --&gt;</span>
+                                                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;your-validator&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>%your_module_dir%/js/view/%your-validation%<span class="nt">&lt;/item&gt;</span>
+                                                        <span class="nt">&lt;/item&gt;</span>
+                                                        <span class="c">&lt;!-- Declare your validation. END --&gt;</span>
+                                                    <span class="nt">&lt;/item&gt;</span>
+                                                <span class="nt">&lt;/item&gt;</span>
+                                            <span class="nt">&lt;/item&gt;</span>
+                                        <span class="nt">&lt;/item&gt;</span>
+                                    <span class="nt">&lt;/item&gt;</span>
+                                <span class="nt">&lt;/item&gt;</span>
+                            <span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/referenceBlock&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/page&gt;</span></code></pre></div>
 
 
 
@@ -392,7 +458,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/howdoi/howdoi_contribute.html">Contributor sign-up sheet</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/howdoi/howdoi_contribute.html">Contributor sign-up sheet</a></li>
 									
 								
 								
@@ -677,7 +743,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/howdoi/checkout/checkout_order.html">Add custom validations before order placement</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/howdoi/checkout/checkout_order.html">Add custom validations before order placement</a></li>
 
 									
 						
