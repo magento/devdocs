@@ -468,7 +468,7 @@ You can change your data set with no need to change the data set name. Simply us
   
   {%endhighlight%}
   
-Later you installed a new module Magento_CustomerNew module that changed Customer fixture. You don't want to change the `default` data set name in the test. That is why you merge a repository that replaces the `default` data set:
+Later you installed a new module Magento_CustomerNew module that changed Customer fixture. You don't want to change the `default` data set name in the test. That is why you can replace the `default` data set:
 
   {%highlight xml%}
   
