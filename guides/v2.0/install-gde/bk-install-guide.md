@@ -36,14 +36,6 @@ Use the following table to verify you have the correct prerequisites to install 
 		<p>CentOS: <code>httpd -v</code></p></td>
 		<td><p><a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Apache</a></p>
 			<p>(Don't forget to <a href="{{ site.gdeurl }}install-gde/prereq/apache.html#apache-help-rewrite">enable rewrites and <code>.htaccess</code></a>!)</p></td>
-	</tr>
-		<tr>
-		<td><p>Nginx 1.8+</p></td>
-		<td><p>Ubuntu: <code>nginx -v</code></p>
-		<p>CentOS: <code>nginx -v</code></p></td>
-		<td><p><a href="https://github.com/magenx/Magento-nginx-config/tree/master/magento2">Extended Nginx config</a></p>
-		</td>
-	</tr>
 	<tr>
 		<td><p>PHP 5.6.x or 5.5.x (PHP 5.4 is not supported)</p>
 			<p>See <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_install-issues.html#known-devrc-php">Known issue with certain PHP versions</a></p></td>
