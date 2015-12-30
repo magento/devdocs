@@ -17,14 +17,16 @@ The following relative paths are used for modules and themes:
 
 Theme directory. Usually used when talking about custom themes, or any theme in general.
 
-Possible absolute path: `app/design/frontend/<Vendor>/<theme>`
+For Magento out of the box frontend themes, usually one of the following:
+
+ - `app/design/frontend/Magento/<theme>`
+ - `vendor/magento/theme-frontend-<theme>`
 
 **- `<module_dir>`**
 
 Module directory. When talking about a particular Magento module, also notation similar to the following is used: `<Magento_Checkout_module_dir>`
 
-Possible absolute path: `app/code/<Vendor>/<Module>`
-For Magento modules, usually one of the following:
+For Magento modules, the absolute path is usually one of the following:
 
  - `app/code/Magento/<Module>`
   - `vendor/magento/module-<module>-<name>`
