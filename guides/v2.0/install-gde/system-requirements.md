@@ -21,7 +21,7 @@ Composer is required for developers who wish to contribute to the Magento 2 code
 *	<a href="http://httpd.apache.org/download.cgi" target="_blank">Apache 2.2 or 2.4</a>
 	
 	In addition, the apache `mod_rewrite` module must be enabled. `mod_rewrite` enables the server to perform URL rewriting. For more information, see <a href="{{ site.gdeurl }}install-gde/prereq/apache.html">our Apache documentation</a>.
-*	nginx 1.8 (or latest stable version)
+*	<a href="http://nginx.org/en/linux_packages.html#mainline" target="_blank">nginx 1.9.x (or latest mainline version)
 
 ### Database
 
