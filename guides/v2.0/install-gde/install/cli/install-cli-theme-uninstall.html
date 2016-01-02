@@ -245,12 +245,30 @@
 </ul>
 
 <h2 id="instgde-cli-before">First steps</h2>
-<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.</li>
-<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
-Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
-bash shell example for CentOS:<br />
-<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
-<div class="bs-callout bs-callout-info" id="info">
+<div>
+
+  <ol>
+    <li>
+      <p>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.</p>
+
+      <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
+
+      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+</code></pre>
+    </li>
+    <li>
+      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+
+      <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
+
+      <p>bash shell example for CentOS:</p>
+
+      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+</code></pre>
+    </li>
+  </ol>
+
+  <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>You can also run the commands in the following ways:</p>
 <ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
@@ -258,63 +276,63 @@ bash shell example for CentOS:<br />
 <p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
 </div>
 
-<p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
+  <p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
 
-<h2 id="instgde-install-uninst-theme-uninst">Uninstall themes</h2>
-<p>Command usage:</p>
+  <h2 id="instgde-install-uninst-theme-uninst">Uninstall themes</h2>
+  <p>Command usage:</p>
 
-<pre><code>magento theme:uninstall [--backup-code] [-c|--clear-static-content] {theme path} ... {theme path}
+  <pre><code>magento theme:uninstall [--backup-code] [-c|--clear-static-content] {theme path} ... {theme path}
 </code></pre>
 
-<p>where </p>
+  <p>where </p>
 
-<ul>
-  <li><code>{theme path}</code> is the relative path to the theme, starting with the area name. For example, the path to the Blank theme supplied with Magento 2 is <code>frontend/Magento/blank</code>.</li>
-  <li><code>--backup-code</code> backs up the Magento 2 codebase as discussed in the paragraphs that follow.</li>
-  <li><code>--clear-static-content</code> causes static view files to be cleaned. This is necessary to cause static view files to display properly.</li>
-</ul>
+  <ul>
+    <li><code>{theme path}</code> is the relative path to the theme, starting with the area name. For example, the path to the Blank theme supplied with Magento 2 is <code>frontend/Magento/blank</code>.</li>
+    <li><code>--backup-code</code> backs up the Magento 2 codebase as discussed in the paragraphs that follow.</li>
+    <li><code>--clear-static-content</code> causes static view files to be cleaned. This is necessary to cause static view files to display properly.</li>
+  </ul>
 
-<p>The command performs the following tasks:</p>
+  <p>The command performs the following tasks:</p>
 
-<ol>
-  <li>Verifies that the specified theme paths exist; if not, the command terminates.</li>
-  <li>Verifies that the theme is a Composer package; if not, the command terminates.</li>
-  <li>
-    <p>Checks for dependencies; if there are any, the command terminates.</p>
+  <ol>
+    <li>Verifies that the specified theme paths exist; if not, the command terminates.</li>
+    <li>Verifies that the theme is a Composer package; if not, the command terminates.</li>
+    <li>
+      <p>Checks for dependencies; if there are any, the command terminates.</p>
 
-    <p>To work around this, you can either uninstall all themes at the same time or you can uninstall the depending theme first.</p>
-  </li>
-  <li>Verifies that the theme is not being used; if it is being used, the command terminates.</li>
-  <li>Verifies that the theme is not the base of the virtual theme; if it is the base of a virtual theme, the command terminates.</li>
-  <li>Puts the store in maintenance mode.</li>
-  <li>
-    <p>If <code>--backup-code</code> is specified, backs up the Magento 2 codebase, excluding the <code>pub/static</code>, <code>pub/media</code>, and <code>var</code> directories.</p>
+      <p>To work around this, you can either uninstall all themes at the same time or you can uninstall the depending theme first.</p>
+    </li>
+    <li>Verifies that the theme is not being used; if it is being used, the command terminates.</li>
+    <li>Verifies that the theme is not the base of the virtual theme; if it is the base of a virtual theme, the command terminates.</li>
+    <li>Puts the store in maintenance mode.</li>
+    <li>
+      <p>If <code>--backup-code</code> is specified, backs up the Magento 2 codebase, excluding the <code>pub/static</code>, <code>pub/media</code>, and <code>var</code> directories.</p>
 
-    <p>The backup file name is <code>var/backups/&lt;timestamp&gt;_filesystem.tgz</code></p>
+      <p>The backup file name is <code>var/backups/&lt;timestamp&gt;_filesystem.tgz</code></p>
 
-    <p>You can restore backups at any time using the <a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">magento setup:rollback</a> command.</p>
-  </li>
-  <li>Removes themes from the <code>theme</code> database table.</li>
-  <li>Remove themes from code base using <code>composer remove</code>.</li>
-  <li>Cleans the cache.</li>
-  <li>Cleans generated classes</li>
-  <li>If <code>--clear-static-content</code> is specified, cleans generated static view files.</li>
-</ol>
+      <p>You can restore backups at any time using the <a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">magento setup:rollback</a> command.</p>
+    </li>
+    <li>Removes themes from the <code>theme</code> database table.</li>
+    <li>Remove themes from code base using <code>composer remove</code>.</li>
+    <li>Cleans the cache.</li>
+    <li>Cleans generated classes</li>
+    <li>If <code>--clear-static-content</code> is specified, cleans generated static view files.</li>
+  </ol>
 
-<p>For example, if you attempt to uninstall a theme that another theme depends on, the following message displays:</p>
+  <p>For example, if you attempt to uninstall a theme that another theme depends on, the following message displays:</p>
 
-<pre><code>Cannot uninstall frontend/ExampleCorp/SampleModuleTheme because the following package(s) depend on it:
+  <pre><code>Cannot uninstall frontend/ExampleCorp/SampleModuleTheme because the following package(s) depend on it:
     ExampleCorp/sample-module-theme-depend
 </code></pre>
 
-<p>One alternative is to uninstall both themes at the same time as follows after backing up the Magento codebase:</p>
+  <p>One alternative is to uninstall both themes at the same time as follows after backing up the Magento codebase:</p>
 
-<pre><code>magento theme:uninstall frontend/ExampleCorp/SampleModuleTheme frontend/ExampleCorp/SampleModuleThemeDepend --backup-code
+  <pre><code>magento theme:uninstall frontend/ExampleCorp/SampleModuleTheme frontend/ExampleCorp/SampleModuleThemeDepend --backup-code
 </code></pre>
 
-<p>Messages similar to the following display:</p>
+  <p>Messages similar to the following display:</p>
 
-<pre><code>Code backup is starting...
+  <pre><code>Code backup is starting...
 Code backup filename: 1435261098_filesystem_code.tgz (The archive can be uncompressed with 7-Zip on Windows systems)
 Code backup path: /var/www/html/magento2/var/backups/1435261098_filesystem_code.tgz
 [SUCCESS]: Code backup completed successfully.Removing frontend/ExampleCorp/SampleModuleTheme, frontend/ExampleCorp/SampleModuleThemeDepend from database
@@ -333,23 +351,24 @@ Failure to clear static view files might cause display issues in the Admin and s
 Disabling maintenance mode
 </code></pre>
 
-<h4 id="related-topics">Related topics</h4>
+  <h4 id="related-topics">Related topics</h4>
 
-<ul>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html">Installing the Magento software using the command line</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-mods.html">Uninstall modules</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-deployment.html">Create the deployment configuration</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-db.html">Create the Magento database schema</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-store.html">Configure the store</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-admin.html">Create a Magento administrator</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-backup.html">Back up the file system, media, and database</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-langpk.html">Uninstall language packages</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a></li>
-</ul>
+  <ul>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html">Installing the Magento software using the command line</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-mods.html">Uninstall modules</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-deployment.html">Create the deployment configuration</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-db.html">Create the Magento database schema</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-store.html">Configure the store</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-admin.html">Create a Magento administrator</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-backup.html">Back up the file system, media, and database</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-langpk.html">Uninstall language packages</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a></li>
+  </ul>
+</div>
 
 
 		</div>

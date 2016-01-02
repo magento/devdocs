@@ -236,12 +236,30 @@
 <p>This section discusses how to run the migration tool to migrate settings, data, or incremental changes.</p>
 
 <h3 id="migration-command-run-first">First steps</h3>
-<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.</li>
-<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
-Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
-bash shell example for CentOS:<br />
-<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
-<div class="bs-callout bs-callout-info" id="info">
+<div>
+
+  <ol>
+    <li>
+      <p>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.</p>
+
+      <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
+
+      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+</code></pre>
+    </li>
+    <li>
+      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+
+      <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
+
+      <p>bash shell example for CentOS:</p>
+
+      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+</code></pre>
+    </li>
+  </ol>
+
+  <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>You can also run the commands in the following ways:</p>
 <ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
@@ -249,35 +267,36 @@ bash shell example for CentOS:<br />
 <p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
 </div>
 
-<p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
+  <p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
 
-<h3 id="migration-command-run-syntax">Command syntax</h3>
-<p>Command syntax:</p>
+  <h3 id="migration-command-run-syntax">Command syntax</h3>
+  <p>Command syntax:</p>
 
-<pre><code>bin/magento migrate:&lt;mode&gt; [-r|--reset] {&lt;path to config.xml&gt;}
+  <pre><code>bin/magento migrate:&lt;mode&gt; [-r|--reset] {&lt;path to config.xml&gt;}
 </code></pre>
 
-<p>where</p>
+  <p>where</p>
 
-<p><code>&lt;mode&gt;</code> is <a href="/guides/v2.0/migration/migration-migrate-settings.html"><code>settings</code></a>, <a href="/guides/v2.0/migration/migration-migrate-data.html"><code>data</code></a>, or <a href="/guides/v2.0/migration/migration-migrate-delta.html"><code>delta</code></a></p>
+  <p><code>&lt;mode&gt;</code> is <a href="/guides/v2.0/migration/migration-migrate-settings.html"><code>settings</code></a>, <a href="/guides/v2.0/migration/migration-migrate-data.html"><code>data</code></a>, or <a href="/guides/v2.0/migration/migration-migrate-delta.html"><code>delta</code></a></p>
 
-<p><code>{&lt;path to config.xml&gt;}</code> is the absolute file system path to <code>config.xml</code>; this argument is required.</p>
+  <p><code>{&lt;path to config.xml&gt;}</code> is the absolute file system path to <code>config.xml</code>; this argument is required.</p>
 
-<p><code>[-r|--reset]</code> is an optional argument that starts migration from the beginning. You can use this argument for testing migration.</p>
+  <p><code>[-r|--reset]</code> is an optional argument that starts migration from the beginning. You can use this argument for testing migration.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
+  <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>Logs are written to the <code>&lt;your Magento install dir&gt;/var/</code> directory.</p></span>
 </div>
 
-<p>The following sections should be performed in a specific order:</p>
+  <p>The following sections should be performed in a specific order:</p>
 
-<ol>
-  <li><a href="/guides/v2.0/migration/migration-migrate-settings.html">Migrate settings</a></li>
-  <li><a href="/guides/v2.0/migration/migration-migrate-data.html">Migrate data</a></li>
-  <li><a href="/guides/v2.0/migration/migration-migrate-delta.html">Migrate changes</a></li>
-</ol>
+  <ol>
+    <li><a href="/guides/v2.0/migration/migration-migrate-settings.html">Migrate settings</a></li>
+    <li><a href="/guides/v2.0/migration/migration-migrate-data.html">Migrate data</a></li>
+    <li><a href="/guides/v2.0/migration/migration-migrate-delta.html">Migrate changes</a></li>
+  </ol>
 
+</div>
 
 
 		</div>

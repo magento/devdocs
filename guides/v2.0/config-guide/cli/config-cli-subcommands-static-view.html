@@ -252,12 +252,30 @@
 </div>
 
 <h2 id="config-cli-before">First steps</h2>
-<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.</li>
-<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
-Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
-bash shell example for CentOS:<br />
-<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
-<div class="bs-callout bs-callout-info" id="info">
+<div>
+
+  <ol>
+    <li>
+      <p>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.</p>
+
+      <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
+
+      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+</code></pre>
+    </li>
+    <li>
+      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+
+      <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
+
+      <p>bash shell example for CentOS:</p>
+
+      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+</code></pre>
+    </li>
+  </ol>
+
+  <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>You can also run the commands in the following ways:</p>
 <ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
@@ -265,33 +283,33 @@ bash shell example for CentOS:<br />
 <p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
 </div>
 
-<p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+  <p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
-<h2 id="config-cli-subcommands-xlate-dict">Deploy static view files</h2>
-<p>To deploy static view files:</p>
+  <h2 id="config-cli-subcommands-xlate-dict">Deploy static view files</h2>
+  <p>To deploy static view files:</p>
 
-<ol>
-  <li>Log in to the Magento server as, or <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to</a>, the Magento file system owner.</li>
-  <li>Delete the contents of <code>&lt;your Magento install dir&gt;/pub/static</code>.</li>
-  <li>
-    <p>Run the static view files deployment tool <code>&lt;your Magento install dir&gt;/bin/magento setup:static-content:deploy</code>.
+  <ol>
+    <li>Log in to the Magento server as, or <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to</a>, the Magento file system owner.</li>
+    <li>Delete the contents of <code>&lt;your Magento install dir&gt;/pub/static</code>.</li>
+    <li>
+      <p>Run the static view files deployment tool <code>&lt;your Magento install dir&gt;/bin/magento setup:static-content:deploy</code>.
 <!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. --></p>
 
-    <div class="bs-callout bs-callout-info" id="info">
+      <div class="bs-callout bs-callout-info" id="info">
     <span class="glyphicon-class">
   		<p>If you enable static view file merging in the Magento Admin, the <code>pub/static</code> directory system must be writable.</p></span>
 </div>
-  </li>
-</ol>
+    </li>
+  </ol>
 
-<p>Command options:</p>
+  <p>Command options:</p>
 
-<pre><code>magento setup:static-content:deploy &lt;lang&gt; ... &lt;lang&gt; [--dry-run] 
+  <pre><code>magento setup:static-content:deploy &lt;lang&gt; ... &lt;lang&gt; [--dry-run] 
 </code></pre>
 
-<p>The following table discusses the meanings of this command’s parameters and values. </p>
+  <p>The following table discusses the meanings of this command’s parameters and values. </p>
 
-<table>
+  <table>
 	<col width="15%" />
   	<col width="65%" />
   	<col width="25%" />
@@ -315,14 +333,14 @@ bash shell example for CentOS:<br />
 	</tbody>
 </table>
 
-<p>For example, to deploy static view files for the <code>pt_BR</code> language, enter</p>
+  <p>For example, to deploy static view files for the <code>pt_BR</code> language, enter</p>
 
-<pre><code>magento --ansi setup:static-content:deploy pt_BR
+  <pre><code>magento --ansi setup:static-content:deploy pt_BR
 </code></pre>
 
-<p>Following are some sample messages that display to indicate successful deployment:</p>
+  <p>Following are some sample messages that display to indicate successful deployment:</p>
 
-<pre><code>Requested languages: pt_BR
+  <pre><code>Requested languages: pt_BR
 === frontend -&gt; Magento/luma -&gt; pt_BR ===
 ... progress indicator ...
 Successful: 1613 files; errors: 0
@@ -342,56 +360,57 @@ Successful: 858 files modified
 New version of deployed files: 1430773903
 </code></pre>
 
-<h2 id="view-file-trouble">Troubleshooting the static view files deployment tool</h2>
-<p><a href="/guides/v2.0/install-gde/bk-install-guide.html">Install the Magento software first</a>; otherwise, you cannot run the static view files deployment tool.</p>
+  <h2 id="view-file-trouble">Troubleshooting the static view files deployment tool</h2>
+  <p><a href="/guides/v2.0/install-gde/bk-install-guide.html">Install the Magento software first</a>; otherwise, you cannot run the static view files deployment tool.</p>
 
-<p><strong>Symptom</strong>: The following error is displayed when you run the static view files deployment tool:</p>
+  <p><strong>Symptom</strong>: The following error is displayed when you run the static view files deployment tool:</p>
 
-<pre><code>ERROR: You need to install the Magento application before running this utility.
+  <pre><code>ERROR: You need to install the Magento application before running this utility.
 </code></pre>
 
-<p><strong>Solution</strong>:</p>
+  <p><strong>Solution</strong>:</p>
 
-<p>Use the following steps:</p>
+  <p>Use the following steps:</p>
 
-<ol>
-  <li>
-    <p>Install the Magento software in any of the following ways:</p>
+  <ol>
+    <li>
+      <p>Install the Magento software in any of the following ways:</p>
 
-    <ul>
-      <li><a href="/guides/v2.0/install-gde/install/install-cli.html">Command line</a></li>
-      <li><a href="/guides/v2.0/install-gde/install/install-web.html">Setup wizard</a></li>
-    </ul>
-  </li>
-  <li>Log in to the Magento server as, or <a href="/guides/v2.0/install-gde/prereq/apache-user.html">switch to</a>, the Magento file system owner.</li>
-  <li>Delete the contents of <code>&lt;your Magento install dir&gt;/pub/static</code> directory.</li>
-  <li>
-    <p><a href="#config-cli-subcommands-xlate-dict">Run the static view files deployment tool</a>.
+      <ul>
+        <li><a href="/guides/v2.0/install-gde/install/install-cli.html">Command line</a></li>
+        <li><a href="/guides/v2.0/install-gde/install/install-web.html">Setup wizard</a></li>
+      </ul>
+    </li>
+    <li>Log in to the Magento server as, or <a href="/guides/v2.0/install-gde/prereq/apache-user.html">switch to</a>, the Magento file system owner.</li>
+    <li>Delete the contents of <code>&lt;your Magento install dir&gt;/pub/static</code> directory.</li>
+    <li>
+      <p><a href="#config-cli-subcommands-xlate-dict">Run the static view files deployment tool</a>.
 <!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. --></p>
 
-    <!-- <div class="bs-callout bs-callout-info" id="info">
+      <!-- <div class="bs-callout bs-callout-info" id="info">
     <span class="glyphicon-class">
   		<p>If you enable static view file merging in the Magento Admin, the <code>pub/static</code> directory system must be writable.</p></span>
 </div> -->
-  </li>
-</ol>
+    </li>
+  </ol>
 
-<h4 id="related-topics">Related topics</h4>
+  <h4 id="related-topics">Related topics</h4>
 
-<ul>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
-</ul>
+  <ul>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
+  </ul>
+</div>
 
 
 		</div>

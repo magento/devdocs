@@ -265,12 +265,30 @@ This has the additional benefit of eliminating users' learning curve</li>
 </div>
 
 <h2 id="instgde-install-cli-first">First steps</h2>
-<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.</li>
-<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
-Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
-bash shell example for CentOS:<br />
-<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
-<div class="bs-callout bs-callout-info" id="info">
+<div>
+
+  <ol>
+    <li>
+      <p>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.</p>
+
+      <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
+
+      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+</code></pre>
+    </li>
+    <li>
+      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+
+      <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
+
+      <p>bash shell example for CentOS:</p>
+
+      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+</code></pre>
+    </li>
+  </ol>
+
+  <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>You can also run the commands in the following ways:</p>
 <ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
@@ -278,12 +296,13 @@ bash shell example for CentOS:<br />
 <p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
 </div>
 
-<h4 id="next-steps">Next steps</h4>
+  <h4 id="next-steps">Next steps</h4>
 
-<ul>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands.html">Get started with the command-line installation</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html">Install the Magento software</a></li>
-</ul>
+  <ul>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands.html">Get started with the command-line installation</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html">Install the Magento software</a></li>
+  </ul>
+</div>
 
 
 		</div>

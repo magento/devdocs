@@ -223,12 +223,30 @@
 </ul>
 
 <h2 id="instgde-cli-before">First steps</h2>
-<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.</li>
-<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
-Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
-bash shell example for CentOS:<br />
-<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
-<div class="bs-callout bs-callout-info" id="info">
+<div>
+
+  <ol>
+    <li>
+      <p>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.</p>
+
+      <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
+
+      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+</code></pre>
+    </li>
+    <li>
+      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+
+      <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
+
+      <p>bash shell example for CentOS:</p>
+
+      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+</code></pre>
+    </li>
+  </ol>
+
+  <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>You can also run the commands in the following ways:</p>
 <ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
@@ -236,40 +254,41 @@ bash shell example for CentOS:<br />
 <p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
 </div>
 
-<p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
+  <p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
 
-<h2 id="instgde-cli-subcommands-db-prereq">Prerequisites</h2>
-<p>Before you run this command, you must <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a>.</p>
+  <h2 id="instgde-cli-subcommands-db-prereq">Prerequisites</h2>
+  <p>Before you run this command, you must <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a>.</p>
 
-<h2 id="instgde-cli-dbconfig">Configure the database and add data</h2>
-<p>Command usage:</p>
+  <h2 id="instgde-cli-dbconfig">Configure the database and add data</h2>
+  <p>Command usage:</p>
 
-<pre><code>magento setup:db-schema:upgrade
+  <pre><code>magento setup:db-schema:upgrade
 magento setup:db-data:upgrade
 </code></pre>
 
-<p>To see the status of the database, enter</p>
+  <p>To see the status of the database, enter</p>
 
-<pre><code>magento setup:db:status
+  <pre><code>magento setup:db:status
 </code></pre>
 
-<h4 id="related-topics">Related topics</h4>
+  <h4 id="related-topics">Related topics</h4>
 
-<ul>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html">Installing the Magento software using the command line</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-mods.html">Uninstall modules</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-deployment.html">Create the deployment configuration</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-store.html">Configure the store</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-admin.html">Create a Magento administrator</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-backup.html">Back up the file system, media, and database</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-theme-uninstall.html">Uninstall themes</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-langpk.html">Uninstall language packages</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a></li>
-</ul>
+  <ul>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html">Installing the Magento software using the command line</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-mods.html">Uninstall modules</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-deployment.html">Create the deployment configuration</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-store.html">Configure the store</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-admin.html">Create a Magento administrator</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-backup.html">Back up the file system, media, and database</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-theme-uninstall.html">Uninstall themes</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-langpk.html">Uninstall language packages</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a></li>
+  </ul>
+</div>
 
 
 		</div>

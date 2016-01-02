@@ -224,12 +224,30 @@
 </ul>
 
 <h2 id="instgde-cli-before">First steps</h2>
-<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.</li>
-<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
-Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
-bash shell example for CentOS:<br />
-<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
-<div class="bs-callout bs-callout-info" id="info">
+<div>
+
+  <ol>
+    <li>
+      <p>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.</p>
+
+      <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
+
+      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+</code></pre>
+    </li>
+    <li>
+      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+
+      <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
+
+      <p>bash shell example for CentOS:</p>
+
+      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+</code></pre>
+    </li>
+  </ol>
+
+  <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>You can also run the commands in the following ways:</p>
 <ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
@@ -237,83 +255,84 @@ bash shell example for CentOS:<br />
 <p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
 </div>
 
-<p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
+  <p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
 
-<h2 id="instgde-cli-subcommands-maint-prereq">Prerequisites</h2>
-<p>Before you use this command, you must <a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html">install the Magento software</a>.</p>
+  <h2 id="instgde-cli-subcommands-maint-prereq">Prerequisites</h2>
+  <p>Before you use this command, you must <a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html">install the Magento software</a>.</p>
 
-<h2 id="instgde-cli-maint">Enable or disable maintenance mode</h2>
-<p>Magento uses <em>maintenance mode</em> to disable bootstrapping; for example, while you’re maintaining, upgrading, or reconfiguring your site. </p>
+  <h2 id="instgde-cli-maint">Enable or disable maintenance mode</h2>
+  <p>Magento uses <em>maintenance mode</em> to disable bootstrapping; for example, while you’re maintaining, upgrading, or reconfiguring your site. </p>
 
-<p>Magento detects maintenance mode as follows:</p>
+  <p>Magento detects maintenance mode as follows:</p>
 
-<ul>
-  <li>If <code>var/.maintenance.flag</code> does not exist, maintenance mode is off and Magento operates normally.</li>
-  <li>
-    <p>Otherwise, maintenance mode is on unless <code>var/.maintenance.ip</code> exists:</p>
+  <ul>
+    <li>If <code>var/.maintenance.flag</code> does not exist, maintenance mode is off and Magento operates normally.</li>
+    <li>
+      <p>Otherwise, maintenance mode is on unless <code>var/.maintenance.ip</code> exists:</p>
 
-    <p><code>var/.maintenance.ip</code> can contain a list of IP addresses. If an entry point is accessed using HTTP and the client IP address corresponds to one of the entries in that list, then maintenance mode is off.</p>
-  </li>
-</ul>
+      <p><code>var/.maintenance.ip</code> can contain a list of IP addresses. If an entry point is accessed using HTTP and the client IP address corresponds to one of the entries in that list, then maintenance mode is off.</p>
+    </li>
+  </ul>
 
-<p>Command usage:</p>
+  <p>Command usage:</p>
 
-<pre><code>magento maintenance:enable [--ip=&lt;ip address&gt; ... --ip=&lt;ip address&gt;] | [ip=none]
+  <pre><code>magento maintenance:enable [--ip=&lt;ip address&gt; ... --ip=&lt;ip address&gt;] | [ip=none]
 magento maintenance:disable [--ip=&lt;ip address&gt; ... --ip=&lt;ip address&gt;] | [ip=none]
 magento maintenance:status
 </code></pre>
 
-<p>where</p>
+  <p>where</p>
 
-<p><code>--ip=&lt;ip address&gt;</code> is an IP address to exempt from maintenance mode (for example, developers doing the maintenance). To exempt more than one IP address in the same command, use the option multiple times.</p>
+  <p><code>--ip=&lt;ip address&gt;</code> is an IP address to exempt from maintenance mode (for example, developers doing the maintenance). To exempt more than one IP address in the same command, use the option multiple times.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
+  <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <ul><li>Using <code>--ip=&lt;ip address&gt;</code> with <code>magento maintenance:disable</code> means only that you're saving the list of IPs for later use.</li>
   	<li>To clear the list of exempt IPs, you can use <code>magento maintenance:enable --ip=none</code> or see <a href="#instgde-cli-maint-exempt">Maintain the list of exempt IP addresses</a>.</li></ul></span>
 </div>
 
-<p><code>magento maintenance:status</code> displays the current status of maintenance mode.</p>
+  <p><code>magento maintenance:status</code> displays the current status of maintenance mode.</p>
 
-<p>For example, to enable maintenance mode with no IP address exemptions:</p>
+  <p>For example, to enable maintenance mode with no IP address exemptions:</p>
 
-<pre><code>magento maintenance:enable
+  <pre><code>magento maintenance:enable
 </code></pre>
 
-<p>To enable maintenance mode for all clients except 192.0.2.10 and 192.0.2.11:</p>
+  <p>To enable maintenance mode for all clients except 192.0.2.10 and 192.0.2.11:</p>
 
-<pre><code>magento maintenance:enable --ip=192.0.2.10 --ip=192.0.2.11
+  <pre><code>magento maintenance:enable --ip=192.0.2.10 --ip=192.0.2.11
 </code></pre>
 
-<h2 id="instgde-cli-maint-exempt">Maintain the list of exempt IP addresses</h2>
-<p>To maintain the list of exempt IP addresses, you can either use the <code>[--ip=&lt;ip list&gt;]</code> option in the preceding commands or you can use the following:</p>
+  <h2 id="instgde-cli-maint-exempt">Maintain the list of exempt IP addresses</h2>
+  <p>To maintain the list of exempt IP addresses, you can either use the <code>[--ip=&lt;ip list&gt;]</code> option in the preceding commands or you can use the following:</p>
 
-<pre><code>magento maintenance:allow-ips &lt;ip address&gt; .. &lt;ip address&gt; [--none]
+  <pre><code>magento maintenance:allow-ips &lt;ip address&gt; .. &lt;ip address&gt; [--none]
 </code></pre>
 
-<p>where </p>
+  <p>where </p>
 
-<p><code>&lt;ip address&gt; .. &lt;ip address&gt;</code> is an optional space-delimited list of IP addresses to exempt. </p>
+  <p><code>&lt;ip address&gt; .. &lt;ip address&gt;</code> is an optional space-delimited list of IP addresses to exempt. </p>
 
-<p><code>--none</code> clears the list.</p>
+  <p><code>--none</code> clears the list.</p>
 
-<h4 id="related-topics">Related topics</h4>
+  <h4 id="related-topics">Related topics</h4>
 
-<ul>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html">Installing the Magento software using the command line</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-mods.html">Uninstall modules</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-deployment.html">Create the deployment configuration</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-db.html">Create the Magento database schema</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-store.html">Configure the store</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-admin.html">Create a Magento administrator</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-backup.html">Back up the file system, media, and database</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-theme-uninstall.html">Uninstall themes</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-langpk.html">Uninstall language packages</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a></li>
-</ul>
+  <ul>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html">Installing the Magento software using the command line</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-mods.html">Uninstall modules</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-deployment.html">Create the deployment configuration</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-db.html">Create the Magento database schema</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-store.html">Configure the store</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-admin.html">Create a Magento administrator</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-backup.html">Back up the file system, media, and database</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-theme-uninstall.html">Uninstall themes</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-langpk.html">Uninstall language packages</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a></li>
+  </ul>
+</div>
 
 
 		</div>

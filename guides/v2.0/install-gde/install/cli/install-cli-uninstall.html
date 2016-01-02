@@ -226,12 +226,30 @@
 </ul>
 
 <h2 id="instgde-cli-before">First steps</h2>
-<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.</li>
-<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
-Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
-bash shell example for CentOS:<br />
-<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
-<div class="bs-callout bs-callout-info" id="info">
+<div>
+
+  <ol>
+    <li>
+      <p>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.</p>
+
+      <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
+
+      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+</code></pre>
+    </li>
+    <li>
+      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+
+      <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
+
+      <p>bash shell example for CentOS:</p>
+
+      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+</code></pre>
+    </li>
+  </ol>
+
+  <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>You can also run the commands in the following ways:</p>
 <ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
@@ -239,94 +257,95 @@ bash shell example for CentOS:<br />
 <p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
 </div>
 
-<p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
+  <p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
 
-<h2 id="instgde-install-magento-prereq">Prerequisites</h2>
-<p>Before you use this command, you must <a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html">install the Magento software</a>.</p>
+  <h2 id="instgde-install-magento-prereq">Prerequisites</h2>
+  <p>Before you use this command, you must <a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html">install the Magento software</a>.</p>
 
-<h2 id="instgde-install-magento-update">Update the Magento software</h2>
-<p>To update the Magento software:</p>
+  <h2 id="instgde-install-magento-update">Update the Magento software</h2>
+  <p>To update the Magento software:</p>
 
-<ul>
-  <li>If you installed the software from an archive or if you used ‘composer-create-project’, use the Component Manager or System Upgrade utilities.</li>
-  <li>If you are a contributing developer (that is, you used <code>git clone</code>), see <a href="/guides/v2.0/install-gde/install/cli/dev_options.html">Contributing developers—update, reinstall Magento</a>.</li>
-</ul>
+  <ul>
+    <li>If you installed the software from an archive or if you used ‘composer-create-project’, use the Component Manager or System Upgrade utilities.</li>
+    <li>If you are a contributing developer (that is, you used <code>git clone</code>), see <a href="/guides/v2.0/install-gde/install/cli/dev_options.html">Contributing developers—update, reinstall Magento</a>.</li>
+  </ul>
 
-<h2 id="instgde-install-magento-reinstall">Reinstall the Magento software</h2>
-<p>This section discusses how to uninstall and then reinstall the Magento software with the latest version.</p>
+  <h2 id="instgde-install-magento-reinstall">Reinstall the Magento software</h2>
+  <p>This section discusses how to uninstall and then reinstall the Magento software with the latest version.</p>
 
-<p>The way you reinstall the Magento application from the command line depends on your role:</p>
+  <p>The way you reinstall the Magento application from the command line depends on your role:</p>
 
-<ul>
-  <li>If you installed the software from an archive or if you used ‘composer-create-project’, see <a href="#instgde-install-reinst-update-sys">Reinstall as a system integrator</a>.</li>
-  <li>If you’re a contributing developer (that is, you started using <code>composer clone</code>), see <a href="/guides/v2.0/install-gde/install/cli/dev_options.html">Contributing developers—update, reinstall Magento</a>.</li>
-</ul>
+  <ul>
+    <li>If you installed the software from an archive or if you used ‘composer-create-project’, see <a href="#instgde-install-reinst-update-sys">Reinstall as a system integrator</a>.</li>
+    <li>If you’re a contributing developer (that is, you started using <code>composer clone</code>), see <a href="/guides/v2.0/install-gde/install/cli/dev_options.html">Contributing developers—update, reinstall Magento</a>.</li>
+  </ul>
 
-<h3 id="instgde-install-magento-reinst-dev">Reinstall as a system integrator</h3>
-<p>To reinstall the Magento software as a system integrator:</p>
+  <h3 id="instgde-install-magento-reinst-dev">Reinstall as a system integrator</h3>
+  <p>To reinstall the Magento software as a system integrator:</p>
 
-<ol>
-  <li>Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>).</li>
-  <li>
-    <p>Enter the following commands in the order shown:</p>
+  <ol>
+    <li>Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>).</li>
+    <li>
+      <p>Enter the following commands in the order shown:</p>
 
-    <pre><code>cd &lt;your Magento install dir&gt;
+      <pre><code>cd &lt;your Magento install dir&gt;
 git pull origin develop
 php bin/magento setup:uninstall
 </code></pre>
 
-    <div class="bs-callout bs-callout-info" id="info">
+      <div class="bs-callout bs-callout-info" id="info">
     <span class="glyphicon-class">
   			<ul><li>If <code>git pull origin develop</code> fails, see <a href="/guides/v2.0/install-gde/trouble/git/tshoot_git-pull-origin..html">troubleshooting</a>. </li>
   				<li>To use your existing Magento software version , omit the <code>git pull origin develop</code> command.</li></ul></span>
 </div>
-  </li>
-  <li>
-    <p>Install the Magento software:</p>
+    </li>
+    <li>
+      <p>Install the Magento software:</p>
 
-    <ul>
-      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento">Install the Magento software using the command line</a></li>
-      <li><a href="/guides/v2.0/install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a></li>
-    </ul>
-  </li>
-</ol>
+      <ul>
+        <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento">Install the Magento software using the command line</a></li>
+        <li><a href="/guides/v2.0/install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a></li>
+      </ul>
+    </li>
+  </ol>
 
-<h2 id="instgde-install-uninstall">Uninstall the Magento software</h2>
-<p>Uninstalling the Magento software drops and restores the database, removes the deployment configuration, and clears directories under <code>var</code>.</p>
+  <h2 id="instgde-install-uninstall">Uninstall the Magento software</h2>
+  <p>Uninstalling the Magento software drops and restores the database, removes the deployment configuration, and clears directories under <code>var</code>.</p>
 
-<p>To uninstall the Magento software, enter the following command:</p>
+  <p>To uninstall the Magento software, enter the following command:</p>
 
-<pre><code>magento setup:uninstall
+  <pre><code>magento setup:uninstall
 </code></pre>
 
-<p>The following message displays to confirm a successful uninstallation:</p>
+  <p>The following message displays to confirm a successful uninstallation:</p>
 
-<pre><code>[SUCCESS]: Magento uninstallation complete.
+  <pre><code>[SUCCESS]: Magento uninstallation complete.
 </code></pre>
 
-<h2 id="instgde-install-keep">Optionally keeping generated files</h2>
-<p>By default, <code>magento setup:upgrade</code> clears compiled code and the cache. Typically, you use <code>magento setup:upgrade</code> to update components and each component can require different compiled classes.</p>
+  <h2 id="instgde-install-keep">Optionally keeping generated files</h2>
+  <p>By default, <code>magento setup:upgrade</code> clears compiled code and the cache. Typically, you use <code>magento setup:upgrade</code> to update components and each component can require different compiled classes.</p>
 
-<p>However, in some situations (particularly, deploying Magento to production), you might wish to avoid clearing compiled code because it can take some time. (The cache is still cleared.) To update the Magento database schema and data <em>without</em> clearing compiled code, enter:</p>
+  <p>However, in some situations (particularly, deploying Magento to production), you might wish to avoid clearing compiled code because it can take some time. (The cache is still cleared.) To update the Magento database schema and data <em>without</em> clearing compiled code, enter:</p>
 
-<pre><code>magento setup:upgrade --keep-generated
+  <pre><code>magento setup:upgrade --keep-generated
 </code></pre>
 
-<div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning">
     <p>The optional <code>--keep-generated</code> option should be used <em>only</em> in limited circumstances by experienced system integrators. <code>--keep-generated</code> should <em>never</em> be used in a development environment.</p>
     <p>Improper use of this optional parameter can cause errors during code execution.</p>
 </div>
 
-<ol>
-  <li>
-    <p>Install the Magento software:</p>
+  <ol>
+    <li>
+      <p>Install the Magento software:</p>
 
-    <ul>
-      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento">Install the Magento software using the command line</a></li>
-      <li><a href="/guides/v2.0/install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a></li>
-    </ul>
-  </li>
-</ol>
+      <ul>
+        <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento">Install the Magento software using the command line</a></li>
+        <li><a href="/guides/v2.0/install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a></li>
+      </ul>
+    </li>
+  </ol>
+</div>
 
 
 		</div>

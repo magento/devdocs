@@ -222,12 +222,30 @@
 </ul>
 
 <h2 id="instgde-cli-before">First steps</h2>
-<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.</li>
-<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
-Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
-bash shell example for CentOS:<br />
-<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
-<div class="bs-callout bs-callout-info" id="info">
+<div>
+
+  <ol>
+    <li>
+      <p>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.</p>
+
+      <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
+
+      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+</code></pre>
+    </li>
+    <li>
+      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+
+      <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
+
+      <p>bash shell example for CentOS:</p>
+
+      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+</code></pre>
+    </li>
+  </ol>
+
+  <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>You can also run the commands in the following ways:</p>
 <ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
@@ -235,92 +253,93 @@ bash shell example for CentOS:<br />
 <p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
 </div>
 
-<p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
+  <p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
 
-<h2 id="instgde-cli-subcommands-enable-disable-prereq">Prerequisites</h2>
-<p>This command has no prerequisites.</p>
+  <h2 id="instgde-cli-subcommands-enable-disable-prereq">Prerequisites</h2>
+  <p>This command has no prerequisites.</p>
 
-<h2 id="instgde-cli-subcommands-enable-disable">Module enable, disable</h2>
-<p>To enable or disable available modules, use the following command:</p>
+  <h2 id="instgde-cli-subcommands-enable-disable">Module enable, disable</h2>
+  <p>To enable or disable available modules, use the following command:</p>
 
-<pre><code>magento module:enable [-c|--clear-static-content] [-f|--force] [--all] &lt;module-list&gt; 
+  <pre><code>magento module:enable [-c|--clear-static-content] [-f|--force] [--all] &lt;module-list&gt; 
 magento module:disable [-c|--clear-static-content] [-f|--force] [--all] &lt;module-list&gt; 
 </code></pre>
 
-<p>where</p>
+  <p>where</p>
 
-<ul>
-  <li><code>&lt;module-list&gt;</code> is a space-delimited list of modules to enable or disable. If any module name contains special characters, enclose the name in either single or double quotes.</li>
-  <li><code>--all</code> to enable or disable all modules at the same time.</li>
-  <li><code>-f</code> or <code>--force</code> to force a module to be enabled or disabled despite dependencies. Before you use this option, see <a href="#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</li>
-  <li>
-    <p><code>-c</code> or <code>--clear-static-content</code> clears generated static view files after enabling or disabling modules. </p>
+  <ul>
+    <li><code>&lt;module-list&gt;</code> is a space-delimited list of modules to enable or disable. If any module name contains special characters, enclose the name in either single or double quotes.</li>
+    <li><code>--all</code> to enable or disable all modules at the same time.</li>
+    <li><code>-f</code> or <code>--force</code> to force a module to be enabled or disabled despite dependencies. Before you use this option, see <a href="#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</li>
+    <li>
+      <p><code>-c</code> or <code>--clear-static-content</code> clears generated static view files after enabling or disabling modules. </p>
 
-    <p>Failure to clear static view files might result in issues if there are multiple files with the same name and you don’t clear all of them. </p>
+      <p>Failure to clear static view files might result in issues if there are multiple files with the same name and you don’t clear all of them. </p>
 
-    <p>In other words, because of <a href="/guides/v2.0/architecture/view/static-process.html">static file fallback</a> rules, if you do not clear static files and there is more than one file named <code>logo.gif</code> that are different, fallback might cause the wrong file to display.</p>
-  </li>
-</ul>
+      <p>In other words, because of <a href="/guides/v2.0/architecture/view/static-process.html">static file fallback</a> rules, if you do not clear static files and there is more than one file named <code>logo.gif</code> that are different, fallback might cause the wrong file to display.</p>
+    </li>
+  </ul>
 
-<p>Use the following command to list enabled and disabled modules:</p>
+  <p>Use the following command to list enabled and disabled modules:</p>
 
-<pre><code>magento module:status
+  <pre><code>magento module:status
 </code></pre>
 
-<p>For example, to disable the Weee module, enter:</p>
+  <p>For example, to disable the Weee module, enter:</p>
 
-<pre><code>magento module:disable Magento_Weee
+  <pre><code>magento module:disable Magento_Weee
 </code></pre>
 
-<p>For important information about enabling and disabling modules, see <a href="#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</p>
+  <p>For important information about enabling and disabling modules, see <a href="#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</p>
 
-<h2 id="instgde-cli-subcommands-enable-update">Update the database</h2>
-<p>If you enabled one or more modules, run the following command to update the database:</p>
+  <h2 id="instgde-cli-subcommands-enable-update">Update the database</h2>
+  <p>If you enabled one or more modules, run the following command to update the database:</p>
 
-<pre><code>magento setup:upgrade
+  <pre><code>magento setup:upgrade
 </code></pre>
 
-<h2 id="instgde-cli-subcommands-enable-modules">About enabling and disabling modules</h2>
-<p>Magento enables you to enable or disable currently available modules; in other words, any Magento-provided module or any third-party module you that is currently available.</p>
-<p>Certain modules have dependencies on other modules, in which case you might not be able to enable or disable a module because it has dependencies on other modules. </p>
-<p>In addition, there might be <em>conflicting</em> modules that cannot both be enabled at the same time.</p>
-<p>Examples:</p>
-<ul><li>Module A depends on Module B. You cannot disable Module B unless you first disable Module A.</li>
+  <h2 id="instgde-cli-subcommands-enable-modules">About enabling and disabling modules</h2>
+  <p>Magento enables you to enable or disable currently available modules; in other words, any Magento-provided module or any third-party module you that is currently available.</p>
+  <p>Certain modules have dependencies on other modules, in which case you might not be able to enable or disable a module because it has dependencies on other modules. </p>
+  <p>In addition, there might be <em>conflicting</em> modules that cannot both be enabled at the same time.</p>
+  <p>Examples:</p>
+  <ul><li>Module A depends on Module B. You cannot disable Module B unless you first disable Module A.</li>
 	<li>Module A depends on Module B, both of which are disabled. You must enable module B before you can enable module A.</li>
 	<li>Module A conflicts with Module B. You can disable Module A and Module B, or you can disable either module but you <em>cannot</em> enable Module A and Module B at the same time.</li></ul>
 
-<p>Dependencies are declared in the <code>require</code> field in Magento's <code>composer.json</code> file for each module. Conflicts are declared in the <code>conflict</code> field in modules' <code>composer.json</code> files. We use that information to build a dependency graph:</p>
-<ul><li><code>A-&gt;B</code> means module A depends on module B.</li>
+  <p>Dependencies are declared in the <code>require</code> field in Magento's <code>composer.json</code> file for each module. Conflicts are declared in the <code>conflict</code> field in modules' <code>composer.json</code> files. We use that information to build a dependency graph:</p>
+  <ul><li><code>A-&gt;B</code> means module A depends on module B.</li>
 	<li>A <em>dependency chain</em> is the path from a module to another one. For example, if module A depends on module B and module B depends on module C, then the dependency chain is <code>A-&gt;B-&gt;C</code>.</li></ul>
-<p>If you attempt to enable or disable a module that depends on other modules, the dependency graph displays in the error message.</p>
-<div class="bs-callout bs-callout-info" id="info">
+  <p>If you attempt to enable or disable a module that depends on other modules, the dependency graph displays in the error message.</p>
+  <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>It's possible that module A's <code>composer.json</code> declares a conflict with module B but not vice versa.</p></span>
 </div>
 
-<p><em>Command line <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html">module enable or disable subcommand</a> only:</em> To force a module to be enabled or disabled regardless of its dependencies, use the optional <code>--force</code> argument.</p>
+  <p><em>Command line <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html">module enable or disable subcommand</a> only:</em> To force a module to be enabled or disabled regardless of its dependencies, use the optional <code>--force</code> argument.</p>
 
-<div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning">
     <p>Using <code>--force</code> can disable your Magento store and cause problems accessing the Magento Admin.</p>
 </div>
 
-<h4 id="related-topics">Related topics</h4>
+  <h4 id="related-topics">Related topics</h4>
 
-<ul>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html">Installing the Magento software using the command line</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-mods.html">Uninstall modules</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-deployment.html">Create the deployment configuration</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-db.html">Create the Magento database schema</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-store.html">Configure the store</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-admin.html">Create a Magento administrator</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-backup.html">Back up the file system, media, and database</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-theme-uninstall.html">Uninstall themes</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-langpk.html">Uninstall language packages</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a></li>
-</ul>
+  <ul>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html">Installing the Magento software using the command line</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-mods.html">Uninstall modules</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-deployment.html">Create the deployment configuration</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-db.html">Create the Magento database schema</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-store.html">Configure the store</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-admin.html">Create a Magento administrator</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-backup.html">Back up the file system, media, and database</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-theme-uninstall.html">Uninstall themes</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-langpk.html">Uninstall language packages</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a></li>
+  </ul>
+</div>
 
 
 		</div>

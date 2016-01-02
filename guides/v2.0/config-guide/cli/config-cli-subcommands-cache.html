@@ -309,12 +309,30 @@
 </table>
 
 <h2 id="config-cli-before">First steps</h2>
-<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.</li>
-<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
-Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
-bash shell example for CentOS:<br />
-<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
-<div class="bs-callout bs-callout-info" id="info">
+<div>
+
+  <ol>
+    <li>
+      <p>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.</p>
+
+      <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
+
+      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+</code></pre>
+    </li>
+    <li>
+      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+
+      <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
+
+      <p>bash shell example for CentOS:</p>
+
+      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+</code></pre>
+    </li>
+  </ol>
+
+  <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>You can also run the commands in the following ways:</p>
 <ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
@@ -322,19 +340,19 @@ bash shell example for CentOS:<br />
 <p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
 </div>
 
-<p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+  <p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
-<h2 id="config-cli-subcommands-cache-status">View the cache status</h2>
-<p>To view the status of the cache, enter</p>
+  <h2 id="config-cli-subcommands-cache-status">View the cache status</h2>
+  <p>To view the status of the cache, enter</p>
 
-<pre><code>magento cache:status 
+  <pre><code>magento cache:status 
 </code></pre>
 
-<!-- where `--bootstrap=` is a URL-encoded associative array of Magento <a href="/guides/v2.0/config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview">application bootstrap parameters</a> and values. -->
+  <!-- where `--bootstrap=` is a URL-encoded associative array of Magento <a href="/guides/v2.0/config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview">application bootstrap parameters</a> and values. -->
 
-<p>A sample follows:</p>
+  <p>A sample follows:</p>
 
-<pre><code>                    config: 1
+  <pre><code>                    config: 1
                     layout: 1
                 block_html: 1
                collections: 1
@@ -347,81 +365,81 @@ bash shell example for CentOS:<br />
          config_webservice: 1
 </code></pre>
 
-<h2 id="config-cli-subcommands-cache-en">Enable or disable cache types</h2>
-<p>This command enables you to enable or disable all cache types or only the ones you specify. Disabling cache types is useful during development because you see the results of your changes without having to flush the cache; however, disabling cache types has an adverse affect on performance.</p>
+  <h2 id="config-cli-subcommands-cache-en">Enable or disable cache types</h2>
+  <p>This command enables you to enable or disable all cache types or only the ones you specify. Disabling cache types is useful during development because you see the results of your changes without having to flush the cache; however, disabling cache types has an adverse affect on performance.</p>
 
-<p>Command options:</p>
+  <p>Command options:</p>
 
-<pre><code>magento cache:enable [type] ... [type]
+  <pre><code>magento cache:enable [type] ... [type]
 magento cache:disable [type] ... [type] 
 </code></pre>
 
-<p>where</p>
+  <p>where</p>
 
-<p>omitting <code>[type]</code> enables or disables all cache types at the same time.</p>
+  <p>omitting <code>[type]</code> enables or disables all cache types at the same time.</p>
 
-<p><code>type</code> is a space-separated list of cache types.</p>
+  <p><code>type</code> is a space-separated list of cache types.</p>
 
-<!-- `--bootstrap=` is a URL-encoded associative array of Magento <a href="/guides/v2.0/config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview">application bootstrap parameters</a> and values. -->
+  <!-- `--bootstrap=` is a URL-encoded associative array of Magento <a href="/guides/v2.0/config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview">application bootstrap parameters</a> and values. -->
 
-<p>To list cache types and their status, enter</p>
+  <p>To list cache types and their status, enter</p>
 
-<pre><code>magento cache:status
+  <pre><code>magento cache:status
 </code></pre>
 
-<p>For example, to disable the full page cache and the DDL cache, enter </p>
+  <p>For example, to disable the full page cache and the DDL cache, enter </p>
 
-<pre><code>magento cache:disable db_ddl full_page
+  <pre><code>magento cache:disable db_ddl full_page
 </code></pre>
 
-<p>Sample result:</p>
+  <p>Sample result:</p>
 
-<pre><code>Changed cache status:	
+  <pre><code>Changed cache status:	
                     db_ddl: 1 -&gt; 0
                  full_page: 1 -&gt; 0
 </code></pre>
 
-<div class="bs-callout bs-callout-info" id="info">
+  <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>Enabling a cache type automatically clears that cache type.</p></span>
 </div>
 
-<h2 id="config-cli-subcommands-cache-clean">Clean and flush cache types</h2>
-<p>To purge out-of-date items from the cache, you can <em>clean</em> or <em>flush</em> cache types:</p>
+  <h2 id="config-cli-subcommands-cache-clean">Clean and flush cache types</h2>
+  <p>To purge out-of-date items from the cache, you can <em>clean</em> or <em>flush</em> cache types:</p>
 
-<ul>
-  <li>
-    <p>Cleaning a cache type deletes all items from enabled Magento cache types only. In other words, this option does not affect other processes or applications because it cleans only the cache that Magento uses.</p>
+  <ul>
+    <li>
+      <p>Cleaning a cache type deletes all items from enabled Magento cache types only. In other words, this option does not affect other processes or applications because it cleans only the cache that Magento uses.</p>
 
-    <p>Disabled cache types are not cleaned.</p>
-  </li>
-  <li>
-    <p>Flushing a cache type purges the cache storage, which might affect other processes applications that are using the same storage.</p>
+      <p>Disabled cache types are not cleaned.</p>
+    </li>
+    <li>
+      <p>Flushing a cache type purges the cache storage, which might affect other processes applications that are using the same storage.</p>
 
-    <p>Flush cache types if you’ve already tried cleaning the cache and you’re still having issues that you cannot isolate.</p>
-  </li>
-</ul>
+      <p>Flush cache types if you’ve already tried cleaning the cache and you’re still having issues that you cannot isolate.</p>
+    </li>
+  </ul>
 
-<p>Command usage:</p>
+  <p>Command usage:</p>
 
-<pre><code>magento cache:clean [type] ... [type]
+  <pre><code>magento cache:clean [type] ... [type]
 magento cache:flush [type] ... [type]
 </code></pre>
 
-<p>where</p>
+  <p>where</p>
 
-<p><code>[type]</code> is a space-separated list of cache types. Omitting <code>[type]</code> cleans or flushes all cache types at the same time.</p>
+  <p><code>[type]</code> is a space-separated list of cache types. Omitting <code>[type]</code> cleans or flushes all cache types at the same time.</p>
 
-<!-- `--bootstrap=` is a URL-encoded associative array of Magento <a href="/guides/v2.0/config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview">application bootstrap parameters</a> and values.
+  <!-- `--bootstrap=` is a URL-encoded associative array of Magento <a href="/guides/v2.0/config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview">application bootstrap parameters</a> and values.
  -->
-<p>For example, to flush all cache types, enter</p>
+  <p>For example, to flush all cache types, enter</p>
 
-<pre><code>magento cache:flush --all
+  <pre><code>magento cache:flush --all
 </code></pre>
 
-<p>Sample result:</p>
+  <p>Sample result:</p>
 
-<pre><code>Flushed cache types:
+  <pre><code>Flushed cache types:
 config
 layout
 block_html
@@ -435,22 +453,23 @@ config_integration_api
 config_webservice
 </code></pre>
 
-<h4 id="related-topics">Related topics</h4>
+  <h4 id="related-topics">Related topics</h4>
 
-<ul>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
-</ul>
+  <ul>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
+  </ul>
+</div>
 
 
 		</div>

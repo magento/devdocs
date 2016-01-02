@@ -222,12 +222,30 @@
 </ul>
 
 <h2 id="config-cli-before">First steps</h2>
-<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.</li>
-<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
-Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
-bash shell example for CentOS:<br />
-<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
-<div class="bs-callout bs-callout-info" id="info">
+<div>
+
+  <ol>
+    <li>
+      <p>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.</p>
+
+      <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
+
+      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+</code></pre>
+    </li>
+    <li>
+      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+
+      <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
+
+      <p>bash shell example for CentOS:</p>
+
+      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+</code></pre>
+    </li>
+  </ol>
+
+  <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>You can also run the commands in the following ways:</p>
 <ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
@@ -235,17 +253,17 @@ bash shell example for CentOS:<br />
 <p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
 </div>
 
-<p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+  <p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
-<h2 id="config-cli-subcommands-index-info">View the list of indexers</h2>
-<p>To view the list of indexers to use in the commands discussed in this topic, enter</p>
+  <h2 id="config-cli-subcommands-index-info">View the list of indexers</h2>
+  <p>To view the list of indexers to use in the commands discussed in this topic, enter</p>
 
-<pre><code>magento indexer:info
+  <pre><code>magento indexer:info
 </code></pre>
 
-<p>The list displays as follows:</p>
+  <p>The list displays as follows:</p>
 
-<pre><code>catalog_category_product                 Category Products
+  <pre><code>catalog_category_product                 Category Products
 catalog_product_category                 Product Categories
 catalog_product_price                    Product Price
 catalog_product_attribute                Product EAV
@@ -255,29 +273,29 @@ catalogrule_product                      Catalog Product Rule
 catalogsearch_fulltext                   Catalog Search
 </code></pre>
 
-<h2 id="config-cli-subcommands-index-status">View indexer status</h2>
-<p>This command enables you to view the status of all or selected indexers (for example, shows whether indexers need to be reindexed).</p>
+  <h2 id="config-cli-subcommands-index-status">View indexer status</h2>
+  <p>This command enables you to view the status of all or selected indexers (for example, shows whether indexers need to be reindexed).</p>
 
-<p>Command options:</p>
+  <p>Command options:</p>
 
-<pre><code>magento indexer:status [indexer]
+  <pre><code>magento indexer:status [indexer]
 </code></pre>
 
-<p>where <code>[indexer]</code> is a space-separated list of indexers. Omit <code>[indexer]</code> to view status of all indexers.</p>
+  <p>where <code>[indexer]</code> is a space-separated list of indexers. Omit <code>[indexer]</code> to view status of all indexers.</p>
 
-<p>To view the list of indexers, enter</p>
+  <p>To view the list of indexers, enter</p>
 
-<pre><code>magento indexer:info
+  <pre><code>magento indexer:info
 </code></pre>
 
-<p>A sample follows:</p>
+  <p>A sample follows:</p>
 
-<pre><code>magento indexer:status
+  <pre><code>magento indexer:status
 </code></pre>
 
-<p>Sample result:</p>
+  <p>Sample result:</p>
 
-<pre><code>Category Products:                                 Reindex required
+  <pre><code>Category Products:                                 Reindex required
 Product Categories:                                Reindex required
 Product Price:                                     Reindex required
 Product EAV:                                       Reindex required
@@ -287,36 +305,36 @@ Catalog Product Rule:                              Reindex required
 Catalog Search:                                    Reindex required
 </code></pre>
 
-<p>Reindexing is discussed in the next section.</p>
+  <p>Reindexing is discussed in the next section.</p>
 
-<h2 id="config-cli-subcommands-index-reindex">Reindex</h2>
-<p>This command enables you to reindex all or selected indexers one time only.</p>
+  <h2 id="config-cli-subcommands-index-reindex">Reindex</h2>
+  <p>This command enables you to reindex all or selected indexers one time only.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
+  <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>This command reindexes one time only. To keep indexers up-to-date, you must set up a <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-bkg">cron job</a>.</p></span>
 </div>
 
-<p>Command options:</p>
+  <p>Command options:</p>
 
-<pre><code>magento indexer:reindex [indexer]
+  <pre><code>magento indexer:reindex [indexer]
 </code></pre>
 
-<p>where <code>[indexer]</code> is a space-separated list of indexers. Omit <code>[indexer]</code> to reindex all indexers.</p>
+  <p>where <code>[indexer]</code> is a space-separated list of indexers. Omit <code>[indexer]</code> to reindex all indexers.</p>
 
-<p>To view the list of indexers, enter</p>
+  <p>To view the list of indexers, enter</p>
 
-<pre><code>magento indexer:info
+  <pre><code>magento indexer:info
 </code></pre>
 
-<p>A sample follows:</p>
+  <p>A sample follows:</p>
 
-<pre><code>magento indexer:reindex
+  <pre><code>magento indexer:reindex
 </code></pre>
 
-<p>Sample result:</p>
+  <p>Sample result:</p>
 
-<pre><code>Category Products index has been rebuilt successfully in &lt;time&gt;
+  <pre><code>Category Products index has been rebuilt successfully in &lt;time&gt;
 Product Categories index has been rebuilt successfully in &lt;time&gt;
 Product Price index has been rebuilt successfully in &lt;time&gt;
 Product EAV index has been rebuilt successfully in &lt;time&gt;
@@ -326,37 +344,37 @@ Catalog Product Rule index has been rebuilt successfully in &lt;time&gt;
 Catalog Search index has been rebuilt successfully in &lt;time&gt;
 </code></pre>
 
-<div class="bs-callout bs-callout-info" id="info">
+  <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>Reindexing all indexers can take a long time for stores with large numbers of products, customers, categories, and promotional rules.</p></span>
 </div>
 
-<h2 id="config-cli-subcommands-index-conf">Configure indexers</h2>
-<p>This command enables you to set the following indexer options:</p>
+  <h2 id="config-cli-subcommands-index-conf">Configure indexers</h2>
+  <p>This command enables you to set the following indexer options:</p>
 
-<ul>
-  <li>Update on save (<code>realtime</code>): Indexed data is updated as soon as a change is made in the Admin. (For example, the category products index is reindex after products are added to a category in the Admin.) This is the default.</li>
-  <li>Update by schedule (<code>schedule</code>): Data is indexed according to the schedule set by your Magento cron job.</li>
-</ul>
+  <ul>
+    <li>Update on save (<code>realtime</code>): Indexed data is updated as soon as a change is made in the Admin. (For example, the category products index is reindex after products are added to a category in the Admin.) This is the default.</li>
+    <li>Update by schedule (<code>schedule</code>): Data is indexed according to the schedule set by your Magento cron job.</li>
+  </ul>
 
-<p><a href="/guides/v2.0/architecture/index-cache/indexing.html">More information about indexing</a>.</p>
+  <p><a href="/guides/v2.0/architecture/index-cache/indexing.html">More information about indexing</a>.</p>
 
-<h3 id="config-cli-subcommands-index-conf-show">Display the current configuration</h3>
-<p>To view the current indexer configuration, enter</p>
+  <h3 id="config-cli-subcommands-index-conf-show">Display the current configuration</h3>
+  <p>To view the current indexer configuration, enter</p>
 
-<pre><code>magento indexer:show-mode [indexer]
+  <pre><code>magento indexer:show-mode [indexer]
 </code></pre>
 
-<p>where <code>[indexer]</code> is a space-separated list of indexers or omit <code>[indexer]</code> to show all indexers’ modes.</p>
+  <p>where <code>[indexer]</code> is a space-separated list of indexers or omit <code>[indexer]</code> to show all indexers’ modes.</p>
 
-<p>For example, to show the mode of all indexers:</p>
+  <p>For example, to show the mode of all indexers:</p>
 
-<pre><code>magento indexer:show-mode 
+  <pre><code>magento indexer:show-mode 
 </code></pre>
 
-<p>Sample result:</p>
+  <p>Sample result:</p>
 
-<pre><code>Category Products:                                 Update on Save
+  <pre><code>Category Products:                                 Update on Save
 Product Categories:                                Update on Save
 Product Price:                                     Update on Save
 Product EAV:                                       Update on Save
@@ -366,50 +384,51 @@ Catalog Product Rule:                              Update on Save
 Catalog Search:                                    Update on Save
 </code></pre>
 
-<h3 id="config-cli-subcommands-index-conf-set">Configure indexers</h3>
-<p>To specify the indexer configuration, enter</p>
+  <h3 id="config-cli-subcommands-index-conf-set">Configure indexers</h3>
+  <p>To specify the indexer configuration, enter</p>
 
-<pre><code>magento indexer:set-mode {realtime|schedule} [indexer]
+  <pre><code>magento indexer:set-mode {realtime|schedule} [indexer]
 </code></pre>
 
-<p>where</p>
+  <p>where</p>
 
-<p><code>realtime</code> sets the selected indexers to update on save.
+  <p><code>realtime</code> sets the selected indexers to update on save.
 <code>schedule</code> sets the specified indexers to save according to the cron schedule.
 <code>indexer</code> is a space-separated list of indexers or omit <code>indexer</code> to configure all indexers the same way.</p>
 
-<p>To view the list of indexers, enter</p>
+  <p>To view the list of indexers, enter</p>
 
-<pre><code>magento indexer:info
+  <pre><code>magento indexer:info
 </code></pre>
 
-<p>For example, to change only the category products and product categories indexers to update on schedule, enter</p>
+  <p>For example, to change only the category products and product categories indexers to update on schedule, enter</p>
 
-<pre><code>magento indexer:set-mode schedule catalog_category_product catalog_product_category
+  <pre><code>magento indexer:set-mode schedule catalog_category_product catalog_product_category
 </code></pre>
 
-<p>Sample result:</p>
+  <p>Sample result:</p>
 
-<pre><code>Index mode for Indexer Category Products was changed from 'Update on Save' to 'Update by Schedule'
+  <pre><code>Index mode for Indexer Category Products was changed from 'Update on Save' to 'Update by Schedule'
 Index mode for Indexer Product Categories was changed from 'Update on Save' to 'Update by Schedule'
 </code></pre>
 
-<h4 id="related-topics">Related topics</h4>
+  <h4 id="related-topics">Related topics</h4>
 
-<ul>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
-</ul>
+  <ul>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
+    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
+  </ul>
+</div>
 
 
 		</div>

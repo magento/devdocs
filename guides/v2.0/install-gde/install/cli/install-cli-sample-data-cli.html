@@ -220,12 +220,30 @@
   <p>First, you must <a href="/guides/v2.0/install-gde/install/get-software.html">get the Magento software</a>.</p>
 
   <h2 id="install sample-cli-first">First steps</h2>
-  <ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.</li>
-<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
-Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
-bash shell example for CentOS:<br />
-<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
-  <div class="bs-callout bs-callout-info" id="info">
+  <div>
+
+    <ol>
+      <li>
+        <p>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.</p>
+
+        <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
+
+        <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+</code></pre>
+      </li>
+      <li>
+        <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+
+        <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
+
+        <p>bash shell example for CentOS:</p>
+
+        <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+</code></pre>
+      </li>
+    </ol>
+
+    <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>You can also run the commands in the following ways:</p>
 <ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
@@ -233,68 +251,69 @@ bash shell example for CentOS:<br />
 <p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
 </div>
 
-  <h2 id="install-sample-cli-run">Install sample data command</h2>
-  <p>To install sample data using the command line, enter the following command as the Magento file system owner:</p>
+    <h2 id="install-sample-cli-run">Install sample data command</h2>
+    <p>To install sample data using the command line, enter the following command as the Magento file system owner:</p>
 
-  <pre><code>php &lt;your Magento install dir&gt;/bin/magento sampledata:deploy [module-list]
+    <pre><code>php &lt;your Magento install dir&gt;/bin/magento sampledata:deploy [module-list]
 </code></pre>
 
-  <p>where <code>[module-list]</code> is an optional space-separated list of <a href="#sample-data-modules">sample data modules</a> to install. Omit this parameter to install all sample data modules.</p>
+    <p>where <code>[module-list]</code> is an optional space-separated list of <a href="#sample-data-modules">sample data modules</a> to install. Omit this parameter to install all sample data modules.</p>
 
-  <h3 id="authentication-error">Authentication error</h3>
+    <h3 id="authentication-error">Authentication error</h3>
 
-  <p>The following error might display:</p>
+    <p>The following error might display:</p>
 
-  <pre><code>[Composer\Downloader\TransportException]
+    <pre><code>[Composer\Downloader\TransportException]
 The 'https://repo.magento.com/packages.json' URL required authentication.
 You must be using the interactive console to authenticate
 </code></pre>
 
-  <p>If the error displays, change to your Magento installation directory and run <code>composer update</code>, which will prompt you for your <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">authentication keys</a>.</p>
+    <p>If the error displays, change to your Magento installation directory and run <code>composer update</code>, which will prompt you for your <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">authentication keys</a>.</p>
 
-  <h3 id="sample-data-modules">Complete list of modules</h3>
+    <h3 id="sample-data-modules">Complete list of modules</h3>
 
-  <p>The complete list of sample data modules follows:</p>
+    <p>The complete list of sample data modules follows:</p>
 
-  <div>
+    <div>
 
-    <p>Magento CE and Magento EE:</p>
+      <p>Magento CE and Magento EE:</p>
 
-    <ul>
-      <li>magento/module-bundle-sample-data</li>
-      <li>magento/module-catalog-rule-sample-data</li>
-      <li>magento/module-catalog-sample-data</li>
-      <li>magento/module-cms-sample-data</li>
-      <li>magento/module-configurable-sample-data</li>
-      <li>magento/module-customer-sample-data</li>
-      <li>magento/module-downloadable-sample-data</li>
-      <li>magento/module-grouped-product-sample-data</li>
-      <li>magento/module-msrp-sample-data</li>
-      <li>magento/module-offline-shipping-sample-data</li>
-      <li>magento/module-product-links-sample-data</li>
-      <li>magento/module-review-sample-data</li>
-      <li>magento/module-sales-rule-sample-data</li>
-      <li>magento/module-sales-sample-data</li>
-      <li>magento/module-sample-data</li>
-      <li>magento/module-swatches-sample-data</li>
-      <li>magento/module-tax-sample-data</li>
-      <li>magento/module-theme-sample-data</li>
-      <li>magento/module-widget-sample-data</li>
-      <li>magento/module-wishlist-sample-data</li>
-      <li>magento/sample-data</li>
-      <li>magento/sample-data-media</li>
-    </ul>
+      <ul>
+        <li>magento/module-bundle-sample-data</li>
+        <li>magento/module-catalog-rule-sample-data</li>
+        <li>magento/module-catalog-sample-data</li>
+        <li>magento/module-cms-sample-data</li>
+        <li>magento/module-configurable-sample-data</li>
+        <li>magento/module-customer-sample-data</li>
+        <li>magento/module-downloadable-sample-data</li>
+        <li>magento/module-grouped-product-sample-data</li>
+        <li>magento/module-msrp-sample-data</li>
+        <li>magento/module-offline-shipping-sample-data</li>
+        <li>magento/module-product-links-sample-data</li>
+        <li>magento/module-review-sample-data</li>
+        <li>magento/module-sales-rule-sample-data</li>
+        <li>magento/module-sales-sample-data</li>
+        <li>magento/module-sample-data</li>
+        <li>magento/module-swatches-sample-data</li>
+        <li>magento/module-tax-sample-data</li>
+        <li>magento/module-theme-sample-data</li>
+        <li>magento/module-widget-sample-data</li>
+        <li>magento/module-wishlist-sample-data</li>
+        <li>magento/sample-data</li>
+        <li>magento/sample-data-media</li>
+      </ul>
 
-    <p>Magento EE only:</p>
+      <p>Magento EE only:</p>
 
-    <ul>
-      <li>magento/module-customer-balance-sample-data</li>
-      <li>magento/module-gift-card-sample-data</li>
-      <li>magento/module-gift-registry-sample-data</li>
-      <li>magento/module-multiple-wishlist-sample-data</li>
-      <li>magento/module-target-rule-sample-data</li>
-    </ul>
+      <ul>
+        <li>magento/module-customer-balance-sample-data</li>
+        <li>magento/module-gift-card-sample-data</li>
+        <li>magento/module-gift-registry-sample-data</li>
+        <li>magento/module-multiple-wishlist-sample-data</li>
+        <li>magento/module-target-rule-sample-data</li>
+      </ul>
 
+    </div>
   </div>
 </div>
 
