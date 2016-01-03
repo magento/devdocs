@@ -337,7 +337,7 @@ Server built:   Jul 22 2014 14:35:32
 &lt;/Directory&gt;</pre></li>
 	<div class="bs-callout bs-callout-info" id="info">
 		<span class="glyphicon-class">
-		<p>In some cases, additional parameters might be required. For more information, see the <a href="https://httpd.apache.org/docs/2.4/howto/htaccess.html" target="_blank">Apache 2.4 documentation</a>.</p></span>
+		<p>In some cases, additional parameters might be required. For more information, see the <a href="https://httpd.apache.org/docs/2.4/mod/mod_access_compat.html#order" target="_blank">Apache 2.4 documentation</a>.</p></span>
 	</div>
 
 <li>Restart Apache:
@@ -374,7 +374,7 @@ Server built:   Jul 22 2014 14:35:32
 &lt;/Directory&gt;</pre></li>
 	<div class="bs-callout bs-callout-info" id="info">
 		<span class="glyphicon-class">
-		<p>In some cases, additional parameters might be required. For more information, see the <a href="https://httpd.apache.org/docs/2.4/howto/htaccess.html" target="_blank">Apache 2.4 documentation</a>.</p></span>
+		<p>In some cases, additional parameters might be required. For more information, see the <a href="https://httpd.apache.org/docs/2.4/mod/mod_access_compat.html#order" target="_blank">Apache 2.4 documentation</a>.</p></span>
 	</div>
 
 <li>Restart Apache:
@@ -453,7 +453,7 @@ Server built:   Jul 22 2014 22:46:25
 &lt;/Directory&gt;</pre></li>
 	<div class="bs-callout bs-callout-info" id="info">
 		<span class="glyphicon-class">
-		<p>In some cases, additional parameters might be required. For more information, see the <a href="https://httpd.apache.org/docs/2.4/howto/htaccess.html" target="_blank">Apache 2.4 documentation</a>.</p></span>
+		<p>In some cases, additional parameters might be required. For more information, see the <a href="https://httpd.apache.org/docs/2.4/mod/mod_access_compat.html#order" target="_blank">Apache 2.4 documentation</a>.</p></span>
 	</div>
 
 <li>Restart Apache:
@@ -598,6 +598,11 @@ ln -s ../mods-available/rewrite.load</p>
 &lt;/Directory&gt;
 </code></pre>
 
+  <div class="bs-callout bs-callout-info" id="info">
+	<span class="glyphicon-class">
+	<p>The preceding values for <code>Order</code> might not work in all cases. For more information, see the <a href="https://httpd.apache.org/docs/2.4/mod/mod_access_compat.html#order" target="_blank">Apache documentation</a>.</p></span>
+</div>
+
   <h4 id="install-apache-403_2.2">Solving 403 Forbidden errors for Apache 2.2</h4>
   <p>To enable web site visitors to access your site, use the <a href="http://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#allow" target="_blank">Allow directive</a>.</p>
 
@@ -610,6 +615,11 @@ ln -s ../mods-available/rewrite.load</p>
 	Allow from all
 &lt;/Directory&gt;
 </code></pre>
+
+  <div class="bs-callout bs-callout-info" id="info">
+	<span class="glyphicon-class">
+	<p>The preceding values for <code>Order</code> might not work in all cases. For more information, see the Apache documentation (<a href="https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order" target="_blank">2.2</a>, <a href="https://httpd.apache.org/docs/2.4/mod/mod_authz_host.html#order" target="_blank">2.4</a>).</p></span>
+</div>
 
   <h4 id="related-topics">Related topics:</h4>
 
