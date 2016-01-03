@@ -211,7 +211,7 @@ For example:
 
 <div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
-	<p>The preceding values for <code>Order</code> might not work in all cases. For more information, see the Apache documentation (<a href="https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order" target="_blank">2.2</a>, <a href="https://httpd.apache.org/docs/2.4/mod/mod_authz_host.html#order" target="_blank">2.4</a>).</p></span>
+	<p>The preceding values for <code>Order</code> might not work in all cases. For more information, see the <a href="https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order" target="_blank">Apache documentation</a>.</p></span>
 </div>
 
 #### Related topics:
