@@ -63,18 +63,18 @@ Constructor injection *must* be used for all optional and required service depen
 <?php
 class Test
 {
-    protected $_class;
+    protected $class;
  
-    public function __construct(Class $class)
+    public function __construct(SomeClass $class)
     {
-        $this->_class = $class;
+        $this->class = $class;
     }
  
     public function execute()
     {
         //some code
  
-        $this->_class->execute();
+        $this->class->execute();
  
         //some code
     }
