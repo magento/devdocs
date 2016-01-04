@@ -11,11 +11,11 @@ github_link: howdoi/webapi/integration.md
 ---
 
 
-An **integration** enables third-party services to call the Magento web APIs. For example, you can create an integration so that an SaaS (Software as a Service) application such as Salesforce can perform tasks such as creating Magento customer accounts or fetching data about orders.
+An **integration** enables third-party services to call the Magento web APIs. For example, you can create an integration so that an SaaS (Software as a Service) application can perform tasks such as creating Magento customer accounts or fetching data about orders.
 
-Implementing an integration requires little knowledge of PHP or Magento internal processes. However, you must have a working knowledge of the Magento REST or SOAP Web APIs. In addition, interactions between Magento and the third-party service require [Web API authentication](authentication/gs-authentication.html).
+Implementing an integration requires little knowledge of PHP or Magento internal processes. However, you must have a working knowledge of the Magento REST or SOAP Web APIs. In addition, interactions between Magento and the third-party service require [Web API authentication](../../get-started/authentication/gs-authentication.html).
 
-Before you begin creating a module, make sure that you have a working installation of Magento 2.0, and the [Magento System Requirements](../install-gde/system-requirements.html).
+Before you begin creating a module, make sure that you have a working installation of Magento 2.0, and the [Magento System Requirements](../../install-gde/system-requirements.html).
 
 To create an integration, follow these general steps:
 
@@ -26,7 +26,7 @@ To create an integration, follow these general steps:
 
 <h2 id="skeletal">Create a skeletal module</h2>
 
-Magento expects that a component's files be locatedTo develop a module, you must:
+To develop a module, you must:
 
 1. **Create the module file structure.** The module for an integration can be placed anywhere under the Magento root directory, but the recommended location is `<magento_base_dir>/vendor/<vendor_name>/module-<module_name>`.
 
@@ -40,7 +40,7 @@ Magento expects that a component's files be locatedTo develop a module, you must
     mkdir integration
     mkdir setup
     </pre>
-   For more detailed information, see [Create the module file structure](../extension-dev-guide/module-file-structure.html).
+   For more detailed information, see [Create the module file structure](../../extension-dev-guide/module-file-structure.html).
 
 2. **Define your module configuration file.** The `etc/module.xml` file provides basic information about the module. Change directories to the `etc` directory and create the `module.xml` file. You must specify values for the following attributes:
 
@@ -100,7 +100,7 @@ Magento expects that a component's files be locatedTo develop a module, you must
     </pre>
 
 
-    For more information, see [Create a component](../extension-dev-guide/create_component.html).
+    For more information, see [Create a component](../../extension-dev-guide/create_component.html).
 4. **Create an install class.**
 Change directories to your `setup` directory. Create a file `InstallData.php` that contains the following code. Be sure to change the path after `namespace`.
 
@@ -250,3 +250,9 @@ Use the following steps to install your module:
 
 <h2 id="check">Check your integration</h2>
 Log in to Magento and navigate to **Settings > Extensions > Integrations**. The integration should be displayed in the grid.
+
+<h2>Related Topics</h2>
+- [Web API authentication](../../get-started/authentication/gs-authentication.html)
+- [Magento System Requirements](../../install-gde/system-requirements.html)
+- [Create the module file structure](../../extension-dev-guide/module-file-structure.html)
+- [Create a component](../../extension-dev-guide/create_component.html)
