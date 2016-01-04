@@ -43,7 +43,9 @@ Browse the Design Pattern Library here:
 ####Getting User Input
 <a href="getting-user-input/form_elements/form_elements.html">Form Elements</a><br>
 <a href="getting-user-input/image_uploader/image_uploader.html">Image Uploader</a><br>
-<a href="getting-user-input/image_uploader/image_uploader.html">Date and Time Selector</a>
+<a href="getting-user-input/date_time_selector/date_time_selector.html">Date and Time Selector</a>
+<a href="getting-user-input/use_default_config/use_default_config.html">Use Default Config</a><br>
+<a href="getting-user-input/select_from_list/select_from_list.html">Select From List</a>
 
 
 ####Graphics
