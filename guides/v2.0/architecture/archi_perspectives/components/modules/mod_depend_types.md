@@ -1,0 +1,84 @@
+---
+layout: default
+group: arch-guide
+subgroup: Components
+title: Module dependency types
+menu_title: Module dependency types
+menu_order: 7
+level3_menu_node: level3child
+level3_subgroup: modules
+github_link: architecture/components/modules/mod_depend_types.md
+redirect_from: /guides/v1.0/architecture/modules/mod_depend_types.html
+---
+
+<h2 id="m2devgde-moddep-declare-dep">Types of module dependencies</h2>
+Module dependencies in Magento can be of two types: hard and soft dependencies.
+
+
+<h3>Hard dependencies</h3>
+
+A <i>hard dependency</i> implies that a module cannot function without the modules upon which it depends. Specifically:
+
+* The module contains code that uses logic from another module directly that is, the latter's instances, class constants, static methods, public class properties, interfaces, and traits. 
+
+* The module contains strings that include class names, method names, class constants, class properties, interfaces, and traits from another module. 
+
+* The module deserializes an object declared in another module. 
+
+* The module uses or modifies the database tables used by another module. 
+
+	
+<h3>Soft dependencies</h3>
+
+A <i>soft dependency</i> implies that a module can function without other modules, even if it has a dependency upon them. Specifically:
+
+	* The module directly checks another module's availability.
+
+	* The module extends another module's configuration.
+	
+	* The module extends another module's layout.
+
+<div class="bs-callout bs-callout-warning" id="warning">
+<p>Note: If a module uses code from another module, it should declare the dependency explicitly.
+</p>
+</div>
+
+Modules are installed in the following order: 
+
+1) the module serving as dependency for another module
+
+2) the module dependent on it
+
+
+<h3 id="m2devgde-moddep-inapp-dep">Inappropriate dependencies</h3>
+
+Avoid creating the following dependencies:
+
+* Circular dependencies (both direct and indirect)
+
+* Undeclared dependencies
+
+* Incorrect dependencies
+
+<h3 id="m2devgde-moddep-diff-layer">Dependencies in different layers</h3>
+There are peculiarities of building the dependencies between the modules belonging to different layers.
+
+<h3 id="m2devgde-moddep-frmwk-layer">Dependencies in the Framework layer</h3>
+Modules belonging to the Magento Framework can be used in the application layer by an explicit dependency.
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Note: In this case, using interfaces is preferable to using classes. </p>
+  <p>You can build dependencies between classes in the Magento Framework  even if they belong to different modules.</p>
+</div>
+
+
+<h3 id="m2devgde-moddep-app-layer">Dependencies in the application layer</h3>
+Modules belonging to the application layer cannot be used in the Magento Framework.
+
+You can build dependencies between classes in the application layer, but these classes must belong to the same module. Dependencies between the modules of the application layer should be built only by the service contract or the service provider interface (SPI).
+
+<h2 id="m2arch-module-related">Related topics</h2>
+
+<a href="{{ site.gdeurl }}architecture/archi_perspectives/components/modules/mod_depend.html">Module dependencies</a>
+
+
