@@ -42,8 +42,8 @@ The constraint PHP class must:
 
 * Contain the following methods: 
 
-  * `processAssert` which contains assertions. A `PHPUnit_Framework_Assert` class (`<magento2>/dev/tests/functional/vendor/phpunit/phpunit/src/Framework/Assert.php`) can be used to simplify assertions
-  * `toString` which returns a success message if the assertion is performed successfully
+  * `processAssert()` which contains assertions. A `PHPUnit_Framework_Assert` class (`<magento2>/dev/tests/functional/vendor/phpunit/phpunit/src/Framework/Assert.php`) can be used to simplify assertions.
+  * `toString()` which returns a success message if the assertion is performed successfully
 
 ### Constraint arguments
 

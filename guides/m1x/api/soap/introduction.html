@@ -1,26 +1,20 @@
 ---
-layout: m1x
+layout: m1x_soap
 title: Introduction to the Magento 1.x SOAP API
 ---
-<p><a href="{{ site.m1xgithuburl }}api/soap/introduction.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}common/images/github_icon.png" height="15px"></a></p>
 
-<div class="toc"> 
-<ul>
-    <li><a href='#Introduction-Introduction'><strong>Introduction</strong></a>
+<ul class="introduction-menu">
+    <li><a href='#Introduction-Introduction'>Introduction</a></li>
+    <li><a href='#Introduction-SupportedTypes'>Supported Types</a>
         <ul>
-            <li><a href='#Introduction-SupportedTypes'>Supported Types</a>
-                <ul>
-                    <li><a href='#Introduction-SOAP'>SOAP</a></li>
-                    <li><a href='#Introduction-XMLRPC'>XML-RPC</a></li>
-                </ul>
-            </li>
-            <li><a href='#Introduction-APIMethods'>API Methods</a></li>
-            <li><a href='#Introduction-GlobalAPIFaults'>Global API Faults</a></li>
-            <li><a href='#Introduction-SOAPAPIVersionv2'>SOAP API Version v2</a></li>
+            <li><a href='#Introduction-SOAP'>SOAP</a></li>
+            <li><a href='#Introduction-XMLRPC'>XML-RPC</a></li>
         </ul>
     </li>
-</ul></div>
-
+    <li><a href='#Introduction-APIMethods'>API Methods</a></li>
+    <li><a href='#Introduction-GlobalAPIFaults'>Global API Faults</a></li>
+    <li><a href='#Introduction-SOAPAPIVersionv2'>SOAP API Version v2</a></li>
+</ul>
 
 <h1><a name="Introduction-Introduction"></a>Introduction</h1>
 
@@ -38,13 +32,13 @@ title: Introduction to the Magento 1.x SOAP API
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
 <div id="root">
-		<pre class="theme: Default; brush: java; gutter: false">http://magentohost/api/?wsdl</pre>
-		</div>
+        <pre class="theme: Default; brush: java; gutter: false">http://magentohost/api/?wsdl</pre>
+        </div>
 </div></div>
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
 <div id="root">
-		<pre class="theme: Default; brush: java; gutter: false">http://magentohost/api/soap/?wsdl</pre>
-		</div>
+        <pre class="theme: Default; brush: java; gutter: false">http://magentohost/api/soap/?wsdl</pre>
+        </div>
 </div></div>
 
 <p>where magentohost is the domain for your Magento host.</p>
@@ -53,15 +47,15 @@ title: Introduction to the Magento 1.x SOAP API
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
 <div id="root">
-		<pre class="theme: Default; brush: java; gutter: false">http://magentohost/api/v2_soap?wsdl=1</pre>
-		</div>
+        <pre class="theme: Default; brush: java; gutter: false">http://magentohost/api/v2_soap?wsdl=1</pre>
+        </div>
 </div></div>
 
 <p>The following PHP example shows how to make SOAP calls to the Magento API v1:</p>
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
 <div id="root">
-		<pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/soap/api/?wsdl');
+        <pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/soap/api/?wsdl');
 
 // If somestuff requires api authentification,
 // then get a session token
@@ -79,7 +73,7 @@ $result = $client-&gt;multiCall($session, array(
 
 // If you don't need the session anymore
 $client-&gt;endSession($session);</pre>
-		</div>
+        </div>
 </div></div>
 
 <h3><a name="Introduction-XMLRPC"></a>XML-RPC</h3>
@@ -88,8 +82,8 @@ $client-&gt;endSession($session);</pre>
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
 <div id="root">
-		<pre class="theme: Default; brush: java; gutter: false">http://magentohost/api/xmlrpc/</pre>
-		</div>
+        <pre class="theme: Default; brush: java; gutter: false">http://magentohost/api/xmlrpc/</pre>
+        </div>
 </div></div>
 
 <p>where magentohost is the domain for your Magento host.</p>
@@ -98,7 +92,7 @@ $client-&gt;endSession($session);</pre>
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
 <div id="root">
-		<pre class="theme: Default; brush: php; gutter: false">$client = new Zend_XmlRpc_Client('http://magentohost/api/xmlrpc/');
+        <pre class="theme: Default; brush: php; gutter: false">$client = new Zend_XmlRpc_Client('http://magentohost/api/xmlrpc/');
 
 // If somestuff requires api authentification,
 // we should get session token
@@ -117,7 +111,7 @@ $client-&gt;call('multiCall', array($session,
 
 // If you don't need the session anymore
 $client-&gt;call('endSession', array($session));</pre>
-		</div>
+        </div>
 </div></div>
 
 <p>The XML-RPC only supports the version 1 of the Magento API.</p>
@@ -221,23 +215,23 @@ $client-&gt;call('endSession', array($session));</pre>
 <p>For example, consider the following PHP code using SOAP v1.</p>
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
 <div id="root">
-		<pre class="theme: Default; brush: php; gutter: false">$params = array(array(
+        <pre class="theme: Default; brush: php; gutter: false">$params = array(array(
     'status'=&gt;array('eq'=&gt;'pending'),
     'customer_is_guest'=&gt;array('eq'=&gt;'1'))
 ));
 $result = $client-&gt;call($sessionId, 'sales_order.list', $params);</pre>
-		</div>
+        </div>
 </div></div>
 
 <p>With SOAP v2, the following code would be equivalent.</p>
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
 <div id="root">
-		<pre class="theme: Default; brush: php; gutter: false">$params = array('filter' =&gt; array(
+        <pre class="theme: Default; brush: php; gutter: false">$params = array('filter' =&gt; array(
     array('key' =&gt; 'status', 'value' =&gt; 'pending'),
     array('key' =&gt; 'customer_is_guest', 'value' =&gt; '1')
 ));
 $result = $client-&gt;salesOrderList($sessionId, $params);</pre>
-		</div>
+        </div>
 </div></div>
 
 <p>Note that the WSDL for SOAP v1 and SOAP v2 are different. Note that in SOAP v1, customizing the API did not involve changing the WSDL. In SOAP v2, changes to the WSDL are required.</p>
@@ -247,5 +241,6 @@ $result = $client-&gt;salesOrderList($sessionId, $params);</pre>
 <p>Note that the WSDL for the SOAP v2 API is different when in WS-I compliant mode.</p>
 
 <p>Using the WS-I compliant SOAP v2 API WSDL, it is easy to automatically generate client classes for Java, .NET, and other languages using standard libraries. </p>
+
 
 <?php include(__ROOT__ . 'footer.php'); ?>

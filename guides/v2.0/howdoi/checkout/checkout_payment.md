@@ -2,15 +2,15 @@
 layout: default
 group: howdoi
 subgroup: checkout
-title: Add a payment method rendering to the checkout
-menu_title: Add a payment method rendering to the checkout
+title: Add a custom payment method to checkout
+menu_title: Add a custom payment method to checkout
 menu_order: 3
 github_link: howdoi/checkout/checkout_payment.md
 ---
 
 <h2> What's in this topic </h2>
 
-Out of the box, checkout in Magento consists of two steps:
+Out of the box, Magento checkout consists of two steps:
 
  - Shipping Information
  - Review and Payment Information
@@ -164,7 +164,7 @@ In order to get access to the system configuration, your payment method or a gro
 
 A sample `.php` class implementing `\Magento\Checkout\Model\ConfigProviderInterface`:
 
-<pre>
+{%highlight php startinline=1%}
 class MyCustomPaymentConfigProvider implements \Magento\Checkout\Model\ConfigProviderInterface
 {
 ...
@@ -176,7 +176,7 @@ class MyCustomPaymentConfigProvider implements \Magento\Checkout\Model\ConfigPro
     }
 ...
 }
-</pre>
+{% endhighlight %}
 
 A sample DI configuration file of a custom module `<your_module_dir>/etc/di.xml`:
 

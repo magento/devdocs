@@ -35,9 +35,9 @@ Assume that we have the following fixture:
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /**
-* Copyright © 2015 Magento. All rights reserved.
-* See COPYING.txt for license details.
-*/
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/mtf/etc/fixture.xsd">
