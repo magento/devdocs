@@ -274,17 +274,17 @@
 <p>For example:</p>
 <pre>curl -X POST "https://magento.host/index.php/rest/V1/integration/customer/token.xml" \
      -H "Content-Type:application/xml" \
-     -d '&lt;login&gt;&lt;username&gt;test@example.com&lt;/username&gt;&lt;password&gt;123123q&lt;/password&gt;&lt;/login&gt;'</pre>
+     -d '&lt;login&gt;&lt;username&gt;user_example&lt;/username&gt;&lt;password&gt;123123q&lt;/password&gt;&lt;/login&gt;'</pre>
 <p><a name="auth-request"></a></p>
 <h2>Authentication token request</h2>
 <p>To request an authentication token for a customer user for the REST web API:</p>
 <pre>curl -X POST "https://magento.host/index.php/rest/V1/integration/customer/token" \
      -H "Content-Type:application/json" \
-     -d '{"username":"test@example.com", "password":"123123q"}'</pre>
+     -d '{"username":"user_example", "password":"123123q"}'</pre>
 <p>To request an authentication token for an admin user for the REST web API:</p>
 <pre>curl -X POST "https://magento.host/index.php/rest/V1/integration/admin/token" \
      -H "Content-Type:application/json" \
-     -d '{"username":"test@example.com", "password":"123123q"}'</pre>
+     -d '{"username":"user_example", "password":"123123q"}'</pre>
 <p><a name="auth-response"></a></p>
 <h2>Authentication token response</h2>
 <p>A successful request returns a response body with the token, as follows:</p>
@@ -316,7 +316,6 @@
 
    <li><a href="/guides/v2.0/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
 </ul>
-
 
 
 		</div>
