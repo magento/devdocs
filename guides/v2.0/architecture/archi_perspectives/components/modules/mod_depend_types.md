@@ -32,11 +32,11 @@ Modules with a <i>hard dependency</i> on another module cannot function without 
 
 Modules with a  <i>soft dependency</i> on another module can function properly without the other module, even if it has a dependency upon it. Specifically:
 
-	* The module directly checks another module's availability.
+* The module directly checks another module's availability.
 
-	* The module extends another module's configuration.
+* The module extends another module's configuration.
 	
-	* The module extends another module's layout.
+* The module extends another module's layout.
 
 <div class="bs-callout bs-callout-warning" id="warning">
 <p>Note: If a module uses code from another module, it should declare the dependency explicitly.
