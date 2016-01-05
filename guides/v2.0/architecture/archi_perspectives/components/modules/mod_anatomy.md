@@ -1,12 +1,11 @@
 ---
 layout: default
-group: arch-guide
-subgroup: Components
-title: Module anatomy
+group: 
+subgroup: 
+title: 
 menu_title: 
-menu_order: 3
-level3_menu_node: level3child
-level3_subgroup: modules
+menu_order: 
+
 github_link: architecture/components/modules/mod_anatomy.md
 redirect: /guides/v2.0/architecture/modules/mod_anatomy.html
 ---
