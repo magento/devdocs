@@ -36,7 +36,7 @@ See one of the following sections:
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/translations/xlate.html#m2devgde-xlate-dictionaries">About translation dictionaries</a>
 *	<a href="#config-cli-subcommands-xlate-dict-dict">Work with translation dictionaries</a>
 
-<h3 id="config-cli-subcommands-xlate-dict-dict">Working with translation dictionaries</h3>
+<h3 id="config-cli-subcommands-xlate-dict-dict">Work with translation dictionaries</h3>
 To translate words and phrases, you must:
 
 1.	Run the translation collection command to extract translatable words and phrases from enabled modules.
@@ -45,7 +45,7 @@ To translate words and phrases, you must:
 After that,
 
 1.	You can package the translation dictionaries into a language package and provide the package to the Magento store administrator.
-2.	The store administrator configures the translations to be used in the Magento Admin.
+2.	In the Magento Admin, the store administrator configures the translations to be used.
 
 Command options:
 
@@ -72,13 +72,13 @@ The following table discusses the meanings of this command's parameters and valu
 	</tr>
 	<tr>
 		<td><p>-m|--magento</p></td>
-		<td><p>If used, searches the Magento codebase. This option adds themes or modules to each line in the dictionary. <em>Required to create a language package</em>.</p>
+		<td><p><em>Required to create a language package</em>. If used, searches the directories that contain <code>bin/magento</code>. This option adds themes or modules to each line in the dictionary. </p>
 			<p>A sample follows:</p>
 			<p><pre>"No Items Found","No Items Found",module,Magento_Wishlist</pre></p></td>
 			<td><p>No</p></td>
 </tr>
 <tr>
-		<td><p>-o|--output="&lt;path></p></td>
+		<td><p>-o|--output="&lt;path>"</p></td>
 		<td><p>Specifies the absolute file system path and file name of the translation dictionary .csv file to create. <em>The value you enter is case-sensitive</em>.</p>
 			<p>If you omit this parameter, the output is directed to stdout.</p>
 		</td>
@@ -114,16 +114,20 @@ Use the following guidelines when translating words and phrases:
 <h2 id="config-cli-subcommands-xlate-pack">Create a language package</h2>
 <a href="{{ site.gdeurl }}frontend-dev-guide/translations/xlate.html#m2devgde-xlate-languagepack">More information about language packages</a>.
 
-To create a language package, you must perform the tasks discussed in the following sections:
+This section discusses how to create a language package, which writes `.csv` files to modules and themes. To create a language package, you must perform the tasks discussed in the following sections:
 
-1.	<a href="#config-cli-subcommands-xlate-dict">Translate words and phrases</a>.
+1.	<a href="#config-cli-subcommands-xlate-dict">Collect and translate words and phrases</a>.
+
+	(The `--magento` parameter is required.)
 2.	<a href="#config-cli-subcommands-xlate-pack-cmd">Run the language package command</a>.
+3.	<a href="#m2devgde-xlate-register">Register the language package</a>.
+4.	(Optional.) <a href="#m2devgde-xlate-severalpacks">Configure multiple packages for a language</a>.
 2.	<a href="#config-cli-subcommands-xlate-pack-meta">Add meta information to the language package</a>.
 
 <h3 id="config-cli-subcommands-xlate-pack-cmd">Run the language package command</h3>
 Command usage:
 
-	magento i18n:pack [-m|--mode={merge|replace}] [-d|--allow-duplicates] <source> <pack> <locale>
+	magento i18n:pack [-m|--mode={merge|replace}] [-d|--allow-duplicates] <source> <locale>
 
 The following table discusses the meanings of this command's parameters and values. 
 
@@ -172,6 +176,11 @@ The following table discusses the meanings of this command's parameters and valu
 	</tr>
 	</tbody>
 </table>
+
+<h3 id="m2devgde-xlate-register">Register the language package</h3>
+You must <a href="{{ site.gdeurl }}extension-dev-guide/component-registration.html">register</a> a language package like any other Magento 2 component.
+
+<a href="{{ site.mage2000url }}app/i18n/magento/de_de/registration.php" target="_blank"><copde>de_de</code> example</a>
 
 <h3 id="m2devgde-xlate-severalpacks">Configure multiple packages for a language</h3>
 To help you to make your store more flexible, you can upload several language packages for the same language in your store. Thus, you can use different custom packages for different parts of your store because the system compiles a single pack from all packages that are available for a language.
