@@ -1,12 +1,11 @@
 ---
 layout: default
-group: arch-guide 
-subgroup: Components
+group:  
+subgroup: 
 title: Module overview
 menu_title: Module overview
-menu_order: 2
-level3_menu_node: level3child
-level3_subgroup: modules
+menu_order: 
+
 github_link: architecture/components/modules/mod_intro.md
 redirect_from: /guides/v1.0/architecture/modules/mod_intro.html
 ---
@@ -57,9 +56,6 @@ See
 <h3 id="arch-modules-related">Related topics</h3>
 
 <a href="{{ site.gdeurl }}architecture/archi_perspectives/components/modules/mod_depend.html">Module dependencies</a>
-
-
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/components/modules/mod_anatomy.html">Module anatomy</a>
 
 
 
