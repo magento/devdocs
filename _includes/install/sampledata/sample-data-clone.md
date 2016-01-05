@@ -20,7 +20,7 @@ See the following sections:
 Before you install sample data, you must update Magento's `composer.json` to get components from `https://repo.magento.com`.
 
 1.  Log in to the Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
-4.  <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Clone the Magento 2 GitHub repository</a>.
+4.  <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">Clone the Magento 2 GitHub repository</a>.
 
 5.  <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Update dependencies</a> by running <code>composer install</code>.
 
