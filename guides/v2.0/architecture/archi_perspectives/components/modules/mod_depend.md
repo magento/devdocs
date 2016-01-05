@@ -13,7 +13,7 @@ redirect_from: /guides/v1.0/architecture/modules/mod_depend.html
 
 <h2 id="m2devgde-moddep-intro"> Module dependencies</h2>
 
-A <i>software dependency</i> is a reliance of one piece of software on another for proper functioning. A core principle of Magento architecture is the minimization of software dependencies. Instead, modules are optimally designed to be <i>loosely coupled</i>. Loosely coupled modules require little or no knowledge of other modules to perform their tasks. 
+A <i>software dependency</i> identifies a reliance of one software component on another for proper functioning. A core principle of Magento architecture is the minimization of software dependencies. Instead, modules are optimally designed to be <i>loosely coupled</i>. Loosely coupled modules require little or no knowledge of other modules to perform their tasks. 
 
 Each Magento module is responsible for a unique feature. In practice, this means that:
 
@@ -26,8 +26,8 @@ Each Magento module is responsible for a unique feature. In practice, this means
 * Removing or disabling a module does not result in disabling other modules.
 
 
-<h3>Modules can depend upon...</h3>
-Although loosely coupled software components are a goal, modules can contain dependencies upon the following components:
+<h3>What components can modules depend upon?</h3>
+Although Magento architecture favors loosely coupled software components, modules can contain dependencies upon these software components:
 
 * other modules
 * PHP extensions
