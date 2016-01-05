@@ -141,7 +141,7 @@ The following table discusses the meanings of this command's parameters and valu
 	<tr>
 		<td><p>&lt;source></p></td>
 		<td><p>Absolute file system path and file name of a .csv file that contains the combined translation dictionary and meta-information necessary for breakdown into a language package.</p>.
-		<p>Use <a href="#config-cli-subcommands-xlate-dict-dict">magento:i18n-collect</a> to create the .csv file then create the language package as discussed in <a href="#config-cli-subcommands-xlate-pack-meta">Add meta-information to the language package</a>. </p></td>
+		<p>Use <a href="#config-cli-subcommands-xlate-dict-dict">magento i18n:collect-phrases</a> to create the .csv file then create the language package as discussed in <a href="#config-cli-subcommands-xlate-pack-meta">Add meta-information to the language package</a>. </p></td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
