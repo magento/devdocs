@@ -30,6 +30,12 @@ Before you install sample data, you must update Magento's `composer.json` to get
 3.  Require the `https://repo.magento.com` repository, which contains the sample data code:
 
         composer config repositories.0 composer https://repo.magento.com
+
+4.	Optionally install the Magento software. (You can also do this after you install sample data.)
+
+	*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">Install using the command line</a>
+	*	<a href="{{ site.gdeurl }}install-gde/install/web/install-web.html">Install using the Setup Wizard</a>
+
 4.  Continue with the next section.
 
 <h2 id="clone-sample-data-deploy">Install sample data modules</h2>
@@ -38,6 +44,8 @@ To install sample data using the command line, enter the following command as th
     php <your Magento install dir>/bin/magento sampledata:deploy [module-list]
 
 where `[module-list]` is an optional space-separated list of <a href="#sample-data-modules">sample data modules</a> to install. Omit this parameter to install all sample data modules.
+
+You are required to <a href="{{ site.gdeurl }}install-gde/prereq/connect-auth.html">authenticate</a> to complete the action.
 
 ### Authentication error
 

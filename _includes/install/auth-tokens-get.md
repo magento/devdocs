@@ -11,6 +11,8 @@ To get your authentication keys:
 
 		If you already have an account, make sure you know your user name and password, then continue with the next step.
 
+3.	Log in to Magento Connect.
+3.	Click the **Connect** tab.
 2.	In the left pane, expand **Developers** as the following figure shows.
 
 	<img src="{{ site.baseurl }}common/images/connect_keys1.png" width="200px">
