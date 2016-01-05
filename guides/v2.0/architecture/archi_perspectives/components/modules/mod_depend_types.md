@@ -12,14 +12,14 @@ redirect_from: /guides/v1.0/architecture/modules/mod_depend_types.html
 ---
 
 <h2 id="m2devgde-moddep-declare-dep">Types of module dependencies</h2>
-Module dependencies in Magento can be of two types: hard and soft dependencies.
+There are two types of Magento module dependencies: hard and soft dependencies.
 
 
 <h3>Hard dependencies</h3>
 
-A <i>hard dependency</i> implies that a module cannot function without the modules upon which it depends. Specifically:
+Modules with a <i>hard dependency</i> on another module cannot function without the module it depends on. Specifically:
 
-* The module contains code that uses logic from another module directly that is, the latter's instances, class constants, static methods, public class properties, interfaces, and traits. 
+* The module contains code that directly uses logic from another module  (for example, the latter module's instances, class constants, static methods, public class properties, interfaces, and traits). 
 
 * The module contains strings that include class names, method names, class constants, class properties, interfaces, and traits from another module. 
 
@@ -30,7 +30,7 @@ A <i>hard dependency</i> implies that a module cannot function without the modul
 	
 <h3>Soft dependencies</h3>
 
-A <i>soft dependency</i> implies that a module can function without other modules, even if it has a dependency upon them. Specifically:
+Modules with a  <i>soft dependency</i> on another module can function properly without the other module, even if it has a dependency upon it. Specifically:
 
 	* The module directly checks another module's availability.
 
@@ -43,9 +43,9 @@ A <i>soft dependency</i> implies that a module can function without other module
 </p>
 </div>
 
-Modules are installed in the following order: 
+Magento installs modules in the following order: 
 
-1) the module serving as dependency for another module
+1) the module serving as a dependency for another module
 
 2) the module dependent on it
 
@@ -60,8 +60,8 @@ Avoid creating the following dependencies:
 
 * Incorrect dependencies
 
-<h3 id="m2devgde-moddep-diff-layer">Dependencies in different layers</h3>
-There are peculiarities of building the dependencies between the modules belonging to different layers.
+<h3 id="m2devgde-moddep-diff-layer">Dependencies between modules in different product layers</h3>
+You can build dependencies between the modules belonging to different layers.
 
 <h3 id="m2devgde-moddep-frmwk-layer">Dependencies in the Framework layer</h3>
 Modules belonging to the Magento Framework can be used in the application layer by an explicit dependency.
