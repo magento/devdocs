@@ -100,7 +100,7 @@ The following table provides a quick comparison between Magento with the default
 </tr>
 <tr>
 	<td>Attribute weight based on attribute settings</td>
-	<td>No</td>
+	<td>Yes</td>
 	<td>Yes</td>
 </tr>
 <tr>

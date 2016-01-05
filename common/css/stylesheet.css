@@ -61,8 +61,8 @@ div.toc { background: url(blend-toc.png) repeat-x; border-left:1px solid #effbfd
 div.section.toc { position:relative; top:-15px; }
 h4.toc { font-weight:300; padding: 10px 0 10px ; }
 p.toc { color: #cccccc; margin-bottom:10px; }
-p.toc a { padding: 0 5px 0 5px; } 
-p.toc a.first { padding-left: 0; }	
+p.toc a { padding: 0 5px 0 5px; }
+p.toc a.first { padding-left: 0; }
 
 /*PARAGRAPHS */		
 p { letter-spacing: 0.05px; color:#555555; line-height:20px; margin: 8px 0 17px;}
@@ -75,7 +75,7 @@ a:active{ color:#0090c0; }
 /* NOTES TIPS ETC. */
 
 .msg-box, .sm-note-box { 
-    margin:2px 0 15px 0; 
+    margin:2px 0 15px 0;
 	width:85%; 
 	border-radius: 8px 0 8px 0;
 	font-size:14px;
@@ -120,7 +120,7 @@ a:active{ color:#0090c0; }
 	
 pre { font-size:14px; line-height:20px; overflow: auto; }
 pre strong{ color:#333333; }
-pre, .link-callout { padding:10px; margin:0 0 20px; 
+pre, .link-callout { padding:10px; margin:0 0 20px;
 	background-color: #F3F6F9; border:1px solid #ebeff2; border-radius: 4px; }
 
 .link-callout {  width:450px; color:#666666;  }
@@ -433,9 +433,9 @@ a.image:hover {
    -webkit-transform:scale(1.6); 
    -moz-transform:scale(1.6); 
    -o-transform:scale(1.6); 
-   box-shadow:0 0 30px gray; 
-   -webkit-box-shadow:0 0 30px gray; 
-   -moz-box-shadow:0 0 30px gray; 
+   box-shadow:0 0 30px gray;
+   -webkit-box-shadow:0 0 30px gray;
+   -moz-box-shadow:0 0 30px gray;
    opacity: 1;
    margin-left: 145px;
 }
@@ -565,3 +565,112 @@ a.image:hover {
 /* CODE COMMENTS AND MANDATORY STEPS */
 .comments { color:#339900 }
 .mandatory { color:#EE6933 }
+
+
+.soap-api-menu {
+    float: left;
+    margin-left: -45px;
+    width: 250px;
+}
+.soap-api-menu {
+    border-bottom: 1px solid #cac2b5;
+    padding-bottom: 10px;
+    margin-top: 20px;
+}
+.soap-api-menu > ul {
+    margin-left: 0;
+}
+.soap-api-menu ul {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.soap-api-menu > ul > ul {
+    margin-left: 0;
+}
+.soap-api-menu ul li {
+    background: none;
+    margin-bottom: 0;
+    padding-left: 0;
+    margin-left: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 14px;
+}
+.soap-api-menu ul li a {
+    color: #444;
+}
+.soap-api-menu ul li a:hover,
+.soap-api-menu ul li a.active {
+    color: #f47027;
+}
+.soap-api-content {
+    float: right;
+    width: 750px;
+    clear: right;
+    margin-right: -45px;
+}
+.soap-api-menu li.parent,
+.soap-api-menu > ul > li {
+    margin-bottom: 5px;
+}
+.soap-api-menu li.parent > ul {
+    display: none;
+}
+.soap-api-menu li.parent > .arr {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    position: relative;
+    cursor: pointer;
+}
+.soap-api-menu li.parent > .arr:before {
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 4px;
+    left: 3px;
+    content: '';
+    border: 7px outset transparent;
+    border-top: 7px solid #ed6739;
+}
+.soap-api-menu li.parent > .arr:after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 2px;
+    left: 3px;
+    content: '';
+    border: 7px outset transparent;
+    border-top: 7px solid #fff;
+}
+.soap-api-menu li.parent.open > .arr:before {
+    border: 7px outset transparent;
+    border-bottom: 7px solid #ed6739;
+    top: -3px;
+}
+.soap-api-menu li.parent.open > .arr:after {
+    border: 7px outset transparent;
+    border-bottom: 7px solid #fff;
+    top: -1px;
+}
+.soap-api-menu li.parent > a,
+.soap-api-menu > ul > li > a {
+    font-weight: bold;
+}
+.introduction-menu {
+    background: #f7f3eb;
+    margin-left: 0;
+    padding: 20px;
+    list-style: none;
+}
+.introduction-menu li {
+    background: none;
+    padding: 0;
+}
+.introduction-menu a {
+    color: #c14800
+}
+.introduction-menu a:hover {
+    color: #ef672f;
+}
+
