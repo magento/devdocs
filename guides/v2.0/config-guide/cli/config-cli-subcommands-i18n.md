@@ -180,7 +180,7 @@ The following table discusses the meanings of this command's parameters and valu
 <h3 id="m2devgde-xlate-register">Register the language package</h3>
 You must <a href="{{ site.gdeurl }}extension-dev-guide/component-registration.html">register</a> a language package like any other Magento 2 component.
 
-<a href="{{ site.mage2000url }}app/i18n/magento/de_de/registration.php" target="_blank"><copde>de_de</code> example</a>
+<a href="{{ site.mage2000url }}app/i18n/magento/de_de/registration.php" target="_blank"><code>de_de</code> example</a>
 
 <h3 id="m2devgde-xlate-severalpacks">Configure multiple packages for a language</h3>
 To help you to make your store more flexible, you can upload several language packages for the same language in your store. Thus, you can use different custom packages for different parts of your store because the system compiles a single pack from all packages that are available for a language.
@@ -291,8 +291,19 @@ To add a German translation to module or theme you want to distribute to other m
 <h3 id="config-cli-subcommands-xlate-example2">Example: Create a language package</h3>
 Similar to preceding example, generate a CSV file, but instead of a module or theme directory, specify the entire Magento application root directory. The resulting .csv contains any phrases that the command could find in the code.
 
-1.	Edit the file as you see fit (you can break it down into multiple files, delete or add lines, and so on.)
+1.	Collect phrases from your module:
+
+		magento i18n:collect-phrases -o "/var/www/html/magento2/vendor/examplecorp/module-samplemodule/i18n/XX_XX.csv" --magento /var/www/html/magento2 /var/www/html/magento2/ExampleCorp/SampleModule
+
+2.	Translate the words and phrases using <a href="#config-cli-subcommands-xlate-dict-trans">these guidelines</a>.
+3.	Edit the file as you see fit (you can break it down into multiple files, delete or add lines, and so on).
+4.	Create the language package.
+
+		magento i18n:pack /var/www/html/magento2/ExampleCorp/SampleModule XX_XX
+
 2.	Put the result in a directory.
+7.	<a href="#m2devgde-xlate-register">Register the language package</a>.
+8.	Optionally <a href="#m2devgde-xlate-severalpacks">configure multiple packages for a language</a>.
 3.	<a href="#config-cli-subcommands-xlate-pack-meta">Add package meta-information files</a>.
 
 	The resulting directory and containing files constitutes the language package. 
