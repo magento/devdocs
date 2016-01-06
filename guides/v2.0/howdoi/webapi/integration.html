@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Customize Checkout</title>
+	<title>Create an integration</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/howdoi/checkout/checkout_overview.html">
+	<link rel="canonical" href="//guides/v2.0/howdoi/webapi/integration.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Customize Checkout</h1>
+		<h1 class="page-heading">Create an integration</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/frontend-dev-guide/howdoi/checkout/checkout_overview.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/howdoi/webapi/integration.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -212,23 +212,283 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<p>Magento checkout is implemented using the UI components. 
-Out of the box, the checkout consists of two steps:</p>
+		<p>An <strong>integration</strong> enables third-party services to call the Magento web APIs. The Magento APIs currently supports Accounting, Enterprise Resource Planning (ERP), Customer Relationship Management (CRM), Product Information Management (PIM), and marketing automation systems out of the box.  </p>
+
+<p>Implementing an integration requires little knowledge of PHP or Magento internal processes. However, you will need a working knowledge of</p>
 
 <ul>
-  <li>Shipping Information</li>
-  <li>Review and Payment Information</li>
+  <li><a href="../../get-started/bk-get-started-api.html">Magento REST or SOAP Web APIs</a></li>
+  <li><a href="../../get-started/authentication/gs-authentication.html">Web API authentication</a></li>
 </ul>
 
-<p>You can customize the default checkout in many ways. Here the following customizations are described:</p>
+<p>Before you begin creating a module, make sure that you have a working installation of Magento 2.0, and the <a href="../../install-gde/system-requirements.html">Magento System Requirements</a>.</p>
+
+<p>To create an integration, follow these general steps:</p>
+
+<ol>
+  <li><a href="#skeletal">Create a module with the minimal structure and configuration.</a></li>
+  <li><a href="#files">Add files specific to the integration.</a></li>
+  <li><a href="#install">Install the module.</a></li>
+  <li><a href="#check">Check the integration.</a></li>
+</ol>
+
+<h2 id="skeletal">Create a skeletal module</h2>
+
+<p>To develop a module, you must:</p>
+
+<ol>
+  <li>
+    <p><strong>Create the module file structure.</strong> The module for an integration can be placed anywhere under the Magento root directory, but the recommended location is <code>&lt;magento_base_dir&gt;/vendor/&lt;vendor_name&gt;/module-&lt;module_name&gt;</code>.</p>
+
+    <p>Also create  <code>etc</code>, <code>integration</code>, and <code>setup</code> subdirectories under <code>module-&lt;module_name&gt;</code>, as shown in the following example:</p>
+
+    <pre>
+ cd &lt;magento_base_dir&gt;
+ mkdir vendor/&lt;vendor_name&gt;/module-&lt;module_name&gt;
+ cd vendor/&lt;vendor_name&gt;/module-&lt;module_name&gt;
+ mkdir etc
+ mkdir integration
+ mkdir setup
+ </pre>
+    <p>For more detailed information, see <a href="../../extension-dev-guide/module-file-structure.html">Create the module file structure</a>.</p>
+  </li>
+  <li>
+    <p><strong>Define your module configuration file.</strong> The <code>etc/module.xml</code> file provides basic information about the module. Change directories to the <code>etc</code> directory and create the <code>module.xml</code> file. You must specify values for the following attributes:</p>
+
+    <table>
+<tr>
+<th>Attribute</th><th>Description</th>
+</tr>
+<tr>
+<td>name</td>
+<td>A string that uniquely identifies the module.</td>
+</tr>
+<tr>
+<td>setup_version</td>
+<td>The version of Magento the component uses</td>
+</tr>
+</table>
+    <p>The following example shows an example <code>module.xml</code> file.</p>
+
+    <pre>
+&lt;?xml version="1.0"?&gt;
+&lt;!--
+   /**
+   * Copyright © 2015 Magento. All rights reserved.
+   * See COPYING.txt for license details.
+   */
+   --&gt;
+   &lt;config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd"&gt;
+       &lt;module name="Vendor1_Module1" setup_version="2.0.0"&gt;
+       &lt;/module&gt;
+     &lt;/config&gt;
+</pre>
+  </li>
+  <li>
+    <p><strong>Add your module’s <code>composer.json</code> file.</strong> Composer is a dependency manager for PHP. You must create a <code>composer.json</code> file for your module so that Composer can install and update the libraries your module relies on. Place the <code>composer.json</code> file in the <code>module-&lt;module_name&gt;</code> directory.</p>
+
+    <p>The following example demonstrates a minimal <code>composer.json</code> file.</p>
+
+    <pre>
+   {
+   "name": "Vendor1_Module1",
+   "description": "create integration from config",
+   "require": {
+     "php": "~5.5.0|~5.6.0|~7.0.0",
+     "magento/framework": "2.0.0",
+     "magento/module-integration": "2.0.0"
+   },
+   "type": "magento2-module",
+   "version": "1.0",
+   "autoload": {
+     "files": [ "registration.php" ],
+     "psr-4": {
+       "Vendor1\\Module1\\": ""
+     }
+   }
+ }
+ </pre>
+
+    <p>For more information, see <a href="../../extension-dev-guide/create_component.html">Create a component</a>.</p>
+  </li>
+  <li>
+    <p><strong>Create an install class.</strong>
+Change directories to your <code>setup</code> directory. Create a  <code>InstallData.php</code> file that installs the integration configuration data into the Magento integration table.</p>
+
+    <p>The following sample is boilerplate and requires minor changes to make your integration work.</p>
+
+    <pre>
+ &lt;?php
+ namespace &lt;Vendor_name&gt;\Module-&lt;module_name&gt;\Setup;
+
+ use Magento\Framework\Setup\ModuleContextInterface;
+ use Magento\Framework\Setup\ModuleDataSetupInterface;
+ use Magento\Integration\Model\ConfigBasedIntegrationManager;
+ use Magento\Framework\Setup\InstallDataInterface;
+
+ class InstallData implements InstallDataInterface
+ {
+     /**
+      * @var ConfigBasedIntegrationManager
+      */
+
+     private $integrationManager;
+
+     /**
+      * @param ConfigBasedIntegrationManager $integrationManager
+      */
+     public function __construct(ConfigBasedIntegrationManager $integrationManager)
+     {
+         $this-&gt;integrationManager = $integrationManager;
+     }
+
+     /**
+      * {@inheritdoc}
+      */
+     public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
+     {
+         $this-&gt;integrationManager-&gt;processIntegrationConfig(['test_integration']);
+     }
+
+ }
+ </pre>
+
+    <p>In the following line</p>
+
+    <p><code>$this-&gt;integrationManager-&gt;processIntegrationConfig(['test_integration']);</code></p>
+
+    <p><code>test_integration</code> must refer to your <code>integrations/api.xml</code> file, and the integration name value must be the same.</p>
+
+    <p>Also, be sure to change the path after <code>namespace</code>.</p>
+  </li>
+</ol>
+
+<h2 id="files">Create integration files</h2>
+<p>Magento provides the Integration module, which simplifies the process of defining your integration. This module automatically performs functions such as:</p>
 
 <ul>
-  <li><a href="/guides/v2.0/howdoi/checkout/checkout_new_step.html">Add a new checkout step</a></li>
-  <li><a href="/guides/v2.0/howdoi/checkout/checkout_new_step.html">Customize the view of an existing step</a></li>
+  <li>Managing the third-party account that connects to Magento.</li>
+  <li>Maintaining OAuth authorizations and user data.</li>
+  <li>Managing security tokens and requests.</li>
 </ul>
 
-<p>For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code, add your customizations in a custom module. </p>
+<p>To customize your module, you must create multiple XML files and read through others files to determine what resources existing Magento modules have access to.</p>
 
+<p>The process for customizing your module includes</p>
+
+<ul>
+  <li><a href="#resources">Define the required resources</a></li>
+  <li><a href="#preconfig">Pre-configure the integration</a></li>
+</ul>
+
+<h3 id="resources">Define the required resources</h3>
+<p>The <code>integration/api.xml</code> file defines which API resources the integration has access to.</p>
+
+<p>To determine which resources an integration needs access to, review the permissions defined in each module’s <code>etc/acl.xml</code> file.</p>
+
+<p>In the following example, the test integration requires access to the following resources in the Sales module:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;integrations&gt;</span>
+    <span class="nt">&lt;integration</span> <span class="na">name=</span><span class="s">&quot;Test Integration&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;resources&gt;</span>
+            <span class="c">&lt;!-- To grant permission to Magento_Log::online, its parent Magento_Customer::customer needs to be declared as well--&gt;</span>
+            <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">&quot;Magento_Customer::customer&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">&quot;Magento_Log::online&quot;</span> <span class="nt">/&gt;</span>
+            <span class="c">&lt;!-- To grant permission to Magento_Sales::reorder, all its parent resources need to be declared--&gt;</span>
+            <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">&quot;Magento_Sales::sales&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">&quot;Magento_Sales::sales_operation&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">&quot;Magento_Sales::sales_order&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">&quot;Magento_Sales::actions&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">&quot;Magento_Sales::reorder&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/resources&gt;</span>
+    <span class="nt">&lt;/integration&gt;</span>
+    <span class="nt">&lt;integration</span> <span class="na">name=</span><span class="s">&quot;Test Integration2&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;resources&gt;</span>
+            <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">&quot;Magento_Sales::sales&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">&quot;Magento_Sales::sales_operation&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">&quot;Magento_Sales::transactions&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/resources&gt;</span>
+    <span class="nt">&lt;/integration&gt;</span>
+<span class="nt">&lt;/integrations&gt;</span></code></pre></div>
+
+<h3 id="preconfig">Pre-configure the integration</h3>
+
+<p>Your module can optionally provide a configuration file so that the integration can be automatically pre-configured with default values. To enable this feature, create the <code>config.xml</code> file in the <code>integration</code> directory.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>If you pre-configure the integration, the values cannot be edited from the admin panel.</p>
+</div>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;integrations&gt;</span>
+   <span class="nt">&lt;integration</span> <span class="na">name=</span><span class="s">&quot;TestIntegration1&quot;</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;email&gt;&lt;/email&gt;</span>
+       <span class="nt">&lt;endpoint_url&gt;&lt;/endpoint_url&gt;</span>
+       <span class="nt">&lt;identity_link_url&gt;&lt;/identity_link_url&gt;</span>
+   <span class="nt">&lt;/integration&gt;</span>
+<span class="nt">&lt;/integrations&gt;</span></code></pre></div>
+
+<table>
+<tr>
+<th>Element</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>integrations</td>
+<td>Contains one or more integration definitions.</td>
+</tr>
+<tr>
+<td>integration name=""</td>
+<td>Defines an integration. The <code>name</code> must be specified.</td>
+</tr>
+<tr>
+<td>email</td>
+<td>Optional. An email to associate with this integration.</td>
+</tr>
+<tr>
+<td>endpoint_url</td>
+<td><p>Optional. The URL where OAuth credentials can be sent when using OAuth for token exchange. We strongly recommend using <code>https://</code>.</p>
+<p>See [OAuth-based authentication](../../get-started/authentication/gs-authentication-oauth.html) for details.</p></td>
+</tr>
+<tr>
+<td>identity_link_url</td>
+<td>Optional. The URL that redirects the user to link their 3rd party account with the Magento integration.</td>
+</tr>
+</table>
+<h2 id="install">Install your module</h2>
+<p>Use the following steps to install your module:</p>
+
+<ol>
+  <li>
+    <p>Change directories to the <code>var</code> directory and remove its contents.</p>
+
+    <pre>
+  cd <magento_install_dir>/
+  rm -rf var/* 
+
+</magento_install_dir></pre>
+  </li>
+  <li>
+    <p>Run the following command to update the Magento database schema and data.</p>
+
+    <p><code>bin/magento setup:upgrade</code></p>
+  </li>
+  <li>
+    <p>Run the following command to generate the new code.</p>
+
+    <p><code>bin/magento setup:di:compile</code></p>
+  </li>
+</ol>
+
+<h2 id="check">Check your integration</h2>
+<p>Log in to Magento and navigate to <strong>Settings &gt; Extensions &gt; Integrations</strong>. The integration should be displayed in the grid.</p>
+
+<h2>Related Topics</h2>
+<ul>
+  <li><a href="../../get-started/authentication/gs-authentication.html">Web API authentication</a></li>
+  <li><a href="../../install-gde/system-requirements.html">Magento System Requirements</a></li>
+  <li><a href="../../extension-dev-guide/module-file-structure.html">Create the module file structure</a></li>
+  <li><a href="../../extension-dev-guide/create_component.html">Create a component</a></li>
+</ul>
 
 
 		</div>
@@ -476,7 +736,7 @@ Out of the box, the checkout consists of two steps:</p>
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/howdoi/webapi/integration.html">Create an integration</a></li>
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/howdoi/webapi/integration.html">Create an integration</a></li>
 									
 								
 								
@@ -651,7 +911,7 @@ Out of the box, the checkout consists of two steps:</p>
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/howdoi/checkout/checkout_overview.html">Customize Checkout</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/howdoi/checkout/checkout_overview.html">Customize Checkout</a></li>
 									
 								
 								
