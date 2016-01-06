@@ -11,9 +11,13 @@ github_link: howdoi/webapi/integration.md
 ---
 
 
-An **integration** enables third-party services to call the Magento web APIs. For example, you can create an integration so that an SaaS (Software as a Service) application can perform tasks such as creating Magento customer accounts or fetching data about orders.
+An **integration** enables third-party services to call the Magento web APIs. The Magento APIs currently supports Accounting, Enterprise Resource Planning (ERP), Customer Relationship Management (CRM), Product Information Management (PIM), and marketing automation systems out of the box.  
 
-Implementing an integration requires little knowledge of PHP or Magento internal processes. However, you must have a working knowledge of the Magento REST or SOAP Web APIs. In addition, interactions between Magento and the third-party service require [Web API authentication](../../get-started/authentication/gs-authentication.html).
+Implementing an integration requires little knowledge of PHP or Magento internal processes. However, you will need a working knowledge of
+
+* [Magento REST or SOAP Web APIs](../../get-started/bk-get-started-api.html)
+* [Web API authentication](../../get-started/authentication/gs-authentication.html)
+
 
 Before you begin creating a module, make sure that you have a working installation of Magento 2.0, and the [Magento System Requirements](../../install-gde/system-requirements.html).
 
@@ -101,8 +105,11 @@ To develop a module, you must:
 
 
     For more information, see [Create a component](../../extension-dev-guide/create_component.html).
+
 4. **Create an install class.**
-Change directories to your `setup` directory. Create a file `InstallData.php` that contains the following code. Be sure to change the path after `namespace`.
+Change directories to your `setup` directory. Create a  `InstallData.php` file that installs the integration configuration data into the Magento integration table.
+
+    The following sample is boilerplate and requires minor changes to make your integration work.
 
     <pre>
     &lt;?php
@@ -139,6 +146,16 @@ Change directories to your `setup` directory. Create a file `InstallData.php` th
 
     }
     </pre>
+
+
+    In the following line
+
+    `$this->integrationManager->processIntegrationConfig(['test_integration']);`
+
+    `test_integration` must refer to your `integrations/api.xml` file, and the integration name value must be the same.
+
+    Also, be sure to change the path after `namespace`.
+
 
 <h2 id="files">Create integration files</h2>
 Magento provides the Integration module, which simplifies the process of defining your integration. This module automatically performs functions such as:
@@ -191,6 +208,8 @@ In the following example, the test integration requires access to the following 
 
 Your module can optionally provide a configuration file so that the integration can be automatically pre-configured with default values. To enable this feature, create the `config.xml` file in the `integration` directory.
 
+
+
 <div class="bs-callout bs-callout-info" id="info">
   <p>If you pre-configure the integration, the values cannot be edited from the admin panel.</p>
 </div>
@@ -224,7 +243,8 @@ Your module can optionally provide a configuration file so that the integration 
 </tr>
 <tr>
 <td>endpoint_url</td>
-<td>Optional. The URL where OAuth credentials can be sent when using OAuth for token exchange. We strongly recommend using <code>https://</code>.</td>
+<td><p>Optional. The URL where OAuth credentials can be sent when using OAuth for token exchange. We strongly recommend using <code>https://</code>.</p>
+<p>See [OAuth-based authentication](../../get-started/authentication/gs-authentication-oauth.html) for details.</p></td>
 </tr>
 <tr>
 <td>identity_link_url</td>
@@ -246,7 +266,7 @@ Use the following steps to install your module:
 
 3. Run the following command to generate the new code.
 
-    <code>bin/magento setup:di:compile-multi-tenant</code>
+    <code>bin/magento setup:di:compile</code>
 
 <h2 id="check">Check your integration</h2>
 Log in to Magento and navigate to **Settings > Extensions > Integrations**. The integration should be displayed in the grid.
