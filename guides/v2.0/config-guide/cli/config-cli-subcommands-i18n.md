@@ -68,7 +68,8 @@ The following table discusses the meanings of this command's parameters and valu
 		<td><p>&lt;path to directory to translate></p></td>
 		<td><p>Path to a directory that has translatable code; in other words, PHP, PHTML, or XML files that have phrases to translate.</p>
 		<p>The tool starts searching at the path you enter and searches all files and subdirectories it contains. </p></td>
-		<td><p>Yes</p></td>
+		<p>Do not use this parameter if you used <code>-m|--magento</code>.</p>
+		<td><p>Yes for translation dictionaries, no for language packages.</p></td>
 	</tr>
 	<tr>
 		<td><p>-m|--magento</p></td>
