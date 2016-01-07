@@ -297,17 +297,15 @@ Similar to preceding example, generate a .csv file, but instead of specifying a 
 
 1.	Collect phrases from your module:
 
-		magento i18n:collect-phrases -o "/var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n/xx_YY.csv" /var/www/html/magento2/app/code/ExampleCorp/SampleModule
+		magento i18n:collect-phrases -o "/var/www/html/magento2/xx_YY.csv" -m
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The .csv file name must <em>exactly match</em> the locale, including the characters' case.</p>
-</div>
-
+	<div class="bs-callout bs-callout-info" id="info">
+  	<p>The .csv file name must <em>exactly match</em> the locale, including the characters' case.</p>
+	</div>
 2.	Translate the words and phrases using <a href="#config-cli-subcommands-xlate-dict-trans">these guidelines</a>.
-3.	Edit the file as you see fit (you can break it down into multiple files, delete or add lines, and so on).
 4.	Create the language package.
 
-		magento i18n:pack /var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n/xx_YY.csv -d xx_YY
+		magento i18n:pack /var/www/html/magento2/xx_YY.csv -d xx_YY
 
 2.	Create a directory for the language package.
 
@@ -324,7 +322,7 @@ Sample `composer.json`:
 
 {% highlight JSON %}
 {
-    "name": "magento/language-xx_yy",
+    "name": "examplecorp/language-xx_yy",
     "description": "Sample language",
     "version": "100.0.2",
     "license": [
@@ -371,7 +369,7 @@ Sample `language.xml`:
 -->
 <language xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/Language/package.xsd">
     <code>xx_YY</code>
-    <vendor>magento</vendor>
+    <vendor>examplecorp</vendor>
     <package>xx_YY</package>
 </language>
 {% endhighlight %}
