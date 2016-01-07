@@ -12,14 +12,12 @@ redirect_from: /guides/v1.0/architecture/modules/mod_and_areas.html
 ---
 
 <h2 id="m2arch-module-areas-overview"> Overview</h2>
-An <i>area</i> is a logical component that organizes code for optimized request processing. Magento uses areas to streamline web service calls by loading only the dependent code for the specified area. 
+An <i>area</i> is a logical component that organizes code for optimized request processing. Magento uses areas to streamline web service calls by loading only the dependent code for the specified area.  Each of the default areas defined by Magento can contain completely different code on how to process URLs and requests. 
 
 
-For example, if you are invoking a REST web service call, rather than load all the code related to generating user HTML pages, you can specify a separate area that loads code whose scope is limited to answering  REST calls.  Each of the default areas defined by Magento can contain completely different code on how to process URLs and requests.
+For example, if you are invoking a REST web service call, rather than load all the code related to generating user HTML pages, you can specify a separate area that loads code whose scope is limited to answering  REST calls. 
 
 
-<h3>Magento area structure</h3>
-Areas are defined in `di.xml` in the `areas` argument of `Magento\Framework\App\AreaList`. Typically, an area has behavior and view components, which operate separately. 
 
 <h3>Magento area types</h3>
 
@@ -34,6 +32,10 @@ Magento is organized into the following main areas:
 *     **Web API SOAP** (`webapi_soap`): entry point for this area is `index.php` or `pub/index.php`
 
 
+<h3>Magento area definition</h3>
+Areas are defined in `di.xml` in the `areas` argument of `Magento\Framework\App\AreaList`. Typically, an area has behavior and view components, which operate separately. 
+
+
 <h3>Note about Magento request processing</h3>
 
 Magento processes a URL request by first stripping off the base URL. The first path segment of the remaining URL identifies the request area.
@@ -41,12 +43,9 @@ Magento processes a URL request by first stripping off the base URL. The first p
 After the area name, the part of the URI segment specifies the *full front name*. When an HTTP request arrives, the handle is extracted from the URL. Magento uses the handle to identify the controller (a PHP class) and action (a PHP method in the class) to execute. A common action to display a HTML page is `index`, which returns an HTML page.
 
 
-<h2 id="m2arch-module-using">Use areas in modules</h2>
+<h2 id="m2arch-module-using">How areas work with modules</h2>
 
-Modules define which resources are visible and accessible in an area, as well as an area's behavior.
-
-
-The resources visible and accessible in an area as well as area's behavior are defined by modules. The same module can influence several areas. For instance, the RMA module is represented partly in the `adminhtml` area and partly in the `frontend` area.
+Modules define which resources are visible and accessible in an area, as well as an area's behavior. The same module can influence several areas. For instance, the RMA module is represented partly in the `adminhtml` area and partly in the `frontend` area.
 
 If your extension works in several different areas, ensure it has separate behavior and view components for each area.
 
