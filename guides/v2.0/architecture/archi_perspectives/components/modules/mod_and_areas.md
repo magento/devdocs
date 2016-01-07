@@ -15,30 +15,24 @@ redirect_from: /guides/v1.0/architecture/modules/mod_and_areas.html
 An <i>area</i> is a logical component that organizes code for optimized request processing. Magento uses areas to streamline web service calls by loading only the dependent code for the specified area. 
 
 
-For example, if you are invoking a REST web service call, rather than load all the code related to generating user HTML pages, you can specify a separate area that loads code whose scope is limited to answering  REST calls.  Each of the seven default areas defined by Magento can contain completely different code on how to process URLs and requests.
+For example, if you are invoking a REST web service call, rather than load all the code related to generating user HTML pages, you can specify a separate area that loads code whose scope is limited to answering  REST calls.  Each of the default areas defined by Magento can contain completely different code on how to process URLs and requests.
 
 
 <h3>Magento area structure</h3>
-Typically, an area has behavior and view components, which operate separately.
-
-Areas are defined in `di.xml` in the `areas` argument of `Magento\Framework\App\AreaList`.
-
+Areas are defined in `di.xml` in the `areas` argument of `Magento\Framework\App\AreaList`. Typically, an area has behavior and view components, which operate separately. 
 
 <h3>Magento area types</h3>
 
 Magento is organized into the following main areas:
 
-*     **Magento Admin** (`adminhtml`): entry point for this area is `index.php` or `pub/index.php`. The admin panel area serves for managing the store. The code of this area is adminhtml. Respectively, adminhtml subdirectory contains the view resources and Adminhtml subdirectory contains the controllers of the admin panel area
+*     **Magento Admin** (`adminhtml`): entry point for this area is `index.php` or `pub/index.php`. The Admin panel area includes the code needed for store management.  
 `
 *     **Storefront** (`frontend`): entry point for this area is `index.php` or `pub/index.php` 
-
-*     **Crontab** (`crontab`): entry point for this area is `pub/cron.php`
 
 *     **Web API REST** (`webapi_rest`): entry point for this area is `index.php` or `pub/index.php`
 
 *     **Web API SOAP** (`webapi_soap`): entry point for this area is `index.php` or `pub/index.php`
 
-*     **Install** (install): entry point for this area is `dev/shell/install.php`, or `index.php` or `pub/index.php`
 
 <h3>Note about Magento request processing</h3>
 
