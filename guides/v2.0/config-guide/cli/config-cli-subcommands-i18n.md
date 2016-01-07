@@ -279,33 +279,90 @@ To add a German translation to module or theme you want to distribute to other m
 
 1.	Collect phrases from your module:
 
-		magento i18n:collect-phrases -o "/var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n/XX_XX.csv" /var/www/html/magento2/app/code/ExampleCorp/SampleModule
+		magento i18n:collect-phrases --magento -o "/var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n/xx_yy.csv" 
 
 2.	Translate the words and phrases using <a href="#config-cli-subcommands-xlate-dict-trans">these guidelines</a>.
-3.	If necessary, copy `xx_xx.csv` to `/var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n` or to the module's theme directory.
+3.	If necessary, copy `xx_yy.csv` to `/var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n` or to the module's theme directory (depending on whether the translation dictionary is for a module or a theme).
 
 <h3 id="config-cli-subcommands-xlate-example2">Example: Create a language package</h3>
 Similar to preceding example, generate a .csv file, but instead of specifying a module or theme directory, specify the entire Magento application root directory. The resulting .csv contains any phrases that the command could find in the code.
 
 1.	Collect phrases from your module:
 
-		magento i18n:collect-phrases -o "/var/www/html/magento2/vendor/examplecorp/module-samplemodule/i18n/XX_XX.csv" --magento /var/www/html/magento2 /var/www/html/magento2/ExampleCorp/SampleModule
+		magento i18n:collect-phrases -o "/var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n/xx_yy.csv" /var/www/html/magento2/app/code/ExampleCorp/SampleModule
 
 2.	Translate the words and phrases using <a href="#config-cli-subcommands-xlate-dict-trans">these guidelines</a>.
 3.	Edit the file as you see fit (you can break it down into multiple files, delete or add lines, and so on).
 4.	Create the language package.
 
-		magento i18n:pack /var/www/html/magento2/ExampleCorp/SampleModule XX_XX
+		magento i18n:pack /var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n/xx_yy.csv -d xx_YY
 
-2.	Put the result in a directory.
-7.	<a href="#m2devgde-xlate-register">Register the language package</a>.
-8.	Optionally <a href="#m2devgde-xlate-severalpacks">configure multiple packages for a language</a>.
-3.	<a href="#config-cli-subcommands-xlate-pack-meta">Add package meta-information files</a>.
+2.	Create a directory for the language package.
 
-	The resulting directory and containing files constitutes the language package. 
+	For example, `/var/www/html/magento2/app/i18n/ExampleCorp/xx_yy`
 
-4.	Copy the file to `<your Magento install dir>/app/i18n` to enable the Magento application to automatically discover it.
+6.	In that directory, add all of the following:
 
+	*	A license, if required.
+	*	`composer.json` (sample following)
+	*	`registration.php` (sample following)
+	*	`language.xml` (sample following)
+
+Sample `composer.json`:
+
+{% highlight JSON %}
+{
+    "name": "magento/language-xx_yy",
+    "description": "Sample language",
+    "version": "100.0.2",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "require": {
+        "magento/framework": "100.0.*"
+    },
+    "type": "magento2-language",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ]
+    }
+}
+{% endhighlight %}
+
+Sample `registration.php`:
+
+{% highlight PHP %}
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+\Magento\Framework\Component\ComponentRegistrar::register(
+    \Magento\Framework\Component\ComponentRegistrar::LANGUAGE,
+    'magento_xx_yy',
+    __DIR__
+);
+?>
+{% endhighlight %}
+
+Sample `language.xml`:
+
+{% highlight XML %}
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<language xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/Language/package.xsd">
+    <code>xx_YY</code>
+    <vendor>magento</vendor>
+    <package>xx_YY</package>
+</language>
+{% endhighlight %}
 
 #### Related topics
 
