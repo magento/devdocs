@@ -36,11 +36,6 @@ Magento is organized into the following main areas:
 Areas are defined in `di.xml` in the `areas` argument of `Magento\Framework\App\AreaList`. Typically, an area has behavior and view components, which operate separately. 
 
 
-<h3>Note about Magento request processing</h3>
-
-Magento processes a URL request by first stripping off the base URL. The first path segment of the remaining URL identifies the request area.
-
-After the area name, the part of the URI segment specifies the *full front name*. When an HTTP request arrives, the handle is extracted from the URL. Magento uses the handle to identify the controller (a PHP class) and action (a PHP method in the class) to execute. A common action to display a HTML page is `index`, which returns an HTML page.
 
 
 <h2 id="m2arch-module-using">How areas work with modules</h2>
@@ -63,6 +58,11 @@ You can enable or disable an area within a module. If this module is enabled, it
   <p>Note: Disabling an area does not result in disabling the modules related to it.</p>
 </div>
 
+<h3>Note about Magento request processing</h3>
+
+Magento processes a URL request by first stripping off the base URL. The first path segment of the remaining URL identifies the request area.
+
+After the area name, the URI segment specifies the *full front name*. When an HTTP request arrives, the handle is extracted from the URL. Magento uses the handle to identify which controller (a PHP class) and action (a PHP method in the class) to execute. A common action to display a HTML page is `index`, which returns an HTML page.
 
 
 
