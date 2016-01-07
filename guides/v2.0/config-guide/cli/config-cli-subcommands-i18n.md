@@ -24,7 +24,10 @@ Magento translations enable you to customize and localize your store for multipl
 
 For more information, see <a href="{{ site.gdeurl }}frontend-dev-guide/translations/xlate.html">Translation</a>.
 
-This topic discusses how to generate translation dictionaries and language packages.
+This topic discusses how to generate:
+
+*	Translation dictionaries, which are a convenient way to translate *some* words and phrases, such as those for a custom module or theme
+*	Language packages, which enable you to translate *all* words and phrases in the Magento application
 
 <h2 id="config-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
