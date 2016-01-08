@@ -7,7 +7,7 @@ menu_title: (Easy) Install the Magento archive on your server
 menu_order: 1
 menu_node: parent
 github_link: install-gde/prereq/zip_install.md
-redirect_from: /guides/v2.0/install-gde/install/file-system-perms.html
+redirect_from: /guides/v2.0/install-gde/install/file-system-perms.html#zip-perms
 ---
 
 
