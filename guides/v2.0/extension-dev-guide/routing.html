@@ -242,15 +242,18 @@ However, you must not customize the routers that are used in Magento core module
 
 <p>Only the standard frontend and backend routers use routes. Typically, the configuration for a route is in the following format:</p>
 
-<pre>
-&lt;config&gt;
-    &lt;router id="%routerId%"&gt;
-        &lt;route id="%routeId%" frontName="%frontName%"&gt;
-            &lt;module name="%moduleName%" before="%moduleName%"/&gt;
-        &lt;/route&gt;
-    &lt;/router&gt;
-&lt;/config&gt;
-</pre>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config&gt;</span>
+    <span class="nt">&lt;router</span> <span class="na">id=</span><span class="s">&quot;%routerId%&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;route</span> <span class="na">id=</span><span class="s">&quot;%routeId%&quot;</span> <span class="na">frontName=</span><span class="s">&quot;%frontName%&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">&quot;%moduleName%&quot;</span> <span class="na">before=</span><span class="s">&quot;%moduleName%&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/route&gt;</span>
+    <span class="nt">&lt;/router&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p><code>%routeId%</code> must be at least three characters in length and can consist of the following characters: <code>A-Z, a-z, 0-9, _</code>.</p>
+  <p><code>%frontName%</code> must be at least three characters in length and can consist of the following characters: <code>A-Za-z0-9_\-</code>.</p>
+</div>
 
 <p>To retrieve the configuration for route for an area by the specified router, use the <code>Magento\App\Framework\Route\Config</code>.</p>
 
