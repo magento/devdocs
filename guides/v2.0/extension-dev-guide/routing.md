@@ -40,17 +40,20 @@ Configurations of the routes are stored in `routes.xml` in the scopes area.
 
 Only the standard frontend and backend routers use routes. Typically, the configuration for a route is in the following format:
 
+{% highlight XML %}
+<config>
+    <router id="%routerId%">
+        <route id="%routeId%" frontName="%frontName%">
+            <module name="%moduleName%" before="%moduleName%"/>
+        </route>
+    </router>
+</config>
+{% endhighlight %}
 
-<pre>
-&lt;config>
-    &lt;router id="%routerId%">
-        &lt;route id="%routeId%" frontName="%frontName%">
-            &lt;module name="%moduleName%" before="%moduleName%"/>
-        &lt;/route>
-    &lt;/router>
-&lt;/config>
-</pre>
-
+<div class="bs-callout bs-callout-info" id="info">
+  <p><code>%routeId%</code> must be at least three characters in length and can consist of the following characters: <code>A-Z, a-z, 0-9, _</code>.</p>
+  <p><code>%frontName%</code> must be at least three characters in length and can consist of the following characters: <code>A-Z, a-z, 0-9, _, -</code>.</p>
+</div>
 
 To retrieve the configuration for route for an area by the specified router, use the `Magento\App\Framework\Route\Config`.
 
