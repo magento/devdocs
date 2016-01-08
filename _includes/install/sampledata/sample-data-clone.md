@@ -29,7 +29,7 @@ Before you install sample data, you must update Magento's `composer.json` to get
     For example, `/var/www/html/magento2`
 3.  Require the `https://repo.magento.com` repository, which contains the sample data code:
 
-        composer config repositories.0 composer https://repo.magento.com
+        composer config repositories.magento composer https://repo.magento.com
 
 4.	Optionally install the Magento software. (You can also do this after you install sample data.)
 
