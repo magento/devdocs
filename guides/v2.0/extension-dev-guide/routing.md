@@ -52,7 +52,7 @@ Only the standard frontend and backend routers use routes. Typically, the config
 
 <div class="bs-callout bs-callout-info" id="info">
   <p><code>%routeId%</code> must be at least three characters in length and can consist of the following characters: <code>A-Z, a-z, 0-9, _</code>.</p>
-  <p><code>%frontName%</code> must be at least three characters in length and can consist of the following characters: <code>A-Za-z0-9_\-</code>.</p>
+  <p><code>%frontName%</code> must be at least three characters in length and can consist of the following characters: <code>A-Z, a-z, 0-9, _, -</code>.</p>
 </div>
 
 To retrieve the configuration for route for an area by the specified router, use the `Magento\App\Framework\Route\Config`.
