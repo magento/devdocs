@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Get your authentication keys</title>
+	<title>Set file system ownership and permissions</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/install-gde/prereq/connect-auth.html">
+	<link rel="canonical" href="//guides/v2.0/install-gde/prereq/file-system-perms.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Get your authentication keys</h1>
+		<h1 class="page-heading">Set file system ownership and permissions</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/prereq/connect-auth.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/prereq/file-system-perms.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -212,97 +212,58 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h4 id="contents">Contents</h4>
+		<h2 id="zip-perms">Set file system ownership and permissions</h2>
+<p>The following sections discuss how to set file system ownership and permissions:</p>
 
 <ul>
-  <li><a href="#auth-overview">Overview of Magento Connect authentication</a></li>
-  <li><a href="#auth-get">Get your authentication keys</a></li>
+  <li><a href="#install-perms-import">Why we recommend you set file system permissions</a></li>
+  <li><a href="#install-perms-set">File system permissions and ownership</a></li>
 </ul>
 
-<div>
+<h3 id="install-perms-import">Why we recommend you set file system permissions</h3>
+<p>Malicious exploits are an unfortunate reality in the internet age. To help prevent exploits that take advantage of the file system, we recommend you set Magento file system ownership and permissions in a particular way. For more information, see <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-over">Overview of ownership and permissions</a>.</p>
 
-  <h2 id="auth-overview">Overview of Magento Connect authentication</h2>
-  <p>The <code>repo.magento.com</code> repository, where Magento 2 and third-party component Composer packages are stored, requires authentication. To provide secure authentication, we enable you to generate a pair 32-character <em>authentication tokens</em> you can use to access the repository.</p>
-
-  <p>You get your credentials by logging in to <a href="http://www.magentocommerce.com/magento-connect" target="_blank">Magento Connect</a> with a user name and password, then going to <strong>My Account</strong> &gt; <strong>Developers</strong> &gt; <strong>Secure Keys</strong>. There, you can generate, regenerate, or delete your authentication tokens to use to:</p>
-
-  <ul>
-    <li><a href="/guides/v2.0/install-gde/prereq/integrator_install.html">Download the Magento software using Composer</a></li>
-    <li><a href="/guides/v2.0/install-gde/prereq/dev_install.html">Clone the Magento 2 GitHub (contributing developers only)</a></li>
-    <li>Install, update, or upgrade third-party components; and upgrade the Magento software using the <a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade</a> utilities.</li>
-  </ul>
-
-  <h2 id="auth-get">Get your authentication keys</h2>
-  <div>
-
-    <p>To get your authentication keys:</p>
-
-    <ol>
-      <li>
-        <p>If you haven’t done so already, create an account on <a href="http://www.magentocommerce.com/magento-connect">Magento Connect</a>.</p>
-
-        <p>(It’s the same as an account on <code>magento.com</code>.)</p>
-
-        <ul>
-          <li>Click <strong>My Account</strong> in the upper right corner of the page.</li>
-          <li>
-            <p>In the New Customer section, click <strong>Register</strong>.</p>
-
-            <p>If you already have an account, make sure you know your user name and password, then continue with the next step.</p>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <p>In the left pane, expand <strong>Developers</strong> as the following figure shows.</p>
-
-        <p><img src="/common/images/connect_keys1.png" width="200px" /></p>
-      </li>
-      <li>Click <strong>Developers</strong> &gt; <strong>Secure Keys</strong>.</li>
-      <li>
-        <p>You have the following options in the right pane:</p>
-
-        <ul>
-          <li>If you already have keys, use the <strong>Public key</strong> as your user name and the <strong>Private key</strong> as your password.</li>
-          <li>
-            <p>New key: In the <strong>Name</strong> field, enter a name to identify the keys and click <strong>Generate new</strong>.</p>
-
-            <p>You can optionally generate additional keys; for example, to provide access to <code>repo.magento.com</code> to co-workers, contractors, or integrators. </p>
-          </li>
-          <li>
-            <p>Regenerate or rename existing keys: Click <strong>Regenerate</strong>. </p>
-
-            <p>You can regenerate your keys for security reasons; for example, you believe they have been compromised.</p>
-          </li>
-          <li>Save an existing key if you changed its name: Click <strong>Save</strong>.</li>
-          <li>Disable keys: Click <strong>Disable</strong>. You can do this if you want to suspend use of your keys.</li>
-          <li>Delete keys: Click <strong>Delete</strong>.</li>
-        </ul>
-      </li>
-      <li>Come back to this page anytime to view or change your keys.</li>
-    </ol>
-
-    <h4 id="related-topics">Related topics:</h4>
-
-    <ul>
-      <li>
-        <p>Use your authentication keys:</p>
-
-        <ul>
-          <li><a href="/guides/v2.0/install-gde/prereq/integrator_install.html">Get the Magento CE or EE metapackage (integrators, packagers)</a></li>
-          <li><a href="/guides/v2.0/install-gde/prereq/dev_install.html">Clone the Magento 2 GitHub (contributing developers only)</a></li>
-          <li><a href="/guides/v2.0/comp-mgr/prereq/prereq_auth-token.html">Update components, upgrade the Magento software</a></li>
-        </ul>
-      </li>
-      <li><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6—Ubuntu</a></li>
-      <li><a href="/guides/v2.0/install-gde/prereq/php-centos.html">PHP 5.5 or 5.6—CentOS</a></li>
-      <li><a href="/guides/v2.0/install-gde/prereq/mysql.html">MySQL</a></li>
-      <li><a href="/guides/v2.0/install-gde/prereq/security.html">Configuring security options</a></li>
-      <li><a href="/guides/v2.0/install-gde/prereq/optional.html">Installing optional software</a></li>
-      <li><a href="/guides/v2.0/install-gde/install/pre-install.html">Determine your installation or upgrade path</a></li>
-    </ul>
-
-  </div>
+<div class="bs-callout bs-callout-info" id="info">
+  <p>This topic covers permissions for a development environment. In production, the web server user should have limited write privileges. To help manage you production and developer modes, we provide the <code><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">magento deploy:mode:set</a></code> command.</p>
 </div>
+
+<p>The important things:</p>
+<ul><li>The owner of the Magento file system:
+<ul><li>Must have full control (read/write/execute) of all files and directories.</li>
+<li>Must <em>not</em> be the web server user; it should be a different user.</li></ul>
+</li>
+<li>The web server user must have write access to the following files and directories:
+<ul><li><code>var</code></li>
+<li><code>app/etc</code></li>
+<li><code>pub</code></li></ul>
+</li>
+</ul>
+<p>In addition, the web server's <em>group</em> must own the Magento file system so that the Magento user (who is in the group) can share access to files with the web server user. (This includes files created by the Magento Admin or other web-based utilities.)</p>
+<p>We recommend setting the permissions as follows:</p>
+<ul><li>All directories have 770 permissions.<br />
+770 permissions give full control (that is, read/write/execute) to the owner and to the group and no permissions to anyone else.</li>
+<li>All files have 660 permissions.<br />
+660 permissions mean the owner and the group can read and write but other users have no permissions.</li></ul>
+
+<h3 id="install-perms-set">File system permissions and ownership</h3>
+<p>Use the following steps:</p>
+<ol><li>Change to the Magento installation directory:<br />
+	<pre>cd &lt;web server docroot&gt;/&lt;magento2 base dir&gt;</pre>
+	The base directory is typically a subdirectory named <code>magento2</code> under your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.<br />
+
+	Examples:
+	<ul><li>Ubuntu: <code>/var/www/magento2</code></li>
+	<li>CentOS: <code>/var/www/html/magento2</code></li></ul>
+</li>
+<li>Set ownership:<br />
+<pre>chown -R :&lt;your web server group name&gt; .</pre>
+Typical examples:<br /><br />
+CentOS: <code>chown -R :apache .</code><br />
+Ubuntu: <code>chown -R :www-data .</code></li>
+<li>Set permissions:<br />
+	<pre>find . -type d -exec chmod 770 {} \; &amp;&amp; find . -type f -exec chmod 660 {} \; &amp;&amp; chmod u+x bin/magento</pre>
+	If you must enter the commands as <code>sudo</code>, use:<br />
+	<pre>sudo find . -type d -exec chmod 770 {} \; &amp;&amp; sudo find . -type f -exec chmod 660 {} \; &amp;&amp; sudo chmod u+x bin/magento</pre></li></ol>
 
 
 		</div>
@@ -456,7 +417,7 @@
 
 									
 							
-									<li class="level-2  active "><a href="/guides/v2.0/install-gde/prereq/connect-auth.html">Get your authentication keys</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/connect-auth.html">Get your authentication keys</a></li>
 
 									
 						
@@ -496,7 +457,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/file-system-perms.html">Set file system ownership and permissions</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/install-gde/prereq/file-system-perms.html">Set file system ownership and permissions</a></li>
 
 									
 						
