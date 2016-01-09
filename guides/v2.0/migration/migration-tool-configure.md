@@ -42,10 +42,10 @@ To create a configuration file:
 
 {% highlight xml %}
 <source>
-    <database host="localhost" name="magento1" user="root"/>
+    <database host="127.0.0.1" name="magento1" user="root"/>
 </source>
 <destination>
-    <database host="localhost" name="magento2" user="root"/>
+    <database host="127.0.0.1" name="magento2" user="root"/>
 </destination>
 <options>
     <crypt_key />
