@@ -16,13 +16,13 @@ redirect_from: /guides/v1.0/migration/migration-tool-configure.html
 *	<a href="#migration-config">Work with configuration and mapping files</a>
 
 <h2 id="migration-configure-over">Overview of data migration tool configuration</h2>
-After you install the data migration tool, the following directories contain mapping and configuration files:
+After you install the data migration tool, the following directory contains mapping and configuration files:
 
-*	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/ce-to-ce`: Configuration and scripts for migrating from Magento 1 CE to Magento 2 CE
-*	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/ce-to-ee`: Configuration and scripts for migrating from Magento 1 CE to Magento 2 EE
-*	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/ee-to-ee`: Configuration and scripts for migrating from Magento 1 EE to Magento 2 EE
+`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/ce-to-ce`: Configuration and scripts for migrating from Magento 1 CE to Magento 2 CE
+<!-- *	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/ce-to-ee`: Configuration and scripts for migrating from Magento 1 CE to Magento 2 EE
+*	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/ee-to-ee`: Configuration and scripts for migrating from Magento 1 EE to Magento 2 EE -->
 
-Each of the preceding directories contains subdirectories for each supported version.
+The preceding directory contains subdirectories for each supported version.
 
 <h2 id="migration-configure">Configuring the migration</h2>
 Before you migrate any data, you must create a `config.xml` configuration file from the provided sample.
@@ -92,7 +92,7 @@ To use the mapping files:
 2.	Edit them using the schema located in `<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc`.
 3.	Then change config.xml in `<options>` node with the new name of the file.
 
-The `<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc` and `<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<ce or ee version>` directories contain the following configuration files:
+The `<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc` and `<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<ce version>` directories contain the following configuration files:
 
 Even though you will be working with `map.xml.dist` file most of the time, the following table discusses each mapping and other files.
 
