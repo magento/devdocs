@@ -63,10 +63,10 @@ For example, if your database owner's user name is `root` with password `pass` a
 
 {% highlight xml %}
 <source>
-    <database host="localhost" name="magento1" user="root" password="pass"/>
+    <database host="127.0.0.1" name="magento1" user="root" password="pass"/>
 </source>
 <destination>
-    <database host="localhost" name="magento2" user="root" password="pass"/>
+    <database host="127.0.0.1" name="magento2" user="root" password="pass"/>
 </destination>
 <options>
     <source_prefix>magento1</source_prefix>
