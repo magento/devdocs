@@ -380,7 +380,7 @@ For example, see how in `Magento/Catalog/Test/TestCase/Product/ValidateOrderOfPr
   
 ### Replace a variation {#replace_variation}
 
-You can replace one variation with another using a `replace` attribute of the `variation` node:
+You can replace one variation with another by using a `replace` attribute of the `variation` node:
 
 {%highlight xml%}
 
@@ -388,7 +388,7 @@ You can replace one variation with another using a `replace` attribute of the `v
 
 {%endhighlight xml%}
 
-After merge of a data set with the variation that is mentioned, a test will use `CreateSuperNewCustomerBackendEntityTestVariation1` instead of `CreateSuperNewCustomerBackendEntityTestVariation1`.
+After a merge of a data set with the variation that is mentioned, a test will use `CreateSuperNewCustomerBackendEntityTestVariation1` instead of `CreateSuperNewCustomerBackendEntityTestVariation1`.
 
 <!-- LINK DEFINITIONS -->
 

@@ -437,7 +437,7 @@ The preceding is an example of repository merging. Using the approach from the e
 
 ### Data set replacement {#dataset-replacement}
 
-You can change your data set with no need to change the data set name. Simply use a `replace` attribute. For example,
+You can modify your data set without changing the name of the data set. Simply use a `replace` attribute. For example,
  
  {%highlight xml%}
  
@@ -468,7 +468,7 @@ You can change your data set with no need to change the data set name. Simply us
   
   {%endhighlight%}
   
-Later you installed a new module Magento_CustomerNew module that changed Customer fixture. You don't want to change the `default` data set name in the test. That is why you can replace the `default` data set:
+Later you installed a new module Magento_CustomerNew module that changed Customer fixture. You don't want to change the `default` data set name in the test. Instead, you can simply replace the `default` data set, without changing the name:
 
   {%highlight xml%}
   
@@ -506,11 +506,11 @@ $this->_data['default'] = [
   
   {%endhighlight%}
 
-As you can see a repository with name `default` contains data from the `customer_new_default` repository.
+As you can see, a repository with the name `default` contains data from the `customer_new_default` repository.
 
 ## Credentials and `%isolation%` in repository {#mtf_repository_credent_iso}
 
-Credentials are stored in XML file specified in `phpunit.xml`.
+Credentials are stored in an `*.xml` file that is specified in `phpunit.xml`.
 
 You can find a template for credentials in <a href="https://github.com/magento/magento2/blob/master/dev/tests/functional/credentials.xml.dist"><code>&lt;magento2&gt;/dev/tests/functional/credentials.xml.dist</code></a>.
 
