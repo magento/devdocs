@@ -13,6 +13,10 @@ redirect_from: /guides/v1.0/migration/migration-tool-install.html
 ## Install the Data Migration Tool
 This section discusses how to install the Magento Data Migration Tool. You can install it from either `repo.magento.com` or from the GitHub repository.
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>If you need to migrate to Magento Enterprise Edition (EE), contact <a href="http://support.magentocommerce.com" target="_blank">Magento Support</a>.</p>
+</div>
+
 Before you continue, make sure you completed all tasks discussed in <a href="{{ site.gdeurl }}migration/migration-tool-preconditions.html">Preconditions</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
