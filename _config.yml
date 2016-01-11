@@ -11,7 +11,7 @@ baseurl: "/"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
 gdeurl: "/guides/v2.0/"
-githuburl: "https://github.corp.ebay.com/Magento/devdocs_internal/tree/develop/guides/v2.0/"
+githuburl: "https://github.corp.magento.com/Magento/devdocs_internal/tree/develop/guides/v2.0/"
 publicgithuburl: "https://github.com/magento/devdocs/tree/develop/guides/v2.0/"
 namem2fedg: "Magento 2 Frontend Developer's Guide"
 namem2devgde: "Magento 2 Developer's Guide"
@@ -20,11 +20,11 @@ namem2install: "Magento 2 Installation Guide"
 mage2000url: "https://github.com/magento/magento2/blob/develop/"
 # toc_baseurl: "https://github.corp.ebay.com/pages/Magento/devdocs_internal"
 m1xgdeurl: "/guides/m1x/"
-m1xgithuburl: "https://github.corp.ebay.com/Magento/devdocs_internal/tree/develop/guides/m1x/"
+m1xgithuburl: "https://github.corp.magento.com/Magento/devdocs_internal/tree/develop/guides/m1x/"
 
 # Build settings
 markdown: kramdown
-highlighter: rouge
+highlighter: pygments
 
 incremental: true
 
