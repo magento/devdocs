@@ -10,7 +10,6 @@ github_link: config-guide/cli/config-cli-subcommands-cache.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-cache.html
 ---
 
-
 #### Contents
 
 *	<a href="#config-cli-subcommands-cache-clean-over">Overview of cache types</a>
