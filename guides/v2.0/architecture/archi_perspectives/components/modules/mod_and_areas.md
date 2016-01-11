@@ -21,20 +21,37 @@ For example, if you are invoking a REST web service call, rather than load all t
 
 <h3>Magento area types</h3>
 
-Magento is organized into the following main areas:
+Magento is organized into these main areas:
 
-*     **Magento Admin** (`adminhtml`): entry point for this area is `index.php` or `pub/index.php`. The Admin panel area includes the code needed for store management.  
-`
-*     **Storefront** (`frontend`): entry point for this area is `index.php` or `pub/index.php` 
+*     **Magento Admin** (`adminhtml`): entry point for this area is `index.php` or `pub/index.php`. The Admin panel area includes the code needed for store management. The /app/design/adminhtml directory contains all the code for components you'll see while working in the Admin panel. 
 
-*     **Web API REST** (`webapi_rest`): entry point for this area is `index.php` or `pub/index.php`
+*     **Storefront** (`frontend`): entry point for this area is `index.php` or `pub/index.php`. The storefront (or `frontend`)  contains template and layout files that define the appearance of your storefront. 
 
-*     **Web API SOAP** (`webapi_soap`): entry point for this area is `index.php` or `pub/index.php`
+
+You can also send requests to Magento using the SOAP and REST APIs. These two areas 
+
+*     **Web API REST** (`webapi_rest`): entry point for this area is `index.php` or `pub/index.php`. The REST area has a front controller that understands how to do URL lookups for REST-based URLs.
+
+*     **Web API SOAP** (`webapi_soap`): entry point for this area is `index.php` or `pub/index.php`. 
 
 
 <h3>Magento area definition</h3>
-Areas are defined in `di.xml` in the `areas` argument of `Magento\Framework\App\AreaList`. Typically, an area has behavior and view components, which operate separately. 
+Each area declares itself within a module. Areas are also defined in the Dependency Injection framework `di.xml` file.
 
+ in `Magento\Framework\App\AreaList. 
+
+
+ Typically, an area has behavior and view components, which operate separately. 
+
+
+
+/app/etc/di.xml
+
+<type name="Magento\Framework\Url\ScopeResolver">
+        <arguments>
+            <argument name="areaCode" xsi:type="string">frontend</argument>
+        </arguments>
+    </type>
 
 
 
@@ -49,14 +66,15 @@ Each area declares itself within a module. All resources specific for an area ar
 You can enable or disable an area within a module. If this module is enabled, it injects an area's routers into the general application's routing process. If this module is disabled, Magento will not load an area's routers and, as a result, an area's resources and specific functionality are not available.
 
 
-<div class="bs-callout bs-callout-warning" id="warning">
-	<p>Note: Modules should not depend on other modules' areas.</p>
-</div>
+<h3>Quick view of module/area interactions</h3>
 
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Note: Disabling an area does not result in disabling the modules related to it.</p>
-</div>
+* Modules should not depend on other modules' areas.
+
+* Disabling an area does not result in disabling the modules related to it.
+
+* Areas are registered in the Dependency Injection framework `di.xml` file.
+
 
 <h3>Note about Magento request processing</h3>
 
