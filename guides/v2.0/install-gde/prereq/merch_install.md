@@ -9,7 +9,6 @@ menu_node: parent
 github_link: install-gde/prereq/merch_install.md
 ---
 
-
 ## Newbie installation
 Before you can install the Magento software, you must get your hosted system ready. This topic is geared specifically for GoDaddy but you can use the same instructions for any other hosting provider. 
 

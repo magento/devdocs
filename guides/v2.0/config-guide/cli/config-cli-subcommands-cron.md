@@ -10,7 +10,6 @@ github_link: config-guide/cli/config-cli-subcommands-cron.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-cron.html
 ---
 
-
 #### Contents
 
 *	<a href="#config-cli-cron-overview">Overview of cron</a>
