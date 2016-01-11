@@ -8,7 +8,7 @@ menu_order: 5
 github_link: howdoi/checkout/checkout_carrier.md
 ---
 <h2>What's in this topic</h2>
-This topic describes how to add custom shipping carrier validations to the Magento checkout.
+This topic describes how to add shipping address validations for a custom shipping carrier to the Magento checkout. This is a part of the bigger task of adding a custom payment method to your Magento store.
 
 ## Overview
 
@@ -19,10 +19,12 @@ To add new shipping carrier validations to the Magento checkout, do the followin
 3. [Register validator and rules in the vaidators pool](#register).
 4. [Add the the validators and rules to the checkout layout](#layout).
 
+More details about each step follow.
+
 ## Create validation rules {#rules}
-Shipping carrier validation rules declare which fields of the Shipping Address are required for the corresponding shipping method to be available. The validation itself is performed by the [validator](#validator). 
+Shipping carrier validation rules declare which fields of the shipping address are required for the corresponding shipping method to be available. The validation itself is performed by the [validator](#validator). 
  
-If the requirements declared in the rules are fulfilled, thr further validation of fields values (for example, whether a carrier is available for the specified country) is carried on the server side.
+During checkout, if the shipping address fields declared in the rules are filled, the further validation of fields' values (for example, whether a carrier is available for the specified country) is carried on the server side.
 
 For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should [depend]({{site.gdeurl}}extension-dev-guide/composer-integration.html) on the Magento_Checkout module.
 
@@ -30,9 +32,9 @@ In your `<your_module_dir>/view/frontend/web/js/model` directory, create a `.js`
 
 The script must implement the `getRules()` method.
 
-For example, the FedEx shipping method requires only two fields to be filled: Country and Zip code. This is how the the validation rules for FedEx look: 
+For example, the FedEx shipping method requires only two fields of the shipping address to be filled: **Country** and **Zip Code**. This is how the validation rules for FedEx look: 
 
-**    <Magento_Fedex_dir>/view/frontend/web/js/model/shipping-rates-validation-rules.js**
+    <Magento_Fedex_dir>/view/frontend/web/js/model/shipping-rates-validation-rules.js
 {%highlight js%}
 define(
     [],
@@ -56,7 +58,7 @@ define(
 
 ## Create validator {#validator}
 
-Creator the validator `.js` script, which act. It must be located in the `<your_module_dir>/view/frontend/web/js/view` directory. 
+Create the validator `.js` script that checks if the fields defined by the validation rules are filled. The script must be located in the `<your_module_dir>/view/frontend/web/js/model` directory. 
 
 A sample validator script follows:
 
@@ -89,11 +91,11 @@ define(
 );
 {%endhighlight%}
 
-You can use this sample for your validator, you only need to specify your `.js` file with validation rules instead of `./shipping-rates-validation-rules` in the list of used modules.
+You can use this sample for your validator, but you need to specify your validation rules script instead of `./shipping-rates-validation-rules` in the list of used modules.
 
 ## Register validator and rules in the validators pool {#register}
 
-Your custom validator must be added to the pool of "additional validators". To do this, in the `<your_module_dir>/view/frontend/web/js` directory create a new `<your-validation>.js` file with the following content:
+Your custom validator must be added to the pool of validators. To do this, in the `<your_module_dir>/view/frontend/web/js/view` directory create a new `<your-validation>.js` file with the following content:
 
 
 {%highlight js%}
@@ -103,7 +105,7 @@ define(
         'Magento_Checkout/js/model/shipping-rates-validator',
         'Magento_Checkout/js/model/shipping-rates-validation-rules',
         '../model/<your_validator>',
-        '../model/<your_validation)>'
+        '../model/<your_validation_rules>'
     ],
     function (
         Component,
@@ -120,9 +122,9 @@ define(
 );
 {%endhighlight%}
 
-## Add the the validators and rules to the checkout layout {#layout}
+## Add the validation to the checkout layout {#layout}
 
-The last step is specifying the validation rules and validator in the checkout page layout. 
+The last step is specifying the script you created on the previous step in the checkout page layout. 
 
 In your custom module directory, create a new `<your_module_dir>/view/frontend/layout/checkout_index_index.xml` file. 
 In this file, add the following:
@@ -143,8 +145,8 @@ In this file, add the following:
                                                     <item name="children" xsi:type="array">
                                                         <item name="shipping-rates-validation" xsi:type="array">
                                                             <item name="children" xsi:type="array">
-                                                                <item name="dhl-rates-validation" xsi:type="array">
-                                                                    <item name="component" xsi:type="string">Magento_Dhl/js/view/shipping-rates-validation</item>
+                                                                <item name="<your-validation-name>" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">%your_module%/js/view/%your-validation%</item>
                                                                 </item>
                                                             </item>
                                                         </item>
