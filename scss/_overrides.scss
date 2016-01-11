@@ -1,44 +1,4 @@
-/* SRJ - code/pre overrides so text and background colors match */
 
-pre {
-   background-color: #f8f8f8;
-   border: 1px solid #ddd;
-   font-size: 13px;
-   line-height: 19px;
-   overflow: auto;
-   padding: 6px 10px;
-   border-radius: 3px;
-}
-
-code {
-	margin: 0;
-	border: 1px solid #ddd;
-	background-color: #f8f8f8;
-	border-radius: 3px;
-	padding: 3px;
-	color: #000;
-   word-wrap: break-word;
-   white-space: inherit;
-   font-size: .9em;
-}
-
-
-a code {
-   color: inherit;
-   font-size: .9em;
-}
-
-
-/* TDD code format in headers */
-
-h1 code, h2 code, h3 code, h4 code, h5 code {
-   padding: 2px 4px;
-   color: #000;
-   background-color: transparent;
-   border: 0px solid #e1e1e8;
-   white-space: nowrap;
-   font-size: 1em;
-}
 
 .main-container a {
    font-size: inherit;
@@ -154,7 +114,7 @@ table {
 
 
 
-
+html, body { height: 100%; }
 
 body.offcanvas-active {
    overflow-x: hidden;
@@ -165,6 +125,8 @@ body.offcanvas-active {
 }
 
 @media (max-width:767px) {
+
+   
 
    .site-header {
       border-bottom: 1px solid #c24c05;
@@ -204,6 +166,7 @@ body.offcanvas-active {
       width: 260px;
       z-index: 1;
       overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
    }
 
 
@@ -227,6 +190,10 @@ body.offcanvas-active {
    .nav-main ul > li > a {
       border-bottom: 1px solid #676056;
       font-size: 16px;
+   }
+
+   .nav-main ul > li:hover > a {
+      color: #fff;
    }
 
 
@@ -317,6 +284,9 @@ body.offcanvas-active {
       transform: rotate(180deg);
    }
 
+
+
+
    .offcanvas-active .site-header,
    .offcanvas-active #gl-wrapper,
    .offcanvas-active #footer-wrap  {
@@ -357,6 +327,7 @@ body.offcanvas-active {
    .main-container {
       width: 100%;
       overflow-x: auto;
+      margin-bottom: 30px;
    }
 
    .content {
