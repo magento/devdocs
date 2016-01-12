@@ -46,10 +46,5 @@ We refer to a component’s root directory as the top-level directory in which y
 	</tbody>
 </table>
 
-<h2 id="m2arch-module-conventions-location">Module naming convention</h2>
-
-<h2 id="m2arch-module-related"> Related topics</h2>
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/components/modules/mod_intro.html">Module overview</a>
-
 
 
