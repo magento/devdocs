@@ -1,0 +1,83 @@
+---
+layout: default
+group: howdoi
+subgroup: checkout
+title: Add custom input mask for ZIP code
+menu_title: Add custom input mask for ZIP code
+menu_order: 6
+github_link: howdoi/checkout/checkout_zip.md
+---
+## What's in this topic
+
+This topic describes how to add custom input masks for the ZIP code value in the shipping address. 
+
+<p class="q">Is this only for the Shipping Address?</p>
+
+## Adding custom input masks for ZIP code
+
+In Magento 2 the input masks for the **ZIP code** field are specified in the `<Magento_Directory_module_dir>/etc/zip_codes.xml`. Input masks are specified per country, and are entered in the form of regular expressions. 
+The syntax of defined by the [zip_code.xsd]({{site.mage2000url}}app/code/Magento/Directory/etc/zip_codes.xsd) scheme.
+
+For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should depend on the Magento_Checkout module.
+
+<p class="q">Should it depend on Magento_Directory as well?</p>
+
+To add custom ZIP code input masks or change the default ones, create a new `zip_code.xml` in the `<your_module_dir>/etc` directory.
+
+The content of the file must be similar to the following sample:
+
+{%highlight xml%}
+
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Directory:etc/zip_codes.xsd">
+	
+	<!-- Specify the country ISO code-->
+	<zip countryCode="US">
+		<!-- You can specify several patterns for one country -->
+    	<codes>
+	        <code id="pattern_1" active="true" example="12345-6789">^[0-9]{5}\-[0-9]{4}$</code>
+    	    <code id="pattern_2" active="true" example="12345">^[0-9]{5}$</code>
+    	</codes>
+	</zip>
+</config>
+{%endhighlight%}
+
+
+If you want to change the existing mask, in your `zip_codes.xml` copy the related nodes and change the regular expression defining the mask, and the value of `example` correspondingly.
+
+Example:
+
+In the default `<Magento_Directory_module_dir>/etc/zip_codes.xml` the following mask is set for France:
+
+{%highlight xml%}
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Directory:etc/zip_codes.xsd">
+...
+	<zip countryCode="FR">
+        <codes>
+            <code id="pattern_1" active="true" example="12345">^[0-9]{5}$</code>
+        </codes>
+    </zip>
+...
+</config>
+{%endhighlight%}
+
+To change this mask, add the following code in your `zip_codes.xml`:
+{%highlight xml%}
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Directory:etc/zip_codes.xsd">
+...
+	<zip countryCode="FR">
+        <codes>
+            <!-- Changed the regexp defining the mask, and the value of "example" -->
+            <code id="pattern_1" active="true" example="A123">^[a-zA-Z]{1}[0-9]{3}$</code>
+        </codes>
+    </zip>
+...
+</config>
+{%endhighlight%}
+
+To remove a mask, in your `zip_codes.xml` add the corresponding node having set `active` attribute of `<code/>` to `false`.
