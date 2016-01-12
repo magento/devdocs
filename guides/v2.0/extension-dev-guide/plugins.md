@@ -69,6 +69,8 @@ Several conditions influence how plug-ins apply to the same class or interface:
 
    *  Change the values returned by an original method through the after-listener.
    *  Change both the arguments and returned values of an original method through the around-listener.
+
+      Unlike `before` or `after`, the `around` listener prevents the execution of the original method.
    *  Override an original method (a conflicting change).
 
       <div class="bs-callout bs-callout-info" id="info">

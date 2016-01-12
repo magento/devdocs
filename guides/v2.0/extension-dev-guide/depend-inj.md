@@ -32,7 +32,7 @@ In addition, we use *dependency inversion*, a coding principle that stipulates y
 *	High-level modules should not depend on low-level modules. Both should depend on abstractions.
 *	Abstractions should not depend upon details. Details should depend on abstractions.
 
-For more information, see <a href="http://www.objectmentor.com/resources/articles/dip.pdf" target="_blank">this article by Robert C. Martin</a>.
+For more information, see <a href="https://sites.google.com/site/unclebobconsultingllc/blogs-by-robert-martin/dependency-injection-inversion" target="_blank">this article by Robert C. Martin</a>.
 
 
 The <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/ObjectManager.php" target="_blank">object manager</a> specifies the dependency environment for constructor injection. The object manager must be present only when composing code. In larger applications, composing code is performed early in the bootstrapping process.
@@ -63,18 +63,18 @@ Constructor injection *must* be used for all optional and required service depen
 <?php
 class Test
 {
-    protected $_class;
+    protected $class;
  
-    public function __construct(Class $class)
+    public function __construct(SomeClass $class)
     {
-        $this->_class = $class;
+        $this->class = $class;
     }
  
     public function execute()
     {
         //some code
  
-        $this->_class->execute();
+        $this->class->execute();
  
         //some code
     }
