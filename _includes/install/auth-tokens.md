@@ -1,3 +1,4 @@
+
 <div markdown="1">
 
 <h2 id="auth-overview">Overview of Magento Connect authentication</h2>
