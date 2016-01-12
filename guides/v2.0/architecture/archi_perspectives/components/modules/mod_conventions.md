@@ -26,9 +26,6 @@ The following table shows the *recommended* location within the Magento file sys
 
 We refer to a component’s root directory as the top-level directory in which you develop component code. Typically, this directory is located in one of the following directories relative to the Magento root directory:
 
-
-
-
 <table>
 	<tbody>
 		<tr>
@@ -50,8 +47,6 @@ We refer to a component’s root directory as the top-level directory in which y
 </table>
 
 <h2 id="m2arch-module-conventions-location">Module naming convention</h2>
-
-
 
 <h2 id="m2arch-module-related"> Related topics</h2>
 <a href="{{ site.gdeurl }}architecture/archi_perspectives/components/modules/mod_intro.html">Module overview</a>
