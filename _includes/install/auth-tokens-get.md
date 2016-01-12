@@ -16,7 +16,7 @@ To get your authentication keys:
 
 	<img src="{{ site.baseurl }}common/images/connect_keys1.png" width="200px">
 
-3.	Click **Developers** > **Secure Keys**.
+3.	In the **Developers** section, click **Secure Keys**.
 4.	You have the following options in the right pane:
 
 	*	If you already have keys, use the **Public key** as your user name and the **Private key** as your password.
