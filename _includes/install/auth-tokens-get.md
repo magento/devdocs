@@ -11,7 +11,8 @@ To get your authentication keys:
 
 		If you already have an account, make sure you know your user name and password, then continue with the next step.
 
-2.	In the left pane, expand **Developers** as the following figure shows.
+2.	In the left pane, click **Connect**.
+3.	Expand **Developers** as the following figure shows.
 
 	<img src="{{ site.baseurl }}common/images/connect_keys1.png" width="200px">
 
