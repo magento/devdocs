@@ -35,26 +35,6 @@ You can also send requests to Magento using the SOAP and REST APIs. These two ar
 *     **Web API SOAP** (`webapi_soap`): entry point for this area is `index.php` or `pub/index.php`. 
 
 
-<h3>Magento area definition</h3>
-Each area declares itself within a module. Areas are also defined in the Dependency Injection framework `di.xml` file.
-
- in `Magento\Framework\App\AreaList. 
-
-
- Typically, an area has behavior and view components, which operate separately. 
-
-
-
-/app/etc/di.xml
-
-<type name="Magento\Framework\Url\ScopeResolver">
-        <arguments>
-            <argument name="areaCode" xsi:type="string">frontend</argument>
-        </arguments>
-    </type>
-
-
-
 <h2 id="m2arch-module-using">How areas work with modules</h2>
 
 Modules define which resources are visible and accessible in an area, as well as an area's behavior. The same module can influence several areas. For instance, the RMA module is represented partly in the `adminhtml` area and partly in the `frontend` area.
