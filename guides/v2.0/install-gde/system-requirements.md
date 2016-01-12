@@ -34,7 +34,8 @@ MySQL 5.6 (Oracle or Percona)
 
 <div class="bs-callout bs-callout-info" id="info">
    <span class="glyphicon-class">
-  	<ul><li>Magento has been tested with PHP 7.0 <a href="http://php.net/archive/2015.php" target="_blank">Release Candidate 7</a> (currently the most recent)</li>
+  	<ul><li>Magento has been tested with PHP 7.0.0 and 7.0.1<br>
+  		We require the <a href="https://pecl.php.net/package/zip" target="_blank"><code>zip</code></a> PHP extension with PHP 7.x. Consult your repository for the exact name of this extension.</li>
   		<li>There is a <a href="https://bugs.php.net/bug.php?id=66985" target="_blank">known PHP issue</a> with versions:
   		<ul><li>5.5.10&ndash;5.5.16</li>
 		<li>5.6.0</li></ul>
