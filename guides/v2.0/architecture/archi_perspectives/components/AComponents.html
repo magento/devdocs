@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Architectural layers overview</title>
+	<title>Magento Components</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/architecture/archi_perspectives/ALayers_intro.html">
+	<link rel="canonical" href="//guides/v2.0/architecture/archi_perspectives/components/AComponents.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Architectural layers overview</h1>
+		<h1 class="page-heading">Magento Components</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/architecture/archi_perspectives/ALayers_intro.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/architecture/archi_perspectives/components/AComponents.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -212,39 +212,23 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2>Architectural layers overview</h2>
+		<h2>Magento components</h2>
+<p>Magento has several core components that are used to build custom web sites, applications, and integrated systems. When you change the appearance or behavior of your Magento store, you are inevitably changing one or more of these <b>core Magento components</b>, which include <b>modules</b>, <b>themes</b>, and <b>language packages</b>. Together, these core components determine much of server-side and storefront (frontend) appearance and behavior. </p>
 
-<p>At its highest level, Magento’s product architecture consists of the core product code plus optional <i>modules</i>. These optional modules enhance or replace the basic product code. </p>
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Throughout the Magento documentation set, we also use the term <i>component</i> in its generic sense to mean element or part. However, the term <b>Magento component</b> explicitly refers to either a module, theme, or language package.</p>
+</div>
 
-<p>If you are substantially customizing the basic Magento product, module development will be your central focus. Modules organize code that supports a particular task or feature. A module can include code to change the look-and-feel of your storefront as well as its fundamental behavior. </p>
+<p>For more information about individual Magento components, see:</p>
 
-<p>Your modules function with the core Magento product code, which is organized into layers. Understanding layered software pattern is essential for understanding basic Magento product organization. </p>
+<p><a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_intro.html">Modules</a></p>
 
-<p>Layered software is a popular, widely discussed principle in software development. Many resources exist for this topic, but consider consulting Pattern-Oriented Software Architecture for a general discussion. </p>
+<p><a href="/guides/v2.0/architecture/archi_perspectives/components/arch_themes.html">Themes</a></p>
 
-<h3>Advantages of layered application design</h3>
-<p>Layered application design offers many advantages, but users of Magento will appreciate: </p>
-
-<ul>
-  <li>
-    <p>Stringent separation of business logic from presentation logic simplifies the customization process. For example, you can alter your storefront appearance without affecting any of the backend business logic. </p>
-  </li>
-  <li>
-    <p>Clear organization of code predictably points extension developers to code location. </p>
-  </li>
-</ul>
+<p><a href="/guides/v2.0/architecture/archi_perspectives/components/arch_translations.html">Language packages</a></p>
 
 <h3>Related topics</h3>
-
-<p><a href="/guides/v2.0/architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a></p>
-
-<p><a href="/guides/v2.0/architecture/archi_perspectives/present_layer.html">Presentation layer</a></p>
-
-<p><a href="/guides/v2.0/architecture/archi_perspectives/service_layer.html">Service layer</a></p>
-
-<p><a href="/guides/v2.0/architecture/archi_perspectives/domain_layer.html">Domain layer</a></p>
-
-<p><a href="/guides/v2.0/architecture/archi_perspectives/persist_layer.html">Persistence layer</a></p>
+<p><a href="/guides/v2.0/architecture/archi_perspectives/LogicalView_intro.html">Logical view</a></p>
 
 
 
@@ -425,7 +409,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/architecture/archi_perspectives/ALayers_intro.html">Architectural layers</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/architecture/archi_perspectives/ALayers_intro.html">Architectural layers</a></li>
 									
 								
 								
@@ -482,7 +466,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/architecture/archi_perspectives/components/AComponents.html">Components</a></li>
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/architecture/archi_perspectives/components/AComponents.html">Components</a></li>
 									
 								
 								

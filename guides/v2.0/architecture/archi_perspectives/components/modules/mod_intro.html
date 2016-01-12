@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Architectural layers overview</title>
+	<title>Module overview</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/architecture/archi_perspectives/ALayers_intro.html">
+	<link rel="canonical" href="//guides/v2.0/architecture/archi_perspectives/components/modules/mod_intro.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Architectural layers overview</h1>
+		<h1 class="page-heading">Module overview</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/architecture/archi_perspectives/ALayers_intro.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/architecture/components/modules/mod_intro.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -212,39 +212,47 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2>Architectural layers overview</h2>
+		<h2 id="arch-modules-overview">Module overview</h2>
+<p>A <i>module</i> is a logical group – that is, a directory containing blocks, controllers, helpers, models – that are related to a specific business feature. In keeping with Magento’s commitment to optimal modularity, a module encapsulates one feature and has minimal dependencies on other modules.</p>
 
-<p>At its highest level, Magento’s product architecture consists of the core product code plus optional <i>modules</i>. These optional modules enhance or replace the basic product code. </p>
+<p>Modules and themes are the units of customization in Magento. Modules provide business features, with supporting logic,  while themes strongly influence user experience and storefront appearance. Both components have a life cycle that allows them to be installed, deleted, and disabled. From the perspective of both merchants and extension developers, modules are the central unit of Magento organization. </p>
 
-<p>If you are substantially customizing the basic Magento product, module development will be your central focus. Modules organize code that supports a particular task or feature. A module can include code to change the look-and-feel of your storefront as well as its fundamental behavior. </p>
+<p>The Magento Framework provides a set of core logic: PHP code, libraries, and the basic functions that are inherited by the modules and other components.</p>
 
-<p>Your modules function with the core Magento product code, which is organized into layers. Understanding layered software pattern is essential for understanding basic Magento product organization. </p>
+<h3>Module purpose</h3>
 
-<p>Layered software is a popular, widely discussed principle in software development. Many resources exist for this topic, but consider consulting Pattern-Oriented Software Architecture for a general discussion. </p>
+<p>The purpose of each module is to provide specific product features by implementing new functionality or extending the functionality of other modules. Each module is designed to function independently, so the inclusion or exclusion of a particular module does not typically affect the functionality of other modules.</p>
 
-<h3>Advantages of layered application design</h3>
-<p>Layered application design offers many advantages, but users of Magento will appreciate: </p>
+<h3>Module components</h3>
 
-<ul>
-  <li>
-    <p>Stringent separation of business logic from presentation logic simplifies the customization process. For example, you can alter your storefront appearance without affecting any of the backend business logic. </p>
-  </li>
-  <li>
-    <p>Clear organization of code predictably points extension developers to code location. </p>
-  </li>
-</ul>
+<p>A module is a directory that contains the PHP and XML files (blocks, controllers, helpers, models) that are related to a specific business feature, such as Shipping. Specifically, a Magento module is composed of these software components: <a href="/guides/v2.0/architecture/archi_perspectives/components/arch_themes.html">themes</a>, <a href="/guides/v2.0/architecture/archi_perspectives/components/arch_libraries.html">libraries</a>, and <a href="/guides/v2.0/architecture/archi_perspectives/components/arch_translations.html">language packages</a>. </p>
 
-<h3>Related topics</h3>
+<p>See <a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_anatomy.html">Module anatomy</a> for an overview of module structure. </p>
 
-<p><a href="/guides/v2.0/architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a></p>
+<h3>Where do modules live?</h3>
 
-<p><a href="/guides/v2.0/architecture/archi_perspectives/present_layer.html">Presentation layer</a></p>
+<p>Modules typically live in the <code>app/code</code> directory of a Magento installation, in a directory with the following PSR-0 compliant format: <code>app/code/&lt;Vendor&gt;/&lt;ModuleName&gt;</code>. For example, the Customer module of Magento can be found at <code>app/code/Magento/Customer</code>. </p>
 
-<p><a href="/guides/v2.0/architecture/archi_perspectives/service_layer.html">Service layer</a></p>
+<p>Inside this folder, you will find all the code related to this module, including the <code>etc/module.xml</code> file, which contains the name and version of the module, as well as any dependencies.</p>
 
-<p><a href="/guides/v2.0/architecture/archi_perspectives/domain_layer.html">Domain layer</a></p>
+<p>The standard placement of the <code>&lt;ModuleName&gt;</code> directory within the overall Magento file structure is <code>app/code/&lt;Vendor&gt;/&lt;ModuleName&gt;</code>. However, if you are creating a new module for distribution, you can just create the <code>&lt;ModuleName&gt;</code> directory and the required directories within it.</p>
 
-<p><a href="/guides/v2.0/architecture/archi_perspectives/persist_layer.html">Persistence layer</a></p>
+<h3>Working with modules</h3>
+
+<p>Magento developers, administrators, and anyone building a Magento web site will want to review all relevant topics surrounding their particular goals and use cases.</p>
+
+<p>See <a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for specific instructions on extending modules.</p>
+
+<p>See 
+<a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a> for information on implementing themes and other components.</p>
+
+<h3 id="arch-modules-related">Related topics</h3>
+
+<p><a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_depend.html">Module dependencies</a></p>
+
+<p><a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_and_areas.html">Modules and areas</a></p>
+
+<p><a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_conventions.html">Module location and naming conventions</a></p>
 
 
 
@@ -425,7 +433,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/architecture/archi_perspectives/ALayers_intro.html">Architectural layers</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/architecture/archi_perspectives/ALayers_intro.html">Architectural layers</a></li>
 									
 								
 								
@@ -503,7 +511,7 @@
 																
 								
 
-											<li class="level3Child modules " data-menunode="modules"><a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_intro.html">Module overview</a>
+											<li class="level3Child modules  active " data-menunode="modules"><a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_intro.html">Module overview</a>
 
 
 									

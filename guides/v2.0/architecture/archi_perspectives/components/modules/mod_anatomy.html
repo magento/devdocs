@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Architectural layers overview</title>
+	<title>Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/architecture/archi_perspectives/ALayers_intro.html">
+	<link rel="canonical" href="//guides/v2.0/architecture/archi_perspectives/components/modules/mod_anatomy.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Architectural layers overview</h1>
+		<h1 class="page-heading"></h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/architecture/archi_perspectives/ALayers_intro.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/architecture/components/modules/mod_anatomy.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -212,39 +212,112 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2>Architectural layers overview</h2>
+		<h2 id="arch-modules-anatomy">Module anatomy</h2>
 
-<p>At its highest level, Magento’s product architecture consists of the core product code plus optional <i>modules</i>. These optional modules enhance or replace the basic product code. </p>
+<p>A Magento <i>module</i> is a logical group of components that encapsulate  a particular business function, typically a business task. All components of a module relate to the module’s specific function. For example, each element of the Shipping module contains all the code and interfaces needed to implement core shipping-related tasks. </p>
 
-<p>If you are substantially customizing the basic Magento product, module development will be your central focus. Modules organize code that supports a particular task or feature. A module can include code to change the look-and-feel of your storefront as well as its fundamental behavior. </p>
+<p>A module directory typically contains blocks, controllers, helpers, models, configuration files, and other components that contribute to the module’s core purpose. </p>
 
-<p>Your modules function with the core Magento product code, which is organized into layers. Understanding layered software pattern is essential for understanding basic Magento product organization. </p>
-
-<p>Layered software is a popular, widely discussed principle in software development. Many resources exist for this topic, but consider consulting Pattern-Oriented Software Architecture for a general discussion. </p>
-
-<h3>Advantages of layered application design</h3>
-<p>Layered application design offers many advantages, but users of Magento will appreciate: </p>
+<h3>Modules and the MVC pattern</h3>
+<p>Modules have multiple layers that roughly correspond to the Model-View-Controller (MVC) division of function. The MVC software pattern is an architectural principle/pattern that stipulates the organization of application code into three general categories: code responsible for controlling how data is displayed by the application; how the application creates and updates the data model in the creating data model of .  </p>
 
 <ul>
   <li>
-    <p>Stringent separation of business logic from presentation logic simplifies the customization process. For example, you can alter your storefront appearance without affecting any of the backend business logic. </p>
+    <p><strong>View</strong> components (M<strong>V</strong>C) correspond with presentation layer elements: CSS, JavaScript, and PHTML template files.</p>
   </li>
   <li>
-    <p>Clear organization of code predictably points extension developers to code location. </p>
+    <p><strong>Controller</strong> components (MV<strong>C</strong>) correspond to the service layer: service contracts and controllers.</p>
+  </li>
+  <li>
+    <p><strong>Model</strong> components (<strong>M</strong>VC) correspond to business logic layer: models and SQL structures. </p>
   </li>
 </ul>
 
-<h3>Related topics</h3>
+<p>See <a href="/guides/v2.0/architecture/archi_perspectives/Magento_MVC.html">Magento MVC Pattern</a> for more information. </p>
 
-<p><a href="/guides/v2.0/architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a></p>
+<h3>Module components</h3>
 
-<p><a href="/guides/v2.0/architecture/archi_perspectives/present_layer.html">Presentation layer</a></p>
+<p>All types of modules contain the following core elements, categorized by directory:</p>
 
-<p><a href="/guides/v2.0/architecture/archi_perspectives/service_layer.html">Service layer</a></p>
+<ul>
+  <li>
+    <p><code>/block</code></p>
+  </li>
+  <li>
+    <p><code>/controllers</code></p>
+  </li>
+  <li>
+    <p><code>/etc</code></p>
+  </li>
+  <li>
+    <p><code>/helper</code></p>
+  </li>
+  <li>
+    <p><code>/model</code></p>
+  </li>
+  <li>
+    <p><code>/sql</code></p>
+  </li>
+</ul>
 
-<p><a href="/guides/v2.0/architecture/archi_perspectives/domain_layer.html">Domain layer</a></p>
+<h4>Block</h4>
+<p><i>Blocks</i> help provide the data used in the View component of the module structure. Blocks coordinate models with the template files. The files in this folder load the data from database and transfer it to the templates in your theme (<code>PHTML</code> files).</p>
 
-<p><a href="/guides/v2.0/architecture/archi_perspectives/persist_layer.html">Persistence layer</a></p>
+<h4>Controllers</h4>
+<p><i>Controllers</i> represent all business logic actions for the given request. These actions include <code>dispatch()</code>, <code>preDispatch()</code>, <code>postDispatch()</code> methods and delegate commands to other parts of the system. Controllers correspond to the Controller portion of the Model-View-Controller model. </p>
+
+<h4>/etc</h4>
+<p>This directory contains the XML files that declare and configure behavior of all modules. Each module must have a <code>config.xml</code> file, where  all models, routers, blocks, helpers are declared.</p>
+
+<p>Optionally, this folder could have <code>adminhtml.xml</code> (grant permissions for your tabs/sections in server-side menus) and <code>system.xml</code> (creates this new section or specifies where it should be displayed in existing one).</p>
+
+<p>Magento 2 looks for configuration information for each module in that module’s ‘/etc’ directory. Depending on the purpose of your module, it might contain the following configuration files in its <code>/etc</code> directory:</p>
+
+<ul>
+  <li>
+    <p>acl.xml</p>
+  </li>
+  <li>
+    <p>config.xml</p>
+  </li>
+  <li>
+    <p>di.xml</p>
+  </li>
+  <li>
+    <p>module.xml</p>
+  </li>
+  <li>
+    <p>webapi.xml</p>
+  </li>
+</ul>
+
+<p>Configuration files that are in the top level of that module’s <code>/etc</code> directory are global to that component.
+Configuration files placed in subdirectories (adminhtml, frontend, webapi_rest, webapi_soap) apply only to those respective functional areas.</p>
+
+<p>The specific set of configuration files that your module requires depends on the module’s purpose and the Magento area in which it functions. </p>
+
+<h4>Helper</h4>
+<p>Helpers contain utility methods, which are commonly used throughout the application. Methods, as declared in helpers, can be called from any template file or block, model, controller class by</p>
+
+<p>Each module has a default Data Helper class <code>Modulename/Helper/Data.php</code>.</p>
+
+<h4>Model</h4>
+<p>In a typical Model-View-Controller-based application, models are used to connect to the database and process  data from and to it. Magento has adapted this pattern slightly.</p>
+
+<p><i>Resource Models</i> are objects that contain code that fetches data from a data store. In practice, this means a resource model is the object that contains the SQL building and fetching code, as well as references to objects that connect to the main Magento database.</p>
+
+<p><i>Models</i> are objects that contain database-agnostic code for interacting with a type of data. In traditional data modeling terms, your model objects contain the business logic for a particular kind of object (kind of object meaning Product, Customer, etc.).</p>
+
+<p>A Magento model object contains a reference to a resource model, which it uses to load its data. There’s an individual resource model object for each model object. For example, a Product Model has a Product resource model.</p>
+
+<h4>sql</h4>
+<p>Structures in this directory handle any custom database tables that are used by the module and process all upgrades to the extension.</p>
+
+<h3 id="arch-modules-related">Related topics</h3>
+
+<p><a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_intro.html">Module overview</a></p>
+
+<p><a href="/guides/v2.0/architecture/archi_perspectives/components/Magento_MVC.html">Magento MVC Pattern</a></p>
 
 
 
@@ -258,9 +331,6 @@
 
 
 
-<h4>Architecture guide</h4>
-
-
 
 
 
@@ -271,390 +341,6 @@
 		
 		
 				
-				
-					
-					
-					
-					
-					
-					
-						
-						
-						
-						
-							
-							
-								<li class="q "><a href="/guides/v2.0/architecture/security_intro.html">Security</a></li>
-				
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/architecture/arch_whatis.html">Introduction</a></li>
-									
-								
-								
-									
-							
-								
-								
-								
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a></li>
-									
-								
-								
-									
-							
-								
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/architecture/extensibility.html">Extensibility and modularity</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/architecture/frontend_custom_strategies.html">Ease of frontend customization</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/architecture/global_extensibility_features.html">Global features that support extensibility</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/architecture/storefront_customization.html">Storefront customization strategies</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/architecture/stack-basics.html">Stack basics</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/architecture/tech-stack.html">Technology stack</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/architecture/back-compatibility.html">Backward compatibility</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/architecture/versioning.html">Versioning policy</a></li>
-
-									
-						
-								
-								
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-
-
-								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/architecture/archi_perspectives/ALayers_intro.html">Architectural layers</a></li>
-									
-								
-								
-									
-							
-								
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/architecture/archi_perspectives/present_layer.html">Presentation layer</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/architecture/archi_perspectives/service_layer.html">Service layer</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/architecture/archi_perspectives/domain_layer.html">Domain layer</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/architecture/archi_perspectives/persist_layer.html">Persistence layer</a></li>
-
-									
-						
-								
-								
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/architecture/archi_perspectives/components/AComponents.html">Components</a></li>
-									
-								
-								
-									
-							
-								
-								
-
-									
-
-										<li class="level3Parent " id="modules"><a href="#">Modules</a>
-
-
-									
-						
-								
-
-																
-								
-
-											<li class="level3Child modules " data-menunode="modules"><a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_intro.html">Module overview</a>
-
-
-									
-						
-								
-
-																
-								
-
-											<li class="level3Child modules " data-menunode="modules"><a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_and_areas.html">Modules and areas</a>
-
-
-									
-						
-								
-
-																
-								
-
-											<li class="level3Child modules " data-menunode="modules"><a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_conventions.html">Module conventions</a>
-
-
-									
-						
-								
-
-																
-								
-
-											<li class="level3Child modules " data-menunode="modules"><a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_relationships.html">Module relationships</a>
-
-
-									
-						
-								
-
-																
-								
-
-											<li class="level3Child modules " data-menunode="modules"><a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_depend.html">Module dependencies</a>
-
-
-									
-						
-								
-
-																
-								
-
-											<li class="level3Child modules " data-menunode="modules"><a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_depend_types.html">Module dependency types</a>
-
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/architecture/archi_perspectives/components/arch_themes.html">Themes</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/architecture/archi_perspectives/components/arch_translations.html">Language packages</a></li>
-
-									
-						
-								
-								
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/architecture/archi_perspectives/LogicalView_intro.html">Logical View</a></li>
-									
-								
-								
-									
-							
-								
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/architecture/archi_perspectives/components.html">Components</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/architecture/archi_perspectives/composer.html">Composer</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/architecture/archi_perspectives/components/arch_libraries.html">Magento libraries</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/architecture/archi_perspectives/filesystem.html">Magento filesystem</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/architecture/archi_perspectives/framework.html">Magento Framework</a></li>
-
-									
-						
-								
-
-									
-							
-									<li class="level-2 "><a href="/guides/v2.0/architecture/archi_perspectives/third-party-libs.html">Third-party libraries</a></li>
-
-									
-						
-								
-								
-							
-						
-
-					
-
-
 				
 			
 			

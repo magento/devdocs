@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Architectural layers overview</title>
+	<title>Module dependencies</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/architecture/archi_perspectives/ALayers_intro.html">
+	<link rel="canonical" href="//guides/v2.0/architecture/archi_perspectives/components/modules/mod_depend.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Architectural layers overview</h1>
+		<h1 class="page-heading">Module dependencies</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/architecture/archi_perspectives/ALayers_intro.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/architecture/components/modules/mod_depend.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -212,39 +212,56 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2>Architectural layers overview</h2>
+		<h2 id="m2devgde-moddep-intro"> Module dependencies</h2>
 
-<p>At its highest level, Magento’s product architecture consists of the core product code plus optional <i>modules</i>. These optional modules enhance or replace the basic product code. </p>
+<p>A <i>software dependency</i> identifies  one software component’s reliance on another for proper functioning. A core principle of Magento architecture is the <strong>minimization of software dependencies</strong>. Instead of being closely interrelated with other modules, modules are optimally designed to be <i>loosely coupled</i>. Loosely coupled modules require little or no knowledge of other modules to perform their tasks. </p>
 
-<p>If you are substantially customizing the basic Magento product, module development will be your central focus. Modules organize code that supports a particular task or feature. A module can include code to change the look-and-feel of your storefront as well as its fundamental behavior. </p>
-
-<p>Your modules function with the core Magento product code, which is organized into layers. Understanding layered software pattern is essential for understanding basic Magento product organization. </p>
-
-<p>Layered software is a popular, widely discussed principle in software development. Many resources exist for this topic, but consider consulting Pattern-Oriented Software Architecture for a general discussion. </p>
-
-<h3>Advantages of layered application design</h3>
-<p>Layered application design offers many advantages, but users of Magento will appreciate: </p>
+<p>Each Magento module is responsible for a unique feature. In practice, this means that:</p>
 
 <ul>
   <li>
-    <p>Stringent separation of business logic from presentation logic simplifies the customization process. For example, you can alter your storefront appearance without affecting any of the backend business logic. </p>
+    <p>Several modules cannot be responsible for one feature.</p>
   </li>
   <li>
-    <p>Clear organization of code predictably points extension developers to code location. </p>
+    <p>One module cannot be responsible for several features.</p>
+  </li>
+  <li>
+    <p>Module dependencies on other modules must be declared explicitly. You must also declare any dependency upon other components (for example, a theme, language package, or library).</p>
+  </li>
+  <li>
+    <p>Removing or disabling a module does not result in disabling other modules.</p>
   </li>
 </ul>
 
-<h3>Related topics</h3>
+<h3>What components can modules depend upon?</h3>
+<p>Although Magento architecture favors loosely coupled software components, modules can contain dependencies upon these software components:</p>
 
-<p><a href="/guides/v2.0/architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a></p>
+<ul>
+  <li>other modules</li>
+  <li>PHP extensions</li>
+  <li>libraries (either Magento Framework library or third party libraries)</li>
+</ul>
 
-<p><a href="/guides/v2.0/architecture/archi_perspectives/present_layer.html">Presentation layer</a></p>
+<div class="bs-callout bs-callout-warning" id="warning">
+<p>Note: You can lose the historical information contained in a module if the module is removed or disabled. We recommend alternative storage of module information before you remove or disable a module.</p></div>
 
-<p><a href="/guides/v2.0/architecture/archi_perspectives/service_layer.html">Service layer</a></p>
+<h3 id="m2devgde-moddep-intro">Manage module dependencies</h3>
 
-<p><a href="/guides/v2.0/architecture/archi_perspectives/domain_layer.html">Domain layer</a></p>
+<p>At a high level, there are three main steps for managing module dependencies:</p>
 
-<p><a href="/guides/v2.0/architecture/archi_perspectives/persist_layer.html">Persistence layer</a></p>
+<ol>
+  <li>Name and declare the module in the <code>module.xml</code> file.</li>
+  <li>Declare any dependencies that the module has (whether on other modules or on a different component) in the module’s <code>composer.json</code> file.</li>
+  <li>(<em>Optional</em>) Define the desired load order of config files and <code>.css</code> files in the <code>module.xml</code> file.</li>
+</ol>
+
+<p>Example: Module A declares a dependency upon Module B. Thus, in Module A’s <code>module.xml</code> file, Module B is listed in the &lt;sequence&gt; list, so that B’s files are loaded before A’s. Additionally, you must declare a dependency upon Module B in A’s <code>composer.json</code> file. Furthermore, in the <a href="/guides/v2.0/config-guide/config/config-php.html">deployment configuration</a>, Modules A and B must both be defined as enabled.</p>
+
+<h2 id="m2arch-module-related">Related topics</h2>
+
+<p><a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_intro.html">Module overview</a></p>
+
+<p><a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_depend_types.html">Types of module dependencies</a></p>
 
 
 
@@ -425,7 +442,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/architecture/archi_perspectives/ALayers_intro.html">Architectural layers</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/architecture/archi_perspectives/ALayers_intro.html">Architectural layers</a></li>
 									
 								
 								
@@ -543,7 +560,7 @@
 																
 								
 
-											<li class="level3Child modules " data-menunode="modules"><a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_depend.html">Module dependencies</a>
+											<li class="level3Child modules  active " data-menunode="modules"><a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_depend.html">Module dependencies</a>
 
 
 									

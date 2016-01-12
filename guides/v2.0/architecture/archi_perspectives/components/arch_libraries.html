@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Architectural layers overview</title>
+	<title>Magento libraries</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/architecture/archi_perspectives/ALayers_intro.html">
+	<link rel="canonical" href="//guides/v2.0/architecture/archi_perspectives/components/arch_libraries.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Architectural layers overview</h1>
+		<h1 class="page-heading">Magento libraries</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/architecture/archi_perspectives/ALayers_intro.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/architecture/components/arch_libraries.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -212,40 +212,56 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2>Architectural layers overview</h2>
-
-<p>At its highest level, Magento’s product architecture consists of the core product code plus optional <i>modules</i>. These optional modules enhance or replace the basic product code. </p>
-
-<p>If you are substantially customizing the basic Magento product, module development will be your central focus. Modules organize code that supports a particular task or feature. A module can include code to change the look-and-feel of your storefront as well as its fundamental behavior. </p>
-
-<p>Your modules function with the core Magento product code, which is organized into layers. Understanding layered software pattern is essential for understanding basic Magento product organization. </p>
-
-<p>Layered software is a popular, widely discussed principle in software development. Many resources exist for this topic, but consider consulting Pattern-Oriented Software Architecture for a general discussion. </p>
-
-<h3>Advantages of layered application design</h3>
-<p>Layered application design offers many advantages, but users of Magento will appreciate: </p>
+		<h2 id="m2arch-libraries-overview">Overview</h2>
+<p>Magento uses the following types of libraries:</p>
 
 <ul>
+  <li>Magento PHP libraries, which are discussed in the next section</li>
   <li>
-    <p>Stringent separation of business logic from presentation logic simplifies the customization process. For example, you can alter your storefront appearance without affecting any of the backend business logic. </p>
+    <p>Magento UI libraries, which are located in the <a href="https://github.com/magento/magento2/tree/2.0.0/lib/web" target="_blank">lib/web</a> directory</p>
+
+    <p>For more information, see <a href="https://github.com/magento/magento2/tree/2.0.0/lib/web/css/docs/source/README.md" target="_blank">library documentation on GitHub</a> and <a href="/guides/v2.0/architecture/view/view-lib.html">View Library</a>.</p>
   </li>
   <li>
-    <p>Clear organization of code predictably points extension developers to code location. </p>
+    <p><a href="/guides/v2.0/architecture/archi_perspectives/third-party-libs.html">Third-party libraries</a>. These libraries include JavaScript libraries as well as PHP-based ones (including the Zend libraries).</p>
+
+    <p>Third-party libraries are organized by vendor to be PSR-0 compliant.</p>
   </li>
 </ul>
 
-<h3>Related topics</h3>
+<h2 id="m2arch-libraries-mage">Magento PHP libraries</h2>
+<p><a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework" target="_blank">Magento PHP libraries</a> include independent libraries of code useful to a Magento application. Each library has minimal dependencies on other library.</p>
 
-<p><a href="/guides/v2.0/architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a></p>
+<p>For example:</p>
 
-<p><a href="/guides/v2.0/architecture/archi_perspectives/present_layer.html">Presentation layer</a></p>
+<ul>
+  <li>
+    <p><a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Filesystem" target="_blank">Magento\Framework\Filesystem</a> has PHP libraries for file system operations such as read, write, and directory listing. We provide drivers for <a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Filesystem/Driver/File.php" target="_blank">file</a>, <a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Filesystem/Driver/Http.php" target="_blank">HTTP</a>, <a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Filesystem/Driver/Https.php" target="_blank">HTTPS</a>, and <a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Filesystem/Driver/Zlib.php" target="_blank">Zlib</a>.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/App" target="_blank">Magento\Framework\App</a> is a special PHP library that is aware of Magento as an application. It represents a greater level of abstraction and provides the following:</p>
 
-<p><a href="/guides/v2.0/architecture/archi_perspectives/service_layer.html">Service layer</a></p>
+    <ul>
+      <li><a href="/guides/v2.0/architecture/modules/mod_and_areas.html">Application areas</a></li>
+      <li><a href="/guides/v2.0/extension-dev-guide/routing.html">Routing requests</a></li>
+      <li>Application state</li>
+    </ul>
+  </li>
+</ul>
 
-<p><a href="/guides/v2.0/architecture/archi_perspectives/domain_layer.html">Domain layer</a></p>
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Other Magento libraries do not reference <code>Magento\Framework\App</code>.</p>
+</div>
 
-<p><a href="/guides/v2.0/architecture/archi_perspectives/persist_layer.html">Persistence layer</a></p>
+<h2 id="m2arch-related">Related topics</h2>
 
+<p><a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_intro.html">Modules</a></p>
+
+<p><a href="/guides/v2.0/architecture/archi_perspectives/components/arch_themes.html">Themes</a></p>
+
+<p><a href="/guides/v2.0/architecture/archi_perspectives/components/arch_translations.html">Language packages</a></p>
+
+<p><a href="/guides/v2.0/architecture/archi_perspectives/third-party-libs.html">Third-party libraries</a></p>
 
 
 		</div>
@@ -425,7 +441,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/architecture/archi_perspectives/ALayers_intro.html">Architectural layers</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/architecture/archi_perspectives/ALayers_intro.html">Architectural layers</a></li>
 									
 								
 								
@@ -619,7 +635,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/architecture/archi_perspectives/components/arch_libraries.html">Magento libraries</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/architecture/archi_perspectives/components/arch_libraries.html">Magento libraries</a></li>
 
 									
 						

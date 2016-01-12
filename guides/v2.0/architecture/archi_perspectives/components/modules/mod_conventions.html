@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Architectural layers overview</title>
+	<title>Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/architecture/archi_perspectives/ALayers_intro.html">
+	<link rel="canonical" href="//guides/v2.0/architecture/archi_perspectives/components/modules/mod_conventions.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Architectural layers overview</h1>
+		<h1 class="page-heading"></h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/architecture/archi_perspectives/ALayers_intro.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/architecture/components/modules/mod_conventions.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -212,40 +212,43 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2>Architectural layers overview</h2>
+		<h2 id="m2arch-module-conventions-overview"> Overview</h2>
 
-<p>At its highest level, Magento’s product architecture consists of the core product code plus optional <i>modules</i>. These optional modules enhance or replace the basic product code. </p>
+<p>Modules must conform to Magento conventions regarding code location and file names. Keep these conventions in mind when working with or developing modules. </p>
 
-<p>If you are substantially customizing the basic Magento product, module development will be your central focus. Modules organize code that supports a particular task or feature. A module can include code to change the look-and-feel of your storefront as well as its fundamental behavior. </p>
+<p>Be sure to research additional Magento conventions, beyond those applicable to modules. For  more information, see <a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a>.</p>
 
-<p>Your modules function with the core Magento product code, which is organized into layers. Understanding layered software pattern is essential for understanding basic Magento product organization. </p>
+<h2 id="m2arch-module-conventions-location"> Module location conventions</h2>
 
-<p>Layered software is a popular, widely discussed principle in software development. Many resources exist for this topic, but consider consulting Pattern-Oriented Software Architecture for a general discussion. </p>
+<p>The following table shows the <em>recommended</em> location within the Magento file system for specific components.</p>
 
-<h3>Advantages of layered application design</h3>
-<p>Layered application design offers many advantages, but users of Magento will appreciate: </p>
+<p>(Modules must include a <code>registration.php</code> file that </p>
 
-<ul>
-  <li>
-    <p>Stringent separation of business logic from presentation logic simplifies the customization process. For example, you can alter your storefront appearance without affecting any of the backend business logic. </p>
-  </li>
-  <li>
-    <p>Clear organization of code predictably points extension developers to code location. </p>
-  </li>
-</ul>
+<p>We refer to a component’s root directory as the top-level directory in which you develop component code. Typically, this directory is located in one of the following directories relative to the Magento root directory:</p>
 
-<h3>Related topics</h3>
+<table>
+	<tbody>
+		<tr>
+			<th>Entity</th>
+			<th>Location</th>
+		</tr>
+		<tr>
+			<td>Code base of your custom module</td>
+			<td><p><code>&lt;your Magento install dir&gt;/app/code/&lt;Vendor&gt;/&lt;Module&gt;</code></p></td>
+		</tr>
+		<tr>
+			<td colspan="1">Your custom theme files</td>
+			<td colspan="1"><code>&lt;<your magento="" install="" dir="">/app/design/frontend (storefront themes) or &lt;Module&gt;/&lt;theme&gt;
+		
+		<tr><td colspan="1">If you want to use a library</td>
+			<td colspan="1"><code>&lt;your Magento install dir&gt;/lib/&lt;Vendor_Library&gt;</code></td>
+		</tr>
+	
 
-<p><a href="/guides/v2.0/architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a></p>
 
-<p><a href="/guides/v2.0/architecture/archi_perspectives/present_layer.html">Presentation layer</a></p>
 
-<p><a href="/guides/v2.0/architecture/archi_perspectives/service_layer.html">Service layer</a></p>
 
-<p><a href="/guides/v2.0/architecture/archi_perspectives/domain_layer.html">Domain layer</a></p>
-
-<p><a href="/guides/v2.0/architecture/archi_perspectives/persist_layer.html">Persistence layer</a></p>
-
+</your></code></td></tr></tbody></table>
 
 
 		</div>
@@ -425,7 +428,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/architecture/archi_perspectives/ALayers_intro.html">Architectural layers</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/architecture/archi_perspectives/ALayers_intro.html">Architectural layers</a></li>
 									
 								
 								
@@ -523,7 +526,7 @@
 																
 								
 
-											<li class="level3Child modules " data-menunode="modules"><a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_conventions.html">Module conventions</a>
+											<li class="level3Child modules  active " data-menunode="modules"><a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_conventions.html">Module conventions</a>
 
 
 									

@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Architectural layers overview</title>
+	<title>Magento Themes</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/architecture/archi_perspectives/ALayers_intro.html">
+	<link rel="canonical" href="//guides/v2.0/architecture/archi_perspectives/components/arch_themes.html">
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -200,9 +200,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Architectural layers overview</h1>
+		<h1 class="page-heading">Magento Themes</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/architecture/archi_perspectives/ALayers_intro.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/architecture/components/arch_themes.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -212,40 +212,55 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2>Architectural layers overview</h2>
+		<h2>Magento themes</h2>
 
-<p>At its highest level, Magento’s product architecture consists of the core product code plus optional <i>modules</i>. These optional modules enhance or replace the basic product code. </p>
+<p>A <i>theme</i> is a core Magento component whose primary purpose is to control the appearance of your storefront.  Themes use a combination of application elements, such as templates, layouts, styles, and images, and are highly extensible. </p>
 
-<p>If you are substantially customizing the basic Magento product, module development will be your central focus. Modules organize code that supports a particular task or feature. A module can include code to change the look-and-feel of your storefront as well as its fundamental behavior. </p>
+<p><b>Custom theme development is one of two main methods of modifying Magento behavior and storefront appearance</b>. (Extending modules is the other primary way, and the main way to tailor Magento behavior.) Themes are the primary way to customize your Magento storefront appearance. Unlike modules, themes do not provide new business features (other than branding and web user experience).</p>
 
-<p>Your modules function with the core Magento product code, which is organized into layers. Understanding layered software pattern is essential for understanding basic Magento product organization. </p>
+<p>Themes within a Magento installation relate to each other through <i>inheritance</i>, allowing you to customize an existing theme by defining it as a parent theme whose settings can be inherited by any designated child themes. Themes are also divided by area, allowing you to define themes that customize either the storefront or Magento Admin.</p>
 
-<p>Layered software is a popular, widely discussed principle in software development. Many resources exist for this topic, but consider consulting Pattern-Oriented Software Architecture for a general discussion. </p>
+<p>Magento 2.0 themes are also characterized by responsive web design. For more information on responsive design, see <a href="/guides/v2.0/frontend-dev-guide/responsive-web-design/rwd_overview.html">Overview of responsive web design in Magento</a>.</p>
 
-<h3>Advantages of layered application design</h3>
-<p>Layered application design offers many advantages, but users of Magento will appreciate: </p>
+<p>For detailed information about working with themes, refer to  <a href="/guides/v2.0/frontend-dev-guide/themes/theme-general.html">Themes</a> in the Frontend Developers Guide.</p>
+
+<h3>Theme location</h3>
+<p>The location of a theme in your Magento installation depends upon how you installed your theme. Magento knows to look in both <code>vendor</code> and  <code>app/design</code> for themes. In Magento 2.0, each module and theme contain a <code>registration.php</code> file, which defines location information. </p>
+
+<p><i>Areas</i> also determine a theme’s location. Themes that affect the storefront are placed in the <code>frontend</code> area, while themes that affect the Admin panel are placed in <code>adminhtml</code> directory. </p>
+
+<h4>Location of themes in GitHub repository</h4>
+<p>In the Magento repository on GitHub, themes exist under <code>app/design/frontend</code>. For example, you can find the Magento Blank theme at https://github.com/magento/magento2/tree/develop/app/design/frontend/Magento/blank. </p>
+
+<h4>Location of themes when installing with Composer</h4>
+
+<p>We recommend using Composer to install your Magento application and components such as modules or themes. Composer places the theme you are installing under  <code>/vendor</code>. For example, <code>vendor/Magento/theme-frontend-blank</code> is the root directory of the Composer package holding the Blank theme. </p>
+
+<h4>Location of custom themes</h4>
+<p>While developing a theme, place it under <code>app/design</code>.  If you’ve defined the theme for a local project (that is, you intend to install it in one project only),  place it under <code>app/design</code>. However, if you decide to sell the theme on Magento Marketplace, follow the instructions given there for uploading. When users download your theme from Magento Marketplace, they will use Composer to install the theme package, and Composer will automatically place it in <code>vendor</code>. (Essentially, <code>/vendor</code> holds all code that you have not written.)</p>
+
+<h3>Default Magento themes</h3>
+
+<p>The standard Magento installation provides two default themes: Luma theme (demonstration only) and Blank theme (boilerplate for theme customization).</p>
 
 <ul>
   <li>
-    <p>Stringent separation of business logic from presentation logic simplifies the customization process. For example, you can alter your storefront appearance without affecting any of the backend business logic. </p>
+    <p><b>Luma theme</b> is for demonstration purposes only. Do not use it as a parent theme in your installation.  Explore it to better understand Magento themes, but do not base customizations on it. </p>
   </li>
   <li>
-    <p>Clear organization of code predictably points extension developers to code location. </p>
+    <p><b>Blank theme</b> is provided as a tool to aid your theme development. Use the Magento Blank theme as a basis for custom theme creation. Because Blank theme is built on principles of responsive web design, it makes an excellent starting point for developing responsive Magento themes.</p>
   </li>
 </ul>
 
-<h3>Related topics</h3>
+<h2 id="m2arch-related">Related topics</h2>
 
-<p><a href="/guides/v2.0/architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a></p>
+<p><a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_intro.html">Modules</a></p>
 
-<p><a href="/guides/v2.0/architecture/archi_perspectives/present_layer.html">Presentation layer</a></p>
+<p><a href="/guides/v2.0/architecture/archi_perspectives/components/arch_libraries.html">Libraries</a></p>
 
-<p><a href="/guides/v2.0/architecture/archi_perspectives/service_layer.html">Service layer</a></p>
+<p><a href="/guides/v2.0/architecture/archi_perspectives/components/arch_translations.html">Language packages</a></p>
 
-<p><a href="/guides/v2.0/architecture/archi_perspectives/domain_layer.html">Domain layer</a></p>
-
-<p><a href="/guides/v2.0/architecture/archi_perspectives/persist_layer.html">Persistence layer</a></p>
-
+<p><a href="/guides/v2.0/frontend-dev-guide/themes/theme-structure.html">Magento theme structure</a></p>
 
 
 		</div>
@@ -425,7 +440,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/architecture/archi_perspectives/ALayers_intro.html">Architectural layers</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/architecture/archi_perspectives/ALayers_intro.html">Architectural layers</a></li>
 									
 								
 								
@@ -562,7 +577,7 @@
 
 									
 							
-									<li class="level-2 "><a href="/guides/v2.0/architecture/archi_perspectives/components/arch_themes.html">Themes</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/architecture/archi_perspectives/components/arch_themes.html">Themes</a></li>
 
 									
 						
