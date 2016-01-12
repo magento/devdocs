@@ -66,6 +66,4 @@ See
 <a href="{{ site.gdeurl }}architecture/archi_perspectives/components/modules/mod_conventions.html">Module location and naming conventions</a>
 
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/modules/Magento_MVC.html">Magento Model-View-Controller Design</a>
-
 
