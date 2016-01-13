@@ -1,10 +1,12 @@
 ---
 layout: default
-group: 
-subgroup: 
+group: arch-guide
+subgroup: Components
 title: Module relationships
 menu_title: Module relationships
-menu_order: 
+menu_order: 5
+level3_menu_node: level3child
+level3_subgroup: modules
 github_link: architecture/modules/mod_relationships.md
 redirect_from: /guides/v1.0/architecture/modules/mod_relationships.html
 ---
@@ -44,8 +46,7 @@ A single module can have the following types of relationships with another modul
 
 <h2 id="m2arch-module-related"> Related topics</h2>
 
-* <a href="{{ site.gdeurl }}architecture/modules/mod_depend.html">Module dependencies</a>
-* <a href="{{ site.gdeurl }}architecture/modules/mod_and_areas.html">Modules and areas</a>
-* <a href="{{ site.gdeurl }}architecture/modules/mod_conventions.html">Module location and naming conventions</a>
+* <a href="{{ site.gdeurl }}architecture/archi_perspectives/components/modules/mod_intro.html">Module overview</a>
+
 
 

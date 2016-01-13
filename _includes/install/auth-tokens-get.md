@@ -10,14 +10,11 @@ To get your authentication keys:
 	*	In the New Customer section, click **Register**.
 
 		If you already have an account, make sure you know your user name and password, then continue with the next step.
-
-3.	Log in to Magento Connect.
-3.	Click the **Connect** tab.
-2.	In the left pane, expand **Developers** as the following figure shows.
+2.	At the top of the page, click **Connect**.
+3.	In the **Developers** section, click **Secure Keys**.
 
 	<img src="{{ site.baseurl }}common/images/connect_keys1.png" width="200px">
 
-3.	Click **Developers** > **Secure Keys**.
 4.	You have the following options in the right pane:
 
 	*	If you already have keys, use the **Public key** as your user name and the **Private key** as your password.
