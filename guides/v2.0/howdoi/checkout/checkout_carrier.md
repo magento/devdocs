@@ -8,7 +8,7 @@ menu_order: 5
 github_link: howdoi/checkout/checkout_carrier.md
 ---
 <h2>What's in this topic</h2>
-This topic describes how to add shipping address validations for a custom shipping carrier to the Magento checkout. This is a part of the bigger task of adding a custom payment method to your Magento store.
+This topic describes how to add shipping address validations for a custom shipping carrier to the Magento checkout. This is a part of the bigger task of adding a custom shipping method to your Magento store.
 
 ## Overview
 
@@ -39,7 +39,7 @@ For example, the FedEx shipping method requires only two fields of the shipping 
 define(
     [],
     function () {
-        "use strict";
+        'use strict';
         return {
             getRules: function() {
                 return {
@@ -72,7 +72,7 @@ define(
         'mage/translate'
     ],
     function ($, utils, validationRules, $t) {
-        "use strict";
+        'use strict';
         return {
             validationErrors: [],
             validate: function(address) {
@@ -114,7 +114,7 @@ define(
         shippingRatesValidator,
         shippingRatesValidationRules
     ) {
-        "use strict";
+        'use strict';
         defaultShippingRatesValidator.registerValidator('carrierName', shippingRatesValidator);
         defaultShippingRatesValidationRules.registerRules('carrierName', shippingRatesValidationRules);
         return Component;
