@@ -17,7 +17,6 @@ github_link: config-guide/solr/solr-overview.md
 *	<a href="#overview">Overview</a>
 *	<a href="#dev">Assumptions for using Solr in a development environment</a>
 *	<a href="#prereq">Prerequisites</a>
-*	<a href="#install-prereq-software">Install prerequisite software</a>
 * 	<a href="{{ site.gdeurl }}config-guide/solr/solr-magento.html">Configure Solr and Magento</a>
 *	<a href="{{ site.gdeurl }}config-guide/solr/solr-script.html">Prepare Solr for production</a>
 
@@ -188,43 +187,12 @@ To set up rules to allow communication with the firewall or SELinux enabled, con
 *	<a href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/ch-selinux.html" target="_blank">Introduction to SELinux (CentOS.org)</a>
 *	<a href="https://wiki.centos.org/HowTos/SELinux" target="_blank">SELinux How-To Wiki (CentOS.org)</a>
 
-<h3 id="prereq-java">Install the Java Software Development Kit (JDK)</h3>
-To determine if Java is already installed, enter the following command:
-
-	java -version
-
-If the message <code>java: command not found</code> displays, you must install the Java SDK as discussed in the next section. 
-
-This topic discusses using Jetty, which comes with Solr. Consult another resource, such as the <a href="http://wiki.apache.org/solr/SolrTomcat" target="_blank">Solr Wiki</a>, to use Tomcat with Solr.
-
-To see if you're currently running Jetty and to check the version, see <a href="https://wiki.eclipse.org/Jetty/FAQ#How_do_I_know_which_version_of_Jetty_I_am_running.3F" target="_blank">How to find out the version of Jetty</a>.
-
-See one of the following sections:
-
-* <a href="#install-prereq-java-centos">Install the latest JDK on CentOS</a>
-* <a href="#install-prereq-java-ubuntu">Install the latest JDK on Ubuntu</a>
-
-<h4 id="install-prereq-java-centos">Install the JDK on CentOS</h4>
-See <a href="https://www.digitalocean.com/community/tutorials/how-to-install-java-on-centos-and-fedora#install-oracle-java-8" target="_blank">this article on digitalocean</a>.
-
-Be sure to install the JDK and *not* the JRE.
-
-<h4 id="install-prereq-java-ubuntu">Install the Java 6 or later SDK on Ubuntu</h4>
-To install the Java 6 SDK, enter the following command as a user with <code>root</code> privileges:
-
-<pre>apt-get install openjdk-6-jdk</pre>
-To install Java 7, enter the following command as a user with <code>root</code> privileges:
-
-<pre>apt-get install openjdk-7-jdk</pre>
-
-<div class="bs-callout bs-callout-info" id="info">
-	<p>Java version 7 might not be available for all operating systems. For example, you can search the list of available packages for Ubuntu <a href="http://packages.ubuntu.com/" target="_blank">here</a>.</p>
-</div>
-
-To install JDK 1.8 on Ubuntu, see <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html" target="_blank">Oracle documentation</a>.
+{% include config/install-java.md %}
 
 <h3 id="install-prereq-solr">Install Solr 4 and Jetty</h3>
 The Apache Solr package installs both Solr and Jetty. If Jetty is already installed, see the <a href="https://cwiki.apache.org/confluence/display/solr/Running+Solr+on+Jetty" target="_blank">Solr with Jetty Wiki</a> for more information.
+
+This topic discusses using Jetty, which comes with Solr. Consult another resource, such as the <a href="http://wiki.apache.org/solr/SolrTomcat" target="_blank">Solr Wiki</a>, to use Tomcat with Solr. To see if you're currently running Jetty and to check the version, see <a href="https://wiki.eclipse.org/Jetty/FAQ#How_do_I_know_which_version_of_Jetty_I_am_running.3F" target="_blank">How to find out the version of Jetty</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
 	<p>Tomcat is also a supported servlet container for Solr but discussing how to set up Tomcat with Solr is beyond the scope of this topic. For more information, see the <a href="http://wiki.apache.org/solr/SolrTomcat" target="_blank">Solr With Tomcat Wiki</a>.</p>
