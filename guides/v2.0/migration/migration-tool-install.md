@@ -14,18 +14,18 @@ redirect_from: /guides/v1.0/migration/migration-tool-install.html
 This section discusses how to install the Magento Data Migration Tool. You can install it from either `repo.magento.com` or from the GitHub repository.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>If you need to migrate to Magento Enterprise Edition (EE), contact <a href="http://support.magentocommerce.com" target="_blank">Magento Support</a>.</p>
+  <p>To migrate to Magento Enterprise Edition (EE), contact <a href="http://support.magentocommerce.com" target="_blank">Magento Support</a>.</p>
 </div>
 
 Before you continue, make sure you completed all tasks discussed in <a href="{{ site.gdeurl }}migration/migration-tool-preconditions.html">Preconditions</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>You should install the Data Migration Tool the same way you installed the Magento software, as follows:</p>
-  <ul><li>If you installed the Magento 2 compressed archive or using `composer create-project`, install the Data Migration tool using <a href="#install-repo"><code>repo.magento.com</code></a>.</li>
+  <ul><li>If you installed the Magento 2 compressed archive or using <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html"><code>composer create-project</code></a>, install the Data Migration tool using <a href="#install-repo"><code>repo.magento.com</code></a>.</li>
   	<li>If you cloned the Magento 2 GitHub repository because you're contributing code to Magento 2, install the Data Migration tool using <a href="#install-github">GitHub</a>.</li></ul>
 </div>
 
-### Install the tool from GitHub {#install-github}
+### Install the tool from GitHub for Magento Community Edition (CE) {#install-github}
 To install the Data Migration Tool from GitHub, use the following steps:
 
 1.	Log in to your Magento 2 server as a user with privileges to write to the Magento 2 file system or <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.
@@ -36,7 +36,7 @@ To install the Data Migration Tool from GitHub, use the following steps:
 			composer require magento/data-migration-tool:dev-master
 3.	Wait while dependencies are updated.
 
-### Install the tool from `repo.magento.com` {#install-repo}
+### Install the tool from `repo.magento.com` for Magento CE {#install-repo}
 To install the Data Migration Tool, you must update `composer.json` in the Magento root installation directory to provide the location of the Data Migration Tool package. 
 
 To install the Data Migration Tool, you must:

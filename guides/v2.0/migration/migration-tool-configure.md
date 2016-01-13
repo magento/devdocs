@@ -18,11 +18,16 @@ redirect_from: /guides/v1.0/migration/migration-tool-configure.html
 <h2 id="migration-configure-over">Overview of data migration tool configuration</h2>
 After you install the data migration tool, the following directory contains mapping and configuration files:
 
-`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/ce-to-ce`: Configuration and scripts for migrating from Magento 1 CE to Magento 2 CE
-<!-- *	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/ce-to-ee`: Configuration and scripts for migrating from Magento 1 CE to Magento 2 EE
-*	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/ee-to-ee`: Configuration and scripts for migrating from Magento 1 EE to Magento 2 EE -->
+*	Magento CE:
 
-The preceding directory contains subdirectories for each supported version.
+	*	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/ce-to-ce`: Configuration and scripts for migrating from Magento 1 CE to Magento 2 CE
+
+*	Magento EE:
+
+	*	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/ce-to-ee`: Configuration and scripts for migrating from Magento 1 CE to Magento 2 EE
+	*	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/ee-to-ee`: Configuration and scripts for migrating from Magento 1 EE to Magento 2 EE 
+
+The preceding directories contain subdirectories for each supported version.
 
 <h2 id="migration-configure">Configuring the migration</h2>
 Before you migrate any data, you must create a `config.xml` configuration file from the provided sample.
