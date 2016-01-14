@@ -34,6 +34,9 @@ This topic discusses how to create the files that make up a theme, how to add a 
 
 <h2 id="layout_theme_how-to_dirs">Create a theme directory</h2>
 
+<p class="q">Should we talk about production mode here?
+</p>
+
 To create the directory for your theme:
 
 1.	Go to `<your Magento install dir>/app/design/frontend`.
