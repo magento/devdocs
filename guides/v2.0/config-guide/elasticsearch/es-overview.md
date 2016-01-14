@@ -23,6 +23,8 @@ TBD
 
 ## Notes
 
+Support versions  1.7, 2.0 and 2.1
+
 ### Java
 
 {% include config/install-java.md %}
