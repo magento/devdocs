@@ -10,6 +10,11 @@ github_link: howdoi/checkout/checkout_carrier.md
 <h2>What's in this topic</h2>
 This topic describes how to add shipping address validations for a custom shipping carrier to the Magento checkout. This is a part of the bigger task of adding a custom shipping method to your Magento store.
 
+<div class="bs-callout bs-callout-info" id="info">
+<p></p>
+</div>
+
+
 ## Overview
 
 To add new shipping carrier validations to the Magento checkout, do the following:
