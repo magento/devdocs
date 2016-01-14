@@ -10,8 +10,11 @@ redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-apply.html
 ---
 
 <h2 id="theme-apply-overview">What's in this topic</h2>
-The topic describes how to apply a theme for your store, disable cache and add a theme-independent logo.
 
+The topic describes how to apply a theme for your store. This is a required step if you want a theme to be used on a storefront. 
+Also, it gives information how to add a theme independent logo for your store.
+
+<!--
 <h2 id="theme-apply-cache">Disable the system cache</h2>
 
 When Magento system cache is enabled, you must clear it each time to see your design changes reflected on a store front. To avoid this, disable certain system cache types while you make design changes.
@@ -27,9 +30,10 @@ To do this:
   <p>If you apply a theme a second or subsequent time, you might need to manually clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;</code> directory. This directory stores the <a href="{{site.gdeurl}}architecture/view/static-process.html#publish-static-view-files" target="_blank">published</a> <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-structure.html#theme-structure-pub" target="_blank">static files</a>.</p>
 </div>
 
+ -->
 
 <h2 id="theme-apply-apply">Apply a theme</h2>
-After you add your theme to the file system<!--ADDLINK -->, you can apply it to your store. You apply a theme in Admin.
+After you <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-create.html">add your theme to the file system</a>, you can apply it to your store. You apply a theme in Admin.
 
 To apply a theme:
 
@@ -38,9 +42,11 @@ To apply a theme:
 3. In the **Scope** drop-down field, select the store view where you want to apply the theme.
 4. On the **Design Theme** tab, select your newly created theme in the **Design Theme** drop-down.
 5. Click **Save Config**.
-6. To see your changes applied, Reload the store front pages.
+6. To see your changes applied, reload the store front pages.
 
-If caching is enabled in your Magento Admin panel, you must <a href="#theme-apply-clear">clear the cache</a> to see the changes applied. You might also need to manually delete all the <a href="{{site.gdeurl}}architecture/view/static-process.html#publish-static-view-files" target="_blank">published static files</a> in `pub/static/frontend`. 
+If caching is enabled in your Magento Admin panel, you must <a href="#theme-apply-clear">clear the cache</a> to see the changes applied. 
+
+If changes do not apply, delete all the published <a href="{{site.gdeurl}}architecture/view/static-process.html#publish-static-view-files" target="_blank">static files</a> in `pub/static/frontend` and preprocessed files in `var/view_preprocessing`, then reload the pages.  
 <!--ADDLINK-->
 
 <h2 id="theme-apply-except">Add a design exception</h2>

@@ -11,7 +11,13 @@ redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-create.html
 
 <h2 id="layout_theme_how-to_overview">What's in this topic</h2>
 
-This topic discusses how to create the files that make up a theme, how to add a logo to a theme, and how to size images.
+This topic discusses how to create the files that make up a theme, how to add a logo to a theme, and how to size images. 
+
+<div class="bs-callout bs-callout-info" id="info">
+<p>A new theme you create is not applied for your store automatically. You need to apply it manually in the Admin panel. This procedure in described in the <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a> topic.</p>
+</div>
+
+
 
 <h3>Contents</h3>
 
@@ -240,6 +246,8 @@ To learn more about theme layouts, refer to the <a href="{{site.gdeurl}}frontend
 <!--
 
 Related topics:
+
+* <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a>
 
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>
