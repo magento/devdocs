@@ -12,24 +12,23 @@ github_link: howdoi/checkout/checkout_payment.md
 
 Out of the box, Magento checkout consists of two steps:
 
- - Shipping Information
- - Review and Payment Information
+
+- Shipping Information
+- Review and Payment Information
 
 On the Review and Payment Information step the enabled payment methods are rendered. This topic describes how to add your custom payment method to this list.
 
 To implement a payment method rendering in checkout, you need to take the following steps:
 
-1. [Create the `.js` file implementing the component (payment method renderer).](#create)
-
-2. [Create the `.js` component registering the payment method renderer.](#register)
-
-3. [Create a template for the payment method renderer.](#template)
-
-4. [Declare the new payment in the checkout page layout.](#layout)
+[Create the `.js` file implementing the component (payment method renderer).](#create)
+[Create the `.js` component registering the payment method renderer.](#register)
+[Create a template for the payment method renderer.](#template)
+[Declare the new payment in the checkout page layout.](#layout)
 
 All the steps are described further.
 
 ## Create the .js component file {#create}
+
 Your payment method must be implemented as a UI component. For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should depend on the Magento_Checkout module. Module dependencies are specified in the [module's `composer.json`]({{site.gdeurl}}extension-dev-guide/composer-integration.html).
 
 In you custom module directory create the component's `.js` file (payment method renderer). It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory. For example in the Magento modules, the payment methods renderers are stored in the `<your_module_dir>/view/frontend/web/js/view/payment/method-renderer/` directory.
