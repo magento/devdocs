@@ -25,7 +25,7 @@ If you haven't already installed optional sample data, you can <a href="{{ site.
 ### Manage and upgrade components
 *	<a href="{{ site.gdeurl }}comp-mgr/compman-start.html">Component management (install, uninstall, enable, disable, update)</a>
 *	<a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">System upgrade (upgrade the Magento software)</a>
-*	*Contributing developers only*: <a href="{{ site.gdeurl }}install-gde/cli/dev_options.html">Contributing developers&mdash;update, reinstall Magento</a>
+*	*Contributing developers only*: <a href="{{ site.gdeurl }}install-gde/install/cli/dev_options.html">Contributing developers&mdash;update, reinstall Magento</a>
 
 ### Configure
 <a href="{{ site.gdeurl }}install-gde/install/post-install-config.html">Configure the Magento application</a>.
