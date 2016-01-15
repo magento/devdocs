@@ -10,7 +10,7 @@ github_link: install-gde/install/cli/dev_add-update.md
 ---
 
 
-Contributing developers update components by specifying components and their versions in Magento's `composer.json`. You *cannot* use the graphical Component Manager or System Upgrade utilities to do this.
+Contributing developers update components by specifying components and their versions in Magento's `composer.json`. You *cannot* use the graphical Component Manager or System Upgrade utilities to do this. To update components if you're *not* a contributing developer, see <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html">Updating the Magento application and components</a>.
 
 You can either add a `require` section to `composer.json` or you can use the `composer require` command as follows:
 

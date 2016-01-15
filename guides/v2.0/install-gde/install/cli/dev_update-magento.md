@@ -9,10 +9,7 @@ menu_node:
 github_link: install-gde/install/cli/dev_update-magento.md
 ---
 
-<h2 id="instgde-install-magento-update">Update the Magento software</h2>
-This topic discusses how to update your Magento software without reinstalling it. This topic assumes you're a contributing developer (that is, you cloned the Magento CE GitHub repository to contribute code to the Magento CE codebase).
-
-To perform another type of upgrade, see <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html">Updating the Magento application and components</a>.
+This topic discusses how a contributing developer can update the Magento software without reinstalling it. To perform an upgrade if you're *not* a contributing developer, see <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html">Updating the Magento application and components</a>.
 
 To update the Magento software if you're a contributing developer:
 
