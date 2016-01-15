@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: Bootstrap
-title: Set the mode (MAGE_MODE)
-menu_title: Set the mode (MAGE_MODE)
+title: About Magento modes
+menu_title: About Magento modes
 menu_order: 3
 menu_node: 
 github_link: config-guide/bootstrap/magento-modes.md
@@ -15,8 +15,6 @@ redirect_from: /guides/v1.0/config-guide/bootstrap/magento-modes.html
 *	<a href="#mode-developer">Developer mode</a>
 *	<a href="#mode-default">Default mode</a>
 *	<a href="#mode-production">Production mode</a>
-
-
 
 <h2 id="mode-introduction">Introduction to Magento modes</h2>
 You can run Magento in any of the following *modes*:
@@ -39,7 +37,7 @@ You can run Magento in any of the following *modes*:
 	</tr>
 	<tr class="odd">
 		<td><a href="#mode-default">default</a></td>
-		<td>As the name implies, Magento operates in this mode if no mode is explicitly set. In this mode:
+		<td><p>As the name implies, Magento operates in this mode if no mode is explicitly set. In this mode:</p>
 			<ul><li>Static view file caching is enabled</li>
 				<li>Enables <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html##config-cli-subcommands-compile-overview">automatic code compilation</a></li>
 				<li>Exceptions are not displayed to the user; instead, exceptions are written to log files.</li>
@@ -48,7 +46,7 @@ You can run Magento in any of the following *modes*:
 	</tr>
 	<tr class="even">
 		<td><a href="#mode-production">production</a></td>
-		<td>Intended for deployment on a production system. Exceptions are not displayed to the user, exceptions are written to logs only, and static files are not cached. <!-- You can set the static file directory to read-only because files are read without going through the fallback mechanism. --></td>
+		<td>Intended for deployment on a production system. Exceptions are not displayed to the user, exceptions are written to logs only, and static view files are served from cache only. New or updated files are not written to the file system. </td>
 	</tr>
 
 </tbody>
@@ -85,10 +83,8 @@ This improves performance because static files don't go through the fallback mec
 
 In production mode:
 
-*	Static view files are not materialized, and URLs for them are composed on the fly without going through the fallback mechanism.
-<!-- *	The Magento installation directory can have read-only permissions
- -->
- *	Errors are logged to the file system and are never displayed to the user
+*	Static view files are not materialized, and URLs for them are composed on the fly without going through the fallback mechanism. (Static view files are served from cache only.)
+*	Errors are logged to the file system and are never displayed to the user
 
 #### Next step
 To set a mode, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>.
