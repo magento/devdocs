@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Getting started with the Component Manager and System Upgrade</title>
+	<title>Updating the Magento application and components</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
@@ -130,7 +130,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Getting started with the Component Manager and System Upgrade</h1>
+		<h1 class="page-heading">Updating the Magento application and components</h1>
 			
 			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -221,7 +221,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Getting started with the Component Manager and System Upgrade</a></li>
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Updating the Magento application and components</a></li>
 									
 								
 
@@ -732,14 +732,13 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<h2>Getting started with the Component Manager and System Upgrade</h2>
-<p>Magento provides two applications you can use after installing the Magento application to keep it and any installed components up-to-date:</p>
+		<h2>Updating the Magento application and components</h2>
+<p>This topic discusses the ways you can:</p>
 
 <ul>
+  <li>Upgrade (that is, <em>patch</em>) the Magento software</li>
   <li>
-    <p><a href="/guides/v2.0/comp-mgr/compman-start.html">Component Manager</a></p>
-
-    <p>Updates <em>components</em>, which can be any of the following:</p>
+    <p>Update <em>components</em>, which can be any of the following:</p>
 
     <ul>
       <li>Modules (extend Magento capabilities)</li>
@@ -747,19 +746,23 @@
       <li>Language packages (localize the storefront and Admin)</li>
       <li>Libraries (common code)</li>
     </ul>
-
-    <p><em>Update</em> means updating the component version, uninstalling it, enabling it, or disabling it.</p>
-  </li>
-  <li>
-    <p><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">System Upgrade</a></p>
-
-    <p>Upgrade components included with the Magento application.</p>
-
-    <div class="bs-callout bs-callout-info" id="info">
-    <p><em>System upgrade</em> refers to updating the Magento 2.x core components and other installed components. To migrate from Magento 1.x to Magento 2, see the <a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a>.</p>
-</div>
   </li>
 </ul>
+
+<h2>Upgrade the Magento software</h2>
+<p>The way you upgrade (that is, patch) the Magento software depends on how you installed it:</p>
+
+<ul>
+  <li>Magento CE or EE: If you used <a href="/guides/v2.0/install-gde/prereq/integrator_install.html">Composer</a> to install or if you downloaded an <a href="/guides/v2.0/install-gde/prereq/zip_install.html">archive</a>, use the <a href="/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">System Upgrade utility</a></li>
+  <li>Magento CE only: If you cloned the Magento 2 GitHub repository because you are contributing code to the Magento CE codebase, <a href="/guides/v2.0/install-gde/install/cli/dev_options.html">upgrade the software manually</a></li>
+</ul>
+
+<div class="bs-callout bs-callout-info" id="info">
+		<p><em>System upgrade</em> refers to updating the Magento 2.x core components and other installed components. To migrate from Magento 1.x to Magento 2, see the <a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a>.</p>
+	</div>
+
+<h2>Update components</h2>
+<p>To update Magento components, use the <a href="/guides/v2.0/comp-mgr/compman-start.html">Component Manager</a>.</p>
 
 <h3 id="next-step">Next step</h3>
 <p>Complete the tasks discussed in <a href="/guides/v2.0/comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.</p>

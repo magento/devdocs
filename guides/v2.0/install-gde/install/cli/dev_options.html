@@ -515,6 +515,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/cli/dev_update-magento.html">Add or update components</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/cli/dev_add-update.html">Add or update components</a></li>
 
 									
@@ -606,18 +614,18 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<p>The following topics apply to you <em>only</em> if you used <code>git clone</code> to install the Magento software. This usually means you’re interested in contributing to the Magento codebase.</p>
-
-<p>Contributing developers must add or update components by specifying them in Magento’s root <code>composer.json</code>. You <em>cannot</em> use the graphical Component Manager or System Upgrade utilities to do this.</p>
-
-<p>Contributing developers update the Magento software by running ‘composer update’.</p>
-
-<p>See the following topics for more information:</p>
+		<p>The following topics apply to you <em>only</em> if you used <code>git clone</code> to install the Magento CE GitHub repository. This usually means you’re interested in contributing to the Magento CE codebase.</p>
 
 <ul>
-  <li><a href="/guides/v2.0/install-gde/install/cli/dev_add-update.html">Add or update components</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/dev_reinstall.html">Reinstall the Magento software</a></li>
+  <li>To <a href="/guides/v2.0/install-gde/install/cli/dev_update-magento.html">update the Magento software</a>, use <code>git pull origin</code> and <code>composer update</code></li>
+  <li>To <a href="/guides/v2.0/install-gde/install/cli/dev_add-update.html">add, remove, or update components</a>, modify <code>composer.json</code> and run <code>composer update</code></li>
+  <li>To <a href="/guides/v2.0/install-gde/install/cli/dev_reinstall.html">reinstall the Magento software</a>, modify the product version in <code>composer.json</code>, run <code>composer update</code>, then reinstall the Magento software</li>
 </ul>
+
+<div class="bs-callout bs-callout-info" id="info">
+	<span class="glyphicon-class">
+		<p>If you are not a contributing developer, you perform upgrades and upgrades as discussed in <a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Updating the Magento application and components</a>.</p> </span>
+</div>
 
 
 		</div>

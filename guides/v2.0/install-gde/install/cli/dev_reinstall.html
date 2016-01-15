@@ -515,6 +515,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/cli/dev_update-magento.html">Add or update components</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/cli/dev_add-update.html">Add or update components</a></li>
 
 									
@@ -606,7 +614,8 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<h3 id="instgde-install-reinst-update-sys">Reinstall as a contributing developer</h3>
+		<p>A contributing developer reinstalls Magento by updating <code>composer.json</code> to specify the Magento product version and component versions desired and runs <code>composer update</code>. </p>
+
 <p>To reinstall the Magento software as a contributing developer:</p>
 
 <ol>
@@ -627,7 +636,12 @@ cp composer.json composer.json.bak
 },
 </code></pre>
   </li>
-  <li>Replace <code>&lt;version&gt;</code> with the version to which you want to upgrade, where <code>&lt;version&gt;</code> is the <code>magento/product-community-edition</code> version from <a href="http://packages.magento.com/#magento/product-community-edition" target="_blank">packages.magento.com</a>.</li>
+  <li>
+    <p>Replace <code>&lt;version&gt;</code> with the version to which you want to upgrade, where <code>&lt;version&gt;</code> is the product version to use. </p>
+
+    <p>(The product version is in the format <code>2.0.x</code>)
+<!-- is the `magento/product-community-edition` version from -->.</p>
+  </li>
   <li>Save your changes to <code>composer.json</code> and exit the text editor.</li>
   <li>
     <p>Enter the following command:</p>

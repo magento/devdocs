@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Set the mode (MAGE_MODE)</title>
+	<title>About Magento modes</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
@@ -130,7 +130,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Set the mode (MAGE_MODE)</h1>
+		<h1 class="page-heading">About Magento modes</h1>
 			
 			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/bootstrap/magento-modes.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -314,7 +314,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html">Set the mode (MAGE_MODE)</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html">About Magento modes</a></li>
 
 									
 
@@ -1015,7 +1015,7 @@
 	</tr>
 	<tr class="odd">
 		<td><a href="#mode-default">default</a></td>
-		<td>As the name implies, Magento operates in this mode if no mode is explicitly set. In this mode:
+		<td><p>As the name implies, Magento operates in this mode if no mode is explicitly set. In this mode:</p>
 			<ul><li>Static view file caching is enabled</li>
 				<li>Enables <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-single.html##config-cli-subcommands-compile-overview">automatic code compilation</a></li>
 				<li>Exceptions are not displayed to the user; instead, exceptions are written to log files.</li>
@@ -1024,7 +1024,7 @@
 	</tr>
 	<tr class="even">
 		<td><a href="#mode-production">production</a></td>
-		<td>Intended for deployment on a production system. Exceptions are not displayed to the user, exceptions are written to logs only, and static files are not cached. <!-- You can set the static file directory to read-only because files are read without going through the fallback mechanism. --></td>
+		<td>Intended for deployment on a production system. Exceptions are not displayed to the user, exceptions are written to logs only, and static view files are served from cache only. New or updated files are not written to the file system. </td>
 	</tr>
 
 </tbody>
@@ -1066,9 +1066,7 @@
 <p>In production mode:</p>
 
 <ul>
-  <li>Static view files are not materialized, and URLs for them are composed on the fly without going through the fallback mechanism.
-<!-- *	The Magento installation directory can have read-only permissions
- --></li>
+  <li>Static view files are not materialized, and URLs for them are composed on the fly without going through the fallback mechanism. (Static view files are served from cache only.)</li>
   <li>Errors are logged to the file system and are never displayed to the user</li>
 </ul>
 
