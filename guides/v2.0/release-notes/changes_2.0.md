@@ -11,7 +11,7 @@ github_link: release-notes/changes_2.0.md
 * TOC
 {:toc}
 
-The following are the backward incompatible changes that has been made in the Magento 2.0 since its release.
+This topic contains the backward incompatible changes that have been made in the Magento 2.0 since its release.
 
 ## Module Magento_CatalogRule
 
