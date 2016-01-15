@@ -8,10 +8,10 @@ menu_node:
 github_link: release-notes/changes_2.0.md
 ---
 
+This topic contains the backward incompatible changes that have been made in the Magento 2.0 since its release.
+
 * TOC
 {:toc}
-
-This topic contains the backward incompatible changes that have been made in the Magento 2.0 since its release.
 
 ## Module Magento_Catalog
 
