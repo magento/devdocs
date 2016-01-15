@@ -4,7 +4,7 @@ group: install_cli
 subgroup: 99_contrib
 title: Add or update components
 menu_title: Add or update components
-menu_order: 2
+menu_order: 5
 menu_node: 
 github_link: install-gde/install/cli/dev_add-update.md
 ---
