@@ -36,6 +36,11 @@ To do this:
 
  -->
 
+## Prerequisites 
+
+Make sure that you [set](#{{site.gdeurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{site.gdeurl}}config-guide/bootstrap/magento-modes.html).
+
+
 ## Apply a theme {#theme-apply-apply}
 After you <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-create.html">add your theme to the file system</a>, you can apply it to your store. You apply a theme in Admin.
 
@@ -95,6 +100,5 @@ A system message notifies you that invalidated cache types must be refreshed.
 
 ## Troubleshooting (if the changes do not get applied)
 
-If the changes you configure in the Admin are not applied after you clear the cache and reload the page, delete all files in the `pub/static/frontend` and `var/view_preprocessing` directories, then reload the pages. You can delete the files manualy or run the `grunt clean:<theme_name>` command in CLI. For details about using Grunt in Magento see [Installing and configuring Grunt](frontend-dev-guide/css-topics/css_debug.html#grunt_prereq).
+If the changes you configure in the Admin are not applied after you clear the cache and reload the page, delete all files in the `pub/static/frontend` and `var/view_preprocessing` directories, then reload the pages. You can delete the files manually or run the `grunt clean:<theme_name>` command in CLI. For details about using Grunt in Magento see [Installing and configuring Grunt](frontend-dev-guide/css-topics/css_debug.html#grunt_prereq).
 
-<p class="q"> Or deploy?</p>
