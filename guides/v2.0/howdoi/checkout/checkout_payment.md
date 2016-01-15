@@ -20,10 +20,11 @@ On the Review and Payment Information step the enabled payment methods are rende
 
 To implement a payment method rendering in checkout, you need to take the following steps:
 
-[Create the `.js` file implementing the component (payment method renderer).](#create)
-[Create the `.js` component registering the payment method renderer.](#register)
-[Create a template for the payment method renderer.](#template)
-[Declare the new payment in the checkout page layout.](#layout)
+
+1. [Create the `.js` file implementing the component (payment method renderer).](#create)
+2. [Create the `.js` component registering the payment method renderer.](#register)
+3. [Create a template for the payment method renderer.](#template)
+4. [Declare the new payment in the checkout page layout.](#layout)
 
 All the steps are described further.
 
