@@ -210,8 +210,7 @@ TABLE {
 
 /* Add style for TOC Header in sidebar.html include */
 .main-container DIV.sidebar-wrapper H4 {
-
-    margin: 1.5em 10px 0.5em 14px;
+	margin: 0 10px 14px;
     color: rgba(97, 57, 42, 0.99);
     text-transform: capitalize;
     
