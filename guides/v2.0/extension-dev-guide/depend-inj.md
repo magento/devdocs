@@ -32,7 +32,7 @@ In addition, we use *dependency inversion*, a coding principle that stipulates y
 *	High-level modules should not depend on low-level modules. Both should depend on abstractions.
 *	Abstractions should not depend upon details. Details should depend on abstractions.
 
-For more information, see <a href="http://www.objectmentor.com/resources/articles/dip.pdf" target="_blank">this article by Robert C. Martin</a>.
+For more information, see <a href="https://sites.google.com/site/unclebobconsultingllc/blogs-by-robert-martin/dependency-injection-inversion" target="_blank">this article by Robert C. Martin</a>.
 
 
 The <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/ObjectManager.php" target="_blank">object manager</a> specifies the dependency environment for constructor injection. The object manager must be present only when composing code. In larger applications, composing code is performed early in the bootstrapping process.
@@ -57,7 +57,34 @@ Lifecycle
 :	An object's *lifecycle* determines in what scope instances are reused, and when to release them.
 
 <h2 id="dep-inj-preview-cons">Preview of constructor injection</h2>
-Constructor injection *must* be used for all optional and required service dependencies of an object. Service dependencies fulfill business functions of your object. Use a <a href="http://en.wikipedia.org/wiki/Proxy_pattern" target="_blank">proxy</a> for expensive optional dependencies; proxies are auto-generated, no coding is required.
+Constructor injection *must* be used for all optional and required service dependencies of an object. Service dependencies fulfill business functions of your object.
+
+{% highlight PHP %}
+<?php
+class Test
+{
+    protected $class;
+ 
+    public function __construct(SomeClass $class)
+    {
+        $this->class = $class;
+    }
+ 
+    public function execute()
+    {
+        //some code
+ 
+        $this->class->execute();
+ 
+        //some code
+    }
+}
+ 
+$test->execute();
+?>
+{% endhighlight %}
+
+ Use a <a href="http://en.wikipedia.org/wiki/Proxy_pattern" target="_blank">proxy</a> for expensive optional dependencies; proxies are auto-generated, no coding is required.
 
 A sample proxy (which you declare in `di.xml`) follows:
 
@@ -67,35 +94,6 @@ A sample proxy (which you declare in `di.xml`) follows:
         <argument name="groupFlyweight" xsi:type="object">Magento\Backend\Model\Config\Structure\Element\Group\Proxy</argument>
     </arguments>
 </type>
-{% endhighlight %}
-
-
-
-{% highlight PHP %}
-<?php
-class Foo
-{
-    protected $_bar;
- 
-    public function __construct(Bar $bar)
-    {
-        $this->_bar = $bar;
-    }
- 
-    public function execute()
-    {
-        //some code
- 
-        $this->_bar->execute();
- 
-        //some code
-    }
-}
- 
-$bar = new Bar();
-$foo = new Foo($bar);
-$foo->execute();
-?>
 {% endhighlight %}
 
 

@@ -5,7 +5,7 @@ subgroup: Architectural Basics
 title:  Stack basics
 menu_title: Stack basics
 menu_order: 2
-github_link: extension-dev-guide/stack-basics
+github_link: architecture/stack-basics.md
 ---
 <h2>Stack basics</h2>
 

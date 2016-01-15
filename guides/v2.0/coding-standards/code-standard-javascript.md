@@ -58,7 +58,7 @@ If doing so exceeds the 120-column limit, you must line-wrap the arguments in a 
 
 To save space, try to wrap as close to 80 columns as possible (remember 120-column limit), or put each argument on its own line to enhance readability.
 
-The indentation may be either four spaces.
+The indentation should be four spaces.
 
 The following patterns are the most common patterns for argument wrapping:
 

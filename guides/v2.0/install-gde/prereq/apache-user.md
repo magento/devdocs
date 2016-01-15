@@ -5,7 +5,7 @@ subgroup: Prerequisites
 title: Create the Magento file system owner
 menu_title: Create the Magento file system owner
 menu_node:
-menu_order: 200
+menu_order: 02
 github_link: install-gde/prereq/apache-user.md
 ---
 
@@ -112,6 +112,11 @@ A sample result follows:
 
 	magento_user : apache
 
+To complete the task, restart the web server:
+
+*	Ubuntu: `service apache2 restart`
+*	CentOS: `service httpd restart`
+
 <h3 id="install-update-depend-user-share-groups">Put each user in the other's group</h3>
 An alternative to setting up group membership is to put the web server user in the Magento file system owner's group and vice versa. To put each user in the other's group, as a user with `root` privileges, enter the following command for each of the two users:
 
@@ -134,6 +139,11 @@ Example:
 	groups magento_user
 	magento_user : magento_user apache
 
+To complete the task, restart the web server:
+
+*	Ubuntu: `service apache2 restart`
+*	CentOS: `service httpd restart`
+
 <h2 id="install-update-depend-user-switch">Switch to the Magento file system owner</h2>
 After you've performed the other tasks in this topic, enter one of the following commands to switch to that user:
 
@@ -146,5 +156,5 @@ For example,
 
 ### Next steps
 *	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Optional software</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">Security-related prerequisites</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">SELinux and iptables</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Your install or upgrade path</a>

@@ -25,12 +25,8 @@ If you haven't already installed optional sample data, you can <a href="{{ site.
 ### Manage and upgrade components
 *	<a href="{{ site.gdeurl }}comp-mgr/compman-start.html">Component management (install, uninstall, enable, disable, update)</a>
 *	<a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">System upgrade (upgrade the Magento software)</a>
+*	*Contributing developers only*: <a href="{{ site.gdeurl }}install-gde/install/cli/dev_options.html">Contributing developers&mdash;update, reinstall Magento</a>
 
 ### Configure
-If you're ready to configure the Magento application, see:
-
-*	Learn about Magento's <a href="{{ site.gdeurl }}config-guide/config/config-php.html">deployment configuration</a>
-*	Understand the Magento application <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-bootstrap.html">bootstrapping</a> and change <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-how-to-set.html">bootstrap parameters</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli.html">Configure</a> the Magento application using the command line
-*	Configure <a href="{{ site.gdeurl }}config-guide/config/caching.html">caching</a>, including <a href="{{ site.gdeurl }}config-guide/database/database.html">database</a>, <a href="{{ site.gdeurl }}config-guide/redis/config-redis.html">Redis</a>, and <a href="{{ site.gdeurl }}config-guide/varnish/config-varnish.html">Varnish</a>
+<a href="{{ site.gdeurl }}install-gde/install/post-install-config.html">Configure the Magento application</a>.
 

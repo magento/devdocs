@@ -1,7 +1,7 @@
 <p>This section discusses how to:</p>
 <ul><li>Set the system time zone for PHP; otherwise, errors like the following display during the installation and time-related operations like cron might not work:<br>
 <pre>PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more messages follow]</pre></li>
-<li>Increase the PHP memory limit to at least 512MB for normal operation or 2GB for testing.</li>
+<li>Increase the PHP memory limit to at least 768MB for normal operation or 2GB for testing.</li>
 <li>Set <code>always_populate_raw_post_data = -1</code><br>
 <a href="http://php.net/manual/en/ini.core.php#ini.always-populate-raw-post-data" target="_blank">always_populate_raw_post_data</a> is deprecated in PHP 5.6. This setting causes PHP to always populate <code>$HTTP_RAW_POST_DATA</code> with raw POST data. Failure to set this properly in PHP 5.6 results in errors when connecting to the database.</li>
 <li>Disable <a href="http://php.net/manual/en/ini.core.php#ini.asp-tags" target="_blank">asp_tags</a>. If asp_tags are enabled, errors display when accessing PHTML templates.<br>

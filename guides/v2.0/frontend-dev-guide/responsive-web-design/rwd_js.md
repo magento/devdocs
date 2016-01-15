@@ -48,7 +48,7 @@ The <code>responsive.js</code> script implements specific responsive functions f
 
 The <code>mediaCheck</code> call looks as follows:
 
-<pre>
+{%highlight js%}
  /*...*/
     mediaCheck({
         media: '(min-width: 768px)',
@@ -62,7 +62,7 @@ The <code>mediaCheck</code> call looks as follows:
         }
     }); /*...*/
 
-</pre>
+{%endhighlight js%}
 
 
 For example, <code>responsive.js</code> changes the view of the checkout progress block on the checkout page:

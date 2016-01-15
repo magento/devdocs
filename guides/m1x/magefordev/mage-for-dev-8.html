@@ -418,7 +418,7 @@ WHERE (e.sku < 'n2610')
 array("gteq"=>'n2610')
 WHERE (e.sku >= 'n2610')
 
-array("moreq"=>'n2610') //a weird, second way to do greater than equal
+array("moreq"=>'n2610') //a weird, second way to do greater than equal (Doesn't work on > 1.8 CE EDITION do the same as eq)
 WHERE (e.sku >= 'n2610')
 
 array("lteq"=>'n2610')
@@ -487,7 +487,7 @@ function testAction()
 }
 </pre>
 
-<p>By chaining together multiple calls as above, we'll produce a where clause that looks something like the the following</p>
+<p>By chaining together multiple calls as above, we'll produce a where clause that looks something like the following</p>
 
 <pre>WHERE (e.sku like 'a%') AND (e.sku like 'b%')</pre>
 

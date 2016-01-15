@@ -1,6 +1,6 @@
 ---
 layout: default
-group: release-notes
+group: 
 title: Release Notes
 menu_title: Changes in 0.74-beta10
 menu_node: 

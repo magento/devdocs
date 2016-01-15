@@ -1,7 +1,7 @@
 ---
 layout: default
 group:  migration
-subgroup: Data migration tool
+subgroup: C_Data migration tool
 title: Configure migration
 menu_title: Configure migration
 menu_node: 
@@ -38,16 +38,21 @@ To create a configuration file:
 		cp config.xml.dist config.xml
 
 4.	Open `config.xml` in a text editor.
-4.	Specify the following at minimum:
+5.	Specify the following at minimum:
 
 {% highlight xml %}
-<source version="1.9.1">
+<source>
     <database host="localhost" name="magento1" user="root"/>
 </source>
-<destination version="2.0.0.0">
+<destination>
     <database host="localhost" name="magento2" user="root"/>
 </destination>
+<options>
+    <crypt_key />
+</options>
 {% endhighlight %}
+
+The `<crypt_key>` tag is mandatory to fill. It can be found in `local.xml` file which is located in the directory of Magento 1 instance at `app/etc/local.xml` in `<key>` tag
 
 Optional parameters:
 
@@ -57,14 +62,15 @@ Optional parameters:
 For example, if your database owner's user name is `root` with password `pass` and you use the prefix `magento1` in your Magento 1 database, use the following in `config.xml`:
 
 {% highlight xml %}
-<source version="1.9.1">
+<source>
     <database host="localhost" name="magento1" user="root" password="pass"/>
 </source>
-<destination version="2.0.0.0">
-    <database host="localhost" name="magento2" user="root"/>
+<destination>
+    <database host="localhost" name="magento2" user="root" password="pass"/>
 </destination>
 <options>
     <source_prefix>magento1</source_prefix>
+    <crypt_key>f3e25abe619dae2387df9fs594f01985</crypt_key>
 </options>
 {% endhighlight %}
 
@@ -86,7 +92,7 @@ To use the mapping files:
 2.	Edit them using the schema located in `<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc`.
 3.	Then change config.xml in `<options>` node with the new name of the file.
 
-The `<your Magento 2 install dir>/vendor/magento/data-migration-tool/<ce or ee version>/etc` directory contains the following configuration files:
+The `<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc` and `<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<ce or ee version>` directories contain the following configuration files:
 
 Even though you will be working with `map.xml.dist` file most of the time, the following table discusses each mapping and other files.
 

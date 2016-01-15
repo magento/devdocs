@@ -40,7 +40,7 @@ When you change modes, we do the following:
 	When you generate classes or generate static files, they have 777 (world-writable permissions) and are owned by the user who runs this command.
 
 <h3 id="config-mode-over-clear">Cleared directories</h3>
-We clear the the contents of following directories when you change modes:
+We clear the contents of following directories when you change modes:
 
 	var/cache
 	var/di
@@ -115,7 +115,7 @@ We recommend the following:
 
 	We refer to this other user as the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#nstall-update-depend-user-over">Magento file system owner</a>.
 
-	Exceptions: `var/di`, `var/generation`, and `var/preprocessed`
+	Exceptions: `var/di`, `var/generation`, and `var/view_preprocessed`
 
 *	The directories and files under `pub/static` should have 770 permissions, which give the owner and the group full control.
 

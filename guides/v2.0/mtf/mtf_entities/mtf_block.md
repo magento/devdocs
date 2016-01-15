@@ -15,7 +15,7 @@ github_link: mtf/mtf_entities/mtf_block.md
 
 ## Block overview {#mtf_block_overview}
 
-In functional tests we use Page Object Design Pattern. Under this pattern, a block is an area of the UI that a test interact with, and a [page]({{site.gdeurl}}mtf/mtf_entities/mtf_page.html) is a container for blocks.
+In functional tests we use Page Object Design Pattern. Under this pattern, a block is an area of the UI that a test interacts with, and a [page]({{site.gdeurl}}mtf/mtf_entities/mtf_page.html) is a container for blocks.
 
 The Page Object Design Pattern is used to avoid unnecessary duplication of code and to make tests easier to support.
 
@@ -39,7 +39,7 @@ A basic flow is the following:
 
 ### How to determine a block name and a path {#mtf_block_path}
 
-The block name and path in the Magento functional tests (`<magento2>/dev/tests/functional/tests/app`) should reflect a corresponding block in the Magento code base (`<magento2>/app/code`) for your convenience.
+The block name and path in the Magento functional tests (`<magento2>/dev/tests/functional/tests/app`) should reflect a corresponding block in the Magento code base for your convenience.
 For example, you develop a functional test for the bundle product creation, that uses the Bundle Items section. In the Magento code base, the block, which is responsible for the bundle option, is the `.../Magento/Bundle/Block/Adminhtml/Catalog/Product/Edit/Tab/Bundle/Option.php`, so in the Magento functional tests you can create a new file `.../Magento/Bundle/Block/Test/Adminhtml/Catalog/Product/Edit/Tab/Bundle/Option.php`.
 
 Magento can show you a full class name of the block and path to the PHTML template on the Magento page (changes web page design) or implicitly in the HTML code of the page.
@@ -238,7 +238,7 @@ See a description of the nodes in the following table.
 <tr><td><code>fields</code> </td><td>The node containing mapping fields. </td><td><code>&lt;email&gt;</code>, <code>&lt;password /&gt;</code>.</td></tr>
 <tr><td><code>selector</code> </td><td>Value for the selector that is used to find the field. Default: <code>[name='group_name[field_node_name]']</code>. Default value is assigned automatically if the node is absent in the field. </td><td>For the <code>&lt;email&gt;</code>, the <code>[name='login[username]']</code>.<br/> For the <code>&lt;password /&gt;</code>, the <code>[name='login[password]']</code> that is the default value where <code>wrapper="login"</code>.</td></tr>
 <tr><td><code>strategy</code> </td><td>The strategy of the selection. Available values: <code>css selector</code>, <code>xpath</code>. Default: <code>css selector</code>. </td><td><code>css selector</code> as a default value.</td></tr>
-<tr><td><code>input</code> </td><td>Type of the input element. Available values: <ul><li><code>select</code></li> <li><code>checkbox</code></li> <li><code>typified element</code></li> <li><code>simple</code></li></ul> <code>simple</code> is for simple input element. Default: <code>simple</code>. Do not use <code>class</code> node, if you use <code>input</code> in the field. </td><td><code>simple</code> as a default value.</td></tr>
+<tr><td><code>input</code> </td><td>Type of the input element. Available values: <ul><li><code>select</code></li> <li><code>checkbox</code></li> <li><a href="{{site.gdeurl}}mtf/mtf_entities/mtf_typified-element.html">&lt;typified element&gt;</a></li> <li><code>simple</code></li></ul> <code>simple</code> is for simple input element. Default: <code>simple</code>. Do not use <code>class</code> node, if you use <code>input</code> in the field. </td><td><code>simple</code> as a default value.</td></tr>
 <tr><td><code>class</code> </td><td>Class of the element. Applicable if non of the <code>input</code> options fits. Do not use <code>input</code>, if you use <code>class</code> in the field. </td><td>This node has not been used in the example.</td></tr>
 </tbody></table>
 

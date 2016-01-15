@@ -4,7 +4,7 @@ group: install_pre
 subgroup: Prerequisites
 title: Set up a remote MySQL database connection
 menu_title: Set up a remote MySQL database connection
-menu_order: 10
+menu_order: 20
 github_link: install-gde/prereq/mysql_remote.md
 ---
 
@@ -122,7 +122,7 @@ If your web server is clustered, enter the command on each web server host.
 <h2 id="instgde-prereq-mysql-remote-install">Install the Magento software</h2>
 When you install the Magento software using either the command line or Setup Wizard, you must specify the following:
 
-*	The Base URL (also referred to as the *store address*) specifies the host name or IP address of the *webnode*
+*	The Base URL (also referred to as the *store address*) specifies the host name or IP address of the *web node*
 *	Database host is the *remote database server* IP address (or load balancer if the database server is clustered)
 *	Database user name is the *local web node* database user to which you gave access
 *	Database password is the local web node user's password

@@ -4,7 +4,7 @@ group: install_pre
 subgroup: Prerequisites
 title: Apache
 menu_title: Apache
-menu_order: 2
+menu_order: 01
 github_link: install-gde/prereq/apache.md
 redirect_from: /guides/v1.0/install-gde/prereq/apache.html
 ---
@@ -191,6 +191,12 @@ For example:
 		Require all granted
 	</Directory>
 
+<div class="bs-callout bs-callout-info" id="info">
+	<span class="glyphicon-class">
+	<p>The preceding values for <code>Order</code> might not work in all cases. For more information, see the <a href="https://httpd.apache.org/docs/2.4/mod/mod_access_compat.html#order" target="_blank">Apache documentation</a>.</p></span>
+</div>
+
+
 <h4 id="install-apache-403_2.2">Solving 403 Forbidden errors for Apache 2.2</h4>
 To enable web site visitors to access your site, use the <a href="http://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#allow" target="_blank">Allow directive</a>.
 
@@ -203,7 +209,10 @@ For example:
 		Allow from all
 	</Directory>
 
-
+<div class="bs-callout bs-callout-info" id="info">
+	<span class="glyphicon-class">
+	<p>The preceding values for <code>Order</code> might not work in all cases. For more information, see the <a href="https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order" target="_blank">Apache documentation</a>.</p></span>
+</div>
 
 #### Related topics:
 

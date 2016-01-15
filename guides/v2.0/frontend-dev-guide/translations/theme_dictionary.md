@@ -16,10 +16,10 @@ This topic describes how default strings can be changed in your custom theme usi
 
 When the locale is changed for a store, Magento searches for translations in the corresponding dictionaries in the following locations:
 
-4. Module translations: `app/code/<Vendor>/<Module>/i18n/`
+4. Module translations: `<module_dir>/i18n/`
 4. Theme translations: 
-	1. `app/design/frontend/<Vendor>/<parent_theme>/i18n/` (iterated through all ancestor themes)
-	2. `app/design/frontend/<Vendor>/<current_theme>/i18n/`
+	1. `<parent_theme_dir>/i18n/` (iterated through all ancestor themes)
+	2. `<current_theme_dir>/i18n/`
 4. Translation package: `app/i18n/`
 5. Magento database
 
@@ -30,7 +30,7 @@ If there are different translations for one string, the theme dictionary transla
 The translations priority described earlier is applied for the default en_US locale as well. So you can use the `en_US.csv` dictionary to customize the strings used in the default locale.
 
 <span id="luma_example">For example, this approach is used in the Magento Luma theme. It has the 
-<a href="{{site.mage2000url}}app/design/frontend/Magento/luma/i18n/en_US.csv"><code>app/design/frontend/Magento/luma/i18n/en_US.csv</code></a> file, where the left column contains the default values (keys), and the right columns contains the values to be used instead when the Luma theme is applied:
+<a href="{{site.mage2000url}}app/design/frontend/Magento/luma/i18n/en_US.csv"><code>&lt;Magento_Luma_theme_dir&gt;/i18n/en_US.csv</code></a> file, where the left column contains the default values (keys), and the right columns contains the values to be used instead when the Luma theme is applied:
 </span>
 
     "Add to Wish List",	"Wish List"

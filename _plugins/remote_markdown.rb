@@ -36,7 +36,7 @@ module Jekyll
     end
 
     def check_extension(path)
-      mdexts = %w(.markdown .mkdown .mkdn .mkd .md .xml)
+      mdexts = %w(.markdown .mkdown .mkdn .mkd .md .xml .php .js .json .less)
       error_message = "remote_markdown: URI file extension not in #{mdexts}"
       fail error_message unless mdexts.include?(File.extname(path))
     end
