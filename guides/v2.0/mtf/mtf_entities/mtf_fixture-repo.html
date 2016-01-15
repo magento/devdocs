@@ -222,7 +222,10 @@
   </li>
   <li><a href="#mtf_repository_create-field">Create a repository for the fixture field</a></li>
   <li><a href="#mtf_repository_config">Configuration repository</a></li>
-  <li><a href="#mtf_repository_merge">Merging repositories</a></li>
+  <li><a href="#mtf_repository_merge">Merging repositories</a>    <ul>
+      <li><a href="#dataset-replacement">Data set replacement</a></li>
+    </ul>
+  </li>
   <li><a href="#mtf_repository_credent_iso">Credentials and <code>%isolation%</code> in repository</a>    <ul>
       <li><a href="#mtf_repo_credent_path">Example with substitution by <code>path</code></a></li>
       <li><a href="#mtf_repo_credent_replace">Example with replacement by <code>replace</code></a></li>
@@ -736,9 +739,67 @@ Reference to the repository is placed in the fixture XML file in attribute named
 
 <p>The preceding is an example of repository merging. Using the approach from the example you can merge repositories for any other fixture, not <code>Config</code> only.</p>
 
+<h3 id="dataset-replacement">Data set replacement</h3>
+
+<p>You can modify your data set without changing the name of the data set. Simply use a <code>replace</code> attribute. For example,</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;dataset</span> <span class="na">name=</span><span class="s">&quot;customer_new_default&quot;</span> <span class="na">replace=</span><span class="s">&quot;default&quot;</span><span class="nt">&gt;</span></code></pre></div>
+
+<p>This node means that <code>customer_new_default</code> data set replaces <code>default</code> data set.</p>
+
+<p>Let’s see a use case example. Assume that the Customer fixture in the Magento_Customer module has a repository with the <code>default</code> data set:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../vendor/magento/mtf/Magento/Mtf/Repository/etc/repository.xsd&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;repository</span> <span class="na">class=</span><span class="s">&quot;Magento\Customer\Test\Repository\Customer&quot;</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;dataset</span> <span class="na">name=</span><span class="s">&quot;default&quot;</span><span class="nt">&gt;</span>
+             <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;firstname&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>John<span class="nt">&lt;/field&gt;</span>
+             <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;lastname&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Doe<span class="nt">&lt;/field&gt;</span>
+             <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;group_id&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                 <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;dataset&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>General<span class="nt">&lt;/item&gt;</span>
+             <span class="nt">&lt;/field&gt;</span>
+             <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;email&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>JohnDoe_%isolation%@example.com<span class="nt">&lt;/field&gt;</span>
+             <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;password&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>123123q<span class="nt">&lt;/field&gt;</span>
+             <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;password_confirmation&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>123123q<span class="nt">&lt;/field&gt;</span>
+         <span class="nt">&lt;/dataset&gt;</span>
+     <span class="nt">&lt;/repository&gt;</span>
+ <span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p>Later you installed a new module Magento_CustomerNew module that changed Customer fixture. You don’t want to change the <code>default</code> data set name in the test. Instead, you can simply replace the <code>default</code> data set, without changing the name:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../vendor/magento/mtf/Magento/Mtf/Repository/etc/repository.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;repository</span> <span class="na">class=</span><span class="s">&quot;Magento\Customer\Test\Repository\Customer&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;dataset</span> <span class="na">name=</span><span class="s">&quot;customer_new_default&quot;</span> <span class="na">replace=</span><span class="s">&quot;default&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;firstname&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>John<span class="nt">&lt;/field&gt;</span>
+            <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;lastname&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Doe<span class="nt">&lt;/field&gt;</span>
+            <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;email&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>JohnDoe_%isolation%@example.com<span class="nt">&lt;/field&gt;</span>
+            <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;new_field&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Some value<span class="nt">&lt;/field&gt;</span>
+            <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;password&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>123123q<span class="nt">&lt;/field&gt;</span>
+            <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;password_confirmation&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>123123q<span class="nt">&lt;/field&gt;</span>
+        <span class="nt">&lt;/dataset&gt;</span>
+    <span class="nt">&lt;/repository&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p>After the repository generation </p>
+
+<pre><code>php &lt;magento2&gt;/dev/tests/functional/utils/generate/repository.php)
+</code></pre>
+
+<p>you have the following code in the Customer repository (<code>&lt;magento2&gt;/dev/tests/functional/generated/Magento/Customer/Test/Repository/Customer.php</code>):</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_data</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s1">&#39;firstname&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;lastname&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Doe&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;JohnDoe_%isolation%@example.com&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;new_field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Some value&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;123123q&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;password_confirmation&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;123123q&#39;</span><span class="p">,</span>
+<span class="p">];</span></code></pre></div>
+
+<p>As you can see, a repository with the name <code>default</code> contains data from the <code>customer_new_default</code> repository.</p>
+
 <h2 id="mtf_repository_credent_iso">Credentials and <code>%isolation%</code> in repository</h2>
 
-<p>Credentials are stored in XML file specified in <code>phpunit.xml</code>.</p>
+<p>Credentials are stored in an <code>*.xml</code> file that is specified in <code>phpunit.xml</code>.</p>
 
 <p>You can find a template for credentials in <a href="https://github.com/magento/magento2/blob/master/dev/tests/functional/credentials.xml.dist"><code>&lt;magento2&gt;/dev/tests/functional/credentials.xml.dist</code></a>.</p>
 

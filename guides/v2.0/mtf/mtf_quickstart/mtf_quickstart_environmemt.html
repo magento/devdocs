@@ -216,7 +216,7 @@
 
 <ul id="markdown-toc">
   <li><a href="#mtf_quickstart_env_selenium">Run the Selenium Server</a></li>
-  <li><a href="#mtf_quickstart_env_selenium-non-def">Run tests on non default browser</a></li>
+  <li><a href="#mtf_quickstart_env_selenium-non-def">Run tests on non-default browser</a></li>
   <li><a href="#mtf_quickstart_env_generator">Run generator</a></li>
 </ul>
 
@@ -235,11 +235,11 @@ You can download the Selenium Server from <a href="http://www.seleniumhq.org/dow
 <pre><code>java -jar &lt;path_to_selenium_directory&gt;/selenium-server.jar
 </code></pre>
 
-<h3 id="mtf_quickstart_env_selenium-non-def">Run tests on non default browser</h3>
+<h3 id="mtf_quickstart_env_selenium-non-def">Run tests on non-default browser</h3>
 
 <p>If the Selenium Server does not work directly with your browser, find the corresponding <a href="http://docs.seleniumhq.org/about/platforms.jsp">WebDriver</a>.</p>
 
-<p>In <code>config.xml</code> <a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_config.html#mtf_quickstart_config_configxml_browser"> set browser that MTF will use for tests</a>.</p>
+<p>In <code>config.xml</code> <a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_config.html#mtf_quickstart_config_configxml_browser"> define the browser that the <abbr title="Magento Testing Framework">MTF</abbr> will use for tests</a>.</p>
 
 <p>Run the Selenium Server with an additional argument.</p>
 
@@ -250,7 +250,7 @@ You can download the Selenium Server from <a href="http://www.seleniumhq.org/dow
 
 <h3 id="mtf_quickstart_env_generator">Run generator</h3>
 
-<p>Generator generates fixtures, repositories and page objects. Once MTF is initialized, all classes will be pre-generated to facilitate creating and running the tests.</p>
+<p>Generator generates <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html">fixtures</a>, <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture-repo.html">repositories</a>, and <a href="/guides/v2.0/mtf/mtf_entities/mtf_page.html">page objects</a>. Once the <abbr title="Magento Testing Framework">MTF</abbr> is initialized, all classes must be pre-generated to facilitate creating and running the tests. Modules in the <abbr title="Magento Testing Framework">MTF</abbr> are processed by generator in the same order that they are processed during Magento loading.</p>
 
 <p>Enter in terminal:</p>
 
@@ -261,6 +261,13 @@ php generate.php
 <h2 id="mtf_install_pre">Next Steps</h2>
 <p><a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_config.html">&lt;&lt; Adjust configuration </a> | <a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_runtest.html"> Test run &gt;&gt;</a></p>
 
+<!-- LINK DEFINITIONS -->
+
+<!-- Devdocs -->
+
+<!-- Internet -->
+
+<!-- ABBREVIATIONS -->
 
 
 		</div>

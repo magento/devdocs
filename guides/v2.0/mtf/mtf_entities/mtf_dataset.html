@@ -230,11 +230,13 @@
   <li><a href="#merge">Merge data sets</a>    <ul>
       <li><a href="#add_variation">Add a new variation</a></li>
       <li><a href="#extend_variation">Extend a variation with data</a></li>
+      <li><a href="#replace_variation">Replace a variation</a></li>
     </ul>
   </li>
 </ul>
 
 <h2 id="overview">Data set overview</h2>
+
 <p>Data set contains data used by a <a href="/guides/v2.0/mtf/mtf_entities/mtf_testcase.html">test case</a> and <a href="/guides/v2.0/mtf/mtf_entities/mtf_constraint.html">constraints</a>.
 A data set can have several variations.
 Each variation has constraints that are called at the end of the test flow.</p>
@@ -569,6 +571,7 @@ The following data types are available:
 <p>Variations <code>DeleteVideoFromPCFTestVariation1</code> and <code>DeleteVideoFromPCFTestVariation2</code> will be used by the <code>Magento\Catalog\Test\TestCase\Product\UpdateSimpleProductEntityTest</code> class during the test run.</p>
 
 <h3 id="extend_variation">Extend a variation with data</h3>
+
 <p>If you want to extend variation in another module using merging, you should use a <a href="/guides/v2.0/mtf/mtf_entities/mtf_testcase.html">test case</a> name that you want to merge with and a variation name that you want to extend.</p>
 
 <p>For example, see how in <code>Magento/Catalog/Test/TestCase/Product/ValidateOrderOfProductTypeTest.xml</code></p>
@@ -606,6 +609,18 @@ The following data types are available:
         <span class="nt">&lt;/variation&gt;</span>
     <span class="nt">&lt;/testCase&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<h3 id="replace_variation">Replace a variation</h3>
+
+<p>You can replace one variation with another by using a <code>replace</code> attribute of the <code>variation</code> node:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;variation</span> <span class="na">name=</span><span class="s">&quot;CreateSuperNewCustomerBackendEntityTestVariation1&quot;</span> <span class="na">replace=</span><span class="s">&quot;CreateCustomerBackendEntityTestVariation1&quot;</span> <span class="na">summary=</span><span class="s">&quot;Variation that replaces default CreateCustomerBackendEntityTestVariation1&quot;</span><span class="nt">&gt;</span></code></pre></div>
+
+<p>After a merge of a data set with the variation that is mentioned, a test will use <code>CreateSuperNewCustomerBackendEntityTestVariation1</code> instead of <code>CreateSuperNewCustomerBackendEntityTestVariation1</code>.</p>
+
+<!-- LINK DEFINITIONS -->
+
+<!-- ABBREVIATIONS -->
 
 
 
