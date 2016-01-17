@@ -25,7 +25,16 @@ You can run Magento in any of the following *modes*:
 			<th>Mode name</th>
 			<th>Description</th>
 		</tr>
-	<tr class="even">
+		<tr>
+		<td><a href="#mode-default">default</a></td>
+		<td><p>Enables you to deploy the Magento application on a single server without changing any settings. However, default mode is not optimized for production.</p>
+			<p>To deploy the Magento application on more than one server or to optimize it for production, change to one of the other modes.</p>
+			<ul><li>Static view file caching is enabled</li>
+				<li>Exceptions are not displayed to the user; instead, exceptions are written to log files.</li>
+				<li>Hides custom <code>X-Magento-*</code> HTTP request and response headers</li></ul>
+			</td>
+	</tr>
+	<tr>
 		<td><a href="#mode-developer">developer</a></td>
 		<td><p>Intended for development only, this mode:</p>
 			<ul><li>Disables static view file caching</li>
@@ -35,16 +44,7 @@ You can run Magento in any of the following *modes*:
 				<li>Shows custom <code>X-Magento-*</code> HTTP request and response headers</li>
 				<li>Results in the slowest performance (because of the preceding)</li></ul></td>
 	</tr>
-	<tr class="odd">
-		<td><a href="#mode-default">default</a></td>
-		<td><p>As the name implies, Magento operates in this mode if no mode is explicitly set. In this mode:</p>
-			<ul><li>Static view file caching is enabled</li>
-				<li>Enables <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html##config-cli-subcommands-compile-overview">automatic code compilation</a></li>
-				<li>Exceptions are not displayed to the user; instead, exceptions are written to log files.</li>
-				<li>Hides custom <code>X-Magento-*</code> HTTP request and response headers</li></ul>
-				<p>Although you <em>can</em> run Magento in default mode in production, we don't recommend it.</p></td>
-	</tr>
-	<tr class="even">
+	<tr>
 		<td><a href="#mode-production">production</a></td>
 		<td>Intended for deployment on a production system. Exceptions are not displayed to the user, exceptions are written to logs only, and static view files are served from cache only. New or updated files are not written to the file system. </td>
 	</tr>
@@ -66,7 +66,9 @@ In developer mode:
 For more information, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>.
 
 <h2 id="mode-default">Default mode</h2>
-As its name implies, default mode is how the Magento software operates if no other mode is specified.
+As its name implies, default mode is how the Magento software operates if no other mode is specified. Default mode enables you to deploy the Magento application on a single server without changing any settings. However, default mode is not optimized for production.
+
+To deploy the Magento application on more than one server or to optimize it for production, change to one of the other modes.
 
 In default mode:
 
