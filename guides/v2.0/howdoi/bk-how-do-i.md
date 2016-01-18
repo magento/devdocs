@@ -24,7 +24,10 @@ To sign up to contribute, all you need to do is to submit a <a href="{{ site.git
 
 Use <a href="{{ site.gdeurl }}howdoi/howdoi_template.html">this template</a> if you'd like. You can get a copy of the <a href="{{ site.githuburl }}howdoi/howdoi_template.md">.md file  on Github</a>.
 
+Submissions should be authored in Markdown but HTML is welcome also.
 
-Submissions should be Markdown but HTML is welcome also.
+<div class="bs-callout bs-callout-info" id="info">
+  <p>All content submitted to us is subject to internal review. Content should be consistent with Magento practices, including <a href="{{ site.gdeurl }}coding-standards/bk-coding-standards.html">coding standards</a>.</p>
+</div>
 
 
