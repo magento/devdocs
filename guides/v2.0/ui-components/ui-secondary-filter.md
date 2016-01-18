@@ -27,33 +27,33 @@ Currently the following filter types are supported:
 Example:
 `<your module root dir>/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml`
 
-<pre>
-&lt;listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Ui/etc/ui_configuration.xsd"&gt;
-    &lt;container name="page_listing_top"&gt;
-        &lt;filters name="listing_filters"&gt;
-            &lt;argument name="data" xsi:type="array"&gt;
-                &lt;item name="config" xsi:type="array"&gt;
-                    &lt;item name="dataScope" xsi:type="string"&gt;params.filters&lt;/item&gt;
-                &lt;/item&gt;
-            &lt;/argument&gt;
-            &lt;filterRange name="page_id"&gt;
-                &lt;argument name="data" xsi:type="array"&gt;
-                    &lt;item name="config" xsi:type="array"&gt;
-                        &lt;item name="dataScope" xsi:type="string"&gt;page_id&lt;/item&gt;
-                        &lt;item name="label" xsi:type="string" translate="true"&gt;ID&lt;/item&gt;
-                    &lt;/item&gt;
-                &lt;/argument&gt;
-                &lt;filterInput name="from"&gt;...&lt;/filterInput&gt;
-                &lt;filterInput name="to"&gt;...&lt;/filterInput&gt;
-            &lt;/filterRange&gt;
-            &lt;filterInput name="title"&gt;...&lt;/filterInput&gt;
-            &lt;filterInput name="identifier"&gt;...&lt;/filterInput&gt;
-            &lt;filterSelect name="page_layout"&gt;...&lt;/filterSelect&gt;
-            &lt;filterSelect name="store_id"&gt;...&lt;/filterSelect&gt;
-            &lt;filterSelect name="is_active"&gt;...&lt;/filterSelect&gt;
-            &lt;filterRange name="creation_time" class="Magento\Ui\Component\Filters\Type\DateRange"&gt;...&lt;/filterRange&gt;
-            &lt;filterRange name="update_time" class="Magento\Ui\Component\Filters\Type\DateRange"&gt;...&lt;/filterRange&gt;
-        &lt;/filters&gt;
-    &lt;/container&gt;
-&lt;/listing&gt;
-</pre>
+{% highlight xml %}
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <container name="page_listing_top">
+        <filters name="listing_filters">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataScope" xsi:type="string">params.filters</item>
+                </item>
+            </argument>
+            <filterRange name="page_id">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="dataScope" xsi:type="string">page_id</item>
+                        <item name="label" xsi:type="string" translate="true">ID</item>
+                    </item>
+                </argument>
+                <filterInput name="from">...</filterInput>
+                <filterInput name="to">...</filterInput>
+            </filterRange>
+            <filterInput name="title">...</filterInput>
+            <filterInput name="identifier">...</filterInput>
+            <filterSelect name="page_layout">...</filterSelect>
+            <filterSelect name="store_id">...</filterSelect>
+            <filterSelect name="is_active">...</filterSelect>
+            <filterRange name="creation_time" class="Magento\Ui\Component\Filters\Type\DateRange">...</filterRange>
+            <filterRange name="update_time" class="Magento\Ui\Component\Filters\Type\DateRange">...</filterRange>
+        </filters>
+    </container>
+</listing>
+{% endhighlight %}
