@@ -1,0 +1,26 @@
+.home-section {
+   padding: 40px 0 0 0;
+}
+
+.home-section .panel-separator {
+    margin-top: 50px
+}
+
+.home-section h2 {
+    margin: 0 0 0.5em 0
+}
+
+.home-section h3 {
+    margin: 1.5em 0 0 0;
+    letter-spacing: 0.05em
+}
+
+.home-section h3 a {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase
+}
+
+.home-section:last-child {
+    padding-bottom: 60px
+}
