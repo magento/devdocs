@@ -15,7 +15,7 @@ redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css_debug.html
 The topic describes how the changes you make in stylesheets are applied in the client-side and server-side LESS <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">compilation modes</a>, and suggests the approaches and tools you can use to streamline the process of applying and debugging customizations. </p>
 
 ## Prerequisites 
-Make sure that you [set](#{{site.gdeurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{site.gdeurl}}config-guide/bootstrap/magento-modes.html).
+Make sure that you [set]({{site.gdeurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{site.gdeurl}}config-guide/bootstrap/magento-modes.html).
 
 <h2 id="css_debug_client">Styles debugging in client-side compilation mode</h2>
 
