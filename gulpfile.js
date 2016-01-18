@@ -34,7 +34,7 @@ var gulp = require('gulp'),
    paths = {
       icons: 'icons/*.svg',
       html: [
-      	'guides/**/*.html',
+      	'guides/**/*.{html,md}',
          '_includes/**/*.html',
 			'_layouts/**/*.html',
          'css/**/*.css',
