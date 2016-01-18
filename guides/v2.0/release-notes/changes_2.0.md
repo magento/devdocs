@@ -8,7 +8,7 @@ menu_node:
 github_link: release-notes/changes_2.0.md
 ---
 
-This topic contains the backward incompatible changes that have been made in the Magento 2.0 since its release.
+This topic contains the backward incompatible changes in the Magento 2.0 since its release.
 
 * TOC
 {:toc}
@@ -22,7 +22,7 @@ This topic contains the backward incompatible changes that have been made in the
 * General changes
   * **Reset** button has been removed
 * POST data structure changed
-  * The parent category ID `parent_id` is now posted in the `general` field set scope
+  * The parent category ID `parent_id` is now posted in the `general` field
   * The category data is split from the `general` sub-array to the specific sub-arrays by a field set name:
     
 <table>
@@ -64,9 +64,10 @@ This topic contains the backward incompatible changes that have been made in the
 </table>
 
 * The Google Optimizer POST data moved to a specific sub-array
-* `On\Off` fields 
+* `On/Off` fields 
   * The input type has been changed from `select` to `switcher`
-  * Preprocessed data on the category save controller action into the PHP true/false boolean value
+  * A web-page sends POST message with attribute `value = "true"` if the field is checked or `value = "false"` if it is not.
+  * A server processes `on/off` events into the PHP `true/false` boolean value
     
 <table>
   <tr>
@@ -85,7 +86,6 @@ This topic contains the backward incompatible changes that have been made in the
 
 * Checkboxes and radio buttons
   * Work as the `on/off` fields
-  * Preprocessed on the category save controller action into the PHP true/false boolean value
 * Category products grid
   * Rendered by a UI component as a standalone block
   * Initialized using the `magento-init` event
