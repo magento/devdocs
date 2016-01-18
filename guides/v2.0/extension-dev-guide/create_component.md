@@ -42,7 +42,7 @@ The smallest working module.xml file would look something like this:
 ...where `name`  is the name of your component, and `setup_version` is your module's database schema version. Both of these attributes are required.
 
 ##Add the components `composer.json` file {#add-composer-json}
-`composer.json` provides a component name and also specifies component depdencies.
+`composer.json` provides a component name and also specifies component dependencies.
 
 A sample follows:
 
