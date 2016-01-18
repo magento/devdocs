@@ -621,36 +621,34 @@ All column filters are declared as children to the filter component.</p>
 <p>Example:
 <code>&lt;your module root dir&gt;/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml</code></p>
 
-<pre>
-&lt;listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Ui/etc/ui_configuration.xsd"&gt;
-    &lt;container name="page_listing_top"&gt;
-        &lt;filters name="listing_filters"&gt;
-            &lt;argument name="data" xsi:type="array"&gt;
-                &lt;item name="config" xsi:type="array"&gt;
-                    &lt;item name="dataScope" xsi:type="string"&gt;params.filters&lt;/item&gt;
-                &lt;/item&gt;
-            &lt;/argument&gt;
-            &lt;filterRange name="page_id"&gt;
-                &lt;argument name="data" xsi:type="array"&gt;
-                    &lt;item name="config" xsi:type="array"&gt;
-                        &lt;item name="dataScope" xsi:type="string"&gt;page_id&lt;/item&gt;
-                        &lt;item name="label" xsi:type="string" translate="true"&gt;ID&lt;/item&gt;
-                    &lt;/item&gt;
-                &lt;/argument&gt;
-                &lt;filterInput name="from"&gt;...&lt;/filterInput&gt;
-                &lt;filterInput name="to"&gt;...&lt;/filterInput&gt;
-            &lt;/filterRange&gt;
-            &lt;filterInput name="title"&gt;...&lt;/filterInput&gt;
-            &lt;filterInput name="identifier"&gt;...&lt;/filterInput&gt;
-            &lt;filterSelect name="page_layout"&gt;...&lt;/filterSelect&gt;
-            &lt;filterSelect name="store_id"&gt;...&lt;/filterSelect&gt;
-            &lt;filterSelect name="is_active"&gt;...&lt;/filterSelect&gt;
-            &lt;filterRange name="creation_time" class="Magento\Ui\Component\Filters\Type\DateRange"&gt;...&lt;/filterRange&gt;
-            &lt;filterRange name="update_time" class="Magento\Ui\Component\Filters\Type\DateRange"&gt;...&lt;/filterRange&gt;
-        &lt;/filters&gt;
-    &lt;/container&gt;
-&lt;/listing&gt;
-</pre>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Ui:etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;page_listing_top&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;filters</span> <span class="na">name=</span><span class="s">&quot;listing_filters&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;dataScope&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>params.filters<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;filterRange</span> <span class="na">name=</span><span class="s">&quot;page_id&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;dataScope&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>page_id<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>ID<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/argument&gt;</span>
+                <span class="nt">&lt;filterInput</span> <span class="na">name=</span><span class="s">&quot;from&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/filterInput&gt;</span>
+                <span class="nt">&lt;filterInput</span> <span class="na">name=</span><span class="s">&quot;to&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/filterInput&gt;</span>
+            <span class="nt">&lt;/filterRange&gt;</span>
+            <span class="nt">&lt;filterInput</span> <span class="na">name=</span><span class="s">&quot;title&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/filterInput&gt;</span>
+            <span class="nt">&lt;filterInput</span> <span class="na">name=</span><span class="s">&quot;identifier&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/filterInput&gt;</span>
+            <span class="nt">&lt;filterSelect</span> <span class="na">name=</span><span class="s">&quot;page_layout&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/filterSelect&gt;</span>
+            <span class="nt">&lt;filterSelect</span> <span class="na">name=</span><span class="s">&quot;store_id&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/filterSelect&gt;</span>
+            <span class="nt">&lt;filterSelect</span> <span class="na">name=</span><span class="s">&quot;is_active&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/filterSelect&gt;</span>
+            <span class="nt">&lt;filterRange</span> <span class="na">name=</span><span class="s">&quot;creation_time&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\Filters\Type\DateRange&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/filterRange&gt;</span>
+            <span class="nt">&lt;filterRange</span> <span class="na">name=</span><span class="s">&quot;update_time&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\Filters\Type\DateRange&quot;</span><span class="nt">&gt;</span>...<span class="nt">&lt;/filterRange&gt;</span>
+        <span class="nt">&lt;/filters&gt;</span>
+    <span class="nt">&lt;/container&gt;</span>
+<span class="nt">&lt;/listing&gt;</span></code></pre></div>
 
 
 		</div>
