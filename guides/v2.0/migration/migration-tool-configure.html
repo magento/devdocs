@@ -586,15 +586,27 @@
 </ul>
 
 <h2 id="migration-configure-over">Overview of data migration tool configuration</h2>
-<p>After you install the data migration tool, the following directories contain mapping and configuration files:</p>
+<p>After you install the data migration tool, the following directory contains mapping and configuration files:</p>
 
 <ul>
-  <li><code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc/ce-to-ce</code>: Configuration and scripts for migrating from Magento 1 CE to Magento 2 CE</li>
-  <li><code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc/ce-to-ee</code>: Configuration and scripts for migrating from Magento 1 CE to Magento 2 EE</li>
-  <li><code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc/ee-to-ee</code>: Configuration and scripts for migrating from Magento 1 EE to Magento 2 EE</li>
+  <li>
+    <p>Magento CE:</p>
+
+    <ul>
+      <li><code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc/ce-to-ce</code>: Configuration and scripts for migrating from Magento 1 CE to Magento 2 CE</li>
+    </ul>
+  </li>
+  <li>
+    <p>Magento EE:</p>
+
+    <ul>
+      <li><code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc/ce-to-ee</code>: Configuration and scripts for migrating from Magento 1 CE to Magento 2 EE</li>
+      <li><code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc/ee-to-ee</code>: Configuration and scripts for migrating from Magento 1 EE to Magento 2 EE </li>
+    </ul>
+  </li>
 </ul>
 
-<p>Each of the preceding directories contains subdirectories for each supported version.</p>
+<p>The preceding directories contain subdirectories for each supported version.</p>
 
 <h2 id="migration-configure">Configuring the migration</h2>
 <p>Before you migrate any data, you must create a <code>config.xml</code> configuration file from the provided sample.</p>
@@ -620,10 +632,10 @@
 </ol>
 
 <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;source&gt;</span>
-    <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;localhost&quot;</span> <span class="na">name=</span><span class="s">&quot;magento1&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;127.0.0.1&quot;</span> <span class="na">name=</span><span class="s">&quot;magento1&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/source&gt;</span>
 <span class="nt">&lt;destination&gt;</span>
-    <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;localhost&quot;</span> <span class="na">name=</span><span class="s">&quot;magento2&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;127.0.0.1&quot;</span> <span class="na">name=</span><span class="s">&quot;magento2&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/destination&gt;</span>
 <span class="nt">&lt;options&gt;</span>
     <span class="nt">&lt;crypt_key</span> <span class="nt">/&gt;</span>
@@ -641,10 +653,10 @@
 <p>For example, if your database owner’s user name is <code>root</code> with password <code>pass</code> and you use the prefix <code>magento1</code> in your Magento 1 database, use the following in <code>config.xml</code>:</p>
 
 <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;source&gt;</span>
-    <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;localhost&quot;</span> <span class="na">name=</span><span class="s">&quot;magento1&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span> <span class="na">password=</span><span class="s">&quot;pass&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;127.0.0.1&quot;</span> <span class="na">name=</span><span class="s">&quot;magento1&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span> <span class="na">password=</span><span class="s">&quot;pass&quot;</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/source&gt;</span>
 <span class="nt">&lt;destination&gt;</span>
-    <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;localhost&quot;</span> <span class="na">name=</span><span class="s">&quot;magento2&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span> <span class="na">password=</span><span class="s">&quot;pass&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;127.0.0.1&quot;</span> <span class="na">name=</span><span class="s">&quot;magento2&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span> <span class="na">password=</span><span class="s">&quot;pass&quot;</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/destination&gt;</span>
 <span class="nt">&lt;options&gt;</span>
     <span class="nt">&lt;source_prefix&gt;</span>magento1<span class="nt">&lt;/source_prefix&gt;</span>
@@ -673,7 +685,7 @@
   <li>Then change config.xml in <code>&lt;options&gt;</code> node with the new name of the file.</li>
 </ol>
 
-<p>The <code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc</code> and <code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc/&lt;ce or ee version&gt;</code> directories contain the following configuration files:</p>
+<p>The <code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc</code> and <code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc/&lt;ce version&gt;</code> directories contain the following configuration files:</p>
 
 <p>Even though you will be working with <code>map.xml.dist</code> file most of the time, the following table discusses each mapping and other files.</p>
 
