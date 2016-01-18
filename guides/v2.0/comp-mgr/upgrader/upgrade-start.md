@@ -9,7 +9,6 @@ menu_order: 1
 github_link: comp-mgr/upgrader/upgrade-start.md
 ---
 
-
 <h2 id="compman-overview">Overview of System Upgrade</h2>
 This section discusses how to start System Upgrade, which upgrades the version of Magento core components as well as any other installed components.
 
@@ -35,7 +34,4 @@ To run System Upgrade:
 
 	The page displays similar to the following when we find components to upgrade.<br><br>
 	<img src="{{ site.baseurl }}common/images/upgr_stuff-2-upgrade.png" width="650px" alt="Magento finds components to upgrade"><br><br>
-4. 	Continue with <a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-main-pg.html">Step 1. Select versions to upgrade</a>
-
-	To update components only, see <a href="{{ site.gdeurl }}comp-mgr/compman-start.html">Run the Component Manager</a>.
-
+4. 	Continue with <a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-main-pg.html">Step 1. Select versions to upgrade</a>.
