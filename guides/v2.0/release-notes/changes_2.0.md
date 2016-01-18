@@ -17,6 +17,8 @@ This topic contains the backward incompatible changes in the Magento 2.0 since i
 
 ### Setup version 2.0.4 changes
 
+You can check the `setup_version` parameter in `<magento2>/app/code/Magento/Catalog/etc/module.xml`
+
 #### Code changes
 
 * General changes
