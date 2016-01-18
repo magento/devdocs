@@ -15,7 +15,7 @@ This topic contains the backward incompatible changes that have been made in the
 
 ## Module Magento_Catalog
 
-### Module version 2.0.3 changes
+### Setup version 2.0.4 changes
 
 #### Code changes
 
@@ -27,8 +27,8 @@ This topic contains the backward incompatible changes that have been made in the
     
 <table>
   <tr>
-    <th>Module version 2.0.2</th>
-    <th>Module version 2.0.3</th>
+    <th><code>setup_version</code> version 2.0.3</th>
+    <th><code>setup_version</code> version 2.0.4</th>
   </tr>
   <tr>
     <td>
@@ -42,7 +42,6 @@ This topic contains the backward incompatible changes that have been made in the
         ],
         ...
     ]
-    
     {%endhighlight%}
     </td>
     <td>
@@ -65,14 +64,14 @@ This topic contains the backward incompatible changes that have been made in the
 </table>
 
 * The Google Optimizer POST data moved to a specific sub-array
-* An `On\Off` fields 
-  * An input type changed from `select` to `switcher`
-  * Preprocessed on the category save controller action into the PHP true/false boolean value
+* `On\Off` fields 
+  * The input type has been changed from `select` to `switcher`
+  * Preprocessed data on the category save controller action into the PHP true/false boolean value
     
 <table>
   <tr>
-    <th>Module version 2.0.2</th>
-    <th>Module version 2.0.3</th>
+    <th><code>setup_version</code> version 2.0.3</th>
+    <th><code>setup_version</code> version 2.0.4</th>
   </tr>
   <tr>
     <td>
@@ -88,16 +87,16 @@ This topic contains the backward incompatible changes that have been made in the
   * Work as the `on/off` fields
   * Preprocessed on the category save controller action into the PHP true/false boolean value
 * Category products grid
-  * Rendered by UI component as a standalone block
-  * Initialized via `magento-init` event
+  * Rendered by a UI component as a standalone block
+  * Initialized using the `magento-init` event
 
 #### Form initialization changes
 
-* A form is built with the UI components ([more info about form component](http://devdocs.magento.com/guides/v2.0/ui-components/ui-form.html) )
+* A form is built with the UI components ([more info about a form component](http://devdocs.magento.com/guides/v2.0/ui-components/ui-form.html) )
 * The form is extended using the form configuration file `<magento2>/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml` (see [Overview of UI components](http://devdocs.magento.com/guides/v2.0/ui-components/ui-definition.html))
 * The data provider `\Magento\Catalog\Model\Category\DataProvider` is used to set data and fields metadata for the form
 * The default form data is now a part of metadata that is fetched from the `\Magento\Catalog\Model\Category\DataProvider`
 
 #### Flow changes
 
-* When **Products -> Categories** menu item is chosen, the first root category is selected for editing by default. A **New category**/**Root category** can be created only manually by choosing the corresponding button in the menu.
+* When **Products -> Categories** menu item is chosen, the first root category is selected for editing by default. A **New category**/**Root category** can be created only manually using a corresponding button in the menu.
