@@ -107,7 +107,7 @@ The module uninstall command performs the following tasks:
 	</div>
 5.	Cleans the cache.
 6.	Updates generated classes.
-6.	If `--clear-static-content` is specified, clears generated static view files.
+6.	If `--clear-static-content` is specified, cleans <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a>.
 7.	Takes the store out of maintenance mode.
 
 For example, if you attempt to uninstall a module that another module depends on, the following message displays:

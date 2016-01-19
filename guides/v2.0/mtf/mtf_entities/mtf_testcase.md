@@ -124,6 +124,8 @@ __Step 6.__ Declare all the test steps in the [test()](#test-method) method
 __Step 7.__ If you want to perform any actions after constraints, use a [tearDown()](#teardown-method) method
 
 
+<!-- LINK DEFINITIONS -->
+
 [data set]: {{site.gdeurl}}mtf/mtf_entities/mtf_dataset.html
 [variation]: {{site.gdeurl}}mtf/mtf_entities/mtf_dataset.html
 [Mtf\TestCase\Injectable]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/TestCase/Injectable.php
@@ -133,4 +135,6 @@ __Step 7.__ If you want to perform any actions after constraints, use a [tearDow
 [fixture]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html
 [Magento\Catalog\Test\TestCase\Product\UpdateSimpleProductEntityTest]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product/UpdateSimpleProductEntityTest.php
 
-*[MTF]: Magento testing Framework
+<!-- ABBREVIATIONS -->
+
+*[MTF]: Magento Testing Framework

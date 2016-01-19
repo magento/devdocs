@@ -14,7 +14,12 @@ The Magento UI library is a flexible <a href="http://lesscss.org/" target="_blan
 
 This topic describes how the library is organized, and how to use it. 
 
-<h2 id="library_elements">Components provided by the UI library</h2>
+**Contents**:
+
+* TOC
+{:toc}
+
+## Components provided by the UI library {#library_elements}
 The Magento UI library provides the ability to customize and reuse the following user interface elements and properties:
 
 *	actions-toolbar
@@ -42,7 +47,7 @@ The following illustration shows a storefront product page containing some of th
 <img src="{{ site.baseurl }}common/images/ui_lib1.png" alt="A product page with user interface elements specified">
 </div>
 
-<h2 id="fedg_using-ui-lib_mixins">Mixin location</h2>
+## Mixin location {#fedg_using-ui-lib_mixins}
 
  You can find the Magento UI library under <a href="{{site.mage2000url}}lib/web/css" target="_blank"><code>lib/web/css</code></a>. Library source `.less` files are stored under the `source` directory, each file contains mixins for configuring a certain element, and in most cases the element coincides with the file name:
 
@@ -86,7 +91,7 @@ The following illustration shows a storefront product page containing some of th
     └── jquery/ (Library javascript files)</pre>
 
 
-<h2 id="fedg_using-ui-lib_predef-vars">Predefined variables</h2>
+## Predefined variables {#fedg_using-ui-lib_predef-vars}
 
 If your theme <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from any Magento out-of-the-box theme, for example Blank, you can easily customize any element of a store page without changing any CSS code or templates. Customization can be performed by simply changing in your theme the values of the predefined variables used in the UI library or parent theme mixins.
 
@@ -102,8 +107,11 @@ The following figure shows the product page shown earlier in this topic, after a
 
 <img src="{{site.baseurl}}common/images/ui_lib2.png" alt="Changing design by redefining variables">
 
+## Your custom variables {#fedg_using-ui-lib_vars}
 
-<h2 id="fedg_using-ui-lib_customize">Using mixins</h2>
+When naming custom variables, please follow the [Magento naming convention for the LESS variables]({{site.gdeurl}}coding-standards/code-standard-less.html#naming).
+
+## Using mixins {#fedg_using-ui-lib_customize}
 
 You can use a mixin with default variables values, or you can redefine them when calling a mixin. The following paragraphs describe the both ways to call a mixin.
 
@@ -125,7 +133,7 @@ To call a mixin with parameter values different from default, set these values w
 
 Variables starting with `@_` are private mixin variables used only in this mixin. Variables starting with `@` (without the underscore) are global, and are listed in <a href="{{site.mage2000url}}lib/web/css/source/lib/variables" target="_blank"><code>lib/web/css/source/lib/variables/</code></a>.
 
-<h2 id="docs">UI library documentation</h2>
+## UI library documentation {#docs}
 
 You can find detailed information about the Magento UI library in the documentation provided together with the code:
 
