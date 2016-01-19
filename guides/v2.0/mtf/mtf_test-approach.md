@@ -52,14 +52,16 @@ Step 1. Check the functionality manually
 Pass all the test steps defined in a test case you want to use.
 
 Step 2. [Run the test][]
+
+## New test
     
-## Extended out-of-the-box test
+### Extending an out-of-the-box test
 
-You can extend from an out-of-the-box test to create your own test that is an extended out-of-the-box test. It is stored in the same location as out-of-the-box test that you are extended from `<magento2>/dev/tests/functional/tests/app/Magento/<testing_module>`.
+You can create a test extending from an out-of-the-box test. It is stored in the `<magento2>/dev/tests/functional/tests/app/Magento/<testing_module>` directory.
 
-## Usage
+#### Usage
 
-This type of test is useful when the Magento functionality was extended, for example the minor changes were added to the existing functionality of a module. Also you can extend the out-of-the-box test to extend the current test coverage if functionality that you are interested in is not completely covered by the out-of-the-box test.
+This approach is useful when the Magento functionality was extended, for example the minor changes were added to the existing functionality of a module. Also you can extend the out-of-the-box test to extend the current test coverage if functionality that you are interested in is not completely covered by the out-of-the-box test.
 
 Example use cases:
 
@@ -70,7 +72,7 @@ Example use cases:
 - [block overriding][]
 - [handler overriding][]
 
-## New test
+## Creating a test
 
 ### When should I use them?
 
@@ -82,41 +84,66 @@ Example use cases:
 
 - dev/tests/functional/tests/app/Magento/<testing_module>
 
-### How can I create them?
+### Test components
 
-To create new test you need a test object, test flow, logic components, test data and verification logic.
- 
-Test object is represented as a fixture. Fixture defines object properties.
+To create new test you need a test object, test data, test flow, and test assertions.
 
-Logic components are contained in blocks and typified elements. Blocks are united in a page.
+#### Test object
 
-Test data are stored in data sets, sample data are stored in repositories, and sample test entities can be created by handlers.
- 
-Test flow is declared in a test case as test steps and preconditions.
+Test object is represented as a fixture. Fixture defines object properties. Это то что собираемся протестировать и что будет целью тестирования, над ним будут проводиться все тестовые действия.
 
-Verification assertions are managed by constraints.
+Simple product fixture example. Learn more about fixture.
 
-#### Test flow
-   
-* [Create a test case file][]
-* [Create a data set file][] with all variations for your test. A data set XML file should have the same name as your test case.
 
 #### Test data
 
-To create the test entity you must fill a product creation form with data from a data set. To do it correctly you need fixture for simple product entity. Learn more about Fixture Creation.
-fixtures
-Very often you need to create some entity in precondition of your test case. To do this you need to create handler for simple product creation withing Handler directory of your module.  Learn more about Handler Creation.
+Test data are stored in data sets, sample data are stored in repositories, and sample test entities can be created by handlers. Тест
 
-#### Test data processing
+data sets
 
+preconditions: sample data, sample test entities. Example Simple Product: create category
+
+
+To create the test entity you must fill a product creation form with data from a data set. To do it correctly you need fixture for simple product entity. Learn more about Fixture.
+Связать в рамках одного теста. Создаваемый продукт можно назначить существующей категории или создать новую категорию для этого продукта. Чтобы создать новую категорию нужен хендлер.
+Often you need to create some entity in precondition of your test case. To do this you need to create handler for Category creation in Handler directory of your module.  Learn more about Handler.
+
+#### Test flow
+
+Test flow is declared in a test case as test steps and preconditions.
+
+* [Create a test case file][]
+* [Create a data set file][] with all variations for your test. A data set XML file should have the same name as your test case.
+
+UI manipulation methods are contained in blocks. A page is composed from blocks.
+
+тест степы - это действия на странице. Дальше про страницу
 You need to create pages that you open. Learn about Page Creation.
 All business logic (like click Save button or fill form) is stored in blocks. So you need to add blocks to your pages. Read about Block Creation.
 After blocks creation you need to add them to pages and generate pages to be able to access blocks you added.
 Once you have pages with blocks and fixture, you can start to develop preconditions and steps of your test case. Read about Test Case Creation.
 
-#### Test verification
+#### Test assertions
 
+Verification assertions are managed by constraints. Проверка того что мы сделали в степах. Констрейнты используют страницы и блоки, либо те же либо другие, в зависимости от декларируемой логики проверок.
 
+Пример сценария для новой функциональности
+
+тест дизайн. понимание того что хочешь автоматизировать.
+
+создание фикстуры
+
+дата сет. прикидываю какие данные хочу проверить, 
+
+страницы и блоки для тест кейса
+
+тест кейс. переплетается с созданием страниц и блоков.
+
+страницы и блоки для ассерта
+
+ассерты.
+
+ран. дебаг. отладка. фикс
 
 <!-- LINK DEFINITIONS -->
 
