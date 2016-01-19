@@ -1,8 +1,8 @@
 ---
 layout: default
 group: release-notes
-title: Magento 2.0 Backward Incompatible Changes
-menu_title: Backward Incompatible Changes
+title: Magento 2.0 Backward-Incompatible Changes
+menu_title: Backward-Incompatible Changes
 menu_order: 2
 menu_node: 
 github_link: release-notes/changes_2.0.md
@@ -25,7 +25,7 @@ You can check the `setup_version` parameter in [`<magento2>/app/code/Magento/Cat
   * **Reset** button has been removed
 * POST data structure changed
   * The parent category ID `parent_id` is now posted in the `general` field
-  * The category data from the `general` array is split to the specific arrays by a field set name:
+  * The category data from the `general` array is split to the specific arrays by a field set name
 
 <table>
   <tr>
@@ -70,7 +70,7 @@ You can find a `setup_version` parameter in the `<your_Magento_module_dir>/etc/m
 * The Google Optimizer POST data moved to a specific array
 * `On/Off` fields 
   * The input type has been changed from `select` to `switcher`
-  * A web page sends POST message with attribute `value = "true"` if the field is checked or `value = "false"` if it is not.
+  * A web page sends POST message with attribute `value = "true"` if the field is checked or `value = "false"` if it is not
   * A server converts `value` attribute to the PHP `true/false` boolean type value
     
 <table>
@@ -103,9 +103,9 @@ You can find a `setup_version` parameter in the `<your_Magento_module_dir>/etc/m
 
 #### Flow changes
 
-* When **Products -> Categories** menu item in the Magento Admin is chosen, the first root category is selected for editing by default now. You can create a new category or a root category manually only. Use the corresponding button **Add Root Category** or **Add Subcategory**.
+When **Products -> Categories** menu item in the Magento Admin is chosen, the first root category is selected for editing by default now. You can create a new category or a root category manually only. Use the corresponding button **Add Root Category** or **Add Subcategory**.
 
-<--! LINK DEFINITIONS ->
+<!-- LINK DEFINITIONS -->
 
 [`<magento2>/app/code/Magento/Catalog/etc/module.xml`]: https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/etc/module.xml
 [`<magento2>/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml`]: https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml
