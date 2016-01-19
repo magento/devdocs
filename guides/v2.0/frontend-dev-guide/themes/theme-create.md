@@ -11,22 +11,22 @@ redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-create.html
 
 <h2 id="layout_theme_how-to_overview">What's in this topic</h2>
 
-This topic discusses how to create the files that make up a theme, how to add a logo to a theme, and how to size images.
-
-<h3>Contents</h3>
-
-- <a href="#layout_theme_how-to_dirs">Create a theme directory</a>
-- <a href="#fedg_create_theme_how-to_declare">Declare your theme</a>
-- <a href="#fedg_create_theme_composer">Make your theme a Composer package (optional)</a>
-- <a href="#fedg_create_theme_reg">Add <code>registration.php</code></a>
-- <a href="#fedg_create_theme_how-to-images">Configure images</a>
-- <a href="#fedg_theme_how-to_static">Create directories for static files</a>
-- <a href="#fedg_theme_how-to_structure">Your theme directory structure now</a>
-- <a href="#logo_declare">Declaring theme logo</a>
+This topic discusses how to create the files that make up a theme, how to add a logo to a theme, and how to size images. 
 
 
+* TOC
+{:toc}
 
-<h2 id="layout_theme_how-to_dirs">Create a theme directory</h2>
+<div class="bs-callout bs-callout-info" id="info">
+<p>A new theme you create is not applied for your store automatically. You need to apply it manually in the Admin panel. This procedure in described in the <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a> topic.</p>
+</div>
+
+## Prerequisites 
+
+1. For the sake of compatibility, upgradability, and easy maintenance, do not modify the out of the box Magento themes. To customize the design of your Magento store, create a new custom theme.
+2. [Set]({{site.gdeurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{site.gdeurl}}config-guide/bootstrap/magento-modes.html). The application mode influences the way static files are cached by Magento. The recommendations about theme development we provide in this chapter are developer/default-mode specific.
+
+## Create a theme directory {#layout_theme_how-to_dirs}
 
 To create the directory for your theme:
 
@@ -46,7 +46,7 @@ app/design/frontend/
 
 The folder name conventionally matches naming used in the theme's code: any alphanumeric set of characters, as the vendor sees fit, is acceptable. This convention is merely a recommendation, so nothing prevents naming this directory in another way.
 
-<h2 id="fedg_create_theme_how-to_declare">Declare your theme</h2>
+## Declare your theme {#fedg_create_theme_how-to_declare}
 
 After you create a directory for your theme, you must create `theme.xml` containing at least the theme name and the parent theme name (if the theme <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from one). Optionally you can specify where the theme preview image is stored.
 
@@ -65,7 +65,7 @@ After you create a directory for your theme, you must create `theme.xml` contain
 {% endhighlight %}
 
 
-<h2 id="fedg_create_theme_composer">Make your theme a Composer package (optional)</h2>
+## Make your theme a Composer package (optional){#fedg_create_theme_composer}
 
 
 Magento default themes are distributed as <a href="https://getcomposer.org/" target="_blank">Composer</a> packages.
@@ -101,7 +101,7 @@ Example of a theme `composer.json`:
 
 You can find details about the Composer integration in the Magento system in <a href="{{site.gdeurl}}extension-dev-guide/composer-integration.html">Composer integration</a>.
 
-<h2 id="fedg_create_theme_reg">Add registration.php</h2>
+## Add registration.php {#fedg_create_theme_reg}
 
 To register your theme in the system, in your theme directory add a `registration.php` file with the following content:
 
@@ -125,7 +125,7 @@ Where `<Vendor>` is your vendor name, `<theme>` is the theme code.
 For illustration, see the <a href="{{site.mage2000url}}app/design/frontend/Magento/luma/registration.php">registration.php</a> file of the Magento Luma theme.
 
 
-<h2 id="fedg_create_theme_how-to-images">Configure images</h2>
+## Configure images {#fedg_create_theme_how-to-images}
 
 Product image sizes and other properties used on the storefront are configured in a `view.xml` configuration file. It is required for a theme, but is optional if exists in the parent theme.
 
@@ -151,7 +151,7 @@ For example, you can make the category grid view product images square by specif
 
 For details about images configuration in `view.xml`, see the <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-images.html" target="_blank">Configure images properties for a theme</a> topic.
 
-<h2 id="fedg_theme_how-to_static">Create directories for static files</h2>
+## Create directories for static files {#fedg_theme_how-to_static}
 
 Your theme will likely contain several types of static files: styles, fonts, JavaScript and images.
 Each type should be stored in a separate sub-directory of `web` in your theme folder:
@@ -165,14 +165,20 @@ app/design/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/
 │&nbsp;├──&nbsp;js/
 </pre>
 
+In the <code>.../&lt;theme&gt;/web/images</code> you store the general theme related static files. For example, a theme logo is stored in <code>...&lt;theme&gt;/web/images</code>.
+It is likely that your theme will also contain module-specific files, which are stored in the corresponding sub-directories, like <code>.../&lt;theme&gt;/&lt;Namespace_Module&gt;/web/css</code> and similar. Managing the module-specific theme files is discussed in the following sections of this Guide.
+
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
- <p>In the <code>.../&lt;theme&gt;/web/images</code> you store the general theme related static files. For example, a theme logo is stored in <code>...&lt;theme&gt;/web/images</code>.
-It is likely that your theme will also contain module-specific files, which are stored in the corresponding sub-directories, like <code>.../&lt;theme&gt;/&lt;Namespace_Module&gt;/web/css</code> and similar. Managing the module-specific theme files is discussed in the following sections of this Guide.</p></span>
+<p>
+
+During theme development, when you change any files stored here, you need to clear `pub/static` and `var/preprocessed` directories, and then reload the pages. Otherwise the old versions of files are displayed on the storefront. 
+
+</p></span>
 </div>
 
 
-<h2 id="fedg_theme_how-to_structure">Your theme directory structure now</h2>
+## Your theme directory structure now {#fedg_theme_how-to_structure}
 
 At this point your theme file structure looks as follows:
 
@@ -190,7 +196,7 @@ app/design/frontend/&lt;Vendor&gt;/
 
 
 
-<h2 id="theme_logo">Theme logo</h2>
+## Theme logo {#theme_logo}
 
 In the Magento application, the default format and name of a logo image is `logo.svg`. When you put a `logo.svg` image in the conventional location, which is `<theme_dir>/web/images` directory, it is automatically recognized as theme logo. It is displayed in your store page header once the theme is <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html" target="_blank">applied</a>.
 
@@ -213,7 +219,7 @@ Your theme does not have a parent theme:
 </li>
 </ul>
 
-<h3 id="logo_declare">Declaring theme logo</h3>
+## Declaring theme logo {logo_declare}
 
 To declare a theme logo, add an <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> `<theme_dir>/Magento_Theme/layout/default.xml` layout. 
 
@@ -237,9 +243,15 @@ Declaring the logo size is optional.
 
 To learn more about theme layouts, refer to the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html" target="_blank">Layout section</a> of this guide.
 
+
+## What's next {#next}
+See the [Apply and configure a theme in Admin]({{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html") topic.
+
 <!--
 
 Related topics:
+
+* <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a>
 
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>

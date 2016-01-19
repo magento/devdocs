@@ -2,8 +2,8 @@
 layout: default
 group: extension-dev-guide
 subgroup: 3_Build
-title: Create a component
-menu_title: Create a component
+title: Name your component
+menu_title: Name your component
 menu_order: 7
 github_link: extension-dev-guide/create_component.md
 redirect_from: 
@@ -12,9 +12,23 @@ redirect_from:
 ---
 ##{{page.menu_title}}
 
-Now that you have [determined your component's initial file structure](module-file-structure.html), have an idea of the [configuration files](required-configuration-files.html) you&#8217;ll need, and you've [registered your component](component-registration.html), you can create the component.
+#### Contents
+*   [Overview of naming a component](#overview-naming)
+*   [Prerequisites](#prerea)
+*   [Add the component's `module.xml` file](#module-xml)
+*   [Add the components `composer.json` file](#add-composer-json)
 
-<h2 id="add-component-xml">Add the component's <code>module.xml</code> file</h2>
+## Overview of naming a component {#overview-naming}
+You give a name to your component in its `composer.json` and `module.xml` files. These files also contain other required configuration parameters, such as the module's schema version.
+
+## Prerequisites {#prereq}
+Before you continue, make sure you have completed all of the following tasks:
+
+*   Created a [file structure]({{ site.gdeurl }}extension-dev-guide/module-file-structure.html)
+*   Created the the [configuration files]({{ site.gdeurl }}extension-dev-guide/required-configuration-files.html) you'll need
+*   [Registered]({{ site.gdeurl }}extension-dev-guide/component-registration.html) your component
+
+## Add the component's `module.xml` file {#module-xml}
 Declare the component itself by adding a module.xml file in the `/etc` folder of your component.
 
 A component declares itself (that is, defines its name and existence) in the `module.xml` file, located in the Magento install directory at `<ComponentName>/etc/`. 
@@ -25,9 +39,10 @@ The smallest working module.xml file would look something like this:
        <module name="Vendor_ComponentName" setup_version="2.0.0"/>
 	</config>
 
-...where `name`  is the name of your component, and `setup_version` is the version of Magento the component uses. Both of these attributes are required.
+...where `name`  is the name of your component, and `setup_version` is your module's database schema version. Both of these attributes are required.
 
-##Add the components `composer.json` file
+##Add the components `composer.json` file {#add-composer-json}
+`composer.json` provides a component name and also specifies component dependencies.
 
 A sample follows:
 

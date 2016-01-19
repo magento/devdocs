@@ -172,6 +172,8 @@ The result is in the `<magento2>/dev/tests/functional/generated/Magento/Catalog/
 
 <script src="https://gist.github.com/dshevtsov/d5be380739c696fcb847.js"></script>
 
+<!-- LINK DEFINITIONS -->
+
 [Block]: {{site.gdeurl}}mtf/mtf_entities/mtf_block.html
 [Magento\Mtf\Page\BackendPage]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/BackendPage.php
 [Magento\Mtf\Page\FrontendPage]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/FrontendPage.php

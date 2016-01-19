@@ -7,7 +7,7 @@ The `repo.magento.com` repository, where Magento 2 and third-party component Com
 You get your credentials by logging in to <a href="http://www.magentocommerce.com/magento-connect" target="_blank">Magento Connect</a> with a user name and password, then going to **My Account** > **Connect** > **Developers** > **Secure Keys**. There, you can generate, regenerate, or delete your authentication tokens to use to:
 
 *	<a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html">Download the Magento software using Composer</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">Clone the Magento 2 GitHub (contributing developers only)</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">Clone the Magento 2 GitHub</a> (contributing developers only)
 *	Install, update, or upgrade third-party components; and upgrade the Magento software using the <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade</a> utilities.
 
 <h2 id="auth-get">Get your authentication keys</h2>
