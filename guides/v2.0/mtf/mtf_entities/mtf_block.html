@@ -858,7 +858,7 @@ For example, you develop a functional test for the bundle product creation, that
 
 <h2 id="mtf_block_mapping">Form mapping</h2>
 
-<p>Often, you need to test a Magento block that contains a form. And of course, tests require entering data in the forms. The MTF has a <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php">Magento\Mtf\Block\Form</a> class that enables you to fill the forms automatically. One of the advantages of using this class is that you can list elements that must be automatically filled. These elements can be grouped in separate XML files. In the MTF we call this process “a mapping”. You can use mapping to transfer data to the block from the <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html">fixture</a>.</p>
+<p>Often, you need to test a Magento block that contains a form. And of course, tests require entering data in the forms. The Magento Testing Framework (<abbr title="Magento Testing Framework">MTF</abbr>)has a <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php">Magento\Mtf\Block\Form</a> class that enables you to fill the forms automatically. One of the advantages of using this class is that you can list elements that must be automatically filled. These elements can be grouped in separate XML files. In the <abbr title="Magento Testing Framework">MTF</abbr> we call this process “a mapping”. You can use mapping to transfer data to the block from the <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html">fixture</a>.</p>
 
 <p>A mapping file is an XML file which has the same name and path as the block does, and contains fields that represent form fields. Field name in the mapping file shall match the one in the fixture.</p>
 
@@ -1130,6 +1130,10 @@ To get the block class with form tab mapping, extend your class from <a href="ht
 </ul>
 
 <div class="highlight"><pre><code class="language-php5" data-lang="php5"><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCustomOptionsBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getOptions</span><span class="p">(</span><span class="nv">$product</span><span class="p">);</span></code></pre></div>
+
+<!-- LINK DEFINITIONS -->
+
+<!-- ABBREVIATIONS -->
 
 
 
