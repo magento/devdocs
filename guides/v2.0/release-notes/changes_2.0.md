@@ -8,7 +8,7 @@ menu_node:
 github_link: release-notes/changes_2.0.md
 ---
 
-This topic contains the backward incompatible changes in the Magento 2.0 since its release.
+This topic discusses backward-incompatible changes since the Magento 2.0 General Availability (GA) release in November 2015.
 
 * TOC
 {:toc}
@@ -17,7 +17,7 @@ This topic contains the backward incompatible changes in the Magento 2.0 since i
 
 ### Setup version 2.0.4 changes
 
-You can check the `setup_version` parameter in `<magento2>/app/code/Magento/Catalog/etc/module.xml`
+You can check the `setup_version` parameter in [`<magento2>/app/code/Magento/Catalog/etc/module.xml`][].
 
 #### Code changes
 
@@ -25,8 +25,8 @@ You can check the `setup_version` parameter in `<magento2>/app/code/Magento/Cata
   * **Reset** button has been removed
 * POST data structure changed
   * The parent category ID `parent_id` is now posted in the `general` field
-  * The category data is split from the `general` sub-array to the specific sub-arrays by a field set name:
-    
+  * The category data from the `general` array is split to the specific arrays by a field set name:
+
 <table>
   <tr>
     <th><code>setup_version</code> version 2.0.3</th>
@@ -65,11 +65,13 @@ You can check the `setup_version` parameter in `<magento2>/app/code/Magento/Cata
   </tr>
 </table>
 
-* The Google Optimizer POST data moved to a specific sub-array
+You can find a `setup_version` parameter in the `<your_Magento_module_dir>/etc/module.xml` file.
+
+* The Google Optimizer POST data moved to a specific array
 * `On/Off` fields 
   * The input type has been changed from `select` to `switcher`
-  * A web-page sends POST message with attribute `value = "true"` if the field is checked or `value = "false"` if it is not.
-  * A server processes `on/off` events into the PHP `true/false` boolean value
+  * A web page sends POST message with attribute `value = "true"` if the field is checked or `value = "false"` if it is not.
+  * A server converts `value` attribute to the PHP `true/false` boolean type value
     
 <table>
   <tr>
@@ -86,8 +88,8 @@ You can check the `setup_version` parameter in `<magento2>/app/code/Magento/Cata
   </tr>
 </table>
 
-* Checkboxes and radio buttons
-  * Work as the `on/off` fields
+* Check boxes and radio buttons
+  * Work as `on/off` fields
 * Category products grid
   * Rendered by a UI component as a standalone block
   * Initialized using the `magento-init` event
@@ -95,10 +97,15 @@ You can check the `setup_version` parameter in `<magento2>/app/code/Magento/Cata
 #### Form initialization changes
 
 * A form is built with the UI components ([more info about a form component](http://devdocs.magento.com/guides/v2.0/ui-components/ui-form.html) )
-* The form is extended using the form configuration file `<magento2>/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml` (see [Overview of UI components](http://devdocs.magento.com/guides/v2.0/ui-components/ui-definition.html))
+* The form is extended using the form configuration file [`<magento2>/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml`][] (see [Overview of UI components](http://devdocs.magento.com/guides/v2.0/ui-components/ui-definition.html))
 * The data provider `\Magento\Catalog\Model\Category\DataProvider` is used to set data and fields metadata for the form
 * The default form data is now a part of metadata that is fetched from the `\Magento\Catalog\Model\Category\DataProvider`
 
 #### Flow changes
 
-* When **Products -> Categories** menu item is chosen, the first root category is selected for editing by default. A **New category**/**Root category** can be created only manually using a corresponding button in the menu.
+* When **Products -> Categories** menu item in the Magento Admin is chosen, the first root category is selected for editing by default now. You can create a new category or a root category manually only. Use the corresponding button **Add Root Category** or **Add Subcategory**.
+
+<--! LINK DEFINITIONS ->
+
+[`<magento2>/app/code/Magento/Catalog/etc/module.xml`]: https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/etc/module.xml
+[`<magento2>/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml`]: https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml
