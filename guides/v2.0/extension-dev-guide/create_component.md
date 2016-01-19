@@ -41,6 +41,18 @@ The smallest working module.xml file would look something like this:
 
 ...where `name`  is the name of your component, and `setup_version` is your module's database schema version. Both of these attributes are required.
 
+To be able to properly install the extension the module.xml must include a reference to xsi:noNamespaceSchemaLocation:
+
+	<?xml version="1.0"?>
+	<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/Module/etc/module.xsd">
+    		<module name="Vendor_ComponentName" setup_version="2.0.0"/>
+	</config>
+
+Otherwise, running bin/magento setup:upgrade to add the extension will throw the following error:
+	[Magento\Framework\Exception\LocalizedException]
+	Invalid Document
+	Element 'config', attribute 'xsi:noNamespaceSchemaLocation': The attribute 'xsi:noNamespaceSchemaLocation' is not allowed.
+
 ##Add the components `composer.json` file {#add-composer-json}
 `composer.json` provides a component name and also specifies component dependencies.
 
