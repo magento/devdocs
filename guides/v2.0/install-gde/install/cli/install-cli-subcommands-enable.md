@@ -38,7 +38,7 @@ where
 *	`<module-list>` is a space-delimited list of modules to enable or disable. If any module name contains special characters, enclose the name in either single or double quotes.
 *	`--all` to enable or disable all modules at the same time.
 *	`-f` or `--force` to force a module to be enabled or disabled despite dependencies. Before you use this option, see <a href="#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.
-*	`-c` or `--clear-static-content` clears generated static view files after enabling or disabling modules. 
+*	`-c` or `--clear-static-content` cleans <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a>. 
 
 	Failure to clear static view files might result in issues if there are multiple files with the same name and you don't clear all of them. 
 
