@@ -5,13 +5,13 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Set up cron for Component Manager and System Upgrade</title>
+	<title>Upgrade from CE to EE</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
-	<link rel="canonical" href="//guides/v2.0/comp-mgr/prereq/prereq_cron.html">
+	<link rel="canonical" href="//guides/v2.0/comp-mgr/upgrader/ce-ee-upgrade-start.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -130,9 +130,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Set up cron for Component Manager and System Upgrade</h1>
+		<h1 class="page-heading">Upgrade from CE to EE</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/comp-mgr/prereq/prereq_cron.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/comp-mgr/upgrader/ce-ee-upgrade-start.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -275,7 +275,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/comp-mgr/prereq/prereq_cron.html">Set up cron for Component Manager and System Upgrade</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/prereq/prereq_cron.html">Set up cron for Component Manager and System Upgrade</a></li>
 
 									
 
@@ -430,7 +430,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/comp-mgr/upgrader/ce-ee-upgrade-start.html">Upgrade from CE to EE</a></li>
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/comp-mgr/upgrader/ce-ee-upgrade-start.html">Upgrade from CE to EE</a></li>
 									
 								
 
@@ -791,57 +791,51 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<h2 id="compman-prereq-cron">Set up cron jobs</h2>
-<p>To enable the updater to work for both the Component Manager and System Upgrade, you must configure two cron jobs. Each cron job should run every minute.</p>
+		<h2 id="compman-overview">Overview of Magento Community Edition (CE) to Magento Enterprise Edition (EE) upgrade</h2>
+<p>This section discusses how to upgrade Magento CE to Magento EE.</p>
 
-<p>Enable the cron jobs as <a href="http://ss64.com/bash/crontab.html" target="_blank">crontabs</a> for the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a> because that user runs the updater application for the Component Manager and System Upgrade. </p>
+<div class="bs-callout bs-callout-info" id="info">
+	<p>You must be authorized for Magento EE to perform the tasks discussed in this topic.</p>
+</div>
+
+<h2 id="compman-prereq">Prerequisites</h2>
+<p>Before continuing, complete all tasks discussed in <a href="/guides/v2.0/comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.</p>
+
+<p>In addition, you’ll probably need to install the PHP <a href="http://php.net/manual/en/book.bc.php" target="_blank"><code>bcmath</code></a> extension. Examples follow:</p>
+
+<ul>
+  <li>CentOS (using the <code>webtatic</code> repository): <code>yum -y install php56w-bcmath</code></li>
+  <li>Ubuntu (using the <code>ppa:ondrej/php5-5.6</code> repository): <code>apt-get -y install php5-bcmath</code></li>
+</ul>
+
+<div class="bs-callout bs-callout-info" id="info">
+	<p>Make sure you are authorized for Magento EE access before you continue. Contact <a href="http://support.magentocommerce.com" target="_blank">Magento Support</a> if you have questions.</p>
+</div>
+
+<h2 id="compman-access">Start System Upgrade from the Magento Admin</h2>
+<p>To run System Upgrade:</p>
 
 <ol>
+  <li>Log in to the Magento Admin as an administrator.</li>
+  <li>Click <strong>System</strong> &gt; <strong>Web Setup Wizard</strong>.
+The following page displays.<br /><br />
+<img src="/common/images/cman_upgr_initial.png" width="650px" alt="Specify whether to manage components or upgrade Magento" /></li>
   <li>
-    <p>As a user with <code>root</code> privileges, see if a crontab is already set up.</p>
+    <p>Click <strong>System Upgrade</strong>.</p>
 
-    <pre><code>crontab -u &lt;Magento file system owner user name&gt; -l
-</code></pre>
+    <p>Magento begins searching for core module updates immediately. To also search for component updates, click <strong>Yes</strong>. A sample follows:</p>
 
-    <p>For example, on CentOS</p>
+    <p><img src="/common/images/upgr_initial-pg.png" width="650px" alt="Magento begins searching for upgrades right away" /></p>
 
-    <pre><code>crontab -u magento_user -l
-</code></pre>
+    <p>The page displays similar to the following when we find components to upgrade.<br /><br />
+<img src="/common/images/upgr-ee-version-list.png" width="750px" alt="Magento finds software to upgrade" /><br /><br /></p>
 
-    <p>If no crontab has been set up for the user, the following message displays:</p>
-
-    <pre><code>no crontab for magento_user
-</code></pre>
-  </li>
-  <li>
-    <p>If necessary, set up the crontabs as follows as a user with root privileges:</p>
-
-    <pre><code>crontab -u &lt;Magento file system owner user name&gt; -e
-</code></pre>
-
-    <p>An editor displays. In the editor, enter the following:</p>
-
-    <pre><code>*/1 * * * * php &lt;your Magento install dir&gt;/update/cron.php &amp;
-*/1 * * * * php &lt;your Magento install dir&gt;/bin/magento setup:cron:run &amp;
-</code></pre>
-
-    <p>For example,</p>
-
-    <pre><code>*/1 * * * * php /var/www/html/magento2/update/cron.php &amp;
-*/1 * * * * php /var/www/html/magento2/bin/magento setup:cron:run &amp;	
-</code></pre>
-  </li>
-  <li>
-    <p>Save your changes to cron and exit the editor.</p>
+    <p>From the list, click the version to which to upgrade. Typically, you’ll choose the most recent version (indicated by <strong>(latest)</strong>.)</p>
   </li>
 </ol>
 
-<h4 id="next-step">Next step</h4>
-
-<ul>
-  <li><a href="/guides/v2.0/comp-mgr/compman-start.html">Run the Component Manager</a></li>
-  <li><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">Run System Upgrade</a></li>
-</ul>
+<h2 id="ce-ee-continue">Continue your upgrade</h2>
+<p>From here, your upgrade is the same as any other upgrade. Continue with <a href="/guides/v2.0/comp-mgr/upgrader/upgrade-main-pg.html">Step 1. Select versions to upgrade</a>.</p>
 
 
 		</div>
