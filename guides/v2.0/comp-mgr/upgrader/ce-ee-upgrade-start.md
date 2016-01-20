@@ -19,7 +19,7 @@ This section discusses how to upgrade Magento CE to Magento EE.
 <h2 id="compman-prereq">Prerequisites</h2>
 Before continuing, complete all tasks discussed in <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.
 
-In addition, you'll probably need to install the PHP <a href="http://php.net/manual/en/book.bc.php" target="_blank">`bcmath`</a> extension. Examples follow:
+In addition, you might need to install the PHP <a href="http://php.net/manual/en/book.bc.php" target="_blank">`bcmath`</a> extension, which is required by EE. Examples follow:
 
 *	CentOS (using the `webtatic` repository): `yum -y install php56w-bcmath`
 *	Ubuntu (using the `ppa:ondrej/php5-5.6` repository): `apt-get -y install php5-bcmath`
