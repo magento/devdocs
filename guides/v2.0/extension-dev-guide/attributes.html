@@ -834,7 +834,7 @@
 
 <p>The system uses a join directive to add external attributes to a collection and to make the collection filterable. The <code>join</code> element in the <code>extension_attributes.xml</code> file defines which object fields and the database table/column to use as the source of a search. </p>
 
-<p>In the following example, an attribute named <code>quoteApiTestAttribute</code> of type <code>UserInterface</code> added to the <code>CartInterface</code>. </p>
+<p>In the following example, an attribute named <code>stock_item</code> of type <code>Magento\CatalogInventory\Api\Data\StockItemInterface</code> added to the <code>Magento\Catalog\Api\Data\ProductInterface</code>. </p>
 
 <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;extension_attributes</span> <span class="na">for=</span><span class="s">&quot;Magento\Catalog\Api\Data\ProductInterface&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;attribute</span> <span class="na">code=</span><span class="s">&quot;stock_item&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\CatalogInventory\Api\Data\StockItemInterface&quot;</span><span class="nt">&gt;</span>
