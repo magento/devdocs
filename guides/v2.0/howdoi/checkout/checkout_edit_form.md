@@ -26,7 +26,7 @@ There are more details about each step in the following sections.
 * TOC
 {:toc}
 
-#Prerequisites 
+## Prerequisites 
 
 Set Magento to the production mode while you perform all customizations and debugging. 
 
