@@ -16,6 +16,7 @@ This topic describes how to change the HTML templates of form fields in the form
 The forms used in Checkout are implemented using Knockout JS. 
 
 To change the template of the form field, do the following:
+
 1. [Create a custom HTML template for knockout JS script that will render the form field](#template).
 2. [Specify the new template in the checkout page layout](#layout).
 
