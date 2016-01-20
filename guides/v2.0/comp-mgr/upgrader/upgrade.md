@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: compman
-subgroup: U_UseUpgrade
+subgroup: W_UseUpgrade
 title: Step 4. Upgrade
 menu_title: Step 4. Upgrade
 menu_node: 
@@ -12,11 +12,11 @@ github_link: comp-mgr/upgrader/upgrade.md
 ## Upgrade
 After backing up, the components you're upgrading display. The following figure shows an example.
 
-<img src="{{ site.baseurl }}common/images/upgr_upgrade.png" width="450px" alt="Click upgrade to complete the task">
+<img src="{{ site.baseurl }}common/images/upgr_upgrade.png" width="550px" alt="Click upgrade to complete the task">
 
 To complete the upgrade, click **Upgrade**. If the upgrade is successful, a page similar to the following displays.
 
-<img src="{{ site.baseurl }}common/images/upgr_success.png" width="450px" alt="Your upgrade was successful">
+<img src="{{ site.baseurl }}common/images/upgr_success.png" width="350px" alt="Your upgrade was successful">
 
 Messages similar to the following display in the Console Log:
 

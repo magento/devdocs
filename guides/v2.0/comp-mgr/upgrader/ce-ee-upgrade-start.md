@@ -1,9 +1,9 @@
 ---
 layout: default 
 group: compman
-subgroup: X_CE-EEUpgrade
-title: CE to EE upgrade
-menu_title: CE to EE upgrade
+subgroup: U_CE-EEUpgrade
+title: Upgrade from CE to EE
+menu_title: Upgrade from CE to EE
 menu_node: parent
 menu_order: 1
 github_link: comp-mgr/upgrader/ce-ee-upgrade-start.md
@@ -18,6 +18,11 @@ This section discusses how to upgrade Magento CE to Magento EE.
 
 <h2 id="compman-prereq">Prerequisites</h2>
 Before continuing, complete all tasks discussed in <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.
+
+In addition, you'll probably need to install the PHP <a href="http://php.net/manual/en/book.bc.php" target="_blank">`bcmath`</a> extension. Examples follow:
+
+*	CentOS (using the `webtatic` repository): `yum -y install php56w-bcmath`
+*	Ubuntu (using the `ppa:ondrej/php5-5.6` repository): `apt-get -y install php5-bcmath`
 
 <div class="bs-callout bs-callout-info" id="info">
 	<p>Make sure you are authorized for Magento EE access before you continue. Contact <a href="http://support.magentocommerce.com" target="_blank">Magento Support</a> if you have questions.</p>
@@ -37,5 +42,9 @@ To run System Upgrade:
 	<img src="{{ site.baseurl }}common/images/upgr_initial-pg.png" width="650px" alt="Magento begins searching for upgrades right away">
 
 	The page displays similar to the following when we find components to upgrade.<br><br>
-	<img src="{{ site.baseurl }}common/images/upgr_stuff-2-upgrade.png" width="650px" alt="Magento finds components to upgrade"><br><br>
-4. 	Continue with <a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-main-pg.html">Step 1. Select versions to upgrade</a>.
+	<img src="{{ site.baseurl }}common/images/upgr-ee-version-list.png" width="750px" alt="Magento finds software to upgrade"><br><br>
+
+	From the list, click the version to which to upgrade. Typically, you'll choose the most recent version (indicated by **(latest)**.)
+
+<h2 id="ce-ee-continue">Continue your upgrade</h2>
+From here, your upgrade is the same as any other upgrade. Continue with <a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-main-pg.html">Step 1. Select versions to upgrade</a>.
