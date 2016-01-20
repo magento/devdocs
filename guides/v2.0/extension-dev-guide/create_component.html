@@ -739,8 +739,9 @@
 
 <p>The smallest working module.xml file would look something like this:</p>
 
-<pre><code>&lt;config&gt;
-   &lt;module name="Vendor_ComponentName" setup_version="2.0.0"/&gt;
+<pre><code>&lt;?xml version="1.0"?&gt;
+&lt;config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd"&gt;
+		&lt;module name="Vendor_ComponentName" setup_version="2.0.0"/&gt;
 &lt;/config&gt;
 </code></pre>
 
