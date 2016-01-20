@@ -269,6 +269,10 @@
 
 				
 
+			
+
+				
+
 					
 					
 
@@ -722,9 +726,46 @@
 <p>See one of the following sections:</p>
 
 <ul>
+  <li><a href="#trouble-php-always">always_populate_raw_post_data error</a></li>
   <li><a href="#trouble-php-xdebug">xdebug maximum function nesting level error</a></li>
   <li><a href="#trouble-php-asptags">Errors display when you access a PHTML template</a></li>
 </ul>
+
+<h3 id="trouble-php-always">always_populate_raw_post_data error</h3>
+<p>If you’re upgrading the Magento 2 software, the following error can display during the readiness check:</p>
+
+<p><img src="/common/images/upgr_readiness-success.png" width="700px" alt="If all readiness checks pass, click Next and continue with the next step" /></p>
+
+<p>To resolve the error:</p>
+
+<ol>
+  <li>
+    <p>Locate your <code>php.ini</code> using a <code>phpinfo.php</code> page.</p>
+
+    <p>(Sometimes you have a different <code>php.ini</code> for the PHP command line and the web server. The <code>php.ini</code> you must change displays as <strong>Loaded Configuration File</strong>)</p>
+  </li>
+  <li>As a user with <code>root</code> privileges, open <code>php.ini</code> in a text editor.</li>
+  <li>
+    <p>Uncomment the following line:</p>
+
+    <pre><code>always_populate_raw_post_data = -1
+</code></pre>
+  </li>
+  <li>Save your changes to <code>php.ini</code> and exit the text editor.</li>
+  <li>Wait for all steps in the readiness check to finish.</li>
+  <li>Resolve any other issues displayed by the readiness check.</li>
+  <li>
+    <p>As a user with <code>root</code> privileges, restart your web server. </p>
+
+    <p>Examples follow:</p>
+
+    <ul>
+      <li>Ubuntu: <code>service apache2 restart</code></li>
+      <li>CentOS: <code>service httpd restart</code></li>
+    </ul>
+  </li>
+  <li>On the readiness check page, click <strong>Try Again</strong>.</li>
+</ol>
 
 <h3 id="trouble-php-xdebug">xdebug maximum function nesting level error</h3>
 

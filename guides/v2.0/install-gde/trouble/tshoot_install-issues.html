@@ -269,6 +269,10 @@
 
 				
 
+			
+
+				
+
 					
 					
 
@@ -744,38 +748,6 @@
   <li>CentOS: <code>sudo service httpd restart</code></li>
   <li>Ubuntu: <code>sudo service apache2 restart</code></li>
 </ul>
-
-<h2 id="known-devrc-php">Known issue with timezone in certain PHP versions</h2>
-<p>This issue affects builds <em>earlier than</em> 0.74-beta10 only. If you have a later build, you can ignore this issue.</p>
-
-<p>There is a <a href="https://bugs.php.net/bug.php?id=66985" target="_blank">known PHP issue</a> with versions:</p>
-
-<ul>
-  <li>5.5.10–5.5.16</li>
-  <li>5.6.0</li>
-</ul>
-
-<p>This issue prevents users from being able to set their timezones to Greenwich time and several other time zones. </p>
-
-<p>To work around this issue, after installing the Magento 2 software, edit the following files:</p>
-
-<ul>
-  <li><code>app/code/Magento/Config/Model/Config/Backend/Locale/Timezone.php</code></li>
-  <li><code>lib/internal/Magento/Framework/Locale/Lists.php</code></li>
-  <li><code>setup/src/Magento/Setup/Model/Lists.php</code></li>
-</ul>
-
-<p>In each file, change the value of <code>$zones</code> as follows:</p>
-
-<p>from</p>
-
-<pre><code>$zones = \DateTimeZone::listIdentifiers(\DateTimeZone::ALL_WITH_BC);
-</code></pre>
-
-<p>to</p>
-
-<pre><code>$zones = \DateTimeZone::listIdentifiers(\DateTimeZone::ALL);
-</code></pre>
 
 
 		</div>
