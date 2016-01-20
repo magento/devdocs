@@ -823,6 +823,25 @@
     <p>For more information, see <a href="../../extension-dev-guide/create_component.html">Create a component</a>.</p>
   </li>
   <li>
+    <p><strong>Create a <code>registration.php</code> file</strong> The <code>registration.php</code> registers the module with the Magento system. It must be placed in the module’s root directory.</p>
+
+    <pre><code> &lt;pre&gt;
+ &lt;?php
+ /**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+ \Magento\Framework\Component\ComponentRegistrar::register(
+ \Magento\Framework\Component\ComponentRegistrar::MODULE,
+ 'Vendor1_Module1',
+ __DIR__
+ );
+</code></pre>
+
+    <p>&lt;/pre&gt;</p>
+  </li>
+  <li>
     <p><strong>Create an install class.</strong>
 Change directories to your <code>setup</code> directory. Create a  <code>InstallData.php</code> file that installs the integration configuration data into the Magento integration table.</p>
 
