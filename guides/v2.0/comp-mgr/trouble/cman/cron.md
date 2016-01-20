@@ -14,14 +14,11 @@ If the cron readiness check fails, first determine whether a cron job is set up 
 
 The following messages display in the Component Manager if no cron job is set up:
 
-	Error from Setup Application Cron Script:
-	Cron Job has not been configured yet
-	PHP Version, PHP Settings and PHP Extensions Check will fail because they depend on this check
+<img src="{{ site.baseurl }}common/images/upgr-tshoot-no-cron2.png">
 
-	Error from Updater Application Cron Script:
-	Cron Job has not been configured yet
+Another symptom that cron isn't running is that the PHP readiness check doesn't display the PHP version as the following figure shows.
 
-If one cron job has been set up but not the other, only one of the preceding messages displays.
+<img src="{{ site.baseurl }}common/images/upgr-tshoot-no-cron.png">
 
 <h3 id="trouble-cron-check">Check your existing crontab</h3>
 To verify whether or not your crontab is set up:
@@ -42,7 +39,7 @@ To verify whether or not your crontab is set up:
 	See one of the following sections for a solution to your issue.
 
 <h3 id="trouble-cron-none">Solution: crontab not set up</h3>
-If the Magento file system owner has no configured cron job, see <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_compman-updater.html">Set up cron jobs</a>.
+To verify your cron jobs are set up properly, see <a href="{{ site.gdeurl }}install-gde/install/post-install-config.html#post-install-cron">Set up cron jobs</a>.
 
 <h3 id="trouble-cron-errors">Solution: cron running with errors</h3>
 Try running each command manually because the command might display helpful error messages.
