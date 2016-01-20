@@ -21,7 +21,17 @@ To change the template of the form field, do the following:
 
 There are more details about each step in the following sections.
 
+**Contents**:
+
+* TOC
+{:toc}
+
+#Prerequisites 
+
+Set Magento to the production mode while you perform all customizations and debugging. 
+
 For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should [depend]({{site.gdeurl}}extension-dev-guide/composer-integration.html) on the Magento_Checkout module.
+
 
 ## Implement the HTML template for the field {#template}
 
@@ -99,5 +109,8 @@ In this file, add content similar to the following:
 </page>
 {%endhighlight%}
 
+## Modifying the custom template after it was applied {#modify}
+
+If you modify your custom `.html` template after it was applied on the store pages, the changes will not apply until you do the following: delete all files in the `pub/static/frontend` and `var/view_preprocessing` directories, then reload the pages.
 
 
