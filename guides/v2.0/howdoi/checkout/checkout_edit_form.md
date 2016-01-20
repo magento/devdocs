@@ -9,15 +9,15 @@ github_link: howdoi/checkout/checkout_edit_form.md
 ---
 
 <h2> What's in this topic</h2>
-This topic describes how to change the HTML template of a form field used in the Checkout pages. This refer to the forms used on both steps of the Checkout: Shipping Information step and Review and Paymetns Information step. By changing the template you can add additional elements displayed with the field, for example images, change the CSS class assigned to it, add attributes and so on.
+This topic describes how to change the HTML templates of form fields in the forms on the Checkout page. This refers to the forms used on both steps of the Checkout: Shipping Information step and Review and Payments Information step. By changing the template you can add additional elements displayed with the field, for example images, change the CSS class assigned to it, add attributes and so on.
 
 ## Overview
 
-The view part of the forms used in Checkout are implemented using Knockout JS. 
+The forms used in Checkout are implemented using Knockout JS. 
 
-To change the template of a Checkout form field, do the following:
-1. [Implement a custom HTML template for knockout JS script that will render the form field](#template).
-2. Specify the new template in the checkout page layout.
+To change the template of the form field, do the following:
+1. [Create a custom HTML template for knockout JS script that will render the form field](#template).
+2. [Specify the new template in the checkout page layout](#layout).
 
 There are more details about each step in the following sections.
 
@@ -47,10 +47,10 @@ Example of a field template:
 {%endhighlight%}
 
 <div class="bs-callout bs-callout-info" id="info">
-<p>Original templates of all form field types are located in  the `app/code/Magento/Ui/view/base/web/templates/form/element` directory.</p>
+<p>Original templates of all form field types are located in the <code>app/code/Magento/Ui/view/base/web/templates/form/element</code> directory.</p>
 </div>
 
-## Specify the new template in layout
+## Specify the new template in layout {#layout}
 
 In your custom module directory, create a new `<your_module_dir>/view/frontend/layout/checkout_index_index.xml` file. 
 In this file, add content similar to the following:
