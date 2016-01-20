@@ -33,7 +33,7 @@ To add a new template in a theme:
 2. Assign your template to a block in the <a href="{{site.gdeurl}}frontend-dev-guide/templates/template-override.html#template-layout" target="_blank">corresponding layout file</a>. 
 
 <div class="bs-callout bs-callout-info" id="info">
-<p>If you add a new <code>.html</code> template, and then edit it, the changes will not apply until you do the following: delete all files in the <code>pub/static/frontend</code> and <code>var/view_preprocessing</code> directories, then reload the pages. You can delete the files manually or run the <code>grunt clean:<theme_name></code> command in CLI. For details about using Grunt in Magento see <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css_debug.html#grunt_prereq">Installing and configuring Grunt</a>.</p>
+<p>If you add a new <code>.html</code> template, and then edit it, the changes will not apply until you do the following: delete all files in the <code>pub/static/frontend</code> and <code>var/view_preprocessing</code> directories, then reload the pages. You can delete the files manually or run the <code>grunt clean:&lt;theme_name&gt;</code> command in CLI. For details about using Grunt in Magento see <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css_debug.html#grunt_prereq">Installing and configuring Grunt</a>.</p>
 </div>
 
 ## Walkthrough illustration: adding a message to the customer review form
