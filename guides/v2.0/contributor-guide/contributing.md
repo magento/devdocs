@@ -1,8 +1,8 @@
 ---
 layout: default
-group: Contributor Guide
+group: contributor
 subgroup: Contributor Guide
-title: Contributor Guide
+title: Contribute to Magento 2
 menu_title: Contribute to Magento 2
 menu_order: 1
 menu_node: parent
