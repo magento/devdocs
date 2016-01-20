@@ -39,5 +39,5 @@ In the event of failure, see one of the following sections:
 *	<a href="{{ site.gdeurl }}comp-mgr/trouble/cman/cron.html">Cron script check failure</a>
 *	<a href="{{ site.gdeurl }}comp-mgr/trouble/cman/component-depend.html">Component dependency check failure</a>
 *	<a href="{{ site.gdeurl }}install-gde/system-requirements.html">PHP version check failure</a>
-*	<a href="{{ site.gdeurl }}release-notes/known-issues.html#known-devbeta-xdebug">PHP settings check failure</a>
+*	<a href="{{ site.gdeurl }}install-gde/trouble/php/tshoot_php-set.html">PHP settings check failure</a>
 *	<a href="{{ site.gdeurl }}install-gde/system-requirements.html">PHP extensions check failure</a>

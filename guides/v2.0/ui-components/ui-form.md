@@ -68,7 +68,7 @@ Component could be configured in two ways:
 Create configuration file: `<your module root dir>/Magento/Customer/view/base/ui_component/customer_form.xml`
 
 {% highlight xml%}
-<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Ui/etc/ui_configuration.xsd">
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
             <item name="config" xsi:type="array">

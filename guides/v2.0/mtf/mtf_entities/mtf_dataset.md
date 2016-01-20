@@ -14,7 +14,8 @@ github_link: mtf/mtf_entities/mtf_dataset.md
 {:toc}
 
 ##Data set overview {#overview}
-Data set contains data used by a [test case] and [constraints].
+
+A data set contains data used by a [test case] and [constraints].
 A data set can have several variations.
 Each variation has constraints that are called at the end of the test flow.
 
@@ -362,6 +363,7 @@ To add a new variation using merging, you should simply use the name of a [test 
 Variations `DeleteVideoFromPCFTestVariation1` and `DeleteVideoFromPCFTestVariation2` will be used by the `Magento\Catalog\Test\TestCase\Product\UpdateSimpleProductEntityTest` class during the test run.
 
 ### Extend a variation with data {#extend_variation}
+
 If you want to extend variation in another module using merging, you should use a [test case][] name that you want to merge with and a variation name that you want to extend.
  
 For example, see how in `Magento/Catalog/Test/TestCase/Product/ValidateOrderOfProductTypeTest.xml`
@@ -375,6 +377,20 @@ For example, see how in `Magento/Catalog/Test/TestCase/Product/ValidateOrderOfPr
  {%highlight xml%}
  {%remote_markdown https://raw.githubusercontent.com/magento/magento2/develop/dev/tests/functional/tests/app/Magento/Bundle/Test/TestCase/ValidateOrderOfProductTypeTest.xml%}
   {%endhighlight xml%}
+  
+### Replace a variation {#replace_variation}
+
+You can replace one variation with another by using a `replace` attribute of the `variation` node:
+
+{%highlight xml%}
+
+<variation name="CreateSuperNewCustomerBackendEntityTestVariation1" replace="CreateCustomerBackendEntityTestVariation1" summary="Variation that replaces default CreateCustomerBackendEntityTestVariation1">
+
+{%endhighlight xml%}
+
+After a merge of a data set with the variation that is mentioned, a test will use `CreateSuperNewCustomerBackendEntityTestVariation1` instead of `CreateSuperNewCustomerBackendEntityTestVariation1`.
+
+<!-- LINK DEFINITIONS -->
 
 [constraints]: {{site.gdeurl}}mtf/mtf_entities/mtf_constraint.html
 [constraint]: {{site.gdeurl}}mtf/mtf_entities/mtf_constraint.html
@@ -384,5 +400,7 @@ For example, see how in `Magento/Catalog/Test/TestCase/Product/ValidateOrderOfPr
 [repository]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture-repo.html
 [test case]: {{site.gdeurl}}mtf/mtf_entities/mtf_testcase.html
 [fixture field from its repository]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_repositoy
+
+<!-- ABBREVIATIONS -->
 
 *[MTF]: Magento Testing Framework
