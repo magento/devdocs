@@ -758,13 +758,13 @@
   <li>
     <p>Parameters must be defined in the doc block as</p>
 
-    <pre><code>* @param &lt;type&lt;&gt; $paramName
+    <pre><code>* @param type $paramName
 </code></pre>
   </li>
   <li>
     <p>Return type must be defined in the doc block as</p>
 
-    <pre><code>* @return &lt;em&gt;type&lt;/em&gt;&lt;/code&gt;
+    <pre><code>* @return type
 </code></pre>
   </li>
   <li>Valid scalar types include: <code>mixed</code> (or <code>anyType</code>), <code>bool</code> (or <code>boolean</code>), <code>str</code> (or <code>string</code>), <code>integer</code> (or <code>int</code>), <code>float</code>, and <code>double</code>.</li>
@@ -790,7 +790,7 @@
   <li>
     <p>A parameter $customer which is an object of class <code>\Magento\Customer\Api\Data\CustomerInterface</code>: </p>
 
-    <pre><code>* @param \Magento\Customer\Api\Data\CustomerInterface $customer&lt;/code&gt;
+    <pre><code>* @param \Magento\Customer\Api\Data\CustomerInterface $customer
 </code></pre>
 
     <p>Note that even if the class <code>\Magento\Customer\Api\Data\CustomerInterface</code> is in the same namespace (or a sub-namespace) of the current class or a use statement has exists at the top of the class, the fully qualified namespace must be used or the web API throws an exception.</p>
@@ -798,7 +798,7 @@
   <li>
     <p>A return which is an array of objects of type <code>\Magento\Customer\Api\Data\CustomerInterface</code>: </p>
 
-    <pre><code>* @return \Magento\Customer\Api\Data\CustomerInterface[]&lt;/code&gt;
+    <pre><code>* @return \Magento\Customer\Api\Data\CustomerInterface[]
 </code></pre>
   </li>
 </ul>
