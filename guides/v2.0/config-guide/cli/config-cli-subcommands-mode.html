@@ -1018,19 +1018,8 @@
   <p>Unlike other Magento modes, developer and production modes are set in <code>env.php</code>.</p></span>
 </div>
 
-<p>When you change modes, we do the following:</p>
-
-<ul>
-  <li>Change to production mode: Clear directories and set permissions on files and directories</li>
-  <li>
-    <p>Change to developer mode: Clear directories only; we don’t set specific permissions on files.</p>
-
-    <p>When you generate classes or generate static files, they have 777 (world-writable permissions) and are owned by the user who runs this command.</p>
-  </li>
-</ul>
-
 <h3 id="config-mode-over-clear">Cleared directories</h3>
-<p>We clear the contents of following directories when you change modes:</p>
+<p>When you change to developer or production mode, we clear the contents of following directories when you change modes:</p>
 
 <pre><code>var/cache
 var/di
@@ -1050,6 +1039,24 @@ pub/static
 <span class="glyphicon-class">
   <p>By default, Magento uses the <code>var</code> directories to store the cache, logs, and compiled code. You can customize this directory but in this guide, it's assumed to be <code>var</code>.</p></span>
 </div>
+
+<h3 id="config-mode-dev-dirs">Permissions and ownership for developer mode</h3>
+<p>When you change to developer mode, we clear directories only; we don’t set specific permissions on existing files.</p>
+
+<p>However, we set the following permissions on these directories and subdirectories:</p>
+
+<ul>
+  <li>
+    <p>Directories: 770</p>
+
+    <p>770 permissions give full control to the owner and to the group, and no permissions to anyone else.</p>
+  </li>
+  <li>
+    <p>Files: 660</p>
+
+    <p>660 permissions give read-write permissions to the owner and to the group, and no permissions to anyone else.</p>
+  </li>
+</ul>
 
 <h3 id="config-mode-over-dirs">Permissions and ownership for production mode</h3>
 <p>Changing modes affects permissions and ownership the following subdirectories in your Magento installation:</p>
