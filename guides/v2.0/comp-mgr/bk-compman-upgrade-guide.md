@@ -25,6 +25,7 @@ The way you upgrade (that is, patch) the Magento software depends on how you ins
 
 *	Magento CE or EE: If you used <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html">Composer</a> to install or if you downloaded an <a href="{{ site.gdeurl }}install-gde/prereq/zip_install.html">archive</a>, use the <a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">System Upgrade utility</a>
 *	Magento CE only: If you cloned the Magento 2 GitHub repository because you are contributing code to the Magento CE codebase, <a href="{{ site.gdeurl }}install-gde/install/cli/dev_options.html">upgrade the software manually</a>
+*	To upgrade from Magento CE to Magento EE, see <a href="{{ site.gdeurl }}comp-mgr/upgrader/ce-ee-upgrade-start.html">CE to EE upgrade</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
 	<p><em>System upgrade</em> refers to updating the Magento 2.x core components and other installed components. To migrate from Magento 1.x to Magento 2, see the <a href="{{ site.gdeurl }}migration/bk-migration-guide.html">Migration Guide</a>.</p>

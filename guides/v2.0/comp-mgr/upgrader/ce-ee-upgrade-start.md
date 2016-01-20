@@ -1,23 +1,27 @@
 ---
 layout: default 
 group: compman
-subgroup: U_UseUpgrade
-title: Run System Upgrade
-menu_title: Run System Upgrade
+subgroup: X_CE-EEUpgrade
+title: CE to EE upgrade
+menu_title: CE to EE upgrade
 menu_node: parent
 menu_order: 1
-github_link: comp-mgr/upgrader/upgrade-start.md
+github_link: comp-mgr/upgrader/ce-ee-upgrade-start.md
 ---
 
-<h2 id="compman-overview">Overview of System Upgrade</h2>
-This section discusses how to start System Upgrade, which upgrades the version of Magento core components as well as any other installed components.
+<h2 id="compman-overview">Overview of Magento Community Edition (CE) to Magento Enterprise Edition (EE) upgrade</h2>
+This section discusses how to upgrade Magento CE to Magento EE.
 
 <div class="bs-callout bs-callout-info" id="info">
-	<p><em>System upgrade</em> refers to updating the Magento 2.x core components and other installed components. To migrate from Magento 1.x to Magento 2, see the <a href="{{ site.gdeurl }}migration/bk-migration-guide.html">Migration Guide</a>.</p>
+	<p>You must be authorized for Magento EE to perform the tasks discussed in this topic.</p>
 </div>
 
 <h2 id="compman-prereq">Prerequisites</h2>
 Before continuing, complete all tasks discussed in <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.
+
+<div class="bs-callout bs-callout-info" id="info">
+	<p>Make sure you are authorized for Magento EE access before you continue. Contact <a href="http://support.magentocommerce.com" target="_blank">Magento Support</a> if you have questions.</p>
+</div>
 
 <h2 id="compman-access">Start System Upgrade from the Magento Admin</h2>
 To run System Upgrade:

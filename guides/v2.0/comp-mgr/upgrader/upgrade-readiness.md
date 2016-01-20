@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: compman
-subgroup: Y_UseUpgrade
+subgroup: U_UseUpgrade
 title: Step 2. Readiness check
 menu_title: Step 2. Readiness check
 menu_node: 
