@@ -30,7 +30,7 @@ To run System Upgrade:
 
 	Magento begins searching for core module updates immediately. To also search for component updates, click **Yes**. A sample follows:
 
-	<img src="{{ site.baseurl }}common/images/upgr_initial-pg.png" alt="Magento begins searching for upgrades right away">
+	<img src="{{ site.baseurl }}common/images/upgr_initial-pg.png" width="650px" alt="Magento begins searching for upgrades right away">
 
 	The page displays similar to the following when we find components to upgrade.<br><br>
 	<img src="{{ site.baseurl }}common/images/upgr_stuff-2-upgrade.png" width="650px" alt="Magento finds components to upgrade"><br><br>
