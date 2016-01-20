@@ -807,33 +807,28 @@
 </ol>
 
 <div class="bs-callout bs-callout-info" id="info">
-<p>If you add a new <code>.html</code> template, and then edit it, the changes will not apply until you do the following: delete all files in the <code>pub/static/frontend</code> and <code>var/view_preprocessing</code> directories, then reload the pages. You can delete the files manually or run the <code>grunt clean:<theme_name> command in CLI. For details about using Grunt in Magento see <a href="/guides/v2.0/frontend-dev-guide/css-topics/css_debug.html#grunt_prereq">Installing and configuring Grunt</a>.
+<p>If you add a new <code>.html</code> template, and then edit it, the changes will not apply until you do the following: delete all files in the <code>pub/static/frontend</code> and <code>var/view_preprocessing</code> directories, then reload the pages. You can delete the files manually or run the <code>grunt clean:&lt;theme_name&gt;</code> command in CLI. For details about using Grunt in Magento see <a href="/guides/v2.0/frontend-dev-guide/css-topics/css_debug.html#grunt_prereq">Installing and configuring Grunt</a>.</p>
+</div>
 
+<h2 id="walkthrough-illustration-adding-a-message-to-the-customer-review-form">Walkthrough illustration: adding a message to the customer review form</h2>
+<p>A small customization to illustrate the walkthrough: in their Orange theme, the OrangeCo company wants to add a short text to the product review form to encourage customers to write reviews. </p>
 
-## Walkthrough illustration: adding a message to the customer review form
-A small customization to illustrate the walkthrough: in their Orange theme, the OrangeCo company wants to add a short text to the product review form to encourage customers to write reviews. 
+<p>The following image illustrates how the default review form looks like:</p>
 
-The following image illustrates how the default review form looks like:
+<p><img src="/common/images/template_walk_without_text.png" alt="a default review form" /></p>
 
-<img src="/common/images/template_walk_without_text.png" alt="a default review form" />
+<p>To add the text, OrangeCo needs to override the default review form template in the Orange theme. </p>
 
-To add the text, OrangeCo needs to override the default review form template in the Orange theme. 
+<p>First, they copy the <code>form.phtml</code> template from <code>&lt;Magento_Review_module_dir&gt;/view/frontend/templates</code> to the corresponding subdirectory in the Orange theme directory: <code>app/design/frontend/OrangeCo/orange/Magento_Review/templates</code>.</p>
 
-First, they copy the `form.phtml` template from `<magento_review_module_dir>/view/frontend/templates` to the corresponding subdirectory in the Orange theme directory: `app/design/frontend/OrangeCo/orange/Magento_Review/templates`.
+<p>In the theme <code>form.phtml</code> file they add the HTML snippet with the message before the <code>&lt;form&gt;</code>:</p>
 
-In the theme `form.phtml` file they add the HTML snippet with the message before the <code>&lt;form&gt;</code>:
+<p><img src="/common/images/template-sample-code.png" alt="a HTML snippet you need to add" /></p>
 
-<img src="/common/images/template-sample-code.png" alt="a HTML snippet you need to add" />
+<p>Here’s how the form will look when the Orange theme is applied in a store:</p>
 
-Here's how the form will look when the Orange theme is applied in a store:
+<p><img src="/common/images/template_with_text.png" alt="Review form with the new message added" /></p>
 
-<img src="/common/images/template_with_text.png" alt="Review form with the new message added" />
-
-
-
-
-
-</magento_review_module_dir></theme_name></code></p></div>
 
 
 		</div>
