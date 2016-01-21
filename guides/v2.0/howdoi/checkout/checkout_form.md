@@ -16,12 +16,16 @@ This topic describes how to add a custom input form to the Checkout page.
 Magento provides ability to add a custom form to any of the checkout steps: Shipping Information, Review and Payment Information, or custom. In order to add a custom form developer has to follow the following steps:
 
 1. [Create the JS implementation of the form UI component] (#component)
-2. [Create the knockout.js HTML template] (#template)
+2. [Create the knockout.js HTML template for rendering the form] (#template)
 3. [Declare the form in the checkout page layout] (#layout)
 
-## Create the JS implementation of the form UI component {#component}
+## Prerequisites
+
+[Set Magento to the production mode](#{{site.gdeurl}}config-guide/cli/config-cli-subcommands-mode.html) while you perform all customizations and debugging.
 
 For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should [depend]({{site.gdeurl}}extension-dev-guide/composer-integration.html) on the Magento_Checkout module.
+
+## Create the JS implementation of the form UI component {#component}
 
 In your `<your_module_dir>/view/frontend/web/js/model` directory, create a `.js` file implementing the form.
 
