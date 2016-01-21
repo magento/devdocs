@@ -7,6 +7,7 @@ menu_title: Update the Magento application
 menu_order: 2
 menu_node: 
 github_link: install-gde/install/cli/dev_update-magento.md
+redirect_from: /guides/v2.0/install-gde/install/cli/instgde-install-magento-update-db
 ---
 
 This topic discusses how a contributing developer can update the Magento application without reinstalling it. To perform an upgrade if you're *not* a contributing developer, see <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html">Updating the Magento application and components</a>.
@@ -33,7 +34,9 @@ To update the Magento software if you're a contributing developer:
 
 		composer update
 
-5.	<a href="instgde-install-magento-update-db">Update the Magento database</a>.
+5.	Update the Magento database:
+
+		php <your Magento install dir>/bin/magento setup:upgrade
 
 <!-- ABBREVIATIONS -->
 
