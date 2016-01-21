@@ -27,7 +27,7 @@ Example:
 `<your module root dir>/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml`
 
 {% highlight xml %}
-<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Ui/etc/ui_configuration.xsd">
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <container name="page_listing_top">
         <paging name="listing_paging">
             <argument name="data" xsi:type="array">

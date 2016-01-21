@@ -31,15 +31,15 @@ MySQL 5.6 (Oracle or Percona)
 
 *	5.6.x
 *	5.5.x 
+*	7.0.2 (supported by Magento version 2.0.1 and later only)
+
+	We require the <a href="https://pecl.php.net/package/zip" target="_blank"><code>zip</code></a> PHP extension with PHP 7.x. Consult your repository for the exact name of this extension.
 
 <div class="bs-callout bs-callout-info" id="info">
    <span class="glyphicon-class">
-  	<ul><li>Magento has been tested with PHP 7.0.0 and 7.0.1<br>
-  		We require the <a href="https://pecl.php.net/package/zip" target="_blank"><code>zip</code></a> PHP extension with PHP 7.x. Consult your repository for the exact name of this extension.</li>
-  		<li>There is a <a href="https://bugs.php.net/bug.php?id=66985" target="_blank">known PHP issue</a> with versions:
+  	<p>There is a <a href="https://bugs.php.net/bug.php?id=66985" target="_blank">known PHP issue</a> with versions:</p>
   		<ul><li>5.5.10&ndash;5.5.16</li>
 		<li>5.6.0</li></ul>
-	</li>
 	<p>This issue prevents users from being able to set their timezones to Greenwich time and several other time zones. </p>
 	<p>To work around the issue, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_install-issues.html#known-devrc-php">Known issue with certain PHP versions</a>.</p>
 	<li>Magento no longer supports PHP 5.4.</li></ul></span>
@@ -58,6 +58,7 @@ Documentation: <a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html" tar
 *	<a href="http://php.net/manual/en/book.xsl.php" target="_blank">xsl</a> 
 *	<a href="http://php.net/manual/en/book.image.php" target="_blank">gd</a>, <a href="http://php.net/manual/en/book.imagick.php" target="_blank">ImageMagick 6.3.7</a> (or later) or both
 *	<a href="http://php.net/manual/en/book.soap.php" target="_blank">soap</a>
+*	<a href="http://php.net/manual/en/book.xml.php" target="_blank">xml</a>
 *	<a href="http://php.net/manual/en/book.intl.php" target="_blank">intl</a>
 *	<a href="http://php.net/manual/en/book.bc.php" target="_blank">bc-math</a> <img src="{{ site.baseurl }}common/images/ee-only_small.png">
 *	<a href="http://php.net/manual/en/book.openssl.php" target="_blank">openssl</a>

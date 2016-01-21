@@ -16,7 +16,7 @@ By default, the Magento application uses the <a href="http://requirejs.org/" tar
 
 You can follow the same approach when customizing Magento JavaScript, or <a href="{{site.gdeurl}}frontend-dev-guide/javascript/custom_js.html#disable_default_js" target="_blank">disable all the default scripts and their load by RequireJS</a>.
 
-For information about how JS resources are located and configured, see the <a href="{{site.gdeurl}}/config-guide/config/js-resources.html" target="_blank"> JavaScript resources</a> topic in the Configuration Guide.
+For information about how JS resources are located and configured, see <a href="{{site.gdeurl}}javascript-dev-guide/javascript/js-resources.html">Configure JavaScript</a>
 
 <h2 id="#js_contents">What's in this chapter</h2>
 Topics of this chapter describe the following:

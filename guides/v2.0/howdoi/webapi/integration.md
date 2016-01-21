@@ -106,7 +106,26 @@ To develop a module, you must:
 
     For more information, see [Create a component](../../extension-dev-guide/create_component.html).
 
-4. **Create an install class.**
+4. **Create a `registration.php` file** The `registration.php` registers the module with the Magento system. It must be placed in the module's root directory.
+
+        <pre>
+        <?php
+        /**
+        * Copyright © 2015 Magento. All rights reserved.
+        * See COPYING.txt for license details.
+        */
+
+        \Magento\Framework\Component\ComponentRegistrar::register(
+        \Magento\Framework\Component\ComponentRegistrar::MODULE,
+        'Vendor1_Module1',
+        __DIR__
+        );
+
+    </pre>
+
+
+
+5. **Create an install class.**
 Change directories to your `setup` directory. Create a  `InstallData.php` file that installs the integration configuration data into the Magento integration table.
 
     The following sample is boilerplate and requires minor changes to make your integration work.

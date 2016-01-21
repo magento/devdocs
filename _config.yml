@@ -25,3 +25,9 @@ m1xgithuburl: "https://github.com/magento/devdocs/tree/develop/guides/m1x/"
 markdown: kramdown
 highlighter: pygments
 
+incremental: true
+
+gems:
+  - jekyll-redirect-from
+
+exclude: ['scss','bin','node_modules']

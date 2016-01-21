@@ -15,7 +15,7 @@ github_link: mtf/mtf_entities/mtf_constraint.md
 
 ## Constraint overview {#mtf_constraint_overview}
 
-The MTF constraint performs assertions after a test flow. A test flow is a set of test steps without assertions.
+The Magento Testing Framework (MTF) constraint performs assertions after a test flow. A test flow is a set of test steps without assertions.
 Each constraint name must be globally unique in Magento application and must be placed in the module to which it belongs. Constraints run automatically after test flow has finished.
 
 ![Constraints and test flow]({{site.baseurl}}common/images/mtf_constraint_flow.png)
@@ -196,6 +196,8 @@ in the order that it must be performed.
     </testCase>
 </config>
 {%endhighlight%}
+
+<!-- LINK DEFINITIONS -->
 
 [data set]: {{site.gdeurl}}mtf/mtf_entities/mtf_dataset.html
 [fixture]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html

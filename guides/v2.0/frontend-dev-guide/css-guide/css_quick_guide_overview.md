@@ -17,6 +17,7 @@ This chapter combines the topics aiming to help you to quickly start working wit
 
 <h2>High-level steps to create a theme and change styles</h2>
 
+1. [Set](#{{site.gdeurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{site.gdeurl}}config-guide/bootstrap/magento-modes.html).
 1. In the file system, <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-create.html" target="_blank">add a new theme</a> inheriting from Magento Blank or Luma.
 3.  <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html" target="_blank">Apply your theme</a>.
 2. Decide which CSS compilation mode you will use. Compilation modes are described in the following topics:
