@@ -2,14 +2,14 @@
 layout: default
 group: install_cli 
 subgroup: 99_contrib
-title: Add or update components
-menu_title: Add or update components
+title: Update the Magento application
+menu_title: Update the Magento application
 menu_order: 2
 menu_node: 
 github_link: install-gde/install/cli/dev_update-magento.md
 ---
 
-This topic discusses how a contributing developer can update the Magento software without reinstalling it. To perform an upgrade if you're *not* a contributing developer, see <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html">Updating the Magento application and components</a>.
+This topic discusses how a contributing developer can update the Magento application without reinstalling it. To perform an upgrade if you're *not* a contributing developer, see <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html">Updating the Magento application and components</a>.
 
 To update the Magento software if you're a contributing developer:
 
@@ -25,7 +25,7 @@ To update the Magento software if you're a contributing developer:
 
 	<div class="bs-callout bs-callout-info" id="info">
 		<span class="glyphicon-class">
-  			<p>If <code>git pull origin develop</code> fails, see <a href="{{ site.gdeurl }}install-gde/trouble/trouble/git/tshoot_git-pull-origin.html">troubleshooting</a>.</p> </span>
+  			<p>If <code>git pull origin develop</code> fails, see <a href="{{ site.gdeurl }}install-gde/trouble/git/tshoot_git-pull-origin.html">troubleshooting</a>.</p> </span>
 	</div>
 				
 3.	Diff and merge your `composer.json.old` with `composer.json` installed with the Magento software.
@@ -34,3 +34,8 @@ To update the Magento software if you're a contributing developer:
 		composer update
 
 5.	<a href="instgde-install-magento-update-db">Update the Magento database</a>.
+
+<!-- ABBREVIATIONS -->
+
+*[contributing developer]: A developer who contributes code to the Magento 2 CE codebase
+*[contributing developers]: Developers who contribute code to the Magento 2 CE codebase

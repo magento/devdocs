@@ -30,3 +30,5 @@ If you haven't already installed optional sample data, you can <a href="{{ site.
 ### Configure
 <a href="{{ site.gdeurl }}install-gde/install/post-install-config.html">Configure the Magento application</a>.
 
+*[contributing developer]: A developer who contributes code to the Magento 2 CE codebase
+*[contributing developers]: Developers who contribute code to the Magento 2 CE codebase

@@ -12,8 +12,36 @@ github_link: install-gde/trouble/php/tshoot_php-set.md
 <h2 id="trouble-php-set">PHP settings errors</h2>
 See one of the following sections:
 
+*	<a href="#trouble-php-always">always_populate_raw_post_data error</a>
 *   <a href="#trouble-php-xdebug">xdebug maximum function nesting level error</a>
 *   <a href="#trouble-php-asptags">Errors display when you access a PHTML template</a>
+
+<h3 id="trouble-php-always">always_populate_raw_post_data error</h3>
+If you're upgrading the Magento 2 software, the following error can display during the readiness check:
+
+<img src="{{ site.baseurl }}common/images/upgr_readiness-success.png" width="700px" alt="If all readiness checks pass, click Next and continue with the next step">
+
+To resolve the error:
+
+1.	Locate your `php.ini` using a `phpinfo.php` page.
+
+	(Sometimes you have a different `php.ini` for the PHP command line and the web server. The `php.ini` you must change displays as **Loaded Configuration File**)
+
+2.	As a user with `root` privileges, open `php.ini` in a text editor.
+3.	Uncomment the following line:
+
+		always_populate_raw_post_data = -1
+4.	Save your changes to `php.ini` and exit the text editor.
+5.	Wait for all steps in the readiness check to finish.
+6.	Resolve any other issues displayed by the readiness check.
+7.	As a user with `root` privileges, restart your web server. 
+
+	Examples follow:
+
+	*	Ubuntu: `service apache2 restart`
+	*	CentOS: `service httpd restart`
+
+8.	On the readiness check page, click **Try Again**.
 
 <h3 id="trouble-php-xdebug">xdebug maximum function nesting level error</h3>
 

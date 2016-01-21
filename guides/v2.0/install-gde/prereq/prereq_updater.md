@@ -134,3 +134,6 @@ For example, if you cloned the updater to `/var/www/html/magento2-community-edit
 #### Next step
 
 *	<a href="{{ site.gdeurl }}install-gde/continue-to-install.html">Installation options</a>
+
+*[contributing developer]: A developer who contributes code to the Magento 2 CE codebase
+*[contributing developers]: Developers who contribute code to the Magento 2 CE codebase

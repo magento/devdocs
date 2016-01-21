@@ -38,3 +38,6 @@ To reinstall the Magento software as a contributing developer:
 	Wait for dependencies to update.
 
 4.	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">Install the Magento software</a>.
+
+*[contributing developer]: A developer who contributes code to the Magento 2 CE codebase
+*[contributing developers]: Developers who contribute code to the Magento 2 CE codebase
