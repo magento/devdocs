@@ -647,7 +647,7 @@
 <ul>
   <li><a href="#mysql-help-beginner">Help if you’re just starting out</a></li>
   <li><a href="#instgde-prereq-mysql-intro">General guidelines</a></li>
-  <li><a href="#instgde-prereq-mysql-ubuntu">Installing MySQL on Ubuntu</a></li>
+  <li><a href="#instgde-prereq-mysql-ubuntu">Installing and configuring MySQL on Ubuntu</a></li>
   <li><a href="#instgde-prereq-mysql-centos">Installing and configuring MySQL on CentOS</a></li>
   <li><a href="#instgde-prereq-mysql-config">Configuring the Magento database instance</a></li>
 </ul>
@@ -730,6 +730,20 @@ mysql&gt;
 </code></pre>
   </li>
   <li>
+    <p>If you expect to import large numbers of products into Magento, you can increase the value for <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="_blank"><code>max_allowed_packet</code></a> that is larger than the default, 16MB.</p>
+
+    <div>
+
+      <p>To increase the value, open <code>/etc/mysql/mysql.cnf</code> in a text editor and locate the value for <code>max_allowed_packet</code>. Save your changes to <code>mysql.cnf</code>, close the text editor, and restart MySQL (<code>service mysql restart</code>).</p>
+
+      <p>To optionally verify the value you set, enter the following command at a <code>mysql&gt;</code> prompt:</p>
+
+      <pre><code> SHOW VARIABLES LIKE 'max_allowed_packet';
+</code></pre>
+
+    </div>
+  </li>
+  <li>
     <p><a href="#instgde-prereq-mysql-config">Configure the Magento database instance</a>.</p>
   </li>
 </ol>
@@ -776,6 +790,20 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 mysql&gt;
 </code></pre>
+  </li>
+  <li>
+    <p>If you expect to import large numbers of products into Magento, you can increase the value for <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="_blank"><code>max_allowed_packet</code></a> that is larger than the default, 16MB.</p>
+
+    <div>
+
+      <p>To increase the value, open <code>/etc/mysql/mysql.cnf</code> in a text editor and locate the value for <code>max_allowed_packet</code>. Save your changes to <code>mysql.cnf</code>, close the text editor, and restart MySQL (<code>service mysql restart</code>).</p>
+
+      <p>To optionally verify the value you set, enter the following command at a <code>mysql&gt;</code> prompt:</p>
+
+      <pre><code> SHOW VARIABLES LIKE 'max_allowed_packet';
+</code></pre>
+
+    </div>
   </li>
   <li>
     <p><a href="#instgde-prereq-mysql-config">Configure the Magento database instance</a>.</p>
@@ -827,6 +855,24 @@ owners.
 
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 </code></pre>
+  </li>
+  <li>
+    <p>If you expect to import large numbers of products into Magento, you can configure MySQL to use the <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="_blank"><code>max_allowed_packet</code></a> parameter. We recommend a value of at least 16MB.</p>
+
+    <div>
+
+      <p>To increase the value, open <code>/etc/mysql.cnf</code> in a text editor and add search for <code>max_allowed_packet</code>. Set the value to <code>16M</code> or larger.</p>
+
+      <p>If it does not exist, add it before <code>[mysqld_safe]</code>. </p>
+
+      <p>Save your changes to <code>mysql.cnf</code>, close the text editor, and restart MySQL (<code>service mysqld restart</code>).</p>
+
+      <p>To optionally verify the value you set, enter the following command at a <code>mysql&gt;</code> prompt:</p>
+
+      <pre><code> SHOW VARIABLES LIKE 'max_allowed_packet';
+</code></pre>
+
+    </div>
   </li>
   <li>
     <p>Configure the Magento database instance as discussed in the next section.</p>
