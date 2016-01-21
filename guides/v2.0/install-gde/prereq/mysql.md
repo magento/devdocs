@@ -17,7 +17,7 @@ redirect_from: /guides/v1.0/install-gde/prereq/mysql.html
 
 *	<a href="#mysql-help-beginner">Help if you're just starting out</a>
 *	<a href="#instgde-prereq-mysql-intro">General guidelines</a>
-*	<a href="#instgde-prereq-mysql-ubuntu">Installing MySQL on Ubuntu</a>
+*	<a href="#instgde-prereq-mysql-ubuntu">Installing and configuring MySQL on Ubuntu</a>
 *	<a href="#instgde-prereq-mysql-centos">Installing and configuring MySQL on CentOS</a>
 *	<a href="#instgde-prereq-mysql-config">Configuring the Magento database instance</a>
 
@@ -85,6 +85,10 @@ To install MySQL 5.6 on Ubuntu 14:
 
 		mysql>
 
+4.	If you expect to import large numbers of products into Magento, you can increase the value for <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="_blank">`max_allowed_packet`</a> that is larger than the default, 16MB.
+
+	{% include install/mysql_max-allowed-packet-ubuntu.md %}
+
 3.	<a href="#instgde-prereq-mysql-config">Configure the Magento database instance</a>.
 
 <h3 id="instgde-prereq-mysql56ubu12">Installing MySQL 5.6 on Ubuntu 12</h3>
@@ -122,7 +126,11 @@ To install MySQL 5.6 on Ubuntu 12, use the following instructions from <a href="
 
 		mysql>
 
-3.	<a href="#instgde-prereq-mysql-config">Configure the Magento database instance</a>.
+4.	If you expect to import large numbers of products into Magento, you can increase the value for <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="_blank">`max_allowed_packet`</a> that is larger than the default, 16MB.
+
+	{% include install/mysql_max-allowed-packet-ubuntu.md %}
+
+5.	<a href="#instgde-prereq-mysql-config">Configure the Magento database instance</a>.
 
 <h2 id="instgde-prereq-mysql-centos">Installing and configuring MySQL 5.6 on CentOS</h2>
 
@@ -160,8 +168,11 @@ The following procedure is based on <a href="http://sharadchhetri.com/2013/12/26
 
 		Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
+5.	If you expect to import large numbers of products into Magento, you can configure MySQL to use the <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="_blank">`max_allowed_packet`</a> parameter. We recommend a value of at least 16MB.
 
-4.	Configure the Magento database instance as discussed in the next section.
+	{% include install/mysql_max-allowed-packet-centos.md %}
+
+6.	Configure the Magento database instance as discussed in the next section.
 
 <h2 id="instgde-prereq-mysql-config">Configuring the Magento database instance</h2>
 This section discusses how to create a new database instance for Magento. Although a new database instance is recommended, you can optionally install Magento into an existing database instance.
