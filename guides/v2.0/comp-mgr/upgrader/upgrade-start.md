@@ -34,7 +34,7 @@ To run System Upgrade:
 
 	The following error might indicate you haven't entered your <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_auth-token.html">authentication keys</a> in the Magento Admin:
 
-		Sorry, we can't take that action right now.
+	<img src="{{ site.baseurl }}common/images/upgr-sorry.png" width="600px">
 
 	The page displays similar to the following when we find components to upgrade.<br><br>
 	<img src="{{ site.baseurl }}common/images/upgr_stuff-2-upgrade.png" width="650px" alt="Magento finds software to upgrade"><br><br>
