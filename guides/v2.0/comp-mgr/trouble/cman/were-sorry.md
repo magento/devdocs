@@ -44,19 +44,20 @@ Modify Magento's `composer.json` to reference the `https://repo.magento.com` rep
 4.	Open `composer.json` in a text editor.
 5.	To the `repositories` section, add the following:
 
-			"type": "composer",
-			"url": "https://repo.magento.com/"
+			{
+				"type": "composer",
+				"url": "https://repo.magento.com/"
 			}
 		]
 
     Example:
 
 		"repositories": [
- 	       {
- 	           "type": "composer",
-	            "url": "https://repo.magento.com/"
-	        }
-	    ]
+				{
+					"type": "composer",
+					"url": "https://repo.magento.com/"
+				}
+			]
 
 6.	Save your changes to `composer.json` and exit the text editor.
 7.	Change to the `update` subdirectory, where the updater is located.
