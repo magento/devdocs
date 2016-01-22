@@ -11,7 +11,7 @@ github_link: mtf/mtf_test-approach.md
 * TOC
 {:toc}
 
-## Preface
+## Preface {#preface}
 
 Magento testing framework works with functional tests only. Functional testing means checking that an application met specified business requirements. These requirements usually are collected in functional specifications that describe expected behaviour of the application. Role of functional testing is to validate this behavior.
 
@@ -20,15 +20,15 @@ Tests are used to cover functionality of a business entity. A goal is to find di
 
 If you want to extend functionality you can modify existing tests or create your own functional tests using the MTF.
     
-## Out-of-the-box test
+## Out-of-the-box test {#out-of-the-box-test}
 
 The out-of-the-box tests are the ready to use functional tests developed by Magento. You can find them in the `<magento2>/dev/tests/functional` directory.
 
-### Coverage
+### Coverage {#coverage}
 
 Test coverage of the out-of-the-box test depends on a module which it belongs to. The out-of-the-box tests cover basic functionality of Magento application. They test the CRUD functionality for all basic entities.  The most important modules are covered better.
 
-### Usage
+### Usage {#oob-usage}
 
 You can use out-of-the-box tests in:
 
@@ -45,7 +45,7 @@ You can use out-of-the-box tests in:
     - in combination with own tests
     - to test new feature: show that feature works and it didn't break any functionality of the Magento application (all other tests passed)
  
-### How to use
+### How to use {#how-to-use}
 
 Step 1. Check the functionality manually
 
@@ -53,15 +53,15 @@ Pass all the test steps defined in a test case you want to use.
 
 Step 2. [Run the test][]
 
-## New test
+## New test {#new-test}
     
-### Extending an out-of-the-box test
+### Extending an out-of-the-box test {#extending-oob-test}
 
 You can create a test extending from an out-of-the-box test. It is stored in the `<magento2>/dev/tests/functional/tests/app/Magento/<testing_module>` directory.
 
-#### Usage
+#### Usage {#ext-usage}
 
-This approach is useful when the Magento functionality was extended, for example the minor changes were added to the existing functionality of a module. Also you can extend the out-of-the-box test to extend the current test coverage if functionality that you are interested in is not completely covered by the out-of-the-box test.
+This approach is useful when the Magento functionality was extended, for example the minor changes were added to the existing functionality of a module. Also you can extend an out-of-the-box test to extend the current test coverage if functionality that you are interested in is not completely covered by the out-of-the-box test.
 
 Example use cases:
 
@@ -72,36 +72,33 @@ Example use cases:
 - [block overriding][]
 - [handler overriding][]
 
-## Creating a test
+### Creating a test {#create-test}
 
-### When should I use them?
+When new functionality or/and new modules were added to Magento you would need to create an absolutely new test to check the functionality. 
 
-- new functionality
-    - new test flow
-- new modules
+New tests must be stored in corresponding modules `<magento2>/dev/tests/functional/tests/app/Magento/<testing_module>`.
 
-### Where can I put them?
-
-- dev/tests/functional/tests/app/Magento/<testing_module>
-
-### Test components
-
-To create new test you need a test object, test data, test flow, and test assertions.
+Each test consists of four main components: test object, test data, test flow, test assertions.
 
 #### Test object
 
-Test object is represented as a fixture. Fixture defines object properties. Это то что собираемся протестировать и что будет целью тестирования, над ним будут проводиться все тестовые действия.
+Test object is an object that you are going to test. All test actions will be performed under this object.
+Test object is represented as a [fixture][].  The fixture defines properties of an object.
 
-Simple product fixture example. Learn more about fixture.
-
+For example, in [CreateSimpleProductEntityTest][] the `\Magento\Catalog\Test\Fixture\CatalogProductSimple` is a test object.
 
 #### Test data
 
-Test data are stored in data sets, sample data are stored in repositories, and sample test entities can be created by handlers. Тест
+Test data are data for the test and data for preconditions
 
-data sets
+ - Data for a test are stored in [data set][]
+ - Preconditions include sample data that are stored in a [fixture repository][] and sample test entity that can be created by a [handler][]. 
 
-preconditions: sample data, sample test entities. Example Simple Product: create category
+#### Test flow
+
+#### Test assertions
+
+These components are discussed in the rest of this topic. To demonstrate usage of these components in the test creation process we will create step-by-step a new test . Example test will create a new simple product. This test already exists in functional tests directory, so you can track processes of its creation.
 
 
 To create the test entity you must fill a product creation form with data from a data set. To do it correctly you need fixture for simple product entity. Learn more about Fixture.
@@ -145,6 +142,8 @@ Verification assertions are managed by constraints. Проверка того ч
 
 ран. дебаг. отладка. фикс
 
+#### Example
+
 <!-- LINK DEFINITIONS -->
 
 [Run the test]: {{site.gdeurl}}mtf/mtf_quickstart/mtf_quickstart_runtest.html
@@ -154,6 +153,14 @@ Verification assertions are managed by constraints. Проверка того ч
 [repository addition]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_repositoy
 [block overriding]: {{site.gdeurl}}mtf/mtf_entities/mtf_block.html
 [handler overriding]: {{site.gdeurl}}mtf/mtf_entities/mtf_handler.html
+
+[fixture]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html
+[data set]: {{site.gdeurl}}mtf/mtf_entities/mtf_dataset.html
+[fixture repository]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture-repo.html
+[handler]: {{site.gdeurl}}mtf/mtf_entities/mtf_handler.html
+
+[CreateSimpleProductEntityTest]: {{mage2000url}}dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product
+
 
 [Create a test case file]: {{site.gdeurl}}mtf/mtf_entities/mtf_testcase.html#how-to-create
 [Create a data set file]: {{site.gdeurl}}mtf/mtf_entities/mtf_dataset.html
