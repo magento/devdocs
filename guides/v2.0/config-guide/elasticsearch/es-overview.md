@@ -30,8 +30,6 @@ Support versions  1.7, 2.0 and 2.1
 {% include config/install-java.md %}
 
 
-### SELinux and iptables
-
 {% include config/solr-elastic-selinux.md %}
 
 ### elasticsearch
@@ -104,9 +102,9 @@ One of the following displays:
 	<li>Verify the value of the <strong>elasticsearch Server Hostname</strong> field. Make sure the server is available. You can try the server's IP address instead.</li>
 	<li>Use the command <code>netstat -an | grep <em>listen-port</em></code> command to verify that the port specified in the <strong>elasticsearch Server Port</strong> field is not being used by another process.<br />
 	For example, to see if elasticsearch is running on its default port, use the following command:
-	<pre>netstat -an | grep 8983</pre>
-	If elasticsearch is running on port 8983, it displays similar to the following:
-	<pre>tcp        0      0 :::8983            :::*          LISTEN</pre></li></ul></td>
+	<pre>netstat -an | grep 9200</pre>
+	If elasticsearch is running on port 9200, it displays similar to the following:
+	<pre>tcp        0      0 :::9200            :::*          LISTEN</pre></li></ul></td>
 	</tr>
 </tbody>
 </table>
