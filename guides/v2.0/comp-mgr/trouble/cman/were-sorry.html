@@ -812,8 +812,9 @@
   <li>
     <p>To the <code>repositories</code> section, add the following:</p>
 
-    <pre><code>    "type": "composer",
-    "url": "https://repo.magento.com/"
+    <pre><code>    {
+        "type": "composer",
+        "url": "https://repo.magento.com/"
     }
 ]
 </code></pre>
@@ -821,11 +822,11 @@
     <p>Example:</p>
 
     <pre><code>"repositories": [
- 	       {
- 	           "type": "composer",
-        "url": "https://repo.magento.com/"
-    }
-]
+        {
+            "type": "composer",
+            "url": "https://repo.magento.com/"
+        }
+    ]
 </code></pre>
   </li>
   <li>Save your changes to <code>composer.json</code> and exit the text editor.</li>
