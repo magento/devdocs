@@ -809,25 +809,25 @@
 </code></pre>
   </li>
   <li>Open <code>composer.json</code> in a text editor.</li>
-  <li>To the <code>repositories</code> section, add the following:</li>
-</ol>
+  <li>
+    <p>To the <code>repositories</code> section, add the following:</p>
 
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">&quot;type&quot;</span><span class="err">:</span> <span class="s2">&quot;composer&quot;</span><span class="err">,</span>
-        <span class="s2">&quot;url&quot;</span><span class="err">:</span> <span class="s2">&quot;https://repo.magento.com/&quot;</span>
-       	<span class="err">}</span>
-    <span class="err">]</span></code></pre></div>
-
-<pre><code>Example:
+    <pre><code>    "type": "composer",
+    "url": "https://repo.magento.com/"
+    }
+]
 </code></pre>
 
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">&quot;repositories&quot;</span><span class="err">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;composer&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://repo.magento.com/&quot;</span>
-        <span class="p">}</span>
-    <span class="p">]</span></code></pre></div>
+    <p>Example:</p>
 
-<ol>
+    <pre><code>"repositories": [
+ 	       {
+ 	           "type": "composer",
+        "url": "https://repo.magento.com/"
+    }
+]
+</code></pre>
+  </li>
   <li>Save your changes to <code>composer.json</code> and exit the text editor.</li>
   <li>Change to the <code>update</code> subdirectory, where the updater is located.</li>
   <li>
