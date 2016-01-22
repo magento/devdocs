@@ -5,13 +5,13 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Set ulimit for the web server user</title>
+	<title>We're sorry, we can't take that action right now</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
-	<link rel="canonical" href="//guides/v2.0/comp-mgr/prereq/prereq_compman-ulimit.html">
+	<link rel="canonical" href="//guides/v2.0/comp-mgr/trouble/cman/were-sorry.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -130,9 +130,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Set ulimit for the web server user</h1>
+		<h1 class="page-heading">We're sorry, we can't take that action right now</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/comp-mgr/prereq/prereq_compman-ulimit.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/comp-mgr/trouble/cman/were-sorry.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -267,7 +267,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/comp-mgr/prereq/prereq_compman-ulimit.html">Set ulimit for the web server user</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/prereq/prereq_compman-ulimit.html">Set ulimit for the web server user</a></li>
 
 									
 
@@ -607,7 +607,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/were-sorry.html">We're sorry, we can't take that action right now</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/comp-mgr/trouble/cman/were-sorry.html">We're sorry, we can't take that action right now</a></li>
 
 									
 
@@ -771,47 +771,50 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<h2 id="issue">Issue</h2>
-<p>Rolling back to a previous backup using either the Component Manager or System Upgrade can silently fail, resulting in incomplete data being written to the file system or database.</p>
+		<h2 id="trouble-update-were-sorry">"We're sorry, we can't take that action right now"</h2>
+<p>The following error might display at the start of your upgrade:</p>
 
-<h3 id="details">Details</h3>
-<p>In some cases, a very long query string causes the user’s allocated memory space to run out of memory because of too many recursive calls. We’re aware of this issue and are working on a solution.</p>
+<p><img src="/common/images/upgr-sorry.png" width="600px" /></p>
 
-<h3 id="workaround">Workaround</h3>
-<p>Until a solution is available, we recommend setting the <a href="http://ss64.com/bash/ulimit.html" target="_blank"><code>ulimit</code></a> for the Magento file system user to a value of 65536 or more.</p>
+<p>See one of the following sections for possible solutions:</p>
 
-<p>You can do this either on the command line or you can make it a permanent setting for the user by editing their shell script.</p>
+<ul>
+  <li><a href="#not-auth">Problem: you’re not authenticated</a></li>
+  <li><a href="#updater">Problem: the updater application isn’t initialized</a></li>
+</ul>
 
-<p>If you haven’t done so already, switch to the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a>.</p>
+<h3 id="not-auth">Problem: you’re not authenticated</h3>
+<p>You might not have entered your authentication keys in the Magento Admin.</p>
 
-<p>Command:</p>
+<h4 id="solution">Solution</h4>
+<p>Enter your <a href="/guides/v2.0/comp-mgr/prereq/prereq_auth-token.html">authentication keys</a> in the Admin. Try your upgrade again.</p>
 
-<pre><code>ulimit -s 65536
-</code></pre>
+<p>If that doesn’t work, try generating <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">new authentication keys</a> and enter those in the Admin. Then try your upgrade again.</p>
 
-<p>You can change this to a larger value if needed.</p>
+<h3 id="updater">Problem: the updater application isn’t initialized</h3>
+<p>In some cases (especially if you downloaded the Magento software from <a href="https://packagist.org/" target="_blank">packagist</a>), the updater application might not be initialized. (A common way for this to happen is to not specify our <code>https://repo.magento.com</code> repository in the <code>composer create-project</code> command.)</p>
 
-<div class="bs-callout bs-callout-info">
-   	<p>The syntax for <code>ulimit</code> depends on the UNIX shell you use. The preceding setting should work with CentOS and Ubuntu with the Bash shell. However, for Mac OS, the correct setting is <code>ulimit -S 65532</code>. Consult a man page or operating system reference for more information.</p>
-</div>
+<p>The updater application uses a cron job to run the upgrade; if it’s not initialized, your update fails.</p>
 
-<p>To optionally set the value in the user’s Bash shell:</p>
+<h4 id="solution-1">Solution</h4>
+<p>Run <code>composer install</code> in the updater’s root directory to resolve dependencies and initialize it as follows:</p>
 
 <ol>
-  <li>If you haven’t done so already, switch to the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
-  <li>Open <code>/home/&lt;username&gt;/.bashrc</code> in a text editor.</li>
+  <li>Log in to your Magento server as the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
   <li>
-    <p>Add the following line:</p>
+    <p>Change to the updater root directory:</p>
 
-    <pre><code>ulimit -s 65536
+    <pre><code>cd &lt;your Magento install dir&gt;/update
 </code></pre>
   </li>
-  <li>Save your changes to <code>.bashrc</code> and exit the text editor.</li>
-</ol>
+  <li>
+    <p>Enter the following command:</p>
 
-<div class="bs-callout bs-callout-warning">
-    <p>We recommend you avoid setting a value for <a href="http://php.net/manual/en/pcre.configuration.php" target="_blank"><code>pcre.recursion_limit</code></a> in <code>php.ini</code> because it can result in incomplete rollbacks with no failure notice.</p>
-</div>
+    <pre><code>composer install
+</code></pre>
+  </li>
+  <li>After the command completes, try the upgrade again.</li>
+</ol>
 
 
 		</div>
