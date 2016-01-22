@@ -667,46 +667,39 @@
 <ul>
   <li>5.6.x</li>
   <li>5.5.x </li>
-  <li>
-    <p>7.0.2 (supported by Magento version 2.0.1 and later only)</p>
-
-    <p>We require the <a href="https://pecl.php.net/package/zip" target="_blank"><code>zip</code></a> PHP extension with PHP 7.x. Consult your repository for the exact name of this extension.</p>
-  </li>
+  <li>7.0.2 (supported by Magento version 2.0.1 and later only)</li>
 </ul>
-
-<div class="bs-callout bs-callout-info" id="info">
-   <span class="glyphicon-class">
-  	<p>There is a <a href="https://bugs.php.net/bug.php?id=66985" target="_blank">known PHP issue</a> with versions:</p>
-  		<ul><li>5.5.10&ndash;5.5.16</li>
-		<li>5.6.0</li></ul>
-	<p>This issue prevents users from being able to set their timezones to Greenwich time and several other time zones. </p>
-	<p>To work around the issue, see <a href="/guides/v2.0/install-gde/trouble/tshoot_install-issues.html#known-devrc-php">Known issue with certain PHP versions</a>.</p>
-	<li>Magento no longer supports PHP 5.4.</li></span>
-</div>
 
 <p>Documentation: <a href="/guides/v2.0/install-gde/prereq/php-centos.html" target="_blank">CentOS</a>, <a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html" target="_blank">Ubuntu</a></p>
 
 <h4 id="required-php-extensions">Required PHP extensions:</h4>
 
 <ul>
-  <li><a href="http://php.net/manual/en/ref.pdo-mysql.php" target="_blank">PDO/MySQL</a></li>
+  <li><a href="http://php.net/manual/en/book.bc.php" target="_blank">bc-math</a> <img src="/common/images/ee-only_small.png" /></li>
+  <li><a href="http://php.net/manual/en/book.curl.php" target="_blank">curl</a></li>
+  <li><a href="http://php.net/manual/en/book.image.php" target="_blank">gd</a>, <a href="http://php.net/manual/en/book.imagick.php" target="_blank">ImageMagick 6.3.7</a> (or later) or both</li>
+  <li><a href="http://php.net/manual/en/book.intl.php" target="_blank">intl</a></li>
   <li><a href="http://php.net/manual/en/book.mbstring.php" target="_blank">mbstring</a></li>
   <li><a href="http://php.net/manual/en/book.mcrypt.php" target="_blank">mcrypt</a></li>
   <li><a href="http://php.net/manual/en/book.mhash.php" target="_blank">mhash</a></li>
+  <li><a href="http://php.net/manual/en/book.openssl.php" target="_blank">openssl</a></li>
+  <li><a href="http://php.net/manual/en/ref.pdo-mysql.php" target="_blank">PDO/MySQL</a></li>
   <li><a href="http://php.net/manual/en/book.simplexml.php" target="_blank">SimpleXML</a></li>
-  <li><a href="http://php.net/manual/en/book.curl.php" target="_blank">curl</a></li>
-  <li><a href="http://php.net/manual/en/book.xsl.php" target="_blank">xsl</a> </li>
-  <li><a href="http://php.net/manual/en/book.image.php" target="_blank">gd</a>, <a href="http://php.net/manual/en/book.imagick.php" target="_blank">ImageMagick 6.3.7</a> (or later) or both</li>
   <li><a href="http://php.net/manual/en/book.soap.php" target="_blank">soap</a></li>
   <li><a href="http://php.net/manual/en/book.xml.php" target="_blank">xml</a></li>
-  <li><a href="http://php.net/manual/en/book.intl.php" target="_blank">intl</a></li>
-  <li><a href="http://php.net/manual/en/book.bc.php" target="_blank">bc-math</a> <img src="/common/images/ee-only_small.png" /></li>
-  <li><a href="http://php.net/manual/en/book.openssl.php" target="_blank">openssl</a></li>
+  <li><a href="http://php.net/manual/en/book.xsl.php" target="_blank">xsl</a></li>
+  <li><a href="http://php.net/manual/en/book.zip.php" target="_blank">zip</a> </li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-	<p>The PHP <code>openssl</code> extension is installed automatically in some cases. To check to see whether you have it or not, use a <a href="/guides/v2.0/install-gde/prereq/optional.html#install-optional-phpinfo">phpinfo.php</a> page.</p>
-</div>
+<h4 id="php-opcache">PHP OPcache</h4>
+<p>We strongly recommend you verify the  <a href="http://php.net/manual/en/intro.opcache.php" target="_blank">PHP OPcache</a> is enabled for performance reasons. The OPcache is enabled in many PHP distributions. To verify if it is installed, see our PHP documentation for <a href="/guides/v2.0/install-gde/prereq/php-centos.html" target="_blank">CentOS</a> or <a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html" target="_blank">Ubuntu</a>.</p>
+
+<p>If you must install it separately, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p>
+
+<h4 id="php-settings">PHP settings</h4>
+<p>We recommend particular PHP configuration settings, such as <code>memory_limit</code>, that can avoid common problems when using Magento.</p>
+
+<p>For more information, see our recommendations for <a href="/guides/v2.0/install-gde/prereq/php-centos.html#instgde-prereq-timezone">CentOS</a> and <a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html#instgde-prereq-timezone">Ubuntu</a>. </p>
 
 <h3 id="ssl">SSL</h3>
 <ul>
