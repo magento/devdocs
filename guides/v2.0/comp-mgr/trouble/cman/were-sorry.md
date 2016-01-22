@@ -33,13 +33,38 @@ In some cases (especially if you downloaded the Magento software from <a href="h
 The updater application uses a cron job to run the upgrade; if it's not initialized, your update fails.
 
 #### Solution
-Run `composer install` in the updater's root directory to resolve dependencies and initialize it as follows:
+Modify Magento's `composer.json` to reference the `https://repo.magento.com` repository and run `composer install` in the updater's root directory to resolve dependencies and initialize it as follows:
 
 1.	Log in to your Magento server as the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
-2.	Change to the updater root directory:
+2.	Change to your Magento installation directory.
+3.	Back up your existing `composer.json`:
 
-		cd <your Magento install dir>/update
-3.	Enter the following command:
+		cp composer.json composer.json.bak
+
+4.	Open `composer.json` in a text editor.
+5.	To the `repositories` section, add the following:
+
+	 {% highlight JSON %}
+      
+		"type": "composer",
+        "url": "https://repo.magento.com/"
+       	}
+    ]
+    {% endhighlight %}
+
+    Example:
+
+    {% highlight JSON %}
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://repo.magento.com/"
+        }
+    ]
+    {% endhighlight %}
+6.	Save your changes to `composer.json` and exit the text editor.
+7.	Change to the `update` subdirectory, where the updater is located.
+8.	Enter the following command:
 
 		composer install
-4.	After the command completes, try the upgrade again.
+9.	After the command completes, try the upgrade again.
