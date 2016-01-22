@@ -797,16 +797,39 @@
 <p>The updater application uses a cron job to run the upgrade; if it’s not initialized, your update fails.</p>
 
 <h4 id="solution-1">Solution</h4>
-<p>Run <code>composer install</code> in the updater’s root directory to resolve dependencies and initialize it as follows:</p>
+<p>Modify Magento’s <code>composer.json</code> to reference the <code>https://repo.magento.com</code> repository and run <code>composer install</code> in the updater’s root directory to resolve dependencies and initialize it as follows:</p>
 
 <ol>
   <li>Log in to your Magento server as the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
+  <li>Change to your Magento installation directory.</li>
   <li>
-    <p>Change to the updater root directory:</p>
+    <p>Back up your existing <code>composer.json</code>:</p>
 
-    <pre><code>cd &lt;your Magento install dir&gt;/update
+    <pre><code>cp composer.json composer.json.bak
 </code></pre>
   </li>
+  <li>Open <code>composer.json</code> in a text editor.</li>
+  <li>To the <code>repositories</code> section, add the following:</li>
+</ol>
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">&quot;type&quot;</span><span class="err">:</span> <span class="s2">&quot;composer&quot;</span><span class="err">,</span>
+        <span class="s2">&quot;url&quot;</span><span class="err">:</span> <span class="s2">&quot;https://repo.magento.com/&quot;</span>
+       	<span class="err">}</span>
+    <span class="err">]</span></code></pre></div>
+
+<pre><code>Example:
+</code></pre>
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">&quot;repositories&quot;</span><span class="err">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;composer&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://repo.magento.com/&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span></code></pre></div>
+
+<ol>
+  <li>Save your changes to <code>composer.json</code> and exit the text editor.</li>
+  <li>Change to the <code>update</code> subdirectory, where the updater is located.</li>
   <li>
     <p>Enter the following command:</p>
 
