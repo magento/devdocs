@@ -13,7 +13,7 @@ redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-structure.html
 A <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-general.html#theme-gen-overview" target="_blank">design theme</a> is an important part of the Magento application. This topic describes the file structure of a Magento theme.
 
 <h2 id="theme-structure-loc">Magento theme location</h2>
-Storefront themes are conventionally located under `app/design/frontend/<Vendor>/`. Though technically they can be located in other directories. For example Magento built-in themes can located under `vendor/magento/theme-frontend-<theme_code>` when a Magento instance is deployed from the Composer repository.  
+Storefront themes are conventionally located under `app/design/frontend/<Vendor>/`. Though technically they can reside in other directories. For example Magento built-in themes can be located under `vendor/magento/theme-frontend-<theme_code>` when a Magento instance is deployed from the Composer repository.  
 
 Each theme must be stored in a separate directory:
 <pre>

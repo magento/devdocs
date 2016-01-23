@@ -16,6 +16,10 @@ This section discusses how to start the Component Manager, which updates or unin
 *	Themes (change the look and feel of your storefront and Admin)
 *	Language packages (localize the storefront and Admin)
 
+<div class="bs-callout bs-callout-warning">
+    <p>If you installed the Magento application by <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">cloning the GitHub repository</a>, you <em>cannot</em> use the Component Manager utility to update components. Instead, you must <a href="{{ site.gdeurl }}install-gde/install/cli/dev_options.html">update them manually</a>.</p>
+</div>
+
 <h2 id="compman-prereq">Prerequisites</h2>
 Before continuing, complete all tasks discussed in <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.
 

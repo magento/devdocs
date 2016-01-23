@@ -62,17 +62,6 @@ Certain Magento components and product editions are represented with `composer.j
 <td> This file represents Magento Community Edition product. The package only includes composer.json that declares the dependencies on magento components (modules, themes, and so on) and third-party components. This can be used by Magento system integrators to deploy Magento using Composer. </td>
 </tr>
 <tr>
-<td>base</td>
-<td> <tt>composer.json</tt> </td>
-<td>
-<pre>magento/magento2-base</pre>
-</td>
-<td>
-<pre>magento2-component</pre>
-</td>
-<td> This file represents Magento Community Edition base package. This package doesn't include any of Magento components (modules, themes, and so on.) The package contains all other files/directories besides the components and lists the latter at the "require" section.</td>
-</tr>
-<tr>
 <td>module </td>
 <td> <tt>app/code/Magento/&lt;Module&gt;/composer.json</tt> </td>
 <td>

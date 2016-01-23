@@ -12,7 +12,7 @@
     <div id="magento-com">
         <div class="intro-paragraph">
             <div class="container">
-                <a href="http://www.magento.com/"><img src="{{ site.baseurl }}i/logo-gl-footer.png" id="logo" alt="Magento an ebay inc company" /></a>
+                <a href="http://www.magento.com/"><img src="{{ site.baseurl }}i/magento_logo_footer.svg" alt="Magento an ebay inc company" /></a>
                 <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
             </div>
         </div>
@@ -87,55 +87,17 @@
             <ul class="nav">
                 <li><a title="Privacy Policy" href="http://magento.com/legal/terms/privacy">Privacy Policy</a></li>
                 <li><a title="Terms of Service" href="http://magento.com/legal/terms">Terms of Service</a></li>
-                <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark
-                    FAQ</a></li>
+                <li><a title="License/Trademark FAQ" href="http://magento.com/legal/licensing">License/Trademark FAQ</a></li>
             </ul>
         </div>
-        <div class="copyright-date">&copy; 2015 Magento, Inc. All rights reserved.</div>
+        <div class="copyright-date">&copy; {{ site.time | date: '%Y' }} Magento, Inc. All rights reserved.</div>
     </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-
 <script src="{{ site.baseurl }}common/js/jsCookie.js"></script>
 <script src="{{ site.baseurl }}common/js/devdocs.js"></script>
 
-
-
-<script>
-devdocs();
-</script>
-
-
-<script src="{{ site.baseurl }}js/classie.js"></script>
-<script src="{{ site.baseurl }}js/uislideform.js"></script>
-<script type="text/javascript">
-    new UISlideform( document.getElementById( 'sb-email' ), 'email' );
-    var newsFlag = window.location.hash.indexOf("newsletter");
-    if(newsFlag == 1) {
-        jQuery('#Emailemail_msg').fadeOut('slow');
-        jQuery('#nws-subscribed').fadeIn('slow');
-        jQuery('#sb-email').css('display', 'none');
-    }
-    else {
-        jQuery('#nws-subscribed').fadeOut('slow');
-    }
-    function validateForm() {
-        var x = document.forms["mktForm_1182"]["Email"].value;
-        var atpos = x.indexOf("@");
-        var dotpos = x.lastIndexOf(".");
-        if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length) {
-            jQuery('.email-invalid').show();
-            return false;
-        }
-        else {
-            jQuery.cookie('mage_drupal_newsletter', 10);
-            jQuery('.email-invalid').hide();
-            jQuery('.email-ty').show();
-            return true;
-        }
-    }
-</script>
 <script type="text/javascript">
     (function() {
         var didInit = false;
@@ -159,8 +121,19 @@ devdocs();
     })();
 </script>
 
-<!-- Docs scripts (just in case) -->
 <script src="{{ site.baseurl }}js/app-min.js"></script>
+
+
+<!--Google Custom Search-->
+<script>
+  (function() {
+    var cx = '018116925022773002786:klu67apuihk';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
 
 
 <!--Google Analytics-->

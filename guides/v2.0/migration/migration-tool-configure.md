@@ -16,13 +16,18 @@ redirect_from: /guides/v1.0/migration/migration-tool-configure.html
 *	<a href="#migration-config">Work with configuration and mapping files</a>
 
 <h2 id="migration-configure-over">Overview of data migration tool configuration</h2>
-After you install the data migration tool, the following directories contain mapping and configuration files:
+After you install the data migration tool, the following directory contains mapping and configuration files:
 
-*	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/ce-to-ce`: Configuration and scripts for migrating from Magento 1 CE to Magento 2 CE
-*	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/ce-to-ee`: Configuration and scripts for migrating from Magento 1 CE to Magento 2 EE
-*	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/ee-to-ee`: Configuration and scripts for migrating from Magento 1 EE to Magento 2 EE
+*	Magento CE:
 
-Each of the preceding directories contains subdirectories for each supported version.
+	*	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/ce-to-ce`: Configuration and scripts for migrating from Magento 1 CE to Magento 2 CE
+
+*	Magento EE:
+
+	*	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/ce-to-ee`: Configuration and scripts for migrating from Magento 1 CE to Magento 2 EE
+	*	`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/ee-to-ee`: Configuration and scripts for migrating from Magento 1 EE to Magento 2 EE 
+
+The preceding directories contain subdirectories for each supported version.
 
 <h2 id="migration-configure">Configuring the migration</h2>
 Before you migrate any data, you must create a `config.xml` configuration file from the provided sample.
@@ -42,10 +47,10 @@ To create a configuration file:
 
 {% highlight xml %}
 <source>
-    <database host="localhost" name="magento1" user="root"/>
+    <database host="127.0.0.1" name="magento1" user="root"/>
 </source>
 <destination>
-    <database host="localhost" name="magento2" user="root"/>
+    <database host="127.0.0.1" name="magento2" user="root"/>
 </destination>
 <options>
     <crypt_key />
@@ -63,10 +68,10 @@ For example, if your database owner's user name is `root` with password `pass` a
 
 {% highlight xml %}
 <source>
-    <database host="localhost" name="magento1" user="root" password="pass"/>
+    <database host="127.0.0.1" name="magento1" user="root" password="pass"/>
 </source>
 <destination>
-    <database host="localhost" name="magento2" user="root" password="pass"/>
+    <database host="127.0.0.1" name="magento2" user="root" password="pass"/>
 </destination>
 <options>
     <source_prefix>magento1</source_prefix>
@@ -92,7 +97,7 @@ To use the mapping files:
 2.	Edit them using the schema located in `<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc`.
 3.	Then change config.xml in `<options>` node with the new name of the file.
 
-The `<your Magento 2 install dir>/vendor/magento/data-migration-tool/<ce or ee version>/etc` directory contains the following configuration files:
+The `<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc` and `<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<ce version>` directories contain the following configuration files:
 
 Even though you will be working with `map.xml.dist` file most of the time, the following table discusses each mapping and other files.
 
