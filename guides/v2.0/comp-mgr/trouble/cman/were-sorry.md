@@ -49,7 +49,6 @@ Modify Magento's `composer.json` to reference the `https://repo.magento.com` rep
 				"type": "composer",
 				"url": "https://repo.magento.com/"
 			}
-		]
 
     Example:
 
