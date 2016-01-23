@@ -95,3 +95,6 @@ However, in some situations (particularly, deploying Magento to production), you
 
 	*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento">Install the Magento software using the command line</a>
 	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>
+
+*[contributing developer]: A developer who contributes code to the Magento 2 CE codebase
+*[contributing developers]: Developers who contribute code to the Magento 2 CE codebase

@@ -4,13 +4,15 @@ group: install_cli
 subgroup: 99_contrib
 title: Add or update components
 menu_title: Add or update components
-menu_order: 2
+menu_order: 5
 menu_node: 
 github_link: install-gde/install/cli/dev_add-update.md
 ---
 
 
-Contributing developers update components by specifying components and their versions in Magento's `composer.json`. You *cannot* use the graphical Component Manager or System Upgrade utilities to do this.
+A contributing developer updates components by specifying components and their versions in Magento's `composer.json`. 
+
+To update components if you're *not* a contributing developer, see <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html">Updating the Magento application and components</a>.
 
 You can either add a `require` section to `composer.json` or you can use the `composer require` command as follows:
 
@@ -49,3 +51,6 @@ Save your changes to `composer.json`, exit the text editor, and enter `composer 
 ### For more information
 If you have issues, see <a href="https://getcomposer.org/doc/articles/troubleshooting.md" target="_blank">Composer troubleshooting</a>.
 
+<!-- ABBREVIATIONS -->
+
+*[contributing developer]: A developer who contributes code to the Magento 2 CE codebase
