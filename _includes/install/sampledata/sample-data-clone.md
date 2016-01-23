@@ -5,19 +5,27 @@ This topic discusses how to get the Magento sample data if you cloned the Magent
 
 If you're not a contributing developer, choose one of the other options displayed in the table of contents on the left side of the page.
 
-<div class="bs-callout bs-callout-warning">
-    <p>You can use sample data with either the <code>develop</code> branch (more current) or a released branch (such as <code>2.0</code> or <code>2.0.1</code> (more stable). We recommend you use a released branch because it's more stable. If you're contributing code to the Magento 2 repository and you need the most recent code, use the <code>develop</code> branch.</p>
-    <p>Regardless of the branch you choose, you must <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html#instgde-prereq-compose-clone">clone</a> the corresponding branch of the Magento 2 GitHub repository. For example, sample data for the <code>develop</code> branch can be used <em>only</em> with the Magento 2 <code>develop</code> branch.</p>
-</div>
+See the following sections:
+
+*	<a href="#clone-sample-data-deploy">Released branch&mdash;Install sample data modules</a>
+*   <a href="#clone-sample-data-dev">`develop` branch&mdash;Install sample data modules</a>
+
+<h2 id="clone-sample-data-deploy">Released branch&mdash;Install sample data modules</h2>
+This section discusses how to install sample data if you got the Magento software in any of the following ways:
+
+*   Downloaded a compressed archive
+*   Used `composer create-project`
+
+If you're a contributing developer, see <a href="#clone-sample-data-deploy">Released branch&mdash;Install sample data modules</a>.
+
+You can use this method of getting sample data if you used Magento Community Edition (CE) or Enterprise Edition (EE).
 
 See the following sections:
 
-*	<a href="#sample-prereq">Sample data prerequisites</a>
-*	<a href="#clone-sample-data-deploy">Released branch&mdash;Install sample data modules</a>
-*   <a href="#clone-sample-data-dev">`develop` branch&mdash;Install sample data modules</a>
-*	<a href="#clone-file-perms">Set file system ownership and permissions</a>
+*   [Sample data prerequisites](#sample-data-rel-prereq)
+*   [Install released version sample data](#sample-data-rel-inst)
 
-<h2 id="sample-prereq">Sample data prerequisites</h2>
+### Sample data prerequisites {#sample-data-rel-prereq}
 Before you install sample data, you must update Magento's `composer.json` to get components from `https://repo.magento.com`.
 
 1.  Log in to the Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
@@ -32,14 +40,14 @@ Before you install sample data, you must update Magento's `composer.json` to get
 
         composer config repositories.magento composer https://repo.magento.com
 
-4.	Optionally install the Magento software. (You can also do this after you install sample data.)
+4.  Optionally install the Magento software. (You can also do this after you install sample data.)
 
-	*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">Install using the command line</a>
-	*	<a href="{{ site.gdeurl }}install-gde/install/web/install-web.html">Install using the Setup Wizard</a>
+    *   <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">Install using the command line</a>
+    *   <a href="{{ site.gdeurl }}install-gde/install/web/install-web.html">Install using the Setup Wizard</a>
 
 4.  Continue with the next section.
 
-<h2 id="clone-sample-data-deploy">Install sample data modules</h2>
+### Install released version sample data {#sample-data-rel-inst}
 To install sample data using the command line, enter the following command as the Magento file system owner:
 
     php <your Magento install dir>/bin/magento sampledata:deploy [module-list]
@@ -63,11 +71,22 @@ The complete list of sample data modules follows:
 
 {% include install/sampledata/sample-data_list-of-modules.md %}
 
+#### Next step
+Install the Magento software:
+
+*   <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">Command line</a>
+*   <a href="{{ site.gdeurl }}install-gde/install/web/install-web.html">Setup Wizard</a>
+
 ## `develop` branch&mdash;Install sample data modules {#clone-sample-data-dev}
-You can use this method of installing sample data *only* if all of the following are true:
+Contributing developers can use this method of installing sample data *only* if all of the following are true:
 
 *   You use Magento CE
 *   You <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">cloned the Magento 2 `develop` branch</a>.
+
+<div class="bs-callout bs-callout-warning">
+    <p>You can use sample data with either the <code>develop</code> branch (more current) or a released branch (such as <code>2.0</code> or <code>2.0.1</code> (more stable)). We recommend you use a released branch because it's more stable. If you're contributing code to the Magento 2 repository and you need the most recent code, use the <code>develop</code> branch.</p>
+    <p>Regardless of the branch you choose, you must <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">clone</a> the corresponding branch of the Magento 2 GitHub repository. For example, sample data for the <code>develop</code> branch can be used <em>only</em> with the Magento 2 <code>develop</code> branch.</p>
+</div>
 
 ### Clone the sample data repository {#clone-sample-repo}
 This section discusses how to install Magento sample data by cloning the sample data repository. You can clone the sample data repository in any of the following ways:
@@ -119,7 +138,7 @@ To clone the Magento sample data GitHub repository using the HTTPS protocol:
 3.  Click **Copy to clipboard**.
 
     The following figure shows an example.
-    
+
     <img src="{{ site.baseurl }}common/images/install_mage2_clone-https.png" width="650px" alt="Clone the Magento GitHub repository using HTTPS">
 2.  Change to your web server's docroot directory.
 
@@ -142,7 +161,7 @@ To clone the Magento sample data GitHub repository using the HTTPS protocol:
 7.  Wait for the command to complete.
 8.  See the next section.
 
-<h2 id="clone-file-perms">Set file system ownership and permissions</h2>
+<h3 id="clone-file-perms">Set file system ownership and permissions</h3>
 Because the `php build-sample-data.php` script creates symlinks between the sample data repository and your Magento 2 repository, you must set file system permissions and ownership in the sample data repository. Failure to do so results in errors accessing the storefront.
 
 To set file system permissions and ownership on the sample data repository:
@@ -175,3 +194,9 @@ Install the Magento software:
 
 *   <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">Command line</a>
 *   <a href="{{ site.gdeurl }}install-gde/install/web/install-web.html">Setup Wizard</a>
+
+<!-- ABBREVIATIONS -->
+
+*[contributing developer]: A developer who contributes code to the Magento 2 CE codebase
+*[contributing developers]: Developers who contribute code to the Magento 2 CE codebase
+*[Contributing developers]: Developers who contribute code to the Magento 2 CE codebase
