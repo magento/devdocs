@@ -82,7 +82,8 @@ To clone the Magento sample data GitHub repository using the SSH protocol:
 2.  Next to the name of the branch, click **SSH** from the list.
 3.  Click **Copy to clipboard**
 
-    The following figure shows an example.<br>
+    The following figure shows an example.
+
     <img src="{{ site.baseurl }}common/images/install_mage2_clone-ssh.png" width="650px" alt="Clone the Magento GitHub repository using SSH">
 4.  Change to your web server's docroot directory.
 
@@ -105,7 +106,7 @@ fatal: The remote end hung up unexpectedly</pre>
 7.  Change to the `<your Magento sample data clone dir>/dev/tools` directory.
 8.  Enter the following command:
         
-        php build-sample-data.php -- --ce-source="<your Magento CE install dir>"
+        php -f build-sample-data.php -- --ce-source="<your Magento CE install dir>"
 9.  Wait for the command to complete.
 
 10. See <a href="#instgde-prereq-compose-clone-perms">Set file system permissions and ownership</a>.
@@ -118,7 +119,8 @@ To clone the Magento sample data GitHub repository using the HTTPS protocol:
 3.  Click **Copy to clipboard**.
 
     The following figure shows an example.
-    <img src="{{ site.baseurl }}common/images/install_mage2_clone-https.png" alt="Clone the Magento GitHub repository using HTTPS">
+    
+    <img src="{{ site.baseurl }}common/images/install_mage2_clone-https.png" width="650px" alt="Clone the Magento GitHub repository using HTTPS">
 2.  Change to your web server's docroot directory.
 
     Typically, for Ubuntu, it's `/var/www` and for CentOS it's `/var/www/html`.
@@ -131,15 +133,43 @@ To clone the Magento sample data GitHub repository using the HTTPS protocol:
 5.  Change to the `<your Magento sample data clone dir>/dev/tools` directory.
 6.  Enter the following command:
 
-        php build-sample-data.php -- --ce-source="&lt;your Magento CE install dir>"
+        php -f build-sample-data.php -- --ce-source="<your Magento CE install dir>"
+
+    For example,
+
+        php build-sample-data.php -- --ce-source="/var/www/magento2"
 
 7.  Wait for the command to complete.
 8.  See the next section.
 
-
 <h2 id="clone-file-perms">Set file system ownership and permissions</h2>
-{% include install/file-system-perms2-how.md %}
+Because the `php build-sample-data.php` script creates symlinks between the sample data repository and your Magento 2 repository, you must set file system permissions and ownership in the sample data repository. Failure to do so results in errors accessing the storefront.
+
+To set file system permissions and ownership on the sample data repository:
+
+1.  Change to your sample data clone directory.
+2.  Set ownership:
+
+        chown -R :<your web server group name> .
+
+    Typical examples:
+
+    CentOS: `chown -R :apache .`
+
+    Ubuntu: `chown -R :www-data .`
+
+3.  Set permissions:
+
+        find . -type d -exec chmod 770 {} \; && find . -type f -exec chmod 660 {} \;
     
+    If you must enter the commands as <code>sudo</code>, use:
+
+        sudo find . -type d -exec chmod 770 {} \; && sudo find . -type f -exec chmod 660 {} \;
+3.  Clear static files:
+
+        cd <your Magento CE install dir>/var
+        rm -rf cache/* page_cache/* generation/*
+ 
 #### Next step
 Install the Magento software:
 
