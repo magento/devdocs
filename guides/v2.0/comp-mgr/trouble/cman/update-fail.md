@@ -5,7 +5,7 @@ subgroup: ZZ_Troubleshooting
 title: Roll back after update failure
 menu_title: Roll back after update failure
 menu_node: 
-menu_order: 3
+menu_order: 100
 github_link: comp-mgr/trouble/cman/update-fail.md
 ---
 
