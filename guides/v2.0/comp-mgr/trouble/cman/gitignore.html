@@ -5,13 +5,13 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Troubleshooting suggestions</title>
+	<title>Missing `.gitignore` files</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
-	<link rel="canonical" href="//guides/v2.0/comp-mgr/trouble/tshoot.html">
+	<link rel="canonical" href="//guides/v2.0/comp-mgr/trouble/cman/gitignore.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -130,9 +130,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Troubleshooting suggestions</h1>
+		<h1 class="page-heading">Missing `.gitignore` files</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/comp-mgr/trouble/tshoot.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/comp-mgr/trouble/cman/gitignore.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -596,7 +596,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/comp-mgr/trouble/tshoot.html">Troubleshooting suggestions</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/comp-mgr/trouble/tshoot.html">Troubleshooting suggestions</a></li>
 									
 								
 
@@ -615,7 +615,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/gitignore.html">Missing `.gitignore` files</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/comp-mgr/trouble/cman/gitignore.html">Missing `.gitignore` files</a></li>
 
 									
 
@@ -779,14 +779,24 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<p>The following topics discuss Component Manager and System upgrade errors and suggested solutions:</p>
+		<h3 id="missing-ignore">Problem: missing <code>.gitignore</code> files</h3>
+<p>If you downloaded a compressed archive, there might have been missing <code>.gitignore</code> files that prevent the upgrade from completing properly. To apply our update, patch <code>magento/magento-composer-installer</code> then run <code>composer update</code> from your Magento installation directory. </p>
 
-<ul>
-  <li><a href="/guides/v2.0/comp-mgr/trouble/cman/cron.html">Troubleshoot cron</a></li>
-  <li><a href="/guides/v2.0/comp-mgr/trouble/cman/component-depend.html">Troubleshoot component dependencies</a></li>
-  <li><a href="/guides/v2.0/comp-mgr/trouble/cman/updater.html">Troubleshoot the updater application</a></li>
-  <li><a href="/guides/v2.0/comp-mgr/trouble/cman/tshoot_backup.html">Troubleshoot backup</a></li>
-</ul>
+<h4 id="solution">Solution</h4>
+<p>To solve this issue:</p>
+
+<ol>
+  <li>Log in to your Magento server as the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
+  <li>Change to your Magento installation directory.</li>
+  <li>
+    <p>Run the following commands in the order shown:</p>
+
+    <pre><code>composer update magento/magento-composer-installer
+composer update
+</code></pre>
+  </li>
+  <li>Try your upgrade again.</li>
+</ol>
 
 
 		</div>

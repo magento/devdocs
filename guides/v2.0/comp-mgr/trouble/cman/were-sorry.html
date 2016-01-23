@@ -615,15 +615,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/update-fail.html">Roll back after update failure</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/component-depend.html">Resolve component dependencies</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/gitignore.html">Missing `.gitignore` files</a></li>
 
 									
 
@@ -640,6 +632,22 @@
 									
 
 									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/updater.html">Troubleshoot the updater application</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/update-fail.html">Roll back after update failure</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/component-depend.html">Resolve component dependencies</a></li>
 
 									
 
@@ -781,6 +789,7 @@
 <ul>
   <li><a href="#not-auth">Problem: you’re not authenticated</a></li>
   <li><a href="#updater">Problem: the updater application isn’t initialized</a></li>
+  <li><a href="#missing-ignore">Problem: missing <code>.gitignore</code> files</a></li>
 </ul>
 
 <h3 id="not-auth">Problem: you’re not authenticated</h3>
@@ -816,7 +825,6 @@
         "type": "composer",
         "url": "https://repo.magento.com/"
     }
-]
 </code></pre>
 
     <p>Example:</p>
@@ -838,6 +846,25 @@
 </code></pre>
   </li>
   <li>After the command completes, try the upgrade again.</li>
+</ol>
+
+<h3 id="missing-ignore">Problem: missing <code>.gitignore</code> files</h3>
+<p>If you downloaded a compressed archive, there might have been missing <code>.gitignore</code> files that prevent the upgrade from completing properly. To apply our update, patch <code>magento/magento-composer-installer</code> then run <code>composer update</code> from your Magento installation directory. </p>
+
+<h4 id="solution-2">Solution</h4>
+<p>To solve this issue:</p>
+
+<ol>
+  <li>Log in to your Magento server as the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
+  <li>Change to your Magento installation directory.</li>
+  <li>
+    <p>Run the following commands in the order shown:</p>
+
+    <pre><code>composer update magento/magento-composer-installer
+composer update
+</code></pre>
+  </li>
+  <li>Try your upgrade again.</li>
 </ol>
 
 
