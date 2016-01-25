@@ -1,6 +1,6 @@
 ---
 layout: default
-group: 
+group: compman
 subgroup: ZZ_Troubleshooting
 title: Missing `.gitignore` files
 menu_title: Missing `.gitignore` files
