@@ -733,32 +733,61 @@
 660 permissions mean the owner and the group can read and write but other users have no permissions.</li></ul>
 
 <h3 id="install-perms-set">File system permissions and ownership</h3>
-<p>Use the following steps:</p>
-<ol><li>Change to the Magento installation directory:<br />
-	<pre>cd &lt;web server docroot&gt;/&lt;magento2 base dir&gt;</pre>
-	The base directory is typically a subdirectory named <code>magento2</code> under your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.<br />
+<div>
 
-	Examples:
-	<ul><li>Ubuntu: <code>/var/www/magento2</code></li>
-	<li>CentOS: <code>/var/www/html/magento2</code></li></ul>
-</li>
-<li>Set ownership:<br />
-<pre>chown -R :&lt;your web server group name&gt; .</pre>
-Typical examples:<br /><br />
-CentOS: <code>chown -R :apache .</code><br />
-Ubuntu: <code>chown -R :www-data .</code></li>
-<li>Set permissions:<br />
-	<pre>find . -type d -exec chmod 770 {} \; &amp;&amp; find . -type f -exec chmod 660 {} \; &amp;&amp; chmod u+x bin/magento</pre>
-	If you must enter the commands as <code>sudo</code>, use:<br />
-	<pre>sudo find . -type d -exec chmod 770 {} \; &amp;&amp; sudo find . -type f -exec chmod 660 {} \; &amp;&amp; sudo chmod u+x bin/magento</pre></li></ol>
+  <p>Use the following steps:</p>
 
-<h4 id="next-step">Next step</h4>
-<p>Install the Magento software:</p>
+  <ol>
+    <li>If you haven’t already done so, log in to your Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
+    <li>
+      <p>Change to the Magento installation directory:</p>
 
-<ul>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli.html">Command line</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/web/install-web.html">Setup Wizard</a></li>
-</ul>
+      <pre><code>cd &lt;web server docroot&gt;/&lt;magento2 base dir&gt;
+</code></pre>
+
+      <p>The base directory is typically a subdirectory named <code>magento2</code> under your web server’s docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.<br /></p>
+
+      <p>Examples:</p>
+
+      <ul>
+        <li>Ubuntu: <code>/var/www/magento2</code></li>
+        <li>CentOS: <code>/var/www/html/magento2</code></li>
+      </ul>
+    </li>
+    <li>
+      <p>Set ownership:</p>
+
+      <pre><code>chown -R :&lt;your web server group name&gt; .
+</code></pre>
+
+      <p>Typical examples:</p>
+
+      <ul>
+        <li>CentOS: <code>chown -R :apache .</code></li>
+        <li>Ubuntu: <code>chown -R :www-data .</code></li>
+      </ul>
+    </li>
+    <li>
+      <p>Set permissions:</p>
+
+      <pre><code>find . -type d -exec chmod 770 {} \; &amp;&amp; find . -type f -exec chmod 660 {} \; &amp;&amp; chmod u+x bin/magento
+</code></pre>
+
+      <p>If you must enter the commands as <code>sudo</code>, use:</p>
+
+      <pre><code>sudo find . -type d -exec chmod 770 {} \; &amp;&amp; sudo find . -type f -exec chmod 660 {} \; &amp;&amp; sudo chmod u+x bin/magento
+</code></pre>
+    </li>
+  </ol>
+
+  <h4 id="next-step">Next step</h4>
+  <p>Install the Magento software:</p>
+
+  <ul>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli.html">Command line</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/web/install-web.html">Setup Wizard</a></li>
+  </ul>
+</div>
 
 
 		</div>

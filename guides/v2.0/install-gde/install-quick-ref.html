@@ -699,79 +699,108 @@ composer create-project --repository-url=https://repo.magento.com/ magento/proje
 
 <h3 id="set-file-system-ownership-and-permissions">Set file system ownership and permissions</h3>
 
-<p>Use the following steps:</p>
-<ol><li>Change to the Magento installation directory:<br />
-	<pre>cd &lt;web server docroot&gt;/&lt;magento2 base dir&gt;</pre>
-	The base directory is typically a subdirectory named <code>magento2</code> under your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.<br />
+<div>
 
-	Examples:
-	<ul><li>Ubuntu: <code>/var/www/magento2</code></li>
-	<li>CentOS: <code>/var/www/html/magento2</code></li></ul>
-</li>
-<li>Set ownership:<br />
-<pre>chown -R :&lt;your web server group name&gt; .</pre>
-Typical examples:<br /><br />
-CentOS: <code>chown -R :apache .</code><br />
-Ubuntu: <code>chown -R :www-data .</code></li>
-<li>Set permissions:<br />
-	<pre>find . -type d -exec chmod 770 {} \; &amp;&amp; find . -type f -exec chmod 660 {} \; &amp;&amp; chmod u+x bin/magento</pre>
-	If you must enter the commands as <code>sudo</code>, use:<br />
-	<pre>sudo find . -type d -exec chmod 770 {} \; &amp;&amp; sudo find . -type f -exec chmod 660 {} \; &amp;&amp; sudo chmod u+x bin/magento</pre></li></ol>
+  <p>Use the following steps:</p>
 
-<h2 id="installation-part-2-installing-the-magento-software">Installation part 2: Installing the Magento software</h2>
-<p>You can choose to install the Magento software using either a <a href="/guides/v2.0/install-gde/install/web/install-web.html">web-based Setup Wizard</a> or using the <a href="/guides/v2.0/install-gde/install/cli/install-cli.html">command line</a>.</p>
+  <ol>
+    <li>If you haven’t already done so, log in to your Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
+    <li>
+      <p>Change to the Magento installation directory:</p>
 
-<p>The following example shows how to install using the command line with the following options:</p>
+      <pre><code>cd &lt;web server docroot&gt;/&lt;magento2 base dir&gt;
+</code></pre>
 
-<ul>
-  <li>
-    <p>The Magento software is installed in the <code>/var/www/html/magento2</code> directory and the path to the Magento Admin is <code>admin</code>; therefore:</p>
+      <p>The base directory is typically a subdirectory named <code>magento2</code> under your web server’s docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.<br /></p>
 
-    <p>Your storefront URL is <code>http://192.0.2.5</code></p>
-  </li>
-  <li>
-    <p>The database server is on the same host as the web server.</p>
+      <p>Examples:</p>
 
-    <p>The database name is <code>magento</code>, and the user name and password are both <code>magento</code></p>
-  </li>
-  <li>
-    <p>Uses server rewrites</p>
-  </li>
-  <li>
-    <p>The Magento administrator has the following properties:</p>
+      <ul>
+        <li>Ubuntu: <code>/var/www/magento2</code></li>
+        <li>CentOS: <code>/var/www/html/magento2</code></li>
+      </ul>
+    </li>
+    <li>
+      <p>Set ownership:</p>
 
-    <ul>
-      <li>First and last name are <code>Magento User</code></li>
-      <li>User name is <code>admin</code> and the password is <code>admin123</code></li>
-      <li>E-mail address is <code>user@example.com</code></li>
-    </ul>
-  </li>
-  <li>Default language is <code>en_US</code> (U.S. English)</li>
-  <li>Default currency is U.S. dollars</li>
-  <li>
-    <p>Default time zone is U.S. Central (America/Chicago)</p>
+      <pre><code>chown -R :&lt;your web server group name&gt; .
+</code></pre>
 
-    <pre><code>php /var/www/html/magento2/bin/magento setup:install --base-url=http://192.0.2.5/magento2/ \
+      <p>Typical examples:</p>
+
+      <ul>
+        <li>CentOS: <code>chown -R :apache .</code></li>
+        <li>Ubuntu: <code>chown -R :www-data .</code></li>
+      </ul>
+    </li>
+    <li>
+      <p>Set permissions:</p>
+
+      <pre><code>find . -type d -exec chmod 770 {} \; &amp;&amp; find . -type f -exec chmod 660 {} \; &amp;&amp; chmod u+x bin/magento
+</code></pre>
+
+      <p>If you must enter the commands as <code>sudo</code>, use:</p>
+
+      <pre><code>sudo find . -type d -exec chmod 770 {} \; &amp;&amp; sudo find . -type f -exec chmod 660 {} \; &amp;&amp; sudo chmod u+x bin/magento
+</code></pre>
+    </li>
+  </ol>
+
+  <h2 id="installation-part-2-installing-the-magento-software">Installation part 2: Installing the Magento software</h2>
+  <p>You can choose to install the Magento software using either a <a href="/guides/v2.0/install-gde/install/web/install-web.html">web-based Setup Wizard</a> or using the <a href="/guides/v2.0/install-gde/install/cli/install-cli.html">command line</a>.</p>
+
+  <p>The following example shows how to install using the command line with the following options:</p>
+
+  <ul>
+    <li>
+      <p>The Magento software is installed in the <code>/var/www/html/magento2</code> directory and the path to the Magento Admin is <code>admin</code>; therefore:</p>
+
+      <p>Your storefront URL is <code>http://192.0.2.5</code></p>
+    </li>
+    <li>
+      <p>The database server is on the same host as the web server.</p>
+
+      <p>The database name is <code>magento</code>, and the user name and password are both <code>magento</code></p>
+    </li>
+    <li>
+      <p>Uses server rewrites</p>
+    </li>
+    <li>
+      <p>The Magento administrator has the following properties:</p>
+
+      <ul>
+        <li>First and last name are <code>Magento User</code></li>
+        <li>User name is <code>admin</code> and the password is <code>admin123</code></li>
+        <li>E-mail address is <code>user@example.com</code></li>
+      </ul>
+    </li>
+    <li>Default language is <code>en_US</code> (U.S. English)</li>
+    <li>Default currency is U.S. dollars</li>
+    <li>
+      <p>Default time zone is U.S. Central (America/Chicago)</p>
+
+      <pre><code>php /var/www/html/magento2/bin/magento setup:install --base-url=http://192.0.2.5/magento2/ \
 --db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
 --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
 --admin-user=admin --admin-password=admin123 --language=en_US \
 --currency=USD --timezone=America/Chicago --use-rewrites=1
 </code></pre>
-  </li>
-</ul>
+    </li>
+  </ul>
 
-<p>Optionally switch to <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">developer mode</a>.</p>
+  <p>Optionally switch to <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">developer mode</a>.</p>
 
-<pre><code>cd &lt;your Magento install dir&gt;/bin
+  <pre><code>cd &lt;your Magento install dir&gt;/bin
 php magento deploy:mode:set developer
 </code></pre>
 
-<h2 id="installation-part-3-post-installation">Installation part 3: Post-installation</h2>
-<ul>
-  <li><a href="/guides/v2.0/install-gde/install/verify.html">Verify the installation</a> was successful.</li>
-  <li><a href="/guides/v2.0/install-gde/trouble/tshoot.html">Troubleshoot issues</a> if necessary.</li>
-  <li>Learn about the <a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade</a> for future updates.</li>
-</ul>
+  <h2 id="installation-part-3-post-installation">Installation part 3: Post-installation</h2>
+  <ul>
+    <li><a href="/guides/v2.0/install-gde/install/verify.html">Verify the installation</a> was successful.</li>
+    <li><a href="/guides/v2.0/install-gde/trouble/tshoot.html">Troubleshoot issues</a> if necessary.</li>
+    <li>Learn about the <a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade</a> for future updates.</li>
+  </ul>
+</div>
 
 
 		</div>

@@ -313,14 +313,6 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/sample-data-after-magento.html">Install sample data after Magento</a></li>
-
-									
-
-								
-
-									
-
 									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/sample-data-after-composer.html">Install using Composer</a></li>
 
 									
@@ -372,90 +364,63 @@
 		<div>
 
   <h2 id="sample-clone">Install sample data by cloning repositories</h2>
-  <p>This topic discusses how to get the Magento sample data by cloning the Magento GitHub repository and the sample data repository. This method is intended only for contributing developers (that is, developers who plan to contribute to the Magento 2 codebase).</p>
+  <p>This topic discusses how to get the Magento sample data if you cloned the Magento GitHub repository. This method is intended only for <abbr title="Developers who contribute code to the Magento 2 CE codebase">contributing developers</abbr> (that is, developers who plan to contribute to the Magento 2 codebase).</p>
 
-  <p>If you’re not a contributing developer, choose one of the other options displayed in the table of contents on the left side of the page.</p>
+  <p>If you’re not a <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr>, choose one of the other options displayed in the table of contents on the left side of the page.</p>
+
+  <p><abbr title="Developers who contribute code to the Magento 2 CE codebase">Contributing developers</abbr> can use this method of installing sample data <em>only</em> if all of the following are true:</p>
+
+  <ul>
+    <li>You use Magento CE</li>
+    <li>You <a href="/guides/v2.0/install-gde/prereq/dev_install.html">cloned the Magento 2 <code>develop</code> branch</a>.</li>
+  </ul>
 
   <div class="bs-callout bs-callout-warning">
-    <p>Due to recent changes, you can now use sample data with either the <code>develop</code> branch (more current) or the <code>master</code> branch (more stable) but only if you <a href="/guides/v2.0/install-gde/install/composer-clone.html#instgde-prereq-compose-clone">cloned</a> the corresponding branch of the Magento 2 GitHub repository.</p>
-    <p>We recommend you use the <code>master</code> branch because it's more stable. If you're contributing code to the Magento 2 repository and you need the most recent code, use the <code>develop</code> branch.</p>
+    <p>You can use sample data with either the <code>develop</code> branch (more current) or a released branch (such as <code>2.0</code> or <code>2.0.1</code> (more stable)). We recommend you use a released branch because it's more stable. If you're contributing code to the Magento 2 repository and you need the most recent code, use the <code>develop</code> branch.</p>
+    <p>Regardless of the branch you choose, you must <a href="/guides/v2.0/install-gde/prereq/dev_install.html">clone</a> the corresponding branch of the Magento 2 GitHub repository. For example, sample data for the <code>develop</code> branch can be used <em>only</em> with the Magento 2 <code>develop</code> branch.</p>
 </div>
 
-  <h2 id="sample-prereq">Sample data prerequisites</h2>
-  <p>Before you install sample data, make sure you have done the following:
-1.  <a href="/guides/v2.0/install-gde/install/composer-clone.html">Clone the Magento 2 GitHub repository</a> (preferably the develop branch, which is the default).</p>
+  <p>See the following sections:</p>
 
-  <ol>
-    <li>
-      <p><a href="/guides/v2.0/install-gde/install/prepare-install.html">Update dependencies</a> by running <code>composer install</code>.</p>
-    </li>
-    <li>
-      <p>Decide which branch of the code to use:</p>
+  <ul>
+    <li><a href="#clone-sample-repo">Clone the sample data repository</a></li>
+    <li><a href="#samp-data-perms">Set file system ownership and permissions</a></li>
+  </ul>
 
-      <ul>
-        <li><code>master</code>, which is more stable (we recommend this branch unless you’re contributing code to the Magento 2 project)</li>
-        <li><code>develop</code>, which is more recent</li>
-      </ul>
-
-      <div class="bs-callout bs-callout-warning">
-    <p>You must clone the <em>same branch</em> of both repositories. If you cloned the <code>master</code> branch of the Magento 2 repository, you must clone the <code>master</code> branch of the sample data repository.</p>
-    <p>Use the <code>git branch</code> command in the Magento 2 clone directory to display which branch you have.</p>
-</div>
-    </li>
-  </ol>
-
-  <h2 id="instgde-prereq-sample-clone">Clone the sample data repository</h2>
-  <p>This section discusses how to install Magento sample data by cloning the sample data repository. </p>
-
-  <p>You can clone the sample data repository in any of the following ways:</p>
+  <h2 id="clone-sample-repo">Clone the sample data repository</h2>
+  <p>This section discusses how to install Magento sample data by cloning the sample data repository. You can clone the sample data repository in any of the following ways:</p>
 
   <ul>
     <li>Clone with the <a href="#instgde-prereq-sample-clone-ssh">SSH protocol</a></li>
     <li>Clone with the <a href="#instgde-prereq-compose-clone-https">HTTPS protocol</a></li>
   </ul>
 
-  <h3 id="instgde-prereq-sample-clone-ssh">Clone with SSH</h3>
+  <h3 id="clone-sample-repo-ssh">Clone with SSH</h3>
   <p>To clone the Magento sample data GitHub repository using the SSH protocol:</p>
 
   <ol>
+    <li>In a web browser, go to <a href="https://github.com/magento/magento2-sample-data" target="_blank">the Magento sample data repository</a>.</li>
+    <li>Next to the name of the branch, click <strong>SSH</strong> from the list.</li>
     <li>
-      <p>Copy to the clipboard the Magento GitHub repository SSH clone URL.</p>
+      <p>Click <strong>Copy to clipboard</strong></p>
 
-      <ol>
-        <li>In a web browser, go to <a href="https://github.com/magento/magento2-sample-data" target="_blank">the Magento sample data repository</a>.</li>
-        <li>On the right side of the page, under the <strong>clone URL</strong> field, click <strong>SSH</strong>.</li>
-        <li>
-          <p>Click <strong>Copy to clipboard</strong>.</p>
+      <p>The following figure shows an example.</p>
 
-          <p>The following figure shows an example.
-<img src="/common/images/install_mage2_clone-ssh.png" alt="Clone the Magento GitHub repository using SSH" /></p>
-        </li>
-      </ol>
+      <p><img src="/common/images/install_mage2_clone-ssh.png" width="650px" alt="Clone the Magento GitHub repository using SSH" /></p>
     </li>
     <li>
       <p>Change to your web server’s docroot directory.</p>
 
       <p>Typically, for Ubuntu, it’s <code>/var/www</code> and for CentOS it’s <code>/var/www/html</code>.</p>
 
-      <p><a href="/guides/v2.0/install-gde/basics/basics_docroot.html">Need help locating the docroot</a>?</p>
+      <p>Need <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">help locating the docroot?</a></p>
     </li>
     <li>
       <p>Enter <code>git clone</code> and paste the value you obtained from step 1.</p>
 
-      <p>The format of the command follows:</p>
+      <p>An example follows:</p>
 
-      <pre><code>git clone [-b master] git@github.com:magento/magento2-sample-data.git
-</code></pre>
-
-      <p>Use <code>-b master</code> to clone the master branch; omit it to clone the <code>develop</code> branch, which is the default.</p>
-
-      <p>We recommend you clone the <code>master</code> branch because it’s more stable; clone <code>develop</code> if you’re contributing code to Magento 2.</p>
-
-      <p>Remember to clone the <em>same branch</em> of sample data as Magento 2 code. Use the <code>git branch</code> command in the Magento 2 clone directory to display which branch you have.</p>
-
-      <p>An example follows: </p>
-
-      <pre><code>git clone -b master git@github.com:magento/magento2-sample-data.git
+      <pre><code>git clone git@github.com:magento/magento2-sample-data.git
 </code></pre>
     </li>
     <li>
@@ -472,10 +437,12 @@ fatal: The remote end hung up unexpectedly</pre>
     <li>
       <p>Enter the following command:</p>
 
-      <pre><code>php -f build-sample-data.php -- --ce-source="&amp;lt;your Magento CE install dir&gt;"
+      <pre><code>php -f build-sample-data.php -- --ce-source="&lt;your Magento CE install dir&gt;"
 </code></pre>
     </li>
-    <li>Wait for the command to complete.</li>
+    <li>
+      <p>Wait for the command to complete.</p>
+    </li>
     <li>See <a href="#instgde-prereq-compose-clone-perms">Set file system permissions and ownership</a>.</li>
   </ol>
 
@@ -483,18 +450,14 @@ fatal: The remote end hung up unexpectedly</pre>
   <p>To clone the Magento sample data GitHub repository using the HTTPS protocol:</p>
 
   <ol>
+    <li>In a web browser, go to <a href="https://github.com/magento/magento2-sample-data" target="_blank">the Magento sample data repository</a>.</li>
+    <li>On the right side of the page, under the <strong>clone URL</strong> field, click <strong>HTTPS</strong>.</li>
     <li>
-      <p>Copy to the clipboard the Magento sample data repository HTTPS clone URL.</p>
-
-      <ol>
-        <li>In a web browser, go to <a href="https://github.com/magento/magento2-sample-data" target="_blank">the Magento sample data repository</a>.</li>
-        <li>On the right side of the page, under the <strong>clone URL</strong> field, click <strong>HTTPS</strong>.</li>
-        <li>Click <strong>Copy to clipboard</strong>.</li>
-      </ol>
+      <p>Click <strong>Copy to clipboard</strong>.</p>
 
       <p>The following figure shows an example.</p>
 
-      <p><img src="/common/images/install_mage2_clone-https.png" alt="Clone the Magento GitHub repository using HTTPS" /></p>
+      <p><img src="/common/images/install_mage2_clone-https.png" width="650px" alt="Clone the Magento GitHub repository using HTTPS" /></p>
     </li>
     <li>
       <p>Change to your web server’s docroot directory.</p>
@@ -504,20 +467,9 @@ fatal: The remote end hung up unexpectedly</pre>
     <li>
       <p>Enter <code>git clone</code> and paste the value you obtained from step 1.</p>
 
-      <p>The format of the command follows:</p>
-
-      <pre><code>git clone [-b master] https://github.com/magento/magento2-sample-data.git
-</code></pre>
-
-      <p>Use <code>-b master</code> to clone the master branch; omit it to clone the <code>develop</code> branch, which is the default.</p>
-
-      <p>We recommend you clone the <code>master</code> branch because it’s more stable; clone <code>develop</code> if you’re contributing code to Magento 2.</p>
-
-      <p>Remember to clone the <em>same branch</em> of sample data as Magento 2 code. Use the <code>git branch</code> command in the Magento 2 clone directory to display which branch you have.</p>
-
       <p>An example follows:</p>
 
-      <pre><code>git clone -b master https://github.com/magento/magento2-sample-data.git
+      <pre><code>git clone https://github.com/magento/magento2-sample-data.git
 </code></pre>
     </li>
     <li>Wait for the repository to clone on your server.</li>
@@ -525,20 +477,24 @@ fatal: The remote end hung up unexpectedly</pre>
     <li>
       <p>Enter the following command:</p>
 
-      <pre><code>php -f build-sample-data.php -- --ce-source="&amp;lt;your Magento CE install dir&gt;"
+      <pre><code>php -f build-sample-data.php -- --ce-source="&lt;your Magento CE install dir&gt;"
+</code></pre>
+
+      <p>For example,</p>
+
+      <pre><code>php build-sample-data.php -- --ce-source="/var/www/magento2"
 </code></pre>
     </li>
     <li>Wait for the command to complete.</li>
     <li>See the next section.</li>
   </ol>
 
-  <h3 id="instgde-prereq-compose-clone-perms">Set file system permissions and ownership</h3>
-  <p>Because the <code>php build-sample-data.php</code> script creates symlinks between the sample data repository and your Magento 2 repository, you must set file system permissions and ownership in the sample data repository. Failure to do so will result in errors accessing the storefront.</p>
+  <h2 id="samp-data-perms">Set file system ownership and permissions</h2>
+  <p>Because the <code>php build-sample-data.php</code> script creates symlinks between the sample data repository and your Magento 2 repository, you must set file system permissions and ownership in the sample data repository. Failure to do so results in errors accessing the storefront.</p>
 
   <p>To set file system permissions and ownership on the sample data repository:</p>
 
   <ol>
-    <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
     <li>Change to your sample data clone directory.</li>
     <li>
       <p>Set ownership:</p>
@@ -558,12 +514,21 @@ fatal: The remote end hung up unexpectedly</pre>
       <pre><code>find . -type d -exec chmod 770 {} \; &amp;&amp; find . -type f -exec chmod 660 {} \;
 </code></pre>
 
-      <p>If you must enter the commands as <code>sudo</code>, use</p>
+      <p>If you must enter the commands as <code>sudo</code>, use:</p>
 
       <pre><code>sudo find . -type d -exec chmod 770 {} \; &amp;&amp; sudo find . -type f -exec chmod 660 {} \;
 </code></pre>
     </li>
+    <li>
+      <p>Clear static files:</p>
+
+      <pre><code>cd &lt;your Magento CE install dir&gt;/var
+rm -rf cache/* page_cache/* generation/*
+</code></pre>
+    </li>
   </ol>
+
+  <!-- ABBREVIATIONS -->
 
   <div>
 
