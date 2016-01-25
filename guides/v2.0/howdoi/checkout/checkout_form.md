@@ -9,11 +9,13 @@ github_link: howdoi/checkout/checkout_form.md
 ---
 ## What's in this topic
 
-This topic describes how to add a custom input form to the Checkout page. 
+This topic describes how to add a custom input form (implemented as a UI component) to the Checkout page. 
 
-<p class="q">should this form be a UI component? Would a link to the Form component be appropriate http://devdocs.magento.com/guides/v2.0/ui-components/ui-form.html?</p>
+Most of the elements, including the default forms on the Checkout page are implemented as UI components. And our recommendation is your custom form to be a UI component, extending the default [Magento_Ui/js/form/form]({{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/form/form.js) component. 
 
-Magento provides ability to add a custom form to any of the checkout steps: Shipping Information, Review and Payment Information, or custom. In order to add a custom form developer has to follow the following steps:
+## Overview
+
+Magento provides ability to add a custom form to any of the checkout steps: Shipping Information, Review and Payment Information, or custom. In order to add a custom form that is a UI component, take the following steps:
 
 1. [Create the JS implementation of the form UI component] (#component)
 2. [Create the knockout.js HTML template for rendering the form] (#template)
@@ -27,11 +29,7 @@ For the sake of compatibility, upgradability, and easy maintenance, do not edit 
 
 ## Create the JS implementation of the form UI component {#component}
 
-In your `<your_module_dir>/view/frontend/web/js/model` directory, create a `.js` file implementing the form.
-
-<p class="q">Where should it be located?</p> 
-
-The form must be implemented as a UI component. It can extend the default Magento [form UI component]({{site.gdeurl}}ui-components/ui-form.html). Its implementation is stored in `<Magento_Ui_module_dir>/view/base/web/js/form/form.js`.
+In your `<your_module_dir>/view/frontend/web/js/` directory, create a `.js` file implementing the form.
 
 Example of extending the default form component:
 
