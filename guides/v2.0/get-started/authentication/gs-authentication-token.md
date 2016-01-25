@@ -69,7 +69,7 @@ redirect_from: /guides/v1.0/get-started/authentication/gs-authentication-token.h
    <li>Use the <code>-d</code> option to specify the XML-formatted request body.</li>
 </ul>
 <p>For example:</p>
-<pre>curl -X POST "https://magento.host/index.php/rest/V1/integration/customer/token.xml" \
+<pre>curl -X POST "https://magento.host/index.php/rest/V1/integration/customer/token" \
      -H "Content-Type:application/xml" \
      -d '&lt;login>&lt;username>user_example&lt;/username>&lt;password>123123q&lt;/password>&lt;/login>'</pre>
 <a name="auth-request"></a>

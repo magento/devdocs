@@ -9,10 +9,14 @@ github_link: frontend-dev-guide/templates/template-overview.md
 redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-overview.html
 ---
 
-<h2>What's in this topic</h2>
+## What's in this topic
 This topic walks you through how to customize a template.
 
-<h2>Template customization walkthrough</h2>
+## Prerequisites 
+
+[Set]({{site.gdeurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{site.gdeurl}}config-guide/bootstrap/magento-modes.html). The application mode influences the way static files are cached by Magento. The recommendations about theme development we provide in this chapter are developer/default-mode specific.
+
+## Template customization walkthrough
 
 To customize a template:
 
@@ -28,7 +32,11 @@ To add a new template in a theme:
 
 2. Assign your template to a block in the <a href="{{site.gdeurl}}frontend-dev-guide/templates/template-override.html#template-layout" target="_blank">corresponding layout file</a>. 
 
-<h2>Walkthrough illustration: adding a message to the customer review form</h2>
+<div class="bs-callout bs-callout-info" id="info">
+<p>If you add a new <code>.html</code> template, and then edit it, the changes will not apply until you do the following: delete all files in the <code>pub/static/frontend</code> and <code>var/view_preprocessing</code> directories, then reload the pages. You can delete the files manually or run the <code>grunt clean:&lt;theme_name&gt;</code> command in CLI. For details about using Grunt in Magento see <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css_debug.html#grunt_prereq">Installing and configuring Grunt</a>.</p>
+</div>
+
+## Walkthrough illustration: adding a message to the customer review form
 A small customization to illustrate the walkthrough: in their Orange theme, the OrangeCo company wants to add a short text to the product review form to encourage customers to write reviews. 
 
 The following image illustrates how the default review form looks like:

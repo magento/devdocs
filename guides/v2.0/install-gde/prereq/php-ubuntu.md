@@ -51,6 +51,11 @@ To verify if PHP is installed already, enter `php -v`. If PHP is installed, mess
 	Zend Engine v2.6.0, Copyright (c) 1998-2014 Zend Technologies
     with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
 
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
+</div>
+
 If PHP is installed, continue with the next prerequisite, <a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">MySQL</a>.
 
 If PHP is *not* installed, see one of the following sections:
@@ -84,6 +89,11 @@ To install PHP 5.6 or to upgrade from PHP 5.5 on Ubuntu 14:
 		Copyright (c) 1997-2014 The PHP Group
 		Zend Engine v2.6.0, Copyright (c) 1998-2014 Zend Technologies
 		with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
+</div>
 
 3.	<a href="#instgde-prereq-timezone">Set PHP configuration options</a>.
 
@@ -128,6 +138,11 @@ To install or upgrade to PHP 5.6 on Ubuntu 12:
 		Zend Engine v2.6.0, Copyright (c) 1998-2014 Zend Technologies
     	with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
 
+    <div class="bs-callout bs-callout-info" id="info">
+		<span class="glyphicon-class">
+ 		 <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
+	</div>
+
 3.	<a href="#instgde-prereq-timezone">Set PHP configuration options</a>.
 
 <h2 id="instgde-prereq-php55-install-ubuntu">PHP 5.5 on Ubuntu 14 or Ubuntu 12</h2>
@@ -151,6 +166,11 @@ To install PHP 5.5 on Ubuntu 14:
 		Copyright (c) 1997-2014 The PHP Group
 		Zend Engine v2.5.0, Copyright (c) 1998-2014 Zend Technologies
 	    with Zend OPcache v7.0.3, Copyright (c) 1999-2014, by Zend Technologies
+
+	<div class="bs-callout bs-callout-info" id="info">
+		<span class="glyphicon-class">
+  		<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
+	</div>
 
 3.	<a href="#instgde-prereq-timezone">Set PHP configuration options</a>.
 

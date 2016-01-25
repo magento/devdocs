@@ -383,6 +383,7 @@ Use meaningful, specific class names that reflect the purpose of the element. Cl
 
 
 ### Selectors naming
+
 #### Type selectors
 
 Avoid qualifying class names with type selectors.
@@ -611,7 +612,7 @@ General model is the following:
 
     @property-name
 
-** Examples **:
+**Examples**:
 
     @primary__color: @color-phoenix;
     @indent__base: 2rem;
@@ -627,7 +628,7 @@ Component name must meaningful. It can contain the `primary`, `secondary`, `tert
 
 `base` is a modifier.
 
-** Examples **:
+**Examples**:
 
 
     @color-orange: '';
