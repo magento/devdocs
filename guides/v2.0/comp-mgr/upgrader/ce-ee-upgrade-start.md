@@ -46,9 +46,12 @@ To run System Upgrade:
 
 	From the list, click the version to which to upgrade. Typically, you'll choose the most recent version (indicated by **(latest)**.)
 
-	The following error might indicate you haven't entered your <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_auth-token.html">authentication keys</a> in the Magento Admin:
+#### Error
+	The following error can indicate one of several issues, including that you haven't entered your <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_auth-token.html">authentication keys</a> in the Magento Admin:
 
 	<img src="{{ site.baseurl }}common/images/upgr-sorry.png" width="600px">
+
+	For suggested solutions to other causes indicated by this message, see <a href="{{ site.gdeurl }}comp-mgr/trouble/cman/were-sorry.html">troubleshooting</a>.
 
 <h2 id="ce-ee-continue">Continue your upgrade</h2>
 From here, your upgrade is the same as any other upgrade. Continue with <a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-main-pg.html">Step 1. Select versions to upgrade</a>.

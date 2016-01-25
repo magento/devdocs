@@ -145,4 +145,5 @@ Each Magento component can be categorized into one of the types listed in the pr
 
 Having an identifier type for each component allows the system to marshal the directories and files of each component to the correct locations, based on the Magento 2 directory structure. 
 
-
+<h3>Composer Binary Location</h3>
+Magento's bin/magento script uses composer from the vendor/composer directory in your Magento 2 installation, not your globally installed composer. Keep this in mind while customizing or updating composer or troubleshooting Composer issues while working with Magento 2.

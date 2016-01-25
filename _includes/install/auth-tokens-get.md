@@ -10,7 +10,6 @@ To get your authentication keys:
 	*	In the New Customer section, click **Register**.
 
 		If you already have an account, make sure you know your user name and password, then continue with the next step.
-
 2.	At the top of the page, click **Connect**.
 3.	In the **Developers** section, click **Secure Keys**.
 
