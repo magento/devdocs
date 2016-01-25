@@ -16,7 +16,7 @@ a[href]:after {
 abbr[title]:after {
   content: " (" attr(title)")"
 }
-.ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+h3 a[href]:after, .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
   content: ""
 }
 pre, blockquote {
