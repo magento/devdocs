@@ -735,6 +735,8 @@
 
 <p>Verify your <a href="/guides/v2.0/install-gde/prereq/apache.html#apache-help-rewrite">server rewrites</a> setting and your Magento server’s base URL and try again. If you set up the <code>AllowOverride</code> directive incorrectly, static files aren’t served from the correct location.</p>
 
+<p>This also happens when you are running in <code>production</code> mode and you have not built the static assets yet. Issue this command: <code>bin/magento setup:static-content:deploy</code></p>
+
 
 		</div>
 	</section>
