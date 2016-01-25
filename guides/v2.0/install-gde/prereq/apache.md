@@ -97,7 +97,7 @@ To install the default version of Apache (Ubuntu 14&mdash;Apache 2.4, Ubuntu 12&
 *	Continue with the next prerequisite (<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)
 *	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Determine your installation or upgrade path</a>
 
-{% include install/allowoverrides24.html %}
+{% include install/allowoverrides22.html %}
 
 #### Next steps
 *	<a href="#403-apache">Solving 403 (Forbidden) errors</a>

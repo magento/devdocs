@@ -5,7 +5,7 @@ subgroup: ZZ_Troubleshooting
 title: Resolve component dependencies
 menu_title: Resolve component dependencies
 menu_node: 
-menu_order: 5
+menu_order: 150
 github_link: comp-mgr/trouble/cman/component-depend.md
 ---
 
