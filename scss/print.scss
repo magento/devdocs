@@ -1,3 +1,4 @@
+/* Print Styles */
 
 * {
   text-shadow: none !important;
@@ -44,14 +45,18 @@ p, h2, h3 {
 h2, h3 {
   page-break-after:avoid
 }
-.site-header, .nav-main, #footer-wrap, .sidebar, .improve-page, .page-intro {
+.site-header, .nav-main, .footer, .copyright-links, .sidebar, .improve-page, .page-intro {
   display: none;
 }
 .content {
-  width: 90%;
+  width: auto;
   float: none;
   padding: 0;
 }
-.content-wrap {
+.container, .content-wrap, .main-container, .home-section:last-child {
   padding: 0;
+}
+#copyright {
+  border: 0;
+  padding: 1em 0;
 }
