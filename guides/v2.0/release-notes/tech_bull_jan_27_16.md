@@ -6,7 +6,7 @@ title: Issues upgrading to 2.0.1 (Jan. 27, 2016)
 menu_title: Issues upgrading to 2.0.1 (Jan. 27, 2016)
 menu_node: 
 menu_order: 1
-github_link: release-notes/tech_bull_jan_22_16.md
+github_link: release-notes/tech_bull_jan_27_16.md
 ---
 
 ## Issues upgrading to 2.0.1 (Jan. 27, 2016)
@@ -24,11 +24,19 @@ Upgrades to Magento Community Edition (CE) and Enterprise Edition (EE) 2.0.1 fai
 </div>
 
 #### Detail
-Our compressed archives for CE and EE were missing `.gitignore` files and, as a result, exceptions prevented the upgrade from completing successfully.
+Our compressed archives for CE and EE were missing `.gitignore` files and, as a result, exceptions prevented the upgrade from completing successfully. We the `magento/magento-composer-installer` component so it reports missing files instead of throwing an exception with no details about what was wrong.
 
 At the same time, we fixed a separate issue that prevented upgrading to 2.0.1 if you use PHP 7.
 
 #### Solution
+Use any of the following solutions:
+
+*	[Web-based solution](#gitignore-web-sln)
+*	[Command-line solution](#gitignore-cli-sln)
+
+### Web-based solution {#gitignore-web-sln}
+This solution is recommended for anyone who has no access to their Magento server's command line. 
+
 Download a compressed archive that contains the missing `.gitignore` files and the PHP 7 fix as follows:
 
 1.	Download one of the following patch archives. Patches are available in the following formats: `.zip`, `.tar.bz2`, `.tar.gz`
@@ -44,7 +52,7 @@ Download a compressed archive that contains the missing `.gitignore` files and t
 	<tr> 
 	<td>Magento CE</td>
 	<td><p><a href="http://www.magento.com/download" target="_blank">www.magento.com/download</a></p>
-		<p><code>NAME.*</code></p></td>
+		<p>Follow the instructions on your screen to download <code>NAME.*</code></p></td>
 	</tr>
 	<tr> 
 		<td>Magento EE</td>
@@ -91,7 +99,19 @@ Download a compressed archive that contains the missing `.gitignore` files and t
 
 	*	**If you use shared hosting**, you can typically use your hosting provider's tools to extract the archive.
 
-3.	Try your <a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">upgrade</a> again.	
+3.	<a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">Upgrade</a> to version 2.0.2.	
+
+#### Command-line solution {#gitignore-cli-sln}
+If you have access to your Magento server's command line, you can resolve the mising `.gitignore` files issue as follows:
+
+1.	Log in to your Magento server as the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+2.	Change to your Magento installation directory.
+3.	Run the following commands in the order shown:
+
+		composer update magento/magento-composer-installer
+		composer update
+4.	If your server runs PHP 7, you must also [apply the patch](#gitignore-web-sln).
+5.	<a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">Upgrade</a> to version 2.0.2.	
 
 ### "We're sorry, we can't take that action right now" {#sorry}
 If this message displays during your upgrade, it can mean any of the following:
