@@ -34,16 +34,16 @@ Magento comes packaged with a sample Solr configuration you can use and customiz
 1.  As a user with <code>root</code> privileges, enter the following commands in the order shown to copy over the Solr configuration with the one packaged with Magento EE:
 
 		cd <your Solr install dir>/example/solr
-		cp -R collection1 magento2/conf
+		cp -R collection1 magento2
 		cd magento2
-		cp -R <your Magento EE install dir>/vendor/magento/module-solr/conf/* .
+		cp -R <your Magento EE install dir>/vendor/magento/module-solr/conf/* ./conf/
 
 	For example, if Solr is installed in <code>/opt/solr/solr-4.10.4</code> and Magento EE is installed in <code>/var/www/magento/html/magento2ee</code>, enter:
 
-		cd /opt/solr/solr/solr-4.10.4
+		cd /opt/solr/solr/solr-4.10.4/example/solr
 		cp -R collection1 magento2
 		cd magento2
-		cp -R /var/www/html/magento2ee/vendor/magento/module-solr/conf/* .
+		cp -R /var/www/html/magento2ee/vendor/magento/module-solr/conf/* ./conf/
 
 	<div class="bs-callout bs-callout-info" id="info">
 	 <p>If you're prompted to overwrite files, try the command <code>\cp -R &lt;your Magento EE install dir>/vendor/magento/module-solr/conf/* .</code></p>
