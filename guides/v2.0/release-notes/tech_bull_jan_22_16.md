@@ -1,12 +1,12 @@
 ---
 layout: default
 group: release-notes
-subgroup: 10_bulletin
+subgroup: Technical Bulletin
 title: Issues upgrading to 2.0.1 (Jan. 27, 2016)
 menu_title: Issues upgrading to 2.0.1 (Jan. 27, 2016)
 menu_node: 
-menu_order: 2
-github_link: release-notes/tb_1-27-16.md
+menu_order: 1
+github_link: release-notes/tech_bull_jan_22_16.md
 ---
 
 ## Issues upgrading to 2.0.1 (Jan. 27, 2016)
@@ -16,7 +16,7 @@ This bulletin informs of you of the following issues:
 *	["We're sorry, we can't take that action right now"](#sorry)
 
 ### Upgrade fails because of missing `.gitignore` files {#gitignore}
-Upgrades to Magento Community Edition (CE) and Enterprise Edition (EE) 2.0.1 fail if you got the Magento software <a href="{{ site.gdeurl }}install-gde/prereq/zip_install.html">compressed archive</a> (`.tar.gz`, `.zip`, and `.bz2`). 
+Upgrades to Magento Community Edition (CE) and Enterprise Edition (EE) 2.0.1 failed if you got the Magento software <a href="{{ site.gdeurl }}install-gde/prereq/zip_install.html">compressed archive</a> (`.tar.gz`, `.zip`, and `.bz2`) *before* January 27, 2016.
 
 <div class="bs-callout bs-callout-info" id="info">
   <ul><li>Other types of installations are <em>not</em> affected.</li>
@@ -29,6 +29,8 @@ Our compressed archives for CE and EE were missing `.gitignore` files and, as a 
 At the same time, we fixed a separate issue that prevented upgrading to 2.0.1 if you use PHP 7.
 
 #### Solution
+Download a compressed archive that contains the missing `.gitignore` files and the PHP 7 fix.
+
 TBD
 
 ### "We're sorry, we can't take that action right now" {#sorry}
