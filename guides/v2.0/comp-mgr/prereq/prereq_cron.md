@@ -33,8 +33,8 @@ Enable the cron jobs as <a href="http://ss64.com/bash/crontab.html" target="_bla
 
 	An editor displays. In the editor, enter the following:
 
-		*/1 * * * * <path-to-binary>/php -c <ini-file-path> <your Magento install dir>/update/cron.php 
-		*/1 * * * * <path-to-binary>/php -c <ini-file-path> <your Magento install dir>/bin/magento setup:cron:run 
+		*/1 * * * * <path-to-binary> -c <ini-file-path> <your Magento install dir>/update/cron.php 
+		*/1 * * * * <path-to-binary> -c <ini-file-path> <your Magento install dir>/bin/magento setup:cron:run 
 
 	where 
 

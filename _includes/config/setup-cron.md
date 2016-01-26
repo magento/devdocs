@@ -35,14 +35,15 @@ For example,
 
 A text editor displays. (You might need to choose a text editor first.)
 
-	*/1 * * * * <path-to-binary>/php -c <ini-file-path> <your Magento install dir>/bin/magento cron:run 
-	*/1 * * * * <path-to-binary>/php -c <ini-file-path> <your Magento install dir>/update/cron.php 
-	*/1 * * * * <path-to-binary>/php -c <ini-file-path> <your Magento install dir>/bin/magento setup:cron:run 
+	*/1 * * * * <path-to-binary> -c <ini-file-path> <your Magento install dir>/bin/magento cron:run [> <log-file>&]
+	*/1 * * * * <path-to-binary> -c <ini-file-path> <your Magento install dir>/update/cron.php [> <log-file>&]
+	*/1 * * * * <path-to-binary> -c <ini-file-path> <your Magento install dir>/bin/magento setup:cron:run [> <log-file>&]
 
 where 
 
 *	`<path-to-binary>` is the absolute file system path to your PHP binary
 *	`<ini-file-path>` is the path to a `php.ini` file to use for the cron job
+*	`[> <log-file>&]` is an optional but recommended string that appends cron output to a file. This is particularly useful for troubleshooting errors.
 
 The first command (`magento cron:run`) reindexes indexers, send automated e-mails, generates the sitemap, and so on. Usually it's associated with the PHP command line `.ini` file. The other two commands are used by the Component Manager and System Upgrade.
 
@@ -50,16 +51,8 @@ For example, if the PHP binary is located in `/usr/bin`, you installed Magento i
 
 Example:
 
-	*/1 * * * * /usr/bin/php -c /etc/php5/apache2/php.ini /var/www/magento2/bin/magento cron:run 
-	*/1 * * * * /usr/bin/php -c /etc/php5/apache2/php.ini /var/www/magento2/update/cron.php 
-	*/1 * * * * /usr/bin/php -c /etc/php5/apache2/php.ini /var/www/magento2/bin/magento setup:cron:run 
-
-*Optional*. To keep a running log of cron activity (especially if you're debugging an issue), append output to a file; for example:
-
-Example:
-
-	*/1 * * * * /usr/bin/php -c /etc/php5/apache2/php.ini /var/www/magento2/bin/magento cron:run > /tmp/cron.log&
-	*/1 * * * * /usr/bin/php -c /etc/php5/apache2/php.ini /var/www/magento2/update/cron.php > /tmp/cron.log&
-	*/1 * * * * /usr/bin/php -c /etc/php5/apache2/php.ini /var/www/magento2/bin/magento setup:cron:run > /tmp/cron.log&
+	*/1 * * * * /usr/bin/php -c /etc/php5/apache2/php.ini /var/www/magento2/bin/magento cron:run > /var/www/magento2/var/log/magento.cron.log&
+	*/1 * * * * /usr/bin/php -c /etc/php5/apache2/php.ini /var/www/magento2/update/cron.php > /var/www/magento2/var/log/update.cron.log&
+	*/1 * * * * /usr/bin/php -c /etc/php5/apache2/php.ini /var/www/magento2/bin/magento setup:cron:run > /var/www/magento2/var/log/setup.cron.log&
 
 Save your changes to the crontab and exit the editor.
