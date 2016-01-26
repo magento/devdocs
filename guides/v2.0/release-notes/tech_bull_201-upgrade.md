@@ -2,25 +2,32 @@
 layout: default
 group: release-notes
 subgroup: Technical Bulletin
-title: Issues upgrading to 2.0.1 (Jan. 27, 2016)
-menu_title: Issues upgrading to 2.0.1 (Jan. 27, 2016)
+title: Technical Bulletin
+menu_title: Issues upgrading to 2.0.1 (Jan. 28, 2016)
 menu_node: 
 menu_order: 1
-github_link: release-notes/tech_bull_jan_27_16.md
+github_link: release-notes/tech_bull_201-upgrade.md
 ---
 
-## Issues upgrading to 2.0.1 (Jan. 27, 2016)
-This bulletin informs of you of the following issues:
+## Issues upgrading to 2.0.1 (Jan. 28, 2016)
+This bulletin informs you of the following issues:
 
-*	[Upgrade fails because of missing `.gitignore` files](#gitignore)
-*	["We're sorry, we can't take that action right now"](#sorry)
+*	[Issue: Upgrade fails because of missing `.gitignore` files](#gitignore)
+*	[Error during upgrade: "We're sorry, we can't take that action right now"](#sorry)
 
-### Upgrade fails because of missing `.gitignore` files {#gitignore}
-Upgrades to Magento Community Edition (CE) and Enterprise Edition (EE) 2.0.1 failed if you got the Magento software <a href="{{ site.gdeurl }}install-gde/prereq/zip_install.html">compressed archive</a> (`.tar.gz`, `.zip`, and `.bz2`) *before* January 27, 2016.
+### Issue: Upgrade failures {#gitignore}
+Upgrades to Magento Community Edition (CE) and Enterprise Edition (EE) 2.0.1 failed if you got the Magento software <a href="{{ site.gdeurl }}install-gde/prereq/zip_install.html">compressed archive</a> (`.tar.gz`, `.zip`, and `.bz2`) *before* Jan. 28, 2016.
+
+We addressed the following issues in a patch:
+
+*	Missing `.gitignore` files that resulted in exceptions
+*	An error related to the updater application and PHP 7:
+
+		PHP Warning: require_once(/public_html/magento2/update/vendor/autoload.php): failed to open stream: No such file or directory in /public_html/magento2/update/app/bootstrap.php
 
 <div class="bs-callout bs-callout-info" id="info">
-  <ul><li>Other types of installations are <em>not</em> affected.</li>
-  	<li>New installations of Magento 2 CE and EE have no issues because we fixed our compressed archives.</li></ul>
+  <ul><li>If you installed the Magento software using either <code>git clone</code> or <code>composer create-project</code>, you are <em>not</em> affected by this issue. You can ignore this bulletin.</li>
+  	<li>New installations of Magento 2 CE and EE on or after Jan. 28, 2016 have no issues because we fixed our compressed archives.</li></ul>
 </div>
 
 #### Detail
@@ -28,13 +35,13 @@ Our compressed archives for CE and EE were missing `.gitignore` files and, as a 
 
 At the same time, we fixed a separate issue that prevented upgrading to 2.0.1 if you use PHP 7.
 
-#### Solution
-Use any of the following solutions:
+#### Resolution
+Use any of the following resolutions:
 
 *	[Web-based solution](#gitignore-web-sln)
 *	[Command-line solution](#gitignore-cli-sln)
 
-### Web-based solution {#gitignore-web-sln}
+#### Web-based solution {#gitignore-web-sln}
 This solution is recommended for anyone who has no access to their Magento server's command line. 
 
 Download a compressed archive that contains the missing `.gitignore` files and the PHP 7 fix as follows:
@@ -113,7 +120,7 @@ If you have access to your Magento server's command line, you can resolve the mi
 4.	If your server runs PHP 7, you must also [apply the patch](#gitignore-web-sln).
 5.	<a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">Upgrade</a> to version 2.0.2.	
 
-### "We're sorry, we can't take that action right now" {#sorry}
+### Error during upgrade: "We're sorry, we can't take that action right now" {#sorry}
 If this message displays during your upgrade, it can mean any of the following:
 
 *	<a href="{{ site.gdeurl }}comp-mgr/trouble/cman/were-sorry.html#not-auth">You didn't authenticate</a> with the System Upgrade utility

@@ -36,13 +36,13 @@ To run System Upgrade:
 
 	<img src="{{ site.baseurl }}common/images/upgr_initial-pg.png" width="650px" alt="Magento begins searching for upgrades right away">
 
-#### Error
-	The following error can indicate one of several issues, including that you haven't entered your <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_auth-token.html">authentication keys</a> in the Magento Admin:
-
-	<img src="{{ site.baseurl }}common/images/upgr-sorry.png" width="600px">
-
-	For suggested solutions to other causes indicated by this message, see <a href="{{ site.gdeurl }}comp-mgr/trouble/cman/were-sorry.html">troubleshooting</a>.
-
 	The page displays similar to the following when we find components to upgrade.<br><br>
 	<img src="{{ site.baseurl }}common/images/upgr_stuff-2-upgrade.png" width="650px" alt="Magento finds software to upgrade"><br><br>
 4. 	Continue with <a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-main-pg.html">Step 1. Select versions to upgrade</a>.
+
+#### Error
+The following error can indicate one of several issues, including that you haven't entered your <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_auth-token.html">authentication keys</a> in the Magento Admin:
+
+<img src="{{ site.baseurl }}common/images/upgr-sorry.png" width="600px">
+
+For suggested solutions to other causes indicated by this message, see <a href="{{ site.gdeurl }}comp-mgr/trouble/cman/were-sorry.html">troubleshooting</a>.
