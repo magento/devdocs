@@ -109,7 +109,7 @@ Download a compressed archive that contains the missing `.gitignore` files and t
 3.	<a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">Upgrade</a> to version 2.0.2.	
 
 #### Command-line solution {#gitignore-cli-sln}
-If you have access to your Magento server's command line, you can resolve the mising `.gitignore` files issue as follows:
+If you have access to your Magento server's command line, you can resolve the missing `.gitignore` files issue as follows:
 
 1.	Log in to your Magento server as the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
 2.	Change to your Magento installation directory.
