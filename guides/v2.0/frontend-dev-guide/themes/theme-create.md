@@ -245,7 +245,7 @@ To learn more about theme layouts, refer to the <a href="{{site.gdeurl}}frontend
 
 
 ## What's next {#next}
-See the [Apply and configure a theme in Admin]({{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html") topic.
+See the [Apply and configure a theme in Admin]({{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html) topic.
 
 <!--
 
