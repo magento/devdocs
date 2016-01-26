@@ -6,7 +6,7 @@ Magento uses cron for two sets of tasks, and for each, cron can be run with a di
 *	The general cron job that reindexes indexers, generates e-mails, generates the sitemap, and so on, typically runs as the PHP command-line user's `php.ini`
 *	Two other cron jobs are used by the <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade utilities</a>. Those commands must use the web server's `php.ini`.
 
-If you're not very experienced with running cron, you can run all commands with the web server's configuration; however, we leave the decision up to you.
+If you're not experienced with running cron, you can run all commands with the web server's configuration; however, we leave the decision up to you.
 
 #### Find the web server configuration
 
@@ -14,7 +14,7 @@ To find the web server configuration, run a <a href="{{ site.gdeurl }}install-gd
 
 <img src="{{ site.baseurl }}common/images/config_phpini-webserver.png" width="700px">
 
-#### Find the PHP command-line configuration
+#### Find the PHP command-line configuration 
 To display the PHP command-line configuration, enter
 
 	php -i | grep php.ini
@@ -23,6 +23,15 @@ A sample result follows:
 
 	Configuration File (php.ini) Path => /etc/php5/cli 
 	Loaded Configuration File => /etc/php5/cli/php.ini 
+
+#### Find the PHP binary
+To display the path to your PHP binary, enter
+
+	which php
+
+A sample result follows:
+
+	/usr/bin/php
 
 #### Create the cron job
 
@@ -36,14 +45,21 @@ For example,
 
 A text editor displays. (You might need to choose a text editor first.)
 
-	*/1 * * * * php -c <ini-file-path> <your Magento install dir>/bin/magento cron:run 
-	*/1 * * * * php -c <ini-file-path> <your Magento install dir>/update/cron.php 
-	*/1 * * * * php -c <ini-file-path> <your Magento install dir>/bin/magento setup:cron:run 
+	*/1 * * * * <path-to-binary>php -c /etc/php5/cli /var/www/magento2/bin/magento cron:run 
+	*/1 * * * * <path-to-binary>php -c <ini-file-path> /var/www/magento2/update/cron.php 
+	*/1 * * * * <path-to-binary>php -c <ini-file-path> /var/www/magento2/bin/magento setup:cron:run 
 
-where `<ini-file-path>` is the path to a `php.ini` file to use for the cron job. 
+where 
 
+*	`<path-to-binary>` is the absolute file system path to your PHP binary
+*	`<ini-file-path>` is the path to a `php.ini` file to use for the cron job
 
-(To confirm which `.ini` file the web server uses, create a .)
+Example:
+
+	*/1 * * * * /usr/bin/php -c <ini-file-path> <your Magento install dir>/bin/magento cron:run 
+	*/1 * * * * /usr/bin/php -c <ini-file-path> <your Magento install dir>/update/cron.php 
+	*/1 * * * * /usr/bin/php -c <ini-file-path> <your Magento install dir>/bin/magento setup:cron:run 
+
 
 The first command (`magento cron:run`) reindexes indexers, send automated e-mails, generates the sitemap, and so on. Usually it's associated with the PHP command line `.ini` file. The other two commands are used by the Component Manager and System Upgrade.
 
