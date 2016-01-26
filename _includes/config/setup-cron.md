@@ -14,16 +14,6 @@ To find the web server configuration, run a <a href="{{ site.gdeurl }}install-gd
 
 <img src="{{ site.baseurl }}common/images/config_phpini-webserver.png" width="700px">
 
-#### Find the PHP command-line configuration 
-To display the PHP command-line configuration, enter
-
-	php -i | grep php.ini
-
-A sample result follows:
-
-	Configuration File (php.ini) Path => /etc/php5/cli 
-	Loaded Configuration File => /etc/php5/cli/php.ini 
-
 #### Find the PHP binary
 To display the path to your PHP binary, enter
 
@@ -45,28 +35,31 @@ For example,
 
 A text editor displays. (You might need to choose a text editor first.)
 
-	*/1 * * * * <path-to-binary>php -c /etc/php5/cli /var/www/magento2/bin/magento cron:run 
-	*/1 * * * * <path-to-binary>php -c <ini-file-path> /var/www/magento2/update/cron.php 
-	*/1 * * * * <path-to-binary>php -c <ini-file-path> /var/www/magento2/bin/magento setup:cron:run 
+	*/1 * * * * <path-to-binary>/php -c <ini-file-path> <your Magento install dir>/bin/magento cron:run 
+	*/1 * * * * <path-to-binary>/php -c <ini-file-path> <your Magento install dir>/update/cron.php 
+	*/1 * * * * <path-to-binary>/php -c <ini-file-path> <your Magento install dir>/bin/magento setup:cron:run 
 
 where 
 
 *	`<path-to-binary>` is the absolute file system path to your PHP binary
 *	`<ini-file-path>` is the path to a `php.ini` file to use for the cron job
 
-Example:
-
-	*/1 * * * * /usr/bin/php -c <ini-file-path> <your Magento install dir>/bin/magento cron:run 
-	*/1 * * * * /usr/bin/php -c <ini-file-path> <your Magento install dir>/update/cron.php 
-	*/1 * * * * /usr/bin/php -c <ini-file-path> <your Magento install dir>/bin/magento setup:cron:run 
-
-
 The first command (`magento cron:run`) reindexes indexers, send automated e-mails, generates the sitemap, and so on. Usually it's associated with the PHP command line `.ini` file. The other two commands are used by the Component Manager and System Upgrade.
 
-For example, if you installed Magento in `/var/www/html/magento2` and all commands use the web server's `php.ini`, enter
+For example, if the PHP binary is located in `/usr/bin`, you installed Magento in `/var/www/html/magento2`, and all commands use the web server's `php.ini`, enter
 
-	*/1 * * * * php -c /etc/php5/cli/apache2 /var/www/html/magento2/bin/magento cron:run 
-	*/1 * * * * php -c /etc/php5/cli/apache2 /var/www/html/magento2/update/cron.php 
-	*/1 * * * * php -c /etc/php5/cli/apache2 /var/www/html/magento2/bin/magento setup:cron:run 
+Example:
+
+	*/1 * * * * /usr/bin/php -c /etc/php5/apache2/php.ini /var/www/magento2/bin/magento cron:run 
+	*/1 * * * * /usr/bin/php -c /etc/php5/apache2/php.ini /var/www/magento2/update/cron.php 
+	*/1 * * * * /usr/bin/php -c /etc/php5/apache2/php.ini /var/www/magento2/bin/magento setup:cron:run 
+
+*Optional*. To keep a running log of cron activity (especially if you're debugging an issue), append output to a file; for example:
+
+Example:
+
+	*/1 * * * * /usr/bin/php -c /etc/php5/apache2/php.ini /var/www/magento2/bin/magento cron:run > /tmp/cron.log&
+	*/1 * * * * /usr/bin/php -c /etc/php5/apache2/php.ini /var/www/magento2/update/cron.php > /tmp/cron.log&
+	*/1 * * * * /usr/bin/php -c /etc/php5/apache2/php.ini /var/www/magento2/bin/magento setup:cron:run > /tmp/cron.log&
 
 Save your changes to the crontab and exit the editor.
