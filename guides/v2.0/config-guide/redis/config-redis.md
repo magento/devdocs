@@ -12,6 +12,8 @@ github_link: config-guide/redis/config-redis.md
 #### Contents
 *	<a href="#config-redis-over">Overview of the Redis solution</a>
 *	<a href="#config-redis-install">Install Redis</a>
+*	<a href="{{ site.gdeurl }}config-guide/redis/redis-session.html">Redis for session storage</a>
+*	<a href="{{ site.gdeurl }}config-guide/redis/redis-pg-cache.html">Redis for page caching</a>
 *	<a href="#config-redis-info">For more information</a>
 
 <h2 id="config-redis-over">Overview of the Redis solution</h2>
@@ -63,7 +65,7 @@ You can find more information about configuring Redis from the following:
 *	<a href="http://www.techytalk.info/configuring-cache-storage-backends-magento-2-redis/" target="_blank">TechyTalk</a>
 <!-- *	<a href="http://info2.magento.com/rs/magentoenterprise/images/MagentoECG-UsingRedisasaCacheBackendinMagento.pdf" target="_blank">Magento Expert Consulting Group (ECG) article <em>written for Magento 1.x</em> -->
 
-#### Related topics
+#### Next
 
- *  <a href="{{ site.gdeurl }}config-guide/config/config-create.html">Create or extend configuration types</a>
- *  <a href="{{ site.gdeurl }}config-guide/config/config-php.html">Magento's deployment configuration</a>
+*	<a href="{{ site.gdeurl }}config-guide/redis/redis-session.html">Redis for session storage</a>
+*	<a href="{{ site.gdeurl }}config-guide/redis/redis-pg-cache.html">Redis for page caching</a>
