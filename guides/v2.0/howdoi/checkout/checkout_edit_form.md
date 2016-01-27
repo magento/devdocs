@@ -9,16 +9,16 @@ github_link: howdoi/checkout/checkout_edit_form.md
 ---
 
 <h2> What's in this topic</h2>
-This topic describes how to change the HTML templates of form fields in the forms on the Checkout page. This refers to the forms used on both steps of the Checkout: Shipping Information step and Review and Payments Information step. By changing the template you can add additional elements displayed with the field, for example images, change the CSS class assigned to it, add attributes and so on.
+This topic describes how to change the HTML templates of form fields in forms on the Checkout page. This refers to the forms used on both steps of the Checkout: Shipping Information step and Review and Payments Information step. By changing the template you can add additional elements displayed with the field, for example images, change the CSS class assigned to it, add attributes and so on.
 
 <h2> Overview </h2>
 
-The forms used in Checkout are implemented using Knockout JS. 
+The forms used on the Checkout page are implemented using Knockout JS. 
 
 To change the template of the form field, do the following:
 
 1. [Create a custom HTML template for knockout JS script that will render the form field](#template).
-2. [Specify the new template in the checkout page layout](#layout).
+2. [Specify the new template in the Checkout page layout](#layout).
 
 There are more details about each step in the following sections.
 
@@ -29,7 +29,7 @@ There are more details about each step in the following sections.
 
 ## Prerequisites 
 
-Set Magento to the production mode while you perform all customizations and debugging. 
+[Set Magento to the production mode]({{site.gdeurl}}config-guide/cli/config-cli-subcommands-mode.html) while you perform all customizations and debugging. 
 
 For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should [depend]({{site.gdeurl}}extension-dev-guide/composer-integration.html) on the Magento_Checkout module.
 
