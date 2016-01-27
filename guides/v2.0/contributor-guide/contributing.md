@@ -56,7 +56,7 @@ Often when the Magento 2 team works on reviewing the suggested changes, we will 
 	* Unit/integration test coverage (we will be releasing more information on writing test coverage in the near future).
 	* Proposed <a href="{{ site.baseurl }}" target="_blank">documentation</a> update. Documentation contributions can be submitted <a href="https://github.com/magento/devdocs" target="_blank">here</a>.
 4. For large features or changes, please <a href="https://github.com/magento/magento2/issues" target="_blank">open an issue</a> and discuss first. This may prevent duplicate or unnecessary effort, and it may gain you some additional contributors.
-5. To report a bug, please <a href="https://github.com/magento/magento2/issues" target="_blank">open an issue</a>, and follow these <a href="https://github.corp.magento.com/ishakhsuvarov/magento2ce/wiki/Issue-reporting-guidelines">guidelines about bugfix issues</a>.
+5. To report a bug, please <a href="https://github.com/magento/magento2/issues" target="_blank">open an issue</a>, and follow these <a href="https://github.com/magento/magento2/wiki/Issue-reporting-guidelines">guidelines about bugfix issues</a>.
 
 5. All automated tests must pass successfully (all builds on <a href="https://travis-ci.org/magento/magento2" target="_blank">Travis CI</a> must be green).
 

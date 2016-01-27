@@ -18,4 +18,4 @@ github_link: comp-mgr/prereq/prereq_updater.md
 
 #### Next step
 
-*	<a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_compman-updater.html">Set up cron for Component Manager and System Upgrade</a>
+<a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_cron.html">Set up cron for Component Manager and System Upgrade</a>

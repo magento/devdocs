@@ -7,6 +7,7 @@ menu_title: (Integrator) Get the Composer metapackage
 menu_order: 1
 menu_node: parent
 github_link: install-gde/prereq/integrator_install.md
+redirect_from: /guides/v2.0/install-gde/install/file-system-perms.html
 ---
 
 <div class="bs-callout bs-callout-tip">
@@ -93,7 +94,7 @@ The following sections discuss how to set file system ownership and permissions:
 {% include install/file-system-perms1-why.html %}
 
 <h3 id="install-perms-set">File system permissions and ownership</h3>
-{% include install/file-system-perms2-how.html %}
+{% include install/file-system-perms2-how.md %}
 
 #### Next step
 Install the Magento software:

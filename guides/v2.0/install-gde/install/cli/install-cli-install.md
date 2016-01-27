@@ -211,14 +211,15 @@ The following table discusses the meanings of installation option names and valu
 	</tr>
 	<tr>
 		<td><p>--use-secure</p></td>
-		<td><p><code>1</code> enables the use of Secure Sockets Layer (SSL) in all URLs (both Admin and storefront). Make sure your web server supports SSL before you select this option.</p>
-		<p><code>0</code> disables the use of SSL with Magento. In this case, all other secure URL options are assumed to also be <code>0</code>. This is the default.</p></td>
+		<td><p><code>1</code> enables the use of Secure Sockets Layer (SSL) in all storefront URLs. Make sure your web server supports SSL before you select this option.</p>
+		<p><code>0</code> disables the use of SSL with Magento. In this case, all other secure URL options are assumed to also be <code>0</code>. This is the default.</p>
+		<p>To have a fully secure site, you must enable <em>both</em> <code>--use-secure=1</code> and <code>--base-url-secure=1</code>.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
 		<td><p>--base-url-secure</p></td>
-		<td><p>Secure base URL to use to access your Magento Admin and storefront in the following format:</p>
-		<p><code>https://&lt;host or ip>/&lt;your Magento install dir>/</code></p></td>
+		<td><p>Secure base URL to use to access your Magento Admin using SSL.</code></p>
+		<p>To have a fully secure site, you must enable <em>both</em> <code>--use-secure=1</code> and <code>--base-url-secure=1</code>.</p></td>
 		<td><p>No</p></td>
 	</tr>
 
