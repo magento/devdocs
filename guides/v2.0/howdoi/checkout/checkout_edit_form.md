@@ -11,7 +11,7 @@ github_link: howdoi/checkout/checkout_edit_form.md
 <h2> What's in this topic</h2>
 This topic describes how to change the HTML templates of form fields in the forms on the Checkout page. This refers to the forms used on both steps of the Checkout: Shipping Information step and Review and Payments Information step. By changing the template you can add additional elements displayed with the field, for example images, change the CSS class assigned to it, add attributes and so on.
 
-## Overview
+<h2> Overview </h2>
 
 The forms used in Checkout are implemented using Knockout JS. 
 
@@ -112,6 +112,6 @@ In this file, add content similar to the following:
 
 ## Modifying the custom template after it was applied {#modify}
 
-If you modify your custom `.html` template after it was applied on the store pages, the changes will not apply until you do the following: delete all files in the `pub/static/frontend` and `var/view_preprocessing` directories, then reload the pages.
+If you modify your custom `.html` template after it was applied on the store pages, the changes will not apply until you do the following: delete all files in the `pub/static/frontend` and `var/view_preprocessing` directories, and then reload the pages.
 
 
