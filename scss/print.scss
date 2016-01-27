@@ -45,7 +45,7 @@ p, h2, h3 {
 h2, h3 {
   page-break-after:avoid
 }
-.site-header, .nav-main, .footer, .copyright-links, .sidebar, .improve-page, .page-intro {
+.site-header, .nav-main, .footer, .copyright-links, .sidebar, .improve-page {
   display: none;
 }
 .content {
@@ -53,8 +53,13 @@ h2, h3 {
   float: none;
   padding: 0;
 }
-.container, .content-wrap, .main-container, .home-section:last-child {
+.container, .content .content-wrap, .main-container, .home-section:last-child {
   padding: 0;
+}
+.page-intro {
+  padding: 1em 0;
+  margin-bottom: 1em;
+  border-bottom: 1px solid #ccc;
 }
 #copyright {
   border: 0;
