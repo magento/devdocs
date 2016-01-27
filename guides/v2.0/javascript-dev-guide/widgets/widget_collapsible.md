@@ -484,7 +484,7 @@ $("#element" ).collapsible("activate");
 <h3 id="collaps_deactivate"><code>deactivate()</code></h3>
 
 Collapse the content when this method is called.
-<p class="q">Wouldn't it be enough to say "Collapse the content"?</p>
+
 This method does not accept any arguments.
 
 Invoke the deactivate method:
