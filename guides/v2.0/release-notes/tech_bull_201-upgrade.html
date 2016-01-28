@@ -433,14 +433,14 @@
 <h4 id="detail">Detail</h4>
 <p>Our compressed archives for CE and EE were missing <code>.gitignore</code> files and, as a result, exceptions prevented the upgrade from completing successfully. We updated the <code>magento/magento-composer-installer</code> component so it reports missing files instead of throwing an exception with no details about what was wrong.</p>
 
-<p>At the same time, we fixed a separate issue that prevented upgrading to 2.0.1 if you use PHP 7. (The fix for this issue is a patch that you must apply separately from the <code>.gitignore</code> issue fix.)</p>
+<p>At the same time, we fixed a separate issue that prevented upgrading if you use PHP 7. (The fix for this issue is a patch that you must apply separately from the <code>.gitignore</code> issue fix.)</p>
 
 <p>Use the following resolutions:</p>
 
 <ul>
   <li><a href="#resolution4">PHP 7 patch</a></li>
-  <li><a href="#resolution1">Resolution 1 (if you’re using version 2.0.0)</a></li>
-  <li><a href="#resolution2">Resolution 2 (if your upgrade to 2.0.1 has failed)</a></li>
+  <li><a href="#resolution1">Resolution 1 (if you’re using version 2.0.0 or 2.0.1)</a></li>
+  <li><a href="#resolution2">Resolution 2 (if your upgrade to 2.0.1 or 2.0.2 has failed)</a></li>
   <li><a href="#resolution3">Resolution 3 (does not require command line access)</a></li>
 </ul>
 
