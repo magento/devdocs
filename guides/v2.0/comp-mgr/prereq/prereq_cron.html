@@ -617,6 +617,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/gitignore.html">Missing `.gitignore` files</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/cron.html">Troubleshoot cron</a></li>
 
 									
@@ -803,14 +811,21 @@
 
     <p>An editor displays. In the editor, enter the following:</p>
 
-    <pre><code>*/1 * * * * php &lt;your Magento install dir&gt;/update/cron.php &amp;
-*/1 * * * * php &lt;your Magento install dir&gt;/bin/magento setup:cron:run &amp;
+    <pre><code>*/1 * * * * &lt;path-to-binary&gt; -c &lt;ini-file-path&gt; &lt;your Magento install dir&gt;/update/cron.php 
+*/1 * * * * &lt;path-to-binary&gt; -c &lt;ini-file-path&gt; &lt;your Magento install dir&gt;/bin/magento setup:cron:run 
 </code></pre>
+
+    <p>where </p>
+
+    <ul>
+      <li><code>&lt;path-to-binary&gt;</code> is the absolute file system path to your PHP binary (use <code>which php</code> to find it)</li>
+      <li><code>&lt;ini-file-path&gt;</code> is the path to a <code>php.ini</code> file to use for the cron job; generally, you should use the web server plug-in’s <code>php.ini</code> file. To find it, create a <a href="/guides/v2.0/install-gde/prereq/optional.html#install-optional-phpinfo"><code>phpinfo.php</code></a> file.</li>
+    </ul>
 
     <p>For example,</p>
 
-    <pre><code>*/1 * * * * php /var/www/html/magento2/update/cron.php &amp;
-*/1 * * * * php /var/www/html/magento2/bin/magento setup:cron:run &amp;	
+    <pre><code>*/1 * * * * /usr/bin/php -c /etc/php5/apache2/php.ini /var/www/magento2/update/cron.php 
+*/1 * * * * /usr/bin/php -c /etc/php5/apache2/php.ini /var/www/magento2/bin/magento setup:cron:run 
 </code></pre>
   </li>
   <li>

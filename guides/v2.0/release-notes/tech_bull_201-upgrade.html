@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Upgrade from CE to EE</title>
+	<title>Technical Bulletin</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/comp-mgr/upgrader/ce-ee-upgrade-start.html">
+	<link rel="canonical" href="//guides/v2.0/release-notes/tech_bull_201-upgrade.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -132,9 +132,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Upgrade from CE to EE</h1>
+		<h1 class="page-heading">Technical Bulletin</h1>
 			
-			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/develop/guides/v2.0/comp-mgr/upgrader/ce-ee-upgrade-start.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/develop/guides/v2.0/release-notes/tech_bull_201-upgrade.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -148,7 +148,7 @@
 	<div class="sidebar-wrapper">
 
 
-<h4>Component Manager and System Upgrade Guide</h4>
+<h4>Release Notes</h4>
 
 
 
@@ -207,477 +207,7 @@
 
 				
 
-					
-					
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Upgrade the Magento application and components</a></li>
-									
-								
-
-									
-
-
-								
-								
-								
-							
-							
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/comp-mgr/prereq/prereq_compman.html">Prerequisites</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/prereq/prereq_auth-token.html">Enter your authentication keys in the Admin</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/prereq/prereq_compman-ulimit.html">Set ulimit for the web server user</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/prereq/prereq_cron.html">Set up cron for Component Manager and System Upgrade</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/prereq/prereq_updater.html">Set up the updater (contributing developers only)</a></li>
-
-									
-
-								
-								
-								
-							
-							
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/comp-mgr/compman-start.html">Run the Component Manager</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/compman-main-pg.html">Manage your components</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/compman-readiness.html">Step 1. Readiness check</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/compman-backup.html">Step 2. Back up the file system and database</a></li>
-
-									
-
-								
-								
-								
-							
-							
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-
-									
-
-										<li class="levela1"><span class="nav-header">Enable/Disable</span></li>
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/compman-enable-disable.html">Step 3. Enable/Disable</a></li>
-
-									
-
-								
-								
-								
-							
-							
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-
-									
-
-										<li class="levela1"><span class="nav-header">New Purchase</span></li>
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/compman-new-purchase.html">Step 3. Component Install</a></li>
-
-									
-
-								
-								
-								
-							
-							
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/comp-mgr/upgrader/ce-ee-upgrade-start.html">Upgrade from CE to EE</a></li>
-									
-								
-
-									
-
-
-								
-								
-								
-							
-							
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">Run System Upgrade</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-main-pg.html">Step 1. Select versions to upgrade</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-readiness.html">Step 2. Readiness check</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-backup.html">Step 3. Back up the file system and database</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/upgrader/upgrade.html">Step 4. Upgrade</a></li>
-
-									
-
-								
-								
-								
-							
-							
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-
-									
-
-										<li class="levela1"><span class="nav-header">Uninstall</span></li>
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/compman-uninst-data.html">Step 3. Data Option</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/compman-uninst-final.html">Step 4. Uninstall</a></li>
-
-									
-
-								
-								
-								
-							
-							
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-
-									
-
-										<li class="levela1"><span class="nav-header">Update</span></li>
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/compman-update.html">Step 3. Component Update</a></li>
-
-									
-
-								
-								
-								
-							
-							
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/comp-mgr/trouble/tshoot.html">Troubleshooting suggestions</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/were-sorry.html">We're sorry, we can't take that action right now</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/gitignore.html">Missing `.gitignore` files</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/cron.html">Troubleshoot cron</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/updater.html">Troubleshoot the updater application</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/update-fail.html">Roll back after update failure</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/component-depend.html">Resolve component dependencies</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/tshoot_backup.html">Troubleshoot backups</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/doc.html">magento/theme-doc-blank failure</a></li>
-
-									
-
-								
-								
-								
-							
-							
-						
-
-					
-
+			
 
 				
 
@@ -717,7 +247,65 @@
 
 				
 
-			
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+								<li class="q "><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Notes redirect</a></li>
+
+							
+
+								<li class="q "><a href="/guides/v2.0/release-notes/changes_2.0.html">Backward-Incompatible Changes</a></li>
+
+							
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
+										<li class="levela1"><span class="nav-header">Technical Bulletin</span></li>
+
+									
+
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.0/release-notes/tech_bull_201-upgrade.html">Magento upgrade issues (Jan. 28, 2016)</a></li>
+
+									
+
+								
+								
+								
+							
+							
+						
+
+					
+
 
 				
 
@@ -781,59 +369,271 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<h2 id="compman-overview">Overview of Magento Community Edition (CE) to Magento Enterprise Edition (EE) upgrade</h2>
-<p>This section discusses how to upgrade Magento CE to Magento EE.</p>
-
-<div class="bs-callout bs-callout-info" id="info">
-	<p>You must be authorized for Magento EE to perform the tasks discussed in this topic.</p>
-</div>
-
-<h2 id="compman-prereq">Prerequisites</h2>
-<p>Before continuing, complete all tasks discussed in <a href="/guides/v2.0/comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.</p>
-
-<p>In addition, you might need to install the PHP <a href="http://php.net/manual/en/book.bc.php" target="_blank"><code>bcmath</code></a> extension, which is required by EE. Examples follow:</p>
+		<h2 id="magento-upgrade-issues-jan-28-2016">Magento upgrade issues (Jan. 28, 2016)</h2>
+<p>This bulletin informs you of the following issues:</p>
 
 <ul>
-  <li>CentOS (using the <code>webtatic</code> repository): <code>yum -y install php56w-bcmath</code></li>
-  <li>Ubuntu (using the <code>ppa:ondrej/php5-5.6</code> repository): <code>apt-get -y install php5-bcmath</code></li>
+  <li><a href="#gitignore">Issue: Upgrade fails because of missing <code>.gitignore</code> files</a></li>
+  <li><a href="#sorry">Error during upgrade: “We’re sorry, we can’t take that action right now”</a></li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-	<p>Make sure you are authorized for Magento EE access before you continue. Contact <a href="http://support.magentocommerce.com" target="_blank">Magento Support</a> if you have questions.</p>
-</div>
+<h3 id="gitignore">Issue: Upgrade failures</h3>
+<p>Magento Community Edition (CE) and Enterprise Edition (EE) upgrades failed in any of the following circumstances:</p>
 
-<h2 id="compman-access">Start System Upgrade from the Magento Admin</h2>
-<p>To run System Upgrade:</p>
+<ul>
+  <li>If you got the Magento software <a href="/guides/v2.0/install-gde/prereq/zip_install.html">compressed archive</a> (<code>.tar.gz</code>, <code>.zip</code>, or <code>.bz2</code>).</li>
+  <li>If your server runs PHP 7 and you installed the Magento software using <em>either</em> a <a href="/guides/v2.0/install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="/guides/v2.0/install-gde/prereq/integrator_install.html">Composer metapackage</a>.</li>
+</ul>
+
+<p>We addressed the following issues:</p>
+
+<ul>
+  <li>Missing <code>.gitignore</code> files that resulted in exceptions</li>
+  <li>
+    <p>An error related to the updater application and PHP 7:</p>
+
+    <pre><code>PHP Warning: require_once(/public_html/magento2/update/vendor/autoload.php): failed to open stream: No such file or directory in /public_html/magento2/update/app/bootstrap.php
+</code></pre>
+  </li>
+</ul>
+
+<p>The following table summarizes what you need to do.</p>
+
+<table>
+	<tbody>
+<tr> 
+	<th>Upgrade path</th>
+	<th>What to do</th>
+</tr>
+<tr>
+	<td>Magento CE or EE 2.0.2 installed <em>or</em> you haven't installed Magento yet.</td>
+	<td><p>No action is required. Install version 2.0.2 if you haven't already.</p>
+		<p>You can ignore this bulletin.</p></td>
+</tr>
+<tr>
+	<td>Magento CE or EE 2.0.0 to 2.0.1</td>
+	<td>Apply the fix</td>
+</tr>
+<tr>
+	<td>Magento CE or EE 2.0.0 to 2.0.2</td>
+	<td>Apply the fix</td>
+</tr>
+<tr>
+	<td>Magento CE or EE 2.0.1 to 2.0.2</td>
+	<td>Apply the fix</td>
+</tr>
+<tr>
+	<td>Any of the preceding <em>and</em> your Magento server runs PHP 7</td>
+	<td><p>Apply the patch <em>and</em> the fix</p>
+		<p><strong>Note</strong>: You must apply the PHP 7 patch whether you installed the Magento software using a <a href="/guides/v2.0/install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="/guides/v2.0/install-gde/prereq/integrator_install.html">Composer metapackage</a>.</p></td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="detail">Detail</h4>
+<p>Our compressed archives for CE and EE were missing <code>.gitignore</code> files and, as a result, exceptions prevented the upgrade from completing successfully. We updated the <code>magento/magento-composer-installer</code> component so it reports missing files instead of throwing an exception with no details about what was wrong.</p>
+
+<p>At the same time, we fixed a separate issue that prevented upgrading to 2.0.1 if you use PHP 7. (The fix for this issue is a patch that you must apply separately from the <code>.gitignore</code> issue fix.)</p>
+
+<p>Use the following resolutions:</p>
+
+<ul>
+  <li><a href="#resolution4">PHP 7 patch</a></li>
+  <li><a href="#resolution1">Resolution 1 (if you’re using version 2.0.0)</a></li>
+  <li><a href="#resolution2">Resolution 2 (if your upgrade to 2.0.1 has failed)</a></li>
+  <li><a href="#resolution3">Resolution 3 (does not require command line access)</a></li>
+</ul>
+
+<h3 id="resolution4">PHP 7 patch</h3>
+<p>If your Magento server runs PHP 7, you must apply a patch first.</p>
+
+<p>To apply the patch:</p>
 
 <ol>
-  <li>Log in to the Magento Admin as an administrator.</li>
-  <li>Click <strong>System</strong> &gt; <strong>Web Setup Wizard</strong>.
-The following page displays.<br /><br />
-<img src="/common/images/cman_upgr_initial.png" width="650px" alt="Specify whether to manage components or upgrade Magento" /></li>
   <li>
-    <p>Click <strong>System Upgrade</strong>.</p>
+    <p>Download one of the following patch archives. Patches are available in the following formats: <code>.zip</code>, <code>.tar.bz2</code>, <code>.tar.gz</code></p>
 
-    <p>Magento begins searching for core module updates immediately. To also search for component updates, click <strong>Yes</strong>. A sample follows:</p>
+    <table>
+    <col width="30%" />
+    <col width="70%" />
+<tbody>
+<tr> 
+    <th>Magento edition</th>
+    <th>Patch location</th>
+</tr>
+<tr> 
+<td>Magento CE</td>
+<td><p><a href="http://www.magento.com/download" target="_blank">www.magento.com/download</a></p>
+    <p>Follow the instructions on your screen to download <code>MDVA-84.*</code></p></td>
+</tr>
+<tr> 
+    <td>Magento EE merchant portal</td>
+    <td>Use the following steps:
+    <ol><li>Go to <a href="http://www.magento.com" target="_blank">www.magento.com</a></li>
+    <li>In the top horizontal navigation bar, click <strong>My Account</strong>.</li>
+    <li>Log in with your Magento user name and password.</li>
+    <li>In the left navigation bar, click <strong>Downloads</strong>.</li>
+    <li>Click <strong>Magento Enterprise Edition</strong> <strong>2.X</strong> &gt; <strong>Magento Enterprise Edition 2.x Release</strong> &gt; <strong>Support Patches</strong></li>
+    <li>Follow the instructions on your screen to download <code>MDVA-84.*</code></li>
 
-    <p><img src="/common/images/upgr_initial-pg.png" width="650px" alt="Magento begins searching for upgrades right away" /></p>
 
-    <p>The page displays similar to the following when we find components to upgrade.<br /><br />
-<img src="/common/images/upgr-ee-version-list.png" width="750px" alt="Magento finds software to upgrade" /><br /><br /></p>
+<li>Transfer the patch to your development system.</li></ol></td>
+</tr>
+<tr>
+    <td>Magento EE partner portal</td>
+    <td>Use the following steps:
+    <ol><li>Log in to <a href="https://partners.magento.com/English/?rdir=/files.aspx" target="_blank">partners.magento.com</a></li>
+    <li>Click <strong>Magento Enterprise Edition</strong> &gt; <strong>Magento Enterprise Edition 2.X</strong> &gt; <strong>Magento Enterprise Edition 2.x Release</strong> &gt; <strong>Support Patches</strong>.</li>
+    <li>In the left navigation bar, click <strong>Downloads</strong>.</li>
+    <li>Follow the instructions on your screen to download <code>MDVA-84.*</code></li>
+<li>Transfer the patch to your development system.</li></ol></td>
+    </tr>
+</tbody>
+</table>
 
-    <p>From the list, click the version to which to upgrade. Typically, you’ll choose the most recent version (indicated by <strong>(latest)</strong>.)</p>
+    <div class="bs-callout bs-callout-info" id="info">
+  		<p>Use the same patch whether or not you installed optional sample data.</p>
+</div>
+  </li>
+  <li>
+    <p>Extract the patch in your Magento installation directory.</p>
+
+    <p>Log in as or change to the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a>. Use one of the following commands to extract the archive.</p>
+
+    <table>
+<tbody>
+<tr> 
+    <th>File format</th>
+    <th>Command to extract</th>
+</tr>
+<tr> 
+    <td>.tar.gz</td>
+    <td><code>tar zxf &lt;filename&gt;</code></td>
+    </tr>
+    <tr> 
+        <td>.zip</td>
+        <td><code>unzip &lt;filename&gt;</code></td>
+    </tr>
+    <tr> 
+        <td>.tar.bz2</td>
+        <td><code>tar jxf &lt;filename&gt;</code></td>
+</tr>
+</tbody>
+</table>
+  </li>
+  <li>
+    <p>We recommend you <a href="/guides/v2.0/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">upgrade</a> to version 2.0.2.</p>
   </li>
 </ol>
 
-<h4 id="error">Error</h4>
-<pre><code>The following error can indicate one of several issues, including that you haven't entered your &lt;a href="/guides/v2.0/comp-mgr/prereq/prereq_auth-token.html"&gt;authentication keys&lt;/a&gt; in the Magento Admin:
+<h4 id="resolution1">Resolution 1 (using version 2.0.0 or 2.0.1)</h4>
+<p>To resolve the missing <code>.gitignore</code> files issue using this method, all of the following must be true:</p>
 
-&lt;img src="/common/images/upgr-sorry.png" width="600px"&gt;
+<ul>
+  <li>You must have command-line access to your Magento server</li>
+  <li>
+    <p>Your server must be running Magento 2 CE or EE version 2.0.0</p>
 
-For suggested solutions to other causes indicated by this message, see &lt;a href="/guides/v2.0/comp-mgr/trouble/cman/were-sorry.html"&gt;troubleshooting&lt;/a&gt;.
+    <p>To confirm the version, you can either look in the lower right corner of the Magento Admin or you can use the <code>php &lt;your Magento install dir&gt;/bin/magento --version</code> command.</p>
+  </li>
+</ul>
+
+<p>To resolve the issue:</p>
+
+<ol>
+  <li>Log in to your Magento server as the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
+  <li>Change to your Magento installation directory.</li>
+  <li>
+    <p>Run the following command:</p>
+
+    <pre><code>composer update magento/magento-composer-installer
+</code></pre>
+  </li>
+  <li>If prompted, enter your <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">authentication keys</a>.</li>
+  <li>Make sure <code>magento/magento-composer-installer</code> is version 0.1.6</li>
+  <li>
+    <p>Run the following commands in the order shown:</p>
+
+    <pre><code>composer require magento/product-community-edition 2.0.2 --no-update
+composer update
 </code></pre>
 
-<h2 id="ce-ee-continue">Continue your upgrade</h2>
-<p>From here, your upgrade is the same as any other upgrade. Continue with <a href="/guides/v2.0/comp-mgr/upgrader/upgrade-main-pg.html">Step 1. Select versions to upgrade</a>.</p>
+    <div class="bs-callout bs-callout-info" id="info">
+  		<p>You can upgrade to either <code>magento/product-community-edition 2.0.2</code> or <code>magento/product-community-edition 2.0.1</code>; we recommend 2.0.2.</p>
+</div>
+  </li>
+  <li>Verify your server is running version 2.0.2 in any of the ways discussed earlier in this resolution.
+<!-- 7.	We recommend you <a href="/guides/v2.0/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">upgrade</a> to version 2.0.2. --></li>
+</ol>
+
+<h4 id="resolution2">Resolution 2 (upgrade to 2.0.1 or 2.0.2 has failed)</h4>
+<p>To resolve the missing <code>.gitignore</code> files issue using this method, all of the following must be true:</p>
+
+<ul>
+  <li>You must have command-line access to your Magento server</li>
+  <li>You must have attempted to upgrade to either 2.0.1 or 2.0.2 and failed</li>
+</ul>
+
+<p>You must run <code>composer update</code> twice to update components and then delete two files: one that recorded the failed upgrade and another that tells Magento your store is in maintenance mode.</p>
+
+<p>To resolve the issue:</p>
+
+<ol>
+  <li>Log in to your Magento server as the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
+  <li>Change to your Magento installation directory.</li>
+  <li>If prompted, enter your <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">authentication keys</a>.</li>
+  <li>
+    <p>Enter the following command:</p>
+
+    <pre><code>composer update
+</code></pre>
+  </li>
+  <li>
+    <p>Make sure <code>magento/magento-composer-installer</code> is version 0.1.6</p>
+
+    <p>The following exception might display; it’s expected:</p>
+
+    <pre><code>[ErrorException]
+Source /var/www/html/magento2/vendor/magento/magento2-base/dev/tests/integration/.gitignore does not exist
+</code></pre>
+  </li>
+  <li>
+    <p>After the command completes, enter the same command again:</p>
+
+    <pre><code>composer update
+</code></pre>
+  </li>
+  <li>Wait while the command completes.</li>
+  <li>
+    <p>Delete the following files from <code>&lt;your Magento install dir&gt;/var</code> directory:</p>
+
+    <ul>
+      <li><code>.update_error.flag</code></li>
+      <li><code>.maintenance.flag</code></li>
+    </ul>
+  </li>
+  <li>
+    <p>Verify your Magento version is 2.0.1 in any of the following ways:</p>
+
+    <ul>
+      <li>Using the <code>php &lt;your Magento install dir&gt;/bin/magento --version</code> command</li>
+      <li>Log in to the Magento Admin. The version displays in the lower right corner of the page.</li>
+    </ul>
+  </li>
+  <li>We recommend you <a href="/guides/v2.0/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">upgrade</a> to version 2.0.2.</li>
+</ol>
+
+<h4 id="resolution3">Resolution 3 (does not require command line access)</h4>
+<p>To resolve the missing <code>.gitignore</code> files issue if you have no command-line access to your Magento server, <a href="/guides/v2.0/install-gde/bk-install-guide.html">install version 2.0.2</a> on a local machine and transfer the Magento codebase to your Magento server using FTP or a utility provided by your shared hosting service.</p>
+
+<h3 id="sorry">Error during upgrade: “We’re sorry, we can’t take that action right now”</h3>
+<p>If this message displays during your upgrade, it can mean any of the following:</p>
+
+<ul>
+  <li><a href="/guides/v2.0/comp-mgr/trouble/cman/were-sorry.html#not-auth">You didn’t authenticate</a> with the System Upgrade utility</li>
+  <li><a href="/guides/v2.0/comp-mgr/trouble/cman/were-sorry.html#updater">The updater application isn’t initialized</a></li>
+  <li><a href="/guides/v2.0/comp-mgr/trouble/cman/were-sorry.html#git-clone">You cloned the Magento GitHub repository</a></li>
+</ul>
 
 
 		</div>
