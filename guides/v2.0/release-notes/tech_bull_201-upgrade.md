@@ -80,7 +80,7 @@ To resolve the issue:
 
 		composer update magento/magento-composer-installer
 
-4.	If prompted, enter your authentication keys.
+4.	If prompted, enter your <a href="{{ site.gdeurl }}install-gde/prereq/connect-auth.html">authentication keys</a>.
 4.	Make sure `magento/magento-composer-installer` is version 0.1.6
 5.	Run the following commands in the order shown:
 
@@ -105,7 +105,7 @@ To resolve the issue:
 
 		composer update magento/magento-composer-installer
 
-4.	If prompted, enter your authentication keys.
+4.	If prompted, enter your <a href="{{ site.gdeurl }}install-gde/prereq/connect-auth.html">authentication keys</a>.
 5.	Enter the following command:
 
 		composer update
