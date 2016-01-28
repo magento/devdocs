@@ -10,6 +10,9 @@ github_link: install-gde/bk-install-guide.md
 redirect_from: /guides/v1.0/install-gde/bk-install-guide.html
 ---
 
+
+HELLO
+
 <h2>Magento software installation</h2>
 Hi, we're glad you're among the 240,000 merchants worldwide who put their trust in our eCommerce software. We've gathered some information to help you get started with Magento and with your Magento installation. 
 
