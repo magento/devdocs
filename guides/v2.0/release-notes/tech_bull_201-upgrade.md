@@ -15,10 +15,6 @@ This bulletin informs you of the following issues:
 *	[Issue: Upgrade fails because of missing `.gitignore` files](#gitignore)
 *	[Error during upgrade: "We're sorry, we can't take that action right now"](#sorry)
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>If you installed the Magento software using <code>git clone</code>, you are <em>not</em> affected by this issue. You can ignore this bulletin.</p>
-</div>
-
 ### Issue: Upgrade failures {#gitignore}
 Magento Community Edition (CE) and Enterprise Edition (EE) upgrades failed in any of the following circumstances:
 
@@ -70,7 +66,7 @@ Our compressed archives for CE and EE were missing `.gitignore` files and, as a 
 
 At the same time, we fixed a separate issue that prevented upgrading to 2.0.1 if you use PHP 7. (The fix for this issue is a patch that you must apply separately from the `.gitignore` issue fix.)
 
-Use any of the following resolutions:
+Use the following resolutions:
 
 *	[PHP 7 patch](#resolution4)
 *	[Resolution 1 (if you're using version 2.0.0)](#resolution1)
@@ -152,7 +148,7 @@ To apply the patch:
 	</table>
 3.	We recommend you <a href="{{ site.gdeurl }}guides/v2.0/comp-mgr/upgrader/upgrade-start.html">upgrade</a> to version 2.0.2.
 
-#### Resolution 1 (using version 2.0.0) {#resolution1}
+#### Resolution 1 (using version 2.0.0 or 2.0.1) {#resolution1}
 To resolve the missing `.gitignore` files issue using this method, all of the following must be true:
 
 *	You must have command-line access to your Magento server
@@ -172,10 +168,15 @@ To resolve the issue:
 4.	Make sure `magento/magento-composer-installer` is version 0.1.6
 5.	Run the following commands in the order shown:
 
-		composer require magento/product-community-edition 2.0.1 --no-update
+		composer require magento/product-community-edition 2.0.2 --no-update
 		composer update
-6.	Verify your server is running version 2.0.1 in any of the ways discussed earlier in this resolution.
-7.	We recommend you <a href="{{ site.gdeurl }}guides/v2.0/comp-mgr/upgrader/upgrade-start.html">upgrade</a> to version 2.0.2.
+
+	<div class="bs-callout bs-callout-info" id="info">
+  		<p>You can upgrade to either <code>magento/product-community-edition 2.0.2</code> or <code>magento/product-community-edition 2.0.1</code>; we recommend 2.0.2.</p>
+	</div>
+
+6.	Verify your server is running version 2.0.2 in any of the ways discussed earlier in this resolution.
+<!-- 7.	We recommend you <a href="{{ site.gdeurl }}guides/v2.0/comp-mgr/upgrader/upgrade-start.html">upgrade</a> to version 2.0.2. -->
 
 #### Resolution 2 (upgrade to 2.0.1 or 2.0.2 has failed) {#resolution2}
 To resolve the missing `.gitignore` files issue using this method, all of the following must be true:
@@ -203,7 +204,7 @@ To resolve the issue:
 
 		composer update
 7.	Wait while the command completes.
-8.	Delete the following files from `<your Magento install dir>/var`:
+8.	Delete the following files from `<your Magento install dir>/var` directory:
 
 	*	`.update_error.flag`
 	*	`.maintenance.flag`
@@ -221,4 +222,4 @@ If this message displays during your upgrade, it can mean any of the following:
 
 *	<a href="{{ site.gdeurl }}comp-mgr/trouble/cman/were-sorry.html#not-auth">You didn't authenticate</a> with the System Upgrade utility
 *	<a href="{{ site.gdeurl }}comp-mgr/trouble/cman/were-sorry.html#updater">The updater application isn't initialized</a>
-*	<a href="{{ site.gdeurl }}comp-mgr/trouble/cman/were-sorry.html#git-clone">Problem: you cloned the Magento GitHub repository</a>
+*	<a href="{{ site.gdeurl }}comp-mgr/trouble/cman/were-sorry.html#git-clone">You cloned the Magento GitHub repository</a>
