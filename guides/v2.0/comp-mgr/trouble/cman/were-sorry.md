@@ -18,6 +18,7 @@ See one of the following sections for possible solutions:
 
 *	[Problem: you're not authenticated](#not-auth)
 *	[Problem: the updater application isn't initialized](#updater)
+*	[Problem: you cloned the Magento GitHub repository](#git-clone)
 
 ### Problem: you're not authenticated {#not-auth}
 You might not have entered your authentication keys in the Magento Admin.
@@ -64,3 +65,8 @@ Modify Magento's `composer.json` to reference the `https://repo.magento.com` rep
 
 		composer install
 9.	After the command completes, try the upgrade again.
+
+### You cloned the Magento GitHub repository {#git-clone}
+If you installed the Magento software by cloning the Magento repository, you cannot use the System Upgrade utility to upgrade it.
+
+Instead, see one of the options discussed in <a href="{{ site.gdeurl }}install-gde/install/cli/dev_options.html">Contributing developers&mdash;update, reinstall Magento</a>.
