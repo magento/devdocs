@@ -18,7 +18,7 @@ This bulletin informs you of the following issues:
 ### Issue: Upgrade failures {#gitignore}
 Upgrades to Magento Community Edition (CE) and Enterprise Edition (EE) 2.0.1 failed if you got the Magento software <a href="{{ site.gdeurl }}install-gde/prereq/zip_install.html">compressed archive</a> (`.tar.gz`, `.zip`, and `.bz2`).
 
-We addressed the following issues in a patch:
+We addressed the following issues:
 
 *	Missing `.gitignore` files that resulted in exceptions
 *	An error related to the updater application and PHP 7:
@@ -42,6 +42,10 @@ The following table summarizes what you need to do.
 	<td>Apply the fix</td>
 </tr>
 <tr>
+	<td>Magento CE or EE 2.0.0 or 2.0.1 <em>and</em> your Magento server runs PHP 7.0.2</td>
+	<td>Apply the fix <em>and</em> the patch</td>
+</tr>
+<tr>
 	<td>Magento CE or EE 2.0.2 installed <em>or</em> you haven't installed Magento yet.</td>
 	<td><p>No action is required. Install version 2.0.2 if you haven't already.</p>
 		<p>You can ignore this bulletin.</p></td>
@@ -56,13 +60,14 @@ The following table summarizes what you need to do.
 #### Detail
 Our compressed archives for CE and EE were missing `.gitignore` files and, as a result, exceptions prevented the upgrade from completing successfully. We updated the `magento/magento-composer-installer` component so it reports missing files instead of throwing an exception with no details about what was wrong.
 
-At the same time, we fixed a separate issue that prevented upgrading to 2.0.1 if you use PHP 7.
+At the same time, we fixed a separate issue that prevented upgrading to 2.0.1 if you use PHP 7. (The fix for this issue is a patch that you must apply separately from the `.gitignore` issue fix.)
 
 Use any of the following resolutions:
 
 *	[Resolution 1 (if you're using version 2.0.0)](#resolution1)
 *	[Resolution 2 (if your upgrade to 2.0.1 has failed)](#resolution2)
 *	[Resolution 3 (does not require command line access)](#resolution3)
+*	[PHP 7 patch](#resolution4)
 
 #### Resolution 1 (using version 2.0.0) {#resolution1}
 To resolve the missing `.gitignore` files issue using this method, all of the following must be true:
@@ -87,6 +92,7 @@ To resolve the issue:
 		composer require magento/product-community-edition 2.0.1 --no-update
 		composer update
 6.	Verify your server is running version 2.0.1 in any of the ways discussed earlier in this resolution.
+9.	If your Magento server runs PHP 7, you must also [apply a patch](#resolution4).
 7.	Optionally <a href="{{ site.gdeurl }}guides/v2.0/comp-mgr/upgrader/upgrade-start.html">upgrade</a> to version 2.0.2.
 
 #### Resolution 2 (upgrade to 2.0.1 has failed) {#resolution2}
@@ -127,10 +133,86 @@ To resolve the issue:
 
 	*	Using the `php <your Magento install dir>/bin/magento --version` command
 	*	Log in to the Magento Admin. The version displays in the lower right corner of the page.
+9.	If your Magento server runs PHP 7, you must also [apply a patch](#resolution4).
 7.	Optionally <a href="{{ site.gdeurl }}guides/v2.0/comp-mgr/upgrader/upgrade-start.html">upgrade</a> to version 2.0.2.
 
 #### Resolution 3 (does not require command line access) {#resolution3}
 To resolve the missing `.gitignore` files issue if you have no command-line access to your Magento server, <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">install version 2.0.2</a> on a local machine and transfer the Magento codebase to your Magento server using FTP or a utility provided by your shared hosting service.
+
+### PHP 7 patch {#resolution4}
+If your Magento server runs PHP 7.0.1, you must apply a patch before you can upgrade.
+
+To apply the patch:
+
+1.	Download one of the following patch archives. Patches are available in the following formats: `.zip`, `.tar.bz2`, `.tar.gz`
+
+	<table>
+		<col width="30%">
+		<col width="70%">
+	<tbody>
+	<tr> 
+		<th>Magento edition</th>
+		<th>Patch location</th>
+	</tr>
+	<tr> 
+	<td>Magento CE</td>
+	<td><p><a href="http://www.magento.com/download" target="_blank">www.magento.com/download</a></p>
+		<p>Follow the instructions on your screen to download <code>MDVA-84.*</code></p></td>
+	</tr>
+	<tr> 
+		<td>Magento EE merchant portal</td>
+		<td>Use the following steps:
+		<ol><li>Go to <a href="http://www.magento.com" target="_blank">www.magento.com</a></li>
+		<li>In the top horizontal navigation bar, click <strong>My Account</strong>.</li>
+		<li>Log in with your Magento user name and password.</li>
+		<li>In the left navigation bar, click <strong>Downloads</strong>.</li>
+		<li>Click <strong>Magento Enterprise Edition</strong> <strong>2.X</strong> > <strong>Magento Enterprise Edition 2.x Release</strong> > <strong>Support Patches</strong></li>
+		<li>Follow the instructions on your screen to download <code>MDVA-84.*</code></li></ul>
+
+	</li>
+	<li>Transfer the patch to your development system.</li></ol></td>
+	</tr>
+	<tr>
+		<td>Magento EE partner portal</td>
+		<td>Use the following steps:
+		<ol><li>Log in to <a href="https://partners.magento.com/English/?rdir=/files.aspx" target="_blank">partners.magento.com</a></li>
+		<li>Click <strong>Magento Enterprise Edition</strong> > <strong>Magento Enterprise Edition 2.X</strong> > <strong>Magento Enterprise Edition 2.x Release</strong> > <strong>Support Patches</strong>.</li>
+		<li>In the left navigation bar, click <strong>Downloads</strong>.</li>
+		<li>Follow the instructions on your screen to download <code>MDVA-84.*</code></li>
+	<li>Transfer the patch to your development system.</li></ol></td>
+		</tr>
+	</tbody>
+	</table>
+
+	<div class="bs-callout bs-callout-info" id="info">
+  		<p>Use the same patch whether or not you installed optional sample data.</p>
+	</div>
+
+2.	Extract the patch in your Magento installation directory.
+
+Log in as or change to the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>. Use one of the following commands to extract the archive.
+
+<table>
+<tbody>
+<tr> 
+	<th>File format</th>
+	<th>Command to extract</th>
+</tr>
+<tr> 
+	<td>.tar.gz</td>
+	<td><code>tar zxf &lt;filename></code></td>
+	</tr>
+	<tr> 
+		<td>.zip</td>
+		<td><code>unzip &lt;filename></code></td>
+	</tr>
+	<tr> 
+		<td>.tar.bz2</td>
+		<td><code>tar jxf &lt;filename></code></td>
+</tr>
+</tbody>
+</table>
+
 
 ### Error during upgrade: "We're sorry, we can't take that action right now" {#sorry}
 If this message displays during your upgrade, it can mean any of the following:
