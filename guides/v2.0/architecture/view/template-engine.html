@@ -11,9 +11,9 @@
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/app.css" />
-	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/print.css" media="print"/>
-	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v2.0/architecture/view/template-engine.html">
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.0/architecture/view/template-engine.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -23,7 +23,7 @@
 <!--Search Results Overlay -->
 <div class="searchResultsBack"></div>
 <div id="searchResultsBox">
-	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/pages/Magento/devdocs_internal/common/images/close.png" alt="Close"> --></div>
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
 	<gcse:search></gcse:search>
 	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
 </div>
@@ -39,9 +39,9 @@
 
 		<div id="global-nav">
 			<div class="main-site-name">
-				<a class="logo pull-left" href="/pages/Magento/devdocs_internal/"> </a>
+				<a class="logo pull-left" href="/"> </a>
 				<div class="sub-site-name">
-					<a href="/pages/Magento/devdocs_internal/">Developer Documentation (2.0)</a>
+					<a href="/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
 		</div><!-- #global-nav -->
@@ -316,7 +316,7 @@
 
 <p>The difference between these two classes is that the <code>Template</code> class has methods required to work with templates and allows initiating a template engine to generate HTML content based on a template, while <code>AbstractBlock</code> has no methods for working with templates, and provides only displaying the hard-coded HTML content:</p>
 
-<p><img src="/pages/Magento/devdocs_internal/common/images/view_te2.png" alt="Blocks class diagram" /></p>
+<p><img src="/common/images/view_te2.png" alt="Blocks class diagram" /></p>
 
 <p>The AbstractBlock class implements the main <code>toHtml()</code> method, which is called by all blocks when it is necessary to generate the HTML output.</p>
 
@@ -357,17 +357,17 @@
 
 <p>Schematically, a template engine performs the following (Case 2, step 2):</p>
 
-<p><img src="/pages/Magento/devdocs_internal/common/images/view_te4.png" alt="toHtml() execution flow" /></p>
+<p><img src="/common/images/view_te4.png" alt="toHtml() execution flow" /></p>
 
 <p>The same process, with more technical details:</p>
 
-<p><img src="/pages/Magento/devdocs_internal/common/images/view_te5.png" alt="toHtml() execution flow more details" /></p>
+<p><img src="/common/images/view_te5.png" alt="toHtml() execution flow more details" /></p>
 
 <h3 id="m2devgde-temp-eng-invoke">Invoke a PHTML block from a PHTML block</h3>
 
 <p>The following diagram illustrates the actions executed when a PHTML block is invoked from a PHTML block by a <code>getChildHtml</code> call.</p>
 
-<p><img src="/pages/Magento/devdocs_internal/common/images/view_te6.png" alt="Diagram: actions executed when a PHTML block is invoked from a PHTML block by a getChildHtml call" /></p>
+<p><img src="/common/images/view_te6.png" alt="Diagram: actions executed when a PHTML block is invoked from a PHTML block by a getChildHtml call" /></p>
 
 <p>Example of a <code>getChildHtml</code> call:</p>
 
@@ -378,7 +378,7 @@
 <h3 id="m2devgde-temp-eng-temp">Template rendering</h3>
 
 <p>Template files rendering is performed by <code>\Magento\Framework\View\TemplateEngine\Php</code>:</p>
-<p><img src="/pages/Magento/devdocs_internal/common/images/view_te7.png" alt="template rendering flow diagram" /></p>
+<p><img src="/common/images/view_te7.png" alt="template rendering flow diagram" /></p>
 
 <h2 id="m2devgde-temp-eng-temp">Template engine file structure</h2>
 <p>All template engine files are stored in the <code>View</code> library:</p>
@@ -398,7 +398,7 @@ _lib/Magento/View
 
 <h3 id="m2devgde-temp-eng-basic">Basic classes</h3>
 <p>The class diagram of the basic classes Implement the template rendering subsystem:</p>
-<p><img src="/pages/Magento/devdocs_internal/common/images/view_te8.png" alt="template rendering diagram of classes" /></p>
+<p><img src="/common/images/view_te8.png" alt="template rendering diagram of classes" /></p>
 
 <h3 id="m2devgde-temp-eng-desc">Class descriptions</h3>
 
@@ -602,7 +602,7 @@ render(&nbsp;&nbsp;
     <div id="magento-com">
         <div class="intro-paragraph">
             <div class="container">
-                <a href="http://www.magento.com/"><img src="/pages/Magento/devdocs_internal/i/magento_logo_footer.svg" alt="Magento an ebay inc company" /></a>
+                <a href="http://www.magento.com/"><img src="/i/magento_logo_footer.svg" alt="Magento an ebay inc company" /></a>
                 <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
             </div>
         </div>
@@ -685,8 +685,8 @@ render(&nbsp;&nbsp;
 </div>
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="/pages/Magento/devdocs_internal/common/js/jsCookie.js"></script>
-<script src="/pages/Magento/devdocs_internal/common/js/devdocs.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
 
 <script type="text/javascript">
     (function() {
@@ -711,7 +711,7 @@ render(&nbsp;&nbsp;
     })();
 </script>
 
-<script src="/pages/Magento/devdocs_internal/js/app-min.js"></script>
+<script src="/js/app-min.js"></script>
 
 
 <!--Google Custom Search-->

@@ -3,10 +3,10 @@
 <head>
 	<meta charset=utf-8>
 
-	<link rel="stylesheet" type="text/css" href="/pages/Magento/devdocs_internal/common/css/stylesheet.css"/>
-	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
-	<link rel="icon" href="/pages/Magento/devdocs_internal/common/css/favicon.ico" type="image/x-icon">
-	<link rel="shortcut icon" href="/pages/Magento/devdocs_internal/common/css/favicon.ico" type="image/x-icon"> 
+	<link rel="stylesheet" type="text/css" href="/common/css/stylesheet.css"/>
+	<link rel="stylesheet" href="/common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
+	<link rel="icon" href="/common/css/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/common/css/favicon.ico" type="image/x-icon"> 
 	<title>Magento Enterprise Edition (EE) Release Notes (1.13 and later)</title>
 
 </head>
@@ -17,7 +17,7 @@
 <body>
 <a name="top"></a>
 
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/m1xheader.png" width="1024" alt="header" />
+<img src="/common/images/m1x/m1xheader.png" width="1024" alt="header" />
 
 <!-- Title: Magento Enterprise Edition (EE) Release Notes (1.13 and later) -->
 <!-- URL: ee113-later-release-notes -->
@@ -42,7 +42,7 @@
 <li><a href="#php54">PHP 5.4 Patch Available</a></li>
 <li><a href="#ee113-patches-how-to-get">How to get Patches for Magento EE</a></li> 
 </ul>
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Some of the patches discussed in this section have <code>EE_1.14.0.1</code> in the name. These patches were all tested against EE 1.13.x as well.</div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Some of the patches discussed in this section have <code>EE_1.14.0.1</code> in the name. These patches were all tested against EE 1.13.x as well.</div>
 
 <h3 id="ee113-patches-connect-general">General Magento Connect Patches</h3>
 <p><em>Patch name</em>: PATCH_SUPEE-3941_EE_1.14.0.1_v1-2014-08-12-12-10-06.sh</p>
@@ -72,7 +72,7 @@ To set file system permissions appropriately, see <a href="/guides/m1x/install/i
 <p>Magento has fixed an issue that prevented some Discover credit cards from validating properly. The issue was that certain Discover credit card number ranges were not recognized as being valid. As a result of the fix, all Discover cards should validate properly.</p>
 <p>The issue affects EE versions 1.9.1.1 through 1.13.1.0.</p>
 <p>To get a fix for the issue, see <a href="/guides/m1x//other/discover-card-validation.html" target="_blank">Discover credit card validation issue: Magento EE 1.9.1.1&ndash;1.13.1.0 and CE 1.4.2.0&ndash;1.8.1.0</a>.</p>
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: This is <em>not</em> a security threat. No data has been compromised or misused. It affects only the ability to validate certain credit card number ranges as valid Discover card numbers.</span></div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: This is <em>not</em> a security threat. No data has been compromised or misused. It affects only the ability to validate certain credit card number ranges as valid Discover card numbers.</span></div>
 
 
 <h3 id="php54">PHP 5.4 Patch Available</h3>
@@ -573,7 +573,7 @@ Magento thanks Benjamin Marks for contributing to this fix. Link to the <a href=
 <li>Product - Redirect - Category</li>
 <li>Product - Category - Redirect</li></ul>
 <p>In the event no URL key matches your priority setting, Magento continues through the priorities in order until a match is found.</p>
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: CMS URL keys are always prioritized last.</div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: CMS URL keys are always prioritized last.</div>
 
 
 <h4 id="ee113-11302-seo-moreinfo">For More Information about SEO</h4>
@@ -591,7 +591,7 @@ Magento thanks Benjamin Marks for contributing to this fix. Link to the <a href=
 
 <h3 id="ee113-11302-patches">Patch Available for EE 1.13.0.2</h3>
 <p>The United States Postal Service (USPS) changed the names of their Priority and Express shipping options in their API on Sunday, July 28, 2013. Magento has a patch available; however, this patch is not included in new EE 1.13.0.2 installations.</p>
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: If you applied the patch before you upgraded to EE 1.13.0.2, you don't have to do anything.</div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: If you applied the patch before you upgraded to EE 1.13.0.2, you don't have to do anything.</div>
 
 <p>For new EE 1.13.0.2 installations to continue utilizing USPS Priority <em>and</em> Express mail methods, you must install the patch we've created to address the issue.</p>
 <p>Get the patch from the EE support portal by logging in to <a href="http://wwww.magentocommerce.com" target="_blank">magentocommerce.com</a>.</p>
@@ -609,7 +609,7 @@ This column specifies the store view for which the URL redirect is defined.</li>
 <li>The following apply to new products when you do not explicitly set a value for the <strong>URL key</strong> field:
 <ul><li>Duplicating a results in a URL key with an appended index number. For example, if you duplicate a product with a URL key of <code>testurlkey</code>, the new product's URL key might is <code>testurlkey-1</code>.</li>
 <li>If you create a new product with a name that matches an existing URL key, the new product's URL key has the product ID appended to it. For example, if there is currently a product with a URL of <code>product1</code> and you create a new product with the name <code>Product1</code> and the product has an ID of 500, the new product's URL key is <code>product1-500</code>.<br />
-	<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: To avoid having Magento specify a URL key for you, you can enter one yourself. Make sure the URL key you specify is unique among all products, including products across store views.</div>
+	<div class="msg-box important"><img src="/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: To avoid having Magento specify a URL key for you, you can enter one yourself. Make sure the URL key you specify is unique among all products, including products across store views.</div>
 </li></ul>
 </li>
 <li>The following apply to enabling the canonical meta tag options for categories and products:
@@ -717,7 +717,7 @@ Now, the session ID changes after successful registration, making unauthorized u
 <ul><li>Your store uses custom code that calls Magento full page caching functions</li>
 <li>You enabled the <strong>Use SID on Frontend</strong> configuration option<br />
 (In the Admin Panel, <strong>System</strong> > <strong>Configuration</strong> > WEB > <strong>Session Validation Settings</strong>, <strong>Use SID on Frontend</strong>.)</li></ul>
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: The potential vulnerability exists <em>only</em> if both of the preceding are true. Default Magento installations or installations that enable <strong>Use SID on Frontend</strong> but have no custom code with full page caching are at no risk.</div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: The potential vulnerability exists <em>only</em> if both of the preceding are true. Default Magento installations or installations that enable <strong>Use SID on Frontend</strong> but have no custom code with full page caching are at no risk.</div>
 
 <p>If both of the preceding are true, Magento can be subjected to <a href="https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)" target="_blank">cross-site scripting</a> (XSS) attacks&mdash;a type of injection issue, which means that malicious code is injected into otherwise trusted web sites, generally in the form of a browser-side script.</p>
 <p><em>Issue</em>: Magento is subject to XSS attacks because the SID cookie value is not sanitized by default.</p>
@@ -1019,7 +1019,7 @@ For more information about using the Solr search engine with Magento EE, see the
 <li><!-- EE M-->The options on the <strong>System</strong> > <strong>Index Management</strong> are significantly different. In particular, because manual reindexing is no longer required for most indexers, there are fewer check boxes and the page mostly displays status information. </li>
 <li>In the Admin Panel, <strong>Catalog</strong> > <strong>Manage Products</strong> > <em>edit-product</em> > <strong>General</strong> tab page option <strong>Create Permanent Redirect for old URL if URL key changed</strong> changes to <strong>Create Custom Redirect for old URL</strong>.<br />
 The feature behaves the same way; namely, selecting <strong>Yes</strong> creates a redirect for the old URL that points to the new URL if a page is moved.<br />
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: The wording of this option is expected to change back to the previous wording in a subsequent release.</div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: The wording of this option is expected to change back to the previous wording in a subsequent release.</div>
 
 </li>
 <li>The options <strong>Product URL Suffix</strong> and <strong>Category URL Suffix</strong> return an error if anything <em>except</em> alphanumerical characters or the underscore character are entered. (In the Admin Panel, click <strong>System</strong> > <strong>Configuration</strong> > CATALOG > <strong>Catalog</strong> > <strong>Search Engine Optimizations</strong>.) </li>

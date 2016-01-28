@@ -11,9 +11,9 @@
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/app.css" />
-	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/print.css" media="print"/>
-	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v2.0/architecture/view/design-abstract.html">
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print"/>
+	<link rel="canonical" href="//guides/v2.0/architecture/view/design-abstract.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -23,7 +23,7 @@
 <!--Search Results Overlay -->
 <div class="searchResultsBack"></div>
 <div id="searchResultsBox">
-	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/pages/Magento/devdocs_internal/common/images/close.png" alt="Close"> --></div>
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
 	<gcse:search></gcse:search>
 	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
 </div>
@@ -39,9 +39,9 @@
 
 		<div id="global-nav">
 			<div class="main-site-name">
-				<a class="logo pull-left" href="/pages/Magento/devdocs_internal/"> </a>
+				<a class="logo pull-left" href="/"> </a>
 				<div class="sub-site-name">
-					<a href="/pages/Magento/devdocs_internal/">Developer Documentation (2.0)</a>
+					<a href="/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
 		</div><!-- #global-nav -->
@@ -318,11 +318,11 @@
 
 <p>For example, <code>page_three_column</code> is a design abstraction that defines a three-column layout for a page. Example:</p>
 
-<p><img src="/pages/Magento/devdocs_internal/common/images/view_da.png" alt="Three column layout" /></p>
+<p><img src="/common/images/view_da.png" alt="Three column layout" /></p>
 
 <p>The other example is a <code>customer_account</code> design abstraction which adds menu items in the left side navigation column. The abstraction is used in layouts of the My Account section pages on the store front:</p>
 
-<p><img src="/pages/Magento/devdocs_internal/common/images/view_da3.png" alt="My Account section on the storefront" /></p>
+<p><img src="/common/images/view_da3.png" alt="My Account section on the storefront" /></p>
 
 <p><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/view/frontend/layout/customer_account.xml" target="_blank">customer_account.xml</a> is a design abstraction. It defines only the links for the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer" target="_blank">Magento_Customer</a> module:</p>
 
@@ -356,11 +356,11 @@ If you look at the <code>&lt;layout&gt;</code> node of the <code>customer_accoun
 <h3 id="m2devgde-design-abstract-widget">Design abstractions in widget creation</h3>
 <p>Specifying the pages where a widget is displayed is one of the required steps during widget creation. Widgets are added in the Admin under <b>Content/ Frontend App</b>. After choosing to create a new widget instance, a user specifies the widget type and the design theme. Then a page for configuring other widget options is displayed. To select a page where the widget should be displayed, you need to click <b>Add Layout Update</b>. Now you can specify pages by selecting the corresponding layout handles. If you want a widget to be displayed on pages with a certain layout, choose <b>Page Layouts</b>.</p>
 
-<p><img src="/pages/Magento/devdocs_internal/common/images/view_da4.png" alt="Specifying page type" /></p>
+<p><img src="/common/images/view_da4.png" alt="Specifying page type" /></p>
 
 <p>Then in the <strong>Page</strong> list there are available layouts or, in other words, design abstractions. Among others, there is the <strong>Customer My Account (All Pages)</strong> option, which corresponds to the <code>customer_account</code> design abstraction.</p>
 
-<p><img src="/pages/Magento/devdocs_internal/common/images/view_da5.png" alt="Specifying page" /></p>
+<p><img src="/common/images/view_da5.png" alt="Specifying page" /></p>
 
 
 
@@ -385,7 +385,7 @@ If you look at the <code>&lt;layout&gt;</code> node of the <code>customer_accoun
     <div id="magento-com">
         <div class="intro-paragraph">
             <div class="container">
-                <a href="http://www.magento.com/"><img src="/pages/Magento/devdocs_internal/i/magento_logo_footer.svg" alt="Magento an ebay inc company" /></a>
+                <a href="http://www.magento.com/"><img src="/i/magento_logo_footer.svg" alt="Magento an ebay inc company" /></a>
                 <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
             </div>
         </div>
@@ -468,8 +468,8 @@ If you look at the <code>&lt;layout&gt;</code> node of the <code>customer_accoun
 </div>
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="/pages/Magento/devdocs_internal/common/js/jsCookie.js"></script>
-<script src="/pages/Magento/devdocs_internal/common/js/devdocs.js"></script>
+<script src="/common/js/jsCookie.js"></script>
+<script src="/common/js/devdocs.js"></script>
 
 <script type="text/javascript">
     (function() {
@@ -494,7 +494,7 @@ If you look at the <code>&lt;layout&gt;</code> node of the <code>customer_accoun
     })();
 </script>
 
-<script src="/pages/Magento/devdocs_internal/js/app-min.js"></script>
+<script src="/js/app-min.js"></script>
 
 
 <!--Google Custom Search-->
