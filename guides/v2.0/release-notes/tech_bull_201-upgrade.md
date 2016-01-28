@@ -65,7 +65,7 @@ Use any of the following resolutions:
 *	[Resolution 3 (does not require command line access)](#resolution3)
 
 #### Resolution 1 (using version 2.0.0) {#resolution1}
-To Resolve the missing `.gitignore` files issue using this method, all of the following must be true:
+To resolve the missing `.gitignore` files issue using this method, all of the following must be true:
 
 *	You must have command-line access to your Magento server
 *	Your server must be running Magento 2 CE or EE version 2.0.0
@@ -83,19 +83,54 @@ To resolve the issue:
 4.	If prompted, enter your authentication keys.
 4.	Make sure `magento/magento-composer-installer` is version 0.1.6
 5.	Run the following commands in the order shown:
+
 		composer require magento/product-community-edition 2.0.1 --no-update
 		composer update
+6.	Verify your server is running version 2.0.1 in any of the ways discussed earlier in this resolution.
+7.	Optionally <a href="{{ site.gdeurl }}guides/v2.0/comp-mgr/upgrader/upgrade-start.html">upgrade</a> to version 2.0.2.
 
-#### Resolution 2 (upgrade to 2.0.1 has failed){#resolution2}
-If your upgrade to Magento CE or EE 2.0.1 has failed with the `.gitignore` exceptions, you must update the `magento/magento-composer-installer` component so it reports missing files instead of throwing an exception with no details about what was wrong.
+#### Resolution 2 (upgrade to 2.0.1 has failed) {#resolution2}
+To resolve the missing `.gitignore` files issue using this method, all of the following must be true:
 
-You must run `composer update` twice to update components and then delete some files that tell Magento your store is in maintenance mode.
+*	You must have command-line access to your Magento server
+*	You must have attempted to upgrade to 2.0.1 and failed
+
+You must run `composer update` twice to update components and then delete two files: one that recorded the failed upgrade and another that tells Magento your store is in maintenance mode.
 
 To resolve the issue:
 
-TBD
+1.	Log in to your Magento server as the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+2.	Change to your Magento installation directory.
+3.	Run the following command:
+
+		composer update magento/magento-composer-installer
+
+4.	If prompted, enter your authentication keys.
+5.	Enter the following command:
+
+		composer update
+4.	Make sure `magento/magento-composer-installer` is version 0.1.6
+
+	The following error might display:
+
+		[ErrorException]
+  		Source /var/www/html/magento2/vendor/magento/magento2-base/dev/tests/integration/.gitignore does not exist
+6.	After the command completes, enter the same command again:
+
+		composer update
+7.	Wait while the command completes.
+8.	Delete the following files from `<your Magento install dir>/var`:
+
+	*	`.update_error.flag`
+	*	`.maintenance.flag`
+8.	Verify your Magento version is 2.0.1 in any of the following ways:
+
+	*	Using the `php <your Magento install dir>/bin/magento --version` command
+	*	Log in to the Magento Admin. The version displays in the lower right corner of the page.
+7.	Optionally <a href="{{ site.gdeurl }}guides/v2.0/comp-mgr/upgrader/upgrade-start.html">upgrade</a> to version 2.0.2.
 
 #### Resolution 3 (does not require command line access) {#resolution3}
+To resolve the missing `.gitignore` files issue if you have no command-line access to your Magento server, <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">install version 2.0.2</a> on a local machine and transfer the Magento codebase to your Magento server using FTP or a utility provided by your shared hosting service.
 
 ### Error during upgrade: "We're sorry, we can't take that action right now" {#sorry}
 If this message displays during your upgrade, it can mean any of the following:
