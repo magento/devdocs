@@ -6,13 +6,14 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 	<title>Associate cache frontends with cache types</title>
-	<meta name="description" content="Magento 2 Developer's Guide">
+	<meta name="description" content="Magento 2 Developer Guide.
+">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="/css/app.css" />
-	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/config-guide/config/caching_frontend-cache-types.html">
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/app.css" />
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/print.css" media="print"/>
+	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v2.0/config-guide/config/caching_frontend-cache-types.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -22,7 +23,7 @@
 <!--Search Results Overlay -->
 <div class="searchResultsBack"></div>
 <div id="searchResultsBox">
-	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/pages/Magento/devdocs_internal/common/images/close.png" alt="Close"> --></div>
 	<gcse:search></gcse:search>
 	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
 </div>
@@ -38,9 +39,9 @@
 
 		<div id="global-nav">
 			<div class="main-site-name">
-				<a class="logo pull-left" href="/"> </a>
+				<a class="logo pull-left" href="/pages/Magento/devdocs_internal/"> </a>
 				<div class="sub-site-name">
-					<a href="/">Developer Documentation (2.0)</a>
+					<a href="/pages/Magento/devdocs_internal/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
 		</div><!-- #global-nav -->
@@ -133,7 +134,7 @@
 	<div class="container">
 		<h1 class="page-heading">Associate cache frontends with cache types</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/config/caching_frontend-cache-types.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/develop/guides/v2.0/config-guide/config/caching_frontend-cache-types.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -1024,9 +1025,9 @@
 <p>Magento uses the following caching terminology:</p>
 
 <ul>
-  <li><em>Frontend</em>: Similar to an interface or gateway to cache storage, implemented by <a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Cache/Frontend" target="_blank">Magento\Framework\Cache\Frontend</a>.</li>
+  <li><em>Frontend</em>: Similar to an interface or gateway to cache storage, implemented by <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Cache/Frontend" target="_blank">Magento\Framework\Cache\Frontend</a>.</li>
   <li><em>Cache types</em>: Can be one of the types provided with Magento or you can <a href="/guides/v2.0/config-guide/config/caching-cache-type.html">create your own</a>.</li>
-  <li><em>Backend</em>: Specifies details about <a href="http://framework.zend.com/manual/1.12/en/zend.cache.backends.html" target="_blank">cache storage</a>, implemented by <a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Cache/Backend" target="_blank">Magento\Framework\Cache\Backend</a></li>
+  <li><em>Backend</em>: Specifies details about <a href="http://framework.zend.com/manual/1.12/en/zend.cache.backends.html" target="_blank">cache storage</a>, implemented by <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Cache/Backend" target="_blank">Magento\Framework\Cache\Backend</a></li>
   <li>
     <p><em>Two-level backend</em>: Stores cache records in two backends—a faster one and a slower one.</p>
 
@@ -1102,7 +1103,7 @@
   <li>
     <p><code>&lt;frontend_type&gt;</code> is the low-level frontend cache type. Specify the name of a class that is compatible with <a href="http://framework.zend.com/apidoc/1.7/Zend_Cache/Zend_Cache_Core.html" target="_blank">Zend_Cache_Core</a>. </p>
 
-    <p>If you omit <code>&lt;frontend_type&gt;</code>, <a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Cache/Core.php" target="_blank">Magento\Framework\Cache\Core</a> is used.</p>
+    <p>If you omit <code>&lt;frontend_type&gt;</code>, <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Cache/Core.php" target="_blank">Magento\Framework\Cache\Core</a> is used.</p>
   </li>
   <li><code>&lt;frontend_option&gt;</code>, <code>&lt;frontend_option_value&gt;</code> are the name and value of options the Magento framework passes as an associative array to the frontend cache upon its creation. </li>
   <li><code>&lt;backend_type&gt;</code> is the low-level backend cache type. Specify the name of a class that is compatible with <a href="http://framework.zend.com/apidoc/1.7/Zend_Cache/Zend_Cache_Backend/Zend_Cache_Backend.html" target="_blank">Zend_Cache_Backend</a> and that implements <a href="http://framework.zend.com/apidoc/1.6/Zend_Cache/Zend_Cache_Backend/Zend_Cache_Backend_Interface.html" target="_blank">Zend_Cache_Backend_Interface</a>.</li>
@@ -1134,7 +1135,7 @@
     <div id="magento-com">
         <div class="intro-paragraph">
             <div class="container">
-                <a href="http://www.magento.com/"><img src="/i/magento_logo_footer.svg" alt="Magento an ebay inc company" /></a>
+                <a href="http://www.magento.com/"><img src="/pages/Magento/devdocs_internal/i/magento_logo_footer.svg" alt="Magento an ebay inc company" /></a>
                 <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
             </div>
         </div>
@@ -1217,8 +1218,8 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="/common/js/jsCookie.js"></script>
-<script src="/common/js/devdocs.js"></script>
+<script src="/pages/Magento/devdocs_internal/common/js/jsCookie.js"></script>
+<script src="/pages/Magento/devdocs_internal/common/js/devdocs.js"></script>
 
 <script type="text/javascript">
     (function() {
@@ -1243,7 +1244,7 @@
     })();
 </script>
 
-<script src="/js/app-min.js"></script>
+<script src="/pages/Magento/devdocs_internal/js/app-min.js"></script>
 
 
 <!--Google Custom Search-->

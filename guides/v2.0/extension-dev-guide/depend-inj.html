@@ -6,13 +6,14 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 	<title>Dependency injection</title>
-	<meta name="description" content="Magento 2 Developer's Guide">
+	<meta name="description" content="Magento 2 Developer Guide.
+">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="/css/app.css" />
-	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/extension-dev-guide/depend-inj.html">
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/app.css" />
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/print.css" media="print"/>
+	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v2.0/extension-dev-guide/depend-inj.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -22,7 +23,7 @@
 <!--Search Results Overlay -->
 <div class="searchResultsBack"></div>
 <div id="searchResultsBox">
-	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/pages/Magento/devdocs_internal/common/images/close.png" alt="Close"> --></div>
 	<gcse:search></gcse:search>
 	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
 </div>
@@ -38,9 +39,9 @@
 
 		<div id="global-nav">
 			<div class="main-site-name">
-				<a class="logo pull-left" href="/"> </a>
+				<a class="logo pull-left" href="/pages/Magento/devdocs_internal/"> </a>
 				<div class="sub-site-name">
-					<a href="/">Developer Documentation (2.0)</a>
+					<a href="/pages/Magento/devdocs_internal/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
 		</div><!-- #global-nav -->
@@ -133,7 +134,7 @@
 	<div class="container">
 		<h1 class="page-heading">Dependency injection</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/extension-dev-guide/depend-inj.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/develop/guides/v2.0/extension-dev-guide/depend-inj.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -740,7 +741,7 @@
 
 <p>For more information, see <a href="https://sites.google.com/site/unclebobconsultingllc/blogs-by-robert-martin/dependency-injection-inversion" target="_blank">this article by Robert C. Martin</a>.</p>
 
-<p>The <a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/ObjectManager/ObjectManager.php" target="_blank">object manager</a> specifies the dependency environment for constructor injection. The object manager must be present only when composing code. In larger applications, composing code is performed early in the bootstrapping process.</p>
+<p>The <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/ObjectManager/ObjectManager.php" target="_blank">object manager</a> specifies the dependency environment for constructor injection. The object manager must be present only when composing code. In larger applications, composing code is performed early in the bootstrapping process.</p>
 
 <p>This topic uses the following terms:</p>
 
@@ -819,7 +820,7 @@
 
 <script src="https://gist.github.com/xcomSteveJohnson/f66e46702da03ec264eb.js"></script>
 
-<p>Dependency injection is configuration-based; configurations are validated by <a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/ObjectManager/etc/config.xsd" target="_blank">config.xsd</a>.</p>
+<p>Dependency injection is configuration-based; configurations are validated by <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/ObjectManager/etc/config.xsd" target="_blank">config.xsd</a>.</p>
 
 <p>Object manager configurations can be specified at any of the following scopes:</p>
 
@@ -829,7 +830,7 @@
   <li>
     <p>Area-specific configuration (<code>&lt;your module directory&gt;/etc/&lt;areaname&gt;/di.xml</code>)</p>
 
-    <p><em>Area-specific</em> means specific a Magento area (<code>frontend</code>, <code>adminhtml</code>, and so on). For example, here is the <a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Customer/etc/adminhtml/di.xml" target="_blank">Magento Customer module’s adminhtml di.xml</a>.</p>
+    <p><em>Area-specific</em> means specific a Magento area (<code>frontend</code>, <code>adminhtml</code>, and so on). For example, here is the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/etc/adminhtml/di.xml" target="_blank">Magento Customer module’s adminhtml di.xml</a>.</p>
   </li>
 </ul>
 
@@ -1102,7 +1103,7 @@ Parameters configured for a class type are automatically configured for all of i
 
 <script src="https://gist.github.com/xcomSteveJohnson/8ef9264be06fba085a03.js"></script>
 
-<p>The preceding example configures all instances of <a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/View/Element/Context.php" target="_blank">Magento\Framework\View\Element\Context</a> and its children to retrieve and instance of <a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Url.php" target="_blank">Magento\Framework\Url</a>, but <a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Backend/Block/Context.php" target="_blank">Magento\Backend\Block\Context</a> overrides this and retrieves <a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Backend/Model/Url.php" target="_blank">Magento\Backend\Model\Url</a>.</p>
+<p>The preceding example configures all instances of <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Element/Context.php" target="_blank">Magento\Framework\View\Element\Context</a> and its children to retrieve and instance of <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Url.php" target="_blank">Magento\Framework\Url</a>, but <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Backend/Block/Context.php" target="_blank">Magento\Backend\Block\Context</a> overrides this and retrieves <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Backend/Model/Url.php" target="_blank">Magento\Backend\Model\Url</a>.</p>
 </div>
 </div>
 
@@ -1140,7 +1141,7 @@ Parameters configured for a class type are automatically configured for all of i
       <li>Requires external input (such as data user input or data from database) to be properly created</li>
     </ul>
 
-    <p>Most models are non-injectable (for example, <a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Catalog/Model/Product.php" target="_blank">Magento\Catalog\Model\Product</a> or <a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/User/Model/User.php" target="_blank">Magento\User\Model\User</a>).</p>
+    <p>Most models are non-injectable (for example, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/Model/Product.php" target="_blank">Magento\Catalog\Model\Product</a> or <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/User/Model/User.php" target="_blank">Magento\User\Model\User</a>).</p>
   </dd>
 </dl>
 
@@ -1218,7 +1219,7 @@ Parameters configured for a class type are automatically configured for all of i
     <div id="magento-com">
         <div class="intro-paragraph">
             <div class="container">
-                <a href="http://www.magento.com/"><img src="/i/magento_logo_footer.svg" alt="Magento an ebay inc company" /></a>
+                <a href="http://www.magento.com/"><img src="/pages/Magento/devdocs_internal/i/magento_logo_footer.svg" alt="Magento an ebay inc company" /></a>
                 <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
             </div>
         </div>
@@ -1301,8 +1302,8 @@ Parameters configured for a class type are automatically configured for all of i
 </div>
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="/common/js/jsCookie.js"></script>
-<script src="/common/js/devdocs.js"></script>
+<script src="/pages/Magento/devdocs_internal/common/js/jsCookie.js"></script>
+<script src="/pages/Magento/devdocs_internal/common/js/devdocs.js"></script>
 
 <script type="text/javascript">
     (function() {
@@ -1327,7 +1328,7 @@ Parameters configured for a class type are automatically configured for all of i
     })();
 </script>
 
-<script src="/js/app-min.js"></script>
+<script src="/pages/Magento/devdocs_internal/js/app-min.js"></script>
 
 
 <!--Google Custom Search-->

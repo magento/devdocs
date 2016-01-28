@@ -6,13 +6,14 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 	<title>Module configuration files</title>
-	<meta name="description" content="Magento 2 Developer's Guide">
+	<meta name="description" content="Magento 2 Developer Guide.
+">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="/css/app.css" />
-	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/config-guide/config/config-files.html">
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/app.css" />
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/print.css" media="print"/>
+	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v2.0/config-guide/config/config-files.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -22,7 +23,7 @@
 <!--Search Results Overlay -->
 <div class="searchResultsBack"></div>
 <div id="searchResultsBox">
-	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/pages/Magento/devdocs_internal/common/images/close.png" alt="Close"> --></div>
 	<gcse:search></gcse:search>
 	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
 </div>
@@ -38,9 +39,9 @@
 
 		<div id="global-nav">
 			<div class="main-site-name">
-				<a class="logo pull-left" href="/"> </a>
+				<a class="logo pull-left" href="/pages/Magento/devdocs_internal/"> </a>
 				<div class="sub-site-name">
-					<a href="/">Developer Documentation (2.0)</a>
+					<a href="/pages/Magento/devdocs_internal/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
 		</div><!-- #global-nav -->
@@ -133,7 +134,7 @@
 	<div class="container">
 		<h1 class="page-heading">Module configuration files</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/config/config-files.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/develop/guides/v2.0/config-guide/config/config-files.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -1010,7 +1011,7 @@
 
 <dl>
 	<dt>Configuration object</dt>
-	<dd>The Magento library or class that is responsible for defining and validating the configuration type. For example, the configuration object for <code>config.xml</code> is <a href=" https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/App/Config.php" target="_blank">Magento\Framework\App\Config</a>.</dd>
+	<dd>The Magento library or class that is responsible for defining and validating the configuration type. For example, the configuration object for <code>config.xml</code> is <a href=" https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/Config.php" target="_blank">Magento\Framework\App\Config</a>.</dd>
 	<dt>Configuration stage</dt>
 	<dd>Stages are defined as <em>primary</em>, <em>global</em>, and <em>area</em>. Each stage determines when configuration type is loaded and merged with same-named configuration types. (For example, <code>module.xml</code> files are merged with other <code>module.xml</code> files.) For more information, see <a href="#config-files-loadmerge">Configuration load and merge</a>.</dd>
 	<dt>Configuration scope</dt>
@@ -1095,51 +1096,51 @@
 			<td><code>config.xml</code></td>
 			<td>System configuration</td>
 			<td>primary, global </td>
-			<td><a href=" https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/App/Config.php" target="_blank">\Magento\Framework\App\Config</a></td>
+			<td><a href=" https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/Config.php" target="_blank">\Magento\Framework\App\Config</a></td>
 		</tr>
 		<tr>
 			<td><code>di.xml</code></td>
 			<td><a href="/guides/v2.0/extension-dev-guide/depend-inj.html">Dependency injection</a> configuration</td>
 			<td>primary, global, area</td>
-			<td><a href=" https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/ObjectManager/Config/Config.php" target="_blank">\Magento\Framework\ObjectManager\Config</a></td>
+			<td><a href=" https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/ObjectManager/Config/Config.php" target="_blank">\Magento\Framework\ObjectManager\Config</a></td>
 		</tr>
 		<tr>
 			<td><code>events.xml</code></td>
 			<td>Event/observer configuration</td>
 			<td>global, area</td>
-			<td><a href=" https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Event.php" target="_blank">\Magento\Framework\Event</a></td>
+			<td><a href=" https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Event.php" target="_blank">\Magento\Framework\Event</a></td>
 		</tr>
 <!--     <tr>
 			<td><code>cache.xml</code></td>
 			<td>global, area</td>
-			<td><a href=" https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Event.php" target="_blank">Magento\Framework\Event</a></td>
+			<td><a href=" https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Event.php" target="_blank">Magento\Framework\Event</a></td>
 		</tr> -->
 		<tr>
 			<td><code>routes.xml</code></td>
 			<td><a href="/guides/v2.0/extension-dev-guide/routing.html">Route</a> configuration</td>
 			<td>area</td>
-			<td><a href=" https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/App/Route/Config.php" target="_blank">Magento\Framework\App\Route\Config</a></td>
+			<td><a href=" https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/Route/Config.php" target="_blank">Magento\Framework\App\Route\Config</a></td>
 		</tr>
 	</tbody>
 </table>
 
   <h3 id="config-files-classes-int">Configuration interfaces</h3>
-  <p>You can interact with configuration files using interfaces under <a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Config" target="_blank">Magento\Framework\Config</a>. You can also use these interfaces if you create a new configuration types.</p>
+  <p>You can interact with configuration files using interfaces under <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Config" target="_blank">Magento\Framework\Config</a>. You can also use these interfaces if you create a new configuration types.</p>
 
   <p><code>Magento\Framework\Config</code> provides the following interfaces:</p>
 
   <ul>
-    <li><a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Config/ConverterInterface.php" target="_blank">Framework\Config\ConverterInterface</a>, which converts the XML into an in-memory array representation of the configurations.</li>
-    <li><a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Config/DataInterface.php" target="_blank">Framework\Config\DataInterface</a>, which retrieves the configuration data in a specified scope.</li>
-    <li><a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Config/FileResolverInterface.php" target="_blank">Framework\Config\FileResolverInterface</a>, which identifies the location of files to be read by <code>\Magento\Framework\Config\ReaderInterface</code></li>
+    <li><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Config/ConverterInterface.php" target="_blank">Framework\Config\ConverterInterface</a>, which converts the XML into an in-memory array representation of the configurations.</li>
+    <li><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Config/DataInterface.php" target="_blank">Framework\Config\DataInterface</a>, which retrieves the configuration data in a specified scope.</li>
+    <li><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Config/FileResolverInterface.php" target="_blank">Framework\Config\FileResolverInterface</a>, which identifies the location of files to be read by <code>\Magento\Framework\Config\ReaderInterface</code></li>
     <li>
-      <p><a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Config/ReaderInterface.php" target="_blank">Framework\Config\ReaderInterface</a>, which reads the configuration data from storage and selects the storage from which it reads.</p>
+      <p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Config/ReaderInterface.php" target="_blank">Framework\Config\ReaderInterface</a>, which reads the configuration data from storage and selects the storage from which it reads.</p>
 
       <p>That is, the file system, database, other storage merges the configuration files according to the merging rules, and validates the configuration files with the validation schemas.</p>
     </li>
-    <li><a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Config/SchemaLocatorInterface.php" target="_blank">Framework\Config\SchemaLocatorInterface</a>, which locates the XSD schema.</li>
-    <li><a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Config/ScopeListInterface.php" target="_blank">Framework\Config\ScopeListInterface</a>, which returns a list of scopes.</li>
-    <li><a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Config/ValidationStateInterface.php" target="_blank">Framework\Config\ValidationStateInterface</a>, which retrieves the validation state.</li>
+    <li><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Config/SchemaLocatorInterface.php" target="_blank">Framework\Config\SchemaLocatorInterface</a>, which locates the XSD schema.</li>
+    <li><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Config/ScopeListInterface.php" target="_blank">Framework\Config\ScopeListInterface</a>, which returns a list of scopes.</li>
+    <li><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Config/ValidationStateInterface.php" target="_blank">Framework\Config\ValidationStateInterface</a>, which retrieves the validation state.</li>
   </ul>
 
   <h4 id="related-topics">Related topics</h4>
@@ -1172,7 +1173,7 @@
     <div id="magento-com">
         <div class="intro-paragraph">
             <div class="container">
-                <a href="http://www.magento.com/"><img src="/i/magento_logo_footer.svg" alt="Magento an ebay inc company" /></a>
+                <a href="http://www.magento.com/"><img src="/pages/Magento/devdocs_internal/i/magento_logo_footer.svg" alt="Magento an ebay inc company" /></a>
                 <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
             </div>
         </div>
@@ -1255,8 +1256,8 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="/common/js/jsCookie.js"></script>
-<script src="/common/js/devdocs.js"></script>
+<script src="/pages/Magento/devdocs_internal/common/js/jsCookie.js"></script>
+<script src="/pages/Magento/devdocs_internal/common/js/devdocs.js"></script>
 
 <script type="text/javascript">
     (function() {
@@ -1281,7 +1282,7 @@
     })();
 </script>
 
-<script src="/js/app-min.js"></script>
+<script src="/pages/Magento/devdocs_internal/js/app-min.js"></script>
 
 
 <!--Google Custom Search-->

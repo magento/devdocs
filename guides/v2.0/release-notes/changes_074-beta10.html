@@ -6,13 +6,14 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 	<title>Release Notes</title>
-	<meta name="description" content="Magento 2 Developer's Guide">
+	<meta name="description" content="Magento 2 Developer Guide.
+">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="/css/app.css" />
-	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/release-notes/changes_074-beta10.html">
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/app.css" />
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/print.css" media="print"/>
+	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v2.0/release-notes/changes_074-beta10.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -22,7 +23,7 @@
 <!--Search Results Overlay -->
 <div class="searchResultsBack"></div>
 <div id="searchResultsBox">
-	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/pages/Magento/devdocs_internal/common/images/close.png" alt="Close"> --></div>
 	<gcse:search></gcse:search>
 	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
 </div>
@@ -38,9 +39,9 @@
 
 		<div id="global-nav">
 			<div class="main-site-name">
-				<a class="logo pull-left" href="/"> </a>
+				<a class="logo pull-left" href="/pages/Magento/devdocs_internal/"> </a>
 				<div class="sub-site-name">
-					<a href="/">Developer Documentation (2.0)</a>
+					<a href="/pages/Magento/devdocs_internal/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
 		</div><!-- #global-nav -->
@@ -133,7 +134,7 @@
 	<div class="container">
 		<h1 class="page-heading">Release Notes</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/release-notes/changes_074-beta10.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/develop/guides/v2.0/release-notes/changes_074-beta10.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -316,7 +317,7 @@
 <p>These Release Notes discuss important changes in this release. For additional details, see the following:</p>
 
 <ul>
-  <li><a href="https://github.com/magento/magento2/tree/2.0.0/CHANGELOG.md#0740-beta10" target="_blank">Changelog</a></li>
+  <li><a href="https://github.com/magento/magento2/blob/2.0/CHANGELOG.md#0740-beta10" target="_blank">Changelog</a></li>
   <li><a href="/guides/v2.0/release-notes/known-issues.html">Known issues</a></li>
   <li><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release highlights</a></li>
 </ul>
@@ -689,7 +690,7 @@ method: <code>getRouteParamsResolver()</code></p>
 </ul>
 
 <h3 id="rn-074b10-giftmessage">Backward-incompatible changes in Magento_GiftMessage</h3>
-<p>In <a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/GiftMessage/Helper/Message.php" target="_blank">\Magento\GiftMessage\Helper\Message</a>:</p>
+<p>In <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/GiftMessage/Helper/Message.php" target="_blank">\Magento\GiftMessage\Helper\Message</a>:</p>
 
 <ul>
   <li>Renamed method <code>isMessagesAvailable</code> to <code>isMessagesAllowed</code></li>
@@ -730,7 +731,7 @@ method: <code>getRouteParamsResolver()</code></p>
 <h3 id="rn-074b10-quoteapi">Backward-incompatible changes in Magento_Quote</h3>
 <ul>
   <li>
-    <p>In <a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Quote/Api/CartItemRepositoryInterface.php" target="_blank">\Magento\Quote\Api\CartItemRepositoryInterface</a> and its implementation:</p>
+    <p>In <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Quote/Api/CartItemRepositoryInterface.php" target="_blank">\Magento\Quote\Api\CartItemRepositoryInterface</a> and its implementation:</p>
 
     <ul>
       <li>Removed method <code>delete</code></li>
@@ -746,14 +747,14 @@ method: <code>getRouteParamsResolver()</code></p>
   <li>In <code>app/code/Magento/Quote/Model/Resource/Quote/Address/Rate/Collection.php</code> method <code>__construct()</code>, changed parameter <code>\Magento\Quote\Model\Quote\Address\CarrierFactoryInterface</code> to <code>\Magento\Shipping\Model\CarrierFactoryInterface</code></li>
 </ul>
 
-<p>In <a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Quote/Api/CartManagementInterface.php" target="_blank">\Magento\Quote\Api\CartManagementInterface</a> and its implementation:</p>
+<p>In <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Quote/Api/CartManagementInterface.php" target="_blank">\Magento\Quote\Api\CartManagementInterface</a> and its implementation:</p>
 
 <ul>
   <li>Removed parameter <code>$storeId</code> for method <code>createEmptyCart</code></li>
   <li>Added method <code>createEmptyCartForCustomer</code></li>
 </ul>
 
-<p>Added the following classes or interfaces under namespace <a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Quote/Api" target="_blank">Magento\Quote\Api</a>:</p>
+<p>Added the following classes or interfaces under namespace <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Quote/Api" target="_blank">Magento\Quote\Api</a>:</p>
 
 <ul>
   <li><code>GuestBillingAddressManagementInterface</code></li>
@@ -767,7 +768,7 @@ method: <code>getRouteParamsResolver()</code></p>
   <li><code>GuestShippingMethodManagementInterface</code></li>
 </ul>
 
-<p>Under namespace <a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Quote/Model/GuestCart" target="_blank">Magento\Quote\Model\GuestCart</a>, added the following classes or implementations: </p>
+<p>Under namespace <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Quote/Model/GuestCart" target="_blank">Magento\Quote\Model\GuestCart</a>, added the following classes or implementations: </p>
 
 <ul>
   <li><code>GuestBillingAddressManagement</code></li>
@@ -802,7 +803,7 @@ method: <code>getRouteParamsResolver()</code></p>
 <h3 id="rn-074b10-sales-model">Backward-incompatible changes in Magento_Sales</h3>
 <ul>
   <li>
-    <p>Removed a dependency on <code>gridAggregator</code> from <a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Sales/Model" target="_blank">\Magento\Sales\Model</a> resource models, which changed the constructor signature in the following classes: </p>
+    <p>Removed a dependency on <code>gridAggregator</code> from <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Sales/Model" target="_blank">\Magento\Sales\Model</a> resource models, which changed the constructor signature in the following classes: </p>
 
     <ul>
       <li><code>\Magento\Sales\Model\Resource\Order</code></li>
@@ -917,63 +918,63 @@ method: <code>getRouteParamsResolver()</code></p>
 			<th>Description of change</th>
 		</tr>
 	<tr>
-		<td><p><a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Sales/Controller/Adminhtml/Order/Creditmemo/AddComment.php" target="_blank">\Magento\Sales\Controller\Adminhtml\ Order\Creditmemo\AddComment</a></p></td>
+		<td><p><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Sales/Controller/Adminhtml/Order/Creditmemo/AddComment.php" target="_blank">\Magento\Sales\Controller\Adminhtml\ Order\Creditmemo\AddComment</a></p></td>
 		<td><p>__construct()</p></td>
 		<td><p>Type of the third parameter changed from <code>Magento\Sales\Model\Order\Email\Sender\CreditmemoSender</code> to <code>Magento\Sales\Model\Order\Email\Sender\CreditmemoCommentSender</code></p></td>
 	</tr>
 	<!-- <tr>
-		<td><p><a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Sales/Controller/Adminhtml/Order/Shipment/AddComment.php" target="_blank">\Magento\Sales\Controller\Adminhtml\ Order\Shipment\AddComment</a></p></td>
+		<td><p><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Sales/Controller/Adminhtml/Order/Shipment/AddComment.php" target="_blank">\Magento\Sales\Controller\Adminhtml\ Order\Shipment\AddComment</a></p></td>
 		<td><p>__construct()</p></td>
 		<td><p>Type of the third parameter was changed from <code>\Magento\Sales\Model\Order\Email\Sender\ShipmentSender</code> to <code>\Magento\Sales\Model\Order\Email\Sender\ShipmentCommentSender</code></p></td>
 	</tr> -->
 	<tr>
-		<td><p><a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Sales/Model/Order/Email/Sender/OrderSender.php" target="_blank">\Magento\Sales\Model\Order\Email\Sender\OrderSender</a></p></td>
+		<td><p><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Sales/Model/Order/Email/Sender/OrderSender.php" target="_blank">\Magento\Sales\Model\Order\Email\Sender\OrderSender</a></p></td>
 		<td><p>send()</p></td>
 		<td><p>Arguments list changed to <code>Creditmemo $creditmemo</code>, <code>$forceSyncMode = false</code></p></td>
 	</tr>
 	<tr>
-		<td><p><a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Sales/Model/Order/Email/Sender/OrderSender.php" target="_blank">\Magento\Sales\Model\Order\Email\Sender\OrderSender</a></p></td>
+		<td><p><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Sales/Model/Order/Email/Sender/OrderSender.php" target="_blank">\Magento\Sales\Model\Order\Email\Sender\OrderSender</a></p></td>
 		<td><p>send()</p></td>
 		<td><p>Arguments list changed to <code>Creditmemo $creditmemo</code>, <code>$forceSyncMode = false</code></p></td>
 	</tr>
 	<tr>
-		<td><p><a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Sales/Model/Order/Email/Sender/CreditmemoSender.php" target="_blank">\Magento\Sales\Model\Order\Email\Sender\CreditmemoSender</a></p></td>
+		<td><p><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Sales/Model/Order/Email/Sender/CreditmemoSender.php" target="_blank">\Magento\Sales\Model\Order\Email\Sender\CreditmemoSender</a></p></td>
 		<td><p>send()</p></td>
 		<td><p>Arguments list changed to <code>Creditmemo $creditmemo</code>, <code>$forceSyncMode = false</code></p></td>
 	</tr>
 	<tr>
-		<td><p><a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Sales/Model/Order/Email/Sender/InvoiceSender.php" target="_blank">\Magento\Sales\Model\Order\Email\Sender\InvoiceSender</a></p></td>
+		<td><p><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Sales/Model/Order/Email/Sender/InvoiceSender.php" target="_blank">\Magento\Sales\Model\Order\Email\Sender\InvoiceSender</a></p></td>
 		<td><p>send()</p></td>
 		<td><p>Arguments list changed to <code>Creditmemo $creditmemo</code>, <code>$forceSyncMode = false</code></p></td>
 	</tr>
 	<tr>
-		<td><p><a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Sales/Model/Order/Email/Sender/ShipmentSender.php" target="_blank">\Magento\Sales\Model\Order\Email\Sender\ShipmentSender</a></p></td>
+		<td><p><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Sales/Model/Order/Email/Sender/ShipmentSender.php" target="_blank">\Magento\Sales\Model\Order\Email\Sender\ShipmentSender</a></p></td>
 		<td><p>send()</p></td>
 		<td><p>Arguments list changed to <code>Creditmemo $creditmemo</code>, <code>$forceSyncMode = false</code></p></td>
 	</tr>
 	<tr>
-		<td><p><a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Reports/Model/Resource/Quote/Collection.php" target="_blank">\Magento\Reports\Model\Resource\Quote\Collection</a></p></td>
+		<td><p><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Reports/Model/Resource/Quote/Collection.php" target="_blank">\Magento\Reports\Model\Resource\Quote\Collection</a></p></td>
 		<td><p>getOrdersSubSelect</p></td>
 		<td><p>Renamed to <code>getOrdersData</code>.</p></td>
 	</tr>
 	<tr>
-		<td><p><a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Reports/Model/Resource/Customer/Collection.php" target="_blank">\Magento\Reports\Model\Resource\Customer\Collection</a></p></td>
+		<td><p><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Reports/Model/Resource/Customer/Collection.php" target="_blank">\Magento\Reports\Model\Resource\Customer\Collection</a></p></td>
 		<td><p>joinOrders, addOrdersCount, addSumAvgTotals, orderByTotalAmount</p></td>
 		<td><p>Removed</p></td>
 	</tr>
 	<tr>
-		<td><p><a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Reports/Model/Resource/Product/Collection.php" target="_blank">\Magento\Reports\Model\Resource\Product\Collection</a></p></td>
+		<td><p><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Reports/Model/Resource/Product/Collection.php" target="_blank">\Magento\Reports\Model\Resource\Product\Collection</a></p></td>
 		<td><p>addOrdersCount, addOrderedQty</p></td>
 		<td><p>Removed</p></td>
 	</tr>
 	<tr>
-		<td><p><a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/DB/Adapter/Pdo/Mysql.php" target="_blank">\Magento\Framework\DB\Adapter\Pdo\Mysql</a></p></td>
+		<td><p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/DB/Adapter/Pdo/Mysql.php" target="_blank">\Magento\Framework\DB\Adapter\Pdo\Mysql</a></p></td>
 		<td><p>addForeignKey</p></td>
 		<td><p>Removed argument <code>$onUpdate</code></p>
 			<p>Current list of arguments: <code>$fkName</code>, <code>$tableName</code>, <code>$columnName</code>, <code>$refTableName</code>, <code>$refColumnName</code>, <code>$onDelete = AdapterInterface::FK_ACTION_CASCADE</code>, <code>$purge = false</code>, <code>$schemaName = null</code>, <code>$refSchemaName = null</code></p></td>
 	</tr>
 	<tr>
-		<td><p><a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Sales/Model/AbstractModel.php" target="_blank">\Magento\Sales\Model\AbstractModel</a></p></td>
+		<td><p><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Sales/Model/AbstractModel.php" target="_blank">\Magento\Sales\Model\AbstractModel</a></p></td>
 		<td><p>addForeignKey</p></td>
 		<td><p><code>abstract getStore</code>, <code>getCreatedAtDate</code>, <code>getCreatedAtStoreDate</code></p></td>
 	</tr>
@@ -1042,11 +1043,11 @@ method: <code>getRouteParamsResolver()</code></p>
 
 <h3 id="rn-074b10-webapi">Backward-incompatible changes in Magento_Webapi and \Magento\Framework\Webapi</h3>
 <ul>
-  <li>Added an additional parameter <code>$methodsMapProcessor</code> for the constructor of <a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Webapi/Controller/Soap/Request/Handler.php" target="_blank">Magento\Webapi\Controller\Soap\Request\Handler</a></li>
+  <li>Added an additional parameter <code>$methodsMapProcessor</code> for the constructor of <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Webapi/Controller/Soap/Request/Handler.php" target="_blank">Magento\Webapi\Controller\Soap\Request\Handler</a></li>
   <li>Removed protected method <code>_formatRoutePath</code> from <code>\Magento\Webapi\Model\Rest\Config</code></li>
   <li>Added an additional parameter <code>$methodsMapProcessor</code> for the constructor of <code>\Magento\Framework\Api\DataObjectHelper</code></li>
   <li>
-    <p>Refactored class <a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Reflection/DataObjectProcessor.php" target="_blank">\Magento\Framework\Reflection\DataObjectProcessor</a> to separate out responsibilities to the following smaller classes:</p>
+    <p>Refactored class <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Reflection/DataObjectProcessor.php" target="_blank">\Magento\Framework\Reflection\DataObjectProcessor</a> to separate out responsibilities to the following smaller classes:</p>
 
     <ul>
       <li>Added new class <code>\Magento\Framework\Reflection\CustomAttributesProcessor</code></li>
@@ -1062,7 +1063,7 @@ method: <code>getRouteParamsResolver()</code></p>
 <h3 id="rn-074b10-except">Backward-incompatible changes in exceptions</h3>
 <ul>
   <li>
-    <p>Eliminated the following exceptions and replaced with <a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Exception/LocalizedException.php" target="_blank">\Magento\Framework\Exception\LocalizedException</a>:</p>
+    <p>Eliminated the following exceptions and replaced with <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Exception/LocalizedException.php" target="_blank">\Magento\Framework\Exception\LocalizedException</a>:</p>
 
     <ul>
       <li><code>\Magento\Backup\Exception</code></li>
@@ -1140,7 +1141,7 @@ method: <code>getRouteParamsResolver()</code></p>
     <div id="magento-com">
         <div class="intro-paragraph">
             <div class="container">
-                <a href="http://www.magento.com/"><img src="/i/magento_logo_footer.svg" alt="Magento an ebay inc company" /></a>
+                <a href="http://www.magento.com/"><img src="/pages/Magento/devdocs_internal/i/magento_logo_footer.svg" alt="Magento an ebay inc company" /></a>
                 <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
             </div>
         </div>
@@ -1223,8 +1224,8 @@ method: <code>getRouteParamsResolver()</code></p>
 </div>
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="/common/js/jsCookie.js"></script>
-<script src="/common/js/devdocs.js"></script>
+<script src="/pages/Magento/devdocs_internal/common/js/jsCookie.js"></script>
+<script src="/pages/Magento/devdocs_internal/common/js/devdocs.js"></script>
 
 <script type="text/javascript">
     (function() {
@@ -1249,7 +1250,7 @@ method: <code>getRouteParamsResolver()</code></p>
     })();
 </script>
 
-<script src="/js/app-min.js"></script>
+<script src="/pages/Magento/devdocs_internal/js/app-min.js"></script>
 
 
 <!--Google Custom Search-->

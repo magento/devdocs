@@ -6,13 +6,14 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 	<title>Customize email templates</title>
-	<meta name="description" content="Magento 2 Developer's Guide">
+	<meta name="description" content="Magento 2 Developer Guide.
+">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="/css/app.css" />
-	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/frontend-dev-guide/templates/template-email.html">
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/app.css" />
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/print.css" media="print"/>
+	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v2.0/frontend-dev-guide/templates/template-email.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -22,7 +23,7 @@
 <!--Search Results Overlay -->
 <div class="searchResultsBack"></div>
 <div id="searchResultsBox">
-	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/pages/Magento/devdocs_internal/common/images/close.png" alt="Close"> --></div>
 	<gcse:search></gcse:search>
 	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
 </div>
@@ -38,9 +39,9 @@
 
 		<div id="global-nav">
 			<div class="main-site-name">
-				<a class="logo pull-left" href="/"> </a>
+				<a class="logo pull-left" href="/pages/Magento/devdocs_internal/"> </a>
 				<div class="sub-site-name">
-					<a href="/">Developer Documentation (2.0)</a>
+					<a href="/pages/Magento/devdocs_internal/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
 		</div><!-- #global-nav -->
@@ -133,7 +134,7 @@
 	<div class="container">
 		<h1 class="page-heading">Customize email templates</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/frontend-dev-guide/templates/template-email.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/develop/guides/v2.0/frontend-dev-guide/templates/template-email.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -811,7 +812,7 @@
 </ul>
 
 <h2 id="customize-email-templates">Customize email templates</h2>
-<p>Email templates are stored in the <code>&lt;module_dir&gt;/view/&lt;area&gt;/email</code> directory of their respective modules. For example, the template for the new order transactional email for the Sales module is located in <a href="https://github.com/magento/magento2/tree/2.0.0/&lt;Magento_Sales_module_dir&gt;/view/frontend/email/order_new.html" target="_blank">app/code/Magento/Sales/view/frontend/email/order_new.html</a>. </p>
+<p>Email templates are stored in the <code>&lt;module_dir&gt;/view/&lt;area&gt;/email</code> directory of their respective modules. For example, the template for the new order transactional email for the Sales module is located in <a href="https://github.com/magento/magento2/blob/2.0/&lt;Magento_Sales_module_dir&gt;/view/frontend/email/order_new.html" target="_blank">app/code/Magento/Sales/view/frontend/email/order_new.html</a>. </p>
 
 <p>We strongly recommend you not change the default Magento files. If you want to customize the default templates, you should create your custom templates and configure Magento to use them instead of the default templates. </p>
 
@@ -832,7 +833,7 @@
   <li>
     <p>If you want to use a default template as a starting point, in the <strong>Load default template</strong> section, choose the template and click <strong>Load Template</strong>. The path to the configuration settings for each default template displays in the <strong>Currently Used For</strong> field in the Template Information section.<br />
 Make note of this path because you will need it later when you configure this new template to be used instead of the default template.
- <br /><img src="/common/images/email_create_template.png" alt="New template creation page with loaded default template" width="70%" height="70%" /></p>
+ <br /><img src="/pages/Magento/devdocs_internal/common/images/email_create_template.png" alt="New template creation page with loaded default template" width="70%" height="70%" /></p>
   </li>
   <li>In <strong>Template Name</strong>, enter a name to identify the template in the Magento Admin.</li>
   <li>In <strong>Template Subject</strong>, add plain text to use as the Subject of the emails sent using the template you create. This field can contain system variables.  </li>
@@ -847,7 +848,7 @@ Make note of this path because you will need it later when you configure this ne
       <li>Click <strong>STORES</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; SALES &gt; <strong>Sales Emails</strong>.</li>
       <li>In the left pane, locate the section that contains the template you want to override. This is the section referenced by <strong>Currently Used For</strong> in your new template. (See step 3 earlier in this section.)
  <br />For example, if you created a “New Order” template, the configuration section is <strong>Order</strong> as the following figure shows.
- <br /><img src="/common/images/email_choose-template.png" alt="Choosing a custom template" width="70%" height="70%" /></li>
+ <br /><img src="/pages/Magento/devdocs_internal/common/images/email_choose-template.png" alt="Choosing a custom template" width="70%" height="70%" /></li>
       <li>Select your newly created template from the list.</li>
       <li>Click <strong>Save Config</strong>.</li>
     </ol>
@@ -858,8 +859,8 @@ Make note of this path because you will need it later when you configure this ne
 <p>Every frontend email template includes a header and footer template using these two directives: <code>{{template config_path="design/email/header_template"}}</code> and <code>{{template config_path="design/email/footer_template"}}</code>. By default, those two directives load contents from these files:</p>
 
 <ul>
-  <li><a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Email/view/frontend/email/header.html" target="_blank"><magento_email_module_dir>/view/frontend/email/header.html&lt;/a&gt;</magento_email_module_dir></a></li>
-  <li><a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Email/view/frontend/email/footer.html" target="_blank"><magento_email_module_dir>/view/frontend/email/footer.html&lt;/a&gt;</magento_email_module_dir></a></li>
+  <li><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Email/view/frontend/email/header.html" target="_blank"><magento_email_module_dir>/view/frontend/email/header.html&lt;/a&gt;</magento_email_module_dir></a></li>
+  <li><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Email/view/frontend/email/footer.html" target="_blank"><magento_email_module_dir>/view/frontend/email/footer.html&lt;/a&gt;</magento_email_module_dir></a></li>
 </ul>
 
 <p>You can customize header and footer templates using either the <a href="#customize-email-theme">theme</a> or <a href="#customize-email-admin">admin</a> customization methods discussed previously.</p>
@@ -881,14 +882,14 @@ Make note of this path because you will need it later when you configure this ne
   <li>Create a new template or edit an existing template.</li>
   <li>Click to place the cursor in the text in which to insert the variable.</li>
   <li>
-    <p>Click <strong>Insert Variable</strong>. A pop-up containing a list of variables opens, including custom variables. The variables in the <strong>Store Contact Information</strong> are available in all email templates whereas the variables in the <strong>Template Variables</strong> section are specific to the template you’re editing. The following figure shows an example: <br /><img src="/common/images/email_insert_variable.png" alt="The list of available variables" width="70%" height="70%" /></p>
+    <p>Click <strong>Insert Variable</strong>. A pop-up containing a list of variables opens, including custom variables. The variables in the <strong>Store Contact Information</strong> are available in all email templates whereas the variables in the <strong>Template Variables</strong> section are specific to the template you’re editing. The following figure shows an example: <br /><img src="/pages/Magento/devdocs_internal/common/images/email_insert_variable.png" alt="The list of available variables" width="70%" height="70%" /></p>
   </li>
   <li>Click the name of the required variable. <br /> The variable code is inserted in the template content.</li>
 </ol>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
- <p>The selection of available variables depends on which template you use as a basis. The template-specific variables are contained in a <code>&lt;!--@vars @--&gt;</code> comment at the top of each template on the file system. (For example, look at <a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Customer/view/frontend/email/account_new.html#L8">app/code/Magento/Customer/view/frontend/email/account_new.html</a>.</p></span>
+ <p>The selection of available variables depends on which template you use as a basis. The template-specific variables are contained in a <code>&lt;!--@vars @--&gt;</code> comment at the top of each template on the file system. (For example, look at <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/view/frontend/email/account_new.html#L8">app/code/Magento/Customer/view/frontend/email/account_new.html</a>.</p></span>
 </div>
 
 <h2 id="email-styles">Styles for email templates</h2>
@@ -1042,15 +1043,15 @@ Make note of this path because you will need it later when you configure this ne
 
 <ul>
   <li>
-    <p><a href="https://github.com/magento/magento2/tree/2.0.0/app/design/frontend/Magento/blank/web/css/source/_email-extend.less" target="_blank"><code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-extend.less</code></a> contains the <code>@import</code> directive that requests the <code>email-fonts.css</code> file.</p>
+    <p><a href="https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/blank/web/css/source/_email-extend.less" target="_blank"><code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-extend.less</code></a> contains the <code>@import</code> directive that requests the <code>email-fonts.css</code> file.</p>
 
     <p>The reason the contents of <code>email-fonts.css</code> are loaded using <code>@import</code> rather than being output directly into a <code>&lt;style&gt;</code> tag in the <code>&lt;head&gt;</code> of an email is that if a user is reading their email offline, some email clients don’t render the text because the web fonts can’t be loaded.</p>
   </li>
   <li>
     <p>The <code>&lt;Magento_Blank_theme_dir&gt;/web/css/email-fonts.less</code> file imports <code>source/_variables.less</code> and <code>source/_typography.less</code> files:</p>
     <ul>
-      <li><a href="https://github.com/magento/magento2/tree/2.0.0/app/design/frontend/Magento/blank/web/css/source/_variables.less" target="_blank">app/design/frontend/Magento/blank/web/css/source/_variables.less</a> defines which font is used in the <code>@font-family-name__base</code> variable.</li>
-      <li><a href="https://github.com/magento/magento2/tree/2.0.0/app/design/frontend/Magento/blank/web/css/source/_typography.less" target="_blank">app/design/frontend/Magento/blank/web/css/source/_typography.less</a> generates the <code>@font-face</code> rules which import the custom fonts.</li>
+      <li><a href="https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/blank/web/css/source/_variables.less" target="_blank">app/design/frontend/Magento/blank/web/css/source/_variables.less</a> defines which font is used in the <code>@font-family-name__base</code> variable.</li>
+      <li><a href="https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/blank/web/css/source/_typography.less" target="_blank">app/design/frontend/Magento/blank/web/css/source/_typography.less</a> generates the <code>@font-face</code> rules which import the custom fonts.</li>
     </ul>
   </li>
 </ul>
@@ -1112,7 +1113,7 @@ Make note of this path because you will need it later when you configure this ne
   <li>In the <strong>Scope</strong> drop-down list, select the scope for which you want to set a logo (a certain store view, the whole website, or default config). </li>
   <li>
     <p>Upload your logo and specify the alternative text for it.
-<img src="/common/images/email_configuration.png" alt="System configuration" /></p>
+<img src="/pages/Magento/devdocs_internal/common/images/email_configuration.png" alt="System configuration" /></p>
   </li>
   <li>Enter values for <strong>Logo Width</strong> and <strong>Logo Height</strong>. Based on the preceding example, you would enter <code>200</code> and <code>100</code>, respectively.</li>
   <li>Click the <strong>Save Config</strong> button.</li>
@@ -1251,7 +1252,7 @@ Exception: argument value can contain spaces if it is enclosed in brackets.
     <div id="magento-com">
         <div class="intro-paragraph">
             <div class="container">
-                <a href="http://www.magento.com/"><img src="/i/magento_logo_footer.svg" alt="Magento an ebay inc company" /></a>
+                <a href="http://www.magento.com/"><img src="/pages/Magento/devdocs_internal/i/magento_logo_footer.svg" alt="Magento an ebay inc company" /></a>
                 <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
             </div>
         </div>
@@ -1334,8 +1335,8 @@ Exception: argument value can contain spaces if it is enclosed in brackets.
 </div>
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="/common/js/jsCookie.js"></script>
-<script src="/common/js/devdocs.js"></script>
+<script src="/pages/Magento/devdocs_internal/common/js/jsCookie.js"></script>
+<script src="/pages/Magento/devdocs_internal/common/js/devdocs.js"></script>
 
 <script type="text/javascript">
     (function() {
@@ -1360,7 +1361,7 @@ Exception: argument value can contain spaces if it is enclosed in brackets.
     })();
 </script>
 
-<script src="/js/app-min.js"></script>
+<script src="/pages/Magento/devdocs_internal/js/app-min.js"></script>
 
 
 <!--Google Custom Search-->

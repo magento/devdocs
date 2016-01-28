@@ -6,13 +6,14 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 	<title>Release Notes</title>
-	<meta name="description" content="Magento 2 Developer's Guide">
+	<meta name="description" content="Magento 2 Developer Guide.
+">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="/css/app.css" />
-	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/release-notes/changes_1.0.0-beta.html">
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/app.css" />
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/print.css" media="print"/>
+	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v2.0/release-notes/changes_1.0.0-beta.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -22,7 +23,7 @@
 <!--Search Results Overlay -->
 <div class="searchResultsBack"></div>
 <div id="searchResultsBox">
-	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/pages/Magento/devdocs_internal/common/images/close.png" alt="Close"> --></div>
 	<gcse:search></gcse:search>
 	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
 </div>
@@ -38,9 +39,9 @@
 
 		<div id="global-nav">
 			<div class="main-site-name">
-				<a class="logo pull-left" href="/"> </a>
+				<a class="logo pull-left" href="/pages/Magento/devdocs_internal/"> </a>
 				<div class="sub-site-name">
-					<a href="/">Developer Documentation (2.0)</a>
+					<a href="/pages/Magento/devdocs_internal/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
 		</div><!-- #global-nav -->
@@ -133,7 +134,7 @@
 	<div class="container">
 		<h1 class="page-heading">Release Notes</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/release-notes/changes_1.0.0-beta.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/develop/guides/v2.0/release-notes/changes_1.0.0-beta.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -337,7 +338,7 @@
 <p>For additional details not covered in these Release Notes, see the following:</p>
 
 <ul>
-  <li><a href="https://github.com/magento/magento2/tree/2.0.0/CHANGELOG.md#1.0.0-beta" target="_blank">Changelog</a></li>
+  <li><a href="https://github.com/magento/magento2/blob/2.0/CHANGELOG.md#1.0.0-beta" target="_blank">Changelog</a></li>
   <li><a href="/guides/v2.0/release-notes/known-issues.html">Known issues</a></li>
   <li><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release highlights</a></li>
 </ul>
@@ -452,7 +453,7 @@
 <ul>
   <li>Third-party hosted payment page that redirects to a page on an entirely different domain for payment entry</li>
   <li>Easiest level of PCI compliance SAQ-A or SAQ A-EP depending on selected payment method</li>
-  <li><img src="/common/images/5485_Magento_Documentation_EE_Only_4pt_r1v2.png" />Added the CyberSource and Worldpay payment processors</li>
+  <li><img src="/pages/Magento/devdocs_internal/common/images/5485_Magento_Documentation_EE_Only_4pt_r1v2.png" />Added the CyberSource and Worldpay payment processors</li>
   <li><em>CE and EE</em>: Added the Braintree, PayPal, and Authorize.net payment processors</li>
 </ul>
 
@@ -460,7 +461,7 @@
 <em>Magento EE only</em>. Magento Enterprise Edition supports Universal Analytics, the new standard for Google Analytics. With this update, merchants can define more custom dimensions and metrics for tracking, incorporate offline and mobile app interactions, and gain access to ongoing feature updates that will only be available on Universal Analytics. -->
 
 <h3 id="1.0.0-beta-changes-swatch">Product attribute swatches</h3>
-<p><img src="/common/images/5485_Magento_Documentation_EE_Only_6pt_r1v2.png" /><br />
+<p><img src="/pages/Magento/devdocs_internal/common/images/5485_Magento_Documentation_EE_Only_6pt_r1v2.png" /><br />
 Swatches provide an alternate way to display the selection of options for configurable products. Rather than choosing an option from a list, customers can make their selection by clicking a swatch. Product attribute swatches can be used on the product page, product list, and in layered navigation.</p>
 
 <p>To configure product attribute swatches, start the Magento Admin and click <strong>Stores</strong> &gt; <strong>Configuration</strong>. All options are in the CATALOG group; for example, CATALOG &gt; <strong>Catalog</strong> &gt; <strong>Storefront</strong> has the option <strong>Swatches per Product</strong>.</p>
@@ -539,7 +540,7 @@ Swatches provide an alternate way to display the selection of options for config
   <li>The <code>pub/get.php</code> entry point now displays exceptions in <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a>.</li>
 </ul>
 
-<p>This change also enables you to get a table prefix without injecting <code>Magento\Framework\App\Resource</code> into <a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Api/ExtensionAttributesFactory.php" target="_blank">ExtensionAttributesFactory</a>.</p>
+<p>This change also enables you to get a table prefix without injecting <code>Magento\Framework\App\Resource</code> into <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Api/ExtensionAttributesFactory.php" target="_blank">ExtensionAttributesFactory</a>.</p>
 
 <h2 id="1.0.0-beta-incompat">Backward-incompatible changes</h2>
 <p>This section discusses the backward-incompatible changes we made in this release.</p>
@@ -744,7 +745,7 @@ Swatches provide an alternate way to display the selection of options for config
     <div id="magento-com">
         <div class="intro-paragraph">
             <div class="container">
-                <a href="http://www.magento.com/"><img src="/i/magento_logo_footer.svg" alt="Magento an ebay inc company" /></a>
+                <a href="http://www.magento.com/"><img src="/pages/Magento/devdocs_internal/i/magento_logo_footer.svg" alt="Magento an ebay inc company" /></a>
                 <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
             </div>
         </div>
@@ -827,8 +828,8 @@ Swatches provide an alternate way to display the selection of options for config
 </div>
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="/common/js/jsCookie.js"></script>
-<script src="/common/js/devdocs.js"></script>
+<script src="/pages/Magento/devdocs_internal/common/js/jsCookie.js"></script>
+<script src="/pages/Magento/devdocs_internal/common/js/devdocs.js"></script>
 
 <script type="text/javascript">
     (function() {
@@ -853,7 +854,7 @@ Swatches provide an alternate way to display the selection of options for config
     })();
 </script>
 
-<script src="/js/app-min.js"></script>
+<script src="/pages/Magento/devdocs_internal/js/app-min.js"></script>
 
 
 <!--Google Custom Search-->

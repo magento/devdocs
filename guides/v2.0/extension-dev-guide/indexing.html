@@ -6,13 +6,14 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 	<title>Indexing</title>
-	<meta name="description" content="Magento 2 Developer's Guide">
+	<meta name="description" content="Magento 2 Developer Guide.
+">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="/css/app.css" />
-	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/extension-dev-guide/indexing.html">
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/app.css" />
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/print.css" media="print"/>
+	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v2.0/extension-dev-guide/indexing.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -22,7 +23,7 @@
 <!--Search Results Overlay -->
 <div class="searchResultsBack"></div>
 <div id="searchResultsBox">
-	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/pages/Magento/devdocs_internal/common/images/close.png" alt="Close"> --></div>
 	<gcse:search></gcse:search>
 	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
 </div>
@@ -38,9 +39,9 @@
 
 		<div id="global-nav">
 			<div class="main-site-name">
-				<a class="logo pull-left" href="/"> </a>
+				<a class="logo pull-left" href="/pages/Magento/devdocs_internal/"> </a>
 				<div class="sub-site-name">
-					<a href="/">Developer Documentation (2.0)</a>
+					<a href="/pages/Magento/devdocs_internal/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
 		</div><!-- #global-nav -->
@@ -133,7 +134,7 @@
 	<div class="container">
 		<h1 class="page-heading">Indexing</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/extension-dev-guide/indexing.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/develop/guides/v2.0/extension-dev-guide/indexing.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -756,7 +757,7 @@
 			<th>Description</th>
 		</tr>
 	<tr>
-		<td><a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Indexer" target="_blank">Magento_Indexer</a></td>
+		<td><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Indexer" target="_blank">Magento_Indexer</a></td>
 		<td>Implements:<ul>
 <li>indexer declaration</li>
 <li>indexer running</li>
@@ -764,7 +765,7 @@
 <li>indexer status</li></ul></td>
 	</tr>
 	<tr>
-		<td><a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Mview" target="_blank">Magento\Framework\Mview</a></td>
+		<td><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Mview" target="_blank">Magento\Framework\Mview</a></td>
 		<td><ul>
 <li>Allows tracking database changes for a certain entity (product, category and so on) and running change handler.</li>
 <li>Emulates the <a href="http://en.wikipedia.org/wiki/Materialized_view" target="_blank">materialized view</a> technology for MySQL using triggers and separate materialization process (provides executing PHP code instead of SQL queries, which allows materializing multiple queries).</li></ul></td>
@@ -796,7 +797,7 @@
 
 <p>The following figure shows the logic for partial reindexing.</p>
 
-<p><img src="/common/images/index_indexers_flow.png" width="400px" alt="The image displays the partial reindex workflow" /></p>
+<p><img src="/pages/Magento/devdocs_internal/common/images/index_indexers_flow.png" width="400px" alt="The image displays the partial reindex workflow" /></p>
 
 <!-- <h3 id="m2devgde-indexing-status">Indexer status</h3>
 
@@ -827,7 +828,7 @@ The Magento indexing mechanism uses the status value in reindex triggering proce
 
 <p>The following figure shows an example of setting indexers to Update by Schedule.</p>
 
-<p><img src="/common/images/index_index-modes.png" width="600px" alt="Changing indexer modes" /></p>
+<p><img src="/pages/Magento/devdocs_internal/common/images/index_index-modes.png" width="600px" alt="Changing indexer modes" /></p>
 
 <p>You can also reindex from the <a href="#m2devgde-indexing-commandline">command line</a>.</p>
 
@@ -853,49 +854,49 @@ The Magento indexing mechanism uses the status value in reindex triggering proce
 	<tr>
 		<td>Category products</td>
 		<td>catalog_category_product</td>
-		<td><a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Catalog/Model/Indexer/Category/Flat.php" target="_blank">Magento\Catalog\Model\Indexer\Category\Flat</a></td>
+		<td><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/Model/Indexer/Category/Flat.php" target="_blank">Magento\Catalog\Model\Indexer\Category\Flat</a></td>
 		<td>Creates category/products association</td>
 	</tr>
 	<tr>
 		<td>Product categories</td>
 		<td>catalog_product_category</td>
-		<td><a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Catalog/Model/Indexer/Product/Flat.php" target="_blank">Magento\Catalog\Model\Indexer\Product\Flat</a></td>
+		<td><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/Model/Indexer/Product/Flat.php" target="_blank">Magento\Catalog\Model\Indexer\Product\Flat</a></td>
 		<td>Creates category/products association</td>
 	</tr>
 	<tr>
 		<td>Product price</td>
 		<td>catalog_product_price</td>
-		<td><a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Catalog/Model/Indexer/Product/Price.php" target="_blank">Magento\Catalog\Model\Indexer\Product\Price</a></td>
+		<td><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/Model/Indexer/Product/Price.php" target="_blank">Magento\Catalog\Model\Indexer\Product\Price</a></td>
 		<td>Pre-calculates product prices</td>
 	</tr>
 	<tr>
 		<td>Product entity attribute value</td>
 		<td>catalog_product_attribute</td>
-		<td><a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Catalog/Model/Indexer/Category/Product.php" target="_blank">Magento\Catalog\Model\Indexer\Category\Product</a></td>
+		<td><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/Model/Indexer/Category/Product.php" target="_blank">Magento\Catalog\Model\Indexer\Category\Product</a></td>
 		<td>Reorganizes the EAV product structure to flat structure</td>
 	</tr>
 	<tr>
 		<td>Stock</td>
 		<td>cataloginventory_stock</td>
-		<td><a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/CatalogInventory/Model/Indexer/Stock.php" target="_blank">Magento\CatalogInventory\Model\Indexer\Stock</a></td>
+		<td><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/CatalogInventory/Model/Indexer/Stock.php" target="_blank">Magento\CatalogInventory\Model\Indexer\Stock</a></td>
 		<td></td>
 	</tr>
 	<tr>
 		<td>Catalog rule product</td>
 		<td>catalogrule_rule</td>
-		<td><a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/CatalogRule/Model/Indexer/Rule/RuleProductIndexer.php" target="_blank">Magento\CatalogRule\Model\Indexer\Rule\RuleProductIndexer</a></td>
+		<td><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/CatalogRule/Model/Indexer/Rule/RuleProductIndexer.php" target="_blank">Magento\CatalogRule\Model\Indexer\Rule\RuleProductIndexer</a></td>
 		<td></td>
 	</tr>
 	<tr>
 		<td>Catalog product rule</td>
 		<td>catalogrule_product</td>
-		<td><a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/CatalogRule/Model/Indexer/Product/ProductRuleIndexer.php" target="_blank">Magento\CatalogRule\Model\Indexer\Product\ProductRuleIndexer</a></td>
+		<td><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/CatalogRule/Model/Indexer/Product/ProductRuleIndexer.php" target="_blank">Magento\CatalogRule\Model\Indexer\Product\ProductRuleIndexer</a></td>
 		<td></td>
 	</tr>
 	<tr>
 		<td>Catalog search</td>
 		<td>catalogsearch_fulltext</td>
-		<td><a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/CatalogSearch/Model/Indexer/Fulltext.php" target="_blank">Magento\CatalogSearch\Model\Indexer\Fulltext</a></td>
+		<td><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/CatalogSearch/Model/Indexer/Fulltext.php" target="_blank">Magento\CatalogSearch\Model\Indexer\Fulltext</a></td>
 		<td></td>
 	</tr>
 
@@ -916,7 +917,7 @@ The Magento indexing mechanism uses the status value in reindex triggering proce
 
 <h3 id="m2devgde-indexing-customlogic">Custom indexer logic</h3>
 
-<p>Your custom indexer class should implement <a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Indexer/" target="_blank">\Magento\Indexer\ </a>, and the indexer should be able to perform three types of operations:</p>
+<p>Your custom indexer class should implement <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Indexer/" target="_blank">\Magento\Indexer\ </a>, and the indexer should be able to perform three types of operations:</p>
 
 <ul>
   <li>row reindex: processing a single entry from a dictionary; responsibility of <code>executeRow($id)</code></li>
@@ -936,7 +937,7 @@ The Magento indexing mechanism uses the status value in reindex triggering proce
   <li>indexer view ID</li>
 </ul>
 
-<p><a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Catalog/etc/indexer.xml" target="_blank">Example</a></p>
+<p><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/etc/indexer.xml" target="_blank">Example</a></p>
 
 <p>All indexers related to a module should be declared in one file.</p>
 
@@ -951,7 +952,7 @@ The Magento indexing mechanism uses the status value in reindex triggering proce
   <li>what column data is sent to the indexer</li>
 </ul>
 
-<p><a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Catalog/etc/mview.xml" target="_blank">Example</a></p>
+<p><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/etc/mview.xml" target="_blank">Example</a></p>
 
 <p>All Mview declarations related to a module should be declared in one file.</p>
 
@@ -997,7 +998,7 @@ The Magento indexing mechanism uses the status value in reindex triggering proce
     <div id="magento-com">
         <div class="intro-paragraph">
             <div class="container">
-                <a href="http://www.magento.com/"><img src="/i/magento_logo_footer.svg" alt="Magento an ebay inc company" /></a>
+                <a href="http://www.magento.com/"><img src="/pages/Magento/devdocs_internal/i/magento_logo_footer.svg" alt="Magento an ebay inc company" /></a>
                 <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
             </div>
         </div>
@@ -1080,8 +1081,8 @@ The Magento indexing mechanism uses the status value in reindex triggering proce
 </div>
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="/common/js/jsCookie.js"></script>
-<script src="/common/js/devdocs.js"></script>
+<script src="/pages/Magento/devdocs_internal/common/js/jsCookie.js"></script>
+<script src="/pages/Magento/devdocs_internal/common/js/devdocs.js"></script>
 
 <script type="text/javascript">
     (function() {
@@ -1106,7 +1107,7 @@ The Magento indexing mechanism uses the status value in reindex triggering proce
     })();
 </script>
 
-<script src="/js/app-min.js"></script>
+<script src="/pages/Magento/devdocs_internal/js/app-min.js"></script>
 
 
 <!--Google Custom Search-->

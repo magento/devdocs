@@ -6,13 +6,14 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 	<title>Simple style changes with client-side LESS compilation vs. server-side</title>
-	<meta name="description" content="Magento 2 Developer's Guide">
+	<meta name="description" content="Magento 2 Developer Guide.
+">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="/css/app.css" />
-	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/frontend-dev-guide/css-guide/css_quick_guide_mode.html">
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/app.css" />
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/print.css" media="print"/>
+	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v2.0/frontend-dev-guide/css-guide/css_quick_guide_mode.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -22,7 +23,7 @@
 <!--Search Results Overlay -->
 <div class="searchResultsBack"></div>
 <div id="searchResultsBox">
-	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/pages/Magento/devdocs_internal/common/images/close.png" alt="Close"> --></div>
 	<gcse:search></gcse:search>
 	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
 </div>
@@ -38,9 +39,9 @@
 
 		<div id="global-nav">
 			<div class="main-site-name">
-				<a class="logo pull-left" href="/"> </a>
+				<a class="logo pull-left" href="/pages/Magento/devdocs_internal/"> </a>
 				<div class="sub-site-name">
-					<a href="/">Developer Documentation (2.0)</a>
+					<a href="/pages/Magento/devdocs_internal/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
 		</div><!-- #global-nav -->
@@ -133,7 +134,7 @@
 	<div class="container">
 		<h1 class="page-heading">Simple style changes with client-side LESS compilation vs. server-side</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/frontend-dev-guide/css-guide/css_quick_guide_mode.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/develop/guides/v2.0/frontend-dev-guide/css-guide/css_quick_guide_mode.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -788,7 +789,7 @@ This topic demonstrates on a practical example how the choice of the mode influe
 
 <p>In our examples we will change the color and font of the primary buttons. The default view of the primary buttons can be illustrated by the <strong>Create an Account</strong> button view on the Admin login page:</p>
 
-<p><img src="/common/images/extend_less_screenshot0.png" alt="Admin login page with the default view of the primary buttons" /></p>
+<p><img src="/pages/Magento/devdocs_internal/common/images/extend_less_screenshot0.png" alt="Admin login page with the default view of the primary buttons" /></p>
 
 <h3>Contents</h3>
 <ul>
@@ -815,18 +816,18 @@ This topic demonstrates on a practical example how the choice of the mode influe
 <li>In your theme directory, add <code>web/css/source/_extend.less</code>.</li>
 <li>Change the color of the buttons by adding the following code in <code>_extend.less</code>:
 
-<img src="/common/images/extend_less_code_1.png" alt="Less code redefining the color of the primary buttons" />
+<img src="/pages/Magento/devdocs_internal/common/images/extend_less_code_1.png" alt="Less code redefining the color of the primary buttons" />
 <li>Delete all files in the following directories:
 	- <code>pub/static/frontend/&lt;Your_Vendor&gt;/&lt;your_theme&gt;</code>
 	- <code>var/view_preprocessed/less</code>
 </li>
 <li>Refresh the page, and view the changes applied. For example:
 
-<img src="/common/images/extend_less_screenshot1.png" alt="Less code redefining the color of the primary buttons" />
+<img src="/pages/Magento/devdocs_internal/common/images/extend_less_screenshot1.png" alt="Less code redefining the color of the primary buttons" />
 </li>
 <li>Change the font of the buttons by adding the following code in <code>_extend.less</code>:
 
-<img src="/common/images/extend_less_code_2.png" alt="Less code redefining the font of the primary buttons" />
+<img src="/pages/Magento/devdocs_internal/common/images/extend_less_code_2.png" alt="Less code redefining the font of the primary buttons" />
 </li>
 <li>Delete all files in the following directories:
 <ul>
@@ -836,7 +837,7 @@ This topic demonstrates on a practical example how the choice of the mode influe
 </li>
 <li>Refresh the page, and view the changes applied. 
 
-<img src="/common/images/extend_less_screenshot2.png" alt="Admin login page where the font of the buttons was changed" />
+<img src="/pages/Magento/devdocs_internal/common/images/extend_less_screenshot2.png" alt="Admin login page where the font of the buttons was changed" />
 </li>
 
 If your Magento instance uses the server-side compilation mode, you need to manually clean sub-directories in <code>pub/static</code> and <code>var/view_preprocessed/less</code> to make your changes apply. You can automate this process by additionally installing Grunt, and using the built-in Grunt commands to watch the changes and clean the directories. The flow of making changes using Grunt is described in the following section.
@@ -856,16 +857,16 @@ If your Magento instance uses the server-side compilation mode, you need to manu
 Where <code>&lt;your_theme&gt;</code> is the code of your theme. Conventionally it should coincide with the theme directory name.
 </li>
 <li>Change the color of the buttons by adding the following code in <code>_extend.less</code>:
-<img src="/common/images/extend_less_code_1.png" alt="Less code redefining the color of the primary buttons" />
+<img src="/pages/Magento/devdocs_internal/common/images/extend_less_code_1.png" alt="Less code redefining the color of the primary buttons" />
 </li>
 <li>Refresh the page and view your changes applied:
-<img src="/common/images/extend_less_screenshot1.png" alt="Admin login page where the color of the button was changed" />
+<img src="/pages/Magento/devdocs_internal/common/images/extend_less_screenshot1.png" alt="Admin login page where the color of the button was changed" />
 </li>
 <li>Change the font of the buttons by adding the following code in <code>_extend.less</code>:
-<img src="/common/images/extend_less_code_2.png" alt="Less code redefining the font of the primary buttons" />
+<img src="/pages/Magento/devdocs_internal/common/images/extend_less_code_2.png" alt="Less code redefining the font of the primary buttons" />
 </li>
 <li>Refresh the page and view your changes applied:
-<img src="/common/images/extend_less_screenshot2.png" alt="Admin login page where the font of the buttons was changed" />
+<img src="/pages/Magento/devdocs_internal/common/images/extend_less_screenshot2.png" alt="Admin login page where the font of the buttons was changed" />
 </li>
 </ol>
 
@@ -883,19 +884,19 @@ Where <code>&lt;your_theme&gt;</code> is the code of your theme. Conventionally 
 </li>
 <li>Change the color of the buttons by adding the following code in <code>_extend.less</code>:
 
-<img src="/common/images/extend_less_code_1.png" alt="Less code redefining the color of the primary buttons" />
+<img src="/pages/Magento/devdocs_internal/common/images/extend_less_code_1.png" alt="Less code redefining the color of the primary buttons" />
 </li>
 <li>Refresh the page and view your changes applied:
 
-<img src="/common/images/extend_less_screenshot1.png" alt="Admin login page where the font of the buttons was changed" />
+<img src="/pages/Magento/devdocs_internal/common/images/extend_less_screenshot1.png" alt="Admin login page where the font of the buttons was changed" />
 </li>
 <li>Change the font of the buttons by adding the following code in <code>_extend.less</code>:
 
-<img src="/common/images/extend_less_code_2.png" alt="Less code redefining the font of the primary buttons" />
+<img src="/pages/Magento/devdocs_internal/common/images/extend_less_code_2.png" alt="Less code redefining the font of the primary buttons" />
 </li>
 <li>Refresh the page and view your changes applied:
 
-<img src="/common/images/extend_less_screenshot2.png" alt="Admin login page where the font of the buttons was changed" />
+<img src="/pages/Magento/devdocs_internal/common/images/extend_less_screenshot2.png" alt="Admin login page where the font of the buttons was changed" />
 </li>
 </ol>
 
@@ -930,7 +931,7 @@ If your Magento instance uses the client-side compilation mode, simple changes a
     <div id="magento-com">
         <div class="intro-paragraph">
             <div class="container">
-                <a href="http://www.magento.com/"><img src="/i/magento_logo_footer.svg" alt="Magento an ebay inc company" /></a>
+                <a href="http://www.magento.com/"><img src="/pages/Magento/devdocs_internal/i/magento_logo_footer.svg" alt="Magento an ebay inc company" /></a>
                 <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
             </div>
         </div>
@@ -1013,8 +1014,8 @@ If your Magento instance uses the client-side compilation mode, simple changes a
 </div>
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="/common/js/jsCookie.js"></script>
-<script src="/common/js/devdocs.js"></script>
+<script src="/pages/Magento/devdocs_internal/common/js/jsCookie.js"></script>
+<script src="/pages/Magento/devdocs_internal/common/js/devdocs.js"></script>
 
 <script type="text/javascript">
     (function() {
@@ -1039,7 +1040,7 @@ If your Magento instance uses the client-side compilation mode, simple changes a
     })();
 </script>
 
-<script src="/js/app-min.js"></script>
+<script src="/pages/Magento/devdocs_internal/js/app-min.js"></script>
 
 
 <!--Google Custom Search-->

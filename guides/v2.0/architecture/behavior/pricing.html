@@ -6,13 +6,14 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 	<title>The pricing library</title>
-	<meta name="description" content="Magento 2 Developer's Guide">
+	<meta name="description" content="Magento 2 Developer Guide.
+">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="/css/app.css" />
-	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/architecture/behavior/pricing.html">
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/app.css" />
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/print.css" media="print"/>
+	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v2.0/architecture/behavior/pricing.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -22,7 +23,7 @@
 <!--Search Results Overlay -->
 <div class="searchResultsBack"></div>
 <div id="searchResultsBox">
-	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/pages/Magento/devdocs_internal/common/images/close.png" alt="Close"> --></div>
 	<gcse:search></gcse:search>
 	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
 </div>
@@ -38,9 +39,9 @@
 
 		<div id="global-nav">
 			<div class="main-site-name">
-				<a class="logo pull-left" href="/"> </a>
+				<a class="logo pull-left" href="/pages/Magento/devdocs_internal/"> </a>
 				<div class="sub-site-name">
-					<a href="/">Developer Documentation (2.0)</a>
+					<a href="/pages/Magento/devdocs_internal/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
 		</div><!-- #global-nav -->
@@ -133,7 +134,7 @@
 	<div class="container">
 		<h1 class="page-heading">The pricing library</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/architecture/behavior/pricing.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/develop/guides/v2.0/architecture/behavior/pricing.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -305,7 +306,7 @@
 
 		<h2 id="m2devgde-pricelib-intro">Introduction to the Magento pricing library</h2>
 
-<p>This topic discusses how to use the <a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Pricing" target="_blank">Magento\Framework\Pricing</a> library in your module and how to add price rendering to page templates and layouts.</p>
+<p>This topic discusses how to use the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Pricing" target="_blank">Magento\Framework\Pricing</a> library in your module and how to add price rendering to page templates and layouts.</p>
 
 <h2 id="m2devgde-pricelib-integrate">Use the pricing library in your module</h2>
 
@@ -347,7 +348,7 @@
         <p>Saleable entity</p>
       </td>
       <td>
-        <p>Implements <a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Pricing/Object/SaleableInterface.php" target="_blank">Magento\Framework\Pricing\Object\SaleableInterface</a>
+        <p>Implements <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Pricing/Object/SaleableInterface.php" target="_blank">Magento\Framework\Pricing\Object\SaleableInterface</a>
         </p>
       </td>
     </tr>
@@ -356,7 +357,7 @@
         <p>PriceType model</p>
       </td>
       <td>
-        <p>Extends <a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Pricing/Price/AbstractPrice.php" target="_blank">Magento\Framework\Pricing\Price\AbstractPrice</a>
+        <p>Extends <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Pricing/Price/AbstractPrice.php" target="_blank">Magento\Framework\Pricing\Price\AbstractPrice</a>
         </p>
       </td>
     </tr>
@@ -365,7 +366,7 @@
         <p>Amount model</p>
       </td>
       <td>
-        <p>Implements <a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Pricing/Amount/AmountInterface.php" target="_blank">Magento\Framework\Pricing\Amount\AmountInterface</a>
+        <p>Implements <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Pricing/Amount/AmountInterface.php" target="_blank">Magento\Framework\Pricing\Amount\AmountInterface</a>
         </p>
       </td>
     </tr>
@@ -374,7 +375,7 @@
         <p>Adjustment model</p>
       </td>
       <td>
-        <p>Implements <a href="https://github.com/magento/magento2/tree/2.0.0/lib/internal/Magento/Framework/Pricing/Adjustment/AdjustmentInterface.php" target="_blank">Magento\Framework\Pricing\Adjustment\AdjustmentInterface</a>
+        <p>Implements <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Pricing/Adjustment/AdjustmentInterface.php" target="_blank">Magento\Framework\Pricing\Adjustment\AdjustmentInterface</a>
         </p>
       </td>
     </tr>
@@ -388,13 +389,13 @@
 <h2 id="m2devgde-pricelib-di">Configure prices and adjustments</h2>
 
 <p>To specify the price types which you plan to use for the corresponding product, add the price type codes to <code>Price\Pool</code> in the module’s <code>di.xml</code> file.
-An example of Catalog module price configuration in its <a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Catalog/etc/di.xml" target="_blank">di.xml</a>.</p>
+An example of Catalog module price configuration in its <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/etc/di.xml" target="_blank">di.xml</a>.</p>
 
 <p>Price type codes are discussed in <a href="#m2devgde-pricelib-def">Default price types</a>.</p>
 
 <h3 id="m2devgde-pricelib-adj">Specify adjustments for a product</h3>
 
-<p>To specify what adjustments will be available for a product, add the corresponding adjustments to <code>AdjustmentPool</code> in the module’s <code>di.xml</code>. An example of Catalog module price adjustments is shown in <a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Catalog/etc/di.xml" target="_blank">di.xml</a>.</p>
+<p>To specify what adjustments will be available for a product, add the corresponding adjustments to <code>AdjustmentPool</code> in the module’s <code>di.xml</code>. An example of Catalog module price adjustments is shown in <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/etc/di.xml" target="_blank">di.xml</a>.</p>
 
 <h2 id="m2devgde-pricelib-custom-price-render">Add price rendering to a layout</h2>
 
@@ -414,7 +415,7 @@ An example of Catalog module price configuration in its <a href="https://github.
 
 <p>To learn about locations of layouts in Magento application, see <a href="/guides/v2.0/frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>.</p>
 
-<p>For example, the Catalog module’s <a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Catalog/view/base/layout/catalog_product_prices.xml" target="_blank">catalog_product_prices.xml</a> defines the basis for a product entity, so its pricing layout handle defines default values: render classes, templates, price types and adjustments. These values can be overridden by settings for particular product types in the <code>catalog_product_prices.xml</code> layout handle of the corresponding module.</p>
+<p>For example, the Catalog module’s <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/view/base/layout/catalog_product_prices.xml" target="_blank">catalog_product_prices.xml</a> defines the basis for a product entity, so its pricing layout handle defines default values: render classes, templates, price types and adjustments. These values can be overridden by settings for particular product types in the <code>catalog_product_prices.xml</code> layout handle of the corresponding module.</p>
 
 <p>Class and template declarations in the pricing layout handles are based on the following fallback structures.</p>
 
@@ -824,7 +825,7 @@ $this-&gt;getLayout()-&gt;getBlock('product.price.render.default')-&gt;render(
     <div id="magento-com">
         <div class="intro-paragraph">
             <div class="container">
-                <a href="http://www.magento.com/"><img src="/i/magento_logo_footer.svg" alt="Magento an ebay inc company" /></a>
+                <a href="http://www.magento.com/"><img src="/pages/Magento/devdocs_internal/i/magento_logo_footer.svg" alt="Magento an ebay inc company" /></a>
                 <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
             </div>
         </div>
@@ -907,8 +908,8 @@ $this-&gt;getLayout()-&gt;getBlock('product.price.render.default')-&gt;render(
 </div>
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="/common/js/jsCookie.js"></script>
-<script src="/common/js/devdocs.js"></script>
+<script src="/pages/Magento/devdocs_internal/common/js/jsCookie.js"></script>
+<script src="/pages/Magento/devdocs_internal/common/js/devdocs.js"></script>
 
 <script type="text/javascript">
     (function() {
@@ -933,7 +934,7 @@ $this-&gt;getLayout()-&gt;getBlock('product.price.render.default')-&gt;render(
     })();
 </script>
 
-<script src="/js/app-min.js"></script>
+<script src="/pages/Magento/devdocs_internal/js/app-min.js"></script>
 
 
 <!--Google Custom Search-->

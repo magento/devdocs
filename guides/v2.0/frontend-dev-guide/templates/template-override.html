@@ -6,13 +6,14 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 	<title>Templates basic concepts</title>
-	<meta name="description" content="Magento 2 Developer's Guide">
+	<meta name="description" content="Magento 2 Developer Guide.
+">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="/css/app.css" />
-	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/frontend-dev-guide/templates/template-override.html">
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/app.css" />
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/print.css" media="print"/>
+	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v2.0/frontend-dev-guide/templates/template-override.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -22,7 +23,7 @@
 <!--Search Results Overlay -->
 <div class="searchResultsBack"></div>
 <div id="searchResultsBox">
-	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/pages/Magento/devdocs_internal/common/images/close.png" alt="Close"> --></div>
 	<gcse:search></gcse:search>
 	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
 </div>
@@ -38,9 +39,9 @@
 
 		<div id="global-nav">
 			<div class="main-site-name">
-				<a class="logo pull-left" href="/"> </a>
+				<a class="logo pull-left" href="/pages/Magento/devdocs_internal/"> </a>
 				<div class="sub-site-name">
-					<a href="/">Developer Documentation (2.0)</a>
+					<a href="/pages/Magento/devdocs_internal/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
 		</div><!-- #global-nav -->
@@ -133,7 +134,7 @@
 	<div class="container">
 		<h1 class="page-heading">Templates basic concepts</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/frontend-dev-guide/templates/template-override.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/develop/guides/v2.0/frontend-dev-guide/templates/template-override.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -794,7 +795,7 @@ The following topics are covered:</p>
 <p>Templates are usually initiated in layout files.
 Each layout block has an associated template. 
 The template is specified in the <code>template</code> attribute of the <block> layout instruction. 
-For example, from <code><a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml" target="_blank">&lt;Magento_Catalog_module_dir&gt;/view/frontend/layout/catalog_category_view.xml</a></code>:</block></p>
+For example, from <code><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml" target="_blank">&lt;Magento_Catalog_module_dir&gt;/view/frontend/layout/catalog_category_view.xml</a></code>:</block></p>
 
 <pre>
 &lt;block class=&quot;Magento\Catalog\Block\Category\View&quot; name=&quot;category.image&quot; template=&quot;Magento_Catalog::category/image.phtml&quot;/&gt;
@@ -831,7 +832,7 @@ theme templates override module templates, and those of a <a href="/guides/v2.0/
 
 <h2 id="root">Root template</h2>
 
-<p>In Magento there’s a special template which serves as root template for all pages in the application: <code><a href="https://github.com/magento/magento2/tree/2.0.0/&lt;Magento_Theme_module_dir&amp;gt/view/base/templates/root.phtml" target="_blank">app/code/Magento/Theme/view/base/templates/root.phtml</a></code></p>
+<p>In Magento there’s a special template which serves as root template for all pages in the application: <code><a href="https://github.com/magento/magento2/blob/2.0/&lt;Magento_Theme_module_dir&amp;gt/view/base/templates/root.phtml" target="_blank">app/code/Magento/Theme/view/base/templates/root.phtml</a></code></p>
 
 <p>Unlike other templates, <code>root.phtml</code> contains the <code>doctype</code> specification and contributes to <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> sections of all pages rendered by Magento application. </p>
 
@@ -863,7 +864,7 @@ theme templates override module templates, and those of a <a href="/guides/v2.0/
     <div id="magento-com">
         <div class="intro-paragraph">
             <div class="container">
-                <a href="http://www.magento.com/"><img src="/i/magento_logo_footer.svg" alt="Magento an ebay inc company" /></a>
+                <a href="http://www.magento.com/"><img src="/pages/Magento/devdocs_internal/i/magento_logo_footer.svg" alt="Magento an ebay inc company" /></a>
                 <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
             </div>
         </div>
@@ -946,8 +947,8 @@ theme templates override module templates, and those of a <a href="/guides/v2.0/
 </div>
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="/common/js/jsCookie.js"></script>
-<script src="/common/js/devdocs.js"></script>
+<script src="/pages/Magento/devdocs_internal/common/js/jsCookie.js"></script>
+<script src="/pages/Magento/devdocs_internal/common/js/devdocs.js"></script>
 
 <script type="text/javascript">
     (function() {
@@ -972,7 +973,7 @@ theme templates override module templates, and those of a <a href="/guides/v2.0/
     })();
 </script>
 
-<script src="/js/app-min.js"></script>
+<script src="/pages/Magento/devdocs_internal/js/app-min.js"></script>
 
 
 <!--Google Custom Search-->

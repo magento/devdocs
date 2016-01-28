@@ -6,13 +6,14 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 	<title>Using UI components' client-side</title>
-	<meta name="description" content="Magento 2 Developer's Guide">
+	<meta name="description" content="Magento 2 Developer Guide.
+">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="/css/app.css" />
-	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/ui-components/ui_components_js.html">
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/app.css" />
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/print.css" media="print"/>
+	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v2.0/ui-components/ui_components_js.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -22,7 +23,7 @@
 <!--Search Results Overlay -->
 <div class="searchResultsBack"></div>
 <div id="searchResultsBox">
-	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/pages/Magento/devdocs_internal/common/images/close.png" alt="Close"> --></div>
 	<gcse:search></gcse:search>
 	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
 </div>
@@ -38,9 +39,9 @@
 
 		<div id="global-nav">
 			<div class="main-site-name">
-				<a class="logo pull-left" href="/"> </a>
+				<a class="logo pull-left" href="/pages/Magento/devdocs_internal/"> </a>
 				<div class="sub-site-name">
-					<a href="/">Developer Documentation (2.0)</a>
+					<a href="/pages/Magento/devdocs_internal/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
 		</div><!-- #global-nav -->
@@ -133,7 +134,7 @@
 	<div class="container">
 		<h1 class="page-heading">Using UI components' client-side</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/ui-components/ui_components_js.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/develop/guides/v2.0/ui-components/ui_components_js.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -643,7 +644,7 @@
 </ul>
 
 <p>Example:
-The <code>.js</code> file of the bookmark component is <a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js">Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js</a> </p>
+The <code>.js</code> file of the bookmark component is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js">Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js</a> </p>
 
 <p>So the <code>component</code> property is set in the <code>.xml</code> configuration file like following:</p>
 
@@ -657,7 +658,7 @@ The <code>.js</code> file of the bookmark component is <a href="https://github.c
 
 <p>Example:</p>
 
-<p>The <code>.html</code> template of the bookmarks component is <a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Ui/view/base/web/templates/grid/controls/bookmarks/bookmarks.html">Magento/Ui/view/base/web/templates/grid/controls/bookmarks/bookmarks.html</a>. </p>
+<p>The <code>.html</code> template of the bookmarks component is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Ui/view/base/web/templates/grid/controls/bookmarks/bookmarks.html">Magento/Ui/view/base/web/templates/grid/controls/bookmarks/bookmarks.html</a>. </p>
 
 <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;template&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>ui/grid/controls/bookmarks/bookmarks<span class="nt">&lt;/item&gt;</span>
@@ -669,7 +670,7 @@ The <code>.js</code> file of the bookmark component is <a href="https://github.c
   </li>
   <li>
     <p><code>name</code>: the name of the component specified in the <code>.xml</code> configuration file of the parent UI component. In the run-time in a browser this value is transformed to a complex string. This string represents hierarchy of components in the run-time.
-For example, (<code>app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_listing.xml:57</code>)[https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_listing.xml#L57]:</p>
+For example, (<code>app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_listing.xml:57</code>)[https://github.com/magento/magento2/blob/2.0/app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_listing.xml#L57]:</p>
   </li>
 </ul>
 
@@ -829,7 +830,7 @@ For example, (<code>app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_l
 
 <ul>
   <li>managing child elements (the <code>elems</code> property)</li>
-  <li>by default uses the <a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Ui/view/base/web/templates/collection.html">app/code/Magento/Ui/view/base/web/templates/collection.html</a> template</li>
+  <li>by default uses the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Ui/view/base/web/templates/collection.html">app/code/Magento/Ui/view/base/web/templates/collection.html</a> template</li>
 </ul>
 
 <h3 id="uiregistry"><code>uiRegistry</code></h3>
@@ -871,25 +872,25 @@ For example, (<code>app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_l
 <p>For illustration, let’s find out what UI components are used on the Catalog page in the Admin panel:</p>
 
 <div style="border: 1px solid #ABABAB">
-<img src="/common/images/ui_debug1.png" alt="The catalog page" /> 
+<img src="/pages/Magento/devdocs_internal/common/images/ui_debug1.png" alt="The catalog page" /> 
 </div>
 
 <p>According to the described procedure, open the page source and search for “<code>data-bind="scope:</code>”</p>
 
 <div style="border: 1px solid #ABABAB">
-<img src="/common/images/ui_debug2.png" alt="searching for data-bind=scope:" />
+<img src="/pages/Magento/devdocs_internal/common/images/ui_debug2.png" alt="searching for data-bind=scope:" />
 </div>
 
 <p>So we find out that the main UI component used on this page is product listing, with <code>product_listing.product_listing</code> as a full name. To see its configuration, child components and data source, in the in the <strong>Console</strong> tab we run <code>require('uiRegistry').get('product_listing.product_listing')</code>:</p>
 
 <div style="border: 1px solid #ABABAB">
-<img src="/common/images/ui_debug3.png" alt="run the command in Console" />
+<img src="/pages/Magento/devdocs_internal/common/images/ui_debug3.png" alt="run the command in Console" />
 </div>
 
 <p>And we get the component’s configuration:</p>
 
 <div style="border: 1px solid #ABABAB">
-<img src="/common/images/ui_debug4.png" alt="view the configuration" />
+<img src="/pages/Magento/devdocs_internal/common/images/ui_debug4.png" alt="view the configuration" />
 </div>
 
 <h3 id="debug-using-a-google-chrome-plug-in">Debug using a Google Chrome plug-in</h3>
@@ -924,7 +925,7 @@ For example, (<code>app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_l
     <div id="magento-com">
         <div class="intro-paragraph">
             <div class="container">
-                <a href="http://www.magento.com/"><img src="/i/magento_logo_footer.svg" alt="Magento an ebay inc company" /></a>
+                <a href="http://www.magento.com/"><img src="/pages/Magento/devdocs_internal/i/magento_logo_footer.svg" alt="Magento an ebay inc company" /></a>
                 <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
             </div>
         </div>
@@ -1007,8 +1008,8 @@ For example, (<code>app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_l
 </div>
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="/common/js/jsCookie.js"></script>
-<script src="/common/js/devdocs.js"></script>
+<script src="/pages/Magento/devdocs_internal/common/js/jsCookie.js"></script>
+<script src="/pages/Magento/devdocs_internal/common/js/devdocs.js"></script>
 
 <script type="text/javascript">
     (function() {
@@ -1033,7 +1034,7 @@ For example, (<code>app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_l
     })();
 </script>
 
-<script src="/js/app-min.js"></script>
+<script src="/pages/Magento/devdocs_internal/js/app-min.js"></script>
 
 
 <!--Google Custom Search-->

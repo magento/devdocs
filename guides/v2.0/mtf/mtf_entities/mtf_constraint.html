@@ -6,13 +6,14 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 	<title>Entities of the Magento Testing Framework</title>
-	<meta name="description" content="Magento 2 Developer's Guide">
+	<meta name="description" content="Magento 2 Developer Guide.
+">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="/css/app.css" />
-	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/mtf/mtf_entities/mtf_constraint.html">
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/app.css" />
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/print.css" media="print"/>
+	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v2.0/mtf/mtf_entities/mtf_constraint.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -22,7 +23,7 @@
 <!--Search Results Overlay -->
 <div class="searchResultsBack"></div>
 <div id="searchResultsBox">
-	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/pages/Magento/devdocs_internal/common/images/close.png" alt="Close"> --></div>
 	<gcse:search></gcse:search>
 	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
 </div>
@@ -38,9 +39,9 @@
 
 		<div id="global-nav">
 			<div class="main-site-name">
-				<a class="logo pull-left" href="/"> </a>
+				<a class="logo pull-left" href="/pages/Magento/devdocs_internal/"> </a>
 				<div class="sub-site-name">
-					<a href="/">Developer Documentation (2.0)</a>
+					<a href="/pages/Magento/devdocs_internal/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
 		</div><!-- #global-nav -->
@@ -133,7 +134,7 @@
 	<div class="container">
 		<h1 class="page-heading">Entities of the Magento Testing Framework</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/mtf/mtf_entities/mtf_constraint.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/develop/guides/v2.0/mtf/mtf_entities/mtf_constraint.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -609,7 +610,7 @@
 <p>The Magento Testing Framework (MTF) constraint performs assertions after a test flow. A test flow is a set of test steps without assertions.
 Each constraint name must be globally unique in Magento application and must be placed in the module to which it belongs. Constraints run automatically after test flow has finished.</p>
 
-<p><img src="/common/images/mtf_constraint_flow.png" alt="Constraints and test flow" /></p>
+<p><img src="/pages/Magento/devdocs_internal/common/images/mtf_constraint_flow.png" alt="Constraints and test flow" /></p>
 
 <h2 id="mtf_constraint_structure">Constraint structure</h2>
 
@@ -617,7 +618,7 @@ Each constraint name must be globally unique in Magento application and must be 
 
 <p>A module in functional tests (<code>&lt;magento2&gt;/dev/tests/app/Magento/</code>) stores constraints in the <code>Constraint</code> directory. The following image shows the <code>Constraint</code> directory of the Magento_Widget module.</p>
 
-<p><img src="/common/images/mtf_constraint_dir.png" alt="" /></p>
+<p><img src="/pages/Magento/devdocs_internal/common/images/mtf_constraint_dir.png" alt="" /></p>
 
 <h3 id="mtf_constraint_assert">Constraint class</h3>
 
@@ -656,15 +657,15 @@ Each constraint name must be globally unique in Magento application and must be 
 
 <p>Let’s see the following images for the <code>CreateSimpleProductEntityTest</code> test and the <code>AssertProductPricesOnCategoryPage</code> constraint. Data set from the diagrams contains three variables with data: <code>product</code>, <code>category</code> and <code>price</code>.</p>
 
-<p><img src="/common/images/mtf_constraint_arguments_green.png" width="800" /></p>
+<p><img src="/pages/Magento/devdocs_internal/common/images/mtf_constraint_arguments_green.png" width="800" /></p>
 
 <p><span style="color: #21610B; font-weight:bold">Green arrows</span> show that <code>product</code> value is transferred to the test and the constraint.</p>
 
-<p><img src="/common/images/mtf_constraint_arguments_orange.png" width="800" /></p>
+<p><img src="/pages/Magento/devdocs_internal/common/images/mtf_constraint_arguments_orange.png" width="800" /></p>
 
 <p><span style="color: #FF8000; font-weight:bold">Orange arrows</span> show that <code>category</code> variable is transferred to the test directly, overwritten by <code>testCreate()</code> method and only then transferred to constraint.</p>
 
-<p><img src="/common/images/mtf_constraint_arguments_blue.png" width="800" /></p>
+<p><img src="/pages/Magento/devdocs_internal/common/images/mtf_constraint_arguments_blue.png" width="800" /></p>
 
 <p><span style="color: #0000FF; font-weight:bold">Blue arrow</span> shows that <code>price</code> value is transferred to the constraint only.</p>
 
@@ -836,7 +837,7 @@ Each constraint name must be globally unique in Magento application and must be 
     <div id="magento-com">
         <div class="intro-paragraph">
             <div class="container">
-                <a href="http://www.magento.com/"><img src="/i/magento_logo_footer.svg" alt="Magento an ebay inc company" /></a>
+                <a href="http://www.magento.com/"><img src="/pages/Magento/devdocs_internal/i/magento_logo_footer.svg" alt="Magento an ebay inc company" /></a>
                 <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
             </div>
         </div>
@@ -919,8 +920,8 @@ Each constraint name must be globally unique in Magento application and must be 
 </div>
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="/common/js/jsCookie.js"></script>
-<script src="/common/js/devdocs.js"></script>
+<script src="/pages/Magento/devdocs_internal/common/js/jsCookie.js"></script>
+<script src="/pages/Magento/devdocs_internal/common/js/devdocs.js"></script>
 
 <script type="text/javascript">
     (function() {
@@ -945,7 +946,7 @@ Each constraint name must be globally unique in Magento application and must be 
     })();
 </script>
 
-<script src="/js/app-min.js"></script>
+<script src="/pages/Magento/devdocs_internal/js/app-min.js"></script>
 
 
 <!--Google Custom Search-->

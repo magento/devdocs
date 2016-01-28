@@ -3,11 +3,11 @@
 <head>
 	<meta charset="utf-8">
 
-	<link rel="stylesheet" type="text/css" href="/common/css/stylesheet.css">
-	<link rel="stylesheet" href="/common/css/stylesheet-fonts.css" type="text/css">
-	<link rel="icon" href="/common/css/favicon.ico" type="image/x-icon">
-	<link rel="shortcut icon" href="/common/css/favicon.ico" type="image/x-icon">
-	<script type="text/javascript" src="/common/js/jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="/pages/Magento/devdocs_internal/common/css/stylesheet.css">
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/common/css/stylesheet-fonts.css" type="text/css">
+	<link rel="icon" href="/pages/Magento/devdocs_internal/common/css/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/pages/Magento/devdocs_internal/common/css/favicon.ico" type="image/x-icon">
+	<script type="text/javascript" src="/pages/Magento/devdocs_internal/common/js/jquery.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
 			var currentUrl = window.location.href;
@@ -31,10 +31,10 @@
 </head>
 <body>
 	<a name="top"></a>
-	<img src="/common/images/m1x/m1xheader.png" width="1024" alt="header" />
+	<img src="/pages/Magento/devdocs_internal/common/images/m1x/m1xheader.png" width="1024" alt="header" />
 	<h1>Testing REST Resources</h1>
 	<div id="content">
-		<p><a href="https://github.com/magento/devdocs/tree/develop/guides/m1x//guides/m1x/api/rest/testing_rest_resources.html" target="_blank">Edit this page on GitHub <img src="/common/images/github_icon.png" height="15px"></a></p>
+		<p><a href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/develop/guides/m1x//guides/m1x/api/rest/testing_rest_resources.html" target="_blank">Edit this page on GitHub <img src="/pages/Magento/devdocs_internal/common/images/github_icon.png" height="15px"></a></p>
 		<div class="soap-api-menu">
 			<ul>
 				<li>
@@ -159,9 +159,9 @@
 <ol>
 	<li>Open the REST Client.</li>
 	<li>From the Authentication drop-down, select <b>OAuth</b>.<br/>
-<img src="/common/images/m1x/rest_test1.png" style="border: 1px solid black"/></li>
+<img src="/pages/Magento/devdocs_internal/common/images/m1x/rest_test1.png" style="border: 1px solid black"/></li>
 	<li>In the OAuth window, on the Signature for the request tab, fill in the following fields:<br/>
-<img src="/common/images/m1x/29221106/35619337.png" style="border: 1px solid black"/>
+<img src="/pages/Magento/devdocs_internal/common/images/m1x/29221106/35619337.png" style="border: 1px solid black"/>
 	<ul>
 		<li><b>Consumer key</b>: Enter the <b>Key</b> value provided when you created the consumer in Magento Admin Panel.</li>
 		<li><b>Consumer secret</b>: Enter the <b>Secret</b> value provided when you created the consumer in Magento Admin Panel.</li>
@@ -178,12 +178,12 @@
 	<li>Leave the <b>Realm</b>, <b>oAuth Nonce</b>, and <b>oAuth Timestemp</b> values set by default.</li>
 	<li>Click <b>Save</b>. You are prompted whether you want to save entered data. Click <b>Yes</b>.<br/>
 <b>NOTE</b>: Click the header with authorization data and click <b>Auto refresh</b> in the opened pop-up in order to generate new values for oauth_nonce, oauth_timestamp, and oauth_signature at each request.<br/>
-<img src="/common/images/m1x/rest_test3.png" style="border: 1px solid black"/></span></li>
+<img src="/pages/Magento/devdocs_internal/common/images/m1x/rest_test3.png" style="border: 1px solid black"/></span></li>
 	<li>From the <b>Headers</b> drop-down, select <b>Custom Header</b>.<br/>
-<img src="/common/images/m1x/rest_test4.png" style="border: 1px solid black"/></span></li>
+<img src="/pages/Magento/devdocs_internal/common/images/m1x/rest_test4.png" style="border: 1px solid black"/></span></li>
 	<li>In the <b>Request Header</b> window, enter "Content-Type" in the <b>Name</b> field and "text/xml" in the <b>Value</b> field (if you want to use the XML data format). To use the JSON request data format, enter application/json instead of the text/xml value.</li>
 	<li>Click <b>Okay</b>.<br/>
-<img src="/common/images/m1x/rest_test5.png" style="border: 1px solid black"/></span></li>
+<img src="/pages/Magento/devdocs_internal/common/images/m1x/rest_test5.png" style="border: 1px solid black"/></span></li>
 </ol>
 
 
@@ -195,7 +195,7 @@
 	<li>From the <b>Method</b> drop-down list, select the <b>GET</b> option.</li>
 	<li>In the <b>URL</b> field, enter the following URL: <a href="http://magentohost/api/rest/products">http://magentohost/api/rest/products</a>. You can limit the number of products returned in the response. To set the limit to 4, enter the following URL: <a href="http://magentohost/api/rest/products?limit=4">http://magentohost/api/rest/products?limit=4</a></li>
 	<li>Click <b>Send</b>. Information about all products will be displayed in the response body. Example is as follows:<br/>
-<img src="/common/images/m1x/rest_test6.png" style="border: 1px solid black"/></span></li>
+<img src="/pages/Magento/devdocs_internal/common/images/m1x/rest_test6.png" style="border: 1px solid black"/></span></li>
 </ol>
 
 
@@ -204,17 +204,17 @@
 
 <ol>
 	<li>Open the Advanced REST Client Application.<br/>
-<img src="/common/images/m1x/rest_test7.png" style="border: 1px solid black"/></span></li>
+<img src="/pages/Magento/devdocs_internal/common/images/m1x/rest_test7.png" style="border: 1px solid black"/></span></li>
 	<li>In the <b>Headers</b> box, select the <b>Form</b> tab.</li>
 	<li>In the first field, start typing <em>authorization</em>. An <b>Authorization</b> popup appears. Click it.<br/>
-<img src="/common/images/m1x/rest_test8.png" style="border: 1px solid black"/></span></li>
+<img src="/pages/Magento/devdocs_internal/common/images/m1x/rest_test8.png" style="border: 1px solid black"/></span></li>
 	<li>When you click the fields next to the Authorization header, the <b>Construct</b> link appears. Click it to configure OAuth authentication.</li>
 	<li>The Authorization window opens. Select the OAuth tab.<br/>
-<img src="/common/images/m1x/rest_test9.png" style="border: 1px solid black"/></span></li>
+<img src="/pages/Magento/devdocs_internal/common/images/m1x/rest_test9.png" style="border: 1px solid black"/></span></li>
 	<li>In the <b>Type</b> group of options, select the <b>Signed Request</b> option.</li>
 	<li>In the <b>signature method</b> group of options, select which method will be used for signatures (HMAC-SHA1 or  PLAINTEXT).</li>
 	<li>Fill in the following data:<br/>
-<img src="/common/images/m1x/rest_test10.png" style="border: 1px solid black"/></span>
+<img src="/pages/Magento/devdocs_internal/common/images/m1x/rest_test10.png" style="border: 1px solid black"/></span>
 	<ul>
 		<li><b>Consumer key</b>: Enter the <b>Key</b> value provided when you created the consumer in Magento Admin Panel.</li>
 		<li><b>Consumer secret</b>: Enter the <b>Secret</b> value provided when you created the consumer in Magento Admin Panel.</li>
@@ -236,7 +236,7 @@
 	<li>In the <b>Method</b> group of options, select the <b>GET</b> option.</li>
 	<li>In the URL field, enter the following URL: <a href="http://magentohost/api/rest/customers">http://magentohost/api/rest/customers</a>.</li>
 	<li>Click <b>Send request</b>. Information about all customers will be displayed in the response body. Note that only Admin type of the user can retrieve the list of customers. Example is as follows:<br/>
-<img src="/common/images/m1x/rest_test11.png" style="border: 1px solid black"/></span></li>
+<img src="/pages/Magento/devdocs_internal/common/images/m1x/rest_test11.png" style="border: 1px solid black"/></span></li>
 </ol>
 
 
@@ -247,7 +247,7 @@
 	<li>In the URL field, enter the following URL: <a href="http://magentohost/api/rest/customers/:id/addresses">http://magentohost/api/rest/customers/:id/addresses</a> where the ":id" value is the customer ID in the system.</li>
 	<li>In the <b>Body</b> table, on the <b>Raw input</b> tab, enter the data required for customer address creation.</li>
 	<li>Click <b>Send request</b>. If the address is created, the 200 OK HTTP status code will be returned. Example is as follows:<br/>
-<img src="/common/images/m1x/rest_test12.png" style="border: 1px solid black"/></span></li>
+<img src="/pages/Magento/devdocs_internal/common/images/m1x/rest_test12.png" style="border: 1px solid black"/></span></li>
 </ol>
 		</div>
 	</div>

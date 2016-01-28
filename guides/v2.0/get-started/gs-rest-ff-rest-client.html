@@ -6,13 +6,14 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 	<title>Firefox REST client</title>
-	<meta name="description" content="Magento 2 Developer's Guide">
+	<meta name="description" content="Magento 2 Developer Guide.
+">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="/css/app.css" />
-	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/get-started/gs-rest-ff-rest-client.html">
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/app.css" />
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/print.css" media="print"/>
+	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v2.0/get-started/gs-rest-ff-rest-client.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -22,7 +23,7 @@
 <!--Search Results Overlay -->
 <div class="searchResultsBack"></div>
 <div id="searchResultsBox">
-	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/pages/Magento/devdocs_internal/common/images/close.png" alt="Close"> --></div>
 	<gcse:search></gcse:search>
 	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
 </div>
@@ -38,9 +39,9 @@
 
 		<div id="global-nav">
 			<div class="main-site-name">
-				<a class="logo pull-left" href="/"> </a>
+				<a class="logo pull-left" href="/pages/Magento/devdocs_internal/"> </a>
 				<div class="sub-site-name">
-					<a href="/">Developer Documentation (2.0)</a>
+					<a href="/pages/Magento/devdocs_internal/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
 		</div><!-- #global-nav -->
@@ -133,7 +134,7 @@
 	<div class="container">
 		<h1 class="page-heading">Firefox REST client</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/get-started/gs-rest-ff-client.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/develop/guides/v2.0/get-started/gs-rest-ff-client.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -316,7 +317,7 @@
 
 <h2>Step 2: Look up the call in webapi.xml</h2>
 <div><p>This section discusses how to make an HTTP POST call to the <code>createCustomer()</code> method.</p>
-<ol><li>Open <a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Customer/etc/webapi.xml" target="_blank">webapi.xml</a>.</li>
+<ol><li>Open <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/etc/webapi.xml" target="_blank">webapi.xml</a>.</li>
 <li><p>Find the desired call; for example,</p>
 <pre>
 &lt;route url="/V1/customerAccounts" method="POST"&gt;
@@ -340,7 +341,7 @@
 <p>The service data object tells you what data to pass in to the REST API. The service data object is specified by the service interface method named by <code>service class</code> in <code>webapi.xml</code>.</p>
 <p>Continuing the preceding example, the <code>createCustomer()</code> method on the <code>\Magento\Customer\Service\V1\CustomerAccountServiceInterface</code> specifies the data service object as follows:</p>
 <script src="https://gist.github.com/xcomSteveJohnson/9775420.js"></script>
-<p>In this case, the service object is <a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Customer/Service/V1/Data/customer.php" target="_blank">\Magento\Customer\Service\V1\Data\customer</a>.</p>
+<p>In this case, the service object is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/Service/V1/Data/customer.php" target="_blank">\Magento\Customer\Service\V1\Data\customer</a>.</p>
 <div class="bs-callout bs-callout-info" id="info">
   <p>To use <code>customer</code> as a JSON or XML parameter in the POST call payload, you must specify it as follows: <code>customer_details</code>. The parameter name is all lowercase with camel case strings separated by an underscore character. To use it as JSON input, <code>customer_details</code> must specify a <a href="http://www.json.com/" target="_blank">JSON</a> object.</p>
   </div>
@@ -350,9 +351,9 @@
 <div>
 <p>Getters on service data objects enable you to find what data is required to execute the action (in this case, create a customer).</p>
 <p>There are two getters on <code>customer</code>:</p>
-<ul><li><p><code>getAddresses()</code>, which returns data defined by the service data object <a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Customer/Service/V1/Data/Address.php" target="_blank">\Magento\Customer\Service\V1\Data\Address</a></p>
+<ul><li><p><code>getAddresses()</code>, which returns data defined by the service data object <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/Service/V1/Data/Address.php" target="_blank">\Magento\Customer\Service\V1\Data\Address</a></p>
 <p>Note that the <code>@return</code> specifies <code>\Magento\Customer\Service\V1\Data\Address[]|null</code>, which means that null values are accepted (in other words, you don't have to pass any data in).</p></li>
-<li><code>getCustomer()</code>, which returns data defined by <a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Customer/Service/V1/Data/Customer.php" target="_blank">\Magento\Customer\Service\V1\Data\Customer</a>.</li></ul>
+<li><code>getCustomer()</code>, which returns data defined by <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/Service/V1/Data/Customer.php" target="_blank">\Magento\Customer\Service\V1\Data\Customer</a>.</li></ul>
 <div class="bs-callout bs-callout-info" id="info">
 <p>To use <code>getAddresses</code> and <code>getCustomer</code> as JSON or XML values, remove <code>get</code> and convert the remainder of the string to lowercase separated by underscores. In this case,</p>
   <ul class="note"><li><code>getCustomer</code> becomes <code>customer</code></li>
@@ -362,7 +363,7 @@
 
 <h2>Step 5: Find getters on Address and Customer</h2>
 <div>
-<p><a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Customer/Service/V1/Data/Address.php" target="_blank">\Magento\Customer\Service\V1\Data\Address</a> and <a href="https://github.com/magento/magento2/tree/2.0.0/app/code/Magento/Customer/Service/V1/Data/Customer.php" target="_blank">\Magento\Customer\Service\V1\Data\Customer</a> have several getters, all of which are optional. Each getter has <code>@return</code> that tells you the data type.</p>
+<p><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/Service/V1/Data/Address.php" target="_blank">\Magento\Customer\Service\V1\Data\Address</a> and <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/Service/V1/Data/Customer.php" target="_blank">\Magento\Customer\Service\V1\Data\Customer</a> have several getters, all of which are optional. Each getter has <code>@return</code> that tells you the data type.</p>
 <p>Pick a few values to create your customer record; remember to use the same rules in step 3 (that is, remove <code>get</code>, convert everything to lowercase, and separate camel case letters with underscores).</p>
 </div>
 
@@ -392,7 +393,7 @@ You can leave all other fields on this page blank.</li>
 The integration displays on the Integrations page.<br /></li>
 <li>Click <strong>Activate</strong> next to the name of the integration you just created.<br />
 The following figure shows an example.<br />
-<img src="/common/images/rest_create-integration1.png" alt="Click an integration's activate text to allow it to access defined resources" /></li>
+<img src="/pages/Magento/devdocs_internal/common/images/rest_create-integration1.png" alt="Click an integration's activate text to allow it to access defined resources" /></li>
 <li>At the confirmation dialog box, click <strong>Allow</strong>.<br />
 The Integration Tokens for Extensions dialog box displays the authorization credentials you'll need for the REST call. You can view these credentials at any time by logging in to the Magento Admin and editing the integration.</li></ol>
 </div>
@@ -404,7 +405,7 @@ The Integration Tokens for Extensions dialog box displays the authorization cred
 <li>In the <strong>URL</strong> field, enter the following:<br />
 <code>https://<your magento="" host="" or="" ip="">/<your magento="" install="" dir="">/rest/default/V1/customerAccounts<br />
 The following figure shows an example.<br />
-<img src="/common/images/rest_ff-rest-initial-url.png" />
+<img src="/pages/Magento/devdocs_internal/common/images/rest_ff-rest-initial-url.png" />
 <div class="bs-callout bs-callout-info" id="info">
   <p>Remember that <code>/V1/customerAccounts</code> is the REST route from step 2.</p>
   </div>
@@ -421,7 +422,7 @@ The following figure shows an example.<br />
 <ol><li>Click <strong>Authentication</strong> &gt; <strong>OAuth</strong>.</li>
 <li>Enter your OAuth credentials.<br />
 The following figure shows an example.<br />
-<img src="/common/images/rest_oauth-creds.png" /></li>
+<img src="/pages/Magento/devdocs_internal/common/images/rest_oauth-creds.png" /></li>
 <li>Optionally select the <strong>Remember the setting</strong> check box to avoid having to enter the credentials in future REST calls.</li>
 <li>Click <strong>Insert</strong> &gt; <strong>Insert as header</strong>.</li>
 <li>Click <strong>Yes, please</strong> at the confirmation dialog box.</li></ol>
@@ -436,7 +437,7 @@ The following figure shows an example.<br />
 <li>In the <strong>Value</strong> field, enter <code>application/json</code>.</li>
 <li>Click <strong>Okay</strong>.<br />
 The Firefox REST Client should now look like the following:<br />
-<img src="/common/images/rest_client-with-headers.png" /></li>
+<img src="/pages/Magento/devdocs_internal/common/images/rest_client-with-headers.png" /></li>
 <li>In the <strong>Body</strong> field, enter your JSON data to create the customer.<br />
 An example follows:<br />
 <script src="https://gist.github.com/xcomSteveJohnson/3901c6cf9d41964bd319.js"></script></li>
@@ -477,7 +478,7 @@ An example follows:<br />
     <div id="magento-com">
         <div class="intro-paragraph">
             <div class="container">
-                <a href="http://www.magento.com/"><img src="/i/magento_logo_footer.svg" alt="Magento an ebay inc company" /></a>
+                <a href="http://www.magento.com/"><img src="/pages/Magento/devdocs_internal/i/magento_logo_footer.svg" alt="Magento an ebay inc company" /></a>
                 <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
             </div>
         </div>
@@ -560,8 +561,8 @@ An example follows:<br />
 </div>
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="/common/js/jsCookie.js"></script>
-<script src="/common/js/devdocs.js"></script>
+<script src="/pages/Magento/devdocs_internal/common/js/jsCookie.js"></script>
+<script src="/pages/Magento/devdocs_internal/common/js/devdocs.js"></script>
 
 <script type="text/javascript">
     (function() {
@@ -586,7 +587,7 @@ An example follows:<br />
     })();
 </script>
 
-<script src="/js/app-min.js"></script>
+<script src="/pages/Magento/devdocs_internal/js/app-min.js"></script>
 
 
 <!--Google Custom Search-->

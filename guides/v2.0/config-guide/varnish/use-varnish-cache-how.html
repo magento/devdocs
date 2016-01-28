@@ -6,13 +6,14 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 	<title>How Varnish caching works</title>
-	<meta name="description" content="Magento 2 Developer's Guide">
+	<meta name="description" content="Magento 2 Developer Guide.
+">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="/css/app.css" />
-	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/config-guide/varnish/use-varnish-cache-how.html">
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/app.css" />
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/print.css" media="print"/>
+	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v2.0/config-guide/varnish/use-varnish-cache-how.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -22,7 +23,7 @@
 <!--Search Results Overlay -->
 <div class="searchResultsBack"></div>
 <div id="searchResultsBox">
-	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/common/images/close.png" alt="Close"> --></div>
+	<div class="searchResultsBoxClose">Close [x]<!-- <img src="/pages/Magento/devdocs_internal/common/images/close.png" alt="Close"> --></div>
 	<gcse:search></gcse:search>
 	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
 </div>
@@ -38,9 +39,9 @@
 
 		<div id="global-nav">
 			<div class="main-site-name">
-				<a class="logo pull-left" href="/"> </a>
+				<a class="logo pull-left" href="/pages/Magento/devdocs_internal/"> </a>
 				<div class="sub-site-name">
-					<a href="/">Developer Documentation (2.0)</a>
+					<a href="/pages/Magento/devdocs_internal/">Developer Documentation (2.0)</a>
 				</div>
 			</div>
 		</div><!-- #global-nav -->
@@ -133,7 +134,7 @@
 	<div class="container">
 		<h1 class="page-heading">How Varnish caching works</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/varnish/use-varnish-cache-how.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/develop/guides/v2.0/config-guide/varnish/use-varnish-cache-how.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -1002,7 +1003,7 @@
 <p>This topic discusses how Varnish caching works with Magento using:</p>
 
 <ul>
-  <li><a href="https://github.com/magento/magento2/tree/2.0.0/nginx.conf.sample" target="_blank"><code>nginx.conf.sample</code></a> from the Magento 2 GitHub repository</li>
+  <li><a href="https://github.com/magento/magento2/blob/2.0/nginx.conf.sample" target="_blank"><code>nginx.conf.sample</code></a> from the Magento 2 GitHub repository</li>
   <li><code>.htaccess</code> distributed configuration file for Apache provided with Magento</li>
   <li><code>default.vcl</code> configuration for Varnish generated using the <a href="/guides/v2.0/config-guide/varnish/config-varnish-magento.html">Magento Admin</a></li>
 </ul>
@@ -1025,7 +1026,7 @@
 
 <p>The following figure shows an example using a browser inspector.</p>
 
-<p><img src="/common/images/varnish_apache_first_visit.png" alt="The first time a request is made for a cacheable object, Varnish delivers it to the browser" /></p>
+<p><img src="/pages/Magento/devdocs_internal/common/images/varnish_apache_first_visit.png" alt="The first time a request is made for a cacheable object, Varnish delivers it to the browser" /></p>
 
 <p>The preceding example shows a request for the storefront main page (<code>m2_ce_my</code>). CSS and JavaScript assets are cached on the client browser.</p>
 
@@ -1036,19 +1037,19 @@
 <h3 id="config-varnish-cache-browser-second">Second browser request</h3>
 <p>If the same browser requests the same page again, these assets are delivered from the local browser cache, as the following figure shows.</p>
 
-<p><img src="/common/images/varnish_apache_second_visit.png" alt="The next time the same object is requested, assets load from the local browser cache" /></p>
+<p><img src="/pages/Magento/devdocs_internal/common/images/varnish_apache_second_visit.png" alt="The next time the same object is requested, assets load from the local browser cache" /></p>
 
 <p>Note the difference in response time between the first and second request. Again, static assets have a 200 (OK) response code because they’re delivered from local cache for the first time.</p>
 
 <h2 id="config-varnish-cache-etag">How Magento uses Etag</h2>
 <p>The following example shows response headers for a particular static asset. </p>
 
-<p><img src="/common/images/varnish_etag.png" alt="The ETag makes it easier to determine whether a static asset has changed or not" /></p>
+<p><img src="/pages/Magento/devdocs_internal/common/images/varnish_etag.png" alt="The ETag makes it easier to determine whether a static asset has changed or not" /></p>
 <p><code>calendar.css</code> has an ETag response header which means the CSS file on the client browser can be compared to the one on the server.</p>
 
 <p>In addition, static assets are returned with a 304 (Not Modified) HTTP status code, as the following figure shows.</p>
 
-<p><img src="/common/images/varnish_304.png" alt="The HTTP 304 (Not Modified) response code indicates the static asset in the local cache is the same as on the server" /></p>
+<p><img src="/pages/Magento/devdocs_internal/common/images/varnish_304.png" alt="The HTTP 304 (Not Modified) response code indicates the static asset in the local cache is the same as on the server" /></p>
 
 <p>The 304 status code occurs because the user invalidated their local cache and the content on the server did not change. Because of the 304 status code, the static asset <em>content</em> is not transferred; only HTTP headers are downloaded to the browser. </p>
 
@@ -1077,7 +1078,7 @@
     <div id="magento-com">
         <div class="intro-paragraph">
             <div class="container">
-                <a href="http://www.magento.com/"><img src="/i/magento_logo_footer.svg" alt="Magento an ebay inc company" /></a>
+                <a href="http://www.magento.com/"><img src="/pages/Magento/devdocs_internal/i/magento_logo_footer.svg" alt="Magento an ebay inc company" /></a>
                 <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
             </div>
         </div>
@@ -1160,8 +1161,8 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="/common/js/jsCookie.js"></script>
-<script src="/common/js/devdocs.js"></script>
+<script src="/pages/Magento/devdocs_internal/common/js/jsCookie.js"></script>
+<script src="/pages/Magento/devdocs_internal/common/js/devdocs.js"></script>
 
 <script type="text/javascript">
     (function() {
@@ -1186,7 +1187,7 @@
     })();
 </script>
 
-<script src="/js/app-min.js"></script>
+<script src="/pages/Magento/devdocs_internal/js/app-min.js"></script>
 
 
 <!--Google Custom Search-->
