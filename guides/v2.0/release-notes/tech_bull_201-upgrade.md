@@ -111,10 +111,10 @@ To resolve the issue:
 		composer update
 4.	Make sure `magento/magento-composer-installer` is version 0.1.6
 
-	The following error might display:
+	The following exception might display; it's expected:
 
 		[ErrorException]
-  		Source /var/www/html/magento2/vendor/magento/magento2-base/dev/tests/integration/.gitignore does not exist
+		Source /var/www/html/magento2/vendor/magento/magento2-base/dev/tests/integration/.gitignore does not exist
 6.	After the command completes, enter the same command again:
 
 		composer update
