@@ -34,7 +34,7 @@ To develop a module, you must:
 
 1. **Create the module file structure.** The module for an integration can be placed anywhere under the Magento root directory, but the recommended location is `<magento_base_dir>/vendor/<vendor_name>/module-<module_name>`.
 
-   Also create  `etc`, `integration`, and `setup` subdirectories under `module-<module_name>`, as shown in the following example:
+   Also create  `etc` and `integration` subdirectories under `module-<module_name>`, as shown in the following example:
 
     <pre>
     cd &lt;magento_base_dir>
@@ -42,7 +42,6 @@ To develop a module, you must:
     cd vendor/&lt;vendor_name>/module-&lt;module_name>
     mkdir etc
     mkdir integration
-    mkdir setup
     </pre>
    For more detailed information, see [Create the module file structure](../../extension-dev-guide/module-file-structure.html).
 
@@ -67,12 +66,12 @@ To develop a module, you must:
    &lt;?xml version="1.0"?>
    &lt;!--
       /**
-      * Copyright © 2015 Magento. All rights reserved.
+      * Copyright © 2016 Magento. All rights reserved.
       * See COPYING.txt for license details.
       */
       -->
       &lt;config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-          &lt;module name="Vendor1_Module1" setup_version="2.0.0">
+          &lt;module name="Vendor1_Module1" setup_version="0.0.1">
           &lt;/module>
         &lt;/config>
    </pre>
@@ -85,7 +84,7 @@ To develop a module, you must:
 
     <pre>
       {
-      "name": "Vendor1_Module1",
+      "name": "vendor1/module-module1",
       "description": "create integration from config",
       "require": {
         "php": "~5.5.0|~5.6.0|~7.0.0",
@@ -111,7 +110,7 @@ To develop a module, you must:
     <pre>
     <?php
     /**
-    * Copyright © 2015 Magento. All rights reserved.
+    * Copyright © 2016 Magento. All rights reserved.
     * See COPYING.txt for license details.
     */
 
@@ -161,7 +160,8 @@ You can optionally include connection information so that an administrator does 
 In the following example, the Test Integration requires access to the resources in the Customer, Log, and Sales modules:
 
 {% highlight xml %}
-<integrations>
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Integration:etc/integration/integration.xsd">
     <integration name="Test Integration">
         <email>test_integration@example.com</email>
         <endpoint_url></endpoint_url>
@@ -178,7 +178,6 @@ In the following example, the Test Integration requires access to the resources 
             <resource name="Magento_Sales::reorder" />
         </resources>
     </integration>
-</integrations>
 {% endhighlight %}
 
 <h2 id="install">Install your module</h2>
