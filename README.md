@@ -2,16 +2,13 @@
 
 Welcome! This site contains the latest Magento developer documentation for ongoing Magento 2.0 releases.
 
-To contribute, please fork the develop branch. We won't accept pull requests into master.
+To contribute, please fork the 2.0 branch. 
 
 # Building this site
 
 You can build this site yourself using Jekyll. Here's how:
 
 ```bash
-# Copy the sample config file and name it "config.yml"
-$ cp _config.devdocs.yml _config.yml
-
 # Install dependencies
 $ bundle install
 

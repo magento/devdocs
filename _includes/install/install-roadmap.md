@@ -37,3 +37,6 @@ Topics include:
 
 *	<a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html">Upgrading (or *patching* the Magento application)
 *	<a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html">Updating components (including install, uninstall, update, enable, disable)
+
+### Deploy to production
+<a href="{{ site.gdeurl }}howdoi/deploy/deploy-to-prod.html">Deploy Magento to production</a>
