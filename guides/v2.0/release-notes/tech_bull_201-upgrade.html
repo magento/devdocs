@@ -562,7 +562,13 @@ composer update
   		<p>You can upgrade to either <code>magento/product-community-edition 2.0.2</code> or <code>magento/product-community-edition 2.0.1</code>; we recommend 2.0.2.</p>
 </div>
   </li>
-  <li>Verify your server is running version 2.0.2 in any of the ways discussed earlier in this resolution.
+  <li>
+    <p>After the commands complete, enter the following command to update the database schema and data:</p>
+
+    <pre><code>php bin/magento setup:upgrade
+</code></pre>
+  </li>
+  <li>Verify your server is running version 2.0.1 or 2.0.2 in any of the ways discussed earlier in this resolution.
 <!-- 7.	We recommend you <a href="/guides/v2.0/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">upgrade</a> to version 2.0.2. --></li>
 </ol>
 
@@ -605,6 +611,12 @@ Source /var/www/html/magento2/vendor/magento/magento2-base/dev/tests/integration
   </li>
   <li>Wait while the command completes.</li>
   <li>
+    <p>After the command completes, enter the following command to update the database schema and data:</p>
+
+    <pre><code>php bin/magento setup:upgrade
+</code></pre>
+  </li>
+  <li>
     <p>Delete the following files from <code>&lt;your Magento install dir&gt;/var</code> directory:</p>
 
     <ul>
@@ -613,7 +625,7 @@ Source /var/www/html/magento2/vendor/magento/magento2-base/dev/tests/integration
     </ul>
   </li>
   <li>
-    <p>Verify your Magento version is 2.0.1 in any of the following ways:</p>
+    <p>Verify your Magento version is 2.0.1 or 2.0.2 in any of the following ways:</p>
 
     <ul>
       <li>Using the <code>php &lt;your Magento install dir&gt;/bin/magento --version</code> command</li>
