@@ -9,7 +9,7 @@ github_link: howdoi/checkout/checkout_edit_form.md
 ---
 
 <h2> What's in this topic</h2>
-This topic describes how to change the HTML templates of form fields in forms on the Checkout page. This refers to the forms used on both steps of the Checkout: Shipping Information step and Review and Payments Information step. By changing the template you can add additional elements displayed with the field, for example images, change the CSS class assigned to it, add attributes and so on.
+This topic describes how to replace the HTML template for a form field on the Checkout page. You might need to replace the template in order to add elements displayed with the field, change the CSS class assigned to it, add attributes and so on.
 
 <h2> Overview </h2>
 
@@ -31,7 +31,7 @@ There are more details about each step in the following sections.
 
 [Set Magento to the production mode]({{site.gdeurl}}config-guide/cli/config-cli-subcommands-mode.html) while you perform all customizations and debugging. 
 
-For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should [depend]({{site.gdeurl}}extension-dev-guide/composer-integration.html) on the Magento_Checkout module.
+For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Instead, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should [depend]({{site.gdeurl}}extension-dev-guide/composer-integration.html) on the Magento_Checkout module.
 
 
 ## Implement the HTML template for the field {#template}
@@ -58,7 +58,7 @@ Example of a field template:
 {%endhighlight%}
 
 <div class="bs-callout bs-callout-info" id="info">
-<p>Original templates of all form field types are located in the <code>app/code/Magento/Ui/view/base/web/templates/form/element</code> directory.</p>
+<p>The original templates of all form field types are located in the <code>app/code/Magento/Ui/view/base/web/templates/form/element</code> directory.</p>
 </div>
 
 ## Specify the new template in layout {#layout}
@@ -112,6 +112,9 @@ In this file, add content similar to the following:
 
 ## Modifying the custom template after it was applied {#modify}
 
-If you modify your custom `.html` template after it was applied on the store pages, the changes will not apply until you do the following: delete all files in the `pub/static/frontend` and `var/view_preprocessing` directories, and then reload the pages.
+If you modify your custom `.html` template after it was applied on the store pages, the changes will not apply until you do the following: 
+
+1. Delete all files in the `pub/static/frontend` and `var/view_preprocessing` directories.
+2. Reload the pages.
 
 
