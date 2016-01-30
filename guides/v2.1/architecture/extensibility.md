@@ -30,9 +30,9 @@ Maximizing extensibility has been our goal through all aspects of Magento develo
 * <b>architectural principles that guide product structure</b>. Central to the Magento model of software development is the practice of replacing or extending core code rather than editing it. This strategy supports your efforts to maintain the integrity of the tested code we provide while still extensively customizing your storefront.
 
 
-* <b>open-source software to create and manage extensions</b>. Magento is built on open-source technologies, built  for the development community. It uses Composer, an open-source tool, to manage dependencies. See <a href="{{ site.gdeurl }}architecture/tech-stack.html">Technology Stack</a>  for a complete list. 
+* <b>open-source software to create and manage extensions</b>. Magento is built on open-source technologies, built  for the development community. It uses Composer, an open-source tool, to manage dependencies. See <a href="{{ site.gdeurl21 }}architecture/tech-stack.html">Technology Stack</a>  for a complete list. 
 
-* <b>coding standards</b>. Adherence to  standard best practices for PHP and JavaScript code ensures that the code base is sound. Magento has adopted most of the Zend Framework Coding Standards for PHP. See <a href="{{ site.gdeurl }}coding-standards/bk-coding-standards.html">Coding Standards</a> for more information.
+* <b>coding standards</b>. Adherence to  standard best practices for PHP and JavaScript code ensures that the code base is sound. Magento has adopted most of the Zend Framework Coding Standards for PHP. See <a href="{{ site.gdeurl21 }}coding-standards/bk-coding-standards.html">Coding Standards</a> for more information.
 
 * <b>upgrade and versioning strategies</b>. Magento has well-defined upgrade and versioning strategies that can help you avoid any problems with software component dependencies. Add modules after confirming that the module version is compatible with the Magento Framework version. 
 
@@ -40,11 +40,11 @@ Maximizing extensibility has been our goal through all aspects of Magento develo
 <h3 id="m2arch-related">Related topics</h3>
 
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>
+<a href="{{ site.gdeurl21 }}architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>
 
-<a href="{{ site.gdeurl }}architecture/global_extensibility_features.html">Global product features that support extension development</a>
+<a href="{{ site.gdeurl21 }}architecture/global_extensibility_features.html">Global product features that support extension development</a>
 
-<a href="{{ site.gdeurl }}architecture/frontend_custom_strategies.html">Ease of frontend customization</a>
+<a href="{{ site.gdeurl21 }}architecture/frontend_custom_strategies.html">Ease of frontend customization</a>
 
 
 

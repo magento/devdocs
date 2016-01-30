@@ -27,7 +27,7 @@ The following shows a `crontab` group entry:
 </group>
 {% endhighlight %}
 
-See <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a> for more information about using cron with Magento.
+See <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a> for more information about using cron with Magento.
 
 You can also use a process manager such as <a href="http://supervisord.org/index.html">Supervisor</a> to monitor the status of processes. The manager can use the CLI to restart the processes as needed.
 
@@ -55,7 +55,7 @@ Use the following command to return a list of message queue consumers:
 ` ./bin/magento queue:consumers:list`
 
 #### Related Topics
-*	<a href="{{ site.gdeurl }}config-guide/mq/rabbitmq-overview.html">RabbitMQ Overview</a>
-*	<a href="{{ site.gdeurl }}config-guide/mq/config-mq.html">Configure message queues</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html">Command-line configuration</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/mq/rabbitmq-overview.html">RabbitMQ Overview</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/mq/config-mq.html">Configure message queues</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands.html">Command-line configuration</a>

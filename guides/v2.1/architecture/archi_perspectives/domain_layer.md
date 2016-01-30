@@ -43,9 +43,9 @@ Your strategy for calling another module's domain-layer code is highly dependent
   
 
 <h2 id="related">Related topics</h2>
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
+<a href="{{ site.gdeurl21 }}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
 
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/ALayers_intro.html">Architectural layers overview</a>
+<a href="{{ site.gdeurl21 }}architecture/archi_perspectives/ALayers_intro.html">Architectural layers overview</a>
 
  

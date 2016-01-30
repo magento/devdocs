@@ -15,7 +15,7 @@ After you pass all readiness checks, you can back up:
 *	The `pub/media` directory
 *	The Magento 2 database
 
-Backups are stored in the `var/backups` directory and can be restored at any time using the <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">magento setup:rollback</a> command.
+Backups are stored in the `var/backups` directory and can be restored at any time using the <a href="{{ site.gdeurl21 }}install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">magento setup:rollback</a> command.
 
 The following figure shows an example of backing up everything.
 
@@ -35,6 +35,6 @@ To back up:
 
 	The following page displays to confirm a successful backup.<br><br>
 	<img src="{{ site.baseurl }}common/images/upgr_backup-success.png" width="650px" alt="A page displays to confirm your backup was successful"><br>
-3.	Continue with <a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade.html">Step 4. Upgrade</a>
+3.	Continue with <a href="{{ site.gdeurl21 }}comp-mgr/upgrader/upgrade.html">Step 4. Upgrade</a>
 
-If errors display, see <a href="{{ site.gdeurl }}comp-mgr/trouble/cman/tshoot_backup.html">Troubleshoot backups</a>.
+If errors display, see <a href="{{ site.gdeurl21 }}comp-mgr/trouble/cman/tshoot_backup.html">Troubleshoot backups</a>.

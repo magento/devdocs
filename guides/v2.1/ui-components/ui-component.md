@@ -40,13 +40,13 @@ Using UI component is as simple as adding the following code to the appropriate 
 
 `<uiСomponent name="some_ui_component_instance_name"/>`
 
-All UI components have base declaration in <a href="{{ site.gdeurl }}ui-library/ui-definition.html">`Magento/Ui/view/base/ui_component/etc/definition.xml`</a>. 
+All UI components have base declaration in <a href="{{ site.gdeurl21 }}ui-library/ui-definition.html">`Magento/Ui/view/base/ui_component/etc/definition.xml`</a>. 
 
 Any module can introduce its own set of custom components or modify initial configuration for existing components in a common to Magento way.
 
 UI components configuration reader searches through all active modules and read files:
 
-<a href="{{ site.gdeurl }}ui-library/ui-definition.html">`<your module root dir>/<vendor>/<module>/view/<area>/ui_component/etc/definition.xml`</a>
+<a href="{{ site.gdeurl21 }}ui-library/ui-definition.html">`<your module root dir>/<vendor>/<module>/view/<area>/ui_component/etc/definition.xml`</a>
 
 
 And concrete instances of the components each in separate XML configuration file:
@@ -62,9 +62,9 @@ XSD file contains rules and limitations shared between all components (both defi
 
 `<your module root dir>/Magento/Ui/etc/ui_definition.xsd`
 
-It is possible to create custom component by setting `class`, `component` and `template` parameters of the <a href="{{ site.gdeurl }}ui-library/ui-container.html">Container component</a>.
+It is possible to create custom component by setting `class`, `component` and `template` parameters of the <a href="{{ site.gdeurl21 }}ui-library/ui-container.html">Container component</a>.
 
 You can configure existing component and all filter types in the following ways:
 
-* Globally: using any module's <a href="{{ site.gdeurl }}ui-library/ui-definition.html">`view/*/ui_component/etc/definition.xml`</a> file. All settings declared in this file will be applied to all component's instances
+* Globally: using any module's <a href="{{ site.gdeurl21 }}ui-library/ui-definition.html">`view/*/ui_component/etc/definition.xml`</a> file. All settings declared in this file will be applied to all component's instances
 * Locally: using concrete component instance configuration, such as `<your module root dir>/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml`

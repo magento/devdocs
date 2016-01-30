@@ -92,7 +92,7 @@ Service names use the following conventions:
 
 <h2 id="auth">Authentication</h2>
 
-Protected SOAP resources can be accessed using bearer tokens (OAuth access tokens) over HTTP. Access tokens are strings representing an access authorization issued to the client. For more information, see <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>
+Protected SOAP resources can be accessed using bearer tokens (OAuth access tokens) over HTTP. Access tokens are strings representing an access authorization issued to the client. For more information, see <a href="{{ site.gdeurl21 }}get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>
 
 The following PHP script illustrates how to get an access token:
 
@@ -116,8 +116,8 @@ $soapResponse = $this->_getSoapClient($serviceInfo)->testModule1AllSoapAndRestV1
 {% endhighlight %}
 
 <h2 id="related">Related topics</h2>
-* <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>
-* <a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a>
-* <a href="{{ site.gdeurl }}soap/bk-soap.html">SOAP Reference</a>
+* <a href="{{ site.gdeurl21 }}get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>
+* <a href="{{ site.gdeurl21 }}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a>
+* <a href="{{ site.gdeurl21 }}soap/bk-soap.html">SOAP Reference</a>
 
 

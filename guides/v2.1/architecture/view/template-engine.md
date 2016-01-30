@@ -17,7 +17,7 @@ This article describes the design of the Magento template rendering subsystem an
 <h2 id="m2devgde-temp-eng-role">How the Magento template engine renders HTML output</h2>
 A template engine is invoked during page layout processing. Any page layout is a hierarchy of containers, which are placeholders for content, and blocks, which actually generate content.  Each block corresponds to a certain Magento PHP class.
 
-All block classes are inherited from either <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/Element/AbstractBlock.php" target="_blank">Magento\Framework\View\Element\AbstractBlock</a> or <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/Element/Template.php" target="_blank">Magento\Framework\View\Element\Template</a> (which in its turn is inherited from <code>AbstractBlock</code>).
+All block classes are inherited from either <a href="{{ site.mage2100url }}lib/internal/Magento/Framework/View/Element/AbstractBlock.php" target="_blank">Magento\Framework\View\Element\AbstractBlock</a> or <a href="{{ site.mage2100url }}lib/internal/Magento/Framework/View/Element/Template.php" target="_blank">Magento\Framework\View\Element\Template</a> (which in its turn is inherited from <code>AbstractBlock</code>).
 
 The difference between these two classes is that the <code>Template</code> class has methods required to work with templates and allows initiating a template engine to generate HTML content based on a template, while <code>AbstractBlock</code> has no methods for working with templates, and provides only displaying the hard-coded HTML content:
 
@@ -103,7 +103,7 @@ This section discusses the following classes:
 
 
 <h4 id="m2devgde-temp-eng-class-temp">Magento\Framework\View\Element\Template</h4>
-<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/Element/Template.php" target="_blank">Magento\Framework\View\Element\Template</a> is the starting point for template rendering. To initiate the rendering process, <code>Template::fetchView()</code> is invoked with the name of the template file. It starts by extracting the template file extension and passing it to <code>Magento\Framework\View\TemplateEngineFactory</code>. On receiving an instance of <code>Magento\Framework\View\TemplateEngineInterface</code>, it calls the <code>render()</code> method and passes the rendered output to the caller.
+<a href="{{ site.mage2100url }}lib/internal/Magento/Framework/View/Element/Template.php" target="_blank">Magento\Framework\View\Element\Template</a> is the starting point for template rendering. To initiate the rendering process, <code>Template::fetchView()</code> is invoked with the name of the template file. It starts by extracting the template file extension and passing it to <code>Magento\Framework\View\TemplateEngineFactory</code>. On receiving an instance of <code>Magento\Framework\View\TemplateEngineInterface</code>, it calls the <code>render()</code> method and passes the rendered output to the caller.
 <table>
   <tbody>
     <tr>
@@ -139,7 +139,7 @@ This section discusses the following classes:
 
 <h4 id="m2devgde-temp-eng-class-tef">Magento\Framework\View\TemplateEngineFactory</h4>
 
-The `create()` method in <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/TemplateEngineFactory.php" target="_blank">Magento\Framework\View\TemplateEngineFactory</a> receives the file extension, and constructs an instance of <code>Magento\Framework\View\TemplateEngineInterface</code> that implements the appropriate template engine.
+The `create()` method in <a href="{{ site.mage2100url }}lib/internal/Magento/Framework/View/TemplateEngineFactory.php" target="_blank">Magento\Framework\View\TemplateEngineFactory</a> receives the file extension, and constructs an instance of <code>Magento\Framework\View\TemplateEngineInterface</code> that implements the appropriate template engine.
 
 <table>
 <tbody>
@@ -158,7 +158,7 @@ The `create()` method in <a href="{{ site.mage2000url }}lib/internal/Magento/Fra
 
 <h4 id="m2devgde-temp-eng-class-tep">Magento\Framework\View\TemplateEnginePool</h4>
 
-<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/TemplateEnginePool.php" target="_blank">Magento\Framework\View\TemplateEnginePool</a> maintains the list of all template engines available in the system. It uses the template engine factory to construct a template engine instance upon the first request.
+<a href="{{ site.mage2100url }}lib/internal/Magento/Framework/View/TemplateEnginePool.php" target="_blank">Magento\Framework\View\TemplateEnginePool</a> maintains the list of all template engines available in the system. It uses the template engine factory to construct a template engine instance upon the first request.
 
 <table>
   <tbody>
@@ -177,7 +177,7 @@ The `create()` method in <a href="{{ site.mage2000url }}lib/internal/Magento/Fra
 
 <h4 id="m2devgde-temp-eng-class-tei">Magento\Framework\View\TemplateEngineInterface</h4>
 
-<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/TemplateEngineInterface.php" target="_blank">Magento\Framework\View\TemplateEngineInterface</a> defines the <code>render()</code>method. The resulting markup generated by the template engine is not sent directly to the output buffer, but it is returned to the caller.
+<a href="{{ site.mage2100url }}lib/internal/Magento/Framework/View/TemplateEngineInterface.php" target="_blank">Magento\Framework\View\TemplateEngineInterface</a> defines the <code>render()</code>method. The resulting markup generated by the template engine is not sent directly to the output buffer, but it is returned to the caller.
 
 <table>
   <tbody>
@@ -203,7 +203,7 @@ render(&nbsp;
 
 <h4 id="m2devgde-temp-eng-class-php">Magento\Framework\View\TemplateEngine\Php</h4>
 
-<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/TemplateEngine/Php.php" target="_blank">Magento\Framework\View\TemplateEngine\Php</a> handles PHTML files, which use PHP as a templating language. In its <code>render()</code> implementation, it invokes <code>include()</code> to execute the PHP code contained in the template file. This means that PHP code in a template file must be written assuming that it will not be included to the template's associated block class.
+<a href="{{ site.mage2100url }}lib/internal/Magento/Framework/View/TemplateEngine/Php.php" target="_blank">Magento\Framework\View\TemplateEngine\Php</a> handles PHTML files, which use PHP as a templating language. In its <code>render()</code> implementation, it invokes <code>include()</code> to execute the PHP code contained in the template file. This means that PHP code in a template file must be written assuming that it will not be included to the template's associated block class.
 
 <table>
   <tbody>
@@ -236,7 +236,7 @@ The Magento template rendering subsystem supports the following:
 To add support for a new template engine:
 
 1. Save the template engine code base in your Magento instance directory.
-2. Create a new implementation of <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/TemplateEngineInterface.php" target="_blank">Magento\Framework\View\TemplateEngineInterface</a>. This class is used to initialize the underlying template engine, and must also implement the <code>render()</code> function responsible for invoking the template engine on the given template file.
+2. Create a new implementation of <a href="{{ site.mage2100url }}lib/internal/Magento/Framework/View/TemplateEngineInterface.php" target="_blank">Magento\Framework\View\TemplateEngineInterface</a>. This class is used to initialize the underlying template engine, and must also implement the <code>render()</code> function responsible for invoking the template engine on the given template file.
 3. Register a newly introduced engine class through the DI configuration to process template files of a certain type as follows:
 <pre>
 &lt;config&gt;

@@ -9,12 +9,12 @@ github_link: frontend-dev-guide/css-guide/css_quick_guide_mode.md
 ---
 <h2> What's in this topic </h2>
 
-After you <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-create.html" target="_blank">create a theme</a>, before starting to change the styles, is deciding, which LESS compilation mode you will use. There are <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css-preprocess.html#LESS compilation modes" target="_blank">two modes available in Magento</a>: server-side compilation mode (the default one, recommended for production) and client-side (recommended for theme development). 
+After you <a href="{{site.gdeurl21}}frontend-dev-guide/themes/theme-create.html" target="_blank">create a theme</a>, before starting to change the styles, is deciding, which LESS compilation mode you will use. There are <a href="{{site.gdeurl21}}frontend-dev-guide/css-topics/css-preprocess.html#LESS compilation modes" target="_blank">two modes available in Magento</a>: server-side compilation mode (the default one, recommended for production) and client-side (recommended for theme development). 
 This topic demonstrates on a practical example how the choice of the mode influences the styles development.
 
 The first step, creating and applying a theme is done before the compilation mode is chosen, so it is described only once, but is required whatever compilation mode you will further use.
 
-In the examples in this topic the <a href="{{site.gdeurl}}frontend-dev-guide/css-guide/css_quick_guide_approach.html#simple_extend">simplest approach for customizing theme styles</a> is used: changes are done in the `_extend.less` of the new theme. 
+In the examples in this topic the <a href="{{site.gdeurl21}}frontend-dev-guide/css-guide/css_quick_guide_approach.html#simple_extend">simplest approach for customizing theme styles</a> is used: changes are done in the `_extend.less` of the new theme. 
 
 In our examples we will change the color and font of the primary buttons. The default view of the primary buttons can be illustrated by the **Create an Account** button view on the Admin login page:
 
@@ -28,8 +28,8 @@ In our examples we will change the color and font of the primary buttons. The de
 
 <h2 id="first_step">First step: Create and apply a theme</h2>
 
-1. Create a new theme as described in the <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-create.html" target="_blank">Create a theme</a> topic. In your `theme.xml` specify Magento Luma or Magento Blank as a parent theme.
-2. <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html#theme-apply-apply">Apply your theme</a> in the Magento Admin.
+1. Create a new theme as described in the <a href="{{site.gdeurl21}}frontend-dev-guide/themes/theme-create.html" target="_blank">Create a theme</a> topic. In your `theme.xml` specify Magento Luma or Magento Blank as a parent theme.
+2. <a href="{{site.gdeurl21}}frontend-dev-guide/themes/theme-apply.html#theme-apply-apply">Apply your theme</a> in the Magento Admin.
 
 Server-side is the default mode for LESS compilation, so if you do not change this, your Magento instance is using server-side compilation mode. 
 
@@ -72,7 +72,7 @@ If your Magento instance uses the server-side compilation mode, you need to manu
 <ol>
 <li>Create and apply a theme. </li>
 <li>In your theme directory, add <code>web/css/source/_extend.less</code>.</li>
-<li>Install Grunt and register your theme as described in <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css_debug.html#grunt_prereq" target="_blank">Installing and configuring Grunt</a>.</li>
+<li>Install Grunt and register your theme as described in <a href="{{site.gdeurl21}}frontend-dev-guide/css-topics/css_debug.html#grunt_prereq" target="_blank">Installing and configuring Grunt</a>.</li>
 <li>From your Magento installation directory, run the following commands:
 <ul>
 <li><code>grunt exec: &lt;your_theme&gt;</code></li>
@@ -100,7 +100,7 @@ Where <code>&lt;your_theme&gt;</code> is the code of your theme. Conventionally 
 <ol>
 <li>Create and apply a theme.</li>
 <li>In your theme directory, add <code>web/css/source/_extend.less</code>.</li>
-<li>In the Magento Admin, change the LESS compilation mode to client-side under <b>STORES</b> > <b>Configuration</b> > <b>ADVANCED</b> > <b>Developer</b> > <b>Front-end development workflow</b> > <b>Workflow type</b>. For detailed description see the <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css-preprocess.html#less_modes">CSS preprocessing</a> topic.</li>
+<li>In the Magento Admin, change the LESS compilation mode to client-side under <b>STORES</b> > <b>Configuration</b> > <b>ADVANCED</b> > <b>Developer</b> > <b>Front-end development workflow</b> > <b>Workflow type</b>. For detailed description see the <a href="{{site.gdeurl21}}frontend-dev-guide/css-topics/css-preprocess.html#less_modes">CSS preprocessing</a> topic.</li>
 <li>Delete all files in the following directories:
 <ul>
 <li><code>pub/static/frontend/&lt;Your_Vendor&gt;/&lt;your_theme&gt;</code></li>
@@ -125,10 +125,10 @@ Where <code>&lt;your_theme&gt;</code> is the code of your theme. Conventionally 
 </li>
 </ol>
 
-If your Magento instance uses the client-side compilation mode, simple changes are applied at once. In case of more sophisticated changes, you might need to manually clean the theme sub-directory in the <code>pub/static/frontend</code> directory. There are more details about these types of changes and about the client-side mode implementation in the <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css_debug.html#css_debug_client" target="_blank">Styles debugging</a> topic.
+If your Magento instance uses the client-side compilation mode, simple changes are applied at once. In case of more sophisticated changes, you might need to manually clean the theme sub-directory in the <code>pub/static/frontend</code> directory. There are more details about these types of changes and about the client-side mode implementation in the <a href="{{site.gdeurl21}}frontend-dev-guide/css-topics/css_debug.html#css_debug_client" target="_blank">Styles debugging</a> topic.
 
 <h2>Recommended reading</h2>
 <ul>
-<li><a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css_debug.html" target="_blank">Styles debugging</a></li>
-<li><a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">CSS preprocessing</a></li>
+<li><a href="{{site.gdeurl21}}frontend-dev-guide/css-topics/css_debug.html" target="_blank">Styles debugging</a></li>
+<li><a href="{{site.gdeurl21}}frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">CSS preprocessing</a></li>
 </ul>

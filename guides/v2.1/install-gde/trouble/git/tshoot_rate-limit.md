@@ -53,7 +53,7 @@ redirect_from:
 
 	<div class="bs-callout bs-callout-info" id="info">
 		<span class="glyphicon-class">
-  		<p>If the command fails, try making the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a> the owner of your web server docroot directory.</p>
+  		<p>If the command fails, try making the <a href="{{ site.gdeurl21 }}install-gde/prereq/apache-user.html">Magento file system owner</a> the owner of your web server docroot directory.</p>
   		</span>
 	</div>
 

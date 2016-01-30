@@ -16,7 +16,7 @@ redirect_from: /guides/v1.0/config-guide/config/caching.html
 * <a href="#m2devgde-cache-more">More information about caching</a>
 
 <h2 id="m2devgde-cache-explore">Overview of caching</h2>
-Magento uses <a href="http://framework.zend.com/manual/1.12/en/zend.cache.html" target="_blank">Zend_Cache</a> to interact with the cache storage. However, Magento also has the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache" target="_blank">Magento\Cache</a> library for implementing Magento-specific caching. These topics discuss how to configure caching and cache types.
+Magento uses <a href="http://framework.zend.com/manual/1.12/en/zend.cache.html" target="_blank">Zend_Cache</a> to interact with the cache storage. However, Magento also has the <a href="{{ site.mage2100url }}lib/internal/Magento/Framework/Cache" target="_blank">Magento\Cache</a> library for implementing Magento-specific caching. These topics discuss how to configure caching and cache types.
 
 <div class="bs-callout bs-callout-info" id="info">
 	<p>By default, file system caching is enabled; no configuration is necessary to use it. This means the cache is located under <code>&lt;your Magento install dir>/var</code>.</p>
@@ -51,9 +51,9 @@ The preceding lists all cache types and shows they are all enabled.
 <h2 id="m2devgde-cache-more">More information about caching</h2>
 The following topics discuss how to set up caching:
 
-*	<a href="{{ site.gdeurl }}config-guide/config/caching-cache-type.html">Create a cache type</a>
-*	<a href="{{ site.gdeurl }}config-guide/config/config-create.html">Create or extend configuration types</a>
-*	<a href="{{ site.gdeurl }}config-guide/config/caching_frontend-cache-types.html">Associate cache frontends with cache types</a>
-*	<a href="{{ site.gdeurl }}config-guide/config/caching_low-level.html">Low-level cache options</a>
-*	<a href="{{ site.gdeurl }}config-guide/varnish/config-varnish.html">Configure and use Varnish</a>
-*	<a href="{{ site.gdeurl }}config-guide/redis/config-redis.html">Configure Redis</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/config/caching-cache-type.html">Create a cache type</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/config/config-create.html">Create or extend configuration types</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/config/caching_frontend-cache-types.html">Associate cache frontends with cache types</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/config/caching_low-level.html">Low-level cache options</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/varnish/config-varnish.html">Configure and use Varnish</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/redis/config-redis.html">Configure Redis</a>

@@ -31,7 +31,7 @@ PROVIDE TEXT HERE FOR FIRST SECTION.
 <h3 id="H3">HEADING 3</h3>
 PROVIDE TEXT HERE FOR NEXT SECTION.
 
-TO HYPERLINK TO ANOTHER TOPIC... refer to the <a href="{{ site.gdeurl }}extension-dev-guide/bk-extension-dev-guide.html">NAME OF TOPIC OR BOOK</a>.
+TO HYPERLINK TO ANOTHER TOPIC... refer to the <a href="{{ site.gdeurl21 }}extension-dev-guide/bk-extension-dev-guide.html">NAME OF TOPIC OR BOOK</a>.
 
 
 
@@ -42,5 +42,5 @@ ADD DIAGRAM OR ILLUSTRATION <p><img src="{{ site.baseurl }}common/images/NAME_OF
 
 <h2 id="book-related">Related topics</h2>
 
-* <a href="{{ site.gdeurl }}_____/_____.html">Title of related topic</a>
-* <a href="{{ site.gdeurl }}_____/_____.html">Title of related topic</a>
+* <a href="{{ site.gdeurl21 }}_____/_____.html">Title of related topic</a>
+* <a href="{{ site.gdeurl21 }}_____/_____.html">Title of related topic</a>

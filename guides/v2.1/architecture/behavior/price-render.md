@@ -26,7 +26,7 @@ This section discusses the following APIs:
 
 <h3 id="m2devgde-pricerend-base-rend">Base Renderer</h3>
 
-<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing/Render.php" target="_blank">Magento\Framework\Pricing\Render</a> extends <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/Element/AbstractBlock.php" target="_blank">Magento\Framework\View\Element\AbstractBlock</a> and serves as an entry point.
+<a href="{{ site.mage2100url }}lib/internal/Magento/Framework/Pricing/Render.php" target="_blank">Magento\Framework\Pricing\Render</a> extends <a href="{{ site.mage2100url }}lib/internal/Magento/Framework/View/Element/AbstractBlock.php" target="_blank">Magento\Framework\View\Element\AbstractBlock</a> and serves as an entry point.
 
 <table>
   <tbody>
@@ -113,9 +113,9 @@ This section discusses the following APIs:
 
 <h3 id="m2devgde-pricerend-adjrendint">AdjustmentRenderInterface</h3>
 
-<p><a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing/Render/AdjustmentRenderInterface.php" target="_blank">Magento\Framework\Pricing\Render\AdjustmentRenderInterface</a> is responsible for showing price adjustments according to the system configuration. It has a flexible internal config which allows specifying a separate template for each combination of price type and product type.</p>
+<p><a href="{{ site.mage2100url }}lib/internal/Magento/Framework/Pricing/Render/AdjustmentRenderInterface.php" target="_blank">Magento\Framework\Pricing\Render\AdjustmentRenderInterface</a> is responsible for showing price adjustments according to the system configuration. It has a flexible internal config which allows specifying a separate template for each combination of price type and product type.</p>
 
-<p><code>AdjustmentRender</code> extends <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/Element/Template.php" target="_blank">Magento\View\Element\Template</a> and implements its behavior as well.</p>
+<p><code>AdjustmentRender</code> extends <a href="{{ site.mage2100url }}lib/internal/Magento/Framework/View/Element/Template.php" target="_blank">Magento\View\Element\Template</a> and implements its behavior as well.</p>
 
 <table>
   <tbody>
@@ -210,7 +210,7 @@ This section discusses the following APIs:
 
 <h3 id="m2devgde-pricerend-amrendint">AmountRenderInterface</h3>
 
-<p><a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing/Render/AmountRenderInterface.php">Magento\Framework\Pricing\Render\AmountRenderInterface</a> gets the Price Amount object from Price objects and represents the exact price value to be rendered.</p>
+<p><a href="{{ site.mage2100url }}lib/internal/Magento/Framework/Pricing/Render/AmountRenderInterface.php">Magento\Framework\Pricing\Render\AmountRenderInterface</a> gets the Price Amount object from Price objects and represents the exact price value to be rendered.</p>
 
   <table>
   <tbody>
@@ -277,7 +277,7 @@ This section discusses the following APIs:
 
 <h3 id="m2devgde-pricerend-pricebox">PriceBox</h3>
 
-<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing/Render/PriceBox.php" target="_blank">Magento\Framework\Pricing\Render\PriceBox</a> is a main block that wraps all price rendering related content of particular Price Type.
+<a href="{{ site.mage2100url }}lib/internal/Magento/Framework/Pricing/Render/PriceBox.php" target="_blank">Magento\Framework\Pricing\Render\PriceBox</a> is a main block that wraps all price rendering related content of particular Price Type.
 
 This is a private class, it cannot be accessed from general layout blocks or templates.
 <table>

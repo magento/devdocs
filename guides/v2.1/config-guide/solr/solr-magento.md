@@ -79,7 +79,7 @@ Magento comes packaged with a sample Solr configuration you can use and customiz
 		java -jar <your Solr install dir>/example/start.jar
 
 	<div class="bs-callout bs-callout-warning">
-			<p>This method for starting Solr is for convenience and testing purposes only. In a production environment, you should start and stop Solr using a script as discussed in <a href="{{ site.gdeurl }}config-guide/solr/solr-script.html#solr-script">Script Solr startup and shutdown</a>.</p>
+			<p>This method for starting Solr is for convenience and testing purposes only. In a production environment, you should start and stop Solr using a script as discussed in <a href="{{ site.gdeurl21 }}config-guide/solr/solr-script.html#solr-script">Script Solr startup and shutdown</a>.</p>
 	</div>
 
 <h3 id="config-solr-magento">Configure Magento to work with Solr</h3>
@@ -157,7 +157,7 @@ The button changes as follows.
 	In particular, make sure you started Solr as a user with <code>root</code> privileges.</li>
 	<li>Verify that <a href="http://php.net/manual/en/filesystem.configuration.php" target="_blank"><code>allow_url_fopen = On</code></a> is present in your server's <code>php.ini</code>.<br />
 	If you are not sure where <code>php.ini</code> is located, you can <a href="http://kb.mediatemple.net/questions/764/How+can+I+create+a+phpinfo.php+page%3F#gs" target="_blank">create a <code>phpinfo.php</code> page</a> to locate it.</li>
-	<li>Make sure that <a href="{{ site.gdeurl }}config-guide/solr/solr-overview.html#prereq-secy">UNIX firewall and SELinux</a> are both disabled, or set up rules to enable Solr and Magento to communicate with each other.</li>
+	<li>Make sure that <a href="{{ site.gdeurl21 }}config-guide/solr/solr-overview.html#prereq-secy">UNIX firewall and SELinux</a> are both disabled, or set up rules to enable Solr and Magento to communicate with each other.</li>
 	<li>Verify the value of the <strong>Solr Server Hostname</strong> field. Make sure the server is available. You can try the server's IP address instead.</li>
 	<li>Use the command <code>netstat -an | grep <em>listen-port</em></code> command to verify that the port specified in the <strong>Solr Server Port</strong> field is not being used by another process.<br />
 	For example, to see if Solr is running on its default port, use the following command:
@@ -183,11 +183,11 @@ To refresh the cache using the Admin:
 		The following figure shows an example.<br />
 		<img src="{{ site.baseurl }}common/images/solr_refresh-cache.png" width="600px">
 
-To clean the cache using the command line, use the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean">`magento cache:clean`</a> command.
+To clean the cache using the command line, use the <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean">`magento cache:clean`</a> command.
 
 To reindex using the command line:
 
-1.	Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+1.	Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl21 }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
 2.	Enter the following command to reindex all indexers:
 
 		php <your Magento install dir>/bin magento indexer:reindex
@@ -199,7 +199,7 @@ To reindex using the command line:
 3.	Wait while the indexers are reindexed.
 
 <div class="bs-callout bs-callout-info" id="info">
-	<p>Unlike the cache, indexers are updated by a cron job. Make sure <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cron.html">cron is enabled</a> before you start using Solr.</p>
+	<p>Unlike the cache, indexers are updated by a cron job. Make sure <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-cron.html">cron is enabled</a> before you start using Solr.</p>
 </div>
 
 <h2 id="solr-verify">Verify Solr is working</h2>
@@ -215,4 +215,4 @@ The following excerpt from the Solr command window shows the same search:
 
 
 #### Next step
-<a href="{{ site.gdeurl }}config-guide/solr/solr-script.html">Prepare Solr for production</a>
+<a href="{{ site.gdeurl21 }}config-guide/solr/solr-script.html">Prepare Solr for production</a>

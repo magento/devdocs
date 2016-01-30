@@ -16,7 +16,7 @@ redirect_from: /guides/v1.0/architecture/modules/mod_conventions.html
 
 Modules must conform to Magento conventions regarding code location and file names. Keep these conventions in mind when working with or developing modules. 
 
-Be sure to research additional Magento conventions, beyond those applicable to modules. For  more information, see <a href="{{ site.gdeurl }}coding-standards/bk-coding-standards.html">Coding Standards</a>.
+Be sure to research additional Magento conventions, beyond those applicable to modules. For  more information, see <a href="{{ site.gdeurl21 }}coding-standards/bk-coding-standards.html">Coding Standards</a>.
 
 <h2 id="m2arch-module-conventions-location"> Module location conventions</h2>
 

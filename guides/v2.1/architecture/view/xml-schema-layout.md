@@ -23,16 +23,16 @@ redirect_from: /guides/v1.0/architecture/view/xml-schema-layout.html
          <th>Validates</th>
       </tr>
       <tr>
-         <td><a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/Layout/etc/layout_generic.xsd" target="_blank">layout_generic.xsd</a></code>
+         <td><a href="{{ site.mage2100url }}lib/internal/Magento/Framework/View/Layout/etc/layout_generic.xsd" target="_blank">layout_generic.xsd</a></code>
          </td>
          <td>Individual layouts</td>
       </tr>
       <tr>
-         <td><a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/PageLayout/etc/layouts.xsd" target="_blank">layouts.xsd</a></td>
+         <td><a href="{{ site.mage2100url }}lib/internal/Magento/Framework/View/PageLayout/etc/layouts.xsd" target="_blank">layouts.xsd</a></td>
          <td>Individual layouts.</td>
       </tr>
       <tr>
-         <td><a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/Layout/etc/layout_merged.xsd" target="_blank">layout_merged.xsd</a></td>
+         <td><a href="{{ site.mage2100url }}lib/internal/Magento/Framework/View/Layout/etc/layout_merged.xsd" target="_blank">layout_merged.xsd</a></td>
          <td>Merged layouts.</td>
       </tr>
    </tbody>
@@ -353,12 +353,12 @@ redirect_from: /guides/v1.0/architecture/view/xml-schema-layout.html
    </thead>
    <tbody>
       <tr>
-         <td><a href="{{ site.mage2000url }}dev/tests/static/testsuite/Magento/Test/Integrity/Layout/HandlesTest.php" target="_blank">HandlesTest.php</a></td>
+         <td><a href="{{ site.mage2100url }}dev/tests/static/testsuite/Magento/Test/Integrity/Layout/HandlesTest.php" target="_blank">HandlesTest.php</a></td>
          <td>Layouts</td>
       </tr>
       <tr>
       <td>
-         <a href="{{ site.mage2000url }}dev/tests/integration/testsuite/Magento/Test/Integrity/Modular/LayoutFilesTest.php" target="_blank">LayoutFilesTest.php</a></td>
+         <a href="{{ site.mage2100url }}dev/tests/integration/testsuite/Magento/Test/Integrity/Modular/LayoutFilesTest.php" target="_blank">LayoutFilesTest.php</a></td>
          <td>Argument values correspond to required data types</td>
       </tr>
    </tbody>

@@ -146,7 +146,7 @@ The following table shows which actions are supported for each non-metapackage c
 <h2 id="compman-access">Component Management options</h2>
 To choose whether to upgrade or uninstall components:
 
-1.	After you <a href="{{ site.gdeurl }}comp-mgr/compman-start.html">run the Component Manager</a>, a page similar to the following displays:<br><br>
+1.	After you <a href="{{ site.gdeurl21 }}comp-mgr/compman-start.html">run the Component Manager</a>, a page similar to the following displays:<br><br>
 	<img src="{{ site.baseurl }}common/images/cman_initial-page.png" width="750px" alt="The Component Manager page enables you to synchronize with Magento Marketplace to see if updates are available">
 2.	You have the following options:
 	<table>
@@ -220,7 +220,7 @@ To install a new purchase:
 
 	<img src="{{ site.baseurl }}common/images/compman_new-purchases2.png" width="700px">
 3.	Click **Install**.
-4.	Continue with <a href="{{ site.gdeurl }}comp-mgr/compman-readiness.html">Readiness check</a>.
+4.	Continue with <a href="{{ site.gdeurl21 }}comp-mgr/compman-readiness.html">Readiness check</a>.
 
 
 
@@ -237,7 +237,7 @@ To update the component, click **Update** from the **Actions** list. A sample fo
 
 <img src="{{ site.baseurl }}common/images/cman_actions_update.png" alt="Click Update from the Actions menu">
 
-Continue with <a href="{{ site.gdeurl }}comp-mgr/compman-readiness.html">Readiness check</a>.
+Continue with <a href="{{ site.gdeurl21 }}comp-mgr/compman-readiness.html">Readiness check</a>.
 
 <h2 id="compman-endis">Enable or disable a component</h2>
 To enable or disable a component, click the appropriate choice from the **Actions** list.
@@ -246,14 +246,14 @@ The following figure shows an example of disabling a component.
 
 <img src="{{ site.baseurl }}common/images/cman_actions-disable.png" alt="Click Disable from the Actions menu">
 
-Continue with <a href="{{ site.gdeurl }}comp-mgr/compman-readiness.html">Readiness check</a>.
+Continue with <a href="{{ site.gdeurl21 }}comp-mgr/compman-readiness.html">Readiness check</a>.
 
 <h2 id="compman-uninst">Uninstall a component</h2>
 To uninstall a component, click **Uninstall** from the **Actions** list as the following figure shows.
 
 <img src="{{ site.baseurl }}common/images/cman_uninstall1.png" alt="Uninstall a component">
 
-Continue with <a href="{{ site.gdeurl }}comp-mgr/compman-readiness.html">Readiness check</a>.
+Continue with <a href="{{ site.gdeurl21 }}comp-mgr/compman-readiness.html">Readiness check</a>.
 
 
 

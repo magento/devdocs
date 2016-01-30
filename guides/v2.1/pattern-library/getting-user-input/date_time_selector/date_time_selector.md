@@ -291,4 +291,4 @@ PSD files can be found here:
 <a href="src/date&timepicker.psd">Download Date&Time PSD source</a>
 
 <h3 id="implementation">Implementation</h3>
-Date and time selectors are implemented using the standard <a href="https://jqueryui.com/datepicker/" target="_blank">jQuery UI datepicker widget</a> and Magento <a href="{{site.mage2000url}}lib/web/jquery/jquery-ui-timepicker-addon.js" target="_blank">addon</a>. 
+Date and time selectors are implemented using the standard <a href="https://jqueryui.com/datepicker/" target="_blank">jQuery UI datepicker widget</a> and Magento <a href="{{site.mage2100url}}lib/web/jquery/jquery-ui-timepicker-addon.js" target="_blank">addon</a>. 

@@ -15,4 +15,4 @@ github_link: install-gde/install/web/install-web_3-web-conf.md
 {% include install/web/install-web_3-web-conf.md %}
 
 #### Next step
-<a href="{{ site.gdeurl }}install-gde/install/web/install-web_4-customize-store.html">Step 4. Customize your store</a>
+<a href="{{ site.gdeurl21 }}install-gde/install/web/install-web_4-customize-store.html">Step 4. Customize your store</a>

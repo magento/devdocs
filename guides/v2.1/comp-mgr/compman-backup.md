@@ -15,7 +15,7 @@ After you pass all readiness checks, you can back up:
 *	The `pub/media` directory
 *	The Magento 2 database
 
-Backups are stored in the `var/backups` directory and can be restored at any time using the <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">magento setup:rollback</a> command.
+Backups are stored in the `var/backups` directory and can be restored at any time using the <a href="{{ site.gdeurl21 }}install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">magento setup:rollback</a> command.
 
 To back up:
 
@@ -33,10 +33,10 @@ To back up:
 
 2. 	Wait while backups are created and continue with any of the following:
 
-	*	Installing new purchases or updates: <a href="{{ site.gdeurl }}comp-mgr/compman-new-purchase.html">Step 3. Component Install</a>
-	*	Updating components: <a href="{{ site.gdeurl }}comp-mgr/compman-update.html">Step 3. Update components</a>
-	*	Enabling or disabling components: <a href="{{ site.gdeurl }}comp-mgr/compman-enable-disable.html">Step 3. Enable/disable components</a>
-	*	Uninstalling components: <a href="{{ site.gdeurl }}comp-mgr/compman-uninst-data.html">Step 3. Data Option</a>
+	*	Installing new purchases or updates: <a href="{{ site.gdeurl21 }}comp-mgr/compman-new-purchase.html">Step 3. Component Install</a>
+	*	Updating components: <a href="{{ site.gdeurl21 }}comp-mgr/compman-update.html">Step 3. Update components</a>
+	*	Enabling or disabling components: <a href="{{ site.gdeurl21 }}comp-mgr/compman-enable-disable.html">Step 3. Enable/disable components</a>
+	*	Uninstalling components: <a href="{{ site.gdeurl21 }}comp-mgr/compman-uninst-data.html">Step 3. Data Option</a>
 
-The following page displays to confirm a successful backup. If errors display, see <a href="{{ site.gdeurl }}comp-mgr/trouble/cman/tshoot_backup.html">Troubleshoot backups</a>.<br><br>
+The following page displays to confirm a successful backup. If errors display, see <a href="{{ site.gdeurl21 }}comp-mgr/trouble/cman/tshoot_backup.html">Troubleshoot backups</a>.<br><br>
 <img src="{{ site.baseurl }}common/images/cman_backup-success.png" width="650px" alt="A page displays to confirm your backup was a success">

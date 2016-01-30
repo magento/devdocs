@@ -44,7 +44,7 @@ To prepare for the migration, make sure you do all of the following:
   <li>Use the migration tool to migrate settings and websites.</li>
   <li>Copy your Magento 1.x media files to Magento 2.0. (You must copy these manually from  from magento1-root/media to magento2-root/pub/media directory)</li> 
   <li>Use Data Migration Tool to bulk copy your data from Magento 1 database to Magento 2 database. If some of your extensions have data you want to migrate, you might need to install these extensions adapted for Magento 2. In case the extensions have a different structure in Magento 2 database, use the mapping files provided with the Data Migration Tool.</li>
-  <li>Reindex all Magento 2.0 indexers. For details, see the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-index.html">Configuration Guide</a>.</li>
+  <li>Reindex all Magento 2.0 indexers. For details, see the <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-index.html">Configuration Guide</a>.</li>
   <li>Thoroughly test your Magento 2.0 site.</li>
 </ol>
 

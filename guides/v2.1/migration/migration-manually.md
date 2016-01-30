@@ -23,7 +23,7 @@ There are three types of data that need to be manually migrated:
 This section discusses how to manually migrate media files.
 
 #### Media files stored in the database
-This section applies to you *only* if you store media files in the Magento database. This step should be performed before <a href="{{ site.gdeurl }}migration/migration-migrate-data.html">migration of data</a>:
+This section applies to you *only* if you store media files in the Magento database. This step should be performed before <a href="{{ site.gdeurl21 }}migration/migration-migrate-data.html">migration of data</a>:
 
 1.	Log in to the Magento 1 Admin Panel as an administrator.
 2.	Click **System** > **Configuration** > ADVANCED > **System**. 
@@ -58,4 +58,4 @@ However, do *not* copy `.htaccess` files located in the Magento 1 `media` folder
 
 ###Related topics
 
-* <a href="{{ site.gdeurl }}migration/migration-migrate-after.html">After migration</a>
+* <a href="{{ site.gdeurl21 }}migration/migration-migrate-after.html">After migration</a>

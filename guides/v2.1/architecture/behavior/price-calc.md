@@ -10,11 +10,11 @@ redirect_from: /guides/v1.0/architecture/behavior/price-calc.html
 ---
 
 <h2 id="m2devgde-pricecalc-intro">Introduction to the Magento pricing library</h2>
-This article provides in-depth information about Magento price calculation logic implemented in the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing" target="_blank">Magento\Framework\Pricing</a> library.
+This article provides in-depth information about Magento price calculation logic implemented in the <a href="{{ site.mage2100url }}lib/internal/Magento/Framework/Pricing" target="_blank">Magento\Framework\Pricing</a> library.
 
 <h2 id="m2devgde-pricecalc-gen">Price Calculation General Flow</h2>
 
-To use the Pricing library for a product (`SaleableItem`), the product model should implement <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing/Object/SaleableInterface.php" target="_blank">Magento\Framework\Pricing\Object\SaleableInterface</a>.
+To use the Pricing library for a product (`SaleableItem`), the product model should implement <a href="{{ site.mage2100url }}lib/internal/Magento/Framework/Pricing/Object/SaleableInterface.php" target="_blank">Magento\Framework\Pricing\Object\SaleableInterface</a>.
 
 The implementation of `SaleableItemInterface` gives access to the `PriceInfo` object of a product, which in turn provides all available `Price` objects or `Adjustments` specific to the product.
 
@@ -36,7 +36,7 @@ This section discusses the following APIs:
 
 <h3 id="m2devgde-pricecalc-api_adj">AdjustmentInterface</h3>
 
-<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing/Adjustment/AdjustmentInterface.php" target="_blank">Magento\Framework\Pricing\Adjustment\AdjustmentInterface</a> contains the business logic responsible for applying adjustment to the `SaleableItem` final price.
+<a href="{{ site.mage2100url }}lib/internal/Magento/Framework/Pricing/Adjustment/AdjustmentInterface.php" target="_blank">Magento\Framework\Pricing\Adjustment\AdjustmentInterface</a> contains the business logic responsible for applying adjustment to the `SaleableItem` final price.
 
 <table>
   <tbody>
@@ -140,7 +140,7 @@ This section discusses the following APIs:
 
 <h3 id="m2devgde-pricecalc-calcint">CalculatorInterface</h3>
 
-<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing/Adjustment/CalculatorInterface.php" target="_blank">Magento\Framework\Pricing\Adjustment\CalculatorInterface</a> prepares `Amount` (applies and extracts adjustments) according to the saleable item (product) configuration.
+<a href="{{ site.mage2100url }}lib/internal/Magento/Framework/Pricing/Adjustment/CalculatorInterface.php" target="_blank">Magento\Framework\Pricing\Adjustment\CalculatorInterface</a> prepares `Amount` (applies and extracts adjustments) according to the saleable item (product) configuration.
 <table>
   <tbody>
     <tr>
@@ -193,7 +193,7 @@ This section discusses the following APIs:
 
 <h3 id="m2devgde-pricecalc-amint">AmountInterface</h3>
 
-<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing/Amount/AmountInterface.php" target="_blank">Magento\Framework\Pricing\Amount\AmountInterface</a> is a container of a composite price value information. Price is represented as base amount value and an array of adjustment codes.
+<a href="{{ site.mage2100url }}lib/internal/Magento/Framework/Pricing/Amount/AmountInterface.php" target="_blank">Magento\Framework\Pricing\Amount\AmountInterface</a> is a container of a composite price value information. Price is represented as base amount value and an array of adjustment codes.
 <table>
   <tbody>
     <tr>
@@ -312,7 +312,7 @@ This section discusses the following APIs:
 
 <h3 id="m2devgde-pricecalc-absprice">AbstractPrice</h3>
 
-<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing/Price/AbstractPrice.php" target="_blank">Magento\Framework\Pricing\Price\AbstractPrice</a> is responsible for providing information about specific price type.
+<a href="{{ site.mage2100url }}lib/internal/Magento/Framework/Pricing/Price/AbstractPrice.php" target="_blank">Magento\Framework\Pricing\Price\AbstractPrice</a> is responsible for providing information about specific price type.
 <table>
   <tbody>
     <tr>
@@ -402,10 +402,10 @@ This section discusses the following APIs:
 </table>
 
 <h4 id="m2devgde-pricecalc-abs-type">Price Types</h4>
-Every class implementing a price type should extend <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing/Price/AbstractPrice.php" target="_blank"><code>Magento\Framework\Pricing\Price\AbstractPrice</code></a>.
+Every class implementing a price type should extend <a href="{{ site.mage2100url }}lib/internal/Magento/Framework/Pricing/Price/AbstractPrice.php" target="_blank"><code>Magento\Framework\Pricing\Price\AbstractPrice</code></a>.
 
 <h3 id="m2devgde-pricecalc-abs-priceinfo">PriceInfo</h3>
-<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing/PriceInfoInterface.php" target="_blank">Magento\Framework\Pricing\PriceInfoInterface</a> holds prices and adjustments collections and provides access to them.
+<a href="{{ site.mage2100url }}lib/internal/Magento/Framework/Pricing/PriceInfoInterface.php" target="_blank">Magento\Framework\Pricing\PriceInfoInterface</a> holds prices and adjustments collections and provides access to them.
 
 <table>
   <tbody>

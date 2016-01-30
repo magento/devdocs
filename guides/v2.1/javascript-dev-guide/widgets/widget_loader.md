@@ -14,10 +14,10 @@ redirect_from:
 <h2>Overview</h2>
 The Loader widget blocks page content (all content or a part of it). Its intended use is blocking content when an Ajax request is being sent. But it can be initialized for non-Ajax tasks as well. 
 
-The Loader widget source is <a href="{{site.mage2000url}}lib/web/mage/loader.js" target="_blank">lib/web/mage/loader.js</a>.
+The Loader widget source is <a href="{{site.mage2100url}}lib/web/mage/loader.js" target="_blank">lib/web/mage/loader.js</a>.
 
 <h2 id="loader_init">Initialize the loader widget</h2>
-The loader widget is initialized as described in <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a>.
+The loader widget is initialized as described in <a href="{{site.gdeurl21}}frontend-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a>.
 
 <h2 id="loader_options">Options</h2>
 The loader widget has the following options:

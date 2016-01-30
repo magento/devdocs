@@ -109,7 +109,7 @@ The following is an illustration of widget initialization using <code>&lt;script
 
 <h2 id="widget_init">Widget initialization in JS</h2>
 
-To initialize a widget in JS code, use a notation similar to the following (the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_accordion.html" target="_blank">accordion</a> widget is initialized on the `#main-container` element as illustration):
+To initialize a widget in JS code, use a notation similar to the following (the <a href="{{site.gdeurl21}}frontend-dev-guide/javascript/widget_accordion.html" target="_blank">accordion</a> widget is initialized on the `#main-container` element as illustration):
 
 <pre>
 $("#main-container").accordion();

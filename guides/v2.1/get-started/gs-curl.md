@@ -15,8 +15,8 @@ redirect_from: /guides/v1.0/get-started/gs-curl.html
    Mac OS X, and Windows.
 </p>
 
-<p>To use cURL to run your REST web API call, use the <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-token.html#curl-command-syntax">cURL command syntax</a> to construct the cURL command.</p>
-<p>To create the endpoint in the call, append the REST URI that you constructed in <a href="{{ site.gdeurl }}get-started/gs-web-api-request.html">Step 3. Construct a request</a> to this URL:</p>
+<p>To use cURL to run your REST web API call, use the <a href="{{ site.gdeurl21 }}get-started/authentication/gs-authentication-token.html#curl-command-syntax">cURL command syntax</a> to construct the cURL command.</p>
+<p>To create the endpoint in the call, append the REST URI that you constructed in <a href="{{ site.gdeurl21 }}get-started/gs-web-api-request.html">Step 3. Construct a request</a> to this URL:</p>
 <pre>https://&lt;MAGENTO_HOST_OR_IP&gt;/&lt;MAGENTO_BASE_INSTALL_DIR&gt;/rest/</pre>
 <p>To pass the customer data object in the POST call payload, specify a JSON or XML request body on the call.</p>
 <p>For a complete list of cURL command options, see <a href="http://curl.haxx.se/docs/manpage.html">curl.1 the man page</a>.</p>
@@ -49,7 +49,7 @@ redirect_from: /guides/v1.0/get-started/gs-curl.html
             <code>-H</code>option. You can specify any number of extra
             headers.
          </p>
-         <p>For a list of common headers used in Magento web API requests, see <a href="{{ site.gdeurl }}get-started/gs-web-api-request.html#http-headers">HTTP headers</a>.</p>
+         <p>For a list of common headers used in Magento web API requests, see <a href="{{ site.gdeurl21 }}get-started/gs-web-api-request.html#http-headers">HTTP headers</a>.</p>
       </td>
    </tr>
    <tr>
@@ -100,7 +100,7 @@ redirect_from: /guides/v1.0/get-started/gs-curl.html
 
 <h2>Next step</h2>
 <ul>
-   <li><a href="{{ site.gdeurl }}/get-started/gs-web-api-response.html">Step 4. Review the response</a></li>
+   <li><a href="{{ site.gdeurl21 }}/get-started/gs-web-api-response.html">Step 4. Review the response</a></li>
 </ul>
 
 

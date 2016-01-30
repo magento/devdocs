@@ -31,9 +31,9 @@ You must specify the following parameters:
 *	`%cache_type_tag%` defines unique tag to be used in the cache type scoping.
 
 <h2 id="m2devgde-cache-more">More information about caching</h2>
-You can get more information about caching by looking at the code. We suggest you locate classes that extend <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Frontend/Decorator/TagScope.php" target="_blank">Magento\Framework\Cache\Frontend\Decorator\TagScope</a>.
+You can get more information about caching by looking at the code. We suggest you locate classes that extend <a href="{{ site.mage2100url }}lib/internal/Magento/Framework/Cache/Frontend/Decorator/TagScope.php" target="_blank">Magento\Framework\Cache\Frontend\Decorator\TagScope</a>.
 
-For example, look at <a href="{{ site.mage2000url }}app/code/Magento/Eav/Model/Cache/Type.php" target="_blank">Magento\Eav\Model\Cache\Type</a> to understand more about the EAV cache type.
+For example, look at <a href="{{ site.mage2100url }}app/code/Magento/Eav/Model/Cache/Type.php" target="_blank">Magento\Eav\Model\Cache\Type</a> to understand more about the EAV cache type.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Please help us improve this topic by suggesting details using the <strong>Edit this page in GitHub</strong> link at the top of the page. </p>

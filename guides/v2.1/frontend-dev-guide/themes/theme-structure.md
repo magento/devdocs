@@ -10,7 +10,7 @@ redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-structure.html
 ---
 
 <h2 id="theme-structure-intro">What's in this topic</h2>
-A <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-general.html#theme-gen-overview" target="_blank">design theme</a> is an important part of the Magento application. This topic describes the file structure of a Magento theme.
+A <a href="{{site.gdeurl21}}frontend-dev-guide/themes/theme-general.html#theme-gen-overview" target="_blank">design theme</a> is an important part of the Magento application. This topic describes the file structure of a Magento theme.
 
 <h2 id="theme-structure-loc">Magento theme location</h2>
 Storefront themes are conventionally located under `app/design/frontend/<Vendor>/`. Though technically they can reside in other directories. For example Magento built-in themes can be located under `vendor/magento/theme-frontend-<theme_code>` when a Magento instance is deployed from the Composer repository.  
@@ -281,7 +281,7 @@ The key difference between static files and other theme files is that static fil
 Static view files that can be accessed by a direct link from the store front, are distinguished as public theme files.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>To be actually accessible for browsers public static files are <a href="{{site.gdeurl}}architecture/view/static-process.html#publish-static-view-files" target="_blank">published</a> to the <code>/pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;language&gt;/css/</code> directory.</p>
+  <p>To be actually accessible for browsers public static files are <a href="{{site.gdeurl21}}architecture/view/static-process.html#publish-static-view-files" target="_blank">published</a> to the <code>/pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;language&gt;/css/</code> directory.</p>
 </div>
 
 <h3>Dynamic view files</h3>

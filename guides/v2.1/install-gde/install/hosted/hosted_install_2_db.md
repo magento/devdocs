@@ -12,4 +12,4 @@ github_link: install-gde/install/hosted/hosted_install_2_db.md
 {% include install/web/install-web_2-db.md %}
 
 #### Next step
-<a href="{{ site.gdeurl }}install-gde/install/hosted/hosted_install_3_web-conf.html">Step 3. Web configuration</a>
+<a href="{{ site.gdeurl21 }}install-gde/install/hosted/hosted_install_3_web-conf.html">Step 3. Web configuration</a>

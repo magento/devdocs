@@ -148,9 +148,9 @@ When `getList()` is called, it returns a list of `ProductInterface`s. When it do
 
 <h3 id="ext-auth">Extension attribute authentication</h3>
 
-Individual fields that are defined as extension attributes can be restricted, based on existing permissions. This feature allows extension developers to restrict access to data. See <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication.html">Web API authentication overview</a> for general information about authentication in Magento.
+Individual fields that are defined as extension attributes can be restricted, based on existing permissions. This feature allows extension developers to restrict access to data. See <a href="{{ site.gdeurl21 }}get-started/authentication/gs-authentication.html">Web API authentication overview</a> for general information about authentication in Magento.
 
-The following [code sample]({{ site.mage2000url }}app/code/Magento/CatalogInventory/etc/extension_attributes.xml) defines `stock_item` as an extension attribute of the `CatalogInventory` module. `CatalogInventory` is treated as a “third-party extension”. Access to the inventory data is restricted because the quantity of in-stock item may be competitive information.
+The following [code sample]({{ site.mage2100url }}app/code/Magento/CatalogInventory/etc/extension_attributes.xml) defines `stock_item` as an extension attribute of the `CatalogInventory` module. `CatalogInventory` is treated as a “third-party extension”. Access to the inventory data is restricted because the quantity of in-stock item may be competitive information.
 
 {% highlight XML %}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/Api/etc/extension_attributes.xsd">
@@ -218,5 +218,5 @@ However, if an extension similar to the following has been defined, the interfac
 
 
 <h2 id="related">Related topics</h2>
-<a href="{{ site.gdeurl }}get-started/authentication/gs-authentication.html">Web API authentication overview</a>
+<a href="{{ site.gdeurl21 }}get-started/authentication/gs-authentication.html">Web API authentication overview</a>
 

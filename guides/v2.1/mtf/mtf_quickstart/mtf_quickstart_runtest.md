@@ -16,10 +16,10 @@ MTF uses PHPUnit, which is located in `<magento2>/dev/tests/functional/vendor/bi
 
 Be sure that your system is ready for test run.
 
-- <a href="{{site.gdeurl}}mtf/mtf_installation.html#mtf_install_pre">Magento is ready for tests</a>
-- <a href="{{site.gdeurl}}mtf/mtf_installation.html#mtf_install_check">The Magento Testing Framework is installed</a>
-- <a href="{{site.gdeurl}}mtf/mtf_quickstart/mtf_quickstart_config.html">The Magento Testing Framework is configured</a>
-- <a href="{{site.gdeurl}}mtf/mtf_quickstart/mtf_quickstart_environmemt.html">Environment is ready to test run</a>
+- <a href="{{site.gdeurl21}}mtf/mtf_installation.html#mtf_install_pre">Magento is ready for tests</a>
+- <a href="{{site.gdeurl21}}mtf/mtf_installation.html#mtf_install_check">The Magento Testing Framework is installed</a>
+- <a href="{{site.gdeurl21}}mtf/mtf_quickstart/mtf_quickstart_config.html">The Magento Testing Framework is configured</a>
+- <a href="{{site.gdeurl21}}mtf/mtf_quickstart/mtf_quickstart_environmemt.html">Environment is ready to test run</a>
 
 ### Run all tests {#mtf_quickstart_testrun_all}
 
@@ -44,4 +44,4 @@ Let's check creating of new category. For this we should run `<magento2>/dev/tes
     phpunit --filter CreateCategoryEntityTest
 
 <h2 id="mtf_install_pre">Next Steps</h2>
-<a href="{{ site.gdeurl }}mtf/mtf_quickstart/mtf_quickstart_environmemt.html">&lt;&lt; Prepare environment for test </a> | <a href="{{ site.gdeurl }}mtf/mtf_quickstart/mtf_quickstart_logs.html"> See logs for failed tests &gt;&gt;</a>
+<a href="{{ site.gdeurl21 }}mtf/mtf_quickstart/mtf_quickstart_environmemt.html">&lt;&lt; Prepare environment for test </a> | <a href="{{ site.gdeurl21 }}mtf/mtf_quickstart/mtf_quickstart_logs.html"> See logs for failed tests &gt;&gt;</a>

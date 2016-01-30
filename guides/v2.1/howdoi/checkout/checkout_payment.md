@@ -30,7 +30,7 @@ All the steps are described further.
 
 ## Create the .js component file {#create}
 
-Your payment method must be implemented as a UI component. For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should depend on the Magento_Checkout module. Module dependencies are specified in the [module's `composer.json`]({{site.gdeurl}}extension-dev-guide/composer-integration.html).
+Your payment method must be implemented as a UI component. For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should depend on the Magento_Checkout module. Module dependencies are specified in the [module's `composer.json`]({{site.gdeurl21}}extension-dev-guide/composer-integration.html).
 
 In you custom module directory create the component's `.js` file (payment method renderer). It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory. For example in the Magento modules, the payment methods renderers are stored in the `<your_module_dir>/view/frontend/web/js/view/payment/method-renderer/` directory.
 
@@ -106,7 +106,7 @@ define(
 );
 {%endhighlight%}
 
-If your payment method requires credit cards information, you might use the Magento renderer implementing a credit card form: [`<Magento_Payment_module_dir>/view/frontend/web/js/view/payment/cc-form.js`]({{site.gdeurl}}app/code/Magento/Payment/view/frontend/web/js/view/payment/cc-form.js). It also extends the default payment renderer, but has the following own methods:
+If your payment method requires credit cards information, you might use the Magento renderer implementing a credit card form: [`<Magento_Payment_module_dir>/view/frontend/web/js/view/payment/cc-form.js`]({{site.gdeurl21}}app/code/Magento/Payment/view/frontend/web/js/view/payment/cc-form.js). It also extends the default payment renderer, but has the following own methods:
 
 
 <table>
@@ -160,7 +160,7 @@ If your payment method requires credit cards information, you might use the Mage
 Your payment method might need to get data that cannot be defined in layout configuration, JS components or templates directly, for example, data from the Magento system config.
 This configuration is stored in the `window.checkoutConfig` variable that is defined in root checkout template.
 
-In order to get access to the system configuration, your payment method or a group of payment methods has to implement the [`\Magento\Checkout\Model\ConfigProviderInterface`]({{site.mage2000url}}app/code/Magento/Checkout/Model/ConfigProviderInterface.php) interface, and the class implementing it must be injected to the composite config provider via DI frontend configuration. The following code samples illustrate this.
+In order to get access to the system configuration, your payment method or a group of payment methods has to implement the [`\Magento\Checkout\Model\ConfigProviderInterface`]({{site.mage2100url}}app/code/Magento/Checkout/Model/ConfigProviderInterface.php) interface, and the class implementing it must be injected to the composite config provider via DI frontend configuration. The following code samples illustrate this.
 
 A sample `.php` class implementing `\Magento\Checkout\Model\ConfigProviderInterface`:
 
@@ -229,7 +229,7 @@ define(
 If your module adds several payment methods, you can register all payment methods renderers in one file.
 
 ## Create the template for the payment method component {#template}
-In your custom module directory create a new `<your_module_dir>/view/frontend/web/template/<your_template>.html` file. The template can use [Knockout JS](http://knockoutjs.com/) syntax. You can find a sample `.html` template in any module implementing payment methods, for example the Magento_Authorizenet module. The template for rendering the Authorize.Net payment method in checkout is [`<Magento_Authorizenet_module_dir>/view/frontend/web/template/payment/authorizenet-directpost.html`]({{site.mage2000url}}app/code/Magento/Authorizenet/view/frontend/web/template/payment/authorizenet-directpost.html).
+In your custom module directory create a new `<your_module_dir>/view/frontend/web/template/<your_template>.html` file. The template can use [Knockout JS](http://knockoutjs.com/) syntax. You can find a sample `.html` template in any module implementing payment methods, for example the Magento_Authorizenet module. The template for rendering the Authorize.Net payment method in checkout is [`<Magento_Authorizenet_module_dir>/view/frontend/web/template/payment/authorizenet-directpost.html`]({{site.mage2100url}}app/code/Magento/Authorizenet/view/frontend/web/template/payment/authorizenet-directpost.html).
 
 
 ## Declare the payment method in layout {#layout}
@@ -306,4 +306,4 @@ In your custom module directory, create a new `<your_module_dir>/view/frontend/l
 </page>
 {%endhighlight %}
 
-For an illustration of `checkout_index_index.xml` where a new payment method is declared, view [`<Magento_Authorizenet_module_dir>/view/frontend/layout/checkout_index_index.xml`]({{site.gdeurl}}app/code/Magento/Authorizenet/view/frontend/layout/checkout_index_index.xml)
+For an illustration of `checkout_index_index.xml` where a new payment method is declared, view [`<Magento_Authorizenet_module_dir>/view/frontend/layout/checkout_index_index.xml`]({{site.gdeurl21}}app/code/Magento/Authorizenet/view/frontend/layout/checkout_index_index.xml)

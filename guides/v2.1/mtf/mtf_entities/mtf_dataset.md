@@ -151,7 +151,7 @@ The `CreateSimpleProductEntityTestVariation1` variation contains the following `
 <tr><th>Fixture field</th><th>Description</th></tr>
 <tr>
 <td><code>url_key</code> </td>
-<td>field is assigned with <code>simple-product-%isolation%</code>. <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_fixture-repo.html#mtf_repo_isolation">More info about <code>%isolation%</code></a>.</td>
+<td>field is assigned with <code>simple-product-%isolation%</code>. <a href="{{site.gdeurl21}}mtf/mtf_entities/mtf_fixture-repo.html#mtf_repo_isolation">More info about <code>%isolation%</code></a>.</td>
 </tr>
 <tr>
 <td><code>name</code></td><td>field is assigned with <code>Simple Product %isolation%</code></td>
@@ -163,8 +163,8 @@ The `CreateSimpleProductEntityTestVariation1` variation contains the following `
 <td><code>price</code></td>
 <td>
 <ul>
-<li> <code>product/data/price/value</code> is processed by a <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">data source</a> <code>Magento\Catalog\Test\Fixture\Product\Price</code> and is assigned <code>10000</code></li>
-<li><code>product/data/price/dataset</code> is assigned with a data set <code>drop_down_with_one_option_fixed_price</code> from the <code>Magento\Catalog\Test\Repository\CatalogProductSimple\Price</code> repository. This data set is used by a <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_constraint.html">constraint</a>.</li>
+<li> <code>product/data/price/value</code> is processed by a <a href="{{site.gdeurl21}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">data source</a> <code>Magento\Catalog\Test\Fixture\Product\Price</code> and is assigned <code>10000</code></li>
+<li><code>product/data/price/dataset</code> is assigned with a data set <code>drop_down_with_one_option_fixed_price</code> from the <code>Magento\Catalog\Test\Repository\CatalogProductSimple\Price</code> repository. This data set is used by a <a href="{{site.gdeurl21}}mtf/mtf_entities/mtf_constraint.html">constraint</a>.</li>
 </ul>
 </td>
 </tr>
@@ -392,14 +392,14 @@ After a merge of a data set with the variation that is mentioned, a test will us
 
 <!-- LINK DEFINITIONS -->
 
-[constraints]: {{site.gdeurl}}mtf/mtf_entities/mtf_constraint.html
-[constraint]: {{site.gdeurl}}mtf/mtf_entities/mtf_constraint.html
-[fixture]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html
-[data source]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source
+[constraints]: {{site.gdeurl21}}mtf/mtf_entities/mtf_constraint.html
+[constraint]: {{site.gdeurl21}}mtf/mtf_entities/mtf_constraint.html
+[fixture]: {{site.gdeurl21}}mtf/mtf_entities/mtf_fixture.html
+[data source]: {{site.gdeurl21}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source
 [InjectableFixture]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php
-[repository]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture-repo.html
-[test case]: {{site.gdeurl}}mtf/mtf_entities/mtf_testcase.html
-[fixture field from its repository]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_repositoy
+[repository]: {{site.gdeurl21}}mtf/mtf_entities/mtf_fixture-repo.html
+[test case]: {{site.gdeurl21}}mtf/mtf_entities/mtf_testcase.html
+[fixture field from its repository]: {{site.gdeurl21}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_repositoy
 
 <!-- ABBREVIATIONS -->
 

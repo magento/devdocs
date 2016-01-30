@@ -24,9 +24,9 @@ You give a name to your component in its `composer.json` and `module.xml` files.
 ## Prerequisites {#prereq}
 Before you continue, make sure you have completed all of the following tasks:
 
-*   Created a [file structure]({{ site.gdeurl }}extension-dev-guide/module-file-structure.html)
-*   Created the the [configuration files]({{ site.gdeurl }}extension-dev-guide/required-configuration-files.html) you'll need
-*   [Registered]({{ site.gdeurl }}extension-dev-guide/component-registration.html) your component
+*   Created a [file structure]({{ site.gdeurl21 }}extension-dev-guide/module-file-structure.html)
+*   Created the the [configuration files]({{ site.gdeurl21 }}extension-dev-guide/required-configuration-files.html) you'll need
+*   [Registered]({{ site.gdeurl21 }}extension-dev-guide/component-registration.html) your component
 
 ## Add the component's `module.xml` file {#module-xml}
 Declare the component itself by adding a module.xml file in the `/etc` folder of your component.

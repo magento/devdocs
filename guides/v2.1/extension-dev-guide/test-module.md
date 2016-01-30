@@ -25,7 +25,7 @@ Test your component by deploying Magento Community Edition and adding the compon
 Remember to [register](component-registration.html) your component as well, adding the location of your component. Confirm that your component works as expected and Magento functionality is not compromised.
 
 For further testing with Magento testing frameworks, see 
-[Magento Testing Framework]({{ site.gdeurl }}mtf/mtf_introduction.html).
+[Magento Testing Framework]({{ site.gdeurl21 }}mtf/mtf_introduction.html).
 
 ##PHPUnit
 

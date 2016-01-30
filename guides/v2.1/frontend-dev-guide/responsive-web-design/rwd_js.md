@@ -11,7 +11,7 @@ redirect_from: /guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_js.html
 
 <h2>What's in this topic</h2>
 
-This topic describes the JavaScript used in Magento out-of-the-box Blank and Luma themes to relocate certain elements and change their behavior depending on the <a href="{{site.gdeurl}}frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms" target="_blank">breakpoint</a>.
+This topic describes the JavaScript used in Magento out-of-the-box Blank and Luma themes to relocate certain elements and change their behavior depending on the <a href="{{site.gdeurl21}}frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms" target="_blank">breakpoint</a>.
 
 
 <h2>Scripts general overview</h2>
@@ -19,8 +19,8 @@ This topic describes the JavaScript used in Magento out-of-the-box Blank and Lum
 The Blank and Luma themes use the following scripts to responsively relocate page elements by breakpoint:
 
 <ul>
-<li><a href="{{site.mage2000url}}app/design/frontend/Magento/blank/web/js/responsive.js" target="_blank"><code>responsive.js</code></a></li>
-<li><a href="{{site.mage2000url}}/lib/web/mage/menu.js" target="_blank"><code>menu.js</code></a></li>
+<li><a href="{{site.mage2100url}}app/design/frontend/Magento/blank/web/js/responsive.js" target="_blank"><code>responsive.js</code></a></li>
+<li><a href="{{site.mage2100url}}/lib/web/mage/menu.js" target="_blank"><code>menu.js</code></a></li>
 
 <li><a href="https://github.com/paulirish/matchMedia.js/" target="_blank"><code>matchMedia.js</code></a>, used by <code>responsive.js</code> and <code>menu.js</code></li>
 </ul>

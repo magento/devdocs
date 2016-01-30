@@ -36,10 +36,10 @@ Delivering a sharply different shopping experience than the default Magento inst
 
 <h3>Related topics</h3>
 
-<a href="{{ site.gdeurl }}frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a>
+<a href="{{ site.gdeurl21 }}frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a>
 
 
-<a href="{{ site.gdeurl }}javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a>
+<a href="{{ site.gdeurl21 }}javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a>
 
 
 

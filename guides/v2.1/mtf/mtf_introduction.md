@@ -74,11 +74,11 @@ MTF works with tests from `<magento2>/dev/tests/functional` only.
 
 For other tests please see the following topics:
 
-- <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-test.html">How to run tests from command line.</a>
+- <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-test.html">How to run tests from command line.</a>
 
-- <a href="{{ site.gdeurl }}extension-dev-guide/test/test_js-unit.html">More information about JavaScript unit tests.</a>
+- <a href="{{ site.gdeurl21 }}extension-dev-guide/test/test_js-unit.html">More information about JavaScript unit tests.</a>
 
-- <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-perf-data.html">More information about performance testing.</a>
+- <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-perf-data.html">More information about performance testing.</a>
 
 
 <h2 id="mtf_intro_github-link">MTF on GitHub</h2>

@@ -14,9 +14,9 @@ github_link: config-guide/multi-master/multi-master.md
 #### Contents
 *	<a href="#config-ee-multidb-over">Overview of the split database solution</a>
 *	<a href="#config-ee-multidb-prereq">Prerequisites</a>
-*	<a href="{{ site.gdeurl }}config-guide/multi-master/multi-master_masterdb.html">Set up master databases</a>
-*	<a href="{{ site.gdeurl }}config-guide/multi-master/multi-master_verify.html">Verify split databases</a>
-*	<a href="{{ site.gdeurl }}config-guide/multi-master/multi-master_slavedb.html">Set up optional database replication</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/multi-master/multi-master_masterdb.html">Set up master databases</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/multi-master/multi-master_verify.html">Verify split databases</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/multi-master/multi-master_slavedb.html">Set up optional database replication</a>
 
 <h2 id="config-ee-multidb-over">Overview of the split database solution</h2>
 *This feature is available in Magento Enterprise Edition (EE) only.*
@@ -63,4 +63,4 @@ In this guide, the three master databases are named:
 (You can name your databases anything you wish.)
 
 #### Next step
-<a href="{{ site.gdeurl }}config-guide/multi-master/multi-master_masterdb.html">Set up master databases</a>
+<a href="{{ site.gdeurl21 }}config-guide/multi-master/multi-master_masterdb.html">Set up master databases</a>

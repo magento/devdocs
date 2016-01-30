@@ -29,9 +29,9 @@ The other example is a `customer_account` design abstraction which adds menu ite
 
 <p><img src="{{ site.baseurl }}common/images/view_da3.png" alt="My Account section on the storefront"></p>
 
-<a href="{{ site.mage2000url }}app/code/Magento/Customer/view/frontend/layout/customer_account.xml" target="_blank">customer_account.xml</a> is a design abstraction. It defines only the links for the <a href="{{ site.mage2000url }}app/code/Magento/Customer" target="_blank">Magento_Customer</a> module:
+<a href="{{ site.mage2100url }}app/code/Magento/Customer/view/frontend/layout/customer_account.xml" target="_blank">customer_account.xml</a> is a design abstraction. It defines only the links for the <a href="{{ site.mage2100url }}app/code/Magento/Customer" target="_blank">Magento_Customer</a> module:
 
-Other links in the navigation column are added by layout files of other relevant modules. For example, the Review link is added by <a href="{{ site.mage2000url }}app/code/Magento/Review/view/frontend/layout/customer_account.xml" target="_blank">the Magento_Review module's customer_account.xml</a>.
+Other links in the navigation column are added by layout files of other relevant modules. For example, the Review link is added by <a href="{{ site.mage2100url }}app/code/Magento/Review/view/frontend/layout/customer_account.xml" target="_blank">the Magento_Review module's customer_account.xml</a>.
 
 When a page is rendered, all `customer_account` layouts are merged, and the pages where the `customer_account` design abstraction is used contain the elements from all `customer_account.xml` files.
 
@@ -57,7 +57,7 @@ To use a design abstraction in a layout file, insert the following code:
 </pre>
 Where <code>design_abstraction_name</code> is the name of the design abstraction layout file.
 
-To complete the `customer_account.xml` design abstraction example, look at <a href="{{ site.mage2000url }}app/code/Magento/Review/view/frontend/layout/review_customer_index.xml" target="_blank">customer_account_index.xml</a>, which uses the `customer_account` design abstraction. This layout is used for rendering the My Dashboard page of the My Account section of a store. The actual content of the page is defined directly, while the left-hand navigation menu is defined by <a href="{{ site.mage2000url }}app/code/Magento/Review/view/frontend/layout/customer_account.xml" target="_blank">customer_account.xml</a>.
+To complete the `customer_account.xml` design abstraction example, look at <a href="{{ site.mage2100url }}app/code/Magento/Review/view/frontend/layout/review_customer_index.xml" target="_blank">customer_account_index.xml</a>, which uses the `customer_account` design abstraction. This layout is used for rendering the My Dashboard page of the My Account section of a store. The actual content of the page is defined directly, while the left-hand navigation menu is defined by <a href="{{ site.mage2100url }}app/code/Magento/Review/view/frontend/layout/customer_account.xml" target="_blank">customer_account.xml</a>.
 
 <h3 id="m2devgde-design-abstract-widget">Design abstractions in widget creation</h3>
 Specifying the pages where a widget is displayed is one of the required steps during widget creation. Widgets are added in the Admin under <b>Content/ Frontend App</b>. After choosing to create a new widget instance, a user specifies the widget type and the design theme. Then a page for configuring other widget options is displayed. To select a page where the widget should be displayed, you need to click <b>Add Layout Update</b>. Now you can specify pages by selecting the corresponding layout handles. If you want a widget to be displayed on pages with a certain layout, choose <b>Page Layouts</b>.

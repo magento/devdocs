@@ -17,8 +17,8 @@ github_link: config-guide/solr/solr-overview.md
 *	<a href="#overview">Overview</a>
 *	<a href="#dev">Assumptions for using Solr in a development environment</a>
 *	<a href="#prereq">Prerequisites</a>
-* 	<a href="{{ site.gdeurl }}config-guide/solr/solr-magento.html">Configure Solr and Magento</a>
-*	<a href="{{ site.gdeurl }}config-guide/solr/solr-script.html">Prepare Solr for production</a>
+* 	<a href="{{ site.gdeurl21 }}config-guide/solr/solr-magento.html">Configure Solr and Magento</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/solr/solr-script.html">Prepare Solr for production</a>
 
 <h2 id="overview">Overview</h2>
 Magento Enterprise Edition (EE) version 2.x enables you to configure either of the following as a catalog search engine:
@@ -157,73 +157,14 @@ The tasks discussed in this topic require the following:
 *	<a href="#prereq-java">Latest available Java version</a>
 *	<a href="#install-prereq-solr">Latest available version of Solr 4</a>
 
-<h3 id="prereq-secy">Firewall and SELinux</h3>
-By default, UNIX systems generally enable a firewall with restrictive rules and also enable SELinux, which imposes other types of security on the operating system. It's easier to run Solr in development by disabling the firewall and SELinux but that choice is up to you.
+{% include config/solr-elastic-selinux.md %}
 
-If you choose to enable your firewall and SELinux, you must set up rules to allow TCP traffic between Magento and Solr on Solr's listen port (8983 by default).
-
-#### Disable iptables and SELinux
-To stop the `iptables` (firewall) service, enter the following command as a user with `root` privileges:
-
-	service iptables stop
-
-To set SELinux for permissive mode:
-
-1.	To determine if SELinux is enabled, enter the following command:
-
-		getenforce
-
-	`Enforcing` displays to confirm that SELinux is running. (If `Permissive` displays, continue with the next section.)
-2.	To change to permissive mode, enter:
-
-		setenforce 0
-
-#### Set up rules for iptables and SELinux
-To set up rules to allow communication with the firewall or SELinux enabled, consult the following resources:
-
-*	<a href="https://help.ubuntu.com/community/IptablesHowTo" target="_blank">iptables how-to</a>
-*	<a href="https://fedoraproject.org/wiki/How_to_edit_iptables_rules" target="_blank">How to edit iptables rules (fedora project)</a>
-*	<a href="http://www.thegeekstuff.com/2011/06/iptables-rules-examples/" target="_blank">25 Most Frequently Used Linux IPTables Rules Examples</a>
-*	<a href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/ch-selinux.html" target="_blank">Introduction to SELinux (CentOS.org)</a>
-*	<a href="https://wiki.centos.org/HowTos/SELinux" target="_blank">SELinux How-To Wiki (CentOS.org)</a>
-
-<h3 id="prereq-java">Install the Java Software Development Kit (JDK)</h3>
-To determine if Java is already installed, enter the following command:
-
-	java -version
-
-If the message <code>java: command not found</code> displays, you must install the Java SDK as discussed in the next section. 
-
-This topic discusses using Jetty, which comes with Solr. Consult another resource, such as the <a href="http://wiki.apache.org/solr/SolrTomcat" target="_blank">Solr Wiki</a>, to use Tomcat with Solr.
-
-To see if you're currently running Jetty and to check the version, see <a href="https://wiki.eclipse.org/Jetty/FAQ#How_do_I_know_which_version_of_Jetty_I_am_running.3F" target="_blank">How to find out the version of Jetty</a>.
-
-See one of the following sections:
-
-* <a href="#install-prereq-java-centos">Install the latest JDK on CentOS</a>
-* <a href="#install-prereq-java-ubuntu">Install the latest JDK on Ubuntu</a>
-
-<h4 id="install-prereq-java-centos">Install the JDK on CentOS</h4>
-See <a href="https://www.digitalocean.com/community/tutorials/how-to-install-java-on-centos-and-fedora#install-oracle-java-8" target="_blank">this article on digitalocean</a>.
-
-Be sure to install the JDK and *not* the JRE.
-
-<h4 id="install-prereq-java-ubuntu">Install the Java 6 or later SDK on Ubuntu</h4>
-To install the Java 6 SDK, enter the following command as a user with <code>root</code> privileges:
-
-<pre>apt-get install openjdk-6-jdk</pre>
-To install Java 7, enter the following command as a user with <code>root</code> privileges:
-
-<pre>apt-get install openjdk-7-jdk</pre>
-
-<div class="bs-callout bs-callout-info" id="info">
-	<p>Java version 7 might not be available for all operating systems. For example, you can search the list of available packages for Ubuntu <a href="http://packages.ubuntu.com/" target="_blank">here</a>.</p>
-</div>
-
-To install JDK 1.8 on Ubuntu, see <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html" target="_blank">Oracle documentation</a>.
+{% include config/install-java.md %}
 
 <h3 id="install-prereq-solr">Install Solr 4 and Jetty</h3>
 The Apache Solr package installs both Solr and Jetty. If Jetty is already installed, see the <a href="https://cwiki.apache.org/confluence/display/solr/Running+Solr+on+Jetty" target="_blank">Solr with Jetty Wiki</a> for more information.
+
+This topic discusses using Jetty, which comes with Solr. Consult another resource, such as the <a href="http://wiki.apache.org/solr/SolrTomcat" target="_blank">Solr Wiki</a>, to use Tomcat with Solr. To see if you're currently running Jetty and to check the version, see <a href="https://wiki.eclipse.org/Jetty/FAQ#How_do_I_know_which_version_of_Jetty_I_am_running.3F" target="_blank">How to find out the version of Jetty</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
 	<p>Tomcat is also a supported servlet container for Solr but discussing how to set up Tomcat with Solr is beyond the scope of this topic. For more information, see the <a href="http://wiki.apache.org/solr/SolrTomcat" target="_blank">Solr With Tomcat Wiki</a>.</p>
@@ -257,5 +198,5 @@ To install Solr and Jetty:
 		tar -xvf solr-4.10.4.tgz
 
 #### Next step
-<a href="{{ site.gdeurl }}config-guide/solr/solr-magento.html">Configure Solr to work with Magento</a>
+<a href="{{ site.gdeurl21 }}config-guide/solr/solr-magento.html">Configure Solr to work with Magento</a>
 

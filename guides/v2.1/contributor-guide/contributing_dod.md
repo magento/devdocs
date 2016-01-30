@@ -28,7 +28,7 @@ The following sections provide additional details about each of these criteria:
 
 Existing product features and functionality must be retained during any changes to the code. If backward-incompatible functional changes are made, the documentation should explain the justification and provide the "business value". 
 
-For more information, see <a href="{{ site.gdeurl }}architecture/backward-compatibility.html">Magento's backward compatibility policy</a>.
+For more information, see <a href="{{ site.gdeurl21 }}architecture/backward-compatibility.html">Magento's backward compatibility policy</a>.
 
 <h3>Documentation</h3>
 
@@ -117,7 +117,7 @@ Expected code coverage: must cover all applicable files in entire code base.
 Code to cover: 
 
 * Must cover any formal backwards-incompatible changes on code level. For more information, see 
-<a href="{{ site.gdeurl }}architecture/backward-compatibility.html">Magento's backward compatibility policy</a>.
+<a href="{{ site.gdeurl21 }}architecture/backward-compatibility.html">Magento's backward compatibility policy</a>.
 
 A failure in legacy test must provide comprehensive explanation of an alternative, if there is any.
 

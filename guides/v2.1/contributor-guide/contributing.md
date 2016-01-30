@@ -47,8 +47,8 @@ Often when the Magento 2 team works on reviewing the suggested changes, we will 
 
 <h2 id="requirements">Contribution requirements</h2>
 
-1. Contributions must adhere to <a href="{{ site.gdeurl }}coding-standards/bk-coding-standards.html" target="_blank">Magento coding standards</a>.
-2. Refer to the Magento development team's <a href="{{ site.gdeurl }}/contributor-guide/contributing_dod.html">Definition of Done</a>. We use these guidelines internally to ensure that we deliver well-tested, well-documented, solid code, and we encourage you to as well!
+1. Contributions must adhere to <a href="{{ site.gdeurl21 }}coding-standards/bk-coding-standards.html" target="_blank">Magento coding standards</a>.
+2. Refer to the Magento development team's <a href="{{ site.gdeurl21 }}/contributor-guide/contributing_dod.html">Definition of Done</a>. We use these guidelines internally to ensure that we deliver well-tested, well-documented, solid code, and we encourage you to as well!
 2. Pull requests (PRs) must be accompanied by a meaningful description of their purpose. Comprehensive descriptions increase the chances that a pull request is merged quickly and without additional clarification requests.
 3. Commits must be accompanied by meaningful commit messages.
 4. PRs that include bug fixing must be accompanied by a step-by-step description of how to reproduce the bug.

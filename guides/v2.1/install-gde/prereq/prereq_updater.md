@@ -53,7 +53,7 @@ To clone the Magento 2 Updater repository using the SSH protocol:
 
 	Typically, for Ubuntu, it's `/var/www` and for CentOS it's `/var/www/html`.
 
-	Need help locating the docroot? Click <a href="{{ site.gdeurl }}install-gde/basics/basics_docroot.html">here.
+	Need help locating the docroot? Click <a href="{{ site.gdeurl21 }}install-gde/basics/basics_docroot.html">here.
 
 2.	Enter the following command:
 
@@ -102,7 +102,7 @@ To clone the Magento 2 Updater repository using the HTTPS protocol:
 4.	Continue with the next section.
 
 <h3 id="compman-clone-composer">Update installation dependencies</h3>
-The updater application has dependencies specified in its `composer.json` file. To update it, you must authentication. The `composer install` commands fails if you do not. To authenticate, <a href="{{ site.gdeurl }}install-gde/prereq/connect-auth.html">generate authentication keys</a>, after which you create an `auth.json` file in the home directory of the Magento file system owner.
+The updater application has dependencies specified in its `composer.json` file. To update it, you must authentication. The `composer install` commands fails if you do not. To authenticate, <a href="{{ site.gdeurl21 }}install-gde/prereq/connect-auth.html">generate authentication keys</a>, after which you create an `auth.json` file in the home directory of the Magento file system owner.
 
 #### Generate authentication tokens
 {% include install/auth-tokens-get.md %}
@@ -133,7 +133,7 @@ For example, if you cloned the updater to `/var/www/html/magento2-community-edit
 
 #### Next step
 
-*	<a href="{{ site.gdeurl }}install-gde/continue-to-install.html">Installation options</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/continue-to-install.html">Installation options</a>
 
 *[contributing developer]: A developer who contributes code to the Magento 2 CE codebase
 *[contributing developers]: Developers who contribute code to the Magento 2 CE codebase

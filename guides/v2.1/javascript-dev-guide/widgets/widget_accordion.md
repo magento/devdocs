@@ -13,11 +13,11 @@ redirect_from:
 
 <h2>Overview</h2>
 
-Magento accordion widget is an extension of the <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_tabs.html" target="_blank">Magento Tabs widget</a>.
+Magento accordion widget is an extension of the <a href="{{site.gdeurl21}}javascript-dev-guide/widgets/widget_tabs.html" target="_blank">Magento Tabs widget</a>.
 
 Accordions are generally used to break content into multiple sections that can be swapped to save space.
 
-The accordion widget source is <a href="{{site.mage2000url}}lib/web/mage/accordion.js" target="_blank">lib/web/mage/accordion.js</a>.
+The accordion widget source is <a href="{{site.mage2100url}}lib/web/mage/accordion.js" target="_blank">lib/web/mage/accordion.js</a>.
 
 <h2 id="accordion_init">Initialize the accordion widget</h2>
 
@@ -99,11 +99,11 @@ $("#element").accordion({
 
 <h3>Initialize accordion in a template</h3>
 
-The accordion widget can be initialized using the <code>data-mage-init</code> attribute or `<script>` element, as described in <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html#data_mage_init" target="_blank">JavaScript initialization</a>.
+The accordion widget can be initialized using the <code>data-mage-init</code> attribute or `<script>` element, as described in <a href="{{site.gdeurl21}}frontend-dev-guide/javascript/js_init.html#data_mage_init" target="_blank">JavaScript initialization</a>.
 
 
 <h2 id="accordion_options">Options</h2>
-Accordion options coincide with <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_tabs.html#fedg_tabs_options" target="_blank">Magento Tabs options</a>, plus the following custom ones:
+Accordion options coincide with <a href="{{site.gdeurl21}}javascript-dev-guide/widgets/widget_tabs.html#fedg_tabs_options" target="_blank">Magento Tabs options</a>, plus the following custom ones:
 <ul>
 <li><a href="#collaps_active">active</a></li>
 <li><a href="#collaps_multi">multipleCollapsible</a></li>

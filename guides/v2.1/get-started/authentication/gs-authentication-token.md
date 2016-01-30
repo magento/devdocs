@@ -24,7 +24,7 @@ redirect_from: /guides/v1.0/get-started/authentication/gs-authentication-token.h
 <a name="curl-command-syntax"></a>
 <h2>cURL command syntax</h2>
 <p>The examples on this page use cURL commands. For more information, see
-   <a href="{{ site.gdeurl }}get-started/gs-curl.html">How cURL commands work</a>.
+   <a href="{{ site.gdeurl21 }}get-started/gs-curl.html">How cURL commands work</a>.
 </p>
 <p>To use cURL to request an authentication token from the Magento token service, use this syntax:</p>
 <pre>curl -X POST "https://magento.host/index.php/rest/V1/integration/{customer|admin}/token" \
@@ -106,10 +106,10 @@ redirect_from: /guides/v1.0/get-started/authentication/gs-authentication-token.h
 </p>
 <h2>Next step</h2>
 <ul>
-   <li><a href="{{ site.gdeurl }}/get-started/gs-web-api-request.html">Step 2. Construct a request</a></li>
+   <li><a href="{{ site.gdeurl21 }}/get-started/gs-web-api-request.html">Step 2. Construct a request</a></li>
 </ul>
 <h2>Related topic</h2>
 <ul>
 
-   <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
+   <li><a href="{{ site.gdeurl21 }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
 </ul>
