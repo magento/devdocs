@@ -7,27 +7,28 @@ menu_title: Developer roadmap
 menu_order: 2
 github_link: extension-dev-guide/developers_roadmap.md
 redirect_from: /guides/v1.0/extension-dev-guide/developers_roadmap.html
-
 ---
+
 ##{{page.menu_title}}
 
 
-This topic introduces the high-level workflow for a developer who wants to create, customize, or contribute to the Magento code and components.
+This section helps you understand how to develop, package, and distribute your component. 
 
-<h2 id="developer_roadmap_resources">Developer Resources</h2>
-There are several resources that you might want to take a look at as you consider your workflow:
+Key points:
 
-1. See the <a href="https://github.com/magento/magento2-samples">Sample extensions</a> created by the Magento 2 Core team.
-2. Magento 2 Developers Hub, at <a href="http://magento.com/developers/magento2">magento.com/developers/magento2</a>.
-3. The <a href="{{ site.baseurl }}index.html">Magento 2 Documentation Library</a>, with Guides such as Coding Standards, Frontend Developers Guide, Installation and Configuration, and other documents about issues like our backwards compatibility policy, versioning, and using Magento APIs.
+*	<a href="{{ site.gdeurl }}extension-dev-guide/composer-integration.html" target="_blank">`composer.json`</a> and <a href="{{ site.gdeurl }}extension-dev-guide/component-registration.html" target="_blank">`registration.php`</a> are required for *all* components.
+*	`.zip` your extension as discussed in the <a href="{{ site.gdeurl }}extension-dev-guide/package_module.html" target="_blank">packaging topic</a>.
+*	*(For distribution on Magento Marketplace only)*: The package you upload to Magento Marketplace should not be more than 30MB in size.
 
+#### For more information
+*	<a href="{{ site.gdeurl }}mktpl-quickstart/intro-composer.html">Introduction to Composer</a>
+*	<a href="{{ site.gdeurl }}mktpl-quickstart/intro-composer-gloss.html">Glossary of common terms</a>
+*	<a href="{{ site.gdeurl }}mktpl-quickstart/intro-moreinfo.html">For more information</a>
 
-<h2 id="developer_roadmap_workflow">Workflow and related decisions</h2>
-Now let's take a look at a high-level workflow, and consider some questions that you might have to decide before continuing.
+#### Other helpful resources
+*	<a href="https://github.com/magento/magento2-samples">Sample extensions</a> created by the Magento 2 Core team.
+*	Magento 2 Developers Hub, at <a href="http://magento.com/developers/magento2">magento.com/developers/magento2</a>.
+*	*(For distribution on Magento Marketplace only)*: 
 
-<p><img src="{{ site.baseurl }}common/images/EDG_dev_roadmap.png" alt="Developer's roadmap"></p>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Take a look at a <a href="https://github.com/magento/magento2-samples/tree/master/sample-module-minimal"> sample module</a> created by the Magento Core Team. </p>
-  <p>The Magento core team is creating a <a href="https://github.com/magento/magento2-samples"> collection of samples</a> to demonstrate technologies introduced in Magento 2. You can edit your Magento 2 <code>composer.json</code> file to declare a dependency upon this package of sample modules, and then run <code>composer update</code> to download them. Look for more sample modules as we build them.</p>
- </div>
+	*	<a href="http://docs.magento.com/marketplace/user_guide/getting-started/guidelines.html" target="_blank">Marketplace Submission Guidelines</a>
+	*	<a href="http://docs.magento.com/marketplace/user_guide/extensions/review-workflow.html" target="_blank">Marketplace Review Workflow</a>
