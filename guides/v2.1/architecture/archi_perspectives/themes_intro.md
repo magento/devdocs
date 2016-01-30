@@ -84,7 +84,7 @@ Add override features rather than edit default theme files.
 
 Themes and layouts are discussed extensively in the 
 <h2 id="related">Related topics</h2>
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
+<a href="{{ site.gdeurl21 }}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
 
 Presentation Layer
 

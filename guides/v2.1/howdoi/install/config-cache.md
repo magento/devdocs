@@ -13,12 +13,12 @@ Caching is a very important consideration when using the Magento application. We
 
 We can help you with the following:
 
-*	<a href="{{ site.gdeurl }}config-guide/config/caching-cache-type.html">Create your own cache type</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/config/caching-cache-type.html">Create your own cache type</a>
 *	To use set up a custom cache mechanism:
-	1.	Associate a <a href="{{ site.gdeurl }}config-guide/config/caching_frontend-cache-types.html">cache frontend</a> with cache types
-	2.	Optionally set <a href="{{ site.gdeurl }}config-guide/config/caching_low-level.html">low-level cache options</a>
+	1.	Associate a <a href="{{ site.gdeurl21 }}config-guide/config/caching_frontend-cache-types.html">cache frontend</a> with cache types
+	2.	Optionally set <a href="{{ site.gdeurl21 }}config-guide/config/caching_low-level.html">low-level cache options</a>
 
-*	Use <a href="{{ site.gdeurl }}config-guide/database/database.html">database caching</a>
-*	Use <a href="{{ site.gdeurl }}config-guide/redis/config-redis.html">Redis</a> caching
-*	Use <a href="{{ site.gdeurl }}config-guide/varnish/config-varnish.html">Varnish</a> web acceleration
+*	Use <a href="{{ site.gdeurl21 }}config-guide/database/database.html">database caching</a>
+*	Use <a href="{{ site.gdeurl21 }}config-guide/redis/config-redis.html">Redis</a> caching
+*	Use <a href="{{ site.gdeurl21 }}config-guide/varnish/config-varnish.html">Varnish</a> web acceleration
 

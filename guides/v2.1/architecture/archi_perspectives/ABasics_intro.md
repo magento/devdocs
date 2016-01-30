@@ -34,13 +34,13 @@ The following discussion focuses on how these topics apply directly to Magento:
 
 <h3>Related topics</h3>
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
+<a href="{{ site.gdeurl21 }}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
 
-<a href="{{ site.gdeurl }}architecture/tech-stack.html">Technology stack</a>
+<a href="{{ site.gdeurl21 }}architecture/tech-stack.html">Technology stack</a>
 
-<a href="{{ site.gdeurl }}architecture/stack-basics.html">Stack basics</a>
+<a href="{{ site.gdeurl21 }}architecture/stack-basics.html">Stack basics</a>
 
 
 
-<a href="{{ site.gdeurl }}architecture/versioning.html">Versioning</a>
+<a href="{{ site.gdeurl21 }}architecture/versioning.html">Versioning</a>
 

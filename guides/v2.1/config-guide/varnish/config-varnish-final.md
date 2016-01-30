@@ -68,5 +68,5 @@ Make sure the `<your Magento install dir>/var/page_cache` directory is empty:
 5.	If you cleared the `var/page_cache/` directory, restart Varnish.
 
 #### Next steps
-*	<a href="{{ site.gdeurl }}config-guide/varnish/use-varnish-cache.html">How Magento cache clearing works with Varnish</a>
-*	<a href="{{ site.gdeurl }}config-guide/varnish/use-varnish-cache-how.html">How Varnish caching works</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/varnish/use-varnish-cache.html">How Magento cache clearing works with Varnish</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/varnish/use-varnish-cache-how.html">How Varnish caching works</a>

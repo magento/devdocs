@@ -110,7 +110,7 @@ Script that runs migration process is located at
 
 The Schema for configuration file `config.xsd` is placed under `etc/directory`. Default configuration file `config.xml.dist` is created for each version of Magento 1.x. It is placed in separate directories under `etc/`.
 
-Default configuration file can be replaced by custom one using CLI (see <a href="{{ site.gdeurl }}migration/migration-migrate.html">--config <code>&lt;value&gt;</code> parameter</a>).
+Default configuration file can be replaced by custom one using CLI (see <a href="{{ site.gdeurl21 }}migration/migration-migrate.html">--config <code>&lt;value&gt;</code> parameter</a>).
 
 Configuration file has the following structure:
 {% highlight xml %}

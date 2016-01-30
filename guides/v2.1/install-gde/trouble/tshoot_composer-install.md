@@ -19,5 +19,5 @@ Change to the directory in which you installed Composer and enter the following 
 
 `mv composer.phar /usr/local/bin/composer`
 
-If you have issues with authenticating with the Magento 2 GitHub repository, see <a href="{{ site.gdeurl }}install-gde/prereq/connect-auth.html">Get your authentication keys</a>.
+If you have issues with authenticating with the Magento 2 GitHub repository, see <a href="{{ site.gdeurl21 }}install-gde/prereq/connect-auth.html">Get your authentication keys</a>.
 

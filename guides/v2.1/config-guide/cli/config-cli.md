@@ -22,7 +22,7 @@ See one of the following sections:
 <h2 id="config-new-cli-intro">Introducing the Magento command-line interface (CLI)</h2>
 {% include install/new-cli-intro.html %}
 
-This topic discusses configuring the Magento software using the CLI. For information about installing Magento, see <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">Installation overview</a>.
+This topic discusses configuring the Magento software using the CLI. For information about installing Magento, see <a href="{{ site.gdeurl21 }}install-gde/bk-install-guide.html">Installation overview</a>.
 
 <h2 id="config-install-cli-prereq">Before you start configuring Magento</h2>
 {% include install/before-you-begin-cli.html %}
@@ -33,4 +33,4 @@ This topic discusses configuring the Magento software using the CLI. For informa
 
 #### Next step 
 
-<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html">Get started with command-line configuration</a>
+<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands.html">Get started with command-line configuration</a>

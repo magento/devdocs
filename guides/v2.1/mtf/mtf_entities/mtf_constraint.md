@@ -199,6 +199,6 @@ in the order that it must be performed.
 
 <!-- LINK DEFINITIONS -->
 
-[data set]: {{site.gdeurl}}mtf/mtf_entities/mtf_dataset.html
-[fixture]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html
-[test case]: {{site.gdeurl}}mtf/mtf_entities/mtf_testcase.html
+[data set]: {{site.gdeurl21}}mtf/mtf_entities/mtf_dataset.html
+[fixture]: {{site.gdeurl21}}mtf/mtf_entities/mtf_fixture.html
+[test case]: {{site.gdeurl21}}mtf/mtf_entities/mtf_testcase.html

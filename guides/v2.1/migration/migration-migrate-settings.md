@@ -16,7 +16,7 @@ You should migrate settings first. This mode migrates stores; websites; and diff
 
 If necessary, here is how to change how settings are migrated:
 
-1.	Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+1.	Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl21 }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
 2.	Change to the following directory:
 
 		`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc
@@ -29,7 +29,7 @@ If necessary, here is how to change how settings are migrated:
 <h2 id="migrate-first">First steps</h2>
 {% include install/first-steps-cli.html %}
 
-In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl21 }}install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="migrate-data-cmd">Run the settings migration command</h2>
 To migrate settings, use the following command:
@@ -49,4 +49,4 @@ where
 
 ###Related topics
 
-* <a href="{{ site.gdeurl }}migration/migration-migrate-data.html">Migrate data</a>
+* <a href="{{ site.gdeurl21 }}migration/migration-migrate-data.html">Migrate data</a>

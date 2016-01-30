@@ -10,11 +10,11 @@ github_link: javascript-dev-guide/widgets/widget_confirm.md
 
 <h2>Overview</h2>
 
-The Magento confirmation widget implements a modal pop-up window with the cancel and confirmation button.It is an extension of the <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html">Magento modal widget</a>.
+The Magento confirmation widget implements a modal pop-up window with the cancel and confirmation button.It is an extension of the <a href="{{site.gdeurl21}}javascript-dev-guide/widgets/widget_modal.html">Magento modal widget</a>.
 
-The confirmation widget source is <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/modal/confirm.js">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/modal/confirm.js</a>
+The confirmation widget source is <a href="{{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/modal/confirm.js">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/modal/confirm.js</a>
 
-The widget can be used for implementing confirmation windows for both, Admin and storefront. The design patterns for the modal pop-up windows in the Admin are described in the <a href="{{site.gdeurl}}pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a> 
+The widget can be used for implementing confirmation windows for both, Admin and storefront. The design patterns for the modal pop-up windows in the Admin are described in the <a href="{{site.gdeurl21}}pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a> 
 
 <h3>Contents</h3>
 
@@ -62,7 +62,7 @@ require([
 {% endhighlight %}
 
 
-For details about how to initialize a widget in a`.phtml` template, refer to the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.
+For details about how to initialize a widget in a`.phtml` template, refer to the <a href="{{site.gdeurl21}}frontend-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.
 
 <h2 id="confirm_options">Options</h2>
 
@@ -136,4 +136,4 @@ The confirmation widget implements the following events:
 - `always` callback.
 
 <h2 id="confirm_key_navigation">Keyboard navigation</h2>
-The keyboard navigation for the alert windows is similar to the <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html#key_navigation">navigation of the modal widget</a>
+The keyboard navigation for the alert windows is similar to the <a href="{{site.gdeurl21}}javascript-dev-guide/widgets/widget_modal.html#key_navigation">navigation of the modal widget</a>

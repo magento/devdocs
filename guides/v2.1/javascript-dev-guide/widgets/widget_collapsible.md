@@ -21,7 +21,7 @@ To "bind" several instances of collapsible widget, the <a href="##fedg_collaps_c
 
 Once it is expanded, the content can be updated using Ajax. The collapsed/expanded state can be saved into local storage or cookies, if the browser does not support local storage. 
 
-The collapsible widget source is <a href="{{site.mage2000url}}lib/web/mage/collapsible.js" target="_blank">lib/web/mage/collapsible.js</a>.
+The collapsible widget source is <a href="{{site.mage2100url}}lib/web/mage/collapsible.js" target="_blank">lib/web/mage/collapsible.js</a>.
 
 
 <h2 id="collaps_init_js">Initialize collapsible in JS</h2>
@@ -37,7 +37,7 @@ If you need to be able to save the expanded/collapsed state, the element must ha
 The element's `id` is also used in deep linking: if the `id` of the content or the `id` of the element that appends the content is specified as an anchor, the content for that element is automatically expanded.
 
 
-Similar to the accordion widget, the header, title and content for collapsible can be defined by the child elements' attributes or passed as widget options. See <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_accordion.html#accordion_init" target="_blank">Accordion widget initialization</a> for details.
+Similar to the accordion widget, the header, title and content for collapsible can be defined by the child elements' attributes or passed as widget options. See <a href="{{site.gdeurl21}}frontend-dev-guide/javascript/widget_accordion.html#accordion_init" target="_blank">Accordion widget initialization</a> for details.
 
 <h3>Initialize collapsible with header only</h3>
 You can initialize the collapsible widget without having a container that consists of a header and a content. In this case the initialization is made on the header:
@@ -47,7 +47,7 @@ $("#header").collapsible();
 
 
 <h2>Initialize collapsible in a template</h2>
-The collapsible widget can be initialized using the <code>data-mage-init</code> attribute or `<script>` tag, as described in <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html#data_mage_init" target="_blank">JavaScript initialization</a>.
+The collapsible widget can be initialized using the <code>data-mage-init</code> attribute or `<script>` tag, as described in <a href="{{site.gdeurl21}}frontend-dev-guide/javascript/js_init.html#data_mage_init" target="_blank">JavaScript initialization</a>.
 
 <h2>Options</h2>
 

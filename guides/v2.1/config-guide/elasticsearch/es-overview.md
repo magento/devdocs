@@ -98,7 +98,7 @@ One of the following displays:
 				<li>If the elasticsearch server is on a different host from Magento, log in to the Magento server and ping the elasticserver host. Resolve network connectivity issues and test the connection again.</li>
 				<li>Examine the command window in which you started elasticsearch for stack traces and exceptions. You must resolve those before you continue.<br />
 	In particular, make sure you started elasticsearch as a user with <code>root</code> privileges.</li>
-<li>Make sure that <a href="{{ site.gdeurl }}config-guide/elasticsearch/elasticsearch-overview.html#prereq-secy">UNIX firewall and SELinux</a> are both disabled, or set up rules to enable elasticsearch and Magento to communicate with each other.</li>
+<li>Make sure that <a href="{{ site.gdeurl21 }}config-guide/elasticsearch/elasticsearch-overview.html#prereq-secy">UNIX firewall and SELinux</a> are both disabled, or set up rules to enable elasticsearch and Magento to communicate with each other.</li>
 	<li>Verify the value of the <strong>elasticsearch Server Hostname</strong> field. Make sure the server is available. You can try the server's IP address instead.</li>
 	<li>Use the command <code>netstat -an | grep <em>listen-port</em></code> command to verify that the port specified in the <strong>elasticsearch Server Port</strong> field is not being used by another process.<br />
 	For example, to see if elasticsearch is running on its default port, use the following command:

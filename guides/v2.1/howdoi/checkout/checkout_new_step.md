@@ -22,7 +22,7 @@ This topic describes how to create the frontend part of the component, implement
 
 To create the view part of the new checkout step:
 
-1. Add a module directory (not covered in this topic). See [Build your module]({{site.gdeurl}}extension-dev-guide/build.html) for details). All custom files must be stored there. For your checkout customization to be applied correctly, your custom module should depend on the Magento_Checkout module.
+1. Add a module directory (not covered in this topic). See [Build your module]({{site.gdeurl21}}extension-dev-guide/build.html) for details). All custom files must be stored there. For your checkout customization to be applied correctly, your custom module should depend on the Magento_Checkout module.
 1. Create the `.js` file implementing the view model.
 2. Create an `.html` template for the component.
 
@@ -150,7 +150,7 @@ A sample `mystep.html` follows:
 
 For the new step to be displayed on the page, you need to declare it in the Checkout page layout, which is defined in `checkout_index_index.xml`. 
 
-So you need to add an [extending]({{site.gdeurl}}frontend-dev-guide/layouts/layout-extend.html) `checkout_index_index.xml` layout file in the following location: `<your_module_dir>/view/frontend/layout/checkout_index_index.xml`
+So you need to add an [extending]({{site.gdeurl21}}frontend-dev-guide/layouts/layout-extend.html) `checkout_index_index.xml` layout file in the following location: `<your_module_dir>/view/frontend/layout/checkout_index_index.xml`
 
 A sample `checkout_index_index.xml` follows:
 

@@ -51,7 +51,7 @@ Magento has a tool that automatically generates your fixture with parameters you
 </div>
 
 <div class="bs-callout bs-callout-warning">
-<p>To work with generateFixtureXml tool, <a href="{{site.gdeurl}}/install-gde/bk-install-guide.html">Magento must be installed.</a></p>
+<p>To work with generateFixtureXml tool, <a href="{{site.gdeurl21}}/install-gde/bk-install-guide.html">Magento must be installed.</a></p>
 </div>
 
 In the following table see `generateFixtureXml` arguments.
@@ -141,7 +141,7 @@ The following table describes `<field>` attributes.
 | `is_required`       | Specifies whether field is required on the form.   | 1 - required, 0 - optional | 1  |optional     |
 | `group`    | Tab name that contains field (for example, `title` field is placed on **Storefront properties** tab on widget creation page).      |           string           |storefront_properties | optional      |
 | `source`    | Class that prepares field data for use. See <a href="#mtf_fixture_source">Add the data source to the fixture field</a>.      |    string |Magento\Widget\Test\Fixture\Widget\LayoutUpdates   |     optional      |
-| `repository`    | Reference to  the class that stores data sets for the field. <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_fixture-repo.html">More details about the repository</a>. |  string  |Magento\Widget\Test\Repository\Widget\LayoutUpdates   |     optional      |
+| `repository`    | Reference to  the class that stores data sets for the field. <a href="{{site.gdeurl21}}mtf/mtf_entities/mtf_fixture-repo.html">More details about the repository</a>. |  string  |Magento\Widget\Test\Repository\Widget\LayoutUpdates   |     optional      |
 
 The following image shows how XML is connected with GUI of your new widget.
 

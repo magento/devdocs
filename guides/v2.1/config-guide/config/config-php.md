@@ -23,7 +23,7 @@ redirect_from: /guides/v1.0/config-guide/config/config-php.html
 
 On the top level of this array are *configuration segments*. A segment has arbitrary content (a scalar value or a nested array) distinguished by an arbitrary key&mdash;where both the key and its value are defined by the Magento framework. 
 
-<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/DeploymentConfig.php" target="_blank">Magento\Framework\App\DeploymentConfig</a> merely provides access to these sections but does not allow you to extend them.
+<a href="{{ site.mage2100url }}lib/internal/Magento/Framework/App/DeploymentConfig.php" target="_blank">Magento\Framework\App\DeploymentConfig</a> merely provides access to these sections but does not allow you to extend them.
 
 On the next hierarchy level, items in each segment are ordered according to the module sequence definition, which is obtained by merging all modules' configuration files, with the exception of disabled modules. 
 
@@ -37,8 +37,8 @@ The following sections discusses the structure and contents of the deployment co
 
 Examples:
 
-* Uninstall components: <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall.html">bin/magento setup:uninstall</a> 
-* Enable or disable components: <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:enable</a>, <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:disable</a>.
+* Uninstall components: <a href="{{ site.gdeurl21 }}install-gde/install/cli/install-cli-uninstall.html">bin/magento setup:uninstall</a> 
+* Enable or disable components: <a href="{{ site.gdeurl21 }}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:enable</a>, <a href="{{ site.gdeurl21 }}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:disable</a>.
 * Component Manager: coming soon
 * System Upgrade: coming soon
 
@@ -119,7 +119,7 @@ The following table provides details about each `env.php` segment and its struct
       <td><code>cache</code></td>
       <td><pre>__/cache
  |__/frontend
-   |__/See <a href="{{ site.gdeurl }}config-guide/config/caching_frontend-cache-types.html">frontend options</a></pre></td>
+   |__/See <a href="{{ site.gdeurl21 }}config-guide/config/caching_frontend-cache-types.html">frontend options</a></pre></td>
     </tr>
     <tr>
       <td>Installation date</td>
@@ -143,4 +143,4 @@ The following table provides details about each `env.php` segment and its struct
 </table>
 
 #### Related topic
-<a href="{{ site.gdeurl }}config-guide/config/config-files.html">Module configuration files</a>
+<a href="{{ site.gdeurl21 }}config-guide/config/config-files.html">Module configuration files</a>

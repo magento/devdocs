@@ -13,7 +13,7 @@ The JavaScript coding standard, based on the <a href="http://google-styleguide.g
 
 Use <a href="http://www.ietf.org/rfc/rfc2119.txt" target="_blank">RFC 2119</a> to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.
 
-The Magento system uses the jQuery library including the standard and custom <a href="http://api.jqueryui.com/category/widgets" target="_blank">jQuery widgets</a>. For the jQuery widget coding standard, see <a href="{{ site.gdeurl }}coding-standards/code-standard-jquery-widgets.html">jQuery widget coding standard</a>.
+The Magento system uses the jQuery library including the standard and custom <a href="http://api.jqueryui.com/category/widgets" target="_blank">jQuery widgets</a>. For the jQuery widget coding standard, see <a href="{{ site.gdeurl21 }}coding-standards/code-standard-jquery-widgets.html">jQuery widget coding standard</a>.
 
 Some parts of Magento code might not comply with this coding standard.
 

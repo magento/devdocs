@@ -18,8 +18,8 @@ Out of the box, the checkout consists of two steps:
 
 You can customize the default checkout in many ways. Here the following customizations are described:
 
- - [Add a new checkout step]({{site.gdeurl}}howdoi/checkout/checkout_new_step.html)
- - [Customize the view of an existing step]({{site.gdeurl}}howdoi/checkout/checkout_new_step.html)
+ - [Add a new checkout step]({{site.gdeurl21}}howdoi/checkout/checkout_new_step.html)
+ - [Customize the view of an existing step]({{site.gdeurl21}}howdoi/checkout/checkout_new_step.html)
 
 For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code, add your customizations in a custom module. 
 

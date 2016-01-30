@@ -19,10 +19,10 @@ Magento navigation widget is a customized <a href="http://api.jqueryui.com/menu/
 <li>Method for handling the responsive layout of the menu.</li>
 </ul>
 
-The navigation widget source is <a href="{{site.mage2000url}}lib/web/mage/menu.js" target="_blank">lib/web/mage/menu.js</a>
+The navigation widget source is <a href="{{site.mage2100url}}lib/web/mage/menu.js" target="_blank">lib/web/mage/menu.js</a>
 
 <h2 id="navigation_init">Initialize the navigation widget</h2>
-For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
+For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{site.gdeurl21}}frontend-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
 
 <h2 id="navigation_options">Options</h2>
 The navigation widget has the following options:

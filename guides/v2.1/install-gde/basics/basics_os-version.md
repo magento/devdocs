@@ -17,7 +17,7 @@ How can you tell what operating system and version your Magento server runs?
 
 If you can log in directly to the machine, the application is usually called Terminal. 
 
-If you cannot log in directly, you can <a href="{{ site.gdeurl }}install-gde/basics/basics_magento-installed.html#instgde-basics-terminal">log in remotely</a>.
+If you cannot log in directly, you can <a href="{{ site.gdeurl21 }}install-gde/basics/basics_magento-installed.html#instgde-basics-terminal">log in remotely</a>.
 
 ## Exact command or process of elimination?
 

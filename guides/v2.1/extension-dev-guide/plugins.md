@@ -168,5 +168,5 @@ You can override the plug-ins defined in the global scope by changing `di.xml` f
 
 #### Related topics
 
-*  <a href="{{ site.gdeurl }}extension-dev-guide/depend-inj.html#dep-inj-compile">Definition compiler tool</a>
-*  <a href="{{ site.gdeurl }}extension-dev-guide/depend-inj.html">Dependency injection</a>
+*  <a href="{{ site.gdeurl21 }}extension-dev-guide/depend-inj.html#dep-inj-compile">Definition compiler tool</a>
+*  <a href="{{ site.gdeurl21 }}extension-dev-guide/depend-inj.html">Dependency injection</a>

@@ -33,17 +33,17 @@ A <i>language package</i> is  a collection of translation dictionaries for a par
 The process of structuring an application to support localization is termed <i>internationalization</i>. An internationalized product or service is easier to localize for a particular language than a product that has not been internationalized. The process of first enabling a product to be localized and then localizing it for different national audiences is also known as <i>globalization</i>.
 
 
-For an overview of Magento translation-related issues, see <a href="{{ site.gdeurl }}frontend-dev-guide/translations/xlate.html">Translations overview</a>. 
+For an overview of Magento translation-related issues, see <a href="{{ site.gdeurl21 }}frontend-dev-guide/translations/xlate.html">Translations overview</a>. 
 
-Procedures for creating language packages and dictionaries are described in <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict-trans">Translation dictionaries and language packages</a>.
+Procedures for creating language packages and dictionaries are described in <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict-trans">Translation dictionaries and language packages</a>.
 
 <h2 id="m2arch-related">Related topics</h2>
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/components/modules/mod_intro.html">Modules</a>
+<a href="{{ site.gdeurl21 }}architecture/archi_perspectives/components/modules/mod_intro.html">Modules</a>
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/components/arch_libraries.html">Libraries</a>
+<a href="{{ site.gdeurl21 }}architecture/archi_perspectives/components/arch_libraries.html">Libraries</a>
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/components/arch_themes.html">Themes</a>
+<a href="{{ site.gdeurl21 }}architecture/archi_perspectives/components/arch_themes.html">Themes</a>
 
 
 

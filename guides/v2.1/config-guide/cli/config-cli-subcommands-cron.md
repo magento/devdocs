@@ -17,7 +17,7 @@ redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-cron.html
 *	<a href="#config-cli-cron-bkg">Run cron in the background</a>
 *	<a href="#config-cli-cron-group">Configure and run cron using the command line</a>
 
-To run cron in a web browser, see <a href="{{ site.gdeurl }}config-guide/secy/secy-cron.html">Secure cron.php to run in a browser</a>
+To run cron in a web browser, see <a href="{{ site.gdeurl21 }}config-guide/secy/secy-cron.html">Secure cron.php to run in a browser</a>
 
 <h2 id="config-cli-cron-overview">Overview of cron</h2>
 Several Magento features require at least one cron job, which schedules activities to occur in the future. A partial list of these activities follows:
@@ -31,7 +31,7 @@ Several Magento features require at least one cron job, which schedules activiti
 *	Automatic updating of currency rates
 *	All Magento e-mails (including order confirmation and transactional)
 
-We recommend you run cron as the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-over">Magento file system owner</a>. Do *not* run cron as `root`; we recommend against running cron as the web server user.
+We recommend you run cron as the <a href="{{ site.gdeurl21 }}install-gde/prereq/apache-user.html#install-update-depend-user-over">Magento file system owner</a>. Do *not* run cron as `root`; we recommend against running cron as the web server user.
 
 <div class="bs-callout bs-callout-warning">
     <p>You can no longer run <code>dev/tools/cron.sh</code> because the script has been removed.</p>
@@ -52,7 +52,7 @@ See one of the following sections:
 
 <h2 id="config-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
-In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="config-cli-cron-bkg">Run cron in the background</h2>
 This section discusses how to run all Magento cron jobs every minute, which is the recommended interval for both Magento Community Edition (CE) and Enterprise Edition (EE).
@@ -62,7 +62,7 @@ This section discusses how to run all Magento cron jobs every minute, which is t
   <p>Cron is critical for Magento operation; among other things, it's the only way to reindex on an ongoing basis, it generates automated e-mails, newsletters, the sitemap, and so on.</p></span>
 </div>
 
-Run Magento cron jobs as the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-over">Magento file system owner</a>. 
+Run Magento cron jobs as the <a href="{{ site.gdeurl21 }}install-gde/prereq/apache-user.html#install-update-depend-user-over">Magento file system owner</a>. 
 
 {% include config/setup-cron.md %}
 
@@ -176,7 +176,7 @@ In addition, the `<group>` element supports the following options, all of which 
 	</tbody>
 </table>
 
-As an example, see <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/crontab.xml" target="_blank">Magento_Customer crontab.xml</a>
+As an example, see <a href="{{ site.mage2100url }}app/code/Magento/Customer/etc/crontab.xml" target="_blank">Magento_Customer crontab.xml</a>
 
 <h3 id="config-cli-cron-group-run">Run cron from the command line</h3>
 Command options:
@@ -193,15 +193,15 @@ where `--group` specifies the cron group to run (omit this option to run cron fo
 
 #### Related topics
 
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>

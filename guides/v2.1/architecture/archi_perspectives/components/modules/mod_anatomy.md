@@ -27,7 +27,7 @@ Modules have multiple layers that roughly correspond to the Model-View-Controlle
 
 * **Model** components (**M**VC) correspond to business logic layer: models and SQL structures. 
 
-See <a href="{{ site.gdeurl }}architecture/archi_perspectives/Magento_MVC.html">Magento MVC Pattern</a> for more information. 
+See <a href="{{ site.gdeurl21 }}architecture/archi_perspectives/Magento_MVC.html">Magento MVC Pattern</a> for more information. 
 
 
 <h3>Module components</h3>
@@ -98,9 +98,9 @@ Structures in this directory handle any custom database tables that are used by 
 
 <h3 id="arch-modules-related">Related topics</h3>
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/components/modules/mod_intro.html">Module overview</a>
+<a href="{{ site.gdeurl21 }}architecture/archi_perspectives/components/modules/mod_intro.html">Module overview</a>
 
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/components/Magento_MVC.html">Magento MVC Pattern</a>
+<a href="{{ site.gdeurl21 }}architecture/archi_perspectives/components/Magento_MVC.html">Magento MVC Pattern</a>
 
 

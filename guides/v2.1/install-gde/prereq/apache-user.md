@@ -16,7 +16,7 @@ github_link: install-gde/prereq/apache-user.md
 *	<a href="#install-update-depend-user-switch">Switch to the Magento file system owner</a>
 
 <div class="bs-callout bs-callout-tip">
-  <p>Totally lost? Need a helping hand? Try our <a href="{{ site.gdeurl }}install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{ site.gdeurl }}install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
+  <p>Totally lost? Need a helping hand? Try our <a href="{{ site.gdeurl21 }}install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{ site.gdeurl21 }}install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
 </div>
 
 <h2 id="install-update-depend-user-over">Overview of ownership and permissions</h2>
@@ -155,6 +155,6 @@ For example,
 	su magento_user
 
 ### Next steps
-*	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Optional software</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">SELinux and iptables</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Your install or upgrade path</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/prereq/optional.html">Optional software</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/prereq/security.html">SELinux and iptables</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/install/pre-install.html">Your install or upgrade path</a>

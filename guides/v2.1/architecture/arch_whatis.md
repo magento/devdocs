@@ -55,13 +55,13 @@ Extend and customize the core components of your Magento store's PHP-, HTML5- an
 The Magento tech stack supplies a robust toolset for deploying large, distributed storefronts and for customizing the product for your particular needs. The Magento stack includes popular open-source technologies such as the Linux OS, Apache/Nginx server, MySQL, Zend, and Composer.
 
 
-For a comprehensive description of the Magento technology stack, see <a href="{{ site.gdeurl }}architecture/tech-stack.html">Magento Technology Stack</a>. 
+For a comprehensive description of the Magento technology stack, see <a href="{{ site.gdeurl21 }}architecture/tech-stack.html">Magento Technology Stack</a>. 
 
 
 
 <div class="bs-callout bs-callout-info" id="info">
 
-  <p>For more information about designing and extending the Magento components, refer to the <a href="{{ site.gdeurl }}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a>.</p>
+  <p>For more information about designing and extending the Magento components, refer to the <a href="{{ site.gdeurl21 }}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a>.</p>
 
 </div>
 

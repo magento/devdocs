@@ -16,7 +16,7 @@ github_link: mtf/mtf_entities/mtf_page.md
 ## Page overview {#mtf_page_overview}
 
 A page object is a class that serves to interact with the Magento page under test.
-A page serves as container for [blocks]({{site.gdeurl}}mtf/mtf_entities/mtf_page.html).
+A page serves as container for [blocks]({{site.gdeurl21}}mtf/mtf_entities/mtf_page.html).
 
 In the functional tests, the Page Object Design Pattern is used. Test uses the block methods of the page object class to interact with application under test. The benefit of this approach is that the tests don’t need to be changed after changes in the UI.
 Only the code in the corresponding block must be changed.
@@ -77,7 +77,7 @@ The following table explains `<page>` attributes.
 
 {% include mtf/block_attributes.md %}
 
-Also, block can contain a `render` node. [Read about renders in the Block topic]({{site.gdeurl}}mtf/mtf_entities/mtf_block.html#mtf_block_render).
+Also, block can contain a `render` node. [Read about renders in the Block topic]({{site.gdeurl21}}mtf/mtf_entities/mtf_block.html#mtf_block_render).
 
 {% include mtf/page-generator.html %}
 
@@ -174,7 +174,7 @@ The result is in the `<magento2>/dev/tests/functional/generated/Magento/Catalog/
 
 <!-- LINK DEFINITIONS -->
 
-[Block]: {{site.gdeurl}}mtf/mtf_entities/mtf_block.html
+[Block]: {{site.gdeurl21}}mtf/mtf_entities/mtf_block.html
 [Magento\Mtf\Page\BackendPage]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/BackendPage.php
 [Magento\Mtf\Page\FrontendPage]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/FrontendPage.php
 [Magento\Mtf\Page\ExternalPage]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/ExternalPage.php

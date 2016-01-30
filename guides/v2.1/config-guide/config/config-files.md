@@ -27,11 +27,11 @@ Following are common terms used in this topic:
 
 <dl>
 	<dt>Configuration object</dt>
-	<dd>The Magento library or class that is responsible for defining and validating the configuration type. For example, the configuration object for <code>config.xml</code> is <a href=" {{ site.mage2000url }}lib/internal/Magento/Framework/App/Config.php" target="_blank">Magento\Framework\App\Config</a>.</dd>
+	<dd>The Magento library or class that is responsible for defining and validating the configuration type. For example, the configuration object for <code>config.xml</code> is <a href=" {{ site.mage2100url }}lib/internal/Magento/Framework/App/Config.php" target="_blank">Magento\Framework\App\Config</a>.</dd>
 	<dt>Configuration stage</dt>
 	<dd>Stages are defined as <em>primary</em>, <em>global</em>, and <em>area</em>. Each stage determines when configuration type is loaded and merged with same-named configuration types. (For example, <code>module.xml</code> files are merged with other <code>module.xml</code> files.) For more information, see <a href="#config-files-loadmerge">Configuration load and merge</a>.</dd>
 	<dt>Configuration scope</dt>
-	<dd>Complementary to a configuration stages, a scope defines the configuration type model. For example, <code>adminhtml</code> is an area scope that is loaded with at the stage with other modules' <code>adminhtml</code> configurations. For more information, see <a href="{{ site.gdeurl }}architecture/modules/mod_and_areas.html">Modules and areas</a>.</dd>
+	<dd>Complementary to a configuration stages, a scope defines the configuration type model. For example, <code>adminhtml</code> is an area scope that is loaded with at the stage with other modules' <code>adminhtml</code> configurations. For more information, see <a href="{{ site.gdeurl21 }}architecture/modules/mod_and_areas.html">Modules and areas</a>.</dd>
 </dl>
 
 <h2 id="config-files-loadmerge">Configuration load and merge</h2>
@@ -78,7 +78,7 @@ The following table shows each configuration type and the Magento configuration 
 		</tr>
 		<tr>
 			<td><code>config.php</code> and <code>env.php</code></td>
-			<td><a href="{{ site.gdeurl }}config-guide/config/config-php.html">Deployment configuration</a></td>
+			<td><a href="{{ site.gdeurl21 }}config-guide/config/config-php.html">Deployment configuration</a></td>
 			<td>Loads into memory when Magento initializes</td>
 			<td>Has no object, cannot be customized</td>
 		</tr>
@@ -86,51 +86,51 @@ The following table shows each configuration type and the Magento configuration 
 			<td><code>config.xml</code></td>
 			<td>System configuration</td>
 			<td>primary, global </td>
-			<td><a href=" {{ site.mage2000url }}lib/internal/Magento/Framework/App/Config.php" target="_blank">\Magento\Framework\App\Config</a></td>
+			<td><a href=" {{ site.mage2100url }}lib/internal/Magento/Framework/App/Config.php" target="_blank">\Magento\Framework\App\Config</a></td>
 		</tr>
 		<tr>
 			<td><code>di.xml</code></td>
-			<td><a href="{{ site.gdeurl }}extension-dev-guide/depend-inj.html">Dependency injection</a> configuration</td>
+			<td><a href="{{ site.gdeurl21 }}extension-dev-guide/depend-inj.html">Dependency injection</a> configuration</td>
 			<td>primary, global, area</td>
-			<td><a href=" {{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/Config/Config.php" target="_blank">\Magento\Framework\ObjectManager\Config</a></td>
+			<td><a href=" {{ site.mage2100url }}lib/internal/Magento/Framework/ObjectManager/Config/Config.php" target="_blank">\Magento\Framework\ObjectManager\Config</a></td>
 		</tr>
 		<tr>
 			<td><code>events.xml</code></td>
 			<td>Event/observer configuration</td>
 			<td>global, area</td>
-			<td><a href=" {{ site.mage2000url }}lib/internal/Magento/Framework/Event.php" target="_blank">\Magento\Framework\Event</a></td>
+			<td><a href=" {{ site.mage2100url }}lib/internal/Magento/Framework/Event.php" target="_blank">\Magento\Framework\Event</a></td>
 		</tr>
 <!--     <tr>
 			<td><code>cache.xml</code></td>
 			<td>global, area</td>
-			<td><a href=" {{ site.mage2000url }}lib/internal/Magento/Framework/Event.php" target="_blank">Magento\Framework\Event</a></td>
+			<td><a href=" {{ site.mage2100url }}lib/internal/Magento/Framework/Event.php" target="_blank">Magento\Framework\Event</a></td>
 		</tr> -->
 		<tr>
 			<td><code>routes.xml</code></td>
-			<td><a href="{{ site.gdeurl }}extension-dev-guide/routing.html">Route</a> configuration</td>
+			<td><a href="{{ site.gdeurl21 }}extension-dev-guide/routing.html">Route</a> configuration</td>
 			<td>area</td>
-			<td><a href=" {{ site.mage2000url }}lib/internal/Magento/Framework/App/Route/Config.php" target="_blank">Magento\Framework\App\Route\Config</a></td>
+			<td><a href=" {{ site.mage2100url }}lib/internal/Magento/Framework/App/Route/Config.php" target="_blank">Magento\Framework\App\Route\Config</a></td>
 		</tr>
 	</tbody>
 </table>
 
 <h3 id="config-files-classes-int">Configuration interfaces</h3>
-You can interact with configuration files using interfaces under <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Config" target="_blank">Magento\Framework\Config</a>. You can also use these interfaces if you create a new configuration types.
+You can interact with configuration files using interfaces under <a href="{{ site.mage2100url }}lib/internal/Magento/Framework/Config" target="_blank">Magento\Framework\Config</a>. You can also use these interfaces if you create a new configuration types.
 
 `Magento\Framework\Config` provides the following interfaces:
 
-* <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Config/ConverterInterface.php" target="_blank">Framework\Config\ConverterInterface</a>, which converts the XML into an in-memory array representation of the configurations.
-* <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Config/DataInterface.php" target="_blank">Framework\Config\DataInterface</a>, which retrieves the configuration data in a specified scope.
-* <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Config/FileResolverInterface.php" target="_blank">Framework\Config\FileResolverInterface</a>, which identifies the location of files to be read by `\Magento\Framework\Config\ReaderInterface`
-* <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Config/ReaderInterface.php" target="_blank">Framework\Config\ReaderInterface</a>, which reads the configuration data from storage and selects the storage from which it reads.
+* <a href="{{ site.mage2100url }}lib/internal/Magento/Framework/Config/ConverterInterface.php" target="_blank">Framework\Config\ConverterInterface</a>, which converts the XML into an in-memory array representation of the configurations.
+* <a href="{{ site.mage2100url }}lib/internal/Magento/Framework/Config/DataInterface.php" target="_blank">Framework\Config\DataInterface</a>, which retrieves the configuration data in a specified scope.
+* <a href="{{ site.mage2100url }}lib/internal/Magento/Framework/Config/FileResolverInterface.php" target="_blank">Framework\Config\FileResolverInterface</a>, which identifies the location of files to be read by `\Magento\Framework\Config\ReaderInterface`
+* <a href="{{ site.mage2100url }}lib/internal/Magento/Framework/Config/ReaderInterface.php" target="_blank">Framework\Config\ReaderInterface</a>, which reads the configuration data from storage and selects the storage from which it reads.
 
 	 That is, the file system, database, other storage merges the configuration files according to the merging rules, and validates the configuration files with the validation schemas.
 
-*  <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Config/SchemaLocatorInterface.php" target="_blank">Framework\Config\SchemaLocatorInterface</a>, which locates the XSD schema.
-*  <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Config/ScopeListInterface.php" target="_blank">Framework\Config\ScopeListInterface</a>, which returns a list of scopes.
-*  <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Config/ValidationStateInterface.php" target="_blank">Framework\Config\ValidationStateInterface</a>, which retrieves the validation state.
+*  <a href="{{ site.mage2100url }}lib/internal/Magento/Framework/Config/SchemaLocatorInterface.php" target="_blank">Framework\Config\SchemaLocatorInterface</a>, which locates the XSD schema.
+*  <a href="{{ site.mage2100url }}lib/internal/Magento/Framework/Config/ScopeListInterface.php" target="_blank">Framework\Config\ScopeListInterface</a>, which returns a list of scopes.
+*  <a href="{{ site.mage2100url }}lib/internal/Magento/Framework/Config/ValidationStateInterface.php" target="_blank">Framework\Config\ValidationStateInterface</a>, which retrieves the validation state.
 
 #### Related topics
 
- *  <a href="{{ site.gdeurl }}config-guide/config/config-create.html">Create or extend configuration types</a>
- *  <a href="{{ site.gdeurl }}config-guide/config/config-php.html">Magento's deployment configuration</a>
+ *  <a href="{{ site.gdeurl21 }}config-guide/config/config-create.html">Create or extend configuration types</a>
+ *  <a href="{{ site.gdeurl21 }}config-guide/config/config-php.html">Magento's deployment configuration</a>

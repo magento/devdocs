@@ -35,7 +35,7 @@ In addition, we use *dependency inversion*, a coding principle that stipulates y
 For more information, see <a href="https://sites.google.com/site/unclebobconsultingllc/blogs-by-robert-martin/dependency-injection-inversion" target="_blank">this article by Robert C. Martin</a>.
 
 
-The <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/ObjectManager.php" target="_blank">object manager</a> specifies the dependency environment for constructor injection. The object manager must be present only when composing code. In larger applications, composing code is performed early in the bootstrapping process.
+The <a href="{{ site.mage2100url }}lib/internal/Magento/Framework/ObjectManager/ObjectManager.php" target="_blank">object manager</a> specifies the dependency environment for constructor injection. The object manager must be present only when composing code. In larger applications, composing code is performed early in the bootstrapping process.
 
 This topic uses the following terms:
 
@@ -115,7 +115,7 @@ You can also specify whether or not the object is shareable in its `di.xml` as f
 
 <script src="https://gist.github.com/xcomSteveJohnson/f66e46702da03ec264eb.js"></script>
 
-Dependency injection is configuration-based; configurations are validated by <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/etc/config.xsd" target="_blank">config.xsd</a>.
+Dependency injection is configuration-based; configurations are validated by <a href="{{ site.mage2100url }}lib/internal/Magento/Framework/ObjectManager/etc/config.xsd" target="_blank">config.xsd</a>.
 
 Object manager configurations can be specified at any of the following scopes:
 
@@ -123,7 +123,7 @@ Object manager configurations can be specified at any of the following scopes:
 *	Global across all of Magento (`<your module directory>/etc/di.xml`)
 *	Area-specific configuration (`<your module directory>/etc/<areaname>/di.xml`)
 
-	*Area-specific* means specific a Magento area (`frontend`, `adminhtml`, and so on). For example, here is the <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/adminhtml/di.xml" target="_blank">Magento Customer module's adminhtml di.xml</a>.
+	*Area-specific* means specific a Magento area (`frontend`, `adminhtml`, and so on). For example, here is the <a href="{{ site.mage2100url }}app/code/Magento/Customer/etc/adminhtml/di.xml" target="_blank">Magento Customer module's adminhtml di.xml</a>.
 	
 <div class="bs-callout bs-callout-info" id="info">
   <p>Each scope overrides any previously existing config when it is loaded.</p>
@@ -136,7 +136,7 @@ Object manager configurations can be specified at any of the following scopes:
 <h2 id="dep-inj-mod-class">Class definitions</h2>
 Magento uses class constructor signatures, not doc-block annotations, to retrieve information about class dependencies; that is, to define what dependencies are to be passed to an object.
 
-Magento reads constructors using reflection. We recommend you use the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">single-store compiler tool</a> or the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-multi.html">multi-store compiler tool</a> to pre-compile class definitions for better performance.
+Magento reads constructors using reflection. We recommend you use the <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-compiler-single.html">single-store compiler tool</a> or the <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-compiler-multi.html">multi-store compiler tool</a> to pre-compile class definitions for better performance.
 
 The parameters specified for a class type are inherited by its descendant classes.
 
@@ -390,7 +390,7 @@ Parameters configured for a class type are automatically configured for all of i
 
 <script src="https://gist.github.com/xcomSteveJohnson/8ef9264be06fba085a03.js"></script>
 
-<p>The preceding example configures all instances of <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/Element/Context.php" target="_blank">Magento\Framework\View\Element\Context</a> and its children to retrieve and instance of <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Url.php" target="_blank">Magento\Framework\Url</a>, but <a href="{{ site.mage2000url }}app/code/Magento/Backend/Block/Context.php" target="_blank">Magento\Backend\Block\Context</a> overrides this and retrieves <a href="{{ site.mage2000url }}app/code/Magento/Backend/Model/Url.php" target="_blank">Magento\Backend\Model\Url</a>.</p>
+<p>The preceding example configures all instances of <a href="{{ site.mage2100url }}lib/internal/Magento/Framework/View/Element/Context.php" target="_blank">Magento\Framework\View\Element\Context</a> and its children to retrieve and instance of <a href="{{ site.mage2100url }}lib/internal/Magento/Framework/Url.php" target="_blank">Magento\Framework\Url</a>, but <a href="{{ site.mage2100url }}app/code/Magento/Backend/Block/Context.php" target="_blank">Magento\Backend\Block\Context</a> overrides this and retrieves <a href="{{ site.mage2100url }}app/code/Magento/Backend/Model/Url.php" target="_blank">Magento\Backend\Model\Url</a>.</p>
 </div>
 </div>
 
@@ -421,7 +421,7 @@ Non-injectable
 	*	Has a transient lifecycle
 	*	Requires external input (such as data user input or data from database) to be properly created
 
-	Most models are non-injectable (for example, <a href="{{ site.mage2000url }}app/code/Magento/Catalog/Model/Product.php" target="_blank">Magento\Catalog\Model\Product</a> or <a href="{{ site.mage2000url }}app/code/Magento/User/Model/User.php" target="_blank">Magento\User\Model\User</a>).
+	Most models are non-injectable (for example, <a href="{{ site.mage2100url }}app/code/Magento/Catalog/Model/Product.php" target="_blank">Magento\Catalog\Model\Product</a> or <a href="{{ site.mage2100url }}app/code/Magento/User/Model/User.php" target="_blank">Magento\User\Model\User</a>).
 	
 You must observe the following rules:
 
@@ -461,15 +461,15 @@ Most factories are simple, so developers do not have to bother with writing them
 <h2 id="dep-inj-compile">Compiler tool</h2>
 To compile all non-existent proxies and factories; and to pre-compile class definitions, inheritance information, and plugin definitions for multiple stores or websites, see one of the following topics:
 
-*	If you have one website and one store, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">Single-store compiler</a>
-*	If you have multiple websites and stores, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-store compiler</a>
+*	If you have one website and one store, see <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-compiler-single.html">Single-store compiler</a>
+*	If you have multiple websites and stores, see <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-store compiler</a>
 
 
 #### Related topics:
 
-*	<a href="{{ site.gdeurl }}extension-dev-guide/plugins.html">Plugins</a>
-*	<a href="{{ site.gdeurl }}extension-dev-guide/routing.html">Routing</a>
-*	<a href="{{ site.gdeurl }}config-guide/bootstrap/magento-bootstrap.html">Magento application initialization and bootstrap</a>
-*	<a href="{{ site.gdeurl }}architecture/modules/mod_depend.html">Module dependencies</a>
-*	<a href="{{ site.gdeurl }}extension-dev-guide/api-concepts.html">Programming concepts</a>
+*	<a href="{{ site.gdeurl21 }}extension-dev-guide/plugins.html">Plugins</a>
+*	<a href="{{ site.gdeurl21 }}extension-dev-guide/routing.html">Routing</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/bootstrap/magento-bootstrap.html">Magento application initialization and bootstrap</a>
+*	<a href="{{ site.gdeurl21 }}architecture/modules/mod_depend.html">Module dependencies</a>
+*	<a href="{{ site.gdeurl21 }}extension-dev-guide/api-concepts.html">Programming concepts</a>
 

@@ -18,13 +18,13 @@ github_link: install-gde/prereq/zip_install.md
 *	<a href="#zip-perms">Set file system ownership and permissions</a>
 
 <h2 id="integrator-aud">Intended audience</h2>
-The audience for this topic is anyone who downloaded a compressed Magento software archive (`.zip` or `.tar`). If you'd rather use Composer, go back and <a href="{{ site.gdeurl }}install-gde/continue.html">choose another starting point</a>.
+The audience for this topic is anyone who downloaded a compressed Magento software archive (`.zip` or `.tar`). If you'd rather use Composer, go back and <a href="{{ site.gdeurl21 }}install-gde/continue.html">choose another starting point</a>.
 
 <h2 id="zip-prereq">Prerequisites</h2>
 Before you continue, make sure you've done all of the following:
 
-*	Set up a server that meets our <a href="{{ site.gdeurl }}install-gde/system-requirements.html">system requirements</a>
-*	Created the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>	
+*	Set up a server that meets our <a href="{{ site.gdeurl21 }}install-gde/system-requirements.html">system requirements</a>
+*	Created the <a href="{{ site.gdeurl21 }}install-gde/prereq/apache-user.html">Magento file system owner</a>	
 
 {% include install/get-software_zip.md %}
 
@@ -54,7 +54,7 @@ To transfer the Magento software archive to your server:
 
 	On some FTP client software, you do this by dragging and dropping.
 5.	Wait while the transfer completes.
-6.	Log in to your Magento server, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+6.	Log in to your Magento server, or switch to, the <a href="{{ site.gdeurl21 }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
 7.	Change to the web server docroot or the virtual host directory.
 7.	Create a subdirectory for the Magento software.
 
@@ -78,7 +78,7 @@ To transfer the Magento software archive to your server:
 8.	Continue with the next section.
 
 <h2 id="zip-extract">Extract the software on your server</h2>
-Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a> and extract the software package in the web server docroot using one of the following commands:
+Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl21 }}install-gde/prereq/apache-user.html">Magento file system owner</a> and extract the software package in the web server docroot using one of the following commands:
 
 <table>
 <tbody>
@@ -118,5 +118,5 @@ The following sections discuss how to set file system ownership and permissions:
 #### Next step
 Install the Magento software:
 
-*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">Command line</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/web/install-web.html">Setup Wizard</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/install/cli/install-cli.html">Command line</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/install/web/install-web.html">Setup Wizard</a>

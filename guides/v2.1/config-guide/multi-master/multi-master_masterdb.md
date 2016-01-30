@@ -29,7 +29,7 @@ This topic discusses how to get started with the split database solution by:
 </div>
 
 <h2 id="config-ee-multidb-master-install">Install the Magento EE software</h2>
-You can enable split databases at any time after you install the Magento EE software; in other words, you can add split databases to an EE system that already has checkout and order data. Use the instructions in the Magento 2 EE README or the <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">installation guide</a> to install the Magento 2 EE software using a single master database.
+You can enable split databases at any time after you install the Magento EE software; in other words, you can add split databases to an EE system that already has checkout and order data. Use the instructions in the Magento 2 EE README or the <a href="{{ site.gdeurl21 }}install-gde/bk-install-guide.html">installation guide</a> to install the Magento 2 EE software using a single master database.
 
 <h2 id="config-ee-multidb-master-masters">Set up additional master databases</h2>
 Create checkout and OMS master databases as follows:
@@ -98,4 +98,4 @@ The following message displays to confirm a successful setup:
 	Migration has been finished successfully!
 
 #### Next step
-<a href="{{ site.gdeurl }}config-guide/multi-master/multi-master_verify.html">Verify split databases</a>
+<a href="{{ site.gdeurl21 }}config-guide/multi-master/multi-master_verify.html">Verify split databases</a>

@@ -111,7 +111,7 @@ To do this, they need to add an overriding template for the corresponding module
 Note, that the path to the template inside the `templates` directory in the theme corresponds to that in the module.
 Having changed the order or elements in the templates, OrangeCo got the minicart look like following:
 <p><img src="{{ site.baseurl }}common/images/inherit_mini2.png" alt="In the minishopping cart products are listed above the Go to Checkout button "></p>
-You can find out what exactly code changes are required to perform this and other tasks in the <a href="{{site.gdeurl}}frontend-dev-guide/templates/template-sample.html">Illustration of customizing templates topic</a>. 
+You can find out what exactly code changes are required to perform this and other tasks in the <a href="{{site.gdeurl21}}frontend-dev-guide/templates/template-sample.html">Illustration of customizing templates topic</a>. 
 
 <h2 id="theme-inherit-layout">Extend layouts</h2>
 
@@ -143,7 +143,7 @@ To do this, they added an extending layout in `app/design/frontend/OrangeCo/oran
 {%endhighlight xml%}
 
 
-For more information about extending layout refer to the <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a> article.
+For more information about extending layout refer to the <a href="{{ site.gdeurl21 }}frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a> article.
 
 <h3 id="theme-inherit-layout-over">Override layouts</h3>
 

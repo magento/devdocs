@@ -49,6 +49,6 @@ By default Magento allows CSV and Excel XML export data formats.
 
 To add new export format:
 
-* Add configuration data to ExportButton definition <a href="{{ site.gdeurl }}ui-library/ui-definition.html">`Magento/Ui/view/base/ui_component/etc/definition.xml`</a>
+* Add configuration data to ExportButton definition <a href="{{ site.gdeurl21 }}ui-library/ui-definition.html">`Magento/Ui/view/base/ui_component/etc/definition.xml`</a>
 * Add controller for new format processing `\Magento\Ui\Controller\Adminhtml\Export\GridToFoo`
 * Add converter `\Magento\Ui\Model\Export\ConvertToFoo`

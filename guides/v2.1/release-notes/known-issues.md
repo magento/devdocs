@@ -109,7 +109,7 @@ Symptoms:
 *   The following message displays at the top of your browser on the last page: `Installation is incomplete. Check the console log for errors before trying again.`
 *   If you open the console, a success message displays at the bottom with no errors or exceptions.
 
-In this case, the installation *was* successful. You can access the storefront and Magento Admin as discussed in <a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>.
+In this case, the installation *was* successful. You can access the storefront and Magento Admin as discussed in <a href="{{ site.gdeurl21 }}install-gde/install/verify.html">Verify the installation</a>.
 
 To access your Magento-created encryption key:
 
@@ -127,7 +127,7 @@ This is your encryption key.
 
 <!-- <a href="https://jira.corp.x.com/browse/MAGETWO-31850">MAGETWO-31850</a> -->In some cases (such as running the Setup Wizard in two browser windows or tab pages at the same time), the installation fails because it cannot create `install.log`. 
 
-To work around this issue, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_install-log.html">Installation fails; cannot create install.log</a>
+To work around this issue, see <a href="{{ site.gdeurl21 }}install-gde/trouble/tshoot_install-log.html">Installation fails; cannot create install.log</a>
 
 <!-- <h3 id="known-devbeta-wiz-fail-session-save">session.save_path issue</h3>
 
@@ -164,7 +164,7 @@ The Magento system now uses dependency injection for session save settings.
 
 If you don't know where `php.ini` is located, use the following steps:
 
-1.  If you haven't already done so, create <a href="{{ site.gdeurl }}install-gde/prereq/optional.html#install-optional-phpinfo">phpinfo.php</a>.
+1.  If you haven't already done so, create <a href="{{ site.gdeurl21 }}install-gde/prereq/optional.html#install-optional-phpinfo">phpinfo.php</a>.
 2.  Enter the following URL in your browser's address or location field:
 
     <code>http://&lt;your web server IP or host name>/&lt;path to docroot>/phpinfo.php</code>

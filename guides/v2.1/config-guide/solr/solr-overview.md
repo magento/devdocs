@@ -17,8 +17,8 @@ github_link: config-guide/solr/solr-overview.md
 *	<a href="#overview">Overview</a>
 *	<a href="#dev">Assumptions for using Solr in a development environment</a>
 *	<a href="#prereq">Prerequisites</a>
-* 	<a href="{{ site.gdeurl }}config-guide/solr/solr-magento.html">Configure Solr and Magento</a>
-*	<a href="{{ site.gdeurl }}config-guide/solr/solr-script.html">Prepare Solr for production</a>
+* 	<a href="{{ site.gdeurl21 }}config-guide/solr/solr-magento.html">Configure Solr and Magento</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/solr/solr-script.html">Prepare Solr for production</a>
 
 <h2 id="overview">Overview</h2>
 Magento Enterprise Edition (EE) version 2.x enables you to configure either of the following as a catalog search engine:
@@ -198,5 +198,5 @@ To install Solr and Jetty:
 		tar -xvf solr-4.10.4.tgz
 
 #### Next step
-<a href="{{ site.gdeurl }}config-guide/solr/solr-magento.html">Configure Solr to work with Magento</a>
+<a href="{{ site.gdeurl21 }}config-guide/solr/solr-magento.html">Configure Solr to work with Magento</a>
 

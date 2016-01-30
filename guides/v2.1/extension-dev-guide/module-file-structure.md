@@ -41,11 +41,11 @@ Typical module directories are:
 * `Setup`: contains classes for module database structure and data setup which are invoked when installing or upgrading.
 
 ####Additional directories
-Additionally, there are directories for configuration and other ancillary functions for items like <a href="{{ site.gdeurl }}extension-dev-guide/plugins.html">plug-ins</a>, internationalization, and layout files.
+Additionally, there are directories for configuration and other ancillary functions for items like <a href="{{ site.gdeurl21 }}extension-dev-guide/plugins.html">plug-ins</a>, internationalization, and layout files.
 
 * `Api`: contains any PHP classes exposed to the API.	
 * `i18n`: contains localization files.
-* `Plugin`: contains any needed <a href="{{ site.gdeurl }}extension-dev-guide/plugins.html">plug-ins</a>.
+* `Plugin`: contains any needed <a href="{{ site.gdeurl21 }}extension-dev-guide/plugins.html">plug-ins</a>.
 * `view`: contains view files, including static view files, design templates, email templates, and layout files.
 
 <h3 id="file-struct-comp-theme">Magento 2 theme file structure</h3>
@@ -91,11 +91,11 @@ A typical theme file structure follows:
 Typical theme directories are: 
 
 *	`etc`: `view.xml` contains image configurations for all images and thumbnails.
-*	`i18n`: <a href="{{ site.gdeurl }}frontend-dev-guide/translations/xlate.html#m2devgde-xlate-dictionaries">Translation dictionaries</a>, if any.
+*	`i18n`: <a href="{{ site.gdeurl21 }}frontend-dev-guide/translations/xlate.html#m2devgde-xlate-dictionaries">Translation dictionaries</a>, if any.
 *	`media`: Theme preview (a screen capture of your theme).
 *	`web`: Optional directory that contains static files organized into the following subdirectories:
 
-	*	`css/source`: Theme's `less` configuration files that invoke mixins for global elements from the <a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a>, and the `theme.less` file that overrides the default variables values.
+	*	`css/source`: Theme's `less` configuration files that invoke mixins for global elements from the <a href="{{ site.gdeurl21 }}frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a>, and the `theme.less` file that overrides the default variables values.
 	*	`css/source/lib`: View files that override the UI library files stored in `lib/web/css/source/lib`
 	*	`fonts`: Fonts for your theme.
 	*	`images`: Static images.

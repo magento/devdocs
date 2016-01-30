@@ -36,4 +36,4 @@ This guide focuses on Magento modules.
 </div>
 
 ####Related topic
-<a href="{{ site.gdeurl }}architecture/modules/mod_intro.html">Modules</a> in the Magento Architecture Guide.
+<a href="{{ site.gdeurl21 }}architecture/modules/mod_intro.html">Modules</a> in the Magento Architecture Guide.

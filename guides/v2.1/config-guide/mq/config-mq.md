@@ -151,6 +151,6 @@ The `bind` elements link topics to queues and exchanges, defining the message qu
 {% endhighlight %}
 
 #### Related Topics
-*	<a href="{{ site.gdeurl }}config-guide/mq/rabbitmq-overview.html">RabbitMQ Overview</a>
-*	<a href="{{ site.gdeurl }}config-guide/mq/manage-mysql.html">Manage message queues with MySQL</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/install-rabbitmq.html">Install RabbitMQ</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/mq/rabbitmq-overview.html">RabbitMQ Overview</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/mq/manage-mysql.html">Manage message queues with MySQL</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/prereq/install-rabbitmq.html">Install RabbitMQ</a>

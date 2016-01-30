@@ -32,7 +32,7 @@ Enter in terminal:
 
 If the Selenium Server does not work directly with your browser, find the corresponding [WebDriver][].
 
-In `config.xml` <a href="{{site.gdeurl}}mtf/mtf_quickstart/mtf_quickstart_config.html#mtf_quickstart_config_configxml_browser"> define the browser that the MTF will use for tests</a>.
+In `config.xml` <a href="{{site.gdeurl21}}mtf/mtf_quickstart/mtf_quickstart_config.html#mtf_quickstart_config_configxml_browser"> define the browser that the MTF will use for tests</a>.
 
 Run the Selenium Server with an additional argument.
 
@@ -52,14 +52,14 @@ Enter in terminal:
     php generate.php
 
 <h2 id="mtf_install_pre">Next Steps</h2>
-<a href="{{ site.gdeurl }}mtf/mtf_quickstart/mtf_quickstart_config.html">&lt;&lt; Adjust configuration </a> | <a href="{{ site.gdeurl }}mtf/mtf_quickstart/mtf_quickstart_runtest.html"> Test run &gt;&gt;</a>
+<a href="{{ site.gdeurl21 }}mtf/mtf_quickstart/mtf_quickstart_config.html">&lt;&lt; Adjust configuration </a> | <a href="{{ site.gdeurl21 }}mtf/mtf_quickstart/mtf_quickstart_runtest.html"> Test run &gt;&gt;</a>
 
 <!-- LINK DEFINITIONS -->
 
 <!-- Devdocs -->
-[fixtures]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html
-[repositories]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture-repo.html
-[page objects]: {{site.gdeurl}}mtf/mtf_entities/mtf_page.html
+[fixtures]: {{site.gdeurl21}}mtf/mtf_entities/mtf_fixture.html
+[repositories]: {{site.gdeurl21}}mtf/mtf_entities/mtf_fixture-repo.html
+[page objects]: {{site.gdeurl21}}mtf/mtf_entities/mtf_page.html
 
 <!-- Internet -->
 [Selenium project website]: http://www.seleniumhq.org/download/

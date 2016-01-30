@@ -36,7 +36,7 @@ One helpful way of understanding the Magento presentation layer components is by
 
 Each theme resides in a unique directory and contains custom page layouts, templates, skins, and language files that work together to create a distinct user experience. 
 
-For an extensive introduction to theme elements and an overview of how to extend and override the default Magento themes, see the <a href="{{ site.gdeurl }}frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a>.
+For an extensive introduction to theme elements and an overview of how to extend and override the default Magento themes, see the <a href="{{ site.gdeurl21 }}frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a>.
 
 
 
@@ -66,9 +66,9 @@ Web users interact with components of the presentation layer to select actions t
 
 
 <h3 id="related">Related topics</h3>
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
+<a href="{{ site.gdeurl21 }}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/ALayers_intro.html">Architectural layers overview</a>
+<a href="{{ site.gdeurl21 }}architecture/archi_perspectives/ALayers_intro.html">Architectural layers overview</a>
 
 
 

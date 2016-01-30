@@ -34,4 +34,4 @@ A sample follows:
 Make sure the version is at least 3.0.5 or any version of 4.x before continuing.
 
 ### Next step
-<a href="{{ site.gdeurl }}config-guide/varnish/config-varnish-configure.html">Configure Varnish and your web server</a>
+<a href="{{ site.gdeurl21 }}config-guide/varnish/config-varnish-configure.html">Configure Varnish and your web server</a>

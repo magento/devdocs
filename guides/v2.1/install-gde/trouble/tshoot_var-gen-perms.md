@@ -13,7 +13,7 @@ github_link: install-gde/trouble/tshoot_var-gen-perms.md
 <h2 id="trouble-install-gen">Cannot write to the <code>var/generation</code> directory</h2>
 
 ### Symptom
-After you successfully install Magento, exceptions display when you try to access the storefront or Admin. (You might have to <a href="{{ site.gdeurl }}http://devdocs.magento.com/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html#config-mode">
+After you successfully install Magento, exceptions display when you try to access the storefront or Admin. (You might have to <a href="{{ site.gdeurl21 }}http://devdocs.magento.com/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html#config-mode">
 enable developer mode</a> to see the exceptions.)
 
 Sample exceptions follow:
@@ -41,11 +41,11 @@ For security reasons, Magento recommends a particular set of file system ownersh
 
 In addition, Magento code creates files with permissions consistent with our recommendations. For details, see:
 
-*	<a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Create the Magento file system owner</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html#instgde-prereq-compose-access">Set file system ownership and permissions</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/prereq/apache-user.html">Create the Magento file system owner</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/prereq/integrator_install.html#instgde-prereq-compose-access">Set file system ownership and permissions</a>
  
 ### Suggestion
-First, make sure you completed all tasks discussed in the preceding section. In particular, make sure the Magento file system owner and the web server user share groups in one of the ways discussed in <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-group">Options for shared groups</a>.
+First, make sure you completed all tasks discussed in the preceding section. In particular, make sure the Magento file system owner and the web server user share groups in one of the ways discussed in <a href="{{ site.gdeurl21 }}install-gde/prereq/apache-user.html#install-update-depend-user-group">Options for shared groups</a>.
 
 If that still does not resolve the issue, try setting the <a href="https://en.wikipedia.org/wiki/Setuid#setuid_and_setgid_on_directories" target="_blank">setgid bit</a> (set group-id bit) for problem directories, such as `var/generation`, as follows:
 
