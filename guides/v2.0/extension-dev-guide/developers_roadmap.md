@@ -3,7 +3,7 @@ layout: default
 group: extension-dev-guide
 subgroup: 1_Introduction
 title: Developer roadmap
-menu_title: Developer roadmap
+menu_title: Developer roadmap (updated)
 menu_order: 2
 github_link: extension-dev-guide/developers_roadmap.md
 redirect_from: /guides/v1.0/extension-dev-guide/developers_roadmap.html
@@ -28,7 +28,3 @@ Key points:
 #### Other helpful resources
 *	<a href="https://github.com/magento/magento2-samples">Sample extensions</a> created by the Magento 2 Core team.
 *	Magento 2 Developers Hub, at <a href="http://magento.com/developers/magento2">magento.com/developers/magento2</a>.
-*	*(For distribution on Magento Marketplace only)*: 
-
-	*	<a href="http://docs.magento.com/marketplace/user_guide/getting-started/guidelines.html" target="_blank">Marketplace Submission Guidelines</a>
-	*	<a href="http://docs.magento.com/marketplace/user_guide/extensions/review-workflow.html" target="_blank">Marketplace Review Workflow</a>

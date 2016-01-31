@@ -3,7 +3,7 @@ layout: default
 group: extension-dev-guide
 subgroup: 1_Introduction
 title: Glossary of common terms
-menu_title: Glossary of common terms
+menu_title: Glossary of common terms (new)
 menu_order: 10
 github_link: extension-dev-guide/developers_roadmap_glossary.md
 ---

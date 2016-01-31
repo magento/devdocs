@@ -3,7 +3,7 @@ layout: default
 group: extension-dev-guide
 subgroup: 1_Introduction
 title: Composer and Magento
-menu_title: Composer and Magento
+menu_title: Composer and Magento (new)
 menu_order: 5
 github_link: extension-dev-guide/developers_roadmap_composer.md
 ---

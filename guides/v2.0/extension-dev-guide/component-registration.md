@@ -2,8 +2,8 @@
 layout: default
 group: extension-dev-guide
 subgroup: 3_Build
-title: Component registration
-menu_title: Component registration
+title: Register your component 
+menu_title: Register your component 
 menu_order: 4
 github_link: extension-dev-guide/component-registration.md
 redirect_from: /guides/v1.0/extension-dev-guide/component-registration.html
@@ -12,13 +12,12 @@ redirect_from: /guides/v1.0/extension-dev-guide/component-registration.html
 ##{{page.menu_title}}
 
 
-Magento components, including modules, themes, and languages, must be registered in the Magento system through the Magento `ComponentRegistrar` class.
+Magento components, including modules, themes, and language packages, must be registered in the Magento system through the Magento `ComponentRegistrar` class.
 
 Each component must have a file called `registration.php` in its root directory. For example, here is the `registration.php` file for Magento's [AdminNotification module]({{ site.mage2000url }}app/code/Magento/AdminNotification/registration.php). Depending on the type of component, registration is performed through `registration.php` by adding to it as follows:
 
 ###Modules
-
-Modules are registered with:
+Register modules with:
 
      ComponentRegistrar::register(ComponentRegistrar::MODULE, '<VendorName_ModuleName>', __DIR__);
 
@@ -35,7 +34,7 @@ where &lt;VendorName> is the name of the company providing the module and &lt;Mo
 
 ###Themes
 
-Themes are registered with:
+Register themes with:
 
      ComponentRegistrar::register(ComponentRegistrar::THEME, '<area>/<vendor>/<theme name>', __DIR__);
 
@@ -48,8 +47,8 @@ where &lt;area> is the functional area of the module (frontend, controller, and 
 <p>&nbsp;</p>
 
 
-###Languages
-Languages are registered with:
+###Language packages
+Register language packages with:
 
      ComponentRegistrar::register(ComponentRegistrar::LANGUAGE, '<VendorName>_<packageName>', __DIR__);
 
@@ -60,9 +59,8 @@ where &lt;VendorName> is the name of the company providing the package and &lt;p
 
 <p>&nbsp;</p>
 
-###Invoke registration.php in composer.json with autoload
-
-After you create your `registration.php` file and you are creating [your module's composer.json file](create_module.html#add-the-module8217s-composerjson-file), remember to invoke your `registration.php` file in the autoload section of `composer.json`:
+###Invoke `registration.php` in `composer.json` with autoload
+After you create your `registration.php` file and you are creating [your module's composer.json file](create_module.html#add-the-module8217s-composerjson-file), invoke your `registration.php` file in the `autoload` section of `composer.json`:
 
      {
     "name": "Acme-vendor/bar-component",
@@ -74,7 +72,7 @@ After you create your `registration.php` file and you are creating [your module'
 
 <p>&nbsp;</p>
 
-##Sample registration.php file
+##Sample `registration.php` file
 
 {% highlight php startinline=true %}
 <?php

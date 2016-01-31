@@ -2,12 +2,12 @@
 layout: default
 group: extension-dev-guide
 subgroup: 3_Build
-title: Component file structure
-menu_title: Component file structure
+title: Create your component file structure 
+menu_title: Create your component file structure 
 menu_order: 2
 github_link: extension-dev-guide/module-file-structure.md
-
 ---
+
 ##{{page.menu_title}}
 
 #### Contents

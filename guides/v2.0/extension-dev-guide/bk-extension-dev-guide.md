@@ -28,9 +28,6 @@ A Magento *module* is code that accomplishes a particular business function or h
 
 *Language packages* provide translations for strings that display on the storefront and Admin.
 
-This guide focuses on Magento modules.
-
-
 <div class="bs-callout bs-callout-info" id="info">
 <p>You must follow a <a href="http://www.php-fig.org/psr/psr-4/">PSR compliant</a> structure when building a module.</p>
 </div>
