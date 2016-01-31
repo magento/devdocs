@@ -7,6 +7,7 @@ menu_title: Magento upgrade issues (Jan. 28, 2016)
 menu_node: 
 menu_order: 1
 github_link: release-notes/tech_bull_201-upgrade.md
+redirect_from: /guides/v2.0/release-notes/tech_bull_jan_22_16.html
 ---
 
 ## Magento upgrade issues (Jan. 28, 2016)
