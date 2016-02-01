@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Deploy Magento to production</title>
+	<title>Add a custom template for a form field on Checkout page</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/howdoi/deploy/deploy-to-prod.html">
+	<link rel="canonical" href="//guides/v2.0/howdoi/checkout/checkout_edit_form.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -132,9 +132,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Deploy Magento to production</h1>
+		<h1 class="page-heading">Add a custom template for a form field on Checkout page</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/howdoi/deploy/deploy-to-prod.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/howdoi/checkout/checkout_edit_form.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -339,7 +339,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/howdoi/deploy/deploy-to-prod.html">Deploy Magento to production</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/howdoi/deploy/deploy-to-prod.html">Deploy Magento to production</a></li>
 									
 								
 
@@ -641,7 +641,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/howdoi/checkout/checkout_edit_form.html">Add a custom template for a form field on Checkout page</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/howdoi/checkout/checkout_edit_form.html">Add a custom template for a form field on Checkout page</a></li>
 
 									
 
@@ -733,131 +733,118 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<h4 id="contents">Contents</h4>
-<ul>
-  <li><a href="#deploy-over">Overview of deployment</a></li>
-  <li><a href="#deploy-dev">Prepare your development system</a></li>
-  <li><a href="#deploy-prod">Guidelines for deployment to production</a></li>
-</ul>
+		<h2> What's in this topic</h2>
+<p>This topic describes how to replace the HTML template for a form field on the Checkout page. You might need to replace the template in order to add elements displayed with the field, change the CSS class assigned to it, add attributes and so on.</p>
 
-<h2 id="deploy-over">Overview of deployment</h2>
-<p>This topic provides guidelines and best practices for deploying a Magento site to production. We don’t recommend a <em>specific</em> set of instructions; these are intended as general guidelines. You should be working with an experienced system integrator who can help you make decisions for your particular deployment.</p>
+<h2> Overview </h2>
 
-<p>Assumptions:</p>
+<p>The forms used on the Checkout page are implemented using Knockout JS. </p>
 
-<ul>
-  <li>Your <em>development</em> environment is behind a firewall with the Magento application in <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a>.</li>
-  <li>All custom code is in source control.</li>
-  <li>Your development environment is as similar as possible to production (same number of webnodes, same caching architecture, and so on)</li>
-  <li>Your <em>production</em> environment is a separate set of servers in a secure environment.</li>
-  <li>Your production environment runs the Magento application in <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-production">production mode</a> with desired security options enabled.</li>
-  <li>Your production system has a working, live Magento installation.</li>
-</ul>
-
-<p>Deploying to production involves the following essential steps. Each set of steps is discussed in more detail in the sections that follow.</p>
-
-<h3 id="in-your-development-system">In your development system</h3>
+<p>To change the template of the form field, do the following:</p>
 
 <ol>
-  <li>Test your system in your development environment.</li>
-  <li>Put all custom code in source control.</li>
-  <li>Compile code and generate static view files.</li>
-  <li>Archive file system assets and export the database.</li>
-  <li>Transfer file system and database assets to your production system.</li>
+  <li><a href="#template">Create a custom HTML template for knockout JS script that will render the form field</a>.</li>
+  <li><a href="#layout">Specify the new template in the Checkout page layout</a>.</li>
 </ol>
 
-<h3 id="in-your-production-system">In your production system</h3>
+<p>There are more details about each step in the following sections.</p>
 
-<ol>
-  <li>Create the Magento deployment configuration.</li>
-  <li>Extract file system and database assets from your archives.</li>
-  <li>Set file system permissions.</li>
-  <li>Test everything.</li>
-  <li>When everything is working, “flip” your DNS server to point to your production system.</li>
-</ol>
+<p><strong>Contents</strong>:</p>
 
-<h2 id="deploy-dev">Prepare your development system</h2>
-<p>Your <em>development system</em> is a dedicated developer or build system where you periodically:</p>
-
-<ol>
-  <li>Deploy Magento 2 code (including custom code).</li>
-  <li>
-    <p>Clean static files.</p>
-
-    <pre><code>rm -rf &lt;your Magento install dir&gt;/pub/static/*
-</code></pre>
-  </li>
-  <li>
-    <p>Remove the Magento database and reinstall it with database schema and data from your implementation.</p>
-
-    <p>One way to do this is to run the <a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html">command-line installer</a> with the optional <code>--cleanup-database</code> command.</p>
-  </li>
-  <li>Use the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html"><code>magento setup:static-content:deploy</code></a> command to deploy static view files.</li>
-  <li>
-    <p><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler.html">Compile code</a>.</p>
-  </li>
-  <li>
-    <p>Clean temporary files that shouldn’t be in production.</p>
-
-    <pre><code>cd &lt;your Magento install dir&gt;/var
-rm -rf cache/* composer_home/* log/* page_cache/* session/*
-</code></pre>
-  </li>
-  <li>Archive the file system to a suitable format (<code>.tar</code>, <code>.tar.gz</code>, <code>.zip</code>, and so on).</li>
-  <li>Export the database using a tool like <a href="https://dev.mysql.com/doc/refman/5.6/en/mysqldump.html" target="_blank"><code>mysqldump</code></a></li>
-</ol>
-
-<p>Best practices in development:</p>
-
-<ul>
-  <li>Use the Magento file system owner to run <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-bkg">cron</a></li>
-  <li>Log in, or switch to, the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a> to run commands, install or uninstall Magento, and so on</li>
-  <li>Use the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html"><code>magento deploy:mode:set</code></a> command to enable developer mode</li>
-  <li>Periodically <a href="/guides/v2.0/howdoi/php/php_clear-dirs.html">clean the cache and compiled code directories</a></li>
-  <li>Set up your <code>robots.txt</code> to <em>prevent</em> search engines from indexing your development site. (You don’t want search results to point to this site because it won’t be available to customers.)</li>
+<ul id="markdown-toc">
+  <li><a href="#prerequisites">Prerequisites</a></li>
+  <li><a href="#template">Implement the HTML template for the field</a></li>
+  <li><a href="#layout">Specify the new template in layout</a></li>
+  <li><a href="#modify">Modifying the custom template after it was applied</a></li>
 </ul>
 
-<h2 id="checklist-prod">Production server checklist</h2>
-<p>Make sure you do as many as possible of the following before continuing:</p>
+<h2 id="prerequisites">Prerequisites</h2>
 
-<ul>
-  <li>Set up <a href="/guides/v2.0/config-guide/redis/config-redis.html">Redis caching</a></li>
-  <li>
-    <p>Set up <a href="/guides/v2.0/config-guide/varnish/config-varnish.html">Varnish web acceleration</a></p>
+<p><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set Magento to the production mode</a> while you perform all customizations and debugging. </p>
 
-    <p>We <em>strongly recommend</em> Varnish for HTTP acceleration, including page caching.</p>
-  </li>
-  <li>Set up a Content Delivery Network (CDN)</li>
-  <li>Set up multiple webnodes with load balancing</li>
-  <li>Configure Magento payment and shipping methods</li>
-  <li>Set your web server virtual host to point to the Magento <code>pub</code> directory because doing so prevents running the Setup Wizard, Component Manager, or System Upgrade in production</li>
-</ul>
+<p>For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Instead, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should <a href="/guides/v2.0/extension-dev-guide/composer-integration.html">depend</a> on the Magento_Checkout module.</p>
 
-<h2 id="deploy-prod">Guidelines for deployment to production</h2>
-<p>This section provides guidelines for deploying a Magento installation to production. Depending on your requirements, additional tasks might be required. Consult a system administrator for advice.</p>
+<h2 id="template">Implement the HTML template for the field</h2>
+
+<p>Create a new <code>&lt;your_template&gt;.html</code> template in the following directory: <code>&lt;your_module_dir&gt;/view/frontend/web/template/form/element</code></p>
+
+<p>Example of a field template:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- input field element and corresponding bindings --&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;input-text&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">data-bind=</span><span class="s">&quot;</span>
+<span class="s">    value: value,</span>
+<span class="s">    valueUpdate: &#39;keyup&#39;,</span>
+<span class="s">    hasFocus: focused,</span>
+<span class="s">    attr: {</span>
+<span class="s">        name: inputName,</span>
+<span class="s">        placeholder: placeholder,</span>
+<span class="s">        &#39;aria-describedby&#39;: noticeId,</span>
+<span class="s">        id: uid,</span>
+<span class="s">        disabled: disabled</span>
+<span class="s">    }&quot;</span> <span class="nt">/&gt;</span>
+<span class="c">&lt;!-- additional content --&gt;</span>
+<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;%path_to_image%&quot;</span> <span class="na">alt=</span><span class="s">&quot;image_de&quot;</span><span class="nt">/&gt;</span></code></pre></div>
+
+<div class="bs-callout bs-callout-info" id="info">
+<p>The original templates of all form field types are located in the <code>app/code/Magento/Ui/view/base/web/templates/form/element</code> directory.</p>
+</div>
+
+<h2 id="layout">Specify the new template in layout</h2>
+
+<p>In your custom module directory, create a new <code>&lt;your_module_dir&gt;/view/frontend/layout/checkout_index_index.xml</code> file. 
+In this file, add content similar to the following:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">layout=</span><span class="s">&quot;1column&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;checkout.root&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;arguments&gt;</span>
+                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;jsLayout&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;components&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;checkout&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;steps&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;shipping-step&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;shippingAddress&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                                        <span class="c">&lt;!-- The name of the form the field belongs to --&gt;</span>
+                                                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;shipping-address-fieldset&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                                                <span class="c">&lt;!-- the field you are customizing --&gt;</span>
+                                                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;telephone&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                                                        <span class="c">&lt;!-- Assigning a new template --&gt;</span>
+                                                                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;elementTmpl&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>%your_module%/form/element/%your_template%<span class="nt">&lt;/item&gt;</span>
+                                                                    <span class="nt">&lt;/item&gt;</span>
+                                                                <span class="nt">&lt;/item&gt;</span>
+                                                            <span class="nt">&lt;/item&gt;</span>
+                                                        <span class="nt">&lt;/item&gt;</span>
+                                                    <span class="nt">&lt;/item&gt;</span>
+                                                <span class="nt">&lt;/item&gt;</span>
+                                            <span class="nt">&lt;/item&gt;</span>
+                                        <span class="nt">&lt;/item&gt;</span>
+                                    <span class="nt">&lt;/item&gt;</span>
+                                <span class="nt">&lt;/item&gt;</span>
+                            <span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;/arguments&gt;</span>
+        <span class="nt">&lt;/referenceBlock&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/page&gt;</span></code></pre></div>
+
+<h2 id="modify">Modifying the custom template after it was applied</h2>
+
+<p>If you modify your custom <code>.html</code> template after it was applied on the store pages, the changes will not apply until you do the following: </p>
 
 <ol>
-  <li>Copy your development file system and database archives to the production system.</li>
-  <li>Extract the Magento 2 file system archive to an empty directory.</li>
-  <li>Set up persistent storage (for example, media, logs, cache, session, and so on).</li>
-  <li>Take your existing system offline by enabling maintenance mode using <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-maint.html#instgde-cli-maint">magento maintenance:enable</a>. <em>(DOWNTIME STARTS)</em></li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html">Install the Magento software</a> in a clean database (optionally using the <code>--cleanup-database</code> option).</li>
-  <li>Import database data from your development system.</li>
-  <li>Move your existing file system to an archive location.</li>
-  <li>Move the file system you copied from your production system to the Magento docroot.</li>
-  <li>Change to <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html#config-mode">production mode</a> and set file system permissions and ownership for <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html#config-mode-over-dirs-perm">production</a>.</li>
-  <li>Test everything thoroughly and carefully.</li>
-  <li>Switch DNS to the new server. <em>(DOWNTIME ENDS)</em></li>
+  <li>Delete all files in the <code>pub/static/frontend</code> and <code>var/view_preprocessing</code> directories.</li>
+  <li>Reload the pages.</li>
 </ol>
 
-<p>Best practices in production:</p>
-
-<ul>
-  <li>Use <a href="/guides/v2.0/config-guide/varnish/config-varnish.html">Varnish</a> to accelerate HTTP traffic, including providing page caching</li>
-  <li>Use the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html"><code>magento deploy:mode:set</code></a> command to enable developer mode</li>
-  <li>Use the <code>pub</code> directory as the Magento docroot to prevent running the Setup Wizard, Component Manager, or System Upgrade in production. (Set up virtual hosts to point to <code>&lt;your Magento install dir&gt;/pub</code>.)</li>
-  <li>Set up your <code>robots.txt</code> to <em>allow</em> search engines to index your production site. </li>
-</ul>
 
 
 		</div>
