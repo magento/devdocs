@@ -13,5 +13,5 @@ github_link: install-gde/install/get-software.md
 
 #### Related topics
 
-*	<a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">Clone the Magento repository</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html">Get the Composer metapackage</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/prereq/dev_install.html">Clone the Magento repository</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/prereq/integrator_install.html">Get the Composer metapackage</a>

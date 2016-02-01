@@ -16,14 +16,14 @@ github_link: config-guide/cli/config-cli-subcommands-mode.md
 *	<a href="#config-mode">Change modes</a>
 
 <h2 id="config-mode-over">Overview of setting Magento modes</h2>
-To improve security and ease-of-use, we added a command that switches <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html">Magento modes</a> from developer to production and vice versa. When doing so, we set file permissions and ownership appropriately.
+To improve security and ease-of-use, we added a command that switches <a href="{{ site.gdeurl21 }}config-guide/bootstrap/magento-modes.html">Magento modes</a> from developer to production and vice versa. When doing so, we set file permissions and ownership appropriately.
 
 Production mode also has better performance because static view files are populated in the `pub/static` directory and because of code compilation.
 
 Developer mode uses a less restrictive set of permissions than does production mode for the following reasons:
 
-*	<a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html#mode-developer">Developer mode</a> is intended for internal development on a system already secured behind a firewall; also, the system doesn't need to handle internet traffic
-*	<a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html#mode-production">Production mode</a> servers handle internet traffic, process payments, and so on
+*	<a href="{{ site.gdeurl21 }}config-guide/bootstrap/magento-modes.html#mode-developer">Developer mode</a> is intended for internal development on a system already secured behind a firewall; also, the system doesn't need to handle internet traffic
+*	<a href="{{ site.gdeurl21 }}config-guide/bootstrap/magento-modes.html#mode-production">Production mode</a> servers handle internet traffic, process payments, and so on
 
 	As the name implies, you change to production mode before you deploy your Magento storefront to production and start taking orders.
 
@@ -118,13 +118,13 @@ We recommend the following:
 
 *	The directories and files in the Magento file system should be *owned* by a user other than the web server user but must be *writable* by the web server user. 
 
-	We refer to this other user as the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#nstall-update-depend-user-over">Magento file system owner</a>.
+	We refer to this other user as the <a href="{{ site.gdeurl21 }}install-gde/prereq/apache-user.html#nstall-update-depend-user-over">Magento file system owner</a>.
 
 	Exceptions: `var/di`, `var/generation`, and `var/view_preprocessed`
 
 *	The directories and files under `pub/static` should have 770 permissions, which give the owner and the group full control.
 
-The easiest way to do that is to run this command as a user in the same group as the web server user. For details, see <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Create the Magento file system owner</a>.
+The easiest way to do that is to run this command as a user in the same group as the web server user. For details, see <a href="{{ site.gdeurl21 }}install-gde/prereq/apache-user.html">Create the Magento file system owner</a>.
 
 <h2 id="config-mode-show">Display the current mode</h2>
 Command usage:
@@ -144,7 +144,7 @@ where
 
 `{mode}` is required; it can be either `developer` or `production`
 
-`--skip-compilation` is an optional parameter you can use to skip <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html#config-cli-subcommands-single-overview">code compilation</a> when you change to production mode.
+`--skip-compilation` is an optional parameter you can use to skip <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-compiler-single.html#config-cli-subcommands-single-overview">code compilation</a> when you change to production mode.
 
 
 Examples follow.
@@ -209,15 +209,15 @@ When you change from production to developer mode, you should clear generated cl
 
 #### Related topics
 
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>

@@ -59,4 +59,4 @@ To configure Magento to use Varnish:
 		service httpd restart
 
 #### Last step
-<a href="{{ site.gdeurl }}config-guide/varnish/config-varnish-final.html">Final verification</a>
+<a href="{{ site.gdeurl21 }}config-guide/varnish/config-varnish-final.html">Final verification</a>

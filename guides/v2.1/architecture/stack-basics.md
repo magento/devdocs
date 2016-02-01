@@ -15,9 +15,9 @@ github_link: architecture/stack-basics.md
 <h3>Related topics</h3>
 
 
-<a href="{{ site.gdeurl }}architecture/tech-stack.html">Technology stack</a>
+<a href="{{ site.gdeurl21 }}architecture/tech-stack.html">Technology stack</a>
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>
+<a href="{{ site.gdeurl21 }}architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>
 
 
 

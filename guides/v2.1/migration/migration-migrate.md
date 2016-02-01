@@ -32,7 +32,7 @@ This section discusses how to run the migration tool to migrate settings, data, 
 <h3 id="migration-command-run-first">First steps</h3>
 {% include install/first-steps-cli.html %}
 
-In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl21 }}install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 <h3 id="migration-command-run-syntax">Command syntax</h3>
 Command syntax:
@@ -41,7 +41,7 @@ Command syntax:
 
 where
 
-`<mode>` is <a href="{{ site.gdeurl }}migration/migration-migrate-settings.html">`settings`</a>, <a href="{{ site.gdeurl }}migration/migration-migrate-data.html">`data`</a>, or <a href="{{ site.gdeurl }}migration/migration-migrate-delta.html">`delta`</a>
+`<mode>` is <a href="{{ site.gdeurl21 }}migration/migration-migrate-settings.html">`settings`</a>, <a href="{{ site.gdeurl21 }}migration/migration-migrate-data.html">`data`</a>, or <a href="{{ site.gdeurl21 }}migration/migration-migrate-delta.html">`delta`</a>
 
 `{<path to config.xml>}` is the absolute file system path to `config.xml`; this argument is required.
 
@@ -54,7 +54,7 @@ where
 
 The following sections should be performed in a specific order:
 
-1.	<a href="{{ site.gdeurl }}migration/migration-migrate-settings.html">Migrate settings</a>
-3.	<a href="{{ site.gdeurl }}migration/migration-migrate-data.html">Migrate data</a>
-4.	<a href="{{ site.gdeurl }}migration/migration-migrate-delta.html">Migrate changes</a>
+1.	<a href="{{ site.gdeurl21 }}migration/migration-migrate-settings.html">Migrate settings</a>
+3.	<a href="{{ site.gdeurl21 }}migration/migration-migrate-data.html">Migrate data</a>
+4.	<a href="{{ site.gdeurl21 }}migration/migration-migrate-delta.html">Migrate changes</a>
 

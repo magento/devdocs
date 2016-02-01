@@ -52,7 +52,7 @@ Page types for each module are declared in `page_types.xml`. The declaration is 
 
 	vendor/<vendorname>/module-<name>/etc/frontend
 
-For example, <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/frontend/page_types.xml" target="_blank">Customer module page_types.xml</a>.
+For example, <a href="{{ site.mage2100url }}app/code/Magento/Customer/etc/frontend/page_types.xml" target="_blank">Customer module page_types.xml</a>.
 
 You must declare the ID and label of each page type in the following format:
 

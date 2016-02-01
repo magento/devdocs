@@ -90,7 +90,7 @@ The Magento_Shipping module adds a component rendered as a link to the Shipping 
 
 ## Add the new component to the checkout page layout
 
-Any UI component is added in the `checkout_index_index.xml` similar to the way a [checkout step component is added]({{site.gdeurl}}howdoi/checkout/checkout_new_step.html#add-your-step-to-the-checkout-page-layout). 
+Any UI component is added in the `checkout_index_index.xml` similar to the way a [checkout step component is added]({{site.gdeurl21}}howdoi/checkout/checkout_new_step.html#add-your-step-to-the-checkout-page-layout). 
 
 Make sure that you declare a component so that it is rendered correctly by the parent component. If a parent component is a general UI component (referenced by the `uiComponent` alias), its child components are rendered without any conditions. But if a parent component is a an extenstion of a general UI components, then children rendering might be restricted in certain way. For example a component can render only children from a certain `displayArea`.
 

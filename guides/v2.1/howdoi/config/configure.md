@@ -9,4 +9,4 @@ menu_order: 1
 github_link: howdoi/deploy/configure.md
 ---
 
-After you finish your installation, <a href="{{ site.gdeurl }}install-gde/install/post-install-config.html">Configure the Magento application</a>.
+After you finish your installation, <a href="{{ site.gdeurl21 }}install-gde/install/post-install-config.html">Configure the Magento application</a>.

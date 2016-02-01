@@ -25,7 +25,7 @@ The following topics are covered:
 Templates are usually initiated in layout files.
 Each layout block has an associated template. 
 The template is specified in the `template` attribute of the <block> layout instruction. 
-For example, from <code><a href="{{site.mage2000url}}app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml" target="_blank">&lt;Magento_Catalog_module_dir&gt;/view/frontend/layout/catalog_category_view.xml</a></code>:
+For example, from <code><a href="{{site.mage2100url}}app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml" target="_blank">&lt;Magento_Catalog_module_dir&gt;/view/frontend/layout/catalog_category_view.xml</a></code>:
 
 <pre>
 &lt;block class=&quot;Magento\Catalog\Block\Category\View&quot; name=&quot;category.image&quot; template=&quot;Magento_Catalog::category/image.phtml&quot;/&gt;
@@ -49,16 +49,16 @@ Here <code>&lt;path_to_templates&gt;</code> might have several levels of directo
 
 <h2 id="override">Templates overriding</h2>
 For template files with the same name, the following is true: 
-theme templates override module templates, and those of a <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">child theme</a> override parent theme templates.
+theme templates override module templates, and those of a <a href="{{site.gdeurl21}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">child theme</a> override parent theme templates.
 
 This mechanism is the basis of the template customization concept in Magento application: to change the output defined by a certain default template, you need to overriding one in your custom theme.
 
-Overriding templates is described with more details in the <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html#theme-inherit-templates" target="_blank">Theme Inheritance article</a>.
+Overriding templates is described with more details in the <a href="{{site.gdeurl21}}frontend-dev-guide/themes/theme-inherit.html#theme-inherit-templates" target="_blank">Theme Inheritance article</a>.
 
 
 <h2 id="root">Root template</h2>
 
-In Magento there's a special template which serves as root template for all pages in the application: <code><a href="{{site.mage2000url}}&lt;Magento_Theme_module_dir&gt/view/base/templates/root.phtml" target="_blank">app/code/Magento/Theme/view/base/templates/root.phtml</a></code>
+In Magento there's a special template which serves as root template for all pages in the application: <code><a href="{{site.mage2100url}}&lt;Magento_Theme_module_dir&gt/view/base/templates/root.phtml" target="_blank">app/code/Magento/Theme/view/base/templates/root.phtml</a></code>
 
 Unlike other templates, `root.phtml` contains the `doctype` specification and contributes to <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> sections of all pages rendered by Magento application. 
 
@@ -68,4 +68,4 @@ But similar to other templates, `root.phtml` can be overridden in a theme.
 
 <h2 id="getter">Getting argument values from layout</h2>
 
-Arguments values set in a layout file can be accessed in templates using the <code>get{ArgumentName}()</code> and <code>has{ArgumentName}()</code> methods. There are more details in the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#getter" target="_blank">Layout instructions article.
+Arguments values set in a layout file can be accessed in templates using the <code>get{ArgumentName}()</code> and <code>has{ArgumentName}()</code> methods. There are more details in the <a href="{{site.gdeurl21}}frontend-dev-guide/layouts/xml-instructions.html#getter" target="_blank">Layout instructions article.

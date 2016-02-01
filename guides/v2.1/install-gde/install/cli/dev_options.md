@@ -12,13 +12,13 @@ redirect_from: guides/v2.0/install-gde/install/dev_updater.md
 
 The following topics apply to you *only* if you used `git clone` to install the Magento CE GitHub repository. This usually means you contribute code to the Magento CE codebase.
 
-*	To <a href="{{ site.gdeurl }}install-gde/install/cli/dev_update-magento.html">update the Magento software</a>, use `git pull origin` and `composer update`
-*	To <a href="{{ site.gdeurl }}install-gde/install/cli/dev_add-update.html">add, remove, or update components</a>, modify `composer.json` and run `composer update`
-*	To <a href="{{ site.gdeurl }}install-gde/install/cli/dev_reinstall.html">reinstall the Magento software</a>, modify the product version in `composer.json`, run `composer update`, then reinstall the Magento software
+*	To <a href="{{ site.gdeurl21 }}install-gde/install/cli/dev_update-magento.html">update the Magento software</a>, use `git pull origin` and `composer update`
+*	To <a href="{{ site.gdeurl21 }}install-gde/install/cli/dev_add-update.html">add, remove, or update components</a>, modify `composer.json` and run `composer update`
+*	To <a href="{{ site.gdeurl21 }}install-gde/install/cli/dev_reinstall.html">reinstall the Magento software</a>, modify the product version in `composer.json`, run `composer update`, then reinstall the Magento software
 
 <div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
-		<p>If you are not a contributing developer, you perform upgrades and upgrades as discussed in <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html">Updating the Magento application and components</a>.</p> </span>
+		<p>If you are not a contributing developer, you perform upgrades and upgrades as discussed in <a href="{{ site.gdeurl21 }}comp-mgr/bk-compman-upgrade-guide.html">Updating the Magento application and components</a>.</p> </span>
 </div>
 
 <!-- ABBREVIATIONS -->

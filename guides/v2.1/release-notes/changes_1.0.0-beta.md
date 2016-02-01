@@ -38,9 +38,9 @@ We made the following changes in this release:
 
 For additional details not covered in these Release Notes, see the following:
 
-*	<a href="{{ site.mage2000url }}CHANGELOG.md#1.0.0-beta" target="_blank">Changelog</a>
-*	<a href="{{ site.gdeurl }}release-notes/known-issues.html">Known issues</a>
-*	<a href="{{ site.gdeurl }}release-notes/bk-release-notes.html">Release highlights</a>
+*	<a href="{{ site.mage2100url }}CHANGELOG.md#1.0.0-beta" target="_blank">Changelog</a>
+*	<a href="{{ site.gdeurl21 }}release-notes/known-issues.html">Known issues</a>
+*	<a href="{{ site.gdeurl21 }}release-notes/bk-release-notes.html">Release highlights</a>
 
 <h3 id="1.0.0-beta-changes-schema">Module version changes (requires reinstallation)</h3>
 {% include install/schema-change_merchbeta.html %}
@@ -134,7 +134,7 @@ Transactional emails provide the following benefits:
 
 Transactional email templates are provided with the blank and Luma themes that ship with the Magento application.
 
-To use transactional emails, log in to the Magento Admin and click **Marketing** > Communications > **Email Templates**. For more information, see <a href="{{ site.gdeurl }}frontend-dev-guide/templates/template-email.html">Customizing Email Templates</a>.
+To use transactional emails, log in to the Magento Admin and click **Marketing** > Communications > **Email Templates**. For more information, see <a href="{{ site.gdeurl21 }}frontend-dev-guide/templates/template-email.html">Customizing Email Templates</a>.
 
 <h3 id="1.0.0-beta-changes-import">Import and export</h3>
 Import and export enable you to do any of the following in one operation:
@@ -155,7 +155,7 @@ To use import and export, log in to the Magento Admin and click **System** > Dat
 *	Changed return type from `\Magento\Sales\Api\Data\InvoiceSearchResultInterface` to `\Magento\Sales\Api\Data\InvoiceCommentSearchResultInterface` in the API method `getList` in `Magento\Sales\Api\InvoiceCommentRepositoryInterface`
 
 <h3 id="1.0.0-beta-changes-backup">Uninstall and backup</h3>
-We've added the ability to <a href="{{ site.gdeurl }}install-gde/install/install-cli-backup.html">back up</a> and <a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">roll back to</a> at any time:
+We've added the ability to <a href="{{ site.gdeurl21 }}install-gde/install/install-cli-backup.html">back up</a> and <a href="{{ site.gdeurl21 }}install-gde/install/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">roll back to</a> at any time:
 
 *	The Magento 2 file system
 *	The `pub/media` directories
@@ -163,11 +163,11 @@ We've added the ability to <a href="{{ site.gdeurl }}install-gde/install/install
 
 You can also uninstall any of the following after optionally backing up:
 
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall-mods.html">Modules</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-theme-uninstall.html">Themes</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall-langpk.html">Language packages</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/install/install-cli-uninstall-mods.html">Modules</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/install/install-cli-theme-uninstall.html">Themes</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/install/install-cli-uninstall-langpk.html">Language packages</a>
 
-You can <a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">roll back</a> to an earlier backup at any time.
+You can <a href="{{ site.gdeurl21 }}install-gde/install/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">roll back</a> to an earlier backup at any time.
 
 <h3 id="1.0.0-beta-changes-other">Other changes</h3>
 *	Updated the "composer/composer" dependency to version "1.0.0-alpha10".
@@ -178,9 +178,9 @@ You can <a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall-mods
 
 	For example, now when you upload an image using the product edit page, the image displays even if the product isn't saved.
 
-*	The `pub/get.php` entry point now displays exceptions in <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a>.
+*	The `pub/get.php` entry point now displays exceptions in <a href="{{ site.gdeurl21 }}config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a>.
 
-This change also enables you to get a table prefix without injecting `Magento\Framework\App\Resource` into <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Api/ExtensionAttributesFactory.php" target="_blank">ExtensionAttributesFactory</a>.
+This change also enables you to get a table prefix without injecting `Magento\Framework\App\Resource` into <a href="{{ site.mage2100url }}lib/internal/Magento/Framework/Api/ExtensionAttributesFactory.php" target="_blank">ExtensionAttributesFactory</a>.
 
 <h2 id="1.0.0-beta-incompat">Backward-incompatible changes</h2>
 This section discusses the backward-incompatible changes we made in this release.
@@ -333,4 +333,4 @@ The Magento developer documentation team loves feedback! Please provide feedback
 *	Drop us a line on <a href="https://twitter.com/MagentoDevDocs" target="_blank">Twitter</a> (`@MagentoDevDocs`)
 *	Send us <a href="mailto:DL-Magento-Doc-Feedback@ebay.com">e-mail</a>
 
-Our <a href="{{ site.gdeurl }}contributor-guide/contributing.html#requirements">contribution guidelines</a> provide more detail about providing feedback on the code and documentation.
+Our <a href="{{ site.gdeurl21 }}contributor-guide/contributing.html#requirements">contribution guidelines</a> provide more detail about providing feedback on the code and documentation.

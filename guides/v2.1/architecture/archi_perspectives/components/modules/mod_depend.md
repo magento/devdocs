@@ -44,17 +44,17 @@ At a high level, there are three main steps for managing module dependencies:
 2. Declare any dependencies that the module has (whether on other modules or on a different component) in the module's `composer.json` file.
 3. (*Optional*) Define the desired load order of config files and `.css` files in the `module.xml` file.
 
-Example: Module A declares a dependency upon Module B. Thus, in Module A's `module.xml` file, Module B is listed in the &lt;sequence> list, so that B’s files are loaded before A's. Additionally, you must declare a dependency upon Module B in A’s `composer.json` file. Furthermore, in the <a href="{{ site.gdeurl }}config-guide/config/config-php.html">deployment configuration</a>, Modules A and B must both be defined as enabled.
+Example: Module A declares a dependency upon Module B. Thus, in Module A's `module.xml` file, Module B is listed in the &lt;sequence> list, so that B’s files are loaded before A's. Additionally, you must declare a dependency upon Module B in A’s `composer.json` file. Furthermore, in the <a href="{{ site.gdeurl21 }}config-guide/config/config-php.html">deployment configuration</a>, Modules A and B must both be defined as enabled.
 
 
 
 
 <h2 id="m2arch-module-related">Related topics</h2>
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/components/modules/mod_intro.html">Module overview</a>
+<a href="{{ site.gdeurl21 }}architecture/archi_perspectives/components/modules/mod_intro.html">Module overview</a>
 
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/components/modules/mod_depend_types.html">Types of module dependencies</a>
+<a href="{{ site.gdeurl21 }}architecture/archi_perspectives/components/modules/mod_depend_types.html">Types of module dependencies</a>
 
 
 

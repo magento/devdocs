@@ -15,5 +15,5 @@ github_link: install-gde/install/web/install-web_1-readiness.md
 {% include install/web/install-web_1-readiness.md %}
 
 #### Next step
-<a href="{{ site.gdeurl }}install-gde/install/web/install-web_2-db.html">Step 2. Add a database</a>
+<a href="{{ site.gdeurl21 }}install-gde/install/web/install-web_2-db.html">Step 2. Add a database</a>
 

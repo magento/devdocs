@@ -14,11 +14,11 @@ redirect_from: /guides/v1.0/migration/migration-tool-preconditions.html
 
 Before you start your migration, you must do all of the following:
 
-*	Set up a Magento 2 system that meets our <a href="{{ site.gdeurl }}/install-gde/system-requirements.html">system requirements</a>
+*	Set up a Magento 2 system that meets our <a href="{{ site.gdeurl21 }}/install-gde/system-requirements.html">system requirements</a>
 
 	Set up your system using a topology and design that at least matches your existing Magento 1 system.
 
-*	<a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">Install Magento 2</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/bk-install-guide.html">Install Magento 2</a>
 
 *	Do not start Magento 2 cron jobs
 
@@ -36,4 +36,4 @@ Before you start your migration, you must do all of the following:
 
 ###Related topics
 
-* <a href="{{ site.gdeurl }}migration/migration-tool-install.html">Install the Data Migration Tool</a>
+* <a href="{{ site.gdeurl21 }}migration/migration-tool-install.html">Install the Data Migration Tool</a>

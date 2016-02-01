@@ -124,7 +124,7 @@ To configure a web API, developers define some of the elements of each API call 
       </td>
       <td><pre>Authorization:&nbsp;Bearer&nbsp;&lt;TOKEN&gt;</pre>
       <p>Where <code>&lt;TOKEN&gt;</code> is the authentication token returned by the Magento token service.
-See <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication.html">Authentication</a>.</p></td>
+See <a href="{{ site.gdeurl21 }}get-started/authentication/gs-authentication.html">Authentication</a>.</p></td>
    </tr>
    <tr>
       <td><pre>Accept</pre>
@@ -199,7 +199,7 @@ See <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication.html"
 <h2 id="construct-request">Construct a request</h2>
 <p>This example shows you how to construct a REST web API call to create an account.</p>
 
-<ol><li>Open the <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/webapi.xml" target="_blank">Magento/Customer/etc/webapi.xml</a> configuration file.</li>
+<ol><li>Open the <a href="{{ site.mage2100url }}app/code/Magento/Customer/etc/webapi.xml" target="_blank">Magento/Customer/etc/webapi.xml</a> configuration file.</li>
 <li><p>Find the route element that defines the <code>createAccount</code> call:</p>
 <pre>
 &lt;route url="/V1/customers" method="POST">
@@ -214,7 +214,7 @@ See <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication.html"
 <pre>POST /V1/customers</pre></li>
 <li><p>Use the <code>class</code> attribute on the <code>service</code> element to identify the service interface.</p>
 <p>In this example, the service interface is the <code>AccountManagementInterface</code> PHP file.</p>
-<p>Open the <a href="{{ site.mage2000url }}app/code/Magento/Customer/Api/AccountManagementInterface.php" target="_blank">AccountManagementInterface.php</a> file and find the <code>createAccount</code> method, as follows:</p>
+<p>Open the <a href="{{ site.mage2100url }}app/code/Magento/Customer/Api/AccountManagementInterface.php" target="_blank">AccountManagementInterface.php</a> file and find the <code>createAccount</code> method, as follows:</p>
 <pre>public function createAccount(
         \Magento\Customer\Api\Data\CustomerInterface $customer,
         $password = null,
@@ -238,7 +238,7 @@ $httpHeaders->addHeaders([
    'Content-Type' => 'application/json'
 ]);
 </pre>
-<li><p>Open the <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/webapi.xml" target="_blank">Magento/Customer/etc/webapi.xml</a> configuration file and find the <a href="{{ site.mage2000url }}app/code/Magento/Customer/Api/CustomerRepositoryInterface.php" target="_blank">CustomerRepositoryInterface</a> interface with the <code>getList</code> method.</p></li>
+<li><p>Open the <a href="{{ site.mage2100url }}app/code/Magento/Customer/etc/webapi.xml" target="_blank">Magento/Customer/etc/webapi.xml</a> configuration file and find the <a href="{{ site.mage2100url }}app/code/Magento/Customer/Api/CustomerRepositoryInterface.php" target="_blank">CustomerRepositoryInterface</a> interface with the <code>getList</code> method.</p></li>
 <li><p>Set the headers, URI and method to a request object. Use URI <code>/V1/customers/search</code> and method <code>GET</code> values. Also, the <code>searchCriteria</code> parameter should be used to complete the Customer Search query. See <a href="http://devdocs.magento.com/guides/v2.0/get-started/usage.html" target="_blank">searchCriteria usage</a>.</p></li>
 <pre>
 $request = new \Zend\Http\Request();
@@ -268,4 +268,4 @@ $response = $client->send($request);
 </ol>
 
 <h2>Next step</h2>
-<p>Run the web API call through a <a href="{{ site.gdeurl }}get-started/gs-curl.html">cURL command</a> or a REST client.</p>
+<p>Run the web API call through a <a href="{{ site.gdeurl21 }}get-started/gs-curl.html">cURL command</a> or a REST client.</p>

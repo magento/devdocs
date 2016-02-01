@@ -54,7 +54,7 @@ The following components are involved in the indexing process:
 			<th>Description</th>
 		</tr>
 	<tr>
-		<td><a href="{{ site.mage2000url }}app/code/Magento/Indexer" target="_blank">Magento_Indexer</a></td>
+		<td><a href="{{ site.mage2100url }}app/code/Magento/Indexer" target="_blank">Magento_Indexer</a></td>
 		<td>Implements:<ul>
 <li>indexer declaration</li>
 <li>indexer running</li>
@@ -62,7 +62,7 @@ The following components are involved in the indexing process:
 <li>indexer status</li></ul></td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Mview" target="_blank">Magento\Framework\Mview</a></td>
+		<td><a href="{{ site.mage2100url }}lib/internal/Magento/Framework/Mview" target="_blank">Magento\Framework\Mview</a></td>
 		<td><ul>
 <li>Allows tracking database changes for a certain entity (product, category and so on) and running change handler.</li>
 <li>Emulates the <a href="http://en.wikipedia.org/wiki/Materialized_view" target="_blank">materialized view</a> technology for MySQL using triggers and separate materialization process (provides executing PHP code instead of SQL queries, which allows materializing multiple queries).</li></ul></td>
@@ -124,8 +124,8 @@ You can also reindex from the <a href="#m2devgde-indexing-commandline">command l
 <h3 id="m2devgde-indexing-how">How to reindex</h3>
 You can reindex in any of the following ways:
 
-*	Using a <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-bkg">cron job</a> (preferred because indexing runs every minute)
-*	Using the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex">`magento indexer:reindex [indexer]`</a> command, which reindexes selected indexers, or all indexers, one time only
+*	Using a <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-bkg">cron job</a> (preferred because indexing runs every minute)
+*	Using the <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex">`magento indexer:reindex [indexer]`</a> command, which reindexes selected indexers, or all indexers, one time only
 
 <h2 id="m2devgde-indexing-outofbox">Magento indexers</h2>
 Out of the box the Magento system has the following indexers implemented:
@@ -141,49 +141,49 @@ Out of the box the Magento system has the following indexers implemented:
 	<tr>
 		<td>Category products</td>
 		<td>catalog_category_product</td>
-		<td><a href="{{ site.mage2000url }}app/code/Magento/Catalog/Model/Indexer/Category/Flat.php" target="_blank">Magento\Catalog\Model\Indexer\Category\Flat</a></td>
+		<td><a href="{{ site.mage2100url }}app/code/Magento/Catalog/Model/Indexer/Category/Flat.php" target="_blank">Magento\Catalog\Model\Indexer\Category\Flat</a></td>
 		<td>Creates category/products association</td>
 	</tr>
 	<tr>
 		<td>Product categories</td>
 		<td>catalog_product_category</td>
-		<td><a href="{{ site.mage2000url }}app/code/Magento/Catalog/Model/Indexer/Product/Flat.php" target="_blank">Magento\Catalog\Model\Indexer\Product\Flat</a></td>
+		<td><a href="{{ site.mage2100url }}app/code/Magento/Catalog/Model/Indexer/Product/Flat.php" target="_blank">Magento\Catalog\Model\Indexer\Product\Flat</a></td>
 		<td>Creates category/products association</td>
 	</tr>
 	<tr>
 		<td>Product price</td>
 		<td>catalog_product_price</td>
-		<td><a href="{{ site.mage2000url }}app/code/Magento/Catalog/Model/Indexer/Product/Price.php" target="_blank">Magento\Catalog\Model\Indexer\Product\Price</a></td>
+		<td><a href="{{ site.mage2100url }}app/code/Magento/Catalog/Model/Indexer/Product/Price.php" target="_blank">Magento\Catalog\Model\Indexer\Product\Price</a></td>
 		<td>Pre-calculates product prices</td>
 	</tr>
 	<tr>
 		<td>Product entity attribute value</td>
 		<td>catalog_product_attribute</td>
-		<td><a href="{{ site.mage2000url }}app/code/Magento/Catalog/Model/Indexer/Category/Product.php" target="_blank">Magento\Catalog\Model\Indexer\Category\Product</a></td>
+		<td><a href="{{ site.mage2100url }}app/code/Magento/Catalog/Model/Indexer/Category/Product.php" target="_blank">Magento\Catalog\Model\Indexer\Category\Product</a></td>
 		<td>Reorganizes the EAV product structure to flat structure</td>
 	</tr>
 	<tr>
 		<td>Stock</td>
 		<td>cataloginventory_stock</td>
-		<td><a href="{{ site.mage2000url }}app/code/Magento/CatalogInventory/Model/Indexer/Stock.php" target="_blank">Magento\CatalogInventory\Model\Indexer\Stock</a></td>
+		<td><a href="{{ site.mage2100url }}app/code/Magento/CatalogInventory/Model/Indexer/Stock.php" target="_blank">Magento\CatalogInventory\Model\Indexer\Stock</a></td>
 		<td></td>
 	</tr>
 	<tr>
 		<td>Catalog rule product</td>
 		<td>catalogrule_rule</td>
-		<td><a href="{{ site.mage2000url }}app/code/Magento/CatalogRule/Model/Indexer/Rule/RuleProductIndexer.php" target="_blank">Magento\CatalogRule\Model\Indexer\Rule\RuleProductIndexer</a></td>
+		<td><a href="{{ site.mage2100url }}app/code/Magento/CatalogRule/Model/Indexer/Rule/RuleProductIndexer.php" target="_blank">Magento\CatalogRule\Model\Indexer\Rule\RuleProductIndexer</a></td>
 		<td></td>
 	</tr>
 	<tr>
 		<td>Catalog product rule</td>
 		<td>catalogrule_product</td>
-		<td><a href="{{ site.mage2000url }}app/code/Magento/CatalogRule/Model/Indexer/Product/ProductRuleIndexer.php" target="_blank">Magento\CatalogRule\Model\Indexer\Product\ProductRuleIndexer</a></td>
+		<td><a href="{{ site.mage2100url }}app/code/Magento/CatalogRule/Model/Indexer/Product/ProductRuleIndexer.php" target="_blank">Magento\CatalogRule\Model\Indexer\Product\ProductRuleIndexer</a></td>
 		<td></td>
 	</tr>
 	<tr>
 		<td>Catalog search</td>
 		<td>catalogsearch_fulltext</td>
-		<td><a href="{{ site.mage2000url }}app/code/Magento/CatalogSearch/Model/Indexer/Fulltext.php" target="_blank">Magento\CatalogSearch\Model\Indexer\Fulltext</a></td>
+		<td><a href="{{ site.mage2100url }}app/code/Magento/CatalogSearch/Model/Indexer/Fulltext.php" target="_blank">Magento\CatalogSearch\Model\Indexer\Fulltext</a></td>
 		<td></td>
 	</tr>
 
@@ -202,7 +202,7 @@ There are more details about each of these in the following paragraphs.
 
 <h3 id="m2devgde-indexing-customlogic">Custom indexer logic</h3>
 
-Your custom indexer class should implement <a href="{{ site.mage2000url }}app/code/Magento/Indexer/" target="_blank">\Magento\Indexer\ </a>, and the indexer should be able to perform three types of operations:
+Your custom indexer class should implement <a href="{{ site.mage2100url }}app/code/Magento/Indexer/" target="_blank">\Magento\Indexer\ </a>, and the indexer should be able to perform three types of operations:
 
 *	row reindex: processing a single entry from a dictionary; responsibility of `executeRow($id)`
 *	list reindex: processing a set of dictionary entries; responsibility of `executeList($ids)`, where `$ids` is an array of entity IDs
@@ -218,7 +218,7 @@ In the the `etc` directory of your module, add `indexer.xml` with the following:
 *	indexer description
 *	indexer view ID
 
-<a href="{{ site.mage2000url }}app/code/Magento/Catalog/etc/indexer.xml" target="_blank">Example</a>
+<a href="{{ site.mage2100url }}app/code/Magento/Catalog/etc/indexer.xml" target="_blank">Example</a>
 
 All indexers related to a module should be declared in one file.
 
@@ -231,7 +231,7 @@ Add the the `mview.xml` configuration file in the `etc` module directory, where 
 *	the database tables the indexer tracks
 *	what column data is sent to the indexer
 
-<a href="{{ site.mage2000url }}app/code/Magento/Catalog/etc/mview.xml" target="_blank">Example</a>
+<a href="{{ site.mage2100url }}app/code/Magento/Catalog/etc/mview.xml" target="_blank">Example</a>
 
 All Mview declarations related to a module should be declared in one file.
 

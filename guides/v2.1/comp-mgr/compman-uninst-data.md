@@ -27,4 +27,4 @@ Click one of the following:
 
 	You can click **Back** to back up the database first if you did not do so already.
 
-Continue with <a href="{{ site.gdeurl }}comp-mgr/compman-uninst-final.html">Step 4. Uninstall</a>
+Continue with <a href="{{ site.gdeurl21 }}comp-mgr/compman-uninst-final.html">Step 4. Uninstall</a>

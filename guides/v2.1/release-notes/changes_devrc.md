@@ -19,9 +19,9 @@ redirect_from: /guides/v1.0/release-notes/changes_devrc.html
 <h2 id="change-devrc-overview">Overview of the Developer RC release</h2>
 These Release Notes discuss important changes in this release. For additional details, see the following:
 
-*	<a href="{{ site.mage2000url }}CHANGELOG.md#0740-beta1" target="_blank">Changelog</a>
-*	<a href="{{ site.gdeurl }}release-notes/known-issues.html">Known issues</a>
-*	<a href="{{ site.gdeurl }}release-notes/bk-release-notes.html">Release highlights</a>
+*	<a href="{{ site.mage2100url }}CHANGELOG.md#0740-beta1" target="_blank">Changelog</a>
+*	<a href="{{ site.gdeurl21 }}release-notes/known-issues.html">Known issues</a>
+*	<a href="{{ site.gdeurl21 }}release-notes/bk-release-notes.html">Release highlights</a>
 
 <h2 id="change-devrc-unit">Unit tests now located in module directories</h2>
 For you to run PHPUnit-based tests, you must first run `<your Magento root dir>/composer install` to download the PHPUnit component and create the `vendor/bin/phpunit` executable. 
@@ -90,7 +90,7 @@ This change applies to the following situation only:
 </div>
 {% include install/versionbeta10upgr.html %}
 
-For details, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html#instgde-install-magento-updatebeta11">Updating to version 0.42.0-beta11 or later from beta10 or earlier</a>
+For details, see <a href="{{ site.gdeurl21 }}install-gde/install/install-cli-install.html#instgde-install-magento-updatebeta11">Updating to version 0.42.0-beta11 or later from beta10 or earlier</a>
 
 <h2 id="change-devbeta-sampledata">Magento sample data is available only if you update composer.json</h2>
 
@@ -102,5 +102,5 @@ To install the optional Magento 2 sample data, you must update `composer.json`, 
 <p>If you're installing sample data for an earlier version, see <a href="#installgde-install-sample-old">Sample data for earlier Magento versions</a>.</p></span>
 </div>
 
-See <a href="{{ site.gdeurl }}/install-gde/install/sample-data.html">Enable optional Magento sample data</a>.
+See <a href="{{ site.gdeurl21 }}/install-gde/install/sample-data.html">Enable optional Magento sample data</a>.
 

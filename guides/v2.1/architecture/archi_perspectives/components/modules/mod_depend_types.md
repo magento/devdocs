@@ -79,6 +79,6 @@ You can build dependencies between classes in the application layer, but these c
 
 <h2 id="m2arch-module-related">Related topics</h2>
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/components/modules/mod_depend.html">Module dependencies</a>
+<a href="{{ site.gdeurl21 }}architecture/archi_perspectives/components/modules/mod_depend.html">Module dependencies</a>
 
 

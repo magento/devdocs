@@ -22,7 +22,7 @@ The Listing component can use the Inline Edit if it is configured and enabled.
 
 ####Implementation of Inline Edit
 
-Currently Inline Edit is not presented in definition.xml. It is used as a plugin for the Listing component. It can be configured in <a href="{{ site.gdeurl }}ui-library/ui-definition.html">definitions.xml</a> if necessary.
+Currently Inline Edit is not presented in definition.xml. It is used as a plugin for the Listing component. It can be configured in <a href="{{ site.gdeurl21 }}ui-library/ui-definition.html">definitions.xml</a> if necessary.
 
 To enable Inline Edit component for the grid, it is declared as a plugin for Listing component:
 

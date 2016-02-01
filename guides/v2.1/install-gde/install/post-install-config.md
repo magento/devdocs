@@ -30,15 +30,15 @@ Immediately after finishing your Magento installation, set up a *crontab* for th
 After installation, we recommend the following:
 
 *	Make sure your file ownership and permissions are set properly
-*	We strongly recommend <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-adminurl.html">changing the default Admin URL</a> from `admin` to something else
-*	Make sure the <a href="{{ site.gdeurl }}config-guide/secy/secy-xframe.html">`X-Frame-Option` HTTP header</a> is set properly.
-*	Take precautions against cross-site scripting (XSS) by <a href="{{ site.gdeurl }}frontend-dev-guide/templates/template-security.html">securing your templates</a>
+*	We strongly recommend <a href="{{ site.gdeurl21 }}install-gde/install/cli/install-cli-adminurl.html">changing the default Admin URL</a> from `admin` to something else
+*	Make sure the <a href="{{ site.gdeurl21 }}config-guide/secy/secy-xframe.html">`X-Frame-Option` HTTP header</a> is set properly.
+*	Take precautions against cross-site scripting (XSS) by <a href="{{ site.gdeurl21 }}frontend-dev-guide/templates/template-security.html">securing your templates</a>
 <!-- Set up roles and restricted users (Admin) -->
 
 <h2 id="post-install-rewrites">Enable Apache server rewrites</h2>
 If you use the Apache web server, you must enable server rewrites for pages to display properly. Otherwise, you'll see pages without styles and other issues.
 
-<a href="{{ site.gdeurl }}install-gde/prereq/apache.html#apache-help-rewrite">Section on Apache server rewrites</a>
+<a href="{{ site.gdeurl21 }}install-gde/prereq/apache.html#apache-help-rewrite">Section on Apache server rewrites</a>
 
 <h2 id="post-install-server">Server settings</h2>
 This section briefly discusses settings we recommend you consider for the server on which Magento runs. Some of these settings are not directly related to Magento; these are provided as suggestions only.
@@ -79,7 +79,7 @@ Magento requires an e-mail server. We don't recommend a particular server but yo
 
 You can configure the following only if you use Magento EE:
 
-*	<a href="{{ site.gdeurl }}config-guide/solr/solr-overview.html">Apache Solr search</a>
-*	<a href="{{ site.gdeurl }}config-guide/multi-master/multi-master.html">Split databases for checkout, order management, and other Magento database tables</a>
-*	<a href="{{ site.gdeurl }}config-guide/mq/rabbitmq-overview.html">Message queues</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/solr/solr-overview.html">Apache Solr search</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/multi-master/multi-master.html">Split databases for checkout, order management, and other Magento database tables</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/mq/rabbitmq-overview.html">Message queues</a>
 

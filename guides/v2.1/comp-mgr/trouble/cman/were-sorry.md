@@ -24,9 +24,9 @@ See one of the following sections for possible solutions:
 You might not have entered your authentication keys in the Magento Admin.
 
 #### Solution
-Enter your <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_auth-token.html">authentication keys</a> in the Admin. Try your upgrade again.
+Enter your <a href="{{ site.gdeurl21 }}comp-mgr/prereq/prereq_auth-token.html">authentication keys</a> in the Admin. Try your upgrade again.
 
-If that doesn't work, try generating <a href="{{ site.gdeurl }}install-gde/prereq/connect-auth.html">new authentication keys</a> and enter those in the Admin. Then try your upgrade again.
+If that doesn't work, try generating <a href="{{ site.gdeurl21 }}install-gde/prereq/connect-auth.html">new authentication keys</a> and enter those in the Admin. Then try your upgrade again.
 
 ### Problem: the updater application isn't initialized {#updater}
 In some cases (especially if you downloaded the Magento software from <a href="https://packagist.org/" target="_blank">packagist</a>), the updater application might not be initialized. (A common way for this to happen is to not specify our `https://repo.magento.com` repository in the `composer create-project` command.)
@@ -36,7 +36,7 @@ The updater application uses a cron job to run the upgrade; if it's not initiali
 #### Solution
 Modify Magento's `composer.json` to reference the `https://repo.magento.com` repository and run `composer install` in the updater's root directory to resolve dependencies and initialize it as follows:
 
-1.	Log in to your Magento server as the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+1.	Log in to your Magento server as the <a href="{{ site.gdeurl21 }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
 2.	Change to your Magento installation directory.
 3.	Back up your existing `composer.json`:
 
@@ -72,7 +72,7 @@ If you downloaded a compressed archive, there might have been missing `.gitignor
 #### Solution
 To solve this issue:
 
-1.	Log in to your Magento server as the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+1.	Log in to your Magento server as the <a href="{{ site.gdeurl21 }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
 2.	Change to your Magento installation directory.
 3.	Run the following commands in the order shown:
 

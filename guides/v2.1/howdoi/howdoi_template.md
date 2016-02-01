@@ -41,7 +41,7 @@ Format the link as follows:
 <img href="{{ site.baseurl }}common/images/FILENAME.png" alt="Alt text for the image">
 
 <!-- Sample HTML cross-reference; don't worry too much about these, we can add or edit them -->
-<!-- {{ site.gdeurl }} is a site variable that is defined in _config.yml; it's the base path to the devdocs guides/v2.0 directory -->
+<!-- {{ site.gdeurl21 }} is a site variable that is defined in _config.yml; it's the base path to the devdocs guides/v2.0 directory -->
 
 
 <!-- Sample 4 x 3 table -->

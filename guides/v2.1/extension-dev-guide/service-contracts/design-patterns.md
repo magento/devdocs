@@ -54,7 +54,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-pattern
    <li>Management interfaces</li>
    <li>Metadata interfaces</li>
 </ul>
-<p>For file names and coding standards, follow the defined <a href="{{ site.gdeurl }}coding-standards/code-standard-php.html">PHP coding standards</a>.</p>
+<p>For file names and coding standards, follow the defined <a href="{{ site.gdeurl21 }}coding-standards/code-standard-php.html">PHP coding standards</a>.</p>
 <p>Place service interfaces in the top-level <b>Api</b> directory for a module.</p>
 <h3 id="repository-interfaces">Repository interfaces</h3>
 <p>Repository interfaces provide access to persistent data entities.</p>
@@ -141,8 +141,8 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-pattern
 </table>
 <h3 id="related-topics">Related topics</h3>
 <ul>
-   <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
-   <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a>
+   <li><a href="{{ site.gdeurl21 }}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
+   <li><a href="{{ site.gdeurl21 }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a>
    </li>
 </ul>
 

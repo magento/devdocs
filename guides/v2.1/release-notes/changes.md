@@ -89,7 +89,7 @@ This change applies to the following situation only:
 </div>
 {% include install/versionbeta10upgr.html %}
 
-For details, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html#instgde-install-magento-updatebeta11">Updating to version 0.42.0-beta11 or later from beta10 or earlier</a>
+For details, see <a href="{{ site.gdeurl21 }}install-gde/install/install-cli-install.html#instgde-install-magento-updatebeta11">Updating to version 0.42.0-beta11 or later from beta10 or earlier</a>
 
 <h2 id="change-devbeta-sampledata">Magento sample data is available only if you update composer.json</h2>
 
@@ -101,11 +101,11 @@ To install the optional Magento 2 sample data, you must update `composer.json`, 
 <p>If you're installing sample data for an earlier version, see <a href="#installgde-install-sample-old">Sample data for earlier Magento versions</a>.</p></span>
 </div>
 
-See <a href="{{ site.gdeurl }}/install-gde/install/sample-data.html">Enable optional Magento sample data</a>.
+See <a href="{{ site.gdeurl21 }}/install-gde/install/sample-data.html">Enable optional Magento sample data</a>.
 
 <h2 id="admin">Improvements to the Magento Admin and Setup Wizard</h2>
-*	You can enable or disable modules when you install the Magento 2 software using either the <a href="{{ site.gdeurl }}install-gde/install/install-web.html#instgde-install-magento-web-step4
-">Setup Wizard</a> or <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-enable.html">command line</a>.
+*	You can enable or disable modules when you install the Magento 2 software using either the <a href="{{ site.gdeurl21 }}install-gde/install/install-web.html#instgde-install-magento-web-step4
+">Setup Wizard</a> or <a href="{{ site.gdeurl21 }}install-gde/install/cli/install-cli-subcommands-enable.html">command line</a>.
 *    Compressed and resized images
 *    Added new base styles for the Admin re-design
 *    Added WAI-ARIA attributes are to the Search Autocomplete on the storefront

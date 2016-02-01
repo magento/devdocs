@@ -175,7 +175,7 @@ Following are some examples of various types and what they would look like in th
                   Required. Referenced resource. Valid values are <code>self</code>, <code>anonymous</code>, or a Magento resource, such as <code>Magento_Customer::group</code>.
                </p>
                <strong>Note</strong>:The Magento web API framework enables guest users to access resources that are configured with <code>anonymous</code> permission.</p>
-                  <p>Any user that the framework cannot authenticate through existing <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication.html">authentication
+                  <p>Any user that the framework cannot authenticate through existing <a href="{{ site.gdeurl21 }}get-started/authentication/gs-authentication.html">authentication
                      mechanisms</a> is considered a guest user.</p>
                   
             </li>

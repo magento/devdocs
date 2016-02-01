@@ -76,4 +76,4 @@ To extract the archive:
 	<img src="{{ site.baseurl }}common/images/install-merch_file-manager-after.png" width="750px">
 
 #### Next step
-<a href="{{ site.gdeurl }}install-gde/install/hosted/hosted_install.html">Install the Magento software</a>
+<a href="{{ site.gdeurl21 }}install-gde/install/hosted/hosted_install.html">Install the Magento software</a>

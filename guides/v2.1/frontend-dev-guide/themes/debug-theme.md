@@ -46,7 +46,7 @@ For example, using a browser debug tool, you can define that the minicart block 
 
 A search through the app directory for occurrences of "minicart-wrapper" in `.phtml` files returns the `app/code/Magento/Checkout/view/frontend/templates/cart/minicart.phtml` template.
 
-Since it is not recommended to edit the default files, you need to add overriding files if you want to customize the template. For details about overriding templates please refer to <a href="{{site.gdeurl}}frontend-dev-guide/templates/template-walkthrough.html">Customizing Theme Template</a>.
+Since it is not recommended to edit the default files, you need to add overriding files if you want to customize the template. For details about overriding templates please refer to <a href="{{site.gdeurl21}}frontend-dev-guide/templates/template-walkthrough.html">Customizing Theme Template</a>.
 
 
 <h2 id="debug-theme-layout" >Locate layouts</h2>
@@ -73,7 +73,7 @@ Let's search for the layout following the fallback scheme:
 2. We can find the info about parent theme in a theme configuration file `theme.xml`, the parent theme name is specified there in the `<parent></parent>` node. In the `app/design/frontend/Magento/blank/theme.xml` there's no `<parent>` node, which means the Blank theme has no parents. So we should search on the next fallback level which is the module layouts.
 3. The Magento_Checkout layouts are located in `app/code/Magento/Checkout/view/frontend/layout/`. After searching this directory for occurrences of "`minicart.phtml`", we define that the layout we are looking for is `app/code/Magento/Checkout/view/frontend/layout/default.xml`.
 
-After you located the necessary layout file, you can create your custom layout file with the corresponding name in your theme folder to add <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> or <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-override.html" target="_blank">overriding</a> content. Please see <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html">Customizing Theme Layouts</a> for more details.
+After you located the necessary layout file, you can create your custom layout file with the corresponding name in your theme folder to add <a href="{{site.gdeurl21}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> or <a href="{{site.gdeurl21}}frontend-dev-guide/layouts/layout-override.html" target="_blank">overriding</a> content. Please see <a href="{{site.gdeurl21}}frontend-dev-guide/layouts/layout-overview.html">Customizing Theme Layouts</a> for more details.
 
 
 <h2 id="debug-theme-style">Locate styles</h2>
@@ -98,4 +98,4 @@ So, let's search for occurrences of "`minicart-wrapper`" in according to the fal
 1. Search in `app/design/frontend/Magento/blank/web/css`, the search returns no results.
 2. Search in `app/design/frontend/Magento/blank/Magento_Checkout/web/css`.The "`minicart-wrapper`" style is defined in `app/design/frontend/Magento/blank/Magento_Checkout/web/css/source/module/_minicart.less`
 
-<p>After you determine which <code>.css</code> or <code>.less</code> file defines the class, you can override the default class definition in your custom <code>.css</code> or <code>.less</code> files.  For details, see <a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/css-themes.html">CSS in themes</a>.</p>
+<p>After you determine which <code>.css</code> or <code>.less</code> file defines the class, you can override the default class definition in your custom <code>.css</code> or <code>.less</code> files.  For details, see <a href="{{ site.gdeurl21 }}frontend-dev-guide/css-topics/css-themes.html">CSS in themes</a>.</p>

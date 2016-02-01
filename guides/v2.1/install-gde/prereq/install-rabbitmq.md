@@ -19,8 +19,8 @@ github_link: install-gde/prereq/install-rabbitmq.md
 *	<a href="#ubuntu-install">Install on Ubuntu</a>
 *	<a href="#centos-install">Install on CentOS</a>
 *	<a href="#config">Configure RabbitMQ</a>
-*	<a href="{{ site.gdeurl }}config-guide/mq/rabbitmq-overview.html">Message queue overview</a>
-*	<a href="{{ site.gdeurl }}config-guide/mq/config-mq.html">Configure message queues</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/mq/rabbitmq-overview.html">Message queue overview</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/mq/config-mq.html">Configure message queues</a>
 
 
 <h2 id="overview">RabbitMQ Overview</h2>
@@ -38,7 +38,7 @@ The message queue system must be established before you install Magento. The bas
 3. Configure your message queue topology.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>A basic message queue system can be implemented on EE without using RabbitMQ. See <a href="{{ site.gdeurl }}config-guide/mq/manage-mysql.html">Configure message queues</a></p>
+  <p>A basic message queue system can be implemented on EE without using RabbitMQ. See <a href="{{ site.gdeurl21 }}config-guide/mq/manage-mysql.html">Configure message queues</a></p>
 </div>
 
 
@@ -119,13 +119,13 @@ where:
 
 #### Related topics
 
-*	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Installing optional software</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Apache</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP 5.5 or 5.4&mdash;CentOS</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">Configuring security options</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Ways to install the Magento software</a>
-*	<a href="{{ site.gdeurl }}config-guide/mq/rabbitmq-overview.html">Message queue overview</a>
-*	<a href="{{ site.gdeurl }}config-guide/mq/config-mq.html">Configure message queues</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/prereq/optional.html">Installing optional software</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/prereq/apache.html">Apache</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/prereq/php-centos.html">PHP 5.5 or 5.4&mdash;CentOS</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/prereq/security.html">Configuring security options</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/install/pre-install.html">Ways to install the Magento software</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/mq/rabbitmq-overview.html">Message queue overview</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/mq/config-mq.html">Configure message queues</a>
 
 

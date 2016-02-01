@@ -14,7 +14,7 @@ redirect_from: /guides/v1.0/architecture/view/page-assets.html
 An _asset_ is a reference to a certain resource linked to an HTML page; that is, references to scripts, stylesheets, RSS feeds, and so on using `<head/>`, `<img/>`, `<object/>` elements.
 
 This topic discusses how to work with Magento page assets (particularly interfaces and classes). The article is mostly aimed at developers
-who have solid experience with PHP and are familiar with <a href="{{ site.gdeurl }}architecture/view/xml-schema-layout.html">Magento XML layouts</a>.
+who have solid experience with PHP and are familiar with <a href="{{ site.gdeurl21 }}architecture/view/xml-schema-layout.html">Magento XML layouts</a>.
 
 <h2 id="m2devgde-page-assets-interf">Asset interfaces</h2>
 
@@ -33,7 +33,7 @@ An asset is a reference to a certain resource linked to an HTML page. An asset i
 * Mergeable asset&mdash;a "marker" abstraction for local assets, indicating that their contents may be merged
 
 These types are represented as interfaces in the
-<a href="{{ site.mage2000url}}lib/internal/Magento/Framework/View" target="_blank">Magento/Framework/View</a> library:
+<a href="{{ site.mage2100url}}lib/internal/Magento/Framework/View" target="_blank">Magento/Framework/View</a> library:
 
 <p><img src="{{ site.baseurl }}common/images/view_asset-interfaces.png" alt="Asset interfaces"></p>
 
@@ -52,7 +52,7 @@ This section discusses the following topics:
 
 <h3 id="m2devgde-page-assets-imp-no-info">Assets without remote or local information</h3>
 
-<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/Asset/Remote.php" target="_blank">\Magento\Framework\View\Asset\Remote</a> represents resources for which only the URL and content type are known, and which might reside in the local file system, or on a remote server. The class diagram for this asset implementation follows:
+<a href="{{ site.mage2100url }}lib/internal/Magento/Framework/View/Asset/Remote.php" target="_blank">\Magento\Framework\View\Asset\Remote</a> represents resources for which only the URL and content type are known, and which might reside in the local file system, or on a remote server. The class diagram for this asset implementation follows:
 
 <p><img src="{{ site.baseurl }}common/images/view_asset-interface_no-local.png" alt="Assets with no remote or local information"></p>
 
@@ -60,7 +60,7 @@ It accepts URL and `content-type` in the constructor and serves only as a value 
 
 <h3 id="m2devgde-page-assets-imp-local">Local assets</h3>
 
-<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/Asset/File.php" target="_blank">\Magento\Framework\View\Asset\File</a> represents resources that reside in the local file system and for which you know the absolute file system path and an invariant "file path".
+<a href="{{ site.mage2100url }}lib/internal/Magento/Framework/View/Asset/File.php" target="_blank">\Magento\Framework\View\Asset\File</a> represents resources that reside in the local file system and for which you know the absolute file system path and an invariant "file path".
 
 This kind of asset accommodates arbitrary static view files that might be embedded in, or referred from, a web page. That might include anything from user-uploaded images to CSS files provided in Magento themes. Because these assets are available locally, the Magento software can manipulate them in many ways; for example, transform the content, merge assets, or substitute with other assets.
 
@@ -77,13 +77,13 @@ Its asset class diagram follows:
 
 Magento supports the following implementations of context for the Asset\File object:
 
-* <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/Asset/File/Context.php" target="_blank">\Magento\Framework\View\Asset\File\Context</a>: Basic implementation that has a bare minimum of base URL and arbitrary path.
+* <a href="{{ site.mage2100url }}lib/internal/Magento/Framework/View/Asset/File/Context.php" target="_blank">\Magento\Framework\View\Asset\File\Context</a>: Basic implementation that has a bare minimum of base URL and arbitrary path.
 
 	Using this context and, for example, a "media" base URL, this asset generates the following URL:
 
 	<pre>http://example.com/pub/media/arbitrary_path/product/placeholder.jpg</pre>
 
-* <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/Asset/File/FallbackContext.php" target="_blank">\Magento\Framework\View\Asset\File\FallbackContext</a>: Extended implementation used for static view files that are subject to view files fallback.
+* <a href="{{ site.mage2100url }}lib/internal/Magento/Framework/View/Asset/File/FallbackContext.php" target="_blank">\Magento\Framework\View\Asset\File\FallbackContext</a>: Extended implementation used for static view files that are subject to view files fallback.
 
 	The URLs generated with this kind of context include fully qualified information necessary for files fallback:
 
@@ -109,7 +109,7 @@ This section discusses the following ways to work with view assets:
 
 <h3 id="m2devgde-page-assets-static-manip-xml">Use layout XML to manipulate assets</h3>
 
-Although you can use the API to manipulate assets, frontend developers should use <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html">layout XML instructions</a> to register assets.
+Although you can use the API to manipulate assets, frontend developers should use <a href="{{ site.gdeurl21 }}frontend-dev-guide/layouts/xml-instructions.html">layout XML instructions</a> to register assets.
 
 This method is preferred because it enables you to implement particular discriminators for assets, like browser matching and conditional loading.
 
@@ -170,8 +170,8 @@ That is why when you use PHP to work with assets, we recommended you add assets 
 
 The following classes implement Magento asset collections:
 
-* <a href="{{ site.mage2000url" }}lib/internal/Magento/Framework/View/Asset/Collection.php" target="_blank">\Magento\Framework\View\Asset\Collection</a>&mdash;a basic collection that only stores references to the asset objects; is integrated to Magento application as a shared object.
-* <a href="{{ site.mage2000url" }}lib/internal/Magento/Framework/View/Asset/GroupedCollection.php" target="_blank">\Magento\Framework\View\Asset\GroupedCollection</a>&mdash;an extended collection that also implements asset grouping by properties (for example by content type)
+* <a href="{{ site.mage2100url" }}lib/internal/Magento/Framework/View/Asset/Collection.php" target="_blank">\Magento\Framework\View\Asset\Collection</a>&mdash;a basic collection that only stores references to the asset objects; is integrated to Magento application as a shared object.
+* <a href="{{ site.mage2100url" }}lib/internal/Magento/Framework/View/Asset/GroupedCollection.php" target="_blank">\Magento\Framework\View\Asset\GroupedCollection</a>&mdash;an extended collection that also implements asset grouping by properties (for example by content type)
 
 Asset collections enable you to:
 
@@ -191,4 +191,4 @@ For example, to add a local JavaScript or CSS file to the page output:
 
 #### Related topics
 
-* <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>
+* <a href="{{ site.gdeurl21 }}frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>

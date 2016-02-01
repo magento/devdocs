@@ -12,10 +12,10 @@ redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css_debug.html
 <h2>What's in this topic</h2>
 
 <p>
-The topic describes how the changes you make in stylesheets are applied in the client-side and server-side LESS <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">compilation modes</a>, and suggests the approaches and tools you can use to streamline the process of applying and debugging customizations. </p>
+The topic describes how the changes you make in stylesheets are applied in the client-side and server-side LESS <a href="{{site.gdeurl21}}frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">compilation modes</a>, and suggests the approaches and tools you can use to streamline the process of applying and debugging customizations. </p>
 
 ## Prerequisites 
-Make sure that you [set]({{site.gdeurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{site.gdeurl}}config-guide/bootstrap/magento-modes.html).
+Make sure that you [set]({{site.gdeurl21}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{site.gdeurl21}}config-guide/bootstrap/magento-modes.html).
 
 <h2 id="css_debug_client">Styles debugging in client-side compilation mode</h2>
 
@@ -25,11 +25,11 @@ You can find the detailed information about the configuration and other options 
 
 In client-side compilation mode, most of the stylesheet customizations display immediately after you reload a page in a browser. 
 
-<span id="css_exception">There are certain types of changes</span>, that require you to clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory and trigger the compilation and <a href="{{site.gdeurl}}architecture/view/static-process.html#publish-static-view-files" target="_blank">publication</a> processes anew.
+<span id="css_exception">There are certain types of changes</span>, that require you to clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory and trigger the compilation and <a href="{{site.gdeurl21}}architecture/view/static-process.html#publish-static-view-files" target="_blank">publication</a> processes anew.
 
 This is required in the following cases:
 <ul>
-<li>If you change the <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms" target="_blank">root source files</a> that contain the <code>@magento-import</code> directive, or the <code>@import</code> directive where the imported file is specified without extension.</li>
+<li>If you change the <a href="{{site.gdeurl21}}frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms" target="_blank">root source files</a> that contain the <code>@magento-import</code> directive, or the <code>@import</code> directive where the imported file is specified without extension.</li>
 <li>If you rename, remove, or add a <code>.less</code> file imported with a <code>@magento-import</code> or <code>@import</code> directive but you did not correct the directives accordingly.</li>
 
 </ul>
@@ -107,7 +107,7 @@ Where the following notation is used:
 <code>&lt;language&gt;</code>: specified in the 'code_subtag' format, for example <code>en_US</code>. Only one locale can be specified here. To debug the theme with another locale, create one more theme declaration, having specified another value for <code>language</code>
 </li>
 <li>
-<code>&lt;path_to_file&gt;</code>: path to the root source file, relative to the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme/&gt;web</code> directory. You need to specify all <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms" target="_blank">root source files of the theme</a>. If your theme <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from a certain theme, and does not contain its own root source files, specify the root source files of the parent theme.
+<code>&lt;path_to_file&gt;</code>: path to the root source file, relative to the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme/&gt;web</code> directory. You need to specify all <a href="{{site.gdeurl21}}frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms" target="_blank">root source files of the theme</a>. If your theme <a href="{{site.gdeurl21}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from a certain theme, and does not contain its own root source files, specify the root source files of the parent theme.
 
 </li> 
 

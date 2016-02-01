@@ -18,5 +18,5 @@ redirect_from:
 
 ### Solution:
 
-Make sure you installed all required PHP extensions (<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">CentOS</a>, <a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">Ubuntu</a>). 
+Make sure you installed all required PHP extensions (<a href="{{ site.gdeurl21 }}install-gde/prereq/php-centos.html">CentOS</a>, <a href="{{ site.gdeurl21 }}install-gde/prereq/php-ubuntu.html">Ubuntu</a>). 
 

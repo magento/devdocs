@@ -19,9 +19,9 @@ redirect_from: /guides/v1.0/release-notes/changes_074-beta10.html
 <h2 id="rn-074b10-overview">Overview of the 0.74-beta10 release</h2>
 These Release Notes discuss important changes in this release. For additional details, see the following:
 
-*	<a href="{{ site.mage2000url }}CHANGELOG.md#0740-beta10" target="_blank">Changelog</a>
-*	<a href="{{ site.gdeurl }}release-notes/known-issues.html">Known issues</a>
-*	<a href="{{ site.gdeurl }}release-notes/bk-release-notes.html">Release highlights</a>
+*	<a href="{{ site.mage2100url }}CHANGELOG.md#0740-beta10" target="_blank">Changelog</a>
+*	<a href="{{ site.gdeurl21 }}release-notes/known-issues.html">Known issues</a>
+*	<a href="{{ site.gdeurl21 }}release-notes/bk-release-notes.html">Release highlights</a>
 
 <h2 id="rn-074b10-changes">Major changes in the 0.74-beta10 release</h2>
 We made the following changes in this release:
@@ -31,7 +31,7 @@ Upgraded the Zend Framework 2 components from 2.3.4 to 2.4.0
 
 <h3>Two deployment configuration files&mdash;config.php and env.php</h3>
 {% include install/deployment-config_upgrade.html %}
-<a href="{{ site.gdeurl }}config-guide/config/config-php.html">More information about the deployment configuration</a>
+<a href="{{ site.gdeurl21 }}config-guide/config/config-php.html">More information about the deployment configuration</a>
 
 <h2 id="rn-074b10-compat">Backward-compatible changes</h2>
 This section discusses the backward-compatible changes we made in this release.
@@ -262,7 +262,7 @@ In `app/code/Magento/Fedex/Model/Carrier.php` method `collectRates()`, changed p
 		method: `getRouteParamsResolver()`
 
 <h3 id="rn-074b10-giftmessage">Backward-incompatible changes in Magento_GiftMessage</h3>
-In <a href="{{ site.mage2000url }}app/code/Magento/GiftMessage/Helper/Message.php" target="_blank">\Magento\GiftMessage\Helper\Message</a>:
+In <a href="{{ site.mage2100url }}app/code/Magento/GiftMessage/Helper/Message.php" target="_blank">\Magento\GiftMessage\Helper\Message</a>:
 
 *	Renamed method `isMessagesAvailable` to `isMessagesAllowed`
 *	Removed method `getIsMessagesAvailable` because it was an alias for `isMessagesAvailable`
@@ -287,7 +287,7 @@ In <a href="{{ site.mage2000url }}app/code/Magento/GiftMessage/Helper/Message.ph
 	*	In method `_canUseMethod()`, changed parameter `\Magento\Quote\Model\Quote` to `\Magento\Quote\Api\Data\CartInterface`
 
 <h3 id="rn-074b10-quoteapi">Backward-incompatible changes in Magento_Quote</h3>
-*	In <a href="{{ site.mage2000url }}app/code/Magento/Quote/Api/CartItemRepositoryInterface.php" target="_blank">\Magento\Quote\Api\CartItemRepositoryInterface</a> and its implementation:
+*	In <a href="{{ site.mage2100url }}app/code/Magento/Quote/Api/CartItemRepositoryInterface.php" target="_blank">\Magento\Quote\Api\CartItemRepositoryInterface</a> and its implementation:
 
 	*	Removed method `delete`
 	*	Added methods `getListForCustomer`, `saveForCustomer`, and `deleteByIdForCustomer`
@@ -298,12 +298,12 @@ In <a href="{{ site.mage2000url }}app/code/Magento/GiftMessage/Helper/Message.ph
 
 *	In `app/code/Magento/Quote/Model/Resource/Quote/Address/Rate/Collection.php` method `__construct()`, changed parameter `\Magento\Quote\Model\Quote\Address\CarrierFactoryInterface` to `\Magento\Shipping\Model\CarrierFactoryInterface`
 
-In <a href="{{ site.mage2000url }}app/code/Magento/Quote/Api/CartManagementInterface.php" target="_blank">\Magento\Quote\Api\CartManagementInterface</a> and its implementation:
+In <a href="{{ site.mage2100url }}app/code/Magento/Quote/Api/CartManagementInterface.php" target="_blank">\Magento\Quote\Api\CartManagementInterface</a> and its implementation:
 
 *	Removed parameter `$storeId` for method `createEmptyCart`
 *	Added method `createEmptyCartForCustomer`
 
-Added the following classes or interfaces under namespace <a href="{{ site.mage2000url }}app/code/Magento/Quote/Api" target="_blank">Magento\Quote\Api</a>:
+Added the following classes or interfaces under namespace <a href="{{ site.mage2100url }}app/code/Magento/Quote/Api" target="_blank">Magento\Quote\Api</a>:
 
 *	`GuestBillingAddressManagementInterface`
 *	`GuestCartItemRepositoryInterface`
@@ -315,7 +315,7 @@ Added the following classes or interfaces under namespace <a href="{{ site.mage2
 *	`GuestShippingAddressManagementInterface`
 *	`GuestShippingMethodManagementInterface`
 
-Under namespace <a href="{{ site.mage2000url }}app/code/Magento/Quote/Model/GuestCart" target="_blank">Magento\Quote\Model\GuestCart</a>, added the following classes or implementations: 
+Under namespace <a href="{{ site.mage2100url }}app/code/Magento/Quote/Model/GuestCart" target="_blank">Magento\Quote\Model\GuestCart</a>, added the following classes or implementations: 
 
 *	`GuestBillingAddressManagement`
 *	`GuestCartItemRepository`
@@ -340,7 +340,7 @@ Other changes:
 *	Changed the constructor parameter for `\Magento\Webapi\Controller\Rest\ParamsOverrider`
 
 <h3 id="rn-074b10-sales-model">Backward-incompatible changes in Magento_Sales</h3>
-*	Removed a dependency on `gridAggregator` from <a href="{{ site.mage2000url }}app/code/Magento/Sales/Model" target="_blank">\Magento\Sales\Model</a> resource models, which changed the constructor signature in the following classes: 
+*	Removed a dependency on `gridAggregator` from <a href="{{ site.mage2100url }}app/code/Magento/Sales/Model" target="_blank">\Magento\Sales\Model</a> resource models, which changed the constructor signature in the following classes: 
 
 	*	`\Magento\Sales\Model\Resource\Order`
 	*	`\Magento\Sales\Model\Resource\Order\Item`
@@ -440,63 +440,63 @@ See the following table.
 			<th>Description of change</th>
 		</tr>
 	<tr>
-		<td><p><a href="{{ site.mage2000url }}app/code/Magento/Sales/Controller/Adminhtml/Order/Creditmemo/AddComment.php" target="_blank">\Magento\Sales\Controller\Adminhtml\ Order\Creditmemo\AddComment</a></p></td>
+		<td><p><a href="{{ site.mage2100url }}app/code/Magento/Sales/Controller/Adminhtml/Order/Creditmemo/AddComment.php" target="_blank">\Magento\Sales\Controller\Adminhtml\ Order\Creditmemo\AddComment</a></p></td>
 		<td><p>__construct()</p></td>
 		<td><p>Type of the third parameter changed from <code>Magento\Sales\Model\Order\Email\Sender\CreditmemoSender</code> to <code>Magento\Sales\Model\Order\Email\Sender\CreditmemoCommentSender</code></p></td>
 	</tr>
 	<!-- <tr>
-		<td><p><a href="{{ site.mage2000url }}app/code/Magento/Sales/Controller/Adminhtml/Order/Shipment/AddComment.php" target="_blank">\Magento\Sales\Controller\Adminhtml\ Order\Shipment\AddComment</a></p></td>
+		<td><p><a href="{{ site.mage2100url }}app/code/Magento/Sales/Controller/Adminhtml/Order/Shipment/AddComment.php" target="_blank">\Magento\Sales\Controller\Adminhtml\ Order\Shipment\AddComment</a></p></td>
 		<td><p>__construct()</p></td>
 		<td><p>Type of the third parameter was changed from <code>\Magento\Sales\Model\Order\Email\Sender\ShipmentSender</code> to <code>\Magento\Sales\Model\Order\Email\Sender\ShipmentCommentSender</code></p></td>
 	</tr> -->
 	<tr>
-		<td><p><a href="{{ site.mage2000url }}app/code/Magento/Sales/Model/Order/Email/Sender/OrderSender.php" target="_blank">\Magento\Sales\Model\Order\Email\Sender\OrderSender</a></p></td>
+		<td><p><a href="{{ site.mage2100url }}app/code/Magento/Sales/Model/Order/Email/Sender/OrderSender.php" target="_blank">\Magento\Sales\Model\Order\Email\Sender\OrderSender</a></p></td>
 		<td><p>send()</p></td>
 		<td><p>Arguments list changed to <code>Creditmemo $creditmemo</code>, <code>$forceSyncMode = false</code></p></td>
 	</tr>
 	<tr>
-		<td><p><a href="{{ site.mage2000url }}app/code/Magento/Sales/Model/Order/Email/Sender/OrderSender.php" target="_blank">\Magento\Sales\Model\Order\Email\Sender\OrderSender</a></p></td>
+		<td><p><a href="{{ site.mage2100url }}app/code/Magento/Sales/Model/Order/Email/Sender/OrderSender.php" target="_blank">\Magento\Sales\Model\Order\Email\Sender\OrderSender</a></p></td>
 		<td><p>send()</p></td>
 		<td><p>Arguments list changed to <code>Creditmemo $creditmemo</code>, <code>$forceSyncMode = false</code></p></td>
 	</tr>
 	<tr>
-		<td><p><a href="{{ site.mage2000url }}app/code/Magento/Sales/Model/Order/Email/Sender/CreditmemoSender.php" target="_blank">\Magento\Sales\Model\Order\Email\Sender\CreditmemoSender</a></p></td>
+		<td><p><a href="{{ site.mage2100url }}app/code/Magento/Sales/Model/Order/Email/Sender/CreditmemoSender.php" target="_blank">\Magento\Sales\Model\Order\Email\Sender\CreditmemoSender</a></p></td>
 		<td><p>send()</p></td>
 		<td><p>Arguments list changed to <code>Creditmemo $creditmemo</code>, <code>$forceSyncMode = false</code></p></td>
 	</tr>
 	<tr>
-		<td><p><a href="{{ site.mage2000url }}app/code/Magento/Sales/Model/Order/Email/Sender/InvoiceSender.php" target="_blank">\Magento\Sales\Model\Order\Email\Sender\InvoiceSender</a></p></td>
+		<td><p><a href="{{ site.mage2100url }}app/code/Magento/Sales/Model/Order/Email/Sender/InvoiceSender.php" target="_blank">\Magento\Sales\Model\Order\Email\Sender\InvoiceSender</a></p></td>
 		<td><p>send()</p></td>
 		<td><p>Arguments list changed to <code>Creditmemo $creditmemo</code>, <code>$forceSyncMode = false</code></p></td>
 	</tr>
 	<tr>
-		<td><p><a href="{{ site.mage2000url }}app/code/Magento/Sales/Model/Order/Email/Sender/ShipmentSender.php" target="_blank">\Magento\Sales\Model\Order\Email\Sender\ShipmentSender</a></p></td>
+		<td><p><a href="{{ site.mage2100url }}app/code/Magento/Sales/Model/Order/Email/Sender/ShipmentSender.php" target="_blank">\Magento\Sales\Model\Order\Email\Sender\ShipmentSender</a></p></td>
 		<td><p>send()</p></td>
 		<td><p>Arguments list changed to <code>Creditmemo $creditmemo</code>, <code>$forceSyncMode = false</code></p></td>
 	</tr>
 	<tr>
-		<td><p><a href="{{ site.mage2000url }}app/code/Magento/Reports/Model/Resource/Quote/Collection.php" target="_blank">\Magento\Reports\Model\Resource\Quote\Collection</a></p></td>
+		<td><p><a href="{{ site.mage2100url }}app/code/Magento/Reports/Model/Resource/Quote/Collection.php" target="_blank">\Magento\Reports\Model\Resource\Quote\Collection</a></p></td>
 		<td><p>getOrdersSubSelect</p></td>
 		<td><p>Renamed to <code>getOrdersData</code>.</p></td>
 	</tr>
 	<tr>
-		<td><p><a href="{{ site.mage2000url }}app/code/Magento/Reports/Model/Resource/Customer/Collection.php" target="_blank">\Magento\Reports\Model\Resource\Customer\Collection</a></p></td>
+		<td><p><a href="{{ site.mage2100url }}app/code/Magento/Reports/Model/Resource/Customer/Collection.php" target="_blank">\Magento\Reports\Model\Resource\Customer\Collection</a></p></td>
 		<td><p>joinOrders, addOrdersCount, addSumAvgTotals, orderByTotalAmount</p></td>
 		<td><p>Removed</code></p></td>
 	</tr>
 	<tr>
-		<td><p><a href="{{ site.mage2000url }}app/code/Magento/Reports/Model/Resource/Product/Collection.php" target="_blank">\Magento\Reports\Model\Resource\Product\Collection</a></p></td>
+		<td><p><a href="{{ site.mage2100url }}app/code/Magento/Reports/Model/Resource/Product/Collection.php" target="_blank">\Magento\Reports\Model\Resource\Product\Collection</a></p></td>
 		<td><p>addOrdersCount, addOrderedQty</p></td>
 		<td><p>Removed</code></p></td>
 	</tr>
 	<tr>
-		<td><p><a href="{{ site.mage2000url }}lib/internal/Magento/Framework/DB/Adapter/Pdo/Mysql.php" target="_blank">\Magento\Framework\DB\Adapter\Pdo\Mysql</a></p></td>
+		<td><p><a href="{{ site.mage2100url }}lib/internal/Magento/Framework/DB/Adapter/Pdo/Mysql.php" target="_blank">\Magento\Framework\DB\Adapter\Pdo\Mysql</a></p></td>
 		<td><p>addForeignKey</p></td>
 		<td><p>Removed argument <code>$onUpdate</code></p>
 			<p>Current list of arguments: <code>$fkName</code>, <code>$tableName</code>, <code>$columnName</code>, <code>$refTableName</code>, <code>$refColumnName</code>, <code>$onDelete = AdapterInterface::FK_ACTION_CASCADE</code>, <code>$purge = false</code>, <code>$schemaName = null</code>, <code>$refSchemaName = null</code></p></td>
 	</tr>
 	<tr>
-		<td><p><a href="{{ site.mage2000url }}app/code/Magento/Sales/Model/AbstractModel.php" target="_blank">\Magento\Sales\Model\AbstractModel</a></p></td>
+		<td><p><a href="{{ site.mage2100url }}app/code/Magento/Sales/Model/AbstractModel.php" target="_blank">\Magento\Sales\Model\AbstractModel</a></p></td>
 		<td><p>addForeignKey</p></td>
 		<td><p><code>abstract getStore</code>, <code>getCreatedAtDate</code>, <code>getCreatedAtStoreDate</code></p></td>
 	</tr>
@@ -554,10 +554,10 @@ In `app/code/Magento/Ups/Model/Carrier.php` method `collectRates()`, renamed par
 In `app/code/Magento/Usps/Model/Carrier.php` method `collectRates()`, renamed parameter `\Magento\Quote\Model\Quote\Address\RateRequest` to `\Magento\Framework\Object`
 
 <h3 id="rn-074b10-webapi">Backward-incompatible changes in Magento_Webapi and \Magento\Framework\Webapi</h3>
-*	Added an additional parameter `$methodsMapProcessor` for the constructor of <a href="{{ site.mage2000url }}app/code/Magento/Webapi/Controller/Soap/Request/Handler.php" target="_blank">Magento\Webapi\Controller\Soap\Request\Handler</a>
+*	Added an additional parameter `$methodsMapProcessor` for the constructor of <a href="{{ site.mage2100url }}app/code/Magento/Webapi/Controller/Soap/Request/Handler.php" target="_blank">Magento\Webapi\Controller\Soap\Request\Handler</a>
 *	Removed protected method `_formatRoutePath` from `\Magento\Webapi\Model\Rest\Config`
 *	Added an additional parameter `$methodsMapProcessor` for the constructor of `\Magento\Framework\Api\DataObjectHelper`
-*	Refactored class <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Reflection/DataObjectProcessor.php" target="_blank">\Magento\Framework\Reflection\DataObjectProcessor</a> to separate out responsibilities to the following smaller classes:
+*	Refactored class <a href="{{ site.mage2100url }}lib/internal/Magento/Framework/Reflection/DataObjectProcessor.php" target="_blank">\Magento\Framework\Reflection\DataObjectProcessor</a> to separate out responsibilities to the following smaller classes:
 
 	*	Added new class `\Magento\Framework\Reflection\CustomAttributesProcessor`
 	*	Added new class `\Magento\Framework\Reflection\ExtensionAttributesProcessor`
@@ -568,7 +568,7 @@ In `app/code/Magento/Usps/Model/Carrier.php` method `collectRates()`, renamed pa
 *	Added an additional parameter `$methodsMapProcessor` for the constructor of `\Magento\Framework\Webapi\ServiceOutputProcessor`
 
 <h3 id="rn-074b10-except">Backward-incompatible changes in exceptions</h3>
-*	Eliminated the following exceptions and replaced with <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Exception/LocalizedException.php" target="_blank">\Magento\Framework\Exception\LocalizedException</a>:
+*	Eliminated the following exceptions and replaced with <a href="{{ site.mage2100url }}lib/internal/Magento/Framework/Exception/LocalizedException.php" target="_blank">\Magento\Framework\Exception\LocalizedException</a>:
 
 	*	`\Magento\Backup\Exception`
 	*	`\Magento\Catalog\Exception`

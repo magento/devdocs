@@ -65,10 +65,10 @@ Another module can change this interface file by specifying a different class na
 
 
 <h3 id="related">Related topics</h3>
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
+<a href="{{ site.gdeurl21 }}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
 
 
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/ALayers_intro.html">Architectural layers overview</a>
+<a href="{{ site.gdeurl21 }}architecture/archi_perspectives/ALayers_intro.html">Architectural layers overview</a>
 
  
