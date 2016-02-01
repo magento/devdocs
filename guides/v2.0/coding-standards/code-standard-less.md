@@ -317,6 +317,8 @@ Class names should be lowercase, start with a letter (except helper classes), wo
 
 Helper class names should be lowercase and start with underscore ("_").
 
+Some parts of Magento code might not comply with this standard. But the old notation without ("_") is being gradually removed.
+ 
 **Example**:
 
     ._active {
