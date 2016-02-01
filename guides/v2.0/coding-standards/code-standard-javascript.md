@@ -17,7 +17,7 @@ The Magento system uses the jQuery library including the standard and custom <a 
 
 Some parts of Magento code might not comply with this coding standard.
 
-This coding standard is optional for third-party Magento developers.
+This coding standard is recommended for third-party Magento developers.
 
 <h2 id="fedg_js-coding_JSHint">JSHint tool</h2>
 Use <a href="http://www.JSHint.com" target="_blank">JSHint</a> to ensure the quality of your JavaScript code.
