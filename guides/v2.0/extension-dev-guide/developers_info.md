@@ -21,5 +21,4 @@ For Magento Marketplace only:
 
 *	<a href="http://docs.magento.com/marketplace/user_guide/getting-started/roadmap.html" target="_blank">Roadmap</a>
 *	<a href="http://docs.magento.com/marketplace/user_guide/extensions/review-workflow.html" target="_blank">Review</a>
-*	<a href="http://docs.magento.com/marketplace/user_guide/extensions/extension-submit.html" target="_blank">Submit an extension</a>
-*	
+*	<a href="http://docs.magento.com/marketplace/user_guide/extensions/extension-submit.html" target="_blank">Submit an extension</a>	

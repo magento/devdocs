@@ -16,15 +16,19 @@ This section helps you understand how to develop, package, and distribute your c
 
 Key points:
 
-*	<a href="{{ site.gdeurl }}extension-dev-guide/composer-integration.html" target="_blank">`composer.json`</a> and <a href="{{ site.gdeurl }}extension-dev-guide/component-registration.html" target="_blank">`registration.php`</a> are required for *all* components.
-*	`.zip` your extension as discussed in the <a href="{{ site.gdeurl }}extension-dev-guide/package_module.html" target="_blank">packaging topic</a>.
+*	Minimum required elements:
+
+	*	<a href="{{ site.gdeurl }}extension-dev-guide/composer-integration.html" target="_blank">`composer.json`</a> 
+	*	<a href="{{ site.gdeurl }}extension-dev-guide/component-registration.html" target="_blank">`registration.php`</a> 
+	*	Modules: <a href="{{ site.gdeurl }}extension-dev-guide/create_component.html">`module.xml`</a>
+	*	Themes: <a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-create.html#fedg_create_theme_how-to_declare">`theme.xml`</a>
+	*	Language packages: <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-pack-meta-xml">`language.xml`</a>
+*	<a href="{{ site.gdeurl }}extension-dev-guide/package_module.html" target="_blank">`.zip` your extension</a>.
 *	*(For distribution on Magento Marketplace only)*: The package you upload to Magento Marketplace should not be more than 30MB in size.
 
-#### For more information
+#### Helpful links
 *	<a href="{{ site.gdeurl }}mktpl-quickstart/intro-composer.html">Introduction to Composer</a>
 *	<a href="{{ site.gdeurl }}mktpl-quickstart/intro-composer-gloss.html">Glossary of common terms</a>
 *	<a href="{{ site.gdeurl }}mktpl-quickstart/intro-moreinfo.html">For more information</a>
-
-#### Other helpful resources
 *	<a href="https://github.com/magento/magento2-samples">Sample extensions</a> created by the Magento 2 Core team.
 *	Magento 2 Developers Hub, at <a href="http://magento.com/developers/magento2">magento.com/developers/magento2</a>.
