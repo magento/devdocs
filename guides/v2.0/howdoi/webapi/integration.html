@@ -761,7 +761,7 @@
   <li>
     <p><strong>Create the module file structure.</strong> The module for an integration can be placed anywhere under the Magento root directory, but the recommended location is <code>&lt;magento_base_dir&gt;/vendor/&lt;vendor_name&gt;/module-&lt;module_name&gt;</code>.</p>
 
-    <p>Also create  <code>etc</code>, <code>integration</code>, and <code>setup</code> subdirectories under <code>module-&lt;module_name&gt;</code>, as shown in the following example:</p>
+    <p>Also create  <code>etc</code> and <code>integration</code> subdirectories under <code>module-&lt;module_name&gt;</code>, as shown in the following example:</p>
 
     <pre>
  cd &lt;magento_base_dir&gt;
@@ -769,8 +769,7 @@
  cd vendor/&lt;vendor_name&gt;/module-&lt;module_name&gt;
  mkdir etc
  mkdir integration
- mkdir setup
- </pre>
+</pre>
     <p>For more detailed information, see <a href="../../extension-dev-guide/module-file-structure.html">Create the module file structure</a>.</p>
   </li>
   <li>
@@ -812,22 +811,22 @@
 
     <pre>
    {
-   "name": "Vendor1_Module1",
-   "description": "create integration from config",
-   "require": {
-     "php": "~5.5.0|~5.6.0|~7.0.0",
-     "magento/framework": "2.0.0",
-     "magento/module-integration": "2.0.0"
-   },
-   "type": "magento2-module",
-   "version": "1.0",
-   "autoload": {
-     "files": [ "registration.php" ],
-     "psr-4": {
-       "Vendor1\\Module1\\": ""
-     }
+      "name": "Vendor1_Module1",
+      "description": "create integration from config",
+      "require": {
+         "php": "~5.5.0|~5.6.0|~7.0.0",
+         "magento/framework": "2.0.0",
+         "magento/module-integration": "2.0.0"
+      },
+      "type": "magento2-module",
+      "version": "1.0",
+      "autoload": {
+         "files": [ "registration.php" ],
+         "psr-4": {
+            "Vendor1\\Module1\\": ""
+         }
+      }
    }
- }
  </pre>
 
     <p>For more information, see <a href="../../extension-dev-guide/create_component.html">Create a component</a>.</p>
@@ -835,71 +834,19 @@
   <li>
     <p><strong>Create a <code>registration.php</code> file</strong> The <code>registration.php</code> registers the module with the Magento system. It must be placed in the module’s root directory.</p>
 
-    <pre><code> &lt;pre&gt;
- &lt;?php
- /**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
-
- \Magento\Framework\Component\ComponentRegistrar::register(
- \Magento\Framework\Component\ComponentRegistrar::MODULE,
- 'Vendor1_Module1',
- __DIR__
- );
-</code></pre>
-
-    <p>&lt;/pre&gt;</p>
-  </li>
-  <li>
-    <p><strong>Create an install class.</strong>
-Change directories to your <code>setup</code> directory. Create a  <code>InstallData.php</code> file that installs the integration configuration data into the Magento integration table.</p>
-
-    <p>The following sample is boilerplate and requires minor changes to make your integration work.</p>
-
     <pre>
- &lt;?php
- namespace &lt;Vendor_name&gt;\Module-&lt;module_name&gt;\Setup;
-
- use Magento\Framework\Setup\ModuleContextInterface;
- use Magento\Framework\Setup\ModuleDataSetupInterface;
- use Magento\Integration\Model\ConfigBasedIntegrationManager;
- use Magento\Framework\Setup\InstallDataInterface;
-
- class InstallData implements InstallDataInterface
- {
+   &lt;?php
      /**
-      * @var ConfigBasedIntegrationManager
-      */
+     * Copyright © 2015 Magento. All rights reserved.
+     * See COPYING.txt for license details.
+     */
 
-     private $integrationManager;
-
-     /**
-      * @param ConfigBasedIntegrationManager $integrationManager
-      */
-     public function __construct(ConfigBasedIntegrationManager $integrationManager)
-     {
-         $this-&gt;integrationManager = $integrationManager;
-     }
-
-     /**
-      * {@inheritdoc}
-      */
-     public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
-     {
-         $this-&gt;integrationManager-&gt;processIntegrationConfig(['test_integration']);
-     }
-
- }
- </pre>
-
-    <p>In the following line</p>
-
-    <p><code>$this-&gt;integrationManager-&gt;processIntegrationConfig(['test_integration']);</code></p>
-
-    <p><code>test_integration</code> must refer to your <code>integrations/api.xml</code> file, and the integration name value must be the same.</p>
-
-    <p>Also, be sure to change the path after <code>namespace</code>.</p>
+     \Magento\Framework\Component\ComponentRegistrar::register(
+     \Magento\Framework\Component\ComponentRegistrar::MODULE,
+     'Vendor1_Module1',
+     __DIR__
+     );
+   </pre>
   </li>
 </ol>
 
