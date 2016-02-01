@@ -95,6 +95,13 @@ Example:
 
 {%endhighlight%}
 
+### Modifying the custom template after it was applied
+
+If you modify your custom `.html` template after it was applied on the store pages, the changes will not apply until you do the following:
+
+1. Delete all files in the pub/static/frontend and var/view_preprocessing directories.
+2. Reload the pages.
+
 ## Declare the form in the checkout page layout {#layout}
 
 Certain default checkout templates declare regions where additional content can be inserted. You can add your custom form in any of these regions. These regions are provided with corresponding comments in the default Checkout page layout file `<Checkout_module_dir>/view/frontend/layout/checkout_index_index.xml`. Also you locate the regions in the `.html` templates of the blocks used in this layout file.
