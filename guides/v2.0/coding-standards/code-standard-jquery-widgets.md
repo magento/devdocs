@@ -4,7 +4,7 @@ group: coding-standards
 subgroup: Coding standards
 title: jQuery widget coding standard
 menu_title: jQuery widget coding standard
-menu_order: 4
+menu_order: 6
 github_link: coding-standards/code-standard-jquery-widgets.md
 redirect_from: /guides/v1.0/coding-standards/code-standard-jquery-widgets.html
 ---
@@ -553,9 +553,9 @@ $.widget("mage.form," {
    </div>
 </div>
 <h2 id="fedg_jquery-widget-coding_arch">Architecture</h2>
-<div id="accordion4">
-   <h3>Use the underscore prefix only to declare private widget methods</h3>
-   <div>
+
+<h3>Use the underscore prefix only to declare private widget methods</h3>
+   <div id="accordion4">
       <p>Widget properties names should not start with underscore because those properties would not be accessible using the jQuery Widget Factory public API.</p>
       <table>
          <tbody>
