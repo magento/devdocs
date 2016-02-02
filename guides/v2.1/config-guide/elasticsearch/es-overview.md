@@ -15,22 +15,31 @@ github_link: config-guide/elasticsearch/es-overview.md
 #### Contents
 
 *	<a href="#overview">Overview of Elasticsearch</a>
-*	<a href="#dev">TBD</a>
+*	<a href="#es-prereq">Prerequisites</a>
 
 
 <h2 id="overview">Overview of Elasticsearch</h2>
-TBD
+TBD - Features, advantages - TBD
 
-## Notes
+### Supported versions {#es-spt-versions}
+Magento Enterprise Edition (EE) version 2.1.x supports elasticsearch versions 1.7, 2.0, and 2.1.
 
-Support versions  1.7, 2.0 and 2.1
+## Prerequisites {#es-prereq}
+The tasks discussed in this section require the following:
 
-### Java
+*	TBD
+*	TBD
+*	TBD
+
+### Firewall and SELinux
+{% include config/solr-elastic-selinux.md %}
+
+### Java {#es-prereq-java}
 
 {% include config/install-java.md %}
 
 
-{% include config/solr-elastic-selinux.md %}
+
 
 ### elasticsearch
 
