@@ -63,7 +63,7 @@ To install the Data Migration Tool:
 	For example, for version 2.0.2, enter:
 
 			composer config repositories.data-migration-tool git https://github.com/magento/data-migration-tool
-			composer require magento/data-migration-tool:<version>
+			composer require magento/data-migration-tool:2.0.2
 
 	where `<version>` ix the version corresponding to your Magento 2 version
 3.  When prompted, enter your <a href="http://devdocs.magento.com/guides/v2.0/install-gde/prereq/connect-auth.html">authentication keys</a>. Your public key is your username; your private key is your password.
