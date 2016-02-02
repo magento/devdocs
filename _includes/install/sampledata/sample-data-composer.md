@@ -18,10 +18,10 @@ See the following sections:
 ### Sample data prerequisites {#sample-data-rel-prereq}
 Before you install sample data, you must update Magento's `composer.json` to get components from `https://repo.magento.com`.
 
-1.  Log in to the Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
-4.  <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">Clone the Magento 2 GitHub repository</a>.
+1.  Log in to the Magento server as, or switch to, the <a href="{{ site.gdeurl21 }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+4.  <a href="{{ site.gdeurl21 }}install-gde/prereq/dev_install.html">Clone the Magento 2 GitHub repository</a>.
 
-5.  <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Update dependencies</a> by running `composer install`.
+5.  <a href="{{ site.gdeurl21 }}install-gde/install/prepare-install.html">Update dependencies</a> by running `composer install`.
 
 2.  Change to your Magento installation directory.
 
@@ -39,7 +39,7 @@ To install sample data using the command line, enter the following command as th
 
 where `[module-list]` is an optional space-separated list of <a href="#sample-data-modules">sample data modules</a> to install. Omit this parameter to install all sample data modules.
 
-You are required to <a href="{{ site.gdeurl }}install-gde/prereq/connect-auth.html">authenticate</a> to complete the action.
+You are required to <a href="{{ site.gdeurl21 }}install-gde/prereq/connect-auth.html">authenticate</a> to complete the action.
 
 ### Authentication error
 
@@ -49,7 +49,7 @@ The following error might display:
     The 'https://repo.magento.com/packages.json' URL required authentication.
     You must be using the interactive console to authenticate
 
-If the error displays, change to your Magento installation directory and run `composer update`, which will prompt you for your <a href="{{ site.gdeurl }}install-gde/prereq/connect-auth.html">authentication keys</a>.
+If the error displays, change to your Magento installation directory and run `composer update`, which will prompt you for your <a href="{{ site.gdeurl21 }}install-gde/prereq/connect-auth.html">authentication keys</a>.
 
 <h3 id="sample-data-modules">Complete list of modules</h3>
 The complete list of sample data modules follows:
