@@ -6,34 +6,34 @@ This is a list of the most common topics you'll need for installation; the list 
 
 ## Precondition: How advanced are you?
 
-Do you know what a "terminal" application is? Do you know what operating system your server runs? Do you know what Apache is? If not, see the <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">Installation overview</a>.
+Do you know what a "terminal" application is? Do you know what operating system your server runs? Do you know what Apache is? If not, see the <a href="{{ site.gdeurl21 }}install-gde/bk-install-guide.html">Installation overview</a>.
 
 ## Installation part 1: Getting started
 Topics include:
 
-*	<a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">Installation overview</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Choose how to install Magento</a>
-*	<a href="{{ site.gdeurl }}install-gde/system-requirements.html">System requirements</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/prereq-overview.html">Prerequisites</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Creating the Magento file system owner</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/bk-install-guide.html">Installation overview</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/install/pre-install.html">Choose how to install Magento</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/system-requirements.html">System requirements</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/prereq/prereq-overview.html">Prerequisites</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/prereq/apache-user.html">Creating the Magento file system owner</a>
 
 ## Installation part 2: Installing
 Topics include:
 
-*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">Command line installation</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/web/install-web.html">Setup Wizard installation</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/web/install-web-sample-data.html">Optional sample data</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/install/cli/install-cli.html">Command line installation</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/install/web/install-web.html">Setup Wizard installation</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/install/web/install-web-sample-data.html">Optional sample data</a>
 
 ## Installation part 3: Post-installation
 Topics include:
 
-*	<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verifying</a>
-*	<a href="{{ site.gdeurl }}install-gde/trouble/tshoot.html">Troubleshooting</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/post-install-config.html">Configuring</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/sample-data-after-magento.html">Optional sample data (after installing Magento)</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/install/verify.html">Verifying</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/trouble/tshoot.html">Troubleshooting</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/install/post-install-config.html">Configuring</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/install/sample-data-after-magento.html">Optional sample data (after installing Magento)</a>
 
 ## Upgrade, update
 Topics include:
 
-*	<a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html">Upgrading (or *patching* the Magento application)
-*	<a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html">Updating components (including install, uninstall, update, enable, disable)
+*	<a href="{{ site.gdeurl21 }}comp-mgr/bk-compman-upgrade-guide.html">Upgrading (or *patching* the Magento application)
+*	<a href="{{ site.gdeurl21 }}comp-mgr/bk-compman-upgrade-guide.html">Updating components (including install, uninstall, update, enable, disable)

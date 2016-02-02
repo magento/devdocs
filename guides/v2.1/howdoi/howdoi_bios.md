@@ -18,7 +18,7 @@ Thanks so much to the following community members, partners, and Magento fans wh
 
 To join these contributors, please sign up on the <a href="{{ site.gdeurl21 }}howdoi/howdoi_contribute.html">Contributor's page</a>, and the follow the easy instructions to submit a pull request to submit your work!
 
-Always feel free to <a href="mailto:DL-Magento-Doc-Feedback@ebay.com">e-mail us</a> with any questions.
+Always feel free to <a href="mailto:DL-Magento-Doc-Feedback@magento.com">e-mail us</a> with any questions.
 
 
 

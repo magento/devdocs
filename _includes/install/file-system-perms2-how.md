@@ -2,12 +2,12 @@
 
 Use the following steps:
 
-1.	If you haven't already done so, log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+1.	If you haven't already done so, log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl21 }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
 2.	Change to the Magento installation directory:
 
 		cd <web server docroot>/<magento2 base dir>
 
-	The base directory is typically a subdirectory named `magento2` under your web server's docroot. Need help locating the docroot? Click <a href="{{ site.gdeurl }}install-gde/basics/basics_docroot.html">here</a>.<br>
+	The base directory is typically a subdirectory named `magento2` under your web server's docroot. Need help locating the docroot? Click <a href="{{ site.gdeurl21 }}install-gde/basics/basics_docroot.html">here</a>.<br>
 
 	Examples:
 
