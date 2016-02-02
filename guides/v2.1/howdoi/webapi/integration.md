@@ -157,7 +157,7 @@ You can optionally include connection information so that an administrator does 
   <p>If you pre-configure the integration, the values cannot be edited from the admin panel.</p>
 </div>
 
-In the following example, the Test Integration requires access to the resources in the Customer, Log, and Sales modules:
+In the following example, the Test Integration requires access to the resources in the Customer, Sales, and SalesRule modules:
 
 {% highlight xml %}
 <?xml version="1.0"?>
@@ -167,17 +167,12 @@ In the following example, the Test Integration requires access to the resources 
         <endpoint_url></endpoint_url>
         <identity_link_url></identity_link_url>
         <resources>
-            <!-- To grant permission to Magento_Log::online, declare its parent Magento_Customer::customer-->
-            <resource name="Magento_Customer::customer" />
-            <resource name="Magento_Log::online" />
-            <!-- To grant permission to Magento_Sales::reorder, all its parent resources need to be declared-->
-            <resource name="Magento_Sales::sales" />
-            <resource name="Magento_Sales::sales_operation" />
-            <resource name="Magento_Sales::sales_order" />
-            <resource name="Magento_Sales::actions" />
-            <resource name="Magento_Sales::reorder" />
+            <resource name="Magento_Customer::manage" />
+            <resource name="Magento_Sales::capture" />
+            <resource name="Magento_SalesRule::quote" />
         </resources>
     </integration>
+  </config>
 {% endhighlight %}
 
 <h2 id="install">Install your module</h2>
@@ -192,10 +187,6 @@ Use the following steps to install your module:
 2. Run the following command to update the Magento database schema and data.
 
     <code>bin/magento setup:upgrade</code>
-
-3. Run the following command to generate the new code.
-
-    <code>bin/magento setup:di:compile</code>
 
 <h2 id="check">Check your integration</h2>
 Log in to Magento and navigate to **Settings > Extensions > Integrations**. The integration should be displayed in the grid.
