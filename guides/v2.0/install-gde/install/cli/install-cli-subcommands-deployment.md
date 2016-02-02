@@ -134,19 +134,7 @@ The following table discusses the meanings of installation parameters and values
 	</tbody>
 </table>
 
-<p id="sens-data">sensitive data</p>: 
-
-Magento uses your encryption key to encrypt the following: 
-
-*	Credit card information
-*	User names and passwords specified in the Magento Admin configuration 
-
-Magento does *not* encrypt:
-
-*	Administrative and customer user names and passwords
-*	address
-*	phone number
-*	Other types of personally identification except for credit card numbers
+{% include install/sens-data.md %}
 
 If applicable, continue your Magento software installation:
 
