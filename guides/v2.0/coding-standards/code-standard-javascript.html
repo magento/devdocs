@@ -274,22 +274,6 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/coding-standards/code-standard-javascript.html">JavaScript coding standard</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/coding-standards/code-standard-jquery-widgets.html">jQuery widget coding standard</a></li>
-
-									
-
-								
-
-									
-
 									<li class="level-2 "><a href="/guides/v2.0/coding-standards/docblock-standard-general.html">DocBlock standard</a></li>
 
 									
@@ -298,7 +282,23 @@
 
 									
 
+									<li class="level-2  active "><a href="/guides/v2.0/coding-standards/code-standard-javascript.html">JavaScript coding standard</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.0/coding-standards/docblock-standard-javascript.html">JavaScript DocBlock standard</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/coding-standards/code-standard-jquery-widgets.html">jQuery widget coding standard</a></li>
 
 									
 
@@ -444,6 +444,60 @@
 
 <p>This coding standard is recommended for third-party Magento developers.</p>
 
+<p><strong>Contents:</strong></p>
+
+<ul id="markdown-toc">
+  <li><a href="#fedg_js-coding_JSHint">JSHint tool</a></li>
+  <li><a href="#fedg_js-coding-format">Formatting</a>    <ul>
+      <li><a href="#fedg_js-coding_codestyle_anon">Anonymous functions</a></li>
+      <li><a href="#fedg_js-coding-format_eof">End of file</a></li>
+      <li><a href="#fedg_js-coding_codestyle_funcargs">Function arguments</a></li>
+      <li><a href="#fedg_js-coding-format_indent">Indentation</a></li>
+      <li><a href="#fedg_js-coding_codestyle_indent">Indent wrapped lines</a></li>
+      <li><a href="#fedg_js-coding-format_length">Line length</a></li>
+      <li><a href="#fedg_js-coding-format_terminate">Line termination</a></li>
+      <li><a href="#fedg_js-coding-format_multilit">Multiline string literals</a></li>
+      <li><a href="#fedg_js-coding_codestyle_parens">Parentheses</a></li>
+      <li><a href="#semicolons">Semicolons</a></li>
+      <li><a href="#strings">Strings</a></li>
+    </ul>
+  </li>
+  <li><a href="#fedg_js-coding_naming">Naming conventions</a>    <ul>
+      <li><a href="#fedg_js-coding_naming_const">Constants</a></li>
+      <li><a href="#fedg_js-coding_naming_files">File names</a></li>
+    </ul>
+  </li>
+  <li><a href="#fedg_js-coding_codestyle">Code style</a>    <ul>
+      <li><a href="#fedg_js-coding_codestyle_curl">Curly braces</a></li>
+      <li><a href="#fedg_js-coding_naming_fns">Functions and methods</a></li>
+      <li><a href="#fedg_js-coding_naming_vars">Variables and properties</a></li>
+    </ul>
+  </li>
+  <li><a href="#coding-constructs">Coding constructs</a>    <ul>
+      <li><a href="#fedg_js-coding_codestyle_literals">Array and object literals</a></li>
+      <li><a href="#fedg_js-coding_codestyle_binary-ternary">Binary and ternary operators</a></li>
+      <li><a href="#operators">Boolean operators (&#38;&#38; and ||)</a></li>
+      <li><a href="#conditional">Conditional (ternary) operators (? and :)</a></li>
+      <li><a href="#tostring-method">Custom toString() method</a></li>
+      <li><a href="#functions-in-blocks">Function declarations within blocks</a></li>
+      <li><a href="#standard-features">Standard features</a></li>
+      <li><a href="#closures">Closures</a></li>
+    </ul>
+  </li>
+  <li><a href="#general-recommendations">General recommendations</a>    <ul>
+      <li><a href="#eval">Do not use eval()</a></li>
+      <li><a href="#with">Do not use with()</a></li>
+      <li><a href="#this">Use this with caution</a></li>
+      <li><a href="#fedg_js-coding_codestyle_arrayinit">Array and object initializers</a></li>
+      <li><a href="#associative-arrays">Do not use associative arrays</a></li>
+      <li><a href="#deferred-init">Use deferred initialization</a></li>
+      <li><a href="#explicit-scope">Use explicit scope</a></li>
+      <li><a href="#prototypes">Do not modify built-in objects</a></li>
+      <li><a href="#variables-scope">Declare variables</a></li>
+    </ul>
+  </li>
+</ul>
+
 <h2 id="fedg_js-coding_JSHint">JSHint tool</h2>
 <p>Use <a href="http://www.JSHint.com" target="_blank">JSHint</a> to ensure the quality of your JavaScript code.</p>
 
@@ -461,7 +515,7 @@
   <li><a href="#fedg_js-coding-format_length">Line length</a></li>
   <li><a href="#fedg_js-coding-format_terminate">Line termination</a></li>
   <li><a href="#fedg_js-coding-format_multilit">Multiline string literals</a></li>
-  <li><a href="#fedg_js-coding_codestyle_parens">Parentheses</a></li>
+  <li><a href="#fedg_js-coding-format_multilit">Parentheses</a></li>
   <li><a href="#fedg_js-coding_codestyle_stmt">Statements and conditions</a></li>
   <li><a href="#strings">Strings</a></li>
 </ul>
@@ -674,8 +728,8 @@ obj.example.SECONDS_TABLE = {
 
 <ul>
   <li><a href="#fedg_js-coding_codestyle_curl">Curly braces</a></li>
-  <li><a href="#fedg_js-coding_naming_fns">Functions and methods</a></li>
-  <li><a href="#fedg_js-coding_naming_vars">Variables and properties</a></li>
+  <li><a href="##fedg_js-coding_naming_fns">Functions and methods</a></li>
+  <li>[Variables and properties</li>
 </ul>
 
 <h3 id="fedg_js-coding_codestyle_curl">Curly braces</h3>
@@ -751,7 +805,7 @@ obj.example.SECONDS_TABLE = {
   <li><a href="#fedg_js-coding_codestyle_literals">Array and object literals</a></li>
   <li><a href="#fedg_js-coding_codestyle_binary-ternary">Binary and ternary operators</a></li>
   <li><a href="#boolean">Boolean expressions</a></li>
-  <li><a href="#operators">Boolean operators (&#38;&#38; and ||)</a></li>
+  <li><a href="#operators">Boolean operators</a></li>
   <li><a href="#conditional">Conditional (ternary) operators (? and :)</a></li>
   <li><a href="#exceptions">Exceptions and custom exceptions</a></li>
   <li><a href="#functions-in-blocks">Function declarations within blocks</a></li>
@@ -1058,7 +1112,7 @@ function bar(a, b) {
   <li><a href="#with">Do not use with()</a></li>
   <li><a href="#this">Use this with caution</a></li>
   <li><a href="#fedg_js-coding_codestyle_arrayinit">Array and object initializers</a></li>
-  <li><a href="#associative-arrays">Do not use associative arrays</a></li>
+  <li><a href="#fedg_js-coding_codestyle_arrayinit">Do not use associative arrays</a></li>
   <li><a href="#deferred-init">Use deferred initialization</a></li>
   <li><a href="#prototypes">Do not modify built-in objects</a></li>
   <li><a href="#variables-scope">Declare variables</a></li>
