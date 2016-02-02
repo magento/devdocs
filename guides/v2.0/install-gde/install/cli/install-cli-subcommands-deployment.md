@@ -103,7 +103,7 @@ The following table discusses the meanings of installation parameters and values
 	</tr>
 	<tr>
 		<td><p>--key</p></td>
-		<td><p>If you have one, specify a key to encrypt sensitive data in the Magento database. (This includes passwords and personally identifiable customer information.) If you don't have one, Magento generates one for you.</p></td>
+		<td><p>If you have one, specify a key to encrypt <a href="#sens-data">sensitive data</a> in the Magento database. (This includes passwords and personally identifiable customer information.) If you don't have one, Magento generates one for you.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<!-- <tr> 
@@ -134,6 +134,20 @@ The following table discusses the meanings of installation parameters and values
 	</tbody>
 </table>
 
+<p id="sens-data">sensitive data</p>: 
+
+Magento uses your encryption key to encrypt the following: 
+
+*	Credit card information
+*	User names and passwords specified in the Magento Admin configuration 
+
+Magento does *not* encrypt:
+
+*	Administrative and customer user names and passwords
+*	address
+*	phone number
+*	Other types of personally identification except for credit card numbers
+
 If applicable, continue your Magento software installation:
 
 *	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-install.html">Command line installation</a>
@@ -157,3 +171,6 @@ If applicable, continue your Magento software installation:
 *	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a>
+
+<!-- GLOSSARY -->
+

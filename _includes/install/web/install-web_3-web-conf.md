@@ -40,7 +40,7 @@
 	</tr>
 	<tr>
 		<td>Encryption Key</td>
-		<td><p>Magento uses an encryption key to encrypt personally identifiable customer information in the database.</p>
+		<td><p>Magento uses an encryption key to encrypt sensitive data in the database.</p>
 		<p>Click <strong>I want to use a Magento generated key</strong> to have Magento generate an encryption key for you.</p>
 		<p>Click <strong>I want to use my own encryption key</strong> if you already have an encryption key.</p></td>
 	</tr>
@@ -55,5 +55,6 @@
 	
 12.	Click **Next**.
 
+<!-- GLOSSARY -->
 
-
+*[sensitive data]: Magento uses your encryption key to encrypt the following: Credit card information, user names and passwords specified in the Magento Admin configuration. Magento does *not* encrypt Admin and customer user names and passwords, address, phone number; and other types of personally identification except for credit card numbers.
