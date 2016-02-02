@@ -40,12 +40,13 @@ Frontend developers can use this guide to create custom themes to tailor the Mag
 
 To implement what is discussed in this guide, you need a working Magento installation and the following browser versions installed on your device:
 
-*	Internet Explorer 9 or later (Windows) for storefront; Internet Explorer 11 or later (Windows) for Admin
+*	Internet Explorer 9 or later (Windows) for storefront; Internet Explorer Edge, 11 or later (Windows) for Admin
 *	Mozilla Firefox latest, latest-1 (any operating system)
 *	Google Chrome latest, latest-1 (any operating system)
 *	Apple Safari latest, latest-1 (Mac OS)
-*	Apple Safari Mobile for iPad 2, iPad Mini, iPad with Retina Display (iOS 7 or later), for desktop frontend
-*	Apple Safari Mobile for iPhone 4 or later; iOS 7 or later, for mobile frontend
+*	Apple Safari Mobile for iPad 2, iPad Mini, iPad with Retina Display (iOS 7 or later), for desktop storefront
+*	Apple Safari Mobile for iPhone 4 or later; iOS 7 or later, for mobile storefront
+*	Chrome for mobile latest-1 (Android 4 or later) for mobile storefront
 
 To use this guide, you must be familiar with:
 
