@@ -11,11 +11,11 @@ github_link: howdoi/checkout/checkout_form.md
 
 This topic describes how to add a custom input form (implemented as a UI component) to the Checkout page.
 
-Most of the elements, including the default forms on the Checkout page are implemented as UI components. And our recommendation is your custom form to be a UI component, extending the default [Magento_Ui/js/form/form]({{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/form/form.js) component.
+Most of the elements, including the default forms on the Checkout page are implemented as UI components. And we recommend your custom form to be a UI component, extending the default [Magento_Ui/js/form/form]({{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/form/form.js) component.
 
 ## Overview
 
-Magento provides ability to add a custom form to any of the checkout steps: Shipping Information, Review and Payment Information, or custom. In order to add a custom form that is a UI component, take the following steps:
+Magento provides the ability to add a custom form to any of the checkout steps: Shipping Information, Review and Payment Information, or custom. In order to add a custom form that is a UI component, take the following steps:
 
 1. [Create the JS implementation of the form UI component](#component).
 2. [Create the knockout.js HTML template for rendering the form](#template).
@@ -23,9 +23,9 @@ Magento provides ability to add a custom form to any of the checkout steps: Ship
 
 ## Prerequisites
 
-[Set Magento to the production mode]({{site.gdeurl}}config-guide/cli/config-cli-subcommands-mode.html) while you perform all customizations and debugging.
+[Set Magento to developer mode]({{site.gdeurl}}config-guide/cli/config-cli-subcommands-mode.html) while you perform all customizations and debugging.
 
-For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should [depend]({{site.gdeurl}}extension-dev-guide/composer-integration.html) on the Magento_Checkout module.
+For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Instead, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should [depend]({{site.gdeurl}}extension-dev-guide/composer-integration.html) on the Magento_Checkout module.
 
 ## Create the JS implementation of the form UI component {#component}
 
@@ -99,14 +99,15 @@ Example:
 
 If you modify your custom `.html` template after it was applied on the store pages, the changes will not apply until you do the following:
 
-1. Delete all files in the pub/static/frontend and var/view_preprocessing directories.
+1. Delete all files in the `pub/static/frontend` and `var/view_preprocessing` directories.
 2. Reload the pages.
 
 ## Declare the form in the checkout page layout {#layout}
 
-Certain default checkout templates declare regions where additional content can be inserted. You can add your custom form in any of these regions. These regions are provided with corresponding comments in the default Checkout page layout file `<Checkout_module_dir>/view/frontend/layout/checkout_index_index.xml`. Also you locate the regions in the `.html` templates of the blocks used in this layout file.
+Certain default checkout templates declare regions where additional content can be inserted. You can add your custom form in any of these regions. These regions are provided with corresponding comments in the default Checkout page layout file `<Checkout_module_dir>/view/frontend/layout/checkout_index_index.xml`. 
 
-For example, the shipping JS component (see [app/code/Magento/Checkout/view/frontend/web/template/shipping.html]({{site.mage2000url}}app/code/Magento/Checkout/view/frontend/web/template/shipping.html)) provides the `before-form` region and corresponding UI container.
+Also you locate the regions in the `.html` templates of the blocks used in this layout file. 
+For example, the shipping JS component (see `<Magento_Checkout_module_dir>/view/frontend/web/template/shipping.html`) provides the `before-form` region and corresponding UI container.
 
 Any content added here is rendered before the Shipping Address form on the Shipping Information step. To add content to this region, create a `checkout_index_index.xml` layout update in the `<your_module_dir>/view/frontend/layout/`. It should be similar to the following:
 
@@ -149,9 +150,9 @@ Any content added here is rendered before the Shipping Address form on the Shipp
 
 ### Static forms
 
-If the form fields are not generated dynamically, they can be defined in layout.
+If the form fields are not generated dynamically, they can be defined in a layout.
 
-The following code sample shows configuration of the form that contains four fields: text input, select, checkbox, and date. This form uses checkout data provider (`checkoutProvider`) that is introduced in the Magento_Checkout module:
+The following code sample shows configuration of the form that contains four fields: text input, select, checkbox, and date. This form uses checkout data provider (`checkoutProvider`) that is introduced in the `Magento_Checkout` module:
 
 <p class="q">Do we need to add a link or any other details</p>
 
