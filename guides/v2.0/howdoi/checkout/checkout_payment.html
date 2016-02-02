@@ -646,6 +646,14 @@
 									
 
 								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/howdoi/checkout/checkout_form.html">Add a new input form to checkout</a></li>
+
+									
+
+								
 								
 								
 							
@@ -914,7 +922,7 @@ This configuration is stored in the <code>window.checkoutConfig</code> variable 
 <span class="nt">&lt;/type&gt;</span></code></pre></div>
 
 <h3 id="add-other-payment-related-features">Add other payment-related features</h3>
-<p>You can also add payment-related features (like reward points, gift registry, an so on) to the Review and Payment Informatio checkout step. They must be implemented as UI components as well, and can be displayed before or after the list of payment methods. This is configured in the <a href="#layout">checkout page layout file correspondingly</a>.</p>
+<p>You can also add payment-related features (like reward points, gift registry, an so on) to the Review and Payment Information checkout step. They must be implemented as UI components as well, and can be displayed before or after the list of payment methods. This is configured in the <a href="#layout">checkout page layout file correspondingly</a>.</p>
 
 <h2 id="register">Create the .js component that registers the renderer</h2>
 <p>In you custom module directory create the <code>.js</code> UI component that registers the payment method renderer in the renderers list. It must be located under the <code>&lt;your_module_dir&gt;/view/frontend/web/js/view/</code> directory. For example in the Magento modules, the payment methods renderers are stored in the <code>&lt;your_module_dir&gt;/view/frontend/web/js/view/payment/</code> directory.</p>
@@ -938,7 +946,7 @@ This configuration is stored in the <code>window.checkoutConfig</code> variable 
             <span class="p">},</span>
             <span class="c1">// other payment method renderers if required</span>
         <span class="p">);</span>
-        <span class="cm">/** Add view logic here if needed */</span>
+        <span class="err">/** Add view logic here if needed </span>
         <span class="k">return</span> <span class="nx">Component</span><span class="p">.</span><span class="nx">extend</span><span class="p">({});</span>
     <span class="p">}</span>
 <span class="p">);</span></code></pre></div>
