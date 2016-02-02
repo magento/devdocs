@@ -25,18 +25,23 @@ Before you continue, make sure you completed all tasks discussed in <a href="{{ 
 This section discusses how to install the migration tool if you cloned the Magento 2 and migration tool GitHub repositories.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>You must clone the <em>same branch</em> of both repositories. For example, if you cloned the Magento 2 <code>develop</code> branch, you must clone the Data Migration Tool's <code>develop</code> branch also.</p>
+  <p>You must use the <em>same version</em> of both Magento 2 and the Data Migration Tool. For example, if you're using Magento version 2.0.2, you must also use Data Migration Tool version 2.0.2. To find the version of the software, open its root <code>composer.json</code> and look for the value of <code>version</code>.</p>
 </div>
 
 To install the Data Migration Tool from GitHub, use the following steps:
 
 1.	Log in to your Magento 2 server as a user with privileges to write to the Magento 2 file system or <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.
 2.	Change to Magento 2 root directory.
-3.	Enter the following commands in the order shown:
+3.	Clone the the Data Migration Tool repository:
 
-			composer config repositories.data-migration-tool git https://github.com/magento/data-migration-tool
-			composer require magento/data-migration-tool:dev-master
-3.	Wait while dependencies are updated.
+		git clone git@github.com:magento/data-migration-tool-ce.git
+4.	Check out the corresponding *tag* (it must match the Magento 2 software):
+
+		git checkout tags/<version> -v <version>
+
+	For example, for 2.0.2, enter:
+
+		git checkout tags/2.0.2 -b 2.0.2
 
 ### Install the tool from `repo.magento.com` {#install-repo}
 To install the Data Migration Tool, you must update `composer.json` in the Magento root installation directory to provide the location of the Data Migration Tool package. 
@@ -45,7 +50,7 @@ To install the Data Migration Tool, you must update `composer.json` in the Magen
   <p>You must use the <em>same version</em> of both Magento 2 and the Data Migration Tool. For example, if you're using Magento version 2.0.2, you must also use Data Migration Tool version 2.0.2. To find the version of the software, open its root <code>composer.json</code> and look for the value of <code>version</code>.</p>
 </div>
 
-To install the Data Migration Tool, you must:
+To install the Data Migration Tool:
 
 1.	Log in to your Magento 2 server as a user with privileges to write to the Magento 2 file system or <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.
 2.	Change to Magento 2 root directory.
@@ -53,37 +58,18 @@ To install the Data Migration Tool, you must:
 3.	Enter the following commands in the order shown:
 
 			composer config repositories.data-migration-tool git https://github.com/magento/data-migration-tool
-			composer require magento/data-migration-tool:dev-master
+			composer require magento/data-migration-tool:<version>
+
+	For example, for version 2.0.2, enter:
+
+			composer config repositories.data-migration-tool git https://github.com/magento/data-migration-tool
+			composer require magento/data-migration-tool:<version>
+
+	where `<version>` ix the version corresponding to your Magento 2 version
 3.  When prompted, enter your <a href="http://devdocs.magento.com/guides/v2.0/install-gde/prereq/connect-auth.html">authentication keys</a>. Your public key is your username; your private key is your password.
 
-To update `composer.json`:
-
-1.	Log in to your Magento server as the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a> or as a user with privileges to write to the Magento 2 file system.
-
-2.	Go to Magento 2 root directory.
-
-7.	Enter the following command to reference Magento repo in `composer.json`:
-
-		composer config repositories.magento composer https://repo.magento.com
-
-8.	Enter the following command to require the current version of the package:
-
-		composer require magento/data-migration-tool:<version>
-
-	where `<version>` is either an exact version or next significant release syntax.
-
-	Exact version example:
-
-		composer require magento/data-migration-tool:2.0.0
-
-	Next significant release example:
-
-		composer require magento/data-migration-tool:~2.0.0
-
-9.	Wait while dependencies are installed.
 
 ###Related topics
 
 * <a href="{{ site.gdeurl }}migration/migration-tool-configure.html">Configure migration</a>
-
 * <a href="{{ site.gdeurl }}migration/migration-tool-preconditions.html">Preconditions</a>
