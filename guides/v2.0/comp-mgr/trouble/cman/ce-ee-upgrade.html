@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Step 1. Readiness check</title>
+	<title>Error upgrading from CE to EE</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/comp-mgr/compman-readiness.html">
+	<link rel="canonical" href="//guides/v2.0/comp-mgr/trouble/cman/ce-ee-upgrade.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -132,9 +132,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Step 1. Readiness check</h1>
+		<h1 class="page-heading">Error upgrading from CE to EE</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/comp-mgr/compman-readiness.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/comp-mgr/trouble/cman/ce-ee-upgrade.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -328,7 +328,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/comp-mgr/compman-readiness.html">Step 1. Readiness check</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/compman-readiness.html">Step 1. Readiness check</a></li>
 
 									
 
@@ -665,7 +665,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/ce-ee-upgrade.html">Error upgrading from CE to EE</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/comp-mgr/trouble/cman/ce-ee-upgrade.html">Error upgrading from CE to EE</a></li>
 
 									
 
@@ -789,42 +789,33 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<h2 id="compman-readiness-over">Readiness check overview</h2>
-<p>The readiness check makes sure your server and environment are set up correctly for updating, enabling, or disabling components. In the event of errors, you can consult troubleshooting suggestions in this guide.</p>
+		<h3 id="ce-ee">Problem: Error upgrading from CE to EE</h3>
+<p>Your upgrade from Magento Community Edition (CE) to Enterprise Edition (EE) might fail with the following error:</p>
 
-<h2 id="compman-readiness-start">Start the readiness check</h2>
-<p>To start, click either <strong>Start Readiness Check</strong> or <strong>Next</strong> on the Magento Component Manager page. A sample follows.</p>
+<pre><code>[2016-01-19 23:33:24 UTC] An error occurred while executing job 
+"setup:upgrade {"command":"setup:upgrade"}": Could not complete 
+setup:upgrade {"command":"setup:upgrade"} successfully: Source 
+class "\Cybersource" for "CybersourceLogger" generation does not exist.
+</code></pre>
 
-<p><img src="/common/images/cman_update_readiness.png" width="650px" alt="The readiness check enables you to find out if your server and environment are ready to proceed" /></p>
+<p>If this error displays, resolve it as follows:</p>
 
-<p>See one of the following:</p>
+<ol>
+  <li>Log in to your Magento server as the Magento file system owner.</li>
+  <li>
+    <p>Enter the following commands in the order shown:</p>
 
-<ul>
-  <li><a href="#compman-readiness-success">Success</a></li>
-  <li><a href="#compman-readiness-fail">Failure</a></li>
-</ul>
+    <pre><code>cd &lt;your Magento install dir&gt;
+composer update
+</code></pre>
+  </li>
+  <li>
+    <p>After the command completes, verify your upgrade was successful:</p>
 
-<h3 id="compman-readiness-success">Success</h3>
-<p>The following figure shows an example of a successful readiness check. If all tests passed, click <strong>Next</strong> and continue with <a href="/guides/v2.0/comp-mgr/compman-backup.html">Backup</a>.</p>
-
-<p><img src="/common/images/cman_readiness-success.png" width="700px" alt="If all readiness checks pass, click Next and continue with the next step" /></p>
-
-<h3 id="compman-readiness-fail">Failure</h3>
-<p>Messages similar to the following display if any readiness check fails. </p>
-
-<p><img src="/common/images/cman_readiness-fail-ex.png" alt="You must resolve all readiness check failures before you continue" /></p>
-
-<p>In the event of failure, see one of the following sections:</p>
-
-<ul>
-  <li><a href="/guides/v2.0/comp-mgr/trouble/cman/updater.html">Updater check failure</a></li>
-  <li><a href="/guides/v2.0/comp-mgr/trouble/cman/cron.html">Cron script check failure</a></li>
-  <li><a href="/guides/v2.0/comp-mgr/trouble/cman/component-depend.html">Component dependency check failure</a></li>
-  <li><a href="/guides/v2.0/install-gde/system-requirements.html">PHP version check failure</a></li>
-  <li><a href="/guides/v2.0/release-notes/known-issues.html#known-devbeta-xdebug">PHP settings check failure</a></li>
-  <li><a href="/guides/v2.0/install-gde/system-requirements.html">PHP extensions check failure</a></li>
-  <li><a href="/guides/v2.0/comp-mgr/trouble/cman/doc.html">magento/theme-doc-blank failure</a></li>
-</ul>
+    <pre><code>php bin/magento --version
+</code></pre>
+  </li>
+</ol>
 
 
 		</div>

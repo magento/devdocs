@@ -617,7 +617,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/gitignore.html">Missing `.gitignore` files</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/gitignore.html">Missing .gitignore files</a></li>
 
 									
 
@@ -658,6 +658,14 @@
 									
 
 									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/tshoot_backup.html">Troubleshoot backups</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/ce-ee-upgrade.html">Error upgrading from CE to EE</a></li>
 
 									
 
@@ -824,13 +832,27 @@ The following page displays.<br /><br />
   </li>
 </ol>
 
-<h4 id="error">Error</h4>
-<pre><code>The following error can indicate one of several issues, including that you haven't entered your &lt;a href="/guides/v2.0/comp-mgr/prereq/prereq_auth-token.html"&gt;authentication keys&lt;/a&gt; in the Magento Admin:
+<h4 id="errors">Errors</h4>
+<ul>
+  <li>
+    <p>The following error can indicate one of several issues, including that you haven’t entered your <a href="/guides/v2.0/comp-mgr/prereq/prereq_auth-token.html">authentication keys</a> in the Magento Admin:</p>
 
-&lt;img src="/common/images/upgr-sorry.png" width="600px"&gt;
+    <p><img src="/common/images/upgr-sorry.png" width="600px" /></p>
 
-For suggested solutions to other causes indicated by this message, see &lt;a href="/guides/v2.0/comp-mgr/trouble/cman/were-sorry.html"&gt;troubleshooting&lt;/a&gt;.
+    <p>For suggested solutions to other causes indicated by this message, see <a href="/guides/v2.0/comp-mgr/trouble/cman/were-sorry.html">troubleshooting</a>.</p>
+  </li>
+  <li>
+    <p>The following error might display:</p>
+
+    <pre><code>[2016-01-19 23:33:24 UTC] An error occurred while executing job 
+"setup:upgrade {"command":"setup:upgrade"}": Could not complete 
+setup:upgrade {"command":"setup:upgrade"} successfully: Source 
+class "\Cybersource" for "CybersourceLogger" generation does not exist.
 </code></pre>
+
+    <p>For more information, see <a href="/guides/v2.0/comp-mgr/trouble/cman/ce-ee-upgrade.html">Error upgrading from CE to EE</a>.</p>
+  </li>
+</ul>
 
 <h2 id="ce-ee-continue">Continue your upgrade</h2>
 <p>From here, your upgrade is the same as any other upgrade. Continue with <a href="/guides/v2.0/comp-mgr/upgrader/upgrade-main-pg.html">Step 1. Select versions to upgrade</a>.</p>
