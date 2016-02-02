@@ -32,7 +32,7 @@ For more information, see our <a href="{{ site.gdeurl21 }}extension-dev-guide/Co
 
 <h2 id="contact-us">Contact us</h2>
 Feel free to contact the documentation team directly at
-<a href="mailto:DL-Magento-Doc-Feedback@ebay.com">DL-Magento-Doc-Feedback@ebay.com</a>
+<a href="mailto:DL-Magento-Doc-Feedback@magento.com">DL-Magento-Doc-Feedback@magento.com</a>
 
 #### Related topics
 
