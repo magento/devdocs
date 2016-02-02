@@ -34,7 +34,7 @@ To install the Data Migration Tool from GitHub, use the following steps:
 2.	Change to Magento 2 root directory.
 3.	Clone the the Data Migration Tool repository:
 
-		git clone git@github.com:magento/data-migration-tool-ce.git
+		git clone git@github.com:magento/data-migration-tool.git
 4.	Check out the corresponding *tag* (it must match the Magento 2 software):
 
 		git checkout tags/<version> -v <version>
