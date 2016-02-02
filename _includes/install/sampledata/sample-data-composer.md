@@ -35,10 +35,10 @@ Before you install sample data, you must update Magento's `composer.json` to get
 ### Install released version sample data {#sample-data-rel-inst}
 To install sample data using the command line, enter the following command as the Magento file system owner:
 
-    php <your Magento install dir>/bin/magento sampledata:deploy [module-list]
+    php <your Magento install dir>/bin/magento sampledata:deploy
 
-where `[module-list]` is an optional space-separated list of <a href="#sample-data-modules">sample data modules</a> to install. Omit this parameter to install all sample data modules.
-
+<!-- where `[module-list]` is an optional space-separated list of <a href="#sample-data-modules">sample data modules</a> to install. Omit this parameter to install all sample data modules.
+ -->
 You are required to <a href="{{ site.gdeurl }}install-gde/prereq/connect-auth.html">authenticate</a> to complete the action.
 
 ### Authentication error
@@ -51,10 +51,10 @@ The following error might display:
 
 If the error displays, change to your Magento installation directory and run `composer update`, which will prompt you for your <a href="{{ site.gdeurl }}install-gde/prereq/connect-auth.html">authentication keys</a>.
 
-<h3 id="sample-data-modules">Complete list of modules</h3>
+<!-- <h3 id="sample-data-modules">Complete list of modules</h3>
 The complete list of sample data modules follows:
 
-{% include install/sampledata/sample-data_list-of-modules.md %}
+{% include install/sampledata/sample-data_list-of-modules.md %} -->
 
 <!-- ABBREVIATIONS -->
 
