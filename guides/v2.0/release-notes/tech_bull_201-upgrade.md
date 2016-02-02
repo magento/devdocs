@@ -7,6 +7,7 @@ menu_title: Magento upgrade issues (Jan. 28, 2016)
 menu_node: 
 menu_order: 1
 github_link: release-notes/tech_bull_201-upgrade.md
+redirect_from: /guides/v2.0/release-notes/tech_bull_jan_22_16.html
 ---
 
 ## Magento upgrade issues (Jan. 28, 2016)
@@ -174,9 +175,12 @@ To resolve the issue:
 	<div class="bs-callout bs-callout-info" id="info">
   		<p>You can upgrade to either <code>magento/product-community-edition 2.0.2</code> or <code>magento/product-community-edition 2.0.1</code>; we recommend 2.0.2.</p>
 	</div>
+6.	After the commands complete, enter the following command to update the database schema and data:
 
-6.	Verify your server is running version 2.0.2 in any of the ways discussed earlier in this resolution.
+		php bin/magento setup:upgrade
+6.	Verify your server is running version 2.0.1 or 2.0.2 in any of the ways discussed earlier in this resolution.
 <!-- 7.	We recommend you <a href="{{ site.gdeurl }}guides/v2.0/comp-mgr/upgrader/upgrade-start.html">upgrade</a> to version 2.0.2. -->
+
 
 #### Resolution 2 (upgrade to 2.0.1 or 2.0.2 has failed) {#resolution2}
 To resolve the missing `.gitignore` files issue using this method, all of the following must be true:
@@ -204,11 +208,14 @@ To resolve the issue:
 
 		composer update
 7.	Wait while the command completes.
+6.	After the command completes, enter the following command to update the database schema and data:
+
+		php bin/magento setup:upgrade
 8.	Delete the following files from `<your Magento install dir>/var` directory:
 
 	*	`.update_error.flag`
 	*	`.maintenance.flag`
-8.	Verify your Magento version is 2.0.1 in any of the following ways:
+8.	Verify your Magento version is 2.0.1 or 2.0.2 in any of the following ways:
 
 	*	Using the `php <your Magento install dir>/bin/magento --version` command
 	*	Log in to the Magento Admin. The version displays in the lower right corner of the page.
