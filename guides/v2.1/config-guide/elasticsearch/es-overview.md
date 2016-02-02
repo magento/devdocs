@@ -16,6 +16,7 @@ github_link: config-guide/elasticsearch/es-overview.md
 
 *	<a href="#overview">Overview of Elasticsearch</a>
 *	<a href="#es-prereq">Prerequisites</a>
+*	[Configure Magento to use elasticsearch](#elastic-m2-configure)
 
 
 <h2 id="overview">Overview of Elasticsearch</h2>
@@ -27,32 +28,38 @@ Magento Enterprise Edition (EE) version 2.1.x supports elasticsearch versions 1.
 ## Prerequisites {#es-prereq}
 The tasks discussed in this section require the following:
 
-*	TBD
-*	TBD
-*	TBD
+*	[Firewall and SELinux](#firewall-selinux)
+*	<a href="#prereq-java">Install the Java Software Development Kit (JDK)</a>
+*	[Install elasticsearch](#es-install-es)
 
-### Firewall and SELinux
 {% include config/solr-elastic-selinux.md %}
-
-### Java {#es-prereq-java}
 
 {% include config/install-java.md %}
 
+### Install elasticsearch {#es-install-es}
+Magento Enterprise Edition (EE) version 2.1.x supports elasticsearch versions 1.7, 2.0, and 2.1.
 
+This section discusses how to install the latest version. To install older versions, see the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/index.html" target="_blank">elasticsearch reference</a> (for example, the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.0/setup.html" target="_blank">2.0 reference</a>).
 
+To install elasticsearch:
 
-### elasticsearch
+1.	Log in to your Magento server as a user with `root` privileges.
+2.	Enter the following commands in the order shown:
 
-https://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html
+	*	CentOS:
 
-https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+			rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
+			vim /etc/yum.repos.d/elasticsearch.repo
+			yum -y install elasticsearch
+			chkconfig --add elasticsearch
 
-1.	rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
-2.	vim /etc/yum.repos.d/elasticsearch.repo
-3.	yum -y install elasticsearch
-4.	chkconfig --add elasticsearch
+	*	Ubuntu:
 
-Configure service: https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-service.html
+			TBD
+
+	<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html" target="_blank">More information about elasticsearch repositories</a>.
+3.	Optionally configure the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-service.html" target="_blank">elasticsearch service</a>.
+4.	<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html" target="_blank">Start elasticsearch</a>.
 
 ## Configure Magento to use elasticsearch {#elastic-m2-configure}
 This section discusses the minimum settings you must choose to test elasticsearch with Magento 2. For additional details, see TBD cross-ref to User Guide.
