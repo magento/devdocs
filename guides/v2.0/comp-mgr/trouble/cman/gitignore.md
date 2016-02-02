@@ -2,8 +2,8 @@
 layout: default
 group: compman
 subgroup: ZZ_Troubleshooting
-title: Missing `.gitignore` files
-menu_title: Missing `.gitignore` files
+title: Missing .gitignore files
+menu_title: Missing .gitignore files
 menu_node: 
 menu_order: 5
 github_link: comp-mgr/trouble/cman/gitignore.md
