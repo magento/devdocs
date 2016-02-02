@@ -22,6 +22,12 @@ Before you continue, make sure you completed all tasks discussed in <a href="{{ 
 </div>
 
 ### Install the tool from GitHub {#install-github}
+This section discusses how to install the migration tool if you cloned the Magento 2 and migration tool GitHub repositories.
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>You must clone the <em>same branch</em> of both repositories. For example, if you cloned the Magento 2 <code>develop</code> branch, you must clone the Data Migration Tool's <code>develop</code> branch also.</p>
+</div>
+
 To install the Data Migration Tool from GitHub, use the following steps:
 
 1.	Log in to your Magento 2 server as a user with privileges to write to the Magento 2 file system or <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.
@@ -34,6 +40,10 @@ To install the Data Migration Tool from GitHub, use the following steps:
 
 ### Install the tool from `repo.magento.com` {#install-repo}
 To install the Data Migration Tool, you must update `composer.json` in the Magento root installation directory to provide the location of the Data Migration Tool package. 
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>You must use the <em>same version</em> of both Magento 2 and the Data Migration Tool. For example, if you're using Magento version 2.0.2, you must also use Data Migration Tool version 2.0.2. To find the version of the software, open its root <code>composer.json</code> and look for the value of <code>version</code>.</p>
+</div>
 
 To install the Data Migration Tool, you must:
 
