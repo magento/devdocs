@@ -483,7 +483,7 @@
 </tr>
 <tr>
     <td>Encryption Key</td>
-    <td><p>Magento uses an encryption key to encrypt personally identifiable customer information in the database.</p>
+    <td><p>Magento uses an encryption key to encrypt <a href="#sens-data">sensitive data</a> in the database.</p>
     <p>Click <strong>I want to use a Magento generated key</strong> to have Magento generate an encryption key for you.</p>
     <p>Click <strong>I want to use my own encryption key</strong> if you already have an encryption key.</p></td>
 </tr>
@@ -503,8 +503,29 @@
     </li>
   </ol>
 
-  <h4 id="next-step">Next step</h4>
-  <p><a href="/guides/v2.0/install-gde/install/hosted/hosted_install_4_customize-store.html">Step 4. Customize your store</a></p>
+  <div>
+
+    <h4 id="sens-data">What is sensitive data?</h4>
+    <p>Magento uses your encryption key to encrypt the following: </p>
+
+    <ul>
+      <li>Credit card information</li>
+      <li>User names and passwords specified in the Magento Admin configuration </li>
+      <li>CAPTCHA values sent over the network</li>
+    </ul>
+
+    <p>Magento does <em>not</em> encrypt:</p>
+
+    <ul>
+      <li>Administrative and customer user names and passwords (these passwords are hashed)</li>
+      <li>Address</li>
+      <li>Phone number</li>
+      <li>Other types of personally identification except for credit card numbers</li>
+    </ul>
+
+    <h4 id="next-step">Next step</h4>
+    <p><a href="/guides/v2.0/install-gde/install/hosted/hosted_install_4_customize-store.html">Step 4. Customize your store</a></p>
+  </div>
 </div>
 
 

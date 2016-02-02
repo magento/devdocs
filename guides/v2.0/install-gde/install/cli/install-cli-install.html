@@ -868,7 +868,7 @@
 	</tr>
 	<tr>
 		<td><p>--key</p></td>
-		<td><p>If you have one, specify a key to encrypt personally identifiable data in the Magento database. If you don't have one, Magento generates one for you.</p></td>
+		<td><p>If you have one, specify a key to encrypt <a href="#sens-data">sensitive data</a> in the Magento database. If you don't have one, Magento generates one for you.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
@@ -922,92 +922,112 @@
   	</span>
 </div>
 
-<h4 id="install-cli-example">Sample localhost installations</h4>
+<div>
 
-<p><strong>Example 1</strong></p>
+  <h4 id="sens-data">What is sensitive data?</h4>
+  <p>Magento uses your encryption key to encrypt the following: </p>
 
-<p>The following example installs Magento with the following options:</p>
+  <ul>
+    <li>Credit card information</li>
+    <li>User names and passwords specified in the Magento Admin configuration </li>
+    <li>CAPTCHA values sent over the network</li>
+  </ul>
 
-<ul>
-  <li>
-    <p>The Magento software is installed in the <code>magento2</code> directory relative to the web server docroot on <code>localhost</code> and the path to the Magento Admin is <code>admin</code>; therefore:</p>
+  <p>Magento does <em>not</em> encrypt:</p>
 
-    <p>Your storefront URL is <code>http://127.0.0.1</code></p>
-  </li>
-  <li>
-    <p>The database server is on the same host as the web server.</p>
+  <ul>
+    <li>Administrative and customer user names and passwords (these passwords are hashed)</li>
+    <li>Address</li>
+    <li>Phone number</li>
+    <li>Other types of personally identification except for credit card numbers</li>
+  </ul>
 
-    <p>The database name is <code>magento</code>, and the user name and password are both <code>magento</code></p>
-  </li>
-  <li>
-    <p>Uses server rewrites</p>
-  </li>
-  <li>
-    <p>The Magento administrator has the following properties:</p>
+  <h4 id="install-cli-example">Sample localhost installations</h4>
 
-    <ul>
-      <li>First and last name are <code>Magento User</code></li>
-      <li>User name is <code>admin</code> and the password is <code>admin123</code></li>
-      <li>E-mail address is <code>user@example.com</code></li>
-    </ul>
-  </li>
-  <li>Default language is <code>en_US</code> (U.S. English)</li>
-  <li>Default currency is U.S. dollars</li>
-  <li>
-    <p>Default time zone is U.S. Central (America/Chicago)</p>
+  <p><strong>Example 1</strong></p>
 
-    <pre><code>magento setup:install --base-url=http://127.0.0.1/magento2/ \
+  <p>The following example installs Magento with the following options:</p>
+
+  <ul>
+    <li>
+      <p>The Magento software is installed in the <code>magento2</code> directory relative to the web server docroot on <code>localhost</code> and the path to the Magento Admin is <code>admin</code>; therefore:</p>
+
+      <p>Your storefront URL is <code>http://127.0.0.1</code></p>
+    </li>
+    <li>
+      <p>The database server is on the same host as the web server.</p>
+
+      <p>The database name is <code>magento</code>, and the user name and password are both <code>magento</code></p>
+    </li>
+    <li>
+      <p>Uses server rewrites</p>
+    </li>
+    <li>
+      <p>The Magento administrator has the following properties:</p>
+
+      <ul>
+        <li>First and last name are <code>Magento User</code></li>
+        <li>User name is <code>admin</code> and the password is <code>admin123</code></li>
+        <li>E-mail address is <code>user@example.com</code></li>
+      </ul>
+    </li>
+    <li>Default language is <code>en_US</code> (U.S. English)</li>
+    <li>Default currency is U.S. dollars</li>
+    <li>
+      <p>Default time zone is U.S. Central (America/Chicago)</p>
+
+      <pre><code>magento setup:install --base-url=http://127.0.0.1/magento2/ \
 --db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
 --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
 --admin-user=admin --admin-password=admin123 --language=en_US \
 --currency=USD --timezone=America/Chicago --use-rewrites=1
 </code></pre>
-  </li>
-</ul>
+    </li>
+  </ul>
 
-<p>Messages similar to the following display to indicate a successful installation:</p>
+  <p>Messages similar to the following display to indicate a successful installation:</p>
 
-<pre><code>Post installation file permissions check...
+  <pre><code>Post installation file permissions check...
 For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'	
 [Progress: 274 / 274]
 [SUCCESS]: Magento installation complete.
 [SUCCESS]: Admin Panel URI: /admin_puu71q
 </code></pre>
 
-<p><strong>Example 2</strong> (with additional options)</p>
+  <p><strong>Example 2</strong> (with additional options)</p>
 
-<p>The following example installs Magento with the following options:</p>
+  <p>The following example installs Magento with the following options:</p>
 
-<ul>
-  <li>
-    <p>The Magento software is installed in the <code>magento2</code> directory relative to the web server docroot on <code>localhost</code> and the path to the Magento Admin is <code>admin</code>; therefore:</p>
+  <ul>
+    <li>
+      <p>The Magento software is installed in the <code>magento2</code> directory relative to the web server docroot on <code>localhost</code> and the path to the Magento Admin is <code>admin</code>; therefore:</p>
 
-    <p>Your storefront URL is <code>http://127.0.0.1</code></p>
-  </li>
-  <li>
-    <p>The database server is on the same host as the web server.</p>
+      <p>Your storefront URL is <code>http://127.0.0.1</code></p>
+    </li>
+    <li>
+      <p>The database server is on the same host as the web server.</p>
 
-    <p>The database name is <code>magento</code>, and the user name and password are both <code>magento</code></p>
-  </li>
-  <li>
-    <p>The Magento administrator has the following properties:</p>
+      <p>The database name is <code>magento</code>, and the user name and password are both <code>magento</code></p>
+    </li>
+    <li>
+      <p>The Magento administrator has the following properties:</p>
 
-    <ul>
-      <li>First and last name are is <code>Magento User</code></li>
-      <li>User name is <code>admin</code> and the password is <code>admin123</code></li>
-      <li>E-mail address is <code>user@example.com</code></li>
-    </ul>
-  </li>
-  <li>Default language is <code>en_US</code> (U.S. English)</li>
-  <li>Default currency is U.S. dollars</li>
-  <li>Default time zone is U.S. Central (America/Chicago)</li>
-  <li>The installer first cleans up the database before installing the tables and schema</li>
-  <li>You use a sales order increment prefix <code>ORD$</code> and because it contains a special character (<code>$</code>), the value must be enclosed in double quotes</li>
-  <li>Session data is saved in the database</li>
-  <li>
-    <p>Uses server rewrites</p>
+      <ul>
+        <li>First and last name are is <code>Magento User</code></li>
+        <li>User name is <code>admin</code> and the password is <code>admin123</code></li>
+        <li>E-mail address is <code>user@example.com</code></li>
+      </ul>
+    </li>
+    <li>Default language is <code>en_US</code> (U.S. English)</li>
+    <li>Default currency is U.S. dollars</li>
+    <li>Default time zone is U.S. Central (America/Chicago)</li>
+    <li>The installer first cleans up the database before installing the tables and schema</li>
+    <li>You use a sales order increment prefix <code>ORD$</code> and because it contains a special character (<code>$</code>), the value must be enclosed in double quotes</li>
+    <li>Session data is saved in the database</li>
+    <li>
+      <p>Uses server rewrites</p>
 
-    <pre><code>magento setup:install --base-url=http://127.0.0.1/magento2/ \
+      <pre><code>magento setup:install --base-url=http://127.0.0.1/magento2/ \
 --db-host=localhost --db-name=magento \
 --db-user=magento --db-password=magento \
 --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
@@ -1015,26 +1035,27 @@ For security, remove write permissions from these directories: '/var/www/html/ma
 --currency=USD --timezone=America/Chicago --cleanup-database \
 --sales-order-increment-prefix="ORD$" --session-save=db --use-rewrites=1
 </code></pre>
-  </li>
-</ul>
+    </li>
+  </ul>
 
-<p>Messages similar to the following display to indicate a successful installation:</p>
+  <p>Messages similar to the following display to indicate a successful installation:</p>
 
-<pre><code>Post installation file permissions check...
+  <pre><code>Post installation file permissions check...
 For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'	
 [Progress: 274 / 274]
 [SUCCESS]: Magento installation complete.
 [SUCCESS]: Admin Panel URI: /admin_puu71q
 </code></pre>
 
-<div class="bs-callout bs-callout-info" id="info">
+  <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>The command must be entered either on a single line or, as in the preceding example, with a <code>\</code> character at the end of each line.</p></span>
 </div>
 
-<h4 id="next-step">Next step</h4>
+  <h4 id="next-step">Next step</h4>
 
-<p><a href="/guides/v2.0/install-gde/install/verify.html">Verify the installation</a>.</p>
+  <p><a href="/guides/v2.0/install-gde/install/verify.html">Verify the installation</a>.</p>
+</div>
 
 
 		</div>

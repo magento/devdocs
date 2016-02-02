@@ -737,7 +737,7 @@
 	</tr>
 	<tr>
 		<td><p>--key</p></td>
-		<td><p>If you have one, specify a key to encrypt sensitive data in the Magento database. (This includes passwords and personally identifiable customer information.) If you don't have one, Magento generates one for you.</p></td>
+		<td><p>If you have one, specify a key to encrypt <a href="#sens-data">sensitive data</a> in the Magento database. (This includes passwords and personally identifiable customer information.) If you don't have one, Magento generates one for you.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<!-- <tr> 
@@ -768,14 +768,34 @@
 	</tbody>
 </table>
 
-  <p>If applicable, continue your Magento software installation:</p>
+  <div>
 
-  <ul>
-    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html">Command line installation</a></li>
-    <li><a href="/guides/v2.0/install-gde/install/install-web.html">Setup Wizard installation</a></li>
-  </ul>
+    <h4 id="sens-data">What is sensitive data?</h4>
+    <p>Magento uses your encryption key to encrypt the following: </p>
 
-  <!-- <h2 id="instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</h2>
+    <ul>
+      <li>Credit card information</li>
+      <li>User names and passwords specified in the Magento Admin configuration </li>
+      <li>CAPTCHA values sent over the network</li>
+    </ul>
+
+    <p>Magento does <em>not</em> encrypt:</p>
+
+    <ul>
+      <li>Administrative and customer user names and passwords (these passwords are hashed)</li>
+      <li>Address</li>
+      <li>Phone number</li>
+      <li>Other types of personally identification except for credit card numbers</li>
+    </ul>
+
+    <p>If applicable, continue your Magento software installation:</p>
+
+    <ul>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html">Command line installation</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/install-web.html">Setup Wizard installation</a></li>
+    </ul>
+
+    <!-- <h2 id="instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</h2>
 <p>Magento enables you to enable or disable currently available modules; in other words, any Magento-provided module or any third-party module you that is currently available.</p>
 <p>Certain modules have dependencies on other modules, in which case you might not be able to enable or disable a module because it has dependencies on other modules. </p>
 <p>In addition, there might be <em>conflicting</em> modules that cannot both be enabled at the same time.</p>
@@ -800,23 +820,27 @@
 </div>
  -->
 
-  <h4 id="related-topics">Related topics</h4>
+    <h4 id="related-topics">Related topics</h4>
 
-  <ul>
-    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html">Installing the Magento software using the command line</a></li>
-    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
-    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-mods.html">Uninstall modules</a></li>
-    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
-    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-db.html">Create the Magento database schema</a></li>
-    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-store.html">Configure the store</a></li>
-    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-admin.html">Create a Magento administrator</a></li>
-    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-backup.html">Back up the file system, media, and database</a></li>
-    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-theme-uninstall.html">Uninstall themes</a></li>
-    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-langpk.html">Uninstall language packages</a></li>
-    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a></li>
-    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a></li>
-    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a></li>
-  </ul>
+    <ul>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html">Installing the Magento software using the command line</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-mods.html">Uninstall modules</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-db.html">Create the Magento database schema</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-store.html">Configure the store</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-admin.html">Create a Magento administrator</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-backup.html">Back up the file system, media, and database</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-theme-uninstall.html">Uninstall themes</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-langpk.html">Uninstall language packages</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a></li>
+    </ul>
+
+    <!-- GLOSSARY -->
+
+  </div>
 </div>
 
 
