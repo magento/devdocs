@@ -32,7 +32,7 @@ To find the version of the Magento software:
 <div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
 	<p>If you haven't installed the Magento software yet, <a href="{{ site.gdeurl }}install-gde/continue.html">install it now</a>.</p> 
-	<p>If you're cloning the GitHub repository, make sure you clone a released branch as discussed in <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">(Contributor) Clone the Magento repository</a>.</p></span>
+	<p>If you're cloning the GitHub repository, make sure you check out a release tag as discussed in <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">(Contributor) Clone the Magento repository</a>.</p></span>
 </div>
 
 ## Install the Data Migration Tool {#data-migrate-install}
