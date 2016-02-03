@@ -20,7 +20,23 @@ github_link: config-guide/elasticsearch/es-overview.md
 
 
 <h2 id="overview">Overview of Elasticsearch</h2>
-TBD - Features, advantages - TBD
+TBD draft language TBD
+
+*	Uses elasticsearch to fulfill quick and advanced search on products in the catalog
+*	elasticsearch analyzers support multiple languages
+*	Supports stop words and synonyms
+*	Indexing does not impact customers until re-index is completed
+
+	Solr can return odd results while reindexing
+
+	elasticsearch returns search results based on the last generated index until the new one has been completely indexed so there's no disruption to a merchant's customers
+
+*	Accurate, performant, scalable
+*	Works well out of the box 
+*	Easier to horizontally scale
+*	Supports real-time data and analysis
+*	Can be used as a document-oriented data store
+*	Applications in framework beyond search&mdash;reporting, personalization, performance, and storage
 
 ### Supported versions {#es-spt-versions}
 Magento Enterprise Edition (EE) version 2.1.x supports elasticsearch versions 1.7, 2.0, and 2.1.
@@ -55,7 +71,9 @@ To install elasticsearch:
 
 	*	Ubuntu:
 
-			TBD
+			wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+			echo "deb http://packages.elastic.co/elasticsearch/2.x/debian stable main" | sudo tee -a /etc/apt/sources.list.d/elasticsearch-2.x.list
+			sudo apt-get -y update && sudo apt-get -y install elasticsearch
 
 	<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html" target="_blank">More information about elasticsearch repositories</a>.
 3.	Optionally configure the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-service.html" target="_blank">elasticsearch service</a>.
