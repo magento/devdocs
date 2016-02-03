@@ -260,7 +260,7 @@ The following table discusses the meanings of installation option names and valu
 	</tr>
 	<tr>
 		<td><p>--key</p></td>
-		<td><p>If you have one, specify a key to encrypt personally identifiable data in the Magento database. If you don't have one, Magento generates one for you.</p></td>
+		<td><p>If you have one, specify a key to encrypt <a href="#sens-data">sensitive data</a> in the Magento database. If you don't have one, Magento generates one for you.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
@@ -313,6 +313,8 @@ The following table discusses the meanings of installation option names and valu
   <p>To enable or disable modules after installing Magento, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
   	</span>
 </div>
+
+{% include install/sens-data.md %}
 
 <h4 id="install-cli-example">Sample localhost installations</h4>
 
