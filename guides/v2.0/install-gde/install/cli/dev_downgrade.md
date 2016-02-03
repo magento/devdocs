@@ -20,7 +20,7 @@ To change versions after cloning:
 
 		php <your Magento clone dir>/bin/magento setup:uninstall
 3.	Either remove your old Magento clone directory or <a href="{{ site.gdeurl }}install-gde/install/cli/dev_update-magento.html">update the Magento software</a>.
-4.	If you haven't already done so, clone the Magento 2 GitHub repository'sas follows:
+4.	If you haven't already done so, clone the Magento 2 GitHub repository follows:
 
 		git clone git@github.com:magento/magento2.git
 5.	Change to <a href="https://github.com/magento/magento2/tags" target="_blank">release tag</a> as follows:
