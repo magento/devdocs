@@ -1,6 +1,12 @@
 <div markdown="1">
 
-*	Internet Explorer 9 or later (Windows) 
+Internet Explorer/Edge (Windows)
+
+*	Storefront: Explorer 9 or later
+*	Magento Admin: Internet Explorer Edge, 11 or later (Windows)
+
+All other browsers (both storefront and Admin)
+
 *	Mozilla Firefox latest, latest&ndash;1 (any operating system)
 *	Google Chrome latest, latest&ndash;1 (any operating system)
 *	Apple Safari latest, latest&ndash;1 (Mac OS)

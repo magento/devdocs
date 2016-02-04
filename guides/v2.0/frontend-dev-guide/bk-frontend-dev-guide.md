@@ -40,7 +40,7 @@ Frontend developers can use this guide to create custom themes to tailor the Mag
 
 To implement what is discussed in this guide, you need a working Magento installation and the following browser versions installed on your device:
 
-{% include browsers/storefront-browser-requirement.md %}
+{% include browsers/supported-browsers.md %}
 
 To use this guide, you must be familiar with:
 
