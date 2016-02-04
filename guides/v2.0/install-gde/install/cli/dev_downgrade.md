@@ -19,10 +19,10 @@ You have the following options:
 
 *	*(Easier)*. If you haven't done any customizations, you should uninstall the Magento software and reinstall it with the released version. Uninstalling not only drops the database tables, it also clears the Magento `var` directory, enabling you to start over with no issues.
 
-	See [Change versions by uninstalling the Magento software](#downgrade-uninstall)
+	For more information, see [Change versions by uninstalling the Magento software](#downgrade-uninstall)
 *	If you have done customizations and don't want to lose them, back up the Magento system, switch to the released branch, and install in a new database instance.
 
-	See [Change versions by installing the Magento software in a new database instance](#downgrade-db)
+	For more information, see [Change versions by installing the Magento software in a new database instance](#downgrade-db)
 
 	You can migrate your customizations (both in the file system and in the database) from the backups you made or directly using database and file system tools.
 
@@ -53,7 +53,7 @@ To change versions after cloning:
 To change versions after cloning:
 
 1.	Log in to your Magento server as, or switch to, <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">the Magento file system owner</a>.
-2.	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-backup.html#instgde-cli-uninst-back">Back up the Magento file system, database, and media files:
+2.	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-backup.html#instgde-cli-uninst-back">Back up</a> the Magento file system, database, and media files:
 
 		php <your Magento install dir>/bin/magento setup:backup --code --media --db
 3.	Change to <a href="https://github.com/magento/magento2/tags" target="_blank">release tag</a> as follows:
