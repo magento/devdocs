@@ -53,6 +53,7 @@ To change versions after cloning:
 To change versions after cloning:
 
 1.	Log in to your Magento server as, or switch to, <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">the Magento file system owner</a>.
+2.	Create a <a href="{{ site.gdeurl }}install-gde/prereq/mysql.html#instgde-prereq-mysql-config">new database instance</a> for your installation.
 2.	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-backup.html#instgde-cli-uninst-back">Back up</a> the Magento file system, database, and media files:
 
 		php <your Magento install dir>/bin/magento setup:backup --code --media --db
@@ -68,7 +69,9 @@ To change versions after cloning:
 
 		rm -rf <your Magento install dir>/var/cache/* <your Magento install dir>/var/page_cache/* <your Magento install dir>/var/generation/*
 
-5.	Install the Magento software using the <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-install.html">command line</a> or <a href="{{ site.gdeurl }}install-gde/install/web/install-web.html">Setup Wizard</a>.
+5.	Install the Magento software in your new database instance.
+
+	You can install using either the <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-install.html">command line</a> or <a href="{{ site.gdeurl }}install-gde/install/web/install-web.html">Setup Wizard</a>.
 
 <!-- ABBREVIATIONS -->
 
