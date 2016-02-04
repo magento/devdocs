@@ -28,7 +28,7 @@ Topics include:
 Topics include:
 
 *	<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verifying</a>
-*	<a href="{{ site.gdeurl }}install-gde/trouble/tshoot.html">Troubleshooting</a>\
+*	<a href="{{ site.gdeurl }}install-gde/trouble/tshoot.html">Troubleshooting</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/post-install-config.html">Configuring</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/sample-data-after-magento.html">Optional sample data (after installing Magento)</a>
 
@@ -37,3 +37,6 @@ Topics include:
 
 *	<a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html">Upgrading (or *patching* the Magento application)
 *	<a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html">Updating components (including install, uninstall, update, enable, disable)
+
+### Deploy to production
+<a href="{{ site.gdeurl }}howdoi/deploy/deploy-to-prod.html">Deploy Magento to production</a>

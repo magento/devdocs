@@ -34,7 +34,7 @@ To develop a module, you must:
 
 1. **Create the module file structure.** The module for an integration can be placed anywhere under the Magento root directory, but the recommended location is `<magento_base_dir>/vendor/<vendor_name>/module-<module_name>`.
 
-   Also create  `etc`, `integration`, and `setup` subdirectories under `module-<module_name>`, as shown in the following example:
+   Also create  `etc` and `integration` subdirectories under `module-<module_name>`, as shown in the following example:
 
     <pre>
     cd &lt;magento_base_dir>
@@ -42,8 +42,7 @@ To develop a module, you must:
     cd vendor/&lt;vendor_name>/module-&lt;module_name>
     mkdir etc
     mkdir integration
-    mkdir setup
-    </pre>
+   </pre>
    For more detailed information, see [Create the module file structure](../../extension-dev-guide/module-file-structure.html).
 
 2. **Define your module configuration file.** The `etc/module.xml` file provides basic information about the module. Change directories to the `etc` directory and create the `module.xml` file. You must specify values for the following attributes:
@@ -85,77 +84,42 @@ To develop a module, you must:
 
     <pre>
       {
-      "name": "Vendor1_Module1",
-      "description": "create integration from config",
-      "require": {
-        "php": "~5.5.0|~5.6.0|~7.0.0",
-        "magento/framework": "2.0.0",
-        "magento/module-integration": "2.0.0"
-      },
-      "type": "magento2-module",
-      "version": "1.0",
-      "autoload": {
-        "files": [ "registration.php" ],
-        "psr-4": {
-          "Vendor1\\Module1\\": ""
-        }
+         "name": "Vendor1_Module1",
+         "description": "create integration from config",
+         "require": {
+            "php": "~5.5.0|~5.6.0|~7.0.0",
+            "magento/framework": "2.0.0",
+            "magento/module-integration": "2.0.0"
+         },
+         "type": "magento2-module",
+         "version": "1.0",
+         "autoload": {
+            "files": [ "registration.php" ],
+            "psr-4": {
+               "Vendor1\\Module1\\": ""
+            }
+         }
       }
-    }
     </pre>
 
 
     For more information, see [Create a component](../../extension-dev-guide/create_component.html).
 
-4. **Create an install class.**
-Change directories to your `setup` directory. Create a  `InstallData.php` file that installs the integration configuration data into the Magento integration table.
+4. **Create a `registration.php` file** The `registration.php` registers the module with the Magento system. It must be placed in the module's root directory.
 
-    The following sample is boilerplate and requires minor changes to make your integration work.
-
-    <pre>
-    &lt;?php
-    namespace &lt;Vendor_name>\Module-&lt;module_name>\Setup;
-
-    use Magento\Framework\Setup\ModuleContextInterface;
-    use Magento\Framework\Setup\ModuleDataSetupInterface;
-    use Magento\Integration\Model\ConfigBasedIntegrationManager;
-    use Magento\Framework\Setup\InstallDataInterface;
-
-    class InstallData implements InstallDataInterface
-    {
+      <pre>
+      &lt;?php
         /**
-         * @var ConfigBasedIntegrationManager
-         */
+        * Copyright © 2015 Magento. All rights reserved.
+        * See COPYING.txt for license details.
+        */
 
-        private $integrationManager;
-
-        /**
-         * @param ConfigBasedIntegrationManager $integrationManager
-         */
-        public function __construct(ConfigBasedIntegrationManager $integrationManager)
-        {
-            $this->integrationManager = $integrationManager;
-        }
-
-        /**
-         * {@inheritdoc}
-         */
-        public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
-        {
-            $this->integrationManager->processIntegrationConfig(['test_integration']);
-        }
-
-    }
-    </pre>
-
-
-    In the following line
-
-    `$this->integrationManager->processIntegrationConfig(['test_integration']);`
-
-    `test_integration` must refer to your `integrations/api.xml` file, and the integration name value must be the same.
-
-    Also, be sure to change the path after `namespace`.
-
+        \Magento\Framework\Component\ComponentRegistrar::register(
+        \Magento\Framework\Component\ComponentRegistrar::MODULE,
+        'Vendor1_Module1',
+        __DIR__
+        );
+      </pre>
 
 <h2 id="files">Create integration files</h2>
 Magento provides the Integration module, which simplifies the process of defining your integration. This module automatically performs functions such as:

@@ -75,7 +75,7 @@ Magento’s highly modular structure includes the following open-source technolo
 <b>Optional stack components</b> include:
 
 * Varnish (caching)
-* Redis (used for session or page caching)
+* Redis (used for page caching)
 * Solr (search engine)
 
 Magento is <b>compatible with but not supported</b> for:

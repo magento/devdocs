@@ -186,7 +186,7 @@ where
 
 For example, to flush all cache types, enter
 
-	magento cache:flush --all
+	magento cache:flush
 
 Sample result:
 
