@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: Elastic
-title: Upgrade to Elasticsearch 2.x
-menu_title: Upgrade to Elasticsearch 2.x
+title: Upgrade Elasticsearch major version
+menu_title: Upgrade Elasticsearch major version
 menu_order: 100
 menu_node: 
 github_link: config-guide/elasticsearch/es-config-upgrade.md
@@ -15,3 +15,12 @@ github_link: config-guide/elasticsearch/es-config-upgrade.md
 #### Contents
 
 [wiki page](https://magento2.atlassian.net/wiki/display/PRD/Upgrade+Elasticsearch+1.7+%3D%3E+2.x)
+
+Chuck:
+
+You switch to the version upgraded server/cluster and then do a full reindex.  At that point you¹ll impact customers ( as there¹s no old working index ); so the merchant will be down for a while; then the index is done and everything is working correctly.
+
+This would apply if the merchant is changing from Solr to Elasticsearch , or if the merchant is upgrading from ES 1.7 to ES 2.0 or ES 2.1 or some combination there off.
+
+For the Elastic Config / Elastic Cluster configuration our ECG guy shave some experience there, might want to ping them to get their thoughts.
+
