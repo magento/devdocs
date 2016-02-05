@@ -24,9 +24,9 @@ To access REST API documentation, Magento requires the user to be authenticated 
 
 * By default, Magento returns documentation for resources available to anonymous users.
 * If a customer or admin session is active, Magento returns documentation as permitted by the user's role.
-* To retrieve information for a particular user, you must specify a token in the Authorization request header with the Bearer HTTP authorization scheme. 
+* To retrieve information for a particular user, you must specify a token in the Authorization request header with the Bearer HTTP authorization scheme.
 
-The generated Swagger documentation provides the capability to test REST API requests. A user can enter a sample request, then press the **Try it out!** button, and Swagger returns information such as a `curl` command, a request URL, a response body, a response code, and the response header.
+The generated Swagger documentation provides the capability to test REST API requests. A user can enter a sample request, then press the **Try it out!** button, and Swagger returns information such as a `curl` command, a request URL, a response body, a response code, and the response header. Using the **Try it out** button also requires bearer authorization token.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>**The Try it out!** feature is not available on Swagger documentation published on the Magento devdocs website.</p>
