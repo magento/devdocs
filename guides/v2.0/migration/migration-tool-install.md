@@ -11,10 +11,10 @@ redirect_from: /guides/v1.0/migration/migration-tool-install.html
 ---
 
 #### Contents
-*	[Prerequisite](#data-migrate-prereq)
+*	[Prerequisite for install](#data-migrate-prereq)
 *	[Install the Data Migration Tool](#data-migrate-install)
 
-## Prerequisite {#data-migrate-prereq}
+## Prerequisite for install {#data-migrate-prereq}
 Before you continue, make sure you are using the *same released version* of both Magento 2 and the Data Migration Tool. For example, if you're using Magento version 2.0.2, you must also use Data Migration Tool version 2.0.2.
 
 To find the version of the Magento software:
