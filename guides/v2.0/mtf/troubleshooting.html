@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Changelog of Magento Testing Framework</title>
+	<title>Troubleshoot the Magento Testing Framework issues</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/mtf/mtf_changelog.html">
+	<link rel="canonical" href="//guides/v2.0/mtf/troubleshooting.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -132,9 +132,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Changelog of Magento Testing Framework</h1>
+		<h1 class="page-heading">Troubleshoot the Magento Testing Framework issues</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/mtf/mtf_changelog.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/mtf/troubleshooting.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -546,7 +546,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/mtf/troubleshooting.html">TROUBLESHOOTING</a></li>
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/mtf/troubleshooting.html">TROUBLESHOOTING</a></li>
 									
 								
 
@@ -573,7 +573,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/mtf/mtf_changelog.html">CHANGELOG</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/mtf/mtf_changelog.html">CHANGELOG</a></li>
 									
 								
 
@@ -616,8 +616,28 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<p>Check current state of the Magento Testing Framework, history of changes and list of releases on <a href="https://github.com/magento/mtf/blob/develop/CHANGELOG.md">GitHub</a>.</p>
+		<h2 id="mtf_update">Known issues and their solutions</h2>
 
+<ul id="markdown-toc">
+  <li><a href="#install-issues">Installation issues</a>    <ul>
+      <li><a href="#selenium-server-issue">Selenium Server issue</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="install-issues">Installation issues</h3>
+
+<h4 id="selenium-server-issue">Selenium Server issue</h4>
+
+<p>Error message:</p>
+
+<pre><code>PHPUnit_Extensions_Selenium2TestCase_WebDriverException: Unable to connect to host 127.0.0.1 on port 7055 after 45000 ms. Firefox console output: in selenium server console output
+</code></pre>
+
+<ul>
+  <li><strong>Reason</strong>: a Selenium server is <a href="http://docs.seleniumhq.org/about/platforms.jsp#browsers">incompatible with your browser version</a></li>
+  <li><strong>Solution</strong>: <a href="http://docs.seleniumhq.org/download/">download the latest Selenium Standalone Server version</a></li>
+</ul>
 
 
 		</div>

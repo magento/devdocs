@@ -372,18 +372,65 @@
 		<p>This topic discusses backward-incompatible changes since the Magento 2.0 General Availability (GA) release in November 2015.</p>
 
 <ul id="markdown-toc">
-  <li><a href="#module-magentocatalog">Module Magento_Catalog</a>    <ul>
+  <li><a href="#magentocatalogrule-module">Magento_CatalogRule module</a>    <ul>
+      <li><a href="#setup-version-201-changes">Setup version 2.0.1 changes</a>        <ul>
+          <li><a href="#db-schema-changes">DB schema changes</a></li>
+          <li><a href="#ui-changes"><abbr title="User Interface">UI</abbr> changes</a></li>
+          <li><a href="#flow-changes">Flow changes</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#magentocatalog-module">Magento_Catalog module</a>    <ul>
       <li><a href="#setup-version-204-changes">Setup version 2.0.4 changes</a>        <ul>
           <li><a href="#code-changes">Code changes</a></li>
           <li><a href="#form-initialization-changes">Form initialization changes</a></li>
-          <li><a href="#flow-changes">Flow changes</a></li>
+          <li><a href="#flow-changes-1">Flow changes</a></li>
         </ul>
       </li>
     </ul>
   </li>
 </ul>
 
-<h2 id="module-magentocatalog">Module Magento_Catalog</h2>
+<h2 id="magentocatalogrule-module">Magento_CatalogRule module</h2>
+
+<h3 id="setup-version-201-changes">Setup version 2.0.1 changes</h3>
+
+<h4 id="db-schema-changes">DB schema changes</h4>
+
+<ul>
+  <li>From the <code>catalogrule</code> table the following rows were deleted: <code>sub_is_enable</code>, <code>sub_simple_action</code>, <code>sub_discount_amount</code></li>
+  <li>From the <code>catalogrule_product</code> table the following rows were deleted: <code>sub_simple_action</code>, <code>sub_discount_amount</code></li>
+</ul>
+
+<h4 id="ui-changes"><abbr title="User Interface">UI</abbr> changes</h4>
+
+<ul>
+  <li>The <strong>Subproduct discounts</strong> dropdown on a catalog price rule was deleted, including <strong>Apply</strong> and <strong>Discount Amount</strong> subfields.</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Setup version 2.0.0</th>
+      <th style="text-align: left">Setup version 2.0.1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="/common/images/backw_chang_cat_pr_rul_200.png" alt="OLD - Adding a new catalog price rule" title="OLD - Adding a new catalog price rule" /></td>
+      <td style="text-align: left"><img src="/common/images/backw_chang_cat_pr_rul_201.png" alt="NEW - Adding a new catalog price rule" title="NEW - Adding a new catalog price rule" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="flow-changes">Flow changes</h4>
+
+<ul>
+  <li>The functionality of adding a price rule to the subproduct was deleted</li>
+</ul>
+
+<h2 id="magentocatalog-module">Magento_Catalog module</h2>
 
 <h3 id="setup-version-204-changes">Setup version 2.0.4 changes</h3>
 
@@ -479,7 +526,7 @@
   </li>
   <li>Category products grid
     <ul>
-      <li>Rendered by a UI component as a standalone block</li>
+      <li>Rendered by a <abbr title="User Interface">UI</abbr> component as a standalone block</li>
       <li>Initialized using the <code>magento-init</code> event</li>
     </ul>
   </li>
@@ -488,17 +535,19 @@
 <h4 id="form-initialization-changes">Form initialization changes</h4>
 
 <ul>
-  <li>A form is built with the UI components (<a href="http://devdocs.magento.com/guides/v2.0/ui-components/ui-form.html">more info about a form component</a> )</li>
-  <li>The form is extended using the form configuration file <a href="https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml"><code>&lt;magento2&gt;/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml</code></a> (see <a href="http://devdocs.magento.com/guides/v2.0/ui-components/ui-definition.html">Overview of UI components</a>)</li>
+  <li>A form is built with the <abbr title="User Interface">UI</abbr> components (<a href="http://devdocs.magento.com/guides/v2.0/ui-components/ui-form.html">more info about a form component</a> )</li>
+  <li>The form is extended using the form configuration file <a href="https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml"><code>&lt;magento2&gt;/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml</code></a> (see <a href="http://devdocs.magento.com/guides/v2.0/ui-components/ui-definition.html">Overview of <abbr title="User Interface">UI</abbr> components</a>)</li>
   <li>The data provider <code>\Magento\Catalog\Model\Category\DataProvider</code> is used to set data and fields metadata for the form</li>
   <li>The default form data is now a part of metadata that is fetched from the <code>\Magento\Catalog\Model\Category\DataProvider</code></li>
 </ul>
 
-<h4 id="flow-changes">Flow changes</h4>
+<h4 id="flow-changes-1">Flow changes</h4>
 
 <p>When <strong>Products -&gt; Categories</strong> menu item in the Magento Admin is chosen, the first root category is selected for editing by default now. You can create a new category or a root category manually only. Use the corresponding button <strong>Add Root Category</strong> or <strong>Add Subcategory</strong>.</p>
 
 <!-- LINK DEFINITIONS -->
+
+<!-- ABBREVIATIONS -->
 
 
 
