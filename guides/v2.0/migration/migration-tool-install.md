@@ -17,17 +17,7 @@ redirect_from: /guides/v1.0/migration/migration-tool-install.html
 ## Prerequisite for install {#data-migrate-prereq}
 Before you continue, make sure you are using the *same released version* of both Magento 2 and the Data Migration Tool. For example, if you're using Magento version 2.0.2, you must also use Data Migration Tool version 2.0.2.
 
-To find the version of the Magento software:
-
-*	If you downloaded the Magento software using a Composer metapackage, enter the following command:
-
-		php <your Magento install dir>/bin/magento --version
-*	If you cloned the Magento 2 GitHub repository, enter the following commands:
-
-		cd <your Magento 2 clone directory>
-		git branch
-
-	If you're currently in the `develop` branch, you must change to a <a href="{{ site.gdeurl }}install-gde/install/cli/dev_downgrade.html">released branch</a> before you continue.
+{% include migration/find-version.md %}
 
 <div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">

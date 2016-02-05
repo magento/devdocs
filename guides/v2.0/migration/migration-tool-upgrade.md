@@ -19,17 +19,7 @@ This section discusses how to upgrade the version of the Data Migration Tool to 
 
 The versions of the Data Migration Tool and your Magento software must exactly match. For example, if you're using version 2.0.2 of the Magento software, you must use version 2.0.2 of the Data Migration Tool.
 
-To find the version of the Magento software:
-
-*	If you downloaded the Magento software using a Composer metapackage, enter the following command:
-
-		php <your Magento install dir>/bin/magento --version
-*	If you cloned the Magento 2 GitHub repository, enter the following commands:
-
-		cd <your Magento 2 clone directory>
-		git branch
-
-	If you're currently in the `develop` branch, you must change to a <a href="{{ site.gdeurl }}install-gde/install/cli/dev_downgrade.html">released branch</a> before you continue.
+{% include migration/find-version.md %}
 
 ## Prerequisites {#data-migrate-prereq}
 Before you upgrade, you must:
@@ -58,7 +48,7 @@ To upgrade the Data Migration Tool:
 2.	Change to Magento 2 root directory.
 3.	Enter the following command:
 
-		composer update
+		composer update magento/data-migration-tool
 4.	Wait while the command completes.
 
 ###Related topics
