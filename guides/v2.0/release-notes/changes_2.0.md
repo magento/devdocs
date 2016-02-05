@@ -13,7 +13,29 @@ This topic discusses backward-incompatible changes since the Magento 2.0 General
 * TOC
 {:toc}
 
-## Module Magento_Catalog
+## Magento_CatalogRule module
+
+### Setup version 2.0.1 changes
+
+#### DB schema changes
+
+* From the `catalogrule` table the following rows were deleted: `sub_is_enable`, `sub_simple_action`, `sub_discount_amount`
+* From the `catalogrule_product` table the following rows were deleted: `sub_simple_action`, `sub_discount_amount`
+
+#### UI changes
+
+* The **Subproduct discounts** dropdown on a catalog price rule was deleted, including **Apply** and **Discount Amount** subfields.
+
+|---
+| Setup version 2.0.0  | Setup version 2.0.1 
+|-|:-
+| ![OLD - Adding a new catalog price rule]({{site.baseurl}}common/images/backw_chang_cat_pr_rul_200.png 'OLD - Adding a new catalog price rule') | ![NEW - Adding a new catalog price rule]({{site.baseurl}}common/images/backw_chang_cat_pr_rul_201.png 'NEW - Adding a new catalog price rule')
+
+#### Flow changes
+
+* The functionality of adding a price rule to the subproduct was deleted
+
+## Magento_Catalog module
 
 ### Setup version 2.0.4 changes
 
@@ -109,3 +131,7 @@ When **Products -> Categories** menu item in the Magento Admin is chosen, the fi
 
 [`<magento2>/app/code/Magento/Catalog/etc/module.xml`]: https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/etc/module.xml
 [`<magento2>/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml`]: https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml
+
+<!-- ABBREVIATIONS -->
+
+*[UI]: User Interface
