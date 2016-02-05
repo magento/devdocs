@@ -3,7 +3,7 @@
 Internet Explorer and Microsoft Edge (Windows)
 
 *	Storefront: Internet Explorer 9 or later
-*	Magento Admin: Internet Explorer 11 or later, Microsoft Edge
+*	Magento Admin: Internet Explorer 11 or later, Microsoft Edge, latest&ndash;1
 
 All other browsers (both storefront and Admin)
 
