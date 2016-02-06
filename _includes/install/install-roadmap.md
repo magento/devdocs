@@ -37,3 +37,9 @@ Topics include:
 
 *	<a href="{{ site.gdeurl21 }}comp-mgr/bk-compman-upgrade-guide.html">Upgrading (or *patching* the Magento application)
 *	<a href="{{ site.gdeurl21 }}comp-mgr/bk-compman-upgrade-guide.html">Updating components (including install, uninstall, update, enable, disable)
+*	*Contributing developers only*: <a href="{{ site.gdeurl21 }}install-gde/install/cli/dev_options.html">Contributing developers&mdash;update, reinstall Magento</a>
+
+### Deploy to production
+<a href="{{ site.gdeurl21 }}howdoi/deploy/deploy-to-prod.html">Deploy Magento to production</a>
+
+*[Contributing developers]: A developer who contributes code to the Magento 2 CE codebase
