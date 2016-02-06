@@ -12,4 +12,4 @@ Magento does *not* encrypt:
 *	Administrative and customer user names and passwords (these passwords are hashed)
 *	Address
 *	Phone number
-*	Other types of personally identification except for credit card numbers
+*	Other types of personally identifiable information except for credit card numbers
