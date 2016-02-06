@@ -6,7 +6,6 @@ title: Technology stack
 menu_title: Technology stack
 menu_order: 2
 github_link: architecture/tech-stack.md
-redirect_from: /guides/v1.0/extension-dev-guide/tech-stack.html
 ---
 <h2>Magento technology stack</h2>
 

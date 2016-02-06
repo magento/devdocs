@@ -6,7 +6,6 @@ title: Customizing layout illustration
 menu_title: Customizing layout illustration
 menu_order: 7
 github_link: frontend-dev-guide/layouts/layout-practice.md
-redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-practice.html
 ---
 
 <h2>What's in this topic</h2>

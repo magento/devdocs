@@ -7,7 +7,6 @@ menu_title: Configure and run cron
 menu_node: 
 menu_order: 100
 github_link: config-guide/cli/config-cli-subcommands-cron.md
-redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-cron.html
 ---
 
 #### Contents

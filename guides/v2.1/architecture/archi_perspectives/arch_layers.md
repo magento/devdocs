@@ -6,7 +6,6 @@ title: Architecture layers
 menu_title: Architecture layers
 menu_order: 
 github_link: architecture/archi_perspectives/arch_layers.md
-redirect_from: /guides/v1.0/architecture/archi_perspectives/arch_layers.html
 ---
 
 

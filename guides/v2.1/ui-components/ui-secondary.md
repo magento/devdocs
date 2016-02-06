@@ -6,8 +6,6 @@ title: Listing/Grid Secondary Components
 menu_title: Listing/Grid Secondary Components
 menu_node: parent
 github_link: ui-components/ui-secondary.md
-redirect_from: /guides/v2.0/ui-library/ui-secondary.html
-
 ---
 
 <h3>UI Listing/Grid Secondary Components</h3>

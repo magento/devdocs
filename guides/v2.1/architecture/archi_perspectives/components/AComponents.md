@@ -6,10 +6,7 @@ title: Magento Components
 menu_title: Components
 menu_order: 
 menu_node: parent
-
-
 github_link: architecture/archi_perspectives/components/AComponents.md
-redirect_from: /guides/v1.0/architecture/components/AComponents.html
 ---
 
 

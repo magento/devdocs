@@ -6,9 +6,8 @@ title: Composer integration
 menu_title: Composer integration
 menu_order: 2
 github_link: extension-dev-guide/composer-integration.md
-redirect_from: /guides/v1.0/extension-dev-guide/composer-integration.html
-
 ---
+
 ##{{page.menu_title}}
 
 

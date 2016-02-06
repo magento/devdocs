@@ -6,7 +6,6 @@ title: CSS preprocessing
 menu_order: 3
 menu_title: CSS preprocessing
 github_link: frontend-dev-guide/css-topics/css-preprocess.md
-redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css-preprocess.html
 ---
 
 <h2 id="preproc_over">What's in this topic</h2>

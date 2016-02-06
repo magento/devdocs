@@ -7,12 +7,7 @@ menu_title: Magento Definition of Done
 menu_order: 2
 menu_node: 
 github_link: contributor-guide/contributing_dod.md
-redirect_from: /guides/v1.0/contributor-guide/contributing_dod.html
 ---
-
-<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
-<!-- Referring file: contributing.md owned by core -->
-
 
 <h2 id="dod">Magento Definition of Done</h2>
 

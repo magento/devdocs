@@ -6,9 +6,6 @@ title: Indexing
 menu_title: Indexing
 menu_order: 10
 github_link: extension-dev-guide/indexing.md
-redirect_from: 
-  - /guides/v1.0/architecture/index-cache/indexing.html
-  - /guides/v2.0/architecture/index-cache/indexing.html
 ---
 
 #### Contents
