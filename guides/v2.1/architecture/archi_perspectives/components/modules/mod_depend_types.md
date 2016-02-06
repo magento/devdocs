@@ -8,7 +8,6 @@ menu_order: 7
 level3_menu_node: level3child
 level3_subgroup: modules
 github_link: architecture/components/modules/mod_depend_types.md
-redirect_from: /guides/v1.0/architecture/modules/mod_depend_types.html
 ---
 
 <h2 id="m2devgde-moddep-declare-dep">Types of module dependencies</h2>

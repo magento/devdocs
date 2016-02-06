@@ -6,7 +6,6 @@ title: Page types
 menu_title: Page types
 menu_order: 
 github_link: architecture/view/page-type.md
-redirect_from: /guides/v1.0/architecture/view/page-type.html
 ---
 
 <h2 id="m2devgde-pagetype-intro">Introduction to page types</h2>

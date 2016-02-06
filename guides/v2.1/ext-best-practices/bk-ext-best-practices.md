@@ -6,8 +6,6 @@ title: Best Practices for Extension Developers
 menu_title: Introduction
 menu_order: 2
 github_link: ext-best-practices/ext-best-practices-bk.md
-redirect_from: /guides/v1.0/extension-dev-guide/package_module.html
-
 ---
 
 ##{{page.menu_title}}
