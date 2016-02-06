@@ -6,7 +6,6 @@ title: Magento libraries
 menu_title: Magento libraries
 menu_order: 3
 github_link: architecture/components/arch_libraries.md
-redirect_from: /guides/v1.0/architecture/arch_libraries.html
 ---
 
 <h2 id="m2arch-libraries-overview">Overview</h2>

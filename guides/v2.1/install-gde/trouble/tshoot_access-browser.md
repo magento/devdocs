@@ -7,7 +7,6 @@ menu_title: Cannot access Magento software in a web browser
 menu_node: 
 menu_order: 1
 github_link: install-gde/trouble/tshoot_access-browser.md
-redirect_from: /guides/v1.0/install-gde/trouble/tshoot_access-browser.html
 ---
 
 

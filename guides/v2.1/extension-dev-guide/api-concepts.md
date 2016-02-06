@@ -6,8 +6,8 @@ title: Public interfaces & APIs
 menu_title: Public interfaces & APIs
 menu_order: 3
 github_link: extension-dev-guide/api-concepts.md
-redirect_from: /guides/v1.0/extension-dev-guide/api-concepts.html
 ---
+
 ##{{page.menu_title}}
 
 <h2 id="public-interface">What is a public interface?</h2>

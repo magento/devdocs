@@ -7,8 +7,6 @@ menu_title: MassAction Component
 menu_node:
 menu_order: 3
 github_link: ui-components/ui-secondary-massaction.md
-redirect_from: /guides/v2.0/ui-library/ui-secondary-massaction.html
-
 ---
 
 <h3 id="massaction">UI MassAction Component</h3>

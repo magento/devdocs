@@ -7,7 +7,6 @@ title: Magento layouts
 menu_title: Layouts 
 menu_order: 3
 github_link: architecture/components/layout_intro.md
-redirect_from: /guides/v1.0/architecture/archi_perspectives/layout_intro.html
 ---
 
 <h2 id="m2arch_layout_overview">Magento layouts</h2>  

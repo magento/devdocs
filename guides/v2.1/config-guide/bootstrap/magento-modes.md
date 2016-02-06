@@ -7,7 +7,6 @@ menu_title: About Magento modes
 menu_order: 3
 menu_node: 
 github_link: config-guide/bootstrap/magento-modes.md
-redirect_from: /guides/v1.0/config-guide/bootstrap/magento-modes.html
 ---
 
 #### Contents

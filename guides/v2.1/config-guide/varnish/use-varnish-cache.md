@@ -7,7 +7,6 @@ menu_title: How Magento cache clearing works with Varnish
 menu_order: 100
 menu_node: 
 github_link: config-guide/varnish/use-varnish-cache.md
-redirect_from: guides/v2.0/config-guide/varnish/config-use-varnish.html
 ---
 
 #### Contents

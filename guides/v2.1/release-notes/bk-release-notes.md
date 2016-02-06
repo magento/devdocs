@@ -6,7 +6,6 @@ menu_title: Release Notes redirect
 menu_order: 1
 menu_node: 
 github_link: release-notes/bk-release-notes.md
-redirect_from: /guides/v1.0/release-notes/bk-release-notes.html
 ---
 
 The Magento 2.0 GA Release Notes have moved. Click one of the following links to be redirected.

@@ -6,10 +6,8 @@ title: Magento plug-ins
 menu_title: Magento plug-ins
 menu_order: 8
 github_link: extension-dev-guide/plugins.md
-redirect_from:
-  - /guides/v1.0/extension-dev-guide/plugins.html
-  - /guides/v1.0/config-guide/config/plugins.html
 ---
+
 ##{{page.menu_title}}
 
 

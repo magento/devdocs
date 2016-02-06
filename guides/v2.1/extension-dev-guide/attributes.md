@@ -6,9 +6,8 @@ title: EAV and extension attributes
 menu_title: EAV and extension attributes
 menu_order: 7
 github_link: extension-dev-guide/attributes.md
-redirect_from: /guides/v1.0/extension-dev-guide/attributes.html
-
 ---
+
 ##{{page.menu_title}}
 
 Magento provides two types of attributes that integrators can use to extend the functionality provided out-of-the-box:

@@ -6,7 +6,6 @@ title: SELinux and iptables
 menu_title: SELinux and iptables
 menu_order: 25
 github_link: install-gde/prereq/security.md
-redirect_from: /guides/v1.0/install-gde/prereq/security.html
 ---
 
 <h2 id="install-prereq-selinux">SELinux</h2>
