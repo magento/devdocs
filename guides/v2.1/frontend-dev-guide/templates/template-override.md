@@ -6,7 +6,6 @@ title: Templates basic concepts
 menu_title: Templates basic concepts
 menu_order: 3
 github_link: frontend-dev-guide/templates/template-override.md
-redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-override.html
 ---
 
 <h2>What's in this topic</h2>

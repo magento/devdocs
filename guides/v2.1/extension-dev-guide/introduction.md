@@ -6,9 +6,8 @@ title: Introduction
 menu_title: Introduction
 menu_order: 1
 github_link: extension-dev-guide/introduction.md
-redirect_from: /guides/v1.0/extension-dev-guide/introduction.html
-
 ---
+
 ##{{page.menu_title}}
 
 

@@ -6,7 +6,6 @@ title: Package a component
 menu_title: Package a component
 menu_order: 2
 github_link: extension-dev-guide/package_module.md
-redirect_from: /guides/v1.0/extension-dev-guide/package_module.html
 ---
 
 ##{{page.menu_title}}

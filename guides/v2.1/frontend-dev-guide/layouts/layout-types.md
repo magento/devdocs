@@ -6,8 +6,8 @@ title: Layout file types
 menu_title: Layout file types
 menu_order: 3
 github_link: frontend-dev-guide/layouts/layout-types.md
-redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-types.html
 ---
+
 <head>
 	<style>
 		table tr td, table tr th {border: 1px solid #ABABAB}
