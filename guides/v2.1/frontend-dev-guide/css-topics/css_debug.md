@@ -6,7 +6,6 @@ title: Styles debugging
 menu_order: 4
 menu_title: Styles debugging
 github_link: frontend-dev-guide/css-topics/css_debug.md
-redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css_debug.html
 ---
 
 <h2>What's in this topic</h2>

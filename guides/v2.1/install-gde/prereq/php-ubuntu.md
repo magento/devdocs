@@ -6,7 +6,6 @@ title: PHP 5.5 or 5.6&mdash;Ubuntu
 menu_title: PHP 5.5 or 5.6&mdash;Ubuntu
 menu_order: 06
 github_link: install-gde/prereq/php-ubuntu.md
-redirect_from: /guides/v1.0/install-gde/prereq/php-ubuntu.html
 ---
 
 <h4 id="instgde-php-prereq-contents">Contents</h4>

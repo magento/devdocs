@@ -5,10 +5,9 @@ subgroup: C_Templates
 title: Illustration of customizing templates
 menu_title: Illustration of customizing templates
 menu_order: 3
-
 github_link: frontend-dev-guide/templates/template-sample.md
-redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-sample.html
 ---
+
 <h2>What's in this topic</h2>
 This topic contains a step-by-step illustration of solving a typical design customization task using templates.
 

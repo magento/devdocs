@@ -6,7 +6,6 @@ title: Persistence layer
 menu_title: Persistence layer
 menu_order: 4
 github_link: architecture/archi_perspectives/persist_layer.md
-redirect_from: /guides/v1.0/architecture/archi_perspectives/persist_layer.html
 ---
 
 

@@ -7,9 +7,6 @@ menu_title: Translations
 menu_order: 1
 menu_node: parent
 github_link: frontend-dev-guide/translations/xlate.md
-redirect_from: 
-  - /guides/v1.0/architecture/behavior/xlate.html
-  - /guides/v2.0/architecture/behavior/xlate.html
 ---
 
 #### Contents

@@ -6,7 +6,6 @@ title: Composer
 menu_title: Composer
 menu_order: 2
 github_link: architecture/archi_perspectives/composer.md
-redirect_from: /guides/v1.0/architecture/archi_perspectives/composer.html
 ---
 
 

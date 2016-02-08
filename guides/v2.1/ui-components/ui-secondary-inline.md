@@ -7,8 +7,6 @@ menu_title: Inline Edit Component
 menu_node:
 menu_order: 8
 github_link: ui-components/ui-secondary-inline.md
-redirect_from: /guides/v2.0/ui-library/ui-secondary-inline.html
-
 ---
 
 <h3 id="inlineedit">Inline Edit component</h3>
