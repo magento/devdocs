@@ -1,6 +1,6 @@
 ---
 layout: default
-group: config-guide
+group: 
 subgroup: Elastic
 title: Manage your Elasticsearch cluster
 menu_title: Manage your Elasticsearch cluster
