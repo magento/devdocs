@@ -29,5 +29,5 @@ To access REST API documentation, Magento requires the user to be authenticated 
 The generated Swagger documentation provides the capability to test REST API requests. A user can enter a sample request, then press the **Try it out!** button, and Swagger returns information such as a `curl` command, a request URL, a response body, a response code, and the response header. Using the **Try it out** button also requires a bearer authorization token.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>**The Try it out!** feature is not available on Swagger documentation published on the Magento devdocs website.</p>
+  <p>The **Try it out!** feature is not available on Swagger documentation published on the Magento devdocs website.</p>
 </div>
