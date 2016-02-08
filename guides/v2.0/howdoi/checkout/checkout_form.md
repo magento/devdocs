@@ -154,7 +154,6 @@ If the form fields are not generated dynamically, they can be defined in a layou
 
 The following code sample shows configuration of the form that contains four fields: text input, select, checkbox, and date. This form uses checkout data provider (`checkoutProvider`) that is introduced in the `Magento_Checkout` module:
 
-<p class="q">Do we need to add a link or any other details</p>
 
 {%highlight xml%}
 <item name="custom-checkout-form-container" xsi:type="array">
