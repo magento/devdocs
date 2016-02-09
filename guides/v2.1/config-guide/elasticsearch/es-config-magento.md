@@ -77,4 +77,4 @@ One of the following displays:
 </table>
 
 #### Next
-TBD
+<a href="{{ site.gdeurl21 }}config-guide/elasticsearch/es-config-web-server.html">Secure communications between your web server and Elasticsearch</a>

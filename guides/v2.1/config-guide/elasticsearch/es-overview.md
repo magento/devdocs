@@ -16,10 +16,10 @@ github_link: config-guide/elasticsearch/es-overview.md
 
 *	<a href="#overview">Overview of Elasticsearch</a>
 *	<a href="#es-prereq">Prerequisites</a>
+*	<a href="#es-resources">Additional resources</a>
 *	[Configure Magento to use Elasticsearch]({{ site.gdeurl21 }}config-guide/elasticsearch/es-config-magento.html)
-*	[Configure your web server to use Elasticsearch]({{ site.gdeurl21 }}config-guide/elasticsearch/es-config-web-server.html)
+*	[Secure communications between your web server and Elasticsearch]({{ site.gdeurl21 }}config-guide/elasticsearch/es-config-web-server.html)
 *	[Configure Elasticsearch stopwords]({{ site.gdeurl21 }}config-guide/elasticsearch/es-config-stopwords.html)
-*	[Manage your Elasticsearch cluster]({{ site.gdeurl21 }}config-guide/elasticsearch/es-config-cluster.html)
 *	[Upgrade to Elasticsearch 2.x]({{ site.gdeurl21 }}config-guide/elasticsearch/es-config-upgrade.html)
 
 
@@ -83,7 +83,10 @@ To install Elasticsearch:
 3.	Optionally configure the <a href="https://www.elastic.co/guide/en/Elasticsearch/reference/current/setup-service.html" target="_blank">Elasticsearch service</a>.
 4.	<a href="https://www.elastic.co/guide/en/Elasticsearch/reference/current/setup.html" target="_blank">Start Elasticsearch</a>.
 
-
+## Additional resources {#es-resources}
+*	<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/_basic_concepts.html" target="_blank">Elasticsearch Basic Concepts</a>
+*	<a href="https://www.elastic.co/guide/en/elasticsearch/guide/current/distributed-cluster.html" target="_blank">Life Inside a Cluster</a>
+*	<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-configuration.html" target="_blank">Elasticsearch Configuration</a>
 
 #### Next
-TBD
+<a href="{{ site.gdeurl21 }}config-guide/elasticsearch/es-config-magento.html">Configure Magento to work with Elasticsearch</a>

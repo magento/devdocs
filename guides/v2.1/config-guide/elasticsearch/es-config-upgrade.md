@@ -18,7 +18,7 @@ github_link: config-guide/elasticsearch/es-config-upgrade.md
 
 Chuck:
 
-You switch to the version upgraded server/cluster and then do a full reindex.  At that point you¹ll impact customers ( as there¹s no old working index ); so the merchant will be down for a while; then the index is done and everything is working correctly.
+You switch to the version upgraded server/cluster and then do a full reindex.  At that point you'll impact customers ( as there's no old working index ); so the merchant will be down for a while; then the index is done and everything is working correctly.
 
 This would apply if the merchant is changing from Solr to Elasticsearch , or if the merchant is upgrading from ES 1.7 to ES 2.0 or ES 2.1 or some combination there off.
 

@@ -21,6 +21,10 @@ github_link: config-guide/elasticsearch/es-config-web-server.md
 ## Overview of secure web server communication {#es-ws-secure-over}
 This topic discusses an example of securing communication between your web server and Elasticsearch using <a href="http://tools.ietf.org/html/rfc2617" target="_blank">HTTP Basic</a> authentication. You can optionally configure other types of authentication as well; we provide references for that information.
 
+<div class="bs-callout bs-callout-warning">
+    <p>Unless otherwise noted, all commands in this topic must be entered as a user with <code>root</code> privileges.</p>
+</div>
+
 ## Secure communication with Apache {#es-ws-secure-apache}
 This section discusses how to secure communication between Apache and Elasticsearch using <a href="http://tools.ietf.org/html/rfc2617" target="_blank">HTTP Basic</a> authentication with Apache. For more options, consult one of the following resources:
 
@@ -31,7 +35,7 @@ The instructions that follow are based on Apache 2.2 with CentOS 6:
 
 *	[Step 1: Create a password file](#es-ws-secure-apache-pwd)
 *	[Step 2: Optionally add users to create an authorized group](#es-ws-secure-group)
-*	[Step 3: Complete the process](#es-ws-secure-finish)
+*	[Step 3: Configure your secure virtual host](#es-ws-secure-finish)
 *	[Verify communication is secure](#es-ws-secure-verify)
 
 ### Step 1: Create a password file {#es-ws-secure-apache-pwd}
@@ -40,7 +44,7 @@ The instructions that follow are based on Apache 2.2 with CentOS 6:
 ### Step 2: Optionally add users to create an authorized group {#es-ws-secure-group}
 {% include config/secure-ws-apache_step2.md %}
 
-### Step 3: Complete the process {#es-ws-secure-finish}
+### Step 3: Configure your secure virtual host {#es-ws-secure-finish}
 This section discusses how to add the reference to your Apache password file to your secure virtual host configuration.
 
 This secure virtual host starts with the following line:
@@ -102,6 +106,7 @@ Additional resources:
 
 *	<a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-password-authentication-with-nginx-on-ubuntu-14-04" target="_blank">How To Set Up Password Authentication with Nginx on Ubuntu 14.04 (Digitalocean)</a>
 *	<a href="https://www.howtoforge.com/basic-http-authentication-with-nginx" target="_blank">Basic HTTP Authentication With Nginx (HowtoForge)</a>
+*	<a href="https://gist.github.com/karmi/b0a9b4c111ed3023a52d" target="_blank">Example Nginx Configurations for Elasticsearch</a>
 
 See the following sections for more information:
 
@@ -117,31 +122,54 @@ Make sure your `nginx.conf` contains the following line so it loads the other co
 	include /etc/nginx/conf.d/*.conf;
 
 ### Step 2: Create passwords {#es-ws-secure-nginx-pwd}
-ADD TBD
+We recommend you use the Apache `htpasswd` command to encode passwords for the following users:
 
-Enter the following commands as a user with `root` privileges:
+*	User with access to nginx (named `magento_nginx` in this example)
+*	User with access to Elasticsearch (named `magento_elasticsearch` in this example)
 
-	mkdir -p /usr/local/apache/password
-	htpasswd -c /usr/local/apache/password/passwords <username>
+To create passwords:
 
-where `<username>` can be the web server user or another user. In this example, we use the web server user but the choice of user is up to you.
+1.	Enter the following command to determine if `htpasswd` is already installed:
 
-Follow the prompts on your screen to create a password for the user.
+		which htpasswd
 
-To add another user to your password file, enter the following command as a user with `root` privileges:
+	If a path displays, it is installed; if the command returns no output, `htpasswd` is not installed.
+2.	If necessary, install `htpasswd`:
 
-	htpasswd /usr/local/apache/password/passwords <username>
+	*	Ubuntu: `apt-get -y install apache2-utils`
+	*	CentOS: TBD
+3.	Create passwords in the `/etc/nginx/passwd` directory: 
+
+		mkdir -p /etc/nginx/passwd
+		htpasswd -c /etc/nginx/passwd <username>
+
+	You must create two users. Following is an example:
+
+		mkdir -p /etc/nginx/passwd
+		htpasswd -c /etc/nginx/passwd magento_nginx
+		httpasswd -c /etc/ngins/passwd magento_elasticsearch
+
+	Follow the prompts on your screen to create a different password for each user.
+
+4.	After you create two individual users, create another password file with both users in it, one on each line.
+
+	Name the file `/etc/nginx/passwd/magento_all` and copy the values from the other files you created.
+
+5.	*(Optional).* To add another user to your password file, enter the same command without the `-c` (create) option:
+
+		htpasswd /etc/nginx/passwd <username>
+6.	Verify that all three files are in `/etc/nginx/passwd` and that `/etc/nginx/passwd/magento_all` has passwords for both users.
 
 ### Step 3: Set up access to nginx {#es-ws-secure-nginx-access}
-To specify who can access the nginx server in a configuration file:
+This section discusses how to specify who can access the nginx server.
 
-1.	As a user with `root` privileges, use a text editor to create a new file `/etc/nginx/conf.d/magento_es_auth.conf` with the following contents:
+Use a text editor to create a new file `/etc/nginx/conf.d/magento_es_auth.conf` with the following contents:
 
-		server {
+	server {
 		listen       80;
 		server_name  localhost;
 
-		location / {
+	location / {
 		limit_except HEAD {
 			auth_basic "Restricted";
 			auth_basic_user_file  /etc/nginx/passwd/es_auth_magento;
@@ -150,23 +178,39 @@ To specify who can access the nginx server in a configuration file:
 		proxy_redirect off;
 		proxy_set_header Host $host;
 		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-		}
+	}
 
-		location /_aliases {
-			auth_basic "Restricted";
-			auth_basic_user_file  /etc/nginx/passwd/es_auth_all;
-			proxy_pass http://<elastic search server host name or ip>:<elasticsearch port>;
-			proxy_redirect off;
-			proxy_set_header Host $host;
-			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-		}
+	location /_aliases {
+		auth_basic "Restricted";
+		auth_basic_user_file  /etc/nginx/passwd/es_auth_all;
+		proxy_pass http://<elastic search server host name or ip>:<elasticsearch port>;
+		proxy_redirect off;
+		proxy_set_header Host $host;
+		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+	}
 	
 		include /etc/nginx/auth/*.conf;
-		}
+	}
 
 
 ### Step 4: Set up a restricted context for Elasticsearch {#es-ws-secure-nginx-context}
-TBD
+This section discusses how to specify who can access the Elasticsearch server.
+
+Use a text editor to create a new file `/etc/nginx/auth/magento_elasticsearch.conf` with the following contents:
+
+	location /elasticsearch {
+	auth_basic "Restricted - elasticsearch";
+	auth_basic_user_file /etc/nginx/passwd/elasticsearch;
+		
+	proxy_pass http://<elastic search server host name or ip>:<elasticsearch port>;
+	proxy_redirect off;
+	proxy_set_header Host $host;
+   	proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+	}
+
 
 ## Verify communication is secure {#es-ws-secure-verify}
 TBD
+
+#### Next
+<a href="{{ site.gdeurl21 }}config-guide/elasticsearch/es-config-stopwords.html">Configure Elasticsearch stopwords</a>
