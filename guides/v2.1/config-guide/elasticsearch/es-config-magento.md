@@ -62,7 +62,7 @@ One of the following displays:
 		<td><img src="{{ site.baseurl }}common/images/elastic_test-fail.png"></td>
 		<td><p>Try the following:</p>
 			<ul><li>Make sure the Elasticsearch server is running.</li>
-				<li>If the Elasticsearch server is on a different host from Magento, log in to the Magento server and ping the elasticserver host. Resolve network connectivity issues and test the connection again.</li>
+				<li>If the Elasticsearch server is on a different host from Magento, log in to the Magento server and ping the Elasticsearch host. Resolve network connectivity issues and test the connection again.</li>
 				<li>Examine the command window in which you started Elasticsearch for stack traces and exceptions. You must resolve those before you continue.<br />
 	In particular, make sure you started Elasticsearch as a user with <code>root</code> privileges.</li>
 <li>Make sure that <a href="{{ site.gdeurl21 }}config-guide/elasticsearch/elasticsearch-overview.html#prereq-secy">UNIX firewall and SELinux</a> are both disabled, or set up rules to enable Elasticsearch and Magento to communicate with each other.</li>
