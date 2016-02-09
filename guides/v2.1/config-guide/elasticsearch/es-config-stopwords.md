@@ -70,7 +70,7 @@ To add stopwords for a locale:
 	For example, to create stopwords for the Italian locale, name the file `stopwords_it_IT.csv`.
 
 3.	In your stopword file, make sure each stopword is on a separate line.
-4.	Save your changes ane exit the text editor.
+4.	Save your changes and exit the text editor.
 5.	In the same directory, open `esconfig.xml` in a text editor.
 6.	Add a line to `esconfig.xml` as follows:
 
