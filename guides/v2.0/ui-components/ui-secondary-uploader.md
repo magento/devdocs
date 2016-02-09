@@ -14,10 +14,6 @@ redirect_from: /guides/v2.0/ui-library/ui-secondary-uploader.html
 
 UI File Uploader component is an adapter for <a href="https://github.com/blueimp/jQuery-File-Upload/wiki">jQuery-File-Upload</a> plugin used in Magento. Component is used to integrate file upload functionality with UI components.
 
-
-The following image is an illustration of a grid with a sticky header:
-
-
 <h2 id="elements">Component elements</h2>
 
 * Constructor: `app/code/Magento/Ui/view/base/web/js/form/element/file-uploader.js`
