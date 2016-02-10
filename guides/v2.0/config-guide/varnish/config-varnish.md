@@ -92,6 +92,21 @@ We know of the following issues with Varnish:
 	      .first_byte_timeout = 600s;
 		}
 
+*	Possible error on some pages:
+
+		Error 503 Backend fetch failed
+		Backend fetch failed
+		Guru Meditation:
+		XID: 303394517
+
+	If you experience this error, it is possible that Magento is sending a list of
+	cache tags longer than the default allowed 8192 characters. To fix this, you
+	must edit the `http_resp_hdr_len` launch parameter.
+
+	On CentOS, this can be changed in the `/etc/sysconfig/varnish` file by adding
+	the line:
+
+		-p http_resp_hdr_len=64000 \
 
 #### Next step
 <a href="{{ site.gdeurl }}config-guide/varnish/config-varnish-install.html">Install Varnish</a>
