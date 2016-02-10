@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Listing/Grid Secondary Components</title>
+	<title>File Uploader Component</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/ui-components/ui-secondary.html">
+	<link rel="canonical" href="//guides/v2.0/ui-components/ui-secondary-uploader.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -132,9 +132,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Listing/Grid Secondary Components</h1>
+		<h1 class="page-heading">File Uploader Component</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/ui-components/ui-secondary.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/ui-components/ui-secondary-uploader.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -373,7 +373,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/ui-components/ui-secondary.html">Listing/Grid Secondary Components</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/ui-components/ui-secondary.html">Listing/Grid Secondary Components</a></li>
 									
 								
 
@@ -480,7 +480,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/ui-components/ui-secondary-uploader.html">File Uploader Component</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/ui-components/ui-secondary-uploader.html">File Uploader Component</a></li>
 
 									
 
@@ -616,24 +616,105 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<h3>UI Listing/Grid Secondary Components</h3>
+		<h2 id="filter">Overview</h2>
 
-<p>The following components extend the functionality of the Listing component:</p>
+<p>UI File Uploader component is an adapter for <a href="https://github.com/blueimp/jQuery-File-Upload/wiki">jQuery-File-Upload</a> plugin used in Magento. Component is used to integrate file upload functionality with UI components.</p>
+
+<h2 id="elements">Component elements</h2>
 
 <ul>
-  <li><a href="/guides/v2.0/ui-components/ui-secondary-filter.html">Filter component</a></li>
-  <li><a href="/guides/v2.0/ui-components/ui-secondary-pagination.html">Pagination component</a></li>
-  <li><a href="/guides/v2.0/ui-components/ui-secondary-massaction.html">MassAction component</a></li>
-  <li><a href="/guides/v2.0/ui-components/ui-secondary-treemass.html">TreeMassAction component</a></li>
-  <li><a href="/guides/v2.0/ui-components/ui-secondary-column.html">Column component</a></li>
-  <li><a href="/guides/v2.0/ui-components/ui-secondary-uiselect.html">UI-select component</a></li>
-  <li><a href="/guides/v2.0/ui-components/ui-secondary-multi.html">Multiselect component</a></li>
-  <li><a href="/guides/v2.0/ui-components/ui-secondary-inline.html">Inline Edit component</a></li>
-  <li><a href="/guides/v2.0/ui-components/ui-secondary-bookmark.html">Bookmark component</a></li>
-  <li><a href="/guides/v2.0/ui-components/ui-secondary-resize.html">Resize component</a></li>
-  <li><a href="/guides/v2.0/ui-components/ui-secondary-header.html">Sticky header component</a></li>
-  <li><a href="/guides/v2.0/ui-components/ui-export.html">ExportButton component</a></li>
+  <li>Constructor: <code>app/code/Magento/Ui/view/base/web/js/form/element/file-uploader.js</code></li>
+  <li>JQuery file upload plugin: <code>jquery/fileUploader/jquery.fileupload-fp</code></li>
+  <li>Default template: <code>app/code/Magento/Ui/view/base/web/templates/form/element/uploader/uploader.html</code></li>
+  <li>Preview template: <code>app/code/Magento/Ui/view/base/web/templates/form/element/uploader/preview.html</code></li>
 </ul>
+
+<h2 id="structure">Component options</h2>
+
+<table>
+<tbody>
+<tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Required For Correct Work</th>
+    <th>Type</th>
+    <th>Default Value</th>
+</tr>
+<tr>
+    <td>previewTmpl</td>
+    <td>Path to the files' preview template</td>
+    <td>No</td>
+    <td>String</td>
+    <td>app/code/Magento/Ui/view/base/web/templates/form/element/uploader/preview.html
+</td>
+</tr>
+<tr>
+    <td>maxFileSize</td>
+    <td>Defines maximum size of a file (in bytes</td>
+    <td>No</td>
+    <td>Number</td>
+    <td>Infinite</td>
+</tr>
+<tr>
+    <td>isMultipleFiles</td>
+    <td>Flag which indicates whether multiple files can be uploaded or not</td>
+    <td>No</td>
+    <td>Boolean</td>
+    <td>false</td>
+</tr>
+<tr>
+    <td>allowedExtensions</td>
+    <td>List of allowed file extensions</td>
+    <td>No</td>
+    <td>String/Array</td>
+    <td>*</td>
+</tr>
+<tr>
+    <td>dropZone</td>
+    <td>CSS selector of a drop zone element relative to a file input element</td>
+    <td>No</td>
+    <td>String</td>
+    <td>[data-role=drop-zone]</td>
+</tr>
+<tr>
+    <td>uploaderConfig</td>
+    <td>Configuration which will be passed to jquery-file-upload plugin</td>
+    <td>Yes</td>
+    <td>Object</td>
+    <td></td>
+</tr>
+<tr>
+    <td>uploaderConfig.url</td>
+    <td>Route to server controller which will handle file uploading process</td>
+    <td>Yes</td>
+    <td>String</td>
+    <td>null</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="example">Integration</h2>
+
+<p>Here is an example of how File Uploader component integrates with <a href="/guides/v2.0/ui-components/ui-form.html">Form</a> component:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="nt">&gt;</span>
+    ...
+    <span class="nt">&lt;fieldset</span> <span class="na">name=</span><span class="s">&quot;foo&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+        ...
+        <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;bar&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Sound Check<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;visible&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;formElement&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>fileUploader<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;uploaderConfig&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;url&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;url&quot;</span> <span class="na">path=</span><span class="s">&quot;path/to/controller&quot;</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;/field&gt;</span>
+    <span class="nt">&lt;/fieldset&gt;</span>
+<span class="nt">&lt;/form&gt;</span></code></pre></div>
 
 
 		</div>
