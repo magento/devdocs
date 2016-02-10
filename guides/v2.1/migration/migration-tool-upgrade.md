@@ -31,7 +31,7 @@ Before you upgrade, you must:
 If you haven't already done so, run the <a href="{{ site.gdeurl21 }}comp-mgr/upgrader/upgrade-start.html">System Upgrade utility</a> to upgrade the Magento software.
 
 ### Back up the `vendor/magento/data-migration-tool` directory
-Before you upgrade the Data Migration Tool, back up at least the `vendor/magento/data-migration-tool` directory. During upgrade, it is deleted and replaced by updated code.
+Before you upgrade the Data Migration Tool, back up at least the `vendor/magento/data-migration-tool` directory. During upgrade, it could be deleted and replaced by updated code.
 
 If you want, you can back up the entire Magento codebase and database using the following command:
 
