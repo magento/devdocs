@@ -2,8 +2,8 @@
 layout: default
 group: extension-dev-guide
 subgroup: 03_Build
-title: Enable a component
-menu_title: Enable a component
+title: Enable your component
+menu_title: Enable your component
 menu_order: 9
 github_link: extension-dev-guide/enable-module.md
 
