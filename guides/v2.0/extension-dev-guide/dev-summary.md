@@ -1,17 +1,18 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 02_Dev
-title: Summary of developing and packaging components
-menu_title: Summary of developing and packaging components
-menu_order: 10
+subgroup: 02_Prepare
+title: Roadmap for developing and packaging components
+menu_title: Roadmap for developing and packaging components
+menu_order: 50
 menu_node: 
 github_link: extension-dev-guide/dev-summary.md
-redirect_from: /guides/v2.0/mktpl-quickstart/dev-summary.html
+redirect_from: 
+  - /guides/v2.0/mktpl-quickstart/dev-intro.html
+  - /guides/v2.0/mktpl-quickstart/dev-summary.html
 ---
 
 ##{{page.menu_title}}
-
 To develop your component, use the following steps:
 
 1.	Learn about <a href="{{ site.gdeurl }}extension-dev-guide/composer-integration.html">using Composer with your component</a>.

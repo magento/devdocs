@@ -1,19 +1,22 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 2_Prepare
-title: Component file structure summary
-menu_title: Component file structure summary (new)
-menu_order: 50
+subgroup: 02_Prepare
+title: About component file structure 
+menu_title: About component file structure 
+menu_order: 10
 menu_node: 
 github_link: extension-dev-guide/prepare_file-str.md
-
+redirect_from: /guides/v2.0/mktpl-quickstart/dev-filesys.html
 ---
 
 ##{{page.menu_title}}
 
+One of the first things you can do to get started with component development is to understand and set up the file system. Each type of component has a *different file structure*, although all components require certain files.
 
-Outline:
+In addition, you can choose the component root directory to start development. The following sections have more information.
 
-*	Shorter version of file structure for all component types
-*	Note about module root (`app/code`, `vendor`)
+{% include php-dev/component-root.md %}
+
+#### Related topic
+<a href="{{ site.gdeurl }}"

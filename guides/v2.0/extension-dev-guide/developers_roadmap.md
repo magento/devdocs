@@ -32,7 +32,7 @@ Key points:
 	*	<a href="{{ site.gdeurl }}extension-dev-guide/package_module.html">Package your component</a> in `.zip` format.
 	*	If you upload the component to Magento Marketplace, it should be less than 30MB in size.
 
-#### Helpful links
+#### Related topics
 *	<a href="{{ site.gdeurl }}extension-dev-guide/intro-composer.html">Introduction to Composer</a>
 *	<a href="{{ site.gdeurl }}extension-dev-guide/intro-composer-gloss.html">Glossary of common terms</a>
 *	<a href="https://github.com/magento/magento2-samples" target="_blank">Sample extensions</a> created by the Magento 2 Core team

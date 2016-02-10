@@ -1,7 +1,7 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 6_Module Development
+subgroup: 99_Module Development
 title: PHP developer guide
 menu_title: Backward compatibility
 menu_order: 12

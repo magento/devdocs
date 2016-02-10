@@ -1,7 +1,7 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 4_Validate
+subgroup: 06_Validate
 title: Test your component
 menu_title: Test your component
 menu_order: 2

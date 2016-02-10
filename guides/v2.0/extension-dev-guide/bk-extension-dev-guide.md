@@ -10,6 +10,7 @@ github_link: extension-dev-guide/bk-extension-dev-guide.md
 redirect_from: 
   - /guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html
   - /guides/v2.0/mktpl-quickstart/bk-marketplace-qs.html
+  - /guides/v2.0/mktpl-quickstart/intro-moreinfo.html
 ---
 
 ##{{page.menu_title}}
@@ -33,4 +34,10 @@ A Magento *module* is code that accomplishes a particular business function or h
 <div class="bs-callout bs-callout-info" id="info">
 <p>You must follow a <a href="http://www.php-fig.org/psr/psr-4/">PSR compliant</a> structure when building a module.</p>
 </div>
+
+#### Related topics
+
+*	<a href="{{ site.gdeurl }}extension-dev-guide/developers_roadmap.html">Developer roadmap</a>
+*	<a href="{{ site.gdeurl }}extension-dev-guide/intro-composer.html">Introduction to Composer</a>
+*	<a href="{{ site.gdeurl }}extension-dev-guide/intro-composer-gloss.html">Glossary of common terms</a>
 

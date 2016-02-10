@@ -1,7 +1,7 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 4_Validate
+subgroup: 06_Validate
 title: Validate
 menu_title: Validate
 menu_order: 1

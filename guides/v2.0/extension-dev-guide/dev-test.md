@@ -1,7 +1,7 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 02_Dev
+subgroup: 02_Prepare
 title: Test your component
 menu_title: Test your component
 menu_order: 100

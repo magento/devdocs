@@ -1,7 +1,7 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 3_Build
+subgroup: 03_Build
 title: URN schema validation
 menu_title: URN schema validation
 menu_order: 6

@@ -1,9 +1,9 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 2_Prepare
-title: Prepare
-menu_title: Prepare (updated)
+subgroup: 02_Prepare
+title: Prepare (development quick start)
+menu_title: Prepare (development quick start)
 menu_order: 1
 menu_node: parent
 github_link: extension-dev-guide/prepare.md

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 3_Build
+subgroup: 03_Build
 title: Define your configuration files
 menu_title: Define your configuration files
 menu_order: 3

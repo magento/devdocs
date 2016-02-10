@@ -1,9 +1,9 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 2_Prepare
-title: Component types in composer.json
-menu_title: Component types in composer.json (renamed)
+subgroup: 03_Build
+title: Create composer.json
+menu_title: Create composer.json
 menu_order: 2
 github_link: extension-dev-guide/composer-integration.md
 redirect_from: /guides/v1.0/extension-dev-guide/composer-integration.html
@@ -11,12 +11,18 @@ redirect_from: /guides/v1.0/extension-dev-guide/composer-integration.html
 ---
 ##{{page.menu_title}}
 
+#### Contents
+
+*	[Overview of composer.json files](#composerjson-overview)
+*	[Versioning](#component-version)
+*	[Composer binary location](#composer-binary)
+
 
 [Composer](https://getcomposer.org/) is a dependency manager for PHP. Magento 2 uses Composer to package components and product editions. 
 
 Some third-party components that the Magento system uses might not be present in the code base. Instead, they are listed as dependencies in the root `composer.json` file. 
 
-<h2>Overview of composer.json files</h2>
+## Overview of composer.json files {#composerjson-overview}
 Certain Magento components and product editions are represented with `composer.json` files. 
 
 <table><tbody>
@@ -145,5 +151,8 @@ Each Magento component can be categorized into one of the types listed in the pr
 
 Having an identifier type for each component allows the system to marshal the directories and files of each component to the correct locations, based on the Magento 2 directory structure. 
 
-<h3>Composer Binary Location</h3>
+## Versioning {#component-version}
+{% include php-dev/component-versioning.md %}
+
+## Composer binary location {#composer-binary}
 Magento's `bin/magento` script uses composer from the `vendor/composer` directory in your Magento 2 installation, not your globally installed Composer. Keep this in mind while customizing or updating composer or troubleshooting Composer issues while working with Magento 2.
