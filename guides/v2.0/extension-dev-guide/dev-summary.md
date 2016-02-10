@@ -1,6 +1,6 @@
 ---
 layout: default
-group: quickstart
+group: extension-dev-guide
 subgroup: 02_Dev
 title: Summary of developing and packaging components
 menu_title: Summary of developing and packaging components

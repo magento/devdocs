@@ -1,6 +1,6 @@
 ---
 layout: default
-group: quickstart
+group: extension-dev-guide
 subgroup: 01_Introduction
 title: Introduction to Composer
 menu_title: Introduction to Composer

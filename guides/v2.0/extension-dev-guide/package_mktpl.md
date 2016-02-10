@@ -1,7 +1,7 @@
 ---
 layout: default
-group: quickstart
-subgroup: 03_Market
+group: extension-dev-guide
+subgroup: 05_Package
 title: Upload your component to the Magento Marketplace
 menu_title: Upload your component to the Magento Marketplace
 menu_order: 100

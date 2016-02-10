@@ -1,7 +1,7 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 5_Package
+subgroup: 05_Package
 title: Package
 menu_title: Package
 menu_order: 1

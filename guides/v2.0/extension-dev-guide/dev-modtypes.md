@@ -1,6 +1,6 @@
 ---
 layout: default
-group: quickstart
+group: extension-dev-guide
 subgroup: 02_Dev
 title: Component types
 menu_title: Component types

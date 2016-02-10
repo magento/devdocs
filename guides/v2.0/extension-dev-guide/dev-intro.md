@@ -1,6 +1,6 @@
 ---
 layout: default
-group: quickstart
+group: extension-dev-guide
 subgroup: 02_Dev
 title: Develop your component
 menu_title: Develop your component

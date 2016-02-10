@@ -1,6 +1,6 @@
 ---
 layout: default
-group: quickstart
+group: extension-dev-guide
 subgroup: 02_Dev
 title: Set up your component's file structure
 menu_title: Set up your component's file structure
