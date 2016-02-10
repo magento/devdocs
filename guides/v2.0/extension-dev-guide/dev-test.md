@@ -6,7 +6,8 @@ title: Test your component
 menu_title: Test your component
 menu_order: 100
 menu_node: 
-github_link: mktpl-quickstart/dev-test.md
+github_link: extension-dev-guide/dev-test.md
+redirect_from: /guides/v2.0/mktpl-quickstart/dev-test.html
 ---
 
 ##{{page.menu_title}}

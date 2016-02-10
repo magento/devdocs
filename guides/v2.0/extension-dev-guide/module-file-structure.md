@@ -31,7 +31,6 @@ A typical file structure for a Magento 2 module:
 <p><img src="{{ site.baseurl }}common/images/pdg-config-file-structure.png" width="300" alt="A filesystem view of a typical file structure"></p>
 
 ####Typical directories
-
 Typical module directories are:
 
 * `Block`: contains PHP view classes as part of MVC vertical implementation of module logic.

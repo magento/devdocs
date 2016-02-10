@@ -6,7 +6,8 @@ title: Introduction to Composer
 menu_title: Introduction to Composer
 menu_order: 2
 menu_node: 
-github_link: mktpl-quickstart/intro-composer.md
+github_link: extension-dev-guide/intro-composer.md
+redirect_from: /guides/v2.0/mktpl-quickstart/intro-composer.html
 ---
 
 {% include install/composer-overview.html %}

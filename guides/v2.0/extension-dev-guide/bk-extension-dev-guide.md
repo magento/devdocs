@@ -18,9 +18,9 @@ This guide contains information for developers who want to extend, or customize,
 
 Magento is made up of the following types of components:
 
-* Modules
-* Themes
-* Language packages
+* <a href="{{ site.gdeurl }}architecture/archi_perspectives/components/modules/mod_intro.html">Modules</a>
+* <a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-general.html">Themes</a>
+* <a href="{{ site.gdeurl }}frontend-dev-guide/translations/xlate.html#m2devgde-xlate-languagepack">Language packages</a>
 
 A Magento *module* is code that accomplishes a particular business function or handles a Magento feature. A module is a collection `.php` and `.xml` files, but may also contain other files such as `.phtml` and image files. Modules are interactive with each other. A module also contains any user interface required for a user's interaction with the module, and any application interfaces that another module or code chunk might call, if you decide to expose any application interface to other Magento modules.
 
@@ -32,5 +32,3 @@ A Magento *module* is code that accomplishes a particular business function or h
 <p>You must follow a <a href="http://www.php-fig.org/psr/psr-4/">PSR compliant</a> structure when building a module.</p>
 </div>
 
-####Related topic
-<a href="{{ site.gdeurl }}architecture/modules/mod_intro.html">Modules</a> in the Magento Architecture Guide.

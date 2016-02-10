@@ -4,9 +4,10 @@ group: quickstart
 subgroup: 03_Market
 title: Upload your component to the Magento Marketplace
 menu_title: Upload your component to the Magento Marketplace
-menu_order: 1
-menu_node: parent
-github_link: mktpl-quickstart/mktpl-intro.md
+menu_order: 100
+menu_node: 
+github_link: extension-dev-guide/package_mktpl.md
+redirect_from: /guides/v2.0/mktpl-quickstart/mktpl-intro.html
 ---
 
 ##{{page.menu_title}}

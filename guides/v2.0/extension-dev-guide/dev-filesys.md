@@ -6,7 +6,8 @@ title: Set up your component's file structure
 menu_title: Set up your component's file structure
 menu_order: 5
 menu_node: 
-github_link: mktpl-quickstart/dev-filesys.md
+github_link: extension-dev-guide/dev-filesys.md
+redirect_from: /guides/v2.0/mktpl-quickstart/dev-filesys.html
 ---
 
 ##{{page.menu_title}}
