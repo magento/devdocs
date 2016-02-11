@@ -268,9 +268,11 @@ The following sample is an example of the configuration for a simple modal windo
 
 ## Public API (JS)
 
-- `openModal()`: opens the modal window
-- `closeModal()`: closes the modal window
-- `toggleModal()`: toggles the modal window state (open/close)
-- `setPrevValues(elem)`: returns all `elem`'s child components to the state they had on modal open
 - `actionCancel()`: returns all modal's child components to the state they had on modal open and closes the modal window. 
 - `actionDone()`: validates the changes in the modal's child components and, if valid, closes the modal.
+- `closeModal()`: closes the modal window
+- `openModal()`: opens the modal window
+- `setPrevValues(elem)`: returns all `elem`'s child components to the state they had on modal open
+- `setTitle()` - sets modal title
+- `setSubTitle()` - sets modal sub title
+- `toggleModal()`: toggles the modal window state (open/close)
