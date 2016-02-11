@@ -559,6 +559,14 @@
 									
 
 								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/tshoot-varnish-503.html">Troubleshooting 503 (Service Unavailable) errors</a></li>
+
+									
+
+								
 								
 								
 							
@@ -1012,6 +1020,7 @@
       <li><a href="/guides/v2.0/config-guide/varnish/use-varnish-cache-how.html">How Varnish caching works</a></li>
     </ul>
   </li>
+  <li><a href="/guides/v2.0/config-guide/varnish/tshoot-varnish-503.html">Troubleshooting 503 (Service Unavailable) errors</a></li>
 </ul>
 
 <h2 id="config-varnish-over">Overview of the Varnish solution</h2>
@@ -1074,7 +1083,9 @@
 
     <p>As an alternative, use SSL termination or an <a href="https://en.wikipedia.org/wiki/TLS_termination_proxy" target="_blank">SSL termination proxy</a>.</p>
   </li>
-  <li>If you manually delete the contents of the <code>&lt;your Magento install dir&gt;/var/cache</code> directory, you must restart Varnish.</li>
+  <li>
+    <p>If you manually delete the contents of the <code>&lt;your Magento install dir&gt;/var/cache</code> directory, you must restart Varnish.</p>
+  </li>
   <li>
     <p>Possible error installing Magento:</p>
 
@@ -1093,26 +1104,47 @@ Varnish cache server
 }
 </code></pre>
   </li>
-  <li>
-    <p>Possible error on some pages:</p>
+</ul>
 
-    <pre><code>Error 503 Backend fetch failed
+<h2 id="varnish-503">Troubleshooting 503 (Service Unavailable) errors</h2>
+<p>If the length of cache tags used by Magento exceed Varnish’s default of 8192 errors, you can see HTTP 503 (Service Unavailable) errors in the browser. The errors might display simiar to the following:</p>
+
+<pre><code>Error 503 Backend fetch failed
 Backend fetch failed
-Guru Meditation:
-XID: 303394517
 </code></pre>
 
-    <p>If you experience this error, it is possible that Magento is sending a list of
-cache tags longer than the default allowed 8192 characters. To fix this, you
-must edit the <code>http_resp_hdr_len</code> launch parameter.</p>
+<p>To resolve this issue, increase the default value of <code>http_resp_hdr_len</code> in your Varnish configuration file as follows:</p>
 
-    <p>On CentOS, this can be changed in the <code>/etc/sysconfig/varnish</code> file by adding
-the line:</p>
+<ol>
+  <li>
+    <p>As a user with <code>root</code> privileges, open your Vanish configuration file in a text editor:</p>
 
-    <pre><code>-p http_resp_hdr_len=64000 \
+    <ul>
+      <li>CentOS: <code>/etc/sysconfig/varnish</code></li>
+      <li>Ubuntu: <code>/etc/default/varnish</code></li>
+    </ul>
+  </li>
+  <li>Search for the <code>http_resp_hdr_len</code> parameter.</li>
+  <li>If the parameter doesn’t exist, add it after <code>thread_pool_max</code>.</li>
+  <li>
+    <p>Set <code>http_resp_hdr_len</code> to a value larger than 8192.</p>
+
+    <p>For example:</p>
+
+    <pre><code>-p http_resp_hdr_len=64000 \ A snippet follows:
+
+# DAEMON_OPTS is used by the init script.
+DAEMON_OPTS="-a ${VARNISH_LISTEN_ADDRESS}:${VARNISH_LISTEN_PORT} \
+     -f ${VARNISH_VCL_CONF} \
+     -T ${VARNISH_ADMIN_LISTEN_ADDRESS}:${VARNISH_ADMIN_LISTEN_PORT} \
+     -p thread_pool_min=${VARNISH_MIN_THREADS} \
+     -p thread_pool_max=${VARNISH_MAX_THREADS} \
+     -p http_resp_hdr_len=64000 \
+     -S ${VARNISH_SECRET_FILE} \
+     -s ${VARNISH_STORAGE}"
 </code></pre>
   </li>
-</ul>
+</ol>
 
 <h4 id="next-step">Next step</h4>
 <p><a href="/guides/v2.0/config-guide/varnish/config-varnish-install.html">Install Varnish</a></p>

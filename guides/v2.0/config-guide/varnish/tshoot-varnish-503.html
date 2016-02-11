@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Generate data for performance testing</title>
+	<title>Troubleshooting 503 (Service Unavailable) errors</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/config-guide/cli/config-cli-subcommands-perf-data.html">
+	<link rel="canonical" href="//guides/v2.0/config-guide/varnish/tshoot-varnish-503.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -132,9 +132,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Generate data for performance testing</h1>
+		<h1 class="page-heading">Troubleshooting 503 (Service Unavailable) errors</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/config-guide/cli/config-cli-subcommands-perf-data.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/config-guide/varnish/tshoot-varnish-503.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -479,7 +479,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
 
 									
 
@@ -562,7 +562,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/tshoot-varnish-503.html">Troubleshooting 503 (Service Unavailable) errors</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/config-guide/varnish/tshoot-varnish-503.html">Troubleshooting 503 (Service Unavailable) errors</a></li>
 
 									
 
@@ -1000,230 +1000,48 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<h4 id="contents">Contents</h4>
+		<h2 id="varnish-503">Troubleshooting 503 (Service Unavailable) errors</h2>
+<p>If the length of cache tags used by Magento exceed Varnish’s default of 8192 errors, you can see HTTP 503 (Service Unavailable) errors in the browser. The errors might display simiar to the following:</p>
 
-<ul>
-  <li><a href="#config-cli-perf-overview">Overview of performance testing data</a></li>
-  <li><a href="#config-cli-before">First steps</a></li>
-  <li><a href="#config-cli-perf-prof">About profiles</a></li>
-  <li><a href="#config-cli-perf-run">Run the data generator</a></li>
-</ul>
-
-<h2 id="config-cli-perf-overview">Overview of performance testing data</h2>
-<p>To use the Magento performance toolkit or another tool for performance testing, you must generate a large amount of data (for example, stores, categories, products, and so on).</p>
-
-<p>You can adjust the amount of data you create using <em>profiles</em> (small, medium, large, and extra large). The next section discusses profiles in more detail.</p>
-
-<p>The following figure shows how a product displays on the storefront using the small profile:</p>
-
-<p><img src="/common/images/config_generate-data.png" alt="Sample storefront with generated data" /></p>
-
-<p>This gives you an idea about what the data looks like.</p>
-
-<h2 id="config-cli-before">First steps</h2>
-<div>
-
-  <ol>
-    <li>
-      <p>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.</p>
-
-      <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
-
-      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
-</code></pre>
-    </li>
-    <li>
-      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
-
-      <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
-
-      <p>bash shell example for CentOS:</p>
-
-      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
-</code></pre>
-    </li>
-  </ol>
-
-  <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You can also run the commands in the following ways:</p>
-<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
-<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
-<p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
-</div>
-
-  <p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
-
-  <h2 id="config-cli-perf-prof">About profiles</h2>
-  <p>The following table provides details about the data generator profiles (small, medium, large, and extra large).</p>
-
-  <p>Profiles are located in <code>&lt;your Magento install dir&gt;/setup/performance-toolkit/profiles/&lt;ce or ee&gt;</code></p>
-
-  <p>For example, <code>/var/www/html/magento2/setup/performance-toolkit/profiles/ce</code></p>
-
-  <table>
-	<tbody>
-		<tr>
-			<th>Parameter</th>
-			<th>Small profile</th>
-			<th>Medium profile</th>
-			<th>Large profile</th>
-			<th>Extra large profile</th>
-		</tr>
-		
-	<tr>
-		<td><p>websites</p></td>
-		<td><p>1</p></td>
-		<td><p>1</p></td>
-		<td><p>3</p></td>
-		<td><p>5</p></td>
-	</tr>
-	<tr>
-		<td><p>store_groups</p></td>
-		<td><p>1</p></td>	
-		<td><p>2</p></td>
-		<td><p>3</p></td>
-		<td><p>5</p></td>	
-	</tr>
-	<tr>
-		<td><p>store_views</p></td>
-		<td><p>1</p></td>	
-		<td><p>2</p></td>
-		<td><p>3</p></td>
-		<td><p>5</p></td>	
-	</tr>
-	<tr>
-		<td><p>simple_products</p></td>
-		<td><p>800</p></td>	
-		<td><p>16,000</p></td>
-		<td><p>400,000</p></td>
-		<td><p>800,000</p></td>	
-	</tr>
-	<tr>
-		<td><p>configurable_products</p></td>
-		<td><p>50</p></td>	
-		<td><p>1,000</p></td>
-		<td><p>25,000</p></td>
-		<td><p>50,000</p></td>	
-	</tr>
-	<tr>
-		<td><p>categories</p></td>
-		<td><p>30</p></td>	
-		<td><p>300</p></td>
-		<td><p>1,000</p></td>
-		<td><p>3,000</p></td>	
-	</tr>
-	<tr>
-		<td><p>categories_nesting_level</p></td>
-		<td><p>3</p></td>	
-		<td><p>3</p></td>
-		<td><p>3</p></td>
-		<td><p>6</p></td>	
-	</tr>
-	<tr>
-		<td><p>catalog_price_rules</p></td>
-		<td><p>10</p></td>	
-		<td><p>20</p></td>
-		<td><p>50</p></td>
-		<td><p>100</p></td>	
-	</tr>
-	<tr>
-		<td><p>catalog_target_rules</p></td>
-		<td><p>2</p></td>	
-		<td><p>5</p></td>
-		<td><p>10</p></td>
-		<td><p>50</p></td>	
-	</tr>
-	<tr>
-		<td><p>cart_price_rules</p></td>
-		<td><p>10</p></td>	
-		<td><p>20</p></td>
-		<td><p>50</p></td>
-		<td><p>100</p></td>		
-	</tr>
-	<tr>
-		<td><p>cart_price_rules_floor</p></td>
-		<td><p>2</p></td>	
-		<td><p>2</p></td>
-		<td><p>2</p></td>
-		<td><p>5</p></td>		
-	</tr>
-	<tr>
-		<td><p>customers</p></td>
-		<td><p>20</p></td>	
-		<td><p>200</p></td>
-		<td><p>2,000</p></td>
-		<td><p>5,000</p></td>		
-	</tr>
-	<tr>
-		<td><p>tax rates</p></td>
-		<td><p>40,000</p></td>	
-		<td><p>40,000</p></td>
-		<td><p>40,000</p></td>
-		<td><p>40,000</p></td>		
-	</tr>
-	<tr>
-		<td><p>orders</p></td>
-		<td><p>80</p></td>	
-		<td><p>1,600</p></td>
-		<td><p>40,000</p></td>
-		<td><p>80,000</p></td>		
-	</tr>
-	</tbody>
-</table>
-
-  <h3 id="config-cli-perf-run">Run the data generator</h3>
-  <p>Run the command as discussed in this section. After the command runs, it rebuilds indexers.</p>
-
-  <p>Command options:</p>
-
-  <pre><code>magento setup:perf:generate-fixtures {path to profile}
+<pre><code>Error 503 Backend fetch failed
+Backend fetch failed
 </code></pre>
 
-  <p>where <code>&lt;path to profile&gt;</code> specifies the absolute file system path to and name of a profile.</p>
+<p>To resolve this issue, increase the default value of <code>http_resp_hdr_len</code> in your Varnish configuration file as follows:</p>
 
-  <p>For example,</p>
+<ol>
+  <li>
+    <p>As a user with <code>root</code> privileges, open your Vanish configuration file in a text editor:</p>
 
-  <pre><code>magento setup:perf:generate-fixtures /var/www/html/magento2/setup/performance-toolkit/profiles/ce/small.xml
+    <ul>
+      <li>CentOS: <code>/etc/sysconfig/varnish</code></li>
+      <li>Ubuntu: <code>/etc/default/varnish</code></li>
+    </ul>
+  </li>
+  <li>Search for the <code>http_resp_hdr_len</code> parameter.</li>
+  <li>If the parameter doesn’t exist, add it after <code>thread_pool_max</code>.</li>
+  <li>
+    <p>Set <code>http_resp_hdr_len</code> to a value larger than 8192.</p>
+
+    <p>For example:</p>
+
+    <pre><code>-p http_resp_hdr_len=64000 \ A snippet follows:
+
+# DAEMON_OPTS is used by the init script.
+DAEMON_OPTS="-a ${VARNISH_LISTEN_ADDRESS}:${VARNISH_LISTEN_PORT} \
+     -f ${VARNISH_VCL_CONF} \
+     -T ${VARNISH_ADMIN_LISTEN_ADDRESS}:${VARNISH_ADMIN_LISTEN_PORT} \
+     -p thread_pool_min=${VARNISH_MIN_THREADS} \
+     -p thread_pool_max=${VARNISH_MAX_THREADS} \
+     -p http_resp_hdr_len=64000 \
+     -S ${VARNISH_SECRET_FILE} \
+     -s ${VARNISH_STORAGE}"
 </code></pre>
+  </li>
+</ol>
 
-  <p>Sample output for the small profile:</p>
-
-  <pre><code>Generating profile with following params:
- |- Websites: 1
- |- Store Groups: 1
- |- Store Views: 1
- |- Categories: 30
- |- Simple products: 800
- |- Configurable products: 50
- |- Customers: 20
- |- Cart Price Rules: 10
- |- Catalog Price Rules: 10
- |- Orders: 80
-Generating websites, stores and store views...  done in &lt;time&gt;
-Generating categories...  done in &lt;time&gt;
-Generating simple products...  done in &lt;time&gt;
-Generating configurable EAV variations...  done in &lt;time&gt;
-... more ...
-</code></pre>
-
-  <h4 id="related-topics">Related topics</h4>
-
-  <ul>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
-  </ul>
-</div>
+<h4 id="next-step">Next step</h4>
+<p><a href="/guides/v2.0/config-guide/varnish/config-varnish-install.html">Install Varnish</a></p>
 
 
 		</div>
