@@ -39,7 +39,7 @@ Test your component by deploying Magento Community Edition and adding the compon
 },
 {% endhighlight %}
 
-Remember to [register](component-registration.html) your component as well, adding the location of your component. Confirm that your component works as expected and Magento functionality is not compromised.
+Remember to [register]({{ site.gdeurl }}extension-dev-guide/build/component-registration.html) your component as well, adding the location of your component. Confirm that your component works as expected and Magento functionality is not compromised.
 
 ## Test installing your component {#test-install}
 Before you publish your component, you should test installing it using the <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">Magento Component Manager</a> (part of the Magento Admin).

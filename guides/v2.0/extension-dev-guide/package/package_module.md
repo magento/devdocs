@@ -47,7 +47,7 @@ The `composer.json` uses [Composer's generic schema](https://getcomposer.org/doc
 <td>For modules, this value must be set to <code>magento2-module</code>. Other possible types are <code>metapackage</code>, <code>magento2-theme</code>, and <code>magento2-language</code>.</td>
 </tr>
 <td><code>autoload </code></td>
-<td>Specify necessary information to be loaded, such as [registration.php](component-registration.html). For more information, see <a href="https://getcomposer.org/doc/01-basic-usage.md#autoloading">Autoloading</a> from Composer.</td>
+<td>Specify necessary information to be loaded, such as [registration.php]({{ site.gdeurl }}extension-dev-guide/build/component-registration.html). For more information, see <a href="https://getcomposer.org/doc/01-basic-usage.md#autoloading">Autoloading</a> from Composer.</td>
 
 </tr>
 </tbody>

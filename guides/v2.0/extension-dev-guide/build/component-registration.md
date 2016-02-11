@@ -82,9 +82,9 @@ After you create your `registration.php` file and you are creating [your module'
 use \Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Magento_AdminNotification', __DIR__);
-
+?>
 {%endhighlight %}
 
 ##Next
 
-[Create a module](create_module.html)
+[Create a module]({{ site.gdeurl }}extension-dev-guide/build/create_module.html)

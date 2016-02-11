@@ -104,7 +104,7 @@ where:
 
 ##Next
 
-[URN schema validation](XSD-XML-validation.html)
+[URN schema validation]({{ site.gdeurl }}extension-dev-guide/build/XSD-XML-validation.html)
 
 
 

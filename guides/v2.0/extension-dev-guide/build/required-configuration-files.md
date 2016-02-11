@@ -79,6 +79,6 @@ Keep in mind that you might be able to handle your module's configuration solely
 
 ##Next
 
-[Component registration](component-registration.html)
+[Component registration]({{ site.gdeurl }}extension-dev-guide/build/component-registration.html)
 
 

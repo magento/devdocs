@@ -21,12 +21,12 @@ Also, Magento recommends that you disable caching while setting up the component
 
 The following details the component building process:
 
-
-* [Module file structure](module-file-structure.html)
-* [Define your configuration files](required-configuration-files.html)
-* [Component registration](component-registration.html)
-* [Create your component](create_component.html)
-* [URN schema validation](XSD-XML-validation.html)
-* [Module load order](module-load-order.html)
-* [Enable your component](enable-module.html)
+*	[Create composer.json]({{ site.gdeurl }}extension-dev-guide/build/composer-integration.html)
+*	[Define your configuration files]({{ site.gdeurl }}extension-dev-guide/build/required-configuration-files.html)
+*	[Create your component file structure]({{ site.gdeurl }}extension-dev-guide/build/module-file-structure.html)
+*	[Register your component]({{ site.gdeurl }}extension-dev-guide/build/component-registration.html)
+*	[URN schema validation]({{ site.gdeurl }}extension-dev-guide/build/XSD-XML-validation.html)
+*	[Name your component]({{ site.gdeurl }}extension-dev-guide/build/create_component.html)
+*	[Component load order]({{ site.gdeurl }}extension-dev-guide/build/module-load-order.html)
+*	[Enable your component]({{ site.gdeurl }}extension-dev-guide/build/enable-module.html)
 

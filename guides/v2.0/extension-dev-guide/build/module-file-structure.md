@@ -106,4 +106,4 @@ Typical theme directories are:
 
 ##Next
 
-[Define your configuration files](required-configuration-files.html)
+[Define your configuration files]({{ site.gdeurl }}extension-dev-guide/build/required-configuration-files.html)

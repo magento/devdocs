@@ -54,6 +54,6 @@ If you do specify a component in `<sequence>`, make sure that you have also adde
 
 ##Next
 
-[Enable or disable a module](enable-module.html)
+[Enable or disable a module]({{ site.gdeurl }}extension-dev-guide/build/enable-module.html)
 
 
