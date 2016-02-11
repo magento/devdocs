@@ -5,10 +5,12 @@ subgroup: 03_Build
 title: Create composer.json
 menu_title: Create composer.json
 menu_order: 2
-github_link: extension-dev-guide/composer-integration.md
-redirect_from: /guides/v1.0/extension-dev-guide/composer-integration.html
-
+github_link: extension-dev-guide/build/composer-integration.md
+redirect_from: 
+  - /guides/v1.0/extension-dev-guide/composer-integration.html
+  - /guides/v2.0/extension-dev-guide/composer-integration.html
 ---
+
 ##{{page.menu_title}}
 
 #### Contents

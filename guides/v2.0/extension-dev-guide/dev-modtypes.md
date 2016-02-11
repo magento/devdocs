@@ -19,7 +19,7 @@ redirect_from: /guides/v2.0/mktpl-quickstart/dev-modtypes.html
 {% include php-dev/composer-types.md %}
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Each component type has a different <a href="{{ site.gdeurl }}extension-dev-guide/module-file-structure.html" target="_blank">directory structure</a> and different contents for <a href="{{ site.gdeurl }}extension-dev-guide/composer-integration.html" target="_blank"><code>composer.json</code></a>.</p>
+  <p>Each component type has a different <a href="{{ site.gdeurl }}extension-dev-guide/build/module-file-structure.html" target="_blank">directory structure</a> and different contents for <a href="{{ site.gdeurl }}extension-dev-guide/build/composer-integration.html" target="_blank"><code>composer.json</code></a>.</p>
 </div>
 
 ## Versioning {#component-version}

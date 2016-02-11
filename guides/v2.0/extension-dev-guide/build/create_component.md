@@ -5,10 +5,11 @@ subgroup: 03_Build
 title: Name your component
 menu_title: Name your component
 menu_order: 7
-github_link: extension-dev-guide/create_component.md
+github_link: extension-dev-guide/build/create_component.md
 redirect_from: 
   - /guides/v1.0/extension-dev-guide/create_module.html
   - /guides/v2.0/extension-dev-guide/create_module.html
+  - /guides/v2.0/extension-dev-guide/create_component.html
 ---
 ##{{page.menu_title}}
 
@@ -24,9 +25,9 @@ You give a name to your component in its `composer.json` and `module.xml` files.
 ## Prerequisites {#prereq}
 Before you continue, make sure you have completed all of the following tasks:
 
-*   Created a [file structure]({{ site.gdeurl }}extension-dev-guide/module-file-structure.html)
-*   Created the the [configuration files]({{ site.gdeurl }}extension-dev-guide/required-configuration-files.html) you'll need
-*   [Registered]({{ site.gdeurl }}extension-dev-guide/component-registration.html) your component
+*   Created a [file structure]({{ site.gdeurl }}extension-dev-guide/build/module-file-structure.html)
+*   Created the the [configuration files]({{ site.gdeurl }}extension-dev-guide/build/required-configuration-files.html) you'll need
+*   [Registered]({{ site.gdeurl }}extension-dev-guide/build/component-registration.html) your component
 
 ## Add the component's `module.xml` file {#module-xml}
 Declare the component itself by adding a module.xml file in the `/etc` folder of your component.

@@ -20,11 +20,11 @@ Key points:
 
 *	Minimum required elements:
 
-	*	<a href="{{ site.gdeurl }}extension-dev-guide/composer-integration.html">Declare component dependencies</a> in `composer.json`.
-	*	<a href="{{ site.gdeurl }}extension-dev-guide/component-registration.html">Register</a> the component using `registration.php`.
+	*	<a href="{{ site.gdeurl }}extension-dev-guide/build/composer-integration.html">Declare component dependencies</a> in `composer.json`.
+	*	<a href="{{ site.gdeurl }}extension-dev-guide/build/component-registration.html">Register</a> the component using `registration.php`.
 	*	Component-specific XML definition files: 
 
-		*	Modules: <a href="{{ site.gdeurl }}extension-dev-guide/create_component.html">`module.xml`</a>
+		*	Modules: <a href="{{ site.gdeurl }}extension-dev-guide/build/create_component.html">`module.xml`</a>
 		*	Themes: <a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-create.html#fedg_create_theme_how-to_declare">`theme.xml`</a>
 		*	Language packages: <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-pack-meta-xml">`language.xml`</a>
 *	Distribute your component:
