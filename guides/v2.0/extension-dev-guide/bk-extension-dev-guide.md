@@ -37,7 +37,7 @@ A Magento *module* is code that accomplishes a particular business function or h
 
 #### Related topics
 
-*	<a href="{{ site.gdeurl }}extension-dev-guide/developers_roadmap.html">Developer roadmap</a>
-*	<a href="{{ site.gdeurl }}extension-dev-guide/intro-composer.html">Introduction to Composer</a>
-*	<a href="{{ site.gdeurl }}extension-dev-guide/intro-composer-gloss.html">Glossary of common terms</a>
+*	<a href="{{ site.gdeurl }}extension-dev-guide/intro/developers_roadmap.html">Developer roadmap</a>
+*	<a href="{{ site.gdeurl }}extension-dev-guide/intro/intro-composer.html">Introduction to Composer</a>
+*	<a href="{{ site.gdeurl }}extension-dev-guide/intro/intro-composer-gloss.html">Glossary of common terms</a>
 

@@ -6,8 +6,10 @@ title: Glossary of common terms
 menu_title: Glossary of common terms
 menu_order: 5
 menu_node: 
-github_link: extension-dev-guide/intro-composer-gloss.md
-redirect_from: /guides/v2.0/mktpl-quickstart/intro-composer-gloss.html
+github_link: extension-dev-guide/intro/intro-composer-gloss.md
+redirect_from: 
+  - /guides/v2.0/mktpl-quickstart/intro-composer-gloss.html
+  - /guides/v2.0/extension-dev-guide/intro-composer-gloss.html
 ---
 
 ##{{page.menu_title}}

@@ -5,10 +5,11 @@ subgroup: 01_Introduction
 title: Developer roadmap
 menu_title: Developer roadmap
 menu_order: 2
-github_link: extension-dev-guide/developers_roadmap.md
+github_link: extension-dev-guide/intro/developers_roadmap.md
 redirect_from: 
   - /guides/v1.0/extension-dev-guide/developers_roadmap.html
   - /guides/v2.0/mktpl-quickstart/intro-moreinfo.html
+  - /guides/v2.0/extension-dev-guide/developers_roadmap.html
 ---
 
 ##{{page.menu_title}}
@@ -33,7 +34,7 @@ Key points:
 	*	If you upload the component to Magento Marketplace, it should be less than 30MB in size.
 
 #### Related topics
-*	<a href="{{ site.gdeurl }}extension-dev-guide/intro-composer.html">Introduction to Composer</a>
-*	<a href="{{ site.gdeurl }}extension-dev-guide/intro-composer-gloss.html">Glossary of common terms</a>
+*	<a href="{{ site.gdeurl }}extension-dev-guide/intro/intro-composer.html">Introduction to Composer</a>
+*	<a href="{{ site.gdeurl }}extension-dev-guide/intro/intro-composer-gloss.html">Glossary of common terms</a>
 *	<a href="https://github.com/magento/magento2-samples" target="_blank">Sample extensions</a> created by the Magento 2 Core team
 *	<a href="http://magento.com/developers/magento2" target="_blank">Magento 2 Developers Hub</a>
