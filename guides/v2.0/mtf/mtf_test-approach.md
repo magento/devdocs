@@ -3,7 +3,7 @@ layout: default
 group: mtf-guide
 subgroup: 40_Approach
 title: Test Approach in the Magento Testing Framework
-menu_title: TEST APPROACH
+menu_title: TESTING TUTORIAL
 menu_node: parent
 github_link: mtf/mtf_test-approach.md
 ---
@@ -80,69 +80,415 @@ New tests must be stored in corresponding modules `<magento2>/dev/tests/function
 
 Each test consists of four main components: test object, test data, test flow, test assertions.
 
-#### Test object
+#### Test object {#test-object}
 
 Test object is an object that you are going to test. All test actions will be performed under this object.
 Test object is represented as a [fixture][].  The fixture defines properties of an object.
 
-For example, in [CreateSimpleProductEntityTest][] the `\Magento\Catalog\Test\Fixture\CatalogProductSimple` is a test object.
-
-#### Test data
+#### Test data {#test-data}
 
 Test data are data for the test and data for preconditions
 
  - Data for a test are stored in [data set][]
  - Preconditions include sample data that are stored in a [fixture repository][] and sample test entity that can be created by a [handler][]. 
 
-#### Test flow
+#### Test flow {#test-flow}
 
-#### Test assertions
+Test flow is a set of test steps that you want to perform under the test object to check required functionality. Test steps are declared in a [test case][]. Each test step contains actions on a [page][]. Each action is managed by a corresponding method declared in a [block][].
 
-These components are discussed in the rest of this topic. To demonstrate usage of these components in the test creation process we will create step-by-step a new test . Example test will create a new simple product. This test already exists in functional tests directory, so you can track processes of its creation.
+#### Test assertions {#test-assertions}
 
+Test assertions are represented in [constraints][].
 
-To create the test entity you must fill a product creation form with data from a data set. To do it correctly you need fixture for simple product entity. Learn more about Fixture.
+To create the test entity you must fill a product creation form with data from a data set. To do it correctly you need a fixture for the simple product entity. Learn more about Fixture.
 Связать в рамках одного теста. Создаваемый продукт можно назначить существующей категории или создать новую категорию для этого продукта. Чтобы создать новую категорию нужен хендлер.
 Often you need to create some entity in precondition of your test case. To do this you need to create handler for Category creation in Handler directory of your module.  Learn more about Handler.
 
-#### Test flow
+## Let's create a new test {#create-new-test}
 
-Test flow is declared in a test case as test steps and preconditions.
+To demonstrate usage of test components from previous sections in the test creation process we will create a new test step-by-step. Before creating automated test, try to pass it manually.
 
-* [Create a test case file][]
-* [Create a data set file][] with all variations for your test. A data set XML file should have the same name as your test case.
+### Test description {#description}
 
-UI manipulation methods are contained in blocks. A page is composed from blocks.
+Create a synonym group with:
 
-тест степы - это действия на странице. Дальше про страницу
-You need to create pages that you open. Learn about Page Creation.
-All business logic (like click Save button or fill form) is stored in blocks. So you need to add blocks to your pages. Read about Block Creation.
-After blocks creation you need to add them to pages and generate pages to be able to access blocks you added.
-Once you have pages with blocks and fixture, you can start to develop preconditions and steps of your test case. Read about Test Case Creation.
+- Scope: All Store Views
+- Synonyms: shoes, foot wear, men shoes, women shoes
 
-#### Test assertions
+### Manual testing scenario {#manual-test}
 
-Verification assertions are managed by constraints. Проверка того что мы сделали в степах. Констрейнты используют страницы и блоки, либо те же либо другие, в зависимости от декларируемой логики проверок.
+1. Log in to Admin
+2. Browse to "Marketing" > "SEO & Search" > "Search Synonyms"
+3. Click on the "New Synonyms Group" button
+4. Enter data in the "Synonyms" field
+5. Click the "Save Synonym Group" button
+6. Check the newly created entity
 
-Пример сценария для новой функциональности
+### Automated testing scenario {#auto-test}
 
-тест дизайн. понимание того что хочешь автоматизировать.
+1. Log in to Admin
+2. Open Search Synonym page
+3. Click on the "New Synonym Group" button
+4. Enter data according to a data set.
+5. Click the "Save Synonym Group" button.
+6. Perform assertions.
 
-создание фикстуры
+### Test creation {#test-creation}
 
-дата сет. прикидываю какие данные хочу проверить, 
+#### Step 1. Check the MTF configuration and environment {#check-mtf}
+ 
+[Adjust configuration][]
+[Prepare environment for test run][]
 
-страницы и блоки для тест кейса
+#### Step 2. Create testing object - a [fixture][] {#create-test-object}
 
-тест кейс. переплетается с созданием страниц и блоков.
+This step is applicable if a fixture doesn't exist in a module.
 
-страницы и блоки для ассерта
+Use a [`generateFixtureXml.php` tool][] to create a new [fixture][].
 
-ассерты.
+Enter in your terminal:
 
-ран. дебаг. отладка. фикс
+    cd <magento2>/dev/tests/functional/utils
+    php -f generateFixtureXml.php -- --name synonym --entity search_synonyms --collection Magento\\Search\\Model\\ResourceModel\\Query\\Collection
 
-#### Example
+Probably you are curious about where we got that values from. See the following explanations.
+
+|Parameter|Value|Explanation
+|-|-|-
+|`--name`|`synonym`|It can have any name. `synonym` seems to be logical.
+|`--entity`|`search_synonyms`|You can track database input when you perform a [manual test][]. A new record will be created in a table that you need.
+|`--collection`|`Magento\\Search\\Model\\ResourceModel\\Query\\Collection`|Synonyms are the entities of a Magento_Search module. Collection can always be find somewhere in model resources. All slashes must be escaped, that's why we use double slash `\\`.
+
+A newly created fixture can be found in the `<magento2>/dev/tests/functional/tests/app/Magento/Search/Test/Fixture` directory.
+
+![A new Synonym fixture]({{site.baseurl}}common/images/mtf_tut_fixt.png)
+
+The following is a code of the new Synonym fixture.
+
+{%highlight xml%}
+<?xml version="1.0" encoding="utf-8"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/mtf/etc/fixture.xsd">
+    <fixture name="synonym"
+             module="Magento_Search"
+             entity_type="search_synonyms"
+             type="flat"
+             collection="Magento\Search\Model\ResourceModel\Query\Collection"
+             repository_class="Magento\Search\Test\Repository\Synonym"
+             handler_interface="Magento\Search\Test\Handler\Synonym\SynonymInterface"
+             class="Magento\Search\Test\Fixture\Synonym">
+        <field name="group_id" is_required="1 "/>
+        <field name="synonyms" is_required="0" />
+        <field name="store_id" is_required="0" />
+        <field name="website_id" is_required="0" />
+    </fixture>
+</config>
+{%endhighlight%}
+
+If we open a New Synonym Group page in a browser
+
+![New Synonym Group page]({{ site.baseurl }}common/images/mtf_tutorial_new_syn_ui.png)
+
+we see that `store_id` and `website_id` both are combined in the "Scope" fields. To set `store_id` and `website_id` we have to perform some more logic than just entering the data. That's why we should use a [data source][].
+
+As you probably recall, the same field is present in Magento_Widget module. It means that data source has been already written and we can e-use it.
+
+Let's check the functional tests for the Magento_Widget module.
+
+![ScopeID data source alternative from Magento_Widget]({{ site.baseurl }}common/images/mtf_tutorial_storeIds-widget.png)
+
+It contains a `StoreIds.php` data source, that is exactly what we are looking for. It has the following code:
+
+{% highlight php %}
+
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+namespace Magento\Widget\Test\Fixture\Widget;
+
+use Magento\Store\Test\Fixture\Store;
+use Magento\Mtf\Fixture\FixtureFactory;
+use Magento\Mtf\Fixture\DataSource;
+
+/**
+ * Prepare Store.
+ */
+class StoreIds extends DataSource
+{
+    /**
+     * Return stores.
+     *
+     * @var Store
+     */
+    protected $stores = [];
+
+    /**
+     * @constructor
+     * @param FixtureFactory $fixtureFactory
+     * @param array $params
+     * @param array $data
+     */
+    public function __construct(FixtureFactory $fixtureFactory, array $params, array $data = [])
+    {
+        $this->params = $params;
+        if (isset($data['dataset'])) {
+            $dataset = explode(',', $data['dataset']);
+            foreach ($dataset as $store) {
+                /** @var Store $store */
+                $store = $fixtureFactory->createByCode('store', ['dataset' => $store]);
+                if (!$store->hasData('store_id')) {
+                    $store->persist();
+                }
+                $this->stores[] = $store;
+                $this->data[] = $store->getName();
+            }
+        } else {
+            $this->data[] = null;
+        }
+    }
+
+    /**
+     * Return stores.
+     *
+     * @return Store
+     */
+    public function getStores()
+    {
+        return $this->stores;
+    }
+}
+
+{% endhighlight %}
+
+The difference is that it is designed for multiple stores, but we don't need that. Adding some changes we can get our data source.
+
+{% highlight php %}
+
+<?php
+
+namespace Magento\Search\Test\Fixture\Synonym;
+
+use Magento\Store\Test\Fixture\Store;
+use Magento\Mtf\Fixture\FixtureFactory;
+use Magento\Mtf\Fixture\DataSource;
+
+/**
+ * Prepare Store.
+ */
+class ScopeId extends DataSource
+{
+    /**
+     * Return store.
+     *
+     * @var Store
+     */
+    protected $store = null;
+
+    /**
+     * @constructor
+     * @param FixtureFactory $fixtureFactory
+     * @param array $params
+     * @param array $data
+     */
+    public function __construct(FixtureFactory $fixtureFactory, array $params, array $data = [])
+    {
+        $this->params = $params;
+        if (isset($data['dataset'])) {
+            $store = $fixtureFactory->createByCode('store', ['dataset' => $data['dataset']]);
+            if (!$store->hasData('store_id')) {
+                $store->persist();
+            }
+            $this->store = $store;
+            $this->data = $store->getName();
+        } else {
+            $this->data = null;
+        }
+    }
+
+    /**
+     * Return store.
+     *
+     * @return Store
+     */
+    public function getStore()
+    {
+        return $this->store;
+    }
+}
+
+{% endhighlight %}
+
+This data source:
+ 
+ 1. Creates a Store object `<magento2>/dev/tests/functional/generated/Magento/Store/Test/Fixture/Store.php` with `scope_id` data from a data set that we will create later. This data from a data set is a name of repository `dataset` in `<magento2>/dev/tests/functional/generated/Magento/Store/Test/Repository/Store.php`. A Store fixture to be generated is stored in a Store module `<magento2>/dev/tests/functional/tests/app/Magento/Store/Test/Fixture/Store.xml` with a corresponding repository
+`magento2/dev/tests/functional/tests/app/Magento/Store/Test/Repository/Store.xml`. 
+ 2. Gets a `name` of the `store_id`.
+
+Now we should change the fixture. Instead of `store_id` and `website_id` we must use `scope_id` with the `Magento\Search\Test\Fixture\Synonym\ScopeId` data source class.
+
+{% highlight xml %}
+
+... ... ...
+<field name="group_id" is_required="0" />
+<field name="synonyms" is_required="0" />
+<field name="scope_id" is_required="0" source="Magento\Search\Test\Fixture\Synonym\ScopeId" />
+... ... ...
+
+{% endhighlight %}
+
+Then, we can generate a PHP class for the fixture. Just run:
+
+    php <magento2>/dev/tests/functional/utils/generate.php
+
+And the new PHP class `Synonym.php` is generated in `<magento2>/dev/tests/functional/generated/Magento/Search/Test/Fixture`.
+
+{%highlight php%}
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+namespace Magento\Search\Test\Fixture;
+
+/**
+ * Class Synonym
+ */
+class Synonym extends \Magento\Mtf\Fixture\InjectableFixture
+{
+    /**
+     * @var string
+     */
+    protected $repositoryClass = 'Magento\Search\Test\Repository\Synonym';
+
+    /**
+     * @var string
+     */
+    protected $handlerInterface = 'Magento\Search\Test\Handler\Synonym\SynonymInterface';
+
+
+    /**
+     * @var array
+     */
+    protected $group_id = [
+        'is_required' => '0',
+    ];
+
+    /**
+     * @var array
+     */
+    protected $synonyms = [
+        'is_required' => '0',
+    ];
+
+    /**
+     * @var array
+     */
+    protected $scope_id = [
+        'is_required' => '0',
+        'source' => 'Magento\Search\Test\Fixture\Synonym\ScopeId',
+    ];
+
+    /**
+     * @return mixed
+     */
+    public function getGroupId()
+    {
+        return $this->getData('group_id');
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSynonyms()
+    {
+        return $this->getData('synonyms');
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getScopeId()
+    {
+        return $this->getData('scope_id');
+    }
+}
+
+{%endhighlight php%}
+
+#### Step 4. Create a [test case][] {#create-test-case}
+
+Now we can start creation of a test case.
+
+From the [test case topic][] we know about structure, location and name of the test case.
+So, let it be `<magento2>/dev/tests/functional/tests/app/Magento/Search/Test/TestCase/CreateSynonymEntityTest.xml`. And we know that we must open a Search Synonym Index page and a new New Synonym Group page during the test flow. It means that we should initialize these pages in the test using the `__inject()` method of the `Magento\Mtf\TestCase\Injectable` class. Also we will definitely use the fixture from the previous step.
+
+{% highlight php %}
+
+<?php
+
+namespace Magento\Search\Test\TestCase;
+
+use Magento\Mtf\TestCase\Injectable;
+use Magento\Search\Test\Fixture\Synonym;
+
+/**
+ * Steps:
+1. Log in to Admin
+2. Open Search Synonym page
+3. Click on the 'New Synonym Group' button
+4. Enter data according to a data set.
+5. Click the 'Save Synonym Group' button.
+ */
+class CreateSynonymEntityTest extends Injectable
+{
+    /**
+     * Search Synonyms Index page
+     *
+     * @var SearchSynonymsIndex
+     */
+    private $searchSynonymsIndex;
+
+    /**
+     * New Synonym Group page
+     *
+     * @var SearchSynonymsNew
+     */
+    private $searchSynonymsNew;
+
+    /**
+     * Inject synonym pages.
+     *
+     * @param SearchSynonymsIndex $searchSynonymsIndex
+     * @param SearchSynonymsNew $searchSynonymsNew
+     * @return void
+     */
+    public function __inject(
+        SearchSynonymsIndex $searchSynonymsIndex,
+        SearchSynonymsNew $searchSynonymsNew
+    ) {
+        $this->searchSynonymsIndex = $searchSynonymsIndex;
+        $this->searchSynonymsNew = $searchSynonymsNew;
+    }
+
+    /**
+     * @param Synonym $synonym
+     * @return void
+     */
+    public function test(Synonym $synonym)
+    {
+        // Steps
+    }
+        
+}
+
+{% endhighlight %}
+
+
+
 
 <!-- LINK DEFINITIONS -->
 
@@ -158,12 +504,19 @@ Verification assertions are managed by constraints. Проверка того ч
 [data set]: {{site.gdeurl}}mtf/mtf_entities/mtf_dataset.html
 [fixture repository]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture-repo.html
 [handler]: {{site.gdeurl}}mtf/mtf_entities/mtf_handler.html
+[test case]: {{site.gdeurl}}mtf/mtf_entities/mtf_testcase.html
+[test case topic]: {{site.gdeurl}}mtf/mtf_entities/mtf_testcase.html
+[block]: {{site.gdeurl}}mtf/mtf_entities/mtf_block.html
+[page]: {{site.gdeurl}}mtf/mtf_entities/mtf_page.html
+[constraints]: {{site.gdeurl}}mtf/mtf_entities/mtf_constraint.html
+[data source]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source
 
-[CreateSimpleProductEntityTest]: {{mage2000url}}dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product
+[Adjust configuration]: http://devdocs.magento.com/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_config.html
+[Prepare environment for test run]: http://devdocs.magento.com/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_environmemt.html
 
+[`generateFixtureXml.php` tool]: http://devdocs.magento.com/guides/v2.0/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_create
 
-[Create a test case file]: {{site.gdeurl}}mtf/mtf_entities/mtf_testcase.html#how-to-create
-[Create a data set file]: {{site.gdeurl}}mtf/mtf_entities/mtf_dataset.html
+[manual test]: #manual-test
 
 
 
