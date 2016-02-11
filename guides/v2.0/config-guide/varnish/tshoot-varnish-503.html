@@ -1025,9 +1025,12 @@ Backend fetch failed
 
     <p>For example:</p>
 
-    <pre><code>-p http_resp_hdr_len=64000 \ A snippet follows:
+    <pre><code>-p http_resp_hdr_len=64000 \
+</code></pre>
 
-# DAEMON_OPTS is used by the init script.
+    <p>A snippet follows:</p>
+
+    <pre><code># DAEMON_OPTS is used by the init script.
 DAEMON_OPTS="-a ${VARNISH_LISTEN_ADDRESS}:${VARNISH_LISTEN_PORT} \
      -f ${VARNISH_VCL_CONF} \
      -T ${VARNISH_ADMIN_LISTEN_ADDRESS}:${VARNISH_ADMIN_LISTEN_PORT} \
