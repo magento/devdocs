@@ -74,22 +74,19 @@ To upgrade PHP version:
 **CentOS 6 php 5.6**:
 		
 		rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
-		yum --enablerepo=remi,remi-php56 -y install php php-pecl-redis php-pecl-lzf php-pecl-geoip php-pecl-zip                               php-pecl-memcache \
-		php-cli php-common php-fpm php-opcache php-gd php-curl php-mbstring php-bcmath php-soap php-mcrypt php-mysqlnd php-pdo 		php-xml php-xmlrpc php-intl
+		yum --enablerepo=remi,remi-php56 -y install php php-pecl-redis php-pecl-lzf php-pecl-geoip php-pecl-zip                               php-pecl-memcache php-cli php-common php-fpm php-opcache php-gd php-curl php-mbstring php-bcmath php-soap php-mcrypt 			php-mysqlnd php-pdo php-xml php-xmlrpc php-intl
 
 <h2 id="instgde-prereq-php70-install-centos">PHP 7.0 on CentOS</h2>
 
 **CentOS 6 php 7.0**:
 
 		rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
-		yum --enablerepo=remi,remi-php70 -y install php php-pecl-redis php-pecl-lzf php-pecl-geoip php-pecl-zip 				php-pecl-memcache \
-		php-cli php-common php-fpm php-opcache php-gd php-curl php-mbstring php-bcmath php-soap php-mcrypt php-mysqlnd php-pdo 		php-xml php-xmlrpc php-intl
+		yum --enablerepo=remi,remi-php70 -y install php php-pecl-redis php-pecl-lzf php-pecl-geoip php-pecl-zip 				php-pecl-memcache php-cli php-common php-fpm php-opcache php-gd php-curl php-mbstring php-bcmath php-soap php-mcrypt 		php-mysqlnd php-pdo php-xml php-xmlrpc php-intl
 
 **CentOS 7 php 7.0**:
 
 		rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
-		yum --enablerepo=remi,remi-php70 -y install php php-pecl-redis php-pecl-lzf php-pecl-geoip php-pecl-zip 				php-pecl-memcache \
-		php-cli php-common php-fpm php-opcache php-gd php-curl php-mbstring php-bcmath php-soap php-mcrypt php-mysqlnd php-pdo 		php-xml php-xmlrpc php-intl
+		yum --enablerepo=remi,remi-php70 -y install php php-pecl-redis php-pecl-lzf php-pecl-geoip php-pecl-zip 				php-pecl-memcache php-cli php-common php-fpm php-opcache php-gd php-curl php-mbstring php-bcmath php-soap php-mcrypt 		php-mysqlnd php-pdo php-xml php-xmlrpc php-intl
 
 	<div class="bs-callout bs-callout-info" id="info">
   		<p>The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.</p>
