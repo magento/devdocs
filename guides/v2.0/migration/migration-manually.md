@@ -15,9 +15,10 @@ redirect_from: /guides/v1.0/migration/migration-manually.html
 
 There are three types of data that need to be manually migrated:
 
-* Media
-* Storefront design
-* ACLs
+*	Media
+*	Storefront design
+*	Admin users
+*	ACLs
 
 ### Media
 This section discusses how to manually migrate media files.
