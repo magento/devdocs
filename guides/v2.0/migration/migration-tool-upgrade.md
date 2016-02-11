@@ -50,7 +50,7 @@ To upgrade the Data Migration Tool:
 
 	`composer require magento/data-migration-tool:<version>`
 
-where <version> must match the version of the Magento 2 codebase.
+where `<version>` must match the version of the Magento 2 codebase.
 
 For example, for version 2.0.2, enter:
 
