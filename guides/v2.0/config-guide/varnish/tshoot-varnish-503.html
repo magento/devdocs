@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Troubleshooting 503 (Service Unavailable) errors</title>
+	<title>Troubleshooting 503 (Backend Fetch Failed) errors</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -132,7 +132,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Troubleshooting 503 (Service Unavailable) errors</h1>
+		<h1 class="page-heading">Troubleshooting 503 (Backend Fetch Failed) errors</h1>
 			
 			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/config-guide/varnish/tshoot-varnish-503.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -562,7 +562,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/config-guide/varnish/tshoot-varnish-503.html">Troubleshooting 503 (Service Unavailable) errors</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/config-guide/varnish/tshoot-varnish-503.html">Troubleshooting 503 (Backend Fetch Failed) errors</a></li>
 
 									
 
@@ -1000,8 +1000,8 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<h2 id="varnish-503">Troubleshooting 503 (Service Unavailable) errors</h2>
-<p>If the length of cache tags used by Magento exceed Varnish’s default of 8192 errors, you can see HTTP 503 (Service Unavailable) errors in the browser. The errors might display simiar to the following:</p>
+		<h2 id="varnish-503">Troubleshooting 503 (Backend Fetch Failed) errors</h2>
+<p>If the length of cache tags used by Magento exceed Varnish’s default of 8192 characters, you can see HTTP 503 (Backend Fetch Failed) errors in the browser. The errors might display simiar to the following:</p>
 
 <pre><code>Error 503 Backend fetch failed
 Backend fetch failed
@@ -1021,7 +1021,9 @@ Backend fetch failed
   <li>Search for the <code>http_resp_hdr_len</code> parameter.</li>
   <li>If the parameter doesn’t exist, add it after <code>thread_pool_max</code>.</li>
   <li>
-    <p>Set <code>http_resp_hdr_len</code> to a value larger than 8192.</p>
+    <p>Set <code>http_resp_hdr_len</code> to a value equal to the product count of your largest category multiplied by 30. (Each product tag is about 21 characters in length.)</p>
+
+    <p>For example, setting the value to 64000 should work if your largest category has 3,050 products.</p>
 
     <p>For example:</p>
 
