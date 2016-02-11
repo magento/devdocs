@@ -11,34 +11,32 @@ github_link: ui-components/ui-modal.md
 
 This topic describes the modal UI component.
 
+**Contents:**
+
 * TOC
 {:toc}
 
-## Modal component: Overview
+## Modal component: overview
 
 The modal UI component implements a secondary window that opens on top of the main window. It uses the [modal widget]([{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html) under the hood.
 
-Similar to the widget implementation, the component allows to configure window type and action buttons. Additionally, the component allows to link modal buttons to methods of the other UI components (by using the button component).
+Similar to the widget's configuration, the component's configuration allows to set the window type and action buttons behavior. Additionally, the component allows to link action buttons to methods of the other UI components (by using the button component).
 
-The modal component also introduces `toolbarSection`: a placeholder inside the window's header, where any content cab be added.
+The modal component can be used for both Admin panel and storefront.
 
-<p class="q>toolbarSection is not mentioned further in the docs, is this a gap?</p>
-<p class="q>Where can it be used: backend/storefront?</p>
-<p class="q>Does it have any dependencies with other components?</p>
+
 <p class="q">Any related topic in http://devdocs.magento.com/guides/v2.0/pattern-library/bk-pattern.html?</p>
 
 ## Structure
 
-The modal ui component comprises the following files:
+The modal UI component comprises the following files:
 
 - JS component: `<Magento_Ui_module_dir>/view/base/web/js/modal/modal-component.js`
 - Template: `<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-component.html`
 
 ## Options
 
-<p class="q">What about isTemplate and dataScope, are they hard-coded?</p>
-Modal options are set in the configuration xml as follows:
-
+Component's options are set in the configuration `.xml` file as follows:
 
 {%highlight xml%}
  <modal name="test_modal">
@@ -48,35 +46,32 @@ Modal options are set in the configuration xml as follows:
             <item name="%option1%" xsi:type="%type%">%value%</item>
             <item name="%option2%" xsi:type="%type%">%value%</item>
             ...
-            <!-- The following options' configuration should not be changed -->
-            <item name="isTemplate" xsi:type="boolean">false</item>
-            <item name="dataScope" xsi:type="string"></item>
         </item>
     </argument>
 </modal>
 {%endhighlight%}
 
-You can configure the following:
+Except the general configuration options, similar for most of the UI components, the following modal-specific options are available:
 
 <table>
   <tr>
-    <th>Option</th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Optional/Mandatory</th>
-    <th>Default value</th>
+    <th width="10%">Option</th>
+    <th width="50%">Description</th>
+    <th width="10%">Type</th>
+    <th width="10%">Optional/Mandatory</th>
+    <th width="10%">Default value</th>
   </tr>
   <tr>
     <td><code>state</code></td>
-    <td>Is linked to the open/closed modal state as true/false. 
-<p class="q">Does it just display the state or set the state?</p></td>
+    <td>Set the state of the modal window: <code>true</code> for open. 
+</td>
     <td>Boolean</td>
     <td>Optional</td>
-    <td>Undefined</td>
+    <td><code>false</code></td>
   </tr>
   <tr>
     <td><code>options</code></td>
-    <td>Options are passed to the modal widget initialization as is</td>
+    <td>Options are passed to the modal widget initialization as is.</td>
     <td>Object</td>
     <td>Optional</td>
     <td><code>{}</code></td>
@@ -93,7 +88,21 @@ You can configure the following:
 </td>
     <td>String</td>
     <td>Optional</td>
-    <td>Undefined</td>
+    <td><code>''</code></td>
+  </tr>
+  <tr>
+    <td><code>subTitle</code></td>
+    <td>The subtitle of the modal window. Set as follows: 
+<pre>
+&lt;item name=&quot;options&quot; xsi:type=&quot;array&quot;&gt;
+    &lt;item name=&quot;title&quot; xsi:type=&quot;string&quot;&gt;%window_title%&lt;/item&gt;
+&lt;/item&gt;
+</pre>
+
+</td>
+    <td>String</td>
+    <td>Optional</td>
+    <td><code>''</code></td>
   </tr>
 <tr>
     <td><code>type</code></td>
@@ -114,12 +123,11 @@ Set as follows:
   </tr>
   <tr>
     <td><code>buttons</code></td>
-    <td>Modal buttons.
-<p class="q">Are they the action buttons of the modal window? </p>
+    <td>The action buttons of the modal window.
 </td>
-    <td>Object</td>
+    <td>Array</td>
     <td>Optional</td>
-    <td>Undefined</td>
+    <td><code>[]</code></td>
   </tr>
   <tr>
     <td><code>text</code></td>
@@ -164,8 +172,7 @@ Set as follows:
 
   <tr>
     <td><code>actions</code></td>
-    <td>Button actions,
-which will be performed synchronously and in order on button click. 
+    <td>Button actions. On button click, actions are performed in the same order as they are set in config.
 
 Set as follows:
 <pre>
@@ -179,19 +186,92 @@ Set as follows:
 </pre>
 
 </td>
-    <td>String</td>
+    <td>Object</td>
     <td>Optional</td>
     <td>Undefined</td>
+  </tr>
+  <tr>
+    <td><code>onCancel</code></td>
+    <td>Action (method name), that is performed on cancelling interactions: pressing Esc, clicking outside the modal window or clicking the 'X' (close) icon.
+</td>
+    <td>String</td>
+    <td>Optional</td>
+    <td><code>closeModal</code></td>
   </tr>
 
 </table>
 
+### Example of the modal component configuration
+
+The following sample is an example of the configuration for a simple modal window containing one text field and a standard set of action buttons (**Save**, **Delete**, **Cancel**): 
+
+{%highlight xml%}
+<modal name="test_modal">
+    <argument name="data" xsi:type="array">
+        <item name="config" xsi:type="array">
+            <item name="onCancel" xsi:type="string">actionCancel</item>
+            <item name="options" xsi:type="array">
+                <item name="buttons" xsi:type="array">
+                    <item name="0" xsi:type="array">
+                        <item name="text" xsi:type="string">Cancel</item>
+                        <item name="class" xsi:type="string">action-secondary</item>
+                        <item name="actions" xsi:type="array">
+                            <item name="0" xsi:type="string">actionCancel</item>
+                        </item>
+                    </item>
+                    <item name="1" xsi:type="array">
+                        <item name="text" xsi:type="string">Clear</item>
+                        <item name="class" xsi:type="string">action-secondary</item>
+                        <item name="actions" xsi:type="array">
+                            <item name="0" xsi:type="array">
+                                <item name="targetName" xsi:type="string">${ $.name }.testField</item>
+                                <item name="actionName" xsi:type="string">clear</item>
+                            </item>
+                        </item>
+                    </item>
+                    <item name="2" xsi:type="array">
+                        <item name="text" xsi:type="string">Done</item>
+                        <item name="class" xsi:type="string">action-primary</item>
+                        <item name="actions" xsi:type="array">
+                            <item name="0" xsi:type="string">actionDone</item>
+                        </item>
+                    </item>
+                </item>
+            </item>
+        </item>
+    </argument>
+    <field name="testField">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string">test field</item>
+                <item name="formElement" xsi:type="string">input</item>
+                <item name="visible" xsi:type="boolean">true</item>
+            </item>
+        </argument>
+    </field>
+</modal>
+
+<button name="modal_button">
+    <argument name="data" xsi:type="array">
+        <item name="config" xsi:type="array">
+            <item name="title" xsi:type="string">Open modal</item>
+            <item name="actions" xsi:type="array">
+                <item name="0" xsi:type="array">
+                    <item name="targetName" xsi:type="string">${ $.parentName}.test_modal</item>
+                    <item name="actionName" xsi:type="string">openModal</item>
+                </item>
+            </item>
+        </item>
+    </argument>
+</button>
+{%endhighlight%}
+
+
 ## Public API (JS)
 
-- `openModal()` - open the modal window
-- `closeModal()` - close the modal window
-- `toggleModal()` - toggle modal
-- `setPrevValues(elem)`
-- `elem` - component, all child of which will revert 'value' to the state, which was captured on modal open
-- `actionCancel()` - cancels modal: return previous 'value' for every changed component in modal's content and closes modal
-- `actionDone()` - approves changes in the modal: validates it contents and, if valid, closes modal
+- `openModal()`: opens the modal window
+- `closeModal()`: closes the modal window
+- `toggleModal()`: toggles the modal window state (open/close)
+- `setPrevValues(elem)`: returns all `elem`'s child components to the state they had on modal open
+- `actionCancel()`: returns all modal's child components to the state they had on modal open and closes the modal window. 
+- `actionDone()`: validates the changes in the modal's child components and, if valid, closes the modal.
