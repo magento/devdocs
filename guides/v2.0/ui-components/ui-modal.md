@@ -107,15 +107,14 @@ Except the general configuration options, similar for most of the UI components,
 <tr>
     <td><code>type</code></td>
     <td>The type of the modal window. Can be one of the following:
-<code>slide</code>, <code>popup</code> or <code>custom</code>
+<code>slide</code> or <code>popup</code>
 
 Set as follows: 
 <pre>
 &lt;item name=&quot;options&quot; xsi:type=&quot;array&quot;&gt;
-    &lt;item name=&quot;type&quot; xsi:type=&quot;string&quot;&gt;%slide|popup|custom%&lt;/item&gt;
+    &lt;item name=&quot;type&quot; xsi:type=&quot;string&quot;&gt;%slide|popup%&lt;/item&gt;
 &lt;/item&gt;
 </pre>
-<p class="q">What is custom?</p>
 </td>
     <td>String</td>
     <td>Optional</td>
