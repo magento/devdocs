@@ -1093,6 +1093,25 @@ Varnish cache server
 }
 </code></pre>
   </li>
+  <li>
+    <p>Possible error on some pages:</p>
+
+    <pre><code>Error 503 Backend fetch failed
+Backend fetch failed
+Guru Meditation:
+XID: 303394517
+</code></pre>
+
+    <p>If you experience this error, it is possible that Magento is sending a list of
+cache tags longer than the default allowed 8192 characters. To fix this, you
+must edit the <code>http_resp_hdr_len</code> launch parameter.</p>
+
+    <p>On CentOS, this can be changed in the <code>/etc/sysconfig/varnish</code> file by adding
+the line:</p>
+
+    <pre><code>-p http_resp_hdr_len=64000 \
+</code></pre>
+  </li>
 </ul>
 
 <h4 id="next-step">Next step</h4>
