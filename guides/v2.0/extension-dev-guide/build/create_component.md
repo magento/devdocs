@@ -102,13 +102,6 @@ where:
 
 
 
-##Next
+####Next
 
-[URN schema validation]({{ site.gdeurl }}extension-dev-guide/build/XSD-XML-validation.html)
-
-
-
-
-
-
-
+[Comonent load order]({{ site.gdeurl }}extension-dev-guide/build/module-load-order.html)

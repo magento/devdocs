@@ -73,12 +73,5 @@ libxml_set_external_entity_loader(['Magento\Framework\Config\Dom\UrnResolver', '
 
 
 
-##Next
-
-[Module Load Order]({{ site.gdeurl }}extension-dev-guide/build/module-load-order.html)
-
-
-
-
-
-
+####Next
+[Name your component]({{ site.gdeurl }}extension-dev-guide/build/create_component.html)

@@ -94,4 +94,4 @@ ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Magento_AdminNotificat
 {%endhighlight %}
 
 ####Next
-[Name your module]({{ site.gdeurl }}extension-dev-guide/build/create_module.html)
+[URN schema validation]({{ site.gdeurl }}extension-dev-guide/build/XSD-XML-validation.html)

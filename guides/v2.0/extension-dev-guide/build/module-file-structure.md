@@ -104,6 +104,5 @@ Typical theme directories are:
 {% include php-dev/lang-pack-file-struct.md %}
 
 
-##Next
-
-[Define your configuration files]({{ site.gdeurl }}extension-dev-guide/build/required-configuration-files.html)
+####Next
+[Register your component]({{ site.gdeurl }}extension-dev-guide/build/component-registration.html)

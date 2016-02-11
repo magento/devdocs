@@ -77,8 +77,6 @@ If the module is a service that may call an API, or does some other work that is
 Keep in mind that you might be able to handle your module's configuration solely with configuration files at the top level of your module's `etc` directory, but the nested directory is a useful way to keep the configuration neatly compartmentalized.
 
 
-##Next
+####Next
 
-[Component registration]({{ site.gdeurl }}extension-dev-guide/build/component-registration.html)
-
-
+[Create your component file structure]({{ site.gdeurl }}extension-dev-guide/build/module-file-structure.html)

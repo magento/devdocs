@@ -158,3 +158,6 @@ Having an identifier type for each component allows the system to marshal the di
 
 ## Composer binary location {#composer-binary}
 Magento's `bin/magento` script uses composer from the `vendor/composer` directory in your Magento 2 installation, not your globally installed Composer. Keep this in mind while customizing or updating composer or troubleshooting Composer issues while working with Magento 2.
+
+#### Next
+[Define your configuration files]({{ site.gdeurl }}extension-dev-guide/build/required-configuration-files.html)
