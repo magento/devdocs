@@ -46,16 +46,15 @@ To upgrade the Data Migration Tool:
 
 1.	Log in to your Magento server as, or switch to, <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">the Magento file system owner</a>.
 2.	Change to Magento 2 root directory.
-3. Enter the following command:
+3. 	Enter the following command:
 
 	`composer require magento/data-migration-tool:<version>`
 
-where `<version>` must match the version of the Magento 2 codebase.
+	where `<version>` must match the version of the Magento 2 codebase.
 
-For example, for version 2.0.2, enter:
+	For example, for version 2.0.2, enter:
 
 	`composer require magento/data-migration-tool:2.0.2`
-	
 4.	Wait while the command completes.
 
 ###Related topics
