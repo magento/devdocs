@@ -1,3 +1,0 @@
-extension-dev-guide/validate.html
-  howdoi\php\php_devs.md
-extension-dev-guide/test-module.html (self)

@@ -28,4 +28,4 @@ redirect_from:
 {% include php-dev/component-versioning.md %}
 
 #### Next
-<a href="{{ site.gdeurl }}mktpl-quickstart/dev-filesys.html">Set up your component's file structure</a>
+<a href="{{ site.gdeurl }}extension-dev-guide/module-file-structure.html">Set up your component's file structure</a>

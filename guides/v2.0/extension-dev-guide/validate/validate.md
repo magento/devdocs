@@ -6,8 +6,8 @@ title: Validate
 menu_title: Validate
 menu_order: 1
 menu_node: parent
-github_link: extension-dev-guide/validate.md
-
+github_link: extension-dev-guide/validate/validate.md
+redirect_from: /guides/v2.0/extension-dev-guide/validate.html
 ---
 
 ##{{page.menu_title}}
