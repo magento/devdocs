@@ -15,7 +15,11 @@ To find the version of the Magento software:
 
 ### Find the Data Migration Tool version {#migration-tool-version}
 
-To find the version of the migration tool open composer.json of migration tool package (`vendor/magento/data-migration-tool`) and find the value of "version".
+To find the version of the migration tool: 
+
+* Change to your Data Migration Tool directory: `vendor/magento/data-migration-tool`.
+* Open `composer.json` in a text editor.
+* Find the value of "version"
 
 	This is the version of your Data Migration Tool.
 
