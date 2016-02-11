@@ -6,8 +6,10 @@ title: Component types and versioning
 menu_title: Component types and versioning
 menu_order: 2
 menu_node: 
-github_link: extension-dev-guide/dev-modtypes.md
-redirect_from: /guides/v2.0/mktpl-quickstart/dev-modtypes.html
+github_link: extension-dev-guide/prepare/dev-modtypes.md
+redirect_from: 
+  - /guides/v2.0/mktpl-quickstart/dev-modtypes.html
+  - /guides/v2.0/extension-dev-guide/dev-modtypes.html
 ---
 
 #### Contents

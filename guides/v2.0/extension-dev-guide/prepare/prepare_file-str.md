@@ -6,8 +6,10 @@ title: About component file structure
 menu_title: About component file structure 
 menu_order: 10
 menu_node: 
-github_link: extension-dev-guide/prepare_file-str.md
-redirect_from: /guides/v2.0/mktpl-quickstart/dev-filesys.html
+github_link: extension-dev-guide/prepare/prepare_file-str.md
+redirect_from: 
+  - /guides/v2.0/mktpl-quickstart/dev-filesys.html
+  - /guides/v2.0/extension-dev-guide/prepare_file-str.html
 ---
 
 ##{{page.menu_title}}
