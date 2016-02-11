@@ -1,0 +1,45 @@
+---
+layout: default
+group: config-guide
+subgroup: CM_Varnish
+title: Troubleshooting 503 (Service Unavailable) errors
+menu_title: Troubleshooting 503 (Service Unavailable) errors
+menu_order: 500
+menu_node: 
+github_link: config-guide/varnish/tshoot-varnish-503.md
+---
+
+## Troubleshooting 503 (Service Unavailable) errors {#varnish-503}
+If the length of cache tags used by Magento exceed Varnish's default of 8192 errors, you can see HTTP 503 (Service Unavailable) errors in the browser. The errors might display simiar to the following:
+
+	Error 503 Backend fetch failed
+	Backend fetch failed
+
+To resolve this issue, increase the default value of `http_resp_hdr_len` in your Varnish configuration file as follows:
+
+1.	As a user with `root` privileges, open your Vanish configuration file in a text editor:
+
+	*	CentOS: `/etc/sysconfig/varnish`
+	*	Ubuntu: `/etc/default/varnish`
+
+2.	Search for the `http_resp_hdr_len` parameter.
+3.	If the parameter doesn't exist, add it after `thread_pool_max`.
+4.	Set `http_resp_hdr_len` to a value larger than 8192.
+
+	For example:
+
+		-p http_resp_hdr_len=64000 \
+	A snippet follows:
+
+		# DAEMON_OPTS is used by the init script.
+		DAEMON_OPTS="-a ${VARNISH_LISTEN_ADDRESS}:${VARNISH_LISTEN_PORT} \
+             -f ${VARNISH_VCL_CONF} \
+             -T ${VARNISH_ADMIN_LISTEN_ADDRESS}:${VARNISH_ADMIN_LISTEN_PORT} \
+             -p thread_pool_min=${VARNISH_MIN_THREADS} \
+             -p thread_pool_max=${VARNISH_MAX_THREADS} \
+             -p http_resp_hdr_len=64000 \
+             -S ${VARNISH_SECRET_FILE} \
+             -s ${VARNISH_STORAGE}"
+
+#### Next step
+<a href="{{ site.gdeurl }}config-guide/varnish/config-varnish-install.html">Install Varnish</a>

@@ -23,6 +23,7 @@ github_link: config-guide/varnish/config-varnish.md
 *	Use Varnish:
 	*	<a href="{{ site.gdeurl }}config-guide/varnish/use-varnish-cache.html">How Magento cache clearing works with Varnish</a>
 	*	<a href="{{ site.gdeurl }}config-guide/varnish/use-varnish-cache-how.html">How Varnish caching works</a>
+*	[Troubleshooting 503 (Service Unavailable) errors]({{ site.gdeurl }}config-guide/varnish/tshoot-varnish-503.html)
 
 <h2 id="config-varnish-over">Overview of the Varnish solution</h2>
 <a href="https://www.varnish-cache.org/" target="_blank">Varnish Cache</a> is an open source web application accelerator (also referred to as an *HTTP accelerator* or *caching HTTP reverse proxy*). Varnish stores (or caches) files or fragments of files in memory; this enables Varnish to reduce the response time and network bandwidth consumption on future, equivalent requests. Unlike web servers like Apache and nginx, Varnish was designed for use exclusively with the HTTP protocol.
@@ -77,6 +78,8 @@ We know of the following issues with Varnish:
 	As an alternative, use SSL termination or an <a href="https://en.wikipedia.org/wiki/TLS_termination_proxy" target="_blank">SSL termination proxy</a>.
 
 *	If you manually delete the contents of the `<your Magento install dir>/var/cache` directory, you must restart Varnish.
+
+
 *	Possible error installing Magento:
 
 		Error 503 Service Unavailable
@@ -92,21 +95,37 @@ We know of the following issues with Varnish:
 	      .first_byte_timeout = 600s;
 		}
 
-*	Possible error on some pages:
+## Troubleshooting 503 (Service Unavailable) errors {#varnish-503}
+If the length of cache tags used by Magento exceed Varnish's default of 8192 errors, you can see HTTP 503 (Service Unavailable) errors in the browser. The errors might display simiar to the following:
 
-		Error 503 Backend fetch failed
-		Backend fetch failed
-		Guru Meditation:
-		XID: 303394517
+	Error 503 Backend fetch failed
+	Backend fetch failed
 
-	If you experience this error, it is possible that Magento is sending a list of
-	cache tags longer than the default allowed 8192 characters. To fix this, you
-	must edit the `http_resp_hdr_len` launch parameter.
+To resolve this issue, increase the default value of `http_resp_hdr_len` in your Varnish configuration file as follows:
 
-	On CentOS, this can be changed in the `/etc/sysconfig/varnish` file by adding
-	the line:
+1.	As a user with `root` privileges, open your Vanish configuration file in a text editor:
+
+	*	CentOS: `/etc/sysconfig/varnish`
+	*	Ubuntu: `/etc/default/varnish`
+
+2.	Search for the `http_resp_hdr_len` parameter.
+3.	If the parameter doesn't exist, add it after `thread_pool_max`.
+4.	Set `http_resp_hdr_len` to a value larger than 8192.
+
+	For example:
 
 		-p http_resp_hdr_len=64000 \
+	A snippet follows:
+
+		# DAEMON_OPTS is used by the init script.
+		DAEMON_OPTS="-a ${VARNISH_LISTEN_ADDRESS}:${VARNISH_LISTEN_PORT} \
+             -f ${VARNISH_VCL_CONF} \
+             -T ${VARNISH_ADMIN_LISTEN_ADDRESS}:${VARNISH_ADMIN_LISTEN_PORT} \
+             -p thread_pool_min=${VARNISH_MIN_THREADS} \
+             -p thread_pool_max=${VARNISH_MAX_THREADS} \
+             -p http_resp_hdr_len=64000 \
+             -S ${VARNISH_SECRET_FILE} \
+             -s ${VARNISH_STORAGE}"
 
 #### Next step
 <a href="{{ site.gdeurl }}config-guide/varnish/config-varnish-install.html">Install Varnish</a>
