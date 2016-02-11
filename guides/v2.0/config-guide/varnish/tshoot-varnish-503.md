@@ -40,6 +40,3 @@ To resolve this issue, increase the default value of `http_resp_hdr_len` in your
              -p http_resp_hdr_len=64000 \
              -S ${VARNISH_SECRET_FILE} \
              -s ${VARNISH_STORAGE}"
-
-#### Next step
-<a href="{{ site.gdeurl }}config-guide/varnish/config-varnish-install.html">Install Varnish</a>
