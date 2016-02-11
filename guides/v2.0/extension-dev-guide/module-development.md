@@ -7,7 +7,6 @@ menu_title: Component development
 menu_order: 1
 menu_node: parent
 github_link: extension-dev-guide/module-development.md
-
 ---
 
 ##{{page.menu_title}}
@@ -17,28 +16,15 @@ Magento 2 is flexible and as a result has varied functionality, so developing a 
 
 
 * Compatibility (backward and forward)
-   * [Service Contracts]({{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html)
-   * [Design Patterns]({{ site.gdeurl }}extension-dev-guide/service-contracts/design-patterns.html) 
+   * [Service contracts]({{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html)
+   * [Design patterns]({{ site.gdeurl }}extension-dev-guide/service-contracts/design-patterns.html) 
   
-* [Working With Public Interfaces and APIs]({{ site.gdeurl }}extension-dev-guide/api-concepts.html)
-* [Object Manager / Dependency Injection]({{ site.gdeurl }}extension-dev-guide/depend-inj.html)
-* [Code Generation]({{ site.gdeurl }}extension-dev-guide/code-generation.html)
-* [EAV Attributes]({{ site.gdeurl }}extension-dev-guide/attributes.html)
+* [Working with public interfaces and APIs]({{ site.gdeurl }}extension-dev-guide/api-concepts.html)
+* [Object manager and dependency injection]({{ site.gdeurl }}extension-dev-guide/depend-inj.html)
+* [Code generation]({{ site.gdeurl }}extension-dev-guide/code-generation.html)
+* [EAV attributes]({{ site.gdeurl }}extension-dev-guide/attributes.html)
 * [Plug-ins (aka interceptors)]({{ site.gdeurl }}extension-dev-guide/plugins.html)
 * [Routing]({{ site.gdeurl }}extension-dev-guide/routing.html)
 * [Indexing]({{ site.gdeurl }}extension-dev-guide/indexing.html)
-* [Configure a Service As a Web API]({{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html#configure-webapi)
+* [Configure a service as a web API]({{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html#configure-webapi)
 
-The following topics will be added in upcoming sprints:
-
-* Create A New Service Contract For Your Module
-* Models, Resource Models, Collections / Databases
-* Security Best Practices
-* System Configuration
-* Scoping Configuration
-* Global vs Stores vs Websites vs. Storeview
-* Abstract Objects / Base Classes
-* Factories
-* Magic Methods (Framework + Object)
-* Proxies
-* View Layer

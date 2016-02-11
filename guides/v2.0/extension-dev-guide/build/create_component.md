@@ -15,7 +15,7 @@ redirect_from:
 
 #### Contents
 *   [Overview of naming a component](#overview-naming)
-*   [Prerequisites](#prerea)
+*   [Prerequisites](#prereq)
 *   [Add the component's `module.xml` file](#module-xml)
 *   [Add the components `composer.json` file](#add-composer-json)
 

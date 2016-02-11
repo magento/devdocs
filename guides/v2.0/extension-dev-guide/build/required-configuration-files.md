@@ -14,7 +14,7 @@ redirect_from:
 
 ##{{page.menu_title}}
 
-Each Magento 2 module has its own set of configuration files, gathered into the module's `etc/` directory.  
+Each Magento 2 module has its own set of configuration files, gathered into the module's `etc` directory.  
 
 <div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
@@ -29,11 +29,11 @@ Each Magento 2 module has its own set of configuration files, gathered into the 
 
 Magento 2 looks for configuration information for each module in that module's `etc` directory. Depending on the needs of your module, you might have the following configuration files at the top level of your module's `etc` directory:
 
-* acl.xml
-* config.xml
-* di.xml
-* module.xml
-* webapi.xml
+* `acl.xml`
+* `config.xml`
+* `di.xml`
+* `module.xml`
+* `webapi.xml`
 
 
 <div class="bs-callout bs-callout-info" id="info">
