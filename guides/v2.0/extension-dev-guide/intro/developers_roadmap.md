@@ -30,7 +30,7 @@ Key points:
 		*	Language packages: <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-pack-meta-xml">`language.xml`</a>
 *	Distribute your component:
 
-	*	<a href="{{ site.gdeurl }}extension-dev-guide/package_module.html">Package your component</a> in `.zip` format.
+	*	<a href="{{ site.gdeurl }}extension-dev-guide/package/package_module.html">Package your component</a> in `.zip` format.
 	*	If you upload the component to Magento Marketplace, it should be less than 30MB in size.
 
 #### Related topics

@@ -6,8 +6,10 @@ title: Upload your component to the Magento Marketplace
 menu_title: Upload your component to the Magento Marketplace
 menu_order: 100
 menu_node: 
-github_link: extension-dev-guide/package_mktpl.md
-redirect_from: /guides/v2.0/mktpl-quickstart/mktpl-intro.html
+github_link: extension-dev-guide/package/package_mktpl.md
+redirect_from: 
+  - /guides/v2.0/mktpl-quickstart/mktpl-intro.html
+  - /guides/v2.0/extension-dev-guide/package_mktpl.html
 ---
 
 ##{{page.menu_title}}

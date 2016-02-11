@@ -54,7 +54,7 @@ Merchants do not need to understand that, under the covers, some packages are sh
 </div>
 
 #### For more information
-*	<a href="{{ site.gdeurl }}extension-dev-guide/package_module.html#package-metapackage">metapackages</a>
+*	<a href="{{ site.gdeurl }}extension-dev-guide/package/package_module.html#package-metapackage">metapackages</a>
 *	<a href="{{ site.gdeurl }}extension-dev-guide/build/composer-integration.html">component types in <code>composer.json</code></a>.
 
 ### Component Manager {#gloss-compman}
