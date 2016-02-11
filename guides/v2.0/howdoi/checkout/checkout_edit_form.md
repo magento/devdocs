@@ -31,7 +31,7 @@ There are more details about each step in the following sections.
 
 [Set Magento to the production mode]({{site.gdeurl}}config-guide/cli/config-cli-subcommands-mode.html) while you perform all customizations and debugging. 
 
-For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Instead, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should [depend]({{site.gdeurl}}extension-dev-guide/composer-integration.html) on the Magento_Checkout module.
+For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Instead, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should [depend]({{site.gdeurl}}extension-dev-guide/build/composer-integration.html) on the Magento_Checkout module.
 
 
 ## Implement the HTML template for the field {#template}

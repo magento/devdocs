@@ -103,7 +103,7 @@ To develop a module, you must:
     </pre>
 
 
-    For more information, see [Create a component](../../extension-dev-guide/create_component.html).
+    For more information, see [Create a component]({{ site.gdejrl }}extension-dev-guide/build/create_component.html).
 
 4. **Create a `registration.php` file** The `registration.php` registers the module with the Magento system. It must be placed in the module's root directory.
 
