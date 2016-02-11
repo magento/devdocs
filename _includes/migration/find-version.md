@@ -22,5 +22,3 @@ To find the version of the migration tool:
 * Find the value of "version"
 
 	This is the version of your Data Migration Tool.
-
-	If `"magento/data-migration-tool"` is absent, you haven't installed the Data Migration Tool yet.
