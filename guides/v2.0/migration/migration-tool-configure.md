@@ -5,7 +5,7 @@ subgroup: C_Data migration tool
 title: Configure migration
 menu_title: Configure migration
 menu_node: 
-menu_order: 3
+menu_order: 4
 github_link: migration/migration-tool-configure.md
 redirect_from: /guides/v1.0/migration/migration-tool-configure.html
 ---
