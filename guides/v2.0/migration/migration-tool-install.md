@@ -64,9 +64,6 @@ Before you continue, make sure you [verified the version](#data-migrate-prereq) 
 To install the Data Migration Tool:
 
 1.	Log in to your Magento server as, or switch to, <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">the Magento file system owner</a>.
-4.	Verify your Magento 2 version using the following commands:
-
-		php <your Magento 2 install directory>/bin/magento --version
 2.	Change to Magento 2 root directory.
 3.	Enter the following commands in the order shown:
 
