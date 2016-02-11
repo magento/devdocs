@@ -147,7 +147,7 @@ To apply the patch:
 	</tr>
 	</tbody>
 	</table>
-3.	We recommend you <a href="{{ site.gdeurl }}guides/v2.0/comp-mgr/upgrader/upgrade-start.html">upgrade</a> to version 2.0.2.
+3.	We recommend you <a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">upgrade</a> to version 2.0.2.
 
 #### Resolution 1 (using version 2.0.0 or 2.0.1) {#resolution1}
 To resolve the missing `.gitignore` files issue using this method, all of the following must be true:
@@ -179,7 +179,7 @@ To resolve the issue:
 
 		php bin/magento setup:upgrade
 6.	Verify your server is running version 2.0.1 or 2.0.2 in any of the ways discussed earlier in this resolution.
-<!-- 7.	We recommend you <a href="{{ site.gdeurl }}guides/v2.0/comp-mgr/upgrader/upgrade-start.html">upgrade</a> to version 2.0.2. -->
+<!-- 7.	We recommend you <a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">upgrade</a> to version 2.0.2. -->
 
 
 #### Resolution 2 (upgrade to 2.0.1 or 2.0.2 has failed) {#resolution2}
@@ -219,7 +219,7 @@ To resolve the issue:
 
 	*	Using the `php <your Magento install dir>/bin/magento --version` command
 	*	Log in to the Magento Admin. The version displays in the lower right corner of the page.
-7.	We recommend you <a href="{{ site.gdeurl }}guides/v2.0/comp-mgr/upgrader/upgrade-start.html">upgrade</a> to version 2.0.2.
+7.	We recommend you <a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">upgrade</a> to version 2.0.2.
 
 #### Resolution 3 (does not require command line access) {#resolution3}
 To resolve the missing `.gitignore` files issue if you have no command-line access to your Magento server, <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">install version 2.0.2</a> on a local machine and transfer the Magento codebase to your Magento server using FTP or a utility provided by your shared hosting service.
