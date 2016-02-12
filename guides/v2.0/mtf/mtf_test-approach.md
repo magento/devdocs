@@ -108,12 +108,12 @@ Often you need to create some entity in precondition of your test case. To do th
 
 To demonstrate usage of test components from previous sections in the test creation process we will create a new test step-by-step. Before creating automated test, try to pass it manually.
 
-### Test description {#description}
+### Test description {#example-test-description}
 
 Create a synonym group with:
 
-- Scope: All Store Views
-- Synonyms: shoes, foot wear, men shoes, women shoes
+- Scope: All Websites; All Store Views; Default Store View
+- Synonyms: shoes, foot wear, men shoes, women shoes. For each variation the synonyms must have unique identifiers
 
 ### Manual testing scenario {#manual-test}
 
@@ -419,12 +419,12 @@ class Synonym extends \Magento\Mtf\Fixture\InjectableFixture
 
 {%endhighlight php%}
 
-#### Step 4. Create a [test case][] {#create-test-case}
+#### Step 4. Create an initial [test case][] {#create-test-case}
 
 Now we can start creation of a test case.
 
 From the [test case topic][] we know about structure, location and name of the test case.
-So, let it be `<magento2>/dev/tests/functional/tests/app/Magento/Search/Test/TestCase/CreateSynonymEntityTest.xml`. And we know that we must open a Search Synonym Index page and a new New Synonym Group page during the test flow. It means that we should initialize these pages in the test using the `__inject()` method of the `Magento\Mtf\TestCase\Injectable` class. Also we will definitely use the fixture from the previous step.
+So, let it be `<magento2>/dev/tests/functional/tests/app/Magento/Search/Test/TestCase/CreateSynonymEntityTest.xml`. And we know that we must open a Search Synonym Index page and a new New Synonym Group page during the test flow. It means that we should initialize these pages in the test using the `__inject()` method of the `Magento\Mtf\TestCase\Injectable` class. Also we will definitely use the [fixture][] from the previous step.
 
 {% highlight php %}
 
@@ -487,7 +487,68 @@ class CreateSynonymEntityTest extends Injectable
 
 {% endhighlight %}
 
+#### Step 5. Create a [data set][] {#create-data-set}
 
+Now we can add a data set with variations that cover cases in [test description][]: `<magento2>/dev/tests/functional/tests/app/Magento/Search/Test/TestCase/CreateSynonymEntityTest.xml`
+
+![Created data set]({{site.baseurl}}common/images/mtf_tutor_dataset.png)
+
+The following code contains data set, but don't have data yet
+
+{% highlight xml %}
+
+<?xml version="1.0" encoding="utf-8"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/mtf/etc/variations.xsd">
+    <testCase name="Magento\Search\Test\TestCase\CreateSynonymEntityTest" summary="Create Synonyms">
+        <variation name="CreateCategoryEntityTestVariation1_all_websites_all_store_views" summary="Create synonym for all websites and all store views">
+        enter data and constraints for vaiation 1
+        </variation>
+        <variation name="CreateCategoryEntityTestVariation2_main_website_all_store_views" summary="Create synonyms for main website and all store views">
+        enter data and constraints for vaiation 2
+        </variation>
+        <variation name="CreateCategoryEntityTestVariation3_main_website_default_store_view" summary="Create synonyms for main website and default store views">
+        enter data and constraints for vaiation 3
+        </variation>
+    </testCase>
+</config>
+
+{% endhighlight %}
+
+There is no need to enter a `group_id` field, because it is assigned automatically by application. We need to set `synonyms` and `scope_id` fields.
+
+- `synonyms` field. We need to [set data to a fixture field][]. So, name of the field should be `<name of a fixture>/data/<name of the field>`, or in our case it is `name = "synonym/data/synonyms"`. To make data unique in each variation we can use the [`%isolation%` placeholder][].
+- `scope_id` field. We need to [set data to a fixture field from a repository][]. So, name of the field should be `<name of a fixture>/data/<name of the field>/dataset`, or in our case it is `name="synonym/data/scope_id/dataset"`. As you recall, we use data source to process this field. Data source creates Store fixture with Store repository to enter data to this field. It means that in this field we should insert name of the Store repository `dataset name` from `<magento2>/dev/tests/functional/tests/app/Magento/Store/Test/Repository/Store.xml`.
+
+|   |`synonyms`|`scope_id`
+|---
+|variation 1|`shoes %isolation%, foot wear %isolation%, men shoes %isolation%, women shoes %isolation%`|In this variation we won't use this field to cover `All Website` case, because it is selected automatically when the New Synonym Group page is opened
+|variation 2|`shoes %isolation%, foot wear %isolation%, men shoes %isolation%, women shoes %isolation%`|`all_store_views`
+|variation 3|`shoes %isolation%, foot wear %isolation%, men shoes %isolation%, women shoes %isolation%`|`default_store_view`
+
+OK, let's see the data set with data.
+ 
+{% highlight xml %}
+
+<?xml version="1.0" encoding="utf-8"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/mtf/etc/variations.xsd">
+    <testCase name="Magento\Search\Test\TestCase\CreateSynonymEntityTest" summary="Create Synonyms">
+        <variation name="CreateCategoryEntityTestVariation1_all_websites_all_store_views" summary="Create synonym for all websites and all store views">
+            <data name="synonym/data/synonyms" xsi:type="string">shoes %isolation%, foot wear %isolation%, men shoes %isolation%, women shoes %isolation%</data>
+        </variation>
+        <variation name="CreateCategoryEntityTestVariation2_main_website_all_store_views" summary="Create synonyms for main website and all store views">
+            <data name="synonym/data/synonyms" xsi:type="string">shoes %isolation%, foot wear %isolation%, men shoes %isolation%, women shoes %isolation%</data>
+            <data name="synonym/data/scope_id/dataset" xsi:type="string">all_store_views</data>
+        </variation>
+        <variation name="CreateCategoryEntityTestVariation3_main_website_default_store_view" summary="Create synonyms for main website and default store views">
+            <data name="synonym/data/synonyms" xsi:type="string">shoes %isolation%, foot wear %isolation%, men shoes %isolation%, women shoes %isolation%</data>
+            <data name="synonym/data/scope_id/dataset" xsi:type="string">default_store_view</data>
+        </variation>
+    </testCase>
+</config>
+
+{% endhighlight %}
 
 
 <!-- LINK DEFINITIONS -->
@@ -514,9 +575,16 @@ class CreateSynonymEntityTest extends Injectable
 [Adjust configuration]: http://devdocs.magento.com/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_config.html
 [Prepare environment for test run]: http://devdocs.magento.com/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_environmemt.html
 
-[`generateFixtureXml.php` tool]: http://devdocs.magento.com/guides/v2.0/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_create
+[`generateFixtureXml.php` tool]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_create
+[set data to a fixture field]: {{site.gdeurl}}mtf/mtf_entities/mtf_dataset.html#fixture_field
+[set data to a fixture field from a repository]: {{site.gdeurl}}mtf/mtf_entities/mtf_dataset.html#fixture_field_repository
+[`%isolation%` placeholder]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture-repo.html#mtf_repo_isolation
 
 [manual test]: #manual-test
+[test description]: #example-test-description
+
+
+
 
 
 
