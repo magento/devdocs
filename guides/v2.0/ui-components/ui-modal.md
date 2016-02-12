@@ -24,8 +24,7 @@ Similar to the widget's configuration, the component's configuration allows to s
 
 The modal component can be used for both Admin panel and storefront.
 
-
-<p class="q">Any related topic in http://devdocs.magento.com/guides/v2.0/pattern-library/bk-pattern.html?</p>
+For recommendation about modal windows usage from the UX point of view, see the corresponding topic in the [Magento Admin pattern library](http://devdocs.magento.com/guides/v2.0/pattern-library/bk-pattern.html).
 
 ## Structure
 
@@ -270,9 +269,9 @@ The following sample is an example of the configuration for a simple modal windo
 
 - `actionCancel()`: returns all modal's child components to the state they had on modal open and closes the modal window. 
 - `actionDone()`: validates the changes in the modal's child components and, if valid, closes the modal.
-- `closeModal()`: closes the modal window
-- `openModal()`: opens the modal window
-- `setPrevValues(elem)`: returns all `elem`'s child components to the state they had on modal open
-- `setTitle()` - sets modal title
-- `setSubTitle()` - sets modal sub title
-- `toggleModal()`: toggles the modal window state (open/close)
+- `closeModal()`: closes the modal window.
+- `openModal()`: opens the modal window.
+- `setPrevValues(elem)`: returns all `elem`'s child components to the state they had on modal open.
+- `setTitle()` - sets modal title.
+- `setSubTitle()` - sets modal sub title.
+- `toggleModal()`: toggles the modal window state (open/close).
