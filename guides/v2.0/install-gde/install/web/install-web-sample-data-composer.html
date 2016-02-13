@@ -501,39 +501,6 @@
 
   <p>If you’re a <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr>, see one of the other topics on the left side of this page.</p>
 
-  <p>See the following sections:</p>
-
-  <ul>
-    <li><a href="#sample-data-rel-prereq">Sample data prerequisites</a></li>
-    <li><a href="#sample-data-rel-inst">Install released version sample data</a></li>
-  </ul>
-
-  <h3 id="sample-data-rel-prereq">Sample data prerequisites</h3>
-  <p>Before you install sample data, you must update Magento’s <code>composer.json</code> to get components from <code>https://repo.magento.com</code>.</p>
-
-  <ol>
-    <li>Log in to the Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
-    <li>
-      <p><a href="/guides/v2.0/install-gde/prereq/dev_install.html">Clone the Magento 2 GitHub repository</a>.</p>
-    </li>
-    <li>
-      <p><a href="/guides/v2.0/install-gde/install/prepare-install.html">Update dependencies</a> by running <code>composer install</code>.</p>
-    </li>
-    <li>
-      <p>Change to your Magento installation directory.</p>
-
-      <p>For example, <code>/var/www/html/magento2</code></p>
-    </li>
-    <li>
-      <p>Require the <code>https://repo.magento.com</code> repository, which contains the sample data code:</p>
-
-      <pre><code>composer config repositories.magento composer https://repo.magento.com
-</code></pre>
-    </li>
-    <li>Continue with the next section.</li>
-  </ol>
-
-  <h3 id="sample-data-rel-inst">Install released version sample data</h3>
   <p>To install sample data using the command line, enter the following command as the Magento file system owner:</p>
 
   <pre><code>php &lt;your Magento install dir&gt;/bin/magento sampledata:deploy
@@ -553,6 +520,14 @@ You must be using the interactive console to authenticate
 </code></pre>
 
   <p>If the error displays, change to your Magento installation directory and run <code>composer update</code>, which will prompt you for your <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">authentication keys</a>.</p>
+
+  <h3 id="magento-install">Install the Magento software</h3>
+  <p>After downloading sample data packages, install the Magento software in any of the following ways:</p>
+
+  <ul>
+    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli.html">Command line</a></li>
+    <li><a href="/guides/v2.0/install-gde/install/web/install-web.html">Setup Wizard</a></li>
+  </ul>
 
   <!-- <h3 id="sample-data-modules">Complete list of modules</h3>
 The complete list of sample data modules follows:
