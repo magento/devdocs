@@ -10,29 +10,6 @@ You can use this method of getting sample data if you used Magento Community Edi
 
 If you're a contributing developer, see one of the other topics on the left side of this page.
 
-See the following sections:
-
-*   [Sample data prerequisites](#sample-data-rel-prereq)
-*   [Install released version sample data](#sample-data-rel-inst)
-
-### Sample data prerequisites {#sample-data-rel-prereq}
-Before you install sample data, you must update Magento's `composer.json` to get components from `https://repo.magento.com`.
-
-1.  Log in to the Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
-4.  <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">Clone the Magento 2 GitHub repository</a>.
-
-5.  <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Update dependencies</a> by running `composer install`.
-
-2.  Change to your Magento installation directory.
-
-    For example, `/var/www/html/magento2`
-3.  Require the `https://repo.magento.com` repository, which contains the sample data code:
-
-        composer config repositories.magento composer https://repo.magento.com
-
-4.  Continue with the next section.
-
-### Install released version sample data {#sample-data-rel-inst}
 To install sample data using the command line, enter the following command as the Magento file system owner:
 
     php <your Magento install dir>/bin/magento sampledata:deploy
@@ -50,6 +27,13 @@ The following error might display:
     You must be using the interactive console to authenticate
 
 If the error displays, change to your Magento installation directory and run `composer update`, which will prompt you for your <a href="{{ site.gdeurl }}install-gde/prereq/connect-auth.html">authentication keys</a>.
+
+### Install the Magento software {#magento-install}
+After downloading sample data packages, install the Magento software in any of the following ways:
+
+*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">Command line</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/web/install-web.html">Setup Wizard</a>
+
 
 <!-- <h3 id="sample-data-modules">Complete list of modules</h3>
 The complete list of sample data modules follows:

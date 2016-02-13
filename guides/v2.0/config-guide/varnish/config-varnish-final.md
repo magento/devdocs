@@ -68,7 +68,7 @@ Make sure the `<your Magento install dir>/var/page_cache` directory is empty:
 5.	If you cleared the `var/page_cache/` directory, restart Varnish.
 
 <div class="bs-callout bs-callout-info" id="info">
-	<p>If you encounter 503 (Service Unavailable) errors, see <a href="{{ site.gdeurl }}config-guide/varnish/tshoot-varnish-503.html">Troubleshooting 503 (Service Unavailable) errors</a>.</p>
+	<p>If you encounter 503 (Backend Fetch Failed) errors, see <a href="{{ site.gdeurl }}config-guide/varnish/tshoot-varnish-503.html">Troubleshooting 503 (Service Unavailable) errors</a>.</p>
 </div>
 
 #### Next steps

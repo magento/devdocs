@@ -8,7 +8,7 @@ If you're not a contributing developer, choose one of the other options displaye
 Contributing developers can use this method of installing sample data *only* if all of the following are true:
 
 *   You use Magento CE
-*   You <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">cloned the Magento 2 `develop` branch</a>.
+*   You <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">cloned the Magento 2 repository</a>.
 
 <div class="bs-callout bs-callout-warning">
     <p>You can use sample data with either the <code>develop</code> branch (more current) or a released branch (such as <code>2.0</code> or <code>2.0.1</code> (more stable)). We recommend you use a released branch because it's more stable. If you're contributing code to the Magento 2 repository and you need the most recent code, use the <code>develop</code> branch.</p>
