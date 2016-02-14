@@ -70,8 +70,23 @@ To install Elasticsearch:
 
 			rpm --import https://packages.elastic.co/GPG-KEY-Elasticsearch
 			vim /etc/yum.repos.d/Elasticsearch.repo
-			yum -y install Elasticsearch
-			chkconfig --add Elasticsearch
+
+		Add a new section as follows:
+
+			[elasticsearch-2.x]
+			name=Elasticsearch repository for 2.x packages
+			baseurl=http://packages.elastic.co/elasticsearch/2.x/centos
+			gpgcheck=1
+			gpgkey=http://packages.elastic.co/GPG-KEY-elasticsearch 
+			enabled=1
+
+		Install Elasticsearch:
+
+			yum -y install elasticsearch
+
+		Configure Elasticsearch to start automatically:
+
+			chkconfig --add elasticsearch
 
 	*	Ubuntu:
 
@@ -80,8 +95,10 @@ To install Elasticsearch:
 			sudo apt-get -y update && sudo apt-get -y install Elasticsearch
 
 	<a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.1/setup-repositories.html" target="_blank">More information about Elasticsearch repositories</a>.
-3.	Optionally configure the <a href="https://www.elastic.co/guide/en/Elasticsearch/reference/current/setup-service.html" target="_blank">Elasticsearch service</a>.
-4.	<a href="https://www.elastic.co/guide/en/Elasticsearch/reference/current/setup.html" target="_blank">Start Elasticsearch</a>.
+3.	Optionally configure the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.1/setup-service.html" target="_blank">Elasticsearch service</a>.
+3.	Start the Elasticsearch service:
+
+		service elasticsearch start
 
 ## Additional resources {#es-resources}
 *	<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/_basic_concepts.html" target="_blank">Elasticsearch Basic Concepts</a>
