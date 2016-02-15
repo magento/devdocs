@@ -5,7 +5,7 @@ subgroup: C_Data migration tool
 title: Upgrade the Data Migration Tool
 menu_title: Upgrade the Data Migration Tool
 menu_node: 
-menu_order: 100
+menu_order: 3
 github_link: migration/migration-tool-upgrade.md
 ---
 

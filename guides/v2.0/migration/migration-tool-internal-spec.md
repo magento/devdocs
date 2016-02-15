@@ -102,8 +102,7 @@ The following diagram represents directory structure of Data Migration Tool:
 
 <h3 id="entry-point">Entry Point</h3>
 
-Script that runs migration process is located at
-`magento-root/vendor/magento/data-migration-tool/bin/migrate`
+Script that runs migration process is located at magento-root/bin/magento
 
 
 <h3 id="configuration">Configuration</h3>
