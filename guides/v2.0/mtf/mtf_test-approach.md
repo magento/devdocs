@@ -129,9 +129,9 @@ Create a synonym group with:
 1. Log in to Admin
 2. Open Search Synonym page
 3. Click on the "New Synonym Group" button
-4. Enter data according to a data set.
-5. Click the "Save Synonym Group" button.
-6. Perform assertions.
+4. Enter data according to a data set
+5. Click the "Save Synonym Group" button
+6. Perform assertions
 
 ### Test creation {#test-creation}
 
@@ -419,7 +419,7 @@ class Synonym extends \Magento\Mtf\Fixture\InjectableFixture
 
 {%endhighlight php%}
 
-#### Step 4. Create an initial [test case][] {#create-test-case}
+#### Step 4. Create an initial [test case][] {#create-init-test-case}
 
 Now we can start creation of a test case.
 
@@ -448,30 +448,30 @@ class CreateSynonymEntityTest extends Injectable
     /**
      * Search Synonyms Index page
      *
-     * @var SearchSynonymsIndex
+     * @var synonymsIndex
      */
-    private $searchSynonymsIndex;
+    private $synonymsIndex;
 
     /**
      * New Synonym Group page
      *
-     * @var SearchSynonymsNew
+     * @var synonymsNew
      */
-    private $searchSynonymsNew;
+    private $synonymsNew;
 
     /**
      * Inject synonym pages.
      *
-     * @param SearchSynonymsIndex $searchSynonymsIndex
-     * @param SearchSynonymsNew $searchSynonymsNew
+     * @param synonymsIndex $synonymsIndex
+     * @param synonymsNew $synonymsNew
      * @return void
      */
     public function __inject(
-        SearchSynonymsIndex $searchSynonymsIndex,
-        SearchSynonymsNew $searchSynonymsNew
+        synonymsIndex $synonymsIndex,
+        synonymsNew $synonymsNew
     ) {
-        $this->searchSynonymsIndex = $searchSynonymsIndex;
-        $this->searchSynonymsNew = $searchSynonymsNew;
+        $this->synonymsIndex = $synonymsIndex;
+        $this->synonymsNew = $synonymsNew;
     }
 
     /**
@@ -520,7 +520,7 @@ There is no need to enter a `group_id` field, because it is assigned automatical
 - `synonyms` field. We need to [set data to a fixture field][]. So, name of the field should be `<name of a fixture>/data/<name of the field>`, or in our case it is `name = "synonym/data/synonyms"`. To make data unique in each variation we can use the [`%isolation%` placeholder][].
 - `scope_id` field. We need to [set data to a fixture field from a repository][]. So, name of the field should be `<name of a fixture>/data/<name of the field>/dataset`, or in our case it is `name="synonym/data/scope_id/dataset"`. As you recall, we use data source to process this field. Data source creates Store fixture with Store repository to enter data to this field. It means that in this field we should insert name of the Store repository `dataset name` from `<magento2>/dev/tests/functional/tests/app/Magento/Store/Test/Repository/Store.xml`.
 
-|   |`synonyms`|`scope_id`
+| Variation #  |`synonyms`|`scope_id`
 |---
 |variation 1|`shoes %isolation%, foot wear %isolation%, men shoes %isolation%, women shoes %isolation%`|In this variation we won't use this field to cover `All Website` case, because it is selected automatically when the New Synonym Group page is opened
 |variation 2|`shoes %isolation%, foot wear %isolation%, men shoes %isolation%, women shoes %isolation%`|`all_store_views`
@@ -550,6 +550,200 @@ OK, let's see the data set with data.
 
 {% endhighlight %}
 
+ A bit later we will add assertions to complete our data set.
+ 
+#### Step 6. Create [pages][] {#create-pages}
+
+In [Step 4][] we added two pages to the test case class. The both pages are in the Admin area, that's why we will create them in `<magento2>/dev/tests/functional/tests/app/Magento/Search/Test/Page/Adminhtml`. This principle is a good practice, it is not obligatory.
+
+**SynonymsIndex.xml**
+
+{% highlight xml %}
+
+<?xml version="1.0" encoding="utf-8"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/pages.xsd">
+    <page name="SynonymsIndex" area="Adminhtml" mca="search/synonyms/index" module="Magento_Search">
+
+    </page>
+</config>
+
+{% endhighlight %}
+
+**SynonymsNew.xml**
+
+{% highlight xml %}
+
+<?xml version="1.0" encoding="utf-8"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/pages.xsd">
+    <page name="SynonymsNew" area="Adminhtml" mca="search/synonyms/new" module="Magento_Search">
+
+    </page>
+</config>
+
+{% endhighlight %}
+
+![Created pages]({{site.gdeurl}}commom/images/mtf_tutorial_pages.png)
+
+More details about pages read in a [Page topic][].
+
+To generate PHP classes for these pages enter and run in your terminal
+
+    php <magento2>/dev/tests/functional/utils/generate.php
+    
+![PHP classes of pages]({{site.gdeurl}}commom/images/mtf_tutorial_pages_php.png)
+    
+[Run the test][] to check if you made any mistake. Selenium must perform three cycles of the following operations:
+ 
+ - open a browser
+ - log in to Admin
+ - open a Search Synonym page
+ - open a New Synonym Group page
+ 
+Three cycles correspond to three variations in a data set.
+
+In the following section we will create blocks that implements logic in these pages.
+
+#### Step 7. Create blocks
+
+Let's see in the [test description][] what actions must be performed:
+
+1. Click on the "New Synonym Group" button
+2. Enter data according to a data set
+3. Click the "Save Synonym Group" button
+
+OK, let's start.
+
+**How to code 'Click on the "New Synonym Group" button'**
+
+Fortunately you already have a block which contains method to add a new entity in a grid: [`Magento\Backend\Test\Block\GridPageActions`][].
+
+{% highlight php startinline=1 %}
+
+/**
+ * Click on "Add New" button
+ *
+ * @return void
+ */
+public function addNew()
+{
+    $this->_rootElement->find($this->addNewButton)->click();
+}
+
+{% endhighlight %}
+
+To locate a UI block which contains a button we will use a `.page-main-actions` locator.
+
+To use this method in a test case you have to add this block to the `SynonymsIndex.xml` page.
+
+{% highlight xml %}
+
+<?xml version="1.0" encoding="utf-8"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/pages.xsd">
+    <page name="SynonymsIndex" area="Adminhtml" mca="search/synonyms/index" module="Magento_Search">
+        <block name="pageActionsBlock" class="Magento\Backend\Test\Block\GridPageActions" locator=".page-main-actions" strategy="css selector"/>
+    </page>
+</config>
+
+{% endhighlight %}
+
+Now you can run `generate.php` as we did before to re-generate page classes.
+
+**How to code 'Enter data according to a data set'**
+
+We need to enter data from a data set to the form fields.
+
+![New Synonym Group page]({{site.gdeurl}}common/images/mtf_tutorial_page_new_synonym.png)
+
+It is time to use [block mapping][].
+
+Corresponding to the structure of a Search module in a code base
+ 
+![Block structure in a code base]({{site.gdeurl}}common/images/mtf_tutorial_block_struct.png) 
+ 
+ we are going to create the similar structure:
+ 
+![Block structure in a functional test]({{site.gdeurl}}common/images/mtf_tutorial_block_struct_test.png) 
+
+We need a `fill()` method from the [`Magento\Mtf\Block\Form`][] class and a mapping file.
+
+**Field mapping**
+
+We don't need to assign parameters for the `synonyms` field, because they are the same as default values (see [nodes description table][]). The same is applicable to the `scope_id` field except type of input. The type of input here is a [custom typified element][] [`\Magento\Mtf\Client\Element\SelectstoreElement`][]. The mapping file `SynonymsForm.xml` has the following code:
+                                                                      
+{% highlight xml %}
+
+<mapping strict="0">
+  <fields>
+      <synonyms />
+      <scope_id>
+          <input>selectstore</input>
+      </scope_id>
+  </fields>
+</mapping>
+
+{% endhighlight %}
+
+A block class must simply extend `Magento\Mtf\Block\Form` class. Its name must contain a concatenation on the fixture name and a `Form`. Let's create a `Magento/Search/Test/Block/Adminhtml/Synonyms/Edit/SynonymsForm.php` class:
+
+{% highlight php %}
+
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+namespace Magento\Search\Test\Block\Adminhtml\Synonyms\Edit;
+
+use Magento\Mtf\Block\Form;
+
+/**
+ * Synonyms edit form in admin.
+ */
+class SynonymsForm extends Form
+{
+    //
+}
+
+{% endhighlight %}
+
+![Form mapping block]({{site.baseurl}}common/images/mtf_tutorial_block_mapping.png)
+
+Now we can add the `SynonymsForm.php` block class to the `SynonymsNews.xml` page object. To identify a form block on the HTML page we use a `id='page:main-container'` css selector.
+
+{% highlight xml %}
+
+<block name="synonymForm" class="Magento\Search\Test\Block\Adminhtml\Synonyms\Edit\SynonymsForm" locator="[id='page:main-container']" strategy="css selector" />
+
+{% endhighlight %}
+
+**How to 'Click the "Save Synonym Group" button'**
+
+To operate with forms we can use a `save()` method from [`Magento\Backend\Test\Block\FormPageActions`][] block class.
+
+To use this class, it must be added to the the `SynonymsNews.xml` page. The `.page-main-actions` css selector will help to identify a UI block with the button on the HTML page.  
+
+{% highlight xml %}
+
+<block name="formPageActions" class="Magento\Backend\Test\Block\FormPageActions" locator=".page-main-actions" strategy="css selector" />
+
+{% endhighlight %}
+
+#### Step 8. Add blocks to pages
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- LINK DEFINITIONS -->
 
@@ -563,14 +757,20 @@ OK, let's see the data set with data.
 
 [fixture]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html
 [data set]: {{site.gdeurl}}mtf/mtf_entities/mtf_dataset.html
+[data source]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source
 [fixture repository]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture-repo.html
 [handler]: {{site.gdeurl}}mtf/mtf_entities/mtf_handler.html
 [test case]: {{site.gdeurl}}mtf/mtf_entities/mtf_testcase.html
 [test case topic]: {{site.gdeurl}}mtf/mtf_entities/mtf_testcase.html
 [block]: {{site.gdeurl}}mtf/mtf_entities/mtf_block.html
+[block mapping]: {site.gdeurl}}mtf/mtf_entities/mtf_block.html#mtf_block_mapping
+[nodes description table]: {site.gdeurl}}mtf/mtf_entities/mtf_block.html#mtf_block_form_xml_nodes
 [page]: {{site.gdeurl}}mtf/mtf_entities/mtf_page.html
+[pages]: {{site.gdeurl}}mtf/mtf_entities/mtf_page.html
+[Page topic]: {{site.gdeurl}}mtf/mtf_entities/mtf_page.html
 [constraints]: {{site.gdeurl}}mtf/mtf_entities/mtf_constraint.html
-[data source]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source
+[custom typified element]: {{site.gdeurl}}mtf/mtf_entities/mtf_typified-element.html#magento_class
+
 
 [Adjust configuration]: http://devdocs.magento.com/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_config.html
 [Prepare environment for test run]: http://devdocs.magento.com/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_environmemt.html
@@ -582,11 +782,14 @@ OK, let's see the data set with data.
 
 [manual test]: #manual-test
 [test description]: #example-test-description
+[Step 4]: #create-init-test-case
+[test description]: #auto-test
 
 
-
-
-
+[`Magento\Backend\Test\Block\FormPageActions`]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/GridPageActions.php
+[`Magento\Mtf\Block\Form`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php
+[`\Magento\Mtf\Client\Element\SelectstoreElement`]: {{site.mage2000url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/SelectstoreElement.php
+[`Magento\Backend\Test\Block\FormPageActions`]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/FormPageActions.php
 
 <!-- ABBREVIATIONS -->
 *[MTF]: Magento Testing Framework
