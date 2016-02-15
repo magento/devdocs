@@ -290,10 +290,6 @@
 
 			
 
-				
-
-			
-
 		</ul>
 
 	</div>
@@ -306,23 +302,27 @@
 
 		<h2 id="introduction">Introduction</h2>
 
-<p>This guide is for developers that or are building a new module from scratch for custom extension of Magento functionality. This guide is also for those who want to create an extension for Magento Connect, although it does not cover the publishing process.</p>
+<p>This guide is for developers that are building a new <em>component</em> from scratch for custom extension of Magento functionality. </p>
 
-<h2 id="magento-is-made-up-of-components">Magento is made up of components:</h2>
+<h2 id="magento-is-made-up-of-the-following-types-of-components">Magento is made up of the following types of components:</h2>
 
-<ul>
-  <li>Modules</li>
-  <li>Themes</li>
-  <li>Language packages</li>
-</ul>
+<pre><code>*	Modules (extend Magento capabilities)
+*	Themes (change the look and feel of your storefront and Admin)
+*	Language packages (localize the storefront and Admin)
+*	Libraries (common code)
+</code></pre>
 
-<p>A Magento <em>module</em> is a discrete chunk of code that accomplishes a particular business function or handles a Magento feature. A module is typically a collection <code>.php</code> and <code>.xml</code> files, and the bulk of your work in modules will be in these files.  Modules are interactive with each other. A module also contains any user interface required for a user’s interaction with the module, and any application interfaces that another module or code chunk might call, if you decide to expose any application interface to other Magento modules.</p>
+<p>A Magento <em>module</em> is a discrete chunk of code that accomplishes a particular business function or handles a Magento feature. A module is typically a collection <code>.php</code> and <code>.xml</code> files, and the bulk of your work in modules will be in these files.  Modules interact with each other. A module also contains any user interface required for a user’s interaction with the module, and any application interfaces that another module or code chunk might call, if you decide to expose any application interface to other Magento modules.</p>
 
-<p>Themes can be applied to the module to change its appearance. So when you are building a module, you may also touch themes and language packages.</p>
+<p>Themes can be applied to the module to change its appearance. So when you are building a module, you might also touch themes and language packages.</p>
 
-<p>A <em>package</em> is a module that is wrapped up in a distributable form. Usually you will use Composer to do this.</p>
+<p>A <em>package</em> is a component that is wrapped up in a distributable form. Usually you will use Composer to do this.</p>
 
-<p>An <em>extension</em> is a module or modules that are packaged for sale on Magento Connect.</p>
+<p>An <em>extension</em> is a component that are packaged for sale on Magento Marketplace.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Magento Marketplace is one way to distribute your components. This guide provide information about how to distribute your components using other means as well (such as a separate source control repository).</p>
+</div>
 
 <div class="bs-callout bs-callout-info" id="info">
 <p>You must follow a <a href="http://www.php-fig.org/psr/psr-4/">PSR compliant</a> structure when building a module.</p>
