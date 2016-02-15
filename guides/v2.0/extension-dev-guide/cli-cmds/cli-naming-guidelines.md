@@ -6,7 +6,8 @@ title: Command naming guidelines
 menu_title: Command naming guidelines
 menu_node: 
 menu_order: 2
-github_link: extension-dev-guide/cli-naming-guidelines.md
+github_link: extension-dev-guide/cli-cmds/cli-naming-guidelines.md
+redirect_from: /guides/v2.0/extension-dev-guide/cli-naming-guidelines.html
 ---
 
 <!-- http://olgakopylova.espritica.com/naming-conventions-for-cli-commands-in-magento-2/
@@ -156,4 +157,4 @@ To avoid naming your command the same as another command, we recommend:
 		dev:myname:theme:delete
 
 #### Related topic
-<a href="{{ site.gdeurl }}extension-dev-guide/cli-howto.html">How to add CLI commands</a>
+<a href="{{ site.gdeurl }}extension-dev-guide/cli-cmds/cli-howto.html">How to add CLI commands</a>

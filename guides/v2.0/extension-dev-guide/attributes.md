@@ -1,7 +1,7 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 6_Module Development
+subgroup: 99_Module Development
 title: EAV and extension attributes
 menu_title: EAV and extension attributes
 menu_order: 7

@@ -1,12 +1,14 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 5_Package
+subgroup: 05_Package
 title: Package a component
 menu_title: Package a component
 menu_order: 2
-github_link: extension-dev-guide/package_module.md
-redirect_from: /guides/v1.0/extension-dev-guide/package_module.html
+github_link: extension-dev-guide/package/package_module.md
+redirect_from: 
+  - /guides/v1.0/extension-dev-guide/package_module.html
+  - /guides/v2.0/extension-dev-guide/package_module.html
 ---
 
 ##{{page.menu_title}}
@@ -45,7 +47,7 @@ The `composer.json` uses [Composer's generic schema](https://getcomposer.org/doc
 <td>For modules, this value must be set to <code>magento2-module</code>. Other possible types are <code>metapackage</code>, <code>magento2-theme</code>, and <code>magento2-language</code>.</td>
 </tr>
 <td><code>autoload </code></td>
-<td>Specify necessary information to be loaded, such as [registration.php](component-registration.html). For more information, see <a href="https://getcomposer.org/doc/01-basic-usage.md#autoloading">Autoloading</a> from Composer.</td>
+<td>Specify necessary information to be loaded, such as [registration.php]({{ site.gdeurl }}extension-dev-guide/build/component-registration.html). For more information, see <a href="https://getcomposer.org/doc/01-basic-usage.md#autoloading">Autoloading</a> from Composer.</td>
 
 </tr>
 </tbody>

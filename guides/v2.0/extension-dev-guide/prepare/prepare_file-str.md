@@ -1,12 +1,15 @@
 ---
 layout: default
-group: quickstart
-subgroup: 02_Dev
-title: Set up your component's file structure
-menu_title: Set up your component's file structure
-menu_order: 5
+group: extension-dev-guide
+subgroup: 02_Prepare
+title: About component file structure 
+menu_title: About component file structure 
+menu_order: 10
 menu_node: 
-github_link: mktpl-quickstart/dev-filesys.md
+github_link: extension-dev-guide/prepare/prepare_file-str.md
+redirect_from: 
+  - /guides/v2.0/mktpl-quickstart/dev-filesys.html
+  - /guides/v2.0/extension-dev-guide/prepare_file-str.html
 ---
 
 ##{{page.menu_title}}
@@ -18,4 +21,4 @@ In addition, you can choose the component root directory to start development. T
 {% include php-dev/component-root.md %}
 
 #### Related topic
-<a href="{{ site.gdeurl }}extension-dev-guide/module-file-structure.html">Component file structure</a>
+<a href="{{ site.gdeurl }}extension-dev-guide/prepare/prepare/dev-summary.html">Roadmap for developing and packaging components</a>
