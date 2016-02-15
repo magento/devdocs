@@ -18,9 +18,9 @@ This topic describes the modal UI component.
 
 ## Modal component: overview
 
-The modal UI component implements a secondary window that opens on top of the main window. It uses the [modal widget]([{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html) under the hood.
+The modal UI component implements a secondary window that opens on top of the main window. It uses the [modal widget]([{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html).
 
-Similar to the widget's configuration, the component's configuration allows to set the window type and action buttons behavior. Additionally, the component allows to link action buttons to methods of the other UI components (by using the button component).
+Similar to the widget's configuration, the component's configuration allows you to set the window type and action buttons behavior. Additionally, the component allows to link action buttons to methods of the other UI components (by using the button component).
 
 The modal component can be used for both Admin panel and storefront.
 
@@ -50,7 +50,7 @@ Component's options are set in the configuration `.xml` file as follows:
 </modal>
 {%endhighlight%}
 
-Except the general configuration options, similar for most of the UI components, the following modal-specific options are available:
+The modal component uses general configuration options, similar to other UI components. However, it uses the following specific options as well:
 
 <table>
   <tr>
