@@ -1,17 +1,26 @@
 ---
 layout: default
-group: quickstart
+group: extension-dev-guide
 subgroup: 01_Introduction
 title: Glossary of common terms
 menu_title: Glossary of common terms
 menu_order: 5
 menu_node: 
-github_link: mktpl-quickstart/intro-composer-gloss.md
+github_link: extension-dev-guide/intro/intro-composer-gloss.md
+redirect_from: 
+  - /guides/v2.0/mktpl-quickstart/intro-composer-gloss.html
+  - /guides/v2.0/extension-dev-guide/intro-composer-gloss.html
 ---
 
 ##{{page.menu_title}}
 
-### Component
+#### List of terms
+
+*	[Component](#gloss-component)
+*	[Metapackage](#gloss-meta)
+*	[Component Manager](#gloss-compman)
+
+### Component {#gloss-component}
 We refer to what you're coding as *components*. (Composer refers to them as <a href="https://getcomposer.org/doc/05-repositories.md#packages" target="_blank">*packages*</a>; the terms component and package are equivalent.) A Magento component can be classified into the following *types*:
 
 *	Module (extend Magento capabilities)
@@ -31,7 +40,7 @@ You can *package* your components as follows:
   <p>Magento Marketplace uses the blanket term <em>product</em> to refer to a component or a metapackage.</p>
 </div>
 
-### Metapackage
+### Metapackage {#gloss-meta}
 Magento Marketplace requires more than one component to be packaged as a *metapackage*, which consists of only a `composer.json` that specifies individual components and their dependencies. (Magento Marketplace also refers to a metapackage as an *extension*.)
 
 A metapackage requires or suggests components that we refer to as *shared packages*. You can use a shared package in multiple metapackages if you wish. (If you use shared packages, Marketplace requires that *all* components in a metapackage be shared packages.)
@@ -45,10 +54,10 @@ Merchants do not need to understand that, under the covers, some packages are sh
 </div>
 
 #### For more information
-*	<a href="{{ site.gdeurl }}extension-dev-guide/package_module.html#package-metapackage">metapackages</a>
-*	<a href="{{ site.gdeurl }}extension-dev-guide/composer-integration.html">component types in <code>composer.json</code></a>.
+*	<a href="{{ site.gdeurl }}extension-dev-guide/package/package_module.html#package-metapackage">metapackages</a>
+*	<a href="{{ site.gdeurl }}extension-dev-guide/build/composer-integration.html">component types in <code>composer.json</code></a>.
 
-<h3 id="gloss-compman">Component Manager</h3>
+### Component Manager {#gloss-compman}
 Merchants use the <a href="{{ site.gdeurl }}comp-mgr/compman-start.html">Component Manager</a> (part of the Magento Admin) to do any of the following:
 
 *	Install, uninstall

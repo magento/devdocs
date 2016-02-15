@@ -1,13 +1,14 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 3_Build
-title: Component file structure
-menu_title: Component file structure
-menu_order: 2
-github_link: extension-dev-guide/module-file-structure.md
-
+subgroup: 03_Build
+title: Create your component file structure 
+menu_title: Create your component file structure 
+menu_order: 3
+github_link: extension-dev-guide/build/module-file-structure.md
+redirect_from: /guides/v2.0/extension-dev-guide/module-file-structure.html
 ---
+
 ##{{page.menu_title}}
 
 #### Contents
@@ -31,7 +32,6 @@ A typical file structure for a Magento 2 module:
 <p><img src="{{ site.baseurl }}common/images/pdg-config-file-structure.png" width="300" alt="A filesystem view of a typical file structure"></p>
 
 ####Typical directories
-
 Typical module directories are:
 
 * `Block`: contains PHP view classes as part of MVC vertical implementation of module logic.
@@ -104,6 +104,5 @@ Typical theme directories are:
 {% include php-dev/lang-pack-file-struct.md %}
 
 
-##Next
-
-[Define your configuration files](required-configuration-files.html)
+####Next
+[Register your component]({{ site.gdeurl }}extension-dev-guide/build/component-registration.html)
