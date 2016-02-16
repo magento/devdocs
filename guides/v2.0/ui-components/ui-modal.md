@@ -20,11 +20,11 @@ This topic describes the modal UI component.
 
 The modal UI component implements a secondary window that opens on top of the main window. It uses the [modal widget]([{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html).
 
-Similar to the widget's configuration, the component's configuration allows you to set the window type and action buttons behavior. Additionally, the component allows to link action buttons to methods of the other UI components (by using the button component).
+Similar to the widget's configuration, the component's configuration allows you to set the window type and action buttons behavior (including linking action buttons to methods of the other UI components).
 
 The modal component can be used for both Admin panel and storefront.
 
-For recommendation about modal windows usage from the UX point of view, see the corresponding topic in the [Magento Admin pattern library](http://devdocs.magento.com/guides/v2.0/pattern-library/bk-pattern.html).
+For recommendations about modal windows usage from the UX point of view, see the corresponding topic in the [Magento Admin pattern library](http://devdocs.magento.com/guides/v2.0/pattern-library/bk-pattern.html).
 
 ## Structure
 
@@ -49,159 +49,246 @@ Component's options are set in the configuration `.xml` file as follows:
     </argument>
 </modal>
 {%endhighlight%}
-
+<p>
+</p>
+<p>
+</p>
 The modal component uses general configuration options, similar to other UI components. However, it uses the following specific options as well:
-
 <table>
   <tr>
-    <th width="10%">Option</th>
-    <th width="50%">Description</th>
-    <th width="10%">Type</th>
-    <th width="10%">Optional/Mandatory</th>
-    <th width="10%">Default value</th>
+    <th>
+      Modal options
+    </th>
   </tr>
   <tr>
-    <td><code>state</code></td>
-    <td>Set the state of the modal window: <code>true</code> for open. 
-</td>
-    <td>Boolean</td>
-    <td>Optional</td>
-    <td><code>false</code></td>
+    <td>
+      <code>state</code>
+      <p>
+        Set the state of the modal window: <code>true</code> for
+        open.
+      </p>
+      <p>
+        <strong>Type:</strong> Boolean
+      </p>
+      <p>
+        <strong>Required?:</strong> Optional
+      </p>
+      <p>
+        <strong>Default value</strong>: <code>false</code>
+      </p>
+    </td>
   </tr>
   <tr>
-    <td><code>options</code></td>
-    <td>Options are passed to the modal widget initialization as is.</td>
-    <td>Object</td>
-    <td>Optional</td>
-    <td><code>{}</code></td>
+    <td>
+      <code>options</code>
+      <p>
+        Configuration for the modal widget. Passed to the widget
+        initialization as is.
+      </p>
+      <p>
+        <strong>Type:</strong> Object
+      </p>
+      <p>
+        <strong>Required?:</strong> Optional
+      </p>
+      <p>
+        <strong>Default value:</strong> <code>{}</code>
+      </p>
+    </td>
   </tr>
   <tr>
-    <td><code>title</code></td>
-    <td>The title of the modal window. Set as follows: 
-<pre>
-&lt;item name=&quot;options&quot; xsi:type=&quot;array&quot;&gt;
-    &lt;item name=&quot;title&quot; xsi:type=&quot;string&quot;&gt;%window_title%&lt;/item&gt;
+    <td>
+      <code>title</code>
+      <p>
+        The title of the modal window. Set as follows:
+      </p>
+      <pre>
+&lt;item name="options" xsi:type="array"&gt;
+    &lt;item name="title" xsi:type="string"&gt;%window_title%&lt;/item&gt;
 &lt;/item&gt;
 </pre>
-
-</td>
-    <td>String</td>
-    <td>Optional</td>
-    <td><code>''</code></td>
+      <p>
+        <strong>Type:</strong> String
+      </p>
+      <p>
+        <strong>Required?:</strong> Optional
+      </p>
+      <p>
+        <strong>Default value:</strong> <code>''</code>
+      </p>
+    </td>
   </tr>
   <tr>
-    <td><code>subTitle</code></td>
-    <td>The subtitle of the modal window. Set as follows: 
-<pre>
-&lt;item name=&quot;options&quot; xsi:type=&quot;array&quot;&gt;
-    &lt;item name=&quot;title&quot; xsi:type=&quot;string&quot;&gt;%window_title%&lt;/item&gt;
+    <td>
+      <code>subTitle</code>
+      <p>
+        The subtitle of the modal window. Set as follows:
+      </p>
+      <pre>
+&lt;item name="options" xsi:type="array"&gt;
+    &lt;item name="title" xsi:type="string"&gt;%window_subtitle%&lt;/item&gt;
 &lt;/item&gt;
 </pre>
-
-</td>
-    <td>String</td>
-    <td>Optional</td>
-    <td><code>''</code></td>
+      <p>
+        <strong>Type:</strong> String
+      </p>
+      <p>
+        <strong>Required?:</strong> Optional
+      </p>
+      <p>
+        <strong>Default value:</strong> <code>''</code>
+      </p>
+    </td>
   </tr>
-<tr>
-    <td><code>type</code></td>
-    <td>The type of the modal window. Can be one of the following:
-<code>slide</code> or <code>popup</code>
-
-Set as follows: 
-<pre>
-&lt;item name=&quot;options&quot; xsi:type=&quot;array&quot;&gt;
-    &lt;item name=&quot;type&quot; xsi:type=&quot;string&quot;&gt;%slide|popup%&lt;/item&gt;
+  <tr>
+    <td>
+      <code>type</code>
+      <p>
+        The type of the modal window. Can be one of the following:
+        <code>slide</code> or <code>popup</code>. Set as follows:
+      </p>
+      <pre>
+&lt;item name="options" xsi:type="array"&gt;
+    &lt;item name="type" xsi:type="string"&gt;%slide|popup%&lt;/item&gt;
 &lt;/item&gt;
 </pre>
-</td>
-    <td>String</td>
-    <td>Optional</td>
-    <td><code>slide</code></td>
+      <p>
+        <strong>Type:</strong> String
+      </p>
+      <p>
+        <strong>Required?:</strong> Optional
+      </p>
+      <p>
+        <strong>Default value:</strong> <code>slide</code>
+      </p>
+    </td>
   </tr>
   <tr>
-    <td><code>buttons</code></td>
-    <td>The action buttons of the modal window.
-</td>
-    <td>Array</td>
-    <td>Optional</td>
-    <td><code>[]</code></td>
+    <td>
+      <code>buttons</code>
+      <p>
+        The action buttons of the modal window.
+      </p>
+      <p>
+        <strong>Type:</strong> Array <strong>Required?:</strong>
+        Optional <strong>Default value:</strong> <code>[]</code>
+      </p>
+    </td>
   </tr>
   <tr>
-    <td><code>text</code></td>
-    <td>The button label. 
-
-Set as follows:
-<pre>
-&lt;item name=&quot;options&quot; xsi:type=&quot;array&quot;&gt;
-    &lt;item name=&quot;buttons&quot; xsi:type=&quot;array&quot;&gt;
-         &lt;item name=&quot;%button_number%&quot; xsi:type=&quot;array&quot;&gt;
-             &lt;item name=&quot;text&quot; xsi:type=&quot;string&quot;&gt;%label%&lt;/item&gt;
+    <td>
+      <code>text</code>
+      <p>
+        The button label.<br />
+        Set as follows:
+      </p>
+      <pre>
+&lt;item name="options" xsi:type="array"&gt;
+    &lt;item name="buttons" xsi:type="array"&gt;
+         &lt;item name="%button_number%" xsi:type="array"&gt;
+             &lt;item name="text" xsi:type="string"&gt;%label%&lt;/item&gt;
          &lt;/item&gt;
     &lt;/item&gt;
 &lt;/item&gt;
 </pre>
-
-</td>
-    <td>String</td>
-    <td>Optional</td>
-    <td>Undefined</td>
+      <p>
+        <strong>Type:</strong> String
+      </p>
+      <p>
+        <strong>Required?:</strong> Optional
+      </p>
+      <p>
+        <strong>Default value:</strong> Undefined
+      </p>
+    </td>
   </tr>
   <tr>
-    <td><code>class</code></td>
-    <td>The CSS class for the button. 
-
-Set as follows:
-<pre>
-&lt;item name=&quot;options&quot; xsi:type=&quot;array&quot;&gt;
-    &lt;item name=&quot;buttons&quot; xsi:type=&quot;array&quot;&gt;
-         &lt;item name=&quot;%button_number%&quot; xsi:type=&quot;array&quot;&gt;
-             &lt;item name=&quot;class&quot; xsi:type=&quot;string&quot;&gt;%class%&lt;/item&gt
+    <td>
+      <code>class</code>
+      <p>
+        The CSS class for the button.<br />
+        Set as follows:
+      </p>
+      <pre>
+&lt;item name="options" xsi:type="array"&gt;
+    &lt;item name="buttons" xsi:type="array"&gt;
+         &lt;item name="%button_number%" xsi:type="array"&gt;
+             &lt;item name="class" xsi:type="string"&gt;%class%&lt;/item&gt;
          &lt;/item&gt;
     &lt;/item&gt;
 &lt;/item&gt;
 </pre>
-
-</td>
-    <td>String</td>
-    <td>Optional</td>
-    <td>Undefined</td>
+      <p>
+        <strong>Type:</strong> String
+      </p>
+      <p>
+        <strong>Required?:</strong> Optional
+      </p>
+      <p>
+        <strong>Default value:</strong> Undefined
+      </p>
+    </td>
   </tr>
-
   <tr>
-    <td><code>actions</code></td>
-    <td>Button actions. On button click, actions are performed in the same order as they are set in config.
-
-Set as follows:
-<pre>
-&lt;item name=&quot;options&quot; xsi:type=&quot;array&quot;&gt;
-    &lt;item name=&quot;buttons&quot; xsi:type=&quot;array&quot;&gt;
-         &lt;item name=&quot;%button_number%&quot; xsi:type=&quot;array&quot;&gt;
-             &lt;item name=&quot;actions&quot; xsi:type=&quot;string&quot;&gt;%label%&lt;/item&gt;
+    <td>
+      <code>actions</code>
+      <p>
+        Button actions. On button click, actions are performed in
+        the same order as they are specified in config.<br />
+        Set as follows:
+      </p>
+      <pre>
+&lt;item name="options" xsi:type="array"&gt;
+    &lt;item name="buttons" xsi:type="array"&gt;
+         &lt;item name="%button_number%" xsi:type="array"&gt;
+             &lt;item name="actions" xsi:type="string"&gt;
+                &lt;--! Action that calls the method of the other UI component --&gt;
+                &lt;item name="%action_number%" xsi:type="array"&gt;
+                    &lt;item name="targetName" xsi:type="string"&gt;%component_which_performs_action%&lt;/item&gt;
+                    &lt;item name="actionName" xsi:type="string"&gt;%method_of_target_component%&lt;/item&gt;
+                &lt;/item&gt;
+                &lt;--! Action that calls the method of the modal component --&gt;
+                &lt;item name="%next_action_number%" xsi:type="array"&gt;%method_of_modal_component%&lt;/item&gt;
+             &lt;/item&gt;
          &lt;/item&gt;
     &lt;/item&gt;
 &lt;/item&gt;
 </pre>
-
-</td>
-    <td>Object</td>
-    <td>Optional</td>
-    <td>Undefined</td>
+      <p>
+        <strong>Type:</strong> Object
+      </p>
+      <p>
+        <strong>Required?:</strong> Optional
+      </p>
+      <p>
+        <strong>Default value:</strong> Undefined
+      </p>
+    </td>
   </tr>
   <tr>
-    <td><code>onCancel</code></td>
-    <td>Action (method name), that is performed on cancelling interactions: pressing Esc, clicking outside the modal window or clicking the 'X' (close) icon.
-</td>
-    <td>String</td>
-    <td>Optional</td>
-    <td><code>closeModal</code></td>
+    <td>
+      <code>onCancel</code>
+      <p>
+        Action (method name), that is performed on canceling
+        interactions: pressing Esc, clicking outside the modal
+        window, or clicking the 'X' (close) icon.
+      </p>
+      <p>
+        <strong>Type:</strong> String
+      </p>
+      <p>
+        <strong>Required?:</strong> Optional
+      </p>
+      <p>
+        <strong>Default value:</strong> <code>closeModal</code>
+      </p>
+    </td>
   </tr>
-
 </table>
 
 ### Example of the modal component configuration
 
-The following sample is an example of the configuration for a simple modal window containing one text field and a standard set of action buttons (**Cancel**, **Clear**, **Done**): 
+The following sample is an example of the configuration for a simple modal window containing one text field and a standard set of action buttons (**Cancel**, **Clear**, **Done**):
 
 {%highlight xml%}
 <modal name="test_modal">
@@ -267,7 +354,7 @@ The following sample is an example of the configuration for a simple modal windo
 
 ## Public API (JS)
 
-- `actionCancel()`: returns all modal's child components to the state they had on modal open and closes the modal window. 
+- `actionCancel()`: returns all modal's child components to the state they had on modal open and closes the modal window.
 - `actionDone()`: validates the changes in the modal's child components and, if valid, closes the modal.
 - `closeModal()`: closes the modal window.
 - `openModal()`: opens the modal window.
