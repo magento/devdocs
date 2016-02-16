@@ -1,13 +1,14 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 3_Build
+subgroup: 03_Build
 title: URN schema validation
 menu_title: URN schema validation
 menu_order: 6
-github_link: extension-dev-guide/XSD-XML-validation.md
-
+github_link: extension-dev-guide/build/XSD-XML-validation.md
+redirect_from: /guides/v2.0/extension-dev-guide/XSD-XML-validation.html
 ---
+
 ##{{page.menu_title}}
 
 
@@ -31,7 +32,7 @@ where
 
 *  `urn:magento` is the URN identifier
 *  `module` is the reference type identifier
-*  `Magento_Flow` is the name of the module. This must be exactly the same as the module specified by ComponentRegistrar in the [registration.php](component-registration.html) file.
+*  `Magento_Flow` is the name of the module. This must be exactly the same as the module specified by ComponentRegistrar in the [registration.php]({{ site.gdeurl }}extension-dev-guide/build/component-registration.html) file.
 * `flows/content.xsd` is the relative path to the module&#8217;s directory.
 
 
@@ -72,12 +73,5 @@ libxml_set_external_entity_loader(['Magento\Framework\Config\Dom\UrnResolver', '
 
 
 
-##Next
-
-[Module Load Order](module-load-order.html)
-
-
-
-
-
-
+####Next
+[Name your component]({{ site.gdeurl }}extension-dev-guide/build/create_component.html)

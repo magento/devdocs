@@ -6,9 +6,9 @@ title: Magento Admin Pattern Library
 menu_title: Slide-out, Modals, and Overlays
 menu_order: 2
 menu_node:
-github_link: pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overlays.md
-
+github_link: pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.md
 ---
+
 <h2> Slide-out Panels, Modal Windows, and Overlays</h2>
 
 <h3> Contents </h3>

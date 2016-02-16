@@ -7,7 +7,7 @@ menu_title: Module overview
 menu_order: 3
 level3_menu_node: level3child
 level3_subgroup: modules
-github_link: architecture/components/modules/mod_intro.md
+github_link: architecture/archi_perspectives/components/modules/mod_intro.md
 redirect_from: /guides/v1.0/architecture/modules/mod_intro.html
 ---
 

@@ -12,23 +12,28 @@ redirect_from: /guides/v1.0/extension-dev-guide/introduction.html
 ##{{page.menu_title}}
 
 
-This guide is for developers that or are building a new module from scratch for custom extension of Magento functionality. This guide is also for those who want to create an extension for Magento Connect, although it does not cover the publishing process.
+This guide is for developers that are building a new *component* from scratch for custom extension of Magento functionality. 
+
+##Magento is made up of the following types of components:
 
 
-##Magento is made up of components:
+	*	Modules (extend Magento capabilities)
+	*	Themes (change the look and feel of your storefront and Admin)
+	*	Language packages (localize the storefront and Admin)
+	*	Libraries (common code)
 
-* Modules
-* Themes
-* Language packages
+A Magento *module* is a discrete chunk of code that accomplishes a particular business function or handles a Magento feature. A module is typically a collection `.php` and `.xml` files, and the bulk of your work in modules will be in these files.  Modules interact with each other. A module also contains any user interface required for a user's interaction with the module, and any application interfaces that another module or code chunk might call, if you decide to expose any application interface to other Magento modules.
 
+Themes can be applied to the module to change its appearance. So when you are building a module, you might also touch themes and language packages.
 
-A Magento *module* is a discrete chunk of code that accomplishes a particular business function or handles a Magento feature. A module is typically a collection `.php` and `.xml` files, and the bulk of your work in modules will be in these files.  Modules are interactive with each other. A module also contains any user interface required for a user&#8217;s interaction with the module, and any application interfaces that another module or code chunk might call, if you decide to expose any application interface to other Magento modules.
+A *package* is a component that is wrapped up in a distributable form. Usually you will use Composer to do this.
 
-Themes can be applied to the module to change its appearance. So when you are building a module, you may also touch themes and language packages.
+An *extension* is a component that are packaged for sale on Magento Marketplace.
 
-A *package* is a module that is wrapped up in a distributable form. Usually you will use Composer to do this.
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Magento Marketplace is one way to distribute your components. This guide provide information about how to distribute your components using other means as well (such as a separate source control repository).</p>
+</div>
 
-An *extension* is a module or modules that are packaged for sale on Magento Connect.
 
 
 <div class="bs-callout bs-callout-info" id="info">

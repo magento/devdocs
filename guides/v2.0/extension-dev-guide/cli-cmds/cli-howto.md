@@ -6,7 +6,8 @@ title: How to add CLI commands
 menu_title: How to add CLI commands
 menu_node: 
 menu_order: 3
-github_link: extension-dev-guide/cli-howto.md
+github_link: extension-dev-guide/cli-cmds/cli-howto.md
+redirect_from: /guides/v2.0/extension-dev-guide/cli-howto.html
 ---
 
 #### Contents
@@ -49,5 +50,5 @@ Following is a summary of the process:
 To be added at a later time.
 
 #### Related topic
-<a href="{{ site.gdeurl }}extension-dev-guide/cli-naming-guidelines.html">Command naming guidelines</a>
+<a href="{{ site.gdeurl }}extension-dev-guide/cli-cmds/cli-naming-guidelines.html">Command naming guidelines</a>
 
