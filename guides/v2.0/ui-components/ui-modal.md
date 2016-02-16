@@ -201,7 +201,7 @@ Set as follows:
 
 ### Example of the modal component configuration
 
-The following sample is an example of the configuration for a simple modal window containing one text field and a standard set of action buttons (**Save**, **Delete**, **Cancel**): 
+The following sample is an example of the configuration for a simple modal window containing one text field and a standard set of action buttons (**Cancel**, **Clear**, **Done**): 
 
 {%highlight xml%}
 <modal name="test_modal">
@@ -272,6 +272,6 @@ The following sample is an example of the configuration for a simple modal windo
 - `closeModal()`: closes the modal window.
 - `openModal()`: opens the modal window.
 - `setPrevValues(elem)`: returns all `elem`'s child components to the state they had on modal open.
-- `setTitle()` - sets modal title.
-- `setSubTitle()` - sets modal sub title.
+- `setTitle()`: sets modal title.
+- `setSubTitle()`: sets modal sub title.
 - `toggleModal()`: toggles the modal window state (open/close).
