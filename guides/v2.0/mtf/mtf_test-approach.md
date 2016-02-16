@@ -53,7 +53,7 @@ Pass all the test steps defined in a test case you want to use.
 
 Step 2. [Run the test][]
 
-## New test {#new-test}
+## New functional test {#new-test}
     
 ### Extending an out-of-the-box test {#extending-oob-test}
 
@@ -72,7 +72,7 @@ Example use cases:
 - [block overriding][]
 - [handler overriding][]
 
-### Creating a test {#create-test}
+### Creating a functional test {#create-test}
 
 When new functionality or/and new modules were added to Magento you would need to create an absolutely new test to check the functionality. 
 
@@ -104,7 +104,7 @@ To create the test entity you must fill a product creation form with data from a
 Связать в рамках одного теста. Создаваемый продукт можно назначить существующей категории или создать новую категорию для этого продукта. Чтобы создать новую категорию нужен хендлер.
 Often you need to create some entity in precondition of your test case. To do this you need to create handler for Category creation in Handler directory of your module.  Learn more about Handler.
 
-## Let's create a new test {#create-new-test}
+## Let's create a new functional test {#create-new-test}
 
 To demonstrate usage of test components from previous sections in the test creation process we will create a new test step-by-step. Before creating automated test, try to pass it manually.
 
@@ -131,7 +131,7 @@ Create a synonym group with:
 3. Click on the "New Synonym Group" button
 4. Enter data according to a data set
 5. Click the "Save Synonym Group" button
-6. Perform assertions
+6. Check successful message
 
 ### Test creation {#test-creation}
 
@@ -419,9 +419,9 @@ class Synonym extends \Magento\Mtf\Fixture\InjectableFixture
 
 {%endhighlight php%}
 
-#### Step 4. Create an initial [test case][] {#create-init-test-case}
+#### Step 3. Create an initial test case {#create-init-test-case}
 
-Now we can start creation of a test case.
+Now we can start creation of a [test case][].
 
 From the [test case topic][] we know about structure, location and name of the test case.
 So, let it be `<magento2>/dev/tests/functional/tests/app/Magento/Search/Test/TestCase/CreateSynonymEntityTest.xml`. And we know that we must open a Search Synonym Index page and a new New Synonym Group page during the test flow. It means that we should initialize these pages in the test using the `__inject()` method of the `Magento\Mtf\TestCase\Injectable` class. Also we will definitely use the [fixture][] from the previous step.
@@ -487,9 +487,9 @@ class CreateSynonymEntityTest extends Injectable
 
 {% endhighlight %}
 
-#### Step 5. Create a [data set][] {#create-data-set}
+#### Step 4. Create a data set {#create-data-set}
 
-Now we can add a data set with variations that cover cases in [test description][]: `<magento2>/dev/tests/functional/tests/app/Magento/Search/Test/TestCase/CreateSynonymEntityTest.xml`
+Now we can add a [data set][] with variations that cover cases in [test description][]: `<magento2>/dev/tests/functional/tests/app/Magento/Search/Test/TestCase/CreateSynonymEntityTest.xml`
 
 ![Created data set]({{site.baseurl}}common/images/mtf_tutor_dataset.png)
 
@@ -552,9 +552,9 @@ OK, let's see the data set with data.
 
  A bit later we will add assertions to complete our data set.
  
-#### Step 6. Create [pages][] {#create-pages}
+#### Step 5. Create pages {#create-pages}
 
-In [Step 4][] we added two pages to the test case class. The both pages are in the Admin area, that's why we will create them in `<magento2>/dev/tests/functional/tests/app/Magento/Search/Test/Page/Adminhtml`. This principle is a good practice, it is not obligatory.
+In [Step 3][] we added two [pages][] to the test case class. The both pages are in the Admin area, that's why we will create them in `<magento2>/dev/tests/functional/tests/app/Magento/Search/Test/Page/Adminhtml`. This principle is a good practice, it is not obligatory.
 
 **SynonymsIndex.xml**
 
@@ -584,7 +584,7 @@ In [Step 4][] we added two pages to the test case class. The both pages are in t
 
 {% endhighlight %}
 
-![Created pages]({{site.gdeurl}}commom/images/mtf_tutorial_pages.png)
+![Created pages]({{site.baseurl}}common/images/mtf_tutorial_pages.png)
 
 More details about pages read in a [Page topic][].
 
@@ -592,20 +592,11 @@ To generate PHP classes for these pages enter and run in your terminal
 
     php <magento2>/dev/tests/functional/utils/generate.php
     
-![PHP classes of pages]({{site.gdeurl}}commom/images/mtf_tutorial_pages_php.png)
+![PHP classes of pages]({{site.baseurl}}common/images/mtf_tutorial_pages_php.png)
     
-[Run the test][] to check if you made any mistake. Selenium must perform three cycles of the following operations:
- 
- - open a browser
- - log in to Admin
- - open a Search Synonym page
- - open a New Synonym Group page
- 
-Three cycles correspond to three variations in a data set.
-
 In the following section we will create blocks that implements logic in these pages.
 
-#### Step 7. Create blocks
+#### Step 6. Create blocks {#create-blocks}
 
 Let's see in the [test description][] what actions must be performed:
 
@@ -617,7 +608,7 @@ OK, let's start.
 
 **How to code 'Click on the "New Synonym Group" button'**
 
-Fortunately you already have a block which contains method to add a new entity in a grid: [`Magento\Backend\Test\Block\GridPageActions`][].
+Fortunately you already have a block which contains method to add a new entity in a grid: [`\Magento\Backend\Test\Block\GridPageActions`][].
 
 {% highlight php startinline=1 %}
 
@@ -655,19 +646,19 @@ Now you can run `generate.php` as we did before to re-generate page classes.
 
 We need to enter data from a data set to the form fields.
 
-![New Synonym Group page]({{site.gdeurl}}common/images/mtf_tutorial_page_new_synonym.png)
+![New Synonym Group page]({{site.baseurl}}common/images/mtf_tutorial_page_new_synonym.png)
 
 It is time to use [block mapping][].
 
 Corresponding to the structure of a Search module in a code base
  
-![Block structure in a code base]({{site.gdeurl}}common/images/mtf_tutorial_block_struct.png) 
+![Block structure in a code base]({{site.baseurl}}common/images/mtf_tutorial_block_struct.png) 
  
  we are going to create the similar structure:
  
-![Block structure in a functional test]({{site.gdeurl}}common/images/mtf_tutorial_block_struct_test.png) 
+![Block structure in a functional test]({{site.baseurl}}common/images/mtf_tutorial_block_struct_test.png) 
 
-We need a `fill()` method from the [`Magento\Mtf\Block\Form`][] class and a mapping file.
+We need a `fill()` method from the [`\Magento\Mtf\Block\Form`][] class and a mapping file.
 
 **Field mapping**
 
@@ -722,7 +713,7 @@ Now we can add the `SynonymsForm.php` block class to the `SynonymsNews.xml` page
 
 **How to 'Click the "Save Synonym Group" button'**
 
-To operate with forms we can use a `save()` method from [`Magento\Backend\Test\Block\FormPageActions`][] block class.
+To operate with forms we can use a `save()` method from [`\Magento\Backend\Test\Block\FormPageActions`][] block class.
 
 To use this class, it must be added to the the `SynonymsNews.xml` page. The `.page-main-actions` css selector will help to identify a UI block with the button on the HTML page.  
 
@@ -732,18 +723,373 @@ To use this class, it must be added to the the `SynonymsNews.xml` page. The `.pa
 
 {% endhighlight %}
 
-#### Step 8. Add blocks to pages
+#### Step 7. Add blocks to pages {#add-blocks-to-pages}
+
+In previous step we created blocks with methods that enables us to perform required test flow.
+ 
+To associate methods with [pages][], blocks must be added to pages.
+
+**Search Synonym page**
+
+A corresponding page object in a functional test is `<magento2>/dev/tests/functional/tests/app/Magento/Search/Test/Page/Adminhtml/SynonymsIndex.xml/Magento/Search/Test/Page/Adminhtml/SynonymsIndex.xml`
+
+The page with blocks needed for a test flow:
+
+{% highlight xml %}
+
+<?xml version="1.0" encoding="utf-8"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/pages.xsd">
+    <page name="SynonymsIndex" area="Adminhtml" mca="search/synonyms/index" module="Magento_Search">
+        <block name="pageActionsBlock" class="Magento\Backend\Test\Block\GridPageActions" locator=".page-main-actions" strategy="css selector"/>
+    </page>
+</config>
+
+{% endhighlight %}
+
+**New Synonym Group**
+
+A corresponding page object in a functional test is `<magento2>/dev/tests/functional/tests/app/Magento/Search/Test/Page/Adminhtml/SynonymsIndex.xml/Magento/Search/Test/Page/Adminhtml/SynonymsIndex.xml`
+
+The page with blocks needed for a test flow:
+
+{% highlight xml %}
+
+<?xml version="1.0" encoding="utf-8"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/pages.xsd">
+    <page name="SynonymsNew" area="Adminhtml" mca="search/synonyms/new" module="Magento_Search">
+        <block name="synonymForm" class="Magento\Search\Test\Block\Adminhtml\Synonyms\Edit\SynonymsForm" locator="[id='page:main-container']" strategy="css selector" />
+        <block name="formPageActions" class="Magento\Backend\Test\Block\FormPageActions" locator=".page-main-actions" strategy="css selector" />
+    </page>
+</config>
+
+{% endhighlight %}
+
+To generate PHP classes for these pages enter and run in your terminal:
+
+    php <magento2>/dev/tests/functional/utils/generate.php
+
+Well, now we can define a `test()` method that will contain a test flow.
+
+#### Step 8. Define a `test()` method {#define-test-method}
+
+An argument for the `test()` method is a test object (a fixture).
+
+{% highlight php startinline=1 %}
+
+/**
+ * @param Synonym $synonym
+ * @return void
+ */
+public function test(Synonym $synonym)
+{
+    // Steps
+}
+
+{% endhighlight %}
+
+Here we should recall [Step 3][], where the initial test case was created. So, page classes must be used in a test case class:
+
+{% highlight php startinline=1 %}
+
+use Magento\Search\Test\Page\Adminhtml\SynonymsIndex;
+use Magento\Search\Test\Page\Adminhtml\SynonymsNew;
+
+{% endhighlight %}
+
+All methods are defined in blocks ([Step 6][]) that are grouped in pages ([Step 5][], [Step 7][]). And we can code all required test flow:
+
+1. Log in to Admin
+2. Open a Search Synonym page
+3. Click on the "New Synonym Group" button
+4. Enter data according to a data set
+5. Click the "Save Synonym Group" button
+
+**Log in to Admin and open Search Synonym page**
+
+In the MTF the process of logging in doesn't require a special method and is performed automatically when any page from Admin is opened. A method we will use is an `open()` method of the `Magento/Mtf/Page/BackendPage` class. There is no need to add this class in `use`, because it is inherited from the `Magento/Search/Test/Page/Adminhtml/SynonymsIndex` class.
+
+{% highlight php startinline=1  %}
+
+$this->synonymsIndex->open();
+
+{% endhighlight %}
+
+**Click on the "New Synonym Group" button**
+
+To click on the "New Synonym Group" button we will use the `addNew()` method from the `pageActionsBlock` block. A `getPageActionsBlock()` of the generated `Magento/Search/Test/Page/Adminhtml/SynonymsIndex` class receives parameters defined in the `pageActionsBlock` block (`class`, `locator`, `strategy`).
+
+{% highlight php startinline=1  %}
+
+$this->synonymsIndex->getPageActionsBlock()->addNew();
+
+{% endhighlight %}
+
+Clicking on the button calls opening of the New Synonym Group page.
+
+**Enter data according to a data set**
+
+To enter data in the form we use the `fill()` method from the `synonymForm` block of the `synonymsNew` page. An argument for this method is a fixture `Synonym`. A `getSynonymForm()` method of the generated `Magento/Search/Test/Page/Adminhtml/SynonymsNew` class receives parameters defined in the `synonymForm` block.
+
+{% highlight php startinline=1  %}
+
+$this->synonymsNew->getSynonymForm()->fill($synonym);
+
+{% endhighlight %}
+
+**Click the "Save Synonym Group" button**
+
+A `save()` method with parameters defined in a `formPageActions` block. Parameters are injected using a `getFormPageActions()` method from the `synonymsNew` page (generated `Magento/Search/Test/Page/Adminhtml/SynonymsNew` page class).
+
+{% highlight php startinline=1  %}
+
+$this->synonymsNew->getFormPageActions()->save();
+
+{% endhighlight %}
+
+**Full `test()` definition**
+
+{% highlight php startinline=1%}
+
+/**
+ * @param Synonym $synonym
+ * @return void
+ */
+public function test(Synonym $synonym)
+{
+    // Steps
+    $this->synonymsIndex->open();    // logs in to Admin, opens Search Synonyms page
+    $this->synonymsIndex->getPageActionsBlock()->addNew();    // receiving of the page action block with _rootElement containing locator which is indicated in the page class for PageActionBlock from the page, makes 'click' action on it
+    $this->synonymsNew->getSynonymForm()->fill($synonym);    // enters data from variation in the New Synonym Group fields 
+    $this->synonymsNew->getFormPageActions()->save();    // makes `click` action on the Save Synonym Group button
+}
+
+{% endhighlight %}
+
+#### Step 9. Check the test run
+
+Now is everything ready to run the test (except assertion that we will create in the next step).
+
+Full test case code:
+
+{% highlight php %}
+
+<?php
+
+namespace Magento\Search\Test\TestCase;
+
+use Magento\Mtf\TestCase\Injectable;
+use Magento\Search\Test\Fixture\Synonym;
+use Magento\Search\Test\Page\Adminhtml\SynonymsIndex;
+use Magento\Search\Test\Page\Adminhtml\SynonymsNew;
+
+/**
+ * Steps:
+1. Log in to Admin
+2. Open Search Synonym page
+3. Click on the 'New Synonym Group' button
+4. Enter data according to a data set.
+5. Click the 'Save Synonym Group' button.
+ */
+class CreateSynonymEntityTest extends Injectable
+{
+    /**
+     * Search Synonyms Index page
+     *
+     * @var synonymsIndex
+     */
+    private $synonymsIndex;
+
+    /**
+     * New Synonym Group page
+     *
+     * @var synonymsNew
+     */
+    private $synonymsNew;
+
+    /**
+     * Inject synonym pages.
+     *
+     * @param SynonymsIndex $synonymsIndex
+     * @param SynonymsNew $synonymsNew
+     * @return void
+     */
+    public function __inject(
+        SynonymsIndex $synonymsIndex,
+        SynonymsNew $synonymsNew
+    ) {
+        $this->synonymsIndex = $synonymsIndex;
+        $this->synonymsNew = $synonymsNew;
+    }
+
+    /**
+     * @param Synonym $synonym
+     * @return void
+     */
+    public function test(Synonym $synonym)
+    {
+        // Steps
+        $this->synonymsIndex->open();    // logs in to Admin, opens Search Synonyms page
+        $this->synonymsIndex->getPageActionsBlock()->addNew();    // receiving of the page action block with _rootElement containing locator which is indicated in the page class for PageActionBlock from the page, makes 'click' action on it
+        $this->synonymsNew->getSynonymForm()->fill($synonym);
+        $this->synonymsNew->getFormPageActions()->save();
+    }
+}
 
 
+{% endhighlight %}
 
+You can run the test using your IDE or the CLI. To run the test using the CLI enter in your terminal:
 
+    <magento2>/dev/tests/functional/vendor/phpunit --filter CreateSynonymEntityTest
 
+Selenium must perform three cycles of the test flow in a browser. Three cycles correspond to three variations in a data set.
 
+#### Step 10. Create an assertion {#create-assertion}
 
+A last item in the test description says that the test must check appearance of a message about the successful save after a test flow. 
 
+![Message about the successful save]({{site.baseurl}}common/images/mtf_tutorial_success_message.png)
 
+To cover this, we should create a test assertion ([constraint][]) and add the full class name to a variation of the data set. 
+ 
+Fortunately, this assertion is popular among functional tests, and we can search by phrase "SuccessSaveMassage". Let's select from the list of results a [`\Magento\Customer\Test\Constraint\AssertCustomerSuccessSaveMessage`][] class. It has the following code:
 
+{% highlight php %}
 
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+namespace Magento\Customer\Test\Constraint;
+
+use Magento\Customer\Test\Page\Adminhtml\CustomerIndex;
+use Magento\Mtf\Constraint\AbstractConstraint;
+
+/**
+ * Class AssertCustomerSuccessSaveMessage
+ *
+ */
+class AssertCustomerSuccessSaveMessage extends AbstractConstraint
+{
+    const SUCCESS_MESSAGE = 'You saved the customer.';
+
+    /**
+     * Assert that success message is displayed after customer save
+     *
+     * @param CustomerIndex $pageCustomerIndex
+     * @return void
+     */
+    public function processAssert(CustomerIndex $pageCustomerIndex)
+    {
+        $actualMessage = $pageCustomerIndex->getMessagesBlock()->getSuccessMessage();
+        \PHPUnit_Framework_Assert::assertEquals(
+            self::SUCCESS_MESSAGE,
+            $actualMessage,
+            'Wrong success message is displayed.'
+            . "\nExpected: " . self::SUCCESS_MESSAGE
+            . "\nActual: " . $actualMessage
+        );
+    }
+
+    /**
+     * Text success save message is displayed
+     *
+     * @return string
+     */
+    public function toString()
+    {
+        return 'Assert that success message is displayed.';
+    }
+}
+
+{% endhighlight %}
+
+Making a simple adoption we can create a constrain class that we need `\Magento\Search\Test\Constraint\AssertSynonymSuccessSaveMessage`:
+
+{% highlight php %}
+
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+namespace Magento\Search\Test\Constraint;
+
+use Magento\Search\Test\Page\Adminhtml\SynonymsIndex;
+use Magento\Mtf\Constraint\AbstractConstraint;
+
+/**
+ *
+ */
+class AssertSynonymSuccessSaveMessage extends AbstractConstraint
+{
+    const SUCCESS_MESSAGE = 'You saved the synonym group.';
+
+    /**
+     *
+     * @param SynonymsIndex $synonymsIndex
+     * @return void
+     */
+    public function processAssert(SynonymsIndex $synonymsIndex)
+    {
+        $actualMessage = $synonymsIndex->getMessagesBlock()->getSuccessMessage();
+        \PHPUnit_Framework_Assert::assertEquals(
+            self::SUCCESS_MESSAGE,
+            $actualMessage,
+            'Wrong success message is displayed.'
+            . "\nExpected: " . self::SUCCESS_MESSAGE
+            . "\nActual: " . $actualMessage
+        );
+    }
+
+    /**
+     * Text success save message is displayed
+     *
+     * @return string
+     */
+    public function toString()
+    {
+        return 'Assert that success message is displayed.';
+    }
+}
+
+{% endhighlight %}
+
+And now we can add `<constraint>` to each variation of a data set `<magento2>/dev/tests/functional/tests/app/Magento/Search/Test/TestCase/CreateSynonymEntityTest.xml`:
+
+{% highlight xml %}
+
+<?xml version="1.0" encoding="utf-8"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/mtf/etc/variations.xsd">
+    <testCase name="Magento\Search\Test\TestCase\CreateSynonymEntityTest" summary="Create Synonyms">
+        <variation name="CreateCategoryEntityTestVariation1_all_websites_all_store_views" summary="Create synonym for all websites and all store views">
+            <data name="synonym/data/synonyms" xsi:type="string">shoes %isolation%, foot wear %isolation%, men shoes %isolation%, women shoes %isolation%</data>
+            <constraint name="Magento\Search\Test\Constraint\AssertSynonymSuccessSaveMessage" />
+        </variation>
+        <variation name="CreateCategoryEntityTestVariation2_main_website_all_store_views" summary="Create synonyms for main website and all store views">
+            <data name="synonym/data/synonyms" xsi:type="string">shoes %isolation%, foot wear %isolation%, men shoes %isolation%, women shoes %isolation%</data>
+            <data name="synonym/data/scope_id/dataset" xsi:type="string">all_store_views</data>
+            <constraint name="Magento\Search\Test\Constraint\AssertSynonymSuccessSaveMessage" />
+        </variation>
+        <variation name="CreateCategoryEntityTestVariation3_main_website_default_store_view" summary="Create synonyms for main website and default store views">
+            <data name="synonym/data/synonyms" xsi:type="string">shoes %isolation%, foot wear %isolation%, men shoes %isolation%, women shoes %isolation%</data>
+            <data name="synonym/data/scope_id/dataset" xsi:type="string">default_store_view</data>
+            <constraint name="Magento\Search\Test\Constraint\AssertSynonymSuccessSaveMessage" />
+        </variation>
+    </testCase>
+</config>
+
+{% endhighlight %}
+
+The test is ready to run.
+
+That's it!
 
 <!-- LINK DEFINITIONS -->
 
@@ -763,14 +1109,14 @@ To use this class, it must be added to the the `SynonymsNews.xml` page. The `.pa
 [test case]: {{site.gdeurl}}mtf/mtf_entities/mtf_testcase.html
 [test case topic]: {{site.gdeurl}}mtf/mtf_entities/mtf_testcase.html
 [block]: {{site.gdeurl}}mtf/mtf_entities/mtf_block.html
-[block mapping]: {site.gdeurl}}mtf/mtf_entities/mtf_block.html#mtf_block_mapping
-[nodes description table]: {site.gdeurl}}mtf/mtf_entities/mtf_block.html#mtf_block_form_xml_nodes
+[block mapping]: {{site.gdeurl}}mtf/mtf_entities/mtf_block.html#mtf_block_mapping
+[nodes description table]: {{site.gdeurl}}mtf/mtf_entities/mtf_block.html#mtf_block_form_xml_nodes
 [page]: {{site.gdeurl}}mtf/mtf_entities/mtf_page.html
 [pages]: {{site.gdeurl}}mtf/mtf_entities/mtf_page.html
 [Page topic]: {{site.gdeurl}}mtf/mtf_entities/mtf_page.html
 [constraints]: {{site.gdeurl}}mtf/mtf_entities/mtf_constraint.html
+[constraint]: {{site.gdeurl}}mtf/mtf_entities/mtf_constraint.html
 [custom typified element]: {{site.gdeurl}}mtf/mtf_entities/mtf_typified-element.html#magento_class
-
 
 [Adjust configuration]: http://devdocs.magento.com/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_config.html
 [Prepare environment for test run]: http://devdocs.magento.com/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_environmemt.html
@@ -781,16 +1127,22 @@ To use this class, it must be added to the the `SynonymsNews.xml` page. The `.pa
 [`%isolation%` placeholder]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture-repo.html#mtf_repo_isolation
 
 [manual test]: #manual-test
-[test description]: #example-test-description
-[Step 4]: #create-init-test-case
 [test description]: #auto-test
+[Step 3]: #create-init-test-case
+[Step 5]: #create-pages
+[Step 6]: #create-blocks
+[Step 7]: #add-blocks-to-pages
 
 
-[`Magento\Backend\Test\Block\FormPageActions`]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/GridPageActions.php
-[`Magento\Mtf\Block\Form`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php
+[`\Magento\Backend\Test\Block\FormPageActions`]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/GridPageActions.php
+[`\Magento\Mtf\Block\Form`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php
 [`\Magento\Mtf\Client\Element\SelectstoreElement`]: {{site.mage2000url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/SelectstoreElement.php
-[`Magento\Backend\Test\Block\FormPageActions`]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/FormPageActions.php
+[`\Magento\Backend\Test\Block\FormPageActions`]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/FormPageActions.php
+[`\Magento\Customer\Test\Constraint\AssertCustomerSuccessSaveMessage`]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Customer/Test/Constraint/AssertCustomerSuccessSaveMessage.php
 
 <!-- ABBREVIATIONS -->
+
 *[MTF]: Magento Testing Framework
 *[CRUD]: Create Read Update Delete
+*[IDE]: Integrated Development Environment
+*[CLI]: Command Line Interface
