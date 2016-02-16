@@ -17,7 +17,7 @@ If your hosted system is already set up, go to <a href="{{ site.gdeurl }}install
 #### Contents
 *	<a href="#newbie-verify">Verify the software on your system</a>
 <!-- *	<a href="#newbie-cpanel">Start the cPanel configuration utility</a> -->
-*	<a href="{{ site.gdeurl }}install-gde/hosted/hosted_start_db.html">Configure a database and a database user</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/hosted/hosted_start_db.html">Configure a database and a database user</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/hosted/hosted_start_php.html">Configure PHP</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/hosted/hosted_get-ftp.html">Transfer the Magento software to your hosted system</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/hosted/hosted_start_cron.html">Set up scheduled tasks (cron)</a>
