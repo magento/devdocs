@@ -99,5 +99,5 @@ A system message notifies you that invalidated cache types must be refreshed.
 
 ## Troubleshooting (if the changes do not get applied)
 
-If the changes you configure in the Admin are not applied after you clear the cache and reload the page, delete all files in the `pub/static/frontend` and `var/view_preprocessing` directories, then reload the pages. You can delete the files manually or run the `grunt clean:<theme_name>` command in CLI. For details about using Grunt in Magento see [Installing and configuring Grunt]({{site.gdeurl}}frontend-dev-guide/css-topics/css_debug.html#grunt_prereq).
+If the changes you configure in the Admin are not applied after you clear the cache and reload the page, delete all files in the `pub/static/frontend` and `var/view_preprocessed` directories, then reload the pages. You can delete the files manually or run the `grunt clean:<theme_name>` command in CLI. For details about using Grunt in Magento see [Installing and configuring Grunt]({{site.gdeurl}}frontend-dev-guide/css-topics/css_debug.html#grunt_prereq).
 
