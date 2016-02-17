@@ -18,7 +18,7 @@ github_link: pattern-library/containers/slideouts-modals-overlays/slideouts-moda
 * <a href="#modals">Modals</a>
 * <a href="#overlays">Overlays</a>
 * <a href="#assets">Assets</a>
-
+* <a href="#implement">Technical Implementation</a>
 
 
 <h3 id="overview">Overview</h3>
@@ -269,3 +269,6 @@ When field level validation is triggered resulting message should appear and per
 <a href="src/Slide-out-Panels.psd">Download Slide-out Panels PSD source</a>
 
 <a href="src/Modal.psd">Download Modal PSD source</a>
+
+<h3 id="implement">Technical Implementation</h3>
+Technically slideouts and modals are implemented using the [modal widget]({{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html) or the [modal UI component]({{site.gdeurl}}ui-components/ui-modal.html). 
