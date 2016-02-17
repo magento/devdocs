@@ -6,6 +6,7 @@ title: Overview
 menu_title: Overview
 menu_node: parent
 github_link: ui-components/ui-component.md
+redirect_from: /guides/v2.0/ui-library/ui-component.html
 ---
 
 <h2 id="general">Overview of UI components</h2>
