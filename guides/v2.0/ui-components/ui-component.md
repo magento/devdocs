@@ -10,7 +10,6 @@ redirect_from: /guides/v2.0/ui-library/ui-component.html
 ---
 
 <h2 id="general">Overview of UI components</h2>
-
 Magento UI components are designed for simple and flexible UI rendering. They allow you to configure the page manipulating the UI components.
 
 Magento UI components are implemented as a standard module and can be found under Magento\UI namespace.
