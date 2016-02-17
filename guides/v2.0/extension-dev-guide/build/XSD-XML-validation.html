@@ -760,7 +760,7 @@
 
 <p>Each Magento module can contain XSD files for XML validation.</p>
 
-<p>Magento uses <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Name">Uniform Resource Names</a> (URNs) to reference XML Schema declarations.</p>
+<p>Magento uses <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Name">Uniform Resource Names</a> (URNs) to reference XML schema declarations.</p>
 
 <p>Magento supported URNs begin with <code>urn:magento</code>. Magento supports two XSD reference types:</p>
 
@@ -769,8 +769,12 @@
   <li>Framework XSD</li>
 </ul>
 
-<h3 id="module-xsd">Module XSD</h3>
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You cannot change the XSD for any XML files provided with the Magento application.</p></span>
+</div>
 
+<h3 id="module-xsd">Module XSD</h3>
 <p>The syntax for the module XSD is a colon separated declaration. An example follows:</p>
 
 <p><code>urn:magento:module:Magento_Flow:flows/content.xsd</code></p>
@@ -785,7 +789,6 @@
 </ul>
 
 <h3 id="framework-xsd">Framework XSD</h3>
-
 <p>The syntax for the framework XSD is a colon separated declaration. An example follows:</p>
 
 <p>`urn:magento:framework:Api/etc/extension_attributes.xsd
