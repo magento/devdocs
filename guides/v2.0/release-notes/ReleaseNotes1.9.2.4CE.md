@@ -33,12 +33,12 @@ Visit the Magento Security Center for detailed information about the SUPEE-7405 
 
 
 
-<h2>Cart Merge Patch (SUPEE-7978)
+<h2>Cart Merge Patch (SUPEE-7978)</h2>
 Carts containing identical items now merge correctly. Previously, when you merged one cart containing an item with another cart that contained the same item, Magento did not merge cart totals appropriately. Now, your cart will display only one item.  
 
 
 
-<h2>SOAP API Patch  (SUPEE-7822)
+<h2>SOAP API Patch  (SUPEE-7822)</h2>
 The Magento SOAP API now works as expected. Previously, after installation of patch SUPEE-7405 v1.0,  an API request would cause a 500 error, and Magento would log an exception.
 
 
