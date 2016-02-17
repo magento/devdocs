@@ -1,7 +1,7 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 6_Module Development
+subgroup: 99_Module Development
 title: Message Queues
 menu_title: Message Queues (Enterprise Edition Only)
 menu_order: 15

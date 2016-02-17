@@ -5,7 +5,7 @@ subgroup: C_Data migration tool
 title: Configure migration
 menu_title: Configure migration
 menu_node: 
-menu_order: 3
+menu_order: 4
 github_link: migration/migration-tool-configure.md
 redirect_from: /guides/v1.0/migration/migration-tool-configure.html
 ---
@@ -34,7 +34,7 @@ Before you migrate any data, you must create a `config.xml` configuration file f
 
 To create a configuration file:
 
-1.	Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl }}nstall-gde/prereq/apache-user.html">Magento file system owner</a>.
+1.	Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
 2.	Change to the following directory:
 
 		`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<migration edition>/<ce or version>

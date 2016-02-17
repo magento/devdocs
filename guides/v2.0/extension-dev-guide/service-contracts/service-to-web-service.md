@@ -1,7 +1,7 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 6_Module Development
+subgroup: 99_Module Development
 title: Configure services as web APIs
 menu_title: Configure services as web APIs
 menu_order: 11

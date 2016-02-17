@@ -7,7 +7,7 @@ menu_title: Modules and areas
 menu_order: 4
 level3_menu_node: level3child
 level3_subgroup: modules
-github_link: architecture/components/modules/mod_and_areas.md
+github_link: architecture/archi_perspectives/components/modules/mod_and_areas.md
 redirect_from: /guides/v1.0/architecture/modules/mod_and_areas.html
 ---
 
