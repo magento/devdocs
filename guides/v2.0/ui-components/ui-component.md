@@ -34,7 +34,6 @@ All components can be configured both for Admin and storefront.
 </div>
 
 <h3>Using UI component in layout file</h3>
-
 Using UI component is as simple as adding the following code to the appropriate layout section:
 
 `<uiСomponent name="some_ui_component_instance_name"/>`
