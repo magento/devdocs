@@ -34,7 +34,7 @@ The following table discusses the bootstrap parameters you can set:
 	</tr>	
 	<tr>
 		<td><a href="{{ site.gdeurl }}config-guide/bootstrap/mage-profiler.html">MAGE_PROFILER</a></td>
-		<td>Enables an HTML profiler</td>
+		<td>Enables dependency graphs and HTML profiling</td>
 	</tr>
 
 	
@@ -44,7 +44,7 @@ The following table discusses the bootstrap parameters you can set:
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <ul><li>Not all bootstrap parameters are documented at this time.</li>
-  	<li>You now set the Magento mode (developer, default, production) using the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html">magento application</a> command.</li></ul></span>
+  	<li>You now set the Magento mode (developer, default, production) using the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html"><code>magento deploy:mode:set {mode}</code></a> command.</li></ul></span>
 </div>
 
 <h2 id="mode-specify-var">Specifying a parameter value using an environment variable</h2>
@@ -140,7 +140,8 @@ To set a Magento bootstrap variable using your web server's environment:
 
 5.	Restart the web server:
 
-		service apache2 restart
+	*	Ubuntu: `service apache2 restart`
+	*	CentOS: `service httpd restart`
 
 <h4 id="mode-specify-centos">Specify a bootstrap variable for Apache on CentOS</h4>
 This section assumes you've already set up your virtual host. If you have not, consult a resource such as <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-centos-6" target="_blank">this digitalocean tutorial</a>.
@@ -168,4 +169,4 @@ After setting the mode, restart the web server:
 
 *	<a href="{{ site.gdeurl }}config-guide/bootstrap/mage-dirs.html">Customize base directory paths (MAGE_DIRS)</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>
-*	<a href="{{ site.gdeurl }}config-guide/bootstrap/mage-profiler.html">Enable an HTML profiler (MAGE_PROFILER)</a>
+*	<a href="{{ site.gdeurl }}config-guide/bootstrap/mage-profiler.html">Enable an dependency graphs and HTML profiler (MAGE_PROFILER)</a>
