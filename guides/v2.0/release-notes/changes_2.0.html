@@ -365,20 +365,18 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<p>This topic discusses backward-incompatible changes since the Magento 2.0 General Availability (GA) release in November 2015.</p>
+		<p>This topic discusses backward-incompatible changes for Magento 2.0.</p>
 
 <ul id="markdown-toc">
-  <li><a href="#magentocatalogrule-module">Magento_CatalogRule module</a>    <ul>
-      <li><a href="#setup-version-201-changes">Setup version 2.0.1 changes</a>        <ul>
+  <li><a href="#magento-202">Magento 2.0.2</a>    <ul>
+      <li><a href="#framework-changes">Framework changes</a></li>
+      <li><a href="#magentocatalogrule-module-changes">Magento_CatalogRule module changes</a>        <ul>
           <li><a href="#db-schema-changes">DB schema changes</a></li>
           <li><a href="#ui-changes"><abbr title="User Interface">UI</abbr> changes</a></li>
           <li><a href="#flow-changes">Flow changes</a></li>
         </ul>
       </li>
-    </ul>
-  </li>
-  <li><a href="#magentocatalog-module">Magento_Catalog module</a>    <ul>
-      <li><a href="#setup-version-204-changes">Setup version 2.0.4 changes</a>        <ul>
+      <li><a href="#magentocatalog-module-changes">Magento_Catalog module changes</a>        <ul>
           <li><a href="#code-changes">Code changes</a></li>
           <li><a href="#form-initialization-changes">Form initialization changes</a></li>
           <li><a href="#flow-changes-1">Flow changes</a></li>
@@ -388,9 +386,16 @@
   </li>
 </ul>
 
-<h2 id="magentocatalogrule-module">Magento_CatalogRule module</h2>
+<h2 id="magento-202">Magento 2.0.2</h2>
 
-<h3 id="setup-version-201-changes">Setup version 2.0.1 changes</h3>
+<h3 id="framework-changes">Framework changes</h3>
+
+<ul>
+  <li>a <code>convertConfigTimeToUtc()</code> method is added to the <code>lib/internal/Magento/Framework/Stdlib/DateTime/TimezoneInterface</code> interface. To implement this interface, please implement the method.</li>
+  <li>a <code>convertConfigTimeToUtc</code> method is added to the  <code>lib/internal/Magento/Framework/Stdlib/DateTime/Timezone </code></li>
+</ul>
+
+<h3 id="magentocatalogrule-module-changes">Magento_CatalogRule module changes</h3>
 
 <h4 id="db-schema-changes">DB schema changes</h4>
 
@@ -426,11 +431,7 @@
   <li>The functionality of adding a price rule to the subproduct was deleted</li>
 </ul>
 
-<h2 id="magentocatalog-module">Magento_Catalog module</h2>
-
-<h3 id="setup-version-204-changes">Setup version 2.0.4 changes</h3>
-
-<p>You can check the <code>setup_version</code> parameter in <a href="https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/etc/module.xml"><code>&lt;magento2&gt;/app/code/Magento/Catalog/etc/module.xml</code></a>.</p>
+<h3 id="magentocatalog-module-changes">Magento_Catalog module changes</h3>
 
 <h4 id="code-changes">Code changes</h4>
 
