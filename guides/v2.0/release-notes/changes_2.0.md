@@ -8,14 +8,19 @@ menu_node:
 github_link: release-notes/changes_2.0.md
 ---
 
-This topic discusses backward-incompatible changes since the Magento 2.0 General Availability (GA) release in November 2015.
+This topic discusses backward-incompatible changes for Magento 2.0.
 
 * TOC
 {:toc}
 
-## Magento_CatalogRule module
+## Magento 2.0.2
 
-### Setup version 2.0.1 changes
+### Framework changes
+
+* a `convertConfigTimeToUtc()` method is added to the `lib/internal/Magento/Framework/Stdlib/DateTime/TimezoneInterface` interface. To implement this interface, please implement the method.
+* a `convertConfigTimeToUtc` method is added to the  `lib/internal/Magento/Framework/Stdlib/DateTime/Timezone `
+
+### Magento_CatalogRule module changes
 
 #### DB schema changes
 
@@ -35,11 +40,7 @@ This topic discusses backward-incompatible changes since the Magento 2.0 General
 
 * The functionality of adding a price rule to the subproduct was deleted
 
-## Magento_Catalog module
-
-### Setup version 2.0.4 changes
-
-You can check the `setup_version` parameter in [`<magento2>/app/code/Magento/Catalog/etc/module.xml`][].
+### Magento_Catalog module changes
 
 #### Code changes
 
