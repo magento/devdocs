@@ -8,16 +8,39 @@ menu_node:
 github_link: release-notes/changes_2.0.md
 ---
 
-This topic discusses backward-incompatible changes since the Magento 2.0 General Availability (GA) release in November 2015.
+This topic discusses backward-incompatible changes for Magento 2.0.x releases.
 
 * TOC
 {:toc}
 
-## Module Magento_Catalog
+## Magento 2.0.2
 
-### Setup version 2.0.4 changes
+### Framework
 
-You can check the `setup_version` parameter in [`<magento2>/app/code/Magento/Catalog/etc/module.xml`][].
+* a `convertConfigTimeToUtc()` method is added to the `lib/internal/Magento/Framework/Stdlib/DateTime/TimezoneInterface` interface. To implement this interface, please implement this method.
+* a `convertConfigTimeToUtc` method is added to the  `lib/internal/Magento/Framework/Stdlib/DateTime/Timezone `
+
+### Magento_CatalogRule module
+
+#### DB schema changes
+
+* From the `catalogrule` table the following rows were deleted: `sub_is_enable`, `sub_simple_action`, `sub_discount_amount`
+* From the `catalogrule_product` table the following rows were deleted: `sub_simple_action`, `sub_discount_amount`
+
+#### UI changes
+
+* The **Subproduct discounts** dropdown on a catalog price rule was deleted, including **Apply** and **Discount Amount** subfields.
+
+|---
+| Setup version 2.0.0  | Setup version 2.0.1 
+|-|:-
+| ![OLD - Adding a new catalog price rule]({{site.baseurl}}common/images/backw_chang_cat_pr_rul_200.png 'OLD - Adding a new catalog price rule') | ![NEW - Adding a new catalog price rule]({{site.baseurl}}common/images/backw_chang_cat_pr_rul_201.png 'NEW - Adding a new catalog price rule')
+
+#### Flow changes
+
+* The functionality of adding a price rule to the subproduct was deleted
+
+### Magento_Catalog module
 
 #### Code changes
 
@@ -109,3 +132,7 @@ When **Products -> Categories** menu item in the Magento Admin is chosen, the fi
 
 [`<magento2>/app/code/Magento/Catalog/etc/module.xml`]: https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/etc/module.xml
 [`<magento2>/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml`]: https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml
+
+<!-- ABBREVIATIONS -->
+
+*[UI]: User Interface
