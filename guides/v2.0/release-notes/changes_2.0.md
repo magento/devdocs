@@ -8,19 +8,19 @@ menu_node:
 github_link: release-notes/changes_2.0.md
 ---
 
-This topic discusses backward-incompatible changes for Magento 2.0.x releases.
+This topic discusses backward-incompatible changes for Magento 2.0.
 
 * TOC
 {:toc}
 
 ## Magento 2.0.2
 
-### Framework
+### Framework changes
 
-* a `convertConfigTimeToUtc()` method is added to the `lib/internal/Magento/Framework/Stdlib/DateTime/TimezoneInterface` interface. To implement this interface, please implement this method.
+* a `convertConfigTimeToUtc()` method is added to the `lib/internal/Magento/Framework/Stdlib/DateTime/TimezoneInterface` interface. To implement this interface, please implement the method.
 * a `convertConfigTimeToUtc` method is added to the  `lib/internal/Magento/Framework/Stdlib/DateTime/Timezone `
 
-### Magento_CatalogRule module
+### Magento_CatalogRule module changes
 
 #### DB schema changes
 
@@ -40,7 +40,7 @@ This topic discusses backward-incompatible changes for Magento 2.0.x releases.
 
 * The functionality of adding a price rule to the subproduct was deleted
 
-### Magento_Catalog module
+### Magento_Catalog module changes
 
 #### Code changes
 
