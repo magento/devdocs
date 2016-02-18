@@ -13,7 +13,7 @@ Third-party applications that integrate with Magento can use OAuth-based authent
 
 For details about OAuth 1.0a, see [The OAuth 1.0 Protocol](https://tools.ietf.org/html/rfc5849)
 
-To configure your third-party application (represented as an Integration in Magento) to use OAuth-based authentication to access Magento's Web APIs, read these sections:</p>
+To configure your third-party application (represented as an Integration in Magento) to use OAuth-based authentication to access Magento's Web APIs, read these sections:
 <ul>
    <li><a href="#oauth-process">Integration registration</a></li>
    <li><a href="#http-post">HTTP POST with OAuth credentials</a></li>
@@ -32,7 +32,7 @@ To configure your third-party application (represented as an Integration in Mage
 
 As a merchant, you must register your external application as an Integration with the Magento Instance. Integration can be registered in the Magento admin (System > Extensions > Integrations).
 
-An Integration contains details like the endpoint that receives Oauth credentials and list of APIs to which access is requested.
+An integration contains details like the endpoint that receives Oauth credentials and list of APIs to which access is requested. See [Create an integration]({{ gdeurl }}/howdoi/webapi/integration.html) for information about configuring an integration
 
 <h2 id="http-post">HTTP POST with OAuth credentials</h2>
 
@@ -62,7 +62,7 @@ The process of completing the Oauth handshake requires that you
 
 <h3 id="pre-auth-token">Get a request token</h3>
 
-This is the first step in the 2-legged Oauth handshake. However, you must use these credentials to get an access token in less than three minutes, or the credentials are disabled for security reasons. The credentials expiry can be changed from the admin panel.
+This is the first step in the 2-legged Oauth handshake. However, you must use these credentials to get an access token in less than three minutes, or the credentials are disabled for security reasons. The expiration time can be changed from the admin panel.
 
 A request token is a temporary token that the user exchanges for an access token. To get a request token from Magento:
 
@@ -99,16 +99,16 @@ You must include these request parameters in the `Authorization` request header 
 * `oauth_signature_method`. The name of the signature method used to sign the request. Can have one of the following values: `HMAC-SHA1`, `RSA-SHA1`, or `PLAINTEXT`.
 * `oauth_signature`. A generated value (signature).
 * `oauth_timestamp`. A positive integer, expressed in the number of seconds since January 1, 1970 00:00:00 GMT.
-* `oauth_token`. The `oauth_token` value, or request token, obtained in <a href="#pre-auth-token">Get a request token</a>.
+* `oauth_token`. The `oauth_token` value, or request token, obtained in [Get a request token](#pre-auth-token).
 * `oauth_verifier`. The verification code that is tied to the consumer and request token.
 
 A valid response looks like this:
 `oauth_token=0lnuajnuzeei2o8xcddii5us77xnb6v0&oauth_token_secret=1c6d2hycnir5ygf39fycs6zhtaagx8pd`
 
 The response contains these fields:
+
 * `oauth_token`. The access token that provides access to protected resources.
 * `oauth_token_secret`. The secret that is associated with the access token.
-</ul>
 
 <h2 id="web-api-access">Access the web APIs</h2>
 
@@ -146,8 +146,7 @@ Use the ampersand (`&`) character to concatenate these attributes and parameters
 7. `oauth_consumer_key`
 8. `oauth_token`
 
-To generate the signature, you must use the HMAC-SHA1 signature method.
-   The signing key is the concatenated values of the consumer secret and token secret separated by the ampersand (`&`) character (ASCII code 38), even if empty. You must use parameter encoding to encode each value.
+To generate the signature, you must use the HMAC-SHA1 signature method. The signing key is the concatenated values of the consumer secret and token secret separated by the ampersand (`&`) character (ASCII code 38), even if empty. You must use parameter encoding to encode each value.
 
 <h2 id="oauth-error-codes">OAuth error codes</h2>
 When the third-party application makes an invalid request to Magento, the following OAuth-related errors can occur:
