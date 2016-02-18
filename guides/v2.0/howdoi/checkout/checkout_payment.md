@@ -30,7 +30,7 @@ All the steps are described further.
 
 ## Create the .js component file {#create}
 
-Your payment method must be implemented as a UI component. For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should depend on the Magento_Checkout module. Module dependencies are specified in the [module's `composer.json`]({{site.gdeurl}}extension-dev-guide/composer-integration.html).
+Your payment method must be implemented as a UI component. For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should depend on the Magento_Checkout module. Module dependencies are specified in the [module's `composer.json`]({{site.gdeurl}}extension-dev-guide/build/composer-integration.html).
 
 In you custom module directory create the component's `.js` file (payment method renderer). It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory. For example in the Magento modules, the payment methods renderers are stored in the `<your_module_dir>/view/frontend/web/js/view/payment/method-renderer/` directory.
 
@@ -195,7 +195,7 @@ A sample DI configuration file of a custom module `<your_module_dir>/etc/di.xml`
 {%endhighlight%}
 
 ### Add other payment-related features
-You can also add payment-related features (like reward points, gift registry, an so on) to the Review and Payment Informatio checkout step. They must be implemented as UI components as well, and can be displayed before or after the list of payment methods. This is configured in the [checkout page layout file correspondingly](#layout).
+You can also add payment-related features (like reward points, gift registry, an so on) to the Review and Payment Information checkout step. They must be implemented as UI components as well, and can be displayed before or after the list of payment methods. This is configured in the [checkout page layout file correspondingly](#layout).
 
 ## Create the .js component that registers the renderer {#register}
 In you custom module directory create the `.js` UI component that registers the payment method renderer in the renderers list. It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory. For example in the Magento modules, the payment methods renderers are stored in the `<your_module_dir>/view/frontend/web/js/view/payment/` directory.
@@ -220,7 +220,7 @@ define(
             },
             // other payment method renderers if required
         );
-        /** Add view logic here if needed */
+        /** Add view logic here if needed 
         return Component.extend({});
     }
 );

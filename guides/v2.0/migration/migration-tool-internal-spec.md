@@ -35,7 +35,7 @@ This section describes an implementation details of Data Migration Tool and how 
 
 <h3 id="repositories">Repositories</h3>
 
-Data Migration Tool repository <a href="https://github.com/magento/data-migration-tool-ce" target="_blank">migration-tool</a>
+Data Migration Tool repository <a href="https://github.com/magento/data-migration-tool" target="_blank">migration-tool</a>
 
 <h3 id="system-requirements">System requirements</h3>
 
@@ -102,8 +102,7 @@ The following diagram represents directory structure of Data Migration Tool:
 
 <h3 id="entry-point">Entry Point</h3>
 
-Script that runs migration process is located at
-`magento-root/vendor/magento/data-migration-tool/bin/migrate`
+Script that runs migration process is located at magento-root/bin/magento
 
 
 <h3 id="configuration">Configuration</h3>

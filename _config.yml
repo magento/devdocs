@@ -1,7 +1,7 @@
 # Site settings
 encoding: "utf-8"
 title: Magento 2 Developer Documentation
-email: mailto:DL-Magento-Doc-Feedback@ebay.com
+email: mailto:DL-Magento-Doc-Feedback@magento.com
 description: > # this means to ignore newlines until "baseurl:"
   Magento 2 Developer Guide.
 baseurl: "/"
@@ -18,7 +18,7 @@ mage2000url: "https://github.com/magento/magento2/blob/2.0/"
 
 # 1.x variables
 m1xgdeurl: "/guides/m1x/"
-m1xgithuburl: "https://github.com/magento/devdocs/tree/m1x/guides/m1x/"
+m1xgithuburl: "https://github.com/magento/devdocs/tree/2.0/guides/m1x/"
 
 # 2.1.0 variables
 gdeurl21: "/guides/v2.1/"

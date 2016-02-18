@@ -8,7 +8,7 @@ menu_order: 8
 github_link: coding-standards/code-standard-html.md
 ---
 
-This style guide defines Magento internal requirements for HTML code style for teams that develop LESS and CSS code. It is optional for third-party Magento developers.
+This style guide defines Magento internal requirements for HTML code style for teams that develop LESS and CSS code. We recommend that developers who create Magento extensions and customizations also use these standards.
 
 The guide is based on the [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.xml) with certain modifications that are described further.
 

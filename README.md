@@ -20,6 +20,6 @@ If you have questions, open an issue and ask us. We're looking forward to hearin
 
 *	<a href="https://twitter.com/MagentoDevDocs" class="twitter-follow-button" data-show-count="false">Follow @MagentoDevDocs</a>
 
-*	<a href="mailto:DL-Magento-Doc-Feedback@ebay.com">E-mail us</a>
+*	<a href="mailto:DL-Magento-Doc-Feedback@magento.com">E-mail us</a>
 
 *	<a href="http://devdocs.magento.com">Visit our documentation site</a>, built on GitHub using [Jekyll](http://jekyllrb.com/).

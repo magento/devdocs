@@ -186,7 +186,7 @@ A language package is a directory under `app/i18n/<VendorName>` in the Magento f
 
 *	Required license files
 *	`composer.json`
-*	`registration.php` that <a href="{{ site.gdeurl }}extension-dev-guide/component-registration.html">registers</a> the language package
+*	`registration.php` that <a href="{{ site.gdeurl }}extension-dev-guide/build/component-registration.html">registers</a> the language package
 *	<a href="#config-cli-subcommands-xlate-pack-meta-xml">`language.xml`</a> meta-information file
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -202,8 +202,8 @@ To create these files:
 	For example, Magento language packages are located in `app/i18n/magento`
 
 2.	Add any license files you require.
-3.	Add <a href="{{ site.gdeurl }}extension-dev-guide/composer-integration.html">`composer.json`</a> that specifies dependencies for your language package.
-4.	Register the language package with <a href="{{ site.gdeurl }}extension-dev-guide/component-registration.html">`registration.php`</a>
+3.	Add <a href="{{ site.gdeurl }}extension-dev-guide/build/composer-integration.html">`composer.json`</a> that specifies dependencies for your language package.
+4.	Register the language package with <a href="{{ site.gdeurl }}extension-dev-guide/build/component-registration.html">`registration.php`</a>
 5.	Add `language.xml` meta-information file as discussed in the next section.
 
 <h4 id="config-cli-subcommands-xlate-pack-meta-xml">Language package language.xml</h4>

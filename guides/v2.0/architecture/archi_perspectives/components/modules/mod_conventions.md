@@ -7,7 +7,7 @@ menu_title: Module conventions
 menu_order: 5
 level3_menu_node: level3child
 level3_subgroup: modules
-github_link: architecture/components/modules/mod_conventions.md
+github_link: architecture/archi_perspectives/components/modules/mod_conventions.md
 redirect_from: /guides/v1.0/architecture/modules/mod_conventions.html
 ---
 
@@ -22,7 +22,7 @@ Be sure to research additional Magento conventions, beyond those applicable to m
 
 The following table shows the *recommended* location within the Magento file system for specific components.
 
-(Modules must include a `registration.php` file that 
+(A module must include a `registration.php` file in its root folder.) 
 
 We refer to a component’s root directory as the top-level directory in which you develop component code. Typically, this directory is located in one of the following directories relative to the Magento root directory:
 

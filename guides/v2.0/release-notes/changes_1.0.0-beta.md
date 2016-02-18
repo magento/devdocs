@@ -331,6 +331,6 @@ The Magento developer documentation team loves feedback! Please provide feedback
 *	<a href="https://github.com/magento/devdocs/issues" target="_blank">Create an issue</a>
 *	Click **Edit this page on GitHub** on any topic to create a pull request
 *	Drop us a line on <a href="https://twitter.com/MagentoDevDocs" target="_blank">Twitter</a> (`@MagentoDevDocs`)
-*	Send us <a href="mailto:DL-Magento-Doc-Feedback@ebay.com">e-mail</a>
+*	Send us <a href="mailto:DL-Magento-Doc-Feedback@magento.com">e-mail</a>
 
 Our <a href="{{ site.gdeurl }}contributor-guide/contributing.html#requirements">contribution guidelines</a> provide more detail about providing feedback on the code and documentation.
