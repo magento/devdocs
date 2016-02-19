@@ -21,10 +21,10 @@ To specify all services:
 <div class="bs-callout bs-callout-info" id="info">
   <p>The value of `store_code` can be one of the following:</p>
   <ul>
-  <li>`default`</li>
+  <li><code>default</code></li>
   <li>The assigned store code</li>
-  <li>`all`. This value only applies to the CMS and Product modules. If this value is specified, the API call affects or queries all the merchant's stores.</li>
-
+  <li><code>all</code>. This value only applies to the CMS and Product modules. If this value is specified, the API call affects or queries all the merchant's stores.</li>
+  </ul>
 </div>
 
 ## List of Service Names per Module
