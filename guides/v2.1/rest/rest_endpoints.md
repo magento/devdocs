@@ -18,8 +18,17 @@ To specify all services:
 
 `http://<magento_host>/rest/default/schema`
 
-## List of Service Names per Module
+<div class="bs-callout bs-callout-info" id="info">
+  <p>The value of <code>store_code</code> can be one of the following:</p>
+  <ul>
+  <li><code>default</code></li>
+  <li>The assigned store code</li>
+  <li><code>all</code>. This value only applies to the CMS and Product modules. If this value is specified, the API call affects or queries all the merchant's stores.</li>
+</ul>
+</div>
 
+
+## List of Service Names per Module
 
 ### Backend
 backendModuleServiceV1: `http://<magento_host>/rest/default/schema&services=backendModuleServiceV1`
