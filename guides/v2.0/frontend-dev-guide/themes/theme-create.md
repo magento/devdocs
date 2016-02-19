@@ -99,7 +99,7 @@ Example of a theme `composer.json`:
 }
 {% endhighlight %}
 
-You can find details about the Composer integration in the Magento system in <a href="{{site.gdeurl}}extension-dev-guide/composer-integration.html">Composer integration</a>.
+You can find details about the Composer integration in the Magento system in <a href="{{site.gdeurl}}extension-dev-guide/build/composer-integration.html">Composer integration</a>.
 
 ## Add registration.php {#fedg_create_theme_reg}
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 6_Module Development
+subgroup: 99_Module Development
 title: Magento plug-ins
 menu_title: Magento plug-ins
 menu_order: 8
