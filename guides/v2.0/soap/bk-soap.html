@@ -341,6 +341,15 @@
 
 <p><code>http://&lt;magento_host&gt;/soap/&lt;store_code&gt;?wsdl&amp;services=&lt;serviceName1,serviceName2,..&gt;</code></p>
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>The value of <code>store_code</code> can be one of the following:</p>
+  <ul>
+  <li><code>default</code></li>
+  <li>The assigned store code</li>
+  <li><code>all</code>. This value only applies to the CMS and Product modules. If this value is specified, the API call affects all the merchant's stores. <code>get</code>operations cannot be performed when you specify <code>all</code>.</li>
+</ul>
+</div>
+
 <h2 id="list-of-service-names-per-module">List of Service Names per Module</h2>
 
 <h3 id="backend">Backend</h3>

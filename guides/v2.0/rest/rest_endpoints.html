@@ -374,11 +374,20 @@
 		<h2 id="rest-schema-endpoint-format">REST Schema Endpoint Format</h2>
 <p>To specify one or more services:</p>
 
-<p><code>http://&lt;magento_host&gt;/rest/default/schema&amp;services=&lt;serviceName1,serviceName2,..&gt;</code></p>
+<p><code>http://&lt;magento_host&gt;/rest/&lt;store_code&gt;/schema&amp;services=&lt;serviceName1,serviceName2,..&gt;</code></p>
 
 <p>To specify all services:</p>
 
-<p><code>http://&lt;magento_host&gt;/rest/default/schema</code></p>
+<p><code>http://&lt;magento_host&gt;/rest/&lt;store_code&gt;/schema</code></p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>The value of `store_code` can be one of the following:</p>
+  <ul>
+  <li><code>default</code></li>
+  <li>The assigned store code</li>
+  <li><code>all</code>. This value only applies to the CMS and Product modules. If this value is specified, the API call affects all the merchant's stores. <code>GET</code>operations cannot be performed when you specify <code>all</code>.</li>
+  </ul>
+</div>
 
 <h2 id="list-of-service-names-per-module">List of Service Names per Module</h2>
 
