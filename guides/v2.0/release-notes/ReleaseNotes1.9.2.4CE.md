@@ -12,11 +12,11 @@ redirect_from:
 <h2>Release Notes</h2>
 <h2>Magento Community Edition 1.9.2.4</h2>
 
-We are pleased to bring you Magento Community Edition 1.9.2.4, which includes a bundle of patches that improve the security of your Magento installation. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. 
+We are pleased to bring you Magento Community Edition 1.9.2.4, which bundles improvements for issues reported to us by our merchants after installing latest Patch SUPEE-7405 or Magento Community Edition Release 1.9.2.3. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions 
 
 This patch bundle also contains changes to Magento file permissions that support the upload of all file types and directories. File permissions are now 0666 (previously 0640). Directory permissions are now 0777 (previously 0750). 
 
-Important! Use Magento Enterprise 1.14.2.4 or later for all new installations and upgrades to ensure that you have the latest fixes, features, and security updates.
+Important! Use Magento Community Edition 1.9.2.4 or later for all new installations and upgrades to ensure that you have the latest fixes, features, and security updates.
 
 You <b>must</b> install Patch SUPEE-7405 v1.0 before installing this patch unless you are running:
 
@@ -28,9 +28,9 @@ You <b>must</b> install Patch SUPEE-7405 v1.0 before installing this patch unles
 If you running either of these versions of Magento, or have previously installed Patch 7405 v 1.0  on an earlier version of Magento, you do not need to install Patch SUPEE-7405 v1.0 before installing this patch. 
 
 <h2>Security Patch Bundle (SUPEE-7405 v.1.1)</h2>
-We highly recommend that all users of Magento Enterprise Edition 1.9.0.0 - 1.14.2.3 either install the SUPEE-7405 1.1 patch bundle, or upgrade to Enterprise Edition 1.14.2.4. 
+We highly recommend that all users of Magento Community Edition 1.9.0.x either install the SUPEE-7405 1.1 Patch Bundle, or upgrade to Community Edition 1.9.2.4. 
 
-Visit the Magento Security Center for detailed information about the SUPEE-7405 1.1 patch bundle.
+Visit the Magento Security Center for detailed information about the SUPEE-7405 1.1 Patch Bundle.
 
 
 

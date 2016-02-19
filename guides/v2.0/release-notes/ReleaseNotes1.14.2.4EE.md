@@ -16,7 +16,7 @@ We are pleased to bring you Magento Enterprise Edition 1.14.2.4, which bundles i
 
 This patch bundle also contains changes to Magento file permissions that support the upload of all file types and directories. File permissions are now 0666 (previously 0640). Directory permissions are now 0777 (previously 0750). 
 
-Important! Use Magento Enterprise 1.14.2.4 or later for all new installations and upgrades to ensure that you have the latest fixes, features, and security updates.
+Important! Use Magento Enterprise Edition 1.14.2.4 or later for all new installations and upgrades to ensure that you have the latest fixes, features, and security updates.
 
 You <b>must</b> install Patch SUPEE-7405 v1.0 before installing this patch unless you are running:
 
