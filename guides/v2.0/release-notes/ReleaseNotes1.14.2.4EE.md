@@ -12,7 +12,7 @@ redirect_from:
 <h2>Release Notes</h2>
 <h2>Magento Enterprise Edition 1.14.2.4</h2>
 
-We are pleased to bring you Magento Enterprise Edition 1.14.2.4, which includes a bundle of patches that improve the security of your Magento installation. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. 
+We are pleased to bring you Magento Enterprise Edition 1.14.2.4, which bundles improvements for issues reported to us by our merchants after installing latest Patch SUPEE-7405 or Magento Enterprise Edition Release 1.14.2.3. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. 
 
 This patch bundle also contains changes to Magento file permissions that support the upload of all file types and directories. File permissions are now 0666 (previously 0640). Directory permissions are now 0777 (previously 0750). 
 
