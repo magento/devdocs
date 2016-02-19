@@ -33,7 +33,7 @@ If you running either of these versions of Magento, or have previously installed
 We highly recommend that all users of Magento Enterprise Edition 1.9.0.0 - 1.14.2.3 either install the SUPEE-7405 1.1 Patch Bundle, or upgrade to Magento Enterprise Edition 1.14.2.4. Even if you are not having any of the issues addressed by this patch bundle, we recommend installing it. This will help prevent code conflicts with possibly future patches.
 
 
-Security Patch Bundle (SUPEE-7405 v.1.1) includes several SUPEE patches, including SUPEE-7978 and SUPPEE-7822. So we should recommend (if one does not want to upgrade to 1.14.2.4/1.9.2.4) to (after installed v1.0) to install 1.1.
+Security Patch Bundle (SUPEE-7405 v.1.1) includes several SUPEE patches, including SUPEE-7978 and SUPPEE-7822. 
 
 
 Visit the Magento Security Center for detailed information about the SUPEE-7405 1.1 patch bundle.
