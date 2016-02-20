@@ -60,19 +60,22 @@ Installing and configuring the Redis software is beyond the scope of this guide.
 <h2 id="config-redis-config">Configure Magento to use Redis</h2>
 Following is a sample configuration to add to `<your Magento install dir>app/etc/env.php`:
 
-	'cache' => [
-		'frontend' => [
-			'page_cache' => [
-				'backend' => 'Cm_Cache_Backend_Redis',
-				'backend_options' => [
-					'server' => '127.0.0.1', 
-					'port' => '6379',
-					'persistent' => '', 
-					'database' => 0, 
-					'password' => '', 
-					'force_standalone' => 0, 
-					'connect_retries' => 1, 
-		],
+	 'cache' => array (
+	'frontend' => array (
+		'page_cache' => array (
+			'backend' => 'Cm_Cache_Backend_Redis',
+			'backend_options' => array(
+				'server' => '127.0.0.1', 
+				'port' => '6379',
+				'persistent' => '', 
+				'database' => 0, 
+				'password' => '', 
+				'force_standalone' => 0, 
+				'connect_retries' => 1, 
+	),
+		),
+			),
+				),
 
 where
 
