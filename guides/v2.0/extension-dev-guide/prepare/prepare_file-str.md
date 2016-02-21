@@ -21,4 +21,4 @@ In addition, you can choose the component root directory to start development. T
 {% include php-dev/component-root.md %}
 
 #### Related topic
-<a href="{{ site.gdeurl }}extension-dev-guide/prepare/prepare/dev-summary.html">Roadmap for developing and packaging components</a>
+<a href="{{ site.gdeurl }}extension-dev-guide/prepare/dev-summary.html">Roadmap for developing and packaging components</a>
