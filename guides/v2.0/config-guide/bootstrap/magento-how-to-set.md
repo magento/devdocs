@@ -169,4 +169,4 @@ After setting the mode, restart the web server:
 
 *	<a href="{{ site.gdeurl }}config-guide/bootstrap/mage-dirs.html">Customize base directory paths (MAGE_DIRS)</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>
-*	<a href="{{ site.gdeurl }}config-guide/bootstrap/mage-profiler.html">Enable an dependency graphs and HTML profiler (MAGE_PROFILER)</a>
+*	<a href="{{ site.gdeurl }}config-guide/bootstrap/mage-profiler.html">Enable an dependency graphs and built-in profiler (MAGE_PROFILER)</a>
