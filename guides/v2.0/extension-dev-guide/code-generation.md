@@ -4,7 +4,7 @@ group: extension-dev-guide
 subgroup: 99_Module Development
 title: Code generation
 menu_title: Code generation
-menu_order: 6
+menu_order: 8
 github_link: extension-dev-guide/code-generation.md
 
 ---
@@ -26,15 +26,11 @@ Provided the Magento application is not set for <a href="{{ site.gdeurl }}config
 
 In particular,
 
-*	A <a href="{{ site.gdeurl }}extension-dev-guide/depend-inj.html#dep-inj-mod-type-fact">Factory</a> class creates instances of a type. For example, a generated <code>\Magento\Customer\Model\AddressFactory</code> creates new instances of <code>\Magento\Customer\Model\Address</code>. The code in <code>AddressFactory</code> provides "typeSafety" (@return annotation) so IDEs understand the type of returned object for the <code>Address</code> type.
+*	A Factory class creates instances of a type. See <a href="{{ site.gdeurl }}extension-dev-guide/factories.html">Instantiating objects with factories</a> for more information. Factories are directly referenced within application code.
 
+*	You can designate a Proxy to be generated for a type in order to ensure the type is not instantiated until it is needed. See <a href="{{ site.gdeurl }}extension-dev-guide/proxies.html">Proxies</a> for more information. Proxies are directly referenced within application code.
 
-*	You can designate a <a href="{{ site.gdeurl }}extension-dev-guide/depend-inj.html#dep-inj-preview-cons">Proxy</a> to be generated for a type.
-A proxy is a wrapper for a base class, and the proxy must implement all functions of the base class to delegate those functions to the class. 
-
-	A proxy results in better performance because a proxy can be instantiated without instantiating its base class. The base class is instantiated only if one of its methods  gets called. Therefore, if a class is used as a dependency, but takes a long time to instantiate and the class methods are used only during some paths of execution, using the proxy instead saves time.
-
-	As a practical example, you can see the <a href="{{ site.mage2000url }}app/code/Magento/Store/Model/StoreManager.php" target="_blank">StoreManager</a> class and then see the generated StoreManager Proxy class.
+*   Interceptor classes are automatically generated to facilitate Magento's plugin system. An interceptor class extends a type and is returned by the Object Manager to allow multiple plugin classes to inject logic into different methods. Interceptors work behind the scenes and are _not_ directly referenced in application code.
 
 You can also use the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler.html">code compiler</a> to generate code at any time.  In Magento 2, "compiling" your application means performing code generation for any eligible class encountered by the configuration/code scanner, as well as performing a number of different dependency injection optimizations.
 
