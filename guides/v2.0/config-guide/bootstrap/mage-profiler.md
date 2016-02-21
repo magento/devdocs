@@ -24,7 +24,7 @@ Magento profiling enables you to:
 
 *	Displays dependency graphs on a Magento page. A *dependency graph* is a list of object dependencies and all of their all their dependencies, and all the dependencies for those dependencies, and so on.
 
-	You should be particularly interested in the list of *unused dependencies*, which are objects that were created because they were requested in some constructor, but were never used (that is, none of their methods were called). As a result, processor time and memory spent to create these dependencies is wasted. 
+	You should be particularly interested in the list of *unused dependencies*, which are objects that were created because they were requested in some constructor, but were never used (that is, none of their methods were called). As a result, processor time and memory spent to create these dependencies are wasted. 
 
 Magento provides the base functionality in <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Profiler.php" target="_blank">Magento\Framework\Profiler</a>.
 
