@@ -5,6 +5,8 @@ subgroup: 99_Module Development
 title: Instantiating objects with factories
 menu_title: Instantiating objects with factories
 menu_order: 6
+contributor_name: Classy Llama
+contributor_link: http://www.classyllama.com/
 github_link: extension-dev-guide/factories.md
 ---
 ##{{page.menu_title}}
