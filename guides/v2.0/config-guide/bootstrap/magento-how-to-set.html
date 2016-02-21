@@ -332,7 +332,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/bootstrap/mage-profiler.html">Enable an HTML profiler (MAGE_PROFILER)</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/bootstrap/mage-profiler.html">Enable profiling (MAGE_PROFILER)</a></li>
 
 									
 
@@ -1022,7 +1022,7 @@
 	</tr>	
 	<tr>
 		<td><a href="/guides/v2.0/config-guide/bootstrap/mage-profiler.html">MAGE_PROFILER</a></td>
-		<td>Enables an HTML profiler</td>
+		<td>Enables dependency graphs and HTML profiling</td>
 	</tr>
 
 	
@@ -1032,7 +1032,7 @@
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <ul><li>Not all bootstrap parameters are documented at this time.</li>
-  	<li>You now set the Magento mode (developer, default, production) using the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">magento application</a> command.</li></ul></span>
+  	<li>You now set the Magento mode (developer, default, production) using the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html"><code>magento deploy:mode:set {mode}</code></a> command.</li></ul></span>
 </div>
 
 <h2 id="mode-specify-var">Specifying a parameter value using an environment variable</h2>
@@ -1155,8 +1155,10 @@ csv
   <li>
     <p>Restart the web server:</p>
 
-    <pre><code>service apache2 restart
-</code></pre>
+    <ul>
+      <li>Ubuntu: <code>service apache2 restart</code></li>
+      <li>CentOS: <code>service httpd restart</code></li>
+    </ul>
   </li>
 </ol>
 
@@ -1197,7 +1199,7 @@ csv
 <ul>
   <li><a href="/guides/v2.0/config-guide/bootstrap/mage-dirs.html">Customize base directory paths (MAGE_DIRS)</a></li>
   <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
-  <li><a href="/guides/v2.0/config-guide/bootstrap/mage-profiler.html">Enable an HTML profiler (MAGE_PROFILER)</a></li>
+  <li><a href="/guides/v2.0/config-guide/bootstrap/mage-profiler.html">Enable an dependency graphs and built-in profiler (MAGE_PROFILER)</a></li>
 </ul>
 
 

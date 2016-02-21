@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Enable an HTML profiler (MAGE_PROFILER)</title>
+	<title>Enable profiling (MAGE_PROFILER)</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -132,7 +132,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Enable an HTML profiler (MAGE_PROFILER)</h1>
+		<h1 class="page-heading">Enable profiling (MAGE_PROFILER)</h1>
 			
 			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/config-guide/bootstrap/mage-profiler.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -332,7 +332,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/config-guide/bootstrap/mage-profiler.html">Enable an HTML profiler (MAGE_PROFILER)</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/config-guide/bootstrap/mage-profiler.html">Enable profiling (MAGE_PROFILER)</a></li>
 
 									
 
@@ -998,12 +998,25 @@
 
 		<h4 id="contents">Contents</h4>
 <ul>
-  <li><a href="#dirs-introduction">Introduction to Magento HTML profiling</a></li>
+  <li><a href="#dirs-introduction">Introduction to Magento profiling</a></li>
   <li><a href="#dirs-set">Set MAGE_PROFILER</a></li>
 </ul>
 
-<h2 id="dirs-introduction">Introduction to Magento HTML profiling</h2>
-<p>You can use an HTML profiler with Magento to perform tasks such as analyzing performance. (The nature of profiling depends on the analytical tools you use.)</p>
+<h2 id="dirs-introduction">Introduction to Magento profiling</h2>
+<p>Magento profiling enables you to:</p>
+
+<ul>
+  <li>
+    <p>Enable a built-in profiler</p>
+
+    <p>You can use a built-in built-in profiler with Magento to perform tasks such as analyzing performance. (The nature of profiling depends on the analytical tools you use. We support multiple formats, including HTML.)</p>
+  </li>
+  <li>
+    <p>Displays dependency graphs on a Magento page. A <em>dependency graph</em> is a list of object dependencies and all of their all their dependencies, and all the dependencies for those dependencies, and so on.</p>
+
+    <p>You should be particularly interested in the list of <em>unused dependencies</em>, which are objects that were created because they were requested in some constructor, but were never used (that is, none of their methods were called). As a result, processor time and memory spent to create these dependencies is wasted. </p>
+  </li>
+</ul>
 
 <p>Magento provides the base functionality in <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Profiler.php" target="_blank">Magento\Framework\Profiler</a>.</p>
 
@@ -1011,9 +1024,24 @@
 <p><code>MAGE_PROFILER</code> supports the following values:</p>
 
 <ul>
-  <li><code>firebug</code> which uses <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Profiler/Driver/Standard/Output/Firebug.php" target="_blank">Magento\Framework\Profiler\Driver\Standard\Output\Firebug</a></li>
-  <li><code>csv</code> which uses <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Profiler/Driver/Standard/Output/Csvfile.php" target="_blank">Magento\Framework\Profiler\Driver\Standard\Output\Csvfile</a></li>
-  <li>Any other value, including an empty value, which uses <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Profiler/Driver/Standard/Output/Html.php" target="_blank">Magento\Framework\Profiler\Driver\Standard\Output\Html</a></li>
+  <li>
+    <p><code>1</code> to enable a specific profiler’s output.</p>
+
+    <p>You can also use one of the following values to enable a specific profiler:</p>
+
+    <ul>
+      <li><code>firebug</code> which uses <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Profiler/Driver/Standard/Output/Firebug.php" target="_blank">Magento\Framework\Profiler\Driver\Standard\Output\Firebug</a></li>
+      <li><code>csv</code> which uses <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Profiler/Driver/Standard/Output/Csvfile.php" target="_blank">Magento\Framework\Profiler\Driver\Standard\Output\Csvfile</a></li>
+      <li>Any other value (except <code>2</code>), including an empty value, which uses <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Profiler/Driver/Standard/Output/Html.php" target="_blank">Magento\Framework\Profiler\Driver\Standard\Output\Html</a></li>
+    </ul>
+  </li>
+  <li>
+    <p><code>2</code> to enable dependency graphs.</p>
+
+    <p>Dependency graphs typically display at the bottom of a page. The following figure shows portion of the output:</p>
+
+    <p><img src="/common/images/config_depend-graphs.png" width="650px" /></p>
+  </li>
 </ul>
 
 <p>You can set the value of <code>MAGE_PROFILER</code> in any of the ways discussed in <a href="/guides/v2.0/config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a>.</p>
