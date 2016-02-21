@@ -74,6 +74,7 @@ Following is a sample configuration to add to `<your Magento install dir>app/etc
 					'port' => '6379',
 					'password' => '', 
 					'force_standalone' => 0, 
+           			'compression_lib' => 'gzip',
 		],
 
 where
@@ -104,6 +105,10 @@ where
 <tr>
 	<td>force_standalone</td>
 	<td>Use <code>0</code> for phpredis or <code>1</code> for standalone PHP.</td>
+</tr>
+<tr>
+	<td>compression_lib</td>
+	<td>We support the following: <code>snappy</code>, <code>l4z</code>, <code>lzf</code>, <code>gzip</code>.</td>
 </tr>
 </tbody>
 </table>
