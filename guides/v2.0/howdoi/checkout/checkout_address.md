@@ -2,9 +2,9 @@
 layout: default
 group: howdoi
 subgroup: checkout
-title: Add custom shipping address renderers
-menu_title: Add custom shipping address renderers
-menu_order: 8
+title: Add custom shipping address renderer
+menu_title: Add custom shipping address renderer
+menu_order: 9
 github_link: howdoi/checkout/checkout_address.md
 ---
 ## What's in this topic
@@ -51,7 +51,6 @@ Usually, your component will extend the default payment method component (defaul
 The general view of the shipping address renderer is the following:
 
 <p class="q">what template do we need to specify?</p>
-<p class="q"><p class="q">what template do we need to specify?</p>?</p>
 
 {%highlight js%}
 define([
@@ -297,7 +296,9 @@ In your custom module directory, create a new `<your_module_dir>/view/frontend/l
 ### Add the shipping address renderer to the "Ship-To" block (optional) {#ship_to}
 
 If you need the ...
+
 <p class="q">why do you need to </p>
+
 In your `<your_module_dir>/view/frontend/layout/checkout_index_index.xml` file add the following:
 
 <p class="q">indents of the first two nodes?</p>
