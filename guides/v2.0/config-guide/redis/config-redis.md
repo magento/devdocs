@@ -66,16 +66,30 @@ Installing and configuring the Redis software is beyond the scope of this guide.
 Following is a sample configuration to add to `<your Magento install dir>app/etc/env.php`:
 
 	'cache' => [
-		'frontend' => [
-			'page_cache' => [
-				'backend' => 'Cm_Cache_Backend_Redis',
-				'backend_options' => [
+		'frontend' => 
+			array (
+      			'default' => 
+      		array (
+        		'backend' => 'Cm_Cache_Backend_Redis',
+        		'backend_options' => 
+        		array (
+          			'server' => '127.0.0.1',
+          			'port' => '6379',
+					'password' => '', 
+          			'force_standalone' => '0',
+          		),
+      		),
+				'page_cache' => 
+			array (
+        		'backend' => 'Cm_Cache_Backend_Redis',
+				'backend_options' => 
+				array (
 					'server' => '127.0.0.1', 
 					'port' => '6379',
 					'password' => '', 
 					'force_standalone' => 0, 
-           			'compression_lib' => 'gzip',
-		],
+		),
+
 
 where
 
@@ -105,10 +119,6 @@ where
 <tr>
 	<td>force_standalone</td>
 	<td>Use <code>0</code> for phpredis or <code>1</code> for standalone PHP.</td>
-</tr>
-<tr>
-	<td>compression_lib</td>
-	<td>We support the following: <code>snappy</code>, <code>l4z</code>, <code>lzf</code>, <code>gzip</code>.</td>
 </tr>
 </tbody>
 </table>
