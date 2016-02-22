@@ -1128,7 +1128,7 @@ Reference to the repository is placed in the fixture XML file in attribute named
 
 <p><a href="/common/images/mtf_repo_merge_ex.png"><img src="/common/images/mtf_repo_merge_ex.png" /></a></p>
 
-<p>As you can see, the <code>ConfigData.xml</code> of the <code>Authorizenet</code> module and the <code>ConfigData.xml</code> of <a href="https://github.com/magento/magento2/tree/master/app/code/Magento/Backend">the <code>Magento_Backend</code> module</a> have the same reference to the repository class; that is <code>Magento\Config\Test\Repository\ConfigData</code>.</p>
+<p>As you can see, the <code>ConfigData.xml</code> of the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Authorizenet"><code>Magento_Authorizenet</code> module</a> and the <code>ConfigData.xml</code> of the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Backend"><code>Magento_Backend</code> module</a> have the same reference to the repository class; that is <code>Magento\Config\Test\Repository\ConfigData</code>.</p>
 
 <p><code>ConfigData.php</code> will be generated in <code>&lt;magento2&gt;/dev/tests/functional/generated/Magento/Config/Test/Repository</code>. This PHP repository will contain repository data sets from all Magento modules that have a <code>ConfigData.xml</code> repository.</p>
 
@@ -1201,7 +1201,7 @@ Reference to the repository is placed in the fixture XML file in attribute named
 
 <p>Credentials are stored in an <code>*.xml</code> file that is specified in <code>phpunit.xml</code>.</p>
 
-<p>You can find a template for credentials in <a href="https://github.com/magento/magento2/blob/master/dev/tests/functional/credentials.xml.dist"><code>&lt;magento2&gt;/dev/tests/functional/credentials.xml.dist</code></a>.</p>
+<p>You can find a template for credentials in <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/credentials.xml.dist"><code>&lt;magento2&gt;/dev/tests/functional/credentials.xml.dist</code></a>.</p>
 
 <p>Credentials always should stay invisible for security reasons. The MTF implicitly pastes credentials during the test run only.
 There are two ways to paste credentials:</p>
