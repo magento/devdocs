@@ -14,9 +14,10 @@ github_link: migration/migration-manually.md
 
 There are three types of data that need to be manually migrated:
 
-* Media
-* Storefront design
-* ACLs
+*	Media
+*	Storefront design
+*	Admin users
+*	ACLs
 
 ### Media
 This section discusses how to manually migrate media files.
