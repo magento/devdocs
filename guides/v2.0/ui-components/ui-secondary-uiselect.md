@@ -121,60 +121,101 @@ Navigation keys:
     <th>Default Value</th>
 </tr>
 <tr>
-    <td><br>options.< option name >.label</br>
-        <br>options.< option name >.value</br>
-        <br>options.< option name >.optgroup</br></td>
-    <td>Options label, value, nested level of options</td>
-    <td>No</td>
-    <td><br>String</br>
-        <br>String</br>
-        <br>Object</br>
-    </td>
+    <td>options.< option name >.label</td>
+    <td>Options label</td>
+    <td>-</td>
+    <td>String</td>
+    <td>undefined</td>
+</tr>
+<tr>
+    <td>options.< option name >.value</td>
+    <td>Options value</td>
+    <td>-</td>
+    <td>String</td>
+    <td>undefined</td>
+</tr>
+<tr>
+    <td>options.< option name >.optgroup</td>
+    <td>Nested level of options</td>
+    <td>-</td>
+    <td>Object</td>
     <td>undefined</td>
 </tr>
 <tr>
     <td>mode</td>
-    <td><br>Mode overrides default values for some options.</br>
-        <br>In 'simple' mode showCheckbox = chipsEnabled = closeBtn = false</br>
-        <br>In 'optgroup' mode showCheckbox = openLevelsAction = false, and lastSelectable = optgroupLabels = labelsDecoration = true</br></td>
-    <td>No</td>
+    <td>Mode overrides default values for some options. In 'simple' mode showCheckbox = chipsEnabled = closeBtn = false. In 'optgroup' mode showCheckbox = openLevelsAction = false, and lastSelectable = optgroupLabels = labelsDecoration = true.</td>
+    <td>-</td>
     <td>Boolean</td>
     <td>false</td>
 </tr>
 <tr>
-    <td>isMultipleFiles</td>
-    <td>Flag which indicates whether multiple files can be uploaded or not</td>
-    <td>No</td>
+    <td>showCheckbox</td>
+    <td>Show checkbox just before option label, select options by checking</td>
+    <td>-</td>
     <td>Boolean</td>
-    <td>false</td>
+    <td>true</td>
 </tr>
 <tr>
-    <td>allowedExtensions</td>
-    <td>List of allowed file extensions</td>
-    <td>No</td>
-    <td>String/Array</td>
-    <td>*</td>
+    <td>chipsEnabled</td>
+    <td>Selected options are shown in ui select's header as deletable chips</td>
+    <td>-</td>
+    <td>Boolean</td>
+    <td>true</td>
 </tr>
 <tr>
-    <td>dropZone</td>
-    <td>CSS selector of a drop zone element relative to a file input element</td>
-    <td>No</td>
-    <td>String</td>
-    <td>[data-role=drop-zone]</td>
+    <td>closeBtn</td>
+    <td>Show button that closes dropdown</td>
+    <td>-</td>
+    <td>Boolean</td>
+    <td>true</td>
 </tr>
 <tr>
-    <td>uploaderConfig</td>
-    <td>Configuration which will be passed to jquery-file-upload plugin</td>
-    <td>Yes</td>
-    <td>Object</td>
+    <td>closeBtnLabel</td>
+    <td>Label of the close button</td>
+    <td>-</td>
+    <td>string</td>
+    <td>$t('Done')</td>
+</tr>
+<tr>
+    <td>levelsVisibility</td>
+    <td>If true, all levels are visible. If is a number, this number of levels are visible.</td>
+    <td>-</td>
+    <td>Boolean/number</td>
+    <td>true</td>
+</tr>
+<tr>
+    <td>openLevelsAction</td>
     <td></td>
+    <td>-</td>
+    <td>Boolean</td>
+    <td>true</td>
 </tr>
 <tr>
-    <td>uploaderConfig.url</td>
-    <td>Route to server controller which will handle file uploading process</td>
-    <td>Yes</td>
+    <td>showOpenLevelsActionIcon</td>
+    <td></td>
+    <td>-</td>
+    <td>Boolean</td>
+    <td>true</td>
+</tr>
+<tr>
+    <td>showTree</td>
+    <td></td>
+    <td>-</td>
+    <td>Boolean</td>
+    <td>false</td>
+</tr>
+<tr>
+    <td>separator</td>
+    <td></td>
+    <td>-</td>
     <td>String</td>
-    <td>null</td>
+    <td>optgroup</td>
 </tr>
 </tbody>
 </table>
+
+####Integration
+
+Here is an example of configuration of select component. It is used as column filter and has 3 levels of options, with not selectable label for every level, without checkboxes:
+
+<img src="{{site.baseurl}}common/images/ui-select.jpg" alt="view the configuration">
