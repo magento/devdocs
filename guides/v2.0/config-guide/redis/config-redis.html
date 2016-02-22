@@ -1080,6 +1080,7 @@ Further, memcached itself has limitations such as a maximum object size and fixe
 				'port' =&gt; '6379',
 				'password' =&gt; '', 
 				'force_standalone' =&gt; 0, 
+       			'compression_lib' =&gt; 'gzip',
 	],
 </code></pre>
 
@@ -1111,6 +1112,10 @@ Further, memcached itself has limitations such as a maximum object size and fixe
 <tr>
 	<td>force_standalone</td>
 	<td>Use <code>0</code> for phpredis or <code>1</code> for standalone PHP.</td>
+</tr>
+<tr>
+	<td>compression_lib</td>
+	<td>We support the following: <code>snappy</code>, <code>l4z</code>, <code>lzf</code>, <code>gzip</code>.</td>
 </tr>
 </tbody>
 </table>
