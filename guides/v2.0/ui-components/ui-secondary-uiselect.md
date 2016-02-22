@@ -75,8 +75,6 @@ Navigation keys:
 
     Abstract
     
-    uiLayout
-    
 * imports option
     
     The option defines from where the component receives its data.
@@ -110,3 +108,73 @@ Navigation keys:
                     label: $t('Deselect all on this page')
                 }],
     {% endhighlight %}
+    
+<h2 id="structure">Component options</h2>
+
+<table>
+<tbody>
+<tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Required For Correct Work</th>
+    <th>Type</th>
+    <th>Default Value</th>
+</tr>
+<tr>
+    <td><br>options.< option name >.label</br>
+        <br>options.< option name >.value</br>
+        <br>options.< option name >.optgroup</br></td>
+    <td>Options label, value, nested level of options</td>
+    <td>No</td>
+    <td><br>String</br>
+        <br>String</br>
+        <br>Object</br>
+    </td>
+    <td>undefined</td>
+</tr>
+<tr>
+    <td>mode</td>
+    <td><br>Mode overrides default values for some options.</br>
+        <br>In 'simple' mode showCheckbox = chipsEnabled = closeBtn = false</br>
+        <br>In 'optgroup' mode showCheckbox = openLevelsAction = false, and lastSelectable = optgroupLabels = labelsDecoration = true</br></td>
+    <td>No</td>
+    <td>Boolean</td>
+    <td>false</td>
+</tr>
+<tr>
+    <td>isMultipleFiles</td>
+    <td>Flag which indicates whether multiple files can be uploaded or not</td>
+    <td>No</td>
+    <td>Boolean</td>
+    <td>false</td>
+</tr>
+<tr>
+    <td>allowedExtensions</td>
+    <td>List of allowed file extensions</td>
+    <td>No</td>
+    <td>String/Array</td>
+    <td>*</td>
+</tr>
+<tr>
+    <td>dropZone</td>
+    <td>CSS selector of a drop zone element relative to a file input element</td>
+    <td>No</td>
+    <td>String</td>
+    <td>[data-role=drop-zone]</td>
+</tr>
+<tr>
+    <td>uploaderConfig</td>
+    <td>Configuration which will be passed to jquery-file-upload plugin</td>
+    <td>Yes</td>
+    <td>Object</td>
+    <td></td>
+</tr>
+<tr>
+    <td>uploaderConfig.url</td>
+    <td>Route to server controller which will handle file uploading process</td>
+    <td>Yes</td>
+    <td>String</td>
+    <td>null</td>
+</tr>
+</tbody>
+</table>
