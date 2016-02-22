@@ -1072,16 +1072,29 @@ Further, memcached itself has limitations such as a maximum object size and fixe
 <p>Following is a sample configuration to add to <code>&lt;your Magento install dir&gt;app/etc/env.php</code>:</p>
 
 <pre><code>'cache' =&gt; [
-	'frontend' =&gt; [
-		'page_cache' =&gt; [
-			'backend' =&gt; 'Cm_Cache_Backend_Redis',
-			'backend_options' =&gt; [
+	'frontend' =&gt; 
+		array (
+  			'default' =&gt; 
+  		array (
+    		'backend' =&gt; 'Cm_Cache_Backend_Redis',
+    		'backend_options' =&gt; 
+    		array (
+      			'server' =&gt; '127.0.0.1',
+      			'port' =&gt; '6379',
+				'password' =&gt; '', 
+      			'force_standalone' =&gt; '0',
+      		),
+  		),
+			'page_cache' =&gt; 
+		array (
+    		'backend' =&gt; 'Cm_Cache_Backend_Redis',
+			'backend_options' =&gt; 
+			array (
 				'server' =&gt; '127.0.0.1', 
 				'port' =&gt; '6379',
 				'password' =&gt; '', 
 				'force_standalone' =&gt; 0, 
-       			'compression_lib' =&gt; 'gzip',
-	],
+	),
 </code></pre>
 
 <p>where</p>
@@ -1112,10 +1125,6 @@ Further, memcached itself has limitations such as a maximum object size and fixe
 <tr>
 	<td>force_standalone</td>
 	<td>Use <code>0</code> for phpredis or <code>1</code> for standalone PHP.</td>
-</tr>
-<tr>
-	<td>compression_lib</td>
-	<td>We support the following: <code>snappy</code>, <code>l4z</code>, <code>lzf</code>, <code>gzip</code>.</td>
 </tr>
 </tbody>
 </table>
