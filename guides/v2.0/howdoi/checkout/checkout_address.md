@@ -42,11 +42,6 @@ For the sake of compatibility, upgradability and easy maintenance, do not edit t
 
 In you custom module directory create the component's `.js` file (shipping address renderer). It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory. For example in the Magento modules, the payment methods renderers are stored in the ... directory.
 
-<p class="q">any conventions on this?</p>
-
-Usually, your component will extend the default payment method component (default payment method renderer) implemented in the `<Magento_Checkout_module_dir>/view/frontend/web/js/view/payment/default.js` file. The following table contains the list of the `default` component's methods.
-
-<p class="q">Is there smth similar for shipping address?</p>
 
 The general view of the shipping address renderer is the following:
 
@@ -94,11 +89,13 @@ define([
 
 A shipping rate processor is responsible for retrieving the shipping rates available for the given shipping address.
 
-In you custom module directory create the component's `.js` file for the processor. It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory. 
+In you custom module directory create the component's `.js` file for the processor. It must be located under the `<your_module_dir>/view/frontend/web/js/model/` directory. 
 
-<p class="q">any additional conventions?</p>
 
-<p class="q">What is %URL for shipping rate estimation%, %address parameters%</p>
+<p class="q">What is %URL for shipping rate estimation%, %address parameters%
+
+
+</p>
 
 Following is a sample of the shipping rate processor code:
 
@@ -152,7 +149,7 @@ define(
 
 ## Create the JS model for the shipping address saving processor {#save}
 
-This processor is responsible for saving the shipping address. 
+This processor is responsible for sending the address to be used for shipping + selected rate to the server. 
 
 In you custom module directory create the component's `.js` file for the processor. It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory. 
 
@@ -301,8 +298,8 @@ If you need the ...
 
 In your `<your_module_dir>/view/frontend/layout/checkout_index_index.xml` file add the following:
 
-<p class="q">indents of the first two nodes?</p>
-<p class="q">where exactly in layout shoul it go?</p>
+<p class="q">indents of the first two nodes?</p> need to correct indents
+<p class="q">where exactly in layout shoul it go?</p> search "ship-to"
 
 {%highlight xml%}
 ....
