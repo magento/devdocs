@@ -20,18 +20,30 @@ Before you continue, install Redis as discussed in <a href="{{ site.gdeurl21 }}c
 Following is a sample configuration to add to `<your Magento install dir>app/etc/env.php`:
 
 	'cache' => [
-		'frontend' => [
-			'page_cache' => [
-				'backend' => 'Cm_Cache_Backend_Redis',
-				'backend_options' => [
+		'frontend' => 
+			array (
+      			'default' => 
+      		array (
+        		'backend' => 'Cm_Cache_Backend_Redis',
+        		'backend_options' => 
+        		array (
+          			'server' => '127.0.0.1',
+          			'port' => '6379',
+					'password' => '', 
+          			'force_standalone' => '0',
+          		),
+      		),
+				'page_cache' => 
+			array (
+        		'backend' => 'Cm_Cache_Backend_Redis',
+				'backend_options' => 
+				array (
 					'server' => '127.0.0.1', 
 					'port' => '6379',
-					'persistent' => '', 
-					'database' => 0, 
 					'password' => '', 
 					'force_standalone' => 0, 
-					'connect_retries' => 1, 
-		],
+		),
+
 
 where
 
@@ -55,25 +67,12 @@ where
 	<td>Redis server listen port</td>
 </tr>
 <tr>
-	<td>persistent</td>
-	<td><p>Specify a unique string to enable persistent connections. For example, <code>sess-db0</code>.</p>
-		<p>Note that there are <a href="https://github.com/nicolasff/phpredis/issues/70" target="_blank">known issues phpredis and php-fpm</a>.</p></td>
-</tr>
-<tr>
-	<td>database</td>
-	<td>Unique Redis database number, which is recommended to protect against data loss.</td>
-</tr>
-<tr>
 	<td>password</td>
 	<td>Specifies a password if your Redis server requires authentication.</td>
 </tr>
 <tr>
 	<td>force_standalone</td>
 	<td>Use <code>0</code> for phpredis or <code>1</code> for standalone PHP.</td>
-</tr>
-<tr>
-	<td>connect_retries</td>
-	<td>Reduces errors due to random connection failures. Specify <code>1</code> to not retry after the first failure.</td>
 </tr>
 </tbody>
 </table>
