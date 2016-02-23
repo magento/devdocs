@@ -863,7 +863,12 @@
 
 <p>You can also specify whether or not the object is shareable in its <code>di.xml</code> as follows:</p>
 
-<script src="https://gist.github.com/xcomSteveJohnson/f66e46702da03ec264eb.js"></script>
+<pre><code>&lt;type name="Company\Module\ClassOne" shared="false"&gt;
+	&lt;arguments&gt;
+		&lt;argument name="class_one" xsi:type="object" shared="false"&gt;Company\Module\ClassTwo&lt;/argument&gt;
+	&lt;/arguments&gt;
+&lt;/type&gt;
+</code></pre>
 
 <p>Dependency injection is configuration-based; configurations are validated by <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/ObjectManager/etc/config.xsd" target="_blank">config.xsd</a>.</p>
 
