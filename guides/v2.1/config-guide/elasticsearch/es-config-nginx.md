@@ -23,7 +23,42 @@ github_link: config-guide/elasticsearch/es-config-nginx.md
 {% include config/es-webserver-overview.md %}
 
 ## Set up a proxy {#es-nginx-prox}
-TBD
+This section discusses how to configure nginx as a proxy so that Magento can use Elasticsearch running on this server. This section does not discuss setting up HTTP Basic authentication; that is discussed in TBD.
+
+See one of the following sections for more information:
+
+*	[Step 1: Specify additional configuration files in your global `nginx.conf`](#es-ws-secure-nginx-conf)
+*	[Step 2: Set up nginx as a proxy](#es-ws-secure-nginx-proxy)
+*	TBD
+
+### Step 1: Specify additional configuration files in your global `nginx.conf` {#es-ws-secure-nginx-conf}
+Make sure your global `nginx.conf` contains the following line so it loads the other configuration files discussed in the following sections:
+
+	include /etc/nginx/conf.d/*.conf;
+
+By default, the global configuration is located as follows:
+
+*	CentOS: `/etc/nginx/nginx.conf`
+*	Ubuntu: TBD
+
+### Step 2: Set up nginx as a proxy {#es-ws-secure-nginx-proxy}
+This section discusses how to specify who can access the nginx server.
+
+1.	Use a text editor to create a new file `/etc/nginx/conf.d/magento_es_auth.conf` with the following contents:
+
+		http {
+				server {
+				listen 8080;
+				location / {
+					proxy_pass http://localhost:9200;
+				}
+			}
+		}
+2.	Restart nginx:
+
+		service nginx restart
+
+3.	Continue with the next section.
 
 {% include config/es-elasticsearch-magento.md %}
 
@@ -43,16 +78,6 @@ See the following sections for more information:
 *	[Step 2: Set up access to nginx](#es-ws-secure-nginx-access)
 *	[Step 3: Set up a restricted context for Elasticsearch](#es-ws-secure-nginx-context)
 *	[Verify communication is secure](#es-ws-secure-verify)
-
-### Step 1: Specify additional configuration files in your global `nginx.conf` {#es-ws-secure-nginx-conf}
-Make sure your global `nginx.conf` contains the following line so it loads the other configuration files discussed in the following sections:
-
-	include /etc/nginx/conf.d/*.conf;
-
-By default, the global configuration is located as follows:
-
-*	CentOS: `/etc/nginx/nginx.conf`
-*	Ubuntu: TBD
 
 ### Step 2: Create passwords {#es-ws-secure-nginx-pwd}
 We recommend you use the Apache `htpasswd` command to encode passwords for the following users:
