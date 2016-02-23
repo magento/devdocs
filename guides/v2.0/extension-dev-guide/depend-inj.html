@@ -856,9 +856,10 @@
 
 <p>To define the interface preferences for the object manager, use <code>app/etc/di/*.xml</code>, <code>&lt;your module dir&gt;/etc/di.xml</code>, and <code>&lt;your module dir&gt;/etc/&lt;areaname&gt;/di.xml</code> files depending on the scope it belongs in.</p>
 
-<p>For example, to set the interface preferences for the Magento Admin, use <code>app/code/core/Magento/Backend/etc/adminhtml/di.xml</code> as follows:</p>
+<p>For example, to set the interface preferences for the Magento Admin, use <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Backend/etc/adminhtml/di.xml#L12" target="_blank"><code>Backend/etc/adminhtml/di.xml</code></a> as follows:</p>
 
-<script src="https://gist.github.com/xcomSteveJohnson/a166ab469a52eeec9954.js"></script>
+<pre><code> &lt;preference for="Magento\Framework\UrlInterface" type="Magento\Backend\Model\UrlInterface" /&gt;
+</code></pre>
 
 <p>You can also specify whether or not the object is shareable in its <code>di.xml</code> as follows:</p>
 
