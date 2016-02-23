@@ -23,12 +23,33 @@ github_link: config-guide/elasticsearch/es-config-apache.md
 {% include config/es-webserver-overview.md %}
 
 ## Set up a proxy {#es-apache-proxy}
-TBD
+This section discusses how to configure Apache as a proxy so that Magento can use Elasticsearch running on this server. This section does not discuss setting up HTTP Basic authentication; that is discussed in [Secure communication with nginx](#es-ws-secure-apache).
+
+This section discusses how to configure an Elasticsearch proxy using a virtual host. 
+
+1.	As a user with `root` privileges, open your virtual host configuration file in a text editor.
+
+	*	Apache 2.4: `vim /etc/apache2/sites-available/default-000.conf`
+	*	Apache 2.2: `vim /etc/httpd/conf/httpd.conf`
+
+2.	Locate the `Listen` directive and add another listen port; for example:
+
+		Listen 8080
+
+2.	Scroll to the bottom of the file and add the following lines:
+
+		<VirtualHost *:8080>
+    		ProxyPass http://localhost:9200/
+     		ProxyPassReverse http://localhost:9200/
+		</VirtualHost>
+
+3.	Restart Apache:
+
+	*	CentOS: `service httpd restart`
+	*	Ubuntu: `service apache2 restart`
 
 ## Configure Magento to use Elasticsearch {#elastic-m2-configure}
 {% include config/es-elasticsearch-magento.md %}
-
-
 
 ## Secure communication with Apache {#es-ws-secure-apache}
 This section discusses how to secure communication between Apache and Elasticsearch using <a href="http://tools.ietf.org/html/rfc2617" target="_blank">HTTP Basic</a> authentication with Apache. For more options, consult one of the following resources:
