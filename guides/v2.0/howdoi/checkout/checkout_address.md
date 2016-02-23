@@ -14,20 +14,17 @@ Out of the box, Magento checkout consists of two steps:
 - Shipping Information
 - Review and Payment Information
 
-On the Shipping Information step Magento renders the shipping address form. Default address renderers cover the majority of use cases, but Magento provides way to register custom address renderer for a new address type.
-<p class="q">Is it really the form?</p>
-<p class="q">What is meant by most use cases?</p>
+When a logged in shopper proceeds to checkout,oOn the Shipping Information step Magento renders the saved addresses. The shopper can then click on the address they want to use as a shipping address. Default address renderers cover the majority of use cases, but Magento provides way to register custom address renderer for a new address type.
 
 This topic describes how to implement a custom shipping address renderer.
 
 To implement a payment method rendering in checkout, you need to take the following steps:
 
 1. [Create the JS renderer component (shipping address renderer)](#create).
+3. [Create a template for the shipping address renderer.](#template)
 2. [Create the JS model for the shipping rate processor](#rate_processor).
 3. [Create the JS model for the shipping address saving processor](#save).
 4. [Create the JS component registering the processors](#register).
-5. Create template?
-<p class="q">do we need a template?</p>
 4. [Declare the new components in the checkout page layout.](#layout).
 5. [Add the shipping address renderer to the "Ship-To" block (optional)](#ship_to).
 
@@ -40,12 +37,10 @@ Your shipping address renderer must be implemented as a UI component. That is, i
 
 For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should depend on the Magento_Checkout module. Module dependencies are specified in the [module's `composer.json`]({{site.gdeurl}}extension-dev-guide/build/composer-integration.html).
 
-In you custom module directory create the component's `.js` file (shipping address renderer). It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory. For example in the Magento modules, the payment methods renderers are stored in the ... directory.
+In you custom module directory create the component's `.js` file (shipping address renderer). It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory.
 
 
 The general view of the shipping address renderer is the following:
-
-<p class="q">what template do we need to specify?</p>
 
 {%highlight js%}
 define([
@@ -85,17 +80,24 @@ define([
 });
 {%endhighlight%}
 
+## Create a template for the shipping address renderer {#template}
+
+In your custom module directory create a new `<your_module_dir>/view/frontend/web/template/<your_template>.html` file. The template can use [Knockout JS](http://knockoutjs.com/) syntax. 
+
+The template should contain a button for setting the address to be used for shipping.
+
+You can use the code from the default template: [app/code/Magento/Checkout/view/frontend/web/template/shipping-address/address-renderer/default.html]({{site.gdeurl}}app/code/Magento/Checkout/view/frontend/web/template/shipping-address/address-renderer/default.html).
+
+
 ## Create the JS model for the shipping rate processor {#rate_processor}
 
 A shipping rate processor is responsible for retrieving the shipping rates available for the given shipping address.
 
 In you custom module directory create the component's `.js` file for the processor. It must be located under the `<your_module_dir>/view/frontend/web/js/model/` directory. 
 
+Here you need to specify the URL used for calculating the shipping rate for your custom address type.
 
-<p class="q">What is %URL for shipping rate estimation%, %address parameters%
-
-
-</p>
+<p class="q">isn't rate different for different shipping address?</p>
 
 Following is a sample of the shipping rate processor code:
 
@@ -153,7 +155,6 @@ This processor is responsible for sending the address to be used for shipping + 
 
 In you custom module directory create the component's `.js` file for the processor. It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory. 
 
-<p class="q">any additional conventions?</p>
 
 Following is a sample of the shipping rate processor code:
 
@@ -208,12 +209,8 @@ define(
 ## Create the JS component registering the processors {#register}
 
 In you custom module directory create the `.js` UI component that registers the rate and saving processors. It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory.
-<p class="q">true?</p>
-<p class="q">Are the processors added to some list of processors?</p>
 
 The file content must be similar to the following:
-
-<p class="q">what is address type</p>
 
 {%highlight js%}
 define(
@@ -290,36 +287,56 @@ In your custom module directory, create a new `<your_module_dir>/view/frontend/l
 </page>
 {%endhighlight%}
 
+The <code>address_type</code> you need to specify in the layout, is the value you set in the JS model of your custom address type.
+
 ### Add the shipping address renderer to the "Ship-To" block (optional) {#ship_to}
 
-If you need the ...
+On the Review and Payment Information step of checkout, the address selected by the shopper to be used for shipping is displayed in the **Ship-To** section for customer to make sure everything is set correctly.
 
-<p class="q">why do you need to </p>
+If you want your custom address type to be displayed here as well, you need to create a an `.html` template for rendering it, and declare in the corresponding location in layout.
+
+### Add template for displaying the address in the Ship-To section
+
+In your custom module directory create a new `<your_module_dir>/view/frontend/web/template/<your_template>.html` file. The template can use [Knockout JS](http://knockoutjs.com/) syntax. 
+
+You can use the code from the default template: [app/code/Magento/Checkout/view/frontend/web/template/shipping-information/address-renderer/default.html]({{site.gdeurl}}app/code/Magento/Checkout/view/frontend/web/template/shipping-information/address-renderer/default.html).
+
+### Declare the address to be used in the Ship-To section in layout 
 
 In your `<your_module_dir>/view/frontend/layout/checkout_index_index.xml` file add the following:
 
-<p class="q">indents of the first two nodes?</p> need to correct indents
-<p class="q">where exactly in layout shoul it go?</p> search "ship-to"
-
 {%highlight xml%}
-....
-<item name="sidebar" xsi:type="array">
-<item name="children" xsi:type="array">
-   <item name="shipping-information" xsi:type="array">
-      <item name="children" xsi:type="array">
-          <item name="ship-to" xsi:type="array">
-             <item name="rendererTemplates" xsi:type="array">
-                <item name="%address type%" xsi:type="array">
-                   <item name="component" xsi:type="string">uiComponent</item>
-                       <item name="config" xsi:type="array">
-                          <item name="template" xsi:type="string">%custom template%</item>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Magento\Checkout\Block\Onepage" name="checkout.root" template="onepage.phtml" cacheable="false">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <item name="sidebar" xsi:type="array">
+                                <item name="children" xsi:type="array">
+                                    <item name="shipping-information" xsi:type="array">
+                                        <item name="children" xsi:type="array">
+                                            <item name="ship-to" xsi:type="array">
+                                                <item name="rendererTemplates" xsi:type="array">
+                                                    <item name="%address type%" xsi:type="array">
+                                                        <item name="component" xsi:type="string">uiComponent</item>
+                                                            <item name="config" xsi:type="array">
+                                                                <item name="template" xsi:type="string">%custom template%</item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
                         </item>
-                   </item>
-                </item>
-            </item>
-        </item>
-    </item>
-</item>
-</item>
-...
+                    </argument>
+                </arguments>
+            </block>
+        </referenceContainer> 
+    </body>
+</page>
 {%endhighlight%}
