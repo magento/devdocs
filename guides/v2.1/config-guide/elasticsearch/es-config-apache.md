@@ -14,10 +14,21 @@ github_link: config-guide/elasticsearch/es-config-apache.md
 
 #### Contents
 
+*	[Overview of secure web server communication](#es-ws-secure-over)
+*	[Set up a proxy](#es-apache-proxy)
+*	[Configure Magento to use Elasticsearch](#elastic-m2-configure)
 *	[Secure communication with Apache](#es-ws-secure-apache)
-*	[Verify communication is secure](#es-ws-secure-verify)
+*	[Verify communication is secure](#es-ws-secure-verify-apache)
 
 {% include config/es-webserver-overview.md %}
+
+## Set up a proxy {#es-apache-proxy}
+TBD
+
+## Configure Magento to use Elasticsearch {#elastic-m2-configure}
+{% include config/es-elasticsearch-magento.md %}
+
+
 
 ## Secure communication with Apache {#es-ws-secure-apache}
 This section discusses how to secure communication between Apache and Elasticsearch using <a href="http://tools.ietf.org/html/rfc2617" target="_blank">HTTP Basic</a> authentication with Apache. For more options, consult one of the following resources:
