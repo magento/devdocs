@@ -39,7 +39,6 @@ You cannot use plug-ins for:
 * Final methods / classes
 * Non-public methods
 * Class methods (such as static methods)
-* Inherited methods
 * __construct
 * Virtual types
 
