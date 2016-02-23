@@ -71,21 +71,18 @@ To install Elasticsearch:
 			rpm --import https://packages.elastic.co/GPG-KEY-Elasticsearch
 			vim /etc/yum.repos.d/Elasticsearch.repo
 
-		Add a new section as follows:
+		Add the following:
 
 			[elasticsearch-2.x]
 			name=Elasticsearch repository for 2.x packages
 			baseurl=http://packages.elastic.co/elasticsearch/2.x/centos
 			gpgcheck=1
-			gpgkey=http://packages.elastic.co/GPG-KEY-elasticsearch 
+			gpgkey=http://packages.elastic.co/GPG-KEY-elasticsearch
 			enabled=1
 
-		Install Elasticsearch:
+		Enter the following commands:
 
 			yum -y install elasticsearch
-
-		Configure Elasticsearch to start automatically:
-
 			chkconfig --add elasticsearch
 
 	*	Ubuntu:
@@ -95,10 +92,15 @@ To install Elasticsearch:
 			sudo apt-get -y update && sudo apt-get -y install Elasticsearch
 
 	<a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.1/setup-repositories.html" target="_blank">More information about Elasticsearch repositories</a>.
-3.	Optionally configure the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.1/setup-service.html" target="_blank">Elasticsearch service</a>.
-3.	Start the Elasticsearch service:
+3.	Optionally configure the <a href="https://www.elastic.co/guide/en/Elasticsearch/reference/current/setup-service.html" target="_blank">Elasticsearch service</a>.
+4.	<a href="https://www.elastic.co/guide/en/Elasticsearch/reference/current/setup.html" target="_blank">Start Elasticsearch</a>.
+5.	Verify that Elasticsearch is working by entering the following command on the server on which it's running:
 
-		service elasticsearch start
+		curl -i http://127.0.0.1:9200/_cluster/health
+
+	Messages similar to the following display if Elasticsearch is running:
+
+		{"cluster_name":"elasticsearch","status":"green","timed_out":false,"number_of_nodes":1,"number_of_data_nodes":1,"active_primary_shards":0,"active_shards":0,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":0,"delayed_unassigned_shards":0,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":100.0}
 
 ## Additional resources {#es-resources}
 *	<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/_basic_concepts.html" target="_blank">Elasticsearch Basic Concepts</a>

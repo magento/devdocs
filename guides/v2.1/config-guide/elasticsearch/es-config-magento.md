@@ -11,6 +11,10 @@ github_link: config-guide/elasticsearch/es-config-magento.md
 
 <img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only">
 
+#### Contents
+
+*	[Configure Magento to use Elasticsearch](#elastic-m2-configure)
+*	[Reindexing catalog search and refreshing the full page cache](#es-reindex)
 
 ## Configure Magento to use Elasticsearch {#elastic-m2-configure}
 This section discusses the minimum settings you must choose to test Elasticsearch with Magento 2. For additional details, see TBD cross-ref to User Guide.
@@ -37,7 +41,7 @@ To configure Magento to use Elasticsearch:
 	</tr>
 	<tr>
 		<td>Elasticsearch Server Port</td>
-		<td>Enter Elasticsearch's listen port. </td>
+		<td>Enter Elasticsearch's listen port. (If Elasticsearch is running on different host than Magento, try port 80 if the Elasticsearch port does not work.)</td>
 	</tr>
 	<tr>
 		<td>Enable Elasticsearch HTTP Auth</td>
@@ -56,13 +60,15 @@ One of the following displays:
 	</tr>
 	<tr>
 		<td><img src="{{ site.baseurl }}common/images/elastic_test-success.png"></td>
-		<td>Magento successfully connected to the Elasticsearch server. Continue with TBD.</td>
+		<td>Magento successfully connected to the Elasticsearch server. Continue with <a href="{{ site.gdeurl }}config-guide/elasticsearch/es-config-web-server.html">Secure communications between your web server and Elasticsearch</a>.</td>
 	</tr>
 	<tr>
 		<td><img src="{{ site.baseurl }}common/images/elastic_test-fail.png"></td>
 		<td><p>Try the following:</p>
-			<ul><li>Make sure the Elasticsearch server is running.</li>
+			<ul>
+				<li>Make sure the Elasticsearch server is running.</li>
 				<li>If the Elasticsearch server is on a different host from Magento, log in to the Magento server and ping the Elasticsearch host. Resolve network connectivity issues and test the connection again.</li>
+				<li>If the Elasticsearch server is on a different host from Magento, enter <code>80</code> in the <strong>Elasticsearch Server Port</strong> field and test the connection again.</li>
 				<li>Examine the command window in which you started Elasticsearch for stack traces and exceptions. You must resolve those before you continue.<br />
 	In particular, make sure you started Elasticsearch as a user with <code>root</code> privileges.</li>
 <li>Make sure that <a href="{{ site.gdeurl21 }}config-guide/elasticsearch/elasticsearch-overview.html#prereq-secy">UNIX firewall and SELinux</a> are both disabled, or set up rules to enable Elasticsearch and Magento to communicate with each other.</li>
@@ -76,5 +82,36 @@ One of the following displays:
 </tbody>
 </table>
 
+## Reindexing catalog search and refreshing the full page cache {#es-reindex}
+After you change Magento's Elasticsearch configuration, you must reindex the catalog search index and refresh the full page using the Admin or command line.
+
+To refresh the cache using the Admin:
+
+1.  In the Admin, click <strong>System</strong> > <strong>Cache Management</strong>.
+2.  Select the check box next to <strong>Page Cache</strong>. 
+3.  From the <strong>Actions</strong> list in the upper right, click <strong>Refresh</strong>.<br />
+		The following figure shows an example.<br />
+		<img src="{{ site.baseurl }}common/images/solr_refresh-cache.png" width="600px">
+
+To clean the cache using the command line, use the <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean">`magento cache:clean`</a> command.
+
+To reindex using the command line:
+
+1.	Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl21 }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+2.	Enter any of the following commands:
+
+	Enter the following command to reindex the catalog search index only:
+
+		php <your Magento install dir>/bin magento indexer:reindex catalogsearch_fulltext
+
+	Enter the following command to reindex all indexers:
+
+		php <your Magento install dir>/bin magento indexer:reindex
+
+3.	Wait while the indexers are reindexed.
+
+<div class="bs-callout bs-callout-info" id="info">
+	<p>Unlike the cache, indexers are updated by a cron job. Make sure <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-cron.html">cron is enabled</a> before you start using Elasticsearch.</p>
+</div>
 #### Next
 <a href="{{ site.gdeurl21 }}config-guide/elasticsearch/es-config-web-server.html">Secure communications between your web server and Elasticsearch</a>
