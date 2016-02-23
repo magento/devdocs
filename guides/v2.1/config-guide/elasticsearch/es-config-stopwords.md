@@ -32,7 +32,7 @@ For more information about how Elasticsearch uses stopwords, see the following r
 *	<a href="https://www.elastic.co/guide/en/elasticsearch/guide/current/stopwords-performance.html" target="_blank">Stopwords and Performance</a>
 
 ## Configure stopwords {#config-stopwords}
-Elasticsearch stopwords are located in the `<your Magento install dir>/vendor/magento/module-elasticsearch/etc/stopwords` directory. Magento ships with one `.csv` file containing stopwords for our default locales and an additional file, `default.csv`, which has stopwords for any locale that is not represented by another `.csv` file.
+Elasticsearch stopwords are located in the `<your Magento install dir>/vendor/magento/module-elasticsearch/etc/stopwords` directory. Magento ships with one `.csv` file containing stopwords for our default locales and an additional file, `stopwords.csv`, which has stopwords for any locale that is not represented by another `.csv` file.
 
 The default lifetime for stopwords file cache is 15 minutes.
 

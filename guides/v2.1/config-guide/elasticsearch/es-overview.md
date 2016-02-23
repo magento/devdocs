@@ -17,8 +17,9 @@ github_link: config-guide/elasticsearch/es-overview.md
 *	<a href="#overview">Overview of Elasticsearch</a>
 *	<a href="#es-prereq">Prerequisites</a>
 *	<a href="#es-resources">Additional resources</a>
+*	[Configure nginx and Elasticsearch]({{ site.gdeurl21 }}config-guide/elasticsearch/es-config-nginx.html)
+*	[Configure Apache and Elasticsearch]({{ site.gdeurl21 }}config-guide/elasticsearch/es-config-apache.html)
 *	[Configure Magento to use Elasticsearch]({{ site.gdeurl21 }}config-guide/elasticsearch/es-config-magento.html)
-*	[Secure communications between your web server and Elasticsearch]({{ site.gdeurl21 }}config-guide/elasticsearch/es-config-web-server.html)
 *	[Configure Elasticsearch stopwords]({{ site.gdeurl21 }}config-guide/elasticsearch/es-config-stopwords.html)
 *	[Upgrade to Elasticsearch 2.x]({{ site.gdeurl21 }}config-guide/elasticsearch/es-config-upgrade.html)
 
