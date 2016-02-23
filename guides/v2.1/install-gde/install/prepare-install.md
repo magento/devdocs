@@ -7,7 +7,6 @@ menu_title: Update installation dependencies
 menu_node:
 menu_order: 10
 github_link: install-gde/install/prepare-install.md
-redirect_from: /guides/v1.0/install-gde/install/prepare-install.html
 ---
 
 #### Contents

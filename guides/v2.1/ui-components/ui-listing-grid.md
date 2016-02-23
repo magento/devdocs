@@ -6,7 +6,6 @@ title: Listing/Grid Component
 menu_title: Listing/Grid Component
 menu_node: parent
 github_link: ui-components/ui-listing-grid.md
-redirect_from: /guides/v2.0/ui-library/ui-listing-grid.html
 ---
 
 <h2 id="listing">UI Listing/Grid Component</h2>

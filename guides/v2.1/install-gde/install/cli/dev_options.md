@@ -7,12 +7,12 @@ menu_title: Contributing developers&mdash;update, reinstall Magento
 menu_order: 1
 menu_node: parent
 github_link: install-gde/install/cli/dev_options.md
-redirect_from: guides/v2.0/install-gde/install/dev_updater.md
 ---
 
 The following topics apply to you *only* if you used `git clone` to install the Magento CE GitHub repository. This usually means you contribute code to the Magento CE codebase.
 
 *	To <a href="{{ site.gdeurl21 }}install-gde/install/cli/dev_update-magento.html">update the Magento software</a>, use `git pull origin` and `composer update`
+*	To <a href="{{ site.gdeurl21 }}install-gde/install/cli/dev_downgrade.html">change versions</a> from `develop` to a release version like `2.0.2`, you must uninstall the Magento software and install the released version.
 *	To <a href="{{ site.gdeurl21 }}install-gde/install/cli/dev_add-update.html">add, remove, or update components</a>, modify `composer.json` and run `composer update`
 *	To <a href="{{ site.gdeurl21 }}install-gde/install/cli/dev_reinstall.html">reinstall the Magento software</a>, modify the product version in `composer.json`, run `composer update`, then reinstall the Magento software
 

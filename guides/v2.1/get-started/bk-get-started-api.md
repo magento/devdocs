@@ -6,9 +6,7 @@ title: Getting Started with Magento Web APIs
 menu_title: Introduction
 menu_order: 1
 menu_node: parent
-
 github_link: get-started/bk-get-started-api.md
-redirect_from: /guides/v1.0/get-started/bk-get-started-api.html
 ---
 <h2 id="whatare">What are the Magento web APIs?</h2>
 

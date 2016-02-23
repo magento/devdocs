@@ -7,8 +7,6 @@ menu_title: TreeMassAction Component
 menu_node:
 menu_order: 4
 github_link: ui-components/ui-secondary-treemass.md
-redirect_from: /guides/v2.0/ui-library/ui-secondary-treemass.html
-
 ---
 
 <h3 id="treemass">UI TreeMassAction Component</h3>

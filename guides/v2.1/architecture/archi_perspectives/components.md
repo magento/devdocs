@@ -6,7 +6,6 @@ title: Magento Components
 menu_title: Components
 menu_order: 1
 github_link: architecture/archi_perspectives/components.md
-redirect_from: /guides/v1.0/architecture/archi_perspectives/components.html
 ---
 
 

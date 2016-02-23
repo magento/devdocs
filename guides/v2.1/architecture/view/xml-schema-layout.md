@@ -6,7 +6,6 @@ title: XML layouts and schemas
 menu_title: XML layouts and schemas
 menu_order: 
 github_link: architecture/view/xml-schema-layout.md
-redirect_from: /guides/v1.0/architecture/view/xml-schema-layout.html
 ---
 
 <h2 id="m2devgde-xml-layout-intro">Overview</h2>

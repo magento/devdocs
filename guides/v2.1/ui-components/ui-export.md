@@ -7,8 +7,6 @@ menu_title: Export Button Component
 menu_node:
 menu_order: 12
 github_link: ui-components/ui-export.md
-redirect_from: /guides/v2.0/ui-library/ui-export.html
-
 ---
 
 <h2 id="export">UI ExportButton Component</h2>

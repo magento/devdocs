@@ -6,7 +6,6 @@ title: Update the Magento Testing Framework
 menu_title: UPDATE
 menu_node: parent
 github_link: mtf/mtf_update.md
-redirect_from: /guides/v1.0/mtf/mtf_update.html
 ---
 <h2 id="mtf_update">How to update</h2>
 

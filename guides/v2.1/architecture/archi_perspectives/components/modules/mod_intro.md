@@ -8,7 +8,6 @@ menu_order: 3
 level3_menu_node: level3child
 level3_subgroup: modules
 github_link: architecture/components/modules/mod_intro.md
-redirect_from: /guides/v1.0/architecture/modules/mod_intro.html
 ---
 
 <h2 id="arch-modules-overview">Module overview</h2>

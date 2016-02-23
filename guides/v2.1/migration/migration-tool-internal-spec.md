@@ -7,7 +7,6 @@ menu_title: Data Migration Tool Internal Specification
 menu_node: parent
 menu_order: 7
 github_link: migration/migration-tool-internal-spec.md
-redirect_from: /guides/v1.0/migration/migration-tool-internal-spec.html
 ---
 
   
@@ -35,7 +34,7 @@ This section describes an implementation details of Data Migration Tool and how 
 
 <h3 id="repositories">Repositories</h3>
 
-Data Migration Tool repository <a href="https://github.com/magento/data-migration-tool-ce" target="_blank">migration-tool</a>
+Data Migration Tool repository <a href="https://github.com/magento/data-migration-tool" target="_blank">migration-tool</a>
 
 <h3 id="system-requirements">System requirements</h3>
 

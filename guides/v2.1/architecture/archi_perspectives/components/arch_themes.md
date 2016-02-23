@@ -6,7 +6,6 @@ title: Magento Themes
 menu_title: Themes 
 menu_order: 8
 github_link: architecture/components/arch_themes.md
-redirect_from: /guides/v1.0/architecture/arch_perspective/themes_intro.html
 ---
 
 <h2>Magento themes</h2>
