@@ -4,7 +4,6 @@ group: mtf-guide
 subgroup: U_Update
 title: Update the Magento Testing Framework
 menu_title: UPDATE
-menu_order: 4
 menu_node: parent
 github_link: mtf/mtf_update.md
 ---
