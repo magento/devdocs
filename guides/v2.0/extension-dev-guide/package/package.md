@@ -14,4 +14,6 @@ redirect_from: /guides/v2.0/extension-dev-guide/package.html
 
 Use [Composer](https://getcomposer.org/) to package your module.
 
-* [Using Composer to package a Magento 2 module](package_module.html)
+*	[Using Composer to package a Magento 2 module](package_module.html)
+*	Use our [validation tool](http://alankent.me/2016/02/01/magento-2-marketplace-upload-validation-tool-quick-note){:target="_blank"} to check your package before you distribute it.
+*	*Distribution on Magento Marketplace only*. [Upload your package to the Magento Marketplace](http://docs.magento.com/marketplace/user_guide/getting-started.html){:target="_blank"}
