@@ -1,20 +1,4 @@
----
-layout: default
-group: config-guide
-subgroup: Elastic
-title: Configure Magento to work with Elasticsearch
-menu_title: Configure Magento to work with Elasticsearch
-menu_order: 2
-menu_node: 
-github_link: config-guide/elasticsearch/es-config-magento.md
----
-
-<img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only">
-
-#### Contents
-
-*	[Configure Magento to use Elasticsearch](#elastic-m2-configure)
-*	[Reindexing catalog search and refreshing the full page cache](#es-reindex)
+<div markdown="1">
 
 ## Configure Magento to use Elasticsearch {#elastic-m2-configure}
 This section discusses the minimum settings you must choose to test Elasticsearch with Magento 2. For additional details, see TBD cross-ref to User Guide.
@@ -113,5 +97,3 @@ To reindex using the command line:
 <div class="bs-callout bs-callout-info" id="info">
 	<p>Unlike the cache, indexers are updated by a cron job. Make sure <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-cron.html">cron is enabled</a> before you start using Elasticsearch.</p>
 </div>
-#### Next
-<a href="{{ site.gdeurl21 }}config-guide/elasticsearch/es-config-web-server.html">Secure communications between your web server and Elasticsearch</a>

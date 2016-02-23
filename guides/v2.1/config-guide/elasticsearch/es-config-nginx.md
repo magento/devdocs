@@ -14,10 +14,18 @@ github_link: config-guide/elasticsearch/es-config-nginx.md
 
 #### Contents
 
+*	[Overview of secure web server communication](#es-ws-secure-over)
+*	[Set up a proxy](#es-nginx-proxy)
+*	[Configure Magento to use Elasticsearch](#elastic-m2-configure)
 *	[Secure communication with nginx](#es-ws-secure-nginx)
 *	[Verify communication is secure](#es-ws-secure-verify)
 
 {% include config/es-webserver-overview.md %}
+
+## Set up a proxy {#es-nginx-prox}
+TBD
+
+{% include config/es-elasticsearch-magento.md %}
 
 ## Secure communication with nginx {#es-ws-secure-nginx}
 Because nginx natively supports <a href="http://nginx.org/en/docs/http/ngx_http_auth_basic_module.html" target="_blank">HTTP Basic authentication</a>, we recommend it over, for example, <a href="https://www.nginx.com/resources/wiki/modules/auth_digest/" target="_blank">Digest authentication</a>, which isn't recommended in production.
