@@ -82,7 +82,7 @@ where:
 <tbody>
 <tr>
 <td><p>for</p></td>
-<td><p>The fully-qualified type name with the namespace that processes the extensions. The value much be a type that implements `ExtensibleDataInterface`. The interface can be in a different module.</p> </td>
+<td><p>The fully-qualified type name with the namespace that processes the extensions. The value must be a type that implements `ExtensibleDataInterface`. The interface can be in a different module.</p> </td>
 <td><code>Magento\Quote\Api\Data\TotalsInterface</code></td>
 </tr>
 <tr>
