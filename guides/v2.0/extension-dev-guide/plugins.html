@@ -818,9 +818,7 @@
     <p>Use one or more of the following methods to extend/modify an original method’s behavior with the interception functionality:</p>
 
     <ul>
-      <li>
-        <p>Change the arguments of an original method through the before-listener.</p>
-      </li>
+      <li>Change the arguments of an original method through the before-listener.</li>
       <li>Change the values returned by an original method through the after-listener.</li>
       <li>
         <p>Change both the arguments and returned values of an original method through the around-listener.</p>
@@ -858,7 +856,7 @@
 
 <h2 id="plugin-example">Example plug-ins</h2>
 
-<p>To change the arguments of an original method or add some behavior before an original method is called, use the before-listener method.</p>
+<p>To change the arguments of an original method or add some behavior before an original method is called, use the before-listener method. The method should return the changed argument, or an array of arguments, if the original method had multiple arguments. If the method returns <code>null</code>, no arguments are changed.</p>
 
 <p>Prefix the name of the original method with <code>before</code> as the following sample shows:</p>
 
