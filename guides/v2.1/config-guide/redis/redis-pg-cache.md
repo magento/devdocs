@@ -55,7 +55,7 @@ where
 		<th>Meaning</th>
 	</tr>
 <tr>
-	<td>page_cache</td>
+	<td>default, page_cache</td>
 	<td><p>Specify the segment name to use a particular segment or a default shortcut for all other caches.</p>
 		<p>The <code>default</code> cache segment enables you to configure all cache segments except for <code>page_cache</code> (the full page cache).</p></td>
 </tr>
