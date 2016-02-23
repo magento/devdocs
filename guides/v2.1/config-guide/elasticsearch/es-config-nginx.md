@@ -23,13 +23,12 @@ github_link: config-guide/elasticsearch/es-config-nginx.md
 {% include config/es-webserver-overview.md %}
 
 ## Set up a proxy {#es-nginx-prox}
-This section discusses how to configure nginx as a proxy so that Magento can use Elasticsearch running on this server. This section does not discuss setting up HTTP Basic authentication; that is discussed in TBD.
+This section discusses how to configure nginx as a proxy so that Magento can use Elasticsearch running on this server. This section does not discuss setting up HTTP Basic authentication; that is discussed in [Secure communication with nginx](#es-ws-secure-nginx).
 
 See one of the following sections for more information:
 
 *	[Step 1: Specify additional configuration files in your global `nginx.conf`](#es-ws-secure-nginx-conf)
 *	[Step 2: Set up nginx as a proxy](#es-ws-secure-nginx-proxy)
-*	TBD
 
 ### Step 1: Specify additional configuration files in your global `nginx.conf` {#es-ws-secure-nginx-conf}
 Make sure your global `nginx.conf` contains the following line so it loads the other configuration files discussed in the following sections:
@@ -95,7 +94,7 @@ To create passwords:
 2.	If necessary, install `htpasswd`:
 
 	*	Ubuntu: `apt-get -y install apache2-utils`
-	*	CentOS: TBD
+	*	CentOS: `yum -y install httpd-tools`
 3.	Create a `/etc/nginx/passwd` directory to store passwords: 
 
 		mkdir -p /etc/nginx/passwd

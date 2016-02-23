@@ -66,7 +66,7 @@ One of the following displays:
 </tbody>
 </table>
 
-## Reindexing catalog search and refreshing the full page cache {#es-reindex}
+### Reindexing catalog search and refreshing the full page cache {#es-reindex}
 After you change Magento's Elasticsearch configuration, you must reindex the catalog search index and refresh the full page using the Admin or command line.
 
 To refresh the cache using the Admin:

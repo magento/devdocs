@@ -19,7 +19,6 @@ github_link: config-guide/elasticsearch/es-overview.md
 *	<a href="#es-resources">Additional resources</a>
 *	[Configure nginx and Elasticsearch]({{ site.gdeurl21 }}config-guide/elasticsearch/es-config-nginx.html)
 *	[Configure Apache and Elasticsearch]({{ site.gdeurl21 }}config-guide/elasticsearch/es-config-apache.html)
-*	[Configure Magento to use Elasticsearch]({{ site.gdeurl21 }}config-guide/elasticsearch/es-config-magento.html)
 *	[Configure Elasticsearch stopwords]({{ site.gdeurl21 }}config-guide/elasticsearch/es-config-stopwords.html)
 *	[Upgrade to Elasticsearch 2.x]({{ site.gdeurl21 }}config-guide/elasticsearch/es-config-upgrade.html)
 
@@ -109,4 +108,6 @@ To install Elasticsearch:
 *	<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-configuration.html" target="_blank">Elasticsearch Configuration</a>
 
 #### Next
-<a href="{{ site.gdeurl21 }}config-guide/elasticsearch/es-config-magento.html">Configure Magento to work with Elasticsearch</a>
+
+*	[Configure nginx and Elasticsearch]({{ site.gdeurl21 }}config-guide/elasticsearch/es-config-nginx.html)
+*	[Configure Apache and Elasticsearch]({{ site.gdeurl21 }}config-guide/elasticsearch/es-config-apache.html)
