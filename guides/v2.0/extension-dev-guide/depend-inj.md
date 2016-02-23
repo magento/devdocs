@@ -113,7 +113,11 @@ For example, to set the interface preferences for the Magento Admin, use <a href
 
 You can also specify whether or not the object is shareable in its `di.xml` as follows:
 
-<script src="https://gist.github.com/xcomSteveJohnson/f66e46702da03ec264eb.js"></script>
+	<type name="Company\Module\ClassOne" shared="false">
+		<arguments>
+			<argument name="class_one" xsi:type="object" shared="false">Company\Module\ClassTwo</argument>
+		</arguments>
+	</type>
 
 Dependency injection is configuration-based; configurations are validated by <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/etc/config.xsd" target="_blank">config.xsd</a>.
 
