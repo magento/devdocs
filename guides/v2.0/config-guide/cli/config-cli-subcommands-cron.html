@@ -1158,11 +1158,6 @@
     <h2 id="config-cli-cron-group">Configure and run cron using the command line</h2>
     <p>This section discusses how to run cron at any time using the command line. You can optionally configure a cron group for a custom module as discussed in the next section.</p>
 
-    <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>When you run cron from the command line, it runs jobs from all cron groups.</p></span>
-</div>
-
     <p>See one of the following sections:</p>
 
     <ul>
@@ -1277,7 +1272,7 @@
     <pre><code>magento cron:run [--group="&lt;cron group name&gt;"] 
 </code></pre>
 
-    <p>where <code>--group</code> specifies the cron group to run (omit this option to run cron for the <code>default</code> group)</p>
+    <p>where <code>--group</code> specifies the cron group to run (omit this option to run cron for all groups)</p>
 
     <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
