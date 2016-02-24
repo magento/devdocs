@@ -70,66 +70,36 @@ The instructions that follow are based on Apache 2.2 with CentOS 6:
 ### Step 2: Optionally add users to create an authorized group {#es-ws-secure-group}
 {% include config/secure-ws-apache_step2.md %}
 
-### Step 3: Configure your secure virtual host {#es-ws-secure-finish}
-This section discusses how to add the reference to your Apache password file to your secure virtual host configuration.
+### Step 3: Secure communication with Apache {#es-ws-secure-finish}
+This section discusses how to set up [HTTP Basic authentication](https://httpd.apache.org/docs/2.2/howto/auth.html){:target="_blank"}. Use of SSL and HTTP Basic authentication together prevents anyone from intercepting communication with Elasticsearch or with your Magento server.
 
-Depending on how you set up SSL, the Apache 2.2 SSL configuration might be located in `/etc/httpd/conf/httpd.conf` or `/etc/httpd/conf.d/ssl.conf`.
+This section discusses how to specify who can access the Apache server.
 
-This secure virtual host starts with one of the following lines:
+Use a text editor to modify one of the following:
 
-	<VirtualHost *:443>
+*	Apache 2.4: `vim /etc/apache2/sites-available/default-000.conf`
+*	Apache 2.2: `vim /etc/httpd/conf/httpd.conf`
 
-or
-
-	<VirtualHost _default_:443>
-
-To add Elasticsearch to your secure virtual host:
-
-Add the following to authenticate a *user*:
-
-	ProxyPreserveHost On
-	ProxyPass / http://127.0.0.1:<elasticsearch port>/
-	ProxyPassreverse / http://127.0.0.1:<elasticsearch port>/
+Add the following contents:
 
 	<Proxy *>
-	Order deny,allow
-	Allow from all
+	  Order deny,allow
+	  Allow from all
 
-	AuthType Basic
-	AuthName "Elasticsearch server"
-	AuthBasicProvider file
-	AuthUserFile /usr/local/apache/password/.htpasswd_elasticsearch
-	Require valid-user
-
+ 	 AuthType Basic
+ 	 AuthName "Elastic Server"
+	 AuthBasicProvider file
+ 	 AuthUserFile /etc/apache2/htpasswd
+	 Require valid-user
+	  
 	# This allows OPTIONS-requests without authorization
-	<LimitExcept OPTIONS>
-	   Require valid-user
-	</LimitExcept>
+
+ 	 <LimitExcept OPTIONS>
+ 	   Require valid-user
+  	</LimitExcept>
 	</Proxy>
 
-Add the following to authenticate a *group*:
-
-	ProxyPreserveHost On
-	ProxyPass        / http://127.0.0.1:<elasticsearch port>/
-	ProxyPassreverse / http://127.0.0.1:<elasticsearch port>/
-
-	<Proxy *>
-	Order deny,allow
-	Allow from all
-
-	AuthType Basic
-	AuthName "Elasticsearch server"
-	AuthBasicProvider file
-	AuthGroupFile <path to optional group file>
-	Require group <name>
-
-	# This allows OPTIONS-requests without authorization
-	<LimitExcept OPTIONS>
-	</LimitExcept>
-	</Proxy>
-
-
-## Verify communication is secure {#es-ws-secure-verify}
+## Verify communication is secure {#es-ws-secure-verify-apache}
 TBD
 
 #### Next
