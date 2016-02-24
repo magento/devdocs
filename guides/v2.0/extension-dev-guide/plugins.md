@@ -39,7 +39,6 @@ You cannot use plug-ins for:
 * Final methods / classes
 * Non-public methods
 * Class methods (such as static methods)
-* Inherited methods
 * __construct
 * Virtual types
 
@@ -66,7 +65,6 @@ Several conditions influence how plug-ins apply to the same class or interface:
    Use one or more of the following methods to extend/modify an original method's behavior with the interception functionality:
 
    *  Change the arguments of an original method through the before-listener.
-
    *  Change the values returned by an original method through the after-listener.
    *  Change both the arguments and returned values of an original method through the around-listener.
 
@@ -93,7 +91,7 @@ Several conditions influence how plug-ins apply to the same class or interface:
 
 <h2 id="plugin-example">Example plug-ins</h2>
 
-To change the arguments of an original method or add some behavior before an original method is called, use the before-listener method.
+To change the arguments of an original method or add some behavior before an original method is called, use the before-listener method. The method should return the changed argument, or an array of arguments, if the original method had multiple arguments. If the method returns `null`, no arguments are changed.
 
 Prefix the name of the original method with `before` as the following sample shows:
 
