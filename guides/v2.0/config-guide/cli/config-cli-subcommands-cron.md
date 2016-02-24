@@ -69,7 +69,10 @@ Run Magento cron jobs as the <a href="{{ site.gdeurl }}install-gde/prereq/apache
 <h2 id="config-cli-cron-group">Configure and run cron using the command line</h2>
 This section discusses how to run cron at any time using the command line. You can optionally configure a cron group for a custom module as discussed in the next section.
 
-Most Magento modules are in the `default` group; other modules are in the `index` group.
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>When you run cron from the command line, it runs jobs from all cron groups.</p></span>
+</div>
 
 See one of the following sections:
 
