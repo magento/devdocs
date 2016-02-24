@@ -30,34 +30,25 @@ Test coverage of the out-of-the-box test depends on a module which it belongs to
 
 You can use out-of-the-box tests in:
 
-- Regression testing
-    - if new changes didn't break functionality
-    - before release
-    - for deep testing
+- Regression testing, to check that new changes don't break existing Magento functionality
     
-- Sanity testing
-    - after any changes were made
-    - test the basic functionality
+- Sanity testing, to check the basic functionality after any Magento changes were made
     
-- Acceptance testing
+- Acceptance testing, 
     - in combination with own tests
-    - to test new feature: show that feature works and it didn't break any functionality of the Magento application (all other tests passed)
+    - to test new feature: show that feature works and it doesn't break functionality of the Magento application (all other tests passed)
  
 ### How to use {#how-to-use}
 
-**Step 1.** Check the functionality manually
-
-Pass all the test steps defined in a [test case][].
-
-**Step 2.** [Run the test][]
+[Run the test][]
 
 ## New functional test {#new-test}
 
-The MTF facilitates creation of a new test. You can create a new test extending your new test case from the out-of-the-box test, or create a completely new one.
+The MTF facilitates creation of a new test. You can extend the out-of-the-box test, or create a completely new one.
     
 ### Extending an out-of-the-box test {#extending-oob-test}
 
-You can create a test extending from an out-of-the-box test. It is stored in the `<magento2>/dev/tests/functional/tests/app/Magento/<testing_module>` directory.
+Extension of the test means adding or replacing of any [test entity][]. It is stored in the `<magento2>/dev/tests/functional/tests/app/Magento/<testing_module>` directory.
 
 #### Usage {#ext-usage}
 
@@ -70,11 +61,10 @@ Example use cases:
 - [fixture extension][]
 - [repository addition][]
 - [block overriding][]
-- [handler overriding][]
 
 ### Creating a functional test {#create-test}
 
-If new modules are added to Magento you would need to create an absolutely new test to check the functionality. 
+If new modules are added to Magento you would need to create an new test to check the functionality. 
 
 New test must be stored in the corresponding module `<magento2>/dev/tests/functional/tests/app/Magento/<testing_module>`.
 
@@ -1118,10 +1108,10 @@ That's it!
 [fixture extension]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_merge
 [repository addition]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_repositoy
 [block overriding]: {{site.gdeurl}}mtf/mtf_entities/mtf_block.html
-[handler overriding]: {{site.gdeurl}}mtf/mtf_entities/mtf_handler.html
 [install a fresh one]: {{site.gdeurl}}install-gde/prereq/dev_install.html
 [fresh Magento]: https://github.com/magento/magento2/tree/a9797cd9c7bc7ac8460dba3fea8548741be1cccd
 
+[test entity]: {{site.gdeurl}}mtf/mtf_entities.html
 [fixture]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html
 [data set]: {{site.gdeurl}}mtf/mtf_entities/mtf_dataset.html
 [data source]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source
