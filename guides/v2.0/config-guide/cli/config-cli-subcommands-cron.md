@@ -190,8 +190,7 @@ where `--group` specifies the cron group to run (omit this option to run cron fo
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <ul><li>You can run cron for one group at a time.</li>
-  	<li>You must run cron twice: the first time to discover tasks to run and the second time to run the tasks themselves.</li></ul></span>
+  <p>You must run cron twice: the first time to discover tasks to run and the second time to run the tasks themselves.</p></span>
 </div>
 
 #### Related topics
