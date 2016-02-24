@@ -74,12 +74,9 @@ This section discusses how to set up [HTTP Basic authentication](https://httpd.a
 
 This section discusses how to specify who can access the Apache server. 
 
-1.	Use a text editor to modify one of the following:
+1.	Use a text editor to add the following contents to the secure virtual host. 
 
-	*	Apache 2.4: `vim /etc/apache2/sites-available/default-000.conf`
-	*	Apache 2.2: `vim /etc/httpd/conf/httpd.conf`
-
-2.	Add the following contents to the secure virtual host. Depending on how you set up SSL, the Apache 2.2 SSL configuration might be located in `/etc/httpd/conf/httpd.conf` or `/etc/httpd/conf.d/ssl.conf`.
+	Depending on how you set up SSL, the Apache 2.2 SSL configuration might be located in `/etc/httpd/conf/httpd.conf` or `/etc/httpd/conf.d/ssl.conf`.
 
 		<Proxy *>
 		  Order deny,allow
