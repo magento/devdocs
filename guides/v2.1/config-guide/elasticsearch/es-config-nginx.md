@@ -23,7 +23,11 @@ github_link: config-guide/elasticsearch/es-config-nginx.md
 {% include config/es-webserver-overview.md %}
 
 ## Set up a proxy {#es-nginx-prox}
-This section discusses how to configure nginx as a proxy so that Magento can use Elasticsearch running on this server. This section does not discuss setting up HTTP Basic authentication; that is discussed in [Secure communication with nginx](#es-ws-secure-nginx).
+This section discusses how to configure nginx as an *unsecure* proxy so that Magento can use Elasticsearch running on this server. This section does not discuss setting up HTTP Basic authentication; that is discussed in [Secure communication with nginx](#es-ws-secure-nginx).
+
+<div class="bs-callout bs-callout-info" id="info">
+	<p>The reason the proxy is not secured in this example is it's easier to set up and verify. You can use TLS with this proxy if you want; to do so, make sure you add the proxy information to your secure server block configuration.</p>
+</div>
 
 See one of the following sections for more information:
 
@@ -31,14 +35,9 @@ See one of the following sections for more information:
 *	[Step 2: Set up nginx as a proxy](#es-ws-secure-nginx-proxy)
 
 ### Step 1: Specify additional configuration files in your global `nginx.conf` {#es-ws-secure-nginx-conf}
-Make sure your global `nginx.conf` contains the following line so it loads the other configuration files discussed in the following sections:
+Make sure your global `/etc/nginx/nginx.conf` contains the following line so it loads the other configuration files discussed in the following sections:
 
 	include /etc/nginx/conf.d/*.conf;
-
-By default, the global configuration is located as follows:
-
-*	CentOS: `/etc/nginx/nginx.conf`
-*	Ubuntu: TBD
 
 ### Step 2: Set up nginx as a proxy {#es-ws-secure-nginx-proxy}
 This section discusses how to specify who can access the nginx server.
@@ -61,7 +60,7 @@ This section discusses how to specify who can access the nginx server.
 {% include config/es-elasticsearch-magento.md %}
 
 ## Secure communication with nginx {#es-ws-secure-nginx}
-This section discusses how to set up [HTTP Basic authentication](http://nginx.org/en/docs/http/ngx_http_auth_basic_module.html){:target="_blank"}. Use of SSL and HTTP Basic authentication together prevents anyone from intercepting communication with Elasticsearch or with your Magento server.
+This section discusses how to set up [HTTP Basic authentication](http://nginx.org/en/docs/http/ngx_http_auth_basic_module.html){:target="_blank"} with your secure proxy. Use of TLS and HTTP Basic authentication together prevents anyone from intercepting communication with Elasticsearch or with your Magento server.
 
 Because nginx natively supports HTTP Basic authentication, we recommend it over, for example, <a href="https://www.nginx.com/resources/wiki/modules/auth_digest/" target="_blank">Digest authentication</a>, which isn't recommended in production.
 
@@ -98,13 +97,17 @@ To create passwords:
 3.	Create a `/etc/nginx/passwd` directory to store passwords: 
 
 		mkdir -p /etc/nginx/passwd
-		htpasswd -c /etc/nginx/.htpasswd <username>
+		htpasswd -c /etc/nginx/<filename> <username>
+
+	<div class="bs-callout bs-callout-info" id="info">
+		<p>For security reasons, <code>&lt;filename></code> should be hidden; that is, it must start with a period. An example follows. </p>
+	</div>
 
 	Example:
 
 		mkdir -p /etc/nginx/passwd
 		htpasswd -c /etc/nginx/passwd/.htpasswd_magento_elasticsearch magento_elasticsearch
-
+	
 	Follow the prompts on your screen to create a password the user.
 
 5.	*(Optional).* To add another user to your password file, enter the same command without the `-c` (create) option:
@@ -113,9 +116,13 @@ To create passwords:
 6.	Verify that the contents of `/etc/nginx/passwd` is correct.
 
 ### Step 3: Set up access to nginx {#es-ws-secure-nginx-access}
-This section discusses how to specify who can access the nginx server.
+This section discusses how to specify who can access the nginx server. 
 
-Use a text editor to modify `/etc/nginx/conf.d/magento_es_auth.conf` with the following contents:
+<div class="bs-callout bs-callout-warning">
+    <p>The example shown is for an <em>unsecure</em> proxy. To use a secure proxy, add the following contents (except the listen port) to your secure server block.</p>
+</div>
+
+Use a text editor to modify either `/etc/nginx/conf.d/magento_es_auth.conf` (unsecure) or your secure server block with the following contents:
 
 	server {
 		listen       8080;
@@ -145,31 +152,31 @@ Use a text editor to modify `/etc/nginx/conf.d/magento_es_auth.conf` with the fo
 	}
 
 <div class="bs-callout bs-callout-info" id="info">
-	<p>The listen ports shown in the preceding example are examples only. For security reasons, we recommend you use non-default listen ports for the proxy and for Elasticsearch.</p>
+	<p>The Elasticsearch listen port shown in the preceding example are examples only. For security reasons, we recommend you use a non-default listen port for Elasticsearch.</p>
 </div>
 
 ### Step 4: Set up a restricted context for Elasticsearch {#es-ws-secure-nginx-context}
 This section discusses how to specify who can access the Elasticsearch server.
 
-Enter the following command to create a new directory to store the authentication configuration:
+1.	Enter the following command to create a new directory to store the authentication configuration:
 
-	mkdir /etc/nginx/auth/
+		mkdir /etc/nginx/auth/
 
-Use a text editor to create a new file `/etc/nginx/auth/magento_elasticsearch.conf` with the following contents:
+2.	Use a text editor to create a new file `/etc/nginx/auth/magento_elasticsearch.conf` with the following contents:
 
-	location /elasticsearch {
-	auth_basic "Restricted - elasticsearch";
-	auth_basic_user_file /etc/nginx/passwd/.htpasswd_magento_elasticsearch;
+		location /elasticsearch {
+		auth_basic "Restricted - elasticsearch";
+		auth_basic_user_file /etc/nginx/passwd/.htpasswd_magento_elasticsearch;
 		
-	proxy_pass http://127.0.0.1:9200;
-	proxy_redirect off;
-	proxy_set_header Host $host;
-   	proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-	}
+		proxy_pass http://127.0.0.1:9200;
+		proxy_redirect off;
+		proxy_set_header Host $host;
+		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+		}
+3.	If you set up a secure proxy, delete `/etc/nginx/conf.d/magento_es_auth.conf`.
+4.	Restart nginx and continue with the next section:
 
-After you've made these changes, restart nginx and continue with the next section:
-
-	service nginx restart
+		service nginx restart
 
 {% include config/es-verify-proxy.md %}
 

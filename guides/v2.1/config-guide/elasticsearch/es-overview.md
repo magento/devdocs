@@ -20,18 +20,14 @@ github_link: config-guide/elasticsearch/es-overview.md
 *	[Configure nginx and Elasticsearch]({{ site.gdeurl21 }}config-guide/elasticsearch/es-config-nginx.html)
 *	[Configure Apache and Elasticsearch]({{ site.gdeurl21 }}config-guide/elasticsearch/es-config-apache.html)
 *	[Configure Elasticsearch stopwords]({{ site.gdeurl21 }}config-guide/elasticsearch/es-config-stopwords.html)
-*	[Upgrade to Elasticsearch 2.x]({{ site.gdeurl21 }}config-guide/elasticsearch/es-config-upgrade.html)
-
 
 <h2 id="overview">Overview of Elasticsearch</h2>
-TBD draft language TBD
+In Magento 2.1 for the first time, you can use [Elasticsearch](https://www.elastic.co){:target="_blank"} for searching your catalog.
 
 *	Uses Elasticsearch to fulfill quick and advanced search on products in the catalog
 *	Elasticsearch analyzers support multiple languages
 *	Supports stop words and synonyms
 *	Indexing does not impact customers until re-index is completed
-
-	Solr can return odd results while reindexing
 
 	Elasticsearch returns search results based on the last generated index until the new one has been completely indexed so there's no disruption to a merchant's customers
 
@@ -44,6 +40,39 @@ TBD draft language TBD
 
 ### Supported versions {#es-spt-versions}
 Magento Enterprise Edition (EE) version 2.1.x supports Elasticsearch versions 1.7, 2.0, and 2.1.
+
+### Recommended configuration {#es-arch}
+The following figure shows our recommended configuration. All of the tasks we discuss assume you've configured your system this way.
+
+NOTE: THE FOLLOWING DIAGRAM IS TEMPORARY. IT WILL LOOK NICER FOR GA.
+
+<img src="{{ site.baseurl }}common/images/es-config-tmp.png" width="500px">
+
+The preceding diagram shows:
+
+*	The Magento application and Elasticsearch are installed on different hosts.
+
+	In fact, if you set up multiple Magento webnodes, each webnode communicates with the Elasticsearch server using a load balancer.
+
+	Running on separate hosts is secure, enables Elasticsearch to be scaled, and is necessary for proxying to work. (Clustering Elasticsearch is beyond the scope of this guide but you can find more information in the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/guide/current/distributed-cluster.html){:target="_blank"}.)
+*	Each host has its own web server; the web servers don't have to be the same.
+
+	For example, the Magento application can run Apache and Elasticsearch can run nginx.
+*	Both web servers use Secure Sockets Layer (SSL) or Transport Layer Security (TLS).
+
+	Setting up SSL or TLS is beyond the scope of our documentation.
+
+Search requests are processed as follows:
+
+1.	A search request from a user is forwarded to the Elasticsearch server by the Magento web server to the Elasticsearch server.
+
+	You configure Elasticsearch in the Magento Admin to listen on the proxy's host and port. We recommend the web server's SSL port (by default, 443).
+2.	The Elasticsearch web server (listening on port 443) proxies the request to the Elasticsearch server (by default, it listens on port 9200).
+3.	Access to Elasticsearch is further protected by HTTP Basic authentication.
+
+	For any request to reach Elasticsearch, it must travel over SSL *and* provide a valid user name and password.
+4.	Elasticsearch processes the search request.
+5.	Communication returns along the same route, with the Elasticsearch web server acting as a secure reverse proxy.
 
 ## Prerequisites {#es-prereq}
 The tasks discussed in this section require the following:

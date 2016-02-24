@@ -66,7 +66,7 @@ The instructions that follow are based on Apache 2.2 with CentOS 6:
 {% include config/secure-ws-apache_step1.md %}
 
 ### Step 2: Secure communication with Apache {#es-ws-secure-finish}
-This section discusses how to set up [HTTP Basic authentication](https://httpd.apache.org/docs/2.2/howto/auth.html){:target="_blank"}. Use of SSL and HTTP Basic authentication together prevents anyone from intercepting communication with Elasticsearch or with your Magento server.
+This section discusses how to set up [HTTP Basic authentication](https://httpd.apache.org/docs/2.2/howto/auth.html){:target="_blank"}. Use of TLS and HTTP Basic authentication together prevents anyone from intercepting communication with Elasticsearch or with your Magento server.
 
 This section discusses how to specify who can access the Apache server.
 

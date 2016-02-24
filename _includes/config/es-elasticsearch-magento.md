@@ -1,7 +1,7 @@
 <div markdown="1">
 
 ## Configure Magento to use Elasticsearch {#elastic-m2-configure}
-This section discusses the minimum settings you must choose to test Elasticsearch with Magento 2. For additional details, see TBD cross-ref to User Guide.
+This section discusses the minimum settings you must choose to test Elasticsearch with Magento 2. For additional details about configuring Elasticsearch, see TBD cross-ref to User Guide.
 
 To configure Magento to use Elasticsearch:
 
@@ -21,11 +21,11 @@ To configure Magento to use Elasticsearch:
 	</tr>
 	<tr>
 		<td>Elasticsearch Server Hostname</td>
-		<td>Enter the fully qualified host name or IP address of the machine running Elasticsearch. (If Elasticsearch is running on the same host as Magento, you can use <code>localhost</code>.)</td>
+		<td>Enter the fully qualified host name or IP address of the machine running Elasticsearch. </td>
 	</tr>
 	<tr>
 		<td>Elasticsearch Server Port</td>
-		<td>Enter Elasticsearch's listen port. (If Elasticsearch is running on different host than Magento, try port 80 if the Elasticsearch port does not work.)</td>
+		<td>Enter the Elasticsearch web server proxy port. In our example, the port is <code>8080</code> but if you're using a secure proxy, it's typically <code>443</code>.</td>
 	</tr>
 	<tr>
 		<td>Enable Elasticsearch HTTP Auth</td>

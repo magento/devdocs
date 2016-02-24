@@ -1,6 +1,6 @@
 ---
 layout: default
-group: config-guide
+group: 
 subgroup: Elastic
 title: Upgrade Elasticsearch major version
 menu_title: Upgrade Elasticsearch major version
