@@ -77,13 +77,10 @@ See the following sections for more information:
 *	[Step 3: Set up a restricted context for Elasticsearch](#es-ws-secure-nginx-context)
 *	[Verify communication is secure](#es-ws-secure-verify)
 
-### Step 1: Create passwords {#es-ws-secure-nginx-pwd}
-We recommend you use the Apache `htpasswd` command to encode passwords for the following users:
+### Step 1: Create a password {#es-ws-secure-nginx-pwd}
+We recommend you use the Apache `htpasswd` command to encode passwords for a user with access to Elasticsearch (named `magento_elasticsearch` in this example).
 
-*	User with access to nginx (named `magento_nginx` in this example)
-*	User with access to Elasticsearch (named `magento_elasticsearch` in this example)
-
-To create passwords:
+To create a password:
 
 1.	Enter the following command to determine if `htpasswd` is already installed:
 
@@ -97,7 +94,7 @@ To create passwords:
 3.	Create a `/etc/nginx/passwd` directory to store passwords: 
 
 		mkdir -p /etc/nginx/passwd
-		htpasswd -c /etc/nginx/<filename> <username>
+		htpasswd -c /etc/nginx/.<filename> <username>
 
 	<div class="bs-callout bs-callout-info" id="info">
 		<p>For security reasons, <code>&lt;filename></code> should be hidden; that is, it must start with a period. An example follows. </p>

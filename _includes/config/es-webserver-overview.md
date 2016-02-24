@@ -14,7 +14,7 @@ We recommend the following:
 
 *	Your web server uses TLS.
 
-	SSL is beyond the scope of this topic; however, we strongly recommend you use a real certificate in production and not a self-signed certificate.
+	TLS is beyond the scope of this topic; however, we strongly recommend you use a real certificate in production and not a self-signed certificate.
 *	Elasticsearch runs on the same host as your web server. Running Elasticsearch and the web server on different hosts is beyond the scope of this topic.
 
 	The advantage of putting Elasticsearch and the web server on the same host is that it makes intercepting encrypted communication impossible.

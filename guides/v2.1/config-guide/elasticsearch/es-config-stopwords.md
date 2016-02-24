@@ -50,7 +50,7 @@ To edit stopwords:
 	`.csv` files use the naming convention `stopwords_<locale_code>.csv`. For example, the German stopword file is named `stopwords_de_DE.csv`.
 3.	Add words, remove words, or change words in the file.
 	
-	(Each stopword in file starts on a new line.)
+	(Each stopword in a file starts on a new line.)
 4.	Save your changes and exit the text editor.
 5.	Clean the Magento configuration cache. 
 

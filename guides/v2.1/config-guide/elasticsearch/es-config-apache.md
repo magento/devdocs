@@ -23,7 +23,11 @@ github_link: config-guide/elasticsearch/es-config-apache.md
 {% include config/es-webserver-overview.md %}
 
 ## Set up a proxy {#es-apache-proxy}
-This section discusses how to configure Apache as a proxy so that Magento can use Elasticsearch running on this server. This section does not discuss setting up HTTP Basic authentication; that is discussed in [Secure communication with nginx](#es-ws-secure-apache).
+This section discusses how to configure nginx as an *unsecure* proxy so that Magento can use Elasticsearch running on this server. This section does not discuss setting up HTTP Basic authentication; that is discussed in [Secure communication with nginx](#es-ws-secure-apache).
+
+<div class="bs-callout bs-callout-info" id="info">
+	<p>The reason the proxy is not secured in this example is it's easier to set up and verify. You can use TLS with this proxy if you want; to do so, make sure you add the proxy information to your secure virtual host configuration.</p>
+</div>
 
 This section discusses how to configure an Elasticsearch proxy using a virtual host. 
 
@@ -39,8 +43,8 @@ This section discusses how to configure an Elasticsearch proxy using a virtual h
 2.	Scroll to the bottom of the file and add the following lines:
 
 		<VirtualHost *:8080>
-    		ProxyPass http://localhost:9200/
-     		ProxyPassReverse http://localhost:9200/
+			ProxyPass http://localhost:9200/
+			ProxyPassReverse http://localhost:9200/
 		</VirtualHost>
 
 3.	Restart Apache:
@@ -62,38 +66,38 @@ The instructions that follow are based on Apache 2.2 with CentOS 6:
 *	[Step 2: Configure your secure virtual host](#es-ws-secure-finish)
 *	[Verify communication is secure](#es-ws-secure-verify)
 
-### Step 1: Create a password file {#es-ws-secure-apache-pwd}
+### Step 1: Create a password {#es-ws-secure-apache-pwd}
 {% include config/secure-ws-apache_step1.md %}
 
 ### Step 2: Secure communication with Apache {#es-ws-secure-finish}
 This section discusses how to set up [HTTP Basic authentication](https://httpd.apache.org/docs/2.2/howto/auth.html){:target="_blank"}. Use of TLS and HTTP Basic authentication together prevents anyone from intercepting communication with Elasticsearch or with your Magento server.
 
-This section discusses how to specify who can access the Apache server.
+This section discusses how to specify who can access the Apache server. 
 
-Use a text editor to modify one of the following:
+1.	Use a text editor to modify one of the following:
 
-*	Apache 2.4: `vim /etc/apache2/sites-available/default-000.conf`
-*	Apache 2.2: `vim /etc/httpd/conf/httpd.conf`
+	*	Apache 2.4: `vim /etc/apache2/sites-available/default-000.conf`
+	*	Apache 2.2: `vim /etc/httpd/conf/httpd.conf`
 
-Add the following contents to the virtual host you created earlier:
+2.	Add the following contents to the secure virtual host. Depending on how you set up SSL, the Apache 2.2 SSL configuration might be located in `/etc/httpd/conf/httpd.conf` or `/etc/httpd/conf.d/ssl.conf`.
 
-	<Proxy *>
-	  Order deny,allow
-	  Allow from all
+		<Proxy *>
+		  Order deny,allow
+		  Allow from all
 
-	 AuthType Basic
-	 AuthName "Elastic Server"
-	 AuthBasicProvider file
-	 AuthUserFile /usr/local/apache/password/.htpasswd_elasticsearch
-	 Require valid-user
+		 AuthType Basic
+		 AuthName "Elastic Server"
+		 AuthBasicProvider file
+		 AuthUserFile /usr/local/apache/password/.htpasswd_elasticsearch
+		 Require valid-user
 	  
-	# This allows OPTIONS-requests without authorization
-	 <LimitExcept OPTIONS>
-	   Require valid-user
-	 </LimitExcept>
-	 </Proxy>
-
-Save your changes, exit the text editor, and restart Apache:
+		# This allows OPTIONS-requests without authorization
+		 <LimitExcept OPTIONS>
+		   Require valid-user
+		 </LimitExcept>
+		 </Proxy>
+3.	If you added the preceding to your secure virtual host, remove `Listen 8080` and the `<VirtualHost *:8080>` directives you added earlier.
+4.	Save your changes, exit the text editor, and restart Apache:
 
 *	CentOS: `service httpd restart`
 *	Ubuntu: `service apache2 restart`
