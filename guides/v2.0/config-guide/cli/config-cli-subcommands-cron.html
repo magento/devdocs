@@ -1158,7 +1158,10 @@
     <h2 id="config-cli-cron-group">Configure and run cron using the command line</h2>
     <p>This section discusses how to run cron at any time using the command line. You can optionally configure a cron group for a custom module as discussed in the next section.</p>
 
-    <p>Most Magento modules are in the <code>default</code> group; other modules are in the <code>index</code> group.</p>
+    <div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>When you run cron from the command line, it runs jobs from all cron groups.</p></span>
+</div>
 
     <p>See one of the following sections:</p>
 
@@ -1278,8 +1281,7 @@
 
     <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <ul><li>You can run cron for one group at a time.</li>
-  	<li>You must run cron twice: the first time to discover tasks to run and the second time to run the tasks themselves.</li></ul></span>
+  <p>You must run cron twice: the first time to discover tasks to run and the second time to run the tasks themselves.</p></span>
 </div>
 
     <h4 id="related-topics">Related topics</h4>
