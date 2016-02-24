@@ -1,7 +1,7 @@
 ---
 layout: default
 group:  UI Library
-subgroup: F_UI Library Container Component
+subgroup: F_UI Library Dynamic Rows Component
 title: Dynamic Rows Component
 menu_title: Dynamic Rows Component
 github_link: ui-components/ui_dynamic_rows.md
@@ -120,8 +120,6 @@ The result of this configuration is:
 
 <img={{site.baseurl}}common/images/dynamic-rows-ui.png>
 
-<p class="q">Looks like this screenshot does not correspond to the configuration</p>
-
 Each component used in dynamic rows is configured separately.
 
 ### Configure the grid's and columns' properties
@@ -160,9 +158,6 @@ The following table contains the options you can configure for the whole grid an
     <th>
       Default value
     </th>
-    <th>
-      Preview
-    </th>
   </tr>
   <tr>
     <td>
@@ -177,7 +172,6 @@ The following table contains the options you can configure for the whole grid an
     <td>
       <code>true</code>
     </td>
-    <td></td>
   </tr>
   <tr>
     <td>
@@ -192,7 +186,6 @@ The following table contains the options you can configure for the whole grid an
     <td>
       <em>Add</em>
     </td>
-    <td></td>
   </tr>
   <tr>
     <td>
@@ -204,7 +197,6 @@ The following table contains the options you can configure for the whole grid an
     <td>
       String
     </td>
-    <td></td>
     <td></td>
   </tr>
   <tr>
@@ -220,7 +212,6 @@ The following table contains the options you can configure for the whole grid an
     <td>
       <code>false</code>
     </td>
-    <td></td>
   </tr>
   <tr>
     <td>
@@ -236,7 +227,6 @@ The following table contains the options you can configure for the whole grid an
     <td>
       <code>Magento_Ui/js/dynamic-rows/dynamic-rows</code>
     </td>
-    <td></td>
   </tr>
   <tr>
     <td>
@@ -251,7 +241,6 @@ The following table contains the options you can configure for the whole grid an
     <td>
       <code>false</code>
     </td>
-    <td></td>
   </tr>
   <tr>
     <td>
@@ -266,33 +255,14 @@ The following table contains the options you can configure for the whole grid an
     <td>
       <em>Delete</em>
     </td>
-    <td></td>
   </tr>
   <tr>
-    <td rowspan="2">
+    <td>
       <code>disabled</code>
     </td>
     <td>
       If specified in the child of , then is used to disable the
       grid
-    </td>
-    <td>
-      Boolean
-    </td>
-    <td>
-      <code>false</code>
-    </td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>
-      If specified for a column, then is used to disable a column
-      <p class="q">
-        how should it be specified to disable the column?
-      </p>
-    </td>
-    <td>
-      Disable the grid
     </td>
     <td>
       Boolean
@@ -314,7 +284,6 @@ The following table contains the options you can configure for the whole grid an
     <td>
       <code>true</code>
     </td>
-    <td></td>
   </tr>
   <tr>
     <td>
@@ -326,7 +295,6 @@ The following table contains the options you can configure for the whole grid an
     <td>
       String
     </td>
-    <td></td>
     <td></td>
   </tr>
   <tr>
@@ -342,7 +310,6 @@ The following table contains the options you can configure for the whole grid an
     <td>
       <code>true</code>
     </td>
-    <td></td>
   </tr>
   <tr>
     <td>
@@ -357,7 +324,6 @@ The following table contains the options you can configure for the whole grid an
     <td>
       <code>true</code>
     </td>
-    <td></td>
   </tr>
   <tr>
     <td>
@@ -384,7 +350,6 @@ The following table contains the options you can configure for the whole grid an
     <td>
       <code>ui/dynamic-rows/templates/default</code>
     </td>
-    <td></td>
   </tr>
   <tr>
     <td>
@@ -399,7 +364,6 @@ The following table contains the options you can configure for the whole grid an
     <td>
       <code>true</code>
     </td>
-    <td></td>
   </tr>
 </table>
 
@@ -653,6 +617,21 @@ You can configure the following:
     </td>
     <td></td>
   </tr>
+  <tr>
+<td><code>disabled</code></td>
+    <td>
+      If specified for a column, then is used to disable a column
+      <p class="q">
+        how should it be specified to disable the column?
+      </p>
+    </td>
+    <td>
+      Disable the grid
+    </td>
+    <td>
+      Boolean
+    </td>
+  </tr>
 </table>
 
 
@@ -675,10 +654,10 @@ You can configure the grid to render a text instead of the certain field. To do 
 ## Public API (JavaScript)
 
 - `setDisabled(state)`: disable/enable the grid
-- `state {Boolean}`: grid state
+	- `state {Boolean}`: grid state
 - `setColumnDisabled(index, state)`: disable/enabled a particular column
-- `index{Number}`: column index
-- `state{Boolean}`:column state
+	- `index{Number}`: column index
+	- `state{Boolean}`:column state
 - `setVisible(state)`: set visibility to all grid
 - `setColumnVisibility(index, state)` show or hide a particular column
 - `reload()` rerender records
@@ -686,23 +665,20 @@ You can configure the grid to render a text instead of the certain field. To do 
 <p class="q">What is meant by rerender</p>
 
 - `onUpdateRecordTemplate(templateName)`: rerender records with a new template
-- `templateName{String}`: new template name
+	- `templateName{String}`: new template name
 - `sort(position, elem)`: sort elements by position
-- `position{Number} `
-
+	- `position{Number} `
+	- `elem{Object}`
 <p class="q">Description?</p>
-
-- `elem{Object}`
--
 <p class="q">Description?</p>
 
 - `deleteRecord(index)`: delete a record by index
-- `index{Number}`: index record
+	- `index{Number}`: index record
 
 <p class="q">Set the index or get or ..?</p>
 
 - `addChild(data, index)`: render a new record instance
-- `data{Object}` object with a instance data
-- `index{Number} `: index for the new instance
+	- `data{Object}` object with a instance data
+	- `index{Number} `: index for the new instance
 
 <p class="q">Set the new index?</p>
