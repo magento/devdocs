@@ -24,16 +24,16 @@ github_link: config-guide/elasticsearch/es-overview.md
 <h2 id="overview">Overview of Elasticsearch</h2>
 In Magento 2.1 for the first time, you can use [Elasticsearch](https://www.elastic.co){:target="_blank"} for searching your catalog.
 
-*	Uses Elasticsearch to fulfill quick and advanced search on products in the catalog
+*	Elasticsearch performs quick and advanced searches on products in the catalog
 *	Elasticsearch analyzers support multiple languages
 *	Supports stop words and synonyms
-*	Indexing does not impact customers until re-index is completed
+*	Indexing does not impact customers until reindex is completed
 
-	Elasticsearch returns search results based on the last generated index until the new one has been completely indexed so there's no disruption to a merchant's customers
+	Elasticsearch returns search results based on the last generated index until the new one has been completely indexed so there's no disruption to customers
 
 *	Accurate, performant, scalable
 *	Works well out of the box 
-*	Easier to horizontally scale
+*	Easy to horizontally scale
 *	Supports real-time data and analysis
 *	Can be used as a document-oriented data store
 *	Applications in framework beyond search&mdash;reporting, personalization, performance, and storage
@@ -58,9 +58,9 @@ The preceding diagram shows:
 *	Each host has its own web server; the web servers don't have to be the same.
 
 	For example, the Magento application can run Apache and Elasticsearch can run nginx.
-*	Both web servers use Secure Sockets Layer (SSL) or Transport Layer Security (TLS).
+*	Both web servers use Transport Layer Security (TLS).
 
-	Setting up SSL or TLS is beyond the scope of our documentation.
+	Setting up TLS is beyond the scope of our documentation.
 
 Search requests are processed as follows:
 
@@ -121,8 +121,10 @@ To install Elasticsearch:
 			sudo apt-get -y update && sudo apt-get -y install Elasticsearch
 
 	<a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.1/setup-repositories.html" target="_blank">More information about Elasticsearch repositories</a>.
-3.	Optionally configure the <a href="https://www.elastic.co/guide/en/Elasticsearch/reference/current/setup-service.html" target="_blank">Elasticsearch service</a>.
-4.	<a href="https://www.elastic.co/guide/en/Elasticsearch/reference/current/setup.html" target="_blank">Start Elasticsearch</a>.
+3.	Optionally configure the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.x/setup-service.html" target="_blank">Elasticsearch service</a>.
+4.	Start Elasticsearch:
+
+		service elasticsearch start
 5.	Verify that Elasticsearch is working by entering the following command on the server on which it's running:
 
 		curl -i http://127.0.0.1:9200/_cluster/health
