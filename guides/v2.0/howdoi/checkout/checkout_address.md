@@ -14,7 +14,7 @@ Out of the box, Magento checkout consists of two steps:
 - Shipping Information
 - Review and Payment Information
 
-When a logged in shopper proceeds to checkout,oOn the Shipping Information step Magento renders the saved addresses. The shopper can then click on the address they want to use as a shipping address. Default address renderers cover the majority of use cases, but Magento provides way to register custom address renderer for a new address type.
+When a logged in shopper proceeds to checkout, on the Shipping Information step Magento renders the saved addresses. The shopper can then click on the address they want to use as a shipping address. Default address renderers cover the majority of use cases, but Magento provides way to register custom address renderer for a new address type.
 
 This topic describes how to implement a custom shipping address renderer.
 
@@ -97,7 +97,7 @@ In you custom module directory create the component's `.js` file for the process
 
 Here you need to specify the URL used for calculating the shipping rate for your custom address type.
 
-<p class="q">isn't rate different for different shipping address?</p>
+<p class="q">Does not shipping rate depend also on the carrier, not only the address? how can there be one url for calculation?</p>
 
 Following is a sample of the shipping rate processor code:
 
@@ -293,7 +293,7 @@ The <code>address_type</code> you need to specify in the layout, is the value yo
 
 On the Review and Payment Information step of checkout, the address selected by the shopper to be used for shipping is displayed in the **Ship-To** section for customer to make sure everything is set correctly.
 
-If you want your custom address type to be displayed here as well, you need to create a an `.html` template for rendering it, and declare in the corresponding location in layout.
+If you want your custom address type to be displayed here as well, you need to create an `.html` template for rendering it, and declare in the corresponding location in layout.
 
 ### Add template for displaying the address in the Ship-To section
 
