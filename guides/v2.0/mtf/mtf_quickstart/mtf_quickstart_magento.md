@@ -15,7 +15,7 @@ github_link: mtf/mtf_quickstart/mtf_quickstart_magento.md
 
 ## Change WYSIWYG settings
 
-Disable WYSIWYG editor setting to enable to enable you to work with Selenium Server.
+A Selenium web-driver cannot enter data to fields with WYSIWYG. This option disables WYSIWYG and enables the web-driver to process these fields as simple text areas.
 
 1. Log in to the Magento Admin as an administrator
 2. Follow **Stores &gt; Configuration &gt; General &gt; Content Management &gt; WYSIWYG Options**
