@@ -111,7 +111,7 @@ For example, to set the interface preferences for the Magento Admin, use <a href
 
 	 <preference for="Magento\Framework\UrlInterface" type="Magento\Backend\Model\UrlInterface" />
 
-You can also specify whether or not the object is shareable in its `di.xml` as follows:
+You can also specify whether or not the module is shareable in its `di.xml` as follows:
 
 	<type name="Company\Module\ClassOne" shared="false">
 		<arguments>
