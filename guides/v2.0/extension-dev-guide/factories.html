@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento plug-ins</title>
+	<title>Instantiating objects with factories</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/extension-dev-guide/plugins.html">
+	<link rel="canonical" href="//guides/v2.0/extension-dev-guide/factories.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -132,10 +132,12 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Magento plug-ins</h1>
+		<h1 class="page-heading">Instantiating objects with factories</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/extension-dev-guide/plugins.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/extension-dev-guide/factories.md" target="_blank">Edit this page on GitHub</a>
 		
+			
+			<a class="contributor" href="http://www.classyllama.com/" target="_blank">Thanks to Classy Llama for contributing this topic</a>
 		
 	</div>
 </section>
@@ -548,7 +550,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/factories.html">Instantiating objects with factories</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/extension-dev-guide/factories.html">Instantiating objects with factories</a></li>
 
 									
 
@@ -580,7 +582,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/extension-dev-guide/plugins.html">Magento plug-ins</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/plugins.html">Magento plug-ins</a></li>
 
 									
 
@@ -772,187 +774,58 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<h2 id="magento-plug-ins">Magento plug-ins</h2>
+		<h2 id="instantiating-objects-with-factories">Instantiating objects with factories</h2>
 
-<ul>
-  <li><a href="#plugin-intro">Introduction to Magento plug-ins</a></li>
-  <li><a href="#plugin-limit">Limitations</a></li>
-  <li><a href="#plugin-declare">Declare a plug-in</a></li>
-  <li><a href="#plugin-priority">Prioritize plug-ins</a></li>
-  <li><a href="#plugin-example">Example plug-ins</a></li>
-  <li><a href="#config-inheritance">Configuration inheritance</a></li>
-</ul>
+<p>The most common way to request and work with objects in Magento is using <a href="/guides/v2.0/extension-dev-guide/depend-inj.html##dep-inj-preview-cons">constructor injection</a>.  Objects obtained this way (that is, using injectable classes) follow a singleton pattern, whereby the same instance is always returned by the Object Manager whenever a class is requested.</p>
 
-<h2 id="plugin-intro">Introduction to Magento plug-ins</h2>
-<p>Magento enables you to change, or <em>extend</em>, the behavior of any original, public method in any Magento class. You can change the behavior of an <em>original method</em> by creating an extension. These extensions use the <code>Plugin</code> class and are therefore referred to as plug-ins.</p>
+<p>Most development also requires working with objects that are individual instances of classes (for example, a model representing a database entity).  These are referred to as <a href="/guides/v2.0/extension-dev-guide/depend-inj.html#dep-inj-mod-type-inject"><em>non-injectables</em></a>. Non-injectiables are not obtained directly using constructor injection; instead, instantiate them using <em>factories</em>.</p>
 
-<p>To ensure that plug-ins work correctly, you must follow declaration and naming rules.</p>
-
-<p>You use <em>interception</em> to reduce conflicts among extensions that change the behavior of the same class or method. You implement interception using the <code>Plugin</code> class, which observes public methods, and listener methods in this class. A plug-in changes behavior of an original class, but does not change a class itself. Because they can be called sequentially, according to a configured sort order, these plug-ins do not conflict.</p>
-
-<p>Interception ensures that conflicting extensions run without intervention.</p>
-
-<h2 id="plugin-limit">Limitations</h2>
-
-<p>You cannot use plug-ins for:</p>
-
-<!-- * Classes created without dependency injection. That is, you cannot use plugins with classes that you create directly through the new operator. -->
-<ul>
-  <li>Final methods / classes</li>
-  <li>Non-public methods</li>
-  <li>Class methods (such as static methods)</li>
-  <li><code>__construct</code></li>
-  <li>Virtual types</li>
-</ul>
-
-<h2 id="plugin-declare">Declare a plug-in</h2>
-
-<p>You declare a plugin for an object in the <code>di.xml</code> file for a module:</p>
-
-<script src="https://gist.github.com/xcomSteveJohnson/c9a36d9ec887c4bbc34d.js"></script>
-
-<p>You must specify these elements:</p>
-
-<ul>
-  <li><code>type name</code>. A class, interface, or virtual type, which the plug-in observes.</li>
-  <li><code>plugin name</code>. An arbitrary plug-in name that identifies a plug-in. Also used to merge the configurations for the plug-in.</li>
-  <li><code>plugin type</code>. The name of a plug-in’s class or its virtual type. Use the following schema when you specify this element: <code>\Vendor\Module\Plugin\&lt;ModelName&gt;Plugin</code>.</li>
-  <li><code>plugin sortOrder</code>. The order in which plug-ins that call the same method are run.</li>
-  <li><code>plugin disabled</code>. To disable a plug-in, set this element to <code>true</code>.</li>
-</ul>
-
-<h2 id="plugin-priority">Prioritize plug-ins</h2>
-<p>Several conditions influence how plug-ins apply to the same class or interface:</p>
-
-<ul>
-  <li>
-    <p>Whether a listener method in a plug-in should apply before, after, or around an original method.</p>
-
-    <p>Use one or more of the following methods to extend or modify an original method’s behavior with the interception functionality:</p>
-
-    <ul>
-      <li>
-        <p>Change the arguments of an original method using the before-listener.</p>
-
-        <p>The before-listener also:</p>
-
-        <ul>
-          <li>Does not require you to declare unused arguments from the original method. See <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Interception/Interceptor.php#L118-L126" target="_blank">Magento\Framework\Interception\Interceptor.php</a> for details.</li>
-          <li>Returns nothing if it modifies no arguments.</li>
-        </ul>
-      </li>
-      <li>Change the values returned by an original method using the after-listener.</li>
-      <li>
-        <p>Change both the arguments and returned values of an original method using the around-listener.</p>
-
-        <p>Unlike <code>before</code> or <code>after</code>, the <code>around</code> listener prevents the execution of the original method.</p>
-      </li>
-      <li>
-        <p>Override an original method (which is referred to as a <em>conflicting change</em>).</p>
-
-        <div class="bs-callout bs-callout-info" id="info">
-    <p>Overriding a class is a <em>conflicting</em> change. Extending a class's behavior is a <em>non-conflicting</em> change.
-
-
-</p></div>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>The sort order of a plug-in.</p>
-
-    <p>This parameter defines the order in which the plug-ins that use the same type of listener and call the same method are run.</p>
-
-    <p>If several plug-ins apply to the same original method, the following sequence is observed:</p>
-
-    <ul>
-      <li>The before listener in a plug-in with the highest priority (that is, with the smallest value of <code>sortOrder</code> argument).</li>
-      <li>The around listener in a plug-in with the highest priority (that is, with the smallest value of <code>sortOrder</code> argument).</li>
-      <li>Other before listeners in plug-ins according to sort order specified for them (that is, from the smallest to the greatest value).</li>
-      <li>Other around listeners in plug-ins according to the sort order specified for them (that is, from the smallest to the greatest value).</li>
-      <li>The after listener in a plug-in with the lowest priority (that is, with the greatest value of <code>sortOrder</code> argument).</li>
-      <li>Other after listeners in plug-ins, in the reverse sort order specified for them (that is, from the greatest to the smallest value).</li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="plugin-example">Example plug-ins</h2>
-<p>To change the arguments of an original method or add some behavior before an original method is called, use the before-listener method. The method should return the changed argument, or an array of arguments, if the original method had multiple arguments. If the method returns <code>null</code>, no arguments are changed.</p>
-
-<p>Prefix the name of the original method with <code>before</code> as the following sample shows:</p>
+<h3 id="purpose-of-factories">Purpose of factories</h3>
+<p>Factories are special objects that have only one purpose: to create an instance of one non-injectable class or interface. Unlike other objects, factories are allowed to depend on the object manager. Factories are used to isolate the object manager from business code as the following example shows:</p>
 
 <div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-
-<span class="k">namespace</span> <span class="nx">My\Module\Plugin</span><span class="p">;</span>
-
-<span class="k">class</span> <span class="nc">ProductPlugin</span>
+<span class="k">class</span> <span class="nc">Magento\Core\Model\Config\BaseFactory</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">beforeSetName</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nv">$name</span><span class="p">)</span>
+    <span class="k">protected</span> <span class="nv">$_objectManager</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">Magento\Framework\ObjectManager</span> <span class="nv">$objectManager</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;(&#39;</span> <span class="o">.</span> <span class="nv">$name</span> <span class="o">.</span> <span class="s1">&#39;)&#39;</span><span class="p">];</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_objectManager</span> <span class="o">=</span> <span class="nv">$objectManager</span><span class="p">;</span>
     <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">create</span><span class="p">(</span><span class="nv">$sourceData</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_objectManager</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span><span class="s1">&#39;Magento\Core\Model\Config\Base&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;sourceData&#39;</span> <span class="o">=&gt;</span> <span class="nv">$sourceData</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+
+<h3 id="factories-are-generated-classes">Factories are generated classes</h3>
+<p>Factories are always named identically to the classes they instantiate, suffixed with <code>Factory</code>.  (For example, <code>Magento\Cms\Model\BlockFactory</code> is responsible for objects of the class <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Cms/Model/Block.php" target="_blank">Magento\Cms\Model\Block</a>.)</p>
+
+<p>An important thing to understand about factories is that they are an automatically generated class type.  Factory classes do not need to be explicitly defined.  Simply reference a class name with <code>Factory</code> appended in a constructor, and Magento automatically generates the factory class if it does not already exist.  (See <a href="/guides/v2.0/extension-dev-guide/code-generation.html">Code generation</a> for more information.)  </p>
+
+<p>Factory classes can be explicitly defined, however, if customization of the typical factory behavior is desired for a specific class. The code in factories provides <code>typeSafety</code> (<code>@return</code> annotation) so IDEs understand the type of returned object for the type.</p>
+
+<h3 id="factories-are-injectable">Factories are injectable</h3>
+<p>Factories themselves are injectables, and therefore constructor injection is still key to the process of instantiating objects.  Receive a factory class via a constructor:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="k">function</span> <span class="nf">__construct</span> <span class="p">(</span>
+    <span class="nx">\Magento\Cms\Model\BlockFactory</span> <span class="nv">$blockFactory</span>
+<span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">blockFactory</span> <span class="o">=</span> <span class="nv">$blockFactory</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
 
-<p>To change the values returned by an original method or add some behavior after an original method is called, use the after-listener method.</p>
-
-<p>Prefix the name of the original method with <code>after</code> as the following sample shows:</p>
+<p>When an instance of the class is needed, use the factory to instantiate it:</p>
 
 <div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-
-<span class="k">namespace</span> <span class="nx">My\Module\Plugin</span><span class="p">;</span>
-
-<span class="k">class</span> <span class="nc">ProductPlugin</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">afterGetName</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nv">$result</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="s1">&#39;|&#39;</span> <span class="o">.</span> <span class="nv">$result</span> <span class="o">.</span> <span class="s1">&#39;|&#39;</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="nv">$block</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">blockFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">();</span>
 <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
 
-<p>To change both the arguments and returned values of an original method or add some behavior before and after an original method is called, use the around-listener method.</p>
+<p>The <code>_create_</code> method of factories accepts an array, which is passed as the <code>$data</code> array to the instantiated object.</p>
 
-<p>Prefix the name of the original listener with <code>around</code> as the following sample shows:</p>
-
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-
-<span class="k">namespace</span> <span class="nx">My\Module\Plugin</span><span class="p">;</span>
-
-<span class="k">class</span> <span class="nc">ProductPlugin</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">aroundSave</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nx">\Closure</span> <span class="nv">$proceed</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">doSmthBeforeProductIsSaved</span><span class="p">();</span>
-        <span class="nv">$returnValue</span> <span class="o">=</span> <span class="nv">$proceed</span><span class="p">();</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nv">$returnValue</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">postProductToFacebook</span><span class="p">();</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="nv">$returnValue</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
-
-<p>The around-listener method receives two parameters (<code>$subject</code> and <code>$proceed</code>), followed by the arguments belonging to an original method.</p>
-
-<p>The <code>$subject</code> parameter provides access to all public methods of the original class.</p>
-
-<p>The <code>$proceed</code> parameter calls the next plug-in or method.</p>
-
-<h2 id="config-inheritance">Configuration inheritance</h2>
-
-<p>The configuration inheritance implies that a plug-in applied to a class or interface is derived by the classes or interfaces, which implement or inherit an original class or interface.</p>
-
-<p>You can use the configuration inheritance to implement AOP-like functionality with plug-ins, for instance, to observe the same methods of all models.</p>
-
-<p>You can override the plug-ins defined in the global scope by changing <code>di.xml</code> file of an area.</p>
-
-<h4 id="related-topics">Related topics</h4>
-
-<ul>
-  <li><a href="/guides/v2.0/extension-dev-guide/depend-inj.html#dep-inj-compile">Definition compiler tool</a></li>
-  <li><a href="/guides/v2.0/extension-dev-guide/depend-inj.html">Dependency injection</a></li>
-</ul>
+<p>Just as interfaces can be specified in constructor injection to obtain the best object implementing that interface (as defined in dependency injection preferences), factories can be used for such interfaces as well.  For example, requesting an object of the class <code>Magento\Customer\Api\Data\CustomerInterfaceFactory</code> in a constructor results in a factory responsible for creating instances of the appropriate dependency injection preference implementing <code>Magento\Customer\Api\Data\CustomerInterface</code>.</p>
 
 
 		</div>

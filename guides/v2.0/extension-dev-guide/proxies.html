@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento plug-ins</title>
+	<title>Proxies</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/extension-dev-guide/plugins.html">
+	<link rel="canonical" href="//guides/v2.0/extension-dev-guide/proxies.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -132,10 +132,12 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Magento plug-ins</h1>
+		<h1 class="page-heading">Proxies</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/extension-dev-guide/plugins.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/extension-dev-guide/proxies.md" target="_blank">Edit this page on GitHub</a>
 		
+			
+			<a class="contributor" href="http://www.classyllama.com/" target="_blank">Thanks to Classy Llama for contributing this topic</a>
 		
 	</div>
 </section>
@@ -556,7 +558,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/proxies.html">Proxies</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/extension-dev-guide/proxies.html">Proxies</a></li>
 
 									
 
@@ -580,7 +582,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/extension-dev-guide/plugins.html">Magento plug-ins</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/plugins.html">Magento plug-ins</a></li>
 
 									
 
@@ -772,187 +774,70 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<h2 id="magento-plug-ins">Magento plug-ins</h2>
+		<h2 id="proxies">Proxies</h2>
 
-<ul>
-  <li><a href="#plugin-intro">Introduction to Magento plug-ins</a></li>
-  <li><a href="#plugin-limit">Limitations</a></li>
-  <li><a href="#plugin-declare">Declare a plug-in</a></li>
-  <li><a href="#plugin-priority">Prioritize plug-ins</a></li>
-  <li><a href="#plugin-example">Example plug-ins</a></li>
-  <li><a href="#config-inheritance">Configuration inheritance</a></li>
-</ul>
+<p>Magento’s <a href="/guides/v2.0/extension-dev-guide/depend-inj.html#dep-inj-preview-cons">constructor injection pattern</a> enables you to flexibly manage your class dependencies. However, constructor injection also means that a chain reaction of object instantiation is often the result when you create an object. (The original object has dependencies that have dependencies, and those objects have dependencies, and so on.)</p>
 
-<h2 id="plugin-intro">Introduction to Magento plug-ins</h2>
-<p>Magento enables you to change, or <em>extend</em>, the behavior of any original, public method in any Magento class. You can change the behavior of an <em>original method</em> by creating an extension. These extensions use the <code>Plugin</code> class and are therefore referred to as plug-ins.</p>
+<p>If a class’s constructor is particularly resource-intensive, this can lead to unnecessary performance impact when another class depends on it, if the expensive object does not end up being needed during a particular request. (You can display a <em>dependency graph</em> of such objects by enabling <a href="/guides/v2.0/config-guide/bootstrap/mage-profiler.html">profiling</a>.)</p>
 
-<p>To ensure that plug-ins work correctly, you must follow declaration and naming rules.</p>
-
-<p>You use <em>interception</em> to reduce conflicts among extensions that change the behavior of the same class or method. You implement interception using the <code>Plugin</code> class, which observes public methods, and listener methods in this class. A plug-in changes behavior of an original class, but does not change a class itself. Because they can be called sequentially, according to a configured sort order, these plug-ins do not conflict.</p>
-
-<p>Interception ensures that conflicting extensions run without intervention.</p>
-
-<h2 id="plugin-limit">Limitations</h2>
-
-<p>You cannot use plug-ins for:</p>
-
-<!-- * Classes created without dependency injection. That is, you cannot use plugins with classes that you create directly through the new operator. -->
-<ul>
-  <li>Final methods / classes</li>
-  <li>Non-public methods</li>
-  <li>Class methods (such as static methods)</li>
-  <li><code>__construct</code></li>
-  <li>Virtual types</li>
-</ul>
-
-<h2 id="plugin-declare">Declare a plug-in</h2>
-
-<p>You declare a plugin for an object in the <code>di.xml</code> file for a module:</p>
-
-<script src="https://gist.github.com/xcomSteveJohnson/c9a36d9ec887c4bbc34d.js"></script>
-
-<p>You must specify these elements:</p>
-
-<ul>
-  <li><code>type name</code>. A class, interface, or virtual type, which the plug-in observes.</li>
-  <li><code>plugin name</code>. An arbitrary plug-in name that identifies a plug-in. Also used to merge the configurations for the plug-in.</li>
-  <li><code>plugin type</code>. The name of a plug-in’s class or its virtual type. Use the following schema when you specify this element: <code>\Vendor\Module\Plugin\&lt;ModelName&gt;Plugin</code>.</li>
-  <li><code>plugin sortOrder</code>. The order in which plug-ins that call the same method are run.</li>
-  <li><code>plugin disabled</code>. To disable a plug-in, set this element to <code>true</code>.</li>
-</ul>
-
-<h2 id="plugin-priority">Prioritize plug-ins</h2>
-<p>Several conditions influence how plug-ins apply to the same class or interface:</p>
-
-<ul>
-  <li>
-    <p>Whether a listener method in a plug-in should apply before, after, or around an original method.</p>
-
-    <p>Use one or more of the following methods to extend or modify an original method’s behavior with the interception functionality:</p>
-
-    <ul>
-      <li>
-        <p>Change the arguments of an original method using the before-listener.</p>
-
-        <p>The before-listener also:</p>
-
-        <ul>
-          <li>Does not require you to declare unused arguments from the original method. See <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Interception/Interceptor.php#L118-L126" target="_blank">Magento\Framework\Interception\Interceptor.php</a> for details.</li>
-          <li>Returns nothing if it modifies no arguments.</li>
-        </ul>
-      </li>
-      <li>Change the values returned by an original method using the after-listener.</li>
-      <li>
-        <p>Change both the arguments and returned values of an original method using the around-listener.</p>
-
-        <p>Unlike <code>before</code> or <code>after</code>, the <code>around</code> listener prevents the execution of the original method.</p>
-      </li>
-      <li>
-        <p>Override an original method (which is referred to as a <em>conflicting change</em>).</p>
-
-        <div class="bs-callout bs-callout-info" id="info">
-    <p>Overriding a class is a <em>conflicting</em> change. Extending a class's behavior is a <em>non-conflicting</em> change.
-
-
-</p></div>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>The sort order of a plug-in.</p>
-
-    <p>This parameter defines the order in which the plug-ins that use the same type of listener and call the same method are run.</p>
-
-    <p>If several plug-ins apply to the same original method, the following sequence is observed:</p>
-
-    <ul>
-      <li>The before listener in a plug-in with the highest priority (that is, with the smallest value of <code>sortOrder</code> argument).</li>
-      <li>The around listener in a plug-in with the highest priority (that is, with the smallest value of <code>sortOrder</code> argument).</li>
-      <li>Other before listeners in plug-ins according to sort order specified for them (that is, from the smallest to the greatest value).</li>
-      <li>Other around listeners in plug-ins according to the sort order specified for them (that is, from the smallest to the greatest value).</li>
-      <li>The after listener in a plug-in with the lowest priority (that is, with the greatest value of <code>sortOrder</code> argument).</li>
-      <li>Other after listeners in plug-ins, in the reverse sort order specified for them (that is, from the greatest to the smallest value).</li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="plugin-example">Example plug-ins</h2>
-<p>To change the arguments of an original method or add some behavior before an original method is called, use the before-listener method. The method should return the changed argument, or an array of arguments, if the original method had multiple arguments. If the method returns <code>null</code>, no arguments are changed.</p>
-
-<p>Prefix the name of the original method with <code>before</code> as the following sample shows:</p>
+<p>As an example, consider the following two classes:</p>
 
 <div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-
-<span class="k">namespace</span> <span class="nx">My\Module\Plugin</span><span class="p">;</span>
-
-<span class="k">class</span> <span class="nc">ProductPlugin</span>
+<span class="k">class</span> <span class="nc">SlowLoading</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">beforeSetName</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nv">$name</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;(&#39;</span> <span class="o">.</span> <span class="nv">$name</span> <span class="o">.</span> <span class="s1">&#39;)&#39;</span><span class="p">];</span>
+        <span class="c1">// ... Do something resource intensive</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getValue</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="s1">&#39;SlowLoading value&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">FastLoading</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="nv">$slowLoading</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
+        <span class="nx">SlowLoading</span> <span class="nv">$slowLoading</span>
+    <span class="p">){</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">slowLoading</span> <span class="o">=</span> <span class="nx">slowLoading</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getFastValue</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="s1">&#39;FastLoading value&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getSlowValue</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">slowLoading</span><span class="o">-&gt;</span><span class="na">getValue</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
 <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
 
-<p>To change the values returned by an original method or add some behavior after an original method is called, use the after-listener method.</p>
+<p>Assume that class <code>SlowLoading</code> has a non-trivial performance impact when instantiated (perhaps due to a complex database query or a call to a third-party web API). Because of the dependency injection in the constructor of <code>FastLoading</code>, this impact is incurred if <code>FastLoading</code> is instantiated.  Note, however, that the <code>SlowLoading</code> instance is used only in the method <code>getSlowValue</code>, meaning that the resource cost is unnecessary if this method is never called on the <code>FastLoading</code> object.</p>
 
-<p>Prefix the name of the original method with <code>after</code> as the following sample shows:</p>
+<h3 id="proxies-are-generated-code">Proxies are generated code</h3>
+<p>Magento has a solution for this situation: proxies. <a href="http://en.wikipedia.org/wiki/Proxy_pattern" target="_blank">Proxies</a> extend other classes to become lazy-loaded versions of them. That is, a real instance of the class a proxy extends created only after one of the class’s methods is actually called. A proxy implements the same interface as the original class and so can be used as a dependency anywhere the original class can.  Unlike its parent, a proxy has only once dependency: the object manager.</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<p>Proxies are generated code and therefore do not need to be manually written.  (See <a href="/guides/v2.0/extension-dev-guide/code-generation.html">Code generation</a> for more information.) Simply reference a class in the form <code>\Original\Class\Name\Proxy</code>, and the class is generated if it does not exist.</p>
 
-<span class="k">namespace</span> <span class="nx">My\Module\Plugin</span><span class="p">;</span>
+<p>Using the preceding example, a proxy can be passed into the constructor arguments instead of the original class, using DI configuration as follows:</p>
 
-<span class="k">class</span> <span class="nc">ProductPlugin</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">afterGetName</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nv">$result</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="s1">&#39;|&#39;</span> <span class="o">.</span> <span class="nv">$result</span> <span class="o">.</span> <span class="s1">&#39;|&#39;</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;FastLoading&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;slowLoading&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>SlowLoading\Proxy<span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/type&gt;</span></code></pre></div>
 
-<p>To change both the arguments and returned values of an original method or add some behavior before and after an original method is called, use the around-listener method.</p>
+<p>With the proxy used in place of <code>SlowLoading</code>, the <code>SlowLoading</code> class will not be instantiated—and therefore, the resource intensive constructor operations not performed—until the <code>SlowLoading</code> object is used (that is, if the <code>getSlowValue</code> method is called).</p>
 
-<p>Prefix the name of the original listener with <code>around</code> as the following sample shows:</p>
+<p>Because DI configuration is used to inject a proxy, proxies can be dropped in to replace their corresponding classes - or proxy replacements <em>removed</em> - without touching application code.</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-
-<span class="k">namespace</span> <span class="nx">My\Module\Plugin</span><span class="p">;</span>
-
-<span class="k">class</span> <span class="nc">ProductPlugin</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">aroundSave</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nx">\Closure</span> <span class="nv">$proceed</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">doSmthBeforeProductIsSaved</span><span class="p">();</span>
-        <span class="nv">$returnValue</span> <span class="o">=</span> <span class="nv">$proceed</span><span class="p">();</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nv">$returnValue</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">postProductToFacebook</span><span class="p">();</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="nv">$returnValue</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
-
-<p>The around-listener method receives two parameters (<code>$subject</code> and <code>$proceed</code>), followed by the arguments belonging to an original method.</p>
-
-<p>The <code>$subject</code> parameter provides access to all public methods of the original class.</p>
-
-<p>The <code>$proceed</code> parameter calls the next plug-in or method.</p>
-
-<h2 id="config-inheritance">Configuration inheritance</h2>
-
-<p>The configuration inheritance implies that a plug-in applied to a class or interface is derived by the classes or interfaces, which implement or inherit an original class or interface.</p>
-
-<p>You can use the configuration inheritance to implement AOP-like functionality with plug-ins, for instance, to observe the same methods of all models.</p>
-
-<p>You can override the plug-ins defined in the global scope by changing <code>di.xml</code> file of an area.</p>
-
-<h4 id="related-topics">Related topics</h4>
-
-<ul>
-  <li><a href="/guides/v2.0/extension-dev-guide/depend-inj.html#dep-inj-compile">Definition compiler tool</a></li>
-  <li><a href="/guides/v2.0/extension-dev-guide/depend-inj.html">Dependency injection</a></li>
-</ul>
+<p>As a practical example of a proxy, you can see the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Store/Model/StoreManager.php" target="_blank">StoreManager</a> class and then see the generated <code>StoreManager</code> proxy class.</p>
 
 
 		</div>

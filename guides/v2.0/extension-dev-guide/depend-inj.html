@@ -548,6 +548,22 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/factories.html">Instantiating objects with factories</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/proxies.html">Proxies</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/code-generation.html">Code generation</a></li>
 
 									
@@ -800,7 +816,7 @@
   </dd>
   <dt>Proxy</dt>
   <dd>
-    <p>Auto-generated object that implements the same interface as the original object, but unlike this original object has only one dependency—the object manager. A proxy is used for lazy loading of optional dependencies. A <a href="http://en.wikipedia.org/wiki/Proxy_pattern" target="_blank">proxy</a> can be used to break cyclical dependencies. For more information about proxies, see <a href="#dep-inj-preview-cons">Preview of constructor injection</a>.</p>
+    <p>Auto-generated object that implements the same interface as the original object, but unlike this original object has only one dependency—the object manager. A proxy is used for lazy loading of optional dependencies. A <a href="http://en.wikipedia.org/wiki/Proxy_pattern" target="_blank">proxy</a> can be used to break cyclical dependencies. For more information, see <a href="/guides/v2.0/extension-dev-guide/proxies.html">Proxies</a>.</p>
   </dd>
   <dt>Lifecycle</dt>
   <dd>
@@ -833,16 +849,6 @@
  
 <span class="nv">$test</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
 <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
-
-<p>Use a <a href="http://en.wikipedia.org/wiki/Proxy_pattern" target="_blank">proxy</a> for expensive optional dependencies; proxies are auto-generated, no coding is required.</p>
-
-<p>A sample proxy (which you declare in <code>di.xml</code>) follows:</p>
-
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Backend\Model\Config\Structure\Element\Iterator\Field&quot;</span> <span class="na">shared=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;arguments&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;groupFlyweight&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;object&quot;</span><span class="nt">&gt;</span>Magento\Backend\Model\Config\Structure\Element\Group\Proxy<span class="nt">&lt;/argument&gt;</span>
-    <span class="nt">&lt;/arguments&gt;</span>
-<span class="nt">&lt;/type&gt;</span></code></pre></div>
 
 <h2 id="dep-inj-mod">Configuration overview</h2>
 
@@ -1199,34 +1205,13 @@ Parameters configured for a class type are automatically configured for all of i
 
 <ul>
   <li>Injectables can request other injectables in the constructor, but non-injectables <em>cannot</em> request other objects in a constructor</li>
-  <li>If a business function of an injectable object is to produce non-injectables, the injectable must ask for a <a href="#dep-inj-mod-type-fact">factory</a> in its constructor (due to the fact that factories are injectables)</li>
+  <li>If a business function of an injectable object is to produce non-injectables, the injectable must ask for a <a href="/guides/v2.0/extension-dev-guide/factories.html">factory</a> in its constructor (due to the fact that factories are injectables)</li>
   <li>If a business function of an injectable object is to perform some actions on a non-injectable, it must receive the non-injectable as a method argument</li>
 </ul>
 
-<p>You can create non-injectables in services with object <a href="#dep-inj-mod-type-fact">factories</a> or you can pass them in as method parameters. </p>
+<p>You can create non-injectables in services with object <a href="/guides/v2.0/extension-dev-guide/factories.html">factories</a> or you can pass them in as method parameters.</p>
 
 <p>Do not push injectables to non-injectables because it violates the <a href="http://en.wikipedia.org/wiki/Law_of_Demeter" target="_blank">Law of Demeter</a> and requires additional lookup during object unserialization.</p>
-
-<h3 id="dep-inj-mod-type-fact">Factories</h3>
-<p>Factories are special objects that have only one purpose: to create an instance of one non-injectable class or interface. Unlike other objects, factories are allowed to depend on the object manager. Factories are used to isolate object manager from business code:</p>
-
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="k">class</span> <span class="nc">Magento\Core\Model\Config\BaseFactory</span>
-<span class="p">{</span>
-    <span class="k">protected</span> <span class="nv">$_objectManager</span><span class="p">;</span>
- 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">Magento\Framework\ObjectManager</span> <span class="nv">$objectManager</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_objectManager</span> <span class="o">=</span> <span class="nv">$objectManager</span><span class="p">;</span>
-    <span class="p">}</span>
- 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">create</span><span class="p">(</span><span class="nv">$sourceData</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_objectManager</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span><span class="s1">&#39;Magento\Core\Model\Config\Base&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;sourceData&#39;</span> <span class="o">=&gt;</span> <span class="nv">$sourceData</span><span class="p">));</span>
-    <span class="p">}</span>
-<span class="p">}</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
-
-<p>Most factories are simple, so developers do not have to bother with writing them. If a non-existent factory is encountered by object manager in runtime mode or compiler, the object manager generates the factory. </p>
 
 <h2 id="dep-inj-compile">Compiler tool</h2>
 <p>To compile all non-existent proxies and factories; and to pre-compile class definitions, inheritance information, and plugin definitions for multiple stores or websites, see one of the following topics:</p>
