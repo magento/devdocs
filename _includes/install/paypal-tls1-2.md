@@ -23,10 +23,6 @@ or
 
 	... (more messages) ...
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>TLS is often used interchangeably with an older protocol, Secure Sockets Layer (SSL). Hereafter, we use <em>TLS</em>.</p>
-</div>
-
 ### Description
 The source of the issue is your version of [`libcurl`](https://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html){:target="_blank"}. `libcurl` versions earlier than 7.34 use TLS 1.1 or earlier by default. 
 
