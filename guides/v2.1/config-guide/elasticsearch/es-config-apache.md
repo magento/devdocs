@@ -29,11 +29,24 @@ This section discusses how to configure nginx as an *unsecure* proxy so that Mag
 	<p>The reason the proxy is not secured in this example is it's easier to set up and verify. You can use TLS with this proxy if you want; to do so, make sure you add the proxy information to your secure virtual host configuration.</p>
 </div>
 
+=========== Apache 2.4 notes =============
+
+a2enmod mod_proxy
+`vim /etc/apache2/sites-available/000-default.conf`
+<VirtualHost *:8080>
+			ProxyPass "/" "http://localhost:9200/""
+			ProxyPassReverse "/" http://localhost:9200/""
+</VirtualHost>
+service apache2 restart
+
+
+=====================================================
+
 This section discusses how to configure an Elasticsearch proxy using a virtual host. 
 
 1.	As a user with `root` privileges, open your virtual host configuration file in a text editor.
 
-	*	Apache 2.4: `vim /etc/apache2/sites-available/default-000.conf`
+	*	Apache 2.4: 
 	*	Apache 2.2: `vim /etc/httpd/conf/httpd.conf`
 
 2.	Locate the `Listen` directive and add another listen port; for example:
