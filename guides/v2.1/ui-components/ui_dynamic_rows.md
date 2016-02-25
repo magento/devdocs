@@ -4,6 +4,7 @@ group:  UI Library
 subgroup: F_UI Library Dynamic Rows Component
 title: Dynamic Rows Component
 menu_title: Dynamic Rows Component
+menu_node: parent
 github_link: ui-components/ui_dynamic_rows.md
 ---
 ## Overview
@@ -12,7 +13,7 @@ The dynamic-rows component is used to create a table where rows of configurable 
 
 Following is an illustration of how such a table looks like:
 
-<img src="{{site.baseurl}}/common/images/ui-dynamic-row.png" />
+<img src="{{site.baseurl}}common/images/ui-dynamic-row.png" />
 
 **Contents:**
 
@@ -58,6 +59,7 @@ The following image is an illustration of the dynamic rows component view when t
 <div style="border: 1px solid #ABABAB">
 <img src="{{site.baseurl}}common/images/ui_collapsibleTemplate.png"/>
 </div>
+
 
 ### HTML templates for fields
 
@@ -118,7 +120,7 @@ A sample configuration follows:
 
 The result of this configuration is:
 
-<img={{site.baseurl}}common/images/dynamic-rows-ui.png>
+<img src="{{site.baseurl}}common/images/dynamic-rows-ui.png">
 
 Each component used in dynamic rows is configured separately.
 
@@ -220,6 +222,7 @@ The following table contains the options you can configure for the whole grid an
     <td>
       A link to the constructor. Also dynamic-rows has extended
       component to transfer data with grid
+<p class="q">transfer with?</p>
     </td>
     <td>
       String
@@ -261,7 +264,7 @@ The following table contains the options you can configure for the whole grid an
       <code>disabled</code>
     </td>
     <td>
-      If specified in the child of , then is used to disable the
+      Disable the
       grid
     </td>
     <td>
@@ -296,20 +299,6 @@ The following table contains the options you can configure for the whole grid an
       String
     </td>
     <td></td>
-  </tr>
-  <tr>
-    <td>
-      <code>renderColumnHeader</code>
-    </td>
-    <td>
-      Show header of a column. <p class="q">How exactly is it configured in xml, how do we specify for which column we show/hide the header?</p>
-    </td>
-    <td>
-      Boolean
-    </td>
-    <td>
-      <code>true</code>
-    </td>
   </tr>
   <tr>
     <td>
@@ -349,20 +338,6 @@ The following table contains the options you can configure for the whole grid an
     </td>
     <td>
       <code>ui/dynamic-rows/templates/default</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>visible</code>
-    </td>
-    <td>
-      Show column. <p class="q">How exactly is it configured in xml, how do we specify for which column we show/hide the header?</p>
-    </td>
-    <td>
-      Boolean
-    </td>
-    <td>
-      <code>true</code>
     </td>
   </tr>
 </table>
@@ -424,20 +399,13 @@ The following options are available:
       <code>positionProvider</code>
     </td>
     <td>
-      Relative path to position cell
-      <p class="q">
-        need clarification
-      </p>
+Relative path to the column which defines the sorting order.  
     </td>
     <td>
       String
     </td>
     <td>
-      position
-      <p class="q">
-        need clarification
-      </p>
-    </td>
+      "*position*"</td>
   </tr>
 </table>
 
@@ -479,10 +447,8 @@ By default, the dynamic rows component uses the data provider of its parent comp
       <code>map</code>
     </td>
     <td>
-      Object to mapping values from grid to dynamic-rows.
-      <p class="q">
-        need clarification
-      </p> Set as follows:
+      Object for mapping values from a grid used as data source to dynamic-rows.
+ Set as follows:
       <pre>
 &lt;item name="map" xsi:type="array"&gt;
      &lt;item name="dynamic_rows_id" xsi:type="string"&gt;'grid_id'&lt;/item&gt;
@@ -500,7 +466,7 @@ By default, the dynamic rows component uses the data provider of its parent comp
 </table>
 
 
-### Define fields type
+### Define columns' properties
 
 Field type is specified in the scope of the record container (by default it is `<container name="record">`) similar to the following example:
 
@@ -542,6 +508,31 @@ You can configure the following:
   </tr>
   <tr>
     <td>
+      <code>dataScope</code>
+    </td>
+    <td>
+The path to data storage
+    </td>
+    <td>
+      String
+    </td>
+    <td>
+
+    </td>
+  </tr>
+  <tr>
+<td><code>disabled</code></td>
+    <td>
+      If specified for a column, then is used to disable a column
+    </td>
+    <td>
+      Boolean
+    </td>
+    <td>
+    </td>
+  </tr>
+  <tr>
+    <td>
       <code>formElement</code>
     </td>
     <td>
@@ -555,8 +546,8 @@ You can configure the following:
         </li>
         <li>List box. Set the value to <code>select</code>
         </li>
-        <li style="list-style: none">You can also add a "delete"
-        icon by setting the value to <code>action_delete</code>.
+        <li>You can also add a "delete"
+        icon by setting the value to <code>action_delete</code>
         </li>
       </ul>
     </td>
@@ -564,24 +555,6 @@ You can configure the following:
       String
     </td>
     <td></td>
-  </tr>
-  <tr>
-    <td>
-      <code>dataScope</code>
-    </td>
-    <td>
-      <p class="q">
-        Need a description
-      </p>
-    </td>
-    <td>
-      String
-    </td>
-    <td>
-      <p class="q">
-        Default value?
-      </p>
-    </td>
   </tr>
   <tr>
     <td>
@@ -597,39 +570,30 @@ You can configure the following:
   </tr>
   <tr>
     <td>
-      <code>options</code>
+      <code>renderColumnHeader</code>
     </td>
     <td>
-      <p class="q">
-        Need a description
-      </p>Set as follows:
-      <pre>
-&lt;item name="options" xsi:type="array"&gt;
-    &lt;item name="0" xsi:type="array"&gt;
-        &lt;item name="label" xsi:type="string"&gt;Item&lt;/item&gt;
-        &lt;item name="value" xsi:type="string"&gt;0&lt;/item&gt;
-    &lt;/item&gt;
-&lt;/item&gt;
-</pre>
-    </td>
-    <td>
-      Array
-    </td>
-    <td></td>
-  </tr>
-  <tr>
-<td><code>disabled</code></td>
-    <td>
-      If specified for a column, then is used to disable a column
-      <p class="q">
-        how should it be specified to disable the column?
-      </p>
-    </td>
-    <td>
-      Disable the grid
+      Show header of a column 
     </td>
     <td>
       Boolean
+    </td>
+    <td>
+      <code>true</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>visible</code>
+    </td>
+    <td>
+      Show column 
+</td>
+    <td>
+      Boolean
+    </td>
+    <td>
+      <code>true</code>
     </td>
   </tr>
 </table>
@@ -659,26 +623,16 @@ You can configure the grid to render a text instead of the certain field. To do 
 	- `index{Number}`: column index
 	- `state{Boolean}`:column state
 - `setVisible(state)`: set visibility to all grid
-- `setColumnVisibility(index, state)` show or hide a particular column
-- `reload()` rerender records
-
-<p class="q">What is meant by rerender</p>
-
-- `onUpdateRecordTemplate(templateName)`: rerender records with a new template
+- `setColumnVisibility(index, state)`: show or hide a particular column
+- `reload()`: delete records and render anew
+- `onUpdateRecordTemplate(templateName)`: delete records and render with a new template
 	- `templateName{String}`: new template name
 - `sort(position, elem)`: sort elements by position
-	- `position{Number} `
-	- `elem{Object}`
-<p class="q">Description?</p>
-<p class="q">Description?</p>
-
+	- `position{Number}`: position
+	- `elem{Object}`: the current DOM element
 - `deleteRecord(index)`: delete a record by index
 	- `index{Number}`: index record
-
-<p class="q">Set the index or get or ..?</p>
-
 - `addChild(data, index)`: render a new record instance
 	- `data{Object}` object with a instance data
 	- `index{Number} `: index for the new instance
 
-<p class="q">Set the new index?</p>
