@@ -14,7 +14,7 @@ Out of the box, Magento checkout consists of two steps:
 - Shipping Information
 - Review and Payment Information
 
-When a logged in shopper proceeds to checkout, on the Shipping Information step Magento renders the saved addresses. The shopper can then click on the address they want to use as a shipping address. Default address renderers cover the majority of use cases, but Magento provides way to register custom address renderer for a new address type.
+When a logged in shopper proceeds to checkout, on the Shipping Information step Magento renders the saved addresses. The shopper can then click on the address they want to use for shipping. The default address renderers cover the majority of use cases, but Magento provides a way to register custom address renderer for a new address type.
 
 This topic describes how to implement a custom shipping address renderer.
 
@@ -33,7 +33,7 @@ All the steps are described further.
 
 ## Create the JS renderer component (shipping address renderer) {#create}
 
-Your shipping address renderer must be implemented as a UI component. That is, it must be a RequireJS module, and must return a factory function, that takes a configurable object.
+Your shipping address renderer must be implemented as a JavaScript UI component. That is, it must be a RequireJS module, and must return a factory function, that takes a configurable object.
 
 For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should depend on the Magento_Checkout module. Module dependencies are specified in the [module's `composer.json`]({{site.gdeurl}}extension-dev-guide/build/composer-integration.html).
 
@@ -97,8 +97,6 @@ In you custom module directory create the component's `.js` file for the process
 
 Here you need to specify the URL used for calculating the shipping rates for your custom address type.
 
-<p class="q">Does not shipping rate depend also on the carrier, not only the address? how can there be one url for calculation?</p>
-
 Following is a sample of the shipping rate processor code:
 
 {%highlight js%}
@@ -151,7 +149,7 @@ define(
 
 ## Create the JS model for the shipping address saving processor {#save}
 
-This processor is responsible for sending the address to be used for shipping + selected rate to the server. 
+This processor is responsible for sending the shipping address and the selected rate to the server. 
 
 In you custom module directory create the component's `.js` file for the processor. It must be located under the `<your_module_dir>/view/frontend/web/js/model/` directory. 
 
@@ -208,7 +206,7 @@ define(
 
 ## Create the JS component registering the processors {#register}
 
-In you custom module directory create the `.js` UI component that registers the rate and saving processors. It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory.
+In you custom module directory, create the `.js` UI component that registers the rate processor and the saving processor. It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory.
 
 The file content must be similar to the following:
 
@@ -230,10 +228,10 @@ define(
     ) {
         'use strict';
  
-        //Register rate processor
+        /** Register rate processor */
         shippingRateService.registerProcessor(%address type%, customShippingRateProcessor);
  
-        //Register save shipping address processor
+        /** Register save shipping address processor */
         shippingSaveProcessor.registerProcessor(%address type%, custormShippingSaveProcessor);
  
         /** Add view logic here if needed */
@@ -291,7 +289,7 @@ The <code>address_type</code> you need to specify in the layout, is the value yo
 
 ### Add the shipping address renderer to the "Ship-To" block (optional) {#ship_to}
 
-On the Review and Payment Information step of checkout, the address selected by the shopper to be used for shipping is displayed in the **Ship-To** section for customer to make sure everything is set correctly.
+On the Review and Payment Information step of checkout, the shipping address is displayed in the **Ship-To** section for customer to make sure everything is set correctly.
 
 If you want your custom address type to be displayed here as well, you need to create an `.html` template for rendering it, and declare in the corresponding location in layout.
 
