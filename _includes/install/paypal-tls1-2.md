@@ -37,7 +37,7 @@ This issue is typically limited to CentOS 6 or earlier because [recommended pack
 
 You have the following options:
 
-*	(Recommended). Upgrade your PayPal server to CentOS 7. 
+*	(Recommended). Upgrade your Magento server to CentOS 7. 
 
 	Its recommended repositories support current versions of TLS with `libcurl`. Using CentOS 7 is the most secure way to continue operating your store and accepting PayPal.
 *	(Less secure). Upgrade to `libcurl` 7.34 or later on CentOS 6 using a non-recommended third-party repository.
@@ -47,8 +47,3 @@ You have the following options:
 	<div class="bs-callout bs-callout-warning">
     	<p>Installing software from non-recommended repositories can change other system packages and can result in issues. We strongly recommend you upgrade <code>libcurl</code> in a development environment and <em>thoroughly test</em> all payment processors you use as well as any other critical software before putting this into production.</p>
 	</div>
-
-
-
-
-
