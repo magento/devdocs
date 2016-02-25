@@ -18,7 +18,7 @@ When a logged in shopper proceeds to checkout, on the Shipping Information step 
 
 This topic describes how to implement a custom shipping address renderer.
 
-To implement a payment method rendering in checkout, you need to take the following steps:
+To implement shipping address rendering in checkout, you need to take the following steps:
 
 1. [Create the JS renderer component (shipping address renderer)](#create).
 3. [Create a template for the shipping address renderer.](#template)
@@ -37,7 +37,7 @@ Your shipping address renderer must be implemented as a UI component. That is, i
 
 For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should depend on the Magento_Checkout module. Module dependencies are specified in the [module's `composer.json`]({{site.gdeurl}}extension-dev-guide/build/composer-integration.html).
 
-In you custom module directory create the component's `.js` file (shipping address renderer). It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory.
+In your custom module directory create the component's `.js` file (shipping address renderer). It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory.
 
 
 The general view of the shipping address renderer is the following:
@@ -95,7 +95,7 @@ A shipping rate processor is responsible for retrieving the shipping rates avail
 
 In you custom module directory create the component's `.js` file for the processor. It must be located under the `<your_module_dir>/view/frontend/web/js/model/` directory. 
 
-Here you need to specify the URL used for calculating the shipping rate for your custom address type.
+Here you need to specify the URL used for calculating the shipping rates for your custom address type.
 
 <p class="q">Does not shipping rate depend also on the carrier, not only the address? how can there be one url for calculation?</p>
 
@@ -153,7 +153,7 @@ define(
 
 This processor is responsible for sending the address to be used for shipping + selected rate to the server. 
 
-In you custom module directory create the component's `.js` file for the processor. It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory. 
+In you custom module directory create the component's `.js` file for the processor. It must be located under the `<your_module_dir>/view/frontend/web/js/model/` directory. 
 
 
 Following is a sample of the shipping rate processor code:
