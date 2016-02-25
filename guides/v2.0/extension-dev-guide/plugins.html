@@ -768,7 +768,6 @@
 </ul>
 
 <h2 id="plugin-intro">Introduction to Magento plug-ins</h2>
-
 <p>Magento enables you to change, or <em>extend</em>, the behavior of any original, public method in any Magento class. You can change the behavior of an <em>original method</em> by creating an extension. These extensions use the <code>Plugin</code> class and are therefore referred to as plug-ins.</p>
 
 <p>To ensure that plug-ins work correctly, you must follow declaration and naming rules.</p>
@@ -786,7 +785,7 @@
   <li>Final methods / classes</li>
   <li>Non-public methods</li>
   <li>Class methods (such as static methods)</li>
-  <li>__construct</li>
+  <li><code>__construct</code></li>
   <li>Virtual types</li>
 </ul>
 
@@ -807,28 +806,36 @@
 </ul>
 
 <h2 id="plugin-priority">Prioritize plug-ins</h2>
-
 <p>Several conditions influence how plug-ins apply to the same class or interface:</p>
 
 <ul>
   <li>
     <p>Whether a listener method in a plug-in should apply before, after, or around an original method.</p>
 
-    <p>Use one or more of the following methods to extend/modify an original method’s behavior with the interception functionality:</p>
+    <p>Use one or more of the following methods to extend or modify an original method’s behavior with the interception functionality:</p>
 
     <ul>
-      <li>Change the arguments of an original method through the before-listener.</li>
-      <li>Change the values returned by an original method through the after-listener.</li>
       <li>
-        <p>Change both the arguments and returned values of an original method through the around-listener.</p>
+        <p>Change the arguments of an original method using the before-listener.</p>
+
+        <p>The before-listener also:</p>
+
+        <ul>
+          <li>Does not require you to declare unused arguments from the original method. See <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Interception/Interceptor.php#L118-L126" target="_blank">Magento\Framework\Interception\Interceptor.php</a> for details.</li>
+          <li>Returns nothing if it modifies no arguments.</li>
+        </ul>
+      </li>
+      <li>Change the values returned by an original method using the after-listener.</li>
+      <li>
+        <p>Change both the arguments and returned values of an original method using the around-listener.</p>
 
         <p>Unlike <code>before</code> or <code>after</code>, the <code>around</code> listener prevents the execution of the original method.</p>
       </li>
       <li>
-        <p>Override an original method (a conflicting change).</p>
+        <p>Override an original method (which is referred to as a <em>conflicting change</em>).</p>
 
         <div class="bs-callout bs-callout-info" id="info">
-    <p>Overriding a class is a conflicting change. Extending a class's behavior is non-conflicting change.
+    <p>Overriding a class is a <em>conflicting</em> change. Extending a class's behavior is a <em>non-conflicting</em> change.
 
 
 </p></div>
@@ -838,7 +845,7 @@
   <li>
     <p>The sort order of a plug-in.</p>
 
-    <p>This parameter defines the order in which the plugins that use the same type of listener and call the same method are run.</p>
+    <p>This parameter defines the order in which the plug-ins that use the same type of listener and call the same method are run.</p>
 
     <p>If several plug-ins apply to the same original method, the following sequence is observed:</p>
 
@@ -854,7 +861,6 @@
 </ul>
 
 <h2 id="plugin-example">Example plug-ins</h2>
-
 <p>To change the arguments of an original method or add some behavior before an original method is called, use the before-listener method. The method should return the changed argument, or an array of arguments, if the original method had multiple arguments. If the method returns <code>null</code>, no arguments are changed.</p>
 
 <p>Prefix the name of the original method with <code>before</code> as the following sample shows:</p>
@@ -869,7 +875,8 @@
     <span class="p">{</span>
         <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;(&#39;</span> <span class="o">.</span> <span class="nv">$name</span> <span class="o">.</span> <span class="s1">&#39;)&#39;</span><span class="p">];</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
 
 <p>To change the values returned by an original method or add some behavior after an original method is called, use the after-listener method.</p>
 
@@ -885,7 +892,8 @@
     <span class="p">{</span>
         <span class="k">return</span> <span class="s1">&#39;|&#39;</span> <span class="o">.</span> <span class="nv">$result</span> <span class="o">.</span> <span class="s1">&#39;|&#39;</span><span class="p">;</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
 
 <p>To change both the arguments and returned values of an original method or add some behavior before and after an original method is called, use the around-listener method.</p>
 
@@ -906,7 +914,8 @@
         <span class="p">}</span>
         <span class="k">return</span> <span class="nv">$returnValue</span><span class="p">;</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
 
 <p>The around-listener method receives two parameters (<code>$subject</code> and <code>$proceed</code>), followed by the arguments belonging to an original method.</p>
 
