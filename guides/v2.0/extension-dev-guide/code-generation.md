@@ -28,7 +28,7 @@ In particular,
 
 *	A Factory class creates instances of a type. See <a href="{{ site.gdeurl }}extension-dev-guide/factories.html">Instantiating objects with factories</a> for more information. Factories are directly referenced within application code.
 
-*	You can designate a Proxy to be generated for a type in order to ensure the type is not instantiated until it is needed. See <a href="{{ site.gdeurl }}extension-dev-guide/proxies.html">Proxies</a> for more information. Proxies are directly referenced within application code.
+*	You can designate a Proxy to be generated for a type in order to ensure the type is not instantiated until it is needed. See <a href="{{ site.gdeurl }}extension-dev-guide/proxies.html">Proxies</a> for more information. Proxies are directly referenced within DI configuration.
 
 *   Interceptor classes are automatically generated to facilitate Magento's plugin system. An interceptor class extends a type and is returned by the Object Manager to allow multiple plugin classes to inject logic into different methods. Interceptors work behind the scenes and are _not_ directly referenced in application code.
 

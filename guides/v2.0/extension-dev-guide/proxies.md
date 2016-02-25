@@ -62,22 +62,7 @@ Magento has a solution for this situation: proxies. <a href="http://en.wikipedia
 
 Proxies are generated code and therefore do not need to be manually written.  (See <a href="{{ site.gdeurl }}extension-dev-guide/code-generation.html">Code generation</a> for more information.) Simply reference a class in the form `\Original\Class\Name\Proxy`, and the class is generated if it does not exist.
 
-### Solve the issue using a proxy
-Using the preceding example, the constructor signature of FastLoading could be changed as follows:
-
-{% highlight PHP %}
-<?php
-    public function __construct(
-        SlowLoading\Proxy $slowLoading
-    ){
-        $this->slowLoading = slowLoading;
-    }
-?>
-{% endhighlight %}
-
-Now, the `SlowLoading` class is instantiated&mdash;and therefore the resource intensive constructor operations not performed&mdash;until the SlowLoading object is used (that is, if the `getSlowValue` method is called).
-
-The preceding example of directly referencing a proxy in a constructor parameter would function correctly.  However, a better practice would be to leave the original interface or class reference in your constructor signature and specify the proxy using the dependency injection configuration instead:
+Using the preceding example, a proxy can be passed into the constructor arguments instead of the original class, using DI configuration as follows:
 
 {% highlight XML %}
 <type name="FastLoading">
@@ -87,6 +72,8 @@ The preceding example of directly referencing a proxy in a constructor parameter
 </type>
 {% endhighlight %}
 
-In this way, proxies can be dropped in to replace their corresponding classes&mdash;or proxy replacements _removed_&mdash;without touching application code.
+With the proxy used in place of `SlowLoading`, the `SlowLoading` class will not be instantiated&mdash;and therefore, the resource intensive constructor operations not performed&mdash;until the `SlowLoading` object is used (that is, if the `getSlowValue` method is called).
+
+Because DI configuration is used to inject a proxy, proxies can be dropped in to replace their corresponding classes - or proxy replacements _removed_ - without touching application code.
 
 As a practical example of a proxy, you can see the <a href="{{ site.mage2000url }}app/code/Magento/Store/Model/StoreManager.php" target="_blank">StoreManager</a> class and then see the generated `StoreManager` proxy class.
