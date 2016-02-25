@@ -111,7 +111,7 @@ To create a password:
 3.	Create a `/etc/nginx/passwd` directory to store passwords: 
 
 		mkdir -p /etc/nginx/passwd
-		htpasswd -c /etc/nginx/.<filename> <username>
+		htpasswd -c /etc/nginx/passwd/.<filename> <username>
 
 	<div class="bs-callout bs-callout-info" id="info">
 		<p>For security reasons, <code>&lt;filename></code> should be hidden; that is, it must start with a period. An example follows. </p>
@@ -120,13 +120,13 @@ To create a password:
 	Example:
 
 		mkdir -p /etc/nginx/passwd
-		htpasswd -c /etc/nginx/passwd/.htpasswd_magento_elasticsearch magento_elasticsearch
+		htpasswd -c /etc/nginx/passwd/.magento_elasticsearch magento_elasticsearch
 	
 	Follow the prompts on your screen to create a password the user.
 
 5.	*(Optional).* To add another user to your password file, enter the same command without the `-c` (create) option:
 
-		htpasswd /etc/nginx/passwd/.htpasswd <username>
+		htpasswd /etc/nginx/passwd/.<filename> <username>
 6.	Verify that the contents of `/etc/nginx/passwd` is correct.
 
 ### Step 3: Set up access to nginx {#es-ws-secure-nginx-access}
