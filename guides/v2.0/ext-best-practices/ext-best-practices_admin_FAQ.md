@@ -4,7 +4,7 @@ group: ext-best-practices
 subgroup: Best Practice Categories
 title: Admin UI FAQ
 menu_title: Admin UI FAQ
-menu_order: 2
+menu_order: 1
 github_link: ext-best-practices/ext-best-practices_admin_FAQ.md
 
 
@@ -12,7 +12,7 @@ github_link: ext-best-practices/ext-best-practices_admin_FAQ.md
 ---
 ##{{page.menu_title}}
 
-This FAQ provides Best Practices about creating extensions that integrate cleanly into the Admin panel UI.
+This FAQ provides Best Practices for creating extensions that integrate cleanly into the Admin panel UI.
 
 How to display extensions in the Admin is a great place for using Best Practices; what extension developers choose to do (or not do) when integrating their extensions has a big impact on the look-n-feel of the Admin UI.
 
