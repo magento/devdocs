@@ -54,8 +54,25 @@ This section discusses how to specify who can access the nginx server.
 2.	Restart nginx:
 
 		service nginx restart
+3.	Verify the proxy works by entering the following command:
 
-3.	Continue with the next section.
+		curl -i http://localhost:<proxy port>/_cluster/health
+
+	For example, if your proxy uses port 8080:
+
+		curl -i http://localhost:8080/_cluster/health
+
+	Messages similar to the following display to indicate success:
+
+		HTTP/1.1 200 OK
+		Date: Tue, 23 Feb 2016 20:38:03 GMT
+		Content-Type: application/json; charset=UTF-8
+		Content-Length: 389
+		Connection: keep-alive
+
+		{"cluster_name":"elasticsearch","status":"yellow","timed_out":false,"number_of_nodes":1,"number_of_data_nodes":1,"active_primary_shards":5,"active_shards":5,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":5,"delayed_unassigned_shards":0,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":50.0}
+
+4.	Continue with the next section.
 
 {% include config/es-elasticsearch-magento.md %}
 

@@ -2,6 +2,21 @@
 
 For security reasons, you can locate the password file anywhere except your web server docroot. In this example, we show how to store the password file in a new directory.
 
+#### Install htpasswd if necessary
+
+First, see if you have the Apache `htpasswd` utility is installed as follows:
+
+1.	Enter the following command to determine if `htpasswd` is already installed:
+
+		which htpasswd
+
+	If a path displays, it is installed; if the command returns no output, `htpasswd` is not installed.
+2.	If necessary, install `htpasswd`:
+
+	*	Ubuntu: `apt-get -y install apache2-utils`
+	*	CentOS: `yum -y install httpd-tools`
+
+#### Create a password file
 Enter the following commands as a user with `root` privileges:
 
 	mkdir -p /usr/local/apache/password
