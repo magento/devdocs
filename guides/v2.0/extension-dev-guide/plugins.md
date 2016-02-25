@@ -38,7 +38,7 @@ You cannot use plug-ins for:
 * Final methods / classes
 * Non-public methods
 * Class methods (such as static methods)
-* __construct
+* `__construct`
 * Virtual types
 
 <h2 id="plugin-declare">Declare a plug-in</h2>
@@ -56,14 +56,19 @@ You must specify these elements:
 * `plugin disabled`. To disable a plug-in, set this element to `true`.
 
 <h2 id="plugin-priority">Prioritize plug-ins</h2>
-
 Several conditions influence how plug-ins apply to the same class or interface:
 
 *  Whether a listener method in a plug-in should apply before, after, or around an original method.
 
-   Use one or more of the following methods to extend/modify an original method's behavior with the interception functionality:
+   Use one or more of the following methods to extend or modify an original method's behavior with the interception functionality:
 
-   *  Change the arguments of an original method using the before-listener.
+    *   Change the arguments of an original method using the before-listener.
+
+        The before-listener also:
+
+        *   Does not require you to declare unused arguments from the original method. See [Magento\Framework\Interception\Interceptor.php]({{ site.mage2000url }}lib/internal/Magento/Framework/Interception/Interceptor.php#L118-L126){:target="_blank"} for details.
+        *   Returns nothing if it modifies no arguments.
+
    *  Change the values returned by an original method using the after-listener.
    *  Change both the arguments and returned values of an original method using the around-listener.
 
