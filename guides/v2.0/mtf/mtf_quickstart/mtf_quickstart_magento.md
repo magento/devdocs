@@ -15,17 +15,17 @@ github_link: mtf/mtf_quickstart/mtf_quickstart_magento.md
 
 ## Change WYSIWYG settings
 
-Disable WYSIWYG editor setting to avoid unpredictable changes in the user interface.
+Disable WYSIWYG editor setting to enable to enable you to work with Selenium Server.
 
 1. Log in to the Magento Admin as an administrator
 2. Follow **Stores &gt; Configuration &gt; General &gt; Content Management &gt; WYSIWYG Options**
-3. Set **Enable WYSIWYG Editor** to **Disabled Completely** to enable you to work with Selenium
+3. Set **Enable WYSIWYG Editor** to **Disabled Completely** 
 
 ![Change content settings]({{site.baseurl}}common/images/mtf_qstart_mag_wysiwyg.png)
 
 ## Change security settings
 
-Enable the Admin Account Sharing setting to avoid unpredictable logout during testing session. And disable the Secrete Key in URL setting to open pages using direct URLs and to assure correct cURL requests..
+Enable the Admin Account Sharing setting to avoid unpredictable logout during testing session. And disable the Secret Key in URL setting to open pages using direct URLs.
 
 1. Follow **Stores &gt; Configuration &gt; Advanced &gt; Admin &gt; Security**
 2. Set **Admin Account Sharing** to **Yes**
