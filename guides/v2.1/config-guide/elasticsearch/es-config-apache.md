@@ -32,7 +32,7 @@ This section discusses how to configure nginx as an *unsecure* proxy so that Mag
 See one of the following sections:
 
 *	[Set up a proxy for Apache 2.4](#es-apache-proxy-24)
-*	[Set up a proxy for Apache 2.2](#es-apache-proxy-224)
+*	[Set up a proxy for Apache 2.2](#es-apache-proxy-22)
 
 ### Set up a proxy for Apache 2.4 {#es-apache-proxy-24}
 This section discusses how to configure an Elasticsearch proxy using a virtual host. 
