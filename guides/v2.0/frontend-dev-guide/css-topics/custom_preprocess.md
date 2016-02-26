@@ -2,7 +2,7 @@
 layout: default
 group: fedg
 subgroup: D_CSS
-title: Use custom CSS preprocessor
+title: Add custom CSS preprocessor (like Sass)
 menu_order: 2
 github_link: frontend-dev-guide/css-topics/custom_preprocess.md
 ---
@@ -28,9 +28,9 @@ You can view it as example when adding your custom preprocessor. Or install the 
 
 ### Prerequisites
 
-For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code. Create a new custon module for your customizations.
+For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code. Create a new custom module for your customizations.
 
-For details about creating a module refer to [Magento PHP Developer Guide]({{site.gdeurl}}extension-dev-guide/bk-extension-dev-guide.html)
+For details about creating a module refer to the [Magento PHP Developer Guide]({{site.gdeurl}}extension-dev-guide/bk-extension-dev-guide.html).
 
 ### Step by step instruction
 
