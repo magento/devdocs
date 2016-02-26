@@ -24,7 +24,7 @@ A Selenium web-driver cannot enter data to fields with WYSIWYG. This option disa
 
 ![Change content settings]({{site.baseurl}}common/images/mtf_qstart_mag_wysiwyg.png){:width="650px"}
 
-### Refresh **Page Cache**
+### Refresh page cache
 
 * Go to **Cache Management**.
 
