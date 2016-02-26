@@ -9,38 +9,84 @@ github_link: frontend-dev-guide/css-topics/custom_preprocess.md
 
 <h2>What's in this topic</h2>
 
-This topic describes how to add a custom CSS preprocessor. Adding Sass preprocessor is used for illustration.
-
+This topic describes how to add a custom CSS preprocessor. Adding [Sass](http://sass-lang.com/) support is used for illustration.
 
 **Contents**
 
 * TOC
 {:toc} 
 
-## Overview
 
-For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. When adding a custom CSS preprocess your custom module should [depend]({{site.gdeurl}}extension-dev-guide/build/composer-integration.html) on ... module.
-
-<p class="q">should it necessary depend on a certain module?</p>
-
-To add a custom preprocess, take the following steps:
-
-
-1. Add your library in the `<your_module>/composer.json` file.
-
-<p class="q">which one, global? in which section, require?</p>
-
-2. Add the files required for integration with Magento:
- - In `<your_custom_module>/etc/di.xml`...
- - 3. Do something with `/Magento/Framework/View/Asset/PreProcessor/Pool.php`
- - Adapter class
- - Configure the pool generator where you specify the file type.
- - Preprocessor class. For example, scss.php. It should implement the processing of the @magento_import and @import directives.
-
-## Sample data SasS module
+## Sample SasS module
 
 Magento issued a sample [module-sample-scss](https://github.com/magento/magento2-samples/tree/master/module-sample-scss) module implementing the Sass preprocessor.
 
-You can view it as example when adding your custom preprocessor. Or use as is if you need to add Sass preprocessing and use .sass styles.
+You can view it as example when adding your custom preprocessor. Or install the module as is if you need to add Sass preprocessing. Installing a module is described in the [repository's Readme file](https://github.com/magento/magento2-samples/blob/master/README.md).
 
-How to add a module? 
+
+## Adding custom preprocessor 
+
+### Prerequisites
+
+For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code. Create a new custon module for your customizations.
+
+For details about creating a module refer to [Magento PHP Developer Guide]({{site.gdeurl}}extension-dev-guide/bk-extension-dev-guide.html)
+
+### Step by step instruction
+
+To add a custom preprocess, take the following steps:
+
+1. In your module directory, add the adapter PHP class. It must implement the `Magento/Framework/View/Asset/ContentProcessorInterface` interface. 
+For illustration, see the adapter for SasS in the sample module: [module-sample-scss/Preprocessor/Adapter/Scss/Processor.php](https://github.com/magento/magento2-samples/blob/master/module-sample-scss/Preprocessor/Adapter/Scss/Processor.php)
+
+1. If your adapter uses external libraries, declare them in the `composer.json` file in the root of your module directory. The internal `Magento/Framework` library must be declared as dependency in any case. 
+For illustration, see the composer.json file of the SasS sample module: [module-sample-scss/Preprocessor/Adapter/Scss/Processor.php](https://github.com/magento/magento2-samples/blob/master/module-sample-scss/Preprocessor/Adapter/Scss/Processor.php)
+
+2. If in your custom preprocessor, the syntax of the importing directives is different from `@import` and `@magento_import`, you need to implement custom processor classes. 
+You can view the default Magento processors as illustration: [lib/internal/Magento/Framework/Css/PreProcessor/Instruction]({{mage2000url}}lib/internal/Magento/Framework/Css/PreProcessor/Instruction). 
+
+2. Declare your custom adapter and processor (if relevant) in `di.xml` under the `<your_module_dir>/etc` directory. Add content similar to the following:
+
+{%highlight xml%}
+
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="AlternativeSourceProcessors">
+        <arguments>
+            <argument name="alternatives" xsi:type="array">
+                <item name="%your_preprocessor_name%" xsi:type="array">
+                    <item name="class" xsi:type="string">%path/to/your/adapter/class%</item>
+                </item>
+                <!-- Use the following syntax to set the priority of processors. That is, what file types will the system search for, when requested CSS files are not found. The following lines set SCSS to be prior to LESS -->
+                <item name="less" xsi:type="array">
+                    <item name="after" xsi:type="string">scss</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <!-- Add the following declaration if have custom processors for importing directives -->
+    <virtualType name="AssetPreProcessorPoolForSourceThemeDeploy" type="Magento\Framework\View\Asset\PreProcessor\Pool">
+        <arguments>
+            <argument name="preprocessors" xsi:type="array">
+                <item name="less" xsi:type="array">
+                    <item name="magento_import" xsi:type="array">
+                        <item name="class" xsi:type="string">%path/to/your/import/processor%</item>
+                    </item>
+                    <item name="import" xsi:type="array">
+                        <item name="after" xsi:type="string">magento_import</item>
+                        <item name="class" xsi:type="string">%path/to/your/magento_import/processor%</item>
+                    </item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+</config>
+{%endhighlight%}
+
+
+## Related reading
+
+- [Magento PHP Developer Guide]({{site.gdeurl}}extension-dev-guide/bk-extension-dev-guide.html)
+
+<p class="q">what about the compilation modes (server-side and client-side?), will they work for the custom file types?</p>
