@@ -132,7 +132,7 @@ Start each property declaration in a new line.
 
 #### Properties colon indents
 
-Do not add spaces before or after the colon that separates property names from values.
+Add space after but not before the colon that separates property names from values.
 
 **Correct**:
 
