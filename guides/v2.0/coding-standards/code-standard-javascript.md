@@ -238,7 +238,7 @@ See one of the following sections:
 
 * [Curly braces](#fedg_js-coding_codestyle_curl)
 * [Functions and methods](##fedg_js-coding_naming_fns)
-* [Variables and properties
+* [Variables and properties](##fedg_js-coding_naming_vars)
 
 ### Curly braces {#fedg_js-coding_codestyle_curl}
 Because of implicit semicolon insertion, always start your curly braces on the same line as whatever they are opening.
