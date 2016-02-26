@@ -368,6 +368,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_magento.html">Prepare Magento application</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_environmemt.html">Prepare environment for test run</a></li>
 
 									
@@ -618,7 +626,6 @@
   <li><a href="#mtf_quickstart_config_phpunitxml">Edit <code>phpunit.xml</code> to configure PHPUnit</a>    <ul>
       <li><a href="#mtf_quickstart_config_phpunitxml_frontend">Set URL for Magento storefront under test</a></li>
       <li><a href="#mtf_quickstart_config_phpunitxml_backend">Set URL for Magento Admin URL under test</a></li>
-      <li><a href="#mtf_quickstart_config_phpunitxml_win-credent">Windows only! Set full path for <code>basedir</code> and <code>credentials_file_path</code> parameters</a></li>
     </ul>
   </li>
   <li><a href="#mtf_quickstart_config_configxml">Edit <code>config.xml</code> to configure Magento Testing Framework</a>    <ul>
@@ -651,14 +658,6 @@ For <code>name="app_frontend_url"</code> set <code>value</code> that is your act
 
 <p>Example:
 <code>&lt;env name="app_backend_url" value="http://example.com/magento2/admin"/&gt;</code>.</p>
-
-<h4 id="mtf_quickstart_config_phpunitxml_win-credent">Windows only! Set full path for <code>basedir</code> and <code>credentials_file_path</code> parameters</h4>
-
-<p>Find <code>&lt;php&gt;</code> element.</p>
-
-<p>For <code>&lt;env name="basedir"</code> set <code>value="&lt;full_path_to_directory&gt;" /&gt;</code> (that is directory for error logs). For example, <code>&lt;env name="basedir" value="C:\magento2\dev\tests\functional\var\log" /&gt;</code>.</p>
-
-<p>For <code>name="credentials_file_path" </code> set <code>value="&lt;full_path_to_directory&gt;"</code> (that is file with credentials for Magento modules, if required). For example, <code>&lt;env name="credentials_file_path" value="C:\magento2\dev\tests\functional\credentials.xml" /&gt;</code>.</p>
 
 <h3 id="mtf_quickstart_config_configxml">Edit <code>config.xml</code> to configure Magento Testing Framework</h3>
 
