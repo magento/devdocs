@@ -656,10 +656,17 @@
 		<div>
 
   <h2 id="tls-12-requirement-for-paypal">TLS 1.2 requirement for PayPal</h2>
-  <p>PayPal recently started requiring Transport Layer Security (TLS) version 1.2 to process payments. Systems that do not support TLS 1.2 fail when processing PayPal payments.</p>
+  <p>PayPal recently announced they will require Transport Layer Security (TLS) version 1.2 to process payments in a live environment. (PayPal already requires TLS 1.2 in the sandbox.)</p>
+
+  <p>More information:</p>
+
+  <ul>
+    <li><a href="https://www.paypal.com/uk/webapps/mpp/ssl-security-update" target="_blank">Details (PayPal security bulletin)</a> </li>
+    <li><a href="https://devblog.paypal.com/upcoming-security-changes-notice/#tls" target="_blank">PayPal live payments switching in June 2016 (PayPal technical blog)</a> </li>
+  </ul>
 
   <h3 id="symptom">Symptom</h3>
-  <p>According to <a href="https://www.paypal.com/uk/webapps/mpp/ssl-security-update" target="_blank">PayPal’s security bulletin</a>, symptoms of the issue include the following messages in your error log:</p>
+  <p>According to PayPal, symptoms of the issue include the following messages in your error log:</p>
 
   <pre><code>*Unknown SSL protocol error* in connection to api-3t.sandbox.paypal.com:-9824
 </code></pre>
@@ -702,7 +709,12 @@ Protocol: SSLv3*
       <p>Its recommended repositories support current versions of TLS with <code>libcurl</code>. Using CentOS 7 is the most secure way to continue operating your store and accepting PayPal.</p>
     </li>
     <li>
-      <p>(Less secure). Upgrade to <code>libcurl</code> 7.34 or later on CentOS 6 using a non-recommended third-party repository.</p>
+      <p>(Recommended; verify first.) According to <a href="https://bugzilla.redhat.com/show_bug.cgi?id=1289205" target="_blank">RedHat’s bug 1289205</a>, CentOS 6.8 (not released yet) will have a <code>libcurl</code> version that defaults to TLS 1.2. </p>
+
+      <p>Because Magento can’t guarantee the accuracy of this information, we encourage you to use caution and to <em>thoroughly test</em> your system with CentOS 6.8 before deploying it in a live environment.</p>
+    </li>
+    <li>
+      <p>(Less secure, <em>not recommended</em>). Upgrade to <code>libcurl</code> 7.34 or later on CentOS 6 using a non-recommended third-party repository.</p>
 
       <p>One possible solution is to use the information on <a href="http://serverfault.com/questions/321321/upgrade-curl-to-latest-on-centos" target="_blank">serverfault</a>.</p>
 
