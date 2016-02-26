@@ -799,13 +799,9 @@
 <p>where &lt;VendorName&gt; is the name of the company providing the module and &lt;ModuleName&gt; is the name of the module.</p>
 
 <h3 id="example">Example</h3>
-<pre><code> \Magento\Framework\Component\ComponentRegistrar::register(
-     \Magento\Framework\Component\ComponentRegistrar::MODULE,
-     'Magento_AdminNotification',
-     __DIR__
- );
+<pre><code>use \Magento\Framework\Component\ComponentRegistrar;
+ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Magento_AdminNotification', __DIR__);
 </code></pre>
-<p>&nbsp;</p>
 
 <h2 id="register-themes">Register themes</h2>
 <p>Register themes with:</p>
