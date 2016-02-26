@@ -34,7 +34,7 @@ A Selenium web-driver cannot enter data to fields with WYSIWYG. This option disa
 * From the **Actions** list in the upper left, click **Refresh**.
 * Click **Submit**.
 
-![Refresh Page Cache]({{site.baseurl}}common/images/mtf_cache_refresh.png){:width="650px"}
+![Refresh Page Cache]({{site.baseurl}}common/images/mtf_cache_refresh.png)
 
 
 ## Change security settings
