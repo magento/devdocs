@@ -1,10 +1,15 @@
 <div markdown="1">
 
 ## TLS 1.2 requirement for PayPal
-PayPal recently started requiring Transport Layer Security (TLS) version 1.2 to process payments. Systems that do not support TLS 1.2 fail when processing PayPal payments.
+PayPal recently announced they will require Transport Layer Security (TLS) version 1.2 to process payments in a live environment. (PayPal already requires TLS 1.2 in the sandbox.)
+
+More information:
+
+*	[Details (PayPal security bulletin)](https://www.paypal.com/uk/webapps/mpp/ssl-security-update){:target="_blank"} 
+*	[PayPal live payments switching in June 2016 (PayPal technical blog)](https://devblog.paypal.com/upcoming-security-changes-notice/#tls){:target="_blank"} 
 
 ### Symptom
-According to [PayPal's security bulletin](https://www.paypal.com/uk/webapps/mpp/ssl-security-update){:target="_blank"}, symptoms of the issue include the following messages in your error log:
+According to PayPal, symptoms of the issue include the following messages in your error log:
 
 	*Unknown SSL protocol error* in connection to api-3t.sandbox.paypal.com:-9824
 
@@ -40,7 +45,11 @@ You have the following options:
 *	(Recommended). Upgrade your Magento server to CentOS 7. 
 
 	Its recommended repositories support current versions of TLS with `libcurl`. Using CentOS 7 is the most secure way to continue operating your store and accepting PayPal.
-*	(Less secure). Upgrade to `libcurl` 7.34 or later on CentOS 6 using a non-recommended third-party repository.
+
+*	(Recommended; verify first.) According to [RedHat's bug 1289205](https://bugzilla.redhat.com/show_bug.cgi?id=1289205){:target="_blank"}, CentOS 6.8 (not released yet) will have a `libcurl` version that defaults to TLS 1.2. 
+
+	Because Magento can't guarantee the accuracy of this information, we encourage you to use caution and to *thoroughly test* your system with CentOS 6.8 before deploying it in a live environment.
+*	(Less secure, *not recommended*). Upgrade to `libcurl` 7.34 or later on CentOS 6 using a non-recommended third-party repository.
 
 	One possible solution is to use the information on [serverfault](http://serverfault.com/questions/321321/upgrade-curl-to-latest-on-centos){:target="_blank"}.
 
