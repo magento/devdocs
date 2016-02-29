@@ -19,12 +19,17 @@ All changes are aggregated into two tables:
 where each change is a separate entity in a table containing:
 
 - **Level** with type of change:
- - MAJOR is applied when ...
- - MINOR is applied when ...
+  - MAJOR is applied when ...
+  - MINOR is applied when ...
 - **Target** with the name of an affected subject
 - **Reason** with description of a change
 
 {% include changes/ce_changes.html %}
 
+<!-- LINK DEFINITIONS -->
+
 [Magento CE mainline]: https://github.com/magento/magento2
 [Magento 2.0]: https://github.com/magento/magento2/tree/4cae5d058b7ad877b2ec7d2b6fa0a500f7c16860
+
+[Class]: #class
+[Interface]: #interface
