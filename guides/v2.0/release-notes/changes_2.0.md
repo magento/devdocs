@@ -1,19 +1,25 @@
 ---
 layout: default
 group: release-notes
+subgroup: Breaking changes
 title: Magento 2.0 Backward-Incompatible Changes
-menu_title: Backward-Incompatible Changes
-menu_order: 2
-menu_node: 
+menu_title: Breaking changes
+menu_order:
+menu_node: parent
 github_link: release-notes/changes_2.0.md
 ---
+<h2>Preface</h2>
+This topic discusses the most important backward-incompatible changes made after Magento 2.0.
 
-This topic discusses major backward-incompatible changes made after Magento 2.0.
+To see all backward incompatible changes follow:
+ 
+ - [Magento CE breaking changes][]
+ - [Magento EE breaking changes][]
+
+<h2>Contents</h2>
 
 * TOC
 {:toc}
-
-
 
 ## Framework changes
 
@@ -125,7 +131,7 @@ Magento\Framework\Model\Entity\MetadataPool::getMetadata(Magento\Catalog\Api\Dat
 * To set a relation with another entities such as `category_product_entity` use `identifierField`
 
 {% highlight php startinline=1 %}
-Magento\Framework\Model\Entity\MetadataPool::getMetadata(Magento\Catalog\Api\Data\CategoryInterface) -> getIdentifierField())
+Magento\Framework\Model\Entity\MetadataPool::getMetadata(Magento\Catalog\Api\Data\CategoryInterface) -> getIdentifierField()
 {% endhighlight %}
 
 ### Form initialization changes
@@ -143,6 +149,9 @@ When **Products -> Categories** menu item in the Magento Admin is chosen, the fi
 
 [`<magento2>/app/code/Magento/Catalog/etc/module.xml`]: https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/etc/module.xml
 [`<magento2>/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml`]: https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml
+
+[Magento CE breaking changes]: {{site.gdeurl}}release-notes/changes/ce_changes.html
+[Magento EE breaking changes]: {{site.gdeurl}}release-notes/changes/ee_changes.html
 
 <!-- ABBREVIATIONS -->
 
