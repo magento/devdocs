@@ -825,7 +825,7 @@
 <h2 id="codegen-om">Object Manager responsibility for code compilation</h2>
 <p>When code changes as discussed in the preceding section, one of two Object Manager classes compiles it. The class is chosen based on whether or not the single-tenant compiler or the multi-tenant compiler has been run before.</p>
 
-<p>The single-tenant and multi-tenant compiler create <code>var/di/global.ser</code>, which is a PHP serialized map of all constructor definitions mixed with object linking configuration defined in di.xml. <code>di.xml</code> is the dependency injection configuration. There is a global <code>app/etc/di.xml</code> and there can one defined for every module.</p>
+<p>The single-tenant and multi-tenant compiler create <code>var/di/global.ser</code>, which is a PHP serialized map of all constructor definitions mixed with object linking configuration defined in di.xml. <code>di.xml</code> is the dependency injection configuration. There is a global <code>app/etc/di.xml</code> and there can be one defined for every module.</p>
 
 <!--synced-->
 <div class="bs-callout bs-callout-warning">
