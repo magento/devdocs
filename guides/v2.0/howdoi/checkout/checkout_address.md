@@ -2,8 +2,8 @@
 layout: default
 group: howdoi
 subgroup: checkout
-title: Add custom shipping address renderer
-menu_title: Add custom shipping address renderer
+title: Add a custom shipping address renderer
+menu_title: Add a custom shipping address renderer
 menu_order: 9
 github_link: howdoi/checkout/checkout_address.md
 ---
@@ -14,7 +14,7 @@ Out of the box, Magento checkout consists of two steps:
 - Shipping Information
 - Review and Payment Information
 
-When a logged in shopper proceeds to checkout, on the Shipping Information step Magento renders the saved addresses. The shopper can then click on the address they want to use for shipping. The default address renderers cover the majority of use cases, but Magento provides a way to register custom address renderer for a new address type.
+On the Shipping Information checkout step Magento renders all addresses previously saved by a shopper. The shopper can then select the one to be used for shipping by clicking it. The default address renderers cover the majority of use cases, but Magento provides way to register custom address renderer for a new address type.
 
 This topic describes how to implement a custom shipping address renderer.
 
@@ -35,9 +35,9 @@ All the steps are described further.
 
 Your shipping address renderer must be implemented as a JavaScript UI component. That is, it must be a RequireJS module, and must return a factory function, that takes a configurable object.
 
-For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should depend on the Magento_Checkout module. Module dependencies are specified in the [module's `composer.json`]({{site.gdeurl}}extension-dev-guide/build/composer-integration.html).
+For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code. Instead add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module must depend on the Magento_Checkout module. Module dependencies are specified in the [module's `composer.json`]({{site.gdeurl}}extension-dev-guide/build/composer-integration.html).
 
-In your custom module directory create the component's `.js` file (shipping address renderer). It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory.
+In your custom module directory, create the component's `.js` file (shipping address renderer). It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory.
 
 
 The general view of the shipping address renderer is the following:
@@ -82,7 +82,7 @@ define([
 
 ## Create a template for the shipping address renderer {#template}
 
-In your custom module directory create a new `<your_module_dir>/view/frontend/web/template/<your_template>.html` file. The template can use [Knockout JS](http://knockoutjs.com/) syntax. 
+In your custom module directory, create a new `<your_module_dir>/view/frontend/web/template/<your_template>.html` file. The template can use [Knockout JS](http://knockoutjs.com/) syntax. 
 
 The template should contain a button for setting the address to be used for shipping.
 
@@ -93,11 +93,11 @@ You can use the code from the default template: [app/code/Magento/Checkout/view/
 
 A shipping rate processor is responsible for retrieving the shipping rates available for the given shipping address.
 
-In you custom module directory create the component's `.js` file for the processor. It must be located under the `<your_module_dir>/view/frontend/web/js/model/` directory. 
+In your custom module directory, create the component's `.js` file for the processor. It must be located under the `<your_module_dir>/view/frontend/web/js/model/` directory. 
 
 Here you need to specify the URL used for calculating the shipping rates for your custom address type.
 
-Following is a sample of the shipping rate processor code:
+The following is a sample of the shipping rate processor code:
 
 {%highlight js%}
 define(
@@ -151,7 +151,7 @@ define(
 
 This processor is responsible for sending the shipping address and the selected rate to the server. 
 
-In you custom module directory create the component's `.js` file for the processor. It must be located under the `<your_module_dir>/view/frontend/web/js/model/` directory. 
+In your custom module directory, create the component's `.js` file for the processor. It must be located under the `<your_module_dir>/view/frontend/web/js/model/` directory. 
 
 
 Following is a sample of the shipping rate processor code:
@@ -206,7 +206,7 @@ define(
 
 ## Create the JS component registering the processors {#register}
 
-In you custom module directory, create the `.js` UI component that registers the rate processor and the saving processor. It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory.
+In your custom module directory, create the `.js` UI component that registers the rate processor and the saving processor. It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory.
 
 The file content must be similar to the following:
 
