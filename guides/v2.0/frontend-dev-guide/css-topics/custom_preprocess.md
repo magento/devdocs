@@ -3,7 +3,7 @@ layout: default
 group: fedg
 subgroup: D_CSS
 title: Add custom CSS preprocessor (like Sass)
-menu_order: 2
+menu_order: 7
 github_link: frontend-dev-guide/css-topics/custom_preprocess.md
 ---
 
@@ -17,7 +17,7 @@ This topic describes how to add a custom CSS preprocessor. Adding [Sass](http://
 {:toc} 
 
 
-## Sample SasS module
+## Sample Sass module
 
 Magento issued a sample [module-sample-scss](https://github.com/magento/magento2-samples/tree/master/module-sample-scss) module implementing the Sass preprocessor.
 
@@ -37,16 +37,22 @@ For details about creating a module refer to the [Magento PHP Developer Guide]({
 To add a custom preprocess, take the following steps:
 
 1. In your module directory, add the adapter PHP class. It must implement the `Magento/Framework/View/Asset/ContentProcessorInterface` interface. 
-For illustration, see the adapter for SasS in the sample module: [module-sample-scss/Preprocessor/Adapter/Scss/Processor.php](https://github.com/magento/magento2-samples/blob/master/module-sample-scss/Preprocessor/Adapter/Scss/Processor.php)
+For illustration, see the adapter for Sass in the sample module: [module-sample-scss/Preprocessor/Adapter/Scss/Processor.php](https://github.com/magento/magento2-samples/blob/master/module-sample-scss/Preprocessor/Adapter/Scss/Processor.php)
 
-1. If your adapter uses external libraries, declare them in the `composer.json` file in the root of your module directory. The internal `Magento/Framework` library must be declared as dependency in any case. 
-For illustration, see the composer.json file of the SasS sample module: [module-sample-scss/Preprocessor/Adapter/Scss/Processor.php](https://github.com/magento/magento2-samples/blob/master/module-sample-scss/Preprocessor/Adapter/Scss/Processor.php)
+2. If the browser compilation in possible for your file types, that is, if the corresponding JavaScript library exists, create the custom renderer for the client-side compilation. This will allow the default [client-side compilation functionality]({{site.gdeurl}}frontend-dev-guide/css-topics/css-preprocess.html#client-side) to be applied for your files type as well. 
+You can use the default Magento renderer for reference: [Magento/Developer/Model/View/Page/Config/ClientSideLessCompilation/Renderer]({{site.mage2000url}}app/code/Magento/Developer/Model/View/Page/Config/ClientSideLessCompilation/Renderer.php)
 
 2. If in your custom preprocessor, the syntax of the importing directives is different from `@import` and `@magento_import`, you need to implement custom processor classes. 
-You can view the default Magento processors as illustration: [lib/internal/Magento/Framework/Css/PreProcessor/Instruction]({{mage2000url}}lib/internal/Magento/Framework/Css/PreProcessor/Instruction). 
+You can view the default Magento processors as illustration: [lib/internal/Magento/Framework/Css/PreProcessor/Instruction]({{site.mage2000url}}lib/internal/Magento/Framework/Css/PreProcessor/Instruction). 
 
-2. Declare your custom adapter and processor (if relevant) in `di.xml` under the `<your_module_dir>/etc` directory. Add content similar to the following:
+2. In the `di.xml` file under the `<your_module_dir>/etc` directory, declare the following:
+	* your custom adapter 
+	* your processor (if relevant)
+	* the renderer for the client-side compilation (if relevant)
 
+The content of your `di.xml` will be similar to the following:
+
+**`<your_module_dir>/etc/di.xml`**
 {%highlight xml%}
 
 <?xml version="1.0"?>
@@ -68,7 +74,7 @@ You can view the default Magento processors as illustration: [lib/internal/Magen
     <virtualType name="AssetPreProcessorPoolForSourceThemeDeploy" type="Magento\Framework\View\Asset\PreProcessor\Pool">
         <arguments>
             <argument name="preprocessors" xsi:type="array">
-                <item name="less" xsi:type="array">
+                <item name="%your_preprocessor%" xsi:type="array">
                     <item name="magento_import" xsi:type="array">
                         <item name="class" xsi:type="string">%path/to/your/import/processor%</item>
                     </item>
@@ -80,7 +86,14 @@ You can view the default Magento processors as illustration: [lib/internal/Magen
             </argument>
         </arguments>
     </virtualType>
-
+    <!-- Declare the renderer for client-side compilation -->
+<type name="Magento\Developer\Model\View\Page\Config\RendererFactory">
+        <arguments>
+            <argument name="rendererTypes" xsi:type="array">
+                <item name="client_side_compilation" xsi:type="string">%path/to/your/client/side/renderer%</item>
+            </argument>
+        </arguments>
+    </type>
 </config>
 {%endhighlight%}
 
@@ -89,4 +102,3 @@ You can view the default Magento processors as illustration: [lib/internal/Magen
 
 - [Magento PHP Developer Guide]({{site.gdeurl}}extension-dev-guide/bk-extension-dev-guide.html)
 
-<p class="q">what about the compilation modes (server-side and client-side?), will they work for the custom file types?</p>
