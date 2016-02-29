@@ -572,7 +572,7 @@ Or you can also use this style:
     };
 
 ### Closures {#closures}
-Keep in mind is that a closure keeps a pointer to its enclosing scope.
+Keep in mind that a closure keeps a pointer to its enclosing scope.
 
 As a result, attaching a closure to a DOM element can create a circular reference and thus, a memory leak.
 
