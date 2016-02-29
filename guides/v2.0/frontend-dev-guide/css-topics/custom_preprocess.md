@@ -39,7 +39,7 @@ To add a custom preprocess, take the following steps:
 1. In your module directory, add the adapter PHP class. It must implement the `Magento/Framework/View/Asset/ContentProcessorInterface` interface. 
 For illustration, see the adapter for Sass in the sample module: [module-sample-scss/Preprocessor/Adapter/Scss/Processor.php](https://github.com/magento/magento2-samples/blob/master/module-sample-scss/Preprocessor/Adapter/Scss/Processor.php)
 
-2. If the browser compilation in possible for your file types, that is, if the corresponding JavaScript library exists, create the custom renderer for the client-side compilation. This will allow the default [client-side compilation functionality]({{site.gdeurl}}frontend-dev-guide/css-topics/css-preprocess.html#client-side) to be applied for your files type as well. 
+2. If the browser compilation is possible for your file types, that is, if the corresponding JavaScript library exists, create the custom renderer for the client-side compilation. This will allow the default [client-side compilation functionality]({{site.gdeurl}}frontend-dev-guide/css-topics/css-preprocess.html#client-side) to be applied for your files type as well. 
 You can use the default Magento renderer for reference: [Magento/Developer/Model/View/Page/Config/ClientSideLessCompilation/Renderer]({{site.mage2000url}}app/code/Magento/Developer/Model/View/Page/Config/ClientSideLessCompilation/Renderer.php)
 
 2. If in your custom preprocessor, the syntax of the importing directives is different from `@import` and `@magento_import`, you need to implement custom processor classes. 
@@ -70,7 +70,7 @@ The content of your `di.xml` will be similar to the following:
             </argument>
         </arguments>
     </virtualType>
-    <!-- Add the following declaration if have custom processors for importing directives -->
+    <!-- Add the following declaration if you have custom processors for importing directives -->
     <virtualType name="AssetPreProcessorPoolForSourceThemeDeploy" type="Magento\Framework\View\Asset\PreProcessor\Pool">
         <arguments>
             <argument name="preprocessors" xsi:type="array">
