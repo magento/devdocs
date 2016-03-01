@@ -18,11 +18,8 @@ All changes are aggregated into two tables:
 
 where each change is a separate entity in a table containing:
 
-- **Level** with type of change:
-  - MAJOR is applied when ...
-  - MINOR is applied when ...
 - **Target** with the name of an affected subject
-- **Reason** with description of a change
+- **Reason** with the description of a change
 
 {% include changes/ce_changes.html %}
 
