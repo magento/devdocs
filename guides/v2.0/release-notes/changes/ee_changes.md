@@ -9,17 +9,17 @@ github_link: release-notes/changes/ee_changes.md
 
 ## Preface
 
-This topic provides details about backwards-incompatible changes made in a Magento EE mainline after Magento 2.0 release. The content is auto-generated.
+This topic provides details about backwards-incompatible changes made in a Magento EE mainline after the Magento 2.0 release. The content is auto-generated.
 
 All changes are aggregated into two tables:
 
 - [Class][] that contains breaking changes made to Magento classes
-- [Interface][] that contains breaking changes made to the Magento interface
+- [Interface][] that contains breaking changes made to the Magento interfaces
 
 where each change is displayed in a separate row in the table, with the following columns:
 
-- **Target** with the name of an affected subject
-- **Reason** with the description of a change
+- **Target** with name of the affected class or interface
+- **Reason** with description of the breaking change
 
 {% include changes/ee_changes.html %}
 

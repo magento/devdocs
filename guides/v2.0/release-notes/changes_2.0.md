@@ -155,5 +155,4 @@ When **Products -> Categories** menu item in the Magento Admin is chosen, the fi
 
 <!-- ABBREVIATIONS -->
 
-*[UI]: User Interface
 *[EAV]: Entity Attribute Value
