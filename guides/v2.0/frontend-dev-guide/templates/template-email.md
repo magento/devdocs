@@ -33,7 +33,7 @@ This topic covers how to customize the content and design of email templates.
 * <a href="#newsletter-templates">Newsletter templates</a>
 
 <h2 id="customize-email-templates">Customize email templates</h2>
-Email templates are stored in the `<module_dir>/view/<area>/email` directory of their respective modules. For example, the template for the new order transactional email for the Sales module is located in <a href="{{ site.mage2000url }}<Magento_Sales_module_dir>/view/frontend/email/order_new.html" target="_blank">app/code/Magento/Sales/view/frontend/email/order_new.html</a>. 
+Email templates are stored in the `<module_dir>/view/<area>/email` directory of their respective modules. For example, the template for the new order transactional email for the Sales module is located in [<Magento_Sales_module_dir>/view/frontend/email/order_new.html]({{ site.mage2000url }}app/code/Magento/Sales/view/frontend/email/order_new.html). 
 
 We strongly recommend you not change the default Magento files. If you want to customize the default templates, you should create your custom templates and configure Magento to use them instead of the default templates. 
 
