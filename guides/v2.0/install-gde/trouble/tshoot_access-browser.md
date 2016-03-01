@@ -16,7 +16,7 @@ redirect_from: /guides/v1.0/install-gde/trouble/tshoot_access-browser.html
 ### Symptom: The following message displays when you try to access the Magento storefront or Admin:
 
 	Whoops, it looks like you have an invalid PHP version.
-	Magento supports PHP 5.4.11 or newer.
+	Magento supports PHP 5.5 or newer.
 	
 #### Solution
 

@@ -13,7 +13,7 @@ github_link: install-gde/trouble/tshoot_var-gen-perms.md
 <h2 id="trouble-install-gen">Cannot write to the <code>var/generation</code> directory</h2>
 
 ### Symptom
-After you successfully install Magento, exceptions display when you try to access the storefront or Admin. (You might have to <a href="{{ site.gdeurl }}http://devdocs.magento.com/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html#config-mode">
+After you successfully install Magento, exceptions display when you try to access the storefront or Admin. (You might have to <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html#config-mode">
 enable developer mode</a> to see the exceptions.)
 
 Sample exceptions follow:

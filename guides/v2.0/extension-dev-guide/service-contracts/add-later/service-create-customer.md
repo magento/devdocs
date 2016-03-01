@@ -19,7 +19,7 @@ Before you think about writing your own service, you should look at an existing 
 
 *	Interfaces
 
-	Clients interact with services using methods on their interfaces, as discussed in [Service contracts](what-is-svc.html). Customer service interfaces have more than 20 public methods, including public function `createCustomer()` in <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">CustomerAccountServiceInterface</a>, which creates a customer record.
+	Clients interact with services using methods on their interfaces, as discussed in [Service contracts]({{ site.gdeurl }}service-contracts.html). Customer service interfaces have more than 20 public methods, including public function `createCustomer()` in <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">CustomerAccountServiceInterface</a>, which creates a customer record.
 
 *	Service data objects
 

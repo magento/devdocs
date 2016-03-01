@@ -65,6 +65,7 @@ For more information, see our recommendations for <a href="{{ site.gdeurl }}inst
 ### SSL
 *	A valid security certificate is required for HTTPS.
 *	Self-signed SSL certificates are not supported.
+*	PayPal: You must use <a href="{{ site.gdeurl }}install-gde/system-requirements_tls1-2.html">`libcurl`</a> version 7.34 or later for Transport Layer Security (TLS) version 1.2 support required by PayPal.
 
 ### Mail server
 Mail Transfer Agent (MTA) or an SMTP server

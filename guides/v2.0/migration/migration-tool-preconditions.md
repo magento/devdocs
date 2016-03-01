@@ -32,7 +32,7 @@ Before you start your migration, you must do all of the following:
 
 *	Migrate Magento 1 extension code to Magento 2
 
-	Reach out to your extension providers to see if they have been ported yet
+	Reach out to your extension providers to see if they have been ported yet. For assistance, you can also use the <a href="https://github.com/magento/code-migration/blob/develop/README.md" target="_blank">Magento code migration tool</a>.
 
 ###Related topics
 

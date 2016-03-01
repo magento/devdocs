@@ -7,11 +7,6 @@ menu_title: Layout instructions
 menu_order: 2
 github_link: frontend-dev-guide/layouts/xml-instructions.md
 ---
-<head>
-   <style>
-      table tr td, table tr th {border: 1px solid #ABABAB}
-   </style>
-</head>
 
 <h2 id="fedg_layout_xml-instruc_overview">What's in this topic</h2>
 
@@ -40,6 +35,7 @@ Use the following layout instructions to customize your layout:
 *  <a href="#fedg_layout_xml-instruc_ex_act"><code>&lt;action></code></a>
 *  <a href="#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceBlock></code> and <code>&lt;referenceContainer></code></a>
 *  <a href="#fedg_layout_xml-instruc_ex_mv"><code>&lt;move></code></a>
+* <a href="#fedg_layout_xml-instruc_ex_rmv"><code>&lt;remove&gt;</code></a>
 *  <a href="#fedg_layout_xml-instruc_ex_upd"><code>&lt;update&gt;</code></a>
 *  <a href="#argument"><code>&lt;argument&gt;</code></a>
 
@@ -185,7 +181,7 @@ Sample of usage in layout:
 This would add a new column to the page layout.
 
 
-<h2 id="fedg_xml-instrux_before-after">before and after attributes</h2>
+<h3 id="fedg_xml-instrux_before-after">before and after attributes</h3>
 <p>To help you to position elements in a specific order suitable for design, SEO, usability, or other requirements, Magento software provides the <code>before</code> and <code>after</code> layout attributes.</p>
 <p>These optional attributes can be used in layout XML files to control the order of elements in their common parent.
 
@@ -362,7 +358,12 @@ Sets the declared block or container element as a child of another element in th
 <ul>
    <li><code>&lt;move></code> is skipped if the element to be moved is not defined.</li>
    <li>If the <code>as</code> attribute is not defined, the current value of the element alias is used. If that is not possible, the value of the <code>name</code> attribute is used instead.</li>
-   <li>During layout generation, the <code>&lt;move></code> instruction is processed before the <code>&lt;remove></code> instruction. This means if any elements are moved to the element scheduled for removal, they will be removed as well.</li>
+  <li>During layout generation, the <code>&lt;move&gt;</code>
+  instruction is processed before the removal (set using the <code>
+    remove</code> attribute). This means if any elements are moved
+    to the element scheduled for removal, they will be removed as
+    well.
+  </li>
 </ul>
 <table>
    <tbody>
@@ -398,6 +399,28 @@ Sets the declared block or container element as a child of another element in th
       </tr>
    </tbody>
 </table>
+
+<h3 id="fedg_layout_xml-instruc_ex_rmv">&lt;remove&gt;</h3>
+
+Is used only to remove the static resources linked in a page <code>&lt;head&gt;</code> section.
+For removing blocks or containers, use the <code>&lt;remove&gt;</code> attribute for <a href="#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceBlock&gt;</code> and <code>&lt;referenceContainer&gt;</code></a>.
+
+Example of usage:
+
+{%highlight xml%}
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+   <head>
+        <!-- Remove local resources -->
+        <remove src="css/styles-m.css" />
+        <remove src="my-js.js"/>
+        <remove src="Magento_Catalog::js/compare.js" />
+								
+	<!-- Remove external resources -->
+        <remove src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"/>
+        <remove src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"/>
+        <remove src="http://fonts.googleapis.com/css?family=Montserrat" /> 
+   </head>
+{%endhighlight xml%}
 
 <h3 id="fedg_layout_xml-instruc_ex_upd">&lt;update&gt;</h3>
 

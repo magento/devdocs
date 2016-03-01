@@ -40,7 +40,7 @@
 	</tr>
 	<tr>
 		<td>Encryption Key</td>
-		<td><p>Magento uses an encryption key to encrypt personally identifiable customer information in the database.</p>
+		<td><p>Magento uses an encryption key to encrypt <a href="#sens-data">sensitive data</a> in the database.</p>
 		<p>Click <strong>I want to use a Magento generated key</strong> to have Magento generate an encryption key for you.</p>
 		<p>Click <strong>I want to use my own encryption key</strong> if you already have an encryption key.</p></td>
 	</tr>
@@ -55,5 +55,4 @@
 	
 12.	Click **Next**.
 
-
-
+{% include install/sens-data.md %}
