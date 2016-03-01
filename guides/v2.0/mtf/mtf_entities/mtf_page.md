@@ -109,17 +109,32 @@ The page will be opened using [mca](#mca) link.
 
 ## Merge pages {#mtf_page_merge}
 
-Sometimes you need to use blocks from different modules in one page. 
+Page merging can help you to redirect modules declared in a page, or add blocks from different modules.
+
+Pages are merged when they:
+
+* have the same name of file
+* have the same `name` attribute value
+* have the same `mca` attribute value
+* don't have `module` and `area` attributes
+
+Pages are merged module by module in the order that modules are loaded in. All new modules are always loaded after Magento modules, so that pages from new Modules are merged the last.
+
+### Add blocks from different modules {#add-block-another-module}
 
 To add blocks from different modules to the page, you can merge pages. Just follow the steps:
 
-1. [Create an XML page](#mtf_page_create) in the corresponding module
-2. Assign [page attributes](#mtf_page_attributes)
-  * with the same name as the page you want to merge
-  * with the same `mca`
-  * without `module` and `area` attributes
-3. Add blocks
-4. Run the page generator
+**Step 1.** [Create an XML page](#mtf_page_create) in the corresponding module
+
+**Step 2.** Assign [page attributes](#mtf_page_attributes)
+
+* with the same name as the page you want to merge
+* with the same `mca`
+* without `module` and `area` attributes
+  
+**Step 3.** Add blocks to the page
+
+**Step 4.** Run the page generator
 
 For example, we have `dev/tests/functional/tests/app/Magento/Catalog/Test/Page/Product/CatalogProductView.xml` page and want to add three blocks from the Magento_Review module.
 
@@ -147,7 +162,7 @@ For example, we have `dev/tests/functional/tests/app/Magento/Catalog/Test/Page/P
 
 We should create `dev/tests/functional/tests/app/Magento/Review/Test/Page/Product/CatalogProductView.xml` page with blocks we want to add:
 
-{%highlight xml%}
+{% highlight xml %}
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /**
@@ -170,7 +185,217 @@ And generate the updated page:
     
 The result is in the `<magento2>/dev/tests/functional/generated/Magento/Catalog/Test/Page/Product/CatalogProductView.php` with the following code:
 
-<script src="https://gist.github.com/dshevtsov/d5be380739c696fcb847.js"></script>
+{%highlight php%}
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+namespace Magento\Catalog\Test\Page\Product;
+use Magento\Mtf\Page\FrontendPage;
+/**
+ * Class CatalogProductView
+ */
+class CatalogProductView extends FrontendPage
+{
+    const MCA = 'catalog/product/view';
+    /**
+     * Blocks' config
+     *
+     * @var array
+     */
+    protected $blocks = [
+        'viewBlock' => [
+            'class' => 'Magento\Catalog\Test\Block\Product\View',
+            'locator' => '#maincontent',
+            'strategy' => 'css selector',
+        ],
+        'additionalInformationBlock' => [
+            'class' => 'Magento\Catalog\Test\Block\Product\Additional',
+            'locator' => '#additional',
+            'strategy' => 'css selector',
+        ],
+        'customOptionsBlock' => [
+            'class' => 'Magento\Catalog\Test\Block\Product\View\CustomOptions',
+            'locator' => '#product-options-wrapper',
+            'strategy' => 'css selector',
+        ],
+        'messagesBlock' => [
+            'class' => 'Magento\Backend\Test\Block\Messages',
+            'locator' => '.page.messages',
+            'strategy' => 'css selector',
+        ],
+        'titleBlock' => [
+            'class' => 'Magento\Theme\Test\Block\Html\Title',
+            'locator' => '.page-title-wrapper h1.page-title .base',
+            'strategy' => 'css selector',
+        ],
+        'reviewSummary' => [
+            'class' => 'Magento\Review\Test\Block\Product\View\Summary',
+            'locator' => '.product-reviews-summary',
+            'strategy' => 'css selector',
+        ],
+        'customerReviewBlock' => [
+            'class' => 'Magento\Review\Test\Block\Product\View',
+            'locator' => '#customer-reviews',
+            'strategy' => 'css selector',
+        ],
+        'reviewFormBlock' => [
+            'class' => 'Magento\Review\Test\Block\ReviewForm',
+            'locator' => '#review-form',
+            'strategy' => 'css selector',
+        ],
+    ];
+    /**
+     * @return \Magento\Catalog\Test\Block\Product\View
+     */
+    public function getViewBlock()
+    {
+        return $this->getBlockInstance('viewBlock');
+    }
+    /**
+     * @return \Magento\Catalog\Test\Block\Product\Additional
+     */
+    public function getAdditionalInformationBlock()
+    {
+        return $this->getBlockInstance('additionalInformationBlock');
+    }
+    /**
+     * @return \Magento\Catalog\Test\Block\Product\View\CustomOptions
+     */
+    public function getCustomOptionsBlock()
+    {
+        return $this->getBlockInstance('customOptionsBlock');
+    }
+    /**
+     * @return \Magento\Backend\Test\Block\Messages
+     */
+    public function getMessagesBlock()
+    {
+        return $this->getBlockInstance('messagesBlock');
+    }
+    /**
+     * @return \Magento\Theme\Test\Block\Html\Title
+     */
+    public function getTitleBlock()
+    {
+        return $this->getBlockInstance('titleBlock');
+    }
+    /**
+     * @return \Magento\Review\Test\Block\Product\View\Summary
+     */
+    public function getReviewSummary()
+    {
+        return $this->getBlockInstance('reviewSummary');
+    }
+    /**
+     * @return \Magento\Review\Test\Block\Product\View
+     */
+    public function getCustomerReviewBlock()
+    {
+        return $this->getBlockInstance('customerReviewBlock');
+    }
+    /**
+     * @return \Magento\Review\Test\Block\ReviewForm
+     */
+    public function getReviewFormBlock()
+    {
+        return $this->getBlockInstance('reviewFormBlock');
+    }
+}
+{%endhighlight%}
+
+### Block overriding {#override-blocks}
+
+If a block in merging pages have the same `name` attribute value, its attributes will be overwritten by values from the page that is loaded last.
+ 
+To redirect blocks from Magento modules follow:
+
+**Step 1.** [Create an XML page](#mtf_page_create) in your new module with the name of page you want to merge.
+
+**Step 2.** Assign [page attributes](#mtf_page_attributes)
+
+* with the same name as the page you want to merge
+* with the same `mca`
+* without `module` and `area` attributes
+  
+**Step 3.** Add blocks that you want to redirect.
+
+**Step 4.** Run the page generator.
+
+Let's see an example with the following use case:
+
+- a new module NewModule changes functionality of a Magento_Catalog module
+- the `editForm` block from the `\Magento\Catalog\Test\Page\Adminhtml\CatalogCategoryEdit` page must be changed according to the new functionality
+
+Let's see the `\Magento\Catalog\Test\Page\Adminhtml\CatalogCategoryEdit` page:
+
+{% highlight xml %}
+
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/pages.xsd">
+    <page name="CatalogCategoryEdit" area="Adminhtml" mca="catalog/category/edit" module="Magento_Catalog">
+        <block name="messagesBlock" class="Magento\Backend\Test\Block\Messages" locator="#messages" strategy="css selector"/>
+        <block name="formPageActions" class="Magento\Catalog\Test\Block\Adminhtml\Category\Edit\PageActions" locator=".page-main-actions" strategy="css selector"/>
+        <block name="editForm" class="Magento\Catalog\Test\Block\Adminhtml\Category\Edit\CategoryForm" locator="#container" strategy="css selector"/>
+        <block name="modalBlock" class="Magento\Ui\Test\Block\Adminhtml\Modal" locator="._show[data-role=modal]" strategy="css selector"/>
+    </page>
+</config>
+
+{% endhighlight %}
+
+The block that we want to change is:
+
+{% highlight xml %}
+<block name="editForm" class="Magento\Catalog\Test\Block\Adminhtml\Category\Edit\CategoryForm" locator="#container" strategy="css selector"/>
+{% endhighlight %}
+
+We don't want to change `editForm` block in the Magento_Catalog module, because in case of disabling of a NewModule module the test will be failed. The best way in this case is to create a new block in a NewModule module that covers new functionality.
+
+Assume that we already have the new block `\Magento\NewModule\Test\Block\Adminhtml\Category\Edit\CategoryForm`.
+
+To redirect the `editForm` block we must follow steps mentioned in the beginning of this section:
+  
+**Step 1.** Create a `CatalogCategoryEdit.xml` page in the `dev/tests/functional/tests/app/Magento/NewModule/Test/Page/Adminhtml` directory.
+
+**Step 2.** Assign page attributes
+
+ * with the same name as the page you want to merge
+ * with the same `mca`
+ * without `module` and `area` attributes
+     
+{% highlight xml %}
+
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/pages.xsd">
+    <page name="CatalogCategoryEdit" area="Adminhtml" mca="catalog/category/edit" module="Magento_Catalog">
+    </page>
+</config>
+
+{% endhighlight %}
+
+**Step 3.** Add blocks that you want to redirect.
+
+{% highlight xml %}
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/pages.xsd">
+    <page name="CatalogCategoryEdit" area="Adminhtml" mca="catalog/category/edit" module="Magento_Catalog">
+        <block name="editForm" class="Magento\NewModule\Test\Block\Adminhtml\Category\Edit\CategoryForm" locator="//div[contains(@data-bind, 'category_form')]" strategy="xpath"/>
+    </page>
+</config>
+{% endhighlight %}
+
+**Step 4.** Run the page generator.
+
+Enter in terminal:
+
+    php <magento2>/dev/tests/functional/utils/generate/page.php
 
 <!-- LINK DEFINITIONS -->
 

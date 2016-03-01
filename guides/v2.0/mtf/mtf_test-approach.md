@@ -1107,7 +1107,7 @@ That's it!
 [variation extension]: {{site.gdeurl}}mtf/mtf_entities/mtf_dataset.html#extend_variation
 [fixture extension]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_merge
 [repository addition]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_repositoy
-[block overriding]: {{site.gdeurl}}mtf/mtf_entities/mtf_block.html
+[block overriding]: {{site.gdeurl}}mtf/mtf_entities/mtf_page.html#override-blocks
 [install a fresh one]: {{site.gdeurl}}install-gde/prereq/dev_install.html
 [fresh Magento]: https://github.com/magento/magento2/tree/a9797cd9c7bc7ac8460dba3fea8548741be1cccd
 
