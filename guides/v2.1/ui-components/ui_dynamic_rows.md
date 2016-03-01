@@ -9,7 +9,7 @@ github_link: ui-components/ui_dynamic_rows.md
 ---
 ## Overview
 
-The dynamic-rows component is used to create a table where rows of configurable fields can be dynamically added and removed. For example, for displaying data from a grid, where the number of records (rows) is not known beforehand. 
+The dynamic-rows component is used to create a table where rows of configurable fields can be dynamically added and removed (dynamic table). For example, for displaying data from a grid, where the number of records (rows) is not known beforehand. 
 
 Following is an illustration of how such a table looks like:
 
@@ -21,44 +21,44 @@ Following is an illustration of how such a table looks like:
 {:toc}
 
 
-## Dynamic Rows Component Structure
+## Dynamic-rows component structure
 
 ### Components' JS classes
-The dynamic rows consists of several UI components:
+For implementing a dynamic table several UI components are used:
 
-- The dynamic Rows component is implemented in the class `app/code/Magento/Ui/view/base/web/js/dynamic-rows/dynamic-rows.js` and has extended component to transfer data with grid `app/code/Magento/Ui/view/base/web/js/dynamic-rows/dynamic-rows-grid.js`
-- Record component: `app/code/Magento/Ui/view/base/web/js/dynamic-rows/record.js`
-- For Drag and Drop dynamic-rows use module: `app/code/Magento/Ui/view/base/web/js/dynamic-rows/dnd.js`
+- The dynamic-rows component, implemented in the `app/code/Magento/Ui/view/base/web/js/dynamic-rows/dynamic-rows.js` class and 
+- The extended component to transfer data from a grid: `app/code/Magento/Ui/view/base/web/js/dynamic-rows/dynamic-rows-grid.js`
+- The record component: `app/code/Magento/Ui/view/base/web/js/dynamic-rows/record.js`
 
-### HTML templates for the grid
+For the drag and drop functionality the `app/code/Magento/Ui/view/base/web/js/dynamic-rows/dnd.js` module is used.
 
-Templates used by this component are:
+### HTML templates for the dynamic table
+
+The following dynamic table templates are used:
 
 - `app/code/Magento/Ui/view/base/web/templates/dynamic-rows/templates/default.html`
 
-The following image is an illustration of the dynamic rows component view when the `default.html` template is used:
+The following image is an illustration of the dynamic table view when the `default.html` template is used:
 
-<div style="border: 1px solid #ABABAB">
-<img src="{{site.baseurl}}common/images/UI_DefaultTemplate.png"/>
-</div>
+
+<img style="border: 1px solid #ABABAB" src="{{site.baseurl}}common/images/UI_DefaultTemplate.png"/>
+
 
 
 - `app/code/Magento/Ui/view/base/web/templates/dynamic-rows/templates/grid.html`
 
-The following image is an illustration of the dynamic rows component view when the `grid.html` template is used:
+The following image is an illustration of the dynamic table view when the `grid.html` template is used:
 
-<div style="border: 1px solid #ABABAB">
-<img src="{{site.baseurl}}common/images/UI_gridTemplate.png"/>
-</div>
+
+<img style="border: 1px solid #ABABAB" src="{{site.baseurl}}common/images/UI_gridTemplate.png"/>
 
 
 - `app/code/Magento/Ui/view/base/web/templates/dynamic-rows/templates/collapsible.html`
 
-The following image is an illustration of the dynamic rows component view when the `collapsible.html` template is used:
+The following image is an illustration of the dynamic table view when the `collapsible.html` template is used:
 
-<div style="border: 1px solid #ABABAB">
-<img src="{{site.baseurl}}common/images/ui_collapsibleTemplate.png"/>
-</div>
+<img style="border: 1px solid #ABABAB" src="{{site.baseurl}}common/images/ui_collapsibleTemplate.png"/>
+
 
 
 ### HTML templates for fields
@@ -120,13 +120,13 @@ A sample configuration follows:
 
 The result of this configuration is:
 
-<img src="{{site.baseurl}}common/images/dynamic-rows-ui.png">
+<img style="border: 1px solid #ABABAB" src="{{site.baseurl}}common/images/dynamic-rows-ui.png">
 
 Each component used in dynamic rows is configured separately.
 
-### Configure the grid's and columns' properties
+### Configure the table and columns properties
 
-The general properties of the whole grid and column-specific options are configured like following:
+The general properties of the whole table and column-specific options are configured like following:
 {%highlight xml%}
 ...
 <dynamicRows name="Integration">
@@ -166,7 +166,7 @@ The following table contains the options you can configure for the whole grid an
       <code>addButton</code>
     </td>
     <td>
-      Show the <strong>Add</strong> button
+      Show the button for adding new rows.
     </td>
     <td>
       Boolean
@@ -180,7 +180,7 @@ The following table contains the options you can configure for the whole grid an
       <code>addButtonLabel</code>
     </td>
     <td>
-      The label for the button that add new rows
+      The label for the button used for adding new rows.
     </td>
     <td>
       String
@@ -194,7 +194,7 @@ The following table contains the options you can configure for the whole grid an
       <code>additionalClasses</code>
     </td>
     <td>
-      Set custom classes to dynamic-rows component
+      Set custom classes for the dynamic-rows component.
     </td>
     <td>
       String
@@ -206,7 +206,7 @@ The following table contains the options you can configure for the whole grid an
       <code>collapsibleHeader</code>
     </td>
     <td>
-      Enable the collapsible header
+      Enable the collapsible header.
     </td>
     <td>
       Boolean
@@ -220,9 +220,7 @@ The following table contains the options you can configure for the whole grid an
       <code>component</code>
     </td>
     <td>
-      A link to the constructor. Also dynamic-rows has extended
-      component to transfer data with grid
-<p class="q">transfer with?</p>
+      A link to the constructor.
     </td>
     <td>
       String
@@ -236,7 +234,7 @@ The following table contains the options you can configure for the whole grid an
       <code>defaultRecord</code>
     </td>
     <td>
-      Render default row instance if data is absent
+      Render the default row instance if data is absent.
     </td>
     <td>
       Boolean
@@ -250,7 +248,7 @@ The following table contains the options you can configure for the whole grid an
       <code>deleteButtonLabel</code>
     </td>
     <td>
-      Label for the button used for deleting rows
+      Label for the button used for deleting rows.
     </td>
     <td>
       String
@@ -264,8 +262,7 @@ The following table contains the options you can configure for the whole grid an
       <code>disabled</code>
     </td>
     <td>
-      Disable the
-      grid
+      Disable the grid.
     </td>
     <td>
       Boolean
@@ -279,7 +276,7 @@ The following table contains the options you can configure for the whole grid an
       <code>dndConfig</code>
     </td>
     <td>
-      Enable drag and drop for records
+      Enable drag and drop for records.
     </td>
     <td>
       Boolean
@@ -293,7 +290,7 @@ The following table contains the options you can configure for the whole grid an
       <code>label</code>
     </td>
     <td>
-      A label for the whole grid
+      A label for the whole table.
     </td>
     <td>
       String
@@ -305,7 +302,7 @@ The following table contains the options you can configure for the whole grid an
       <code>renderColumnsHeader</code>
     </td>
     <td>
-      Show all columns headers
+      Show all columns headers.
     </td>
     <td>
       Boolean
@@ -319,7 +316,7 @@ The following table contains the options you can configure for the whole grid an
       <code>template</code>
     </td>
     <td>
-      A link to the template. Out of the box, the following
+      A link to the table template. Out of the box, the following
       templates are available:
       <ul>
         <li>
@@ -362,7 +359,7 @@ In the configuration file they are configured in the scope of the container whic
 {%endhighlight%}
 
 
-The following options are available:
+The following options are available for rows:
 
 <table>
   <tr>
@@ -405,11 +402,11 @@ Relative path to the column which defines the sorting order.
       String
     </td>
     <td>
-      "*position*"</td>
+      <code>position</code></td>
   </tr>
 </table>
 
-### Set the data provider for the grid
+### Set the data provider for the dynamic table
 
 By default, the dynamic rows component uses the data provider of its parent component, for example form. To specify the other data source for it, use the following options:
 
@@ -433,7 +430,7 @@ By default, the dynamic rows component uses the data provider of its parent comp
       <code>dataProvider</code>
     </td>
     <td>
-      Relative path to grid data source
+      Relative path to the table data source.
     </td>
     <td>
       String
@@ -511,24 +508,25 @@ You can configure the following:
       <code>dataScope</code>
     </td>
     <td>
-The path to data storage
+The path to data storage.
     </td>
     <td>
       String
     </td>
     <td>
-
+''
     </td>
   </tr>
   <tr>
 <td><code>disabled</code></td>
     <td>
-      If specified for a column, then is used to disable a column
+      Disable a column.
     </td>
     <td>
       Boolean
     </td>
     <td>
+<code>false</code>
     </td>
   </tr>
   <tr>
@@ -536,7 +534,7 @@ The path to data storage
       <code>formElement</code>
     </td>
     <td>
-      Field type.
+      Set the field type:
       <ul>
         <li>Text box. Set the value to <code>input</code>
         </li>
@@ -617,22 +615,22 @@ You can configure the grid to render a text instead of the certain field. To do 
 
 ## Public API (JavaScript)
 
-- `setDisabled(state)`: disable/enable the grid
-	- `state {Boolean}`: grid state
-- `setColumnDisabled(index, state)`: disable/enabled a particular column
+- `setDisabled(state)`: disable/enable the dynamic table.
+	- `state {Boolean}`: table state
+- `setColumnDisabled(index, state)`: disable/enabled a particular column.
 	- `index{Number}`: column index
 	- `state{Boolean}`:column state
-- `setVisible(state)`: set visibility to all grid
-- `setColumnVisibility(index, state)`: show or hide a particular column
-- `reload()`: delete records and render anew
-- `onUpdateRecordTemplate(templateName)`: delete records and render with a new template
+- `setVisible(state)`: set visibility of the table.
+- `setColumnVisibility(index, state)`: show or hide a particular column.
+- `reload()`: delete records and render anew.
+- `onUpdateRecordTemplate(templateName)`: delete records and render with a new template.
 	- `templateName{String}`: new template name
-- `sort(position, elem)`: sort elements by position
+- `sort(position, elem)`: sort elements by position.
 	- `position{Number}`: position
 	- `elem{Object}`: the current DOM element
-- `deleteRecord(index)`: delete a record by index
+- `deleteRecord(index)`: delete a record by index.
 	- `index{Number}`: index record
-- `addChild(data, index)`: render a new record instance
+- `addChild(data, index)`: render a new record instance.
 	- `data{Object}` object with a instance data
 	- `index{Number} `: index for the new instance
 
