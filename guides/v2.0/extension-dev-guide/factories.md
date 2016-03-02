@@ -18,7 +18,7 @@ Most development also requires working with objects that are individual instance
 ### Purpose of factories
 Factories are special objects that have only one purpose: to create an instance of one non-injectable class or interface. Unlike other objects, factories are allowed to depend on the object manager. Factories are used to isolate the object manager from business code as the following example shows:
 
-{% highlight PHP %}
+{% highlight php startinline=true %}
 class Magento\Core\Model\Config\BaseFactory
 {
     protected $_objectManager;
@@ -45,7 +45,7 @@ Factory classes can be explicitly defined, however, if customization of the typi
 ### Factories are injectable
 Factories themselves are injectables, and therefore constructor injection is still key to the process of instantiating objects.  Receive a factory class via a constructor:
 
-{% highlight PHP %}
+{% highlight php startinline=true %}
 function __construct (
     \Magento\Cms\Model\BlockFactory $blockFactory
 ) {
@@ -55,7 +55,7 @@ function __construct (
 
 When an instance of the class is needed, use the factory to instantiate it:
 
-{% highlight PHP %}
+{% highlight php startinline=true %}
 $block = $this->blockFactory->create();
 {% endhighlight %}
 

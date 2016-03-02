@@ -17,7 +17,7 @@ If a class's constructor is particularly resource-intensive, this can lead to un
 
 As an example, consider the following two classes:
 
-{% highlight PHP %}
+{% highlight php startinline=true %}
 class SlowLoading
 {
     public function __construct()
