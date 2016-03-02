@@ -18,7 +18,6 @@ If a class's constructor is particularly resource-intensive, this can lead to un
 As an example, consider the following two classes:
 
 {% highlight PHP %}
-<?php
 class SlowLoading
 {
     public function __construct()
@@ -52,7 +51,6 @@ class FastLoading
         return $this->slowLoading->getValue();
     }
 }
-?>
 {% endhighlight %}
 
 Assume that class `SlowLoading` has a non-trivial performance impact when instantiated (perhaps due to a complex database query or a call to a third-party web API). Because of the dependency injection in the constructor of `FastLoading`, this impact is incurred if `FastLoading` is instantiated.  Note, however, that the `SlowLoading` instance is used only in the method `getSlowValue`, meaning that the resource cost is unnecessary if this method is never called on the `FastLoading` object.
