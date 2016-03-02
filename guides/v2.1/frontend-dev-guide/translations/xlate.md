@@ -42,7 +42,7 @@ Benefits include:
 *	Two types of language packages:
 
 	*	Module and theme packages. Included in the `i18n` directory of a module or theme, the Magento application auto-discovers these packages.
-	*	An entire dictionary in one directory. 
+	*	An entire dictionary in one directory.
 
 		This is intended to be used and distributed as a standalone component (similar to modules and themes).
 
@@ -58,6 +58,10 @@ Changes made:
 *	The language package (`i18n` directory) can now be moved and saved to any directory of your extension.
 *	The phrases for translations are enabled in the <a href="{{ site.mage2100url }}lib/internal/Magento/Framework/Phrase.php" target="_blank">Phrase</a> class.
 
+
+### Programming notes
+* It is recommended, but not enforced, that you do not place variables inside `__()` functions or `new Phrase()` calls. The scanner that collects the phrases from the code cannot interpret and collect the value of the variable when it is in these locations. Instead, you should place the full text in the `__()` function or `new Phrase()` call. If you need to specify a variable in these cases, ensure that it is translated correctly wherever it is defined as a string literal.
+
 ### More information
 See one of the following sections for more information:
 
@@ -71,7 +75,7 @@ See one of the following sections for more information:
 You might need to add a dictionary for the default language (en_US) in the following cases:
 
 - if you want to replace certain strings from the <a href="{{site.gdeurl21}}frontend-dev-guide/themes/theme-inherit.html">parent theme</a>. For example, use "Compare" instead of "Add to Compare".
-- if you want your theme to be ready for localization. 
+- if you want your theme to be ready for localization.
 
 For practical illustration of creating a dictionary for a theme for both cases, see the <a href="{{site.gdeurl21}}frontend-dev-guide/translations/translate_practice.html">Create a translation dictionary for a theme</a> topic.
 
@@ -129,13 +133,13 @@ Magento enables you to create the following types of language packages:
 		           |-- pt_BR.csv
 
 
-*	Language packages that contain a entire dictionary in one directory. 
+*	Language packages that contain a entire dictionary in one directory.
 
-	You can distribute this language package as a standalone component (similar to modules and themes). Interestingly, it violates Magento's modularity principles on purpose; that is, so that a system integrator can translations variations provided by extensions. 
+	You can distribute this language package as a standalone component (similar to modules and themes). Interestingly, it violates Magento's modularity principles on purpose; that is, so that a system integrator can translations variations provided by extensions.
 
 In addition to the `.csv` file that contains the language dictionary, the language package contains meta-information:
 
-*	`composer.json` that contains any dependencies for the language package and a mapping to its defined locale 
+*	`composer.json` that contains any dependencies for the language package and a mapping to its defined locale
 
 	<a href="{{ site.mage2100url }}app/i18n/magento/de_de/composer.json" target="_blank">Sample composer.json</a>
 
@@ -146,5 +150,3 @@ In addition to the `.csv` file that contains the language dictionary, the langua
 #### Next step
 
 To create translation dictionaries and language packages, see <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and packages</a>.
-
-
