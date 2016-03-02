@@ -782,39 +782,39 @@
 
 <p>As an example, consider the following two classes:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">class SlowLoading</span>
-<span class="x">{</span>
-<span class="x">    public function __construct()</span>
-<span class="x">    {</span>
-<span class="x">        // ... Do something resource intensive</span>
-<span class="x">    }</span>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">SlowLoading</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// ... Do something resource intensive</span>
+    <span class="p">}</span>
 
-<span class="x">    public function getValue()</span>
-<span class="x">    {</span>
-<span class="x">        return &#39;SlowLoading value&#39;;</span>
-<span class="x">    }</span>
-<span class="x">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getValue</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="s1">&#39;SlowLoading value&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-<span class="x">class FastLoading</span>
-<span class="x">{</span>
-<span class="x">    protected $slowLoading;</span>
+<span class="k">class</span> <span class="nc">FastLoading</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="nv">$slowLoading</span><span class="p">;</span>
 
-<span class="x">    public function __construct(</span>
-<span class="x">        SlowLoading $slowLoading</span>
-<span class="x">    ){</span>
-<span class="x">        $this-&gt;slowLoading = slowLoading;</span>
-<span class="x">    }</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
+        <span class="nx">SlowLoading</span> <span class="nv">$slowLoading</span>
+    <span class="p">){</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">slowLoading</span> <span class="o">=</span> <span class="nx">slowLoading</span><span class="p">;</span>
+    <span class="p">}</span>
 
-<span class="x">    public function getFastValue()</span>
-<span class="x">    {</span>
-<span class="x">        return &#39;FastLoading value&#39;;</span>
-<span class="x">    }</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getFastValue</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="s1">&#39;FastLoading value&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
 
-<span class="x">    public function getSlowValue()</span>
-<span class="x">    {</span>
-<span class="x">        return $this-&gt;slowLoading-&gt;getValue();</span>
-<span class="x">    }</span>
-<span class="x">}</span></code></pre></div>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getSlowValue</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">slowLoading</span><span class="o">-&gt;</span><span class="na">getValue</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
 
 <p>Assume that class <code>SlowLoading</code> has a non-trivial performance impact when instantiated (perhaps due to a complex database query or a call to a third-party web API). Because of the dependency injection in the constructor of <code>FastLoading</code>, this impact is incurred if <code>FastLoading</code> is instantiated.  Note, however, that the <code>SlowLoading</code> instance is used only in the method <code>getSlowValue</code>, meaning that the resource cost is unnecessary if this method is never called on the <code>FastLoading</code> object.</p>
 
