@@ -24,6 +24,8 @@ To add a custom breakpoint to your theme you need to define a variable for the n
 
 In your custom theme directory, add a `/web/css/source/variables.less` with the following content:
 
+If your theme inherits - you need to copy varibles.less from parent, and add the new variable. if the theme is standalone - create a new file.
+
 <p class="q">What should be in this file, except the new breakpoint? </p>
 
     @your__breakpoint: 1280px;
@@ -32,10 +34,12 @@ For varibles naming rules see [Less coding standards](http://devdocs.magento.com
 
 ## Override the lib `_responsive.less`
 
+If your parent has _responsive.less that overrides the lib file (that is resides in the corresponding directory) - copy the parent _responsive.less
+
 To override lib `_responsive.less` file: 
 Copy `/lib/web/css/source/lib/_responsive.less` to `<your_theme_dir>/web/css/source/lib/` directory.
 
-In your _responsive.less, add the following in the “Style groups for 'desktop' devices” section:
+In your _responsive.less, add the following in the correspoding section (desctop or mobile):
 
 & when (@media-target = 'desktop'), (@media-target = 'all') {
 …
