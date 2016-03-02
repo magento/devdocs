@@ -77,11 +77,11 @@ Mail Transfer Agent (MTA) or an SMTP server
 
 *	Magento Enterprise Edition (EE) only <img src="{{ site.baseurl }}common/images/ee-only_small.png">
 
-	*   Apache Solr 
+	*   Apache Solr 4.x
  
     	<a href="{{ site.gdeurl }}config-guide/solr/solr-overview.html">Solr search</a> can be used as a search provider. Available for Magento Enterprise Edition (EE) only.
 
-	*	RabbitMQ 
+	*	RabbitMQ 3.5
 
 		<a href="{{ site.gdeurl }}config-guide/mq/rabbitmq-overview.html">RabbitMQ</a> can be used to publish messages to queue and to define the consumers that receive the messages asynchronously. Available for Magento EE only.
 
