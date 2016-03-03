@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Translations overview</title>
+	<title>Add custom CSS preprocessor (like Sass)</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/frontend-dev-guide/translations/xlate.html">
+	<link rel="canonical" href="//guides/v2.0/frontend-dev-guide/css-topics/custom_preprocess.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -132,9 +132,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Translations overview</h1>
+		<h1 class="page-heading">Add custom CSS preprocessor (like Sass)</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/frontend-dev-guide/translations/xlate.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/frontend-dev-guide/css-topics/custom_preprocess.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -537,7 +537,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/css-topics/custom_preprocess.html">Add custom CSS preprocessor (like Sass)</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/frontend-dev-guide/css-topics/custom_preprocess.html">Add custom CSS preprocessor (like Sass)</a></li>
 
 									
 
@@ -663,7 +663,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/frontend-dev-guide/translations/xlate.html">Translations</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/frontend-dev-guide/translations/xlate.html">Translations</a></li>
 									
 								
 
@@ -790,173 +790,113 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<h4 id="contents">Contents</h4>
+		<h2>What's in this topic</h2>
 
-<ul>
-  <li><a href="#m2devgde-xlate-intro">Overview of translations</a></li>
-  <li><a href="#m2devgde-xlate-translating">Manually translate words and phrases</a></li>
-  <li><a href="#m2devgde-xlate-dictionaries">Translation dictionaries</a></li>
-  <li><a href="#m2devgde-xlate-languagepack">Language packages</a></li>
-</ul>
+<p>This topic describes how to add a custom CSS preprocessor. Adding <a href="http://sass-lang.com/">Sass</a> support is used as an example.</p>
 
-<h2 id="m2devgde-xlate-intro">Overview of translations</h2>
-<p>The Magento application enables you to localize your store for multiple regions and markets. We improved the localization and customization of Magento instances by making translation dictionaries easier to update and by maintaining a reduced amount of code coupling and duplication.</p>
+<p><strong>Contents</strong></p>
 
-<h3 id="translate_terms">Terms used</h3>
-<p>A <em>translation dictionary</em> is a comma-separated value (.csv) file with at least two columns: the original phrase in the <code>en_US</code> locale and a translation of that phrase in an another locale. Sample translation from English (<code>en_US</code>) to German (<code>de_DE</code>):</p>
-
-<pre><code>"Add to Cart","Zum Warenkobrn hinzufügen"
-"Add to Compare","Hinzufügen um zu vergleichen"
-"Add to Wishlist","Zum Wunschzettel hinzufügen"
-"Additional Product Info","Zusätzliche Angaben zum Produkt"
-"Address","Adresse"
-"Address %1 of %2","Adresse %1 von %2"
-</code></pre>
-
-<p>A <em>language package</em> is basically a collection of translation dictionaries for a particular language together with meta-information. You can also distribute language packages to other merchants if you wish. <a href="#m2devgde-xlate-languagepack">More information about language packages</a>.</p>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>To create a language package, the .csv file requires additional columns that specify the themes or modules in which the translations were found. For more information, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">Generate a translation dictionary</a>.</p>
-</div>
-
-<h3 id="benefits">Benefits</h3>
-<p>Benefits include:</p>
-
-<ul>
-  <li>
-    <p>Two types of language packages:</p>
-
-    <ul>
-      <li>Module and theme packages. Included in the <code>i18n</code> directory of a module or theme, the Magento application auto-discovers these packages.</li>
-      <li>
-        <p>An entire dictionary in one directory. </p>
-
-        <p>This is intended to be used and distributed as a standalone component (similar to modules and themes).</p>
-      </li>
+<ul id="markdown-toc">
+  <li><a href="#sample-sass-module">Sample Sass module</a></li>
+  <li><a href="#adding-a-custom-preprocessor">Adding a custom preprocessor</a>    <ul>
+      <li><a href="#prerequisites">Prerequisites</a></li>
+      <li><a href="#step-by-step-instruction">Step by step instruction</a></li>
     </ul>
   </li>
-  <li>You can use the ready-to-use language packages prepared by other users or you can create your own.</li>
-  <li>You can create localizations based on existing, or parent, translations using <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html#m2devgde-xlate-inheritancework">language inheritance</a>. Inheritance means (among other things) that if you missed or omitted localizing some phrases or terms, parent translations are used.</li>
-  <li>You can customize your translations even further by creating more than one version of a translation for the same language.</li>
+  <li><a href="#related-reading">Related reading</a></li>
 </ul>
 
-<p>Depending on your needs, you can use the existing <a href="#m2devgde-xlate-languagepack">language packages</a> or <a href="#m2devgde-xlate-translating">translate Magento by yourself</a>.</p>
+<h2 id="sample-sass-module">Sample Sass module</h2>
 
-<h3 id="changes-in-magento-2">Changes in Magento 2</h3>
-<p>Changes made:</p>
+<p>Magento has a sample <a href="https://github.com/magento/magento2-samples/tree/master/module-sample-scss">module-sample-scss</a> module implementing the Sass preprocessor.</p>
 
-<ul>
-  <li>The language package (<code>i18n</code> directory) can now be moved and saved to any directory of your extension.</li>
-  <li>The phrases for translations are enabled in the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Phrase.php" target="_blank">Phrase</a> class.</li>
-</ul>
+<p>You can view it as example when adding your custom preprocessor. Or install the module as is if you need to add Sass preprocessing. Installing a module is described in the <a href="https://github.com/magento/magento2-samples/blob/master/README.md">repository’s Readme file</a>.</p>
 
-<h3 id="more-information">More information</h3>
-<p>See one of the following sections for more information:</p>
+<h2 id="adding-a-custom-preprocessor">Adding a custom preprocessor</h2>
 
-<ul>
-  <li><a href="#m2devgde-xlate-themes">Why you might need to add a dictionary for a theme</a></li>
-  <li><a href="#m2devgde-xlate-translating">Manually translate words and phrases</a></li>
-  <li><a href="#m2devgde-xlate-dictionaries">Translation dictionaries</a></li>
-  <li><a href="#m2devgde-xlate-languagepack">Language packages</a></li>
-</ul>
+<h3 id="prerequisites">Prerequisites</h3>
 
-<h2 id="m2devgde-xlate-themes">Why you might need to add a dictionary for a theme</h2>
+<p>For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code. Create a new custom module for your customizations.</p>
 
-<p>You might need to add a dictionary for the default language (en_US) in the following cases:</p>
+<p>For details about creating a module refer to the <a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">Magento PHP Developer Guide</a>.</p>
 
-<ul>
-  <li>if you want to replace certain strings from the <a href="/guides/v2.0/frontend-dev-guide/themes/theme-inherit.html">parent theme</a>. For example, use “Compare” instead of “Add to Compare”.</li>
-  <li>if you want your theme to be ready for localization. </li>
-</ul>
+<h3 id="step-by-step-instruction">Step by step instruction</h3>
 
-<p>For practical illustration of creating a dictionary for a theme for both cases, see the <a href="/guides/v2.0/frontend-dev-guide/translations/translate_practice.html">Create a translation dictionary for a theme</a> topic.</p>
-
-<h2 id="m2devgde-xlate-translating">Manually translate words and phrases</h2>
-<p>Translating the names, titles and phrases used in Magento involves the following steps:</p>
+<p>To add a custom preprocessor, take the following steps:</p>
 
 <ol>
-  <li>Generate a dictionary of your instance using the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">translation dictionary tool</a>.</li>
-  <li>Translate the terms.</li>
-  <li>If desired, package your translations in a <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-pack">language package</a>.</li>
+  <li>
+    <p>In your module directory, add the adapter PHP class. It must implement the <code>Magento/Framework/View/Asset/ContentProcessorInterface</code> interface. 
+For illustration, see the adapter for Sass in the sample module: <a href="https://github.com/magento/magento2-samples/blob/master/module-sample-scss/Preprocessor/Adapter/Scss/Processor.php">module-sample-scss/Preprocessor/Adapter/Scss/Processor.php</a></p>
+  </li>
+  <li>
+    <p>If the browser compilation is possible for your file types, that is, if the corresponding JavaScript library exists, create the custom renderer for the client-side compilation. This will allow the default <a href="/guides/v2.0/frontend-dev-guide/css-topics/css-preprocess.html#client-side">client-side compilation functionality</a> to be applied for your files type as well. 
+You can use the default Magento renderer for reference: <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Developer/Model/View/Page/Config/ClientSideLessCompilation/Renderer.php">Magento/Developer/Model/View/Page/Config/ClientSideLessCompilation/Renderer</a></p>
+  </li>
+  <li>
+    <p>If in your custom preprocessor, the syntax of the importing directives is different from <code>@import</code> and <code>@magento_import</code>, you must implement custom processor classes. 
+You can view the default Magento processors for reference: <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Css/PreProcessor/Instruction">lib/internal/Magento/Framework/Css/PreProcessor/Instruction</a>. </p>
+  </li>
+  <li>
+    <p>In <code>&lt;your_module_dir&gt;/etc/di.xml</code>, declare the following:</p>
+    <ul>
+      <li>your custom adapter </li>
+      <li>your processor (if relevant)</li>
+      <li>the renderer for the client-side compilation (if relevant)</li>
+    </ul>
+  </li>
 </ol>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Only one variant of translation can be used for a word or phrase in a package. Otherwise, Magento returns an error.</p>
-</div>
+<p>The content of your <code>di.xml</code> will be similar to the following:</p>
 
-<p>Anyone can submit translations on the storefront using the Text Editor. Changes made in the Text Editor are not recorded in an instance’s dictionary; instead, they are stored in the database. In the storefront, an inline translation of a phrase overwrites the translation stated in a dictionary. However, inline translations are theme-specific and do not apply if another theme is assigned.</p>
+<p><strong><code>&lt;your_module_dir&gt;/etc/di.xml</code></strong></p>
 
-<h2 id="m2devgde-xlate-dictionaries">Translation dictionaries</h2>
-<p>Magento translates words and phrases when all of the following conditions are met:</p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;AlternativeSourceProcessors&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;arguments&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;alternatives&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;%your_preprocessor_name%&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;class&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>%path/to/your/adapter/class%<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+                <span class="c">&lt;!-- Use the following syntax to set the priority of processors. That is, what file types will the system search for, when requested CSS files are not found. The following lines set SCSS to be prior to LESS --&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;less&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;after&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>scss<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;/arguments&gt;</span>
+    <span class="nt">&lt;/virtualType&gt;</span>
+    <span class="c">&lt;!-- Add the following declaration if you have custom processors for importing directives --&gt;</span>
+    <span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;AssetPreProcessorPoolForSourceThemeDeploy&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Framework\View\Asset\PreProcessor\Pool&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;arguments&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;preprocessors&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;%your_preprocessor%&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;magento_import&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;class&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>%path/to/your/import/processor%<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;import&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;after&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>magento_import<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;class&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>%path/to/your/magento_import/processor%<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;/arguments&gt;</span>
+    <span class="nt">&lt;/virtualType&gt;</span>
+    <span class="c">&lt;!-- Declare the renderer for client-side compilation --&gt;</span>
+<span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Developer\Model\View\Page\Config\RendererFactory&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;arguments&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;rendererTypes&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;client_side_compilation&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>%path/to/your/client/side/renderer%<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;/arguments&gt;</span>
+    <span class="nt">&lt;/type&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
 
-<ul>
-  <li>The Magento code base has the necessary translation dictionaries for a language</li>
-  <li>This language is configured by the store administrator to be used in specified scope (that is, storefront)</li>
-</ul>
-
-<p>The Magento application automatically assembles translation dictionaries located in modules’ <code>i18n</code> directory into a dictionary per language. For example, Brazilian Portuguese (<code>pt_BR</code>) translation dictionaries might be located in module and theme directories similar to the following:</p>
-
-<pre><code>app/code/Magento/Checkout/i18n/pt_BR.csv
-app/design/frontend/Magento/demo/i18n/pt_BR.csv
-</code></pre>
-
-<p>Assembling the preceding <code>pt_BR.csv</code> files across all modules and the current theme results in a Portuguese translation of the entire application area (storefront or the Admin).</p>
-
-<h3 id="m2devgde-xlate-generatortool">The dictionary generator tool</h3>
-<p><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">More information about the dictionary generator tool</a>.</p>
-
-<h2 id="m2devgde-xlate-languagepack">Language packages</h2>
-<p>Magento enables you to create the following types of language packages:</p>
-
-<ul>
-  <li>
-    <p>A set of .csv files for modules and themes. These packages files are intended to be deployed in modules. For example:</p>
-
-    <pre><code>__/app
- |__/code
- | |__/Magento
- |   |__/Catalog
- |   | |__/i18n
- |   |   |-- pt_BR.csv
- |   |__/Checkout
- |   | |__/i18n
- |   |   |-- pt_BR.csv
- |   |__/Customer
- |     |__/i18n
- |       |-- pt_BR.csv
- |__/design
-   |__/frontend
-     |__/Magento
-       |__/demo
-         |__/i18n
-           |-- pt_BR.csv
-</code></pre>
-  </li>
-  <li>
-    <p>Language packages that contain a entire dictionary in one directory. </p>
-
-    <p>You can distribute this language package as a standalone component (similar to modules and themes). Interestingly, it violates Magento’s modularity principles on purpose; that is, so that a system integrator can translations variations provided by extensions. </p>
-  </li>
-</ul>
-
-<p>In addition to the <code>.csv</code> file that contains the language dictionary, the language package contains meta-information:</p>
+<h2 id="related-reading">Related reading</h2>
 
 <ul>
-  <li>
-    <p><code>composer.json</code> that contains any dependencies for the language package and a mapping to its defined locale </p>
-
-    <p><a href="https://github.com/magento/magento2/blob/2.0/app/i18n/magento/de_de/composer.json" target="_blank">Sample composer.json</a></p>
-  </li>
-  <li>
-    <p><code>language.xml</code>, in which you declare a language package.</p>
-
-    <p><a href="https://github.com/magento/magento2/blob/2.0/app/i18n/magento/de_de/language.xml" target="_blank">Sample language.xml</a></p>
-  </li>
+  <li><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">Magento PHP Developer Guide</a></li>
 </ul>
-
-<h4 id="next-step">Next step</h4>
-
-<p>To create translation dictionaries and language packages, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and packages</a>.</p>
 
 
 
