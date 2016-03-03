@@ -63,7 +63,7 @@ You can find information about the `_responsive.less` file in the generated Mage
 
 ## Declare the screen changes for the breakpoint
 
-In one of your theme `.less` files, add a new `.media-width()` mixin call and implement the required screen changes there.
+Now you can add a new .media-width() mixin call where necessary in your theme `.less ` files .
 
 Example:
 
