@@ -52,7 +52,7 @@ Code generation is required in Magento 2. Generating code assures you of the fol
 <h2 id="codegen-om">Object Manager responsibility for code compilation</h2>
 When code changes as discussed in the preceding section, one of two Object Manager classes compiles it. The class is chosen based on whether or not the single-tenant compiler or the multi-tenant compiler has been run before.
 
-The single-tenant and multi-tenant compiler create `var/di/global.ser`, which is a PHP serialized map of all constructor definitions mixed with object linking configuration defined in di.xml. `di.xml` is the dependency injection configuration. There is a global `app/etc/di.xml` and there can one defined for every module.
+The single-tenant and multi-tenant compiler create `var/di/global.ser`, which is a PHP serialized map of all constructor definitions mixed with object linking configuration defined in di.xml. `di.xml` is the dependency injection configuration. There is a global `app/etc/di.xml` and there can be one defined for every module.
 
 <!--synced-->
 <div class="bs-callout bs-callout-warning">
