@@ -1014,6 +1014,11 @@
   <li>The default cache, which stores: configuration, layout configuration, block HTML output, collections data, reflection data, database DDL operations, EAV types and attributes, translations, web services configuration, and integration API.</li>
 </ul>
 
+<div class="bs-callout bs-callout-info" id="info">
+   <span class="glyphicon-class">
+   <p>You <em>must</em> use Redis for caching if you have multiple Magento webnodes. The file system cache is inefficient and can result in errors.</p></span>
+</div>
+
 <h3 id="issues-with-zendcachebackendfile">Issues with <code>Zend_Cache_Backend_File</code></h3>
 <ul>
   <li>

@@ -373,6 +373,7 @@
   <li><a href="#post-install-cron">Set up cron</a></li>
   <li><a href="#post-install-secy">Security settings</a></li>
   <li><a href="#post-install-rewrites">Enable Apache server rewrites</a></li>
+  <li><a href="#config-redis">Caching in a multi-webnode environment</a></li>
   <li><a href="#post-install-server">Server settings</a></li>
   <li><a href="#post-install-ee">Settings for Magento Enterprise Edition (EE) only</a></li>
 </ul>
@@ -466,6 +467,11 @@
   <p>If you use the Apache web server, you must enable server rewrites for pages to display properly. Otherwise, you’ll see pages without styles and other issues.</p>
 
   <p><a href="/guides/v2.0/install-gde/prereq/apache.html#apache-help-rewrite">Section on Apache server rewrites</a></p>
+
+  <h2 id="config-redis">Caching in a multi-webnode environment</h2>
+  <p>If you have multiple webnodes, you <em>cannot</em> use Magento’s default file caching because there is no synchronization between webnodes. In other words, activity on one webnode is written to that webnode’s file system only. Subsequent activity, if performed on another webnode, can result in unnecessary files being written or can result in errors.</p>
+
+  <p>Instead, use <a href="/guides/v2.0/config-guide/redis/config-redis.html">Redis</a> for both the default cache and the page cache.</p>
 
   <h2 id="post-install-server">Server settings</h2>
   <p>This section briefly discusses settings we recommend you consider for the server on which Magento runs. Some of these settings are not directly related to Magento; these are provided as suggestions only.</p>
