@@ -14,12 +14,12 @@ This topic provides details about backwards-incompatible changes made in a [Mage
 All changes are aggregated into two tables:
 
 - [Class][] that contains breaking changes made to Magento classes
-- [Interface][] that contains breaking changes to the Magento interfaces
+- [Interface][] that contains breaking changes made to the Magento interfaces
 
 where each change is displayed in a separate row in the table, with the following columns:
 
 - **Target** with name of the affected class or interface
-- **Reason** with description of a change
+- **Reason** with description of the breaking change
 
 {% include changes/ce_changes.html %}
 

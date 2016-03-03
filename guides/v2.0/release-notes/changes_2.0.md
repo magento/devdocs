@@ -117,8 +117,7 @@ You can find a `setup_version` parameter in the `<your_Magento_module_dir>/etc/m
   </tr>
 </table>
 
-* Check boxes and radio buttons
-  * Work as `on/off` fields
+* Check boxes and radio buttons work as `on/off` fields
 * Category products grid
   * Rendered by a UI component as a standalone block
   * Initialized using the `magento-init` event
@@ -136,8 +135,8 @@ Magento\Framework\Model\Entity\MetadataPool::getMetadata(Magento\Catalog\Api\Dat
 
 ### Form initialization changes
 
-* A form is built with the UI components ([more info about a form component](http://devdocs.magento.com/guides/v2.0/ui-components/ui-form.html) )
-* The form is extended using the form configuration file [`<magento2>/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml`][] (see [Overview of UI components](http://devdocs.magento.com/guides/v2.0/ui-components/ui-definition.html)
+* A form is built with the UI components ([more info about a form component][])
+* The form is extended using the form configuration file [`<magento2>/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml`][] (see [Overview of UI components][])
 * The data provider `\Magento\Catalog\Model\Category\DataProvider` is used to set data and fields metadata for the form
 * The default form data is now a part of metadata that is fetched from the `\Magento\Catalog\Model\Category\DataProvider`
 
@@ -152,6 +151,8 @@ When **Products -> Categories** menu item in the Magento Admin is chosen, the fi
 
 [Magento CE breaking changes]: {{site.gdeurl}}release-notes/changes/ce_changes.html
 [Magento EE breaking changes]: {{site.gdeurl}}release-notes/changes/ee_changes.html
+[Overview of UI components]: {{site.gdeurl}}ui-components/ui-definition.html
+[more info about a form component]: {{site.gdeurl}}ui-components/ui-form.html
 
 <!-- ABBREVIATIONS -->
 
