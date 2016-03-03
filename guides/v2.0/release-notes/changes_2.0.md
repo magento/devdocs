@@ -24,7 +24,7 @@ To see all backward incompatible changes follow:
 ## Framework changes
 
 * A `convertConfigTimeToUtc()` method is added to the `lib/internal/Magento/Framework/Stdlib/DateTime/TimezoneInterface` interface. To implement this interface, please implement the method.
-* A `convertConfigTimeToUtc` method is added to the  `lib/internal/Magento/Framework/Stdlib/DateTime/Timezone `.
+* A `convertConfigTimeToUtc` method is added to the  `lib/internal/Magento/Framework/Stdlib/DateTime/Timezone`.
 
 ## Magento_CatalogRule module changes
 
