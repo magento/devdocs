@@ -435,8 +435,8 @@
 <h2 id="framework-changes">Framework changes</h2>
 
 <ul>
-  <li>a <code>convertConfigTimeToUtc()</code> method is added to the <code>lib/internal/Magento/Framework/Stdlib/DateTime/TimezoneInterface</code> interface. To implement this interface, please implement the method.</li>
-  <li>a <code>convertConfigTimeToUtc</code> method is added to the  <code>lib/internal/Magento/Framework/Stdlib/DateTime/Timezone </code></li>
+  <li>A <code>convertConfigTimeToUtc()</code> method is added to the <code>lib/internal/Magento/Framework/Stdlib/DateTime/TimezoneInterface</code> interface. To implement this interface, please implement the method.</li>
+  <li>A <code>convertConfigTimeToUtc</code> method is added to the  <code>lib/internal/Magento/Framework/Stdlib/DateTime/Timezone</code>.</li>
 </ul>
 
 <h2 id="magentocatalogrule-module-changes">Magento_CatalogRule module changes</h2>
@@ -444,8 +444,8 @@
 <h3 id="db-schema-changes">DB schema changes</h3>
 
 <ul>
-  <li>From the <code>catalogrule</code> table the following rows were deleted: <code>sub_is_enable</code>, <code>sub_simple_action</code>, <code>sub_discount_amount</code></li>
-  <li>From the <code>catalogrule_product</code> table the following rows were deleted: <code>sub_simple_action</code>, <code>sub_discount_amount</code></li>
+  <li>From the <code>catalogrule</code> table the following rows were deleted: <code>sub_is_enable</code>, <code>sub_simple_action</code>, <code>sub_discount_amount</code>.</li>
+  <li>From the <code>catalogrule_product</code> table the following rows were deleted: <code>sub_simple_action</code>, <code>sub_discount_amount</code>.</li>
 </ul>
 
 <h3 id="ui-changes">UI changes</h3>
@@ -472,7 +472,7 @@
 <h3 id="flow-changes">Flow changes</h3>
 
 <ul>
-  <li>The functionality of adding a price rule to the subproduct was deleted</li>
+  <li>The functionality of adding a price rule to the subproduct was deleted.</li>
 </ul>
 
 <h2 id="magentocatalog-module-changes">Magento_Catalog module changes</h2>
@@ -482,13 +482,13 @@
 <ul>
   <li>General changes
     <ul>
-      <li><strong>Reset</strong> button has been removed</li>
+      <li><strong>Reset</strong> button has been removed.</li>
     </ul>
   </li>
   <li>POST data structure changed
     <ul>
-      <li>The parent category ID <code>parent_id</code> is now posted in the <code>general</code> field</li>
-      <li>The category data from the <code>general</code> array is split to the specific arrays by a field set name</li>
+      <li>The parent category ID <code>parent_id</code> is now posted in the <code>general</code> field.</li>
+      <li>The category data from the <code>general</code> array is split to the specific arrays by a field set name.</li>
     </ul>
   </li>
 </ul>
@@ -534,12 +534,12 @@
 <p>You can find a <code>setup_version</code> parameter in the <code>&lt;your_Magento_module_dir&gt;/etc/module.xml</code> file.</p>
 
 <ul>
-  <li>The Google Optimizer POST data moved to a specific array</li>
+  <li>The Google Optimizer POST data moved to a specific array.</li>
   <li><code>On/Off</code> fields 
     <ul>
-      <li>The input type has been changed from <code>select</code> to <code>switcher</code></li>
-      <li>A web page sends POST message with attribute <code>value = "true"</code> if the field is checked or <code>value = "false"</code> if it is not</li>
-      <li>A server converts <code>value</code> attribute to the PHP <code>true/false</code> boolean type value</li>
+      <li>The input type has been changed from <code>select</code> to <code>switcher</code>.</li>
+      <li>A web page sends POST message with attribute <code>value = "true"</code> if the field is checked or <code>value = "false"</code> if it is not.</li>
+      <li>A server converts <code>value</code> attribute to the PHP <code>true/false</code> boolean type value.</li>
     </ul>
   </li>
 </ul>
@@ -560,24 +560,20 @@
 </table>
 
 <ul>
-  <li>Check boxes and radio buttons
-    <ul>
-      <li>Work as <code>on/off</code> fields</li>
-    </ul>
-  </li>
+  <li>Check boxes and radio buttons work as <code>on/off</code> fields.</li>
   <li>Category products grid
     <ul>
       <li>Rendered by a UI component as a standalone block</li>
       <li>Initialized using the <code>magento-init</code> event</li>
     </ul>
   </li>
-  <li>To join <abbr title="Entity Attribute Value">EAV</abbr> attributes use <code>linkField</code></li>
+  <li>To join <abbr title="Entity Attribute Value">EAV</abbr> attributes use <code>linkField</code>.</li>
 </ul>
 
 <div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">Magento\Framework\Model\Entity\MetadataPool</span><span class="o">::</span><span class="na">getMetadata</span><span class="p">(</span><span class="nx">Magento\Catalog\Api\Data\CategoryInterface</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="na">getLinkField</span><span class="p">()</span></code></pre></div>
 
 <ul>
-  <li>To set a relation with another entities such as <code>category_product_entity</code> use <code>identifierField</code></li>
+  <li>To set a relation with another entities such as <code>category_product_entity</code> use <code>identifierField</code>.</li>
 </ul>
 
 <div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">Magento\Framework\Model\Entity\MetadataPool</span><span class="o">::</span><span class="na">getMetadata</span><span class="p">(</span><span class="nx">Magento\Catalog\Api\Data\CategoryInterface</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="na">getIdentifierField</span><span class="p">()</span></code></pre></div>
@@ -585,10 +581,10 @@
 <h3 id="form-initialization-changes">Form initialization changes</h3>
 
 <ul>
-  <li>A form is built with the UI components (<a href="http://devdocs.magento.com/guides/v2.0/ui-components/ui-form.html">more info about a form component</a> )</li>
-  <li>The form is extended using the form configuration file <a href="https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml"><code>&lt;magento2&gt;/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml</code></a> (see <a href="http://devdocs.magento.com/guides/v2.0/ui-components/ui-definition.html">Overview of UI components</a></li>
-  <li>The data provider <code>\Magento\Catalog\Model\Category\DataProvider</code> is used to set data and fields metadata for the form</li>
-  <li>The default form data is now a part of metadata that is fetched from the <code>\Magento\Catalog\Model\Category\DataProvider</code></li>
+  <li>A form is built with the UI components (<a href="/guides/v2.0/ui-components/ui-form.html">more info about a form component</a>).</li>
+  <li>The form is extended using the form configuration file <a href="https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml"><code>&lt;magento2&gt;/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml</code></a> (see <a href="/guides/v2.0/ui-components/ui-definition.html">Overview of UI components</a>).</li>
+  <li>The data provider <code>\Magento\Catalog\Model\Category\DataProvider</code> is used to set data and fields metadata for the form.</li>
+  <li>The default form data is now a part of metadata that is fetched from the <code>\Magento\Catalog\Model\Category\DataProvider</code>.</li>
 </ul>
 
 <h3 id="flow-changes-1">Flow changes</h3>
