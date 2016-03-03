@@ -495,20 +495,93 @@
 
 <p>POST, PUT, and DELETE requests to the REST Web API require the service method parameters to be in the body of the request. For example, to create a Customer, you would specify a JSON array (or XML structure) in the body of the message.</p>
 
-<p>For search APIs that invoke a <code>*Repository::getList(SearchCriteriaInterface *)</code> call, the searchCriteria must be specified in the URL of the GET request. The basic pattern for specifying the criteria is </p>
+<p>For search APIs that invoke a <code>*Repository::getList(SearchCriteriaInterface *)</code> call, the searchCriteria must be specified in the URL of the GET request. The basic pattern for specifying the criteria is</p>
 
 <div class="highlight"><pre><code class="language-html" data-lang="html">searchCriteria[filter_groups][<span class="nt">&lt;index&gt;</span>][filters][<span class="nt">&lt;index&gt;</span>][field=<span class="nt">&lt;field_name&gt;</span>]
 searchCriteria[filter_groups][<span class="nt">&lt;index&gt;</span>][filters][<span class="nt">&lt;index&gt;</span>][value=<span class="nt">&lt;search_value&gt;</span>]
 searchCriteria[filter_groups][<span class="nt">&lt;index&gt;</span>][filters][<span class="nt">&lt;index&gt;</span>][condition_type=<span class="nt">&lt;operator&gt;</span>]</code></pre></div>
 
-<p><code>condition_type</code> is optional if the operator is <code>eq</code> (equals).</p>
+<p>where <code>condition_type</code> is one of the following values:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Condition</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>eq</code></td>
+      <td>Equals</td>
+    </tr>
+    <tr>
+      <td><code>finset</code></td>
+      <td>Value in set</td>
+    </tr>
+    <tr>
+      <td><code>from</code></td>
+      <td>Must be used with <code>to</code></td>
+    </tr>
+    <tr>
+      <td><code>gt</code></td>
+      <td>Greater than</td>
+    </tr>
+    <tr>
+      <td><code>gteq</code></td>
+      <td>Greater than or equal</td>
+    </tr>
+    <tr>
+      <td><code>in</code></td>
+      <td>In</td>
+    </tr>
+    <tr>
+      <td><code>like</code></td>
+      <td>Like</td>
+    </tr>
+    <tr>
+      <td><code>lt</code></td>
+      <td>Less than</td>
+    </tr>
+    <tr>
+      <td><code>lteq</code></td>
+      <td>Less than or equal</td>
+    </tr>
+    <tr>
+      <td><code>moreq</code></td>
+      <td>More or equal</td>
+    </tr>
+    <tr>
+      <td><code>neq</code></td>
+      <td>Not equal</td>
+    </tr>
+    <tr>
+      <td><code>nin</code></td>
+      <td>Not in</td>
+    </tr>
+    <tr>
+      <td><code>notnull</code></td>
+      <td>Not null</td>
+    </tr>
+    <tr>
+      <td><code>null</code></td>
+      <td>Null</td>
+    </tr>
+    <tr>
+      <td><code>to</code></td>
+      <td>Must be used with <code>from</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code>condition_type</code> is optional if the operator is <code>eq</code>.</p>
 
 <p>For example, the following query finds all users whose first name starts with “Jo”.</p>
 
 <div class="highlight"><pre><code class="language-html" data-lang="html">GET http://<span class="nt">&lt;magento_host&gt;</span>/rest/V1/customers/search?
-searchCriteria[filterGroups][0][filters][0][field]=firstname<span class="err">&amp;</span>
-searchCriteria[filterGroups][0][filters][0][value]=Jo%25<span class="err">&amp;</span>
-searchCriteria[filterGroups][0][filters][0][condition_type]=like</code></pre></div>
+searchCriteria[filter_groups][0][filters][0][field]=firstname<span class="err">&amp;</span>
+searchCriteria[filter_groups][0][filters][0][value]=Jo%25<span class="err">&amp;</span>
+searchCriteria[filter_groups][0][filters][0][condition_type]=like</code></pre></div>
 
 <p>The system creates an array, as shown in the following pseudo-code.</p>
 
@@ -524,7 +597,7 @@ searchCriteria =&gt; [
          ]
       ]
     ]
-  ] 
+  ]
 </pre>
 
 <p>The following example searches for products whose attributes are <code>size=Large</code> and <code>color=Red</code>. The generated array follows.</p>
@@ -554,7 +627,7 @@ searchCriteria =&gt; [
          ]
       ]
     ]
-  ] 
+  ]
 </pre>
 
 
