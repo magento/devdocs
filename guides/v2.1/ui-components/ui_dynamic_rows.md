@@ -9,9 +9,9 @@ github_link: ui-components/ui_dynamic_rows.md
 ---
 ## Overview
 
-The dynamic-rows component is used to create a table where rows of configurable fields can be dynamically added and removed (dynamic table). For example, it can be used for displaying data from a certain [grid]({{site.gdeurl21}}ui-components/ui-listing-grid.html), where the number of records (rows) is not hardcoded. 
+The dynamic-rows component is used to create a table where rows of configurable fields can be dynamically added and removed. For example, it can be used for displaying data from a certain [grid]({{site.gdeurl21}}ui-components/ui-listing-grid.html), where the number of records (rows) is not hardcoded. 
 
-Following is an illustration of how such a table looks like:
+Following is an illustration of what such a table looks like:
 
 <img src="{{site.baseurl}}common/images/ui-dynamic-row.png" />
 
@@ -24,30 +24,30 @@ Following is an illustration of how such a table looks like:
 ## Dynamic-rows component structure
 
 ### Components' JS classes
-For implementing a dynamic table several UI components are used:
+For implementing a dynamic table, several UI components are used:
 
-- The dynamic-rows component, implemented in the `app/code/Magento/Ui/view/base/web/js/dynamic-rows/dynamic-rows.js` class and 
-- The extended component to transfer data from a grid: `app/code/Magento/Ui/view/base/web/js/dynamic-rows/dynamic-rows-grid.js`
-- The record component: `app/code/Magento/Ui/view/base/web/js/dynamic-rows/record.js`
+- The dynamic-rows component, implemented in the `<Magento_Ui_module_dir>/view/base/web/js/dynamic-rows/dynamic-rows.js` class
+- The extended component to transfer data from a grid: `<Magento_Ui_module_dir>/view/base/web/js/dynamic-rows/dynamic-rows-grid.js`
+- The record component: `<Magento_Ui_module_dir>/view/base/web/js/dynamic-rows/record.js`
 
-For the drag and drop functionality the `app/code/Magento/Ui/view/base/web/js/dynamic-rows/dnd.js` module is used.
+For drag and drop the `<Magento_Ui_module_dir>/view/base/web/js/dynamic-rows/dnd.js` module is used.
 
 ### HTML templates for the dynamic table
 
 The following dynamic table templates are used:
 
-- `app/code/Magento/Ui/view/base/web/templates/dynamic-rows/templates/default.html`
+- `<Magento_Ui_module_dir>/view/base/web/templates/dynamic-rows/templates/default.html`
 
-The following image is an illustration of the dynamic table view when the `default.html` template is used:
+The following image shows the dynamic table view when the `default.html` template is used:
 
 
 <img style="border: 1px solid #ABABAB" src="{{site.baseurl}}common/images/UI_DefaultTemplate.png"/>
 
 
 
-- `app/code/Magento/Ui/view/base/web/templates/dynamic-rows/templates/grid.html`
+- `<Magento_Ui_module_dir>/view/base/web/templates/dynamic-rows/templates/grid.html`
 
-The following image is an illustration of the dynamic table view when the `grid.html` template is used:
+The following image shows the dynamic table view when the `grid.html` template is used:
 
 
 <img style="border: 1px solid #ABABAB" src="{{site.baseurl}}common/images/UI_gridTemplate.png"/>
@@ -55,7 +55,7 @@ The following image is an illustration of the dynamic table view when the `grid.
 
 - `app/code/Magento/Ui/view/base/web/templates/dynamic-rows/templates/collapsible.html`
 
-The following image is an illustration of the dynamic table view when the `collapsible.html` template is used:
+The following image shows the dynamic table view when the `collapsible.html` template is used:
 
 <img style="border: 1px solid #ABABAB" src="{{site.baseurl}}common/images/ui_collapsibleTemplate.png"/>
 
@@ -63,14 +63,14 @@ The following image is an illustration of the dynamic table view when the `colla
 
 ### HTML templates for fields
 
-- `app/code/Magento/Ui/view/base/web/templates/dynamic-rows/cells/action-delete.html`
-- `app/code/Magento/Ui/view/base/web/templates/dynamic-rows/cells/text.html`.
+- `<Magento_Ui_module_dir>/view/base/web/templates/dynamic-rows/cells/action-delete.html`
+- `<Magento_Ui_module_dir>/view/base/web/templates/dynamic-rows/cells/text.html`.
 
 Also dynamic rows uses form field templates.
 
 ## Configuration settings
 
-The dynamic rows component extends the uiCollection component.
+The dynamic-rows component extends the uiCollection component.
 
 A sample configuration follows:
 
@@ -126,7 +126,7 @@ Each component used in dynamic rows is configured separately.
 
 ### Configure the table and columns properties
 
-The general properties of the whole table and column-specific options are configured like following:
+The general properties of the whole table and column-specific options are configured like the following:
 {%highlight xml%}
 ...
 <dynamicRows name="Integration">
@@ -343,7 +343,7 @@ The following table contains the options you can configure for the whole grid an
 
 The properties of the rows (records) are defined by the options of the record UI component.
 
-In the configuration file they are configured in the scope of the container which name is defined by the `itemTemplate` general option. By default it is `<container name="record">`. The record configuration block looks like following:
+In the configuration file, they are configured in the scope of the container which name is defined by the `itemTemplate` general option. By default it is `<container name="record">`. The record configuration block looks like the following:
 
 {%highlight xml%}
         <argument name="data" xsi:type="array">
@@ -408,7 +408,7 @@ Relative path to the column which defines the sorting order.
 
 ### Set the data provider for the dynamic table
 
-By default, the dynamic rows component uses the data provider of its parent component, for example form. To specify the other data source for it, use the following options:
+By default, the dynamic-rows component uses the data provider of its parent component, for example form. To specify the other data source for it, use the following options:
 
 <table>
   <tr>
@@ -465,7 +465,7 @@ By default, the dynamic rows component uses the data provider of its parent comp
 
 ### Define columns' properties
 
-Field type is specified in the scope of the record container (by default it is `<container name="record">`) similar to the following example:
+Field types are specified in the scope of the record container (by default it is `<container name="record">`) similar to the following example:
 
 
 {%highlight xml%}
@@ -597,7 +597,7 @@ The path to data storage.
 </table>
 
 
-You can configure the grid to render a text instead of the certain field. To do this, add the following in the field configuration:
+You can configure the grid to render text instead of the certain field. To do this, add the following in the field configuration:
 
 {%highlight xml%}
 ...
