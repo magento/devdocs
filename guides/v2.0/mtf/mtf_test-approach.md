@@ -13,10 +13,10 @@ github_link: mtf/mtf_test-approach.md
 
 ## Preface {#preface}
 
-Magento testing framework (MTF) works with functional tests only. Functional testing means checking that an application has met business requirements. These requirements usually are collected in a functional specifications that describe expected behaviour of the application. Role of functional testing is to validate this behavior.
+Magento testing framework (MTF) works with functional tests only. Functional testing means checking that an application has met business requirements. These requirements usually are collected in the functional specifications that describe expected behaviour of the application. Role of functional testing is to validate this behavior.
 
 Tests usually cover functionality of a business entity. A goal is to find discrepancies between expected and real behaviour of the product.
-Magento already contains functional tests in the `<magento2>/dev/tests/functional/tests/app/Magento` directory. In this guide we call them `out-of-the-box` tests. You can use them to test default Magento functionality. Also you can create a test extending from the out-of-the-box test, or create your own functional tests.
+Magento already contains functional tests in the `<magento2>/dev/tests/functional/tests/app/Magento` directory. In this guide we call them *out-of-the-box* tests. You can use them to test the default Magento functionality. Also you can create a test extending from the out-of-the-box test, or create your own functional tests.
     
 ## Out-of-the-box test {#out-of-the-box-test}
 
@@ -24,7 +24,7 @@ The out-of-the-box tests are the ready to use functional tests developed by Mage
 
 ### Coverage {#coverage}
 
-Test coverage of the out-of-the-box test depends on a module which it belongs to. The out-of-the-box tests cover basic functionality of Magento application. They test the CRUD functionality for all basic entities. The most important modules are covered better.
+Test coverage of the out-of-the-box test depends on a module which it belongs to. The out-of-the-box tests cover the basic functionality of the Magento application. They test the CRUD functionality for all basic entities. The most important modules are covered better.
 
 ### Usage {#oob-usage}
 
@@ -34,25 +34,25 @@ You can use out-of-the-box tests in:
     
 - Sanity testing, to check the basic functionality after any Magento changes were made
     
-- Acceptance testing, 
+- Acceptance testing: 
     - in combination with own tests
-    - to test new feature: show that feature works and it doesn't break functionality of the Magento application (all other tests passed)
+    - to test a new feature, to check that feature works and it doesn't break functionality of the Magento application (all other tests passed)
  
 ### How to use {#how-to-use}
 
-[Run the test][]
+See [Run the test][] topic.
 
 ## New functional test {#new-test}
 
 The MTF facilitates creation of a new test. You can extend the out-of-the-box test, or create a completely new one.
     
-### Extending an out-of-the-box test {#extending-oob-test}
+### Extension of an out-of-the-box test {#extending-oob-test}
 
 Extension of the test means adding or replacing of any [test entity][]. It is stored in the `<magento2>/dev/tests/functional/tests/app/Magento/<testing_module>` directory.
 
 #### Usage {#ext-usage}
 
-This approach is useful when the Magento functionality was extended. For example, the minor changes were made in the existing functionality of a module. Also you can extend an out-of-the-box test to extend the current test coverage if functionality that you are interested in is not completely covered by the out-of-the-box test.
+This approach is useful when the Magento functionality was extended. For example, the minor changes were made in the existing functionality of a module. Also you can extend an out-of-the-box test to extend the current test coverage if the target functionality is not completely covered by the out-of-the-box test.
 
 Example use cases:
 
@@ -62,29 +62,29 @@ Example use cases:
 - [repository addition][]
 - [block overriding][]
 
-### Creating a functional test {#create-test}
+### Creation of a functional test {#create-test}
 
-If new modules are added to Magento you would need to create an new test to check the functionality. 
+If new modules are added to Magento you would need to create a new test to check the functionality.
 
 New test must be stored in the corresponding module `<magento2>/dev/tests/functional/tests/app/Magento/<testing_module>`.
 
-Each test consists of four main components: test object, test data, test flow, test assertions.
+Each test consists of four main components: a test object, test data, a test flow, a test assertion.
 
 #### Test object {#test-object}
 
-A test object is an object that you are going to test. Most of the test actions will be performed under this object.
+A test object is an object that you are going to test. Most of the test actions are performed under this object.
 The test object is represented by a [fixture][].  The fixture defines properties of an object.
 
 #### Test data {#test-data}
 
-Test data are data for a test and data for preconditions
+Test data are data for a test and data for preconditions.
 
  - Data for the test are stored in a [data set][]
- - Preconditions include sample data that are stored in a [fixture repository][] and sample test entity that can be created by a [handler][]. 
+ - Preconditions include sample data that are stored in a [fixture repository][] and a sample test entity that can be created by a [handler][]. 
 
 #### Test flow {#test-flow}
 
-Test flow is a set of test steps that you want to perform under the test object to check required functionality. Test steps are defined in a [test case][]. Usually a test step contains actions related to a [page][] which contains link to an HTML page and locator strategies for actions. Each action is managed by a method defined in a [block][].
+Test flow is a set of test steps that you want to perform under the test object to check required functionality. Test steps are defined in a [test case][]. Usually a test step contains a set of actions. Each action is managed by a method defined in a [block][]. A [page][] is used as a container for blocks, and stores selectors to identify blocks on an HTML page. 
 
 #### Test assertions {#test-assertions}
 
@@ -94,57 +94,57 @@ A test assertion compares real test flow results with expected ones. Test assert
 
 To demonstrate the usage of test components from previous sections in the test creation process we will create a new functional [injectable test][] step-by-step. Before creating automated test, try to pass it manually.
 
-To make documentation more consistent we created the completely new test specially for documentation needs. We used the [fresh Magento][] functionality for the following test that is not available in 2.0.x versions. You can [install a fresh one][] and try to follow this guide.
+To make documentation more consistent we created a completely new test specially for documentation needs. We used the [concrete Magento commit][] functionality for this test. You can [install one][] and try to follow this guide.
 
 ### Test description {#example-test-description}
 
 Create a synonym group with:
 
 - Scope:
-    - All Websites;
-    - All Store Views;
+    - All Websites
+    - All Store Views
     - Default Store View
-- Synonyms: shoes, foot wear, men shoes, women shoes. For each variation the synonyms must have unique identifiers
+- Synonyms: shoes, foot wear, men shoes, women shoes. For each variation the synonyms must have unique identifiers.
 
 ### Manual testing scenario {#manual-test}
 
 **Variation 1:**
 
-1. Log in to Admin
-2. Browse to "Marketing" > "SEO & Search" > "Search Synonyms"
-3. Click on the "New Synonyms Group" button
-4. Enter data in the "Synonyms" field
-5. Click the "Save Synonym Group" button
-6. Check successful message
+1. Log in to Admin.
+2. Browse to "Marketing" > "SEO & Search" > "Search Synonyms".
+3. Click on the "New Synonyms Group" button.
+4. Enter data in the "Synonyms" field.
+5. Click the "Save Synonym Group" button.
+6. Check successful message.
 
 **Variation 2:**
 
-1. Log in to Admin
-2. Browse to "Marketing" > "SEO & Search" > "Search Synonyms"
-3. Click on the "New Synonyms Group" button
-4. Select "All Store Views" in a "Scope" field
-5. Enter data in the "Synonyms" field
-6. Click the "Save Synonym Group" button
-7. Check successful message
+1. Log in to Admin.
+2. Browse to "Marketing" > "SEO & Search" > "Search Synonyms".
+3. Click on the "New Synonyms Group" button.
+4. Select "All Store Views" in a "Scope" field.
+5. Enter data in the "Synonyms" field.
+6. Click the "Save Synonym Group" button.
+7. Check successful message.
 
 **Variation 3:**
 
-1. Log in to Admin
-2. Browse to "Marketing" > "SEO & Search" > "Search Synonyms"
-3. Click on the "New Synonyms Group" button
-4. Select "Default Store View" in a "Scope" field
-5. Enter data in the "Synonyms" field
-6. Click the "Save Synonym Group" button
-7. Check successful message
+1. Log in to Admin.
+2. Browse to "Marketing" > "SEO & Search" > "Search Synonyms".
+3. Click on the "New Synonyms Group" button.
+4. Select "Default Store View" in a "Scope" field.
+5. Enter data in the "Synonyms" field.
+6. Click the "Save Synonym Group" button.
+7. Check successful message.
 
 ### Automated testing scenario {#auto-test}
 
-1. Log in to Admin
-2. Open Search Synonym page
-3. Click on the "New Synonym Group" button
-4. Enter data according to a data set
-5. Click the "Save Synonym Group" button
-6. Check successful message
+1. Log in to Admin.
+2. Open Search Synonym page.
+3. Click on the "New Synonym Group" button.
+4. Enter data according to a data set.
+5. Click the "Save Synonym Group" button.
+6. Check successful message.
 
 ### Test creation {#test-creation}
 
@@ -210,7 +210,7 @@ Let's check the functional tests for the Magento_Widget module.
 
 ![ScopeID data source alternative from Magento_Widget]({{ site.baseurl }}common/images/mtf_tutorial_storeIds-widget.png)
 
-It contains a `StoreIds.php` data source, that is very similar to what we need. It has the following code:
+It contains a `StoreIds.php` data source, that is similar to what we need. It has the following code:
 
 {% highlight php %}
 
@@ -317,7 +317,7 @@ class ScopeId extends DataSource
             $this->store = $store;
             $this->data = $store->getName();
         } else {
-            $this->data = null;
+            $this->data = $data;
         }
     }
 
@@ -336,9 +336,10 @@ class ScopeId extends DataSource
 
 This data source:
  
- 1. Creates a Store object `<magento2>/dev/tests/functional/generated/Magento/Store/Test/Fixture/Store.php` with `scope_id` data from a data set that we will create later. This data from a data set is a name of a repository `dataset` in the `<magento2>/dev/tests/functional/generated/Magento/Store/Test/Repository/Store.php` class. A Store fixture to be generated is stored in a Store module `<magento2>/dev/tests/functional/tests/app/Magento/Store/Test/Fixture/Store.xml` with a corresponding repository
-`magento2/dev/tests/functional/tests/app/Magento/Store/Test/Repository/Store.xml`. 
- 2. Gets a `name` of the created/loaded store.
+ 1. Checks if a field has a `dataset` key in a value that comes from a variation. If it doesn't, then field is assigned a value from the variation.
+ 2. If it does, then a new Store fixture is created with a `dataset` from a Store repository (`<magento2>/dev/tests/functional/tests/app/Magento/Store/Test/Repository/Store.xml`).
+ 3. Checks if the `store_id` field exist in the Store fixture. If it doesn't, a new Store fixture is created.
+ 4. Returns a Store `name` value.
 
 Now we should change the fixture. Instead of `store_id` and `website_id` we must use `scope_id` with the `Magento\Search\Test\Fixture\Synonym\ScopeId` data source class.
 
@@ -450,9 +451,9 @@ use Magento\Search\Test\Fixture\Synonym;
 
 /**
  * Steps:
- * 1. Log in to Admin
- * 2. Open Search Synonym page
- * 3. Click on the 'New Synonym Group' button
+ * 1. Log in to Admin.
+ * 2. Open Search Synonym page.
+ * 3. Click on the 'New Synonym Group' button.
  * 4. Enter data according to a data set.
  * 5. Click the 'Save Synonym Group' button.
  */
@@ -466,7 +467,7 @@ class CreateSynonymEntityTest extends Injectable
     private $synonymsIndex;
 
     /**
-     * New Synonym Group page
+     * New Synonym Group page.
      *
      * @var synonymsNew
      */
@@ -511,7 +512,7 @@ The following code contains data set, but doesn't have data yet:
 
 <?xml version="1.0" encoding="utf-8"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/mtf/etc/variations.xsd">
-    <testCase name="Magento\Search\Test\TestCase\CreateSynonymEntityTest" summary="Create Synonyms" ticketId="MAGETWO-23022016">
+    <testCase name="Magento\Search\Test\TestCase\CreateSynonymEntityTest" summary="Create Synonyms" ticketId="MAGETWO-123">
         <variation name="CreateCategoryEntityTestVariation1_all_websites_all_store_views" summary="Create synonym for all websites and all store views">
         enter data and constraints for vaiation 1
         </variation>
@@ -952,7 +953,7 @@ You can run the test using your IDE or the CLI. The Selenium Server must be up a
 
     <magento2>/dev/tests/functional/vendor/phpunit --filter CreateSynonymEntityTest
 
-Selenium must perform three cycles of the test flow in a browser. Three cycles correspond to three variations in a data set.
+ The test will be performed in a browser. Three synonyms groups are created one by-one that corresponds to three variations in a data set.
 
 #### Step 10. Create an assertion {#create-assertion}
 
@@ -1096,7 +1097,7 @@ You can run the test using your IDE or the CLI. The Selenium Server must be up a
 
     <magento2>/dev/tests/functional/vendor/phpunit --filter CreateSynonymEntityTest
 
-Selenium must perform three cycles of the test flow in a browser. Three cycles correspond to three variations in a data set. Comparing with run on previous Step, each variation now is checked by assertion.
+Comparing with run on previous Step, each variation now is checked whether a success save message is appeared.
 
 That's it!
 
@@ -1108,8 +1109,8 @@ That's it!
 [fixture extension]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_merge
 [repository addition]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_repositoy
 [block overriding]: {{site.gdeurl}}mtf/mtf_entities/mtf_page.html#override-blocks
-[install a fresh one]: {{site.gdeurl}}install-gde/prereq/dev_install.html
-[fresh Magento]: https://github.com/magento/magento2/tree/a9797cd9c7bc7ac8460dba3fea8548741be1cccd
+[install one]: {{site.gdeurl}}install-gde/prereq/dev_install.html
+[concrete Magento commit]: https://github.com/magento/magento2/tree/a9797cd9c7bc7ac8460dba3fea8548741be1cccd
 
 [test entity]: {{site.gdeurl}}mtf/mtf_entities.html
 [fixture]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html

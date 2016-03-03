@@ -111,12 +111,7 @@ The page will be opened using [mca](#mca) link.
 
 Page merging can help you to redirect modules declared in a page, or add blocks from different modules.
 
-Pages are merged when they:
-
-* have the same name of file
-* have the same `name` attribute value
-* have the same `mca` attribute value
-* don't have `module` and `area` attributes
+Pages are merged when they have the same `name` attribute value.
 
 Pages are merged module by module in the order that modules are loaded in. All new modules are always loaded after Magento modules, so that pages from new Modules are merged the last.
 
@@ -307,9 +302,9 @@ class CatalogProductView extends FrontendPage
 
 ### Block overriding {#override-blocks}
 
-If a block in merging pages have the same `name` attribute value, its attributes will be overwritten by values from the page that is loaded last.
+Your module can influence the functionality of another module, that is defined in a corresponding block of that module. In this case you can override existing block by a block from your module.
  
-To redirect blocks from Magento modules follow:
+To override blocks follow:
 
 **Step 1.** [Create an XML page](#mtf_page_create) in your new module with the name of page you want to merge.
 
@@ -319,14 +314,14 @@ To redirect blocks from Magento modules follow:
 * with the same `mca`
 * without `module` and `area` attributes
   
-**Step 3.** Add blocks that you want to redirect.
+**Step 3.** Add blocks that you want to override (indicating a block class with new behaviour)
 
 **Step 4.** Run the page generator.
 
 Let's see an example with the following use case:
 
-- a new module NewModule changes functionality of a Magento_Catalog module
-- the `editForm` block from the `\Magento\Catalog\Test\Page\Adminhtml\CatalogCategoryEdit` page must be changed according to the new functionality
+- A Magento_NewModule changes the category creation behaviour of a Magento_Catalog module.
+- The `editForm` block from the `\Magento\Catalog\Test\Page\Adminhtml\CatalogCategoryEdit` page must be changed according to the new functionality.
 
 Let's see the `\Magento\Catalog\Test\Page\Adminhtml\CatalogCategoryEdit` page:
 
@@ -356,11 +351,11 @@ The block that we want to change is:
 <block name="editForm" class="Magento\Catalog\Test\Block\Adminhtml\Category\Edit\CategoryForm" locator="#container" strategy="css selector"/>
 {% endhighlight %}
 
-We don't want to change `editForm` block in the Magento_Catalog module, because in case of disabling of a NewModule module the test will be failed. The best way in this case is to create a new block in a NewModule module that covers new functionality.
+We shouldn't change the `editForm` block in the Magento_Catalog module, because in case of disabling of a Magento_NewModule module the test will be failed. The best way in this case is to create a new block in a Magento_NewModule module that covers new functionality.
 
-Assume that we already have the new block `\Magento\NewModule\Test\Block\Adminhtml\Category\Edit\CategoryForm`.
+Assume that we already created the new block `\Magento\NewModule\Test\Block\Adminhtml\Category\Edit\CategoryForm`.
 
-To redirect the `editForm` block we must follow steps mentioned in the beginning of this section:
+To use the `editForm` block from the Magento_NewModule we must follow:
   
 **Step 1.** Create a `CatalogCategoryEdit.xml` page in the `dev/tests/functional/tests/app/Magento/NewModule/Test/Page/Adminhtml` directory.
 
@@ -374,7 +369,7 @@ To redirect the `editForm` block we must follow steps mentioned in the beginning
 
 <?xml version="1.0" encoding="utf-8"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/pages.xsd">
-    <page name="CatalogCategoryEdit" area="Adminhtml" mca="catalog/category/edit" module="Magento_Catalog">
+    <page name="CatalogCategoryEdit" mca="catalog/category/edit">
     </page>
 </config>
 
@@ -385,8 +380,8 @@ To redirect the `editForm` block we must follow steps mentioned in the beginning
 {% highlight xml %}
 <?xml version="1.0" encoding="utf-8"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/pages.xsd">
-    <page name="CatalogCategoryEdit" area="Adminhtml" mca="catalog/category/edit" module="Magento_Catalog">
-        <block name="editForm" class="Magento\NewModule\Test\Block\Adminhtml\Category\Edit\CategoryForm" locator="//div[contains(@data-bind, 'category_form')]" strategy="xpath"/>
+    <page name="CatalogCategoryEdit" mca="catalog/category/edit">
+        <block name="editForm" class="\Magento\NewModule\Test\Block\Adminhtml\Category\Edit\CategoryForm" locator="//div[contains(@data-bind, 'category_form')]" strategy="xpath"/>
     </page>
 </config>
 {% endhighlight %}
@@ -396,6 +391,8 @@ To redirect the `editForm` block we must follow steps mentioned in the beginning
 Enter in terminal:
 
     php <magento2>/dev/tests/functional/utils/generate/page.php
+
+Now when you call `editForm` block from the `CatalogCategoryEdit` page, the `\Magento\NewModule\Test\Block\Adminhtml\Category\Edit\CategoryForm` class will be used.
 
 <!-- LINK DEFINITIONS -->
 
