@@ -40,7 +40,7 @@ For varibles naming rules see [Less coding standards](http://devdocs.magento.com
 
 ## Override `_responsive.less` from the library
 
-The approach implmented in the Magento UI library is based on recursive call of `.media-width()` mixin defined anywhere in project but invoked in one place in `lib/web/css/source/lib/_responsive.less`. 
+The approach implemented in the Magento UI library is based on recursive call of `.media-width()` mixin defined anywhere in project but invoked in one place in `lib/web/css/source/lib/_responsive.less`. 
 
 To add a new breakpoint we need to edit `.media-width()` mixin by adding the appropriate rule there. Tha is why we need to override it in our theme. 
 
