@@ -93,7 +93,7 @@ The following sections discuss how to set file system ownership and permissions:
 {% include install/file-system-perms1-why.html %}
 
 <h3 id="install-perms-set">File system permissions and ownership</h3>
-{% include install/file-system-perms2-how.html %}
+{% include install/file-system-perms2-how.md %}
 
 #### Next step
 Install the Magento software:

@@ -33,14 +33,6 @@ For `name="app_backend_url"` set `value` that is your actual URL for Magento Adm
 Example:
 `<env name="app_backend_url" value="http://example.com/magento2/admin"/>`.
 
-#### Windows only! Set full path for `basedir` and `credentials_file_path` parameters {#mtf_quickstart_config_phpunitxml_win-credent}
-
-Find `<php>` element.
-
-For `<env name="basedir"` set `value="<full_path_to_directory>" />` (that is directory for error logs). For example, `<env name="basedir" value="C:\magento2\dev\tests\functional\var\log" />`.
-
-For `name="credentials_file_path" ` set `value="<full_path_to_directory>"` (that is file with credentials for Magento modules, if required). For example, `<env name="credentials_file_path" value="C:\magento2\dev\tests\functional\credentials.xml" />`.
-
 ### Edit `config.xml` to configure Magento Testing Framework {#mtf_quickstart_config_configxml}
 
 <div class="bs-callout bs-callout-info" id="info">

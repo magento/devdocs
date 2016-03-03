@@ -2,8 +2,8 @@
 layout: default
 group: howdoi
 subgroup: Deploy
-title: Deploy to production
-menu_title: Deploy to production
+title: Deploy Magento to production
+menu_title: Deploy Magento to production
 menu_node: parent
 menu_order: 1
 github_link: howdoi/deploy/deploy-to-prod.md
@@ -102,6 +102,6 @@ This section provides guidelines for deploying a Magento installation to product
 Best practices in production:
 
 *	Use <a href="{{ site.gdeurl }}config-guide/varnish/config-varnish.html">Varnish</a> to accelerate HTTP traffic, including providing page caching
-*	Use the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html">`magento deploy:mode:set`</a> command to enable developer mode
+*	Use the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html">`magento deploy:mode:set`</a> command to enable production mode
 *	Use the `pub` directory as the Magento docroot to prevent running the Setup Wizard, Component Manager, or System Upgrade in production. (Set up virtual hosts to point to `<your Magento install dir>/pub`.)
 *	Set up your `robots.txt` to *allow* search engines to index your production site. 

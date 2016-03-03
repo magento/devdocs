@@ -18,7 +18,7 @@ To install Composer:
 
 2.	Enter the following commands:
 
-	<pre>curl -sS https://getcomposer.org/installer | php
-	mv composer.phar /usr/local/bin/composer</pre>
-
+		curl -sS https://getcomposer.org/installer | php
+		mv composer.phar /usr/local/bin/composer
+		
 	For additional installation options, see the <a href="https://getcomposer.org/download/" target="_blank">Composer installation documentation</a>.

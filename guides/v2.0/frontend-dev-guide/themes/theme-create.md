@@ -65,7 +65,7 @@ After you create a directory for your theme, you must create `theme.xml` contain
 {% endhighlight %}
 
 
-## Make your theme a Composer package (optional){#fedg_create_theme_composer}
+## Make your theme a Composer package (optional) {#fedg_create_theme_composer}
 
 
 Magento default themes are distributed as <a href="https://getcomposer.org/" target="_blank">Composer</a> packages.
@@ -99,7 +99,7 @@ Example of a theme `composer.json`:
 }
 {% endhighlight %}
 
-You can find details about the Composer integration in the Magento system in <a href="{{site.gdeurl}}extension-dev-guide/composer-integration.html">Composer integration</a>.
+You can find details about the Composer integration in the Magento system in <a href="{{site.gdeurl}}extension-dev-guide/build/composer-integration.html">Composer integration</a>.
 
 ## Add registration.php {#fedg_create_theme_reg}
 
@@ -219,7 +219,7 @@ Your theme does not have a parent theme:
 </li>
 </ul>
 
-## Declaring theme logo {logo_declare}
+## Declaring theme logo {#logo_declare}
 
 To declare a theme logo, add an <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> `<theme_dir>/Magento_Theme/layout/default.xml` layout. 
 
@@ -245,7 +245,7 @@ To learn more about theme layouts, refer to the <a href="{{site.gdeurl}}frontend
 
 
 ## What's next {#next}
-See the [Apply and configure a theme in Admin]({{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html") topic.
+See the [Apply and configure a theme in Admin]({{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html) topic.
 
 <!--
 

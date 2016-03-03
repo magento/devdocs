@@ -5,7 +5,6 @@ subgroup: 70_Changelog
 title: Changelog of Magento Testing Framework
 menu_title: CHANGELOG
 menu_node: parent
-menu_order: 5
 github_link: mtf/mtf_changelog.md
 redirect_from: /guides/v1.0/mtf/mtf_changelog.html
 ---

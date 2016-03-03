@@ -18,6 +18,11 @@ You can add a custom checkout step, it should be implemented as a UI component. 
 
 This topic describes how to create the frontend part of the component, implementing a checkout step, and how to add it to the checkout flow.
 
+**Contents**
+
+* TOC
+{:toc}
+
 ## Create the view part of the checkout step component
 
 To create the view part of the new checkout step:
@@ -121,7 +126,7 @@ define(
 
 ### Add the .html template
 
-In the module directory, add the `.html` template for the component. It must be located under the '<your_module_dir>/view/frontend/web/template` directory.
+In the module directory, add the `.html` template for the component. It must be located under the `<your_module_dir>/view/frontend/web/template` directory.
 
 A sample `mystep.html` follows:
 {%highlight html%}

@@ -61,7 +61,7 @@ The option of the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_c
 **Default value**: `[data-ajax=true]`
 
 <h3 id="fedg_tabs_options-ajaxContent"><code>ajaxContent</code></h3>
-Defines if the contend is loaded by Ajax request.
+Defines if the content is loaded by Ajax request.
 The option of the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_collapsible.html" target="_blank">collapsible</a> widget used by tabs. 
 
 **Type**: Boolean

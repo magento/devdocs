@@ -1,10 +1,10 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 6_Module Development
+subgroup: 99_Module Development
 title: PHP developer guide
 menu_title: Backward compatibility
-menu_order: 12
+menu_order: 14
 github_link: extension-dev-guide/backward-compatibility.md
 redirect_from: 
   - /guides/v1.0/architecture/index-cache/backward-compatibility.html
@@ -79,9 +79,12 @@ To reduce complexities, for Magento 2.0 GA, all components share the same versio
 <h3>What other code changes can cause backward incompatibility?</h3>
 
 Changes to the database can cause code to break.  As with PHP code, within a MAJOR version changes must be backward compatible. This means:
+
 * Database tables or columns will not be removed.
 * The format of data in a column will not be restructured. 
+
 This may require redundancy in table structure and data until a clean occurs with next MAJOR release. Unlike the PHP code, this code does not have automated identification of breaking changes.
+
 Changes in configuration files can potentially cause problems. As a result, Magento will monitor these files to ensure backward incompatible changes are not introduced.
 
 <h3>How does the @api impact the version?</h3>

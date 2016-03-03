@@ -1,21 +1,47 @@
 <div markdown="1">
 
-<h2 id="install-sample-composer">Install sample data using Composer</h2>
-This topic discusses how to enable you to install optional Magento sample data using Composer. You <a href="#instgde-prereq-sample-comp">modify <code>composer.json</code></a> in the Magento root installation directory to provide the location of the sample data package. After that, you can either run the Magento software installer or you can run a script to install the sample data.    
+## Install sample data using Composer
+This section discusses how to install sample data if you got the Magento software in any of the following ways:
 
-<h2 id="instgde-prereq-sample-comp">Modify <code>composer.json</code></h2>
-Sample data is versioned like Magento components. You can either install the latest version or you can specify a specific version using Composer <a href="https://getcomposer.org/doc/articles/versions.md#next-significant-release-operators" target="_blank">next significant release syntax</a>.
+*   Downloaded a compressed archive
+*   Used `composer create-project`
 
-To enable sample data using Composer:
+You can use this method of getting sample data if you used Magento Community Edition (CE) or Enterprise Edition (EE).
 
-1.	Log in to the Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
-2.	Enter the following commands to require the current version of sample data packages:
+If you're a contributing developer, see one of the other topics on the left side of this page.
 
-		composer require magento/<package name>:<version>
+To install sample data using the command line, enter the following command as the Magento file system owner:
 
-	`<version>` can be a specific version like `100.0.2` or you can use Composer next significant release syntax to specify a later release; for example, `~100.0.1`
+    php <your Magento install dir>/bin/magento sampledata:deploy
 
-	The complete `<package name>` list follows:
+<!-- where `[module-list]` is an optional space-separated list of <a href="#sample-data-modules">sample data modules</a> to install. Omit this parameter to install all sample data modules.
+ -->
+You are required to <a href="{{ site.gdeurl }}install-gde/prereq/connect-auth.html">authenticate</a> to complete the action.
 
-	{% include install/sampledata/sample-data_list-of-modules.md %}
+### Authentication error
 
+The following error might display:
+
+    [Composer\Downloader\TransportException]
+    The 'https://repo.magento.com/packages.json' URL required authentication.
+    You must be using the interactive console to authenticate
+
+If the error displays, change to your Magento installation directory and run `composer update`, which will prompt you for your <a href="{{ site.gdeurl }}install-gde/prereq/connect-auth.html">authentication keys</a>.
+
+### Install the Magento software {#magento-install}
+After downloading sample data packages, install the Magento software in any of the following ways:
+
+*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">Command line</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/web/install-web.html">Setup Wizard</a>
+
+
+<!-- <h3 id="sample-data-modules">Complete list of modules</h3>
+The complete list of sample data modules follows:
+
+{% include install/sampledata/sample-data_list-of-modules.md %} -->
+
+<!-- ABBREVIATIONS -->
+
+*[contributing developer]: A developer who contributes code to the Magento 2 CE codebase
+*[contributing developers]: Developers who contribute code to the Magento 2 CE codebase
+*[Contributing developers]: Developers who contribute code to the Magento 2 CE codebase

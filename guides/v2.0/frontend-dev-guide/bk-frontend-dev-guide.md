@@ -40,12 +40,7 @@ Frontend developers can use this guide to create custom themes to tailor the Mag
 
 To implement what is discussed in this guide, you need a working Magento installation and the following browser versions installed on your device:
 
-*	Internet Explorer 9 or later (Windows)
-*	Mozilla Firefox latest, latest-2 (any operating system)
-*	Google Chrome latest, latest-2 (any operating system)
-*	Apple Safari 5 or later (Mac OS)
-*	Apple Safari Mobile for iPad, iPad Mini, iPad with Retina Display (iOS 6 or later), for Desktop Frontend
-*	Apple Safari Mobile for iPhone 4 or later; iOS 6 or later, for Mobile Frontend
+{% include browsers/supported-browsers.md %}
 
 To use this guide, you must be familiar with:
 
