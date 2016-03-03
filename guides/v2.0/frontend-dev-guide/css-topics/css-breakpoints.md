@@ -43,11 +43,13 @@ For variables' naming rules see [Less coding standards](http://devdocs.magento.c
 
 According to the approach, implemented in the Magento UI library, the `.media-width()` mixin calls are defined in many places, but invoked in one place, in `lib/web/css/source/lib/_responsive.less`. 
 
-To implement a new breakpoint, we need to edit the `.media-width()` mixin by adding the appropriate rule there. So you need to override the library `_responsive.less` in your theme, and add the customizations there. 
+To implement a new breakpoint, you need to edit the `.media-width()` mixin by adding the appropriate rule there. So you need to override the library `_responsive.less` in your theme, and add the customizations there. 
 
 To do this, take the following steps:
 
-1. Copy the `_responsive.less` file to your `<your_theme_dir>/web/css/source/lib/` directory. You must copy the file from the parent's theme `<your_parent_theme_dir>/web/css/source/lib/_responsive.less`, if it exists. In other case copy the library file `<your_theme_dir>/web/css/source/lib/`.
+1. Copy the `_responsive.less` file to your `<your_theme_dir>/web/css/source/lib/` directory from one of the following locations:
+	- `<your_parent_theme_dir>/web/css/source/lib/_responsive.less`: overriding `_responsive.less` in the parent theme. If there's no such file or no parent theme, use the other optin. 
+	- `<your_theme_dir>/web/css/source/lib/_responsive.less`: the library file.
 2. In your `_responsive.less`, add the `.media-width` mixin rule for your breakpoint in the corresponding section (desktop or mobile, depending on the type of breakpoint you add).
 
 Example:
@@ -70,8 +72,6 @@ Example:
     }
 
 ## Related reading
-
-
 
 - You can find information about the `_responsive.less` library file in the generated Magento UI library documentation. It is available in the following location in your Magento installation: `<your_Magento_installation>/pub/static/frontend/Magento/blank/en_US/css/docs/responsive.html`.
 - [How to make your theme responsive and mobile]({{site.gdeurl}}frontend-dev-guide/responsive-web-design/rwd_overview.html).
