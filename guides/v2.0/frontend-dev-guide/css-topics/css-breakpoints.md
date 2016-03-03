@@ -12,42 +12,59 @@ github_link: frontend-dev-guide/css-topics/css-breakpoints.md
 
 Breakpoints are used in stylesheets to set up the screen width at which the design switches from the mobile to the desktop version. Magento out of the box themes implement a list of [default breakpoints]({{site.gdeurl}}frontend-dev-guide/responsive-web-design/rwd_css.html#fedg_rwd_css_break). This topic describes how to set breakpoints in your theme. 
 
-<p class="q">Why so many of them??</p>
 
 * TOC
 {:toc}
 
 ## Overview
-To add a custom breakpoint to your theme you need to define a variable for the new breakpoint and override the `/lib/web/css/source/lib/_responsive.less` Magento UI library in the theme.
+To add a custom breakpoint to your theme you need to do the following:
+
+1. Define a variable for the new breakpoint.
+2. Override the library `_responsive.less` file and add the new rule for the new breakpoint.
+3. Implement the screen changes for the new breakpoint.
 
 ## Add a new breakpoint variable
 
-In your custom theme directory, add a `/web/css/source/variables.less` with the following content:
+In your custom theme directory, add a `/web/css/source/variables.less` in one of the following ways:
 
-If your theme inherits - you need to copy varibles.less from parent, and add the new variable. if the theme is standalone - create a new file.
+-  if your theme [inherits]({{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html) from the other, then copy the parent's `variables.less`.
+-  if your theme is a standalone one, add a new empty file.
 
-<p class="q">What should be in this file, except the new breakpoint? </p>
+In your `variable.less`, add the variable for your new breakpoint.
+
+<p class="q">do we talk only about adding a new breakpoint? what about changing the behavior for the default ones?</p>
+
+For example:
 
     @your__breakpoint: 1280px;
 
 For varibles naming rules see [Less coding standards](http://devdocs.magento.com/guides/v2.0/coding-standards/code-standard-less.html#variables).
 
-## Override the lib `_responsive.less`
+## Override `_responsive.less` from the library
 
-If your parent has _responsive.less that overrides the lib file (that is resides in the corresponding directory) - copy the parent _responsive.less
+The library _responsive.less file sets the rules using breakpoints. So to add a new rule, you need to override the library file, and add the rule for your breakpoint. 
 
-To override lib `_responsive.less` file: 
-Copy `/lib/web/css/source/lib/_responsive.less` to `<your_theme_dir>/web/css/source/lib/` directory.
+If the `<your_parent_theme_dir>/web/css/source/lib/_responsive.less` exists, copy it to `<your_theme_dir>/web/css/source/lib/`.
 
-In your _responsive.less, add the following in the correspoding section (desctop or mobile):
+If the file in the parent theme does not exist, copy `/lib/web/css/source/lib/_responsive.less` to `<your_theme_dir>/web/css/source/lib/`.
 
-& when (@media-target = 'desktop'), (@media-target = 'all') {
-…
-    @media all and (min-width: @screen__my) {
-        .media-width('min', @screen__my);
+In your `_responsive.less`, add the rule in the correspoding section (desktop or mobile, depending on the type of breakpoint you add).
+
+Example:
+
+    & when (@media-target = 'desktop'), (@media-target = 'all') {
+    …
+        @media all and (min-width: @screen__my) {
+            .media-width('min', @screen__my);
+        }
     }
-}
-4.	Add a new @media instruction where needed:
-.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__my) {
-    //  Customisation for @screen__my breakpoint
-}
+
+## Declare the screen changes for the breakpoint
+
+In one of your theme .less files, add a new `@media` instruction implementing the required screen changes.
+
+Example:
+
+    .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__my) {
+        //  Customisation for @screen__my breakpoint
+    }
