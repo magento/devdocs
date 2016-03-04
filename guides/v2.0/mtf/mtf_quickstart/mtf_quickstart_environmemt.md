@@ -51,7 +51,10 @@ Enter in terminal:
     php generate.php
 
 <h2 id="mtf_install_pre">Next Steps</h2>
-<a href="{{ site.gdeurl }}mtf/mtf_quickstart/mtf_quickstart_config.html">&lt;&lt; Adjust configuration </a> | <a href="{{ site.gdeurl }}mtf/mtf_quickstart/mtf_quickstart_runtest.html"> Test run &gt;&gt;</a>
+
+[&lt;&lt; Prepare Magento application]({{ site.gdeurl }}mtf/mtf_quickstart/mtf_quickstart_magento.html)| <a href="{{ site.gdeurl }}mtf/mtf_quickstart/mtf_quickstart_runtest.html"> Test run &gt;&gt;</a>
+
+
 
 <!-- LINK DEFINITIONS -->
 

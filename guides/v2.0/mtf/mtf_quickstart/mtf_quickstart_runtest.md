@@ -44,4 +44,5 @@ Let's check creating of new category. For this we should run `<magento2>/dev/tes
     <magento2>/dev/tests/functional/vendor/phpunit --filter CreateCategoryEntityTest
 
 <h2 id="mtf_install_pre">Next Steps</h2>
-<a href="{{ site.gdeurl }}mtf/mtf_quickstart/mtf_quickstart_environmemt.html">&lt;&lt; Prepare environment for test </a> | <a href="{{ site.gdeurl }}mtf/mtf_quickstart/mtf_quickstart_logs.html"> See logs for failed tests &gt;&gt;</a>
+
+[&lt;&lt; Prepare environment for test]({{ site.gdeurl }}mtf/mtf_quickstart/mtf_quickstart_environmemt.html) | [See logs for failed tests &gt;&gt;]({{ site.gdeurl }}mtf/mtf_quickstart/mtf_quickstart_logs.html)

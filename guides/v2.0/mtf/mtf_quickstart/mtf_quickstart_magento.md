@@ -46,3 +46,7 @@ Enable the Admin Account Sharing setting to avoid unpredictable logout during te
 3. Set **Add Secret Key to URLs** to **No**.
 
 ![Change security settings]({{site.baseurl}}common/images/mtf_qstart_mag_secur.png){:width="650px"}
+
+<h2 id="mtf_install_pre">Next Steps</h2>
+
+[&lt;&lt; Adjust configuration]({{ site.gdeurl }}mtf/mtf_quickstart/mtf_quickstart_config.html) | [Prepare environment for test run &gt;&gt;]({{ site.gdeurl }}mtf/mtf_quickstart/mtf_quickstart_environmemt.html)

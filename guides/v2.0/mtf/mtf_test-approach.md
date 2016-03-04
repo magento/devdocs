@@ -77,10 +77,10 @@ The test object is represented by a [fixture][].  The fixture defines properties
 
 #### Test data {#test-data}
 
-Test data are data for a test and data for preconditions.
+Test data are data for a test and data for preconditions:
 
- - Data for the test are stored in a [data set][]
- - Preconditions include sample data that are stored in a [fixture repository][] and a sample test entity that can be created by a [handler][]. 
+ - Data for the test are stored in a [data set][].
+ - Preconditions include sample data that are stored in a [fixture repository][] and a sample test entity that can be created by a [handler][].
 
 #### Test flow {#test-flow}
 
@@ -150,29 +150,32 @@ Create a synonym group with:
 
 #### Step 1. Check the MTF configuration and environment {#check-mtf}
  
-Adjust configuration. Learn how to [adjust a configuration][].
-Prepare environment for test run. Learn how to [prepare environment for test run][].
+* Adjust configuration. Learn how to [adjust a configuration][].
+
+* Prepare Magento application. Learn how to [prepare Magento application][].
+
+* Prepare environment for test run. Learn how to [prepare environment for test run][].
 
 #### Step 2. Create testing object - a [fixture][] {#create-test-object}
 
 This step is applicable if a fixture doesn't exist in a module.
 
-Use a [`generateFixtureXml.php` tool][] to create a new [fixture][].
+Use a [`generateFixtureXml.php`][] to create a new [fixture][].
 
 Enter in your terminal:
 
     cd <magento2>/dev/tests/functional/utils
-    php -f generateFixtureXml.php -- --name synonym --entity search_synonyms --collection Magento\\Search\\Model\\ResourceModel\\Query\\Collection
+    php -f generateFixtureXml.php -- --name synonym --entity_type search_synonyms --collection Magento\\Search\\Model\\ResourceModel\\Query\\Collection
 
 See the following explanations.
 
 |Parameter|Value|Explanation
 |-|-|-
 |`--name`|`synonym`|A name of the fixture. It can have any name. `synonym` seems to be logical.
-|`--entity_type`|`search_synonyms`|Database table name where entity data is stored. You can track database input when you perform a [manual test][]. A new record will be created in a table that you need.
+|`--entity_type`|`search_synonyms`|Database table name where entity data is stored. You can track database input when you perform a [manual testing][]. A new record will be created in a table that you need.
 |`--collection`|`Magento\\Search\\Model\\ResourceModel\\Query\\Collection`|Collection to generate data sets. Synonyms are the entities of a Magento_Search module. Collection can always be find in model resources. All slashes must be escaped `\\`.
 
-As a result of previous commands, a new brand fixture can be found in the `<magento2>/dev/tests/functional/tests/app/Magento/Search/Test/Fixture` directory.
+As a result of previous commands, a brand new fixture can be found in the `<magento2>/dev/tests/functional/tests/app/Magento/Search/Test/Fixture` directory.
 
 ![A new Synonym fixture]({{site.baseurl}}common/images/mtf_tut_fixt.png)
 
@@ -340,6 +343,10 @@ This data source:
  2. If it does, then a new Store fixture is created with a `dataset` from a Store repository (`<magento2>/dev/tests/functional/tests/app/Magento/Store/Test/Repository/Store.xml`).
  3. Checks if the `store_id` field exist in the Store fixture. If it doesn't, a new Store fixture is created.
  4. Returns a Store `name` value.
+ 
+We can save it as `<magento2>/dev/tests/functional/tests/app/Magento/Search/Test/Fixture/Synonym/ScopeId.php`.
+
+![Synonym ScopeID data source location]({{site.baseurl}}common/images/mtf_tutorial_datasource.png)
 
 Now we should change the fixture. Instead of `store_id` and `website_id` we must use `scope_id` with the `Magento\Search\Test\Fixture\Synonym\ScopeId` data source class.
 
@@ -357,7 +364,7 @@ Then, we must regenerate the fixture to apply changes:
 
     php <magento2>/dev/tests/functional/utils/generate.php
 
-And the new PHP class `Synonym.php` is generated in `<magento2>/dev/tests/functional/generated/Magento/Search/Test/Fixture`.
+And a new PHP class `Synonym.php` is generated in `<magento2>/dev/tests/functional/generated/Magento/Search/Test/Fixture`.
 
 {%highlight php%}
 <?php
@@ -438,7 +445,11 @@ class Synonym extends \Magento\Mtf\Fixture\InjectableFixture
 Now we can start creation of a [test case][].
 
 From the [test case topic][] we know about structure, location and name of the test case.
-So, let it be `<magento2>/dev/tests/functional/tests/app/Magento/Search/Test/TestCase/CreateSynonymEntityTest.php`. And after manual testing we know that we must work with a Search Synonym Index page and a New Synonym Group page during the test flow. It means that we should initialize these pages in the test using an `__inject()` method of the `Magento\Mtf\TestCase\Injectable` class. Also we will definitely use the [fixture][] from the previous step.
+So, let it be `<magento2>/dev/tests/functional/tests/app/Magento/Search/Test/TestCase/CreateSynonymEntityTest.php`.
+ 
+ ![A test case location]({{site.baseurl}}common/images/mtf_tutorial_testcase_location.png)
+ 
+ And after [manual testing][] we know that we must work with a Search Synonym Index page and a New Synonym Group page during the test flow. It means that we should initialize these pages in the test using an `__inject()` method of the `Magento\Mtf\TestCase\Injectable` class. Also we will definitely use the [fixture][] from the previous step.
 
 {% highlight php %}
 
@@ -530,7 +541,7 @@ The following code contains data set, but doesn't have data yet:
 There is no need to enter data in a `group_id` field, because it is assigned automatically by application. We need to set a `synonyms` and a `scope_id` fields.
 
 - `synonyms` field. We need to [set data to a fixture field][]. So, name of the field should be `<name of a fixture>/data/<name of the field>`, or in our case it is `name = "synonym/data/synonyms"`. To make data unique in each variation we can use the [`%isolation%` placeholder][].
-- `scope_id` field. We need to [set data to a fixture field from a repository][]. So, name of the field should be `<name of a fixture>/data/<name of the field>/dataset`, or in our case it is `name="synonym/data/scope_id/dataset"`. As you remember from [Step 2][], we use data source to process this field. Data source creates Store fixture with Store repository to enter data to this field. It means that in this field we should insert name of the Store repository `dataset name` from `<magento2>/dev/tests/functional/tests/app/Magento/Store/Test/Repository/Store.xml`.
+- `scope_id` field. We need to [set data to a fixture field from a repository][]. So, name of the field should be `<name of a fixture>/data/<name of the field>/dataset`, or in our case it is `name="synonym/data/scope_id/dataset"`. As you remember from [Step 2][], we use data source to process this field. Data source loads Store fixture with Store repository, and returns a name of the field we need. It means that in data set field we should specify a name of the Store repository `dataset name` from `<magento2>/dev/tests/functional/tests/app/Magento/Store/Test/Repository/Store.xml`.
 
 | Variation #  |`synonyms`|`scope_id`
 |---
@@ -565,7 +576,7 @@ OK, let's see the data set with data.
  
 #### Step 5. Create pages {#create-pages}
 
-In [Step 3][] we added two [pages][] to the test case class. The both pages are in the Admin area, that's why we will create them in the `<magento2>/dev/tests/functional/tests/app/Magento/Search/Test/Page/Adminhtml` directory. This principle is a good practice, it is not obligatory.
+In [Step 3][] we added two [pages][] to the test case class. The both pages are in the Admin area, that's why we should create them in the `<magento2>/dev/tests/functional/tests/app/Magento/Search/Test/Page/Adminhtml` directory. This principle is a good practice, it is not obligatory.
 
 **SynonymsIndex.xml**
 
@@ -604,21 +615,21 @@ To generate PHP classes for these pages enter and run in your terminal
     
 ![PHP classes of pages]({{site.baseurl}}common/images/mtf_tutorial_pages_php.png)
     
-In the following section we will create blocks that implements logic in these pages.
+In the next step we will create [blocks][] that implements logic in these pages.
 
 #### Step 6. Create blocks {#create-blocks}
 
 Let's see in the [test description][] what actions must be performed:
 
-1. Click on the "New Synonym Group" button
-2. Enter data according to a data set
-3. Click the "Save Synonym Group" button
+1. Click on the "New Synonym Group" button.
+2. Enter data according to a data set.
+3. Click the "Save Synonym Group" button.
 
 OK, let's start.
 
 **How to code 'Click on the "New Synonym Group" button'**
 
-Fortunately you already have a block which contains method to add a new entity in a grid: [`\Magento\Backend\Test\Block\GridPageActions`][].
+Fortunately you already have a [block][] which contains a method to add a new entity in a grid: [`\Magento\Backend\Test\Block\GridPageActions`][].
 
 {% highlight php startinline=1 %}
 
@@ -634,14 +645,13 @@ public function addNew()
 
 {% endhighlight %}
 
-To locate a UI block which contains a button we will use a `.page-main-actions` locator.
+To locate on HTML page the UI block  which contains a button we will use a `.page-main-actions` locator.
 
-To use this method in a test case you have to add this block to the `SynonymsIndex.xml` page.
+To use this method in a test case the `SynonymsIndex.xml` page must contain this block.
 
 {% highlight xml %}
 
 <?xml version="1.0" encoding="utf-8"?>
-
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/pages.xsd">
     <page name="SynonymsIndex" area="Adminhtml" mca="search/synonyms/index" module="Magento_Search">
         <block name="pageActionsBlock" class="Magento\Backend\Test\Block\GridPageActions" locator=".page-main-actions" strategy="css selector"/>
@@ -658,21 +668,23 @@ We need to enter data from a data set to the form fields.
 
 ![New Synonym Group page]({{site.baseurl}}common/images/mtf_tutorial_page_new_synonym.png)
 
-It is time to use [block mapping][].
+It is time to use the [block mapping][].
 
-Corresponding to the structure of a Search module in a code base
+Corresponding to the structure of a Search module in a code base,
  
 ![Block structure in a code base]({{site.baseurl}}common/images/mtf_tutorial_block_struct.png) 
  
- we are going to create the similar structure:
+we should create the similar structure:
  
 ![Block structure in a functional test]({{site.baseurl}}common/images/mtf_tutorial_block_struct_test.png) 
 
 We need a `fill()` method from the [`\Magento\Mtf\Block\Form`][] class and a mapping file.
 
-**[Form mapping][]**
+**Form mapping**
 
-We don't need to define mapping parameters for the `synonyms` field, because they are the same as default values (see [nodes description table][]). The same is applicable to the `scope_id` field except a type of input. The type of input here is a [custom typified element][] [`\Magento\Mtf\Client\Element\SelectstoreElement`][]. The mapping file `SynonymsForm.xml` has the following code:
+[Learn about form mapping][].
+
+We don't need to define mapping parameters for the `synonyms` field, because they are the same as default values (see [nodes description table][]). The same is applicable to the `scope_id` field except a type of input element, which is a [custom typified element][] [`\Magento\Mtf\Client\Element\SelectstoreElement`][] in our case. Let's create the mapping file `SynonymsForm.xml` has the following code:
                                                                       
 {% highlight xml %}
 
@@ -687,15 +699,11 @@ We don't need to define mapping parameters for the `synonyms` field, because the
 
 {% endhighlight %}
 
-A block class must simply extend `\Magento\Mtf\Block\Form` class. Its name must contain a concatenation of the fixture name and a `Form` ending. Let's create a `\Magento\Search\Test\Block\Adminhtml\Synonyms\Edit\SynonymsForm` class:
+A block class must simply extend `\Magento\Mtf\Block\Form` class. Its name contains duplicates a name of the mapping file that is a concatenation of the fixture name and a `Form` ending. Let's create a `\Magento\Search\Test\Block\Adminhtml\Synonyms\Edit\SynonymsForm` empty class
 
 {% highlight php %}
 
 <?php
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
 
 namespace Magento\Search\Test\Block\Adminhtml\Synonyms\Edit;
 
@@ -711,9 +719,12 @@ class SynonymsForm extends Form
 
 {% endhighlight %}
 
+Now we have the following structure:
+
 ![Form mapping block]({{site.baseurl}}common/images/mtf_tutorial_block_mapping.png)
 
-Now we can add the `SynonymsForm.php` block class to the `SynonymsNew.xml` page object. To identify a form block on the HTML page we use an `id='page:main-container'` css selector.
+
+Then we should add the block class to the `SynonymsNew.xml` page object. To identify a form block on the HTML page we use an `id='page:main-container'` css selector.
 
 {% highlight xml %}
 
@@ -725,7 +736,7 @@ Now we can add the `SynonymsForm.php` block class to the `SynonymsNew.xml` page 
 
 To operate with forms we can use a `save()` method from the [`\Magento\Backend\Test\Block\FormPageActions`][] block class.
 
-To use this class, it must be added to the the `SynonymsNew.xml` page. The `.page-main-actions` css selector will help to identify a UI block with the button on the HTML page.  
+The `SynonymsNew.xml` page must contain this class. The `.page-main-actions` css selector will help to identify a UI block with the button on the HTML page.  
 
 {% highlight xml %}
 
@@ -743,12 +754,11 @@ To associate methods with [pages][], blocks must be added to pages.
 
 A corresponding page object in a functional test is `<magento2>/dev/tests/functional/tests/app/Magento/Search/Test/Page/Adminhtml/SynonymsIndex.xml`
 
-The page with blocks needed for a test flow:
+The page with a block:
 
 {% highlight xml %}
 
 <?xml version="1.0" encoding="utf-8"?>
-
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/pages.xsd">
     <page name="SynonymsIndex" area="Adminhtml" mca="search/synonyms/index" module="Magento_Search">
         <block name="pageActionsBlock" class="Magento\Backend\Test\Block\GridPageActions" locator=".page-main-actions" strategy="css selector"/>
@@ -761,12 +771,11 @@ The page with blocks needed for a test flow:
 
 A corresponding page object in a functional test is `<magento2>/dev/tests/functional/tests/app/Magento/Search/Test/Page/Adminhtml/SynonymsIndex.xml`
 
-The page with blocks needed for a test flow:
+The page with blocks:
 
 {% highlight xml %}
 
 <?xml version="1.0" encoding="utf-8"?>
-
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/pages.xsd">
     <page name="SynonymsNew" area="Adminhtml" mca="search/synonyms/new" module="Magento_Search">
         <block name="synonymForm" class="Magento\Search\Test\Block\Adminhtml\Synonyms\Edit\SynonymsForm" locator="[id='page:main-container']" strategy="css selector" />
@@ -780,11 +789,13 @@ To generate PHP classes for these pages enter and run in your terminal:
 
     php <magento2>/dev/tests/functional/utils/generate.php
 
-Well, now we can define a `test()` method that will contain a test flow.
+Well, now we can define the test flow in a `test()` method of the test case ([Step 3][]).
 
 #### Step 8. Define a `test()` method {#define-test-method}
 
-An argument for the `test()` method is a test object (a fixture).
+Here we should recall [Step 3][], where the initial test case was created.
+
+An argument for the `test()` method is a [test object][] (a [fixture][]).
 
 {% highlight php startinline=1 %}
 
@@ -799,7 +810,7 @@ public function test(Synonym $synonym)
 
 {% endhighlight %}
 
-Here we should recall [Step 3][], where the initial test case was created. So, page classes must be used in a test case class:
+ So, page classes must be used in a test case class:
 
 {% highlight php startinline=1 %}
 
@@ -1112,6 +1123,7 @@ That's it!
 [install one]: {{site.gdeurl}}install-gde/prereq/dev_install.html
 [concrete Magento commit]: https://github.com/magento/magento2/tree/a9797cd9c7bc7ac8460dba3fea8548741be1cccd
 
+
 [test entity]: {{site.gdeurl}}mtf/mtf_entities.html
 [fixture]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html
 [data set]: {{site.gdeurl}}mtf/mtf_entities/mtf_dataset.html
@@ -1122,8 +1134,9 @@ That's it!
 [test case topic]: {{site.gdeurl}}mtf/mtf_entities/mtf_testcase.html
 [injectable test]: {{site.gdeurl}}mtf/mtf_entities/mtf_testcase.html
 [block]: {{site.gdeurl}}mtf/mtf_entities/mtf_block.html
+[blocks]: {{site.gdeurl}}mtf/mtf_entities/mtf_block.html
 [block mapping]: {{site.gdeurl}}mtf/mtf_entities/mtf_block.html#mtf_block_mapping
-[form mapping]: {{site.gdeurl}}mtf/mtf_entities/mtf_block.html#mtf_block_mapping
+[Learn about form mapping]: {{site.gdeurl}}mtf/mtf_entities/mtf_block.html#mtf_block_mapping
 [nodes description table]: {{site.gdeurl}}mtf/mtf_entities/mtf_block.html#mtf_block_form_xml_nodes
 [page]: {{site.gdeurl}}mtf/mtf_entities/mtf_page.html
 [pages]: {{site.gdeurl}}mtf/mtf_entities/mtf_page.html
@@ -1132,16 +1145,19 @@ That's it!
 [constraint]: {{site.gdeurl}}mtf/mtf_entities/mtf_constraint.html
 [custom typified element]: {{site.gdeurl}}mtf/mtf_entities/mtf_typified-element.html#magento_class
 
+
 [adjust a configuration]: {{site.gdeurl}}mtf/mtf_quickstart/mtf_quickstart_config.html
+[prepare Magento application]: {{site.gdeurl}}mtf/mtf_quickstart/mtf_quickstart_magento.html
 [prepare environment for test run]: {{site.gdeurl}}mtf/mtf_quickstart/mtf_quickstart_environmemt.html
 
-[`generateFixtureXml.php` tool]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_create
+[`generateFixtureXml.php`]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_create
 [set data to a fixture field]: {{site.gdeurl}}mtf/mtf_entities/mtf_dataset.html#fixture_field
 [set data to a fixture field from a repository]: {{site.gdeurl}}mtf/mtf_entities/mtf_dataset.html#fixture_field_repository
 [`%isolation%` placeholder]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture-repo.html#mtf_repo_isolation
 
-[manual test]: #manual-test
+[manual testing]: #manual-test
 [test description]: #auto-test
+[test object]: #test-object
 [Step 2]: #create-test-object
 [Step 3]: #create-init-test-case
 [Step 5]: #create-pages

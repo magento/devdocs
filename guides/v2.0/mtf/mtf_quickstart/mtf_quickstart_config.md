@@ -74,7 +74,6 @@ Example for Google Chrome:
 
 {% endhighlight %}
 
-
 ### Edit `credentials.xml` to work with Magento modules that requires credentials {#mtf_quickstart_config_credentialsxml}
 
 Find `credentials.xml` in `<magento2>/dev/tests/functional`, and open it in editor.
@@ -90,4 +89,6 @@ Find block of elements for the Magento module you want to test.
 
 Enter actual data in `value` attribute of corresponding `field` element.
 
-<h2 id="mtf_install_pre">Next Steps</h2> <a href="{{ site.gdeurl }}mtf/mtf_quickstart/mtf_quickstart_environmemt.html">Prepare environment for test run</a>
+<h2 id="mtf_install_pre">Next Steps</h2>
+
+[Prepare Magento application &gt;&gt;]({{ site.gdeurl }}mtf/mtf_quickstart/mtf_quickstart_magento.html)
