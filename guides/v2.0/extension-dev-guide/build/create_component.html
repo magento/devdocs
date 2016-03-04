@@ -812,6 +812,16 @@
 <h2 id="add-composer-json">Add the components <code>composer.json</code> file</h2>
 <p><code>composer.json</code> provides a component name and also specifies component dependencies.</p>
 
+<p>In addition, the <a href="/guides/v2.0/comp-mgr/compman-start.html">Component Manager</a> looks for a <code>composer.json</code> in a component’s root directory and can perform actions on the component and its dependencies. </p>
+
+<p>In particular:</p>
+
+<ul>
+  <li>If a component has <code>composer.json</code> <em>and</em> the component was installed using Composer (including from packagist, the Magento Marketplace, or other source), the Component Manager can update, uninstall, enable, or disable the component.</li>
+  <li>If the component has <code>composer.json</code> but was <em>not</em> installed using Composer (for example, custom code a developer wrote), Component Manager can still enable or disable the component.</li>
+  <li>We strongly recommend you include <code>composer.json</code> in your component’s root directory whether or not you intend to distribute it to other Magento merchants.</li>
+</ul>
+
 <p>A sample follows:</p>
 
 <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
