@@ -11,6 +11,8 @@ github_link: release-notes/changes/ce_changes.md
 
 This topic provides details about backwards-incompatible changes made in a [Magento CE mainline][] after the [Magento 2.0][] release. The content is auto-generated.
 
+Be aware that no @api code has been modified.
+
 All changes are aggregated into two tables:
 
 - [Class][] that contains breaking changes made to Magento classes
