@@ -63,6 +63,11 @@ bash shell example for CentOS:
 
 	export MAGE_PROFILER=firebug
 
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>If a <code>PHP Fatal error</code> displays in the browser after you set a profiler value, restart your web server. The reason might be related to PHP bytecode caching, which caches bytecodes and PHP classpaths.</p></span>
+</div>
+
 <h2 id="mode-specify-web">Specifying a parameter value</h2>
 This section discusses how to specify the mode for either Apache or nginx.
 
