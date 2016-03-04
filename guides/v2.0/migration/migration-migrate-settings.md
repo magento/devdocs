@@ -19,7 +19,11 @@ If necessary, here is how to change how settings are migrated:
 1.	Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
 2.	Change to the following directory:
 
-		`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc
+		`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<fromedition-to-toedition>
+			ex: /var/www/html/magento/data-migration-tool/etc/ce-to-ce
+			ex: /var/www/html/magento/data-migration-tool/etc/ce-to-ee
+			ex: /var/www/html/magento/data-migration-tool/etc/ee-to-ee
+		
 1. 	Enter the following command to create `settings.xml` from the provided sample:
 
 		cp settings.xml.dist settings.xml
