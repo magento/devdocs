@@ -12,11 +12,20 @@ github_link: rest/rest_endpoints.md
 ## REST Schema Endpoint Format
 To specify one or more services:
 
-`http://<magento_host>/rest/default/schema&services=<serviceName1,serviceName2,..>`
+`http://<magento_host>/rest/<store_code>/schema&services=<serviceName1,serviceName2,..>`
 
 To specify all services:
 
-`http://<magento_host>/rest/default/schema`
+`http://<magento_host>/rest/<store_code>/schema`
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>The value of `store_code` can be one of the following:</p>
+  <ul>
+  <li><code>default</code></li>
+  <li>The assigned store code</li>
+  <li><code>all</code>. This value only applies to the CMS and Product modules. If this value is specified, the API call affects all the merchant's stores. <code>GET</code>operations cannot be performed when you specify <code>all</code>.</li>
+  </ul>
+</div>
 
 ## List of Service Names per Module
 

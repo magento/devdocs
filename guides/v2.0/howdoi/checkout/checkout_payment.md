@@ -12,7 +12,6 @@ github_link: howdoi/checkout/checkout_payment.md
 
 Out of the box, Magento checkout consists of two steps:
 
-
 - Shipping Information
 - Review and Payment Information
 
@@ -30,7 +29,7 @@ All the steps are described further.
 
 ## Create the .js component file {#create}
 
-Your payment method must be implemented as a UI component. For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should depend on the Magento_Checkout module. Module dependencies are specified in the [module's `composer.json`]({{site.gdeurl}}extension-dev-guide/composer-integration.html).
+Your payment method renderer must be implemented as a UI component. For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should depend on the Magento_Checkout module. Module dependencies are specified in the [module's `composer.json`]({{site.gdeurl}}extension-dev-guide/build/composer-integration.html).
 
 In you custom module directory create the component's `.js` file (payment method renderer). It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory. For example in the Magento modules, the payment methods renderers are stored in the `<your_module_dir>/view/frontend/web/js/view/payment/method-renderer/` directory.
 
@@ -106,7 +105,7 @@ define(
 );
 {%endhighlight%}
 
-If your payment method requires credit cards information, you might use the Magento renderer implementing a credit card form: [`<Magento_Payment_module_dir>/view/frontend/web/js/view/payment/cc-form.js`]({{site.gdeurl}}app/code/Magento/Payment/view/frontend/web/js/view/payment/cc-form.js). It also extends the default payment renderer, but has the following own methods:
+If your payment method requires credit cards information, you might use the Magento renderer implementing a credit card form: [`<Magento_Payment_module_dir>/view/frontend/web/js/view/payment/cc-form.js`]({{site.mage2000url}}app/code/Magento/Payment/view/frontend/web/js/view/payment/cc-form.js). It also extends the default payment renderer, but has the following own methods:
 
 
 <table>
@@ -306,4 +305,4 @@ In your custom module directory, create a new `<your_module_dir>/view/frontend/l
 </page>
 {%endhighlight %}
 
-For an illustration of `checkout_index_index.xml` where a new payment method is declared, view [`<Magento_Authorizenet_module_dir>/view/frontend/layout/checkout_index_index.xml`]({{site.gdeurl}}app/code/Magento/Authorizenet/view/frontend/layout/checkout_index_index.xml)
+For an illustration of `checkout_index_index.xml` where a new payment method is declared, view [app/code/Magento/Authorizenet/view/frontend/layout/checkout_index_index.xml]({{site.mage2000url}}app/code/Magento/Authorizenet/view/frontend/layout/checkout_index_index.xml)

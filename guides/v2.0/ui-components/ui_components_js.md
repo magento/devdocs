@@ -61,7 +61,7 @@ The `.html` template of the bookmarks component is [Magento/Ui/view/base/web/tem
  - children: is a general name for the nested components of a certain component. Children can be specified in the `.xml` configuration of the parent component (all nodes except `<argument/>` and `<dataSource/>` are considered children) and in the Knockout JS templates: children are the keys of the `elems` property.
 
  - `name`: the name of the component specified in the `.xml` configuration file of the parent UI component. In the run-time in a browser this value is transformed to a complex string. This string represents hierarchy of components in the run-time.
-For example, (`app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_listing.xml:57`)[{{site.mage2000url}}app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_listing.xml#L57]:
+For example, [`app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_listing.xml:57`]({{site.mage2000url}}app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_listing.xml#L57):
 
 {%highlight xml%} 
 <component name="columns_controls">
@@ -71,9 +71,9 @@ In the run-time `columns_controls` is transformed to the following string: `cms_
 
 This string is constructed from the following values:
 
- - `cms_block_listing.cms_block_listing`: - the full name of the root component.
+ - `cms_block_listing.cms_block_listing`: the full name of the root component.
  - `listing_top`: the value of the `name` attribute of the parent `<container name="listing_top">` component. 
- - `columns_controls` - the value of the `name` attribute of the component itself.
+ - `columns_controls`: the value of the `name` attribute of the component itself.
 
 ## UI Components' properties used for linking {#comp_link}
 
