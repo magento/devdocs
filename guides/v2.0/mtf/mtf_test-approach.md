@@ -1033,7 +1033,11 @@ class AssertCustomerSuccessSaveMessage extends AbstractConstraint
 
 {% endhighlight %}
 
-Making a simple adoption we can create a constraint class that we need `\Magento\Search\Test\Constraint\AssertSynonymSuccessSaveMessage`:
+Making a simple adoption we can create a constraint class that we need `\Magento\Search\Test\Constraint\AssertSynonymSuccessSaveMessage`
+
+![A constraint location]({{site.baseurl}}common/images/mtf_tutorial_constraint_dir.png)
+
+with the following code:
 
 {% highlight php %}
 
