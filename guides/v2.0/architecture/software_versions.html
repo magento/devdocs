@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Module dependency types</title>
+	<title>Magento 2.0 software versions</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/architecture/archi_perspectives/components/modules/mod_depend_types.html">
+	<link rel="canonical" href="//guides/v2.0/architecture/software_versions.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -132,9 +132,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Module dependency types</h1>
-			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/architecture/archi_perspectives/components/modules/mod_depend_types.md" target="_blank">Edit this page on GitHub</a>
+		<h1 class="page-heading">Magento 2.0 software versions</h1>
 		
 		
 	</div>
@@ -326,7 +324,7 @@
 									
 
 
-											<li class="level3Child versioning " data-menunode="versioning"><a href="/guides/v2.0/architecture/software_versions.html">Magento 2.0 software versions</a>
+											<li class="level3Child versioning  active " data-menunode="versioning"><a href="/guides/v2.0/architecture/software_versions.html">Magento 2.0 software versions</a>
 
 
 									
@@ -519,7 +517,7 @@
 									
 
 
-											<li class="level3Child modules  active " data-menunode="modules"><a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_depend_types.html">Module dependency types</a>
+											<li class="level3Child modules " data-menunode="modules"><a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_depend_types.html">Module dependency types</a>
 
 
 									
@@ -767,90 +765,55 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<h2 id="m2devgde-moddep-declare-dep">Types of module dependencies</h2>
-<p>There are two types of Magento module dependencies: hard and soft dependencies.</p>
+		<h2 id="verpol">Magento 2.0 software versions</h2>
 
-<h3>Hard dependencies</h3>
-
-<p>Modules with a <i>hard dependency</i> on another module cannot function without the module it depends on. Specifically:</p>
+<p>Magento versioning policy addresses the concerns of two main types of users: </p>
 
 <ul>
   <li>
-    <p>The module contains code that directly uses logic from another module  (for example, the latter module’s instances, class constants, static methods, public class properties, interfaces, and traits). </p>
+    <p><i>merchants</i>, who are focused on <strong>product version numbers</strong>. This product version number loosely corresponds to a platform version. </p>
   </li>
   <li>
-    <p>The module contains strings that include class names, method names, class constants, class properties, interfaces, and traits from another module. </p>
-  </li>
-  <li>
-    <p>The module deserializes an object declared in another module. </p>
-  </li>
-  <li>
-    <p>The module uses or modifies the database tables used by another module. </p>
+    <p><i>extension developers</i>, who focus on <strong>module version numbers</strong>. Each  module is released in its own Composer package, which is identified with a module version number.</p>
   </li>
 </ul>
 
-<h3>Soft dependencies</h3>
+<h3>Product version numbers (merchant focus)</h3>
+<p>All merchant projects depend on the CE metapackage. (A <i>metapackage</i> consists of a <code>.zip</code> file that contains more than one Composer package.) Projects can specify a dependency on a specific version number (such as 2.0.1) or use a pattern to pick up patches automatically (such as 2.0.*)</p>
 
-<p>Modules with a  <i>soft dependency</i> on another module can function properly without the other module, even if it has a dependency upon it. Specifically:</p>
+<p>Products are currently restricted to Magento Community Edition (CE) and Magento Enterprise Edition (EE). The version numbers of editions are designed for use in discussions with merchants. That is, major and minor increments to the version number will reflect the significance of changes to merchants. This may or may not reflect equally significant changes to developers.</p>
 
-<ul>
-  <li>
-    <p>The module directly checks another module’s availability.</p>
-  </li>
-  <li>
-    <p>The module extends another module’s configuration.</p>
-  </li>
-  <li>
-    <p>The module extends another module’s layout.</p>
-  </li>
-</ul>
+<p>You can easily view the product version number of your Magento installation in the right footer of the Magento Admin (for example, <strong>Magento</strong> ver. 2.0.0-rc).</p>
 
-<div class="bs-callout bs-callout-warning" id="warning">
-<p>Note: If a module uses code from another module, it should declare the dependency explicitly.
-</p>
-</div>
+<h3>Software version numbers (extension developer focus)</h3>
+<p>Software version (module)  numbers are relevant only to developer-level discussions. Extension developers typically depend on module major version numbers using version patterns such as 100.*.</p>
 
-<p>Magento installs modules in the following order: </p>
+<p>If an extension developer depends on a private API, he specifies the major and minor version number such as 100.0.* to prevent the extension from working with the next CE release. This versioning practice forces merchants to upgrade to a newer version of the extension when they upgrade the CE release level.</p>
 
-<p>1) the module serving as a dependency for another module</p>
+<p>The Magento team changes the major version number when we make a change that will affect extension developers. Examples of such changes include public API changes and significant layout file changes.</p>
 
-<p>2) the module dependent on it</p>
+<h3>Schema and data version numbers (extension developer focus)</h3>
+<p>Schema and data version numbers are relevant only to developer-level discussions.  Magento uses these version numbers during the installation and upgrade process.</p>
 
-<h3 id="m2devgde-moddep-inapp-dep">Inappropriate dependencies</h3>
+<p>Some modules contain tables of data, and these tables are assigned a schema version number. Changes to the table structure must be reflected in this schema version number. (Table structure changes can include the addition or deletion of a column, for example.) Changes to table data are captured in the data version number. </p>
 
-<p>Avoid creating the following dependencies:</p>
+<p>For information on the types of schema changes that affect a module’s schema version number, see section 2 of Introducing SchemaVer for semantic versioning of schemas.</p>
 
-<ul>
-  <li>
-    <p>Circular dependencies (both direct and indirect)</p>
-  </li>
-  <li>
-    <p>Undeclared dependencies</p>
-  </li>
-  <li>
-    <p>Incorrect dependencies</p>
-  </li>
-</ul>
+<p>If you are developing an extension, specify the schema version of each module in its <code>module.xml</code> file. Magento stores this schema version of each module within the read-only <code>setup_module</code> table of the Magento database. </p>
 
-<h3 id="m2devgde-moddep-diff-layer">Dependencies between modules in different product layers</h3>
-<p>You can build dependencies between the modules belonging to different layers.</p>
+<p>If you are installing or upgrading Magento from the command line, you have the option to upgrade in stages: first upgrade only schemas of tables and then upgrade data. During the upgrade process, Magento tracks these version changes in the setup_module table by automatically updating from the version value in <code>etc/module.xml</code> file.</p>
 
-<h3 id="m2devgde-moddep-frmwk-layer">Dependencies in the Framework layer</h3>
-<p>Modules belonging to the Magento Framework can be used in the application layer by an explicit dependency.</p>
+<h3>Composer package version numbers</h3>
+<p>Each module is released as a Composer package, and Magento uses Composer to define dependencies and compatibility between packages. A software version number identifies the Composer package for each module. The Magento engineering team assigns these versioning numbers  based on semantic versioning. As a result,  <strong>a product version number will differ from software version number</strong>. Product version number is reflected in the Composer package for the Product (meta-package) version numbers. Software version number is reflected in the Composer package for the module version numbers. For example, a change from CE 2.0 to 2.1 could be more significant from an engineering perspective, and perhaps trigger a major version number change at the Composer package version number level.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Note: In this case, using interfaces is preferable to using classes. </p>
-  <p>You can build dependencies between classes in the Magento Framework  even if they belong to different modules.</p>
-</div>
+<h3>Patches</h3>
 
-<h3 id="m2devgde-moddep-app-layer">Dependencies in the application layer</h3>
-<p>Modules belonging to the application layer cannot be used in the Magento Framework.</p>
+<p>Release versioning and semantic versioning work together. Patches change only the last digit, which allows 100.0.n style patterns to be used across patch levels. Backward-compatible changes to the public API and documented behavior of a module trigger a minor number change, allowing 100.* style patterns to be used when an extension uses only public APIs.</p>
 
-<p>You can build dependencies between classes in the application layer, but these classes must belong to the same module. Dependencies between the modules of the application layer should be built only by the service contract or the service provider interface (SPI).</p>
+<h3>Related topics</h3>
+<p><a href="/guides/v2.0/architecture/back-compatibility.html">Backward compatibility</a></p>
 
-<h2 id="m2arch-module-related">Related topics</h2>
-
-<p><a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_depend.html">Module dependencies</a></p>
+<p><a href="/guides/v2.0/architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a></p>
 
 
 

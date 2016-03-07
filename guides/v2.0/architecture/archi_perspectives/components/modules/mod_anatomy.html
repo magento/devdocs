@@ -302,26 +302,9 @@
 
 		<h2 id="arch-modules-anatomy">Module anatomy</h2>
 
-<p>A Magento <i>module</i> is a logical group of components that encapsulate  a particular business function, typically a business task. All components of a module relate to the module’s specific function. For example, each element of the Shipping module contains all the code and interfaces needed to implement core shipping-related tasks. </p>
+<p>A Magento <i>module</i> is a logical group of components that encapsulates  a particular business function, typically a business task. All components of a module relate to the module’s specific function. For example, each element of the Shipping module contains all the code and interfaces needed to implement core shipping-related tasks. A module directory typically contains blocks, controllers, helpers, models, configuration files, and other components that contribute to the module’s core purpose. </p>
 
-<p>A module directory typically contains blocks, controllers, helpers, models, configuration files, and other components that contribute to the module’s core purpose. </p>
-
-<h3>Modules and the MVC pattern</h3>
-<p>Modules have multiple layers that roughly correspond to the Model-View-Controller (MVC) division of function. The MVC software pattern is an architectural principle/pattern that stipulates the organization of application code into three general categories: code responsible for controlling how data is displayed by the application; how the application creates and updates the data model in the creating data model of .  </p>
-
-<ul>
-  <li>
-    <p><strong>View</strong> components (M<strong>V</strong>C) correspond with presentation layer elements: CSS, JavaScript, and PHTML template files.</p>
-  </li>
-  <li>
-    <p><strong>Controller</strong> components (MV<strong>C</strong>) correspond to the service layer: service contracts and controllers.</p>
-  </li>
-  <li>
-    <p><strong>Model</strong> components (<strong>M</strong>VC) correspond to business logic layer: models and SQL structures. </p>
-  </li>
-</ul>
-
-<p>See <a href="/guides/v2.0/architecture/archi_perspectives/Magento_MVC.html">Magento MVC Pattern</a> for more information. </p>
+<p>Module structure is defined by both module code components and logical structure.</p>
 
 <h3>Module components</h3>
 
@@ -357,9 +340,9 @@
 <h4>/etc</h4>
 <p>This directory contains the XML files that declare and configure behavior of all modules. Each module must have a <code>config.xml</code> file, where  all models, routers, blocks, helpers are declared.</p>
 
-<p>Optionally, this folder could have <code>adminhtml.xml</code> (grant permissions for your tabs/sections in server-side menus) and <code>system.xml</code> (creates this new section or specifies where it should be displayed in existing one).</p>
+<p>Optionally, this folder could have <code>adminhtml.xml</code> (grant permissions for your tabs/sections in server-side menus) and <code>system.xml</code> (creates this new section or specifies where it should be displayed in the existing one).</p>
 
-<p>Magento 2 looks for configuration information for each module in that module’s ‘/etc’ directory. Depending on the purpose of your module, it might contain the following configuration files in its <code>/etc</code> directory:</p>
+<p>Magento 2.x looks for configuration information for each module in that module’s ‘/etc’ directory. Depending on the purpose of your module, it might contain the following configuration files in its <code>/etc</code> directory:</p>
 
 <ul>
   <li>
@@ -379,13 +362,12 @@
   </li>
 </ul>
 
-<p>Configuration files that are in the top level of that module’s <code>/etc</code> directory are global to that component.
-Configuration files placed in subdirectories (adminhtml, frontend, webapi_rest, webapi_soap) apply only to those respective functional areas.</p>
+<p>Configuration files that are in the top level of that module’s <code>/etc</code> directory are global to that component. Configuration files placed in subdirectories (<code>adminhtml</code>, <code>frontend</code>, <code>webapi_rest</code>, <code>webapi_soap</code>) apply only to those respective functional areas.</p>
 
 <p>The specific set of configuration files that your module requires depends on the module’s purpose and the Magento area in which it functions. </p>
 
 <h4>Helper</h4>
-<p>Helpers contain utility methods, which are commonly used throughout the application. Methods, as declared in helpers, can be called from any template file or block, model, controller class by</p>
+<p>Helpers contain utility methods, which are commonly used throughout the application. Methods, as declared in helpers, can be called from any template file or block, model, controller class.</p>
 
 <p>Each module has a default Data Helper class <code>Modulename/Helper/Data.php</code>.</p>
 
@@ -394,7 +376,7 @@ Configuration files placed in subdirectories (adminhtml, frontend, webapi_rest, 
 
 <p><i>Resource Models</i> are objects that contain code that fetches data from a data store. In practice, this means a resource model is the object that contains the SQL building and fetching code, as well as references to objects that connect to the main Magento database.</p>
 
-<p><i>Models</i> are objects that contain database-agnostic code for interacting with a type of data. In traditional data modeling terms, your model objects contain the business logic for a particular kind of object (kind of object meaning Product, Customer, etc.).</p>
+<p><i>Models</i> are objects that contain database-agnostic code for interacting with a type of data. In traditional data modeling terms, your model objects contain the business logic for a particular type of object (types include Product and Customer).</p>
 
 <p>A Magento model object contains a reference to a resource model, which it uses to load its data. There’s an individual resource model object for each model object. For example, a Product Model has a Product resource model.</p>
 
@@ -404,8 +386,6 @@ Configuration files placed in subdirectories (adminhtml, frontend, webapi_rest, 
 <h3 id="arch-modules-related">Related topics</h3>
 
 <p><a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_intro.html">Module overview</a></p>
-
-<p><a href="/guides/v2.0/architecture/archi_perspectives/components/Magento_MVC.html">Magento MVC Pattern</a></p>
 
 
 
