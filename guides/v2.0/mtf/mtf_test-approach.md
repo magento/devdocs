@@ -699,7 +699,7 @@ We don't need to define mapping parameters for the `synonyms` field, because the
 
 {% endhighlight %}
 
-A block class must simply extend `\Magento\Mtf\Block\Form` class. Its name contains duplicates a name of the mapping file that is a concatenation of the fixture name and a `Form` ending. Let's create a `\Magento\Search\Test\Block\Adminhtml\Synonyms\Edit\SynonymsForm` empty class
+A block class must simply extend `\Magento\Mtf\Block\Form` class. Its name contains duplicates a name of the mapping file that is a concatenation of the fixture name and a `Form` ending. Let's create a `\Magento\Search\Test\Block\Adminhtml\Synonyms\Edit\SynonymsForm` empty class:
 
 {% highlight php %}
 
@@ -810,7 +810,7 @@ public function test(Synonym $synonym)
 
 {% endhighlight %}
 
- So, page classes must be used in a test case class:
+Now we can add page classes made in [Step 5][]:
 
 {% highlight php startinline=1 %}
 
@@ -819,7 +819,9 @@ use Magento\Search\Test\Page\Adminhtml\SynonymsNew;
 
 {% endhighlight %}
 
-All methods are defined in blocks ([Step 6][]) that are grouped in pages ([Step 5][], [Step 7][]). And we can code all required test flow:
+All methods are defined in blocks ([Step 6][]) that are grouped in pages ([Step 5][], [Step 7][]).
+ 
+Remember our test flow:
 
 1. Log in to Admin
 2. Open a Search Synonym page
@@ -827,9 +829,11 @@ All methods are defined in blocks ([Step 6][]) that are grouped in pages ([Step 
 4. Enter data according to a data set
 5. Click the "Save Synonym Group" button
 
+Let's code it!
+
 **Log in to Admin and open Search Synonym page**
 
-In the MTF the process of logging in doesn't require a special method and is performed automatically when any page from the Admin is opened. A method which we will use is an `open()` method of the `Magento/Mtf/Page/BackendPage` class. There is no need to add this class in `use`, because it is inherited from the `Magento/Search/Test/Page/Adminhtml/SynonymsIndex` class.
+In the MTF, the process of logging in doesn't require a special method and is performed automatically when any page from the Admin is opened. A method, which we will use, is an `open()` method of the `Magento/Mtf/Page/BackendPage` class. There is no need to add this class in `use`, because it is inherited from the `Magento/Search/Test/Page/Adminhtml/SynonymsIndex` class.
 
 {% highlight php startinline=1  %}
 
@@ -839,7 +843,7 @@ $this->synonymsIndex->open();
 
 **Click on the "New Synonym Group" button**
 
-To click on the "New Synonym Group" button we will use the `addNew()` method from the `pageActionsBlock` block. A `getPageActionsBlock()` of the generated `Magento/Search/Test/Page/Adminhtml/SynonymsIndex` class receives parameters defined in the `pageActionsBlock` block (`class`, `locator`, `strategy`).
+To click on the "New Synonym Group" button, we will use the `addNew()` method from the `pageActionsBlock` block. A `getPageActionsBlock()` of the generated `Magento/Search/Test/Page/Adminhtml/SynonymsIndex` class receives parameters defined in the `pageActionsBlock` block (`class`, `locator`, `strategy`).
 
 {% highlight php startinline=1  %}
 
@@ -851,7 +855,7 @@ $this->synonymsIndex->getPageActionsBlock()->addNew();
 
 **Enter data according to a data set**
 
-To enter data in the form we use the `fill()` method from the `synonymForm` block of the `synonymsNew` page. An argument for this method is a fixture `Synonym`. A `getSynonymForm()` method of the generated `Magento/Search/Test/Page/Adminhtml/SynonymsNew` class receives parameters defined in the `synonymForm` block.
+To enter data in the form, we use the `fill()` method from the `synonymForm` block of the `synonymsNew` page. An argument for this method is a fixture `Synonym`. A `getSynonymForm()` method of the generated `Magento/Search/Test/Page/Adminhtml/SynonymsNew` class receives parameters defined in the `synonymForm` block.
 
 {% highlight php startinline=1  %}
 
@@ -962,7 +966,8 @@ class CreateSynonymEntityTest extends Injectable
 
 You can run the test using your IDE or the CLI. The Selenium Server must be up and running. To run the test using the CLI enter in your terminal:
 
-    <magento2>/dev/tests/functional/vendor/phpunit --filter CreateSynonymEntityTest
+    cd <magento2>/dev/tests/functional
+    phpunit --filter CreateSynonymEntityTest
 
  The test will be performed in a browser. Three synonyms groups are created one by-one that corresponds to three variations in a data set.
 
@@ -974,7 +979,7 @@ A last item in the test description says that the test must check appearance of 
 
 To cover this, we should create the test assertion ([constraint][]) and add the full class name to a variation of the data set. 
  
-Fortunately, this type of assertion is popular among functional tests, and we can search it by phrase "SuccessSaveMassage". Let's select from the list of results a [`\Magento\Customer\Test\Constraint\AssertCustomerSuccessSaveMessage`][] class. It has the following code:
+Fortunately, this type of assertion is popular among functional tests, and we can search in `<magento2>/dev/tests/functional` a similar one by phrase "SuccessSaveMessage". Let's select from the list of results a [`\Magento\Customer\Test\Constraint\AssertCustomerSuccessSaveMessage`][] class. It has the following code:
 
 {% highlight php %}
 
@@ -1076,6 +1081,23 @@ class AssertSynonymSuccessSaveMessage extends AbstractConstraint
 
 {% endhighlight %}
 
+To use the `getMessagesBlock()` method, we must add corresponding block in the page `SynonymsIndex`. In `<magento2>/dev/tests/functional/tests/app/Magento/Customer/Test/Page/Adminhtml/CustomerGroupIndex.xml`, we can find out that the following block is used:
+
+{% highlight xml %}
+<block name="messagesBlock" class="Magento\Backend\Test\Block\Messages" locator="#messages .messages" strategy="css selector"/>
+{% endhighlight %}
+    
+This block must be added to `SynonymsIndex` class. To do this, follow:
+
+* Open `<magento2>dev/tests/functional/tests/app/Magento/Search/Test/Page/Adminhtml/SynonymsIndex.xml`
+* Add block node
+{% highlight xml %}
+<block name="messagesBlock" class="Magento\Backend\Test\Block\Messages" locator="#messages .messages" strategy="css selector"/>
+{% endhighlight %}
+* Launch the generating tool to update the page class
+
+        php <magento2>/dev/tests/functional/utils/generate.php
+
 And now we can add `<constraint>` to each variation of a data set `<magento2>/dev/tests/functional/tests/app/Magento/Search/Test/TestCase/CreateSynonymEntityTest.xml`:
 
 {% highlight xml %}
@@ -1105,10 +1127,11 @@ And now we can add `<constraint>` to each variation of a data set `<magento2>/de
 The test is ready to run.
 
 You can run the test using your IDE or the CLI. The Selenium Server must be up and running. To run the test using the CLI enter in your terminal:
+    
+    cd <magento2>/dev/tests/functional
+    phpunit --filter CreateSynonymEntityTest
 
-    <magento2>/dev/tests/functional/vendor/phpunit --filter CreateSynonymEntityTest
-
-Comparing with run on previous Step, each variation now is checked whether a success save message is appeared.
+Comparing with run on previous Step, each variation now is checked on whether a success save message is appeared.
 
 That's it!
 

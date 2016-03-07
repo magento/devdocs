@@ -26,12 +26,15 @@ Find `phpunit.xml` in `<magento2>/dev/tests/functional`, and open it in editor.
 Find `<php>` element.
 For `name="app_frontend_url"` set `value` that is your actual URL for Magento storefront under test.
 
+Example:
+`<env name="app_backend_url" value="http://example.com/magento2/"/>`
+
 #### Set URL for Magento Admin URL under test {#mtf_quickstart_config_phpunitxml_backend}
 
 For `name="app_backend_url"` set `value` that is your actual URL for Magento Admin URL under test.
 
 Example:
-`<env name="app_backend_url" value="http://example.com/magento2/admin"/>`.
+`<env name="app_backend_url" value="http://example.com/magento2/admin/"/>`
 
 ### Edit `config.xml` to configure Magento Testing Framework {#mtf_quickstart_config_configxml}
 
