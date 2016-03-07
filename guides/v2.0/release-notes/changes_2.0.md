@@ -11,6 +11,8 @@ github_link: release-notes/changes_2.0.md
 <h2>Preface</h2>
 This topic discusses the most important backward-incompatible changes made after Magento 2.0.
 
+Be aware that no @api code has been modified.
+
 To see all backward incompatible changes follow:
  
  - [Magento CE breaking changes][]

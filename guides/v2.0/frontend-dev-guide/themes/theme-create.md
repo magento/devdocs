@@ -190,6 +190,7 @@ app/design/frontend/&lt;Vendor&gt;/
 │&nbsp;&nbsp;&nbsp;├──&nbsp;web/
 │&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──&nbsp;images
 │&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──&nbsp;logo.svg
+│&nbsp;&nbsp;&nbsp;├──&nbsp;registration.php
 │&nbsp;&nbsp;&nbsp;├──&nbsp;theme.xml
 │&nbsp;&nbsp;&nbsp;├──&nbsp;composer.json
 </pre>
