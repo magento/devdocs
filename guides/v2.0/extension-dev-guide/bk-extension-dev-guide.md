@@ -7,7 +7,7 @@ menu_title: Introduction
 menu_order: 1
 menu_node: parent
 github_link: extension-dev-guide/bk-extension-dev-guide.md
-redirect_from: 
+redirect_from:
   - /guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html
   - /guides/v2.0/mktpl-quickstart/bk-marketplace-qs.html
   - /guides/v2.0/mktpl-quickstart/intro-moreinfo.html
@@ -25,9 +25,9 @@ Magento is made up of the following types of components:
 * <a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-general.html">Themes</a>
 * <a href="{{ site.gdeurl }}frontend-dev-guide/translations/xlate.html#m2devgde-xlate-languagepack">Language packages</a>
 
-A Magento *module* is code that accomplishes a particular business function or handles a Magento feature. A module is a collection `.php` and `.xml` files, but may also contain other files such as `.phtml` and image files. Modules are interactive with each other. A module also contains any user interface required for a user's interaction with the module, and any application interfaces that another module or code chunk might call, if you decide to expose any application interface to other Magento modules.
+A Magento *module* is code that accomplishes a particular business function or handles a Magento feature. A module is a collection of `.php` and `.xml` files, but may also contain other files such as `.phtml` and image files. Modules are interactive with each other. A module also contains any user interface required for a user's interaction with the module, and any application interfaces that another module or code chunk might call, if you decide to expose any application interface to other Magento modules.
 
-*Themes* change the look and feel of the Magento storefront or Admin. 
+*Themes* change the look and feel of the Magento storefront or Admin.
 
 *Language packages* provide translations for strings that display on the storefront and Admin.
 
@@ -40,4 +40,3 @@ A Magento *module* is code that accomplishes a particular business function or h
 *	<a href="{{ site.gdeurl }}extension-dev-guide/intro/developers_roadmap.html">Developer roadmap</a>
 *	<a href="{{ site.gdeurl }}extension-dev-guide/intro/intro-composer.html">Introduction to Composer</a>
 *	<a href="{{ site.gdeurl }}extension-dev-guide/intro/intro-composer-gloss.html">Glossary of common terms</a>
-
