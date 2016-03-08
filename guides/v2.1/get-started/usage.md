@@ -13,7 +13,7 @@ github_link: get-started/usage.md
 
 POST, PUT, and DELETE requests to the REST Web API require the service method parameters to be in the body of the request. For example, to create a Customer, you would specify a JSON array (or XML structure) in the body of the message.
 
-For search APIs that invoke a `*Repository::getList(SearchCriteriaInterface *)` call, the searchCriteria must be specified in the URL of the GET request. The basic pattern for specifying the criteria is 
+For search APIs that invoke a `*Repository::getList(SearchCriteriaInterface *)` call, the searchCriteria must be specified in the URL of the GET request. The basic pattern for specifying the criteria is
 
 {% highlight html %}
 searchCriteria[filter_groups][<index>][filters][<index>][field=<field_name>]
@@ -21,16 +21,36 @@ searchCriteria[filter_groups][<index>][filters][<index>][value=<search_value>]
 searchCriteria[filter_groups][<index>][filters][<index>][condition_type=<operator>]
 {% endhighlight %}
 
-`condition_type` is optional if the operator is `eq` (equals).
+where `condition_type` is one of the following values:
+
+Condition | Notes
+--- | ---
+`eq` | Equals
+`finset` | Value in set
+`from` | Must be used with `to`
+`gt` | Greater than
+`gteq` |  Greater than or equal
+`in` | In
+`like` | Like
+`lt` | Less than
+`lteq` | Less than or equal
+`moreq` | More or equal
+`neq` | Not equal
+`nin` | Not in
+`notnull` | Not null
+`null` | Null
+`to` | Must be used with `from`
+
+`condition_type` is optional if the operator is `eq`.
 
 For example, the following query finds all users whose first name starts with "Jo".
 
 {% highlight html %}
 
 GET http://<magento_host>/rest/V1/customers/search?
-searchCriteria[filterGroups][0][filters][0][field]=firstname&
-searchCriteria[filterGroups][0][filters][0][value]=Jo%25&
-searchCriteria[filterGroups][0][filters][0][condition_type]=like
+searchCriteria[filter_groups][0][filters][0][field]=firstname&
+searchCriteria[filter_groups][0][filters][0][value]=Jo%25&
+searchCriteria[filter_groups][0][filters][0][condition_type]=like
 
 {% endhighlight %}
 
@@ -48,7 +68,7 @@ searchCriteria => [
          ]
       ]
     ]
-  ] 
+  ]
 </pre>
 
 The following example searches for products whose attributes are `size=Large` and `color=Red`. The generated array follows.
@@ -81,5 +101,5 @@ searchCriteria => [
          ]
       ]
     ]
-  ] 
+  ]
 </pre>
