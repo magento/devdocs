@@ -44,9 +44,7 @@ Magento Enterprise Edition (EE) version 2.1.x supports Elasticsearch versions 1.
 ### Recommended configuration {#es-arch}
 The following figure shows our recommended configuration. All of the tasks we discuss assume you've configured your system this way.
 
-NOTE: THE FOLLOWING DIAGRAM IS TEMPORARY. IT WILL LOOK NICER FOR GA.
-
-<img src="{{ site.baseurl }}common/images/es-config-tmp.png" width="500px">
+<img src="{{ site.baseurl }}common/images/es-config.png" width="600px">
 
 The preceding diagram shows:
 
