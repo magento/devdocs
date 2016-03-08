@@ -30,7 +30,7 @@ MySQL 5.6 (Oracle or Percona)
 ### PHP 
 
 *	5.6.x
-*	5.5.x 
+*	5.5.x, where x is 22 or later
 *	7.0.2 (supported by Magento version 2.0.1 and later only)
 
 Documentation: <a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html" target="_blank">CentOS</a>, <a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html" target="_blank">Ubuntu</a>
