@@ -122,7 +122,7 @@ To create a password:
 		mkdir -p /etc/nginx/passwd
 		htpasswd -c /etc/nginx/passwd/.magento_elasticsearch magento_elasticsearch
 	
-	Follow the prompts on your screen to create a password the user.
+	Follow the prompts on your screen to create the user's password.
 
 5.	*(Optional).* To add another user to your password file, enter the same command without the `-c` (create) option:
 
@@ -139,28 +139,28 @@ This section discusses how to specify who can access the nginx server.
 Use a text editor to modify either `/etc/nginx/conf.d/magento_es_auth.conf` (unsecure) or your secure server block with the following contents:
 
 	server {
-		listen       8080;
-		server_name  127.0.0.1;
+		listen 8080;
+		server_name 127.0.0.1;
 
-	location / {
-		limit_except HEAD {
+		location / {
+			limit_except HEAD {
+			   auth_basic "Restricted";
+			   auth_basic_user_file  /etc/nginx/passwd/.htpasswd_magento_elasticsearch;
+			}
+			proxy_pass http://127.0.0.1:9200;
+			proxy_redirect off;
+			proxy_set_header Host $host;
+			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+		}
+
+		location /_aliases {
 			auth_basic "Restricted";
 			auth_basic_user_file  /etc/nginx/passwd/.htpasswd_magento_elasticsearch;
+			proxy_pass http://127.0.0.1:9200;
+			proxy_redirect off;
+			proxy_set_header Host $host;
+			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 		}
-		proxy_pass http://127.0.0.1:9200;
-		proxy_redirect off;
-		proxy_set_header Host $host;
-		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-	}
-
-	location /_aliases {
-		auth_basic "Restricted";
-		auth_basic_user_file  /etc/nginx/passwd/.htpasswd_magento_elasticsearch;
-		proxy_pass http://127.0.0.1:9200;
-		proxy_redirect off;
-		proxy_set_header Host $host;
-		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-	}
 	
 		include /etc/nginx/auth/*.conf;
 	}

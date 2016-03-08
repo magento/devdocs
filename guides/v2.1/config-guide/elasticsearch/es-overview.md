@@ -52,8 +52,6 @@ The preceding diagram shows:
 
 *	The Magento application and Elasticsearch are installed on different hosts.
 
-	In fact, if you set up multiple Magento webnodes, each webnode communicates with the Elasticsearch server using a load balancer.
-
 	Running on separate hosts is secure, enables Elasticsearch to be scaled, and is necessary for proxying to work. (Clustering Elasticsearch is beyond the scope of this guide but you can find more information in the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/guide/current/distributed-cluster.html){:target="_blank"}.)
 *	Each host has its own web server; the web servers don't have to be the same.
 
@@ -64,9 +62,9 @@ The preceding diagram shows:
 
 Search requests are processed as follows:
 
-1.	A search request from a user is forwarded to the Elasticsearch server by the Magento web server to the Elasticsearch server.
+1.	A search request from a user is received by the Magento web server, which forwards it to the Elasticsearch server.
 
-	You configure Elasticsearch in the Magento Admin to listen on the proxy's host and port. We recommend the web server's SSL port (by default, 443).
+	You configure Elasticsearch in the Magento Admin to connect to the proxy's host and port. We recommend the web server's SSL port (by default, 443).
 2.	The Elasticsearch web server (listening on port 443) proxies the request to the Elasticsearch server (by default, it listens on port 9200).
 3.	Access to Elasticsearch is further protected by HTTP Basic authentication.
 
