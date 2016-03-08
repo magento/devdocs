@@ -23,6 +23,11 @@ This topic discusses how to configure Redis to serve as the following Magento ca
 *	The page cache (that is, full page cache). 
 *	The default cache, which stores: configuration, layout configuration, block HTML output, collections data, reflection data, database DDL operations, EAV types and attributes, translations, web services configuration, and integration API.
 
+<div class="bs-callout bs-callout-info" id="info">
+   <span class="glyphicon-class">
+   <p>You <em>must</em> use Redis for caching if you have multiple Magento webnodes. The file system cache is inefficient and can result in errors.</p></span>
+</div>
+
 
 ### Issues with `Zend_Cache_Backend_File`
 * The `core_cache_tag` table constantly grows. If a Magento instance has multiple web sites and web stores with large catalogs, the table can grow to 15 million records in less than a day. Insertion into `core_cache_tag` leads to issues with MySQL server, including performance degradation. 

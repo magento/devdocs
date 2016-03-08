@@ -46,6 +46,14 @@ The smallest working module.xml file would look something like this:
 ##Add the components `composer.json` file {#add-composer-json}
 `composer.json` provides a component name and also specifies component dependencies.
 
+In addition, the [Component Manager]({{ site.gdeurl }}comp-mgr/compman-start.html) looks for a `composer.json` in a component's root directory and can perform actions on the component and its dependencies. 
+
+In particular:
+
+* If a component has `composer.json` *and* the component was installed using Composer (including from packagist, the Magento Marketplace, or other source), the Component Manager can update, uninstall, enable, or disable the component.
+* If the component has `composer.json` but was *not* installed using Composer (for example, custom code a developer wrote), Component Manager can still enable or disable the component.
+* We strongly recommend you include `composer.json` in your component's root directory whether or not you intend to distribute it to other Magento merchants.
+
 A sample follows:
 
 {% highlight JSON %}
@@ -104,4 +112,4 @@ where:
 
 ####Next
 
-[Comonent load order]({{ site.gdeurl }}extension-dev-guide/build/module-load-order.html)
+[Component load order]({{ site.gdeurl }}extension-dev-guide/build/module-load-order.html)
