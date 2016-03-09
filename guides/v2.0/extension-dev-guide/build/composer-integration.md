@@ -22,7 +22,13 @@ redirect_from:
 
 [Composer](https://getcomposer.org/) is a dependency manager for PHP. Magento 2 uses Composer to package components and product editions. 
 
-Some third-party components that the Magento system uses might not be present in the code base. Instead, they are listed as dependencies in the root `composer.json` file. 
+Some third-party components that the Magento system uses might not be present in the code base. Instead, they are listed as dependencies in the root `composer.json` file. In addition, the [Component Manager]({{ site.gdeurl }}comp-mgr/compman-start.html) looks for a `composer.json` in a component's root directory and can perform actions on the component and its dependencies. 
+
+In particular:
+
+*	If a component has `composer.json` *and* the component was installed using Composer (including from packagist, the Magento Marketplace, or other source), the Component Manager can update, uninstall, enable, or disable the component.
+*	If the component has `composer.json` but was *not* installed using Composer (for example, custom code a developer wrote), Component Manager can still enable or disable the component.
+*	We strongly recommend you include `composer.json` in your component's root directory whether or not you intend to distribute it to other Magento merchants.
 
 ## Overview of composer.json files {#composerjson-overview}
 Certain Magento components and product editions are represented with `composer.json` files. 
