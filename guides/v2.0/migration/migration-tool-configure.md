@@ -37,7 +37,7 @@ To create a configuration file:
 1.	Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
 2.	Change to the following directory:
 
-		`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<migration edition>/<ce or version>
+		<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<migration edition>/<ce or version>
 3.	Enter the following command to create a `config.xml` from the provided sample:
 
 		cp config.xml.dist config.xml

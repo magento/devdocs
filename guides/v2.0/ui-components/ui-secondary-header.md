@@ -89,10 +89,10 @@ The sticky header component consists of the following elements:
 - Constructor: <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/grid/sticky/sticky.js">`<your module root dir>/Magento/Ui/view/base/web/js/grid/sticky/sticky.js`</a>
 - Main template: <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/grid/sticky/sticky.html">`<your module root dir>/Magento/Ui/view/base/web/templates/grid/sticky/sticky.html`</a>
 - Elements' templates:
-	- <a href="{{site.mage2000url}}/Magento/Ui/view/base/web/templates/grid/sticky/toolbar.html">`<your module root dir>/Magento/Ui/viewbase/web/templates/grid/sticky/toolbar.html`</a>
 	- <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/grid/sticky/listing.html">`<your module root dir>/Magento/Ui/view/base/web/templates/grid/sticky/listing.html`</a>
 	- <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/grid/sticky/filters.html">`<your module root dir>/Magento/Ui/view/base/web/templates/grid/sticky/filters.html`</a>
-	- <a href="{{site.mage2000url}}/Magento/Ui/view/base/web/templates/grid/sticky/chips.html">`<your module root dir>/Magento/Ui/view/base/web/templates/grid/sticky/chips.html`</a>
+	- <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/grid/sticky/sticky.html">`<your module root dir>/Magento/Ui/view/base/web/templates/grid/sticky/sticky.html`</a>
+	
 
 <h2 id="sticky_dependencies">Dependencies</h2>
 The sticky header component depends on the following components:

@@ -10,7 +10,8 @@ github_link: howdoi/frontend/front-theme.md
 ---
 
 ## Theme development
-- <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-create.html">Add a theme</a>
-- <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a>
-- <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-images.html">Configure product images</a>
-- <a href="{{site.gdeurl}}frontend-dev-guide/themes/debug-theme.html">Define which layouts, templates and stylesheets are used for a certain page</a>
+- [Add a theme]({{site.gdeurl}}frontend-dev-guide/themes/theme-create.html)
+- [Apply and configure a theme in Admin]({{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html)
+- [Configure product images]({{site.gdeurl}}frontend-dev-guide/themes/theme-images.html)
+- [Define which layouts, templates and stylesheets are used for a certain page]({{site.gdeurl}}frontend-dev-guide/themes/debug-theme.html)
+- [Add a new breakpoint]({{site.gdeurl}}frontend-dev-guide/css-topics/css-breakpoints.html)

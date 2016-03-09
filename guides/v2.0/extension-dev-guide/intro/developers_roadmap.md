@@ -31,6 +31,8 @@ Key points:
 *	Distribute your component:
 
 	*	<a href="{{ site.gdeurl }}extension-dev-guide/package/package_module.html">Package your component</a> in `.zip` format.
+
+		Use our [validation tool](http://alankent.me/2016/02/01/magento-2-marketplace-upload-validation-tool-quick-note){:target="_blank"} to check your package before you distribute it.
 	*	If you upload the component to Magento Marketplace, it should be less than 30MB in size.
 
 #### Related topics

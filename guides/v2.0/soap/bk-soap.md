@@ -16,6 +16,15 @@ Additional information about SOAP APIs will be published in a future sprint.
 `http://<magento_host>/soap/<store_code>?wsdl&services=<serviceName1,serviceName2,..>`
 
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>The value of <code>store_code</code> can be one of the following:</p>
+  <ul>
+  <li><code>default</code></li>
+  <li>The assigned store code</li>
+  <li><code>all</code>. This value only applies to the CMS and Product modules. If this value is specified, the API call affects all the merchant's stores. <code>get</code>operations cannot be performed when you specify <code>all</code>.</li>
+</ul>
+</div>
+
 ## List of Service Names per Module
 
 ###Backend
