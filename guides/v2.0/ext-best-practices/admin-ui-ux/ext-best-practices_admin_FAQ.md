@@ -5,10 +5,7 @@ subgroup: Best Practice Categories
 title: Admin UI and UX FAQ
 menu_title: Admin UI/UX FAQ
 menu_order: 1
-github_link: ext-best-practices/ext-best-practices_admin_FAQ.md
-
-
-
+github_link: ext-best-practices/admin-ui-ux/ext-best-practices_admin_FAQ.md
 ---
 ##{{page.menu_title}}
 {:.no_toc}
