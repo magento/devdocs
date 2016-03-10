@@ -32,7 +32,7 @@ Our technology stack is built on PHP and MySQL. Magento 2.0.1 supports PHP 5.5, 
 <h4>New installations</h4>
 New users can now complete a full installation of Magento Community Edition 2.0.3 from an archive file on the <a href="https://www.magentocommerce.com/download" target="_blank">Download</a> page.
 
-#####Download and install#####
+#####<b>Download a new installation</b>#####
 
 1. Go to the <a href="https://www.magentocommerce.com/download" target="_blank">Magento Community Edition Download</a> page.
 
@@ -40,7 +40,7 @@ New users can now complete a full installation of Magento Community Edition 2.0.
 
 3.	Follow the Magento <a href="http://devdocs.magento.com/guides/v2.0/install-gde/install-quick-ref.html" target="_blank">installation instructions</a>.
 
-#####Install with Composer#####
+#####<b>Install a new installation with Composer</b>#####
 
 1.	Go to the Magento Community Edition <a href="https://www.magentocommerce.com/download" target="_blank">download</a> page.
 
@@ -53,7 +53,7 @@ New users can now complete a full installation of Magento Community Edition 2.0.
 If you installed Magento Community Edition 2.0.0 from an archive, you must perform some additional tasks before you can upgrade your installation. Current users of Magento 2.0.0/2.0.1 must first update the installer from the command line. Then, update the installation from the <a href="http://http://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html" target="_blank">Web Setup Wizard</a> or command line. For detailed instructions, see the <a href="http://devdocs.magento.com/guides/v2.0/release-notes/tech_bull_201-upgrade.html" target="_blank">technical bulletin</a>.
 
 
-#####Upgrade from the Setup Wizard#####
+#####<b>Upgrade an existing installation from the Setup Wizard</b>#####
 
 1.	Log in to your store Admin with Administrator privileges.
 
@@ -62,7 +62,7 @@ If you installed Magento Community Edition 2.0.0 from an archive, you must perfo
 3.	Click  **System Upgrade**. Follow the onscreen instructions to complete the upgrade.
 
 
-#####Upgrade from the GitHub repository#####
+#####<b>Upgrade an existing installation from the GitHub repository</b>#####
 Developers who contribute to the CE codebase can <a href="http://devdocs.magento.com/guides/v2.0/install-gde/install/cli/dev_options.html" target="_blank">upgrade manually</a> from the Magento CE GitHub repository.
 
 1.	Go to the <a href="http://devdocs.magento.com/guides/v2.0/install-gde/install/cli/dev_options.html" target="_blank">Contributing Developers</a> page.
