@@ -7,7 +7,7 @@ menu_title: Magento Release Notes
 menu_node: 
 menu_order: 1
 github_link: release-notes/ReleaseNotes2.0.3CE.md
-redirect_from: /guides/v2.0/release-notes/ReleaseNotes2.0.3CE.html
+redirect_from: 
 ---
 
 <h2>Magento Community Edition 2.0.3</h2>
