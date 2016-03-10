@@ -2,8 +2,8 @@
 layout: default
 group: ext-best-practices
 subgroup: Best Practice Categories
-title: Admin UI FAQ
-menu_title: Admin UI FAQ
+title: Admin UI and UX FAQ
+menu_title: Admin UI/UX FAQ
 menu_order: 1
 github_link: ext-best-practices/ext-best-practices_admin_FAQ.md
 
@@ -70,9 +70,11 @@ ____
 
 ____
 
-#### "What's the suggested way with M2 to distinguish between CE and EE to hide/show features if you have an extension that has EE only features?" (bsstaveley)
+#### In Magento 2, how can my extension distinguish between the Community Edition and the Enterprise Edition?
 
-One answer from redbox-bolaji was: "Not sure exactly but `/** @var $moduleManager Magento\Framework\Module\Manager */$moduleManager->isEnabled('Magento_Enterprise’)` should suffice.  In the future, I think this might be the correct constant to check;  `\Magento\Framework\AppInterface\ProductMetadata::EDITION_NAME`
+One answer from redbox-bolaji was:
+
+>Not sure exactly but `/** @var $moduleManager Magento\Framework\Module\Manager */$moduleManager->isEnabled('Magento_Enterprise’)` should suffice.  In the future, I think this might be the correct constant to check; `\Magento\Framework\AppInterface\ProductMetadata::EDITION_NAME`
 
 ____
 
