@@ -12,6 +12,8 @@ github_link: ext-best-practices/extension-coding/coding-best-practices.md
 {:.no_toc}
 The coding best practices presented on this page should be known and understood by you the developer when creating or maintaining your extensions. This ensures that the extension you develop behaves and functions correctly within the Magento application architecture. This guide is not only meant to educate you about coding best practices but to also highlight some pitfalls we have seen other extension developers fall into so that you may avoid them.
 
+### Content
+{:.no_toc}
 * Table of Content
 {:toc}
 ____
