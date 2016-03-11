@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: C_Quickstart
+subgroup: 30_Quickstart
 title: Quick start with the Magento Testing Framework
 menu_title: Test run
 menu_order: 3
@@ -24,15 +24,17 @@ Be sure that your system is ready for test run.
 ### Run all tests {#mtf_quickstart_testrun_all}
 
 Enter in terminal:
-
+    
+    cd <magento2>/dev/tests/functional
     phpunit
 
 This command will run all tests from `<magento2>/dev/tests/functional/tests/app/Magento/`.
 
 ### Run particular test {#mtf_quickstart_testrun_one}
 
-Enter in terminal
+Enter in terminal:
 
+    cd <magento2>/dev/tests/functional
     phpunit --filter <name of test>
 
 Name of test is the name of PHP file with test.
@@ -41,7 +43,9 @@ Example:
 
 Let's check creating of new category. For this we should run `<magento2>/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Category/CreateCategoryEntityTest.php`. To run this test enter the following script in your terminal:
 
+    cd <magento2>/dev/tests/functional
     phpunit --filter CreateCategoryEntityTest
 
 <h2 id="mtf_install_pre">Next Steps</h2>
-<a href="{{ site.gdeurl }}mtf/mtf_quickstart/mtf_quickstart_environmemt.html">&lt;&lt; Prepare environment for test </a> | <a href="{{ site.gdeurl }}mtf/mtf_quickstart/mtf_quickstart_logs.html"> See logs for failed tests &gt;&gt;</a>
+
+[&lt;&lt; Prepare environment for test]({{ site.gdeurl }}mtf/mtf_quickstart/mtf_quickstart_environmemt.html) | [See logs for failed tests &gt;&gt;]({{ site.gdeurl }}mtf/mtf_quickstart/mtf_quickstart_logs.html)
