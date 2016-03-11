@@ -61,6 +61,8 @@ A test flow is a set of test steps that you want to perform under the test objec
 
 A test assertion compares real test flow results with expected ones. Test assertions are represented by [constraints][].
 
+[Learn more in the "Create a new test" topic.]
+
 <!-- LINK DEFINITIONS -->
 
 [test entity]: {{site.gdeurl}}mtf/mtf_entities.html
@@ -78,3 +80,5 @@ A test assertion compares real test flow results with expected ones. Test assert
 [block]: {{site.gdeurl}}mtf/mtf_entities/mtf_block.html
 [page]: {{site.gdeurl}}mtf/mtf_entities/mtf_page.html
 [constraints]: {{site.gdeurl}}mtf/mtf_entities/mtf_constraint.html
+
+[Learn more in the "Create a new test" topic.]: {{site.gdeurl}}mtf/create_test/create_new_test.html
