@@ -2,17 +2,17 @@
 layout: default
 group: ext-best-practices
 subgroup: Best Practice Categories
-title: Admin UI and UX FAQ
-menu_title: Admin UI/UX FAQ
+title: Admin UI FAQ
+menu_title: Admin UI FAQ
 menu_order: 1
 github_link: ext-best-practices/admin-ui-ux/ext-best-practices_admin_FAQ.md
 ---
 ##{{page.menu_title}}
 {:.no_toc}
 
-This FAQ provides Best Practices for creating extensions that integrate cleanly into the Admin panel UI.
+This page is a compilation of frequently asked questions by the Magento Community about extensions integrating with the Admin.
 
-How to display extensions in the Admin is a great place for using Best Practices; what extension developers choose to do (or not do) when integrating their extensions has a big impact on the look-n-feel of the Admin UI.
+How to display extensions in the Admin is a great place for using Best Practices; what extension developers choose to do (or not do) when integrating their extensions has a big impact on the look-n-feel of the Admin.
 
 ### Frequently Asked Questions
 {:.no_toc}
@@ -21,7 +21,7 @@ How to display extensions in the Admin is a great place for using Best Practices
 
 ____
 
-#### Where should my extension appear in the Admin panel?
+#### Where should my extension appear in the Admin?
 
 ____
 
@@ -42,7 +42,7 @@ ____
 
 ____
 
-####What are the rules about using the left-navigation "slide-out panels" in the Admin panel?
+####What are the rules about using the left-navigation "slide-out panels" in the Admin?
 
 ____
 
@@ -51,7 +51,7 @@ ____
 
 ____
 
-#### Are there "rules" about using icons or images that appear beside the name of my extension in the Admin panel?
+#### Are there "rules" about using icons or images that appear beside the name of my extension in the Admin?
 
 ____
 
@@ -75,6 +75,6 @@ One answer from redbox-bolaji was:
 
 ____
 
-#### How do I configure my module so that it appears in a specific place on the Admin panel?
+#### How do I configure my module so that it appears in a specific place on the Admin?
 
-Use the `<Module Directory>/etc/adminhtml/menu.xml` file to configure from where on the Admin panel your extension is accessible.
+Use the `<Module Directory>/etc/adminhtml/menu.xml` file to configure from where on the Admin your extension is accessible.
