@@ -26,7 +26,7 @@ You should do your best to adhere to common programming best practices to reduce
   You should be consistent in your naming conventions for files, folder names, Classes, and Methods. Not following this practice is a code standards violation and impacts your extension's maintainability.
 
 * #### Use Correct Class Hierarchy
-  When creating a custom class, consider how it fits in the context of your project and the Magento application. Avoid creating custom classes that do not inherit from the parent class nor follow general inheritance rules.
+  When creating a custom class, consider how it fits in the context of your project and the Magento application. Avoid creating custom classes that do not inherit from the parent class nor follow general inheritance rules.  
 
 [Back to Top](#top)
 
@@ -40,6 +40,11 @@ In addition to understanding fundamental programming designs/concepts, you are e
 
 * #### Learn the Architecture
   To create the optimum module, know our Magento architecture. You should familiarize yourself with our commonly used [Design Patterns]({{site.gdeurl}}pattern-library/bk-pattern.html), the core [Magento Components]({{site.gdeurl}}extension-dev-guide/bk-extension-dev-guide.html), and our service contracts and [APIs]({{ site.gdeurl }}get-started/bk-get-started-api.html).
+
+* #### Check the Extension Configuration
+  Make sure your extension is configured correctly. Invalid or unexpected values will cause your extension to behave incorrectly within Magento.
+
+  For example, in a custom module's configuration file, a class and node of the event observer should contain the model alias instead of the direct class name.
 
 * #### Know and Leverage the Magento Framework
   Be sure to study the capabilities and standards of the Magento Framework.
@@ -115,12 +120,3 @@ You should make sure that your extension handles data with care in order to prev
   Never store sensitive information in clear text within a resource that might be accessible to another control sphere. This type of information should be encrypted or otherwise protected.
 
 [Back to Top](#top)
-
-____
-
-<h3 id="bp_arch_3">Using plug-ins properly</h3>
-
-Provide tips for using plug-ins...
-
-<h3>Node values in custom module config files</h3>
-A class & node of event observer should contain model alias instead of direct class name.
