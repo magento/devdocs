@@ -9,9 +9,11 @@ menu_node: parent
 github_link: ext-best-practices/extension-coding/coding-best-practices.md
 ---
 ##{{page.menu_title}}
-
+{:.no_toc}
 The coding best practices presented on this page should be known and understood by you the developer when creating or maintaining your extensions. This ensures that the extension you develop behaves and functions correctly within the Magento application architecture. This guide is not only meant to educate you about coding best practices but to also highlight some pitfalls we have seen other extension developers fall into so that you may avoid them.
 
+* Table of Content
+{:toc}
 ____
 
 ### Common Programming Best Practices
@@ -25,6 +27,8 @@ You should do your best to adhere to common programming best practices to reduce
 
 * #### Use Correct Class Hierarchy
   When creating a custom class, consider how it fits in the context of your project and the Magento application. Avoid creating custom classes that do not inherit from the parent class nor follow general inheritance rules.
+
+[Back to Top](#top)
 
 ____
 
@@ -62,6 +66,8 @@ In addition to understanding fundamental programming designs/concepts, you are e
   - Make sure that CSS, JavaScript, HTML, and XML code are all in the appropriate files (i.e. they should not be inline).
   - Use appropriate logic in a Block, Helper, Template, Controller, or Model.
   - Ensure correct module design.
+
+[Back to Top](#top)
 
 ____
 
@@ -107,6 +113,8 @@ You should make sure that your extension handles data with care in order to prev
 
 * #### Always Encrypt Sensitive Data or Configurations
   Never store sensitive information in clear text within a resource that might be accessible to another control sphere. This type of information should be encrypted or otherwise protected.
+
+[Back to Top](#top)
 
 ____
 
