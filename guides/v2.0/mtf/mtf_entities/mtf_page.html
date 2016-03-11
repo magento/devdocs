@@ -267,18 +267,6 @@
 
 				
 
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
 					
 					
 
@@ -393,6 +381,57 @@
 									
 
 									<li class="level-2 "><a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_logs.html">See logs for failed tests</a></li>
+
+									
+
+								
+								
+								
+							
+							
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/mtf/create_test.html">CREATE A TEST</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/mtf/create_test/out-of-the-box.html">Out-of-the-box test</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/mtf/create_test/new_test.html">New functional test</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/mtf/create_test/create_new_test.html">Create a new test</a></li>
 
 									
 
@@ -610,6 +649,18 @@
 
 			
 
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
 		</ul>
 
 	</div>
@@ -631,7 +682,11 @@
       <li><a href="#mtf_page_extern">External page</a></li>
     </ul>
   </li>
-  <li><a href="#mtf_page_merge">Merge pages</a></li>
+  <li><a href="#mtf_page_merge">Merge pages</a>    <ul>
+      <li><a href="#add-block-another-module">Add blocks from different modules</a></li>
+      <li><a href="#override-blocks">Block overriding</a></li>
+    </ul>
+  </li>
 </ul>
 
 <h2 id="mtf_page_overview">Page overview</h2>
@@ -808,22 +863,29 @@ Only the code in the corresponding block must be changed.</p>
 
 <h2 id="mtf_page_merge">Merge pages</h2>
 
-<p>Sometimes you need to use blocks from different modules in one page. </p>
+<p>Page merging can help you to redirect modules declared in a page, or add blocks from different modules.</p>
+
+<p>Pages are merged when they have the same <code>name</code> attribute value.</p>
+
+<p>Pages are merged module by module in the order that modules are loaded in. All new modules are always loaded after Magento modules, so that pages from new Modules are merged the last.</p>
+
+<h3 id="add-block-another-module">Add blocks from different modules</h3>
 
 <p>To add blocks from different modules to the page, you can merge pages. Just follow the steps:</p>
 
-<ol>
-  <li><a href="#mtf_page_create">Create an XML page</a> in the corresponding module</li>
-  <li>Assign <a href="#mtf_page_attributes">page attributes</a>
-    <ul>
-      <li>with the same name as the page you want to merge</li>
-      <li>with the same <code>mca</code></li>
-      <li>without <code>module</code> and <code>area</code> attributes</li>
-    </ul>
-  </li>
-  <li>Add blocks</li>
-  <li>Run the page generator</li>
-</ol>
+<p><strong>Step 1.</strong> <a href="#mtf_page_create">Create an XML page</a> in the corresponding module</p>
+
+<p><strong>Step 2.</strong> Assign <a href="#mtf_page_attributes">page attributes</a></p>
+
+<ul>
+  <li>with the same name as the page you want to merge</li>
+  <li>with the same <code>mca</code></li>
+  <li>without <code>module</code> and <code>area</code> attributes</li>
+</ul>
+
+<p><strong>Step 3.</strong> Add blocks to the page</p>
+
+<p><strong>Step 4.</strong> Run the page generator</p>
 
 <p>For example, we have <code>dev/tests/functional/tests/app/Magento/Catalog/Test/Page/Product/CatalogProductView.xml</code> page and want to add three blocks from the Magento_Review module.</p>
 
@@ -870,7 +932,212 @@ Only the code in the corresponding block must be changed.</p>
 
 <p>The result is in the <code>&lt;magento2&gt;/dev/tests/functional/generated/Magento/Catalog/Test/Page/Product/CatalogProductView.php</code> with the following code:</p>
 
-<script src="https://gist.github.com/dshevtsov/d5be380739c696fcb847.js"></script>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="sd">/**</span>
+<span class="sd"> * Copyright © 2015 Magento. All rights reserved.</span>
+<span class="sd"> * See COPYING.txt for license details.</span>
+<span class="sd"> */</span>
+<span class="k">namespace</span> <span class="nx">Magento\Catalog\Test\Page\Product</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Mtf\Page\FrontendPage</span><span class="p">;</span>
+<span class="sd">/**</span>
+<span class="sd"> * Class CatalogProductView</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">CatalogProductView</span> <span class="k">extends</span> <span class="nx">FrontendPage</span>
+<span class="p">{</span>
+    <span class="k">const</span> <span class="no">MCA</span> <span class="o">=</span> <span class="s1">&#39;catalog/product/view&#39;</span><span class="p">;</span>
+    <span class="sd">/**</span>
+<span class="sd">     * Blocks&#39; config</span>
+<span class="sd">     *</span>
+<span class="sd">     * @var array</span>
+<span class="sd">     */</span>
+    <span class="k">protected</span> <span class="nv">$blocks</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;viewBlock&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">&#39;class&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Magento\Catalog\Test\Block\Product\View&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;locator&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;#maincontent&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;strategy&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;css selector&#39;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s1">&#39;additionalInformationBlock&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">&#39;class&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Magento\Catalog\Test\Block\Product\Additional&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;locator&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;#additional&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;strategy&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;css selector&#39;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s1">&#39;customOptionsBlock&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">&#39;class&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Magento\Catalog\Test\Block\Product\View\CustomOptions&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;locator&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;#product-options-wrapper&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;strategy&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;css selector&#39;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s1">&#39;messagesBlock&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">&#39;class&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Magento\Backend\Test\Block\Messages&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;locator&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;.page.messages&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;strategy&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;css selector&#39;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s1">&#39;titleBlock&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">&#39;class&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Magento\Theme\Test\Block\Html\Title&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;locator&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;.page-title-wrapper h1.page-title .base&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;strategy&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;css selector&#39;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s1">&#39;reviewSummary&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">&#39;class&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Magento\Review\Test\Block\Product\View\Summary&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;locator&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;.product-reviews-summary&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;strategy&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;css selector&#39;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s1">&#39;customerReviewBlock&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">&#39;class&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Magento\Review\Test\Block\Product\View&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;locator&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;#customer-reviews&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;strategy&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;css selector&#39;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s1">&#39;reviewFormBlock&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s1">&#39;class&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Magento\Review\Test\Block\ReviewForm&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;locator&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;#review-form&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;strategy&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;css selector&#39;</span><span class="p">,</span>
+        <span class="p">],</span>
+    <span class="p">];</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @return \Magento\Catalog\Test\Block\Product\View</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getViewBlock</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getBlockInstance</span><span class="p">(</span><span class="s1">&#39;viewBlock&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @return \Magento\Catalog\Test\Block\Product\Additional</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getAdditionalInformationBlock</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getBlockInstance</span><span class="p">(</span><span class="s1">&#39;additionalInformationBlock&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @return \Magento\Catalog\Test\Block\Product\View\CustomOptions</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getCustomOptionsBlock</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getBlockInstance</span><span class="p">(</span><span class="s1">&#39;customOptionsBlock&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @return \Magento\Backend\Test\Block\Messages</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getMessagesBlock</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getBlockInstance</span><span class="p">(</span><span class="s1">&#39;messagesBlock&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @return \Magento\Theme\Test\Block\Html\Title</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getTitleBlock</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getBlockInstance</span><span class="p">(</span><span class="s1">&#39;titleBlock&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @return \Magento\Review\Test\Block\Product\View\Summary</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getReviewSummary</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getBlockInstance</span><span class="p">(</span><span class="s1">&#39;reviewSummary&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @return \Magento\Review\Test\Block\Product\View</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getCustomerReviewBlock</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getBlockInstance</span><span class="p">(</span><span class="s1">&#39;customerReviewBlock&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @return \Magento\Review\Test\Block\ReviewForm</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getReviewFormBlock</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getBlockInstance</span><span class="p">(</span><span class="s1">&#39;reviewFormBlock&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<h3 id="override-blocks">Block overriding</h3>
+
+<p>Your module can influence the functionality of another module, that is defined in a corresponding block of that module. In this case you can override existing block by a block from your module.</p>
+
+<p>To override blocks follow:</p>
+
+<p><strong>Step 1.</strong> <a href="#mtf_page_create">Create an XML page</a> in your new module with the name of page you want to merge.</p>
+
+<p><strong>Step 2.</strong> Assign <a href="#mtf_page_attributes">page attributes</a></p>
+
+<ul>
+  <li>with the same name as the page you want to merge</li>
+  <li>with the same <code>mca</code></li>
+  <li>without <code>module</code> and <code>area</code> attributes</li>
+</ul>
+
+<p><strong>Step 3.</strong> Add blocks that you want to override (indicating a block class with new behaviour)</p>
+
+<p><strong>Step 4.</strong> Run the page generator.</p>
+
+<p>Let’s see an example with the following use case:</p>
+
+<ul>
+  <li>A Magento_NewModule changes the category creation behaviour of a Magento_Catalog module.</li>
+  <li>The <code>editForm</code> block from the <code>\Magento\Catalog\Test\Page\Adminhtml\CatalogCategoryEdit</code> page must be changed according to the new functionality.</li>
+</ul>
+
+<p>Let’s see the <code>\Magento\Catalog\Test\Page\Adminhtml\CatalogCategoryEdit</code> page:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="c">&lt;!--</span>
+<span class="c">/**</span>
+<span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
+<span class="c"> * See COPYING.txt for license details.</span>
+<span class="c"> */</span>
+<span class="c"> --&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/etc/pages.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">&quot;CatalogCategoryEdit&quot;</span> <span class="na">area=</span><span class="s">&quot;Adminhtml&quot;</span> <span class="na">mca=</span><span class="s">&quot;catalog/category/edit&quot;</span> <span class="na">module=</span><span class="s">&quot;Magento_Catalog&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;messagesBlock&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Backend\Test\Block\Messages&quot;</span> <span class="na">locator=</span><span class="s">&quot;#messages&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;formPageActions&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Catalog\Test\Block\Adminhtml\Category\Edit\PageActions&quot;</span> <span class="na">locator=</span><span class="s">&quot;.page-main-actions&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;editForm&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Catalog\Test\Block\Adminhtml\Category\Edit\CategoryForm&quot;</span> <span class="na">locator=</span><span class="s">&quot;#container&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;modalBlock&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Test\Block\Adminhtml\Modal&quot;</span> <span class="na">locator=</span><span class="s">&quot;._show[data-role=modal]&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/page&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p>The block that we want to change is:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;editForm&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Catalog\Test\Block\Adminhtml\Category\Edit\CategoryForm&quot;</span> <span class="na">locator=</span><span class="s">&quot;#container&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span><span class="nt">/&gt;</span></code></pre></div>
+
+<p>We shouldn’t change the <code>editForm</code> block in the Magento_Catalog module, because in case of disabling of a Magento_NewModule module the test will be failed. The best way in this case is to create a new block in a Magento_NewModule module that covers new functionality.</p>
+
+<p>Assume that we already created the new block <code>\Magento\NewModule\Test\Block\Adminhtml\Category\Edit\CategoryForm</code>.</p>
+
+<p>To use the <code>editForm</code> block from the Magento_NewModule we must follow:</p>
+
+<p><strong>Step 1.</strong> Create a <code>CatalogCategoryEdit.xml</code> page in the <code>dev/tests/functional/tests/app/Magento/NewModule/Test/Page/Adminhtml</code> directory.</p>
+
+<p><strong>Step 2.</strong> Assign page attributes</p>
+
+<ul>
+  <li>with the same name as the page you want to merge</li>
+  <li>with the same <code>mca</code></li>
+  <li>without <code>module</code> and <code>area</code> attributes</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/etc/pages.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">&quot;CatalogCategoryEdit&quot;</span> <span class="na">mca=</span><span class="s">&quot;catalog/category/edit&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/page&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p><strong>Step 3.</strong> Add blocks that you want to redirect.</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/etc/pages.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">&quot;CatalogCategoryEdit&quot;</span> <span class="na">mca=</span><span class="s">&quot;catalog/category/edit&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;editForm&quot;</span> <span class="na">class=</span><span class="s">&quot;\Magento\NewModule\Test\Block\Adminhtml\Category\Edit\CategoryForm&quot;</span> <span class="na">locator=</span><span class="s">&quot;//div[contains(@data-bind, &#39;category_form&#39;)]&quot;</span> <span class="na">strategy=</span><span class="s">&quot;xpath&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/page&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p><strong>Step 4.</strong> Run the page generator.</p>
+
+<p>Enter in terminal:</p>
+
+<pre><code>php &lt;magento2&gt;/dev/tests/functional/utils/generate/page.php
+</code></pre>
+
+<p>Now when you call <code>editForm</code> block from the <code>CatalogCategoryEdit</code> page, the <code>\Magento\NewModule\Test\Block\Adminhtml\Category\Edit\CategoryForm</code> class will be used.</p>
 
 <!-- LINK DEFINITIONS -->
 
