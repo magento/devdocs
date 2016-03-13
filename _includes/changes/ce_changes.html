@@ -158,6 +158,10 @@
         <td>Class was removed.</td>
     </tr>
     <tr>
+        <td>Magento\CatalogInventory\Observer\AddStockStatusToCollectionObserver</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
         <td>Magento\Catalog\Model\ResourceModel\Product\Attribute\Backend\Media</td>
         <td>Class was removed.</td>
     </tr>
@@ -278,8 +282,20 @@
         <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
+        <td>Magento\Framework\Validator\Factory::__construct</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Validator\Factory::CACHE_KEY</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\Session\SaveHandler::__construct</td>
         <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Pricing\Render\PriceBox::DEFAULT_LIFETIME</td>
+        <td>Constant has been added.</td>
     </tr>
     <tr>
         <td>Magento\Framework\ObjectManager\Relations\Runtime::__construct</td>
@@ -528,6 +544,10 @@
     <tr>
         <td>Magento\UrlRewrite\Controller\Adminhtml\Url\Rewrite::ADMIN_RESOURCE</td>
         <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Ui\DataProvider\EavValidationRules::$validationRul</td>
+        <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Ui\Component\Listing\Columns::prepare</td>
@@ -1766,6 +1786,58 @@
         <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
+        <td>Magento\OfflineShipping\Model\ResourceModel\Carrier\Tablerate::_loadDirectoryCountries</td>
+        <td>[protected] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\OfflineShipping\Model\ResourceModel\Carrier\Tablerate::_loadDirectoryRegions</td>
+        <td>[protected] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\OfflineShipping\Model\ResourceModel\Carrier\Tablerate::_getImportRow</td>
+        <td>[protected] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\OfflineShipping\Model\ResourceModel\Carrier\Tablerate::_parseDecimalValue</td>
+        <td>[protected] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\OfflineShipping\Model\ResourceModel\Carrier\Tablerate::__construct</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\OfflineShipping\Model\ResourceModel\Carrier\Tablerate::$_coreConfig</td>
+        <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\OfflineShipping\Model\ResourceModel\Carrier\Tablerate::$_logger</td>
+        <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\OfflineShipping\Model\ResourceModel\Carrier\Tablerate::$_storeManager</td>
+        <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\OfflineShipping\Model\ResourceModel\Carrier\Tablerate::$_carrierTablerate</td>
+        <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\OfflineShipping\Model\ResourceModel\Carrier\Tablerate::$_countryCollectionFactory</td>
+        <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\OfflineShipping\Model\ResourceModel\Carrier\Tablerate::$_regionCollectionFactory</td>
+        <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\OfflineShipping\Model\ResourceModel\Carrier\Tablerate::$_filesystem</td>
+        <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\OfflineShipping\Model\Carrier\Flatrate::__construct</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
         <td>Magento\Newsletter\Controller\Adminhtml\Problem::_isAllowed</td>
         <td>[protected] Method has been removed.</td>
     </tr>
@@ -2028,6 +2100,14 @@
     <tr>
         <td>Magento\Downloadable\Controller\Adminhtml\Downloadable\File::ADMIN_RESOURCE</td>
         <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Downloadable\Block\Sales\Order\Email\Items\Downloadable::__construct</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Downloadable\Block\Sales\Order\Email\Items\Downloadable::$urlGenerator</td>
+        <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Directory\Model\ResourceModel\Country\Collection::__construct</td>
@@ -2562,12 +2642,48 @@
         <td>Constant has been added.</td>
     </tr>
     <tr>
+        <td>Magento\CatalogInventory\Model\StockRegistryProvider::__construct</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogInventory\Model\StockRegistryProvider::$stocks</td>
+        <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogInventory\Model\StockRegistryProvider::$stockItems</td>
+        <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogInventory\Model\StockRegistryProvider::$stockStatuses</td>
+        <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogInventory\Model\Stock\StockItemRepository::__construct</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogInventory\Model\Stock\StockRepository::__construct</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogInventory\Model\Stock\StockStatusRepository::__construct</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
         <td>Magento\CatalogInventory\Model\ResourceModel\Indexer\Stock\DefaultStock::__construct</td>
         <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
         <td>Magento\CatalogInventory\Model\Plugin\AroundProductRepositorySave::__construct</td>
         <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogInventory\Block\Stockqty\AbstractStockqty::__construct</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogInventory\Block\Stockqty\AbstractStockqty::$stockState</td>
+        <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
         <td>Magento\CatalogImportExport\Model\Import\Product::_saveProductEntity</td>
@@ -2776,6 +2892,10 @@
     <tr>
         <td>Magento\Catalog\Model\Product\Gallery\GalleryManagement::getGalleryAttributeBackend</td>
         <td>[protected] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Model\Product\Attribute\Repository::__construct</td>
+        <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
         <td>Magento\Catalog\Model\Product\Attribute\Backend\Tierprice::__construct</td>
