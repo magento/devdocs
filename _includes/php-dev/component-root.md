@@ -9,7 +9,7 @@ We refer to a component's *root directory* as the top-level directory in which y
 	*	For themes, use `app/design/frontend` (storefront theme) or `app/design/adminhtml` (Magento Admin theme)
 	*	For language packages, use `app/i18n`
 
-	You can easily set up this type of environment by <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">cloning the Magento 2 GitHub repository</a>. Typically, you cloned the repository if you want to to contribute code to the Magento 2 codebase.
+	You can easily set up this type of environment by <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">cloning the Magento 2 GitHub repository</a>. Typically, you cloned the repository if you want to contribute code to the Magento 2 codebase.
 *	`vendor`: You get this directory structure if you used the <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html">`composer create-project`</a> command to get a Magento 2 metapackage (which downloads the CE or EE code), or if you extracted a <a href="{{ site.gdeurl }}install-gde/prereq/zip_install.html">compressed Magento 2 archive</a>.
 
 ### Required files
