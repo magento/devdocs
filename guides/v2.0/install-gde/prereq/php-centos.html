@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>PHP 5.5 or 5.6&mdash;CentOS</title>
+	<title>PHP 5.5, 5.6, or 7.0&mdash;CentOS</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -132,7 +132,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">PHP 5.5 or 5.6&mdash;CentOS</h1>
+		<h1 class="page-heading">PHP 5.5, 5.6, or 7.0&mdash;CentOS</h1>
 			
 			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/install-gde/prereq/php-centos.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -275,7 +275,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a></li>
 
 									
 
@@ -283,7 +283,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a></li>
 
 									
 
@@ -662,6 +662,8 @@
   <li><a href="#php-support">PHP versions supported</a></li>
   <li><a href="#php-centos-help-beginner">Help if you’re just starting out</a></li>
   <li><a href="#centos-verify-php">Verify PHP is installed</a></li>
+  <li><a href="#centos-php-repos">CentOS repositories</a></li>
+  <li><a href="#php-centos-7">PHP 7 on CentOS</a></li>
   <li><a href="#instgde-prereq-php56-install-centos">PHP 5.6 on CentOS</a></li>
   <li><a href="#instgde-prereq-php55-install-centos">PHP 5.5 on CentOS</a></li>
   <li><a href="#instgde-prereq-timezone">Set PHP configuration options</a></li>
@@ -677,6 +679,7 @@
 <p>Magento requires:</p>
 
 <ul>
+  <li>PHP 7.0.2 (supported by Magento version 2.0.1 and later only)</li>
   <li>PHP 5.6.x</li>
   <li>PHP 5.5.x, where x is 22 or greater </li>
 </ul>
@@ -712,24 +715,56 @@ with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
 
 <p>If PHP is installed, continue with the next prerequisite, <a href="/guides/v2.0/install-gde/prereq/mysql.html">MySQL</a>.</p>
 
-<p>If PHP is <em>not</em> installed, see one of the following sections:</p>
+<h2 id="centos-php-repos">CentOS repositories</h2>
+<p>Linux systems provide software like PHP in one or more <em>repositories</em>, some of which are officially recommended while others are not.</p>
+
+<div class="bs-callout bs-callout-warning">
+    <p>The choice of a repository is up to you. If you use a hosting provider, typically the provider has a recommended repository. However, if you're installing Magento on your own, you must choose one.</p>
+</div>
+
+<p>CentOS recommends you install software from one of their <a href="https://wiki.centos.org/AdditionalResources/Repositories" target="_blank">recommended repositories</a>. We’re not aware that you can install PHP 5.5, 5.6, or 7.0 from a CentOS-recommended repository. Therefore, you must consider the following:</p>
 
 <ul>
+  <li>
+    <p>If you’re setting up a system that will be deployed in production, you should choose a hosting provider who uses repositories considered to be safe and reliable. </p>
+
+    <p>You should also consider upgrading to a later version of CentOS that supports the desired PHP version natively.</p>
+  </li>
+  <li>
+    <p>If you’re setting up a development system, you can use any repository you want.</p>
+
+    <p>The repository we use in this topic is <em>not</em> officially recommended by Magento. We’re providing the information for your convenience only.</p>
+  </li>
+</ul>
+
+<p>In this topic, we show how to install PHP from the <a href="https://ius.io/GettingStarted" target="_blank">Inline with Upstream Stable (IUS)</a> repository, which is <em>not</em> on the recommended list. However, packages installed from IUS do not use the same names as CentOS-provided packages, so <a href="https://ius.io/Philosophy" target="_blank">no existing system packages are replaced</a>.</p>
+
+<p>Before you continue, review their <a href="https://ius.io/GettingStarted" target="_blank">Getting started topic</a>.</p>
+
+<p>Continue with one of the following sections:</p>
+
+<ul>
+  <li><a href="#php-centos-7">PHP 7 on CentOS</a></li>
   <li><a href="#instgde-prereq-php56-install-centos">PHP 5.6 on CentOS</a></li>
   <li><a href="#instgde-prereq-php55-install-centos">PHP 5.5 on CentOS</a></li>
 </ul>
 
-<h2 id="instgde-prereq-php56-install-centos">PHP 5.6 on CentOS</h2>
-<p>There is more than one way to upgrade CentOS 6.5 to PHP 5.6; the following is a suggestion only. Consult a reference for additional options.</p>
+<h2 id="php-centos-7">PHP 7 on CentOS</h2>
+<p>There is more than one way to install PHP 7.0.2 or later on CentOS 6; the following is a suggestion only. Consult a reference for additional options.</p>
 
-<p>To upgrade to PHP 5.6:</p>
+<p>To upgrade to PHP 7.0.2 or later:</p>
 
 <ol>
   <li>
     <p>Enter the following commands in the order shown:</p>
 
-    <pre><code>rpm -Uvh https://mirror.webtatic.com/yum/el6/latest.rpm
-yum install -y php56w php56w-opcache php56w-xml php56w-mcrypt php56w-gd php56w-devel php56w-mysql php56w-intl php56w-mbstring php56w-bcmath
+    <pre><code>yum -y update
+yum -y install epel-release
+wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+wget https://centos6.iuscommunity.org/ius-release.rpm
+rpm -Uvh ius-release*.rpm
+yum -y update
+yum -y install php70u php70u-pdo php70u-mysqlnd php70u-opcache php70u-xml php70u-mcrypt php70u-gd php70u-devel php70u-mysql php70u-intl php70u-mbstring php70u-bcmath
 </code></pre>
 
     <div class="bs-callout bs-callout-info" id="info">
@@ -747,21 +782,69 @@ yum install -y php56w php56w-opcache php56w-xml php56w-mcrypt php56w-gd php56w-d
 
     <p>The following response indicates that PHP 5.6 is installed properly:</p>
 
-    <pre><code>PHP 5.6.4 (cli) (built: Dec 20 2014 17:30:46)
-Copyright (c) 1997-2014 The PHP Group
-Zend Engine v2.6.0, Copyright (c) 1998-2014 Zend Technologies
-with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
+    <pre><code>PHP 7.0.3 (cli) (built: Feb  4 2016 08:51:10) ( NTS )
+Copyright (c) 1997-2016 The PHP Group
+Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies
+with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
 </code></pre>
+
+    <div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+ 	 <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
+</div>
+  </li>
+  <li>
+    <p><a href="#instgde-prereq-timezone">Set up PHP configuration options</a>.</p>
   </li>
 </ol>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
-</div>
+<h2 id="instgde-prereq-php56-install-centos">PHP 5.6 on CentOS</h2>
+<p>There is more than one way to upgrade CentOS 6.5 to PHP 5.6; the following is a suggestion only. Consult a reference for additional options.</p>
+
+<p>To upgrade to PHP 5.6:</p>
 
 <ol>
-  <li><a href="#instgde-prereq-timezone">Set up PHP configuration options</a>.</li>
+  <li>
+    <p>Enter the following commands in the order shown:</p>
+
+    <pre><code>yum -y update
+yum -y install epel-release
+wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+wget https://centos6.iuscommunity.org/ius-release.rpm
+rpm -Uvh ius-release*.rpm
+yum -y update
+yum -y install php56u php56u-opcache php56u-xml php56u-mcrypt php56u-gd php56u-devel php56u-mysql php56u-intl php56u-mbstring php56u-bcmath
+</code></pre>
+
+    <div class="bs-callout bs-callout-info" id="info">
+  		<p>The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.</p>
+</div>
+  </li>
+  <li>
+    <p>Restart Apache: <code>service httpd restart</code></p>
+  </li>
+  <li>
+    <p>Enter the following command to verify that PHP 5.6 is installed:</p>
+
+    <pre><code>php -v
+</code></pre>
+
+    <p>The following response indicates that PHP 5.6 is installed properly:</p>
+
+    <pre><code>PHP 5.6.18 (cli) (built: Feb  4 2016 09:29:52)
+Copyright (c) 1997-2016 The PHP Group
+Zend Engine v2.6.0, Copyright (c) 1998-2016 Zend Technologies
+with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
+</code></pre>
+
+    <div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+ 	 <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
+</div>
+  </li>
+  <li>
+    <p><a href="#instgde-prereq-timezone">Set up PHP configuration options</a>.</p>
+  </li>
 </ol>
 
 <h2 id="instgde-prereq-php55-install-centos">PHP 5.5 on CentOS</h2>
@@ -774,11 +857,12 @@ with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
     <p>Enter the following commands in the order shown.</p>
 
     <pre><code>yum -y update
-rpm -Uvh https://mirror.webtatic.com/yum/el6/latest.rpm
-yum -y remove php-common-5.3.3-40.el6_6.x86_64
-yum -y install php55w php55w-opcache
-yum -y install php55w-xml php55w-mcrypt php55w-gd php55w-devel php55w-mysql php55w-intl php55w-mbstring php55w-bcmath
+yum -y install epel-release
+wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+wget https://centos6.iuscommunity.org/ius-release.rpm
+rpm -Uvh ius-release*.rpm
 yum -y update
+yum -y install php55u php55u-opcache php55u-xml php55u-mcrypt php55u-gd php55u-devel php55u-mysql php55u-intl php55u-mbstring php55u-bcmath
 </code></pre>
 
     <div class="bs-callout bs-callout-info" id="info">
@@ -786,11 +870,21 @@ yum -y update
 </div>
   </li>
   <li>
-    <p>Restart Apache: <code>service httpd restart</code></p>
+    <p>Enter the following command to verify the version:</p>
+
+    <pre><code>php -v
+</code></pre>
+
+    <p>The following messages display:</p>
+
+    <pre><code>PHP 5.5.32 (cli) (built: Feb  4 2016 09:30:35)
+Copyright (c) 1997-2015 The PHP Group
+Zend Engine v2.5.0, Copyright (c) 1998-2015 Zend Technologies
+with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2015, by Zend Technologies
+</code></pre>
   </li>
-  <li>
-    <p>Continue with the next section.</p>
-  </li>
+  <li>Restart Apache: <code>service httpd restart</code></li>
+  <li>Continue with the next section.</li>
 </ol>
 
 <h2 id="instgde-prereq-timezone">Set PHP configuration options</h2>
@@ -825,13 +919,6 @@ CentOS: <code>/etc/php.ini</code></li>
 <li>Restart Apache:<br /><br />
 Ubuntu: <code>service apache2 restart</code><br />
 CentOS: <code>service httpd restart</code></li></ol>
-
-<h3 id="prereq-php-redis">Optional: Configure caching alternatives</h3>
-<p>You can optionally specify alternatives to file system caching in <code>php.ini</code> by modifying the value of <code>session.save_handler</code>. Magento supports the following values:</p>
-<ul><li><code>files</code> (the default) for file system caching</li>
-	<li><code>db</code> for <a href="/guides/v2.0/config-guide/database/database.html">database</a> caching</li>
-	<li><code>redis</code> for <a href="/guides/v2.0/config-guide/redis/config-redis.html">Redis</a> caching</li>
-	<li>Any other custom cache type you set up; however, it's up to you to know how to specify it in <code>php.ini</code></li></ul>
 
 <h4 id="related-topics">Related topics</h4>
 
