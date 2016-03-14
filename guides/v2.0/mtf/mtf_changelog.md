@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: Z_Changelog
+subgroup: 70_Changelog
 title: Changelog of Magento Testing Framework
 menu_title: CHANGELOG
 menu_node: parent

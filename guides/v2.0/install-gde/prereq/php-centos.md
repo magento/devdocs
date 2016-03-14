@@ -31,8 +31,8 @@ redirect_from: /guides/v1.0/install-gde/prereq/php-centos.html
 
 Magento requires:
 
-*	PHP 5.5.x
-*	PHP 5.6.x 
+*	PHP 5.6.x
+*	PHP 5.5.x, where x is 22 or greater 
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">

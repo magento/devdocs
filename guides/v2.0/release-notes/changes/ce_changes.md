@@ -2,26 +2,26 @@
 layout: default
 group: release-notes
 subgroup: Breaking changes
-title: Magento CE Backward-Incompatible Changes
+title: Magento CE Backward Incompatible Changes
 menu_title: Magento CE
 github_link: release-notes/changes/ce_changes.md
 ---
 
 ## Preface
 
-This topic provides details about backwards-incompatible changes made in a [Magento CE mainline][] after the [Magento 2.0][] release. The content is auto-generated.
+This topic provides details about backward incompatible changes made in a [Magento CE mainline][] after the [Magento 2.0][] release. The content is auto-generated.
 
 Be aware that no @api code has been modified.
 
 All changes are aggregated into two tables:
 
-- [Class][] that contains breaking changes made to Magento classes
-- [Interface][] that contains breaking changes made to the Magento interfaces
+- [Class][] that contains backward incompatible changes made to Magento classes
+- [Interface][] that contains backward incompatible changes made to the Magento interfaces
 
 where each change is displayed in a separate row in the table, with the following columns:
 
 - **Target** with name of the affected class or interface
-- **Reason** with description of the breaking change
+- **Reason** with description of the backward incompatible change
 
 {% include changes/ce_changes.html %}
 
