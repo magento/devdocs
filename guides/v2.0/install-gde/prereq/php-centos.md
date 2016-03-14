@@ -2,8 +2,8 @@
 layout: default
 group: install_pre
 subgroup: Prerequisites
-title: PHP 5.5 or 5.6&mdash;CentOS
-menu_title: PHP 5.5 or 5.6&mdash;CentOS
+title: PHP 5.6 or 7.0 &mdash;CentOS
+menu_title: PHP 5.6 or 7.0 &mdash;CentOS
 menu_order: 05
 github_link: install-gde/prereq/php-centos.md
 redirect_from: /guides/v1.0/install-gde/prereq/php-centos.html
@@ -12,14 +12,13 @@ redirect_from: /guides/v1.0/install-gde/prereq/php-centos.html
 <!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
 <!-- Referring file: README.md owned by core -->
 
-
 <h4 id="instgde-php-prereq-contents">Contents</h4>
 
 *	<a href="#php-support">PHP versions supported</a>
 *	<a href="#php-centos-help-beginner">Help if you're just starting out</a>
 *	<a href="#centos-verify-php">Verify PHP is installed</a>
+*	<a href="#instgde-prereq-php70-install-centos">PHP 7.0 on CentOS</a>
 *	<a href="#instgde-prereq-php56-install-centos">PHP 5.6 on CentOS</a>
-*	<a href="#instgde-prereq-php55-install-centos">PHP 5.5 on CentOS</a>
 *	<a href="#instgde-prereq-timezone">Set PHP configuration options</a>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -31,12 +30,13 @@ redirect_from: /guides/v1.0/install-gde/prereq/php-centos.html
 
 Magento requires:
 
-*	PHP 5.5.x
+*	PHP 5.5.x (EOL @ 10 Jul 2016)
 *	PHP 5.6.x 
+*	PHP 7.0.x 
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>Magento no longer supports PHP 5.4.</p></span>
+  <p>Magento no longer supports PHP 5.4.x</p></span>
 </div>
 
 <h2 id="php-centos-help-beginner">Help if you're just starting out</h2>
@@ -64,18 +64,39 @@ If PHP is installed, continue with the next prerequisite, <a href="{{ site.gdeur
 
 If PHP is *not* installed, see one of the following sections:
 
+*	<a href="#instgde-prereq-php70-install-centos">PHP 7.0 on CentOS</a>
 *	<a href="#instgde-prereq-php56-install-centos">PHP 5.6 on CentOS</a>
-*	<a href="#instgde-prereq-php55-install-centos">PHP 5.5 on CentOS</a>
 
-<h2 id="instgde-prereq-php56-install-centos">PHP 5.6 on CentOS</h2>
-There is more than one way to upgrade CentOS 6.5 to PHP 5.6; the following is a suggestion only. Consult a reference for additional options.
+There is more than one way to upgrade CentOS 6 and CentOS 7 to PHP 7.0; the following is a suggestion only. Consult a reference for additional options.
 
-To upgrade to PHP 5.6:
+To upgrade PHP version:
 
 1.	Enter the following commands in the order shown:
 
-		rpm -Uvh https://mirror.webtatic.com/yum/el6/latest.rpm
-		yum install -y php56w php56w-opcache php56w-xml php56w-mcrypt php56w-gd php56w-devel php56w-mysql php56w-intl php56w-mbstring php56w-bcmath
+<h2 id="instgde-prereq-php56-install-centos">PHP 5.6 on CentOS</h2>
+
+**CentOS 6 php 5.6**:
+		
+		rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+		yum --enablerepo=remi,remi-php56 -y install php php-pecl-redis php-pecl-lzf php-pecl-geoip \
+		php-pecl-zip php-pecl-memcache php-cli php-common php-fpm php-opcache php-gd php-curl \
+		php-mbstring php-bcmath php-soap php-mcrypt php-mysqlnd php-pdo php-xml php-xmlrpc php-intl
+
+<h2 id="instgde-prereq-php70-install-centos">PHP 7.0 on CentOS</h2>
+
+**CentOS 6 php 7.0**:
+
+		rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
+		yum --enablerepo=remi,remi-php70 -y install php php-pecl-redis php-pecl-lzf php-pecl-geoip \
+		php-pecl-zip php-pecl-memcache php-cli php-common php-fpm php-opcache php-gd php-curl \
+		php-mbstring php-bcmath php-soap php-mcrypt php-mysqlnd php-pdo php-xml php-xmlrpc php-intl
+
+**CentOS 7 php 7.0**:
+
+		rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+		yum --enablerepo=remi,remi-php70 -y install php php-pecl-redis php-pecl-lzf php-pecl-geoip \
+		php-pecl-zip php-pecl-memcache php-cli php-common php-fpm php-opcache php-gd php-curl \
+		php-mbstring php-bcmath php-soap php-mcrypt php-mysqlnd php-pdo php-xml php-xmlrpc php-intl
 
 	<div class="bs-callout bs-callout-info" id="info">
   		<p>The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.</p>
@@ -83,14 +104,14 @@ To upgrade to PHP 5.6:
 
 2.	Restart Apache: `service httpd restart`
 
-2.	Enter the following command to verify that PHP 5.6 is installed:
+2.	Enter the following command to verify that PHP 7.0 is installed:
 
 		php -v
 
-	The following response indicates that PHP 5.6 is installed properly:
+	The following response indicates that PHP 7.0 is installed properly:
 
-		PHP 5.6.4 (cli) (built: Dec 20 2014 17:30:46)
-		Copyright (c) 1997-2014 The PHP Group
+		PHP 7.0.3 (cli) (built: Feb 03 2016 17:30:46)
+		Copyright (c) 1997-2015 The PHP Group
 		Zend Engine v2.6.0, Copyright (c) 1998-2014 Zend Technologies
     	with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
 
@@ -101,29 +122,7 @@ To upgrade to PHP 5.6:
 
 3.	<a href="#instgde-prereq-timezone">Set up PHP configuration options</a>.
 
-<h2 id="instgde-prereq-php55-install-centos">PHP 5.5 on CentOS</h2>
-There is more than one way to upgrade CentOS 6.5 to PHP 5.5; the following is a suggestion only. Consult a reference for additional options.
 
-To upgrade to PHP 5.5:
-
-1.	Enter the following commands in the order shown.
-
-		yum -y update
-		rpm -Uvh https://mirror.webtatic.com/yum/el6/latest.rpm
-		yum -y remove php-common-5.3.3-40.el6_6.x86_64
-		yum -y install php55w php55w-opcache
-		yum -y install php55w-xml php55w-mcrypt php55w-gd php55w-devel php55w-mysql php55w-intl php55w-mbstring php55w-bcmath
-		yum -y update
-
-	<div class="bs-callout bs-callout-info" id="info">
-  		<p>The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.</p>
-	</div>
-
-2.	Restart Apache: `service httpd restart`
-
-3.	Continue with the next section.
-
-<h2 id="instgde-prereq-timezone">Set PHP configuration options</h2>
 {% include install/php-config.html %}
 
 
