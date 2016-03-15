@@ -66,25 +66,22 @@ To verify if PHP is installed already, enter `php -v`. If PHP is installed, mess
 If PHP is installed, continue with the next prerequisite, <a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">MySQL</a>.
 
 ## CentOS repositories {#centos-php-repos}
-Linux systems provide software like PHP in one or more *repositories*, some of which are officially recommended while others are not.
+Linux systems provide software like PHP in one or more *repositories*. CentOS, unlike Ubuntu, has a set of [officially recommended repositories](https://wiki.centos.org/AdditionalResources/Repositories){:target="_blank"}. Other repositories are considered less safe for the reasons stated on the CentOS wiki.
 
-<div class="bs-callout bs-callout-warning">
-    <p>The choice of a repository is up to you. If you use a hosting provider, typically the provider has a recommended repository. However, if you're installing Magento on your own, you must choose one.</p>
-</div>
-
-CentOS recommends you install software from one of their [recommended repositories](https://wiki.centos.org/AdditionalResources/Repositories){:target="_blank"}. We're not aware that you can install PHP 5.5, 5.6, or 7.0 from a CentOS-recommended repository. Therefore, you must consider the following:
+We're not aware that you can install PHP 5.5, 5.6, or 7.0 from a CentOS-recommended repository. Therefore, you must consider the following:
 
 *	If you're setting up a system that will be deployed in production, you should choose a hosting provider who uses repositories considered to be safe and reliable. 
 
-	You should also consider upgrading to a later version of CentOS that supports the desired PHP version natively.
-*	If you're setting up a development system, you can use any repository you want.
+	You should also consider upgrading to a later version of CentOS that has the desired PHP version in a recommended repository.
+*	If you're setting up a development system, you can use any repository you wish.
 
-	The repository we use in this topic is *not* officially recommended by Magento. We're providing the information for your convenience only.
+In this topic, we show how to install PHP using the [Inline with Upstream Stable (IUS)](https://ius.io/GettingStarted){:target="_blank"} repository, which is *not* on the CentOS recommended list. However, packages installed from IUS do not use the same names as CentOS-provided packages, so [no existing system packages are replaced](https://ius.io/Philosophy){:target="_blank"}.
 
-In this topic, we show how to install PHP from the [Inline with Upstream Stable (IUS)](https://ius.io/GettingStarted){:target="_blank"} repository, which is *not* on the recommended list. However, packages installed from IUS do not use the same names as CentOS-provided packages, so [no existing system packages are replaced](https://ius.io/Philosophy){:target="_blank"}.
+Before you continue, review their [Getting Started topic](https://ius.io/GettingStarted){:target="_blank"}.
 
-Before you continue, review their [Getting started topic](https://ius.io/GettingStarted){:target="_blank"}.
-
+<div class="bs-callout bs-callout-warning">
+    <p>Magento does <em>not</em> officially recommend using the IUS repository. We discuss it here for example purposes only.</p>
+</div>
 
 Continue with one of the following sections:
 
