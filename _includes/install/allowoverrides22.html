@@ -36,11 +36,9 @@ Magento uses server rewrites and <code>.htaccess</code> to provide directory-lev
 		<p>The preceding values for <code>Order</code> might not work in all cases. For more information, see the Apache documentation (<a href="https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order" target="_blank">2.2</a>, <a href="https://httpd.apache.org/docs/2.4/mod/mod_authz_host.html#order" target="_blank">2.4</a>).</p></span>
 	</div>
 
-		
-
 4.	Save the file and exit the text editor.
 
-	*	Ubuntu only</em>. Configure Apache to use the <code>mod_rewrite</code> module.
+	*	*Ubuntu only*. Configure Apache to use the `mod_rewrite` module.
 
 			cd /etc/apache2/mods-enabled
 			ln -s ../mods-available/rewrite.load

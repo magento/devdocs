@@ -35,7 +35,7 @@ The Blank and Luma themes implement the following <a href="{{site.gdeurl}}fronte
   <li>1440px</li>
 </ul>
 
-You can change these breakpoints and add new ones in your custom theme. For instructions see the [Add a new breakpoint]({{site.gdeurl}}frontend-dev-guide/css-topics/css-breakpoints.html) topic.
+You can change these breakpoints and add new ones in your custom theme. For instructions see the [Add a new breakpoint]({{site.gdeurl}}frontend-dev-guide/responsive-web-design/rwd-breakpoints.html) topic.
 
 <h2>Mobile first</h2>
 
