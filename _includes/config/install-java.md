@@ -24,4 +24,10 @@ Be sure to install the JDK and *not* the JRE.
 </div>
 
 <h4 id="install-prereq-java-ubuntu">Install the JDK on Ubuntu</h4>
-To install JDK 1.8 on Ubuntu, see <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html" target="_blank">Oracle documentation</a>.
+To install JDK 1.8 on Ubuntu, enter the following commands as a user with `root` privileges:
+
+	add-apt-repository -y ppa:webupd8team/java
+	apt-get -y update
+	apt-get install -y oracle-java8-installer
+
+For other options, see <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html" target="_blank">Oracle documentation</a>.
