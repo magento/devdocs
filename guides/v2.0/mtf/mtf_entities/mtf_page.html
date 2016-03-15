@@ -423,7 +423,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/mtf/create_test/new_test.html">New functional test</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/mtf/create_test/new_test.html">New functional test. Theory</a></li>
 
 									
 
@@ -431,7 +431,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/mtf/create_test/create_new_test.html">Create a new test</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/mtf/create_test/create_new_test.html">New functional test. Practice</a></li>
 
 									
 
@@ -863,11 +863,11 @@ Only the code in the corresponding block must be changed.</p>
 
 <h2 id="mtf_page_merge">Merge pages</h2>
 
-<p>Page merging can help you to redirect modules declared in a page, or add blocks from different modules.</p>
+<p>Page merging can help you to override modules declared in a page, or add blocks from different modules.</p>
 
 <p>Pages are merged when they have the same <code>name</code> attribute value.</p>
 
-<p>Pages are merged module by module in the order that modules are loaded in. All new modules are always loaded after Magento modules, so that pages from new Modules are merged the last.</p>
+<p>Pages are merged module by module in the order that modules in Magento are loaded. All new modules are loaded after related Magento modules (according to the dependencies), so that the pages from new modules are merged the last.</p>
 
 <h3 id="add-block-another-module">Add blocks from different modules</h3>
 
@@ -880,7 +880,7 @@ Only the code in the corresponding block must be changed.</p>
 <ul>
   <li>with the same name as the page you want to merge</li>
   <li>with the same <code>mca</code></li>
-  <li>without <code>module</code> and <code>area</code> attributes</li>
+  <li>the <code>module</code> and <code>area</code> attributes can be omitted</li>
 </ul>
 
 <p><strong>Step 3.</strong> Add blocks to the page</p>
@@ -1105,7 +1105,7 @@ Only the code in the corresponding block must be changed.</p>
 
 <p>To use the <code>editForm</code> block from the Magento_NewModule we must follow:</p>
 
-<p><strong>Step 1.</strong> Create a <code>CatalogCategoryEdit.xml</code> page in the <code>dev/tests/functional/tests/app/Magento/NewModule/Test/Page/Adminhtml</code> directory.</p>
+<p><strong>Step 1.</strong> Create a <code>CatalogCategoryEdit.xml</code> page in the <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/NewModule/Test/Page/Adminhtml</code> directory.</p>
 
 <p><strong>Step 2.</strong> Assign page attributes</p>
 

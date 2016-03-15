@@ -423,7 +423,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/mtf/create_test/new_test.html">New functional test</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/mtf/create_test/new_test.html">New functional test. Theory</a></li>
 
 									
 
@@ -431,7 +431,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/mtf/create_test/create_new_test.html">Create a new test</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/mtf/create_test/create_new_test.html">New functional test. Practice</a></li>
 
 									
 
@@ -671,7 +671,7 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<h2>New functional test</h2>
+		<h2>New functional test: Theory</h2>
 
 <p>The MTF helps to create a new test, you can extend an out-of-the-box test, or create a completely new test.</p>
 
@@ -693,7 +693,7 @@
 
 <h3 id="extending-oob-test">Extend an out-of-the-box test</h3>
 
-<p>You can extend a test by adding or replacing of any <a href="/guides/v2.0/mtf/mtf_entities.html">test entity</a>. Test entities for the module are stored in the <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/&lt;testing_module&gt;</code> directory.</p>
+<p>You can extend a test by adding or replacing a <a href="/guides/v2.0/mtf/mtf_entities.html">test entity</a>. Test entities for the module are stored in the <code>&lt;magento2&gt;/dev/tests/functional/tests/app/Magento/&lt;testing_module&gt;</code> directory.</p>
 
 <h4 id="ext-usage">Usage</h4>
 
@@ -728,7 +728,12 @@ The test object is represented by a <a href="/guides/v2.0/mtf/mtf_entities/mtf_f
 
 <ul>
   <li>Data for the test, stored in a <a href="/guides/v2.0/mtf/mtf_entities/mtf_dataset.html">data set</a>.</li>
-  <li>Preconditions, sample data that are stored in a <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture-repo.html">fixture repository</a> and a sample test entity that can be created by a <a href="/guides/v2.0/mtf/mtf_entities/mtf_handler.html">handler</a>.</li>
+  <li>Preconditions:
+    <ul>
+      <li>Sample data that is stored in a <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture-repo.html">fixture repository</a>. In a data set, it is stored as a name of the fixture repository. </li>
+      <li>A sample test entity that can be created by a <a href="/guides/v2.0/mtf/mtf_entities/mtf_handler.html">handler</a>.</li>
+    </ul>
+  </li>
 </ul>
 
 <h4 id="test-flow">Test flow</h4>
@@ -737,7 +742,7 @@ The test object is represented by a <a href="/guides/v2.0/mtf/mtf_entities/mtf_f
 
 <h4 id="test-assertions">Test assertions</h4>
 
-<p>A test assertion compares real test flow results with expected ones. Test assertions are represented by <a href="/guides/v2.0/mtf/mtf_entities/mtf_constraint.html">constraints</a>.</p>
+<p>A test assertion compares the test flow results with the expected ones. Test assertions are represented by <a href="/guides/v2.0/mtf/mtf_entities/mtf_constraint.html">constraints</a>.</p>
 
 <p><a href="/guides/v2.0/mtf/create_test/create_new_test.html">Learn more in the “Create a new test” topic.</a></p>
 
