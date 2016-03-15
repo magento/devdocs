@@ -5,7 +5,7 @@ subgroup: ZZ_Troubleshooting
 title: Troubleshoot the updater application
 menu_title: Troubleshoot the updater application
 menu_node: 
-menu_order: 5
+menu_order: 10
 github_link: comp-mgr/trouble/cman/updater.md
 ---
 

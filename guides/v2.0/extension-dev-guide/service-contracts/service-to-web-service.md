@@ -1,10 +1,10 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 6_Module Development
+subgroup: 99_Module Development
 title: Configure services as web APIs
 menu_title: Configure services as web APIs
-menu_order: 11
+menu_order: 13
 contributor_name: Classy Llama
 contributor_link: http://www.classyllama.com/
 github_link: extension-dev-guide/service-contracts/service-to-web-service.md
@@ -55,10 +55,10 @@ For SOAP and REST to work correctly, the following rules must be followed by the
 *   All methods on objects expected as parameters or returned must follow these rules
 *   Parameters must be defined in the doc block as
 
-        * @param <type<> $paramName
+        * @param type $paramName
 *   Return type must be defined in the doc block as
 
-        * @return <em>type</em></code>
+        * @return type
 *   Valid scalar types include: `mixed` (or `anyType`), `bool` (or `boolean`), `str` (or `string`), `integer` (or `int`), `float`, and `double`.
 *   Valid object types include a fully qualified class name or a fully qualified interface name.
 *   Any parameters or return values of type array can be denoted by following any of the previous types by an empty set of square brackets `[]`
@@ -73,13 +73,13 @@ Following are some examples of various types and what they would look like in th
         * @param int $id
 *   A parameter $customer which is an object of class `\Magento\Customer\Api\Data\CustomerInterface`: 
 
-        * @param \Magento\Customer\Api\Data\CustomerInterface $customer</code>
+        * @param \Magento\Customer\Api\Data\CustomerInterface $customer
 
     Note that even if the class `\Magento\Customer\Api\Data\CustomerInterface` is in the same namespace (or a sub-namespace) of the current class or a use statement has exists at the top of the class, the fully qualified namespace must be used or the web API throws an exception.
 
 *   A return which is an array of objects of type `\Magento\Customer\Api\Data\CustomerInterface`: 
 
-        * @return \Magento\Customer\Api\Data\CustomerInterface[]</code>
+        * @return \Magento\Customer\Api\Data\CustomerInterface[]
 
 <h2 id="configuration-options">webapi.xml configuration options</h2>
 <p>To define web API components, set these attributes on these XML elements in the

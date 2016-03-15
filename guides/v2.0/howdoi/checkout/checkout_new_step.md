@@ -4,11 +4,11 @@ group: howdoi
 subgroup: checkout
 title: Add a new checkout step
 menu_title: Add a new checkout step
-menu_node: parent
 menu_order: 1
-github_link: frontend-dev-guide/howdoi/checkout/checkout_new_step.md
+github_link: howdoi/checkout/checkout_new_step.md
 ---
 
+## What's in this topic
 The default Magento Checkout consists of two steps:
 
  - Shipping Information
@@ -18,11 +18,16 @@ You can add a custom checkout step, it should be implemented as a UI component. 
 
 This topic describes how to create the frontend part of the component, implementing a checkout step, and how to add it to the checkout flow.
 
+**Contents**
+
+* TOC
+{:toc}
+
 ## Create the view part of the checkout step component
 
 To create the view part of the new checkout step:
 
-1. Add a module directory (not covered in this topic). See [Build your module]({{site.gdeurl}}extension-dev-guide/build.html) for details). All custom files must be stored there.
+1. Add a module directory (not covered in this topic). See [Build your module]({{site.gdeurl}}extension-dev-guide/build.html) for details). All custom files must be stored there. For your checkout customization to be applied correctly, your custom module should depend on the Magento_Checkout module.
 1. Create the `.js` file implementing the view model.
 2. Create an `.html` template for the component.
 
@@ -121,7 +126,7 @@ define(
 
 ### Add the .html template
 
-In the module directory, add the `.html` template for the component. It must be located under the <`your_module_dir>/view/frontend/web/template` directory.
+In the module directory, add the `.html` template for the component. It must be located under the `<your_module_dir>/view/frontend/web/template` directory.
 
 A sample `mystep.html` follows:
 {%highlight html%}
@@ -165,6 +170,7 @@ A sample `checkout_index_index.xml` follows:
                                 <item name="children" xsi:type="array">
                                     <item name="steps" xsi:type="array">
                                         <item name="children" xsi:type="array">
+                                            <!-- The new step you add -->
                                             <item name="my-new-step" xsi:type="array">
                                                 <item name="component" xsi:type="string">Magento_Your_Module_Name/js/view/my-step-view</item>
                                                     <!--To display step content before shipping step "sortOrder" value should be < 1-->

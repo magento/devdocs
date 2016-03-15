@@ -24,9 +24,9 @@ You must specify and configure all JavaScript resources used in modules and them
 JavaScript resources can be specified as follows:
 
 *	Library level for all libraries in Magento code base (`lib/web`)
-*	Module level for all libraries in a module (`app/code/<VendorName>/<ModuleName>/view/<areaname>/web`)
-*	Theme for all libraries in a theme (`app/design/<areaname>/<VendorName>/[custom theme name]/<VendorName>_<ModuleName>/web`)
-*	(_Not recommended_) All libraries in a theme  (`app/design/<areaname>/<VendorName>/[custom theme name]/web`). We do not recommend using this level to specify JavaScript resources.
+*	Module level for all libraries in a module (`<module_dir>/view/<areaname>/web`)
+*	Theme for all libraries in a theme (`<theme_dir>/<VendorName>_<ModuleName>/web`)
+*	(_Not recommended_) All libraries in a theme  (`<theme_dir>/web`). We do not recommend using this level to specify JavaScript resources.
 
 We recommend specifying JavaScript resources in the templates rather than in the layout updates to ensure processing of the resources in body of a page.
 
@@ -48,13 +48,13 @@ The modular ID has `magento!` prefix and is used for loading the JavaScript modu
 <h3 id="m2devgde-js-resources-dependencies">Specify dependencies between JavaScript resources</h3>
 Specifying all dependencies between JavaScript resources might be time consuming. To facilitate this task we implemented ability to build the dependencies via plugin: thus, you will need to specify only dependency of your resource on a plugin, and the latter will pick up all necessary dependencies on other resources automatically.
 
-When creating a new resource, you can select a plugin, on which your resources are to depend, from the <a href="https://github.com/magento/magento2/tree/master/lib/web/mage" target="_blank">ready-to-go plugin library</a> or write a plugin by yourself. Observe the following rules when declaring a plugin:
+When creating a new resource, you can select a plugin, on which your resources are to depend, from the <a href="https://github.com/magento/magento2/tree/master/" target="_blank"> [ready-to-go plugin library]({{site.mage2000url}}lib/web/mage) or write a plugin by yourself. Observe the following rules when declaring a plugin:
 <ol>
 <li>To declare a plugin, use the <code>define</code> function:</li>
 <pre>define(["jquery"],&nbsp;function($){
 &nbsp;&nbsp;//&nbsp;plugin&nbsp;code
 &nbsp;&nbsp;//&nbsp;where&nbsp;$&nbsp;==&nbsp;"jquery"
-})(jQuery);&nbsp;
+});&nbsp;
 </pre>
 
 <li>If you need a plugin to be used in various environments, specify it as follows:</li>

@@ -4,7 +4,7 @@ group: coding-standards
 subgroup: Coding standards
 title: jQuery widget coding standard
 menu_title: jQuery widget coding standard
-menu_order: 4
+menu_order: 6
 github_link: coding-standards/code-standard-jquery-widgets.md
 redirect_from: /guides/v1.0/coding-standards/code-standard-jquery-widgets.html
 ---
@@ -107,7 +107,7 @@ $.widget('mage.accordion', $.ui.accordion, {
    </div>
 </div>
 <h2 id="fedg_widget-coding-stnd_instant">Instantiation and resources</h2>
-<!-- <p>You must use the <a href="{{ site.gdeurl }}frontend-dev-guide/javascript/js-mage-plugin.html" target="_blank">Mage plug-in</a> to instantiate a widget or define resources for a widget.</p> -->
+
 <div id="accordion2">
    <h3>Additional JavaScript files used as resources by a widget</h3>
    <div>
@@ -332,7 +332,7 @@ $.widget('mage.nonModalDialog', {
     /* ... */
 });</pre>
                   <pre>// Initialization
-$('selector').mage('modalDialod');
+$('selector').mage('modalDialog');
 $('selector').mage('nonModalDialog');</pre>
                </td>
             </tr>
@@ -553,9 +553,9 @@ $.widget("mage.form," {
    </div>
 </div>
 <h2 id="fedg_jquery-widget-coding_arch">Architecture</h2>
-<div id="accordion4">
-   <h3>Use the underscore prefix only to declare private widget methods</h3>
-   <div>
+
+<h3>Use the underscore prefix only to declare private widget methods</h3>
+   <div id="accordion4">
       <p>Widget properties names should not start with underscore because those properties would not be accessible using the jQuery Widget Factory public API.</p>
       <table>
          <tbody>

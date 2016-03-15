@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: D_Entities
+subgroup: 50_Entities
 title: Entities of the Magento Testing Framework
 menu_title: Constraint
 menu_order: 7
@@ -15,7 +15,7 @@ github_link: mtf/mtf_entities/mtf_constraint.md
 
 ## Constraint overview {#mtf_constraint_overview}
 
-The MTF constraint performs assertions after a test flow. A test flow is a set of test steps without assertions.
+The Magento Testing Framework (MTF) constraint performs assertions after a test flow. A test flow is a set of test steps without assertions.
 Each constraint name must be globally unique in Magento application and must be placed in the module to which it belongs. Constraints run automatically after test flow has finished.
 
 ![Constraints and test flow]({{site.baseurl}}common/images/mtf_constraint_flow.png)
@@ -42,14 +42,14 @@ The constraint PHP class must:
 
 * Contain the following methods: 
 
-  * `processAssert` which contains assertions. A `PHPUnit_Framework_Assert` class (`<magento2>/dev/tests/functional/vendor/phpunit/phpunit/src/Framework/Assert.php`) can be used to simplify assertions
-  * `toString` which returns a success message if the assertion is performed successfully
+  * `processAssert()` which contains assertions. A `PHPUnit_Framework_Assert` class (`<magento2>/dev/tests/functional/vendor/phpunit/phpunit/src/Framework/Assert.php`) can be used to simplify assertions.
+  * `toString()` which returns a success message if the assertion is performed successfully
 
 ### Constraint arguments
 
 In the MTF, [data set][] values are shared with a test class and constraints. A node name in data set can be complex like `item1/item2/item3`. The argument name in `processAssert()` must be the same as the `item1` to transfer data from data set to constraint.
  
-If a data set variable is used in the test, and is overwritten, it is transfered as altered to the constraint. Variables can be overwritten in the _injectable_ [test case][]  class in `test()`, `__inject()` and `__prepare()` methods, and then passed to the constraint class by `return`. Furthermore, any returned value of these methods can be used as an argument in constraint.
+If a data set variable is used in the test, and is overwritten, it is transferred as altered to the constraint. Variables can be overwritten in the _injectable_ [test case][]  class in `test()`, `__inject()` and `__prepare()` methods, and then passed to the constraint class by `return`. Furthermore, any returned value of these methods can be used as an argument in constraint.
 
 An object that is not defined in the data set or isn't returned from the test case is created using the Object Manager.
 
@@ -57,15 +57,15 @@ Let's see the following images for the `CreateSimpleProductEntityTest` test and 
 
 <img src="{{ site.baseurl }}common/images/mtf_constraint_arguments_green.png" width="800" />
 
-<span style="color: #21610B; font-weight:bold">Green arrows</span> show that `product` value is transfered to the test and the constraint.
+<span style="color: #21610B; font-weight:bold">Green arrows</span> show that `product` value is transferred to the test and the constraint.
 
 <img src="{{ site.baseurl }}common/images/mtf_constraint_arguments_orange.png" width="800" />
 
-<span style="color: #FF8000; font-weight:bold">Orange arrows</span> show that `category` variable is transfered to the test directly, overwritten by `testCreate()` method and only then transfered to constraint.
+<span style="color: #FF8000; font-weight:bold">Orange arrows</span> show that `category` variable is transferred to the test directly, overwritten by `testCreate()` method and only then transferred to constraint.
 
 <img src="{{ site.baseurl }}common/images/mtf_constraint_arguments_blue.png" width="800"/>
 
-<span style="color: #0000FF; font-weight:bold">Blue arrow</span> shows that `price` value is transfered to the constraint only.
+<span style="color: #0000FF; font-weight:bold">Blue arrow</span> shows that `price` value is transferred to the constraint only.
 
 ### Constraint in the test {#mtf_constraint_variation}
 
@@ -196,6 +196,8 @@ in the order that it must be performed.
     </testCase>
 </config>
 {%endhighlight%}
+
+<!-- LINK DEFINITIONS -->
 
 [data set]: {{site.gdeurl}}mtf/mtf_entities/mtf_dataset.html
 [fixture]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html

@@ -10,7 +10,7 @@ github_link: coding-standards/code-standard-less.md
 
 This standard defines Magento internal requirements for code formatting and style for teams that develop LESS and CSS code.
 
-Some parts of Magento code might not comply with this coding standard.
+Some parts of Magento code might not comply with this coding standard yet, but we are working to gradually improve this. 
 
 This coding standard is optional for third-party Magento developers.
 
@@ -132,7 +132,7 @@ Start each property declaration in a new line.
 
 #### Properties colon indents
 
-Do not add spaces before or after the colon that separates property names from values.
+Add space after but not before the colon that separates property names from values.
 
 **Correct**:
 
@@ -317,6 +317,8 @@ Class names should be lowercase, start with a letter (except helper classes), wo
 
 Helper class names should be lowercase and start with underscore ("_").
 
+Some parts of Magento code might not comply with this standard yet. You might still find helper names with no underscores. We are working to gradually remove the inconsistency.  
+ 
 **Example**:
 
     ._active {
@@ -383,6 +385,7 @@ Use meaningful, specific class names that reflect the purpose of the element. Cl
 
 
 ### Selectors naming
+
 #### Type selectors
 
 Avoid qualifying class names with type selectors.
@@ -458,10 +461,10 @@ Exceptions are pseudo elements and states.
         }
         .nav-list {
             ...
+            .nav-list-item {
+                ...
+            }
         }
-        .nav-list-item {
-            ...
-         }
     }
 
 **Incorrect**:
@@ -611,7 +614,7 @@ General model is the following:
 
     @property-name
 
-** Examples **:
+**Examples**:
 
     @primary__color: @color-phoenix;
     @indent__base: 2rem;
@@ -627,7 +630,7 @@ Component name must meaningful. It can contain the `primary`, `secondary`, `tert
 
 `base` is a modifier.
 
-** Examples **:
+**Examples**:
 
 
     @color-orange: '';

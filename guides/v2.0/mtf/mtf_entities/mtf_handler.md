@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: D_Entities
+subgroup: 50_Entities
 title: Entities of the Magento Testing Framework
 menu_title: Handler
 menu_order: 3
@@ -28,7 +28,7 @@ Magento uses the following handlers:
 | Type of handler | Mechanism | Example| Tip|
 |---|---|---|---|
 |UI|Drives the web browser.| Set of scripts for Selenium that simulate user actions to create a widget through a web browser.| The UI handler is much slower then the other handlers. When the test execution time is critical, you should avoid use of the UI handler. The UI handler code is very similar to the code of the test that doesn't contain constraints. If you have a test for widget creation, you can re-use the code, because the code of UI handler that creates widget is very similar.|
-|cURL|Sends POST or PUT requests to the server hosting the application that is being tested.|HTTP POST request to the application server, that transfers Widget fixture fields and corresponding values from the dataset.|Browser is not involved, that's why the cURL handler works much faster than the UI handler.|
+|cURL|Sends POST or PUT requests to the server hosting the application that is being tested.|HTTP POST request to the application server, that transfers Widget fixture fields and corresponding values from the data set.|Browser is not involved, that's why the cURL handler works much faster than the UI handler.|
 |WebAPI|Sends a POST request using the REST API. <a href="{{site.gdeurl}}rest/bk-rest.html">See REST API reference documentation.</a> |Similar to cURL but uses the REST API entry point. |Has the advantage of testing the API, faster than cURL.|
 
 Furthermore, you can create your own handlers, such as **Direct**, which is very fast because the **Direct** handler sends a direct call to the Magento application using Magento models. The **Direct** handler requires deep understanding of the Magento application, and also requires access to the Magento code and the database. Difficulties can be caused when the Magento code and Magento tests are run on different hosts.
@@ -130,7 +130,7 @@ The following code includes detailed comments for better understanding.
 
 ### cURL authentication classes {#mtf_handler_decor}
 
-In the previously mentioned example of the <a href="#mtf_curl_script">Curl.php</a> code, authentication in the Admin is realized using the the `BackendDecorator` class. 
+In the previously mentioned example of the <a href="#mtf_curl_script">Curl.php</a> code, authentication in the Admin is realized using the `BackendDecorator` class. 
 
 The <a href="#mtf_handler_curl_frontdecor">FrontendDecorator class</a> manages authentication in the storefront.
 

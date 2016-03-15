@@ -10,7 +10,7 @@ github_link: get-started/gs-web-api-request.md
 redirect_from: /guides/v1.0/get-started/gs-web-api-request.html
 ---
 
-<p>To configure a web API, developers define some of the elements of each API call in your `<module root dir>/vendor/<vendorname>/module-<name>/etc/webapi.xml file, where `<vendorname>` is your vendor name (for example, `magento`) and `<name>` is your module name (which exactly matches its definition in `composer.json`). For example, the web API for the Customer service is defined in the `<your Magento install dir>/vendor/magento/module-customer/etc/webapi.xml configuration file. Service data interfaces and builders define the required and optional parameters and the return values for the API calls.</p>
+To configure a web API, developers define some of the elements of each API call in the `<module root dir>/vendor/<vendor-name>/<module-name>/etc/webapi.xml` file, where `<vendor-name>` is your vendor name (for example, `magento`) and `<module-name>` is your module name (which exactly matches its definition in `composer.json`). For example, the web API for the Customer service is defined in the `<your Magento install dir>/vendor/magento/module-customer/etc/webapi.xml` configuration file. Service data interfaces and builders define the required and optional parameters and the return values for the API calls.
 
 <p>To construct a web API request, read these topics:</p>
 <ul>
@@ -262,11 +262,10 @@ $options = [
 ];
 $client->setOptions($options);
 
-$response = $this->client->send($request);
+$response = $client->send($request);
 </pre>
 <li><p>This request returns a list of all customers in JSON format. You can also specify XML format by changing <code>Accept</code> header of the request.</p></li>
 </ol>
 
 <h2>Next step</h2>
 <p>Run the web API call through a <a href="{{ site.gdeurl }}get-started/gs-curl.html">cURL command</a> or a REST client.</p>
-

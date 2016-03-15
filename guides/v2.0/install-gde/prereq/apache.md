@@ -97,7 +97,7 @@ To install the default version of Apache (Ubuntu 14&mdash;Apache 2.4, Ubuntu 12&
 *	Continue with the next prerequisite (<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)
 *	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Determine your installation or upgrade path</a>
 
-{% include install/allowoverrides24.html %}
+{% include install/allowoverrides22.html %}
 
 #### Next steps
 *	<a href="#403-apache">Solving 403 (Forbidden) errors</a>
@@ -191,6 +191,12 @@ For example:
 		Require all granted
 	</Directory>
 
+<div class="bs-callout bs-callout-info" id="info">
+	<span class="glyphicon-class">
+	<p>The preceding values for <code>Order</code> might not work in all cases. For more information, see the <a href="https://httpd.apache.org/docs/2.4/mod/mod_access_compat.html#order" target="_blank">Apache documentation</a>.</p></span>
+</div>
+
+
 <h4 id="install-apache-403_2.2">Solving 403 Forbidden errors for Apache 2.2</h4>
 To enable web site visitors to access your site, use the <a href="http://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#allow" target="_blank">Allow directive</a>.
 
@@ -203,7 +209,10 @@ For example:
 		Allow from all
 	</Directory>
 
-
+<div class="bs-callout bs-callout-info" id="info">
+	<span class="glyphicon-class">
+	<p>The preceding values for <code>Order</code> might not work in all cases. For more information, see the <a href="https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order" target="_blank">Apache documentation</a>.</p></span>
+</div>
 
 #### Related topics:
 

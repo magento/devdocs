@@ -10,7 +10,6 @@ github_link: config-guide/cli/config-cli-subcommands-cache.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-cache.html
 ---
 
-
 #### Contents
 
 *	<a href="#config-cli-subcommands-cache-clean-over">Overview of cache types</a>
@@ -185,13 +184,9 @@ where
 
 `[type]` is a space-separated list of cache types. Omitting `[type]` cleans or flushes all cache types at the same time.
 
-
-
-<!-- `--bootstrap=` is a URL-encoded associative array of Magento <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview">application bootstrap parameters</a> and values.
- -->
 For example, to flush all cache types, enter
 
-	magento cache:flush --all
+	magento cache:flush
 
 Sample result:
 
@@ -208,6 +203,10 @@ Sample result:
 	config_integration_api
 	config_webservice
 
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You can also clean and flush cache types in the Magento Admin. Go to <strong>System</strong> > Tools > <strong>Cache Management</strong>. <strong>Flush Cache Storage</strong> is equivalent to <code>magento cache:flush</code>. <strong>Flush Magento Cache</strong> is equivalent to <code>magento cache:clean</code>.</p></span>
+</div> 
 
 #### Related topics
 

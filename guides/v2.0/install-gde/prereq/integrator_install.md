@@ -49,6 +49,11 @@ To get started:
 
 	This command creates the project and downloads dependencies for it. The project is in a directory named `<installation directory name>` if you provided the parameter or `project-community-edition` if you did not.
 
+	<div class="bs-callout bs-callout-info" id="info">
+  		<p>If the following error displays, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_composer-fail.html">troubleshooting</a>:</p>
+  		<pre>file_get_contents(app/etc/NonComposerComponentRegistration.php): failed to open stream: No such file or directory</pre>
+	</div>
+
 4.	Continue with <a href="#instgde-prereq-compose-access">Set file system ownership and permissions</a>.
 
 <h2 id="integrator-first-composer-ee">Get the Magento EE metapackage</h2>
@@ -71,6 +76,11 @@ To get started:
 
 	This command creates the project and downloads dependencies for it. The project is in a directory named `<installation directory name>` if you provided the parameter or `project-enterprise-edition` if you did not.
 
+	<div class="bs-callout bs-callout-info" id="info">
+  		<p>If the following error displays, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_composer-fail.html">troubleshooting</a>:</p>
+  		<pre>file_get_contents(app/etc/NonComposerComponentRegistration.php): failed to open stream: No such file or directory</pre>
+	</div>
+
 5.	Continue with the next section.
 
 <h2 id="instgde-prereq-compose-access">Set file system ownership and permissions</h2>
@@ -83,7 +93,7 @@ The following sections discuss how to set file system ownership and permissions:
 {% include install/file-system-perms1-why.html %}
 
 <h3 id="install-perms-set">File system permissions and ownership</h3>
-{% include install/file-system-perms2-how.html %}
+{% include install/file-system-perms2-how.md %}
 
 #### Next step
 Install the Magento software:

@@ -49,7 +49,7 @@ The way you reinstall the Magento application from the command line depends on y
 <h3 id="instgde-install-magento-reinst-dev">Reinstall as a system integrator</h3>
 To reinstall the Magento software as a system integrator:
 
-1.	Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>).
+1.	Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.
 2.	Enter the following commands in the order shown:
 
 		cd <your Magento install dir>
@@ -58,7 +58,7 @@ To reinstall the Magento software as a system integrator:
 
 	<div class="bs-callout bs-callout-info" id="info">
 		<span class="glyphicon-class">
-  			<ul><li>If <code>git pull origin develop</code> fails, see <a href="{{ site.gdeurl }}install-gde/trouble/git/tshoot_git-pull-origin..html">troubleshooting</a>. </li>
+  			<ul><li>If <code>git pull origin develop</code> fails, see <a href="{{ site.gdeurl }}install-gde/trouble/git/tshoot_git-pull-origin.html">troubleshooting</a>. </li>
   				<li>To use your existing Magento software version , omit the <code>git pull origin develop</code> command.</li></ul></span>
 	</div>
 
@@ -95,3 +95,6 @@ However, in some situations (particularly, deploying Magento to production), you
 
 	*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento">Install the Magento software using the command line</a>
 	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>
+
+*[contributing developer]: A developer who contributes code to the Magento 2 CE codebase
+*[contributing developers]: Developers who contribute code to the Magento 2 CE codebase

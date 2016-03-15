@@ -4,7 +4,7 @@ group: compman
 subgroup: B_prereq
 title: Enter your authentication keys in the Admin
 menu_title: Enter your authentication keys in the Admin
-menu_order: 10
+menu_order: 2
 menu_node: 
 github_link: comp-mgr/prereq/prereq_auth-token.md
 ---
@@ -16,6 +16,10 @@ github_link: comp-mgr/prereq/prereq_auth-token.md
 *	<a href="#compman-token-admin">Enter the tokens in the Admin</a>
 
 {% include install/auth-tokens.md %}
+
+<div class="bs-callout bs-callout-info" id="info">
+	<p>To upgrade your Magento Enterprise Edition (EE) version or to upgrade from Magento Community Edition (CE) to Magento EE, you must be authorized for Magento EE. Contact <a href="http://support.magentocommerce.com" target="_blank">Magento Support</a> if you have questions.</p>
+</div>
 
 <h2 id="compman-token-admin">Enter the tokens in the Admin</h2>
 To enter your authentication tokens:

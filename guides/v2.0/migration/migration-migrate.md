@@ -1,7 +1,7 @@
 ---
 layout: default
 group:  migration
-subgroup: Migrate using the data migration tool
+subgroup: D_Migrate using the data migration tool
 title: Migrate using the data migration tool
 menu_title: Migrate using data migration tool
 menu_node: parent
@@ -49,7 +49,7 @@ where
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>Logs are written to the <code>&lt;your Magento install dir>/vendor/magento/migration-tool/var</code> directory.</p></span>
+  <p>Logs are written to the <code>&lt;your Magento install dir>/var/</code> directory.</p></span>
 </div>
 
 The following sections should be performed in a specific order:

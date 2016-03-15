@@ -10,10 +10,13 @@ _site/
 .Trashes
 ehthumbs.db
 Thumbs.db
+.idea
 
 # Config and output files #
 ###########################
 _site
+node_modules
+.jekyll-metadata
 CNAME
 _config.yml
 /Readme.md

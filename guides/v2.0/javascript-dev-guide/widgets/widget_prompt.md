@@ -15,7 +15,7 @@ The Magento prompt widget implements a modal pop-up window with an input field, 
 
 It extends the <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html">Magento modal widget</a>.
 
-The prompt widget source is <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/modal/prompt.js">app/code/Magento/Ui/view/base/web/js/modal/prompt.js</a>
+The prompt widget source is <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/modal/prompt.js">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/modal/prompt.js</a>
 
 The widget can be used for implementing prompt windows for both, Admin and storefront. The design patterns for the modal pop-up windows in the Admin are described in the <a href="{{site.gdeurl}}pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a> 
 
@@ -24,7 +24,7 @@ The widget can be used for implementing prompt windows for both, Admin and store
 - <a href="#prompt_init">Initialize the prompt widget</a>
 - <a href="#prompt_options">Options</a>
 - <a href="#prompt_events">Events</a>
-- <a href="prompt_key_navigation">Keyboard navigation</a>
+- <a href="#prompt_key_navigation">Keyboard navigation</a>
 
 <h2 id="prompt_init">Initialize the prompt widget</h2>
 

@@ -36,10 +36,13 @@ Static view files deployment is affected by Magento modes as follows:
 	You must write static view files to the Magento file system manually using the command discussed in this topic; after that, you can restrict permissions to limit your vulnerabilities and to prevent accidental or malicious overwriting of files.
 
 <div class="bs-callout bs-callout-warning">
-  <p><em>Developer mode only</em>: When you install or enable a new module, it might load new JavaScript, CSS, layouts, and so on. To avoid issues with static files, you must flush the old files to make sure you get all the changes for the new module.</p>
-  <p>You can clear static files in any of the following ways:</p>
-  <ul><li>Manually by clearing the <code>pub/static</code> and <code>var/view_preprocessed</code> directories and subdirectories.</li>
-  <li>Using the Magento command line. Several commands support an optional parameter <code>--clear-static-content</code>, which clears the appropriate directories. For example, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a>.</li></ul>
+  <p><em>Developer mode only</em>: When you install or enable a new module, it might load new JavaScript, CSS, layouts, and so on. To avoid issues with static files, you must clean the old files to make sure you get all the changes for the new module.</p>
+  <p>You can clean generated static view files in any of the following ways:</p>
+  <ul><li>Manually by clearing the <code>pub/static</code> and <code>var/view_preprocessed</code> directories and subdirectories. <em>except</em> for <code>pub/static/.htaccess</code>.<br><br>
+  	To clear the <code>pub/static</code> directory of all files except <code>.htaccess</code>, enter the following command:<br>
+  	<code>find . -depth -name .htaccess -prune -o -delete</code></li>
+  <li>Using the Magento command line. Several commands support an optional parameter <code>--clear-static-content</code>, which cleans <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a>. For example, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a>.</li>
+<li>In the Magento Admin. Go to <strong>System</strong> > Tools > <strong>Cache Management</strong> and click <strong>Flush Static Files Cache</strong>.</li></ul>
 </div>
 
 <h2 id="config-cli-before">First steps</h2>

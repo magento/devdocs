@@ -211,14 +211,16 @@ The following table discusses the meanings of installation option names and valu
 	</tr>
 	<tr>
 		<td><p>--use-secure</p></td>
-		<td><p><code>1</code> enables the use of Secure Sockets Layer (SSL) in all URLs (both Admin and storefront). Make sure your web server supports SSL before you select this option.</p>
-		<p><code>0</code> disables the use of SSL with Magento. In this case, all other secure URL options are assumed to also be <code>0</code>. This is the default.</p></td>
+		<td><p><code>1</code> enables the use of Secure Sockets Layer (SSL) in all storefront URLs. Make sure your web server supports SSL before you select this option.</p>
+		<p><code>0</code> disables the use of SSL with Magento. In this case, all other secure URL options are assumed to also be <code>0</code>. This is the default.</p>
+		<p>To have a fully secure site, you must enable <em>both</em> <code>--use-secure=1</code> and <code>--base-url-secure=1</code>.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
 		<td><p>--base-url-secure</p></td>
-		<td><p>Secure base URL to use to access your Magento Admin and storefront in the following format:</p>
-		<p><code>https://&lt;host or ip>/&lt;your Magento install dir>/</code></p></td>
+		<td>Secure base URL to use to access your Magento Admin and storefront in the following format:
+		<code>http[s]://&lt;host or ip>/&lt;your Magento install dir>/</code>
+		<p>To have a fully secure site, you must enable <em>both</em> <code>--use-secure=1</code> and <code>--base-url-secure=1</code>.</p></td>
 		<td><p>No</p></td>
 	</tr>
 
@@ -252,14 +254,14 @@ The following table discusses the meanings of installation option names and valu
 		<td><p>--session-save</p></td>
 		<td><p>Use any of the following:</p>
 		<ul><li><code>db</code> to store session data in the <a href="{{ site.gdeurl }}config-guide/database/database.html">database</a>. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.</li>
-			<li><code>redis</code> if you use the <a href="{{ site.gdeurl }}config-guide/redis/config-redis.html">Redis</a> backend.</li>
+			
 			<li><code>files</code> to store session data in the file system. File-based session storage is appropriate unless the Magento file system access is slow or you have a clustered database.</li>
 	</ul></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
 		<td><p>--key</p></td>
-		<td><p>If you have one, specify a key to encrypt personally identifiable data in the Magento database. If you don't have one, Magento generates one for you.</p></td>
+		<td><p>If you have one, specify a key to encrypt <a href="#sens-data">sensitive data</a> in the Magento database. If you don't have one, Magento generates one for you.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
@@ -312,6 +314,8 @@ The following table discusses the meanings of installation option names and valu
   <p>To enable or disable modules after installing Magento, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
   	</span>
 </div>
+
+{% include install/sens-data.md %}
 
 <h4 id="install-cli-example">Sample localhost installations</h4>
 

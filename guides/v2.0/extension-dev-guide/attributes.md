@@ -1,10 +1,10 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 6_Module Development
+subgroup: 99_Module Development
 title: EAV and extension attributes
 menu_title: EAV and extension attributes
-menu_order: 7
+menu_order: 9
 github_link: extension-dev-guide/attributes.md
 redirect_from: /guides/v1.0/extension-dev-guide/attributes.html
 
@@ -13,7 +13,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/attributes.html
 
 Magento provides two types of attributes that integrators can use to extend the functionality provided out-of-the-box:
 
-* Custom and EAV (Entity-Attribute-Value) attributes. Custom attributes are those added on behalf of a merchant. For example, a merchant might need to add attributes to describe products, such as shape or volume. A merchant can add these attributes on the admin panel, and these attributes can be displayed. See the merchant documentation for information about information about managing custom attributes.
+* Custom and EAV (Entity-Attribute-Value) attributes. Custom attributes are those added on behalf of a merchant. For example, a merchant might need to add attributes to describe products, such as shape or volume. A merchant can add these attributes on the admin panel, and these attributes can be displayed. See the merchant documentation for information about managing custom attributes.
 
 	Custom attributes are a subset of EAV attributes. Objects that use EAV attributes typically store values in several MySQL tables. The `Customer` and `Catalog` modules have the primary models that use EAV attributes. Other modules, such as `ConfigurableProduct`, `GiftMessage`, and `Tax`, use the EAV functionality for `Catalog`.
 
@@ -82,7 +82,7 @@ where:
 <tbody>
 <tr>
 <td><p>for</p></td>
-<td><p>The fully-qualified type name with the namespace that processes the extensions. The value much be a type that implements `ExtensibleDataInterface`. The interface can be in a different module.</p> </td>
+<td><p>The fully-qualified type name with the namespace that processes the extensions. The value must be a type that implements `ExtensibleDataInterface`. The interface can be in a different module.</p> </td>
 <td><code>Magento\Quote\Api\Data\TotalsInterface</code></td>
 </tr>
 <tr>
@@ -132,7 +132,7 @@ where:
 
 The system uses a join directive to add external attributes to a collection and to make the collection filterable. The `join` element in the `extension_attributes.xml` file defines which object fields and the database table/column to use as the source of a search. 
 
-In the following example, an attribute named `quoteApiTestAttribute` of type `UserInterface` added to the `CartInterface`. 
+In the following example, an attribute named `stock_item` of type `Magento\CatalogInventory\Api\Data\StockItemInterface` added to the `Magento\Catalog\Api\Data\ProductInterface`. 
 
 {% highlight XML %}
 <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">

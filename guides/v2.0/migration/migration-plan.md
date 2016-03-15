@@ -1,7 +1,7 @@
 ---
 layout: default
 group:  migration
-subgroup: Creating a migration plan
+subgroup: B_Creating a migration plan
 title: Creating a migration plan
 menu_title: Creating a migration plan
 menu_node: parent
@@ -32,7 +32,7 @@ To prepare for the migration, make sure you do all of the following:
 
 * Set up a Magento 2.0 system using a topology and design that at least matches your existing Magento 1 system
 * To provide redundancy in the event of unexpected issues, we advise you to replicate your Magento 1.x database and use this Magento 1.x data for your migration
-* Install Magento 2.0 on a system that meets our system requirements
+* Install Magento 2.0 (with all modules of given release) on a system that meets our system requirements
 
 <h4>Step 4: Start your migration</h4>
 
@@ -57,6 +57,10 @@ You can stop the updates at any time by pressing CTRL+C
 * Test your Magento 2 site during this time so you can catch any issues as soon as possible.
 In case you find any issues, press Control+C to stop incremental migration and start it again after issues are resolved
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Volume check warnings may appear in case you conduct testing of your Magento 2 site and run migration process at the same time. It happens because in Magento 2 you create entities that do not exist in Magento 1 instance.</p>
+</div>
+
 <h4>Step 6: Go live</h4>
 
 Now that your Magento 2 site is up-to-date with Magento 1 and is functioning normally, do the following to cut over to the new site:
@@ -64,7 +68,7 @@ Now that your Magento 2 site is up-to-date with Magento 1 and is functioning nor
 1. Put your Magento 1 system in maintenance mode (DOWNTIME STARTS).
 2. Press Control+C in the migration tool command window to stop incremental updates.
 3. Start your Magento 2 cron jobs.
-4. In your Magento 2 system, reindex the stock indexer. For more information, see the `<TBD>`.
+4. In your Magento 2 system, reindex the stock indexer. For more information, see the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-index.html">Configuration Guide</a>.
 5. Using a tool of your choice, hit pages in your Magento 2 system to cache pages in advance of customers using your storefront.
 6. Perform any final verification of your Magento 2 site.
 7. Change DNS, load balancers, and so on to point to new production hardware (DOWNTIME ENDS) 

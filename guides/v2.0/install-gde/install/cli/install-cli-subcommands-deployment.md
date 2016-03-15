@@ -96,14 +96,14 @@ The following table discusses the meanings of installation parameters and values
 		<td><p>--session-save</p></td>
 		<td><p>Use any of the following:</p>
 		<ul><li><code>db</code> to store session data in the <a href="{{ site.gdeurl }}config-guide/database/database.html">database</a>. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.</li>
-			<li><code>redis</code> if you use the <a href="{{ site.gdeurl }}config-guide/redis/config-redis.html">Redis</a> backend.</li>
+			
 			<li><code>files</code> to store session data in the file system. File-based session storage is appropriate unless the Magento file system access is slow or you have a clustered database.</li>
 	</ul></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
 		<td><p>--key</p></td>
-		<td><p>If you have one, specify a key to encrypt sensitive data in the Magento database. (This includes passwords and personally identifiable customer information.) If you don't have one, Magento generates one for you.</p></td>
+		<td><p>If you have one, specify a key to encrypt <a href="#sens-data">sensitive data</a> in the Magento database. If you don't have one, Magento generates one for you.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<!-- <tr> 
@@ -134,6 +134,8 @@ The following table discusses the meanings of installation parameters and values
 	</tbody>
 </table>
 
+{% include install/sens-data.md %}
+
 If applicable, continue your Magento software installation:
 
 *	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-install.html">Command line installation</a>
@@ -157,3 +159,6 @@ If applicable, continue your Magento software installation:
 *	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a>
+
+<!-- GLOSSARY -->
+

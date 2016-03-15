@@ -7,7 +7,9 @@ menu_title: Display or change the Admin URI
 menu_node: 
 menu_order: 6
 github_link: install-gde/install/cli/install-cli-adminurl.md
-redirect_from: /guides/v1.0/install-gde/install/install-cli-adminurl.html
+redirect_from: 
+  - /guides/v1.0/install-gde/install/install-cli-adminurl.html
+  - /guides/v2.0/install-gde/install/install-cli-adminurl.html
 ---
 
   
@@ -38,7 +40,7 @@ A sample result follows:
 
 	Admin Panel URI: /admin_1wgrah
 
-You can also view the the Admin URI in `<your Magento install dir>/app/etc/env.php`. A snippet follows:
+You can also view the Admin URI in `<your Magento install dir>/app/etc/env.php`. A snippet follows:
 
 {% highlight php %}
 <? php

@@ -32,15 +32,8 @@ Developer mode uses a less restrictive set of permissions than does production m
   <p>Unlike other Magento modes, developer and production modes are set in <code>env.php</code>.</p></span>
 </div>
 
-When you change modes, we do the following:
-
-*	Change to production mode: Clear directories and set permissions on files and directories
-*	Change to developer mode: Clear directories only; we don't set specific permissions on files.
-
-	When you generate classes or generate static files, they have 777 (world-writable permissions) and are owned by the user who runs this command.
-
 <h3 id="config-mode-over-clear">Cleared directories</h3>
-We clear the the contents of following directories when you change modes:
+When you change to developer or production mode, we clear the contents of following directories when you change modes:
 
 	var/cache
 	var/di
@@ -57,6 +50,18 @@ Exceptions:
 <span class="glyphicon-class">
   <p>By default, Magento uses the <code>var</code> directories to store the cache, logs, and compiled code. You can customize this directory but in this guide, it's assumed to be <code>var</code>.</p></span>
 </div>
+
+<h3 id="config-mode-dev-dirs">Permissions and ownership for developer mode</h3>
+When you change to developer mode, we clear directories only; we don't set specific permissions on existing files.
+
+However, we set the following permissions on these directories and subdirectories:
+
+*	Directories: 770
+
+	770 permissions give full control to the owner and to the group, and no permissions to anyone else.
+*	Files: 660
+
+	660 permissions give read-write permissions to the owner and to the group, and no permissions to anyone else.
 	
 <h3 id="config-mode-over-dirs">Permissions and ownership for production mode</h3>
 Changing modes affects permissions and ownership the following subdirectories in your Magento installation:
@@ -115,7 +120,7 @@ We recommend the following:
 
 	We refer to this other user as the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#nstall-update-depend-user-over">Magento file system owner</a>.
 
-	Exceptions: `var/di`, `var/generation`, and `var/preprocessed`
+	Exceptions: `var/di`, `var/generation`, and `var/view_preprocessed`
 
 *	The directories and files under `pub/static` should have 770 permissions, which give the owner and the group full control.
 

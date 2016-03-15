@@ -1,8 +1,8 @@
 ---
 layout: default
-group: Contributor Guide
+group: contributor
 subgroup: Contributor Guide
-title: Contributor Guide
+title: Magento Definition of Done
 menu_title: Magento Definition of Done
 menu_order: 2
 menu_node: 
@@ -34,7 +34,7 @@ For more information, see <a href="{{ site.gdeurl }}architecture/backward-compat
 
 All changes, additions, and extensions to the product should be documented by the author. The documentation should provide an overview of the change, and information about standard use cases, audience, and procedural instructions for implementing the feature.
 
-Ideally, the informatin about the submitted code should be added to the official Magento DevDocs library. Contributors are asked to submit the doc as a Pull Request to the <a href="https://github.com/magento/devdocs" target="_blank">DevDocs Github repo</a>. 
+Ideally, the information about the submitted code should be added to the official Magento DevDocs library. Contributors are asked to submit the doc as a Pull Request to the <a href="https://github.com/magento/devdocs" target="_blank">DevDocs Github repo</a>.
 
 When submitting either code or documentation, a brief summary of the work should be included in the commit message. 
 

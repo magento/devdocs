@@ -47,7 +47,7 @@ $("#header").collapsible();
 
 
 <h2>Initialize collapsible in a template</h2>
-The collapsible widget can be initialized using the <code>data-mage-init</code> attribute or `<script>` tag, as described in <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html#data_mage_init" target="_blank">JavaScript initializaiton</a>.
+The collapsible widget can be initialized using the <code>data-mage-init</code> attribute or `<script>` tag, as described in <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html#data_mage_init" target="_blank">JavaScript initialization</a>.
 
 <h2>Options</h2>
 
@@ -484,7 +484,7 @@ $("#element" ).collapsible("activate");
 <h3 id="collaps_deactivate"><code>deactivate()</code></h3>
 
 Collapse the content when this method is called.
-<p class="q">Wouldn't it be enough to say "Collapse the content"?</p>
+
 This method does not accept any arguments.
 
 Invoke the deactivate method:

@@ -14,6 +14,8 @@ redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css_debug.html
 <p>
 The topic describes how the changes you make in stylesheets are applied in the client-side and server-side LESS <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">compilation modes</a>, and suggests the approaches and tools you can use to streamline the process of applying and debugging customizations. </p>
 
+## Prerequisites 
+Make sure that you [set]({{site.gdeurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{site.gdeurl}}config-guide/bootstrap/magento-modes.html).
 
 <h2 id="css_debug_client">Styles debugging in client-side compilation mode</h2>
 
@@ -78,7 +80,7 @@ npm update
 </li>
 
 <li>
-Add your theme to Grunt configuration. To do this, in the <code>dev/tools/grunt/configs/theme.js</code> file, add your theme to <code>module.exports</code> like following:
+Add your theme to Grunt configuration. To do this, in the <code>dev/tools/grunt/configs/themes.js</code> file, add your theme to <code>module.exports</code> like following:
 <pre>
 module.exports = {
     &lt;theme&gt;: {
@@ -89,7 +91,7 @@ module.exports = {
             '&lt;path_to_file1&gt;', //path to root source file
             '&lt;path_to_file2&gt;'
         ],
-    dsl: 'less'
+        dsl: 'less'
     },
 </pre>
 

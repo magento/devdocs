@@ -22,7 +22,7 @@ Example integration:
 `<your module root dir>/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml`
 
 {% highlight xml %}
-<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Ui/etc/ui_configuration.xsd">
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
             <filterSelect name="uiSelect">
                 <argument name="optionsProvider" xsi:type="configurableObject">
                     <argument name="class" xsi:type="string">Magento\Cms\Model\Page\Source\PageLayout</argument>
@@ -75,8 +75,6 @@ Navigation keys:
 
     Abstract
     
-    uiLayout
-    
 * imports option
     
     The option defines from where the component receives its data.
@@ -110,3 +108,114 @@ Navigation keys:
                     label: $t('Deselect all on this page')
                 }],
     {% endhighlight %}
+    
+<h2 id="structure">Component options</h2>
+
+<table>
+<tbody>
+<tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Required For Correct Work</th>
+    <th>Type</th>
+    <th>Default Value</th>
+</tr>
+<tr>
+    <td>options.< option name >.label</td>
+    <td>Options label</td>
+    <td>-</td>
+    <td>String</td>
+    <td>undefined</td>
+</tr>
+<tr>
+    <td>options.< option name >.value</td>
+    <td>Options value</td>
+    <td>-</td>
+    <td>String</td>
+    <td>undefined</td>
+</tr>
+<tr>
+    <td>options.< option name >.optgroup</td>
+    <td>Nested level of options</td>
+    <td>-</td>
+    <td>Object</td>
+    <td>undefined</td>
+</tr>
+<tr>
+    <td>mode</td>
+    <td>Mode overrides default values for some options. In 'simple' mode showCheckbox = chipsEnabled = closeBtn = false. In 'optgroup' mode showCheckbox = openLevelsAction = false, and lastSelectable = optgroupLabels = labelsDecoration = true.</td>
+    <td>-</td>
+    <td>Boolean</td>
+    <td>false</td>
+</tr>
+<tr>
+    <td>showCheckbox</td>
+    <td>Show checkbox just before option label, select options by checking</td>
+    <td>-</td>
+    <td>Boolean</td>
+    <td>true</td>
+</tr>
+<tr>
+    <td>chipsEnabled</td>
+    <td>Selected options are shown in ui select's header as deletable chips</td>
+    <td>-</td>
+    <td>Boolean</td>
+    <td>true</td>
+</tr>
+<tr>
+    <td>closeBtn</td>
+    <td>Show button that closes dropdown</td>
+    <td>-</td>
+    <td>Boolean</td>
+    <td>true</td>
+</tr>
+<tr>
+    <td>closeBtnLabel</td>
+    <td>Label of the close button</td>
+    <td>-</td>
+    <td>string</td>
+    <td>$t('Done')</td>
+</tr>
+<tr>
+    <td>levelsVisibility</td>
+    <td>If true, all levels are visible. If is a number, this number of levels are visible.</td>
+    <td>-</td>
+    <td>Boolean/number</td>
+    <td>true</td>
+</tr>
+<tr>
+    <td>openLevelsAction</td>
+    <td></td>
+    <td>-</td>
+    <td>Boolean</td>
+    <td>true</td>
+</tr>
+<tr>
+    <td>showOpenLevelsActionIcon</td>
+    <td></td>
+    <td>-</td>
+    <td>Boolean</td>
+    <td>true</td>
+</tr>
+<tr>
+    <td>showTree</td>
+    <td></td>
+    <td>-</td>
+    <td>Boolean</td>
+    <td>false</td>
+</tr>
+<tr>
+    <td>separator</td>
+    <td></td>
+    <td>-</td>
+    <td>String</td>
+    <td>optgroup</td>
+</tr>
+</tbody>
+</table>
+
+####Integration
+
+Here is an example of configuration of select component. It is used as column filter and has 3 levels of options, with not selectable label for every level, without checkboxes:
+
+<img src="{{site.baseurl}}common/images/ui-select.jpg" alt="view the configuration">

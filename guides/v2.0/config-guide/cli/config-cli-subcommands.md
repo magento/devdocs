@@ -97,7 +97,7 @@ The following table summarizes the available commands. Commands are shown in sum
 		<td><p>Deploys static view files</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-less-sass.html">magento dev:css:deploy</a></td>
+		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-less-sass.html">magento dev:source-theme:deploy</a></td>
 		<td><p>Creates CSS from LESS</p></td>
 	</tr>
 	<tr>

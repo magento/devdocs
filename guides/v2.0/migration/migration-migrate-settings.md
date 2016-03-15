@@ -1,7 +1,7 @@
 ---
 layout: default
 group:  migration
-subgroup: Migrate using data migration tool
+subgroup: D_Migrate using the data migration tool
 title: Migrate settings
 menu_title: Migrate settings
 menu_node:
@@ -14,15 +14,16 @@ redirect_from: /guides/v1.0/migration/migration-migrate-settings.html
 <h2 id="migrate-command-settings">Migrating settings</h2>
 You should migrate settings first. This mode migrates stores; websites; and different system configuration like shipping, payment, some tax settings etc. 
 
-To change how settings are migrated:
+If necessary, here is how to change how settings are migrated:
 
 1.	Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
 2.	Change to the following directory:
 
-		`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<migration edition>/<ce or version>
+
+		<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<migration edition>/<ce or version>
 1. 	Enter the following command to create `settings.xml` from the provided sample:
 
-		cp sample.xml.dist sample.xml
+		cp settings.xml.dist settings.xml
 2. Make your changes in `settings.xml`.
 3. Make changes to the `<settings_map_file>` tag in `<ce or ee version>/config.xml` to specify the new name of the settings file.
 

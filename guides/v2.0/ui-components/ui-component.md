@@ -6,11 +6,10 @@ title: Overview
 menu_title: Overview
 menu_node: parent
 github_link: ui-components/ui-component.md
-redirect_from: /guides/v2.0/ui-library/ui-component.html 
+redirect_from: /guides/v2.0/ui-library/ui-library-component.html
 ---
 
 <h2 id="general">Overview of UI components</h2>
-
 Magento UI components are designed for simple and flexible UI rendering. They allow you to configure the page manipulating the UI components.
 
 Magento UI components are implemented as a standard module and can be found under Magento\UI namespace.
@@ -35,10 +34,9 @@ All components can be configured both for Admin and storefront.
 </div>
 
 <h3>Using UI component in layout file</h3>
-
 Using UI component is as simple as adding the following code to the appropriate layout section:
 
-`<ui_component name="some_ui_component_instance_name"/>`
+`<uiСomponent name="some_ui_component_instance_name"/>`
 
 All UI components have base declaration in <a href="{{ site.gdeurl }}ui-library/ui-definition.html">`Magento/Ui/view/base/ui_component/etc/definition.xml`</a>. 
 

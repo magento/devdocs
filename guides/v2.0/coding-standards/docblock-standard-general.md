@@ -4,7 +4,7 @@ group: coding-standards
 subgroup: Coding standards
 title: DocBlock standard
 menu_title: DocBlock standard
-menu_order: 5
+menu_order: 3
 github_link: coding-standards/docblock-standard-general.md
 redirect_from: /guides/v1.0/coding-standards/docblock-standard-general.html
 ---
@@ -163,9 +163,9 @@ protected $_logger;
 /**
  * Description of method here.
  *
- * @param Random $mathRandom
+ * @param Random         $mathRandom
  * @param StdlibDateTime $dateTime
- * @param int $number
+ * @param int            $number
  */
 protected function doSomething(Random $mathRandom, StdlibDateTime $dateTime, $number)
 {
@@ -190,7 +190,7 @@ class Profiler
     /**
      * @var Profiler
      */
-    protected static $_instance = null;
+    protected static $instance = null;
 {% endhighlight %}
 
 
@@ -203,20 +203,20 @@ Functions and methods must have:
 * Declaration of return type using `@return` tag. If there is no such operator, the `@return` tag must have `void` as the return value.
 * Declaration of possibly thrown exception using `@throws` tag, if the actual body of function triggers throwing an exception. All occurrences of `@throws` in a DocBlock must be after `@param` and `@return` (if any).
 
-It is encouraged to supply `@para`m and `@throws` tags with additional description, which comes after the formal declaration of the tag.
+It is encouraged to supply `@param` and `@throws` tags with additional description, which comes after the formal declaration of the tag.
 
 **Example of a Method DocBlock**
 
 {% highlight php startinline=true %}
 
 /**
- * Merge the config XML-files
+ * Merge the config XML files
  *
- * @param array $configFiles
+ * @param  array $configFiles
  * @return void
- * @throws \Magento\Exception if a non-existing or invalid XML-file passed
+ * @throws \Magento\Exception if a non-existing or invalid XML file passed
  */
-protected function _merge($configFiles)
+protected function merge($configFiles)
 {
     $domConfig = new \Magento\Config\Dom($this->_getInitialXml(), $this->_getIdAttributes());
     foreach ($configFiles as $file) {
@@ -225,7 +225,7 @@ protected function _merge($configFiles)
         }
         $domConfig->merge(file_get_contents($file));
         if (!$domConfig->validate($this->getSchemaFile(), $errors)) {
-            $message = "Invalid XML-file: {$file}\n";
+            $message = "Invalid XML file: {$file}\n";
             /** @var libXMLError $error */
             foreach ($errors as $error) {
                 $message .= "{$error->message} Line: {$error->line}\n";
@@ -249,10 +249,10 @@ A general case when `@throws` tag must be used is if *throw* language construct 
 /**
  * Set an arbitrary value to specified element
  *
- * @param string $elementId
- * @param string $attribute
- * @param mixed $value
- * @return Magento_Data_Structure
+ * @param  string $elementId
+ * @param  string $attribute
+ * @param  mixed  $value
+ * @return self
  * @throws \InvalidArgumentException
  */
 public function setAttribute($elementId, $attribute, $value)
@@ -263,8 +263,10 @@ public function setAttribute($elementId, $attribute, $value)
         case self::CHILDREN:
         case self::GROUPS:
             throw new \InvalidArgumentException("Attribute '{$attribute}' is reserved and cannot be set.");
+            break;
         default:
             $this->_elements[$elementId][$attribute] = $value;
+            break;
     }
     return $this;
 }
@@ -282,7 +284,7 @@ However, if the only purpose of the referred sub-routine is to throw a specific 
 /**
  * Recursively delete directory from storage
  *
- * @param string $path Target dir
+ * @param  string $path Target dir
  * @return void
  * @throws Mage_Core_Exception when directories cannot be deleted
  */
@@ -365,6 +367,7 @@ class Mage_Core_Model_Layout extends Varien_Simplexml_Config
 {
     /**#@+
      * Supported layout directives
+     * @var string
      */
     const TYPE_BLOCK = 'block';
     const TYPE_CONTAINER = 'container';
@@ -375,8 +378,8 @@ class Mage_Core_Model_Layout extends Varien_Simplexml_Config
      *
      * @var array
      */
-    protected $_scheduledMoves = array();
-    protected $_scheduledRemoves = array();
+    protected $scheduledMoves   = array();
+    protected $scheduledRemoves = array();
     /**#@-*/
 {% endhighlight %}
 
@@ -475,8 +478,8 @@ For example, padding for visual alignment can be done in two ways consistently:
 /**
  * ...
  *
- * @param  string $parentId
- * @param  string $childId
+ * @param  string   $parentId
+ * @param  string   $childId
  * @param  int|null $position
  * @return int
  * @see    _insertChild() for position explanation
@@ -491,8 +494,8 @@ For example, padding for visual alignment can be done in two ways consistently:
 /**
  * ...
  *
- * @param string $parentId
- * @param string $childId
+ * @param string   $parentId
+ * @param string   $childId
  * @param int|null $position
  * @return int
  * @see _insertChild() for position explanation
@@ -507,8 +510,8 @@ public function reorderChild($parentId, $childId, $position)
 /**
  * ...
  *
- * @param  string $parentId
- * @param  string $childId
+ * @param  string   $parentId
+ * @param  string   $childId
  * @param  int|null $position
  * @return int
  * @see _insertChild() for position explanation
