@@ -357,7 +357,7 @@ Assume that we already created the new block `\Magento\NewModule\Test\Block\Admi
 
 To use the `editForm` block from the Magento_NewModule we must follow:
   
-**Step 1.** Create a `CatalogCategoryEdit.xml` page in the `dev/tests/functional/tests/app/Magento/NewModule/Test/Page/Adminhtml` directory.
+**Step 1.** Create a `CatalogCategoryEdit.xml` page in the `<magento2>/dev/tests/functional/tests/app/Magento/NewModule/Test/Page/Adminhtml` directory.
 
 **Step 2.** Assign page attributes
 

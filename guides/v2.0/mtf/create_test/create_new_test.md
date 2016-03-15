@@ -38,7 +38,7 @@ Create a synonym group (synonyms are a way to expand the scope of eligible match
 3. Click the "New Synonyms Group" button.
 4. Enter data in the "Synonyms" field.
 5. Click the "Save Synonym Group" button.
-6. Check that a message about successful saving is appeared.
+6. Verify the synonym group saved successfully
 
 **Variation 2:**
 
@@ -48,7 +48,7 @@ Create a synonym group (synonyms are a way to expand the scope of eligible match
 4. Select "All Store Views" in a "Scope" field.
 5. Enter data in the "Synonyms" field.
 6. Click the "Save Synonym Group" button.
-7. Check that a message about successful saving is appeared.
+7. Verify the synonym group saved successfully
 
 **Variation 3:**
 
@@ -58,16 +58,16 @@ Create a synonym group (synonyms are a way to expand the scope of eligible match
 4. Select "Default Store View" in a "Scope" field.
 5. Enter data in the "Synonyms" field.
 6. Click the "Save Synonym Group" button.
-7. Check that a message about successful saving is appeared.
+7. Verify the synonym group saved successfully
 
 ### Automated testing scenario {#auto-test}
 
 1. Log in to Admin.
 2. Open the Search Synonym page.
 3. Click the "New Synonym Group" button.
-4. Enter data according to a data set. For each variation the synonyms must have unique identifiers.
+4. Enter data according to a data set. For each variation, the synonyms must have unique identifiers.
 5. Click the "Save Synonym Group" button.
-6. Check that a message about successful saving is appeared.
+6. Verify the synonym group saved successfully
 
 ### Test creation {#test-creation}
 
@@ -372,7 +372,7 @@ In this example it is named `CreateSynonymEntityTest.php` and stored in `<magent
  
  ![A test case location]({{site.baseurl}}common/images/mtf_tutorial_testcase_location.png)
  
-As a result of [manual testing][] we know that we must work with a Search Synonym Index page and a New Synonym Group page during the test flow. We can code the initialization of these pages in the test using an `__inject()` method of the `Magento\Mtf\TestCase\Injectable` class. The pages will be created in [Step 5][]. Also, we will use the [fixture][] from the previous step.
+As a result of [manual testing][] we know that we must work with a Search Synonym Index page and a New Synonym Group page during the test flow. We can code the initialization of these pages in the test using an `__inject()` method of the `Magento\Mtf\TestCase\Injectable` class. The pages will be created in [Step 5][]. Also, we will use the fixture from the [Step 2][].
 
 {% highlight php %}
 
@@ -388,9 +388,9 @@ use Magento\Search\Test\Fixture\Synonym;
  * 1. Log in to Admin.
  * 2. Open the Search Synonym page.
  * 3. Click the "New Synonym Group" button.
- * 4. Enter data according to a data set. For each variation the synonyms must have unique identifiers.
+ * 4. Enter data according to a data set. For each variation, the synonyms must have unique identifiers.
  * 5. Click the "Save Synonym Group" button.
- * 6. Check that a message about successful saving is appeared.
+ * 6. Verify the synonym group saved successfully.
  */
 class CreateSynonymEntityTest extends Injectable
 {
@@ -838,9 +838,9 @@ use Magento\Search\Test\Page\Adminhtml\SynonymsNew;
  * 1. Log in to Admin.
  * 2. Open the Search Synonym page.
  * 3. Click the "New Synonym Group" button.
- * 4. Enter data according to a data set. For each variation the synonyms must have unique identifiers.
+ * 4. Enter data according to a data set. For each variation, the synonyms must have unique identifiers.
  * 5. Click the "Save Synonym Group" button.
- * 6. Check that a message about successful saving is appeared.
+ * 6. Verify the synonym group saved successfully
  */
 class CreateSynonymEntityTest extends Injectable
 {
