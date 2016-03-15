@@ -30,9 +30,3 @@ CentOS: <code>/etc/php.ini</code></li>
 Ubuntu: <code>service apache2 restart</code><br>
 CentOS: <code>service httpd restart</code></li></ol>
 
-<h3 id="prereq-php-redis">Optional: Configure caching alternatives</h3>
-<p>You can optionally specify alternatives to file system caching in <code>php.ini</code> by modifying the value of <code>session.save_handler</code>. Magento supports the following values:</p>
-<ul><li><code>files</code> (the default) for file system caching</li>
-	<li><code>db</code> for <a href="{{ site.gdeurl21 }}config-guide/database/database.html">database</a> caching</li>
-	<li><code>redis</code> for <a href="{{ site.gdeurl21 }}config-guide/redis/config-redis.html">Redis</a> caching</li>
-	<li>Any other custom cache type you set up; however, it's up to you to know how to specify it in <code>php.ini</code></li></ul>
