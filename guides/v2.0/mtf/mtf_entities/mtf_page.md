@@ -109,11 +109,11 @@ The page will be opened using [mca](#mca) link.
 
 ## Merge pages {#mtf_page_merge}
 
-Page merging can help you to redirect modules declared in a page, or add blocks from different modules.
+Page merging can help you to override modules declared in a page, or add blocks from different modules.
 
 Pages are merged when they have the same `name` attribute value.
 
-Pages are merged module by module in the order that modules are loaded in. All new modules are always loaded after Magento modules, so that pages from new Modules are merged the last.
+Pages are merged module by module in the order that modules in Magento are loaded. All new modules are loaded after related Magento modules (according to the dependencies), so that the pages from new modules are merged the last.
 
 ### Add blocks from different modules {#add-block-another-module}
 
@@ -125,7 +125,7 @@ To add blocks from different modules to the page, you can merge pages. Just foll
 
 * with the same name as the page you want to merge
 * with the same `mca`
-* without `module` and `area` attributes
+* the `module` and `area` attributes can be omitted
   
 **Step 3.** Add blocks to the page
 

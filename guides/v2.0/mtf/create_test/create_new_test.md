@@ -3,12 +3,12 @@ layout: default
 group: mtf-guide
 subgroup: 40_Approach
 title: Create a test in the Magento Testing Framework
-menu_title: Create a new test
+menu_title: New functional test. Practice
 menu_order: 3
 github_link: mtf/create_test/new_test.md
 ---
 
-<h2>Create a new functional test</h2>
+<h2>New functional test: Practice</h2>
 
 To demonstrate the usage of test components from previous sections in the test creation process, we will create a new functional [injectable test][] step-by-step. Before creating automated test, try to pass it manually.
 
@@ -27,7 +27,7 @@ Create a synonym group (synonyms are a way to expand the scope of eligible match
     - All Websites
     - All Store Views
     - Default Store View
-- Synonyms: shoes, foot wear, men shoes, women shoes. For each variation the synonyms must have unique identifiers.
+- Synonyms: shoes, foot wear, men shoes, women shoes.
 
 ### Manual testing scenario {#manual-test}
 
@@ -65,7 +65,7 @@ Create a synonym group (synonyms are a way to expand the scope of eligible match
 1. Log in to Admin.
 2. Open the Search Synonym page.
 3. Click the "New Synonym Group" button.
-4. Enter data according to a data set.
+4. Enter data according to a data set. For each variation the synonyms must have unique identifiers.
 5. Click the "Save Synonym Group" button.
 6. Check that a message about successful saving is appeared.
 
@@ -79,7 +79,7 @@ Create a synonym group (synonyms are a way to expand the scope of eligible match
 
 * Prepare environment for test run. Learn how to [prepare environment for test run][].
 
-#### Step 2. Create the testing object - a [fixture][] {#create-test-object}
+#### Step 2. Create the testing object - a fixture {#create-test-object}
 
 This step is applicable if a fixture doesn't exist in a module.
 
@@ -264,10 +264,10 @@ This data source:
  
  1. Checks if a field has a `dataset` key in a value that comes from a variation. If it doesn't, then field is assigned a value from the variation.
  2. If it does, then a new Store fixture is created with a `dataset` from a Store repository (`<magento2>/dev/tests/functional/tests/app/Magento/Store/Test/Repository/Store.xml`).
- 3. Checks if the `store_id` field exists in the Store fixture. If it doesn't, a new Store fixture is created.
+ 3. Checks if the `store_id` field exists in the Store fixture. If it doesn't, a new Store in Magento is created.
  4. Returns a Store `name` value.
  
-We can save it as `<magento2>/dev/tests/functional/tests/app/Magento/Search/Test/Fixture/Synonym/ScopeId.php`.
+We should save it as `<magento2>/dev/tests/functional/tests/app/Magento/Search/Test/Fixture/Synonym/ScopeId.php`.
 
 ![Synonym ScopeID data source location]({{site.baseurl}}common/images/mtf_tutorial_datasource.png)
 
@@ -372,7 +372,7 @@ In this example it is named `CreateSynonymEntityTest.php` and stored in `<magent
  
  ![A test case location]({{site.baseurl}}common/images/mtf_tutorial_testcase_location.png)
  
-As a result of [manual testing][] we know that we must work with a Search Synonym Index page and a New Synonym Group page during the test flow. We must initialize these pages in the test using an `__inject()` method of the `Magento\Mtf\TestCase\Injectable` class. Also, we will use the [fixture][] from the previous step.
+As a result of [manual testing][] we know that we must work with a Search Synonym Index page and a New Synonym Group page during the test flow. We can code the initialization of these pages in the test using an `__inject()` method of the `Magento\Mtf\TestCase\Injectable` class. The pages will be created in [Step 5][]. Also, we will use the [fixture][] from the previous step.
 
 {% highlight php %}
 
@@ -387,42 +387,45 @@ use Magento\Search\Test\Fixture\Synonym;
  * Steps:
  * 1. Log in to Admin.
  * 2. Open the Search Synonym page.
- * 3. Click the 'New Synonym Group' button.
- * 4. Enter data according to a data set.
- * 5. Click the 'Save Synonym Group' button.
+ * 3. Click the "New Synonym Group" button.
+ * 4. Enter data according to a data set. For each variation the synonyms must have unique identifiers.
+ * 5. Click the "Save Synonym Group" button.
+ * 6. Check that a message about successful saving is appeared.
  */
 class CreateSynonymEntityTest extends Injectable
 {
     /**
      * Search Synonyms Index page.
      *
-     * @var synonymsIndex
+     * @var SynonymsIndex
      */
     private $synonymsIndex;
 
     /**
      * New Synonym Group page.
      *
-     * @var synonymsNew
+     * @var SynonymsNew
      */
     private $synonymsNew;
 
     /**
      * Inject synonym pages.
      *
-     * @param synonymsIndex $synonymsIndex
-     * @param synonymsNew $synonymsNew
+     * @param SynonymsIndex $synonymsIndex
+     * @param SynonymsNew $synonymsNew
      * @return void
      */
     public function __inject(
-        synonymsIndex $synonymsIndex,
-        synonymsNew $synonymsNew
+        SynonymsIndex $synonymsIndex,
+        SynonymsNew $synonymsNew
     ) {
         $this->synonymsIndex = $synonymsIndex;
         $this->synonymsNew = $synonymsNew;
     }
 
     /**
+     * Create Synonym group test.
+     *
      * @param Synonym $synonym
      * @return void
      */
@@ -461,10 +464,10 @@ The following code contains a data set, but doesn't have data yet:
 
 {% endhighlight %}
 
-There is no need to enter data in a `group_id` field, because it is assigned automatically by the application. We need to set the `synonyms` and `scope_id` fields.
+According to a New Synonym Group form we need to enter data in the `synonyms` and `scope_id` fields.
 
 - `synonyms` field. We need to [set data to a fixture field][]. The name of the field should be `<name of a fixture>/data/<name of the field>`. It is `name = "synonym/data/synonyms"`. To make data unique in each variation, we can use the [`%isolation%` placeholder][].
-- `scope_id` field. We need to [set data to a fixture field from a repository][]. The name of the field should be `<name of a fixture>/data/<name of the field>/dataset`. It is `name="synonym/data/scope_id/dataset"`. As you remember from [Step 2][], we use the [data source][] to process this field. The data source loads the Store fixture with the Store repository, and returns the name of the field we need. In data set field we should specify a name of the Store repository `dataset name` from `<magento2>/dev/tests/functional/tests/app/Magento/Store/Test/Repository/Store.xml`.
+- `scope_id` field. We need to [set data to a fixture field from a repository][]. The name of the field should be `<name of a fixture>/data/<name of the field>/dataset`. It is `name="synonym/data/scope_id/dataset"`. As you remember from [Step 2][], we use the [data source][] to process this field. The data source loads the Store fixture with the Store repository, and returns the name of the field we need. In a `dataset` value, we should specify a name of the Store repository `dataset name` from `<magento2>/dev/tests/functional/tests/app/Magento/Store/Test/Repository/Store.xml`.
 
 | Variation #  |`synonyms`|`scope_id`
 |---
@@ -499,7 +502,7 @@ Let's see the data set with data.
  
 #### Step 5. Create the pages {#create-pages}
 
-In [Step 3][], we added two [pages][] to the test case class. Because both pages are in the Admin area, we should create them in the `<magento2>/dev/tests/functional/tests/app/Magento/Search/Test/Page/Adminhtml` directory. This principle is a good practice -- it is not obligatory.
+In [Step 3][], we added two [pages][] to the test case class. Because both pages are in the Admin area, we should create them in the `<magento2>/dev/tests/functional/tests/app/Magento/Search/Test/Page/Adminhtml` directory.
 
 **SynonymsIndex.xml**
 
@@ -508,7 +511,7 @@ In [Step 3][], we added two [pages][] to the test case class. Because both pages
 <?xml version="1.0" encoding="utf-8"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/pages.xsd">
     <page name="SynonymsIndex" area="Adminhtml" mca="search/synonyms/index" module="Magento_Search">
-
+        <block ... />
     </page>
 </config>
 
@@ -522,7 +525,7 @@ In [Step 3][], we added two [pages][] to the test case class. Because both pages
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/pages.xsd">
     <page name="SynonymsNew" area="Adminhtml" mca="search/synonyms/new" module="Magento_Search">
-
+        <block ... />
     </page>
 </config>
 
@@ -587,7 +590,7 @@ We need to enter data from a data set into the form fields.
 
 ![New Synonym Group page]({{site.baseurl}}common/images/mtf_tutorial_page_new_synonym.png)
 
-The `Block` directory in the Search module contains the `Adminhtml/Synonyms/Edit` directories, as shown below:
+The `Block` directory in the Magento_Search module (in the Magento code) contains the `Adminhtml/Synonyms/Edit` directories, as shown below:
  
 ![Block structure in a code base]({{site.baseurl}}common/images/mtf_tutorial_block_struct.png) 
  
@@ -717,6 +720,8 @@ An argument for the `test()` method is a [test object][] (a [fixture][]).
 {% highlight php startinline=1 %}
 
 /**
+ * Create Synonym group test.
+ * 
  * @param Synonym $synonym
  * @return void
  */
@@ -795,6 +800,8 @@ $this->synonymsNew->getFormPageActions()->save();
 {% highlight php startinline=1%}
 
 /**
+ * Create Synonym group test.
+ *
  * @param Synonym $synonym
  * @return void
  */
@@ -828,25 +835,26 @@ use Magento\Search\Test\Page\Adminhtml\SynonymsNew;
 
 /**
  * Steps:
- * 1. Log in to Admin
- * 2. Open the Search Synonym page
- * 3. Click the 'New Synonym Group' button
- * 4. Enter data according to a data set
- * 5. Click the 'Save Synonym Group' button
+ * 1. Log in to Admin.
+ * 2. Open the Search Synonym page.
+ * 3. Click the "New Synonym Group" button.
+ * 4. Enter data according to a data set. For each variation the synonyms must have unique identifiers.
+ * 5. Click the "Save Synonym Group" button.
+ * 6. Check that a message about successful saving is appeared.
  */
 class CreateSynonymEntityTest extends Injectable
 {
     /**
      * Search Synonyms Index page.
      *
-     * @var synonymsIndex
+     * @var SynonymsIndex
      */
     private $synonymsIndex;
 
     /**
      * New Synonym Group page.
      *
-     * @var synonymsNew
+     * @var SynonymsNew
      */
     private $synonymsNew;
 
@@ -866,14 +874,16 @@ class CreateSynonymEntityTest extends Injectable
     }
 
     /**
+     * Create Synonym group test.
+     *
      * @param Synonym $synonym
      * @return void
      */
     public function test(Synonym $synonym)
     {
         // Steps
-        $this->synonymsIndex->open();    // logs in to Admin, opens Search Synonyms page
-        $this->synonymsIndex->getPageActionsBlock()->addNew();    // receiving of the page action block with _rootElement containing locator which is indicated in the page class for PageActionBlock from the page, makes 'click' action on it
+        $this->synonymsIndex->open();
+        $this->synonymsIndex->getPageActionsBlock()->addNew();
         $this->synonymsNew->getSynonymForm()->fill($synonym);
         $this->synonymsNew->getFormPageActions()->save();
     }
@@ -884,7 +894,7 @@ class CreateSynonymEntityTest extends Injectable
 You can run the test using your IDE or the CLI. The Selenium Server must be [up and running][]. To run the test using the CLI, enter in your terminal:
 
     cd <magento2>/dev/tests/functional
-    phpunit --filter CreateSynonymEntityTest
+    vendor/bin/phpunit --filter CreateSynonymEntityTest
 
  The test will be performed in a browser. Three synonyms groups are created one by-one that corresponds to three variations in a data set.
 
@@ -912,8 +922,7 @@ use Magento\Customer\Test\Page\Adminhtml\CustomerIndex;
 use Magento\Mtf\Constraint\AbstractConstraint;
 
 /**
- * Class AssertCustomerSuccessSaveMessage
- *
+ * Assertion to check Customer success save message.
  */
 class AssertCustomerSuccessSaveMessage extends AbstractConstraint
 {
@@ -966,13 +975,14 @@ use Magento\Search\Test\Page\Adminhtml\SynonymsIndex;
 use Magento\Mtf\Constraint\AbstractConstraint;
 
 /**
- *
+ * Assertion to check Success Save Message for Synonyms.
  */
 class AssertSynonymSuccessSaveMessage extends AbstractConstraint
 {
     const SUCCESS_MESSAGE = 'You saved the synonym group.';
 
     /**
+     * Check Success Save Message for Synonyms.
      *
      * @param SynonymsIndex $synonymsIndex
      * @return void
@@ -1002,7 +1012,7 @@ class AssertSynonymSuccessSaveMessage extends AbstractConstraint
 
 {% endhighlight %}
 
-To use the `getMessagesBlock()` method, we must add a corresponding block in the page `SynonymsIndex`. In `<magento2>/dev/tests/functional/tests/app/Magento/Customer/Test/Page/Adminhtml/CustomerGroupIndex.xml`, we can find out that the following block is used:
+To handle the messages we use the `\Magento\Backend\Test\Block\Messages` class, by adding the `messagesBlock` block to the `SynonymsIndex` page. In `<magento2>/dev/tests/functional/tests/app/Magento/Customer/Test/Page/Adminhtml/CustomerGroupIndex.xml`, we can see that the following block is used:
 
 {% highlight xml %}
 <block name="messagesBlock" class="Magento\Backend\Test\Block\Messages" locator="#messages .messages" strategy="css selector"/>
@@ -1052,7 +1062,7 @@ The test is ready to run.
 You can run the test using your IDE or the CLI. The Selenium Server must be [up and running][]. To run the test using the CLI, enter in your terminal:
     
     cd <magento2>/dev/tests/functional
-    phpunit --filter CreateSynonymEntityTest
+    vendor/bin/phpunit --filter CreateSynonymEntityTest
 
 The test now checks after each variation whether a success message is displayed.
 
@@ -1068,7 +1078,6 @@ That's it!
 [data set]: {{site.gdeurl}}mtf/mtf_entities/mtf_dataset.html
 [data source]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source
 [fixture repository]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture-repo.html
-[handler]: {{site.gdeurl}}mtf/mtf_entities/mtf_handler.html
 [test case]: {{site.gdeurl}}mtf/mtf_entities/mtf_testcase.html
 [test case topic]: {{site.gdeurl}}mtf/mtf_entities/mtf_testcase.html
 [injectable test]: {{site.gdeurl}}mtf/mtf_entities/mtf_testcase.html
