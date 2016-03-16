@@ -1,7 +1,7 @@
 ---
 layout: default
 group: jsdg
-subgroup: Widgets
+subgroup: 3_Widgets
 title: Gallery widget
 menu_order: 7
 menu_title: Gallery widget
@@ -21,7 +21,7 @@ The gallery widget source is <a href="{{site.mage2000url}}lib/web/mage/gallery/g
 
 The gallery magnifier source is <a href="{{site.mage2000url}}lib/web/magnifier/magnify.js"> lib/web/magnifier/magnify.js</a>.
 
-<p class="q">is it a widget as well?</p>
+The important feature of the gallery widget implementation is the possibility to configure the wiget options in the `view.xml` configuration file of a theme. 
 
 <h3>Contents</h3>
 
@@ -30,51 +30,62 @@ The gallery magnifier source is <a href="{{site.mage2000url}}lib/web/magnifier/m
 
 ## Initialize the gallery widget {#gallery_init}
 
+The gallery widget can be initialized in `.phtml` templates using the `data-mage-init` attribute or `<script>` element, as described in [JavaScript initialization]({{site.gdeurl}}javascript-dev-guide/javascript/js_init.html#init_phtml).
 
-Example of the gallery initialization in the JS:
-{% highlight js %}
 
-$('#init_element').fotorama({
-    thumbwidth: 90,
-    thumbheight: 60,
-    width: 600,
-    height: 400
+The example of gallery initializatin in a `.phtml` template follows:
 
-});
-
-{% endhighlight %}
-
-<p class="q">Can it be initialized with magnifier in JS? what are the usecases of initialization inside JS and PHTML</p>
-
-When initializing Gallery Widget on HTML element, Magnifier initialization is also available.
-<p class="q">Is it avaialble if other initialization options are used?</p>
-
-The following is the illustration of initialization of the gallery widget with magnifier.
-
-{% highlight php %}
-
-    <script type="text/x-magento-init">
-        "<element_selector>": {
-             "mage/gallery/gallery": {
-                 "data": <?php echo $block->getGalleryImagesJson(); ?>,
-                 "mixins": ["magnifier/magnify"],
-                 "magnifierOpts": {
-                    "enabled": "<?php echo $block->getVar("magnifier:enabled"); ?>",
-                    "eventType": "<?php echo $block->getVar("magnifier:action"); ?>",
-                    "width": "<?php echo $block->getVar("magnifier:width"); ?>",
-                    "height": "<?php echo $block->getVar("magnifier:height"); ?>",
-                    "top": "<?php echo $block->getVar("magnifier:top"); ?>",
-                    "left": "<?php echo $block->getVar("magnifier:left"); ?>"
-                 }
-             }
+{%highlight js%}
+<script type="text/x-magento-init">
+    ".gallery-placeholder": {
+        "mage/gallery/gallery": {
+            "data": <?php echo $block->getGalleryImagesJson(); ?>,
+            "options": {
+            "nav": "<?php /* @escapeNotVerified */ echo $block->getVar("gallery/nav"); ?>",
+    "loop": <?php /* @escapeNotVerified */ echo $block->getVar("gallery/loop"); ?>,
+    "keyboard": <?php /* @escapeNotVerified */ echo $block->getVar("gallery/keyboard"); ?>,
+    "arrows": <?php /* @escapeNotVerified */ echo $block->getVar("gallery/arrows"); ?>,
+    "allowfullscreen": <?php /* @escapeNotVerified */ echo $block->getVar("gallery/allowfullscreen"); ?>,
+    "showCaption": <?php /* @escapeNotVerified */ echo $block->getVar("gallery/caption"); ?>,
+    "width": <?php /* @escapeNotVerified */ echo $block->getImageAttribute('product_page_image_medium', 'width'); ?>,
+    "thumbwidth": <?php /* @escapeNotVerified */ echo $block->getImageAttribute('product_page_image_small', 'width'); ?>,
+    "thumbheight": <?php /* @escapeNotVerified */ echo $block->getImageAttribute('product_page_image_small', 'height')
+        ?: $block->getImageAttribute('product_page_image_small', 'width'); ?>,
+    "height": <?php /* @escapeNotVerified */ echo $block->getImageAttribute('product_page_image_medium', 'height')
+        ?: $block->getImageAttribute('product_page_image_medium', 'width'); ?>,
+    "transitionduration": <?php /* @escapeNotVerified */  echo $block->getVar("gallery/transition/duration"); ?>,
+    "transition": "<?php /* @escapeNotVerified */  echo $block->getVar("gallery/transition/effect"); ?>",
+    "navarrows": <?php /* @escapeNotVerified */  echo $block->getVar("gallery/navarrows"); ?>,
+    "navtype": "<?php /* @escapeNotVerified */  echo $block->getVar("gallery/navtype"); ?>",
+    "navdir": "<?php /* @escapeNotVerified */  echo $block->getVar("gallery/navdir"); ?>"
+},
+"fullscreen": {
+    "nav": "<?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/nav"); ?>",
+    "loop": <?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/loop"); ?>,
+    "navdir": "<?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/navdir"); ?>",
+    "navarrows": <?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/navarrows"); ?>,
+    "navtype": "<?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/navtype"); ?>",
+    "arrows": <?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/arrows"); ?>,
+    "showCaption": <?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/caption"); ?>,
+    "transitionduration": <?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/transition/duration"); ?>,
+    "transition": "<?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/transition/effect"); ?>"
+},
+"breakpoints": <?php /* @escapeNotVerified */ echo $block->getBreakpoints(); ?>
         }
-    </script>
+    }
+</script>
+{%endhighlight%}
 
-{% endhighlight %}
+## Initialization options {#gallery_init_opt}
+
+<p class="q">what's the difference between init options (c)and other options?</p>
 
 ## Options {#gallery_options}
+
+Dimensions:
 <ul>
 <li><a href="#gallery_allowfullscreen">allowfullscreen</a></li>
+<li><a href="#gallery_caption">caption</a></li>
 <li><a href="#gallery_captions">captions</a></li>
 <li><a href="#gallery_click">click</a></li>
 <li><a href="#gallery_height">height</a></li>
@@ -98,15 +109,26 @@ Show the button that toggles full screen view of the gallery.
 
 **Type**: Boolean
 
+<h3 id="gallery_caption"><code>caption</code></h3>
+
+Set a caption for a specific image in data field.
+
+**Type**: String
+
+Example of the initialization with the caption option specified:
+{%highlight js%}
+{%endhighlight%}
 
 <h3 id="gallery_captions"><code>captions</code></h3>
 
-Defines if the caption is visible.
+Defines if the captions are visible.
 
 **Type**: Boolean
 
 Example of the initialization with the captions option specified:
      $("#element").fotorama({ captions: false});
+
+<p class="q">Are the initialization examples correct?</p>
 
 <h3 id="gallery_click"><code>click</code></h3>
 
@@ -133,7 +155,7 @@ Define whether images are displayed in a loop.
 
 <h3 id="gallery_maxwidth"><code>maxwidth</code></h3>
 
-Maximum width of a preview in pixels or percents.
+Maximum width of the preview block in pixels or percents.
 
 **Type**: Number, String
 
@@ -142,7 +164,7 @@ Maximum width of a preview in pixels or percents.
 
 <h3 id="gallery_maxheight"><code>maxheight</code></h3>
 
-Maximum width of a preview in pixels or percents.
+Maximum width of the preview block in pixels or percents.
 
 **Type**: Number, String
 
@@ -151,7 +173,7 @@ Maximum width of a preview in pixels or percents.
 
 <h3 id="gallery_minheigth"><code>minheigth</code></h3>
 
-Minimal height of a preview in pixels or percents.
+Minimal height of the preview block in pixels or percents.
 
 **Type**: Number, String
 
@@ -160,7 +182,7 @@ Minimal height of a preview in pixels or percents.
 
 <h3 id="gallery_mindwidth"><code>minwidth</code></h3>
 
-Minimal width of the preview in pixels or percents.
+Minimal width of the preview block in pixels or percents.
 
 **Type**: Number, String
 
@@ -247,8 +269,71 @@ Width of the preview in gallery in pixels or percents.
 
 **Default value**: `null`
 
-## Magnifier options {#gallery_options}
-TBD
+## Configure gallery options in `view.xml` 
+
+If you want to customize the gallery options for your custom theme, add the following in the view.xml configuration file in the `<your_custom_theme_dir>/etc` directory:
+
+{%highlight xml%}
+<vars module="Magento_Catalog">
+
+        <!-- Gallery and magnifier theme settings. Start -->
+        <var name="gallery">
+            <var name="nav">thumbs</var> <!-- Gallery navigation style (false/thumbs/dots) -->
+            <var name="loop">true</var> <!-- Gallery navigation loop (true/false) -->
+            <var name="keyboard">true</var> <!-- Turn on/off keyboard arrows navigation (true/false) -->
+            <var name="arrows">true</var> <!-- Turn on/off arrows on the sides preview (true/false) -->
+            <var name="caption">false</var> <!-- Display alt text as image title (true/false) -->
+            <var name="allowfullscreen">true</var> <!-- Turn on/off fullscreen (true/false) -->
+            <var name="navdir">horizontal</var> <!-- Sliding direction of thumbnails (horizontal/vertical) -->
+            <var name="navarrows">true</var> <!-- Turn on/off on the thumbs navigation sides (true/false) -->
+            <var name="navtype">slides</var> <!-- Sliding type of thumbnails (slides/thumbs) -->
+            <var name="transition">
+                <var name="effect">slide</var> <!-- Sets transition effect for slides changing (slide/crossfade/dissolve) -->
+                <var name="duration">500</var> <!-- Sets transition duration in ms -->
+            </var>
+            <var name="fullscreen">
+                <var name="nav">thumbs</var> <!-- Fullscreen navigation style (false/thumbs/dots) -->
+                <var name="loop">true</var> <!-- Fullscreen navigation loop (true/false/null) -->
+                <var name="keyboard">true</var> <!-- Turn on/off keyboard arrows navigation (true/false/null) -->
+                <var name="arrows">false</var> <!-- Turn on/off arrows on the sides preview (true/false/null) -->
+                <var name="caption">false</var> <!-- Display alt text as image title (true/false) -->
+                <var name="navdir">horizontal</var> <!--Sliding direction of thumbnails in full screen(horizontal/vertical)  -->
+                <var name="thumbwidth">150</var> <!-- Width of thumbnails in fullscreen -->
+                <var name="thumbheight">150</var> <!-- Height of thumbnails in fullscreen -->
+                <var name="navigation_carousel">true</var> <!-- Display navigation thumbs as carousel (true/false) -->
+                <var name="transition">
+                    <var name="effect">dissolve</var> <!-- Sets transition effect for slides changing (slide/crossfade/dissolve) -->
+                    <var name="duration">500</var> <!-- Sets transition duration in ms -->
+                    <var name="carousel">true</var> <!-- Display navigation thumbs as carousel (true/false) -->
+                </var>
+            </var>
+        </var>
+
+        <var name="magnifier">
+            <var name="fullscreenzoom">5</var>  <!-- Zoom for fullscreen (integer)-->
+            <var name="top"></var> <!-- Top position of magnifier -->
+            <var name="left"></var> <!-- Left position of magnifier -->
+            <var name="width"></var> <!-- Width of magnifier block -->
+            <var name="height"></var> <!-- Height of magnifier block -->
+            <var name="eventType">hover</var> <!-- Action that atcivates zoom (hover/click) -->
+            <var name="enabled">false</var> <!-- Turn on/off magnifier (true/false) -->
+        </var>
+
+        <var name="breakpoints">
+            <var name="mobile">
+                <var name="conditions">
+                    <var name="max-width">767px</var>
+                </var>
+                <var name="options">
+                    <var name="options">
+                        <var name="navigation">dots</var>
+                    </var>
+                </var>
+            </var>
+        </var>
+        <!-- end. Gallery and magnifier theme settings -->
+{%endhighlight%}
+
 
 ## Gallery API {#gallery_api}
 
