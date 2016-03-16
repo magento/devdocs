@@ -206,7 +206,7 @@ Data Source is another UI Component that provides data in specific format which 
 
 ####Global replacement
 
-To replacing all instances of a UI Form with a custom implementation redefine link to a constructor in `definition.xml`.
+To replace all instances of a UI Form with a custom implementation redefine link to a constructor in `definition.xml`.
 
 `app/code/Magento/Ui/view/base/ui_component/etc/definition.xml`
 
@@ -222,7 +222,7 @@ To replacing all instances of a UI Form with a custom implementation redefine li
 
 ##Instance Replacement
 
-To replacing one instance of a UI Form Component redefine link to a constructor in your module's form configuration file:
+To replace one instance of a UI Form Component redefine link to a constructor in your module's form configuration file:
 
 `app/code/Magento/Customer/view/base/ui_component/customer_form.xml`
 
