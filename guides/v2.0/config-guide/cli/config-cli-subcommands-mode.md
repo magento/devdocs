@@ -142,7 +142,7 @@ Command usage:
 
 where 
 
-`{mode}` is required; it can be either `developer` or `production`
+`{mode}` is required; it can be `default`, `developer` or `production`
 
 `--skip-compilation` is an optional parameter you can use to skip <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html#config-cli-subcommands-single-overview">code compilation</a> when you change to production mode.
 
