@@ -29,5 +29,5 @@ Magento provides functional tests in the `<magento2>/dev/tests/functional/` dire
 [Out-of-the-box test]: {{site.gdeurl}}mtf/create_test/out-of-the-box.html
 [extending from the out-of-the-box test]: {{site.gdeurl}}mtf/create_test/new_test.html#extending-oob-test
 [create your own functional tests]: {{site.gdeurl}}mtf/create_test/new_test.html#create-test
-[New functional test]: {{site.gdeurl}}mtf/create_test/new_test.html
-[Example]: {{site.gdeurl}}mtf/create_test.html
+[New functional test: Theory]: {{site.gdeurl}}mtf/create_test/new_test.html
+[New functional test: Practice]: {{site.gdeurl}}mtf/create_test/create_new_test.html
