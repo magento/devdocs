@@ -29,9 +29,9 @@ This release resolves miscellaneous performance enhancements, especially with  .
 <!-- 47531 -->* During update, the `setup:config:set` script no longer deletes values. 
 
 
-<!-- 47844 --> Magento now successfully saves and displays new customer attributes. 
+<!-- 47844 -->* Magento now successfully saves and displays new customer attributes. 
 
-<!-- 50255 --> You can now successfully import products that meet these two criteria: already exist in the product catalog and use custom URLs. 
+<!-- 50255 -->* You can now successfully import products that meet these two criteria: already exist in the product catalog and use custom URLs. 
 
 <h3>System requirements</h3>
 Our technology stack is built on PHP and MySQL. Magento 2.0.1 supports PHP 5.5, 5.6x, 7.0.2, and MySQL 5.6. For more information, see 
