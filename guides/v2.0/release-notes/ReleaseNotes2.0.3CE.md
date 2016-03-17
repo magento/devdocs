@@ -11,17 +11,28 @@ redirect_from:
 ---
 
 <h2>Magento Community Edition 2.0.3</h2>
-This release resolves issues that some users encountered while upgrading from Magento 2.0.0 to Magento 2.0.1 using a compressed archive file (.zip, .tar.gz, .tar.bz2). For a detailed description, see the technical bulletin <a href="http://devdocs.magento.com/guides/v2.0/release-notes/tech_bull_201-upgrade.html" target="_blank">Issues upgrading to 2.0.1</a> (Jan. 28, 2016).
+This release resolves issues that .
 
-The content of this release does not include changes to the code, and the issues might not directly impact your current installation, provided that:
-
-* You installed Magento 2.0.x using either `git clone` or `composer create-project`.
-
-However, if you installed Magento 2.0.1 from an archive, you will encounter problems later with future upgrades. For this reason, we highly recommend that you upgrade your installation to Magento Community Edition, version 2.0.3.
 
 <h3>Fixed issues</h3>
 
+<!--  48781 --> Low catalog performance with Swatches
+degradation of performance
 
+<!-- 46720 --> Shipping address is now exposed for the Orders API. Orders API now exposes the Shipping Address, which  means APIs can be used to integrate orders to third-party  systems. 
+
+
+<!-- 47685 --> Google Tag Manager module should send impression to the data layer.
+
+
+<!-- 48124 -->User should only be able to view orders from stores they have permissions for
+
+<!-- 47531 -->The setup:config:set script now successfully updates without deleting values. )
+
+
+<!-- 47844 -->
+
+<!-- 50255 -->You can now successfully import products that already exist in the product catalog and which use custom URLs. 
 
 <h3>System requirements</h3>
 Our technology stack is built on PHP and MySQL. Magento 2.0.1 supports PHP 5.5, 5.6x, 7.0.2, and MySQL 5.6. For more information, see 
@@ -36,7 +47,7 @@ New users can now complete a full installation of Magento Community Edition 2.0.
 
 1. Go to the <a href="https://www.magentocommerce.com/download" target="_blank">Magento Community Edition Download</a> page.
 
-2. Under Full Release for version 2.0.2, select a format for the download archive file. Then, click **Download**.
+2. Under Full Release for version 2.0.3, select a format for the download archive file. Then, click **Download**.
 
 3.	Follow the Magento <a href="http://devdocs.magento.com/guides/v2.0/install-gde/install-quick-ref.html" target="_blank">installation instructions</a>.
 
