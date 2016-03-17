@@ -96,7 +96,7 @@ We know of the following issues with Varnish:
 		}
 
 ## Troubleshooting 503 (Service Unavailable) errors {#varnish-503}
-If the length of cache tags used by Magento exceed Varnish's default of 8192 errors, you can see HTTP 503 (Service Unavailable) errors in the browser. The errors might display simiar to the following:
+If the length of cache tags used by Magento exceed Varnish's default of 8192 bytes, you can see HTTP 503 (Service Unavailable) errors in the browser. The errors might display similar to the following:
 
 	Error 503 Backend fetch failed
 	Backend fetch failed
