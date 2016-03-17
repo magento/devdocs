@@ -21,7 +21,7 @@ All changes are aggregated into two tables:
 where each change is displayed in a separate row in the table, with the following columns:
 
 - **Target** with name of the affected class or interface
-- **Reason** with description of the backward incompatible change
+- **What changed** with description of the backward incompatible change
 
 {% include changes/ce_changes.html %}
 
