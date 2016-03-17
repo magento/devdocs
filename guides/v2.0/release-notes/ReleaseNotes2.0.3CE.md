@@ -11,7 +11,9 @@ redirect_from:
 ---
 
 <h2>Magento Community Edition 2.0.3</h2>
-This release resolves miscellaneous performance enhancements, especially with  .
+This release includes miscellaneous enhancements to product performance and the Order API.
+
+Backward-incompatible changes are documented in <a href="http://http://devdocs.magento.com/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
 
 
 <h3>Fixed issues</h3>
