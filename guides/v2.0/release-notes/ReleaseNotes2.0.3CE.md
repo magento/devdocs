@@ -11,28 +11,27 @@ redirect_from:
 ---
 
 <h2>Magento Community Edition 2.0.3</h2>
-This release resolves issues that .
+This release resolves miscellaneous performance enhancements, especially with  .
 
 
 <h3>Fixed issues</h3>
 
-<!--  48781 --> Low catalog performance with Swatches
-degradation of performance
+<!--  48781 --> * Product performance has been enhanced when loading catalog products with multiple color swatches. 
 
-<!-- 46720 --> Shipping address is now exposed for the Orders API. Orders API now exposes the Shipping Address, which  means APIs can be used to integrate orders to third-party  systems. 
-
-
-<!-- 47685 --> Google Tag Manager module should send impression to the data layer.
+<!-- 46720 --> * The Orders API now exposes Shipping address. This corrects a problem users of Magento 2.x experienced using this API to integrate with third-party systems. 
 
 
-<!-- 48124 -->User should only be able to view orders from stores they have permissions for
-
-<!-- 47531 -->The setup:config:set script now successfully updates without deleting values. )
+<!-- 47685 --> * Google Tag Manager module now sends impressions to the Magento Data layer.
 
 
-<!-- 47844 -->
+<!-- 48124 --> * Users can now view orders only from stores for which they have view  permission.
 
-<!-- 50255 -->You can now successfully import products that already exist in the product catalog and which use custom URLs. 
+<!-- 47531 -->* During update, the `setup:config:set` script no longer deletes values. 
+
+
+<!-- 47844 --> Magento now successfully saves and displays new customer attributes. 
+
+<!-- 50255 --> You can now successfully import products that meet these two criteria: already exist in the product catalog and use custom URLs. 
 
 <h3>System requirements</h3>
 Our technology stack is built on PHP and MySQL. Magento 2.0.1 supports PHP 5.5, 5.6x, 7.0.2, and MySQL 5.6. For more information, see 
