@@ -11,7 +11,7 @@ redirect_from:
 ---
 
 <h2>Magento Community Edition 2.0.3</h2>
-This release includes miscellaneous enhancements to product performance and the Order API.
+This release includes miscellaneous enhancements to product performance and to the Order API.
 
 Backward-incompatible changes are documented in <a href="http://http://devdocs.magento.com/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
 
@@ -20,13 +20,8 @@ Backward-incompatible changes are documented in <a href="http://http://devdocs.m
 
 <!--  48781 --> * Product performance has been enhanced when loading catalog products with multiple color swatches. 
 
-<!-- 46720 --> * The Orders API now exposes Shipping address. This corrects a problem users of Magento 2.x experienced using this API to integrate with third-party systems. 
+<!-- 46720 --> * The Orders API now exposes Shipping address. This corrects a problem that users of Magento 2.x experienced using this API to integrate with third-party systems. 
 
-
-<!-- 47685 --> * Google Tag Manager module now sends impressions to the Magento Data layer.
-
-
-<!-- 48124 --> * Users can now view orders only from stores for which they have view  permission.
 
 <!-- 47531 -->* During update, the `setup:config:set` script no longer deletes values. 
 
@@ -36,7 +31,7 @@ Backward-incompatible changes are documented in <a href="http://http://devdocs.m
 <!-- 50255 -->* You can now successfully import products that meet these two criteria: already exist in the product catalog and use custom URLs. 
 
 <h3>System requirements</h3>
-Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports PHP 5.5, 5.6x, 7.0.2, and MySQL 5.6. For more information, see 
+Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later support PHP 5.5, 5.6x, 7.0.2, and MySQL 5.6. For more information, see 
 <a href="http://devdocs.magento.com/guides/v2.0/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
 
 <h3>Installation instructions</h3>
@@ -54,20 +49,20 @@ New users can now complete a full installation of Magento Community Edition 2.0.
 
 #####<b>Install a new installation with Composer</b>#####
 
-1.	Go to the Magento Community Edition <a href="https://www.magentocommerce.com/download" target="_blank">download</a> page.
+1. Go to the <a href="https://www.magentocommerce.com/download" target="_blank">Magento Community Edition Download</a> page.
 
 2.	Under **Download with Composer**, click **Download**.
 
 3.	Follow the instructions to download Composer, and get the Magento CE metapackage.
 
 
-<h4>Upgrade existing installations</h4>
+<h4><b>Upgrade existing installations</b></h4>
 If you installed Magento Community Edition 2.0.0 from an archive, you must perform some additional tasks before you can upgrade your installation. Current users of Magento 2.0.0/2.0.1/2.0.2 must first update the installer from the command line. Then, update the installation from the <a href="http://http://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html" target="_blank">Web Setup Wizard</a> or command line. For detailed instructions, see the <a href="http://devdocs.magento.com/guides/v2.0/release-notes/tech_bull_201-upgrade.html" target="_blank">technical bulletin</a>.
 
 
 #####<b>Upgrade an existing installation from the Setup Wizard</b>#####
 
-1.	Log in to  Admin with Administrator privileges.
+1.	Log in to Admin with Administrator privileges.
 
 2.	On the Admin sidebar, click **System**. Under **Tools**,  choose **Web Setup Wizard**.
 

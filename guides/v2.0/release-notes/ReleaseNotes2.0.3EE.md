@@ -11,21 +11,33 @@ redirect_from:
 ---
 
 <h2>Magento Enterprise Edition 2.0.3</h2>
-This release resolves issues that some users encountered while upgrading from Magento 2.0.0 to Magento 2.0.1 using a compressed archive file (.zip, .tar.gz, .tar.bz2). For a detailed description, see the technical bulletin <a href="http://devdocs.magento.com/guides/v2.0/release-notes/tech_bull_201-upgrade.html" target="_blank">Issues upgrading to 2.0.1</a> (Jan. 28, 2016).
+This release includes miscellaneous enhancements to product performance and to the Order API.
 
-The content of this release does not include changes to the code, and the issues might not directly impact your current installation, provided that:
-
-* You installed Magento 2.0.x using either `git clone` or `composer create-project`.
-
-However, if you installed Magento 2.0.1 from an archive, you will encounter problems later with future upgrades. For this reason, we highly recommend that you upgrade your installation to Magento Enterprise Edition, version 2.0.3.
+Backward-incompatible changes are documented in <a href="http://http://devdocs.magento.com/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
 
 <h3>Fixed issues</h3>
+<!--  48781 --> * Product performance has been enhanced when loading catalog products with multiple color swatches. 
 
+<!-- 46720 --> * The Orders API now exposes Shipping address. This corrects a problem users of Magento 2.x experienced using this API to integrate with third-party systems. 
+
+
+<!-- 47685 --> * Google Tag Manager module now sends impressions to the Magento Data layer.
+
+
+<!-- 48124 --> * Admin users can now view orders only from stores for which they have view  permission.
+
+<!-- 47531 -->* During update, the `setup:config:set` script no longer deletes values. 
+
+
+<!-- 47844 -->* Magento now successfully saves and displays new customer attributes. 
+
+<!-- 50255 -->* You can now successfully import products that meet these two criteria: already exist in the product catalog and use custom URLs. 
 
 
 <h3>System requirements</h3>
-Our technology stack is built on PHP and MySQL. Magento 2.0.3 supports PHP 5.5, 5.6x, 7.0.2, and MySQL 5.6. For more information, see 
+Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports PHP 5.5, 5.6x, 7.0.2, and MySQL 5.6. For more information, see 
 <a href="http://devdocs.magento.com/guides/v2.0/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
+
 
 <h3>Installation instructions</h3>
 
@@ -42,20 +54,19 @@ New users can now complete a full installation of Magento Enterprise Edition 2.0
 
 #####<b>Install a new installation with Composer</b>#####
 
-1.	Go to the Magento Enterprise Edition <a href="https://www.magentocommerce.com/download" target="_blank">download</a> page.
+1. Go to the <a href="https://www.magentocommerce.com/download" target="_blank">Magento Enterprise Edition Download</a> page.
 
 2.	Under **Download with Composer**, click **Download**.
 
 3.	Follow the instructions to download Composer, and get the Magento EE metapackage.
 
-
 <h4>Upgrade existing installations</h4>
-If you installed Magento Enterprise Edition 2.0.0 from an archive, you must perform some additional tasks before you can upgrade your installation. Current users of Magento 2.0.0/2.0.1 must first update the installer from the command line. Then, update the installation from the <a href="http://http://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html" target="_blank">Web Setup Wizard</a> or command line. For detailed instructions, see the <a href="http://devdocs.magento.com/guides/v2.0/release-notes/tech_bull_201-upgrade.html" target="_blank">technical bulletin</a>.
+If you installed Magento Enterprise Edition 2.0.0 from an archive, you must perform some additional tasks before you can upgrade your installation. Current users of Magento 2.0.0/2.0.1/2.0.2 must first update the installer from the command line. Then, update the installation from the <a href="http://http://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html" target="_blank">Web Setup Wizard</a> or command line. For detailed instructions, see the <a href="http://devdocs.magento.com/guides/v2.0/release-notes/tech_bull_201-upgrade.html" target="_blank">technical bulletin</a>.
 
 
 #####<b>Upgrade an existing installation from the Setup Wizard</b>#####
 
-1.	Log in to your store Admin with Administrator privileges.
+1.	1.	Log in to Admin with Administrator privileges.
 
 2.	On the Admin sidebar, click **System**. Under **Tools**,  choose **Web Setup Wizard**.
 
@@ -63,12 +74,11 @@ If you installed Magento Enterprise Edition 2.0.0 from an archive, you must perf
 
 
 #####<b>Upgrade an existing installation from the GitHub repository</b>#####
-Developers who contribute to the CE codebase can <a href="http://devdocs.magento.com/guides/v2.0/install-gde/install/cli/dev_options.html" target="_blank">upgrade manually</a> from the Magento CE GitHub repository.
+Developers who contribute to the EE codebase can <a href="http://devdocs.magento.com/guides/v2.0/install-gde/install/cli/dev_options.html" target="_blank">upgrade manually</a> from the Magento EE GitHub repository.
 
 1.	Go to the <a href="http://devdocs.magento.com/guides/v2.0/install-gde/install/cli/dev_options.html" target="_blank">Contributing Developers</a> page.
 
 2.	Follow the instructions to pull the updates from the repository and update Composer.
-
 
 
 
