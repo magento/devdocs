@@ -36,7 +36,7 @@ Backward-incompatible changes are documented in <a href="http://http://devdocs.m
 <!-- 50255 -->* You can now successfully import products that meet these two criteria: already exist in the product catalog and use custom URLs. 
 
 <h3>System requirements</h3>
-Our technology stack is built on PHP and MySQL. Magento 2.0.1 supports PHP 5.5, 5.6x, 7.0.2, and MySQL 5.6. For more information, see 
+Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports PHP 5.5, 5.6x, 7.0.2, and MySQL 5.6. For more information, see 
 <a href="http://devdocs.magento.com/guides/v2.0/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
 
 <h3>Installation instructions</h3>
@@ -62,12 +62,12 @@ New users can now complete a full installation of Magento Community Edition 2.0.
 
 
 <h4>Upgrade existing installations</h4>
-If you installed Magento Community Edition 2.0.0 from an archive, you must perform some additional tasks before you can upgrade your installation. Current users of Magento 2.0.0/2.0.1 must first update the installer from the command line. Then, update the installation from the <a href="http://http://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html" target="_blank">Web Setup Wizard</a> or command line. For detailed instructions, see the <a href="http://devdocs.magento.com/guides/v2.0/release-notes/tech_bull_201-upgrade.html" target="_blank">technical bulletin</a>.
+If you installed Magento Community Edition 2.0.0 from an archive, you must perform some additional tasks before you can upgrade your installation. Current users of Magento 2.0.0/2.0.1/2.0.2 must first update the installer from the command line. Then, update the installation from the <a href="http://http://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html" target="_blank">Web Setup Wizard</a> or command line. For detailed instructions, see the <a href="http://devdocs.magento.com/guides/v2.0/release-notes/tech_bull_201-upgrade.html" target="_blank">technical bulletin</a>.
 
 
 #####<b>Upgrade an existing installation from the Setup Wizard</b>#####
 
-1.	Log in to your store Admin with Administrator privileges.
+1.	Log in to  Admin with Administrator privileges.
 
 2.	On the Admin sidebar, click **System**. Under **Tools**,  choose **Web Setup Wizard**.
 

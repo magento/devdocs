@@ -28,6 +28,6 @@ Version 2.0.2
 
 Version 2.0.3
 
-*   <a href="http://devdocs.magento.com/guides/v2.0/release-notes/bk-release-notes/ReleaseNotes2.0.3CE.html" target="_blank">Magento CE Release Notes</a>
+*   <a href="http://devdocs.magento.com/guides/v2.0/release-notes/ReleaseNotes2.0.3CE.html" target="_blank">Magento CE Release Notes</a>
 
-*   <a href="http://devdocs.magento.com/guides/v2.0/release-notes/bk-release-notes/ReleaseNotes2.0.3EE.html" target="_blank">Magento EE Release Notes</a>
+*   <a href="http://devdocs.magento.com/guides/v2.0/release-notes/ReleaseNotes2.0.3EE.html" target="_blank">Magento EE Release Notes</a>
