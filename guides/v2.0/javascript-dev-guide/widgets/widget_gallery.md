@@ -105,62 +105,55 @@ Example of declarative initialization:
 </ul>
 
 
-    data
+### `data`
 
 Array of images to display.
 
+#### `data/caption` {#data_caption}
+
+Set caption for a specific image in the `data` field.
+Example of the runtime initialization with the `caption` option specified:
+ 
+ 
+galleryInstance({ 
+    data: [
+        {
+            img: 'preview_number_one.jpg',
+            thumb: 'preview_number_one.jpg',
+            caption: 'T-Shirt Women side'
+        }
+    ]
+});
 
 ### `options`
 Set of options available for Preview part.
 
-#### `options/nav`
-
-#### `options/navdir`
-...
-### `fullscreen`
-
-Set of options available for the fullscreen view.
-#### `fullscreen/nav`
-
-#### `fullscreen/navdir`
-...
-### `breakpoints`
-Set of options that could be dynamically sets while page is resizing.
-
-<h3 id="gallery_allowfullscreen"><code>allowfullscreen</code></h3>
+#### `options/allowfullscreen` {#gallery_allowfullscreen}
 Show the button that toggles full screen view of the gallery.
 
 **Type**: Boolean
 
-<h3 id="gallery_caption"><code>caption</code></h3>
+#### `options/caption` {#gallery_caption}
 
-Set a caption for a specific image in data field.
-
-**Type**: String
-
-Example of the initialization with the caption option specified:
-{%highlight js%}
-{%endhighlight%}
-
-<h3 id="gallery_captions"><code>captions</code></h3>
-
-Defines if the captions are visible.
+Display alt text as image title.
 
 **Type**: Boolean
 
-Example of the initialization with the captions option specified:
-     $("#element").fotorama({ captions: false});
+#### `options/captions` {#gallery_captions}
 
-<p class="q">Are the initialization examples correct?</p>
+<p class="q">captions or showCaption??</p>
 
-<h3 id="gallery_click"><code>click</code></h3>
+Display the caption in preview.
+
+**Type**: Boolean
+
+#### `options/click` {#gallery_click}
 
 Enable navigation through preview frames by clicking the Next and Previous buttons.
 
 **Type**: Boolean
 
-
-<h3 id="gallery_height"><code>height</code></h3>
+#### `options/height` {#gallery_height}
 
 Height of the preview block in pixels or percents.
 
@@ -168,7 +161,8 @@ Height of the preview block in pixels or percents.
 
 **Default value**: null
 
-<h3 id="gallery_loop"><code>loop</code></h3>
+
+#### `options/loop` {#gallery_loop}
 
 Define whether images are displayed in a loop.
 
@@ -176,7 +170,16 @@ Define whether images are displayed in a loop.
 
 **Default value**: `false`
 
-<h3 id="gallery_maxwidth"><code>maxwidth</code></h3>
+
+#### `options/maxheight` {#gallery_maxheight}
+
+Maximum height of the preview block in pixels or percents.
+
+**Type**: Number, String
+
+**Default value**: `null`
+
+#### `options/maxwidth` {#gallery_maxwidth}
 
 Maximum width of the preview block in pixels or percents.
 
@@ -184,17 +187,7 @@ Maximum width of the preview block in pixels or percents.
 
 **Default value**: 100%
 
-
-<h3 id="gallery_maxheight"><code>maxheight</code></h3>
-
-Maximum width of the preview block in pixels or percents.
-
-**Type**: Number, String
-
-**Default value**: `null`
-
-
-<h3 id="gallery_minheigth"><code>minheigth</code></h3>
+#### `options/minheight` {#gallery_minheight}
 
 Minimal height of the preview block in pixels or percents.
 
@@ -202,8 +195,7 @@ Minimal height of the preview block in pixels or percents.
 
 **Default value**: `null`
 
-
-<h3 id="gallery_mindwidth"><code>minwidth</code></h3>
+#### `options/minwidth` {#gallery_minwidth}
 
 Minimal width of the preview block in pixels or percents.
 
@@ -211,7 +203,7 @@ Minimal width of the preview block in pixels or percents.
 
 **Default value**: `null`
 
-<h3 id="gallery_nav"><code>nav</code></h3>
+#### `options/nav` {#gallery_nav}
 
 Variation of thumbnails in navigation.
 
@@ -223,20 +215,47 @@ Variation of thumbnails in navigation.
 
 **Default**: `dots`
 
-<h3 id="gallery_ratio"><code>ratio</code></h3>
+#### `options/navdir` {#gallery_navdir}
+
+Sliding direction of thumbnails.
+
+**Possible values**:
+
+- `vertical`
+- `horizontal`
+
+#### `options/navarrows` {#gallery_navarrows}
+
+Turn on/off on the thumbs navigation sides.
+
+<p class="q">need clarification</p>
+
+**Type**: Boolean
+
+#### `options/navtype` {#gallery_navtype}
+
+Sliding type of thumbnails. 
+
+**Possible values**:
+
+- `slides`
+- `thumbs`
+
+
+#### `options/ratio` {#gallery_ratio}
 
 Width divided by height. Recommended if you are using percentage width.
 
-Type: Number, String
+**Type**: Number, String
 
-Default value: `null`
+**Default value**: `null`
 
 Example of the initialization with the ratio option specified:
      $("#element").fotorama({ ratio: '4/3'});
      $("#element").fotorama({ ratio: 1.5 });
      $("#element").fotorama({ ratio: 800/600 });
 
-<h3 id="gallery_showcaption"><code>showcaption</code></h3>
+#### `options/showcaption` {#gallery_showcaption}
 
 Enable view of caption in preview. Can be for initialized for specific image. Can work globally.
 
@@ -244,53 +263,74 @@ Enable view of caption in preview. Can be for initialized for specific image. Ca
 
 **Type**: Boolean
 
-<h3 id="gallery_startindex"><code>startindex</code></h3>
+#### `options/startindex` {#gallery_startindex}
 
 The index number of the image that is displayed once the fotorama is initialized.
-
-<p class="q">Where do we set these numbers</p>
 
 **Type**: Number
 
 **Default value**: `0`
 
-<h3 id="gallery_swipe"><code>swipe</code></h3>
+#### `options/swipe` {#gallery_swipe}
 
 Moving between preview images by swiping in left and right.
 
 **Type**: Boolean
 
-Example of the initialization with the swipe option specified:
-     $("#element").fotorama({ swipe: 90});
-<p class="q">It is the second example when "90" is specified for value of Boolean </p>
-
-
-<h3 id="gallery_thumbwidth"><code>thumbwidth</code></h3>
+#### `options/thumbwidth` {#gallery_thumbwidth}
 
 Width of thumbnails.
 
 **Type**: Number, String
 
-Example of the initialization with the thumbwidth option specified:
-     $("#element").fotorama({ thumbwidth: 90});
-
-<h3 id="gallery_thumbwidth"><code>thumbheight</code></h3>
+#### `options/thumbheight` {#gallery_thumbwidth}
 
 Height of thumbnails in navigation.
 
 **Type**: Number, String
 
-Example of the initialization with the thumbheight option specified:
-     $("#element").fotorama({ thumbheight: 90});
-
-
-<h3 id="gallery_width"><code>width</code></h3>
+#### `options/width` {#gallery_width}
 
 Width of the preview in gallery in pixels or percents.
 
 **Type**: Number, String
 
 **Default value**: `null`
+
+### `fullscreen`
+
+Set of options available for the fullscreen view.
+
+#### `fullscreen/caption` {#full_caption}
+Display alt text as image title in the fullscreen view.
+
+**Type**: Boolean
+
+#### `fullscreen/loop` {#full_loop}
+
+Define whether images are displayed in a loop.
+
+**Type**: Boolean
+
+**Default value**: `false`
+
+#### `fullscreen/nav`
+
+#### `fullscreen/navdir`
+...
+### `breakpoints`
+Set of options that could be dynamically sets while page is resizing.
+
+
+
+Example of the initialization with the caption option specified:
+{%highlight js%}
+{%endhighlight%}
+
+
+
+
+
 
 ## Configure gallery options in `view.xml` 
 
