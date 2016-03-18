@@ -84,8 +84,9 @@ After you find the class name, use text search in the theme and module styles di
 2. Theme styles `<current_theme_dir>/web/css/`
 2. Module theme styles `<current_theme_dir>/<Namespace>_<Module>/web/css/`
 3. Parent theme styles `<parent_theme_dir>/web/css/`
-4. Module styles for the `frontend` area `<module_dir>/view/frontend/web/css/`
-5. Module styles for the `base` area `<module_dir>/view/base/web/css/`
+4. Parent theme Module styles `<parent_theme_dir>/<Namespace>_<Module>/web/css/`
+5. Module styles for the `frontend` area `<module_dir>/view/frontend/web/css/`
+6. Module styles for the `base` area `<module_dir>/view/base/web/css/`
 
 Example:
 
