@@ -543,8 +543,7 @@ It covers initializing JavaScript components in a <code>.phtml</code> template a
 <p>Do not add JavaScript inline. Instead use the approaches described further.</p>
 
 <h2 id="init_phtml">Initialize a JS component in a PHTML template</h2>
-<p>In Magento 2, there are two ways to initialize a JS component in a <code>.phtml</code> template: using the <code>data-mage-init</code> attribute and using the <code>&lt;script&gt;</code> tag. Both ways are described in the following sections.
-<!-- ADDLINK for JS component--></p>
+<p>In Magento 2, there are two ways to initialize a JS component in a <code>.phtml</code> template: using the <code>data-mage-init</code> attribute and using the <code>&lt;script&gt;</code> tag. Both ways are described in the following sections.</p>
 
 <h3 id="data_mage_init">Initialization using <code>data-mage-init</code></h3>
 
@@ -642,7 +641,7 @@ $("#main-container").accordion();
 
 <pre>
 $("#main-container").accordion({
-    header : "#title-1"
+    header : "#title-1",
     content : "#content-1",
     trigger : "#trigger-1,
     ajaxUrlElement: "a"

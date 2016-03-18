@@ -583,37 +583,44 @@ $("#element").accordion();
 </ol>
 
 <p>Mark-up examples:</p>
-<pre>
-&lt;div id=&quot;element&quot;&gt;
-    &lt;div data-role=&quot;title&quot;&gt;
-        &lt;div data-role=&quot;trigger&quot;&gt;
-            &lt;span&gt;Title 1&lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div data-role=&quot;content&quot;&gt;Content 1&lt;/div&gt;
-  
-    &lt;div data-role=&quot;title&quot;&gt;
-        &lt;div data-role=&quot;trigger&quot;&gt;
-            &lt;span&gt;Title 2&lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div data-role=&quot;content&quot;&gt;Content 2&lt;/div&gt;
-  
-   &lt;div data-role=&quot;title&quot;&gt;
-        &lt;div data-role=&quot;trigger&quot;&gt;
-            &lt;span&gt;Title 3&lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div data-role=&quot;content&quot;&gt;Content 3&lt;/div&gt;
-&lt;/div&gt;
-</pre>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;element&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;collapsible&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;trigger&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span&gt;</span>Title 1<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>Content 1<span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;collapsible&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;trigger&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span&gt;</span>Title 2<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>Content 2<span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;collapsible&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;trigger&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span&gt;</span>Title 3<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>Content 3<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+    <span class="nx">require</span><span class="p">([</span>
+        <span class="s1">&#39;jquery&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;tabs&#39;</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#element&quot;</span><span class="p">).</span><span class="nx">accordion</span><span class="p">();</span>
+    <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
 
 <h4>Initialize accordion with option</h4>
 <p>You can specify the header, content, trigger as options when you initialize the widget.
 For example:</p>
 <pre>
 $("#element").accordion({
-    header : "#title-1"
+    header : "#title-1",
     content : "#content-1",
     trigger : "#trigger-1",
     ajaxUrlElement: "a"
