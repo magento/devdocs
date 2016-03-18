@@ -10,7 +10,7 @@ github_link: javascript-dev-guide/widgets/widget_gallery.md
 
 <h2>Overview</h2>
 
-The gallery widget is used to display product photos on product pages. Gallery implements content area with images organized into preview and thumbnails blocks. It uses the <a href="http://fotorama.io/">jQuery Fotorama library</a>
+The gallery widget is used to display product images on product pages. Gallery implements content area with images organized into preview and thumbnails blocks. It uses the <a href="http://fotorama.io/">jQuery Fotorama library</a>
 
 In addition, integrated Gallery Magnifier can be used to demonstrate images in 100% scaled size in separate dedicated layer,
 or Gallery Fullscreen mode can be used to navigate the entire full sized photo.
@@ -33,7 +33,7 @@ The important feature of the gallery widget implementation is the possibility to
 The gallery widget can be initialized in `.phtml` templates using the `data-mage-init` attribute or `<script>` element, as described in [JavaScript initialization]({{site.gdeurl}}javascript-dev-guide/javascript/js_init.html#init_phtml).
 
 
-The example of gallery initializatin in a `.phtml` template follows:
+The default gallery initialization in the <Magento_Catalog_module_dir>/ `.phtml` template follows:
 
 {%highlight js%}
 <script type="text/x-magento-init">
@@ -271,28 +271,32 @@ Width of the preview in gallery in pixels or percents.
 
 ## Configure gallery options in `view.xml` 
 
-If you want to customize the gallery options for your custom theme, add the following in the view.xml configuration file in the `<your_custom_theme_dir>/etc` directory:
+Gallery and magnifier options can be set in the `view.xml` configuration file of a theme. 
+
+The general gallery options are set as follows:
+
+{%highlight xml%}
+
+<var name="gallery">
+            <var name="%option1%">%option1_value%</var> 
+            <var name="%option2%">%option2_value%</var> 
+...
+</var>
+
+{%endhighlight%}
+
+The optui
+If you want to customize the gallery options for your custom theme, add the following in the `view.xml` configuration file in the `<your_custom_theme_dir>/etc` directory:
 
 {%highlight xml%}
 <vars module="Magento_Catalog">
 
         <!-- Gallery and magnifier theme settings. Start -->
         <var name="gallery">
-            <var name="nav">thumbs</var> <!-- Gallery navigation style (false/thumbs/dots) -->
-            <var name="loop">true</var> <!-- Gallery navigation loop (true/false) -->
-            <var name="keyboard">true</var> <!-- Turn on/off keyboard arrows navigation (true/false) -->
-            <var name="arrows">true</var> <!-- Turn on/off arrows on the sides preview (true/false) -->
-            <var name="caption">false</var> <!-- Display alt text as image title (true/false) -->
-            <var name="allowfullscreen">true</var> <!-- Turn on/off fullscreen (true/false) -->
-            <var name="navdir">horizontal</var> <!-- Sliding direction of thumbnails (horizontal/vertical) -->
-            <var name="navarrows">true</var> <!-- Turn on/off on the thumbs navigation sides (true/false) -->
-            <var name="navtype">slides</var> <!-- Sliding type of thumbnails (slides/thumbs) -->
-            <var name="transition">
-                <var name="effect">slide</var> <!-- Sets transition effect for slides changing (slide/crossfade/dissolve) -->
-                <var name="duration">500</var> <!-- Sets transition duration in ms -->
-            </var>
+            <var name="%option1%">%option1_value%</var> <!-- Gallery navigation style (false/thumbs/dots) -->
+            <var name="%option2%">%option2_value%</var> <!-- Gallery navigation loop (true/false) -->
             <var name="fullscreen">
-                <var name="nav">thumbs</var> <!-- Fullscreen navigation style (false/thumbs/dots) -->
+                <var name="%fullscreen_option1%">%fullscreen_option1_value%</var> <!-- Fullscreen navigation style (false/thumbs/dots) -->
                 <var name="loop">true</var> <!-- Fullscreen navigation loop (true/false/null) -->
                 <var name="keyboard">true</var> <!-- Turn on/off keyboard arrows navigation (true/false/null) -->
                 <var name="arrows">false</var> <!-- Turn on/off arrows on the sides preview (true/false/null) -->
