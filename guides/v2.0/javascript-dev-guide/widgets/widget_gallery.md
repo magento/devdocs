@@ -30,59 +30,59 @@ The important feature of the gallery widget implementation is the possibility to
 
 ## Initialize the gallery widget {#gallery_init}
 
-The gallery widget can be initialized in `.phtml` templates using the `data-mage-init` attribute or `<script>` element, as described in [JavaScript initialization]({{site.gdeurl}}javascript-dev-guide/javascript/js_init.html#init_phtml).
+The gallery widged is initialized as described in [JavaScript initialization]({{site.gdeurl}}javascript-dev-guide/javascript/js_init.html#init_phtml).
 
+Example of declarative initialization:
 
-The default gallery initialization in the <Magento_Catalog_module_dir>/ `.phtml` template follows:
+ `<Magento_Catalog_module_dir>/view/frontend/templates/product/view/gallery.phtml` 
 
 {%highlight js%}
 <script type="text/x-magento-init">
-    ".gallery-placeholder": {
-        "mage/gallery/gallery": {
-            "data": <?php echo $block->getGalleryImagesJson(); ?>,
-            "options": {
-            "nav": "<?php /* @escapeNotVerified */ echo $block->getVar("gallery/nav"); ?>",
-    "loop": <?php /* @escapeNotVerified */ echo $block->getVar("gallery/loop"); ?>,
-    "keyboard": <?php /* @escapeNotVerified */ echo $block->getVar("gallery/keyboard"); ?>,
-    "arrows": <?php /* @escapeNotVerified */ echo $block->getVar("gallery/arrows"); ?>,
-    "allowfullscreen": <?php /* @escapeNotVerified */ echo $block->getVar("gallery/allowfullscreen"); ?>,
-    "showCaption": <?php /* @escapeNotVerified */ echo $block->getVar("gallery/caption"); ?>,
-    "width": <?php /* @escapeNotVerified */ echo $block->getImageAttribute('product_page_image_medium', 'width'); ?>,
-    "thumbwidth": <?php /* @escapeNotVerified */ echo $block->getImageAttribute('product_page_image_small', 'width'); ?>,
-    "thumbheight": <?php /* @escapeNotVerified */ echo $block->getImageAttribute('product_page_image_small', 'height')
-        ?: $block->getImageAttribute('product_page_image_small', 'width'); ?>,
-    "height": <?php /* @escapeNotVerified */ echo $block->getImageAttribute('product_page_image_medium', 'height')
-        ?: $block->getImageAttribute('product_page_image_medium', 'width'); ?>,
-    "transitionduration": <?php /* @escapeNotVerified */  echo $block->getVar("gallery/transition/duration"); ?>,
-    "transition": "<?php /* @escapeNotVerified */  echo $block->getVar("gallery/transition/effect"); ?>",
-    "navarrows": <?php /* @escapeNotVerified */  echo $block->getVar("gallery/navarrows"); ?>,
-    "navtype": "<?php /* @escapeNotVerified */  echo $block->getVar("gallery/navtype"); ?>",
-    "navdir": "<?php /* @escapeNotVerified */  echo $block->getVar("gallery/navdir"); ?>"
-},
-"fullscreen": {
-    "nav": "<?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/nav"); ?>",
-    "loop": <?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/loop"); ?>,
-    "navdir": "<?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/navdir"); ?>",
-    "navarrows": <?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/navarrows"); ?>,
-    "navtype": "<?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/navtype"); ?>",
-    "arrows": <?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/arrows"); ?>,
-    "showCaption": <?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/caption"); ?>,
-    "transitionduration": <?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/transition/duration"); ?>,
-    "transition": "<?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/transition/effect"); ?>"
-},
-"breakpoints": <?php /* @escapeNotVerified */ echo $block->getBreakpoints(); ?>
+    {
+        "[data-gallery-role=gallery-placeholder]": {
+            "mage/gallery/gallery": {
+                "mixins":["magnifier/magnify"],
+                "magnifierOpts": <?php /* @escapeNotVerified */ echo $block->getMagnifier(); ?>,
+                "data": <?php /* @escapeNotVerified */ echo $block->getGalleryImagesJson(); ?>,
+                "options": {
+                    "nav": "<?php /* @escapeNotVerified */ echo $block->getVar("gallery/nav"); ?>",
+                    "loop": <?php /* @escapeNotVerified */ echo $block->getVar("gallery/loop"); ?>,
+                    "keyboard": <?php /* @escapeNotVerified */ echo $block->getVar("gallery/keyboard"); ?>,
+                    "arrows": <?php /* @escapeNotVerified */ echo $block->getVar("gallery/arrows"); ?>,
+                    "allowfullscreen": <?php /* @escapeNotVerified */ echo $block->getVar("gallery/allowfullscreen"); ?>,
+                    "showCaption": <?php /* @escapeNotVerified */ echo $block->getVar("gallery/caption"); ?>,
+                    "width": <?php /* @escapeNotVerified */ echo $block->getImageAttribute('product_page_image_medium', 'width'); ?>,
+                    "thumbwidth": <?php /* @escapeNotVerified */ echo $block->getImageAttribute('product_page_image_small', 'width'); ?>,
+                    "thumbheight": <?php /* @escapeNotVerified */ echo $block->getImageAttribute('product_page_image_small', 'height')
+                        ?: $block->getImageAttribute('product_page_image_small', 'width'); ?>,
+                    "height": <?php /* @escapeNotVerified */ echo $block->getImageAttribute('product_page_image_medium', 'height')
+                        ?: $block->getImageAttribute('product_page_image_medium', 'width'); ?>,
+                    "transitionduration": <?php /* @escapeNotVerified */  echo $block->getVar("gallery/transition/duration"); ?>,
+                    "transition": "<?php /* @escapeNotVerified */  echo $block->getVar("gallery/transition/effect"); ?>",
+                    "navarrows": <?php /* @escapeNotVerified */  echo $block->getVar("gallery/navarrows"); ?>,
+                    "navtype": "<?php /* @escapeNotVerified */  echo $block->getVar("gallery/navtype"); ?>",
+                    "navdir": "<?php /* @escapeNotVerified */  echo $block->getVar("gallery/navdir"); ?>"
+                },
+                "fullscreen": {
+                    "nav": "<?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/nav"); ?>",
+                    "loop": <?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/loop"); ?>,
+                    "navdir": "<?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/navdir"); ?>",
+                    "arrows": <?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/arrows"); ?>,
+                    "showCaption": <?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/caption"); ?>,
+                    "transitionduration": <?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/transition/duration"); ?>,
+                    "transition": "<?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/transition/effect"); ?>"
+                },
+                "breakpoints": <?php /* @escapeNotVerified */ echo $block->getBreakpoints(); ?>
+            }
         }
     }
 </script>
 {%endhighlight%}
 
-## Initialization options {#gallery_init_opt}
-
-<p class="q">what's the difference between init options (c)and other options?</p>
 
 ## Options {#gallery_options}
 
-Dimensions:
+
 <ul>
 <li><a href="#gallery_allowfullscreen">allowfullscreen</a></li>
 <li><a href="#gallery_caption">caption</a></li>
@@ -103,6 +103,29 @@ Dimensions:
 <li><a href="#gallery_swipe">swipe</a></li>
 <li><a href="#gallery_width">width</a></li>
 </ul>
+
+
+    data
+
+Array of images to display.
+
+
+### `options`
+Set of options available for Preview part.
+
+#### `options/nav`
+
+#### `options/navdir`
+...
+### `fullscreen`
+
+Set of options available for the fullscreen view.
+#### `fullscreen/nav`
+
+#### `fullscreen/navdir`
+...
+### `breakpoints`
+Set of options that could be dynamically sets while page is resizing.
 
 <h3 id="gallery_allowfullscreen"><code>allowfullscreen</code></h3>
 Show the button that toggles full screen view of the gallery.
