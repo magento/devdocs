@@ -6,7 +6,7 @@ title: magento/theme-doc-blank failure
 menu_title: magento/theme-doc-blank failure
 menu_node: 
 menu_order: 500
-github_link: comp-mgr/trouble/cman/doc.md
+github_link21: comp-mgr/trouble/cman/doc.md
 ---
 
 <h2 id="trouble-doc"><code>magento/theme-doc-blank</code> failure</h2>

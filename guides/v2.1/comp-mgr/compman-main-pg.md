@@ -6,7 +6,7 @@ title: Manage your components
 menu_title: Manage your components
 menu_node: 
 menu_order: 2
-github_link: comp-mgr/compman-main-pg.md
+github_link21: comp-mgr/compman-main-pg.md
 ---
 
 

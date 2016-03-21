@@ -6,7 +6,7 @@ title: Step 3. Enable/Disable
 menu_title: Step 3. Enable/Disable
 menu_node: 
 menu_order: 10
-github_link: comp-mgr/compman-enable-disable.md
+github_link21: comp-mgr/compman-enable-disable.md
 ---
 
 ## Enable or disable a component
