@@ -1,4 +1,4 @@
-### Language Package file structure
+### Language package file structure
 A typical directory structure for three language packages follows:
 
 ~~~
