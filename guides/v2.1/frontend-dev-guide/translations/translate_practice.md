@@ -25,7 +25,7 @@ Change <b>Add to Cart</b> label to <b>Purchase</b>
 Change <b>Add to Compare</b> label to <b>Compare</b>
 </li>
 <li>
-Change <b>Add to Wish List</b> label to <b>Wishlist</b>
+Change <b>Add to Wish List</b> label to <b>Wish list</b>
 </li>
 </ul>
 
@@ -55,7 +55,7 @@ Open the newly generated <code>magento2/app/design/frontend/OrangeCo/orange/i18n
 <pre>
 "Add to Cart", "Purchase"
 "Add to Compare", "Compare"
-"Add to Wish List", "Wishlist"
+"Add to Wish List", "Wish list"
 </pre>
 </li>
 
