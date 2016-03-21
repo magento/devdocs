@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: V_Troubleshooting
+subgroup: 65_Troubleshooting
 title: Troubleshoot the Magento Testing Framework issues
 menu_title: TROUBLESHOOTING
 menu_node: parent

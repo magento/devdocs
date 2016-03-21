@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: C_Quickstart
+subgroup: 30_Quickstart
 title: Quick start with the Magento Testing Framework
 menu_title: Prepare environment for test run
 menu_order: 2
@@ -51,7 +51,10 @@ Enter in terminal:
     php generate.php
 
 <h2 id="mtf_install_pre">Next Steps</h2>
-<a href="{{ site.gdeurl }}mtf/mtf_quickstart/mtf_quickstart_config.html">&lt;&lt; Adjust configuration </a> | <a href="{{ site.gdeurl }}mtf/mtf_quickstart/mtf_quickstart_runtest.html"> Test run &gt;&gt;</a>
+
+[&lt;&lt; Prepare Magento application]({{ site.gdeurl }}mtf/mtf_quickstart/mtf_quickstart_magento.html)| <a href="{{ site.gdeurl }}mtf/mtf_quickstart/mtf_quickstart_runtest.html"> Test run &gt;&gt;</a>
+
+
 
 <!-- LINK DEFINITIONS -->
 

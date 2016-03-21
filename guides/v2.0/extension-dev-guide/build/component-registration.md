@@ -35,13 +35,8 @@ Register modules with:
 where &lt;VendorName> is the name of the company providing the module and &lt;ModuleName> is the name of the module.
      
 ###Example
-     \Magento\Framework\Component\ComponentRegistrar::register(
-         \Magento\Framework\Component\ComponentRegistrar::MODULE,
-         'Magento_AdminNotification',
-         __DIR__
-     );
-<p>&nbsp;</p>
-
+    use \Magento\Framework\Component\ComponentRegistrar;
+    ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Magento_AdminNotification', __DIR__);
 
 ##Register themes {#register-themes}
 Register themes with:
