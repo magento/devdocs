@@ -99,6 +99,8 @@ Typical theme directories are:
 	*	`images`: Static images folder.
 	*	`js`: The folder for your javascript files.
 
+For more details on the Theme folder structure, see [Magento Theme structure]({{ site.gdeurl }}frontend-dev-guide/themes/theme-structure.html).
+
 {% include php-dev/lang-pack-file-struct.md %}
 
 
