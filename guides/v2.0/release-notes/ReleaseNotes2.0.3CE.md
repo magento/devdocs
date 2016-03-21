@@ -20,7 +20,7 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 
 <!--  48781 --> * Product performance has been enhanced when loading catalog products with multiple color swatches. 
 
-<!-- 46720 --> * The Orders API now exposes Shipping address. This corrects a problem that users of Magento 2.x experienced using this API to integrate with third-party systems. 
+<!-- 46720 --> * The Orders API now exposes Shipping address. This corrects a problem users of Magento 2.x experienced using this API to integrate with third-party systems. 
 
 
 <!-- 47531 -->* During update, the `setup:config:set` script no longer deletes values. 
@@ -28,8 +28,21 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 
 <!-- 47844 -->* Magento now successfully saves and displays new customer attributes. 
 
-<!-- 50255 -->* You can now successfully import products that meet these two criteria: already exist in the product catalog and use custom URLs. 
+<!-- 50255 -->* You can now successfully import products that meet these two criteria: they already exist in the product catalog,  and they use custom URLs. 
 
+<!-- 45887 -->* Issues with persistent cross-site scripting have been resolved. Previously, during customer registration on the storefront, a user could provide an email address that contained JavaScript code. Magento now properly validates this email address and executes it in Admin context when viewing the order in the backend. 
+
+<!-- 50608 -->*  Magento now supports setting limits on password attempts. Previously, Admin and customer token API access did not limit the number of attempts to enter a password, inadvertently allowing brute force attempts to guess passwords. 
+
+<!-- 50611 -->* WebAPI allows anonymous access to private data. Anonymous cart APIs need to remain to support current checkout and add-to-cart Ajax functionality. 
+
+<!-- 50224 -->* inconsistent data during installation of store
+
+<!-- 48081 -->* Source files now display 2016 copyright statement. 
+
+<!-- 50500 -->* The `_current` parameter is now included in the request URL of Ajax requests.
+
+<!-- 47704 -->* Magento no longer displays HTML tags in messages. 
 <h3>System requirements</h3>
 Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later support PHP 5.5, 5.6x, 7.0.2, and MySQL 5.6. For more information, see 
 <a href="http://devdocs.magento.com/guides/v2.0/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
