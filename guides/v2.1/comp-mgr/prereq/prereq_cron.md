@@ -7,12 +7,13 @@ menu_title: Set up cron for Component Manager and System Upgrade
 menu_order: 3
 menu_node: 
 github_link: comp-mgr/prereq/prereq_cron.md
+redirect_from: /guides/v2.0/comp-mgr/prereq/prereq_compman-updater.html
 ---
 
 <h2 id="compman-prereq-cron">Set up cron jobs</h2>
 To enable the updater to work for both the Component Manager and System Upgrade, you must configure two cron jobs. Each cron job should run every minute.
 
-Enable the cron jobs as <a href="http://ss64.com/bash/crontab.html" target="_blank">crontabs</a> for the <a href="{{ site.gdeurl21 }}install-gde/prereq/apache-user.html">Magento file system owner</a> because that user runs the updater application for the Component Manager and System Upgrade. 
+Enable the cron jobs as <a href="http://ss64.com/bash/crontab.html" target="_blank">crontabs</a> for the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a> because that user runs the updater application for the Component Manager and System Upgrade. 
 
 1.	As a user with `root` privileges, see if a crontab is already set up.
 
@@ -32,17 +33,22 @@ Enable the cron jobs as <a href="http://ss64.com/bash/crontab.html" target="_bla
 
 	An editor displays. In the editor, enter the following:
 
-		*/1 * * * * php <your Magento install dir>/update/cron.php &
-		*/1 * * * * php <your Magento install dir>/bin/magento setup:cron:run &
+		*/1 * * * * <path-to-binary> -c <ini-file-path> <your Magento install dir>/update/cron.php 
+		*/1 * * * * <path-to-binary> -c <ini-file-path> <your Magento install dir>/bin/magento setup:cron:run 
+
+	where 
+
+	*	`<path-to-binary>` is the absolute file system path to your PHP binary (use `which php` to find it)
+	*	`<ini-file-path>` is the path to a `php.ini` file to use for the cron job; generally, you should use the web server plug-in's `php.ini` file. To find it, create a <a href="{{ site.gdeurl }}install-gde/prereq/optional.html#install-optional-phpinfo">`phpinfo.php`</a> file.
 
 	For example,
 
-		*/1 * * * * php /var/www/html/magento2/update/cron.php &
-		*/1 * * * * php /var/www/html/magento2/bin/magento setup:cron:run &	
+		*/1 * * * * /usr/bin/php -c /etc/php5/apache2/php.ini /var/www/magento2/update/cron.php 
+		*/1 * * * * /usr/bin/php -c /etc/php5/apache2/php.ini /var/www/magento2/bin/magento setup:cron:run 
 
 3.	Save your changes to cron and exit the editor.
 
 #### Next step
 
-*	<a href="{{ site.gdeurl21 }}comp-mgr/compman-start.html">Run the Component Manager</a>
-*	<a href="{{ site.gdeurl21 }}comp-mgr/upgrader/upgrade-start.html">Run System Upgrade</a>
+*	<a href="{{ site.gdeurl }}comp-mgr/compman-start.html">Run the Component Manager</a>
+*	<a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">Run System Upgrade</a>
