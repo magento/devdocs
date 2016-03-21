@@ -6,7 +6,8 @@ title: Configure and run cron
 menu_title: Configure and run cron
 menu_node: 
 menu_order: 100
-github_link: config-guide/cli/config-cli-subcommands-cron.md
+github_link21: config-guide/cli/config-cli-subcommands-cron.md
+redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-cron.html
 ---
 
 #### Contents
@@ -67,8 +68,6 @@ Run Magento cron jobs as the <a href="{{ site.gdeurl21 }}install-gde/prereq/apac
 
 <h2 id="config-cli-cron-group">Configure and run cron using the command line</h2>
 This section discusses how to run cron at any time using the command line. You can optionally configure a cron group for a custom module as discussed in the next section.
-
-Most Magento modules are in the `default` group; other modules are in the `index` group.
 
 See one of the following sections:
 
@@ -175,19 +174,18 @@ In addition, the `<group>` element supports the following options, all of which 
 	</tbody>
 </table>
 
-As an example, see <a href="{{ site.mage2100url }}app/code/Magento/Customer/etc/crontab.xml" target="_blank">Magento_Customer crontab.xml</a>
+As an example, see <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/crontab.xml" target="_blank">Magento_Customer crontab.xml</a>
 
 <h3 id="config-cli-cron-group-run">Run cron from the command line</h3>
 Command options:
 
 	magento cron:run [--group="<cron group name>"] 
 
-where `--group` specifies the cron group to run (omit this option to run cron for the `default` group)
+where `--group` specifies the cron group to run (omit this option to run cron for all groups)
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <ul><li>You can run cron for one group at a time.</li>
-  	<li>You must run cron twice: the first time to discover tasks to run and the second time to run the tasks themselves.</li></ul></span>
+  <p>You must run cron twice: the first time to discover tasks to run and the second time to run the tasks themselves.</p></span>
 </div>
 
 #### Related topics

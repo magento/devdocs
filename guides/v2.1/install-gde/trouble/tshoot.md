@@ -6,7 +6,8 @@ title: Troubleshooting suggestions
 menu_title: Troubleshooting suggestions
 menu_node: parent
 menu_order: 1
-github_link: install-gde/trouble/tshoot.md
+github_link21: install-gde/trouble/tshoot.md
+redirect_from: /guides/v1.0/install-gde/trouble/tshoot.html
 ---
 
 <div class="bs-callout bs-callout-tip">

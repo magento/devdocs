@@ -6,7 +6,8 @@ title: Create or unlock a Magento administrator account
 menu_title: Create or unlock a Magento administrator account
 menu_node: 
 menu_order: 50
-github_link: install-gde/install/cli/install-cli-subcommands-admin.md
+github_link21: install-gde/install/cli/install-cli-subcommands-admin.md
+redirect_from: /guides/v2.0/install-gde/install/install-cli-subcommands-admin.html
 ---
 
   

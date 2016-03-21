@@ -5,7 +5,7 @@ subgroup: Prerequisites
 title: PHP 5.5, 5.6, or 7.0&mdash;Ubuntu
 menu_title: PHP 5.5, 5.6, or 7.0&mdash;Ubuntu
 menu_order: 06
-github_link: install-gde/prereq/php-ubuntu.md
+github_link21: install-gde/prereq/php-ubuntu.md
 redirect_from: /guides/v1.0/install-gde/prereq/php-ubuntu.html
 ---
 
@@ -22,7 +22,7 @@ redirect_from: /guides/v1.0/install-gde/prereq/php-ubuntu.html
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>If you must install both Apache and PHP, <a href="{{ site.gdeurl }}install-gde/prereq/apache.html">install Apache</a> first.</p></span>
+  <p>If you must install both Apache and PHP, <a href="{{ site.gdeurl21 }}install-gde/prereq/apache.html">install Apache</a> first.</p></span>
 </div>
 
 <h2 id="php-support">PHP versions supported</h2>
@@ -40,10 +40,10 @@ Magento requires:
 <h2 id="php-ubuntu-help-beginner">Help if you're just starting out</h2>
 If you're new to all this and need some help getting started, we suggest the following:
 
-*	<a href="{{ site.gdeurl }}install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a>
-*	<a href="{{ site.gdeurl }}install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a>
-*	<a href="{{ site.gdeurl }}install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
-*	<a href="{{ site.gdeurl }}install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
 
 <h2 id="ubuntu-verify-php">Verify PHP is installed</h2>
 To verify if PHP is installed already, enter `php -v`. If PHP is installed, messages similar to the following display:
@@ -58,7 +58,7 @@ To verify if PHP is installed already, enter `php -v`. If PHP is installed, mess
   <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
 </div>
 
-If PHP is installed, continue with the next prerequisite, <a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">MySQL</a>.
+If PHP is installed, continue with the next prerequisite, <a href="{{ site.gdeurl21 }}install-gde/prereq/mysql.html">MySQL</a>.
 
 If PHP is *not* installed, see one of the following sections:
 
@@ -153,7 +153,7 @@ The result should be similar to the following:
 	Server version: Apache/2.4.10 (Ubuntu)
 	Server built:   Jul 22 2014 22:46:25
 
-If you're running an earlier Apache version, see <a href="{{ site.gdeurl }}install-gde/prereq/apache.html#install-prereq-apache-ubuntu-upgrade">Upgrading Apache on Ubuntu 12</a> first.
+If you're running an earlier Apache version, see <a href="{{ site.gdeurl21 }}install-gde/prereq/apache.html#install-prereq-apache-ubuntu-upgrade">Upgrading Apache on Ubuntu 12</a> first.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -245,10 +245,10 @@ We can't verify this procedure; if you know how to install PHP 5.5 on Ubuntu 12,
 
 #### Related topics
 
-*	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">MySQL</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Apache</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">Configuring security options</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Installing optional software</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Ways to install the Magento software</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/prereq/mysql.html">MySQL</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/prereq/apache.html">Apache</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/prereq/security.html">Configuring security options</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/prereq/optional.html">Installing optional software</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/install/pre-install.html">Ways to install the Magento software</a>
 

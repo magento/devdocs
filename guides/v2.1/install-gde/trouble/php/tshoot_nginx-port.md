@@ -6,7 +6,7 @@ title: Cannot install using nginx
 menu_title: Cannot install using nginx
 menu_node: 
 menu_order: 20
-github_link: install-gde/trouble/php/tshoot_nginx-port.md
+github_link21: install-gde/trouble/php/tshoot_nginx-port.md
 ---
 
 <h2 id="install-trouble-pdo">Cannot install using nginx</h2>

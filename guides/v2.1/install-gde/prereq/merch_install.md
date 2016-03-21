@@ -6,7 +6,7 @@ title: Newbie installation first steps
 menu_title: Newbie installation first steps
 menu_order: 1
 menu_node: parent
-github_link: install-gde/prereq/merch_install.md
+github_link21: install-gde/prereq/merch_install.md
 ---
 
 ## Newbie installation

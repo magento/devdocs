@@ -6,7 +6,7 @@ title: Step 2. Add a Database
 menu_title: Step 2. Add a Database
 menu_node: 
 menu_order: 3
-github_link: install-gde/install/web/install-web_2-db.md
+github_link21: install-gde/install/web/install-web_2-db.md
 ---
 
 ## Before you begin

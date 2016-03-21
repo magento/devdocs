@@ -6,7 +6,7 @@ title: Step 3. Web configuration
 menu_title: Step 3. Web configuration
 menu_order: 6
 menu_node: 
-github_link: install-gde/install/hosted/hosted_install_3_web-conf.md
+github_link21: install-gde/install/hosted/hosted_install_3_web-conf.md
 ---
 
 {% include install/web/install-web_3-web-conf.md %}
