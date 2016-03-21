@@ -10,18 +10,25 @@ github_link: javascript-dev-guide/widgets/widget_gallery.md
 
 <h2>Overview</h2>
 
-The gallery widget is used to display product images on product pages. Gallery implements content area with images organized into preview and thumbnails blocks. It uses the <a href="http://fotorama.io/">jQuery Fotorama library</a>
+The gallery jQeury widget implements a content area with images organized into preview and thumbnails blocks. 
 
-In addition, integrated Gallery Magnifier can be used to demonstrate images in 100% scaled size in separate dedicated layer,
-or Gallery Fullscreen mode can be used to navigate the entire full sized photo.
+The following picture is an illustration of image displaying on the product page using the gallery widget:
+
+<img src="{{site.baseurl}}/common/images/gallery_scr.png" alt="A product page with preview and thumbnails">
+
+In addition, the magnifier widget can be used to demonstrate images in 100% scaled size in separate dedicated layer, and the gallery fullscreen mode can be used to navigate the entire full sized photo.
 
 Gallery is displayed consistently across all supported browsers and is responsive - it sizes correctly on mobile devices and desktops.
+
+The gallery widget uses the <a href="http://fotorama.io/">jQuery Fotorama library</a>.
+
+The important feature of the gallery widget implementation is the possibility to configure the wiget options in the `view.xml` configuration file of a theme. thu
 
 The gallery widget source is <a href="{{site.mage2000url}}lib/web/mage/gallery/gallery.js">lib/web/mage/gallery/gallery.js</a>
 
 The gallery magnifier source is <a href="{{site.mage2000url}}lib/web/magnifier/magnify.js"> lib/web/magnifier/magnify.js</a>.
 
-The important feature of the gallery widget implementation is the possibility to configure the wiget options in the `view.xml` configuration file of a theme. 
+
 
 <h3>Contents</h3>
 
@@ -77,35 +84,22 @@ Example of declarative initialization:
         }
     }
 </script>
+
 {%endhighlight%}
 
 
 ## Options {#gallery_options}
 
+The following option groups are availble for the gallery widget:
 
-<ul>
-<li><a href="#gallery_allowfullscreen">allowfullscreen</a></li>
-<li><a href="#gallery_caption">caption</a></li>
-<li><a href="#gallery_captions">captions</a></li>
-<li><a href="#gallery_click">click</a></li>
-<li><a href="#gallery_height">height</a></li>
-<li><a href="#gallery_loop">loop</a></li>
-<li><a href="#gallery_maxheight">maxheight</a></li>
-<li><a href="#gallery_maxwidth">maxwidth</a></li>
-<li><a href="#gallery_mindwidth">minwidth</a></li>
-<li><a href="#gallery_minheigth">minheigth</a></li>
-<li><a href="#gallery_nav">nav</a></li>
-<li><a href="#gallery_ratio">ratio</a></li>
-<li><a href="#gallery_thumbheight">thumbheight</a></li>
-<li><a href="#gallery_thumbwidth">thumbwidth</a></li>
-<li><a href="#gallery_showcaption">showcaption</a></li>
-<li><a href="#gallery_startindex">startindex</a></li>
-<li><a href="#gallery_swipe">swipe</a></li>
-<li><a href="#gallery_width">width</a></li>
-</ul>
+* [`data`](#data)
+* [`options`](#options)
+* [`fullscreen`](#fullscreen)
+* [`breakpoints`](#breakpoints)
 
+All options for each group are described further.
 
-### `data`
+### `data` {#data}
 
 Array of images to display.
 
@@ -114,7 +108,7 @@ Array of images to display.
 Set caption for a specific image in the `data` field.
 Example of the runtime initialization with the `caption` option specified:
  
- 
+{%highlight js%}
 galleryInstance({ 
     data: [
         {
@@ -124,12 +118,19 @@ galleryInstance({
         }
     ]
 });
+{%endhighlight%}
 
-### `options`
+### `options` {#options}
 Set of options available for Preview part.
 
 #### `options/allowfullscreen` {#gallery_allowfullscreen}
 Show the button that toggles full screen view of the gallery.
+
+**Type**: Boolean
+
+#### `options/arrows` {#gallery_arrows}
+
+Display navigation arrows on the thumbnails sides.
 
 **Type**: Boolean
 
@@ -161,6 +162,11 @@ Height of the preview block in pixels or percents.
 
 **Default value**: null
 
+#### `options/keyboard` {#gallery_keyboard}
+
+Switch on/off the keyboard navigation.
+
+**Type**: Boolean
 
 #### `options/loop` {#gallery_loop}
 
@@ -226,7 +232,7 @@ Sliding direction of thumbnails.
 
 #### `options/navarrows` {#gallery_navarrows}
 
-Turn on/off on the thumbs navigation sides.
+Turn on/off on the thumbnails navigation sides/Display navigation arrows on the thumbnails sides.
 
 <p class="q">need clarification</p>
 
@@ -244,16 +250,11 @@ Sliding type of thumbnails.
 
 #### `options/ratio` {#gallery_ratio}
 
-Width divided by height. Recommended if you are using percentage width.
+Width divided by height. Recommended if you set width in percents.
 
 **Type**: Number, String
 
 **Default value**: `null`
-
-Example of the initialization with the ratio option specified:
-     $("#element").fotorama({ ratio: '4/3'});
-     $("#element").fotorama({ ratio: 1.5 });
-     $("#element").fotorama({ ratio: 800/600 });
 
 #### `options/showcaption` {#gallery_showcaption}
 
@@ -265,7 +266,7 @@ Enable view of caption in preview. Can be for initialized for specific image. Ca
 
 #### `options/startindex` {#gallery_startindex}
 
-The index number of the image that is displayed once the fotorama is initialized.
+The index number of the image that is displayed once the gallery is initialized.
 
 **Type**: Number
 
@@ -285,9 +286,34 @@ Width of thumbnails.
 
 #### `options/thumbheight` {#gallery_thumbwidth}
 
-Height of thumbnails in navigation.
+Height of thumbnails.
 
 **Type**: Number, String
+
+#### `options/transition` {#gallery_transition}
+
+Set of options defining the transition properties.
+
+##### `options/transitioneffect` {#gallery_transitioneffect}
+
+Sets the transition effect for slides changing.
+
+**Possible values**: 
+
+* `slide`
+* `crossfade`
+* `dissolve`
+
+##### `options/transitionduration` {#gallery_transitionduration}
+Sets transition duration in milliseconds.
+
+**Type**: Number
+
+##### `options/transitioncarousel` {#gallery_transitioncarousel}
+
+Display navigation thumbnails as carousel.
+
+**Type**: Boolean
 
 #### `options/width` {#gallery_width}
 
@@ -297,14 +323,27 @@ Width of the preview in gallery in pixels or percents.
 
 **Default value**: `null`
 
-### `fullscreen`
+### `fullscreen` {#fullscreen}
 
 Set of options available for the fullscreen view.
+
+#### `fullscreen/arrows` {#full_arrows}
+
+Display navigation arrows on the sides of previews in the fullscreen view.
+
+**Type**: Boolean
 
 #### `fullscreen/caption` {#full_caption}
 Display alt text as image title in the fullscreen view.
 
 **Type**: Boolean
+
+#### `fullscreen/keyboard` {#fullscreen_keyboard}
+
+Switch on/off the keyboard navigation in the fullscreen mode.
+
+**Type**: Boolean
+
 
 #### `fullscreen/loop` {#full_loop}
 
@@ -314,27 +353,96 @@ Define whether images are displayed in a loop.
 
 **Default value**: `false`
 
-#### `fullscreen/nav`
+#### `fullscreen/nav` {#full_nav}
 
-#### `fullscreen/navdir`
-...
-### `breakpoints`
-Set of options that could be dynamically sets while page is resizing.
+Variation of thumbnails in navigation in the fullscreen view.
 
+**Possible values**:
 
+- `dots`: iPhone-style dots
+- `thumbs`: thumbnails
+- `false`: nothing
 
-Example of the initialization with the caption option specified:
-{%highlight js%}
-{%endhighlight%}
+#### `fullscreen/navdir` {#full_navdir}
 
+Sliding direction of thumbnails in the fullscreen view.
 
+**Possible values**:
 
+- `vertical`
+- `horizontal`
+
+#### `fullscreen/navigation_carousel` {#full_carousel}
+
+Display navigation thumbnails as carousel in the fullscreen view.
+
+**Type**: Boolean
+
+#### `fullscreen/showcaption` {#full_showcaption}
+
+Enable view of caption in the fullscreen mode. Can be for initialized for specific image. Can work globally.
+
+<p class="q">What is the difference between showcaptions and caption?</p>
+
+**Type**: Boolean
+
+#### `fullscreen/thumbwidth` {#full_thumbwidth}
+
+Width of thumbnails in the fullscreen view.
+
+**Type**: Number, String
+
+#### `fullscreen/thumbheight` {#full_thumbheight}
+
+Height of thumbnails in the fullscreen view.
+
+**Type**: Number, String
+
+#### `fullscreen/transition` {#fullscreen_transition}
+
+Set of options defining the transition properties in the fullscreen view.
+
+##### `fullscreen/transitioneffect` {#fullscreen_transitioneffect}
+
+Sets the transition effect for slides changing in the fullscreen view.
+
+**Possible values**: 
+
+* `slide`
+* `crossfade`
+* `dissolve`
+
+##### `fullscreen/transitionduration` {#fullscreen_transitionduration}
+Sets transition duration in milliseconds in the fullscreen view.
+
+**Type**: Number
+
+##### `fullscreen/transitioncarousel` {#fullscreen_transitioncarousel}
+
+Display navigation thumbnails as carousel in the fullscreen view.
+
+**Type**: Boolean
+
+### `breakpoints` {#breakpoints}
+Set of options that could be dynamically set while page is resizing.
+
+#### `breakpoints/mobile` {#breakpoints_mobile}
+                <var name="conditions">
+                    <var name="max-width">767px</var>
+                </var>
+                <var name="options">
+                    <var name="options">
+                        <var name="navigation">dots</var>
+                    </var>
+                </var>
+
+<p class="q">need help with describing this</p>
 
 
 
 ## Configure gallery options in `view.xml` 
 
-Gallery and magnifier options can be set in the `view.xml` configuration file of a theme. 
+Gallery and magnifier options can be set in the `view.xml` configuration file of a theme. The file is conventionally located in `<theme_dir>/etc`. 
 
 The general gallery options are set as follows:
 
@@ -348,58 +456,24 @@ The general gallery options are set as follows:
 
 {%endhighlight%}
 
-The optui
-If you want to customize the gallery options for your custom theme, add the following in the `view.xml` configuration file in the `<your_custom_theme_dir>/etc` directory:
+The fullscreen and breakpoints options are set in a similar way:
 
 {%highlight xml%}
-<vars module="Magento_Catalog">
 
-        <!-- Gallery and magnifier theme settings. Start -->
-        <var name="gallery">
-            <var name="%option1%">%option1_value%</var> <!-- Gallery navigation style (false/thumbs/dots) -->
-            <var name="%option2%">%option2_value%</var> <!-- Gallery navigation loop (true/false) -->
-            <var name="fullscreen">
-                <var name="%fullscreen_option1%">%fullscreen_option1_value%</var> <!-- Fullscreen navigation style (false/thumbs/dots) -->
-                <var name="loop">true</var> <!-- Fullscreen navigation loop (true/false/null) -->
-                <var name="keyboard">true</var> <!-- Turn on/off keyboard arrows navigation (true/false/null) -->
-                <var name="arrows">false</var> <!-- Turn on/off arrows on the sides preview (true/false/null) -->
-                <var name="caption">false</var> <!-- Display alt text as image title (true/false) -->
-                <var name="navdir">horizontal</var> <!--Sliding direction of thumbnails in full screen(horizontal/vertical)  -->
-                <var name="thumbwidth">150</var> <!-- Width of thumbnails in fullscreen -->
-                <var name="thumbheight">150</var> <!-- Height of thumbnails in fullscreen -->
-                <var name="navigation_carousel">true</var> <!-- Display navigation thumbs as carousel (true/false) -->
-                <var name="transition">
-                    <var name="effect">dissolve</var> <!-- Sets transition effect for slides changing (slide/crossfade/dissolve) -->
-                    <var name="duration">500</var> <!-- Sets transition duration in ms -->
-                    <var name="carousel">true</var> <!-- Display navigation thumbs as carousel (true/false) -->
-                </var>
-            </var>
-        </var>
+<var name="fullscreen">
+            <var name="%fullscreen_option1%">%option1_value%</var> 
+            <var name="%fullscreen_option2%">%option2_value%</var> 
+...
+</var>
+<var name="breakpoints">
+            <var name="%breakpoints_option1%">%option1_value%</var> 
+            <var name="%breakpoints_option2%">%option2_value%</var> 
+...
+</var>
 
-        <var name="magnifier">
-            <var name="fullscreenzoom">5</var>  <!-- Zoom for fullscreen (integer)-->
-            <var name="top"></var> <!-- Top position of magnifier -->
-            <var name="left"></var> <!-- Left position of magnifier -->
-            <var name="width"></var> <!-- Width of magnifier block -->
-            <var name="height"></var> <!-- Height of magnifier block -->
-            <var name="eventType">hover</var> <!-- Action that atcivates zoom (hover/click) -->
-            <var name="enabled">false</var> <!-- Turn on/off magnifier (true/false) -->
-        </var>
-
-        <var name="breakpoints">
-            <var name="mobile">
-                <var name="conditions">
-                    <var name="max-width">767px</var>
-                </var>
-                <var name="options">
-                    <var name="options">
-                        <var name="navigation">dots</var>
-                    </var>
-                </var>
-            </var>
-        </var>
-        <!-- end. Gallery and magnifier theme settings -->
 {%endhighlight%}
+
+For illustration of setting gallery option in view.xml, you can view the [view.xml of the Blank theme]({{site.mage2000url}}app/design/frontend/Magento/blank/etc/view.xml). 
 
 
 ## Gallery API {#gallery_api}
@@ -415,11 +489,11 @@ var api = $('[data-gallery-role="gallery"]').data('gallery');
 
 {% endhighlight %}
 
-This method returns JS object that contains api functions.
+This method returns JS object that contains API functions.
 
 <p class="q">api functions? wording</p>
 
-To ensure that gallery is fully formed, wrap your code with event handler function and add it to the `gallery:loaded` event:
+To ensure that the gallery is fully formed, wrap your code with event handler function and add it to the `gallery:loaded` event:
 
 <p class="q">`gallery:loaded` or `gallery:uploaded`?</p>
 
@@ -435,49 +509,51 @@ To ensure that gallery is fully formed, wrap your code with event handler functi
 Then to call a method use the following notation:
 
 {% highlight php %}
-    api.next();
+    api.%method_name%();
 {% endhighlight php%}
 
-Where `next` is the methods name. All available methods are listed in the following paragraph.
+All available methods are listed in the following paragraph.
 
 ### Methods {#gallery_methods}
-<ul>
-<li><a href="#gallery_next"><code>next</code></a></li>
-<li><a href="#gallery_prev"><code>prev</code></a></li>
-<li><a href="#gallery_last"><code>last</code></a></li>
-<li><a href="#gallery_first"><code>first</code></a></li>
-<li><a href="#gallery_seek"><code>seek</code></a></li>
-<li><a href="#gallery_updateData"><code>updateData</code></a></li>
-<li><a href="#gallery_updateData"><code>updateOptions</code></a></li>
 
-</ul>
+* [next](#gallery_next)
+* [prev](#gallery_prev)
+* [last](#gallery_last)
+* [first](#gallery_first)
+* [seek](#gallery_seek)
+* [updateData](#gallery_updateData)
+* [updateOptions](#gallery_updateData)
 
-<h4 id="gallery_next"><code>next</code></h4>
+#### `next()` {#gallery_next}
 
-Displays next preview image. If <a href="#gallery_loop">loop</a> is enabled in options, displays the first image after the last. If loop is disabled, then the last image does not get changed.
+Image ID is passed as an argument. Displays the next image. If <a href="#gallery_loop">loop</a> is enabled in options, displays the first image after the last. If loop is disabled, then the last image does not get changed.
 
-<h4 id="gallery_prev"><code>prev</code></h4>
+#### `prev()` {#gallery_prev}
     
 Displays previous preview image. If <a href="#gallery_loop">loop</a> is enabled in options, displays the last image after the first. If loop is disabled the first image does not get changed.
 
-<h4 id="gallery_last"><code>last</code></h4>
+#### `last()` {#gallery_last}
     
 Displays the last preview image.
 
-<h4 id="gallery_first"><code>first</code></h4>
+#### `first()` {#gallery_first}
 
 Displays the first preview image.
 
-<h4 id="gallery_seek"><code>seek</code></h4>
+#### `seek()` {#gallery_seek}
 
 Displays the image with the certain ID. The ID is passed as an argument. 
 
-Doesn't update preview if argument isn't correct. seek(0) doesn't update preview. seek(1) shows 1'st image. seek(-1) shows last image. If entered number bigger then items number or less then "-(items number)" gallery shows modulo of "items number / number".  
+Doesn't update preview if the argument is not valid. 
+Behavior:
+* `seek(0)` does not display any preview 
+* `seek(1)` displays the first image. 
+* `seek(-1)` displays the last image. 
+* If the argument is a number bigger than the number of items or less than "-(number of items)" gallery shows modulo of "items number / number".  
 
-<p class="q">are these ids?</p>
 <p class="q">what is modulo of "items number / number"?</p>
 
-<h4 id="gallery_updateData"><code>updateData</code></h4>
+#### `updateData()` {#gallery_updateData}
    
 Add new items to the gallery. 
 
@@ -491,7 +567,7 @@ api.updateData([{
 }]);
 {% endhighlight php %}
 
-<h4 id="gallery_updateOptions"><code>updateOptions</code></h4>
+#### `updateOptions()` {#gallery_updateOptions}
 Updates options of active breakpoint or default gallery options, if there is no active breakpoint.
 
 Example:
