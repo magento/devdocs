@@ -33,7 +33,7 @@ To use a custom implementation of an existing Magento JS component:
 var config = {
   "map": {
     "*": {
-      "<custom_component>": "<default_component>"
+      "<default_component>": "<custom_component>"
     }
   }
 };
