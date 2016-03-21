@@ -10,7 +10,7 @@ A component's **root directory** is the top-level directory for that component w
   * For Admin themes, use `app/design/adminhtml`.
   * For language packages, use `app/i18n`.
 
-* `<Magento install directory>/vendor`: This location is found in a typical **production environment** setup where the [`composer create-project`]({{ site.gdeurl }}install-gde/prereq/integrator_install.html") command was used to get a Magento 2 metapackage (which downloads the CE or EE code), or a [compressed Magento 2 archive]({{ site.gdeurl }}install-gde/prereq/zip_install.html) was extracted in order to install Magento. *We do not recommend developing components using this setup*.
+* `<Magento install directory>/vendor`: This location is found in a typical **production environment** setup where the [`composer create-project`]({{ site.gdeurl }}install-gde/prereq/integrator_install.html) command was used to get a Magento 2 metapackage (which downloads the CE or EE code), or a [compressed Magento 2 archive]({{ site.gdeurl }}install-gde/prereq/zip_install.html) was extracted in order to install Magento. *We do not recommend developing components using this setup*.
 
 ### Required files
 The following files are required for all components:
