@@ -59,30 +59,40 @@ Accordions support arbitrary markup, but the following requirements should be ke
 </ol>
 
 Mark-up examples:
-<pre>
-&lt;div id=&quot;element&quot;&gt;
-    &lt;div data-role=&quot;title&quot;&gt;
-        &lt;div data-role=&quot;trigger&quot;&gt;
-            &lt;span&gt;Title 1&lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div data-role=&quot;content&quot;&gt;Content 1&lt;/div&gt;
-  
-    &lt;div data-role=&quot;title&quot;&gt;
-        &lt;div data-role=&quot;trigger&quot;&gt;
-            &lt;span&gt;Title 2&lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div data-role=&quot;content&quot;&gt;Content 2&lt;/div&gt;
-  
-   &lt;div data-role=&quot;title&quot;&gt;
-        &lt;div data-role=&quot;trigger&quot;&gt;
-            &lt;span&gt;Title 3&lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div data-role=&quot;content&quot;&gt;Content 3&lt;/div&gt;
-&lt;/div&gt;
-</pre>
+
+{%highlight html%}
+<div id="element">
+    <div data-role="collapsible">
+        <div data-role="trigger">
+            <span>Title 1</span>
+        </div>
+    </div>
+    <div data-role="content">Content 1</div>
+
+    <div data-role="collapsible">
+        <div data-role="trigger">
+            <span>Title 2</span>
+        </div>
+    </div>
+    <div data-role="content">Content 2</div>
+
+    <div data-role="collapsible">
+        <div data-role="trigger">
+            <span>Title 3</span>
+        </div>
+    </div>
+    <div data-role="content">Content 3</div>
+</div>
+
+<script>
+    require([
+        'jquery',
+        'tabs'], function ($) {
+        $("#element").accordion();
+    });
+</script>
+
+{%endhighlight%}
 
 
 <h4>Initialize accordion with option</h4>
@@ -90,7 +100,7 @@ You can specify the header, content, trigger as options when you initialize the 
 For example:
 <pre>
 $("#element").accordion({
-    header : "#title-1"
+    header : "#title-1",
     content : "#content-1",
     trigger : "#trigger-1",
     ajaxUrlElement: "a"

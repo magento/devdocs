@@ -26,7 +26,7 @@ Be sure that your system is ready for test run.
 Enter in terminal:
     
     cd <magento2>/dev/tests/functional
-    phpunit
+    vendor/bin/phpunit
 
 This command will run all tests from `<magento2>/dev/tests/functional/tests/app/Magento/`.
 
@@ -35,7 +35,7 @@ This command will run all tests from `<magento2>/dev/tests/functional/tests/app/
 Enter in terminal:
 
     cd <magento2>/dev/tests/functional
-    phpunit --filter <name of test>
+    vendor/bin/phpunit --filter <name of test>
 
 Name of test is the name of PHP file with test.
 
@@ -44,7 +44,7 @@ Example:
 Let's check creating of new category. For this we should run `<magento2>/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Category/CreateCategoryEntityTest.php`. To run this test enter the following script in your terminal:
 
     cd <magento2>/dev/tests/functional
-    phpunit --filter CreateCategoryEntityTest
+    vendor/bin/phpunit --filter CreateCategoryEntityTest
 
 <h2 id="mtf_install_pre">Next Steps</h2>
 

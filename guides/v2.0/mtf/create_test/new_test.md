@@ -3,12 +3,12 @@ layout: default
 group: mtf-guide
 subgroup: 40_Approach
 title: Create a test in the Magento Testing Framework
-menu_title: New functional test
+menu_title: New functional test. Theory
 menu_order: 2
 github_link: mtf/create_test/new_test.md
 ---
 
-<h2>New functional test</h2>
+<h2>New functional test: Theory</h2>
 
 The MTF helps to create a new test, you can extend an out-of-the-box test, or create a completely new test.
 
@@ -19,7 +19,7 @@ The MTF helps to create a new test, you can extend an out-of-the-box test, or cr
 
 ### Extend an out-of-the-box test {#extending-oob-test}
 
-You can extend a test by adding or replacing of any [test entity][]. Test entities for the module are stored in the `<magento2>/dev/tests/functional/tests/app/Magento/<testing_module>` directory.
+You can extend a test by adding or replacing a [test entity][]. Test entities for the module are stored in the `<magento2>/dev/tests/functional/tests/app/Magento/<testing_module>` directory.
 
 #### Usage {#ext-usage}
 
@@ -51,7 +51,9 @@ The test object is represented by a [fixture][].  The fixture defines properties
 There are two types of test data:
 
  - Data for the test, stored in a [data set][].
- - Preconditions, sample data that are stored in a [fixture repository][] and a sample test entity that can be created by a [handler][].
+ - Preconditions:
+    - Sample data that is stored in a [fixture repository][]. In a data set, it is stored as a name of the fixture repository. 
+    - A sample test entity that can be created by a [handler][].
 
 #### Test flow {#test-flow}
 
@@ -59,7 +61,7 @@ A test flow is a set of test steps that you want to perform under the test objec
 
 #### Test assertions {#test-assertions}
 
-A test assertion compares real test flow results with expected ones. Test assertions are represented by [constraints][].
+A test assertion compares the test flow results with the expected ones. Test assertions are represented by [constraints][].
 
 [Learn more in the "Create a new test" topic.]
 

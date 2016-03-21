@@ -28,4 +28,4 @@ redirect_from:
 {% include php-dev/component-versioning.md %}
 
 #### Next
-<a href="{{ site.gdeurl }}extension-dev-guide/prepare/prepare-file-str.html">About component file structure</a>
+<a href="{{ site.gdeurl }}extension-dev-guide/prepare/prepare_file-str.html">About component file structure</a>
