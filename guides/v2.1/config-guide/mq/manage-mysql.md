@@ -5,7 +5,7 @@ subgroup: RabbitMQ
 title: Manage message queues with MySQL
 menu_title: MySQL message queues
 menu_order: 3
-github_link: config-guide/mq/manage-mysql.md
+github_link21: config-guide/mq/manage-mysql.md
 ---
 
 

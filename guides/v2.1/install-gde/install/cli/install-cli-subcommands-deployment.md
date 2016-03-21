@@ -6,7 +6,10 @@ title: Create or update the deployment configuration
 menu_title: Create or update the deployment configuration
 menu_node: 
 menu_order: 9
-github_link: install-gde/install/cli/install-cli-subcommands-deployment.md
+github_link21: install-gde/install/cli/install-cli-subcommands-deployment.md
+redirect_from:
+  -  /guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html
+  -  /guides/v2.0/install-gde/install/install-cli-subcommands-deployment.html
 ---
 
 
@@ -100,7 +103,7 @@ The following table discusses the meanings of installation parameters and values
 	</tr>
 	<tr>
 		<td><p>--key</p></td>
-		<td><p>If you have one, specify a key to encrypt sensitive data in the Magento database. (This includes passwords and personally identifiable customer information.) If you don't have one, Magento generates one for you.</p></td>
+		<td><p>If you have one, specify a key to encrypt <a href="#sens-data">sensitive data</a> in the Magento database. If you don't have one, Magento generates one for you.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<!-- <tr> 
@@ -131,6 +134,8 @@ The following table discusses the meanings of installation parameters and values
 	</tbody>
 </table>
 
+{% include install/sens-data.md %}
+
 If applicable, continue your Magento software installation:
 
 *	<a href="{{ site.gdeurl21 }}install-gde/install/cli/install-cli-install.html">Command line installation</a>
@@ -154,3 +159,6 @@ If applicable, continue your Magento software installation:
 *	<a href="{{ site.gdeurl21 }}install-gde/install/cli/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a>
 *	<a href="{{ site.gdeurl21 }}install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a>
 *	<a href="{{ site.gdeurl21 }}install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a>
+
+<!-- GLOSSARY -->
+

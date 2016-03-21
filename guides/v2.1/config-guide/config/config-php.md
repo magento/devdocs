@@ -5,7 +5,7 @@ subgroup: Magento configuration files
 title: Magento's deployment configuration
 menu_title: Magento's deployment configuration
 menu_order: 1
-github_link: config-guide/config/config-php.md
+github_link21: config-guide/config/config-php.md
 ---
 
 

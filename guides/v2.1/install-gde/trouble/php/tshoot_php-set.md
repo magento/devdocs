@@ -6,7 +6,7 @@ title: PHP settings errors
 menu_title: PHP settings errors
 menu_node:
 menu_order: 1
-github_link: install-gde/trouble/php/tshoot_php-set.md
+github_link21: install-gde/trouble/php/tshoot_php-set.md
 ---
 
 <h2 id="trouble-php-set">PHP settings errors</h2>
@@ -53,7 +53,7 @@ Error text is typically:
     Parse error: syntax error, unexpected 'data' (T_STRING)
 
 #### Solution: Set <code>asp_tags = off</code> in <code>php.ini</code>
-Multiple templates have syntax for support abstract level on templates (use different templates engines like Twig) wrapped in `<% %>` tags, like this <a href="{{ site.mage2100url }}app/code/Magento/Catalog/view/adminhtml/templates/product/edit/base_image.phtml" target="_blank">template</a> for displaying a product image:
+Multiple templates have syntax for support abstract level on templates (use different templates engines like Twig) wrapped in `<% %>` tags, like this <a href="{{ site.mage2000url }}app/code/Magento/Catalog/view/adminhtml/templates/product/edit/base_image.phtml" target="_blank">template</a> for displaying a product image:
 
 {% highlight PHP %} 
 <?php

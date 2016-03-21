@@ -6,7 +6,7 @@ title: Troubleshooting 503 (Backend Fetch Failed) errors
 menu_title: Troubleshooting 503 (Backend Fetch Failed) errors
 menu_order: 500
 menu_node: 
-github_link: config-guide/varnish/tshoot-varnish-503.md
+github_link21: config-guide/varnish/tshoot-varnish-503.md
 ---
 
 ## Troubleshooting 503 (Backend Fetch Failed) errors {#varnish-503}

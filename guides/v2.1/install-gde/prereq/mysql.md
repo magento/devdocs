@@ -5,8 +5,13 @@ subgroup: Prerequisites
 title: MySQL
 menu_title: MySQL
 menu_order: 10
-github_link: install-gde/prereq/mysql.md
+github_link21: install-gde/prereq/mysql.md
+redirect_from: /guides/v1.0/install-gde/prereq/mysql.html
 ---
+
+<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
+<!-- Referring file: README.md owned by core -->
+
 
 #### Contents
 

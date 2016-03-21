@@ -6,7 +6,7 @@ title: Segmentation fault during rollback
 menu_title: Segmentation fault during rollback
 menu_node: 
 menu_order: 100
-github_link: install-gde/trouble/tshoot_segfault.md
+github_link21: install-gde/trouble/tshoot_segfault.md
 ---
 
 <h2 id="install-trouble-segfault">Segmentation fault during rollback</h2>

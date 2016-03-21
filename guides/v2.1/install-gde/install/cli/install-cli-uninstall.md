@@ -6,7 +6,7 @@ title: Uninstall or reinstall Magento
 menu_title: Uninstall or reinstall Magento
 menu_node: 
 menu_order: 5
-github_link: install-gde/install/cli/install-cli-uninstall.md
+github_link21: install-gde/install/cli/install-cli-uninstall.md
 ---
 
   

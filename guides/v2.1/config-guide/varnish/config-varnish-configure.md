@@ -6,7 +6,7 @@ title: Configure Varnish and your web server
 menu_title: Configure Varnish and your web server
 menu_order: 10
 menu_node: 
-github_link: config-guide/varnish/config-varnish-configure.md
+github_link21: config-guide/varnish/config-varnish-configure.md
 ---
 
 <h2 id="config-varnish-config-var">Configure Varnish and your web server</h2>

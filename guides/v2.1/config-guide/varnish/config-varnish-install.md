@@ -6,7 +6,7 @@ title: Install Varnish
 menu_title: Install Varnish
 menu_order: 5
 menu_node: 
-github_link: config-guide/varnish/config-varnish-install.md
+github_link21: config-guide/varnish/config-varnish-install.md
 ---
 
 <h2 id="config-varnish-install">Install Varnish</h2>

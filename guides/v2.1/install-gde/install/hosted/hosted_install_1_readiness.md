@@ -6,7 +6,7 @@ title: Step 1. Readiness check
 menu_title: Step 1. Readiness check
 menu_order: 3
 menu_node: 
-github_link: install-gde/install/hosted/hosted_install_1_readiness.md
+github_link21: install-gde/install/hosted/hosted_install_1_readiness.md
 ---
 
 {% include install/web/install-web_1-readiness.md %}

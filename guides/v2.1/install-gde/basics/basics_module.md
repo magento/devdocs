@@ -6,7 +6,7 @@ title: What's the difference between a module and a component?
 menu_title: What's the difference between a module and a component?
 menu_node: 
 menu_order: 51
-github_link: install-gde/basics/basics_module.md
+github_link21: install-gde/basics/basics_module.md
 ---
  
 ## What's the difference between a module and a component?

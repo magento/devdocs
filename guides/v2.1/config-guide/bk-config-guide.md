@@ -6,7 +6,8 @@ title: Configuration Guide
 menu_title: Introduction
 menu_order: 1
 menu_node: parent
-github_link: config-guide/bk-config-guide.md
+github_link21: config-guide/bk-config-guide.md
+redirect_from: /guides/v1.0/config-guide/bk-config-guide.html
 ---
 
 <h2 id="configuration">Configure the Magento application</h2>
@@ -28,7 +29,6 @@ You can configure the Magento application in any of the following ways:
 
 *	<img src="{{ site.baseurl }}common/images/ee-only_small.png">
 
-	*	<a href="{{ site.gdeurl21 }}config-guide/elasticsearch/es-overview.html">Install and configure Elasticsearch</a>
 	*	<a href="{{ site.gdeurl21 }}config-guide/solr/solr-overview.html">Install and configure Solr</a>
 	*	<a href="{{ site.gdeurl21 }}config-guide/multi-master/multi-master.html">Split databases</a>
 	*	<a href="{{ site.gdeurl21 }}config-guide/mq/rabbitmq-overview.html">Message queues</a>
