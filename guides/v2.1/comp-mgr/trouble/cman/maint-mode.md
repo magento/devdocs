@@ -95,7 +95,7 @@ This section discusses how to create a custom maintenance page and how to redire
 
 The example in this section shows how to modify the following files, which is one way to set up your maintenance page:
 
-To create a maintenance page and redirect to it, first create a maintenance page named `<your Magento install dir>/pub/maintenance.html` with the following contents:
+To create a maintenance page and redirect to it, first create a maintenance page named `<your Magento install dir>/maintenance.html` with the following contents:
 
 {% highlight html %}
 <!DOCTYPE html>
@@ -121,19 +121,19 @@ body
 
 Then use the following steps:
 
-2.	Add the following to your nginx configuration file (for example, `/etc/nginx/conf.d/nginx.conf`).
+1.	Make a backup copy of your nginx configuration file (for example, `/etc/nginx/conf.d/nginx.conf`):
 
-	The following whitelists IP address 192.0.2.110 and 192.0.2.115 on a system where Magento is installed in `/var/www/html/magento2`.
+		cp /etc/nginx/conf.d/nginx.conf /etc/nginx/conf.d/nginx.conf.bak
+
+2.	Open your nginx configuration file in a text editor.
+
+	The following whitelists IP address 192.0.2.110 and 192.0.2.115 on a system where Magento is installed in `/var/www/html/magento2` in the `server` block:
 
 		set $MAGE_ROOT /var/www/html/magento2;
 		set $maintenance on;
 
 		if ($remote_addr ~ (192.0.2.110|192.0.2.115)) {
 		  set $maintenance off;
-		}
-
-		if (! -f $MAGE_ROOT/maintenance.flag) {
-	  	set $maintenance off;
 		}
 
 		if ($maintenance = on) {
