@@ -2,11 +2,16 @@
 layout: default
 group: jsdg
 subgroup: Widgets
-title: Gallery widget Magnifier
-menu_order: 7
-menu_title: Gallery widget Magnifier
+title: Magnifier widget 
+menu_order: 8
+menu_title: Magnifier widget 
 github_link: javascript-dev-guide/widgets/widget_gallery_mg.md
 ---
+
+<h2>Overview</h2>
+
+Magnifier is a widget which allows displaying images in 100% scaled size in separate dedicated layer.
+In Magento it is used by the [gallery]({{site.gdeurl}}) widget for zooming the product images on product pages.
 
 **Contents**
 * TOC
