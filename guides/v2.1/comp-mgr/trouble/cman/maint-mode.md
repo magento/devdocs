@@ -34,43 +34,43 @@ The example in this section shows how to modify the following files, which is on
 
 To create a maintenance page and redirect to it:
 
-1.	Create a maintenance page named `maintenance.html` in your web server's docroot with the following contents.
+First, create a maintenance page named `maintenance.html` in your web server's docroot with the following contents:
 
-	A sample follows:
+{% highlight html %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Temporarily Offline</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+h1
+{ font-size: 50px; }
 
-	{% highlight html %}
-	<!DOCTYPE html>
-	<html>
-	<head>
-	<title>Temporarily Offline</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<style>
-	h1
-	{ font-size: 50px; }
+body
+{ text-align:center; font: 20px Helvetica, sans-serif; color: #333; }
 
-	body
-	{ text-align:center; font: 20px Helvetica, sans-serif; color: #333; }
+</style>
+</head>
+<body>
+<h1>Temporarily offline</h1>
+<p>We're down for a short time to perform maintenance on our site to give you the best possible experience. Check back soon!</p>
+</body>
+</html>
+{% endhighlight %}
 
-	</style>
-	</head>
-	<body>
-	<h1>Temporarily offline</h1>
-	<p>We're down for a short time to perform maintenance on our site to give you the best possible experience. Check back soon!</p>
-	</body>
-	</html>
-	{% endhighlight %}
+Then use the following steps:
 
 2.	Update your Apache configuration to do the following:
 
 	*	Redirect all traffic to the maintenance page
 	*	Whitelist certain IPs so an administrator can run the System Upgrade utility to upgrade the Magento software.
 
-		The following example whitelists 192.0.2.110.
+	The following example whitelists 192.0.2.110.
 
 	Add the following at the end of your Apache configuration file:
 
 		RewriteEngine On
-		RewriteCond %{REMOTE_ADDR} !^127\.0\.0\.1
+		RewriteCond %{REMOTE_ADDR} !^192\.0\.2\.110
 		RewriteCond %{DOCUMENT_ROOT}/maintenance.html -f
 		RewriteCond %{DOCUMENT_ROOT}/maintenance.enable -f
 		RewriteCond %{SCRIPT_FILENAME} !maintenance.html
@@ -95,63 +95,70 @@ This section discusses how to create a custom maintenance page and how to redire
 
 The example in this section shows how to modify the following files, which is one way to set up your maintenance page:
 
-To create a maintenance page and redirect to it:
+To create a maintenance page and redirect to it, first create a maintenance page named `<your Magento install dir>/pub/maintenance.html` with the following contents:
 
-1.	Create a maintenance page named `maintenance.html` in your web server's docroot with the following contents.
+{% highlight html %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Temporarily Offline</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+h1
+{ font-size: 50px; }
 
-	A sample follows:
+body
+{ text-align:center; font: 20px Helvetica, sans-serif; color: #333; }
 
-	{% highlight html %}
-	<!DOCTYPE html>
-	<html>
-	<head>
-	<title>Temporarily Offline</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<style>
-	h1
-	{ font-size: 50px; }
+</style>
+</head>
+<body>
+<h1>Temporarily offline</h1>
+<p>We're down for a short time to perform maintenance on our site to give you the best possible experience. Check back soon!</p>
+</body>
+</html>
+{% endhighlight %}
 
-	body
-	{ text-align:center; font: 20px Helvetica, sans-serif; color: #333; }
+Then use the following steps:
 
-	</style>
-	</head>
-	<body>
-	<h1>Temporarily offline</h1>
-	<p>We're down for a short time to perform maintenance on our site to give you the best possible experience. Check back soon!</p>
-	</body>
-	</html>
-	{% endhighlight %}
+2.	Add the following to your nginx configuration file (for example, `/etc/nginx/conf.d/nginx.conf`).
 
-2.	Include the following at the beginning of your `<your Magento install dir>/nginx.conf`.
+	The following whitelists IP address 192.0.2.110 and 192.0.2.115 on a system where Magento is installed in `/var/www/html/magento2`.
 
-	The following whitelists IP address 192.0.2.110 on a system where the nginx docroot is `/var/www/html`.
+		set $MAGE_ROOT /var/www/html/magento2;
+		set $maintenance on;
 
-	{% highlight xml %}
-	location / {
+		if ($remote_addr ~ (192.0.2.110|192.0.2.115)) {
+		  set $maintenance off;
+		}
 
-	    allow 192.0.2.110; deny all;
+		if (! -f $MAGE_ROOT/maintenance.flag) {
+	  	set $maintenance off;
+		}
 
-	if (-f $document_root/maintenance.html)
-	{ return 503; }
+		if ($maintenance = on) {
+		   return 503;
+		}
 
-	}
+		location /maintenance {
+		}
 
- 	   Error pages.
- 	   error_page 503 /maintenance.html;
-	    location = /maintenance.html { root /var/www/html; }
-	{% endhighlight %}
+		error_page 503 @maintenance;
 
-    The line below will let you access the web server. Comment this line and reload the
-    the config once you are ready to lift the maintenance mode.
+		location @maintenance {
+		  root $MAGE_ROOT;
+		  rewrite ^(.*)$ /maintenance.html break;
+		}
+4.	Add the following line at the end of the nginx configuration:
 
-3. Enter the following command to reload the nginx configuration:
+		include /var/www/html/magento2/nginx.conf;
+
+3. Reload the nginx configuration:
 
 		service nginx reload
-
 5.	[Upgrade your system]({{ site.gdeurl21 }}comp-mgr/upgrader/upgrade-start.html).
 7.	Test your site to make sure it functions correctly.
-6.	Remove the lines you added to `<your Magento install dir>/nginx.conf`.
+6.	Remove the lines you added to your nginx configuration.
 5.	Reload the nginx configuration:
 
 		service nginx reload
