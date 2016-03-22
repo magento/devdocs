@@ -2,14 +2,14 @@
 layout: default
 group: compman
 subgroup: ZZ_Troubleshooting
-title: Maintenace mode options for upgrade
-menu_title: Maintenace mode options for upgrade
+title: Maintenance mode options for upgrade
+menu_title: Maintenance mode options for upgrade
 menu_node: 
 menu_order: 200
 github_link: comp-mgr/trouble/cman/maint-mode.md
 ---
 
-## Maintenace mode options for upgrade
+## Maintenance mode options for upgrade
 This topic discusses how you can create a custom maintenance page to display to users while your Magento application is being upgraded. Creating a custom page is optional but recommended because your site is accessible during part of the upgrade.
 
 Creating a custom page to which to redirect users prevents any access to the site and also informs your users that the site is undergoing maintenance.
