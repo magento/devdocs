@@ -6,7 +6,7 @@ title: How do I log in to my Magento server using a terminal, command prompt, or
 menu_title: How do I log in to my Magento server using a terminal, command prompt, or SSH?
 menu_node: 
 menu_order: 3
-github_link: install-gde/basics/basics_login.md
+github_link21: install-gde/basics/basics_login.md
 ---
 
  

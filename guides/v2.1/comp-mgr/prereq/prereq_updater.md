@@ -6,7 +6,7 @@ title: Set up the updater (contributing developers only)
 menu_title: Set up the updater (contributing developers only)
 menu_order: 3
 menu_node: 
-github_link: comp-mgr/prereq/prereq_updater.md
+github_link21: comp-mgr/prereq/prereq_updater.md
 ---
 
 *Contributing developers only* must set up the Magento updater application.

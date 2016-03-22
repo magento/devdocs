@@ -6,7 +6,7 @@ title: Step 2. Back up the file system and database
 menu_title: Step 2. Back up the file system and database
 menu_node: 
 menu_order: 7
-github_link: comp-mgr/compman-backup.md
+github_link21: comp-mgr/compman-backup.md
 ---
 
 After you pass all readiness checks, you can back up:

@@ -6,7 +6,7 @@ title: Error 'MySQL server has gone away' during installation
 menu_title: Error 'MySQL server has gone away' during installation
 menu_node: 
 menu_order: 25 
-github_link: install-gde/trouble/tshoot_mysql_table-open-cache.md
+github_link21: install-gde/trouble/tshoot_mysql_table-open-cache.md
 ---
 
 <h2 id="install-trouble-mysql-gone-away">'MySQL server has gone away' during installation</h2>

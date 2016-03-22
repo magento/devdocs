@@ -6,7 +6,7 @@ title: Download fails because of changes in Composer
 menu_title: Download fails because of changes in Composer
 menu_node: 
 menu_order: 300
-github_link: install-gde/trouble/tshoot_composer-fail.md
+github_link21: install-gde/trouble/tshoot_composer-fail.md
 ---
 
 <h2 id="install-trouble-composer">Download fails because of changes in Composer</h2>

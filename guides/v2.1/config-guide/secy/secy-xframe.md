@@ -6,7 +6,7 @@ title: X-Frame-Options header
 menu_title: X-Frame-Options header
 menu_order: 5
 menu_node: 
-github_link: config-guide/secy/secy-xframe.md
+github_link21: config-guide/secy/secy-xframe.md
 ---
 
 ## Overview

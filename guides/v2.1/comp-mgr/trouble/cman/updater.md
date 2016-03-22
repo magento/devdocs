@@ -6,7 +6,7 @@ title: Troubleshoot the updater application
 menu_title: Troubleshoot the updater application
 menu_node: 
 menu_order: 10
-github_link: comp-mgr/trouble/cman/updater.md
+github_link21: comp-mgr/trouble/cman/updater.md
 ---
 
 <h2 id="trouble-updater">Troubleshoot the updater application</h2>

@@ -6,7 +6,7 @@ title: Troubleshoot cron
 menu_title: Troubleshoot cron
 menu_node: 
 menu_order: 7
-github_link: comp-mgr/trouble/cman/cron.md
+github_link21: comp-mgr/trouble/cman/cron.md
 ---
 
 <h2 id="trouble-cron">Troubleshoot cron</h2>

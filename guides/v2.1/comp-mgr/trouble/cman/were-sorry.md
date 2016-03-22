@@ -6,7 +6,7 @@ title: "We're sorry, we can't take that action right now"
 menu_title: "We're sorry, we can't take that action right now"
 menu_node: 
 menu_order: 2
-github_link: comp-mgr/trouble/cman/were-sorry.md
+github_link21: comp-mgr/trouble/cman/were-sorry.md
 ---
 
 <h2 id="trouble-update-were-sorry">"We're sorry, we can't take that action right now"</h2>
@@ -69,4 +69,8 @@ Modify Magento's `composer.json` to reference the `https://repo.magento.com` rep
 ### You cloned the Magento GitHub repository {#git-clone}
 If you installed the Magento software by cloning the Magento repository, you cannot use the System Upgrade utility to upgrade it.
 
+<<<<<<< HEAD
 Instead, see one of the options discussed in <a href="{{ site.gdeurl }}install-gde/install/cli/dev_options.html">Contributing developers&mdash;update, reinstall Magento</a>.
+=======
+Instead, see one of the options discussed in <a href="{{ site.gdeurl21 }}install-gde/install/cli/dev_options.html">Contributing developers&mdash;update, reinstall Magento</a>.
+>>>>>>> 7203b47f89f2fa3c769f4faff4f504b0af488ee4

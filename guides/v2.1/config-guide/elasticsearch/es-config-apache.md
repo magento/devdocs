@@ -6,7 +6,7 @@ title: Configure Apache and Elasticsearch
 menu_title: Configure Apache and Elasticsearch
 menu_order: 7
 menu_node: 
-github_link: config-guide/elasticsearch/es-config-apache.md
+github_link21: config-guide/elasticsearch/es-config-apache.md
 ---
 
 <img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only">

@@ -6,7 +6,7 @@ title: Missing .gitignore files
 menu_title: Missing .gitignore files
 menu_node: 
 menu_order: 5
-github_link: comp-mgr/trouble/cman/gitignore.md
+github_link21: comp-mgr/trouble/cman/gitignore.md
 ---
 
 ### Problem: missing `.gitignore` files {#missing-ignore}

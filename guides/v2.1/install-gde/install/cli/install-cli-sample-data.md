@@ -6,7 +6,7 @@ title: Install optional sample data modules
 menu_title: Install optional sample data modules
 menu_node: parent
 menu_order: 1
-github_link: install-gde/install/cli/install-cli-sample-data.md
+github_link21: install-gde/install/cli/install-cli-sample-data.md
 ---
 
 {% include install/sampledata/sample-data-intro.md %}

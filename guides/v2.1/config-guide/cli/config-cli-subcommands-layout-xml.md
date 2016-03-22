@@ -6,7 +6,8 @@ title: Convert layout XML files
 menu_title: Convert layout XML files
 menu_node: 
 menu_order: 700
-github_link: config-guide/cli/config-cli-subcommands-layout-xml.md
+github_link21: config-guide/cli/config-cli-subcommands-layout-xml.md
+redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-layout-xml.html
 ---
 
 

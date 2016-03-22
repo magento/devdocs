@@ -6,7 +6,7 @@ title: Configure nginx and Elasticsearch
 menu_title: Configure nginx and Elasticsearch
 menu_order: 5
 menu_node: 
-github_link: config-guide/elasticsearch/es-config-nginx.md
+github_link21: config-guide/elasticsearch/es-config-nginx.md
 ---
 
 <img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only">

@@ -44,7 +44,7 @@ One of the following displays:
 	</tr>
 	<tr>
 		<td><img src="{{ site.baseurl }}common/images/elastic_test-success.png"></td>
-		<td>Magento successfully connected to the Elasticsearch server. Continue with <a href="{{ site.gdeurl }}config-guide/elasticsearch/es-config-web-server.html">Secure communications between your web server and Elasticsearch</a>.</td>
+		<td>Magento successfully connected to the Elasticsearch server. Continue with <a href="{{ site.gdeurl21 }}config-guide/elasticsearch/es-config-web-server.html">Secure communications between your web server and Elasticsearch</a>.</td>
 	</tr>
 	<tr>
 		<td><img src="{{ site.baseurl }}common/images/elastic_test-fail.png"></td>

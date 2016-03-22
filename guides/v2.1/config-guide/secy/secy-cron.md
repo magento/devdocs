@@ -6,7 +6,7 @@ title: Secure cron.php to run in a browser
 menu_title: Secure cron.php to run in a browser
 menu_order: 2
 menu_node: 
-github_link: config-guide/secy/secy-cron.md
+github_link21: config-guide/secy/secy-cron.md
 ---
 
 #### Contents
@@ -47,10 +47,35 @@ The instructions that follow are based on Apache 2.2 with CentOS 6:
 *	<a href="#config-cron-secure-apache-verify">Step 4: Verify cron is secure</a>
 
 <h3 id="config-cron-secure-apache-pwd">Step 1: Create a password file</h3>
-{% include config/secure-ws-apache_step1.md %}
+For security reasons, you can locate the password file anywhere except your web server docroot. In this example, we show how to store the password file in a new directory.
+
+Enter the following commands as a user with `root` privileges:
+
+	mkdir -p /usr/local/apache/password
+	htpasswd -c /usr/local/apache/password/passwords <username>
+
+where `<username>` can be the web server user or another user. In this example, we use the web server user but the choice of user is up to you.
+
+Follow the prompts on your screen to create a password for the user.
+
+To add another user to your password file, enter the following command as a user with `root` privileges:
+
+	htpasswd /usr/local/apache/password/passwords <username>
 
 <h3 id="config-cron-secure-apache-group">Step 2: Optionally add users to create an authorized cron group</h3>
-{% include config/secure-ws-apache_step2.md %}
+You can optionally enable more than one user to run cron by adding these users to your password file and to a group file you'll configure in the next section.
+
+To add another user to your password file, enter the following command as a user with `root` privileges:
+
+	htpasswd /usr/local/apache/password/passwords <username>
+
+To create an authorized group, create a group file anywhere outside the web server docroot. The group file specifies the name of the group and the users in the group. In this example, the group name is `MagentoCronGroup`.
+
+	vim /usr/local/apache/password/group
+
+Contents of the file:
+
+	MagentoCronGroup: <username1> ... <usernameN>
 
 <h3 id="config-cron-secure-apache-htaccess">Step 3: Secure cron in <code>.htaccess</code></h3>
 To add security for cron in Magento's `.htaccess`:
@@ -78,12 +103,6 @@ To add security for cron in Magento's `.htaccess`:
     		Require group <name>
 		</Files>
 4.	Save your changes to `.htaccess` and exit the text editor.
-5.	Restart Apache:
-
-	CentOS: `service httpd restart`
-
-	Ubuntu: `service apache2 restart`
-
 6.	Continue with <a href="#config-cron-secure-apache-verify">Verify cron is secure</a>.
 
 <h2 id="config-cron-secure-nginx">Secure cron with nginx</h2>
