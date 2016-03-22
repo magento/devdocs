@@ -6,7 +6,7 @@ title: Run System Upgrade
 menu_title: Run System Upgrade
 menu_node: parent
 menu_order: 1
-github_link: comp-mgr/upgrader/upgrade-start.md
+github_link21: comp-mgr/upgrader/upgrade-start.md
 ---
 
 <h2 id="compman-overview">Overview of System Upgrade</h2>
@@ -17,7 +17,8 @@ This section discusses how to start System Upgrade, which upgrades the version o
 </div>
 
 <div class="bs-callout bs-callout-warning">
-    <p>If you installed the Magento application by <a href="{{ site.gdeurl21 }}install-gde/prereq/dev_install.html">cloning the GitHub repository</a>, you <em>cannot</em> use the System Upgrade utility to upgrade the software. Instead, you must <a href="{{ site.gdeurl21 }}install-gde/install/cli/dev_options.html">update it manually</a>.</p>
+    <ul><li>Authorization keys from a <a href="http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html" target="_blank">shared account</a> <em>cannot</em> be used for upgrade. You must get your authorization keys from <code>magento.com</code> account owner.</li>
+    	<li>If you installed the Magento application by <a href="{{ site.gdeurl21 }}install-gde/prereq/dev_install.html">cloning the GitHub repository</a>, you <em>cannot</em> use the System Upgrade utility to upgrade the software. Instead, you must <a href="{{ site.gdeurl21 }}install-gde/install/cli/dev_options.html">update it manually</a>.</li></ul>
 </div>
 
 <h2 id="compman-prereq">Prerequisites</h2>

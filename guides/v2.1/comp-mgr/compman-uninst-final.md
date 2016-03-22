@@ -6,7 +6,7 @@ title: Step 4. Uninstall
 menu_title: Step 4. Uninstall
 menu_node: 
 menu_order: 10
-github_link: comp-mgr/compman-uninst-final.md
+github_link21: comp-mgr/compman-uninst-final.md
 ---
 
 ## Finish the uninstallation

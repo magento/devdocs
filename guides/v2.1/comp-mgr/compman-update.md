@@ -6,7 +6,7 @@ title: Step 3. Component Update
 menu_title: Step 3. Component Update
 menu_node: 
 menu_order: 10
-github_link: comp-mgr/compman-update.md
+github_link21: comp-mgr/compman-update.md
 ---
 
 ## Update your components

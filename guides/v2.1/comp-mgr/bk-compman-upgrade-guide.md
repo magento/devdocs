@@ -6,7 +6,7 @@ title: Upgrade the Magento application and components
 menu_title: Upgrade the Magento application and components
 menu_node: parent
 menu_order: 1
-github_link: comp-mgr/bk-compman-upgrade-guide.md
+github_link21: comp-mgr/bk-compman-upgrade-guide.md
 ---
 
 <h2>Upgrade the Magento application and components</h2>   
@@ -29,6 +29,11 @@ The way you upgrade (that is, patch) the Magento software depends on how you ins
 
 <div class="bs-callout bs-callout-info" id="info">
 	<p><em>System upgrade</em> refers to updating the Magento 2.x core components and other installed components. To migrate from Magento 1.x to Magento 2, see the <a href="{{ site.gdeurl21 }}migration/bk-migration-guide.html">Migration Guide</a>.</p>
+</div>
+
+<div class="bs-callout bs-callout-warning">
+    <p>Authorization keys from a <a href="http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html" target="_blank">shared account</a> <em>cannot</em> be used to update or upgrade the Magento software. You must get your authorization keys from <code>magento.com</code> account owner.</p>
+   
 </div>
 
 <h2>Update components</h2>

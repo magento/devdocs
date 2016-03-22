@@ -6,7 +6,7 @@ title: Resolve component dependencies
 menu_title: Resolve component dependencies
 menu_node: 
 menu_order: 150
-github_link: comp-mgr/trouble/cman/component-depend.md
+github_link21: comp-mgr/trouble/cman/component-depend.md
 ---
 
 <h2 id="trouble-depend">Resolve component dependency conflicts</h2>
