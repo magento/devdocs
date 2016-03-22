@@ -19,9 +19,9 @@ In their Orange theme, OrangeCo wants to transform the header links block to a d
 <img src="{{ site.baseurl }}common/images/layout_transform.png">
 </div>
 
-To do this, they need to wrap the list of header links with a container and add a greeting with a drop-down arrow before the list.
+To do this, they need to wrap the list of header links with a container and add a greeting with a drop-down arrow before the list. 
 
-By default the rendered header links look like following:
+The Orange theme [inherits]({{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html) from Blank, so by default the rendered header links in Orange look like following:
 
 <div style="border: 1px solid #ABABAB">
 <img src="{{ site.baseurl }}common/images/layout_code_before1.png">
@@ -68,19 +68,42 @@ defines the template which is used for rearranging the links:
 `<Magento_Customer_module_dir>/view/frontend/templates/account/customer.phtml`
 
 {%highlight php%}
-<?php if($this->customerLoggedIn()): ?>
-    <li class="customer welcome customer-welcome">
-        <span class="customer name" data-mage-init='{"dropdown":{}}' data-toggle="dropdown">
-            <span><?php echo $this->getCustomerName(); ?></span>
-            <button type="button" class="action switch"><span><?php echo __('Change')?></span></button>
+<?php if($block->customerLoggedIn()): ?>
+    <li class="customer-welcome">
+        <span class="customer-name"
+              role="link"
+              tabindex="0"
+              data-mage-init='{"dropdown":{}}'
+              data-toggle="dropdown"
+              data-trigger-keypress-button="true"
+              data-bind="scope: 'customer'">
+            <span data-bind="text: customer().fullname"></span>
+            <button type="button"
+                    class="action switch"
+                    tabindex="-1"
+                    data-action="customer-menu-toggle">
+                <span><?php /* @escapeNotVerified */ echo __('Change')?></span>
+            </button>
         </span>
-        <?php if($this->getChildHtml()):?>
-        <div class="customer menu customer-menu" data-target="dropdown">
-            <?php echo $this->getChildHtml();?>
+        <script type="text/x-magento-init">
+        {
+            "*": {
+                "Magento_Ui/js/core/app": {
+                    "components": {
+                        "customer": {
+                            "component": "Magento_Customer/js/view/customer"
+                        }
+                    }
+                }
+            }
+        }
+        </script>
+        <?php if($block->getChildHtml()):?>
+        <div class="customer-menu" data-target="dropdown">
+            <?php echo $block->getChildHtml();?>
         </div>
         <?php endif; ?>
     </li>
-<?php endif; ?>
 {%endhighlight php%}
 
 <br>
