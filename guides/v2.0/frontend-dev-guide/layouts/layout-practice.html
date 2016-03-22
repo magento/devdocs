@@ -800,9 +800,9 @@
 <img src="/common/images/layout_transform.png" />
 </div>
 
-<p>To do this, they need to wrap the list of header links with a container and add a greeting with a drop-down arrow before the list.</p>
+<p>To do this, they need to wrap the list of header links with a container and add a greeting with a drop-down arrow before the list. </p>
 
-<p>By default the rendered header links look like following:</p>
+<p>The Orange theme <a href="/guides/v2.0/frontend-dev-guide/themes/theme-inherit.html">inherits</a> from Blank, so by default the rendered header links in Orange look like following:</p>
 
 <div style="border: 1px solid #ABABAB">
 <img src="/common/images/layout_code_before1.png" />
@@ -845,19 +845,42 @@ defines the template which is used for rearranging the links:</p>
 
 <p><code>&lt;Magento_Customer_module_dir&gt;/view/frontend/templates/account/customer.phtml</code></p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="k">if</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">customerLoggedIn</span><span class="p">())</span><span class="o">:</span> <span class="cp">?&gt;</span><span class="x"></span>
-<span class="x">    &lt;li class=&quot;customer welcome customer-welcome&quot;&gt;</span>
-<span class="x">        &lt;span class=&quot;customer name&quot; data-mage-init=&#39;{&quot;dropdown&quot;:{}}&#39; data-toggle=&quot;dropdown&quot;&gt;</span>
-<span class="x">            &lt;span&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCustomerName</span><span class="p">();</span> <span class="cp">?&gt;</span><span class="x">&lt;/span&gt;</span>
-<span class="x">            &lt;button type=&quot;button&quot; class=&quot;action switch&quot;&gt;&lt;span&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Change&#39;</span><span class="p">)</span><span class="cp">?&gt;</span><span class="x">&lt;/span&gt;&lt;/button&gt;</span>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="k">if</span><span class="p">(</span><span class="nv">$block</span><span class="o">-&gt;</span><span class="na">customerLoggedIn</span><span class="p">())</span><span class="o">:</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">    &lt;li class=&quot;customer-welcome&quot;&gt;</span>
+<span class="x">        &lt;span class=&quot;customer-name&quot;</span>
+<span class="x">              role=&quot;link&quot;</span>
+<span class="x">              tabindex=&quot;0&quot;</span>
+<span class="x">              data-mage-init=&#39;{&quot;dropdown&quot;:{}}&#39;</span>
+<span class="x">              data-toggle=&quot;dropdown&quot;</span>
+<span class="x">              data-trigger-keypress-button=&quot;true&quot;</span>
+<span class="x">              data-bind=&quot;scope: &#39;customer&#39;&quot;&gt;</span>
+<span class="x">            &lt;span data-bind=&quot;text: customer().fullname&quot;&gt;&lt;/span&gt;</span>
+<span class="x">            &lt;button type=&quot;button&quot;</span>
+<span class="x">                    class=&quot;action switch&quot;</span>
+<span class="x">                    tabindex=&quot;-1&quot;</span>
+<span class="x">                    data-action=&quot;customer-menu-toggle&quot;&gt;</span>
+<span class="x">                &lt;span&gt;</span><span class="cp">&lt;?php</span> <span class="cm">/* @escapeNotVerified */</span> <span class="k">echo</span> <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Change&#39;</span><span class="p">)</span><span class="cp">?&gt;</span><span class="x">&lt;/span&gt;</span>
+<span class="x">            &lt;/button&gt;</span>
 <span class="x">        &lt;/span&gt;</span>
-<span class="x">        </span><span class="cp">&lt;?php</span> <span class="k">if</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getChildHtml</span><span class="p">())</span><span class="o">:?&gt;</span>
-        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&quot;customer menu customer-menu&quot;</span> <span class="nx">data</span><span class="o">-</span><span class="nx">target</span><span class="o">=</span><span class="s2">&quot;dropdown&quot;</span><span class="o">&gt;</span>
-            <span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getChildHtml</span><span class="p">();</span><span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">        &lt;script type=&quot;text/x-magento-init&quot;&gt;</span>
+<span class="x">        {</span>
+<span class="x">            &quot;*&quot;: {</span>
+<span class="x">                &quot;Magento_Ui/js/core/app&quot;: {</span>
+<span class="x">                    &quot;components&quot;: {</span>
+<span class="x">                        &quot;customer&quot;: {</span>
+<span class="x">                            &quot;component&quot;: &quot;Magento_Customer/js/view/customer&quot;</span>
+<span class="x">                        }</span>
+<span class="x">                    }</span>
+<span class="x">                }</span>
+<span class="x">            }</span>
+<span class="x">        }</span>
+<span class="x">        &lt;/script&gt;</span>
+<span class="x">        </span><span class="cp">&lt;?php</span> <span class="k">if</span><span class="p">(</span><span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getChildHtml</span><span class="p">())</span><span class="o">:?&gt;</span>
+        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&quot;customer-menu&quot;</span> <span class="nx">data</span><span class="o">-</span><span class="nx">target</span><span class="o">=</span><span class="s2">&quot;dropdown&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nv">$block</span><span class="o">-&gt;</span><span class="na">getChildHtml</span><span class="p">();</span><span class="cp">?&gt;</span><span class="x"></span>
 <span class="x">        &lt;/div&gt;</span>
 <span class="x">        </span><span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x"></span>
-<span class="x">    &lt;/li&gt;</span>
-<span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+<span class="x">    &lt;/li&gt;</span></code></pre></div>
 
 <p><br />
 <u>Step 3: Extend the base layout to add a block</u></p>
