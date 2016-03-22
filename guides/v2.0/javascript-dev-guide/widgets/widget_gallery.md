@@ -14,7 +14,7 @@ The gallery jQeury widget implements a content area with images organized into p
 
 The following picture is an illustration of image displaying on the product page using the gallery widget:
 
-<img src="{{site.baseurl}}/common/images/gallery_scr.png" alt="A product page with preview and thumbnails">
+<img src="{{site.baseurl}}common/images/gallery_scr.png" alt="A product page with preview and thumbnails">
 
 In addition, the magnifier widget can be used to demonstrate images in 100% scaled size in separate dedicated layer, and the gallery fullscreen mode can be used to navigate the entire full sized photo.
 
@@ -22,7 +22,7 @@ Gallery is displayed consistently across all supported browsers and is responsiv
 
 The gallery widget uses the <a href="http://fotorama.io/">jQuery Fotorama library</a>.
 
-The important feature of the gallery widget implementation is the possibility to configure the wiget options in the `view.xml` configuration file of a theme. thu
+The important feature of the gallery widget implementation is the possibility to configure the wiget options in the `view.xml` configuration file of a theme. 
 
 The gallery widget source is <a href="{{site.mage2000url}}lib/web/mage/gallery/gallery.js">lib/web/mage/gallery/gallery.js</a>
 
@@ -473,7 +473,7 @@ The fullscreen and breakpoints options are set in a similar way:
 
 {%endhighlight%}
 
-For illustration of setting gallery option in view.xml, you can view the [view.xml of the Blank theme]({{site.mage2000url}}app/design/frontend/Magento/blank/etc/view.xml). 
+For illustration of setting gallery option in view.xml, you can view the [view.xml of the Blank theme]({{site.mage2000url}}app/design/frontend/Magento/blank/etc/view.xml#L184). 
 
 
 ## Gallery API {#gallery_api}
@@ -526,11 +526,21 @@ All available methods are listed in the following paragraph.
 
 #### `next()` {#gallery_next}
 
-Image ID is passed as an argument. Displays the next image. If <a href="#gallery_loop">loop</a> is enabled in options, displays the first image after the last. If loop is disabled, then the last image does not get changed.
+Image ID is passed as an argument. Displays the next preview image. 
+
+If the last image ID is passed, the behavior depends on whether [loop](##gallery_loop) is enabled:
+
+* if loop is enbled, the first image is displayed.
+* if loop is disabled, does not change the displayed image.
 
 #### `prev()` {#gallery_prev}
     
-Displays previous preview image. If <a href="#gallery_loop">loop</a> is enabled in options, displays the last image after the first. If loop is disabled the first image does not get changed.
+Displays the previous preview image. 
+
+If the first image ID is passed, the behavior depends on whether [loop](##gallery_loop) is enabled:
+
+* if loop is enbled, the last image is displayed.
+* if loop is disabled, does not change the displayed image.
 
 #### `last()` {#gallery_last}
     
@@ -542,10 +552,12 @@ Displays the first preview image.
 
 #### `seek()` {#gallery_seek}
 
-Displays the image with the certain ID. The ID is passed as an argument. 
+Displays the image with the specified ID. 
 
 Doesn't update preview if the argument is not valid. 
+
 Behavior:
+
 * `seek(0)` does not display any preview 
 * `seek(1)` displays the first image. 
 * `seek(-1)` displays the last image. 
