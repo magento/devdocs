@@ -1,15 +1,16 @@
 ---
 layout: default
-group: get-started
-subgroup: C_REST
-title: Usage notes
-menu_title: Usage Notes
-menu_order: 4
+group: howdoi
+subgroup: Web APIs
+title: Search using REST APIs
+menu_title: Search using REST
+menu_order: 2
+github_link: howdoi/webapi/search-criteria.md
+redirect_from: /guides/v2.0/get-started/usage.html
 
-github_link: get-started/usage.md
 ---
 
-<h2>searchCriteria </h2>
+<h2>Specifying searchCriteria </h2>
 
 POST, PUT, and DELETE requests to the REST Web API require the service method parameters to be in the body of the request. For example, to create a Customer, you would specify a JSON array (or XML structure) in the body of the message.
 
