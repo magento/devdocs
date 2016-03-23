@@ -34,6 +34,4 @@ PHPUnit is a PHP testing framework ideal for Magento programmers. Test your modu
 ##More Information
 For more information on testing in PHP and validating Magento components, see the following:
 
-* [PHP Reflection](http://php.net/manual/en/book.reflection.php){:target="_blank"}
-* [PHP Reflection Tutorial](http://code.tutsplus.com/tutorials/reflection-in-php--net-31408){:target="_blank"}
 * [Validating Magento Extensions](http://www.gorillagroup.com/trending/insight/validating-magento-extensions-phpunit/){:target="_blank"}
