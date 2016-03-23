@@ -29,7 +29,7 @@ For further testing with Magento testing frameworks, see
 
 ##PHPUnit
 
-PHPUnit is a PHP testing framework ideal for Magento programmers. Test your component with [PHPUnit](https://phpunit.de/){:target="_blank"}, available on GitHub at [https://github.com/sebastianbergmann/phpunit](https://github.com/sebastianbergmann/phpunit){:target="_blank"}.
+PHPUnit is a PHP testing framework ideal for Magento programmers. Test your module with [PHPUnit](https://phpunit.de/){:target="_blank"}.
 
 ##More Information
 For more information on testing in PHP and validating Magento components, see the following:
