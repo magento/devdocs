@@ -18,5 +18,5 @@ This guide provides best practices, guidelines, and tips for creating Magento co
 ### Content
 
 * [Extension Coding]({{site.gdeurl}}ext-best-practices/extension-coding/coding-best-practices.html)
-* Storefront UI
+* [Storefront UI]({{site.gdeurl}}ext-best-practices/storefront-ui/storefront-best-practices.html)
 * Admin UI
