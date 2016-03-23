@@ -20,21 +20,17 @@ Creating a custom page to which to redirect users prevents any access to the sit
 
 See one of the following sections for more information:
 
+*	[Create the custom maintenance page](#compman-trouble-maint-create)
 *	[Custom maintenance page for Apache](#compman-trouble-maint-apache)
 *	[Custom maintenance page for nginx](#compman-trouble-maint-nginx)
 
+## Create the custom maintenance page {#compman-trouble-maint-create}
+To create a maintenance page and redirect to it, first create a maintenance page named:
 
-## Custom maintenance page for Apache {#compman-trouble-maint-apache}
-This section discusses how to create a custom maintenance page and how to redirect traffic to it.
+*	Apache: `<web server docroot>/maintenance.html`
+*	nginx: `<your Magento install dir>/maintenance.html`
 
-The example in this section shows how to modify the following files, which is one way to set up your maintenance page:
-
-*	Apache 2.4: `/etc/apache2/sites-available/000-default.conf`
-*	Apache 2.2: `/etc/apache2/sites-available/default` (Ubuntu), `/etc/httpd/conf/httpd.conf` (CentOS)
-
-To create a maintenance page and redirect to it:
-
-First, create a maintenance page named `maintenance.html` in your web server's docroot with the following contents:
+Add to it the following contents:
 
 {% highlight html %}
 <!DOCTYPE html>
@@ -58,7 +54,15 @@ body
 </html>
 {% endhighlight %}
 
-Then use the following steps:
+## Custom maintenance page for Apache {#compman-trouble-maint-apache}
+This section discusses how to create a custom maintenance page and how to redirect traffic to it.
+
+The example in this section shows how to modify the following files, which is one way to set up your maintenance page:
+
+*	Apache 2.4: `/etc/apache2/sites-available/000-default.conf`
+*	Apache 2.2: `/etc/apache2/sites-available/default` (Ubuntu), `/etc/httpd/conf/httpd.conf` (CentOS)
+
+To redirect traffic to a custom maintenance page:
 
 2.	Update your Apache configuration to do the following:
 
@@ -93,51 +97,31 @@ Then use the following steps:
 ## Custom maintenance page for nginx {#compman-trouble-maint-nginx}
 This section discusses how to create a custom maintenance page and how to redirect traffic to it.
 
-The example in this section shows how to modify the following files, which is one way to set up your maintenance page:
+To redirect traffic to a custom maintenance page:
 
-To create a maintenance page and redirect to it, first create a maintenance page named `<your Magento install dir>/maintenance.html` with the following contents:
+1.	Create a temporary nginx configuration file:
 
-{% highlight html %}
-<!DOCTYPE html>
-<html>
-<head>
-<title>Temporarily Offline</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<style>
-h1
-{ font-size: 50px; }
+		vim /etc/nginx/conf.d/magento.conf
+2.	Open `magento.conf` in a text editor.
 
-body
-{ text-align:center; font: 20px Helvetica, sans-serif; color: #333; }
+	The following whitelists IP address 192.0.2.110 and 192.0.2.115 on a system where Magento is installed in `/var/www/html/magento2`:
 
-</style>
-</head>
-<body>
-<h1>Temporarily offline</h1>
-<p>We're down for a short time to perform maintenance on our site to give you the best possible experience. Check back soon!</p>
-</body>
-</html>
-{% endhighlight %}
-
-Then use the following steps:
-
-1.	Make a backup copy of your nginx configuration file (for example, `/etc/nginx/conf.d/nginx.conf`):
-
-		cp /etc/nginx/conf.d/nginx.conf /etc/nginx/conf.d/nginx.conf.bak
-
-2.	Open your nginx configuration file in a text editor.
-
-	The following whitelists IP address 192.0.2.110 and 192.0.2.115 on a system where Magento is installed in `/var/www/html/magento2` in the `server` block:
-
+		server {
+		listen 80;
 		set $MAGE_ROOT /var/www/html/magento2;
-		set $maintenance on;
+
+		set $maintenance off;
+
+		if (-f $MAGE_ROOT/maintenance.enable) {
+		set $maintenance on; 
+		}
 
 		if ($remote_addr ~ (192.0.2.110|192.0.2.115)) {
-		  set $maintenance off;
+		set $maintenance off;
 		}
 
 		if ($maintenance = on) {
-		   return 503;
+		return 503;
 		}
 
 		location /maintenance {
@@ -146,19 +130,20 @@ Then use the following steps:
 		error_page 503 @maintenance;
 
 		location @maintenance {
-		  root $MAGE_ROOT;
-		  rewrite ^(.*)$ /maintenance.html break;
-		}
-4.	Add the following line at the end of the nginx configuration:
+		root $MAGE_ROOT;
+		rewrite ^(.*)$ /maintenance.html break;
 
 		include /var/www/html/magento2/nginx.conf;
+		}
+4. Enter the following command:
 
+		touch <your Magento install dir>/maintenance.enable
 3. Reload the nginx configuration:
 
 		service nginx reload
 5.	[Upgrade your system]({{ site.gdeurl21 }}comp-mgr/upgrader/upgrade-start.html).
 7.	Test your site to make sure it functions correctly.
-6.	Remove the lines you added to your nginx configuration.
+6.	After the upgrade is done, delete or rename `maintenance.enable` and `/etc/nginx/conf/magento.conf`
 5.	Reload the nginx configuration:
 
 		service nginx reload
