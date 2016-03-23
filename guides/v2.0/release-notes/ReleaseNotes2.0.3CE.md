@@ -46,12 +46,11 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 
 <!-- 48081 -->* Source files now display 2016 copyright statement. 
 
-<!-- 50500 -->* <!-- 50500 -->* Magento now allows Ajax requests to use additional parameters found in the URL path. Previously, you could pass additional parameters only for arguments declared at the top level.
-
+<!-- 50500 -->* Magento now allows the use of arguments of `url` type in nested arrays. Previously, you could pass route parameters only if the `url` argument was declared at the top level.  
 
 <!-- 47704 -->* Magento no longer displays HTML tags in messages. 
 
-<!-- 48819 -->* I have looked over file Phrase.php and it seems it allows arbitrary php code execution! Anyone can exploit it by setting the php into language csv file, and with the execution of command 'php bin/magento i18n:collect-phrases -o "lang.csv" -m .' it will execute
+<!-- 48819 -->* arbitrary PHP code execution
 
 
 <h3>System requirements</h3>
