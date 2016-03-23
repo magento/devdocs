@@ -11,7 +11,7 @@ github_link: javascript-dev-guide/widgets/widget_gallery_mg.md
 <h2>Overview</h2>
 
 Magnifier is a widget which allows displaying images in 100% scaled size in separate dedicated layer.
-In Magento it is used by the [gallery]({{site.gdeurl}}) widget for zooming the product images on product pages.
+In Magento it is used by the [gallery]({{site.gdeurl}}javascript-dev-guide/widgets/widget_gallery.html) widget for zooming the product images on product pages.
 
 **Contents**
 * TOC
@@ -19,8 +19,11 @@ In Magento it is used by the [gallery]({{site.gdeurl}}) widget for zooming the p
 
 ## Initialize magnifier {#magnifier_init}
 
-When initializing Gallery Widget on HTML element, Magnifier initialization is also available. Following is the example of Gallery initialization with Magnifier:
-Gallery initialization with Magnifier
+The magnifier widged is initialized as described in [JavaScript initialization]({{site.gdeurl}}javascript-dev-guide/javascript/js_init.html#init_phtml).
+
+When initializing the gallery Widget on an HTML element, magnifier initialization is also available. Following is the example of gallery initialization with magnifier:
+
+{%highlight js%}
 <script type="text/x-magento-init">
     "<element_selector>": {
          "mage/gallery/gallery": {
@@ -37,6 +40,52 @@ Gallery initialization with Magnifier
          }
     }
 </script>
+{% endhighlight %}
 
 ## Options {#magnifier_options}
-https://wiki.magento.com/display/JS/How+to+extend+on+Theme+level
+
+### `enabled` {#opt_enabled}
+
+Enable magnifier.
+
+**Type**: Boolean
+
+### `height` {#opt_height}
+
+Height of the magnifier block 
+            
+### `hover` {#opt_hover}
+
+Action that activates zoom.
+
+Possible values: 
+
+* `hover`
+* `click`
+
+### `left` {#opt_left}
+
+The value for the CSS `left` property for the magnifier block positioning.
+
+**Type**: Integer
+
+### `fullscreenzoom` {#opt_fullscreenzoom}
+
+Zoom for the fullscreen view.
+
+Type: Integer
+
+### `top` {#opt_top}
+
+The value for the CSS `top` property for the magnifier block positioning.
+
+**Type**: Integer
+            
+
+### `width` {#opt_width}
+
+Width of the magnifier block.
+
+**Type**: Integer
+
+

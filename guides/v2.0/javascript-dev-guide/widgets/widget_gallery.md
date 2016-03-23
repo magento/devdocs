@@ -134,9 +134,6 @@ Display navigation arrows on the thumbnails sides.
 
 **Type**: Boolean
 
-#### `options/caption` {#gallery_caption}
-
-Display alt text as image title.
 
 **Type**: Boolean
 
@@ -232,7 +229,7 @@ Sliding direction of thumbnails.
 
 #### `options/navarrows` {#gallery_navarrows}
 
-Turn on/off on the thumbnails navigation sides/Display navigation arrows on the thumbnails sides.
+Display navigation arrows for thumbnails.
 
 <p class="q">need clarification</p>
 
@@ -256,11 +253,10 @@ Width divided by height. Recommended if you set width in percents.
 
 **Default value**: `null`
 
-#### `options/showcaption` {#gallery_showcaption}
+#### `options/showCaption` {#gallery_showcaption}
 
 Enable view of caption in preview. Can be for initialized for specific image. Can work globally.
 
-<p class="q">What is the difference between showcaptions and caption?</p>
 
 **Type**: Boolean
 
@@ -290,11 +286,8 @@ Height of thumbnails.
 
 **Type**: Number, String
 
-#### `options/transition` {#gallery_transition}
 
-Set of options defining the transition properties.
-
-##### `options/transitioneffect` {#gallery_transitioneffect}
+#### `options/transition` {#gallery_transitioneffect}
 
 Sets the transition effect for slides changing.
 
@@ -304,14 +297,11 @@ Sets the transition effect for slides changing.
 * `crossfade`
 * `dissolve`
 
-##### `options/transitionduration` {#gallery_transitionduration}
+#### `options/transitionduration` {#gallery_transitionduration}
 Sets transition duration in milliseconds.
 
 **Type**: Number
 
-##### `options/transitioncarousel` {#gallery_transitioncarousel}
-
-Display navigation thumbnails as carousel.
 
 **Type**: Boolean
 
@@ -378,11 +368,10 @@ Display navigation thumbnails as carousel in the fullscreen view.
 
 **Type**: Boolean
 
-#### `fullscreen/showcaption` {#full_showcaption}
+#### `fullscreen/showCaption` {#full_showcaption}
 
 Enable view of caption in the fullscreen mode. Can be for initialized for specific image. Can work globally.
 
-<p class="q">What is the difference between showcaptions and caption?</p>
 
 **Type**: Boolean
 
@@ -398,11 +387,7 @@ Height of thumbnails in the fullscreen view.
 
 **Type**: Number, String
 
-#### `fullscreen/transition` {#fullscreen_transition}
-
-Set of options defining the transition properties in the fullscreen view.
-
-##### `fullscreen/transitioneffect` {#fullscreen_transitioneffect}
+#### `fullscreen/transition` {#fullscreen_transitioneffect}
 
 Sets the transition effect for slides changing in the fullscreen view.
 
@@ -412,16 +397,11 @@ Sets the transition effect for slides changing in the fullscreen view.
 * `crossfade`
 * `dissolve`
 
-##### `fullscreen/transitionduration` {#fullscreen_transitionduration}
+#### `fullscreen/transitionduration` {#fullscreen_transitionduration}
 Sets transition duration in milliseconds in the fullscreen view.
 
 **Type**: Number
 
-##### `fullscreen/transitioncarousel` {#fullscreen_transitioncarousel}
-
-Display navigation thumbnails as carousel in the fullscreen view.
-
-**Type**: Boolean
 
 ### `breakpoints` {#breakpoints}
 Set of options that could be dynamically set while page is resizing.
@@ -491,15 +471,12 @@ var api = $('[data-gallery-role="gallery"]').data('gallery');
 
 This method returns JS object that contains API functions.
 
-<p class="q">api functions? wording</p>
 
 To ensure that the gallery is fully formed, wrap your code with event handler function and add it to the `gallery:loaded` event:
 
-<p class="q">`gallery:loaded` or `gallery:uploaded`?</p>
-
 {% highlight php %}
 
-    $(element).on('gallery:uploaded', function () {
+    $(element).on('gallery:loaded', function () {
         var api = $(element).data('gallery');
         /* api methods calls */
     });
