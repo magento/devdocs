@@ -12,7 +12,7 @@ redirect_from: /guides/v2.0/get-started/usage.html
 
 ---
 
-<h2>searchCriteria </h2>
+<h2>Specifying searchCriteria </h2>
 
 POST, PUT, and DELETE requests to the REST Web API require the service method parameters to be in the body of the request. For example, to create a Customer, you would specify a JSON array (or XML structure) in the body of the message.
 
