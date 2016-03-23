@@ -11,7 +11,13 @@ redirect_from:
 ---
 
 <h2>Magento Community Edition 2.0.3</h2>
-This release includes miscellaneous enhancements to product performance and to the Order API.
+This release includes multiple functional fixes and performance enhancements. It also addresses these two security issues: 
+
+* anonymous access to Magento 2.x APIs
+
+* brute force attacks on API tokens 
+
+
 
 Backward-incompatible changes are documented in <a href="http://devdocs.magento.com/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
 
@@ -40,9 +46,14 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 
 <!-- 48081 -->* Source files now display 2016 copyright statement. 
 
-<!-- 50500 -->* The `_current` parameter is now included in the request URL of Ajax requests.
+<!-- 50500 -->* <!-- 50500 -->* Magento now allows Ajax requests to use additional parameters found in the URL path. Previously, you could pass additional parameters only for arguments declared at the top level.
+
 
 <!-- 47704 -->* Magento no longer displays HTML tags in messages. 
+
+<!-- 48819 -->* I have looked over file Phrase.php and it seems it allows arbitrary php code execution! Anyone can exploit it by setting the php into language csv file, and with the execution of command 'php bin/magento i18n:collect-phrases -o "lang.csv" -m .' it will execute
+
+
 <h3>System requirements</h3>
 Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later support PHP 5.5, 5.6x, 7.0.2, and MySQL 5.6. For more information, see 
 <a href="http://devdocs.magento.com/guides/v2.0/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
