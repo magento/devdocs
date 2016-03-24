@@ -5,7 +5,7 @@ subgroup: CLI
 title: Run the support utilities
 menu_title: Run the support utilities (Enterprise Edition only)
 menu_node: 
-menu_order: 500
+menu_order: 900
 github_link: config-guide/cli/config-cli-subcommands-spt-util.md
 ---
 
@@ -66,6 +66,8 @@ where
 *	`-o|--output=<path>` is the absolute file system path to store the backup (required).
 *	`-l|--logs` includes log files (optional).
 *	`-i|--ignore-sanitize` means that data is preserved; omit the flag to hash sensitive values stored in the database when creating the backup (optional).
+
+After the command completes, send the database backup to Magento Support.
 
 ## Troubleshooting: display utilities and paths {#config-cli-spt-utils-trouble}
 We provide commands that display paths to utilities required by the Data Collector and the command line. You can use these commands, for example, if errors like the following display in the Admin or on the command line:
