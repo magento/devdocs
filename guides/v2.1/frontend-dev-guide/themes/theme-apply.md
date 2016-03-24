@@ -29,9 +29,9 @@ After you <a href="{{site.gdeurl21}}frontend-dev-guide/themes/theme-create.html"
 
 To apply a theme:
 
-1. In Admin, go to **CONTENT** > **Design** > **Configuration**. A Design Configuration page opens. It contains a grid with the avaialable configuration scopes.
+1. In Admin, go to **CONTENT** > **Design** > **Configuration**. A Design Configuration page opens. It contains a grid with the avaialable configuration scopes. For example: <br><img src="{{site.baseurl}}common/images/design_conf1.png" alt="Design Configuration page">
 2. In the configuration record corresponding to your store view, click **Edit**.
-4. On the **Design Theme** tab, select your newly created theme in the **Design Theme** drop-down.
+4. On the **Default Theme** tab, in the **Applied Theme** drop-down, select your newly created theme .
 5. Click **Save**.
 6. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>. 
 6. To see your changes applied, reload the store front pages.
@@ -41,11 +41,11 @@ To apply a theme:
 Design exceptions enable you to specify an alternative theme for particular user-agents, instead of creating a separate store views for them.
 To add a design exception:
 
-<<<<<<< HEAD:guides/v2.1/frontend-dev-guide/themes/theme-apply.md
+
 2. In Admin, go to **CONTENT** > **Design** > **Configuration**
 2. In the configuration record corresponding to your store view, click **Edit**. 
-4. On the **Design Theme** tab next to **User-Agent Exceptions**, click **Add**.
-5. In the **Search String** box specify the user-agent using either normal strings or regular exceptions (PCRE). In the **Design Theme** drop-down list select the theme to be used for matching agent.
+4. On the **Design Rule** tab, click **Add New User Agent Rule**.
+5. In the **Search String** box specify the user-agent using either normal strings or regular exceptions (PCRE). In the **Theme Name** drop-down list select the theme to be used for matching agent.
 6. Click **Save**.
 7. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>. 
 6. To see your changes applied, reload the store front pages.
@@ -57,9 +57,10 @@ To add a permanent theme-independent logo:
 
 2. In Admin, go to **CONTENT** > **Design** > **Configuration**
 2. In the configuration record corresponding to your store view, click **Edit**. 
-3. In the **Design** section of the General configuration, expand the **Header** tab.
+3. Expand the **Header** tab.
 4. In the **Logo Image** field browse to the logo file saved in your file system.
 6. Upload the file.
+5. Optionally, specify the desired width, height, and the alternative text for the logo in the corresponding fields.
 7. Click **Save**.
 7. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>. 
 8. To see your changes applied, reload the store front pages.
@@ -67,7 +68,7 @@ To add a permanent theme-independent logo:
 The logo you add here is stored in the `/pub/media/logo/default/` directory.
 
 <div class="bs-callout bs-callout-warning" id="warning">
-  <p>To delete the permanent logo, go to the same location, select the check box next to the logo image, and click <b>Delete</b>.</p>
+  <p>To delete the permanent logo, go to the same location, and click the "Delete image" icon in the bottom left corner of the logo preview.</p>
 </div>
 
 ## Clear the cache {#theme-apply-clear}
