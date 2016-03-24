@@ -18,23 +18,6 @@ Also, it gives information how to add a theme independent logo for your store.
 * TOC
 {:toc}
 
-<!--
-<h2 id="theme-apply-cache">Disable the system cache</h2>
-
-When Magento system cache is enabled, you must clear it each time to see your design changes reflected on a store front. To avoid this, disable certain system cache types while you make design changes.
-To do this:
-
-1. In Admin, go to **System** > **Tools** > **Cache** **Management**.
-2. Select the Layouts, Blocks HTML output, View files fallback, View files pre-processing and Page Cache cache types.
-2. In **Actions** select **Disable** and click **Submit**. The selected cache types show a red bar in the status area that reads DISABLED.
-<p><img src="{{ site.baseurl }}common/images/cache.png" alt="Cache types disabled"></p>
-
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>If you apply a theme a second or subsequent time, you might need to manually clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;</code> directory. This directory stores the <a href="{{site.gdeurl21}}architecture/view/static-process.html#publish-static-view-files" target="_blank">published</a> <a href="{{site.gdeurl21}}frontend-dev-guide/themes/theme-structure.html#theme-structure-pub" target="_blank">static files</a>.</p>
-</div>
-
- -->
 
 ## Prerequisites 
 
@@ -46,11 +29,16 @@ After you <a href="{{site.gdeurl21}}frontend-dev-guide/themes/theme-create.html"
 
 To apply a theme:
 
-1. In Admin go to **CONTENT** > **Design** > **Themes**. Make sure your theme appears in the theme list.
-2. Go to **Stores** > **Configuration** > **Design**.
+<<<<<<< HEAD:guides/v2.1/frontend-dev-guide/themes/theme-apply.md
+1. In Admin, go to **CONTENT** > **Design** > **Configuration**. A Design Configuration page opens. It contains a grid with the avaialable configuration scopes.
+2. In the configuration record corresponding to your store view, click **Edit**.
+
+=======
+2. In Admin, go to **Stores** > **Configuration** > **Design**.
 3. In the **Scope** drop-down field, select the store view where you want to apply the theme.
+>>>>>>> 93ee91075bcb78f2200acb9cf2a7d3c56c6ed7d1:guides/v2.0/frontend-dev-guide/themes/theme-apply.md
 4. On the **Design Theme** tab, select your newly created theme in the **Design Theme** drop-down.
-5. Click **Save Config**.
+5. Click **Save**.
 6. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>. 
 6. To see your changes applied, reload the store front pages.
 
@@ -59,12 +47,17 @@ To apply a theme:
 Design exceptions enable you to specify an alternative theme for particular user-agents, instead of creating a separate store views for them.
 To add a design exception:
 
-1. In the Admin panel go to **CONTENT** > **Design** > **Themes** and make sure your theme appeared in the list of available themes.
-2. Go to **Stores** > **Configuration** > **Design**.
+<<<<<<< HEAD:guides/v2.1/frontend-dev-guide/themes/theme-apply.md
+2. In Admin, go to **CONTENT** > **Design** > **Configuration**
+2. In the configuration record corresponding to your store view, click **Edit**. 
+4. On the **Design Theme** tab next to **User-Agent Exceptions**, click **Add**.
+=======
+2. In Admin, go to **Stores** > **Configuration** > **Design**.
 3. In the **Scope** drop-down field, select your website.
 4. On the **Design Theme** tab next to **User-Agent Exceptions** click **Add**.
+>>>>>>> 93ee91075bcb78f2200acb9cf2a7d3c56c6ed7d1:guides/v2.0/frontend-dev-guide/themes/theme-apply.md
 5. In the **Search String** box specify the user-agent using either normal strings or regular exceptions (PCRE). In the **Design Theme** drop-down list select the theme to be used for matching agent.
-6. Click **Save Config**.
+6. Click **Save**.
 7. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>. 
 6. To see your changes applied, reload the store front pages.
 
@@ -73,12 +66,12 @@ To add a design exception:
 You might want to set a permanent store logo, that displays on the store front no matter what theme is applied.
 To add a permanent theme-independent logo:
 
-1. In the Admin panel, go to **Stores** > **Configuration** > **Design**.
-2. In the **Scope** drop-down, select the store view.
+2. In Admin, go to **CONTENT** > **Design** > **Configuration**
+2. In the configuration record corresponding to your store view, click **Edit**. 
 3. In the **Design** section of the General configuration, expand the **Header** tab.
 4. In the **Logo Image** field browse to the logo file saved in your file system.
 6. Upload the file.
-7. Click **Save Config**.
+7. Click **Save**.
 7. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>. 
 8. To see your changes applied, reload the store front pages.
 
@@ -98,5 +91,9 @@ A system message notifies you that invalidated cache types must be refreshed.
 
 ## Troubleshooting (if the changes do not get applied)
 
+<<<<<<< HEAD:guides/v2.1/frontend-dev-guide/themes/theme-apply.md
 If the changes you configure in the Admin are not applied after you clear the cache and reload the page, delete all files in the `pub/static/frontend` and `var/view_preprocessing` directories, then reload the pages. You can delete the files manually or run the `grunt clean:<theme_name>` command in CLI. For details about using Grunt in Magento see [Installing and configuring Grunt]({{site.gdeurl21}}frontend-dev-guide/css-topics/css_debug.html#grunt_prereq).
+=======
+If the changes you configure in the Admin are not applied after you clear the cache and reload the page, delete all files in the `pub/static/frontend` and `var/view_preprocessed` directories, then reload the pages. You can delete the files manually or run the `grunt clean:<theme_name>` command in CLI. For details about using Grunt in Magento see [Installing and configuring Grunt]({{site.gdeurl}}frontend-dev-guide/css-topics/css_debug.html#grunt_prereq).
+>>>>>>> 93ee91075bcb78f2200acb9cf2a7d3c56c6ed7d1:guides/v2.0/frontend-dev-guide/themes/theme-apply.md
 
