@@ -1026,7 +1026,7 @@
 <p>To modify the Varnish system configuration:</p>
 
 <ol>
-  <li>Open <code>/etc/sysconfig/varnish</code> in a text editor.</li>
+  <li>Open <code>/etc/sysconfig/varnish</code> (or <code>/etc/default/varnish</code> on Debian and Ubuntu) in a text editor.</li>
   <li>
     <p>Set the Varnish listen port to 80:</p>
 
@@ -1051,7 +1051,7 @@
 #             -s file,/var/lib/varnish/varnish_storage.bin,1G"
 </code></pre>
   </li>
-  <li>Save your changes to <code>/etc/sysconfig/varnish</code> and exit the text editor.</li>
+  <li>Save your changes to <code>/etc/sysconfig/varnish</code> (or <code>/etc/default/varnish</code> on Debian and Ubuntu) and exit the text editor.</li>
 </ol>
 
 <h3 id="config-varnish-config-default">Modify <code>default.vcl</code></h3>
