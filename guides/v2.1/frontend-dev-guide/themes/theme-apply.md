@@ -29,9 +29,9 @@ After you <a href="{{site.gdeurl21}}frontend-dev-guide/themes/theme-create.html"
 
 To apply a theme:
 
-1. In Admin, go to **CONTENT** > **Design** > **Configuration**. A Design Configuration page opens. It contains a grid with the avaialable configuration scopes. For example: <br><img src="{{site.baseurl}}common/images/design_conf1.png" alt="Design Configuration page">
+1. In Admin, go to **CONTENT** > **Design** > **Configuration**. A Design Configuration page opens. It contains a grid with the available configuration scopes. For example: <br><img src="{{site.baseurl}}common/images/design_conf1.png" alt="Design Configuration page">
 2. In the configuration record corresponding to your store view, click **Edit**.
-4. On the **Default Theme** tab, in the **Applied Theme** drop-down, select your newly created theme .
+4. On the **Default Theme** tab, in the **Applied Theme** drop-down, select your newly created theme.
 5. Click **Save**.
 6. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>. 
 6. To see your changes applied, reload the store front pages.
@@ -52,7 +52,7 @@ To add a design exception:
 
 
 ## Add a theme-independent logo {#theme-apply-logo}
-You might want to set a permanent store logo, that displays on the store front no matter what theme is applied.
+You might want to set a permanent store logo that displays on the store front no matter what theme is applied.
 To add a permanent theme-independent logo:
 
 2. In Admin, go to **CONTENT** > **Design** > **Configuration**
