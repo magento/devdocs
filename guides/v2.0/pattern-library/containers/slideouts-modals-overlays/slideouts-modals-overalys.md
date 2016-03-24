@@ -2,7 +2,7 @@
 layout: default
 group: pattern
 subgroup: Container
-title: Magento Admin Pattern Library
+title: Admin Design Pattern Library
 menu_title: Slide-out, Modals, and Overlays
 menu_order: 2
 menu_node:

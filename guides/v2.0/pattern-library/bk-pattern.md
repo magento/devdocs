@@ -2,7 +2,7 @@
 layout: default
 group: pattern
 subgroup: 
-title: Magento Admin Pattern Library
+title: Admin Design Pattern Library
 menu_title: Introduction
 menu_order: 
 menu_node: 
@@ -19,7 +19,7 @@ Patterns are important to building coherent and easy-to-use websites and applica
  
 Patterns are captured in articles that dictate visual design, spatial relationships, placements, and interactions, using text, screenshots, diagrams and examples.
 <br> <br>
-Browse the Design Pattern Library here:
+Find more details about the Admin Design Pattern Library in the following topic:
 
 ####Container
 <a href="containers/staticContentContainer/contentContainer.html">Static Content Container</a><br>
@@ -34,6 +34,7 @@ Browse the Design Pattern Library here:
 <a href="displaying-data/tile/tile.html">Tile</a><br>
 <a href="filters/data-table-filters/filtering.html">Filters</a><br>
 <a href="displaying-data/datatable/datatable.html">Data Table</a><br>
+<a href="displaying-data/tree/tree.html">Tree</a><br>
 
 
 ####Feedback to User
@@ -47,9 +48,6 @@ Browse the Design Pattern Library here:
 <a href="getting-user-input/use_default_config/use_default_config.html">Use Default Config</a><br>
 <a href="getting-user-input/select_from_list/select_from_list.html">Select From List</a>
 
-
-####Graphics
-<a href="graphics/iconography/iconography.html">Iconography</a><br>
 
 ####Navigation
 <a href="navigation/links/links.html">Links</a><br>

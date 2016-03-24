@@ -2,7 +2,7 @@
 layout: default
 group: pattern
 subgroup: Navigation
-title: Magento Admin Pattern Library
+title: Admin Design Pattern Library
 menu_title: Links
 menu_order: 1
 menu_node: 
