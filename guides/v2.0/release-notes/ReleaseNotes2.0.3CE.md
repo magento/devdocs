@@ -24,33 +24,44 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 
 <h3>Fixed issues</h3>
 
-<!--  48781 --> * Product performance has been enhanced when loading catalog products with multiple color swatches. 
-
-<!-- 46720 --> * The Orders API now exposes Shipping address. This corrects a problem users of Magento 2.x experienced using this API to integrate with third-party systems. 
-
+<h4> Upgrade and Installation</h4>
+<!-- 50224 -->* inconsistent data during installation of store
 
 <!-- 47531 -->* During update, the `setup:config:set` script no longer deletes values. 
 
 
-<!-- 47844 -->* Magento now successfully saves and displays new customer attributes. 
-
+<h4>Import</h4>
 <!-- 50255 -->* You can now successfully import products that meet these two criteria: they already exist in the product catalog,  and they use custom URLs. 
 
-<!-- 45887 -->* Issues with persistent cross-site scripting have been resolved. Previously, during customer registration on the storefront, a user could provide an email address that contained JavaScript code. Magento now properly validates this email address and executes it in Admin context when viewing the order in the backend. 
 
-<!-- 50608 -->*  Magento now supports setting limits on password attempts. Previously, Admin and customer token API access did not limit the number of attempts to enter a password, inadvertently allowing brute force attempts to guess passwords. 
+<h4>APIs</h4>
+<!-- 46720 --> * The Orders API now exposes Shipping address. This corrects a problem users of Magento 2.x experienced using this API to integrate with third-party systems. 
 
-<!-- 50611 -->* WebAPI allows anonymous access to private data. Anonymous cart APIs need to remain to support current checkout and add-to-cart Ajax functionality. 
+<h4>PHP</h4>
+<!-- 50500 -->* Magento now allows the use of arguments of `url` type in nested arrays. Previously, you could pass route parameters only if the `url` argument was declared at the top level.  
 
-<!-- 50224 -->* inconsistent data during installation of store
+
+<h4>Miscellaneous</h4>
+<!-- 47704 -->* Magento no longer displays HTML tags in messages. 
 
 <!-- 48081 -->* Source files now display 2016 copyright statement. 
 
-<!-- 50500 -->* Magento now allows the use of arguments of `url` type in nested arrays. Previously, you could pass route parameters only if the `url` argument was declared at the top level.  
+<!-- 48781 --> * Product performance has been enhanced when loading catalog products with multiple color swatches. 
 
-<!-- 47704 -->* Magento no longer displays HTML tags in messages. 
+<!-- 47844 -->* Magento now successfully saves and displays new customer attributes. 
 
-<!-- 48819 -->* arbitrary PHP code execution
+
+
+<h4>Security</h4>
+We describe security issues in greater detail in the Magento Security Center. See the link that follows each issue for each specific discussion. 
+
+<!-- 45887 -->* Issues with persistent cross-site scripting have been resolved. Previously, during customer registration on the storefront, a user could provide an email address that contained JavaScript code. Magento now properly validates this email address and executes it in Admin context when viewing the order in the backend. See APPSEC-1263 for more information. 
+
+<!-- 50608 -->*  Magento now supports setting limits on password attempts. Previously, Admin and customer token API access did not limit the number of attempts to enter a password, inadvertently allowing brute force attempts to guess passwords. See APPSEC-1377 for more information.
+
+<!-- 50611 -->* Many REST APIs that previously granted access to anonymous users can now be configured to require a higher permission level.  See APPSEC-1378 for more information.
+
+<!-- 48819 -->* arbitrary PHP code execution. See APPSEC-1337 for more information.
 
 
 <h3>System requirements</h3>
