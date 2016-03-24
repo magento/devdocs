@@ -29,14 +29,8 @@ After you <a href="{{site.gdeurl21}}frontend-dev-guide/themes/theme-create.html"
 
 To apply a theme:
 
-<<<<<<< HEAD:guides/v2.1/frontend-dev-guide/themes/theme-apply.md
 1. In Admin, go to **CONTENT** > **Design** > **Configuration**. A Design Configuration page opens. It contains a grid with the avaialable configuration scopes.
 2. In the configuration record corresponding to your store view, click **Edit**.
-
-=======
-2. In Admin, go to **Stores** > **Configuration** > **Design**.
-3. In the **Scope** drop-down field, select the store view where you want to apply the theme.
->>>>>>> 93ee91075bcb78f2200acb9cf2a7d3c56c6ed7d1:guides/v2.0/frontend-dev-guide/themes/theme-apply.md
 4. On the **Design Theme** tab, select your newly created theme in the **Design Theme** drop-down.
 5. Click **Save**.
 6. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>. 
@@ -51,11 +45,6 @@ To add a design exception:
 2. In Admin, go to **CONTENT** > **Design** > **Configuration**
 2. In the configuration record corresponding to your store view, click **Edit**. 
 4. On the **Design Theme** tab next to **User-Agent Exceptions**, click **Add**.
-=======
-2. In Admin, go to **Stores** > **Configuration** > **Design**.
-3. In the **Scope** drop-down field, select your website.
-4. On the **Design Theme** tab next to **User-Agent Exceptions** click **Add**.
->>>>>>> 93ee91075bcb78f2200acb9cf2a7d3c56c6ed7d1:guides/v2.0/frontend-dev-guide/themes/theme-apply.md
 5. In the **Search String** box specify the user-agent using either normal strings or regular exceptions (PCRE). In the **Design Theme** drop-down list select the theme to be used for matching agent.
 6. Click **Save**.
 7. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>. 
@@ -91,9 +80,6 @@ A system message notifies you that invalidated cache types must be refreshed.
 
 ## Troubleshooting (if the changes do not get applied)
 
-<<<<<<< HEAD:guides/v2.1/frontend-dev-guide/themes/theme-apply.md
 If the changes you configure in the Admin are not applied after you clear the cache and reload the page, delete all files in the `pub/static/frontend` and `var/view_preprocessing` directories, then reload the pages. You can delete the files manually or run the `grunt clean:<theme_name>` command in CLI. For details about using Grunt in Magento see [Installing and configuring Grunt]({{site.gdeurl21}}frontend-dev-guide/css-topics/css_debug.html#grunt_prereq).
-=======
-If the changes you configure in the Admin are not applied after you clear the cache and reload the page, delete all files in the `pub/static/frontend` and `var/view_preprocessed` directories, then reload the pages. You can delete the files manually or run the `grunt clean:<theme_name>` command in CLI. For details about using Grunt in Magento see [Installing and configuring Grunt]({{site.gdeurl}}frontend-dev-guide/css-topics/css_debug.html#grunt_prereq).
->>>>>>> 93ee91075bcb78f2200acb9cf2a7d3c56c6ed7d1:guides/v2.0/frontend-dev-guide/themes/theme-apply.md
+
 
