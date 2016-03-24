@@ -11,11 +11,8 @@ redirect_from:
 ---
 
 <h2>Magento Enterprise Edition 2.0.3</h2>
-This release includes multiple functional fixes and performance enhancements. It also addresses these two security issues: 
+This release includes multiple functional fixes and performance enhancements. It also addresses five security issues, as described in Security enhancements.  
 
-* anonymous access to Magento 2.x APIs
-
-* brute force attacks on API tokens 
 
 Backward-incompatible changes are documented in <a href="http://devdocs.magento.com/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
 
@@ -51,8 +48,10 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 <!-- 48124 --> * Admin users can now view orders only from stores for which they have view  permission.
 
 
-<h4>Security</h4>
-We describe security issues in greater detail in the Magento Security Center. See the link that follows each issue for each specific discussion. 
+<h4>Security enhancements</h4>
+This release includes several enhancements to improve the security of your Magento 2.0.3 installation. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento 2.0 installation to the latest version as soon as possible.
+
+The following list provides an overview of the security issues fixed in this release. We describe each issues in greater detail in the Magento Security Center. See the link that follows each issue for its specific discussion. 
 
 <!-- 45887 -->* Issues with persistent cross-site scripting have been resolved. Previously, during customer registration on the storefront, a user could provide an email address that contained JavaScript code. Magento now properly validates this email address and executes it in Admin context when viewing the order in the backend. See APPSEC-1263 for more information. 
 
@@ -64,6 +63,9 @@ We describe security issues in greater detail in the Magento Security Center. Se
 <!-- 48819 -->* arbitrary PHP code execution. See APPSEC-1337 for more information.
 
 <!-- 47050 -->* The encryption keys that are generated in **System -> Manage Encryption Key** have been strengthened. See APPSEC-1303 for more information.
+
+We recommend that you review Magento’s Security Best Practices, and confirm that all safeguards are in place to protect your system from compromise. Use this occasion to examine your system for indications of possible attack, such as strange administrator accounts, unfamiliar files on the server, etc. To receive direct notification from our security team regarding any emerging issues and solutions, sign up for the Security Alert Registry.
+
 
 
 <h3>System requirements</h3>
