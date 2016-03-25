@@ -2,19 +2,19 @@
 A typical directory structure for three language packages follows:
 
 ~~~
-├── de_de
+├── de_DE
 │   ├── composer.json
 │   ├── language.xml
 │   ├── LICENSE_AFL.txt
 │   ├── LICENSE.txt
 │   └── registration.php
-├── en_us
+├── en_US
 │   ├── composer.json
 │   ├── language.xml
 │   ├── LICENSE_AFL.txt
 │   ├── LICENSE.txt
 │   └── registration.php
-├── pt_br
+├── pt_BR
 │   ├── composer.json
 │   ├── language.xml
 │   ├── LICENSE_AFL.txt
@@ -22,6 +22,6 @@ A typical directory structure for three language packages follows:
 │   └── registration.php
 ~~~
 
-The only required directory for a language package is the top-level directory. Although not required, we recommend that the directory name match the [ISO](http://www.iso.org/iso/home/standards/language_codes.htm){:target="_blank"} code to identify the locale. (The directory name *must be* lowercase.)
+The only required directory for a language package is the top-level directory. Although not required, we recommend that the directory name match the [ISO](http://www.iso.org/iso/home/standards/language_codes.htm){:target="_blank"} code to identify the locale.
 
 For more information about language packages, see [Translation dictionaries and language packages]({{ site.gdeurl }}config-guide/cli/config-cli-subcommands-i18n.html).

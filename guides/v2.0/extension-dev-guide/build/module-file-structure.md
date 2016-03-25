@@ -12,9 +12,9 @@ redirect_from: /guides/v2.0/extension-dev-guide/module-file-structure.html
 ##{{page.menu_title}}
 {:.no_toc}
 
-In this section, we go over the different file structures for the component types. Magento 2 looks for the files that make up a component, including configuration files, in particular places inside the component file structure. Follow the predefined file structures for the component type you are developing to ensure that it works as expected.
+In this section, we go over the different file structures for the component types. The Magento application looks for the files that make up a component *including configuration files* in particular places inside the component file structure. Follow the predefined file structures for the component type you are developing to ensure that it works as expected.
 
-*	Table of Contents
+*	Contents
 {:toc}
 
 {% include php-dev/component-root.md %}
@@ -24,19 +24,19 @@ A typical file structure for a Magento 2 module can look like the following:
 
 ![Module File Structure]({{ site.baseurl }}common/images/pdg-config-file-structure.png){:width="300px"}
 
-#### Common folders
+#### Common directories
 {:.no_toc}
-Some common folders you will find in a module are:
+Following are some common module directories:
 
-* `Block`: contains PHP view classes as part of MVC vertical implementation of module logic.
+* `Block`: contains PHP view classes as part of Model View Controller(MVC) vertical implementation of module logic.
 * `Controller`: contains PHP controller classes as part of MVC vertical implementation of module logic.
 * `etc`: contains configuration files; in particular, `module.xml`, which is required.
 * `Model`: contains PHP model classes as part of MVC vertical implementation of module logic.
 * `Setup`: contains classes for module database structure and data setup which are invoked when installing or upgrading.
 
-#### Additional folders
+#### Additional directories
 {:.no_toc}
-Additional folders can be added for configuration and other ancillary functions for items like [plugin-ins]({{ site.gdeurl }}extension-dev-guide/plugins.html), internationalization, and layout files.
+Additional folders can be added for configuration and other ancillary functions for items like [plugin-ins]({{ site.gdeurl }}extension-dev-guide/plugins.html), localization, and layout files.
 
 * `Api`: contains any PHP classes exposed to the API.
 * `i18n`: contains localization files.
@@ -84,20 +84,20 @@ A typical theme file structure can look like the following:
         └── theme.js
 ~~~
 
-#### Common folders
+#### Common directories
 {:.no_toc}
 Typical theme directories are:
 
 *	`etc`: Contains configuration files such as the `view.xml` file which contains image configurations for all images and thumbnails.
 *	`i18n`: [Translation dictionaries]({{ site.gdeurl }}frontend-dev-guide/translations/xlate.html#m2devgde-xlate-dictionaries), if any.
-*	`media`: Theme preview (a screen capture of your theme) images can be put in here.
+*	`media`: Theme preview images (screen capture of your theme) can be put in here.
 *	`web`: Optional directory that contains static files organized into the following subdirectories:
 
 	*	`css/source`: Contains a theme's `less` configuration files that invoke mixins for global elements from the [Magento UI library]({{ site.gdeurl }}frontend-dev-guide/css-topics/theme-ui-lib.html), and the `theme.less` file that overrides the default variables values.
-	*	`css/source/lib`: Contains view files that override the UI library files stored in `lib/web/css/source/lib`
+	*	`css/source/lib`: Contains view files that override the [UI library]({{site.gdeurl}}frontend-dev-guide/css-topics/theme-ui-lib.html) files stored in `lib/web/css/source/lib`.
 	*	`fonts`: The folder to place the different fonts for your theme.
 	*	`images`: Static images folder.
-	*	`js`: The folder for your javascript files.
+	*	`js`: The folder for your JavaScript files.
 
 For more details on the theme folder structure, see [Magento theme structure]({{ site.gdeurl }}frontend-dev-guide/themes/theme-structure.html).
 
