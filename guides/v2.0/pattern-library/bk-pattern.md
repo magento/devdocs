@@ -11,13 +11,16 @@ redirect_from: /guides/v1.0/pattern-library/bk-pattern.html
 ---
 <h3>What is a design pattern?</h3>
  
-A design pattern is an agreed-upon guide for creating buttons, scroll bars, forms, and other user interface elements. A design pattern also outlines best practices for interactive elements such as dropdown menus and sorting tools.
+Design patterns can be simple elements or complex pieces of functionality - like buttons, scroll bars, data tables and forms - that are standardized to be easily repeated and reused across a website or application.
+
+Patterns include definitions, examples, instructions and specifications that break down spacial relationships and interactions / behaviors. 
  
 <h3>Why use patterns?</h3>
  
-Patterns are important to building coherent and easy-to-use websites and applications. And they provide a common language and concrete reference for collaboration across all roles on the product team.
- 
-Patterns are captured in articles that dictate visual design, spatial relationships, placements, and interactions, using text, screenshots, diagrams and examples.
+Using patterns enhances customer experience through maintaining consistency and ease of use. And, sticking to defined standards simplifies updating patterns across multiple pages when changes are required.
+
+Patterns libraries are designed to evolve over time, never going out of date. Changes should be communicated, as they occur, to the design community.
+
 <br> <br>
 Find more details about the Admin Design Pattern Library in the following topic:
 
