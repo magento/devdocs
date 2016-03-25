@@ -13,14 +13,23 @@ github_link: extension-dev-guide/design_config.md
 
 This topic describes how to customize (add, delete, change) the configuration options available in Magento Admin under **CONTENT** > **Design** > **Configuration**.
 
-For example, here's the default set of design options for the store view level:
+
+## Overview
+
+The default set of design options for the store view level is the following:
 
 <img src="{{site.baseurl}}common/images/design_conf2.png" alt="Design Configuration page">
 
-**Contents**
+The configuration is implemented using the [form UI component]({{site.gdeurl21}}ui-components/ui-form.html), that uses corresponding UI components for fields. 
 
-* TOC
-{:toc}
+To change the settings avaialable for configuration under Content > Design > Configuration, take the following steps:
+
+1. In your custom module directory add `<your_module_dir>/view/adminhtml/ui_component/design_config_form.xml` with form customization. 
+2. Map the new fileds and fieldsets to the corresponding backend models in `<your_module_dir>/etc/di.xml`.
+
+View the following sections for details.
+
+To customize the grid with the 
 
 ## Accessing the options values programically {#access_options}
 
@@ -28,7 +37,7 @@ The option values are stored in the `core_config_data` table in DB, similar to t
 
 ## Customize the grid {#customize_grid}
 
-<p class="q">Is it about the grid with the scopes? </p>
+
 
 ## Customize the design options {#customize_options}
 
@@ -45,7 +54,7 @@ Details:
 {%highlight xml%}
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
 
-<--reference a field set --> 
+<!--reference a field set --> 
 
 <fieldset name="%fieldset_name%">
     <argument name="data" xsi:type="array">
@@ -54,7 +63,7 @@ Details:
             <item name="sortOrder" xsi:type="number">%order for displaying%</item>
         </item>
     </argument>
-<--Field sets can be nested --> 
+<!--Field sets can be nested --> 
     <fieldset name="%nested_fieldset_name%">
         <argument name="data" xsi:type="array">
             <item name="config" xsi:type="array">
@@ -77,9 +86,11 @@ Details:
 
 </form>
 
-{%endhiglight%}
+3. Add metadata for the new fieldsets and fields in the `<your_module_dir>/etc/di.xml`
 
-<p class="q">What about datasource? should I mentione it in custom module?</p>
+{%endhighlight%}
+
+
 <p class="q">In what context should the di.xml configuration be mentioned?</p>
 <p class="q">Nesting? Is it defined by the actual nesting in xml or the level attribute</p>
 
