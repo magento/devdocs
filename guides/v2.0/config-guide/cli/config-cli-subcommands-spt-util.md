@@ -65,9 +65,11 @@ where
 *	`--name` specifies the dump file name (optional). If you omit this parameter, the dump file is time and date-stamped.
 *	`-o|--output=<path>` is the absolute file system path to store the backup (required).
 *	`-l|--logs` includes log files (optional).
-*	`-i|--ignore-sanitize` means that data is preserved; omit the flag to hash sensitive values stored in the database when creating the backup (optional).
+*	`-i|--ignore-sanitize` means that data is preserved; omit the flag to hash [sensitive data](#sens-data) stored in the database when creating the backup (optional).
 
 After the command completes, send the database backup to Magento Support.
+
+{% include install/sens-data.md %}
 
 ## Troubleshooting: display utilities and paths {#config-cli-spt-utils-trouble}
 We provide commands that display paths to utilities required by the Data Collector and the command line. You can use these commands, for example, if errors like the following display in the Admin or on the command line:
@@ -92,6 +94,7 @@ A sample follows:
 	mysql => /usr/bin/mysql
 
 To resolve issues with running the tools, make sure these applications are installed and are in the web server user's `PATH`.
+
 
 #### Related topics
 
