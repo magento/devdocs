@@ -51,14 +51,13 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 <h4>Security enhancements</h4>
 This release includes several enhancements to improve the security of your Magento 2.0.3 installation. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento 2.0 installation to the latest version as soon as possible.
 
-The following list provides an overview of the security issues fixed in this release. We describe each issues in greater detail in the Magento Security Center. See the link that follows each issue for its specific discussion. 
+The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the Magento Security Center link that follows each issue. 
 
 <!-- 45887 -->* Issues with persistent cross-site scripting have been resolved. Previously, during customer registration on the storefront, a user could provide an email address that contained JavaScript code. Magento now properly validates this email address and executes it in Admin context when viewing the order in the backend. See APPSEC-1263 for more information. 
 
 <!-- 50608 -->*  Magento now supports setting limits on password attempts. Previously, Admin and customer token API access did not limit the number of attempts to enter a password, inadvertently allowing brute force attempts to guess passwords. See APPSEC-1377 for more information.
 
-<!-- 50611 -->* <!-- 50611 -->* Many REST APIs that previously granted access to anonymous users can now be configured to require a higher permission level.  See APPSEC-1378 for more information.
-
+<!-- 50611 -->* Many REST APIs that previously granted access to anonymous users can now be configured to require a higher permission level.  See APPSEC-1378 for more information.
 
 <!-- 48819 -->* arbitrary PHP code execution. See APPSEC-1337 for more information.
 

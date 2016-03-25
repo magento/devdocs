@@ -1,0 +1,52 @@
+---
+layout: default
+group: release-notes
+subgroup: Release Notes
+title: Release Notes
+menu_title:  
+menu_node: 
+menu_order: 
+github_link: 
+redirect_from: 
+
+<h2>Release Notes 2.0.3: Security-Related JIRA issues and APPSECs</h2>
+
+Collaborative workspace for generating descriptions for APPSECs and security-related JIRA issues.  
+
+This content is a work-in-progress. It is for internal use only. 
+
+
+<h3>MAGETWO-50611/APPSEC-1378</h3>
+
+Many REST APIs that previously granted access to anonymous users can now be configured to require a higher permission level. 
+
+
+<h3>MAGETWO-50608/APPSEC-1377</h3>
+Magento now supports setting limits on password attempts. Previously, Admin and customer token API access did not limit the number of attempts to enter a password, inadvertently allowing brute force attempts to guess passwords
+
+
+<h3>MAGETWO-48819/APPSEC-1337</h3>
+arbitrary PHP code execution
+
+
+<h3>MAGETWO-45887/APPSEC-1263</h3>
+Issues with persistent cross-site scripting have been resolved. Previously, during customer registration on the storefront, a user could provide an email address that contained JavaScript code. Magento now properly validates this email address and executes it in Admin context when viewing the order in the backend
+
+
+
+<h3>MAGETWO-47050/APPSEC-1303</h3>
+
+
+
+<h3>MAGETWO-50755/APPSEC-1378</h3>
+
+
+<h3>MAGETWO-/APPSEC-1303</h3>
+
+The encryption keys that are generated in System -> Manage Encryption Key have been strengthened
+
+
+
+<h3>Questions</h3>
+
+* Will we be including MAGETWO-48562/APPSEC-1329? If there's a chance we will, let's work on a description. 
