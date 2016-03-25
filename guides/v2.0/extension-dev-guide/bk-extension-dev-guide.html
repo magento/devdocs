@@ -774,23 +774,23 @@
 
 		<h2 id="introduction">Introduction</h2>
 
-<p>This guide contains information for developers who want to extend, or customize, any of the components in the Magento application. That includes building a new component from to extend Magento functionality. This guide is also for those who want to create components for Magento Marketplace, although it does not cover the publishing process.</p>
+<p>The PHP Developer Guide contains information for developers who want to know more about developing or modifying Magento components. With this knowledge you can extend or customize any of the existing components in the Magento application. You can also create components that introduce new functionality and distribute them to merchants.</p>
 
 <h2 id="magento-components">Magento components</h2>
 
-<p>Magento is made up of the following types of components:</p>
+<p>The Magento application is made up of <em>Modules</em>, <em>Themes</em>, and <em>Language Packages</em>:</p>
 
 <ul>
-  <li><a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_intro.html">Modules</a></li>
-  <li><a href="/guides/v2.0/frontend-dev-guide/themes/theme-general.html">Themes</a></li>
-  <li><a href="/guides/v2.0/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-languagepack">Language packages</a></li>
+  <li>
+    <p><a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_intro.html"><em>Modules</em></a> interact with other parts of the application to accomplish a particular business function or provide a feature. A module can contain a user interface for displaying information or interacting with the user. It can also contain application interfaces that another Magento module or code chunk might call.</p>
+  </li>
+  <li>
+    <p><a href="/guides/v2.0/frontend-dev-guide/themes/theme-general.html"><em>Themes</em></a> provide a personalized touch for each Magento installation by changing the look and feel of the storefront or Admin.</p>
+  </li>
+  <li>
+    <p><a href="/guides/v2.0/frontend-dev-guide/translations/xlate.html"><em>Language packages</em></a> assist in internationalization(I18n) and localization by providing translations for strings that display on the storefront and Admin.</p>
+  </li>
 </ul>
-
-<p>A Magento <em>module</em> is code that accomplishes a particular business function or handles a Magento feature. A module is a collection <code>.php</code> and <code>.xml</code> files, but may also contain other files such as <code>.phtml</code> and image files. Modules are interactive with each other. A module also contains any user interface required for a user’s interaction with the module, and any application interfaces that another module or code chunk might call, if you decide to expose any application interface to other Magento modules.</p>
-
-<p><em>Themes</em> change the look and feel of the Magento storefront or Admin. </p>
-
-<p><em>Language packages</em> provide translations for strings that display on the storefront and Admin.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
 <p>You must follow a <a href="http://www.php-fig.org/psr/psr-4/">PSR compliant</a> structure when building a module.</p>
@@ -803,7 +803,6 @@
   <li><a href="/guides/v2.0/extension-dev-guide/intro/intro-composer.html">Introduction to Composer</a></li>
   <li><a href="/guides/v2.0/extension-dev-guide/intro/intro-composer-gloss.html">Glossary of common terms</a></li>
 </ul>
-
 
 
 		</div>
