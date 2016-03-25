@@ -1,3 +1,14 @@
+---
+layout: default
+group:
+title: Restricting Access to Anonymous APIs
+menu_title: Restricting Access to Anonymous APIs
+menu_node:
+menu_order: 4
+github_link: release-notes/anonymous-api-security.md
+---
+
+<h2>Restricting Access to Anonymous APIs</h2>
 
 Magento 2 allows some web APIs to be accessed by unauthenticated (anonymous) users. Many of these APIs allow a customer to have a robust shopping experience on the website without having to log in.
 
