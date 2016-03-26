@@ -18,7 +18,22 @@ github_link: config-guide/cli/config-cli-subcommands-spt-util.md
 *	[Troubleshooting: display utilities and paths](#config-cli-spt-utils-trouble)
 
 ## Overview of the support utilities {#config-cli-spt-utils-over}
-The Magento support utilities (also referred to as the [*Data Collector*](http://docs.magento.com/m2/ee/user_guide/system/support-data-collector.html){:target="_blank"}) enable Enterprise Edition (EE) users to gather troubleshooting information about your system that can be used by our Support team. The utilities take several minutes to complete.
+The Magento support utilities (also referred to as the [*Data Collector*](http://docs.magento.com/m2/ee/user_guide/system/support-data-collector.html){:target="_blank"}) enable Enterprise Edition (EE) users to gather troubleshooting information about your system that can be used by our Support team. 
+
+Magento Support uses these backups (also referred to as *dumps*) to analyze issues that require access to your code. A typical scenario follows:
+
+1.	You're having an issue with your Magento store and you contact Magento Support.
+2.	Support determines they need to see your code or database to reproduce the issue.
+3.	You back up the code to a `.tar.gz` file.
+
+	This backup *excludes* your media files to speed up the process and to result in a much smaller file.
+4.	You back up the database to a `.tar.gz` file.
+
+	By default, [sensitive data](#sens-data) is hashed when making the backup.
+5.	You upload your backups to a file sharing service.
+6.	Support analyzes your issues without affecting your development or production environment.
+
+The utilities can take several minutes to complete.
 
 ## First steps {#first}
 {% include install/first-steps-cli.html %}
@@ -29,7 +44,7 @@ This command backs up code and compresses it in `tar.gz` format.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>This is <em>not</em> the same code backup performed by the [<code>magento setup:backup</code>]({{ site.gdeurl }}install-gde/install/cli/install-cli-backup.html) command. This command is intended to be used to back up code for examination by Magento Support.</p></span>
+  <p>This is <em>not</em> the same code backup performed by the <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-backup.html"><code>magento setup:backup</code></a> command. This command is intended to be used to back up code for examination by Magento Support.</p></span>
 </div>
 
 Command options:
@@ -46,14 +61,14 @@ For example, to create a code backup named `/var/www/html/magento2/var/log/mycod
 
 	magento magento support:backup:code --name mycodebackup -o /var/www/html/magento2/var/log
 
-After the command completes, send the code backup to Magento Support.
+After the command completes, provide the code backup to Magento Support.
 
 ## Create a database backup {#config-cli-spt-utils-db}
 This command backs up the Magento database and compresses it in `tar.gz` format.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>This is <em>not</em> the same database backup performed by the [<code>magento setup:backup</code>]({{ site.gdeurl }}install-gde/install/cli/install-cli-backup.html) command. This command is intended to be used to back up code for examination by Magento Support.</p></span>
+  <p>This is <em>not</em> the same code backup performed by the <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-backup.html"><code>magento setup:backup</code></a> command. This command is intended to be used to back up code for examination by Magento Support.</p></span>
 </div>
 
 Command options:
@@ -67,7 +82,7 @@ where
 *	`-l|--logs` includes log files (optional).
 *	`-i|--ignore-sanitize` means that data is preserved; omit the flag to hash [sensitive data](#sens-data) stored in the database when creating the backup (optional).
 
-After the command completes, send the database backup to Magento Support.
+After the command completes, provide the database backup to Magento Support.
 
 {% include install/sens-data.md %}
 
@@ -78,8 +93,16 @@ We provide commands that display paths to utilities required by the Data Collect
 
 Run the following commands in the order shown to display the paths to the applications used by the support utilities and Data Collector:
 
-1.	`magento support:utility:paths` creates `<your Magento install dir>/var/support/Paths.php`, which lists the paths to all application used by the utility. 
-2.	`magento support:utility:check -u` displays the file system paths.
+1.	Change to your Magento installation directory.
+
+	For example, `cd /var/www/magento2`
+
+	<div class="bs-callout bs-callout-info" id="info">
+		<span class="glyphicon-class">
+  		<p>The commands run properly <em>only</em> from your Magento installation directory.</p></span>
+	</div>
+1.	`php bin/magento support:utility:paths` creates `<your Magento install dir>/var/support/Paths.php`, which lists the paths to all application used by the utility. 
+2.	`php bin/magento support:utility:check -u` displays the file system paths.
 
 A sample follows:
 
@@ -93,8 +116,7 @@ A sample follows:
 	bash => /bin/bash
 	mysql => /usr/bin/mysql
 
-To resolve issues with running the tools, make sure these applications are installed and are in the web server user's `PATH`.
-
+To resolve issues with running the tools, make sure these applications are installed and are in the web server user's `$PATH` environment variable.
 
 #### Related topics
 
