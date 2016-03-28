@@ -28,7 +28,7 @@ You can configure the Magento application in any of the following ways:
 *	Session storage
 	*	[memcache]({{ site.gdeurl21 }}config-guide/memcache/memcache.html)
 	*	[Redis]({{ site.gdeurl21 }}config-guide/redis/config-redis.html)
-	*	TBD, locate session
+	*	[Locate your session files]({{ site.gdeurl21 }}config-guide/sessions.html)
 
 *	<img src="{{ site.baseurl }}common/images/ee-only_small.png">
 
