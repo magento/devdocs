@@ -1,7 +1,6 @@
 ---
 layout: default
 group:
-title: Restricting access to anonymous web APIs
 menu_title: Restricting access to anonymous web APIs
 menu_node:
 menu_order: 4
