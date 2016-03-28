@@ -53,7 +53,7 @@ The following table lists the APIs that are no longer available to the anonymous
 | CE | Store | /V1/store/storeConfigs | GET |
 
 <div class="bs-callout bs-callout-warning">
-    <p>Preventing anonymous access to these APIs could cause  third-party extensions to fail. You might need to disable this feature or update the list of affected APIs.</p>
+    <p>Preventing anonymous access to these APIs could cause third-party extensions to fail. If a third-party extension calls any of these APIs, it will receive an authentication error instead of the expected response. You might need to disable this feature or update the list of affected APIs.</p>
 </div>
 
 By default, this security feature is enabled. To disable this feature, log in to the Admin panel and navigate to **System > Configuration > Services > Magento Web API**. Then select **Yes** from the **Allow Anonymous Guest Access** menu.
