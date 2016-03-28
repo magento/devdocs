@@ -16,7 +16,7 @@ A subset of these APIs can return information about products, promotions, and st
 
 For this reason, by default, Magento 2 now prevents anonymous users from accessing the APIs that could reveal sensitive information.  When the feature is enabled, the user must have administrator privileges to execute the affected APIs.
 
-The following table lists the APIs that are no longer available to the anonymous user by default:
+The following table lists the APIs that are no longer available to an anonymous user by default:
 
 | Product | Module | API | Action |
 | --- | --- | --- | --- |
@@ -53,7 +53,7 @@ The following table lists the APIs that are no longer available to the anonymous
 | CE | Store | /V1/store/storeConfigs | GET |
 
 <div class="bs-callout bs-callout-warning">
-    <p>Preventing anonymous access to these APIs could cause third-party integrations to fail. If a third-party integration calls any of these web APIs, it will receive an authentication error instead of the expected response. In this case, might need to disable this feature.</p>
+    <p><b>Important:</b> Preventing anonymous access to these APIs could cause third-party integrations to fail. If a third-party integration calls any of these web APIs, it will receive an authentication error instead of the expected response. In this case, might need to disable this feature.</p>
     <p>To disable this feature, log in to the Admin panel and navigate to <b>System > Configuration > Services > Magento Web API</b>. Then select <b>Yes</b> from the <b>Allow Anonymous Guest Access</b> menu.</p>
 </div>
 
