@@ -25,7 +25,10 @@ You can configure the Magento application in any of the following ways:
 	*	<a href="{{ site.gdeurl21 }}config-guide/database/database.html">Set up database caching</a>
 	*	<a href="{{ site.gdeurl21 }}config-guide/redis/config-redis.html">Set up Redis</a>
 
-*	<a href="{{ site.gdeurl21 }}config-guide/memcache/memcache.html">Session storage</a>
+*	Session storage
+	*	[memcache]({{ site.gdeurl21 }}config-guide/memcache/memcache.html)
+	*	[Redis]({{ site.gdeurl21 }}config-guide/redis/config-redis.html)
+	*	TBD, locate session
 
 *	<img src="{{ site.baseurl }}common/images/ee-only_small.png">
 
