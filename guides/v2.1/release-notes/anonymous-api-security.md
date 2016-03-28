@@ -1,18 +1,18 @@
 ---
 layout: default
 group:
-title: Restricting Access to Anonymous APIs
-menu_title: Restricting Access to Anonymous APIs
+title: Restricting access to anonymous web APIs
+menu_title: Restricting access to anonymous web APIs
 menu_node:
 menu_order: 4
 github_link: release-notes/anonymous-api-security.md
 ---
 
-<h2>Restricting Access to Anonymous APIs</h2>
+<h2>Restricting access to anonymous web APIs</h2>
 
 Magento 2 allows some web APIs to be accessed by unauthenticated (anonymous) users. Many of these APIs allow a customer to have a robust shopping experience on the website without having to log in.
 
-A subset of these APIs can return information about products, promotions, and storefronts that a merchant might consider proprietary. For example, Catalog module APIs can provide information about an item's pricing and quantity, as well as items that are currently not for sale. The CMS module could reveal information about upcoming promotional landing pages and coupons, while the Store module could provide sensitive information about how the Store is configured.
+A subset of these APIs can return information about products, promotions, and storefronts that a merchant might consider proprietary. For example, Catalog module APIs can provide information about an item’s pricing and quantity, as well as items that are currently not for sale. The CMS module could reveal information about upcoming promotional landing pages and coupons. The Store module can reveal too much information about individual websites.
 
 For this reason, by default, Magento 2 now prevents anonymous users from accessing the APIs that could reveal sensitive information.  When the feature is enabled, the user must have administrator privileges to execute the affected APIs.
 
@@ -53,12 +53,14 @@ The following table lists the APIs that are no longer available to the anonymous
 | CE | Store | /V1/store/storeConfigs | GET |
 
 <div class="bs-callout bs-callout-warning">
-    <p>Preventing anonymous access to these APIs could cause third-party extensions to fail. If a third-party extension calls any of these APIs, it will receive an authentication error instead of the expected response. You might need to disable this feature or update the list of affected APIs.</p>
+    <p>Preventing anonymous access to these APIs could cause third-party integrations to fail. If a third-party integration calls any of these web APIs, it will receive an authentication error instead of the expected response. In this case, might need to disable this feature.<p>
+    <p>To disable this feature, log in to the Admin panel and navigate to **System > Configuration > Services > Magento Web API**. Then select **Yes** from the **Allow Anonymous Guest Access** menu.</p>
 </div>
 
-By default, this security feature is enabled. To disable this feature, log in to the Admin panel and navigate to **System > Configuration > Services > Magento Web API**. Then select **Yes** from the **Allow Anonymous Guest Access** menu.
 
-To update the list of APIs that are inaccessible to anonymous users, edit the `app/code/Magento/WebapiSecurity/etc/di.xml` file.
+If for some reason the list of APIs that are inaccessible to anonymous users must be updated, an integrator can open the `app/code/Magento/WebapiSecurity/etc/di.xml` file and edit the items in the following section:
+
+``<type name="Magento\WebapiSecurity\Model\Plugin\AnonymousResourceSecurity">``
 
 The following APIs remain accessible to anonymous users. Most of these must remain accessible to support the checkout and add-to-cart ajax functionalities.
 
