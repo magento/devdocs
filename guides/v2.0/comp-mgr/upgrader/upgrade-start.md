@@ -24,6 +24,31 @@ This section discusses how to start System Upgrade, which upgrades the version o
 <h2 id="compman-prereq">Prerequisites</h2>
 Before continuing, complete all tasks discussed in <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.
 
+## Set file system permissions {#compman-upgr-perms}
+If your Magento application is set to write session data to the file system, you must set permissions on the `<your Magento install dir>/var/sessions` directory before you upgrade.
+
+To check to see whether you're using the file system to store session data, enter the following command on the Magento server as the [Magento file system owner]({{ site.gdeurl }}install-gde/prereq/apache-user.html):
+
+	ls <your Magento file install dir>/var/session
+
+For example, if Magento is installed in `/var/www/magento2`, enter:
+
+	ls /var/www/magento2/var/session
+
+If there are files in that directory, you must set permissions; if there are no files in that directory, you are using some other method of storing session data. In that case, skip the remainder of this section and continue with [Start System Upgrade from the Magento Admin](#compman-access).
+
+To set file system permissions before upgrade:
+
+1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{ site.gdeurl }}install-gde/prereq/apache-user.html).
+2.	Enter the following command:
+
+		chmod -R 770 <your Magento install dir>/var/session
+
+	For example,
+
+		chmod -R 770 /var/www/magento2/var/session
+3.	Continue with the next section.
+
 <h2 id="compman-access">Start System Upgrade from the Magento Admin</h2>
 To run System Upgrade:
 
