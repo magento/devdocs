@@ -22,7 +22,7 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 <h4> Upgrade and Installation</h4>
 <!-- 50224 -->* Fixed issue with data being inconsistently created during installation of a store.
 
-<!-- 47531 -->* During update, the `setup:config:set` script no longer deletes values. 
+<!-- 47531 -->* During upgrade, the `setup:config:set` script no longer deletes values in the `env.php` file. 
 
 
 <h4>Import</h4>
