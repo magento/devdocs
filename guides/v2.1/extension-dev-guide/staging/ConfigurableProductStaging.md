@@ -19,19 +19,16 @@ github_link: extension-dev-guide/staging/ConfigurableProductStaging.md
 
 ## Overview
 
-The **Magento_ConfigurableProductStaging** module is a part of the staging functionality in Magento EE. It allows to stage bundle options.
+The Magento_ConfigurableProductStaging module is a part of the staging functionality in Magento EE. It enables you to add Configurable Product updates to the existing store campaigns. In other words, you can change the Configurable Product attributes in campaigns. These updates are shown on the campaign dashboard.
 
-## Backward incompatible changes
-No backward incompatible changes
+## Specific Implementation Details
 
-## Dependencies
-The **Magento_ConfigurableProductStaging** is dependent on the following modules:
-
-- Magento_Staging
-- Magento_Bundle
+The Magento_ConfigurableProductStaging module changes the Configurable Product creation page to make them compatible with the Magento Staging Framework. This module depends on the Magento_ConfigurableProduct module and extends its functionality.
 
 ## Specific Settings
-The **Magento_ConfigurableProductStaging** module does not provide any specific settings.
+
+The Magento_ConfigurableProductStaging module does not provide any specific settings.
 
 ## Specific Extension Points
-The **Magento_ConfigurableProductStaging** module does not provide any specific extension points. You can extend it using the Magento extension mechanism.
+
+The Magento_ConfigurableProductStaging module does not provide any specific extension points. You can extend it using the Magento extension mechanism.
