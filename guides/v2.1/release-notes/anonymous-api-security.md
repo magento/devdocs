@@ -60,7 +60,7 @@ By default, this security feature is enabled. To disable this feature, log in to
 
 To update the list of APIs that are inaccessible to anonymous users, edit the `app/code/Magento/WebapiSecurity/etc/di.xml` file.
 
-The following APIs remain accessible to anonymous users.
+The following APIs remain accessible to anonymous users. Most of these must remain accessible to support the checkout and add-to-cart ajax functionalities.
 
 | Product | Module | API | Action |
 | --- | --- | --- | --- |
