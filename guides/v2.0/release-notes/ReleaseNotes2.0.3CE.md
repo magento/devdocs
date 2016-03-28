@@ -32,6 +32,9 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 <h4>APIs</h4>
 <!-- 46720 --> * The Orders API now exposes the shipping address. This corrects an issue with using this API to integrate with third-party systems. 
 
+<!-- 49558 --> * The SOAP API now returns attributes of type "text swatch" and "visual swatch" when you use the API to add attribute options. Previously, this feature did not work for these attribute types.  
+
+
 <h4>PHP</h4>
 <!-- 50500 -->* Magento now allows the use of arguments of `url` type in nested arrays. Previously, you could pass route parameters only if the `url` argument was declared at the top level.  
 
@@ -43,6 +46,8 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 
 <!-- 47844 -->* Magento now successfully saves and displays new customer attributes. 
 
+<!-- 49449--> * Magento performance has been improved by the removal of redundant get requests that previously occurred during shopping cart refresh.
+
 
 
 <h4>Security enhancements</h4>
@@ -52,7 +57,7 @@ The following list provides an overview of the security issues fixed in this rel
 
 <!-- 45887 -->* Issue with persistent cross-site scripting through user account has been resolved. See APPSEC-1263 for more information. 
 
-<!-- 50608 -->*  Magento now supports setting limits on password attempts. Previously, Admin and customer token API access did not limit the number of attempts to enter a password, inadvertently allowing brute force attempts to guess passwords. See APPSEC-1377 for more information.
+<!-- 50608 -->*  Magento now supports setting limits on password attempts. Previously, Admin and Customer Token API access did not limit the number of attempts to enter a password, inadvertently allowing brute force attempts to guess passwords. See APPSEC-1377 for more information.
 
 <!-- 50611 -->* Many REST APIs that previously granted access to anonymous users can now be configured to require a higher permission level.  See APPSEC-1378 for more information.
 

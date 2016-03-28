@@ -31,6 +31,10 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 <h4>APIs</h4>
 <!-- 46720 --> * The Orders API now exposes the shipping address. This corrects an issue with using this API to integrate with third-party systems. 
 
+
+<!-- 49558 --> * The SOAP API now returns attributes of type "text swatch" and "visual swatch" when you use the API to add attribute options. Previously, this feature did not work for these attribute types.  
+
+
 <h4>PHP</h4>
 <!-- 50500 -->* Magento now allows the use of arguments of `url` type in nested arrays. Previously, you could pass route parameters only if the `url` argument was declared at the top level.  
 
@@ -46,6 +50,9 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 
 <!-- 48124 --> * Admin users can now view orders only from stores for which they have view  permission.
 
+<!-- 49449--> * Magento performance has been improved by the removal of redundant get requests that previously occurred during shopping cart refresh.
+
+
 
 <h4>Security enhancements</h4>
 This release includes several enhancements to improve the security of your Magento 2.0.3 installation. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento 2.0 installation to the latest version as soon as possible.
@@ -60,7 +67,10 @@ The following list provides an overview of the security issues fixed in this rel
 
 <!-- 48819 -->* Magento now prevents the arbitrary execution of PHP code through the language package CSV file. See APPSEC-1337 for more information.
 
-<!-- 47050 -->* The encryption keys that are generateAPId in **System -> Manage Encryption Key** have been strengthened. See APPSEC-1303 for more information.
+<!-- 47050 -->* The encryption keys that are generateAPId in **System > Manage Encryption Key** have been strengthened. See APPSEC-1303 for more information.
+
+<!-- 50755 -->* Reflected XSS can no longer occur through the Authorizenet module’s redirect data. See APPSEC-1379 for more information.
+
 
 We recommend that you review <a href="http://http://merch.docs.magento.com/ce/user_guide/magento/magento-security-best-practices.html" target="_blank">Magento’s Security Best Practices</a>, and confirm that all safeguards are in place to protect your system from compromise. Use this occasion to examine your system for indications of possible attack, such as strange administrator accounts, unfamiliar files on the server, etc. To receive direct notification from our security team regarding any emerging issues and solutions, sign up for the Security Alert Registry.
 
