@@ -3,7 +3,7 @@ layout: default
 group: release-notes
 subgroup: 
 title: 
-menu_title:  
+menu_title:  security issues review
 menu_node: 
 menu_order: 
 github_link: 
@@ -20,7 +20,7 @@ The release note text is the brief description that we include in the general re
 
 <h3>MAGETWO-50611/APPSEC-1378</h3>
 
-Release note: Many REST APIs that previously granted access to anonymous users can now be configured to require a higher permission level. 
+Release note: Many APIs that previously granted access to anonymous users can now be configured to require a higher permission level. 
 
 APPSEC description: Kevin Harper is working on a longer description.
 
@@ -45,7 +45,7 @@ Magento now prevents the arbitrary execution of PHP code through the language pa
 
 
 <h3>MAGETWO-45887/APPSEC-1263</h3>
-Release note: Issue with persistent cross-site scripting through user account has been resolved. 
+Release note: Issue with persistent cross-site scripting through a user account has been resolved. 
 
 APPSEC description:
 Issue with persistent cross-site scripting through user account has been resolved. Previously, through customer account on the storefront, a user could provide an email address that contained JavaScript code. Magento now properly escapes output for this email address to avoid execution of this JavaScript on the browser in Admin and Customer accounts context when viewing the order/report.  

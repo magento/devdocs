@@ -57,19 +57,20 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 <h4>Security enhancements</h4>
 This release includes several enhancements to improve the security of your Magento 2.0.3 installation. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento 2.0 installation to the latest version as soon as possible.
 
-The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the Magento Security Center link that follows each issue. 
+The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the Magento Security Center. 
 
-<!-- 45887 -->* Issue with persistent cross-site scripting through user account has been resolved. See APPSEC-1263 for more information. 
+<!-- 45887 -->* Issue with persistent cross-site scripting through a user account has been resolved. 
 
-<!-- 50608 -->*  Magento now supports setting limits on password attempts. Previously, Admin and customer token API access did not limit the number of attempts to enter a password, inadvertently allowing brute force attempts to guess passwords. See APPSEC-1377 for more information.
+<!-- 50608 -->*  Magento now supports setting limits on password attempts. Previously, Admin and customer token API access did not limit the number of attempts to enter a password, inadvertently allowing brute force attempts to guess passwords. 
 
-<!-- 50611 -->* Many REST APIs that previously granted access to anonymous users can now be configured to require a higher permission level.  See APPSEC-1378 for more information.
+<!-- 50611 -->* Many APIs that previously granted access to anonymous users can now be configured to require a higher permission level.  Default product behavior does not permit anonymous access to Catalog, Store and CMS APIs. However, if you would like to allow anonymous access, you can change this setting. 
 
-<!-- 48819 -->* Magento now prevents the arbitrary execution of PHP code through the language package CSV file. See APPSEC-1337 for more information.
 
-<!-- 47050 -->* The encryption keys that are generateAPId in **System > Manage Encryption Key** have been strengthened. See APPSEC-1303 for more information.
+<!-- 48819 -->* Magento now prevents the arbitrary execution of PHP code through the language package CSV file. 
 
-<!-- 50755 -->* Reflected XSS can no longer occur through the Authorizenet module’s redirect data. See APPSEC-1379 for more information.
+<!-- 47050 -->* The encryption keys that are generateAPId in **System > Manage Encryption Key** have been strengthened. 
+
+<!-- 50755 -->* Reflected XSS can no longer occur through the Authorizenet module’s redirect data. 
 
 
 We recommend that you review <a href="http://http://merch.docs.magento.com/ce/user_guide/magento/magento-security-best-practices.html" target="_blank">Magento’s Security Best Practices</a>, and confirm that all safeguards are in place to protect your system from compromise. Use this occasion to examine your system for indications of possible attack, such as strange administrator accounts, unfamiliar files on the server, etc. To receive direct notification from our security team regarding any emerging issues and solutions, sign up for the Security Alert Registry.
