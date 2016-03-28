@@ -62,7 +62,7 @@ If for some reason the list of APIs that are inaccessible to anonymous users mus
 
 ``<type name="Magento\WebapiSecurity\Model\Plugin\AnonymousResourceSecurity">``
 
-The following APIs remain accessible to anonymous users. Most of these must remain accessible to support the checkout and add-to-cart ajax functionalities.
+The following APIs remain accessible to anonymous users. Most of these must remain accessible to support the checkout and add-to-cart Ajax functionalities.
 
 | Product | Module | API | Action |
 | --- | --- | --- | --- |
