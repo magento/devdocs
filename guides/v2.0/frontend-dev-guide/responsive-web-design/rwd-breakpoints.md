@@ -1,16 +1,16 @@
 ---
 layout: default
 group: fedg
-subgroup: D_CSS
+subgroup: E_rwd
 title: Add a custom breakpoint
 menu_order: 7
 menu_title: Add a custom breakpoint
-github_link: frontend-dev-guide/css-topics/css-breakpoints.md
+github_link: frontend-dev-guide/responsive-web-design/rwd-breakpoints.md
 ---
 
 <h2>What's in this topic</h2>
 
-Breakpoints are used in stylesheets to set up the screen width at which the design changes, for example from the mobile to the desktop version. Magento out of the box themes implement a list of [default breakpoints]({{site.gdeurl}}frontend-dev-guide/responsive-web-design/rwd_css.html#fedg_rwd_css_break). This topic describes how to add a custom breakpoint in your theme. 
+Breakpoints are used in stylesheets to set up the screen width at which the design changes, for example from the mobile to the desktop version. Themes provided with Magento implement a list of [default breakpoints]({{site.gdeurl}}frontend-dev-guide/responsive-web-design/rwd_css.html#fedg_rwd_css_break). This topic describes how to add a custom breakpoint in your theme. 
 
 **Contents**
 

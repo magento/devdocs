@@ -215,10 +215,10 @@ If set to <code>true</code>, the transparent background of images is saved. If i
         </code>
       </td>
       <td>
-array
+string
       </td>
       <td>
-The color for the images background. Not applied to images with transparency, if <code>transparency</code> is set to <code>true</code>.
+The color for the images background. Not applied to images with transparency, if <code>transparency</code> is set to <code>true</code>. Format: "[<R>, <G>, <B>]", e.g.: "[255, 255, 255]".
       </td>
       <td>
         Optional

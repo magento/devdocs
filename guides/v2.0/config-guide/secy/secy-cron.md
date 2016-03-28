@@ -103,12 +103,6 @@ To add security for cron in Magento's `.htaccess`:
     		Require group <name>
 		</Files>
 4.	Save your changes to `.htaccess` and exit the text editor.
-5.	Restart Apache:
-
-	CentOS: `service httpd restart`
-
-	Ubuntu: `service apache2 restart`
-
 6.	Continue with <a href="#config-cron-secure-apache-verify">Verify cron is secure</a>.
 
 <h2 id="config-cron-secure-nginx">Secure cron with nginx</h2>

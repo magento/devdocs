@@ -19,23 +19,6 @@ Also, it gives information how to add a theme independent logo for your store.
 * TOC
 {:toc}
 
-<!--
-<h2 id="theme-apply-cache">Disable the system cache</h2>
-
-When Magento system cache is enabled, you must clear it each time to see your design changes reflected on a store front. To avoid this, disable certain system cache types while you make design changes.
-To do this:
-
-1. In Admin, go to **System** > **Tools** > **Cache** **Management**.
-2. Select the Layouts, Blocks HTML output, View files fallback, View files pre-processing and Page Cache cache types.
-2. In **Actions** select **Disable** and click **Submit**. The selected cache types show a red bar in the status area that reads DISABLED.
-<p><img src="{{ site.baseurl }}common/images/cache.png" alt="Cache types disabled"></p>
-
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>If you apply a theme a second or subsequent time, you might need to manually clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;</code> directory. This directory stores the <a href="{{site.gdeurl}}architecture/view/static-process.html#publish-static-view-files" target="_blank">published</a> <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-structure.html#theme-structure-pub" target="_blank">static files</a>.</p>
-</div>
-
- -->
 
 ## Prerequisites 
 
@@ -47,8 +30,7 @@ After you <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-create.html">a
 
 To apply a theme:
 
-1. In Admin go to **CONTENT** > **Design** > **Themes**. Make sure your theme appears in the theme list.
-2. Go to **Stores** > **Configuration** > **Design**.
+2. In Admin, go to **Stores** > **Configuration** > **Design**.
 3. In the **Scope** drop-down field, select the store view where you want to apply the theme.
 4. On the **Design Theme** tab, select your newly created theme in the **Design Theme** drop-down.
 5. Click **Save Config**.
@@ -60,8 +42,7 @@ To apply a theme:
 Design exceptions enable you to specify an alternative theme for particular user-agents, instead of creating a separate store views for them.
 To add a design exception:
 
-1. In the Admin panel go to **CONTENT** > **Design** > **Themes** and make sure your theme appeared in the list of available themes.
-2. Go to **Stores** > **Configuration** > **Design**.
+2. In Admin, go to **Stores** > **Configuration** > **Design**.
 3. In the **Scope** drop-down field, select your website.
 4. On the **Design Theme** tab next to **User-Agent Exceptions** click **Add**.
 5. In the **Search String** box specify the user-agent using either normal strings or regular exceptions (PCRE). In the **Design Theme** drop-down list select the theme to be used for matching agent.
