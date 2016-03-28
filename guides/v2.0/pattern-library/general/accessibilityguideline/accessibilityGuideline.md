@@ -2,7 +2,7 @@
 layout: default
 group: pattern
 subgroup: General
-title: Magento Admin Pattern Library
+title: Admin Design Pattern Library
 menu_title: Accessibility Guideline
 menu_order: 
 menu_node: 
@@ -92,7 +92,7 @@ Evaluate the design in grayscale. Make sure to use both shapes and color to diff
 
 Differentiate link text from other text.
 
-**12. Doo not use content that causes <a href="http://www.w3.org/WAI/WCAG20/quickref/Overview.php#seizure" target="blank"> seizures. </a>**
+**12. Do not use content that causes seizures.**
 
 <h3 id="content">Content</h3>
 **1. Ensure that link text makes sense by itself**
