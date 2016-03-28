@@ -19,17 +19,17 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 <h3>Fixed issues</h3>
 
 <h4> Upgrade and Installation</h4>
-<!-- 50224 -->* inconsistent data during installation of store
+<!-- 50224 -->* Fixed issue with data being inconsistently created during installation of a store.
 
 <!-- 47531 -->* During update, the `setup:config:set` script no longer deletes values. 
 
 
 <h4>Import</h4>
-<!-- 50255 -->* You can now successfully import products that meet these two criteria: they already exist in the product catalog,  and they use custom URLs. 
+<!-- 50255 -->* You can now successfully import products if they already exist in the product catalog,  and they use custom URLs. 
 
 
 <h4>APIs</h4>
-<!-- 46720 --> * The Orders API now exposes Shipping address. This corrects a problem users of Magento 2.x experienced using this API to integrate with third-party systems. 
+<!-- 46720 --> * The Orders API now exposes the shipping address. This corrects an issue with using this API to integrate with third-party systems. 
 
 <h4>PHP</h4>
 <!-- 50500 -->* Magento now allows the use of arguments of `url` type in nested arrays. Previously, you could pass route parameters only if the `url` argument was declared at the top level.  
@@ -37,7 +37,6 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 <h4>Miscellaneous</h4>
 <!-- 47704 -->* Magento no longer displays HTML tags in messages. 
 
-<!-- 48081 -->* Source files now display 2016 copyright statement. 
 
 <!-- 48781 --> * Product performance has been enhanced when loading catalog products with multiple color swatches. 
 
@@ -53,22 +52,22 @@ This release includes several enhancements to improve the security of your Magen
 
 The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the Magento Security Center link that follows each issue. 
 
-<!-- 45887 -->* Issues with persistent cross-site scripting have been resolved. Previously, during customer registration on the storefront, a user could provide an email address that contained JavaScript code. Magento now properly validates this email address and executes it in Admin context when viewing the order in the backend. See APPSEC-1263 for more information. 
+<!-- 45887 -->* Issue with persistent cross-site scripting through user account has been resolved. See APPSEC-1263 for more information. 
 
 <!-- 50608 -->*  Magento now supports setting limits on password attempts. Previously, Admin and customer token API access did not limit the number of attempts to enter a password, inadvertently allowing brute force attempts to guess passwords. See APPSEC-1377 for more information.
 
 <!-- 50611 -->* Many REST APIs that previously granted access to anonymous users can now be configured to require a higher permission level.  See APPSEC-1378 for more information.
 
-<!-- 48819 -->* arbitrary PHP code execution. See APPSEC-1337 for more information.
+<!-- 48819 -->* Magento now prevents the arbitrary execution of PHP code through the language package CSV file. See APPSEC-1337 for more information.
 
-<!-- 47050 -->* The encryption keys that are generated in **System -> Manage Encryption Key** have been strengthened. See APPSEC-1303 for more information.
+<!-- 47050 -->* The encryption keys that are generateAPId in **System -> Manage Encryption Key** have been strengthened. See APPSEC-1303 for more information.
 
-We recommend that you review Magento’s Security Best Practices, and confirm that all safeguards are in place to protect your system from compromise. Use this occasion to examine your system for indications of possible attack, such as strange administrator accounts, unfamiliar files on the server, etc. To receive direct notification from our security team regarding any emerging issues and solutions, sign up for the Security Alert Registry.
+We recommend that you review <a href="http://http://merch.docs.magento.com/ce/user_guide/magento/magento-security-best-practices.html" target="_blank">Magento’s Security Best Practices</a>, and confirm that all safeguards are in place to protect your system from compromise. Use this occasion to examine your system for indications of possible attack, such as strange administrator accounts, unfamiliar files on the server, etc. To receive direct notification from our security team regarding any emerging issues and solutions, sign up for the Security Alert Registry.
 
 
 
 <h3>System requirements</h3>
-Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports PHP 5.5, 5.6x, 7.0.2, and MySQL 5.6. For more information, see 
+Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see 
 <a href="http://devdocs.magento.com/guides/v2.0/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
 
 
@@ -83,7 +82,7 @@ New users can now complete a full installation of Magento Enterprise Edition 2.0
 
 2. Under Full Release for version 2.0.3, select a format for the download archive file. Then, click **Download**.
 
-3.	Follow the Magento <a href="http://devdocs.magento.com/guides/v2.0/install-gde/install-quick-ref.html" target="_blank">installation instructions</a>.
+3.	Follow the Magento <a href="http://devdocs.magento.com/guides/v2.0/install-gde/prereq/integrator_install.html#integrator-first-composer-ee" target="_blank">installation instructions</a>.
 
 #####<b>Install a new installation with Composer</b>#####
 
@@ -104,6 +103,9 @@ If you installed Magento Enterprise Edition 2.0.0 from an archive, you must perf
 2.	On the Admin sidebar, click **System**. Under **Tools**,  choose **Web Setup Wizard**.
 
 3.	Click  **System Upgrade**. Follow the onscreen instructions to complete the upgrade.
+
+For more information, see <a href="http://devdocs.magento.com/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html" target="_blank">Upgrade the Magento installation and components</a>.
+
 
 
 #####<b>Upgrade an existing installation from the GitHub repository</b>#####

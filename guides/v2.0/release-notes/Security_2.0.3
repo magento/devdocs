@@ -1,8 +1,8 @@
 ---
 layout: default
 group: release-notes
-subgroup: Release Notes
-title: Release Notes
+subgroup: 
+title: 
 menu_title:  
 menu_node: 
 menu_order: 
@@ -15,48 +15,53 @@ Collaborative workspace for generating descriptions for APPSECs and security-rel
 
 This content is a work-in-progress. It is for internal use only. 
 
+The release note text is the brief description that we include in the general release notes. The APPSEC description are the longer discussions that we'll post on the Security Center. Ideally, the release-note text is the first sentence or two of the APPSEC discussion.  
+
 
 <h3>MAGETWO-50611/APPSEC-1378</h3>
 
 Release note: Many REST APIs that previously granted access to anonymous users can now be configured to require a higher permission level. 
 
-APPSEC description: Kevin will provide longer description.
+APPSEC description: Kevin Harper is working on a longer description.
 
 
 <h3>MAGETWO-50608/APPSEC-1377</h3>
-Release note: Magento now supports setting limits on password attempts. Previously, Admin and customer token API access did not limit the number of attempts to enter a password, inadvertently allowing brute force attempts to guess passwords
+Release note: Magento now supports setting limits on API access password attempts. 
 
 APPSEC description:
-admin and customer token API access does not have a limit/allows brute force attempts to guess passwords.
-Possible to bruteforce admin users & passwords via /V1/integration/admin/token (so the random generated
+
+Magento now supports setting limits on API access password attempts. Previously, the Admin and Customer Token Access APIs did not limit the number of attempts to have access, inadvertently allowing malicious users could perform brute-force attempts to guess Admin user names and password. 
+
+Fix: 
+The Admin and Customer Token Access APIs no longer permit unlimited attempts on username/passwords. 
 
 
 <h3>MAGETWO-48819/APPSEC-1337</h3>
 
-Release note: arbitrary PHP code execution
-setting the php into language csv file, and with the execution of command 'php bin/magento i18n:collect-phrases -o "lang.csv" -m .' it will execute
+Release note: Magento now prevents the arbitrary execution of PHP code through the language package CSV file.   
 
 APPSEC description:
-To remove eval() call, string concatenation has to be removed but a strategy must come up so that they can bypass code style check (concat is used because a string is too long so it cannot fit in one line), and also may be a static test to check that only static cstrings are used.
-
+Magento now prevents the arbitrary execution of PHP code through the language package CSV file. Previously, a malicious user could add PHP code  into the language package's CSV file by executing 'php bin/magento i18n:collect-phrases -o "lang.csv" -m'.  
 
 
 <h3>MAGETWO-45887/APPSEC-1263</h3>
-Release note: Issues with persistent cross-site scripting have been resolved. Previously, during customer registration on the storefront, a user could provide an email address that contained JavaScript code. Magento now properly validates this email address and executes it in Admin context when viewing the order in the backend. 
+Release note: Issue with persistent cross-site scripting through user account has been resolved. 
 
 APPSEC description:
-This can still be triggered if the user leaves a review for a product. After a review is left, navigating to Reports -> Reviews -> By Customers will trigger the XSS.
+Issue with persistent cross-site scripting through user account has been resolved. Previously, through customer account on the storefront, a user could provide an email address that contained JavaScript code. Magento now properly escapes output for this email address to avoid execution of this JavaScript on the browser in Admin and Customer accounts context when viewing the order/report.  
+
 
 <h3>MAGETWO-47050/APPSEC-1303</h3>
 
-Release note: The encryption keys that are generated in **System -> Manage Encryption Key** have been strengthened.
+Release note: The encryption keys that are generateAPId in **System -> Manage Encryption Key** have been strengthened.
 
-APPSEC description:
+APPSEC description: The encryption keys that are generated in **System -> Manage Encryption Key** have been strengthened. Previously, a malicious user could comparatively easily break these keys because of the usage of a weak hashing algorithm.
+
 
 
 <h3>MAGETWO-50755/APPSEC-1379</h3>
 
-Release note: 
+Release note: we basically fixed Reflected XSS through authorizenet module’s redirect data.
 
 APPSEC description:
 
@@ -64,4 +69,3 @@ APPSEC description:
 
 <h3>Questions</h3>
 
-* Will we be including MAGETWO-48562/APPSEC-1329? If there's a chance we will, let's work on a description. 
