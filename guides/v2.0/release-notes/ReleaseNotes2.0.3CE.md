@@ -11,7 +11,7 @@ redirect_from:
 ---
 
 <h2>Magento Community Edition 2.0.3</h2>
-This release includes multiple functional fixes and performance enhancements. It also addresses four security issues, as described in Security enhancements.  
+We are pleased to present Magento Community Edition 2.0.3. This release includes multiple functional fixes and performance enhancements. It also addresses six security issues, as described in Security enhancements.  
 
 
 Backward-incompatible changes are documented in <a href="http://devdocs.magento.com/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
@@ -36,7 +36,7 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 
 
 <h4>PHP</h4>
-<!-- 50500 -->* Magento now allows the use of arguments of `url` type in nested arrays. Previously, you could pass route parameters only if the `url` argument was declared at the top level.  
+<!-- 50500 -->* Magento now allows you to use arguments of `url` type in nested arrays. Previously, you could pass route parameters only if the `url` argument was declared at the top level.  
 
 
 <h4>Miscellaneous</h4>
@@ -53,17 +53,22 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 <h4>Security enhancements</h4>
 This release includes several enhancements to improve the security of your Magento 2.0.3 installation. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento 2.0 installation to the latest version as soon as possible.
 
-The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the Magento Security Center. 
+The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the <a href="https://magento.com/security.html" target="_blank">Magento Security Center</a>. 
 
-<!-- 45887 -->* Issue with persistent cross-site scripting through a user account has been resolved.  
+<!-- 45887 -->* Issue with persistent cross-site scripting through a user account has been resolved. 
 
 <!-- 50608 -->*  Magento now supports setting limits on password attempts. Previously, Admin and Customer Token API access did not limit the number of attempts to enter a password, inadvertently allowing brute force attempts to guess passwords. 
 
-<!-- 50611 -->* Many APIs that previously granted access to anonymous users can now be configured to require a higher permission level.  Default product behavior does not permit anonymous access to Catalog, Store and CMS APIs. However, if you would like to allow anonymous access, you can change this setting. 
+<!-- 50611 -->* APIs that previously granted access to anonymous users are now configured to require a higher permission level.  Default product behavior does not permit anonymous access to Catalog, Store and CMS APIs. However, if you would like to allow anonymous access, you can change this setting. 
+
 
 <!-- 48819 -->* Magento now prevents the arbitrary execution of PHP code through the language package CSV file. 
 
-We recommend that you review <a href="http://http://merch.docs.magento.com/ce/user_guide/magento/magento-security-best-practices.html" target="_blank">Magento’s Security Best Practices</a>, and confirm that all safeguards are in place to protect your system from compromise. Use this occasion to examine your system for indications of possible attack, such as strange administrator accounts, unfamiliar files on the server, etc. To receive direct notification from our security team regarding any emerging issues and solutions, sign up for the Security Alert Registry.
+<!-- 47050 -->* The encryption keys that are generated in **System > Manage Encryption Key** have been strengthened. 
+
+<!-- 50755 -->* Reflected XSS can no longer occur through the Authorizenet module’s redirect data. 
+
+We recommend that you review <a href="http://http://merch.docs.magento.com/ce/user_guide/magento/magento-security-best-practices.html" target="_blank">Magento’s Security Best Practices</a>, and confirm that all safeguards are in place to protect your system from compromise. Use this occasion to examine your system for indications of possible attack, such as strange administrator accounts, unfamiliar files on the server, etc. To receive direct notification from our security team regarding any emerging issues and solutions, sign up for the <a href="https://magento.com/security.html" target="_blank">Security Alert Registry</a>.
 
 
 <h3>System requirements</h3>
