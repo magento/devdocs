@@ -11,7 +11,7 @@ redirect_from:
 ---
 
 <h2>Magento Community Edition 2.0.3</h2>
-We are pleased to present Magento Community Edition 2.0.3. This release includes multiple functional fixes and performance enhancements. It also addresses six security issues, as described in Security enhancements.  
+We are pleased to present Magento Community Edition 2.0.3. This release includes multiple functional fixes and performance enhancements. It also addresses several security issues, as described in Security enhancements.  
 
 
 Backward-incompatible changes are documented in <a href="http://devdocs.magento.com/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.

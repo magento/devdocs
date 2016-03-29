@@ -11,7 +11,7 @@ redirect_from:
 ---
 
 <h2>Magento Enterprise Edition 2.0.3</h2>
-We are pleased to present Magento Enterprise Edition 2.0.3. This release includes multiple functional fixes and performance enhancements. It also addresses five security issues, as described in Security enhancements.  
+We are pleased to present Magento Enterprise Edition 2.0.3. This release includes multiple functional fixes and performance enhancements. It also addresses several security issues, as described in Security enhancements.  
 
 
 Backward-incompatible changes are documented in <a href="http://devdocs.magento.com/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
@@ -70,10 +70,10 @@ The following list provides an overview of the security issues fixed in this rel
 
 <!-- 47050 -->* The encryption keys that are generated in **System > Manage Encryption Key** have been strengthened. 
 
-<!-- 50755 -->* Reflected XSS can no longer occur through the Authorizenet module’s redirect data. 
+<!-- 50755 -->* Reflected cross-site scripting (XSS) can no longer occur through the Authorizenet module’s redirect data. 
 
 
-We recommend that you review <a href="http://http://merch.docs.magento.com/ce/user_guide/magento/magento-security-best-practices.html" target="_blank">Magento’s Security Best Practices</a>, and confirm that all safeguards are in place to protect your system from compromise. Use this occasion to examine your system for indications of possible attack, such as strange administrator accounts, unfamiliar files on the server, etc. To receive direct notification from our security team regarding any emerging issues and solutions, sign up for the <a href="https://magento.com/security.html" target="_blank">Security Alert Registry</a>.
+We recommend that you review <a href="magento.com/security/best-practices/security-best-practices" target="_blank">Magento’s Security Best Practices</a>, and confirm that all safeguards are in place to protect your system from compromise. Use this occasion to examine your system for indications of possible attack, such as strange administrator accounts, unfamiliar files on the server, etc. To receive direct notification from our security team regarding any emerging issues and solutions, sign up for the <a href="https://magento.com/security/sign-up.html" target="_blank">Security Alert Registry</a>.
 
 
 
@@ -104,12 +104,12 @@ New users can now complete a full installation of Magento Enterprise Edition 2.0
 3.	Follow the instructions to download Composer, and get the Magento EE metapackage.
 
 <h4>Upgrade existing installations</h4>
-If you installed Magento Enterprise Edition 2.0.0 from an archive, you must perform some additional tasks before you can upgrade your installation. Current users of Magento 2.0.0/2.0.1/2.0.2 must first update the installer from the command line. Then, update the installation from the <a href="http://http://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html" target="_blank">Web Setup Wizard</a> or command line. For detailed instructions, see the <a href="http://devdocs.magento.com/guides/v2.0/release-notes/tech_bull_201-upgrade.html" target="_blank">technical bulletin</a>.
+If you installed Magento Enterprise Edition 2.0.0 from an archive, you must perform some additional tasks before you can upgrade your installation. Current users of Magento 2.0.0/2.0.1/2.0.2 must first update the installer from the command line. Then, update the installation from the <a href="http://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html" target="_blank">Web Setup Wizard</a> or command line. For detailed instructions, see the <a href="http://devdocs.magento.com/guides/v2.0/release-notes/tech_bull_201-upgrade.html" target="_blank">technical bulletin</a>.
 
 
 #####<b>Upgrade an existing installation from the Setup Wizard</b>#####
 
-1.	1.	Log in to Admin with Administrator privileges.
+1.	1.	Log in to the Admin panel with Administrator privileges.
 
 2.	On the Admin sidebar, click **System**. Under **Tools**,  choose **Web Setup Wizard**.
 
