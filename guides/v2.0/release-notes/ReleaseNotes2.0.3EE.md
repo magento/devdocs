@@ -89,9 +89,11 @@ New users can now complete a full installation of Magento Enterprise Edition 2.0
 
 #####<b>Download a new installation</b>#####
 1. Go to the Magento website, and click **My Account**. Then, log in to your account. 
-2. In the panel on the left, choose **Downloads**. Choose **Magento Enterprise Edition 2.x*, and do the following:
+2. In the panel on the left, choose **Downloads**. Choose **Magento Enterprise Edition 2.x**, and do the following:
 a.	Click **Magento Enterprise Edition 2.x Release**.
+
 b.	In the list, choose **Version 2.0.3**.
+
 c.	Click **Download**.
 
 3.	Follow the instructions to upgrade and verify your installation. If you need help, go to the **Support** tab of your Magento account, and **Open a Ticket**.
