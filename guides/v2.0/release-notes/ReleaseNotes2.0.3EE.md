@@ -88,7 +88,7 @@ Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports
 New users can now complete a full installation of Magento Enterprise Edition 2.0.3 from an archive file.
 
 #####<b>Download a new installation</b>#####
-1. Go to the Magento website, and click **My Account**. Then, log in to your account. 
+1. Go to the <a href="https://www.magentocommerce.com/products/customer/account/login.html" target="_blank">Magento</a> website, and click **My Account**. Then, log in to your account. 
 2. In the panel on the left, choose **Downloads**. Choose **Magento Enterprise Edition 2.x**, and do the following:
 
 	a.	Click **Magento Enterprise Edition 2.x Release**.
