@@ -85,23 +85,17 @@ Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports
 <h3>Installation instructions</h3>
 
 <h4>New installations</h4>
-New users can now complete a full installation of Magento Enterprise Edition 2.0.3 from an archive file on the <a href="https://www.magentocommerce.com/download" target="_blank">Download</a> page.
+New users can now complete a full installation of Magento Enterprise Edition 2.0.3 from an archive file.
 
 #####<b>Download a new installation</b>#####
+1. Go to the Magento website, and click **My Account**. Then, log in to your account. 
+2. In the panel on the left, choose **Downloads**. Choose **Magento Enterprise Edition 2.x*, and do the following:
+a.	Click **Magento Enterprise Edition 2.x Release**.
+b.	In the list, choose **Version 2.0.3**.
+c.	Click **Download**.
 
-1. Go to the <a href="https://www.magentocommerce.com/download" target="_blank">Magento Enterprise Edition Download</a> page.
+3.	Follow the instructions to upgrade and verify your installation. If you need help, go to the **Support** tab of your Magento account, and **Open a Ticket**.
 
-2. Under Full Release for version 2.0.3, select a format for the download archive file. Then, click **Download**.
-
-3.	Follow the Magento <a href="http://devdocs.magento.com/guides/v2.0/install-gde/prereq/integrator_install.html#integrator-first-composer-ee" target="_blank">installation instructions</a>.
-
-#####<b>Install a new installation with Composer</b>#####
-
-1. Go to the <a href="https://www.magentocommerce.com/download" target="_blank">Magento Enterprise Edition Download</a> page.
-
-2.	Under **Download with Composer**, click **Download**.
-
-3.	Follow the instructions to download Composer, and get the Magento EE metapackage.
 
 <h4>Upgrade existing installations</h4>
 If you installed Magento Enterprise Edition 2.0.0 from an archive, you must perform some additional tasks before you can upgrade your installation. Current users of Magento 2.0.0/2.0.1/2.0.2 must first update the installer from the command line. Then, update the installation from the <a href="http://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html" target="_blank">Web Setup Wizard</a> or command line. For detailed instructions, see the <a href="http://devdocs.magento.com/guides/v2.0/release-notes/tech_bull_201-upgrade.html" target="_blank">technical bulletin</a>.
@@ -109,7 +103,7 @@ If you installed Magento Enterprise Edition 2.0.0 from an archive, you must perf
 
 #####<b>Upgrade an existing installation from the Setup Wizard</b>#####
 
-1.	1.	Log in to the Admin panel with Administrator privileges.
+1. Log in to the Admin panel with Administrator privileges.
 
 2.	On the Admin sidebar, click **System**. Under **Tools**,  choose **Web Setup Wizard**.
 
@@ -117,14 +111,13 @@ If you installed Magento Enterprise Edition 2.0.0 from an archive, you must perf
 
 For more information, see <a href="http://devdocs.magento.com/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html" target="_blank">Upgrade the Magento installation and components</a>.
 
+#####<b>Magento Partners</b>#####
+Magento partners can download the release and the release notes in PDF format from the Partner Portal.
 
+1.	Log in to the <a href="https://magento.com/partners.html" target="_blank">Partner Portal</a>.
+2.	Under Magento Enterprise Edition, choose **Magento Enterprise Edition 2.x**.
+3.	Find the **Magento Enterprise Edition 2.x Release**, and choose **Version 2.0.3**.
 
-#####<b>Upgrade an existing installation from the GitHub repository</b>#####
-Developers who contribute to the EE codebase can <a href="http://devdocs.magento.com/guides/v2.0/install-gde/install/cli/dev_options.html" target="_blank">upgrade manually</a> from the Magento EE GitHub repository.
-
-1.	Go to the <a href="http://devdocs.magento.com/guides/v2.0/install-gde/install/cli/dev_options.html" target="_blank">Contributing Developers</a> page.
-
-2.	Follow the instructions to pull the updates from the repository and update Composer.
 
 
 
