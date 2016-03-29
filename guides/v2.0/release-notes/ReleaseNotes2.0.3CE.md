@@ -26,7 +26,7 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 
 
 <h4>Import</h4>
-<!-- 50255 -->* You can now successfully import products if they already exist in the product catalog,  and they use custom URLs. 
+<!-- 50255 -->* Magento now successfully imports existing products as well as products that use custom URLs. 
 
 
 <h4>APIs</h4>
