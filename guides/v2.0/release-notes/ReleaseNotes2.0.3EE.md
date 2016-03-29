@@ -19,13 +19,13 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 <h3>Fixed issues</h3>
 
 <h4> Upgrade and Installation</h4>
-<!-- 50224 -->* Fixed issue with data being inconsistently created during installation of a store.
+<!-- 50224 -->* Magento no longer creates store data inconsistently during installation. Previously, data was inconsistently created during store creation.
 
 <!-- 47531 -->* During upgrade, the `setup:config:set` script no longer deletes values in the `env.php` file. 
 
 
 <h4>Import</h4>
-<!-- 50255 -->* Magento now successfully imports existing products as well as products that use custom URLss. 
+<!-- 50255 -->* Magento now successfully imports existing products as well as products that use custom URLs. 
 
 
 <h4>APIs</h4>
