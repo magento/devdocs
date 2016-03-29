@@ -73,7 +73,7 @@ The following list provides an overview of the security issues fixed in this rel
 <!-- 50755 -->* Reflected cross-site scripting (XSS) can no longer occur through the Authorizenet module’s redirect data. 
 
 
-We recommend that you review <a href="magento.com/security/best-practices/security-best-practices" target="_blank">Magento’s Security Best Practices</a>, and confirm that all safeguards are in place to protect your system from compromise. Use this occasion to examine your system for indications of possible attack, such as strange administrator accounts, unfamiliar files on the server, etc. To receive direct notification from our security team regarding any emerging issues and solutions, sign up for the <a href="https://magento.com/security/sign-up.html" target="_blank">Security Alert Registry</a>.
+We recommend that you review Magento's <a href="magento.com/security/best-practices/security-best-practices.html" target="_blank">Security Best Practices</a>, and confirm that all safeguards are in place to protect your system from compromise. Use this occasion to examine your system for indications of possible attack, such as strange administrator accounts, unfamiliar files on the server, etc. To receive direct notification from our security team regarding any emerging issues and solutions, sign up for the <a href="https://magento.com/security.html" target="_blank">Security Alert Registry</a>.
 
 
 
