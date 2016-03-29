@@ -19,7 +19,7 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 <h3>Fixed issues</h3>
 
 <h4> Upgrade and Installation</h4>
-<!-- 50224 -->* Magento no longer creates store data inconsistently during installation. Previously, data was inconsistently created during store creation.
+<!-- 50224 -->* Magento no longer creates store data inconsistently during installation. 
 
 <!-- 47531 -->* During upgrade, the `setup:config:set` script no longer deletes values in the `env.php` file. 
 
