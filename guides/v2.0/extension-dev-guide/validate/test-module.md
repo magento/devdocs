@@ -25,8 +25,8 @@ redirect_from:
 PHPUnit is a PHP testing framework ideal for Magento programmers. Test your component with [PHPUnit](https://phpunit.de/){:target="_blank"}, available on GitHub at [https://github.com/sebastianbergmann/phpunit](https://github.com/sebastianbergmann/phpunit){:target="_blank"}.
 
 ## Functional testing {#test-functional}
-For further testing with Magento testing frameworks, see 
-[Magento Testing Framework]({{ site.gdeurl }}mtf/mtf_introduction.html).
+For further testing with the Magento functional testing frameworks, see 
+[Functional Testing Framework]({{ site.gdeurl }}mtf/mtf_introduction.html).
 
 ## Test using Community Edition {#test-comm}
 Test your component by deploying Magento Community Edition and adding the component to the project's <code>composer.json</code>. 
@@ -65,6 +65,4 @@ One way to do this follows:
 ##More information
 For more information on testing in PHP and validating Magento components, see the following:
 
-* [PHP Reflection](http://php.net/manual/en/book.reflection.php){:target="_blank"}
-* [PHP Reflection Tutorial](http://code.tutsplus.com/tutorials/reflection-in-php--net-31408){:target="_blank"}
 * [Validating Magento Extensions](http://www.gorillagroup.com/trending/insight/validating-magento-extensions-phpunit/){:target="_blank"}
