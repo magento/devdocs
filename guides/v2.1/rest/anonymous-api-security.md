@@ -1,9 +1,11 @@
 ---
 layout: default
-group:
+group: rest
+subgroup: A_rest
+title: Restricting access to anonymous web APIs
 menu_title: Restricting access to anonymous web APIs
 menu_node:
-menu_order: 4
+menu_order: 6
 github_link: release-notes/anonymous-api-security.md
 ---
 
@@ -52,12 +54,12 @@ The following table lists the APIs that are no longer available to an anonymous 
 | CE | Store | /V1/store/storeConfigs | GET |
 
 <div class="bs-callout bs-callout-warning">
-    <p><b>Important:</b> Preventing anonymous access to these APIs could cause third-party integrations to fail. If a third-party integration calls any of these web APIs, it will receive an authentication error instead of the expected response. In this case, might need to disable this feature.</p>
+    <p>Preventing anonymous access to these APIs could cause third-party integrations to fail. If a third-party integration calls any of these web APIs, it will receive an authentication error instead of the expected response. In this case, might need to disable this feature.</p>
     <p>To disable this feature, log in to the Admin panel and navigate to <b>System > Configuration > Services > Magento Web API</b>. Then select <b>Yes</b> from the <b>Allow Anonymous Guest Access</b> menu.</p>
 </div>
 
 
-If for some reason the list of APIs that are inaccessible to anonymous users must be updated for a third-party extension, an integrator can add to their extension's `di.xml` file to update or replace the functionality defined in the WebapiSecurity module.
+If the list of APIs that are inaccessible to anonymous users must be updated for a third-party extension, an integrator can add to their extension's `di.xml` file to update or replace the functionality defined in the WebapiSecurity module.
 
 The following APIs remain accessible to anonymous users. Most of these must remain accessible to support the checkout and add-to-cart Ajax functionalities.
 
