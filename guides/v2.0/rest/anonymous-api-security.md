@@ -1,6 +1,6 @@
 ---
 layout: default
-group:
+group: rest
 title: Restricting access to anonymous web APIs
 menu_title: Restricting access to anonymous web APIs
 menu_node:
