@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Troubleshooting 503 (Backend Fetch Failed) errors</title>
+	<title>How to locate your session files</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/config-guide/varnish/tshoot-varnish-503.html">
+	<link rel="canonical" href="//guides/v2.0/config-guide/sessions.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -137,9 +137,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Troubleshooting 503 (Backend Fetch Failed) errors</h1>
+		<h1 class="page-heading">How to locate your session files</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/config-guide/varnish/tshoot-varnish-503.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/config-guide/sessions.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -575,7 +575,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/config-guide/varnish/tshoot-varnish-503.html">Troubleshooting 503 (Backend Fetch Failed) errors</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/tshoot-varnish-503.html">Troubleshooting 503 (Backend Fetch Failed) errors</a></li>
 
 									
 
@@ -925,7 +925,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/sessions.html">How to locate your session files</a></li>
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/config-guide/sessions.html">How to locate your session files</a></li>
 									
 								
 
@@ -1040,50 +1040,40 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<h2 id="varnish-503">Troubleshooting 503 (Backend Fetch Failed) errors</h2>
-<p>If the length of cache tags used by Magento exceed Varnish’s default of 8192 characters, you can see HTTP 503 (Backend Fetch Failed) errors in the browser. The errors might display similar to the following:</p>
+		<div>
 
-<pre><code>Error 503 Backend fetch failed
-Backend fetch failed
+  <h2 id="session-where">Locate your session storage</h2>
+  <p>This topic discusses how to locate where your session files are stored. The Magento application uses the following logic to store session files:</p>
+
+  <ul>
+    <li>If you configured memcached, sessions are stored in RAM; for more information, see <a href="/guides/v2.0/config-guide/memcache/memcache.html">Use memcached for session storage</a>.</li>
+    <li>
+      <p>If you’re using the default file-based session storage, we store sessions in the following locations in the order shown:</p>
+
+      <ol>
+        <li>Directory defined in <a href="#session-where-env"><code>env.php</code></a></li>
+        <li>Directory defined in <a href="#session-where-phpini"><code>php.ini</code></a></li>
+        <li><code>&lt;your Magento install dir&gt;/var/session</code> directory</li>
+      </ol>
+    </li>
+  </ul>
+
+  <h3 id="session-where-env"><code>env.php</code> example</h3>
+  <p>A sample snippet from <code>&lt;your Magento install dir&gt;/app/etc/env.php</code> follows:</p>
+
+  <pre><code>'session' =&gt;
+   array (
+     'save' =&gt; 'files',
+     'save_path' =&gt; '/var/www/session',
+),
 </code></pre>
 
-<p>To resolve this issue, increase the default value of <code>http_resp_hdr_len</code> in your Varnish configuration file as follows:</p>
+  <p>The preceding example stores session files in <code>/var/www/session</code></p>
 
-<ol>
-  <li>
-    <p>As a user with <code>root</code> privileges, open your Vanish configuration file in a text editor:</p>
+  <h3 id="session-where-phpini"><code>php.ini</code> example</h3>
+  <p>As a user with <code>root</code> privileges, open your <code>php.ini</code> file and search for the value of <code>session.save_path</code>. This identifies where sessions are stored.</p>
 
-    <ul>
-      <li>CentOS: <code>/etc/sysconfig/varnish</code></li>
-      <li>Ubuntu: <code>/etc/default/varnish</code></li>
-    </ul>
-  </li>
-  <li>Search for the <code>http_resp_hdr_len</code> parameter.</li>
-  <li>If the parameter doesn’t exist, add it after <code>thread_pool_max</code>.</li>
-  <li>
-    <p>Set <code>http_resp_hdr_len</code> to a value equal to the product count of your largest category multiplied by 30. (Each product tag is about 21 characters in length.)</p>
-
-    <p>For example, setting the value to 64000 should work if your largest category has 3,050 products.</p>
-
-    <p>For example:</p>
-
-    <pre><code>-p http_resp_hdr_len=64000 \
-</code></pre>
-
-    <p>A snippet follows:</p>
-
-    <pre><code># DAEMON_OPTS is used by the init script.
-DAEMON_OPTS="-a ${VARNISH_LISTEN_ADDRESS}:${VARNISH_LISTEN_PORT} \
-     -f ${VARNISH_VCL_CONF} \
-     -T ${VARNISH_ADMIN_LISTEN_ADDRESS}:${VARNISH_ADMIN_LISTEN_PORT} \
-     -p thread_pool_min=${VARNISH_MIN_THREADS} \
-     -p thread_pool_max=${VARNISH_MAX_THREADS} \
-     -p http_resp_hdr_len=64000 \
-     -S ${VARNISH_SECRET_FILE} \
-     -s ${VARNISH_STORAGE}"
-</code></pre>
-  </li>
-</ol>
+</div>
 
 
 		</div>
