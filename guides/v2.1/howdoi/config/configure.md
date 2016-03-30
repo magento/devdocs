@@ -6,7 +6,10 @@ title: Configure Magento
 menu_title: Configure Magento
 menu_node: parent
 menu_order: 1
-github_link: howdoi/deploy/configure.md
+github_link21: howdoi/config/configure.md
 ---
 
-After you finish your installation, <a href="{{ site.gdeurl21 }}install-gde/install/post-install-config.html">Configure the Magento application</a>.
+After you install the Magento application, you can:
+
+*	[Configure Magento]({{ site.gdeurl21 }install-gde/install/post-install-config.html)
+*	[Locate your session storage]({{ site.gdeurl21 }}config-guide/sessions.html)
