@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Configure Magento to use memcached</title>
+	<title>Run the support utilities</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/config-guide/memcache/memcache_magento.html">
+	<link rel="canonical" href="//guides/v2.0/config-guide/cli/config-cli-subcommands-spt-util.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -137,9 +137,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Configure Magento to use memcached</h1>
+		<h1 class="page-heading">Run the support utilities</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/config-guide/memcache/memcache_magento.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/config-guide/cli/config-cli-subcommands-spt-util.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -492,7 +492,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-spt-util.html">Run the support utilities (Enterprise Edition only)</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-spt-util.html">Run the support utilities (Enterprise Edition only)</a></li>
 
 									
 
@@ -685,7 +685,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a></li>
 
 									
 
@@ -1013,93 +1013,202 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<h2 id="config-memcache-conf">Configure Magento to use memcached</h2>
-<p>To configure Magento to use memcache:</p>
+		<p><img src="/common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only" /></p>
+
+<h4 id="contents">Contents</h4>
+<ul>
+  <li><a href="#config-cli-spt-utils-over">Overview of the support utilities</a></li>
+  <li><a href="#config-cli-spt-utils-code">Create a code backup</a></li>
+  <li><a href="#config-cli-spt-utils-db">Create a database backup</a></li>
+  <li><a href="#config-cli-spt-utils-trouble">Troubleshooting: display utilities and paths</a></li>
+</ul>
+
+<h2 id="config-cli-spt-utils-over">Overview of the support utilities</h2>
+<p>The Magento support utilities (also referred to as the <a href="http://docs.magento.com/m2/ee/user_guide/system/support-data-collector.html" target="_blank"><em>Data Collector</em></a>) enable Enterprise Edition (EE) users to gather troubleshooting information about your system that can be used by our Support team. </p>
+
+<p>Magento Support uses these backups (also referred to as <em>dumps</em>) to analyze issues that require access to your code. A typical scenario follows:</p>
 
 <ol>
-  <li>Open <code>&lt;your Magento install dir&gt;/app/etc/env.php</code> in a text editor.</li>
+  <li>You’re having an issue with your Magento store and you contact Magento Support.</li>
+  <li>Support determines they need to see your code or database to reproduce the issue.</li>
   <li>
-    <p>Locate the following:</p>
+    <p>You back up the code to a <code>.tar.gz</code> file.</p>
 
-    <pre><code>'session' =&gt;
-    array (
-    'save' =&gt; 'files',
-),
-</code></pre>
+    <p>This backup <em>excludes</em> your media files to speed up the process and to result in a much smaller file.</p>
   </li>
   <li>
-    <p>Change it as follows:</p>
+    <p>You back up the database to a <code>.tar.gz</code> file.</p>
+
+    <p>By default, <a href="#sens-data">sensitive data</a> is hashed when making the backup.</p>
+  </li>
+  <li>You upload your backups to a file sharing service.</li>
+  <li>Support analyzes your issues without affecting your development or production environment.</li>
+</ol>
+
+<p>The utilities can take several minutes to complete.</p>
+
+<h2 id="first">First steps</h2>
+<div>
+
+  <ol>
+    <li>
+      <p>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.</p>
+
+      <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
+
+      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+</code></pre>
+    </li>
+    <li>
+      <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
+
+      <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
+
+      <p>bash shell example for CentOS:</p>
+
+      <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+</code></pre>
+    </li>
+  </ol>
+
+  <div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You can also run the commands in the following ways:</p>
+<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
+<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
+<p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
+</div>
+
+  <p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+
+  <h2 id="config-cli-spt-utils-code">Create a code backup</h2>
+  <p>This command backs up code and compresses it in <code>tar.gz</code> format.</p>
+
+  <div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>This is <em>not</em> the same code backup performed by the <a href="/guides/v2.0/install-gde/install/cli/install-cli-backup.html"><code>magento setup:backup</code></a> command. This command is intended to be used to back up code for examination by Magento Support.</p></span>
+</div>
+
+  <p>Command options:</p>
+
+  <pre><code>magento support:backup:code [--name=&lt;file name&gt;] [-o|--output=&lt;path&gt;] [-l|--logs]
+</code></pre>
+
+  <p>where </p>
+
+  <ul>
+    <li><code>--name</code> specifies the dump file name (optional). If you omit this parameter, the dump file is time and date-stamped.</li>
+    <li><code>-o|--output=&lt;path&gt;</code> is the absolute file system path to store the backup (required).</li>
+    <li><code>-l|--logs</code> includes log files (optional).</li>
+  </ul>
+
+  <p>For example, to create a code backup named <code>/var/www/html/magento2/var/log/mycodebackup.tar.gz</code>, enter:</p>
+
+  <pre><code>magento magento support:backup:code --name mycodebackup -o /var/www/html/magento2/var/log
+</code></pre>
+
+  <p>After the command completes, provide the code backup to Magento Support.</p>
+
+  <h2 id="config-cli-spt-utils-db">Create a database backup</h2>
+  <p>This command backs up the Magento database and compresses it in <code>tar.gz</code> format.</p>
+
+  <div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>This is <em>not</em> the same code backup performed by the <a href="/guides/v2.0/install-gde/install/cli/install-cli-backup.html"><code>magento setup:backup</code></a> command. This command is intended to be used to back up code for examination by Magento Support.</p></span>
+</div>
+
+  <p>Command options:</p>
+
+  <pre><code>magento support:backup:db [--name=&lt;name&gt;] [-o|--output=&lt;path&gt;] [-l|--logs] [-i|--ignore-sanitize]
+</code></pre>
+
+  <p>where </p>
+
+  <ul>
+    <li><code>--name</code> specifies the dump file name (optional). If you omit this parameter, the dump file is time and date-stamped.</li>
+    <li><code>-o|--output=&lt;path&gt;</code> is the absolute file system path to store the backup (required).</li>
+    <li><code>-l|--logs</code> includes log files (optional).</li>
+    <li><code>-i|--ignore-sanitize</code> means that data is preserved; omit the flag to hash <a href="#sens-data">sensitive data</a> stored in the database when creating the backup (optional).</li>
+  </ul>
+
+  <p>After the command completes, provide the database backup to Magento Support.</p>
+
+  <div>
+
+    <h4 id="sens-data">What is sensitive data?</h4>
+    <p>Magento uses your encryption key to encrypt the following: </p>
 
     <ul>
-      <li>
-        <p>PHP <code>memcache</code> extension</p>
-
-        <pre><code>'session' =&gt;
-   array (
-      'save' =&gt; 'memcache',
-      'save_path' =&gt; 'tcp://&lt;memcache ip or host&gt;:&lt;memcache port&gt;'
-),
-</code></pre>
-      </li>
-      <li>
-        <p>PHP <code>memcached</code> extension</p>
-
-        <pre><code>'session' =&gt;
-   array (
-      'save' =&gt; 'memcached’,
-      'save_path' =&gt; '&lt;memcache ip or host&gt;:&lt;memcache port&gt;'
-),
-</code></pre>
-      </li>
+      <li>Credit card information</li>
+      <li>User names and passwords specified in the Magento Admin configuration  (for example, logins to payment gateways)</li>
+      <li>CAPTCHA values sent over the network</li>
     </ul>
 
-    <p>Both memcache and memcached have optional startup parameters that are beyond the scope of this guide. You can find more information about them in the <a href="http://php.net/manual/en/memcache.ini.php#ini.memcache.save-path" target="_blank">memcache</a> or <a href="http://php.net/manual/en/memcached.sessions.php" target="_blank">memcached</a> documentation, source code, and changelogs.</p>
-  </li>
-  <li>Continue with the next section.</li>
-</ol>
+    <p>Magento does <em>not</em> encrypt:</p>
 
-<h2 id="config-memcache-verify">Verify memcached is working with Magento</h2>
-<p>To verify memcached works with Magento:</p>
+    <ul>
+      <li>Administrative and customer user names and passwords (these passwords are hashed)</li>
+      <li>Address</li>
+      <li>Phone number</li>
+      <li>Other types of personally identifiable information except for credit card numbers</li>
+    </ul>
 
-<ol>
-  <li>
-    <p>Delete the contents of the following directories under your Magento installation directory:</p>
+    <h2 id="config-cli-spt-utils-trouble">Troubleshooting: display utilities and paths</h2>
+    <p>We provide commands that display paths to utilities required by the Data Collector and the command line. You can use these commands, for example, if errors like the following display in the Admin or on the command line:</p>
 
-    <pre><code>rm -rf var/cache/* var/page_cache/* var/session/*
-</code></pre>
-  </li>
-  <li>
-    <p>Go to any page on the storefront.</p>
-  </li>
-  <li>
-    <p>Log in to the Magento Admin and browse to several pages.</p>
-
-    <p>If no errors display, congratulations! memcached is working! You can optionally look at memcached storage as discussed in the next step.</p>
-
-    <p>If errors display (such as an HTTP 500 (Internal Server Error)), enable developer mode and diagnose the issue. Make sure memcached is running, configured properly, and that <code>env.php</code> has no syntax errors. </p>
-  </li>
-  <li>
-    <p>(Optional.) Use Telnet to look at memcached storage.</p>
-
-    <pre><code>telnet &lt;memcached host or ip&gt; &lt;memcached port&gt;
-stats items
+    <pre><code>Utility lsof not found
 </code></pre>
 
-    <p>The results display similar to the following:</p>
+    <p>Run the following commands in the order shown to display the paths to the applications used by the support utilities and Data Collector:</p>
 
-    <pre><code>STAT items:3:number 1
-STAT items:3:age 7714
-STAT items:3:evicted 0
-STAT items:3:evicted_nonzero 0
-STAT items:3:evicted_time 0
-STAT items:3:outofmemory 0
-STAT items:3:tailrepairs 0
+    <ol>
+      <li>
+        <p>Change to your Magento installation directory.</p>
+
+        <p>For example, <code>cd /var/www/magento2</code></p>
+
+        <div class="bs-callout bs-callout-info" id="info">
+    <span class="glyphicon-class">
+  		<p>The commands run properly <em>only</em> from your Magento installation directory.</p></span>
+</div>
+      </li>
+      <li><code>php bin/magento support:utility:paths</code> creates <code>&lt;your Magento install dir&gt;/var/support/Paths.php</code>, which lists the paths to all application used by the utility. </li>
+      <li><code>php bin/magento support:utility:check -u</code> displays the file system paths.</li>
+    </ol>
+
+    <p>A sample follows:</p>
+
+    <pre><code>gzip =&gt; /bin/gzip
+lsof =&gt; /usr/sbin/lsof
+mysqldump =&gt; /usr/bin/mysqldump
+nice =&gt; /bin/nice
+php =&gt; /usr/bin/php
+tar =&gt; /bin/tar
+sed =&gt; /bin/sed
+bash =&gt; /bin/bash
+mysql =&gt; /usr/bin/mysql
 </code></pre>
 
-    <p><a href="http://www.darkcoding.net/software/memcached-list-all-keys/" target="_blank">Look at the keys in more detail</a></p>
-  </li>
-</ol>
+    <p>To resolve issues with running the tools, make sure these applications are installed and are in the web server user’s <code>$PATH</code> environment variable.</p>
 
+    <h4 id="related-topics">Related topics</h4>
+
+    <ul>
+      <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
+      <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
+      <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
+      <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
+      <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
+      <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
+      <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
+      <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
+      <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
+      <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
+      <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
+      <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
+    </ul>
+  </div>
+</div>
 
 
 		</div>
