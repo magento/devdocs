@@ -57,7 +57,7 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 <h4>Security enhancements</h4>
 This release includes several enhancements to improve the security of your Magento 2.0.3 installation. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento 2.0 installation to the latest version as soon as possible.
 
-The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the <a href="https://magento.com/security.html" target="_blank">Magento Security Center</a>. 
+The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the <a href="https://magento.com/security" target="_blank">Magento Security Center</a>. 
 
 <!-- 45887 -->* Issue with persistent cross-site scripting through a user account has been resolved. 
 
@@ -73,7 +73,7 @@ The following list provides an overview of the security issues fixed in this rel
 <!-- 50755 -->* Reflected cross-site scripting (XSS) can no longer occur through the Authorizenet module’s redirect data. 
 
 
-We recommend that you review Magento's <a href="magento.com/security/best-practices/security-best-practices.html" target="_blank">Security Best Practices</a>, and confirm that all safeguards are in place to protect your system from compromise. Use this occasion to examine your system for indications of possible attack, such as strange administrator accounts, unfamiliar files on the server, etc. To receive direct notification from our security team regarding any emerging issues and solutions, sign up for the <a href="https://magento.com/security.html" target="_blank">Security Alert Registry</a>.
+We recommend that you review Magento's <a href="https://magento.com/security/best-practices/security-best-practices.html" target="_blank">Security Best Practices</a>, and confirm that all safeguards are in place to protect your system from compromise. Use this occasion to examine your system for indications of possible attack, such as strange administrator accounts, unfamiliar files on the server, etc. To receive direct notification from our security team regarding any emerging issues and solutions, sign up for the <a href="https://magento.com/security/sign-up" target="_blank">Security Alert Registry</a>.
 
 
 
