@@ -31,7 +31,7 @@ Icons are meant to provide a visual representation of functionality or content a
 
 Icons may appear in a variety of sizes within the interface as controls for tools and functions and to assist in “way-finding” within the application.  Principles of a “Touch-Friendly” UI should be observed; icons should be large enough to provide a reasonable “touch-target” for the user.  The icon may be scaled at something less than this optimal size when coupled with a “target” area that provides this optimal size, such as an expand control used where the entire header row is clickable/tappable.
 
-The functionality associated with a particular icon should be used consistent throughout the application.
+The functionality associated with a particular icon should be used consistently throughout the application.
 
 Typically icons should represent a single, unique concept and be used consistently in the UI. However some icons have a dual purpose and rely on size, placement and context to communicate their meaning to the user.  The “Error” icon is an example of this. When used in an “Alert”, the supporting elements of copy, position, etc. help provide meaning.  This same icon can also be used as a remove or close control, and size, color, position and context differentiate its’ use for the user.  
 
