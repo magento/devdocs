@@ -17,7 +17,7 @@ A sample snippet from `<your Magento install dir>/app/etc/env.php` follows:
 	'session' =>
 	   array (
 	     'save' => 'files',
-	     'path' => '/var/www/session',
+	     'save_path' => '/var/www/session',
 	),
 
 The preceding example stores session files in `/var/www/session`
