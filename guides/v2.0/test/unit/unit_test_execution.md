@@ -6,7 +6,6 @@ title: Running Unit Tests
 menu_title: Running Unit Tests
 menu_node: parent
 github_link: test/unit/unit_test_execution.md
-redirect_from: /guides/v2.0/test/unit/unit_test_execution.html
 ---
 
 ##Running unit tests

@@ -6,7 +6,6 @@ title: Running Unit Tests in the CLI
 menu_title: Running Unit Tests in the CLI
 menu_node: parent
 github_link: test/unit/unit_test_execution_cli.md
-redirect_from: /guides/v2.0/test/unit/unit_test_execution_cli.html
 ---
 
 ##Running unit tests on the CLI
