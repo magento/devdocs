@@ -9,4 +9,7 @@ menu_order: 1
 github_link: howdoi/config/configure.md
 ---
 
-After you finish your installation, <a href="{{ site.gdeurl }}install-gde/install/post-install-config.html">Configure the Magento application</a>.
+After you install the Magento application, you can:
+
+*	[Configure Magento]({{ site.gdeurl }install-gde/install/post-install-config.html)
+*	[Locate your session storage]({{ site.gdeurl }}config-guide/sessions.html)
