@@ -2,7 +2,7 @@
 layout: default
 group: pattern
 subgroup: Feedback to User
-title: Magento Admin Pattern Library
+title: Admin Design Pattern Library
 menu_title: Progress Indicator
 menu_order: 1
 menu_node: 
