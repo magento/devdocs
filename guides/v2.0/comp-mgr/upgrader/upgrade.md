@@ -19,7 +19,7 @@ If your Magento application is set to write session data to the `<your Magento i
 
 [How to find where Magento stores session files]({{ site.gdeurl }}config-guide/sessions.html).
 
-To verify whether or not sessions are stored there, log in to your Magento server, or switch to, [Magento file system owner]({{ site.gdeurl }}install-gde/prereq/apache-user.html) and enter the following command:
+To verify whether or not sessions are stored in `<your Magento install dir>/var/session`, log in to your Magento server, or switch to, [Magento file system owner]({{ site.gdeurl }}install-gde/prereq/apache-user.html) and enter the following command:
 
 	ls <your Magento file install dir>/var/session
 
