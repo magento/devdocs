@@ -6,7 +6,6 @@ title: Running Unit Tests in PHPStorm
 menu_title: Running Unit Tests in PHPStorm
 menu_node: parent
 github_link: test/unit/unit_test_execution_phpstorm.md
-redirect_from: /guides/v2.0/test/unit/unit_test_execution_phpstorm.html
 ---
 
 ## Running unit tests in PHPStorm
