@@ -12,6 +12,11 @@ github_link: extension-dev-guide/test-module.md
 
 ##{{page.menu_title}}
 
+* TOC
+{:toc}
+
+## Test your component
+
 Test your component by deploying Magento Community Edition and adding the component to the project's <code>composer.json</code>. 
 
 {% highlight JSON %}

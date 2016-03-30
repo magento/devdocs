@@ -14,11 +14,8 @@ redirect_from:
 
 ##{{page.menu_title}}
 
-#### Contents
-
-*	[PHPUnit](#test-unit)
-*	[Functional testing](#test-functional)
-*	[Test installing your component](#test-install)
+* TOC
+{:toc}
 
 ##Unit and Integration Tests {#test-unit}
 
