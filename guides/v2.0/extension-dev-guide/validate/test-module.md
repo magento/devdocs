@@ -9,7 +9,6 @@ menu_node:
 github_link: extension-dev-guide/validate/test-module.md
 redirect_from: 
   - /guides/v2.0/mktpl-quickstart/dev-test.html
-  - /guides/v2.0/extension-dev-guide/test-module.html
 ---
 
 ##{{page.menu_title}}
