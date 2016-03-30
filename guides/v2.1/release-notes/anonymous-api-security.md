@@ -57,9 +57,7 @@ The following table lists the APIs that are no longer available to an anonymous 
 </div>
 
 
-If for some reason the list of APIs that are inaccessible to anonymous users must be updated, an integrator can open the `app/code/Magento/WebapiSecurity/etc/di.xml` file and edit the items in the following section:
-
-``<type name="Magento\WebapiSecurity\Model\Plugin\AnonymousResourceSecurity">``
+If for some reason the list of APIs that are inaccessible to anonymous users must be updated for a third-party extension, an integrator can add to their extension's `di.xml` file to update or replace the functionality defined in WebapiSecurity module.
 
 The following APIs remain accessible to anonymous users. Most of these must remain accessible to support the checkout and add-to-cart Ajax functionalities.
 
