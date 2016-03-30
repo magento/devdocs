@@ -107,7 +107,7 @@ redirect_from: /guides/v1.0/get-started/authentication/gs-authentication-oauth.h
 </ul>
 
 <h2 id="oauth-signature">The OAuth signature</h2>
-<p>All Ouath handshake requests and Web Api requests include the signature as part of Authorization header. Its generated as follows:</p>
+<p>All OAuth handshake requests and Web Api requests include the signature as part of Authorization header. Its generated as follows:</p>
 <p>You concatenate a set of URL-encoded attributes and parameters to construct the signature base string.</p>
 <p>Use the ampersand (<code>&</code>) character to concatenate these attributes and parameters:</p>
 <ol>
