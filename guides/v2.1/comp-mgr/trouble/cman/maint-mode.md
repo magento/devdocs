@@ -99,10 +99,8 @@ This section discusses how to create a custom maintenance page and how to redire
 
 To redirect traffic to a custom maintenance page:
 
-1.	Create a temporary nginx configuration file:
-
-		vim /etc/nginx/conf.d/magento.conf
-2.	Open `magento.conf` in a text editor.
+1.	Use a text editor to open the nginx configuration file that contains your server block.
+2.	Add the following to the server block (`server` is shown for clarity only; don't add a second server block).
 
 	The following whitelists IP address 192.0.2.110 and 192.0.2.115 on a system where Magento is installed in `/var/www/html/magento2`:
 
