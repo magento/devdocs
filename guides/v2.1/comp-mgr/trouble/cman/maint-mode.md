@@ -141,7 +141,7 @@ To redirect traffic to a custom maintenance page:
 		service nginx reload
 5.	[Upgrade your system]({{ site.gdeurl21 }}comp-mgr/upgrader/upgrade-start.html).
 7.	Test your site to make sure it functions correctly.
-6.	After the upgrade is done, delete or rename `maintenance.enable` and `/etc/nginx/conf/magento.conf`
+6.	After the upgrade is done, delete or rename `maintenance.enable`
 5.	Reload the nginx configuration:
 
 		service nginx reload
