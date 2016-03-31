@@ -1,7 +1,7 @@
 ---
 layout: default
-group: release-notes
-subgroup: A_Release Notes
+group: A_release-notes
+subgroup: Release Notes
 title: Release Notes
 menu_title: Magento EE Release Notes 
 menu_node: 
