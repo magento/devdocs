@@ -3,9 +3,6 @@ layout: default
 group: release-notes
 subgroup: Release Notes
 title: Release Notes
-menu_title: Magento EE Release Notes 
-menu_node: 
-menu_order: 1
 github_link: release-notes/ReleaseNotes2.0.3EE.md
 redirect_from: 
 ---
