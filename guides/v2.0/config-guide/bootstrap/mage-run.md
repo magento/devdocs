@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: Bootstrap
+subgroup: 03_Bootstrap
 title: Multiple websites or stores (MAGE_RUN_TYPE, MAGE_RUN_CODE)
 menu_title: Multiple websites or stores (MAGE_RUN_TYPE, MAGE_RUN_CODE)
 menu_order: 500

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: CM_Varnish
+subgroup: 09_Varnish
 title: Install Varnish
 menu_title: Install Varnish
 menu_order: 5

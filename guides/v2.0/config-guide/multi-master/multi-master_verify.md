@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: Z_cqrs
+subgroup: 20_cqrs
 title: Verify split databases
 menu_title: Verify split databases
 menu_order: 5
