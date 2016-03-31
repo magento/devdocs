@@ -1,8 +1,8 @@
 ---
 layout: default
 group: release-notes
-subgroup: Release Notes
-title: Release Notes
+subgroup: 
+title: 
 github_link: release-notes/ReleaseNotes2.0.3EE.md
 redirect_from: 
 ---

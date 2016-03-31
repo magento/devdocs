@@ -2,8 +2,8 @@
 layout: default
 group: release-notes
 subgroup: Release Notes
-title: Release Notes
-menu_title: Magento CE Release Notes 
+
+menu_title: 
 menu_node: 
 menu_order: 1
 github_link: release-notes/ReleaseNotes2.0.3CE.md
