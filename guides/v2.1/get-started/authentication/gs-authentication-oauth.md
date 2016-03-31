@@ -45,7 +45,7 @@ github_link: get-started/authentication/gs-authentication-oauth.md
 
 <h2 id="oauth-handshake">2-legged Oauth Handshake</h2>
 <h3 id="pre-auth-token">Get a request token</h3>
-<p>This is the first step in the 2-legged Oauth handshake. However, you must use these credentials to get an access token in fewer than three minutes or the credentials are disabled for security reasons. The credentials expiry can be changed from backend by the administrator. As stated previously, its defaulted to three minutes</p>
+<p>This is the first step in the 2-legged Oauth handshake. However, you must use these credentials to get an access token in fewer than three minutes or the credentials are disabled for security reasons. The credentials expiry can be changed from backend by the administrator. As stated previously, it's defaulted to three minutes.</p>
 <p>A request token is a temporary token that the user exchanges for an access token. To get a request token from Magento:</p>
 <pre>POST /oauth/token/request</pre>
 <p>You must include these request parameters in the <code>Authorization</code> request header in the call:</p>
