@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Get the Magento software</title>
+	<title>Restricting access to anonymous web APIs</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/install-gde/install/get-software.html">
+	<link rel="canonical" href="//guides/v2.0/rest/anonymous-api-security.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -137,9 +137,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Get the Magento software</h1>
+		<h1 class="page-heading">Restricting access to anonymous web APIs</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/install-gde/install/get-software.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/rest/anonymous-api-security.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -153,7 +153,7 @@
 	<div class="sidebar-wrapper">
 
 
-<h4>Installation guide<br>Part 1: Getting started</h4>
+<h4>REST API reference</h4>
 
 
 
@@ -192,357 +192,83 @@
 
 				
 
-			
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/rest/bk-rest.html">Overview</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2"><a href="http://devdocs.magento.com/swagger/index.html">REST APIs</a></li>
+
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/rest/list.html">List of REST APIs by module</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/rest/rest_endpoints.html">List of service names per module</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/rest/generate-local.html">Generate local API reference</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.0/rest/anonymous-api-security.html">Restricting access to anonymous web APIs</a></li>
+
+									
+
+								
+								
+								
+							
+							
+						
+
+					
+
 
 				
 
-					
-					
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install-quick-ref.html">Installation quick reference (tutorial)</a></li>
-									
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install-roadmap_part1.html">Installation roadmap (reference)</a></li>
-									
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/system-requirements.html">Magento system requirements</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/system-requirements_browsers.html">Supported browsers</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/system-requirements_tls1-2.html">TLS 1.2 requirement for PayPal</a></li>
-
-									
-
-								
-								
-								
-							
-							
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/prereq-overview.html">Prerequisites</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/apache.html">Apache</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/apache-user.html">Create the Magento file system owner</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/mysql.html">MySQL</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/prereq_updater.html">Set up the updater</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/connect-auth.html">Get your authentication keys</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/install-rabbitmq.html">RabbitMQ (Enterprise Edition)</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/security.html">SELinux and iptables</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/optional.html">Optional software</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/file-system-perms.html">Set file system ownership and permissions</a></li>
-
-									
-
-								
-								
-								
-							
-							
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/install-gde/install/get-software.html">Get the Magento software</a></li>
-									
-								
-
-									
-
-
-								
-								
-								
-							
-							
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/zip_install.html">(Easy) Install the Magento archive on your server</a></li>
-									
-								
-
-									
-
-
-								
-								
-								
-							
-							
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/integrator_install.html">(Integrator) Get the Composer metapackage</a></li>
-									
-								
-
-									
-
-
-								
-								
-								
-							
-							
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/dev_install.html">(Contributor) Clone the Magento repository</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/prepare-install.html">Update installation dependencies</a></li>
-
-									
-
-								
-								
-								
-							
-							
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/install/get-help.html">Get help with your installation</a></li>
-									
-								
-
-									
-
-
-								
-								
-								
-							
-							
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/continue-to-install.html">Next&mdash;Installation part 2, installing</a></li>
-									
-								
-
-									
-
-
-								
-								
-								
-							
-							
-						
-
-					
-
+			
 
 				
 
@@ -662,61 +388,492 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<div>
+		<p>Magento 2 allows some web APIs to be accessed by unauthenticated (anonymous) users. Many of these APIs allow a customer to have a robust shopping experience on the website without having to log in.</p>
 
-  <h2 id="get-archive">Get the Magento software packages</h2>
-  <p>The following table discusses where to get the Magento software. We provide the following downloads:</p>
+<p>A subset of these APIs can return information about products, promotions, and storefronts that a merchant might consider proprietary. For example, Catalog module APIs can provide information about an item’s pricing and quantity, as well as items that are currently not for sale. The CMS module could reveal information about upcoming promotional landing pages and coupons. The Store module can reveal too much information about individual websites.</p>
 
-  <ul>
-    <li>Magento CE or EE software only</li>
-    <li>Magento CE or EE software with sample data (designed to help you learn Magento faster)</li>
-  </ul>
+<p>For this reason, by default, Magento 2 now prevents anonymous users from accessing the APIs that could reveal sensitive information.  When the feature is enabled, the user must have administrator privileges to execute the affected APIs.</p>
 
-  <p>These packages are easy to get and install. You don’t need to use Composer, all you need to do is to upload a package to your Magento server or hosted platform, unpack it, and run the web-based Setup Wizard.</p>
+<p>The following table lists the APIs that are no longer available to an anonymous user by default:</p>
 
-  <p>Archives are available in the following formats: <code>.zip</code>, <code>.tar.bz2</code>, <code>.tar.gz</code></p>
-
-  <table>
-	<col width="30%" />
-	<col width="70%" />
-<tbody>
-<tr> 
-	<th>Magento edition</th>
-	<th>Install package location</th>
-</tr>
-<tr> 
-	<td>Magento CE</td>
-	<td><p><a href="http://www.magento.com/download" target="_blank">www.magento.com/download</a></p>
-		<p>Choose either the software or the software and sample data:</p>
-		<ul><li><code>Magento-CE-&lt;version&gt;.*</code> (without sample data)</li>
-			<li><code>Magento-CE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
-			<p><code>&lt;version/&gt;</code> is the three-digit release number (for example, <code>2.0.0</code>, <code>2.0.1</code>, and so on.)</p></ul></td>
-</tr>
-<tr> 
-	<td>Magento EE</td>
-	<td>Use the following steps:
-	<ol><li>Go to <a href="http://www.magento.com" target="_blank">www.magento.com</a></li>
-	<li>In the top horizontal navigation bar, click <strong>My Account</strong>.</li>
-	<li>Log in with your Magento user name and password.</li>
-	<li>In the left navigation bar, click <strong>Downloads</strong>.</li>
-	<li>In the right pane, click <strong>Magento Enterprise Edition 2.X</strong> &gt; <strong>Full Release</strong> or <strong>Magento Enterprise Edition 2.X</strong> &gt; <strong>Full Release + Sample Data</strong> for the software.</li>
-	<li>Follow the instructions on your screen to complete the Magento EE download:
-		<ul><li><code>Magento-EE-2.0.0.*</code> (without sample data)</li>
-			<li><code>Magento-EE-2.0.0+Samples.*</code> (with sample data)</li></ul>
-
-	</li>
-	<li>Transfer the installation package to your development system.</li></ol></td>
-</tr>
-</tbody>
+<table>
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Module</th>
+      <th>API</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CE</td>
+      <td>Catalog</td>
+      <td>/V1/products</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Catalog</td>
+      <td>/V1/products/:sku</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Catalog</td>
+      <td>/V1/products/attributes/:attributeCode</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Catalog</td>
+      <td>/V1/products/types</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Catalog</td>
+      <td>/V1/products/attribute-sets/sets/list</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Catalog</td>
+      <td>/V1/products/attribute-sets/:attributeSetId</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Catalog</td>
+      <td>/V1/products/attribute-sets/:attributeSetId/attributes</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Catalog</td>
+      <td>/V1/products/attribute-sets/groups/list</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Catalog</td>
+      <td>/V1/products/attributes/:attributeCode/options</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Catalog</td>
+      <td>/V1/products/media/types/:attributeSetName</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Catalog</td>
+      <td>/V1/products/:sku/media/:entryId</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Catalog</td>
+      <td>/V1/products/:sku/media</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Catalog</td>
+      <td>/V1/products/:sku/group-prices/:customerGroupId/tiers</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Catalog</td>
+      <td>/V1/categories/:categoryId</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Catalog</td>
+      <td>/V1/categories</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Catalog</td>
+      <td>/V1/products/:sku/options</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Catalog</td>
+      <td>/V1/products/:sku/options/:optionId</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Catalog</td>
+      <td>/V1/products/links/types</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Catalog</td>
+      <td>/V1/products/links/:type/attributes</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Catalog</td>
+      <td>/V1/products/:sku/links/:type</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Catalog</td>
+      <td>/V1/categories/:categoryId/products</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>CatalogInventory</td>
+      <td>/V1/stockStatuses/:productSku</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Cms</td>
+      <td>/V1/cmsPage/:pageId</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Cms</td>
+      <td>/V1/cmsBlock/:blockId</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>ConfigurableProduct</td>
+      <td>/V1/configurable-products/:sku/children</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>ConfigurableProduct</td>
+      <td>/V1/configurable-products/:sku/options/:id</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>ConfigurableProduct</td>
+      <td>/V1/configurable-products/:sku/options/all</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Store</td>
+      <td>/V1/store/storeViews</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Store</td>
+      <td>/V1/store/storeGroups</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Store</td>
+      <td>/V1/store/websites</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Store</td>
+      <td>/V1/store/storeConfigs</td>
+      <td>GET</td>
+    </tr>
+  </tbody>
 </table>
 
-  <h4 id="related-topics">Related topics</h4>
-
-  <ul>
-    <li><a href="/guides/v2.0/install-gde/prereq/dev_install.html">Clone the Magento repository</a></li>
-    <li><a href="/guides/v2.0/install-gde/prereq/integrator_install.html">Get the Composer metapackage</a></li>
-  </ul>
+<div class="bs-callout bs-callout-warning">
+    <p>Preventing anonymous access to these APIs could cause third-party integrations to fail. If a third-party integration calls any of these web APIs, it will receive an authentication error instead of the expected response. In this case, might need to disable this feature.</p>
+    <p>To disable this feature, log in to the Admin panel and navigate to <b>System &gt; Configuration &gt; Services &gt; Magento Web API</b>. Then select <b>Yes</b> from the <b>Allow Anonymous Guest Access</b> menu.</p>
 </div>
+
+<p>If the list of APIs that are inaccessible to anonymous users must be updated for a third-party extension, an integrator can add to their extension’s <code>di.xml</code> file to update or replace the functionality defined in the WebapiSecurity module.</p>
+
+<p>The following APIs remain accessible to anonymous users. Most of these must remain accessible to support the checkout and add-to-cart Ajax functionalities.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Module</th>
+      <th>API</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CE</td>
+      <td>Checkout</td>
+      <td>/V1/guest-carts/:cartId/shipping-information</td>
+      <td>POST</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Checkout</td>
+      <td>/V1/guest-carts/:cartId/totals-information</td>
+      <td>POST</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Checkout</td>
+      <td>/V1/guest-carts/:cartId/payment-information</td>
+      <td>POST</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Checkout</td>
+      <td>/V1/guest-carts/:cartId/payment-information</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Checkout</td>
+      <td>/V1/guest-carts/:cartId/set-payment-information</td>
+      <td>POST</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Customer</td>
+      <td>/V1/customers</td>
+      <td>POST</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Customer</td>
+      <td>/V1/customers/:customerId/password/resetLinkToken/:resetPasswordLinkToken</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Customer</td>
+      <td>/V1/customers/password</td>
+      <td>PUT</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Customer</td>
+      <td>/V1/customers/isEmailAvailable</td>
+      <td>POST</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Directory</td>
+      <td>/V1/directory/currency</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Directory</td>
+      <td>/V1/directory/countries</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Directory</td>
+      <td>/V1/directory/countries/:countryId</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>GiftMessage</td>
+      <td>/V1/guest-carts/:cartId/gift-message</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>GiftMessage</td>
+      <td>/V1/guest-carts/:cartId/gift-message/:itemId</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>GiftMessage</td>
+      <td>/V1/guest-carts/:cartId/gift-message</td>
+      <td>POST</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>GiftMessage</td>
+      <td>/V1/guest-carts/:cartId/gift-message/:itemId</td>
+      <td>POST</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Integration</td>
+      <td>/V1/integration/admin/token</td>
+      <td>POST</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Integration</td>
+      <td>/V1/integration/customer/token</td>
+      <td>POST</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Quote</td>
+      <td>/V1/guest-carts/:cartId</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Quote</td>
+      <td>/V1/guest-carts</td>
+      <td>POST</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Quote</td>
+      <td>/V1/guest-carts/:cartId</td>
+      <td>PUT</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Quote</td>
+      <td>/V1/guest-carts/:cartId/order</td>
+      <td>PUT</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Quote</td>
+      <td>/V1/guest-carts/:cartId/shipping-methods</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Quote</td>
+      <td>/V1/guest-carts/:cartId/estimate-shipping-methods</td>
+      <td>POST</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Quote</td>
+      <td>/V1/guest-carts/:cartId/items</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Quote</td>
+      <td>/V1/guest-carts/:cartId/items</td>
+      <td>POST</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Quote</td>
+      <td>/V1/guest-carts/:cartId/items/:itemId</td>
+      <td>PUT</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Quote</td>
+      <td>/V1/guest-carts/:cartId/items/:itemId</td>
+      <td>DELETE</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Quote</td>
+      <td>/V1/guest-carts/:cartId/selected-payment-method</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Quote</td>
+      <td>/V1/guest-carts/:cartId/selected-payment-method</td>
+      <td>PUT</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Quote</td>
+      <td>/V1/guest-carts/:cartId/payment-methods</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Quote</td>
+      <td>/V1/guest-carts/:cartId/billing-address</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Quote</td>
+      <td>/V1/guest-carts/:cartId/billing-address</td>
+      <td>POST</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Quote</td>
+      <td>/V1/guest-carts/:cartId/coupons</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Quote</td>
+      <td>/V1/guest-carts/:cartId/coupons/:couponCode</td>
+      <td>PUT</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Quote</td>
+      <td>/V1/guest-carts/:cartId/coupons</td>
+      <td>DELETE</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Quote</td>
+      <td>/V1/guest-carts/:cartId/collect-totals</td>
+      <td>PUT</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Quote</td>
+      <td>/V1/guest-carts/:cartId/totals</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>CE</td>
+      <td>Search</td>
+      <td>/V1/search</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>EE</td>
+      <td>GiftCardAccount</td>
+      <td>/V1/carts/guest-carts/:cartId/giftCards/:giftCardCode</td>
+      <td>DELETE</td>
+    </tr>
+    <tr>
+      <td>EE</td>
+      <td>GiftCardAccount</td>
+      <td>/V1/carts/guest-carts/:cartId/giftCards</td>
+      <td>POST</td>
+    </tr>
+    <tr>
+      <td>EE</td>
+      <td>GiftCardAccount</td>
+      <td>/V1/carts/guest-carts/:cartId/checkGiftCard/:giftCardCode</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <td>EE</td>
+      <td>GiftRegistry</td>
+      <td>/V1/guest-giftregistry/:cartId/estimate-shipping-methods</td>
+      <td>POST</td>
+    </tr>
+  </tbody>
+</table>
 
 
 		</div>
