@@ -799,6 +799,43 @@
 
 <p><img src="/common/images/upgr_upgrade.png" width="550px" alt="Click upgrade to complete the task" /></p>
 
+<h2 id="compman-upgr-perms">Set file system permissions</h2>
+<p>If your Magento application is set to write session data to the <code>&lt;your Magento install dir&gt;/var/session</code> directory, you must set permissions on that directory before you upgrade.</p>
+
+<p><a href="/guides/v2.0/config-guide/sessions.html">How to find where Magento stores session files</a>.</p>
+
+<p>To verify whether or not sessions are stored in <code>&lt;your Magento install dir&gt;/var/session</code>, log in to your Magento server, or switch to, <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a> and enter the following command:</p>
+
+<pre><code>ls &lt;your Magento file install dir&gt;/var/session
+</code></pre>
+
+<p>For example, if Magento is installed in <code>/var/www/magento2</code>, enter:</p>
+
+<pre><code>ls /var/www/magento2/var/session
+</code></pre>
+
+<p>If there are files in that directory, you must set permissions; if there are no files in that directory, you can skip the remainder of this section and continue with <a href="#upgrade-finish">Complete the upgrade</a>.</p>
+
+<p>To set file system permissions before upgrade:</p>
+
+<ol>
+  <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
+  <li>
+    <p>Enter the following command:</p>
+
+    <pre><code>chmod -R 770 &lt;your Magento install dir&gt;/var/session
+</code></pre>
+
+    <p>For example,</p>
+
+    <pre><code>chmod -R 770 /var/www/magento2/var/session
+</code></pre>
+  </li>
+  <li>Continue with the next section.</li>
+</ol>
+
+<h2 id="upgrade-finish">Complete the upgrade</h2>
+
 <p>To complete the upgrade, click <strong>Upgrade</strong>. If the upgrade is successful, a page similar to the following displays.</p>
 
 <p><img src="/common/images/upgr_success.png" width="350px" alt="Your upgrade was successful" /></p>
