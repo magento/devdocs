@@ -31,3 +31,10 @@ Version 2.0.3
 *   <a href="{{ site.gdeurl }}release-notes/ReleaseNotes2.0.3CE.html" target="_blank">Magento CE Release Notes</a>
 
 *   <a href="{{ site.gdeurl }}release-notes/ReleaseNotes2.0.3EE.html" target="_blank">Magento EE Release Notes</a>
+
+
+Version 2.0.4
+
+*   <a href="{{ site.gdeurl }}release-notes/ReleaseNotes2.0.4CE.html" target="_blank">Magento CE Release Notes</a>
+
+*   <a href="{{ site.gdeurl }}release-notes/ReleaseNotes2.0.4EE.html" target="_blank">Magento EE Release Notes</a>
