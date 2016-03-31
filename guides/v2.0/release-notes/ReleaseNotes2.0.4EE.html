@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento 2 Developer Documentation</title>
+	<title>Release Notes</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/release-notes/ReleaseNotes2.0.3EE.html">
+	<link rel="canonical" href="//guides/v2.0/release-notes/ReleaseNotes2.0.4EE.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -137,9 +137,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading"></h1>
+		<h1 class="page-heading">Release Notes</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/release-notes/ReleaseNotes2.0.3EE.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/release-notes/ReleaseNotes2.0.4EE.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -195,7 +195,7 @@
 
 							
 
-								<li class="q  active "><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.3EE.html"></a></li>
+								<li class="q "><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.3EE.html"></a></li>
 
 							
 
@@ -281,7 +281,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.4EE.html">Magento EE Release Notes</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.4EE.html">Magento EE Release Notes</a></li>
 
 									
 
@@ -465,8 +465,166 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<h2>Magento Enterprise Edition 2.0.3</h2>
-<p>Please note that Magento Enterprise Edition 2.0.3 has been replaced by Magento 2.0.4. This release includes all of the security enhancements and performance improvements of Magento 2.0.3, in improved packaging. <strong>You must download and install 2.0.4 to ensure that you receive all the security enhancements of 2.0.3</strong>. Please see  <a href="/guides/v2.0/release-notes/ReleaseNotes2.0.4EE.html" target="_blank">Magento EE Release Notes</a> for download information. </p>
+		<h2>Magento Enterprise Edition 2.0.4</h2>
+<p>We are pleased to present Magento Enterprise Edition 2.0.4. This release includes all of the security enhancements and performance improvements of Magento 2.0.3, in improved packaging. <strong>You must download and install 2.0.4 to ensure that you receive all the security enhancements of 2.0.3</strong>. </p>
+
+<p>Backward-incompatible changes are documented in <a href="http://devdocs.magento.com/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.</p>
+
+<h3>Fixed issues</h3>
+
+<h4> Upgrade and Installation</h4>
+<!-- 50224 -->
+<ul>
+  <li>Magento no longer creates store data inconsistently during installation. </li>
+</ul>
+
+<!-- 47531 -->
+<ul>
+  <li>During upgrade, the <code>setup:config:set</code> script no longer deletes values in the <code>env.php</code> file. </li>
+</ul>
+
+<h4>Import</h4>
+<!-- 50255 -->
+<ul>
+  <li>Magento now successfully imports existing products as well as products that use custom URLs. </li>
+</ul>
+
+<h4>APIs</h4>
+<!-- 46720 -->
+<ul>
+  <li>The Orders API now exposes the shipping address. This corrects an issue with using this API to integrate with third-party systems. </li>
+</ul>
+
+<!-- 49558 -->
+<ul>
+  <li>The SOAP API now returns attributes of type “text swatch” and “visual swatch” when you use the API to add attribute options. Previously, this feature did not work for these attribute types.  </li>
+</ul>
+
+<h4>PHP</h4>
+<!-- 50500 -->
+<ul>
+  <li>Magento now allows you to use arguments of <code>url</code> type in nested arrays. Previously, you could pass route parameters only if the <code>url</code> argument was declared at the top level.  </li>
+</ul>
+
+<h4>Miscellaneous</h4>
+<!-- 47704 -->
+<ul>
+  <li>Magento no longer displays HTML tags in messages. </li>
+</ul>
+
+<!-- 48781 -->
+<ul>
+  <li>Product performance has been enhanced when loading catalog products with multiple color swatches. </li>
+</ul>
+
+<!-- 47844 -->
+<ul>
+  <li>Magento now successfully saves and displays new customer attributes. </li>
+</ul>
+
+<!-- 47685 -->
+<ul>
+  <li>The Google Tag Manager module now sends impressions to the Magento Data layer.</li>
+</ul>
+
+<!-- 48124 -->
+<ul>
+  <li>Admin users can now view orders only from stores for which they have view  permission.</li>
+</ul>
+
+<!-- 49449-->
+<ul>
+  <li>Magento performance has been improved by the removal of redundant get requests that previously occurred during shopping cart refresh.</li>
+</ul>
+
+<h4>Security enhancements</h4>
+<p>This release includes several enhancements to improve the security of your Magento 2.0 installation. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento 2.0 installation to the latest version as soon as possible.</p>
+
+<p>The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the <a href="https://magento.com/security" target="_blank">Magento Security Center</a>. </p>
+
+<!-- 45887 -->
+<ul>
+  <li>Issue with persistent cross-site scripting through a user account has been resolved. </li>
+</ul>
+
+<!-- 50608 -->
+<ul>
+  <li>Magento now supports setting limits on password attempts. Previously, Admin and Customer Token API access did not limit the number of attempts to enter a password, inadvertently allowing brute force attempts to guess passwords. </li>
+</ul>
+
+<!-- 50611 -->
+<ul>
+  <li>APIs that previously granted access to anonymous users are now configured to require a higher permission level.  Default product behavior does not permit anonymous access to Catalog, Store and CMS APIs. However, if you would like to allow anonymous access, you can change this setting. </li>
+</ul>
+
+<!-- 48819 -->
+<ul>
+  <li>Magento now prevents the arbitrary execution of PHP code through the language package CSV file. </li>
+</ul>
+
+<!-- 47050 -->
+<ul>
+  <li>The encryption keys that are generated in <strong>System &gt; Manage Encryption Key</strong> have been strengthened. </li>
+</ul>
+
+<!-- 50755 -->
+<ul>
+  <li>Reflected cross-site scripting (XSS) can no longer occur through the Authorizenet module’s redirect data. </li>
+</ul>
+
+<p>We recommend that you review Magento’s <a href="https://magento.com/security/best-practices/security-best-practices.html" target="_blank">Security Best Practices</a>, and confirm that all safeguards are in place to protect your system from compromise. Use this occasion to examine your system for indications of possible attack, such as strange administrator accounts, unfamiliar files on the server, etc. To receive direct notification from our security team regarding any emerging issues and solutions, sign up for the <a href="https://magento.com/security/sign-up" target="_blank">Security Alert Registry</a>.</p>
+
+<h3>System requirements</h3>
+<p>Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see 
+<a href="http://devdocs.magento.com/guides/v2.0/install-gde/system-requirements.html" target="_blank">System Requirements</a>.</p>
+
+<h3>Installation instructions</h3>
+
+<h4>New installations</h4>
+<p>New users can now complete a full installation of Magento Enterprise Edition 2.0.4 from an archive file.</p>
+
+<h5 id="bdownload-a-new-installationb"><b>Download a new installation</b></h5>
+<ol>
+  <li>Go to the <a href="https://www.magento.com/" target="_blank">Magento</a> website, and click <strong>My Account</strong>. Then, log in to your account. </li>
+  <li>
+    <p>In the panel on the left, choose <strong>Downloads</strong>. Choose <strong>Magento Enterprise Edition 2.x</strong>, and do the following:</p>
+
+    <p>a.	Click <strong>Magento Enterprise Edition 2.x Release</strong>.</p>
+
+    <p>b.	In the list, choose <strong>Version 2.0.4</strong>.</p>
+
+    <p>c.	Click <strong>Download</strong>.</p>
+  </li>
+  <li>Follow the instructions to upgrade and verify your installation. If you need help, go to the <strong>Support</strong> tab of your Magento account, and <strong>Open a Ticket</strong>.</li>
+</ol>
+
+<h4>Upgrade existing installations</h4>
+<p>If you installed Magento Enterprise Edition 2.0.0 from an archive, you must perform some additional tasks before you can upgrade your installation. Current users of Magento 2.0.0/2.0.1/2.0.2/2.0.3 must first update the installer from the command line. Then, update the installation from the <a href="http://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html" target="_blank">Web Setup Wizard</a> or command line. For detailed instructions, see the <a href="http://devdocs.magento.com/guides/v2.0/release-notes/tech_bull_201-upgrade.html" target="_blank">technical bulletin</a>.</p>
+
+<h5 id="bupgrade-an-existing-installation-from-the-setup-wizardb"><b>Upgrade an existing installation from the Setup Wizard</b></h5>
+
+<ol>
+  <li>
+    <p>Log in to the Admin panel with Administrator privileges.</p>
+  </li>
+  <li>
+    <p>On the Admin sidebar, click <strong>System</strong>. Under <strong>Tools</strong>,  choose <strong>Web Setup Wizard</strong>.</p>
+  </li>
+  <li>
+    <p>Click  <strong>System Upgrade</strong>. Follow the onscreen instructions to complete the upgrade.</p>
+  </li>
+</ol>
+
+<p>For more information, see <a href="http://devdocs.magento.com/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html" target="_blank">Upgrade the Magento installation and components</a>.</p>
+
+<h5 id="bmagento-partnersb"><b>Magento Partners</b></h5>
+<p>Magento partners can download the release and the release notes in PDF format from the Partner Portal.</p>
+
+<ol>
+  <li>Log in to the <a href="https://magento.com/partners/become-a-partner" target="_blank">Partner Portal</a>.</li>
+  <li>Under Magento Enterprise Edition, choose <strong>Magento Enterprise Edition 2.x</strong>.</li>
+  <li>Find the <strong>Magento Enterprise Edition 2.x Release</strong>, and choose <strong>Version 2.0.4</strong>.</li>
+</ol>
 
 
 
