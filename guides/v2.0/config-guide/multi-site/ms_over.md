@@ -7,6 +7,7 @@ menu_title: Multiple websites or stores
 menu_order: 1
 menu_node: parent
 github_link: config-guide/multi-site/ms_over.md
+redirect_from: guides/v2.0/config-guide/bootstrap/mage-run.html
 ---
 
 #### Contents
@@ -55,8 +56,6 @@ To create websites and stores:
 4.	To create a store, click **Create Store**.
 5.	To create a store view, click **Create Store View**.
 5.	When you create your website or store view, make note of its unique identifier because you'll use it later.
-
-
 
 #### Related topics
 *	[Set up multiple websites with nginx]({{ site.gdeurl }}config-guide/multi-site/ms_nginx.html)
