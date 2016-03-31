@@ -25,3 +25,9 @@ Version 2.0.2
 
 *   <a href="http://docs.magento.com/m2/ce/user_guide/magento/release-notes-ce-2.0.2.html" target="_blank">Magento CE Release Notes</a>
 *   <a href="http://docs.magento.com/m2/ee/user_guide/magento/release-notes-ee-2.0.2.html" target="_blank">Magento EE Release Notes</a>
+
+Version 2.0.3
+
+*   <a href="{{ site.gdeurl }}release-notes/ReleaseNotes2.0.3CE.html" target="_blank">Magento CE Release Notes</a>
+
+*   <a href="{{ site.gdeurl }}release-notes/ReleaseNotes2.0.3EE.html" target="_blank">Magento EE Release Notes</a>
