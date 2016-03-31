@@ -56,7 +56,7 @@ This is the main `composer.json` file. Magento uses this file to declare depende
 
 **Type:** `project`
 
-This file represents the Magento Community Edition project. The package only includes the `composer.json`, which declares the dependencies on the magento product as well as the class autoloader. This can be used by Magento system integrators to deploy Magento using Composer.
+This file represents the Magento Community Edition project. The package includes the `composer.json` file, which declares the dependencies on the Magento product as well as the class autoloader. This can be used by Magento system integrators to deploy Magento using Composer.
 
 ----
 
@@ -67,7 +67,7 @@ This file represents the Magento Community Edition project. The package only inc
 
 **Type:** `metapackage`
 
-This file represents Magento Community Edition product. The package only includes composer.json that declares the dependencies on magento components (modules, themes, and so on) and third-party components. This can be used by Magento system integrators to deploy Magento using Composer.
+This file represents Magento Community Edition product. The package includes the `composer.json` file that declares the dependencies on Magento components (modules, themes, and so on) and third-party components. This can be used by Magento system integrators to deploy Magento using Composer.
 
 ----
 
@@ -92,7 +92,7 @@ This file is used only by the framework.
 
 **Type:** `magento2-module`
 
-The fully qualified module name, broken down into vendor, with the rest of the words as suffixes. The "module" prefix is mandatory to disambiguate from other types (for example, Magento_Backend module versus Magento/backend theme).
+Depending on how Magento is installed, a module can be found under `app/code` or `vendor`. It's `composer.json` file declares dependencies that the module needs to function.
 
 ----
 
@@ -106,7 +106,7 @@ The fully qualified module name, broken down into vendor, with the rest of the w
 
 **Type:** `magento2-theme`
 
-Themes belong to areas, so the area name has to be the first suffix
+The `composer.json` file for a theme contains parent theme dependencies the extension needs to inherit from.
 
 ----
 
@@ -118,12 +118,12 @@ Themes belong to areas, so the area name has to be the first suffix
 
 **Type:** `magento2-language`
 
-We recommend using the correct [ISO code](http://www.iso.org/iso/home/standards/language_codes.htm){:target="_blank"} for the language code.
+We recommend using the correct [ISO code](http://www.iso.org/iso/home/standards/language_codes.htm){:target="_blank"} for the language code in the `composer.json` file.
 
 ---
 
 ## Magento-specific package types
-Each Magento component can be categorized into one of the types previously listed. If any component does not fit into a specific category, it can be generalized to `magento2-component`.
+Each Magento component can be categorized as a module, theme, or language package. If any component does not fit into a specific category, its type can be generalized as `magento2-component`.
 
 Having an identifier type for each component allows the system to marshall the directories and files of each component to the correct locations, based on the Magento 2 directory structure.
 
