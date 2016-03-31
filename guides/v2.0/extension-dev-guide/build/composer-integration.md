@@ -134,12 +134,20 @@ The namespace of Composer packages is global within a package repository (such a
 <vendor-name>/<package-name>
 {% endhighlight %}
 
-As a result, vendors of different packages are distinguished, and there is a low risk of overlapping (unless different vendors names themselves exactly the same). All letters in the name must be lowercase. Therefore, the format for package names released by Magento Inc is:
+### vendor-name
+Using Composer specifications ensures that vendors of different packages are distinguished, and there is a low risk of overlapping (unless different vendors names themselves exactly the same). All letters in the name must be lowercase. For example, the format for the vendor name for extensions released by Magento Inc is:
 
 {% highlight XML %}
 magento/*
 {% endhighlight %}
 
+#### Magento Marketplace Extensions
+{:.no_toc}
+If you are planning to submit your extension to the Magento Marketplace, you *must* use the unique vendor ID created or assigned to you when you created your marketplace account. This vendor ID goes in your `composer.json` file as the `vendor-name` part of the extension name.
+
+When you submit your extension to the Magento Marketplace, this information will be extracted and compared to your assigned vendor ID to make sure it matches.
+
+### package-name
 The package name is up to the vendor (as long as it is lowercase). If this name is meant to consist of multiple words, the Composer specification recommends separating them with dash. The convention for Magento package names is this:
 
 {% highlight XML %}
