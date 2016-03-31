@@ -11,7 +11,7 @@ redirect_from:
 ---
 
 <h2>Magento Community Edition 2.0.4</h2>
-We are pleased to present Magento Community Edition 2.0.4. This release includes all of the security enhancements and performance improvements of Magento 2.0.3, in improved packaging. **You must downloand and install 2.0.4 to ensure that you receive all the security enhancements of 2.0.3**. 
+We are pleased to present Magento Community Edition 2.0.4. This release includes all of the security enhancements and performance improvements of Magento 2.0.3, in improved packaging. **You must download and install 2.0.4 to ensure that you receive all the security enhancements of 2.0.3**. 
 
 
 Backward-incompatible changes are documented in <a href="http://devdocs.magento.com/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
