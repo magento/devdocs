@@ -92,7 +92,7 @@ This file is used only by the framework.
 
 **Type:** `magento2-module`
 
-Depending on how Magento is installed, a module can be found under `app/code` or `vendor`. It's `composer.json` file declares dependencies that the module needs to function.
+The `composer.json` file for a module extension declares external dependencies that the module needs in order to function.
 
 ----
 
@@ -106,7 +106,7 @@ Depending on how Magento is installed, a module can be found under `app/code` or
 
 **Type:** `magento2-theme`
 
-The `composer.json` file for a theme contains parent theme dependencies the extension needs to inherit from.
+The `composer.json` file for a theme extension contains parent theme dependencies the extension needs to inherit.
 
 ----
 
@@ -118,7 +118,7 @@ The `composer.json` file for a theme contains parent theme dependencies the exte
 
 **Type:** `magento2-language`
 
-We recommend using the correct [ISO code](http://www.iso.org/iso/home/standards/language_codes.htm){:target="_blank"} for the language code in the `composer.json` file.
+For language packages, we recommend using the correct [ISO code](http://www.iso.org/iso/home/standards/language_codes.htm){:target="_blank"} for the language code in the `composer.json` file.
 
 ---
 
