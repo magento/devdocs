@@ -24,6 +24,35 @@ This section discusses how to start System Upgrade, which upgrades the version o
 <h2 id="compman-prereq">Prerequisites</h2>
 Before continuing, complete all tasks discussed in <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.
 
+## Important information about upgrading {#compman-upgrade-caveat}
+If you're upgrading to Magento CE or EE 2.0.4 from an earlier version, you must perform the tasks discussed in this section. 
+
+Before you start your upgrade, you must disable all cache types. After the upgrade is finished, you must remove everything from the Magento `var/generation` and `var/di` directories using the command line or an FTP application. After the upgrade is finished, you can enable cache types again.
+
+<div class="bs-callout bs-callout-warning">
+    <p>Failure to perform the tasks discussed in this section results in errors during your upgrade and prevents it from succeeding.</p>
+</div>
+
+To start:
+
+1.	Log in to the Magento Admin as an administrator.
+2.	Click **System** > **Cache Management**.
+3.	At the top of the page, from the **Mass actions** list, click **Select all**.
+4.	From the list above, click **Disable**.
+5.	Click **Submit**.
+
+	The following figure shows an example.
+
+	![Disable all cache types before you start upgrade]({{ site.baseurl }}common/images/upgr_disable-cache.png){:width="350px"}
+
+The following figure shows all cache types disabled.
+
+![All cache types are disabled]({{ site.baseurl }}common/images/upgr_all-cache-disabled.png){:width="700px"}
+
+4.	Continue with the next section.
+    
+
+
 
 <h2 id="compman-access">Start System Upgrade from the Magento Admin</h2>
 To run System Upgrade:
