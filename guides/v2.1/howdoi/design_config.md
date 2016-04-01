@@ -33,9 +33,9 @@ For example, the default set of design options for the store view level is the f
 
 <img src="{{site.baseurl}}common/images/design_conf2.png" alt="Design Configuration page">
 
-This configuration is implemented using the [form UI component]({{site.gdeurl21}}ui-components/ui-form.html), that uses corresponding UI components for fields. 
+This configuration form is implemented using the [form UI component]({{site.gdeurl21}}ui-components/ui-form.html), that uses corresponding UI components for fields. 
 
-To change the settings available for configuration, you need to customize the `design_config_form.xml` and `di.xml` configuration files.
+To change the settings available for configuration, you need to customize the `design_config_form.xml` configuration file. If you add new fileds field sets, you will also need to customize `di.xml`.
 
 View the following sections for details.
 
@@ -75,7 +75,7 @@ To add a certain field as additional grid column, configure the `use_in_grid` pr
 ## Customize the design options {#customize_options}
 
 ### Customize the form configuration
-Design configuration is implemented using the [form UI component]({{site.gdeurl21}}ui-components/ui-form.html). 
+Design configuration form is implemented using the [form UI component]({{site.gdeurl21}}ui-components/ui-form.html). 
 
 So you can customize the form fields in the component's configuration xml file. For design configuration form it is `design_config_form.xml`. 
 
@@ -100,7 +100,6 @@ Details:
         <!--Field sets can be nested --> 
         <fieldset name="%nested_fieldset_name%">
             <argument name="data" xsi:type="array">
-                <item name="disabled" xsi:type="bool">true</item>
                 <item name="config" xsi:type="array">
                     <item name="label" xsi:type="string" translate="true">%Nested fieldset Label as displayed in UI%</item>
                     <item name="collapsible" xsi:type="boolean">true</item>
@@ -170,8 +169,8 @@ For reference, view the form configuration files of Magento modules:
 
 ### Add fields metadata {#meta_data}
 
-If in the design configuration form you add new field sets or fields, you must declare their backend models in `<your_module_dir>/etc/di.xml`. 
-The field declaration looks like following:
+If in the design configuration form you add new field sets or fields, you must declare how their values are saved in the database in `<your_module_dir>/etc/di.xml`. You can also declare the backend model used for processing the field values. If you do not specify any model, the default `Magento\Framework\App\Config\Value` model is used.
+The field saving properties declaration looks like following:
 
 {%highlight xml%}
 ...
