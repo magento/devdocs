@@ -61,6 +61,14 @@ Messages similar to the following display in the Console Log:
 ## Enable cache types {#upgrade-cache}
 After your upgrade successfully completes, you can enable the Magento cache as follows:
 
-1.	TBD
+1.	Log in to the Magento Admin as an administrator.
+2.	Click **System** > Tools > **Cache Management**.
+3.	At the top of the page, from the **Mass actions** list, click **Select all**.
+4.	From the list above, click **Enable**.
+5.	Click **Submit**.
+
+	The following figure shows all cache types enabled.
+
+	![All cache types are enabled]({{ site.baseurl }}common/images/upgr_all-cache-enabled.png){:width="700px"}
 
 
