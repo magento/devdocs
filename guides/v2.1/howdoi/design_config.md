@@ -3,7 +3,7 @@ layout: default
 group: howdoi
 subgroup: Customize Design Configuration
 title: Customize Design Configuration
-menu_title: Customize Design Configuaration
+menu_title: Customize Design Configuration
 menu_node: parent 
 menu_order: 1
 github_link: howdoi/design_config.md
@@ -35,7 +35,7 @@ For example, the default set of design options for the store view level is the f
 
 This configuration form is implemented using the [form UI component]({{site.gdeurl21}}ui-components/ui-form.html), that uses corresponding UI components for fields. 
 
-To change the settings available for configuration, you need to customize the `design_config_form.xml` configuration file. If you add new fileds field sets, you will also need to customize `di.xml`.
+To change the settings available for configuration, you need to customize the `design_config_form.xml` configuration file. If you add a new field, you must also specify in `di.xml` how it is processed and saved.
 
 View the following sections for details.
 
