@@ -12,7 +12,7 @@ github_link: comp-mgr/cli/cli-upgrade.md
 ## Command-line upgrade
 You can upgrade Magento from the command line if you installed the software using any of the following:
 
-*	Downloded the metapackage using `composer create-project`
+*	Downloaded the metapackage using `composer create-project`
 *	Installed the compressed archive
 
 <div class="bs-callout bs-callout-info" id="info">
