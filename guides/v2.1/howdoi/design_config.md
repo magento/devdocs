@@ -41,7 +41,7 @@ View the following sections for details.
 
 ## Customize the grid {#customize_grid}
 
-The grid containing the configuration scopes is implemented using the [grid UI component]({{sige.gdeurl21}}ui-components/ui-listing-grid.html). To customize the grid view, take the following steps:
+The grid containing the configuration scopes is implemented using the [grid UI component]({{site.gdeurl21}}ui-components/ui-listing-grid.html). To customize the grid view, take the following steps:
 
 1. In the `<your_module_dir>/view/adminhtml/ui_component` directory add the empty `design_config_listing.xml`.
 
