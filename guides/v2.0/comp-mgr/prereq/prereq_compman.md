@@ -1,7 +1,7 @@
 ---
 layout: default
 group: compman
-subgroup: B_prereq
+subgroup: 02_prereq
 title: Prerequisites
 menu_title: Prerequisites
 menu_order: 1

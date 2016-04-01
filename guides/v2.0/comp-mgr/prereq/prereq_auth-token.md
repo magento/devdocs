@@ -1,7 +1,7 @@
 ---
 layout: default
 group: compman
-subgroup: B_prereq
+subgroup: 02_prereq
 title: Enter your authentication keys in the Admin
 menu_title: Enter your authentication keys in the Admin
 menu_order: 2

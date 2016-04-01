@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: compman
-subgroup: A_Introduction
+subgroup: 01_Introduction
 title: Upgrade the Magento application and components
 menu_title: Upgrade the Magento application and components
 menu_node: parent

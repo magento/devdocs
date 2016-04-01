@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: compman
-subgroup: C_UseCompMan
+subgroup: 05_UseCompMan
 title: Step 1. Readiness check
 menu_title: Step 1. Readiness check
 menu_node: 
