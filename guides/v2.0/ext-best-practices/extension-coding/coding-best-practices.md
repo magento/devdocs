@@ -1,7 +1,7 @@
 ---
 layout: default
 group: ext-best-practices
-subgroup: 01_Extension-Coding
+subgroup: 02_Extension-Coding
 title: Extension Coding
 menu_title: Extension Coding
 menu_order: 1
