@@ -40,7 +40,7 @@ To add a custom preprocessor, take the following steps:
 For illustration, see the adapter for Sass in the sample module: [module-sample-scss/Preprocessor/Adapter/Scss/Processor.php](https://github.com/magento/magento2-samples/blob/master/module-sample-scss/Preprocessor/Adapter/Scss/Processor.php)
 
 2. If the browser compilation is possible for your file types, that is, if the corresponding JavaScript library exists, create the custom renderer for the client-side compilation. This will allow the default [client-side compilation functionality]({{site.gdeurl}}frontend-dev-guide/css-topics/css-preprocess.html#client-side) to be applied for your files type as well. 
-You can use the default Magento renderer for reference: [Magento/Developer/Model/View/Page/Config/ClientSideLessCompilation/Renderer]({{site.mage2000url}}app/code/Magento/Developer/Model/View/Page/Config/ClientSideLessCompilation/Renderer.php)
+You can use the default Magento renderer for reference: [app/code/Magento/Developer/Model/View/Page/Config/ClientSideLessCompilation/Renderer.php]({{site.mage2000url}}app/code/Magento/Developer/Model/View/Page/Config/ClientSideLessCompilation/Renderer.php)
 
 2. If in your custom preprocessor, the syntax of the importing directives is different from `@import` and `@magento_import`, you must implement custom processor classes. 
 You can view the default Magento processors for reference: [lib/internal/Magento/Framework/Css/PreProcessor/Instruction]({{site.mage2000url}}lib/internal/Magento/Framework/Css/PreProcessor/Instruction). 
@@ -61,7 +61,7 @@ The content of your `di.xml` will be similar to the following:
         <arguments>
             <argument name="alternatives" xsi:type="array">
                 <item name="%your_preprocessor_name%" xsi:type="array">
-                    <item name="class" xsi:type="string">%path/to/your/adapter/class%</item>
+                    <item name="class" xsi:type="string">%Path\To\Your\Adapter\Class%</item>
                 </item>
                 <!-- Use the following syntax to set the priority of processors. That is, what file types will the system search for, when requested CSS files are not found. The following lines set SCSS to be prior to LESS -->
                 <item name="less" xsi:type="array">
@@ -80,7 +80,7 @@ The content of your `di.xml` will be similar to the following:
                     </item>
                     <item name="import" xsi:type="array">
                         <item name="after" xsi:type="string">magento_import</item>
-                        <item name="class" xsi:type="string">%Path\To\Your|Magento_import\Processor%</item>
+                        <item name="class" xsi:type="string">%Path\To\Your\Magento_import\Processor%</item>
                     </item>
                 </item>
             </argument>
