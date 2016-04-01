@@ -19,7 +19,7 @@ The following figure shows an example of this issue when using the Setup Wizard.
 #### Solution
 To solve this issue:
 
-1.	Log in to your Magento server as the <a href="{{ site.gdeurl21 }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+1.	Log in to your Magento server as the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
 2.	Change to your Magento installation directory.
 3.	Run the following commands in the order shown:
 

@@ -23,7 +23,6 @@ If this error displays, resolve it as follows:
 2.	Enter the following commands in the order shown:
 
 		php <your Magento install dir>/bin/magento setup:upgrade
-
 3.	After the command completes, verify your upgrade was successful:
 
 		php bin/magento --version
