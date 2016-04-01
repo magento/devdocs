@@ -36,7 +36,7 @@ Before you start your upgrade, you must disable all cache types. After the upgra
 To start:
 
 1.	Log in to the Magento Admin as an administrator.
-2.	Click **System** > **Cache Management**.
+2.	Click **System** > Tools > **Cache Management**.
 3.	At the top of the page, from the **Mass actions** list, click **Select all**.
 4.	From the list above, click **Disable**.
 5.	Click **Submit**.
@@ -45,20 +45,17 @@ To start:
 
 	![Disable all cache types before you start upgrade]({{ site.baseurl }}common/images/upgr_disable-cache.png){:width="350px"}
 
-The following figure shows all cache types disabled.
+	The following figure shows all cache types disabled.
 
-![All cache types are disabled]({{ site.baseurl }}common/images/upgr_all-cache-disabled.png){:width="700px"}
+	![All cache types are disabled]({{ site.baseurl }}common/images/upgr_all-cache-disabled.png){:width="700px"}
 
 4.	Continue with the next section.
     
-
-
-
 <h2 id="compman-access">Start System Upgrade from the Magento Admin</h2>
 To run System Upgrade:
 
 1.	Log in to the Magento Admin as an administrator.
-2.	Click **System** > **Web Setup Wizard**.
+2.	Click **System** > Tools > **Web Setup Wizard**.
 	The following page displays.<br><br>
 	<img src="{{ site.baseurl }}common/images/cman_upgr_initial.png" width="650px" alt="Specify whether to manage components or upgrade Magento">
 3.	Click **System Upgrade**.
