@@ -17,3 +17,97 @@ github_link: ext-best-practices/admin/placement-and-design.md
 ## Overview
 
 Magento’s flexible platform lets you place an extension anywhere in the Admin panel. However, it can be difficult finding the right place for your extension, so we’ve prepared the following guidelines to help.
+
+## Placement guidelines for extension types
+From the list of extension types below, determine the type of extension you have and read the guidance for placement and style.
+
+*The names for the types of extensions listed below are for reference purposes only.*
+
+### Standard Connector
+These extensions provide additional API over Magento's existing API and is responsible for providing settings between Magento and another system.
+
+**Placement**
+
+All required settings for this connector type should appear in the **Stores > Settings > Configuration** section. The actual listings for these extension settings should appear after all of Magento's listed settings. All the setting details and configurations should appear in the section to the right.
+
+![Connector settings placement]({{ site.baseurl }}common/images/ext-best-practices/connector-settings-placement.png)
+
+**Style**
+
+* The style of the listing for your settings should match the look of Magento's listed settings.
+* Icons or images should not be used in the navigation listing for your settings.
+
+---
+
+### Store Feature Connector
+These extensions are responsible for integrating with different systems and need additional
+settings displayed under specific entries in the **Store > Settings > Configuration** section.
+
+**Placement**
+
+The settings for these extensions should be displayed under its respective parent section under the **Store > Settings > Configuration** section.
+
+For example, if the extension is for Shipping, then you can place it under **Store > Settings > Configuration > Sales > Shipping Settings**.
+
+![Store Feature Connector placement]({{site.baseurl}}common/images/ext-best-practices/store-feature-connector-placement.png)
+
+---
+
+### Connector with additional features
+These extensions are responsible for integrating with different systems and need additional settings and configurations for synchronizing with these systems.
+
+**Placement**
+
+If all the settings for an extension can be consolidated into one section, then the extension can be added to one of the primary navigation's submenu as links under the appropriate parent item. Avoid placing extension settings in multiple sections, such as the Configuration section and another related section.
+
+For example, if your extension is related to the “Reports” functionality then its settings should appear as a link under the Report Section in the Primary navigation.
+
+![Connector with additional features placement]({{site.baseurl}}common/images/ext-best-practices/additional-feature-placement.png)
+
+**Style**
+
+* The styles of the links in the admin should follow the same styles of the default Magento Navigation Links.
+* Do not introduce custom icons in the navigation submenus.
+
+---
+
+### Feature Extensions
+
+These are extensions which provide additional functionality to Magento that do not already exist as a feature. These extensions usually demand an additional primary navigation item.
+
+**Placement**
+
+There is a dedicated section designed for such exclusive extensions called “Extensions”. When feature-level extensions are installed, those extensions should live under this section.
+
+
+![Feature Placement]({{site.baseurl}}common/images/ext-best-practices/feature-placement.png){:height="190px" width="350px"}
+
+<div class="bs-callout bs-callout-warning" id="info">
+  <p>The name and icon for this section is still TBD. [Implementation of this feature is scheduled to happen upon the release of 2.1.1.]</p>
+</div>
+
+**Style**
+
+* Links in the admin should follow the same styles as the Magento’s Primary Navigation submenu links.
+
+---
+
+### Integrated Extensions
+
+These are add-ons to existing Magento feature and might appear as a nested feature.
+
+**Placement**
+
+As these are integrated features no direct/indirect accessible links are available from the admin.
+
+---
+
+### Codebase Extensions
+
+These extensions are created as a code and do not need to have a representation in the admin panel.
+
+**Placement**
+
+As these extensions do not have additional settings no direct/indirect accessible links are available from the admin.
+
+---
