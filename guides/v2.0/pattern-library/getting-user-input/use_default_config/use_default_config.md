@@ -2,7 +2,7 @@
 layout: default
 group: pattern
 subgroup: Getting User Input
-title: Magento Admin Pattern Library
+title: Admin Design Pattern Library
 menu_title: Use Default Config
 menu_order: 4
 menu_node:
