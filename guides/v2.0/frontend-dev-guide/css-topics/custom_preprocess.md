@@ -76,11 +76,11 @@ The content of your `di.xml` will be similar to the following:
             <argument name="preprocessors" xsi:type="array">
                 <item name="%your_preprocessor%" xsi:type="array">
                     <item name="magento_import" xsi:type="array">
-                        <item name="class" xsi:type="string">%path/to/your/import/processor%</item>
+                        <item name="class" xsi:type="string">%Path\To\Your\Import\Processor%</item>
                     </item>
                     <item name="import" xsi:type="array">
                         <item name="after" xsi:type="string">magento_import</item>
-                        <item name="class" xsi:type="string">%path/to/your/magento_import/processor%</item>
+                        <item name="class" xsi:type="string">%Path\To\Your|Magento_import\Processor%</item>
                     </item>
                 </item>
             </argument>
@@ -90,7 +90,7 @@ The content of your `di.xml` will be similar to the following:
 <type name="Magento\Developer\Model\View\Page\Config\RendererFactory">
         <arguments>
             <argument name="rendererTypes" xsi:type="array">
-                <item name="client_side_compilation" xsi:type="string">%path/to/your/client/side/renderer%</item>
+                <item name="client_side_compilation" xsi:type="string">%Path\To\Your\Client\Side\Renderer%</item>
             </argument>
         </arguments>
     </type>
