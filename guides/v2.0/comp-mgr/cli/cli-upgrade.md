@@ -16,13 +16,25 @@ You can upgrade Magento from the command line if you installed the software usin
 *	Installed the compressed archive
 
 <div class="bs-callout bs-callout-info" id="info">
- 	<p>If you cloned the Magento 2 GitHub repository, you *cannot* use this method to upgrade; instead, see <a href="{{ site.gdeurl }}install-gde/install/cli/dev_update-magento.html">Update the Magento application</a>.</p>
+ 	<ul><li>If you cloned the Magento 2 GitHub repository, you <em>cannot</em> use this method to upgrade; instead, see <a href="{{ site.gdeurl }}install-gde/install/cli/dev_update-magento.html">Update the Magento application</a>.</li>
+ 		<li>If you configured Magento use use <code>pub</code> as its root directory, see the next section.</li></ul>
 </div>
 
 <div class="bs-callout bs-callout-warning">
     <p>If you're upgrading from Magento CE or EE 2.0.0 or 2.0.1, you must first perform the tasks discussed in the <a href="{{ site.gdeurl }}release-notes/tech_bull_201-upgrade.html">Technical Bulletin (1/28/16)</a>.</p>
 </div>
 
+## Prerequisite: `pub` directory root {#upgrade-cli-pub}
+This section applies to you *only* if you set the Magento root directory to `<your Magento install dir>/pub`. If you did not do this, skip this section and continue with the next section.
+
+If you use `pub` as your Magento root directory, you can do any of the following:
+
+*	For the upgrade, create another subdomain or docroot that uses the Magento installation directory as its root. 
+
+	Run the [System Upgrade utility]({{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html) using that subdomain.
+*	Use the [following procedure](#upgrade-cli-upgr) to upgrade Magento using the command line.
+
+## Upgrade using the command line {#upgrade-cli-upgr}
 To upgrade using the command line:
 
 1.	Log in to your Magento server as, or switch to, the Magento file system owner.
