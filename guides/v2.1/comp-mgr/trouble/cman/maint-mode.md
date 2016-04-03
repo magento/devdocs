@@ -1,7 +1,7 @@
 ---
 layout: default
 group: compman
-subgroup: ZZ_Troubleshooting
+subgroup: 50_trouble
 title: Maintenance mode options for upgrade
 menu_title: Maintenance mode options for upgrade
 menu_node: 
