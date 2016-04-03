@@ -36,6 +36,10 @@ To resolve these errors, perform the following tasks:
 	If you don't have access to the Magento server file system, connect to it using an FTP application.
 2.	Remove the following files so you can upgrade again:
 
-		<your Magento install dir>/var/TBD
-		<your Magento install dir>/var/TBD
-3.	Run your upgrade again, making sure to complete _all tasks_ discussed in TBD.
+		<your Magento install dir>/var/.maintenance.flag
+		<your Magento install dir>/var/.update_in_progress.flag
+		<your Magento install dir>/var/cache/*
+		<your Magento install dir>/var/page_cache/*
+		<your Magento install dir>/var/generation/*
+
+3.	Run your upgrade again, making sure to complete _all tasks_ discussed in [Run System Upgrade]({{ site.gdeurl21 }}comp-mgr/upgrader/upgrade-start.html).
