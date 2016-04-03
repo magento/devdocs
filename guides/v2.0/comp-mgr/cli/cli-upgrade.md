@@ -41,10 +41,6 @@ To upgrade using the command line:
 2.	Change to the directory in which you installed the Magento software.
 
 	For example, `cd /var/www/html/magento2`
-3.	If you're upgrading to Magento 2.0.4 from an earlier version, enter the following commands to prevent errors during upgrade:
-
-		php bin/magento cache:disable
-		rm -rf var/generation/* var/cache/*
 2.	Enter the following commands in the order shown:
 
 		composer require <product> <version> --no-update
@@ -65,10 +61,6 @@ To upgrade using the command line:
 	</div>
 
 3.	If prompted, enter your [authentication keys]({{ site.gdeurl }}).
-3. Enter the following commands to clean the cache, code generation, and dependency injection directories:
-
-		rm -rf var/cache/* var/di/* var/generation/*
-
 4. Update the database schema and data:
 
 		php bin/magento setup:upgrade
