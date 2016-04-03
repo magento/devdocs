@@ -57,7 +57,7 @@ To upgrade using the command line:
 		composer update
 	
 	<div class="bs-callout bs-callout-info" id="info">
-  		<p>If an error displays about a missing <code>.gitignore</code> file, see the <a href="{{ site.gdeurl }}release-notes/tech_bull_201-upgrade.html#resolution2">Technical Bulletin (1/28/16)</a>.</p>
+  		<p>If an error displays about a missing <code>.gitignore</code> files, see the <a href="{{ site.gdeurl }}release-notes/tech_bull_201-upgrade.html#resolution2">Technical Bulletin (1/28/16)</a>.</p>
 	</div>
 
 3.	If prompted, enter your [authentication keys]({{ site.gdeurl }}).
@@ -78,4 +78,6 @@ To upgrade using the command line:
 	1.	Reset [file system ownership and permissions]({{ site.gdeurl }}install-gde/prereq/file-system-perms.html) as a user with `root` privileges.
 	2.	Clear the following directories and try again:
 
-			<your Magento install dir>/var/cache <your Magento install dir>/var/page_cache <your Magento install dir>/var/generation 
+			<your Magento install dir>/var/cache 
+			<your Magento install dir>/var/page_cache 
+			<your Magento install dir>/var/generation 
