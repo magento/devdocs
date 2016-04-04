@@ -147,6 +147,8 @@ If you are planning to submit your extension to the Magento Marketplace, you *mu
 
 When you submit your extension to the Magento Marketplace, this information will be extracted and compared to your assigned vendor ID to make sure it matches.
 
+Please see the [Marketplace Documentation](http://docs.magento.com/marketplace/user_guide/account/account-update.html){:target="_blank"} for more information about your unique vendor ID.
+
 ### package-name
 The package name is up to the vendor (as long as it is lowercase). If this name is meant to consist of multiple words, the Composer specification recommends separating them with dash. The convention for Magento package names is this:
 
