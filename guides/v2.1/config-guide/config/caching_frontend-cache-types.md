@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: Caching
+subgroup: 08_Caching
 title: Associate cache frontends with cache types
 menu_title: Associate cache frontends with cache types
 menu_order: 2

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: Solr
+subgroup: 15_Solr
 title: Prepare Solr for production
 menu_title: Prepare Solr for production
 menu_order: 3

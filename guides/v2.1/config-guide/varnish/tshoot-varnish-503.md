@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: CM_Varnish
+subgroup: 09_Varnish
 title: Troubleshooting 503 (Backend Fetch Failed) errors
 menu_title: Troubleshooting 503 (Backend Fetch Failed) errors
 menu_order: 500

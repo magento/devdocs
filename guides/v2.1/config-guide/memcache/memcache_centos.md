@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: Caching_mem
+subgroup: 10_mem
 title: Install, configure, verify memcached on CentOS
 menu_title: Install, configure, verify memcached on CentOS
 menu_order: 3

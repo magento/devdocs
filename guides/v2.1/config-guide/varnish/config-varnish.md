@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: CM_Varnish
+subgroup: 09_Varnish
 title: Configure and use Varnish
 menu_title: Configure and use Varnish
 menu_order: 1

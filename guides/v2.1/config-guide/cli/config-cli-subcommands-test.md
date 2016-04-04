@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: CLI
+subgroup: 04_CLI
 title: Run unit tests
 menu_title: Run unit tests
 menu_node: 

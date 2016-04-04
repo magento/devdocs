@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: RabbitMQ
+subgroup: 15_RabbitMQ
 title: Configure message queue topology
 menu_title: Configure message queue topology
 menu_order: 2

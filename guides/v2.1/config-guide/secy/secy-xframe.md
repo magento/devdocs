@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: B_Security
+subgroup: 02_Security
 title: X-Frame-Options header
 menu_title: X-Frame-Options header
 menu_order: 5

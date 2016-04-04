@@ -11,5 +11,5 @@ github_link21: howdoi/config/configure.md
 
 After you install the Magento application, you can:
 
-*	[Configure Magento]({{ site.gdeurl21 }install-gde/install/post-install-config.html)
+*	[Configure Magento]({{ site.gdeurl21 }}install-gde/install/post-install-config.html)
 *	[Locate your session storage]({{ site.gdeurl21 }}config-guide/sessions.html)

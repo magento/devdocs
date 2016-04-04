@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: Bootstrap
+subgroup: 03_Bootstrap
 title: Magento application initialization and bootstrap
 menu_title: Magento application initialization and bootstrap
 menu_order: 1

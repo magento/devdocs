@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide 
-subgroup: CLI
+subgroup: 04_CLI
 title: Generate data for performance testing
 menu_title: Generate data for performance testing
 menu_node: 
