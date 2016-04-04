@@ -2,21 +2,22 @@
 layout: default
 group: release-notes
 subgroup: Breaking changes
-title: Magento 2.0 Backward-Incompatible Changes
-menu_title: Breaking changes
-menu_order:
+title: Magento 2.0 Backward Incompatible Changes
+menu_title: Backward incompatible changes
 menu_node: parent
 github_link: release-notes/changes_2.0.md
 ---
 <h2>Preface</h2>
-This topic discusses the most important backward-incompatible changes made after Magento 2.0.
+This topic discusses the most important backward incompatible changes made after Magento 2.0.
 
 Be aware that no @api code has been modified.
 
 To see all backward incompatible changes follow:
  
- - [Magento CE breaking changes][]
- - [Magento EE breaking changes][]
+ - [Magento CE backward incompatible changes][]
+ - [Magento EE backward incompatible changes][]
+ 
+For more information about backward compatibility, see [Magento’s backward compatibility policy][].
 
 <h2>Contents</h2>
 
@@ -148,11 +149,13 @@ When **Products -> Categories** menu item in the Magento Admin is chosen, the fi
 
 <!-- LINK DEFINITIONS -->
 
+[Magento’s backward compatibility policy]: http://devdocs.magento.com/guides/v2.0/architecture/backward-compatibility.html
+
 [`<magento2>/app/code/Magento/Catalog/etc/module.xml`]: https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/etc/module.xml
 [`<magento2>/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml`]: https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml
 
-[Magento CE breaking changes]: {{site.gdeurl}}release-notes/changes/ce_changes.html
-[Magento EE breaking changes]: {{site.gdeurl}}release-notes/changes/ee_changes.html
+[Magento CE backward incompatible changes]: {{site.gdeurl}}release-notes/changes/ce_changes.html
+[Magento EE backward incompatible changes]: {{site.gdeurl}}release-notes/changes/ee_changes.html
 [Overview of UI components]: {{site.gdeurl}}ui-components/ui-definition.html
 [more info about a form component]: {{site.gdeurl}}ui-components/ui-form.html
 

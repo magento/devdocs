@@ -17,11 +17,13 @@ This section discusses how to start System Upgrade, which upgrades the version o
 </div>
 
 <div class="bs-callout bs-callout-warning">
-    <p>If you installed the Magento application by <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">cloning the GitHub repository</a>, you <em>cannot</em> use the System Upgrade utility to upgrade the software. Instead, you must <a href="{{ site.gdeurl }}install-gde/install/cli/dev_options.html">update it manually</a>.</p>
+    <ul><li>Authorization keys from a <a href="http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html" target="_blank">shared account</a> <em>cannot</em> be used for upgrade. You must get your authorization keys from <code>magento.com</code> account owner.</li>
+    	<li>If you installed the Magento application by <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">cloning the GitHub repository</a>, you <em>cannot</em> use the System Upgrade utility to upgrade the software. Instead, you must <a href="{{ site.gdeurl }}install-gde/install/cli/dev_options.html">update it manually</a>.</li></ul>
 </div>
 
 <h2 id="compman-prereq">Prerequisites</h2>
 Before continuing, complete all tasks discussed in <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.
+
 
 <h2 id="compman-access">Start System Upgrade from the Magento Admin</h2>
 To run System Upgrade:

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: D_Entities
+subgroup: 50_Entities
 title: Entities of the Magento Testing Framework
 menu_title: Typified element
 menu_order: 5
@@ -37,7 +37,7 @@ A typified element class in the MTF contains methods to be used in the test to m
 
 ### Classes and relations with UI {#classes}
 
-There are two types of typified elements: default typified elements and Magneto custom typified elements.
+There are two types of typified elements: default typified elements and Magento custom typified elements.
  
  * Default typified elements are the web elements that are typically used in a web application
   

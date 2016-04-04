@@ -30,7 +30,7 @@ MySQL 5.6 (Oracle or Percona)
 ### PHP 
 
 *	5.6.x
-*	5.5.x 
+*	5.5.x, where x is 22 or greater
 *	7.0.2 (supported by Magento version 2.0.1 and later only)
 
 Documentation: <a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html" target="_blank">CentOS</a>, <a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html" target="_blank">Ubuntu</a>
@@ -51,6 +51,7 @@ Documentation: <a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html" tar
 *	<a href="http://php.net/manual/en/book.xml.php" target="_blank">xml</a>
 *	<a href="http://php.net/manual/en/book.xsl.php" target="_blank">xsl</a>
 *	<a href="http://php.net/manual/en/book.zip.php" target="_blank">zip</a> 
+*	PHP 7 only: [json](http://php.net/manual/en/book.json.php){:target="_blank"}
 
 #### PHP OPcache
 We strongly recommend you verify the  <a href="http://php.net/manual/en/intro.opcache.php" target="_blank">PHP OPcache</a> is enabled for performance reasons. The OPcache is enabled in many PHP distributions. To verify if it is installed, see our PHP documentation for <a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html" target="_blank">CentOS</a> or <a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html" target="_blank">Ubuntu</a>.

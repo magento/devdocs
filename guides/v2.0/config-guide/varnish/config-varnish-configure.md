@@ -35,7 +35,7 @@ To change the Apache 2.2 listen port:
 <h2 id="config-varnish-config-sysvcl">Modify the Varnish system configuration</h2>
 To modify the Varnish system configuration:
 
-1.	Open `/etc/sysconfig/varnish` in a text editor.
+1.	Open `/etc/sysconfig/varnish` (or `/etc/default/varnish` on Debian and Ubuntu) in a text editor.
 2.	Set the Varnish listen port to 80:
 
 		VARNISH_LISTEN_PORT=80
@@ -57,7 +57,7 @@ To modify the Varnish system configuration:
 		#             -s file,/var/lib/varnish/varnish_storage.bin,1G"
 
 
-4.	Save your changes to `/etc/sysconfig/varnish` and exit the text editor.
+4.	Save your changes to `/etc/sysconfig/varnish` (or `/etc/default/varnish` on Debian and Ubuntu) and exit the text editor.
 
 <h3 id="config-varnish-config-default">Modify <code>default.vcl</code></h3>
 This section discusses how to provide minimal configuration so Varnish returns HTTP response headers. This enables you to verify Varnish works before you configure Magento to use Varnish.

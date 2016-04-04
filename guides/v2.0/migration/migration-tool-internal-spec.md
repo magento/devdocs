@@ -224,7 +224,7 @@ Each step has to check that the structure of data source (Magento 1 by default) 
 
 ###Data Transfer
 
-In case integrity check passed, transferring data is running. If some error appears then rollback will run to revert to previous state of Magneto 2. If a step class implements RollbackInterface then "rollback" method will be executed in case of error.
+In case integrity check passed, transferring data is running. If some error appears then rollback will run to revert to previous state of Magento 2. If a step class implements RollbackInterface then "rollback" method will be executed in case of error.
 
 ###Volume check
 

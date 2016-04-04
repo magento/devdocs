@@ -5,6 +5,9 @@
 	If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:
 
 		su <Magento file system owner> -s /bin/bash -c <command>
+	If the Magento file system owner does not allow logins you can do the following
+	
+		sudo -u <Magento file system owner>  <command>
 2.	To run Magento commands from any directory, add `<your Magento install dir>/bin` to your system `PATH`.
 
 	Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.
