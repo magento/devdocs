@@ -33,7 +33,7 @@ In particular:
 </div>
 
 ## Composer binary location {#composer-binary}
-Magento's `bin/magento` script uses composer from the `vendor/composer` directory in your Magento 2 installation, not your globally installed Composer. Keep this in mind while customizing or updating composer or troubleshooting Composer issues while working with Magento 2.
+Magento's `bin/magento` script uses composer from `<Magento root>/vendor/composer` in your Magento 2 installation, not your globally installed composer. Keep this in mind while customizing or updating composer or troubleshooting composer issues while working with Magento 2.
 
 ## Descriptions of different composer.json files {#composerjson-overview}
 Certain Magento components and product editions are represented with `composer.json` files.
@@ -106,7 +106,7 @@ The `composer.json` file for a module extension declares external dependencies t
 
 **Type:** `magento2-theme`
 
-The `composer.json` file for a theme extension contains parent theme dependencies the extension needs to inherit.
+The `composer.json` file for a theme component contains parent theme dependencies the extension needs to inherit.
 
 ----
 
@@ -118,7 +118,7 @@ The `composer.json` file for a theme extension contains parent theme dependencie
 
 **Type:** `magento2-language`
 
-For language packages, we recommend using the correct [ISO code](http://www.iso.org/iso/home/standards/language_codes.htm){:target="_blank"} for the language code in the `composer.json` file.
+For language packages, you must use the correct [ISO code](http://www.iso.org/iso/home/standards/language_codes.htm){:target="_blank"} for the language code in the `composer.json` file.
 
 ---
 
@@ -130,16 +130,13 @@ Having an identifier type for each component allows the system to marshall the d
 ## Naming conventions
 The namespace of Composer packages is global within a package repository (such as [packagist.org](http://packagist.org)). The Composer specification requires that a package name use the format:
 
-{% highlight XML %}
-<vendor-name>/<package-name>
-{% endhighlight %}
+`<vendor-name>/<package-name>`
+
 
 ### vendor-name
-Using Composer specifications ensures that vendors of different packages are distinguished, and there is a low risk of overlapping (unless different vendors names themselves exactly the same). All letters in the name must be lowercase. For example, the format for the vendor name for extensions released by Magento Inc is:
+Using Composer specifications ensures that vendors of different packages are distinguished, and there is a low risk of overlapping (unless two vendors have the same name). All letters in the name must be lowercase. For example, the format for the vendor name for extensions released by Magento Inc is:
 
-{% highlight XML %}
-magento/*
-{% endhighlight %}
+`magento/*`
 
 #### Magento Marketplace Extensions
 {:.no_toc}
@@ -152,9 +149,7 @@ Please see the [Marketplace Documentation](http://docs.magento.com/marketplace/u
 ### package-name
 The package name is up to the vendor (as long as it is lowercase). If this name is meant to consist of multiple words, the Composer specification recommends separating them with dash. The convention for Magento package names is this:
 
-{% highlight XML %}
-magento/<type-prefix>-<suffix>[-<suffix>]...
-{% endhighlight %}
+`magento/<type-prefix>-<suffix>[-<suffix>]...`
 
 Where:
 
