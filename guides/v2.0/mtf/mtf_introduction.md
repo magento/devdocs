@@ -2,21 +2,24 @@
 layout: default
 group: mtf-guide
 subgroup: 10_Introduction
-title: Introduction to the Functional Testing Framework
+title: Introduction to the Magento Testing Framework
 menu_title: INTRODUCTION
 menu_node: parent
 github_link: mtf/mtf_introduction.md
 redirect_from: /guides/v1.0/mtf/mtf_introduction.html
 ---
+
 <h2>Preface</h2>
 
-This guide provides instructions on installing and configuring the Magento Functional Testing Framework (MTF). With the Functional Testing Framework you can create and run functional tests to make it easier to perform basic acceptance testing, smoke testing, regression testing, etc.  MTF does not contain tests. All functional tests are within Magento code in `<magento2>/dev/tests/functional/`.
+This guide provides instructions on installing and configuring the Magento Testing Framework (MTF). Using the MTF, you can create and run functional tests to make it easier to perform basic acceptance testing, smoke testing, regression testing, and so on. This MTF guide is also applicable to the Magento 1 platform.
 
 MTF is an open source cross-platform solution (that is, does not depend on a specific operating system).
 
 MTF enables you to quickly develop functional tests for the Magento application. These tests can be performed at any time.
 
 You can run a single test independently, many tests together (that is, a test suite), or you can run all available tests.
+
+MTF does not contain tests. All functional tests are located in `<magento2 root dir>/dev/tests/functional/`. 
 
 <h3 id="mtf_intro_extratools">What tools should I use to run tests with MTF?</h3>
 
