@@ -140,7 +140,7 @@ Using Composer specifications ensures that vendors of different packages are dis
 
 #### Magento Marketplace Extensions
 {:.no_toc}
-If you are planning to submit your extension to the Magento Marketplace, you *must* use the unique vendor ID created or assigned to you when you created your marketplace account. This vendor ID goes in your `composer.json` file as the `vendor-name` part of the extension name.
+If you are planning to submit your extension to the Magento Marketplace, you *must* use the unique vendor ID created or assigned to you when you created your marketplace account. The vendor ID is your "Company Name" in your profile. This vendor ID goes in your `composer.json` file as the `vendor-name` part of the extension name.
 
 When you submit your extension to the Magento Marketplace, this information will be extracted and compared to your assigned vendor ID to make sure it matches.
 
