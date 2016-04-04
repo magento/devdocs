@@ -2,22 +2,18 @@
 layout: default
 group: contributor
 subgroup: Contributor Guide
-title: Contribute to Magento 2 code
-menu_title: Contribute to Magento 2 code
+title: Contribute to Magento 2 DevDocs
+menu_title: Contribute to Magento 2 DevDocs
 menu_order: 1
 menu_node: parent
 github_link: contributor-guide/contributing.md
 redirect_from: /guides/v1.0/contributor-guide/contributing.html
 ---
 
-<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
-<!-- Referring file: contributing.md owned by core -->
-<!-- References are to this topic itself, http://devdocs.magento.com/guides/v1.0/contributor-guide/contributing.html#fork, contributing.html#pull_request -->
-
 
 The following topics are included in the Guide:
 
-* <a href="#contribute">Contribute to Magento 2 code</a>
+* <a href="#contribute">Contribute to Magento 2 DevDocs</a>
 
 * <a href="#requirements">Contribution requirements</a>
 
@@ -27,19 +23,23 @@ The following topics are included in the Guide:
 
 * <a href="#report">Report an issue</a>
 
-* <a href="#labels">Labels applied by the Magento team</a>
+<!--
+<a href="#labels">Labels applied by the DevDocs team</a>
+-->
 
 
-<h2 id="contribute">Contribute to Magento 2 code</h2>
+<h2 id="contribute">Contribute to Magento 2 DevDocs</h2>
 
-Use the <a href="#fork">fork</a> & <a href="#pull_request">pull</a> model to contribute to the Magento 2 codebase.
+Use the <a href="#fork">fork</a> & <a href="#pull_request">pull</a> model to contribute to the Magento 2 DevDocs.
 This contribution model has contributors maintaining their own copy of the forked codebase (which can easily be synced with the main copy). The forked repository is then used to submit a request to the base repository to *pull* a set of changes (hence the phrase *pull request*).
 
-Contributions can take the form of new components or features, changes to existing features, tests, documentation (such as developer guides, user guides, examples, or specifications), bug fixes, optimizations, or just good suggestions.
+What's your area of expertise? Please share your knowledge with us! Contributions can take the form of completely new topics, changes and edits to existing documention, or just good suggestions. 
 
-The Magento 2 development team reviews all issues and contributions submitted by the community of developers in a first-in, first-out basis. During the review we might require clarifications from the contributor. If there is no response from the contributor for two weeks, the issue is closed.
+The Magento DevDocs team reviews all issues and contributions submitted by the community. During the review we might require clarifications from the contributor. If you know what you want to write about, but you aren't sure where within our multiple documents the topic should go, we can help you with the "info architecture" part.
 
-Often when the Magento 2 team works on reviewing the suggested changes, we will add a label to the issue to indicate to our internal team certain information, like status or who is working the issue. If you're ever curious what the different labels mean, see the <a href="#labels">table</a> below for an explanation of each one.
+<!--
+Often when the Magento DevDocs team works on reviewing the suggested changes, we will add a label to the issue to indicate certain information, like status or who is working the issue. If you're ever curious what the different labels mean, see the <a href="#labels">table</a> below for an explanation of each one. 
+-->
 
 <div class="bs-callout bs-callout-info" id="info">
 <p>Please refer to <a href="http://www.magento.com/legaldocuments/mca">Magento Contributor Agreement</a> for detailed information about the License Agreement. All contributors are required to submit a click-through form to agree to the terms. </p>
@@ -47,58 +47,54 @@ Often when the Magento 2 team works on reviewing the suggested changes, we will 
 
 <h2 id="requirements">Contribution requirements</h2>
 
-1. Contributions must adhere to <a href="{{ site.gdeurl }}coding-standards/bk-coding-standards.html" target="_blank">Magento coding standards</a>.
-2. Refer to the Magento development team's <a href="{{ site.gdeurl }}/contributor-guide/contributing_dod.html">Definition of Done</a>. We use these guidelines internally to ensure that we deliver well-tested, well-documented, solid code, and we encourage you to as well!
-2. Pull requests (PRs) must be accompanied by a meaningful description of their purpose. Comprehensive descriptions increase the chances that a pull request is merged quickly and without additional clarification requests.
-3. Commits must be accompanied by meaningful commit messages.
-4. PRs that include bug fixing must be accompanied by a step-by-step description of how to reproduce the bug.
-3. PRs that include new logic or new features must be submitted along with:
-	* Unit/integration test coverage (we will be releasing more information on writing test coverage in the near future).
-	* Proposed <a href="{{ site.gdeurl }}contributor-guide/contributing_docs.html" target="_blank">documentation</a> update. <a href="{{ site.baseurl }}" target="_blank">Documentation</a> contributions can be submitted <a href="https://github.com/magento/devdocs" target="_blank">here</a>.
-4. For large features or changes, please <a href="https://github.com/magento/magento2/issues" target="_blank">open an issue</a> and discuss first. This may prevent duplicate or unnecessary effort, and it may gain you some additional contributors.
-5. To report a bug, please <a href="https://github.com/magento/magento2/issues" target="_blank">open an issue</a>, and follow these <a href="https://github.com/magento/magento2/wiki/Issue-reporting-guidelines">guidelines about bugfix issues</a>.
 
-5. All automated tests must pass successfully (all builds on <a href="https://travis-ci.org/magento/magento2" target="_blank">Travis CI</a> must be green).
+1. Some common writing guidelines include:
+    * Define what the goal of your topic is: what exactly do you want to teach the reader?
+    * Make the title of your topic reflect the content.
+    * Keep your sentences concise, and try to separate conceptual information from procedural steps.
+    * Remember to use active voice (not passive), write in the present tense, and use a friendly tone in second person (i.e. "You can now view the output...")
+    * Use Notes and even warnings to alert readers to particularly important details (our template has the markdown syntax!).
+    * Use cross-references to other topics if it is appropriate. We can help you with that syntax too.
+    
+2. Focus on the content and on creating useful information for your fellow Magento developers and community members, but do please take a few editorial passes at your work before submitting your topic and look for typos, formatting errors, or sentences that need clarifying. 
+3. Familiarize yourself with the existing documentation; taking a look at what is already there will help you decide where your topic best fits and if there are other topics to which you might want to add cross-references in your topic.
+4. First, check the <a href="https://github.com/magento/devdocs/pulls" target="_blank">existing PRs</a> and make sure you are not duplicating others’ work!
+5. Pull requests (PRs) must be accompanied by a meaningful description of the contributed content. 
+6. Commits must be accompanied by meaningful commit messages.
+7. For large contributions or changes that include multiple files, please <a href="https://github.com/magento/magento2/issues" target="_blank">open an issue</a> and discuss first. This may prevent duplicate or unnecessary effort, and the DevDocs team can help find the best home for your new topics.
 
 <h2 id="fork">Fork a repository</h2>
 To fork a repository on Github, do the following:
 
 1. Create or log in to your free account on GitHub. <!-- necessarily free?-->
-2. Navigate to the <a href="https://github.com/magento/magento2" target="_blank">Magento 2 repository</a>.
-3. Click **Fork** at the top right: <br><img src="{{ site.baseurl }}common/images/fork.png" alt="fork a repository">
-
-4. Clone the repo into your development environment, get the app installed, and start playing.
+2. Navigate to the <a href="https://github.com/magento/devdocs" target="_blank">DevDocs repository</a>.
+3. Click **Fork** at the top right.
+4. Clone the repo into your development environment, create a local branch, and start writing.
 
 <h2 id="pull_request">Create a pull request</h2>
 
-First, check the <a href="https://github.com/magento/magento2/pulls?q=is%3Aopen+is%3Apr" target="_blank">existing PRs</a> and make sure you are not duplicating others’ work!
-
 To create a pull request do the following: 
 
-1. Create a feature branch for your changes and push those changes to the copy of your repository on GitHub. This is the best way to organize and even update your PR.
-2. In your repository, click **Pull requests** on the right, and then click **New pull request**: <br><img src="{{ site.baseurl }}common/images/pr.png" target="_blank">
-3. Ensure that you are creating a PR to the `magento:develop` branch. We accept PRs to this branch only.
+1. Create a local branch for your changes and push those changes to the copy of your repository on GitHub. This is the best way to organize and even update your PR.
+2. In your repository, click **Pull requests** on the right, and then click **New pull request**.
+3. Ensure that you are creating a PR to the `2.0` branch. We accept PRs to this branch only.
 4. Review the changes, then click **Create pull request**. Fill out the form, and click **Create pull request** again to submit the PR&mdash;that’s it!
 
 
-After submitting your PR, you can head over to the Magento 2 repository’s <a href="https://github.com/magento/magento2/pulls?q=is%3Aopen+is%3Apr" target="_blank">Pull Requests panel</a> to see your PR along with the others. Your PR undergoes automated testing, and if it passes, the core team considers it for inclusion in the Magento 2 core. If some tests fail, please make the corresponding corrections in your code.
+After submitting your PR, you can head over to the DevDocs repository’s <a href="https://github.com/magento/devdocs/pulls" target="_blank">Pull Requests panel</a> to see your PR along with the others. The DevDocs team will review your contribution, and get back with you if we have any questions. Once the final content is ready, we will merge your PR into the repo, and your work wil be published to the repo and to <a href="https://github.com/magento/devdocs" target="_blank">devdocs.magento.com</a>, with your name right below the title!
 
 <h2 id="report">Report an issue</h2>
-If you find a bug in Magento 2 code, you can report it by creating an issue in the Magento 2 repository.
+If you find a bug (errr... we mean a typo or erroneous information) in Magento DevDocs, you can either fix it with a PR or you can simply report it by creating an issue in the DevDocs repository.
 
-**Note**: Before creating an issue, please do the following:
-
- 1. Check the <a href="{{ site.baseurl }}">documentation</a> to make sure the behavior you are reporting is really a bug, not a feature.
- 2. Check the <a href="https://github.com/magento/magento2/issues" target="_blank"> existing issues</a> to make sure you are not duplicating somebody's work.
+**Note**: Before creating an issue, please check the <a href="https://github.com/magento/devdocs/issues" target="_blank"> existing issues</a> to make sure that the issue wasn't already reported.
 
 To add an issue:
 
-1. In the Magento 2 public repository, click the **Issues** link on the right. <br><img src="{{ site.baseurl }}common/images/issues.png" alt="the Issues link at the right"/>
-2. Click **New issue**.<br><img src="{{ site.baseurl }}common/images/new_issue.png" alt="the New Issue button"/>
-3. Fill in the Title and issue description.
+1. In the Magento DevDocs public repository, click the **Issues** link on the right. 
+2. Click **New issue**.3. Fill in the Title and issue description.
 4. Click **Submit new issue**.
 
-<h2 id="labels">Labels applied by the Magento team</h2>
+<!--<h2 id="labels">Labels applied by the Magento team</h2>
 
 Refer to the following table for a description of each label. These labels are applied by the Magento development team to community contributed issues and pull requests, to communicate status, impact, or which team is working on it.
 
@@ -194,5 +190,7 @@ Refer to the following table for a description of each label. These labels are a
      
    </tbody>
 </table>
+-->
 
+<h2 id="Thanks">Thank you so much for adding your brilliance to the Magento DevDocs!! </h2>
 
