@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Create composer.json</title>
+	<title>The composer.json file</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -137,7 +137,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Create composer.json</h1>
+		<h1 class="page-heading">The composer.json file</h1>
 			
 			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/extension-dev-guide/build/composer-integration.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -313,7 +313,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/extension-dev-guide/build/composer-integration.html">Create composer.json</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/extension-dev-guide/build/composer-integration.html">The composer.json file</a></li>
 
 									
 
@@ -781,147 +781,175 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<h2 id="create-composerjson">Create composer.json</h2>
+		<h2 class="no_toc" id="the-composerjson-file">The composer.json file</h2>
 
-<h4 id="contents">Contents</h4>
-
-<ul>
-  <li><a href="#composerjson-overview">Overview of composer.json files</a></li>
-  <li><a href="#component-version">Versioning</a></li>
+<ul id="markdown-toc">
+  <li><a href="#overview">Overview</a></li>
   <li><a href="#composer-binary">Composer binary location</a></li>
+  <li><a href="#composerjson-overview">Descriptions of different composer.json files</a>    <ul>
+      <li><a href="#root">Root</a></li>
+      <li><a href="#ce-project">CE project</a></li>
+      <li><a href="#ce-product">CE product</a></li>
+      <li><a href="#magento-framework">Magento Framework</a></li>
+      <li><a href="#module">Module</a></li>
+      <li><a href="#theme">Theme</a></li>
+      <li><a href="#language-package">Language Package</a></li>
+    </ul>
+  </li>
+  <li><a href="#magento-specific-package-types">Magento-specific package types</a></li>
+  <li><a href="#naming-conventions">Naming conventions</a>    <ul>
+      <li><a href="#vendor-name">vendor-name</a></li>
+      <li><a href="#package-name">package-name</a></li>
+    </ul>
+  </li>
+  <li><a href="#component-version">Versioning</a></li>
 </ul>
 
-<p><a href="https://getcomposer.org/">Composer</a> is a dependency manager for PHP. Magento 2 uses Composer to package components and product editions. </p>
+<h2 id="overview">Overview</h2>
+<p><a href="https://getcomposer.org/" target="_blank">Composer</a> is a dependency manager for PHP. Magento 2 uses Composer to package components and product editions.</p>
 
-<p>Some third-party components that the Magento system uses might not be present in the code base. Instead, they are listed as dependencies in the root <code>composer.json</code> file. In addition, the <a href="/guides/v2.0/comp-mgr/compman-start.html">Component Manager</a> looks for a <code>composer.json</code> in a component’s root directory and can perform actions on the component and its dependencies. </p>
+<p>Some third-party components that the Magento system uses might not be present in the code base. Instead, they are listed as dependencies in the root <code>composer.json</code> file. In addition, the <a href="/guides/v2.0/comp-mgr/compman-start.html">Component Manager</a> looks for a <code>composer.json</code> in a component’s root directory and can perform actions on the component and its dependencies.</p>
 
 <p>In particular:</p>
 
 <ul>
-  <li>If a component has <code>composer.json</code> <em>and</em> the component was installed using Composer (including from packagist, the Magento Marketplace, or other source), the Component Manager can update, uninstall, enable, or disable the component.</li>
+  <li>If a component has <code>composer.json</code> <em>and</em> the component was installed using Composer (including from <a href="https://packagist.org/" target="_blank">Packagist</a>, the Magento Marketplace, or other source), the Component Manager can update, uninstall, enable, or disable the component.</li>
   <li>If the component has <code>composer.json</code> but was <em>not</em> installed using Composer (for example, custom code a developer wrote), Component Manager can still enable or disable the component.</li>
-  <li>We strongly recommend you include <code>composer.json</code> in your component’s root directory whether or not you intend to distribute it to other Magento merchants.</li>
+  <li>We strongly recommend you include <code>composer.json</code> in your component’s root directory whether or not you intend to distribute it to other merchants using Magento.</li>
 </ul>
-
-<h2 id="composerjson-overview">Overview of composer.json files</h2>
-<p>Certain Magento components and product editions are represented with <code>composer.json</code> files. </p>
-
-<table><tbody>
-<tr>
-<th> Type of composer.json </th>
-<th> Location </th>
-<th> Naming convention </th>
-<th> Composer type </th>
-<th> Notes </th>
-</tr>
-<tr>
-<td> Root</td>
-<td> <tt>composer.json</tt> </td>
-<td>
-<pre>magento/magento2ce</pre>
-</td>
-<td>
-<pre>project</pre>
-</td>
-<td>This is the main <tt>composer.json</tt> file. Magento uses this file to declare dependencies on third-party components. This file is used as a template for any other root <tt>composer.json</tt> files 
- </td>
-</tr>
-<tr>
-<td>CE project</td>
-<td> <tt>composer.json</tt> </td>
-<td>
-<pre>magento/project-community-edition</pre>
-</td>
-<td>
-<pre>project</pre>
-</td>
-<td> This file represents the Magento Community Edition project. The package only includes the <tt>composer.json</tt>, which declares the dependencies on the magento product as well as the class autoloader. This can be used by Magento system integrators to deploy Magento using Composer. </td>
-</tr>
-<tr>
-<td>CE product</td>
-<td> <tt>composer.json</tt> </td>
-<td>
-<pre>magento/product-community-edition</pre>
-</td>
-<td>
-<pre>metapackage</pre>
-</td>
-<td> This file represents Magento Community Edition product. The package only includes composer.json that declares the dependencies on magento components (modules, themes, and so on) and third-party components. This can be used by Magento system integrators to deploy Magento using Composer. </td>
-</tr>
-<tr>
-<td>module </td>
-<td> <tt>app/code/Magento/&lt;Module&gt;/composer.json</tt> </td>
-<td>
-<pre>magento/module-catalog-inventory
-magento/module-checkout</pre>
-</td>
-<td>
-<pre>magento2-module</pre>
-</td>
-<td> The fully qualified module name, broken down into vendor, with the rest of the words as suffixes. The "module" prefix is mandatory to disambiguate from other types (for example, Magento_Backend module versus Magento/backend theme).</td>
-</tr>
-<tr>
-<td>theme</td>
-<td> <tt>app/design/&lt;area&gt;/Magento/&lt;theme&gt;/composer.json</tt> </td>
-<td>
-<pre>magento/theme-frontend-blank
-magento/theme-adminhtml-backend</pre>
-</td>
-<td>
-<pre>magento2-theme</pre>
-</td>
-<td> Themes belong to areas, so the area name has to be the first suffix </td>
-</tr>
-<tr>
-<td>language packages</td>
-<td> <tt>app/i18n/magento/&lt;language&gt;/composer.json</tt> </td>
-<td>
-<pre>magento/language-en_gb
-magento/language-de_de</pre>
-</td>
-<td>
-<pre>magento2-language</pre>
-</td>
-<td>The language identifier must be lowercase.</td>
-</tr>
-<tr>
-<td>Magento framework</td>
-<td> <tt>lib/internal/Magento/Framework/composer.json</tt> </td>
-<td>
-<pre>magento/framework</pre>
-</td>
-<td>n/a</td>
-<td>Used only by the framework</td>
-</tr>
-</tbody></table>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Magento does not currently support the <a href="https://getcomposer.org/doc/05-repositories.md#path" target="_blank"><code>path</code></a> repository.</p>
 </div>
 
-<h3>Naming conventions</h3>
-<p>The namespace of Composer packages is global within a package repository (such as <a href="http://packagist.org">packagist.org</a>). The Composer specification requires that a package name use the format: </p>
+<h2 id="composer-binary">Composer binary location</h2>
+<p>Magento’s <code>bin/magento</code> script uses composer from <code>&lt;Magento root&gt;/vendor/composer</code> in your Magento 2 installation, not your globally installed composer. Keep this in mind while customizing or updating composer or troubleshooting composer issues while working with Magento 2.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;vendor_name&gt;</span>/<span class="nt">&lt;package_name&gt;</span></code></pre></div>
+<h2 id="composerjson-overview">Descriptions of different composer.json files</h2>
+<p>Certain Magento components and product editions are represented with <code>composer.json</code> files.</p>
 
-<p>As a result, vendors of different packages are distinguished, and there is a low risk of overlapping (unless different vendors names themselves exactly the same). All letters in the name must be lowercase. Therefore, the format for package names released by Magento Inc is:</p>
+<h3 id="root">Root</h3>
+<p><strong>Location:</strong> <code>composer.json</code></p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml">magento/*</code></pre></div>
+<p><strong>Name:</strong> <code>magento/magento2ce</code></p>
 
+<p><strong>Type:</strong> <code>project</code></p>
+
+<p>This is the main <code>composer.json</code> file. Magento uses this file to declare dependencies on third-party components. This file is used as a template for any other root <code>composer.json</code> files.</p>
+
+<hr />
+
+<h3 id="ce-project">CE project</h3>
+<p><strong>Location:</strong> <code>composer.json</code></p>
+
+<p><strong>Name:</strong> <code>magento/project-community-edition</code></p>
+
+<p><strong>Type:</strong> <code>project</code></p>
+
+<p>This file represents the Magento Community Edition project. The package includes the <code>composer.json</code> file, which declares the dependencies on the Magento product as well as the class autoloader. This can be used by Magento system integrators to deploy Magento using Composer.</p>
+
+<hr />
+
+<h3 id="ce-product">CE product</h3>
+<p><strong>Location:</strong> <code>composer.json</code></p>
+
+<p><strong>Name:</strong> <code>magento/product-community-edition</code></p>
+
+<p><strong>Type:</strong> <code>metapackage</code></p>
+
+<p>This file represents Magento Community Edition product. The package includes the <code>composer.json</code> file that declares the dependencies on Magento components (modules, themes, and so on) and third-party components. This can be used by Magento system integrators to deploy Magento using Composer.</p>
+
+<hr />
+
+<h3 id="magento-framework">Magento Framework</h3>
+<p><strong>Location:</strong> <code>lib/internal/Magento/Framework/composer.json</code></p>
+
+<p><strong>Name:</strong> <code>magento/framework</code></p>
+
+<p><strong>Type:</strong> <code>magento2-library</code></p>
+
+<p>This file is used only by the framework.</p>
+
+<hr />
+
+<h3 id="module">Module</h3>
+<p><strong>Locations:</strong></p>
+
+<ul>
+  <li><code>app/code/&lt;vendor-name&gt;/&lt;module-name&gt;/composer.json</code></li>
+  <li><code>vendor/&lt;vendor-name&gt;/&lt;module-name&gt;/composer.json</code></li>
+</ul>
+
+<p><strong>Name:</strong> <code>&lt;vendor-name&gt;/&lt;package-name&gt;</code></p>
+
+<p><strong>Type:</strong> <code>magento2-module</code></p>
+
+<p>The <code>composer.json</code> file for a module extension declares external dependencies that the module needs in order to function.</p>
+
+<hr />
+
+<h3 id="theme">Theme</h3>
+<p><strong>Locations:</strong></p>
+
+<ul>
+  <li><code>app/design/frontend/&lt;vendor-name&gt;/&lt;theme-name&gt;/composer.json</code></li>
+  <li><code>app/design/adminhtml/&lt;vendor-name&gt;/&lt;theme-name&gt;/composer.json</code></li>
+</ul>
+
+<p><strong>Name:</strong> <code>&lt;vendor-name&gt;/&lt;package-name&gt;</code></p>
+
+<p><strong>Type:</strong> <code>magento2-theme</code></p>
+
+<p>The <code>composer.json</code> file for a theme component contains parent theme dependencies the extension needs to inherit.</p>
+
+<hr />
+
+<h3 id="language-package">Language Package</h3>
+<p><strong>Location:</strong>
+<code>app/i18n/&lt;vendor-name&gt;/&lt;language-code&gt;/composer.json</code></p>
+
+<p><strong>Name:</strong> <code>&lt;vendor-name&gt;/&lt;package-name&gt;</code></p>
+
+<p><strong>Type:</strong> <code>magento2-language</code></p>
+
+<p>For language packages, you must use the correct <a href="http://www.iso.org/iso/home/standards/language_codes.htm" target="_blank">ISO code</a> for the language code in the <code>composer.json</code> file.</p>
+
+<hr />
+
+<h2 id="magento-specific-package-types">Magento-specific package types</h2>
+<p>Each Magento component can be categorized as a module, theme, or language package. If any component does not fit into a specific category, its type can be generalized as <code>magento2-component</code>.</p>
+
+<p>Having an identifier type for each component allows the system to marshall the directories and files of each component to the correct locations, based on the Magento 2 directory structure.</p>
+
+<h2 id="naming-conventions">Naming conventions</h2>
+<p>The namespace of Composer packages is global within a package repository (such as <a href="http://packagist.org">packagist.org</a>). The Composer specification requires that a package name use the format:</p>
+
+<p><code>&lt;vendor-name&gt;/&lt;package-name&gt;</code></p>
+
+<h3 id="vendor-name">vendor-name</h3>
+<p>Using Composer specifications ensures that vendors of different packages are distinguished, and there is a low risk of overlapping (unless two vendors have the same name). All letters in the name must be lowercase. For example, the format for the vendor name for extensions released by Magento Inc is:</p>
+
+<p><code>magento/*</code></p>
+
+<h4 class="no_toc" id="magento-marketplace-extensions">Magento Marketplace Extensions</h4>
+<p>If you are planning to submit your extension to the Magento Marketplace, you <em>must</em> use the unique vendor ID created or assigned to you when you created your marketplace account. The vendor ID is your “Company Name” in your profile. This vendor ID goes in your <code>composer.json</code> file as the <code>vendor-name</code> part of the extension name.</p>
+
+<p>When you submit your extension to the Magento Marketplace, this information will be extracted and compared to your assigned vendor ID to make sure it matches.</p>
+
+<p>Please see the <a href="http://docs.magento.com/marketplace/user_guide/account/account-update.html" target="_blank">Marketplace Documentation</a> for more information about your unique vendor ID.</p>
+
+<h3 id="package-name">package-name</h3>
 <p>The package name is up to the vendor (as long as it is lowercase). If this name is meant to consist of multiple words, the Composer specification recommends separating them with dash. The convention for Magento package names is this:</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml">magento/<span class="nt">&lt;type-prefix&gt;</span>-<span class="nt">&lt;suffix&gt;</span>[-<span class="nt">&lt;suffix&gt;</span>]...</code></pre></div>
+<p><code>magento/&lt;type-prefix&gt;-&lt;suffix&gt;[-&lt;suffix&gt;]...</code></p>
 
-<p>Where:</p>
-
-<p><code>type-prefix</code> is a type of component in a Magento-specific domain.</p>
-
-<p><code>suffix</code> is anything that allows distinguishing/disambiguating the component within that type.</p>
-
-<h3>Magento-specific package types</h3>
-<p>Each Magento component can be categorized into one of the types listed in the preceding table. If any component does not fit into a specific category, it can be generalized to <code>magento2-component</code>.</p>
-
-<p>Having an identifier type for each component allows the system to marshal the directories and files of each component to the correct locations, based on the Magento 2 directory structure. </p>
+<dl>
+  <dt>Where:</dt>
+  <dd>
+    <p><code>type-prefix</code> is a type of component in a Magento-specific domain.</p>
+  </dd>
+  <dd><code>suffix</code> is anything that allows distinguishing/disambiguating the component within that type.</dd>
+</dl>
 
 <h2 id="component-version">Versioning</h2>
 <div>
@@ -941,11 +969,10 @@ magento/language-de_de</pre>
 
   <p>Using Magento code as an example, Magento CE marketing version 2.0.0 includes component versions such as 100.0.1, 100.0.2, and so on. These versioning strategy prevents collisions between the marketing version and component versions.</p>
 
-  <h2 id="composer-binary">Composer binary location</h2>
-  <p>Magento’s <code>bin/magento</code> script uses composer from the <code>vendor/composer</code> directory in your Magento 2 installation, not your globally installed Composer. Keep this in mind while customizing or updating composer or troubleshooting Composer issues while working with Magento 2.</p>
+  <hr />
 
-  <h4 id="next">Next</h4>
-  <p><a href="/guides/v2.0/extension-dev-guide/build/required-configuration-files.html">Define your configuration files</a></p>
+  <p><strong>Next:</strong>
+<a href="/guides/v2.0/extension-dev-guide/build/required-configuration-files.html">Define your configuration files</a></p>
 </div>
 
 
