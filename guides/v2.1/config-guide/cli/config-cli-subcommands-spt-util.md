@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide 
-subgroup: CLI
+subgroup: 04_CLI
 title: Run the support utilities
 menu_title: Run the support utilities (Enterprise Edition only)
 menu_node: 

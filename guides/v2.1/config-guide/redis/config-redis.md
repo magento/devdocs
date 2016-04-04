@@ -1,9 +1,9 @@
 ---
 layout: default
 group: config-guide
-subgroup: Redis
-title: Use Redis for page caching or session storage
-menu_title: Use Redis for page caching or session storage
+subgroup: 09_Redis
+title: Configure Redis
+menu_title: Configure Redis
 menu_order: 1
 menu_node: parent
 github_link21: config-guide/redis/config-redis.md

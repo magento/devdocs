@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: Elastic
+subgroup: 14_Elastic
 title: Install and configure Elasticsearch
 menu_title: Install and configure Elasticsearch (Enterprise Edition only)
 menu_order: 1

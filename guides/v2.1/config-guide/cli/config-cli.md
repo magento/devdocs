@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide 
-subgroup: CLI
+subgroup: 04_CLI
 title: Command line configuration
 menu_title: Command line configuration
 menu_node: parent
