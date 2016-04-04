@@ -666,7 +666,9 @@
 
       <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt; If the Magento file system owner does not allow logins you can do the following
+
+sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 </code></pre>
     </li>
     <li>
