@@ -35,7 +35,7 @@ For example, the default set of design options for the store view level is the f
 
 This configuration form is implemented using the [form UI component]({{site.gdeurl21}}ui-components/ui-form.html), that uses corresponding UI components for fields. 
 
-To change the settings available for configuration, you need to customize the `design_config_form.xml` configuration file. If you add a new field, you must also specify in `di.xml` how it is processed and saved.
+To change the settings available for configuration, you need to customize the `design_config_form.xml` configuration file. If you add a new field, you must also declare it in `di.xml` how it is processed and saved.
 
 View the following sections for details.
 
@@ -169,8 +169,9 @@ For reference, view the form configuration files of Magento modules:
 
 ### Add fields metadata {#meta_data}
 
-If in the design configuration form you add new field sets or fields, you must declare how their values are saved in the database in `<your_module_dir>/etc/di.xml`. You can also declare the backend model used for processing the field values. If you do not specify any model, the default `Magento\Framework\App\Config\Value` model is used.
-The field saving properties declaration looks like following:
+If in the design configuration form you add new fields, in `<your_module_dir>/etc/di.xml` you must specify their parent field sets and the path in database. You can also declare the backend model used for processing the field values. If you do not specify any model, the default `Magento\Framework\App\Config\Value` model is used.
+
+The field declaration in a `di.xml` looks like following:
 
 {%highlight xml%}
 ...
@@ -221,7 +222,6 @@ Example of field declaration:
 {%endhighlight%}
 
 For more examples and reference, view the `di.xml` files of Magento modules:
-
 
 - `<Magento_Backend_module_dir>/etc/di.xml`
 - `<Magento_Catalog_module_dir>/etc/di.xml`
