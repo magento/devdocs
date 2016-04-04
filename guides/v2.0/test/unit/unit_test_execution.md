@@ -5,6 +5,8 @@ subgroup: A_Running_Unit_Tests
 title: Running Unit Tests
 menu_title: Running Unit Tests
 menu_node: parent
+contributor_name: Vinai Kopp
+contributor_link: http://vinaikopp.com/
 github_link: test/unit/unit_test_execution.md
 ---
 

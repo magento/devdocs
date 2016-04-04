@@ -5,6 +5,8 @@ subgroup: A_Running_Unit_Tests
 title: Running Unit Tests in the CLI
 menu_title: Running Unit Tests in the CLI
 menu_node: parent
+contributor_name: Vinai Kopp
+contributor_link: http://vinaikopp.com/
 github_link: test/unit/unit_test_execution_cli.md
 ---
 
@@ -44,7 +46,6 @@ PHPUnit has many additional command line options. Please refer to the [PHPUnit d
 ### Solutions to common problems
 
 #### Permission Denied
-
 One possible reason for this to happen might be if you are trying to execute PHPUnit inside a Virtual Box VM with shared folders that don't allow modifying permissions.
 
 Whatever the reason, if you encounter the `permission denied: vendor/bin/phpunit` error, you can prefix the command with the PHP interpreter, so your system knows what binary to use to run the tests.  
@@ -53,18 +54,18 @@ Whatever the reason, if you encounter the `permission denied: vendor/bin/phpunit
 $ php -f vendor/bin/phpunit -- -c dev/tests/unit/phpunit.xml.dist
 {%endhighlight%}
 
-#### Using the right PHP interpreter
+#### Use the correct PHP interpreter
+On many development systems, you might have more one PHP version installed. You must know the correct PHP interpreter to use for testing; that is, Buse the same version of PHP to run the unit tests you use to run Magento.
 
-If running the tests results in errors about missing PHP extensions, you might be using a wrong PHP interpreter.  
-On many development systems more then one PHP version is installed.
+Some examples follow:
 
-Examples of common PHP locations on OS X:
+*	Ubuntu: `/usr/bin/php`
+*	CentOS: `/usr/bin/php`
+*	OS X:
 
-* System: `/usr/bin/php`
-* Homebrew: `/usr/local/Cellar/php56/5.6.19/bin/php`
-* MAMP: `/Applications/MAMP/bin/php/php5.6.19/bin/php`
-
-Be sure to use the same version of PHP to run the unit tests that is also used to run Magento.
+	* System: `/usr/bin/php`
+	* Homebrew: `/usr/local/Cellar/php56/5.6.19/bin/php`
+	* MAMP: `/Applications/MAMP/bin/php/php5.6.19/bin/php`
 
 You can either fix your `$PATH` (please refer to your system documentation on how to do that), or specify the full path to the PHP interpreter. For example:
 
@@ -73,18 +74,21 @@ $ /usr/local/Cellar/php56/5.6.19/bin/php -f vendor/bin/phpunit -- -c dev/tests/u
 {%endhighlight%}
 
 #### Memory Limit
-
 If you encounter an error similar to `Fatal error: Allowed memory size of 67108864 bytes exhausted`, follow these steps to resolve it.
 
-1) Copy the PHPUnit configuration file `dev/tests/unit/phpunit.xml.dist` to `dev/tests/unit/phpunit.xml`
-2) Find the section
-   {%highlight xml%}
+Copy the PHPUnit configuration file `dev/tests/unit/phpunit.xml.dist` to `dev/tests/unit/phpunit.xml`
+
+Find the following section:
+
+{%highlight xml%}
 <php>
     <ini name="date.timezone" value="America/Los_Angeles"/>
     <ini name="xdebug.max_nesting_level" value="200"/>
 </php>
-    {%endhighlight%}
-3) Add the following line within the `<php>` block to disable the PHP memory limit during test execution.
-   {%highlight xml%}
+{%endhighlight%}
+
+Add the following line in the `<php>` block to disable the PHP memory limit during test execution.
+
+{%highlight xml%}
 <ini name="memory_limit" value="-1"/>
-    {%endhighlight%}
+{%endhighlight%}
