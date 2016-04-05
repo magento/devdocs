@@ -137,14 +137,6 @@ Display navigation arrows on the thumbnails sides.
 
 **Type**: Boolean
 
-#### `options/captions` {#gallery_captions}
-
-<p class="q">captions or showCaption??</p>
-
-Display the caption in preview.
-
-**Type**: Boolean
-
 #### `options/click` {#gallery_click}
 
 Enable navigation through preview frames by clicking the Next and Previous buttons.
@@ -231,7 +223,6 @@ Sliding direction of thumbnails.
 
 Display navigation arrows for thumbnails.
 
-<p class="q">need clarification</p>
 
 **Type**: Boolean
 
@@ -453,7 +444,7 @@ The fullscreen and breakpoints options are set in a similar way:
 
 {%endhighlight%}
 
-For illustration of setting gallery option in view.xml, you can view the [view.xml of the Blank theme]({{site.mage2000url}}app/design/frontend/Magento/blank/etc/view.xml#L184). 
+For illustration of setting gallery option in `view.xml`, you can reference to the [view.xml of the Blank theme]({{site.mage2000url}}app/design/frontend/Magento/blank/etc/view.xml#L184). 
 
 
 ## Gallery API {#gallery_api}

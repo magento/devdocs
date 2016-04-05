@@ -1,7 +1,7 @@
 ---
 layout: default
 group: jsdg
-subgroup: Widgets
+subgroup: 3_Widgets
 title: Magnifier widget 
 menu_order: 8
 menu_title: Magnifier widget 
@@ -71,7 +71,7 @@ The value for the CSS `left` property for the magnifier block positioning.
 
 ### `fullscreenzoom` {#opt_fullscreenzoom}
 
-Zoom for the fullscreen view.
+Zoom step in percents for the fullscreen view.
 
 Type: Integer
 
