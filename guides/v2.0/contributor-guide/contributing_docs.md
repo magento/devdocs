@@ -63,7 +63,7 @@ Often when the Magento DevDocs team works on reviewing the suggested changes, we
 2. Focus on the content and on creating useful information for your fellow Magento developers and community members, but do please take a few editorial passes at your work before submitting your topic and look for typos, formatting errors, or sentences that need clarifying. 
 3. Familiarize yourself with the existing documentation; taking a look at what is already there will help you decide where your topic best fits and if there are other topics to which you might want to add cross-references in your topic.
 4. First, check the <a href="https://github.com/magento/devdocs/pulls" target="_blank">existing PRs</a> and make sure you are not duplicating others’ work!
-5. For large contributions or changes that include multiple files, please <a href="https://github.com/magento/magento2/issues" target="_blank">open an issue</a> and discuss first. This may prevent duplicate or unnecessary effort, and the DevDocs team can help find the best home for your new topics.
+5. For large contributions or changes that include multiple files, please <a href="https://github.com/magento/devdocs/issues" target="_blank">open an issue</a> and discuss first. This may prevent duplicate or unnecessary effort, and the DevDocs team can help find the best home for your new topics.
 
 <h2 id="fork">Fork a repository</h2>
 To fork a repository on Github, do the following:
@@ -84,7 +84,7 @@ To create a pull request do the following:
 
 4. Review the changes, then click **Create pull request**. Fill out the form, and click **Create pull request** again to submit the PR&mdash;that’s it!
 
-After submitting your PR, you can head over to the DevDocs repository’s <a href="https://github.com/magento/devdocs/pulls" target="_blank">Pull Requests panel</a> to see your PR along with the others. The DevDocs team will review your contribution, and get back with you if we have any questions. Once the final content is ready, we will merge your PR into the repo, and your work will be published to the repo and to <a href="https://github.com/magento/devdocs" target="_blank">devdocs.magento.com</a>. If you write a whole topic, or make substnatial contributions to an existing topic, we will add your name right below the title, linked to your blog or site!
+After submitting your PR, you can head over to the DevDocs repository’s <a href="https://github.com/magento/devdocs/pulls" target="_blank">Pull Requests panel</a> to see your PR along with the others. The DevDocs team will review your contribution, and get back with you if we have any questions. Once the final content is ready, we will merge your PR into the repo, and your work will be published to the repo and to <a href="https://github.com/magento/devdocs" target="_blank">devdocs.magento.com</a>. If you write a whole topic, or make substantial contributions to an existing topic, we will add your name right below the title, linked to your blog or site!
 
 <h2 id="report">Report an issue</h2>
 If you find a bug (errr... we mean a typo or erroneous information) in Magento DevDocs, you can either fix it with a PR or you can simply report it by creating an issue in the DevDocs repository.
@@ -96,7 +96,7 @@ If you find a bug (errr... we mean a typo or erroneous information) in Magento D
 
 To add an issue:
 
-1. Click **New issue**.
+1. In the <a href="https://github.com/magento/devdocs/issues" target="_blank">DevDocs repository's Issues panel</a>, click  **New issue**  on the right. 
 2. Fill in the Title and issue description.
 3. Click **Submit new issue**.
 
