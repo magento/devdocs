@@ -69,9 +69,12 @@ ____
 
 #### In Magento 2, how can my extension distinguish between the Community Edition and the Enterprise Edition?
 
-One answer from redbox-bolaji was:
+The correct edition can be obtained through `\Magento\Framework\App\ProductMetadataInterface::getEdition`.
 
->Not sure exactly but `/** @var $moduleManager Magento\Framework\Module\Manager */$moduleManager->isEnabled('Magento_Enterprise’)` should suffice.  In the future, I think this might be the correct constant to check; `\Magento\Framework\AppInterface\ProductMetadata::EDITION_NAME`
+In Magento CE that interface maps to the concrete implementation `Magento\Framework\AppInterface\ProductMetadata`.
+However, in Magento EE, the Enterprise module will override that mapping and the interface will be implemented by `\Magento\Enterprise\Model\ProductMetadata`.
+
+Just relying on the interface through dependency injection will get you the right class, and calling "getEdition" will return the right answer.
 
 ____
 
