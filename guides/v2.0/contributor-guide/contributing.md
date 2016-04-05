@@ -2,8 +2,8 @@
 layout: default
 group: contributor
 subgroup: Contributor Guide
-title: Contribute to Magento 2
-menu_title: Contribute to Magento 2
+title: Code Contributions
+menu_title: Code Contributions
 menu_order: 1
 menu_node: parent
 github_link: contributor-guide/contributing.md
@@ -54,7 +54,7 @@ Often when the Magento 2 team works on reviewing the suggested changes, we will 
 4. PRs that include bug fixing must be accompanied by a step-by-step description of how to reproduce the bug.
 3. PRs that include new logic or new features must be submitted along with:
 	* Unit/integration test coverage (we will be releasing more information on writing test coverage in the near future).
-	* Proposed <a href="{{ site.baseurl }}" target="_blank">documentation</a> update. Documentation contributions can be submitted <a href="https://github.com/magento/devdocs" target="_blank">here</a>.
+	* Proposed <a href="{{ site.gdeurl }}contributor-guide/contributing_docs.html" target="_blank">documentation</a> update. <a href="{{ site.baseurl }}" target="_blank">Documentation</a> contributions can be submitted <a href="https://github.com/magento/devdocs" target="_blank">here</a>.
 4. For large features or changes, please <a href="https://github.com/magento/magento2/issues" target="_blank">open an issue</a> and discuss first. This may prevent duplicate or unnecessary effort, and it may gain you some additional contributors.
 5. To report a bug, please <a href="https://github.com/magento/magento2/issues" target="_blank">open an issue</a>, and follow these <a href="https://github.com/magento/magento2/wiki/Issue-reporting-guidelines">guidelines about bugfix issues</a>.
 
