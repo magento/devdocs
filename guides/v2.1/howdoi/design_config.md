@@ -21,19 +21,18 @@ This topic describes how to customize (add, delete, change) the configuration op
 
 ## Overview
 
-When navigating to **CONTENT** > **Design** > **Configuration** in Admin, the first page that opens displays a grid with the available configuration scopes.
-Additionally the grid can display the value of the design options. By default, it displays the name of the theme selected for the scope:
+In Magento out of the box, when you navigate to **CONTENT** > **Design** > **Configuration** in Admin, the first page that opens displays a grid with the available configuration scopes and assigned themes. It looks like following:
 
 <img src="{{site.baseurl}}common/images/design_conf1.png">
-
-To make other options values appear in this grid, you need to customize the `design_config_listing.xml` grid configuration file.
 
 When you click **Edit** in any of the scope records, the page with available design options is displayed. 
 For example, the default set of design options for the store view level is the following:
 
 <img src="{{site.baseurl}}common/images/design_conf2.png" alt="Design Configuration page">
 
-This configuration form is implemented using the [form UI component]({{site.gdeurl21}}ui-components/ui-form.html), that uses corresponding UI components for fields. 
+Both the grid and the configuration form are implemented using UI components.
+
+To change the grid view, you need to customize the `design_config_listing.xml` grid configuration file.
 
 To change the settings available for configuration, you need to customize the `design_config_form.xml` configuration file. If you add a new field, you must also declare it in `di.xml` how it is processed and saved.
 
@@ -41,11 +40,13 @@ View the following sections for details.
 
 ## Customize the grid {#customize_grid}
 
-The grid containing the configuration scopes is implemented using the [grid UI component]({{site.gdeurl21}}ui-components/ui-listing-grid.html). To customize the grid view, take the following steps:
+The grid containing the configuration scopes is implemented using the [grid UI component]({{site.gdeurl21}}ui-components/ui-listing-grid.html). 
+
+To customize the grid view, take the following steps:
 
 1. In the `<your_module_dir>/view/adminhtml/ui_component` directory add the empty `design_config_listing.xml`.
 
-3. In the scope of `<listing></listing>` add all other customizations. Your `design_config_listing.xml` is merged with the same files from the other modules. So there is no need to copy their content, you only need to put the new things you add. Even if you want to customize the existing entities, you only have to mention those options, the values of which are customized. For example, if you only want to rename the column displaying the selected theme, your grid config must contain the following:
+3. In the scope of `<listing></listing>` add your customizations. For example, if you want to rename the column displaying the selected theme, your grid configuration must contain the following:
 
 {%highlight xml%}
 
@@ -65,21 +66,21 @@ The grid containing the configuration scopes is implemented using the [grid UI c
 
 {%endhighlight%}
 
-For reference, view the grid configuration files of Magento modules:
+Your `design_config_listing.xml` is merged with the same files from the other modules. So there is no need to copy their content, you only need to put the new things you add. Even if you want to customize the existing entities, you only have to mention those options, the values of which are customized.
+
+For reference, view the grid configuration files of the Magento modules:
 
 - `<Magento_Backend_module_dir>/view/adminhtml/ui_component/design_config_listing.xml`
 - `<Magento_Theme_module_dir>/view/adminhtml/ui_component/design_config_listing.xml`
 
-To add a certain field as additional grid column, configure the `use_in_grid` property in the [filed's meta data in `di.xml`](#meta_data).
+If you add a certain field as additional grid column, you also need to set the field's `use_in_grid` property in the [filed's meta data in `di.xml`](#meta_data).
 
 ## Customize the design options {#customize_options}
 
 ### Customize the form configuration
 Design configuration form is implemented using the [form UI component]({{site.gdeurl21}}ui-components/ui-form.html). 
 
-So you can customize the form fields in the component's configuration xml file. For design configuration form it is `design_config_form.xml`. 
-
-Details:
+To customize the form view, take the following steps: 
 
 1. Create an empty `design_config_form.xml` file in the `<your_module_dir>/view/adminhtml/ui_component/` directory.
  
@@ -126,7 +127,7 @@ Your custom fields and field sets will be available for all configuration scopes
 
 Your `design_config_form.xml` is merged with the same files from the other modules. So there is no need to copy their content, you only need to add your customizations. 
 
-To customize the existing entity, declare only those options, the values of which are customized. Do not copy its entire configuration. For example, if you only want to rename the **Other Settings** field set, your grid config must contain the following:
+To customize an existing entity, declare only those options, the values of which are customized, do not copy its entire configuration. For example, if you only want to rename the **Other Settings** field set, your form configuration must contain the following:
 
 {%highlight xml%}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -180,7 +181,7 @@ The field declaration in a `di.xml` looks like following:
         <argument name="metadata" xsi:type="array">
                 <!-- field name as described in configuration -->
                 <item name="%field name%" xsi:type="array">
-                    <!-- the path to the field in system configuration -->
+                    <!-- the path to the field in system configuration storage in DB-->
                     <item name="path" xsi:type="string">%path in system config%</item>
                     <!-- the name of field set for current field, as described in form configuration -->
                     <item name="fieldset" xsi:type="string">%parent_fieldset%</item>
@@ -221,7 +222,7 @@ Example of field declaration:
 </type>
 {%endhighlight%}
 
-For more examples and reference, view the `di.xml` files of Magento modules:
+For more examples and reference, view the `di.xml` files of the Magento modules:
 
 - `<Magento_Backend_module_dir>/etc/di.xml`
 - `<Magento_Catalog_module_dir>/etc/di.xml`
