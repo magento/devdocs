@@ -6,8 +6,8 @@ title: DevDocs Contributions
 menu_title: DevDocs Contributions
 menu_order: 1
 menu_node: parent
-github_link: contributor-guide/contributing.md
-redirect_from: /guides/v1.0/contributor-guide/contributing.html
+github_link: contributor-guide/contributing_docs.md
+redirect_from: guides/v2.0/extension-dev-guide/Contribute_edg.md
 ---
 
 
@@ -30,14 +30,14 @@ The following topics are included in the Guide:
 
 <h2 id="contribute">DevDocs Contributions</h2>
 
-What's your area of expertise? Please share your knowledge with us! Contributions can take the form of completely new topics, changes and edits to existing documention, or just good suggestions. 
+What's your area of expertise? Please share your knowledge with us! Contributions can take the form of completely new topics, changes and edits to existing documentation, or just good suggestions. 
 
 We have a <a href="{{ site.gdeurl }}contributor-guide/basic_template.html" target="_blank">template</a> to make getting started easy. You can get a copy of the <a href="https://github.com/magento/devdocs/blob/2.0/guides/v2.0/contributor-guide/basic_template.md">.md file  on Github</a>. It's in Markdown, which is a simple markup language.
 
 If you write and contribute a full topic, we'll put your name (or company's name) at the top of the page, right under the title, and link it to your blog or website! And you'll get your face and bio in the <a href="{{ site.gdeurl }}howdoi/howdoi_bios.html">ring of honor</a> as one of our featured contributors.
 
 Use the <a href="#fork">fork</a> & <a href="#pull_request">pull</a> model to contribute to the Magento 2 DevDocs.
-This contribution model has contributors maintaining their own copy of the forked codebase (which can easily be synced with the main copy). The forked repository is then used to submit a request to the base repository to *pull* a set of changes (hence the phrase *pull request*).
+This contribution model means that contributors maintain their own copy of the forked codebase (which can be easily synced with the main copy). The forked repository is then used to submit a request to the base repository to *pull* a set of changes (hence the phrase *pull request*).
 
 The Magento DevDocs team reviews all issues and contributions submitted by the community. During the review we might require clarifications from the contributor. If you know what you want to write about, but you aren't sure where within our multiple documents the topic should go, we can help you with the "info architecture" part.
 
