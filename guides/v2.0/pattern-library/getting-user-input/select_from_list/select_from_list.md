@@ -2,7 +2,7 @@
 layout: default
 group: pattern
 subgroup: Getting User Input
-title: Magento Admin Pattern Library
+title: Admin Design Pattern Library
 menu_title: Select From List
 menu_order: 5
 menu_node:

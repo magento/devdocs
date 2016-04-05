@@ -2,7 +2,7 @@
 layout: default
 group: pattern
 subgroup: Container
-title: Magento Admin Pattern Library
+title: Admin Design Pattern Library
 menu_title: Static Content Container
 menu_order: 1
 menu_node: 

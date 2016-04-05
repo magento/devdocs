@@ -50,7 +50,7 @@ Use `ExtensibleDataInterface` to implement extension attributes. In your code, y
 
 <code>public function getExtensionAttributes();</code>
 
-Most likely, you'll want to extend interfaces defined in the `Api/Data` directory of an Magento module. 
+Most likely, you'll want to extend interfaces defined in the `Api/Data` directory of a Magento module. 
 
 <h3 id="declare">Declare extension attributes</h3>
 

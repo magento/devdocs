@@ -16,6 +16,8 @@ To see all backward incompatible changes follow:
  
  - [Magento CE backward incompatible changes][]
  - [Magento EE backward incompatible changes][]
+ 
+For more information about backward compatibility, see [Magento’s backward compatibility policy][].
 
 <h2>Contents</h2>
 
@@ -146,6 +148,8 @@ Magento\Framework\Model\Entity\MetadataPool::getMetadata(Magento\Catalog\Api\Dat
 When **Products -> Categories** menu item in the Magento Admin is chosen, the first root category is selected for editing by default now. You can create a new category or a root category manually only. Use the corresponding button **Add Root Category** or **Add Subcategory**.
 
 <!-- LINK DEFINITIONS -->
+
+[Magento’s backward compatibility policy]: http://devdocs.magento.com/guides/v2.0/architecture/backward-compatibility.html
 
 [`<magento2>/app/code/Magento/Catalog/etc/module.xml`]: https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/etc/module.xml
 [`<magento2>/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml`]: https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml

@@ -2,7 +2,7 @@
 layout: default
 group: pattern
 subgroup: Templates
-title: Magento Admin Pattern Library
+title: Admin Design Pattern Library
 menu_title: Address Form
 menu_order: 1
 menu_node: 

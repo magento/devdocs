@@ -29,10 +29,10 @@ On the next hierarchy level, items in each segment are ordered according to the 
 
 The following sections discusses the structure and contents of the deployment configuration&mdash;`config.php` and `env.php`.
 
-* <a href="#config-php-contents-config-php">Managing Installed Modules</a>
-* <a href="#config-php-contents-env-php">Environmental Configuration</a>
+* <a href="#config-php-contents-config-php">Manage installed modules</a>
+* <a href="#config-php-contents-env-php">Environmental configuration</a>
 
-<h3 id="config-php-contents-config-php">Managing Installed Modules</h3>
+<h3 id="config-php-contents-config-php">Manage installed modules</h3>
 `config.php` lists your installed components (modules, themes, and language packages). Magento provides both command-line and web-based utilities to manage components (install, uninstall, enable, disable, or upgrade).
 
 Examples:
@@ -69,7 +69,7 @@ Disabled modules are not recognized by the Magento application; in other words, 
 
 The only practical difference of a module being disabled and being completely absent in the code base is that a disabled module is found by the autoloader, enabling its classes and constants to be reused in other code.
 
-<h3 id="config-php-contents-env-php">Environmental Configuration</h3>
+<h3 id="config-php-contents-env-php">Environmental configuration</h3>
 The following table provides details about each `env.php` segment and its structure.
 
 <table>
