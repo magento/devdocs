@@ -13,13 +13,12 @@ github_link: ext-best-practices/admin/admin-best-practices.md
 
 The Admin is the area in Magento that is reserved only for Magento administrators. It is where Magento system and storefront parameters can be modified and configured. Third party extensions installed by the system admin are also found in this area along with any of their configuration settings.
 
-### Recommended Reading
-* [Admin Pattern Library]({{site.gdurl}}pattern-library/bk-pattern.html) - Contains in depth information on design topics for the Admin.
+For in depth information on design topics for the Admin, read the [Admin Pattern Library]({{site.gdeurl}}pattern-library/bk-pattern.html).
 
-##Articles
+###Articles
 
 {% assign subgroup = site.articles | where:"group","ext-best-practices" | where: "subgroup","01_Admin" | where: "menu_node",null | sort: "menu_order" %}
 
 {% for node in subgroup %}
-*  [{{ node.menu_title }}]({{site.url}}{{ node.url }})
+*  [{{ node.menu_title }}]({{site.gdeurl}}{{ node.github_link | replace: ".md",".html" }})
 {% endfor %}
