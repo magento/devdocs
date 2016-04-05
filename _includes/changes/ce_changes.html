@@ -22,10 +22,6 @@
         <td>Class was removed.</td>
     </tr>
     <tr>
-        <td>Magento\Theme\Setup\InstallData</td>
-        <td>Class was removed.</td>
-    </tr>
-    <tr>
         <td>Magento\Theme\Observer\ThemeRegistrationObserver</td>
         <td>Class was removed.</td>
     </tr>
@@ -163,10 +159,6 @@
     </tr>
     <tr>
         <td>Magento\Catalog\Model\ResourceModel\Product\Attribute\Backend\Media</td>
-        <td>Class was removed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\Product\Option\Converter</td>
         <td>Class was removed.</td>
     </tr>
     <tr>
@@ -514,7 +506,15 @@
         <td>Constant has been added.</td>
     </tr>
     <tr>
+        <td>Magento\Framework\Model\ResourceModel\AbstractResource::$_commitCallbacks</td>
+        <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\Model\ResourceModel\Type\Db\Pdo\Mysql::__construct</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Model\ResourceModel\Db\AbstractDb::afterLoad</td>
         <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
@@ -818,6 +818,22 @@
         <td>Constant has been added.</td>
     </tr>
     <tr>
+        <td>Magento\Theme\Setup\InstallData::createThemeResource</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Theme\Setup\InstallData::createTheme</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Theme\Setup\InstallData::__construct</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Theme\Model\Theme\ThemeProvider::__construct</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
         <td>Magento\Theme\Model\Theme\Plugin\Registration::__construct</td>
         <td>[public] Method parameter changed.</td>
     </tr>
@@ -948,6 +964,14 @@
     <tr>
         <td>Magento\Store\Model\Plugin\StoreCookie::aroundDispatch</td>
         <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Store\App\FrontController\Plugin\RequestPreprocessor::_isBaseUrlCheckEnabled</td>
+        <td>[protected] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Store\App\FrontController\Plugin\RequestPreprocessor::_isBaseUrlCorrect</td>
+        <td>[protected] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Sitemap\Model\ResourceModel\Catalog\Category::__construct</td>
@@ -1622,10 +1646,6 @@
         <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
-        <td>Magento\Review\Model\ResourceModel\Review\Product\Collection::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
         <td>Magento\Review\Controller\Adminhtml\Rating::_isAllowed</td>
         <td>[protected] Method has been removed.</td>
     </tr>
@@ -1636,18 +1656,6 @@
     <tr>
         <td>Magento\RequireJs\Block\Html\Head\Config::_toHtml</td>
         <td>[protected] Method has been removed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Reports\Model\ResourceModel\Product\Collection::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Reports\Model\ResourceModel\Product\Lowstock\Collection::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Reports\Model\ResourceModel\Product\Index\Collection\AbstractCollection::__construct</td>
-        <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
         <td>Magento\Reports\Controller\Adminhtml\Index::_isAllowed</td>
@@ -1760,6 +1768,22 @@
     <tr>
         <td>Magento\Reports\Controller\Adminhtml\Report\Product\Viewed::ADMIN_RESOURCE</td>
         <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Quote\Model\Quote\Item\Repository::getBuyRequest</td>
+        <td>[protected] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Quote\Model\Quote\Item\Repository::addCustomOptionsToBuyRequest</td>
+        <td>[protected] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Quote\Model\Quote\Item\Repository::applyCustomOptions</td>
+        <td>[protected] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Quote\Model\Quote\Item\Repository::addProductOptions</td>
+        <td>[protected] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\ProductVideo\Model\Plugin\ExternalVideoResourceBackend::afterDuplicate</td>
@@ -2166,10 +2190,6 @@
         <td>[public] Method has been removed.</td>
     </tr>
     <tr>
-        <td>Magento\GroupedProduct\Model\ResourceModel\Product\Type\Grouped\AssociatedProductsCollection::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
         <td>Magento\GroupedProduct\Model\Product\Type\Grouped::save</td>
         <td>[public] Method has been removed.</td>
     </tr>
@@ -2206,16 +2226,20 @@
         <td>Constant has been added.</td>
     </tr>
     <tr>
-        <td>Magento\Eav\Model\ResourceModel\Entity\Attribute::deleteEntity</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
         <td>Magento\Eav\Model\ResourceModel\Entity\Attribute\Group::TAB_GENERAL_CODE</td>
         <td>Constant has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Eav\Model\ResourceModel\Entity\Attribute\Group::TAB_IMAGE_MANAGEMENT_CODE</td>
         <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\Entity\AbstractEntity::_getDefaultAttribute</td>
+        <td>[protected] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\Entity\AbstractEntity::$_defaultAttributes</td>
+        <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Downloadable\Model\LinkRepository::saveLink</td>
@@ -2270,28 +2294,12 @@
         <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
-        <td>Magento\Downloadable\Model\ResourceModel\Link::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
         <td>Magento\Downloadable\Model\Product\Type::save</td>
         <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Downloadable\Model\Product\Type::beforeSave</td>
         <td>[public] Method has been removed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Downloadable\Model\Product\TypeHandler\AbstractTypeHandler::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Downloadable\Model\Product\TypeHandler\Link::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Downloadable\Model\Product\TypeHandler\Sample::__construct</td>
-        <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
         <td>Magento\Downloadable\Model\Product\TypeHandler\Sample::DATA_KEY</td>
@@ -2418,6 +2426,10 @@
         <td>Constant has been added.</td>
     </tr>
     <tr>
+        <td>Magento\Customer\Controller\Adminhtml\Index\Save::$_formFactory</td>
+        <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
         <td>Magento\Customer\Controller\Adminhtml\Cart\Product\Composite\Cart::_isAllowed</td>
         <td>[protected] Method has been removed.</td>
     </tr>
@@ -2464,10 +2476,6 @@
     <tr>
         <td>Magento\ConfigurableProduct\Model\ResourceModel\Product\Type\Configurable::$_catalogProductRelation</td>
         <td>[protected] Property has been removed.</td>
-    </tr>
-    <tr>
-        <td>Magento\ConfigurableProduct\Model\ResourceModel\Product\Type\Configurable\Attribute\Collection::__construct</td>
-        <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
         <td>Magento\ConfigurableProduct\Model\Product\VariationHandler::__construct</td>
@@ -2522,10 +2530,6 @@
         <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
-        <td>Magento\ConfigurableProduct\Model\Attribute\LockValidator::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
         <td>Magento\ConfigurableProduct\Controller\Adminhtml\Product\Initialization\Helper\Plugin\Configurable::__construct</td>
         <td>[public] Method parameter changed.</td>
     </tr>
@@ -2576,6 +2580,14 @@
     <tr>
         <td>Magento\ConfigurableProduct\Block\Adminhtml\Product\Edit\Tab\Variations\Config::__construct</td>
         <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\ConfigurableProduct\Block\Adminhtml\Product\Edit\Tab\Variations\Config\Matrix::__construct</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\ConfigurableProduct\Block\Adminhtml\Product\Edit\Tab\Variations\Config\Matrix::$_coreRegistry</td>
+        <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Config\Controller\Adminhtml\System\AbstractConfig::ADMIN_RESOURCE</td>
@@ -2726,10 +2738,6 @@
         <td>Constant has been added.</td>
     </tr>
     <tr>
-        <td>Magento\CatalogUrlRewrite\Service\V1\StoreViewService::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
         <td>Magento\CatalogUrlRewrite\Plugin\Catalog\Block\Adminhtml\Category\Tab\Attributes::afterSetForm</td>
         <td>[public] Method has been removed.</td>
     </tr>
@@ -2750,15 +2758,11 @@
         <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
-        <td>Magento\CatalogSearch\Model\ResourceModel\Search\Collection::__construct</td>
-        <td>[public] Method parameter changed.</td>
+        <td>Magento\CatalogSearch\Model\Source\Weight::$_weights</td>
+        <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
-        <td>Magento\CatalogSearch\Model\ResourceModel\Fulltext\Collection::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\CatalogSearch\Model\ResourceModel\Advanced\Collection::__construct</td>
+        <td>Magento\CatalogSearch\Model\Search\IndexBuilder::__construct</td>
         <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
@@ -2806,16 +2810,8 @@
         <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
-        <td>Magento\CatalogSearch\Model\Adapter\Mysql\Filter\Preprocessor::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
         <td>Magento\CatalogRule\Model\Rule::__construct</td>
         <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\CatalogRule\Model\Rule::$dateTime</td>
-        <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
         <td>Magento\CatalogRule\Model\ResourceModel\Rule::_afterLoad</td>
@@ -2832,10 +2828,6 @@
     <tr>
         <td>Magento\CatalogRule\Model\ResourceModel\Rule::$_associatedEntitiesMap</td>
         <td>[protected] Property has been removed.</td>
-    </tr>
-    <tr>
-        <td>Magento\CatalogRule\Model\Indexer\IndexBuilder::__construct</td>
-        <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
         <td>Magento\CatalogRule\Model\Indexer\IndexBuilder::getRuleProductsStmt</td>
@@ -2866,10 +2858,6 @@
         <td>Constant has been added.</td>
     </tr>
     <tr>
-        <td>Magento\CatalogInventory\Model\StockRegistryProvider::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
         <td>Magento\CatalogInventory\Model\StockRegistryProvider::$stocks</td>
         <td>[protected] Property has been removed.</td>
     </tr>
@@ -2882,32 +2870,8 @@
         <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
-        <td>Magento\CatalogInventory\Model\Stock\StockItemRepository::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\CatalogInventory\Model\Stock\StockRepository::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\CatalogInventory\Model\Stock\StockStatusRepository::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\CatalogInventory\Model\ResourceModel\Indexer\Stock\DefaultStock::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
         <td>Magento\CatalogInventory\Model\Plugin\AroundProductRepositorySave::__construct</td>
         <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\CatalogInventory\Block\Stockqty\AbstractStockqty::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\CatalogInventory\Block\Stockqty\AbstractStockqty::$stockState</td>
-        <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
         <td>Magento\CatalogImportExport\Model\Import\Product::_saveProductEntity</td>
@@ -2946,39 +2910,11 @@
         <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
-        <td>Magento\Catalog\Model\CategoryLinkManagement::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\CategoryRepository::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
         <td>Magento\Catalog\Model\Product::getGalleryAttributeBackend</td>
         <td>[public] Method has been removed.</td>
     </tr>
     <tr>
-        <td>Magento\Catalog\Model\Product::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
         <td>Magento\Catalog\Model\Product::$_options</td>
-        <td>[protected] Property has been removed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\ProductRepository::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\ProductRepository::$linkInitializer</td>
-        <td>[protected] Property has been removed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\ProductRepository::$linkTypeProvider</td>
-        <td>[protected] Property has been removed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\ProductRepository::$extensibleDataObjectConverter</td>
         <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
@@ -3010,160 +2946,20 @@
         <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
-        <td>Magento\Catalog\Model\ResourceModel\Attribute::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\ResourceModel\Attribute::deleteEntity</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\ResourceModel\Category::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
         <td>Magento\Catalog\Model\ResourceModel\Product::getAssignedImages</td>
         <td>[public] Method has been removed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\ResourceModel\Product::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\ResourceModel\Url::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\ResourceModel\Product\Collection::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\ResourceModel\Product\Link::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\ResourceModel\Product\Option::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\ResourceModel\Product\Option\Collection::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\ResourceModel\Product\Indexer\AbstractIndexer::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\ResourceModel\Product\Indexer\Price\DefaultPrice::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\ResourceModel\Product\Indexer\Eav\AbstractEav::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\ResourceModel\Product\Indexer\Eav\Source::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\ResourceModel\Product\Compare\Item\Collection::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\ResourceModel\Category\Tree::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\ProductLink\Repository::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\Product\Copier::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\Product\Link::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\Product\Link::$stockHelper</td>
-        <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Catalog\Model\Product\Option::saveOptions</td>
         <td>[public] Method has been removed.</td>
     </tr>
     <tr>
-        <td>Magento\Catalog\Model\Product\Option::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\Product\Option\Repository::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\Product\Option\Repository::$converter</td>
-        <td>[protected] Property has been removed.</td>
-    </tr>
-    <tr>
         <td>Magento\Catalog\Model\Product\Option\Type\File\ValidatorFile::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\Product\Media\Config::__construct</td>
         <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
         <td>Magento\Catalog\Model\Product\Gallery\GalleryManagement::getGalleryAttributeBackend</td>
         <td>[protected] Method has been removed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\Product\Attribute\Repository::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\Product\Attribute\Backend\Tierprice::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\Product\Attribute\Backend\GroupPrice\AbstractGroupPrice::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\Indexer\Product\Flat\AbstractAction::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\Indexer\Product\Flat\FlatTableBuilder::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\Indexer\Product\Flat\TableBuilder::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\Indexer\Product\Flat\Action\Indexer::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\Indexer\Product\Flat\Action\Row::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\Indexer\Product\Flat\Action\Rows::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\Indexer\Category\Product\AbstractAction::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\Indexer\Category\Flat\AbstractAction::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Model\Indexer\Category\Flat\Action\Rows::__construct</td>
-        <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
         <td>Magento\Catalog\Controller\Adminhtml\Category::_isAllowed</td>
@@ -3182,24 +2978,12 @@
         <td>Constant has been added.</td>
     </tr>
     <tr>
-        <td>Magento\Catalog\Controller\Adminhtml\Product\AddAttributeToTemplate::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
         <td>Magento\Catalog\Controller\Adminhtml\Product\Attribute::_isAllowed</td>
         <td>[protected] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Catalog\Controller\Adminhtml\Product\Attribute::ADMIN_RESOURCE</td>
         <td>Constant has been added.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Controller\Adminhtml\Product\Builder::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Controller\Adminhtml\Product\Save::__construct</td>
-        <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
         <td>Magento\Catalog\Controller\Adminhtml\Product\Set::_isAllowed</td>
@@ -3222,14 +3006,6 @@
         <td>Constant has been added.</td>
     </tr>
     <tr>
-        <td>Magento\Catalog\Controller\Adminhtml\Product\Initialization\Helper::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Catalog\Controller\Adminhtml\Product\Initialization\Helper::$jsHelper</td>
-        <td>[protected] Property has been removed.</td>
-    </tr>
-    <tr>
         <td>Magento\Catalog\Controller\Adminhtml\Product\Group\Save::_isAllowed</td>
         <td>[protected] Method has been removed.</td>
     </tr>
@@ -3246,6 +3022,14 @@
         <td>Constant has been added.</td>
     </tr>
     <tr>
+        <td>Magento\Catalog\Controller\Adminhtml\Product\Attribute\Save::__construct</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Controller\Adminhtml\Product\Attribute\Validate::DEFAULT_MESSAGE_KEY</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
         <td>Magento\Catalog\Controller\Adminhtml\Product\Action\Attribute::_isAllowed</td>
         <td>[protected] Method has been removed.</td>
     </tr>
@@ -3254,7 +3038,7 @@
         <td>Constant has been added.</td>
     </tr>
     <tr>
-        <td>Magento\Catalog\Controller\Adminhtml\Category\Edit::__construct</td>
+        <td>Magento\Catalog\Controller\Adminhtml\Category\Save::__construct</td>
         <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
@@ -3292,18 +3076,6 @@
     <tr>
         <td>Magento\Catalog\Block\Adminhtml\Category\Edit::$_template</td>
         <td>[protected] Property has been removed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Bundle\Model\LinkManagement::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Bundle\Model\OptionRepository::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Bundle\Model\ResourceModel\Option::__construct</td>
-        <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
         <td>Magento\Bundle\Model\Product\Type::save</td>
@@ -3514,10 +3286,6 @@
         <td>Constant has been added.</td>
     </tr>
     <tr>
-        <td>Magento\AdvancedPricingImportExport\Model\Export\AdvancedPricing::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
         <td>Magento\AdminNotification\Controller\Adminhtml\Notification::_isAllowed</td>
         <td>[protected] Method has been removed.</td>
     </tr>
@@ -3658,10 +3426,6 @@
         <td>Class was added.</td>
     </tr>
     <tr>
-        <td>Magento\Customer\Helper\AccountManagement</td>
-        <td>Class was added.</td>
-    </tr>
-    <tr>
         <td>Magento\Catalog\Model\Product\Type\AbstractType</td>
         <td>Class was added.</td>
     </tr>
@@ -3695,6 +3459,10 @@
     </tr>
     <tr>
         <td>Magento\Sales\Api\Data\TransactionInterface::TYPE_REFUND</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Quote\Api\Data\CartInterface::KEY_ENTITY_ID</td>
         <td>Constant has been added.</td>
     </tr>
     <tr>
@@ -3891,6 +3659,10 @@
     </tr>
     <tr>
         <td>Magento\Sales\Api\Data\TransactionInterface::TYPE_REFUND</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Quote\Api\Data\CartInterface::KEY_ENTITY_ID</td>
         <td>Constant has been added.</td>
     </tr>
     <tr>
