@@ -2,8 +2,8 @@
 layout: default
 group: contributor
 subgroup: Contributor Guide
-title: Contribute to Magento 2 code
-menu_title: Contribute to Magento 2 code
+title: Code Contributions
+menu_title: Code Contributions
 menu_order: 1
 menu_node: parent
 github_link: contributor-guide/contributing.md

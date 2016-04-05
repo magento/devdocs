@@ -2,8 +2,8 @@
 layout: default
 group: contributor
 subgroup: Contributor Guide
-title: Contribute to Magento 2 DevDocs
-menu_title: Contribute to Magento 2 DevDocs
+title: DevDocs Contributions
+menu_title: DevDocs Contributions
 menu_order: 1
 menu_node: parent
 github_link: contributor-guide/contributing.md
@@ -13,7 +13,7 @@ redirect_from: /guides/v1.0/contributor-guide/contributing.html
 
 The following topics are included in the Guide:
 
-* <a href="#contribute">Contribute to Magento 2 DevDocs</a>
+* <a href="#contribute">DevDocs Contributions</a>
 
 * <a href="#requirements">Contribution requirements</a>
 
@@ -28,12 +28,16 @@ The following topics are included in the Guide:
 -->
 
 
-<h2 id="contribute">Contribute to Magento 2 DevDocs</h2>
+<h2 id="contribute">DevDocs Contributions</h2>
+
+What's your area of expertise? Please share your knowledge with us! Contributions can take the form of completely new topics, changes and edits to existing documention, or just good suggestions. 
+
+We have a <a href="{{ site.gdeurl }}contributor-guide/basic_template.html" target="_blank">template</a> to make getting started easy. You can get a copy of the <a href="https://github.com/magento/devdocs/blob/2.0/guides/v2.0/contributor-guide/basic_template.md">.md file  on Github</a>. It's in Markdown, which is a simple markup language.
+
+If you write and contribute a full topic, we'll put your name (or company's name) at the top of the page, right under the title, and link it to your blog or website! And you'll get your face and bio in the <a href="{{ site.gdeurl }}howdoi/howdoi_bios.html">ring of honor</a> as one of our featured contributors.
 
 Use the <a href="#fork">fork</a> & <a href="#pull_request">pull</a> model to contribute to the Magento 2 DevDocs.
 This contribution model has contributors maintaining their own copy of the forked codebase (which can easily be synced with the main copy). The forked repository is then used to submit a request to the base repository to *pull* a set of changes (hence the phrase *pull request*).
-
-What's your area of expertise? Please share your knowledge with us! Contributions can take the form of completely new topics, changes and edits to existing documention, or just good suggestions. 
 
 The Magento DevDocs team reviews all issues and contributions submitted by the community. During the review we might require clarifications from the contributor. If you know what you want to write about, but you aren't sure where within our multiple documents the topic should go, we can help you with the "info architecture" part.
 
@@ -59,9 +63,7 @@ Often when the Magento DevDocs team works on reviewing the suggested changes, we
 2. Focus on the content and on creating useful information for your fellow Magento developers and community members, but do please take a few editorial passes at your work before submitting your topic and look for typos, formatting errors, or sentences that need clarifying. 
 3. Familiarize yourself with the existing documentation; taking a look at what is already there will help you decide where your topic best fits and if there are other topics to which you might want to add cross-references in your topic.
 4. First, check the <a href="https://github.com/magento/devdocs/pulls" target="_blank">existing PRs</a> and make sure you are not duplicating others’ work!
-5. Pull requests (PRs) must be accompanied by a meaningful description of the contributed content. 
-6. Commits must be accompanied by meaningful commit messages.
-7. For large contributions or changes that include multiple files, please <a href="https://github.com/magento/magento2/issues" target="_blank">open an issue</a> and discuss first. This may prevent duplicate or unnecessary effort, and the DevDocs team can help find the best home for your new topics.
+5. For large contributions or changes that include multiple files, please <a href="https://github.com/magento/magento2/issues" target="_blank">open an issue</a> and discuss first. This may prevent duplicate or unnecessary effort, and the DevDocs team can help find the best home for your new topics.
 
 <h2 id="fork">Fork a repository</h2>
 To fork a repository on Github, do the following:
@@ -77,24 +79,29 @@ To create a pull request do the following:
 
 1. Create a local branch for your changes and push those changes to the copy of your repository on GitHub. This is the best way to organize and even update your PR.
 2. In your repository, click **Pull requests** on the right, and then click **New pull request**.
-3. Ensure that you are creating a PR to the `2.0` branch. We accept PRs to this branch only.
+
+3. Be sure to create the PR to the correct branch. Our branches are numbered (2.0, 2.1, and so on). We don't accept PRs to other branches, like gh-pages.
+
 4. Review the changes, then click **Create pull request**. Fill out the form, and click **Create pull request** again to submit the PR&mdash;that’s it!
 
-
-After submitting your PR, you can head over to the DevDocs repository’s <a href="https://github.com/magento/devdocs/pulls" target="_blank">Pull Requests panel</a> to see your PR along with the others. The DevDocs team will review your contribution, and get back with you if we have any questions. Once the final content is ready, we will merge your PR into the repo, and your work wil be published to the repo and to <a href="https://github.com/magento/devdocs" target="_blank">devdocs.magento.com</a>, with your name right below the title!
+After submitting your PR, you can head over to the DevDocs repository’s <a href="https://github.com/magento/devdocs/pulls" target="_blank">Pull Requests panel</a> to see your PR along with the others. The DevDocs team will review your contribution, and get back with you if we have any questions. Once the final content is ready, we will merge your PR into the repo, and your work will be published to the repo and to <a href="https://github.com/magento/devdocs" target="_blank">devdocs.magento.com</a>. If you write a whole topic, or make substnatial contributions to an existing topic, we will add your name right below the title, linked to your blog or site!
 
 <h2 id="report">Report an issue</h2>
 If you find a bug (errr... we mean a typo or erroneous information) in Magento DevDocs, you can either fix it with a PR or you can simply report it by creating an issue in the DevDocs repository.
 
-**Note**: Before creating an issue, please check the <a href="https://github.com/magento/devdocs/issues" target="_blank"> existing issues</a> to make sure that the issue wasn't already reported.
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Before creating an issue, please check the <a href="https://github.com/magento/devdocs/issues" target="_blank"> existing issues</a> to make sure that the issue wasn't already reported.
+</p>
+</div>
 
 To add an issue:
 
-1. In the Magento DevDocs public repository, click the **Issues** link on the right. 
-2. Click **New issue**.3. Fill in the Title and issue description.
-4. Click **Submit new issue**.
+1. Click **New issue**.
+2. Fill in the Title and issue description.
+3. Click **Submit new issue**.
 
-<!--<h2 id="labels">Labels applied by the Magento team</h2>
+<!--
+<h2 id="labels">Labels applied by the Magento team</h2>
 
 Refer to the following table for a description of each label. These labels are applied by the Magento development team to community contributed issues and pull requests, to communicate status, impact, or which team is working on it.
 
