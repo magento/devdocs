@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento's deployment configuration</title>
+	<title>Set up multiple websites with nginx</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/config-guide/config/config-php.html">
+	<link rel="canonical" href="//guides/v2.0/config-guide/multi-site/ms_nginx.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -137,9 +137,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Magento's deployment configuration</h1>
+		<h1 class="page-heading">Set up multiple websites with nginx</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/config-guide/config/config-php.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/config-guide/multi-site/ms_nginx.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -527,7 +527,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/multi-site/ms_nginx.html">Set up multiple websites with nginx</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/config-guide/multi-site/ms_nginx.html">Set up multiple websites with nginx</a></li>
 
 									
 
@@ -570,7 +570,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/config-guide/config/config-php.html">Magento's deployment configuration</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/config-php.html">Magento's deployment configuration</a></li>
 
 									
 
@@ -1074,162 +1074,42 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<h4 id="contents">Contents</h4>
+		<h2 id="ms-nginx-over">Set up multiple websites with nginx</h2>
+<p>The example in this topic assumes you have set up your nginx configuration as recommended in the <code>&lt;Magento root&gt;/nginx.conf.sample</code> provided with the Magento software. </p>
 
-<ul>
-  <li><a href="#config-php-overview">Purpose of the deployment configuration</a></li>
-  <li><a href="#config-php-contents">Details about the deployment configuration</a></li>
-</ul>
+<p>That is, you should have a small, main configuration file that includes your Magento-specific configuration in the server block. This file is referred to in this topic as <code>main.conf</code>; the configuration file based on the Magento-provided sample is referred to in this topic as <code>nginx.magento.conf</code>.</p>
 
-<h2 id="config-php-overview">Purpose of the deployment configuration</h2>
-<p>Magento's deployment configuration consists of the module and environmental configuration for your installation. Magento's deployment configuration is divided between:</p>
-<ul><li><code>&lt;base dir&gt;/app/etc/config.php</code>, which contains the list of installed modules</li>
-	<li><code>&lt;base dir&gt;/app/etc/env.php</code>, which contains environment settings, such as:
-		<ul><li>Database credentials and connection settings</li>
-			<li>Cache storage settings</li>
-			<li>Enabled cache types</li>
-			<li>Your encryption key</li>
-			<li>Web routing parameters (base URLs, URL path to Magento Admin)</li>
-			<li>File system paths</li></ul>
-		</li>
-	</ul>
+<p>This section discusses how to have two websites at <code>site1.store.com</code> and <code>site2.store.com</code> that use the codes <code>site1</code> and <code>site2</code>. Multiple hosts require only one entry point. </p>
 
-<p>Together, they are referred to as Magento's <em>deployment configuration</em> because they are created during installation and are required to start Magento.</p>
+<p>You can use the same method to run multiple stores using the value <code>store</code> instead of <code>website</code> for the <code>$MAGE_RUN_TYPE</code> variable.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The Magento 2 deployment configuration replaces <code>local.xml</code> in Magento 1.x.</p>
-</div>
+<p>Step 1. Write a map directive to set the <code>$MAGE_RUN_CODE</code> variable.</p>
 
-<p>Unlike other <a href="/guides/v2.0/config-guide/config/config-files.html">module configuration files</a>, Magento's deployment configuration is loaded into memory when Magento initializes, is not merged with any other files, and cannot be extended. (<code>config.php</code> and <code>env.php</code> are merged with each other, however.)</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">map</span> <span class="nv">$http_host</span> <span class="nv">$MAGE_RUN_CODE</span> <span class="p">{</span>
+    <span class="nx">site1</span><span class="o">.</span><span class="nx">store</span><span class="o">.</span><span class="nx">com</span> <span class="nx">site1</span><span class="p">;</span>
+    <span class="nx">site2</span><span class="o">.</span><span class="nx">store</span><span class="o">.</span><span class="nx">com</span> <span class="nx">site2</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
 
-<h2 id="config-php-contents">Details about the deployment configuration</h2>
-<p><code>config.php</code> and <code>env.php</code> are PHP files that return a <a href="http://www.w3schools.com/php/php_arrays.asp" target="_blank">multi-dimensional associative array</a>, which is basically a hierarchical arrangement of configuration parameters and values.</p>
+<p>The preceding sets the <code>$MAGE_RUN_CODE</code> variable based on the host. For example, if the host to which the request is made is <code>site1.store.com</code>, <code>$MAGE_RUN_CODE</code> is set to <code>site1</code>. See <a href="http://nginx.org/en/docs/http/ngx_http_map_module.html#map" target="_blank">nginx documentation on the map directive</a> for more details.</p>
 
-<p>On the top level of this array are <em>configuration segments</em>. A segment has arbitrary content (a scalar value or a nested array) distinguished by an arbitrary key—where both the key and its value are defined by the Magento framework. </p>
+<p>Step 2. Send <code>MAGE_RUN_CODE</code> and <code>MAGE_RUN_TYPE</code> variables to the php-fpm server.
+Inside this block:</p>
 
-<p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/DeploymentConfig.php" target="_blank">Magento\Framework\App\DeploymentConfig</a> merely provides access to these sections but does not allow you to extend them.</p>
+<pre><code>location ~ (index|get|static|report|404|503)\.php$ { ... }
+</code></pre>
 
-<p>On the next hierarchy level, items in each segment are ordered according to the module sequence definition, which is obtained by merging all modules’ configuration files, with the exception of disabled modules. </p>
+<p>Add the following two lines:</p>
 
-<p>The following sections discusses the structure and contents of the deployment configuration—<code>config.php</code> and <code>env.php</code>.</p>
+<pre><code>...
+fastcgi_param  MAGE_RUN_TYPE website;
+fastcgi_param  MAGE_RUN_CODE $MAGE_RUN_MODE;
+...
+</code></pre>
 
-<ul>
-  <li><a href="#config-php-contents-config-php">Manage installed modules</a></li>
-  <li><a href="#config-php-contents-env-php">Environmental configuration</a></li>
-</ul>
+<p>Step 3: Reload your nginx configuration as a user with <code>root</code> privileges:</p>
 
-<h3 id="config-php-contents-config-php">Manage installed modules</h3>
-<p><code>config.php</code> lists your installed components (modules, themes, and language packages). Magento provides both command-line and web-based utilities to manage components (install, uninstall, enable, disable, or upgrade).</p>
-
-<p>Examples:</p>
-
-<ul>
-  <li>Uninstall components: <a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html">bin/magento setup:uninstall</a> </li>
-  <li>Enable or disable components: <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:enable</a>, <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:disable</a>.</li>
-  <li>Component Manager: coming soon</li>
-  <li>System Upgrade: coming soon</li>
-</ul>
-
-<p><code>config.php</code> snippet:</p>
-
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="k">return</span> <span class="k">array</span> <span class="p">(</span>
-  <span class="s1">&#39;modules&#39;</span> <span class="o">=&gt;</span>
-  <span class="k">array</span> <span class="p">(</span>
-    <span class="s1">&#39;Magento_Core&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="s1">&#39;Magento_Store&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="s1">&#39;Magento_Theme&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="s1">&#39;Magento_Authorization&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="s1">&#39;Magento_Directory&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="s1">&#39;Magento_Backend&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="s1">&#39;Magento_Backup&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="s1">&#39;Magento_Eav&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="s1">&#39;Magento_Customer&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-<span class="o">...</span>
-  <span class="p">),</span>
-<span class="p">);</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
-
-<p>The value <code>1</code> or <code>0</code> indicates whether a module is enabled or disabled. </p>
-
-<p>Disabled modules are not recognized by the Magento application; in other words, they don’t participate in merging configuration, in dependency injection, events, plug-ins, and so on. Disabled modules do not modify the storefront or Admin and don’t affect routing. </p>
-
-<p>The only practical difference of a module being disabled and being completely absent in the code base is that a disabled module is found by the autoloader, enabling its classes and constants to be reused in other code.</p>
-
-<h3 id="config-php-contents-env-php">Environmental configuration</h3>
-<p>The following table provides details about each <code>env.php</code> segment and its structure.</p>
-
-<table>
-  <tbody>
-    <tr>
-      <th>Segment</th>
-      <th>Key</th>
-      <th>Structure</th>
-    </tr>
-    <tr>
-      <td>Database</td>
-      <td><code>db</code></td>
-      <td><pre>__/db
-|__/connection
-| |__/[default]
-|   |-- host
-|   |-- dbname
-|   |-- username
-|   |-- password
-|   |-- model [mysql4]
-|   |-- initStatements [SET NAMES utf8;]
-|   |-- active [1]
-|-- table_prefix</pre></td>
-    </tr>
-    <tr>
-      <td>Resources</td>
-      <td><code>resource</code></td>
-      <td><pre>__/resource
- |__/default_setup
-   |-- connection [default]</pre></td>
-    </tr>
-    <tr>
-      <td>Session storage</td>
-      <td><code>session</code></td>
-      <td><pre>__/session
- |__/save
-   |-- &lt;files|db&gt;</pre></td>
-    </tr>
-    <tr>
-      <td>Admin URL path</td>
-      <td><code>backend</code></td>
-      <td><pre>__/backend
- |-- frontName</pre></td>
-    </tr>
-    <tr>
-      <td>Cache storage</td>
-      <td><code>cache</code></td>
-      <td><pre>__/cache
- |__/frontend
-   |__/See <a href="/guides/v2.0/config-guide/config/caching_frontend-cache-types.html">frontend options</a></pre></td>
-    </tr>
-    <tr>
-      <td>Installation date</td>
-      <td><code>install</code></td>
-      <td><pre>__/install
- |-- date</pre></td>
-    </tr>
-    <tr>
-      <td>Encryption key</td>
-      <td><code>encrypt</code></td>
-      <td><pre>__/crypt
- |-- key</pre></td>
-    </tr>
-    <tr>
-      <td>Cache types</td>
-      <td><code>cache_types</code></td>
-      <td><pre>__/cache_types
- |-- &lt;enumerated cache types&gt;</pre></td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="related-topic">Related topic</h4>
-<p><a href="/guides/v2.0/config-guide/config/config-files.html">Module configuration files</a></p>
+<pre><code>service nginx reload
+</code></pre>
 
 
 		</div>

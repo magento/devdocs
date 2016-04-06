@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento's deployment configuration</title>
+	<title>Set up multiple websites with Apache</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/config-guide/config/config-php.html">
+	<link rel="canonical" href="//guides/v2.0/config-guide/multi-site/ms_apache.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -137,9 +137,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Magento's deployment configuration</h1>
+		<h1 class="page-heading">Set up multiple websites with Apache</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/config-guide/config/config-php.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/config-guide/multi-site/ms_apache.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -535,7 +535,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/multi-site/ms_apache.html">Set up multiple websites with Apache</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/config-guide/multi-site/ms_apache.html">Set up multiple websites with Apache</a></li>
 
 									
 
@@ -570,7 +570,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/config-guide/config/config-php.html">Magento's deployment configuration</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/config/config-php.html">Magento's deployment configuration</a></li>
 
 									
 
@@ -1075,161 +1075,83 @@
 		<div class="content-wrap">
 
 		<h4 id="contents">Contents</h4>
-
 <ul>
-  <li><a href="#config-php-overview">Purpose of the deployment configuration</a></li>
-  <li><a href="#config-php-contents">Details about the deployment configuration</a></li>
+  <li><a href="#ms-entry-script">Set values in an entry point script</a></li>
+  <li><a href="#ms-htaccess">Set values in .htaccess</a></li>
 </ul>
 
-<h2 id="config-php-overview">Purpose of the deployment configuration</h2>
-<p>Magento's deployment configuration consists of the module and environmental configuration for your installation. Magento's deployment configuration is divided between:</p>
-<ul><li><code>&lt;base dir&gt;/app/etc/config.php</code>, which contains the list of installed modules</li>
-	<li><code>&lt;base dir&gt;/app/etc/env.php</code>, which contains environment settings, such as:
-		<ul><li>Database credentials and connection settings</li>
-			<li>Cache storage settings</li>
-			<li>Enabled cache types</li>
-			<li>Your encryption key</li>
-			<li>Web routing parameters (base URLs, URL path to Magento Admin)</li>
-			<li>File system paths</li></ul>
-		</li>
-	</ul>
-
-<p>Together, they are referred to as Magento's <em>deployment configuration</em> because they are created during installation and are required to start Magento.</p>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The Magento 2 deployment configuration replaces <code>local.xml</code> in Magento 1.x.</p>
-</div>
-
-<p>Unlike other <a href="/guides/v2.0/config-guide/config/config-files.html">module configuration files</a>, Magento's deployment configuration is loaded into memory when Magento initializes, is not merged with any other files, and cannot be extended. (<code>config.php</code> and <code>env.php</code> are merged with each other, however.)</p>
-
-<h2 id="config-php-contents">Details about the deployment configuration</h2>
-<p><code>config.php</code> and <code>env.php</code> are PHP files that return a <a href="http://www.w3schools.com/php/php_arrays.asp" target="_blank">multi-dimensional associative array</a>, which is basically a hierarchical arrangement of configuration parameters and values.</p>
-
-<p>On the top level of this array are <em>configuration segments</em>. A segment has arbitrary content (a scalar value or a nested array) distinguished by an arbitrary key—where both the key and its value are defined by the Magento framework. </p>
-
-<p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/DeploymentConfig.php" target="_blank">Magento\Framework\App\DeploymentConfig</a> merely provides access to these sections but does not allow you to extend them.</p>
-
-<p>On the next hierarchy level, items in each segment are ordered according to the module sequence definition, which is obtained by merging all modules’ configuration files, with the exception of disabled modules. </p>
-
-<p>The following sections discusses the structure and contents of the deployment configuration—<code>config.php</code> and <code>env.php</code>.</p>
-
-<ul>
-  <li><a href="#config-php-contents-config-php">Manage installed modules</a></li>
-  <li><a href="#config-php-contents-env-php">Environmental configuration</a></li>
-</ul>
-
-<h3 id="config-php-contents-config-php">Manage installed modules</h3>
-<p><code>config.php</code> lists your installed components (modules, themes, and language packages). Magento provides both command-line and web-based utilities to manage components (install, uninstall, enable, disable, or upgrade).</p>
-
-<p>Examples:</p>
-
-<ul>
-  <li>Uninstall components: <a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html">bin/magento setup:uninstall</a> </li>
-  <li>Enable or disable components: <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:enable</a>, <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:disable</a>.</li>
-  <li>Component Manager: coming soon</li>
-  <li>System Upgrade: coming soon</li>
-</ul>
-
-<p><code>config.php</code> snippet:</p>
+<h2 id="ms-entry-script">Set values in an entry point script</h2>
+<p>If necessary, copy the existing <code>index.php</code> entry point script for your website or store view and add to it the following:</p>
 
 <div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="k">return</span> <span class="k">array</span> <span class="p">(</span>
-  <span class="s1">&#39;modules&#39;</span> <span class="o">=&gt;</span>
-  <span class="k">array</span> <span class="p">(</span>
-    <span class="s1">&#39;Magento_Core&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="s1">&#39;Magento_Store&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="s1">&#39;Magento_Theme&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="s1">&#39;Magento_Authorization&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="s1">&#39;Magento_Directory&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="s1">&#39;Magento_Backend&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="s1">&#39;Magento_Backup&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="s1">&#39;Magento_Eav&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="s1">&#39;Magento_Customer&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
-<span class="o">...</span>
-  <span class="p">),</span>
-<span class="p">);</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+ <span class="nv">$params</span> <span class="o">=</span> <span class="nv">$_SERVER</span><span class="p">;</span>
+ <span class="nv">$params</span><span class="p">[</span><span class="nx">\Magento\Store\Model\StoreManager</span><span class="o">::</span><span class="na">PARAM_RUN_CODE</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&lt;code&gt;&#39;</span><span class="p">;</span>
+ <span class="nv">$params</span><span class="p">[</span><span class="nx">\Magento\Store\Model\StoreManager</span><span class="o">::</span><span class="na">PARAM_RUN_TYPE</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;{store|website}&#39;</span><span class="p">;</span>
+ <span class="nv">$bootstrap</span> <span class="o">=</span> <span class="nx">\Magento\Framework\App\Bootstrap</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="nx">BP</span><span class="p">,</span> <span class="nv">$params</span><span class="p">);</span>
+ <span class="nv">$app</span> <span class="o">=</span> <span class="nv">$bootstrap</span><span class="o">-&gt;</span><span class="na">createApplication</span><span class="p">(</span><span class="s1">&#39;Magento\Framework\App\Http&#39;</span><span class="p">);</span>
+ <span class="nv">$bootstrap</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">(</span><span class="nv">$app</span><span class="p">);</span>
+ <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
 
-<p>The value <code>1</code> or <code>0</code> indicates whether a module is enabled or disabled. </p>
+<p>Sample <code>index.php</code> snippet that starts Magento with a website with the code <code>frenchsite.example.com</code>:</p>
 
-<p>Disabled modules are not recognized by the Magento application; in other words, they don’t participate in merging configuration, in dependency injection, events, plug-ins, and so on. Disabled modules do not modify the storefront or Admin and don’t affect routing. </p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+ <span class="nv">$params</span> <span class="o">=</span> <span class="nv">$_SERVER</span><span class="p">;</span>
+ <span class="nv">$params</span><span class="p">[</span><span class="nx">\Magento\Store\Model\StoreManager</span><span class="o">::</span><span class="na">PARAM_RUN_CODE</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;frenchsite.example.com&#39;</span><span class="p">;</span>
+ <span class="nv">$params</span><span class="p">[</span><span class="nx">\Magento\Store\Model\StoreManager</span><span class="o">::</span><span class="na">PARAM_RUN_TYPE</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;website&#39;</span><span class="p">;</span>
+ <span class="nv">$bootstrap</span> <span class="o">=</span> <span class="nx">\Magento\Framework\App\Bootstrap</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="nx">BP</span><span class="p">,</span> <span class="nv">$params</span><span class="p">);</span>
+ <span class="nv">$app</span> <span class="o">=</span> <span class="nv">$bootstrap</span><span class="o">-&gt;</span><span class="na">createApplication</span><span class="p">(</span><span class="s1">&#39;Magento\Framework\App\Http&#39;</span><span class="p">);</span>
+ <span class="nv">$bootstrap</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">(</span><span class="nv">$app</span><span class="p">);</span>
+ <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
 
-<p>The only practical difference of a module being disabled and being completely absent in the code base is that a disabled module is found by the autoloader, enabling its classes and constants to be reused in other code.</p>
+<h2 id="ms-htaccess">Set values in .htaccess</h2>
+<p>This section discusses how to set values for <code>MAGE_RUN_TYPE</code> and <code>MAGE_RUN_CODE</code> using Apache server variables <code>SetEnvIf</code> or <code>RewriteCond</code>. If you’re not sure what environment variable to use, consult a network administrator.</p>
 
-<h3 id="config-php-contents-env-php">Environmental configuration</h3>
-<p>The following table provides details about each <code>env.php</code> segment and its structure.</p>
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Additional tasks required to set up the Magento 2 file system for this type of environment are beyond the scope of this topic.</p></span>
+</div>
 
-<table>
-  <tbody>
-    <tr>
-      <th>Segment</th>
-      <th>Key</th>
-      <th>Structure</th>
-    </tr>
-    <tr>
-      <td>Database</td>
-      <td><code>db</code></td>
-      <td><pre>__/db
-|__/connection
-| |__/[default]
-|   |-- host
-|   |-- dbname
-|   |-- username
-|   |-- password
-|   |-- model [mysql4]
-|   |-- initStatements [SET NAMES utf8;]
-|   |-- active [1]
-|-- table_prefix</pre></td>
-    </tr>
-    <tr>
-      <td>Resources</td>
-      <td><code>resource</code></td>
-      <td><pre>__/resource
- |__/default_setup
-   |-- connection [default]</pre></td>
-    </tr>
-    <tr>
-      <td>Session storage</td>
-      <td><code>session</code></td>
-      <td><pre>__/session
- |__/save
-   |-- &lt;files|db&gt;</pre></td>
-    </tr>
-    <tr>
-      <td>Admin URL path</td>
-      <td><code>backend</code></td>
-      <td><pre>__/backend
- |-- frontName</pre></td>
-    </tr>
-    <tr>
-      <td>Cache storage</td>
-      <td><code>cache</code></td>
-      <td><pre>__/cache
- |__/frontend
-   |__/See <a href="/guides/v2.0/config-guide/config/caching_frontend-cache-types.html">frontend options</a></pre></td>
-    </tr>
-    <tr>
-      <td>Installation date</td>
-      <td><code>install</code></td>
-      <td><pre>__/install
- |-- date</pre></td>
-    </tr>
-    <tr>
-      <td>Encryption key</td>
-      <td><code>encrypt</code></td>
-      <td><pre>__/crypt
- |-- key</pre></td>
-    </tr>
-    <tr>
-      <td>Cache types</td>
-      <td><code>cache_types</code></td>
-      <td><pre>__/cache_types
- |-- &lt;enumerated cache types&gt;</pre></td>
-    </tr>
-  </tbody>
-</table>
+<p>For more information about <code>SetEnvIf</code> or <code>RewriteCond</code>, see:</p>
 
-<h4 id="related-topic">Related topic</h4>
-<p><a href="/guides/v2.0/config-guide/config/config-files.html">Module configuration files</a></p>
+<ul>
+  <li>Apache 2.2: <a href="http://httpd.apache.org/docs/2.2/mod/mod_setenvif.html" target="_blank">SetEnvIf</a>, <a href="http://httpd.apache.org/docs/2.2/mod/mod_rewrite.html#rewritecond" target="_blank">RewriteCond</a></li>
+  <li>Apache 2.4: <a href="http://httpd.apache.org/docs/2.4/mod/mod_setenvif.html" target="_blank">SetEnvIf</a>, <a href="http://httpd.apache.org/docs/2.4/mod/mod_rewrite.html#rewritecond" target="_blank">RewriteCond</a></li>
+</ul>
+
+<h4 id="setenvif-example">SetEnvIf example</h4>
+<p>Add the following after <code>RewriteEngine on</code> in <code>.htaccess</code>:</p>
+
+<pre><code>SetEnvIf Host .*&lt;your domain&gt;.* MAGE_RUN_CODE=&lt;code&gt;
+SetEnvIf Host .*&lt;your domain&gt;.* MAGE_RUN_TYPE={store|website}
+</code></pre>
+
+<p>For example, to use a website with the code <code>frenchsite.example.com</code>:</p>
+
+<pre><code>SetEnvIf Host .*example.com.* MAGE_RUN_CODE=frenchsite.example.com
+SetEnvIf Host .*example.com.* MAGE_RUN_TYPE=website
+</code></pre>
+
+<h4 id="rewritecond-example">RewriteCond example</h4>
+<p>Add code similar to the following after <code>RewriteBase /magento/</code> in <code>.htaccess</code>:</p>
+
+<pre><code>RewriteCond %{HTTP_HOST} ^(.*)&lt;your domain&gt;\&lt;domain suffix&gt;
+RewriteRule .* – [E=MAGE_RUN_CODE:&lt;code&gt;]
+RewriteCond %{HTTP_HOST} ^(.*)&lt;your domain&gt;\&lt;domain suffix&gt;
+RewriteRule .* – [E=MAGE_RUN_TYPE:{store|website}]
+</code></pre>
+
+<p>For example, to use a website with the code <code>frenchsite.example.com</code>:</p>
+
+<pre><code>RewriteCond %{HTTP_HOST} ^(.*)example\.com
+RewriteRule .* – [E=MAGE_RUN_CODE:frenchsite.example.com]
+RewriteCond %{HTTP_HOST} ^(.*)example\.com
+RewriteRule .* – [E=MAGE_RUN_TYPE:website]
+</code></pre>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>The preceding is an example only. There is more than one way to configure the <code>RewriteCond</code> rule. Consult a system integrator or network administrator for more information.</p></span>
+</div>
 
 
 		</div>
