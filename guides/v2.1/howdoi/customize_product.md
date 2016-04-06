@@ -47,6 +47,59 @@ To customize the product creation form, take the following steps:
 
 1. In your custom module, add an empty `product_form.xml` in the `<your_module_dir>/view/adminhtml/ui_component/` directory.
 
+2. Add content similar to the following:
+
+{%highlight xml%} 
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+
+
+    <fieldset name="%fieldset_name%">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string" translate="true">%Fieldset Label as displayed in UI%</item>
+                <item name="sortOrder" xsi:type="number">%order for displaying%</item>
+            </item>
+         </argument>
+        <!--Field sets can be nested --> 
+        <fieldset name="%nested_fieldset_name%">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">%Nested fieldset Label as displayed in UI%</item>
+                    <item name="collapsible" xsi:type="boolean">true</item>
+                    <!-- Nesting level, the value should correspond to the actual nesting level in the config xml file. For the top field set level = 0 -->
+                    <item name="level" xsi:type="number">%level of nesting%</item>
+                </item>
+            </argument>  
+            <field name="%field_name%">
+    			<argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array"
+                        <item name="%field_option1%" xsi:type="%option_type%">%value%</item>
+                        <item name="%field_option2%" xsi:type="%option_type%">%value%</item>
+....
+                    </item>
+                </argument>
+            </field>
+        </fieldset>
+    </fieldset>
+</form>
+{%endhighlight%}
+
+Your `product_form.xml` is merged with the same files from the other modules. So there is no need to copy their content, you only need to add your customizations.
+
+To customize an existing entity, declare only those options, the values of which are customized, do not copy its entire configuration. 
+
+To delete an existing field, or field set, in your `product_form.xml` use the following syntax:
+
+{%highlight xml%}
+...
+    <fieldset name="%fieldset_name%">
+        <argument name="data" xsi:type="array">
+            <item name="disabled" xsi:type="boolean">true</item>
+        </argument>
+    </fieldset> 
+...
+{%endhighlight%}
+
 All you need to do - is create file of UI form at path Vendor/ModuleName/view/adminhtml/ui_component/product_form.xml.
 All that you declare in own file will be merged with one that declared in Catalog module (Magento/Catalog/view/adminhtml/ui_component/product_form.xml).
 As you can see - mechanism is very similar to layouts merging.
