@@ -2,13 +2,113 @@
 layout: default
 group: howdoi
 subgroup: product-create-page
-title: Customization via Modifiers classes for data and metadata
-menu_title: Customization via Modifiers classes for data and metadata
+title: Customize Product Creation Form
+menu_title: Customize Product Creation Form 
 menu_node: parent
-menu_order: 3
-github_link: howdoi/product-create-page/extension_class.md
+menu_order: 1
+github_link: howdoi/customize_product.md
 ---
 
+<h2>What's in this topic</h2>
+
+This topic describes how developers can customize the product creation form used on the New Product page in Admin. In the default Magento installation the page opens on **Add Product** click, for example from **PRODUCTS** > **CATALOG**. 
+
+**Contents**
+
+* TOC
+{:toc}
+
+## Overview
+
+In Magento 2.1 the product creation form was completely refactored. Now it is implemented usign the [form UI component]({{site.gdeurl21}}ui-components/ui-form.html). 
+
+In the Admin, product attributes and attribute sets can be customized and added under **STORES** > **Attributes**. 
+
+But you can also customize the form code using the following approaches:
+
+* Add your customization statically in the form configuration file.
+* Create a modifier class to perform customization dynamically.
+
+
+In this section we'll describe how customization of product form can be done on example of Magento_CatalogInventory module.
+It uses both methods: declarative xml and modifiers classes for data and metadata.
+
+## Prerequisites
+
+[Set Magento to developer mode]({{site.gdeurl21}}config-guide/cli/config-cli-subcommands-mode.html) while you perform all customizations and debugging.
+
+For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Instead, add your customizations in a separate module. 
+
+## Customize using xml configuration
+
+Declarative method is preferable for customizations like introducing new fields, field sets and modals.
+
+To customize the product creation form, take the following steps: 
+
+1. In your custom module, add an empty `product_form.xml` in the `<your_module_dir>/view/adminhtml/ui_component/`.
+
+All you need to do - is create file of UI form at path Vendor/ModuleName/view/adminhtml/ui_component/product_form.xml.
+All that you declare in own file will be merged with one that declared in Catalog module (Magento/Catalog/view/adminhtml/ui_component/product_form.xml).
+As you can see - mechanism is very similar to layouts merging.
+By the way this method works for all UI forms and listings that exist in Magento.
+
+Here, we'll discover product form extension on example of CatalogInventory module.
+
+CatalogInventory/view/adminhtml/ui_component/product_form.xml:
+
+{%highlight xml %}
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <modal name="advanced_inventory_modal">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+               <!-- modal configuration -->
+            </item>
+        </argument>
+        <fieldset name="stock_data">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string"/>
+                    <item name="dataScope" xsi:type="string"/>
+                </item>
+            </argument>
+            <container name="container_manage_stock">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <!-- container config -->
+                    </item>
+                </argument>
+                <field name="manage_stock">
+                    <argument name="data" xsi:type="array">
+                        <item name="config" xsi:type="array">
+                            <item name="formElement" xsi:type="string">select</item>
+                            <item name="dataScope" xsi:type="string">manage_stock</item>
+                            <item name="value" xsi:type="object">Magento\CatalogInventory\Model\Source\StockConfiguration</item>
+                        </item>
+                        <item name="options" xsi:type="object">Magento\Config\Model\Config\Source\Yesno</item>
+                    </argument>
+                </field>
+                <!-- other fields -->
+            </container>
+        </fieldset>
+        <!-- other fieldsets and fields -->
+    </modal>
+</form>
+{%endhighlight%}
+
+Summarizing, in this method you only need to create product_form.xml in your module with custom declarations of UI elements.
+
+<div class="bs-callout bs-callout-tip">
+  <p>See also extension of product form in ConfigurableProduct module</p>
+</div>
+
+## Customize using a modifier class
 Modifier classes should be used when static declaration is not applicable. For example, meta structure of form can vary significantly depending
 on product type, attribute set, ACL, additional data that should be loaded from DB according to meta structure and vice a versa -
 additional meta should be declared dynamically according to DB data and structure.
