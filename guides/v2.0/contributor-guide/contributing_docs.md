@@ -34,6 +34,8 @@ What's your area of expertise? Please share your knowledge with us! Contribution
 
 We have a <a href="{{ site.gdeurl }}contributor-guide/basic_template.html" target="_blank">template</a> to make getting started easy. You can get a copy of the <a href="https://github.com/magento/devdocs/blob/2.0/guides/v2.0/contributor-guide/basic_template.md">.md file  on Github</a>. It's in Markdown, which is a simple markup language.
 
+We also have a <a href="{{ site.gdeurl }}contributor-guide/contributing_docs_suggested_topics.html" target="_blank">list of suggested topics</a>, if you want to peruse and pick one that appeals to you.
+
 If you write and contribute a full topic, we'll put your name (or company's name) at the top of the page, right under the title, and link it to your blog or website! And you'll get your face and bio in the <a href="{{ site.gdeurl }}howdoi/howdoi_bios.html">ring of honor</a> as one of our featured contributors.
 
 Use the <a href="#fork">fork</a> & <a href="#pull_request">pull</a> model to contribute to the Magento 2 DevDocs.
@@ -57,8 +59,8 @@ Often when the Magento DevDocs team works on reviewing the suggested changes, we
     * Make the title of your topic reflect the content.
     * Keep your sentences concise, and try to separate conceptual information from procedural steps.
     * Remember to use active voice (not passive), write in the present tense, and use a friendly tone in second person (i.e. "You can now view the output...")
-    * Use Notes and even warnings to alert readers to particularly important details (our template has the markdown syntax!).
-    * Use cross-references to other topics if it is appropriate. We can help you with that syntax too.
+    * Use Notes and even Warnings to alert readers to particularly important details (our template has the markdown syntax!).
+    * Use cross-references to other topics if it is appropriate. We can help you with that syntax too, and the template has an example.
     
 2. Focus on the content and on creating useful information for your fellow Magento developers and community members, but do please take a few editorial passes at your work before submitting your topic and look for typos, formatting errors, or sentences that need clarifying. 
 3. Familiarize yourself with the existing documentation; taking a look at what is already there will help you decide where your topic best fits and if there are other topics to which you might want to add cross-references in your topic.
@@ -68,9 +70,12 @@ Often when the Magento DevDocs team works on reviewing the suggested changes, we
 <h2 id="fork">Fork a repository</h2>
 To fork a repository on Github, do the following:
 
-1. Create or log in to your free account on GitHub. <!-- necessarily free?-->
+1. Create or log in to your developemnt environment account on GitHub. 
+
 2. Navigate to the <a href="https://github.com/magento/devdocs" target="_blank">DevDocs repository</a>.
+
 3. Click **Fork** at the top right.
+
 4. Clone the repo into your development environment, create a local branch, and start writing.
 
 <h2 id="pull_request">Create a pull request</h2>
@@ -78,7 +83,8 @@ To fork a repository on Github, do the following:
 To create a pull request do the following: 
 
 1. Create a local branch for your changes and push those changes to the copy of your repository on GitHub. This is the best way to organize and even update your PR.
-2. In your repository, click **Pull requests** on the right, and then click **New pull request**.
+
+2. Navigate to the <a href="https://github.com/magento/devdocs" target="_blank">DevDocs repository</a>, and then click **New pull request**.
 
 3. Be sure to create the PR to the correct branch. Our branches are numbered (2.0, 2.1, and so on). We don't accept PRs to other branches, like gh-pages.
 

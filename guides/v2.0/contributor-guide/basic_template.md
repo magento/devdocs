@@ -9,6 +9,10 @@ menu_order: 1
 github_link: PATH/PATH/FILENAME.md
 ---
 
+<div class="bs-callout bs-callout-tip">
+  <p>Open this template in your markdown editor, or a plain text editor, to see the actual syntax for each of the elements below!</p>
+</div>
+
 <!-- Author in Markdown but HTML also welcome -->
 
 <!-- Start with H2, not H1 -->
@@ -38,9 +42,10 @@ Please submit all images to our <a href="https://github.com/magento/devdocs/tree
 
 Format the link as follows:
 
-<img href="{{ site.baseurl }}common/images/FILENAME.png" alt="Alt text for the image">
+<!--<img href="{{ site.baseurl }}common/images/FILENAME.png" alt="Alt text for the image">-->
 
-<!-- Sample HTML cross-reference; don't worry too much about these, we can add or edit them -->
+<!--Sample HTML cross-reference; don't worry too much about these, we can add or edit them 
+-->
 <!-- {{ site.gdeurl }} is a site variable that is defined in _config.yml; it's the base path to the devdocs guides/v2.0 directory -->
 
 
