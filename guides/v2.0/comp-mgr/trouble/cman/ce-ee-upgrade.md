@@ -1,7 +1,7 @@
 ---
 layout: default
 group: compman
-subgroup: ZZ_Troubleshooting
+subgroup: 50_trouble
 title: Error upgrading from CE to EE
 menu_title: Error upgrading from CE to EE
 menu_node: 

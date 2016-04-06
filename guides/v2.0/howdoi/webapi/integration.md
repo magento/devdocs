@@ -1,10 +1,9 @@
 ---
 layout: default
 group: howdoi
-subgroup: Integration
+subgroup: Web APIs
 title: Create an integration
 menu_title: Create an integration
-menu_node: parent
 menu_order: 1
 github_link: howdoi/webapi/integration.md
 
