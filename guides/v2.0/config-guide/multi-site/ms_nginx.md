@@ -12,7 +12,7 @@ github_link: config-guide/multi-site/ms_nginx.md
 ## Set up multiple websites with nginx {#ms-nginx-over}
 The example in this topic assumes you have set up your nginx configuration as recommended in the `<Magento root>/nginx.conf.sample` provided with the Magento software. 
 
-That is, you should have a small, main configuration file that includes your Magento-specific configuration in the server block. This file is referred to as `main.conf`; the configuration file based on the Magento-provided sample is referred to here as `nginx.magento.conf`.
+That is, you should have a small, main configuration file that includes your Magento-specific configuration in the server block. This file is referred to in this topic as `main.conf`; the configuration file based on the Magento-provided sample is referred to in this topic as `nginx.magento.conf`.
 
 This section discusses how to have two websites at `site1.store.com` and `site2.store.com` that use the codes `site1` and `site2`. Multiple hosts require only one entry point. 
 
@@ -41,6 +41,6 @@ Add the following two lines:
 	fastcgi_param  MAGE_RUN_CODE $MAGE_RUN_MODE;
 	...
 
-Step 3: Reload your nginx configuration
+Step 3: Reload your nginx configuration as a user with `root` privileges:
 
 	service nginx reload
