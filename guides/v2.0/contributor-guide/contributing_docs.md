@@ -76,7 +76,7 @@ To fork a repository on Github, do the following:
 
 3. Click **Fork** at the top right.
 
-4. Clone the repo into your development environment, create a local branch, and start writing.
+4. Clone the repo into your development environment, create a local branch, and then start writing.
 
 <h2 id="pull_request">Create a pull request</h2>
 
