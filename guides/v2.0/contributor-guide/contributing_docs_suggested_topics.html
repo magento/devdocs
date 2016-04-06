@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento Definition of Done</title>
+	<title>Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/contributor-guide/contributing_dod.html">
+	<link rel="canonical" href="//guides/v2.0/contributor-guide/contributing_docs_suggested_topics.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -137,9 +137,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Magento Definition of Done</h1>
+		<h1 class="page-heading"></h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/contributor-guide/contributing_dod.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/contributor-guide/contributing_docs_suggested_topics.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -302,7 +302,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/contributor-guide/contributing_docs_suggested_topics.html"></a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/contributor-guide/contributing_docs_suggested_topics.html"></a></li>
 
 									
 
@@ -310,7 +310,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/contributor-guide/contributing_dod.html">Magento Definition of Done</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/contributor-guide/contributing_dod.html">Magento Definition of Done</a></li>
 
 									
 
@@ -366,154 +366,45 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
-<!-- Referring file: contributing.md owned by core -->
+		<h2 id="suggested">Suggested topics for contribution</h2>
 
-<h2 id="dod">Magento Definition of Done</h2>
+<p>Below is a list of suggested topics; we would welcome contributions around these! (Or anywhere!) Most of the topics below are things we know we need in the DevDocs (but haven’t had a chance to write), some are suggestions form our internal developers or suppport teams, and some are suggestions from you, our community.</p>
 
-<h3>Overview</h3>
+<p>We have a <a href="/guides/v2.0/contributor-guide/basic_template.html" target="_blank">template</a> to make getting started easy. You can get a copy of the <a href="https://github.com/magento/devdocs/blob/2.0/guides/v2.0/contributor-guide/basic_template.md" target="_blank">.md file  on Github</a>. It’s in Markdown, which is a simple markup language.</p>
 
-<p>The “Definition of Done” (DoD) is a collective term for a set of acceptance criteria that is applied to any changes in the product code base. The requirements that result from our DoD are applied by default to all user stories and to each task within this user story.  Internally, the Magento development teams follow the DoD to ensure that all work meets consistent release criteria. We encourage our community contributors to also follow the Magento DoD.</p>
+<p>If you write and contribute a full topic, we’ll put your name (or company’s name) at the top of the page, right under the title, and link it to your blog or website! And you’ll get your face and bio in the <a href="/guides/v2.0/howdoi/howdoi_bios.html" target="_blank">ring of honor</a> as one of our featured contributors.</p>
 
-<p>At a high level, the criteria defined in our “definition of done” revolve around the principle of writing clean code that is reviewed and includes unit tests and solid documentation along with the code.</p>
-
-<p>The following sections provide additional details about each of these criteria: </p>
-
-<h3>Functional Backward Compatibility</h3>
-
-<p>Existing product features and functionality must be retained during any changes to the code. If backward-incompatible functional changes are made, the documentation should explain the justification and provide the “business value”. </p>
-
-<p>For more information, see <a href="/guides/v2.0/architecture/backward-compatibility.html">Magento’s backward compatibility policy</a>.</p>
-
-<h3>Documentation</h3>
-
-<p>All changes, additions, and extensions to the product should be documented by the author. The documentation should provide an overview of the change, and information about standard use cases, audience, and procedural instructions for implementing the feature.</p>
-
-<p>Ideally, the information about the submitted code should be added to the official Magento DevDocs library. Contributors are asked to submit the doc as a Pull Request to the <a href="https://github.com/magento/devdocs" target="_blank">DevDocs Github repo</a>.</p>
-
-<p>When submitting either code or documentation, a brief summary of the work should be included in the commit message. </p>
-
-<p>Additionally, the code itself should contain high-quality comments/descriptions for all classes and methods.</p>
-
-<p>Any backwards-incompatible changes must also be recorded in the accompanying documentation, using the following format:</p>
-
-<table>
-<tr>
-<th><u>Change</u></th>
-<th><u>Was in Magento 1.x</u></th>	
-<th><u>Became in Magento 2.x</u></th>
-</tr>
-<tr>
-<td>description</td>
-<td>example</td>	
-<td>example</td>
-</tr>
-</table>
-
-<h3>Tests</h3>
-
-<h4>Automated Tests</h4>
-
-<p>Code changes must be covered by automated tests according to Classification of Magento Automated Tests.</p>
-
-<p>Before committing code changes, author must ensure successful execution of all tests by running all tests or at least those which might be affected by code changes. Continuous integration enforces execution of all tests and author is accountable for broken builds.</p>
-
-<h5>Functional Tests</h5>
-<p>Must cover new or changed application behavior (functional).
-Added/updated functionality should be covered by a functional autotest(s) related to previous sprint commitment in scope of current sprint.</p>
-
-<h5>Unit Tests</h5>
-
-<p>Code to cover:</p>
+<p>We have a new section called <a href="http://devdocs.magento.com/guides/v2.0/howdoi/bk-how-do-i.html" target="blank">How do I…?</a> which is a great place for contained, procedural topics that explain how to accomplish a very specific task. Or maybe you want to write a conceptual topic, perhaps about a design pattern or a specific use-case. Reference topics are also useful; for example, see <a href="https://github.com/magento/devdocs/issues/365" target="_blank">GitHub Issue #365</a></p>
 
 <ul>
-  <li>new code (except auto-generated code) MUST BE covered by unit tests</li>
-  <li>modified legacy code:</li>
-</ul>
-
-<p>New and modified code MUST BE covered if it changes the system’s behavior, and MAY BE covered if it does not change system’s behavior (class/method renamed, class moved, other minor changes)</p>
-
-<p>In cases where it is impossible to cover, replace with integration tests.</p>
-
-<p>It is not necessary to cover classes created by auto-generation and methods that don’t have any business logic.</p>
-
-<h5>Integration Tests</h5>
-
-<p>Code to cover:</p>
-
-<ul>
-  <li>Must cover code that interacts with operating system environment, database or any other 3rd-party system directly</li>
-  <li>Must cover code in “Model” layer that interacts with database indirectly</li>
   <li>
-    <p>Must be used as alternative of unit tests in legacy code in the following cases:</p>
-
-    <ul>
-      <li>If it is impossible to cover due to high code coupling</li>
-      <li>If code had only minor modification and in order to cover it with unit test it would require refactoring of code, not related to the original modification</li>
-    </ul>
+    <p>Map out the dev to prod flow and identify the friction points with the existing CLI etc commands. Then fix a few!</p>
+  </li>
+  <li>
+    <p>Work out the best way to get CSS generated by Gulp/Grunt into production (not easy with current tooling flow).</p>
+  </li>
+  <li>
+    <p>Provide “real-life” scenarios for using Magento APIs. For example, a topic based on a scenario (“Mary has a store and wants to …”)</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/magento/devdocs/issues/366" target="_blank">GitHub Issue #366: Page and Block Caching</a></p>
+  </li>
+  <li>
+    <p><a href="https://github.com/magento/devdocs/issues/365" target="_blank">GitHub Issue #365: Source, Backend, and Frontend Models</a></p>
+  </li>
+  <li>
+    <p>Add procedural information about using UI Components; document the workflow, coding with UI Components, retrieving data to populate the components, and using the JSON file.</p>
+  </li>
+  <li>
+    <p>Define one or more “business challenges” that your merchants have asked for (i.e. What things do merchants want that are do-able with product, but not immediately obvious how to do?). Even if you only define the challenge, that’s useful; maybe another community member can write up HOW to solve it.</p>
+  </li>
+  <li>
+    <p>Write some deeply technical conceptual topics, perhaps about design patterns or DI or best practices with the framework or migrating from M1 to M2, etc.</p>
   </li>
 </ul>
 
-<h5>Integrity Tests</h5>
+<!--*    Contribute to an online discussion about Best Practices for adding extensions to the Admin panel. -->
 
-<p>Code to cover: </p>
-
-<ul>
-  <li>Must cover any code which introduces convention in scope of a particular implementation, violation of which would lead to runtime error.</li>
-</ul>
-
-<p>Expected code coverage: must cover all files applicable to this convention.</p>
-
-<p>For example:</p>
-
-<p>Scan for all XML-files of certain type and validate them using appropriate XML-schema
-Scan for declarations of templates and invoke “fallback” mechanism to ensure they resolve</p>
-
-<p><strong>Static Code Analysis</strong></p>
-
-<p>Code to cover: </p>
-
-<ul>
-  <li>must cover all new code files (or whatever qualifies as “new”).</li>
-</ul>
-
-<p>Expected code coverage: must cover all applicable files in entire code base.</p>
-
-<p><strong>Legacy Tests</strong></p>
-
-<p>Code to cover: </p>
-
-<ul>
-  <li>Must cover any formal backwards-incompatible changes on code level. For more information, see 
-<a href="/guides/v2.0/architecture/backward-compatibility.html">Magento’s backward compatibility policy</a>.</li>
-</ul>
-
-<p>A failure in legacy test must provide comprehensive explanation of an alternative, if there is any.</p>
-
-<p>Expected code coverage:</p>
-
-<ul>
-  <li>Must cover majority of occurrences of the backwards-incompatible change</li>
-  <li>Should cover 100% of occurrences</li>
-</ul>
-
-<p>Not all changes can be covered. For example, it is possible to scan a file for literals, but it is unfeasible to analyze string concatenation or any other dynamic way of building variable.</p>
-
-<h4>Functional Manual Tests</h4>
-<p>Must cover new or changed application behavior (functional).
-Added/updated functionality should be covered by a functional Zephyr test(s) related to current sprint commitment.</p>
-
-<h3>Review</h3>
-<p>A task, when complete by the author, should be reviewed by another Magento community member through a process of formal code review. The reviewer should check whether the task meets the original acceptance criteria and verify that there are no code defects and that other points of this definition of done are met:</p>
-
-<ul>
-  <li>There are no unauthorized backward-incompatible functional changes </li>
-  <li>All changes are documented properly </li>
-  <li>All changes are covered with automated tests</li>
-  <li>Determine if code changes caused any failure in continuous integration builds.</li>
-</ul>
-
-<p>The work cannot be considered as complete unless all the criteria are verified.</p>
 
 
 		</div>
