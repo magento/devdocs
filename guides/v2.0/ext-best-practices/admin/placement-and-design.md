@@ -83,7 +83,7 @@ There is a dedicated section designed for such exclusive extensions called “Ex
 ![Feature Placement]({{site.baseurl}}common/images/ext-best-practices/feature-placement.png){:height="190px" width="350px"}
 
 <div class="bs-callout bs-callout-warning" id="info">
-  <p>The name and icon for this section is still TBD. [Implementation of this feature is scheduled to happen upon the release of 2.1.1.]</p>
+  <p>The name and icon for this section is still TBD.</p>
 </div>
 
 **Style**
