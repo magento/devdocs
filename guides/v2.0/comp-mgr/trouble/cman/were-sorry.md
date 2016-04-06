@@ -1,7 +1,7 @@
 ---
 layout: default
 group: compman
-subgroup: ZZ_Troubleshooting
+subgroup: 50_trouble
 title: "We're sorry, we can't take that action right now"
 menu_title: "We're sorry, we can't take that action right now"
 menu_node: 

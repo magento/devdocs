@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: CM_Varnish
+subgroup: 09_Varnish
 title: Configure Varnish and your web server
 menu_title: Configure Varnish and your web server
 menu_order: 10

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: Redis
+subgroup: 09_Redis
 title: Configure Redis
 menu_title: Configure Redis
 menu_order: 1

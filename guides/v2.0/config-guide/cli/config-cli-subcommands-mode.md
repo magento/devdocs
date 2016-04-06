@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide 
-subgroup: CLI
+subgroup: 04_CLI
 title: Set the Magento mode
 menu_title: Set the Magento mode
 menu_node: 
