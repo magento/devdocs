@@ -140,7 +140,7 @@ Using Composer specifications ensures that vendors of different packages are dis
 
 #### Magento Marketplace Extensions
 {:.no_toc}
-If you are planning to submit your extension to the Magento Marketplace, you *must* use the unique Vendor Name created or assigned to you when you created your marketplace account. The vendor-name is the same as the Vendor Name in your profile. The Vendor Name is what goes in your `composer.json` file as the `vendor-name` part of the extension name.
+If you are planning to submit your extension to the Magento Marketplace, you *must* use the unique Vendor Name created or assigned to you when you created your marketplace account. The Vendor Name specified in your profile is what goes in your `composer.json` file as the `vendor-name` part of the extension name.
 
 When you submit your extension to the Magento Marketplace, the vendor-name will be extracted and compared to your assigned Vendor Name to make sure it matches.
 
