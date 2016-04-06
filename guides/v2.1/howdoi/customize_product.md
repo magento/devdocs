@@ -45,7 +45,7 @@ Declarative method is preferable for customizations like introducing new fields,
 
 To customize the product creation form, take the following steps: 
 
-1. In your custom module, add an empty `product_form.xml` in the `<your_module_dir>/view/adminhtml/ui_component/`.
+1. In your custom module, add an empty `product_form.xml` in the `<your_module_dir>/view/adminhtml/ui_component/` directory.
 
 All you need to do - is create file of UI form at path Vendor/ModuleName/view/adminhtml/ui_component/product_form.xml.
 All that you declare in own file will be merged with one that declared in Catalog module (Magento/Catalog/view/adminhtml/ui_component/product_form.xml).
