@@ -140,11 +140,11 @@ Using Composer specifications ensures that vendors of different packages are dis
 
 #### Magento Marketplace Extensions
 {:.no_toc}
-If you are planning to submit your extension to the Magento Marketplace, you *must* use the unique vendor ID created or assigned to you when you created your marketplace account. The vendor ID is your "Company Name" in your profile. This vendor ID goes in your `composer.json` file as the `vendor-name` part of the extension name.
+If you are planning to submit your extension to the Magento Marketplace, you *must* use the unique Vendor Name created or assigned to you when you created your marketplace account. The vendor-name is the same as the Vendor Name in your profile. The Vendor Name is what goes in your `composer.json` file as the `vendor-name` part of the extension name.
 
-When you submit your extension to the Magento Marketplace, this information will be extracted and compared to your assigned vendor ID to make sure it matches.
+When you submit your extension to the Magento Marketplace, the vendor-name will be extracted and compared to your assigned Vendor Name to make sure it matches.
 
-Please see the [Marketplace Documentation](http://docs.magento.com/marketplace/user_guide/account/account-update.html){:target="_blank"} for more information about your unique vendor ID.
+Please see the [Marketplace Documentation](http://docs.magento.com/marketplace/user_guide/account/profile-company.html){:target="_blank"} for more information about your unique vendor name.
 
 ### package-name
 The package name is up to the vendor (as long as it is lowercase). If this name is meant to consist of multiple words, the Composer specification recommends separating them with dash. The convention for Magento package names is this:
