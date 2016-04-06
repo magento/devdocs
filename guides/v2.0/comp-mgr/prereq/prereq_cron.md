@@ -1,7 +1,7 @@
 ---
 layout: default
 group: compman
-subgroup: B_prereq
+subgroup: 02_prereq
 title: Set up cron for Component Manager and System Upgrade
 menu_title: Set up cron for Component Manager and System Upgrade
 menu_order: 3

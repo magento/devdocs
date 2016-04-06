@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: compman
-subgroup: U_UseUpgrade
+subgroup: 15_UseUpgrade
 title: Run System Upgrade
 menu_title: Run System Upgrade
 menu_node: parent
@@ -11,6 +11,15 @@ github_link: comp-mgr/upgrader/upgrade-start.md
 
 <h2 id="compman-overview">Overview of System Upgrade</h2>
 This section discusses how to start System Upgrade, which upgrades the version of Magento core components as well as any other installed components.
+
+You can upgrade in any of the following ways:
+
+*	Using the System Upgrade utility, a wizard that walks you through the upgrade step by step; continue with this topic.
+
+	Use this method if you don't have access to the Magento server's file system or if you're a non-technical user.
+*	Using the [command line]({{ site.gdeurl }}comp-mgr/cli/cli-upgrade.html).
+
+	This upgrade method is more advanced and it requires access to the Magento server's file system.	
 
 <div class="bs-callout bs-callout-info" id="info">
 	<p><em>System upgrade</em> refers to updating the Magento 2.x core components and other installed components. To migrate from Magento 1.x to Magento 2, see the <a href="{{ site.gdeurl }}migration/bk-migration-guide.html">Migration Guide</a>.</p>
@@ -24,12 +33,11 @@ This section discusses how to start System Upgrade, which upgrades the version o
 <h2 id="compman-prereq">Prerequisites</h2>
 Before continuing, complete all tasks discussed in <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.
 
-
 <h2 id="compman-access">Start System Upgrade from the Magento Admin</h2>
 To run System Upgrade:
 
 1.	Log in to the Magento Admin as an administrator.
-2.	Click **System** > **Web Setup Wizard**.
+2.	Click **System** > Tools > **Web Setup Wizard**.
 	The following page displays.<br><br>
 	<img src="{{ site.baseurl }}common/images/cman_upgr_initial.png" width="650px" alt="Specify whether to manage components or upgrade Magento">
 3.	Click **System Upgrade**.
