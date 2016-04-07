@@ -24,6 +24,14 @@ The table below is data from a recent poll that shows the distribution of the am
 
 This guide provides best practices, guidelines, and tips for creating Magento components, or extensions. Unlike standards, which are processes that have to be followed regardless of the situation, best practices are optional methods or techniques that often yield the best results. We encourage you to follow our best practices when developing code for your Magento components.
 
+###Sections
+
+{% assign subgroup = site.articles | where:"group","ext-best-practices" | where: "menu_node","parent" | sort: "menu_order" %}
+
+{% for node in subgroup %}
+*  [{{ node.menu_title }}]({{site.gdeurl}}{{ node.github_link | replace: ".md",".html" }})
+{% endfor %}
+
 ### Related Content
 
 * [Admin Design Pattern Library]({{site.gdeurl}}pattern-library/bk-pattern.html) - An in depth guide to the design patterns used in the Admin.
