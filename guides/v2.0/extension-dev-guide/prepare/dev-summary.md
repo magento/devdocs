@@ -5,9 +5,9 @@ subgroup: 02_Prepare
 title: Roadmap for developing and packaging components
 menu_title: Roadmap for developing and packaging components
 menu_order: 50
-menu_node: 
+menu_node:
 github_link: extension-dev-guide/prepare/dev-summary.md
-redirect_from: 
+redirect_from:
   - /guides/v2.0/mktpl-quickstart/dev-intro.html
   - /guides/v2.0/mktpl-quickstart/dev-summary.html
   - /guides/v2.0/extension-dev-guide/dev-summary.html
@@ -26,9 +26,3 @@ To develop your component, use the following steps:
 4.	Upload the components to the Magento Marketplace.
 
 	See the <a href="http://docs.magento.com/marketplace/user_guide/getting-started.html" target="_blank">Magento Marketplace User Guide</a> for details.
-
-<div class="bs-callout bs-callout-warning">
-    <p>The Magento Marketplace is not generally available at this time. </p>
-</div>
-
-
