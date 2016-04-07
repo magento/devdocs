@@ -1080,11 +1080,11 @@ The following data types are available:
 
 <h3 id="replace_variation">Replace a variation</h3>
 
-<p>You can replace one variation with another by using a <code>replace</code> attribute of the <code>variation</code> node:</p>
+<p>You can replace one variation with another by using a <code>replace</code> attribute of the <code>variation</code> node. A <code>replace</code> attribute contains variation that must be replaced by a variation from a <code>name</code> attribute. </p>
 
 <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;variation</span> <span class="na">name=</span><span class="s">&quot;CreateSuperNewCustomerBackendEntityTestVariation1&quot;</span> <span class="na">replace=</span><span class="s">&quot;CreateCustomerBackendEntityTestVariation1&quot;</span> <span class="na">summary=</span><span class="s">&quot;Variation that replaces default CreateCustomerBackendEntityTestVariation1&quot;</span><span class="nt">&gt;</span></code></pre></div>
 
-<p>After a merge of a data set with the variation that is mentioned, a test will use <code>CreateSuperNewCustomerBackendEntityTestVariation1</code> instead of <code>CreateSuperNewCustomerBackendEntityTestVariation1</code>.</p>
+<p>After a merge of a data set with the variation that is mentioned, a test will use <code>CreateSuperNewCustomerBackendEntityTestVariation1</code> instead of <code>CreateCustomerBackendEntityTestVariation1</code>.</p>
 
 <!-- LINK DEFINITIONS -->
 
