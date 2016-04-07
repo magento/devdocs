@@ -2,7 +2,7 @@
 layout: default
 group: mtf-guide
 subgroup: 20_Installation
-title: Installation of the Magento Testing Framework Entities
+title: Installation of the Functional Testing Framework Entities
 menu_title: INSTALLATION
 menu_node: parent
 github_link: mtf/mtf_installation.md
