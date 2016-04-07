@@ -10,7 +10,7 @@ github_link: comp-mgr/marketplace/marketplace.md
 ---
 
 ## Magento Marketplace example
-This topic provides a simple example of getting free extensions for Magento Community Edition (CE). For more detailed information, see TBD.
+This topic provides a simple example of getting free extensions for Magento Community Edition (CE). 
 
 ### Log in to Magento Marketplace
 To get started, log in to [Magento Marketplace](https://marketplace.magento.com){:target="_blank"} using your `magento.com` credentials. 
