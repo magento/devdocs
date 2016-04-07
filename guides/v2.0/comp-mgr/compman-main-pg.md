@@ -159,10 +159,7 @@ To choose whether to upgrade or uninstall components:
 		<td><p>Magento Marketplace Account section</p></td>
 		<td><p>Shows when you last synchronized with your Magento Marketplace account. To get the latest information about available component versions, you must synchronize with Connect.</p>
 			<p>Last Sync shows the last time you synchronized and Sync Status shows whether or not you're currently synchronized.</p>
-			<div class="bs-callout bs-callout-info" id="info">
-  				<p>Magento Marketplace isn't available yet. For now, Magento Connect takes its place.</p>
- 			</div>
- 			<p>New Updates and New Purchases displays the number of each to install; click <strong>Install</strong> to select updates or purchases to install and see <a href="#compman-access-new">Install new purchases</a>.</p>
+			<p>New Updates and New Purchases displays the number of each to install; click <strong>Install</strong> to select updates or purchases to install and see <a href="#compman-access-new">Install new purchases</a>.</p>
 		</td>
 	</tr>
 	<tr>
