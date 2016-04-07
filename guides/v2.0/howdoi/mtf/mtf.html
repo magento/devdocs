@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento test development</title>
+	<title>Magento Testing Guide</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -81,8 +81,8 @@
    			   <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a>
                <div class="divider"></div></li>
                <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
-            
-               <li class="leaf"><a href="/guides/v2.0/mtf/mtf_introduction.html">Magento Testing Framework Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/howdoi/mtf/mtf.html">Magento Testing Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
                <div class="divider"></div></li>
                <li class="leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
                <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
@@ -137,7 +137,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Magento test development</h1>
+		<h1 class="page-heading">Magento Testing Guide</h1>
 			
 			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/howdoi/mtf/mtf.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -151,7 +151,6 @@
 <aside class="sidebar">
 	<a href="#" class="toc-toggler">Table of Contents</a>
 	<div class="sidebar-wrapper">
-
 
 
 
@@ -428,7 +427,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/howdoi/mtf/mtf.html">Magento test development</a></li>
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/howdoi/mtf/mtf.html">Magento Testing Guide</a></li>
 									
 								
 
@@ -765,6 +764,10 @@
 
 			
 
+				
+
+			
+
 		</ul>
 
 	</div>
@@ -775,37 +778,57 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<h2 id="magento-test-development">Magento test development</h2>
+		<h2 id="magento-testing-guide">Magento Testing Guide</h2>
+
+<p>When talking about testing in Magento 2, we have to distinguish between different test types.</p>
 
 <ul>
-  <li><a href="/guides/v2.0/mtf/mtf_installation.html">Install the MTF</a></li>
-  <li><a href="/guides/v2.0/mtf/mtf_quickstart.html">MTF quick start</a></li>
   <li>
-    <p>Entities</p>
+    <p><strong>Functional</strong> and <strong>API Functional</strong><br />
+Functional tests are mainly used for system tests at a very high level by remote controlling a browser. Magento is treated as a black box, and tests happen from a user perspective.  </p>
 
-    <ul>
-      <li><a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_overview">Fixture</a></li>
-      <li><a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture-repo.html">Fixture repository</a></li>
-      <li><a href="/guides/v2.0/mtf/mtf_entities/mtf_handler.html">Handler</a></li>
-      <li><a href="/guides/v2.0/mtf/mtf_entities/mtf_block.html">Block</a></li>
-    </ul>
+    <p>For more information, see the <a href="/guides/v2.0/mtf/mtf_introduction.html">Magento Testing Framework Guide</a>.</p>
+  </li>
+  <li><strong>Integration</strong><br />
+Integration tests run Magento PHP code in varying degrees of isolation. They tend to be a lot more low-level then functional tests. Because they do not utilize a browser to execute the tests, they can be a lot more granular in what they test. They also tend to run a lot quicker then functional tests.</li>
+  <li>
+    <p><strong>JavaScript</strong><br />
+Much of the functionality in Magento 2 is provided with the help of sophisticated JavaScript. JavaScript tests ensure the frontend portion of Magento functions as expected.  </p>
+
+    <p>For more information, please see the <a href="/guides/v2.0/extension-dev-guide/test/test_js-unit.html">Extension Developer Guide on JavaScript Tests</a>.</p>
+  </li>
+  <li>
+    <p><strong>Static</strong><br />
+Static code analysis checks that PHP code follows the Magento 2 coding standards and best practices. They usually are executed during continuous integration using the <code>bin/magento</code> tool. </p>
+
+    <p>Please see the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-test.html"><code>magento dev:tests:run</code></a> documentation for more information, using the test type <code>static</code>. </p>
+  </li>
+  <li>
+    <p><strong>Unit</strong><br />
+Unit tests are used to check a single unit of PHP code in isolation. They are usually written during development using <a href="https://en.wikipedia.org/wiki/Test-driven_development" target="_blank">test-driven development</a> (TDD).  </p>
+
+    <p>Because they do not require the full Magento application stack to be initialized, they run an order of magnitude faster then integration tests.  </p>
+
+    <p>For more information, see <a href="/guides/v2.0/test/unit/unit_test_execution.html">Running Unit Tests</a>.</p>
   </li>
 </ul>
 
-<p>Common tasks:</p>
+<p>The <code>bin/magento</code> tool provides a common entry point to execute any of the tests, which can be useful for continuous integration. Please see the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-test.html">System Administrators Guide on Running Tests</a> for more information. </p>
 
-<ul>
-  <li><a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_environmemt.html#mtf_quickstart_env_generator">Run the MTF generator </a></li>
-  <li><a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_runtest.html#mtf_quickstart_testrun_all">Run all functional tests </a></li>
-  <li><a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_runtest.html#mtf_quickstart_testrun_one">Run one functional test </a></li>
-  <li><a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_merge">Merge fixtures in the MTF </a></li>
-  <li><a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_extend">Extend fixture in the MTF </a></li>
-  <li><a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture-repo.html#mtf_repository_merge">Merge repositories in the MTF </a></li>
-  <li><a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture-repo.html#mtf_repository_credent_iso">Use credentials and placeholders in the MTF repositories </a>  </li>
-  <li><a href="/guides/v2.0/mtf/mtf_entities/mtf_handler.html#mtf_handler_howto-create-curl">Create cURL handler in the MTF </a></li>
-  <li><a href="/guides/v2.0/mtf/mtf_entities/mtf_handler.html#mtf_handler_howto-create-ui">Create a UI Handler in the MTF </a></li>
-  <li><a href="/guides/v2.0/mtf/mtf_entities/mtf_handler.html#mtf_handler_howto-create-webapi">Create a WebAPI Handler </a></li>
-</ul>
+<h4 id="where-to-find-the-tests-in-the-file-system">Where to find the tests in the file system</h4>
+
+<p>Each of the test types listed above corresponds to a subdirectory in <code>&lt;magento2 root dir&gt;/dev/tests</code>.</p>
+
+<pre><code>dev/tests  
+├── api-functional  
+├── functional  
+├── integration  
+├── js  
+├── static  
+└── unit  
+</code></pre>
+
+<p>Each one of these test types has different requirements that must be satisfied before they can be executed.  </p>
 
 
 		</div>

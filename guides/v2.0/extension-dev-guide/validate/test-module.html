@@ -81,8 +81,8 @@
    			   <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a>
                <div class="divider"></div></li>
                <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
-            
-               <li class="leaf"><a href="/guides/v2.0/mtf/mtf_introduction.html">Magento Testing Framework Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/howdoi/mtf/mtf.html">Magento Testing Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
                <div class="divider"></div></li>
                <li class="leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
                <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
@@ -153,8 +153,7 @@
 	<div class="sidebar-wrapper">
 
 
-<h4>PHP developer guide</h4>
-
+<h4>PHP Developer Guide</h4>
 
 
 
@@ -771,6 +770,10 @@
 
 			
 
+				
+
+			
+
 		</ul>
 
 	</div>
@@ -783,21 +786,23 @@
 
 		<h2 id="test-your-component">Test your component</h2>
 
-<h4 id="contents">Contents</h4>
-
-<ul>
-  <li><a href="#test-phpunit">PHPUnit</a></li>
+<ul id="markdown-toc">
+  <li><a href="#test-your-component">Test your component</a></li>
+  <li><a href="#test-unit">Unit and Integration Tests</a></li>
   <li><a href="#test-functional">Functional testing</a></li>
+  <li><a href="#test-comm">Test using Community Edition</a></li>
   <li><a href="#test-install">Test installing your component</a></li>
+  <li><a href="#more-information">More information</a></li>
 </ul>
 
-<h2 id="test-phpunit">PHPUnit</h2>
+<h2 id="test-unit">Unit and Integration Tests</h2>
 
-<p>PHPUnit is a PHP testing framework ideal for Magento programmers. Test your component with <a href="https://phpunit.de/" target="_blank">PHPUnit</a>, available on GitHub at <a href="https://github.com/sebastianbergmann/phpunit" target="_blank">https://github.com/sebastianbergmann/phpunit</a>.</p>
+<p>Run the PHPUnit based Magento unit and integration tests.
+For more information see the <a href="/guides/v2.0/howdoi/mtf/mtf.html">Magento Testing Overview</a></p>
 
 <h2 id="test-functional">Functional testing</h2>
-<p>For further testing with Magento testing frameworks, see 
-<a href="/guides/v2.0/mtf/mtf_introduction.html">Magento Testing Framework</a>.</p>
+<p>For further testing with the Magento functional testing frameworks, see
+<a href="/guides/v2.0/mtf/mtf_introduction.html">Functional Testing Framework</a>.</p>
 
 <h2 id="test-comm">Test using Community Edition</h2>
 <p>Test your component by deploying Magento Community Edition and adding the component to the project’s <code>composer.json</code>. </p>
@@ -833,8 +838,6 @@
 <p>For more information on testing in PHP and validating Magento components, see the following:</p>
 
 <ul>
-  <li><a href="http://php.net/manual/en/book.reflection.php" target="_blank">PHP Reflection</a></li>
-  <li><a href="http://code.tutsplus.com/tutorials/reflection-in-php--net-31408" target="_blank">PHP Reflection Tutorial</a></li>
   <li><a href="http://www.gorillagroup.com/trending/insight/validating-magento-extensions-phpunit/" target="_blank">Validating Magento Extensions</a></li>
 </ul>
 

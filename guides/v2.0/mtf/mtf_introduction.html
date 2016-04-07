@@ -81,8 +81,8 @@
    			   <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a>
                <div class="divider"></div></li>
                <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
-            
-               <li class="leaf"><a href="/guides/v2.0/mtf/mtf_introduction.html">Magento Testing Framework Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/howdoi/mtf/mtf.html">Magento Testing Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
                <div class="divider"></div></li>
                <li class="leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
                <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
@@ -153,8 +153,7 @@
 	<div class="sidebar-wrapper">
 
 
-<h4>Testing framework guide</h4>
-
+<h4>Testing Framework Guide</h4>
 
 
 
@@ -641,6 +640,37 @@
 
 					
 
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/mtf/mtf_overview.html">Functional testing overview</a></li>
+									
+								
+
+									
+
+
+								
+								
+								
+							
+							
+						
+
+					
+
+
+				
+
+			
 
 				
 
@@ -681,13 +711,20 @@
 		<div class="content-wrap">
 
 		<h2>Preface</h2>
-<p>This guide provides instructions on installing and configuring the Magento Testing Framework (MTF). With the Magento Testing Framework you can create and run functional tests to make it easier to perform basic acceptance testing, smoke testing, regression testing, etc.  MTF does not contain tests. All functional tests are within Magento code in <code>&lt;magento2&gt;/dev/tests/functional/</code>. This MTF guide is also applicable to the Magento 1 platform.</p>
+
+<p>This guide provides instructions on installing and configuring the Magento Testing Framework (MTF). Using the MTF, you can create and run <em>functional</em> tests to make it easier to perform basic acceptance testing, smoke testing, regression testing, and so on. This MTF guide is also applicable to the Magento 1 platform.</p>
 
 <p>MTF is an open source cross-platform solution (that is, does not depend on a specific operating system).</p>
 
 <p>MTF enables you to quickly develop functional tests for the Magento application. These tests can be performed at any time.</p>
 
 <p>You can run a single test independently, many tests together (that is, a test suite), or you can run all available tests.</p>
+
+<p>MTF does not contain tests. All functional tests are located in <code>&lt;magento2 root dir&gt;/dev/tests/functional/</code>. </p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>The MTF performs functional testing only. For information about other types of tests, see the <a href="/guides/v2.0/howdoi/mtf/mtf.html">Magento Testing Guide</a>.</p>
+</div>
 
 <h3 id="mtf_intro_extratools">What tools should I use to run tests with MTF?</h3>
 
@@ -771,7 +808,10 @@ can be tested using customized tests, created with MTF.</p>
 
 <ul>
   <li>
-    <p><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-test.html">How to run tests from command line.</a></p>
+    <p><a href="/guides/v2.0/test/unit/unit_test_execution.html">How to run unit tests during development on the command line or PHPStorm.</a></p>
+  </li>
+  <li>
+    <p><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-test.html">How to run unit and integration tests using <code>bin/magento</code> in continuous integration.</a></p>
   </li>
   <li>
     <p><a href="/guides/v2.0/extension-dev-guide/test/test_js-unit.html">More information about JavaScript unit tests.</a></p>

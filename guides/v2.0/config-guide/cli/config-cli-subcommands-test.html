@@ -81,8 +81,8 @@
    			   <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a>
                <div class="divider"></div></li>
                <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
-            
-               <li class="leaf"><a href="/guides/v2.0/mtf/mtf_introduction.html">Magento Testing Framework Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/howdoi/mtf/mtf.html">Magento Testing Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
                <div class="divider"></div></li>
                <li class="leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
                <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
@@ -153,8 +153,7 @@
 	<div class="sidebar-wrapper">
 
 
-<h4>Configuration guide</h4>
-
+<h4>Configuration Guide</h4>
 
 
 
@@ -1064,6 +1063,10 @@
 
 			
 
+				
+
+			
+
 		</ul>
 
 	</div>
@@ -1077,13 +1080,13 @@
 		<h4 id="contents">Contents</h4>
 
 <ul>
-  <li><a href="#config-cli-subcommands-tests-overview">Overview of unit tests</a></li>
+  <li><a href="#config-cli-subcommands-tests-overview">Overview of tests</a></li>
   <li><a href="#config-cli-before">First steps</a></li>
-  <li><a href="#config-cli-subcommands-tests-run">Run unit tests</a></li>
+  <li><a href="#config-cli-subcommands-tests-run">Run tests</a></li>
 </ul>
 
-<h2 id="config-cli-subcommands-tests-overview">Overview of unit tests</h2>
-<p>This command runs a set of unit tests defined in the Magento 2 code base. You can either run all tests or tests you select.</p>
+<h2 id="config-cli-subcommands-tests-overview">Overview of tests</h2>
+<p>This command runs a set of tests defined in the Magento 2 code base. You can either run all tests or tests you select.</p>
 
 <p>Whenever a not supported type is specified, the program terminates and lists all available types.</p>
 
@@ -1144,15 +1147,20 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 
   <p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
-  <h2 id="config-cli-subcommands-tests-run">Run unit tests</h2>
+  <h2 id="config-cli-subcommands-tests-run">Running tests</h2>
   <p>Command usage:</p>
 
   <pre><code>magento dev:tests:run [--all] &lt;test&gt;
 </code></pre>
 
-  <p>To list the available tests, enter</p>
+  <p>To list the available test types, enter</p>
 
   <pre><code>magento dev:tests:run --help
+</code></pre>
+
+  <p>This gives you a list like</p>
+
+  <pre><code>all, unit, integration, integration-all, static, static-all, integrity, legacy
 </code></pre>
 
   <p>For example, to run integration tests, enter</p>
