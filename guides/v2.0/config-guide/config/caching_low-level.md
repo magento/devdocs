@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: Caching
+subgroup: 08_Caching
 title: Low-level cache options
 menu_title: Low-level cache options
 menu_order: 5

@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: compman
-subgroup: C_UseCompMan
+subgroup: 05_UseCompMan
 title: Step 2. Back up the file system and database
 menu_title: Step 2. Back up the file system and database
 menu_node: 

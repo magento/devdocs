@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: Caching_mem
+subgroup: 10_mem
 title: Install, configure, verify memcached on Ubuntu
 menu_title: Install, configure, verify memcached on Ubuntu
 menu_order: 2

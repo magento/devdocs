@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide 
-subgroup: CLI
+subgroup: 04_CLI
 title: Get started with command-line configuration
 menu_title: Get started with command-line configuration
 menu_node: 

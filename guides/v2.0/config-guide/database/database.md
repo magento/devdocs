@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: Caching
+subgroup: 08_Caching
 title: Database caching
 menu_title: Database caching
 menu_order: 10
