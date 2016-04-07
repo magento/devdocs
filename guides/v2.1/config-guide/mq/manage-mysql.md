@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: RabbitMQ
+subgroup: 18_RabbitMQ
 title: Manage message queues with MySQL
 menu_title: MySQL message queues
 menu_order: 3

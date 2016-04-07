@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: A_Introduction
+subgroup: 01_Introduction
 title: Configuration Guide
 menu_title: Introduction
 menu_order: 1

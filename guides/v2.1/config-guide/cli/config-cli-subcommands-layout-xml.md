@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide 
-subgroup: CLI
+subgroup: 04_CLI
 title: Convert layout XML files
 menu_title: Convert layout XML files
 menu_node: 

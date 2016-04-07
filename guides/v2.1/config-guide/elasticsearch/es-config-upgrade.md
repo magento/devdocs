@@ -1,7 +1,7 @@
 ---
 layout: default
 group: 
-subgroup: Elastic
+subgroup: 14_Elastic
 title: Upgrade Elasticsearch major version
 menu_title: Upgrade Elasticsearch major version
 menu_order: 100

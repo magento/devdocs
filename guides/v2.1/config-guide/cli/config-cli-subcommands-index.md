@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide 
-subgroup: CLI
+subgroup: 04_CLI
 title: Manage the indexers
 menu_title: Manage the indexers
 menu_node: 

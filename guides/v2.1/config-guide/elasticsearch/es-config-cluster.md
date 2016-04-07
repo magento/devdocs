@@ -1,7 +1,7 @@
 ---
 layout: default
 group: 
-subgroup: Elastic
+subgroup: 14_Elastic
 title: Manage your Elasticsearch cluster
 menu_title: Manage your Elasticsearch cluster
 menu_order: 15

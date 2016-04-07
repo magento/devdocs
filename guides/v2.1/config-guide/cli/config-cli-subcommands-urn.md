@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide 
-subgroup: CLI
+subgroup: 04_CLI
 title: URN highlighter
 menu_title: URN highlighter
 menu_node: 

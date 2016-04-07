@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: Bootstrap
+subgroup: 03_Bootstrap
 title: Set the value of bootstrap parameters
 menu_title: Set the value of bootstrap parameters
 menu_order: 2

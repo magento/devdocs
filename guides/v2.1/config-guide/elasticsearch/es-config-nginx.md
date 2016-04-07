@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: Elastic
+subgroup: 14_Elastic
 title: Configure nginx and Elasticsearch
 menu_title: Configure nginx and Elasticsearch
 menu_order: 5

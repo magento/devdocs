@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: Solr
+subgroup: 15_Solr
 title: Install and configure Solr
 menu_title: Install and configure Solr (Enterprise Edition only)
 menu_order: 1
