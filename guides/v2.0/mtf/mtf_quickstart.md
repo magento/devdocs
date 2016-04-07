@@ -2,7 +2,7 @@
 layout: default
 group: mtf-guide
 subgroup: 30_Quickstart
-title: Quick start with the Functional Testing Framework
+title: Quick start with the Magento Testing Framework
 menu_title: QUICK START
 menu_node: parent
 github_link: mtf/mtf_quickstart.md

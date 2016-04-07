@@ -174,3 +174,7 @@ You can override the plug-ins defined in the global scope by changing `di.xml` f
 
 *  <a href="{{ site.gdeurl }}extension-dev-guide/depend-inj.html#dep-inj-compile">Definition compiler tool</a>
 *  <a href="{{ site.gdeurl }}extension-dev-guide/depend-inj.html">Dependency injection</a>
+
+#### Related information
+* [The Plugin Integration Test Kata](http://vinaikopp.com/2016/03/07/04_the_plugin_integration_test_kata){:target="_blank"} by Magento contributor [Vinai Kopp](http://vinaikopp.com/blog/list)
+* [The Around Interceptor Kata](http://vinaikopp.com/2016/02/22/03_the_around_interceptor_kata){:target="_blank"} by Magento contributor [Vinai Kopp](http://vinaikopp.com/blog/list)

@@ -10,7 +10,6 @@ github_link: config-guide/cli/config-cli-subcommands-test.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-test.html
 ---
 
-
 #### Contents
 
 *	<a href="#config-cli-subcommands-tests-overview">Overview of tests</a>
