@@ -67,7 +67,7 @@ Please re-run Magento compile command
 [2016-04-07 14:38:15 UTC] Clearing cache...
 [2016-04-07 14:38:15 UTC] Cleaning static view files
 [2016-04-07 14:38:15 UTC] Job "setup:static:regenerate []" has been successfully completed
-
+{% endhighlight %}
 
 When the installation is complete, a page similar to the following displays:
 
