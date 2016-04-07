@@ -2,14 +2,14 @@
 layout: default
 group: howdoi
 subgroup: Magento test development
-title: Magento test development
-menu_title: Magento test development
+title: Magento Testing Guide
+menu_title: Magento Testing Guide
 menu_node: parent
 menu_order: 1
 github_link: howdoi/mtf/mtf.md
 ---
 
-## Magento test development
+## Magento Testing Guide
 
 When talking about testing in Magento 2, we have to distinguish between different test types.
 

@@ -2,7 +2,7 @@
 layout: default
 group: mtf-guide
 subgroup: 60_Update
-title: Update the Functional Testing Framework
+title: Update the Magento Testing Framework
 menu_title: UPDATE
 menu_node: parent
 github_link: mtf/mtf_update.md

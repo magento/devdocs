@@ -2,7 +2,7 @@
 layout: default
 group: mtf-guide
 subgroup: 70_Changelog
-title: Changelog of the Functional Testing Framework
+title: Changelog of the Magento Testing Framework
 menu_title: CHANGELOG
 menu_node: parent
 github_link: mtf/mtf_changelog.md

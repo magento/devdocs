@@ -2,7 +2,7 @@
 layout: default
 group: mtf-guide
 subgroup: 50_Entities
-title: Functional Testing Framework Entities
+title: Magento Testing Framework Entities
 menu_title: ENTITIES
 menu_node: parent
 github_link: mtf/mtf_entities.md
