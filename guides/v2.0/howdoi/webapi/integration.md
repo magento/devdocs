@@ -37,10 +37,8 @@ To develop a module, you must:
 
     <pre>
     cd &lt;magento_base_dir>
-    mkdir vendor/&lt;vendor_name>/module-&lt;module_name>
-    cd vendor/&lt;vendor_name>/module-&lt;module_name>
-    mkdir etc
-    mkdir integration
+    mkdir -p vendor/&lt;vendor_name>/module-&lt;module_name>/etc
+    mkdir -p vendor/&lt;vendor_name>/module-&lt;module_name>/integration
    </pre>
    For more detailed information, see [Create the module file structure](../../extension-dev-guide/module-file-structure.html).
 
