@@ -19,3 +19,6 @@ Before running the Component Manager or System Upgrade, complete the following t
 <div class="bs-callout bs-callout-warning">
     <p>If you're upgrading to Magento CE or EE version 2.0.4 from an earlier version, you must perform manual tasks before you start the upgrade. For more information, see <a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html##compman-upgrade-caveat">Important information about upgrading</a>.</p>
 </div>
+
+## Checklist
+{% include install/update/checklist.md %}

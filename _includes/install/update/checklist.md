@@ -4,10 +4,10 @@ Before you continue, to avoid errors during your installation or update, make su
 
 *	You set up a [Magento file system owner](#magento-owner-group) and shared that owner's group with the web server user group
 *	Your [cron jobs](#magento-cron) are set up and running
-*	[File system permissions and ownership](#perms) are set properly
+*	[File system permissions](#perms) are set properly
 
 <div class="bs-callout bs-callout-warning">
-    <p>Do not continue your new installation or update without performing these checks. Failure to do so could result in errors.</p>
+    <p>Do not continue your update without performing these checks. Failure to do so could result in errors.</p>
 </div>
 
 ### Magento file system owner and group {#magento-owner-group}
@@ -60,7 +60,7 @@ Results similar to the following should display:
 
 For details, see [Set up cron]({{ site.gdeurl }}install-gde/install/post-install-config.html#post-install-cron).
 
-### File system permissions and ownership {#perms}
+### File system permissions {#perms}
 For security reasons, Magento requires certain permissions on the file system. Permissions are different from [*ownership*](#magento-owner-group). Ownership determines *who* can perform actions on the file system; permissions determine *what* the user can do.
 
 Directories in the Magento file system must have 770 (read/write/execute) permissions; files must have 660 (read/write) permissions. Only the Magento file system owner and the web server user have access to these files.

@@ -25,3 +25,6 @@ Before continuing, complete all tasks discussed in <a href="{{ site.gdeurl }}com
 
 ## Component Manager checklist
 {% include install/update/checklist.md %}
+
+#### Next step
+[Run the Component Manager]({{ site.gdeurl }}comp-mgr/compman-start.html)

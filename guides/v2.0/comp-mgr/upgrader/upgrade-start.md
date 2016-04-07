@@ -2,10 +2,10 @@
 layout: default 
 group: compman
 subgroup: 15_UseUpgrade
-title: Run System Upgrade
-menu_title: Run System Upgrade
-menu_node: parent
-menu_order: 1
+title: Start System Upgrade
+menu_title: Start System Upgrade
+menu_node: 
+menu_order: 2
 github_link: comp-mgr/upgrader/upgrade-start.md
 ---
 
