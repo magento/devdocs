@@ -5,7 +5,7 @@ subgroup: 05_UseCompMan
 title: Manage your components
 menu_title: Manage your components
 menu_node: 
-menu_order: 2
+menu_order: 3
 github_link: comp-mgr/compman-main-pg.md
 ---
 
