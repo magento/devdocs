@@ -58,6 +58,14 @@ Results similar to the following should display:
 	*/1 * * * * /usr/bin/php -c /etc /var/www/html/magento2/update/cron.php >> /var/www/html/magento2/var/log/updater.log&
 	*/1 * * * * /usr/bin/php -c /etc /var/www/html/magento2/bin/magento setup:cron:run >> /var/www/html/magento2/var/log/setup.log&
 
+Another symptom of cron not running is the following error in the Magento Admin:
+
+![cron isn't running]({{ site.baseurl }}common/images/compman-cron-not-running.png)
+
+To see the error, you might need to click **System Messages** at the top of the window as follows:
+
+![System Messages]({{ site.baseurl }}common/images/compman_sys-messages.png)
+
 For details, see [Set up cron]({{ site.gdeurl }}install-gde/install/post-install-config.html#post-install-cron).
 
 ### File system permissions {#perms}

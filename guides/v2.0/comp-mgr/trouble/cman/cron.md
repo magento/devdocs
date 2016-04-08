@@ -23,6 +23,13 @@ Following are symptoms of cron issues:
 *	The PHP readiness check doesn't display the PHP version as the following figure shows.
 
 	<img src="{{ site.baseurl }}common/images/upgr-tshoot-no-cron.png">
+*	The following error displays in the Magento Admin:
+
+	![cron isn't running]({{ site.baseurl }}common/images/compman-cron-not-running.png)
+
+	To see the error, you might need to click **System Messages** at the top of the window as follows:
+
+	![System Messages]({{ site.baseurl }}common/images/compman_sys-messages.png)
 
 <h3 id="trouble-cron-check">Check your existing crontab</h3>
 To verify whether or not your crontab is set up:
