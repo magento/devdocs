@@ -21,8 +21,15 @@ redirect_from: /guides/v1.0/coding-standards/code-standard-demarcation.html
 </ul>
 <p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a> to interpret the "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NOT," "SHOULD," "SHOULD NOT," "RECOMMENDED," "MAY," and "OPTIONAL" keywords.</p>
 
+<h2>Contents</h2>
+
+* TOC
+{:toc}
+
+
 ## Semantics
-### For attribute names and values You must use meaningful unabbreviated lowercase words comprised of latin letters concatenated with a hyphen (`-`)
+
+### For attribute names and values you must use meaningful unabbreviated lowercase words comprised of Latin characters concatenated with a hyphen (`-`)
 <ul>
    <li>Helps simplify and unify naming conventions that are used to apply visual styles to page elements.</li>
 </ul>
@@ -83,18 +90,20 @@ redirect_from: /guides/v1.0/coding-standards/code-standard-demarcation.html
    <li id="buttonId3" type="button">button 3</li>
 </ul>
 {% endhighlight %}
-<p><b>JavaScript file</b></p>
+
+**JavaScript file**
+
 {% highlight javascript %}
 $('#my-special-menu').on('click','li[id^="button"]', function() { ... })
 {% endhighlight %}
-<p><b>CSS file</b></p>
+
+**CSS file**
 {% highlight css %}
 #my-special-menu { ... }
 #my-special-menu > li { ... }
 {% endhighlight %}
 
-### You must follow the Separation of Presentation and Content methodology.
-<p class="q">link?</p>.
+### You must follow the separation of presentation and content methodology.
 
 The following list will help you make a distinction between the actual meaning of a document, and how this meaning is presented to its readers:
 
@@ -116,30 +125,28 @@ The following list will help you make a distinction between the actual meaning o
 - visualization
 - view
 
-### You must use Semantic HTML Markup only, and shall not use Presentation Markup.
+### You must use semantic HTML markup only, and must not use presentation markup.
 
-<p class="q">SHALL? why capital letters?</p>
 
 **Acceptable**:
 
-{%highight html%}
+{%highlight html%}
 <p>HTML has been created to <b>semantically</b> represent documents.</p>
 <p><strong>Warning:</strong> Following the procedure described below may irreparably damage your equipment.</p>
 {%endhighlight%}
 
 **Unacceptable**:
 
-{%highight html%}
+{%highlight html%}
 <p>HTML has been created to <strong>semantically</strong> represent documents.</p>
 <p><b>Warning:</b> Following the procedure described below may irreparably damage your equipment.</p>
 {%endhighlight%}
 
 ##Code demarcation 
+
 ### Visual representation must rely only on HTML `class` attributes, CSS pseudo-classes and pseudo-elements, HTML tags, and form element's type attribute and form elements state attributes (example: `disabled`, `checked`).
 
-As the first option, you are REQUIRED to use HTML class attributes. In case this option is approachless then it is RECOMMENDED to use HTML tags and form element's type attribute.
-
-<p class="q">approachless?</p>
+As the first option, you are required to use HTML class attributes. In case this option is not applicable then it is recommended to use HTML tags and form element's type attribute.
 
 <ul>
    <li>Enforces clean, strict separation between visual and business logic layers.</li>
@@ -230,6 +237,7 @@ this.element.on('click', function() {
 {% endhighlight %}
 
 ## Business logic and JavaScript
+
 ### Business logic must rely on only the form, form element name attributes, or data attributes
 
 <ul>
@@ -385,6 +393,7 @@ jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 
 
 ## PHTML templates and PHP files
+
 ### You must not hard-code inline CSS styles in PHP classes
 <ul>
 <li>Reduces long-term maintenance efforts by having styles stored in one place.</li>
