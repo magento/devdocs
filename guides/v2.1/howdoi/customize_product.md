@@ -11,7 +11,7 @@ github_link: howdoi/customize_product.md
 
 <h2>What's in this topic</h2>
 
-This topic describes how developers can customize the product creation form used on the New Product page in Admin. In the default Magento installation the page opens on **Add Product** click, for example from **PRODUCTS** > **Catalog**. 
+This topic describes how developers can customize the product creation form used on the product creation and product edit pages and in Admin. For example, on the **New Product** page that opens on **Add Product** click from **PRODUCTS** > **Catalog** in the default Magento installation.
 
 **Contents**
 
@@ -124,7 +124,7 @@ To add your custom modifier, you need to do the following:
 
 ### Add your modifier {#modifier}
 
-In your custom module directory, add the modifier class that implements the `Magento\Ui\DataProvider\Modifier` interface or extends `Magento\Catalog\Ui\DataProvider\Product\Form\Modifier`. In your class, the `modifyData()` and/or `modifyMeta()` must be implemented.
+In your custom module directory, add the modifier class that implements the `Magento\UI\DataProvider\ModifierInterface` interface or extends `Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\AbstractModifier`. In your class, the `modifyData()` and the `modifyMeta()` methods must be implemented.
 
 In the modifier class, you can add UI elements using the same structure as in the XML configuration.
 
