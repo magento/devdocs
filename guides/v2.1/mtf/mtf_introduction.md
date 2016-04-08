@@ -1,20 +1,29 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: A_Introduction
+subgroup: 10_Introduction
 title: Introduction to the Magento Testing Framework
 menu_title: INTRODUCTION
 menu_node: parent
 github_link: mtf/mtf_introduction.md
+redirect_from: /guides/v1.0/mtf/mtf_introduction.html
 ---
+
 <h2>Preface</h2>
-This guide provides instructions on installing and configuring the Magento Testing Framework (MTF). With the Magento Testing Framework you can create and run functional tests to make it easier to perform basic acceptance testing, smoke testing, regression testing, etc.  MTF does not contain tests. All functional tests are within Magento code in `<magento2>/dev/tests/functional/`. This MTF guide is also applicable to the Magento 1 platform.
+
+This guide provides instructions on installing and configuring the Magento Testing Framework (MTF). Using the MTF, you can create and run *functional* tests to make it easier to perform basic acceptance testing, smoke testing, regression testing, and so on. This MTF guide is also applicable to the Magento 1 platform.
 
 MTF is an open source cross-platform solution (that is, does not depend on a specific operating system).
 
 MTF enables you to quickly develop functional tests for the Magento application. These tests can be performed at any time.
 
 You can run a single test independently, many tests together (that is, a test suite), or you can run all available tests.
+
+MTF does not contain tests. All functional tests are located in `<magento2 root dir>/dev/tests/functional/`. 
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>The MTF performs functional testing only. For information about other types of tests, see the <a href="{{ site.gdeurl21 }}howdoi/mtf/mtf.html">Magento Testing Guide</a>.</p>
+</div>
 
 <h3 id="mtf_intro_extratools">What tools should I use to run tests with MTF?</h3>
 
@@ -73,7 +82,9 @@ MTF works with tests from `<magento2>/dev/tests/functional` only.
 
 For other tests please see the following topics:
 
-- <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-test.html">How to run tests from command line.</a>
+- <a href="{{ site.gdeurl21 }}test/unit/unit_test_execution.html">How to run unit tests during development on the command line or PHPStorm.</a>
+
+- <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-test.html">How to run unit and integration tests using `bin/magento` in continuous integration.</a>
 
 - <a href="{{ site.gdeurl21 }}extension-dev-guide/test/test_js-unit.html">More information about JavaScript unit tests.</a>
 
