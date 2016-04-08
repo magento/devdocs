@@ -33,7 +33,7 @@ To develop a module, you must:
 
 1. **Create the module file structure.** The module for an integration can be placed anywhere under the Magento root directory, but the recommended location is `<magento_base_dir>/vendor/<vendor_name>/module-<module_name>`.
 
-   Also create  `etc`, `etc/integration`, `Setup` subdirectories under `module-<module_name>`, as shown in the following example:
+   Also create  `etc`, `etc/integration`, and `Setup` subdirectories under `module-<module_name>`, as shown in the following example:
 
     <pre>
     cd &lt;magento_base_dir>
