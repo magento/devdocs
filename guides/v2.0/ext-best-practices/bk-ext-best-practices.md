@@ -1,10 +1,9 @@
 ---
 layout: default
 group: ext-best-practices
-subgroup: 5_Package
 title: Best Practices for Extension Developers
 menu_title: Introduction
-menu_order: 2
+menu_order: 1
 github_link: ext-best-practices/ext-best-practices-bk.md
 redirect_from: /guides/v1.0/extension-dev-guide/package_module.html
 
@@ -12,55 +11,29 @@ redirect_from: /guides/v1.0/extension-dev-guide/package_module.html
 
 ##{{page.menu_title}}
 
-This document provides best practices, guidelines, and tips for creating Magento modules, or extensions.
+Magento consists of the core product code plus optional components that enhance or replace the core product code. There are over 100 out-of-the-box components in the form of modules, themes, and language packages available for Magento 2.
 
-Magento consists of the core product code plus optional modules, or extensions.  These modules enhance or replace the basic product code. There are over 100 out-of-the-box modules in Magento 2, and it is also typical for developers to create new, custom modules for their storefront.
+Magento's architecture allows for enhancements by letting you develop your own component, or extension. Keep in mind that in addition to Magento's own components, your component will be running alongside components from other developers. For this reason, it is important that your component behaves correctly in Magento's modular environment.
 
-Magento provides an easy way to find and install custom modules. 
+The table below is data from a recent poll that shows the distribution of the amount of extensions installed on a Magento instance for each edition.
 
-The following sections cover Best Practices in three main categories:
+| Edition   | 1-9 | 10-30 | 31-50 | 50+ |
+| --------- | --- | ----- | ----- | --- |
+| Community | 10% | 53%   | 26%   | 11% |
+| Enterprise| 9%  | 32%   | 27%   | 32% |
 
-* Architecture and PHP coding
-* Frontend development with layouts, blocks, and themes
-* Admin UI; icons, menus, and more.
+This guide provides best practices, guidelines, and tips for creating Magento components, or extensions. Unlike standards, which are processes that have to be followed regardless of the situation, best practices are optional methods or techniques that often yield the best results. We encourage you to follow our best practices when developing code for your Magento components.
 
-<h2 id="archi_php">Architectural structure and PHP coding </h2>
+###Sections
 
-Best Practices about architectural structure of a new extension (module.xml), with info like required config files, optimizing a module for certain environments (small store, et)
+{% assign subgroup = site.articles | where:"group","ext-best-practices" | where: "menu_node","parent" | sort: "menu_order" %}
 
-Fundamental programming designs/concepts, like how MVC architecture works in our code
+{% for node in subgroup %}
+*  [{{ node.menu_title }}]({{site.gdeurl}}{{ node.github_link | replace: ".md",".html" }})
+{% endfor %}
 
-<h3 id="know_arch">Know your architecture</h3>
-Provide a link to AG.
+### Related Content
 
-<h3 id="bp_arch_1">Best Practice 1</h3>
-
-abc
-
-<h3 id="bp_arch_2">Best Practice 2</h3>
-
-abc
-
-<h2 id="frontend">Frontend development with layouts, blocks, and themes</h2>
-
-Using best practices when working with the frontend components of an module produces an extension that is easier to create and maintain. 
-
-<h3 id="bp_frontend_1">Best Practice 1</h3>
-
-abc
-
-<h3 id="bp_frontend_2">Best Practice 2</h3>
-
-abc
-
-<h2 id="Admin">Admin UI: icons, menus, and more</h2>
-
-How to navigate to and display extensions in the Admin is a great place for using Best Practices; what extensin developers choose to do (or not do) when integrating their extensions has a big impact on the look-n-feel of the Admin UI.
-
-<h3 id="bp_admin_1">Best Practice 1</h3>
-
-abc
-
-<h3 id="bp_admin_2">Best Practice 2</h3>
-
-abc
+* [Admin Design Pattern Library]({{site.gdeurl}}pattern-library/bk-pattern.html) - An in depth guide to the design patterns used in the Admin.
+* [PHP Developer Guide]({{site.gdeurl}}extension-dev-guide/bk-extension-dev-guide.html) - An in depth guide to creating Magento components.
+* [Frontend Developer Guide]({{site.gdeurl}}frontend-dev-guide/bk-frontend-dev-guide.html) - An in depth guide to creating a Magento storefront theme.
