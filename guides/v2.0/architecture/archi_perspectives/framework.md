@@ -118,7 +118,7 @@ The Magento Framework (`lib/internal/Magento/Framework/`) provides a robust rang
       </tr><tr>
          <td><code>Magento\Framework\Api</code>
          </td>
-         <td>Contains base classes for advanced functionality of extendable objects through the system (that is, objects that can be extended to add new data through Magento Connection extensions).</td>
+         <td>Contains base classes for advanced functionality of extendable objects through the system (that is, objects that can be extended to add new data using Magento Marketplace extensions).</td>
       </tr><tr>
          <td><code>Magento\Framework\Config</code>
          </td>
