@@ -1,12 +1,12 @@
 ---
 layout: default
 group: config-guide
-subgroup: CM_Varnish
+subgroup: 09_Varnish
 title: Final verification
 menu_title: Final verification
 menu_order: 100
 menu_node: 
-github_link: config-guide/varnish/config-varnish-final.md
+github_link21: config-guide/varnish/config-varnish-final.md
 ---
 
 

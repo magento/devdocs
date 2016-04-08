@@ -5,7 +5,10 @@ subgroup: 05_Command-line installation
 title: Install the Magento software
 menu_title: Install the Magento software
 menu_order: 4
-github_link: install-gde/install/cli/install-cli-install.md
+github_link21: install-gde/install/cli/install-cli-install.md
+redirect_from:
+  -  /guides/v1.0/install-gde/install/install-cli-install.html
+  -  /guides/v2.0/install-gde/install/install-cli-install.html
 ---
 
 <div class="bs-callout bs-callout-tip">
@@ -215,7 +218,8 @@ The following table discusses the meanings of installation option names and valu
 	</tr>
 	<tr>
 		<td><p>--base-url-secure</p></td>
-		<td><p>Secure base URL to use to access your Magento Admin using SSL.</code></p>
+		<td>Secure base URL to use to access your Magento Admin and storefront in the following format:
+		<code>http[s]://&lt;host or ip>/&lt;your Magento install dir>/</code>
 		<p>To have a fully secure site, you must enable <em>both</em> <code>--use-secure=1</code> and <code>--base-url-secure=1</code>.</p></td>
 		<td><p>No</p></td>
 	</tr>
@@ -257,7 +261,7 @@ The following table discusses the meanings of installation option names and valu
 	</tr>
 	<tr>
 		<td><p>--key</p></td>
-		<td><p>If you have one, specify a key to encrypt personally identifiable data in the Magento database. If you don't have one, Magento generates one for you.</p></td>
+		<td><p>If you have one, specify a key to encrypt <a href="#sens-data">sensitive data</a> in the Magento database. If you don't have one, Magento generates one for you.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
@@ -310,6 +314,8 @@ The following table discusses the meanings of installation option names and valu
   <p>To enable or disable modules after installing Magento, see <a href="{{ site.gdeurl21 }}install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
   	</span>
 </div>
+
+{% include install/sens-data.md %}
 
 <h4 id="install-cli-example">Sample localhost installations</h4>
 

@@ -1,12 +1,12 @@
 ---
 layout: default
 group: config-guide
-subgroup: B_Security
+subgroup: 02_Security
 title: Secure cron.php to run in a browser
 menu_title: Secure cron.php to run in a browser
 menu_order: 2
 menu_node: 
-github_link: config-guide/secy/secy-cron.md
+github_link21: config-guide/secy/secy-cron.md
 ---
 
 #### Contents
@@ -103,12 +103,6 @@ To add security for cron in Magento's `.htaccess`:
     		Require group <name>
 		</Files>
 4.	Save your changes to `.htaccess` and exit the text editor.
-5.	Restart Apache:
-
-	CentOS: `service httpd restart`
-
-	Ubuntu: `service apache2 restart`
-
 6.	Continue with <a href="#config-cron-secure-apache-verify">Verify cron is secure</a>.
 
 <h2 id="config-cron-secure-nginx">Secure cron with nginx</h2>

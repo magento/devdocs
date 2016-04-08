@@ -1,12 +1,12 @@
 ---
 layout: default
 group: config-guide
-subgroup: CM_Varnish
+subgroup: 09_Varnish
 title: Configure Magento to use Varnish
 menu_title: Configure Magento to use Varnish
 menu_order: 15
 menu_node: 
-github_link: config-guide/varnish/config-varnish-magento.md
+github_link21: config-guide/varnish/config-varnish-magento.md
 ---
 
 <h2 id="config-varnish-magento">Configure Magento to use Varnish</h2>

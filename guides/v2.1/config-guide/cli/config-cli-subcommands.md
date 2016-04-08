@@ -1,12 +1,13 @@
 ---
 layout: default
 group: config-guide 
-subgroup: CLI
+subgroup: 04_CLI
 title: Get started with command-line configuration
 menu_title: Get started with command-line configuration
 menu_node: 
 menu_order: 2
-github_link: config-guide/cli/config-cli-subcommands.md
+github_link21: config-guide/cli/config-cli-subcommands.md
+redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands.html
 ---
 
   

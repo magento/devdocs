@@ -1,12 +1,12 @@
 ---
 layout: default
 group: config-guide
-subgroup: Elastic
+subgroup: 14_Elastic
 title: Install and configure Elasticsearch
 menu_title: Install and configure Elasticsearch (Enterprise Edition only)
 menu_order: 1
 menu_node: parent
-github_link: config-guide/elasticsearch/es-overview.md
+github_link21: config-guide/elasticsearch/es-overview.md
 ---
 
 <img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only">
@@ -15,96 +15,126 @@ github_link: config-guide/elasticsearch/es-overview.md
 #### Contents
 
 *	<a href="#overview">Overview of Elasticsearch</a>
-*	<a href="#dev">TBD</a>
-
+*	<a href="#es-prereq">Prerequisites</a>
+*	<a href="#es-resources">Additional resources</a>
+*	[Configure nginx and Elasticsearch]({{ site.gdeurl21 }}config-guide/elasticsearch/es-config-nginx.html)
+*	[Configure Apache and Elasticsearch]({{ site.gdeurl21 }}config-guide/elasticsearch/es-config-apache.html)
+*	[Configure Elasticsearch stopwords]({{ site.gdeurl21 }}config-guide/elasticsearch/es-config-stopwords.html)
 
 <h2 id="overview">Overview of Elasticsearch</h2>
-TBD
+In Magento 2.1 for the first time, you can use [Elasticsearch](https://www.elastic.co){:target="_blank"} for searching your catalog.
 
-## Notes
+*	Elasticsearch performs quick and advanced searches on products in the catalog
+*	Elasticsearch analyzers support multiple languages
+*	Supports stop words and synonyms
+*	Indexing does not impact customers until reindex is completed
 
-Support versions  1.7, 2.0 and 2.1
+	Elasticsearch returns search results based on the last generated index until the new one has been completely indexed so there's no disruption to customers
 
-### Java
+*	Accurate, performant, scalable
+*	Works well out of the box 
+*	Easy to horizontally scale
+*	Supports real-time data and analysis
+*	Can be used as a document-oriented data store
+*	Applications in framework beyond search&mdash;reporting, personalization, performance, and storage
 
-{% include config/install-java.md %}
+### Supported versions {#es-spt-versions}
+Magento Enterprise Edition (EE) version 2.1.x supports Elasticsearch versions 1.7, 2.0, and 2.1.
 
+### Recommended configuration {#es-arch}
+The following figure shows our recommended configuration. All of the tasks we discuss assume you've configured your system this way.
+
+<img src="{{ site.baseurl }}common/images/elastic_config.png" width="500px">
+
+The preceding diagram shows:
+
+*	The Magento application and Elasticsearch are installed on different hosts.
+
+	Running on separate hosts is secure, enables Elasticsearch to be scaled, and is necessary for proxying to work. (Clustering Elasticsearch is beyond the scope of this guide but you can find more information in the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/guide/current/distributed-cluster.html){:target="_blank"}.)
+*	Each host has its own web server; the web servers don't have to be the same.
+
+	For example, the Magento application can run Apache and Elasticsearch can run nginx.
+*	Both web servers use Transport Layer Security (TLS).
+
+	Setting up TLS is beyond the scope of our documentation.
+
+Search requests are processed as follows:
+
+1.	A search request from a user is received by the Magento web server, which forwards it to the Elasticsearch server.
+
+	You configure Elasticsearch in the Magento Admin to connect to the proxy's host and port. We recommend the web server's SSL port (by default, 443).
+2.	The Elasticsearch web server (listening on port 443) proxies the request to the Elasticsearch server (by default, it listens on port 9200).
+3.	Access to Elasticsearch is further protected by HTTP Basic authentication.
+
+	For any request to reach Elasticsearch, it must travel over SSL *and* provide a valid user name and password.
+4.	Elasticsearch processes the search request.
+5.	Communication returns along the same route, with the Elasticsearch web server acting as a secure reverse proxy.
+
+## Prerequisites {#es-prereq}
+The tasks discussed in this section require the following:
+
+*	[Firewall and SELinux](#firewall-selinux)
+*	<a href="#prereq-java">Install the Java Software Development Kit (JDK)</a>
+*	[Install Elasticsearch](#es-install-es)
 
 {% include config/solr-elastic-selinux.md %}
 
-### elasticsearch
+{% include config/install-java.md %}
 
-https://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html
+### Install Elasticsearch {#es-install-es}
+Magento Enterprise Edition (EE) version 2.1.x supports Elasticsearch versions 1.7, 2.0, and 2.1.
 
-https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-repositories.html
+This section discusses how to install the latest version. To install older versions, see the <a href="https://www.elastic.co/guide/en/Elasticsearch/reference/index.html" target="_blank">Elasticsearch reference</a> (for example, the <a href="https://www.elastic.co/guide/en/Elasticsearch/reference/2.0/setup.html" target="_blank">2.0 reference</a>).
 
-1.	rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
-2.	vim /etc/yum.repos.d/elasticsearch.repo
-3.	yum -y install elasticsearch
-4.	chkconfig --add elasticsearch
+To install Elasticsearch:
 
-Configure service: https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-service.html
+1.	Log in to your Magento server as a user with `root` privileges.
+2.	Enter the following commands in the order shown:
 
-## Configure Magento to use elasticsearch {#elastic-m2-configure}
-This section discusses the minimum settings you must choose to test elasticsearch with Magento 2. For additional details, see TBD cross-ref to User Guide.
+	*	CentOS:
 
-To configure Magento to use elasticsearch:
+			rpm --import https://packages.elastic.co/GPG-KEY-Elasticsearch
+			vim /etc/yum.repos.d/Elasticsearch.repo
 
-1.	Log in to the Magento Admin as an administrator.
-2.	Click **Stores** > Settings > **Configuration** > **Catalog** > **Catalog** > **Catalog Search**.
-3.	From the **Search Engine** list, click **Elasticsearch** as the following figure shows.
+		Add the following:
 
-	<img src="{{ site.baseurl }}common/images/elastic_choose-in-admin.png">
-4.	The following table discusses only the configuration options required to test the connection with Magento.
+			[elasticsearch-2.x]
+			name=Elasticsearch repository for 2.x packages
+			baseurl=http://packages.elastic.co/elasticsearch/2.x/centos
+			gpgcheck=1
+			gpgkey=http://packages.elastic.co/GPG-KEY-elasticsearch
+			enabled=1
 
-	Unless you changed elasticsearch server settings, the defaults should work. Skip to the next step.
+		Enter the following commands:
 
-	<table>
-		<tbody>
-		<tr><th>Option</th>
-		<th>Description</th>
-	</tr>
-	<tr>
-		<td>Elasticsearch Server Hostname</td>
-		<td>Enter the fully qualified host name or IP address of the machine running elasticsearch. (If elasticsearch is running on the same host as Magento, you can use <code>localhost</code>.)</td>
-	</tr>
-	<tr>
-		<td>Elasticsearch Server Port</td>
-		<td>Enter elasticsearch's listen port. </td>
-	</tr>
-	<tr>
-		<td>Enable Elasticsearch HTTP Auth</td>
-		<td>Click <strong>Yes</strong> only if you enabled authentication for your elasticsearch server. If so, provide a user name and password in the provided fields.</td>
-	</tr>
-	</tbody>
-	</table>
-5.	Click <strong>Test Connection</strong>.
+			yum -y install elasticsearch
+			chkconfig --add elasticsearch
 
-One of the following displays:
+	*	Ubuntu:
 
-<table>
-<tbody>
-	<tr><th>Result</th>
-	<th>Meaning</th>
-	</tr>
-	<tr>
-		<td><img src="{{ site.baseurl }}common/images/elastic_test-success.png"></td>
-		<td>Magento successfully connected to the elasticsearch server. Continue with TBD.</td>
-	</tr>
-	<tr>
-		<td><img src="{{ site.baseurl }}common/images/elastic_test-fail.png"></td>
-		<td><p>Try the following:</p>
-			<ul><li>Make sure the elasticsearch server is running.</li>
-				<li>If the elasticsearch server is on a different host from Magento, log in to the Magento server and ping the elasticserver host. Resolve network connectivity issues and test the connection again.</li>
-				<li>Examine the command window in which you started elasticsearch for stack traces and exceptions. You must resolve those before you continue.<br />
-	In particular, make sure you started elasticsearch as a user with <code>root</code> privileges.</li>
-<li>Make sure that <a href="{{ site.gdeurl21 }}config-guide/elasticsearch/elasticsearch-overview.html#prereq-secy">UNIX firewall and SELinux</a> are both disabled, or set up rules to enable elasticsearch and Magento to communicate with each other.</li>
-	<li>Verify the value of the <strong>elasticsearch Server Hostname</strong> field. Make sure the server is available. You can try the server's IP address instead.</li>
-	<li>Use the command <code>netstat -an | grep <em>listen-port</em></code> command to verify that the port specified in the <strong>elasticsearch Server Port</strong> field is not being used by another process.<br />
-	For example, to see if elasticsearch is running on its default port, use the following command:
-	<pre>netstat -an | grep 9200</pre>
-	If elasticsearch is running on port 9200, it displays similar to the following:
-	<pre>tcp        0      0 :::9200            :::*          LISTEN</pre></li></ul></td>
-	</tr>
-</tbody>
-</table>
+			wget -qO - https://packages.elastic.co/GPG-KEY-Elasticsearch | sudo apt-key add -
+			echo "deb http://packages.elastic.co/Elasticsearch/2.x/debian stable main" | sudo tee -a /etc/apt/sources.list.d/Elasticsearch-2.x.list
+			sudo apt-get -y update && sudo apt-get -y install Elasticsearch
+
+	<a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.1/setup-repositories.html" target="_blank">More information about Elasticsearch repositories</a>.
+3.	Optionally configure the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.x/setup-service.html" target="_blank">Elasticsearch service</a>.
+4.	Start Elasticsearch:
+
+		service elasticsearch start
+5.	Verify that Elasticsearch is working by entering the following command on the server on which it's running:
+
+		curl -i http://127.0.0.1:9200/_cluster/health
+
+	Messages similar to the following display if Elasticsearch is running:
+
+		{"cluster_name":"elasticsearch","status":"green","timed_out":false,"number_of_nodes":1,"number_of_data_nodes":1,"active_primary_shards":0,"active_shards":0,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":0,"delayed_unassigned_shards":0,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":100.0}
+
+## Additional resources {#es-resources}
+*	<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/_basic_concepts.html" target="_blank">Elasticsearch Basic Concepts</a>
+*	<a href="https://www.elastic.co/guide/en/elasticsearch/guide/current/distributed-cluster.html" target="_blank">Life Inside a Cluster</a>
+*	<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-configuration.html" target="_blank">Elasticsearch Configuration</a>
+
+#### Next
+
+*	[Configure nginx and Elasticsearch]({{ site.gdeurl21 }}config-guide/elasticsearch/es-config-nginx.html)
+*	[Configure Apache and Elasticsearch]({{ site.gdeurl21 }}config-guide/elasticsearch/es-config-apache.html)

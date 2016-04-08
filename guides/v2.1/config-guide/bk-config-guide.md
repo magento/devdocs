@@ -1,12 +1,13 @@
 ---
 layout: default
 group: config-guide
-subgroup: A_Introduction
+subgroup: 01_Introduction
 title: Configuration Guide
 menu_title: Introduction
 menu_order: 1
 menu_node: parent
-github_link: config-guide/bk-config-guide.md
+github_link21: config-guide/bk-config-guide.md
+redirect_from: /guides/v1.0/config-guide/bk-config-guide.html
 ---
 
 <h2 id="configuration">Configure the Magento application</h2>
@@ -24,7 +25,10 @@ You can configure the Magento application in any of the following ways:
 	*	<a href="{{ site.gdeurl21 }}config-guide/database/database.html">Set up database caching</a>
 	*	<a href="{{ site.gdeurl21 }}config-guide/redis/config-redis.html">Set up Redis</a>
 
-*	<a href="{{ site.gdeurl21 }}config-guide/memcache/memcache.html">Session storage</a>
+*	Session storage
+	*	[memcache]({{ site.gdeurl21 }}config-guide/memcache/memcache.html)
+	*	[Redis]({{ site.gdeurl21 }}config-guide/redis/config-redis.html)
+	*	[Locate your session files]({{ site.gdeurl21 }}config-guide/sessions.html)
 
 *	<img src="{{ site.baseurl }}common/images/ee-only_small.png">
 

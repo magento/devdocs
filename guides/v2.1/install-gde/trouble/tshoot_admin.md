@@ -6,7 +6,7 @@ title: Error after logging in to the Magento Admin
 menu_title: Error after logging in to the Magento Admin
 menu_node: 
 menu_order: 10
-github_link: install-gde/install/trouble/tshoot_admin.md
+github_link21: install-gde/trouble/tshoot_admin.md
 ---
 
 

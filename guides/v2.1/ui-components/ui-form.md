@@ -137,3 +137,101 @@ To group components you can use the component container as in example below:
     </field>
 </container>
 {% endhighlight %}
+
+##Creating Data Source 
+
+You need to configure Component DataSource in order to provide data and meta information for Form Component.
+
+DataSource aggregates an object of class implements the interface `\Magento\Framework\View\Element\UiComponent\DataProvider\DataProviderInterface`
+
+An example of the configuration of the DataSource object:
+
+{% highlight xml%}
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Ui/etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        ...
+    </argument>
+    <dataSource name="customer_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Magento\Customer\Model\Customer\DataProvider</argument>
+            <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+            <argument name="meta" xsi:type="array">
+                <item name="customer" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="label" xsi:type="string" translate="true">Account Information</item>
+                    </item>
+                </item>
+                <item name="address" xsi:type="array">
+                    <item name="is_collection" xsi:type="boolean">true</item>
+                    <item name="config" xsi:type="array">
+                        <item name="label" xsi:type="string" translate="true">Addresses</item>
+                    </item>
+                </item>
+            </argument>
+            <argument name="data" xsi:type="array">
+                <item name="js_config" xsi:type="array">
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
+                </item>
+                <item name="config" xsi:type="array">
+                    <item name="submit_url" xsi:type="string">customer/index/save</item>
+                    <item name="validate_url" xsi:type="string">customer/index/validate</item>
+                </item>
+            </argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+    </dataSource>
+</form>
+{% endhighlight %}
+
+Component configuration:
+
+* argument “dataProvider” - contains configuration, class name and arguments
+
+* js_config -> component - > JS indication of a responsible component
+
+Data provided by data source is shared and available for all components in the Assembly (in this case for all child components of UI Form).
+
+Data Source is another UI Component that provides data in specific format which is shared among all UI Components.
+
+##Replacing
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Replacing principles are the same for all UI Components.</p>
+</div>
+
+####Global replacement
+
+To replace all instances of a UI Form with a custom implementation redefine link to a constructor in `definition.xml`.
+
+`app/code/Magento/Ui/view/base/ui_component/etc/definition.xml`
+
+{% highlight xml%}
+<form class="Magento\Ui\Component\Form">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="component" xsi:type="string">Magento_Ui/js/form/customFormConstructor</item>
+        </item>
+    </argument>
+</form>
+{% endhighlight %}
+
+##Instance Replacement
+
+To replace one instance of a UI Form Component redefine link to a constructor in your module's form configuration file:
+
+`app/code/Magento/Customer/view/base/ui_component/customer_form.xml`
+
+{% highlight xml%}
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Ui/etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="component" xsi:type="string">Magento_Customer/js/form/customFormConstructor</item>
+        </item>
+        </argument>
+</form>
+{% endhighlight %}

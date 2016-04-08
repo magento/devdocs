@@ -1,12 +1,12 @@
 ---
 layout: default
 group: config-guide
-subgroup: Caching
+subgroup: 08_Caching
 title: Database caching
 menu_title: Database caching
 menu_order: 10
 menu_node: 
-github_link: config-guide/database/database.md
+github_link21: config-guide/database/database.md
 ---
 
 #### Contents

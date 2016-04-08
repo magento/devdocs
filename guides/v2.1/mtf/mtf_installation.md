@@ -59,7 +59,6 @@ The Magento Testing Framework requires Composer, which downloads libraries defin
 And run from this directory <code>php composer.phar install</code>.</p>
 </div>
 
-
 ## Check the installation {#mtf_install_check}
 
 ### Find the Magento Testing Framework directory {#mtf_install_check_dir}

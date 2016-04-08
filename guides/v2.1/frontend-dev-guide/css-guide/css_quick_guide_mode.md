@@ -43,8 +43,10 @@ The following is an illustration of how the process of making simple changes loo
 
 <img src="{{ site.baseurl }}common/images/extend_less_code_1.png" alt="Less code redefining the color of the primary buttons">
 <li>Delete all files in the following directories:
-	- <code>pub/static/frontend/&lt;Your_Vendor&gt;/&lt;your_theme&gt;</code>
-	- <code>var/view_preprocessed/less</code>
+<ul>
+<li><code>pub/static/frontend/&lt;Your_Vendor&gt;/&lt;your_theme&gt;</code></li>
+<li><code>var/view_preprocessed/less</code></li>
+</ul>
 </li>
 <li>Refresh the page, and view the changes applied. For example:
 

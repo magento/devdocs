@@ -6,7 +6,7 @@ title: Configure the Magento application
 menu_title: Configure the Magento application
 menu_node: parent
 menu_order: 1
-github_link: install-gde/install/post-install-config.md
+github_link21: install-gde/install/post-install-config.md
 ---
 
 ## Configure the Magento application
@@ -16,6 +16,7 @@ Now that you've finished installing the Magento application, you need to configu
 *	<a href="#post-install-cron">Set up cron</a>
 *	<a href="#post-install-secy">Security settings</a>
 *	<a href="#post-install-rewrites">Enable Apache server rewrites</a>
+*	[Caching in a multi-webnode environment](#config-redis)
 *	<a href="#post-install-server">Server settings</a>
 *	<a href="#post-install-ee">Settings for Magento Enterprise Edition (EE) only</a>
 
@@ -39,6 +40,11 @@ After installation, we recommend the following:
 If you use the Apache web server, you must enable server rewrites for pages to display properly. Otherwise, you'll see pages without styles and other issues.
 
 <a href="{{ site.gdeurl21 }}install-gde/prereq/apache.html#apache-help-rewrite">Section on Apache server rewrites</a>
+
+## Caching in a multi-webnode environment {#config-redis}
+If you have multiple webnodes, you *cannot* use Magento's default file caching because there is no synchronization between webnodes. In other words, activity on one webnode is written to that webnode's file system only. Subsequent activity, if performed on another webnode, can result in unnecessary files being written or can result in errors.
+
+Instead, use [Redis]({{ site.gdeurl21 }}config-guide/redis/config-redis.html) for both the default cache and the page cache.
 
 <h2 id="post-install-server">Server settings</h2>
 This section briefly discusses settings we recommend you consider for the server on which Magento runs. Some of these settings are not directly related to Magento; these are provided as suggestions only.

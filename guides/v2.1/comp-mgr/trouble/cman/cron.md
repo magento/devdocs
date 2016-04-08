@@ -6,7 +6,7 @@ title: Troubleshoot cron
 menu_title: Troubleshoot cron
 menu_node: 
 menu_order: 7
-github_link: comp-mgr/trouble/cman/cron.md
+github_link21: comp-mgr/trouble/cman/cron.md
 ---
 
 <h2 id="trouble-cron">Troubleshoot cron</h2>
@@ -39,14 +39,14 @@ To verify whether or not your crontab is set up:
 	See one of the following sections for a solution to your issue.
 
 <h3 id="trouble-cron-none">Solution: crontab not set up</h3>
-To verify your cron jobs are set up properly, see <a href="{{ site.gdeurl21 }}install-gde/install/post-install-config.html#post-install-cron">Set up cron jobs</a>.
+To verify your cron jobs are set up properly, see <a href="{{ site.gdeurl }}install-gde/install/post-install-config.html#post-install-cron">Set up cron jobs</a>.
 
 <h3 id="trouble-cron-errors">Solution: cron running with errors</h3>
 Try running each command manually because the command might display helpful error messages.
 
 **Run the setup application cron job**
 
-See <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group">Configure and run cron</a>.
+See <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group">Configure and run cron</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
 	<p>You must run cron at least <em>twice</em> for the job to execute.</p>
@@ -64,4 +64,4 @@ See <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-cron.htm
 		PHP Warning:  require_once(/var/www/html/magento2/update/vendor/autoload.php): failed to open stream: No such file or directory in /var/www/html/magento2/update/app/bootstrap.php on line 13
 		PHP Fatal error:  require_once(): Failed opening required '/var/www/html/magento2/update/vendor/autoload.php' (include_path='.:/usr/share/pear:/usr/share/php') in /var/www/html/magento2ce/update/app/bootstrap.php on line 13
 
-	If that's the case, see <a href="{{ site.gdeurl21 }}install-gde/install/prepare-install.html">Update installer dependencies</a>.
+	If that's the case, see <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Update installer dependencies</a>.

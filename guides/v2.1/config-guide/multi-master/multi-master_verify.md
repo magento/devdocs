@@ -1,12 +1,12 @@
 ---
 layout: default
 group: config-guide
-subgroup: Z_cqrs
+subgroup: 20_cqrs
 title: Verify split databases
 menu_title: Verify split databases
 menu_order: 5
 menu_node: 
-github_link: config-guide/multi-master/multi-master_verify.md
+github_link21: config-guide/multi-master/multi-master_verify.md
 ---
 
 <img src="{{ site.baseurl }}common/images/ee-only_large.png">

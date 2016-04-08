@@ -1,12 +1,12 @@
 ---
 layout: default
 group: config-guide
-subgroup: Caching
+subgroup: 08_Caching
 title: Caching
 menu_title: Caching
 menu_order: 1
 menu_node: parent
-github_link: config-guide/config/caching.md
+github_link21: config-guide/config/caching.md
 ---
 
 #### Contents 

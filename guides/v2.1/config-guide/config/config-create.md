@@ -1,11 +1,11 @@
 ---
 layout: default
 group: config-guide
-subgroup: Magento configuration files
+subgroup: 07_conf
 title: Create or extend configuration types
 menu_title: Create or extend configuration types
 menu_order: 10
-github_link: config-guide/config/config-create.md
+github_link21: config-guide/config/config-create.md
 ---
 
 

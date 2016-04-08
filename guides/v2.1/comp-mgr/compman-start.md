@@ -6,7 +6,7 @@ title: Run the Component Manager
 menu_title: Run the Component Manager
 menu_node: parent
 menu_order: 1
-github_link: comp-mgr/compman-start.md
+github_link21: comp-mgr/compman-start.md
 ---
 
 <h2 id="compman-overview">Overview of the Component Manager</h2>

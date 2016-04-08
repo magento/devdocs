@@ -6,7 +6,7 @@ title: Install the Magento software using the command line
 menu_title: Install the Magento software using the command line
 menu_node: parent
 menu_order: 1
-github_link: install-gde/install/cli/install-cli.md
+github_link21: install-gde/install/cli/install-cli.md
 ---
 
 <div class="bs-callout bs-callout-tip">

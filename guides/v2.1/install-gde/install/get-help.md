@@ -6,7 +6,7 @@ title: Get help with your installation
 menu_title: Get help with your installation
 menu_order: 1
 menu_node: parent
-github_link: install-gde/install/get-help.md
+github_link21: install-gde/install/get-help.md
 ---
 
 {% include install/get-help.md %}

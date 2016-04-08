@@ -1,12 +1,12 @@
 ---
 layout: default
 group: config-guide
-subgroup: Z_cqrs
+subgroup: 20_cqrs
 title: Set up master databases
 menu_title: Set up master databases
 menu_order: 2
 menu_node: 
-github_link: config-guide/multi-master/multi-master_masterdb.md
+github_link21: config-guide/multi-master/multi-master_masterdb.md
 ---
 
 <img src="{{ site.baseurl }}common/images/ee-only_large.png">

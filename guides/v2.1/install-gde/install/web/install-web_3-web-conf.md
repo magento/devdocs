@@ -6,7 +6,7 @@ title: Step 3. Web Configuration
 menu_title: Step 3. Web Configuration
 menu_node: 
 menu_order: 4
-github_link: install-gde/install/web/install-web_3-web-conf.md
+github_link21: install-gde/install/web/install-web_3-web-conf.md
 ---
 
 ## Before you begin

@@ -6,7 +6,7 @@ title: Step 5. Create Admin account
 menu_title: Step 5. Create Admin account
 menu_order: 10
 menu_node: 
-github_link: install-gde/install/hosted/hosted_install_5_create-admin.md
+github_link21: install-gde/install/hosted/hosted_install_5_create-admin.md
 ---
 
 {% include install/web/install-web_5-create-admin.md %}

@@ -1,11 +1,11 @@
 ---
 layout: default
 group: config-guide
-subgroup: Magento configuration files
+subgroup: 07_conf
 title: Module configuration files
 menu_title: Module configuration files
 menu_order: 5
-github_link: config-guide/config/config-files.md
+github_link21: config-guide/config/config-files.md
 ---
 
 
