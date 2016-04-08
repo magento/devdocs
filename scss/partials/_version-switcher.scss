@@ -1,0 +1,15 @@
+.page-intro .version-switcher  {
+	position: absolute;
+	margin-top: 8px;
+	top: 0;
+	right: 66px;
+
+	@media (max-width:767px) {
+		position: relative;
+		right: 0;
+		.dropdown-menu {
+			right: auto;
+			left: 0;
+		}
+	}
+}
