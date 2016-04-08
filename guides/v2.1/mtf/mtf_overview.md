@@ -13,12 +13,7 @@ github_link: mtf/mtf_overview.md
 
 * <a href="{{site.gdeurl21}}mtf/mtf_installation.html">Install the MTF</a>
 * <a href="{{site.gdeurl21}}mtf/mtf_quickstart.html">MTF quick start</a>
-*	Entities
-
-	*	<a href="{{site.gdeurl21}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_overview">Fixture</a>
-	*	<a href="{{ site.gdeurl21 }}mtf/mtf_entities/mtf_fixture-repo.html">Fixture repository</a>
-	*	<a href="{{ site.gdeurl21 }}mtf/mtf_entities/mtf_handler.html">Handler</a>
-	*	<a href="{{ site.gdeurl21 }}mtf/mtf_entities/mtf_block.html">Block</a>
+* <a href="{{site.gdeurl21}}mtf/mtf_entities.html">MTF entities</a>
 
 Common tasks:
 
