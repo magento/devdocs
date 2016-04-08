@@ -1,7 +1,7 @@
 ---
 layout: default
 group: compman
-subgroup: ZZ_Troubleshooting
+subgroup: 50_trouble
 title: Troubleshoot the updater application
 menu_title: Troubleshoot the updater application
 menu_node: 

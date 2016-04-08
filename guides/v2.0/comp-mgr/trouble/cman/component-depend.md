@@ -1,7 +1,7 @@
 ---
 layout: default
 group: compman
-subgroup: ZZ_Troubleshooting
+subgroup: 50_trouble
 title: Resolve component dependencies
 menu_title: Resolve component dependencies
 menu_node: 

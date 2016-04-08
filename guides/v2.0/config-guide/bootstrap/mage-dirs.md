@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: Bootstrap
+subgroup: 03_Bootstrap
 title: Customize base directory paths (MAGE_DIRS)
 menu_title: Customize base directory paths (MAGE_DIRS)
 menu_order: 5

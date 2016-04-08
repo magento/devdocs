@@ -1,18 +1,13 @@
 ---
 layout: default 
 group: compman
-subgroup: U_UseUpgrade
+subgroup: 15_UseUpgrade
 title: Step 4. Upgrade
 menu_title: Step 4. Upgrade
 menu_node: 
 menu_order: 20
 github_link: comp-mgr/upgrader/upgrade.md
 ---
-
-## Upgrade
-After backing up, the components you're upgrading display. The following figure shows an example.
-
-<img src="{{ site.baseurl }}common/images/upgr_upgrade.png" width="550px" alt="Click upgrade to complete the task">
 
 ## Set file system permissions {#compman-upgr-perms}
 If your Magento application is set to write session data to the `<your Magento install dir>/var/session` directory, you must set permissions on that directory before you upgrade.
@@ -42,6 +37,10 @@ To set file system permissions before upgrade:
 3.	Continue with the next section.
 
 ## Complete the upgrade {#upgrade-finish}
+The components you're upgrading display. The following figure shows an example.
+
+<img src="{{ site.baseurl }}common/images/upgr_upgrade.png" width="550px" alt="Click upgrade to complete the task">
+
 
 To complete the upgrade, click **Upgrade**. If the upgrade is successful, a page similar to the following displays.
 
@@ -50,5 +49,3 @@ To complete the upgrade, click **Upgrade**. If the upgrade is successful, a page
 Messages similar to the following display in the Console Log:
 
 <img src="{{ site.baseurl }}common/images/upgrade-success-consolelog.png" width="650px">
-
-

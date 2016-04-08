@@ -12,8 +12,6 @@ redirect_from: /guides/v1.0/extension-dev-guide/tech-stack.html
 
 Magento’s highly modular structure includes the following open-source technologies:
 
-
-
 <b>Web servers</b>
 
 * Apache 2.x
@@ -53,8 +51,6 @@ Magento’s highly modular structure includes the following open-source technolo
 
 <b>Additional technologies</b>
 
-
-
 * HTML5
 
 * CSS3 (LESS CSS pre-processor)
@@ -82,9 +78,9 @@ Magento is <b>compatible with but not supported</b> for:
 
 * HHVM 3.9 PHP interpreter 
 
-Magento also provides an automated testing suite that includes test scripts for integration, functional areas, and performance. Components include PHPUnit for the unit test framework and Selenium for the functional test framework. 
+Magento also provides a automated testing suites that include unit, integration, functional and performance test scripts, as well as JavaScript tests and tools for static code analysis. Components include PHPUnit for the unit test framework and Selenium for the functional test framework. 
 
-This framework is included in `Magento/mtf`. For more information, see <a href="{{ site.gdeurl }}mtf/mtf_introduction.html">Magento Testing Framework guide</a>.
+This framework is located in `dev/tests`. The functional testing framework `mtf` can be found in a [separate repository](https://github.com/magento/mtf). For more information, see the [Magento Testing Framework]({{ site.gdeurl }}mtf/mtf.html) guide.
 
 <h2>Related topics</h2>
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: Magento configuration files
+subgroup: 07_conf
 title: Magento's deployment configuration
 menu_title: Magento's deployment configuration
 menu_order: 1
