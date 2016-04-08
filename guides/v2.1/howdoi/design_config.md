@@ -12,7 +12,7 @@ github_link: howdoi/design_config.md
 
 <h2>What's in this topic</h2>
 
-This topic describes how to customize (add, delete, change) the configuration options available in Magento Admin under **CONTENT** > **Design** > **Configuration**.
+This topic describes how to customize (add, delete, change) the configuration options available in Magento Admin under **CONTENT** > **Design** > **Configuration**. These options define the various aspects of storefront design. In Magento 2.0.x and earlier these options were set under **STORES** > **Configuration** > **Design**. But starting from Magento 2.1.0 they were moved to the new location, and the configuration form was refactored.
 
 **Contents:**
 
@@ -32,9 +32,9 @@ For example, the default set of design options for the store view level is the f
 
 Both the grid and the configuration form are implemented using UI components.
 
-To change the grid view, you need to customize the `design_config_listing.xml` grid configuration file.
+To change the grid view, you need to customize the grid configuration by adding your custom `design_config_listing.xml` in your module.
 
-To change the settings available for configuration, you need to customize the `design_config_form.xml` configuration file. If you add a new field, you must also declare it in `di.xml` how it is processed and saved.
+To change the available design settings you need to customize the grid configuration by adding your custom `design_config_form.xml` in your module. If you add a new field, you must also declare it in `di.xml` how it is processed and saved.
 
 View the following sections for details.
 
@@ -44,9 +44,9 @@ The grid containing the configuration scopes is implemented using the [grid UI c
 
 To customize the grid view, take the following steps:
 
-1. In the `<your_module_dir>/view/adminhtml/ui_component` directory add the empty `design_config_listing.xml`.
+1. In the `<your_module_dir>/view/adminhtml/ui_component` directory, add the empty `design_config_listing.xml`.
 
-3. In the scope of `<listing></listing>` add your customizations. For example, if you want to rename the column displaying the selected theme, your grid configuration must contain the following:
+3. In the `design_config_listing.xml` file, create a <listing></listing> element to in which to add your customizations. For example, if you want to rename the column displaying the selected theme, your grid configuration must contain the following:
 
 {%highlight xml%}
 
@@ -66,14 +66,14 @@ To customize the grid view, take the following steps:
 
 {%endhighlight%}
 
-Your `design_config_listing.xml` is merged with the same files from the other modules. So there is no need to copy their content, you only need to put the new things you add. Even if you want to customize the existing entities, you only have to mention those options, the values of which are customized.
+Your `design_config_listing.xml` is merged with the same files from the other modules. So there is no need to copy their content, you only need to define changes. Even if you want to customize the existing entities, you only have to mention those options, the values of which are customized.
 
 For reference, view the grid configuration files of the Magento modules:
 
 - `<Magento_Backend_module_dir>/view/adminhtml/ui_component/design_config_listing.xml`
 - `<Magento_Theme_module_dir>/view/adminhtml/ui_component/design_config_listing.xml`
 
-If you add a certain field as additional grid column, you also need to set the field's `use_in_grid` property in the [filed's meta data in `di.xml`](#meta_data).
+If you add a certain field as additional grid column, you also need to set the field's `use_in_grid` property in the [field's meta data in `di.xml`](#meta_data).
 
 ## Customize the design options {#customize_options}
 
@@ -168,9 +168,9 @@ For reference, view the form configuration files of Magento modules:
 
 
 
-### Add fields metadata {#meta_data}
+### Add fields' metadata {#meta_data}
 
-If in the design configuration form you add new fields, in `<your_module_dir>/etc/di.xml` you must specify their parent field sets and the path in database. You can also declare the backend model used for processing the field values. If you do not specify any model, the default `Magento\Framework\App\Config\Value` model is used.
+If in the design configuration form you add new fields, in `<your_module_dir>/etc/di.xml` you must specify their parent field sets and the path in the database. You can also declare the backend model used for processing the field values. If you do not specify any model, the default `Magento\Framework\App\Config\Value` model is used.
 
 The field declaration in a `di.xml` looks like following:
 
@@ -233,4 +233,4 @@ For more examples and reference, view the `di.xml` files of the Magento modules:
 
 ## Accessing the options values in backend models {#access_options}
 
-The design configuration option values are stored in the `core_config_data` table in DB, similar to the values of System Configuration options, and can be accessed using the `\Magento\Framework\App\ConfigInterface` mechanism.
+The design configuration option values are stored in the `core_config_data` table in the database, similar to the values of System Configuration options, and can be accessed using the `\Magento\Framework\App\ConfigInterface` mechanism.
