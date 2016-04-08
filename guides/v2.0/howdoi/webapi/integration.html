@@ -806,14 +806,12 @@
   <li>
     <p><strong>Create the module file structure.</strong> The module for an integration can be placed anywhere under the Magento root directory, but the recommended location is <code>&lt;magento_base_dir&gt;/vendor/&lt;vendor_name&gt;/module-&lt;module_name&gt;</code>.</p>
 
-    <p>Also create  <code>etc</code> and <code>integration</code> subdirectories under <code>module-&lt;module_name&gt;</code>, as shown in the following example:</p>
+    <p>Also create  <code>etc</code>, <code>etc/integration</code>, <code>Setup</code> subdirectories under <code>module-&lt;module_name&gt;</code>, as shown in the following example:</p>
 
     <pre>
  cd &lt;magento_base_dir&gt;
- mkdir vendor/&lt;vendor_name&gt;/module-&lt;module_name&gt;
- cd vendor/&lt;vendor_name&gt;/module-&lt;module_name&gt;
- mkdir etc
- mkdir integration
+ mkdir -p vendor/&lt;vendor_name&gt;/module-&lt;module_name&gt;/etc/integration
+ mkdir -p vendor/&lt;vendor_name&gt;/module-&lt;module_name&gt;/Setup
 </pre>
     <p>For more detailed information, see <a href="../../extension-dev-guide/module-file-structure.html">Create the module file structure</a>.</p>
   </li>
@@ -833,7 +831,7 @@
 <td>The version of Magento the component uses</td>
 </tr>
 </table>
-    <p>The following example shows an example <code>module.xml</code> file.</p>
+    <p>The following example shows an example <code>etc/module.xml</code> file.</p>
 
     <pre>
 &lt;?xml version="1.0"?&gt;
@@ -845,9 +843,14 @@
    --&gt;
    &lt;config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd"&gt;
        &lt;module name="Vendor1_Module1" setup_version="2.0.0"&gt;
+            &lt;sequence&gt;
+                &lt;module name="Magento_Integration"/&gt;
+            &lt;/sequence&gt;
        &lt;/module&gt;
      &lt;/config&gt;
 </pre>
+
+    <p>Module “Magento_Integration” is added to “sequence” to be loaded first. It helps to avoid the issue, when a module with integration config loaded, that leads to a malfunction.</p>
   </li>
   <li>
     <p><strong>Add your module’s <code>composer.json</code> file.</strong> Composer is a dependency manager for PHP. You must create a <code>composer.json</code> file for your module so that Composer can install and update the libraries your module relies on. Place the <code>composer.json</code> file in the <code>module-&lt;module_name&gt;</code> directory.</p>
@@ -893,6 +896,55 @@
      );
    </pre>
   </li>
+  <li>
+    <p><strong>Create an install class.</strong>
+Change directories to your <code>Setup</code> directory. Create a <code>InstallData.php</code> file that installs the integration configuration data into the Magento integration table.</p>
+
+    <p>The following sample is boilerplate and requires minor changes to make your integration work.</p>
+
+    <pre>
+ &lt;?php
+ namespace Vendor1\Module1\Setup;
+
+ use Magento\Framework\Setup\ModuleContextInterface;
+ use Magento\Framework\Setup\ModuleDataSetupInterface;
+ use Magento\Integration\Model\ConfigBasedIntegrationManager;
+ use Magento\Framework\Setup\InstallDataInterface;
+
+ class InstallData implements InstallDataInterface
+ {
+     /**
+      * @var ConfigBasedIntegrationManager
+      */
+
+     private $integrationManager;
+
+     /**
+      * @param ConfigBasedIntegrationManager $integrationManager
+      */
+     public function __construct(ConfigBasedIntegrationManager $integrationManager)
+     {
+         $this-&gt;integrationManager = $integrationManager;
+     }
+
+     /**
+      * {@inheritdoc}
+      */
+     public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
+     {
+         $this-&gt;integrationManager-&gt;processIntegrationConfig(['testIntegration']);
+     }
+ }
+ </pre>
+
+    <p>In the following line</p>
+
+    <p><code>$this-&gt;integrationManager-&gt;processIntegrationConfig(['testIntegration']);</code></p>
+
+    <p><code>testIntegration</code> must refer to your <code>etc/integrations/config.xml</code> file, and the integration name value must be the same.</p>
+
+    <p>Also, be sure to change the path after <code>namespace</code> for your vendor and module names.</p>
+  </li>
 </ol>
 
 <h2 id="files">Create integration files</h2>
@@ -914,14 +966,14 @@
 </ul>
 
 <h3 id="resources">Define the required resources</h3>
-<p>The <code>integration/api.xml</code> file defines which API resources the integration has access to.</p>
+<p>The <code>etc/integration/api.xml</code> file defines which API resources the integration has access to.</p>
 
 <p>To determine which resources an integration needs access to, review the permissions defined in each module’s <code>etc/acl.xml</code> file.</p>
 
 <p>In the following example, the test integration requires access to the following resources in the Sales module:</p>
 
 <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;integrations&gt;</span>
-    <span class="nt">&lt;integration</span> <span class="na">name=</span><span class="s">&quot;Test Integration&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;integration</span> <span class="na">name=</span><span class="s">&quot;testIntegration&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;resources&gt;</span>
             <span class="c">&lt;!-- To grant permission to Magento_Log::online, its parent Magento_Customer::customer needs to be declared as well--&gt;</span>
             <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">&quot;Magento_Customer::customer&quot;</span> <span class="nt">/&gt;</span>
@@ -934,25 +986,20 @@
             <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">&quot;Magento_Sales::reorder&quot;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/resources&gt;</span>
     <span class="nt">&lt;/integration&gt;</span>
-    <span class="nt">&lt;integration</span> <span class="na">name=</span><span class="s">&quot;Test Integration2&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;resources&gt;</span>
-            <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">&quot;Magento_Sales::sales&quot;</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">&quot;Magento_Sales::sales_operation&quot;</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;resource</span> <span class="na">name=</span><span class="s">&quot;Magento_Sales::transactions&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;/resources&gt;</span>
-    <span class="nt">&lt;/integration&gt;</span>
 <span class="nt">&lt;/integrations&gt;</span></code></pre></div>
 
 <h3 id="preconfig">Pre-configure the integration</h3>
 
-<p>Your module can optionally provide a configuration file so that the integration can be automatically pre-configured with default values. To enable this feature, create the <code>config.xml</code> file in the <code>integration</code> directory.</p>
+<p>Your module can optionally provide a configuration file <code>config.xml</code> so that the integration can be automatically pre-configured with default values. To enable this feature, create the <code>config.xml</code> file in the <code>etc/integration</code> directory.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>If you pre-configure the integration, the values cannot be edited from the admin panel.</p>
 </div>
 
+<p>The  file defines which API resources the integration has access to.</p>
+
 <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;integrations&gt;</span>
-   <span class="nt">&lt;integration</span> <span class="na">name=</span><span class="s">&quot;TestIntegration1&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;integration</span> <span class="na">name=</span><span class="s">&quot;TestIntegration&quot;</span><span class="nt">&gt;</span>
        <span class="nt">&lt;email&gt;&lt;/email&gt;</span>
        <span class="nt">&lt;endpoint_url&gt;&lt;/endpoint_url&gt;</span>
        <span class="nt">&lt;identity_link_url&gt;&lt;/identity_link_url&gt;</span>
@@ -990,15 +1037,6 @@
 <p>Use the following steps to install your module:</p>
 
 <ol>
-  <li>
-    <p>Change directories to the <code>var</code> directory and remove its contents.</p>
-
-    <pre>
-  cd <magento_install_dir>/
-  rm -rf var/* 
-
-</magento_install_dir></pre>
-  </li>
   <li>
     <p>Run the following command to update the Magento database schema and data.</p>
 
