@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: D_Entities
+subgroup: 50_Entities
 title: Entities of the Magento Testing Framework
 menu_title: Data set
 menu_order: 8
@@ -380,7 +380,7 @@ For example, see how in `Magento/Catalog/Test/TestCase/Product/ValidateOrderOfPr
   
 ### Replace a variation {#replace_variation}
 
-You can replace one variation with another by using a `replace` attribute of the `variation` node:
+You can replace one variation with another by using a `replace` attribute of the `variation` node. A `replace` attribute contains variation that must be replaced by a variation from a `name` attribute. 
 
 {%highlight xml%}
 
@@ -388,7 +388,7 @@ You can replace one variation with another by using a `replace` attribute of the
 
 {%endhighlight xml%}
 
-After a merge of a data set with the variation that is mentioned, a test will use `CreateSuperNewCustomerBackendEntityTestVariation1` instead of `CreateSuperNewCustomerBackendEntityTestVariation1`.
+After a merge of a data set with the variation that is mentioned, a test will use `CreateSuperNewCustomerBackendEntityTestVariation1` instead of `CreateCustomerBackendEntityTestVariation1`.
 
 <!-- LINK DEFINITIONS -->
 
