@@ -69,9 +69,14 @@ To develop a module, you must:
       -->
       &lt;config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
           &lt;module name="Vendor1_Module1" setup_version="2.0.0">
+               &lt;sequence>
+                   &lt;module name="Magento_Integration"/>
+               &lt;/sequence>
           &lt;/module>
         &lt;/config>
    </pre>
+
+   Module "Magento_Integration" is added to "sequence" to be loaded first. It helps to avoid the issue, when a module with integration config loaded, that leads to a malfunction.
 
 
 3. **Add your module's `composer.json` file.** Composer is a dependency manager for PHP. You must create a `composer.json` file for your module so that Composer can install and update the libraries your module relies on. Place the `composer.json` file in the `module-<module_name>` directory.
