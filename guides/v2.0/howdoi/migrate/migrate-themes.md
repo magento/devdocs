@@ -14,7 +14,4 @@ Magento 1 themes cannot be migrated to Magento 2 directly. Following options are
 
 * Working with your front-end developer/designer to create a new theme for Magento 2. Use this chance to make sure your site is responsive and follow best practices.
 * Installing one of the available themes from the <a href="https://marketplace.magento.com/themes.html">Magento Marketplace</a>.
-
-For full information please see the complete <a href="{{ site.gdeurl }}migration/bk-migration-guide.html">Migration Guide</a>
-
-
+* 
