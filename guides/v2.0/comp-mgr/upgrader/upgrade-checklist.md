@@ -7,7 +7,6 @@ menu_title: Run System Upgrade
 menu_node: parent
 menu_order: 1
 github_link: comp-mgr/upgrader/upgrade-checklist.md
-redirect_from: guides/v2.0/comp-mgr/upgrader/upgrade-start.html
 ---
 
 <h2 id="compman-overview">Overview of System Upgrade</h2>

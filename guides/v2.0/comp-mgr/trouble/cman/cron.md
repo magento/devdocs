@@ -16,8 +16,7 @@ Following are symptoms of cron issues:
 *	An error message about the PHP setting `$HTTP_RAW_POST_DATA` displays even though it's set properly
 *	The cron readiness check fails
 
-	Possible errors include non-writable paths and cron not set up
-*	The following message displays in the Component Manager
+	Possible errors include non-writable paths and cron not set up. An example follows:
 
 	<img src="{{ site.baseurl }}common/images/upgr-tshoot-no-cron2.png">
 *	The PHP readiness check doesn't display the PHP version as the following figure shows.
@@ -69,7 +68,7 @@ To verify which PHP binary to use:
 <h3 id="trouble-cron-errors">Solution: cron running with errors</h3>
 Try running each command manually because the command might display helpful error messages.
 
-See <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group">Configure and run cron</a>.
+See <a href="{{ site.gdeurl }}install-gde/install/post-install-config.html#post-install-cron">Set up cron</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
 	<p>You must run cron at least <em>twice</em> for the job to execute.</p>

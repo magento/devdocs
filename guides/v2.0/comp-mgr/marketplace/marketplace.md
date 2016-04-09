@@ -38,5 +38,5 @@ The following figure shows a sample cart.
 When you're ready, click **Go to Checkout** and follow the prompts on your screen to complete your purchase.
 
 ### Install your new purchases
-Use the [Component Manager]({{ site.gdeurl }}comp-mgr/compman-start.html) to install your purchases.
+Use the [Component Manager]({{ site.gdeurl }}comp-mgr/compman-checklist.html) to install your purchases.
 
