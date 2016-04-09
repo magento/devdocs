@@ -16,6 +16,23 @@ $ bundle install
 $ bin/jekyll serve
 ```
 
+# Building the site on Mac OS X
+
+El Capitan and later versions of Mac OS X require additionall steps prior to installation due to security improvements.
+
+Switch to root devdocs directory and Run the following commands to install and run jekyll server.
+
+```bash
+# Install Bundler into /usr/local/bin directory instead of protected /usr/bin
+$ sudo gem install bundler -n /usr/local/bin
+
+# Install dependencies
+$ bundle install
+
+# Run Jekyll to compile and then automatically recompile all changed files. Visit http://localhost:4000 to preview the documentation output.
+$ bin/jekyll serve
+```
+
 If you have questions, open an issue and ask us. We're looking forward to hearing from you!
 
 *	<a href="https://twitter.com/MagentoDevDocs" class="twitter-follow-button" data-show-count="false">Follow @MagentoDevDocs</a>
