@@ -13,9 +13,9 @@ redirect_from: guides/v2.0/extension-dev-guide/Contribute_edg.md
 
 The following topics are included in the Guide:
 
-* <a href="#contribute">DevDocs Contributions</a>
+* <a href="#contribute">DevDocs contributions</a>
 
-* <a href="#requirements">Contribution requirements</a>
+* <a href="#requirements">Contribution guidelines</a>
 
 * <a href="#fork">Fork a repository</a>
 
@@ -76,7 +76,7 @@ To fork a repository on Github, do the following:
 
 3. Click **Fork** at the top right.
 
-4. Clone the repo into your development environment and start writing.
+4. Clone the repo into your development environment and then start writing and committing your changes. Optionally create a branch first if you plan to work on mulitple changes.
 
 <h2 id="pull_request">Create a pull request</h2>
 
