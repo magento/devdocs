@@ -11,18 +11,25 @@ redirect_from: /guides/v1.0/extension-dev-guide/package_module.html
 
 ##{{page.menu_title}}
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>DRAFT/PROPOSAL: This Best Practices Guide is a first draft! The guide combines Best Practices that we have heard the community ask for, along with guidelines that our Magento UX, Engineering, and Product teams are working on. 
+  <p></p>
+We want your feedback; please do a pull request on <a href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/ext-best-practices/admin/ext-best-practices_admin_FAQ.html" target="_blank">feedback-placement-and-design.md</a> and let us know what your best practices are, your challenges, and how you would like Magento to help standardize (where needed).
+  </p>
+</div>
+
 Magento consists of the core product code plus optional components that enhance or replace the core product code. There are over 100 out-of-the-box components in the form of modules, themes, and language packages available for Magento 2.
 
-Magento's architecture allows for enhancements by letting you develop your own component, or extension. Keep in mind that in addition to Magento's own components, your component will be running alongside components from other developers. For this reason, it is important that your component behaves correctly in Magento's modular environment.
+Magento's architecture allows for enhancements by letting you develop your own component. Keep in mind that in addition to Magento's own modules, your extension will be running alongside components from other developers. For this reason, it is important that your component behaves correctly in Magento's modular environment.
 
-The table below is data from a recent poll that shows the distribution of the amount of extensions installed on a Magento instance for each edition.
+The table below is data from a recent poll that shows the distribution of the amount of extensions installed on a Magento instance for each edition. So for example, 32% of merchants on EE have over 50 different extensions installed!
 
-| Edition   | 1-9 | 10-30 | 31-50 | 50+ |
+| Edition   | 1-9 extensions | 10-30 extensions| 31-50 extensions| 50+ extensions|
 | --------- | --- | ----- | ----- | --- |
 | Community | 10% | 53%   | 26%   | 11% |
 | Enterprise| 9%  | 32%   | 27%   | 32% |
 
-This guide provides best practices, guidelines, and tips for creating Magento components, or extensions. Unlike standards, which are processes that have to be followed regardless of the situation, best practices are optional methods or techniques that often yield the best results. We encourage you to follow our best practices when developing code for your Magento components.
+This guide provides best practices, guidelines, and tips for creating Magento extensions.  We encourage you to follow our best practices when developing code for your Magento components.
 
 ###Sections
 
