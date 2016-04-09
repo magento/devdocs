@@ -28,7 +28,7 @@ The following topics are included in the Guide:
 -->
 
 
-<h2 id="contribute">DevDocs Contributions</h2>
+<h2 id="contribute">DevDocs contributions</h2>
 
 What's your area of expertise? Please share your knowledge with us! Contributions can take the form of completely new topics, changes and edits to existing documentation, or just good suggestions. 
 
@@ -51,7 +51,7 @@ Often when the Magento DevDocs team works on reviewing the suggested changes, we
 <p>Please refer to <a href="http://www.magento.com/legaldocuments/mca">Magento Contributor Agreement</a> for detailed information about the License Agreement. All contributors are required to submit a click-through form to agree to the terms. </p>
 </div>
 
-<h2 id="requirements">Contribution requirements</h2>
+<h2 id="requirements">Contribution guidelines</h2>
 
 
 1. Some common writing guidelines include:
