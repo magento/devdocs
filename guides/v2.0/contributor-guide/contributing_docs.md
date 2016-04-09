@@ -76,26 +76,24 @@ To fork a repository on Github, do the following:
 
 3. Click **Fork** at the top right.
 
-4. Clone the repo into your development environment, create a local branch, and then start writing.
+4. Clone the repo into your development environment and start writing.
 
 <h2 id="pull_request">Create a pull request</h2>
 
 To create a pull request do the following: 
 
-1. Create a local branch for your changes and push those changes to the copy of your repository on GitHub. This is the best way to organize and even update your PR.
+1. Push your changes to your fork repository on GitHub.
 
-2. Navigate to the <a href="https://github.com/magento/devdocs" target="_blank">DevDocs repository</a>, and then click **New pull request**.
+2. In your forked repository, click **New pull request**.
 
-2. In the DevDocs repository, click **New pull request**.
-
-3. Be sure to create the PR to the correct branch (the base). Our branches are numbered (2.0, 2.1, and so on). We don't accept PRs to other branches, like gh-pages.
+3. Be sure to create the pull request to the correct branch (the base). Our branches are numbered (2.0, 2.1, and so on). We don't accept PRs to other branches, like gh-pages.
 
 4. Review the changes, then click **Create pull request**. Fill out the form, and click **Create pull request** again to submit the PR&mdash;that’s it!
 
 After submitting your PR, you can head over to the DevDocs repository’s <a href="https://github.com/magento/devdocs/pulls" target="_blank">Pull Requests panel</a> to see your PR along with the others. The DevDocs team will review your contribution, and get back with you if we have any questions. Once the final content is ready, we will merge your PR into the repo, and your work will be published to the repo and to <a href="https://github.com/magento/devdocs" target="_blank">devdocs.magento.com</a>. If you write a whole topic, or make substantial contributions to an existing topic, we will add your name right below the title, linked to your blog or site!
 
 <h2 id="report">Report an issue</h2>
-If you find a bug (errr... we mean a typo or erroneous information) in Magento DevDocs, you can either fix it with a PR or you can simply report it by creating an issue in the DevDocs repository.
+If you find a typo or erroneous information in Magento DevDocs, you can either fix it with a PR (as described above) or you can simply report it by creating an issue in the DevDocs repository.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Before creating an issue, please check the <a href="https://github.com/magento/devdocs/issues" target="_blank"> existing issues</a> to make sure that the issue wasn't already reported.
