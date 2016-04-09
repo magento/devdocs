@@ -302,6 +302,14 @@
 									
 
 								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/prereq/prereq_compman-checklist.html">Checklist</a></li>
+
+									
+
+								
 								
 								
 							
@@ -321,12 +329,47 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/comp-mgr/compman-start.html">Run the Component Manager</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/comp-mgr/marketplace/marketplace.html">Magento Marketplace example</a></li>
 									
 								
 
 									
 
+
+								
+								
+								
+							
+							
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/comp-mgr/compman-checklist.html">Run the Component Manager</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/compman-start.html">Start the Component Manager</a></li>
+
+									
 
 								
 
@@ -480,12 +523,20 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">Run System Upgrade</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/comp-mgr/upgrader/upgrade-checklist.html">Run System Upgrade</a></li>
 									
 								
 
 									
 
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">Start System Upgrade</a></li>
+
+									
 
 								
 
@@ -805,33 +856,58 @@
 
 <p>Messages display in the Console Log as your new purchases are installed. Following is a sample of some of these messages:</p>
 
-<pre><code>[2015-12-02 17:56:07 CST] Job "maintenance_mode {"enable":true}" has been started
-[2015-12-02 17:56:07 CST] Magento maintenance mode is enabled.
-[2015-12-02 17:56:07 CST] Job "maintenance_mode {"enable":true}" has successfully completed
-[2015-12-02 17:56:07 CST] Job "update {"components":{"magento/module-grouped-product-sample-data":{"name":"magento/module-grouped-product-sample-data","version":"100.0.2"},"magento/module-catalog-sample-data":{"name":"magento/module-catalog-sample-data","version":"100.0.2"},"magento/module-customer-sample-data":{"name":"magento/module-customer-sample-data","version":"100.0.2"},"magento/module-downloadable-sample-data":{"name":"magento/module-downloadable-sample-data","version":"100.0.2"},"magento/module-offline-shipping-sample-data":{"name":"magento/module-offline-shipping-sample-data","version":"100.0.2"},"magento/module-theme-sample-data": ... more
+<div class="highlight"><pre><code class="language-xml" data-lang="xml">[2016-04-07 09:37:06 CDT] Job &quot;maintenance_mode {&quot;enable&quot;:true}&quot; has been started
+[2016-04-07 09:37:06 CDT] Magento maintenance mode is enabled.
+[2016-04-07 09:37:06 CDT] Job &quot;maintenance_mode {&quot;enable&quot;:true}&quot; has successfully completed
+[2016-04-07 09:37:06 CDT] Job &quot;update {&quot;components&quot;:{&quot;addshoppers/magento2-connector&quot;:{&quot;name&quot;:&quot;addshoppers/magento2-connector&quot;,&quot;version&quot;:&quot;2.0.1&quot;},&quot;addshoppers/purchase-sharing&quot;:{&quot;name&quot;:&quot;addshoppers/purchase-sharing&quot;,&quot;version&quot;:&quot;2.0.1&quot;},&quot;fooman/printorderpdf-m2&quot;:{&quot;name&quot;:&quot;fooman/printorderpdf-m2&quot;,&quot;version&quot;:&quot;2.0.2&quot;}}}&quot; has been started
+[2016-04-07 09:37:06 CDT] Starting composer update...
+[2016-04-07 09:37:07 CDT] ./composer.json has been updated
 
-{"name":"magento/module-gift-registry-sample-data","version":"100.0.2"},"magento/module-multiple-wishlist-sample-data":{"name":"magento/module-multiple-wishlist-sample-data","version":"100.0.2"}}}" has been started
-[2015-12-02 17:56:07 CST] Starting composer update...
-[2015-12-02 17:56:07 CST] ./composer.json has been updated
-
-[2015-12-02 17:58:43 CST] Loading composer repositories with package information
+[2016-04-07 09:37:45 CDT] Loading composer repositories with package information
 Updating dependencies (including require-dev)
-- Installing magento/module-catalog-sample-data (100.0.2)
-Downloading: Connecting... Downloading: 0% Downloading: 10% Downloading: 20% Downloading: 30% Downloading: 35% Downloading: 45% Downloading: 50% Downloading: 70% Downloading: 75% Downloading: 100%
+- Installing addshoppers/magento2-connector (2.0.1)
+Downloading: Connecting... Downloading: 0%.............. Downloading: 10%................
+Downloading: 15% ............ 100%
 
-- Installing magento/module-grouped-product-sample-data (100.0.2)
-: Connecting... Downloading: 0%  Downloading: 5% Downloading: 10% Downloading: 15% Downloading: 100%
+- Installing fooman/printorderpdf-m2 (2.0.2)
+Downloading: Connecting......... Downloading: 0% ............ Downloading: 40%........... Downloading: 75% ........... Downloading: 100%
+
+Writing lock file
+Generating autoload files
+
+[2016-04-07 09:37:45 CDT] Composer update completed successfully
+[2016-04-07 09:37:45 CDT] Job &quot;update {&quot;components&quot;:{&quot;addshoppers/magento2-connector&quot;:{&quot;name&quot;:&quot;addshoppers/magento2-connector&quot;,&quot;version&quot;:&quot;2.0.1&quot;},&quot;addshoppers/purchase-sharing&quot;:{&quot;name&quot;:&quot;addshoppers/purchase-sharing&quot;,&quot;version&quot;:&quot;2.0.1&quot;},&quot;fooman/printorderpdf-m2&quot;:{&quot;name&quot;:&quot;fooman/printorderpdf-m2&quot;,&quot;version&quot;:&quot;2.0.2&quot;}}}&quot; has successfully completed
+[2016-04-07 14:38:06 UTC] Job &quot;setup:upgrade []&quot; has started
+Cache cleared successfully
+File system cleanup:
+/var/www/html/magento2/var/generation/Composer
+/var/www/html/magento2/var/generation/Magento
+/var/www/html/magento2/var/generation/Symfony
+The directory &#39;/var/www/html/magento2/var/di/&#39; doesn&#39;t exist - skipping cleanup
+Updating modules:
+Schema creation/updates:
+Module &#39;Magento_Store&#39;:
 
 ... more ...
 
-[2015-12-02 17:58:43 CST] Composer update completed successfully
-
+Module &#39;Magento_WishlistSampleData&#39;:
+Data install/update:
+Module &#39;Magento_Store&#39;:
 ... more ...
-</code></pre>
+
+Please re-run Magento compile command
+
+[2016-04-07 14:38:14 UTC] Job &quot;setup:upgrade {&quot;command&quot;:&quot;setup:upgrade&quot;}&quot; has been successfully completed
+[2016-04-07 14:38:14 UTC] Job &quot;setup:static:regenerate []&quot; has started
+
+[2016-04-07 14:38:15 UTC] Cleaning generated files...
+[2016-04-07 14:38:15 UTC] Clearing cache...
+[2016-04-07 14:38:15 UTC] Cleaning static view files
+[2016-04-07 14:38:15 UTC] Job &quot;setup:static:regenerate []&quot; has been successfully completed</code></pre></div>
 
 <p>When the installation is complete, a page similar to the following displays:</p>
 
-<p><img src="/common/images/cman_new-purchases_finish.png" /></p>
+<p><img src="/common/images/cman_new-purchases_finish.png" width="300px" /></p>
 
 <p>Click <strong>Back to Setup Tool</strong>.</p>
 

@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Troubleshoot cron</title>
+	<title>Checklist</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/comp-mgr/trouble/cman/cron.html">
+	<link rel="canonical" href="//guides/v2.0/comp-mgr/prereq/prereq_compman-checklist.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -137,9 +137,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Troubleshoot cron</h1>
+		<h1 class="page-heading">Checklist</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/comp-mgr/trouble/cman/cron.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/comp-mgr/prereq/prereq_compman-checklist.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -305,7 +305,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/prereq/prereq_compman-checklist.html">Checklist</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/comp-mgr/prereq/prereq_compman-checklist.html">Checklist</a></li>
 
 									
 
@@ -687,7 +687,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/comp-mgr/trouble/cman/cron.html">Troubleshoot cron</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/cron.html">Troubleshoot cron</a></li>
 
 									
 
@@ -847,91 +847,146 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<h2 id="trouble-cron">Troubleshoot cron</h2>
-<p>Following are symptoms of cron issues:</p>
+		<h2 id="checklist">Checklist</h2>
+<div>
 
-<ul>
-  <li>Your update or upgrade never runs; it stays in a <code>pending</code> state</li>
-  <li>An error message about the PHP setting <code>$HTTP_RAW_POST_DATA</code> displays even though it’s set properly</li>
-  <li>
-    <p>The cron readiness check fails</p>
+  <p>Before you continue, to avoid errors during your installation or update, make sure you verify <em>all</em> of the following:</p>
 
-    <p>Possible errors include non-writable paths and cron not set up. An example follows:</p>
+  <ul>
+    <li>You set up a <a href="#magento-owner-group">Magento file system owner</a> and shared that owner’s group with the web server user group</li>
+    <li>Your <a href="#magento-cron">cron jobs</a> are set up and running</li>
+    <li><a href="#perms">File system permissions</a> are set properly</li>
+  </ul>
 
-    <p><img src="/common/images/upgr-tshoot-no-cron2.png" /></p>
-  </li>
-  <li>
-    <p>The PHP readiness check doesn’t display the PHP version as the following figure shows.</p>
-
-    <p><img src="/common/images/upgr-tshoot-no-cron.png" /></p>
-  </li>
-  <li>
-    <p>The following error displays in the Magento Admin:</p>
-
-    <p><img src="/common/images/compman-cron-not-running.png" alt="cron isn't running" /></p>
-
-    <p>To see the error, you might need to click <strong>System Messages</strong> at the top of the window as follows:</p>
-
-    <p><img src="/common/images/compman_sys-messages.png" alt="System Messages" /></p>
-  </li>
-</ul>
-
-<h3 id="trouble-cron-check">Check your existing crontab</h3>
-<p>To verify whether or not your crontab is set up:</p>
-
-<ol>
-  <li>Log in to your Magento server.</li>
-  <li>
-    <p>As a user with <code>root</code> privileges, see if a crontab is already set up.</p>
-
-    <pre><code>crontab -u &lt;Magento file system owner name&gt; -l
-</code></pre>
-
-    <p>For example, on CentOS</p>
-
-    <pre><code>crontab -u magento_user -l
-</code></pre>
-
-    <p>If no crontab has been set up for the user, the following message displays:</p>
-
-    <pre><code>no crontab for magento_user
-</code></pre>
-
-    <p>See one of the following sections for a solution to your issue.</p>
-  </li>
-</ol>
-
-<h3 id="trouble-cron-none">Solution: crontab not set up</h3>
-<p>To verify your cron jobs are set up properly, see <a href="/guides/v2.0/install-gde/install/post-install-config.html#post-install-cron">Set up cron jobs</a>.</p>
-
-<h3 id="solution-cron-running-from-incorrect-php-binary">Solution: cron running from incorrect PHP binary</h3>
-<p>If your cron job uses a PHP binary different from the web server plug-in, PHP settings errors might display.</p>
-
-<p>To verify which PHP binary to use:</p>
-
-<ol>
-  <li>
-    <p>Create a <a href="/guides/v2.0/install-gde/prereq/optional.html#install-optional-phpinfo"><code>phpinfo.php</code></a> page.</p>
-
-    <p>(Sometimes you have a different <code>php.ini</code> for the PHP command line and the web server. The <code>php.ini</code> you must change displays as <strong>Loaded Configuration File</strong>)</p>
-  </li>
-  <li>As a user with <code>root</code> privileges, open <code>php.ini</code> in a text editor.</li>
-  <li>
-    <p>Make the required changes.</p>
-
-    <p>For more information about PHP settings, see <a href="/guides/v2.0/install-gde/prereq/php-centos.html#instgde-prereq-timezone">PHP configuration options</a>.</p>
-  </li>
-</ol>
-
-<h3 id="trouble-cron-errors">Solution: cron running with errors</h3>
-<p>Try running each command manually because the command might display helpful error messages.</p>
-
-<p>See <a href="/guides/v2.0/install-gde/install/post-install-config.html#post-install-cron">Set up cron</a>.</p>
-
-<div class="bs-callout bs-callout-info" id="info">
-	<p>You must run cron at least <em>twice</em> for the job to execute.</p>
+  <div class="bs-callout bs-callout-warning">
+    <p>Do not continue without performing these checks. Failure to do so could result in errors.</p>
 </div>
 
+  <h3 id="magento-owner-group">Magento file system owner and group</h3>
+  <p>For security reasons, Magento requires two users to run properly:</p>
+
+  <ul>
+    <li>The web server user</li>
+    <li>A local user on the Magento server</li>
+  </ul>
+
+  <p>In addition, these users must either be a member of each other’s group or the local user must be a member of the web server user’s group.</p>
+
+  <p>To check group ownership, use the following command:</p>
+
+  <pre><code>groups &lt;username&gt;
+</code></pre>
+
+  <p>Typical web server group names follow:</p>
+
+  <ul>
+    <li>Ubuntu: <code>www-data</code> or <code>nginx</code></li>
+    <li>CentOS: <code>apache</code> or <code>nginx</code></li>
+  </ul>
+
+  <p>For example, enter:</p>
+
+  <pre><code>groups magento_user
+</code></pre>
+
+  <p>Any of the following is a valid result on CentOS:</p>
+
+  <pre><code>magento_user : apache
+</code></pre>
+
+  <p>or</p>
+
+  <pre><code>magento_user : magento_user apache
+</code></pre>
+
+  <p>For details, see <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Create the Magento file system owner</a>.</p>
+
+  <h3 id="magento-cron">Cron jobs are running</h3>
+  <p>Magento requires three cron jobs, all running as the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a>.</p>
+
+  <p>To verify your cron jobs are set up properly, enter the following command as a user with <code>root</code> privileges:</p>
+
+  <pre><code>crontab -u &lt;magento file system owner&gt; -l
+</code></pre>
+
+  <p>For example, if your Magento file system owner is named <code>magento_user</code>, enter:</p>
+
+  <pre><code>crontab -u magento_user -l
+</code></pre>
+
+  <p>Results similar to the following should display:</p>
+
+  <pre><code>*/1 * * * * /usr/bin/php -c /etc /var/www/html/magento2/bin/magento cron:run &gt;&gt; /var/www/html/magento2/var/log/magento-cron.log&amp;
+*/1 * * * * /usr/bin/php -c /etc /var/www/html/magento2/update/cron.php &gt;&gt; /var/www/html/magento2/var/log/updater.log&amp;
+*/1 * * * * /usr/bin/php -c /etc /var/www/html/magento2/bin/magento setup:cron:run &gt;&gt; /var/www/html/magento2/var/log/setup.log&amp;
+</code></pre>
+
+  <p>Another symptom of cron not running is the following error in the Magento Admin:</p>
+
+  <p><img src="/common/images/compman-cron-not-running.png" alt="cron isn't running" width="500px" /></p>
+
+  <p>To see the error, you might need to click <strong>System Messages</strong> at the top of the window as follows:</p>
+
+  <p><img src="/common/images/compman_sys-messages.png" alt="System Messages" /></p>
+
+  <p>For details, see <a href="/guides/v2.0/install-gde/install/post-install-config.html#post-install-cron">Set up cron</a>.</p>
+
+  <h3 id="perms">File system permissions</h3>
+  <p>For security reasons, Magento requires certain permissions on the file system. Permissions are different from <a href="#magento-owner-group"><em>ownership</em></a>. Ownership determines <em>who</em> can perform actions on the file system; permissions determine <em>what</em> the user can do.</p>
+
+  <p>Directories in the Magento file system must have 770 (read/write/execute) permissions; files must have 660 (read/write) permissions. Only the Magento file system owner and the web server user can have access to these files.</p>
+
+  <p>To verify your file system permissions are set properly, either log in to the Magento server or use your hosting provider’s file manager application.</p>
+
+  <p>For example, enter the following commands on a Linux system if the Magento application is installed in <code>/var/www/html/magento2</code>:</p>
+
+  <pre><code>ls -al /var/www/html/magento2
+</code></pre>
+
+  <p>A sample result follows:</p>
+
+  <div class="highlight"><pre><code class="language-xml" data-lang="xml">total 200592
+drwxrwx---. 12 magento_user apache      4096 Apr  1 15:08 .
+drwxr-xr-x.  3 magento_user apache      4096 Jan 11 15:13 ..
+drwxrwx---.  4 magento_user apache      4096 Apr  1 15:08 app
+drwxrwx---.  2 magento_user apache      4096 Apr  1 15:08 bin
+-rw-r--r--.  1 magento_user apache    438803 Apr  1 15:08 CHANGELOG.md
+-rw-rw----.  1 magento_user apache      3008 Apr  1 15:00 composer.json
+-rw-rw----.  1 magento_user apache    338028 Apr  1 15:08 composer.lock
+-rw-r--r--.  1 magento_user apache      3425 Apr  1 15:08 CONTRIBUTING.md
+-rw-r--r--.  1 magento_user apache     10011 Apr  1 15:08 CONTRIBUTOR_LICENSE_AGREEMENT.html
+-rw-r--r--.  1 magento_user apache       631 Apr  1 15:08 COPYING.txt
+drwxrwx---.  4 magento_user apache      4096 Apr  1 15:08 dev
+-rw-r--r--.  1 magento_user apache      2926 Apr  1 15:08 Gruntfile.js
+-rw-r--r--.  1 magento_user apache      7592 Apr  1 15:08 .htaccess
+-rw-r--r--.  1 magento_user apache      6419 Apr  1 15:08 .htaccess.sample
+-rw-r--r--.  1 magento_user apache      1358 Apr  1 15:08 index.php
+drwxrwx---.  4 magento_user apache      4096 Apr  1 15:08 lib
+-rw-r--r--.  1 magento_user apache     10376 Apr  1 15:08 LICENSE_AFL.txt
+-rw-r--r--.  1 magento_user apache     10364 Apr  1 15:08 LICENSE.txt
+-rw-r--r--.  1 magento_user apache      4108 Apr  1 15:08 nginx.conf.sample
+-rw-r--r--.  1 magento_user apache      1427 Apr  1 15:08 package.json
+-rw-r--r--.  1 magento_user apache      1659 Apr  1 15:08 .php_cs
+-rw-r--r--.  1 magento_user apache       804 Apr  1 15:08 php.ini.sample
+drwxrwx---.  2 magento_user apache      4096 Apr  1 15:08 phpserver
+drwxrwx---.  6 magento_user apache      4096 Apr  1 15:08 pub
+drwxrwx---.  7 magento_user apache      4096 Apr  1 15:08 setup
+-rw-r--r--.  1 magento_user apache      3731 Apr  1 15:08 .travis.yml
+drwxrwx---.  7 magento_user apache      4096 Jan 11 15:15 update
+drwxrwx---. 11 magento_user apache      4096 Apr  1 15:21 var
+drwxrwx---. 27 magento_user apache      4096 Apr  1 15:08 vendor</code></pre></div>
+
+  <p>In the preceding example, the Magento file system owner is <code>magento_user</code>. Directories in the Magento file system have <code>drwxrwx---</code> permissions (770) and files have <code>-rw-r--r--</code> permissions (660).</p>
+
+  <p>To get more detailed information, you can optionally enter the following command:</p>
+
+  <pre><code>ls -al /var/www/html/magento2/pub
+</code></pre>
+
+  <p>Because Magento deploys static file assets to subdirectories of <code>pub</code>, it’s a good idea to verify permissions and ownership there as well.</p>
+
+  <p>For more information, see <a href="/guides/v2.0/install-gde/prereq/file-system-perms.html">File system permissions and ownership</a>.</p>
+</div>
 
 
 		</div>

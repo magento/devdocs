@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Troubleshoot cron</title>
+	<title>Magento Marketplace example</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/comp-mgr/trouble/cman/cron.html">
+	<link rel="canonical" href="//guides/v2.0/comp-mgr/marketplace/marketplace.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -137,9 +137,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Troubleshoot cron</h1>
+		<h1 class="page-heading">Magento Marketplace example</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/comp-mgr/trouble/cman/cron.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/comp-mgr/marketplace/marketplace.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -329,7 +329,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/comp-mgr/marketplace/marketplace.html">Magento Marketplace example</a></li>
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/comp-mgr/marketplace/marketplace.html">Magento Marketplace example</a></li>
 									
 								
 
@@ -687,7 +687,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/comp-mgr/trouble/cman/cron.html">Troubleshoot cron</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/cron.html">Troubleshoot cron</a></li>
 
 									
 
@@ -847,90 +847,42 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<h2 id="trouble-cron">Troubleshoot cron</h2>
-<p>Following are symptoms of cron issues:</p>
+		<h2 id="magento-marketplace-example">Magento Marketplace example</h2>
+<p>This topic provides a simple example of getting free extensions for Magento Community Edition (CE). </p>
 
-<ul>
-  <li>Your update or upgrade never runs; it stays in a <code>pending</code> state</li>
-  <li>An error message about the PHP setting <code>$HTTP_RAW_POST_DATA</code> displays even though it’s set properly</li>
-  <li>
-    <p>The cron readiness check fails</p>
+<h3 id="log-in-to-magento-marketplace">Log in to Magento Marketplace</h3>
+<p>To get started, log in to <a href="https://marketplace.magento.com" target="_blank">Magento Marketplace</a> using your <code>magento.com</code> credentials. </p>
 
-    <p>Possible errors include non-writable paths and cron not set up. An example follows:</p>
-
-    <p><img src="/common/images/upgr-tshoot-no-cron2.png" /></p>
-  </li>
-  <li>
-    <p>The PHP readiness check doesn’t display the PHP version as the following figure shows.</p>
-
-    <p><img src="/common/images/upgr-tshoot-no-cron.png" /></p>
-  </li>
-  <li>
-    <p>The following error displays in the Magento Admin:</p>
-
-    <p><img src="/common/images/compman-cron-not-running.png" alt="cron isn't running" /></p>
-
-    <p>To see the error, you might need to click <strong>System Messages</strong> at the top of the window as follows:</p>
-
-    <p><img src="/common/images/compman_sys-messages.png" alt="System Messages" /></p>
-  </li>
-</ul>
-
-<h3 id="trouble-cron-check">Check your existing crontab</h3>
-<p>To verify whether or not your crontab is set up:</p>
-
-<ol>
-  <li>Log in to your Magento server.</li>
-  <li>
-    <p>As a user with <code>root</code> privileges, see if a crontab is already set up.</p>
-
-    <pre><code>crontab -u &lt;Magento file system owner name&gt; -l
-</code></pre>
-
-    <p>For example, on CentOS</p>
-
-    <pre><code>crontab -u magento_user -l
-</code></pre>
-
-    <p>If no crontab has been set up for the user, the following message displays:</p>
-
-    <pre><code>no crontab for magento_user
-</code></pre>
-
-    <p>See one of the following sections for a solution to your issue.</p>
-  </li>
-</ol>
-
-<h3 id="trouble-cron-none">Solution: crontab not set up</h3>
-<p>To verify your cron jobs are set up properly, see <a href="/guides/v2.0/install-gde/install/post-install-config.html#post-install-cron">Set up cron jobs</a>.</p>
-
-<h3 id="solution-cron-running-from-incorrect-php-binary">Solution: cron running from incorrect PHP binary</h3>
-<p>If your cron job uses a PHP binary different from the web server plug-in, PHP settings errors might display.</p>
-
-<p>To verify which PHP binary to use:</p>
+<p>If you don’t have an account yet:</p>
 
 <ol>
   <li>
-    <p>Create a <a href="/guides/v2.0/install-gde/prereq/optional.html#install-optional-phpinfo"><code>phpinfo.php</code></a> page.</p>
+    <p>Click <strong>Sign In</strong> and the top right of the page as the following figure shows:</p>
 
-    <p>(Sometimes you have a different <code>php.ini</code> for the PHP command line and the web server. The <code>php.ini</code> you must change displays as <strong>Loaded Configuration File</strong>)</p>
+    <p><img src="/common/images/marketplace_sign-in.png" alt="Sign in to Marketplace" width="600px" /></p>
   </li>
-  <li>As a user with <code>root</code> privileges, open <code>php.ini</code> in a text editor.</li>
   <li>
-    <p>Make the required changes.</p>
+    <p>In the right pane, click <strong>Create an account</strong>.</p>
 
-    <p>For more information about PHP settings, see <a href="/guides/v2.0/install-gde/prereq/php-centos.html#instgde-prereq-timezone">PHP configuration options</a>.</p>
+    <p><img src="/common/images/marketplace_create-acct.png" alt="Create a Marketplace account" width="300px" /></p>
   </li>
 </ol>
 
-<h3 id="trouble-cron-errors">Solution: cron running with errors</h3>
-<p>Try running each command manually because the command might display helpful error messages.</p>
+<h3 id="find-an-extension-or-theme">Find an extension or theme</h3>
+<p>Browse Marketplace to find an extension or theme. For example, you can enter all or part of a name in the search field, you can scroll down the page, or you can select options from the filters.</p>
 
-<p>See <a href="/guides/v2.0/install-gde/install/post-install-config.html#post-install-cron">Set up cron</a>.</p>
+<h3 id="add-to-cart">Add to cart</h3>
+<p>Supply any required information for the extension or theme and click <strong>Add to Cart</strong>.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-	<p>You must run cron at least <em>twice</em> for the job to execute.</p>
-</div>
+<h3 id="check-out">Check out</h3>
+<p>The following figure shows a sample cart.</p>
+
+<p><img src="/common/images/marketplace_view-cart.png" alt="Marketplace shopping cart" width="600px" /></p>
+
+<p>When you’re ready, click <strong>Go to Checkout</strong> and follow the prompts on your screen to complete your purchase.</p>
+
+<h3 id="install-your-new-purchases">Install your new purchases</h3>
+<p>Use the <a href="/guides/v2.0/comp-mgr/compman-checklist.html">Component Manager</a> to install your purchases.</p>
 
 
 

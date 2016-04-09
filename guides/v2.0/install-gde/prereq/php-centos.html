@@ -766,7 +766,7 @@ with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
 
 <ol>
   <li>
-    <p>Enter the following commands in the order shown:</p>
+    <p><em>CentOS 6</em>. Enter the following commands in the order shown:</p>
 
     <pre><code>yum -y update
 yum -y install epel-release
@@ -774,7 +774,19 @@ wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
 wget https://centos6.iuscommunity.org/ius-release.rpm
 rpm -Uvh ius-release*.rpm
 yum -y update
-yum -y install php70u php70u-pdo php70u-mysqlnd php70u-opcache php70u-xml php70u-mcrypt php70u-gd php70u-devel php70u-mysql php70u-intl php70u-mbstring php70u-bcmath php70u-json
+</code></pre>
+  </li>
+  <li>
+    <p><em>CentOS 7</em>. Enter the following commands:</p>
+
+    <pre><code>yum install http://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/ius-release-1.0-14.ius.centos7.noarch.rpm
+yum -y update
+</code></pre>
+  </li>
+  <li>
+    <p>Enter the following command:</p>
+
+    <pre><code>yum -y install php70u php70u-pdo php70u-mysqlnd php70u-opcache php70u-xml php70u-mcrypt php70u-gd php70u-devel php70u-mysql php70u-intl php70u-mbstring php70u-bcmath php70u-json php70u-iconv
 </code></pre>
 
     <div class="bs-callout bs-callout-info" id="info">
