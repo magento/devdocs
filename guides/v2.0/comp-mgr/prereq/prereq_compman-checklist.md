@@ -2,8 +2,8 @@
 layout: default
 group: compman
 subgroup: 02_prereq
-title: Checklist
-menu_title: Checklist
+title: Update and upgrade checklist
+menu_title: Update and upgrade checklist
 menu_order: 200
 menu_node: 
 github_link: comp-mgr/prereq/prereq_compman-checklist.md
