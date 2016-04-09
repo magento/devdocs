@@ -82,7 +82,7 @@ To fork a repository on Github, do the following:
 
 To create a pull request do the following: 
 
-1. Push your changes to your fork repository on GitHub.
+1. Push your changes to your forked repository on GitHub.
 
 2. In your forked repository, click **New pull request**.
 
