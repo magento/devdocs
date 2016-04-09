@@ -33,14 +33,12 @@ To develop a module, you must:
 
 1. **Create the module file structure.** The module for an integration can be placed anywhere under the Magento root directory, but the recommended location is `<magento_base_dir>/vendor/<vendor_name>/module-<module_name>`.
 
-   Also create  `etc` and `integration` subdirectories under `module-<module_name>`, as shown in the following example:
+   Also create  `etc`, `etc/integration`, and `Setup` subdirectories under `module-<module_name>`, as shown in the following example:
 
     <pre>
     cd &lt;magento_base_dir>
-    mkdir vendor/&lt;vendor_name>/module-&lt;module_name>
-    cd vendor/&lt;vendor_name>/module-&lt;module_name>
-    mkdir etc
-    mkdir integration
+    mkdir -p vendor/&lt;vendor_name>/module-&lt;module_name>/etc/integration
+    mkdir -p vendor/&lt;vendor_name>/module-&lt;module_name>/Setup
    </pre>
    For more detailed information, see [Create the module file structure](../../extension-dev-guide/module-file-structure.html).
 
@@ -59,7 +57,7 @@ To develop a module, you must:
    <td>The version of Magento the component uses</td>
    </tr>
    </table>
-   The following example shows an example `module.xml` file.
+   The following example shows an example `etc/module.xml` file.
 
    <pre>
    &lt;?xml version="1.0"?>
@@ -71,9 +69,14 @@ To develop a module, you must:
       -->
       &lt;config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
           &lt;module name="Vendor1_Module1" setup_version="2.0.0">
+               &lt;sequence>
+                   &lt;module name="Magento_Integration"/>
+               &lt;/sequence>
           &lt;/module>
         &lt;/config>
    </pre>
+
+   Module "Magento_Integration" is added to "sequence" to be loaded first. It helps to avoid the issue, when a module with integration config loaded, that leads to a malfunction.
 
 
 3. **Add your module's `composer.json` file.** Composer is a dependency manager for PHP. You must create a `composer.json` file for your module so that Composer can install and update the libraries your module relies on. Place the `composer.json` file in the `module-<module_name>` directory.
@@ -120,6 +123,56 @@ To develop a module, you must:
         );
       </pre>
 
+5. **Create an install class.**
+Change directories to your `Setup` directory. Create a `InstallData.php` file that installs the integration configuration data into the Magento integration table.
+
+    The following sample is boilerplate and requires minor changes to make your integration work.
+
+    <pre>
+    &lt;?php
+    namespace Vendor1\Module1\Setup;
+
+    use Magento\Framework\Setup\ModuleContextInterface;
+    use Magento\Framework\Setup\ModuleDataSetupInterface;
+    use Magento\Integration\Model\ConfigBasedIntegrationManager;
+    use Magento\Framework\Setup\InstallDataInterface;
+
+    class InstallData implements InstallDataInterface
+    {
+        /**
+         * @var ConfigBasedIntegrationManager
+         */
+
+        private $integrationManager;
+
+        /**
+         * @param ConfigBasedIntegrationManager $integrationManager
+         */
+        public function __construct(ConfigBasedIntegrationManager $integrationManager)
+        {
+            $this->integrationManager = $integrationManager;
+        }
+
+        /**
+         * {@inheritdoc}
+         */
+        public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
+        {
+            $this->integrationManager->processIntegrationConfig(['testIntegration']);
+        }
+    }
+    </pre>
+
+
+    In the following line
+
+    `$this->integrationManager->processIntegrationConfig(['testIntegration']);`
+
+    `testIntegration` must refer to your `etc/integrations/config.xml` file, and the integration name value must be the same.
+
+    Also, be sure to change the path after `namespace` for your vendor and module names.
+
+
 <h2 id="files">Create integration files</h2>
 Magento provides the Integration module, which simplifies the process of defining your integration. This module automatically performs functions such as:
 
@@ -136,7 +189,7 @@ The process for customizing your module includes
 
 
 <h3 id="resources">Define the required resources</h3>
-The `integration/api.xml` file defines which API resources the integration has access to.
+The `etc/integration/api.xml` file defines which API resources the integration has access to.
 
 To determine which resources an integration needs access to, review the permissions defined in each module's `etc/acl.xml` file.
 
@@ -144,7 +197,7 @@ In the following example, the test integration requires access to the following 
 
 {% highlight xml %}
 <integrations>
-    <integration name="Test Integration">
+    <integration name="testIntegration">
         <resources>
             <!-- To grant permission to Magento_Log::online, its parent Magento_Customer::customer needs to be declared as well-->
             <resource name="Magento_Customer::customer" />
@@ -157,29 +210,22 @@ In the following example, the test integration requires access to the following 
             <resource name="Magento_Sales::reorder" />
         </resources>
     </integration>
-    <integration name="Test Integration2">
-        <resources>
-            <resource name="Magento_Sales::sales" />
-            <resource name="Magento_Sales::sales_operation" />
-            <resource name="Magento_Sales::transactions" />
-        </resources>
-    </integration>
 </integrations>
 {% endhighlight %}
 
 <h3 id="preconfig">Pre-configure the integration</h3>
 
-Your module can optionally provide a configuration file so that the integration can be automatically pre-configured with default values. To enable this feature, create the `config.xml` file in the `integration` directory.
-
-
+Your module can optionally provide a configuration file `config.xml` so that the integration can be automatically pre-configured with default values. To enable this feature, create the `config.xml` file in the `etc/integration` directory.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>If you pre-configure the integration, the values cannot be edited from the admin panel.</p>
 </div>
 
+The  file defines which API resources the integration has access to.
+
 {% highlight xml %}
 <integrations>
-   <integration name="TestIntegration1">
+   <integration name="TestIntegration">
        <email></email>
        <endpoint_url></endpoint_url>
        <identity_link_url></identity_link_url>
@@ -217,17 +263,11 @@ Your module can optionally provide a configuration file so that the integration 
 <h2 id="install">Install your module</h2>
 Use the following steps to install your module:
 
-1. Change directories to the `var` directory and remove its contents.
-
-      <pre>
-  cd <magento_install_dir>/
-  rm -rf var/* </pre>
-
-2. Run the following command to update the Magento database schema and data.
+1. Run the following command to update the Magento database schema and data.
 
     <code>bin/magento setup:upgrade</code>
 
-3. Run the following command to generate the new code.
+2. Run the following command to generate the new code.
 
     <code>bin/magento setup:di:compile</code>
 
