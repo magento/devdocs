@@ -1,0 +1,376 @@
+
+Marketing, Promotions, and Conversion Tools
+
+1.x CE +
+2.x CE+
+	Set related products, up-sells, and cross-sells 
+	Set promotional pricing for specific stores, categories, customer groups, or products 
+	Create flexible coupons for specific stores, customer groups, time periods, products, and categories 
+	Export coupon codes for offline distribution, email, newsletters, and more
+	Track and report coupon usage 
+	Offer free shipping and percent, fixed amount, and buy X get Y free discounts
+	Set multi-tier pricing for quantity discounts 
+	Get minimum advertised price (MAP) support 
+	Bundle products 
+	Create customizable category landing pages 
+	Show recently viewed and compared products 
+	Showcase new items with dynamic new product lists 
+	Save unpurchased items for the shopper’s next visit with persistent shopping cart
+	Create newsletters and manage their distribution 
+	Add Facebook, Twitter, and email links for sharing products
+
+Search Engine Optimization
+
+1.x CE +
+2.x CE+
+	Automatically generate a Google sitemap 
+	Create search engine friendly URLs 
+	Take full control of URLs with URL rewrites
+	Create metadata for products, categories, and content pages
+
+Site Management
+
+1.x CE+
+	Control multiple websites and stores from one administration panel
+	Define roles and permissions to control access to administrative features 
+	Use the content management system to create and easily edit pages and content blocks
+	Design a unique site using100% customizable responsive reference themes included with the application
+	Get support for multiple languages and currencies
+	Set tax rate based on location, product type, or customer group (i.e., wholesale vs. retailer)
+	Use a Web Services API to easily integrate Magento and third-party applications
+	Efficiently batch import and export catalog and customer information 	
+	Add CAPTCHA functionality to help prevent automated software from attempting fake logins
+
+2.x CE+ 
+	Quickly learn to manage and monitor a Magento store with a modern, user-friendly Admin panel
+	Customize and save different Admin panel views to efficiently manage products, customers, and orders
+        Create new products through a guided online process
+
+Catalog Management
+
+1.x CE +
+2.x CE +
+
+    Create simple, configurable (e.g., choose size, color, etc.), bundled, and grouped products 
+    Create virtual products 
+    Include downloadable/digital products with samples 
+    Allow customer-personalized products – upload images and text for monogramming, etc.
+    Define unlimited product attributes 
+    Create pre-defined attribute sets for quick product creation
+    Easily manage inventory with support for back ordered items
+    Receive notification when inventory needs to be replenished
+    Choose out-of-stock messaging and display options
+    Define minimum and maximum product quantities that can be added to the cart
+    Mass-assign a value to multiple products for batch updates to products 
+    Automatically resize images and include watermarking 
+    Use advanced pricing rules and get support for special prices, customer group prices, and tiered pricing 
+    Rewrite and redirect search results if customers receive no results 
+    Moderate reviews and product tags 
+
+Catalog Browsing
+
+1.x CE +
+2.x CE +
+
+    Filter products in categories and search results by price range, brands, color swatches, and other attributes with layered/faceted navigation
+    View product category items in grid or list format
+    Customize the look and feel of categories and assigned product pages
+    View product comparisons with history
+    Display a recently viewed products module
+    Add breadcrumbs
+    Define search synonyms to expand search results 
+    Add a popular search terms cloud
+
+Product Browsing
+
+1.x CE +
+2.x CE +
+
+    View multiple images per product
+    Zoom-in on product images 
+    Include swatches to show colors, fabrics, and more
+    Set related products, up-sell, and cross-sell
+    Display stock availability
+    Show pricing tiers
+    Display product ratings and reviews
+    Include grouped products view
+    Include option to add products to a wish list
+    Add Facebook, Twitter, and email links for sharing products 
+
+Checkout, Payment and Shipping
+
+1.x CE +
+
+	Show tax and shipping estimates in the shopping cart
+	Offer guest and registered user checkout. 
+	Save shopping cart to complete the purchase later
+	Accept gift messages per order and per item 
+	Authorize and charge credit cards upon shipment or checkout 
+	Integrate with multiple PayPal gateways and Authorize.net 
+	Accept checks and money orders 
+	Accept purchase orders 
+	Accept bank transfer payments and cash on delivery
+	Get SSL security support for orders on both front-end and back-end 
+	Get additional payment extensions through Magento Marketplace 
+	Integrate shipping with label printing for all major carriers 
+	Receive real-time shipping rates from UPS, UPS XML (account rates), FedEx (account rates), USPS, and DHL
+	Ship to multiple addresses in one order 
+	Specify allowed destination countries based on shipping method 
+	Set flat rate shipping fees per order or item 
+	Set table rates for weight, price, destination, and number of items
+	Provide free shipping 
+	Provide on-site order tracking from customer accounts 
+
+2.x CE+
+        Integrate with Braintree
+	Save credit card method for offline payments [is this implemented?]
+	Make purchases with a streamlined checkout designed to minimize data entry
+        Auto-fill the shopper’s city and provide shipping options based on their zip code
+        View an order summary with product images in checkout
+	Registered customers are automatically recognized when they enter their email address in checkout
+        Create a customer account with one click on the checkout thank you page
+        Securely pass credit card information directly from the client browser to payment gateway
+	Qualify for the easiest level of PCI compliance, SAQ-A or SAQ A-EPOffer PayPal Credit as a payment option
+	
+Order Management
+
+1.x CE +
+2.x CE +
+
+	View, edit, create, and fulfill orders and/or invoices from the admin panel
+	Create multiple invoices, shipments and credit memos per order to allow for split fulfillment
+	Print invoices, packing slips, and shipping labels
+	Enable customer service representatives to create orders and customer accounts, and update products and coupons in customers’ shopping carts and wish lists 
+	Send email notifications and RSS feeds with order status
+	Create custom order status labels to track progress
+
+Customer Accounts
+
+1.x CE +
+2.x CE +
+
+	View comprehensive account dashboard 
+	Choose default billing and shipping addresses 
+	Store unlimited addresses in the address book 
+	See order status and history 
+	Allow re-ordering from account 
+	View recently ordered items 
+	Create sharable wish list
+	Manage newsletter subscriptions 
+	View product reviews submitted 
+	View product tags submitted 
+	Access downloadable/digital products 
+
+Customer Service
+
+1.x CE +
+2.x CE +
+
+	Provide a Contact Us form
+	Create and edit orders from the admin panel
+	Offer feature-rich customer accounts for managing addresses, creating wish lists, and more
+	See order history with status updates
+	Track orders from account
+	Create customizable emails for order status, account updates, password resets, and more
+        International Support
+	Receive support for localization, multiple currencies, and local tax rates
+	Use accented characters and right-to-left text
+	Work with any language. X languages are included  
+	Configure list of allowed countries for site registration, shipping, and billing
+	Support fixed product taxes, such as WEEE/DEEEin the EU
+	Automatically calculate tax for transactions in the EU with VAT-ID validation2 
+	Use EU cookie notification to simplify EU Privacy and Electronic Communications Directive compliance 
+
+Mobile Commerce
+Responsive Design
+
+1.x CE +
+2.x CE +
+
+	Quickly create a site optimized for any device using an included base responsive design reference theme. The responsive theme:
+	Can be easily customized for a faster time to market
+	Includes major flows, product types, and features
+	Reduces long-term maintenance costs and eases site updates
+	Offers SEO benefits by using Google’s preferred approach to optimize mobile sites
+	Enables customers to read notifications and promotional mailings on mobile devices through responsive emails and newsletters
+
+Analytics and Reporting 
+
+1.x CE +
+2.x CE +
+
+	Integrate with Google Universal Analytics 
+	Access the following reports through the admin dashboard:
+	Sales report 
+	Tax report 
+	Abandoned shopping cart report 
+	Best viewed products report 
+	Best purchased products report 
+	Low stock report 
+	Search terms report 
+	Product reviews report 
+	Tags report 
+	Coupon usage report il
+	Total sales invoiced report
+	Total sales refunded report
+
+Architecture and Security
+
+2.x CE +
+
+	Build on a modern tech stack that uses popular frameworks and supports industry standards
+	Make fine grain customizations and easily add or remove functionality with a modular code base Use stable service contract interfaces to business logic to make site upgrades and customizations easy
+	Integrate Magento with third-party applications using efficient web APIs with SOAP and REST support
+	Smoothly manage interactions between extensions using plug-ins and dependency injection software design patterns
+	Accelerate time-to-market and improve code quality with a fully automated testing framework
+	Update code with a standalone installer that checks for prerequisits before starting the installation process
+	Feel confident with regular scanning, external penetration testing and bug bounty programs that promote application security 
+	Stay informed about security issues through the Magento Security Center and Security Alert mailing list
+
+Layout and Theming
+
+2.x CE +
+
+	Start with the responsive blank theme or the reference Luma store theme to accelerate time-to-market
+	Use theme inheritance for creating variations on existing themes for different countries, brands or seasonal campaigns
+	Leverage Magento’s UI and pattern library to enable faster and more consistent theme development
+	Use LESS CSS preprocessing to speed up development and [Another benefit we can cite?]
+	Reduce complexity with clear separation of presentation and business logic
+
+Performance and Scalability
+
+2.x CE +
+
+	Easily integrate with Apache Varnish to cache page content for faster performance
+        Use hole punching and Edge Side Includes (ESI) to handle page elements that can’t be cached
+	Benefit from faster indexing and incremental index updates for fresher site content and better performance
+	Minify JavaScript, CSS and HTML and compress images to reduce file size for faster loading
+	Bundle JavaScript files with their dependencies to allow for efficient browser loading
+	Cache all JavaScript and CSS on first page viewed to minimize content that must be downloaded for subsequent pages
+	Accelerate the rendering of Admin product, customer and order views for faster access to information
+	Use included Magento Performance Toolkit to measure and optimize site performance
+	Enable large teams of administrative users to manage orders and make scheduled product updates
+
+Dynamic Marketing and Merchandising
+
+1.x EE
+
+Customer Segmentation, Targeted Promotions & Merchandising
+Create personalized shopping experiences that boost conversion rates by dynamically displaying content and promotions to specific customers based on properties such as customer address, order history, shopping cart contents, wish list items, and more. You can also target unknown site visitors based on products viewed or items in cart.
+
+Customer Attribute Management 
+Further personalize sales and marketing efforts by easily adding new customer attributes such as gender, date of birth, alternate phone numbers, etc. These attributes can be used to create new or more sophisticated customer segments for customized marketing campaigns and content. 
+
+Visual Merchandizer
+Boost conversion rates and dramatically cut the time it takes to optimize product category pages with a suite of tools to easily and visually manage product merchandising. Manually position products using a simple drag-and-drop interface, set “hero” products that are always placed at the top of a category, or use automated sorting rules to organize category pages to feature best sellers, highest-margin products, newest products, and more. Also, save time by using Visual Merchandiser to automatically assign products to categories based on pre-set rules, to clone categories, or to create dynamic categories, such as “new products” or “on sale items” based on product attributes.
+
+Dynamic Rule-Based Product Relations 
+Set automated rules to determine which products to present as up-sells, cross-sells, and related products to different customer segments. Rules are easily administered through a condition-based tool. This allows you to effortlessly target specific product suggestions to encourage additional purchases and higher average order values.
+
+Solr Search
+Magento Enterprise Edition integrates with Solr, a standalone, enterprise-scale search server to provide improved search performance and relevancy. Solr can identify and offer suggestions for customer misspellings, support synonyms and stop words, and use attribute weighting in search results. It can also generate search results for layered navigation.
+
+Automated Email Marketing Reminder 
+Increase sales by automating email reminders to customers with abandoned shopping carts and wish lists. Email reminder campaigns can be triggered based on a wide variety of conditions, such as time since a cart or wish list was abandoned, the total cart value, or specific items in the cart. You can also include coupon codes in the email reminders to encourage shoppers to return to your site.
+
+Content Management System
+Magento Enterprise Edition includes CMS enhancements to help you create content that distinguishes your store from your competition, increases your visibility to search engines, and supports your customers. The CMS includes a WYSIWYG editor and page hierarchy system to organize content pages and add pagination, navigation, and menus. Create multiple versions of a page, track the revision history of each, and restore previous versions, if needed. You can also set permissions to control who can create and publish content.
+
+Category View and Purchase Permissions per Customer Group (Limited Catalog Access)
+Manage the products and categories that can be viewed and purchased by each customer group. B2B businesses use this feature to offer custom sets of products to different accounts.
+
+Increased Customer Loyalty
+
+1.x EE
+
+Rewards Points
+Build shopper loyalty through special reward programs. Points can be awarded for purchases, registering for a customer account, newsletter signups, product review submissions, and more. Redemption rules are configurable so you can set caps on the number of reward points that can be accrued and determine when reward points expire.
+
+Store Credits
+Issue store credits that can be tied to customer accounts. You can also refund orders for store credit or virtual gift cards to be used toward future purchases.
+
+Multiple Wish Lists
+Customers can save products to multiple wish lists and copy or move items between lists. They can make their wish lists public so they’re searchable by anyone, and you can review these lists to learn about their wants and interests.
+
+Gift Registry
+Enable customers to create gift registries for special occasions such as new babies, weddings, and birthdays. Automated emails and registry search boxes make it easy for friends and family to access the registry. You can keep track of all items purchased, view the quantities remaining, and send updates to the registry owner when new items are purchased.
+
+Gifting Options 
+Allow customers to purchase physical and virtual gift certificates/cards for your store and select gift-wrapping for individual products or complete orders during check out for convenient gift-giving. Your administrators can easily configure applicable pricing and taxes for gift-wrapping options.
+
+Private Sales
+Offer exclusive shopping experiences for your most valuable customers with a private or flash sale site. You can control how long private sales last and who is invited to participate, as well as boost interest by allowing customers to invite their friends to join in and by displaying a countdown timer showing time remaining until the sale is over. 
+
+Add to Cart by SKU
+Streamline the ordering process, especially for B2B customers, by enabling them to enter a list of SKUs without having to go into product pages. This simplifies large orders, recurring orders, and ordering based on offline catalogs.
+
+Configurable Order Tracking Widget  
+Customers can track the status of existing orders and returns without logging in to their account.
+ 
+Powerful Performance and Scalability
+
+1.x EE
+
+Scalable Backend Product Management
+Increase productivity with a scalable Magento Admin that can support large teams making simultaneous and immediate product updates.
+
+Support for Alternate Media Storage – CDN and Database
+Media files can be stored in a database on a database server or on a content delivery network (CDN), as opposed to storing them on the file system of the web server. This leads to quicker page load times and less activity on the server. 
+
+Order Archiving
+Archive orders after a configurable time period to increase store performance and provide efficiencies in store management. Orders are still available to both admin users and customers after they’re archived.
+
+
+2.x EE
+
+Multiple Master Servers
+Scale the database tier of your Magento application by using separate master databases to support Checkout, Order Management, and Product Data. This division allows different functional areas to be isolated from each other and scaled independently to meet varying system load requirements.
+
+Multiple Slave Databases
+Magento Enterprise Edition allows each master database to have multiple slave databases to scale read operations.
+
+MySQL Cluster Support
+Horizontally scale your Checkout and Order Management databases to ensure high availability through Magento Enterprise Edition’s support for MySQL Cluster, a third-party solution. MySQL Cluster manages data sharding over multiple database instances so multiple master databases can be used to increase your throughput.
+
+ Job Queue Mechanism
+Magento Enterprise Edition includes a new job queue framework based on Rabbit MQ that enables asynchronous processing of tasks using separate resources for optimized performance. It is currently used to support deferred stock updates (see below), but is expected to support sending emails, indexing, and order insertions in subsequent releases. Developers can also take advantage of job queuing for extensions and customizations that require highly scalable processing.
+
+Deferred Stock Updates
+Make sure you don’t miss any orders during high transaction periods by using the optional deferred stock update configuration. Deferred stock updates for individual products or an entire website take advantage of the new job queue mechanism to allow inventory levels to update asynchronously as orders are placed to improve throughput.
+
+
+Extensive Management Tools
+
+1.x EE
+
+Return Management Authorization (RMA)
+Use RMA to make returns more efficient for your business and your customers alike. Shoppers can request a return directly from your site, and you can process the request and authorize returns, exchanges, refunds, and store credits conveniently in your Admin panel. Once a return is authorized, an email is automatically sent to the shopper with instructions for returning the product and printing the shipping label.  
+
+Advanced Permissions
+Create multiple administrative roles to control who can view and edit product prices and promotions. You can also restrict
+Admin access to a specific site, or set of sites, and their associated data, if sites for multiple brands or business units are run on the same Magento instance.
+
+Staging, Merging and Rollback of Content
+Create a staging site to test new content, categories, product information, promotions, and more. Content can be merged to the live site after approval, either on-demand or according to a schedule.
+
+Google Tag Manager 
+Use Google Tag Manager to quickly add tracking tags to a Magento site for audience measurement, personalization, search engine marketing, retargeting, and other marketing programs. You can manage tags on your own with an easy-to-use web interface. Google Tag Manager can also be used to directly transfer data and events to Google Analytics Enhanced Ecommerce and other third-party analytics solutions for deeper business insights.
+
+Support Tool 
+Generate a comprehensive system report detailing the Apache version, MySQL settings, extensions in use, database corruption status, and much more so that support teams can access information needed to quickly diagnose and resolve technical issues
+
+Scheduled Import/Export Functionality
+Import and export product catalog data either locally or from remote FTP servers. You can configure for error handling, status reporting, and backup.
+
+Logging of Administrator Actions  
+Track and review all administrators’ backend activities with the ability to see each action, name of the user who performed it, whether it was a success or failure, and the date. 
+
+Strong Data Encryption, Hashing and Key Management
+Magento Enterprise Edition includes strong data encryption based on AES-256 and hashing based on SHA-256. It also offers a more secure admin panel login process with stronger password requirements and account lockout to limit password guessing. You can easily manage and update database keys.
+
+Mobile
+
+1.x EE
+
+Magento Mobile Software Development Kit (SDK) 
+Significantly reduce development effort and time to market when creating custom iOS and Android applications using the Magento Mobile SDK. The SDK includes a complete library of resources, an API to connect the app to a Magento store, and support for all key Magento features. It also offers fully functioning iOS and Android sample apps that can be customized to accelerate development.
