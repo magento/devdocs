@@ -7,6 +7,7 @@ menu_title: Magento Features
 menu_node: parent
 github_link: release-notes/feature_list.md
 contributor_name: Rob Tull, Michael Kreitzer, Vincent Hart
+contributor_link: https://github.com/magento-hackathon
 ---
 ## Magento Feature List
 
@@ -2783,23 +2784,6 @@ contributor_name: Rob Tull, Michael Kreitzer, Vincent Hart
         </th>
         <th colspan="2">
             M2
-        </th>
-    </tr>
-    <tr>
-        <th class="note-item">
-            Magento Edition
-        </th>
-        <th class="note-item">
-            CE
-        </th>
-        <th class="note-item">
-            EE
-        </th>
-        <th class="note-item">
-            CE
-        </th>
-        <th class="note-item">
-            EE
         </th>
     </tr>
     <tr>
