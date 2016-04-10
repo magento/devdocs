@@ -418,7 +418,7 @@ public function deleteFirstPostAction() {
 public function showAllBlogPostsAction() {
     $posts = Mage::getModel('weblog/blogpost')->getCollection();
     foreach($posts as $blogpost){
-        echo '&lt;h3>'.$blogpost->getTitle().'</h3>';
+        echo '&lt;h3>'.$blogpost->getTitle().'&lt;/h3>';
         echo nl2br($blogpost->getPost());
     }
 }
