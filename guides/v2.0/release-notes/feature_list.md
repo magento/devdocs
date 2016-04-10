@@ -6,6 +6,7 @@ title: Magento Feature List
 menu_title: Magento Features
 menu_node: parent
 github_link: release-notes/feature_list.md
+contributor_name: Rob Tull, Michael Kreitzer, Vincent Hart
 ---
 ## Magento Feature List
 
@@ -2773,6 +2774,34 @@ github_link: release-notes/feature_list.md
         <col></col>
         <col></col>
     </colgroup>
+    <tr>
+        <th>
+            Feature Title
+        </th>
+        <th colspan="2">
+            M1
+        </th>
+        <th colspan="2">
+            M2
+        </th>
+    </tr>
+    <tr>
+        <th class="note-item">
+            Magento Edition
+        </th>
+        <th class="note-item">
+            CE
+        </th>
+        <th class="note-item">
+            EE
+        </th>
+        <th class="note-item">
+            CE
+        </th>
+        <th class="note-item">
+            EE
+        </th>
+    </tr>
     <tr>
         <th colspan="5">
             Rich Merchandising Suite (RMS)
