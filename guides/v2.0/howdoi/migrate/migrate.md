@@ -30,7 +30,3 @@ Follow the links below to learn more about each of the four components.
 * <a href="{{ site.gdeurl }}howdoi/migrate/migrate-extensions.html">Extension Migration</a>
 * <a href="{{ site.gdeurl }}howdoi/migrate/migrate-code.html">Customizations Migration</a>
 * <a href="{{ site.gdeurl }}howdoi/migrate/migrate-data.html">Data Migration</a>
-
-For full information please see the complete <a href="{{ site.gdeurl }}migration/bk-migration-guide.html">Migration Guide</a>
-
-
