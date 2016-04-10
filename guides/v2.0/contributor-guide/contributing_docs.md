@@ -19,8 +19,6 @@ The following topics are included in the Guide:
 
 * <a href="#fork">Fork a repository</a>
 
-* <a href="#sync">Update the fork with the latest changes</a>
-
 * <a href="#pull_request">Create a pull request</a>
 
 * <a href="#report">Report an issue</a>
@@ -95,23 +93,6 @@ To create a pull request do the following:
 4. Review the changes, then click **Create pull request**. Fill out the form, and click **Create pull request** again to submit the PR&mdash;that’s it!
 
 After submitting your PR, you can head over to the DevDocs repository’s <a href="https://github.com/magento/devdocs/pulls" target="_blank">Pull Requests panel</a> to see your PR along with the others. The DevDocs team will review your contribution, and get back with you if we have any questions. Once the final content is ready, we will merge your PR into the repo, and your work will be published to the repo and to <a href="https://github.com/magento/devdocs" target="_blank">devdocs.magento.com</a>. If you write a whole topic, or make substantial contributions to an existing topic, we will add your name right below the title, linked to your blog or site!
-
-<h2 id="sync">Update the fork with the latest changes</h2>
-As community and Magento writers changes are merged to the repository, your fork will became outdated and pull requests might result in conflicts. It is easy to see if the fork is outdated: just 
-open the fork page in GitHub and if at the top you can read "This branch is NUMBER commits behind magento:2.0.", it means it needs to be updated.
-
-There are two ways to update your fork. The typical way requires command line and is described here: https://help.github.com/articles/syncing-a-fork/. Make sure to use 2.0 instead of master.
-
-There is also a possibility to use GitHub interface to do that. This method inserts unneccessary information into fork commit history. If you do not care about that, you can create 
-a reverse pull request. On your fork GitHub page, click New pull request. You should see the following message:
-
-There isn’t anything to compare.
-magento:2.0 is up to date with all commits from USER:2.0. Try switching the base for your comparison.
-
-Click the base link and then Create pull request, providing any title.
-
-Scroll to the bottom of the page and click Merge pull request and then Confirm Merge.
-
 
 <h2 id="report">Report an issue</h2>
 If you find a bug (errr... we mean a typo or erroneous information) in Magento DevDocs, you can either fix it with a PR or you can simply report it by creating an issue in the DevDocs repository.
@@ -227,4 +208,3 @@ Refer to the following table for a description of each label. These labels are a
 -->
 
 <h2 id="Thanks">Thank you so much for adding your brilliance to the Magento DevDocs!! </h2>
-
