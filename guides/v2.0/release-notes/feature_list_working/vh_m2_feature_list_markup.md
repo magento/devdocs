@@ -749,15 +749,170 @@
             <td></td>
          	<td></td>
         	<td></td>
-        	<td>v</td>
-         	<td>v</td>
+        	<td></td>
+         	<td></td>
          </tr>
          <tr>
-            <td></td>
+            <td><strong>Customer Accounts</strong></td>
+         	<td></td>
+        	<td></td>
+        	<td></td>
+         	<td></td>
+         </tr>
+         <tr>
+            <td>View comprehensive account dashboard</td>
          	<td></td>
         	<td></td>
         	<td>v</td>
          	<td>v</td>
          </tr>
+         <tr>
+            <td>Choose default billing and shipping addresses</td>
+         	<td></td>
+        	<td></td>
+        	<td>v</td>
+         	<td>v</td>
+         </tr>
+         <tr>
+            <td>Store unlimited addresses in the address book</td>
+         	<td></td>
+        	<td></td>
+        	<td>v</td>
+         	<td>v</td>
+         </tr>
+         <tr>
+            <td>See order status and history</td>
+         	<td></td>
+        	<td></td>
+        	<td>v</td>
+         	<td>v</td>
+         </tr>
+         <tr>
+            <td>Allow re-ordering from account</td>
+         	<td></td>
+        	<td></td>
+        	<td>v</td>
+         	<td>v</td>
+         </tr>
+         <tr>
+            <td>View recently ordered items</td>
+         	<td></td>
+        	<td></td>
+        	<td>v</td>
+         	<td>v</td>
+         </tr>
+         <tr>
+            <td>Create a sharable wish list</td>
+         	<td></td>
+        	<td></td>
+        	<td>v</td>
+         	<td>v</td>
+         </tr>
+         <tr>
+            <td>Manage newsletter subscriptions</td>
+         	<td></td>
+        	<td></td>
+        	<td>v</td>
+         	<td>v</td>
+         </tr>
+         <tr>
+            <td>View product reviews submitted</td>
+         	<td></td>
+        	<td></td>
+        	<td>v</td>
+         	<td>v</td>
+         </tr>
+         <tr>
+            <td>Access downloadable/digital products </td>
+         	<td></td>
+        	<td></td>
+        	<td>v</td>
+         	<td>v</td>
+         </tr>
+         <tr>
+            <td></td>
+          	<td></td>
+         	<td></td>
+         	<td></td>
+          	<td></td>
+         </tr>
+         <tr>
+            <td><strong>Support for Global Sites</strong></td>
+          	<td></td>
+         	<td></td>
+         	<td></td>
+          	<td></td>
+         </tr>
+         <tr>
+            <td>Manage multiple country sites all from the same store or environment</td>
+          	<td></td>
+         	<td></td>
+         	<td>v</td>
+          	<td>v</td>
+         </tr>
+         <tr>
+            <td>Receive support for localization, multiple currencies, and local tax rates</td>
+          	<td></td>
+         	<td></td>
+         	<td>v</td>
+          	<td>v</td>
+         </tr>
+         <tr>
+            <td>Work with any language</td>
+          	<td></td>
+         	<td></td>
+         	<td>v</td>
+          	<td>v</td>
+         </tr>
+         <tr>
+            <td>Use accented characters and right-to-left text</td>
+          	<td></td>
+         	<td></td>
+         	<td>v</td>
+          	<td>v</td>
+         </tr>
+         <tr>
+            <td>Configure list of allowed countries for site registration, shipping, and billing</td>
+          	<td></td>
+         	<td></td>
+         	<td>v</td>
+          	<td>v</td>
+         </tr>
+         <tr>
+            <td>Support fixed product taxes, such as WEEE/ DEEE in the EU</td>
+          	<td></td>
+         	<td></td>
+         	<td>v</td>
+          	<td>v</td>
+         </tr>
+         <tr>
+            <td>Automatically calculate tax for transactions in the EU with VAT-ID validation2</td>
+          	<td></td>
+         	<td></td>
+         	<td>v</td>
+          	<td>v</td>
+         </tr>
+         <tr>
+            <td>Use EU cookie notification to simplify EU Privacy and Electronic Communications Directive compliance </td>
+          	<td></td>
+         	<td></td>
+         	<td>v</td>
+          	<td>v</td>
+         </tr>
+         <tr>
+            <td></td>
+          	<td></td>
+         	<td></td>
+         	<td>v</td>
+          	<td>v</td>
+         </tr>
+         <tr>
+            <td></td>
+          	<td></td>
+         	<td></td>
+         	<td>v</td>
+          	<td>v</td>
+         </tr>         
     </tbody>
 </table>
+
