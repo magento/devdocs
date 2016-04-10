@@ -191,44 +191,22 @@
 
 				
 
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
-			
-
-				
-
 					
 					
+
+					
+
+						
+
+						
+
+							
+
+								<li class="q  active "><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Introduction</a></li>
+
+							
+
+						
 
 					
 
@@ -243,10 +221,9 @@
 
 
 								
-
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/ext-best-practices/admin/admin-best-practices.html">Admin</a></li>
 									
-
-										<li class="levela1"><span class="nav-header">5_Package</span></li>
+								
 
 									
 
@@ -255,7 +232,15 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/ext-best-practices/bk-ext-best-practices.html">Introduction</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/ext-best-practices/admin/placement-and-design.html">Admin Panel Placement and Design</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/ext-best-practices/admin/ext-best-practices_admin_FAQ.html">Admin FAQ</a></li>
 
 									
 
@@ -268,6 +253,128 @@
 
 					
 
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/ext-best-practices/extension-coding/coding-best-practices.html">Extension Coding</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/ext-best-practices/extension-coding/common-programming-bp.html">Programming best practices</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/ext-best-practices/extension-coding/working-with-arch-bp.html">Working with the Architecture</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/ext-best-practices/extension-coding/security-performance-data-bp.html">Security, performance, and data handling</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/ext-best-practices/extension-coding/coding-faq.html">Coding FAQ</a></li>
+
+									
+
+								
+								
+								
+							
+							
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/ext-best-practices/storefront/storefront-best-practices.html">Storefront</a></li>
+									
+								
+
+									
+
+
+								
+								
+								
+							
+							
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
 
 				
 
@@ -361,60 +468,70 @@
 
 		<h2 id="introduction">Introduction</h2>
 
-<p>This document provides best practices, guidelines, and tips for creating Magento modules, or extensions.</p>
+<div class="bs-callout bs-callout-info" id="info">
+  <p>DRAFT/PROPOSAL: This Best Practices Guide is a first draft! The guide combines Best Practices that we have heard the community ask for, along with guidelines that our Magento UX, Engineering, and Product teams are working on. 
+  <p></p>
+We want your feedback; please do a pull request on <a href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/ext-best-practices/admin/ext-best-practices_admin_FAQ.html" target="_blank">feedback-placement-and-design.md</a> and let us know what your best practices are, your challenges, and how you would like Magento to help standardize (where needed).
+  </p>
+</div>
 
-<p>Magento consists of the core product code plus optional modules, or extensions.  These modules enhance or replace the basic product code. There are over 100 out-of-the-box modules in Magento 2, and it is also typical for developers to create new, custom modules for their storefront.</p>
+<p>Magento consists of the core product code plus optional components that enhance or replace the core product code. There are over 100 out-of-the-box components in the form of modules, themes, and language packages available for Magento 2.</p>
 
-<p>Magento provides an easy way to find and install custom modules. </p>
+<p>Magento’s architecture allows for enhancements by letting you develop your own component. Keep in mind that in addition to Magento’s own modules, your extension will be running alongside components from other developers. For this reason, it is important that your component behaves correctly in Magento’s modular environment.</p>
 
-<p>The following sections cover Best Practices in three main categories:</p>
+<p>The table below is data from a recent poll that shows the distribution of the amount of extensions installed on a Magento instance for each edition. So for example, 32% of merchants on EE have over 50 different extensions installed!</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Edition</th>
+      <th>1-9 extensions</th>
+      <th>10-30 extensions</th>
+      <th>31-50 extensions</th>
+      <th>50+ extensions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Community</td>
+      <td>10%</td>
+      <td>53%</td>
+      <td>26%</td>
+      <td>11%</td>
+    </tr>
+    <tr>
+      <td>Enterprise</td>
+      <td>9%</td>
+      <td>32%</td>
+      <td>27%</td>
+      <td>32%</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This guide provides best practices, guidelines, and tips for creating Magento extensions.  We encourage you to follow our best practices when developing code for your Magento components.</p>
+
+<h3 id="sections">Sections</h3>
 
 <ul>
-  <li>Architecture and PHP coding</li>
-  <li>Frontend development with layouts, blocks, and themes</li>
-  <li>Admin UI; icons, menus, and more.</li>
+  <li>
+    <p><a href="/guides/v2.0/ext-best-practices/admin/admin-best-practices.html">Admin</a></p>
+  </li>
+  <li>
+    <p><a href="/guides/v2.0/ext-best-practices/extension-coding/coding-best-practices.html">Extension Coding</a></p>
+  </li>
+  <li>
+    <p><a href="/guides/v2.0/ext-best-practices/storefront/storefront-best-practices.html">Storefront</a></p>
+  </li>
 </ul>
 
-<h2 id="archi_php">Architectural structure and PHP coding </h2>
+<h3 id="related-content">Related Content</h3>
 
-<p>Best Practices about architectural structure of a new extension (module.xml), with info like required config files, optimizing a module for certain environments (small store, et)</p>
-
-<p>Fundamental programming designs/concepts, like how MVC architecture works in our code</p>
-
-<h3 id="know_arch">Know your architecture</h3>
-<p>Provide a link to AG.</p>
-
-<h3 id="bp_arch_1">Best Practice 1</h3>
-
-<p>abc</p>
-
-<h3 id="bp_arch_2">Best Practice 2</h3>
-
-<p>abc</p>
-
-<h2 id="frontend">Frontend development with layouts, blocks, and themes</h2>
-
-<p>Using best practices when working with the frontend components of an module produces an extension that is easier to create and maintain. </p>
-
-<h3 id="bp_frontend_1">Best Practice 1</h3>
-
-<p>abc</p>
-
-<h3 id="bp_frontend_2">Best Practice 2</h3>
-
-<p>abc</p>
-
-<h2 id="Admin">Admin UI: icons, menus, and more</h2>
-
-<p>How to navigate to and display extensions in the Admin is a great place for using Best Practices; what extensin developers choose to do (or not do) when integrating their extensions has a big impact on the look-n-feel of the Admin UI.</p>
-
-<h3 id="bp_admin_1">Best Practice 1</h3>
-
-<p>abc</p>
-
-<h3 id="bp_admin_2">Best Practice 2</h3>
-
-<p>abc</p>
+<ul>
+  <li><a href="/guides/v2.0/pattern-library/bk-pattern.html">Admin Design Pattern Library</a> - An in depth guide to the design patterns used in the Admin.</li>
+  <li><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> - An in depth guide to creating Magento components.</li>
+  <li><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a> - An in depth guide to creating a Magento storefront theme.</li>
+</ul>
 
 
 		</div>
