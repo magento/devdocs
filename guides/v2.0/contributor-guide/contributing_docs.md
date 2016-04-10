@@ -58,8 +58,8 @@ Often when the Magento DevDocs team works on reviewing the suggested changes, we
     * Define what the goal of your topic is: what exactly do you want to teach the reader?
     * Make the title of your topic reflect the content.
     * Keep your sentences concise, and try to separate conceptual information from procedural steps.
-    * Remember to use active voice (not passive), write in the present tense, and use a friendly tone in second person (i.e. "You can now view the output...")
-    * Use Notes and even Warnings to alert readers to particularly important details (our template has the markdown syntax!).
+    * Remember to use active voice (not passive), write in the present tense, and use a friendly tone in second person (for example, "You can now view the output...")
+    * Use Notes and even Warnings to alert readers to particularly important details.
     * Use cross-references to other topics if it is appropriate. We can help you with that syntax too, and the template has an example.
     
 2. Focus on the content and on creating useful information for your fellow Magento developers and community members, but do please take a few editorial passes at your work before submitting your topic and look for typos, formatting errors, or sentences that need clarifying. 
@@ -78,17 +78,17 @@ To fork a repository on Github, do the following:
 
 4. Clone the repo into your development environment and then start writing and committing your changes. Optionally create a branch first if you plan to work on mulitple changes.
 
-5. You can build this site using Jekyll by following the <a href="https://github.com/magento/devdocs#user-content-building-this-site" target="_blank">instructions here</a>. 
+5. You can build this site using Jekyll by following the <a href="https://github.com/magento/devdocs/README.md#build" target="_blank">instructions here</a>. 
 
 ### Update the fork with the latest changes {#sync}
-As community and Magento writers' changes are merged to the repository, your fork becames outdated and pull requests might result in conflicts. To see if your fork is outdated, open the fork page in GitHub and if at the top the message `This branch is NUMBER commits behind magento:2.0.` displays, it means your fork must be updated.
+As community and Magento writers' changes are merged to the repository, your fork becames outdated and pull requests might result in conflicts. To see if your fork is outdated, open the fork page in GitHub and if at the top the message `This branch is <number> commits behind magento:2.0.` displays, it means your fork must be updated.
 
 There are two ways to update your fork. The typical way is discussed in [GitHub documentation](https://help.github.com/articles/syncing-a-fork){:target="_blank"}. Make sure to update from the correct branch!
 
 There is also a possibility to use the GitHub interface to do that. This is referred to as a *reverse pull request*. This method has the downside of inserting unnecessary information into fork commit history. On your fork GitHub page, click **New pull request**. You should see the following message:
 
-  There isn’t anything to compare.
-  magento:2.0 is up to date with all commits from <your fork>:2.0. Try switching the base for your comparison.
+    There isn’t anything to compare.
+    magento:2.0 is up to date with all commits from <your fork>:2.0. Try switching the base for your comparison.
 
 Click the base link and then click **Create pull request**. Provide a descriptive name for your pull request in the provided field.
 
