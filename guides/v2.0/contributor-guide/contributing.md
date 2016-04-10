@@ -10,11 +10,6 @@ github_link: contributor-guide/contributing.md
 redirect_from: /guides/v1.0/contributor-guide/contributing.html
 ---
 
-<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
-<!-- Referring file: contributing.md owned by core -->
-<!-- References are to this topic itself, http://devdocs.magento.com/guides/v1.0/contributor-guide/contributing.html#fork, contributing.html#pull_request -->
-
-
 The following topics are included in the Guide:
 
 * <a href="#contribute">Contribute to Magento 2 code</a>
@@ -67,7 +62,21 @@ To fork a repository on Github, do the following:
 2. Navigate to the <a href="https://github.com/magento/magento2" target="_blank">Magento 2 repository</a>.
 3. Click **Fork** at the top right: <br><img src="{{ site.baseurl }}common/images/fork.png" alt="fork a repository">
 
-4. Clone the repo into your development environment, get the app installed, and start playing.
+4. Clone the repo into your development environment and start playing.
+
+### Update the fork with the latest changes {#sync}
+As community and Magento writers' changes are merged to the repository, your fork becames outdated and pull requests might result in conflicts. To see if your fork is outdated, open the fork page in GitHub and if at the top the message `This branch is NUMBER commits behind magento:2.0.` displays, it means your fork must be updated.
+
+There are two ways to update your fork. The typical way is discussed in [GitHub documentation](https://help.github.com/articles/syncing-a-fork){:target="_blank"}. Make sure to update from the correct branch!
+
+There is also a possibility to use the GitHub interface to do that. This is referred to as a *reverse pull request*. This method has the downside of inserting unnecessary information into fork commit history. On your fork GitHub page, click **New pull request**. You should see the following message:
+
+  There isn’t anything to compare.
+  magento:2.0 is up to date with all commits from <your fork>:2.0. Try switching the base for your comparison.
+
+Click the base link and then click **Create pull request**. Provide a descriptive name for your pull request in the provided field.
+
+Scroll to the bottom of the page and click **Merge pull request**, then click **Confirm Merge**.
 
 <h2 id="pull_request">Create a pull request</h2>
 
