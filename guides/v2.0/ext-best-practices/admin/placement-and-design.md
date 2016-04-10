@@ -23,7 +23,7 @@ Magento’s flexible platform lets you place an extension anywhere in the Admin 
 We discourage practices that diminish the user experience in the Admin. The following design decisions that have been seen in some extensions create a negative user experience and should be avoided.
 
 ### Icons in the Primary Navigation
-Icons should not be added to the primary navigation panel in the Admin. If each extension added its own icon to the primary navigation panel, the interface will quickly become cluttered and unusable.
+Icons should not be added to the primary navigation panel in the Admin. If every extension added its own icon to the primary navigation panel, the interface will quickly become cluttered and unusable.
 
 Icons should not be used in any of the navigation submenu panels to bring attention to your extension. Your navigation listing should conform to the look and feel of its surroundings and not look out of place.
 
@@ -32,7 +32,7 @@ Your extension's settings and configuration area is an appropriate place to use 
 For more information about icon design and Magento's icon library, see the article about  [Iconography]({{site.gdeurl}}design-styleguide/iconography/iconography.html) in the Admin Style Guide book.
 
 ### Advertising in Navigation
-It is not appropriate to use the Magento Admin navigation for marketing or to cross-sell extensions after your extensions has been installed in Magento. A [new section](#feature-extensions) is under proposal that will allow you to place marketing and advertising content.
+It is not appropriate to use the Magento Admin navigation for marketing or to cross-sell extensions after your extensions has been installed in Magento. A [new section](#feature-extensions) is under proposal that will possibly be more suitable for marketing and advertising content.
 
 Do not use the name of your company or marketing jargon as part of an extension name or the extension name itself in the Admin. You should create a unique feature name that users will understand because people usually search for extensions by feature or function keywords, not by a company or brand name.
 
@@ -95,13 +95,12 @@ These are extensions which provide additional functionality to Magento that do n
 
 **Placement**
 
-There will be a new, dedicated section designed for such exclusive extensions called “Extensions”. When feature-level extensions are installed, those extensions will live under this section.
+There will be a new, dedicated section designed for such exclusive extensions. When feature-level extensions are installed, those extensions will live under this section. The exact final name of this new section has not been decided (we welcome your feedback), but in the image below it is named Extensions.
 
 ![Feature Placement]({{site.baseurl}}common/images/ext-best-practices/feature-placement.png){:height="190px" width="350px"}
-
 <div class="bs-callout bs-callout-info" id="info">
   <p>The name and icon for this section is still TBD.</p>
-  <p>This new section is a future proposal, and we welcome feedback if and how advertisements should be displayed here.</p>
+  <p>This new section is a future proposal, and we welcome feedback about if and how advertisements should be displayed here.</p>
 </div>
 
 Since this section is not yet available, you should place your extension in one of the previously mentioned areas where it would be the most appropriate.
