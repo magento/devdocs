@@ -552,7 +552,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            <a href="">Support for multiple languages and currencies</a>
+            <a href="http://docs.magento.com/m2/ce/user_guide/stores/currency.html">Support for multiple currencies</a>
         </td>
         <td>
             X
@@ -569,7 +569,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Web Services API for easy integration between Magento and third-party applications
+            <a href="http://docs.magento.com/m2/ce/user_guide/stores/store-language-add.html">Support for multiple languages</a>
         </td>
         <td>
             X
@@ -586,7 +586,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Batch import and export of catalog and customer information
+            <a href="http://docs.magento.com/m2/ce/user_guide/system/integrations.html">Web Services API for easy integration between Magento and third-party applications</a>
         </td>
         <td>
             X
@@ -603,7 +603,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Content Management System for informational and landing pages
+            <a href="http://docs.magento.com/m2/ce/user_guide/system/data-import.html">Batch import and export of catalog and customer information</a>
         </td>
         <td>
             X
@@ -620,7 +620,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Tax rates per location, product type or customer group (i.e. wholesale vs. retailer)
+            <a href="http://docs.magento.com/m2/ce/user_guide/content.html">Content Management System for informational and landing pages</a>
         </td>
         <td>
             X
@@ -637,7 +637,24 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            CAPTCHA functionality to help prevent automated software from attempting fake logins. This auto-generated test ensures that the login is being attempted by a person and can be enabled in both the admin and customer login areas
+            <a href="http://docs.magento.com/m2/ce/user_guide/tax/taxes.html">Tax rates per location, product type or customer group (i.e. wholesale vs. retailer)</a>
+        </td>
+        <td>
+            X
+        </td>
+        <td>
+            X
+        </td>
+        <td>
+            X
+        </td>
+        <td>
+            X
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="http://docs.magento.com/m2/ce/user_guide/stores/security-captcha.html">CAPTCHA functionality to help prevent automated software from attempting fake logins. This auto-generated test ensures that the login is being attempted by a person and can be enabled in both the admin and customer login areas</a>
         </td>
         <td>
             X
@@ -659,7 +676,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Simple, configurable (e.g. size, color, etc.), bundled and grouped products
+            <a href="http://docs.magento.com/m2/ce/user_guide/catalog/product-types.html">Simple, configurable (e.g. size, color, etc.), bundled and grouped products</a>
         </td>
         <td>
             X
@@ -676,7 +693,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Create different price points for different customer groups, such as wholesalers and retailers
+            <a href="http://docs.magento.com/m2/ce/user_guide/catalog/product-price-group.html">Create different price points for different customer groups, such as wholesalers and retailers</a>
         </td>
         <td>
             X
@@ -693,7 +710,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Virtual products Downloadable/digital products with samples
+            <a href="http://docs.magento.com/m2/ce/user_guide/catalog/product-create-downloadable.html">Virtual products Downloadable/digital products with samples</a>
         </td>
         <td>
             X
@@ -710,7 +727,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Unlimited product attributes
+            <a href="http://docs.magento.com/m2/ce/user_guide/catalog/product-attributes.html">Unlimited product attributes</a>
         </td>
         <td>
             X
@@ -727,7 +744,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Attribute sets for quick product creation of different item types
+            <a href="http://docs.magento.com/m2/ce/user_guide/stores/attribute-sets.html">Attribute sets for quick product creation of different item types</a>
         </td>
         <td>
             X
@@ -744,7 +761,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Inventory management with backordered items, minimum and maximum quantities
+            <a href="http://docs.magento.com/m2/ce/user_guide/catalog/settings-advanced-advanced-inventory.html">Inventory management with backordered items, minimum and maximum quantities</a>
         </td>
         <td>
             X
@@ -761,7 +778,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Batch updates to products in admin panel
+            <a href="http://docs.magento.com/m2/ce/user_guide/stores/admin-actions-control.html">Batch updates to products in admin panel</a>
                 </td>
                 <td>
             X
@@ -778,7 +795,7 @@ github_link: release-notes/feature_list.md
             </tr>
             <tr>
         <td>
-                    Automatic image resizing and watermarking
+                    <a href="http://docs.magento.com/m2/ce/user_guide/catalog/settings-basic-image-management.html">Automatic image resizing and watermarking</a>
         </td>
         <td>
             X
@@ -795,7 +812,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Automatic image resizing and watermarking Advanced pricing rules and support for special prices
+            <a href="http://docs.magento.com/m2/ce/user_guide/catalog/product-price-special.html">Advanced pricing rules and support for special prices</a>
         </td>
         <td>
             X
@@ -812,7 +829,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Search results rewrites and redirects
+            <a href="http://docs.magento.com/m2/ce/user_guide/marketing/search-terms-add.html">Search results rewrites and redirects</a>
         </td>
         <td>
             X
@@ -827,24 +844,9 @@ github_link: release-notes/feature_list.md
             X
                 </td>
             </tr>
-            <tr>
-                <td>
-                    Moderated product tags
-                </td>
-                <td>
-            X
-                </td>
-                <td>
-            X
-                </td>
-                <td>
-        </td>
-        <td>
-        </td>
-    </tr>
     <tr>
         <td>
-                    Moderated productreviews
+                    <a href="http://docs.magento.com/m2/ce/user_guide/marketing/product-reviews.html">Moderated productreviews</a>
         </td>
         <td>
             X
