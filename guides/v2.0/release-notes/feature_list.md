@@ -46,7 +46,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Related products, up-sells and cross-sells
+            <a href="http://docs.magento.com/m2/ce/user_guide/marketing/product-relationships.html">Related products, up-sells and cross-sells</a>
         </td>
         <td>
             X
@@ -61,7 +61,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Catalog promotional pricing with the ability to restrict to stores, categories or products
+            <a href="http://docs.magento.com/m2/ce/user_guide/marketing/price-rules-catalog.html">Catalog promotional pricing with the ability to restrict to stores, categories or products</a>
         </td>
         <td>
             X
@@ -76,7 +76,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Flexible coupons (pricing rules) with ability to restrict to stores, customer groups, time period, products, and categories
+            <a href="http://docs.magento.com/m2/ce/user_guide/marketing/price-rules-cart-coupon.html">Flexible coupons (pricing rules) with ability to restrict to stores, customer groups, time period, products, and categories</a>
         </td>
         <td>
             X
@@ -91,7 +91,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Generate a set of unique coupon codes for each promotion and export the list of codes for offline distribution, email, newsletters and more. Easily manage and monitor coupon usage and generate detailed reports
+            <a href="http://docs.magento.com/m2/ce/user_guide/marketing/price-rules-cart-coupon.html">Generate a set of unique coupon codes for each promotion and export the list of codes for offline distribution, email, newsletters and more. Easily manage and monitor coupon usage and generate detailed reports</a>
         </td>
         <td>
             X
@@ -106,7 +106,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Multi-tier pricing for quantity discounts
+            <a href="http://docs.magento.com/m2/ce/user_guide/marketing/price-rules-cart-coupon.html">Multi-tier pricing for quantity discounts</a>
         </td>
         <td>
             X
@@ -121,7 +121,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Minimum Advertised Price (MAP)
+            <a href="http://docs.magento.com/m2/ce/user_guide/catalog/product-price-minimum-advertised.html">Minimum Advertised Price (MAP)</a>
         </td>
         <td>
             X
@@ -136,7 +136,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Landing page tool for categories
+            <a href="http://docs.magento.com/m2/ce/user_guide/catalog/categories-display-settings.html">Landing page tool for categories</a>
         </td>
         <td>
             X
@@ -151,7 +151,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Customer groups
+            <a href="http://docs.magento.com/m2/ce/user_guide/customers/customer-groups.html">Customer groups</a>
         </td>
         <td>
             X
@@ -166,7 +166,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Product bundles
+            <a href="http://docs.magento.com/m2/ce/user_guide/catalog/product-create-bundle.html">Product bundles</a>
         </td>
         <td>
             X
@@ -181,7 +181,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Recently viewed and compared products
+            <a href="http://docs.magento.com/m2/ce/user_guide/marketing/products-viewed-compared.html">Recently viewed and compared products</a>
         </td>
         <td>
             X
@@ -196,7 +196,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            New items promotional tool
+            <a href="http://docs.magento.com/m2/ce/user_guide/cms/widget-new-products-list.html">New items promotional tool</a>
         </td>
         <td>
             X
@@ -211,7 +211,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Persistent shopping cart
+            <a href="http://docs.magento.com/m2/ce/user_guide/sales/cart-persistent.html">Persistent shopping cart</a>
         </td>
         <td>
             X
@@ -226,7 +226,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Google Website Optimizer integration for A/B and multivariate testing
+            <a href="http://docs.magento.com/m2/ce/user_guide/marketing/google-universal-analytics.html">Google Website Optimizer integration for A/B and multivariate testing</a>
         </td>
         <td>
             X
@@ -241,7 +241,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Free shipping options
+            <a href="http://docs.magento.com/m2/ce/user_guide/shipping/shipping-free.html">Free shipping options</a>
         </td>
         <td>
             X
@@ -256,7 +256,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Polls
+            <a href="http://merch.docs.magento.com/ce/user_guide/marketing/polls.html">Polls</a>
         </td>
         <td>
             X
@@ -271,7 +271,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Newsletter management
+            <a href="http://docs.magento.com/m2/ce/user_guide/marketing/newsletters.html">Newsletter management</a>
         </td>
         <td>
             X
@@ -286,7 +286,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Send to a friend for all visitors or registered users only
+            <a href="http://docs.magento.com/m2/ce/user_guide/marketing/email-a-friend.html">Send to a friend for all visitors or registered users only</a>
         </td>
         <td>
             X
@@ -301,7 +301,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Send wish lists by email
+            <a href="http://docs.magento.com/m2/ce/user_guide/marketing/wishlist-share.html">Send wish lists by email</a>
         </td>
         <td>
             X
@@ -321,7 +321,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            100% search engine friendly
+            <a href="http://docs.magento.com/m2/ce/user_guide/marketing/seo-best-practices.html">100% search engine friendly</a>
         </td>
         <td>
             X
@@ -336,7 +336,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Google Site Map
+            <a href="http://docs.magento.com/m2/ce/user_guide/marketing/sitemap-xml.html">Google Site Map</a>
         </td>
         <td>
             X
@@ -351,7 +351,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Search engine friendly URL's
+            <a href="http://docs.magento.com/m2/ce/user_guide/catalog/catalog-urls.html">Search engine friendly URL's</a>
         </td>
         <td>
             X
@@ -366,7 +366,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            URL rewrites give full control of URL's
+            <a href="http://docs.magento.com/m2/ce/user_guide/marketing/url-rewrite.html">URL rewrites give full control of URL's</a>
         </td>
         <td>
             X
@@ -381,7 +381,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Meta-information for products, categories and content pages
+            <a href="http://docs.magento.com/m2/ce/user_guide/marketing/meta-data.html">Meta-information for products, categories and content pages</a>
         </td>
         <td>
             X
@@ -396,7 +396,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Auto-generated site map for display on site
+            <a href="http://merch.docs.magento.com/ce/user_guide/search_seo/seo-sitemap.html">Auto-generated site map for display on site</a>
         </td>
         <td>
             X
@@ -411,7 +411,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Auto-generated popular search terms page
+            <a href="http://docs.magento.com/m2/ce/user_guide/marketing/search-terms-popular.html">Auto-generated popular search terms page</a>
         </td>
         <td>
             X
@@ -426,7 +426,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Google Content API for shopping
+            <a href="http://merch.docs.magento.com/ce/user_guide/marketing/google-merchant-center.html">Google Content API for shopping</a>
         </td>
         <td>
             X
@@ -446,7 +446,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Control multiple websites and stores from one Administration Panel with the ability to share as much or as little information as needed
+            <a href="http://docs.magento.com/m2/ce/user_guide/stores/stores.html">Control multiple websites and stores from one Administration Panel with the ability to share as much or as little information as needed</a>
         </td>
         <td>
             X
@@ -461,7 +461,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Administration permission system roles and users
+            <a href="http://docs.magento.com/m2/ce/user_guide/system/permissions.html">Administration permission system roles and users</a>
         </td>
         <td>
             X
@@ -476,7 +476,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Fully 100% customizable design using templates
+            <a href="http://docs.magento.com/m2/ce/user_guide/design/design-theme.html">Fully 100% customizable design using templates</a>
         </td>
         <td>
             X
@@ -491,7 +491,7 @@ github_link: release-notes/feature_list.md
     </tr>
     <tr>
         <td>
-            Support for multiple languages and currencies
+            <a href="">Support for multiple languages and currencies</a>
         </td>
         <td>
             X
