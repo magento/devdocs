@@ -44,6 +44,8 @@ Format the link as follows:
 
 <!--<img href="{{ site.baseurl }}common/images/FILENAME.png" alt="Alt text for the image">-->
 
+<!--<img href="{{ site.baseurl }}common/images/FILENAME.png" alt="Example for how to set a width on an image">{:width="600px"}-->
+
 <!--Sample HTML cross-reference; don't worry too much about these, we can add or edit them 
 -->
 <!-- {{ site.gdeurl }} is a site variable that is defined in _config.yml; it's the base path to the devdocs guides/v2.0 directory -->

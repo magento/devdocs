@@ -19,6 +19,8 @@ When talking about testing in Magento 2, we have to distinguish between differen
   For more information, see the [Magento Testing Framework Guide]({{ site.gdeurl }}mtf/mtf_introduction.html).
 * **Integration**  
   Integration tests run Magento PHP code in varying degrees of isolation. They tend to be a lot more low-level then functional tests. Because they do not utilize a browser to execute the tests, they can be a lot more granular in what they test. They also tend to run a lot quicker then functional tests.
+  
+  For more information, see [Running Integration Tests]({{ site.gdeurl }}test/integration/integration_test_execution.html).
 * **JavaScript**  
   Much of the functionality in Magento 2 is provided with the help of sophisticated JavaScript. JavaScript tests ensure the frontend portion of Magento functions as expected.  
 
