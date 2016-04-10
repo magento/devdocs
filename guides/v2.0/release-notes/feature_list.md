@@ -14,6 +14,7 @@ github_link: release-notes/feature_list.md
 <h2 id="general_features">
     General Features
 </h2>
+<h3>Marketing, Promotions and Conversion Tools</h3>
 <table class="custom-table">
     <colgroup>
         <col class="primary-item"></col>
@@ -34,25 +35,20 @@ github_link: release-notes/feature_list.md
         </th>
     </tr>
     <tr>
-        <td class="note-item">
+        <th class="note-item">
             Magento Edition
-        </td>
-        <td class="note-item">
+        </th>
+        <th class="note-item">
             CE
-        </td>
-        <td class="note-item">
+        </th>
+        <th class="note-item">
             EE
-        </td>
-        <td class="note-item">
+        </th>
+        <th class="note-item">
             CE
-        </td>
-        <td class="note-item">
+        </th>
+        <th class="note-item">
             EE
-        </td>
-    </tr>
-    <tr>
-        <th colspan="5">
-            Marketing, Promotions and Conversion Tools
         </th>
     </tr>
     <tr>
@@ -357,9 +353,42 @@ github_link: release-notes/feature_list.md
             X
         </td>
     </tr>
+</table>
+<h3>Search Engine Optimization</h3>
+<table class="custom-table">
+    <colgroup>
+        <col class="primary-item"></col>
+        <col></col>
+        <col></col>
+        <col></col>
+        <col></col>
+    </colgroup>
     <tr>
-        <th colspan="5">
-            Search Engine Optimization
+        <th>
+            Feature Title
+        </th>
+        <th colspan="2">
+            M1
+        </th>
+        <th colspan="2">
+            M2
+        </th>
+    </tr>
+    <tr>
+        <th class="note-item">
+            Magento Edition
+        </th>
+        <th class="note-item">
+            CE
+        </th>
+        <th class="note-item">
+            EE
+        </th>
+        <th class="note-item">
+            CE
+        </th>
+        <th class="note-item">
+            EE
         </th>
     </tr>
     <tr>
@@ -494,9 +523,42 @@ github_link: release-notes/feature_list.md
         <td>
         </td>
     </tr>
+</table>
+<h3>Site Management</h3>
+<table class="custom-table">
+    <colgroup>
+        <col class="primary-item"></col>
+        <col></col>
+        <col></col>
+        <col></col>
+        <col></col>
+    </colgroup>
     <tr>
-        <th colspan="5">
-            Site Management
+        <th>
+            Feature Title
+        </th>
+        <th colspan="2">
+            M1
+        </th>
+        <th colspan="2">
+            M2
+        </th>
+    </tr>
+    <tr>
+        <th class="note-item">
+            Magento Edition
+        </th>
+        <th class="note-item">
+            CE
+        </th>
+        <th class="note-item">
+            EE
+        </th>
+        <th class="note-item">
+            CE
+        </th>
+        <th class="note-item">
+            EE
         </th>
     </tr>
     <tr>
@@ -652,9 +714,42 @@ github_link: release-notes/feature_list.md
             X
         </td>
     </tr>
+</table>
+<h3>Catalog Management</h3>
+<table class="custom-table">
+    <colgroup>
+        <col class="primary-item"></col>
+        <col></col>
+        <col></col>
+        <col></col>
+        <col></col>
+    </colgroup>
     <tr>
-        <th colspan="5">
-            Catalog Management
+        <th>
+            Feature Title
+        </th>
+        <th colspan="2">
+            M1
+        </th>
+        <th colspan="2">
+            M2
+        </th>
+    </tr>
+    <tr>
+        <th class="note-item">
+            Magento Edition
+        </th>
+        <th class="note-item">
+            CE
+        </th>
+        <th class="note-item">
+            EE
+        </th>
+        <th class="note-item">
+            CE
+        </th>
+        <th class="note-item">
+            EE
         </th>
     </tr>
     <tr>
@@ -908,9 +1003,42 @@ github_link: release-notes/feature_list.md
         <td>
         </td>
     </tr>
+</table>
+<h3>Catalog Browsing</h3>
+<table class="custom-table">
+    <colgroup>
+        <col class="primary-item"></col>
+        <col></col>
+        <col></col>
+        <col></col>
+        <col></col>
+    </colgroup>
     <tr>
-        <th colspan="5">
-            Catalog Browsing
+        <th>
+            Feature Title
+        </th>
+        <th colspan="2">
+            M1
+        </th>
+        <th colspan="2">
+            M2
+        </th>
+    </tr>
+    <tr>
+        <th class="note-item">
+            Magento Edition
+        </th>
+        <th class="note-item">
+            CE
+        </th>
+        <th class="note-item">
+            EE
+        </th>
+        <th class="note-item">
+            CE
+        </th>
+        <th class="note-item">
+            EE
         </th>
     </tr>
     <tr>
@@ -1118,9 +1246,42 @@ github_link: release-notes/feature_list.md
             X
         </td>
     </tr>
+</table>
+<h3>Checkout, Payment and Shipping</h3>
+<table class="custom-table">
+    <colgroup>
+        <col class="primary-item"></col>
+        <col></col>
+        <col></col>
+        <col></col>
+        <col></col>
+    </colgroup>
     <tr>
-        <th colspan="5">
-            Checkout, Payment and Shipping
+        <th>
+            Feature Title
+        </th>
+        <th colspan="2">
+            M1
+        </th>
+        <th colspan="2">
+            M2
+        </th>
+    </tr>
+    <tr>
+        <th class="note-item">
+            Magento Edition
+        </th>
+        <th class="note-item">
+            CE
+        </th>
+        <th class="note-item">
+            EE
+        </th>
+        <th class="note-item">
+            CE
+        </th>
+        <th class="note-item">
+            EE
         </th>
     </tr>
     <tr>
@@ -1513,9 +1674,42 @@ github_link: release-notes/feature_list.md
         <td>
         </td>
     </tr>
+</table>
+<h3>Order Management</h3>
+<table class="custom-table">
+    <colgroup>
+        <col class="primary-item"></col>
+        <col></col>
+        <col></col>
+        <col></col>
+        <col></col>
+    </colgroup>
     <tr>
-        <th colspan="5">
-            Order Management
+        <th>
+            Feature Title
+        </th>
+        <th colspan="2">
+            M1
+        </th>
+        <th colspan="2">
+            M2
+        </th>
+    </tr>
+    <tr>
+        <th class="note-item">
+            Magento Edition
+        </th>
+        <th class="note-item">
+            CE
+        </th>
+        <th class="note-item">
+            EE
+        </th>
+        <th class="note-item">
+            CE
+        </th>
+        <th class="note-item">
+            EE
         </th>
     </tr>
     <tr>
@@ -1658,9 +1852,42 @@ github_link: release-notes/feature_list.md
         <td>
         </td>
     </tr>
+</table>
+<h3>Customer Accounts</h3>
+<table class="custom-table">
+    <colgroup>
+        <col class="primary-item"></col>
+        <col></col>
+        <col></col>
+        <col></col>
+        <col></col>
+    </colgroup>
     <tr>
-        <th colspan="5">
-            Customer Accounts
+        <th>
+            Feature Title
+        </th>
+        <th colspan="2">
+            M1
+        </th>
+        <th colspan="2">
+            M2
+        </th>
+    </tr>
+    <tr>
+        <th class="note-item">
+            Magento Edition
+        </th>
+        <th class="note-item">
+            CE
+        </th>
+        <th class="note-item">
+            EE
+        </th>
+        <th class="note-item">
+            CE
+        </th>
+        <th class="note-item">
+            EE
         </th>
     </tr>
     <tr>
@@ -1843,9 +2070,42 @@ github_link: release-notes/feature_list.md
         <td>
         </td>
     </tr>
+</table>
+<h3>Customer Service</h3>
+<table class="custom-table">
+    <colgroup>
+        <col class="primary-item"></col>
+        <col></col>
+        <col></col>
+        <col></col>
+        <col></col>
+    </colgroup>
     <tr>
-        <th colspan="5">
-            Customer Service
+        <th>
+            Feature Title
+        </th>
+        <th colspan="2">
+            M1
+        </th>
+        <th colspan="2">
+            M2
+        </th>
+    </tr>
+    <tr>
+        <th class="note-item">
+            Magento Edition
+        </th>
+        <th class="note-item">
+            CE
+        </th>
+        <th class="note-item">
+            EE
+        </th>
+        <th class="note-item">
+            CE
+        </th>
+        <th class="note-item">
+            EE
         </th>
     </tr>
     <tr>
@@ -1968,9 +2228,42 @@ github_link: release-notes/feature_list.md
         <td>
         </td>
     </tr>
+</table>
+<h3>International Support</h3>
+<table class="custom-table">
+    <colgroup>
+        <col class="primary-item"></col>
+        <col></col>
+        <col></col>
+        <col></col>
+        <col></col>
+    </colgroup>
     <tr>
-        <th colspan="5">
-            International Support
+        <th>
+            Feature Title
+        </th>
+        <th colspan="2">
+            M1
+        </th>
+        <th colspan="2">
+            M2
+        </th>
+    </tr>
+    <tr>
+        <th class="note-item">
+            Magento Edition
+        </th>
+        <th class="note-item">
+            CE
+        </th>
+        <th class="note-item">
+            EE
+        </th>
+        <th class="note-item">
+            CE
+        </th>
+        <th class="note-item">
+            EE
         </th>
     </tr>
     <tr>
@@ -2064,9 +2357,42 @@ github_link: release-notes/feature_list.md
         <td>
         </td>
     </tr>
+</table>
+<h3>Analytics and Reporting</h3>
+<table class="custom-table">
+    <colgroup>
+        <col class="primary-item"></col>
+        <col></col>
+        <col></col>
+        <col></col>
+        <col></col>
+    </colgroup>
     <tr>
-        <th colspan="5">
-            Analytics and Reporting
+        <th>
+            Feature Title
+        </th>
+        <th colspan="2">
+            M1
+        </th>
+        <th colspan="2">
+            M2
+        </th>
+    </tr>
+    <tr>
+        <th class="note-item">
+            Magento Edition
+        </th>
+        <th class="note-item">
+            CE
+        </th>
+        <th class="note-item">
+            EE
+        </th>
+        <th class="note-item">
+            CE
+        </th>
+        <th class="note-item">
+            EE
         </th>
     </tr>
     <tr>
@@ -2279,9 +2605,42 @@ github_link: release-notes/feature_list.md
         <td>
         </td>
     </tr>
+</table>
+<h3>Mobile Commerce</h3>
+<table class="custom-table">
+    <colgroup>
+        <col class="primary-item"></col>
+        <col></col>
+        <col></col>
+        <col></col>
+        <col></col>
+    </colgroup>
     <tr>
-        <th colspan="5">
-            Mobile Commerce
+        <th>
+            Feature Title
+        </th>
+        <th colspan="2">
+            M1
+        </th>
+        <th colspan="2">
+            M2
+        </th>
+    </tr>
+    <tr>
+        <th class="note-item">
+            Magento Edition
+        </th>
+        <th class="note-item">
+            CE
+        </th>
+        <th class="note-item">
+            EE
+        </th>
+        <th class="note-item">
+            CE
+        </th>
+        <th class="note-item">
+            EE
         </th>
     </tr>
     <tr>
