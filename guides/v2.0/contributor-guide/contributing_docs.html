@@ -425,8 +425,8 @@ Often when the Magento DevDocs team works on reviewing the suggested changes, we
       <li>Define what the goal of your topic is: what exactly do you want to teach the reader?</li>
       <li>Make the title of your topic reflect the content.</li>
       <li>Keep your sentences concise, and try to separate conceptual information from procedural steps.</li>
-      <li>Remember to use active voice (not passive), write in the present tense, and use a friendly tone in second person (i.e. “You can now view the output…”)</li>
-      <li>Use Notes and even Warnings to alert readers to particularly important details (our template has the markdown syntax!).</li>
+      <li>Remember to use active voice (not passive), write in the present tense, and use a friendly tone in second person (for example, “You can now view the output…”)</li>
+      <li>Use Notes and even Warnings to alert readers to particularly important details.</li>
       <li>Use cross-references to other topics if it is appropriate. We can help you with that syntax too, and the template has an example.</li>
     </ul>
   </li>
@@ -453,19 +453,20 @@ Often when the Magento DevDocs team works on reviewing the suggested changes, we
     <p>Clone the repo into your development environment and then start writing and committing your changes. Optionally create a branch first if you plan to work on mulitple changes.</p>
   </li>
   <li>
-    <p>You can build this site using Jekyll by following the <a href="https://github.com/magento/devdocs#user-content-building-this-site" target="_blank">instructions here</a>. </p>
+    <p>You can build this site using Jekyll by following the <a href="https://github.com/magento/devdocs/README.md#build" target="_blank">instructions here</a>. </p>
   </li>
 </ol>
 
 <h3 id="sync">Update the fork with the latest changes</h3>
-<p>As community and Magento writers’ changes are merged to the repository, your fork becames outdated and pull requests might result in conflicts. To see if your fork is outdated, open the fork page in GitHub and if at the top the message <code>This branch is NUMBER commits behind magento:2.0.</code> displays, it means your fork must be updated.</p>
+<p>As community and Magento writers’ changes are merged to the repository, your fork becames outdated and pull requests might result in conflicts. To see if your fork is outdated, open the fork page in GitHub and if at the top the message <code>This branch is &lt;number&gt; commits behind magento:2.0.</code> displays, it means your fork must be updated.</p>
 
 <p>There are two ways to update your fork. The typical way is discussed in <a href="https://help.github.com/articles/syncing-a-fork" target="_blank">GitHub documentation</a>. Make sure to update from the correct branch!</p>
 
 <p>There is also a possibility to use the GitHub interface to do that. This is referred to as a <em>reverse pull request</em>. This method has the downside of inserting unnecessary information into fork commit history. On your fork GitHub page, click <strong>New pull request</strong>. You should see the following message:</p>
 
-<p>There isn’t anything to compare.
-  magento:2.0 is up to date with all commits from <your fork="">:2.0. Try switching the base for your comparison.</your></p>
+<pre><code>There isn’t anything to compare.
+magento:2.0 is up to date with all commits from &lt;your fork&gt;:2.0. Try switching the base for your comparison.
+</code></pre>
 
 <p>Click the base link and then click <strong>Create pull request</strong>. Provide a descriptive name for your pull request in the provided field.</p>
 
