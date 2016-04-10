@@ -2,10 +2,10 @@
 layout: default 
 group: compman
 subgroup: 15_UseUpgrade
-title: Run System Upgrade
-menu_title: Run System Upgrade
-menu_node: parent
-menu_order: 1
+title: Start System Upgrade
+menu_title: Start System Upgrade
+menu_node: 
+menu_order: 2
 github_link: comp-mgr/upgrader/upgrade-start.md
 ---
 
@@ -56,3 +56,10 @@ The following error can indicate one of several issues, including that you haven
 <img src="{{ site.baseurl }}common/images/upgr-sorry.png" width="600px">
 
 For suggested solutions to other causes indicated by this message, see <a href="{{ site.gdeurl }}comp-mgr/trouble/cman/were-sorry.html">troubleshooting</a>.
+
+#### Sample data
+The System Upgrade utility installs sample data for you but doesn't display it, if you:
+
+*	Used the [`magento sampledata:deploy`]({{ site.baseurl }}install-gde/install/cli/install-cli-sample-data-composer.html) command to download, but not installed sample data
+*	You chose to update components at the same time as the Magento system software
+

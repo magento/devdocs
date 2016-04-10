@@ -439,4 +439,3 @@ To compile all non-existent proxies and factories; and to pre-compile class defi
 *	<a href="{{ site.gdeurl }}config-guide/bootstrap/magento-bootstrap.html">Magento application initialization and bootstrap</a>
 *	<a href="{{ site.gdeurl }}architecture/modules/mod_depend.html">Module dependencies</a>
 *	<a href="{{ site.gdeurl }}extension-dev-guide/api-concepts.html">Programming concepts</a>
-

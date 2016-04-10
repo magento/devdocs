@@ -15,7 +15,7 @@ github_link: mtf/mtf_entities/mtf_testcase.md
 
 ## Test case overview {#mtf_testcase_overview}
 
-The Magento Testing Framework supports two types of functional tests:
+The Magento Magento Testing Framework supports two types of functional tests:
 
 - Injectable test: the main type of the MTF test that uses XML [data set][] files as inputs
 - [Scenario test][]: supports a Magento modularity and enables you to inject one step into another test
