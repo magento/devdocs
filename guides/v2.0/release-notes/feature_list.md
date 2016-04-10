@@ -1,18 +1,14 @@
 ---
 layout: default
 group: release-notes
-subgroup:
+subgroup: Magento Feature List
 title: Magento Feature List
-menu_title: Magento Features
+menu_title: Magento Features List
 menu_node: parent
 github_link: release-notes/feature_list.md
 contributor_name: Rob Tull, Michael Kreitzer, Vincent Hart
 contributor_link: https://github.com/magento-hackathon
 ---
-## Magento Feature List
-
----------
-
 <h2 id="general_features">
     General Features
 </h2>
