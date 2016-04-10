@@ -14,30 +14,41 @@ github_link: release-notes/feature_list.md
 <h2 id="general_features">
     General Features
 </h2>
-<table class="feature-table">
+<table class="custom-table">
     <colgroup>
-        <col class="feature-item"></col>
-        <col class="feature-edition"></col>
-        <col class="feature-edition"></col>
-        <col class="feature-edition"></col>
-        <col class="feature-edition"></col>
+        <col class="primary-item"></col>
+        <col></col>
+        <col></col>
+        <col></col>
+        <col></col>
     </colgroup>
     <tr>
         <th>
             Feature Title
         </th>
-        <th>
-            M1 CE
+        <th colspan="2">
+            M1
         </th>
-        <th>
-            M1 EE
+        <th colspan="2">
+            M2
         </th>
-        <th>
-            M2 CE
-        </th>
-        <th>
-            M2 EE
-        </th>
+    </tr>
+    <tr>
+        <td class="note-item">
+            Magento Edition
+        </td>
+        <td class="note-item">
+            CE
+        </td>
+        <td class="note-item">
+            EE
+        </td>
+        <td class="note-item">
+            CE
+        </td>
+        <td class="note-item">
+            EE
+        </td>
     </tr>
     <tr>
         <th colspan="5">
@@ -52,11 +63,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -67,11 +80,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -82,11 +97,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -97,11 +114,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -112,11 +131,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -127,11 +148,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -142,11 +165,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -157,11 +182,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -172,11 +199,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -187,11 +216,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -202,11 +233,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -217,11 +250,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -232,9 +267,9 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
-            X
         </td>
         <td>
         </td>
@@ -247,11 +282,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -262,9 +299,9 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
-            X
         </td>
         <td>
         </td>
@@ -277,11 +314,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -292,11 +331,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -307,11 +348,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -327,11 +370,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -342,11 +387,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -357,11 +404,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -372,11 +421,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -387,11 +438,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -402,9 +455,9 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
-            X
         </td>
         <td>
         </td>
@@ -417,11 +470,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -432,9 +487,9 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
-            X
         </td>
         <td>
         </td>
@@ -452,11 +507,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -467,11 +524,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -482,11 +541,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -497,11 +558,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -512,11 +575,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -527,11 +592,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -542,11 +609,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -557,11 +626,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -572,11 +643,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -592,11 +665,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -607,11 +682,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -622,11 +699,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -637,11 +716,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -652,11 +733,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -667,27 +750,48 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
         <td>
             Batch updates to products in admin panel
+                </td>
+                <td>
+            X
+                </td>
+                <td>
+            X
+                </td>
+                <td>
+            X
+        </td>
+        <td>
+            X
+        </td>
+            </tr>
+            <tr>
+        <td>
+                    Automatic image resizing and watermarking
         </td>
         <td>
             X
         </td>
         <td>
-        </td>
-        <td>
             X
         </td>
-        <td>
-        </td>
+                <td>
+            X
+                </td>
+                <td>
+            X
+                </td>
     </tr>
     <tr>
         <td>
@@ -697,11 +801,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -712,26 +818,45 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
+                </td>
+                <td>
+            X
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Moderated product tags
+                </td>
+                <td>
+            X
+                </td>
+                <td>
+            X
+                </td>
+                <td>
         </td>
         <td>
         </td>
     </tr>
     <tr>
         <td>
-            Moderated product tags and reviews
+                    Moderated productreviews
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -742,11 +867,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -757,11 +884,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -772,9 +901,9 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
-            X
         </td>
         <td>
         </td>
@@ -797,11 +926,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -812,11 +943,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -827,11 +960,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -842,11 +977,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -857,11 +994,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -872,11 +1011,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -887,11 +1028,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -902,9 +1045,9 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
-            X
         </td>
         <td>
         </td>
@@ -917,11 +1060,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -964,11 +1109,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -984,11 +1131,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -999,11 +1148,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -1014,11 +1165,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -1029,9 +1182,9 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
-            X
         </td>
         <td>
         </td>
@@ -1044,11 +1197,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -1059,11 +1214,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -1074,11 +1231,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -1089,11 +1248,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -1104,9 +1265,9 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
-            X
         </td>
         <td>
         </td>
@@ -1119,11 +1280,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -1134,9 +1297,9 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
-            X
         </td>
         <td>
         </td>
@@ -1149,26 +1312,30 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
         <td>
-            Integration with Authorize.net Integration with Google Checkout (Level 2)
+                    Integration with Authorize.net
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -1179,11 +1346,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -1194,11 +1363,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -1209,11 +1380,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -1224,11 +1397,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
+            X
         </td>
         <td>
             X
         </td>
         <td>
+            X
         </td>
     </tr>
     <tr>
@@ -2229,13 +2404,13 @@ github_link: release-notes/feature_list.md
 <h1 id="enterprise_features">
     Enterprise Features
 </h1>
-<table class="feature-table">
+<table class="custom-table">
     <colgroup>
-        <col class="feature-item"></col>
-        <col class="feature-edition"></col>
-        <col class="feature-edition"></col>
-        <col class="feature-edition"></col>
-        <col class="feature-edition"></col>
+        <col class="primary-item"></col>
+        <col></col>
+        <col></col>
+        <col></col>
+        <col></col>
     </colgroup>
     <tr>
         <th colspan="5">
