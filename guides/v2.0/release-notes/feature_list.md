@@ -11,12 +11,12 @@ github_link: release-notes/feature_list.md
 
 ---------
 
-<table>
+<table class="feature-table">
     <thead>
         <tr>
-            <th>Enterprise Edition-only Features &amp; Services</th>
-            <th style="text-align: center">Enterprise</th>
-            <th style="text-align: center">Community</th>
+            <th class="feature-item">Enterprise Edition-only Features &amp; Services</th>
+            <th class="feature-edition">Enterprise</th>
+            <th class="feature-edition">Community</th>
         </tr>
     </thead>
     <tbody>
