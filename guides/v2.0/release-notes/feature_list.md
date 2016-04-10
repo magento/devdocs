@@ -63,13 +63,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -80,13 +80,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -97,13 +97,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -114,13 +114,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -131,13 +131,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -148,13 +148,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -165,13 +165,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -182,13 +182,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -199,13 +199,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -216,13 +216,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -233,13 +233,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -250,13 +250,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -267,13 +267,11 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
-
         </td>
         <td>
-
         </td>
     </tr>
     <tr>
@@ -284,13 +282,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -301,10 +299,9 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
-
         </td>
         <td>
         </td>
@@ -317,13 +314,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -334,13 +331,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -351,13 +348,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -373,13 +370,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -390,13 +387,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -407,13 +404,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -424,13 +421,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -441,13 +438,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -458,13 +455,11 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
-
         </td>
         <td>
-
         </td>
     </tr>
     <tr>
@@ -475,13 +470,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -492,10 +487,9 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
-
         </td>
         <td>
         </td>
@@ -513,13 +507,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -530,13 +524,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -547,13 +541,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -564,13 +558,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -581,13 +575,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -598,13 +592,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -615,13 +609,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -632,13 +626,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -649,13 +643,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -671,13 +665,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -688,13 +682,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -705,13 +699,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -722,13 +716,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -739,13 +733,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -756,13 +750,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -770,13 +764,13 @@ github_link: release-notes/feature_list.md
             Batch updates to products in admin panel
                 </td>
                 <td>
-                    X
+            X
                 </td>
                 <td>
-                    X
+            X
                 </td>
                 <td>
-                    X
+            X
         </td>
         <td>
             X
@@ -790,13 +784,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
                 <td>
-                    X
+            X
                 </td>
                 <td>
-                    X
+            X
                 </td>
     </tr>
     <tr>
@@ -807,13 +801,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -824,13 +818,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
                 </td>
                 <td>
-                    X
+            X
                 </td>
             </tr>
             <tr>
@@ -838,16 +832,14 @@ github_link: release-notes/feature_list.md
                     Moderated product tags
                 </td>
                 <td>
-                    X
+            X
                 </td>
                 <td>
-                    X
+            X
                 </td>
                 <td>
-
         </td>
         <td>
-
         </td>
     </tr>
     <tr>
@@ -858,13 +850,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -875,13 +867,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -892,13 +884,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -909,13 +901,11 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
-
         </td>
         <td>
-
         </td>
     </tr>
     <tr>
@@ -936,13 +926,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -953,13 +943,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -970,13 +960,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -987,13 +977,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -1004,13 +994,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -1021,13 +1011,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -1038,13 +1028,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -1055,10 +1045,9 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
-
         </td>
         <td>
         </td>
@@ -1071,13 +1060,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -1120,13 +1109,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -1142,13 +1131,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -1159,13 +1148,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -1176,13 +1165,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -1193,13 +1182,11 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
-
         </td>
         <td>
-
         </td>
     </tr>
     <tr>
@@ -1210,13 +1197,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -1227,13 +1214,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -1244,13 +1231,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -1261,13 +1248,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -1278,10 +1265,9 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
-
         </td>
         <td>
         </td>
@@ -1294,13 +1280,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -1311,10 +1297,9 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
-
         </td>
         <td>
         </td>
@@ -1327,13 +1312,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -1344,13 +1329,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -1361,13 +1346,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -1378,13 +1363,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -1395,13 +1380,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
@@ -1412,13 +1397,13 @@ github_link: release-notes/feature_list.md
             X
         </td>
         <td>
-                    X
+            X
         </td>
         <td>
             X
         </td>
         <td>
-                    X
+            X
         </td>
     </tr>
     <tr>
