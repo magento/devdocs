@@ -20,10 +20,11 @@ This article does not aim to be a replacement for the existing literature, but r
 Some points might be written as if they are absolute truths, even though we are aware that everything depends on context.  
 We feel it the statements are true in the *most* situations.
 
-### TL;DR
+### The TL;DR
 
 Tests should be trivial to write. Simple, small classes with few collaborators are easy to test.  
-If a class is hard to test, it probably has grown too large and should be split into several classes, each of which does only one thing.
+If testing a class is hard, it probably has grown too large and does too much.  
+It should be split into several classes, each of which does only one thing, which is probably simpler to test.
 
 ### Managing dependencies
 
@@ -44,15 +45,15 @@ There always is a better alternative, usually a [generated](http://devdocs.magen
 #### Collaborator classes
 
 Whenever an external class property, class constant or a class method is used in a file, this file depends on the class containing the method or constant.  
-Even if the external class is not used as a instantiated object, the current class is still hard-wired to it.  
+Even if the external class is not used as a instantiated object, the current class is still hard wired to depend on it.  
 PHP will not be able to execute the code unless it can load the external class, too. That is why such external classes are referred to as **dependencies**.  
 Try to keep the number dependencies of to a minimum.  
 
 Collaborator instances should be passed into the class through constructor injection.
 
-#### The environment (filesystem, time, global variables)
+#### The environment (e.g. filesystem, time, global variables)
 
-Whenever some part of the environment is required by your code, try to use a collaborator class that can easily be replaced by a test double instead.
+Whenever your code requires access to some part of the environment, try to use a collaborator class that can easily be replaced by a test double (also called "mock") instead.
 For example, if you...
 
 * ...need file system access?  
@@ -61,23 +62,26 @@ For example, if you...
    Inject a `\DateTimeInterface` instance (for example `\DateTimeImmutable`) and use that.
 * ...need the remote IP?  
   Use `\Magento\Framework\HTTP\PhpEnvironment\RemoteAddress`.
-* ...need access to `$_SERVER`?
+* ...need access to `$_SERVER`?  
   Consider using `\Magento\Framework\HTTP\PhpEnvironment\Request::getServerValue()`.
 
 Anything that can be easily replaced by a test double is preferable to using low level functions.
 
-### Interfaces &gt; Classes
+### Interfaces over Classes
 
-Dependencies on **interfaces** are much to be preferred over dependencies on **classes**, because the former decouples your code from implementation details.  
-That is one way to isolate your code from future changes.  
+Dependencies on **interfaces** should be preferred over dependencies on **classes**, because the former decouples your code from implementation details.
 
-This is true only if you exclusively uses the methods and constants defined in the interface, and not also uses other public methods of the class implementing the interface.  
+This helps to isolate your code from future changes.  
+
+The above statement is true only if you exclusively uses the methods and constants that are defined in the interface. If your code also uses other public methods specific to the class implementing the interface, your code no longer is independent of the implementation details.  
 
 If methods of a concrete class are used, the benefits of having an interface are completely lost.  
 Even worse, the code is lying, because at first glance it looks like it is a dependency on the interface only when in fact a different implementation of the same interface could not be used.  
 This can lead to considerable maintenance costs down the road. In such cases using the class name of the concrete implementation is preferable to using the interface name as a dependency.  
 
 To illustrate, lets assume there is a theoretical `RequestInterface` with two methods `getPathInfo()` and `getParam($name)`.
+
+For example:
 
 {%highlight php%}
 interface RequestInterface
@@ -135,25 +139,34 @@ public function doSomething()
 }
 {%endhighlight%}
 
-The above method `doSomething()` does not call the `getParams()` method.
+The second example method `doSomething()` does not call the `getParams()` method.  
 If `getParams()` would have been called, the class `MyClass` would have instantly depended on the `HttpRequest` implementation and the benefit of having an interface would have been completely lost.  
 
-Should it be unavoidable to use `getParams()`, the `getParams()` method should either be added to the interface, or the class `MyClass` should depend on `HttpRequest` instead of `RequestInterface` as a constructor argument.  
+If it can not be avoided to use `getParams()`, there are two possibilities to deal with that.
 
-The **benefit interfaces offer** is that it keeps code decoupled from implementation details.  
+1. The `getParams()` method could be added to `RequestInterface` 
+2. The class `MyClass` could depend on `HttpRequest` directly instead of `RequestInterface` as a constructor argument.  
+
+The **benefit interfaces offer** is that they keep code decoupled from implementation details.  
 This means, future changes will not cause your code to fail unless the interface is changed, too.  
 Also, interfaces can very easily be replaced by test doubles (also called "mocks"). Mocking concrete classes can be much more complex.
 
 ### Class and method size
 
 Try to keep the number of methods in a class and the number of lines of code per method as little as possible.  
+
 Shorter methods do less, which in turn means they are easier to test.
 The same is true for small classes.
 
+As a rule of thumb, try to keep methods to 5 or less lines of code.
+
+
 ### Testing private and protected methods
 
-When you feel the need to write tests for private scope methods, that usually is a sign that the class is doing too much.  
-Consider extracting that functionality in a separate class and using that as a collaborator. The extracted class then provides the functionality via a public method and can easily be tested.
+When you see the need to write tests for `private` scope methods, it usually is a sign that the class under test is doing too much.  
+
+Consider extracting that functionality into a separate class and using that as a collaborator.  
+The extracted class then provides the functionality via a public method and can easily be tested.
 
 ### Helpful principles
 
@@ -223,3 +236,10 @@ Every time any currently not available resource is needed, just think "I don't c
 
 At first this may seem like it causes the number of classes to explode, but in fact each one of the classes will be very short and simple and usually only have a very limited responsibilities.  
 Almost as a side effect those classes will be very easy to test.
+
+### Further reading:
+
+* Kent Becks [rules of simple software design](http://martinfowler.com/bliki/BeckDesignRules.html).
+* [Clean Code](https://books.google.com/books/about/Clean_Code.html?id=dwSfGQAACAAJ) by Robert C. Martin
+* [Refactoring](http://martinfowler.com/books/refactoring.html) by Martin Fowler
+* [Growing Object Oriented Software Guided by Tests](http://www.growing-object-oriented-software.com/) by Steve Freeman and Nat Pryce
