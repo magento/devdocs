@@ -15,8 +15,15 @@ github_link: release-notes/feature_list.md
     General Features
 </h2>
 <table class="feature-table">
+    <colgroup>
+        <col class="feature-item"></col>
+        <col class="feature-edition"></col>
+        <col class="feature-edition"></col>
+        <col class="feature-edition"></col>
+        <col class="feature-edition"></col>
+    </colgroup>
     <tr>
-        <th class="feature-item">
+        <th>
             Feature Title
         </th>
         <th>
@@ -2222,7 +2229,14 @@ github_link: release-notes/feature_list.md
 <h1 id="enterprise_features">
     Enterprise Features
 </h1>
-<table>
+<table class="feature-table">
+    <colgroup>
+        <col class="feature-item"></col>
+        <col class="feature-edition"></col>
+        <col class="feature-edition"></col>
+        <col class="feature-edition"></col>
+        <col class="feature-edition"></col>
+    </colgroup>
     <tr>
         <th colspan="5">
             Rich Merchandising Suite (RMS)
@@ -2261,7 +2275,6 @@ github_link: release-notes/feature_list.md
     <tr>
         <th colspan="5">
             Dynamic Rule Based Product Relations
-
         </th>
     </tr>
     <tr>
