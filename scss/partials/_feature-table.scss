@@ -1,11 +1,32 @@
 
-.feature-table {
-    .feature-item {
+.custom-table {
+    th,
+    td {
+        text-align: center;
+        white-space: nowrap;
+
+        &:first-child {
+            text-align: left;
+            white-space: normal;
+        }
+    }
+
+    .primary-item {
         width: 70%;
     }
 
-    .feature-edition {
-        font-size: 0.8em;
-        white-space: nowrap;
+    .note-item {
+        font-size: 0.7em;
+    }
+
+    @media (max-width: 767px) {
+        th,
+        td {
+            padding: 7px;
+        }
+
+        .primary-item {
+            width: 60%;
+        }
     }
 }
