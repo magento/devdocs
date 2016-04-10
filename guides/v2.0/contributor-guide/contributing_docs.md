@@ -78,6 +78,8 @@ To fork a repository on Github, do the following:
 
 4. Clone the repo into your development environment and then start writing and committing your changes. Optionally create a branch first if you plan to work on mulitple changes.
 
+5. You can build this site using Jekyll by following the <a href="https://github.com/magento/devdocs#user-content-building-this-site" target="_blank">instructions here</a>. 
+
 <h2 id="pull_request">Create a pull request</h2>
 
 To create a pull request do the following: 
