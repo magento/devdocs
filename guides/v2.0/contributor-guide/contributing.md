@@ -25,6 +25,8 @@ The following topics are included in the Guide:
 
 * <a href="#pull_request">Create a pull request</a>
 
+* <a href="#sync">Update the fork with the latest changes</a>
+
 * <a href="#report">Report an issue</a>
 
 * <a href="#labels">Labels applied by the Magento team</a>
@@ -82,6 +84,22 @@ To create a pull request do the following:
 
 
 After submitting your PR, you can head over to the Magento 2 repository’s <a href="https://github.com/magento/magento2/pulls?q=is%3Aopen+is%3Apr" target="_blank">Pull Requests panel</a> to see your PR along with the others. Your PR undergoes automated testing, and if it passes, the core team considers it for inclusion in the Magento 2 core. If some tests fail, please make the corresponding corrections in your code.
+
+<h2 id="sync">Update the fork with the latest changes</h2>
+As community and Magento writers changes are merged to the repository, your fork will became outdated and pull requests might result in conflicts. It is easy to see if the fork is outdated: just 
+open the fork page in GitHub and if at the top you can read "This branch is NUMBER commits behind magento:develop.", it means it needs to be updated.
+
+There are two ways to update your fork. The typical way requires command line and is described here: https://help.github.com/articles/syncing-a-fork/. Make sure to use develop instead of master.
+
+There is also a possibility to use GitHub interface to do that. This method inserts unneccessary information into fork commit history. If you do not care about that, you can create 
+a reverse pull request. On your fork GitHub page, click New pull request. You should see the following message:
+
+There isn’t anything to compare.
+magento:develop is up to date with all commits from USER:develop. Try switching the base for your comparison.
+
+Click the base link and then Create pull request, providing any title.
+
+Scroll to the bottom of the page and click Merge pull request and then Confirm Merge.
 
 <h2 id="report">Report an issue</h2>
 If you find a bug in Magento 2 code, you can report it by creating an issue in the Magento 2 repository.
