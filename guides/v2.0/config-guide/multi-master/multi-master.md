@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: Z_cqrs
+subgroup: 20_cqrs
 title: Split database performance solution (Enterprise Edition only)
 menu_title: Split database performance solution (Enterprise Edition only)
 menu_order: 1

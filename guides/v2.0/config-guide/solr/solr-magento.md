@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: Solr
+subgroup: 15_Solr
 title: Configure Solr and Magento
 menu_title: Configure Solr and Magento
 menu_order: 2
