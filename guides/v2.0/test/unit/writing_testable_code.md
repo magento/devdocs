@@ -15,75 +15,79 @@ github_link: test/unit/writing_testable_code.md
 * TOC
 {:toc}
 
-Much has been written on the subject of writing simple code that is simple to test.  
-This article does not aim to be a replacement for the existing literature, but rather tries to highlight some thoughts on the subject.  
-Some points might be written as if they are absolute truths, even though we are aware that everything depends on context.  
-We feel it the statements are true in the *most* situations.
+This topic does not aim to be a replacement for existing documentation about testing, but rather tries to highlight some thoughts on the subject. Although the truth of anything depends somewhat on the context, this topic attempts to provide information that is applicable in *most* situations.
 
-### The TL;DR
+### Tests should be simple
 
 Tests should be trivial to write. Simple, small classes with few collaborators are easy to test.  
-If testing a class is hard, it probably has grown too large and does too much.  
-It should be split into several classes, each of which does only one thing, which is probably simpler to test.
+If testing a class is hard, it probably has grown too large and does too much. Split the class into several classes, each of which does only one thing.
 
-### Managing dependencies
+### Manage dependencies
 
-A big part of making code testable is managing the dependencies.  
-Dependencies can take many forms. They can be clearly stated or hidden.  
-The fewer dependencies a class has and the more obvious they are, the easier it is to maintain and test the class. At the same time the class will be less likely to break because of future changes.
+A big part of making code testable is managing its dependencies.  
+
+Dependencies can take many forms and they can be clearly stated or hidden.  
+
+The fewer dependencies a class has and the more obvious they are, the easier it is to maintain and test the class. At the same time, the class is less likely to break because of future changes.
 
 #### Creating new instances
+We strongly recommend you do *not*:
 
-Do not use `new` to instantiate new objects, because that removes the flexibility the Magento dependency configuration offers.  
-Also, do not use the `ObjectManager` directly in production code.  
-There always is a better alternative, usually a [generated](http://devdocs.magento.com/guides/v2.0/extension-dev-guide/code-generation.html) `Factory` class, or a [`Locator`](https://thephp.cc/news/2015/09/dependencies-in-disguise) class of sorts.  
+*   Use `new` to instantiate new objects, because that removes the flexibility the Magento dependency configuration offers.  
+*   Use the `ObjectManager` directly in production code.  
+
+There always is a better alternative, usually a [generated]({{ site.gdeurl }}extension-dev-guide/code-generation.html) `Factory` class, or a [`Locator`](https://thephp.cc/news/2015/09/dependencies-in-disguise){:target="_blank"} class of sorts.  
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>This rule only applies to production code. When writing integration tests this is not true. In fact, in order to wire up an integration test case, using the object manager is recommended.</p>
+  <p>This rule applies only to production code. When writing [integration tests]({{ site.gdeurl }}test/intgration/integration_test_execution.html), this is not true. In fact, the object manager is recommended for integration tests.</p>
 </div>
 
 #### Collaborator classes
 
-Whenever an external class property, class constant or a class method is used in a file, this file depends on the class containing the method or constant.  
-Even if the external class is not used as a instantiated object, the current class is still hard wired to depend on it.  
-PHP will not be able to execute the code unless it can load the external class, too. That is why such external classes are referred to as **dependencies**.  
-Try to keep the number dependencies of to a minimum.  
+Whenever an external class property, class constant, or a class method is used in a file, this file depends on the class containing the method or constant. Even if the external class is not used as a instantiated object, the current class is still hard wired to depend on it.  
 
-Collaborator instances should be passed into the class through constructor injection.
+PHP cannot execute the code unless it can load the external class, too. That is why such external classes are referred to as *dependencies*. Try to keep the number dependencies of to a minimum.  
 
-#### The environment (e.g. filesystem, time, global variables)
+Collaborator instances should be passed into the class using [constructor injection]({{ site.gdeurl }}extension-dev-guide/depend-inj.html##dep-inj-preview-cons).
 
-Whenever your code requires access to some part of the environment, try to use a collaborator class that can easily be replaced by a test double (also called "mock") instead.
+#### The environment (file system, time, global variables)
+
+Whenever your code requires access to some part of the environment, try to use a collaborator class that can easily be replaced by a test double (also referred to as a *mock*) instead.
+
 For example, if you...
 
 * ...need file system access?  
-  Use `\Magento\Framework\Filesystem\Io\IoInterface` instead of `fopen()`, `dir()` or other native methods.
+
+  Use [`\Magento\Framework\Filesystem\Io\IoInterface`]({{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/Io/IoInterface.php){:target="_blank"} instead of `fopen()`, `dir()` or other native methods.
 * ...need the current time?  
-   Inject a `\DateTimeInterface` instance (for example `\DateTimeImmutable`) and use that.
+
+   Inject a [`\DateTimeInterface`](http://php.net/manual/en/refs.calendar.php){:target="_blank"} instance (for example `\DateTimeImmutable`) and use that.
 * ...need the remote IP?  
-  Use `\Magento\Framework\HTTP\PhpEnvironment\RemoteAddress`.
+
+  Use [`\Magento\Framework\HTTP\PhpEnvironment\RemoteAddress`]({{ site.mage2000url }}lib/internal/Magento/Framework/HTTP/PhpEnvironment/RemoteAddress.php){:target="_blank"}.
 * ...need access to `$_SERVER`?  
-  Consider using `\Magento\Framework\HTTP\PhpEnvironment\Request::getServerValue()`.
+
+  Consider using [`\Magento\Framework\HTTP\PhpEnvironment\Request::getServerValue()`]({{ site.mage2000url }}lib/internal/Magento/Framework/HTTP/PhpEnvironment/Request.php){:target="_blank"}.
 
 Anything that can be easily replaced by a test double is preferable to using low level functions.
 
-### Interfaces over Classes
+### Interfaces over classes
 
-Dependencies on **interfaces** should be preferred over dependencies on **classes**, because the former decouples your code from implementation details.
+Dependencies on *interfaces* should be preferred over dependencies on *classes* because the former decouples your code from implementation details.
 
 This helps to isolate your code from future changes.  
 
-The above statement is true only if you exclusively uses the methods and constants that are defined in the interface. If your code also uses other public methods specific to the class implementing the interface, your code no longer is independent of the implementation details.  
+This guideline is true only if you exclusively use the methods and constants defined in the interface. If your code also uses other public methods specific to the class implementing the interface, your code is no longer independent of the implementation details.  
 
-If methods of a concrete class are used, the benefits of having an interface are completely lost.  
-Even worse, the code is lying, because at first glance it looks like it is a dependency on the interface only when in fact a different implementation of the same interface could not be used.  
-This can lead to considerable maintenance costs down the road. In such cases using the class name of the concrete implementation is preferable to using the interface name as a dependency.  
+You lose any benefits of having an interface if you use methods of a concrete class.  
 
-To illustrate, lets assume there is a theoretical `RequestInterface` with two methods `getPathInfo()` and `getParam($name)`.
+Even worse, the code is lying, because apparently there is a dependency on the interface only; however, you could not use a different implementation of the same interface. This can lead to considerable maintenance costs down the road. In such cases, using the class name of the concrete implementation is preferable to using the interface name as a dependency.  
+
+To illustrate, assume there is a theoretical `RequestInterface` with two methods `getPathInfo()` and `getParam($name)`.
 
 For example:
 
-{%highlight php%}
+{%highlight php startinline=true %}
 interface RequestInterface
 {
     public function getPathInfo();
@@ -91,9 +95,9 @@ interface RequestInterface
 }
 {%endhighlight%}
 
-Lets also assume there is a concrete implementation `HttpRequest` that that also has a public method `getParams()` in addition to the two interface methods.
+Let's also assume there is a concrete implementation `HttpRequest` that that also has a public method `getParams()` in addition to the two interface methods.
 
-{%highlight php%}
+{%highlight php startinline=true %}
 class HttpRequest implements RequestInterface
 {
     public function getPathInfo() {...}
@@ -102,9 +106,9 @@ class HttpRequest implements RequestInterface
 }
 {%endhighlight%}
 
-Any code that depends on `RequestInterface` should avoid using the `getParams()` method, because it it not part of the interface.  
+Any code that depends on `RequestInterface` should avoid using the `getParams()` method, because it is not part of the interface.  
 
-{%highlight php%}
+{%highlight php startinline=true %}
 class MyClass
 {
     /**
@@ -129,7 +133,7 @@ class MyClass
 This completely defeats the purpose of the interface.  
 A better solution might be the following:
 
-{%highlight php%}
+{%highlight php startinline=true %}
 public function doSomething()
 {
     foreach (['foo', 'bar'] as $paramName) {
@@ -139,8 +143,9 @@ public function doSomething()
 }
 {%endhighlight%}
 
-The second example method `doSomething()` does not call the `getParams()` method.  
-If `getParams()` would have been called, the class `MyClass` would have instantly depended on the `HttpRequest` implementation and the benefit of having an interface would have been completely lost.  
+The second example method `doSomething()` does not call the `getParams()` method. 
+
+If `getParams()` had been called, the class `MyClass` would have instantly depended on the `HttpRequest` implementation and the benefit of having an interface would have been completely lost.  
 
 If it can not be avoided to use `getParams()`, there are two possibilities to deal with that.
 
