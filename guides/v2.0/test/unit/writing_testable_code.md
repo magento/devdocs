@@ -173,11 +173,7 @@ The following list principles are by no means complete, but they might serve as 
 
 Try to use a few getters as possible. Instead, use methods that tell the objects directly what to do. Asking for object values is a sign of misplaced responsibilities. [Kent Beck](https://en.wikipedia.org/wiki/Kent_Beck){:target="_blank"} called that "feature envy".
 
-If a class requires data, consider moving code that requires the data into the same class. TBD
-
-Consider moving the code in that needs the value into a class that has the data available.
-
-The following example code exhibits feature envy:
+Consider moving the code in that needs the value into a class that has the data available as the following example shows:
 
 {%highlight php startinline=true %}
 function extractMatchingDocuments(Document $searchDoc, array $documents)
