@@ -10,7 +10,7 @@ github_link: javascript-dev-guide/widgets/widget_gallery.md
 
 <h2>Overview</h2>
 
-The gallery jQeury widget implements a content area with images organized into preview and thumbnails blocks. 
+The gallery _jQeury widget implements a content area with images organized into preview and thumbnails blocks. 
 
 The following picture is an illustration of image displaying on the product page using the gallery widget:
 
@@ -20,11 +20,11 @@ In addition, the magnifier widget can be used to demonstrate images in 100% scal
 
 Gallery is displayed consistently across all supported browsers and is responsive - it sizes correctly on mobile devices and desktops.
 
-The gallery widget uses the <a href="http://fotorama.io/">jQuery Fotorama library</a>.
+The gallery widget uses the <a href="http://fotorama.io/">Fotorama widget</a>.
 
-The important feature of the gallery widget implementation is the possibility to configure the wiget options in the `view.xml` configuration file of a theme. 
+The important feature of the gallery widget implementation is the possibility to configure the widget options in the `view.xml` configuration file of a theme. 
 
-The gallery widget source is <a href="{{site.mage2000url}}lib/web/mage/gallery/gallery.js">lib/web/mage/gallery/gallery.js</a>
+The gallery widget source code is <a href="{{site.mage2000url}}lib/web/mage/gallery/gallery.js">lib/web/mage/gallery/gallery.js</a>
 
 The gallery magnifier source is <a href="{{site.mage2000url}}lib/web/magnifier/magnify.js"> lib/web/magnifier/magnify.js</a>.
 
@@ -37,7 +37,7 @@ The gallery magnifier source is <a href="{{site.mage2000url}}lib/web/magnifier/m
 
 ## Initialize the gallery widget {#gallery_init}
 
-The gallery widged is initialized as described in [JavaScript initialization]({{site.gdeurl}}javascript-dev-guide/javascript/js_init.html#init_phtml).
+The gallery widget is initialized as described in [JavaScript initialization]({{site.gdeurl}}javascript-dev-guide/javascript/js_init.html#init_phtml).
 
 Example of declarative initialization:
 
@@ -46,40 +46,51 @@ Example of declarative initialization:
 {%highlight js%}
 <script type="text/x-magento-init">
     {
-        "[data-gallery-role=gallery-placeholder]": {
+         {
+        "<element_selector>": {
             "mage/gallery/gallery": {
-                "mixins":["magnifier/magnify"],
-                "magnifierOpts": <?php /* @escapeNotVerified */ echo $block->getMagnifier(); ?>,
-                "data": <?php /* @escapeNotVerified */ echo $block->getGalleryImagesJson(); ?>,
+                "data": [{
+                    "thumb": "<small_image_url>",
+                    "img": "<small_image_url>",
+                    "full": "<small_image_url>",
+                    "caption": "<message>",
+                    "position": "<number>",
+                    "isMain": "<true/false>"
+                }],
                 "options": {
-                    "nav": "<?php /* @escapeNotVerified */ echo $block->getVar("gallery/nav"); ?>",
-                    "loop": <?php /* @escapeNotVerified */ echo $block->getVar("gallery/loop"); ?>,
-                    "keyboard": <?php /* @escapeNotVerified */ echo $block->getVar("gallery/keyboard"); ?>,
-                    "arrows": <?php /* @escapeNotVerified */ echo $block->getVar("gallery/arrows"); ?>,
-                    "allowfullscreen": <?php /* @escapeNotVerified */ echo $block->getVar("gallery/allowfullscreen"); ?>,
-                    "showCaption": <?php /* @escapeNotVerified */ echo $block->getVar("gallery/caption"); ?>,
-                    "width": <?php /* @escapeNotVerified */ echo $block->getImageAttribute('product_page_image_medium', 'width'); ?>,
-                    "thumbwidth": <?php /* @escapeNotVerified */ echo $block->getImageAttribute('product_page_image_small', 'width'); ?>,
-                    "thumbheight": <?php /* @escapeNotVerified */ echo $block->getImageAttribute('product_page_image_small', 'height')
-                        ?: $block->getImageAttribute('product_page_image_small', 'width'); ?>,
-                    "height": <?php /* @escapeNotVerified */ echo $block->getImageAttribute('product_page_image_medium', 'height')
-                        ?: $block->getImageAttribute('product_page_image_medium', 'width'); ?>,
-                    "transitionduration": <?php /* @escapeNotVerified */  echo $block->getVar("gallery/transition/duration"); ?>,
-                    "transition": "<?php /* @escapeNotVerified */  echo $block->getVar("gallery/transition/effect"); ?>",
-                    "navarrows": <?php /* @escapeNotVerified */  echo $block->getVar("gallery/navarrows"); ?>,
-                    "navtype": "<?php /* @escapeNotVerified */  echo $block->getVar("gallery/navtype"); ?>",
-                    "navdir": "<?php /* @escapeNotVerified */  echo $block->getVar("gallery/navdir"); ?>"
+                    "nav": "<false/thumbs/dots>",
+                    "loop": <true/false>,
+                    "keyboard": <true/false>,
+                    "arrows": <true/false>,
+                    "allowfullscreen": <true/false>,
+                    "showCaption": <true/false>,
+                    "width": <number>,
+                    "thumbwidth": <number>,
+                    "thumbheight": <number>,
+                    "height": <number>,
+                    "transitionduration": <number>,
+                    "transition": "<slide/crossfade/dissolve>",
+                    "navarrows": <true/false>,
+                    "navtype": "<slides/thumbs>",
+                    "navdir": "<horizontal/vertical>"
                 },
                 "fullscreen": {
-                    "nav": "<?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/nav"); ?>",
-                    "loop": <?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/loop"); ?>,
-                    "navdir": "<?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/navdir"); ?>",
-                    "arrows": <?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/arrows"); ?>,
-                    "showCaption": <?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/caption"); ?>,
-                    "transitionduration": <?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/transition/duration"); ?>,
-                    "transition": "<?php /* @escapeNotVerified */  echo $block->getVar("gallery/fullscreen/transition/effect"); ?>"
+                    "nav": "<false/thumbs/dots>",
+                    "loop": <true/false>,
+                    "navdir": "<horizontal/vertical>",
+                    "arrows": <true/false>,
+                    "showCaption": <true/false>,
+                    "transitionduration": <number>,
+                    "transition": "<slide/crossfade/dissolve>"
                 },
-                "breakpoints": <?php /* @escapeNotVerified */ echo $block->getBreakpoints(); ?>
+                "breakpoints": {
+                    "<breakpoint_name>": {
+                        "conditions": {
+                            "max-width": "767px"
+                        }
+                        "options": {}
+                    }
+                }
             }
         }
     }
@@ -90,7 +101,7 @@ Example of declarative initialization:
 
 ## Options {#gallery_options}
 
-The following option groups are availble for the gallery widget:
+The following option groups are available for the gallery widget:
 
 * [`data`](#data)
 * [`options`](#options)
@@ -102,6 +113,20 @@ All options for each group are described further.
 ### `data` {#data}
 
 Array of images to display.
+
+Where `image` is an object with keys:
+
+{%highlight js%}
+{
+    "thumb": "<small_image_url>",
+    "img": "<small_image_url>",
+    "full": "<small_image_url>",
+    "caption": "<message>",
+    "isMain": "<true/false>"
+}
+{%endhighlight%}
+
+The `thumb`, `img`, and `full` are full paths to proper image files.
 
 #### `data/caption` {#data_caption}
 
@@ -137,15 +162,9 @@ Display navigation arrows on the thumbnails sides.
 
 **Type**: Boolean
 
-#### `options/click` {#gallery_click}
-
-Enable navigation through preview frames by clicking the Next and Previous buttons.
-
-**Type**: Boolean
-
 #### `options/height` {#gallery_height}
 
-Height of the preview block in pixels or percents.
+Height of the preview block in pixels or percent.
 
 **Type**: Number, String
 
@@ -156,6 +175,8 @@ Height of the preview block in pixels or percents.
 Switch on/off the keyboard navigation.
 
 **Type**: Boolean
+
+**Default value**: `false`
 
 #### `options/loop` {#gallery_loop}
 
@@ -168,7 +189,7 @@ Define whether images are displayed in a loop.
 
 #### `options/maxheight` {#gallery_maxheight}
 
-Maximum height of the preview block in pixels or percents.
+Maximum height of the preview block in pixels or percent.
 
 **Type**: Number, String
 
@@ -176,7 +197,7 @@ Maximum height of the preview block in pixels or percents.
 
 #### `options/maxwidth` {#gallery_maxwidth}
 
-Maximum width of the preview block in pixels or percents.
+Maximum width of the preview block in pixels or percent.
 
 **Type**: Number, String
 
@@ -184,7 +205,7 @@ Maximum width of the preview block in pixels or percents.
 
 #### `options/minheight` {#gallery_minheight}
 
-Minimal height of the preview block in pixels or percents.
+Minimal height of the preview block in pixels or percent.
 
 **Type**: Number, String
 
@@ -192,7 +213,7 @@ Minimal height of the preview block in pixels or percents.
 
 #### `options/minwidth` {#gallery_minwidth}
 
-Minimal width of the preview block in pixels or percents.
+Minimal width of the preview block in pixels or percent.
 
 **Type**: Number, String
 
@@ -232,9 +253,8 @@ Sliding type of thumbnails.
 
 **Possible values**:
 
-- `slides`
-- `thumbs`
-
+- `slides`: on the arrow button click the thumbs ribbon shifts over several thumbs
+- `thumb`: on the arrow button click the thumbs ribbon shifts over one thumb
 
 #### `options/ratio` {#gallery_ratio}
 
@@ -242,12 +262,11 @@ Width divided by height. Recommended if you set width in percents.
 
 **Type**: Number, String
 
-**Default value**: `null`
+**Default value**: calculated from `width` and `height`.
 
 #### `options/showCaption` {#gallery_showcaption}
 
 Enable view of caption in preview. Can be for initialized for specific image. Can work globally.
-
 
 **Type**: Boolean
 
@@ -264,6 +283,8 @@ The index number of the image that is displayed once the gallery is initialized.
 Moving between preview images by swiping in left and right.
 
 **Type**: Boolean
+
+**Default value**: `true`
 
 #### `options/thumbwidth` {#gallery_thumbwidth}
 
@@ -292,7 +313,6 @@ Sets the transition effect for slides changing.
 Sets transition duration in milliseconds.
 
 **Type**: Number
-
 
 **Type**: Boolean
 
@@ -397,19 +417,23 @@ Sets transition duration in milliseconds in the fullscreen view.
 ### `breakpoints` {#breakpoints}
 Set of options that could be dynamically set while page is resizing.
 
-#### `breakpoints/mobile` {#breakpoints_mobile}
-                <var name="conditions">
-                    <var name="max-width">767px</var>
-                </var>
-                <var name="options">
-                    <var name="options">
-                        <var name="navigation">dots</var>
-                    </var>
-                </var>
+Set as follows:
 
-<p class="q">need help with describing this</p>
+{%highlight js%}
+"breakpoints": {
+    "%breakpoint_name%": {
+        "conditions": {
+            ...
+        }
+        "options": {...}
+    }
+}
+{%endhighlight%}
 
+Where the options are as follows:
 
+ - `conditions`: compiled in [media query](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries) through and operand. For example: `"max-width": "767px"`
+ - `options` - object of options that are applied
 
 ## Configure gallery options in `view.xml` 
 
@@ -474,7 +498,7 @@ To ensure that the gallery is fully formed, wrap your code with event handler fu
 
 {% endhighlight php%}
 
-Then to call a method use the following notation:
+Then to call a method, use the following notation:
 
 {% highlight php %}
     api.%method_name%();
@@ -484,13 +508,21 @@ All available methods are listed in the following paragraph.
 
 ### Methods {#gallery_methods}
 
+* [first](#gallery_first) 
+* [last](#gallery_last)
 * [next](#gallery_next)
 * [prev](#gallery_prev)
-* [last](#gallery_last)
-* [first](#gallery_first)
 * [seek](#gallery_seek)
 * [updateData](#gallery_updateData)
 * [updateOptions](#gallery_updateData)
+
+#### `first()` {#gallery_first}
+
+Displays the first preview image.
+
+#### `last()` {#gallery_last}
+    
+Displays the last preview image.
 
 #### `next()` {#gallery_next}
 
@@ -498,7 +530,7 @@ Image ID is passed as an argument. Displays the next preview image.
 
 If the last image ID is passed, the behavior depends on whether [loop](##gallery_loop) is enabled:
 
-* if loop is enbled, the first image is displayed.
+* if loop is enabled, the first image is displayed.
 * if loop is disabled, does not change the displayed image.
 
 #### `prev()` {#gallery_prev}
@@ -510,17 +542,9 @@ If the first image ID is passed, the behavior depends on whether [loop](##galler
 * if loop is enbled, the last image is displayed.
 * if loop is disabled, does not change the displayed image.
 
-#### `last()` {#gallery_last}
-    
-Displays the last preview image.
-
-#### `first()` {#gallery_first}
-
-Displays the first preview image.
-
 #### `seek()` {#gallery_seek}
 
-Displays the image with the specified ID. 
+Displays the image with the specified `index`. 
 
 Doesn't update preview if the argument is not valid. 
 
@@ -529,9 +553,8 @@ Behavior:
 * `seek(0)` does not display any preview 
 * `seek(1)` displays the first image. 
 * `seek(-1)` displays the last image. 
-* If the argument is a number bigger than the number of items or less than "-(number of items)" gallery shows modulo of "items number / number".  
+* If the argument is a number bigger than the number of items, or less than "-(number of items)" the gallery shows the modulus of the following division: total images number divided by the argument number.  
 
-<p class="q">what is modulo of "items number / number"?</p>
 
 #### `updateData()` {#gallery_updateData}
    

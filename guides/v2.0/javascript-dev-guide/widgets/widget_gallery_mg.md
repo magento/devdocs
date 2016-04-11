@@ -19,26 +19,33 @@ In Magento it is used by the [gallery]({{site.gdeurl}}javascript-dev-guide/widge
 
 ## Initialize magnifier {#magnifier_init}
 
-The magnifier widged is initialized as described in [JavaScript initialization]({{site.gdeurl}}javascript-dev-guide/javascript/js_init.html#init_phtml).
+The magnifier widget is initialized as described in [JavaScript initialization]({{site.gdeurl}}javascript-dev-guide/javascript/js_init.html#init_phtml).
 
 When initializing the gallery Widget on an HTML element, magnifier initialization is also available. Following is the example of gallery initialization with magnifier:
 
 {%highlight js%}
 <script type="text/x-magento-init">
-    "<element_selector>": {
-         "mage/gallery/gallery": {
-             "data": <?php echo $block->getGalleryImagesJson(); ?>,
-             "mixins": ["magnifier/magnify"],
-             "magnifierOpts": {
-                "enabled": "<?php echo $block->getVar("magnifier:enabled"); ?>",
-                "eventType": "<?php echo $block->getVar("magnifier:action"); ?>",
-                "width": "<?php echo $block->getVar("magnifier:width"); ?>",
-                "height": "<?php echo $block->getVar("magnifier:height"); ?>",
-                "top": "<?php echo $block->getVar("magnifier:top"); ?>",
-                "left": "<?php echo $block->getVar("magnifier:left"); ?>"
-             }
-         }
-    }
+"<element_selector>": {
+        "mage/gallery/gallery": {
+            "data": [{
+                "thumb": "<small_image_url>",
+                "img": "<small_image_url>",
+                "full": "<small_image_url>",
+                "caption": "<message>",
+                "isMain": "<true/false>"
+            }],
+            "mixins": ["magnifier/magnify"],
+            "magnifierOpts": {
+               "enabled": <true/false>,
+               "eventType": "<hover/click>",
+               "width": <number>,
+               "height": <number>,
+               "top": <number>,
+               "left": <number>,
+               "fullscreenzoom": <number>
+            }
+        }
+   }
 </script>
 {% endhighlight %}
 
@@ -63,17 +70,17 @@ Possible values:
 * `hover`
 * `click`
 
-### `left` {#opt_left}
-
-The value for the CSS `left` property for the magnifier block positioning.
-
-**Type**: Integer
-
 ### `fullscreenzoom` {#opt_fullscreenzoom}
 
 Zoom step in percents for the fullscreen view.
 
 Type: Integer
+
+### `left` {#opt_left}
+
+The value for the CSS `left` property for the magnifier block positioning.
+
+**Type**: Integer
 
 ### `top` {#opt_top}
 
