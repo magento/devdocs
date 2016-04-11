@@ -147,18 +147,18 @@ The second example method `doSomething()` does not call the `getParams()` method
 
 If `getParams()` had been called, the class `MyClass` would have instantly depended on the `HttpRequest` implementation and the benefit of having an interface would have been completely lost.  
 
-If it can not be avoided to use `getParams()`, there are two possibilities to deal with that.
+If cannot avoid using `getParams()`, you can do any of the following:
 
-1. The `getParams()` method could be added to `RequestInterface` 
-2. The class `MyClass` could depend on `HttpRequest` directly instead of `RequestInterface` as a constructor argument.  
+*   Add the `getParams()` method to `RequestInterface` 
+*   Make `MyClass` dependant on `HttpRequest` directly instead of using `RequestInterface` as a constructor argument.  
 
-The **benefit interfaces offer** is that they keep code decoupled from implementation details.  
-This means, future changes will not cause your code to fail unless the interface is changed, too.  
-Also, interfaces can very easily be replaced by test doubles (also called "mocks"). Mocking concrete classes can be much more complex.
+The benefit *interfaces* offer is that interfaces keep code decoupled from implementation details.  
+This means that future changes won't cause your code to fail unless the interface is changed, too.  
+Also, interfaces can very easily be replaced by test doubles (also referred to as *mocks*). Mocking concrete classes can be much more complex.
 
 ### Class and method size
 
-Try to keep the number of methods in a class and the number of lines of code per method as little as possible.  
+Try to keep the number of methods in a class and the number of lines of code per method as small as possible.  
 
 Shorter methods do less, which in turn means they are easier to test.
 The same is true for small classes.
