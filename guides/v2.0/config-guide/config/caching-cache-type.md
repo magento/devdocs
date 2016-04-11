@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: Caching
+subgroup: 08_Caching
 title: Create a cache type
 menu_title: Create a cache type
 menu_order: 500

@@ -2,18 +2,13 @@
 layout: default
 group: contributor
 subgroup: Contributor Guide
-title: Contribute to Magento 2
-menu_title: Contribute to Magento 2
+title: Code Contributions
+menu_title: Code Contributions
 menu_order: 1
 menu_node: parent
 github_link: contributor-guide/contributing.md
 redirect_from: /guides/v1.0/contributor-guide/contributing.html
 ---
-
-<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
-<!-- Referring file: contributing.md owned by core -->
-<!-- References are to this topic itself, http://devdocs.magento.com/guides/v1.0/contributor-guide/contributing.html#fork, contributing.html#pull_request -->
-
 
 The following topics are included in the Guide:
 
@@ -33,7 +28,7 @@ The following topics are included in the Guide:
 <h2 id="contribute">Contribute to Magento 2 code</h2>
 
 Use the <a href="#fork">fork</a> & <a href="#pull_request">pull</a> model to contribute to the Magento 2 codebase.
-This contribution model has contributors maintaining their own copy of the forked codebase (which can easily be synced with the main copy). The forked repository is then used to submit a request to the base repository to *pull* a set of changes (hence the phrase *pull request*).
+This contribution model has contributors maintaining their own copy of the forked codebase (which can be easily synced with the main copy). The forked repository is then used to submit a request to the base repository to *pull* a set of changes (hence the phrase *pull request*).
 
 Contributions can take the form of new components or features, changes to existing features, tests, documentation (such as developer guides, user guides, examples, or specifications), bug fixes, optimizations, or just good suggestions.
 
@@ -53,8 +48,8 @@ Often when the Magento 2 team works on reviewing the suggested changes, we will 
 3. Commits must be accompanied by meaningful commit messages.
 4. PRs that include bug fixing must be accompanied by a step-by-step description of how to reproduce the bug.
 3. PRs that include new logic or new features must be submitted along with:
-	* Unit/integration test coverage (we will be releasing more information on writing test coverage in the near future).
-	* Proposed <a href="{{ site.baseurl }}" target="_blank">documentation</a> update. Documentation contributions can be submitted <a href="https://github.com/magento/devdocs" target="_blank">here</a>.
+  * Unit/integration test coverage (we will be releasing more information on writing test coverage in the near future).
+  * Proposed <a href="{{ site.gdeurl }}contributor-guide/contributing_docs.html" target="_blank">documentation</a> update. <a href="{{ site.baseurl }}" target="_blank">Documentation</a> contributions can be submitted <a href="https://github.com/magento/devdocs" target="_blank">here</a>.
 4. For large features or changes, please <a href="https://github.com/magento/magento2/issues" target="_blank">open an issue</a> and discuss first. This may prevent duplicate or unnecessary effort, and it may gain you some additional contributors.
 5. To report a bug, please <a href="https://github.com/magento/magento2/issues" target="_blank">open an issue</a>, and follow these <a href="https://github.com/magento/magento2/wiki/Issue-reporting-guidelines">guidelines about bugfix issues</a>.
 
@@ -67,7 +62,21 @@ To fork a repository on Github, do the following:
 2. Navigate to the <a href="https://github.com/magento/magento2" target="_blank">Magento 2 repository</a>.
 3. Click **Fork** at the top right: <br><img src="{{ site.baseurl }}common/images/fork.png" alt="fork a repository">
 
-4. Clone the repo into your development environment, get the app installed, and start playing.
+4. Clone the repo into your development environment and start playing.
+
+### Update the fork with the latest changes {#sync}
+As community and Magento writers' changes are merged to the repository, your fork becames outdated and pull requests might result in conflicts. To see if your fork is outdated, open the fork page in GitHub and if at the top the message `This branch is NUMBER commits behind magento:2.0.` displays, it means your fork must be updated.
+
+There are two ways to update your fork. The typical way is discussed in [GitHub documentation](https://help.github.com/articles/syncing-a-fork){:target="_blank"}. Make sure to update from the correct branch!
+
+There is also a possibility to use the GitHub interface to do that. This is referred to as a *reverse pull request*. This method has the downside of inserting unnecessary information into fork commit history. On your fork GitHub page, click **New pull request**. You should see the following message:
+
+  There isn’t anything to compare.
+  magento:2.0 is up to date with all commits from <your fork>:2.0. Try switching the base for your comparison.
+
+Click the base link and then click **Create pull request**. Provide a descriptive name for your pull request in the provided field.
+
+Scroll to the bottom of the page and click **Merge pull request**, then click **Confirm Merge**.
 
 <h2 id="pull_request">Create a pull request</h2>
 
@@ -194,5 +203,4 @@ Refer to the following table for a description of each label. These labels are a
      
    </tbody>
 </table>
-
 

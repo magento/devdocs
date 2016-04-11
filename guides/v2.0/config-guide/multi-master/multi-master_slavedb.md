@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: Z_cqrs
+subgroup: 20_cqrs
 title: Set up optional database replication
 menu_title: Set up optional database replication
 menu_order: 10

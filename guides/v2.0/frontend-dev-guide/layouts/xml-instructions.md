@@ -278,7 +278,7 @@ Example:
 
 
 <p><code>&lt;action></code> child nodes are translated into block method arguments. Child nodes names are arbitrary. If there are two or more nodes with the same name under <code>&lt;action></code>, they are passed as one array.</p>
-<p>In the previous example, the value of <code>&lt;arg1></code> is passed as the first argument and <code>&lt;arg2></code> values are passed as <code>array('one', 'two')</code>. The list of all available methods depends on the block implementation (for example, the public method of the block class).</p>
+
 <table>
    <tbody>
       <tr>

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: Bootstrap
+subgroup: 03_Bootstrap
 title: Set the value of bootstrap parameters
 menu_title: Set the value of bootstrap parameters
 menu_order: 2
@@ -62,6 +62,11 @@ Set the variable using a shell-specific command. Because shells have differing s
 bash shell example for CentOS:
 
 	export MAGE_PROFILER=firebug
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>If a <code>PHP Fatal error</code> displays in the browser after you set a profiler value, restart your web server. The reason might be related to PHP bytecode caching, which caches bytecodes and PHP classpaths.</p></span>
+</div>
 
 <h2 id="mode-specify-web">Specifying a parameter value</h2>
 This section discusses how to specify the mode for either Apache or nginx.

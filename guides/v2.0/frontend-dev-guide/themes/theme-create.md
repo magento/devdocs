@@ -172,7 +172,7 @@ It is likely that your theme will also contain module-specific files, which are 
 <span class="glyphicon-class">
 <p>
 
-During theme development, when you change any files stored here, you need to clear `pub/static` and `var/preprocessed` directories, and then reload the pages. Otherwise the old versions of files are displayed on the storefront. 
+During theme development, when you change any files stored here, you need to clear <code>pub/static</code> and <code>var/view_preprocessed</code> directories, and then reload the pages. Otherwise the old versions of files are displayed on the storefront. 
 
 </p></span>
 </div>
@@ -190,6 +190,7 @@ app/design/frontend/&lt;Vendor&gt;/
 │&nbsp;&nbsp;&nbsp;├──&nbsp;web/
 │&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──&nbsp;images
 │&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──&nbsp;logo.svg
+│&nbsp;&nbsp;&nbsp;├──&nbsp;registration.php
 │&nbsp;&nbsp;&nbsp;├──&nbsp;theme.xml
 │&nbsp;&nbsp;&nbsp;├──&nbsp;composer.json
 </pre>

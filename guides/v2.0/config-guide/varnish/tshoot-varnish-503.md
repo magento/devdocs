@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: CM_Varnish
+subgroup: 09_Varnish
 title: Troubleshooting 503 (Backend Fetch Failed) errors
 menu_title: Troubleshooting 503 (Backend Fetch Failed) errors
 menu_order: 500
@@ -10,7 +10,7 @@ github_link: config-guide/varnish/tshoot-varnish-503.md
 ---
 
 ## Troubleshooting 503 (Backend Fetch Failed) errors {#varnish-503}
-If the length of cache tags used by Magento exceed Varnish's default of 8192 characters, you can see HTTP 503 (Backend Fetch Failed) errors in the browser. The errors might display simiar to the following:
+If the length of cache tags used by Magento exceed Varnish's default of 8192 characters, you can see HTTP 503 (Backend Fetch Failed) errors in the browser. The errors might display similar to the following:
 
 	Error 503 Backend fetch failed
 	Backend fetch failed

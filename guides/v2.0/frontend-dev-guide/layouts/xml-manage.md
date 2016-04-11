@@ -360,4 +360,4 @@ To replace an element, <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-
 
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/theme-best-practices.html" target="_blank">Theme design best practices</a>
+

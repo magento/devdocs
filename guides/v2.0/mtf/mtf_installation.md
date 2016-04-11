@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: B_Installation
+subgroup: 20_Installation
 title: Installation of the Magento Testing Framework Entities
 menu_title: INSTALLATION
 menu_node: parent
@@ -20,19 +20,10 @@ Follow the next three steps:
 
 ## Check pre-installation conditions {#mtf_install_pre}
 
-### 1. Install the Magento application you want to test {#mtf_install_pre_inst-magento}
+### Install the Magento application you want to test {#mtf_install_pre_inst-magento}
 To install the Magento application, see <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">Magento Installation Guide</a>.
 
-### 2. Adjust Magento application preferences {#mtf_install_pre_adj-magento}
-
--    Log in to the Magento Admin as an administrator. Example of Magento Admin URL: `http://magento.example.com/admin_1sgfym`.
--    On the vertical navigation bar click **Stores &gt; Configuration &gt; Advanced &gt; Admin &gt; Security**.
--    Set **Add Secret Key to URLs** to **No**. This setting allows test to open pages using direct URLs and assures correct cURL requests.
--    Go back to the vertical navigation bar of Magento Admin page.
--    Click **Stores &gt; Configuration &gt; General &gt; Content Management &gt; WYSIWYG Options**.
--    Set **Enable WYSIWYG Editor** to **Disabled Completely** to enable you to work with Selenium. You can change the setting later after you're finished testing.
-
-### 3. Check if all required software installed and configured {#mtf_install_pre_tools}
+### Check if all required software installed and configured {#mtf_install_pre_tools}
 
 #### PHP {#mtf_install_pre_tools_php}
 

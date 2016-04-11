@@ -1,23 +1,33 @@
 ---
 layout: default 
 group: compman
-subgroup: U_UseUpgrade
-title: Run System Upgrade
-menu_title: Run System Upgrade
-menu_node: parent
-menu_order: 1
+subgroup: 15_UseUpgrade
+title: Start System Upgrade
+menu_title: Start System Upgrade
+menu_node: 
+menu_order: 2
 github_link: comp-mgr/upgrader/upgrade-start.md
 ---
 
 <h2 id="compman-overview">Overview of System Upgrade</h2>
 This section discusses how to start System Upgrade, which upgrades the version of Magento core components as well as any other installed components.
 
+You can upgrade in any of the following ways:
+
+*	Using the System Upgrade utility, a wizard that walks you through the upgrade step by step; continue with this topic.
+
+	Use this method if you don't have access to the Magento server's file system or if you're a non-technical user.
+*	Using the [command line]({{ site.gdeurl }}comp-mgr/cli/cli-upgrade.html).
+
+	This upgrade method is more advanced and it requires access to the Magento server's file system.	
+
 <div class="bs-callout bs-callout-info" id="info">
 	<p><em>System upgrade</em> refers to updating the Magento 2.x core components and other installed components. To migrate from Magento 1.x to Magento 2, see the <a href="{{ site.gdeurl }}migration/bk-migration-guide.html">Migration Guide</a>.</p>
 </div>
 
 <div class="bs-callout bs-callout-warning">
-    <p>If you installed the Magento application by <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">cloning the GitHub repository</a>, you <em>cannot</em> use the System Upgrade utility to upgrade the software. Instead, you must <a href="{{ site.gdeurl }}install-gde/install/cli/dev_options.html">update it manually</a>.</p>
+    <ul><li>Authorization keys from a <a href="http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html" target="_blank">shared account</a> <em>cannot</em> be used for upgrade. You must get your authorization keys from <code>magento.com</code> account owner.</li>
+    	<li>If you installed the Magento application by <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">cloning the GitHub repository</a>, you <em>cannot</em> use the System Upgrade utility to upgrade the software. Instead, you must <a href="{{ site.gdeurl }}install-gde/install/cli/dev_options.html">update it manually</a>.</li></ul>
 </div>
 
 <h2 id="compman-prereq">Prerequisites</h2>
@@ -27,7 +37,7 @@ Before continuing, complete all tasks discussed in <a href="{{ site.gdeurl }}com
 To run System Upgrade:
 
 1.	Log in to the Magento Admin as an administrator.
-2.	Click **System** > **Web Setup Wizard**.
+2.	Click **System** > Tools > **Web Setup Wizard**.
 	The following page displays.<br><br>
 	<img src="{{ site.baseurl }}common/images/cman_upgr_initial.png" width="650px" alt="Specify whether to manage components or upgrade Magento">
 3.	Click **System Upgrade**.
@@ -46,3 +56,10 @@ The following error can indicate one of several issues, including that you haven
 <img src="{{ site.baseurl }}common/images/upgr-sorry.png" width="600px">
 
 For suggested solutions to other causes indicated by this message, see <a href="{{ site.gdeurl }}comp-mgr/trouble/cman/were-sorry.html">troubleshooting</a>.
+
+#### Sample data
+The System Upgrade utility installs sample data for you but doesn't display it, if you:
+
+*	Used the [`magento sampledata:deploy`]({{ site.baseurl }}install-gde/install/cli/install-cli-sample-data-composer.html) command to download, but not installed sample data
+*	You chose to update components at the same time as the Magento system software
+

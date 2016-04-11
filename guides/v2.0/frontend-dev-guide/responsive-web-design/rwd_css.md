@@ -26,7 +26,7 @@ You can find more information about the Magento UI library responsive mixin usag
 
 Breakpoints are used in the CSS code to set up the screen width at which the design switches from the mobile to the desktop version.
 
-The Blank theme implements the following <a href="{{site.gdeurl}}frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms" target="_blank">breakpoints</a>:
+The Blank and Luma themes implement the following <a href="{{site.gdeurl}}frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms" target="_blank">breakpoints</a>:
 <ul>
   <li>320px</li>
   <li>480px</li>
@@ -35,6 +35,7 @@ The Blank theme implements the following <a href="{{site.gdeurl}}frontend-dev-gu
   <li>1440px</li>
 </ul>
 
+You can change these breakpoints and add new ones in your custom theme. For instructions see the [Add a new breakpoint]({{site.gdeurl}}frontend-dev-guide/responsive-web-design/rwd-breakpoints.html) topic.
 
 <h2>Mobile first</h2>
 

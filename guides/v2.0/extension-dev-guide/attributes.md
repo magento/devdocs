@@ -4,7 +4,7 @@ group: extension-dev-guide
 subgroup: 99_Module Development
 title: EAV and extension attributes
 menu_title: EAV and extension attributes
-menu_order: 7
+menu_order: 9
 github_link: extension-dev-guide/attributes.md
 redirect_from: /guides/v1.0/extension-dev-guide/attributes.html
 
@@ -50,7 +50,7 @@ Use `ExtensibleDataInterface` to implement extension attributes. In your code, y
 
 <code>public function getExtensionAttributes();</code>
 
-Most likely, you'll want to extend interfaces defined in the `Api/Data` directory of an Magento module. 
+Most likely, you'll want to extend interfaces defined in the `Api/Data` directory of a Magento module. 
 
 <h3 id="declare">Declare extension attributes</h3>
 

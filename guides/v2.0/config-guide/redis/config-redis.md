@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: Redis
+subgroup: 09_Redis
 title: Configure Redis
 menu_title: Configure Redis
 menu_order: 1
@@ -22,6 +22,11 @@ This topic discusses how to configure Redis to serve as the following Magento ca
 
 *	The page cache (that is, full page cache). 
 *	The default cache, which stores: configuration, layout configuration, block HTML output, collections data, reflection data, database DDL operations, EAV types and attributes, translations, web services configuration, and integration API.
+
+<div class="bs-callout bs-callout-info" id="info">
+   <span class="glyphicon-class">
+   <p>You <em>must</em> use Redis for caching if you have multiple Magento webnodes. The file system cache is inefficient and can result in errors.</p></span>
+</div>
 
 
 ### Issues with `Zend_Cache_Backend_File`

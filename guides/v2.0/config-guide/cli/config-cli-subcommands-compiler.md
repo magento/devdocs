@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: CLI
+subgroup: 04_CLI
 title: Code compiler
 menu_title: Code compiler
 menu_node: 
@@ -56,7 +56,7 @@ Use this command if you have multiple *tenants*, which means more than one indep
 
 *	There is one Magento 2 code base instance
 *	There is one database instance per tenant
-*	Independent configurations in the Magneto Admin per tenant
+*	Independent configurations in the Magento Admin per tenant
 *	The storefronts are independent of each other
 
 If you do not have multiple tenants, use the <a href="#config-cli-subcommands-single">single-tenant compiler</a> instead.

@@ -5,9 +5,9 @@ subgroup: 01_Introduction
 title: Glossary of common terms
 menu_title: Glossary of common terms
 menu_order: 5
-menu_node: 
+menu_node:
 github_link: extension-dev-guide/intro/intro-composer-gloss.md
-redirect_from: 
+redirect_from:
   - /guides/v2.0/mktpl-quickstart/intro-composer-gloss.html
   - /guides/v2.0/extension-dev-guide/intro-composer-gloss.html
 ---
@@ -30,9 +30,9 @@ We refer to what you're coding as *components*. (Composer refers to them as <a h
 You can *package* your components as follows:
 
 *	Individually
-*	As a <a href="https://getcomposer.org/doc/04-schema.md#type" target="_blank">metapackage</a>, which is a Magento Marketplace requirement if you're developing a product that has more than one component. 
+*	As a <a href="https://getcomposer.org/doc/04-schema.md#type" target="_blank">metapackage</a>, which is a Magento Marketplace requirement if you're developing a product that has more than one component.
 
-	A metapackage consists of *shared packages*. Examples: a metapackage that consists of a module and a theme, two modules, two themes, and so on. 
+	A metapackage consists of *shared packages*. Examples: a metapackage that consists of a module and a theme, two modules, two themes, and so on.
 
 	More information about metapackages can be found in the next section.
 
@@ -45,12 +45,12 @@ Magento Marketplace requires more than one component to be packaged as a *metapa
 
 A metapackage requires or suggests components that we refer to as *shared packages*. You can use a shared package in multiple metapackages if you wish. (If you use shared packages, Marketplace requires that *all* components in a metapackage be shared packages.)
 
-For example, you might want to list two metapackages in the Magento Marketplace&mdash;a standard package and a premium package. All of the standard package components could be shared packages used by the premium package. Among other things, this enables merchants to easily upgrade from your standard package to your premium package using the <a href="#gloss-compman">Magento Component Manager</a>. 
+For example, you might want to list two metapackages in the Magento Marketplace&mdash;a standard package and a premium package. All of the standard package components could be shared packages used by the premium package. Among other things, this enables merchants to easily upgrade from your standard package to your premium package using the <a href="#gloss-compman">Magento Component Manager</a>.
 
 Merchants do not need to understand that, under the covers, some packages are shared.
 
 <div class="bs-callout bs-callout-warning">
-    <p>You can upload to Magento Marketplace as many shared packages as you want but you must specifically give components access to them. Failure to do so means your components won't work properly after they're installed by merchants. For more information, see the <a href="http://docs.magento.com/marketplace/user_guide/getting-started.html" target="_blank"><a href="http://docs.magento.com/marketplace/user_guide/getting-started.html" target="_blank">Magento Marketplace User Guide</a></a>.</p>
+    <p>You can upload to Magento Marketplace as many shared packages as you want but you must specifically give components access to them. Failure to do so means your components won't work properly after they're installed by merchants. For more information, see the <a href="http://docs.magento.com/marketplace/user_guide/getting-started.html" target="_blank">Magento Marketplace User Guide</a>.</p>
 </div>
 
 #### For more information

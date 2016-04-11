@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: RabbitMQ
+subgroup: 15_RabbitMQ
 title: Message Queues
 menu_title:  Message Queues (Enterprise Edition only)
 menu_order: 1

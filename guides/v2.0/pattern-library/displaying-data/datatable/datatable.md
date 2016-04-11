@@ -2,7 +2,7 @@
 layout: default
 group: pattern
 subgroup: Displaying and Dealing with Data
-title: Magento Admin Pattern Library
+title: Admin Design Pattern Library
 menu_title: Data Table
 menu_order: 3
 menu_node:

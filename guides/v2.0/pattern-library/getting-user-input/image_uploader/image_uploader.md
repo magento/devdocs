@@ -2,7 +2,7 @@
 layout: default
 group: pattern
 subgroup: Getting User Input
-title: Magento Admin Pattern Library
+title: Admin Design Pattern Library
 menu_title: Image Uploader
 menu_order: 2
 menu_node:
