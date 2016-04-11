@@ -64,22 +64,22 @@ Constructor injection *must* be used for all optional and required service depen
 class Test
 {
     protected $class;
- 
+
     public function __construct(SomeClass $class)
     {
         $this->class = $class;
     }
- 
+
     public function execute()
     {
         //some code
- 
+
         $this->class->execute();
- 
+
         //some code
     }
 }
- 
+
 $test->execute();
 ?>
 {% endhighlight %}
@@ -116,7 +116,7 @@ Object manager configurations can be specified at any of the following scopes:
 *	Area-specific configuration (`<your module directory>/etc/<areaname>/di.xml`)
 
 	*Area-specific* means specific a Magento area (`frontend`, `adminhtml`, and so on). For example, here is the <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/adminhtml/di.xml" target="_blank">Magento Customer module's adminhtml di.xml</a>.
-	
+
 <div class="bs-callout bs-callout-info" id="info">
   <p>Each scope overrides any previously existing config when it is loaded.</p>
 </div>
@@ -399,31 +399,21 @@ The preceding lifecycle can be configured as:
 *	`argument`&mdash;Defines the lifecycle for the argument only.
 *	`type`&mdash;A convenience configuration that defines the lifecycle for all instances of the specified type.
 
-<h3 id="dep-inj-mod-type-inject">Injectables and non-injectables</h3>
-We use the following terms to describe objects that can or cannot be instantiated by the object manager:
+### Injectable and Newable Objects
 
-Injectable
+**Injectable:** Objects that can be obtained through dependency injection. Any object that can be instantiated by the object manager, such as singletons and factories, fall into this category.
 
-:	Object (typically a singleton) that *can* be instantiated by the object manager.
+**Newable:** Objects that can only be obtained by creating a new class instance every time. Transient objects, such as those that require external input from the user or database, fall into this category. Attempts to obtain these objects using dependency injections will return an undefined object.
 
-Non-injectable
+> For example a model object such as [`app/code/Magento/User/Model/User.php`]({{ site.mage2000url }}app/code/Magento/Catalog/Model/Product.php){:target="_blank"} cannot be used for dependency injection. You need to provide a product id or explicitly request a new, empty instance of that object, and since this cannot be done in the constructor signature, the object cannot be injected.
 
-:	Object that *cannot* be instantiated by the object manager. Typically, this object:
+### Rules for using dependency injection
 
-	*	Has a transient lifecycle
-	*	Requires external input (such as data user input or data from database) to be properly created
-
-	Most models are non-injectable (for example, <a href="{{ site.mage2000url }}app/code/Magento/Catalog/Model/Product.php" target="_blank">Magento\Catalog\Model\Product</a> or <a href="{{ site.mage2000url }}app/code/Magento/User/Model/User.php" target="_blank">Magento\User\Model\User</a>).
-	
-You must observe the following rules:
-
-*    Injectables can request other injectables in the constructor, but non-injectables *cannot* request other objects in a constructor
-*    If a business function of an injectable object is to produce non-injectables, the injectable must ask for a <a href="{{ site.gdeurl }}extension-dev-guide/factories.html">factory</a> in its constructor (due to the fact that factories are injectables)
-*    If a business function of an injectable object is to perform some actions on a non-injectable, it must receive the non-injectable as a method argument
-
-You can create non-injectables in services with object <a href="{{ site.gdeurl }}extension-dev-guide/factories.html">factories</a> or you can pass them in as method parameters.
-
-Do not push injectables to non-injectables because it violates the <a href="http://en.wikipedia.org/wiki/Law_of_Demeter" target="_blank">Law of Demeter</a> and requires additional lookup during object unserialization.
+* Injectable objects may request dependent objects in their constructors but only if those objects are also injectable.
+* If an injectable object needs to produce newable objects, it must ask for a [factory]({{ site.gdeurl }}extension-dev-guide/factories.html) in its constructor since factories are injectable.
+* If an injectable object needs to perform some actions on newable object, it must receive that object as a function method argument.
+* You can create newable objects in services with object [factories]({{ site.gdeurl }}extension-dev-guide/factories.html) or you can pass them in as method parameters.
+* Newable objects should not hold a field reference to an injectable object nor should they request one in their constructor. This is a [Law of Demeter](http://en.wikipedia.org/wiki/Law_of_Demeter){:target="_blank"} violation.
 
 <h2 id="dep-inj-compile">Compiler tool</h2>
 To compile all non-existent proxies and factories; and to pre-compile class definitions, inheritance information, and plugin definitions for multiple stores or websites, see one of the following topics:
