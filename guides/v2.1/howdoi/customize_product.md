@@ -11,7 +11,11 @@ github_link: howdoi/customize_product.md
 
 <h2>What's in this topic</h2>
 
-This topic describes how developers can customize the product creation form used on the product creation and product edit pages and in Admin. For example, on the **New Product** page that opens on **Add Product** click from **PRODUCTS** > **Catalog** in the default Magento installation.
+This topic describes how developers can customize the product creation form used on the product creation and product edit pages in Admin. 
+
+The following image is an illustration of the default view of the form on the **New Product** page:
+
+<img src="{{site.baseurl}}common/images/product_pmg.png" alt="The product creation page in Admin">
 
 **Contents**
 
@@ -20,9 +24,9 @@ This topic describes how developers can customize the product creation form used
 
 ## Overview
 
-In Magento 2.1 the product creation form was completely refactored. Now it is implemented using the [form UI component]({{site.gdeurl21}}ui-components/ui-form.html). 
+In Magento version 2.1 the product creation form was completely refactored, and implemented using the [form UI component]({{site.gdeurl21}}ui-components/ui-form.html). 
 
-Product attributes and attribute sets available in the form, can be customized and added under **STORES** > **Attributes**. But you can also customize the form view and behavior as described in the following sections.
+Product attributes and attribute sets available in the form, can be customized and added under **STORES** > **Attributes** in the Admin. But you can also customize the form view and behavior in code. The following sections describe what files define the form, and how they can be customized in your module.
 
 
 ## Prerequisites
@@ -33,13 +37,13 @@ For the sake of compatibility, upgradability, and easy maintenance, do not edit 
 
 ## Customize the form configuration
 
-Declarative method is preferable for customizations like introducing new fields, field sets and modals.
+Customizing the form config file, that is, declarative customization, is preferable for changes like introducing new fields, field sets and modals.
 
 To customize the product creation form, take the following steps: 
 
 1. In your custom module, add an empty `product_form.xml` in the `<your_module_dir>/view/adminhtml/ui_component/` directory.
 
-2. Add content similar to the following:
+2. In this file, add content similar to the following:
 
 {%highlight xml%} 
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
@@ -78,16 +82,16 @@ To customize the product creation form, take the following steps:
 
 ### Adding new elements
 
-By default, the new elements (fields, field sets, modals, grids) that you add in the form configuration file, are displayed on the form whatever product is created, that is, for all product types. 
+By default, the new elements (fields, field sets, modals, grids) which you add in the form configuration file, are displayed on the form whatever product is created. That is, for all product types. 
 
-You can set the conditions for displaying certain elements for certain product types in the modifier class.
+In the [modifier class described further](#modifier), you can set the conditions for displaying certain elements for certain product types.
 
 ### Customizing existing fields and field sets
-Your `product_form.xml` is merged with the same files from the other modules. So there is no need to copy their content, you only need to add your customizations.
+Your `product_form.xml` is merged with the same files from the other modules. So there is no need to copy their content, you only need to define changes. Even if you want to customize the existing entities, you only have to mention those options, the values of which are customized..
 
 To customize an existing entity, declare only those options, the values of which are customized, do not copy its entire configuration. 
 
-To delete an existing field, or field set, in your `product_form.xml` use the following syntax:
+To delete an existing field, or field set, in your `product_form.xml` use the following construction:
 
 {%highlight xml%}
 ...
@@ -106,15 +110,15 @@ For reference, view the product form configuration files of the Magento modules:
 - `<Magento_CatalogInventory_module_dir>/view/adminhtml/ui_component/product_form.xml`
 - `<Magento_ConfigurableProduct_module_dir>view/adminhtml/ui_component/product_form.xml`
 
-## Customize using a modifier class
+## Customize using a modifier class {#modifier}
 
 Modifier classes should be used when static declaration is not applicable. For example, in cases when additional data should be loaded from DB. Also, modifier is a place where you add validations to display only certain fields for certain product types.
 
-In the run time, the form structure set in the modifier is merged with the configuration set in meta/data that comes from the `product_form.xml` configuration.
+In the run time, the form structure set in the modifier is merged with the configuration that comes from the `product_form.xml` configuration.
 
 ### General implementation overview
 
-The `Magento\Catalog\Ui\DataProvider\Product\Form\ProductDataProvider` data provider class responsible for data and metadata preparation for the product form. The pool of modifiers `Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Pool` (virtual type) is injected to this data provider using the `__construct()` method. Its preference is defined in `di.xml`.
+The `Magento\Catalog\Ui\DataProvider\Product\Form\ProductDataProvider` data provider class is responsible for data and metadata preparation for the product form. The pool of modifiers `Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Pool` (virtual type) is injected to this data provider using the `__construct()` method. The pool's preference is defined in `di.xml`.
 
 To add your custom modifier, you need to do the following:
 
@@ -124,7 +128,7 @@ To add your custom modifier, you need to do the following:
 
 ### Add your modifier {#modifier}
 
-In your custom module directory, add the modifier class that implements the `Magento\UI\DataProvider\ModifierInterface` interface or extends `Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\AbstractModifier`. In your class, the `modifyData()` and the `modifyMeta()` methods must be implemented.
+In your custom module directory, add the modifier class that implements the `Magento\UI\DataProvider\ModifierInterface` interface or extends the `Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\AbstractModifier`class. In your modifier, the `modifyData()` and the `modifyMeta()` methods must be implemented.
 
 In the modifier class, you can add UI elements using the same structure as in the XML configuration.
 
@@ -189,7 +193,7 @@ You can create nested structures of elements by adding them to the `children` ke
 In `<your_module_dir>/etc/adminhtml/di.xml` define your modifier as a dependency for `Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Pool`.
 
 
-Following is an example of such declaration:
+Following is an example of such definition:
 
 `app/code/Magento/CatalogInventory/etc/adminhtml/di.xml`:
 
@@ -206,9 +210,9 @@ Following is an example of such declaration:
     </virtualType>
 {%endhighlight%}
 
-The `sortOrder` parameter defines the order of invocation for your `modifyData()` and `modifyMeta()` methods among other modifiers in the pool. If a modifier is first in a pool, its `modifyData()` and `modifyMeta()` are invoked with empty arguments. 
+The `sortOrder` parameter defines the order of invocation for your `modifyData()` and `modifyMeta()` methods among other these methods of other modifiers in the pool. If a modifier is first in a pool, its `modifyData()` and `modifyMeta()` are invoked with empty arguments. 
 
-To access product model within your modifier it's recommended to use an instance of `Magento\Catalog\Model\Locator\LocatorInterface`.
+To access product model within your modifier, it's recommended to use an instance of `Magento\Catalog\Model\Locator\LocatorInterface`.
 
 
 For reference, view the modifier classes in the Magento modules, for example:
@@ -222,4 +226,6 @@ For reference, view the modifier classes in the Magento modules, for example:
 For reference about setting conditions for displaying certain elements for certain product types, view `<Magento_Catalog_module_dir>/Ui/DataProvider/Product/Form/Modifier/Eav.php#L476`.
 
 ## Recommended reading:
+
+ - [Form UI component]({{site.gdeurl21}}ui-components/ui-form.html)
  - [Dependency injection]({{site.gdeurl21}}extension-dev-guide/depend-inj.html)
