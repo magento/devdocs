@@ -143,7 +143,7 @@ If `getParams()` had been called, the class `MyClass` would have instantly depen
 If cannot avoid using `getParams()`, you can do any of the following:
 
 *   Add the `getParams()` method to `RequestInterface` 
-*   Make `MyClass` dependant on `HttpRequest` directly instead of using `RequestInterface` as a constructor argument
+*   Make `MyClass` dependent on `HttpRequest` directly instead of using `RequestInterface` as a constructor argument
 
 The benefit *interfaces* offer is that interfaces keep code decoupled from implementation details. This means that future changes won't cause your code to fail unless the interface is changed too.  
 
