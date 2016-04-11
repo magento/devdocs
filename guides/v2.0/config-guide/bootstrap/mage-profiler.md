@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: Bootstrap
+subgroup: 03_Bootstrap
 title: Enable profiling (MAGE_PROFILER)
 menu_title: Enable profiling (MAGE_PROFILER)
 menu_order: 7

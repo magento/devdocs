@@ -51,7 +51,10 @@ Documentation: <a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html" tar
 *	<a href="http://php.net/manual/en/book.xml.php" target="_blank">xml</a>
 *	<a href="http://php.net/manual/en/book.xsl.php" target="_blank">xsl</a>
 *	<a href="http://php.net/manual/en/book.zip.php" target="_blank">zip</a> 
-*	PHP 7 only: [json](http://php.net/manual/en/book.json.php){:target="_blank"}
+*	PHP 7 only: 
+
+	*	[json](http://php.net/manual/en/book.json.php){:target="_blank"}
+	*	[iconv](http://php.net/manual/en/book.iconv.php){:target="_blank"}
 
 #### PHP OPcache
 We strongly recommend you verify the  <a href="http://php.net/manual/en/intro.opcache.php" target="_blank">PHP OPcache</a> is enabled for performance reasons. The OPcache is enabled in many PHP distributions. To verify if it is installed, see our PHP documentation for <a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html" target="_blank">CentOS</a> or <a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html" target="_blank">Ubuntu</a>.

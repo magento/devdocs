@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: compman
-subgroup: Uninstall
+subgroup: 16_Uninstall
 title: Step 4. Uninstall
 menu_title: Step 4. Uninstall
 menu_node: 

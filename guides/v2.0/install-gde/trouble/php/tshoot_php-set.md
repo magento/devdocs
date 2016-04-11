@@ -23,7 +23,7 @@ If you're upgrading the Magento 2 software, the following error can display duri
 
 To resolve the error:
 
-1.	Locate your `php.ini` using a `phpinfo.php` page.
+1.	Locate your `php.ini` using a [`phpinfo.php`]({{ site.gdeurl }}install-gde/prereq/optional.html#install-optional-phpinfo) page.
 
 	(Sometimes you have a different `php.ini` for the PHP command line and the web server. The `php.ini` you must change displays as **Loaded Configuration File**)
 

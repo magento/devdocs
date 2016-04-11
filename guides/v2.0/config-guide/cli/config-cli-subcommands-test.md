@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: CLI
+subgroup: 04_CLI
 title: Run unit tests
 menu_title: Run unit tests
 menu_node: 
@@ -10,15 +10,14 @@ github_link: config-guide/cli/config-cli-subcommands-test.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-test.html
 ---
 
-
 #### Contents
 
-*	<a href="#config-cli-subcommands-tests-overview">Overview of unit tests</a>
+*	<a href="#config-cli-subcommands-tests-overview">Overview of tests</a>
 *	<a href="#config-cli-before">First steps</a>
-*	<a href="#config-cli-subcommands-tests-run">Run unit tests</a>
+*	<a href="#config-cli-subcommands-tests-run">Run tests</a>
 
-<h2 id="config-cli-subcommands-tests-overview">Overview of unit tests</h2>
-This command runs a set of unit tests defined in the Magento 2 code base. You can either run all tests or tests you select.
+<h2 id="config-cli-subcommands-tests-overview">Overview of tests</h2>
+This command runs a set of tests defined in the Magento 2 code base. You can either run all tests or tests you select.
 
 Whenever a not supported type is specified, the program terminates and lists all available types.
 
@@ -41,14 +40,18 @@ Before you run this command, all of the following must be true:
 {% include install/first-steps-cli.html %}
 In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
-<h2 id="config-cli-subcommands-tests-run">Run unit tests</h2>
+<h2 id="config-cli-subcommands-tests-run">Running tests</h2>
 Command usage:
 
 	magento dev:tests:run [--all] <test>
 
-To list the available tests, enter
+To list the available test types, enter
 
 	magento dev:tests:run --help
+
+This gives you a list like
+
+    all, unit, integration, integration-all, static, static-all, integrity, legacy
 
 For example, to run integration tests, enter
 
