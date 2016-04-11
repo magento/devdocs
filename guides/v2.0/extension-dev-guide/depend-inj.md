@@ -9,33 +9,30 @@ github_link: extension-dev-guide/depend-inj.md
 redirect_from: /guides/v1.0/extension-dev-guide/depend-inj.html
 ---
 ##{{page.menu_title}}
+{:.no_toc}
 
+* TOC
+{:toc}
 
-*	<a href="#dep-inj-intro">Overview of dependency injection</a>
-*	<a href="#dep-inj-preview-cons">Preview of constructor injection</a>
-*	<a href="#dep-inj-mod">Configuration overview</a>
-*	<a href="#dep-inj-mod-class">Class definitions</a>
-*	<a href="#dep-inj-mod-type">Type configurations</a>
-*	<a href="#dep-inj-mod-type-life-mgmt">Lifecycle management</a>
-*	<a href="#dep-inj-compile">Compiler tool</a>
+###Overview of dependency injection
 
-<h2 id="dep-inj-intro">Overview of dependency injection</h2>
+Magento 2 uses *dependency injection* as an alternative to the Magento 1.x `Mage` class. [Dependency injection pattern](https://en.wikipedia.org/wiki/Dependency_injection){:target="_blank"} is when an object's dependencies are provided to it by its external environment instead of manually creating them internally.
 
-The Magento software now uses *dependency injection* as an alternative to the Magento 1.x `Mage` class. Dependency injection means that all object dependencies are passed (that is, *injected*) into an object instead of being pulled by the object from the environment.
+In simple terms, when object A requires object or value B to fulfill a function, then B is a dependency of A.
 
-A *dependency* (sometimes referred to as *coupling*) implies the degree that one component relies on another component to perform a function. A large amount of dependency limits code reuse and makes moving components to new projects difficult.
+A dependency creates a degree of coupling between objects in your code. A large amount of coupling limits code reuse and makes moving components to new projects difficult. Using dependency injection allows for a loose coupling in your code.
 
-In simple terms, if ModuleA needs to access some functionality in ModuleB, ModuleA *depends on* ModuleB. ModuleA consumes the service offered by ModuleB, so ModuleA is the *consumer* and ModuleB is the *dependent*.
+#### Dependency inversion principle
 
-In addition, we use *dependency inversion*, a coding principle that stipulates you use abstractions to reduce code dependencies. Dependency inversion means:
+When using dependency injection, we encourage you to follow the  [dependency inversion principle](http://www.oodesign.com/dependency-inversion-principle.html){:target="_blank"}, a coding principle that stipulates you use abstractions to reduce code dependencies. This means that high level classes should use the interface of a low level class instead of working with it directly.
 
-*	High-level modules should not depend on low-level modules. Both should depend on abstractions.
-*	Abstractions should not depend upon details. Details should depend on abstractions.
+### The object manager
 
-For more information, see <a href="https://sites.google.com/site/unclebobconsultingllc/blogs-by-robert-martin/dependency-injection-inversion" target="_blank">this article by Robert C. Martin</a>.
+Since dependency management is the responsibility of the environment, some kind of object manager must be present in complex systems to avoid boilerplate code. The object manager is present only when composing code, and in larger applications(such as Magento), composing code is performed early in the bootstrapping process and boilerplate code is moved to the configuration of the object manager.
 
+In Magento, the object manager is represented by the appropriately named [Object Manager]({{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/ObjectManager.php){:target="_blank"}.
 
-The <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/ObjectManager.php" target="_blank">object manager</a> specifies the dependency environment for constructor injection. The object manager must be present only when composing code. In larger applications, composing code is performed early in the bootstrapping process.
+---
 
 This topic uses the following terms:
 
