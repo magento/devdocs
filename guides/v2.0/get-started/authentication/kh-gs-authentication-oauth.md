@@ -40,7 +40,11 @@ An integration contains details like the endpoint that receives Oauth credential
 <h2 id="pre-auth-token">Get a request token</h2>
 The first step to authenticate a user is to retrieve a Request Token from Magento. This is a temporary token that will later be exchanged for an Access Token. You must use these credentials to get an access token in less than three minutes, or the credentials are disabled for security reasons. The expiration time can be changed from the admin panel.
 
-Use the ` POST /oauth/token/request`REST API to ask for a Request Token.
+**where in the admin panel?**
+
+To ask for a Request Token from Magento:
+
+`POST /oauth/token/request`
 
 You must include these request parameters in the `Authorization` request header in the call:
 
@@ -74,7 +78,7 @@ You must include these request parameters in the `Authorization` request header 
 </tr>
 </table>
 
-This is the first step in the 2-legged Oauth handshake. However, you must use these credentials to get an access token in less than three minutes, or the credentials are disabled for security reasons. The expiration time can be changed from the admin panel.
+**Insert sample here**
 
 The response contains these fields:
 
@@ -142,11 +146,7 @@ You must include these request parameters in the `Authorization` request header 
 </tr>
 </table>
 
-A valid response looks like this:
-`oauth_token=0lnuajnuzeei2o8xcddii5us77xnb6v0&oauth_token_secret=1c6d2hycnir5ygf39fycs6zhtaagx8pd`
-
 The response contains these fields:
-
 
 <table>
 <tr>
@@ -162,6 +162,8 @@ The response contains these fields:
 </tr>
 </table>
 
+A valid response looks like this:
+`oauth_token=0lnuajnuzeei2o8xcddii5us77xnb6v0&oauth_token_secret=1c6d2hycnir5ygf39fycs6zhtaagx8pd`
 
 
 <h2 id="oauth-process">Integration registration</h2>
