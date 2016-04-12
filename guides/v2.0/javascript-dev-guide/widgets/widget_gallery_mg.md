@@ -10,7 +10,7 @@ github_link: javascript-dev-guide/widgets/widget_gallery_mg.md
 
 <h2>Overview</h2>
 
-Magnifier is a widget which allows displaying images in 100% scaled size in separate dedicated layer.
+Magnifier is a widget that allows displaying images in 100% scaled size in separate dedicated layer.
 In Magento it is used by the [gallery]({{site.gdeurl}}javascript-dev-guide/widgets/widget_gallery.html) widget for zooming the product images on product pages.
 
 **Contents**
@@ -59,7 +59,7 @@ Enable magnifier.
 
 ### `height` {#opt_height}
 
-Height of the magnifier block 
+Height of the magnifier block in pixels. 
             
 ### `hover` {#opt_hover}
 
@@ -91,7 +91,7 @@ The value for the CSS `top` property for the magnifier block positioning.
 
 ### `width` {#opt_width}
 
-Width of the magnifier block.
+Width of the magnifier block in pixels.
 
 **Type**: Integer
 

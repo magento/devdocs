@@ -10,15 +10,15 @@ github_link: javascript-dev-guide/widgets/widget_gallery.md
 
 <h2>Overview</h2>
 
-The gallery _jQeury widget implements a content area with images organized into preview and thumbnails blocks. 
+The gallery jQuery widget implements a content area with images organized into preview and thumbnails blocks. 
 
 The following picture is an illustration of image displaying on the product page using the gallery widget:
 
-<img src="{{site.baseurl}}common/images/gallery_scr.png" alt="A product page with preview and thumbnails">
+<img src="{{site.baseurl}}common/images/gallery_scr.png" width="650px" alt="A product page with preview and thumbnails">
 
-In addition, the magnifier widget can be used to demonstrate images in 100% scaled size in separate dedicated layer, and the gallery fullscreen mode can be used to navigate the entire full sized photo.
+In addition, the [magnifier widget]({{site.gdeurl}}widgets/widget_gallery_mg.md) can be used to demonstrate images in 100% scaled size in separate dedicated layer, and the gallery fullscreen mode can be used to navigate the entire full sized photo.
 
-Gallery is displayed consistently across all supported browsers and is responsive - it sizes correctly on mobile devices and desktops.
+Gallery is displayed consistently across all supported browsers and is responsive &mdash; it sizes correctly on mobile devices and desktops.
 
 The gallery widget uses the <a href="http://fotorama.io/">Fotorama widget</a>.
 
@@ -130,7 +130,7 @@ The `thumb`, `img`, and `full` are full paths to proper image files.
 
 #### `data/caption` {#data_caption}
 
-Set caption for a specific image in the `data` field.
+Set the caption for a specific image in the `data` field.
 Example of the runtime initialization with the `caption` option specified:
  
 {%highlight js%}
@@ -146,7 +146,7 @@ galleryInstance({
 {%endhighlight%}
 
 ### `options` {#options}
-Set of options available for Preview part.
+Set of options available for the Preview region.
 
 #### `options/allowfullscreen` {#gallery_allowfullscreen}
 Show the button that toggles full screen view of the gallery.
@@ -156,9 +156,6 @@ Show the button that toggles full screen view of the gallery.
 #### `options/arrows` {#gallery_arrows}
 
 Display navigation arrows on the thumbnails sides.
-
-**Type**: Boolean
-
 
 **Type**: Boolean
 
@@ -444,8 +441,8 @@ The general gallery options are set as follows:
 {%highlight xml%}
 
 <var name="gallery">
-            <var name="%option1%">%option1_value%</var> 
-            <var name="%option2%">%option2_value%</var> 
+    <var name="%option1%">%option1_value%</var> 
+    <var name="%option2%">%option2_value%</var> 
 ...
 </var>
 
@@ -456,13 +453,13 @@ The fullscreen and breakpoints options are set in a similar way:
 {%highlight xml%}
 
 <var name="fullscreen">
-            <var name="%fullscreen_option1%">%option1_value%</var> 
-            <var name="%fullscreen_option2%">%option2_value%</var> 
+    <var name="%fullscreen_option1%">%option1_value%</var> 
+    <var name="%fullscreen_option2%">%option2_value%</var> 
 ...
 </var>
 <var name="breakpoints">
-            <var name="%breakpoints_option1%">%option1_value%</var> 
-            <var name="%breakpoints_option2%">%option2_value%</var> 
+    <var name="%breakpoints_option1%">%option1_value%</var> 
+    <var name="%breakpoints_option2%">%option2_value%</var> 
 ...
 </var>
 
@@ -528,7 +525,7 @@ Displays the last preview image.
 
 Image ID is passed as an argument. Displays the next preview image. 
 
-If the last image ID is passed, the behavior depends on whether [loop](##gallery_loop) is enabled:
+If the last image ID is passed, the behavior depends on whether [loop](#gallery_loop) is enabled:
 
 * if loop is enabled, the first image is displayed.
 * if loop is disabled, does not change the displayed image.
