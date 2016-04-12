@@ -37,8 +37,8 @@ In Magento, the object manager is represented by the appropriately named [Object
 There are three types of configuration that is required by Magento's object manager:
 
 *	[Class configuration(definitions)](#class-configurations) - These configurations describe the class dependencies for an object.
-* Type configuration - These configurations describe how objects are instantiated and their lifecycle.
-* Abstraction-Implementation mappings - These configurations map which concrete implementations to use when interfaces are requested.
+* [Type configuration](#type-configuration) - These configurations describe how objects are instantiated and their lifecycle.
+* [Abstraction-Implementation mappings](#abstraction-implementation-mappings) - These configurations map which concrete implementations to use when interfaces are requested.
 
 #### Class configurations
 
@@ -50,11 +50,13 @@ The parameters specified for a class type are inherited by its descendant classe
 
 #### Type configurations
 
-Type configurations describe the parameters that must be used to instantiate a class and lifecycle of class instances. Configuration for Magento's object manager is stored in following XML files:
+Type configurations describe the parameters that must be used to instantiate a class and lifestyle of class instances. Depending on it's scope, the configuration for Magento's object manager is stored in following XML files:
 
 * `app/etc/di.xml` - This is the global area application configuration.
 * `<moduleDir>/etc/di.xml` - This is the module global area configuration.
 * `<moduleDir>/etc/<area>/di.xml` - This is the module area-specific configuration.
+
+The `<area>` can be any Magento area such as `adminthtml` or `frontend`. Each scope overrides any previously existing configuration when it is loaded. Configurations for each scope are merged across modules, so there is no way to create a configuration that is only seen by a single module.
 
 All object manager configuration is located under the config node in the xml files:
 
@@ -64,7 +66,15 @@ All object manager configuration is located under the config node in the xml fil
 </config>
 {% endhighlight %}
 
+These configurations are validated by the XML Schema file called [`config.xsd`]({{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/etc/config.xsd){:target="_blank"}.
+
 Magento reads all the configuration files declared in the system and merges them all together by appending all nodes.
+
+The overall configuration is loaded in the following stages:
+
+1. Initial (`app/etc/di.xml`)
+2. Global (`<moduleDir>/etc/di.xml`)
+3. Area-specific (`<moduleDir>/etc/<area>/di.xml`)
 
 ##### Declaring Type
 {:.no_toc}
@@ -221,6 +231,10 @@ When the configuration files for a given scope are merged, array arguments with 
   <p>During merging, arguments with the same name are completely replaced if their type is different. If the argument type is the same, then they are overridden.</p>
 </div>
 
+#### Abstraction-Implementation mappings
+
+TODO: Insert content here.
+
 #### Parameter configuration inheritance
 
 Parameters configured for a class type are automatically configured for all of its descendant classes. Any descendant can override the parameters configured for its supertype; i.e. the parent class or interface:
@@ -235,99 +249,28 @@ The second entry overrides this and configures all instances of `Magento\Backend
 
 ---
 
-To define the interface preferences for the object manager, use `app/etc/di/*.xml`, `<your module dir>/etc/di.xml`, and `<your module dir>/etc/<areaname>/di.xml` files depending on the scope it belongs in.
+#### Object Lifetime management
 
-For example, to set the interface preferences for the Magento Admin, use <a href="{{ site.mage2000url }}app/code/Magento/Backend/etc/adminhtml/di.xml#L12" target="_blank">`Backend/etc/adminhtml/di.xml`</a> as follows:
+The main responsibility of the object manager is object creation and wiring, but it can also determine how many instances of that object can exist; e.g. its **lifestyle**.
 
-	 <preference for="Magento\Framework\UrlInterface" type="Magento\Backend\Model\UrlInterface" />
+Magento's object manager supports the following lifestyles:
 
-You can also specify whether or not the module is shareable in its `di.xml` as follows:
+*	**singleton**(default) - Only one instance of this class exists and it is created at the first request. Subsequent use of the class will use that one instance. The instance is released when the container with which it is registered is disposed.
+*	**transient** - A new instance of the class is created every time the class is requested.
 
-	<type name="Company\Module\ClassOne" shared="false">
-		<arguments>
-			<argument name="class_one" xsi:type="object" shared="false">Company\Module\ClassTwo</argument>
-		</arguments>
-	</type>
+The `shared` property determines the lifestyle of both `argument` and `type` configurations.
 
-Dependency injection is configuration-based; configurations are validated by <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/etc/config.xsd" target="_blank">config.xsd</a>.
+~~~
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <type name="Magento\Filesystem" shared="false">
+        <arguments>
+            <argument name="adapter" xsi:type="object" shared="false">Magento\Filesystem\Adapter\Local</argument>
+        </arguments>
+    </type>
+</config>
+~~~
 
-Object manager configurations can be specified at any of the following scopes:
-
-*	Primary for bootstrapping (`app/etc/di/*.xml`)
-*	Global across all of Magento (`<your module directory>/etc/di.xml`)
-*	Area-specific configuration (`<your module directory>/etc/<areaname>/di.xml`)
-
-	*Area-specific* means specific a Magento area (`frontend`, `adminhtml`, and so on). For example, here is the <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/adminhtml/di.xml" target="_blank">Magento Customer module's adminhtml di.xml</a>.
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Each scope overrides any previously existing config when it is loaded.</p>
-</div>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Configurations for each scope are merged across modules, so there is no way to create a configuration that is only seen by a single module.</p>
-</div>
-
-This topic uses the following terms:
-
-Constructor injection
-
-:	Type of dependency injection used for *implementation dependencies* (that is, dependencies that fulfill a business task of an object)
-
-Factory
-
-:	Object that creates the objects of a specific type. Unlike business objects, a factory can be dependent on the object manager.
-
-Proxy
-
-:	Auto-generated object that implements the same interface as the original object, but unlike this original object has only one dependency&mdash;the object manager. A proxy is used for lazy loading of optional dependencies. A <a href="http://en.wikipedia.org/wiki/Proxy_pattern" target="_blank">proxy</a> can be used to break cyclical dependencies. For more information, see <a href="{{ site.gdeurl }}extension-dev-guide/proxies.html">Proxies</a>.
-
-
-Lifecycle
-
-:	An object's *lifecycle* determines in what scope instances are reused, and when to release them.
-
-<h2 id="dep-inj-preview-cons">Preview of constructor injection</h2>
-Constructor injection *must* be used for all optional and required service dependencies of an object. Service dependencies fulfill business functions of your object.
-
-{% highlight PHP %}
-<?php
-class Test
-{
-    protected $class;
-
-    public function __construct(SomeClass $class)
-    {
-        $this->class = $class;
-    }
-
-    public function execute()
-    {
-        //some code
-
-        $this->class->execute();
-
-        //some code
-    }
-}
-
-$test->execute();
-?>
-{% endhighlight %}
-
-
-
-<h2 id="dep-inj-mod-type-life-mgmt">Lifecycle management</h2>
-An object's *lifecycle* determines in what scope instances are reused, and when to release them.
-
-The object manager creates objects and manages the lifecycle of the following types of objects:
-
-*	`singleton`&mdash;Create one class instance at the first request and subsequently reuse that instance. Release the instance when the container with which it's registered is disposed. This is the default.
-*	`transient`&mdash;Create a new class instance every time the class is requested.
-
-The preceding lifecycle can be configured as:
-
-*	`argument`&mdash;Defines the lifecycle for the argument only.
-*	`type`&mdash;A convenience configuration that defines the lifecycle for all instances of the specified type.
+In this example `Magento\Filesystem` is configured as non-shared, so all clients will retrieve separate instances of `Magento\Filesystem`. Also, every instance of `Magento\Filesystem` will get separate instance of `$adapter`, because it too is non-shared.
 
 ### Injectable and Newable Objects
 
@@ -352,7 +295,7 @@ To compile all non-existent proxies and factories; and to pre-compile class defi
 *	If you have multiple websites and stores, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-store compiler</a>
 
 
-#### Related topics:
+**Related Topics**
 
 *	<a href="{{ site.gdeurl }}extension-dev-guide/plugins.html">Plugins</a>
 *	<a href="{{ site.gdeurl }}extension-dev-guide/routing.html">Routing</a>
