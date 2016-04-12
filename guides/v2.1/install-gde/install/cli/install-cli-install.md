@@ -6,9 +6,6 @@ title: Install the Magento software
 menu_title: Install the Magento software
 menu_order: 4
 github_link21: install-gde/install/cli/install-cli-install.md
-redirect_from:
-  -  /guides/v1.0/install-gde/install/install-cli-install.html
-  -  /guides/v2.0/install-gde/install/install-cli-install.html
 ---
 
 <div class="bs-callout bs-callout-tip">
