@@ -15,5 +15,40 @@ github_link: extension-dev-guide/staging/CheckoutStaging.md
 * TOC
 {:toc}
 
+<h2>Magento_CheckoutStaging module</h2>
+
+## Overview
+
 The Magento_CheckoutStaging module is a part of the staging functionality in Magento EE.
-It extends functionality of checkout for staging preview.
+It extends the checkout functionality and enables you to use it in the staging preview mode.
+
+## Implementation Details
+
+The Magento_CheckoutStaging module extends the following Magento_Checkout module functionality to be used in the staging preview mode:
+
+- Disables an order creation.
+- Creates a demo quote.
+- Deletes the demo quote using cron.
+
+Configuration options:
+
+- the `preview_quota_lifetime` parameter in the `Magento/CheckoutStaging/etc/config.xml` sets the lifetime of the demo quote.
+- the `schedule` parameter in the `Magento/CheckoutStaging/etc/crontab.xml` sets a launch schedule of the cron.
+
+## Installation Details
+
+The Magento_CheckoutStaging module makes irreversible changes in a database during installation. It means, that you cannot uninstall this module.
+
+## Dependencies
+
+You can find the list of modules that have dependencies with the Magento_CheckoutStaging module in the `require` object of the `composer.json` file. The file is located in the same directory as this `README` file.
+
+## Extension Points
+
+Extension points enable extension developers to interact with the Magento_CheckoutStaging module. For more information about Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.0/extension-dev-guide/plugins.html).
+
+[Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.0/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_CheckoutStaging module.
+
+## Additional information
+
+For more Magento 2 developer documentation, see [Magento 2 Developer Documentation](http://devdocs.magento.com). Also, you can track there [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).

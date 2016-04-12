@@ -15,8 +15,29 @@ github_link: extension-dev-guide/staging/SearchStaging.md
 * TOC
 {:toc}
 
-<h2>Magento Search Staging module</h2>
+<h2>Magento_SearchStaging module</h2>
 
 ## Overview
 
-The Magento_SearchStaging module is a part of the staging functionality in Magento EE. It disables opotunity to search in staging preview mode.
+The Magento_SearchStaging module is a part of the staging functionality in Magento EE. It disables opportunity to search in the staging preview mode.
+
+## Implementation Details
+
+The Magento_SearchStaging module extends the Magento_Search module functionality. It adds Search to the staging preview but disables the searching functionality.
+
+## Dependencies
+
+You can find the list of modules that have dependencies with the Magento_SearchStaging module in the `require` object of the `composer.json` file. The file is located in the same directory as this `README` file.
+
+## Extension Points
+
+Extension points enable extension developers to interact with the Magento_SearchStaging module. [Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.0/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_SearchStaging module.
+
+### Layouts
+
+You can extend and override layouts in the `Magento/SearchStaging/view/frontend/layout/` directory.
+For more information about layouts, see the [Layout documentation](http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/layouts/layout-overview.html).
+
+## Additional information
+
+For more Magento 2 developer documentation, see [Magento 2 Developer Documentation](http://devdocs.magento.com). Also, you can track there [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
