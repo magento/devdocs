@@ -11,6 +11,13 @@ baseurl: "/"
 
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
+# Version Switcher
+version: 2.1
+versions:
+   -
+      name: 2.0
+      url: http://devdocs.magento.com/guides/v2.0/
+
 # 2.0.0 variables
 gdeurl: "/guides/v2.0/"
 githuburl: "https://github.com/magento/devdocs/tree/2.0/guides/v2.0/"
@@ -53,4 +60,4 @@ incremental: true
 gems:
   - jekyll-redirect-from
 
-exclude: ['scss','bin','node_modules']
+exclude: ['scss','bin','node_modules','guides']

@@ -134,7 +134,9 @@ table {
 html, body { height: 100%; }
 
 body.offcanvas-active {
-   overflow-x: hidden;
+   position:fixed;
+   overflow: hidden;
+   height: 100%;
 }
 
 .site-header, #gl-wrapper, #footer-wrap {

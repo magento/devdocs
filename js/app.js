@@ -30,4 +30,16 @@ $(function() {
 		$dropdown.toggleClass('open');
 	});
 
+	// Responsite site - for version switcher
+	function responsiveSite() {
+		var $w = $( window ).width();
+		if ( $w < 767 ) {
+			$('.version-switcher').appendTo($('#subnav-wrap'));
+		} else {
+			$('.version-switcher').appendTo($('#global-nav'));
+		}
+	};
+	responsiveSite();
+	$( window ).on('resize', responsiveSite );
+
 });

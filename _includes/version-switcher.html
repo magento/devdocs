@@ -1,12 +1,12 @@
-{% if page.versions %}
+{% if site.versions %}
 <div class="version-switcher dropdown">
 	<button class="btn dropdown-toggle" data-toggle="dropdown">
-		Version {{ page.version }}
+		Version {{ site.version }}
 	</button>
 
 
 	<ul class="dropdown-menu dropdown-menu-right">
-	{%for version in page.versions %}
+	{%for version in site.versions %}
 		<li><a class="dropdown-item" href="{{ version.url }}">Version {{ version.name }}</a></li>
 	{% endfor %}
   </ul>

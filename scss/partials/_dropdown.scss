@@ -43,6 +43,7 @@ $font-size-sm: 12px;
       border-top: $caret-width solid;
       border-right: $caret-width solid transparent;
       border-left: $caret-width solid transparent;
+      transition: transform .2s;
    }
 
   // Prevent the focus on the dropdown toggle when closing dropdowns
@@ -150,6 +151,10 @@ $font-size-sm: 12px;
   > .dropdown-menu {
     display: block;
   }
+
+  .dropdown-toggle:after {
+     transform: rotate(180deg);
+ }
 
   // Remove the outline when :focus is triggered
   > a {
