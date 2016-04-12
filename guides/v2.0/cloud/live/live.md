@@ -13,7 +13,7 @@ github_link: cloud/live/live.md
 This section outlines the tasks you must perform before you can launch your live Magento store. 
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Contact [Magento Support](http://support.magentocommerce.com){:target="_blank"} for assistance.</p>
+  <p>Contact <a href="{{ site.gdeurl }}cloud/get-help.html" target="_blank">Magento Support</a> for assistance.</p>
 </div>
 
 To go live:
@@ -34,7 +34,7 @@ To go live:
 	If you use multiple host names for your site, you must add a CNAME record for each of them. 
 
 	<div class="bs-callout bs-callout-info" id="info">
-  		<p>This will not work for an [apex domain](https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp/){:target="_blank"} (also referred to as a *naked* domain). In that case, you must use a DNS provider that supports forwarding DNS queries.</p>
+  		<p>This will not work for an <a href="https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp" target="_blank">apex domain</a> (also referred to as a <em>naked</em> domain). In that case, you must use a DNS provider that supports forwarding DNS queries.</p>
 	</div>
 
 	Some DNS providers you can consider follow:
@@ -48,7 +48,7 @@ To go live:
 
 	Magento does not endorse or support these companies; we mention them for your information only.
 
-	Many other providers also offer workarounds to accomplish this goal. The most common is to add a CNAME record for the `www `host on the domain and then use the DNS provider's redirection service to redirect the apex over to the `www` version of the domain. Consult your DNS provider to see how they support this.
+	Many other providers also offer workarounds to accomplish this goal. The most common is to add a CNAME record for the `www` host on the domain and then use the DNS provider's redirection service to redirect the apex over to the `www` version of the domain. Consult your DNS provider to see how they support this.
 
 	We support `www.domain.tld CNAME <environment>-<project>.<region>.magentosite.cloud` 
 
