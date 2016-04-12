@@ -12,6 +12,8 @@ github_link: frontend-dev-guide/themes/theme-images.md
 
 The properties of product images used on the storefront are stored in the `view.xml` configuration file. This topic provides all details about what properties are available and how to configure them.
 
+The properties for the images displayed on the product pages are defined by the gallery widget options. The options of the widget can be configured in the theme `view.xml` as well. For detail view the [Gallery widget]({{site.gdeurl}}javascript-dev-guide/widgets/widget_gallery.html) topic.
+
 <h2 id="view_xml_structure">Configure image properties in view.xml</h2>
 
 The conventional location of `view.xml` for a theme is:
@@ -82,13 +84,13 @@ Can have any value, but in out-of-the- box Magento themes <code>id</code>'s are 
 <li><code>thumbnail</code> - corresponds to the Thumbnail Image role in the Magento Admin</li>
 </ul>
 
-The following picture illustrates how image roles for product images are specified in the Magento Admin:
-<img src="{{site.baseurl}}common/images/fdg_theme_bck.png" alt="Setting image role in Magento Admin">
-
       </td>
     </tr>
 </tbody>
 </table>
+
+The following picture illustrates how image roles for product images are specified in the Magento Admin:
+<img src="{{site.baseurl}}common/images/fdg_theme_bck.png" alt="Setting image role in Magento Admin">
 
 Image properties are defined by the corresponding elements, for example:
 
