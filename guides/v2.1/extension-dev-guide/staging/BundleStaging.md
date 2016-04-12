@@ -15,24 +15,34 @@ github_link: extension-dev-guide/staging/BundleStaging.md
 * TOC
 {:toc}
 
-# The Magento_BundleStaging module
+<h2>Magento_BundleStaging module</h2>
 
 ## Overview
 
-The Magento_BundleStaging module enabled staging of bundle product features in Product Update context. 
-The **Magento_BundleStaging** module is a part of the staging functionality in Magento EE. It allows to stage bundle options.
+The Magento_BundleStaging module is a part of the staging functionality in Magento EE. This new functionality enables you to stage a bundle product in the Schedule Update form of the product.
 
-## Backward incompatible changes
-No backward incompatible changes
+## Implementation Details
+
+The Magento_BundleStaging module extends the functionality of the Magento_Bundle module. When you schedule an update for a bundle product, all bundle item options for that concrete product are available and can be edited. All the bundle product attributes can be staged.
+
+### Installation Details
+
+The Magento_BundleStaging module makes irreversible changes in a database during installation. It means, that you cannot uninstall this module.
 
 ## Dependencies
-The **Magento_BundleStaging** is dependent on the following modules:
 
-- Magento_Staging
-- Magento_Bundle
+You can find the list of modules that have dependencies with the Magento_BundleStaging module in the `require` object of the `composer.json` file. The file is located in the same directory as this `README` file.
 
-## Specific Settings
-The **Magento_BundleStaging** module does not provide any specific settings.
+## Extension Points
 
-## Specific Extension Points
-The **Magento_BundleStaging** module does not provide any specific extension points. You can extend it using the Magento extension mechanism.
+Extension points enable extension developers to interact with the Magento_BundleStaging module. You can interact with the Magento_BundleStaging module using the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.0/extension-dev-guide/plugins.html).
+
+[Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.0/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_BundleStaging module.
+
+### UI components
+
+You can extend Bundle updates product listing using  the grid UI component located in the 'Magento/BundleStaging/view/adminhtml/ui_component/bundle_update_product_listing.xml'. For more information, see [UI Listing/Grid Component](http://devdocs.magento.com/guides/v2.0/ui-components/ui-listing-grid.html).
+
+## Additional information
+
+For more Magento 2 developer documentation, see [Magento 2 Developer Documentation](http://devdocs.magento.com). Also, there you can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
