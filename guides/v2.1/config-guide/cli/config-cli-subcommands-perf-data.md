@@ -1,11 +1,11 @@
 ---
 layout: default
 group: config-guide 
-subgroup: CLI
+subgroup: 04_CLI
 title: Generate data for performance testing
 menu_title: Generate data for performance testing
 menu_node: 
-menu_order: 900
+menu_order: 800
 github_link21: config-guide/cli/config-cli-subcommands-perf-data.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-perf-data.html
 ---

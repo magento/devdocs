@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide 
-subgroup: CLI
+subgroup: 04_CLI
 title: Dependency reports
 menu_title: Dependency reports
 menu_node: 

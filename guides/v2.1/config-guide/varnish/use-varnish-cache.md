@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: CM_Varnish
+subgroup: 09_Varnish
 title: How Magento cache clearing works with Varnish
 menu_title: How Magento cache clearing works with Varnish
 menu_order: 100

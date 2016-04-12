@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: compman
-subgroup: C_UseCompMan
+subgroup: 05_UseCompMan
 title: Manage your components
 menu_title: Manage your components
 menu_node: 

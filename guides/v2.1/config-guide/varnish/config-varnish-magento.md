@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: CM_Varnish
+subgroup: 09_Varnish
 title: Configure Magento to use Varnish
 menu_title: Configure Magento to use Varnish
 menu_order: 15

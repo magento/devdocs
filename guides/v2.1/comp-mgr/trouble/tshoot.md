@@ -1,7 +1,7 @@
 ---
 layout: default
 group: compman
-subgroup: ZZ_Troubleshooting
+subgroup: 50_trouble
 title: Troubleshooting suggestions
 menu_title: Troubleshooting suggestions
 menu_node: parent

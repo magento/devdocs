@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: CLI
+subgroup: 04_CLI
 title: Code compiler
 menu_title: Code compiler
 menu_node: 

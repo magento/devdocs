@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: B_Security
+subgroup: 02_Security
 title: Secure cron.php to run in a browser
 menu_title: Secure cron.php to run in a browser
 menu_order: 2

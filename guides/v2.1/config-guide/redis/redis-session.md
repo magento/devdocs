@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: Redis
+subgroup: 09_Redis
 title: Use Redis for session storage
 menu_title: Use Redis for session storage
 menu_order: 10

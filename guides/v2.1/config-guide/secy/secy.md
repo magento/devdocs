@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: B_Security
+subgroup: 02_Security
 title: Security settings
 menu_title: Security settings
 menu_order: 1

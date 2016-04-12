@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: Elastic
+subgroup: 14_Elastic
 title: Configure Elasticsearch stopwords
 menu_title: Configure Elasticsearch stopwords
 menu_order: 10

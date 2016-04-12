@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: Elastic
+subgroup: 14_Elastic
 title: Configure Apache and Elasticsearch
 menu_title: Configure Apache and Elasticsearch
 menu_order: 7

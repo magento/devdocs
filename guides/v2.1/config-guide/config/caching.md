@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: Caching
+subgroup: 08_Caching
 title: Caching
 menu_title: Caching
 menu_order: 1

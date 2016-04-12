@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: compman
-subgroup: C_UseCompMan
+subgroup: 05_UseCompMan
 title: Run the Component Manager
 menu_title: Run the Component Manager
 menu_node: parent

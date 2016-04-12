@@ -1,7 +1,7 @@
 ---
 layout: default
 group: compman
-subgroup: ZZ_Troubleshooting
+subgroup: 50_trouble
 title: Troubleshoot backups
 menu_title: Troubleshoot backups
 menu_node: 
