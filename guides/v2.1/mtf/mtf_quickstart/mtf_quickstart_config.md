@@ -1,11 +1,12 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: C_Quickstart
+subgroup: 30_Quickstart
 title: Quick start with the Magento Testing Framework
 menu_title: Adjust configuration
 menu_order: 1
 github_link: mtf/mtf_quickstart/mtf_quickstart_config.md
+redirect_from: /guides/v1.0/mtf/mtf_quickstart/mtf_quickstart_config.html
 ---
 <h2 id="mtf_quickstart_config">Adjust configuration</h2>
 
@@ -25,20 +26,15 @@ Find `phpunit.xml` in `<magento2>/dev/tests/functional`, and open it in editor.
 Find `<php>` element.
 For `name="app_frontend_url"` set `value` that is your actual URL for Magento storefront under test.
 
+Example:
+`<env name="app_backend_url" value="http://example.com/magento2/"/>`
+
 #### Set URL for Magento Admin URL under test {#mtf_quickstart_config_phpunitxml_backend}
 
 For `name="app_backend_url"` set `value` that is your actual URL for Magento Admin URL under test.
 
 Example:
-`<env name="app_backend_url" value="http://example.com/magento2/admin"/>`.
-
-#### Windows only! Set full path for `basedir` and `credentials_file_path` parameters {#mtf_quickstart_config_phpunitxml_win-credent}
-
-Find `<php>` element.
-
-For `<env name="basedir"` set `value="<full_path_to_directory>" />` (that is directory for error logs). For example, `<env name="basedir" value="C:\magento2\dev\tests\functional\var\log" />`.
-
-For `name="credentials_file_path" ` set `value="<full_path_to_directory>"` (that is file with credentials for Magento modules, if required). For example, `<env name="credentials_file_path" value="C:\magento2\dev\tests\functional\credentials.xml" />`.
+`<env name="app_backend_url" value="http://example.com/magento2/admin/"/>`
 
 ### Edit `config.xml` to configure Magento Testing Framework {#mtf_quickstart_config_configxml}
 
@@ -81,7 +77,6 @@ Example for Google Chrome:
 
 {% endhighlight %}
 
-
 ### Edit `credentials.xml` to work with Magento modules that requires credentials {#mtf_quickstart_config_credentialsxml}
 
 Find `credentials.xml` in `<magento2>/dev/tests/functional`, and open it in editor.
@@ -97,4 +92,6 @@ Find block of elements for the Magento module you want to test.
 
 Enter actual data in `value` attribute of corresponding `field` element.
 
-<h2 id="mtf_install_pre">Next Steps</h2> <a href="{{ site.gdeurl21 }}mtf/mtf_quickstart/mtf_quickstart_environmemt.html">Prepare environment for test run</a>
+<h2 id="mtf_install_pre">Next Steps</h2>
+
+[Prepare Magento application &gt;&gt;]({{ site.gdeurl21 }}mtf/mtf_quickstart/mtf_quickstart_magento.html)
