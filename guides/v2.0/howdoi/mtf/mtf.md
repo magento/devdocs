@@ -36,6 +36,8 @@ When talking about testing in Magento 2, we have to distinguish between differen
 
   For more information, see [Running Unit Tests]({{ site.gdeurl }}test/unit/unit_test_execution.html).
 
+  Please refer to the article [Writing testable code]({{ site.gdeurl }}test/unit/writing_testable_code.html) for more information on what to keep in mind when starting with TDD.
+
 The `bin/magento` tool provides a common entry point to execute any of the tests, which can be useful for continuous integration. Please see the [System Administrators Guide on Running Tests]({{ site.gdeurl }}config-guide/cli/config-cli-subcommands-test.html) for more information. 
 
 #### Where to find the tests in the file system
