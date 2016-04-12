@@ -1,7 +1,7 @@
 ---
 layout: default
 group: compman
-subgroup: ZZ_Troubleshooting
+subgroup: 50_trouble
 title: magento/theme-doc-blank failure
 menu_title: magento/theme-doc-blank failure
 menu_node: 

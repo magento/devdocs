@@ -1,18 +1,13 @@
 ---
 layout: default 
 group: compman
-subgroup: U_UseUpgrade
+subgroup: 15_UseUpgrade
 title: Step 4. Upgrade
 menu_title: Step 4. Upgrade
 menu_node: 
 menu_order: 20
 github_link21: comp-mgr/upgrader/upgrade.md
 ---
-
-## Upgrade
-After backing up, the components you're upgrading display. The following figure shows an example.
-
-<img src="{{ site.baseurl }}common/images/upgr_upgrade.png" width="550px" alt="Click upgrade to complete the task">
 
 ## Set file system permissions {#compman-upgr-perms}
 If your Magento application is set to write session data to the `<your Magento install dir>/var/session` directory, you must set permissions on that directory before you upgrade.
@@ -41,7 +36,19 @@ To set file system permissions before upgrade:
 		chmod -R 770 /var/www/magento2/var/session
 3.	Continue with the next section.
 
+## Remove contents from the code generation and dependency injection directories {#upgrade-dirs}
+Before you continue, you must remove the contents of the following directories, either using the command line or an FTP application:
+
+	<your Magento install dir>/var/generation
+	<your Magento install dir>/var/di
+
+Continue with the next section.    
+
 ## Complete the upgrade {#upgrade-finish}
+The components you're upgrading display. The following figure shows an example.
+
+<img src="{{ site.baseurl }}common/images/upgr_upgrade.png" width="550px" alt="Click upgrade to complete the task">
+
 
 To complete the upgrade, click **Upgrade**. If the upgrade is successful, a page similar to the following displays.
 
@@ -50,5 +57,18 @@ To complete the upgrade, click **Upgrade**. If the upgrade is successful, a page
 Messages similar to the following display in the Console Log:
 
 <img src="{{ site.baseurl }}common/images/upgrade-success-consolelog.png" width="650px">
+
+## Enable cache types {#upgrade-cache}
+After your upgrade successfully completes, you can enable the Magento cache as follows:
+
+1.	Log in to the Magento Admin as an administrator.
+2.	Click **System** > Tools > **Cache Management**.
+3.	At the top of the page, from the **Mass actions** list, click **Select all**.
+4.	From the list above, click **Enable**.
+5.	Click **Submit**.
+
+	The following figure shows all cache types enabled.
+
+	![All cache types are enabled]({{ site.baseurl }}common/images/upgr_all-cache-enabled.png){:width="700px"}
 
 

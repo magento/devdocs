@@ -1,0 +1,45 @@
+---
+layout: default
+group: compman
+subgroup: 50_trouble
+title: Troubleshoot upgrade issues
+menu_title: Troubleshoot upgrade issues
+menu_node: 
+menu_order: 5
+github_link21: comp-mgr/trouble/cman/upgrade_51431.md
+---
+
+## Troubleshoot upgrade issues
+This section discusses upgrade issues to Magento version 2.0.4. Symptoms include any of the following errors during the upgrade process:
+
+### `Strict Notice` exception
+Error text follows:
+
+	[Exception]                                                                                                                                                
+	Strict Notice: Declaration of Magento\Store\Model\ResourceModel\Website\Interceptor::afterLoad() should be compatible with Magento\Framework\Model\ResourceModel\Db\AbstractDb::afterLoad(Magento\Framework\DataObject $object) in /var/www/html/magento2ce/var/generation/Magento/Store/Model/ResourceModel/Website/Interceptor.php on line 7   
+
+### PHP fatal error
+A snippet from this error follows:
+
+	PHP Fatal error:  Cannot instantiate interface Magento\Framework\MessageQueue\ConfigInterface in /var/www/html/eddie/project-enterprise-edition/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php on line 73
+	PHP Stack trace:
+	PHP   1. {main}() /var/www/html/eddie/project-enterprise-edition/bin/magento:0
+	PHP   2. Magento\Framework\Console\Cli->__construct() /var/www/html/eddie/project-enterprise-edition/bin/magento:26
+	PHP   3. Symfony\Component\Console\Application->__construct() /var/www/html/eddie/project-enterprise-edition/vendor/magento/framework/Console/Cli.php:94
+	... more ...
+
+## Solution
+To resolve these errors, perform the following tasks:
+
+1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{ site.gdeurl21 }}install-gde/prereq/apache-user.html).
+
+	If you don't have access to the Magento server file system, connect to it using an FTP application.
+2.	Remove the following files so you can upgrade again:
+
+		<your Magento install dir>/var/.maintenance.flag
+		<your Magento install dir>/var/.update_in_progress.flag
+		<your Magento install dir>/var/cache/*
+		<your Magento install dir>/var/page_cache/*
+		<your Magento install dir>/var/generation/*
+
+3.	Run your upgrade again, making sure to complete _all tasks_ discussed in [Run System Upgrade]({{ site.gdeurl21 }}comp-mgr/upgrader/upgrade-start.html).
