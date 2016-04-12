@@ -37,20 +37,23 @@ In Magento, the object manager is represented by the appropriately named [Object
 There are three types of configuration that is required by Magento's object manager:
 
 *	[Class configuration(definitions)](#class-configurations) - These configurations describe the class dependencies for an object.
-* [Type configuration](#type-configuration) - These configurations describe how objects are instantiated and their lifecycle.
+* [Type configuration](#type-configuration) - These configurations describe how objects are instantiated and their lifestyle.
 * [Abstraction-Implementation mappings](#abstraction-implementation-mappings) - These configurations map which concrete implementations to use when interfaces are requested.
 
 #### Class configurations
 
-Magento uses class constructor signatures, not doc-block annotations, to retrieve information about class dependencies; i.e. to define what dependencies are to be passed to an object. This way, you do not have to worry about class definitions if you write your code in a regular way using the dependency inversion principle.
+Magento uses class constructor signatures, not doc-block annotations, to retrieve information about class dependencies; i.e. to define what dependencies are to be passed to an object. If you write your code in a regular way using the dependency inversion principle, you do not have to worry about class definitions.
 
-Magento reads constructors using reflection. We recommend you use the [single-store compiler tool]({{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html) or the [multi-store compiler tool]({{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-multi.html) to pre-compile class definitions for better performance.
+##### Compiling dependencies
+{:.no_toc}
+By default, class definitions are read using reflection, but reflection is slow in PHP. To make Magento's ObjectManager as fast as possible, a definition compiler was introduced. One of the things the compiler does is generate all non-existing dependency injection service classes (proxies, factories and interceptors) declared in code or configuration.
 
-The parameters specified for a class type are inherited by its descendant classes.
+*	If you have one website and one store, see [single-tenant compiler]({{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler.html#config-cli-subcommands-single).
+*	If you have multiple websites and stores, see [multi-tenant compiler]({{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler.html#config-cli-subcommands-run).
 
 #### Type configurations
 
-Type configurations describe the parameters that must be used to instantiate a class and lifestyle of class instances. Depending on it's scope, the configuration for Magento's object manager is stored in following XML files:
+Type configurations describe the parameters used to instantiate a class and lifestyle of class instances. Depending on it's scope, the configuration for Magento's object manager is stored in the following XML files:
 
 * `app/etc/di.xml` - This is the global area application configuration.
 * `<moduleDir>/etc/di.xml` - This is the module global area configuration.
@@ -101,7 +104,7 @@ The preceding example declares the following types:
 
 *	`Magento\Core\Model\Session`: If the type is not set explicitly, it is taken from the name.
 *	`moduleConfig`: A virtual type that extends type `Magento\Core\Model\Config`.
-*	`Magento\Core\Model\App`: All instances of this type retrieve an instance of `moduleConfig` as a dependency.
+*	`Magento\Core\Model\App`: All instances of this type receive an instance of `moduleConfig` as a dependency.
 
 <div class="bs-callout bs-callout-info" id="info">
   <b>Virtual Type</b><br/>
@@ -128,7 +131,7 @@ Node Formats:
 
 Creates an instance of `typeName` type and passes it in as an argument. Any class name, interface name, or virtual type name can be passed as `typeName`.
 
-Setting the `shared` property defines the lifecycle of a created instance. See [Lifecycle Management](#lifecycle-management).
+Setting the `shared` property defines the lifestyle of a created instance. See [Lifecycle Management](#object-lifetime-management).
 
 ---
 
@@ -139,7 +142,7 @@ Node Formats:
 : `<argument xsi:type="string">{strValue}</argument>`
 : `<argument xsi:type="string" translate="true">{strValue}</argument>`
 
-Any value for this argument node will be perceived as a string.
+Any value for this argument node will be interpreted as a string.
 
 ---
 
@@ -247,8 +250,6 @@ The first entry configures all instances of `Magento\Framework\View\Element\Cont
 
 The second entry overrides this and configures all instances of `Magento\Backend\Block\Context` to use [`Magento\Backend\Model\Url`]({{ site.mage2000url }}app/code/Magento/Backend/Model/Url.php){:target="_blank"} as the `$urlBuilder` instead.
 
----
-
 #### Object Lifetime management
 
 The main responsibility of the object manager is object creation and wiring, but it can also determine how many instances of that object can exist; e.g. its **lifestyle**.
@@ -288,12 +289,7 @@ In this example `Magento\Filesystem` is configured as non-shared, so all clients
 * You can create newable objects in services with object [factories]({{ site.gdeurl }}extension-dev-guide/factories.html) or you can pass them in as method parameters.
 * Newable objects should not hold a field reference to an injectable object nor should they request one in their constructor. This is a [Law of Demeter](http://en.wikipedia.org/wiki/Law_of_Demeter){:target="_blank"} violation.
 
-<h2 id="dep-inj-compile">Compiler tool</h2>
-To compile all non-existent proxies and factories; and to pre-compile class definitions, inheritance information, and plugin definitions for multiple stores or websites, see one of the following topics:
-
-*	If you have one website and one store, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">Single-store compiler</a>
-*	If you have multiple websites and stores, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-store compiler</a>
-
+---
 
 **Related Topics**
 
