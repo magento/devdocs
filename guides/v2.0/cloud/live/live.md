@@ -12,10 +12,6 @@ github_link: cloud/live/live.md
 ## Go live
 This section outlines the tasks you must perform before you can launch your live Magento store. 
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Contact <a href="{{ site.gdeurl }}cloud/get-help.html" target="_blank">Magento Support</a> for assistance.</p>
-</div>
-
 To go live:
 
 1.	Log in to your Magento Cloud account.

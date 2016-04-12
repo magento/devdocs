@@ -37,7 +37,7 @@ to integrate with internal tooling with little effort.
 
 #### Related topics
 *	[Magento Enterprise Cloud Edition requirements]({{ site.gdeurl }}cloud/cloud-requirements.html)
-*	[Common terms]({{ site.gdeurl }}cloud/terms.html)
+*	[Common terms]({{ site.gdeurl }}cloud/before/terms.html)
 *	[Architecture]({{ site.gdeurl }}cloud/discover-arch.html)
 *	[Workflow]({{ site.gdeurl }}cloud/discover-workflow.html)
 
