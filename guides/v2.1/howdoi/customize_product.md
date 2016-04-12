@@ -24,9 +24,9 @@ The following image is an illustration of the default view of the form on the **
 
 ## Overview
 
-In Magento version 2.1 the product creation form was completely refactored, and implemented using the [form UI component]({{site.gdeurl21}}ui-components/ui-form.html). 
+In Magento version 2.1, the product creation form was completely refactored, and implemented using the [form UI component]({{site.gdeurl21}}ui-components/ui-form.html). 
 
-Product attributes and attribute sets available in the form, can be customized and added under **STORES** > **Attributes** in the Admin. But you can also customize the form view and behavior in code. The following sections describe what files define the form, and how they can be customized in your module.
+Product attributes and attribute sets available in the form, can be customized and added under **STORES** > **Attributes** in the Admin. But you can also customize the form view and behavior in code. The following sections describe what files define the form and how they can be customized in your module.
 
 
 ## Prerequisites
@@ -37,7 +37,7 @@ For the sake of compatibility, upgradability, and easy maintenance, do not edit 
 
 ## Customize the form configuration
 
-Customizing the form config file, that is, declarative customization, is preferable for changes like introducing new fields, field sets and modals.
+Customizing the form config file (that is, declarative customization) is preferable for changes like introducing new fields, field sets and modals.
 
 To customize the product creation form, take the following steps: 
 
@@ -82,12 +82,12 @@ To customize the product creation form, take the following steps:
 
 ### Adding new elements
 
-By default, the new elements (fields, field sets, modals, grids) which you add in the form configuration file, are displayed on the form whatever product is created. That is, for all product types. 
+By default, the new elements (fields, field sets, modals, grids) which you add in the form configuration file, are displayed on the form whatever product is created; that is, for all product types. 
 
 In the [modifier class described further](#modifier), you can set the conditions for displaying certain elements for certain product types.
 
 ### Customizing existing fields and field sets
-Your `product_form.xml` is merged with the same files from the other modules. So there is no need to copy their content, you only need to define changes. Even if you want to customize the existing entities, you only have to mention those options, the values of which are customized..
+Your `product_form.xml` is merged with the same files from the other modules. So there is no need to copy their content, you only need to define changes. Even if you want to customize the existing entities, you only have to mention those options, the values of which are customized.
 
 To customize an existing entity, declare only those options, the values of which are customized, do not copy its entire configuration. 
 
@@ -133,7 +133,8 @@ In your custom module directory, add the modifier class that implements the `Mag
 In the modifier class, you can add UI elements using the same structure as in the XML configuration.
 
 For example:
-{%highlight php%}
+{% highlight php %}
+
 <?php
 
 use Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\AbstractModifier;
