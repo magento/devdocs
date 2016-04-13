@@ -131,7 +131,7 @@ Node Formats:
 
 Creates an instance of `typeName` type and passes it in as an argument. Any class name, interface name, or virtual type name can be passed as `typeName`.
 
-Setting the `shared` property defines the lifestyle of a created instance. See [Lifecycle Management](#object-lifetime-management).
+Setting the `shared` property defines the lifestyle of a created instance. See [Object Lifestyle Management](#object-lifestyle-management).
 
 ---
 
@@ -270,7 +270,7 @@ The first entry configures all instances of `Magento\Framework\View\Element\Cont
 
 The second entry overrides this and configures all instances of `Magento\Backend\Block\Context` to use [`Magento\Backend\Model\Url`]({{ site.mage2000url }}app/code/Magento/Backend/Model/Url.php){:target="_blank"} as the `$urlBuilder` instead.
 
-#### Object Lifetime management
+#### Object Lifestyle management
 
 The main responsibility of the object manager is object creation and wiring, but it can also determine how many instances of that object can exist; e.g. its **lifestyle**.
 
@@ -359,8 +359,8 @@ Method injection is usually used when an object needs to act on a dependency.
 
 **Related Topics**
 
-*	<a href="{{ site.gdeurl }}extension-dev-guide/plugins.html">Plugins</a>
-*	<a href="{{ site.gdeurl }}extension-dev-guide/routing.html">Routing</a>
-*	<a href="{{ site.gdeurl }}config-guide/bootstrap/magento-bootstrap.html">Magento application initialization and bootstrap</a>
-*	<a href="{{ site.gdeurl }}architecture/modules/mod_depend.html">Module dependencies</a>
-*	<a href="{{ site.gdeurl }}extension-dev-guide/api-concepts.html">Programming concepts</a>
+*	[Plugins]({{ site.gdeurl }}extension-dev-guide/plugins.html)
+*	[Routing]({{ site.gdeurl }}extension-dev-guide/routing.html)
+*	[Magento application initialization and bootstrap]({{ site.gdeurl }}config-guide/bootstrap/magento-bootstrap.html)
+* [Module Dependencies]({{ site.gdeurl }}architecture/archi_perspectives/components/modules/mod_depend.html)
+*	[Programming concepts]({{ site.gdeurl }}extension-dev-guide/api-concepts.html)
