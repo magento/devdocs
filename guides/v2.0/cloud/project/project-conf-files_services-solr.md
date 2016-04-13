@@ -40,7 +40,7 @@ The format exposed in the [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{ site.gdeurl }}clou
 {% endhighlight %}
 
 ## Usage example
-In your `.platform/services.yaml`:
+In your `.magento/services.yaml`:
 
 {% highlight yaml %}
 mysearch:
@@ -72,7 +72,7 @@ foreach ($relationships['solr'] as $endpoint) {
 {% endhighlight %}
 
 ## Configuration
-If you want to provide your own Solr configuration, you can add a `core_config` key in your `.platform/services.yaml`:
+If you want to provide your own Solr configuration, you can add a `core_config` key in your `.magento/services.yaml`:
 
 {% highlight yaml %}
 mysearch:
@@ -82,4 +82,4 @@ mysearch:
         core_config: !archive "<directory>"
 {% endhighlight %}
 
-The `directory` parameter points to the Magento `vendor/magento/module-solr/conf` directory, relative to the `.platform` directory, in the Git repository. This directory contains the Magento schema.
+The `directory` parameter points to the Magento `vendor/magento/module-solr/conf` directory, relative to the `.magento` directory, in the Git repository. This directory contains the Magento schema.

@@ -37,7 +37,7 @@ The format exposed in the [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{ site.gdeurl }}clou
 {% endhighlight %}
 
 ## Usage example
-In your `.platform/services.yaml`:
+In your `.magento/services.yaml`:
 
 {% highlight yaml %}
 myrabbitmq:

@@ -45,7 +45,7 @@ The format exposed in the [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{ site.gdeurl }}clou
 {% endhighlight %}
 
 ## Usage example
-In your `.platform/services.yaml`:
+In your `.magento/services.yaml`:
 
 {% highlight yaml %}
 mydatabase:
@@ -86,4 +86,4 @@ foreach ($relationships['database'] as $endpoint) {
 
 #### Notes
 *   There is a single MySQL user, so you can not use the [`DEFINER`](http://dev.mysql.com/doc/refman/5.6/en/show-grants.html){:target="_blank"} access control mechanism for stored procedures and views.
-*   MySQL errors such as `PDO Exception 'MySQL server has gone away` are usually simply the result of exhausting your existing disk space. Be sure you have sufficient space allocated to the service in [`.platform/services.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-disk).
+*   MySQL errors such as `PDO Exception 'MySQL server has gone away` are usually simply the result of exhausting your existing disk space. Be sure you have sufficient space allocated to the service in [`.magento/services.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-disk).
