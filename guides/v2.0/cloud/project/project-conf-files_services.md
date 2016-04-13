@@ -21,7 +21,7 @@ github_link: cloud/project/project-conf-files_services.md
 ## `services.yaml` overview {#cloud-yaml-services-over}
 Magento Enterprise Cloud Edition provides [*services*](#cloud-yaml-services-type) such as MySQL, PHP, Redis, Solr, and so on. You don't need to subscribe to external service providers.
 
-This file is located at `.platform/services.yaml` in your project.
+This file is located at `.magento/services.yaml` in your project.
 
 [Sample `services.yaml` file](https://github.com/platformsh-redbull/mc-base/blob/master/.magento/services.yaml){:target="_blank"}
 
