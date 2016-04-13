@@ -63,10 +63,6 @@ p.q 	{
 }
 
 
-/*Give "Edit page on Github a little space on the right"  */
-.page-intro .improve-page {
-  right: 10%;
-}
 
 @media (min-width: 768px) and (max-width: 991px) {
   #f-col-1,
@@ -138,7 +134,9 @@ table {
 html, body { height: 100%; }
 
 body.offcanvas-active {
-   overflow-x: hidden;
+   position:fixed;
+   overflow: hidden;
+   height: 100%;
 }
 
 .site-header, #gl-wrapper, #footer-wrap {
@@ -146,8 +144,6 @@ body.offcanvas-active {
 }
 
 @media (max-width:767px) {
-
-   
 
    .site-header {
       border-bottom: 1px solid #c24c05;
