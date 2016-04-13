@@ -293,6 +293,52 @@ The `shared` property determines the lifestyle of both `argument` and `type` con
 
 In this example `Magento\Filesystem` is configured as non-shared, so all clients will retrieve separate instances of `Magento\Filesystem`. Also, every instance of `Magento\Filesystem` will get separate instance of `$adapter`, because it too is non-shared.
 
+### Injection types used in Magento
+
+This section explains the two dependency injection types used in Magento using the following example:
+
+~~~ php
+<?php
+namespace Magento\Backend\Model\Menu;
+class Builder
+{
+    /**
+     * @param \Magento\Backend\Model\Menu\Item\Factory $menuItemFactory
+     * @param \Magento\Backend\Model\Menu $menu
+     */
+    public function __construct(
+        Magento\Backend\Model\Menu\Item\Factory $menuItemFactory,  // Service dependency
+        Magento\Backend\Model\Menu $menu  // Service dependency
+    ) {
+        $this->_itemFactory = $menuItemFactory;
+        $this->_menu = $menu;
+    }
+
+    public function processCommand(\Magento\Backend\Model\Menu\Builder\CommandAbstract $command) // API param
+    {
+        // processCommand Code
+    }
+}
+?>
+~~~
+
+#### Construction Injection
+
+Magento uses constructor injection to provide dependencies through an object's class constructor. In the example above, `$menuItemFactory` and `$menu` are the dependencies provided to the class through its constructor.
+
+Constructor dependency injection must be used for all optional and required dependencies of an object.
+
+<div class="bs-callout bs-callout-info" id="proxy-info">
+  <b>Optional dependencies</b><br/>
+  <p>Optional dependencies are objects that are expensive to instantiate that may or may not be used by the dependent class. In these cases, a <a href="{{site.gdeurl}}extension-dev-guide/proxies.html">proxy</a> is used.</p>
+</div>
+
+#### Method Injection
+
+When an object specifies a dependency in one of its methods instead of its constructors, it is called method injection. In the example, above `$command` is the dependency passed into the class through the `processCommand` method.
+
+Method injection is usually used when an object needs to act on a dependency.
+
 ### Injectable and Newable Objects
 
 **Injectable:** Objects that can be obtained through dependency injection. Any object that can be instantiated by the object manager, such as singletons and factories, fall into this category.
