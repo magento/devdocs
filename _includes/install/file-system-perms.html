@@ -1,22 +1,51 @@
 <h2 id="install-perms-import">Why we recommend you set file system permissions</h2>
 <P>Malicious exploits are an unfortunate reality in the internet age. To help prevent exploits that take advantage of the file system, we recommend you set Magento file system ownership and permissions in a particular way. For more information, see <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-over">Overview of ownership and permissions</a>.</p>
+<p>On web servers that host multiple domains, it is common practice for each domain to have a different web server user.  This allows some limited protection in that the web user for one domain is not able to create, and more importantly read, files stored in the other domain(such as the server configuration containing the database logon information!).  This means that there are now two web server users that may need to access files for your system, the domain user and the system user.  In general, the system user will require read access to any .htaccess files as well as search access to directories containing static resources.</p>
+
 <p>The important things:</p>
 <ul><li>The owner of the Magento file system:
 <ul><li>Must have full control (read/write/execute) of all files and directories.</li>
 <li>Must <em>not</em> be the web server user; it should be a different user.</li></ul>
 </li>
-<li>The web server user must have write access to the following files and directories:
-<ul><li><code>var</code></li>
-<li><code>app/etc</code></li>
-<li><code>pub</code></li></ul>
+<li>The web server domain user:
+	<ul>
+		<li>Must have write access to the following files and directories:
+			<ul>
+				<li><code>var</code></li>
+				<li><code>app/etc</code></li>
+				<li><code>pub</code></li>
+			</ul>
+		</li>
+		<li>Must have search[execute] access to the following directories[including any subdirectories]:
+			<ul>
+				<li><code>pub</code></li>
+			</ul>
+		</li>
+	</ul>
 </li>
+	<li>The web server system user:
+		<ul><li>Must have search[execute] access to the following directories[including any subdirectories]
+			<ul>
+				<li><code>pub</code></li>
+			</ul>
+		</li>
+			<li>Must have read access to any .htaccess files in the following directories[including any subdirectories]
+				<ul>
+					<li><code>pub</code></li>
+				</ul>
+			</li>
+		</ul>
+    </li>
 </ul>
-<p>In addition, the web server's <em>group</em> must own the Magento file system so that the Magento user (who is in the group) can share access to files with the web server user. (This includes files created by the Magento Admin or other web-based utilities.)</p>
+<p>In addition, the web server domain user's <em>group</em> must own the Magento file system so that the Magento user (who is in the group) can share access to files with the web server user. (This includes files created by the Magento Admin or other web-based utilities.)</p>
 <p>We recommend setting the permissions as follows:</p>
-<ul><li>All directories have 770 permissions.<br>
-770 permissions give full control (that is, read/write/execute) to the owner and to the group and no permissions to anyone else.</li>
-<li>All files have 660 permissions.<br>
-660 permissions mean the owner and the group can read and write but other users have no permissions.</li></ul>
+<ul><li>All directories have 771 permissions.<br>
+771 permissions give full control (that is, read/write/search) to the owner and to the group and search permission to everyone.</li>
+<li>All files except .htaccess have 660 permissions.<br>
+660 permissions mean the owner and the group can read and write but other users have no permissions.</li>
+	<li>All .htaccess have 664 permissions.<br>
+		664 permissions mean the owner and the group can read and write and other users can read only.</li>
+</ul>
 
 <h2 id="install-perms-set">File system permissions and ownership</h2>
 <p>Use the following steps:</p>
@@ -25,14 +54,15 @@
 	The base directory is typically a subdirectory named <code>magento2</code> under your web server's docroot. Need help locating the docroot? Click <a href="{{ site.gdeurl }}install-gde/basics/basics_docroot.html">here</a>.<br>
 
 	Examples:
-	<ul><li>Ubuntu: <code>/var/www/magento2</code>
+	<ul><li>Ubuntu: <code>/var/www/magento2</code></li>
 	<li>CentOS: <code>/var/www/html/magento2</code></li>
+		</ul>
 <li>Set ownership:<br>
-<pre>chown -R :&lt;your web server group name> .</pre>
+<pre>chown -R :&lt;your web server group name&gt; .</pre>
 Typical examples:<br>
 CentOS: <code>chown -R :apache .</code><br>
 Ubuntu: <code>chown -R :www-data .</code></li>
 <li>Set permissions:<br>
-	<pre>find . -type d -exec chmod 770 {} \; && find . -type f -exec chmod 660 {} \; && chmod +x bin/magento</pre>
+	<pre>find . -type d -exec chmod 771 {} \; && find . -type f -exec chmod 660 {} \; && chmod ug+x bin/magento; && find . -type f -name .htaccess -exec chmod o+r {} \</pre>
 	If you must enter the commands as <code>sudo</code>, use:<br>
-	<pre>sudo find . -type d -exec chmod 770 {} \; && sudo find . -type f -exec chmod 660 {} \; && sudo chmod +x bin/magento</pre></li></ol>
+	<pre>sudo find . -type d -exec chmod 771 {} \; && find . -type f -exec chmod 660 {} \; && chmod ug+x bin/magento; && find . -type f -name .htaccess -exec chmod o+r {} \</pre></li></ol>
