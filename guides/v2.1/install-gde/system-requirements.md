@@ -7,7 +7,6 @@ menu_title: Magento system requirements
 menu_node: parent
 menu_order: 1
 github_link21: install-gde/system-requirements.md
-redirect_from: /guides/v1.0/install-gde/system-requirements.html
 ---
 
 ### Operating systems (Linux x86-64)
