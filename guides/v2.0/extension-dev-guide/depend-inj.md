@@ -215,7 +215,7 @@ Node Format:
 
 : ~~~
   <argument xsi:type="array">
-    <item key="someKey" xsi:type="<type>">someVal</item>
+    <item name="someKey" xsi:type="<type>">someVal</item>
   </argument>
   ~~~
 
@@ -236,7 +236,27 @@ When the configuration files for a given scope are merged, array arguments with 
 
 #### Abstraction-Implementation mappings
 
-TODO: Insert content here.
+The abstraction-implementation mappings are used by Magento's object manager when the constructor signature of a class requests an object by its interface. The object manager uses these mappings to determine what the default implementation is for that class for a particular scope.
+
+The default implementation is specified using the `preference` node:
+
+~~~
+<!--  File: app/etc/di/config.xml -->
+<config>
+    <preference for="Magento\Core\Model\UrlInterface" type="Magento\Core\Model\Url" />
+</config>
+~~~
+
+Since this mapping is in `app/etc/di/config.xml`, wherever there is a request for the `Magento\Core\Model\UrlInterface` in the global scope, the `Magento\Core\Model\Url` implementation class will be used.
+
+~~~
+<!-- File: app/code/core/Magento/Backend/etc/adminhtml/di.xml -->
+<config>
+    <preference for="Magento\Core\Model\UrlInterface" type="Magento\Backend\Model\Url" />
+</config>
+~~~
+
+Since this mapping is in `app/code/core/Magento/Backend/etc/adminhtml/di.xml`, wherever there is a request for the `Magento\Core\Model\UrlInterface` in the admin area, the `Magento\Backend\Model\Url` implementation class will be used.
 
 #### Parameter configuration inheritance
 
