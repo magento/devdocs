@@ -29,7 +29,7 @@ To include a custom font stored locally, use one of the following approaches:
 <ul> 
 <li>If you build a theme using Magento UI library, declare the font by adding the <code>.lib-font-face</code> mixin in the <code>&lt;theme_dir&gt;/web/css/source/_typography.less</code> file:
 <pre>
-.lib-gitfont-face(
+.lib-font-face(
     @family-name:'&lt;any_font_name&gt;',
     @font-path: '@{baseDir}fonts/&lt;path_to_font_file&gt;',
     @font-weight: <a href="http://www.w3schools.com/cssref/pr_font_weight.asp" target="_blank">&lt;font_weight&gt;</a>,
