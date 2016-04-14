@@ -33,7 +33,7 @@ To change the Admin URI and administrator password:
 5.  Wait for the project to clone.
 4.  Change to the project directory.
 
-    For example, if your project is named `Magento 2 test`, enter `cd magento-2-test`
+    For example, if your project is named `Magento 2`, enter `cd magento-2`
 7.  Create a [snapshot]({{ site.gdeurl }}cloud/admin/admin-snap.html) of the environment.
 
         magento-cloud snapshot:create -e master
@@ -41,9 +41,12 @@ To change the Admin URI and administrator password:
 
         magento-cloud variable:set <name> <value>
 
-    For example, to set the administrator's password to `admin_A456`, and to set the Admin URI to `magento_A8v10`, in the `sprint1` environment, enter:
+9.  For example, to set the administrator's password to `admin_A456`, enter:
 
         magento-cloud variable:set ADMIN_PASSWORD admin_A456
+6.  Wait while the project redeploys.
+7.  Set the Admin URI to `magento_A8v10`, enter:
+
         magento-cloud variable:set ADMIN_URL magento_A8v10
 6.  Wait while the project redeploys.
 7.  Log in to the Magento Admin using the values you just changed.

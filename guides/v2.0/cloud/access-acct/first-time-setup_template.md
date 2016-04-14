@@ -16,17 +16,14 @@ Before you continue, make sure you completed the tasks discussed in [Set up a Ma
 
 To set up a Magento project using a template:
 
-1.	In a web browser, log in to your Magento Enterprise Cloud Edition project if you haven't done so already.
+1.	If you followed the link from your [welcome e-mail]({{ site.gdeurl }}cloud/access-acct/first-time-setup.html#cloud-first-email), you might have to log in to your Magento Enterprise Cloud Edition project first.
 2.	If necessary, click the **Projects** tab.
-3.	Click **[Untitled Project]** as the following figure shows.
-
-	![Click your untitled project]({{ site.baseurl }}common/images/cloud_untitled.png){:width="650px"}
 2.	When prompted, enter a name for your project and click **Next**.
 3.	Click **Create a blank site from a template** as the following figure shows.
 
 	![Import a sample Magento project]({{ site.baseurl }}common/images/cloud_project_template.png){:width="650px"}
 4.	Click **Continue**.
-5.	When prompted, enter your Magento EE authentication credentials in the provided fields and click **Finish**.
+5.	When prompted, enter your Magento EE [authentication keys]({{ site.gdeurl }}install-gde/prereq/connect-auth.html) in the provided fields and click **Finish**.
 6.	Wait a few minutes while the project deploys.
 
 	During this time, the Web Interface displays messages similar to the following:
