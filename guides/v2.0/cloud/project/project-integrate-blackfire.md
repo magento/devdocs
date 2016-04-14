@@ -124,9 +124,6 @@ To verify Blackfire works, you can SSH to the environment and run a command as f
 		blackfire.env_token => no value => no value
 		blackfire.log_level => 1 => 1
 		blackfire.log_file => no value => no value
-		blackfire.server_id => e7f3595f-4560-4dfc-a042-16a96ef98bd2 => e7f3595f-4560-4dfc-a042-16a96ef98bd2
-		blackfire.server_token => ffd546f066c8ca44544573ce41bc0c0837251fc5bba48dd9d3cdd9da6ef9123f => ffd546f066c8ca44544573ce41bc0c0837251fc5bba48dd9d3cdd9da6ef9123f
-
 
 ## Profile your site {#cloud-int-black-profile}
 To start profiling your site using Blackfire:
