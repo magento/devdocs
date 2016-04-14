@@ -142,10 +142,8 @@ To start profiling your site using Blackfire:
 
 Using Blackfire is beyond the scope of this guide. For more information, see one of the following resources:
 
-*	TBD
-*	TBD
-
-
+*	[Profiling HTTP requests](https://blackfire.io/docs/cookbooks/profiling-http){:target="_blank"}
+*	[Reference Guide](https://blackfire.io/docs/reference-guide/index){:target="_blank"}
 
 #### Related topics
 *	[Get started with a project]({{ site.gdeurl }}cloud/project/project-start.html)
