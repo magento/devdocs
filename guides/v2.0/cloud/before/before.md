@@ -9,7 +9,7 @@ menu_node: parent
 github_link: cloud/before/before.md
 ---
 
-![This guide applies to Enterprise Cloud Edition only]({{ site.baseurl }}common/images/ee-only_large.png) ![This guide applies to Magento version 2.1 only]({{ site.baseurl }}common/images/2.1-only_large.png)
+![This guide applies to Enterprise Cloud Edition only]({{ site.baseurl }}common/images/ee-only_large.png) 
 
 
 ## Before you get started

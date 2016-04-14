@@ -9,7 +9,7 @@ menu_node: parent
 github_link: cloud/access-acct/first-time-setup.md
 ---
 
-![This guide applies to Enterprise Cloud Edition only]({{ site.baseurl }}common/images/ee-only_large.png) ![This guide applies to Magento version 2.1 only]({{ site.baseurl }}common/images/2.1-only_large.png)
+![This guide applies to Enterprise Cloud Edition only]({{ site.baseurl }}common/images/ee-only_large.png) 
 
  
 #### Contents
@@ -36,9 +36,7 @@ Before you get started, you must add at least one [public SSH key]({{ site.gdeur
 ## Your welcome e-mail {#cloud-first-email}
 After you register for an account, Magento sends you a welcome e-mail at the address at which you registered. The e-mail contains a link to your Magento Enterprise Cloud Edition project.
 
-Click the link in your welcome e-mail and continue with [Set up your project for the first time]({{ site.gdeurl }}cloud/access-acct/setup-first.html).
+Click the link in your welcome e-mail and continue with any of the following topics:
 
-
-#### Related topics
 *	[Create a sample Magento project from a template]({{ site.gdeurl }}cloud/access-acct/first-time-setup_template.html)
 *	[Import an existing Magento project]({{ site.gdeurl }}cloud/access-acct/first-time-setup_import.html)
