@@ -6,7 +6,7 @@ title: Troubleshoot cron
 menu_title: Troubleshoot cron
 menu_node: 
 menu_order: 7
-github_link: comp-mgr/trouble/cman/cron.md
+github_link21: comp-mgr/trouble/cman/cron.md
 ---
 
 <h2 id="trouble-cron">Troubleshoot cron</h2>
@@ -49,26 +49,26 @@ To verify whether or not your crontab is set up:
 	See one of the following sections for a solution to your issue.
 
 <h3 id="trouble-cron-none">Solution: crontab not set up</h3>
-To verify your cron jobs are set up properly, see <a href="{{ site.gdeurl }}install-gde/install/post-install-config.html#post-install-cron">Set up cron jobs</a>.
+To verify your cron jobs are set up properly, see <a href="{{ site.gdeurl21 }}install-gde/install/post-install-config.html#post-install-cron">Set up cron jobs</a>.
 
 ### Solution: cron running from incorrect PHP binary
 If your cron job uses a PHP binary different from the web server plug-in, PHP settings errors might display.
 
 To verify which PHP binary to use:
 
-1.	Create a [`phpinfo.php`]({{ site.gdeurl }}install-gde/prereq/optional.html#install-optional-phpinfo) page.
+1.	Create a [`phpinfo.php`]({{ site.gdeurl21 }}install-gde/prereq/optional.html#install-optional-phpinfo) page.
 
 	(Sometimes you have a different `php.ini` for the PHP command line and the web server. The `php.ini` you must change displays as **Loaded Configuration File**)
 
 2.	As a user with `root` privileges, open `php.ini` in a text editor.
 3.	Make the required changes.
 
-	For more information about PHP settings, see [PHP configuration options]({{ site.gdeurl }}install-gde/prereq/php-centos.html#instgde-prereq-timezone).
+	For more information about PHP settings, see [PHP configuration options]({{ site.gdeurl21 }}install-gde/prereq/php-centos.html#instgde-prereq-timezone).
 
 <h3 id="trouble-cron-errors">Solution: cron running with errors</h3>
 Try running each command manually because the command might display helpful error messages.
 
-See <a href="{{ site.gdeurl }}install-gde/install/post-install-config.html#post-install-cron">Set up cron</a>.
+See <a href="{{ site.gdeurl21 }}install-gde/install/post-install-config.html#post-install-cron">Set up cron</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
 	<p>You must run cron at least <em>twice</em> for the job to execute.</p>

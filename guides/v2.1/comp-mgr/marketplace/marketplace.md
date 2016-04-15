@@ -6,7 +6,7 @@ title: Magento Marketplace example
 menu_title: Magento Marketplace example
 menu_order: 1
 menu_node: parent
-github_link: comp-mgr/marketplace/marketplace.md
+github_link21: comp-mgr/marketplace/marketplace.md
 ---
 
 ## Magento Marketplace example
@@ -38,5 +38,5 @@ The following figure shows a sample cart.
 When you're ready, click **Go to Checkout** and follow the prompts on your screen to complete your purchase.
 
 ### Install your new purchases
-Use the [Component Manager]({{ site.gdeurl }}comp-mgr/compman-checklist.html) to install your purchases.
+Use the [Component Manager]({{ site.gdeurl21 }}comp-mgr/compman-checklist.html) to install your purchases.
 

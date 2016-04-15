@@ -6,7 +6,7 @@ title: Enter your authentication keys in the Admin
 menu_title: Enter your authentication keys in the Admin
 menu_order: 2
 menu_node: 
-github_link: comp-mgr/prereq/prereq_auth-token.md
+github_link21: comp-mgr/prereq/prereq_auth-token.md
 ---
 
 #### Contents

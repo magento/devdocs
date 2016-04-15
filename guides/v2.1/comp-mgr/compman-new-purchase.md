@@ -6,7 +6,7 @@ title: Step 3. Component Install
 menu_title: Component Install (Component Manager)
 menu_node: parent
 menu_order: 1
-github_link: comp-mgr/compman-new-purchase.md
+github_link21: comp-mgr/compman-new-purchase.md
 ---
 
 ## Step 3. Component Install
