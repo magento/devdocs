@@ -35,13 +35,13 @@ You can find the list of modules that have dependencies with the Magento_BundleS
 
 ## Extension Points
 
-Extension points enable extension developers to interact with the Magento_BundleStaging module. You can interact with the Magento_BundleStaging module using the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.0/extension-dev-guide/plugins.html).
+Extension points enable extension developers to interact with the Magento_BundleStaging module. You can interact with the Magento_BundleStaging module using the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).
 
-[Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.0/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_BundleStaging module.
+[Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_BundleStaging module.
 
 ### UI components
 
-You can extend Bundle updates product listing using  the grid UI component located in the 'Magento/BundleStaging/view/adminhtml/ui_component/bundle_update_product_listing.xml'. For more information, see [UI Listing/Grid Component](http://devdocs.magento.com/guides/v2.0/ui-components/ui-listing-grid.html).
+You can extend Bundle updates product listing using  the grid UI component located in the `Magento/BundleStaging/view/adminhtml/ui_component/bundle_update_product_listing.xml`. For more information, see [UI Listing/Grid Component](http://devdocs.magento.com/guides/v2.1/ui-components/ui-listing-grid.html).
 
 ## Additional information
 
