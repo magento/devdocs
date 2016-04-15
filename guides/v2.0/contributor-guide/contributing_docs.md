@@ -6,6 +6,8 @@ title: DevDocs Contributions
 menu_title: DevDocs Contributions
 menu_order: 1
 menu_node: parent
+contributor_name: Staffan Palopää from Vaimo
+contributor_link: http://www.vaimo.com/
 github_link: contributor-guide/contributing_docs.md
 redirect_from: guides/v2.0/extension-dev-guide/Contribute_edg.md
 ---
