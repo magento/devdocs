@@ -819,6 +819,19 @@
 <p>
 The topic describes how the changes you make in stylesheets are applied in the client-side and server-side LESS <a href="/guides/v2.0/frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">compilation modes</a>, and suggests the approaches and tools you can use to streamline the process of applying and debugging customizations. </p>
 
+<p><strong>Contents</strong></p>
+
+<ul id="markdown-toc">
+  <li><a href="#prerequisites">Prerequisites</a></li>
+  <li><a href="#css_debug_client">Styles debugging in client-side compilation mode</a></li>
+  <li><a href="#css_debug_server">Styles debugging in server-side compilation mode</a>    <ul>
+      <li><a href="#grunt_prereq">Installing and configuring Grunt</a></li>
+      <li><a href="#grunt_commands">Grunt commands</a></li>
+      <li><a href="#use_cases">Use cases of tracking changes using Grunt</a></li>
+    </ul>
+  </li>
+</ul>
+
 <h2 id="prerequisites">Prerequisites</h2>
 <p>Make sure that you <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">set</a> your Magento application to the developer or default <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html">mode</a>.</p>
 
@@ -867,15 +880,7 @@ npm install -g grunt-cli
 </pre>
 </li>
 <li>
-Install Grunt in your Magento directory. To do this, run the following commands in a command prompt:<br />
-<pre>
-cd &lt;your_Magento_instance_directory&gt;
-npm install grunt --save-dev
-</pre>
-</li>
-
-<li>
-Install (or refresh) the <code>node.js</code> project dependency for your Magento instance. To do this, run the following commands in a command prompt:<br />
+Install (or refresh) the <code>node.js</code> project dependency, including Grunt, for your Magento instance. To do this, run the following commands in a command prompt:<br />
 
 <pre>
 cd &lt;your_Magento_instance_directory&gt;
@@ -899,9 +904,6 @@ module.exports = {
         dsl: 'less'
     },
 </pre>
-
-
-
 
 Where the following notation is used:
 <ul>
@@ -992,7 +994,7 @@ Tracks the changes in the source files, recompiles <code>.css</code> files, and 
 </tr>
 </table>
 
-<h3>Use cases of tracking changes using Grunt</h3>
+<h3 id="use_cases">Use cases of tracking changes using Grunt</h3>
 
 <p>The following shows which Grunt tasks to use for debugging:</p>
 
