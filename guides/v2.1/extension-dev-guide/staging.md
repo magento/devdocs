@@ -10,3 +10,12 @@ github_link: extension-dev-guide/staging.md
 ---
 
 General description of Staging
+
+**campaign**
+: a set of two or more updates.
+
+**staging**
+: a set of functionality that enables you to schedule the store changes in Magento database. You can configure the particular state of the database to be applied in the future.
+
+**update**
+: scheduled change of one Magento store entity.
