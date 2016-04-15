@@ -1,6 +1,6 @@
 ---
 layout: default
-group: 
+group: release-notes
 subgroup: 
 title: 
 menu_title:  
