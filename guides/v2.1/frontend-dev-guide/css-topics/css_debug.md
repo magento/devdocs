@@ -58,6 +58,9 @@ Magento has built-in Grunt tasks configured, but there are still several prerequ
 
 <ol>
 <li>
+In your Magento instance root directory, find the <code>Gruntfile.js.sample</code> and the <code>package.json.sample</code> files, and remove the "sample" ending in the names. The files names should be <code>Gruntfile.js</code> and <code>package.json</code>. 
+</li>
+<li>
 Install <a href="https://github.com/joyent/node/wiki/installing-node.js-via-package-manager)" target="_blank">node.js</a> to any location on your machine.
 </li>
 <li>Install Grunt CLI tool globally. To do this, run the following command in a command prompt:<br>
