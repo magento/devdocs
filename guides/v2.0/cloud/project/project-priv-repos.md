@@ -4,7 +4,7 @@ group: cloud
 subgroup: 07_project
 title: Pull code from a private Git repository
 menu_title: Pull code from a private Git repository
-menu_order: 60
+menu_order: 600
 menu_node: 
 github_link: cloud/project/project-priv-repos.md
 ---
