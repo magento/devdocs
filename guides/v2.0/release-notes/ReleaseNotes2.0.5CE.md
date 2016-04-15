@@ -10,7 +10,7 @@ redirect_from:
 ---
 
 <h2>Magento Community Edition 2.0.5</h2>
-We are pleased to present Magento Community Edition 2.0.5. This release includes all . 
+We are pleased to present Magento Community Edition 2.0.5. This release includes miscellaneous performance and API enhancements. 
 
 
 Backward-incompatible changes are documented in <a href="http://devdocs.magento.com/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
@@ -19,52 +19,65 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 <h3>Fixed issues</h3>
 
 <h4> Upgrade and Installation</h4>
-<!--  -->* 
-<!--  -->*  
+<!-- 47999 --> * Magento now successfully registers installed themes in the theme table during production mode.  (GITHUB-2797)
+
+<!-- 50224 --> *  Magento no longer assumes hard-coded root category IDs or default category IDs. Previously, Magento used hard-coded IDs for these values, which could produce inconsistent data during store installation.
+
+<!-- 51693 --> * Zip archives on **repo.magento.com** are now compressed.
 
 
-<h4>Import</h4>
-<!--  -->* . 
+<h4>Performance</h4>
+
+<!-- 48722 --> * Export performance has been enhanced.  Pages no longer hang randomly, and CPU usage is no longer pegged.  (GITHUB-3217)
+
+<!-- 50752 --> * The performance of the Sync button has been enhanced.   
+
 
 
 <h4>APIs</h4>
-<!--  --> * . 
 
-<!--  --> * .  
+<!-- 46720 --> * The Orders API now exposes the shipping address. This corrects an issue with using this API to integrate with third-party systems. (GITHUB-2628)
 
+<!-- 50299 --> * When you create a shipment and invoice using the REST API, order status now changes as expected from Processing to Complete. Previously, Magento would create the order invoice and shipment, but would continue to display order status  as Processing.
 
-<h4>PHP</h4>
-<!--  -->* .  
-
-
-<h4>Miscellaneous</h4>
-<!--  -->* . 
-
-<!--  --> * . 
-
-<!--  -->* . 
-
-<!-- --> * .
+<!-- 48526 -->* The Credit Memo API now correctly refunds orders or updates an order's status. Previously, credit memos created through APIs did not update order status or make refunds.  
 
 
 
-<h4>Security enhancements</h4>
-This release includes several enhancements to improve the security of your Magento 2.0 installation. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento 2.0 installation to the latest version as soon as possible.
+<h4>Miscellaneous</h4> 
 
-The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the <a href="https://magento.com/security" target="_blank">Magento Security Center</a>. 
-
-<!--  -->* 
-
-<!--  -->*   
-
-<!--  -->* 
+<!-- 47255 --> * (GITHUB-3459)
 
 
-<!--  -->* 
+<!-- 51074 --> * Magento now displays the expected color swatch when you select a color swatch for a configurable product. Previously, Magento did not change the color when you selected a swatch.
 
-<!--  -->* 
+<!-- 48659 -->* HTML template magnification now properly handles commented code.
 
-<!-- 50755 -->* 
+
+<!-- 49003 --> * Magento no longer duplicates SQL queries on CMS and Category pages. Previously, significant duplications occurred. 
+
+<!-- 48760 --> * Deleting one of several custom options no longer deletes all options. Previously, deleting one option from the Product page also deleted all other custom options. (GITHUB-2989)  
+
+<!-- 50195 --> * Google no longer indexes the Admin URL. Previously, Google indexed the Admin side meta tag. The frontend meta tag was not affected. 
+
+
+<!-- 50279 --> * When FPC is enabled, the CAPTCHA image differs for every user. Previously, the CAPTCHA image on the registration page remained the same for every customer after FPC was enabled.
+
+<!-- 46287 --> * You can now use Redis for session storage without modifying the <code>php.ini</code> file. You can also lock session storage to prevent simultaneous write access. 
+
+<!-- 50507 --> * Resetting the Product Attributes Mass Update Admin form works as expected. Previously, resetting the form resulted in an exception error. 
+
+
+<h4>Custom attributes</h4>
+
+<!-- 50912 --> * Custom customer attributes are now saved at checkout. 
+
+<!-- 51416 --> * Magento now loads custom attribute values for customer and address forms. 
+
+
+
+
+<h4>Security </h4>
 
 We recommend that you review Magento's <a href="http://merch.docs.magento.com/ce/user_guide/magento/magento-security-best-practices.html" target="_blank">Security Best Practices</a>, and confirm that all safeguards are in place to protect your system from compromise. Use this occasion to examine your system for indications of possible attack, such as strange administrator accounts, unfamiliar files on the server, etc. To receive direct notification from our security team regarding any emerging issues and solutions, sign up for the <a href="https://magento.com/security/sign-up" target="_blank">Security Alert Registry</a>.
 
