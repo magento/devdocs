@@ -23,13 +23,14 @@ Your extension's lifecycle is the series of phases it goes through while it is a
   <p>Since theme extensions and language packages generally do not need to install a database schema or update data in the database, they do not need to worry about their lifecycle phases.</p>
 </div>
 
-### Installation Phase
+### Installation Phases
 
 The installation phase of your module lifecycle occurs when it is initially installed or reinstalled. This happens after your extension has been automatically installed from the [Magento Marketplace](https://www.magentocommerce.com/magento-connect){:target="_blank"} or manually installed with the command: `bin/magento setup:upgrade`.
 
-However, if the `schema_version` of the module is present in the database, then this phase is skipped because it is assumed that the module has been initialized in a previous installation.
+If the `schema_version` of the module is present in the database, then the following two phases are skipped because it is assumed that the module schema and data has already been initialized in a previous installation. When a phase is skipped, your module will move on to the Schema or Data Upgrade phase.
 
-During the installation phase, the `install` function will be executed for any class that implement `\Magento\Framework\Setup\InstallSchemaInterface`:
+#### Schema Installation Phase
+The schema installation phase is the first phase your module goes through when it is initially installed. During this phase, the `install` function will be executed for any class that implement `\Magento\Framework\Setup\InstallSchemaInterface`:
 
 ~~~
 // File Location: <module_root_directory>/Setup/InstallSchema.php
@@ -44,27 +45,56 @@ class \<Vendor>\<Module>\Setup\InstallSchema implements \Magento\Framework\Setup
         ...
     }
 }
+
 ~~~
 
-#### Post-installation
+When the schema installation phase completes, your module will continue to the Schema Upgrade phase.
 
-Data initialization is done.
+---
 
-### Working Phase
+#### Data Installation Phase
 
-Working phase content.
+The data installation phase occurs only after your module has completed the Schema Installation, Schema Upgrade, and Schema Recurring phases. The purpose of this phase is to add initial data to the database for your module.
+
+Duing this phase, the `install` function will be executed for any class that implement `Magento\Framework\Setup\InstallDataInterface`:
+
+~~~
+// Location: <module_root_directory>/Setup/InstallData.php
+
+class \<Vendor>\<Module>\Setup\InstallData implements \Magento\Framework\Setup\InstallDataInterface
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
+    {
+        ...
+    }
+}
+
+~~~
+
+When the data installation phase completes, your module will continue to the Data Upgrade phase.
 
 ### Upgrade Phase
 
 Upgrade phase content.
 
-#### Recurring Tasks
+#### Schema Upgrade Phase
+
+#### Data Upgrade Phase
+
+### Recurring Phase
 
 These are run in every install.
 
-#### Post-upgrade
+#### Schema Recurring Phase
 
-Data upgrades are run.
+#### Data Recurring Phase
+
+### Working Phase
+
+Working phase content.
 
 ### Uninstall Phase
 
