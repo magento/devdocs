@@ -9,7 +9,7 @@ menu_node: parent
 github_link: cloud/bk-cloud.md
 ---
 
-![This guide applies to Enterprise Cloud Edition only]({{ site.baseurl }}common/images/ee-only_large.png) ![This guide applies to Magento version 2.1 only]({{ site.baseurl }}common/images/2.1-only_large.png)
+![This guide applies to Enterprise Cloud Edition only]({{ site.baseurl }}common/images/ee-only_large.png) 
 
 ## Welcome to Magento Enterprise Cloud Edition
 Magento Enterprise Cloud Edition is a managed and automated high-availability hosting platform for
