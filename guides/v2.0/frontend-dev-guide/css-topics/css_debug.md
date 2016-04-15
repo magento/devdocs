@@ -62,15 +62,7 @@ npm install -g grunt-cli
 </pre>
 </li>
 <li>
-Install Grunt in your Magento directory. To do this, run the following commands in a command prompt:<br>
-<pre>
-cd &lt;your_Magento_instance_directory&gt;
-npm install grunt --save-dev
-</pre>
-</li>
-
-<li>
-Install (or refresh) the <code>node.js</code> project dependency for your Magento instance. To do this, run the following commands in a command prompt:<br>
+Install (or refresh) the <code>node.js</code> project dependency, including Grunt, for your Magento instance. To do this, run the following commands in a command prompt:<br>
 
 <pre>
 cd &lt;your_Magento_instance_directory&gt;
