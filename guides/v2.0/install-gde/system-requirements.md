@@ -31,7 +31,9 @@ MySQL 5.6 (Oracle or Percona)
 
 *	5.6.x
 *	5.5.x, where x is 22 or greater
-*	7.0.2 (supported by Magento version 2.0.1 and later only)
+*	7.0.2&ndash;7.0.4 (supported by Magento version 2.0.1 and later only)
+
+	There is a [known issue](https://bugs.php.net/bug.php?id=71914){:target="_blank"} with our [code compiler]({{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler.html) when using PHP 7.0.5. We recommend you *not* use PHP 7.0.5.
 
 Documentation: <a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html" target="_blank">CentOS</a>, <a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html" target="_blank">Ubuntu</a>
 
