@@ -26,14 +26,14 @@ It extends the checkout functionality and enables you to use it in the staging p
 
 The Magento_CheckoutStaging module extends the following Magento_Checkout module functionality to be used in the staging preview mode:
 
-- Disables an order creation.
-- Creates a demo quote.
-- Deletes the demo quote using cron.
+- Disables an order creation
+- Creates a demo quote
+- Deletes the demo quote using cron
 
 Configuration options:
 
-- the `preview_quota_lifetime` parameter in the `Magento/CheckoutStaging/etc/config.xml` sets the lifetime of the demo quote.
-- the `schedule` parameter in the `Magento/CheckoutStaging/etc/crontab.xml` sets a launch schedule of the cron.
+- The `preview_quota_lifetime` parameter in the `Magento/CheckoutStaging/etc/config.xml` sets the lifetime of the demo quote.
+- The `schedule` parameter in the `Magento/CheckoutStaging/etc/crontab.xml` sets a launch schedule of the cron.
 
 ## Installation Details
 
@@ -45,10 +45,10 @@ You can find the list of modules that have dependencies with the Magento_Checkou
 
 ## Extension Points
 
-Extension points enable extension developers to interact with the Magento_CheckoutStaging module. For more information about Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.0/extension-dev-guide/plugins.html).
+Extension points enable extension developers to interact with the Magento_CheckoutStaging module. For more information about Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).
 
-[Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.0/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_CheckoutStaging module.
+[Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_CheckoutStaging module.
 
 ## Additional information
 
-For more Magento 2 developer documentation, see [Magento 2 Developer Documentation](http://devdocs.magento.com). Also, you can track there [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
+For more Magento 2 developer documentation, see [Magento 2 Developer Documentation](http://devdocs.magento.com). Also, there you can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).

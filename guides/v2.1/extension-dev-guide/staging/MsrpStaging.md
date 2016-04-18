@@ -15,23 +15,27 @@ github_link: extension-dev-guide/staging/MsrpStaging.md
 * TOC
 {:toc}
 
-# The Magento_MsrpStaging module
+<h2>Magento_MsrpStaging module</h2>
 
 ## Overview
 
-The **Magento_MsrpStaging** module is a part of the staging functionality in Magento EE. It allows to stage manufacturer's suggested retail price.
+The Magento_MsrpStaging module is a part of the staging functionality in Magento EE. It allows to stage the manufacturer's suggested retail price.
 
-## Backward incompatible changes
-No backward incompatible changes
+## Implementation Details
+
+The Magento_MsrpStaging module extends the Magento_Msrp module to be used in staging. It adds the following fields in the Advice Pricing form:
+
+- Manufacturer's Suggested Retail Price
+- Display Actual Price
 
 ## Dependencies
-The **Magento_MsrpStaging** is dependent on the following modules:
 
-- Magento_Staging
-- Magento_Msrp
+You can find the list of modules that have dependencies with the Magento_MsrpStaging module in the `require` object of the `composer.json` file. The file is located in the same directory as this `README` file.
 
-## Specific Settings
-The **Magento_MsrpStaging** module does not provide any specific settings.
+## Extension Points
 
-## Specific Extension Points
-The **Magento_MsrpStaging** module does not provide any specific extension points. You can extend it using the Magento extension mechanism.
+[Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.0/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_MsrpStaging module.
+
+## Additional information
+
+For more Magento 2 developer documentation, see [Magento 2 Developer Documentation](http://devdocs.magento.com). Also, there you can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).

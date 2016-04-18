@@ -25,9 +25,9 @@ The Magento_GiftCardStaging module is a part of the staging functionality in Mag
 
 The Magento_GiftCardStaging module changes the GiftCard Product creation page to make them compatible with the Magento Staging Framework:
 
-- Adds the Amount field set to the Schedule Update form.
-- Provides functionality of the field set.
-- Returns Amounts values to the initial state after campaign is finished.
+- Adds the Amount field set to the Schedule Update form
+- Provides functionality of the field set
+- Returns Amounts values to the initial state after campaign is finished
 
 ## Dependencies
 
@@ -35,10 +35,10 @@ You can find the list of modules that have dependencies with the Magento_GiftCar
 
 ## Extension Points
 
-Extension points enable extension developers to interact with the Magento_GiftCardStaging module. For more information about Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.0/extension-dev-guide/plugins.html).
+Extension points enable extension developers to interact with the Magento_GiftCardStaging module. For more information about Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).
 
-[Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.0/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_GiftCardStaging module.
+[Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_GiftCardStaging module.
 
 ## Additional information
 
-For more Magento 2 developer documentation, see [Magento 2 Developer Documentation](http://devdocs.magento.com). Also, you can track there [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
+For more Magento 2 developer documentation, see [Magento 2 Developer Documentation](http://devdocs.magento.com). Also, there you can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
