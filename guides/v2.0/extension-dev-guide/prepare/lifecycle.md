@@ -82,9 +82,9 @@ The Upgrade phases always occurs after the [Installation phases](#installation-p
 
 #### Schema Upgrade Phase
 
-The Schema Upgrade phase runs after the [Schema Installation phase](#schema-installation-phase)(whether the installation phase occurred or not) and if the current version is out of date. The purpose of the Schema Upgrade phase is usually to update the database structure.
+The Schema Upgrade phase runs after the [Schema Installation phase](#schema-installation-phase)(whether the installation phase occurred or not) and when current version is out of date. The purpose of the Schema Upgrade phase is usually to update the database structure.
 
-During this phase, the `upgrade` function will be executed for any class that implement `Magento\Framework\Setup\UpgradeSchemaInterface`:
+During this phase, the `upgrade` function will be executed for any class that implements `Magento\Framework\Setup\UpgradeSchemaInterface`:
 
 ~~~
 // Location: <module_root_directory>/Setup/UpgradeSchema.php
@@ -103,15 +103,82 @@ class \<Vendor>\<Module>\Setup\UpgradeSchema implements \Magento\Framework\Setup
 
 When the schema upgrade phase completes, your module will continue to the [Schema Recurring Phase](#schema-recurring-phase).
 
+---
+
 #### Data Upgrade Phase
+
+The data upgrade phase runs after the [data installation phase](#data-installation-phase) and when version is more current than the installed version. The purpose of the data upgrade phase is usually to fix data that has been corrupted or populate a new data field from a schema change.
+
+During this phase, the `upgrade` function will be executed for any class that implements `Magento\Framework\Setup\UpgradeDataInterface`:
+
+~~~
+//<module_root_directory>/Setup/UpgradeData.php
+
+class \<Vendor>\<Module>\Setup\UpgradeData implements \Magento\Framework\Setup\UpgradeDataInterface
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function upgrade(ModuleDataSetupInterface $setup, ModuleContextInterface $context);
+    {
+        ...
+    }
+}
+~~~
+
+When the data upgrade phase completes, your module will continue to the [data recurring phase](#data-recurring-phase).
 
 ### Recurring Phase
 
-These are run in every install.
+During the install, re-install, and upgrade process, the recurring phases are always the last phases your module will go through for schema and data. This phase is run regardless of whether any of the previous phases have executed.
 
 #### Schema Recurring Phase
 
+Your module goes through the schema recurring phase following the schema [installation](#schema-installation-phase) and [upgrade](#schema-upgrade-phase) phases. The purpose of this phase is usually to do final modifications to the database schema after the schema has been installed or updated.
+
+During this phase, the `install` function will be executed for the Recurring class implementing the `Magento\Framework\Setup\InstallSchemaInterface`:
+
+~~~
+// Location: <module_root_directory>/Setup/Recurring.php
+
+class \<Vendor>\<Module>\Setup\Recurring implements \Magento\Framework\Setup\InstallSchemaInterface
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function install(SchemaSetupInterface $setup, ModuleContextInterface $context)
+    {
+        ...
+    }
+}
+~~~
+
+When the schema recurring phase has completed, your module's schema is fully initialized and updated. The next phase it goes through is the [data intallation phase](#data-installation-phase) which begins the data initialization process.
+
+---
+
 #### Data Recurring Phase
+
+Your module goes through the data recurring phase after the data [installation](#data-installation-phase) and [upgrade](#data-upgrade-phase) phases. The purpose of this phase is usually to do final modifications to the database store after data has been installed or updated.
+
+During this phase, the `install` function will be executed for the `RecurringData` class implementing the `Magento\Framework\Setup\InstallDataInterface`:
+
+~~~
+// Location: <module_root_directory>/Setup/RecurringData.php
+
+class \<Vendor>\<Module>\Setup\RecurringData implements \Magento\Framework\Setup\InstallDataInterface
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
+    {
+        ...
+    }
+}
+~~~
+
+When the data recurring phase has completed, your module's data store is fully initialized and updated. The next phase for your module is the [working phase](#working-phase).
 
 ### Working Phase
 
