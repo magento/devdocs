@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: compman
-subgroup: 13_cli-upgr
+subgroup: 14_cli-upgr
 title: Command-line upgrade
 menu_title: Command-line upgrade
 menu_node: parent
@@ -21,7 +21,7 @@ You can upgrade Magento from the command line if you installed the software usin
 </div>
 
 <div class="bs-callout bs-callout-warning">
-    <p>If you're upgrading from Magento CE or EE 2.0.0 or 2.0.1, you must first perform the tasks discussed in the <a href="{{ site.gdeurl }}release-notes/tech_bull_201-upgrade.html">Technical Bulletin (1/28/16)</a>.</p>
+    <p>If you're upgrading from Magento CE or EE 2.0.0 or 2.0.1, you must first perform the tasks discussed in the <a href="{{ site.gdeurl21 }}release-notes/tech_bull_201-upgrade.html">Technical Bulletin (1/28/16)</a>.</p>
 </div>
 
 ## Prerequisite: `pub` directory root {#upgrade-cli-pub}
@@ -61,7 +61,7 @@ To upgrade using the command line:
 		composer update
 	
 	<div class="bs-callout bs-callout-info" id="info">
-  		<p>If an error displays about a missing <code>.gitignore</code> file, see the <a href="{{ site.gdeurl }}release-notes/tech_bull_201-upgrade.html#resolution2">Technical Bulletin (1/28/16)</a>.</p>
+  		<p>If an error displays about a missing <code>.gitignore</code> file, see the <a href="{{ site.gdeurl21 }}release-notes/tech_bull_201-upgrade.html#resolution2">Technical Bulletin (1/28/16)</a>.</p>
 	</div>
 
 3.	If prompted, enter your [authentication keys]({{ site.gdeurl21 }}).
