@@ -20,8 +20,8 @@ This article describes the basic concepts you need to know to create layouts for
 
 **Contents**
 
- *TOC
-{:toc}
+ * TOC
+ {:toc}
 
 ## Terms used {#layout-over-terms}
 
@@ -51,14 +51,16 @@ The following figure shows an example:
 
 <img src="{{ site.baseurl }}common/images/layouts_block_defn.jpg"/>.
 
-## Basic layouts
+## Basic layouts 
 
-The basic view of all Magento storefront pages in defined in two page configuration layout files: 
+The basic view of all Magento storefront pages in defined in two page configuration layout files located in the Magento_Theme module: 
 
-* `default.xml`: defines the page layout
-* `default_head_blocks.xml`: defines the scripts, images, and meta data included in pages' headers. 
+* `<Magento_Theme_module_dir>/view/frontend/layout/default.xml`: defines the page layout. 
+* `<Magento_Theme_module_dir>/view/frontend/layout/default_head_blocks.xml`: defines the scripts, images, and meta data included in pages' headers. 
 
-The main default.xml and default_head_blocks.xml files are stored in the Magento
+These basic page configuration layouts are extended in other Magento modules and in Magento themes.
+
+You can also [extend]({{site.gdeurl}}frontend-dev-guide/layouts/layout-extend.html) or [override]({{site.gdeurl}}frontend-dev-guide/layouts/layout-override.html) these files in your custom theme. 
 
 ## Layout files types and conventions
 
@@ -116,7 +118,7 @@ The Magento application processes layout files in the following order:
 
 
 
-#### Related topics:
+## Related topics
 
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-manage.html" target="_blank">Common layout customization tasks</a>

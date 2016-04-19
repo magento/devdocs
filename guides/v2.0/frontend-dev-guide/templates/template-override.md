@@ -58,11 +58,9 @@ Overriding templates is described with more details in the <a href="{{site.gdeur
 
 <h2 id="root">Root template</h2>
 
-In Magento there's a special template which serves as root template for all pages in the application: [<Magento_Theme_module_dir>/view/base/templates/root.phtml]({{site.mage2000url}}app/code/Magento/Theme/view/base/templates/root.phtml).
+In Magento there's a special template which serves as root template for all storefront pages in the application: `<Magento_Theme_module_dir>/view/base/templates/root.phtml`.
 
-Unlike other templates, `root.phtml` contains the `doctype` specification and contributes to <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> sections of all pages rendered by Magento application. 
-
-But similar to other templates, `root.phtml` can be overridden in a theme. 
+Unlike other templates, `root.phtml` contains the `doctype` specification and contributes to `<head>` and `<body>` sections of all pages rendered by Magento application. But similar to other templates, `root.phtml` can be overridden in a theme. 
 
 
 
