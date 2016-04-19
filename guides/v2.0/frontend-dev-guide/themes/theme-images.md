@@ -226,8 +226,8 @@ The following table contains the list of all properties which can be configured:
       <td>
         The color for the images background. Not applied to images
         with transparency, if <code>transparency</code> is set to
-        <code>true</code>. Format: "[, , <strong>]", e.g.: "[255,
-        255, 255]".</strong>
+        <code>true</code>. Format: "[, , ]", e.g.: "[255,
+        255, 255]".
       </td>
       <td>
         Optional
