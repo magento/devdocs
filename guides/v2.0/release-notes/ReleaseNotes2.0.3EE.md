@@ -1,6 +1,6 @@
 ---
 layout: default
-group: release-notes
+group: 
 subgroup: 
 title: 
 github_link: release-notes/ReleaseNotes2.0.3EE.md
