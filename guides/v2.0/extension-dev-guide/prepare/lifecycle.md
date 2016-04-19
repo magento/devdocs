@@ -23,6 +23,18 @@ Your extension's lifecycle is the series of phases it goes through while it is a
   <p>Since theme extensions and language packages generally do not need to install a database schema or update data in the database, they do not need to worry about their lifecycle phases.</p>
 </div>
 
+#### Schema and Data Initialization
+
+When your module is installed, re-installed, or upgraded, it goes through an initialization process for both schema and data.
+
+For schema initialization, your module goes through the following phases:
+
+[Schema installation](#schema-installation-phase) >> [Schema upgrade](#schema-upgrade-phase) >> [Schema recurring](#schema-recurring-phase).
+
+After the schema initialization completes, your module goes through the data initialization phases:
+
+[Data installation](#data-installation-phase) >> [Data upgrade](#data-upgrade-phase) >> [Data recurring](#data-recurring-phase).
+
 ### Installation Phases
 
 The installation phase of your module lifecycle occurs when it is initially installed or reinstalled. This happens after your extension has been automatically installed from the [Magento Marketplace](https://www.magentocommerce.com/magento-connect){:target="_blank"} or manually installed with the command: `bin/magento setup:upgrade`.
@@ -30,7 +42,7 @@ The installation phase of your module lifecycle occurs when it is initially inst
 If the `schema_version` of the module is present in the database, then the following two phases are skipped because it is assumed that the module schema and data has already been initialized in a previous installation. When a phase is skipped, your module will move on to the [Upgrade phase](#upgrade-phase).
 
 #### Schema Installation Phase
-The schema installation phase is the first phase your module goes through when it is initially installed. During this phase, the `install` function will be executed for any class that implement `\Magento\Framework\Setup\InstallSchemaInterface`:
+The schema installation phase is the first phase your module goes through when it is initially installed. During this phase, the `install` function will be executed in the `InstallSchema` class implementing the `\Magento\Framework\Setup\InstallSchemaInterface`:
 
 ~~~
 // File Location: <module_root_directory>/Setup/InstallSchema.php
@@ -56,7 +68,7 @@ When the schema installation phase completes, your module will continue to the [
 
 The data installation phase occurs only after your module has completed the Schema Installation, Schema Upgrade, and Schema Recurring phases. The purpose of this phase is to add initial data to the database for your module.
 
-During this phase, the `install` function will be executed for any class that implement `Magento\Framework\Setup\InstallDataInterface`:
+During this phase, the `install` function will be executed in the `InstallData` class implementing the `Magento\Framework\Setup\InstallDataInterface`:
 
 ~~~
 // Location: <module_root_directory>/Setup/InstallData.php
@@ -84,7 +96,7 @@ The Upgrade phases always occurs after the [Installation phases](#installation-p
 
 The Schema Upgrade phase runs after the [Schema Installation phase](#schema-installation-phase)(whether the installation phase occurred or not) and when current version is out of date. The purpose of the Schema Upgrade phase is usually to update the database structure.
 
-During this phase, the `upgrade` function will be executed for any class that implements `Magento\Framework\Setup\UpgradeSchemaInterface`:
+During this phase, the `upgrade` function will be executed in the `UpgradeSchema` class implementing the  `Magento\Framework\Setup\UpgradeSchemaInterface`:
 
 ~~~
 // Location: <module_root_directory>/Setup/UpgradeSchema.php
@@ -109,7 +121,7 @@ When the schema upgrade phase completes, your module will continue to the [Schem
 
 The data upgrade phase runs after the [data installation phase](#data-installation-phase) and when version is more current than the installed version. The purpose of the data upgrade phase is usually to fix data that has been corrupted or populate a new data field from a schema change.
 
-During this phase, the `upgrade` function will be executed for any class that implements `Magento\Framework\Setup\UpgradeDataInterface`:
+During this phase, the `upgrade` function will be executed in the `UpgradeData` class implementing the  `Magento\Framework\Setup\UpgradeDataInterface`:
 
 ~~~
 //<module_root_directory>/Setup/UpgradeData.php
@@ -136,7 +148,7 @@ During the install, re-install, and upgrade process, the recurring phases are al
 
 Your module goes through the schema recurring phase following the schema [installation](#schema-installation-phase) and [upgrade](#schema-upgrade-phase) phases. The purpose of this phase is usually to do final modifications to the database schema after the schema has been installed or updated.
 
-During this phase, the `install` function will be executed for the Recurring class implementing the `Magento\Framework\Setup\InstallSchemaInterface`:
+During this phase, the `install` function will be executed in the Recurring class implementing the `Magento\Framework\Setup\InstallSchemaInterface`:
 
 ~~~
 // Location: <module_root_directory>/Setup/Recurring.php
@@ -161,7 +173,7 @@ When the schema recurring phase has completed, your module's schema is fully ini
 
 Your module goes through the data recurring phase after the data [installation](#data-installation-phase) and [upgrade](#data-upgrade-phase) phases. The purpose of this phase is usually to do final modifications to the database store after data has been installed or updated.
 
-During this phase, the `install` function will be executed for the `RecurringData` class implementing the `Magento\Framework\Setup\InstallDataInterface`:
+During this phase, the `install` function will be executed in the `RecurringData` class implementing the `Magento\Framework\Setup\InstallDataInterface`:
 
 ~~~
 // Location: <module_root_directory>/Setup/RecurringData.php
@@ -190,7 +202,7 @@ The uninstall phase begins when you uninstall your module using the [Component M
 
 In this phase, your module should remove all traces of its existence in the database; e.g. dropping tables, deleting data, or restoring data.
 
-During this phase, the `uninstall` function will be executed for the `Uninstall` class implementing the `Magento\Framework\Setup\UninstallInterface`:
+During this phase, the `uninstall` function will be executed in the `Uninstall` class implementing the `Magento\Framework\Setup\UninstallInterface`:
 
 ~~~
 // Location: <module_root_directory>/Setup/Uninstall.php
