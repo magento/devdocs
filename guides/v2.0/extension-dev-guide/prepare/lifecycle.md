@@ -182,13 +182,35 @@ When the data recurring phase has completed, your module's data store is fully i
 
 ### Working Phase
 
-Working phase content.
+The working phase occurs after your module has been [installed](#installation-phases) or [upgraded](#upgrade-phases). In this phase, your module's core code is executed by the Magento application to perform its business function. For most of its lifetime, your module will be in this phase until it is disabled or  [uninstalled](#uninstall-phases).
 
 ### Uninstall Phase
 
-Unintstall phase content.
+The uninstall phase begins when you uninstall your module using the [Component Manager](#{{site.gdeurl}}comp-mgr/compman-uninst.html) or by running the command `bin/magento module:uninstall --remove-data <module_name>`.
 
-#### Uninstall vs Disable
+In this phase, your module should remove all traces of its existence in the database; e.g. dropping tables, deleting data, or restoring data.
+
+During this phase, the `uninstall` function will be executed for the `Uninstall` class implementing the `Magento\Framework\Setup\UninstallInterface`:
+
+~~~
+// Location: <module_root_directory>/Setup/Uninstall.php
+
+class \<Vendor>\<Module>\Setup\Uninstall implements \Magento\Framework\Setup\UninstallInterface
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function uninstall(SchemaSetupInterface $setup, ModuleContextInterface $context)
+    {
+        ...
+    }
+}
+~~~
+
+<div class="bs-callout bs-callout-warning" id="uninstall-disabled">
+  <b>Uninstalling disabled modules</b>
+  <p>A disabled module's uninstall routine can still be invoked when it is uninstalled. This means that module specific configurations such as dependency injection configurations and event/observer configurations will not be available and can cause problems. To avoid this, uninstall classes should not have dependencies on them.</p>
+</div>
 
 ### Lifecycle Class Requirements
 
