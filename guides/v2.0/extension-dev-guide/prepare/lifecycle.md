@@ -158,6 +158,61 @@ When the data upgrade phase completes, your module will continue to the [data re
 
 ---
 
+### Setup Resource Models
+
+Magento provides `ModuleDataSetupInterface` and `ModuleContextInterface` to assist with database manipulations. However, if the installation/upgrade is too complex, more classes may be created to handle all the logic. In these cases, you can pass the `ModuleDataSetupInterface` resource to other classes that may require DB manipulations.
+
+~~~
+class InstallData implements InstallDataInterface
+{
+    /**
+     * @var CustomerFactory
+     */
+    private $customerSetupFactory;
+
+    /**
+     * @param CustomerFactory $customerSetupFactory
+     */
+    public function __construct(CustomerFactory $customerSetupFactory)
+    {
+        $this->customerSetupFactory = $customerSetupFactory;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
+    {
+        /** @var Customer $customerSetup */
+        $customerSetup = $this->customerSetupFactory->create(['setup' => $setup]);
+
+        $setup->startSetup();
+        $customerSetup->installEntities();
+        ...
+    }
+}
+~~~
+
+---
+
+### Module context
+
+In order to add more logic to your install/upgrade classes, you can use `ModuleContextInterface` provided by Magento. The context provides module information, such as current module version, to help add logic to your class.
+
+~~~
+class \Magento\Cms\Setup\InstallData implements \Magento\Framework\Setup\UpgradeDataInterface
+{
+   public function upgrade(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
+   {
+        if (version_compare($context->getVersion(), '1.0.0', '<')) {
+            ...
+        }
+   }
+}
+~~~
+
+---
+
 ### Recurring Phase
 
 During the install, re-install, and upgrade process, the recurring phases are always the last phases your module will go through for schema and data. This phase is run regardless of whether any of the previous phases have executed.
