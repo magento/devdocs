@@ -1,6 +1,6 @@
 ---
 layout: default
-group: release-notes
+group: 
 subgroup: 
 github_link: release-notes/ReleaseNotes2.0.3CE.md
 redirect_from: 
