@@ -56,7 +56,7 @@ The following figure shows an example:
 The basic view of all Magento storefront pages in defined in two page configuration layout files located in the Magento_Theme module: 
 
 * `<Magento_Theme_module_dir>/view/frontend/layout/default.xml`: defines the page layout. 
-* `<Magento_Theme_module_dir>/view/frontend/layout/default_head_blocks.xml`: defines the scripts, images, and meta data included in pages' headers. 
+* `<Magento_Theme_module_dir>/view/frontend/layout/default_head_blocks.xml`: defines the scripts, images, and meta data included in pages' `<head>` section. 
 
 These basic page configuration layouts are extended in other Magento modules and in Magento themes.
 
