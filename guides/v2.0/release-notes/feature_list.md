@@ -12,7 +12,7 @@ contributor_link: https://github.com/magento-hackathon
 <h2 id="general_features">
     General Features
 </h2>
-<h3>Marketing, Promotions and Conversion Tools</h3>
+<h3>Marketing, Promotions, and Conversion Tools</h3>
 <table class="custom-table">
     <colgroup>
         <col class="primary-item"></col>
