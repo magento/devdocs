@@ -263,12 +263,6 @@ When the data recurring phase has completed, your module's data store is fully i
 
 ---
 
-### Working phase
-
-The working phase occurs after your module has been [installed](#installation-phases) or [upgraded](#upgrade-phases). In this phase, your module's core code is executed by the Magento application to perform its business function. For most of its lifetime, your module will be in this phase until it is [disabled](#disable-and-enable-phases) or  [uninstalled](#uninstall-phases).
-
----
-
 ### Uninstall phase
 
 The uninstall phase begins when you uninstall your module using the [Component Manager](#{{site.gdeurl}}comp-mgr/compman-uninst.html) or by running the command `bin/magento module:uninstall --remove-data <module_name>`.
