@@ -19,7 +19,6 @@ github_link: extension-dev-guide/prepare/lifecycle.md
 Your component's lifecycle is the series of phases it goes through while it is associated with the Magento application. The [module component type]({{site.gdeurl}}architecture/archi_perspectives/components/modules/mod_intro.html) is the only type that need to worry about lifecycle phases. During each of these phases, your module can perform database initialization tasks, upgrade tasks, clean up tasks, and so on.
 
 <div class="bs-callout bs-callout-info" id="other-component-types">
-  <b>Other Module Types</b>
   <p>Since theme components and language packages generally do not need to install a database schema or update data in the database, they do not need to worry about their lifecycle phases.</p>
 </div>
 
@@ -274,7 +273,6 @@ class \<Vendor>\<Module>\Setup\Uninstall implements \Magento\Framework\Setup\Uni
 ~~~
 
 <div class="bs-callout bs-callout-warning" id="uninstall-disabled">
-  <b>Uninstalling disabled modules</b>
   <p>A disabled module's uninstall routine can still be invoked when it is uninstalled. This means that module specific configurations such as dependency injection configurations and event/observer configurations will not be available and can cause problems. To avoid this, uninstall classes should not have dependencies on them.</p>
 </div>
 
