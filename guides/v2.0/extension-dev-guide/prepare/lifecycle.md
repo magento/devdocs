@@ -25,7 +25,7 @@ Your extension's lifecycle is the series of phases it goes through while it is a
 
 ---
 
-### Schema and Data Initialization
+### Schema and data initialization
 
 When your module is installed, re-installed, or upgraded, it goes through an initialization process for its schema and then its data.
 
@@ -43,7 +43,7 @@ After the schema initialization completes, your module goes through the data ini
 
 ---
 
-### Lifecycle Class Rules
+### Lifecycle class rules
 
 In order for Magento to detect the classes you are using to hook into the different lifecycle phases, you must follow these standards:
 
@@ -51,13 +51,13 @@ In order for Magento to detect the classes you are using to hook into the differ
 * The class must use the specific name for the phase it will be executed in. To determine the correct class name to use, please see the specific examples below.
 * The class must implement the specific class interface for the phase it will be executed in. To determine the correct interface to use, please see the specific examples below.
 
-### Installation Phases
+### Installation phases
 
 The installation phase of your module lifecycle occurs when it is initially installed or reinstalled. This happens after your extension has been automatically installed from the [Magento Marketplace](https://www.magentocommerce.com/magento-connect){:target="_blank"} or manually installed with the command: `bin/magento setup:upgrade`.
 
 If the `schema_version` of the module is present in the database, then the following two phases are skipped because it is assumed that the module schema and data has already been initialized in a previous installation. When a phase is skipped, your module will move on to the [upgrade phase](#upgrade-phase).
 
-#### Schema Installation Phase
+#### Schema installation phase
 The schema installation phase is the first phase your module goes through when it is initially installed. During this phase, the `install` function will be executed in the `InstallSchema` class implementing the `\Magento\Framework\Setup\InstallSchemaInterface`:
 
 ~~~
@@ -78,7 +78,7 @@ class \<Vendor>\<Module>\Setup\InstallSchema implements \Magento\Framework\Setup
 
 When the schema installation phase completes, your module will continue to the [Schema Upgrade phase](#schema-upgrade-phase).
 
-#### Data Installation Phase
+#### Data installation phase
 
 The data installation phase occurs only after your module has completed the schema installation, schema upgrade, and schema recurring phases. The purpose of this phase is to add initial data to the database for your module.
 
@@ -104,11 +104,11 @@ When the data installation phase completes, your module will continue to the [da
 
 ---
 
-### Upgrade Phases
+### Upgrade phases
 
 The upgrade phases always occurs after the [installation phases](#installation-phases) successfully runs. If the schema or data Installation phase was skipped because it detected a previous installation, Magento will check the current module's version to see if it should run the upgrade phase or skip to the [recurring phases](#recurring-phases).
 
-#### Schema Upgrade Phase
+#### Schema upgrade phase
 
 The schema upgrade phase runs after the [schema installation phase](#schema-installation-phase)(whether the installation phase occurred or not) and when current version is out of date. The purpose of the schema upgrade phase is usually to update the database structure.
 
@@ -131,7 +131,7 @@ class \<Vendor>\<Module>\Setup\UpgradeSchema implements \Magento\Framework\Setup
 
 When the schema upgrade phase completes, your module will continue to the [schema recurring phase](#schema-recurring-phase).
 
-#### Data Upgrade Phase
+#### Data upgrade phase
 
 The data upgrade phase runs after the [data installation phase](#data-installation-phase) and when version is more current than the installed version. The purpose of the data upgrade phase is usually to fix data that has been corrupted or populate a new data field from a schema change.
 
@@ -156,7 +156,7 @@ When the data upgrade phase completes, your module will continue to the [data re
 
 ---
 
-### Setup Resource Models
+### Setup resource models
 
 Magento provides `ModuleDataSetupInterface` and `ModuleContextInterface` to assist with database manipulations. However, if the installation/upgrade is too complex, more classes may be created to handle all the logic. In these cases, you can pass the `ModuleDataSetupInterface` resource to other classes that may require DB manipulations.
 
@@ -211,11 +211,11 @@ class \Magento\Cms\Setup\InstallData implements \Magento\Framework\Setup\Upgrade
 
 ---
 
-### Recurring Phase
+### Recurring phase
 
 During the install, re-install, and upgrade process, the recurring phases are always the last phases your module will go through for schema and data. This phase is run regardless of whether any of the previous phases have executed.
 
-#### Schema Recurring Phase
+#### Schema recurring phase
 
 Your module goes through the schema recurring phase following the schema [installation](#schema-installation-phase) and [upgrade](#schema-upgrade-phase) phases. The purpose of this phase is usually to do final modifications to the database schema after the schema has been installed or updated.
 
@@ -238,7 +238,7 @@ class \<Vendor>\<Module>\Setup\Recurring implements \Magento\Framework\Setup\Ins
 
 When the schema recurring phase has completed, your module's schema is fully initialized and updated. The next phase it goes through is the [data intallation phase](#data-installation-phase) which begins the data initialization process.
 
-#### Data Recurring Phase
+#### Data recurring phase
 
 Your module goes through the data recurring phase after the data [installation](#data-installation-phase) and [upgrade](#data-upgrade-phase) phases. The purpose of this phase is usually to do final modifications to the database store after data has been installed or updated.
 
@@ -263,13 +263,13 @@ When the data recurring phase has completed, your module's data store is fully i
 
 ---
 
-### Working Phase
+### Working phase
 
 The working phase occurs after your module has been [installed](#installation-phases) or [upgraded](#upgrade-phases). In this phase, your module's core code is executed by the Magento application to perform its business function. For most of its lifetime, your module will be in this phase until it is [disabled](#disable-and-enable-phases) or  [uninstalled](#uninstall-phases).
 
 ---
 
-### Uninstall Phase
+### Uninstall phase
 
 The uninstall phase begins when you uninstall your module using the [Component Manager](#{{site.gdeurl}}comp-mgr/compman-uninst.html) or by running the command `bin/magento module:uninstall --remove-data <module_name>`.
 
