@@ -1,7 +1,7 @@
 ---
 layout: default
-group: test-guide
-subgroup: A5_Running_Unit_Tests
+group: unit-testing
+subgroup: 40_Running_Unit_Tests
 title: Writing Testable Code
 menu_title: Writing Testable Code
 menu_node: parent
