@@ -730,6 +730,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/maint-mode.html">Maintenance mode options for upgrade</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/tshoot_backup.html">Troubleshoot backups</a></li>
 
 									
@@ -858,35 +866,13 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<h2 id="compman-overview">Overview of System Upgrade</h2>
-<p>This section discusses how to start System Upgrade, which upgrades the version of Magento core components as well as any other installed components.</p>
-
-<p>You can upgrade in any of the following ways:</p>
-
-<ul>
-  <li>
-    <p>Using the System Upgrade utility, a wizard that walks you through the upgrade step by step; continue with this topic.</p>
-
-    <p>Use this method if you don’t have access to the Magento server’s file system or if you’re a non-technical user.</p>
-  </li>
-  <li>
-    <p>Using the <a href="/guides/v2.0/comp-mgr/cli/cli-upgrade.html">command line</a>.</p>
-
-    <p>This upgrade method is more advanced and it requires access to the Magento server’s file system.	</p>
-  </li>
-</ul>
-
-<div class="bs-callout bs-callout-info" id="info">
-	<p><em>System upgrade</em> refers to updating the Magento 2.x core components and other installed components. To migrate from Magento 1.x to Magento 2, see the <a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a>.</p>
-</div>
-
-<div class="bs-callout bs-callout-warning">
-    <ul><li>Authorization keys from a <a href="http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html" target="_blank">shared account</a> <em>cannot</em> be used for upgrade. You must get your authorization keys from <code>magento.com</code> account owner.</li>
-    	<li>If you installed the Magento application by <a href="/guides/v2.0/install-gde/prereq/dev_install.html">cloning the GitHub repository</a>, you <em>cannot</em> use the System Upgrade utility to upgrade the software. Instead, you must <a href="/guides/v2.0/install-gde/install/cli/dev_options.html">update it manually</a>.</li></ul>
-</div>
-
-<h2 id="compman-prereq">Prerequisites</h2>
+		<h2 id="compman-prereq">Prerequisites</h2>
 <p>Before continuing, complete all tasks discussed in <a href="/guides/v2.0/comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.</p>
+
+<h2 id="optional-custom-maintenance-page">Optional custom maintenance page</h2>
+<p>During the time you’re upgrading, your storefront is partially available. Users can see a list of files and so on but cannot shop or check out.</p>
+
+<p>To avoid the appearance of a disabled site and to set up a custom maintenance page that displays during the upgrade, see <a href="/guides/v2.0/comp-mgr/trouble/cman/maint-mode.html">Maintenance mode options for upgrade</a>.</p>
 
 <h2 id="compman-access">Start System Upgrade from the Magento Admin</h2>
 <p>To run System Upgrade:</p>

@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Error upgrading from CE to EE</title>
+	<title>Maintenance mode options for upgrade</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/comp-mgr/trouble/cman/ce-ee-upgrade.html">
+	<link rel="canonical" href="//guides/v2.0/comp-mgr/trouble/cman/maint-mode.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -139,9 +139,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Error upgrading from CE to EE</h1>
+		<h1 class="page-heading">Maintenance mode options for upgrade</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/comp-mgr/trouble/cman/ce-ee-upgrade.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/comp-mgr/trouble/cman/maint-mode.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -730,7 +730,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/maint-mode.html">Maintenance mode options for upgrade</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/comp-mgr/trouble/cman/maint-mode.html">Maintenance mode options for upgrade</a></li>
 
 									
 
@@ -746,7 +746,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/comp-mgr/trouble/cman/ce-ee-upgrade.html">Error upgrading from CE to EE</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/ce-ee-upgrade.html">Error upgrading from CE to EE</a></li>
 
 									
 
@@ -866,29 +866,169 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<h3 id="ce-ee">Problem: Error upgrading from CE to EE</h3>
-<p>Your upgrade from Magento Community Edition (CE) to Enterprise Edition (EE) might fail with the following error:</p>
+		<h2 id="maintenance-mode-options-for-upgrade">Maintenance mode options for upgrade</h2>
+<p>This topic discusses how you can create a custom maintenance page to display to users while your Magento application is being upgraded. Creating a custom page is optional but recommended because your site is accessible during part of the upgrade.</p>
 
-<pre><code>[2016-01-19 23:33:24 UTC] An error occurred while executing job 
-"setup:upgrade {"command":"setup:upgrade"}": Could not complete 
-setup:upgrade {"command":"setup:upgrade"} successfully: Source 
-class "\Cybersource" for "CybersourceLogger" generation does not exist.
-</code></pre>
+<p>Creating a custom page to which to redirect users prevents any access to the site and also informs your users that the site is undergoing maintenance.</p>
 
-<p>If this error displays, resolve it as follows:</p>
+<div class="bs-callout bs-callout-info" id="info">
+  <p>You must perform the tasks in this section as a user with <code>root</code> privileges.</p>
+</div>
+
+<p>See one of the following sections for more information:</p>
+
+<ul>
+  <li><a href="#compman-trouble-maint-create">Create the custom maintenance page</a></li>
+  <li><a href="#compman-trouble-maint-apache">Custom maintenance page for Apache</a></li>
+  <li><a href="#compman-trouble-maint-nginx">Custom maintenance page for nginx</a></li>
+</ul>
+
+<h2 id="compman-trouble-maint-create">Create the custom maintenance page</h2>
+<p>To create a maintenance page and redirect to it, first create a maintenance page named:</p>
+
+<ul>
+  <li>Apache: <code>&lt;web server docroot&gt;/maintenance.html</code></li>
+  <li>nginx: <code>&lt;your Magento install dir&gt;/maintenance.html</code></li>
+</ul>
+
+<p>Add to it the following contents:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;title&gt;</span>Temporarily Offline<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">&quot;Content-Type&quot;</span> <span class="na">content=</span><span class="s">&quot;text/html; charset=UTF-8&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;style&gt;</span>
+<span class="nt">h1</span>
+<span class="p">{</span> <span class="k">font-size</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nt">body</span>
+<span class="p">{</span> <span class="k">text-align</span><span class="o">:</span><span class="k">center</span><span class="p">;</span> <span class="k">font</span><span class="o">:</span> <span class="m">20px</span> <span class="n">Helvetica</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span> <span class="k">color</span><span class="o">:</span> <span class="m">#333</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;h1&gt;</span>Temporarily offline<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;p&gt;</span>We&#39;re down for a short time to perform maintenance on our site to give you the best possible experience. Check back soon!<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre></div>
+
+<h2 id="compman-trouble-maint-apache">Custom maintenance page for Apache</h2>
+<p>This section discusses how to create a custom maintenance page and how to redirect traffic to it.</p>
+
+<p>The example in this section shows how to modify the following files, which is one way to set up your maintenance page:</p>
+
+<ul>
+  <li>Apache 2.4: <code>/etc/apache2/sites-available/000-default.conf</code></li>
+  <li>Apache 2.2: <code>/etc/apache2/sites-available/default</code> (Ubuntu), <code>/etc/httpd/conf/httpd.conf</code> (CentOS)</li>
+</ul>
+
+<p>To redirect traffic to a custom maintenance page:</p>
 
 <ol>
-  <li>Log in to your Magento server as the Magento file system owner.</li>
   <li>
-    <p>Enter the following commands in the order shown:</p>
+    <p>Update your Apache configuration to do the following:</p>
 
-    <pre><code>php &lt;your Magento install dir&gt;/bin/magento setup:upgrade
+    <ul>
+      <li>Redirect all traffic to the maintenance page</li>
+      <li>Whitelist certain IPs so an administrator can run the System Upgrade utility to upgrade the Magento software.</li>
+    </ul>
+
+    <p>The following example whitelists 192.0.2.110.</p>
+
+    <p>Add the following at the end of your Apache configuration file:</p>
+
+    <pre><code>RewriteEngine On
+RewriteCond %{REMOTE_ADDR} !^192\.0\.2\.110
+RewriteCond %{DOCUMENT_ROOT}/maintenance.html -f
+RewriteCond %{DOCUMENT_ROOT}/maintenance.enable -f
+RewriteCond %{SCRIPT_FILENAME} !maintenance.html
+RewriteRule ^.*$ /maintenance.html [R=503,L]
+ErrorDocument 503 /maintenance.html
+Header Set Cache-Control "max-age=0, no-store"
 </code></pre>
   </li>
   <li>
-    <p>After the command completes, verify your upgrade was successful:</p>
+    <p>Restart Apache:</p>
 
-    <pre><code>php bin/magento --version
+    <ul>
+      <li>CentOS: <code>service httpd restart</code></li>
+      <li>Ubuntu: <code>service apache2 restart</code></li>
+    </ul>
+  </li>
+  <li>
+    <p>Enter the following command:</p>
+
+    <pre><code> touch &lt;web server docroot&gt;/maintenance.enable
+</code></pre>
+  </li>
+  <li><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">Upgrade your system</a>.</li>
+  <li>Test your site to make sure it functions correctly.</li>
+  <li>After the upgrade is done, delete <code>maintenance.enable</code>.</li>
+</ol>
+
+<h2 id="compman-trouble-maint-nginx">Custom maintenance page for nginx</h2>
+<p>This section discusses how to create a custom maintenance page and how to redirect traffic to it.</p>
+
+<p>To redirect traffic to a custom maintenance page:</p>
+
+<ol>
+  <li>Use a text editor to open the nginx configuration file that contains your server block.</li>
+  <li>
+    <p>Add the following to the server block (<code>server</code> is shown for clarity only; don’t add a second server block).</p>
+
+    <p>The following whitelists IP address 192.0.2.110 and 192.0.2.115 on a system where Magento is installed in <code>/var/www/html/magento2</code>:</p>
+
+    <pre><code>server {
+listen 80;
+set $MAGE_ROOT /var/www/html/magento2;
+
+set $maintenance off;
+
+if (-f $MAGE_ROOT/maintenance.enable) {
+set $maintenance on; 
+}
+
+if ($remote_addr ~ (192.0.2.110|192.0.2.115)) {
+set $maintenance off;
+}
+
+if ($maintenance = on) {
+return 503;
+}
+
+location /maintenance {
+}
+
+error_page 503 @maintenance;
+
+location @maintenance {
+root $MAGE_ROOT;
+rewrite ^(.*)$ /maintenance.html break;
+
+include /var/www/html/magento2/nginx.conf;
+}
+</code></pre>
+  </li>
+  <li>
+    <p>Enter the following command:</p>
+
+    <pre><code> touch &lt;your Magento install dir&gt;/maintenance.enable
+</code></pre>
+  </li>
+  <li>
+    <p>Reload the nginx configuration:</p>
+
+    <pre><code> service nginx reload
+</code></pre>
+  </li>
+  <li><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">Upgrade your system</a>.</li>
+  <li>Test your site to make sure it functions correctly.</li>
+  <li>After the upgrade is done, delete or rename <code>maintenance.enable</code></li>
+  <li>
+    <p>Reload the nginx configuration:</p>
+
+    <pre><code>service nginx reload
 </code></pre>
   </li>
 </ol>
