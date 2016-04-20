@@ -23,8 +23,6 @@ Your extension's lifecycle is the series of phases it goes through while it is a
   <p>Since theme extensions and language packages generally do not need to install a database schema or update data in the database, they do not need to worry about their lifecycle phases.</p>
 </div>
 
----
-
 ### Schema and data initialization
 
 When your module is installed, re-installed, or upgraded, it goes through an initialization process for its schema and then its data.
@@ -40,8 +38,6 @@ After the schema initialization completes, your module goes through the data ini
 1. [Data installation](#data-installation-phase)
 2. [Data upgrade](#data-upgrade-phase)
 3. [Data recurring](#data-recurring-phase)
-
----
 
 ### Lifecycle class rules
 
@@ -102,8 +98,6 @@ class \<Vendor>\<Module>\Setup\InstallData implements \Magento\Framework\Setup\I
 
 When the data installation phase completes, your module will continue to the [data upgrade phase](#data-upgrade-phase).
 
----
-
 ### Upgrade phases
 
 The upgrade phases always occurs after the [installation phases](#installation-phases) successfully runs. If the schema or data Installation phase was skipped because it detected a previous installation, Magento will check the current module's version to see if it should run the upgrade phase or skip to the [recurring phases](#recurring-phases).
@@ -154,8 +148,6 @@ class \<Vendor>\<Module>\Setup\UpgradeData implements \Magento\Framework\Setup\U
 
 When the data upgrade phase completes, your module will continue to the [data recurring phase](#data-recurring-phase).
 
----
-
 ### Setup resource models
 
 Magento provides `ModuleDataSetupInterface` and `ModuleContextInterface` to assist with database manipulations. However, if the installation/upgrade is too complex, more classes may be created to handle all the logic. In these cases, you can pass the `ModuleDataSetupInterface` resource to other classes that may require DB manipulations.
@@ -191,8 +183,6 @@ class InstallData implements InstallDataInterface
 }
 ~~~
 
----
-
 ### Module context
 
 In order to add more logic to your install/upgrade classes, you can use `ModuleContextInterface` provided by Magento. The context provides module information, such as current module version, to help add logic to your class.
@@ -208,8 +198,6 @@ class \Magento\Cms\Setup\InstallData implements \Magento\Framework\Setup\Upgrade
    }
 }
 ~~~
-
----
 
 ### Recurring phase
 
@@ -261,7 +249,6 @@ class \<Vendor>\<Module>\Setup\RecurringData implements \Magento\Framework\Setup
 
 When the data recurring phase has completed, your module's data store is fully initialized and updated. The next phase for your module is the [working phase](#working-phase).
 
----
 
 ### Uninstall phase
 
@@ -290,7 +277,5 @@ class \<Vendor>\<Module>\Setup\Uninstall implements \Magento\Framework\Setup\Uni
   <b>Uninstalling disabled modules</b>
   <p>A disabled module's uninstall routine can still be invoked when it is uninstalled. This means that module specific configurations such as dependency injection configurations and event/observer configurations will not be available and can cause problems. To avoid this, uninstall classes should not have dependencies on them.</p>
 </div>
-
----
 
 **Related Topics**
