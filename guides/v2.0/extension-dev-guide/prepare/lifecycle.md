@@ -16,7 +16,7 @@ github_link: extension-dev-guide/prepare/lifecycle.md
 
 ### Overview
 
-Your extension's lifecycle is the series of phases it goes through while it is associated with the Magento application. The module extension type is the only type that need to worry about lifecycle phases. During each of these phases, your extension's modules can perform database initialization tasks, upgrade tasks, clean up tasks, etc.
+Your extension's lifecycle is the series of phases it goes through while it is associated with the Magento application. The module extension type is the only type that need to worry about lifecycle phases. During each of these phases, your extension's modules can perform database initialization tasks, upgrade tasks, clean up tasks, and so on.
 
 <div class="bs-callout bs-callout-info" id="other-extension-types">
   <b>Other Extension Types</b>
@@ -41,11 +41,11 @@ After the schema initialization completes, your module goes through the data ini
 
 ### Lifecycle class rules
 
-In order for Magento to detect the classes you are using to hook into the different lifecycle phases, you must follow these standards:
+Magento will detect the classes you are using to hook into the different lifecycle phases when you follow these rules:
 
-* The class should be in the `Setup` folder in your module's root directory with the appropriate file name. For the correct file name, please see the specific examples below.
-* The class must use the specific name for the phase it will be executed in. To determine the correct class name to use, please see the specific examples below.
-* The class must implement the specific class interface for the phase it will be executed in. To determine the correct interface to use, please see the specific examples below.
+* The class should be in the `Setup` directory in your module's root directory with the appropriate file name. For the correct file name, please see the specific examples below.
+* The class must use the specific name for the phase in which it will be executed in. To determine the correct class name to use, please see the specific examples below.
+* The class must implement the specific class interface for the phase in which it will be executed in. To determine the correct interface to use, please see the specific examples below.
 
 ### Installation phases
 
@@ -185,7 +185,7 @@ class InstallData implements InstallDataInterface
 
 ### Module context
 
-In order to add more logic to your install/upgrade classes, you can use `ModuleContextInterface` provided by Magento. The context provides module information, such as current module version, to help add logic to your class.
+To add more logic to your install/upgrade classes, you can use `ModuleContextInterface` provided by Magento. The context provides module information, such as current module version, to help add logic to your class.
 
 ~~~
 class \Magento\Cms\Setup\InstallData implements \Magento\Framework\Setup\UpgradeDataInterface
