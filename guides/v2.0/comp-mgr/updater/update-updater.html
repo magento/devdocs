@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Step 2. Readiness check</title>
+	<title>Update the updater application</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/comp-mgr/upgrader/upgrade-readiness.html">
+	<link rel="canonical" href="//guides/v2.0/comp-mgr/updater/update-updater.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -139,9 +139,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Step 2. Readiness check</h1>
+		<h1 class="page-heading">Update the updater application</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/comp-mgr/upgrader/upgrade-readiness.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/comp-mgr/updater/update-updater.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -588,7 +588,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-readiness.html">Step 2. Readiness check</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-readiness.html">Step 2. Readiness check</a></li>
 
 									
 
@@ -671,7 +671,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/comp-mgr/updater/update-updater.html">Update the updater application</a></li>
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/comp-mgr/updater/update-updater.html">Update the updater application</a></li>
 									
 								
 
@@ -893,41 +893,30 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<h2 id="upgrade-readiness-over">Readiness check overview</h2>
-<p>The readiness check makes sure your server and environment are set up correctly for upgrading components. In the event of errors, you can consult troubleshooting suggestions in this guide.</p>
+		<h2 id="update-the-updater-application">Update the updater application</h2>
+<p>In some cases, you might need to update the updater application, which is responsible for updating components and the Magento application. You should do this only if instructed to do so.</p>
 
-<h2 id="compman-readiness-start">Start the readiness check</h2>
-<p>To start, click either <strong>Start Readiness Check</strong> or <strong>Next</strong> on the System Upgrade page. A sample follows.</p>
+<p>To update the updater application:</p>
 
-<p><img src="/common/images/upgr_readiness.png" width="650px" alt="The readiness check enables you to find out if your server and environment are ready to proceed" /></p>
+<ol>
+  <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
+  <li>
+    <p>Delete, move, or rename the directory containing the updater application.</p>
 
-<p>See one of the following:</p>
+    <p>For example,</p>
 
-<ul>
-  <li><a href="#compman-readiness-success">Success</a></li>
-  <li><a href="#compman-readiness-fail">Failure</a></li>
-</ul>
+    <pre><code>mv &lt;your Magento install dir&gt;/update &lt;your Magento install dir&gt;/old_update
+</code></pre>
+  </li>
+  <li>
+    <p>Change to your Magento 2 installation directory and enter the following command:</p>
 
-<h3 id="compman-readiness-success">Success</h3>
-<p>The following figure shows an example of a successful readiness check. If all tests passed, click <strong>Next</strong> and continue with <a href="/guides/v2.0/comp-mgr/upgrader/upgrade-backup.html">Step 3. Backup</a>.</p>
-
-<p><img src="/common/images/upgr_readiness-success.png" width="700px" alt="If all readiness checks pass, click Next and continue with the next step" /></p>
-
-<h3 id="compman-readiness-fail">Failure</h3>
-<p>Messages similar to the following display if any readiness check fails. </p>
-
-<p><img src="/common/images/upgr_readiness-fail.png" alt="You must resolve all readiness check failures before you continue" /></p>
-
-<p>In the event of failure, see one of the following sections:</p>
-
-<ul>
-  <li><a href="/guides/v2.0/comp-mgr/trouble/cman/updater.html">Updater check failure</a></li>
-  <li><a href="/guides/v2.0/comp-mgr/trouble/cman/cron.html">Cron script check failure</a></li>
-  <li><a href="/guides/v2.0/comp-mgr/trouble/cman/component-depend.html">Component dependency check failure</a></li>
-  <li><a href="/guides/v2.0/install-gde/system-requirements.html">PHP version check failure</a></li>
-  <li><a href="/guides/v2.0/install-gde/trouble/php/tshoot_php-set.html">PHP settings check failure</a></li>
-  <li><a href="/guides/v2.0/install-gde/system-requirements.html">PHP extensions check failure</a></li>
-</ul>
+    <pre><code>composer create-project magento/updater update --repository https://repo.magento.com
+</code></pre>
+  </li>
+  <li>If prompted, enter your Magento <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">authentication keys</a>.</li>
+  <li>Wait while Composer installs the updater and its dependencies.</li>
+</ol>
 
 
 		</div>
