@@ -22,7 +22,10 @@ The fallback order is slightly different for static assets (CSS, JavaScript, fon
 For comprehensive information about developing theme components, see
 subsequent chapters in this guide.
 
-<h2>Set a parent theme</h2>
+* TOC
+{:toc}
+
+## Set a parent theme
 
 A parent theme is specified in the child theme `theme.xml` declaration file.
 
@@ -43,8 +46,11 @@ the Orange theme by OrangeCo inherits from the Magento Blank theme. The inherita
   <p>A parent and a child theme can belong to different vendors. For example, your custom theme can inherit from the Magento Blank theme.</p>
 </div>
 
+## Override view.xml file
 
-<h2 id="theme-inherit-static">Override static assets</h2>
+If your theme does not contain a `view.xml` configuration file, it will be inherited from the parent theme. If you add the `<you_theme_dir>/view.xml` file in your theme, it overrides the parent's file.
+
+## Override static assets {#theme-inherit-static}
 
 Static assets, or static view files, are styles, JavaScript, images, and fonts.
 
@@ -87,7 +93,7 @@ Once the Orange Winter theme is applied, the new holiday image overrides the one
 <img src="{{ site.baseurl }}common/images/inh-background2.jpg"/>
 
 
-<h2 id="theme-inherit-templates">Override templates</h2>
+## Override templates {#theme-inherit-templates}
 
 The fallback scheme for templates is the following (module context is always known for them):
 
@@ -113,7 +119,7 @@ Having changed the order or elements in the templates, OrangeCo got the minicart
 <p><img src="{{ site.baseurl }}common/images/inherit_mini2.png" alt="In the minishopping cart products are listed above the Go to Checkout button "></p>
 You can find out what exactly code changes are required to perform this and other tasks in the <a href="{{site.gdeurl}}frontend-dev-guide/templates/template-sample.html">Illustration of customizing templates topic</a>. 
 
-<h2 id="theme-inherit-layout">Extend layouts</h2>
+## Extend layouts {#theme-inherit-layout}
 
 The layouts processing mechanism does not involve fallback. The system collects layout files in the following order:
 
@@ -145,7 +151,7 @@ To do this, they added an extending layout in `app/design/frontend/OrangeCo/oran
 
 For more information about extending layout refer to the <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a> article.
 
-<h3 id="theme-inherit-layout-over">Override layouts</h3>
+## Override layouts {#theme-inherit-layout-over}
 
 Though overriding layouts is not recommended, it is still possible, and might be a solution for certain customization tasks.
 To override the instructions from an ancestor theme layout file:
@@ -153,7 +159,6 @@ To override the instructions from an ancestor theme layout file:
 * Create a layout file with the same name in the `<theme_dir>/<Vendor>_<Module>/layout/override/theme/<Vendor>/<ancestor_theme>` directory.
 
 To override module layout instructions (base layout):
-
 
 * Create a layout file with the same name in the `<theme_dir>/<Vendor>_<Module>/layout/override/base` directory.
 
