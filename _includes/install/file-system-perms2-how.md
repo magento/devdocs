@@ -22,11 +22,16 @@ Use the following steps:
 
 	*	CentOS: `chown -R :apache .`
 	*	Ubuntu: `chown -R :www-data .`
+	
+	Multi-Domain Hosting examples:
+    
+    *	mydomain.com: `chown -R :mydomain .`
+    *	mylongdomain.com: `chown -R :mylongdo .`
 
 3.	Set permissions:
 
-		find . -type d -exec chmod 770 {} \; && find . -type f -exec chmod 660 {} \; && chmod u+x bin/magento
+		find . -type d -exec chmod 771 {} \; && find . -type f -exec chmod 660 {} \; && chmod u+x bin/magento; && find . -type f -name .htaccess -exec chmod o+r {} \
 
 	If you must enter the commands as `sudo`, use:
 
-		sudo find . -type d -exec chmod 770 {} \; && sudo find . -type f -exec chmod 660 {} \; && sudo chmod u+x bin/magento
+		sudo find . -type d -exec chmod 771 {} \; && sudo find . -type f -exec chmod 660 {} \; && sudo chmod u+x bin/magento; && find . -type f -name .htaccess -exec chmod o+r {} \
