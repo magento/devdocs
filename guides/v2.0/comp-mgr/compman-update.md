@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: compman
-subgroup: 17_Update
+subgroup: 08_Update
 title: Step 3. Component Update
 menu_title: Component Update
 menu_node: parent
