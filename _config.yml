@@ -52,6 +52,5 @@ incremental: true
 
 gems:
   - jekyll-redirect-from
-  - jekyll-feed
 
 exclude: ['scss','bin','node_modules','vendor']
