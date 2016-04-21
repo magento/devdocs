@@ -252,3 +252,4 @@ class \<Vendor>\<Module>\Setup\Uninstall implements \Magento\Framework\Setup\Uni
 </div>
 
 **Related Topics**
+* [Versioning policy]({{site.gdeurl}}architecture/versioning.html)
