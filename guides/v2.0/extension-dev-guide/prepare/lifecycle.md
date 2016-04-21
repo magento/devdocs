@@ -41,7 +41,9 @@ When your module is initially installed, the first thing your modules does is pe
 
 If the `schema_version` of the module is found in the `setup_modules` table, then this stage will be skipped because it is assumed that the module schema has already been initialized in a previous installation.
 
-During this stage, the `install` function will be executed in the `InstallSchema` class implementing the [`\Magento\Framework\Setup\InstallSchemaInterface`]({{site.mage2000url}}lib/internal/Magento/Framework/Setup/InstallSchemaInterface.php){:target="_blank"}:
+For example, if you are installing version 2.0.0 of your module and there have been no previous installations of your module, then schema installation will proceed. Otherwise, schema installation will be skipped and your module will begin a [schema upgrade](#schema-upgrade).
+
+During a schema installation, the `install` function will be executed in the `InstallSchema` class implementing the [`\Magento\Framework\Setup\InstallSchemaInterface`]({{site.mage2000url}}lib/internal/Magento/Framework/Setup/InstallSchemaInterface.php){:target="_blank"}:
 
 ~~~
 // File Location: <module_root_directory>/Setup/InstallSchema.php
@@ -63,9 +65,9 @@ class \<Vendor>\<Module>\Setup\InstallSchema implements \Magento\Framework\Setup
 
 If your module already has an earlier version installed in Magento, then it will perform a schema upgrade instead of an installation. The purpose of a schema upgrade is usually to update the database structure or apply patches.
 
-For example, when a new 2.0.1 version of your module is installed over a previous 2.0.0 version, your module's upgrade class will be executed instead of the installation class.
+For example, when a new 2.0.1 version of your module is installed over a previous 2.0.0 version, your module will perform a schema upgrade instead of a [schema installation](#schema-installation).
 
-During this phase, the `upgrade` function will be executed in the `UpgradeSchema` class implementing the  [`Magento\Framework\Setup\UpgradeSchemaInterface`]({{site.mage2000url}}lib/internal/Magento/Framework/Setup/UpgradeSchemaInterface.php){:target="_blank"}:
+During a schema upgrade, the `upgrade` function will be executed in the `UpgradeSchema` class implementing the  [`Magento\Framework\Setup\UpgradeSchemaInterface`]({{site.mage2000url}}lib/internal/Magento/Framework/Setup/UpgradeSchemaInterface.php){:target="_blank"}:
 
 ~~~
 // Location: <module_root_directory>/Setup/UpgradeSchema.php
@@ -86,7 +88,7 @@ class \<Vendor>\<Module>\Setup\UpgradeSchema implements \Magento\Framework\Setup
 
 You can create a class in your module that will be run every time after schema installation or upgrade. The purpose of running code in this final stage of schema initialization is usually to do final modifications to the database schema after it has been installed or updated.
 
-During this stage, the `install` function will be executed in the `Recurring` class implementing the [`\Magento\Framework\Setup\InstallSchemaInterface`]({{site.mage2000url}}lib/internal/Magento/Framework/Setup/InstallSchemaInterface.php){:target="_blank"}:
+During this event, the `install` function will be executed in the `Recurring` class implementing the [`\Magento\Framework\Setup\InstallSchemaInterface`]({{site.mage2000url}}lib/internal/Magento/Framework/Setup/InstallSchemaInterface.php){:target="_blank"}:
 
 ~~~
 // Location: <module_root_directory>/Setup/Recurring.php
@@ -111,7 +113,7 @@ After your module's schema has been initialized, your module will go through the
 
 Just like with [schema installation](#schema-installation), this stage will run only during the initial installation of your module. The purpose of data installation is usually to populate the database with initial data for your module.
 
-During this stage, the `install` function will be executed in the `InstallData` class implementing the [`Magento\Framework\Setup\InstallDataInterface`]({{site.mage2000url}}lib/internal/Magento/Framework/Setup/InstallDataInterface.php){:target="_blank"}:
+During data installation, the `install` function will be executed in the `InstallData` class implementing the [`Magento\Framework\Setup\InstallDataInterface`]({{site.mage2000url}}lib/internal/Magento/Framework/Setup/InstallDataInterface.php){:target="_blank"}:
 
 ~~~
 // Location: <module_root_directory>/Setup/InstallData.php
@@ -133,7 +135,7 @@ class \<Vendor>\<Module>\Setup\InstallData implements \Magento\Framework\Setup\I
 
 Just like the [schema-upgrade](#schema-upgrade) stage, data upgrade only occurs when Magento detects a previous installation. The purpose of this stage is usually to fix data that has been corrupted or populate a new data field from a schema change.
 
-During this stage, the `upgrade` function will be executed in the `UpgradeData` class implementing the  [`Magento\Framework\Setup\UpgradeDataInterface`]({{site.mage2000url}}lib/internal/Magento/Framework/Setup/UpgradeDataInterface.php){:target="_blank"}:
+During a data upgrade, the `upgrade` function will be executed in the `UpgradeData` class implementing the  [`Magento\Framework\Setup\UpgradeDataInterface`]({{site.mage2000url}}lib/internal/Magento/Framework/Setup/UpgradeDataInterface.php){:target="_blank"}:
 
 ~~~
 //<module_root_directory>/Setup/UpgradeData.php
@@ -154,7 +156,7 @@ class \<Vendor>\<Module>\Setup\UpgradeData implements \Magento\Framework\Setup\U
 
 You can create a class that will run after every data installation or upgrade. The purpose of the class is usually to do final modifications to the database store after data has been installed or updated.
 
-During this stage, the `install` function will be executed in the `RecurringData` class implementing the [`Magento\Framework\Setup\InstallDataInterface`]({{site.mage2000url}}lib/internal/Magento/Framework/Setup/InstallDataInterface.php){:target="_blank"}:
+During this event, the `install` function will be executed in the `RecurringData` class implementing the [`Magento\Framework\Setup\InstallDataInterface`]({{site.mage2000url}}lib/internal/Magento/Framework/Setup/InstallDataInterface.php){:target="_blank"}:
 
 ~~~
 // Location: <module_root_directory>/Setup/RecurringData.php
