@@ -15,3 +15,4 @@ github_link: howdoi/frontend/front-theme.md
 - [Configure product images]({{site.gdeurl}}frontend-dev-guide/themes/theme-images.html)
 - [Define which layouts, templates and stylesheets are used for a certain page]({{site.gdeurl}}frontend-dev-guide/themes/debug-theme.html)
 - [Add a new breakpoint]({{site.gdeurl}}frontend-dev-guide/css-topics/css-breakpoints.html)
+- [Uninstall a theme]({{site.gdeurl}}install-gde/install/cli/install-cli-theme-uninstall.html)
