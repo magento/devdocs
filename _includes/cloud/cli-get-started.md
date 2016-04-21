@@ -7,6 +7,9 @@
 3.	List your projects:
 
 		magento-cloud project:list
+4.	If necessary, clone a project.
+
+		magento-cloud project:get <project ID>
 4.	Change to a project directory.
 
 	For example if your project is named Magento 2, `cd magento-2`
@@ -17,7 +20,7 @@
 
 		magento-cloud environment:checkout <environment ID>
 
-	To create a new environment, use `magento-cloud environment:branch`
+	To create a new environment, use `magento-cloud environment:branch <environment name> <parent project ID>`
 7.  Create a [snapshot]({{ site.gdeurl }}cloud/admin/admin-snap.html) of the environment.
 
         magento-cloud snapshot:create -e <environment ID>

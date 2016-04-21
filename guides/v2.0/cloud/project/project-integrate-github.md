@@ -54,46 +54,75 @@ To generate a token:
 	![Create a GitHub token for a private repository]({{ site.baseurl }}common/images/cloud_github-token-copy.png){:width="600px"}
 
 ## Enable the GitHub integration {#cloud-int-gh-enable}
+This section discusses how to enable the GitHub integration.
+
+### Get started
 To get started:
 
 {% include cloud/cli-get-started.md %}
 
-To enable the GitHub integration for your project:
+### Enable the integration
+To enable the GitHub integration for your environment:
 
+1.	Enable the integration:
 
-4.	Enable the integration:
-
-		platform integration:add --type=github --project=<project ID> --token=<your GitHub token> {--repository=USER/REPOSITORY | --repository=ORGANIZATION/REPOSITORY} [--build-pull-requests={true|false} --fetch-branches={true|false}
+		magento-cloud integration:add --type=github --project=<project ID> --token=<your GitHub token> {--repository=USER/REPOSITORY | --repository=ORGANIZATION/REPOSITORY} [--build-pull-requests={true|false} --fetch-branches={true|false}
 
 	where
 
-		`<project ID>` is your Magento Enterprise Cloud Edition project ID
+	`<project ID>` is your Magento Enterprise Cloud Edition project ID
 
-		`<your GitHub token>` is the token you got in the preceding section
+	`<your GitHub token>` is the token you got in the preceding section
 
-		`--repository=USER/REPOSITORY` is how you specify your personal, private GitHub repository
+	`--repository=USER/REPOSITORY` is how you specify your personal, private GitHub repository
 
-		`--repository=ORGANIZATION/REPOSITORY` is how you specify an organization repository
+	`--repository=ORGANIZATION/REPOSITORY` is how you specify an organization repository
 
-		`--build-pull-requests` is an optional parameter that instructs Magento Cloud to deploy after you merge a pull request (`true` by default)
+	`--build-pull-requests` is an optional parameter that instructs Magento Cloud to deploy after you merge a pull request (`true` by default)
 
-		`--fetch-branches` is an optional parameter that causes Magento Cloud to track branches and deploy after you update a branch (`true` by default)
+	`--fetch-branches` is an optional parameter that causes Magento Cloud to track branches and deploy after you update a branch (`true` by default)
 
-	Example 1: Enable the GitHub integration for a personal, private repository:
+	**Example 1**: Enable the GitHub integration for a personal, private repository:
 
-		TBD
+		magento-cloud integration:add --type=github --project=ov58dlacU2e --token=<token> --repository=myUserName/myrepo
 
-	Example 2: Enable the GitHub integration for an organization repository:
+	**Example 2**: Enable the GitHub integration for an organization repository:
 
-		TBD
+		magento-cloud integration:add --type=github --project=ov58dlacU2e --token=<token> --repository=Magento/teamrepo
+6.	Enter the required information when prompted.
 
 	Sample output:
 
-		TBD
+		Created integration wp2f2thlmxwcg (type: github)
+		Repository: myUserName/myrepo
+		Build PRs: yes
+		Fetch branches: yes
+		Payload URL: https://us.magento.cloud/api/projects/ov58dlacU2e/integrations/wO8a0eoamxwcg/hook
+
 5.	Copy the Payload URL displayed by the command and continue with the next section.
 
 ## Add the webhook {#cloud-int-gh-hook}
-TBD
+To add the webhook to your GitHub repository:
+
+1.	In your GitHub repository, click **Settings** as the following figure shows.
+
+	![Go to your GitHub's account settings]({{ site.baseurl }}common/images/cloud_github-acct-settings.png)
+2.	In the left navigation bar, click **Webhooks & services**.
+3.	In the right pane, click **Add webhook** as the following figure shows.
+
+	![Add the webhook to your account]({{ site.baseurl }}common/images/cloud_github-acct-webhook.png)
+4.	Enter the following information:
+
+	*	**Payload URL**: Enter the URL displayed by the command in the preceding section.
+	*	**Content type**: Click **application/json**
+	*	**Secret**: Enter a verification secret.
+	*	**Which events would you like to trigger this webhook?**: Click **Send me everything**
+	*	Select the **Active** check box.
+
+	The following figure shows an example:
+
+	![Add the webhook to your account]({{ site.baseurl }}common/images/cloud_github-acct-webhook2.png)
+5.	Click **Add Webhook**
 
 ## Verify it works {#cloud-int-gh-verify}
 TBD
