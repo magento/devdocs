@@ -29,6 +29,7 @@ Magento will detect the classes you are using to hook into the different lifecyc
 * The class should be in the `Setup` directory in your module's root directory with the appropriate file name. For the correct file name, please see the specific examples below.
 * The class must use the specific name for the phase in which it will be executed in. To determine the correct class name to use, please see the specific examples below.
 * The class must implement the specific class interface for the phase in which it will be executed in. To determine the correct interface to use, please see the specific examples below.
+* The version you use in your module should follow our [versioning policy]({{site.gdeurl}}architecture/versioning.html).
 
 ### Schema initialization
 
