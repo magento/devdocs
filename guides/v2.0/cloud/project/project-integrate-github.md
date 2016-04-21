@@ -42,7 +42,7 @@ To generate a token:
 5.	Select check boxes corresponding to how you intend to use the token:
 
 	*	To integrate with public repositories, select **public_repo**
-	*	To integrate with your own private repositories, select **repo**
+	*	To integrate with your personal, private repositories, select **repo**
 	*	To integrate with your organization's private repositories, select **repo** and **read:org**
 
 	The following figure shows an example of creating a token that can be used to integrate with a private repository to which you have write access:
@@ -54,7 +54,43 @@ To generate a token:
 	![Create a GitHub token for a private repository]({{ site.baseurl }}common/images/cloud_github-token-copy.png){:width="600px"}
 
 ## Enable the GitHub integration {#cloud-int-gh-enable}
-TBD
+To get started:
+
+{% include cloud/cli-get-started.md %}
+
+To enable the GitHub integration for your project:
+
+
+4.	Enable the integration:
+
+		platform integration:add --type=github --project=<project ID> --token=<your GitHub token> {--repository=USER/REPOSITORY | --repository=ORGANIZATION/REPOSITORY} [--build-pull-requests={true|false} --fetch-branches={true|false}
+
+	where
+
+		`<project ID>` is your Magento Enterprise Cloud Edition project ID
+
+		`<your GitHub token>` is the token you got in the preceding section
+
+		`--repository=USER/REPOSITORY` is how you specify your personal, private GitHub repository
+
+		`--repository=ORGANIZATION/REPOSITORY` is how you specify an organization repository
+
+		`--build-pull-requests` is an optional parameter that instructs Magento Cloud to deploy after you merge a pull request (`true` by default)
+
+		`--fetch-branches` is an optional parameter that causes Magento Cloud to track branches and deploy after you update a branch (`true` by default)
+
+	Example 1: Enable the GitHub integration for a personal, private repository:
+
+		TBD
+
+	Example 2: Enable the GitHub integration for an organization repository:
+
+		TBD
+
+	Sample output:
+
+		TBD
+5.	Copy the Payload URL displayed by the command and continue with the next section.
 
 ## Add the webhook {#cloud-int-gh-hook}
 TBD

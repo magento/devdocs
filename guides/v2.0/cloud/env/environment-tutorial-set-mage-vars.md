@@ -18,26 +18,13 @@ Remember that environment variables are inherited from the parent environment to
 
 You can use the same tasks to change any variable discussed in the preceding section.
 
+To get started:
+
+{% include cloud/cli-get-started.md %}
+
 To change the Admin URI and administrator password:
 
-1.  Log in to your project.
-
-        magento-cloud login
-2.  List project IDs.
-
-        magento-cloud project:list
-3.  Get (that is, clone) the project if you haven't already done so.
-
-        magento-cloud project:get <project ID>
-4.  When prompted, enter the name of a project directory.
-5.  Wait for the project to clone.
-4.  Change to the project directory.
-
-    For example, if your project is named `Magento 2`, enter `cd magento-2`
-7.  Create a [snapshot]({{ site.gdeurl }}cloud/admin/admin-snap.html) of the environment.
-
-        magento-cloud snapshot:create -e master
-8.  Set the variable values.
+1.  Set the variable values.
 
         magento-cloud variable:set <name> <value>
 
