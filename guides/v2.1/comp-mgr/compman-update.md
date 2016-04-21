@@ -1,9 +1,9 @@
 ---
 layout: default 
 group: compman
-subgroup: 10_Update
+subgroup: 08_Update
 title: Step 3. Component Update
-menu_title: Component Update (Component Manager)
+menu_title: Component Update
 menu_node: parent
 menu_order: 1
 github_link21: comp-mgr/compman-update.md

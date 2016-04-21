@@ -30,9 +30,6 @@ You can upgrade in any of the following ways:
     	<li>If you installed the Magento application by <a href="{{ site.gdeurl21 }}install-gde/prereq/dev_install.html">cloning the GitHub repository</a>, you <em>cannot</em> use the System Upgrade utility to upgrade the software. Instead, you must <a href="{{ site.gdeurl21 }}install-gde/install/cli/dev_options.html">update it manually</a>.</li></ul>
 </div>
 
-<h2 id="compman-prereq">Prerequisites</h2>
-Before continuing, complete all tasks discussed in <a href="{{ site.gdeurl21 }}comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.
-
 ## System Upgrade checklist
 {% include install/update/checklist.md %}
 

@@ -22,6 +22,12 @@ To run the Component Manager:
 	The following figure shows an example if you *have* already entered your keys.
 
 	![Authentication keys entered in the Setup Wizard]({{ site.baseurl }}common/images/compman_auth-keys.png)
+
+	<div class="bs-callout bs-callout-warning">
+    	<p>For upgrade or update, you must use the same authentication keys you used to install the Magento software. For example, you <em>cannot</em> use Magento CE authentication keys to update or upgrade Magento EE or vice versa. You also <em>cannot</em> use:</p>
+    	<ul><li>Another user's authentication keys</li>
+    	<li><a href="http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html" target="_blank">Shared account</a> authentication keys</li></ul>   
+	</div>
 5.	Click **Save Config**.
 3.	Click **Component Manager** and continue with <a href="{{ site.gdeurl21 }}comp-mgr/compman-main-pg.html">Manage your components</a>.
 

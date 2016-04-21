@@ -20,8 +20,8 @@ This topic discusses the ways you can:
 	*	Language packages (localize the storefront and Admin)
 	*	Libraries (common code)
 
-<h2>Upgrade the Magento software</h2>
-The way you upgrade (that is, patch) the Magento software depends on how you installed it:
+<h2>Upgrade the Magento application</h2>
+The way you upgrade (that is, patch) the Magento application depends on how you installed it:
 
 *	Magento CE or EE: If you used <a href="{{ site.gdeurl21 }}install-gde/prereq/integrator_install.html">Composer</a> to install or if you downloaded an <a href="{{ site.gdeurl21 }}install-gde/prereq/zip_install.html">archive</a>, use the <a href="{{ site.gdeurl21 }}comp-mgr/upgrader/upgrade-start.html">System Upgrade utility</a> or the [command line]({{ site.gdeurl21 }}comp-mgr/cli/cli-upgrade.html).
 *	Magento CE only: If you cloned the Magento 2 GitHub repository because you are contributing code to the Magento CE codebase, <a href="{{ site.gdeurl21 }}install-gde/install/cli/dev_options.html">upgrade the software manually</a>.
@@ -38,8 +38,9 @@ The way you upgrade (that is, patch) the Magento software depends on how you ins
 </div>
 
 <div class="bs-callout bs-callout-warning">
-    <p>Authorization keys from a <a href="http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html" target="_blank">shared account</a> <em>cannot</em> be used to update or upgrade the Magento software. You must get your authorization keys from <code>magento.com</code> account owner.</p>
-   
+    <p>For upgrade or update, you must use the same authentication keys you used to install the Magento software. For example, you <em>cannot</em> use Magento CE authentication keys to update or upgrade Magento EE or vice versa. You also <em>cannot</em> use:</p>
+    <ul><li>Another user's authentication keys</li>
+    	<li><a href="http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html" target="_blank">Shared account</a> authentication keys</li></ul>   
 </div>
 
 <h2>Update components</h2>
