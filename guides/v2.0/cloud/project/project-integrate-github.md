@@ -21,7 +21,9 @@ github_link: cloud/project/project-integrate-github.md
 *	[Verify it works](#cloud-int-gh-verify)
 
 ## About the GitHub integration {#cloud-int-gh-about}
-The GitHub integration enables you to manage your Magento Enterprise Cloud Edition environments directly from your GitHub repository. We strongly recommend you use a *private* GitHub repository.
+The GitHub integration enables you to manage your Magento Enterprise Cloud Edition environments directly from your GitHub repository. The integration manages content already in GitHub and synchronizes it with Magento Enterprise Cloud Edition. Therefore, before you begin, make sure your project and environments are in a GitHub repository.
+
+We strongly recommend you use a *private* GitHub repository.
 
 This integration enables you to:
 
@@ -122,10 +124,13 @@ To add the webhook to your GitHub repository:
 	The following figure shows an example:
 
 	![Add the webhook to your account]({{ site.baseurl }}common/images/cloud_github-acct-webhook2.png)
-5.	Click **Add Webhook**
+5.	Click **Add webhook**
 
 ## Verify it works {#cloud-int-gh-verify}
-TBD
+To verify the integration works:
+
+1.	Make a change in a local branch and push it to the GitHub repository with which you integrated.
+2.	In the Magento Cloud CLI, pull the change to an environment.
 
 
 #### Related topics
