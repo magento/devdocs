@@ -106,11 +106,11 @@ To add the webhook to your GitHub repository:
 
 1.	In your GitHub repository, click **Settings** as the following figure shows.
 
-	![Go to your GitHub's account settings]({{ site.baseurl }}common/images/cloud_github-acct-settings.png)
+	![Go to your GitHub's account settings]({{ site.baseurl }}common/images/cloud_github-acct-settings.png){:width="650px"}
 2.	In the left navigation bar, click **Webhooks & services**.
 3.	In the right pane, click **Add webhook** as the following figure shows.
 
-	![Add the webhook to your account]({{ site.baseurl }}common/images/cloud_github-acct-webhook.png)
+	![Add the webhook to your account]({{ site.baseurl }}common/images/cloud_github-acct-webhook.png){:width="650px"}
 4.	Enter the following information:
 
 	*	**Payload URL**: Enter the URL displayed by the command in the preceding section.
@@ -121,7 +121,7 @@ To add the webhook to your GitHub repository:
 
 	The following figure shows an example:
 
-	![Add the webhook to your account]({{ site.baseurl }}common/images/cloud_github-acct-webhook2.png)
+	![Add the webhook to your account]({{ site.baseurl }}common/images/cloud_github-acct-webhook2.png){:width="650px"}
 5.	Click **Add webhook**
 
 ## Verify it works {#cloud-int-gh-verify}
