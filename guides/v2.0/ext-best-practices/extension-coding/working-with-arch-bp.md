@@ -45,7 +45,7 @@ In addition to understanding fundamental programming designs/concepts, you are e
   - Instead of adding conditions directly to a collection's select object, use Magento native collection's method addFieldToFilter(field_name, field_value).
 
 ### Use Dependency Injection
-  Direct class instantiation is not recommended because the class can be rewritten. If the class is created directly, any rewrites will not be applied and it breaks Magento's class rewrite capability. We encourage you to use the `Mage::getModel` method or [dependency injection]({{ site.gdeurl }}extension-dev-guide/depend-inj.html) to get an instance of a class.
+  Direct class instantiation is not recommended because the class can be rewritten. If the class is created directly, any rewrites will not be applied and it breaks Magento's class rewrite capability. We encourage you to become familiar with how we use [dependency injection]({{ site.gdeurl }}extension-dev-guide/depend-inj.html) to get an instance of a class.
 
 ### Follow Model-View-Control (MVC) Pattern
   Make sure your extension adheres to the MVC Pattern, and that it does not violate any of its principles.
