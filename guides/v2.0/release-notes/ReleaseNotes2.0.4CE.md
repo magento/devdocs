@@ -1,12 +1,11 @@
 ---
 layout: default
 group: release-notes
-subgroup: 
-title: 
-menu_title:  
-menu_order: 
+subgroup: Release Notes
+title: Magento CE 2.0.4 Release Notes
+menu_title: Magento CE 2.0.4 Release Notes 
+menu_order: 5
 github_link: release-notes/ReleaseNotes2.0.4CE.md
-redirect_from: 
 ---
 
 <h2>Magento Community Edition 2.0.4</h2>
