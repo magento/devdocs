@@ -11,8 +11,6 @@ level3_subgroup: integrate
 github_link: cloud/project/project-integrate-github.md
 ---
 
-<!-- https://docs.platform.sh/user_guide/using/integrations/github.html -->
-
 #### Contents
 *	[About the GitHub integration](#cloud-int-gh-about) 
 *	[Generate a GitHub token](#cloud-int-gh-token)
@@ -129,7 +127,7 @@ To add the webhook to your GitHub repository:
 ## Verify it works {#cloud-int-gh-verify}
 To verify the integration works:
 
-1.	Make a change in a local branch and push it to the GitHub repository with which you integrated.
+1.	Make a change in the GitHub repository with which you integrated.
 2.	In the Magento Cloud CLI, pull the change to an environment.
 
 
