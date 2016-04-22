@@ -879,8 +879,8 @@ Only the code in the corresponding block must be changed.</p>
 
 <p>Also, block can contain a <code>render</code> node. <a href="/guides/v2.0/mtf/mtf_entities/mtf_block.html#mtf_block_render">Read about renders in the Block topic</a>.</p>
 
-<p>To apply all changes you've made to the page (XML file), run the page generator.</p>
-<pre><code>php &lt;magento2&gt;/dev/tests/functional/utils/page.php</code></pre>
+<p>To apply all changes you've made to the page (XML file), run the class generator.</p>
+<pre><code>php &lt;magento2&gt;/dev/tests/functional/utils/generate.php</code></pre>
 <p>The page will be updated in the <code>&lt;magento2&gt;/dev/tests/functional/generated</code> directory.</p>
 
 <h2 id="mtf_page_types">Page types</h2>
@@ -977,7 +977,7 @@ Only the code in the corresponding block must be changed.</p>
 
 <p>And generate the updated page:</p>
 
-<pre><code>php &lt;magento2&gt;/dev/tests/functional/utils/generate/page.php
+<pre><code>php &lt;magento2&gt;/dev/tests/functional/utils/generate.php
 </code></pre>
 
 <p>The result is in the <code>&lt;magento2&gt;/dev/tests/functional/generated/Magento/Catalog/Test/Page/Product/CatalogProductView.php</code> with the following code:</p>
@@ -1184,7 +1184,7 @@ Only the code in the corresponding block must be changed.</p>
 
 <p>Enter in terminal:</p>
 
-<pre><code>php &lt;magento2&gt;/dev/tests/functional/utils/generate/page.php
+<pre><code>php &lt;magento2&gt;/dev/tests/functional/utils/generate.php
 </code></pre>
 
 <p>Now when you call <code>editForm</code> block from the <code>CatalogCategoryEdit</code> page, the <code>\Magento\NewModule\Test\Block\Adminhtml\Category\Edit\CategoryForm</code> class will be used.</p>
