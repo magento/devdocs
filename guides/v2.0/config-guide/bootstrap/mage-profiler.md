@@ -20,7 +20,7 @@ Magento profiling enables you to:
 
 *	Enable a built-in profiler
 
-	You can use a built-in built-in profiler with Magento to perform tasks such as analyzing performance. (The nature of profiling depends on the analytical tools you use. We support multiple formats, including HTML.)
+	You can use a built-in profiler with Magento to perform tasks such as analyzing performance. (The nature of profiling depends on the analytical tools you use. We support multiple formats, including HTML.)
 
 *	Displays dependency graphs on a Magento page. A *dependency graph* is a list of object dependencies and all of their all their dependencies, and all the dependencies for those dependencies, and so on.
 
