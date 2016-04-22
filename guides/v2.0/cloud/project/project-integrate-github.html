@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Server side includes</title>
+	<title>GitHub integration</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/cloud/project/project-routes-more-ssi.html">
+	<link rel="canonical" href="//guides/v2.0/cloud/project/project-integrate-github.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -139,9 +139,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Server side includes</h1>
+		<h1 class="page-heading">GitHub integration</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/cloud/project/project-routes-more-ssi.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/cloud/project/project-integrate-github.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -465,7 +465,7 @@
 									
 
 
-											<li class="level3Child routes  active " data-menunode="routes"><a href="/guides/v2.0/cloud/project/project-routes-more-ssi.html">Server side includes</a>
+											<li class="level3Child routes " data-menunode="routes"><a href="/guides/v2.0/cloud/project/project-routes-more-ssi.html">Server side includes</a>
 
 
 									
@@ -563,7 +563,7 @@
 									
 
 
-											<li class="level3Child integrate " data-menunode="integrate"><a href="/guides/v2.0/cloud/project/project-integrate-github.html">GitHub integration</a>
+											<li class="level3Child integrate  active " data-menunode="integrate"><a href="/guides/v2.0/cloud/project/project-integrate-github.html">GitHub integration</a>
 
 
 									
@@ -897,44 +897,213 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<h2 id="server-side-includes">Server side includes</h2>
-<p><a href="http://httpd.apache.org/docs/current/howto/ssi.html" target="_site">Server side includes</a> (SSI) are directives in HTML pages that get evaluated on the server while the pages are being rendered. Use of server side includes enables you to add dynamically generated content to an existing HTML page without having to serve the entire page. </p>
+		<h4 id="contents">Contents</h4>
+<ul>
+  <li><a href="#cloud-int-gh-about">About the GitHub integration</a> </li>
+  <li><a href="#cloud-int-gh-token">Generate a GitHub token</a></li>
+  <li><a href="#cloud-int-gh-enable">Enable the GitHub integration</a></li>
+  <li><a href="#cloud-int-gh-hook">Add the webhook</a></li>
+  <li><a href="#cloud-int-gh-verify">Verify it works</a></li>
+</ul>
 
-<p>More information about <a href="http://nginx.org/en/docs/http/ngx_http_ssi_module.html" target="_blank">nginx SSI</a>.</p>
+<h2 id="cloud-int-gh-about">About the GitHub integration</h2>
+<p>The GitHub integration enables you to manage your Magento Enterprise Cloud Edition environments directly from your GitHub repository. The integration manages content already in GitHub and synchronizes it with Magento Enterprise Cloud Edition. Therefore, before you begin, make sure your project and environments are in a GitHub repository.</p>
 
-<p>You can activate or deactivate SSI on a per-route basis in your 
-<code>.magento/routes.yaml</code>; for example:</p>
+<p>We strongly recommend you use a <em>private</em> GitHub repository.</p>
 
-<pre><code>"http://{default}/":	
-    type: upstream
-    upstream: "myapp:php"
-    cache:
-      enabled: false
-    ssi:
-        enabled: true
-"http://{default}/time.php":
-    type: upstream
-    upstream: "myapp:php"
-    cache:	
-      enabled: true
+<p>This integration enables you to:</p>
+
+<ul>
+  <li>Create a new environment when you create a branch or opening a pull request on GitHub.</li>
+  <li>Rebuild the environment when you push new code to GitHub.</li>
+  <li>Delete the environment when you merge a pull request.</li>
+</ul>
+
+<p>To set up the integration, you must obtain a GitHub token and a webhook. The following sections walk you through the process.</p>
+
+<h2 id="cloud-int-gh-token">Generate a GitHub token</h2>
+<p>To perform this task, you must be a member of a group that can write to the GitHub repository. (In other words, you must be able to push to the repository.)</p>
+
+<p>To generate a token:</p>
+
+<ol>
+  <li>Log in to GitHub.</li>
+  <li>In your personal settings, on the <strong>Personal access tokens</strong> tab page, click <a href="https://github.com/settings/tokens/new" target="_blank"><strong>Generate new token</strong></a>.</li>
+  <li>In the <strong>Token description</strong> field, enter a meaningful name.</li>
+  <li>
+    <p>Select check boxes corresponding to how you intend to use the token:</p>
+
+    <ul>
+      <li>To integrate with public repositories, select <strong>public_repo</strong></li>
+      <li>To integrate with your personal, private repositories, select <strong>repo</strong></li>
+      <li>To integrate with your organization’s private repositories, select <strong>repo</strong> and <strong>read:org</strong></li>
+    </ul>
+
+    <p>The following figure shows an example of creating a token that can be used to integrate with a private repository to which you have write access:</p>
+
+    <p><img src="/common/images/cloud_github-token.png" alt="Create a GitHub token for a private repository" width="600px" /></p>
+  </li>
+  <li>Click <strong>Generate token</strong>.</li>
+  <li>
+    <p>Copy the token to the clipboard.</p>
+
+    <p><img src="/common/images/cloud_github-token-copy.png" alt="Create a GitHub token for a private repository" width="600px" /></p>
+  </li>
+</ol>
+
+<h2 id="cloud-int-gh-enable">Enable the GitHub integration</h2>
+<p>This section discusses how to enable the GitHub integration.</p>
+
+<h3 id="get-started">Get started</h3>
+<p>To get started:</p>
+
+<div>
+
+  <ol>
+    <li>Log in to the server on which your SSH keys are located.</li>
+    <li>
+      <p>Log in to your project:</p>
+
+      <pre><code>magento-cloud login
+</code></pre>
+    </li>
+    <li>
+      <p>List your projects:</p>
+
+      <pre><code>magento-cloud project:list
+</code></pre>
+    </li>
+    <li>
+      <p>If necessary, clone a project.</p>
+
+      <pre><code>magento-cloud project:get &lt;project ID&gt;
+</code></pre>
+    </li>
+    <li>
+      <p>Change to a project directory.</p>
+
+      <p>For example if your project is named Magento 2, <code>cd magento-2</code></p>
+    </li>
+    <li>
+      <p>List environments in the project:</p>
+
+      <pre><code>magento-cloud environment:list
+</code></pre>
+    </li>
+    <li>
+      <p>Check out an environment:</p>
+
+      <pre><code>magento-cloud environment:checkout &lt;environment ID&gt;
 </code></pre>
 
-<p>SSI enables you to include in your HTML response directives that cause the
-server fill in parts of the HTML, respecting the your <a href="/guides/v2.0/cloud/project/project-routes-more-cache.html">caching configuration</a>.</p>
+      <p>To create a new environment, use <code>magento-cloud environment:branch &lt;environment name&gt; &lt;parent project ID&gt;</code></p>
+    </li>
+    <li>
+      <p>Create a <a href="/guides/v2.0/cloud/admin/admin-snap.html">snapshot</a> of the environment.</p>
 
-<p>The following example shows how to insert a dynamic date control at the top of a page and another date control at the bottom that updates every 600 seconds:</p>
+      <pre><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
+</code></pre>
+    </li>
+  </ol>
 
-<p>Add the following to any page, such as <code>/index.php</code>:</p>
+  <h3 id="enable-the-integration">Enable the integration</h3>
+  <p>To enable the GitHub integration for your environment:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">echo</span> <span class="nb">date</span><span class="p">(</span><span class="nx">DATE_RFC2822</span><span class="p">);</span>
-<span class="o">&lt;!--</span><span class="c1">#include virtual=&quot;time.php&quot; --&gt;</span></code></pre></div>
+  <ol>
+    <li>
+      <p>Enable the integration:</p>
 
-<p>Add the following to <code>time.php</code>:</p>
+      <pre><code>magento-cloud integration:add --type=github --project=&lt;project ID&gt; --token=&lt;your GitHub token&gt; {--repository=USER/REPOSITORY | --repository=ORGANIZATION/REPOSITORY} [--build-pull-requests={true|false} --fetch-branches={true|false}
+</code></pre>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Cache-Control: max-age=600&quot;</span><span class="p">);</span>
-<span class="k">echo</span> <span class="nb">date</span><span class="p">(</span><span class="nx">DATE_RFC2822</span><span class="p">);</span></code></pre></div>
+      <p>where</p>
 
-<p>Browse to the page on which you added the control. Refresh the page several times and notice that the time at the top of the page changes but the time on the bottom changes only every 600 seconds.</p>
+      <p><code>&lt;project ID&gt;</code> is your Magento Enterprise Cloud Edition project ID</p>
+
+      <p><code>&lt;your GitHub token&gt;</code> is the token you got in the preceding section</p>
+
+      <p><code>--repository=USER/REPOSITORY</code> is how you specify your personal, private GitHub repository</p>
+
+      <p><code>--repository=ORGANIZATION/REPOSITORY</code> is how you specify an organization repository</p>
+
+      <p><code>--build-pull-requests</code> is an optional parameter that instructs Magento Cloud to deploy after you merge a pull request (<code>true</code> by default)</p>
+
+      <p><code>--fetch-branches</code> is an optional parameter that causes Magento Cloud to track branches and deploy after you update a branch (<code>true</code> by default)</p>
+
+      <p><strong>Example 1</strong>: Enable the GitHub integration for a personal, private repository:</p>
+
+      <pre><code>magento-cloud integration:add --type=github --project=ov58dlacU2e --token=&lt;token&gt; --repository=myUserName/myrepo
+</code></pre>
+
+      <p><strong>Example 2</strong>: Enable the GitHub integration for an organization repository:</p>
+
+      <pre><code>magento-cloud integration:add --type=github --project=ov58dlacU2e --token=&lt;token&gt; --repository=Magento/teamrepo
+</code></pre>
+    </li>
+    <li>
+      <p>Enter the required information when prompted.</p>
+
+      <p>Sample output:</p>
+
+      <pre><code>Created integration wp2f2thlmxwcg (type: github)
+Repository: myUserName/myrepo
+Build PRs: yes
+Fetch branches: yes
+Payload URL: https://us.magento.cloud/api/projects/ov58dlacU2e/integrations/wO8a0eoamxwcg/hook
+</code></pre>
+    </li>
+    <li>
+      <p>Copy the Payload URL displayed by the command and continue with the next section.</p>
+    </li>
+  </ol>
+
+  <h2 id="cloud-int-gh-hook">Add the webhook</h2>
+  <p>To add the webhook to your GitHub repository:</p>
+
+  <ol>
+    <li>
+      <p>In your GitHub repository, click <strong>Settings</strong> as the following figure shows.</p>
+
+      <p><img src="/common/images/cloud_github-acct-settings.png" alt="Go to your GitHub's account settings" /></p>
+    </li>
+    <li>In the left navigation bar, click <strong>Webhooks &amp; services</strong>.</li>
+    <li>
+      <p>In the right pane, click <strong>Add webhook</strong> as the following figure shows.</p>
+
+      <p><img src="/common/images/cloud_github-acct-webhook.png" alt="Add the webhook to your account" /></p>
+    </li>
+    <li>
+      <p>Enter the following information:</p>
+
+      <ul>
+        <li><strong>Payload URL</strong>: Enter the URL displayed by the command in the preceding section.</li>
+        <li><strong>Content type</strong>: Click <strong>application/json</strong></li>
+        <li><strong>Secret</strong>: Enter a verification secret.</li>
+        <li><strong>Which events would you like to trigger this webhook?</strong>: Click <strong>Send me everything</strong></li>
+        <li>Select the <strong>Active</strong> check box.</li>
+      </ul>
+
+      <p>The following figure shows an example:</p>
+
+      <p><img src="/common/images/cloud_github-acct-webhook2.png" alt="Add the webhook to your account" /></p>
+    </li>
+    <li>Click <strong>Add webhook</strong></li>
+  </ol>
+
+  <h2 id="cloud-int-gh-verify">Verify it works</h2>
+  <p>To verify the integration works:</p>
+
+  <ol>
+    <li>Make a change in the GitHub repository with which you integrated.</li>
+    <li>In the Magento Cloud CLI, pull the change to an environment.</li>
+  </ol>
+
+  <h4 id="related-topics">Related topics</h4>
+  <ul>
+    <li><a href="/guides/v2.0/cloud/project/project-start.html">Get started with a project</a></li>
+    <li><a href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html"><code>.magento.app.yaml</code></a></li>
+  </ul>
+</div>
 
 
 		</div>

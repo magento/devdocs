@@ -562,6 +562,16 @@
 
 									
 
+
+											<li class="level3Child integrate " data-menunode="integrate"><a href="/guides/v2.0/cloud/project/project-integrate-github.html">GitHub integration</a>
+
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-priv-repos.html">Pull code from a private Git repository</a></li>
 
 									
@@ -892,59 +902,85 @@
 
 <p>This tutorial shows how to create a sample file and merge it. This tutorial assumes you’re already working in an environment; if not, see <a href="/guides/v2.0/cloud/env/environments-start.html#env-start-comm"> Get started with an environment</a> to create one.</p>
 
-<p>To merge an environment:</p>
+<p>To get started:</p>
 
-<ol>
-  <li>Log in to the machine on which your Magento Enterprise Cloud Edition SSH key is stored.</li>
-  <li>
-    <p>Log in to the project:</p>
+<div>
 
-    <pre><code>magento-cloud login
+  <ol>
+    <li>Log in to the server on which your SSH keys are located.</li>
+    <li>
+      <p>Log in to your project:</p>
+
+      <pre><code>magento-cloud login
 </code></pre>
-  </li>
-  <li>
-    <p>List projects:</p>
+    </li>
+    <li>
+      <p>List your projects:</p>
 
-    <pre><code>magento-cloud project:list
+      <pre><code>magento-cloud project:list
 </code></pre>
-  </li>
-  <li>Change to a project directory.</li>
-  <li>
-    <p>List environments in the project:</p>
+    </li>
+    <li>
+      <p>If necessary, clone a project.</p>
 
-    <pre><code>magento-cloud environment:list
+      <pre><code>magento-cloud project:get &lt;project ID&gt;
 </code></pre>
-  </li>
-  <li>
-    <p>Check out an environment:</p>
+    </li>
+    <li>
+      <p>Change to a project directory.</p>
 
-    <pre><code>magento-cloud environment:checkout &lt;environment ID&gt;
+      <p>For example if your project is named Magento 2, <code>cd magento-2</code></p>
+    </li>
+    <li>
+      <p>List environments in the project:</p>
+
+      <pre><code>magento-cloud environment:list
 </code></pre>
-  </li>
-  <li>
-    <p>Add a file named <code>test.txt</code> to the environment root directory.</p>
+    </li>
+    <li>
+      <p>Check out an environment:</p>
 
-    <p>You can put whatever contents you want; for example, the number <code>1</code></p>
-  </li>
-  <li>Save your changes and exit the text editor.</li>
-  <li>
-    <p>Add, commit, and push your change to the environment:</p>
+      <pre><code>magento-cloud environment:checkout &lt;environment ID&gt;
+</code></pre>
 
-    <pre><code>git add -A
+      <p>To create a new environment, use <code>magento-cloud environment:branch &lt;environment name&gt; &lt;parent project ID&gt;</code></p>
+    </li>
+    <li>
+      <p>Create a <a href="/guides/v2.0/cloud/admin/admin-snap.html">snapshot</a> of the environment.</p>
+
+      <pre><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
+</code></pre>
+    </li>
+  </ol>
+
+  <p>To merge an environment:</p>
+
+  <ol>
+    <li>
+      <p>Add a file named <code>test.txt</code> to the environment root directory.</p>
+
+      <p>You can put whatever contents you want; for example, the number <code>1</code></p>
+    </li>
+    <li>Save your changes and exit the text editor.</li>
+    <li>
+      <p>Add, commit, and push your change to the environment:</p>
+
+      <pre><code>git add -A
 git commit -m "&lt;commit message&gt;"
 git push origin
 </code></pre>
-  </li>
-  <li>
-    <p>Merge with the parent environment:</p>
+    </li>
+    <li>
+      <p>Merge with the parent environment:</p>
 
-    <pre><code>magento-cloud environment:merge &lt;environment ID&gt;
+      <pre><code>magento-cloud environment:merge &lt;environment ID&gt;
 </code></pre>
-  </li>
-</ol>
+    </li>
+  </ol>
 
-<h4 id="related-topic">Related topic</h4>
-<p><a href="/guides/v2.0/cloud/env/environment-tutorial-set-mage-vars.html">Tutorial—Set Magento environment variables</a></p>
+  <h4 id="related-topic">Related topic</h4>
+  <p><a href="/guides/v2.0/cloud/env/environment-tutorial-set-mage-vars.html">Tutorial—Set Magento environment variables</a></p>
+</div>
 
 
 		</div>

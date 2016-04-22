@@ -562,6 +562,16 @@
 
 									
 
+
+											<li class="level3Child integrate " data-menunode="integrate"><a href="/guides/v2.0/cloud/project/project-integrate-github.html">GitHub integration</a>
+
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-priv-repos.html">Pull code from a private Git repository</a></li>
 
 									
@@ -894,66 +904,86 @@
 
 <p>You can use the same tasks to change any variable discussed in the preceding section.</p>
 
-<p>To change the Admin URI and administrator password:</p>
+<p>To get started:</p>
 
-<ol>
-  <li>
-    <p>Log in to your project.</p>
+<div>
 
-    <pre><code>magento-cloud login
+  <ol>
+    <li>Log in to the server on which your SSH keys are located.</li>
+    <li>
+      <p>Log in to your project:</p>
+
+      <pre><code>magento-cloud login
 </code></pre>
-  </li>
-  <li>
-    <p>List project IDs.</p>
+    </li>
+    <li>
+      <p>List your projects:</p>
 
-    <pre><code>magento-cloud project:list
+      <pre><code>magento-cloud project:list
 </code></pre>
-  </li>
-  <li>
-    <p>Get (that is, clone) the project if you haven’t already done so.</p>
+    </li>
+    <li>
+      <p>If necessary, clone a project.</p>
 
-    <pre><code>magento-cloud project:get &lt;project ID&gt;
+      <pre><code>magento-cloud project:get &lt;project ID&gt;
 </code></pre>
-  </li>
-  <li>When prompted, enter the name of a project directory.</li>
-  <li>Wait for the project to clone.</li>
-  <li>
-    <p>Change to the project directory.</p>
+    </li>
+    <li>
+      <p>Change to a project directory.</p>
 
-    <p>For example, if your project is named <code>Magento 2</code>, enter <code>cd magento-2</code></p>
-  </li>
-  <li>
-    <p>Create a <a href="/guides/v2.0/cloud/admin/admin-snap.html">snapshot</a> of the environment.</p>
+      <p>For example if your project is named Magento 2, <code>cd magento-2</code></p>
+    </li>
+    <li>
+      <p>List environments in the project:</p>
 
-    <pre><code>magento-cloud snapshot:create -e master
+      <pre><code>magento-cloud environment:list
 </code></pre>
-  </li>
-  <li>
-    <p>Set the variable values.</p>
+    </li>
+    <li>
+      <p>Check out an environment:</p>
 
-    <pre><code>magento-cloud variable:set &lt;name&gt; &lt;value&gt;
+      <pre><code>magento-cloud environment:checkout &lt;environment ID&gt;
 </code></pre>
-  </li>
-  <li>
-    <p>For example, to set the administrator’s password to <code>admin_A456</code>, enter:</p>
 
-    <pre><code>magento-cloud variable:set ADMIN_PASSWORD admin_A456
+      <p>To create a new environment, use <code>magento-cloud environment:branch &lt;environment name&gt; &lt;parent project ID&gt;</code></p>
+    </li>
+    <li>
+      <p>Create a <a href="/guides/v2.0/cloud/admin/admin-snap.html">snapshot</a> of the environment.</p>
+
+      <pre><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
 </code></pre>
-  </li>
-  <li>Wait while the project redeploys.</li>
-  <li>
-    <p>Set the Admin URI to <code>magento_A8v10</code>, enter:</p>
+    </li>
+  </ol>
 
-    <pre><code>magento-cloud variable:set ADMIN_URL magento_A8v10
+  <p>To change the Admin URI and administrator password:</p>
+
+  <ol>
+    <li>
+      <p>Set the variable values.</p>
+
+      <pre><code>magento-cloud variable:set &lt;name&gt; &lt;value&gt;
 </code></pre>
-  </li>
-  <li>Wait while the project redeploys.</li>
-  <li>
-    <p>Log in to the Magento Admin using the values you just changed.</p>
+    </li>
+    <li>
+      <p>For example, to set the administrator’s password to <code>admin_A456</code>, enter:</p>
 
-    <p>The simplest way to do that is to use the environment routes that display when you redeploy the <code>master</code> branch. An example follows:</p>
+      <pre><code>magento-cloud variable:set ADMIN_PASSWORD admin_A456
+</code></pre>
+    </li>
+    <li>Wait while the project redeploys.</li>
+    <li>
+      <p>Set the Admin URI to <code>magento_A8v10</code>, enter:</p>
 
-    <pre><code>Waiting for the activity ksvciptnzxfto (Steve Johnson added variable ADMIN_URL):
+      <pre><code>magento-cloud variable:set ADMIN_URL magento_A8v10
+</code></pre>
+    </li>
+    <li>Wait while the project redeploys.</li>
+    <li>
+      <p>Log in to the Magento Admin using the values you just changed.</p>
+
+      <p>The simplest way to do that is to use the environment routes that display when you redeploy the <code>master</code> branch. An example follows:</p>
+
+      <pre><code>Waiting for the activity ksvciptnzxfto (Steve Johnson added variable ADMIN_URL):
     Building application 'mymagento' (runtime type: php:7.0, tree: 07263ba)
     Slug already built for this tree id, skipping.
 
@@ -969,33 +999,34 @@ Environment routes:
     https://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`
 </code></pre>
 
-    <p>In the preceding example, go to <code>http://master-k4wtvm7ogzr5s.us.magentosite.cloud/magento_g8v10</code> and log in using the user name <code>admin</code> and password <code>admin_A456</code></p>
-  </li>
-  <li>
-    <p>(Optional.) Create an environment and list the environment variables.</p>
+      <p>In the preceding example, go to <code>http://master-k4wtvm7ogzr5s.us.magentosite.cloud/magento_g8v10</code> and log in using the user name <code>admin</code> and password <code>admin_A456</code></p>
+    </li>
+    <li>
+      <p>(Optional.) Create an environment and list the environment variables.</p>
 
-    <pre><code>magento-cloud environment:branch &lt;new branch name&gt;
+      <pre><code>magento-cloud environment:branch &lt;new branch name&gt;
 </code></pre>
 
-    <p>After the environment deploys, enter</p>
+      <p>After the environment deploys, enter</p>
 
-    <pre><code>magento-cloud variable:get -e &lt;environment ID&gt;
+      <pre><code>magento-cloud variable:get -e &lt;environment ID&gt;
 </code></pre>
 
-    <p>A sample result follows:</p>
+      <p>A sample result follows:</p>
 
-    <pre><code>+----------------+---------------+-----------+------+
+      <pre><code>+----------------+---------------+-----------+------+
 | ID             | Value         | Inherited | JSON |
 +----------------+---------------+-----------+------+
 | ADMIN_PASSWORD | admin_A456    | Yes       | No   |
 | ADMIN_URL      | magento_A8v10 | Yes       | No   |
 +----------------+---------------+-----------+------+
 </code></pre>
-  </li>
-</ol>
+    </li>
+  </ol>
 
-<h4 id="related-topic">Related topic</h4>
-<p><a href="/guides/v2.0/cloud/env/environment-tutorial-env-merge.html">Tutorial—Merge an environment</a></p>
+  <h4 id="related-topic">Related topic</h4>
+  <p><a href="/guides/v2.0/cloud/env/environment-tutorial-env-merge.html">Tutorial—Merge an environment</a></p>
+</div>
 
 
 		</div>
