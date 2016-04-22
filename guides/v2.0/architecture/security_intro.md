@@ -1,7 +1,7 @@
 ---
 layout: default
 group: arch-guide
-subgroup: 
+subgroup: Architectural Basics
 title: Security overview
 menu_title: Security 
 menu_order: 
