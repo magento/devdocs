@@ -9,45 +9,73 @@ github_link: release-notes/ReleaseNotes2.0.5EE.md
 ---
 
 <h2>Magento Enterprise Edition 2.0.5</h2>
-We are pleased to present Magento Enterprise Edition 2.0.5. This release includes all . 
+We are pleased to present Magento Enterprise Edition 2.0.5. This release includes miscellaneous performance and API enhancements. 
 
 
 Backward-incompatible changes are documented in <a href="http://devdocs.magento.com/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
 
 <h3>Fixed issues</h3>
 
+
 <h4> Upgrade and Installation</h4>
-<!--  -->*  
+<!-- 47999 --> * Magento now successfully registers installed themes in the theme table during production mode.  (GITHUB-2797)
 
-<!--  -->*  
+<!-- 50224 --> *  Magento no longer assumes hard-coded root category IDs or default category IDs. Previously, Magento used hard-coded IDs for these values, which could produce inconsistent data during store installation.
+
+<!-- 51693 --> * Zip archives on **repo.magento.com** are now compressed.
 
 
-<h4>Import</h4>
-<!--  -->*  
+<h4>Performance</h4>
+
+<!-- 48722 --> * Export performance has been enhanced.  Pages no longer hang randomly, and CPU usage is no longer pegged.  (GITHUB-3217)
+
+<!-- 50752 --> * The performance of the Sync button has been enhanced.   
+
 
 
 <h4>APIs</h4>
-<!--  --> * 
+
+<!-- 46720 --> * The Orders API now exposes the shipping address. This corrects an issue with using this API to integrate with third-party systems. (GITHUB-2628)
+
+<!-- 50299 --> * When you create a shipment and invoice using the REST API, order status now changes as expected from Processing to Complete. Previously, Magento would create the order invoice and shipment, but would continue to display order status  as Processing.
+
+<!-- 48526 -->* The Credit Memo API now correctly refunds orders or updates an order's status. Previously, credit memos created through APIs did not update order status or make refunds.  
 
 
-<!--  --> *   
+
+<h4>Miscellaneous</h4> 
+
+<!-- 47255 --> * (GITHUB-3459)
 
 
-<h4>PHP</h4>
-<!--  -->*  
-
-<h4>Miscellaneous</h4>
-<!-- 50716 -->* Error in Admin Log archive. No longer displays error. Previously, if you selected Admin > Admin Log > Archive and chose archive, you'd receive the following error:  ‘DateTime::__construct(): Failed to parse time string (2016022707) at position 8 (0): Unexpected character. 
+<!-- 50716 -->* Magento no longer displays an error when you select  **Admin > Admin Log > Archive**. Previously, you'd receive the following error:  **‘DateTime::__construct(): Failed to parse time string (2016022707) at position 8 (0): Unexpected character**. 
 
 
-<!-- 51074 --> * Magento now displays the expected color swatch when you select a color swatch for a configurable product. Previously, Magento was not changing the color swatch when you selected a color swatch.
+<!-- 51074 --> * Magento now displays the expected color swatch when you select a color swatch for a configurable product. Previously, Magento did not change the color when you selected a swatch.
 
-<!-- 48659 -->* HTML template magnification now properly handles commented code. 
+<!-- 48659 -->* HTML template magnification now properly handles commented code.
+
 
 <!-- 49003 --> * Magento no longer duplicates SQL queries on CMS and Category pages. Previously, significant duplications occurred. 
 
-<!-- 48760 --> * Deleting one of several custom options no longer deletes all options. Previously, deleting one option from the Product page also deleted all other custom options.  
-<!-- 50195 --> * Google no longer indexes the Admin URL. Previously, Google was indexing the Admin side metatag. The frontend metatag is not affected. 
+<!-- 48760 --> * Deleting one of several custom options no longer deletes all options. Previously, deleting one option from the Product page also deleted all other custom options. (GITHUB-2989)  
+
+<!-- 50195 --> * Google no longer indexes the Admin URL. Previously, Google indexed the Admin side meta tag. The frontend meta tag was not affected. 
+
+
+<!-- 50279 --> * When FPC is enabled, the CAPTCHA image differs for every user. Previously, the CAPTCHA image on the registration page remained the same for every customer after FPC was enabled.
+
+<!-- 46287 --> * You can now use Redis for session storage without modifying the <code>php.ini</code> file. You can also lock session storage to prevent simultaneous write access. 
+
+<!-- 50507 --> * Resetting the Product Attributes Mass Update Admin form works as expected. Previously, resetting the form resulted in an exception error. 
+
+
+<h4>Custom attributes</h4>
+
+<!-- 50912 --> * Custom customer attributes are now saved at checkout. 
+
+<!-- 51416 --> * Magento now loads custom attribute values for customer and address forms. 
+
 
 
 
@@ -57,9 +85,14 @@ This release includes several enhancements to improve the security of your Magen
 The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the <a href="https://magento.com/security" target="_blank">Magento Security Center</a>. 
 
 
+<!-- 51806  --> *  Magento no longer permits an unauthenticated user to remotely execute doc on the server through APIs. Previously, an unauthenticated user could remotely execute PHP code on the server using either REST or SOAP APIs. (These APIs are enabled by default in most installations.) 
 
-We recommend that you review Magento's <a href="https://magento.com/security/best-practices/security-best-practices.html" target="_blank">Security Best Practices</a>, and confirm that all safeguards are in place to protect your system from compromise. Use this occasion to examine your system for indications of possible attack, such as strange administrator accounts, unfamiliar files on the server, etc. To receive direct notification from our security team regarding any emerging issues and solutions, sign up for the <a href="https://magento.com/security/sign-up" target="_blank">Security Alert Registry</a>.
+<!-- 51807 --> *  The Magento installation code is no longer accessible once the installation process has completed. Previously, an unauthenticated user could execute PHP code on the server because the installation process would leave the <code>/app/etc</code> directory writeable, and many administrators would not change the permissions on this directory after installation. (During installation, the system requires the <code>/app/etc</code> directory to be writeable.)
+ 
 
+<!-- 51808 --> *  Magento no longer allows authenticated customers to change other customers' account information using either SOAP or REST calls.  Magento  now confirms that the ID of the customer whose account is being edited matches the authentication token in use. Previously, a malicious user could hijack a customer account by logging in as an authenticated user, then editing the account of any other user.  (The SOAP and REST APIs are enabled by default in most installations.)
+
+<!-- 51390 --> * Anonymous users can no longer retrieve the private data of registered customers. To prevent malicious attacks of this type, the <code>quote_id_mask</code> table of the Quote API no longer includes a <code>cart id mask</code> value. 
 
 
 <h3>System requirements</h3>
