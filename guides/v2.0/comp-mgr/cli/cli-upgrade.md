@@ -60,7 +60,7 @@ To upgrade using the command line:
   		<p>If an error displays about a missing <code>.gitignore</code> files, see the <a href="{{ site.gdeurl }}release-notes/tech_bull_201-upgrade.html#resolution2">Technical Bulletin (1/28/16)</a>.</p>
 	</div>
 
-3.	If prompted, enter your [authentication keys]({{ site.gdeurl }}).
+3.	If prompted, enter your [authentication keys]({{ site.gdeurl }}comp-mgr/prereq/prereq_auth-token.html).
 4. Update the database schema and data:
 
 		php bin/magento setup:upgrade

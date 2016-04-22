@@ -21,6 +21,7 @@ This guide discusses the following widgets:
 <li><a href="{{ site.gdeurl }}javascript-dev-guide/widgets/widget_collapsible.html" target="_blank">Collapsible widget</a></li>
 <li><a href="{{ site.gdeurl }}javascript-dev-guide/widgets/widget_confirm.html" target="_blank">Confirm widget</a></li>
 <li><a href="{{ site.gdeurl }}javascript-dev-guide/widgets/widget_dialog.html" target="_blank">DropdownDialog widget</a></li>
+<li><a href="{{ site.gdeurl }}javascript-dev-guide/widgets/widget_gallery.html" target="_blank">Gallery widget</a></li>
 <li><a href="{{ site.gdeurl }}javascript-dev-guide/widgets/widget_list.html" target="_blank">List widget</a></li>
 <li><a href="{{ site.gdeurl }}javascript-dev-guide/widgets/widget_loader.html" target="_blank">Loader widget</a></li>
 <li><a href="{{ site.gdeurl }}javascript-dev-guide/widgets/widget_menu.html" target="_blank">Menu widget</a></li>
@@ -35,4 +36,8 @@ This guide discusses the following widgets:
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Magento 2 supports <a href="http://blog.jqueryui.com/2012/11/jquery-ui-1-9-2/" target="_blank">jQuery UI 1.9.2</a>, widget options added in later versions might be unavailable.</p>
+</div>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Magento out of the box does not contain jQuery UI styles. To be able to use them, you need to download them from <a href="https://jqueryui.com/download/">https://jqueryui.com/download/</a> to the <code>%your_theme_dir%/web/css</code> or <code>%your_module_dir%/view/%area/web/css</code> directory.</p>
 </div>

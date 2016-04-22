@@ -248,17 +248,12 @@ To learn more about theme layouts, refer to the <a href="{{site.gdeurl}}frontend
 ## What's next {#next}
 See the [Apply and configure a theme in Admin]({{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html) topic.
 
-<!--
+## Uninstall a theme
 
-Related topics:
+If your theme is a composer package, you can uninstall it using the [theme uninstall CLI command]({{site.gdeurl}}install-gde/install/cli/install-cli-theme-uninstall.html).
 
-* <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a>
+If your theme is not a Composer package, you must uninstall it manually by doing the following:
 
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-override.html">Override a layout</a>
+* Update the parent node information in child's `theme.xml` to remove references to the theme.
 
--->
+* Remove theme code from the file system.
