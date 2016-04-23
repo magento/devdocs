@@ -209,7 +209,7 @@ The necessity of declaration depends on whether your theme has a <a href="{{site
 Your theme does not have a parent theme:
 <ul>
 <li> if your logo image name and format is default, <code>logo.svg</code>, there is no need to declare it; </li>
-<li>if you logo image name or format is not default, you need to <a href="#logo_declare">declare it in layout</a>.</li>
+<li>if your logo image name or format is not default, you need to <a href="#logo_declare">declare it in layout</a>.</li>
 </ul>
 </li>
 <li>Your theme has a parent theme:
