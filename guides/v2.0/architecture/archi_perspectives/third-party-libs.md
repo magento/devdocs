@@ -27,7 +27,7 @@ If you are extending your Magento storefront to interact with third-party applic
 <a href="{{ site.gdeurl }}architecture/archi_perspectives/LogicalView_intro.html">Logical view</a>
 
 
-<a href="{{ site.gdeurl }}architecture/Framework/framework.html">Magento Framework</a>
+<a href="{{ site.gdeurl }}architecture/archi_perspectives/framework.html">Magento Framework</a>
 
 
 <a href="https://getcomposer.org/doc/00-intro.md" target="_blank">Composer</a> 
