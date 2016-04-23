@@ -13,8 +13,9 @@ github_link: config-guide/multi-master/multi-master.md
 
 #### Contents
 *	<a href="#config-ee-multidb-over">Overview of the split database solution</a>
+*	[Configuration options](#config-ee-multidb-opts)
 *	<a href="#config-ee-multidb-prereq">Prerequisites</a>
-*	<a href="{{ site.gdeurl }}config-guide/multi-master/multi-master_masterdb.html">Set up master databases</a>
+*	<a href="{{ site.gdeurl }}config-guide/multi-master/multi-master_masterdb.html">Automatically configure master databases</a>
 *	<a href="{{ site.gdeurl }}config-guide/multi-master/multi-master_verify.html">Verify split databases</a>
 *	<a href="{{ site.gdeurl }}config-guide/multi-master/multi-master_slavedb.html">Set up optional database replication</a>
 
@@ -43,6 +44,29 @@ In Magento Community Edition (CE), only one master database is used.
 
 Magento EE uses three master databases and a configurable number of slave databases for replication. Magento EE has a single interface for database connections, resulting in faster performance and better scalability.
 
+## Configuration options {#config-ee-multidb-opts}
+Because of the way the split database performance solution is designed, your custom code and installed components *cannot* do any of the following:
+
+*	Write directly to the database (instead, you must use the Magento EE database interface)
+*	Use JOINs
+*	Use foreign keys to tables in the checkout, OMS, or main databases
+
+<div class="bs-callout bs-callout-warning">
+    <p>Contact component developers to verify whether or not their components do any of the preceding. If so, you must choose only one of the following:</p>
+    <ul><li>Ask the component developers to update their components.</li>
+    	<li>Use the components as-is <em>without</em> the split database solution.</li>
+    	<li>Remove the components so you can use the split database solution.</li></ul>
+</div>
+
+This also means you can either:
+
+*	Configure the split database solution *before* putting Magento into production.
+
+	We recommend configuring split databases as soon as possible after you install the Magento software.
+*	[Manually configure]({{ site.gdeurl }}config-guide/multi-master/multi-master_manual.html) the split database solution.
+
+	You must perform this task if you've already installed components or if Magento is already in production. (*Do not* update a production system; make the updates in a development system and synchronize the changes after you've tested them.)
+
 <h2 id="config-ee-multidb-prereq">Prerequisites</h2>
 The split database requires you to set up three MySQL master databases on any host (all three on the Magento server, each database on a separate server, and so on). These are the *master* databases and they're used as follows:
 
@@ -63,4 +87,6 @@ In this guide, the three master databases are named:
 (You can name your databases anything you wish.)
 
 #### Next step
-<a href="{{ site.gdeurl }}config-guide/multi-master/multi-master_masterdb.html">Set up master databases</a>
+
+*	If you have not installed components or put Magento into production: <a href="{{ site.gdeurl }}config-guide/multi-master/multi-master_masterdb.html">Automatically configure master databases</a>
+*	If Magento is already in production or if you've already installed components: []()
