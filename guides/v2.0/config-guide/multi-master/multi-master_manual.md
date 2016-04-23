@@ -60,9 +60,8 @@ After you're done, continue with the next section.
 ## Run SQL scripts {#config-ee-multidb-sql}
 Now that the split databases are configured, you must run the following SQL scripts to remove foreign key references from them:
 
-*	[]()
-*	[]()
-*	[]()
+*	[Create the SQL scripts](#config-ee-multidb-sql-create)
+*	[Run SQL scripts](#config-ee-multidb-sql-run)
 
 ### Create the SQL scripts {#config-ee-multidb-sql-create}
 Create the following SQL scripts in a location that is accessible by the user as whom you log in to your Magento server. For example, if you log in or run commands as `root`, you can create the scripts in the `/root/sql-scripts` directory.
@@ -70,7 +69,7 @@ Create the following SQL scripts in a location that is accessible by the user as
 #### Remove foreign keys (first script)
 This script is the first of two that remove foreign keys that refer to non-sales tables from sales tables. 
 
-Create the following script and give it a name like `1_foreign1.sql`:
+Create the following script and give it a name like `1_foreign1.sql`. Replace `<your main magento DB name>` with the name of your Magento database. In this topic, the sample database name is `magento`.
 
 {% highlight sql %}
 select concat(
@@ -100,12 +99,19 @@ where for_name like  '<your main magento DB name>/|magento_sales|_%' escape '|'
 #### Back up sales tables
 This script backs up only the sales tables. It's necessary to later restore these tables in a different database.
 
-Create the following script and give it a name like `2_back-up-sales.sql`:
+Create the following script and give it a name like `2_back-up-sales.sql`. Replace the following:
+
+*	`<your main magento DB name>` with the name of your Magento database. 
+
+	In this topic, the sample database name is `magento`.
+*	`<root user name>` with your MySQL root user name
+*	`<root user password>` with the user's password
+*	(Optional.) Replace paths like `/var/sales.sql`
 
 {% highlight sql %}
 select
     concat(
-        'mysqldump -uroot -p123123q <your main magento DB name> ',
+        'mysqldump -u<root user name> -p<root user password> <your main magento DB name> ',
         group_concat(table_name separator ' '),
         ' > /var/sales.sql'
     )
@@ -115,7 +121,7 @@ and table_name like 'sales/_%' escape '/';
  
 select
     concat(
-        'mysqldump -uroot -p123123q <your main magento DB name> ',
+        'mysqldump -u<root user name> -p<root user password> <your main magento DB name> ',
         group_concat(table_name separator ' '),
         ' > /var/salesarchive.sql'
     )
@@ -125,7 +131,7 @@ and table_name like 'magento_sales/_%' escape '/';
  
 select
     concat(
-        'mysqldump -uroot -p123123q <your main magento DB name> ',
+        'mysqldump -u<root user name> -p<root user password> <your main magento DB name> ',
         group_concat(table_name separator ' '),
         ' > /var/customercustomattributes.sql'
     )
@@ -135,7 +141,7 @@ and table_name like 'magento_customercustomattributes_sales_flat_order%' escape 
  
 select
     concat(
-        'mysqldump -uroot -p123123q <your main magento DB name> ',
+        'mysqldump -u<root user name> -p<root user password> <your main magento DB name> ',
         group_concat(table_name separator ' '),
         ' > /var/sequence.sql'
     )
@@ -144,10 +150,45 @@ where table_schema = '<your main magento DB name>'
 and table_name like 'sequence/_%' escape '/';
 {% endhighlight %}
 
+#### Remove checkout and OMS tables
+This script removes checkout and OMS tables from the main Magento database. 
+
+Create the following script and give it a name like `3_remove-tables.sql`. Replace `<your main magento DB name>` with the name of your Magento database. In this topic, the sample database name is `magento`.
+
+{% highlight sql %}
+select ' SET foreign_key_checks = 0;' as querytext
+union all
+select
+    concat('DROP TABLE IF EXISTS ' , table_name, ';')
+from information_schema.tables
+where table_schema = '<your main magento db name>'
+and table_name like 'sales/_%' escape '/'
+union all
+select
+    concat('DROP TABLE IF EXISTS ' , table_name, ';')
+from information_schema.tables
+where table_schema = '<your main magento db name>'
+and table_name like 'magento_sales/_%' escape '/'
+union all
+select
+    concat('DROP TABLE IF EXISTS ' , table_name, ';')
+from information_schema.tables
+where table_schema = '<your main magento db name>'
+and table_name like 'magento_customercustomattributes_sales_flat_order%' escape '/'
+union all
+select
+    concat('DROP TABLE IF EXISTS ' , table_name, ';')
+from information_schema.tables
+where table_schema = '<your main magento db name>'
+and table_name like 'sequence/_%' escape '/'
+union all
+select 'SET foreign_key_checks = 1;';
+{% endhighlight %}
+
 #### Remove foreign keys (second script)
 This script is the second of two that remove foreign keys that refer to non-sales tables from sales tables.
 
-Create the following script and give it a name like `3_foreign-key2.sql`:
+Create the following script and give it a name like `4_foreign-key2.sql`:
 
 {% highlight sql %}
 select concat(
@@ -185,31 +226,42 @@ where for_name like '<your main magento DB name>/%'
 ;
 {% endhighlight %}
 
-#### Remove checkout and OMS tables
-This script removes checkout and OMS tables from the main Magento database. 
-
-Create the following script and give it a name like `4_remove-tables.sql`:
-
-
-
 #### Restore sales data {#sql-sales-restore}
+This script is restores sales data in your OMS database.
 
+If you are using an NDB database cluster:
 
-To run the SQL script:
+1.	Convert tables from InnoDb to NDB type in dump files:
 
-1.	Copy the following script to your Magento server and save it as a text file.
+		sed -ei 's/InnoDb/NDB/' <dumpfile>.sql
 
-	In the script, replace `<your main magento DB name>` with the name of your main Magento database; in this topic, the sample database name is `magento`.
-2.	Log in to your MySQL database as `root`:
+2.	Remove rows with FULLTEXT KEY from dumps because NDB tables don't support FULLTEXT:
 
-		mysql -u root -p
-3.	Execute the script as follows:
+		TBD
 
-		source <path>/<sql script name>.sql
+salesarchive.sql
 
-SQL script:
+Create the following script and give it a name like `5_restore-oms.sql`. Replace the following:
+
+*	`<your OMS DB name>` with the name of your OMS database. 
+
+	In this topic, the sample database name is `magento_oms`.
+*	`<root user name>` with your MySQL root user name
+*	`<root user password>` with the user's password
+*	Verify the location of the backup files you created earlier (for example, `/var/sales.sql`)
 
 {% highlight sql %}
+mysql -u<root user name> -p123123q <your OMS DB name>` < /var/sales.sql
+mysql -uroot -p<root user password> <your OMS DB name>` < /var/sequence.sql
+mysql -uroot -p<root user password> <your OMS DB name>` < /var/salesarchive.sql
+mysql -uroot -p<root user password> <your OMS DB name>` < /var/customercustomattributes.sql
+{% endhighlight %}
+
+#### Verify env.php
+Open `<your Magento install dir>/app/etc/env.php` in a text editor and verify there are arrays for `default`, `checkout`, and `sales`. If not, TBD.
+
+#### Drop foreign keys from checkout tables
+TBD
 
 
 #### Next step
