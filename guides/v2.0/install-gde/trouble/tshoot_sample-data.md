@@ -12,45 +12,64 @@ github_link: install-gde/trouble/tshoot_sample-data.md
 <h2 id="install-trouble-sample">Errors installing optional sample data</h2>
 
 ### Symptom
+
 Error in the console log during sample data installation using the Setup Wizard:
 
-	Module 'Magento_CatalogRuleSampleData':
-	[ERROR] exception 'Magento\Framework\Exception\LocalizedException' with message 'Can't create directory /var/www/html/magento2/var/generation/Magento/CatalogRule/Model/.' in /var/www/html/magento2/lib/internal/Magento/Framework/Code/Generator.php:103
+    Module 'Magento_CatalogRuleSampleData':
+    [ERROR] exception 'Magento\Framework\Exception\LocalizedException' with message 'Can't create directory /var/www/html/magento2/var/generation/Magento/CatalogRule/Model/.' in /var/www/html/magento2/lib/internal/Magento/Framework/Code/Generator.php:103
 
-	(more)
+    (more)
 
-	Next exception 'ReflectionException' with message 'Class Magento\CatalogRule\Model\RuleFactory does not exist' in /var/www/html/magento2/lib/internal/Magento/Framework/Code/Reader/ClassReader.php:29
+    Next exception 'ReflectionException' with message 'Class Magento\CatalogRule\Model\RuleFactory does not exist' in /var/www/html/magento2/lib/internal/Magento/Framework/Code/Reader/ClassReader.php:29
 
-	(more)
+    (more)
 
 These exceptions result from file system permissions settings.
 
 #### Solution
+
 <a href="{{ site.gdeurl }}install-gde/install/web/install-web-sample-data.html#instgde-prereq-compose-clone-perms">Set file system ownership and permissions again</a> as a user with `root` privileges.
 
 ### Symptom
 
 During installation of optional sample data, a  message similar to the following displays: 
 
-	PHP Fatal error: Call to undefined method Magento\Catalog\Model\Resource\Product\Interceptor::getWriteConnection() in /var/www/magento2/app/code/Magento/SampleData/Module/Catalog/Setup/Product/Gallery.php on line 144
+    PHP Fatal error: Call to undefined method Magento\Catalog\Model\Resource\Product\Interceptor::getWriteConnection() in /var/www/magento2/app/code/Magento/SampleData/Module/Catalog/Setup/Product/Gallery.php on line 144
 
 #### Solution
 
 During sample data installation, disable SELinux using a resource such as:
 
-*	<a href="http://www.crypt.gen.nz/selinux/disable_selinux.html#DIS2" target="_blank">crypt.gen.nz</a>
-*	<a href="https://www.centos.org/docs/5/html/5.1/Deployment_Guide/sec-sel-enable-disable.html" target="_blank">CentOS documentation</a>
+*   <a href="http://www.crypt.gen.nz/selinux/disable_selinux.html#DIS2" target="_blank">crypt.gen.nz</a>
+*   <a href="https://www.centos.org/docs/5/html/5.1/Deployment_Guide/sec-sel-enable-disable.html" target="_blank">CentOS documentation</a>
 
 ### Symptom
+
 Other errors display, such as:
 
-	[Magento\Setup\SampleDataException] Error during sample data installation: Class Magento\Sales\Model\Service\OrderFactory does not exist
+    [Magento\Setup\SampleDataException] Error during sample data installation: Class Magento\Sales\Model\Service\OrderFactory does not exist
 
 #### Solution
 
 There are known issues with using sample data with the Magento 2 develop branch. Use the master branch instead. You can switch to the master branch as follows:
 
-	cd <your Magento install dir>
-	git checkout master
-	git pull origin master
+    cd <your Magento install dir>
+    git checkout master
+    git pull origin master
 
+### Symptom
+
+The installation hangs before the sample data installation finishes:
+
+    (more)
+
+    Module 'Magento_CustomerSampleData':
+    Installing data...
+
+    (the installation doesn't continue)
+
+This error occurs when the maximum execution time of your PHP scripts is lower than the time it takes to load the sample data (which can be a lot of time).
+
+#### Solution
+
+Increase the maximum execution time of your PHP scripts temporarily setting the `max_execution_time` PHP directive to a high value (e.g. `max_execution_time = 600` for 10 minutes).
