@@ -12,7 +12,6 @@ github_link: install-gde/trouble/tshoot_sample-data.md
 <h2 id="install-trouble-sample">Errors installing optional sample data</h2>
 
 ### Symptom
-
 Error in the console log during sample data installation using the Setup Wizard:
 
 	Module 'Magento_CatalogRuleSampleData':
@@ -27,7 +26,6 @@ Error in the console log during sample data installation using the Setup Wizard:
 These exceptions result from file system permissions settings.
 
 #### Solution
-
 <a href="{{ site.gdeurl }}install-gde/install/web/install-web-sample-data.html#instgde-prereq-compose-clone-perms">Set file system ownership and permissions again</a> as a user with `root` privileges.
 
 ### Symptom
@@ -40,11 +38,10 @@ During installation of optional sample data, a  message similar to the following
 
 During sample data installation, disable SELinux using a resource such as:
 
-*   <a href="http://www.crypt.gen.nz/selinux/disable_selinux.html#DIS2" target="_blank">crypt.gen.nz</a>
-*   <a href="https://www.centos.org/docs/5/html/5.1/Deployment_Guide/sec-sel-enable-disable.html" target="_blank">CentOS documentation</a>
+*	<a href="http://www.crypt.gen.nz/selinux/disable_selinux.html#DIS2" target="_blank">crypt.gen.nz</a>
+*	<a href="https://www.centos.org/docs/5/html/5.1/Deployment_Guide/sec-sel-enable-disable.html" target="_blank">CentOS documentation</a>
 
 ### Symptom
-
 Other errors display, such as:
 
 	[Magento\Setup\SampleDataException] Error during sample data installation: Class Magento\Sales\Model\Service\OrderFactory does not exist
