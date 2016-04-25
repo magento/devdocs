@@ -45,8 +45,7 @@ The <a href="https://github/magento/code-migration" target="_blank">Code Migrati
 
 <h4>Miscellaneous</h4> 
 
-<!-- 47255 --> * (GITHUB-3459)
-
+<!-- 47255 --> * Selecting the Use Aggregated Data option now correctly displays Dashboard data. (GITHUB-3459)
 
 <!-- 51074 --> * Magento now displays the expected color swatch when you select a color swatch for a configurable product. Previously, Magento did not change the color when you selected a swatch.
 
@@ -70,7 +69,7 @@ The <a href="https://github/magento/code-migration" target="_blank">Code Migrati
 
 
 <h4>Security </h4>
-This release includes functional enhancements to improve the performance of your Magento 2.0 installation. It does not include specific security fixes. 
+This release includes functional enhancements to improve the performance of your Magento 2.0 installation. It does not include security fixes. 
 
 
 <h3>System requirements</h3>
