@@ -28,11 +28,11 @@ You should make sure that your extension handles data with care in order to prev
   For a list of discouraged low-level functions, we suggest you look at the [list of forbidden functions](https://github.com/magento-ecg/coding-standard/blob/master/Ecg/Sniffs/Security/ForbiddenFunctionSniff.php){:target="_blank"} for [Magento's code sniffer](https://github.com/magento-ecg/coding-standard){:target="_blank"}.
 
 ### Use Wrappers Instead of Superglobal Variables
-  Make sure that your Magento application uses Magento wrapper objects, and does not directly use PHP superglobals:
+  Make sure that your Magento application does not directly use any PHP superglobals such as:
   ```
   $GLOBALS, $_SERVER, $_GET, $_POST, $_FILES, $_COOKIE, $_SESSION, $_REQUEST, $_ENV
   ```
-  .
+  . Instead use the [`Magento\Framework\HTTP\PhpEnvironment\Request`]({{site.mage2000url}}lib/internal/Magento/Framework/HTTP/PhpEnvironment/Request.php){:target="_blank"} wrapper class to safely access these values.
 
 ### Use the Correct MySQL Data Types
   MySQL offers a range of numeric, string, and time data types. If you are storing a date, use a DATE or DATETIME field. Using an INTEGER or STRING can make SQL queries more complicated, if not impossible. It is often tempting to invent your own data formats; for example, storing serialized PHP objects in string. Database management may be easier, but MySQL will become a dumb data store and it may lead to problems later.
