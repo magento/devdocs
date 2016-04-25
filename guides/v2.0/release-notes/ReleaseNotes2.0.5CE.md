@@ -9,15 +9,11 @@ github_link: release-notes/ReleaseNotes2.0.5CE.md
 ---
 
 <h2>Magento Community Edition 2.0.5</h2>
-We are pleased to present Magento Community Edition 2.0.5. This release includes miscellaneous functional fixes that enhance product performance, especially during import and export operations, and database queries. 
+We are pleased to present Magento Community Edition 2.0.5. This release includes miscellaneous functional fixes. 
 
 
 Backward-incompatible changes are documented in <a href="http://devdocs.magento.com/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
 
-<h3>Migration toolkits</h3>
-The <a href="{{ site.gdeurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ site.gdeurl }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>.
-
-The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
 
 
 <h3>Fixed issues</h3>
@@ -68,10 +64,6 @@ The <a href="https://github.com/magento/code-migration" target="_blank">Code Mig
 
 
 
-<h4>Security </h4>
-This release includes functional enhancements to improve the performance of your Magento 2.0 installation. It does not include security fixes. 
-
-
 <h3>System requirements</h3>
 Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later support PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see 
 <a href="http://devdocs.magento.com/guides/v2.0/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
@@ -119,6 +111,13 @@ Developers who contribute to the CE codebase can <a href="http://devdocs.magento
 1.	Go to the <a href="http://devdocs.magento.com/guides/v2.0/install-gde/install/cli/dev_options.html" target="_blank">Contributing Developers</a> page.
 
 2.	Follow the instructions to pull the updates from the repository and update Composer.
+
+<h3>Migration toolkits</h3>
+The <a href="{{ site.gdeurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ site.gdeurl }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>.
+
+The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
+
+
 
 
 
