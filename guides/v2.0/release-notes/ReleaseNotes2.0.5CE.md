@@ -14,32 +14,32 @@ We are pleased to present Magento Community Edition 2.0.5. This release includes
 
 Backward-incompatible changes are documented in <a href="http://devdocs.magento.com/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
 
+<h3>Migration toolkits</h3>
+The <a href="{{ site.gdeurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ site.gdeurl }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>.
+
+The <a href="https://github/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
+
 
 <h3>Fixed issues</h3>
 
 <h4> Upgrade and Installation</h4>
-<!-- 47999 --> * Magento now successfully registers installed themes in the theme table during production mode.  (GITHUB-2797)
 
 <!-- 50224 --> *  Magento no longer assumes hard-coded root category IDs or default category IDs. Previously, Magento used hard-coded IDs for these values, which could produce inconsistent data during store installation.
 
-<!-- 51693 --> * Zip archives on **repo.magento.com** are now compressed.
 
+<h4>Import/Export</h4>
 
-<h4>Performance</h4>
+<!-- 46245 --> * Product import now works successfully in a multi-store environment. Previously, Magento would display the following error message,  “URL key for specified store already exists”, when importing products into a multi-store configuration. 
 
 <!-- 48722 --> * Export performance has been enhanced.  Pages no longer hang randomly, and CPU usage is no longer pegged.  (GITHUB-3217)
 
-<!-- 50752 --> * The performance of the Sync button has been enhanced.   
 
 
+<h4>Database</h4>
 
-<h4>APIs</h4>
+<!-- 49004 --> * Magento no longer duplicates queries to the database from the Catalog page. Instead, if Magento has already loaded specific data during request processing, it re-uses it instead of duplicating the query. 
 
-<!-- 46720 --> * The Orders API now exposes the shipping address. This corrects an issue with using this API to integrate with third-party systems. (GITHUB-2628)
-
-<!-- 50299 --> * When you create a shipment and invoice using the REST API, order status now changes as expected from Processing to Complete. Previously, Magento would create the order invoice and shipment, but would continue to display order status  as Processing.
-
-<!-- 48526 -->* The Credit Memo API now correctly refunds orders or updates an order's status. Previously, credit memos created through APIs did not update order status or make refunds.  
+<!-- 49003 --> * Magento no longer duplicates SQL queries on CMS and Category pages. Previously, significant duplications occurred. 
 
 
 
@@ -53,43 +53,24 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 <!-- 48659 -->* HTML template magnification now properly handles commented code.
 
 
-<!-- 49003 --> * Magento no longer duplicates SQL queries on CMS and Category pages. Previously, significant duplications occurred. 
-
 <!-- 48760 --> * Deleting one of several custom options no longer deletes all options. Previously, deleting one option from the Product page also deleted all other custom options. (GITHUB-2989)  
-
-<!-- 50195 --> * Google no longer indexes the Admin URL. Previously, Google indexed the Admin side meta tag. The frontend meta tag was not affected. 
 
 
 <!-- 50279 --> * When FPC is enabled, the CAPTCHA image differs for every user. Previously, the CAPTCHA image on the registration page remained the same for every customer after FPC was enabled.
 
-<!-- 46287 --> * You can now use Redis for session storage without modifying the <code>php.ini</code> file. You can also lock session storage to prevent simultaneous write access. 
-
-<!-- 50507 --> * Resetting the Product Attributes Mass Update Admin form works as expected. Previously, resetting the form resulted in an exception error. 
+<!-- 50195 --> * Google no longer indexes the Admin URL. Previously, Google indexed the Admin side meta tag. The frontend meta tag was not affected. 
 
 
-<h4>Custom attributes</h4>
+<!-- 43959 --> * Magento no longer sends a subscription success email whenever a customer enters his email address to subscribe to a newsletter. Users receive a 'thank you for your subscription' message and a subscription success email only when registering for the first time. 
+
+<!-- 47458 --> * Guests can now successfully click on the product page link for any item in an emailed shared wishlist. 
 
 <!-- 50912 --> * Custom customer attributes are now saved at checkout. 
 
-<!-- 51416 --> * Magento now loads custom attribute values for customer and address forms. 
 
 
-
-
-<h4>Security enhancements</h4>
-This release includes several enhancements to improve the security of your Magento 2.0 installation. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento 2.0 installation to the latest version as soon as possible.
-
-The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the <a href="https://magento.com/security" target="_blank">Magento Security Center</a>. 
-
-<!-- 51806  --> *  Magento no longer permits an unauthenticated user to remotely execute doc on the server through APIs. Previously, an unauthenticated user could remotely execute PHP code on the server using either REST or SOAP APIs. (These APIs are enabled by default in most installations.) 
-
-<!-- 51807 --> *  The Magento installation code is no longer accessible once the installation process has completed. Previously, an unauthenticated user could execute PHP code on the server because the installation process would leave the <code>/app/etc</code> directory writeable, and many administrators would not change the permissions on this directory after installation. (During installation, the system requires the <code>/app/etc</code> directory to be writeable.)
- 
-
-<!-- 51808 --> *  Magento no longer allows authenticated customers to change other customers' account information using either SOAP or REST calls.  Magento  now confirms that the ID of the customer whose account is being edited matches the authentication token in use. Previously, a malicious user could hijack a customer account by logging in as an authenticated user, then editing the account of any other user.  (The SOAP and REST APIs are enabled by default in most installations.)
-
-<!-- 51390 --> * Anonymous users can no longer retrieve the private data of registered customers. To prevent malicious attacks of this type, the <code>quote_id_mask</code> table of the Quote API no longer includes a <code>cart id mask</code> value. 
-
+<h4>Security </h4>
+This release includes functional enhancements to improve the performance of your Magento 2.0 installation. It does not include specific security fixes. 
 
 
 <h3>System requirements</h3>
