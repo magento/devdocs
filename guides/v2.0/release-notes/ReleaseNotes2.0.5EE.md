@@ -28,7 +28,7 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 
 <!-- 46245 --> * Product import now works successfully in a multi-store environment. Previously, Magento would display the following error message,  “URL key for specified store already exists”, when importing products into a multi-store configuration. 
 
-<!-- 48722 --> * Export performance has been enhanced.  Pages no longer hang randomly, and CPU usage is no longer pegged.  (GITHUB-3217)
+<!-- 48722 --> * Export performance has been enhanced.  Pages no longer hang randomly, and CPU usage is no longer pegged.  <a href="https://github.com/magento/magento2/issues/3217" target="_blank">(GITHUB-3217)</a>
 
 <h4>Database</h4>
 
@@ -39,7 +39,7 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 
 <h4>Miscellaneous</h4> 
 
-<!-- 47255 --> * Selecting the Use Aggregated Data option now correctly displays Dashboard data. (GITHUB-3459)
+<!-- 47255 --> * Selecting the Use Aggregated Data option now correctly displays Dashboard data. <a href="https://github.com/magento/magento2/issues/3459" target="_blank">(GITHUB-3459)</a>
 
 
 <!-- 51074 --> * Magento now displays the expected color swatch when you select a color swatch for a configurable product. Previously, Magento did not change the color when you selected a swatch.
@@ -47,7 +47,7 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 <!-- 48659 -->* HTML template magnification now properly handles commented code.
 
 
-<!-- 48760 --> * Deleting one of several custom options no longer deletes all options. Previously, deleting one option from the Product page also deleted all other custom options. (GITHUB-2989)  
+<!-- 48760 --> * Deleting one of several custom options no longer deletes all options. Previously, deleting one option from the Product page also deleted all other custom options. <a href="https://github.com/magento/magento2/issues/2989" target="_blank">(GITHUB-2989)</a>  
 
 
 <!-- 50279 --> * When Full Page Cache (FPC) is enabled, the CAPTCHA image differs for every user. Previously, the CAPTCHA image on the registration page remained the same for every customer after FPC was enabled.
