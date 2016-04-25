@@ -972,17 +972,37 @@ A sample follows:</p>
 
 <h2 id="set_template">Set the template used by a block</h2>
 
-<p>To set the template for a block, pass it using the <code>&lt;argument&gt;</code> instruction.</p>
+<p>There are two ways to set the template for a block:</p>
 
-<p>Example: change template of the page title block:</p>
+<ul>
+  <li>using the <code>template</code> attribute</li>
+  <li>using the <code>&lt;argument&gt;</code> instruction</li>
+</ul>
+
+<p>Both approaches are demonstrated in the following examples of changing the template of the page title block.</p>
+
+<p><strong>Example 1:</strong></p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;page.main.title&quot;</span> <span class="na">template=</span><span class="s">&quot;%Namespace_Module::new_template.phtml%&quot;</span><span class="nt">/&gt;</span></code></pre></div>
+
+<p><strong>Example 2:</strong> </p>
 
 <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;page.main.title&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;arguments&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;template&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Namespace_Module::title_new.phtml<span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;template&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>%Namespace_Module::new_template.phtml%<span class="nt">&lt;/argument&gt;</span>
         <span class="nt">&lt;/arguments&gt;</span>
  <span class="nt">&lt;/referenceBlock&gt;</span></code></pre></div>
 
-<p>The path to the template is specified relatively to the <code>view/&lt;area&gt;/templates/</code> directory of the module. The <code>&lt;area&gt;</code> corresponds to the area for which the layout file is used.</p>
+<p>In both example, the template is specified according to the following:</p>
+
+<ul>
+  <li><code>Namespace_Module:</code> defines the module the template belongs to. For example, <code>Magento_Catalog</code>.</li>
+  <li><code>new_template.phtml</code>: the path to the template relatively to the <code>templates</code> directory. It might be <code>&lt;module_dir&gt;/view/&lt;area&gt;/templates</code> or <code>&lt;theme_dir&gt;/&lt;Namespace_Module&gt;/templates</code>.</li>
+</ul>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Template values specified as attributes have higher priority during layout generation, than the ones specified using <code>&lt;argument&gt;</code>. It means, that if for a certain block, a template is set as attribute, it will override the value you specify in <code>&lt;argument&gt;</code> for the same block.</p>
+</div>
 
 <h2 id="layout_markup_modify-block">Modify block arguments</h2>
 
