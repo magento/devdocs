@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Message Queues</title>
+	<title>Extension Lifecycle</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/extension-dev-guide/message-queues.html">
+	<link rel="canonical" href="//guides/v2.0/extension-dev-guide/prepare/lifecycle.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -139,9 +139,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Message Queues</h1>
+		<h1 class="page-heading">Extension Lifecycle</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/extension-dev-guide/message-queues.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/extension-dev-guide/prepare/lifecycle.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -288,7 +288,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/prepare/lifecycle.html">Extension lifecycle</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/extension-dev-guide/prepare/lifecycle.html">Extension lifecycle</a></li>
 
 									
 
@@ -639,7 +639,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/extension-dev-guide/message-queues.html">Message Queues (Enterprise Edition Only)</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/message-queues.html">Message Queues (Enterprise Edition Only)</a></li>
 
 									
 
@@ -803,67 +803,262 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<h2 id="message-queues">Message Queues</h2>
-<p><img src="/common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only" /></p>
+		<h2 class="no_toc" id="extension-lifecycle">Extension Lifecycle</h2>
 
-<p>Message queues provide an asynchronous communications mechanism in which the sender and the receiver of a message do not contact each other. Nor do they need to communicate with the message queue at the same time. When a sender places a messages onto a queue, it is stored until the recipient receives them. </p>
+<ul id="markdown-toc">
+  <li><a href="#overview">Overview</a></li>
+  <li><a href="#lifecycle-class-rules">Lifecycle class rules</a></li>
+  <li><a href="#schema-initialization">Schema initialization</a>    <ul>
+      <li><a href="#schema-installation">Schema installation</a></li>
+      <li><a href="#schema-upgrade">Schema upgrade</a></li>
+      <li><a href="#recurring-schema-event">Recurring schema event</a></li>
+    </ul>
+  </li>
+  <li><a href="#data-initialization">Data initialization</a>    <ul>
+      <li><a href="#data-installation">Data installation</a></li>
+      <li><a href="#data-upgrade">Data upgrade</a></li>
+      <li><a href="#recurring-data-event">Recurring data event</a></li>
+    </ul>
+  </li>
+  <li><a href="#setup-resource-models">Setup resource models</a></li>
+  <li><a href="#module-context">Module context</a></li>
+  <li><a href="#uninstall-event">Uninstall event</a></li>
+</ul>
 
-<p>On Magento 2.0 Enterprise Edition, the Message Queue Framework (MQF) is a fully-functional system that allows a module to publish messages to queues. It also creates consumers to receive them asynchronously. The MQF primarily uses <a href="http://www.rabbitmq.com">RabbitMQ</a> as the messaging broker, which  provides a scalable platform for sending and receiving messages. It also includes a mechanism for storing undelivered messages. RabbitMQ is based on the Advanced Message Queuing Protocol (AMQP) 0.9.1 specification. </p>
+<h3 id="overview">Overview</h3>
 
-<p>A basic message queue system can also be set up without using RabbitMQ. In this system, a MySQL adapter stores messages in the database. Three database tables (<code>queue</code>, <code>queue_message</code>, and <code>queue_message_status</code>) manage the message queue workload. Cron jobs ensure the consumers are able to receive messages. This solution is not very scalable. RabbitMQ should be used whenever possible.</p>
+<p>This article describes your module’s lifecycle and how you can create executable classes that will run when it is initialized or uninstalled. During initialization or uninstallation, these classes can perform database setup tasks, upgrade tasks, clean up tasks, and so on.</p>
 
-<p>See <a href="/guides/v2.0/config-guide/mq/config-mq.html">Configure message queues</a> for information about setting up the message queue system.</p>
+<div class="bs-callout bs-callout-info" id="other-component-types">
+  <p>Since theme components and language packages generally do not need to install a database schema or update data in the database, they do not need to worry about initialization or uninstallation tasks.</p>
+</div>
 
-<h2>Send a message from the publisher to a queue</h2>
+<h3 id="lifecycle-class-rules">Lifecycle class rules</h3>
 
-<p>The following code sends a message to the queue. The <code>publish</code> method is defined in <code>PublisherInterface</code> </p>
-
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$publisher</span><span class="o">-&gt;</span><span class="na">publish</span><span class="p">(</span><span class="nv">$topic</span><span class="p">,</span> <span class="nv">$message</span><span class="p">)</span></code></pre></div>
-
-<p>In an MySQL adapter environment, when a message is published to multiple queues, create a single record in <code>queue_message</code> and multiple records in <code>queue_message_status</code>: one for each queue. (A join on the <code>queue</code>, <code>queue_message</code>, and <code>queue_message_status</code> tables is required). </p>
-
-<h2>Instantiate a consumer</h2>
-
-<p>The procedure for instantiating a consumer differs, depending on which message queue system is being used.</p>
-
-<h3>RabbitMQ</h3>
-<p>This instantiates a consumer that is defined in a <code>queue.xml</code> file. The consumer (<code>customer_created_listener</code>)listens to the queue and receives all new messages. For every message, it invokes <code>Magento\Some\Class::processMessage($message)</code></p>
-
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">consumerFactory</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;customer_created_listener&#39;</span><span class="p">)</span>
-    <span class="o">-&gt;</span><span class="na">process</span><span class="p">();</span></code></pre></div>
-
-<h3>MySQL adapter</h3>
-
-<p>Implement <code>\Magento\Framework\Amqp\ConsumerInterface::process($maxNumberOfMessages)</code> to instantiate a consumer. </p>
-
-<p>Perform the following actions:</p>
-
-<ol>
-  <li>Define the queue name associated with current consumer using <code>\Magento\Framework\Amqp\ConsumerConfigurationInterface::getQueueName</code>.</li>
-  <li>Select <code>$maxNumberOfMessages</code> message records, filtering on the  <code>queue_name</code> field. You must join on all 3 tables. To accomplish this, you may want to extract fewer records at a time to improve load distribution between multiple consumers. </li>
-  <li>Decode the message using topic name taken from the <code>\Magento\Framework\Amqp\ConsumerConfigurationInterface</code>.</li>
-  <li>Invoke callback  <code>Magento\Framework\Amqp\ConsumerConfigurationInterface::getCallback</code> and pass the decoded data as an argument.</li>
-</ol>
-
-<h2>Override topic configuration</h2>
-<p>The following sample introduces a runtime configuration that allows you to redefine the adapter for a topic.</p>
-
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="s1">&#39;queue&#39;</span> <span class="o">=&gt;</span>
-    <span class="k">array</span><span class="p">(</span>
-     <span class="s1">&#39;topics&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
-        <span class="s1">&#39;customer.created&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">publisher</span><span class="o">=</span><span class="s2">&quot;default-rabitmq&quot;</span><span class="p">],</span>
-        <span class="s1">&#39;order.created&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">publisher</span><span class="o">=</span><span class="s2">&quot;default-rabitmq&quot;</span><span class="p">],</span>
-    <span class="p">),</span>
-<span class="p">),</span></code></pre></div>
-
-<h4 id="related-topics">Related Topics</h4>
+<p>Magento will detect the classes you are using to hook into the different lifecycle stages when you follow these rules:</p>
 
 <ul>
-  <li><a href="/guides/v2.0/config-guide/mq/rabbitmq-overview.html">RabbitMQ Overview</a></li>
-  <li>
-    <p><a href="/guides/v2.0/config-guide/mq/config-mq.html">Configure message queues</a></p>
-  </li>
-  <li><a href="/guides/v2.0/install-gde/prereq/install-rabbitmq.html">Install RabbitMQ</a></li>
+  <li>The class should be in the <code>Setup</code> directory in your module’s root directory with the appropriate file name. For the correct file name, please see the specific examples below.</li>
+  <li>The class must use the specific name for the phase in which it will be executed in. To determine the correct class name to use, please see the specific examples below.</li>
+  <li>The class must implement the specific class interface for the phase in which it will be executed in. To determine the correct interface to use, please see the specific examples below.</li>
+  <li>The version you use in your module should follow our <a href="/guides/v2.0/architecture/versioning.html">versioning policy</a>.</li>
+</ul>
+
+<h3 id="schema-initialization">Schema initialization</h3>
+
+<p>Schema initialization is the first process your module goes through when it is installed, re-installed, or upgraded.</p>
+
+<h4 id="schema-installation">Schema installation</h4>
+
+<p>When your module is initially installed, the first thing your modules does is perform a schema installation by executing its installation class.</p>
+
+<p>If the <code>schema_version</code> of the module is found in the <code>setup_modules</code> table, then this stage will be skipped because it is assumed that the module schema has already been initialized in a previous installation.</p>
+
+<p>For example, if you are installing version 2.0.0 of your module and there have been no previous installations of your module, then schema installation will proceed. Otherwise, schema installation will be skipped and your module will begin a <a href="#schema-upgrade">schema upgrade</a>.</p>
+
+<p>During a schema installation, the <code>install</code> function will be executed in the <code>InstallSchema</code> class implementing the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/InstallSchemaInterface.php" target="_blank"><code>\Magento\Framework\Setup\InstallSchemaInterface</code></a>:</p>
+
+<pre><code>// File Location: &lt;module_root_directory&gt;/Setup/InstallSchema.php
+
+class \&lt;Vendor&gt;\&lt;Module&gt;\Setup\InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function install(SchemaSetupInterface $setup, ModuleContextInterface $context)
+    {
+        ...
+    }
+}
+
+</code></pre>
+
+<h4 id="schema-upgrade">Schema upgrade</h4>
+
+<p>If your module already has an earlier version installed in Magento, then it will perform a schema upgrade instead of an installation. The purpose of a schema upgrade is usually to update the database structure or apply patches.</p>
+
+<p>For example, when a new 2.0.1 version of your module is installed over a previous 2.0.0 version, your module will perform a schema upgrade instead of a <a href="#schema-installation">schema installation</a>.</p>
+
+<p>During a schema upgrade, the <code>upgrade</code> function will be executed in the <code>UpgradeSchema</code> class implementing the  <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/UpgradeSchemaInterface.php" target="_blank"><code>Magento\Framework\Setup\UpgradeSchemaInterface</code></a>:</p>
+
+<pre><code>// Location: &lt;module_root_directory&gt;/Setup/UpgradeSchema.php
+
+class \&lt;Vendor&gt;\&lt;Module&gt;\Setup\UpgradeSchema implements \Magento\Framework\Setup\UpgradeSchemaInterface
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function upgrade(SchemaSetupInterface $setup, ModuleContextInterface $context)
+    {
+        ...
+    }
+}
+</code></pre>
+
+<h4 id="recurring-schema-event">Recurring schema event</h4>
+
+<p>You can create a class in your module that will be run every time after schema installation or upgrade. The purpose of running code in this final stage of schema initialization is usually to do final modifications to the database schema after it has been installed or updated.</p>
+
+<p>During this event, the <code>install</code> function will be executed in the <code>Recurring</code> class implementing the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/InstallSchemaInterface.php" target="_blank"><code>\Magento\Framework\Setup\InstallSchemaInterface</code></a>:</p>
+
+<pre><code>// Location: &lt;module_root_directory&gt;/Setup/Recurring.php
+
+class \&lt;Vendor&gt;\&lt;Module&gt;\Setup\Recurring implements \Magento\Framework\Setup\InstallSchemaInterface
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function install(SchemaSetupInterface $setup, ModuleContextInterface $context)
+    {
+        ...
+    }
+}
+</code></pre>
+
+<h3 id="data-initialization">Data initialization</h3>
+
+<p>After your module’s schema has been initialized, your module will go through the same process for data initialization.</p>
+
+<h4 id="data-installation">Data installation</h4>
+
+<p>Just like with <a href="#schema-installation">schema installation</a>, this stage will run only during the initial installation of your module. The purpose of data installation is usually to populate the database with initial data for your module.</p>
+
+<p>During data installation, the <code>install</code> function will be executed in the <code>InstallData</code> class implementing the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/InstallDataInterface.php" target="_blank"><code>Magento\Framework\Setup\InstallDataInterface</code></a>:</p>
+
+<pre><code>// Location: &lt;module_root_directory&gt;/Setup/InstallData.php
+
+class \&lt;Vendor&gt;\&lt;Module&gt;\Setup\InstallData implements \Magento\Framework\Setup\InstallDataInterface
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
+    {
+        ...
+    }
+}
+
+</code></pre>
+
+<h4 id="data-upgrade">Data upgrade</h4>
+
+<p>Just like the <a href="#schema-upgrade">schema-upgrade</a> stage, data upgrade only occurs when Magento detects a previous installation. The purpose of this stage is usually to fix data that has been corrupted or populate a new data field from a schema change.</p>
+
+<p>During a data upgrade, the <code>upgrade</code> function will be executed in the <code>UpgradeData</code> class implementing the  <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/UpgradeDataInterface.php" target="_blank"><code>Magento\Framework\Setup\UpgradeDataInterface</code></a>:</p>
+
+<pre><code>//&lt;module_root_directory&gt;/Setup/UpgradeData.php
+
+class \&lt;Vendor&gt;\&lt;Module&gt;\Setup\UpgradeData implements \Magento\Framework\Setup\UpgradeDataInterface
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function upgrade(ModuleDataSetupInterface $setup, ModuleContextInterface $context);
+    {
+        ...
+    }
+}
+</code></pre>
+
+<h4 id="recurring-data-event">Recurring data event</h4>
+
+<p>You can create a class that will run after every data installation or upgrade. The purpose of the class is usually to do final modifications to the database store after data has been installed or updated.</p>
+
+<p>During this event, the <code>install</code> function will be executed in the <code>RecurringData</code> class implementing the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/InstallDataInterface.php" target="_blank"><code>Magento\Framework\Setup\InstallDataInterface</code></a>:</p>
+
+<pre><code>// Location: &lt;module_root_directory&gt;/Setup/RecurringData.php
+
+class \&lt;Vendor&gt;\&lt;Module&gt;\Setup\RecurringData implements \Magento\Framework\Setup\InstallDataInterface
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
+    {
+        ...
+    }
+}
+</code></pre>
+
+<h3 id="setup-resource-models">Setup resource models</h3>
+
+<p>Magento provides <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/ModuleDataSetupInterface.php" target="_blank"><code>ModuleDataSetupInterface</code></a> and <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/ModuleContextInterface.php" target="_blank"><code>ModuleContextInterface</code></a> to assist with database manipulations. However, if the installation/upgrade is too complex, more classes may be created to handle all the logic. In these cases, you can pass the <code>ModuleDataSetupInterface</code> resource to other classes that may require DB manipulations.</p>
+
+<pre><code>class InstallData implements InstallDataInterface
+{
+    /**
+     * @var CustomerFactory
+     */
+    private $customerSetupFactory;
+
+    /**
+     * @param CustomerFactory $customerSetupFactory
+     */
+    public function __construct(CustomerFactory $customerSetupFactory)
+    {
+        $this-&gt;customerSetupFactory = $customerSetupFactory;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
+    {
+        /** @var Customer $customerSetup */
+        $customerSetup = $this-&gt;customerSetupFactory-&gt;create(['setup' =&gt; $setup]);
+
+        $setup-&gt;startSetup();
+        $customerSetup-&gt;installEntities();
+        ...
+    }
+}
+</code></pre>
+
+<h3 id="module-context">Module context</h3>
+
+<p>To add more logic to your install/upgrade classes, you can use the  <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/ModuleContextInterface.php" target="_blank"><code>ModuleContextInterface</code></a> provided by Magento. The context provides module information, such as current module version, to help add logic to your class.</p>
+
+<pre><code>class \Magento\Cms\Setup\InstallData implements \Magento\Framework\Setup\UpgradeDataInterface
+{
+   public function upgrade(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
+   {
+        if (version_compare($context-&gt;getVersion(), '1.0.0', '&lt;')) {
+            ...
+        }
+   }
+}
+</code></pre>
+
+<h3 id="uninstall-event">Uninstall event</h3>
+
+<p>The uninstall event begins when you uninstall your module using the <a href="/guides/v2.0/comp-mgr/compman-uninst.html">Component Manager</a> or by running the command <code>bin/magento module:uninstall --remove-data &lt;module_name&gt;</code>.</p>
+
+<p>In this stage, your module should remove all traces of its existence in the database; e.g. dropping tables, deleting data, or restoring data.</p>
+
+<p>During this stage, the <code>uninstall</code> function will be executed in the <code>Uninstall</code> class implementing the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Setup/UninstallInterface.php" target="_blank"><code>Magento\Framework\Setup\UninstallInterface</code></a>:</p>
+
+<pre><code>// Location: &lt;module_root_directory&gt;/Setup/Uninstall.php
+
+class \&lt;Vendor&gt;\&lt;Module&gt;\Setup\Uninstall implements \Magento\Framework\Setup\UninstallInterface
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function uninstall(SchemaSetupInterface $setup, ModuleContextInterface $context)
+    {
+        ...
+    }
+}
+</code></pre>
+
+<div class="bs-callout bs-callout-warning" id="uninstall-disabled">
+  <p>A disabled module's uninstall routine can still be invoked when it is uninstalled. This means that module specific configurations such as dependency injection configurations and event/observer configurations will not be available and can cause problems. To avoid this, uninstall classes should not have dependencies on them.</p>
+</div>
+
+<p><strong>Related Topics</strong></p>
+
+<ul>
+  <li><a href="/guides/v2.0/architecture/versioning.html">Versioning policy</a></li>
 </ul>
 
 
