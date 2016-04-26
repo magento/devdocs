@@ -97,11 +97,5 @@ When the third-party application makes an invalid request to Magento, the follow
    </tr>
 </table>
 
-<h2>Next step</h2>
-<ul>
-<li><a href="{{ site.gdeurl }}/get-started/gs-web-api-request.html">Step 2. Construct a request</a></li>
-</ul>
-<h2>Related topic</h2>
-<ul>
-<li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
-</ul>
+## Related topic
+[gs-authentication-oauth.html](OAuth-based authentication)
