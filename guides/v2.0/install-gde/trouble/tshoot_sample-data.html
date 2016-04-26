@@ -788,21 +788,28 @@ git pull origin master
 
 <h3 id="symptom-3">Symptom</h3>
 
-<p>The installation hangs before the sample data installation finishes:</p>
+<p>The installation stops before the sample data installation finishes. An example follows:</p>
 
 <pre><code>(more)
 
 Module 'Magento_CustomerSampleData':
 Installing data...
-
-(the installation doesn't continue)
 </code></pre>
 
-<p>This error occurs when the maximum execution time of your PHP scripts is lower than the time it takes to load the sample data (which can be a lot of time).</p>
+<p>Sample data installation does not finish.</p>
+
+<p>This error occurs when the maximum configured execution time of your PHP scripts is exceeded. Because sample data can take a long time to load, you can increase the value during your installation.</p>
 
 <h4 id="solution-3">Solution</h4>
 
-<p>Increase the maximum execution time of your PHP scripts temporarily setting the <code>max_execution_time</code> PHP directive to a high value (e.g. <code>max_execution_time = 600</code> for 10 minutes).</p>
+<p>As a user with <code>root</code> privileges, modify <code>php.ini</code> to increase the value of <code>max_execution_time</code> to 600 or more. (600 seconds is 10 minutes. You can increase the value to whatever you want.) You should change <code>max_execution_time</code> back to its previous value after the installation is successful.</p>
+
+<p>If you’re not sure where <code>php.ini</code> is located, enter the following command:</p>
+
+<pre><code>php --ini
+</code></pre>
+
+<p>The value of <code>Loaded Configuration File</code> is the <code>php.ini</code> you must modify.</p>
 
 
 		</div>
