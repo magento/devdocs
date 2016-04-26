@@ -1,11 +1,12 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: C_Quickstart
+subgroup: 30_Quickstart
 title: Quick start with the Magento Testing Framework
 menu_title: Prepare environment for test run
 menu_order: 2
 github_link: mtf/mtf_quickstart/mtf_quickstart_environmemt.md
+redirect_from: /guides/v1.0/mtf/mtf_quickstart/mtf_quickstart_environmemt.html
 ---
 <h2 id="mtf_quickstart_config">Prepare environment for test run</h2>
 
@@ -17,9 +18,8 @@ The Selenium Server will drive a browser to execute your tests.
 You can download the Selenium Server from [Selenium project website][].
 
 <div class="bs-callout bs-callout-warning">
-    <p>Install <a href="https://help.ubuntu.com/community/Java">Java</a> to work with Selenium.</p>
+    <p>Install <a href="https://help.ubuntu.com/community/Java">Java</a> to work with Selenium Server.</p>
 </div>
-
 
 Specific versions of the Selenium Server are compatible with specific versions of browsers. <a href="http://docs.seleniumhq.org/about/platforms.jsp">Read more about compatibility of browser version and Selenium server version.</a>
 
@@ -51,7 +51,10 @@ Enter in terminal:
     php generate.php
 
 <h2 id="mtf_install_pre">Next Steps</h2>
-<a href="{{ site.gdeurl21 }}mtf/mtf_quickstart/mtf_quickstart_config.html">&lt;&lt; Adjust configuration </a> | <a href="{{ site.gdeurl21 }}mtf/mtf_quickstart/mtf_quickstart_runtest.html"> Test run &gt;&gt;</a>
+
+[&lt;&lt; Prepare Magento application]({{ site.gdeurl21 }}mtf/mtf_quickstart/mtf_quickstart_magento.html)| <a href="{{ site.gdeurl21 }}mtf/mtf_quickstart/mtf_quickstart_runtest.html"> Test run &gt;&gt;</a>
+
+
 
 <!-- LINK DEFINITIONS -->
 

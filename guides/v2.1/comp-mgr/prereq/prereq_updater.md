@@ -1,7 +1,7 @@
 ---
 layout: default
 group: compman
-subgroup: B_prereq
+subgroup: 02_prereq
 title: Set up the updater (contributing developers only)
 menu_title: Set up the updater (contributing developers only)
 menu_order: 3

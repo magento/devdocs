@@ -7,9 +7,7 @@ menu_title: Translation dictionaries and language packages
 menu_node: 
 menu_order: 250
 github_link21: config-guide/cli/config-cli-subcommands-i18n.md
-redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-i18n.html
 ---
-
 
 #### Contents
 
@@ -189,17 +187,13 @@ A language package is a directory under `app/i18n/<VendorName>` in the Magento f
 *	`registration.php` that <a href="{{ site.gdeurl21 }}extension-dev-guide/build/component-registration.html">registers</a> the language package
 *	<a href="#config-cli-subcommands-xlate-pack-meta-xml">`language.xml`</a> meta-information file
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The entire path must be all lowercase.</p>
-</div>
-
-For an example, see the <a href="{{ site.mage2000url }}app/i18n/magento/de_de/registration.php" target="_blank"><code>de_de</code> language package</a>.
+For an example, see the <a href="{{ site.mage2100url }}app/i18n/magento/de_de/registration.php" target="_blank"><code>de_DE</code> language package</a>.
 
 To create these files:
 
 1.	Create a directory under `app/i18n`.
 
-	For example, Magento language packages are located in `app/i18n/magento`
+	For example, Magento language packages are located in `app/i18n/Magento`
 
 2.	Add any license files you require.
 3.	Add <a href="{{ site.gdeurl21 }}extension-dev-guide/build/composer-integration.html">`composer.json`</a> that specifies dependencies for your language package.
@@ -218,7 +212,7 @@ To declare a package, specify the following information:
 <language xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/Language/package.xsd">
     <code>en_GB</code>
     <vendor>magento</vendor>
-    <package>en_gb</package>
+    <package>en_GB</package>
     <sort_order>100</sort_order>
     <use vendor="oxford-university" package="en_us"/>
 </language>
@@ -253,17 +247,17 @@ If a language package descends from two packages, its `language.xml` might look 
 
 In the preceding example:
 
-*	`language_package_one` descends from `en_au_package` and `en_au_package` descends from `en_ie_package`
-*	`language_package_two` descends from `en_ca_package` and `en_ca_package` descends from `en_us_package`
+*	`language_package_one` descends from `en_AU_package` and `en_AU_package` descends from `en_IE_package`
+*	`language_package_two` descends from `en_CA_package` and `en_CA_package` descends from `en_US_package`
 
 If the Magento application cannot find word or phrase in the `en_GB` package, it looks in other packages in following sequence:
 
 1.	`parent-package-one/language_package_one`
-1.	`<vendorname>/en_au_package`
-1.	`<vendorname>/en_ie_package`
+1.	`<vendorname>/en_AU_package`
+1.	`<vendorname>/en_ID_package`
 1.	`parent-package-two/language_package_two`
-1.	`<vendorname>/en_ca_package`
-1.	`<vendorname>/en_us_package`
+1.	`<vendorname>/en_CA_package`
+1.	`<vendorname>/en_US_package`
 
 Specifying all inheritances between the language packages might result in creating circular inheritance chains. Use <a href="{{ site.mage2000url }}dev/tests/static/testsuite/Magento/Test/Integrity/App/Language/CircularDependencyTest.php" target="_blank">Magento\Test\Integrity\App\Language\CircularDependencyTest</a> test to locate and fix such chains.
 

@@ -1,12 +1,12 @@
 ---
 layout: default
 group: compman
-subgroup: ZZ_Troubleshooting
+subgroup: 50_trouble
 title: Error upgrading from CE to EE
 menu_title: Error upgrading from CE to EE
 menu_node: 
 menu_order: 500
-github_link: comp-mgr/trouble/cman/ce-ee-upgrade.md
+github_link21: comp-mgr/trouble/cman/ce-ee-upgrade.md
 ---
 
 ### Problem: Error upgrading from CE to EE {#ce-ee}
@@ -23,6 +23,7 @@ If this error displays, resolve it as follows:
 2.	Enter the following commands in the order shown:
 
 		php <your Magento install dir>/bin/magento setup:upgrade
+
 3.	After the command completes, verify your upgrade was successful:
 
 		php bin/magento --version

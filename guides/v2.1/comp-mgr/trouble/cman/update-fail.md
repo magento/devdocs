@@ -1,7 +1,7 @@
 ---
 layout: default
 group: compman
-subgroup: ZZ_Troubleshooting
+subgroup: 50_trouble
 title: Roll back after update failure
 menu_title: Roll back after update failure
 menu_node: 
