@@ -1029,7 +1029,7 @@ This block must be added to `SynonymsIndex` class. To do this:
 
 3) Launch the generating tool to update the page class:
 
-        php <magento2>/dev/tests/functional/utils/generate.php
+    php <magento2>/dev/tests/functional/utils/generate.php
 
 And now we can add `<constraint>` to each variation of a data set `<magento2>/dev/tests/functional/tests/app/Magento/Search/Test/TestCase/CreateSynonymEntityTest.xml`:
 
