@@ -28,13 +28,13 @@ The following diagram shows the OAuth authentication process. Each step is descr
 
 1. **Create an integration**.  The merchant creates an integration from Admin. Magento generates a consumer key and a consumer secret.
 
-2. **Activate the integration**. The OAuth process begins when the merchant activates the integration. Magento sends the OAuth consumer key and secret, an OAuth verifier, and the store URL to the external application via HTTPS post.
+2. **Activate the integration**. The OAuth process begins when the merchant activates the integration. Magento sends the OAuth consumer key and secret, an OAuth verifier, and the store URL to the external application via HTTPS post to the page defined in the **Callback Link** field in Admin. See [Activate an integration](#activate) for more information.
 
-3. **Process activation information**. The integrator must store the activation information. The OAuth authentication process cannot begin until the merchant has logged in to the external application.
+3. **Process activation information**. The integrator must store the activation information. They parameters will be used to ask for a request token.
 
 3. **Call the application's login page**. Magento calls the page defined in the **Identity Link** field in Admin.
 
-4. **Merchant logs in to the external application.** If the log in is successful, the application returns to the location specified in the call. The log in page is dismissed.
+4. **Merchant logs in to the external application.** If the login is successful, the application returns to the location specified in the call. The login page is dismissed.
 
 5. **Ask for a request token**. The application uses the `POST /oauth/token/request` REST API to ask for a request token. The `Authorization` header includes the consumer key and other information. See [Get a request token](#pre-auth-token) for details about this token request.
 
@@ -56,10 +56,10 @@ A merchant can choose to select **Save and Activate** when the integration is cr
 
 Activating the integration submits the credentials to the endpoint specified when creating the Integration. An HTTP POST from Magento to the Integration endpoint will contain these attributes:
 
-* Magento store URL. For example, `http://my-magento-store.com/`.
-* oauth_verifier
-* OAuth consumer key
-* OAuth consumer key secret
+* `store_base_url` For example, `http://my-magento-store.com/`.
+* `oauth_verifier`
+* `oauth_consumer_key`
+* `oauth_consumer_key_secret`
 
 Integrations use this information to get a request token.
 
@@ -188,7 +188,7 @@ You must include these request parameters in the `Authorization` request header 
 * `oauth_timestamp`. A positive integer, expressed in the number of seconds since January 1, 1970 00:00:00 GMT.
 * `oauth_token`. The `oauth_token`, or access token, value obtained in <a href="#get-access-token">Get an access token</a>.
 
-## The OAuth signature {oauth-signature}
+## The OAuth signature {#oauth-signature}
 
 All OAuth handshake requests and Web Api requests include the signature as part of Authorization header. Its generated as follows:
 
