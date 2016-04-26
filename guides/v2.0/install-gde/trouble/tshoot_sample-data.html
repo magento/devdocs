@@ -786,6 +786,23 @@ git checkout master
 git pull origin master
 </code></pre>
 
+<h3 id="symptom-3">Symptom</h3>
+
+<p>The installation hangs before the sample data installation finishes:</p>
+
+<pre><code>(more)
+
+Module 'Magento_CustomerSampleData':
+Installing data...
+
+(the installation doesn't continue)
+</code></pre>
+
+<p>This error occurs when the maximum execution time of your PHP scripts is lower than the time it takes to load the sample data (which can be a lot of time).</p>
+
+<h4 id="solution-3">Solution</h4>
+
+<p>Increase the maximum execution time of your PHP scripts temporarily setting the <code>max_execution_time</code> PHP directive to a high value (e.g. <code>max_execution_time = 600</code> for 10 minutes).</p>
 
 
 		</div>
