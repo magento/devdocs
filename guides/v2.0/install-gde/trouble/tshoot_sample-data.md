@@ -54,3 +54,19 @@ There are known issues with using sample data with the Magento 2 develop branch.
 	git checkout master
 	git pull origin master
 
+### Symptom
+
+The installation hangs before the sample data installation finishes:
+
+	(more)
+
+	Module 'Magento_CustomerSampleData':
+	Installing data...
+
+	(the installation doesn't continue)
+
+This error occurs when the maximum execution time of your PHP scripts is lower than the time it takes to load the sample data (which can be a lot of time).
+
+#### Solution
+
+Increase the maximum execution time of your PHP scripts temporarily setting the `max_execution_time` PHP directive to a high value (e.g. `max_execution_time = 600` for 10 minutes).
