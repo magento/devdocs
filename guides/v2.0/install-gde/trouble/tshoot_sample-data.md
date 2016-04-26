@@ -56,17 +56,23 @@ There are known issues with using sample data with the Magento 2 develop branch.
 
 ### Symptom
 
-The installation hangs before the sample data installation finishes:
+The installation stops before the sample data installation finishes. An example follows:
 
 	(more)
 
 	Module 'Magento_CustomerSampleData':
 	Installing data...
 
-	(the installation doesn't continue)
+Sample data installation does not finish.
 
-This error occurs when the maximum execution time of your PHP scripts is lower than the time it takes to load the sample data (which can be a lot of time).
+This error occurs when the maximum configured execution time of your PHP scripts is exceeded. Because sample data can take a long time to load, you can increase the value during your installation.
 
 #### Solution
 
-Increase the maximum execution time of your PHP scripts temporarily setting the `max_execution_time` PHP directive to a high value (e.g. `max_execution_time = 600` for 10 minutes).
+As a user with `root` privileges, modify `php.ini` to increase the value of `max_execution_time` to 600 or more. (600 seconds is 10 minutes. You can increase the value to whatever you want.) You should change `max_execution_time` back to its previous value after the installation is successful.
+
+If you're not sure where `php.ini` is located, enter the following command:
+
+	php --ini
+
+The value of `Loaded Configuration File` is the `php.ini` you must modify.
