@@ -1299,19 +1299,7 @@ Varnish cache server
 <p>Before you can look at headers, you must set Magento for developer mode. There are several ways to do it, the simplest of which is to modify <code>.htaccess</code> in the Magento 2 root. You can also use the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html"><code>magento deploy:mode:set</code></a> command.</p>
 
 <h4 id="set-magento-for-developer-mode">Set Magento for developer mode</h4>
-<p>To set Magento for developer mode using its <code>.htaccess</code> file:</p>
-
-<ol>
-  <li>Log in to the Magento server as, or switch to, the Magento file system owner.</li>
-  <li>Open <code>&lt;your Magento install dir&gt;/.htaccess</code> in a text editor.</li>
-  <li>
-    <p>Uncomment the following line:</p>
-
-    <pre><code>SetEnv MAGE_MODE developer
-</code></pre>
-  </li>
-  <li>Save your changes to <code>.htaccess</code> and exit the text editor.</li>
-</ol>
+<p>To set Magento for developer mode, use the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html#config-mode-change"><code>magento deploy:mode:set</code></a> command.</p>
 
 <h4 id="look-at-the-varnish-log">Look at the Varnish log</h4>
 <p>Make sure Varnish is running then enter the following command on the Varnish server:</p>
