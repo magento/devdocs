@@ -34,7 +34,7 @@ In addition to understanding fundamental programming designs/concepts, you are e
 ### Check your extension configurations
   Make sure your extension is configured correctly in each of your extension's configuration files. Invalid or unexpected values will cause your extension to behave incorrectly within Magento.
 
-### Know and Leverage the Magento 2 Framework
+### Know and leverage the Magento 2 framework
   There have been some significant changes from Magento 1. Be sure to study the capabilities and standards of the Magento 2 Framework.
 
   For example:
@@ -44,10 +44,10 @@ In addition to understanding fundamental programming designs/concepts, you are e
   - Consider using Magento framework conventions instead of low-level or PHP functionality.
   - Use the  [`Magento\Framework\Data\Collection`]({{site.mage2000url}}lib/internal/Magento/Framework/Data/Collection.php){:target="_blank"} class to retrieve a collection of filtered objects instead of directly querying the database.
 
-### Use Dependency Injection
+### Use dependency injection
   Direct class instantiation is not recommended because the class can be rewritten. If the class is created directly, any rewrites will not be applied and it breaks Magento's class rewrite capability. We encourage you to become familiar with how we use [dependency injection]({{ site.gdeurl }}extension-dev-guide/depend-inj.html) to get an instance of a class.
 
-### Follow Model-View-Control (MVC) Pattern
+### Follow Model-View-Control (MVC) pattern
   Make sure your extension adheres to the MVC Pattern, and that it does not violate any of its principles.
 
   Some important things to check in your extensions:
