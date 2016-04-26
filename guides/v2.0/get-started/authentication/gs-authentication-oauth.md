@@ -21,12 +21,9 @@ As the process of registering the integration proceeds, Magento creates the toke
 * [2-legged Oauth handshake](#oauth-handshake)
 * [Access the web APIs](#web-api-access)
 * [Generating Oauth signatures](#oauth-signature)
-* [OAuth Error Codes](oauth-errors.html)
 
 ## OAuth overview {#overview}
-
 The following diagram shows the OAuth authentication process. Each step is described further.
-
 ![OAuth flow](oauthflow.png)
 
 1. **Create an integration**.  The merchant creates an integration from Admin. Magento generates a consumer key and a consumer secret.
@@ -211,10 +208,8 @@ Use the ampersand (`&`) character to concatenate these attributes and parameters
 
 To generate the signature, you must use the HMAC-SHA1 signature method. The signing key is the concatenated values of the consumer secret and token secret separated by the ampersand (`&`) character (ASCII code 38), even if empty. You must use parameter encoding to encode each value.
 
-Related topics
+## Related topics
 [Create an integration]( {{ site.gdeurl }}/howdoi/webapi/integration.html )
 [OAuth error codes]( {{ site.gdeurl }}/get-started/authentication/oauth-errors.html )
 [Construct a request]( {{ site.gdeurl }}/get-started/gs-web-api-request.html )
-
-Configure services as web APIs
 [Configure services as web APIs]( {{ site.gdeurl }}/extension-dev-guide/service-contracts/service-to-web-service.html )
