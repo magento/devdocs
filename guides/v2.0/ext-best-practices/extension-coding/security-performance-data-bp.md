@@ -41,7 +41,7 @@ You should make sure that your extension handles data with care in order to prev
   Be sure to retrieve data from the correct object. For example, get SKU data from the Product instead of the Order object.
 
 ### Avoid raw SQL queries
-  Raw SQL queries can lead to potential security vulnerabilities and database portability issues. Use data adapter capabilities (Varien_Db_Adapter_Pdo_Mysql by default) to build and execute queries and move all data access code to a resource model. Use prepared statements to make sure that queries are safe to execute.
+  Raw SQL queries can lead to potential security vulnerabilities and database portability issues. Use data adapter capabilities ([`Magento\Framework\DB\Adapter\Pdo\Mysql`]({{site.mage2000url}}lib/internal/Magento/Framework/DB/Adapter/Pdo/Mysql.php){:target="_blank"} by default) to build and execute queries and move all data access code to a resource model. Use prepared statements to make sure that queries are safe to execute.
 
 ### Use well-defined indexes
   Foreign keys should have indexes. If you're using a field in a WHERE clause of an SQL query you should have an index on it. Such indexes should cover multiple columns based on the queries needed. As a general rule of thumb, indexes should be applied to any column named in the WHERE clause of a SELECT query.
