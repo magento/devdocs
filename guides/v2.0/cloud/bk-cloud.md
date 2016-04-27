@@ -23,7 +23,7 @@ It's fully automated and happens almost instantly. Magento Enterprise Cloud Edit
 middleman between your code and deployment.
 
 ### Details
-* Every Magento Enterprise Cloud Edition plan includes six active environments for development and staging. (Additional active environments are available at additional cost.)
+* Every Magento Enterprise Cloud Edition plan includes eight active environments for development and staging. (Additional active environments are available at additional cost.)
 
 	You can have as many *inactive* environments as you wish.  
 * You can add fully managed services like MySQL, Elasticsearch, Redis, RabbitMQ, and so on, without requiring external add-ons.
