@@ -506,7 +506,7 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<p>The Web API testing framework allows you to test Magento Web API from the client application point of view. The tests can used with either REST or SOAP. The REST or SOAP adapter that runs the tests is specified in PHPUnit configuration. See <a href="#howto">How to Run the Tests</a> for more information.</p>
+		<p>The Web API testing framework allows you to test Magento Web API from the client application point of view. The tests can be used with either REST or SOAP. The REST or SOAP adapter that runs the tests is specified in PHPUnit configuration. See <a href="#howto">How to Run the Tests</a> for more information.</p>
 
 <h2 id="details">Implementation Details</h2>
 
@@ -531,7 +531,7 @@
 
 <div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="k">namespace</span> <span class="nx">Magento\Webapi\Routing</span><span class="p">;</span>
- 
+
 <span class="k">class</span> <span class="nc">CoreRoutingTest</span> <span class="k">extends</span> <span class="nx">\Magento\TestFramework\TestCase\WebapiAbstract</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">testBasicRoutingExplicitPath</span><span class="p">()</span>
@@ -558,7 +558,7 @@
 <div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
 <span class="k">namespace</span> <span class="nx">Magento\TestFramework\TestCase\Webapi</span><span class="p">;</span>
- 
+
 <span class="k">interface</span> <span class="nx">AdapterInterface</span>
 <span class="p">{</span>
     <span class="sd">/**</span>
@@ -592,7 +592,7 @@
 <h3 id="prereq">Prerequisites</h3>
 <ol>
   <li>
-    <p>Install the PHP Soap extension. </p>
+    <p>Install the PHP Soap extension.</p>
 
     <p>Copy <code>php_soap.dll</code> or <code>php_soap.so</code> to your PHP extensions directory. Edit your <code>php.ini</code> file and enable the PHP Soap extension. Usually this means deleting the leading semi-colon in front of the extension. Then restart Apache.</p>
 
