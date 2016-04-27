@@ -16,23 +16,13 @@ This tutorial shows how to merge changes from an environment to its parent, whic
 
 This tutorial shows how to create a sample file and merge it. This tutorial assumes you're already working in an environment; if not, see [ Get started with an environment]({{ site.gdeurl }}cloud/env/environments-start.html#env-start-comm) to create one.
 
+To get started:
+
+{% include cloud/cli-get-started.md %}
+
 To merge an environment:
 
-1.	Log in to the machine on which your Magento Enterprise Cloud Edition SSH key is stored.
-2.	Log in to the project:
-
-		magento-cloud login
-3.	List projects:
-
-		magento-cloud project:list
-4.	Change to a project directory.
-4.	List environments in the project:
-
-		magento-cloud environment:list
-5.	Check out an environment:
-
-		magento-cloud environment:checkout <environment ID>
-6.	Add a file named `test.txt` to the environment root directory.
+1.	Add a file named `test.txt` to the environment root directory.
 
 	You can put whatever contents you want; for example, the number `1`
 7.	Save your changes and exit the text editor.

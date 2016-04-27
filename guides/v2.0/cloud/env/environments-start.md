@@ -72,7 +72,7 @@ All commands are shown with required options only. Get help for any command by a
 :	Merge changes in this environment with its parent.
 
 `magento-cloud environment:synchronize -p <project ID> -e <environment ID> {code|data}`
-:	Sycnronize (that is, `git pull`) code and/or data from the parent to this environment
+:	Synchronize (that is, `git pull`) code and/or data from the parent to this environment
 
 `magento-cloud variable:list`
 :	List variables in this environment
