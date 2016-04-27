@@ -56,3 +56,7 @@ In addition to understanding fundamental programming designs/concepts, you are e
   - Make sure that CSS, JavaScript, HTML, and XML code are all in the appropriate files (i.e. they should not be inline).
   - Use appropriate logic in a Block, Helper, Template, Controller, or Model.
   - Ensure correct module design.
+
+### Use the PHP_CodeSniffer tool
+
+[PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer){:target="_blank"} is a set of PHP scripts that checks your code for violations of a particular coding standard. It can be used in conjunction with the [ECG Magento Code Sniffer Coding Standard](https://github.com/magento-ecg/coding-standard){:target="_blank"} to check your code for some of the more common Magento and PHP problems. Using these two tools will ensure that your extension code meets many of [Magento's coding standards]({{site.gdeurl}}coding-standards/bk-coding-standards.html). It also has the added benefits of keeping your code clean and maintainable.
