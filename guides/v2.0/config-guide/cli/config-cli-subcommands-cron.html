@@ -1198,7 +1198,7 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 
     <p><img src="/common/images/config_phpini-webserver.png" width="700px" /></p>
 
-    <h4 id="find-the-php-binary">Find the PHP binary</h4>
+    <h4 id="find-the-php-binary-and-phpini-path">Find the PHP binary and php.ini path</h4>
     <p>To display the path to your PHP binary, enter</p>
 
     <pre><code>which php
@@ -1223,28 +1223,28 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 
     <p>A text editor displays. (You might need to choose a text editor first.)</p>
 
-    <pre><code>*/1 * * * * &lt;path-to-binary&gt; -c &lt;ini-file-path&gt; &lt;your Magento install dir&gt;/bin/magento cron:run [&gt;&gt; &lt;log-file&gt;&amp;]
-*/1 * * * * &lt;path-to-binary&gt; -c &lt;ini-file-path&gt; &lt;your Magento install dir&gt;/update/cron.php [&gt;&gt; &lt;log-file&gt;&amp;]
-*/1 * * * * &lt;path-to-binary&gt; -c &lt;ini-file-path&gt; &lt;your Magento install dir&gt;/bin/magento setup:cron:run [&gt;&gt; &lt;log-file&gt;&amp;]
+    <pre><code>* * * * * &lt;path_to_binary&gt; -c &lt;ini_file_path&gt; &lt;magento_dir&gt;/bin/magento cron:run | grep -v "Ran jobs by schedule" &gt;&gt; &lt;magento_dir&gt;/var/log/magento.cron.log
+* * * * * &lt;path_to_binary&gt; -c &lt;ini_file_path&gt; &lt;magento_dir&gt;/update/cron.php &gt;&gt; &lt;magento_dir&gt;/var/log/update.cron.log
+* * * * * &lt;path_to_binary&gt; -c &lt;ini_file_path&gt; &lt;magento_dir&gt;/bin/magento setup:cron:run &gt;&gt; &lt;magento_dir&gt;/var/log/setup.cron.log
 </code></pre>
 
     <p>where </p>
 
     <ul>
-      <li><code>&lt;path-to-binary&gt;</code> is the absolute file system path to your PHP binary</li>
-      <li><code>&lt;ini-file-path&gt;</code> is the path to a <code>php.ini</code> file to use for the cron job</li>
-      <li><code>[&gt;&gt; &lt;log-file&gt;&amp;]</code> is an optional but recommended string that appends cron output to a file. This is particularly useful for troubleshooting errors.</li>
+      <li><code>&lt;path_to_binary&gt;</code> is the absolute file system path to your PHP binary</li>
+      <li><code>&lt;ini_file_path&gt;</code> is the path to a <code>php.ini</code> file to use for the cron job</li>
+      <li><code>| grep -v "Ran jobs by schedule"</code> filters this message from the log, making any errors easier to spot</li>
     </ul>
 
     <p>The first command (<code>magento cron:run</code>) reindexes indexers, send automated e-mails, generates the sitemap, and so on. Usually it’s associated with the PHP command line <code>.ini</code> file. The other two commands are used by the Component Manager and System Upgrade.</p>
 
-    <p>For example, if the PHP binary is located in <code>/usr/bin</code>, you installed Magento in <code>/var/www/html/magento2</code>, and all commands use the web server’s <code>php.ini</code>, enter</p>
+    <p>For example, if the PHP binary is located in <code>/usr/bin</code>, you installed Magento in <code>/var/www/html/magento2</code>, and all commands use the web server’s <code>/etc/php5/apache2/php.ini</code>, enter</p>
 
     <p>Example:</p>
 
-    <pre><code>*/1 * * * * /usr/bin/php -c /etc/php5/apache2/php.ini /var/www/magento2/bin/magento cron:run &gt;&gt; /var/www/magento2/var/log/magento.cron.log&amp;
-*/1 * * * * /usr/bin/php -c /etc/php5/apache2/php.ini /var/www/magento2/update/cron.php &gt;&gt; /var/www/magento2/var/log/update.cron.log&amp;
-*/1 * * * * /usr/bin/php -c /etc/php5/apache2/php.ini /var/www/magento2/bin/magento setup:cron:run &gt;&gt; /var/www/magento2/var/log/setup.cron.log&amp;
+    <pre><code>* * * * * /usr/bin/php -c /etc/php5/apache2/php.ini /var/www/magento2/bin/magento cron:run | grep -v "Ran jobs by schedule" &gt;&gt; /var/www/magento2/var/log/magento.cron.log
+* * * * * /usr/bin/php -c /etc/php5/apache2/php.ini /var/www/magento2/update/cron.php &gt;&gt; /var/www/magento2/var/log/update.cron.log
+* * * * * /usr/bin/php -c /etc/php5/apache2/php.ini /var/www/magento2/bin/magento setup:cron:run &gt;&gt; /var/www/magento2/var/log/setup.cron.log
 </code></pre>
 
     <p>Save your changes to the crontab and exit the editor.</p>
