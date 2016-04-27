@@ -184,14 +184,7 @@ Now you can verify that Varnish is serving pages by looking at HTML response hea
 Before you can look at headers, you must set Magento for developer mode. There are several ways to do it, the simplest of which is to modify `.htaccess` in the Magento 2 root. You can also use the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html">`magento deploy:mode:set`</a> command.
 
 #### Set Magento for developer mode
-To set Magento for developer mode using its `.htaccess` file:
-
-1.	Log in to the Magento server as, or switch to, the Magento file system owner.
-2.	Open `<your Magento install dir>/.htaccess` in a text editor.
-3.	Uncomment the following line:
-
-		SetEnv MAGE_MODE developer
-4.	Save your changes to `.htaccess` and exit the text editor.
+To set Magento for developer mode, use the [`magento deploy:mode:set`]({{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html#config-mode-change) command.
 
 #### Look at the Varnish log
 Make sure Varnish is running then enter the following command on the Varnish server:
