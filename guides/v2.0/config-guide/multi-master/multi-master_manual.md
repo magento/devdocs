@@ -15,7 +15,7 @@ github_link: config-guide/multi-master/multi-master_manual.md
 *	<a href="#config-ee-multidb-manual-over">Overview of master databases</a>
 *	[Set up additional master databases](#config-ee-multidb-master-masters)
 *	[Run SQL scripts](#config-ee-multidb-sql)
-*	[]()
+*	[Other required tasks](#config-ee-multidb-other)
 
 ## Overview of manual split database configuration {#config-ee-multidb-manual-over}
 If the Magento application is already in production or if you've already installed custom code or components, you must configure split databases manually. This involves:
@@ -226,8 +226,25 @@ where for_name like '<your main magento DB name>/%'
 ;
 {% endhighlight %}
 
-#### Restore sales data {#sql-sales-restore}
-This script is restores sales data in your OMS database.
+### Run SQL scripts {#config-ee-multidb-sql-run}
+Run each script in the order in which you created it as follows:
+
+1.  Log in to your MySQL database as the `root` or administrative user:
+
+        mysql -u root -p
+2.  At the `mysql>` prompt, run each script as follows:
+
+        source <path>/<script>.sql
+
+    For example,
+
+        TBD
+
+## Other required tasks {#config-ee-multidb-other}
+TBD
+
+### Restore sales data {#sql-sales-restore}
+This script restores sales data in your OMS database.
 
 If you are using an NDB database cluster:
 
@@ -241,14 +258,8 @@ If you are using an NDB database cluster:
 
 salesarchive.sql
 
-Create the following script and give it a name like `5_restore-oms.sql`. Replace the following:
+Run the following commands:
 
-*	`<your OMS DB name>` with the name of your OMS database. 
-
-	In this topic, the sample database name is `magento_oms`.
-*	`<root user name>` with your MySQL root user name
-*	`<root user password>` with the user's password
-*	Verify the location of the backup files you created earlier (for example, `/var/sales.sql`)
 
 {% highlight sql %}
 mysql -u<root user name> -p123123q <your OMS DB name>` < /var/sales.sql
@@ -257,11 +268,117 @@ mysql -uroot -p<root user password> <your OMS DB name>` < /var/salesarchive.sql
 mysql -uroot -p<root user password> <your OMS DB name>` < /var/customercustomattributes.sql
 {% endhighlight %}
 
+where
+
+*   `<your OMS DB name>` with the name of your OMS database. 
+
+    In this topic, the sample database name is `magento_oms`.
+*   `<root user name>` with your MySQL root user name
+*   `<root user password>` with the user's password
+*   Verify the location of the backup files you created earlier (for example, `/var/sales.sql`)
+
 #### Verify env.php
-Open `<your Magento install dir>/app/etc/env.php` in a text editor and verify there are arrays for `default`, `checkout`, and `sales`. If not, TBD.
+Open `<your Magento install dir>/app/etc/env.php` in a text editor and verify there are arrays for `default`, `checkout`, and `sales`. If not, update them using the following guidlines:
+
+**Database connections**
+
+{% highlight php startinline=true %}
+ 'default' =>
+      array (
+        'host' => 'localhost',
+        'dbname' => 'magento',
+        'username' => 'magento',
+        'password' => 'magento',
+        'model' => 'mysql4',
+        'engine' => 'innodb',
+        'initStatements' => 'SET NAMES utf8;',
+        'active' => '1',
+      ),
+      'checkout' =>
+      array (
+        'host' => 'localhost',
+        'dbname' => 'magento_checkout',
+        'username' => 'magento_checkout',
+        'password' => 'magento_checkout',
+        'model' => 'mysql4',
+        'engine' => 'innodb',
+        'initStatements' => 'SET NAMES utf8;',
+        'active' => '1',
+      ),
+      'sales' =>
+      array (
+        'host' => 'localhost',
+        'dbname' => 'magento_oms',
+        'username' => 'magento_oms',
+        'password' => 'magento_oms',
+        'model' => 'mysql4',
+        'engine' => 'innodb',
+        'initStatements' => 'SET NAMES utf8;',
+        'active' => '1',
+      ),
+{% endhighlight %}
+
+**Resources**
+
+{% highlight php startinline=true %}
+
+'resource' =>
+  array (
+    'default_setup' =>
+    array (
+      'connection' => 'default',
+    ),
+    'checkout' =>
+    array (
+      'connection' => 'checkout',
+    ),
+    'sales' =>
+    array (
+      'connection' => 'sales',
+    ),
+  ),
+
+{% endhighlight %}
+
+### Checkout tables tasks
 
 #### Drop foreign keys from checkout tables
-TBD
+Run the following commands from the `mysql>` prompt:
+
+{% highlight SQL %}
+ALTER TABLE quote DROP FOREIGN KEY QUOTE_STORE_ID_STORE_STORE_ID;
+ALTER TABLE quote_item DROP FOREIGN KEY QUOTE_ITEM_PRODUCT_ID_CATALOG_PRODUCT_ENTITY_ENTITY_ID;
+ALTER TABLE quote_item DROP FOREIGN KEY QUOTE_ITEM_STORE_ID_STORE_STORE_ID;
+{% endhighlight %}
+
+#### Back up quote tables
+Run the following command from the `mysql>` prompt:
+
+    mysqldump -u root -p magento_ee magento_customercustomattributes_sales_flat_quote magento_customercustomattributes_sales_flat_quote_address quote quote_address quote_address_item quote_item quote_item_option quote_payment quote_shipping_rate quote_id_mask > /<path>/quote.sql
+
+#### Drop quote tables from the Magento database
+Either run the following commands from the `mysql>` prompt or create a script and run it:
+
+{% highlight sql %}
+SET foreign_key_checks = 0;
+DROP TABLE magento_customercustomattributes_sales_flat_quote; 
+DROP TABLE magento_customercustomattributes_sales_flat_quote_address;
+DROP TABLE quote;
+DROP TABLE quote_address;
+DROP TABLE quote_address_item;
+DROP TABLE quote_item;
+DROP TABLE quote_item_option;
+DROP TABLE quote_payment;
+DROP TABLE quote_shipping_rate;
+DROP TABLE quote_id_mask;
+SET foreign_key_checks = 1;
+{% endhighlight %}
+
+#### Import tables to the OMS database
+
+    mysql -u root -p magento_oms < /<path>/quote.sql
+
+### 
 
 
 #### Next step

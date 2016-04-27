@@ -16,6 +16,7 @@ github_link: config-guide/multi-master/multi-master.md
 *	[Configuration options](#config-ee-multidb-opts)
 *	<a href="#config-ee-multidb-prereq">Prerequisites</a>
 *	<a href="{{ site.gdeurl }}config-guide/multi-master/multi-master_masterdb.html">Automatically configure master databases</a>
+*	[Manually configure master databases]({{ site.gdeurl }}config-guide/multi-master/multi-master_manual.html)
 *	<a href="{{ site.gdeurl }}config-guide/multi-master/multi-master_verify.html">Verify split databases</a>
 *	<a href="{{ site.gdeurl }}config-guide/multi-master/multi-master_slavedb.html">Set up optional database replication</a>
 
