@@ -54,3 +54,25 @@ There are known issues with using sample data with the Magento 2 develop branch.
 	git checkout master
 	git pull origin master
 
+### Symptom
+
+The installation stops before the sample data installation finishes. An example follows:
+
+	(more)
+
+	Module 'Magento_CustomerSampleData':
+	Installing data...
+
+Sample data installation does not finish.
+
+This error occurs when the maximum configured execution time of your PHP scripts is exceeded. Because sample data can take a long time to load, you can increase the value during your installation.
+
+#### Solution
+
+As a user with `root` privileges, modify `php.ini` to increase the value of `max_execution_time` to 600 or more. (600 seconds is 10 minutes. You can increase the value to whatever you want.) You should change `max_execution_time` back to its previous value after the installation is successful.
+
+If you're not sure where `php.ini` is located, enter the following command:
+
+	php --ini
+
+The value of `Loaded Configuration File` is the `php.ini` you must modify.
