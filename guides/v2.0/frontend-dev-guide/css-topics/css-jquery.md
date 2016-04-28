@@ -14,11 +14,11 @@ This topic provides an overview of how jQuery UI styles are used in Magento out 
 
 ## jQuery UI styles used on the storefront
 
-In Magento out of the box certain storefront elements are implemented using jQuery UI widgets (like navigation menu, checkout and so on), with the default jQuery classes assigned. But Magento does not contain jQuery UI styles in the code base. Certain default jQuery UI classes are defined in the Magento UI library, or in the library extending styles in the Blank and Luma themes. Other jQuery UI classes are not defined. 
+In Magento out of the box certain storefront elements are implemented using jQuery UI widgets (like navigation menu, mini shopping  and so on), with the default jQuery classes assigned. But Magento does not contain jQuery UI styles in the code base. Styles for the certain default jQuery UI classes are defined in Magento by default (in the default Magento storefront and Admin themes). For other jQuery UI classes styles are not defined. 
 
-We do not recommend downloading the jQuery UI styles as is, because they will override the default Magento definitions and break the default Magento design. 
+We do not recommend downloading the jQuery UI styles as is, because they will override the default Magento themes definitions and break the default Magento design. 
 
-To use the jQuery styles, you need to define those which you need in your custom stylesheets in the `<your_custom_theme>/web/css` directory.
+To use the jQuery styles, you need to define those which you need in your custom stylesheets in the `<your_custom_theme>/web/css` directory. 
 
 ## Recommended reading
 
