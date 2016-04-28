@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento EE 2.0.3 Release Notes</title>
+	<title>Magento CE 2.0.5 Release Notes</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/release-notes/ReleaseNotes2.0.3EE.html">
+	<link rel="canonical" href="//guides/v2.0/release-notes/ReleaseNotes2.0.5CE.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -139,9 +139,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Magento EE 2.0.3 Release Notes</h1>
+		<h1 class="page-heading">Magento CE 2.0.5 Release Notes</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/release-notes/ReleaseNotes2.0.3EE.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/release-notes/ReleaseNotes2.0.5CE.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -275,7 +275,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.3EE.html">Magento EE 2.0.3 Release Notes</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.3EE.html">Magento EE 2.0.3 Release Notes</a></li>
 
 									
 
@@ -299,7 +299,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.5CE.html">Magento CE 2.0.5 Release Notes</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.5CE.html">Magento CE 2.0.5 Release Notes</a></li>
 
 									
 
@@ -503,8 +503,163 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<h2>Magento Enterprise Edition 2.0.3</h2>
-<p>Please note that Magento Enterprise Edition 2.0.3 has been replaced by Magento 2.0.4. This release includes all of the security enhancements and performance improvements of Magento 2.0.3, in improved packaging. <strong>You must download and install 2.0.4 to ensure that you receive all the security enhancements of 2.0.3</strong>. Please see  <a href="/guides/v2.0/release-notes/ReleaseNotes2.0.4EE.html" target="_blank">Magento EE Release Notes</a> for download information. </p>
+		<h2>Magento Community Edition 2.0.5</h2>
+<p>We are pleased to present Magento Community Edition 2.0.5. This release includes miscellaneous functional fixes. </p>
+
+<p>Backward-incompatible changes are documented in <a href="http://devdocs.magento.com/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.</p>
+
+<h3>Fixed issues</h3>
+
+<h4> Upgrade and Installation</h4>
+
+<!-- 50224 -->
+<ul>
+  <li>Magento no longer assumes hard-coded root category IDs or default category IDs. Previously, Magento used hard-coded IDs for these values, which could produce inconsistent data during store installation.</li>
+</ul>
+
+<h4>Import/Export</h4>
+
+<!-- 46245 -->
+<ul>
+  <li>Product import now works successfully in a multi-store environment. Previously, Magento would display the following error message,  “URL key for specified store already exists”, when importing products into a multi-store configuration. </li>
+</ul>
+
+<!-- 48722 -->
+<ul>
+  <li>Export performance has been enhanced.  Pages no longer hang randomly, and CPU usage is no longer pegged.  <a href="https://github.com/magento/magento2/issues/3217" target="_blank">(GITHUB-3217)</a></li>
+</ul>
+
+<h4>Database</h4>
+
+<!-- 49004 -->
+<ul>
+  <li>Magento no longer duplicates queries to the database from the Catalog page. Instead, if Magento has already loaded specific data during request processing, it re-uses it instead of duplicating the query. </li>
+</ul>
+
+<!-- 49003 -->
+<ul>
+  <li>Magento no longer duplicates SQL queries on CMS and Category pages. Previously, significant duplications occurred. </li>
+</ul>
+
+<h4>Miscellaneous</h4>
+
+<!-- 47255 -->
+<ul>
+  <li>Selecting the Use Aggregated Data option now correctly displays Dashboard data. <a href="https://github.com/magento/magento2/issues/3459" target="_blank">(GITHUB-3459)</a></li>
+</ul>
+
+<!-- 51074 -->
+<ul>
+  <li>Magento now displays the expected color swatch when you select a color swatch for a configurable product. Previously, Magento did not change the color when you selected a swatch.</li>
+</ul>
+
+<!-- 48659 -->
+<ul>
+  <li>HTML template magnification now properly handles commented code.</li>
+</ul>
+
+<!-- 48760 -->
+<ul>
+  <li>Deleting one of several custom options no longer deletes all options. Previously, deleting one option from the Product page also deleted all other custom options. <a href="https://github.com/magento/magento2/issues/2989" target="_blank">(GITHUB-2989)</a>  </li>
+</ul>
+
+<!-- 50279 -->
+<ul>
+  <li>When Full Page Cache (FPC) is enabled, the CAPTCHA image differs for every user. Previously, the CAPTCHA image on the registration page remained the same for every customer after FPC was enabled.</li>
+</ul>
+
+<!-- 50195 -->
+<ul>
+  <li>Google no longer indexes the Admin URL. Previously, Google indexed the Admin side meta tag. The frontend meta tag was not affected. </li>
+</ul>
+
+<!-- 43959 -->
+<ul>
+  <li>Magento no longer sends a subscription success email whenever a customer enters his email address to subscribe to a newsletter. Users receive a “thank you for your subscription” message and a subscription success email only when registering for the first time. </li>
+</ul>
+
+<!-- 47458 -->
+<ul>
+  <li>Guests can now successfully click on the product page link for any item in an emailed shared wishlist. </li>
+</ul>
+
+<!-- 50912 -->
+<ul>
+  <li>Custom customer attributes are now saved at checkout. </li>
+</ul>
+
+<h3>System requirements</h3>
+<p>Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later support PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see 
+<a href="http://devdocs.magento.com/guides/v2.0/install-gde/system-requirements.html" target="_blank">System Requirements</a>.</p>
+
+<h3>Installation instructions</h3>
+
+<h4>New installations</h4>
+<p>New users can now complete a full installation of Magento Community Edition 2.0.5 from an archive file on the <a href="https://www.magentocommerce.com/download" target="_blank">Download</a> page.</p>
+
+<h5 id="bdownload-a-new-installationb"><b>Download a new installation</b></h5>
+
+<ol>
+  <li>
+    <p>Go to the <a href="https://www.magentocommerce.com/download" target="_blank">Magento Community Edition Download</a> page.</p>
+  </li>
+  <li>
+    <p>Under Full Release, select a format for the download archive file. Then, click <strong>Download</strong>.</p>
+  </li>
+  <li>
+    <p>Follow the Magento <a href="http://devdocs.magento.com/guides/v2.0/install-gde/prereq/integrator_install.html#integrator-first-composer-ce" target="_blank">installation instructions</a>.</p>
+  </li>
+</ol>
+
+<h5 id="binstall-a-new-installation-with-composerb"><b>Install a new installation with Composer</b></h5>
+
+<ol>
+  <li>
+    <p>Go to the <a href="https://www.magentocommerce.com/download" target="_blank">Magento Community Edition Download</a> page.</p>
+  </li>
+  <li>
+    <p>Under <strong>Download with Composer</strong>, click <strong>Download</strong>.</p>
+  </li>
+  <li>
+    <p>Follow the instructions to download Composer, and get the Magento CE metapackage.</p>
+  </li>
+</ol>
+
+<h4><b>Upgrade existing installations</b></h4>
+<p>If you installed Magento Community Edition 2.0.0 from an archive, you must perform some additional tasks before you can upgrade your installation. Current users of Magento 2.0.0/2.0.1/2.0.2/2.0.3/2.0.4 must first update the installer from the command line. Then, update the installation from the <a href="http://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html" target="_blank">Web Setup Wizard</a> or command line. For detailed instructions, see the <a href="http://devdocs.magento.com/guides/v2.0/release-notes/tech_bull_201-upgrade.html" target="_blank">technical bulletin</a>.</p>
+
+<h5 id="bupgrade-an-existing-installation-from-the-setup-wizardb"><b>Upgrade an existing installation from the Setup Wizard</b></h5>
+
+<ol>
+  <li>
+    <p>Log in to Admin with Administrator privileges.</p>
+  </li>
+  <li>
+    <p>On the Admin sidebar, click <strong>System</strong>. Under <strong>Tools</strong>,  choose <strong>Web Setup Wizard</strong>.</p>
+  </li>
+  <li>
+    <p>Click  <strong>System Upgrade</strong>. Follow the onscreen instructions to complete the upgrade.</p>
+  </li>
+</ol>
+
+<p>For more information, see <a href="http://devdocs.magento.com/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html" target="_blank">Upgrade the Magento installation and components</a>.</p>
+
+<h5 id="bupgrade-an-existing-installation-from-the-github-repositoryb"><b>Upgrade an existing installation from the GitHub repository</b></h5>
+<p>Developers who contribute to the CE codebase can <a href="http://devdocs.magento.com/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento CE GitHub repository.</p>
+
+<ol>
+  <li>
+    <p>Go to the <a href="http://devdocs.magento.com/guides/v2.0/install-gde/install/cli/dev_options.html" target="_blank">Contributing Developers</a> page.</p>
+  </li>
+  <li>
+    <p>Follow the instructions to pull the updates from the repository and update Composer.</p>
+  </li>
+</ol>
+
+<h3>Migration toolkits</h3>
+<p>The <a href="/guides/v2.0/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="/guides/v2.0/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.</p>
+
+<p>The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.</p>
 
 
 
