@@ -111,7 +111,7 @@ Create the following script and give it a name like `2_back-up-sales.sql`. Repla
 {% highlight sql %}
 select
     concat(
-        'mysqldump -u<root user name> -p<root user password> <your main magento DB name> ',
+        'mysqldump -u <root user name> -p<root user password> <your main magento DB name> ',
         group_concat(table_name separator ' '),
         ' > /var/sales.sql'
     )
@@ -262,10 +262,10 @@ Run the following commands:
 
 
 {% highlight sql %}
-mysql -u<root user name> -p123123q <your OMS DB name>` < /var/sales.sql
-mysql -uroot -p<root user password> <your OMS DB name>` < /var/sequence.sql
-mysql -uroot -p<root user password> <your OMS DB name>` < /var/salesarchive.sql
-mysql -uroot -p<root user password> <your OMS DB name>` < /var/customercustomattributes.sql
+mysql -u <root user name> -p<root user password> <your OMS DB name> < /var/sales.sql
+mysql -u <root user name> -p<root user password> <your OMS DB name> < /var/sequence.sql
+mysql -u <root user name> -p<root user password> <your OMS DB name> < /var/salesarchive.sql
+mysql -u <root user name> -p<root user password> <your OMS DB name> < /var/customercustomattributes.sql
 {% endhighlight %}
 
 where
