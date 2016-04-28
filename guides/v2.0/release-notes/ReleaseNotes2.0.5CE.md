@@ -45,7 +45,7 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 
 <!-- 51074 --> * Magento now displays the expected color swatch when you select a color swatch for a configurable product. Previously, Magento did not change the color when you selected a swatch.
 
-<!-- 48659 -->* HTML template magnification now properly handles commented code.
+<!-- 48659 -->* HTML template minification now properly handles commented code.
 
 
 <!-- 48760 --> * Deleting one of several custom options no longer deletes all options. Previously, deleting one option from the Product page also deleted all other custom options. <a href="https://github.com/magento/magento2/issues/2989" target="_blank">(GITHUB-2989)</a>  
