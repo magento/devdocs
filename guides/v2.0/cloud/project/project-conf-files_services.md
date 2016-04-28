@@ -23,7 +23,7 @@ Magento Enterprise Cloud Edition provides [*services*](#cloud-yaml-services-type
 
 This file is located at `.magento/services.yaml` in your project.
 
-[Sample `services.yaml` file](https://github.com/platformsh-redbull/mc-base/blob/master/.magento/services.yaml){:target="_blank"}
+[Sample `services.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml){:target="_blank"}
 
 The following sections discuss properties in `services.yaml`.
 
