@@ -26,3 +26,7 @@ gem install pygments.rb
 
 # Clean up
 sudo apt-get autoremove -y
+
+# Run Jekyll
+
+cd /jekyll/devdocs && jekyll serve --host=0.0.0.0
