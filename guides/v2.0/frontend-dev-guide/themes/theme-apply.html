@@ -894,8 +894,16 @@ To add a permanent theme-independent logo:</p>
 
 <h2 id="troubleshooting-if-the-changes-do-not-get-applied">Troubleshooting (if the changes do not get applied)</h2>
 
-<p>If the changes you configure in the Admin are not applied after you clear the cache and reload the page, delete all files in the <code>pub/static/frontend</code> and <code>var/view_preprocessed</code> directories, then reload the pages. You can delete the files manually or run the <code>grunt clean:&lt;theme_name&gt;</code> command in CLI. For details about using Grunt in Magento see <a href="/guides/v2.0/frontend-dev-guide/css-topics/css_debug.html#grunt_prereq">Installing and configuring Grunt</a>.</p>
+<p>If the changes you configure in the Admin are not applied after you clear the cache and reload the page, try the following:</p>
 
+<ul>
+  <li>
+    <p>Delete all files in the <code>pub/static/frontend</code> and <code>var/view_preprocessed</code> directories, then reload the pages. You can delete the files manually or run the <code>grunt clean:&lt;theme_name&gt;</code> command in CLI. For details about using Grunt in Magento see <a href="/guides/v2.0/frontend-dev-guide/css-topics/css_debug.html#grunt_prereq">Installing and configuring Grunt</a>.</p>
+  </li>
+  <li>
+    <p>In your Magento database, in the <code>theme</code> table, check if the <code>type</code> value for your custom theme is “0”. If it is “1” or “2”, change it to “0”. You can use a database tool such as <a href="/guides/v2.0/install-gde/prereq/optional.html#install-optional-phpmyadmin">phpMyAdmin</a> or do it manually from the command line. </p>
+  </li>
+</ul>
 
 
 		</div>
