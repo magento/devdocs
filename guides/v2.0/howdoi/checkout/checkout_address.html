@@ -852,7 +852,7 @@
 
 <p>Your shipping address renderer must be implemented as a JavaScript UI component. That is, it must be a RequireJS module, and must return a factory function, that takes a configurable object.</p>
 
-<p>For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code. Instead add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module must depend on the Magento_Checkout module. Module dependencies are specified in the <a href="/guides/v2.0/extension-dev-guide/build/composer-integration.html">module’s <code>composer.json</code></a>.</p>
+<p>For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code. Instead add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module must depend on the <code>Magento_Checkout</code> module. Module dependencies are specified in the <a href="/guides/v2.0/extension-dev-guide/build/composer-integration.html">module’s <code>composer.json</code></a>. Do not use <code>Ui</code> for your custom module name, because <code>%Vendor%_Ui</code> notation, required when specifying paths, might cause issues. </p>
 
 <p>In your custom module directory, create the component’s <code>.js</code> file (shipping address renderer). It must be located under the <code>&lt;your_module_dir&gt;/view/frontend/web/js/view/</code> directory.</p>
 

@@ -852,6 +852,8 @@
 
 <p>For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Instead, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should <a href="/guides/v2.0/extension-dev-guide/build/composer-integration.html">depend</a> on the Magento_Checkout module.</p>
 
+<p>Do not use <code>Ui</code> for your custom module name, because <code>%Vendor%_Ui</code> notation, required when specifying paths, might cause issues. </p>
+
 <h2 id="template">Implement the HTML template for the field</h2>
 
 <p>Create a new <code>&lt;your_template&gt;.html</code> template in the following directory: <code>&lt;your_module_dir&gt;/view/frontend/web/template/form/element</code></p>
@@ -904,7 +906,7 @@ In this file, add content similar to the following:</p>
                                                                 <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;telephone&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
                                                                     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
                                                                         <span class="c">&lt;!-- Assigning a new template --&gt;</span>
-                                                                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;elementTmpl&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>%your_module%/form/element/%your_template%<span class="nt">&lt;/item&gt;</span>
+                                                                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;elementTmpl&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>%Vendor_Module%/form/element/%your_template%<span class="nt">&lt;/item&gt;</span>
                                                                     <span class="nt">&lt;/item&gt;</span>
                                                                 <span class="nt">&lt;/item&gt;</span>
                                                             <span class="nt">&lt;/item&gt;</span>
