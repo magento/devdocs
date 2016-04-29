@@ -33,6 +33,7 @@ There are more details about each step in the following sections.
 
 For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Instead, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should [depend]({{site.gdeurl}}extension-dev-guide/build/composer-integration.html) on the Magento_Checkout module.
 
+Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues. 
 
 ## Implement the HTML template for the field {#template}
 
@@ -89,7 +90,7 @@ In this file, add content similar to the following:
                                                                 <item name="telephone" xsi:type="array">
                                                                     <item name="config" xsi:type="array">
                                                                         <!-- Assigning a new template -->
-                                                                        <item name="elementTmpl" xsi:type="string">%your_module%/form/element/%your_template%</item>
+                                                                        <item name="elementTmpl" xsi:type="string">%Vendor_Module%/form/element/%your_template%</item>
                                                                     </item>
                                                                 </item>
                                                             </item>
