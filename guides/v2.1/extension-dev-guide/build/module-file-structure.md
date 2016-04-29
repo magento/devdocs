@@ -1,109 +1,108 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 3_Build
-title: Component file structure
-menu_title: Component file structure
-menu_order: 2
-github_link: extension-dev-guide/module-file-structure.md
-
+subgroup: 03_Build
+title: Create your component file structure
+menu_title: Create your component file structure
+menu_order: 3
+github_link: extension-dev-guide/build/module-file-structure.md
 ---
+
 ##{{page.menu_title}}
+{:.no_toc}
 
-#### Contents
-*	<a href="#file-struc-overview">Overview of the Magento component file structure</a>
-*	<a href="#file-struct-comp">Magento 2 component file structure</a>
+In this section, we go over the different file structures for the component types. The Magento application looks for the files that make up a component *including configuration files* in particular places inside the component file structure. Follow the predefined file structures for the component type you are developing to ensure that it works as expected.
 
-<h2 id="file-struc-overview">Overview of the Magento component file structure</h2>
-Magento 2 looks for the files that make up a component, including configuration files, in particular places inside the module file structure. Follow the predefined file structure to ensure that your module works as expected.
+*	Contents
+{:toc}
 
 {% include php-dev/component-root.md %}
 
-<h2 id="file-struct-comp">Magento 2 component file structure</h2>
-The following topics discuss a typical file structure for the following components:
+### Module file structure
+A typical file structure for a Magento 2 module can look like the following:
 
-*	<a href="#file-struct-comp-mod">Magento 2 module file structure</a>
-*	<a href="#file-struct-comp-theme">Magento 2 theme file structure</a>
-*	<a href="#file-struct-comp-lang">Magento 2 language package file structure</a>
+![Module File Structure]({{ site.baseurl }}common/images/pdg-config-file-structure.png){:width="300px"}
 
-<h3 id="file-struct-comp-mod">Magento 2 module file structure</h3>
-A typical file structure for a Magento 2 module:
-<p><img src="{{ site.baseurl }}common/images/pdg-config-file-structure.png" width="300" alt="A filesystem view of a typical file structure"></p>
+#### Common directories
+{:.no_toc}
+Following are some common module directories:
 
-####Typical directories
-
-Typical module directories are:
-
-* `Block`: contains PHP view classes as part of MVC vertical implementation of module logic.
+* `Block`: contains PHP view classes as part of Model View Controller(MVC) vertical implementation of module logic.
 * `Controller`: contains PHP controller classes as part of MVC vertical implementation of module logic.
 * `etc`: contains configuration files; in particular, `module.xml`, which is required.
 * `Model`: contains PHP model classes as part of MVC vertical implementation of module logic.
 * `Setup`: contains classes for module database structure and data setup which are invoked when installing or upgrading.
 
-####Additional directories
-Additionally, there are directories for configuration and other ancillary functions for items like <a href="{{ site.gdeurl21 }}extension-dev-guide/plugins.html">plug-ins</a>, internationalization, and layout files.
+#### Additional directories
+{:.no_toc}
+Additional folders can be added for configuration and other ancillary functions for items like [plugin-ins]({{site.gdeurl21}}extension-dev-guide/plugins.html), localization, and layout files.
 
-* `Api`: contains any PHP classes exposed to the API.	
+* `Api`: contains any PHP classes exposed to the API.
 * `i18n`: contains localization files.
-* `Plugin`: contains any needed <a href="{{ site.gdeurl21 }}extension-dev-guide/plugins.html">plug-ins</a>.
+* `Plugin`: contains any needed <a href="{{site.gdeurl21}}extension-dev-guide/plugins.html">plug-ins</a>.
 * `view`: contains view files, including static view files, design templates, email templates, and layout files.
 
-<h3 id="file-struct-comp-theme">Magento 2 theme file structure</h3>
-A typical theme file structure follows:
+### Theme file structure
+A typical theme file structure can look like the following:
 
-	├── composer.json
-	├── etc
-	│   └── view.xml
-	├── i18n
-	│   └── en_US.csv
-	├── LICENSE_AFL.txt
-	├── LICENSE.txt
-	├── media
-	│   └── preview.jpg
-	├── registration.php
-	└── web
-	    ├── css
-	    │   ├── email.less
-	    │   ├── print.less
-	    │   ├── source
-	    │   │   ├── _actions-toolbar.less
-	    │   │   ├── _breadcrumbs.less
-	    │   │   ├── _buttons.less
-	    │   │   ├── components
-	    │   │   │   └── _modals_extend.less
-	    │   │   ├── _icons.less
-	    │   │   ├── _layout.less
-	    │   │   ├── _theme.less
-	    │   │   ├── _tooltips.less
-	    │   │   ├── _typography.less
-	    │   │   └── _variables.less
-	    │   ├── _styles.less
-	    │   ├── styles-l.less
-	    │   └── styles-m.less
-	    ├── images
-	    │   └── logo.svg
-	    └── js
-	        ├── navigation-menu.js
-	        ├── responsive.js
-	        └── theme.js
+~~~
+├── composer.json
+├── etc
+│   └── view.xml
+├── i18n
+│   └── en_US.csv
+├── LICENSE_AFL.txt
+├── LICENSE.txt
+├── media
+│   └── preview.jpg
+├── registration.php
+└── web
+    ├── css
+    │   ├── email.less
+    │   ├── print.less
+    │   ├── source
+    │   │   ├── _actions-toolbar.less
+    │   │   ├── _breadcrumbs.less
+    │   │   ├── _buttons.less
+    │   │   ├── components
+    │   │   │   └── _modals_extend.less
+    │   │   ├── _icons.less
+    │   │   ├── _layout.less
+    │   │   ├── _theme.less
+    │   │   ├── _tooltips.less
+    │   │   ├── _typography.less
+    │   │   └── _variables.less
+    │   ├── _styles.less
+    │   ├── styles-l.less
+    │   └── styles-m.less
+    ├── images
+    │   └── logo.svg
+    └── js
+        ├── navigation-menu.js
+        ├── responsive.js
+        └── theme.js
+~~~
 
-####Typical directories
-Typical theme directories are: 
+#### Common directories
+{:.no_toc}
+Typical theme directories are:
 
-*	`etc`: `view.xml` contains image configurations for all images and thumbnails.
-*	`i18n`: <a href="{{ site.gdeurl21 }}frontend-dev-guide/translations/xlate.html#m2devgde-xlate-dictionaries">Translation dictionaries</a>, if any.
-*	`media`: Theme preview (a screen capture of your theme).
+*	`etc`: Contains configuration files such as the `view.xml` file which contains image configurations for all images and thumbnails.
+*	`i18n`: [Translation dictionaries]({{site.gdeurl21}}frontend-dev-guide/translations/xlate.html#m2devgde-xlate-dictionaries), if any.
+*	`media`: Theme preview images (screen capture of your theme) can be put in here.
 *	`web`: Optional directory that contains static files organized into the following subdirectories:
 
-	*	`css/source`: Theme's `less` configuration files that invoke mixins for global elements from the <a href="{{ site.gdeurl21 }}frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a>, and the `theme.less` file that overrides the default variables values.
-	*	`css/source/lib`: View files that override the UI library files stored in `lib/web/css/source/lib`
-	*	`fonts`: Fonts for your theme.
-	*	`images`: Static images.
-	*	`js`: JavaScript files.
+	*	`css/source`: Contains a theme's `less` configuration files that invoke mixins for global elements from the [Magento UI library]({{site.gdeurl21}}frontend-dev-guide/css-topics/theme-ui-lib.html), and the `theme.less` file that overrides the default variables values.
+	*	`css/source/lib`: Contains view files that override the [UI library]({{site.gdeurl21}}frontend-dev-guide/css-topics/theme-ui-lib.html) files stored in `lib/web/css/source/lib`.
+	*	`fonts`: The folder to place the different fonts for your theme.
+	*	`images`: Static images folder.
+	*	`js`: The folder for your JavaScript files.
+
+For more details on the theme folder structure, see [Magento theme structure]({{site.gdeurl21}}frontend-dev-guide/themes/theme-structure.html).
 
 {% include php-dev/lang-pack-file-struct.md %}
 
 
-##Next
+**Next**
 
-[Define your configuration files](required-configuration-files.html)
+[Register your component]({{site.gdeurl21}}extension-dev-guide/build/component-registration.html)
