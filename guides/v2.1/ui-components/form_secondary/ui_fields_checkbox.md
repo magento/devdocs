@@ -1,11 +1,11 @@
 ---
 layout: default
 group:  UI Library
-subgroup: Checkbox
-title: Check box type field component
-menu_title: Check box type field component
-menu_node: parent
-github_link: ui-components/ui_fields_checkbox.md
+subgroup: D_UI Library Form Component
+title: Checkbox type field component
+menu_title: Checkbox type field component
+menu_node:
+github_link: ui-components/form_secondary/ui_fields_checkbox.md
 ---
 
 <h2>What's in this topic</h2>
@@ -19,9 +19,9 @@ This topic describes the checkbox UI component, which can be used to implement t
 
 ## Checkbox: Overview
 
-The checkbox UI component which is one of the types of the Field UI Component. It can be configured to implement the following fields (from the UI point of view): radio button, toggle button or checkbox. The component inherits the abstract behavior of the field UI component.
+The checkbox UI component is one of the types of the field UI component. It can be configured to implement the following fields (from the UI point of view): radio button, toggle button or checkbox. The component inherits the abstract behavior of the field UI component.
 
-<p class="q">What is abstract behavior</p>
+<p class="q">What is abstract behavior?</p>
 <p class="qa">Inherited from Field UI Component (ui-field.md)</p>
 
 The following images illustrate how the checkout type field can look like:
