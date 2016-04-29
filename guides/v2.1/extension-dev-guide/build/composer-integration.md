@@ -1,11 +1,11 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 2_Prepare
-title: Composer integration
-menu_title: Composer integration
+subgroup: 03_Build
+title: The composer.json file
+menu_title: The composer.json file
 menu_order: 2
-github_link: extension-dev-guide/composer-integration.md
+github_link: extension-dev-guide/build/composer-integration.md
 ---
 
 ##{{page.menu_title}}
@@ -159,4 +159,4 @@ Where:
 ---
 
 **Next:**
-[Define your configuration files]({{ site.gdeurl21 }}extension-dev-guide/required-configuration-files.html)
+[Define your configuration files]({{ site.gdeurl21 }}extension-dev-guide/build/required-configuration-files.html)
