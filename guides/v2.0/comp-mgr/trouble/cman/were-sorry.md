@@ -2,14 +2,14 @@
 layout: default
 group: compman
 subgroup: 50_trouble
-title: "We're sorry, we can't take that action right now"
-menu_title: "We're sorry, we can't take that action right now"
+title: "Sorry, we can't take that action right now"
+menu_title: "Sorry, we can't take that action right now"
 menu_node: 
 menu_order: 2
 github_link: comp-mgr/trouble/cman/were-sorry.md
 ---
 
-<h2 id="trouble-update-were-sorry">"We're sorry, we can't take that action right now"</h2>
+<h2 id="trouble-update-were-sorry">"Sorry, we can't take that action right now"</h2>
 The following error might display at the start of your upgrade:
 
 <img src="{{ site.baseurl }}common/images/upgr-sorry.png" width="600px">

@@ -1,10 +1,11 @@
 ---
 layout: default
 group: release-notes
-subgroup: 
-title: 
+subgroup: Release Notes
+title: Magento EE 2.0.3 Release Notes 
+menu_title: Magento EE 2.0.3 Release Notes 
+menu_order: 3
 github_link: release-notes/ReleaseNotes2.0.3EE.md
-redirect_from: 
 ---
 
 <h2>Magento Enterprise Edition 2.0.3</h2>

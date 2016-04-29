@@ -22,7 +22,7 @@ If you know that your component's logic depends on something in another componen
 <div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
 	<p>If you change the component load order using <code>&lt;sequence></code>, you must regenerate the component list in <code>config.php</code>; otherwise, the load order does not take effect.</p>
-<p>Currently, the only way to do this is to enable the component using <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable"><code>magento module:enable &lt;module-list></code></a>, where <code>&lt;,pdi;e-list></code> is the component or components to which you added <code>&lt;sequence></code>.</p></span>
+<p>Currently, the only way to do this is to enable the component using <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable"><code>magento module:enable &lt;module-list></code></a>, where <code>&lt;module-list></code> is the component or components to which you added <code>&lt;sequence></code>.</p></span>
 </div>
 
 

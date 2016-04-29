@@ -152,7 +152,7 @@ The option of the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_c
 
 **Type**: String
 
-**Default value**: <code>{ "header": "icon-triangle-1-e", "activeHeader": "icon-triangle-1-s" }</code>
+**Default value**: <code>{ header: null, activeHeader: null }</code>
 
 
 <h3 id="fedg_tabs_options-loadingClass"><code>loadingClass</code></h3>

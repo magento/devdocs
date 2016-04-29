@@ -13,7 +13,7 @@ github_link: config-guide/cli/config-cli-subcommands-mode.md
 #### Contents
 *	<a href="#config-mode-over">Overview of setting Magento modes</a>
 *	<a href="#config-mode-show">Display the current mode</a>
-*	<a href="#config-mode">Change modes</a>
+*	<a href="#config-mode-change">Change modes</a>
 
 <h2 id="config-mode-over">Overview of setting Magento modes</h2>
 To improve security and ease-of-use, we added a command that switches <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html">Magento modes</a> from developer to production and vice versa. When doing so, we set file permissions and ownership appropriately.
@@ -135,7 +135,7 @@ A message similar to the following displays:
 
 	Current application mode: developer.
 
-<h2 id="config-mode">Change modes</h2>
+<h2 id="config-mode-change">Change modes</h2>
 Command usage:
 
 	magento deploy:mode:set {mode} [-s|--skip-compilation]
