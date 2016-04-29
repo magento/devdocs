@@ -6,7 +6,7 @@ title: Create the Magento database schema
 menu_title: Create the Magento database schema
 menu_node: 
 menu_order: 15
-github_link: install-gde/install/cli/install-cli-subcommands-db.md
+github_link21: install-gde/install/cli/install-cli-subcommands-db.md
 ---
 
   

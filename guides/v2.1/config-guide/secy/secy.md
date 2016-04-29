@@ -1,12 +1,12 @@
 ---
 layout: default
 group: config-guide
-subgroup: B_Security
+subgroup: 02_Security
 title: Security settings
 menu_title: Security settings
 menu_order: 1
 menu_node: parent
-github_link: config-guide/secy/secy.md
+github_link21: config-guide/secy/secy.md
 ---
 
 ## Security settings

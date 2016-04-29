@@ -282,7 +282,7 @@ Example:
 
 
 <p><code>&lt;action></code> child nodes are translated into block method arguments. Child nodes names are arbitrary. If there are two or more nodes with the same name under <code>&lt;action></code>, they are passed as one array.</p>
-<p>In the previous example, the value of <code>&lt;arg1></code> is passed as the first argument and <code>&lt;arg2></code> values are passed as <code>array('one', 'two')</code>. The list of all available methods depends on the block implementation (for example, the public method of the block class).</p>
+
 <table>
    <tbody>
       <tr>
@@ -362,7 +362,7 @@ Sets the declared block or container element as a child of another element in th
 <ul>
    <li><code>&lt;move></code> is skipped if the element to be moved is not defined.</li>
    <li>If the <code>as</code> attribute is not defined, the current value of the element alias is used. If that is not possible, the value of the <code>name</code> attribute is used instead.</li>
-   <li>During layout generation, the <code>&lt;move></code> instruction is processed before the <code>&lt;remove></code> instruction. This means if any elements are moved to the element scheduled for removal, they will be removed as well.</li>
+   <li>During layout generation, the <code>&lt;move&gt;</code> instruction is processed before the removal (set using the <code>remove</code> attribute).This means if any elements are moved to the element scheduled for removal, they will be removed as well.</li>
 </ul>
 <table>
    <tbody>

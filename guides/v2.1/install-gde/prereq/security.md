@@ -5,7 +5,7 @@ subgroup: Prerequisites
 title: SELinux and iptables
 menu_title: SELinux and iptables
 menu_order: 25
-github_link: install-gde/prereq/security.md
+github_link21: install-gde/prereq/security.md
 ---
 
 <h2 id="install-prereq-selinux">SELinux</h2>

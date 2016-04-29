@@ -6,7 +6,7 @@ title:
 menu_title: Next&mdash;Installation part 3, post-installation
 menu_node: parent
 menu_order: 1
-github_link: install-gde/continue-to-verify_cli.md
+github_link21: install-gde/continue-to-verify_cli.md
 ---
 
 

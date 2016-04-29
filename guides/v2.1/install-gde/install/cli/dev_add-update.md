@@ -6,7 +6,7 @@ title: Add or update components
 menu_title: Add or update components
 menu_order: 5
 menu_node: 
-github_link: install-gde/install/cli/dev_add-update.md
+github_link21: install-gde/install/cli/dev_add-update.md
 ---
 
 

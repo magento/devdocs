@@ -63,9 +63,26 @@ p.q 	{
 }
 
 
-/*Give "Edit page on Github a little space on the right"  */
-.page-intro .improve-page {
-  right: 10%;
+
+@media (min-width: 768px) and (max-width: 991px) {
+  #f-col-1,
+  #f-col-2,
+  #f-col-3 {
+     width: 31.6239%;
+     margin-left: 2.5641%;
+  }
+  #f-col-1 {
+     margin-left: 0;
+  }
+  #f-col-2-1 {
+    margin-bottom: 40px;
+  }
+  #f-col-2-1,
+  #f-col-2-2 {
+    width: 100%;
+    float: none;
+    margin-left: 0;
+  }
 }
 
 @media (min-width: 1130px){
@@ -117,7 +134,9 @@ table {
 html, body { height: 100%; }
 
 body.offcanvas-active {
-   overflow-x: hidden;
+   position:fixed;
+   overflow: hidden;
+   height: 100%;
 }
 
 .site-header, #gl-wrapper, #footer-wrap {
@@ -125,8 +144,6 @@ body.offcanvas-active {
 }
 
 @media (max-width:767px) {
-
-   
 
    .site-header {
       border-bottom: 1px solid #c24c05;
@@ -405,7 +422,30 @@ body.offcanvas-active {
       text-align: left;
    }
 
-   #f-col-1, #f-col-2, #f-col-3, #f-col-4 {
+   #footer-wrap .footer {
+      text-align: center;
+   }
+
+   #copyright {
+      text-align: center;
+   }
+
+   #copyright .copyright-date {
+      float: none;
+   }
+
+   #footer-wrap .copyright-links {
+      float: none;
+   }
+   #footer-wrap .footer #magento-com .contact-us p,
+   #footer-wrap .footer #magento-com .contact-us h4 {
+      display: none;
+   }
+   #copyright .nav {
+      margin-top: 10px;
+   }
+
+   #f-col-1, #f-col-2, #f-col-3, #f-col-2-1, #f-col-2-2 {
       width: 100%;
       margin: 0;
       float: none;

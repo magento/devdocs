@@ -6,7 +6,7 @@ title: Exceptions during installation
 menu_title: Exceptions during installation
 menu_node: 
 menu_order: 8
-github_link: install-gde/trouble/tshoot_access-browser.md
+github_link21: install-gde/trouble/tshoot_access-browser.md
 ---
 
 

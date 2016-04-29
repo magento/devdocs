@@ -1,12 +1,12 @@
 ---
 layout: default
 group: config-guide
-subgroup: RabbitMQ
+subgroup: 18_RabbitMQ
 title: Message Queues
 menu_title:  Message Queues (Enterprise Edition only)
 menu_order: 1
 menu_node: parent
-github_link: config-guide/mq/rabbitmq-overview.md
+github_link21: config-guide/mq/rabbitmq-overview.md
 ---
 
 <img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only">

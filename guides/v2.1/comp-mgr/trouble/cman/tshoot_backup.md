@@ -1,12 +1,12 @@
 ---
 layout: default
 group: compman
-subgroup: ZZ_Troubleshooting
+subgroup: 50_trouble
 title: Troubleshoot backups
 menu_title: Troubleshoot backups
 menu_node: 
 menu_order: 400
-github_link: comp-mgr/trouble/cman/tshoot_backup.md
+github_link21: comp-mgr/trouble/cman/tshoot_backup.md
 ---
 
 <h2 id="trouble-backup">Troubleshoot backups</h2>

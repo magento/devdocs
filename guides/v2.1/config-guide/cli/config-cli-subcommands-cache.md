@@ -1,12 +1,12 @@
 ---
 layout: default
 group: config-guide 
-subgroup: CLI
+subgroup: 04_CLI
 title: Manage the cache
 menu_title: Manage the cache
 menu_node: 
 menu_order: 50
-github_link: config-guide/cli/config-cli-subcommands-cache.md
+github_link21: config-guide/cli/config-cli-subcommands-cache.md
 ---
 
 #### Contents

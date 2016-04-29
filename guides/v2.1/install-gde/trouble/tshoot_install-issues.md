@@ -6,7 +6,7 @@ title: Known issues that affect installation
 menu_title: Known issues that affect installation
 menu_node: 
 menu_order: 30 
-github_link: install-gde/trouble/tshoot_install-issues.md
+github_link21: install-gde/trouble/tshoot_install-issues.md
 ---
 
 <h2 id="known-devbeta-xdebug">Known issue with xdebug</h2>

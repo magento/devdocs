@@ -6,7 +6,7 @@ title: Installation overview
 menu_title: Installation overview
 menu_node: 
 menu_order: 1
-github_link: install-gde/bk-install-guide.md
+github_link21: install-gde/bk-install-guide.md
 ---
 
 <h2>Magento software installation</h2>

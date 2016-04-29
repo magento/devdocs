@@ -6,7 +6,7 @@ title: Installation fails; cannot create install.log
 menu_title: Installation fails; cannot create install.log
 menu_node: 
 menu_order: 400
-github_link: install-gde/trouble/tshoot_install-log.md
+github_link21: install-gde/trouble/tshoot_install-log.md
 ---
 
 <h2 id="install-trouble-install-log">Installation fails; cannot create install.log</h2>

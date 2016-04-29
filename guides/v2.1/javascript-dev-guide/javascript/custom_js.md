@@ -30,7 +30,7 @@ To use a custom implementation of an existing Magento JS component:
 var config = {
   "map": {
     "*": {
-      "<custom_component>": "<default_component>"
+      "<default_component>": "<custom_component>"
     }
   }
 };
@@ -62,7 +62,7 @@ var config = {
 <li>Place your <code>requirejs-config.js</code> file in one of the following directories (according to the location of your custom script, see step 1 of this procedure):
 <ul>
 <li>Your theme files: <code>&lt;theme_dir&gt;</code></li>
-<li>Your module view files: &lt;module_dir&gt;/view/frontend</code></li>
+<li>Your module view files: <code>&lt;module_dir&gt;/view/frontend</code></li>
 </ul>
 </li>
 </ol>

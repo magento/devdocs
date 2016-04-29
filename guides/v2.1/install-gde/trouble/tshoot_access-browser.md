@@ -6,7 +6,7 @@ title: Cannot access Magento software in a web browser
 menu_title: Cannot access Magento software in a web browser
 menu_node: 
 menu_order: 1
-github_link: install-gde/trouble/tshoot_access-browser.md
+github_link21: install-gde/trouble/tshoot_access-browser.md
 ---
 
 
@@ -15,7 +15,7 @@ github_link: install-gde/trouble/tshoot_access-browser.md
 ### Symptom: The following message displays when you try to access the Magento storefront or Admin:
 
 	Whoops, it looks like you have an invalid PHP version.
-	Magento supports PHP 5.4.11 or newer.
+	Magento supports PHP 5.5 or newer.
 	
 #### Solution
 

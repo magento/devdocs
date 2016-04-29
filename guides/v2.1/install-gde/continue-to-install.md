@@ -6,7 +6,7 @@ title:
 menu_title: Next&mdash;Installation part 2, installing
 menu_node: parent
 menu_order: 1
-github_link: install-gde/continue-to-install.md
+github_link21: install-gde/continue-to-install.md
 ---
 
 <div class="bs-callout bs-callout-tip">

@@ -1,15 +1,15 @@
 ---
 layout: default
 group: compman
-subgroup: ZZ_Troubleshooting
-title: "We're sorry, we can't take that action right now"
-menu_title: "We're sorry, we can't take that action right now"
+subgroup: 50_trouble
+title: "Sorry, we can't take that action right now"
+menu_title: "Sorry, we can't take that action right now"
 menu_node: 
 menu_order: 2
-github_link: comp-mgr/trouble/cman/were-sorry.md
+github_link21: comp-mgr/trouble/cman/were-sorry.md
 ---
 
-<h2 id="trouble-update-were-sorry">"We're sorry, we can't take that action right now"</h2>
+<h2 id="trouble-update-were-sorry">"Sorry, we can't take that action right now"</h2>
 The following error might display at the start of your upgrade:
 
 <img src="{{ site.baseurl }}common/images/upgr-sorry.png" width="600px">
@@ -18,7 +18,7 @@ See one of the following sections for possible solutions:
 
 *	[Problem: you're not authenticated](#not-auth)
 *	[Problem: the updater application isn't initialized](#updater)
-*	[Problem: missing `.gitignore` files](#missing-ignore)
+*	[Problem: you cloned the Magento GitHub repository](#git-clone)
 
 ### Problem: you're not authenticated {#not-auth}
 You might not have entered your authentication keys in the Magento Admin.
@@ -66,17 +66,7 @@ Modify Magento's `composer.json` to reference the `https://repo.magento.com` rep
 		composer install
 9.	After the command completes, try the upgrade again.
 
-### Problem: missing `.gitignore` files {#missing-ignore}
-If you downloaded a compressed archive, there might have been missing `.gitignore` files that prevent the upgrade from completing properly. To apply our update, patch `magento/magento-composer-installer` then run `composer update` from your Magento installation directory. 
+### You cloned the Magento GitHub repository {#git-clone}
+If you installed the Magento software by cloning the Magento repository, you cannot use the System Upgrade utility to upgrade it.
 
-#### Solution
-To solve this issue:
-
-1.	Log in to your Magento server as the <a href="{{ site.gdeurl21 }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
-2.	Change to your Magento installation directory.
-3.	Run the following commands in the order shown:
-
-		composer update magento/magento-composer-installer
-		composer update
-
-4.	Try your upgrade again.
+Instead, see one of the options discussed in <a href="{{ site.gdeurl21 }}install-gde/install/cli/dev_options.html">Contributing developers&mdash;update, reinstall Magento</a>.

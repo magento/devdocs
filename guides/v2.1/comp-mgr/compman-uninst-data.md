@@ -1,12 +1,12 @@
 ---
 layout: default 
 group: compman
-subgroup: Uninstall
+subgroup: 16_Uninstall
 title: Step 3. Data Option
 menu_title: Step 3. Data Option
 menu_node: 
-menu_order: 1
-github_link: comp-mgr/compman-uninst-data.md
+menu_order: 2
+github_link21: comp-mgr/compman-uninst-data.md
 ---
 
 ## Data option

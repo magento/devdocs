@@ -6,7 +6,7 @@ title: (Integrator) Get the Composer metapackage
 menu_title: (Integrator) Get the Composer metapackage
 menu_order: 1
 menu_node: parent
-github_link: install-gde/prereq/integrator_install.md
+github_link21: install-gde/prereq/integrator_install.md
 ---
 
 <div class="bs-callout bs-callout-tip">

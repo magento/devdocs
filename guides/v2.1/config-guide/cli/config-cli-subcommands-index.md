@@ -1,12 +1,12 @@
 ---
 layout: default
 group: config-guide 
-subgroup: CLI
+subgroup: 04_CLI
 title: Manage the indexers
 menu_title: Manage the indexers
 menu_node: 
 menu_order: 90
-github_link: config-guide/cli/config-cli-subcommands-index.md
+github_link21: config-guide/cli/config-cli-subcommands-index.md
 ---
 
 

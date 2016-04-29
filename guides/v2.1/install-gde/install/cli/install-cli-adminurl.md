@@ -6,7 +6,7 @@ title: Display or change the Admin URI
 menu_title: Display or change the Admin URI
 menu_node: 
 menu_order: 6
-github_link: install-gde/install/cli/install-cli-adminurl.md
+github_link21: install-gde/install/cli/install-cli-adminurl.md
 ---
 
   

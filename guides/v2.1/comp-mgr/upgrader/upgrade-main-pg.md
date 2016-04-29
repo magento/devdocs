@@ -1,12 +1,12 @@
 ---
 layout: default 
 group: compman
-subgroup: U_UseUpgrade
+subgroup: 15_UseUpgrade
 title: Step 1. Select versions to upgrade
 menu_title: Step 1. Select versions to upgrade
 menu_node: 
 menu_order: 5
-github_link: comp-mgr/upgrader/upgrade-main-pg.md
+github_link21: comp-mgr/upgrader/upgrade-main-pg.md
 ---
 
 

@@ -1,12 +1,12 @@
 ---
 layout: default
 group: config-guide
-subgroup: Bootstrap
+subgroup: 03_Bootstrap
 title: About Magento modes
 menu_title: About Magento modes
 menu_order: 3
 menu_node: 
-github_link: config-guide/bootstrap/magento-modes.md
+github_link21: config-guide/bootstrap/magento-modes.md
 ---
 
 #### Contents

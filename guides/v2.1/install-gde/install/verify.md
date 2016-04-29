@@ -6,7 +6,7 @@ title: Verify the installation
 menu_title: Verify the installation
 menu_node: parent
 menu_order: 1
-github_link: install-gde/install/verify.md
+github_link21: install-gde/install/verify.md
 ---
 
 #### Contents 

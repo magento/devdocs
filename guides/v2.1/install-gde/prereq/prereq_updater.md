@@ -6,7 +6,7 @@ title: Set up the updater
 menu_title: Set up the updater
 menu_order: 10
 menu_node: 
-github_link: install-gde/prereq/prereq_updater.md
+github_link21: install-gde/prereq/prereq_updater.md
 ---
 
 #### Contents

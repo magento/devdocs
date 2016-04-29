@@ -6,7 +6,7 @@ title: (Contributor) Clone the Magento repository
 menu_title: (Contributor) Clone the Magento repository
 menu_order: 1
 menu_node: parent
-github_link: install-gde/prereq/dev_install.md
+github_link21: install-gde/prereq/dev_install.md
 ---
 
 <div class="bs-callout bs-callout-tip">

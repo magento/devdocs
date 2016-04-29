@@ -11,7 +11,7 @@
 +		cd <your Magento 2 clone directory>
 +		git branch
 +
-+	If you're currently in the `develop` branch, you must change to a <a href="{{ site.gdeurl }}install-gde/install/cli/dev_downgrade.html">released branch</a> before you continue.
++	If you're currently in the `develop` branch, you must change to a <a href="{{ site.gdeurl21 }}install-gde/install/cli/dev_downgrade.html">released branch</a> before you continue.
 +
 +### Find the Data Migration Tool version {#migration-tool-version}
 +

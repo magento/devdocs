@@ -6,7 +6,7 @@ title: Enable or disable modules
 menu_title: Enable or disable modules
 menu_node: 
 menu_order: 7
-github_link: install-gde/install/cli/install-cli-subcommands-enable.md
+github_link21: install-gde/install/cli/install-cli-subcommands-enable.md
 ---
 
   

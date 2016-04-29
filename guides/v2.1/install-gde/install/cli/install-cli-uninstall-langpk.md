@@ -6,7 +6,7 @@ title: Uninstall language packages
 menu_title: Uninstall language packages
 menu_node: 
 menu_order: 500
-github_link: install-gde/install/cli/install-cli-uninstall-langpk.md
+github_link21: install-gde/install/cli/install-cli-uninstall-langpk.md
 ---
 
   

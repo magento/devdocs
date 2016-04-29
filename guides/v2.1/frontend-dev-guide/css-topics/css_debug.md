@@ -13,16 +13,21 @@ github_link: frontend-dev-guide/css-topics/css_debug.md
 <p>
 The topic describes how the changes you make in stylesheets are applied in the client-side and server-side LESS <a href="{{site.gdeurl21}}frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">compilation modes</a>, and suggests the approaches and tools you can use to streamline the process of applying and debugging customizations. </p>
 
-## Prerequisites 
+**Contents**
+
+* TOC
+{:toc}
+
+## Prerequisites
 Make sure that you [set]({{site.gdeurl21}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{site.gdeurl21}}config-guide/bootstrap/magento-modes.html).
 
-<h2 id="css_debug_client">Styles debugging in client-side compilation mode</h2>
+## Styles debugging in client-side compilation mode {#css_debug_client}
 
-Client-side LESS compilation is implemented using the native `less.js` library. The default configuration is set in <code>lib/web/less/config.less.js</code>; you can change it as needed. 
+Client-side LESS compilation is implemented using the native `less.js` library. The default configuration is set in <code>lib/web/less/config.less.js</code>; you can change it as needed.
 
 You can find the detailed information about the configuration and other options of the <code>less.js</code> used in a browser at <a href="http://lesscss.org/usage/#using-less-in-the-browser" target="_blank">http://lesscss.org/usage/#using-less-in-the-browser</a>.
 
-In client-side compilation mode, most of the stylesheet customizations display immediately after you reload a page in a browser. 
+In client-side compilation mode, most of the stylesheet customizations display immediately after you reload a page in a browser.
 
 <span id="css_exception">There are certain types of changes</span>, that require you to clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory and trigger the compilation and <a href="{{site.gdeurl21}}architecture/view/static-process.html#publish-static-view-files" target="_blank">publication</a> processes anew.
 
@@ -35,9 +40,9 @@ This is required in the following cases:
 
 To clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory, delete the directory in the file system, and reload the store pages in a browser to trigger compilation and publication.
 
-<h2 id="css_debug_server">Styles debugging in server-side compilation mode</h2>
+## Styles debugging in server-side compilation mode {#css_debug_server}
 
-In server-side LESS compilation mode, to have your changes applied, clear <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> by deleting the directory in the file system, and reload the store pages to trigger compilation and publication. 
+In server-side LESS compilation mode, to have your changes applied, clear <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> by deleting the directory in the file system, and reload the store pages to trigger compilation and publication.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>You might also need to clear the <code>var/cache</code> and <code>var/view_preprocessing</code> directories.</p>
@@ -47,11 +52,14 @@ Alternatively, to streamline the process of applying and debugging styles custom
 
 The following section describes in details how to install, configure and use Grunt for styles debugging.
 
-<h3 id="grunt_prereq">Installing and configuring Grunt</h3>
+### Installing and configuring Grunt {#grunt_prereq}
 
 Magento has built-in Grunt tasks configured, but there are still several prerequisite steps you need to take to be able to use it:
 
 <ol>
+<li>
+In your Magento instance root directory, find the <code>Gruntfile.js.sample</code> and the <code>package.json.sample</code> files, and remove the "sample" ending in the names. The files names should be <code>Gruntfile.js</code> and <code>package.json</code>. 
+</li>
 <li>
 Install <a href="https://github.com/joyent/node/wiki/installing-node.js-via-package-manager)" target="_blank">node.js</a> to any location on your machine.
 </li>
@@ -61,15 +69,7 @@ npm install -g grunt-cli
 </pre>
 </li>
 <li>
-Install Grunt in your Magento directory. To do this, run the following commands in a command prompt:<br>
-<pre>
-cd &lt;your_Magento_instance_directory&gt;
-npm install grunt --save-dev
-</pre>
-</li>
-
-<li>
-Install (or refresh) the <code>node.js</code> project dependency for your Magento instance. To do this, run the following commands in a command prompt:<br>
+Install (or refresh) the <code>node.js</code> project dependency, including Grunt, for your Magento instance. To do this, run the following commands in a command prompt:<br>
 
 <pre>
 cd &lt;your_Magento_instance_directory&gt;
@@ -79,23 +79,20 @@ npm update
 </li>
 
 <li>
-Add your theme to Grunt configuration. To do this, in the <code>dev/tools/grunt/configs/theme.js</code> file, add your theme to <code>module.exports</code> like following:
+Add your theme to Grunt configuration. To do this, in the <code>dev/tools/grunt/configs/themes.js</code> file, add your theme to <code>module.exports</code> like following:
 <pre>
 module.exports = {
     &lt;theme&gt;: {
         area: 'frontend',
         name: '&lt;Vendor&gt;/&lt;theme&gt;',
-        locale: '&lt;language&gt;', 
+        locale: '&lt;language&gt;',
         files: [
             '&lt;path_to_file1&gt;', //path to root source file
             '&lt;path_to_file2&gt;'
         ],
-    dsl: 'less'
+        dsl: 'less'
     },
 </pre>
-
-
-
 
 Where the following notation is used:
 <ul>
@@ -108,19 +105,18 @@ Where the following notation is used:
 <li>
 <code>&lt;path_to_file&gt;</code>: path to the root source file, relative to the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme/&gt;web</code> directory. You need to specify all <a href="{{site.gdeurl21}}frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms" target="_blank">root source files of the theme</a>. If your theme <a href="{{site.gdeurl21}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from a certain theme, and does not contain its own root source files, specify the root source files of the parent theme.
 
-</li> 
+</li>
 
 </ul>
 </li>
 <li id="livereload">
-(Optional) If you want to use Grunt for "watching" changes automatically, without reloading pages in a browser each time, install the <a href="http://livereload.com/extensions/" target="_blank">LiveReload extension</a> in your browser. 
+(Optional) If you want to use Grunt for "watching" changes automatically, without reloading pages in a browser each time, install the <a href="http://livereload.com/extensions/" target="_blank">LiveReload extension</a> in your browser.
 
 </li>
 </ol>
 
 
-
-<h3 id="grunt_commands">Grunt commands</h3>
+### Grunt commands {#grunt_commands}
 
 The following table describes the grunt commands you can use performing different customization tasks. Run all commands from your Magento installation directory.
 
@@ -140,7 +136,7 @@ Action
 grunt clean:&lt;theme&gt;
 </pre>
 
-For example: 
+For example:
 <pre>
 grunt clean:blank
 </pre>
@@ -188,7 +184,7 @@ Tracks the changes in the source files, recompiles <code>.css</code> files, and 
 </tr>
 </table>
 
-<h3>Use cases of tracking changes using Grunt</h3> 
+### Use cases of tracking changes using Grunt {#use_cases}
 
 The following shows which Grunt tasks to use for debugging:
 

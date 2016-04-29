@@ -22,7 +22,7 @@
 <!--Search Results Overlay -->
 <div class="searchResultsBack"></div>
 <div id="searchResultsBox">
-	<div class="searchResultsBoxClose">Close [x]<!-- <img src="{{ site.baseurl }}common/images/close.png" alt="Close"> --></div>
+	<div class="searchResultsBoxClose">Close &times;</div>
 	<gcse:search></gcse:search>
 	<!-- <gcse:searchresults-only></gcse:searchresults-only> -->
 </div>
@@ -38,11 +38,12 @@
 
 		<div id="global-nav">
 			<div class="main-site-name">
-				<a class="logo pull-left" href="{{ site.baseurl }}"> </a>
+				<a class="logo pull-left" href="{{ site.gdeurl21 }}"> </a>
 				<div class="sub-site-name">
-					<a href="{{ site.baseurl }}">Developer Documentation (2.0)</a>
+					<a href="{{ site.gdeurl21 }}">Developer Documentation (2.1)</a>
 				</div>
 			</div>
+			{% include version-switcher.html %}
 		</div><!-- #global-nav -->
 	</nav>
 

@@ -1,12 +1,12 @@
 ---
 layout: default 
 group: compman
-subgroup: U_UseUpgrade
+subgroup: 15_UseUpgrade
 title: Step 3. Back up the file system and database
 menu_title: Step 3. Back up the file system and database
 menu_node: 
 menu_order: 15
-github_link: comp-mgr/upgrader/upgrade-backup.md
+github_link21: comp-mgr/upgrader/upgrade-backup.md
 ---
 
 After you pass all readiness checks, you can back up:

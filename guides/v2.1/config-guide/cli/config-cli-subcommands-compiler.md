@@ -1,12 +1,12 @@
 ---
 layout: default
 group: config-guide
-subgroup: CLI
+subgroup: 04_CLI
 title: Code compiler
 menu_title: Code compiler
 menu_node: 
 menu_order: 175
-github_link: config-guide/cli/config-cli-subcommands-compiler.md
+github_link21: config-guide/cli/config-cli-subcommands-compiler.md
 ---
 
 #### Contents
@@ -26,7 +26,7 @@ github_link: config-guide/cli/config-cli-subcommands-compiler.md
 <li>Interception cache generation</li>
 <li>Repositories code generation (that is, generated code for APIs)</li>
 <li>Service data attributes generation (that is, generated extension classes for data objects)</li></ul>
-<p>You can find code compilation in classes in the <a href="{{ site.mage2100url }}setup/src/Magento/Setup/Module/Di/App/Task/Operation" target="_blank">\Magento\Setup\Module\Di\App\Task\Operation</a> namespace.</p> 
+<p>You can find code compilation in classes in the <a href="{{ site.mage2000url }}setup/src/Magento/Setup/Module/Di/App/Task/Operation" target="_blank">\Magento\Setup\Module\Di\App\Task\Operation</a> namespace.</p> 
 
 <h2 id="config-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
@@ -52,7 +52,7 @@ Use this command if you have multiple *tenants*, which means more than one indep
 
 *	There is one Magento 2 code base instance
 *	There is one database instance per tenant
-*	Independent configurations in the Magneto Admin per tenant
+*	Independent configurations in the Magento Admin per tenant
 *	The storefronts are independent of each other
 
 If you do not have multiple tenants, use the <a href="#config-cli-subcommands-single">single-tenant compiler</a> instead.

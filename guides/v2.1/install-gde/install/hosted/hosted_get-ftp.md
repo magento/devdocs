@@ -6,7 +6,7 @@ title: Transfer the Magento software to your hosted system
 menu_title: Transfer the Magento software to your hosted system
 menu_order: 5
 menu_node: 
-github_link: install-gde/install/hosted/hosted_get-ftp.md
+github_link21: install-gde/install/hosted/hosted_get-ftp.md
 ---
 
 #### Contents

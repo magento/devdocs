@@ -6,7 +6,7 @@ title: System requirements
 menu_title: Magento system requirements
 menu_node: parent
 menu_order: 1
-github_link: install-gde/system-requirements.md
+github_link21: install-gde/system-requirements.md
 ---
 
 ### Operating systems (Linux x86-64)
@@ -29,7 +29,7 @@ MySQL 5.6 (Oracle or Percona)
 ### PHP 
 
 *	5.6.x
-*	5.5.x 
+*	5.5.x, where x is 22 or greater
 *	7.0.2 (supported by Magento version 2.0.1 and later only)
 
 Documentation: <a href="{{ site.gdeurl21 }}install-gde/prereq/php-centos.html" target="_blank">CentOS</a>, <a href="{{ site.gdeurl21 }}install-gde/prereq/php-ubuntu.html" target="_blank">Ubuntu</a>
@@ -50,6 +50,7 @@ Documentation: <a href="{{ site.gdeurl21 }}install-gde/prereq/php-centos.html" t
 *	<a href="http://php.net/manual/en/book.xml.php" target="_blank">xml</a>
 *	<a href="http://php.net/manual/en/book.xsl.php" target="_blank">xsl</a>
 *	<a href="http://php.net/manual/en/book.zip.php" target="_blank">zip</a> 
+*	PHP 7 only: [json](http://php.net/manual/en/book.json.php){:target="_blank"}
 
 #### PHP OPcache
 We strongly recommend you verify the  <a href="http://php.net/manual/en/intro.opcache.php" target="_blank">PHP OPcache</a> is enabled for performance reasons. The OPcache is enabled in many PHP distributions. To verify if it is installed, see our PHP documentation for <a href="{{ site.gdeurl21 }}install-gde/prereq/php-centos.html" target="_blank">CentOS</a> or <a href="{{ site.gdeurl21 }}install-gde/prereq/php-ubuntu.html" target="_blank">Ubuntu</a>.
@@ -64,6 +65,7 @@ For more information, see our recommendations for <a href="{{ site.gdeurl21 }}in
 ### SSL
 *	A valid security certificate is required for HTTPS.
 *	Self-signed SSL certificates are not supported.
+*	PayPal: You must use <a href="{{ site.gdeurl21 }}install-gde/system-requirements_tls1-2.html">`libcurl`</a> version 7.34 or later for Transport Layer Security (TLS) version 1.2 support required by PayPal.
 
 ### Mail server
 Mail Transfer Agent (MTA) or an SMTP server
@@ -75,11 +77,11 @@ Mail Transfer Agent (MTA) or an SMTP server
 
 *	Magento Enterprise Edition (EE) only <img src="{{ site.baseurl }}common/images/ee-only_small.png">
 
-	*   Apache Solr 
+	*   Apache Solr 4.x
  
     	<a href="{{ site.gdeurl21 }}config-guide/solr/solr-overview.html">Solr search</a> can be used as a search provider. Available for Magento Enterprise Edition (EE) only.
 
-	*	RabbitMQ 
+	*	RabbitMQ 3.5
 
 		<a href="{{ site.gdeurl21 }}config-guide/mq/rabbitmq-overview.html">RabbitMQ</a> can be used to publish messages to queue and to define the consumers that receive the messages asynchronously. Available for Magento EE only.
 

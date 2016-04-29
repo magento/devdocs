@@ -5,9 +5,8 @@ subgroup: Prerequisites
 title: Apache
 menu_title: Apache
 menu_order: 01
-github_link: install-gde/prereq/apache.md
+github_link21: install-gde/prereq/apache.md
 ---
-
 
 #### Contents
 

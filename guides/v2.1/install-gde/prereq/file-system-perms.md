@@ -6,7 +6,7 @@ title: Set file system ownership and permissions
 menu_title: Set file system ownership and permissions
 menu_order: 1000
 menu_node: 
-github_link: install-gde/prereq/file-system-perms.md
+github_link21: install-gde/prereq/file-system-perms.md
 ---
 
 <h2 id="zip-perms">Set file system ownership and permissions</h2>

@@ -6,7 +6,7 @@ title: Customize Checkout
 menu_title: Customize Checkout
 menu_node: parent
 menu_order: 1
-github_link: frontend-dev-guide/howdoi/checkout/checkout_overview.md
+github_link: howdoi/checkout/checkout_overview.md
 ---
 
 Magento checkout is implemented using the UI components. 

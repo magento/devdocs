@@ -6,7 +6,7 @@ title: Change to a released version
 menu_title: Change to a released version
 menu_order: 200
 menu_node: 
-github_link: install-gde/install/cli/dev_downgrade.md
+github_link21: install-gde/install/cli/dev_downgrade.md
 ---
 
 ## Change to a released version

@@ -1,12 +1,12 @@
 ---
 layout: default
 group: config-guide
-subgroup: CM_Varnish
+subgroup: 09_Varnish
 title: Configure Varnish and your web server
 menu_title: Configure Varnish and your web server
 menu_order: 10
 menu_node: 
-github_link: config-guide/varnish/config-varnish-configure.md
+github_link21: config-guide/varnish/config-varnish-configure.md
 ---
 
 <h2 id="config-varnish-config-var">Configure Varnish and your web server</h2>
@@ -35,7 +35,7 @@ To change the Apache 2.2 listen port:
 <h2 id="config-varnish-config-sysvcl">Modify the Varnish system configuration</h2>
 To modify the Varnish system configuration:
 
-1.	Open `/etc/sysconfig/varnish` in a text editor.
+1.	Open `/etc/sysconfig/varnish` (or `/etc/default/varnish` on Debian and Ubuntu) in a text editor.
 2.	Set the Varnish listen port to 80:
 
 		VARNISH_LISTEN_PORT=80
