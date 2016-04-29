@@ -35,14 +35,14 @@ You can find the list of modules that have dependencies with the Magento_ReviewS
 
 ## Extension Points
 
-Extension points enable extension developers to interact with the Magento_ReviewStaging module. For more information about Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.0/extension-dev-guide/plugins.html).
+Extension points enable extension developers to interact with the Magento_ReviewStaging module. For more information about Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).
 
-[Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.0/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_ReviewStaging module.
+[Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_ReviewStaging module.
 
 ### Layouts
 
 You can extend and override layouts in the `Magento\ReviewStaging\view\adminhtml\layout` directory.
-For more information about layouts, see the [Layout documentation](http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/layouts/layout-overview.html).
+For more information about layouts, see the [Layout documentation](http://devdocs.magento.com/guides/v2.1/frontend-dev-guide/layouts/layout-overview.html).
 
 ## Additional information
 

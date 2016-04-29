@@ -31,12 +31,12 @@ You can find the list of modules that have dependencies with the Magento_Product
 
 ## Extension Points
 
-Extension points enable extension developers to interact with the Magento_ProductVideoStaging module. [Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.0/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_ProductVideoStaging module.
+Extension points enable extension developers to interact with the Magento_ProductVideoStaging module. [Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_ProductVideoStaging module.
 
 ### Layouts
 
 You can extend and override layouts in the `app/code/Magento/ProductVideoStaging/view/adminhtml/layout` directory.
-For more information about layouts, see the [Layout documentation](http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/layouts/layout-overview.html).
+For more information about layouts, see the [Layout documentation](http://devdocs.magento.com/guides/v2.1/frontend-dev-guide/layouts/layout-overview.html).
 
 ## Additional information
 

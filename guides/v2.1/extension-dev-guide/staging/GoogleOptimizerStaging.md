@@ -19,7 +19,7 @@ github_link: extension-dev-guide/staging/GoogleOptimizerStaging.md
 
 ## Overview
 
-The Magento_GoogleOptimizerStaging module is a part of the staging functionality in Magento EE. It allows to stage values of the product meta data.
+The Magento_GoogleOptimizerStaging module is a part of the staging functionality in Magento EE. It enables you to stage values of the product meta data.
 
 ## Implementation Details
 
@@ -35,7 +35,7 @@ You can find the list of modules that have dependencies with the Magento_GoogleO
 
 ## Extension Points
 
-[Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.0/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_GoogleOptimizerStaging module.
+[Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_GoogleOptimizerStaging module.
 
 ## Additional information
 
