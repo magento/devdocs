@@ -5,14 +5,14 @@ subgroup: 3_Build
 title: Name your component
 menu_title: Name your component
 menu_order: 7
-github_link: extension-dev-guide/create_component.md
+github_link: extension-dev-guide/build/create_component.md
 ---
 
 ##{{page.menu_title}}
 
 #### Contents
 *   [Overview of naming a component](#overview-naming)
-*   [Prerequisites](#prerea)
+*   [Prerequisites](#prereq)
 *   [Add the component's `module.xml` file](#module-xml)
 *   [Add the components `composer.json` file](#add-composer-json)
 
@@ -22,14 +22,14 @@ You give a name to your component in its `composer.json` and `module.xml` files.
 ## Prerequisites {#prereq}
 Before you continue, make sure you have completed all of the following tasks:
 
-*   Created a [file structure]({{ site.gdeurl21 }}extension-dev-guide/module-file-structure.html)
-*   Created the the [configuration files]({{ site.gdeurl21 }}extension-dev-guide/required-configuration-files.html) you'll need
-*   [Registered]({{ site.gdeurl21 }}extension-dev-guide/component-registration.html) your component
+*   Created a [file structure]({{ site.gdeurl21 }}extension-dev-guide/build/module-file-structure.html)
+*   Created the the [configuration files]({{ site.gdeurl21 }}extension-dev-guide/build/required-configuration-files.html) you'll need
+*   [Registered]({{ site.gdeurl21 }}extension-dev-guide/build/component-registration.html) your component
 
 ## Add the component's `module.xml` file {#module-xml}
 Declare the component itself by adding a module.xml file in the `/etc` folder of your component.
 
-A component declares itself (that is, defines its name and existence) in the `module.xml` file, located in the Magento install directory at `<ComponentName>/etc/`. 
+A component declares itself (that is, defines its name and existence) in the `module.xml` file, located in the Magento install directory at `<ComponentName>/etc/`.
 
 The smallest working module.xml file would look something like this:
 
@@ -42,6 +42,14 @@ The smallest working module.xml file would look something like this:
 
 ##Add the components `composer.json` file {#add-composer-json}
 `composer.json` provides a component name and also specifies component dependencies.
+
+In addition, the [Component Manager]({{ site.gdeurl21 }}comp-mgr/compman-start.html) looks for a `composer.json` in a component's root directory and can perform actions on the component and its dependencies.
+
+In particular:
+
+* If a component has `composer.json` *and* the component was installed using Composer (including from packagist, the Magento Marketplace, or other source), the Component Manager can update, uninstall, enable, or disable the component.
+* If the component has `composer.json` but was *not* installed using Composer (for example, custom code a developer wrote), Component Manager can still enable or disable the component.
+* We strongly recommend you include `composer.json` in your component's root directory whether or not you intend to distribute it to other Magento merchants.
 
 A sample follows:
 
@@ -99,13 +107,6 @@ where:
 
 
 
-##Next
+####Next
 
-[URN schema validation](XSD-XML-validation.html)
-
-
-
-
-
-
-
+[Component load order]({{ site.gdeurl }}extension-dev-guide/build/module-load-order.html)
