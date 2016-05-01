@@ -72,7 +72,7 @@ Magento 2 has the following cache types:
       <td><p>full_page</p></td>
       <td><p>Generated HTML pages. </p>
       	<p>If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. </p>
-      	<p>Clean or flush this cache type after modifying code level that affects HTML output. It’s recommended to keep this cache enabled to because caching HTML improves performance significantly.</p></td>
+      	<p>Clean or flush this cache type after modifying code level that affects HTML output. It’s recommended to keep this cache enabled because caching HTML improves performance significantly.</p></td>
     </tr>
     <tr>
       <td><p>Reflection</p></td>
