@@ -1,7 +1,7 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 6_Module Development
+subgroup: 99_Module Development
 title: Dependency injection
 menu_title: Dependency injection
 menu_order: 5
@@ -49,7 +49,7 @@ Factory
 
 Proxy
 
-:	Auto-generated object that implements the same interface as the original object, but unlike this original object has only one dependency&mdash;the object manager. A proxy is used for lazy loading of optional dependencies. A <a href="http://en.wikipedia.org/wiki/Proxy_pattern" target="_blank">proxy</a> can be used to break cyclical dependencies. For more information about proxies, see <a href="#dep-inj-preview-cons">Preview of constructor injection</a>.
+:	Auto-generated object that implements the same interface as the original object, but unlike this original object has only one dependency&mdash;the object manager. A proxy is used for lazy loading of optional dependencies. A <a href="http://en.wikipedia.org/wiki/Proxy_pattern" target="_blank">proxy</a> can be used to break cyclical dependencies. For more information, see <a href="{{site.gdeurl21}}extension-dev-guide/proxies.html">Proxies</a>.
 
 
 Lifecycle
@@ -64,22 +64,22 @@ Constructor injection *must* be used for all optional and required service depen
 class Test
 {
     protected $class;
- 
+
     public function __construct(SomeClass $class)
     {
         $this->class = $class;
     }
- 
+
     public function execute()
     {
         //some code
- 
+
         $this->class->execute();
- 
+
         //some code
     }
 }
- 
+
 $test->execute();
 ?>
 {% endhighlight %}
@@ -107,13 +107,17 @@ The object manager needs the following configurations:
 
 To define the interface preferences for the object manager, use `app/etc/di/*.xml`, `<your module dir>/etc/di.xml`, and `<your module dir>/etc/<areaname>/di.xml` files depending on the scope it belongs in.
 
-For example, to set the interface preferences for the Magento Admin, use `app/code/core/Magento/Backend/etc/adminhtml/di.xml` as follows:
+For example, to set the interface preferences for the Magento Admin, use <a href="{{ site.mage2100url }}app/code/Magento/Backend/etc/adminhtml/di.xml#L12" target="_blank">`Backend/etc/adminhtml/di.xml`</a> as follows:
 
-<script src="https://gist.github.com/xcomSteveJohnson/a166ab469a52eeec9954.js"></script>
+   <preference for="Magento\Framework\UrlInterface" type="Magento\Backend\Model\UrlInterface" />
 
 You can also specify whether or not the object is shareable in its `di.xml` as follows:
 
-<script src="https://gist.github.com/xcomSteveJohnson/f66e46702da03ec264eb.js"></script>
+<type name="Company\Module\ClassOne" shared="false">
+  <arguments>
+    <argument name="class_one" xsi:type="object" shared="false">Company\Module\ClassTwo</argument>
+  </arguments>
+</type>
 
 Dependency injection is configuration-based; configurations are validated by <a href="{{ site.mage2100url }}lib/internal/Magento/Framework/ObjectManager/etc/config.xsd" target="_blank">config.xsd</a>.
 
@@ -124,7 +128,7 @@ Object manager configurations can be specified at any of the following scopes:
 *	Area-specific configuration (`<your module directory>/etc/<areaname>/di.xml`)
 
 	*Area-specific* means specific a Magento area (`frontend`, `adminhtml`, and so on). For example, here is the <a href="{{ site.mage2100url }}app/code/Magento/Customer/etc/adminhtml/di.xml" target="_blank">Magento Customer module's adminhtml di.xml</a>.
-	
+
 <div class="bs-callout bs-callout-info" id="info">
   <p>Each scope overrides any previously existing config when it is loaded.</p>
 </div>
@@ -364,7 +368,7 @@ translate="true">{someValue}&lt;/argument></pre></td>
 		</tr>
 	<tr>
 		<td><pre>&lt;argument xsi:type="array">
-&lt;item key="someItem"
+&lt;item name="someItem"
 xsi:type="string">someVal&lt;/item>
 &lt;/argument></pre></td>
 		<td>Array with elements corresponding to the items passed as argument. Array can contain an infinite number of items. Each item can be any type as argument, including an array itself, or an object type.</td>
@@ -422,14 +426,14 @@ Non-injectable
 	*	Requires external input (such as data user input or data from database) to be properly created
 
 	Most models are non-injectable (for example, <a href="{{ site.mage2100url }}app/code/Magento/Catalog/Model/Product.php" target="_blank">Magento\Catalog\Model\Product</a> or <a href="{{ site.mage2100url }}app/code/Magento/User/Model/User.php" target="_blank">Magento\User\Model\User</a>).
-	
+
 You must observe the following rules:
 
 *    Injectables can request other injectables in the constructor, but non-injectables *cannot* request other objects in a constructor
 *    If a business function of an injectable object is to produce non-injectables, the injectable must ask for a <a href="#dep-inj-mod-type-fact">factory</a> in its constructor (due to the fact that factories are injectables)
 *    If a business function of an injectable object is to perform some actions on a non-injectable, it must receive the non-injectable as a method argument
 
-You can create non-injectables in services with object <a href="#dep-inj-mod-type-fact">factories</a> or you can pass them in as method parameters. 
+You can create non-injectables in services with object <a href="{{ site.gdeurl }}extension-dev-guide/factories.html">factories</a> or you can pass them in as method parameters.
 
 Do not push injectables to non-injectables because it violates the <a href="http://en.wikipedia.org/wiki/Law_of_Demeter" target="_blank">Law of Demeter</a> and requires additional lookup during object unserialization.
 
@@ -443,12 +447,12 @@ Factories are special objects that have only one purpose: to create an instance 
 class Magento\Core\Model\Config\BaseFactory
 {
     protected $_objectManager;
- 
+
     public function __construct(Magento\Framework\ObjectManager $objectManager)
     {
         $this->_objectManager = $objectManager;
     }
- 
+
     public function create($sourceData = null)
     {
         return $this->_objectManager->create('Magento\Core\Model\Config\Base', array('sourceData' => $sourceData));
@@ -456,7 +460,7 @@ class Magento\Core\Model\Config\BaseFactory
 } ?>
 {% endhighlight %}
 
-Most factories are simple, so developers do not have to bother with writing them. If a non-existent factory is encountered by object manager in runtime mode or compiler, the object manager generates the factory. 
+Most factories are simple, so developers do not have to bother with writing them. If a non-existent factory is encountered by object manager in runtime mode or compiler, the object manager generates the factory.
 
 <h2 id="dep-inj-compile">Compiler tool</h2>
 To compile all non-existent proxies and factories; and to pre-compile class definitions, inheritance information, and plugin definitions for multiple stores or websites, see one of the following topics:
@@ -472,4 +476,3 @@ To compile all non-existent proxies and factories; and to pre-compile class defi
 *	<a href="{{ site.gdeurl21 }}config-guide/bootstrap/magento-bootstrap.html">Magento application initialization and bootstrap</a>
 *	<a href="{{ site.gdeurl21 }}architecture/modules/mod_depend.html">Module dependencies</a>
 *	<a href="{{ site.gdeurl21 }}extension-dev-guide/api-concepts.html">Programming concepts</a>
-
