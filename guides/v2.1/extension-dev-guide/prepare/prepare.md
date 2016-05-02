@@ -1,9 +1,9 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 2_Prepare
-title: Prepare
-menu_title: Prepare
+subgroup: 02_Prepare
+title: Prepare (development quick start)
+menu_title: Prepare (development quick start)
 menu_order: 1
 menu_node: parent
 github_link: extension-dev-guide/prepare.md
@@ -12,11 +12,9 @@ github_link: extension-dev-guide/prepare.md
 
 ##{{page.menu_title}}
 
-
-Before you start building Magento modules, make sure you&#8217;ve got Magento and its dependencies set up and installed in your environment. Magento uses [Composer](http://getcomposer.org) to manage and package components. After you have Magento up and running, set Magento&#8217;s mode to [developer]({{ site.gdeurl21 }}/config-guide/bootstrap/magento-how-to-set.html).
+Before you start building Magento modules, we suggest you use the following checklist:
 
 * [Install Magento and any required dependencies]({{ site.gdeurl21 }}/install-gde/bk-install-guide.html)
-* [Composer integration](composer-integration.html)
-* [Component registration](component-registration.html)
-* [Set your mode to developer]({{ site.gdeurl21 }}/config-guide/cli/config-cli-subcommands-mode.html)
-<!-- * [Determine your file structure](x) -->
+*	[Set Magento for developer mode]({{site.gdeurl21}}config-guide/cli/config-cli-subcommands-mode.html#config-mode)
+*	Decide which type of component you're creating and <a href="{{site.gdeurl21}}extension-dev-guide/build/composer-integration.html">how to set it up</a> in `composer.json`.
+*	[Understand the component file structure]({{site.gdeurl21}}extension-dev-guide/prepare/prepare_file-str.html)
