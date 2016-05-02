@@ -1,7 +1,7 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 3_Build
+subgroup: 03_Build
 title: Name your component
 menu_title: Name your component
 menu_order: 7
