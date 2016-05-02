@@ -1,32 +1,38 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 1_Introduction
+subgroup: 01_Introduction
 title: Developer roadmap
 menu_title: Developer roadmap
 menu_order: 2
-github_link: extension-dev-guide/developers_roadmap.md
+github_link: extension-dev-guide/intro/developers_roadmap.md
 ---
 
 ##{{page.menu_title}}
 
 
-This topic introduces the high-level workflow for a developer who wants to create, customize, or contribute to the Magento code and components.
+This topic introduces the high-level workflow for a developer who wants to create or customize the Magento application. Developers can also package and distribute their customizations to merchants.
 
-<h2 id="developer_roadmap_resources">Developer Resources</h2>
-There are several resources that you might want to take a look at as you consider your workflow:
+Key points:
 
-1. See the <a href="https://github.com/magento/magento2-samples">Sample extensions</a> created by the Magento 2 Core team.
-2. Magento 2 Developers Hub, at <a href="http://magento.com/developers/magento2">magento.com/developers/magento2</a>.
-3. The <a href="{{ site.baseurl }}index.html">Magento 2 Documentation Library</a>, with Guides such as Coding Standards, Frontend Developers Guide, Installation and Configuration, and other documents about issues like our backwards compatibility policy, versioning, and using Magento APIs.
+*	Minimum required elements:
 
+	*	<a href="{{site.gdeurl21}}extension-dev-guide/build/composer-integration.html">Declare component dependencies</a> in `composer.json`.
+	*	<a href="{{site.gdeurl21}}extension-dev-guide/build/component-registration.html">Register</a> the component using `registration.php`.
+	*	Component-specific XML definition files:
 
-<h2 id="developer_roadmap_workflow">Workflow and related decisions</h2>
-Now let's take a look at a high-level workflow, and consider some questions that you might have to decide before continuing.
+		*	Modules: <a href="{{site.gdeurl21}}extension-dev-guide/build/create_component.html">`module.xml`</a>
+		*	Themes: <a href="{{site.gdeurl21}}frontend-dev-guide/themes/theme-create.html#fedg_create_theme_how-to_declare">`theme.xml`</a>
+		*	Language packages: <a href="{{site.gdeurl21}}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-pack-meta-xml">`language.xml`</a>
+*	Distribute your component:
 
-<p><img src="{{ site.baseurl }}common/images/EDG_dev_roadmap.png" alt="Developer's roadmap"></p>
+	*	<a href="{{site.gdeurl21}}extension-dev-guide/package/package_module.html">Package your component</a> in `.zip` format.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Take a look at a <a href="https://github.com/magento/magento2-samples/tree/master/sample-module-minimal"> sample module</a> created by the Magento Core Team. </p>
-  <p>The Magento core team is creating a <a href="https://github.com/magento/magento2-samples"> collection of samples</a> to demonstrate technologies introduced in Magento 2. You can edit your Magento 2 <code>composer.json</code> file to declare a dependency upon this package of sample modules, and then run <code>composer update</code> to download them. Look for more sample modules as we build them.</p>
- </div>
+  		Use our [validation tool](https://github.com/magento/marketplace-tools){:target="_blank"} to check your package before you distribute it.
+	*	If you upload the component to Magento Marketplace, it should be less than 30MB in size.
+
+#### Related topics
+  *	<a href="{{site.gdeurl21}}extension-dev-guide/intro/intro-composer.html">Introduction to Composer</a>
+  *	<a href="{{site.gdeurl21}}extension-dev-guide/intro/intro-composer-gloss.html">Glossary of common terms</a>
+  *	<a href="https://github.com/magento/magento2-samples" target="_blank">Sample extensions</a> created by the Magento 2 Core team
+  *	<a href="http://magento.com/developers/magento2" target="_blank">Magento 2 Developers Hub</a>
