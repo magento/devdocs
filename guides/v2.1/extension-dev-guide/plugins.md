@@ -1,10 +1,10 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 6_Module Development
+subgroup: 99_Module Development
 title: Magento plug-ins
 menu_title: Magento plug-ins
-menu_order: 8
+menu_order: 10
 github_link: extension-dev-guide/plugins.md
 ---
 
@@ -61,23 +61,28 @@ Several conditions influence how plug-ins apply to the same class or interface:
 
 *  Whether a listener method in a plug-in should apply before, after, or around an original method.
 
-   Use one or more of the following methods to extend/modify an original method's behavior with the interception functionality:
+   Use one or more of the following methods to extend or modify an original method's behavior with the interception functionality:
 
-   *  Change the arguments of an original method through the before-listener.
+   *  Change the arguments of an original method using the before-listener.
 
-   *  Change the values returned by an original method through the after-listener.
-   *  Change both the arguments and returned values of an original method through the around-listener.
+       The before-listener also:
+
+       *   Does not require you to declare unused arguments from the original method. See [Magento\Framework\Interception\Interceptor.php]({{ site.mage2000url }}lib/internal/Magento/Framework/Interception/Interceptor.php#L118-L126){:target="_blank"} for details.
+       *   Returns nothing if it modifies no arguments.
+
+   *  Change the values returned by an original method using the after-listener.
+   *  Change both the arguments and returned values of an original method using the around-listener.
 
       Unlike `before` or `after`, the `around` listener prevents the execution of the original method.
-   *  Override an original method (a conflicting change).
+   *  Override an original method (which is referred to as a *conflicting change*).
 
       <div class="bs-callout bs-callout-info" id="info">
-          <p>Overriding a class is a conflicting change. Extending a class's behavior is non-conflicting change.
+          <p>Overriding a class is a <em>conflicting</em> change. Extending a class's behavior is a <em>non-conflicting</em> change.
       </div>
 
 *  The sort order of a plug-in.
 
-   This parameter defines the order in which the plugins that use the same type of listener and call the same method are run.
+   This parameter defines the order in which the plug-ins that use the same type of listener and call the same method are run.
 
    If several plug-ins apply to the same original method, the following sequence is observed:
 
@@ -90,8 +95,7 @@ Several conditions influence how plug-ins apply to the same class or interface:
 
 
 <h2 id="plugin-example">Example plug-ins</h2>
-
-To change the arguments of an original method or add some behavior before an original method is called, use the before-listener method.
+To change the arguments of an original method or add some behavior before an original method is called, use the before-listener method. The method should return the changed argument, or an array of arguments, if the original method had multiple arguments. If the method returns `null`, no arguments are changed.
 
 Prefix the name of the original method with `before` as the following sample shows:
 
@@ -107,6 +111,7 @@ class ProductPlugin
         return ['(' . $name . ')'];
     }
 }
+?>
 {% endhighlight %}
 
 To change the values returned by an original method or add some behavior after an original method is called, use the after-listener method.
@@ -125,6 +130,7 @@ class ProductPlugin
         return '|' . $result . '|';
     }
 }
+?>
 {% endhighlight %}
 
 To change both the arguments and returned values of an original method or add some behavior before and after an original method is called, use the around-listener method.
@@ -148,13 +154,14 @@ class ProductPlugin
         return $returnValue;
     }
 }
+?>
 {% endhighlight %}
 
 The around-listener method receives two parameters (`$subject` and `$proceed`), followed by the arguments belonging to an original method.
 
-The <code>$subject</code> parameter provides access to all public methods of the original class.
+The `$subject` parameter provides access to all public methods of the original class.
 
-The <code>$proceed</code> parameter calls the next plug-in or method.
+The `$proceed` parameter calls the next plug-in or method.
 
 <h2 id="config-inheritance">Configuration inheritance</h2>
 
@@ -168,3 +175,7 @@ You can override the plug-ins defined in the global scope by changing `di.xml` f
 
 *  <a href="{{ site.gdeurl21 }}extension-dev-guide/depend-inj.html#dep-inj-compile">Definition compiler tool</a>
 *  <a href="{{ site.gdeurl21 }}extension-dev-guide/depend-inj.html">Dependency injection</a>
+
+#### Related information
+* [The Plugin Integration Test Kata](http://vinaikopp.com/2016/03/07/04_the_plugin_integration_test_kata){:target="_blank"} by Magento contributor [Vinai Kopp](http://vinaikopp.com/blog/list)
+* [The Around Interceptor Kata](http://vinaikopp.com/2016/02/22/03_the_around_interceptor_kata){:target="_blank"} by Magento contributor [Vinai Kopp](http://vinaikopp.com/blog/list)
