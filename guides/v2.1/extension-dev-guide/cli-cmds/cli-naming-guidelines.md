@@ -4,9 +4,9 @@ group: extension-dev-guide
 subgroup: 65_CLI
 title: Command naming guidelines
 menu_title: Command naming guidelines
-menu_node: 
+menu_node:
 menu_order: 2
-github_link: extension-dev-guide/cli-naming-guidelines.md
+github_link: extension-dev-guide/cli-cmds/cli-naming-guidelines.md
 ---
 
 <!-- http://olgakopylova.espritica.com/naming-conventions-for-cli-commands-in-magento-2/
@@ -19,7 +19,7 @@ github_link: extension-dev-guide/cli-naming-guidelines.md
 *	<a href="#cli-collision">Recommendations to avoid naming collisions</a>
 
 <h2 id="cli-over">Naming guideline overview</h2>
-Magento 2 introduces a new command-line interface (CLI) that enables component developers to plug in commands provided by modules. 
+Magento 2 introduces a new command-line interface (CLI) that enables component developers to plug in commands provided by modules.
 
 As an extension developer, you can now create and distribute your own commands for Magento applications. But as for any implementation, it's also important to follow some general conventions to keep your commands consistent with commands from other developers. Being consistent in this way reduces the user's learning curve.
 
@@ -91,7 +91,7 @@ Use arguments when you need required data from the user. We recommend as few arg
 To make it simpler for the user, we recommend the following:
 
 *	Run the CLI multiple times for providing multiple similar values instead of running it once with 20 values
-*	Use default values for required arguments where possible. 
+*	Use default values for required arguments where possible.
 
 	You can then use options instead of arguments to minimize the amount of required data the user must enter.
 
@@ -117,7 +117,7 @@ Where:
 
 `--parent` is an option that specifies a parent theme
 
-`-p` is a shortcut for `--parent` 
+`-p` is a shortcut for `--parent`
 
 `-f` is a shortcut for a non-value option `--force`
 
@@ -142,9 +142,9 @@ Example:
 <h2 id="cli-collision">Recommendations to avoid naming collisions</h2>
 To avoid naming your command the same as another command, we recommend:
 
-*	Looking at other extensions on Magento Marketplace (future) before you choose a name for your commands. By planning ahead, you can avoid naming collisions entirely.
+*	Looking at other extensions in the Magento Marketplace before you choose a name for your commands. By planning ahead, you can avoid naming collisions entirely.
 
-*	Restricting command names to start with a unique name, such as a vendor name. The usability of the command depends on what you choose for a vendor name. 
+*	Restricting command names to start with a unique name, such as a vendor name. The usability of the command depends on what you choose for a vendor name.
 
 	For example, `myname:dev:theme:create` is not obvious and is hard to remember.
 
@@ -156,4 +156,4 @@ To avoid naming your command the same as another command, we recommend:
 		dev:myname:theme:delete
 
 #### Related topic
-<a href="{{ site.gdeurl21 }}extension-dev-guide/cli-howto.html">How to add CLI commands</a>
+<a href="{{ site.gdeurl21 }}extension-dev-guide/cli-cmds/cli-howto.html">How to add CLI commands</a>
