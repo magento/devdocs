@@ -686,7 +686,7 @@
   <li><a href="#apache-help-beginner">Help if you’re just starting out</a></li>
   <li><a href="#apache-help-rewrite">Important: Apache rewrites and .htaccess</a></li>
   <li><a href="#install-prereq-apache-ubuntu">Installing or upgrading Apache on Ubuntu</a></li>
-  <li><a href="#install-prereq-apache-centos">Installing Apache on CentOS</a></li>
+  <li><a href="#install-prereq-apache-centos">Installing Apache on CentOS 6 or 7</a></li>
   <li><a href="#403-apache">Solving 403 (Forbidden) errors</a></li>
 </ul>
 
@@ -974,8 +974,7 @@ Server built:   Jul 22 2014 22:46:25
     <li><a href="/guides/v2.0/install-gde/install/pre-install.html">Determine your installation or upgrade path</a></li>
   </ul>
 
-  <h2 id="install-prereq-apache-centos">Installing Apache on CentOS</h2>
-
+  <h2 id="install-prereq-apache-centos">Installing Apache on CentOS 6 or 7</h2>
   <p>Magento requires Apache use server rewrites. You must also specify the type of directives that can be used in <code>.htaccess</code>, which Magento uses to specify rewrite rules.</p>
 
   <p>Installing and configuring Apache is basically a three-step process: install the software, enable rewrites, and specify <code>.htaccess</code> directives.</p>
@@ -1004,6 +1003,11 @@ Server built:   Oct 16 2014 14:48:21
       <p>Continue with the next section.</p>
     </li>
   </ol>
+
+  <div class="bs-callout bs-callout-info" id="info">
+	<span class="glyphicon-class">
+	<p>Even though Apache 2.4 is provided by default with CentOS 7, you configure it like Apache 2.2. See the following section.</p></span>
+</div>
 
   <div>
 
