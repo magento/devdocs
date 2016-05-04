@@ -47,11 +47,28 @@ ADD DIAGRAM OR ILLUSTRATION <p><img src="{{ site.baseurl }}common/images/NAME_OF
 
 ## Collapsible Content
 
+### Example
 <div class="collapsible">
-<h3>Collapsible Topic 1</h3>
-<p>Content</p>
-<h3>Collapsible Topic 2</h3>
-<p>More content</p>
-<h3>Collapsible Topic 3</h3>
-<p>Even more content</p>
+  <h4 class="collapsible-title">Click to show/hide content</h4>
+  <p>To use the collapsible content functionality, you must use a container with the class name "collapsible". Clickable titles must have the class name "collapsible-title". The immediate element of the clickable title will be the hidden content.</p>
+</div>
+
+### Collapsible Group
+
+<div class="collapsible">
+  <h4 class="collapsible-title">Collapsible Topic 1</h4>
+  <p>You can have multiple title-content pairs in a collapsible container.</p>
+  <h4 class="collapsible-title">Collapsible Topic 2</h4>
+  <p>Each content is controlled by its preceding title. </p>
+  <h4 class="collapsible-title">Collapsible Topic 3</h4>
+  <p>Clicking on each title will open its corresponding content and close any open contents.</p>
+</div>
+
+### Collapsible Code Entries
+
+<div class="collapsible">
+  <span class="collapsible-title">Code Example</span>
+  <code>
+    > echo "Hello World!"
+  </code>
 </div>
