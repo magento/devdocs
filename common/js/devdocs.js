@@ -40,6 +40,9 @@ $(document).ready(function(){
 	return false;
 	});
 
+	//All divs with classname "collapsible" will have jquery-ui accordion functionality
+	$(".collapsible").accordion();
+
 });
 
 //Function to get URL parameter values
