@@ -1,6 +1,6 @@
 ---
 layout: default
-group: 
+group:
 subgroup: A_Introduction
 title: template (generic)
 menu_title: template (generic)
@@ -8,11 +8,11 @@ menu_order: 1
 
 
 ---
-*This is a template for a topic that has not yet been written by the Magento Developer Docs team.* 
+*This is a template for a topic that has not yet been written by the Magento Developer Docs team.*
 
 We encourage our community members to add content; either by writing a full topic, adding new sections to existing topic, or even just a few sentences about something you know of this topic. Don't worry about perfect grammar or form; just get your brilliance down!!
 
-To get started, edit your local version of this file, using the markdown language (and HTML where needed). Then, create a Pull Request to have your contribution reviewed by the DevDocs team. 
+To get started, edit your local version of this file, using the markdown language (and HTML where needed). Then, create a Pull Request to have your contribution reviewed by the DevDocs team.
 
 Your contributions to our Docs and your experience with using Magento, are very valued and appreciated. Let us know if you have any questions!
 
@@ -44,3 +44,14 @@ ADD DIAGRAM OR ILLUSTRATION <p><img src="{{ site.baseurl }}common/images/NAME_OF
 
 * <a href="{{ site.gdeurl }}_____/_____.html">Title of related topic</a>
 * <a href="{{ site.gdeurl }}_____/_____.html">Title of related topic</a>
+
+## Collapsible Content
+
+<div class="collapsible">
+<h3>Collapsible Topic 1</h3>
+<p>Content</p>
+<h3>Collapsible Topic 2</h3>
+<p>More content</p>
+<h3>Collapsible Topic 3</h3>
+<p>Even more content</p>
+</div>
