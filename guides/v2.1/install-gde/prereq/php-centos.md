@@ -6,11 +6,7 @@ title: PHP 5.5, 5.6, or 7.0&mdash;CentOS
 menu_title: PHP 5.5, 5.6, or 7.0&mdash;CentOS
 menu_order: 05
 github_link21: install-gde/prereq/php-centos.md
-redirect_from: /guides/v1.0/install-gde/prereq/php-centos.html
 ---
-
-<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
-<!-- Referring file: README.md owned by core -->
 
 
 <h4 id="instgde-php-prereq-contents">Contents</h4>

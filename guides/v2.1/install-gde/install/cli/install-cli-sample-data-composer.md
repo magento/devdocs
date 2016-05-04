@@ -7,7 +7,6 @@ menu_title: Install using Composer
 menu_node: 
 menu_order: 3
 github_link21: install-gde/install/cli/install-cli-sample-data-composer.md
-redirect_from: /guides/v2.0/install-gde/install/cli/install-cli-sample-data-cli.html
 ---
 
 {% include install/sampledata/sample-data-composer.md %}
