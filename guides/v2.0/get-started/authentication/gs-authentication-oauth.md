@@ -30,7 +30,7 @@ The following diagram shows the OAuth authentication process. Each step is descr
 
 2. **Activate the integration**. The OAuth process begins when the merchant activates the integration. Magento sends the OAuth consumer key and secret, an OAuth verifier, and the store URL to the external application via HTTPS post to the page defined in the **Callback Link** field in Admin. See [Activate an integration](#activate) for more information.
 
-3. **Process activation information**. The integrator must store the activation information. They parameters will be used to ask for a request token.
+3. **Process activation information**. The integrator must store the activation information received in step 2. These parameters will be used to ask for  tokens.
 
 3. **Call the application's login page**. Magento calls the page defined in the **Identity Link** field in Admin.
 
@@ -50,9 +50,10 @@ The following diagram shows the OAuth authentication process. Each step is descr
 
 The integration must be configured from the Magento Admin (**System > Extensions > Integrations**).  The configuration includes a callback URL and an identity link URL.  The callback URL specifies where OAuth credentials can be sent when using OAuth for token exchange. The identity link points to the login page of the third-party application that is integrating with Magento.
 
+A merchant can choose to select **Save and Activate** when the integration is created. Alternatively, the merchant can click on **Activate** against a previously saved integration from the Integration grid.
+
 When the integration is created, Magento generates a consumer key and a consumer secret.
 
-A merchant can choose to select **Save and Activate** when the integration is created. Alternatively, the merchant can click on **Activate** against a previously saved integration from the Integration grid.
 
 Activating the integration submits the credentials to the endpoint specified when creating the Integration. An HTTP POST from Magento to the Integration endpoint will contain these attributes:
 
@@ -61,7 +62,7 @@ Activating the integration submits the credentials to the endpoint specified whe
 * `oauth_consumer_key`
 * `oauth_consumer_key_secret`
 
-Integrations use this information to get a request token.
+Integrations use the `oauth_consumer_key` key to get a request token and the `oauth_verifier` to get an access token.
 
 ## OAuth handshake details {#oauth-handshake}
 
@@ -159,7 +160,7 @@ You must include these request parameters in the `Authorization`  header in the 
 </tr>
 <tr>
 <td><code>oauth_verifier</code></td>
-<td>The verification code that is tied to the consumer and request token.</td>
+<td>The verification code that is tied to the consumer and request token. It is sent as part of the initial POST operation when the integration is activated.</td>
 </tr>
 </table>
 

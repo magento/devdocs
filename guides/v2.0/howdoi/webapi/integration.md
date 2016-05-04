@@ -42,7 +42,7 @@ To develop a module, you must:
     mkdir -p vendor/&lt;vendor_name>/module-&lt;module_name>/etc/integration
     mkdir -p vendor/&lt;vendor_name>/module-&lt;module_name>/Setup
    </pre>
-   For more detailed information, see [Create the module file structure](../../extension-dev-guide/module-file-structure.html).
+   For more detailed information, see [Create your component file structure](../../extension-dev-guide/module-file-structure.html).
 
 2. **Define your module configuration file.** The `etc/module.xml` file provides basic information about the module. Change directories to the `etc` directory and create the `module.xml` file. You must specify values for the following attributes:
 
@@ -67,7 +67,7 @@ To develop a module, you must:
       /**
       * Copyright © 2015 Magento. All rights reserved.
       * See COPYING.txt for license details.
-      */
+      &#42;&#47;
       -->
       &lt;config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
           &lt;module name="Vendor1_Module1" setup_version="2.0.0">
@@ -78,7 +78,7 @@ To develop a module, you must:
         &lt;/config>
    </pre>
 
-   Module "Magento_Integration" is added to "sequence" to be loaded first. It helps to avoid the issue, when a module with integration config loaded, that leads to a malfunction.
+   Module `Magento_Integration` is added to "sequence" to be loaded first. It helps to avoid the issue, when a module with integration config loaded, that leads to a malfunction.
 
 
 3. **Add your module's `composer.json` file.** Composer is a dependency manager for PHP. You must create a `composer.json` file for your module so that Composer can install and update the libraries your module relies on. Place the `composer.json` file in the `module-<module_name>` directory.
@@ -116,7 +116,7 @@ To develop a module, you must:
         /**
         * Copyright © 2015 Magento. All rights reserved.
         * See COPYING.txt for license details.
-        */
+        &#42;&#47;
 
         \Magento\Framework\Component\ComponentRegistrar::register(
         \Magento\Framework\Component\ComponentRegistrar::MODULE,
@@ -142,29 +142,31 @@ Change directories to your `Setup` directory. Create a `InstallData.php` file th
     class InstallData implements InstallDataInterface
     {
         /**
-         * @var ConfigBasedIntegrationManager
-         */
+         &#42; @var ConfigBasedIntegrationManager
+         &#42;&#47;
+
 
         private $integrationManager;
 
         /**
-         * @param ConfigBasedIntegrationManager $integrationManager
-         */
-        public function __construct(ConfigBasedIntegrationManager $integrationManager)
+         &#42; @param ConfigBasedIntegrationManager $integrationManager
+         &#42;&#47;
+
+        public function &#95;&#95;construct(ConfigBasedIntegrationManager $integrationManager)
         {
             $this->integrationManager = $integrationManager;
         }
 
         /**
-         * {@inheritdoc}
-         */
+         &#42; {@inheritdoc}
+         &#42;&#47;
+
         public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
         {
             $this->integrationManager->processIntegrationConfig(['testIntegration']);
         }
     }
     </pre>
-
 
     In the following line
 
@@ -174,8 +176,7 @@ Change directories to your `Setup` directory. Create a `InstallData.php` file th
 
     Also, be sure to change the path after `namespace` for your vendor and module names.
 
-
-<h2 id="files">Create integration files</h2>
+## Create integration files {#files}
 Magento provides the Integration module, which simplifies the process of defining your integration. This module automatically performs functions such as:
 
 * Managing the third-party account that connects to Magento.
@@ -276,9 +277,13 @@ Use the following steps to install your module:
 <h2 id="check">Check your integration</h2>
 Log in to Magento and navigate to **Settings > Extensions > Integrations**. The integration should be displayed in the grid.
 
-<h2 id="integrate">Integrate with your application</h2>
+## Integrate with your application {#integrate}
 
-The location specified in the `identity_link_url` parameter must point to a page that can handle login requests. The location specified in the `endpoint_url` parameter (**Callback URL** in Admin) must be able to process OAuth token exchanges. You must create two pages to manage these types of requests.
+Before you can activate your integration in Magento, you must create two pages on your application to handle OAuth communications.
+
+* The location specified in the `identity_link_url` parameter must point to a page that can handle login requests.
+
+* The location specified in the `endpoint_url` parameter (**Callback URL** in Admin) must be able to process OAuth token exchanges. 
 
 ### Login page {#login}
 
