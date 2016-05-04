@@ -50,7 +50,19 @@ ADD DIAGRAM OR ILLUSTRATION <p><img src="{{ site.baseurl }}common/images/NAME_OF
 ### Example
 <div class="collapsible">
   <h4 class="collapsible-title">Click to show/hide content</h4>
-  <p>To use the collapsible content functionality, you must use a container with the class name "collapsible". Clickable titles must have the class name "collapsible-title". The immediate element of the clickable title will be the hidden content.</p>
+  <p>To use the collapsible content functionality, you must use a container with the class name "collapsible". Clickable titles must have the class name "collapsible-title". The next immediate element of the clickable title will be the hidden content.</p>
+</div>
+
+### Collapsible Code Entries
+
+<div class="collapsible">
+  <span class="collapsible-title">Code Example</span>
+  <code>
+    &lt;div class="collapsible"&gt;<br/>
+    &nbsp;&nbsp;&lt;h4 class="collapsible-title"&gt;Collapsible Title&lt;/h4&gt;<br/>
+    &nbsp;&nbsp;&lt;p&gt;Put collapsible content here.&lt;/p&gt;<br/>
+    &lt;/div&gt;
+  </code>
 </div>
 
 ### Collapsible Group
@@ -62,13 +74,4 @@ ADD DIAGRAM OR ILLUSTRATION <p><img src="{{ site.baseurl }}common/images/NAME_OF
   <p>Each content is controlled by its preceding title. </p>
   <h4 class="collapsible-title">Collapsible Topic 3</h4>
   <p>Clicking on each title will open its corresponding content and close any open contents.</p>
-</div>
-
-### Collapsible Code Entries
-
-<div class="collapsible">
-  <span class="collapsible-title">Code Example</span>
-  <code>
-    > echo "Hello World!"
-  </code>
 </div>
