@@ -8,7 +8,7 @@ menu_order: 3
 menu_node: 
 github_link: pattern-library/controls/viewcontroller/viewcontroller.md
 ---
-<h2> Buttons </h2>
+<h2> View Controller </h2>
 
 <h3> Contents </h3>
 
