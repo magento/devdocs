@@ -11,7 +11,10 @@
     text-decoration: none;
     background-repeat: no-repeat;
     background-position: 0px center;
-    padding: 0 0 0 15px;
+    padding: 5px 0 5px 15px;
+    margin: 0px;
+
+    font-size: initial;
 
     &:focus{
       outline: none;
@@ -26,8 +29,4 @@
     background-image: url('../../common/css/caret_down.png');
   }
 
-  code{
-    padding: 10px;
-    margin: 10px;
-  }
 }
