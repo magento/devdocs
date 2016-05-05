@@ -12,7 +12,7 @@ github_link: config-guide/multi-master/multi-master_manual.md
 <img src="{{ site.baseurl }}common/images/ee-only_large.png">
 
 #### Contents
-*	<a href="#config-ee-multidb-manual-over">Overview of master databases</a>
+*	[Overview of manual split database configuration](#config-ee-multidb-manual-over)
 *	[Set up additional master databases](#config-ee-multidb-master-masters)
 *	[Run SQL scripts](#config-ee-multidb-sql)
 *	[Other required tasks](#config-ee-multidb-other)
@@ -57,13 +57,15 @@ To back up your system:
 
 After you're done, continue with the next section.
 
-## Run SQL scripts {#config-ee-multidb-sql}
-Now that the split databases are configured, you must run the following SQL scripts to remove foreign key references from them:
+## Run OMS SQL scripts {#config-ee-multidb-oms}
+This section discusses how to create and run SQL scripts that alter OMS database tables and back up data from those tables.
 
-*	[Create the SQL scripts](#config-ee-multidb-sql-create)
+For more information, see:
+
+*	[Create OMS SQL scripts](#config-ee-multidb-sql-oms)
 *	[Run SQL scripts](#config-ee-multidb-sql-run)
 
-### Create the SQL scripts {#config-ee-multidb-sql-create}
+### Create OMS SQL scripts {#config-ee-multidb-sql-oms}
 Create the following SQL scripts in a location that is accessible by the user as whom you log in to your Magento server. For example, if you log in or run commands as `root`, you can create the scripts in the `/root/sql-scripts` directory.
 
 #### Remove foreign keys (first script)
@@ -96,8 +98,8 @@ where for_name like  '<your main magento DB name>/|magento_sales|_%' escape '|'
 ;
 {% endhighlight %}
 
-#### Back up sales tables
-This script backs up only the sales tables. It's necessary to later restore these tables in a different database.
+#### Back up sales data
+This script backs up data from the sales tables only. Later, you'll restore these tables in a different database.
 
 Create the following script and give it a name like `2_back-up-sales.sql`. Replace the following:
 
@@ -150,8 +152,8 @@ where table_schema = '<your main magento DB name>'
 and table_name like 'sequence/_%' escape '/';
 {% endhighlight %}
 
-#### Remove checkout and OMS tables
-This script removes checkout and OMS tables from the main Magento database. 
+#### Remove OMS tables
+This script removes OMS tables from the main Magento database. 
 
 Create the following script and give it a name like `3_remove-tables.sql`. Replace `<your main magento DB name>` with the name of your Magento database. In this topic, the sample database name is `magento`.
 
@@ -226,7 +228,7 @@ where for_name like '<your main magento DB name>/%'
 ;
 {% endhighlight %}
 
-### Run SQL scripts {#config-ee-multidb-sql-run}
+### Run OMS SQL scripts {#config-ee-multidb-sql-oms-run}
 Run each script in the order in which you created it as follows:
 
 1.  Log in to your MySQL database as the `root` or administrative user:
@@ -240,23 +242,62 @@ Run each script in the order in which you created it as follows:
 
         TBD
 
-## Other required tasks {#config-ee-multidb-other}
-TBD
+## Configure the checkout database {#config-ee-multidb-checkout}
+This section discusses tasks required to drop foreign keys from checkout database tables and move tables to the checkout database.
+
+### Drop foreign keys from checkout tables
+Run the following commands from the `mysql>` prompt:
+
+{% highlight SQL %}
+ALTER TABLE quote DROP FOREIGN KEY QUOTE_STORE_ID_STORE_STORE_ID;
+ALTER TABLE quote_item DROP FOREIGN KEY QUOTE_ITEM_PRODUCT_ID_CATALOG_PRODUCT_ENTITY_ENTITY_ID;
+ALTER TABLE quote_item DROP FOREIGN KEY QUOTE_ITEM_STORE_ID_STORE_STORE_ID;
+{% endhighlight %}
+
+### Back up quote tables
+Run the following command from the `mysql>` prompt:
+
+    mysqldump -u root -p magento_ee magento_customercustomattributes_sales_flat_quote magento_customercustomattributes_sales_flat_quote_address quote quote_address quote_address_item quote_item quote_item_option quote_payment quote_shipping_rate quote_id_mask > /<path>/quote.sql
+
+### Import tables to the OMS database
+
+    mysql -u root -p magento_oms < /<path>/quote.sql
+
+### Drop quote tables from the Magento database
+Either run the following commands from the `mysql>` prompt or create a script and run it:
+
+{% highlight sql %}
+SET foreign_key_checks = 0;
+DROP TABLE magento_customercustomattributes_sales_flat_quote; 
+DROP TABLE magento_customercustomattributes_sales_flat_quote_address;
+DROP TABLE quote;
+DROP TABLE quote_address;
+DROP TABLE quote_address_item;
+DROP TABLE quote_item;
+DROP TABLE quote_item_option;
+DROP TABLE quote_payment;
+DROP TABLE quote_shipping_rate;
+DROP TABLE quote_id_mask;
+SET foreign_key_checks = 1;
+{% endhighlight %}
 
 ### Restore sales data {#sql-sales-restore}
 This script restores sales data in your OMS database.
 
 If you are using an NDB database cluster:
 
-1.	Convert tables from InnoDb to NDB type in dump files:
+1.  Convert tables from InnoDb to NDB type in dump files:
 
-		sed -ei 's/InnoDb/NDB/' <dumpfile>.sql
+        sed -ei 's/InnoDb/NDB/' <dumpfile>.sql
 
-2.	Remove rows with FULLTEXT KEY from dumps because NDB tables don't support FULLTEXT:
+2.  Remove rows with FULLTEXT KEY from dumps because NDB tables don't support FULLTEXT:
 
-		TBD
+        TBD
 
 salesarchive.sql
+
+
+============ TBD ================
 
 Run the following commands:
 
@@ -277,7 +318,12 @@ where
 *   `<root user password>` with the user's password
 *   Verify the location of the backup files you created earlier (for example, `/var/sales.sql`)
 
-#### Verify env.php
+============ TBD ================
+
+## Verify your configuration {#config-ee-multidb-config}
+This section discusses how to make sure the Magento configuration in `<your Magento install dir>/app/etc/env.php` is correct.
+
+### Verify env.php
 Open `<your Magento install dir>/app/etc/env.php` in a text editor and verify there are arrays for `default`, `checkout`, and `sales`. If not, update them using the following guidlines:
 
 **Database connections**
@@ -340,45 +386,9 @@ Open `<your Magento install dir>/app/etc/env.php` in a text editor and verify th
 
 {% endhighlight %}
 
-### Checkout tables tasks
 
-#### Drop foreign keys from checkout tables
-Run the following commands from the `mysql>` prompt:
 
-{% highlight SQL %}
-ALTER TABLE quote DROP FOREIGN KEY QUOTE_STORE_ID_STORE_STORE_ID;
-ALTER TABLE quote_item DROP FOREIGN KEY QUOTE_ITEM_PRODUCT_ID_CATALOG_PRODUCT_ENTITY_ENTITY_ID;
-ALTER TABLE quote_item DROP FOREIGN KEY QUOTE_ITEM_STORE_ID_STORE_STORE_ID;
-{% endhighlight %}
 
-#### Back up quote tables
-Run the following command from the `mysql>` prompt:
-
-    mysqldump -u root -p magento_ee magento_customercustomattributes_sales_flat_quote magento_customercustomattributes_sales_flat_quote_address quote quote_address quote_address_item quote_item quote_item_option quote_payment quote_shipping_rate quote_id_mask > /<path>/quote.sql
-
-#### Drop quote tables from the Magento database
-Either run the following commands from the `mysql>` prompt or create a script and run it:
-
-{% highlight sql %}
-SET foreign_key_checks = 0;
-DROP TABLE magento_customercustomattributes_sales_flat_quote; 
-DROP TABLE magento_customercustomattributes_sales_flat_quote_address;
-DROP TABLE quote;
-DROP TABLE quote_address;
-DROP TABLE quote_address_item;
-DROP TABLE quote_item;
-DROP TABLE quote_item_option;
-DROP TABLE quote_payment;
-DROP TABLE quote_shipping_rate;
-DROP TABLE quote_id_mask;
-SET foreign_key_checks = 1;
-{% endhighlight %}
-
-#### Import tables to the OMS database
-
-    mysql -u root -p magento_oms < /<path>/quote.sql
-
-### 
 
 
 #### Next step
