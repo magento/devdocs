@@ -188,7 +188,7 @@ select 'SET foreign_key_checks = 1;';
 {% endhighlight %}
 
 #### Remove foreign keys (second script)
-This script is the second of two that remove foreign keys that refer to non-sales tables from sales tables.
+This script is the second of two that remove foreign keys that refer to non-sales tables from sales tables. Replace `<your main magento DB name>` with the name of your Magento database.
 
 Create the following script and give it a name like `4_foreign-key2.sql`:
 
@@ -240,7 +240,59 @@ Run each script in the order in which you created it as follows:
 
     For example,
 
-        TBD
+        source /root/sql-scripts/1_foreign1.sql
+        source /root/sql-scripts/2_back-up-sales.sql
+        source /root/sql-scripts/3_remove-tables.sql
+        source /root/sql-scripts/4_foreign-key2.sql
+
+#### Sample script output
+Sample output from each script follows in the order we suggest you run them.
+
+**Drop foreign keys (script 1)**
+{% highlight sql %}
++---------------------------------------------------------------------------------------------------------------------------------------------+
+| concat(
+    'ALTER TABLE ',
+    replace(for_name, 'magento/', ''),
+    ' DROP FOREIGN KEY ',
+    replace(id, 'magento/', ''),
+    ';'
+    ) |
++---------------------------------------------------------------------------------------------------------------------------------------------+
+| ALTER TABLE salesrule_coupon_aggregated_order DROP FOREIGN KEY SALESRULE_COUPON_AGGREGATED_ORDER_STORE_ID_STORE_STORE_ID;                   |
+| ALTER TABLE salesrule_coupon_aggregated DROP FOREIGN KEY SALESRULE_COUPON_AGGREGATED_STORE_ID_STORE_STORE_ID;                               |
+| ALTER TABLE salesrule_coupon_aggregated_updated DROP FOREIGN KEY SALESRULE_COUPON_AGGREGATED_UPDATED_STORE_ID_STORE_STORE_ID;               |
+| ALTER TABLE salesrule_coupon_usage DROP FOREIGN KEY SALESRULE_COUPON_USAGE_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID;                           |
+| ALTER TABLE salesrule_customer_group DROP FOREIGN KEY SALESRULE_CSTR_GROUP_CSTR_GROUP_ID_CSTR_GROUP_CSTR_GROUP_ID;                          |
+| ALTER TABLE salesrule_customer DROP FOREIGN KEY SALESRULE_CUSTOMER_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID;                                   |
+| ALTER TABLE salesrule_label DROP FOREIGN KEY SALESRULE_LABEL_STORE_ID_STORE_STORE_ID;                                                       |
+| ALTER TABLE salesrule_product_attribute DROP FOREIGN KEY SALESRULE_PRD_ATTR_ATTR_ID_EAV_ATTR_ATTR_ID;                                       |
+| ALTER TABLE salesrule_product_attribute DROP FOREIGN KEY SALESRULE_PRD_ATTR_CSTR_GROUP_ID_CSTR_GROUP_CSTR_GROUP_ID;                         |
+| ALTER TABLE salesrule_product_attribute DROP FOREIGN KEY SALESRULE_PRODUCT_ATTRIBUTE_WEBSITE_ID_STORE_WEBSITE_WEBSITE_ID;                   |
+| ALTER TABLE salesrule_website DROP FOREIGN KEY SALESRULE_WEBSITE_WEBSITE_ID_STORE_WEBSITE_WEBSITE_ID;                                       |
++---------------------------------------------------------------------------------------------------------------------------------------------+
+{% endhighlight %}
+
+**Back up sales tables**
+
+TBD REDO With wider screen
+
+**Remove tables**
+{% highlight sql %}
++------------------------------+
+| querytext                    |
++------------------------------+
+|  SET foreign_key_checks = 0; |
+| SET foreign_key_checks = 1;  |
++------------------------------+
+{% endhighlight %}
+
+**Drop foreign keys (second script)**
+{% highlight sql %}
+ALTER TABLE downloadable_link_purchased_item DROP FOREIGN KEY DL_LNK_PURCHASED_ITEM_ORDER_ITEM_ID_SALES_ORDER_ITEM_ITEM_ID;
+ALTER TABLE downloadable_link_purchased DROP FOREIGN KEY DOWNLOADABLE_LINK_PURCHASED_ORDER_ID_SALES_ORDER_ENTITY_ID;
+ALTER TABLE paypal_billing_agreement_order DROP FOREIGN KEY PAYPAL_BILLING_AGREEMENT_ORDER_ORDER_ID_SALES_ORDER_ENTITY_ID;
+{% endhighlight %}
 
 ## Configure the checkout database {#config-ee-multidb-checkout}
 This section discusses tasks required to drop foreign keys from checkout database tables and move tables to the checkout database.
