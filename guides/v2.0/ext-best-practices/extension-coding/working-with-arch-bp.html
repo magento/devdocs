@@ -487,9 +487,10 @@
   <li><a href="#avoid-modification-of-the-magento-core">Avoid modification of the Magento Core</a></li>
   <li><a href="#learn-the-architecture">Learn the architecture</a></li>
   <li><a href="#check-your-extension-configurations">Check your extension configurations</a></li>
-  <li><a href="#know-and-leverage-the-magento-2-framework">Know and Leverage the Magento 2 Framework</a></li>
-  <li><a href="#use-dependency-injection">Use Dependency Injection</a></li>
-  <li><a href="#follow-model-view-control-mvc-pattern">Follow Model-View-Control (MVC) Pattern</a></li>
+  <li><a href="#know-and-leverage-the-magento-2-framework">Know and leverage the Magento 2 framework</a></li>
+  <li><a href="#use-dependency-injection">Use dependency injection</a></li>
+  <li><a href="#follow-model-view-control-mvc-pattern">Follow Model-View-Control (MVC) pattern</a></li>
+  <li><a href="#use-the-phpcodesniffer-tool">Use the PHP_CodeSniffer tool</a></li>
 </ul>
 
 <hr />
@@ -505,22 +506,22 @@
 <h3 id="check-your-extension-configurations">Check your extension configurations</h3>
 <p>Make sure your extension is configured correctly in each of your extension’s configuration files. Invalid or unexpected values will cause your extension to behave incorrectly within Magento.</p>
 
-<h3 id="know-and-leverage-the-magento-2-framework">Know and Leverage the Magento 2 Framework</h3>
+<h3 id="know-and-leverage-the-magento-2-framework">Know and leverage the Magento 2 framework</h3>
 <p>There have been some significant changes from Magento 1. Be sure to study the capabilities and standards of the Magento 2 Framework.</p>
 
 <p>For example:</p>
 
 <ul>
-  <li>Instead of creating custom validators from scratch, implement the <code>\Magento\Framework\Validator\ValidatorInterface</code>.</li>
+  <li>Instead of creating custom validators from scratch, implement the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Validator/ValidatorInterface.php" target="_blank"><code>\Magento\Framework\Validator\ValidatorInterface</code></a>.</li>
   <li>Instantiating a database connection can be expensive and unneccessary. Magento provides resource models for performing SQL commands. (See <a href="/guides/v2.0/architecture/archi_perspectives/persist_layer.html">Persistence Layer</a>)</li>
   <li>Consider using Magento framework conventions instead of low-level or PHP functionality.</li>
-  <li>Instead of adding conditions directly to a collection’s select object, use Magento native collection’s method addFieldToFilter(field_name, field_value).</li>
+  <li>Use the  <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Data/Collection.php" target="_blank"><code>Magento\Framework\Data\Collection</code></a> class to retrieve a collection of filtered objects instead of directly querying the database.</li>
 </ul>
 
-<h3 id="use-dependency-injection">Use Dependency Injection</h3>
-<p>Direct class instantiation is not recommended because the class can be rewritten. If the class is created directly, any rewrites will not be applied and it breaks Magento’s class rewrite capability. We encourage you to use the <code>Mage::getModel</code> method or <a href="/guides/v2.0/extension-dev-guide/depend-inj.html">dependency injection</a> to get an instance of a class.</p>
+<h3 id="use-dependency-injection">Use dependency injection</h3>
+<p>Direct class instantiation is not recommended because the class can be rewritten. If the class is created directly, any rewrites will not be applied and it breaks Magento’s class rewrite capability. We encourage you to become familiar with how we use <a href="/guides/v2.0/extension-dev-guide/depend-inj.html">dependency injection</a> to get an instance of a class.</p>
 
-<h3 id="follow-model-view-control-mvc-pattern">Follow Model-View-Control (MVC) Pattern</h3>
+<h3 id="follow-model-view-control-mvc-pattern">Follow Model-View-Control (MVC) pattern</h3>
 <p>Make sure your extension adheres to the MVC Pattern, and that it does not violate any of its principles.</p>
 
 <p>Some important things to check in your extensions:</p>
@@ -531,6 +532,10 @@
   <li>Use appropriate logic in a Block, Helper, Template, Controller, or Model.</li>
   <li>Ensure correct module design.</li>
 </ul>
+
+<h3 id="use-the-phpcodesniffer-tool">Use the PHP_CodeSniffer tool</h3>
+
+<p><a href="https://github.com/squizlabs/PHP_CodeSniffer" target="_blank">PHP_CodeSniffer</a> is a set of PHP scripts that checks your code for violations of a particular coding standard. It can be used in conjunction with the <a href="https://github.com/magento-ecg/coding-standard" target="_blank">ECG Magento Code Sniffer Coding Standard</a> to check your code for some of the more common Magento and PHP problems. Using these two tools will ensure that your extension code meets many of <a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Magento’s coding standards</a>. It also has the added benefits of keeping your code clean and maintainable.</p>
 
 
 		</div>
