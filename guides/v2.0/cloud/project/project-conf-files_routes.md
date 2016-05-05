@@ -30,7 +30,7 @@ systems. This one configuration file handles routes for all systems.
 
 This file is located at `.magento/routes.yaml` in your project.
 
-[Sample `routes.yaml`](https://github.com/platformsh-redbull/mc-base/blob/master/.magento/routes.yaml){:target="_blank"}
+[Sample `routes.yaml`](https://github.com/magento/magento-cloud/blob/master/.magento/routes.yaml){:target="_blank"}
 
 ## Defaults {#cloud-yaml-routes-default}
 If you do not have a `routes.yaml` file, the following default is used:
