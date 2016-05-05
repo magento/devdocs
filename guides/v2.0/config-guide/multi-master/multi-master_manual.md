@@ -13,9 +13,11 @@ github_link: config-guide/multi-master/multi-master_manual.md
 
 #### Contents
 *	[Overview of manual split database configuration](#config-ee-multidb-manual-over)
+*   [Back up the Magento system](#config-ee-multidb-backup)
 *	[Set up additional master databases](#config-ee-multidb-master-masters)
-*	[Run SQL scripts](#config-ee-multidb-sql)
-*	[Other required tasks](#config-ee-multidb-other)
+*	[Run OMS SQL scripts](#config-ee-multidb-oms)
+*	[Configure the checkout database](#config-ee-multidb-checkout)
+*   [Verify your configuration](#config-ee-multidb-config)
 
 ## Overview of manual split database configuration {#config-ee-multidb-manual-over}
 If the Magento application is already in production or if you've already installed custom code or components, you must configure split databases manually. This involves:
@@ -42,7 +44,7 @@ This topic uses the following naming conventions:
   <p>This guide assumes all three databases are on the same host as the Magento application. However, the choice of where to locate the databases and what they're named is up to you. We hope our examples make the instructions easier to follow.</p></span>
 </div>
 
-## Back up the Magento system
+## Back up the Magento system {#config-ee-multidb-backup}
 We strongly recommend you back up your current database and file system so you can restore it later in the event of issues during the process.
 
 To back up your system:
@@ -56,6 +58,10 @@ To back up your system:
 {% include config/split-db.md %}
 
 After you're done, continue with the next section.
+
+## Set up additional master databases {#config-ee-multidb-master-masters}
+TBD, not sure if you do this or not
+
 
 ## Run OMS SQL scripts {#config-ee-multidb-oms}
 This section discusses how to create and run SQL scripts that alter OMS database tables and back up data from those tables.
@@ -289,6 +295,7 @@ TBD REDO With wider screen
 
 **Drop foreign keys (second script)**
 {% highlight sql %}
+use <your Magento main DB name>;
 ALTER TABLE downloadable_link_purchased_item DROP FOREIGN KEY DL_LNK_PURCHASED_ITEM_ORDER_ITEM_ID_SALES_ORDER_ITEM_ITEM_ID;
 ALTER TABLE downloadable_link_purchased DROP FOREIGN KEY DOWNLOADABLE_LINK_PURCHASED_ORDER_ID_SALES_ORDER_ENTITY_ID;
 ALTER TABLE paypal_billing_agreement_order DROP FOREIGN KEY PAYPAL_BILLING_AGREEMENT_ORDER_ORDER_ID_SALES_ORDER_ENTITY_ID;
@@ -301,6 +308,7 @@ This section discusses tasks required to drop foreign keys from checkout databas
 Run the following commands from the `mysql>` prompt:
 
 {% highlight SQL %}
+use <your Magento main DB name>;
 ALTER TABLE quote DROP FOREIGN KEY QUOTE_STORE_ID_STORE_STORE_ID;
 ALTER TABLE quote_item DROP FOREIGN KEY QUOTE_ITEM_PRODUCT_ID_CATALOG_PRODUCT_ENTITY_ENTITY_ID;
 ALTER TABLE quote_item DROP FOREIGN KEY QUOTE_ITEM_STORE_ID_STORE_STORE_ID;
@@ -309,7 +317,7 @@ ALTER TABLE quote_item DROP FOREIGN KEY QUOTE_ITEM_STORE_ID_STORE_STORE_ID;
 ### Back up quote tables
 Run the following command from the `mysql>` prompt:
 
-    mysqldump -u root -p magento_ee magento_customercustomattributes_sales_flat_quote magento_customercustomattributes_sales_flat_quote_address quote quote_address quote_address_item quote_item quote_item_option quote_payment quote_shipping_rate quote_id_mask > /<path>/quote.sql
+    mysqldump -u root -p <your Magento main DB name> magento_customercustomattributes_sales_flat_quote magento_customercustomattributes_sales_flat_quote_address quote quote_address quote_address_item quote_item quote_item_option quote_payment quote_shipping_rate quote_id_mask > /<path>/quote.sql
 
 ### Import tables to the OMS database
 
@@ -319,6 +327,7 @@ Run the following command from the `mysql>` prompt:
 Either run the following commands from the `mysql>` prompt or create a script and run it:
 
 {% highlight sql %}
+use <your Magento main DB name>;
 SET foreign_key_checks = 0;
 DROP TABLE magento_customercustomattributes_sales_flat_quote; 
 DROP TABLE magento_customercustomattributes_sales_flat_quote_address;
@@ -346,19 +355,15 @@ If you are using an NDB database cluster:
 
         TBD
 
-salesarchive.sql
-
-
-============ TBD ================
+    salesarchive.sql
 
 Run the following commands:
 
-
 {% highlight sql %}
-mysql -u <root user name> -p<root user password> <your OMS DB name> < /var/sales.sql
-mysql -u <root user name> -p<root user password> <your OMS DB name> < /var/sequence.sql
-mysql -u <root user name> -p<root user password> <your OMS DB name> < /var/salesarchive.sql
-mysql -u <root user name> -p<root user password> <your OMS DB name> < /var/customercustomattributes.sql
+mysql -u <root user name> -p<root user password> <your OMS DB name> < /<path>/sales.sql
+mysql -u <root user name> -p<root user password> <your OMS DB name> < /<path>/sequence.sql
+mysql -u <root user name> -p<root user password> <your OMS DB name> < /<path>/salesarchive.sql
+mysql -u <root user name> -p<root user password> <your OMS DB name> < /<path>/customercustomattributes.sql
 {% endhighlight %}
 
 where
@@ -369,8 +374,6 @@ where
 *   `<root user name>` with your MySQL root user name
 *   `<root user password>` with the user's password
 *   Verify the location of the backup files you created earlier (for example, `/var/sales.sql`)
-
-============ TBD ================
 
 ## Verify your configuration {#config-ee-multidb-config}
 This section discusses how to make sure the Magento configuration in `<your Magento install dir>/app/etc/env.php` is correct.
@@ -437,10 +440,6 @@ Open `<your Magento install dir>/app/etc/env.php` in a text editor and verify th
   ),
 
 {% endhighlight %}
-
-
-
-
 
 
 #### Next step
