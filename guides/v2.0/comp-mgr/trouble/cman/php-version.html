@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Enter your authentication keys in the Admin</title>
+	<title>PHP version readiness check issues</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/comp-mgr/prereq/prereq_auth-token.html">
+	<link rel="canonical" href="//guides/v2.0/comp-mgr/trouble/cman/php-version.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -139,9 +139,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Enter your authentication keys in the Admin</h1>
+		<h1 class="page-heading">PHP version readiness check issues</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/comp-mgr/prereq/prereq_auth-token.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/comp-mgr/trouble/cman/maint-mode.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -284,7 +284,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/comp-mgr/prereq/prereq_auth-token.html">Enter your authentication keys in the Admin</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/prereq/prereq_auth-token.html">Enter your authentication keys in the Admin</a></li>
 
 									
 
@@ -741,7 +741,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/comp-mgr/trouble/cman/php-version.html">PHP version readiness check issues</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/comp-mgr/trouble/cman/php-version.html">PHP version readiness check issues</a></li>
 
 									
 
@@ -901,100 +901,36 @@
 	<section class="content">
 		<div class="content-wrap">
 
-		<h4 id="contents">Contents</h4>
+		<h2 id="php-version-readiness-check-issues">PHP version readiness check issues</h2>
+<p>You might encounter the following issues with the PHP version readiness check:</p>
 
 <ul>
-  <li><a href="#auth-overview">Overview of Magento Marketplace authentication</a></li>
-  <li><a href="#auth-get">Get your authentication tokens</a></li>
-  <li><a href="#compman-token-admin">Enter the tokens in the Admin</a></li>
+  <li>
+    <p>The check fails because you’re using an unsupported PHP version.</p>
+
+    <p>To solve this issue, use one of the supported versions listed in our <a href="/guides/v2.0/install-gde/system-requirements.html">System Requirements</a>.</p>
+  </li>
+  <li>
+    <p>The check reports the incorrect PHP version.</p>
+
+    <p>Typically, this happens only to advanced users who have multiple PHP versions installed. In some cases, the readiness check fails; in other cases, it might pass.</p>
+  </li>
 </ul>
 
-<div>
+<h3 id="php-version-is-incorrect">PHP version is incorrect</h3>
+<p>If the PHP version reported by the readiness check is incorrect, it’s the result of a mismatch of PHP versions between the PHP CLI and the web server plug-in. Magento requires you to use <em>one version</em> of PHP for both the CLI (which runs cron) and the web server (which runs the Magento Admin, Component Manager, and System Upgrade).</p>
 
-  <h2 id="auth-overview">Overview of Magento Marketplace authentication</h2>
-  <p>The <code>repo.magento.com</code> repository, where Magento 2 and third-party component Composer packages are stored, requires authentication. To provide secure authentication, we enable you to generate a pair 32-character <em>authentication tokens</em> you can use to access the repository.</p>
+<p>We assume that if you have this issue, you’re an advanced user who has likely installed multiple versions of PHP on your system.</p>
 
-  <p>You get your credentials by logging in to <a href="https://marketplace.magento.com" target="_blank">Magento Marketplace</a> with a user name and password, then going to <strong>My Account</strong> &gt; <strong>Connect</strong> &gt; <strong>Developers</strong> &gt; <strong>Secure Keys</strong>. There, you can generate, regenerate, or delete your authentication tokens to use to:</p>
+<p>To resolve the issue, try the following:</p>
 
-  <ul>
-    <li><a href="/guides/v2.0/install-gde/prereq/integrator_install.html">Download the Magento software using Composer</a></li>
-    <li><a href="/guides/v2.0/install-gde/prereq/dev_install.html">Clone the Magento 2 GitHub</a> (contributing developers only)</li>
-    <li>Install, update, or upgrade third-party components; and upgrade the Magento software using the <a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade</a> utilities.</li>
-  </ul>
-
-  <h2 id="auth-get">Get your authentication keys</h2>
-  <div>
-
-    <p>To get your authentication keys:</p>
-
-    <ol>
-      <li>
-        <p>If you haven’t done so already, create an account on <a href="https://marketplace.magento.com">Magento Marketplace</a>.</p>
-
-        <p>(It’s the same as an account on <code>magento.com</code>.)</p>
-
-        <ul>
-          <li>Click <strong>My Account</strong> in the upper right corner of the page.</li>
-          <li>
-            <p>In the New Customer section, click <strong>Register</strong>.</p>
-
-            <p>If you already have an account, make sure you know your user name and password, then continue with the next step.</p>
-          </li>
-        </ul>
-      </li>
-      <li>At the top of the page, click <strong>Connect</strong>.</li>
-      <li>
-        <p>In the <strong>Developers</strong> section, click <strong>Secure Keys</strong>.</p>
-
-        <p><img src="/common/images/connect_keys1.png" width="200px" /></p>
-      </li>
-      <li>
-        <p>You have the following options in the right pane:</p>
-
-        <ul>
-          <li>If you already have keys, use the <strong>Public key</strong> as your user name and the <strong>Private key</strong> as your password.</li>
-          <li>
-            <p>New key: In the <strong>Name</strong> field, enter a name to identify the keys and click <strong>Generate new</strong>.</p>
-
-            <p>You can optionally generate additional keys; for example, to provide access to <code>repo.magento.com</code> to co-workers, contractors, or integrators. </p>
-          </li>
-          <li>
-            <p>Regenerate or rename existing keys: Click <strong>Regenerate</strong>. </p>
-
-            <p>You can regenerate your keys for security reasons; for example, you believe they have been compromised.</p>
-          </li>
-          <li>Save an existing key if you changed its name: Click <strong>Save</strong>.</li>
-          <li>Disable keys: Click <strong>Disable</strong>. You can do this if you want to suspend use of your keys.</li>
-          <li>Delete keys: Click <strong>Delete</strong>.</li>
-        </ul>
-      </li>
-      <li>Come back to this page anytime to view or change your keys.</li>
-    </ol>
-
-    <div class="bs-callout bs-callout-info" id="info">
-	<p>To upgrade your Magento Enterprise Edition (EE) version or to upgrade from Magento Community Edition (CE) to Magento EE, you must be authorized for Magento EE. Contact <a href="http://support.magentocommerce.com" target="_blank">Magento Support</a> if you have questions.</p>
-</div>
-
-    <h2 id="compman-token-admin">Enter the tokens in the Admin</h2>
-    <p>To enter your authentication tokens:</p>
-
-    <ol>
-      <li>Log in to the Magento Admin as an administrator.</li>
-      <li>Click <strong>System</strong> &gt; Tools &gt; <strong>Web Setup Wizard</strong>.</li>
-      <li>
-        <p>Click <strong>System Configuration</strong>.</p>
-
-        <p><img src="/common/images/cman_system-config.png" width="550px" /></p>
-      </li>
-      <li>Enter your public and private authentication keys in the provided fields.</li>
-      <li>
-        <p>Click <strong>Save Config</strong>.</p>
-
-        <p><img src="/common/images/cman_keys.png" width="550px" /></p>
-      </li>
-    </ol>
-  </div>
-</div>
+<ul>
+  <li>Restart your web server or php-fm.</li>
+  <li>Check the <code>$PATH</code> environment variable for multiple paths to PHP</li>
+  <li>Use the <code>which php</code> command to locate the first PHP executable in your path; if it’s not correct, remove it or create a symlink to the correct PHP version</li>
+  <li>Use a <a href="/guides/v2.0/install-gde/prereq/optional.html#install-optional-phpinfo"><code>phpinfo.php</code></a> page to collect more information</li>
+  <li>Make sure you’re running a supported PHP version according to our <a href="/guides/v2.0/install-gde/system-requirements.html">System Requirements</a></li>
+</ul>
 
 
 		</div>
