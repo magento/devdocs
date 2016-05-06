@@ -45,7 +45,8 @@ $(document).ready(function(){
 		collapsible: true,
 		active: false,
 		icons: { "header": "collapsible-ready", "activeHeader": "collapsible-active" },
-		header: ".collapsible-title"
+		header: ".collapsible-title",
+		heightStyle: "content"
 	});
 
 });
