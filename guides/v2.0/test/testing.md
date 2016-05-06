@@ -15,9 +15,9 @@ When talking about testing in Magento 2, we have to distinguish between differen
   For more information, see the [Magento Testing Framework Guide]({{ site.gdeurl }}mtf/mtf_introduction.html).
 
 * **API Functional** 
-  The Web API testing framework allows you to test Magento Web API from the client application point of view.
+  The Web API testing framework enables you to test the Magento Web API from the client application point of view.
   
-  For more information, see the [Web API functional testing]({{ site.gdeurl }}get-started/web-api-functional-testing.html)
+  For more information, see the [Web API functional testing]({{ site.gdeurl }}get-started/web-api-functional-testing.html).
   
 * **Integration**  
   Integration tests run Magento PHP code in varying degrees of isolation. They tend to be a lot more low-level then functional tests. Because they do not utilize a browser to execute the tests, they can be a lot more granular in what they test. They also tend to run a lot quicker then functional tests.
