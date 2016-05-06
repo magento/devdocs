@@ -425,8 +425,7 @@
 
 									
 
-
-											<li class="level3Child routes  active " data-menunode="routes"><a href="/guides/v2.0/cloud/project/project-conf-files_routes.html">routes.yaml</a>
+										<li class="level3Parent " id="routes"><a href="#">Configure routes</a>
 
 
 									
@@ -435,7 +434,8 @@
 
 									
 
-										<li class="level3Parent " id="routes"><a href="#">Configure routes</a>
+
+											<li class="level3Child routes  active " data-menunode="routes"><a href="/guides/v2.0/cloud/project/project-conf-files_routes.html">routes.yaml</a>
 
 
 									
@@ -1047,7 +1047,7 @@ In this example, the route is defined as <code>http://*.{default}/</code> route,
 <code>http://bar---add-theme-vmwklxcpbi6zq.na.magentosite.cloud/</code> would work just fine.</p>
 
 <p>If you examine the routes of your application (for example by running
-<code>echo $PLATFORM_ROUTES | base64 --decode | json_pp</code> in an SSH session on your environment),
+<code>echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 --decode | json_pp</code> in an SSH session on your environment),
 you will see a route such as <code>https://*---add-theme-vmwklxcpbi6zq.na.magentosite.cloud/</code></p>
 
 <p><a href="/guides/v2.0/cloud/project/project-routes-more-cache.html">More information about caching</a>.</p>

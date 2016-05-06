@@ -425,8 +425,7 @@
 
 									
 
-
-											<li class="level3Child routes " data-menunode="routes"><a href="/guides/v2.0/cloud/project/project-conf-files_routes.html">routes.yaml</a>
+										<li class="level3Parent " id="routes"><a href="#">Configure routes</a>
 
 
 									
@@ -435,7 +434,8 @@
 
 									
 
-										<li class="level3Parent " id="routes"><a href="#">Configure routes</a>
+
+											<li class="level3Child routes " data-menunode="routes"><a href="/guides/v2.0/cloud/project/project-conf-files_routes.html">routes.yaml</a>
 
 
 									
@@ -956,7 +956,7 @@ connect to your database, for example).</li>
 
     <p>For example,</p>
 
-    <pre><code>PLATFORM_ROUTES | base64 --decode
+    <pre><code>echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 --decode
 </code></pre>
   </li>
 </ol>
