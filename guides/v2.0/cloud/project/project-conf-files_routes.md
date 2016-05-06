@@ -145,7 +145,7 @@ In this example, the route is defined as `http://*.{default}/` route, so both
 `http://bar---add-theme-vmwklxcpbi6zq.na.magentosite.cloud/` would work just fine.
 
 If you examine the routes of your application (for example by running
-`echo $PLATFORM_ROUTES | base64 --decode | json_pp` in an SSH session on your environment),
+`echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 --decode | json_pp` in an SSH session on your environment),
 you will see a route such as `https://*---add-theme-vmwklxcpbi6zq.na.magentosite.cloud/`
 
 [More information about caching]({{ site.gdeurl }}cloud/project/project-routes-more-cache.html).
