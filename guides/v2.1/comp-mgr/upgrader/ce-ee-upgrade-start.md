@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: compman
-subgroup: U_CE-EEUpgrade
+subgroup: 13_CE-EEUpgrade
 title: Upgrade from CE to EE
 menu_title: Upgrade from CE to EE
 menu_node: parent

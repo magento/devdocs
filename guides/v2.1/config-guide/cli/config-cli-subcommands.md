@@ -7,7 +7,6 @@ menu_title: Get started with command-line configuration
 menu_node: 
 menu_order: 2
 github_link21: config-guide/cli/config-cli-subcommands.md
-redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands.html
 ---
 
   
@@ -73,11 +72,6 @@ The following table summarizes the available commands. Commands are shown in sum
 	<tr>
 		<td><a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-cron.html">magento cron:run</a></td>
 		<td><p>Runs Magento cron jobs</p></td>
-	</tr>
-	<tr>
-		<td><a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-compiler-multi.html">magento setup:di:compile-multi-tenant</a></td>
-		<td><p>Use only if you have multiple independent Magento applications (in other words, one common Magento code base but more than one independent instance of the Magento application).</p>
-		<p>Compiles all non-existent proxies and factories; and pre-compiles class definitions, inheritance information, and plugin definitions for multiple stores or websites.</p></td>
 	</tr>
 	<tr>
 		<td><a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-compiler-single.html">magento setup:di:compile</a></td>

@@ -1,11 +1,12 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: C_Quickstart
+subgroup: 30_Quickstart
 title: Quick start with the Magento Testing Framework
 menu_title: QUICK START
 menu_node: parent
 github_link: mtf/mtf_quickstart.md
+redirect_from: /guides/v1.0/mtf/mtf_quickstart.html
 ---
 <h2>Preface</h2>
 In this chapter you will learn how to:

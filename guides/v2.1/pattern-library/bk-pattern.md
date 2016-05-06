@@ -27,7 +27,8 @@ Browse the Design Pattern Library here:
 
 ####Controls
 <a href="controls/buttons/buttons.html">Buttons</a><br>
-<a href="controls/button-bar/button-bar.html">Button Bar</a>
+<a href="controls/button-bar/button-bar.html">Button Bar</a><br>
+<a href="controls/viewcontroller/viewcontroller.html">View Controllergi</a>
 
 ####Displaying and Dealing with Data
 <a href="displaying-data/tile/tile.html">Tile</a><br>

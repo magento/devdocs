@@ -1,7 +1,7 @@
 ---
 layout: default
 group: compman
-subgroup: B_prereq
+subgroup: 02_prereq
 title: Set ulimit for the web server user
 menu_title: Set ulimit for the web server user
 menu_order: 2

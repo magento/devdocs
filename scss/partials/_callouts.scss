@@ -1,0 +1,54 @@
+
+.bs-callout {
+   position: relative;
+   margin: 20px 0 20px 0;
+   padding: 20px;
+   background: #e4f0f5
+}
+
+.bs-callout:before {
+   display: block;
+   position: absolute;
+   content: '';
+   width: 30px;
+   height: 30px;
+   top: 20px;
+   left: 16px;
+   background-size: cover
+}
+
+.bs-callout-info {
+   padding-left: 60px
+}
+
+.bs-callout-info:before {
+   background-image: url(/i/icon_note.png)
+}
+
+.bs-callout-warning {
+   padding-left: 60px;
+   background: #fcebce
+}
+
+.bs-callout-warning:before {
+   background-image: url(/i/icon_important.png)
+}
+
+.bs-callout-tip {
+   padding-left: 60px;
+   background: #e7eecd
+}
+
+.bs-callout-tip:before {
+   background-image: url(/i/icon_tip.png)
+}
+
+.bs-callout-danger {
+   padding-left: 60px;
+   color: #cc0000;
+   background: #f6e9e3
+}
+
+.bs-callout-danger:before {
+   background-image: url(/i/icon_caution.png)
+}
