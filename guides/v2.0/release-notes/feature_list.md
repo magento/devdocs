@@ -12,7 +12,7 @@ contributor_link: https://github.com/magento-hackathon
 <h2 id="general_features">
     General Features
 </h2>
-<h3>Marketing, Promotions and Conversion Tools</h3>
+<h3>Marketing, Promotions, and Conversion Tools</h3>
 <table class="custom-table">
     <colgroup>
         <col class="primary-item"></col>
@@ -51,7 +51,7 @@ contributor_link: https://github.com/magento-hackathon
     </tr>
     <tr>
         <td>
-            <a href="http://docs.magento.com/m2/ce/user_guide/marketing/product-relationships.html">Related products, up-sells and cross-sells</a>
+            <a href="http://docs.magento.com/m2/ce/user_guide/marketing/product-relationships.html">Related products, up-sells, and cross-sells</a>
         </td>
         <td>
             X
@@ -68,7 +68,7 @@ contributor_link: https://github.com/magento-hackathon
     </tr>
     <tr>
         <td>
-            <a href="http://docs.magento.com/m2/ce/user_guide/marketing/price-rules-catalog.html">Catalog promotional pricing with the ability to restrict to stores, categories or products</a>
+            <a href="http://docs.magento.com/m2/ce/user_guide/marketing/price-rules-catalog.html">Catalog promotional pricing with the ability to restrict to stores, categories, or products</a>
         </td>
         <td>
             X
@@ -102,7 +102,7 @@ contributor_link: https://github.com/magento-hackathon
     </tr>
     <tr>
         <td>
-            <a href="http://docs.magento.com/m2/ce/user_guide/marketing/price-rules-cart-coupon.html">Generate a set of unique coupon codes for each promotion and export the list of codes for offline distribution, email, newsletters and more. Easily manage and monitor coupon usage and generate detailed reports</a>
+            <a href="http://docs.magento.com/m2/ce/user_guide/marketing/price-rules-cart-coupon.html">Generate a set of unique coupon codes for each promotion and export the list of codes for offline distribution, email, newsletters, and more. Easily manage and monitor coupon usage and generate detailed reports</a>
         </td>
         <td>
             X
@@ -425,7 +425,7 @@ contributor_link: https://github.com/magento-hackathon
     </tr>
     <tr>
         <td>
-            <a href="http://docs.magento.com/m2/ce/user_guide/catalog/catalog-urls.html">Search engine friendly URL's</a>
+            <a href="http://docs.magento.com/m2/ce/user_guide/catalog/catalog-urls.html">Search engine friendly URLs</a>
         </td>
         <td>
             X
@@ -442,7 +442,7 @@ contributor_link: https://github.com/magento-hackathon
     </tr>
     <tr>
         <td>
-            <a href="http://docs.magento.com/m2/ce/user_guide/marketing/url-rewrite.html">URL rewrites give full control of URL's</a>
+            <a href="http://docs.magento.com/m2/ce/user_guide/marketing/url-rewrite.html">URL rewrites give full control of URLs</a>
         </td>
         <td>
             X
@@ -459,7 +459,7 @@ contributor_link: https://github.com/magento-hackathon
     </tr>
     <tr>
         <td>
-            <a href="http://docs.magento.com/m2/ce/user_guide/marketing/meta-data.html">Meta-information for products, categories and content pages</a>
+            <a href="http://docs.magento.com/m2/ce/user_guide/marketing/meta-data.html">Meta-information for products, categories, and content pages</a>
         </td>
         <td>
             X
@@ -476,7 +476,7 @@ contributor_link: https://github.com/magento-hackathon
     </tr>
     <tr>
         <td>
-            <a href="http://merch.docs.magento.com/ce/user_guide/search_seo/seo-sitemap.html">Auto-generated site map for display on site</a>
+            <a href="http://merch.docs.magento.com/ce/user_guide/search_seo/seo-sitemap.html">Auto-generated site map for display on-site</a>
         </td>
         <td>
             X
@@ -697,7 +697,7 @@ contributor_link: https://github.com/magento-hackathon
     </tr>
     <tr>
         <td>
-            <a href="http://docs.magento.com/m2/ce/user_guide/tax/taxes.html">Tax rates per location, product type or customer group (i.e. wholesale vs. retailer)</a>
+            <a href="http://docs.magento.com/m2/ce/user_guide/tax/taxes.html">Tax rates per location, product type, or customer group (that is,  wholesale vs. retailer)</a>
         </td>
         <td>
             X
@@ -714,7 +714,7 @@ contributor_link: https://github.com/magento-hackathon
     </tr>
     <tr>
         <td>
-            <a href="http://docs.magento.com/m2/ce/user_guide/stores/security-captcha.html">CAPTCHA functionality to help prevent automated software from attempting fake logins. This auto-generated test ensures that the login is being attempted by a person and can be enabled in both the admin and customer login areas</a>
+            <a href="http://docs.magento.com/m2/ce/user_guide/stores/security-captcha.html">CAPTCHA functionality to help prevent automated software from attempting fake logins. This auto-generated test ensures that the login is being attempted by a person and can be enabled in both the Admin and customer login areas</a>
         </td>
         <td>
             X
@@ -769,7 +769,7 @@ contributor_link: https://github.com/magento-hackathon
     </tr>
     <tr>
         <td>
-            <a href="http://docs.magento.com/m2/ce/user_guide/catalog/product-types.html">Simple, configurable (e.g. size, color, etc.), bundled and grouped products</a>
+            <a href="http://docs.magento.com/m2/ce/user_guide/catalog/product-types.html">Simple, configurable (for example, size or color), bundled, and grouped products</a>
         </td>
         <td>
             X
@@ -871,7 +871,7 @@ contributor_link: https://github.com/magento-hackathon
     </tr>
     <tr>
         <td>
-            <a href="http://docs.magento.com/m2/ce/user_guide/stores/admin-actions-control.html">Batch updates to products in admin panel</a>
+            <a href="http://docs.magento.com/m2/ce/user_guide/stores/admin-actions-control.html">Batch updates to products in Admin panel</a>
                 </td>
                 <td>
             X
@@ -922,7 +922,7 @@ contributor_link: https://github.com/magento-hackathon
     </tr>
     <tr>
         <td>
-            <a href="http://docs.magento.com/m2/ce/user_guide/marketing/search-terms-add.html">Search results rewrites and redirects</a>
+            <a href="http://docs.magento.com/m2/ce/user_guide/marketing/search-terms-add.html">Search results, rewrites, and redirects</a>
         </td>
         <td>
             X
@@ -939,7 +939,7 @@ contributor_link: https://github.com/magento-hackathon
             </tr>
     <tr>
         <td>
-                    <a href="http://docs.magento.com/m2/ce/user_guide/marketing/product-reviews.html">Moderated productreviews</a>
+                    <a href="http://docs.magento.com/m2/ce/user_guide/marketing/product-reviews.html">Moderated product reviews</a>
         </td>
         <td>
             X
@@ -955,8 +955,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Customer personalized products – ability to upload images and text (i.e. for embroidery, monogramming, etc.)
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/catalog/settings-basic-image-management.html">Customer personalized products – ability to upload images and text (for example, for embroidery or  monogramming)</a>
+            
         </td>
         <td>
             X
@@ -972,8 +972,9 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Customer sorting – define attributes for customer sorting on category (price, brand, etc.)
+        <td>        <a href="http://docs.magento.com/m2/ce/user_guide/catalog/categories-display-settings.html">Customer sorting – define attributes for customer sorting on category (for example, price or brand)</a>
+
+            
         </td>
         <td>
             X
@@ -989,8 +990,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            RSS feed for low inventory alerts
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/configuration/catalog/inventory.html">RSS feed for low inventory alerts</a>
+            
         </td>
         <td>
             X
@@ -1043,11 +1044,9 @@ contributor_link: https://github.com/magento-hackathon
     </tr>
     <tr>
         <td>
-            Layered / faceted navigation for filtering of products in categories and search results
-            <ul>
-                <li>
-                    Filter products by price and display a range of prices based on even increments or by a similar number of products within each range
-                </li>
+<a href="http://docs.magento.com/m2/ce/user_guide/catalog/navigation-layered-filterable-attributes.html">Layered/faceted navigation for filtering of products in categories and search results. Filter products by price and display a range of prices based on even increments or by a similar number of products within each range
+</a>            <ul>
+                
             </ul>
         </td>
         <td>
@@ -1065,7 +1064,9 @@ contributor_link: https://github.com/magento-hackathon
     </tr>
     <tr>
         <td>
-            Static block tool to create category landing pages
+            <a href="http://docs.magento.com/m2/ce/user_guide/catalog/category-create.html">Static block tool to create category landing pages</a>
+
+
         </td>
         <td>
             X
@@ -1081,8 +1082,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Product comparisons with history
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/marketing/products-viewed-compared.html">Product comparisons with history</a>
+            
         </td>
         <td>
             X
@@ -1098,8 +1099,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Configurable search with auto-suggested terms
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/catalog/settings-basic-search-engine-optimization.html">Configurable search with auto-suggested terms</a>
+            
         </td>
         <td>
             X
@@ -1115,8 +1116,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Breadcrumbs
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/catalog/navigation-breadcrumb-trail.html">Breadcrumbs</a>
+            
         </td>
         <td>
             X
@@ -1149,8 +1150,40 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/marketing/products-viewed-compared.html">Recently viewed products</a>
+            
+        </td>
         <td>
-            Recently viewed products
+            X
+        </td>
+        <td>
+            X
+        </td>
+        <td>
+            X
+        </td>
+        <td>
+            X
+        </td>
+    </tr>
+    <tr>
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/marketing/search-terms-popular.html">Popular search terms cloud</a>
+            
+        </td>
+        <td>
+            X
+        </td>
+        <td>
+            X
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/catalog/navigation-product-listings.html">Product listing in grid or list format</a>
+            
         </td>
         <td>
             X
@@ -1167,69 +1200,38 @@ contributor_link: https://github.com/magento-hackathon
     </tr>
     <tr>
         <td>
-            Popular search terms cloud
-        </td>
-        <td>
-            X
-        </td>
-        <td>
-            X
-        </td>
-        <td>
-        </td>
-        <td>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Product listing in grid or list format
-        </td>
-        <td>
-            X
-        </td>
-        <td>
-            X
-        </td>
-        <td>
-            X
-        </td>
-        <td>
-            X
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Product Browsing
+            <a href="http://docs.magento.com/m2/ce/user_guide/products.html">Product Browsing</a>
             <ul>
-                <li>
-                    Multiple images per product
+                <li><a href="http://docs.magento.com/m2/ce/user_guide/system/data-import-product-images.html">Multiple images per product</a>
+                    
                 </li>
-                <li>
-                    Product image zoom-in capability
+                <li><a href="http://docs.magento.com/m2/ce/user_guide/catalog/media-gallery.html">Product image zoom-in capability</a>
+                    
                 </li>
-                <li>
-                    Related products
+                <li><a href="http://docs.magento.com/m2/ce/user_guide/catalog/settings-advanced-related-products.html">Related products</a>
+                    
                 </li>
-                <li>
-                    Stock availability
+                <li><a href="http://docs.magento.com/m2/ce/user_guide/catalog/inventory-stock-message-scenarios.html">Stock availability</a>
+                    
                 </li>
+                <li><a href="http://docs.magento.com/m2/ce/user_guide/catalog/settings-advanced-advanced-pricing.html">Multi-tier pricing up-sell</a>
+                    
+                </li><a href="http://docs.magento.com/m2/ce/user_guide/catalog/product-create-configurable.html">Product option selection</a>
                 <li>
-                    Multi-tier pricing upsell
+                    
                 </li>
-                <li>
-                    Product option selection
+                <li><a href="http://docs.magento.com/m2/ce/user_guide/catalog/product-create-grouped.html">Grouped products view</a>
+                    
                 </li>
-                <li>
-                    Grouped products view
+                <li><a href="http://docs.magento.com/m2/ce/user_guide/marketing/wishlists.html">Add to wish list</a>
+                    
                 </li>
-                <li>
-                    Add to wish list
+                <li><a href="http://docs.magento.com/m2/ce/user_guide/marketing/email-a-friend.html">Send to a friend with email</a>
+                    
                 </li>
-                <li>
-                    Send to a friend with email
-                </li>
-                <li>
-                    Share on Facebook
+                <li>                <li><a href="http://docs.magento.com/m2/ce/user_guide/marketing/social-plugins.html">Share on Facebook</a>
+
+                    
                 </li>
             </ul>
         </td>
@@ -1247,7 +1249,7 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
 </table>
-<h3>Checkout, Payment and Shipping</h3>
+<h3>Checkout, Payment, and Shipping</h3>
 <table class="custom-table">
     <colgroup>
         <col class="primary-item"></col>
@@ -1285,8 +1287,8 @@ contributor_link: https://github.com/magento-hackathon
         </th>
     </tr>
     <tr>
-        <td>
-            One-page checkout
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/sales/checkout-onepage.html">One-page checkout</a>
+            
         </td>
         <td>
             X
@@ -1302,8 +1304,9 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Guest checkout and checkout with account to use address book
+        <td>   <a href="http://docs.magento.com/m2/ce/user_guide/configuration/customers/customer-configuration.html">Guest checkout and checkout with account to use address book</a>
+
+            
         </td>
         <td>
             X
@@ -1319,8 +1322,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Shipping to multiple addresses in one order
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/shipping/shipping-multiaddress.html">Shipping to multiple addresses in one order</a>
+            
         </td>
         <td>
             X
@@ -1336,8 +1339,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Option for account creation at beginning of checkout
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/payment/paypal-payments-pro.html">Option for account creation at beginning of checkout</a>
+            
         </td>
         <td>
             X
@@ -1351,25 +1354,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            SSL security support for orders on both frontend and back-end
-        </td>
-        <td>
-            X
-        </td>
-        <td>
-            X
-        </td>
-        <td>
-            X
-        </td>
-        <td>
-            X
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Saved shopping cart
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/configuration/sales/paypal-payments-pro.html">SSL security support for orders on both frontend and server side</a>
+            
         </td>
         <td>
             X
@@ -1385,8 +1371,9 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Accept gift messages per order and per item
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/sales/cart-persistent.html">Saved shopping cart</a>
+
+            
         </td>
         <td>
             X
@@ -1402,8 +1389,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Shopping cart with tax and shipping estimates
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/system/data-attributes-product.html">Accept gift messages per order and per item</a>
+            
         </td>
         <td>
             X
@@ -1419,23 +1406,9 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Saved credit card method for offline payments
-        </td>
-        <td>
-            X
-        </td>
-        <td>
-            X
-        </td>
-        <td>
-        </td>
-        <td>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Configurable to authorize and charge, or authorize only and charge on creation of invoices
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/sales/cart.html">Shopping cart with tax and shipping estimates</a>
+
+            
         </td>
         <td>
             X
@@ -1451,8 +1424,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Integration with Amazon Payments
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/payment/check-money-order.html">Saved credit card method for offline payments</a>
+            
         </td>
         <td>
             X
@@ -1466,25 +1439,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Integration with multiple PayPal gateways
-        </td>
-        <td>
-            X
-        </td>
-        <td>
-            X
-        </td>
-        <td>
-            X
-        </td>
-        <td>
-            X
-        </td>
-    </tr>
-    <tr>
-        <td>
-                    Integration with Authorize.net
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/configuration/sales/checkout.html">Configurable to authorize and charge, or authorize only and charge on creation of invoices</a>
+            
         </td>
         <td>
             X
@@ -1500,8 +1456,24 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
+        <td>Integration with Amazon Payments
+
+            
+        </td>
         <td>
-            Accept checks/money orders
+            X
+        </td>
+        <td>
+            X
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/payment/paypal-gateways.html">Integration with multiple PayPal gateways</a>
+            
         </td>
         <td>
             X
@@ -1517,8 +1489,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Accept purchase orders
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/configuration/sales/authorize-net-direct-post.html">Integration with Authorize.net</a>
+                    
         </td>
         <td>
             X
@@ -1534,8 +1506,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Additional payment extensions available through Magento Connect
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/payment/check-money-order.html">Accept checks and money orders</a>
+            
         </td>
         <td>
             X
@@ -1551,8 +1523,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Shipping integration with label printing - view, edit, print labels for all major carriers
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/payment/purchase-order.html">Accept purchase orders</a>
+            
         </td>
         <td>
             X
@@ -1568,11 +1540,45 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
+        <td><a href="https://www.magentocommerce.com/magento-connect/">Additional payment extensions available through Magento Connect</a>
+            
+        </td>
         <td>
-            Integrated for real-time shipping rates from:
+            X
+        </td>
+        <td>
+            X
+        </td>
+        <td>
+            X
+        </td>
+        <td>
+            X
+        </td>
+    </tr>
+    <tr>
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/shipping/shipping-labels.html">Shipping integration with label printing - view, edit, and print labels for all major carriers</a>
+            
+        </td>
+        <td>
+            X
+        </td>
+        <td>
+            X
+        </td>
+        <td>
+            X
+        </td>
+        <td>
+            X
+        </td>
+    </tr>
+    <tr>
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/shipping/shipping.html">Integrated for real-time shipping rates from:</a>
+            
             <ul>
-                <li>
-                    UPS
+                <li><a href="http://docs.magento.com/m2/ce/user_guide/shipping/ups.html">UPS</a>
+                    
                 </li>
                 <li>
                     UPS XML (account rates)
@@ -1580,11 +1586,11 @@ contributor_link: https://github.com/magento-hackathon
                 <li>
                     FedEx (account rates)
                 </li>
-                <li>
-                    USPS
+                <li><a href="http://docs.magento.com/m2/ce/user_guide/shipping/usps.html">USPS</a>
+                    
                 </li>
-                <li>
-                    DHL
+                <li><a href="http://docs.magento.com/m2/ce/user_guide/shipping/dhl.html">DHL</a>
+                    
                 </li>
             </ul>
         </td>
@@ -1615,8 +1621,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Flat rate shipping per order or item
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/shipping/shipping-flat-rate.html">Flat rate shipping per order or item</a>
+            
         </td>
         <td>
             X
@@ -1630,8 +1636,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Free shipping
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/shipping/shipping-free.html">Free shipping</a>
+        
         </td>
         <td>
             X
@@ -1645,8 +1651,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Table rates for weight, sub-total, destination and number of items
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/shipping/shipping-table-rate.html">Table rates for weight, sub-total, destination, and number of items</a>
+            
         </td>
         <td>
             X
@@ -1660,8 +1666,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            On-site order tracking from customer accounts
+        <td>On-site order tracking from customer accounts
+            
         </td>
         <td>
             X
@@ -1713,8 +1719,38 @@ contributor_link: https://github.com/magento-hackathon
         </th>
     </tr>
     <tr>
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/stores/admin-menu.html">View, edit, create, and fulfill orders from the Admin panel</a>
+            
+        </td>
         <td>
-            View, edit, create and fulfill orders from the admin panel
+            X
+        </td>
+        <td>
+        </td>
+        <td>
+            X
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/sales/invoices.html">Create one or multiple invoices, shipments, and credit memos per order to allow for split fulfillment</a>
+            
+        </td>
+        <td>
+            X
+        </td>
+        <td>
+        </td>
+        <td>
+            X
+        </td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/sales/invoice-print-multiple.html">Print invoices, packing slips, and shipping labels</a>
+            
         </td>
         <td>
             X
@@ -1729,37 +1765,7 @@ contributor_link: https://github.com/magento-hackathon
     </tr>
     <tr>
         <td>
-            Create one or multiple invoices, shipments and credit memos per order to allow for split fulfillment
-        </td>
-        <td>
-            X
-        </td>
-        <td>
-        </td>
-        <td>
-            X
-        </td>
-        <td>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Print invoices, packing slips and shipping labels
-        </td>
-        <td>
-            X
-        </td>
-        <td>
-        </td>
-        <td>
-            X
-        </td>
-        <td>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Call center (phone) order creation - provides transparent control for administrators and front-end enhancements for customers during the shopping process. Changing product configurations, for all types of products, can be done by the call center sale representative on the admin side as well as by the customer throughout the shopping process. Custom product choices and configurations can be changed directly during order creation, in the wish list and the shopping cart
+            Call center (phone) order creation - provides transparent control for administrators and front-end enhancements for customers during the shopping process. Changing product configurations, for all types of products, can be done by the call center sale representative on the Admin side as well as by the customer during the shopping process. Custom product choices and configurations can be changed directly during order creation, in the wish list, and the shopping cart
             <ul>
                 <li>
                     Includes the ability to create new customers, or select existing customers and view their shopping cart, wish list, last ordered items, and compared products lists, as well as select addresses, give discounts and assign custom prices
@@ -1778,8 +1784,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Assisted Shopping - customer service representatives and other admin users are able to manage products and coupons in customers' shopping carts and wish lists through the administrator panel
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/sales/shopping-assistance.html">Assisted Shopping - customer service representatives and other admin users are able to manage products and coupons in customers' shopping carts and wish lists through the administrator panel</a>
+            
         </td>
         <td>
             X
@@ -1793,8 +1799,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Customized Order Status - tracking an order is easier than ever with customizable order statuses easily assigned to order states. A predefined list of order states (ex. new, processing, payment review, complete) represents the order processing workflow. An order status is assigned as a sub-category of the order state (ex. cancelled, complete, decline)
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/sales/order-status-custom.html">Customized Order Status - tracking an order is easier than ever with customizable order statuses easily assigned to order states. A predefined list of order states (for example, new, processing, payment review, complete) represents the order processing workflow. An order status is assigned as a sub-category of the order state (for example,  cancelled, complete, decline)</a>
+            
         </td>
         <td>
             X
@@ -1808,8 +1814,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Create re-orders for customers from the administration panel
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/customers/customer-account-create-order.html">Create re-orders for customers from the Admin panel</a>
+            
         </td>
         <td>
             X
@@ -1838,8 +1844,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            RSS feed of new orders
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/configuration/catalog/rss-feeds.html">RSS feed of new orders</a>
+            
         </td>
         <td>
             X
@@ -1891,8 +1897,8 @@ contributor_link: https://github.com/magento-hackathon
         </th>
     </tr>
     <tr>
-        <td>
-            Account dashboard
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/customers/account-dashboard.html">Account dashboard</a>
+            
         </td>
         <td>
             X
@@ -1906,8 +1912,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Address book with unlimited addresses
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/customers/account-dashboard.html">Address book with unlimited addresses</a>
+            
         </td>
         <td>
             X
@@ -1921,8 +1927,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Wish list with ability to add comments
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/marketing/wishlist-configuration.html">Wish list with ability to add comments</a>
+            
         </td>
         <td>
             X
@@ -1936,8 +1942,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Order status and history
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/sales/order-status.html">Order status and history</a>
+            
         </td>
         <td>
             X
@@ -1951,8 +1957,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Re-orders from account
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/sales/orders.html">Reorders from account</a>
+            
         </td>
         <td>
             X
@@ -1966,8 +1972,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Recently ordered items
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/stores/admin-dashboard.html">Recently ordered items</a>
+            
         </td>
         <td>
             X
@@ -1981,8 +1987,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Default billing and shipping addresses
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/customers/account-dashboard.html">Default billing and shipping addresses</a>
+            
         </td>
         <td>
             X
@@ -1996,8 +2002,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Email or send RSS feed of wish list
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/marketing/wishlists.html">Email or send RSS feed of wish list</a>
+            
         </td>
         <td>
             X
@@ -2011,8 +2017,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Newsletter subscription management
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/marketing/newsletter-subscribers.html">Newsletter subscription management</a>
+            
         </td>
         <td>
             X
@@ -2026,8 +2032,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Product reviews submitted
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/marketing/product-reviews.html">Product reviews submitted</a>
+            
         </td>
         <td>
             X
@@ -2041,8 +2047,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Product tags submitted
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/marketing/tags-moderate.html">Product tags submitted</a>
+        
         </td>
         <td>
             X
@@ -2056,8 +2062,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Downloadable/digital products
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/catalog/product-create-downloadable.html">Downloadable/digital products</a>
+            
         </td>
         <td>
             X
@@ -2109,8 +2115,8 @@ contributor_link: https://github.com/magento-hackathon
         </th>
     </tr>
     <tr>
-        <td>
-            Contact Us form
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/stores/contact-us.html">Contact Us form</a>
+            
         </td>
         <td>
             X
@@ -2124,8 +2130,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Create and edit orders from the admin panel
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/customers/customer-account-create-order.html">Create and edit orders from the Admin panel</a>
+            
         </td>
         <td>
             X
@@ -2154,8 +2160,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Order history with status updates
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/stores/order-status.html">Order history with status updates</a>
+            
         </td>
         <td>
             X
@@ -2169,8 +2175,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Order tracking from account
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/customers/account-dashboard.html">Order tracking from account</a>
+            
         </td>
         <td>
             X
@@ -2184,8 +2190,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Password reset email from front-end and admin panel
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/configuration/customers/customer-configuration.html">Password reset email from frontend and Admin panel</a>
+            
         </td>
         <td>
             X
@@ -2199,8 +2205,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Order and account update emails
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/marketing/sales-email-configure.html">Order and account update emails</a>
+            
         </td>
         <td>
             X
@@ -2214,8 +2220,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Customizable transactional emails
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/marketing/email-templates.html">Customizable transactional emails</a>
+            
         </td>
         <td>
             X
@@ -2267,11 +2273,11 @@ contributor_link: https://github.com/magento-hackathon
         </th>
     </tr>
     <tr>
-        <td>
-            Support for localization, multiple currencies and tax rates
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/stores/store-details.html">Support for localization, multiple currencies, and tax rates</a>
+            
             <ul>
-                <li>
-                    Includes support for WEEE/DEEE in EU
+                <li><a href="http://docs.magento.com/m2/ce/user_guide/tax/fixed-product-tax.html">Includes support for WEEE/DEEE in EU</a>
+                    
                 </li>
             </ul>
         </td>
@@ -2287,8 +2293,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Support for accented characters and right to left text
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/stores/store-language-add.html">Support for accented characters and right-to-left text</a>
+            
         </td>
         <td>
             X
@@ -2302,14 +2308,14 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Configurable list of allowed countries for:
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/stores/country-options.html">Configurable list of allowed countries for:</a>
+            
             <ul>
                 <li>
                     Site registration
                 </li>
                 <li>
-                    Shipping destination addresses with ability to specify per shipping method
+                    <a href="http://docs.magento.com/m2/ce/user_guide/shipping/shipping-settings.html">Shipping destination addresses with ability to specify per shipping method</a>
                 </li>
                 <li>
                     Billing addresses with ability to specify per payment method
@@ -2396,8 +2402,8 @@ contributor_link: https://github.com/magento-hackathon
         </th>
     </tr>
     <tr>
-        <td>
-            Integrated with Google Analytics
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/marketing/google-universal-analytics.html">Integrated with Google Analytics</a>
+            
         </td>
         <td>
             X
@@ -2411,8 +2417,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Admin dashboard for report overview
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/stores/admin-dashboard.html">Admin dashboard for report overview</a>
+            
         </td>
         <td>
             X
@@ -2426,8 +2432,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Sales report
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/reports/sales-reports.html">Sales report</a>
+            
         </td>
         <td>
             X
@@ -2441,8 +2447,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Tax report
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/reports/sales-reports.html">Tax report</a>
+            
         </td>
         <td>
             X
@@ -2456,8 +2462,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Abandoned shopping cart report
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/reports/marketing-reports.html">Abandoned shopping cart report</a>
+            
         </td>
         <td>
             X
@@ -2471,8 +2477,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Best viewed products report
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/reports/product-reports.html">Best viewed products report</a>
+            
         </td>
         <td>
             X
@@ -2486,8 +2492,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Best purchased products report
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/reports/product-reports.html">Best purchased products report</a>
+            
         </td>
         <td>
             X
@@ -2501,8 +2507,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Low stock report
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/reports/product-reports.html">Low stock report</a>
+            
         </td>
         <td>
             X
@@ -2516,8 +2522,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Search terms report
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/marketing/search-terms-report.html">Search terms report</a>
+            
         </td>
         <td>
             X
@@ -2531,8 +2537,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Product reviews report
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/Search.html">Product reviews report</a>
+            
         </td>
         <td>
             X
@@ -2546,8 +2552,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Tags report
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/marketing/tags.html">Tags report</a>
+            
         </td>
         <td>
             X
@@ -2561,8 +2567,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Coupon usage report
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/marketing/price-rules-cart-coupon-report.html">Coupon usage report</a>
+            
         </td>
         <td>
             X
@@ -2576,8 +2582,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Total sales invoiced
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/reports/sales-reports.html">Total sales invoiced report</a>
+            
         </td>
         <td>
             X
@@ -2591,8 +2597,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Total sales refunded
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/reports/sales-reports.html">Total sales refunded report</a>
+            
         </td>
         <td>
             X
@@ -2645,7 +2651,7 @@ contributor_link: https://github.com/magento-hackathon
     </tr>
     <tr>
         <td>
-            Support for native applications on iPhone, iPad and Android mobile devices
+            Support for native applications on iPhone, iPad, and Android mobile devices
         </td>
         <td>
             X
@@ -2660,7 +2666,7 @@ contributor_link: https://github.com/magento-hackathon
     </tr>
     <tr>
         <td>
-            One admin panel for multiple devices
+            One Admin panel for multiple devices
         </td>
         <td>
             X
@@ -2675,7 +2681,7 @@ contributor_link: https://github.com/magento-hackathon
     </tr>
     <tr>
         <td>
-            Seamless integration with your current product catalog, CMS and store configurations
+            Seamless integration with your current product catalog, CMS, and store configurations
         </td>
         <td>
             X
@@ -2720,7 +2726,7 @@ contributor_link: https://github.com/magento-hackathon
     </tr>
     <tr>
         <td>
-            Mobile HTML5 - quickly and easily create a storefront optimized for mobile devices so customers can shop even when they're on the go. This mobile interface uses HTML5 technology and supports iPhone, Android and Mobile Opera browsers. It includes out-of-thebox features such as:
+            Mobile HTML5 - quickly and easily create a storefront optimized for mobile devices so customers can shop even when they're on the go. This mobile interface uses HTML5 technology and supports iPhone, Android, and Mobile Opera browsers. It includes out-of-box features such as:
             <ul>
                 <li>
                     Device-specific media capabilities for audio and video
@@ -2732,7 +2738,7 @@ contributor_link: https://github.com/magento-hackathon
                     Clean display of product detail pages
                 </li>
                 <li>
-                    Pinch, multi-touch and scaling images
+                    Pinch, multi-touch, and scaling images
                 </li>
                 <li>
                     Easy swipe between product images
@@ -2789,7 +2795,7 @@ contributor_link: https://github.com/magento-hackathon
     </tr>
     <tr>
         <td>
-            Segment customers into groups and optimize marketing initiatives by identifying specific customer groups using specific characteristics (address, location, sex, etc.) and/or value (purchase history, on-site browsing, etc.).
+            Segment customers into groups and optimize marketing initiatives by identifying specific customer groups using specific characteristics (for example, address, location, gender) and/or value (for example, purchase history or on-site browsing)
         </td>
         <td>
             X
@@ -2824,7 +2830,7 @@ contributor_link: https://github.com/magento-hackathon
     </tr>
     <tr>
         <td>
-            Dynamically target customers to present up-sells, cross-sells, and related products based on their specific product selections. Rules are easily administered through a condition based tool, allowing marketers to easily manage specific product suggestions, shopping cart price rules and banners to any customer segment to encourage additional purchases.
+            Dynamically target customers to present up-sells, cross-sells, and related products based on their specific product selections. Rules are easily administered through a condition-based tool, allowing marketers to easily manage specific product suggestions, shopping cart price rules, and banners to any customer segment to encourage additional purchases.
         </td>
         <td>
             X
@@ -2843,8 +2849,8 @@ contributor_link: https://github.com/magento-hackathon
         </th>
     </tr>
     <tr>
-        <td>
-            Customers are able to shop and maintain items of interest in their shopping cart, wish lists, recently viewed and recently compared items between browsing sessions and from device to device. Once a customer logs in to a site, a long-term cookie is established for that browser/device combination and the customer can now view the contents of their shopping cart in subsequent sessions without logging in again.
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/sales/cart-persistent.html">Customers are able to shop and maintain items of interest in their shopping cart, wish lists, recently viewed, and recently compared items between browsing sessions and from device to device. Once a customer logs in to a site, a long-term cookie is established for that browser/device combination and the customer can now view the contents of their shopping cart in subsequent sessions without logging in again.</a>
+            
         </td>
         <td>
             X
@@ -2863,8 +2869,8 @@ contributor_link: https://github.com/magento-hackathon
         </th>
     </tr>
     <tr>
-        <td>
-            Increase customer retention by automating email reminders to customers with abandoned shopping carts and wish lists. Email reminder campaigns are configurable and customizable for a variety of parameters including frequency, cart value, quantity and more.
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/configuration/advanced/admin.html">Increase customer retention by automating email reminders to customers with abandoned shopping carts and wish lists. Email reminder campaigns are configurable and customizable for a variety of parameters including frequency, cart value, quantity, and more.</a>
+            
         </td>
         <td>
             X
@@ -2884,7 +2890,7 @@ contributor_link: https://github.com/magento-hackathon
     </tr>
     <tr>
         <td>
-            Restrict your catalog to specific customers. Create invitations and events for limited time sales to select customers and allow customer-initiated invitations.
+            Restrict your catalog to specific customers. Create invitations and events for limited time sales to select customers, and allow customer-initiated invitations.
         </td>
         <td>
             X
@@ -2904,7 +2910,7 @@ contributor_link: https://github.com/magento-hackathon
     </tr>
     <tr>
         <td>
-            Increase revenue and capture valuable customer data with the Gift Registry feature. Those purchasing gifts can search for the registry by owner's name, email or gift registry ID. Privacy settings are included.
+            Increase revenue and capture valuable customer data with the Gift Registry feature. Those purchasing gifts can search for the registry by owner's name, email, or gift registry ID. Privacy settings are included.
         </td>
         <td>
             X
@@ -2919,12 +2925,12 @@ contributor_link: https://github.com/magento-hackathon
     </tr>
     <tr>
         <th colspan="5">
-            Gifting Options
+            Gift Options
         </th>
     </tr>
     <tr>
-        <td>
-            Allow customers to purchase physical and virtual gift certificates/cards for your store. Increase the average order value with gift wrapping and gift messaging options to individual products or complete orders before check out. Applicable pricing and taxes for gift wrapping options are easily configured by administrators.
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/sales/checkout-gift-options.html">Allow customers to purchase physical and virtual gift certificates/cards for your store. Increase the average order value with gift wrapping and gift messaging options to individual products or complete orders before check out. Applicable pricing and taxes for gift wrapping options are easily configured by administrators.</a>
+            
         </td>
         <td>
             X
@@ -2943,8 +2949,8 @@ contributor_link: https://github.com/magento-hackathon
         </th>
     </tr>
     <tr>
-        <td>
-            Enables merchants to implement programs that provide incentives to frequent shoppers, increasing customer loyalty. Points can be awarded based on a wide range of transactions and customers. Redemption rules can be controlled by merchants based on a variety of parameters including balances, expiration, customer history, conversion rate and more.
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/quick-tour/customer-retention.html">Enables merchants to implement programs that provide incentives to frequent shoppers, increasing customer loyalty. Points can be awarded based on a wide range of transactions and customers. Redemption rules can be controlled by merchants based on a variety of parameters including balances, expiration, customer history, and conversion rate.</a>
+            
         </td>
         <td>
             X
@@ -2963,8 +2969,8 @@ contributor_link: https://github.com/magento-hackathon
         </th>
     </tr>
     <tr>
-        <td>
-            Store credits can be created and tied to customer accounts. Orders can also be refunded with store credit or virtual gift cards which can be redeemed to make future purchases.
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/sales/credit-memos.html">Store credits can be created and tied to customer accounts. Orders can also be refunded with store credit or virtual gift cards that can be redeemed to make future purchases.</a>
+            
         </td>
         <td>
             X
@@ -2983,8 +2989,8 @@ contributor_link: https://github.com/magento-hackathon
         </th>
     </tr>
     <tr>
-        <td>
-            Customers can save products to multiple wish lists and copy or move items from list to list. They can make their wish lists public so they're searchable by anyone. And merchants can review them to learn about their customers' wants and needs.
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/marketing/wishlists.html">Customers can save products to multiple wish lists and copy or move items from list to list. They can make their wish lists public so they're searchable by anyone. Merchants can review them to learn about their customers' wants and needs.</a>
+            
         </td>
         <td>
             X
@@ -3004,7 +3010,7 @@ contributor_link: https://github.com/magento-hackathon
     </tr>
     <tr>
         <td>
-            Streamline the ordering process, especially for B2B customers, by enabling them to enter a list of SKUs without having to go into product pages. This simplifies large orders, recurring orders and ordering based on offline catalogs.
+            Streamline the ordering process, especially for B2B customers, by enabling them to enter a list of SKUs without having to go into product pages. This simplifies large orders, recurring orders, and ordering based on offline catalogs.
         </td>
         <td>
             X
@@ -3023,8 +3029,8 @@ contributor_link: https://github.com/magento-hackathon
         </th>
     </tr>
     <tr>
-        <td>
-            Enables of customer and merchant administration of returns with support for partial order and individual item returns, customer notifications, shipping methods and more.
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/sales/order-management.html">Enables the customer and merchant administration of returns with support for partial order and individual item returns, customer notifications, shipping methods, and more.</a>
+            
         </td>
         <td>
             X
@@ -3043,8 +3049,8 @@ contributor_link: https://github.com/magento-hackathon
         </th>
     </tr>
     <tr>
-        <td>
-            Magento's CMS uses a WYSIWYG editor with support for rich content. Build complex content pages, create multiple versions of a page, restrict publishing privileges and create menus. Easily add CMS pages to the navigation menu and create, copy or delete different CMS hierarchy trees for each website and store view individually or en masse.
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/configuration/general/content-management.html">Magento's CMS uses a WYSIWYG editor with support for rich content. Build complex content pages, create multiple versions of a page, restrict publishing privileges and create menus. Easily add CMS pages to the navigation menu and create, copy, or delete different CMS hierarchy trees for each website and store view individually or collectively.</a>
+            
         </td>
         <td>
             X
@@ -3063,8 +3069,8 @@ contributor_link: https://github.com/magento-hackathon
         </th>
     </tr>
     <tr>
-        <td>
-            Import and export product catalog data either locally or from remote FTP servers. Merchants can configure for error handling, status reporting and backup.
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/system/data-transfer.html">Import and export product catalog data either locally or from remote FTP servers. Merchants can configure for error handling, status reporting, and backup.</a>
+            
         </td>
         <td>
             X
@@ -3083,8 +3089,8 @@ contributor_link: https://github.com/magento-hackathon
         </th>
     </tr>
     <tr>
-        <td>
-            Manage and schedule a variety of backup operations with the option to rollback the changes to reverse any modifications. This feature is particularly useful when testing new modules or customizations, or when upgrading to a new version of Magento. You can review specific customizations and their impact on the new code. (We do not recommend using this feature in your production environment.)
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/system/backups.html">Manage and schedule a variety of backup operations with the option to rollback the changes to reverse any modifications. This feature is particularly useful when testing new modules or customizations, or when upgrading to a new version of Magento. You can review specific customizations and their impact on the new code. (We do not recommend using this feature in your production environment.)</a>
+            
         </td>
         <td>
             X
@@ -3098,8 +3104,8 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td>
-            Three types of backup are supported:
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/system/backups.html">Three types of backup are supported:</a>
+            
             <ul>
                 <li>
                     System Backup
@@ -3125,12 +3131,12 @@ contributor_link: https://github.com/magento-hackathon
     </tr>
     <tr>
         <th colspan="5">
-            Staging, Merging and Rollback of Content
+            Staging, Merging, and Rollback of Content
         </th>
     </tr>
     <tr>
         <td>
-            Create a staging site to test new categories, product information, promotions etc. Content can be merged to the live site after approval, either on-demand or per a schedule. Supports ondemand, scheduled merges and rollbacks of content.
+            Create a staging site to test new categories, product information, and promotions. You can merge content to the live site after approval, either on-demand or per a schedule. Supports on-demand or scheduled merges, and rollbacks of content.
         </td>
         <td>
             X
@@ -3149,8 +3155,8 @@ contributor_link: https://github.com/magento-hackathon
         </th>
     </tr>
     <tr>
-        <td>
-            Improve sales and marketing efforts with advanced attribute management. Customer account and address attributes are managed by the Magento Administrator interface and then used to create customized marketing campaigns and customer profiles.
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/system/data-attributes-customer.html">Improve sales and marketing efforts with advanced attribute management. Customer account and address attributes are managed by the Magento Admin panel and then used to create customized marketing campaigns and customer profiles.</a>
+            
         </td>
         <td>
             X
@@ -3169,8 +3175,8 @@ contributor_link: https://github.com/magento-hackathon
         </th>
     </tr>
     <tr>
-        <td>
-            Restrict access roles so that staff can view only the data to the stores relevant to them.
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/system/permissions.html">Restrict access roles so that staff can view only the data of  stores relevant to them.</a>
+            
         </td>
         <td>
             X
@@ -3189,8 +3195,8 @@ contributor_link: https://github.com/magento-hackathon
         </th>
     </tr>
     <tr>
-        <td>
-            Merchants can create and control multiple admin roles for reading and editing prices and promotions.
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/system/permissions-user-roles.html">Merchants can create and control multiple Admin roles for reading and editing prices and promotions.</a>
+            
         </td>
         <td>
             X
@@ -3209,8 +3215,8 @@ contributor_link: https://github.com/magento-hackathon
         </th>
     </tr>
     <tr>
-        <td>
-            Track and review all actions taken by administrator users, with the ability to see views, edits and deletions of information. Logs are associated to specific administrator users, with the ability to see the action taken, when it was made, and more.
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/system/action-log.html">Track and review all actions taken by Admin users, with the ability to see views, edits, and deletions of information. Logs are associated with specific Admin users, with the ability to see the action taken, when it was made, and more.</a>
+            
         </td>
         <td>
             X
@@ -3250,7 +3256,7 @@ contributor_link: https://github.com/magento-hackathon
     </tr>
     <tr>
         <td>
-            Increase store performance and provide efficiencies in store management through an order archiving module, enabling merchants to archive orders after a configurable time. Orders are still available to both administrators users and customers, while providing increased performance by storing historical orders in an archive.
+            Increase store performance and provide efficiencies in store management through an order archiving module, which enables merchants to archive orders after a configurable time. Orders are still available to both Admin users and customers, while providing increased performance by storing historical orders in an archive.
         </td>
         <td>
             X
@@ -3270,7 +3276,7 @@ contributor_link: https://github.com/magento-hackathon
     </tr>
     <tr>
         <td>
-            An alternative to the standard Magento search, Solr search provides merchants with sitesearch options and enhancements to the speed, quality and relevancy of search results provided to customers. Performance and search quality are improved with layered navigation and features like spelling/synonyms/stop words and weighted attributes.
+            An alternative to the standard Magento search, Solr search provides merchants with sitesearch options and enhancements to the speed, quality and relevancy of search results provided to customers. Performance and search quality are improved with layered navigation and features such as spelling/synonyms/stop words and weighted attributes.
         </td>
         <td>
             X
@@ -3289,8 +3295,8 @@ contributor_link: https://github.com/magento-hackathon
         </th>
     </tr>
     <tr>
-        <td>
-            Enhance performance with caching of primary pages, including category, product and CMS pages for all users, including session users (excludes personal information). Caching of pages generally improves server response times and reduces load.
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/system/cache-full-page.html">Enhance performance with caching of primary pages, including category, product and CMS pages for all users, including session users (excludes personal information). Caching of pages generally improves server response times and reduces load.</a>
+            
         </td>
         <td>
             X
@@ -3365,7 +3371,7 @@ contributor_link: https://github.com/magento-hackathon
     </tr>
     <tr>
         <th colspan="5">
-            Strong Data Encryption, Hashing and Key Management
+            Strong Data Encryption, Hashing, and Key Management
         </th>
     </tr>
     <tr>
