@@ -36,6 +36,3 @@ Environment
 Service
 :	Third-party software for your Magento store. For example, PHP, MySQL, Elasticsearch, Solr, Redis, Varnish, and Fastly are all examples of services. You configure services using `services.yaml` and use them in your environments for development, testing, and in your live deployment.
 
-Unlike other cloud providers, we bundle services with Magento Enterprise Cloud edition. You don't have to contract with someone else to provide services for you.
-
-
