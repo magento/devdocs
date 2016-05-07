@@ -312,14 +312,6 @@
 									
 
 								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/before/before-workspace.html">Set up a Magento workspace</a></li>
-
-									
-
-								
 								
 								
 							
@@ -345,6 +337,14 @@
 
 									
 
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/before/before-workspace.html">Set up a Magento workspace</a></li>
+
+									
 
 								
 
@@ -981,12 +981,11 @@ anything was daemonized.</p>
 mounted on a read-only file system (you will be able to configure specific
 mount points that are going to be read/write). </p>
 
-<p>This means you cannot FTP to the server and add modules. So, if you are
-used to be working like this, this is going to change some of your habits.</p>
+<p>This means you cannot FTP to the server and add modules. Instead, you must add code to your environment and push the environment, which builds and deploys it.</p>
 
 <h3 id="cloud-deploy-over-phases-slug">Phase 3: Prepare the slug</h3>
-<p>The result of the build phase is a read-only file system we refer to as a <em>slug</em>. In this phase, we create an archive and put it in in permanent storage. The next time
-you push code, if a service did not change, you can use another.</p>
+<p>The result of the build phase is a read-only file system we refer to as a <em>slug</em>. In this phase, we create an archive and put it in permanent storage. The next time
+you push code, if a service did not change, you can use a slug from the archive.</p>
 
 <p>It also means that reverting a deployment is basically
 instantaneous. </p>
@@ -1003,7 +1002,7 @@ need:</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>The main file system is <em>read-only</em>. This
-is what guarantees we can do deterministic deployments.</p>
+is what guarantees we can do deterministic deployments. The read-only file system also dramatically improves your site's security because no process can write to the file system.</p>
 </div>
 
 <h3 id="cloud-deploy-over-phases-hook">Phase 5: Deployment hooks</h3>
