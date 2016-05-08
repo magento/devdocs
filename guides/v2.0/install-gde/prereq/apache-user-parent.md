@@ -2,13 +2,13 @@
 layout: default
 group: install_pre
 subgroup: Prerequisites
-title: The Magento file system owner
-menu_title: The Magento file system owner
-menu_node:
-menu_order: 17
-level3_menu_node: level3child
+title: Magento file system ownership and permissions
+menu_title: Magento file system ownership and permissions
+level3_menu_node: level3parent
 level3_subgroup: umask
-github_link: install-gde/prereq/apache-user.md
+menu_node:
+menu_order: 15
+github_link: install-gde/prereq/apache-user-parent.md
 ---
 
 #### Contents
