@@ -22,18 +22,23 @@ github_link: install-gde/prereq/apache-user.md
 <h2 id="install-update-depend-user-over">Overview of ownership and permissions</h2>
 Even in a development environment, you want your Magento installation to be secure. To help prevent issues related to unauthorized people or processes doing potentially harmful things to your system, we recommend some guidelines related to file system ownership and security:
 
-*	The web server user should *not* own the files and directories on the Magento file system; however, the web server user must have write access to some directories.
+*	Choose file system permissions that enable you to run Magento but that also provides security against unwanted access.
 
-	The *web server user* runs the web-based Setup Wizard installer and everything you do in the Magento Admin. This user must have the ability to write media files and so on. However, the user cannot *own* the files because that can potentially lead to security issues because any web-based process could potentially attack the Magento file system.
+	We enable you to do this by setting the `MAGE_UMASK` environment variable. A umask&mdash;also referred to as a *file system creation mask*&mdash;is a set of bits, each of which restricts how its corresponding permission is set for newly created files.
 
-*	Another user should own the Magento files and directories; this user must not be `root`.
+	Magento uses a three-bit mask, by default `002`, that you subtract from the UNIX defaults of 777 for files and 666 for directories.
 
-	This user runs the Magento cron job, command-line utilities, and has full control over all Magento files and directories. Because the user exists only on the server, it's very difficult for a malicious process to exploit it.
+	(777 means *world writable*; that is, full control by everyone. 666 means read/write for everyone.)
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Although you can install and use the Magento software as the web server user, for the preceding reasons, we don't recommend it and don't discuss it in this guide.</p></span>
-</div>
+	With the default `MAGE_UMASK` of `002`, files and directories created by Magento have 775 permissions (full control by the user; full control by the group; write and execute for anyone else). We recommend you set more restrictive permissions; we'll go into that in more detail in TBD.
+
+*	Two users should own the Magento file system, although you can set it up with only one user in development.
+
+	One user is the web server, which runs the Magento Admin (including Component Manager and System Upgrade); the other user is the Magento file system owner, which runs cron jobs and command-line utilities. You give permissions to both users by way of a shared group to which they both belong.
+
+*	We recommend different permissions and ownership for default mode, developer mode, and production mode.
+
+	We discuss these recommendations TBD.
 
 <h2 id="install-update-depend-user-create">Create a user and give the user a strong password</h2>
 This section discusses how to create the Magento file system owner.
