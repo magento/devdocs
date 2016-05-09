@@ -48,27 +48,10 @@ Code generation is required in Magento 2. Generating code assures you of the fol
 
 	All generated Factories work the same way. After you learn know how one Factory works, you know how they all work.
 
-
 <h2 id="codegen-om">Object Manager responsibility for code compilation</h2>
-When code changes as discussed in the preceding section, one of two Object Manager classes compiles it. The class is chosen based on whether or not the single-tenant compiler or the multi-tenant compiler has been run before.
+When code changes as discussed in the preceding section, the Object Manager compiles it.
 
-The single-tenant compiler create `var/di/global.ser`, which is a PHP serialized map of all constructor definitions mixed with object linking configuration defined in di.xml. `di.xml` is the dependency injection configuration. There is a global `app/etc/di.xml` and there can be one defined for every module.
+
+The code compiler compiler creates `var/di/global.ser`, which is a PHP serialized map of all constructor definitions mixed with object linking configuration defined in di.xml. `di.xml` is the dependency injection configuration. There is a global `app/etc/di.xml` and there can one defined for every module.
 
 <!--synced-->
-<div class="bs-callout bs-callout-warning">
-<p>If you&#8217;re preparing to deploy to production, you must use the multi-tenant compiler. There is a known issue with the single-tenant compiler that prevents it from compiling proxies.</p>
-</div>
-
-
-Depending on whether or not one of the compilers has been run before, the Magento application consumes the compilation using one of the following classes:
-
-*	<a href="{{ site.mage2100url }}lib/internal/Magento/Framework/Interception/ObjectManager/Config/Compiled.php" target="_blank">Magento\Framework\Interception\ObjectManager\Config\Compiled</a>, which is used if `global.ser` exists.
-
-*	<a href="{{ site.mage2100url }}lib/internal/Magento/Framework/Interception/ObjectManager/Config/Developer.php" target="_blank">Magento\Framework\Interception\ObjectManager\Config\Developer</a>, which is used if `global.ser` does not exist.
-
-	This class is slower than `Magento\Framework\Interception\ObjectManager\Config\Compiled`.
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>The <code>Developer</code> class has nothing to do with Magento's <em>developer mode</em>.</p></span>
-</div>

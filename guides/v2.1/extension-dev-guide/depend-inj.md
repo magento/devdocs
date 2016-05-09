@@ -140,7 +140,7 @@ Object manager configurations can be specified at any of the following scopes:
 <h2 id="dep-inj-mod-class">Class definitions</h2>
 Magento uses class constructor signatures, not doc-block annotations, to retrieve information about class dependencies; that is, to define what dependencies are to be passed to an object.
 
-Magento reads constructors using reflection. We recommend you use the <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-compiler-single.html">single-store compiler tool</a> or the <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-compiler-multi.html">multi-store compiler tool</a> to pre-compile class definitions for better performance.
+Magento reads constructors using reflection. We recommend you use the [code compiler](config-guide/cli/config-cli-subcommands-compiler.html) to pre-compile class definitions for better performance.
 
 The parameters specified for a class type are inherited by its descendant classes.
 
@@ -463,10 +463,7 @@ class Magento\Core\Model\Config\BaseFactory
 Most factories are simple, so developers do not have to bother with writing them. If a non-existent factory is encountered by object manager in runtime mode or compiler, the object manager generates the factory.
 
 <h2 id="dep-inj-compile">Compiler tool</h2>
-To compile all non-existent proxies and factories; and to pre-compile class definitions, inheritance information, and plugin definitions for multiple stores or websites, see one of the following topics:
-
-*	If you have one website and one store, see <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-compiler-single.html">Single-store compiler</a>
-*	If you have multiple websites and stores, see <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-store compiler</a>
+To compile all non-existent proxies and factories; and to pre-compile class definitions, inheritance information, and plugin definitions for multiple stores or websites, see [Code compiler]({{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-compiler.html).
 
 
 #### Related topics:
