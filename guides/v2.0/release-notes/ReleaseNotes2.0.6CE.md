@@ -9,7 +9,9 @@ github_link: release-notes/ReleaseNotes2.0.6CE.md
 ---
 
 <h2>Magento Community Edition 2.0.6</h2>
-We are pleased to present Magento Community Edition 2.0.6. This release includes miscellaneous functional fixes. 
+We are pleased to present Magento Community Edition 2.0.6. This release includes security enhancements as well as several functional fixes.
+
+In addition to these security updates, this release enables you to use <a href="http://devdocs.magento.com/guides/v2.0/config-guide/redis/config-redis.html">Redis for session storage</a> and fixed the file permission issue by providing a more flexible way for you to set file ownership and permissions.  
 
 
 Backward-incompatible changes are documented in <a href="http://devdocs.magento.com/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
@@ -24,7 +26,11 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 
 <!-- 46287 -->* You can now use Redis for session storage without modifying the <code>php.ini</code> file. You can also lock session storage to prevent simultaneous write access. (46287)
 
-<!-- 52322 --> * permissions -- Steve will supply (52322)
+<!-- 52322 --> * Starting with Magento 2.0.6, Magento provides a more flexible way for you to set file ownership and permissions. Instead of setting permissions explicitly, we enable you to create a file named `mage_umask` in your Magento root directory. By default, the umask is `002`, which means that files have 775 permissions and directories have 664 permissions.
+
+For more details, see <a href="http://devdocs.magento.com/prereq/apache-user.html">Magento file system ownership and permissions</a>. (52322)
+
+
 
 <h4>Security enhancements</h4>
 This release includes  enhancements to improve the security of your Magento 2.0 installation. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento 2.0 installation to the latest version as soon as possible.
