@@ -18,50 +18,49 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 
 <h3>Fixed issues</h3>
 
-<h4> Upgrade and Installation</h4>
 
-<!-- 50224 --> *  Magento no longer assumes hard-coded root category IDs or default category IDs. Previously, Magento used hard-coded IDs for these values, which could produce inconsistent data during store installation.
-
-
-<h4>Import/Export</h4>
-
-<!-- 46245 --> * Product import now works successfully in a multi-store environment. Previously, Magento would display the following error message,  “URL key for specified store already exists”, when importing products into a multi-store configuration. 
-
-<!-- 48722 --> * Export performance has been enhanced.  Pages no longer hang randomly, and CPU usage is no longer pegged.  <a href="https://github.com/magento/magento2/issues/3217" target="_blank">(GITHUB-3217)</a>
+<!-- 51807 -->You can now use the Redis adapter to provide session storage in Magento 2.0.6. 
 
 
+<!-- 46287 -->* You can now use Redis for session storage without modifying the <code>php.ini</code> file. You can also lock session storage to prevent simultaneous write access. 
 
-<h4>Database</h4>
+<!-- 52322 --> permissions -- Steve will supply
 
-<!-- 49004 --> * Magento no longer duplicates queries to the database from the Catalog page. Instead, if Magento has already loaded specific data during request processing, it re-uses it instead of duplicating the query. 
+<<h4>Security enhancements</h4>
+This release includes  enhancements to improve the security of your Magento 2.0 installation. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento 2.0 installation to the latest version as soon as possible.
 
-<!-- 49003 --> * Magento no longer duplicates SQL queries on CMS and Category pages. Previously, significant duplications occurred. 
+The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the <a href="https://magento.com/security" target="_blank">Magento Security Center</a>. 
 
-
-
-<h4>Miscellaneous</h4> 
-
-<!-- 47255 --> * Selecting the Use Aggregated Data option now correctly displays Dashboard data. <a href="https://github.com/magento/magento2/issues/3459" target="_blank">(GITHUB-3459)</a>
-
-<!-- 51074 --> * Magento now displays the expected color swatch when you select a color swatch for a configurable product. Previously, Magento did not change the color when you selected a swatch.
-
-<!-- 48659 -->* HTML template magnification now properly handles commented code.
+<!-- 50955 -->* Application error messages no longer include the path to the file where the error occurred. Previously, when an unhanded exception occurred,  Magento would display an error message that could disclose sensitive information such as the location of the file that produced the unhandled exception. A malicious user could use this information to launch attacks against the application. 
 
 
-<!-- 48760 --> * Deleting one of several custom options no longer deletes all options. Previously, deleting one option from the Product page also deleted all other custom options. <a href="https://github.com/magento/magento2/issues/2989" target="_blank">(GITHUB-2989)</a>  
+<!-- 51808 -->*  Magento no longer allows authenticated customers to change other customers' account information using either SOAP or REST calls.  Magento  now confirms that the ID of the customer whose account is being edited matches the authentication token in use. Previously, a malicious user could hijack a customer account by logging in as an authenticated user, then editing the account of any other user.  (The SOAP and REST APIs are enabled by default in most installations.)
+
+<!-- 51390 -->* Anonymous users can no longer retrieve the private data of registered customers. To prevent malicious attacks of this type, the <code>quote_id_mask</code> table of the Quote API no longer includes a <code>cart id mask</code> value. 
 
 
-<!-- 50279 --> * When Full Page Cache (FPC) is enabled, the CAPTCHA image differs for every user. Previously, the CAPTCHA image on the registration page remained the same for every customer after FPC was enabled.
-
-<!-- 50195 --> * Google no longer indexes the Admin URL. Previously, Google indexed the Admin side meta tag. The frontend meta tag was not affected. 
+<!-- 52187 -->Magento now works as expected when a user with minimum privileges logs in. For example, if a user with limited system privilege (for example,  access to the Admin dashboard only) had previously logged in, the Magento instance would not work. 
 
 
-<!-- 43959 --> * Magento no longer sends a subscription success email whenever a customer enters his email address to subscribe to a newsletter. Users receive a "thank you for your subscription" message and a subscription success email only when registering for the first time. 
+<!-- 51806 -->*  Magento no longer permits an unauthenticated user to remotely execute code on the server through APIs. Previously, an unauthenticated user could remotely execute PHP code on the server using either REST or SOAP APIs. (These APIs are enabled by default in most installations.) 
 
-<!-- 47458 --> * Guests can now successfully click on the product page link for any item in an emailed shared wishlist. 
+<!-- 51807 -->*  The Magento installation code is no longer accessible once the installation process has completed. Previously, an unauthenticated user could execute PHP code on the server because the installation process would leave the <code>/app/etc</code> directory writeable, and many administrators would not change the permissions on this directory after installation. (During installation, the system requires the <code>/app/etc</code> directory to be writeable.)
 
-<!-- 50912 --> * Custom customer attributes are now saved at checkout. 
+<!-- 51292 -->When an integration is created, Magento now bases the OAuth consumer key expiration from when the token exchange begins instead of when the consumer key is created. <a href="https://github.com/magento/magento2/issues/3449" target="_blank">(GITHUB-3449)</a>
 
+<!-- 51392 -->Only a registered customer can assign a guest cart to himself. Previously, an anonymous user could modify the state  (that is, set an active quote) of a registered customer. 
+
+
+<!-- 51370 -->
+
+
+<!-- 48562 -->Magento now provides an optional method of enabling maintenance mode at the web server level. You can update your web server configuration file to re-route all traffic to a System Upgrade page message while the shop is offline during the upgrade. Magento provides a default maintenance message, but you can also create your own message. <a href="https://github.com/magento/magento2/issues/3191" target="_blank">(GITHUB-3191)</a>
+
+
+<!-- 51376 -->
+
+
+<!-- 51461 -->Several parameters in the Authorize.net payment module are vulnerable to reflected Cross-Site Scripting (XSS) attacks. Existing protection against such malicious parameters is not enough to stop all types of attacks.
 
 
 <h3>System requirements</h3>
