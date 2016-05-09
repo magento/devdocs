@@ -4,7 +4,7 @@ group: cloud
 subgroup: 07_project
 title: Redirects
 menu_title: Redirects
-menu_order: 17
+menu_order: 18
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: routes

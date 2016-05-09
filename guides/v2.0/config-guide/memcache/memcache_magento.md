@@ -34,7 +34,7 @@ To configure Magento to use memcache:
 
             'session' =>
                array (
-                  'save' => 'memcached’,
+                  'save' => 'memcached',
                   'save_path' => '<memcache ip or host>:<memcache port>'
             ),
             

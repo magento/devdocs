@@ -23,6 +23,17 @@ You should do your best to adhere to common programming best practices to reduce
 
 ---
 
+### Follow a set of coding standards
+Coding standards are a set of guidelines that describe how code should be written. These standards define coding practices that determine the style of the code. Whether you are a solo developer or part of a team, following a set of coding standards will help make your code consistent and maintainable.
+
+[Magento's Coding Standards]({{site.gdeurl}}coding-standards/bk-coding-standards.html) are based on the following:
+
+* [Zend Coding standards](http://framework.zend.com/manual/1.12/en/coding-standard.html){:target="_blank"}
+* [PSR2](http://www.php-fig.org/psr/psr-2/){:target="_blank"}
+* [PSR4](http://www.php-fig.org/psr/psr-4/){:target="_blank"}
+
+To help you stick to coding standards, we recommend using the [PHP_CodeSniffer tool](https://github.com/squizlabs/PHP_CodeSniffer){:target="_blank"}.
+
 ### Write and utilize re-usable code
 Avoid using redundant or duplicate code. Instead of copying and pasting the same code throughout application, create a single class or method and reference it when needed. As a general rule of thumb, be sure to reuse code as much as possible.
 
