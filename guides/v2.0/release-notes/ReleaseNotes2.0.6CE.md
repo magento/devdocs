@@ -57,13 +57,13 @@ The following list provides an overview of the security issues fixed in this rel
 <!-- 51392 -->* Only a registered customer can assign a guest cart to himself. Previously, an anonymous user could modify the state  (that is, set an active quote) of a registered customer. (51392)
 
 
-<!-- 51370 -->(51370)
+<!-- 51370 -->* Magento no longer discloses information about its internal path during installation. Previously, a user could try to access the application’s internal path during setup by accessing the  <code>http://mywebsite.com/my-magento-directory/setup/index.php/session</code>  and reading the internal path in the resulting error message. (51370)
 
 
 <!-- 48562 -->* Magento now provides an optional method of enabling maintenance mode at the web server level. You can update your web server configuration file to re-route all traffic to a System Upgrade page message while the shop is offline during the upgrade. Magento provides a default maintenance message, but you can also create your own message. <a href="https://github.com/magento/magento2/issues/3191" target="_blank">(GITHUB-3191)</a>(48562)
 
 
-<!-- 51376 -->(51376)
+<!-- 51376 -->* Magento no longer discloses the administrator URL to an unauthenticated user during setup. (51376)
 
 
 <!-- 51461 -->* Several parameters in the Authorize.net payment module are vulnerable to reflected Cross-Site Scripting (XSS) attacks. Existing protection against such malicious parameters is not enough to stop all types of attacks. (51461)
