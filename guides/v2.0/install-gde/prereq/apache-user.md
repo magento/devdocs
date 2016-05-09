@@ -18,7 +18,7 @@ github_link: install-gde/prereq/apache-user.md
 *	[Switch to the Magento file system owner](#install-update-depend-user-switch)
 
 ## Magento file system ownership and permissions {#mage-owner}
-This section discusses how to set up the owner or owners of the Magento file system. Before you continue, make sure you know how many owners to set up as discussed in [About Magento file system ownership and permissions (MAGE_UMASK)]({{ site.gdeurl }}install-gde/prereq/apache-user-over.html).
+This section discusses how to set up the owner or owners of the Magento file system. Before you continue, make sure you know how many owners to set up as discussed in [Overview of file system ownership and permissions (mage_umask)]({{ site.gdeurl }}install-gde/prereq/apache-user-over.html).
 
 ## Set up one Magento file system owner {#mage-owner-one}
 This is a simple setup we recommend for anyone who uses Magento in a development environment only or who uses Magento with shared hosting. It's simple to set up but not as secure as the [two-owner setup](#mage-owner-two).
@@ -34,12 +34,12 @@ To set up one owner for developer mode:
 		groups <web server user>
 
 	For example, on Ubuntu, the web server user name and group name are both typically `www-data`.
-2.	Set the value of `MAGE_UMASK`:
+2.	Set the value of `mage_umask`:
 
 	1.	Use a text editor to open `<your Magento install dir>/.htaccess`
-	2.	Locate `MAGE_UMASK` and set it to the desired value.
+	2.	Locate `mage_umask` and set it to the desired value.
 
-		For example, if you set `MAGE_UMASK` to `022`, Magento-created files have 775 permissions and Magento-created directories have 664 permissions.
+		For example, if you set `mage_umask` to `022`, Magento-created files have 775 permissions and Magento-created directories have 664 permissions.
 
 		775 permissions means full control for the user and group, and read-write-execute for everyone else.
 
