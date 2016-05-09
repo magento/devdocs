@@ -18,7 +18,12 @@ The major part of the view layer of Magento application is layout. Functionally,
 
 This article describes the basic concepts you need to know to create layouts for your custom theme.
 
-<h2 id="layout-over-terms">Terms used</h2>
+**Contents**
+
+ * TOC
+ {:toc}
+
+## Terms used {#layout-over-terms}
 
 <span id="handle">*Layout handle*</span>
 
@@ -30,7 +35,7 @@ There are three kinds of layout handles:
 - **page layout handles** – Identifiers of specific pages. Correspond to controller actions with parameters that identify specific pages, for example, catalog_product_view_type_simple_id_128.
 - **arbitrary handles** - Do not correspond to any page type, but other handles use them by including.
 
-<h2 id="layout_overview_blocks">Basic layout elements</h2>
+## Basic layout elements {#layout_overview_blocks}
 
 The basic components of Magento page design are blocks and containers. 
 
@@ -46,10 +51,20 @@ The following figure shows an example:
 
 <img src="{{ site.baseurl }}common/images/layouts_block_defn.jpg"/>.
 
-<h2>Layout files types and conventions</h2>
+## Basic layouts 
 
+The basic view of all Magento storefront pages in defined in two page configuration layout files located in the Magento_Theme module: 
 
-<h3>Layout file types: by role</h3>
+* `<Magento_Theme_module_dir>/view/frontend/layout/default.xml`: defines the page layout. 
+* `<Magento_Theme_module_dir>/view/frontend/layout/default_head_blocks.xml`: defines the scripts, images, and meta data included in pages' `<head>` section. 
+
+These basic page configuration layouts are extended in other Magento modules and in Magento themes.
+
+You can also [extend]({{site.gdeurl}}frontend-dev-guide/layouts/layout-extend.html) or [override]({{site.gdeurl}}frontend-dev-guide/layouts/layout-override.html) these files in your custom theme. 
+
+## Layout files types and conventions
+
+### Layout file types: by role
 
 For a particular page, its layout is defined by two major layout components: *page layout* file and *page configuration* file (or *generic layout* for pages returned in AJAX requests, emails, and so on).
 
@@ -75,13 +90,13 @@ The following terms are used to distinguish layouts provided by different applic
 	* Page layout files: `<theme_dir>/<Namespace>_<Module>/page_layout`
 
 
-<h2 id="layout-custom">Customize layout</h2>
+## Customize layout {#layout-custom}
 
 To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento module and theme layouts.
 
 To make the necessary changes, create <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> and <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-override.html" target="_blank">overriding</a> layout files in your custom theme. 
 
-<h2 id="layout_processing">Layout files processing</h2>
+## Layout files processing {#layout_processing}
 
 
 The Magento application processes layout files in the following order:
@@ -103,7 +118,7 @@ The Magento application processes layout files in the following order:
 
 
 
-#### Related topics:
+## Related topics
 
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-manage.html" target="_blank">Common layout customization tasks</a>

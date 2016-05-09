@@ -38,7 +38,7 @@ Add the following two lines:
 
 	...
 	fastcgi_param  MAGE_RUN_TYPE website;
-	fastcgi_param  MAGE_RUN_CODE $MAGE_RUN_MODE;
+	fastcgi_param  MAGE_RUN_CODE $MAGE_RUN_CODE;
 	...
 
 Step 3: Reload your nginx configuration as a user with `root` privileges:

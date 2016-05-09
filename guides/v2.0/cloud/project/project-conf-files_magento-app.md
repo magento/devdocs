@@ -29,12 +29,12 @@ Magento Enterprise Cloud Edition supports multiple applications per project but 
 
 This file controls the application and the way it is built and deployed on Magento Enterprise Cloud Edition.
 
-[Sample `.magento.app.yaml`](https://github.com/platformsh-redbull/mc-base/blob/master/.magento.app.yaml){:target="_blank"}
+[Sample `.magento.app.yaml`](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml){:target="_blank"}
 
 The following sections discuss properties in `.magento.app.yaml`.
 
 ## Defaults {#cloud-yaml-default}
-`.magento.app.yaml` has many default values; see the [sample `.magento.app.yaml`](https://github.com/platformsh-redbull/mc-base/blob/master/.magento.app.yaml){:target="_blank"}.
+`.magento.app.yaml` has many default values; see the [sample `.magento.app.yaml`](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml){:target="_blank"}.
 
 ## `name` property {#name}
 `name` identifies the application in the project. Magento Enterprise Cloud Edition

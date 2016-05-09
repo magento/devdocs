@@ -38,6 +38,9 @@ If you use `pub` as your Magento root directory, you can do any of the following
 To upgrade using the command line:
 
 1.	Log in to your Magento server as, or switch to, the Magento file system owner.
+2.	Disable the cache:
+
+		php <your Magento install dir>/bin/magento cache:disable
 2.	Change to the directory in which you installed the Magento software.
 
 	For example, `cd /var/www/html/magento2`
@@ -60,7 +63,7 @@ To upgrade using the command line:
   		<p>If an error displays about a missing <code>.gitignore</code> files, see the <a href="{{ site.gdeurl }}release-notes/tech_bull_201-upgrade.html#resolution2">Technical Bulletin (1/28/16)</a>.</p>
 	</div>
 
-3.	If prompted, enter your [authentication keys]({{ site.gdeurl }}).
+3.	If prompted, enter your [authentication keys]({{ site.gdeurl }}comp-mgr/prereq/prereq_auth-token.html).
 4. Update the database schema and data:
 
 		php bin/magento setup:upgrade

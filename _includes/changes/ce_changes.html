@@ -170,6 +170,10 @@
         <td>Class was removed.</td>
     </tr>
     <tr>
+        <td>Magento\Catalog\Model\Webapi\Product\Option\Type\File\Validator</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
         <td>Magento\Catalog\Model\ResourceModel\Product\Attribute\Backend\Media</td>
         <td>Class was removed.</td>
     </tr>
@@ -506,6 +510,14 @@
         <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
+        <td>Magento\Framework\Search\Adapter\Mysql\Filter\Builder\Range::CONDITION_NEGATION_PART_GREATER_THAN</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Adapter\Mysql\Filter\Builder\Range::CONDITION_NEGATION_PART_LOWER_THAN</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\Pricing\Render\PriceBox::DEFAULT_LIFETIME</td>
         <td>Constant has been added.</td>
     </tr>
@@ -555,6 +567,10 @@
     </tr>
     <tr>
         <td>Magento\Framework\Config\ConfigOptionsListConstants::SESSION_SAVE_REDIS</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Composer\ComposerInformation::COMPOSER_DEFAULT_REPO_KEY</td>
         <td>Constant has been added.</td>
     </tr>
     <tr>
@@ -2022,6 +2038,18 @@
         <td>Constant has been added.</td>
     </tr>
     <tr>
+        <td>Magento\Paypal\Block\Express\Shortcut::__construct</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Paypal\Block\Express\Shortcut::$_paypalData</td>
+        <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Paypal\Block\Express\Shortcut::$currentCustomer</td>
+        <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
         <td>Magento\Paypal\Block\Adminhtml\System\Config\Field\Hidden::_decorateRowHtml</td>
         <td>[protected] Method parameter changed.</td>
     </tr>
@@ -2206,6 +2234,10 @@
         <td>Constant has been added.</td>
     </tr>
     <tr>
+        <td>Magento\GroupedProduct\Pricing\Price\ConfiguredPrice::getAmount</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
         <td>Magento\GroupedProduct\Model\ResourceModel\Product\Link::saveGroupedLinks</td>
         <td>[public] Method has been removed.</td>
     </tr>
@@ -2224,6 +2256,14 @@
     <tr>
         <td>Magento\GroupedProduct\Controller\Adminhtml\Edit\Popup::ADMIN_RESOURCE</td>
         <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftMessage\Model\Plugin\OrderGet::aroundGet</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftMessage\Model\Plugin\OrderSave::aroundSave</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\EncryptionKey\Model\ResourceModel\Key\Change::__construct</td>
@@ -2262,58 +2302,6 @@
         <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
-        <td>Magento\Downloadable\Model\LinkRepository::saveLink</td>
-        <td>[protected] Method has been removed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Downloadable\Model\LinkRepository::updateLink</td>
-        <td>[protected] Method has been removed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Downloadable\Model\LinkRepository::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Downloadable\Model\LinkRepository::$linkDataObjectFactory</td>
-        <td>[protected] Property has been removed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Downloadable\Model\LinkRepository::$fileContentUploader</td>
-        <td>[protected] Property has been removed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Downloadable\Model\LinkRepository::$jsonEncoder</td>
-        <td>[protected] Property has been removed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Downloadable\Model\SampleRepository::saveSample</td>
-        <td>[protected] Method has been removed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Downloadable\Model\SampleRepository::updateSample</td>
-        <td>[protected] Method has been removed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Downloadable\Model\SampleRepository::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Downloadable\Model\SampleRepository::$downloadableType</td>
-        <td>[protected] Property has been removed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Downloadable\Model\SampleRepository::$sampleDataObjectFactory</td>
-        <td>[protected] Property has been removed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Downloadable\Model\SampleRepository::$fileContentUploader</td>
-        <td>[protected] Property has been removed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Downloadable\Model\SampleRepository::$jsonEncoder</td>
-        <td>[protected] Property has been removed.</td>
-    </tr>
-    <tr>
         <td>Magento\Downloadable\Model\Product\Type::save</td>
         <td>[public] Method has been removed.</td>
     </tr>
@@ -2328,10 +2316,6 @@
     <tr>
         <td>Magento\Downloadable\Model\Product\TypeHandler\Sample::IDENTIFIER_KEY</td>
         <td>Constant has been added.</td>
-    </tr>
-    <tr>
-        <td>Magento\Downloadable\Controller\Adminhtml\Product\Initialization\Helper\Plugin\Downloadable::__construct</td>
-        <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
         <td>Magento\Downloadable\Controller\Adminhtml\Downloadable\File::_isAllowed</td>
@@ -2376,6 +2360,10 @@
     <tr>
         <td>Magento\CustomerImportExport\Model\Import\Address::COLUMN_POSTCODE</td>
         <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Observer\AfterAddressSaveObserver::__construct</td>
+        <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
         <td>Magento\Customer\Model\AccountManagement::XML_PATH_MINIMUM_PASSWORD_LENGTH</td>
@@ -3510,6 +3498,18 @@
         <td>[public] Method has been added.</td>
     </tr>
     <tr>
+        <td>Magento\Cms\Api\Data\PageInterface::getMetaTitle</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Cms\Api\Data\PageInterface::setMetaTitle</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Cms\Api\Data\PageInterface::META_TITLE</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
         <td>Magento\Catalog\Api\CategoryLinkManagementInterface::assignProductToCategories</td>
         <td>[public] Method has been added.</td>
     </tr>
@@ -3682,6 +3682,18 @@
         <td>Constant has been added.</td>
     </tr>
     <tr>
+        <td>Magento\Cms\Api\Data\PageInterface::getMetaTitle</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Cms\Api\Data\PageInterface::setMetaTitle</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Cms\Api\Data\PageInterface::META_TITLE</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
         <td>Magento\CatalogImportExport\Model\Import\Product\RowValidatorInterface::ERROR_DUPLICATE_URL_KEY</td>
         <td>Constant has been added.</td>
     </tr>
@@ -3768,6 +3780,10 @@
     <tr>
         <td>Magento\Catalog\Api\Data\ProductAttributeInterface::CODE_WEIGHT</td>
         <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Config\DesignResolverInterface</td>
+        <td>Interface was added.</td>
     </tr>
     <tr>
         <td>Magento\Vault\Model\VaultPaymentInterface</td>
