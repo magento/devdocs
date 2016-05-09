@@ -49,11 +49,13 @@ ADD DIAGRAM OR ILLUSTRATION <p><img src="{{ site.baseurl }}common/images/NAME_OF
 
 ### Examples
 {% collapsible Click to show/hide content %}
-  <p>To use the collapsible content functionality, you must use a container with the class name "collapsible". Clickable titles must have the class name "collapsible-title". The next immediate element of the clickable title will be the hidden content.</p>
+To use the collapsible content functionality, you can use the `collapsible` block tag. Any content inside this block will be hidden until the header text is clicked.
+
+See the markdown version of this file for examples.
 {% endcollapsible %}
 
 {% collapsible Click to show/hide image %}
-  ![This is an image]({{ site.baseurl }}common/images/connect_keys2.png)
+![This is an image]({{ site.baseurl }}common/images/connect_keys2.png)
 {% endcollapsible %}
 
 {% collapsible HTML Table %}
@@ -101,7 +103,7 @@ ADD DIAGRAM OR ILLUSTRATION <p><img src="{{ site.baseurl }}common/images/NAME_OF
 {% include mtf/page-generator.html %}
 {% endcollapsible %}
 
-{% collapsible Collapsible HTML Code %}
+{% collapsible Collapsible Code Examples%}
 
 **Normal Markdown**
 
