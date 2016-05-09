@@ -109,4 +109,4 @@ where:
 
 ####Next
 
-[Component load order]({{ site.gdeurl }}extension-dev-guide/build/module-load-order.html)
+[Component load order]({{ site.gdeurl21 }}extension-dev-guide/build/module-load-order.html)

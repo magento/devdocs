@@ -86,4 +86,4 @@ ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Magento_AdminNotificat
 {%endhighlight %}
 
 ####Next
-[URN schema validation]({{ site.gdeurl }}extension-dev-guide/build/XSD-XML-validation.html)
+[URN schema validation]({{ site.gdeurl21 }}extension-dev-guide/build/XSD-XML-validation.html)

@@ -433,7 +433,7 @@ You must observe the following rules:
 *    If a business function of an injectable object is to produce non-injectables, the injectable must ask for a <a href="#dep-inj-mod-type-fact">factory</a> in its constructor (due to the fact that factories are injectables)
 *    If a business function of an injectable object is to perform some actions on a non-injectable, it must receive the non-injectable as a method argument
 
-You can create non-injectables in services with object <a href="{{ site.gdeurl }}extension-dev-guide/factories.html">factories</a> or you can pass them in as method parameters.
+You can create non-injectables in services with object <a href="{{ site.gdeurl21 }}extension-dev-guide/factories.html">factories</a> or you can pass them in as method parameters.
 
 Do not push injectables to non-injectables because it violates the <a href="http://en.wikipedia.org/wiki/Law_of_Demeter" target="_blank">Law of Demeter</a> and requires additional lookup during object unserialization.
 
