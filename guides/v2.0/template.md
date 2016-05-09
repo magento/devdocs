@@ -48,105 +48,98 @@ ADD DIAGRAM OR ILLUSTRATION <p><img src="{{ site.baseurl }}common/images/NAME_OF
 ## Collapsible Content
 
 ### Examples
-<div class="collapsible">
-  <h4 class="collapsible-title">Click to show/hide content</h4>
+{% collapsible Click to show/hide content %}
   <p>To use the collapsible content functionality, you must use a container with the class name "collapsible". Clickable titles must have the class name "collapsible-title". The next immediate element of the clickable title will be the hidden content.</p>
-</div>
+{% endcollapsible %}
 
-<!-- Please note the `markdown="1"` property in the collapsible container for this example. -->
-<div class="collapsible" markdown="1">
-  <h4 class="collapsible-title">Click to show/hide Image</h4>
+{% collapsible Click to show/hide image %}
   ![This is an image]({{ site.baseurl }}common/images/connect_keys2.png)
-</div>
+{% endcollapsible %}
 
-<div class="collapsible">
-  <h4 class="collapsible-title">Click to show/hide HTML Table</h4>
-  <table>
-    <tbody>
-      <tr>
-        <th>Col 1</th>
-        <th>Col 2</th>
-        <th>Col 3</th>
-      </tr>
-      <tr>
-        <td>Data 1</td>
-        <td>Data 2</td>
-        <td>Data 3</td>
-      </tr>
-      <tr>
-        <td>Data 4</td>
-        <td>Data 5</td>
-        <td>Data 6</td>
-      </tr>
-      <tr>
-        <td>Data 7</td>
-        <td>Data 8</td>
-        <td>Data 9</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+{% collapsible HTML Table %}
+<table>
+  <tbody>
+    <tr>
+      <th>Col 1</th>
+      <th>Col 2</th>
+      <th>Col 3</th>
+    </tr>
+    <tr>
+      <td>Data 1</td>
+      <td>Data 2</td>
+      <td>Data 3</td>
+    </tr>
+    <tr>
+      <td>Data 4</td>
+      <td>Data 5</td>
+      <td>Data 6</td>
+    </tr>
+    <tr>
+      <td>Data 7</td>
+      <td>Data 8</td>
+      <td>Data 9</td>
+    </tr>
+  </tbody>
+</table>
+{% endcollapsible %}
 
-<!-- Please note the `markdown="1"` property in the collapsible container for this example. -->
-<div class="collapsible" markdown="1">
-  <h4 class="collapsible-title">Markdown Table</h4>
+{% collapsible Markdown Table %}
+| Col 1  | Col 2  | Col 3  |
+| :----: | :----: | :----: |
+| Data 1 | Data 2 | Data 3 |
+| Data 4 | Data 5 | Data 6 |
+| Data 7 | Data 8 | Data 9 |
+{% endcollapsible %}
 
-  | Col 1  | Col 2  | Col 3  |
-  | :----: | :----: | :----: |
-  | Data 1 | Data 2 | Data 3 |
-  | Data 4 | Data 5 | Data 6 |
-  | Data 7 | Data 8 | Data 9 |
-
-</div>
-
-<!-- Please note the `markdown="1"` property in the collapsible container for this example. -->
-<div class="collapsible" markdown="1">
-  <h4 class="collapsible-title">Click to show/hide list</h4>
-
+{% collapsible Click to show/hide list %}
 * List Item 1
 * List Item 2
 * List Item 3
+{% endcollapsible %}
 
-</div>
+{% collapsible Click to show/hide included content %}
+{% include mtf/page-generator.html %}
+{% endcollapsible %}
 
-<!-- We will wrap the included content in a div tag to make sure it will be hidden -->
-<div class="collapsible">
-  <h4 class="collapsible-title">Click to show/hide included content</h4>
-  <div>
-    {% include mtf/page-generator.html %}
-  </div>
-</div>
+{% collapsible Collapsible HTML Code %}
 
-<div class="collapsible">
-  <span class="collapsible-title">Highlighted Code Example</span>
-  {% highlight html %}
-  <div class="collapsible">
-    <h4 class="collapsible-title">Collapsible Title</h4>
-    <p>Put collapsible content here.</p>
-  </div>
-  {% endhighlight %}
-</div>
-
-<!-- Please note the markdown="1" property in the collapsible container for this example. -->
-<div class="collapsible" markdown="1">
-  <h4 class="collapsible-title">Markdown Code Example</h4>
+**Normal Markdown**
 
 ~~~
 <div class="collapsible">
   <h4 class="collapsible-title">Collapsible Title</h4>
-  <p>Put collapsible content here.</p>
+  <div class="collapsible-content">
+    <p>Put collapsible content here.</p>
+  </div>
 </div>
 ~~~
 
+**Highlighted Code**
+
+{% highlight html %}
+<div class="collapsible">
+  <h4 class="collapsible-title">Collapsible Title</h4>
+  <div class="collapsible-content">
+    <p>Put collapsible content here.</p>
+  </div>
 </div>
+{% endhighlight %}
+{% endcollapsible %}
+
 
 ### Collapsible Group
 
 <div class="collapsible">
   <h4 class="collapsible-title">Collapsible Topic 1</h4>
-  <p>You can have multiple title-content pairs in a collapsible container.</p>
+  <div class="collapsible-content">
+    <p>You can have multiple title-content pairs in a collapsible container.</p>
+  </div>
   <h4 class="collapsible-title">Collapsible Topic 2</h4>
-  <p>Each content is controlled by its preceding title. </p>
+  <div class="collapsible-content">
+    <p>Each content is controlled by its preceding title. </p>
+  </div>
   <h4 class="collapsible-title">Collapsible Topic 3</h4>
-  <p>Clicking on each title will open its corresponding content and close any open contents.</p>
+  <div class="collapsible-content">
+    <p>Clicking on each title will open its corresponding content and close any open contents.</p>
+  </div>
 </div>
