@@ -1,15 +1,16 @@
 <div markdown="1">
 
 ## Marketing announcement
-Starting with Magento 2.0.6, Magento provides a more flexible way for you to set file ownership and permissions. Instead of setting permissions explicitly, we enable you to create a file named `mage_umask` in your Magento root directory. By default, the umask is `002`, which means that files have 775 permissions and directories have 664 permissions.
+Starting with version 2.0.6, Magento provides a more flexible way for you to set file ownership and permissions. Instead of setting permissions explicitly, we enable you to create a file named `mage_umask` in your Magento root directory. By default, the umask is `002`, which means that directories have 775 permissions and files have 664 permissions.
 
-For more details, see [Magento file system ownership and permissions]({{ site.gdeurl }}install-gde/prereq/apache-user.html).
+For more details, see <a href="http://devdocs.magento.com/prereq/apache-user.html">Magento file system ownership and permissions</a>.
 
 
-Don't set specific file/dir permissions
 
-mage_umask
+In addition to these security updates, the release enables you to use <a href="http://devdocs.magento.com/guides/v2.0/config-guide/redis/config-redis.html">Redis for session storage</a> and fixed the file permission issue by providing a more flexible way for you to set file ownership and permissions. Instead of setting permissions explicitly, we enable you to create a file named `mage_umask` in your Magento root directory. By default, the umask is `002`, which means that directories have 775 permissions and files have 664 permissions.
 
+For more details, see <a href="http://devdocs.magento.com/prereq/apache-user.html">Magento file system ownership and permissions</a>.
+Full details on the functional enhancements will be included in the release notes for Enterprise Edition and Community Edition; more information on the security updates will be available on the Magento Security Center on Wednesday.....
 
 
 ## Overview of ownership and permissions {#umask-over}
