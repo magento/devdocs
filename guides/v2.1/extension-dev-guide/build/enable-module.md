@@ -1,17 +1,17 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 3_Build
-title: Enable a component
-menu_title: Enable a component
+subgroup: 03_Build
+title: Enable or disable your component
+menu_title: Enable or disable your component
 menu_order: 9
-github_link: extension-dev-guide/enable-module.md
+github_link: extension-dev-guide/build/enable-module.md
 
 ---
 ##{{page.menu_title}}
 
-After you have built the component and are ready to enable it in your Magento environment, do the following: 
- 
+After you have built the component and are ready to enable it in your Magento environment, do the following:
+
 <ol>
 <li>Disable the cache under <code>System->Cache Management</code>.</li>
 <li>Enter the following at the command line:

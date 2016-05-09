@@ -1,16 +1,16 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 3_Build
+subgroup: 03_Build
 title: Define your configuration files
 menu_title: Define your configuration files
 menu_order: 3
-github_link: extension-dev-guide/required-configuration-files.md
+github_link: extension-dev-guide/build/required-configuration-files.md
 ---
 
 ##{{page.menu_title}}
 
-Each Magento 2 module has its own set of configuration files, gathered into the module's `etc/` directory.  
+Each Magento 2 module has its own set of configuration files, gathered into the module's `etc` directory.  
 
 <div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
@@ -25,11 +25,11 @@ Each Magento 2 module has its own set of configuration files, gathered into the 
 
 Magento 2 looks for configuration information for each module in that module's `etc` directory. Depending on the needs of your module, you might have the following configuration files at the top level of your module's `etc` directory:
 
-* acl.xml
-* config.xml
-* di.xml
-* module.xml
-* webapi.xml
+* `acl.xml`
+* `config.xml`
+* `di.xml`
+* `module.xml`
+* `webapi.xml`
 
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -73,8 +73,6 @@ If the module is a service that may call an API, or does some other work that is
 Keep in mind that you might be able to handle your module's configuration solely with configuration files at the top level of your module's `etc` directory, but the nested directory is a useful way to keep the configuration neatly compartmentalized.
 
 
-##Next
+####Next
 
-[Component registration](component-registration.html)
-
-
+[Create your component file structure]({{site.gdeurl21}}extension-dev-guide/build/module-file-structure.html)
