@@ -19,12 +19,12 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 <h3>Fixed issues</h3>
 
 
-<!-- 51807 -->You can now use the Redis adapter to provide session storage in Magento 2.0.6. 
+<!-- 51807 -->* You can now use the Redis adapter to provide session storage in Magento 2.0.6. (51807)
 
 
-<!-- 46287 -->* You can now use Redis for session storage without modifying the <code>php.ini</code> file. You can also lock session storage to prevent simultaneous write access. 
+<!-- 46287 -->* You can now use Redis for session storage without modifying the <code>php.ini</code> file. You can also lock session storage to prevent simultaneous write access. (46287)
 
-<!-- 52322 --> permissions -- Steve will supply
+<!-- 52322 --> * permissions -- Steve will supply (52322)
 
 
 
@@ -33,36 +33,36 @@ This release includes  enhancements to improve the security of your Magento 2.0 
 
 The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the <a href="https://magento.com/security" target="_blank">Magento Security Center</a>. 
 
-<!-- 50955 -->* Application error messages no longer include the path to the file where the error occurred. Previously, when an unhanded exception occurred,  Magento would display an error message that could disclose sensitive information such as the location of the file that produced the unhandled exception. A malicious user could use this information to launch attacks against the application. 
+<!-- 50955 -->* Application error messages no longer include the path to the file where the error occurred. Previously, when an unhanded exception occurred,  Magento would display an error message that could disclose sensitive information such as the location of the file that produced the unhandled exception. A malicious user could use this information to launch attacks against the application. (50955)
 
 
-<!-- 51808 -->*  Magento no longer allows authenticated customers to change other customers' account information using either SOAP or REST calls.  Magento  now confirms that the ID of the customer whose account is being edited matches the authentication token in use. Previously, a malicious user could hijack a customer account by logging in as an authenticated user, then editing the account of any other user.  (The SOAP and REST APIs are enabled by default in most installations.)
+<!-- 51808 -->*  Magento no longer allows authenticated customers to change other customers' account information using either SOAP or REST calls.  Magento  now confirms that the ID of the customer whose account is being edited matches the authentication token in use. Previously, a malicious user could hijack a customer account by logging in as an authenticated user, then editing the account of any other user.  (The SOAP and REST APIs are enabled by default in most installations.)(51808)
 
-<!-- 51390 -->* Anonymous users can no longer retrieve the private data of registered customers. To prevent malicious attacks of this type, the <code>quote_id_mask</code> table of the Quote API no longer includes a <code>cart id mask</code> value. 
-
-
-<!-- 52187 -->Magento now works as expected when a user with minimum privileges logs in. For example, if a user with limited system privilege (for example,  access to the Admin dashboard only) had previously logged in, the Magento instance would not work. 
+<!-- 51390 -->* Anonymous users can no longer retrieve the private data of registered customers. To prevent malicious attacks of this type, the <code>quote_id_mask</code> table of the Quote API no longer includes a <code>cart id mask</code> value. (51390)
 
 
-<!-- 51806 -->*  Magento no longer permits an unauthenticated user to remotely execute code on the server through APIs. Previously, an unauthenticated user could remotely execute PHP code on the server using either REST or SOAP APIs. (These APIs are enabled by default in most installations.) 
-
-<!-- 51807 -->*  The Magento installation code is no longer accessible once the installation process has completed. Previously, an unauthenticated user could execute PHP code on the server because the installation process would leave the <code>/app/etc</code> directory writeable, and many administrators would not change the permissions on this directory after installation. (During installation, the system requires the <code>/app/etc</code> directory to be writeable.)
-
-<!-- 51292 -->When an integration is created, Magento now bases the OAuth consumer key expiration from when the token exchange begins instead of when the consumer key is created. <a href="https://github.com/magento/magento2/issues/3449" target="_blank">(GITHUB-3449)</a>
-
-<!-- 51392 -->Only a registered customer can assign a guest cart to himself. Previously, an anonymous user could modify the state  (that is, set an active quote) of a registered customer. 
+<!-- 52187 -->* Magento now works as expected when a user with minimum privileges logs in. For example, if a user with limited system privilege (for example,  access to the Admin dashboard only) had previously logged in, the Magento instance would not work. (52187)
 
 
-<!-- 51370 -->
+<!-- 51806 -->*  Magento no longer permits an unauthenticated user to remotely execute code on the server through APIs. Previously, an unauthenticated user could remotely execute PHP code on the server using either REST or SOAP APIs. (These APIs are enabled by default in most installations.) (51806)
+
+<!-- 51807 -->*  The Magento installation code is no longer accessible once the installation process has completed. Previously, an unauthenticated user could execute PHP code on the server because the installation process would leave the <code>/app/etc</code> directory writeable, and many administrators would not change the permissions on this directory after installation. (During installation, the system requires the <code>/app/etc</code> directory to be writeable.)(51807)
+
+<!-- 51292 -->* When an integration is created, Magento now bases the OAuth consumer key expiration from when the token exchange begins instead of when the consumer key is created. <a href="https://github.com/magento/magento2/issues/3449" target="_blank">(GITHUB-3449)</a>(51292)
+
+<!-- 51392 -->* Only a registered customer can assign a guest cart to himself. Previously, an anonymous user could modify the state  (that is, set an active quote) of a registered customer. (51392)
 
 
-<!-- 48562 -->Magento now provides an optional method of enabling maintenance mode at the web server level. You can update your web server configuration file to re-route all traffic to a System Upgrade page message while the shop is offline during the upgrade. Magento provides a default maintenance message, but you can also create your own message. <a href="https://github.com/magento/magento2/issues/3191" target="_blank">(GITHUB-3191)</a>
+<!-- 51370 -->(51370)
 
 
-<!-- 51376 -->
+<!-- 48562 -->* Magento now provides an optional method of enabling maintenance mode at the web server level. You can update your web server configuration file to re-route all traffic to a System Upgrade page message while the shop is offline during the upgrade. Magento provides a default maintenance message, but you can also create your own message. <a href="https://github.com/magento/magento2/issues/3191" target="_blank">(GITHUB-3191)</a>(48562)
 
 
-<!-- 51461 -->Several parameters in the Authorize.net payment module are vulnerable to reflected Cross-Site Scripting (XSS) attacks. Existing protection against such malicious parameters is not enough to stop all types of attacks.
+<!-- 51376 -->(51376)
+
+
+<!-- 51461 -->* Several parameters in the Authorize.net payment module are vulnerable to reflected Cross-Site Scripting (XSS) attacks. Existing protection against such malicious parameters is not enough to stop all types of attacks.(51461)
 
 
 <h3>System requirements</h3>
