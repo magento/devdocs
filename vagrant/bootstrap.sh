@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
 
-# Specify all parameters
-RUBY_VERSION=2.1.7
+# Customization parameters
+RUBY_VERSION=2.2
 RVM_PATH=/usr/local/rvm
+GEMS=bundler
 
 # Get information on the newest versions of Ubuntu packages
 sudo apt-get update
 
 # Install Ubuntu packages
-sudo apt-get install build-essential nodejs git -y
+sudo apt-get install nodejs -y
 
 # Install Ruby
 if [ ! -e $RVM_PATH ]; then
@@ -21,12 +22,14 @@ source $RVM_PATH/scripts/rvm
 rvm use --install $RUBY_VERSION --default
 
 # Install gems
-gem install github-pages -v 76
-gem install pygments.rb
+gem install $GEMS
 
 # Clean up
 sudo apt-get autoremove -y
 
-# Run Jekyll
+# Install gems and dependencies from Gemfile
+cd /jekyll/devdocs
+bundle install
 
+# Run devdocs in Jekyll
 cd /jekyll/devdocs && jekyll serve --host=0.0.0.0

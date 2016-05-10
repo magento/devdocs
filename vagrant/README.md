@@ -26,6 +26,7 @@ You can change the following parameters in `Vagrantfile`
 - `NAME` is a name of virtual machine (default: "magento.devdocs").
 - `HOST_PORT` is a localhost port that enables you to observe the generated site from your host (default: "4000"). 
 - `RAM` is a RAM size on virtual machine (default:  "1024" MB).
+- `CPU` is a maximum percentage of a CPU used on your machine for VM needs. (default: "50" percent)
 
 ## Useful CLI scripts and commands
 
