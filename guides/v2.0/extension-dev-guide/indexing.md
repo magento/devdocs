@@ -81,7 +81,7 @@ Each index can perform the following types of reindex operations:
 
 	Full reindexing can be caused by a variety of things, including creating a new web store or new customer group.
 
-	You can optionally fully reindex at any time using the <a href="#m2devgde-indexing-commandline">command line</a>.
+	You can optionally fully reindex at any time using the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-index.html">command line</a>.
 
 *	Partial reindex, which means rebuilding the database tables only for the things that changed (for example, changing a single product attribute or price).
 
@@ -119,7 +119,7 @@ The following figure shows an example of setting indexers to Update by Schedule.
 
 <p><img src="{{ site.baseurl }}common/images/index_index-modes.png" width="600px" alt="Changing indexer modes"></p>
 
-You can also reindex from the <a href="#m2devgde-indexing-commandline">command line</a>.
+You can also reindex from the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-index.html">command line</a>.
 
 <h3 id="m2devgde-indexing-how">How to reindex</h3>
 You can reindex in any of the following ways:
