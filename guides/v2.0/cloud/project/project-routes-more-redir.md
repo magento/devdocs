@@ -4,7 +4,7 @@ group: cloud
 subgroup: 07_project
 title: Redirects
 menu_title: Redirects
-menu_order: 17
+menu_order: 18
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: routes
@@ -71,7 +71,7 @@ Required, a partial (`"/destination"` or `"//destination"`) or full URL (`"http:
 
 ### `regexp` {#cloud-route-partial-regexp}
 Optional, defaults to `false`. Specifies whether the path key should be interpreted as
-   a PCRE regular expression. In the following example, a request to `http://example.com/regexp/a/b/c/match` redirectS to `http://example.com/a/b/c`:
+   a PCRE regular expression. In the following example, a request to `http://example.com/regexp/a/b/c/match` redirects to `http://example.com/a/b/c`:
 
 {% highlight yaml %}
 

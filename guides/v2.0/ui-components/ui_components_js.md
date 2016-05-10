@@ -25,7 +25,7 @@ A UI component's behavior, configuration and structure is defined by the followi
 
  - The available configuration options and methods for components of a certain type, defined in the component's .js file.
 
- - The actual configuration and structure of a particular component, specified in the component's configuration `.xml` file, in the scope of the `<argument></argument>` node. The configuration file also extends properties, specifies the component'stemplate and the path to the component's `.js` file.
+ - The actual configuration and structure of a particular component, specified in the component's configuration `.xml` file, in the scope of the `<argument></argument>` node. The configuration file also extends properties, specifies the component's template and the path to the component's `.js` file.
 
 All these properties, options, and methods are available in the component template's scope.
 

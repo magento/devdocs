@@ -1,10 +1,10 @@
 ---
 layout: default
 group: cloud
-subgroup: 02_before
+subgroup: 04_setup
 title: Set up a Magento workspace
 menu_title: Set up a Magento workspace
-menu_order: 6
+menu_order: 2
 menu_node: 
 github_link: cloud/before/before-workspace.md
 ---
@@ -23,6 +23,8 @@ To be able to manage your projects, environments, and services, you must set up 
 *	Branch and merge in your project
 *	Push changes to the parent branch
 *	Pull changes from the parent branch
+
+This guide assumes you're working on a UNIX system or in a UNIX shell environment. On Windows, you can use a UNIX environment like Cygwin or you can use Putty. The tool you use is up to you.
 
 ## Install the CLI (Command Line Interface) {#cloud-ssh-cli-cli-install}
 The CLI is equivalent to the Web Interface. It will help you manage your projects on Magento Enterprise Cloud Edition.
@@ -62,7 +64,7 @@ If you already have SSH keys, you can skip the next section and continue with an
 *	[Import an existing Magento project]({{ site.gdeurl }}cloud/access-acct/first-time-setup_import.html)
 
 ### Create a new SSH keypair
-Use the `ssh-keygen` command to create an SSH keypair. `ssh-keygen` is typically installed on Linux systems. On Windows, you can use a UNIX environment like Cygwin or you can use Putty.
+Use the `ssh-keygen` command to create an SSH keypair. `ssh-keygen` is typically installed on Linux systems. 
 
 For more information:
 

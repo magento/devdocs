@@ -32,7 +32,7 @@ Click **Configure environment** to create and manage [*environments*]({{ site.gd
 
 ![Access your project]({{ site.baseurl }}common/images/cloud_project-env.png){:width="450px"}
 
-This displays the following page, which enables you to configure [settings]({{ site.gdeurl }}cloud/admin/admin-project-settings.html), [variables]({{ site.gdeurl }}cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-rel), [routes]({{ site.gdeurl }}cloud/project/project-conf-files_routes.html), and [users]({{ site.gdeurl }}cloud/admin/admin-user-admin.html).
+This displays the following page, which enables you to configure settings, [variables]({{ site.gdeurl }}cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-rel), [routes]({{ site.gdeurl }}cloud/project/project-conf-files_routes.html), and [users]({{ site.gdeurl }}cloud/admin/admin-user-admin.html).
 
 ![configure environments]({{ site.baseurl }}common/images/cloud_project-conf-env.png){:width="450px"}
 

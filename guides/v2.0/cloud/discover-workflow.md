@@ -11,7 +11,7 @@ github_link: cloud/discover-workflow.md
 
 ## Workflow
 Everything in Magento Enterprise Cloud Edition is Git-driven. Not only the code, but also the
-infrastructure. A *project* is your Magento store. A project contains multiple *environments*, which are your Magento websites. But also, an environment is a Git branch.
+infrastructure. A project contains multiple *environments*, which are Git branches.
 
 Every branch enables you to develop features, test, or fix bugs, just like you normally do in development. Not only that, every pull request to a branch is a separate staging system you can view in a browser and test using command-line or other automated test tools.
 
