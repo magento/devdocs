@@ -2,7 +2,7 @@
 layout: default
 group: testing
 title: Magento Testing Guide
-github_link: test/qa.md
+github_link: test/testing.md
 ---
 
 ## Magento Testing Guide
