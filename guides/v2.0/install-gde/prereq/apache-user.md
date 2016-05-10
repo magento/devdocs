@@ -2,8 +2,8 @@
 layout: default
 group: install_pre
 subgroup: Prerequisites
-title: Magento file system ownership and permissions
-menu_title: Magento file system ownership and permissions
+title: Set Magento file system ownership and permissions
+menu_title: Set Magento file system ownership and permissions
 menu_node:
 menu_order: 17
 level3_menu_node: level3child
@@ -18,12 +18,12 @@ github_link: install-gde/prereq/apache-user.md
 *	[Switch to the Magento file system owner](#install-update-depend-user-switch)
 
 ## Magento file system ownership and permissions {#mage-owner}
-This section discusses how to set up the owner or owners of the Magento file system. Before you continue, make sure you know how many owners to set up as discussed in [Overview of file system ownership and permissions]({{ site.gdeurl }}install-gde/prereq/apache-user-over.html).
+This section discusses how to set up the owner or owners of the Magento file system. Before you continue, review the concepts discussed in [Overview of file system ownership and permissions]({{ site.gdeurl }}install-gde/prereq/apache-user-over.html).
 
-*	Set up one Magento file system owner if you're using shared hosting or another environment where there is one user account for both login and for the web server
-*	Set up two Magento file system owners if you cannot log in to your Magento server as, or switch to, the web server user
+*	Set up [one Magento file system owner](#mage-owner-one) if you're using shared hosting or another environment where there is one user account for both login and for the web server
+*	Set up [two Magento file system owners](#mage-owner-two) if you cannot log in to your Magento server as, or switch to, the web server user
 
-	This type of setup is common in Linux systems that are *not* shared; in other words, if you have your own server or a hosting account that provides you with a non-shared server.
+	This type of setup is common in Linux systems that are *not* shared; in other words, if you have your own server or a hosting account that provides you with a private server.
 
 ## Set up one Magento file system owner {#mage-owner-one}
 To use the one-owner setup, you must log in to your Magento server as the same user that runs the web server. This is typical for shared hosting.
@@ -56,10 +56,11 @@ To remove writable permissions to files and directories from the web server user
 		find var vendor lib pub/static pub/media app/etc -type f -exec chmod g-w {} \;
 		find var vendor lib pub/static pub/media app/etc -type d -exec chmod g-w {} \;
 		chmod o-rwx app/etc/env.php
+		chmod u+x bin/magento
 
 	You can optionally enter all the preceding commands as one command:
 
-		find var vendor lib pub/static pub/media app/etc -type f -exec chmod g-w {} \; && find var vendor lib pub/static pub/media app/etc -type d -exec chmod g-w {} \; && chmod o-rwx app/etc/env.php
+		find var vendor lib pub/static pub/media app/etc -type f -exec chmod g-w {} \; && find var vendor lib pub/static pub/media app/etc -type d -exec chmod g-w {} \; && chmod o-rwx app/etc/env.php && chmod u+x bin/magento
 
 	<div class="bs-callout bs-callout-info" id="info">
   		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
@@ -85,7 +86,7 @@ To make files and directories writable so you can update components and upgrade 
 	</div>
 
 ## Set up two Magento file system owners that belong to the same group {#mage-owner-two}
-If you use your own server (including a hosting provider's private server setup), there are two users
+If you use your own server (including a hosting provider's private server setup), there are two users:
 
 *	The web server user, which runs the Magento Admin (including Component Manager and System Upgrade).
 
