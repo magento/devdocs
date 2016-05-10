@@ -25,13 +25,13 @@ Ownership is determined by your hosting setup as follows:
 		This user also needs write permissions to the Magento file system. You give permissions to both users by way of a shared group to which they both belong.
 
 ### Choose file system permissions
-The file sytem permissions you choose should enable you to run Magento and provide security against unwanted access.
+The file sytem permissions you choose should enable you to run Magento and provide security against unwanted access. We provide suggestions and detailed examples in [Magento file system ownership and permissions]({{ site.gdeurl }}install-gde/prereq/apache-user.html).
 
 <div class="bs-callout bs-callout-warning">
     <p>File system security is complex and extremely important. We strongly recommend you consult an experienced system administrator or network administrator before you decide what permissions to set. We provide a mechanism for you to use but a permissions strategy is up to you.</p>
 </div>
 
-We enable you to do set permissions by creating a file named `mage_umask` in your Magento root directory. A umask&mdash;also referred to as a *file system creation mask*&mdash;is a set of bits, each of which restricts how its corresponding permission is set for newly created files.
+To further restrict access, we enable you to set permissions by creating an optional file named `mage_umask` in your Magento root directory. A umask&mdash;also referred to as a *file system creation mask*&mdash;is a set of bits, each of which restricts how its corresponding permission is set for newly created files.
 
 Magento uses a three-bit mask, by default `002`, that you subtract from the UNIX defaults of 666 for files and 777 for directories. 
 
