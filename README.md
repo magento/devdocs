@@ -10,7 +10,7 @@ To preview your work before submitting it to us, you can view the site locally u
 ## Update (May 10, 2016)
 The devdocs site now displays the last modified date of each topic on the right side of the page. This provides you a handy way of seeing what's new on our site.
 
-If you're currently building this site, you must update your Gemfile to include a new Gem, [`jekyll-last-modified-at`](https://github.com/gjtorikian/jekyll-last-modified-at){:target="_blank"}. Otherwise, you cannot run Jekyll locally.
+If you're currently building this site, you must update your Gemfile to include a new Gem, [`jekyll-last-modified-at`](https://github.com/gjtorikian/jekyll-last-modified-at). Otherwise, you cannot run Jekyll locally.
 
 To update your Gemfile, enter the following command at a command prompt:
 
