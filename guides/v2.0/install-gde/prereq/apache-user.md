@@ -20,34 +20,32 @@ github_link: install-gde/prereq/apache-user.md
 ## Magento file system ownership and permissions {#mage-owner}
 This section discusses how to set up the owner or owners of the Magento file system. Before you continue, make sure you know how many owners to set up as discussed in [Overview of file system ownership and permissions (mage_umask)]({{ site.gdeurl }}install-gde/prereq/apache-user-over.html).
 
-## Set up one Magento file system owner {#mage-owner-one}
-This is a simple setup we recommend for anyone who uses Magento in a development environment only or who uses Magento with shared hosting. It's simple to set up but not as secure as the [two-owner setup](#mage-owner-two).
+*	Set up one Magento file system owner if you're using shared hosting or another environment where there is one user account for both login and for the web server
+*	Set up two Magento file system owners if you cannot log in to your Magento server as, or switch to, the web server user
 
-To use the one-owner setup, you must use the web server user account to access your server using Secure Shell (SSH), FTP, or SCP. 
+	This type of setup is common in Linux systems that are *not* shared; in other words, if you have your own server or a hosting account that provides you with a non-shared server.
+
+## Set up one Magento file system owner {#mage-owner-one}
+To use the one-owner setup, you must log in to your Magento server as the same user that runs the web server. This is typical for shared hosting.
 
 ### Set up one owner for default or developer mode {#mage-owner-one-devel}
 To set up one owner for developer mode:
 
-1.	Log in to your Magento server as, or switch to, the web server user.
-2.	Find the group to which the web server user belongs:
-
-		groups <web server user>
-
-	For example, on Ubuntu, the web server user name and group name are both typically `www-data`.
+1.	Log in to your Magento server.
 2.	Set the value of `mage_umask`:
 
-	1.	Use a text editor to open `<your Magento install dir>/.htaccess`
-	2.	Locate `mage_umask` and set it to the desired value.
+	1.	Use a text editor to create a new file `<your Magento install dir>/mage_umask`
+	2.	Set `mage_umask` to the desired value.
 
-		For example, if you set `mage_umask` to `022`, Magento-created files have 775 permissions and Magento-created directories have 664 permissions.
+		For example, if you set `mage_umask` to `022`, Magento-created directories have 755 permissions and Magento-created files have 644 permissions.
 
-		775 permissions means full control for the user and group, and read-write-execute for everyone else.
+		755 permissions means full control for the user, and everyone else can traverse directories.
 
-		664 permissions mean read-write permissions for the user and group, and read-only for everyone else.
-	3.	Save your changes to `.htaccess` and exit the text editor.
+		644 permissions mean read-write permissions for the user, and read-only for everyone else.
+3.	Save your changes to `mage_umask` and exit the text editor.
 
 ### Set up one owner for production mode {#mage-owner-one-prod}
-When you're ready to deploy your site to production, you should remove write access from the following directories for improved security:
+When you're ready to deploy your site to production, you should remove write access from files in the following directories for improved security:
 
 *	`vendor` (Composer or compressed archive installation)
 *	`app/code` (contributing developers only)
@@ -60,16 +58,43 @@ When you're ready to deploy your site to production, you should remove write acc
 
 To update components, install new components, or to upgrade the Magento software, all of the preceding directories must be read-write.
 
-To make a directory and the files it contains read-only:
+#### Make files and directories read-only
+To remove writable permissions to files and directories from the web server user's group:
 
-1.	Log in to your Magento server as, or switch to, the web server user.
-2.	Enter the following command for each directory:
+1.	Log in to your Magento server.
+2.	Change to your Magento installation directory.
+3.	Enter the following commands:
 
-		chmod -R o-rwx <directory path>
+		find var vendor lib pub/static pub/media app/etc -type f -exec chmod g-w {} \;
+		find var vendor lib pub/static pub/media app/etc -type d -exec chmod g-w {} \;
+		chmod o-rwx app/etc/env.php
 
-	For example, if Magento is installed in `/var/www/html/magento2`, make the `app/etc` directory and files read-only using the command:
+	You can optionally enter all the preceding commands as one command:
 
-		chmod 0-rwx /var/www/html/magento2/app/etc
+		find var vendor lib pub/static pub/media app/etc -type f -exec chmod g-w {} \; && find var vendor lib pub/static pub/media app/etc -type d -exec chmod g-w {} \; && chmod o-rwx app/etc/env.php
+
+	<div class="bs-callout bs-callout-info" id="info">
+  		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
+	</div>
+
+#### Make files and directories writable:
+To make files and directories writable so you can update components and upgrade the Magento software:
+
+1.	Log in to your Magento server.
+2.	Change to your Magento installation directory.
+3.	Enter the following commands:
+
+		find var vendor lib pub/static pub/media app/etc -type f -exec chmod g+w {} \;
+		find var vendor lib pub/static pub/media app/etc -type d -exec chmod g+w {} \;
+		chmod o+rwx app/etc/env.php
+
+	You can optionally enter all the preceding commands as one command as follows:
+
+		find var vendor lib pub/static pub/media app/etc -type f -exec chmod g+w {} \; && find var vendor lib pub/static pub/media app/etc -type d -exec chmod g+w {} \; && chmod o+rwx app/etc/env.php
+
+	<div class="bs-callout bs-callout-info" id="info">
+  		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
+	</div>
 
 ## Set up two Magento file system owners that belong to the same group {#mage-owner-two}
 We recommend you have to owners of the Magento file system:
