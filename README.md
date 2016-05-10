@@ -29,7 +29,7 @@ Change to the `devdocs` root directory and enter the following commands to insta
 $ sudo gem install bundler -n /usr/local/bin
 ```
 
-# Build this site {#build}
+# Build this site
 
 To build this site using Jekyll:
 
