@@ -1,7 +1,7 @@
 ---
 layout: default
-group: test-guide
-subgroup: B2_Integration_Test_Setup
+group: integration-testing
+subgroup: 40_Integration_Test_Setup
 title: Preparing Integration Test Execution
 menu_title: Integration Test Setup
 menu_node: parent
