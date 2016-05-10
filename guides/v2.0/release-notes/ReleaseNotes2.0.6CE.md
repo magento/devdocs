@@ -11,7 +11,7 @@ github_link: release-notes/ReleaseNotes2.0.6CE.md
 <h2>Magento Community Edition 2.0.6</h2>
 We are pleased to present Magento Community Edition 2.0.6. This release includes security enhancements as well as several functional fixes.
 
-In addition to these security updates, this release enables you to use <a href="http://devdocs.magento.com/guides/v2.0/config-guide/redis/config-redis.html">Redis for session storage</a> and fixed the file permission issue by providing a more flexible way for you to set file ownership and permissions.  
+Functional features include the ability to use <a href="http://devdocs.magento.com/guides/v2.0/config-guide/redis/config-redis.html">Redis for session storage</a> and a change to our default file permissions strategy that provides a more flexible way to set file ownership and permissions.  
 
 
 Backward-incompatible changes are documented in <a href="http://devdocs.magento.com/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
@@ -27,6 +27,9 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 <!-- 46287 -->* You can now use Redis for session storage without modifying the <code>php.ini</code> file. You can also lock session storage to prevent simultaneous write access. (46287)
 
 <!-- 52322 --> * Starting with Magento 2.0.6, Magento provides a more flexible way for you to set file ownership and permissions. Instead of setting permissions explicitly, we enable you to create a file named `mage_umask` in your Magento root directory. By default, the umask is `002`, which means that files have 775 permissions and directories have 664 permissions.
+
+<!-- 48562 -->* Magento now provides an optional method of enabling maintenance mode at the web server level. You can update your web server configuration file to re-route all traffic to a System Upgrade page message while the shop is offline during the upgrade. Magento provides a default maintenance message, but you can also create your own message. <a href="https://github.com/magento/magento2/issues/3191" target="_blank">(GITHUB-3191)</a>(48562)
+
 
 For more details, see <a href="http://devdocs.magento.com/prereq/apache-user.html">Magento file system ownership and permissions</a>. (52322)
 
@@ -60,7 +63,6 @@ The following list provides an overview of the security issues fixed in this rel
 <!-- 51370 -->* Magento no longer discloses information about its internal path during installation. Previously, a user could try to access the application’s internal path during setup by accessing the  <code>http://mywebsite.com/my-magento-directory/setup/index.php/session</code>  and reading the internal path in the resulting error message. (51370)
 
 
-<!-- 48562 -->* Magento now provides an optional method of enabling maintenance mode at the web server level. You can update your web server configuration file to re-route all traffic to a System Upgrade page message while the shop is offline during the upgrade. Magento provides a default maintenance message, but you can also create your own message. <a href="https://github.com/magento/magento2/issues/3191" target="_blank">(GITHUB-3191)</a>(48562)
 
 
 <!-- 51376 -->* Magento no longer discloses the administrator URL to an unauthenticated user during setup. (51376)
