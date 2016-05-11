@@ -9,7 +9,7 @@ github_link: release-notes/ReleaseNotes2.0.6EE.md
 ---
 
 <h2>Magento Enterprise Edition 2.0.6</h2>
-We are pleased to present Magento Community Edition 2.0.6. This release includes security enhancements as well as several functional fixes.
+We are pleased to present Magento Enterprise Edition 2.0.6. This release includes security enhancements as well as several functional fixes.
 
 Functional features include the ability to use <a href="http://devdocs.magento.com/guides/v2.0/config-guide/redis/config-redis.html">Redis for session storage</a> and a change to our default file permissions strategy that provides a more flexible way to set file ownership and permissions.  
 
