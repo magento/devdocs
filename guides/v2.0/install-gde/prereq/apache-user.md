@@ -2,10 +2,10 @@
 layout: default
 group: install_pre
 subgroup: Prerequisites
-title: Set Magento file system ownership and permissions
-menu_title: Set Magento file system ownership and permissions
+title: Magento ownership and permissions in development and production
+menu_title: Magento ownership and permissions in development and production
 menu_node:
-menu_order: 17
+menu_order: 20
 level3_menu_node: level3child
 level3_subgroup: umask
 github_link: install-gde/prereq/apache-user.md
@@ -247,23 +247,23 @@ To make files and directories writable so you can update components and upgrade 
   		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
 	</div>
 
-## Optionally set `mage_umask`
-`mage_umask` enables you to further restrict permissions for the web server group and everyone else. To use it, create a file named `mage_umask` in your Magento root directory. 
+## Optionally set `magento_umask`
+`magento_umask` enables you to further restrict permissions for the web server group and everyone else. To use it, create a file named `magento_umask` in your Magento root directory. 
 
 To set `umask`:
 
 1.	Log in to your Magento server, or switch to, the Magento file system owner.
-2.	Set the value of `mage_umask`:
+2.	Set the value of `magento_umask`:
 
-	1.	Use a text editor to create a new file `<your Magento install dir>/mage_umask`
-	2.	Set `mage_umask` to the desired value.
+	1.	Use a text editor to create a new file `<your Magento install dir>/magento_umask`
+	2.	Set `magento_umask` to the desired value.
 
-		For example, if you set `mage_umask` to `022`, Magento-created directories have 755 permissions and Magento-created files have 644 permissions.
+		For example, if you set `magento_umask` to `022`, Magento-created directories have 755 permissions and Magento-created files have 644 permissions.
 
 		755 permissions means full control for the user, and everyone else can traverse directories.
 
 		644 permissions mean read-write permissions for the user, and read-only for everyone else.
-3.	Save your changes to `mage_umask` and exit the text editor.
+3.	Save your changes to `magento_umask` and exit the text editor.
 
 ## Switch to the Magento file system owner {#install-update-depend-user-switch}
 After you've performed the other tasks in this topic, enter one of the following commands to switch to that user:

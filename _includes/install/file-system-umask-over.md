@@ -10,7 +10,9 @@ Even in a development environment, you want your Magento installation to be secu
 This topic provides some basic information about our ownership and permissions guidelines. For details, see [Set Magento file system ownership and permissions]({{ site.gdeurl }}install-gde/prereq/apache-user.html).
 
 ### File system ownership
-Ownership is determined by your hosting setup as follows:
+We refer to the *Magento file system owner* as the user who runs command-line commands, the Magento Admin, and other utilities. This user can be either a local user on your Magento server or it can be a user provided to you by your shared hosting provider.
+
+The Magento file system owner is any of the following:
 
 *	*Shared hosting*: Typically, shared hosting providers enable you to log in to the server as one user. This user can log in, transfer files using FTP, and this user also runs the web server. 
 
@@ -29,7 +31,7 @@ The file system permissions you choose should enable you to run Magento and prov
     <p>File system security is complex and extremely important. We strongly recommend you consult an experienced system administrator or network administrator before you decide what permissions to set. We provide a mechanism for you to use but a permissions strategy is up to you.</p>
 </div>
 
-To further restrict access, we enable you to create an optional file named `mage_umask` in your Magento root directory. A umask&mdash;also referred to as a *file system creation mask*&mdash;is a set of bits, each of which restricts how its corresponding permission is set for newly created files.
+To further restrict access, we enable you to create an optional file named `magento_umask` in your Magento root directory. A umask&mdash;also referred to as a *file system creation mask*&mdash;is a set of bits, each of which restricts how its corresponding permission is set for newly created files.
 
 Magento uses a three-bit mask, by default `002`, that you subtract from the UNIX defaults of 666 for files and 777 for directories. 
 

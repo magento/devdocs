@@ -1,41 +1,20 @@
 <div markdown="1">
 
+## Set pre-installation file system ownership and permissions {#perms-over}
 This topic discusses how to set read-write permissions for the web server group before you install the Magento software. This is necessary so the Setup Wizard or command line can write files to the Magento file system.
 
-The procedure you use is different, depending on whether you use shared hosting and have one user or if you use a private server and have two users.
+The procedure you use is different, depending on whether you use [shared hosting](#perms-shared) and have one user or if you use a [private server](#perms-private) and have two users.
 
+## Set permissions for shared hosting (one user) {#perms-shared}
+This section discusses how to set pre-installation permissions if you log in to the Magento server as the same user that also runs the web serer. This type of setup is common in shared hosting environments.
 
-### Set permissions 
-To set permissions before you install the Magento software:
+{% include install/file-system-perms-oneuser.md %}
 
-1.	Log in to your Magento server.
-2.	Enter the following commands in the order shown:
+After you have set file system ownership and permissions, continue with TBD.
 
-		cd <your Magento install dir>
-		find var pub/static pub/media app/etc -type f -exec chmod g+w {} \;
-		find var pub/static pub/media app/etc -type d -exec chmod g+w {} \;
+## Set ownership and permissions for two users {#perms-private}
+This section discusses how to set ownersip and permissions for your own server or a private hosting setup. In this type of setup, you typically *cannot* log in as, or switch to, the web server user. You typically log in as one user and run the web server as a different user.
 
-	To optionally enter all commands on one line, enter the following assuming Magento is installed in `/var/www/html/magento2`:
+{% include install/file-system-perms-twouser.md %}
 
-		cd /var/www/html/magento2 && find . -type f -exec chmod g+w {} \; && find . -type d -exec chmod g+w {} \; && chmod u+x bin/magento
-
-### Set ownership, permissions, and `setgid`
-TBD - set ownership
-
-#### Find the web server group
-TBD
-
-### 
-
-To set ownership and permissions before you install the Magento software:
-
-1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{ site.gdeurl }}install-gde/prereq/apache-user.html).
-2.	Enter the following commands in the order shown:
-
-		cd <your Magento install dir>
-		find var pub/static pub/media app/etc -type f -exec chmod g+w {} \;
-		find var pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
-
-	To optionally enter all commands on one line, enter the following assuming Magento is installed in `/var/www/html/magento2`:
-
-		cd /var/www/html/magento2 && find . -type f -exec chmod g+w {} \; && find . -type d -exec chmod g+ws {} \; && chmod u+x bin/magento
+After you have set file system ownership and permissions, continue with TBD.
