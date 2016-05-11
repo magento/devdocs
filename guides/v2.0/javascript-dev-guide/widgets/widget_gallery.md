@@ -16,7 +16,7 @@ The following picture is an illustration of image displaying on the product page
 
 <img src="{{site.baseurl}}common/images/gallery_scr.png" width="650px" alt="A product page with preview and thumbnails">
 
-In addition, the [magnifier widget]({{site.gdeurl}}widgets/widget_gallery_mg.md) can be used to demonstrate images in 100% scaled size in separate dedicated layer, and the gallery fullscreen mode can be used to navigate the entire full sized photo.
+In addition, the [magnifier widget]({{site.gdeurl}}javascript-dev-guide/widgets/widget_gallery_mg.html) can be used to demonstrate images in 100% scaled size in separate dedicated layer, and the gallery fullscreen mode can be used to navigate the entire full sized photo.
 
 Gallery is displayed consistently across all supported browsers and is responsive &mdash; it sizes correctly on mobile devices and desktops.
 
