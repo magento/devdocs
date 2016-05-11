@@ -99,6 +99,7 @@ defines the template which is used for rearranging the links:
         </div>
         <?php endif; ?>
     </li>
+<?php endif; ?>
 {%endhighlight php%}
 
 <h4>Step 3: Extend the base layout to add a block</h4>
