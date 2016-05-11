@@ -21,15 +21,19 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 <h3>Fixed issues</h3>
 
 
-<!-- 51809 -->* You can now use the Redis adapter to provide session storage in Magento 2.0.6. (51807)
-
+<!--- 51847 --> * Varnish no longer returns a 400 bad request error message when clearing its cache. Previously, this issue occurred with Magento instances running on GoDaddy. (51847)
 
 <!-- 46287 -->* You can now use Redis for session storage without modifying the <code>php.ini</code> file. You can also lock session storage to prevent simultaneous write access. (46287)
 
-<!-- 52322 --> * Starting with Magento 2.0.6, Magento provides a more flexible way for you to set file ownership and permissions. Instead of setting permissions explicitly, we enable you to create a file named `mage_umask` in your Magento root directory. By default, the umask is `002`, which means that files have 775 permissions and directories have 664 permissions. For more details, see <a href="http://devdocs.magento.com/prereq/apache-user.html">Magento file system ownership and permissions</a>. (52322)
 
 
-<!--- 51847 --> * Varnish no longer returns a 400 bad request error message when clearing its cache. Previously, this issue occurred with Magento instances running on GoDaddy. (51847)
+<h3>Functional enhancements</h3>
+
+<!-- 52322 --> * Starting with Magento 2.0.6, Magento provides a more flexible way for you to set file ownership and permissions. Instead of setting permissions explicitly, you only need to make sure files and directories are writable for installation. After installation, to further restrict access to files and directories, you can optionally create a file named `mage_umask` in your Magento root directory. By default, the umask is `002`, which means that directories have 775 permissions and files have 664 permissions. For more details, see <a href="http://devdocs.magento.com/prereq/apache-user.html">Magento file system ownership and permissions</a>. (52322)
+
+
+
+<!-- 51809 -->* You can now use the Redis adapter to provide session storage in Magento 2.0.6. (51807)
 
 
 
