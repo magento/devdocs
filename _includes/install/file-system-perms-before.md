@@ -17,7 +17,7 @@ To set permissions before you install the Magento software:
 
 	To optionally enter all commands on one line, enter the following assuming Magento is installed in `/var/www/html/magento2`:
 
-		cd /var/www/html/magento2 && find . -type f -exec chmod g+w {} \; && find . -type d -exec chmod g+w {} \;
+		cd /var/www/html/magento2 && find . -type f -exec chmod g+w {} \; && find . -type d -exec chmod g+w {} \; && chmod u+x bin/magento
 
 ### Set ownership, permissions, and `setgid`
 TBD - set ownership
@@ -38,4 +38,4 @@ To set ownership and permissions before you install the Magento software:
 
 	To optionally enter all commands on one line, enter the following assuming Magento is installed in `/var/www/html/magento2`:
 
-		cd /var/www/html/magento2 && find . -type f -exec chmod g+w {} \; && find . -type d -exec chmod g+ws {} \;
+		cd /var/www/html/magento2 && find . -type f -exec chmod g+w {} \; && find . -type d -exec chmod g+ws {} \; && chmod u+x bin/magento
