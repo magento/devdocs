@@ -12,7 +12,6 @@ github_link: contributor-guide/contributing_docs.md
 redirect_from: guides/v2.0/extension-dev-guide/Contribute_edg.md
 ---
 
-
 The following topics are included in the Guide:
 
 * <a href="#contribute">DevDocs contributions</a>
@@ -25,9 +24,7 @@ The following topics are included in the Guide:
 
 * <a href="#report">Report an issue</a>
 
-<!--
-<a href="#labels">Labels applied by the DevDocs team</a>
--->
+* <a href="#edit">Edit metadata</a>
 
 
 <h2 id="contribute">DevDocs contributions</h2>
@@ -46,10 +43,6 @@ Use the <a href="#fork">fork</a> & <a href="#pull_request">pull</a> model to con
 This contribution model means that contributors maintain their own copy of the forked codebase (which can be easily synced with the main copy). The forked repository is then used to submit a request to the base repository to *pull* a set of changes (hence the phrase *pull request*).
 
 The Magento DevDocs team reviews all issues and contributions submitted by the community. During the review we might require clarifications from the contributor. If you know what you want to write about, but you aren't sure where within our multiple documents the topic should go, we can help you with the "info architecture" part.
-
-<!--
-Often when the Magento DevDocs team works on reviewing the suggested changes, we will add a label to the issue to indicate certain information, like status or who is working the issue. If you're ever curious what the different labels mean, see the <a href="#labels">table</a> below for an explanation of each one.
--->
 
 <div class="bs-callout bs-callout-info" id="info">
 <p>Please refer to <a href="http://www.magento.com/legaldocuments/mca">Magento Contributor Agreement</a> for detailed information about the License Agreement. All contributors are required to submit a click-through form to agree to the terms. </p>
@@ -126,10 +119,23 @@ To add an issue:
 2. Fill in the Title and issue description.
 3. Click **Submit new issue**.
 
-<!--
-<h2 id="labels">Labels applied by the Magento team</h2>
+<h2 id="report">Edit metadata</h2>  
+The .md (Markdown) file's metadata is a set of key-value pairs (where the key is before the : and the value is after). The metadata section is located in the beginning of the file.
 
-Refer to the following table for a description of each label. These labels are applied by the Magento development team to community contributed issues and pull requests, to communicate status, impact, or which team is working on it.
+### Example:
+    ---
+    layout: default
+    group: install2
+    subgroup: Z_continue
+    title: Continue with your installation
+    menu_title: Continue with your installation
+    menu_node: parent
+    menu_order: 1
+    github_link: install-gde/continue.md
+    ---	
+
+###Definitions
+Refer to the following table for a description of each key value pair in the metadata section of the .md file.
 
 <table style="width:100%">
    <colgroup>
@@ -138,91 +144,59 @@ Refer to the following table for a description of each label. These labels are a
    </colgroup>
    <thead>
       <tr style="background-color:lightgray">
-         <th>Label image</th>
+         <th>Metadata Example</th>
          <th>Description</th>
       </tr>
    </thead>
    <tbody>
-      <tr>
-      <th>Issue Type</th>
-      <th> </th>
-</tr>
-         <td><img src="{{ site.baseurl }}common/images/github_bug.png" alt="the Bug button"/></td>
-         <td>An error, flaw, or failure in an existing feature that produces unexpected results.</td>
+         <td>layout: default</td>
+         <td>Selects the template Jekyll will use to render the .md file into HTML&CSS.</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_featureRequest.png" alt="the Feature Request button"/></td>
-         <td>A community request to introduce a new feature in Magento.</td>
+         <td>group: install2</td>
+         <td>Defines what book the file belongs to, that is, which left hand menu collection the file will show up in. Note that what you put here doesn't affect the horizontal menu. That is controlled by _/includes/navigation.html.</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_improvement.png" alt="the Improvement button"/></td>
-         <td>A request to enhance existing functionality.</td>
+         <td>subgroup: Z_continue</td>
+         <td>Defines what "chapter" or "subgroup" the file belongs to. Add the name of the subgroup here in each file that you want to collect into that subgroup.</td>
       </tr>
       <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_question.png" alt="the Question button"/></td>
-         <td>An inquiry about existing functionality.</td>
+         <td>title: Continue with your installation</td>
+         <td>Sets the title of the page in the HTML meta and the main title on the page.</td>
       </tr>
       <tr>
-      <th>Domains Impacted</th>
+         <td>menu_title: Continue with your installation</td>
+         <td>Sets the title as it appears in the menu.</td>
+      </tr>
+       <tr>
+         <td>menu_node: parent</td>
+         <td>If set to parent, makes the file the link off of the subgroup header.</td>
+      </tr>
+       <tr>
+         <td>menu_order: 1</td>
+         <td>Sets the order files display. But not the order that subgroups appear in. 
+         
+<!--
+You can order where each file appears in the list by changing its menu_order number. Subgroups, by default, will show up in alphabetical order. To get your own order instead of alphabetical, create a file for each subgroup header: introduction.md, prepare.md, build,md, etc. In the metadata section for each of the files set menu_node: parent.
 
-</tr>
-      <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_MX.png" alt="the MX button"/></td>
-         <td>Affects Merchant Experience.</td>
+They still show up in alphabetical order, based on subgroup's name. Now change the name of subgroup to get the order you need using the alphabet. When you set menu_node to parent, the displayed name will be taken from menu_title instead of from subgroup. So, if you want Introduction to show up first and Prepare to show up second, set subgroup in introduction.md to for example 1_introduction and then set subgroup in prepare.md to 2_prepare. That is, just follow an alphanumeric order to get the order you want. Then set menu_title to the name you want displayed. Then, for each file you want to attach to that subgroup, you just give it that subgroup name. In those files, leave menu_node empty or omit it.
+-->
+         </td>
       </tr>
        <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_CS.png" alt="the CS button"/></td>
-         <td>Affects Commerce Services.</td>
+         <td>github_link: install-gde/continue.md</td>
+         <td>Gives you the name and location of the source file in github.</td>
       </tr>
-       <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_PS.png" alt="the PS button"/></td>
-         <td>Affects Platform Services.</td>
-      </tr>
-       <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_DOC.png" alt="the Doc button"/></td>
-         <td>Affects Documentation domain.</td>
-      </tr>
-      <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_PROD.png" alt="the PROD button"/></td>
-         <td>Affects the Product team (mostly feature requests or business logic change).</td>
-      </tr>
- <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_TECH.png" alt="the Tech button"/></td>
-         <td>Affects Architect Group (mostly to make decisions around technology changes).</td>
-      </tr>
-
-   <tr>
-      <th>Pull Request Resolution Status</th>
-
-</tr>
-
-       <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_accept.png" alt="the Accept button"/></td>
-         <td>The pull request has been accepted and will be merged into mainline code.</td>
-      </tr>
-       <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_reject.png" alt="the Reject button"/></td>
-         <td>The pull request has been rejected and will not be merged into mainline code.  Possible reasons can include but are not limited to: issue has already been fixed in another code contribution, or there is an issue with the code contribution.</td>
-      </tr>
-      <tr>
-      <th>Issue Resolution Status</th>
-
-</tr>
-       <tr>
-         <td><img src="{{ site.baseurl }}common/images/gitHub_acknowledged.png" alt="the Acknowledged button"/></td>
-         <td>The Magento Team has validated the issue and an internal ticket has been created.</td>
-      </tr>
-       <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_inProgress.png" alt="the In progress button"/></td>
-         <td>The internal ticket is currently in progress, fix is scheduled to be delivered.</td>
-      </tr>
-       <tr>
-         <td><img src="{{ site.baseurl }}common/images/github_needsUpdate.png" alt="the Needs update button"/></td>
-         <td>The Magento Team needs additional information from the reporter to properly prioritize and process the issue or pull request.</td>
-      </tr>
-
    </tbody>
 </table>
--->
+
+### How to add a Contributor's name to a topic
+When a community member contributes an entire topic, or makes substantial improvements to an existing topic, we like to thank them by adding their name (or company name) right beneath the title of the topic, and link that name to their blog or web site.
+
+In the metadata secion at the top of the file, just add these two entries:
+ 
+* contributor_name: \<name_of_contributor\>
+* contributor_link: \<link_to_contributors_site_or_blog\>
+
 
 <h2 id="Thanks">Thank you so much for adding your brilliance to the Magento DevDocs!! </h2>
