@@ -20,7 +20,7 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 <h3>Fixed issues</h3>
 
 
-<!-- 51807 -->* You can now use the Redis adapter to provide session storage in Magento 2.0.6. (51807)
+<!-- 51809 -->* You can now use the Redis adapter to provide session storage in Magento 2.0.6. (51807)
 
 
 <!-- 46287 -->* You can now use Redis for session storage without modifying the <code>php.ini</code> file. You can also lock session storage to prevent simultaneous write access. (46287)
@@ -29,8 +29,9 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 
 For more details, see <a href="http://devdocs.magento.com/prereq/apache-user.html">Magento file system ownership and permissions</a>. (52322)
 
-<!-- 48562 -->* Magento now provides an optional method of enabling maintenance mode at the web server level. You can update your web server configuration file to re-route all traffic to a System Upgrade page message while the shop is offline during the upgrade. Magento provides a default maintenance message, but you can also create your own message. <a href="https://github.com/magento/magento2/issues/3191" target="_blank">(GITHUB-3191)</a>(48562)
+<!-- 52612 --> * (56212)
 
+<!--- 51847 --> * Varnish no longer returns a 400 bad request error message when clearing its cache. Previously, this issue occurred with Magento instances running on GoDaddy. (51847)
 
 
 
@@ -39,7 +40,7 @@ This release includes  enhancements to improve the security of your Magento 2.0 
 
 The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the <a href="https://magento.com/security" target="_blank">Magento Security Center</a>. 
 
-<!-- 50955 -->* Application error messages no longer include the path to the file where the error occurred. Previously, when an unhanded exception occurred,  Magento would display an error message that could disclose sensitive information such as the location of the file that produced the unhandled exception. A malicious user could use this information to launch attacks against the application. (50955)
+<!-- 50955 -->* Application error messages no longer include the path to the file where the error occurred. Previously, when an unhandled exception occurred,  Magento would display an error message that could disclose sensitive information such as the location of the file that produced the unhandled exception. A malicious user could use this information to launch attacks against the application. (50955)
 
 
 <!-- 51808 -->*  Magento no longer allows authenticated customers to change other customers' account information using either SOAP or REST calls.  Magento  now confirms that the ID of the customer whose account is being edited matches the authentication token in use. Previously, a malicious user could hijack a customer account by logging in as an authenticated user, then editing the account of any other user.  (The SOAP and REST APIs are enabled by default in most installations.)(51808)
@@ -60,8 +61,6 @@ The following list provides an overview of the security issues fixed in this rel
 
 
 <!-- 51370 -->* Magento no longer discloses information about its internal path during installation. Previously, a user could try to access the application’s internal path during setup by accessing the  <code>http://mywebsite.com/my-magento-directory/setup/index.php/session</code>  and reading the internal path in the resulting error message. (51370)
-
-
 
 
 <!-- 51376 -->* Magento no longer discloses the administrator URL to an unauthenticated user during setup. (51376)

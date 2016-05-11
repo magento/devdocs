@@ -21,17 +21,18 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 <h3>Fixed issues</h3>
 
 
-<!-- 51807 -->* You can now use the Redis adapter to provide session storage in Magento 2.0.6. (51807)
+<!-- 51809 -->* You can now use the Redis adapter to provide session storage in Magento 2.0.6. (51807)
 
 
 <!-- 46287 -->* You can now use Redis for session storage without modifying the <code>php.ini</code> file. You can also lock session storage to prevent simultaneous write access. (46287)
 
 <!-- 52322 --> * Starting with Magento 2.0.6, Magento provides a more flexible way for you to set file ownership and permissions. Instead of setting permissions explicitly, we enable you to create a file named `mage_umask` in your Magento root directory. By default, the umask is `002`, which means that files have 775 permissions and directories have 664 permissions.
 
-<!-- 48562 -->* Magento now provides an optional method of enabling maintenance mode at the web server level. You can update your web server configuration file to re-route all traffic to a System Upgrade page message while the shop is offline during the upgrade. Magento provides a default maintenance message, but you can also create your own message. <a href="https://github.com/magento/magento2/issues/3191" target="_blank">(GITHUB-3191)</a>(48562)
-
-
 For more details, see <a href="http://devdocs.magento.com/prereq/apache-user.html">Magento file system ownership and permissions</a>. (52322)
+
+<!-- 52612 --> * (56212)
+
+<!--- 51847 --> * Varnish no longer returns a 400 bad request error message when clearing its cache. Previously, this issue occurred with Magento instances running on GoDaddy. (51847)
 
 
 
