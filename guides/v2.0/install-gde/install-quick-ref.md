@@ -56,7 +56,7 @@ You're required to authenticate; see <a href="{{ site.gdeurl }}install-gde/prere
 
 ### Set file system ownership and permissions
 
-{% include install/file-system-perms2-how.md %}
+{% include install/file-system-perms-before.md %}
 
 ## Installation part 2: Installing the Magento software
 You can choose to install the Magento software using either a <a href="{{ site.gdeurl }}install-gde/install/web/install-web.html">web-based Setup Wizard</a> or using the <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">command line</a>.

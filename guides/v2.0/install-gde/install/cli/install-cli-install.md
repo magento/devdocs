@@ -21,6 +21,7 @@ See one of the following sections:
 
 *	<a href="#instgde-install-cli-prereq">Before you start your installation</a>
 *	<a href="#instgde-install-cli-magento">Install the Magento software from the command line</a>
+*	[Set file system permissions after installing](#instgde-install-cli-magento-perms)
 
 See also <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall.html">Update, reinstall, uninstall</a>.
 
@@ -407,5 +408,4 @@ Messages similar to the following display to indicate a successful installation:
 </div>
 
 #### Next step
-
-<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>.
+[Set file system permissions after installing](#instgde-install-cli-magento-perms)
