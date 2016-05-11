@@ -38,10 +38,10 @@ This release includes  enhancements to improve the security of your Magento 2.0 
 
 The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the <a href="https://magento.com/security" target="_blank">Magento Security Center</a>. 
 
-<!-- 50955 -->* Application error messages no longer include the path to the file where the error occurred. Previously, when an unhandled exception occurred,  Magento would display an error message that could disclose sensitive information such as the location of the file that produced the unhandled exception. A malicious user could use this information to launch attacks against the application. (50955)
+<!-- 50955 -->* Application error messages no longer include the path to the file where the error occurred.  (50955)
 
 
-<!-- 51808 -->*  Magento no longer allows authenticated customers to change other customers' account information using either SOAP or REST calls.  Magento  now confirms that the ID of the customer whose account is being edited matches the authentication token in use. Previously, a malicious user could hijack a customer account by logging in as an authenticated user, then editing the account of any other user.  (The SOAP and REST APIs are enabled by default in most installations.)(51808)
+<!-- 51808 -->*  Magento no longer allows authenticated customers to change other customers' account information using either SOAP or REST calls.  Magento  now confirms that the ID of the customer whose account is being edited matches the authentication token in use. (51808)
 
 <!-- 51390 -->* Anonymous users can no longer retrieve the private data of registered customers. To prevent malicious attacks of this type, the <code>quote_id_mask</code> table of the Quote API no longer includes a <code>cart id mask</code> value. (51390)
 
@@ -51,14 +51,14 @@ The following list provides an overview of the security issues fixed in this rel
 
 <!-- 51806 -->*  Magento no longer permits an unauthenticated user to remotely execute code on the server through APIs. Previously, an unauthenticated user could remotely execute PHP code on the server using either REST or SOAP APIs. (These APIs are enabled by default in most installations.) (51806)
 
-<!-- 51807 -->*  The Magento installation code is no longer accessible once the installation process has completed. Previously, an unauthenticated user could execute PHP code on the server because the installation process would leave the <code>/app/etc</code> directory writeable, and many administrators would not change the permissions on this directory after installation. (During installation, the system requires the <code>/app/etc</code> directory to be writeable.)(51807)
+<!-- 51807 -->*  The Magento installation code is no longer accessible once the installation process has completed. (51807)
 
 <!-- 51292 -->* When an integration is created, Magento now bases the OAuth consumer key expiration from when the token exchange begins instead of when the consumer key is created. <a href="https://github.com/magento/magento2/issues/3449" target="_blank">(GITHUB-3449)</a>(51292)
 
 <!-- 51392 -->* Only a registered customer can assign a guest cart to himself. Previously, an anonymous user could modify the state  (that is, set an active quote) of a registered customer. (51392)
 
 
-<!-- 51370 -->* Magento no longer discloses information about its internal path during installation. Previously, a user could try to access the application’s internal path during setup by accessing the  <code>http://mywebsite.com/my-magento-directory/setup/index.php/session</code>  and reading the internal path in the resulting error message. (51370)
+<!-- 51370 -->* Magento no longer discloses information about its internal path during installation. (51370)
 
 
 <!-- 51376 -->* Magento no longer discloses the administrator URL to an unauthenticated user during setup. (51376)
