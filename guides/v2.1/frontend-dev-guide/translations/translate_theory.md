@@ -78,7 +78,9 @@ In this example, the *Delete* string is added to the dictionary when the i18n to
 Translated strings that originate from `.xml` files will not render unless they are called with a `__(<variable>)` method.
 In this example, you would use a call similar to the following to display the translated *Delete* string.
 
-`__($this -> config -> getData('label'))`
+{% highlight php startinline=true %}
+__($this -> config -> getData('label'))
+{% endhighlight %}
 
 <h2 id="add_strings_js">Strings added in .js files</h2>
 To ensure that the text you add in a <code>.js</code> file is collected by the i18n tool and added to the dictionary, take the following steps:
