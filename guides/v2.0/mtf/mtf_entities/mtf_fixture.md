@@ -2,7 +2,7 @@
 layout: default
 group: mtf-guide
 subgroup: 50_Entities
-title: Entities of the Magento Testing Framework
+title: Entities of the Functional Testing Framework
 menu_title: Fixture
 menu_order: 1
 github_link: mtf/mtf_entities/mtf_fixture.md
@@ -15,7 +15,7 @@ github_link: mtf/mtf_entities/mtf_fixture.md
 
 ## Fixture overview {#mtf_fixture_overview}
 
-An MTF fixture is a list of properties of the Magento entity under test.
+An FTF fixture is a list of properties of the Magento entity under test.
 
 A fixture is represented as an XML file located in the `Fixture` directory that corresponds to a module in `<magento2>/dev/tests/functional/tests/app/Magento/functional`. Example for `Widget`:
 

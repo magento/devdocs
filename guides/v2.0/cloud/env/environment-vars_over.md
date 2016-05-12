@@ -55,7 +55,7 @@ To list current environment variables:
 
 	For example,
 
-		PLATFORM_ROUTES | base64 --decode
+		echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 --decode
 
 #### Related topics
 *   [Magento Cloud environment variables]({{ site.gdeurl }}cloud/env/environment-vars_cloud.html)

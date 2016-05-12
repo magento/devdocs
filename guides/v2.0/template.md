@@ -5,9 +5,8 @@ subgroup: A_Introduction
 title: template (generic)
 menu_title: template (generic)
 menu_order: 1
-
-
 ---
+
 *This is a template for a topic that has not yet been written by the Magento Developer Docs team.* 
 
 We encourage our community members to add content; either by writing a full topic, adding new sections to existing topic, or even just a few sentences about something you know of this topic. Don't worry about perfect grammar or form; just get your brilliance down!!

@@ -81,11 +81,11 @@ To install PHP 7.0.2 on Ubuntu 14:
   		<p>The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.</p>
 	</div>
 
-2.	Enter the following command to verify PHP 5.6 installed properly:
+2.	Enter the following command to verify PHP 7.0.2 installed properly:
 
 		php -v
 
-	Following is a sample response that indicates PHP 5.6 is installed:
+	Following is a sample response that indicates PHP 7.0.2 is installed:
 
 		PHP 7.0.4-6+deb.sury.org~trusty+1 (cli) ( NTS )
 		Copyright (c) 1997-2016 The PHP Group
