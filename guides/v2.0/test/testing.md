@@ -12,7 +12,7 @@ When talking about testing in Magento 2, we have to distinguish between differen
 * **Functional**
   Functional tests are mainly used for system tests at a very high level by remote controlling a browser. Magento is treated as a black box, and tests happen from a user perspective.  
 
-  For more information, see the [Magento Testing Framework Guide]({{ site.gdeurl }}mtf/mtf_introduction.html).
+  For more information, see the [Functional Testing Framework Guide]({{ site.gdeurl }}mtf/mtf_introduction.html).
 
 * **API Functional** 
   The Web API testing framework enables you to test the Magento Web API from the client application point of view.
