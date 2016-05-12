@@ -14,7 +14,7 @@ redirect_from: /guides/v1.0/install-gde/install/prepare-install.html
 
 *	<a href="#install-update-depend">Introduction to Magento installation dependencies</a>
 *	<a href="#install-composer-install">Run `composer install` to update dependencies</a>
-*	<a href="#instgde-prereq-compose-access">Set file system ownership and permissions</a>
+*	[Set pre-installation file system ownership and permissions](#perms-over) 
 
   
 <h2 id="install-update-depend">Introduction to Magento installation dependencies</h2>
@@ -58,16 +58,6 @@ Update installation dependencies as follows:
 
 	If so, create <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html#instgde-prereq-compose-clone-auth">`auth.json`</a> in the Magento file system owner's `<home>/.composer` directory and run `composer install` again.
 
-<h2 id="instgde-prereq-compose-access">Set file system ownership and permissions</h2>
-The following sections discuss how to set file system ownership and permissions:
-
-*	<a href="#install-perms-import">Why we recommend you set file system permissions</a>
-*	<a href="#install-perms-set">File system permissions and ownership</a>
-
-<h3 id="install-perms-import">Why we recommend you set file system permissions</h3>
-{% include install/file-system-perms-before.md %}
-
-<h3 id="install-perms-set">File system permissions and ownership</h3>
 {% include install/file-system-perms-before.md %}
 
 #### Next step

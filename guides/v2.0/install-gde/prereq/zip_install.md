@@ -15,7 +15,7 @@ github_link: install-gde/prereq/zip_install.md
 *	<a href="#integrator-aud">Intended audience</a>
 *	<a href="#zip-prereq">Prerequisites</a>
 *	<a href="#get-archive">Get the Magento software package</a>
-*	<a href="#zip-perms">Set file system ownership and permissions</a>
+*	[Set pre-installation file system ownership and permissions](#perms-over) 
 
 <h2 id="integrator-aud">Intended audience</h2>
 The audience for this topic is anyone who downloaded a compressed Magento software archive (`.zip` or `.tar`). If you'd rather use Composer, go back and <a href="{{ site.gdeurl }}install-gde/continue.html">choose another starting point</a>.
@@ -103,16 +103,6 @@ Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl }}in
 
 The Magento software extracts to the directory you created. After the file has extracted, either delete the Magento archive or move it to another directory.
 
-<h2 id="zip-perms">Set file system ownership and permissions</h2>
-The following sections discuss how to set file system ownership and permissions:
-
-*	<a href="#install-perms-import">Why we recommend you set file system permissions</a>
-*	<a href="#install-perms-set">File system permissions and ownership</a>
-
-<h3 id="install-perms-import">Why we recommend you set file system permissions</h3>
-{% include install/file-system-perms-before.md %}
-
-<h3 id="install-perms-set">File system permissions and ownership</h3>
 {% include install/file-system-perms-before.md %}
 
 #### Next step
