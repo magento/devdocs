@@ -258,28 +258,7 @@ To make files and directories writable so you can update components and upgrade 
   		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
 	</div>
 
-## Optionally set `magento_umask` {#mage-owner-umask}
-`magento_umask` enables you to further restrict permissions for the web server group and everyone else. To use it, create a file named `magento_umask` in your Magento root directory. 
-
-The default umask (with no `magento_umask` specified) is `002`, which means:
-
-*	775 for For directories, which means full control by the user, full control by the group, and enables everyone to traverse the directory. These permissions are typically required by shared hosting providers.
-
-*	664 for files, which means writable by the user, writable by the group, and read-only for everyone else
-
-A common suggestion is to set `magento_umask` to `022`, which means:
-
-*	755 for directories: full control for the user, and everyone else can traverse directories.
-*	644 for files: read-write permissions for the user, and read-only for everyone else.
-
-To set `magento_umask`:
-
-1.	Log in to your Magento server, or switch to, the Magento file system owner.
-2.	Set the value of `magento_umask`:
-
-	1.	Use a text editor to create a new file `<your Magento install dir>/magento_umask`
-	2.	Set `magento_umask` to the desired value.
-3.	Save your changes to `magento_umask` and exit the text editor.
+{% include install/file-system-umask.md %}
 
 *[contributing developer]: A developer who contributes code to the Magento 2 CE codebase
 *[contributing developers]: Developers who contribute code to the Magento 2 CE codebase
