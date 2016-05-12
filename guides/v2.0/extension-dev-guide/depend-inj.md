@@ -99,7 +99,7 @@ Type can be declared in your di.xml configuration node in the following ways:
 
 The preceding example declares the following types:
 
-*	`Magento\Core\Model\Session`: If the type is not set explicitly, it is taken from the name.
+*	`Magento\Core\Model\Session`: The attribute name always specifies type configured by the node.
 *	`moduleConfig`: A virtual type that extends type `Magento\Core\Model\Config`.
 *	`Magento\Core\Model\App`: All instances of this type receive an instance of `moduleConfig` as a dependency.
 
