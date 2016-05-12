@@ -2,7 +2,7 @@
 layout: default
 group: mtf-guide
 subgroup: 30_Quickstart
-title: Quick start with the Magento Testing Framework
+title: Quick start with the Functional Testing Framework
 menu_title: Adjust configuration
 menu_order: 1
 github_link: mtf/mtf_quickstart/mtf_quickstart_config.md
@@ -36,7 +36,7 @@ For `name="app_backend_url"` set `value` that is your actual URL for Magento Adm
 Example:
 `<env name="app_backend_url" value="http://example.com/magento2/admin/"/>`
 
-### Edit `config.xml` to configure Magento Testing Framework {#mtf_quickstart_config_configxml}
+### Edit `config.xml` to configure Functional Testing Framework {#mtf_quickstart_config_configxml}
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>The default configuration is set in <a href="{{site.mage2000url}}dev/tests/functional/etc/config.xml.dist"><code>&lt;magento2&gt;/dev/tests/functional/etc/config.xml.dist</code></a>. It should be copied as <code>config.xml</code> for further changes.</p>
@@ -47,7 +47,7 @@ Find `config.xml` in `<magento2>/dev/tests/functional/etc`, and open it in edito
 #### Set credentials for Magento Admin under test {#mtf_quickstart_config_configxml_credent-backend}
 In `<application>` element find elements `<backendLogin>` and `<backendPassword>`. Change content of these elements to your actual credentials for Magento Admin URL.
 
-#### Set browser that the MTF will use for tests {#mtf_quickstart_config_configxml_browser}
+#### Set browser that the FTF will use for tests {#mtf_quickstart_config_configxml_browser}
 The default browser is **Mozilla Firefox**.
 
 If you want to use another browser for tests you have to specify it in `config.xml`.
