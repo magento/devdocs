@@ -68,13 +68,26 @@ All object manager configuration is located under the config node in the xml fil
 
 These configurations are validated by the XML Schema file called [`config.xsd`]({{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/etc/config.xsd){:target="_blank"}.
 
-Magento reads all the configuration files declared in the system and merges them all together by appending all nodes.
+##### Areas and application entry points
+{:.no_toc}
+
+Magento reads all the `di.xml` configuration files declared in the system and merges them all together by appending all nodes.
 
 The overall configuration is loaded in the following stages:
 
 1. Initial (`app/etc/di.xml`)
 2. Global (`<moduleDir>/etc/di.xml`)
 3. Area-specific (`<moduleDir>/etc/<area>/di.xml`)
+
+During [bootstrapping]({{site.mageurl}}config-guide/bootstrap/magento-bootstrap.html), each application entry point loads the appropriate `di.xml` files for the [area]({{site.mageurl}}architecture/modules/mod_and_areas.html) being requested.
+
+**Examples:**
+
+* In `index.php`, the [`\Magento\Framework\App\Http`](https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Http.php#L130-L132){:target="_blank"} class loads the area based on the front-name provided in url.
+
+* In `static.php`, the [`\Magento\Framework\App\StaticResource`](https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/StaticResource.php#L101-L104){:target="_blank"} class also loads the area based on the url in the request.
+
+* In `cron.php`, the [`\Magento\Framework\App\Cron`](https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Cron.php#L68-L70){:target="_blank"} class always loads the 'crontab' area.
 
 ##### Configuring Type
 {:.no_toc}
