@@ -339,11 +339,11 @@
 		<div class="content-wrap">
 
       <p align="right"><i>Updated: 12 May 2016 (PDT)</i></p>
-		<p><em>This is a template for a topic that has not yet been written by the Magento Developer Docs team.</em> </p>
+		<p><em>This is a template for a topic that has not yet been written by the Magento Developer Docs team.</em></p>
 
 <p>We encourage our community members to add content; either by writing a full topic, adding new sections to existing topic, or even just a few sentences about something you know of this topic. Don’t worry about perfect grammar or form; just get your brilliance down!!</p>
 
-<p>To get started, edit your local version of this file, using the markdown language (and HTML where needed). Then, create a Pull Request to have your contribution reviewed by the DevDocs team. </p>
+<p>To get started, edit your local version of this file, using the markdown language (and HTML where needed). Then, create a Pull Request to have your contribution reviewed by the DevDocs team.</p>
 
 <p>Your contributions to our Docs and your experience with using Magento, are very valued and appreciated. Let us know if you have any questions!</p>
 
@@ -375,6 +375,120 @@
   <li><a href="/guides/v2.0/_____/_____.html">Title of related topic</a></li>
   <li><a href="/guides/v2.0/_____/_____.html">Title of related topic</a></li>
 </ul>
+
+<h2 id="collapsible-content">Collapsible Content</h2>
+
+<h3 id="examples">Examples</h3>
+<div class="collapsible"><h4 class="collapsible-title">Click to show/hide content </h4><div class="collapsible-content"><p>To use the collapsible content functionality, you can use the <code>collapsible</code> block tag. Any content inside this block will be hidden until the header text is clicked.</p>
+
+<p>See the markdown version of this file for examples.</p>
+</div></div>
+
+<div class="collapsible"><h4 class="collapsible-title">Click to show/hide image </h4><div class="collapsible-content"><p><img src="/common/images/connect_keys2.png" alt="This is an image" /></p>
+</div></div>
+
+<div class="collapsible"><h4 class="collapsible-title">HTML Table </h4><div class="collapsible-content"><table>
+  <tbody>
+    <tr>
+      <th>Col 1</th>
+      <th>Col 2</th>
+      <th>Col 3</th>
+    </tr>
+    <tr>
+      <td>Data 1</td>
+      <td>Data 2</td>
+      <td>Data 3</td>
+    </tr>
+    <tr>
+      <td>Data 4</td>
+      <td>Data 5</td>
+      <td>Data 6</td>
+    </tr>
+    <tr>
+      <td>Data 7</td>
+      <td>Data 8</td>
+      <td>Data 9</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+
+<div class="collapsible"><h4 class="collapsible-title">Markdown Table </h4><div class="collapsible-content"><table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Col 1</th>
+      <th style="text-align: center">Col 2</th>
+      <th style="text-align: center">Col 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Data 1</td>
+      <td style="text-align: center">Data 2</td>
+      <td style="text-align: center">Data 3</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Data 4</td>
+      <td style="text-align: center">Data 5</td>
+      <td style="text-align: center">Data 6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Data 7</td>
+      <td style="text-align: center">Data 8</td>
+      <td style="text-align: center">Data 9</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+
+<div class="collapsible"><h4 class="collapsible-title">Click to show/hide list </h4><div class="collapsible-content"><ul>
+  <li>List Item 1</li>
+  <li>List Item 2</li>
+  <li>List Item 3</li>
+</ul>
+</div></div>
+
+<div class="collapsible"><h4 class="collapsible-title">Click to show/hide included content </h4><div class="collapsible-content"><p>To apply all changes you've made to the page (XML file), run the class generator.</p>
+<pre><code>php &lt;magento2&gt;/dev/tests/functional/utils/generate.php</code></pre>
+<p>The page will be updated in the <code>&lt;magento2&gt;/dev/tests/functional/generated</code> directory.</p>
+</div></div>
+
+<div class="collapsible"><h4 class="collapsible-title">Collapsible Code Examples</h4><div class="collapsible-content"><p><strong>Normal Markdown</strong></p>
+
+<pre><code>&lt;div class="collapsible"&gt;
+  &lt;h4 class="collapsible-title"&gt;Collapsible Title&lt;/h4&gt;
+  &lt;div class="collapsible-content"&gt;
+    &lt;p&gt;Put collapsible content here.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p><strong>Highlighted Code</strong></p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;collapsible&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;collapsible-title&quot;</span><span class="nt">&gt;</span>Collapsible Title<span class="nt">&lt;/h4&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;collapsible-content&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Put collapsible content here.<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+</div></div>
+
+<h3 id="collapsible-group">Collapsible Group</h3>
+
+<div class="collapsible">
+  <h4 class="collapsible-title">Collapsible Topic 1</h4>
+  <div class="collapsible-content">
+    <p>You can have multiple title-content pairs in a collapsible container.</p>
+  </div>
+  <h4 class="collapsible-title">Collapsible Topic 2</h4>
+  <div class="collapsible-content">
+    <p>Each content is controlled by its preceding title. </p>
+  </div>
+  <h4 class="collapsible-title">Collapsible Topic 3</h4>
+  <div class="collapsible-content">
+    <p>Clicking on each title will open its corresponding content and close any open contents.</p>
+  </div>
+</div>
 
 
 		</div>
@@ -478,6 +592,7 @@
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="/common/js/jsCookie.js"></script>
 <script src="/common/js/devdocs.js"></script>
+<script src="/common/js/jquery-ui.min.js"></script>
 
 <script type="text/javascript">
     (function() {
