@@ -76,10 +76,10 @@ The overall configuration is loaded in the following stages:
 2. Global (`<moduleDir>/etc/di.xml`)
 3. Area-specific (`<moduleDir>/etc/<area>/di.xml`)
 
-##### Declaring Type
+##### Configuring Type
 {:.no_toc}
 
-Type can be declared in your di.xml configuration node in the following ways:
+Type can be configured in your di.xml configuration node in the following ways:
 
 {% highlight xml %}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
