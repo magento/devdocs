@@ -12,24 +12,33 @@ github_link: install-gde/prereq/file-sys-perms-ref.md
 ---
 
 #### Contents
-*	[Magento file system ownership and permissions](#mage-owner)
-*	[Set up one Magento file system owner](#mage-owner-one)
-*	[Set up two Magento file system owners that belong to the same group](#mage-owner-two)
-*	[Switch to the Magento file system owner](#install-update-depend-user-switch)
+*	[Overview of development and production file system ownership and permissions](#mage-owner)
+*	[Tasks for one Magento file system owner](#mage-owner-one)
+*	[Tasks for two Magento file system owners](#mage-owner-two)
+*	[Optionally set `magento_umask`](#mage-owner-umask)
 
-## Magento file system ownership and permissions {#mage-owner}
-This section discusses how to set up the owner or owners of the Magento file system. Before you continue, review the concepts discussed in [Overview of file system ownership and permissions]({{ site.gdeurl }}install-gde/prereq/apache-user-over.html).
+## Overview of development and production file system ownership and permissions {#mage-owner}
+This section discusses how to set up the owner or owners of the Magento file system for a development and production system. Before you continue, review the concepts discussed in [Overview of file system ownership and permissions]({{ site.gdeurl }}install-gde/prereq/apache-user-over.html).
 
-*	Set up [one Magento file system owner](#mage-owner-one) if you're using shared hosting or another environment where there is one user account for both login and for the web server
-*	Set up [two Magento file system owners](#mage-owner-two) if you cannot log in to your Magento server as, or switch to, the web server user
+This topic focuses on Magento development and production systems. If you're installing Magento, see [Set pre-installation ownership and permissions](install-gde/prereq/file-system-perms.).
 
-	This type of setup is common in Linux systems that are *not* shared; in other words, if you have your own server or a hosting account that provides you with a private server.
-
-## Set up one Magento file system owner {#mage-owner-one}
+## Tasks for one Magento file system owner {#mage-owner-one}
 To use the one-owner setup, you must log in to your Magento server as the same user that runs the web server. This is typical for shared hosting.
 
 ### Set up one owner for default or developer mode {#mage-owner-one-devel}
-TBD, is there anything to do except for umask? IOW, will everything be writable? Will verify
+In default or developer mode, the following directories must be writable by the user:
+
+*	`vendor` (Composer or compressed archive installation)
+*	`app/code` (contributing developers only)
+*	`app/etc`
+*	`lib`
+*	`pub/static`
+*	Any other static resources
+*	`var/generation`
+*	`var/di`
+*	`var/view_preprocessed`
+
+You can set these permissions using either the command line or a file manager application provided by your shared hosting provider.
 
 ### Set up one owner for production mode {#mage-owner-one-prod}
 When you're ready to deploy your site to production, you should remove write access from files in the following directories for improved security:
@@ -85,7 +94,7 @@ To make files and directories writable so you can update components and upgrade 
   		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
 	</div>
 
-## Set up two Magento file system owners that belong to the same group {#mage-owner-two}
+## Tasks for two Magento file system owners {#mage-owner-two}
 If you use your own server (including a hosting provider's private server setup), there are two users:
 
 *	The web server user, which runs the Magento Admin (including Component Manager and System Upgrade).
@@ -251,33 +260,28 @@ To make files and directories writable so you can update components and upgrade 
   		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
 	</div>
 
-## Optionally set `magento_umask`
+## Optionally set `magento_umask` {#mage-owner-umask}
 `magento_umask` enables you to further restrict permissions for the web server group and everyone else. To use it, create a file named `magento_umask` in your Magento root directory. 
 
-To set `umask`:
+The default umask (with no `magento_umask` specified) is `002`, which means:
+
+*	775 for For directories, which means full control by the user, full control by the group, and enables everyone to traverse the directory. These permissions are typically required by shared hosting providers.
+
+*	664 for files, which means writable by the user, writable by the group, and read-only for everyone else
+
+A common suggestion is to set `magento_umask` to `022`, which means:
+
+*	755 for directories: full control for the user, and everyone else can traverse directories.
+*	644 for files: read-write permissions for the user, and read-only for everyone else.
+
+To set `magento_umask`:
 
 1.	Log in to your Magento server, or switch to, the Magento file system owner.
 2.	Set the value of `magento_umask`:
 
 	1.	Use a text editor to create a new file `<your Magento install dir>/magento_umask`
 	2.	Set `magento_umask` to the desired value.
-
-		For example, if you set `magento_umask` to `022`, Magento-created directories have 755 permissions and Magento-created files have 644 permissions.
-
-		755 permissions means full control for the user, and everyone else can traverse directories.
-
-		644 permissions mean read-write permissions for the user, and read-only for everyone else.
 3.	Save your changes to `magento_umask` and exit the text editor.
-
-## Switch to the Magento file system owner {#install-update-depend-user-switch}
-After you've performed the other tasks in this topic, enter one of the following commands to switch to that user:
-
-*	Ubuntu: `su <username>`
-*	CentOS: `su - <username>`
-
-For example,
-
-	su magento_user
 
 *[contributing developer]: A developer who contributes code to the Magento 2 CE codebase
 *[contributing developers]: Developers who contribute code to the Magento 2 CE codebase

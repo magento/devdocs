@@ -18,3 +18,13 @@ This section discusses how to set ownersip and permissions for your own server o
 {% include install/file-system-perms-twouser.md %}
 
 After you have set file system ownership and permissions, continue with TBD.
+
+## Switch to the Magento file system owner {#install-update-depend-user-switch}
+After you've performed the other tasks in this topic, enter one of the following commands to switch to that user:
+
+*	Ubuntu: `su <username>`
+*	CentOS: `su - <username>`
+
+For example,
+
+	su magento_user
