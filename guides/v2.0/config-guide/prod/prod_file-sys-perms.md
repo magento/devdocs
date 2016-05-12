@@ -1,14 +1,12 @@
 ---
 layout: default
-group: install_pre
-subgroup: Prerequisites
+group: config-guide
+subgroup: 90_prod
 title: Magento ownership and permissions in development and production
 menu_title: Magento ownership and permissions in development and production
 menu_node:
-menu_order: 20
-level3_menu_node: level3child
-level3_subgroup: umask
-github_link: install-gde/prereq/file-sys-perms-ref.md
+menu_order: 2
+github_link: config-guide/prod/prod_file-sys-perms.md
 ---
 
 #### Contents
