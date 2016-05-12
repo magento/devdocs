@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Entities of the Magento Testing Framework</title>
+	<title>Entities of the Functional Testing Framework</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -148,7 +148,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Entities of the Magento Testing Framework</h1>
+		<h1 class="page-heading">Entities of the Functional Testing Framework</h1>
 			
 			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/mtf/mtf_entities/mtf_block.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -738,7 +738,7 @@
 	<section class="content">
 		<div class="content-wrap">
 
-      <p align="right"><i>Updated: 19 January 2016 (PST)</i></p>
+      <p align="right"><i>Updated: 11 May 2016 (PDT)</i></p>
 		<h2>Block</h2>
 
 <ul id="markdown-toc">
@@ -1014,7 +1014,7 @@ For example, you develop a functional test for the bundle product creation, that
 
 <h2 id="mtf_block_mapping">Form mapping</h2>
 
-<p>Often, you need to test a Magento block that contains a form. And of course, tests require entering data in the forms. The Magento Testing Framework (<abbr title="Magento Testing Framework">MTF</abbr>)has a <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php">Magento\Mtf\Block\Form</a> class that enables you to fill the forms automatically. One of the advantages of using this class is that you can list elements that must be automatically filled. These elements can be grouped in separate XML files. In the <abbr title="Magento Testing Framework">MTF</abbr> we call this process “a mapping”. You can use mapping to transfer data to the block from the <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html">fixture</a>.</p>
+<p>Often, you need to test a Magento block that contains a form. And of course, tests require entering data in the forms. The Functional Testing Framework (<abbr title="Functional Testing Framework">FTF</abbr>) has a <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php">Magento\Mtf\Block\Form</a> class that enables you to fill the forms automatically. One of the advantages of using this class is that you can list elements that must be automatically filled. These elements can be grouped in separate XML files. In the <abbr title="Functional Testing Framework">FTF</abbr> we call this process “a mapping”. You can use mapping to transfer data to the block from the <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html">fixture</a>.</p>
 
 <p>A mapping file is an XML file which has the same name and path as the block does, and contains fields that represent form fields. Field name in the mapping file shall match the one in the fixture.</p>
 

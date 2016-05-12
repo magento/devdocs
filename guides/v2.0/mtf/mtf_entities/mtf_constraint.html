@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Entities of the Magento Testing Framework</title>
+	<title>Entities of the Functional Testing Framework</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -148,7 +148,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Entities of the Magento Testing Framework</h1>
+		<h1 class="page-heading">Entities of the Functional Testing Framework</h1>
 			
 			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/mtf/mtf_entities/mtf_constraint.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -738,7 +738,7 @@
 	<section class="content">
 		<div class="content-wrap">
 
-      <p align="right"><i>Updated: 19 January 2016 (PST)</i></p>
+      <p align="right"><i>Updated: 11 May 2016 (PDT)</i></p>
 		<h2>Constraint</h2>
 
 <ul id="markdown-toc">
@@ -757,7 +757,7 @@
 
 <h2 id="mtf_constraint_overview">Constraint overview</h2>
 
-<p>The Magento Testing Framework (MTF) constraint performs assertions after a test flow. A test flow is a set of test steps without assertions.
+<p>The Functional Testing Framework (FTF) constraint performs assertions after a test flow. A test flow is a set of test steps without assertions.
 Each constraint name must be globally unique in Magento application and must be placed in the module to which it belongs. Constraints run automatically after test flow has finished.</p>
 
 <p><img src="/common/images/mtf_constraint_flow.png" alt="Constraints and test flow" /></p>
@@ -799,7 +799,7 @@ Each constraint name must be globally unique in Magento application and must be 
 
 <h3 id="constraint-arguments">Constraint arguments</h3>
 
-<p>In the MTF, <a href="/guides/v2.0/mtf/mtf_entities/mtf_dataset.html">data set</a> values are shared with a test class and constraints. A node name in data set can be complex like <code>item1/item2/item3</code>. The argument name in <code>processAssert()</code> must be the same as the <code>item1</code> to transfer data from data set to constraint.</p>
+<p>In the FTF, <a href="/guides/v2.0/mtf/mtf_entities/mtf_dataset.html">data set</a> values are shared with a test class and constraints. A node name in data set can be complex like <code>item1/item2/item3</code>. The argument name in <code>processAssert()</code> must be the same as the <code>item1</code> to transfer data from data set to constraint.</p>
 
 <p>If a data set variable is used in the test, and is overwritten, it is transferred as altered to the constraint. Variables can be overwritten in the <em>injectable</em> <a href="/guides/v2.0/mtf/mtf_entities/mtf_testcase.html">test case</a>  class in <code>test()</code>, <code>__inject()</code> and <code>__prepare()</code> methods, and then passed to the constraint class by <code>return</code>. Furthermore, any returned value of these methods can be used as an argument in constraint.</p>
 

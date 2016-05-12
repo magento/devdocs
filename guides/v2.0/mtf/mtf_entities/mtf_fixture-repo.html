@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Entities of the Magento Testing Framework</title>
+	<title>Entities of the Functional Testing Framework</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -148,7 +148,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Entities of the Magento Testing Framework</h1>
+		<h1 class="page-heading">Entities of the Functional Testing Framework</h1>
 			
 			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/mtf/mtf_entities/mtf_fixture-repo.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -738,7 +738,7 @@
 	<section class="content">
 		<div class="content-wrap">
 
-      <p align="right"><i>Updated: 22 April 2016 (PDT)</i></p>
+      <p align="right"><i>Updated: 11 May 2016 (PDT)</i></p>
 		<h2>Fixture repository</h2>
 
 <ul id="markdown-toc">
@@ -1249,7 +1249,7 @@ Reference to the repository is placed in the fixture XML file in attribute named
 
 <h2 id="mtf_repository_merge">Merging repositories</h2>
 
-<p>The MTF enables you to split data sets among different modules. The configuration repository is a good example.</p>
+<p>The FTF enables you to split data sets among different modules. The configuration repository is a good example.</p>
 
 <p>Modules that require configuration adjustment store <code>ConfigData.xml</code> in their <code>Repository</code> directory. All <code>ConfigData.xml</code> repositories have reference to the <code>Config</code> repository class. See the example on the following screenshot:</p>
 
@@ -1330,7 +1330,7 @@ Reference to the repository is placed in the fixture XML file in attribute named
 
 <p>You can find a template for credentials in <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/credentials.xml.dist"><code>&lt;magento2&gt;/dev/tests/functional/credentials.xml.dist</code></a>.</p>
 
-<p>Credentials always should stay invisible for security reasons. The MTF implicitly pastes credentials during the test run only.
+<p>Credentials always should stay invisible for security reasons. The FTF implicitly pastes credentials during the test run only.
 There are two ways to paste credentials:</p>
 
 <ul>

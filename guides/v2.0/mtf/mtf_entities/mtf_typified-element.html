@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Entities of the Magento Testing Framework</title>
+	<title>Entities of the Functional Testing Framework</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -148,7 +148,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Entities of the Magento Testing Framework</h1>
+		<h1 class="page-heading">Entities of the Functional Testing Framework</h1>
 			
 			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/mtf/mtf_entities/mtf_typified-element.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -738,7 +738,7 @@
 	<section class="content">
 		<div class="content-wrap">
 
-      <p align="right"><i>Updated: 13 March 2016 (PDT)</i></p>
+      <p align="right"><i>Updated: 11 May 2016 (PDT)</i></p>
 		<h2>Typified element</h2>
 
 <ul id="markdown-toc">
@@ -763,7 +763,7 @@
 
 <p>A typified element is an element of the GUI (Select, Multiselect etc). Magento has custom typified elements with a special logic, for example: Customized Select, Suggest Dropdown, Store View Selector. Typified elements are often used as elements of a form or a grid.</p>
 
-<p>Magento Testing Framework (<abbr title="Magento Testing Framework">MTF</abbr>) enables you to test any typified element.</p>
+<p>Functional Testing Framework (<abbr title="Functional Testing Framework">FTF</abbr>) enables you to test any typified element.</p>
 
 <p><img src="/common/images/mtf_typ_element_brows.png" alt="A typified element example in the browser" /></p>
 
@@ -775,7 +775,7 @@
 
 <h3 id="general">General</h3>
 
-<p>A typified element class in the <abbr title="Magento Testing Framework">MTF</abbr> contains methods to be used in the test to manipulate typified elements in the Magento application. You can extend a <a href="#basic_class">basic class</a> or a <a href="#magento_class">Magento class</a> to cover your typified element.</p>
+<p>A typified element class in the <abbr title="Functional Testing Framework">FTF</abbr> contains methods to be used in the test to manipulate typified elements in the Magento application. You can extend a <a href="#basic_class">basic class</a> or a <a href="#magento_class">Magento class</a> to cover your typified element.</p>
 
 <div class="bs-callout bs-callout-tip">
   <p>The most important methods are <code>setValue()</code> and <code>getValue()</code>. These methods are required when you work with a form.</p>
@@ -804,7 +804,7 @@
   <thead>
     <tr>
       <th>UI element</th>
-      <th><abbr title="Magento Testing Framework">MTF</abbr> class</th>
+      <th><abbr title="Functional Testing Framework">FTF</abbr> class</th>
       <th>Notes</th>
     </tr>
   </thead>
@@ -850,7 +850,7 @@
   <thead>
     <tr>
       <th>UI element</th>
-      <th><abbr title="Magento Testing Framework">MTF</abbr> class</th>
+      <th><abbr title="Functional Testing Framework">FTF</abbr> class</th>
       <th>Notes</th>
     </tr>
   </thead>
@@ -980,7 +980,7 @@
 
 <h2 id="use">How to use</h2>
 
-<p>Typified elements are used in the <a href="/guides/v2.0/mtf/mtf_entities/mtf_block.html"><abbr title="Magento Testing Framework">MTF</abbr> blocks</a>.
+<p>Typified elements are used in the <a href="/guides/v2.0/mtf/mtf_entities/mtf_block.html"><abbr title="Functional Testing Framework">FTF</abbr> blocks</a>.
 Use a <code>find()</code> method to find an element. This method is declared in the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SimpleElement.php">SimpleElement</a> class:</p>
 
 <div class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>

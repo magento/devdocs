@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Installation of the Magento Testing Framework Entities</title>
+	<title>Installation of the Functional Testing Framework Entities</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -148,7 +148,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Installation of the Magento Testing Framework Entities</h1>
+		<h1 class="page-heading">Installation of the Functional Testing Framework Entities</h1>
 			
 			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/mtf/mtf_installation.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -738,9 +738,9 @@
 	<section class="content">
 		<div class="content-wrap">
 
-      <p align="right"><i>Updated: 3 March 2016 (PST)</i></p>
+      <p align="right"><i>Updated: 11 May 2016 (PDT)</i></p>
 		<h2>Preface</h2>
-<p>Well, you are on the way to install the Magento Testing Framework!</p>
+<p>Well, you are on the way to install the Functional Testing Framework!</p>
 
 <p>Follow the next three steps:</p>
 
@@ -771,16 +771,16 @@
     <p>In <code>php.ini</code> file, make sure <code>extension=php_openssl.dll</code> is not commented out.</p>
 </div>
 
-<h4 id="mtf_install_pre_mtf-check">Check if the Magento Testing Framework has been already installed</h4>
+<h4 id="mtf_install_pre_mtf-check">Check if the Functional Testing Framework has been already installed</h4>
 
 <ol>
   <li>Find directory <code>&lt;magento2&gt;/dev/tests/functional/</code>.</li>
-  <li>Find the <code>vendor</code> directory. If the directory exists, you already have the Magento Testing Framework installed in <code>vendor/magento/mtf</code>.</li>
+  <li>Find the <code>vendor</code> directory. If the directory exists, you already have the Functional Testing Framework installed in <code>vendor/magento/mtf</code>.</li>
 </ol>
 
 <h2 id="mtf_install_perform">Perform the installation</h2>
 
-<p>The Magento Testing Framework requires Composer, which downloads libraries defined in <code>&lt;magento2&gt;/dev/tests/functional/composer.json</code>.</p>
+<p>The Functional Testing Framework requires Composer, which downloads libraries defined in <code>&lt;magento2&gt;/dev/tests/functional/composer.json</code>.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>If you're not sure that Composer is installed, see <a href="/guides/v2.0/install-gde/install/composer-clone.html#instgde-prereq-compose-install">Install Composer</a>.</p>
@@ -804,7 +804,7 @@ And run from this directory <code>php composer.phar install</code>.</p>
 
 <h2 id="mtf_install_check">Check the installation</h2>
 
-<h3 id="mtf_install_check_dir">Find the Magento Testing Framework directory</h3>
+<h3 id="mtf_install_check_dir">Find the Functional Testing Framework directory</h3>
 
 <p>Check whether the <code>vendor</code> directory exists in <code>&lt;magento2&gt;/dev/tests/functional/</code>.</p>
 
@@ -818,12 +818,12 @@ ls
 ls
 </code></pre>
 
-<h3 id="mtf_install_check_verify">Verify the Magento Testing Framework version</h3>
+<h3 id="mtf_install_check_verify">Verify the Functional Testing Framework version</h3>
 
-<p>Open <code>&lt;magento2&gt;/dev/tests/functional/vendor/magento/mtf/CHANGELOG.md</code>. The latest version in <code>CHANGELOG.md</code> is version of the MTF you installed.</p>
+<p>Open <code>&lt;magento2&gt;/dev/tests/functional/vendor/magento/mtf/CHANGELOG.md</code>. The latest version in <code>CHANGELOG.md</code> is version of the FTF you installed.</p>
 
 <h2 id="mtf_install_next">Next Steps</h2>
-<p><a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_config.html">Adjust MTF configuration </a></p>
+<p><a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_config.html">Adjust FTF configuration </a></p>
 
 
 		</div>

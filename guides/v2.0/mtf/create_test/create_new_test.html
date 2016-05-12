@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Create a test in the Magento Testing Framework</title>
+	<title>Create a test in the Functional Testing Framework</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -148,7 +148,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Create a test in the Magento Testing Framework</h1>
+		<h1 class="page-heading">Create a test in the Functional Testing Framework</h1>
 			
 			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/mtf/create_test/new_test.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -738,7 +738,7 @@
 	<section class="content">
 		<div class="content-wrap">
 
-      <p align="right"><i>Updated: 22 April 2016 (PDT)</i></p>
+      <p align="right"><i>Updated: 11 May 2016 (PDT)</i></p>
 		<h2>New functional test: Practice</h2>
 
 <p>To demonstrate the usage of test components from previous sections in the test creation process, we will create a new functional <a href="/guides/v2.0/mtf/mtf_entities/mtf_testcase.html">injectable test</a> step-by-step. Before creating automated test, try to pass it manually.</p>
@@ -752,7 +752,7 @@
   <li><a href="#manual-test">Manual testing scenario</a></li>
   <li><a href="#auto-test">Automated testing scenario</a></li>
   <li><a href="#test-creation">Test creation</a>    <ul>
-      <li><a href="#check-mtf">Step 1. Check the <abbr title="Magento Testing Framework">MTF</abbr> configuration and environment</a></li>
+      <li><a href="#check-mtf">Step 1. Check the <abbr title="Functional Testing Framework">FTF</abbr> configuration and environment</a></li>
       <li><a href="#create-test-object">Step 2. Create the testing object - a fixture</a></li>
       <li><a href="#create-init-test-case">Step 3. Create the initial test case</a></li>
       <li><a href="#create-data-set">Step 4. Create the data set</a></li>
@@ -831,7 +831,7 @@
 
 <h3 id="test-creation">Test creation</h3>
 
-<h4 id="check-mtf">Step 1. Check the <abbr title="Magento Testing Framework">MTF</abbr> configuration and environment</h4>
+<h4 id="check-mtf">Step 1. Check the <abbr title="Functional Testing Framework">FTF</abbr> configuration and environment</h4>
 
 <ul>
   <li>
@@ -1497,7 +1497,7 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
 
 <p><strong>Log in to Admin and open the Search Synonym page</strong></p>
 
-<p>In the <abbr title="Magento Testing Framework">MTF</abbr>, the process of logging in doesn’t require a special method and is performed automatically when any page from the Admin is opened. A method, which we will use, is an <code>open()</code> method of the <code>Magento/Mtf/Page/BackendPage</code> class. There is no need to add this class in <code>use</code>, because it is inherited from the <code>Magento/Search/Test/Page/Adminhtml/SynonymsIndex</code> class.</p>
+<p>In the <abbr title="Functional Testing Framework">FTF</abbr>, the process of logging in doesn’t require a special method and is performed automatically when any page from the Admin is opened. A method, which we will use, is an <code>open()</code> method of the <code>Magento/Mtf/Page/BackendPage</code> class. There is no need to add this class in <code>use</code>, because it is inherited from the <code>Magento/Search/Test/Page/Adminhtml/SynonymsIndex</code> class.</p>
 
 <div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">synonymsIndex</span><span class="o">-&gt;</span><span class="na">open</span><span class="p">();</span></code></pre></div>
 

@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Quick start with the Magento Testing Framework</title>
+	<title>Quick start with the Functional Testing Framework</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -148,7 +148,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Quick start with the Magento Testing Framework</h1>
+		<h1 class="page-heading">Quick start with the Functional Testing Framework</h1>
 			
 			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_config.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -738,7 +738,7 @@
 	<section class="content">
 		<div class="content-wrap">
 
-      <p align="right"><i>Updated: 7 March 2016 (PST)</i></p>
+      <p align="right"><i>Updated: 11 May 2016 (PDT)</i></p>
 		<h2 id="mtf_quickstart_config">Adjust configuration</h2>
 
 <ul id="markdown-toc">
@@ -747,9 +747,9 @@
       <li><a href="#mtf_quickstart_config_phpunitxml_backend">Set URL for Magento Admin URL under test</a></li>
     </ul>
   </li>
-  <li><a href="#mtf_quickstart_config_configxml">Edit <code>config.xml</code> to configure Magento Testing Framework</a>    <ul>
+  <li><a href="#mtf_quickstart_config_configxml">Edit <code>config.xml</code> to configure Functional Testing Framework</a>    <ul>
       <li><a href="#mtf_quickstart_config_configxml_credent-backend">Set credentials for Magento Admin under test</a></li>
-      <li><a href="#mtf_quickstart_config_configxml_browser">Set browser that the MTF will use for tests</a></li>
+      <li><a href="#mtf_quickstart_config_configxml_browser">Set browser that the FTF will use for tests</a></li>
     </ul>
   </li>
   <li><a href="#mtf_quickstart_config_credentialsxml">Edit <code>credentials.xml</code> to work with Magento modules that requires credentials</a>    <ul>
@@ -781,7 +781,7 @@ For <code>name="app_frontend_url"</code> set <code>value</code> that is your act
 <p>Example:
 <code>&lt;env name="app_backend_url" value="http://example.com/magento2/admin/"/&gt;</code></p>
 
-<h3 id="mtf_quickstart_config_configxml">Edit <code>config.xml</code> to configure Magento Testing Framework</h3>
+<h3 id="mtf_quickstart_config_configxml">Edit <code>config.xml</code> to configure Functional Testing Framework</h3>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>The default configuration is set in <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/etc/config.xml.dist"><code>&lt;magento2&gt;/dev/tests/functional/etc/config.xml.dist</code></a>. It should be copied as <code>config.xml</code> for further changes.</p>
@@ -792,7 +792,7 @@ For <code>name="app_frontend_url"</code> set <code>value</code> that is your act
 <h4 id="mtf_quickstart_config_configxml_credent-backend">Set credentials for Magento Admin under test</h4>
 <p>In <code>&lt;application&gt;</code> element find elements <code>&lt;backendLogin&gt;</code> and <code>&lt;backendPassword&gt;</code>. Change content of these elements to your actual credentials for Magento Admin URL.</p>
 
-<h4 id="mtf_quickstart_config_configxml_browser">Set browser that the MTF will use for tests</h4>
+<h4 id="mtf_quickstart_config_configxml_browser">Set browser that the FTF will use for tests</h4>
 <p>The default browser is <strong>Mozilla Firefox</strong>.</p>
 
 <p>If you want to use another browser for tests you have to specify it in <code>config.xml</code>.</p>
