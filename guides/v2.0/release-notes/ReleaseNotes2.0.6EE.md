@@ -9,7 +9,7 @@ github_link: release-notes/ReleaseNotes2.0.6EE.md
 ---
 
 <h2>Magento Enterprise Edition 2.0.6</h2>
-We are pleased to present Magento Enterprise Edition 2.0.6. This release includes security enhancements as well as several functional fixes.
+We are pleased to present Magento Enterprise Edition 2.0.6. This release includes security enhancements as well as several functional fixes and enhancements.
 
 Functional features include the ability to use <a href="http://devdocs.magento.com/guides/v2.0/config-guide/redis/config-redis.html">Redis for session storage</a> and a change to our default file permissions strategy that provides a more flexible way to set file ownership and permissions.  
 
@@ -20,19 +20,19 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 <h3>Fixed issues</h3>
 
 
-<!--- 51847 --> * Varnish no longer returns a 400 bad request error message when clearing its cache. Previously, this issue occurred with Magento instances running on GoDaddy. (51847)
+<!--- 51847 --> * Varnish no longer returns a 400 bad request error message when clearing its cache. Previously, this issue occurred with Magento instances running on GoDaddy. 
 
-<!-- 46287 -->* You can now use Redis for session storage without modifying the <code>php.ini</code> file. You can also lock session storage to prevent simultaneous write access. (46287)
+<!-- 46287 -->* You can now use Redis for session storage without modifying the <code>php.ini</code> file. You can also lock session storage to prevent simultaneous write access. 
 
 
 
 <h3>Functional enhancements</h3>
 
-<!-- 52322 --> * Starting with Magento 2.0.6, Magento provides a more flexible way for you to set file ownership and permissions. Instead of setting permissions explicitly, you only need to make sure files and directories are writable for installation. After installation, to further restrict access to files and directories, you can optionally create a file named `mage_umask` in your Magento root directory. By default, the umask is `002`, which means that directories have 775 permissions and files have 664 permissions. For more details, see <a href="http://devdocs.magento.com/prereq/apache-user.html">Magento file system ownership and permissions</a>. (52322)
+<!-- 52322 --> * Starting with Magento 2.0.6, Magento provides a more flexible way for you to set file ownership and permissions. Instead of setting permissions explicitly, you only need to make sure files and directories are writable for installation. After installation, to further restrict access to files and directories, you can optionally create a file named `mage_umask` in your Magento root directory. By default, the umask is `002`, which means that directories have 775 permissions and files have 664 permissions. For more details, see <a href="http://devdocs.magento.com/prereq/apache-user.html">Magento file system ownership and permissions</a>. 
 
 
 
-<!-- 51809 -->* You can now use the Redis adapter to provide session storage in Magento 2.0.6. (51807)
+<!-- 51809 -->* You can now use the Redis adapter to provide session storage in Magento 2.0.6. 
 
 
 <h4>Security enhancements</h4>
@@ -40,33 +40,33 @@ This release includes  enhancements to improve the security of your Magento 2.0 
 
 The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the <a href="https://magento.com/security" target="_blank">Magento Security Center</a>. 
 
-<!-- 50955 -->* Application error messages no longer include the path to the file where the error occurred.  (50955)
+<!-- 50955 -->* Application error messages no longer include the path to the file where the error occurred.  
 
 
-<!-- 51808 -->*  Magento no longer allows authenticated customers to change other customers' account information using either SOAP or REST calls.  Magento  now confirms that the ID of the customer whose account is being edited matches the authentication token in use. (51808)
+<!-- 51808 -->*  Magento no longer allows authenticated customers to change other customers' account information using either SOAP or REST calls.  Magento  now confirms that the ID of the customer whose account is being edited matches the authentication token in use. 
 
-<!-- 51390 -->* Anonymous users can no longer retrieve the private data of registered customers. To prevent malicious attacks of this type, the <code>quote_id_mask</code> table of the Quote API no longer includes a <code>cart id mask</code> value. (51390)
-
-
-<!-- 52187 -->* Magento now works as expected when a user with minimum privileges logs in. For example, if a user with limited system privilege (for example,  access to the Admin dashboard only) had previously logged in, the Magento instance would not work. (52187)
+<!-- 51390 -->* Anonymous users can no longer retrieve the private data of registered customers. To prevent malicious attacks of this type, the <code>quote_id_mask</code> table of the Quote API no longer includes a <code>cart id mask</code> value. 
 
 
-<!-- 51806 -->*  Magento no longer permits an unauthenticated user to remotely execute code on the server through APIs. Previously, an unauthenticated user could remotely execute PHP code on the server using either REST or SOAP APIs. (These APIs are enabled by default in most installations.) (51806)
-
-<!-- 51807 -->*  The Magento installation code is no longer accessible once the installation process has completed. (51807)
-
-<!-- 51292 -->* When an integration is created, Magento now bases the OAuth consumer key expiration from when the token exchange begins instead of when the consumer key is created. <a href="https://github.com/magento/magento2/issues/3449" target="_blank">(GITHUB-3449)</a>(51292)
-
-<!-- 51392 -->* Only a registered customer can assign a guest cart to himself. Previously, an anonymous user could modify the state  (that is, set an active quote) of a registered customer. (51392)
+<!-- 52187 -->* Magento no longer allows users with minimum privileges (for example,  access to the dashboard only) to force re-installation of Magento, which could allow them to potentially execute malicious code.
 
 
-<!-- 51370 -->* Magento no longer discloses information about its internal path during installation. (51370)
+<!-- 51806 -->*  Magento no longer permits an unauthenticated user to remotely execute code on the server through APIs. Previously, an unauthenticated user could remotely execute PHP code on the server using either REST or SOAP APIs. (These APIs are enabled by default in most installations.) 
+
+<!-- 51807 -->*  The Magento installation code is no longer accessible once the installation process has completed. 
+
+<!-- 51292 -->* When an integration is created, Magento now bases the OAuth consumer key expiration from when the token exchange begins instead of when the consumer key is created. <a href="https://github.com/magento/magento2/issues/3449" target="_blank">(GITHUB-3449)</a>
+
+<!-- 51392 -->* Only a registered customer can assign a guest cart to himself. Previously, an anonymous user could modify the state  (that is, set an active quote) of a registered customer.
 
 
-<!-- 51376 -->* Magento no longer discloses the administrator URL to an unauthenticated user during setup. (51376)
+<!-- 51370 -->* Magento no longer discloses information about its internal path during installation.
 
 
-<!-- 51461 -->* Several parameters in the Authorize.net payment module are vulnerable to reflected Cross-Site Scripting (XSS) attacks. Existing protection against such malicious parameters is not enough to stop all types of attacks.(51461)
+<!-- 51376 -->* Magento no longer discloses the administrator URL to an unauthenticated user during setup.
+
+
+<!-- 51461 -->* Several parameters in the Authorize.net payment module are vulnerable to reflected Cross-Site Scripting (XSS) attacks. Existing protection against such malicious parameters is not enough to stop all types of attacks.
 
 
 <h3>System requirements</h3>
