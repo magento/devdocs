@@ -34,20 +34,20 @@ In addition to understanding fundamental programming designs/concepts, you are e
 ### Check your extension configurations
   Make sure your extension is configured correctly in each of your extension's configuration files. Invalid or unexpected values will cause your extension to behave incorrectly within Magento.
 
-### Know and Leverage the Magento 2 Framework
+### Know and leverage the Magento 2 framework
   There have been some significant changes from Magento 1. Be sure to study the capabilities and standards of the Magento 2 Framework.
 
   For example:
 
-  - Instead of creating custom validators from scratch, implement the `\Magento\Framework\Validator\ValidatorInterface`.
+  - Instead of creating custom validators from scratch, implement the [`\Magento\Framework\Validator\ValidatorInterface`]({{site.mage2000url}}lib/internal/Magento/Framework/Validator/ValidatorInterface.php){:target="_blank"}.
   - Instantiating a database connection can be expensive and unneccessary. Magento provides resource models for performing SQL commands. (See [Persistence Layer]({{site.gdeurl}}architecture/archi_perspectives/persist_layer.html))
   - Consider using Magento framework conventions instead of low-level or PHP functionality.
-  - Instead of adding conditions directly to a collection's select object, use Magento native collection's method addFieldToFilter(field_name, field_value).
+  - Use the  [`Magento\Framework\Data\Collection`]({{site.mage2000url}}lib/internal/Magento/Framework/Data/Collection.php){:target="_blank"} class to retrieve a collection of filtered objects instead of directly querying the database.
 
-### Use Dependency Injection
-  Direct class instantiation is not recommended because the class can be rewritten. If the class is created directly, any rewrites will not be applied and it breaks Magento's class rewrite capability. We encourage you to use the `Mage::getModel` method or [dependency injection]({{ site.gdeurl }}extension-dev-guide/depend-inj.html) to get an instance of a class.
+### Use dependency injection
+  Direct class instantiation is not recommended because the class can be rewritten. If the class is created directly, any rewrites will not be applied and it breaks Magento's class rewrite capability. We encourage you to become familiar with how we use [dependency injection]({{ site.gdeurl }}extension-dev-guide/depend-inj.html) to get an instance of a class.
 
-### Follow Model-View-Control (MVC) Pattern
+### Follow Model-View-Control (MVC) pattern
   Make sure your extension adheres to the MVC Pattern, and that it does not violate any of its principles.
 
   Some important things to check in your extensions:
@@ -56,3 +56,7 @@ In addition to understanding fundamental programming designs/concepts, you are e
   - Make sure that CSS, JavaScript, HTML, and XML code are all in the appropriate files (i.e. they should not be inline).
   - Use appropriate logic in a Block, Helper, Template, Controller, or Model.
   - Ensure correct module design.
+
+### Use the PHP_CodeSniffer tool
+
+[PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer){:target="_blank"} is a set of PHP scripts that checks your code for violations of a particular coding standard. It can be used in conjunction with the [ECG Magento Code Sniffer Coding Standard](https://github.com/magento-ecg/coding-standard){:target="_blank"} to check your code for some of the more common Magento and PHP problems. Using these two tools will ensure that your extension code meets many of [Magento's coding standards]({{site.gdeurl}}coding-standards/bk-coding-standards.html). It also has the added benefits of keeping your code clean and maintainable.

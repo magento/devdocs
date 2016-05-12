@@ -38,6 +38,9 @@ If you use `pub` as your Magento root directory, you can do any of the following
 To upgrade using the command line:
 
 1.	Log in to your Magento server as, or switch to, the Magento file system owner.
+2.	Disable the cache:
+
+		php <your Magento install dir>/bin/magento cache:disable
 2.	Change to the directory in which you installed the Magento software.
 
 	For example, `cd /var/www/html/magento2`

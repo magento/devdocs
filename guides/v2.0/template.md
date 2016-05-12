@@ -5,8 +5,6 @@ subgroup: A_Introduction
 title: template (generic)
 menu_title: template (generic)
 menu_order: 1
-
-
 ---
 *This is a template for a topic that has not yet been written by the Magento Developer Docs team.*
 
