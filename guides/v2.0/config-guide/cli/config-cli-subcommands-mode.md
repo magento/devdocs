@@ -118,13 +118,13 @@ We recommend the following:
 
 *	The directories and files in the Magento file system should be *owned* by a user other than the web server user but must be *writable* by the web server user. 
 
-	We refer to this other user as the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#nstall-update-depend-user-over">Magento file system owner</a>.
+	We refer to this other user as the <a href="{{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html#nstall-update-depend-user-over">Magento file system owner</a>.
 
 	Exceptions: `var/di`, `var/generation`, and `var/view_preprocessed`
 
 *	The directories and files under `pub/static` should have 770 permissions, which give the owner and the group full control.
 
-The easiest way to do that is to run this command as a user in the same group as the web server user. For details, see <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Create the Magento file system owner</a>.
+The easiest way to do that is to run this command as a user in the same group as the web server user. For details, see <a href="{{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html">Create the Magento file system owner</a>.
 
 <h2 id="config-mode-show">Display the current mode</h2>
 Command usage:

@@ -14,7 +14,7 @@ This topic discusses how a contributing developer can update the Magento applica
 
 To update the Magento software if you're a contributing developer:
 
-1.	Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.
+1.	Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="{{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html">>switch to the Magento file system owner</a>.
 3. Save any changes you made to `composer.json` because the following steps will overwrite it:
 
 		cd <your Magento install dir>

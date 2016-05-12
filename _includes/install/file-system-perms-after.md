@@ -29,7 +29,7 @@ TBD
 
 To set ownership and permissions before you install the Magento software:
 
-1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{ site.gdeurl }}install-gde/prereq/apache-user.html).
+1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html).
 2.	Enter the following commands in the order shown:
 
 		cd <your Magento install dir>

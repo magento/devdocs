@@ -15,7 +15,7 @@ Topics include:
 *	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Choose how to install Magento</a>
 *	<a href="{{ site.gdeurl }}install-gde/system-requirements.html">System requirements</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/prereq-overview.html">Prerequisites</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Creating the Magento file system owner</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html">">Creating the Magento file system owner</a>
 
 ## Installation part 2: Installing
 Topics include:

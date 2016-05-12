@@ -41,11 +41,11 @@ For security reasons, Magento recommends a particular set of file system ownersh
 
 In addition, Magento code creates files with permissions consistent with our recommendations. For details, see:
 
-*	<a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Create the Magento file system owner</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html">Create the Magento file system owner</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html#instgde-prereq-compose-access">Set file system ownership and permissions</a>
  
 ### Suggestion
-First, make sure you completed all tasks discussed in the preceding section. In particular, make sure the Magento file system owner and the web server user share groups in one of the ways discussed in <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-group">Options for shared groups</a>.
+First, make sure you completed all tasks discussed in the preceding section. In particular, make sure the Magento file system owner and the web server user share groups in one of the ways discussed in <a href="{{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html#install-update-depend-user-group">Options for shared groups</a>.
 
 If that still does not resolve the issue, try setting the <a href="https://en.wikipedia.org/wiki/Setuid#setuid_and_setgid_on_directories" target="_blank">setgid bit</a> (set group-id bit) for problem directories, such as `var/generation`, as follows:
 

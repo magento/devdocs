@@ -39,7 +39,7 @@ If not, see the <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">Ins
 	*	<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP (Ubuntu)</a>
 	*	<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP (CentOS)</a>
 	*	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">MySQL</a>
-3.	Just as importantly, set up the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a> on the server.
+3.	Just as importantly, set up the <a href="{{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a> on the server.
 4.	Switch to the Magento file system owner.
 
 ### Get the Magento software

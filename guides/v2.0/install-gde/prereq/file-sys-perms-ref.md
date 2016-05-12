@@ -8,7 +8,7 @@ menu_node:
 menu_order: 20
 level3_menu_node: level3child
 level3_subgroup: umask
-github_link: install-gde/prereq/apache-user.md
+github_link: install-gde/prereq/file-sys-perms-ref.md
 ---
 
 #### Contents
@@ -95,6 +95,10 @@ If you use your own server (including a hosting provider's private server setup)
 
 	Magento uses this user to run Magento CLI commands and cron.
 
+	<div class="bs-callout bs-callout-info" id="info">
+		<p>The command-line user is also referred to as the <em>Magento file system owner</em>.</p>
+	</div>
+
 Because these users require access to the same files, we recommend you create a group to which they both belong.
 
 Complete the following tasks in the order shown:
@@ -112,7 +116,7 @@ To enable the web server to write files and directories in the Magento file syst
 This section discusses how to create a new Magento file system owner and put that user in the web server's group. You can use an existing user account if you wish; we recommend the user have a strong password for security reasons.
 
 ### Step 1: Create the command-line user and give the user a strong password {#mage-owner-create-user}
-This section discusses how to create the Magento file system owner. (The command-line user is usually referred to as the *Magento file system owner*.)
+This section discusses how to create the Magento file system owner. (The command-line user is also referred to as the *Magento file system owner*.)
 
 To create a user on CentOS or Ubuntu, enter the following command as a user with `root` privileges:
 

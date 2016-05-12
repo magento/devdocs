@@ -39,7 +39,7 @@ To do so, you start by creating a Composer project from our metapackage. The met
 To get started:
 
 1.	If you haven't done so already, <a href="{{ site.gdeurl }}install-gde/prereq/connect-auth.html">get your authentication keys</a>.
-1.	Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+1.	Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
 2.	Change to the web server docroot directory, or to a directory you've configured as a virtual host docroot.
 3.	Enter the following command:
 
@@ -62,7 +62,7 @@ To get started:
 1.	Make sure you know your support portal user name and password.
 
 	If you don't remember it, contact Magento Support before you continue.
-1.	Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+1.	Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
 2.	Change to the web server docroot directory, or to a directory you've configured as a virtual host docroot.
 3.	Enter the following command:
 

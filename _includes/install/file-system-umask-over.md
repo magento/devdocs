@@ -7,10 +7,14 @@ Even in a development environment, you want your Magento installation to be secu
   <p>In version 2.0.6 and later, Magento does not explicitly set file or directory permissions for you. We provide a convenient way you can configure them yourself.</p>
 </div>
 
-This topic provides some basic information about our ownership and permissions guidelines. For details, see [Set Magento file system ownership and permissions]({{ site.gdeurl }}install-gde/prereq/apache-user.html).
+This topic provides some basic information about our ownership and permissions guidelines. For details, see [Set Magento file system ownership and permissions]({{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html">).
 
-### File system ownership
+### Magento file system owner
 We refer to the *Magento file system owner* as the user who runs command-line commands, the Magento Admin, and other utilities. This user can be either a local user on your Magento server or it can be a user provided to you by your shared hosting provider.
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>The Magento file system owner is sometimes referred to as the <em>command-line user</em>.</p>
+</div>
 
 The Magento file system owner is any of the following:
 
@@ -25,7 +29,7 @@ The Magento file system owner is any of the following:
 		Both the web server user and the command-line user need write permissions to the Magento file system. You give permissions to both users by way of a shared group to which they both belong.
 
 ### Choose file system permissions
-The file system permissions you choose should enable you to run Magento and provide security against unwanted access. We provide suggestions and detailed examples in [Magento file system ownership and permissions]({{ site.gdeurl }}install-gde/prereq/apache-user.html).
+The file system permissions you choose should enable you to run Magento and provide security against unwanted access. We provide suggestions and detailed examples in [Magento file system ownership and permissions]({{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html">).
 
 <div class="bs-callout bs-callout-warning">
     <p>File system security is complex and extremely important. We strongly recommend you consult an experienced system administrator or network administrator before you decide what permissions to set. We provide a mechanism for you to use but a permissions strategy is up to you.</p>
@@ -50,4 +54,4 @@ Here's what that means:
 ## Permissions, ownership, and Magento modes
 We recommend different permissions and ownership for default mode, developer mode, and production mode.
 
-We discuss these recommendations in [Magento file system ownership and permissions]({{ site.gdeurl }}install-gde/prereq/apache-user.html).
+We discuss these recommendations in [Magento file system ownership and permissions]({{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html">).

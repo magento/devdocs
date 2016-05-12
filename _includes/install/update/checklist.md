@@ -39,10 +39,10 @@ or
 
 	magento_user : magento_user apache
 
-For details, see [Create the Magento file system owner]({{ site.gdeurl }}install-gde/prereq/apache-user.html).
+For details, see [Create the Magento file system owner]({{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html">).
 
 ### Cron jobs are running {#magento-cron}
-Magento requires three cron jobs, all running as the [Magento file system owner]({{ site.gdeurl }}install-gde/prereq/apache-user.html).
+Magento requires three cron jobs, all running as the [Magento file system owner]({{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html).
 
 To verify your cron jobs are set up properly, enter the following command as a user with `root` privileges:
 
