@@ -2,7 +2,7 @@
 layout: default
 group: mtf-guide
 subgroup: 50_Entities
-title: Entities of the Magento Testing Framework
+title: Entities of the Functional Testing Framework
 menu_title: Data set
 menu_order: 8
 github_link: mtf/mtf_entities/mtf_dataset.md
@@ -315,9 +315,9 @@ The `checkout_data` doesn't contain source and is assigned with values from the 
 
 ## Merge data sets {#merge}
 
-The MTF enables you to merge data sets from different modules. For example, if you create a new module that adds a menu option to an existing module, the MTF allows you to merge the new data with the existing data sets. As a result, you don't have to edit the existing module to include the new information, and your tests continue to work. If you decide to later remove the same new module, you don't need to clean the data sets in other modules.
+The FTF enables you to merge data sets from different modules. For example, if you create a new module that adds a menu option to an existing module, the FTF allows you to merge the new data with the existing data sets. As a result, you don't have to edit the existing module to include the new information, and your tests continue to work. If you decide to later remove the same new module, you don't need to clean the data sets in other modules.
    
-There are two options to merge data sets in the MTF:
+There are two options to merge data sets in the FTF:
  
 - add a new variation
 - extend an existing variation
@@ -403,4 +403,4 @@ After a merge of a data set with the variation that is mentioned, a test will us
 
 <!-- ABBREVIATIONS -->
 
-*[MTF]: Magento Testing Framework
+*[FTF]: Functional Testing Framework
