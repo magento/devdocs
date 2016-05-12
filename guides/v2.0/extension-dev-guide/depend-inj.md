@@ -48,9 +48,6 @@ Magento uses class constructor signatures, not doc-block annotations, to retriev
 {:.no_toc}
 By default, class definitions are read using reflection, but reflection is slow in PHP. To make Magento's ObjectManager as fast as possible, a definition compiler was introduced. One of the things the compiler does is generate all non-existing dependency injection service classes (proxies, factories and interceptors) declared in code or configuration.
 
-*	If you have one website and one store, see [single-tenant compiler]({{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler.html#config-cli-subcommands-single).
-*	If you have multiple websites and stores, see [multi-tenant compiler]({{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler.html#config-cli-subcommands-run).
-
 #### Type configurations
 
 Type configurations describe the parameters used to instantiate a class and lifestyle of class instances. Depending on it's scope, the configuration for Magento's object manager is stored in the following XML files:
