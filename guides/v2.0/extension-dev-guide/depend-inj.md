@@ -36,11 +36,11 @@ In Magento, the object manager is represented by the appropriately named [Object
 
 There are three types of configuration that is required by Magento's object manager:
 
-*	[Class configuration(definitions)](#class-configurations) - These configurations describe the class dependencies for an object.
+*	[Class metadata(definitions)](#class-metadata) - These configurations describe the class dependencies for an object.
 * [Type configuration](#type-configuration) - These configurations describe how objects are instantiated and their lifestyle.
 * [Abstraction-Implementation mappings](#abstraction-implementation-mappings) - These configurations map which concrete implementations to use when interfaces are requested.
 
-#### Class configurations
+#### Class metadata
 
 Magento uses class constructor signatures, not doc-block annotations, to retrieve information about class dependencies; i.e. to define what dependencies are to be passed to an object. If you write your code in a regular way using the dependency inversion principle, you do not have to worry about class definitions.
 
