@@ -820,7 +820,7 @@
 	<section class="content">
 		<div class="content-wrap">
 
-      <p align="right"><i>Updated: 12 May 2016 (PDT)</i></p>
+      <p align="right"><i>Updated: 13 May 2016 (PDT)</i></p>
 		<h2 class="no_toc" id="dependency-injection">Dependency injection</h2>
 
 <ul id="markdown-toc">
@@ -860,7 +860,7 @@
 
 <h3 id="object-manager-overview">Object manager overview</h3>
 
-<p>Since dependency management is the responsibility of the environment, some kind of object manager must be present in complex systems to avoid boilerplate code. The object manager is present only when composing code, and in larger applications(such as Magento), composing code is performed early in the bootstrapping process and boilerplate code is moved to the configuration of the object manager.</p>
+<p>Since dependency management is the responsibility of the environment, some kind of object manager must be present in complex systems to avoid boilerplate code. The object manager is present only when composing objects, and in larger applications(such as Magento), composing objects is performed early in the bootstrapping process and boilerplate code is moved to the configuration of the object manager.</p>
 
 <p>In Magento, the object manager is represented by the appropriately named <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/ObjectManagerInterface.php" target="_blank">Object Manager</a>.</p>
 
@@ -957,7 +957,7 @@
 
 <div class="bs-callout bs-callout-info" id="info">
   <b>Virtual Type</b><br />
-  <p>A virtual type allows you to change the arguments of a specific injectable dependency and effectively create a new type of a particular class. This allows you to use a customized class without affecting other classes that have a dependency on the original.</p>
+  <p>A virtual type allows you to change the arguments of a specific injectable dependency and effectively create a new type of a particular class. This allows you to use a customized type without affecting other classes that have a dependency on the original.</p>
 </div>
 
 <h5 class="no_toc" id="arguments">Arguments</h5>
@@ -1152,7 +1152,7 @@
 
 <p>The default implementation is specified using the <code>preference</code> node:</p>
 
-<pre><code>&lt;!--  File: app/etc/di/config.xml --&gt;
+<pre><code>&lt;!--  File: app/etc/di.xml --&gt;
 &lt;config&gt;
     &lt;preference for="Magento\Core\Model\UrlInterface" type="Magento\Core\Model\Url" /&gt;
 &lt;/config&gt;
