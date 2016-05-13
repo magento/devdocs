@@ -13,7 +13,7 @@ This section discusses how to set pre-installation permissions if you log in to 
 {% endcollapsible %}
 
 ## Set ownership and permissions for two users {#perms-private}
-This section discusses how to set ownersip and permissions for your own server or a private hosting setup. In this type of setup, you typically *cannot* log in as, or switch to, the web server user. You typically log in as one user and run the web server as a different user.
+This section discusses how to set ownership and permissions for your own server or a private hosting setup. In this type of setup, you typically *cannot* log in as, or switch to, the web server user. You typically log in as one user and run the web server as a different user.
 
 {% collapsible Click to show/hide content %}
 {% include install/file-system-perms-twouser.md %}
