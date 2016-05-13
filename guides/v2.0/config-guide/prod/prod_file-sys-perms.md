@@ -21,6 +21,7 @@ This section discusses how to set up the owner or owners of the Magento file sys
 This topic focuses on Magento development and production systems. If you're installing Magento, see [Set pre-installation ownership and permissions](install-gde/prereq/file-system-perms.).
 
 ## Tasks for one Magento file system owner {#mage-owner-one}
+{% collapsible Click to show/hide content %}
 To use the one-owner setup, you must log in to your Magento server as the same user that runs the web server. This is typical for shared hosting.
 
 ### Set up one owner for default or developer mode {#mage-owner-one-devel}
@@ -91,8 +92,10 @@ To make files and directories writable so you can update components and upgrade 
 	<div class="bs-callout bs-callout-info" id="info">
   		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
 	</div>
+{% endcollapsible %}
 
 ## Tasks for two Magento file system owners {#mage-owner-two}
+{% collapsible Click to show/hide content %}
 If you use your own server (including a hosting provider's private server setup), there are two users:
 
 *	The web server user, which runs the Magento Admin (including Component Manager and System Upgrade).
@@ -257,8 +260,10 @@ To make files and directories writable so you can update components and upgrade 
 	<div class="bs-callout bs-callout-info" id="info">
   		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
 	</div>
+{% endcollapsible %}
 
 {% include install/file-system-umask.md %}
+
 
 *[contributing developer]: A developer who contributes code to the Magento 2 CE codebase
 *[contributing developers]: Developers who contribute code to the Magento 2 CE codebase
