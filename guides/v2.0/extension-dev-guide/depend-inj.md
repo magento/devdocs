@@ -28,7 +28,7 @@ When using dependency injection, we encourage you to follow the  [dependency inv
 
 ### Object manager overview
 
-Since dependency management is the responsibility of the environment, some kind of object manager must be present in complex systems to avoid boilerplate code. The object manager is present only when composing code, and in larger applications(such as Magento), composing code is performed early in the bootstrapping process and boilerplate code is moved to the configuration of the object manager.
+Since dependency management is the responsibility of the environment, some kind of object manager must be present in complex systems to avoid boilerplate code. The object manager is present only when composing objects, and in larger applications(such as Magento), composing objects is performed early in the bootstrapping process and boilerplate code is moved to the configuration of the object manager.
 
 In Magento, the object manager is represented by the appropriately named [Object Manager]({{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManagerInterface.php){:target="_blank"}.
 
@@ -118,7 +118,7 @@ The preceding example declares the following types:
 
 <div class="bs-callout bs-callout-info" id="info">
   <b>Virtual Type</b><br/>
-  <p>A virtual type allows you to change the arguments of a specific injectable dependency and effectively create a new type of a particular class. This allows you to use a customized class without affecting other classes that have a dependency on the original.</p>
+  <p>A virtual type allows you to change the arguments of a specific injectable dependency and effectively create a new type of a particular class. This allows you to use a customized type without affecting other classes that have a dependency on the original.</p>
 </div>
 
 ##### Arguments
@@ -251,7 +251,7 @@ The abstraction-implementation mappings are used by Magento's object manager whe
 The default implementation is specified using the `preference` node:
 
 ~~~
-<!--  File: app/etc/di/config.xml -->
+<!--  File: app/etc/di.xml -->
 <config>
     <preference for="Magento\Core\Model\UrlInterface" type="Magento\Core\Model\Url" />
 </config>
