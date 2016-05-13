@@ -212,6 +212,9 @@ To generate the signature, you must use the HMAC-SHA1 signature method. The sign
 ## Related topics
 
 [Create an integration]( {{ site.gdeurl }}/howdoi/webapi/integration.html )
+
 [OAuth error codes]( {{ site.gdeurl }}/get-started/authentication/oauth-errors.html )
+
 [Construct a request]( {{ site.gdeurl }}/get-started/gs-web-api-request.html )
+
 [Configure services as web APIs]( {{ site.gdeurl }}/extension-dev-guide/service-contracts/service-to-web-service.html )
