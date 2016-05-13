@@ -210,6 +210,7 @@ Use the ampersand (`&`) character to concatenate these attributes and parameters
 To generate the signature, you must use the HMAC-SHA1 signature method. The signing key is the concatenated values of the consumer secret and token secret separated by the ampersand (`&`) character (ASCII code 38), even if empty. You must use parameter encoding to encode each value.
 
 ## Related topics
+
 [Create an integration]( {{ site.gdeurl }}/howdoi/webapi/integration.html )
 [OAuth error codes]( {{ site.gdeurl }}/get-started/authentication/oauth-errors.html )
 [Construct a request]( {{ site.gdeurl }}/get-started/gs-web-api-request.html )
