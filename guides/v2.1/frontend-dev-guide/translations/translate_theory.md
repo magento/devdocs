@@ -79,7 +79,7 @@ Translated strings that originate from `.xml` files will not render unless they 
 In this example, you would use a call similar to the following to display the translated *Delete* string.
 
 {% highlight php startinline=true %}
-__($this -> config -> getData('label'))
+__($this->config->getData('label'))
 {% endhighlight %}
 
 <h2 id="add_strings_js">Strings added in .js files</h2>
