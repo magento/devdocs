@@ -10,7 +10,7 @@ github_link: frontend-dev-guide/translations/translate_theory.md
 
 ## What's in this topic ##
 
-Your custom theme might contain new strings that are not present in the Magento out of the box themes. To ensure that your theme is displayed correctly with any language applied on a store view, you need to make sure that the unique strings of your theme are added to the translation <a href="{{site.gdeurl21}}frontend-dev-guide/translations/xlate.html#translate_terms">dictionary</a> when the <a href="{{site.gdeurl21}}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict" target="_blank">i18n tool</a> is run. 
+Your custom theme might contain new strings that are not present in the Magento out of the box themes. To ensure that your theme is displayed correctly with any language applied on a store view, you need to make sure that the unique strings of your theme are added to the translation <a href="{{site.gdeurl21}}frontend-dev-guide/translations/xlate.html#translate_terms">dictionary</a> when the <a href="{{site.gdeurl21}}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict" target="_blank">i18n tool</a> is run.
 Then when a new language package is created and used to translate a store view, all theme strings are translated as well.
 
 This topic describes how to add theme strings in a way that they get collected by the i18n tool and are added to the dictionary.
@@ -44,8 +44,8 @@ In this example, the <i>'Hello %s'</i> string is added to the dictionary when th
 
 <h2 id="add_strings_email">Strings added in email templates</h2>
 
-If your theme contains <a href="{{site.gdeurl21}}frontend-dev-guide/templates/template-email.html#customize-email-theme" target="_blank">custom email templates</a>, their strings can be added to the dictionary as well. 
-To make sure the strings of an email template are added to the dictionary, use the  {% raw %} {{trans}}  {% endraw %} <a href="{{site.gdeurl21}}frontend-dev-guide/templates/template-email.html#localization" target="_blank">directive</a>. 
+If your theme contains <a href="{{site.gdeurl21}}frontend-dev-guide/templates/template-email.html#customize-email-theme" target="_blank">custom email templates</a>, their strings can be added to the dictionary as well.
+To make sure the strings of an email template are added to the dictionary, use the  {% raw %} {{trans}}  {% endraw %} <a href="{{site.gdeurl21}}frontend-dev-guide/templates/template-email.html#localization" target="_blank">directive</a>.
 
 Custom email templates <a href="{{site.gdeurl21}}frontend-dev-guide/templates/template-email.html#customize-email-admin" target="_blank">added using the Admin panel</a>, are not stored in the file system, and their stings are not added to the dictionary.
 
@@ -54,7 +54,7 @@ Custom email templates <a href="{{site.gdeurl21}}frontend-dev-guide/templates/te
 To ensure that the text you add in `.html` templates of UI components is added to the dictionary, mark the text using the `i18n` custom binding. The following code samples illustrate how it should be used for different cases of adding a text:
 
 - when a string is added in the scope of an HTML element:
- 
+
 {% highlight HTML%}
     <span data-bind="i18n: 'Sign In'"></span>
 {% endhighlight HTML%}
@@ -63,7 +63,7 @@ To ensure that the text you add in `.html` templates of UI components is added t
 
 {% highlight HTML%}
     <!-- ko i18n: 'You have no items in your shopping cart.' --><!-- /ko -->
-{% endhighlight HTML%}	
+{% endhighlight HTML%}
 
 <h2 id="add_strings_ui_xml">Strings added in UI components configuration files</h2>
 
@@ -74,6 +74,13 @@ To ensure that the text you add in UI components configuration `.xml` files is a
 {% endhighlight xml%}
 
 In this example, the *Delete* string is added to the dictionary when the i18n tool is run.
+
+Translated strings that originate from `.xml` files will not render unless they are called with a `__(<variable>)` method.
+In this example, you would use a call similar to the following to display the translated *Delete* string.
+
+{% highlight php startinline=true %}
+__($this->config->getData('label'))
+{% endhighlight %}
 
 <h2 id="add_strings_js">Strings added in .js files</h2>
 To ensure that the text you add in a <code>.js</code> file is collected by the i18n tool and added to the dictionary, take the following steps:
@@ -100,4 +107,3 @@ In this example, the <i>'Hello %1'</i> string is added to the dictionary when th
 
 </li>
 </ol>
-
