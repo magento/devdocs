@@ -811,14 +811,15 @@
 	<section class="content">
 		<div class="content-wrap">
 
-      <p align="right"><i>Updated: 8 April 2016 (PDT)</i></p>
+      <p align="right"><i>Updated: 4 May 2016 (PDT)</i></p>
 		<p>An <strong>integration</strong> enables third-party services to call the Magento web APIs. The Magento APIs currently supports Accounting, Enterprise Resource Planning (ERP), Customer Relationship Management (CRM), Product Information Management (PIM), and marketing automation systems out of the box.  </p>
 
-<p>Implementing an integration requires little knowledge of PHP or Magento internal processes. However, you will need a working knowledge of</p>
+<p>Implementing a simple integration requires little knowledge of PHP or Magento internal processes. However, you will need a working knowledge of</p>
 
 <ul>
   <li><a href="../../get-started/bk-get-started-api.html">Magento REST or SOAP Web APIs</a></li>
   <li><a href="../../get-started/authentication/gs-authentication.html">Web API authentication</a></li>
+  <li><a href="/guides/v2.0//get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a></li>
 </ul>
 
 <p>Before you begin creating a module, make sure that you have a working installation of Magento 2.0, and the <a href="../../install-gde/system-requirements.html">Magento System Requirements</a>.</p>
@@ -830,6 +831,7 @@
   <li><a href="#files">Add files specific to the integration.</a></li>
   <li><a href="#install">Install the module.</a></li>
   <li><a href="#check">Check the integration.</a></li>
+  <li><a href="#integrate">Integrate with your application.</a></li>
 </ol>
 
 <h2 id="skeletal">Create a skeletal module</h2>
@@ -847,7 +849,7 @@
  mkdir -p vendor/&lt;vendor_name&gt;/module-&lt;module_name&gt;/etc/integration
  mkdir -p vendor/&lt;vendor_name&gt;/module-&lt;module_name&gt;/Setup
 </pre>
-    <p>For more detailed information, see <a href="../../extension-dev-guide/module-file-structure.html">Create the module file structure</a>.</p>
+    <p>For more detailed information, see <a href="../../extension-dev-guide/module-file-structure.html">Create your component file structure</a>.</p>
   </li>
   <li>
     <p><strong>Define your module configuration file.</strong> The <code>etc/module.xml</code> file provides basic information about the module. Change directories to the <code>etc</code> directory and create the <code>module.xml</code> file. You must specify values for the following attributes:</p>
@@ -873,7 +875,7 @@
    /**
    * Copyright © 2015 Magento. All rights reserved.
    * See COPYING.txt for license details.
-   */
+   &#42;&#47;
    --&gt;
    &lt;config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd"&gt;
        &lt;module name="Vendor1_Module1" setup_version="2.0.0"&gt;
@@ -884,7 +886,7 @@
      &lt;/config&gt;
 </pre>
 
-    <p>Module “Magento_Integration” is added to “sequence” to be loaded first. It helps to avoid the issue, when a module with integration config loaded, that leads to a malfunction.</p>
+    <p>Module <code>Magento_Integration</code> is added to “sequence” to be loaded first. It helps to avoid the issue, when a module with integration config loaded, that leads to a malfunction.</p>
   </li>
   <li>
     <p><strong>Add your module’s <code>composer.json</code> file.</strong> Composer is a dependency manager for PHP. You must create a <code>composer.json</code> file for your module so that Composer can install and update the libraries your module relies on. Place the <code>composer.json</code> file in the <code>module-&lt;module_name&gt;</code> directory.</p>
@@ -921,7 +923,7 @@
      /**
      * Copyright © 2015 Magento. All rights reserved.
      * See COPYING.txt for license details.
-     */
+     &#42;&#47;
 
      \Magento\Framework\Component\ComponentRegistrar::register(
      \Magento\Framework\Component\ComponentRegistrar::MODULE,
@@ -948,22 +950,25 @@ Change directories to your <code>Setup</code> directory. Create a <code>InstallD
  class InstallData implements InstallDataInterface
  {
      /**
-      * @var ConfigBasedIntegrationManager
-      */
+      &#42; @var ConfigBasedIntegrationManager
+      &#42;&#47;
+
 
      private $integrationManager;
 
      /**
-      * @param ConfigBasedIntegrationManager $integrationManager
-      */
-     public function __construct(ConfigBasedIntegrationManager $integrationManager)
+      &#42; @param ConfigBasedIntegrationManager $integrationManager
+      &#42;&#47;
+
+     public function &#95;&#95;construct(ConfigBasedIntegrationManager $integrationManager)
      {
          $this-&gt;integrationManager = $integrationManager;
      }
 
      /**
-      * {@inheritdoc}
-      */
+      &#42; {@inheritdoc}
+      &#42;&#47;
+
      public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
      {
          $this-&gt;integrationManager-&gt;processIntegrationConfig(['testIntegration']);
@@ -1086,9 +1091,59 @@ Change directories to your <code>Setup</code> directory. Create a <code>InstallD
 <h2 id="check">Check your integration</h2>
 <p>Log in to Magento and navigate to <strong>Settings &gt; Extensions &gt; Integrations</strong>. The integration should be displayed in the grid.</p>
 
-<h2>Related Topics</h2>
+<h2 id="integrate">Integrate with your application</h2>
+
+<p>Before you can activate your integration in Magento, you must create two pages on your application to handle OAuth communications.</p>
+
+<ul>
+  <li>
+    <p>The location specified in the <code>identity_link_url</code> parameter must point to a page that can handle login requests.</p>
+  </li>
+  <li>
+    <p>The location specified in the <code>endpoint_url</code> parameter (<strong>Callback URL</strong> in Admin) must be able to process OAuth token exchanges. </p>
+  </li>
+</ul>
+
+<h3 id="login">Login page</h3>
+
+<p>When a merchant clicks the <strong>Activate</strong> button in Admin, a pop-up login page for the third-party application displays. Magento sends values for <code>oauth_consumer_key</code> and <code>success_call_back</code> parameters. The application must store the value for<code>oauth_consumer_key</code> tie it to the login ID. Use the <code>success_call_back</code> parameter to return control back to Magento.</p>
+
+<h3 id="callback">Callback page</h3>
+<p>The callback page must be able to perform the following tasks:</p>
+
+<ul>
+  <li>
+    <p>Receive an initial HTTPS POST that Magento sends when the merchant activates integration. This post contains the Magento store URL, an <code>oauth_verifier</code>, the OAuth consumer key, and the OAuth consumer secret. The consumer key and secret are generated when the integration is created.</p>
+  </li>
+  <li>
+    <p>Ask for a request token. A request token is a temporary token that the user exchanges for an access token. Use the following API to get a request token from Magento:</p>
+
+    <p><code>POST /oauth/token/request</code></p>
+
+    <p>See <a href="/guides/v2.0//get-started/authentication/gs-authentication-oauth.html#pre-auth-token">Get a request token</a> for more details about this call.</p>
+  </li>
+  <li>
+    <p>Parse the request token response. The response contains an <code>oauth_token</code> and <code>oauth_token_secret</code>.</p>
+  </li>
+  <li>
+    <p>Ask for a access token. The request token must be exchanged for an access token. Use the following API to get a request token from Magento:</p>
+
+    <p><code>POST /oauth/token/access</code></p>
+
+    <p>See <a href="/guides/v2.0//get-started/authentication/gs-authentication-oauth.html#get-access-token">Get an access token</a> for more details about this call.</p>
+  </li>
+  <li>
+    <p>Parse the access token response. The response contains an <code>oauth_token</code> and <code>oauth_token_secret</code>. These values will be different than those provided in the request token response.</p>
+  </li>
+  <li>
+    <p>Save the access token and other OAuth parameters. The access token and OAuth parameters must be specified in the <code>Authorization</code> header in each call to Magento.</p>
+  </li>
+</ul>
+
+<h2 id="related-topics">Related Topics</h2>
 <ul>
   <li><a href="../../get-started/authentication/gs-authentication.html">Web API authentication</a></li>
+  <li><a href="/guides/v2.0//get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a></li>
   <li><a href="../../install-gde/system-requirements.html">Magento System Requirements</a></li>
   <li><a href="../../extension-dev-guide/module-file-structure.html">Create the module file structure</a></li>
   <li><a href="../../extension-dev-guide/create_component.html">Create a component</a></li>

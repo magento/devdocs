@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Review the response</title>
+	<title>OAuth error codes</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print"/>
-	<link rel="canonical" href="//guides/v2.0/get-started/gs-web-api-response.html">
+	<link rel="canonical" href="//guides/v2.0/get-started/authentication/oauth-errors.html">
 
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -148,9 +148,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Review the response</h1>
+		<h1 class="page-heading">OAuth error codes</h1>
 			
-			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/get-started/gs-web-api-response.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.com/magento/devdocs/tree/2.0/guides/v2.0/get-started/authentication/oauth-errors.md" target="_blank">Edit this page on GitHub</a>
 		
 		
 	</div>
@@ -329,7 +329,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/get-started/authentication/oauth-errors.html">OAuth error codes</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/get-started/authentication/oauth-errors.html">OAuth error codes</a></li>
 
 									
 
@@ -388,7 +388,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/get-started/gs-web-api-response.html">Review the response</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/get-started/gs-web-api-response.html">Review the response</a></li>
 
 									
 
@@ -531,118 +531,98 @@
 	<section class="content">
 		<div class="content-wrap">
 
-      <p align="right"><i>Updated: 23 July 2015 (PDT)</i></p>
-		<p>Each web API call returns an <a href="#http-status-codes">HTTP status code</a> that reflects the result of a request.</p>
-<p><code>POST</code>, <code>PUT</code>, and <code>GET</code> web API calls return a <a href="#response-payload">response payload</a>.</p>
-<!-- <p>When an error occurs, the response body contains an <code>Error</code> element that contains the error code returned by the service and an error message. For authentication or authorization error occurs, the error code denotes the authentication or authorization error code.</p> -->
-<h2 id="http-status-codes">HTTP status codes</h2>
-<p>Each web API call returns an HTTP status code that reflects the result of a request:</p>
+      <p align="right"><i>Updated: 26 April 2016 (PDT)</i></p>
+		<p>When the third-party application makes an invalid request to Magento, the following OAuth-related errors can occur:</p>
+
 <table style="width:100%">
-   <colgroup>
-      <col width="10%" />
-      <col width="20%" />
-      <col width="70%" />
-   </colgroup>
-   <thead>
-      <tr style="background-color:lightgray">
-         <th>HTTP code</th>
-         <th>Meaning</th>
-         <th>Description</th>
-      </tr>
-   </thead>
-   <tbody>
-      <tr>
-         <td>200</td>
-         <td>Success</td>
-         <td>The framework returns HTTP 200 to the caller upon success.</td>
-      </tr>
-      <tr>
-         <td>400</td>
-         <td>Bad Request</td>
-         <td>If service implementation throws either <code>Magento_Service_Exception</code> or its derivative, framework returns a HTTP 400 with a error response including the service-specific error code and message.</td>
-      </tr>
-      <tr>
-         <td>401</td>
-         <td>Unauthorized</td>
-         <td>If an error occurs during credential validation or if service throws <code>Magento_Service_AuthorizationException</code>, framework returns HTTP 401.</td>
-      </tr>
-      <tr>
-         <td>404</td>
-         <td>Incorrect URI/Resource not found</td>
-         <td>If the request endpoint is not correct, framework returns HTTP 404. If service throws <code>Magento_Service_ResourceNotFoundException</code>, framework returns HTTP 404.</td>
-      </tr>
-      <tr>
-         <td>500</td>
-         <td>System Errors</td>
-         <td>If service implementation throws any other exception like network errors, database communication, framework returns HTTP 500.</td>
-      </tr>
-   </tbody>
+   <tr bgcolor="lightgray">
+      <th>HTTP code</th>
+      <th>Error code</th>
+      <th>Text representation</th>
+      <th>Description</th>
+   </tr>
+   <tr>
+      <td>400</td>
+      <td>1</td>
+      <td>version_rejected</td>
+      <td>The oauth_version parameter does not correspond to the "1.0" value.</td>
+   </tr>
+   <tr>
+      <td>400</td>
+      <td>2</td>
+      <td>parameter_absent</td>
+      <td>A required parameter is missing in the request. The name of the missing parameter is specified additionally in the response.</td>
+   </tr>
+   <tr>
+      <td>400</td>
+      <td>3</td>
+      <td>parameter_rejected</td>
+      <td>The type of the parameter or its value do not meet the protocol requirements (for example,  array is passed instead of the string).</td>
+   </tr>
+   <tr>
+      <td>400</td>
+      <td>4</td>
+      <td>timestamp_refused</td>
+      <td>The timestamp value in the oauth_timestamp parameter is incorrect.</td>
+   </tr>
+   <tr>
+      <td>401</td>
+      <td>5</td>
+      <td>nonce_used</td>
+      <td>The nonce-timestamp combination has already been used.</td>
+   </tr>
+   <tr>
+      <td>400</td>
+      <td>6</td>
+      <td>signature_method_rejected</td>
+      <td>The signature method is not supported. The following methods are supported: HMAC-SHA1.</td>
+   </tr>
+   <tr>
+      <td>401</td>
+      <td>7</td>
+      <td>signature_invalid</td>
+      <td>The signature is invalid.</td>
+   </tr>
+   <tr>
+      <td>401</td>
+      <td>8</td>
+      <td>consumer_key_rejected</td>
+      <td>The Consumer Key has incorrect length or does not exist.</td>
+   </tr>
+   <tr>
+      <td>401</td>
+      <td>9</td>
+      <td>token_used</td>
+      <td>An attempt of authorization of an already authorized token or an attempt to exchange a not temporary token for a permanent one.</td>
+   </tr>
+   <tr>
+      <td>401</td>
+      <td>10</td>
+      <td>token_expired</td>
+      <td>The temporary token has expired. At the moment, the mechanism of expiration of temporary tokens is not implemented and the current error is not used.</td>
+   </tr>
+   <tr>
+      <td>401</td>
+      <td>11</td>
+      <td>token_revoked</td>
+      <td>The token is revoked by the user who authorized it.</td>
+   </tr>
+   <tr>
+      <td>401</td>
+      <td>12</td>
+      <td>token_rejected</td>
+      <td>The token is not valid, or does not exist, or is not valid for using in the current type of request.</td>
+   </tr>
+   <tr>
+      <td>401</td>
+      <td>13</td>
+      <td>verifier_invalid</td>
+      <td>The confirmation string does not correspond to the token.</td>
+   </tr>
 </table>
-<h2 id="response-payload">Response payload</h2>
-<p><code>POST</code>, <code>PUT</code>, and <code>GET</code> web API calls return a response payload. This payload is a JSON- or XML-formatted response body. The <code>Accept: application/&lt;FORMAT&gt;</code> header in the request determines the format of the response body, where <code>&lt;FORMAT&gt;</code> is either <code>json</code> or <code>xml</code>.</p>
-<p>The response payload depends on the call.</p>
-<p>For example, a <code>GET /V1/customers/:customerId</code> call returns the following payload:</p>
 
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&quot;customers&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;customer&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;user@example.com&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;firstname&quot;</span><span class="p">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;lastname&quot;</span><span class="p">:</span> <span class="s2">&quot;Doe&quot;</span>
-        <span class="p">},</span>
-        <span class="nt">&quot;addresses&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span>
-                <span class="nt">&quot;defaultShipping&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                <span class="nt">&quot;defaultBilling&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                <span class="nt">&quot;firstname&quot;</span><span class="p">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;lastname&quot;</span><span class="p">:</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;region&quot;</span><span class="p">:</span> <span class="p">{</span>
-                    <span class="nt">&quot;regionCode&quot;</span><span class="p">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;region&quot;</span><span class="p">:</span> <span class="s2">&quot;California&quot;</span><span class="p">,</span>
-                    <span class="nt">&quot;regionId&quot;</span><span class="p">:</span> <span class="mi">12</span>
-                <span class="p">},</span>
-                <span class="nt">&quot;postcode&quot;</span><span class="p">:</span> <span class="s2">&quot;90001&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;street&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Zoe Ave&quot;</span><span class="p">],</span>
-                <span class="nt">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Los Angeles&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;telephone&quot;</span><span class="p">:</span> <span class="s2">&quot;555-000-00-00&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;countryId&quot;</span><span class="p">:</span> <span class="s2">&quot;US&quot;</span>
-            <span class="p">}</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-
-<p>This JSON-formatted response body includes a <code>customer</code> object with the customer email, first name, and last name, and customer address information. The information in this response body shows account information for the specified customer.</p>
-
-<!--
-<h2 id="error-format">Error format</h2>
-<p>When an error occurs, the web API returns an <code>Error</code> element in the response body that contains an error code, error message, and parameters that enable you to generate an error message inside the client.</p>
-<table style="width:100%">
-   <colgroup>
-      <col width="30%">
-      <col width="70%">
-   </colgroup>
-   <thead>
-      <tr style="background-color:lightgray">
-         <th>Part</th>
-         <th>Description</th>
-      </tr>
-   </thead>
-   <tbody>
-      <tr>
-         <td>errorCode</td>
-         <td>The error code representing the error.</td>
-      </tr>
-      <tr>
-         <td>errorMessage</td>
-         <td>The message explaining the error.</td>
-      </tr>
-      <tr>
-         <td>parameters</td>
-         <td>Optional. An array of attributes used to generate a different and/or localized error message for the client.</td>
-      </tr>
-   </tbody>
-</table>
- -->
+<h2 id="related-topic">Related topic</h2>
+<p><a href="OAuth-based authentication">gs-authentication-oauth.html</a></p>
 
 
 		</div>
