@@ -9,7 +9,11 @@ github_link: release-notes/ReleaseNotes2.0.6CE.md
 ---
 
 <h2>Magento Community Edition 2.0.6</h2>
-We are pleased to present Magento Community Edition 2.0.6. This release includes security enhancements as well as several functional fixes and enhancements.
+We are pleased to present Magento Community Edition 2.0.6. This release includes security enhancements as well as several functional fixes and enhancements. 
+
+<div class="bs-callout bs-callout-warning">
+    <p>2.0.6 contains important security updates. Please update to this version or use the latest available Magento version when starting a new project.</p>
+</div>
 
 Functional features include the ability to use <a href="http://devdocs.magento.com/guides/v2.0/config-guide/redis/config-redis.html">Redis for session storage</a> and a change to our default file permissions strategy that provides a more flexible way to set file ownership and permissions.  
 
@@ -38,23 +42,24 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 
 
 <h4>Security enhancements</h4>
-This release includes  enhancements to improve the security of your Magento 2.0 installation. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento 2.0 installation to the latest version as soon as possible.
+This release includes  enhancements to improve the security of your Magento installation. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento 2.0 installation to the latest version as soon as possible.
 
 The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the <a href="https://magento.com/security" target="_blank">Magento Security Center</a>. 
 
-<!-- 50955 -->* Application error messages no longer include the path to the file where the error occurred.  
+<!-- 51806 -->*  Magento no longer permits an unauthenticated user to remotely execute code on the server through APIs. 
 
 
 <!-- 51808 -->*  Magento no longer allows authenticated customers to change other customers' account information using either SOAP or REST calls.  Magento  now confirms that the ID of the customer whose account is being edited matches the authentication token in use. 
 
 <!-- 51390 -->* Anonymous users can no longer retrieve the private data of registered customers. To prevent malicious attacks of this type, the <code>quote_id_mask</code> table of the Quote API no longer includes a <code>cart id mask</code> value. 
 
+<!-- 51461 -->* Several parameters in the Authorize.net payment module are vulnerable to reflected Cross-Site Scripting (XSS) attacks. Existing protection against such malicious parameters is not enough to stop all types of attacks. 
+
+
 
 <!-- 52187 -->* Magento no longer allows users with minimum privileges (for example,  access to the dashboard only) to force re-installation of Magento, which could allow them to potentially execute malicious code.
  
 
-
-<!-- 51806 -->*  Magento no longer permits an unauthenticated user to remotely execute code on the server through APIs. 
 
 <!-- 51807 -->*  The Magento installation code is no longer accessible once the installation process has completed.  
 
@@ -68,7 +73,9 @@ The following list provides an overview of the security issues fixed in this rel
 
 <!-- 51376 -->* Magento no longer discloses the administrator URL to an unauthenticated user during setup. 
 
-<!-- 51461 -->* Several parameters in the Authorize.net payment module are vulnerable to reflected Cross-Site Scripting (XSS) attacks. Existing protection against such malicious parameters is not enough to stop all types of attacks. 
+
+<!-- 50955 -->* Application error messages no longer include the path to the file where the error occurred.  
+
 
 
 <h3>System requirements</h3>
