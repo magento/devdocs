@@ -214,6 +214,11 @@ ul li, ul li, ul li
   margin-bottom:6px;
 }
 
+ol li ul li {
+    padding-left: 16px;
+    margin-left: 10px;
+}
+
 /*ul:nth-child(1) li {  
   background-image: url("bullet-round-orange.png");
   background-repeat: no-repeat;
