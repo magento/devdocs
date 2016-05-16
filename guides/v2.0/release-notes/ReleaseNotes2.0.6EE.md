@@ -25,8 +25,6 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 
 <!--- 51847 --> * Varnish no longer returns a 400 bad request error message when clearing its cache. Previously, this issue occurred with Magento instances running on GoDaddy. 
 
-<!-- 46287 -->* You can now use Redis for session storage without modifying the <code>php.ini</code> file. You can also lock session storage to prevent simultaneous write access. 
-
 
 
 <h3>Functional enhancements</h3>
