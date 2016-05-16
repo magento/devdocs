@@ -16,9 +16,21 @@ github_link: config-guide/prod/prod_file-sys-perms.md
 *	[Optionally set `magento_umask`](#mage-owner-umask)
 
 ## Overview of development and production file system ownership and permissions {#mage-owner}
-This section discusses how to set up the owner or owners of the Magento file system for a development and production system. Before you continue, review the concepts discussed in [Overview of file system ownership and permissions]({{ site.gdeurl }}install-gde/prereq/apache-user-over.html).
+This section discusses how to set up the owner or owners of the Magento file system for a development and production system. Before you continue, review the concepts discussed in [Overview of file system ownership and permissions]({{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html).
 
-This topic focuses on Magento development and production systems. If you're installing Magento, see [Set pre-installation ownership and permissions](install-gde/prereq/file-system-perms.).
+This topic focuses on Magento development and production systems. If you're installing Magento, see [Set pre-installation ownership and permissions]({{ site.gdeurl }}install-gde/prereq/file-system-perms.html).
+
+The sections that follow discuss requirements for one or two Magento file system owners. That means:
+
+*	One user:  Typically, shared hosting providers enable you to log in to the server as one user. This user can log in, transfer files using FTP, and this user also runs the web server.
+
+*	Two users: You must have two users if you *cannot* log in to the server as, or switch to, the web server user. This type of setup is typical in private hosting or if you have your own Magento server.
+
+	Instead, you have separate users:
+
+	*	The web server user, which runs the Magento Admin (including Setup Wizard) and storefront. 
+
+	*	A *command-line user*, which is a local user account you can use to log in to the server. This user runs Magento cron jobs and command-line utilities.
 
 ## Tasks for one Magento file system owner {#mage-owner-one}
 {% collapsible Click to show/hide content %}
@@ -81,14 +93,8 @@ To make files and directories writable so you can update components and upgrade 
 2.	Change to your Magento installation directory.
 3.	Enter the following commands:
 
-		find var vendor lib pub/static pub/media app/etc -type f -exec chmod g+w {} \;
-		find var vendor lib pub/static pub/media app/etc -type d -exec chmod g+w {} \;
-		chmod o+rwx app/etc/env.php
-
-	You can optionally enter all the preceding commands as one command as follows:
-
-		find var vendor lib pub/static pub/media app/etc -type f -exec chmod g+w {} \; && find var vendor lib pub/static pub/media app/etc -type d -exec chmod g+w {} \; && chmod o+rwx app/etc/env.php
-
+		chmod -R u+x .
+		
 	<div class="bs-callout bs-callout-info" id="info">
   		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
 	</div>
@@ -98,7 +104,7 @@ To make files and directories writable so you can update components and upgrade 
 {% collapsible Click to show/hide content %}
 If you use your own server (including a hosting provider's private server setup), there are two users:
 
-*	The web server user, which runs the Magento Admin (including Component Manager and System Upgrade).
+*	The web server user, which runs the Magento Admin (including the Setup Wizard) and storefront.
 
 	Linux systems typically do not provide a shell for this user; you cannot log in to the Magento server as, or switch to, the web server user.
 *	The command-line user, which you log in to your Magento server as or switch to.

@@ -21,20 +21,24 @@ We refer to the *Magento file system owner* as the user who runs command-line co
 
 The Magento file system owner is any of the following:
 
-*	*Shared hosting*: Typically, shared hosting providers enable you to log in to the server as one user. This user can log in, transfer files using FTP, and this user also runs the web server. 
+*	*Shared hosting*: Typically, shared hosting providers enable you to log in to the server as one user. This user can log in, transfer files using FTP, and this user also runs the web server.
+
+	Shared hosting users have the option of setting a [umask](#restrict) to further restrict access, particularly in production. 
 
 *	*Other types of hosting or you have your own server*: Typically, you *cannot* log in to the server as, or switch to, the web server user. Instead, you have separate users:
 
-	*	The web server user, which runs the Magento Admin (including Component Manager and System Upgrade). 
+	*	The web server user, which runs the Magento Admin and storefront. 
 
 	*	A *command-line user*, which is a local user account you can use to log in to the server. This user runs Magento cron jobs and command-line utilities.
 
-		Both the web server user and the command-line user need write permissions to the Magento file system. You give permissions to both users by way of a shared group to which they both belong.
+		The web server user and the command-line user might need write permissions to the Magento file system. (The users require write access in [developer mode]({{ site.gdeurl }}config-guide/bootstrap/magento-modes.html) but not in production mode.) You give permissions to both users by way of a shared group to which they both belong.
+
+		For private hosting, we recommend you use the default `002` [umask](#restrict); otherwise, the group won't be able to write to the Magento file system.
 
 Before you install the Magento software, see [Set pre-installation ownership and permissions]({{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html).
 
-### Restrict access
-To tighten security, particularly in production, we provide a flexible to restrict access using a umask. A umask&mdash;also referred to as a *file system creation mask*&mdash;is a set of bits, each of which restricts how its corresponding permission is set for newly created files.
+### Restrict access {#restrict}
+To tighten security, particularly in production on a shared hosting system, we provide a flexible to restrict access using a umask. A umask&mdash;also referred to as a *file system creation mask*&mdash;is a set of bits, each of which restricts how its corresponding permission is set for newly created files.
 
 <div class="bs-callout bs-callout-warning">
     <p>File system security is complex and extremely important. We strongly recommend you consult an experienced system administrator or network administrator before you decide what permissions to set. We provide a mechanism for you to use but a permissions strategy is up to you.</p>
