@@ -12,7 +12,7 @@ github_link: ui-components/form_secondary/ui_fields_checkbox.md
 
 <h2>What's in this topic</h2>
 
-This topic describes the checkbox UI component, which can be used to implement the following field types: radio button, toggle button, or checkbox.
+This topic describes the checkbox UI component, which can be used to implement the following form field types: radio button, toggle button, or checkbox.
 
 **Contents**
 
@@ -23,8 +23,6 @@ This topic describes the checkbox UI component, which can be used to implement t
 
 The checkbox UI component is one of the types of the field UI component. It can be configured to implement the following fields (from the UI point of view): radio button, toggle button or checkbox. The component inherits the abstract behavior of the field UI component.
 
-<p class="q">What is abstract behavior?</p>
-<p class="qa">Inherited from Field UI Component (ui-field.md)</p>
 
 The following images illustrate how the checkout type field can look like:
 
@@ -53,28 +51,42 @@ The checkbox UI component comprises the following files:
 
 ## Configuration settings
 
-<p class="q">need a sample of xml configuration to show where these options are set</p>
-<p class="qa">yes</p>
+In general case, the checkbox configuration file looks like following:
 
-### Minimum workable example
+<p class="q">Is there some conventional naming/location?</p>
 
 {%highlight xml%}
-<field name="<Component_Index>">
+<field name="%Component_Name%">
     <argument name="data" xsi:type="array">
         <item name="config" xsi:type="array">
+            <!-- Mandatory options, inherited from the field component -->
             <item name="formElement" xsi:type="string">checkbox</item>
             <item name="dataType" xsi:type="string">text</item>
-            <item name="dataScope" xsi:type="string">Component_Index</item>
+            <item name="dataScope" xsi:type="string">%Component_Name%</item>
+            <!-- Optional checkbox-specific options -->
+            <item name="%option1%" xsi:type="%option1_type%">%option1_value%</item>
+            <item name="%option2%" xsi:type="%option2_type%">%option2_value%</item>
+            ...
         </item>
     </argument>
 </field>
 {%endhighlight%}
 
-<p class="q">Тут в примере есть ирония: для аттрибута  name=".." запрещено использование символов &#60; и &#62;
-Будет падать приложение, если просто скопировать этот код и применить где-то в проекте.</p>
+Example of the checkbox component configuration in the scope of the form configuration:
 
 {%highlight xml%}
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <!-- Checkbox component configuration. START --> 
+    <field name="my_checkbox">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="formElement" xsi:type="string">checkbox</item>
+                <item name="dataType" xsi:type="string">text</item>
+                <item name="dataScope" xsi:type="string">my_checkbox</item>
+            </item>
+        </argument>
+    </field>
+    <!-- Checkbox component configuration. END --> 
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
             <item name="provider" xsi:type="string">catalog_rule_form.catalog_rule_form_data_source</item>
@@ -86,7 +98,7 @@ The checkbox UI component comprises the following files:
         </item>
         <item name="template" xsi:type="string">templates/form/collapsible</item>
     </argument>
-    <dataSource name="catalog_rule_form_data_source">
+    <dataSource name="catalog_rule_form_data_source">я нап
         <argument name="dataProvider" xsi:type="configurableObject">
             <argument name="class" xsi:type="string">Magento\CatalogRule\Model\Rule\DataProvider</argument>
             <argument name="name" xsi:type="string">catalog_rule_form_data_source</argument>
@@ -105,19 +117,12 @@ The checkbox UI component comprises the following files:
         </argument>
     </dataSource>
 
-    <field name="&amp;#60;Component_Index">
-        <argument name="data" xsi:type="array">
-            <item name="config" xsi:type="array">
-                <item name="formElement" xsi:type="string">checkbox</item>
-                <item name="dataType" xsi:type="string">text</item>
-                <item name="dataScope" xsi:type="string">&amp;#60;Component_Index&amp;#62;</item>
-            </item>
-        </argument>
-    </field>
 </form>
 {%endhighlight%}
 
+### Chekbox-specific options
 
+The following table contains the options you can configure for the checkbox component.
 
 <table>
   <tr>
@@ -142,12 +147,8 @@ The checkbox UI component comprises the following files:
       <code>checked</code>
     </td>
     <td>
-      property that can help handle default state of Checkbox Ui.
-      In case both `checked` and `value` are defined in
-      configuration it has lower priority under `value` property.
-      <p class="q">
-        need clarification
-      </p>
+      Defines the default state of the component.
+      Has lower priority than the <code>value</code> option if both are specified.
     </td>
     <td>
       Boolean
@@ -161,11 +162,87 @@ The checkbox UI component comprises the following files:
   </tr>
   <tr>
     <td>
+      <code>description</code>
+    </td>
+    <td>
+      The text displayed next to the field. The following image
+      illustrates the difference between the label and description:
+      <img src=
+      "{{site.baseurl}}common/images/ui_checkbox_desc.png" />
+    </td>
+    <td>
+      String
+    </td>
+    <td>
+      <p>
+        optional
+      </p>
+    </td>
+    <td>
+      ''
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>disabled</code>
+    </td>
+    <td>
+      Disables/enables the component's UI for the user. When disabled, the field appears dimmed.
+<p class="q">Is it true? Only UI, it still can be set programically?</p>
+    </td>
+    <td>
+      Boolean
+    </td>
+    <td>
+      optional
+    </td>
+    <td>
+      false
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>elementTmpl</code>
+    </td>
+    <td>
+      Path to the template in terms of RequireJS.
+    </td>
+    <td>
+      String
+    </td>
+    <td>
+      optional
+    </td>
+    <td>
+      Depends on how the <code>prefer</code> option is configured
+<p class="q">so can we specify any values? </p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>initialValue</code>
+    </td>
+    <td>
+      The <code>value</code> of the component at the moment before initialization a
+      component. Cannot be set in configuration. It is a calculated value.
+<p class="q">Before initialization? </p>
+    </td>
+    <td>
+      *
+    </td>
+    <td>
+      -
+    </td>
+    <td>
+      -
+    </td>
+  </tr>
+  <tr>
+    <td>
       <code>isMultiple</code>
     </td>
     <td>
-      Enable component to behave as Checkbox Set. See section
-      Example of use for more details.
+      Enables the component to behave as checkbox set. See the [section with examples of usage](#checkbox_set) for illustration. 
     </td>
     <td>
       Boolean
@@ -186,13 +263,30 @@ The checkbox UI component comprises the following files:
       button. Does not influence the behavior.
     </td>
     <td>
-      String. One of `checkbox`, `toggle`, `radio`
+      <code>'checkbox'</code>|<code>'toggle'</code>|<code>'radio'</code>
     </td>
     <td>
       optional
     </td>
     <td>
-      <code>checkbox</code>
+      <code><code>'checkbox'</code></code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>value</code>
+    </td>
+    <td>
+      The value the component can return. If one value is set, then it is automatically assigned to the "checked" state; in the "unchecked" state the component returns an empty string in this case. You can assign a separate value for each state using the <code>valueMap</code> option.
+    </td>
+    <td>
+      
+    </td>
+    <td>
+      optional
+    </td>
+    <td>
+      <p class="q">any default value?</p>
     </td>
   </tr>
   <tr>
@@ -201,7 +295,8 @@ The checkbox UI component comprises the following files:
     </td>
     <td>
       Allows to associate values with binary states. The type of
-      values should match type of value from DataProvider.
+      values should match the type of value from DataProvider.
+    <p class="q">DataProvider or data provider?</p>
     </td>
     <td>
       Object. Expected structure:
@@ -221,67 +316,11 @@ The checkbox UI component comprises the following files:
   </tr>
   <tr>
     <td>
-      <code>elementTmpl</code>
-    </td>
-    <td>
-      Path to the template in terms of RequireJS.
-    </td>
-    <td>
-      String
-    </td>
-    <td>
-      optional
-    </td>
-    <td>
-      %depends on how the <code>prefer</code> option is configured%
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>description</code>
-    </td>
-    <td>
-      The text displayed next to the field. The following image
-      illustrates the difference between the label and description:
-      <img src=
-      "{{site.baseurl}}common/images/ui_checkbox_desc.png" />
-    </td>
-    <td>
-      String
-    </td>
-    <td>
-      <p>
-        required?
-      </p>
-    </td>
-    <td>
-      ''
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>disabled</code>
-    </td>
-    <td>
-      makes/removes ability to change state of checkbox.
-    </td>
-    <td>
-      Boolean
-    </td>
-    <td>
-      optional
-    </td>
-    <td>
-      false
-    </td>
-  </tr>
-  <tr>
-    <td>
       <code>visible</code>
     </td>
     <td>
-      shows/hides component from the page. In runtime component
-      still exist and could be accessible
+      Shows/hides the component from the page. In runtime component
+      still exist and can be accessed.
     </td>
     <td>
       Boolean
@@ -293,68 +332,81 @@ The checkbox UI component comprises the following files:
       true
     </td>
   </tr>
-  <tr>
-    <td>
-      <code>initialValue</code>
-    </td>
-    <td>
-      exact the value that was on moment before initialization a
-      component. It cannot be set in configuration. It is a
-      calculated value.
-    </td>
-    <td>
-      *
-    </td>
-    <td>
-      -
-    </td>
-    <td>
-      -
-    </td>
-  </tr>
+
 </table>
+
+The component calculates the initial state from data in DataProvider according to the following pattern:
+
+```
+ $provider[ .. ]['Component_Index'] = true; // Checkbox appear to be checked
+ $provider[ .. ]['Component_Index'] = false; // Checkbox appear to be unchecked
+ $provider[ .. ]['Component_Index'] = null; // Will fallback to "default" state, false.
+                                            // Because in example upper we define only "true" and "false" as allowed.
+                                            // It could not obvious on first look.
+```
 
 ## Public API (JS)
 
-- `getReverseValueMap (value)`
+### `getReverseValueMap()`
+
+    getReverseValueMap (value)
     @param {*} value
     @returns {Boolean}
 
+
 Returns `true` if the passed argument is strictly equal to the `valueMap.true` setting. Otherwise returns `false`.
 
-- `value()`
+### `value()`
+
+    value()
     @returns {*}
-As a getter returns current value.
 
-- `value(param)`
+Getter, returns current checkbox `value`.
+
+### `value(param)`
+
+    value(param)
     @param {*} param
-As a setter stores `param` as a `value`. Compare to `initialValue` method changes checked state.
 
-- `checked()`
+Setter, sets `param` as a `value`. Changes the checked state.
+
+### `checked()`
+
+    checked()
     @returns {Boolean}
-As a getter returns current checkbox state. `true` if CHECKED, `false` otherwise.
 
-- `checked(param)`
+Getter, returns current checkbox state: `true` if checked, `false` otherwise.
+
+### `checked(param)`
+
+    checked(param)
     @param {Boolean} param
     @returns void
-Just make a checkbox state as CHECKED (`param = true`) or UNCHECKED (`param = false`).
-In this implementation Checkbox Ui Component doesn't support [indeterminate](https://css-tricks.com/indeterminate-checkboxes/) state. Could affect `value`.
 
-## Example of use
+Sets the checkbox state: checked, if `param` is `true`, unchecked if `param` is `false`.
+In the current implementation the checkbox Ui component doesn't support [indeterminate](https://css-tricks.com/indeterminate-checkboxes/) state. Can affect `value`.
 
-### Checkbox Ui Component as a Boolean state checker
+<p class="q">Ui component or UI component?  </p>
 
-Let's view on the case when Field Ui has simple role. It just toggle some boolean flag. On this step you should make choice what pair of variables Field Ui should process:
- - `true` / `false`, Boolean type
- - `'true'` / `'false'`, String type
- - `1` / `0`, Number type
- - `'1'` / `'0'`, String type
- - .. other pairs of variables of simple types
+## Examples of use
 
-Side note: anyway data from component will send by POST and all values will be casted to stings. You controller/model should handle such situation.
+### Example 1:Checkbox Ui Component as a Boolean state checker
 
-This value pairs are placed in `vallueMap` parameter.
- 
+You can use a checkbox Ui component to simply toggle some boolean flag. In this case you need to decide which pair of variables the checkbox Ui should process:
+
+ - `true` / `false`, Boolean 
+ - `'true'` / `'false'`, String
+ - `1` / `0`, Number
+ - `'1'` / `'0'`, String
+ -  other pairs of variables of simple types.
+
+The value pair is placed in the `valueMap` parameter. 
+Consider, that data from the component is always sent using the POST method and all values are casted to strings. You controller/model must handle such situation.
+
+<p class="q">such situation?</p>
+
+If you decide that value pair will be of Boolean type, the component's configuration might look like following:
+
 {%highlight xml%}
 <field name="Component_Index">
     <argument name="data" xsi:type="array">
@@ -362,7 +414,7 @@ This value pairs are placed in `vallueMap` parameter.
             <item name="formElement" xsi:type="string">checkbox</item>
             <item name="dataType" xsi:type="string">text</item>
             <item name="dataScope" xsi:type="string">Component_Index</item>
-
+            <!-- --
             <item name="vallueMap" xsi:type="array">
                 <item name="true" xsi:type="boolean">true</item>
                 <item name="false" xsi:type="boolean">false</item>
@@ -372,17 +424,6 @@ This value pairs are placed in `vallueMap` parameter.
 </field>
 {%endhighlight%}
 
-Component will calculated initial state from data in DataProvider.
-
-<p class="q">is it a code block or just a set of lines</p>
-
-```
- $provider[ .. ]['Component_Index'] = true; // Checkbox appear to be checked
- $provider[ .. ]['Component_Index'] = false; // Checkbox appear to be unchecked
- $provider[ .. ]['Component_Index'] = null; // Will fallback to "default" state, false.
-                                            // Because in example upper we define only "true" and "false" as allowed.
-                                            // It could not obvious on first look.
-```
 
 ### Checkbox Ui Component as a Boolean state checker with toggle button look
 "Toggle button" view drived by the only one independent option - `prefer`. Behavior retain as checkbox has.
@@ -404,8 +445,10 @@ Component will calculated initial state from data in DataProvider.
 </field>
 {%endhighlight%}
 
-### Checkbox Ui Component as a some value on/off switcher
-When `value` parameter set but `vallueMap` absent component tries to toggle initialValue and empty string:
+### Example 2: A checkbox Ui component as a some value on/off switcher
+When the `value` option is set, and `vallueMap` is not. The component tries to toggle `initialValue` and empty string:
+
+<p class="q">why initialvalue?</p>
  
 {%highlight xml%}
 <field name="Component_Index">
@@ -423,16 +466,14 @@ When `value` parameter set but `vallueMap` absent component tries to toggle init
 
 DataProvider will recieve `42` or `''` (empty string).
 
-Yes, technically you can mix types in `valueMap` but it's highly strange pattern.
 
-### Checkbox Ui Component as a part of Radioset/Checkboxset
+### Example 3: a checkbox Ui component as a part of a radio set or checkbox set.{#checkbox_set}
 
-The main purpose for this case to handle form elements that belong to different parts of Form Ui.
+The main purpose for this case is handling form elements that belong to different parts of the form Ui component.
 
-For radioset look and feel you must setup `prefer = radio`.
+For radioset look and feel, in the checkbox configurations you must setup `prefer = radio`.
 
-To handle `initialValue` you must setup `value`.
-And that's all.
+To handle the `initialValue` you must setup `value`.
 
 Main magic with collaborative work of several radio components is provided by the dataScope attribute configuration: all components should have the same value of `dataScope` and should be children of same root element.
 
