@@ -103,7 +103,7 @@ $opts = array(
                 'header' => 'Authorization: Bearer 36849300bca4fbff758d93a3379f1b8e'
             )
         );
-$wssdlUrl = 'http://magento.ll/soap/default?wsdl=1&services=testModule1AllSoapAndRestV1';
+$wsdlUrl = 'http://magento.ll/soap/default?wsdl=1&services=testModule1AllSoapAndRestV1';
 $serviceArgs = array("id"=>1);
  
 $soapClient = new Zend\Soap\Client($wsdlUrl);
@@ -112,7 +112,7 @@ $soapClient->setSoapVersion(SOAP_1_2);
 $context = stream_context_create($opts);
 $soapClient->setStreamContext($context);
  
-$soapResponse = $this->_getSoapClient($serviceInfo)->testModule1AllSoapAndRestV1Item($serviceArgs); ?>
+$soapResponse = $soapClient->testModule1AllSoapAndRestV1Item($serviceArgs); ?>
 {% endhighlight %}
 
 <h2 id="related">Related topics</h2>
