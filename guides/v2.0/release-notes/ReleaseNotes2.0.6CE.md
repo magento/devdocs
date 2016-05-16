@@ -15,7 +15,6 @@ We are pleased to present Magento Community Edition 2.0.6. This release includes
     <p>2.0.6 contains important security updates. Please update to this version or use the latest available Magento version when starting a new project.</p>
 </div>
 
-Functional features include the ability to use <a href="http://devdocs.magento.com/guides/v2.0/config-guide/redis/config-redis.html">Redis for session storage</a> and a change to our default file permissions strategy that provides a more flexible way to set file ownership and permissions.  
 
 
 Backward-incompatible changes are documented in <a href="http://devdocs.magento.com/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
@@ -37,7 +36,7 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 
 
 
-<!-- 51809 -->* You can now use the Redis adapter to provide session storage in Magento 2.0.6. 
+<!-- 51809 -->* You can now use the Redis adapter to provide session storage in Magento 2.0.6. For more information, see <a href="http://devdocs.magento.com/guides/v2.0/config-guide/redis/config-redis.html">Redis for session storage</a>. 
 
 
 
