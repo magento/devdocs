@@ -89,16 +89,13 @@ The following table lists the commands used in the preceding example.
 	</tr>
 	<tr>
 		<td>Grant the contributor role to an environment</td>
-		<td><code>magento-cloud user:role <user e-mail> --level environment --environment test --role contributor</code></td>
+		<td><code>magento-cloud user:role &lt;user e-mail> --level environment --environment test --role contributor</code></td>
 	</tr>
 	<tr><td>Merge an environment</td>
 	<td><code>magento-cloud environment-merge Sprint-X</code></td>
 	</tr>
 	<tr><td>Sync QA with Sprint-X</td>
 	<td><code>magento-cloud environment:synchronize code data</code></td>
-	</tr>
-	<tr><td>Merge Sprint-X with the master branch</td>
-	<td><code>magento-cloud environment:merge Sprint-X</code></td>
 	</tr>
 	<tr><td>Merge Sprint-X with the master branch</td>
 	<td><code>magento-cloud environment:merge Sprint-X</code></td>

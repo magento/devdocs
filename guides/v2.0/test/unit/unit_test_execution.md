@@ -1,7 +1,7 @@
 ---
 layout: default
-group: test-guide
-subgroup: A1_Running_Unit_Tests
+group: unit-testing
+subgroup: 10_Running_Unit_Tests
 title: Running Unit Tests
 menu_title: Running Unit Tests
 menu_node: parent

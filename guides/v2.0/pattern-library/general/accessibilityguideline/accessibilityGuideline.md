@@ -119,7 +119,7 @@ Don't override native accessibility features.
 
 Ensure form controls have descriptive labels and instructions. Pay close attention to form validation errors and recovery mechanisms.
 
-**4. Give users <a href="http://www.w3.org/WAI/WCAG20/quickref/Overview.php#time-limits" target="blank">enough time</a> to read and use content.**
+**4. Give users enough time to read and use content.**
 
 **5. Help users navigate and find content.**
 

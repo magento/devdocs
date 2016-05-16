@@ -44,7 +44,7 @@ Deployment consists of the following phases:
 3.	[Phase 3: Prepare slug](#cloud-deploy-over-phases-slug)
 4.	[Phase 4: Deploy slugs and cluster](#cloud-deploy-over-phases-slugclus) 
 5.	[Phase 5: Deploy hooks](#cloud-deploy-over-phases-hook)
-6	[Post-deployment: configure routing](#cloud-deploy-over-phases-route)
+6.	[Post-deployment: configure routing](#cloud-deploy-over-phases-route)
 
 ### Phase 1: Configuration validation {#cloud-deploy-over-phases-conf}
 First, the built-in Git server checks the following:
@@ -83,12 +83,11 @@ But also know that once the application has been built it is going to be
 mounted on a read-only file system (you will be able to configure specific
 mount points that are going to be read/write). 
 
-This means you cannot FTP to the server and add modules. So, if you are
-used to be working like this, this is going to change some of your habits.
+This means you cannot FTP to the server and add modules. Instead, you must add code to your environment and push the environment, which builds and deploys it.
 
 ### Phase 3: Prepare the slug {#cloud-deploy-over-phases-slug}
-The result of the build phase is a read-only file system we refer to as a *slug*. In this phase, we create an archive and put it in in permanent storage. The next time
-you push code, if a service did not change, you can use another.
+The result of the build phase is a read-only file system we refer to as a *slug*. In this phase, we create an archive and put it in permanent storage. The next time
+you push code, if a service did not change, you can use a slug from the archive.
 
 It also means that reverting a deployment is basically
 instantaneous. 
@@ -103,7 +102,7 @@ need:
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>The main file system is <em>read-only</em>. This
-is what guarantees we can do deterministic deployments.</p>
+is what guarantees we can do deterministic deployments. The read-only file system also dramatically improves your site's security because no process can write to the file system.</p>
 </div>
 
 ### Phase 5: Deployment hooks {#cloud-deploy-over-phases-hook}
