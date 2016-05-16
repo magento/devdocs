@@ -1,14 +1,15 @@
 ---
-layout: default
-group: install_pre
-subgroup: Prerequisites
-title: Set up the updater (obsolete)
-menu_title: Set up the updater (obsolete)
-menu_order: 500
+layout: default 
+group: compman
+subgroup: 20_update-updater
+title: Updater application
+menu_title: Updater application
 menu_node: 
-github_link: install-gde/prereq/prereq_updater.md
+menu_order: 2
+github_link: comp-mgr/updater/updater.md
 ---
 
+## Updater application
 This topic is obsolete. Magento no longer has a separate updater application.
 
 If you are a contributing developer who installed the Magento application by cloning the GitHub repository, see instead [Update the Magento application]({{ site.gdeurl }}install-gde/install/cli/dev_update-magento.html).
