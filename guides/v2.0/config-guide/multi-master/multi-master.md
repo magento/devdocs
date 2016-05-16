@@ -68,6 +68,10 @@ This also means you can either:
 
 	You must perform this task if you've already installed components or if Magento is already in production. (*Do not* update a production system; make the updates in a development system and synchronize the changes after you've tested them.)
 
+<div class="bs-callout bs-callout-warning">
+    <p>You must back up the two additional database instances manually. Magento backs up only the main database instance. The <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-backup.html"><code>'magento setup:backup --db</code></a> command and Magento Admin options do not back up the additional tables.</p>
+</div>
+
 <h2 id="config-ee-multidb-prereq">Prerequisites</h2>
 The split database requires you to set up three MySQL master databases on any host (all three on the Magento server, each database on a separate server, and so on). These are the *master* databases and they're used as follows:
 
