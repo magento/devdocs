@@ -27,4 +27,6 @@ To set `magento_umask`:
 
 	1.	Use a text editor to create a new file `<your Magento install dir>/magento_umask`
 	2.	Set `magento_umask` to the desired value.
+
+		For example, `022`
 3.	Save your changes to `magento_umask` and exit the text editor.
