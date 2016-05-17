@@ -7,7 +7,7 @@ menu_title: Magento file system ownership and permissions
 level3_menu_node: level3parent
 level3_subgroup: umask
 menu_node:
-menu_order: 15
+menu_order: 29
 github_link: install-gde/prereq/file-sys-perms-parent.md
 ---
 

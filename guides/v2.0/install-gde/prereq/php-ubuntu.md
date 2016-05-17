@@ -2,16 +2,16 @@
 layout: default
 group: install_pre
 subgroup: Prerequisites
-title: PHP 5.5, 5.6, or 7.0&mdash;Ubuntu
-menu_title: PHP 5.5, 5.6, or 7.0&mdash;Ubuntu
-menu_order: 08
+title: PHP 5.5, 5.6, or 7.0 (Ubuntu)
+menu_title: PHP 5.5, 5.6, or 7.0 (Ubuntu)
+menu_order: 23
 level3_menu_node: level3child
 level3_subgroup: php
 github_link: install-gde/prereq/php-ubuntu.md
 redirect_from: /guides/v1.0/install-gde/prereq/php-ubuntu.html
 ---
 
-<h4 id="instgde-php-prereq-contents">Contents</h4>
+#### Contents
 
 *	<a href="#php-support">PHP versions supported</a>
 *	<a href="#php-ubuntu-help-beginner">Help if you're just starting out</a>
