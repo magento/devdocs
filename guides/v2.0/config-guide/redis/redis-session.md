@@ -18,7 +18,7 @@ Before you continue, install Redis as discussed in <a href="{{ site.gdeurl }}con
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>You can use Redis for session storage in Magento versions TBD and later only.</p></span>
+  <p>You can use Redis for session storage in Magento versions 2.0.6 and later only.</p></span>
 </div>
 
 <h2 id="config-redis-config">Configure Magento to use Redis for session storage</h2>
