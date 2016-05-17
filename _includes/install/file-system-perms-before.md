@@ -5,6 +5,10 @@ This topic discusses how to set read-write permissions for the web server group 
 
 The procedure you use is different, depending on whether you use [shared hosting](#perms-shared) and have one user or if you use a [private server](#perms-private) and have two users.
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>If you're using a Magento version <em>earlier than</em> 2.0.6, see <a href="{{ site.gdeurl }}install-gde/install/legacy-file-system-perms.html">Appendix&mdash;Magento file system ownership and appendix (legacy)</a> instead.</p>
+</div>
+
 ## Set permissions for shared hosting (one user) {#perms-shared}
 This section discusses how to set pre-installation permissions if you log in to the Magento server as the same user that also runs the web serer. This type of setup is common in shared hosting environments.
 
