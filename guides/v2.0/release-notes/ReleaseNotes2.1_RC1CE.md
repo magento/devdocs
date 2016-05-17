@@ -5,7 +5,7 @@ subgroup: Release Notes
 title: Magento CE 2.1 Release Candidate 1 Release Notes 
 menu_title: Magento CE 2.1 Release Candidate 1 Release Notes 
 menu_order: 13
-github_link: release-notes/ReleaseNotes2.1RC1CE.md
+github_link: release-notes/ReleaseNotes2.1_RC1CE.md
 ---
 
 <h2>Magento Community Edition 2.1 Release Candidate 1</h2>

@@ -5,7 +5,7 @@ subgroup: Release Notes
 title: Magento EE 2.1 Release Candidate 1 Release Notes 
 menu_title: Magento EE 2.1 Release Candidate 1 Release Notes 
 menu_order: 14
-github_link: release-notes/ReleaseNotes2.1RC1EE.md
+github_link: release-notes/ReleaseNotes2.1_RC1EE.md
 ---
 
 <h2>Magento Enterprise Edition 2.1 Release Candidate 1</h2>
