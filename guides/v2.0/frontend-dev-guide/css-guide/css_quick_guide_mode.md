@@ -77,8 +77,8 @@ If your Magento instance uses the server-side compilation mode, you need to manu
 <li>Install Grunt and register your theme as described in <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css_debug.html#grunt_prereq" target="_blank">Installing and configuring Grunt</a>.</li>
 <li>From your Magento installation directory, run the following commands:
 <ul>
-<li><code>grunt exec: &lt;your_theme&gt;</code></li>
-<li><code>grunt less: &lt;your_theme&gt;</code></li>
+<li><code>grunt exec:&lt;your_theme&gt;</code></li>
+<li><code>grunt less:&lt;your_theme&gt;</code></li>
 <li><code>grunt watch</code></li>
 </ul>
 Where <code>&lt;your_theme&gt;</code> is the code of your theme. Conventionally it should coincide with the theme directory name.
