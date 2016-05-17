@@ -41,6 +41,12 @@ $ bundle install
 $ bin/jekyll serve
 ```
 
+# Build this site using Vagrant
+To simplify the process of building this site locally using Jekyll, we enable you to run a ready-made Vagrant container that has everything you need.
+
+To use it, see the [Vagrant README](vagrant/README.md).
+
+
 # Questions
 If you have questions, open an issue and ask us. We're looking forward to hearing from you!
 
