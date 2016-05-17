@@ -13,6 +13,7 @@ github_link: install-gde/trouble/php/tshoot_php-set.md
 See one of the following sections:
 
 *	<a href="#trouble-php-always">always_populate_raw_post_data error</a>
+*	[PHP memory limit error](#trouble-php-memory)
 *   <a href="#trouble-php-xdebug">xdebug maximum function nesting level error</a>
 *   <a href="#trouble-php-asptags">Errors display when you access a PHTML template</a>
 
@@ -42,6 +43,28 @@ To resolve the error:
 	*	CentOS: `service httpd restart`
 
 8.	On the readiness check page, click **Try Again**.
+
+### PHP memory limit error {#trouble-php-memory}
+The readiness checks makes sure you have at least 1GB of memory set aside for PHP processes. This setting should be sufficient for most installations, including installing optional sample data. However, we recommend at least 2GB for debugging.
+
+To increase your PHP memory limit:
+
+1.	Log in to your Magento server.
+2.	Locate your `php.ini` file using the following command:
+
+		php --ini
+3.	As a user with `root` privileges, use a text editor to open the `php.ini` specified by `Loaded Configuration File`.
+4.	Locate `memory_limit`.
+5.	Change it to a value of `1GB` for normal use or at least `2GB` for debugging.
+6.	Save your changes to `php.ini` and exit the text editor.
+7.	Restart your web server.
+
+	Examples follow:
+
+	*	CentOS: `service httpd restart`
+	*	Ubuntu: `service apache2 restart`
+	*	nginx (both CentOS and Ubuntu): `service nginx restart`
+8.	Try the installation again.
 
 <h3 id="trouble-php-xdebug">xdebug maximum function nesting level error</h3>
 
