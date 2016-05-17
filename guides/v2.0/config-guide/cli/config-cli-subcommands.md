@@ -26,7 +26,7 @@ See one of the following sections:
 {% include install/before-you-begin-cli.html %}
 
 <h2 id="config-cli-before">First steps</h2>
-<ol><li>Log in to the Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-over">Magento file system owner</a>.</li>
+<ol><li>Log in to the Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
 <li>Change to the following directory:<br>
 <pre>cd &lt;your Magento install dir>/bin</pre>
 Examples:

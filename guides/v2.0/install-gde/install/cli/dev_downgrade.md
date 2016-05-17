@@ -30,7 +30,7 @@ You have the following options:
 
 To change versions after cloning:
 
-1.	Log in to your Magento server as, or switch to, <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">the Magento file system owner</a>.
+1.	Log in to your Magento server as, or switch to, <a href="{{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html">the Magento file system owner</a>.
 2.	Use the following command to uninstall the Magento software:
 
 		php <your Magento clone dir>/bin/magento setup:uninstall
@@ -52,7 +52,7 @@ To change versions after cloning:
 
 To change versions after cloning:
 
-1.	Log in to your Magento server as, or switch to, <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">the Magento file system owner</a>.
+1.	Log in to your Magento server as, or switch to, <a href="{{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html">the Magento file system owner</a>.
 2.	Create a <a href="{{ site.gdeurl }}install-gde/prereq/mysql.html#instgde-prereq-mysql-config">new database instance</a> for your installation.
 2.	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-backup.html#instgde-cli-uninst-back">Back up</a> the Magento file system, database, and media files:
 

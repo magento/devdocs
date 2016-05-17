@@ -187,7 +187,7 @@ To clean the cache using the command line, use the <a href="{{ site.gdeurl }}con
 
 To reindex using the command line:
 
-1.	Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+1.	Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
 2.	Enter the following command to reindex all indexers:
 
 		php <your Magento install dir>/bin magento indexer:reindex

@@ -40,7 +40,7 @@ To enable database caching using the `default` frontend, you must modify `<your 
 
 To modify `di.xml`:
 
-1.	Log in to the Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+1.	Log in to the Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
 2.	Enter the following commands to make a copy of `di.xml`:
 
 		cd <your Magento install dir>/app/etc
@@ -109,7 +109,7 @@ This section discusses how to set up database caching with a custom cache fronte
 
 To enable database caching using a custom cache frontend, you must modify `<your Magento install dir>/app/etc/env.php` as follows:
 
-1.	Log in to the Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+1.	Log in to the Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
 2.	Enter the following commands to make a copy of `env.php`:
 
 		cd <your Magento install dir>/app/etc
@@ -145,7 +145,7 @@ To verify database caching is working, clear the current cache directories, go t
 
 Use the following steps:
 
-1.	If you haven't done so already, log in to the Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+1.	If you haven't done so already, log in to the Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
 2.	Clear the current cache directories:
 
 		rm -rf <your Magento install dir>/var/cache/* <your Magento install dir>/var/page_cache/* <your Magento install dir>/var/di/* <your Magento install dir>/var/generation/*
