@@ -469,7 +469,7 @@ When the `value` option is set, and `vallueMap` is not set, the component tries 
 DataProvider will recieve `42` or `''` (empty string).
 
 
-### Example 4: Checkbox Ui component as a part of a radio set or checkbox set.{#checkbox_set}
+### Example 4: Checkbox Ui component as a part of a radio set or checkbox set. {#checkbox_set}
 
 In this case you need to handle form elements that belong to different parts of the form Ui component. To do this, you need to configure the checkbox components as follows: 
 
