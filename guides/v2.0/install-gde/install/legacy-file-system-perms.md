@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install
-subgroup: B_Verify
+subgroup: 99_app
 title: Appendix&mdash;Magento file system ownership and appendix (legacy)
 menu_title: Appendix&mdash;Magento file system ownership and appendix (legacy)
 menu_node: parent

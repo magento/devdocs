@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install
-subgroup: B_Verify
+subgroup: 05_umask
 title: Optionally set a umask
 menu_title: Optionally set a umask
 menu_node: parent

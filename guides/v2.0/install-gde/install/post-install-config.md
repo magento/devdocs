@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install
-subgroup: B_Verify
+subgroup: 02_config
 title: Configure the Magento application
 menu_title: Configure the Magento application
 menu_node: parent
