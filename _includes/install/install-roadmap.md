@@ -15,7 +15,7 @@ Do you know what a "terminal" application is? Do you know what operating system 
 *	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Choose how to install Magento</a>
 *	<a href="{{ site.gdeurl }}install-gde/system-requirements.html">System requirements</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/prereq-overview.html">Prerequisites</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html">">Creating the Magento file system owner</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html">The Magento file system owner</a>
 {% endcollapsible %}
 
 ## Installation part 2: Installing

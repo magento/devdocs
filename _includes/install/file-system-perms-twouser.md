@@ -3,8 +3,8 @@ Complete the following tasks in the order shown:
 *	[About the shared group](#mage-owner-about-group)
 *	[Step 1: Create the Magento file system owner and give the user a strong password](#mage-owner-create-user)
 *	[Step 2: Find the web server group](#install-update-depend-user-findgroup)
-*	[Step 3: Assign users to the group](#install-update-depend-user-add2group)
-*	[Step 4: Set ownership and permissions for two users](#perms-set-two-users)
+*	[Step 3: Put the Magento file system owner in the web server’s group](#install-update-depend-user-add2group)
+*	[Step 4: Set ownership and permissions for the shared group](#perms-set-two-users)
 
 ### About the shared group {#mage-owner-about-group}
 To enable the web server to write files and directories in the Magento file system but to also maintain *ownership* by the Magento file system owner. This is necessary so both users can share access to Magento files. (This includes files created using the Magento Admin or other web-based utilities.)
@@ -70,7 +70,7 @@ To complete the task, restart the web server:
 *	Ubuntu: `service apache2 restart`
 *	CentOS: `service httpd restart`
 
-### Step 4: Set ownership and permissions for two users {#perms-set-two-users}
+### Step 4: Set ownership and permissions for the shared group {#perms-set-two-users}
 To set ownership and permissions before you install the Magento software:
 
 1.	Log in to your Magento server as, or switch to, the Magento file system owner.

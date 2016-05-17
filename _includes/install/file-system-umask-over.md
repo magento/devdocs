@@ -9,11 +9,11 @@ Even in a development environment, you want your Magento installation to be secu
 
 This topic provides some basic information about our ownership and permissions guidelines. For additional information, see:
 
-*	[Set pre-installation ownership and permissions]({{ site.gdeurl }}install-gde/prereq/file-sys-perms.html)
+*	[Set pre-installation ownership and permissions]({{ site.gdeurl }}install-gde/prereq/file-system-perms.html)
 *	[Magento ownership and permissions in development and production]({{ site.gdeurl }}config-guide/prod/prod_file-sys-perms.html)
 
 ### Magento file system owner
-We refer to the *Magento file system owner* as the user who runs command-line commands, the Magento Admin, and other utilities. This user can be either a local user on your Magento server or it can be a user provided to you by your shared hosting provider.
+We refer to the *Magento file system owner* as a user who owns and can write to files in the Magento file system.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>The Magento file system owner is sometimes referred to as the <em>command-line user</em>.</p>
@@ -21,11 +21,15 @@ We refer to the *Magento file system owner* as the user who runs command-line co
 
 The Magento file system owner is any of the following:
 
-*	*Shared hosting*: Typically, shared hosting providers enable you to log in to the server as one user. This user can log in, transfer files using FTP, and this user also runs the web server.
+*	A single user, which is typical of shared hosting. 
 
-	Shared hosting users have the option of setting a [umask](#restrict) to further restrict access, particularly in production. 
+	Shared hosting providers enable you to log in to the Magento server as one user. This user can log in, transfer files using FTP, and this user also runs the web server.
 
-*	*Other types of hosting or you have your own server*: Typically, you *cannot* log in to the server as, or switch to, the web server user. Instead, you have separate users:
+	If you use one Magento user, you have the option of setting a [umask](#restrict) to further restrict access, particularly in production. 
+
+*	Users that belong to a shared group, which is typical of private hosting or having your own Magento server.
+
+	In this situation, you typically *cannot* log in to the server as, or switch to, the web server user. Instead, you have separate users:
 
 	*	The web server user, which runs the Magento Admin and storefront. 
 
@@ -37,7 +41,7 @@ The Magento file system owner is any of the following:
 
 Before you install the Magento software, see [Set pre-installation ownership and permissions]({{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html).
 
-### Restrict access {#restrict}
+### Restrict access with a umask {#restrict}
 To tighten security, particularly in production on a shared hosting system, we provide a flexible to restrict access using a umask. A umask&mdash;also referred to as a *file system creation mask*&mdash;is a set of bits, each of which restricts how its corresponding permission is set for newly created files.
 
 <div class="bs-callout bs-callout-warning">
