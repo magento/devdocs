@@ -17,7 +17,7 @@ This Release Candidate is available only on GitHub and repo.magento.com.
 
 
 <h3>Highlights</h3>
-Magento Community Edition 2.1 includes several new and exciting features:
+Magento Community Edition 2.1 includes several new  features:
 
 
 * **PayPal in-context checkout helps to increase conversion rates** 69 bps[1] by allowing shoppers to pay with PayPal without leaving the merchant’s site. PayPal saved credit card capabilities allow merchants to securely store credit cards with PayPal so shoppers can make future purchases without re-entering their credit card information.
