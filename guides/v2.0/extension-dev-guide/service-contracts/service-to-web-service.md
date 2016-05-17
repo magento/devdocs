@@ -68,18 +68,23 @@ Following are some examples of various types and what they would look like in th
 *   A parameter $types which can be an array of strings:
 
         * @param string[] $types
-*   A parameter $id which can be an integer: 
+*   A parameter $id which can be an integer:
 
         * @param int $id
-*   A parameter $customer which is an object of class `\Magento\Customer\Api\Data\CustomerInterface`: 
+*   A parameter $customer which is an object of class `\Magento\Customer\Api\Data\CustomerInterface`:
 
         * @param \Magento\Customer\Api\Data\CustomerInterface $customer
 
     Note that even if the class `\Magento\Customer\Api\Data\CustomerInterface` is in the same namespace (or a sub-namespace) of the current class or a use statement has exists at the top of the class, the fully qualified namespace must be used or the web API throws an exception.
 
-*   A return which is an array of objects of type `\Magento\Customer\Api\Data\CustomerInterface`: 
+*   A return which is an array of objects of type `\Magento\Customer\Api\Data\CustomerInterface`:
 
         * @return \Magento\Customer\Api\Data\CustomerInterface[]
+
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>If a service method argument is called <code>item</code>, there will be a problem during SOAP processing. All item nodes are removed during SOAP request processing. This is done to unwrap array items that are wrapped by the SOAP server into an <code>item</code> element. </p>
+</div>
 
 <h2 id="configuration-options">webapi.xml configuration options</h2>
 <p>To define web API components, set these attributes on these XML elements in the
@@ -177,7 +182,7 @@ Following are some examples of various types and what they would look like in th
                <strong>Note</strong>:The Magento web API framework enables guest users to access resources that are configured with <code>anonymous</code> permission.</p>
                   <p>Any user that the framework cannot authenticate through existing <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication.html">authentication
                      mechanisms</a> is considered a guest user.</p>
-                  
+
             </li>
          </ul>
       </td>
@@ -272,4 +277,3 @@ Following are some examples of various types and what they would look like in th
 <h2 id="validate-webapi">webapi.xsd XML schema file</h2>
 <p>The <code>webapi.xml</code> file for your module must specify an XML schema file for validation. Your <code>webapi.xml</code> file can specify the default or a customized XML schema file.</p>
 <p>The default <code>webapi.xsd</code> XML schema file can be found in the <code>app/code/Magento/Webapi/etc</code> directory.</p>
-
