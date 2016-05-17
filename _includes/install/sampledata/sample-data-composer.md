@@ -6,7 +6,7 @@ This section discusses how to install sample data if you got the Magento softwar
 *   Downloaded a compressed archive
 *   Used `composer create-project`
 
-You can use this method of getting sample data if you used Magento Community Edition (CE) or Enterprise Edition (EE).
+You can use this method of getting sample data if you used Magento Community Edition (CE) or Enterprise Edition (EE). You can use it either before or after you install the Magento software; however, there might be [additional tasks]({{ site.gdeurl }}install-gde/install/sample-data.html) for installing sample data after you install the Magento software.
 
 If you're a contributing developer, see one of the other topics on the left side of this page.
 

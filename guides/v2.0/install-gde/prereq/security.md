@@ -4,7 +4,7 @@ group: install_pre
 subgroup: Prerequisites
 title: SELinux and iptables
 menu_title: SELinux and iptables
-menu_order: 25
+menu_order: 200
 github_link: install-gde/prereq/security.md
 redirect_from: /guides/v1.0/install-gde/prereq/security.html
 ---

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install
-subgroup: A_Verify
+subgroup: 01_Verify
 title: Verify the installation
 menu_title: Verify the installation
 menu_node: parent

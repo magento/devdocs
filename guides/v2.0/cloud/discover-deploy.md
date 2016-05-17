@@ -44,7 +44,7 @@ Deployment consists of the following phases:
 3.	[Phase 3: Prepare slug](#cloud-deploy-over-phases-slug)
 4.	[Phase 4: Deploy slugs and cluster](#cloud-deploy-over-phases-slugclus) 
 5.	[Phase 5: Deploy hooks](#cloud-deploy-over-phases-hook)
-6	[Post-deployment: configure routing](#cloud-deploy-over-phases-route)
+6.	[Post-deployment: configure routing](#cloud-deploy-over-phases-route)
 
 ### Phase 1: Configuration validation {#cloud-deploy-over-phases-conf}
 First, the built-in Git server checks the following:

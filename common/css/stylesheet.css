@@ -165,7 +165,7 @@ ul.level3 li, ul li.level3, ol li ol li ul.level3 li
 	padding-left: 16px;
 	margin-bottom:6px;
 }
-ol li, ul ol li { list-style: decimal outside none; }
+ol li, ul ol li { list-style: decimal outside none; background-image:none; }
 ol li { margin-bottom:8px; }
 li p { margin:2px 0 8px; font-size:14px; }
 
@@ -212,6 +212,11 @@ ul li, ul li, ul li
   background-position: 0 6px;
   padding-left: 16px;
   margin-bottom:6px;
+}
+
+ol li ul li {
+    padding-left: 16px;
+    margin-left: 10px;
 }
 
 /*ul:nth-child(1) li {  

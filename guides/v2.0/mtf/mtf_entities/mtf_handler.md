@@ -2,7 +2,7 @@
 layout: default
 group: mtf-guide
 subgroup: 50_Entities
-title: Entities of the Magento Testing Framework
+title: Entities of the Functional Testing Framework
 menu_title: Handler
 menu_order: 3
 github_link: mtf/mtf_entities/mtf_handler.md
@@ -21,7 +21,7 @@ This topic focuses on handlers, and we'll discuss types of handlers as well as h
 
 ## Types of handlers {#mtf_handler_types}
 
-The MTF enables you to use any type of handler.
+The FTF enables you to use any type of handler.
 
 Magento uses the following handlers:
 

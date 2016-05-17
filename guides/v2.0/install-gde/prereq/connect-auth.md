@@ -4,7 +4,7 @@ group: install_pre
 subgroup: Prerequisites
 title: Get your authentication keys
 menu_title: Get your authentication keys
-menu_order: 12
+menu_order: 25
 menu_node: 
 github_link: install-gde/prereq/connect-auth.md
 ---

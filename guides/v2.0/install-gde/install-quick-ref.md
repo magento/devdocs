@@ -39,7 +39,7 @@ If not, see the <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">Ins
 	*	<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP (Ubuntu)</a>
 	*	<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP (CentOS)</a>
 	*	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">MySQL</a>
-3.	Just as importantly, set up the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a> on the server.
+3.	Just as importantly, set up the <a href="{{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a> on the server.
 4.	Switch to the Magento file system owner.
 
 ### Get the Magento software
@@ -56,7 +56,7 @@ You're required to authenticate; see <a href="{{ site.gdeurl }}install-gde/prere
 
 ### Set file system ownership and permissions
 
-{% include install/file-system-perms2-how.md %}
+{% include install/file-system-perms-before.md %}
 
 ## Installation part 2: Installing the Magento software
 You can choose to install the Magento software using either a <a href="{{ site.gdeurl }}install-gde/install/web/install-web.html">web-based Setup Wizard</a> or using the <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">command line</a>.

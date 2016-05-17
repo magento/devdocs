@@ -1,7 +1,7 @@
 ---
 layout: default
-group: test-guide
-subgroup: B3_Running_Integration_Tests
+group: integration-testing
+subgroup: 20_Running_Integration_Tests
 title: Running Integration Tests in the CLI
 menu_title: Running Integration Tests in the CLI
 menu_node: parent

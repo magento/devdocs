@@ -2,7 +2,7 @@
 layout: default
 group: mtf-guide
 subgroup: 30_Quickstart
-title: Quick start with the Magento Testing Framework
+title: Quick start with the Functional Testing Framework
 menu_title: Prepare environment for test run
 menu_order: 2
 github_link: mtf/mtf_quickstart/mtf_quickstart_environmemt.md
@@ -31,7 +31,7 @@ Enter in terminal:
 
 If the Selenium Server does not work directly with your browser, find the corresponding [WebDriver][].
 
-In `config.xml` <a href="{{site.gdeurl}}mtf/mtf_quickstart/mtf_quickstart_config.html#mtf_quickstart_config_configxml_browser"> define the browser that the MTF will use for tests</a>.
+In `config.xml` <a href="{{site.gdeurl}}mtf/mtf_quickstart/mtf_quickstart_config.html#mtf_quickstart_config_configxml_browser"> define the browser that the FTF will use for tests</a>.
 
 Run the Selenium Server with an additional argument.
 
@@ -43,7 +43,7 @@ Example for Google Chrome:
 
 ### Run generator {#mtf_quickstart_env_generator}
 
-Generator generates [fixtures][], [repositories][], and [page objects][]. Once the MTF is initialized, all classes must be pre-generated to facilitate creating and running the tests. Modules in the MTF are processed by generator in the same order that they are processed during Magento loading.
+Generator generates [fixtures][], [repositories][], and [page objects][]. Once the FTF is initialized, all classes must be pre-generated to facilitate creating and running the tests. Modules in the FTF are processed by generator in the same order that they are processed during Magento loading.
 
 Enter in terminal:
 
@@ -69,4 +69,4 @@ Enter in terminal:
 
 
 <!-- ABBREVIATIONS -->
-*[MTF]: Magento Testing Framework
+*[FTF]: Functional Testing Framework

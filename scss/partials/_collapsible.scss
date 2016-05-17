@@ -1,0 +1,37 @@
+/*
+ * This file contains style definitions for collapsible elements
+ */
+
+.collapsible{
+
+  .collapsible-title{
+    cursor: pointer;
+    display: block;
+
+    text-decoration: none;
+    background-repeat: no-repeat;
+    background-position: 0px center;
+    padding: 5px 0 5px 15px;
+    margin: 0px;
+
+    font-size: initial;
+
+    &:focus{
+      outline: none;
+    }
+  }
+
+  .collapsible-content{
+    font-size: initial;
+    font-weight: normal;
+  }
+
+  .ui-accordion-header{
+    background-image: url('../../common/css/caret_right.png');
+  }
+
+  .ui-accordion-header-active{
+    background-image: url('../../common/css/caret_down.png');
+  }
+
+}
