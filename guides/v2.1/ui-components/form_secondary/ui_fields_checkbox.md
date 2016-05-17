@@ -162,7 +162,7 @@ The following table contains the options you can configure for the checkbox comp
       <code>description</code>
     </td>
     <td>
-      The text displayed next to the field. See the <a href="#description">illustration</code> following this table.
+      The text displayed next to the field. See the <a href="#description">illustration</a> following this table.
     </td>
     <td>
       String
