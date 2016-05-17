@@ -15,7 +15,7 @@ The default umask (with no `magento_umask` specified) is `002`, which means:
 
 *	664 for files, which means writable by the user, writable by the group, and read-only for everyone else
 
-A common suggestion is to set `magento_umask` to `022`, which means:
+A common suggestion is to use a value of `022` in the `magento_umask` file, which means:
 
 *	755 for directories: full control for the user, and everyone else can traverse directories.
 *	644 for files: read-write permissions for the user, and read-only for everyone else.
