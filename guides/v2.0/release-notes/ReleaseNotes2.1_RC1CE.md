@@ -2,16 +2,16 @@
 layout: default
 group: release-notes
 subgroup: Release Notes
-title: Magento CE 2.1 Release Candidate 1 Release Notes 
-menu_title: Magento CE 2.1 Release Candidate 1 Release Notes 
+title: Magento CE 2.1 Release Candidate-1 Release Notes 
+menu_title: Magento CE 2.1 Release Candidate-1 Release Notes 
 menu_order: 13
 github_link: release-notes/ReleaseNotes2.1_RC1CE.md
 ---
 
-<h2>Magento Community Edition 2.1 Release Candidate 1</h2>
-We are pleased to present Magento Community Edition 2.1 Release Candidate 1. This release candidate build is not intended for production purposes. Instead, it provides a preview of the new features and fixes that Magento Community Edition 2.1 GA will contain.
+<h2>Magento Community Edition 2.1 Release Candidate-1</h2>
+We are pleased to present Magento Community Edition 2.1 Release Candidate-1. This release candidate build is not intended for production purposes. Instead, it provides a preview of the new features and fixes that Magento Community Edition 2.1 GA will contain.
 
-This candidate release also offers the development community an opportunity to contribute to the Magento 2.1 code base by identifying unresolved issues. We welcome your participation in this process on GitHub! For more information on how to contribute on GitHub, see <a href="{{ site.gdeurl }}contributor-guide/contributing.html" target="_blank">Code contributions</a>. 
+This candidate release also offers the development community an opportunity to contribute to the Magento 2.1 code base by identifying unresolved issues. We welcome your participation in this process on GitHub! For more information on how to provide feedback and contribute on GitHub, see <a href="{{ site.gdeurl }}contributor-guide/contributing.html" target="_blank">Code contributions</a>. 
 
 This Release Candidate is available only on GitHub and repo.magento.com. 
 
@@ -20,13 +20,12 @@ This Release Candidate is available only on GitHub and repo.magento.com.
 Magento Community Edition 2.1 includes several new  features:
 
 
-* **PayPal in-context checkout helps to increase conversion rates** 69 bps[1] by allowing shoppers to pay with PayPal without leaving the merchant’s site. PayPal saved credit card capabilities allow merchants to securely store credit cards with PayPal so shoppers can make future purchases without re-entering their credit card information.
+* **PayPal in-context checkout helps to increase conversion rates**. PayPal in-context checkout helps to increase conversion rates by allowing shoppers to pay with PayPal without leaving the merchant’s site. PayPal saved credit card capabilities allow merchants to securely store credit cards with PayPal so shoppers can make future purchases without re-entering their credit card information.
  
 * **Braintree enhancements enable merchants to qualify for the simplest set of PCI compliance** requirements by using Braintree Hosted Fields to collect all sensitive cardholder information in checkout. Merchants retain complete control over their checkout style and layout because Braintree uses small, transparent iframes to replace individual payment fields. Merchants can now also access Braintree settlement reports from within the Magento Admin.
  
 * **Improved management interfaces** make it faster and easier to search for information in the Admin, set up global search synonyms, and create new product, category, and CMS content.
  
-[1] PayPal pilot data comparing in-context experience to full-page experience for 5 Large Enterprise merchants in North America from Q4’14 – Q1’15 found the in-context experience increased conversion rates by 69 bps.
 
 
 
@@ -36,7 +35,7 @@ Magento Community Edition 2.1 includes several new  features:
 
 <h3>Technology stack</h3>
 
-Our technology stack is built on PHP and MySQL. Magento 2.1 RC1 supports PHP 5.6 and 7.0.2, and MySQL 5.6.
+Our technology stack is built on PHP and MySQL. Magento 2.1 Release Candidate-1 supports PHP 5.6 and 7.0.2, and MySQL 5.6.
 
 We do not support PHP 5.5. 
 
@@ -44,7 +43,7 @@ We do not support PHP 5.5.
 <h3>Installation instructions</h3>
 
 <h4>New installations</h4>
-New users can now complete a full installation of Magento Community Edition 2.1 Release Candidate 1 from an archive file on the <a href="https://www.magentocommerce.com/download" target="_blank">Download</a> page.
+New users can now complete a full installation of Magento Community Edition 2.1 Release Candidate-1 from an archive file on the <a href="https://www.magentocommerce.com/download" target="_blank">Download</a> page.
 
 #####<b>Download a new installation</b>#####
 
