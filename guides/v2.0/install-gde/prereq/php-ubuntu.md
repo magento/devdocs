@@ -4,7 +4,7 @@ group: install_pre
 subgroup: Prerequisites
 title: PHP 5.5, 5.6, or 7.0&mdash;Ubuntu
 menu_title: PHP 5.5, 5.6, or 7.0&mdash;Ubuntu
-menu_order: 06
+menu_order: 08
 level3_menu_node: level3child
 level3_subgroup: php
 github_link: install-gde/prereq/php-ubuntu.md
