@@ -108,7 +108,7 @@ If you have previously signed an agreement to access Magento Enterprise Edition 
 
 `git clone git@github.com:magento/magento2.git`
 
-`git checkout tags/<2.1.0-rc1> [-b <2.1.0-rc1>]`
+`git checkout tags/2.1.0-rc1 [-b 2.1.0-rc1]`
 
 #####<b>Install using Composer</b>#####
 This Release Candidate is available from repo.magento.com. Before installing this Release Candidate using Composer, please familiarize yourself with these  <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run 
