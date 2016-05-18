@@ -540,4 +540,4 @@ Checked values appear in the `dataScope`-collection. Clearing the checkbox remov
 </field>
 {%endhighlight%}
 
-The POST object can contain `[]`,`[42]`,`[24]`,`[42,24]` under the `$_POST[...][%Component_Name%]` key. So checkbox just toggles availablility of its value under dataScope key.
+The POST object can contain either `[]`,`[42]`,`[24]` or `[42,24]` under the `$_POST[...][%Component_Name%]` key. So each checkbox just toggles the availablility of its value under the `dataScope` key.
