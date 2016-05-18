@@ -41,6 +41,21 @@ Magento Enterprise Edition 2.1 includes several new features:
  
 * **Improved management interfaces** make it faster and easier to search for information in the Admin, set up global search synonyms, and create new product, category, and CMS content.
 
+
+<h3>Known issue</h3>
+
+<b>Issue:</b> Enabling Varnish causes the category menu to switch from http to https<a href="https://github.com/magento/magento2/issues/4540" target="_blank">(GITHUB-4540)</a>
+
+<b>Work-around:</b>b> To use Varnish caching with an HTTP site, add rewrite rules such as the following in Magento's root .htaccess: 
+
+`RewriteCond %{HTTPS} on
+RewriteCond %{REQUEST_URI} /yellow-fruit.html
+RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI} [L]
+
+RewriteCond %{HTTPS} on
+RewriteCond %{REQUEST_URI} /red-fruit.html
+RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI} [L]`
+
  
 <h3>Fixed issues</h3>
 
@@ -97,25 +112,15 @@ We do not support PHP 5.5.
 
 <h3>Installation instructions</h3>
 
+You can install Magento Enterprise Edition 2.1 Release Candidate 1 (RC1) using Composer. 
 
-<h4>New installations</h4>
-You can install Magento Enterprise Edition 2.1 Release Candidate 1 (RC1) from either Github or by using Composer. 
-
-
-#####<b>Install from GitHub</b>#####
-If you have previously signed an agreement to access Magento Enterprise Edition 2.0 beta software on GitHub, you can install this release candidate from GitHub. Before proceeding, please familiarize yourself with these  <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html" target="_blank">prerequisites</a>, then run
-
-
-1. `git clone git@github.com:magento/magento2.git`
-
-2. `git checkout tags/<2.1.0-rc1> [-b <2.1.0-rc1>]`
+This Release Candidate is for test purposes only. Do not install it in a production environment.
 
 
 #####<b>Install using Composer</b>#####
-This Release Candidate is available from <a href="http://repo.magento.com" target="_blank">repo.magento.com</a> if you have an Enterprise Edition license. Before installing this Release Candidate using Composer, please familiarize yourself with these  <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then 
+This Release Candidate is available from repo.magento.com if you have an Enterprise Edition license. Before installing this Release Candidate using Composer, please familiarize yourself with these  <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run 
 
-Run `composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=<version> <installation directory name>`
-
+`composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=<2.1.0-rc1> <installation directory name>`
 
 
 
@@ -124,9 +129,9 @@ If you installed Magento Enterprise Edition 2.0.0 from an archive, you must perf
 
 Readiness check can fail under some circumstances because of incorrect permissions on the `var/session` directory. To resolve this issue, enter the following command:
 
-<code>chmod -R 770 <your Magento install dir>/var/session</code>
+`chmod -R 770 <your Magento install dir>/var/session`
 
-For example, enter <code>chmod -R 770 /var/www/magento2/var/session</code>
+For example, enter `chmod -R 770 /var/www/magento2/var/session`
 
 
 #####<b>Upgrade an existing installation from the Setup Wizard</b>#####
@@ -135,7 +140,7 @@ For example, enter <code>chmod -R 770 /var/www/magento2/var/session</code>
 
 2.	On the Admin sidebar, click **System**. Under **Tools**,  choose **Web Setup Wizard**.
 
-3.	Click  **System Upgrade**. Follow the onscreen instructions to complete the upgrade.
+3. Click  **System Upgrade**. Follow the onscreen instructions to complete the upgrade.
 
 For more information, see <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">Upgrade the Magento installation and components</a>.
 

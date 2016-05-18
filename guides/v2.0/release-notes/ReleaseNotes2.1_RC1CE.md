@@ -50,7 +50,7 @@ This release includes fixes for the following GitHub issues:
 
 <!--- 52316 --> *  Product update operations by either customers or store administrators no longer result in locking queries on catalog category product index.<a href="https://github.com/magento/magento2/issues/4342" target="_blank">(GITHUB-4342)</a> 
 
-<!--- 52079 --> * The Order Repository GetList method no longer returns the same shipping address for all orders. <a href="https://github.com/magento/magento2/issues/4019" target="_blank">(GITHUB-4019)</a> 
+<!--- 52079 --> * The Order Repository getList method no longer returns the same shipping address for all orders. <a href="https://github.com/magento/magento2/issues/4019" target="_blank">(GITHUB-4019)</a> 
 
 <!--- 51181 --> * A configurable product's last attribute with price of zero (0) no longer results in an error. The user can configure the product, and the correct price results. <a href="https://github.com/magento/magento2/issues/3912" target="_blank">(GITHUB-3912)</a> 
 
@@ -83,24 +83,18 @@ We do not support PHP 5.5.
 
 <h3>Installation instructions</h3>
 
-<h4>New installations</h4>
-New users can now complete a full installation of Magento Community Edition 2.1 Release Candidate 1 (RC1) from an archive file on the <a href="https://www.magentocommerce.com/download" target="_blank">Download</a> page.
+You can install Magento Enterprise Edition 2.1 Release Candidate 1 (RC1) from either Github or by using Composer. 
 
-#####<b>Download a new installation</b>#####
+This Release Candidate is for test purposes only. Do not install it in a production environment.
 
-1. Go to the <a href="https://www.magentocommerce.com/download" target="_blank">Magento Community Edition Download</a> page, and log in.
+#####<b>Install from GitHub</b>#####
 
-2. Under Full Release, select a format for the download archive file. Then, click **Download**.
+If you have previously signed an agreement to access Magento Enterprise Edition 2.0 beta software on GitHub, you can install this release candidate from GitHub. Before proceeding, please familiarize yourself with these prerequisites, then run
 
-3.	Follow the Magento <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html#integrator-first-composer-ce" target="_blank">installation instructions</a>.
+git clone git@github.com:magento/magento2.git
 
-#####<b>Install a new installation with Composer</b>#####
+git checkout tags/<2.1.0-rc1> [-b <2.1.0-rc1>]
 
-1. Go to the <a href="https://www.magentocommerce.com/download" target="_blank">Magento Community Edition Download</a> page.
-
-2.	Under **Download with Composer**, click **Download**.
-
-3.	Follow the instructions to download Composer, and get the Magento CE metapackage.
 
 
 <h4><b>Upgrade existing installations</b></h4>
@@ -108,10 +102,9 @@ If you installed Magento Community Edition 2.0.0 from an archive, you must perfo
 
 Readiness check can fail under some circumstances because of incorrect permissions on the `var/session` directory. To resolve this issue, enter the following command:
 
-<code>chmod -R 770 <your Magento install dir>/var/session</code>
+`chmod -R 770 <your Magento install dir>/var/session`
 
-For example, enter <code>chmod -R 770 /var/www/magento2/var/session</code>
-
+For example, enter `chmod -R 770 /var/www/magento2/var/session`
 
 
 #####<b>Upgrade an existing installation from the Setup Wizard</b>#####
