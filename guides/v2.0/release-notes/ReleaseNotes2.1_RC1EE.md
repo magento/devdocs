@@ -36,7 +36,7 @@ This release includes fixes for the following GitHub issues:
 
 <!--- 52414 --> * Integration test syntax error has been fixed. <a href="https://github.com/magento/magento2/issues/4343" target="_blank">(GITHUB-4343)</a> 
 
-<!--- 50611--> * Web APIs no longer allow anonymous access (GITHUB-3786)<a href="https://github.com/magento/magento2/issues/3786" target="_blank">(GITHUB-3786)</a>.
+<!--- 50611--> * Web APIs no longer allow anonymous access<a href="https://github.com/magento/magento2/issues/3786" target="_blank">(GITHUB-3786)</a>.
 
 <!--- 51292 --> * The OAuth Token exchange expiration period is now calculated correctly. <a href="https://github.com/magento/magento2/issues/3449" target="_blank">(GITHUB-3449)</a> 
 
