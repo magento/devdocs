@@ -463,7 +463,9 @@ Run the following command from a command prompt:
     mysql -u root -p magento_quote < /<path>/quote.sql
 
 ## Drop sales and quote tables from the Magento database {#config-ee-multidb-drop}
-Either run the following commands from the `mysql>` prompt or create a script and run it:
+This script sales and quote tables from the Magento database. Replace <your main magento DB name> with the name of your Magento database.
+
+Create the following script and give it a name like `5_drop-tables.sql`:
 
 {% highlight sql %}
 use <your Magento main DB name>;
@@ -478,21 +480,83 @@ DROP TABLE quote_item_option;
 DROP TABLE quote_payment;
 DROP TABLE quote_shipping_rate;
 DROP TABLE quote_id_mask;
+DROP TABLE sales_bestsellers_aggregated_daily;                        
+DROP TABLE sales_bestsellers_aggregated_monthly;                      
+DROP TABLE sales_bestsellers_aggregated_yearly;                       
+DROP TABLE sales_creditmemo;                                          
+DROP TABLE sales_creditmemo_comment;                                  
+DROP TABLE sales_creditmemo_grid;                                     
+DROP TABLE sales_creditmemo_item;                                     
+DROP TABLE sales_invoice;                                             
+DROP TABLE sales_invoice_comment;                                     
+DROP TABLE sales_invoice_grid;                                        
+DROP TABLE sales_invoice_item;                                        
+DROP TABLE sales_invoiced_aggregated;                                 
+DROP TABLE sales_invoiced_aggregated_order;                           
+DROP TABLE sales_order;                                               
+DROP TABLE sales_order_address;                                       
+DROP TABLE sales_order_aggregated_created;                            
+DROP TABLE sales_order_aggregated_updated;                            
+DROP TABLE sales_order_grid;                                          
+DROP TABLE sales_order_item;                                          
+DROP TABLE sales_order_payment;                                       
+DROP TABLE sales_order_status;                                        
+DROP TABLE sales_order_status_history;                                
+DROP TABLE sales_order_status_label;                                  
+DROP TABLE sales_order_status_state;                                  
+DROP TABLE sales_order_tax;                                           
+DROP TABLE sales_order_tax_item;                                      
+DROP TABLE sales_payment_transaction;                                 
+DROP TABLE sales_refunded_aggregated;                                 
+DROP TABLE sales_refunded_aggregated_order;                           
+DROP TABLE sales_sequence_meta;                                       
+DROP TABLE sales_sequence_profile;                                    
+DROP TABLE sales_shipment;                                            
+DROP TABLE sales_shipment_comment;                                    
+DROP TABLE sales_shipment_grid;                                       
+DROP TABLE sales_shipment_item;                                       
+DROP TABLE sales_shipment_track;                                      
+DROP TABLE sales_shipping_aggregated;                                 
+DROP TABLE sales_shipping_aggregated_order;                           
+DROP TABLE magento_sales_creditmemo_grid_archive;                     
+DROP TABLE magento_sales_invoice_grid_archive;                        
+DROP TABLE magento_sales_order_grid_archive;                          
+DROP TABLE magento_sales_shipment_grid_archive;                       
+DROP TABLE magento_customercustomattributes_sales_flat_order;         
+DROP TABLE magento_customercustomattributes_sales_flat_order_address; 
+DROP TABLE sequence_creditmemo_0;                                     
+DROP TABLE sequence_creditmemo_1;                                     
+DROP TABLE sequence_invoice_0;                                        
+DROP TABLE sequence_invoice_1;                                        
+DROP TABLE sequence_order_0;                                          
+DROP TABLE sequence_order_1;                                          
+DROP TABLE sequence_rma_item_0;                                       
+DROP TABLE sequence_rma_item_1;                                       
+DROP TABLE sequence_shipment_0;                                       
+DROP TABLE sequence_shipment_1;     
 SET foreign_key_checks = 1;
 {% endhighlight %}
 
-## Verify your configuration {#config-ee-multidb-config}
-This section discusses how to make sure the Magento configuration in `<your Magento install dir>/app/etc/env.php` is correct.
+Run the script as follows:
 
-### Verify env.php
+1.  Log in to your MySQL database as the root or administrative user:
+
+        mysql -u root -p
+2.  At the `mysql>` prompt, run the script as follows:
+
+        source <path>/<script>.sql
+    For example,
+
+        source /root/sql-scripts/5_drop-tables.sql
+
+## Verify your deployment configuration {#config-ee-multidb-config}
 The final step in manually splitting databases is to add connection and resource information to Magento's deployment configuration, `env.php`. 
-
 
 Open `<your Magento install dir>/app/etc/env.php` in a text editor and update it using the guidelines discussed in the following sections.
 
 **Database connections**
 
-Locate the block starting with `'default'` (under `'connection'`) and add `'checkout'` and `'sales'` sections. Replace sample values with values appropriate for your site.
+Locate the block starting with `'default'` (under `'connection'`) and add `'quote'` and `'sales'` sections. Replace sample values with values appropriate for your site.
 
 {% highlight php startinline=true %}
  'default' =>
@@ -506,7 +570,7 @@ Locate the block starting with `'default'` (under `'connection'`) and add `'chec
         'initStatements' => 'SET NAMES utf8;',
         'active' => '1',
       ),
-      'checkout' =>
+      'quote' =>
       array (
         'host' => 'localhost',
         'dbname' => 'magento_quote',
@@ -532,7 +596,7 @@ Locate the block starting with `'default'` (under `'connection'`) and add `'chec
 
 **Resources**
 
-Locate the block starting with `'resource'` and add `'checkout'` and `'sales'` sections to it as follows:
+Locate the block starting with `'resource'` and add `'quote'` and `'sales'` sections to it as follows:
 
 {% highlight php startinline=true %}
 
@@ -542,9 +606,9 @@ Locate the block starting with `'resource'` and add `'checkout'` and `'sales'` s
     array (
       'connection' => 'default',
     ),
-    'checkout' =>
+    'quote' =>
     array (
-      'connection' => 'checkout',
+      'connection' => 'quote',
     ),
     'sales' =>
     array (
