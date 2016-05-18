@@ -4,7 +4,7 @@ group: install_pre
 subgroup: Prerequisites
 title: Set up the updater (obsolete)
 menu_title: Set up the updater (obsolete)
-menu_order: 500
+menu_order: 1000
 menu_node: 
 github_link: install-gde/prereq/prereq_updater.md
 ---

@@ -124,9 +124,9 @@ Refer to the following table for a description of each label. These labels are a
    </thead>
    <tbody>
       <tr>
-      <th>Issue Type</th>
-      <th> </th>
-</tr>
+        <th colspan="2">Issue Type</th>
+      </tr>
+      <tr>
          <td><img src="{{ site.baseurl }}common/images/github_bug.png" alt="the Bug button"/></td>
          <td>An error, flaw, or failure in an existing feature that produces unexpected results.</td>
       </tr>
@@ -143,9 +143,8 @@ Refer to the following table for a description of each label. These labels are a
          <td>An inquiry about existing functionality.</td>
       </tr>
       <tr>
-      <th>Domains Impacted</th>
-      
-</tr>
+        <th colspan="2">Domains Impacted</th>
+      </tr>
       <tr>
          <td><img src="{{ site.baseurl }}common/images/github_MX.png" alt="the MX button"/></td>
          <td>Affects Merchant Experience.</td>
@@ -166,41 +165,35 @@ Refer to the following table for a description of each label. These labels are a
          <td><img src="{{ site.baseurl }}common/images/github_PROD.png" alt="the PROD button"/></td>
          <td>Affects the Product team (mostly feature requests or business logic change).</td>
       </tr>
- <tr>
+      <tr>
          <td><img src="{{ site.baseurl }}common/images/github_TECH.png" alt="the Tech button"/></td>
          <td>Affects Architect Group (mostly to make decisions around technology changes).</td>
       </tr>
-      
-   <tr>
-      <th>Pull Request Resolution Status</th>
-      
-</tr>
-      
-       <tr>
+      <tr>
+        <th colspan="2">Pull Request Resolution Status</th>
+      </tr>
+      <tr>
          <td><img src="{{ site.baseurl }}common/images/github_accept.png" alt="the Accept button"/></td>
          <td>The pull request has been accepted and will be merged into mainline code.</td>
       </tr>
-       <tr>
+      <tr>
          <td><img src="{{ site.baseurl }}common/images/github_reject.png" alt="the Reject button"/></td>
          <td>The pull request has been rejected and will not be merged into mainline code.  Possible reasons can include but are not limited to: issue has already been fixed in another code contribution, or there is an issue with the code contribution.</td>
       </tr>
       <tr>
-      <th>Issue Resolution Status</th>
-      
-</tr>
-       <tr>
+        <th colspan="2">Issue Resolution Status</th>
+      </tr>
+      <tr>
          <td><img src="{{ site.baseurl }}common/images/gitHub_acknowledged.png" alt="the Acknowledged button"/></td>
          <td>The Magento Team has validated the issue and an internal ticket has been created.</td>
       </tr>
-       <tr>
+      <tr>
          <td><img src="{{ site.baseurl }}common/images/github_inProgress.png" alt="the In progress button"/></td>
          <td>The internal ticket is currently in progress, fix is scheduled to be delivered.</td>
       </tr>
-       <tr>
+      <tr>
          <td><img src="{{ site.baseurl }}common/images/github_needsUpdate.png" alt="the Needs update button"/></td>
          <td>The Magento Team needs additional information from the reporter to properly prioritize and process the issue or pull request.</td>
       </tr>
-     
    </tbody>
 </table>
-

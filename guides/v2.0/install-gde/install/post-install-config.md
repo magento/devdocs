@@ -1,11 +1,11 @@
 ---
 layout: default
 group: install
-subgroup: B_Verify
+subgroup: 02_config
 title: Configure the Magento application
 menu_title: Configure the Magento application
 menu_node: parent
-menu_order: 1
+menu_order: 2
 github_link: install-gde/install/post-install-config.md
 ---
 

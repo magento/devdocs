@@ -10,7 +10,7 @@ We recommend setting the <a href="http://ss64.com/bash/ulimit.html" target="_bla
 
 You can do this either on the command line or you can make it a permanent setting for the user by editing their shell script.
 
-Before you continue, if you haven't done so already, switch to the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+Before you continue, if you haven't done so already, switch to the <a href="{{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
 
 Command:
 
@@ -24,7 +24,7 @@ You can change this to a larger value if needed.
 
 To optionally set the value in the user's Bash shell:
 
-1.	If you haven't done so already, switch to the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+1.	If you haven't done so already, switch to the <a href="{{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
 2.	Open `/home/<username>/.bashrc` in a text editor.
 3.	Add the following line:
 

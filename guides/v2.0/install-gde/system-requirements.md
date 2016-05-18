@@ -31,7 +31,7 @@ MySQL 5.6 (Oracle or Percona)
 
 *	5.6.x
 *	5.5.x, where x is 22 or greater
-*	7.0.2&ndash;7.0.6 except for 2.0.5 (supported by Magento version 2.0.1 and later only)
+*	7.0.2&ndash;7.0.6 except for 7.0.5 (supported by Magento version 2.0.1 and later only)
 
 	There is a [known PHP issue](https://bugs.php.net/bug.php?id=71914){:target="_blank"} that affects our [code compiler]({{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler.html) when using PHP 7.0.5. We recommend you *not* use PHP 7.0.5; instead, use PHP 7.0.2&ndash;7.0.4 or 7.0.6.
 
@@ -77,7 +77,7 @@ For more information, see our recommendations for <a href="{{ site.gdeurl }}inst
 Mail Transfer Agent (MTA) or an SMTP server
 
 ### Magento can utilize the following technologies:
-*	<a href="{{ site.gdeurl }}config-guide/redis/config-redis.html">Redis</a> version 3.0 for page caching
+*	<a href="{{ site.gdeurl }}config-guide/redis/config-redis.html">Redis</a> version 3.0 for page caching and session storage (the latter supported by Magento version 2.0.6 and later only)
 *	<a href="{{ site.gdeurl }}config-guide/varnish/config-varnish.html">Varnish</a> version 3.5 or latest stable 4.x version for page caching
 *	<a href="{{ site.gdeurl }}config-guide/memcache/memcache.html">memcached</a> latest stable version for session storage with either `memcache` or `memcached` PHP extensions (latest stable version)
 

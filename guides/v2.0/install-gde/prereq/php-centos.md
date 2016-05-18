@@ -4,16 +4,14 @@ group: install_pre
 subgroup: Prerequisites
 title: PHP 5.5, 5.6, or 7.0&mdash;CentOS
 menu_title: PHP 5.5, 5.6, or 7.0&mdash;CentOS
-menu_order: 05
+menu_order: 22
+level3_menu_node: level3child
+level3_subgroup: php
 github_link: install-gde/prereq/php-centos.md
 redirect_from: /guides/v1.0/install-gde/prereq/php-centos.html
 ---
 
-<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
-<!-- Referring file: README.md owned by core -->
-
-
-<h4 id="instgde-php-prereq-contents">Contents</h4>
+#### Contents
 
 *	<a href="#php-support">PHP versions supported</a>
 *	<a href="#php-centos-help-beginner">Help if you're just starting out</a>
@@ -33,7 +31,8 @@ redirect_from: /guides/v1.0/install-gde/prereq/php-centos.html
 
 Magento requires:
 
-*	PHP 7.0.2 (supported by Magento version 2.0.1 and later only)
+*	7.0.2&ndash;7.0.6 except for 7.0.5 (supported by Magento version 2.0.1 and later only)
+	There is a [known PHP issue](https://bugs.php.net/bug.php?id=71914){:target="_blank"} that affects our [code compiler]({{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler.html) when using PHP 7.0.5. We recommend you not use PHP 7.0.5; instead, use PHP 7.0.2&ndash;7.0.4 or 7.0.6.
 *	PHP 5.6.x
 *	PHP 5.5.x, where x is 22 or greater 
 
