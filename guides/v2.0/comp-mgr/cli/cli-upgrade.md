@@ -46,14 +46,14 @@ To upgrade using the command line:
 		composer require <product> <version> --no-update
 		composer update
 
-	For example, to upgrade to Magento CE version 2.0.4, enter:
+	For example, to upgrade to Magento CE version 2.0.6, enter:
 
-		composer require magento/product-community-edition 2.0.4 --no-update
+		composer require magento/product-community-edition 2.0.6 --no-update
 		composer update
 
-	To upgrade to Magento EE version 2.0.4, enter:
+	To upgrade to Magento EE version 2.0.6, enter:
 
-		composer require magento/product-enterprise-edition 2.0.4 --no-update
+		composer require magento/product-enterprise-edition 2.0.6 --no-update
 		composer update
 	
 	<div class="bs-callout bs-callout-info" id="info">
