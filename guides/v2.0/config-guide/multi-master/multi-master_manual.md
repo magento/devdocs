@@ -15,9 +15,10 @@ github_link: config-guide/multi-master/multi-master_manual.md
 *	[Overview of manual split database configuration](#config-ee-multidb-manual-over)
 *   [Back up the Magento system](#config-ee-multidb-backup)
 *	[Set up additional master databases](#config-ee-multidb-master-masters)
-*	[Run sales database SQL scripts](#config-ee-multidb-oms)
+*	[Configure the sales database](#config-ee-multidb-oms)
 *	[Configure the quote database](#config-ee-multidb-checkout)
-*   [Verify your configuration](#config-ee-multidb-config)
+*   [Drop sales and quote tables from the Magento database](#config-ee-multidb-drop)
+*   [Update your deployment configuration](#config-ee-multidb-config)
 
 ## Overview of manual split database configuration {#config-ee-multidb-manual-over}
 If the Magento application is already in production or if you've already installed custom code or components, you might need to configure split databases manually. 
@@ -96,7 +97,7 @@ Create checkout and OMS master databases as follows:
     If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.
 7.  Continue with the next section.
 
-## Run sales database SQL scripts {#config-ee-multidb-oms}
+## Configure the sales database {#config-ee-multidb-oms}
 This section discusses how to create and run SQL scripts that alter quote database tables and back up data from those tables.
 
 For more information, see:
@@ -179,7 +180,7 @@ where for_name like '<your main magento DB name>/%'
 ;
 {% endhighlight %}
 
-### Run sales database SQL scripts {#config-ee-multidb-sql-oms-run}
+### Configure the sales database {#config-ee-multidb-sql-oms-run}
 Run each script in the order in which you created it as follows:
 
 1.  Log in to your MySQL database as the `root` or administrative user:
@@ -391,41 +392,6 @@ where
 *   `<root user password>` with the user's password
 *   Verify the location of the backup files you created earlier (for example, `/var/sales.sql`)
 
-### Remove sales tables
-This script removes sales tables from the main Magento database. 
-
-Create the following script and give it a name like `3_remove-tables.sql`. Replace `<your main magento DB name>` with the name of your Magento database. In this topic, the sample database name is `magento`.
-
-{% highlight sql %}
-select ' SET foreign_key_checks = 0;' as querytext
-union all
-select
-    concat('DROP TABLE IF EXISTS ' , table_name, ';')
-from information_schema.tables
-where table_schema = '<your main magento db name>'
-and table_name like 'sales/_%' escape '/'
-union all
-select
-    concat('DROP TABLE IF EXISTS ' , table_name, ';')
-from information_schema.tables
-where table_schema = '<your main magento db name>'
-and table_name like 'magento_sales/_%' escape '/'
-union all
-select
-    concat('DROP TABLE IF EXISTS ' , table_name, ';')
-from information_schema.tables
-where table_schema = '<your main magento db name>'
-and table_name like 'magento_customercustomattributes_sales_flat_order%' escape '/'
-union all
-select
-    concat('DROP TABLE IF EXISTS ' , table_name, ';')
-from information_schema.tables
-where table_schema = '<your main magento db name>'
-and table_name like 'sequence/_%' escape '/'
-union all
-select 'SET foreign_key_checks = 1;';
-{% endhighlight %}
-
 ## Configure the quote database {#config-ee-multidb-checkout}
 This section discusses tasks required to drop foreign keys from sales database tables and move tables to the sales database.
 
@@ -549,7 +515,7 @@ Run the script as follows:
 
         source /root/sql-scripts/5_drop-tables.sql
 
-## Verify your deployment configuration {#config-ee-multidb-config}
+## Update your deployment configuration {#config-ee-multidb-config}
 The final step in manually splitting databases is to add connection and resource information to Magento's deployment configuration, `env.php`. 
 
 Open `<your Magento install dir>/app/etc/env.php` in a text editor and update it using the guidelines discussed in the following sections.
