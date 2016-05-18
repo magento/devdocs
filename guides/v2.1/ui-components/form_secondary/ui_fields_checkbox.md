@@ -25,6 +25,7 @@ The checkbox UI component can be configured to implement the following field typ
 The following images illustrate how the different implementation of the field can look like:
 
 - when configured as radio button:
+
 <div style="border: 1px solid #ABABAB">
 <img src="{{site.baseurl}}common/images/ui_checkbox_radio.png">
 </div>
@@ -405,12 +406,12 @@ Consider, that data from the component is always sent using the POST method and 
 If you decide that value pair to be of Boolean type, the component's configuration might look like following:
 
 {%highlight xml%}
-<field name="Component_Index">
+<field name="Sample_Checkbox">
     <argument name="data" xsi:type="array">
         <item name="config" xsi:type="array">
             <item name="formElement" xsi:type="string">checkbox</item>
             <item name="dataType" xsi:type="string">text</item>
-            <item name="dataScope" xsi:type="string">Component_Index</item>
+            <item name="dataScope" xsi:type="string">Sample_Checkbox</item>
             <item name="vallueMap" xsi:type="array">
                 <item name="true" xsi:type="boolean">true</item>
                 <item name="false" xsi:type="boolean">false</item>
@@ -428,12 +429,12 @@ The UI representation of the checkbox component is defined by the value of the `
 So the component's configuration in this case might look like following:
 
 {%highlight xml%}
-<field name="Component_Index">
+<field name="Sample_Checkbox">
     <argument name="data" xsi:type="array">
         <item name="config" xsi:type="array">
             <item name="formElement" xsi:type="string">checkbox</item>
             <item name="dataType" xsi:type="string">text</item>
-            <item name="dataScope" xsi:type="string">Component_Index</item>
+            <item name="dataScope" xsi:type="string">Sample_Checkbox</item>
 
             <item name="vallueMap" xsi:type="array">
                 <item name="true" xsi:type="boolean">true</item>
@@ -449,12 +450,12 @@ So the component's configuration in this case might look like following:
 When the `value` option is set, and `vallueMap` is not set, the component toggles `initialValue` (obtained from `value`) and empty string. So if the component is configured as follows, DataProvider will recieve `42` or `''` (empty string).
 
 {%highlight xml%}
-<field name="Component_Index">
+<field name="Sample_Checkbox">
     <argument name="data" xsi:type="array">
         <item name="config" xsi:type="array">
             <item name="formElement" xsi:type="string">checkbox</item>
             <item name="dataType" xsi:type="string">text</item>
-            <item name="dataScope" xsi:type="string">Component_Index</item>
+            <item name="dataScope" xsi:type="string">Sample_Checkbox</item>
 
             <item name="value" xsi:type="number">42</item>
         </item>
@@ -470,6 +471,38 @@ In this case you need to handle form elements that belong to different parts of 
 - To handle the `initialValue`, setup `value`.
 - To ensure the collaborative work of all radio components, set the same value for the `dataScope` option of all checkbox components.
 
+Example:
+
+{%highlight xml%}
+<field name="Sample_Checkbox_1">
+    <argument name="data" xsi:type="array">
+        <item name="config" xsi:type="array">
+            <item name="formElement" xsi:type="string">checkbox</item>
+            <item name="dataType" xsi:type="string">text</item>
+            <item name="dataScope" xsi:type="string">Sample_Checkbox_1</item>
+
+            <item name="prefer" xsi:type="string">radio</item>
+            <item name="value" xsi:type="number">42</item>
+        </item>
+    </argument>
+</field>
+<field name="Sample_Checkbox_2">
+    <argument name="data" xsi:type="array">
+        <item name="config" xsi:type="array">
+            <item name="formElement" xsi:type="string">checkbox</item>
+            <item name="dataType" xsi:type="string">text</item>
+            <item name="dataScope" xsi:type="string">Sample_Checkbox_2</item>
+
+            <item name="prefer" xsi:type="string">radio</item>
+            <item name="value" xsi:type="number">24</item>
+        </item>
+    </argument>
+</field>
+{%endhighlight%}
+
+
+The POST object will contain either `42` or `24`, stored under the `$_POST[...][%Component_Name%]` key.
+
 ### Example 5: Checkbox UI component as a part of a radio buttons set {#radio_set}
 
 In this case you need to handle form elements that belong to different parts of the form UI component. To do this, you need to configure the checkbox components as follows:
@@ -479,3 +512,32 @@ In this case you need to handle form elements that belong to different parts of 
 - To ensure the collaborative work of all radio components, set the same value for the `dataScope` option of all checkbox components.
 
 Checked values appear in the `dataScope`-collection. Clearing the checkbox removes it from the `dataScope`-collection.
+
+{%highlight xml%}
+<field name="Sample_Checkbox_1">
+    <argument name="data" xsi:type="array">
+        <item name="config" xsi:type="array">
+            <item name="formElement" xsi:type="string">checkbox</item>
+            <item name="dataType" xsi:type="string">text</item>
+            <item name="dataScope" xsi:type="string">Sample_Checkbox_1</item>
+
+            <item name="prefer" xsi:type="string">checkbox</item>
+            <item name="value" xsi:type="number">42</item>
+        </item>
+    </argument>
+</field>
+<field name="Sample_Checkbox_2">
+    <argument name="data" xsi:type="array">
+        <item name="config" xsi:type="array">
+            <item name="formElement" xsi:type="string">checkbox</item>
+            <item name="dataType" xsi:type="string">text</item>
+            <item name="dataScope" xsi:type="string">Sample_Checkbox_2</item>
+
+            <item name="prefer" xsi:type="string">checkbox</item>
+            <item name="value" xsi:type="number">24</item>
+        </item>
+    </argument>
+</field>
+{%endhighlight%}
+
+The POST object can contain `[]`,`[42]`,`[24]`,`[42,24]` under the `$_POST[...][%Component_Name%]` key. So checkbox just toggles availablility of its value under dataScope key.
