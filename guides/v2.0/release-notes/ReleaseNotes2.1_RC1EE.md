@@ -8,8 +8,8 @@ menu_order: 14
 github_link: release-notes/ReleaseNotes2.1_RC1EE.md
 ---
 
-<h2>Magento Enterprise Edition 2.1 Release Candidate-1</h2>
-We are pleased to present Magento 2.1 Release Candidate-1. This release candidate build is not intended for production purposes. Instead, it provides a preview of the new features and fixes that Magento 2.1 GA will contain.
+<h2>Magento Enterprise Edition 2.1 Release Candidate (RC1)</h2>
+We are pleased to present Magento 2.1 Release Candidate (RC1). This release candidate build is not intended for production purposes. Instead, it provides a preview of the new features and fixes that Magento 2.1 GA will contain.
 
 This candidate release also offers the development community an opportunity to contribute to the Magento 2.1 code base by identifying unresolved issues. We welcome your participation in this process on GitHub! For more information on how to provide feedback and contribute on GitHub, see <a href="{{ site.gdeurl }}contributor-guide/contributing.html" target="_blank">Code contributions</a>. 
 
@@ -79,7 +79,7 @@ This release includes fixes for the following GitHub issues:
 
 <h3>Technology stack</h3>
 
-Our technology stack is built on PHP and MySQL. Magento 2.1 Release Candidate-1 supports PHP 5.6 and 7.0.2, and MySQL 5.6.
+Our technology stack is built on PHP and MySQL. Magento 2.1 Release Candidate (RC1) supports PHP 5.6, 7.0.2, and 7.0.6. It supports MySQL 5.6.
 
 We do not support PHP 5.5. 
 
@@ -88,7 +88,7 @@ We do not support PHP 5.5.
 
 
 <h4>New installations</h4>
-New users can now complete a full installation of Magento Enterprise Edition 2.1 Release Candidate-1 from an archive file.
+New users can now complete a full installation of Magento Enterprise Edition 2.1 Release Candidate (RC1) from an archive file.
 
 #####<b>Download a new installation</b>#####
 1. Go to the <a href="https://www.magento.com/" target="_blank">Magento</a> website, and click **My Account**. Then, log in to your account. 
@@ -129,14 +129,6 @@ Magento partners can download the release and the release notes in PDF format fr
 1.	Log in to the <a href="https://magento.com/partners/become-a-partner" target="_blank">Partner Portal</a>.
 2.	Under Magento Enterprise Edition, choose **Magento Enterprise Edition 2.x**.
 3.	Find the **Magento Enterprise Edition 2.x Release**, and choose **Version 2.1**.
-
-<h3>Migration toolkits</h3>
-The <a href="{{ site.gdeurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ site.gdeurl }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
-
-The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
-
-<h3>Migration toolkits</h3>
-The <a href="{{ site.gdeurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ site.gdeurl }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 
 
