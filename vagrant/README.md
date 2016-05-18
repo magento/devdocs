@@ -13,7 +13,7 @@ You can deploy devdocs site locally using this vagrant project. Vagrant enables 
 1. Using a terminal, change a directory to `devdocs/vagrant` on your host. (The directory where this README is located.) 
  Example: `cd ~/devdocs/vagrant`
 2. Enter in your terminal `vagrant up`
-3. Wait for some time until vagrant create a virtual machine with ready-to-go environment.
+3. Wait for some time until vagrant created a virtual machine with ready-to-go environment.
 
 ## Browse devdocs site
 
@@ -35,51 +35,50 @@ All commands must be run in the terminal from the directory that contains `Vagra
 ### Scripts
 
 - Stop Jekyll server. (Stops devdocs site generation.)
-  ```bash
-  vagrant ssh -c "kill $(ps aux | grep '[j]ekyll' | awk '{print $2}')"
-  ```  
+
+        vagrant ssh -c "kill $(ps aux | grep '[j]ekyll' | awk '{print $2}')"
+
 - Run Jekyll server. (Generates devdocs site.)
-  ```bash
-  vagrant ssh -c 'cd /jekyll/devdocs; jekyll serve --host=0.0.0.0'
-  ```
+ 
+        vagrant ssh -c 'cd /jekyll/devdocs; jekyll serve --host=0.0.0.0'
+
 - Reload Jekyll server. (Regenerates devdocs site.)
-  ```bash
-   vagrant ssh -c "kill $(ps aux | grep '[j]ekyll' | awk '{print $2}'); cd /jekyll/devdocs; jekyll serve --host=0.0.0.0"
-   ```
+
+        vagrant ssh -c "kill $(ps aux | grep '[j]ekyll' | awk '{print $2}'); cd /jekyll/devdocs; jekyll serve --host=0.0.0.0"
+ 
     
 ### Commands
 
 - Connect to the running virtual machine. You can run Jekyll commands inside the virtual machine from the `/jekyll/devdocs` directory.
-  ```bash
-  vagrant ssh
-  ```
-  To terminate the connection run the command:
-  ```bash
-  exit
-  ```
+
+        vagrant ssh
+
+  To terminate the connection, run the command:
+
+            exit
+        
 - Shut down the running virtual machine
-  ```bash 
-  vagrant halt
-  ```
+
+        vagrant halt
+
 - Start and configure the virtual machine
-  ```bash
-  vagrant up
-  ```
+
+        vagrant up
+
 - Stop and remove the virtual machine
-  ```bash
-  vagrant destroy
-  ```
+
+        vagrant destroy
+
 - Reload virtual machine to apply changes in `Vagrantfile` 
-  ```bash
-  vagrant reload
-  ```
+
+        vagrant reload
+
 - Reload virtual machine to apply changes in `Vagrantfile` and `bootstrap.sh`
-  ```bash
-  vagrant reload --provision
-  ```
+
+        vagrant reload --provision
+
 - Reload virtual machine to apply changes in `bootstrap.sh`
-  ```bash
-  vagrant provision
-  ```
+
+        vagrant provision
 
 [More Vagrant commands](https://www.vagrantup.com/docs/cli/up.html).
