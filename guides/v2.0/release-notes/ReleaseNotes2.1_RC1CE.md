@@ -31,6 +31,21 @@ Magento Community Edition 2.1 includes several new features:
 * **Improved management interfaces** make it faster and easier to search for information in the Admin interface, set up global search synonyms, and create new product, category, and CMS content.
  
 
+<h3>Known issue</h3>
+
+<b>Issue:</b> Enabling Varnish causes the category menu to switch from http to https<a href="https://github.com/magento/magento2/issues/4540" target="_blank"> (GITHUB-4540)</a>
+
+<b>Work-around:</b> To use Varnish caching with an HTTP site, add rewrite rules such as the following in Magento's root `.htaccess`: 
+
+<pre>RewriteCond %{HTTPS} on
+RewriteCond %{REQUEST_URI} /yellow-fruit.html
+RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI} [L]</pre>
+
+<pre>RewriteCond %{HTTPS} on
+RewriteCond %{REQUEST_URI} /red-fruit.html
+RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI} [L]</pre>
+
+
 <h3>Fixed issues</h3>
 
 This release includes fixes for the following GitHub issues:
@@ -91,11 +106,14 @@ This Release Candidate is for test purposes only. Do not install it in a product
 
 If you have previously signed an agreement to access Magento Enterprise Edition 2.0 beta software on GitHub, you can install this release candidate from GitHub. Before proceeding, please familiarize yourself with these prerequisites, then run
 
-git clone git@github.com:magento/magento2.git
+`git clone git@github.com:magento/magento2.git`
 
-git checkout tags/<2.1.0-rc1> [-b <2.1.0-rc1>]
+`git checkout tags/<2.1.0-rc1> [-b <2.1.0-rc1>]`
 
+#####<b>Install using Composer</b>#####
+This Release Candidate is available from repo.magento.com. Before installing this Release Candidate using Composer, please familiarize yourself with these  <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run 
 
+`composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=<2.1.0-rc1> <installation directory name>`
 
 <h4><b>Upgrade existing installations</b></h4>
 If you installed Magento Community Edition 2.0.0 from an archive, you must perform some additional tasks before you can upgrade your installation. Current users of Magento 2.0.0/2.0.1/2.0.2/2.0.3/2.0.4/2.0.5/2.0.6 must first update the installer from the command line. Then, update the installation from the <a href="http://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html" target="_blank">Web Setup Wizard</a> or command line. For detailed instructions, see the <a href="{{ site.gdeurl }}release-notes/tech_bull_201-upgrade.html" target="_blank">technical bulletin</a>.
