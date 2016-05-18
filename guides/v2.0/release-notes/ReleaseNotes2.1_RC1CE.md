@@ -2,15 +2,15 @@
 layout: default
 group: release-notes
 subgroup: Release Notes
-title: Magento CE 2.1 Release Candidate (RC1) Release Notes 
-menu_title: Magento CE 2.1 Release Candidate (RC1) Release Notes 
+title: Magento CE 2.1 Release Candidate 1 (RC1) Release Notes 
+menu_title: Magento CE 2.1 Release Candidate 1 (RC1) Release Notes 
 menu_order: 13
 github_link: release-notes/ReleaseNotes2.1_RC1CE.md
 ---
 
-<h2>Magento Community Edition 2.1 Release Candidate (RC1)</h2>
+<h2>Magento Community Edition 2.1 Release Candidate 1 (RC1)</h2>
 
-We are pleased to present Magento Community Edition 2.1 Release Candidate (RC1). This release candidate build is not intended for production purposes. Instead, it provides a preview of the new features and fixes that Magento Community Edition 2.1 GA will contain.
+We are pleased to present Magento Community Edition 2.1 Release Candidate 1 (RC1). This release candidate build is not intended for production purposes. Instead, it provides a preview of the new features and fixes that Magento Community Edition 2.1 GA will contain.
 
 This candidate release also offers the development community an opportunity to contribute to the Magento 2.1 code base by identifying unresolved issues. We welcome your participation in this process on GitHub! For more information on how to provide feedback and contribute on GitHub, see <a href="{{ site.gdeurl }}contributor-guide/contributing.html" target="_blank">Code contributions</a>. 
 
@@ -73,7 +73,7 @@ This release includes fixes for the following GitHub issues:
 
 <h3>Technology stack</h3>
 
-Our technology stack is built on PHP and MySQL. Magento 2.1 Release Candidate (RC1) supports PHP 5.6, 7.0.2, and 7.0.6. It supports MySQL 5.6.
+Our technology stack is built on PHP and MySQL. Magento 2.1 Release Candidate 1 (RC1) supports PHP 5.6, 7.0.2, and 7.0.6. It supports MySQL 5.6.
 
 We do not support PHP 5.5. 
 
@@ -81,7 +81,7 @@ We do not support PHP 5.5.
 <h3>Installation instructions</h3>
 
 <h4>New installations</h4>
-New users can now complete a full installation of Magento Community Edition 2.1 Release Candidate (RC1) from an archive file on the <a href="https://www.magentocommerce.com/download" target="_blank">Download</a> page.
+New users can now complete a full installation of Magento Community Edition 2.1 Release Candidate 1 (RC1) from an archive file on the <a href="https://www.magentocommerce.com/download" target="_blank">Download</a> page.
 
 #####<b>Download a new installation</b>#####
 

@@ -2,14 +2,14 @@
 layout: default
 group: release-notes
 subgroup: Release Notes
-title: Magento EE 2.1 Release Candidate (RC1) Release Notes 
-menu_title: Magento EE 2.1 Release Candidate (RC1) Release Notes 
+title: Magento EE 2.1 Release Candidate 1 (RC1) Release Notes 
+menu_title: Magento EE 2.1 Release Candidate 1 (RC1) Release Notes 
 menu_order: 14
 github_link: release-notes/ReleaseNotes2.1_RC1EE.md
 ---
 
-<h2>Magento Enterprise Edition 2.1 Release Candidate (RC1)</h2>
-We are pleased to present Magento 2.1 Release Candidate (RC1). This release candidate build is not intended for production purposes. Instead, it provides the development community opportunities to: 
+<h2>Magento Enterprise Edition 2.1 Release Candidate 1 (RC1)</h2>
+We are pleased to present Magento 2.1 Release Candidate 1 (RC1). This release candidate build is not intended for production purposes. Instead, it provides the development community opportunities to: 
 
 * preview the new features and fixes that Magento 2.1 GA will contain
 
@@ -90,7 +90,7 @@ This release includes fixes for the following GitHub issues:
 
 <h3>Technology stack</h3>
 
-Our technology stack is built on PHP and MySQL. Magento 2.1 Release Candidate (RC1) supports PHP 5.6, 7.0.2, and 7.0.6. It supports MySQL 5.6.
+Our technology stack is built on PHP and MySQL. Magento 2.1 Release Candidate 1 (RC1) supports PHP 5.6, 7.0.2, and 7.0.6. It supports MySQL 5.6.
 
 We do not support PHP 5.5. 
 
@@ -99,7 +99,7 @@ We do not support PHP 5.5.
 
 
 <h4>New installations</h4>
-You can install Magento Enterprise Edition 2.1 Release Candidate (RC1) from either Github or by using Composer. 
+You can install Magento Enterprise Edition 2.1 Release Candidate 1 (RC1) from either Github or by using Composer. 
 
 
 #####<b>Install from GitHub</b>#####
