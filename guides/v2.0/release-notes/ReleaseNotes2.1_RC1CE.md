@@ -2,8 +2,8 @@
 layout: default
 group: release-notes
 subgroup: Release Notes
-title: Magento CE 2.1 Release Candidate 1 Release Notes 
-menu_title: Magento CE 2.1 Release Candidate-1 Release Notes 
+title: Magento CE 2.1 Release Candidate (RC1) Release Notes 
+menu_title: Magento CE 2.1 Release Candidate (RC1) Release Notes 
 menu_order: 13
 github_link: release-notes/ReleaseNotes2.1_RC1CE.md
 ---
@@ -18,14 +18,14 @@ This Release Candidate is available only on GitHub and repo.magento.com.
 
 
 <h3>Highlights</h3>
-Magento Community Edition 2.1 includes several new  features:
+Magento Community Edition 2.1 includes several new features:
 
 
 * **PayPal in-context checkout helps to increase conversion rates**. PayPal in-context checkout helps to increase conversion rates by allowing shoppers to pay with PayPal without leaving the merchant’s site. PayPal saved credit card capabilities allow merchants to securely store credit cards with PayPal so shoppers can make future purchases without re-entering their credit card information.
  
-* **Braintree enhancements enable merchants to qualify for the simplest set of PCI compliance** requirements by using Braintree Hosted Fields to collect all sensitive cardholder information in checkout. Merchants retain complete control over their checkout style and layout because Braintree uses small, transparent iframes to replace individual payment fields. Merchants can now also access Braintree settlement reports from within the Magento Admin.
+* **Braintree enhancements enable merchants to qualify for the simplest set of PCI compliance** requirements by using Braintree Hosted Fields to collect all sensitive card holder information in checkout. Merchants retain complete control over their checkout style and layout because Braintree uses small, transparent iframes to replace individual payment fields. Merchants can now also access Braintree settlement reports from within the Magento Admin.
  
-* **Improved management interfaces** make it faster and easier to search for information in the Admin, set up global search synonyms, and create new product, category, and CMS content.
+* **Improved management interfaces** make it faster and easier to search for information in the Admin interface, set up global search synonyms, and create new product, category, and CMS content.
  
 
 <h3>Fixed issues</h3>
@@ -67,7 +67,6 @@ This release includes fixes for the following GitHub issues:
 
 <!--- 40320 --> * Attribute 'setup_version' is missing for module error when defined as optional. <a href="https://github.com/magento/magento2/issues/1493" target="_blank">(GITHUB-1493)</a>
 
-<!--- 52605 --> * Magento no longer flushes the cache during checkout. <a href="https://github.com/magento/magento2/issues/4222" target="_blank">(GITHUB-4222)</a>
 
 
 

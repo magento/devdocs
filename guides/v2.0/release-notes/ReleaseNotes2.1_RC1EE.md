@@ -2,22 +2,34 @@
 layout: default
 group: release-notes
 subgroup: Release Notes
-title: Magento EE 2.1 Release Candidate-1 Release Notes 
-menu_title: Magento EE 2.1 Release Candidate-1 Release Notes 
+title: Magento EE 2.1 Release Candidate (RC1) Release Notes 
+menu_title: Magento EE 2.1 Release Candidate (RC1) Release Notes 
 menu_order: 14
 github_link: release-notes/ReleaseNotes2.1_RC1EE.md
 ---
 
 <h2>Magento Enterprise Edition 2.1 Release Candidate (RC1)</h2>
-We are pleased to present Magento 2.1 Release Candidate (RC1). This release candidate build is not intended for production purposes. Instead, it provides a preview of the new features and fixes that Magento 2.1 GA will contain.
+We are pleased to present Magento 2.1 Release Candidate (RC1). This release candidate build is not intended for production purposes. Instead, it provides the development community opportunities to: 
 
-This candidate release also offers the development community an opportunity to contribute to the Magento 2.1 code base by identifying unresolved issues. We welcome your participation in this process on GitHub! For more information on how to provide feedback and contribute on GitHub, see <a href="{{ site.gdeurl }}contributor-guide/contributing.html" target="_blank">Code contributions</a>. 
+* preview the new features and fixes that Magento 2.1 GA will contain
 
-This Release Candidate is available only on GitHub and repo.magento.com. 
+* contribute to the Magento 2.1 code base by identifying unresolved issues
+
+* test your 2.0 extensions against  2.1 
+
+We welcome your participation in this process! Enterprise Edition customers can provide feedback in these two ways: 
+
+* Enterprise Edition GitHub repository.  For more information on how to provide feedback and contribute on GitHub, see <a href="{{ site.gdeurl }}contributor-guide/contributing.html" target="_blank">Code contributions</a>. 
+
+* Email to DL-Magento-2.1-Feedback@magento.com.
+
+
+This Release Candidate is available from repo.magento.com if you have an Enterprise Edition license or  <a href="https://github.com/magento/magento2ee" target="_blank">GitHub</a>if you have previously signed an agreement to access Magento Enterprise Edition 2.0 beta software on GitHub.
+
 
 <h3>Highlights</h3>
 
-Magento Enterprise Edition 2.1 includes several new  features:
+Magento Enterprise Edition 2.1 includes several new features:
 
 * **Content Staging and Preview** improves productivity by enabling business teams to easily create, preview, and schedule a wide range of content updates without involving IT. Merchants can make updates to products, categories, CMS content, promotions, and pricing and can preview these changes based on specific dates and times or store views. User-friendly dashboards provide greater visibility into all planned site changes and updates can be automatically deployed at scheduled times.
  
@@ -69,7 +81,6 @@ This release includes fixes for the following GitHub issues:
 
 <!--- 40320 --> * Attribute 'setup_version' is missing for module error when defined as optional. <a href="https://github.com/magento/magento2/issues/1493" target="_blank">(GITHUB-1493)</a>
 
-<!--- 52605 --> * Magento no longer flushes the cache during checkout. <a href="https://github.com/magento/magento2/issues/4222" target="_blank">(GITHUB-4222)</a>
 
 
 
@@ -88,19 +99,24 @@ We do not support PHP 5.5.
 
 
 <h4>New installations</h4>
-New users can now complete a full installation of Magento Enterprise Edition 2.1 Release Candidate (RC1) from an archive file.
+You can install Magento Enterprise Edition 2.1 Release Candidate (RC1) from either Github or by using Composer. 
 
-#####<b>Download a new installation</b>#####
-1. Go to the <a href="https://www.magento.com/" target="_blank">Magento</a> website, and click **My Account**. Then, log in to your account. 
-2. In the panel on the left, choose **Downloads**. Choose **Magento Enterprise Edition 2.x**, and do the following:
 
-	a.	Click **Magento Enterprise Edition 2.x Release**.
+#####<b>Install from GitHub</b>#####
+If you have previously signed an agreement to access Magento Enterprise Edition 2.0 beta software on GitHub, you can install this release candidate from GitHub. Before proceeding, please familiarize yourself with these  <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html" target="_blank">prerequisites</a>. 
 
-	b.	In the list, choose **Version 2.1**.
 
-	c.	Click **Download**.
+1. Run `git clone git@github.com:magento/magento2.git`
 
-3.	Follow the instructions to upgrade and verify your installation. If you need help, go to the **Support** tab of your Magento account, and **Open a Ticket**.
+2. Run `git checkout tags/<2.1.0-rc1> [-b <2.1.0-rc1>]`
+
+
+#####<b>Install using Composer</b>#####
+This Release Candidate is available from repo.magento.com if you have an Enterprise Edition license. Before installing this Release Candidate using Composer, please familiarize yourself with these  <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then 
+
+Run `composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=<version> <installation directory name>`
+
+
 
 
 <h4>Upgrade existing installations</h4>
@@ -122,13 +138,6 @@ For example, enter <code>chmod -R 770 /var/www/magento2/var/session</code>
 3.	Click  **System Upgrade**. Follow the onscreen instructions to complete the upgrade.
 
 For more information, see <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">Upgrade the Magento installation and components</a>.
-
-#####<b>Magento Partners</b>#####
-Magento partners can download the release and the release notes in PDF format from the Partner Portal.
-
-1.	Log in to the <a href="https://magento.com/partners/become-a-partner" target="_blank">Partner Portal</a>.
-2.	Under Magento Enterprise Edition, choose **Magento Enterprise Edition 2.x**.
-3.	Find the **Magento Enterprise Edition 2.x Release**, and choose **Version 2.1**.
 
 
 
