@@ -8,7 +8,8 @@ menu_order: 13
 github_link: release-notes/ReleaseNotes2.1_RC1CE.md
 ---
 
-<h2>Magento Community Edition 2.1 Release Candidate (RC1)/h2>
+<h2>Magento Community Edition 2.1 Release Candidate (RC1)</h2>
+
 We are pleased to present Magento Community Edition 2.1 Release Candidate (RC1). This release candidate build is not intended for production purposes. Instead, it provides a preview of the new features and fixes that Magento Community Edition 2.1 GA will contain.
 
 This candidate release also offers the development community an opportunity to contribute to the Magento 2.1 code base by identifying unresolved issues. We welcome your participation in this process on GitHub! For more information on how to provide feedback and contribute on GitHub, see <a href="{{ site.gdeurl }}contributor-guide/contributing.html" target="_blank">Code contributions</a>. 
