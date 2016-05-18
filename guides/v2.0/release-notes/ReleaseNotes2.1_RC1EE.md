@@ -46,15 +46,15 @@ Magento Enterprise Edition 2.1 includes several new features:
 
 <b>Issue:</b> Enabling Varnish causes the category menu to switch from http to https<a href="https://github.com/magento/magento2/issues/4540" target="_blank">(GITHUB-4540)</a>
 
-<b>Work-around:</b>b> To use Varnish caching with an HTTP site, add rewrite rules such as the following in Magento's root .htaccess: 
+<b>Work-around:</b> To use Varnish caching with an HTTP site, add rewrite rules such as the following in Magento's root .htaccess: 
 
-`RewriteCond %{HTTPS} on
+<code>RewriteCond %{HTTPS} on
 RewriteCond %{REQUEST_URI} /yellow-fruit.html
 RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI} [L]
 
 RewriteCond %{HTTPS} on
 RewriteCond %{REQUEST_URI} /red-fruit.html
-RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI} [L]`
+RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI} [L]</code>
 
  
 <h3>Fixed issues</h3>
