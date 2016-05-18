@@ -15,8 +15,8 @@ github_link: config-guide/multi-master/multi-master_manual.md
 *	[Overview of manual split database configuration](#config-ee-multidb-manual-over)
 *   [Back up the Magento system](#config-ee-multidb-backup)
 *	[Set up additional master databases](#config-ee-multidb-master-masters)
-*	[Run quote database SQL scripts](#config-ee-multidb-oms)
-*	[Configure the sales database](#config-ee-multidb-checkout)
+*	[Run sales database SQL scripts](#config-ee-multidb-oms)
+*	[Configure the quote database](#config-ee-multidb-checkout)
 *   [Verify your configuration](#config-ee-multidb-config)
 
 ## Overview of manual split database configuration {#config-ee-multidb-manual-over}
@@ -96,20 +96,20 @@ Create checkout and OMS master databases as follows:
     If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.
 7.  Continue with the next section.
 
-## Run quote database SQL scripts {#config-ee-multidb-oms}
+## Run sales database SQL scripts {#config-ee-multidb-oms}
 This section discusses how to create and run SQL scripts that alter quote database tables and back up data from those tables.
 
 For more information, see:
 
-*	[Create quote database SQL scripts](#config-ee-multidb-sql-oms)
+*	[Create sales database SQL scripts](#config-ee-multidb-sql-oms)
 *	[Run SQL scripts](#config-ee-multidb-sql-run)
 *   [Back up sales data](#sales-backup)
 
-### Create quote database SQL scripts {#config-ee-multidb-sql-oms}
+### Create sales database SQL scripts {#config-ee-multidb-sql-oms}
 Create the following SQL scripts in a location that is accessible by the user as whom you log in to your Magento server. For example, if you log in or run commands as `root`, you can create the scripts in the `/root/sql-scripts` directory.
 
 #### Remove foreign keys (first script)
-This script is the first of two that remove foreign keys that refer to non-sales tables from sales tables. 
+This script is the first of two that remove foreign keys that refer to non-sales tables from the sales database. 
 
 Create the following script and give it a name like `1_foreign1.sql`. Replace `<your main magento DB name>` with the name of your Magento database. In this topic, the sample database name is `magento`.
 
@@ -139,7 +139,7 @@ where for_name like  '<your main magento DB name>/|magento_sales|_%' escape '|'
 {% endhighlight %}
 
 #### Remove foreign keys (second script)
-This script is the second of two that remove foreign keys that refer to non-sales tables from sales tables. Replace `<your main magento DB name>` with the name of your Magento database.
+This script is the second of two that remove foreign keys that refer to non-quote tables from quote tables. Replace `<your main magento DB name>` with the name of your Magento database.
 
 Create the following script and give it a name like `2_foreign-key2.sql`:
 
@@ -179,134 +179,7 @@ where for_name like '<your main magento DB name>/%'
 ;
 {% endhighlight %}
 
-#### Remove sales tables
-This script removes sales tables from the main Magento database. 
-
-Create the following script and give it a name like `3_remove-tables.sql`. Replace `<your main magento DB name>` with the name of your Magento database. In this topic, the sample database name is `magento`.
-
-{% highlight sql %}
-select ' SET foreign_key_checks = 0;' as querytext
-union all
-select
-    concat('DROP TABLE IF EXISTS ' , table_name, ';')
-from information_schema.tables
-where table_schema = '<your main magento db name>'
-and table_name like 'sales/_%' escape '/'
-union all
-select
-    concat('DROP TABLE IF EXISTS ' , table_name, ';')
-from information_schema.tables
-where table_schema = '<your main magento db name>'
-and table_name like 'magento_sales/_%' escape '/'
-union all
-select
-    concat('DROP TABLE IF EXISTS ' , table_name, ';')
-from information_schema.tables
-where table_schema = '<your main magento db name>'
-and table_name like 'magento_customercustomattributes_sales_flat_order%' escape '/'
-union all
-select
-    concat('DROP TABLE IF EXISTS ' , table_name, ';')
-from information_schema.tables
-where table_schema = '<your main magento db name>'
-and table_name like 'sequence/_%' escape '/'
-union all
-select 'SET foreign_key_checks = 1;';
-{% endhighlight %}
-
-### Back up sales data {#sales-backup}
-If you're currently at the `mysql>` prompt, enter `exit` to return to the command shell.
-
-Run the following `mysqldump` commands, one at a time, from the command shell. In each, substitute the following:
-
-*   `<your database root user name>` with the name of your database root user
-*   `<your database root user password>` with the user's password
-*   `<your main magento DB name>` with the name of your Magento database
-*   `<path>` with a writable file system path
-
-**Script 1**
-{% highlight sql %}
-mysqldump -u <your database root user name> -p <your main magento DB name> sales_bestsellers_aggregated_daily sales_bestsellers_aggregated_monthly sales_bestsellers_aggregated_yearly sales_creditmemo sales_creditmemo_comment sales_creditmemo_grid sales_creditmemo_item sales_invoice sales_invoice_comment sales_invoice_grid sales_invoice_item sales_invoiced_aggregated sales_invoiced_aggregated_order sales_order sales_order_address sales_order_aggregated_created sales_order_aggregated_updated sales_order_grid sales_order_item sales_order_payment sales_order_status sales_order_status_history sales_order_status_label sales_order_status_state sales_order_tax sales_order_tax_item sales_payment_transaction sales_refunded_aggregated sales_refunded_aggregated_order sales_sequence_meta sales_sequence_profile sales_shipment sales_shipment_comment sales_shipment_grid sales_shipment_item sales_shipment_track sales_shipping_aggregated sales_shipping_aggregated_order > /<path>/sales.sql
-{% endhighlight %}
-
-**Script 2**
-{% highlight sql %}
-mysqldump -u <your database root user name> -p <your main magento DB name> magento_sales_creditmemo_grid_archive magento_sales_invoice_grid_archive magento_sales_order_grid_archive magento_sales_shipment_grid_archive > /<path>/salesarchive.sql
-{% endhighlight %}
-
-**Script 3**
-{% highlight sql %}
-mysqldump -u <your database root user name> -p <your main magento DB name> magento_customercustomattributes_sales_flat_order magento_customercustomattributes_sales_flat_order_address > /<path>/customercustomattributes.sql
-{% endhighlight %}
-
-**Script 4**
-{% highlight sql %}
-mysqldump -u <your database root user name> -p <your main magento DB name> sequence_creditmemo_0 sequence_creditmemo_1 sequence_invoice_0 sequence_invoice_1 sequence_order_0 sequence_order_1 sequence_rma_item_0 sequence_rma_item_1 sequence_shipment_0 sequence_shipment_1 > /<path>/sequence.sql
-{% endhighlight %}
-
-### Restore sales data {#sql-sales-restore}
-This script restores sales data in your quote database.
-
-If you are using an NDB database cluster:
-
-1.  Convert tables from InnoDb to NDB type in dump files:
-
-        sed -ei 's/InnoDb/NDB/' <dumpfile>.sql
-
-2.  Remove rows with FULLTEXT KEY from dumps because NDB tables don't support FULLTEXT:
-
-        TBD
-
-    salesarchive.sql
-
-Run the following commands:
-
-{% highlight sql %}
-mysqldump -u <root user name> -p <your quote DB name> < /<path>/sales.sql
-mysqldump -u <root user name> -p <your quote DB name> < /<path>/sequence.sql
-mysqldump -u <root user name> -p <your quote DB name> < /<path>/salesarchive.sql
-mysqldump -u <root user name> -p <your quote DB name> < /<path>/customercustomattributes.sql
-{% endhighlight %}
-
-where
-
-*   `<your quote DB name>` with the name of your quote database. 
-
-    In this topic, the sample database name is `magento_sales`.
-*   `<root user name>` with your MySQL root user name
-*   `<root user password>` with the user's password
-*   Verify the location of the backup files you created earlier (for example, `/var/sales.sql`)
-
-Sample output from the last command:
-
-{% highlight sql %}
--- Host: localhost    Database: magento_sales
--- ------------------------------------------------------
--- Server version       5.6.28
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2016-04-23 10:42:51
-{% endhighlight %}
-### Run quote database SQL scripts {#config-ee-multidb-sql-oms-run}
+### Run sales database SQL scripts {#config-ee-multidb-sql-oms-run}
 Run each script in the order in which you created it as follows:
 
 1.  Log in to your MySQL database as the `root` or administrative user:
@@ -320,7 +193,6 @@ Run each script in the order in which you created it as follows:
 
         source /root/sql-scripts/1_foreign1.sql
         source /root/sql-scripts/2_foreign-key2.sql
-        source /root/sql-scripts/3_remove-tables.sql
 
 #### Sample script output
 Sample output from each script follows in the order we suggest you run them.
@@ -456,19 +328,130 @@ Sample output from each script follows in the order we suggest you run them.
 
 {% endhighlight %}
 
+### Back up sales data {#sales-backup}
+If you're currently at the `mysql>` prompt, enter `exit` to return to the command shell.
+
+Run the following `mysqldump` commands, one at a time, from the command shell. In each, substitute the following:
+
+*   `<your database root user name>` with the name of your database root user
+*   `<your database root user password>` with the user's password
+*   `<your main magento DB name>` with the name of your Magento database
+*   `<path>` with a writable file system path
+
+**Script 1**
+{% highlight sql %}
+mysqldump -u <your database root user name> -p <your main magento DB name> sales_bestsellers_aggregated_daily sales_bestsellers_aggregated_monthly sales_bestsellers_aggregated_yearly sales_creditmemo sales_creditmemo_comment sales_creditmemo_grid sales_creditmemo_item sales_invoice sales_invoice_comment sales_invoice_grid sales_invoice_item sales_invoiced_aggregated sales_invoiced_aggregated_order sales_order sales_order_address sales_order_aggregated_created sales_order_aggregated_updated sales_order_grid sales_order_item sales_order_payment sales_order_status sales_order_status_history sales_order_status_label sales_order_status_state sales_order_tax sales_order_tax_item sales_payment_transaction sales_refunded_aggregated sales_refunded_aggregated_order sales_sequence_meta sales_sequence_profile sales_shipment sales_shipment_comment sales_shipment_grid sales_shipment_item sales_shipment_track sales_shipping_aggregated sales_shipping_aggregated_order > /<path>/sales.sql
+{% endhighlight %}
+
+**Script 2**
+{% highlight sql %}
+mysqldump -u <your database root user name> -p <your main magento DB name> magento_sales_creditmemo_grid_archive magento_sales_invoice_grid_archive magento_sales_order_grid_archive magento_sales_shipment_grid_archive > /<path>/salesarchive.sql
+{% endhighlight %}
+
+**Script 3**
+{% highlight sql %}
+mysqldump -u <your database root user name> -p <your main magento DB name> magento_customercustomattributes_sales_flat_order magento_customercustomattributes_sales_flat_order_address > /<path>/customercustomattributes.sql
+{% endhighlight %}
+
+**Script 4**
+{% highlight sql %}
+mysqldump -u <your database root user name> -p <your main magento DB name> sequence_creditmemo_0 sequence_creditmemo_1 sequence_invoice_0 sequence_invoice_1 sequence_order_0 sequence_order_1 sequence_rma_item_0 sequence_rma_item_1 sequence_shipment_0 sequence_shipment_1 > /<path>/sequence.sql
+{% endhighlight %}
+
+### Restore sales data {#sql-sales-restore}
+This script restores sales data in your quote database.
+
+If you are using an NDB database cluster:
+
+1.  Convert tables from InnoDb to NDB type in dump files:
+
+        sed -ei 's/InnoDb/NDB/' <dumpfile>.sql
+
+2.  Remove rows with FULLTEXT KEY from dumps because NDB tables don't support FULLTEXT:
+
+        TBD
+
+    salesarchive.sql
+
+Run the following commands:
+
+{% highlight sql %}
+mysql -u <root user name> -p <your quote DB name> < /<path>/sales.sql
+mysql -u <root user name> -p <your quote DB name> < /<path>/sequence.sql
+mysql -u <root user name> -p <your quote DB name> < /<path>/salesarchive.sql
+mysql -u <root user name> -p <your quote DB name> < /<path>/customercustomattributes.sql
+{% endhighlight %}
+
+where
+
+*   `<your quote DB name>` with the name of your quote database. 
+
+    In this topic, the sample database name is `magento_sales`.
+*   `<root user name>` with your MySQL root user name
+*   `<root user password>` with the user's password
+*   Verify the location of the backup files you created earlier (for example, `/var/sales.sql`)
+
+### Remove sales tables
+This script removes sales tables from the main Magento database. 
+
+Create the following script and give it a name like `3_remove-tables.sql`. Replace `<your main magento DB name>` with the name of your Magento database. In this topic, the sample database name is `magento`.
+
+{% highlight sql %}
+select ' SET foreign_key_checks = 0;' as querytext
+union all
+select
+    concat('DROP TABLE IF EXISTS ' , table_name, ';')
+from information_schema.tables
+where table_schema = '<your main magento db name>'
+and table_name like 'sales/_%' escape '/'
+union all
+select
+    concat('DROP TABLE IF EXISTS ' , table_name, ';')
+from information_schema.tables
+where table_schema = '<your main magento db name>'
+and table_name like 'magento_sales/_%' escape '/'
+union all
+select
+    concat('DROP TABLE IF EXISTS ' , table_name, ';')
+from information_schema.tables
+where table_schema = '<your main magento db name>'
+and table_name like 'magento_customercustomattributes_sales_flat_order%' escape '/'
+union all
+select
+    concat('DROP TABLE IF EXISTS ' , table_name, ';')
+from information_schema.tables
+where table_schema = '<your main magento db name>'
+and table_name like 'sequence/_%' escape '/'
+union all
+select 'SET foreign_key_checks = 1;';
+{% endhighlight %}
+
 ## Configure the quote database {#config-ee-multidb-checkout}
 This section discusses tasks required to drop foreign keys from sales database tables and move tables to the sales database.
 
 ### Drop foreign keys from quote tables
-Run the following commands from the `mysql>` prompt:
+This script removes foreign keys that refer to non-quote tables from quote tables. Replace <your main magento DB name> with the name of your Magento database.
+
+Create the following script and give it a name like `4_foreign-key3.sql`:
 
 {% highlight SQL %}
 use <your Magento main DB name>;
 ALTER TABLE quote DROP FOREIGN KEY QUOTE_STORE_ID_STORE_STORE_ID;
 ALTER TABLE quote_item DROP FOREIGN KEY QUOTE_ITEM_PRODUCT_ID_CATALOG_PRODUCT_ENTITY_ENTITY_ID;
 ALTER TABLE quote_item DROP FOREIGN KEY QUOTE_ITEM_STORE_ID_STORE_STORE_ID;
-exit
 {% endhighlight %}
+
+Run the script as follows:
+
+1.  Log in to your MySQL database as the root or administrative user:
+
+        mysql -u root -p
+2.  At the `mysql>` prompt, run the script as follows:
+
+        source <path>/<script>.sql
+    For example,
+
+        source /root/sql-scripts/4_foreign-key3.sql
 
 ### Back up quote tables
 Run the following command from a command prompt:
@@ -477,41 +460,9 @@ Run the following command from a command prompt:
 
 ### Import tables to the quote database
 
-    mysqldump -u root -p magento_sales < /<path>/quote.sql
+    mysql -u root -p magento_quote < /<path>/quote.sql
 
-A sample result follows:
-
-{% highlight SQL %}
--- MySQL dump 10.13  Distrib 5.6.28, for Linux (x86_64)
---
--- Host: localhost    Database: magento_sales
--- ------------------------------------------------------
--- Server version       5.6.28
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2016-04-23 13:17:07
-{% endhighlight %}
-
-### Drop quote tables from the Magento database
+## Drop sales and quote tables from the Magento database {#config-ee-multidb-drop}
 Either run the following commands from the `mysql>` prompt or create a script and run it:
 
 {% highlight sql %}
@@ -529,8 +480,6 @@ DROP TABLE quote_shipping_rate;
 DROP TABLE quote_id_mask;
 SET foreign_key_checks = 1;
 {% endhighlight %}
-
-
 
 ## Verify your configuration {#config-ee-multidb-config}
 This section discusses how to make sure the Magento configuration in `<your Magento install dir>/app/etc/env.php` is correct.
