@@ -10,18 +10,21 @@ github_link: release-notes/ReleaseNotes2.1_RC1CE.md
 
 <h2>Magento Community Edition 2.1 Release Candidate 1 (RC1)</h2>
 
-We are pleased to present Magento Community Edition 2.1 Release Candidate 1 (RC1). This release candidate build is not intended for production purposes. Instead, it provides a preview of the new features and fixes that Magento Community Edition 2.1 GA will contain.
+We are pleased to present Magento 2.1 Release Candidate 1 (RC1). This release candidate build is not intended for production purposes. Instead, it provides the development community opportunities to: 
 
-This candidate release also offers the development community an opportunity to contribute to the Magento 2.1 code base by identifying unresolved issues. We welcome your participation in this process on GitHub! For more information on how to provide feedback and contribute on GitHub, see <a href="{{ site.gdeurl }}contributor-guide/contributing.html" target="_blank">Code contributions</a>. 
+* preview the new features and fixes that Magento 2.1 GA will contain
 
-This Release Candidate is available only on GitHub and repo.magento.com. 
+* contribute to the Magento 2.1 code base by identifying unresolved issues
 
+* test your 2.0 extensions against  2.1 
+
+We welcome your participation in this process! Please file any Community Edition issues on the Community Edition GitHub repository. 
 
 <h3>Highlights</h3>
 Magento Community Edition 2.1 includes several new features:
 
 
-* **PayPal in-context checkout helps to increase conversion rates**. PayPal in-context checkout helps to increase conversion rates by allowing shoppers to pay with PayPal without leaving the merchant’s site. PayPal saved credit card capabilities allow merchants to securely store credit cards with PayPal so shoppers can make future purchases without re-entering their credit card information.
+* **PayPal in-context checkout helps to increase conversion rates** by allowing shoppers to pay with PayPal without leaving the merchant’s site. PayPal saved credit card capabilities allow merchants to securely store credit cards with PayPal so shoppers can make future purchases without re-entering their credit card information.
  
 * **Braintree enhancements enable merchants to qualify for the simplest set of PCI compliance** requirements by using Braintree Hosted Fields to collect all sensitive card holder information in checkout. Merchants retain complete control over their checkout style and layout because Braintree uses small, transparent iframes to replace individual payment fields. Merchants can now also access Braintree settlement reports from within the Magento Admin.
  
@@ -34,7 +37,7 @@ This release includes fixes for the following GitHub issues:
 
 <!--- 52414 --> * Integration test syntax error has been fixed. <a href="https://github.com/magento/magento2/issues/4343" target="_blank">(GITHUB-4343)</a> 
 
-<!--- 50611--> * Web APIs no longer allow anonymous access<a href="https://github.com/magento/magento2/issues/3786" target="_blank">(GITHUB-3786)</a>.
+<!--- 50611--> * Web APIs no longer allow anonymous access by default<a href="https://github.com/magento/magento2/issues/3786" target="_blank">(GITHUB-3786)</a>.
 
 <!--- 51292 --> * The OAuth Token exchange expiration period is now calculated correctly. <a href="https://github.com/magento/magento2/issues/3449" target="_blank">(GITHUB-3449)</a> 
 
@@ -55,7 +58,7 @@ This release includes fixes for the following GitHub issues:
 
 <!--- 47440 --> *  Magento now displays the correct product prices on the Configurable product page when catalog prices include tax. <a href="https://github.com/magento/magento2/issues/2471" target="_blank">(GITHUB-2471)</a> 
 
-<!--- 47439 --> * The `i18n:collect-phrases -m` command now works correctly. Previously, this command would not find all important Magento phrases. <a href="https://github.com/magento/magento2/issues/2630" target="_blank">(GITHUB-26301)</a>
+<!--- 47439 --> * The `i18n:collect-phrases -m` command now works correctly. Previously, this command would not find all important Magento phrases. <a href="https://github.com/magento/magento2/issues/2630" target="_blank">(GITHUB-2630)</a>
 
 <!--- 47009 --> *  Plugins/interceptors now work with early stage single instance objects in Developer mode. <a href="https://github.com/magento/magento2/issues/2674" target="_blank">(GITHUB-2674)</a> 
 

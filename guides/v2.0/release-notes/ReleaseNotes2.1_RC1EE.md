@@ -24,7 +24,7 @@ We welcome your participation in this process! Enterprise Edition customers can 
 * Email to DL-Magento-2.1-Feedback@magento.com.
 
 
-This Release Candidate is available from repo.magento.com if you have an Enterprise Edition license or  <a href="https://github.com/magento/magento2ee" target="_blank">GitHub</a>if you have previously signed an agreement to access Magento Enterprise Edition 2.0 beta software on GitHub.
+This Release Candidate is available from repo.magento.com if you have an Enterprise Edition license or  <a href="https://github.com/magento/magento2ee" target="_blank">GitHub</a> if you have previously signed an agreement to access Magento Enterprise Edition 2.0 beta software on GitHub.
 
 
 <h3>Highlights</h3>
@@ -33,9 +33,9 @@ Magento Enterprise Edition 2.1 includes several new features:
 
 * **Content Staging and Preview** improves productivity by enabling business teams to easily create, preview, and schedule a wide range of content updates without involving IT. Merchants can make updates to products, categories, CMS content, promotions, and pricing and can preview these changes based on specific dates and times or store views. User-friendly dashboards provide greater visibility into all planned site changes and updates can be automatically deployed at scheduled times.
  
-* **Elasticsearch is a next-generation search technology** that is replacing Solr in Magento Enterprise Edition 2.1. It is simpler to set up, able to handle large catalogs, and can easily scale as search volume grows. It supports 33 languages out-of-the-box and merchants can configure stop words and synonyms to ensure high quality search results.
+* **Elasticsearch is a next-generation search technology** that is replacing Solr in Magento Enterprise Edition 2.1. It is simpler to set up, able to handle large catalogs, and can easily scale as search volume grows. It supports 33 languages out-of-the-box, and merchants can configure stop words and synonyms to ensure high quality search results.
 
-* **PayPal in-context checkout helps to increase conversion rates**.  PayPal in-context checkout helps to increase conversion rates by allowing shoppers to pay with PayPal without leaving the merchant’s site. PayPal saved credit card capabilities allow merchants to securely store credit cards with PayPal so shoppers can make future purchases without re-entering their credit card information.
+* **PayPal in-context checkout helps to increase conversion rates** by allowing shoppers to pay with PayPal without leaving the merchant’s site. PayPal saved credit card capabilities allow merchants to securely store credit cards with PayPal so shoppers can make future purchases without re-entering their credit card information.
  
 * **Braintree enhancements enable merchants to qualify for the simplest set of PCI compliance** requirements by using Braintree Hosted Fields to collect all sensitive cardholder information in checkout. Merchants retain complete control over their checkout style and layout because Braintree uses small, transparent iframes to replace individual payment fields. Merchants can now also access Braintree settlement reports from within the Magento Admin.
  
@@ -48,7 +48,7 @@ This release includes fixes for the following GitHub issues:
 
 <!--- 52414 --> * Integration test syntax error has been fixed. <a href="https://github.com/magento/magento2/issues/4343" target="_blank">(GITHUB-4343)</a> 
 
-<!--- 50611--> * Web APIs no longer allow anonymous access<a href="https://github.com/magento/magento2/issues/3786" target="_blank">(GITHUB-3786)</a>.
+<!--- 50611--> * Web APIs no longer allow anonymous access by default<a href="https://github.com/magento/magento2/issues/3786" target="_blank">(GITHUB-3786)</a>.
 
 <!--- 51292 --> * The OAuth Token exchange expiration period is now calculated correctly. <a href="https://github.com/magento/magento2/issues/3449" target="_blank">(GITHUB-3449)</a> 
 
@@ -69,7 +69,7 @@ This release includes fixes for the following GitHub issues:
 
 <!--- 47440 --> *  Magento now displays the correct product prices on the Configurable product page when catalog prices include tax. <a href="https://github.com/magento/magento2/issues/2471" target="_blank">(GITHUB-2471)</a> 
 
-<!--- 47439 --> * The `i18n:collect-phrases -m` command now works correctly. Previously, this command would not find all important Magento phrases. <a href="https://github.com/magento/magento2/issues/2630" target="_blank">(GITHUB-26301)</a>
+<!--- 47439 --> * The `i18n:collect-phrases -m` command now works correctly. Previously, this command would not find all important Magento phrases. <a href="https://github.com/magento/magento2/issues/2630" target="_blank">(GITHUB-2630)</a>
 
 <!--- 47009 --> *  Plugins/interceptors now work with early stage single instance objects in Developer mode. <a href="https://github.com/magento/magento2/issues/2674" target="_blank">(GITHUB-2674)</a> 
 
@@ -103,16 +103,16 @@ You can install Magento Enterprise Edition 2.1 Release Candidate 1 (RC1) from ei
 
 
 #####<b>Install from GitHub</b>#####
-If you have previously signed an agreement to access Magento Enterprise Edition 2.0 beta software on GitHub, you can install this release candidate from GitHub. Before proceeding, please familiarize yourself with these  <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html" target="_blank">prerequisites</a>. 
+If you have previously signed an agreement to access Magento Enterprise Edition 2.0 beta software on GitHub, you can install this release candidate from GitHub. Before proceeding, please familiarize yourself with these  <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html" target="_blank">prerequisites</a>, then run
 
 
-1. Run `git clone git@github.com:magento/magento2.git`
+1. `git clone git@github.com:magento/magento2.git`
 
-2. Run `git checkout tags/<2.1.0-rc1> [-b <2.1.0-rc1>]`
+2. `git checkout tags/<2.1.0-rc1> [-b <2.1.0-rc1>]`
 
 
 #####<b>Install using Composer</b>#####
-This Release Candidate is available from repo.magento.com if you have an Enterprise Edition license. Before installing this Release Candidate using Composer, please familiarize yourself with these  <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then 
+This Release Candidate is available from <a href="http://repo.magento.com" target="_blank">repo.magento.com</a> if you have an Enterprise Edition license. Before installing this Release Candidate using Composer, please familiarize yourself with these  <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then 
 
 Run `composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=<version> <installation directory name>`
 
