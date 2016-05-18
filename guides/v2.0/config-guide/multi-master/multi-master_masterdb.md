@@ -20,12 +20,12 @@ github_link: config-guide/multi-master/multi-master_masterdb.md
 This topic discusses how to get started with the split database solution by:
 
 1.	Installing Magento 2 EE with a single master database (named `magento`)
-2.	Creating two additional master databases for checkout and OMS (named `magento_checkout` and `magento_oms`)
-2.	Configuring EE to use the checkout and OMS databases 
+2.	Creating two additional master databases for checkout and OMS (named `magento_quote` and `magento_sales`)
+2.	Configuring EE to use the checkout and sales databases 
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>This guide assumes all three databases are on the same host as the Magento application and that they're named <code>magento</code>, <code>magento_checkout</code>, and <code>magento_oms</code>. However, the choice of where to locate the databases and what they're named is up to you. We hope our examples make the instructions easier to follow.</p></span>
+  <p>This guide assumes all three databases are on the same host as the Magento application and that they're named <code>magento</code>, <code>magento_quote</code>, and <code>magento_sales</code>. However, the choice of where to locate the databases and what they're named is up to you. We hope our examples make the instructions easier to follow.</p></span>
 </div>
 
 <h2 id="config-ee-multidb-master-install">Install the Magento EE software</h2>

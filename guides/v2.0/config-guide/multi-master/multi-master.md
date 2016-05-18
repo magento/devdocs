@@ -85,8 +85,8 @@ This guide discusses how to set up the master databases only. We provide sample 
 
 In this guide, the three master databases are named:
 
-*	`magento_checkout`
-*	`magento_oms`
+*	`magento_quote`
+*	`magento_sales`
 *	`magento`
 
 (You can name your databases anything you wish.)
