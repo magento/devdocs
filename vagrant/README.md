@@ -35,9 +35,9 @@ All commands must be run in the terminal from the directory that contains `Vagra
 ### Scripts
 
 - Stop Jekyll server. (Stops devdocs site generation.)
-  ```bash
-  vagrant ssh -c "kill $(ps aux | grep '[j]ekyll' | awk '{print $2}')"
-  ```  
+
+        vagrant ssh -c "kill $(ps aux | grep '[j]ekyll' | awk '{print $2}')"
+
 - Run Jekyll server. (Generates devdocs site.)
  
         vagrant ssh -c 'cd /jekyll/devdocs; jekyll serve --host=0.0.0.0'
