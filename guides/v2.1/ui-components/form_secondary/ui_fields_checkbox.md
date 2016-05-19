@@ -10,7 +10,7 @@ github_link: ui-components/form_secondary/ui_fields_checkbox.md
 
 <h2>What's in this topic</h2>
 
-This topic describes the checkbox UI component, that is one of the types of the field UI component.
+This topic describes the checkbox UI component, that is one of the types of the Field UI component.
 
 **Contents**
 
@@ -19,10 +19,10 @@ This topic describes the checkbox UI component, that is one of the types of the 
 
 ## Overview
 
-The checkbox UI component can be configured to implement the following field types (from the UI point of view): radio button, toggle button or checkbox. The component inherits the abstract behavior of the field UI component.
+The checkbox UI component can be configured to implement the following field types (from the UI point of view): radio button, toggle button or checkbox. The component inherits the abstract behavior of the Field UI component.
 
 
-The following images illustrate how the different implementation of the field can look like:
+The following images illustrate how the different implementations can look like:
 
 - when configured as radio button:
 
@@ -47,7 +47,7 @@ The checkbox UI component is designed to be used in the Admin panel.
 ## Structure
 The checkbox UI component comprises the following files:
 
-- JavaScript UI componentmponent: `<Magento_UI_module_dir>/view/base/web/js/form/element/single-checkbox.js`
+- JavaScript component: `<Magento_UI_module_dir>/view/base/web/js/form/element/single-checkbox.js`
 - Templates:
 	- `<Magento_UI_module_dir>/view/base/web/templates/form/components/single/checkbox.html`
 	- `<Magento_UI_module_dir>/view/base/web/templates/form/components/single/radio.html`
@@ -62,7 +62,7 @@ In general case, the checkbox configuration file looks like following:
 <field name="%Component_Name%">
     <argument name="data" xsi:type="array">
         <item name="config" xsi:type="array">
-            <!-- Mandatory options, inherited from the field UI component -->
+            <!-- Mandatory options. Required by the Field UI component -->
             <item name="formElement" xsi:type="string">checkbox</item>
             <item name="dataType" xsi:type="string">text</item>
             <item name="dataScope" xsi:type="string">%Component_Name%</item>
@@ -80,12 +80,12 @@ Example of the checkbox component configuration in the scope of the form configu
 {%highlight xml%}
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <!-- Checkbox component configuration. START -->
-    <field name="my_checkbox">
+    <field name="Sample_Checkbox">
         <argument name="data" xsi:type="array">
             <item name="config" xsi:type="array">
                 <item name="formElement" xsi:type="string">checkbox</item>
                 <item name="dataType" xsi:type="string">text</item>
-                <item name="dataScope" xsi:type="string">my_checkbox</item>
+                <item name="dataScope" xsi:type="string">Sample_Checkbox</item>
             </item>
         </argument>
     </field>
@@ -101,7 +101,7 @@ Example of the checkbox component configuration in the scope of the form configu
         </item>
         <item name="template" xsi:type="string">templates/form/collapsible</item>
     </argument>
-    <dataSource name="catalog_rule_form_data_source">я нап
+    <dataSource name="catalog_rule_form_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
             <argument name="class" xsi:type="string">Magento\CatalogRule\Model\Rule\DataProvider</argument>
             <argument name="name" xsi:type="string">catalog_rule_form_data_source</argument>
@@ -267,7 +267,7 @@ Depends on how the <code>prefer</code> option is configured.
       optional
     </td>
     <td>
-      <code><code>'checkbox'</code></code>
+      <code>'checkbox'</code>
     </td>
   </tr>
   <tr>
@@ -275,7 +275,7 @@ Depends on how the <code>prefer</code> option is configured.
       <code>value</code>
     </td>
     <td>
-      The value the component can return. If one value is set, then it is automatically assigned to the "checked" state; in the "unchecked" state the component returns an empty string in this case. You can assign a separate value for each state using the <code>valueMap</code> option.
+      The value the component can return. You can assign a separate value for each state using the <code>valueMap</code> option. If one value is set, and <code>valueMap</code> is omitted, then it is automatically assigned to the "checked" state; in the "unchecked" state the component returns an empty string in this case. 
     </td>
     <td>
       *
@@ -299,8 +299,8 @@ Depends on how the <code>prefer</code> option is configured.
       Object. Expected structure:
       <pre>
 {
-  'true':  &lt;value_for_CHECKED_state&gt;,
-  'false': &lt;value_for_UNCHECKED_state&gt;
+  'true': %value_for_CHECKED_state%;,
+  'false': %value_for_UNCHECKED_state%;
 }
 </pre>
     </td>
@@ -316,8 +316,7 @@ Depends on how the <code>prefer</code> option is configured.
       <code>visible</code>
     </td>
     <td>
-      Shows/hides the component from the page. In runtime component
-      still exist and can be accessed.
+      Shows/hides the component from the page. If configured to <code>false</code>, in runtime the component still exists and can be accessed, but is excluded from DOM.
     </td>
     <td>
       Boolean
@@ -384,8 +383,8 @@ Getter, returns current checkbox state: `true` if checked, `false` otherwise.
     @param {Boolean} param
     @returns void
 
-Sets the checkbox state: checked, if `param` is `true`, unchecked if `param` is `false`.
-In the current implementation the checkbox UI component doesn't support [indeterminate](https://css-tricks.com/indeterminate-checkboxes/) state. Can affect `value`.
+Sets the checkbox state: checked, if `param` is `true`, unchecked if `param` is `false`. Can affect `value`.
+In the current implementation the checkbox UI component doesn't support [indeterminate](https://css-tricks.com/indeterminate-checkboxes/) state. 
 
 
 ## Examples of use
