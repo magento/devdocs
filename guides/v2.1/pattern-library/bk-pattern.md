@@ -55,6 +55,11 @@ Browse the Design Pattern Library here:
 <a href="navigation/links/links.html">Links</a><br>
 <a href="navigation/wizard/wizard.html">Wizard</a><br>
 
+####Staging Patterns
+<a href="staging-patterns/TimelineDashboard/Timeline-Dashboard.html">Timeline Dashboard</a><br>
+<a href="staging-patterns/ScheduledChangesModule/module.html">Scheduled Update Module</a><br>
+
+
 
 ####Templates
 <a href="templates/address-form/address-form.html">Address Form</a><br>
@@ -63,8 +68,5 @@ Browse the Design Pattern Library here:
 
 ####General
 <a href="general/accessibilityguideline/accessibilityGuideline.html">Accessibility Guidelines</a><br>
-
-
-
 
 
