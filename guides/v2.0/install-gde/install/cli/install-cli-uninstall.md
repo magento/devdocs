@@ -49,7 +49,7 @@ The way you reinstall the Magento application from the command line depends on y
 <h3 id="instgde-install-magento-reinst-dev">Reinstall as a system integrator</h3>
 To reinstall the Magento software as a system integrator:
 
-1.	Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.
+1.	Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="{{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html">>switch to the Magento file system owner</a>.
 2.	Enter the following commands in the order shown:
 
 		cd <your Magento install dir>

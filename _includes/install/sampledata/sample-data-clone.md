@@ -111,11 +111,7 @@ To set file system permissions and ownership on the sample data repository:
 
 3.  Set permissions:
 
-        find . -type d -exec chmod 770 {} \; && find . -type f -exec chmod 660 {} \;
-    
-    If you must enter the commands as <code>sudo</code>, use:
-
-        sudo find . -type d -exec chmod 770 {} \; && sudo find . -type f -exec chmod 660 {} \;
+        find . -type d -exec chmod g+ws {} \;
 3.  Clear static files:
 
         cd <your Magento CE install dir>/var
