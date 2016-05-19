@@ -10,7 +10,7 @@ github_link: ui-components/form_secondary/ui_fields_checkbox.md
 
 <h2>What's in this topic</h2>
 
-This topic describes the checkbox UI component, that is one of the types of the Field UI component.
+This topic describes the checkbox UI component, which is one of the types of the Field UI component.
 
 **Contents**
 
@@ -19,30 +19,30 @@ This topic describes the checkbox UI component, that is one of the types of the 
 
 ## Overview
 
-The checkbox UI component can be configured to implement the following field types (from the UI point of view): radio button, toggle button or checkbox. The component inherits the abstract behavior of the Field UI component.
+The checkbox UI component can be configured to implement the following field types (from the UI point of view): radio button, toggle button, or checkbox. The component inherits the abstract behavior of the Field UI component.
 
 
-The following images illustrate how the different implementations can look like:
+The following images illustrate what the different implementations can look like:
 
-- when configured as radio button:
+When configured as a radio button:
 
 <div style="border: 1px solid #ABABAB">
 <img src="{{site.baseurl}}common/images/ui_checkbox_radio.png">
 </div>
 
-- when configured as toggle:
+When configured as a toggle:
 
 <div style="border: 1px solid #ABABAB">
 <img src="{{site.baseurl}}common/images/ui_checkbox_toggle.png">
 </div>
 
-- when configured as checkbox:
+When configured as a checkbox:
 
 <div style="border: 1px solid #ABABAB">
 <img src="{{site.baseurl}}common/images/ui_checkbox_checkbox.png">
 </div>
 
-The checkbox UI component is designed to be used in the Admin panel.
+The checkbox UI component is designed to be used in the Magento Admin panel.
 
 ## Structure
 The checkbox UI component comprises the following files:
@@ -53,9 +53,15 @@ The checkbox UI component comprises the following files:
 	- `<Magento_UI_module_dir>/view/base/web/templates/form/components/single/radio.html`
 	- `<Magento_UI_module_dir>/view/base/web/templates/form/components/single/switcher.html`
 
+
+<div class="bs-callout bs-callout-info" id="info">
+<p>In the particular installation, <code>&lt;Magento_UI_module_dir&gt;</code>, the path to the Magento_Ui module directory, can be either <code>app/code/Magento/Ui</code> or <code>vendor/magento/module-ui</code>, depending on the way you deployed Magento</p>
+</div>
+
+
 ## Configuration settings
 
-In general case, the checkbox configuration file looks like following:
+The checkbox UI configuration file looks like following:
 
     <Module_dir>/view/adminhtml/ui_component/%component_name%.xml
 {%highlight xml%}
@@ -397,10 +403,10 @@ You can use a checkbox UI component to simply toggle some Boolean flag. In this 
  - `'true'` / `'false'`, String
  - `1` / `0`, Number
  - `'1'` / `'0'`, String
- -  other pairs of variables of simple types.
+ -  other pairs of variables of simple type.
 
 The value pair is placed in the `valueMap` parameter.
-Consider, that data from the component is always sent using the POST method and all values are casted to strings. Your controller/model must handle this.
+Consider that data from the component is always sent using the POST method and all values are casted to strings. Your controller/model must handle this.
 
 If you decide that value pair to be of Boolean type, the component's configuration might look like following:
 
@@ -446,7 +452,7 @@ So the component's configuration in this case might look like following:
 
 ### Example 3: Checkbox UI component as on/off switcher with some value
 
-When the `value` option is set, and `vallueMap` is not set, the component toggles `initialValue` (obtained from `value`) and empty string. So if the component is configured as follows, DataProvider will recieve `42` or `''` (empty string).
+When the `value` option is set, and `vallueMap` is not set, the component toggles between `initialValue` (obtained from `value`) and empty string. So if the component is configured as follows, DataProvider will recieve `42` or `''` (empty string).
 
 {%highlight xml%}
 <field name="Sample_Checkbox">
@@ -462,7 +468,7 @@ When the `value` option is set, and `vallueMap` is not set, the component toggle
 </field>
 {%endhighlight%}
 
-### Example 4: Checkbox UI component as a part of a radio buttons set {#checkbox_set}
+### Example 4: Checkbox UI component as a part of a radio button set {#checkbox_set}
 
 In this case you need to handle form elements that belong to different parts of the form UI component. To do this, you need to configure the checkbox components as follows:
 
@@ -502,7 +508,7 @@ Example:
 
 The POST object will contain either `42` or `24`, stored under the `$_POST[...][%Component_Name%]` key.
 
-### Example 5: Checkbox UI component as a part of a radio buttons set {#radio_set}
+### Example 5: Checkbox UI component as a part of a radio button set {#radio_set}
 
 In this case you need to handle form elements that belong to different parts of the form UI component. To do this, you need to configure the checkbox components as follows:
 
