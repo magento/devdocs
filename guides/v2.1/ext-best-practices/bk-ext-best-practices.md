@@ -5,14 +5,13 @@ title: Best Practices for Extension Developers
 menu_title: Introduction
 menu_order: 1
 github_link: ext-best-practices/bk-ext-best-practices.md
-redirect_from: /guides/v1.0/extension-dev-guide/package_module.html
 
 ---
 
 ##{{page.menu_title}}
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>DRAFT/PROPOSAL: This Best Practices Guide is a first draft! The guide combines Best Practices that we have heard the community ask for, along with guidelines that our Magento UX, Engineering, and Product teams are working on. 
+  <p>DRAFT/PROPOSAL: This Best Practices Guide is a first draft! The guide combines Best Practices that we have heard the community ask for, along with guidelines that our Magento UX, Engineering, and Product teams are working on.
   <p></p>
 We want your feedback; please do a pull request on <a href="https://github.com/magento/devdocs/blob/2.0/guides/v2.0/ext-best-practices/admin/feedback-placement-and-design.md" target="_blank">feedback-placement-and-design.md</a> and let us know what your best practices are, your challenges, and how you would like Magento to help standardize (where needed).
   </p>
@@ -36,11 +35,11 @@ This guide provides best practices, guidelines, and tips for creating Magento ex
 {% assign subgroup = site.articles | where:"group","ext-best-practices" | where: "menu_node","parent" | sort: "menu_order" %}
 
 {% for node in subgroup %}
-*  [{{ node.menu_title }}]({{site.gdeurl}}{{ node.github_link | replace: ".md",".html" }})
+*  [{{ node.menu_title }}]({{site.gdeurl21}}{{ node.github_link | replace: ".md",".html" }})
 {% endfor %}
 
 ### Related Content
 
-* [Admin Design Pattern Library]({{site.gdeurl}}pattern-library/bk-pattern.html) - An in depth guide to the design patterns used in the Admin.
-* [PHP Developer Guide]({{site.gdeurl}}extension-dev-guide/bk-extension-dev-guide.html) - An in depth guide to creating Magento components.
-* [Frontend Developer Guide]({{site.gdeurl}}frontend-dev-guide/bk-frontend-dev-guide.html) - An in depth guide to creating a Magento storefront theme.
+* [Admin Design Pattern Library]({{site.gdeurl21}}pattern-library/bk-pattern.html) - An in depth guide to the design patterns used in the Admin.
+* [PHP Developer Guide]({{site.gdeurl21}}extension-dev-guide/bk-extension-dev-guide.html) - An in depth guide to creating Magento components.
+* [Frontend Developer Guide]({{site.gdeurl21}}frontend-dev-guide/bk-frontend-dev-guide.html) - An in depth guide to creating a Magento storefront theme.

@@ -1,10 +1,10 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 6_Module Development
+subgroup: 99_Module Development
 title: EAV and extension attributes
 menu_title: EAV and extension attributes
-menu_order: 7
+menu_order: 9
 github_link: extension-dev-guide/attributes.md
 ---
 
@@ -12,7 +12,7 @@ github_link: extension-dev-guide/attributes.md
 
 Magento provides two types of attributes that integrators can use to extend the functionality provided out-of-the-box:
 
-* Custom and EAV (Entity-Attribute-Value) attributes. Custom attributes are those added on behalf of a merchant. For example, a merchant might need to add attributes to describe products, such as shape or volume. A merchant can add these attributes on the admin panel, and these attributes can be displayed. See the merchant documentation for information about information about managing custom attributes.
+* Custom and EAV (Entity-Attribute-Value) attributes. Custom attributes are those added on behalf of a merchant. For example, a merchant might need to add attributes to describe products, such as shape or volume. A merchant can add these attributes on the admin panel, and these attributes can be displayed. See the merchant documentation for information about managing custom attributes.
 
 	Custom attributes are a subset of EAV attributes. Objects that use EAV attributes typically store values in several MySQL tables. The `Customer` and `Catalog` modules have the primary models that use EAV attributes. Other modules, such as `ConfigurableProduct`, `GiftMessage`, and `Tax`, use the EAV functionality for `Catalog`.
 
@@ -49,7 +49,7 @@ Use `ExtensibleDataInterface` to implement extension attributes. In your code, y
 
 <code>public function getExtensionAttributes();</code>
 
-Most likely, you'll want to extend interfaces defined in the `Api/Data` directory of an Magento module. 
+Most likely, you'll want to extend interfaces defined in the `Api/Data` directory of a Magento module.
 
 <h3 id="declare">Declare extension attributes</h3>
 
@@ -81,7 +81,7 @@ where:
 <tbody>
 <tr>
 <td><p>for</p></td>
-<td><p>The fully-qualified type name with the namespace that processes the extensions. The value much be a type that implements `ExtensibleDataInterface`. The interface can be in a different module.</p> </td>
+<td><p>The fully-qualified type name with the namespace that processes the extensions. The value must be a type that implements `ExtensibleDataInterface`. The interface can be in a different module.</p> </td>
 <td><code>Magento\Quote\Api\Data\TotalsInterface</code></td>
 </tr>
 <tr>
@@ -129,9 +129,9 @@ where:
 
 <h3 id="search">Searching extension attributes</h3>
 
-The system uses a join directive to add external attributes to a collection and to make the collection filterable. The `join` element in the `extension_attributes.xml` file defines which object fields and the database table/column to use as the source of a search. 
+The system uses a join directive to add external attributes to a collection and to make the collection filterable. The `join` element in the `extension_attributes.xml` file defines which object fields and the database table/column to use as the source of a search.
 
-In the following example, an attribute named `stock_item` of type `Magento\CatalogInventory\Api\Data\StockItemInterface` added to the `Magento\Catalog\Api\Data\ProductInterface`. 
+In the following example, an attribute named `stock_item` of type `Magento\CatalogInventory\Api\Data\StockItemInterface` added to the `Magento\Catalog\Api\Data\ProductInterface`.
 
 {% highlight XML %}
 <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">
@@ -143,7 +143,7 @@ In the following example, an attribute named `stock_item` of type `Magento\Catal
 </extension_attributes>
 {% endhighlight %}
 
-When `getList()` is called, it returns a list of `ProductInterface`s. When it does this, the code populates the `stock_item` with a joined operation in which the `StockItemInterface`’s `qty` property come from the `cataloginventory_stock_item` table where the `Product`'s `entity_Id` is joined with the `cataloginventory_stock_item.product_id` column. 
+When `getList()` is called, it returns a list of `ProductInterface`s. When it does this, the code populates the `stock_item` with a joined operation in which the `StockItemInterface`’s `qty` property come from the `cataloginventory_stock_item` table where the `Product`'s `entity_Id` is joined with the `cataloginventory_stock_item.product_id` column.
 
 <h3 id="ext-auth">Extension attribute authentication</h3>
 
@@ -218,4 +218,3 @@ However, if an extension similar to the following has been defined, the interfac
 
 <h2 id="related">Related topics</h2>
 <a href="{{ site.gdeurl21 }}get-started/authentication/gs-authentication.html">Web API authentication overview</a>
-

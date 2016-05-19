@@ -489,7 +489,7 @@ Later you installed a new module Magento_CustomerNew module that changed Custome
 
 After the repository generation 
     
-    php <magento2>/dev/tests/functional/utils/generate/repository.php)
+    php <magento2>/dev/tests/functional/utils/generate.php
 
 you have the following code in the Customer repository (`<magento2>/dev/tests/functional/generated/Magento/Customer/Test/Repository/Customer.php`):
 

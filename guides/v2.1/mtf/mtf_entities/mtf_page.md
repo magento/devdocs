@@ -176,7 +176,7 @@ We should create `dev/tests/functional/tests/app/Magento/Review/Test/Page/Produc
 
 And generate the updated page:
 
-    php <magento2>/dev/tests/functional/utils/generate/page.php
+    php <magento2>/dev/tests/functional/utils/generate.php
     
 The result is in the `<magento2>/dev/tests/functional/generated/Magento/Catalog/Test/Page/Product/CatalogProductView.php` with the following code:
 

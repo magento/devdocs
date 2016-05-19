@@ -1,7 +1,7 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 2_Prepare
+subgroup: 02_Prepare
 title: Extension Lifecycle
 menu_title: Extension lifecycle
 menu_order: 100

@@ -60,4 +60,4 @@ incremental: true
 gems:
   - jekyll-redirect-from
 
-exclude: ['scss','bin','node_modules']
+exclude: ['scss','bin','node_modules', 'vendor']

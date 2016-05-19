@@ -1,10 +1,10 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 6_Module Development 
+subgroup: 99_Module Development
 title: Indexing
 menu_title: Indexing
-menu_order: 10
+menu_order: 12
 github_link: extension-dev-guide/indexing.md
 ---
 

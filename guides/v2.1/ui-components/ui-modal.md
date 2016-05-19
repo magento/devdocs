@@ -6,6 +6,7 @@ title: Modal Component
 menu_title: Modal Component
 menu_node: parent
 github_link: ui-components/ui-modal.md
+redirect_from: /guides/v2.0/ui-components/ui-modal.html
 ---
 <h2>What's in this topic</h2>
 

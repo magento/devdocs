@@ -1,7 +1,7 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 6_Module Development
+subgroup: 99_Module Development
 title: Public interfaces & APIs
 menu_title: Public interfaces & APIs
 menu_order: 3
@@ -33,7 +33,3 @@ github_link: extension-dev-guide/api-concepts.md
    <li>Provider API (SPI)</li>
 </ul>
 <p>Directory structure and configuration file structure are types of APIs because extension developers use them. Developers write configurations, and place their static files in specified folders; so if the configuration file structure or directory structure changes in subsequent releases, modules and extensions may break.</p>
-
-
-
-
