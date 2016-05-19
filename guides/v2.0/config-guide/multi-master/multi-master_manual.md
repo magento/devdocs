@@ -525,7 +525,7 @@ Open `<your Magento install dir>/app/etc/env.php` in a text editor and update it
 Locate the block starting with `'default'` (under `'connection'`) and add `'quote'` and `'sales'` sections. Replace sample values with values appropriate for your site.
 
 {% highlight php startinline=true %}
- 'default' =>
+ 'default' => 
       array (
         'host' => 'localhost',
         'dbname' => 'magento',
@@ -536,7 +536,7 @@ Locate the block starting with `'default'` (under `'connection'`) and add `'quot
         'initStatements' => 'SET NAMES utf8;',
         'active' => '1',
       ),
-      'quote' =>
+      'checkout' => 
       array (
         'host' => 'localhost',
         'dbname' => 'magento_quote',
@@ -547,7 +547,7 @@ Locate the block starting with `'default'` (under `'connection'`) and add `'quot
         'initStatements' => 'SET NAMES utf8;',
         'active' => '1',
       ),
-      'sales' =>
+      'sales' => 
       array (
         'host' => 'localhost',
         'dbname' => 'magento_sales',
@@ -558,6 +558,7 @@ Locate the block starting with `'default'` (under `'connection'`) and add `'quot
         'initStatements' => 'SET NAMES utf8;',
         'active' => '1',
       ),
+    ),
 {% endhighlight %}
 
 **Resources**
@@ -566,22 +567,20 @@ Locate the block starting with `'resource'` and add `'quote'` and `'sales'` sect
 
 {% highlight php startinline=true %}
 
-'resource' =>
+'resource' => 
   array (
-    'default_setup' =>
+    'default_setup' => 
     array (
       'connection' => 'default',
     ),
-    'quote' =>
+    'checkout' => 
     array (
-      'connection' => 'quote',
+      'connection' => 'checkout',
     ),
-    'sales' =>
+    'sales' => 
     array (
       'connection' => 'sales',
     ),
-  ),
-
 {% endhighlight %}
 
 
