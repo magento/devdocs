@@ -265,11 +265,11 @@ For more Magento 2 developer documentation, see [Magento 2 Developer Documentati
 
 cron group configuration can be set in `develop/app/code/Magento/Staging/etc/crontab.xml`.
 
--   staging_apply_version – each period of time checks in a table of updates if any scheduled campaign has been started and if yes, it applies all scheduled updates for the campaign.
+-   `staging_apply_version` – each period of time checks in a table of updates if any scheduled campaign has been started and if yes, it applies all scheduled updates for the campaign.
 
--   staging_remove_updates – each period of time checks if a campaign contains any update, and if it is empty, deletes the campaign.
+-   `staging_remove_updates` – each period of time checks if a campaign contains any update, and if it is empty, deletes the campaign.
 
--   staging_synchronize_entities_period – each period of time checks if start or end dates of a campaign have been changed. If it finds any changes, it applies same changes to all updates dependent from the campaign.
+-   `staging_synchronize_entities_period` – each period of time checks if start or end dates of a campaign have been changed. If it finds any changes, it applies same changes to all updates dependent from the campaign.
 
 [Learn how to configure and run cron in Magento.](http://devdocs.magento.com/guides/v2.1/config-guide/cli/config-cli-subcommands-cron.html)
 
