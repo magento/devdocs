@@ -72,8 +72,8 @@ If module context is defined for a file:
 1. Current theme and current locale module static files:`<theme_dir>/web/i18n/<locale>/<Namespace>_<Module>`
 2. Current theme module static files `<theme_dir>/<Namespace>_<Module>/web/`. Example: `app/design/frontend/OrangeCorp/orange/Magento_Catalog/web/`
 3. Ancestor themes module static files, recursively, until a theme with no ancestor is reached:
-- `<parent_theme_dir>/<Namespace>_<Module>/web/`
 - `<parent_theme_dir>/web/i18n/<locale>/<Namespace>_<Module>`
+- `<parent_theme_dir>/<Namespace>_<Module>/web/`
 3. Module static view files for the `frontend` area: `<module_dir>/view/frontend/web/`
 4. Module static view files for the `base` area: `<module_dir>/view/base/web/`
 
