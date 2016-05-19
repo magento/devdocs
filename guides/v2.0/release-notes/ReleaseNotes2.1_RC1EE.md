@@ -118,14 +118,14 @@ This Release Candidate is for test purposes only. Do not install it in a product
 
 
 #####<b>Install using Composer</b>#####
-This Release Candidate is available from repo.magento.com if you have an Enterprise Edition license. Before installing this Release Candidate using Composer, please familiarize yourself with these  <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run 
+This Release Candidate is available from repo.magento.com if you have an Enterprise Edition license. Before installing this Release Candidate using Composer,  familiarize yourself with these  <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run 
 
 `composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=<2.1.0-rc1> <installation directory name>`
 
 
 
 <h4>Upgrade existing installations</h4>
-If you installed Magento Enterprise Edition 2.0.0 from an archive, you must perform some additional tasks before you can upgrade your installation. Current users of Magento 2.0.0/2.0.1/2.0.2/2.0.3/2.0.4/2.0.5/2.0.6 must first update the installer from the command line. Then, update the installation from the <a href="http://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html" target="_blank">Web Setup Wizard</a> or command line. For detailed instructions, see the <a href="{{ site.gdeurl }}release-notes/tech_bull_201-upgrade.html" target="_blank">technical bulletin</a>.
+If you installed Magento Community Edition 2.0.0 from an archive, you must perform some additional tasks before you can upgrade your installation. Current users of Magento 2.0.0/2.0.1/2.0.2/2.0.3/2.0.4/2.0.5/2.0.6 must first update the installer from the command line. Then, update the installation from the <a href="http://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html" target="_blank">Web Setup Wizard</a> or command line. For more information, see <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">Upgrade the Magento installation and components</a>.
 
 Readiness check can fail under some circumstances because of incorrect permissions on the `var/session` directory. To resolve this issue, enter the following command:
 
@@ -140,7 +140,7 @@ For example, enter `chmod -R 770 /var/www/magento2/var/session`
 
 2.	On the Admin sidebar, click **System**. Under **Tools**,  choose **Web Setup Wizard**.
 
-3. Click  **System Upgrade**. Follow the onscreen instructions to complete the upgrade.
+3. Click  **System Upgrade**. Follow the on-screen instructions to complete the upgrade.
 
 For more information, see <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">Upgrade the Magento installation and components</a>.
 
