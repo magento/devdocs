@@ -18,7 +18,7 @@ We are pleased to present Magento 2.1 Release Candidate 1 (RC1). This release ca
 
 * test your 2.0 extensions against  2.1 
 
-We welcome your participation in this process! Please file any Community Edition issues on the Community Edition GitHub repository. 
+We welcome your participation in this process!  Please open any Community Edition issues or Pull Requests on the Community Edition GitHub repository. For more information on how to provide feedback and contribute on GitHub, see <a href="{{ site.gdeurl }}contributor-guide/contributing.html" target="_blank">Code contributions</a>.
 
 <h3>Highlights</h3>
 Magento Community Edition 2.1 includes several new features:
@@ -52,7 +52,7 @@ This release includes fixes for the following GitHub issues:
 
 <!--- 52414 --> * Integration test syntax error has been fixed. <a href="https://github.com/magento/magento2/issues/4343" target="_blank">(GITHUB-4343)</a> 
 
-<!--- 50611--> * Web APIs no longer allow anonymous access by default<a href="https://github.com/magento/magento2/issues/3786" target="_blank">(GITHUB-3786)</a>.
+<!--- 50611--> * Web APIs no longer allow anonymous access by default. <a href="https://github.com/magento/magento2/issues/3786" target="_blank">(GITHUB-3786)</a>
 
 <!--- 51292 --> * The OAuth Token exchange expiration period is now calculated correctly. <a href="https://github.com/magento/magento2/issues/3449" target="_blank">(GITHUB-3449)</a> 
 
@@ -63,7 +63,7 @@ This release includes fixes for the following GitHub issues:
 
 <!--- 52607 --> *  Varnish caching performance has been enhanced. <a href="https://github.com/magento/magento2/issues/3926" target="_blank">(GITHUB-3926)</a> 
 
-<!--- 52316 --> *  Product update operations by either customers or store administrators no longer result in locking queries on catalog category product index.<a href="https://github.com/magento/magento2/issues/4342" target="_blank">(GITHUB-4342)</a> 
+<!--- 52316 --> *  Product update operations by either customers or store administrators no longer result in locking queries on catalog category product index. <a href="https://github.com/magento/magento2/issues/4342" target="_blank">(GITHUB-4342)</a> 
 
 <!--- 52079 --> * The Order Repository getList method no longer returns the same shipping address for all orders. <a href="https://github.com/magento/magento2/issues/4019" target="_blank">(GITHUB-4019)</a> 
 
@@ -98,20 +98,20 @@ We do not support PHP 5.5.
 
 <h3>Installation instructions</h3>
 
-You can install Magento Enterprise Edition 2.1 Release Candidate 1 (RC1) from either Github or by using Composer. 
+You can install Magento Community Edition 2.1 Release Candidate 1 (RC1) from either Github or by using Composer. 
 
 This Release Candidate is for test purposes only. Do not install it in a production environment.
 
 #####<b>Install from GitHub</b>#####
 
-If you have previously signed an agreement to access Magento Enterprise Edition 2.0 beta software on GitHub, you can install this release candidate from GitHub. Before proceeding, please familiarize yourself with these prerequisites, then run
+Before proceeding, please familiarize yourself with these prerequisites, then run
 
 `git clone git@github.com:magento/magento2.git`
 
 `git checkout tags/2.1.0-rc1 [-b 2.1.0-rc1]`
 
 #####<b>Install using Composer</b>#####
-This Release Candidate is available from repo.magento.com. Before installing this Release Candidate using Composer, please familiarize yourself with these  <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run 
+This Release Candidate is available from repo.magento.com. Before installing this Release Candidate using Composer, please familiarize yourself with the Composer metapackage  <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run 
 
 `composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=<2.1.0-rc1> <installation directory name>`
 
