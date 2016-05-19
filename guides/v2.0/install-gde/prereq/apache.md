@@ -34,12 +34,15 @@ If you're new to all this and need some help getting started, we suggest the fol
 <h2 id="apache-help-rewrite">Important: Apache rewrites and .htaccess</h2>
 This topic discusses how to enable Apache 2.2 rewrites and specify a setting for the <a href="http://httpd.apache.org/docs/current/howto/htaccess.html" target="_blank">distributed configuration file, <code>.htaccess</code></a>.
 
-Magento uses server rewrites and <code>.htaccess</code> to provide directory-level instructions for Apache.
+Magento uses server rewrites and <code>.htaccess</code> to provide directory-level instructions for Apache. The following instructions are included in all of the other sections in this topic as well.
 
-For more information, see:
+{% collapsible Click to show Apache 2.4 instructions %}
+{% include install/allowoverrides24.md %}
+{% endcollapsible %}
 
-*	<a href="#apache-rewrites2.2">Apache 2.2 instructions</a>
-*	<a href="#apache-rewrites2.4">Apache 2.4 instructions</a>
+{% collapsible Click to show Apache 2.2 instructions %}
+{% include install/allowoverrides22.md %}
+{% endcollapsible %}
 
 <div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
@@ -89,14 +92,14 @@ To install the default version of Apache (Ubuntu 14&mdash;Apache 2.4, Ubuntu 12&
 	*	<a href="#apache-rewrites2.4">Enable rewrites and .htaccess for Apache 2.4</a>
 	*	<a href="#apache-rewrites2.2">Enable rewrites and .htaccess for Apache 2.2</a>
 
-{% include install/allowoverrides24.html %}
+{% include install/allowoverrides24.md %}
 
 #### Next steps
 *	<a href="#403-apache">Solving 403 (Forbidden) errors</a>
 *	Continue with the next prerequisite (<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)
 *	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Determine your installation or upgrade path</a>
 
-{% include install/allowoverrides22.html %}
+{% include install/allowoverrides22.md %}
 
 #### Next steps
 *	<a href="#403-apache">Solving 403 (Forbidden) errors</a>
@@ -136,7 +139,7 @@ To upgrade to Apache 2.4:
 
 4.	Continue with the next section.
 
-{% include install/allowoverrides24.html %}
+{% include install/allowoverrides24.md %}
 
 #### Next steps
 *	<a href="#403-apache">Solving 403 (Forbidden) errors</a>
@@ -171,7 +174,7 @@ Installing and configuring Apache is basically a three-step process: install the
 	<p>Even though Apache 2.4 is provided by default with CentOS 7, you configure it like Apache 2.2. See the following section.</p></span>
 </div>
 
-{% include install/allowoverrides22.html %}
+{% include install/allowoverrides22.md %}
 
 #### Next steps
 *	<a href="#403-apache">Solving 403 (Forbidden) errors</a>
