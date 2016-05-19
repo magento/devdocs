@@ -111,7 +111,7 @@ Before proceeding, please familiarize yourself with these prerequisites, then ru
 `git checkout tags/2.1.0-rc1 [-b 2.1.0-rc1]`
 
 #####<b>Install using Composer</b>#####
-This Release Candidate is available from repo.magento.com. Before installing this Release Candidate using Composer,  familiarize yourself with the Composer metapackage  <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run 
+This Release Candidate is available from `repo.magento.com`. Before installing this Release Candidate using Composer,  familiarize yourself with the Composer metapackage  <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run 
 
 `composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=<2.1.0-rc1> <installation directory name>`
 
