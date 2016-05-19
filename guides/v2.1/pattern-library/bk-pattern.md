@@ -57,7 +57,7 @@ Browse the Design Pattern Library here:
 
 ####Staging Patterns
 <a href="staging-patterns/TimelineDashboard/Timeline-Dashboard.html">Timeline Dashboard</a><br>
-<a href="staging-patterns/ScheduledChangesModule/module.html">Scheduled Update Module</a><br>
+<a href="staging-patterns/ScheduledChangesModule/module.html">Scheduled Changes Module</a><br>
 
 
 

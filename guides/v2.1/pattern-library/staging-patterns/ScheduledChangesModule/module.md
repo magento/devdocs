@@ -3,14 +3,14 @@ layout: default
 group: pattern
 subgroup: Staging Patterns
 title: Magento Admin Pattern Library
-menu_title: Scheduled Update Module
+menu_title: Scheduled Changes Module
 menu_order: 2
 menu_node: 
-github_link:pattern-library/staging-patterns/ScheduledChangesModule/module.md
+github_link: pattern-library/staging-patterns/ScheduledChangesModule/module.md
 ---
 <img src="img/ee-only_large.png">
 
-<h2> Scheduled Update Module </h2>
+<h2> Scheduled Changes Module </h2>
 
 <h3> Contents </h3>
 
@@ -64,4 +64,4 @@ The “Load More” button appears at the bottom of the list of scheduled update
 
 If you have questions about the Scheduled Update Module, please <a href="https://magento.com/company/contact-us">contact us.</a>
 
-<a href="src/Scheduled Changes Module Source.psd">Download Scheduled Update Module source</a>
+<a href="src/Scheduled Changes Module Source.psd">Download Scheduled Changes Module source</a>
