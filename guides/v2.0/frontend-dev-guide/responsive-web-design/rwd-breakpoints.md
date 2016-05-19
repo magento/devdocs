@@ -49,7 +49,7 @@ To implement a new breakpoint, you need to edit the `.media-width()` mixin by ad
 To do this, take the following steps:
 
 1. Copy the `_responsive.less` file to your `<your_theme_dir>/web/css/source/lib/` directory from one of the following locations:
-	- `<your_parent_theme_dir>/web/css/source/lib/_responsive.less`: overriding `_responsive.less` in the parent theme. If there's no such file or no parent theme, use the other optin. 
+	- `<your_parent_theme_dir>/web/css/source/lib/_responsive.less`: overriding `_responsive.less` in the parent theme. If there's no such file or no parent theme, use the other option. 
 	- `<your_theme_dir>/web/css/source/lib/_responsive.less`: the library file.
 2. In your `_responsive.less`, add the `.media-width` mixin rule for your breakpoint in the corresponding section (desktop or mobile, depending on the type of breakpoint you add).
 

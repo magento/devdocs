@@ -52,7 +52,7 @@ In addition to the command arguments discussed here, see <a href="{{ site.gdeurl
 <h2 id="config-cli-subcommands-xlate-dict">Deploy static view files</h2>
 To deploy static view files:
 
-1.	Log in to the Magento server as, or <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to</a>, the Magento file system owner.
+1.	Log in to the Magento server as, or <a href="{{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html">switch to</a>, the Magento file system owner.
 2.	Delete the contents of `<your Magento install dir>/pub/static`.
 3.	Run the static view files deployment tool `<your Magento install dir>/bin/magento setup:static-content:deploy`.
 <!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. -->
@@ -133,7 +133,7 @@ Use the following steps:
 	*	<a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Command line</a>
 	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Setup wizard</a>
 
-1.	Log in to the Magento server as, or <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">switch to</a>, the Magento file system owner.
+1.	Log in to the Magento server as, or <a href="{{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html">switch to</a>, the Magento file system owner.
 2.	Delete the contents of `<your Magento install dir>/pub/static` directory.
 3.	<a href="#config-cli-subcommands-xlate-dict">Run the static view files deployment tool</a>.
 <!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. -->

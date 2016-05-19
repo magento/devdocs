@@ -12,10 +12,11 @@ github_link: howdoi/webapi/integration.md
 
 An **integration** enables third-party services to call the Magento web APIs. The Magento APIs currently supports Accounting, Enterprise Resource Planning (ERP), Customer Relationship Management (CRM), Product Information Management (PIM), and marketing automation systems out of the box.  
 
-Implementing an integration requires little knowledge of PHP or Magento internal processes. However, you will need a working knowledge of
+Implementing a simple integration requires little knowledge of PHP or Magento internal processes. However, you will need a working knowledge of
 
 * [Magento REST or SOAP Web APIs](../../get-started/bk-get-started-api.html)
 * [Web API authentication](../../get-started/authentication/gs-authentication.html)
+* [OAuth-based authentication]( {{ site.gdeurl }}/get-started/authentication/gs-authentication-oauth.html )
 
 
 Before you begin creating a module, make sure that you have a working installation of Magento 2.0, and the [Magento System Requirements](../../install-gde/system-requirements.html).
@@ -26,6 +27,7 @@ To create an integration, follow these general steps:
 2. [Add files specific to the integration.](#files)
 3. [Install the module.](#install)
 4. [Check the integration.](#check)
+5. [Integrate with your application.](#integrate)
 
 <h2 id="skeletal">Create a skeletal module</h2>
 
@@ -40,7 +42,7 @@ To develop a module, you must:
     mkdir -p vendor/&lt;vendor_name>/module-&lt;module_name>/etc/integration
     mkdir -p vendor/&lt;vendor_name>/module-&lt;module_name>/Setup
    </pre>
-   For more detailed information, see [Create the module file structure](../../extension-dev-guide/module-file-structure.html).
+   For more detailed information, see [Create your component file structure](../../extension-dev-guide/module-file-structure.html).
 
 2. **Define your module configuration file.** The `etc/module.xml` file provides basic information about the module. Change directories to the `etc` directory and create the `module.xml` file. You must specify values for the following attributes:
 
@@ -65,7 +67,7 @@ To develop a module, you must:
       /**
       * Copyright © 2015 Magento. All rights reserved.
       * See COPYING.txt for license details.
-      */
+      &#42;&#47;
       -->
       &lt;config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
           &lt;module name="Vendor1_Module1" setup_version="2.0.0">
@@ -76,7 +78,7 @@ To develop a module, you must:
         &lt;/config>
    </pre>
 
-   Module "Magento_Integration" is added to "sequence" to be loaded first. It helps to avoid the issue, when a module with integration config loaded, that leads to a malfunction.
+   Module `Magento_Integration` is added to "sequence" to be loaded first. It helps to avoid the issue, when a module with integration config loaded, that leads to a malfunction.
 
 
 3. **Add your module's `composer.json` file.** Composer is a dependency manager for PHP. You must create a `composer.json` file for your module so that Composer can install and update the libraries your module relies on. Place the `composer.json` file in the `module-<module_name>` directory.
@@ -114,7 +116,7 @@ To develop a module, you must:
         /**
         * Copyright © 2015 Magento. All rights reserved.
         * See COPYING.txt for license details.
-        */
+        &#42;&#47;
 
         \Magento\Framework\Component\ComponentRegistrar::register(
         \Magento\Framework\Component\ComponentRegistrar::MODULE,
@@ -140,29 +142,31 @@ Change directories to your `Setup` directory. Create a `InstallData.php` file th
     class InstallData implements InstallDataInterface
     {
         /**
-         * @var ConfigBasedIntegrationManager
-         */
+         &#42; @var ConfigBasedIntegrationManager
+         &#42;&#47;
+
 
         private $integrationManager;
 
         /**
-         * @param ConfigBasedIntegrationManager $integrationManager
-         */
-        public function __construct(ConfigBasedIntegrationManager $integrationManager)
+         &#42; @param ConfigBasedIntegrationManager $integrationManager
+         &#42;&#47;
+
+        public function &#95;&#95;construct(ConfigBasedIntegrationManager $integrationManager)
         {
             $this->integrationManager = $integrationManager;
         }
 
         /**
-         * {@inheritdoc}
-         */
+         &#42; {@inheritdoc}
+         &#42;&#47;
+
         public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
         {
             $this->integrationManager->processIntegrationConfig(['testIntegration']);
         }
     }
     </pre>
-
 
     In the following line
 
@@ -172,8 +176,7 @@ Change directories to your `Setup` directory. Create a `InstallData.php` file th
 
     Also, be sure to change the path after `namespace` for your vendor and module names.
 
-
-<h2 id="files">Create integration files</h2>
+## Create integration files {#files}
 Magento provides the Integration module, which simplifies the process of defining your integration. This module automatically performs functions such as:
 
 * Managing the third-party account that connects to Magento.
@@ -274,8 +277,44 @@ Use the following steps to install your module:
 <h2 id="check">Check your integration</h2>
 Log in to Magento and navigate to **Settings > Extensions > Integrations**. The integration should be displayed in the grid.
 
-<h2>Related Topics</h2>
+## Integrate with your application {#integrate}
+
+Before you can activate your integration in Magento, you must create two pages on your application to handle OAuth communications.
+
+* The location specified in the `identity_link_url` parameter must point to a page that can handle login requests.
+
+* The location specified in the `endpoint_url` parameter (**Callback URL** in Admin) must be able to process OAuth token exchanges. 
+
+### Login page {#login}
+
+When a merchant clicks the **Activate** button in Admin, a pop-up login page for the third-party application displays. Magento sends values for `oauth_consumer_key` and `success_call_back` parameters. The application must store the value for`oauth_consumer_key` tie it to the login ID. Use the `success_call_back` parameter to return control back to Magento.
+
+### Callback page {#callback}
+The callback page must be able to perform the following tasks:
+
+* Receive an initial HTTPS POST that Magento sends when the merchant activates integration. This post contains the Magento store URL, an `oauth_verifier`, the OAuth consumer key, and the OAuth consumer secret. The consumer key and secret are generated when the integration is created.
+
+* Ask for a request token. A request token is a temporary token that the user exchanges for an access token. Use the following API to get a request token from Magento:
+
+  `POST /oauth/token/request`
+
+  See [Get a request token]( {{ site.gdeurl }}/get-started/authentication/gs-authentication-oauth.html#pre-auth-token ) for more details about this call.
+
+* Parse the request token response. The response contains an `oauth_token` and `oauth_token_secret`.
+
+* Ask for a access token. The request token must be exchanged for an access token. Use the following API to get a request token from Magento:
+
+  `POST /oauth/token/access`
+
+  See [Get an access token]( {{ site.gdeurl }}/get-started/authentication/gs-authentication-oauth.html#get-access-token ) for more details about this call.
+
+* Parse the access token response. The response contains an `oauth_token` and `oauth_token_secret`. These values will be different than those provided in the request token response.
+
+* Save the access token and other OAuth parameters. The access token and OAuth parameters must be specified in the `Authorization` header in each call to Magento.
+
+## Related Topics
 - [Web API authentication](../../get-started/authentication/gs-authentication.html)
+- [OAuth-based authentication]( {{ site.gdeurl }}/get-started/authentication/gs-authentication-oauth.html )
 - [Magento System Requirements](../../install-gde/system-requirements.html)
 - [Create the module file structure](../../extension-dev-guide/module-file-structure.html)
 - [Create a component](../../extension-dev-guide/create_component.html)

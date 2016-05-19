@@ -506,16 +506,16 @@
         <td>Constant has been added.</td>
     </tr>
     <tr>
-        <td>Magento\Framework\Session\SaveHandler::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
         <td>Magento\Framework\Search\Adapter\Mysql\Filter\Builder\Range::CONDITION_NEGATION_PART_GREATER_THAN</td>
         <td>Constant has been added.</td>
     </tr>
     <tr>
         <td>Magento\Framework\Search\Adapter\Mysql\Filter\Builder\Range::CONDITION_NEGATION_PART_LOWER_THAN</td>
         <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Adapter\Mysql\Aggregation\Builder::__construct</td>
+        <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
         <td>Magento\Framework\Pricing\Render\PriceBox::DEFAULT_LIFETIME</td>
@@ -862,6 +862,10 @@
         <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
+        <td>Magento\Theme\Model\Uploader\Service::__construct</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
         <td>Magento\Theme\Model\Theme\ThemeProvider::__construct</td>
         <td>[public] Method parameter changed.</td>
     </tr>
@@ -1202,20 +1206,8 @@
         <td>Constant has been added.</td>
     </tr>
     <tr>
-        <td>Magento\SalesRule\Model\Rule::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
         <td>Magento\SalesRule\Model\ResourceModel\Rule::_afterLoad</td>
         <td>[protected] Method has been removed.</td>
-    </tr>
-    <tr>
-        <td>Magento\SalesRule\Model\ResourceModel\Rule::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\SalesRule\Model\ResourceModel\Rule\Collection::__construct</td>
-        <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
         <td>Magento\SalesRule\Controller\Adminhtml\Promo\Quote::_isAllowed</td>
@@ -1672,10 +1664,6 @@
     <tr>
         <td>Magento\Sales\Controller\Adminhtml\Creditmemo\AbstractCreditmemo\View::ADMIN_RESOURCE</td>
         <td>Constant has been added.</td>
-    </tr>
-    <tr>
-        <td>Magento\Rule\Model\AbstractModel::__construct</td>
-        <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
         <td>Magento\Review\Controller\Adminhtml\Rating::_isAllowed</td>
@@ -2374,6 +2362,22 @@
         <td>Constant has been added.</td>
     </tr>
     <tr>
+        <td>Magento\Customer\Model\Metadata\CachedMetadata::$attributeMetadataCache</td>
+        <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Model\Metadata\CachedMetadata::$attributesCache</td>
+        <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Model\Metadata\CachedMetadata::$allAttributeMetadataCache</td>
+        <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Model\Metadata\CachedMetadata::$customAttributesMetadataCache</td>
+        <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
         <td>Magento\Customer\Model\Account\Redirect::__construct</td>
         <td>[public] Method parameter changed.</td>
     </tr>
@@ -2451,6 +2455,10 @@
     </tr>
     <tr>
         <td>Magento\Customer\Block\Widget\Dob::__construct</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Block\Address\Renderer\DefaultRenderer::getFormat</td>
         <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
@@ -2734,10 +2742,6 @@
         <td>Constant has been added.</td>
     </tr>
     <tr>
-        <td>Magento\CatalogWidget\Model\Rule::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
         <td>Magento\CatalogWidget\Controller\Adminhtml\Product\Widget::_isAllowed</td>
         <td>[protected] Method has been removed.</td>
     </tr>
@@ -2818,20 +2822,12 @@
         <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
-        <td>Magento\CatalogRule\Model\Rule::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
         <td>Magento\CatalogRule\Model\ResourceModel\Rule::_afterLoad</td>
         <td>[protected] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\CatalogRule\Model\ResourceModel\Rule::_afterSave</td>
         <td>[protected] Method has been removed.</td>
-    </tr>
-    <tr>
-        <td>Magento\CatalogRule\Model\ResourceModel\Rule::__construct</td>
-        <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
         <td>Magento\CatalogRule\Model\ResourceModel\Rule::$_associatedEntitiesMap</td>
@@ -2902,11 +2898,19 @@
         <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
+        <td>Magento\Catalog\Plugin\Model\Product\Action\UpdateAttributesFlushCache::aroundUpdateAttributes</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
         <td>Magento\Catalog\Model\Product::getGalleryAttributeBackend</td>
         <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Catalog\Model\Product::$_options</td>
+        <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Model\Product::$optionsInitialized</td>
         <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
@@ -3622,14 +3626,6 @@
         <td>[public] Method has been added.</td>
     </tr>
     <tr>
-        <td>Magento\Framework\Session\Config\ConfigInterface::getSaveHandlerName</td>
-        <td>[public] Method has been added.</td>
-    </tr>
-    <tr>
-        <td>Magento\Framework\Session\Config\ConfigInterface::setSaveHandler</td>
-        <td>[public] Method has been added.</td>
-    </tr>
-    <tr>
         <td>Magento\Framework\DB\Adapter\AdapterInterface::getAutoIncrementField</td>
         <td>[public] Method has been added.</td>
     </tr>
@@ -3782,6 +3778,10 @@
         <td>Constant has been added.</td>
     </tr>
     <tr>
+        <td>Magento\Framework\Console\CommandListInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\Config\DesignResolverInterface</td>
         <td>Interface was added.</td>
     </tr>
@@ -3843,6 +3843,14 @@
     </tr>
     <tr>
         <td>Magento\Search\Api\Data\SynonymGroupInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Quote\Api\GuestShipmentEstimationInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Quote\Api\ShipmentEstimationInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>

@@ -4,12 +4,14 @@ group: install_pre
 subgroup: Prerequisites
 title: PHP 5.5, 5.6, or 7.0&mdash;Ubuntu
 menu_title: PHP 5.5, 5.6, or 7.0&mdash;Ubuntu
-menu_order: 06
+menu_order: 23
+level3_menu_node: level3child
+level3_subgroup: php
 github_link: install-gde/prereq/php-ubuntu.md
 redirect_from: /guides/v1.0/install-gde/prereq/php-ubuntu.html
 ---
 
-<h4 id="instgde-php-prereq-contents">Contents</h4>
+#### Contents
 
 *	<a href="#php-support">PHP versions supported</a>
 *	<a href="#php-ubuntu-help-beginner">Help if you're just starting out</a>
@@ -28,7 +30,8 @@ redirect_from: /guides/v1.0/install-gde/prereq/php-ubuntu.html
 <h2 id="php-support">PHP versions supported</h2>
 Magento requires:
 
-*	PHP 7.0.2 (supported by Magento version 2.0.1 and later only)
+*	7.0.2&ndash;7.0.6 except for 7.0.5 (supported by Magento version 2.0.1 and later only)
+	There is a [known PHP issue](https://bugs.php.net/bug.php?id=71914){:target="_blank"} that affects our [code compiler]({{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler.html) when using PHP 7.0.5. We recommend you not use PHP 7.0.5; instead, use PHP 7.0.2&ndash;7.0.4 or 7.0.6.
 *	PHP 5.6.x
 *	PHP 5.5.x, where x is 22 or greater
 
@@ -68,7 +71,7 @@ If PHP is *not* installed, see one of the following sections:
 *	<a href="#instgde-prereq-php55-install-ubuntu">PHP 5.5 on Ubuntu 14 or Ubuntu 12</a>
 
 ## PHP 7.0 on Ubuntu 14 {#instgde-prereq-php70-ubuntu}
-To install PHP 7.0.2 on Ubuntu 14:
+To install PHP 7 on Ubuntu 14:
 
 1.	Enter the following commands in the order shown:
 
@@ -97,18 +100,6 @@ To install PHP 7.0.2 on Ubuntu 14:
   	<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
 	</div>
 3.	<a href="#instgde-prereq-timezone">Set PHP configuration options</a>.
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <h2 id="instgde-prereq-php56-install-ubuntu">PHP 5.6 on Ubuntu 14</h2>

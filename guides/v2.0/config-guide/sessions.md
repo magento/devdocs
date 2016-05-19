@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: Z_zsessions
+subgroup: 50_sessions
 title: How to locate your session files
 menu_title: How to locate your session files
 menu_order: 1
