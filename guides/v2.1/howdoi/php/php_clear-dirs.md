@@ -1,10 +1,10 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 6_Module Development
+subgroup: 99_Module Development
 title: Clear directories during development
 menu_title: Clear directories during development
-menu_node: 
+menu_node:
 menu_order: 200
 github_link: howdoi/php/php_clear-dirs.md
 ---
@@ -22,7 +22,7 @@ This topic provides guidelines on what directories to clear and when to clear th
 <div class="bs-callout bs-callout-info" id="info">
   <ul><li>All directories discussed in this topic are default locations. It's possible to customize these locations but doing so is beyond the scope of this topic.</li>
   	<li>This topic is not comprehensive. Please help us improve it by clicking <strong>Edit this page on GitHub</strong> at the top of this page. Watch this page for updates.</li></ul>
-</div> 
+</div>
 
 When you're developing Magento components (modules, themes, and language packages), the following directories contain temporary or generated files you can clear periodically:
 
