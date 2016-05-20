@@ -29,7 +29,7 @@ Following is a sample configuration to add to `<your Magento install dir>app/etc
 		'password' => '',
 		'timeout' => '2.5',
 		'persistent_identifier' => '',
-		'db' => '0',
+		'database' => '0',
 		'compression_threshold' => '2048',
 		'compression_library' => 'gzip',
 		'log_level' => '1',
