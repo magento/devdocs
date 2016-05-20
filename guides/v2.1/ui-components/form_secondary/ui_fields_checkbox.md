@@ -281,7 +281,7 @@ Depends on how the <code>prefer</code> option is configured.
       <code>value</code>
     </td>
     <td>
-      The value the component can return. You can assign a separate value for each state using the <code>valueMap</code> option. If one value is set, and <code>valueMap</code> is omitted, then it is automatically assigned to the "checked" state; in the "unchecked" state the component returns an empty string in this case. 
+      The value the component can return. You can assign a separate value for each state using the <code>valueMap</code> option. If one value is set, and <code>valueMap</code> is omitted, then it is automatically assigned to the "checked" state; in the "unchecked" state the component returns an empty string in this case.
     </td>
     <td>
       *
@@ -390,7 +390,7 @@ Getter, returns current checkbox state: `true` if checked, `false` otherwise.
     @returns void
 
 Sets the checkbox state: checked, if `param` is `true`, unchecked if `param` is `false`. Can affect `value`.
-In the current implementation the checkbox UI component doesn't support [indeterminate](https://css-tricks.com/indeterminate-checkboxes/) state. 
+In the current implementation the checkbox UI component doesn't support [indeterminate](https://css-tricks.com/indeterminate-checkboxes/) state.
 
 
 ## Examples of use
@@ -429,7 +429,7 @@ If you decide that value pair to be of Boolean type, the component's configurati
 
 ### Example 2: Checkbox UI component as a Boolean state checker with toggle button look
 
-The UI representation of the checkbox component is defined by the value of the `prefer` option.
+The UI representation of the Checkbox UI component is defined by the value of the `prefer` option.
 
 So the component's configuration in this case might look like following:
 
@@ -470,11 +470,11 @@ When the `value` option is set, and `vallueMap` is not set, the component toggle
 
 ### Example 4: Checkbox UI component as a part of a radio button set {#checkbox_set}
 
-In this case you need to handle form elements that belong to different parts of the form UI component. To do this, you need to configure the checkbox components as follows:
+In this case you need to handle form elements that belong to different parts of the form UI component. To do this, you need to configure the Checkbox UI components as follows:
 
 - To ensure the radio set look and feel, in the checkboxes configurations, setup `prefer = radio`.
 - To handle the `initialValue`, setup `value`.
-- To ensure the collaborative work of all radio components, set the same value for the `dataScope` option of all checkbox components.
+- To ensure the collaborative work of all radio components, set the same value for the `dataScope` option of all Checkbox UI components.
 
 Example:
 
@@ -512,7 +512,7 @@ The POST object will contain either `42` or `24`, stored under the `$_POST[...][
 
 In this case you need to handle form elements that belong to different parts of the form UI component. To do this, you need to configure the checkbox components as follows:
 
-- To ensure the checkboxe set look and feel, in the checkboxes configurations, setup `prefer = checkbox`.
+- To ensure the checkboxe set look and feel, in the components configurations, setup `prefer = checkbox`.
 - To handle the `initialValue`, setup `value`.
 - To ensure the collaborative work of all radio components, set the same value for the `dataScope` option of all checkbox components.
 
