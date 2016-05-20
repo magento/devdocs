@@ -130,6 +130,14 @@ This section discusses how to upgrade to a Release Candidate.
 **Upgrade using the Setup Wizard**
 Use the instructions in [Start System Upgrade]({{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html). When prompted to choose a version, choose a Release Candidate.
 
+**Upgrade an existing installation from the GitHub repository**
+Developers who contribute to the CE codebase can <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento CE GitHub repository.
+
+1.	Go to the <a href="{{ site.gdeurl }}install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.
+
+2.	Follow the instructions to pull the updates from the repository and update using Composer.
+
+
 **Upgrade using the command line**
 To upgrade to a Release Candidate using the command line:
 
@@ -163,12 +171,6 @@ To upgrade to a Release Candidate using the command line:
 
 		magento cache:enable
 
-**Upgrade an existing installation from the GitHub repository**
-Developers who contribute to the CE codebase can <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento CE GitHub repository.
-
-1.	Go to the <a href="{{ site.gdeurl }}install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.
-
-2.	Follow the instructions to pull the updates from the repository and update using Composer.
 
 
 
