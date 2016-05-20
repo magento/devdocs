@@ -127,26 +127,57 @@ This Release Candidate is available from `repo.magento.com` if you have an Enter
 
 
 
-<h4>Upgrade existing installations</h4>
-If you installed Magento Enterprise Edition 2.0.0 from an archive, you must perform some additional tasks before you can upgrade your installation. Current users of Magento 2.0.0/2.0.1/2.0.2/2.0.3/2.0.4/2.0.5/2.0.6 must first update the installer from the command line. Then, update the installation from the <a href="http://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html" target="_blank">Web Setup Wizard</a> or command line. For more information, see <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">Upgrade the Magento installation and components</a>.
+<h4><b>Upgrade existing installations</b></h4>
+<!-- If you installed Magento Community Edition 2.0.0 from an archive, you must perform some additional tasks before you can upgrade your installation. Current users of Magento 2.0.0/2.0.1/2.0.2/2.0.3/2.0.4/2.0.5/2.0.6 must first update the installer from the command line.  -->
 
-Readiness check can fail under some circumstances because of incorrect permissions on the `var/session` directory. To resolve this issue, enter the following command:
+This section discusses how to upgrade to a Release Candidate.
 
-`chmod -R 770 <your Magento install dir>/var/session`
+<div class="bs-callout bs-callout-warning">
+    <p><em>Do not</em> upgrade to a Release Candidate on a production system. Upgrade to a Release Candidate on a development system only.</p>
+</div>
 
-For example, enter `chmod -R 770 /var/www/magento2/var/session`
+**Upgrade using the Setup Wizard**
+Use the instructions in [Start System Upgrade]({{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html). When prompted to choose a version, choose a Release Candidate.
 
+**Upgrade using the command line**
+To upgrade to a Release Candidate using the command line:
 
-#####<b>Upgrade an existing installation from the Setup Wizard</b>#####
+1.	Log in to your Magento server as, or switch to, the Magento file system owner.
+2.	Change to the directory in which you installed the Magento software.
 
-1. Log in to the Admin panel with Administrator privileges.
+	For example, `cd /var/www/html/magento2`
+2.	Enter the following command to disable the cache:
 
-2.	On the Admin sidebar, click **System**. Under **Tools**,  choose **Web Setup Wizard**.
+		php bin/magento cache:disable
+2.	Enter the following commands in the order shown:
 
-3. Click  **System Upgrade**. Follow the on-screen instructions to complete the upgrade.
+		composer require <product> 2.1.0-rc1 --no-update
+		composer update
 
-For more information, see <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">Upgrade the Magento installation and components</a>.
+	To upgrade to Magento CE 2.1 RC1, enter:
 
+		composer require magento/product-community-edition 2.1.0-rc1 --no-update
+		composer update
+
+	To upgrade to Magento EE 2.1 RC1, enter:
+
+		composer require magento/product-enterprise-edition 2.1.0-rc1 --no-update
+		composer update
+	
+3.	If prompted, enter your [authentication keys]({{ site.gdeurl }}comp-mgr/prereq/prereq_auth-token.html).
+4. Update the database schema and data:
+
+		php bin/magento setup:upgrade
+5.	Enter the following command to enable the cache:
+
+		magento cache:enable
+
+**Upgrade an existing installation from the GitHub repository**
+Developers who contribute to the CE codebase can <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento CE GitHub repository.
+
+1.	Go to the <a href="{{ site.gdeurl }}install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.
+
+2.	Follow the instructions to pull the updates from the repository and update using Composer.
 
 
 
