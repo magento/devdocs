@@ -55,6 +55,8 @@ This topic uses the following naming conventions:
 ## Back up the Magento system {#config-ee-multidb-backup}
 We strongly recommend you back up your current database and file system so you can restore it later in the event of issues during the process.
 
+{% collapsible Click to show how to back up Magento %}
+
 To back up your system:
 
 1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{ site.gdeurl }}install-gde/prereq/apache-user.html).
@@ -62,9 +64,13 @@ To back up your system:
 
 		magento setup:backup --code --media --db
 3.	Continue with the next section.
+{% endcollapsible %}
 
 ## Set up additional master databases {#config-ee-multidb-master-masters}
-Create checkout and OMS master databases as follows:
+This section discusses how to create database instances for sales and quote tables.
+
+{% collapsible Click to show how to create database instances %}
+Create sales and OMS quote databases as follows:
 
 1.  Log in to your database server as any user.
 2.  Enter the following command to get to a MySQL command prompt:
@@ -96,6 +102,7 @@ Create checkout and OMS master databases as follows:
 
     If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.
 7.  Continue with the next section.
+{% endcollapsible %}
 
 ## Configure the sales database {#config-ee-multidb-oms}
 This section discusses how to create and run SQL scripts that alter quote database tables and back up data from those tables.
@@ -106,6 +113,7 @@ For more information, see:
 *	[Run SQL scripts](#config-ee-multidb-sql-run)
 *   [Back up sales data](#sales-backup)
 
+{% collapsible Click to create sales database SQL scripts %}
 ### Create sales database SQL scripts {#config-ee-multidb-sql-oms}
 Create the following SQL scripts in a location that is accessible by the user as whom you log in to your Magento server. For example, if you log in or run commands as `root`, you can create the scripts in the `/root/sql-scripts` directory.
 
@@ -328,8 +336,13 @@ Sample output from each script follows in the order we suggest you run them.
 +------------------------------------+
 
 {% endhighlight %}
+{% endcollapsible %}
 
 ### Back up sales data {#sales-backup}
+This section discusses how to back up sales tables from the main Magento database so you can restore them in the separate sales database.
+
+{% collapsible Click to back up sales data %}
+
 If you're currently at the `mysql>` prompt, enter `exit` to return to the command shell.
 
 Run the following `mysqldump` commands, one at a time, from the command shell. In each, substitute the following:
@@ -391,6 +404,7 @@ where
 *   `<root user name>` with your MySQL root user name
 *   `<root user password>` with the user's password
 *   Verify the location of the backup files you created earlier (for example, `/var/sales.sql`)
+{% endcollapsible %}
 
 ## Configure the quote database {#config-ee-multidb-checkout}
 This section discusses tasks required to drop foreign keys from sales database tables and move tables to the sales database.
