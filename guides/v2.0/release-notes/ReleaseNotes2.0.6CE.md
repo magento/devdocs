@@ -30,7 +30,7 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 
 <h3>Functional enhancements</h3>
 
-<!-- 52322 --> * Starting with Magento 2.0.6, Magento provides a more flexible way for you to set file ownership and permissions. Instead of setting permissions explicitly, you only need to make sure files and directories are writable for installation. We provide different suggestions for doing this, depending on whether you access your Magento server with one user account (typical of shared hosting) or two user accounts (typical of private hosting or having your own server). After installation, to further restrict access to files and directories, you can optionally create a file named `magento_umask` in your Magento root directory. By default, the `umask` is 002, which means that directories have 775 permissions and files have 664 permissions. For more details, see <a href="http://devdocs.magento.com/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system ownership and permissions</a>.
+<!-- 52322 --> * Starting with Magento 2.0.6, Magento provides a more flexible way for you to set file ownership and permissions. Instead of setting permissions explicitly, you only need to make sure files and directories are writable for installation. We provide different suggestions for doing this, depending on whether you access your Magento server with one user account (typical of shared hosting) or two user accounts (typical of private hosting or having your own server). After installation, to further restrict access to files and directories, you can optionally create a file named `magento_umask` in your Magento root directory. By default, the `umask` is 002, which means that directories have 775 permissions and files have 664 permissions. For more details, see  <a href="{{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html">Magento file system ownership and permissions</a>.
 
 
 
@@ -117,7 +117,7 @@ For more information, see <a href="http://devdocs.magento.com/guides/v2.0/comp-m
 
 
 #####<b>Upgrade an existing installation from the GitHub repository</b>#####
-Developers who contribute to the CE codebase can <a href="http://devdocs.magento.com/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento CE GitHub repository.
+Developers who contribute to the CE code base can <a href="http://devdocs.magento.com/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento CE GitHub repository.
 
 1.	Go to the <a href="http://devdocs.magento.com/guides/v2.0/install-gde/install/cli/dev_options.html" target="_blank">Contributing Developers</a> page.
 
