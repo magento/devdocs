@@ -1,6 +1,5 @@
 <div markdown="1">
 
-<h3 id="apache-rewrites2.2">Enable rewrites and .htaccess for Apache 2.2</h3>
 Use this section to enable Apache 2.2 rewrites and specify a setting for the <a href="http://httpd.apache.org/docs/current/howto/htaccess.html" target="_blank">distributed configuration file, <code>.htaccess</code></a>
 
 Magento uses server rewrites and <code>.htaccess</code> to provide directory-level instructions for Apache.
