@@ -113,79 +113,63 @@ For more information, see:
 *	[Run SQL scripts](#config-ee-multidb-sql-run)
 *   [Back up sales data](#sales-backup)
 
-{% collapsible Click to create sales database SQL scripts %}
 ### Create sales database SQL scripts {#config-ee-multidb-sql-oms}
+
+{% collapsible Click to create and run sales database SQL scripts %}
 Create the following SQL scripts in a location that is accessible by the user as whom you log in to your Magento server. For example, if you log in or run commands as `root`, you can create the scripts in the `/root/sql-scripts` directory.
 
 #### Remove foreign keys (first script)
 This script is the first of two that remove foreign keys that refer to non-sales tables from the sales database. 
 
-Create the following script and give it a name like `1_foreign1.sql`. Replace `<your main magento DB name>` with the name of your Magento database. In this topic, the sample database name is `magento`.
+Create the following script and give it a name like `1_foreign1.sql`. 
 
 {% highlight sql %}
-select concat(
-    'ALTER TABLE ',
-    replace(for_name, '<your main magento DB name>/', ''),
-    ' DROP FOREIGN KEY ',
-    replace(id, '<your main magento DB name>/', ''),
-    ';'
-    )
-from information_schema.INNODB_SYS_FOREIGN
-where for_name like  '<your main magento DB name>/|sales_%' escape '|'
-    and ref_name not like  '<your main magento DB name>/|sales_%' escape '|'
-union all
-select concat(
-    'ALTER TABLE ',
-    replace(for_name, '<your main magento DB name>/', ''),
-    ' DROP FOREIGN KEY ',
-    replace(id, '<your main magento DB name>/', ''),
-    ';'
-    )
-from information_schema.INNODB_SYS_FOREIGN
-where for_name like  '<your main magento DB name>/|magento_sales|_%' escape '|'
-    and ref_name not like  '<your main magento DB name>/|sales|_%' escape '|'
-;
-{% endhighlight %}
-
-#### Remove foreign keys (second script)
-This script is the second of two that remove foreign keys that refer to non-quote tables from quote tables. Replace `<your main magento DB name>` with the name of your Magento database.
-
-Create the following script and give it a name like `2_foreign-key2.sql`:
-
-{% highlight sql %}
-select concat(
-    'ALTER TABLE ',
-    replace(for_name, '<your main magento DB name>/', ''),
-    ' DROP FOREIGN KEY ',
-    replace(id, '<your main magento DB name>/', ''),
-    ';'
-    )
-from information_schema.INNODB_SYS_FOREIGN
-where for_name like '<your main magento DB name>/%'
-    and ref_name like '<your main magento DB name>/sales\_%'
-union all
-select concat(
-    'ALTER TABLE ',
-    replace(for_name, '<your main magento DB name>/', ''),
-    ' DROP FOREIGN KEY ',
-    replace(id, '<your main magento DB name>/', ''),
-    ';'
-    )
-from information_schema.INNODB_SYS_FOREIGN
-where for_name like '<your main magento DB name>/%'
-    and ref_name like '<your main magento DB name>/magento_sales\_%'
-union all
-select concat(
-    'ALTER TABLE ',
-    replace(for_name, '<your main magento DB name>/', ''),
-    ' DROP FOREIGN KEY ',
-    replace(id, '<your main magento DB name>/', ''),
-    ';'
-    )
-from information_schema.INNODB_SYS_FOREIGN
-where for_name like '<your main magento DB name>/%'
-    and ref_name like '<your main magento DB name>/magento_customercustomattributes\_%'
-;
+use <your main Magento DB name>;
+ALTER TABLE salesrule_coupon_aggregated_order DROP FOREIGN KEY SALESRULE_COUPON_AGGREGATED_ORDER_STORE_ID_STORE_STORE_ID;
+ALTER TABLE salesrule_coupon_aggregated DROP FOREIGN KEY SALESRULE_COUPON_AGGREGATED_STORE_ID_STORE_STORE_ID;
+ALTER TABLE salesrule_coupon_aggregated_updated DROP FOREIGN KEY SALESRULE_COUPON_AGGREGATED_UPDATED_STORE_ID_STORE_STORE_ID;
+ALTER TABLE salesrule_coupon_usage DROP FOREIGN KEY SALESRULE_COUPON_USAGE_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID;
+ALTER TABLE salesrule_customer_group DROP FOREIGN KEY SALESRULE_CSTR_GROUP_CSTR_GROUP_ID_CSTR_GROUP_CSTR_GROUP_ID;
+ALTER TABLE salesrule_customer DROP FOREIGN KEY SALESRULE_CUSTOMER_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID;
+ALTER TABLE salesrule_label DROP FOREIGN KEY SALESRULE_LABEL_STORE_ID_STORE_STORE_ID;
+ALTER TABLE salesrule_product_attribute DROP FOREIGN KEY SALESRULE_PRD_ATTR_ATTR_ID_EAV_ATTR_ATTR_ID;
+ALTER TABLE salesrule_product_attribute DROP FOREIGN KEY SALESRULE_PRD_ATTR_CSTR_GROUP_ID_CSTR_GROUP_CSTR_GROUP_ID;
+ALTER TABLE salesrule_product_attribute DROP FOREIGN KEY SALESRULE_PRODUCT_ATTRIBUTE_WEBSITE_ID_STORE_WEBSITE_WEBSITE_ID;
+ALTER TABLE salesrule_website DROP FOREIGN KEY SALESRULE_WEBSITE_WEBSITE_ID_STORE_WEBSITE_WEBSITE_ID;
+ALTER TABLE sales_bestsellers_aggregated_daily DROP FOREIGN KEY SALES_BESTSELLERS_AGGRED_DAILY_PRD_ID_CAT_PRD_ENTT_ENTT_ID;
+ALTER TABLE sales_bestsellers_aggregated_monthly DROP FOREIGN KEY SALES_BESTSELLERS_AGGRED_MONTHLY_PRD_ID_CAT_PRD_ENTT_ENTT_ID;
+ALTER TABLE sales_bestsellers_aggregated_yearly DROP FOREIGN KEY SALES_BESTSELLERS_AGGRED_YEARLY_PRD_ID_CAT_PRD_ENTT_ENTT_ID;
+ALTER TABLE sales_bestsellers_aggregated_daily DROP FOREIGN KEY SALES_BESTSELLERS_AGGREGATED_DAILY_STORE_ID_STORE_STORE_ID;
+ALTER TABLE sales_bestsellers_aggregated_monthly DROP FOREIGN KEY SALES_BESTSELLERS_AGGREGATED_MONTHLY_STORE_ID_STORE_STORE_ID;
+ALTER TABLE sales_bestsellers_aggregated_yearly DROP FOREIGN KEY SALES_BESTSELLERS_AGGREGATED_YEARLY_STORE_ID_STORE_STORE_ID;
+ALTER TABLE sales_creditmemo_grid DROP FOREIGN KEY SALES_CREDITMEMO_GRID_STORE_ID_STORE_STORE_ID;
+ALTER TABLE sales_creditmemo DROP FOREIGN KEY SALES_CREDITMEMO_STORE_ID_STORE_STORE_ID;
+ALTER TABLE sales_invoiced_aggregated_order DROP FOREIGN KEY SALES_INVOICED_AGGREGATED_ORDER_STORE_ID_STORE_STORE_ID;
+ALTER TABLE sales_invoiced_aggregated DROP FOREIGN KEY SALES_INVOICED_AGGREGATED_STORE_ID_STORE_STORE_ID;
+ALTER TABLE sales_invoice_grid DROP FOREIGN KEY SALES_INVOICE_GRID_STORE_ID_STORE_STORE_ID;
+ALTER TABLE sales_invoice DROP FOREIGN KEY SALES_INVOICE_STORE_ID_STORE_STORE_ID;
+ALTER TABLE sales_order_aggregated_created DROP FOREIGN KEY SALES_ORDER_AGGREGATED_CREATED_STORE_ID_STORE_STORE_ID;
+ALTER TABLE sales_order_aggregated_updated DROP FOREIGN KEY SALES_ORDER_AGGREGATED_UPDATED_STORE_ID_STORE_STORE_ID;
+ALTER TABLE sales_order DROP FOREIGN KEY SALES_ORDER_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID;
+ALTER TABLE sales_order_grid DROP FOREIGN KEY SALES_ORDER_GRID_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID;
+ALTER TABLE sales_order_grid DROP FOREIGN KEY SALES_ORDER_GRID_STORE_ID_STORE_STORE_ID;
+ALTER TABLE sales_order_item DROP FOREIGN KEY SALES_ORDER_ITEM_STORE_ID_STORE_STORE_ID;
+ALTER TABLE sales_order_status_label DROP FOREIGN KEY SALES_ORDER_STATUS_LABEL_STORE_ID_STORE_STORE_ID;
+ALTER TABLE sales_order DROP FOREIGN KEY SALES_ORDER_STORE_ID_STORE_STORE_ID;
+ALTER TABLE sales_refunded_aggregated_order DROP FOREIGN KEY SALES_REFUNDED_AGGREGATED_ORDER_STORE_ID_STORE_STORE_ID;
+ALTER TABLE sales_refunded_aggregated DROP FOREIGN KEY SALES_REFUNDED_AGGREGATED_STORE_ID_STORE_STORE_ID;
+ALTER TABLE sales_shipment_grid DROP FOREIGN KEY SALES_SHIPMENT_GRID_STORE_ID_STORE_STORE_ID;
+ALTER TABLE sales_shipment DROP FOREIGN KEY SALES_SHIPMENT_STORE_ID_STORE_STORE_ID;
+ALTER TABLE sales_shipping_aggregated_order DROP FOREIGN KEY SALES_SHIPPING_AGGREGATED_ORDER_STORE_ID_STORE_STORE_ID;
+ALTER TABLE sales_shipping_aggregated DROP FOREIGN KEY SALES_SHIPPING_AGGREGATED_STORE_ID_STORE_STORE_ID;
+ALTER TABLE magento_sales_creditmemo_grid_archive DROP FOREIGN KEY MAGENTO_SALES_CREDITMEMO_GRID_ARCHIVE_STORE_ID_STORE_STORE_ID;
+ALTER TABLE magento_sales_invoice_grid_archive DROP FOREIGN KEY MAGENTO_SALES_INVOICE_GRID_ARCHIVE_STORE_ID_STORE_STORE_ID;
+ALTER TABLE magento_sales_order_grid_archive DROP FOREIGN KEY MAGENTO_SALES_ORDER_GRID_ARCHIVE_CSTR_ID_CSTR_ENTT_ENTT_ID;
+ALTER TABLE magento_sales_order_grid_archive DROP FOREIGN KEY MAGENTO_SALES_ORDER_GRID_ARCHIVE_STORE_ID_STORE_STORE_ID;
+ALTER TABLE magento_sales_shipment_grid_archive DROP FOREIGN KEY MAGENTO_SALES_SHIPMENT_GRID_ARCHIVE_STORE_ID_STORE_STORE_ID;
+ALTER TABLE downloadable_link_purchased_item DROP FOREIGN KEY DL_LNK_PURCHASED_ITEM_ORDER_ITEM_ID_SALES_ORDER_ITEM_ITEM_ID;
+ALTER TABLE downloadable_link_purchased DROP FOREIGN KEY DOWNLOADABLE_LINK_PURCHASED_ORDER_ID_SALES_ORDER_ENTITY_ID;
+ALTER TABLE paypal_billing_agreement_order DROP FOREIGN KEY PAYPAL_BILLING_AGREEMENT_ORDER_ORDER_ID_SALES_ORDER_ENTITY_ID;
 {% endhighlight %}
 
 ### Configure the sales database {#config-ee-multidb-sql-oms-run}
@@ -201,147 +185,12 @@ Run each script in the order in which you created it as follows:
     For example,
 
         source /root/sql-scripts/1_foreign1.sql
-        source /root/sql-scripts/2_foreign-key2.sql
-
-#### Sample script output
-Sample output from each script follows in the order we suggest you run them.
-
-**Drop foreign keys (script 1)**
-{% highlight sql %}
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-| concat(
-    'ALTER TABLE ',
-    replace(for_name, 'magento/', ''),
-    ' DROP FOREIGN KEY ',
-    replace(id, 'magento/', ''),
-    ';'
-    ) |
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-| ALTER TABLE salesrule_coupon_aggregated_order DROP FOREIGN KEY SALESRULE_COUPON_AGGREGATED_ORDER_STORE_ID_STORE_STORE_ID;                   |
-| ALTER TABLE salesrule_coupon_aggregated DROP FOREIGN KEY SALESRULE_COUPON_AGGREGATED_STORE_ID_STORE_STORE_ID;                               |
-| ALTER TABLE salesrule_coupon_aggregated_updated DROP FOREIGN KEY SALESRULE_COUPON_AGGREGATED_UPDATED_STORE_ID_STORE_STORE_ID;               |
-| ALTER TABLE salesrule_coupon_usage DROP FOREIGN KEY SALESRULE_COUPON_USAGE_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID;                           |
-| ALTER TABLE salesrule_customer_group DROP FOREIGN KEY SALESRULE_CSTR_GROUP_CSTR_GROUP_ID_CSTR_GROUP_CSTR_GROUP_ID;                          |
-| ALTER TABLE salesrule_customer DROP FOREIGN KEY SALESRULE_CUSTOMER_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID;                                   |
-| ALTER TABLE salesrule_label DROP FOREIGN KEY SALESRULE_LABEL_STORE_ID_STORE_STORE_ID;                                                       |
-| ALTER TABLE salesrule_product_attribute DROP FOREIGN KEY SALESRULE_PRD_ATTR_ATTR_ID_EAV_ATTR_ATTR_ID;                                       |
-| ALTER TABLE salesrule_product_attribute DROP FOREIGN KEY SALESRULE_PRD_ATTR_CSTR_GROUP_ID_CSTR_GROUP_CSTR_GROUP_ID;                         |
-| ALTER TABLE salesrule_product_attribute DROP FOREIGN KEY SALESRULE_PRODUCT_ATTRIBUTE_WEBSITE_ID_STORE_WEBSITE_WEBSITE_ID;                   |
-| ALTER TABLE salesrule_website DROP FOREIGN KEY SALESRULE_WEBSITE_WEBSITE_ID_STORE_WEBSITE_WEBSITE_ID;                                       |
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-{% endhighlight %}
-
-**Remove tables**
-{% highlight sql %}
-| querytext                                                                       |
-+---------------------------------------------------------------------------------+
-|  SET foreign_key_checks = 0;                                                    |
-| DROP TABLE IF EXISTS sales_bestsellers_aggregated_daily;                        |
-| DROP TABLE IF EXISTS sales_bestsellers_aggregated_monthly;                      |
-| DROP TABLE IF EXISTS sales_bestsellers_aggregated_yearly;                       |
-| DROP TABLE IF EXISTS sales_creditmemo;                                          |
-| DROP TABLE IF EXISTS sales_creditmemo_comment;                                  |
-| DROP TABLE IF EXISTS sales_creditmemo_grid;                                     |
-| DROP TABLE IF EXISTS sales_creditmemo_item;                                     |
-| DROP TABLE IF EXISTS sales_invoice;                                             |
-| DROP TABLE IF EXISTS sales_invoice_comment;                                     |
-| DROP TABLE IF EXISTS sales_invoice_grid;                                        |
-| DROP TABLE IF EXISTS sales_invoice_item;                                        |
-| DROP TABLE IF EXISTS sales_invoiced_aggregated;                                 |
-| DROP TABLE IF EXISTS sales_invoiced_aggregated_order;                           |
-| DROP TABLE IF EXISTS sales_order;                                               |
-| DROP TABLE IF EXISTS sales_order_address;                                       |
-| DROP TABLE IF EXISTS sales_order_aggregated_created;                            |
-| DROP TABLE IF EXISTS sales_order_aggregated_updated;                            |
-| DROP TABLE IF EXISTS sales_order_grid;                                          |
-| DROP TABLE IF EXISTS sales_order_item;                                          |
-| DROP TABLE IF EXISTS sales_order_payment;                                       |
-| DROP TABLE IF EXISTS sales_order_status;                                        |
-| DROP TABLE IF EXISTS sales_order_status_history;                                |
-| DROP TABLE IF EXISTS sales_order_status_label;                                  |
-| DROP TABLE IF EXISTS sales_order_status_state;                                  |
-| DROP TABLE IF EXISTS sales_order_tax;                                           |
-| DROP TABLE IF EXISTS sales_order_tax_item;                                      |
-| DROP TABLE IF EXISTS sales_payment_transaction;                                 |
-| DROP TABLE IF EXISTS sales_refunded_aggregated;                                 |
-| DROP TABLE IF EXISTS sales_refunded_aggregated_order;                           |
-| DROP TABLE IF EXISTS sales_sequence_meta;                                       |
-| DROP TABLE IF EXISTS sales_sequence_profile;                                    |
-| DROP TABLE IF EXISTS sales_shipment;                                            |
-| DROP TABLE IF EXISTS sales_shipment_comment;                                    |
-| DROP TABLE IF EXISTS sales_shipment_grid;                                       |
-| DROP TABLE IF EXISTS sales_shipment_item;                                       |
-| DROP TABLE IF EXISTS sales_shipment_track;                                      |
-| DROP TABLE IF EXISTS sales_shipping_aggregated;                                 |
-| DROP TABLE IF EXISTS sales_shipping_aggregated_order;                           |
-| DROP TABLE IF EXISTS magento_sales_creditmemo_grid_archive;                     |
-| DROP TABLE IF EXISTS magento_sales_invoice_grid_archive;                        |
-| DROP TABLE IF EXISTS magento_sales_order_grid_archive;                          |
-| DROP TABLE IF EXISTS magento_sales_shipment_grid_archive;                       |
-| DROP TABLE IF EXISTS magento_customercustomattributes_sales_flat_order;         |
-| DROP TABLE IF EXISTS magento_customercustomattributes_sales_flat_order_address; |
-| DROP TABLE IF EXISTS sequence_creditmemo_0;                                     |
-| DROP TABLE IF EXISTS sequence_creditmemo_1;                                     |
-| DROP TABLE IF EXISTS sequence_invoice_0;                                        |
-| DROP TABLE IF EXISTS sequence_invoice_1;                                        |
-| DROP TABLE IF EXISTS sequence_order_0;                                          |
-| DROP TABLE IF EXISTS sequence_order_1;                                          |
-| DROP TABLE IF EXISTS sequence_rma_item_0;                                       |
-| DROP TABLE IF EXISTS sequence_rma_item_1;                                       |
-| DROP TABLE IF EXISTS sequence_shipment_0;                                       |
-| DROP TABLE IF EXISTS sequence_shipment_1;                                       |
-| SET foreign_key_checks = 1;                                                     |
-+---------------------------------------------------------------------------------+
-{% endhighlight %}
-
-**Drop foreign keys (second script)**
-{% highlight sql %}
-+--------------------------------+
-| concat(
-    'ALTER TABLE ',
-    replace(for_name, 'magento/', ''),
-    ' DROP FOREIGN KEY ',
-    replace(id, 'magento/', ''),
-    ';'
-    ) |
-+-------------------------------+
-| ALTER TABLE downloadable_link_purchased_item DROP FOREIGN KEY DL_LNK_PURCHASED_ITEM_ORDER_ITEM_ID_SALES_ORDER_ITEM_ITEM_ID;                 |
-| ALTER TABLE downloadable_link_purchased DROP FOREIGN KEY DOWNLOADABLE_LINK_PURCHASED_ORDER_ID_SALES_ORDER_ENTITY_ID;                        |
-| ALTER TABLE magento_customercustomattributes_sales_flat_order_address DROP FOREIGN KEY FK_16AD7FB31D74E6482A0A134C553F0177;                 |
-| ALTER TABLE sales_payment_transaction DROP FOREIGN KEY FK_B99FF1A06402D725EBDB0F3A7ECD47A2;                                                 |
-| ALTER TABLE magento_customercustomattributes_sales_flat_order DROP FOREIGN KEY FK_E3B93E92D5321FB267FA7CF9818B862A;                         |
-| ALTER TABLE paypal_billing_agreement_order DROP FOREIGN KEY PAYPAL_BILLING_AGREEMENT_ORDER_ORDER_ID_SALES_ORDER_ENTITY_ID;                  |
-| ALTER TABLE sales_creditmemo_comment DROP FOREIGN KEY SALES_CREDITMEMO_COMMENT_PARENT_ID_SALES_CREDITMEMO_ENTITY_ID;                        |
-| ALTER TABLE sales_creditmemo_item DROP FOREIGN KEY SALES_CREDITMEMO_ITEM_PARENT_ID_SALES_CREDITMEMO_ENTITY_ID;                              |
-| ALTER TABLE sales_creditmemo DROP FOREIGN KEY SALES_CREDITMEMO_ORDER_ID_SALES_ORDER_ENTITY_ID;                                              |
-| ALTER TABLE sales_invoice_comment DROP FOREIGN KEY SALES_INVOICE_COMMENT_PARENT_ID_SALES_INVOICE_ENTITY_ID;                                 |
-| ALTER TABLE sales_invoice_item DROP FOREIGN KEY SALES_INVOICE_ITEM_PARENT_ID_SALES_INVOICE_ENTITY_ID;                                       |
-| ALTER TABLE sales_invoice DROP FOREIGN KEY SALES_INVOICE_ORDER_ID_SALES_ORDER_ENTITY_ID;                                                    |
-| ALTER TABLE sales_order_address DROP FOREIGN KEY SALES_ORDER_ADDRESS_PARENT_ID_SALES_ORDER_ENTITY_ID;                                       |
-| ALTER TABLE sales_order_item DROP FOREIGN KEY SALES_ORDER_ITEM_ORDER_ID_SALES_ORDER_ENTITY_ID;                                              |
-| ALTER TABLE sales_order_payment DROP FOREIGN KEY SALES_ORDER_PAYMENT_PARENT_ID_SALES_ORDER_ENTITY_ID;                                       |
-| ALTER TABLE sales_order_status_history DROP FOREIGN KEY SALES_ORDER_STATUS_HISTORY_PARENT_ID_SALES_ORDER_ENTITY_ID;                         |
-| ALTER TABLE sales_order_status_label DROP FOREIGN KEY SALES_ORDER_STATUS_LABEL_STATUS_SALES_ORDER_STATUS_STATUS;                            |
-| ALTER TABLE sales_order_status_state DROP FOREIGN KEY SALES_ORDER_STATUS_STATE_STATUS_SALES_ORDER_STATUS_STATUS;                            |
-| ALTER TABLE sales_order_tax_item DROP FOREIGN KEY SALES_ORDER_TAX_ITEM_ASSOCIATED_ITEM_ID_SALES_ORDER_ITEM_ITEM_ID;                         |
-| ALTER TABLE sales_order_tax_item DROP FOREIGN KEY SALES_ORDER_TAX_ITEM_ITEM_ID_SALES_ORDER_ITEM_ITEM_ID;                                    |
-| ALTER TABLE sales_order_tax_item DROP FOREIGN KEY SALES_ORDER_TAX_ITEM_TAX_ID_SALES_ORDER_TAX_TAX_ID;                                       |
-| ALTER TABLE sales_payment_transaction DROP FOREIGN KEY SALES_PAYMENT_TRANSACTION_ORDER_ID_SALES_ORDER_ENTITY_ID;                            |
-| ALTER TABLE sales_payment_transaction DROP FOREIGN KEY SALES_PAYMENT_TRANSACTION_PAYMENT_ID_SALES_ORDER_PAYMENT_ENTT_ID;                    |
-| ALTER TABLE sales_sequence_profile DROP FOREIGN KEY SALES_SEQUENCE_PROFILE_META_ID_SALES_SEQUENCE_META_META_ID;                             |
-| ALTER TABLE sales_shipment_comment DROP FOREIGN KEY SALES_SHIPMENT_COMMENT_PARENT_ID_SALES_SHIPMENT_ENTITY_ID;                              |
-| ALTER TABLE sales_shipment_item DROP FOREIGN KEY SALES_SHIPMENT_ITEM_PARENT_ID_SALES_SHIPMENT_ENTITY_ID;                                    |
-| ALTER TABLE sales_shipment DROP FOREIGN KEY SALES_SHIPMENT_ORDER_ID_SALES_ORDER_ENTITY_ID;                                                  |
-| ALTER TABLE sales_shipment_track DROP FOREIGN KEY SALES_SHIPMENT_TRACK_PARENT_ID_SALES_SHIPMENT_ENTITY_ID;                                  |
-+------------------------------------+
-
-{% endhighlight %}
 {% endcollapsible %}
 
 ### Back up sales data {#sales-backup}
 This section discusses how to back up sales tables from the main Magento database so you can restore them in the separate sales database.
 
-{% collapsible Click to back up sales data %}
+{% collapsible Click to back up and restore sales data %}
 
 If you're currently at the `mysql>` prompt, enter `exit` to return to the command shell.
 
@@ -390,20 +239,90 @@ If you are using an NDB database cluster:
 Run the following commands:
 
 {% highlight sql %}
-mysql -u <root user name> -p <your quote DB name> < /<path>/sales.sql
-mysql -u <root user name> -p <your quote DB name> < /<path>/sequence.sql
-mysql -u <root user name> -p <your quote DB name> < /<path>/salesarchive.sql
-mysql -u <root user name> -p <your quote DB name> < /<path>/customercustomattributes.sql
+mysql -u <root user name> -p <your sales DB name> < /<path>/sales.sql
+mysql -u <root user name> -p <your sales DB name> < /<path>/sequence.sql
+mysql -u <root user name> -p <your sales DB name> < /<path>/salesarchive.sql
+mysql -u <root user name> -p <your sales DB name> < /<path>/customercustomattributes.sql
 {% endhighlight %}
 
 where
 
-*   `<your quote DB name>` with the name of your quote database. 
+*   `<your sales DB name>` with the name of your sales database. 
 
     In this topic, the sample database name is `magento_sales`.
 *   `<root user name>` with your MySQL root user name
 *   `<root user password>` with the user's password
 *   Verify the location of the backup files you created earlier (for example, `/var/sales.sql`)
+
+### Drop sales tables
+This section discusses how to drop the sales tables from your main Magento database.
+
+Create a script with a name like `2_drop-sales-tables.sql` with the following contents:
+
+{% highlight sql %}
+use <your main Magento DB name>;
+SET foreign_key_checks = 0;                                                   
+DROP TABLE IF EXISTS sales_bestsellers_aggregated_daily;                       
+DROP TABLE IF EXISTS sales_bestsellers_aggregated_monthly;                     
+DROP TABLE IF EXISTS sales_bestsellers_aggregated_yearly;                      
+DROP TABLE IF EXISTS sales_creditmemo;                                         
+DROP TABLE IF EXISTS sales_creditmemo_comment;                                 
+DROP TABLE IF EXISTS sales_creditmemo_grid;                                    
+DROP TABLE IF EXISTS sales_creditmemo_item;                                    
+DROP TABLE IF EXISTS sales_invoice;                                            
+DROP TABLE IF EXISTS sales_invoice_comment;                                    
+DROP TABLE IF EXISTS sales_invoice_grid;                                       
+DROP TABLE IF EXISTS sales_invoice_item;                                       
+DROP TABLE IF EXISTS sales_invoiced_aggregated;                                
+DROP TABLE IF EXISTS sales_invoiced_aggregated_order;                          
+DROP TABLE IF EXISTS sales_order;                                              
+DROP TABLE IF EXISTS sales_order_address;                                      
+DROP TABLE IF EXISTS sales_order_aggregated_created;                           
+DROP TABLE IF EXISTS sales_order_aggregated_updated;                           
+DROP TABLE IF EXISTS sales_order_grid;                                         
+DROP TABLE IF EXISTS sales_order_item;                                         
+DROP TABLE IF EXISTS sales_order_payment;                                      
+DROP TABLE IF EXISTS sales_order_status;                                       
+DROP TABLE IF EXISTS sales_order_status_history;                               
+DROP TABLE IF EXISTS sales_order_status_label;                                 
+DROP TABLE IF EXISTS sales_order_status_state;                                 
+DROP TABLE IF EXISTS sales_order_tax;                                          
+DROP TABLE IF EXISTS sales_order_tax_item;                                     
+DROP TABLE IF EXISTS sales_payment_transaction;                                
+DROP TABLE IF EXISTS sales_refunded_aggregated;                                
+DROP TABLE IF EXISTS sales_refunded_aggregated_order;                          
+DROP TABLE IF EXISTS sales_sequence_meta;                                      
+DROP TABLE IF EXISTS sales_sequence_profile;                                   
+DROP TABLE IF EXISTS sales_shipment;                                           
+DROP TABLE IF EXISTS sales_shipment_comment;                                   
+DROP TABLE IF EXISTS sales_shipment_grid;                                      
+DROP TABLE IF EXISTS sales_shipment_item;                                      
+DROP TABLE IF EXISTS sales_shipment_track;                                     
+DROP TABLE IF EXISTS sales_shipping_aggregated;                                
+DROP TABLE IF EXISTS sales_shipping_aggregated_order;                          
+DROP TABLE IF EXISTS magento_sales_creditmemo_grid_archive;                    
+DROP TABLE IF EXISTS magento_sales_invoice_grid_archive;                       
+DROP TABLE IF EXISTS magento_sales_order_grid_archive;                         
+DROP TABLE IF EXISTS magento_sales_shipment_grid_archive;                      
+DROP TABLE IF EXISTS magento_customercustomattributes_sales_flat_order;        
+DROP TABLE IF EXISTS magento_customercustomattributes_sales_flat_order_address;
+DROP TABLE IF EXISTS sequence_creditmemo_0;                                    
+DROP TABLE IF EXISTS sequence_creditmemo_1;                                    
+DROP TABLE IF EXISTS sequence_invoice_0;                                       
+DROP TABLE IF EXISTS sequence_invoice_1;                                       
+DROP TABLE IF EXISTS sequence_order_0;                                         
+DROP TABLE IF EXISTS sequence_order_1;                                         
+DROP TABLE IF EXISTS sequence_rma_item_0;                                      
+DROP TABLE IF EXISTS sequence_rma_item_1;                                      
+DROP TABLE IF EXISTS sequence_shipment_0;                                      
+DROP TABLE IF EXISTS sequence_shipment_1;                                      
+SET foreign_key_checks = 1;                                                    
+{% endhighlight %}
+
+From a `mysql>` prompt, run it as follows:
+
+    source <path>/2_drop-sales-tables.sql
+
 {% endcollapsible %}
 
 ## Configure the quote database {#config-ee-multidb-checkout}
@@ -412,7 +331,11 @@ This section discusses tasks required to drop foreign keys from sales database t
 ### Drop foreign keys from quote tables
 This script removes foreign keys that refer to non-quote tables from quote tables. Replace <your main magento DB name> with the name of your Magento database.
 
-Create the following script and give it a name like `4_foreign-key3.sql`:
+{% collapsible Click to drop foreign keys from quote tables %}
+
+Create the following script and give it a name like `3_foreign-key2.sql`:
+
+%%% ARE THESE TABLES IN MAGENTO DATABASE TBD
 
 {% highlight SQL %}
 use <your Magento main DB name>;
@@ -431,7 +354,7 @@ Run the script as follows:
         source <path>/<script>.sql
     For example,
 
-        source /root/sql-scripts/4_foreign-key3.sql
+        source /root/sql-scripts/3_foreign-key2.sql
 
 ### Back up quote tables
 Run the following command from a command prompt:
