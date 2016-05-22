@@ -254,75 +254,6 @@ where
 *   `<root user password>` with the user's password
 *   Verify the location of the backup files you created earlier (for example, `/var/sales.sql`)
 
-### Drop sales tables
-This section discusses how to drop the sales tables from your main Magento database.
-
-Create a script with a name like `2_drop-sales-tables.sql` with the following contents:
-
-{% highlight sql %}
-use <your main Magento DB name>;
-SET foreign_key_checks = 0;                                                   
-DROP TABLE IF EXISTS sales_bestsellers_aggregated_daily;                       
-DROP TABLE IF EXISTS sales_bestsellers_aggregated_monthly;                     
-DROP TABLE IF EXISTS sales_bestsellers_aggregated_yearly;                      
-DROP TABLE IF EXISTS sales_creditmemo;                                         
-DROP TABLE IF EXISTS sales_creditmemo_comment;                                 
-DROP TABLE IF EXISTS sales_creditmemo_grid;                                    
-DROP TABLE IF EXISTS sales_creditmemo_item;                                    
-DROP TABLE IF EXISTS sales_invoice;                                            
-DROP TABLE IF EXISTS sales_invoice_comment;                                    
-DROP TABLE IF EXISTS sales_invoice_grid;                                       
-DROP TABLE IF EXISTS sales_invoice_item;                                       
-DROP TABLE IF EXISTS sales_invoiced_aggregated;                                
-DROP TABLE IF EXISTS sales_invoiced_aggregated_order;                          
-DROP TABLE IF EXISTS sales_order;                                              
-DROP TABLE IF EXISTS sales_order_address;                                      
-DROP TABLE IF EXISTS sales_order_aggregated_created;                           
-DROP TABLE IF EXISTS sales_order_aggregated_updated;                           
-DROP TABLE IF EXISTS sales_order_grid;                                         
-DROP TABLE IF EXISTS sales_order_item;                                         
-DROP TABLE IF EXISTS sales_order_payment;                                      
-DROP TABLE IF EXISTS sales_order_status;                                       
-DROP TABLE IF EXISTS sales_order_status_history;                               
-DROP TABLE IF EXISTS sales_order_status_label;                                 
-DROP TABLE IF EXISTS sales_order_status_state;                                 
-DROP TABLE IF EXISTS sales_order_tax;                                          
-DROP TABLE IF EXISTS sales_order_tax_item;                                     
-DROP TABLE IF EXISTS sales_payment_transaction;                                
-DROP TABLE IF EXISTS sales_refunded_aggregated;                                
-DROP TABLE IF EXISTS sales_refunded_aggregated_order;                          
-DROP TABLE IF EXISTS sales_sequence_meta;                                      
-DROP TABLE IF EXISTS sales_sequence_profile;                                   
-DROP TABLE IF EXISTS sales_shipment;                                           
-DROP TABLE IF EXISTS sales_shipment_comment;                                   
-DROP TABLE IF EXISTS sales_shipment_grid;                                      
-DROP TABLE IF EXISTS sales_shipment_item;                                      
-DROP TABLE IF EXISTS sales_shipment_track;                                     
-DROP TABLE IF EXISTS sales_shipping_aggregated;                                
-DROP TABLE IF EXISTS sales_shipping_aggregated_order;                          
-DROP TABLE IF EXISTS magento_sales_creditmemo_grid_archive;                    
-DROP TABLE IF EXISTS magento_sales_invoice_grid_archive;                       
-DROP TABLE IF EXISTS magento_sales_order_grid_archive;                         
-DROP TABLE IF EXISTS magento_sales_shipment_grid_archive;                      
-DROP TABLE IF EXISTS magento_customercustomattributes_sales_flat_order;        
-DROP TABLE IF EXISTS magento_customercustomattributes_sales_flat_order_address;
-DROP TABLE IF EXISTS sequence_creditmemo_0;                                    
-DROP TABLE IF EXISTS sequence_creditmemo_1;                                    
-DROP TABLE IF EXISTS sequence_invoice_0;                                       
-DROP TABLE IF EXISTS sequence_invoice_1;                                       
-DROP TABLE IF EXISTS sequence_order_0;                                         
-DROP TABLE IF EXISTS sequence_order_1;                                         
-DROP TABLE IF EXISTS sequence_rma_item_0;                                      
-DROP TABLE IF EXISTS sequence_rma_item_1;                                      
-DROP TABLE IF EXISTS sequence_shipment_0;                                      
-DROP TABLE IF EXISTS sequence_shipment_1;                                      
-SET foreign_key_checks = 1;                                                    
-{% endhighlight %}
-
-From a `mysql>` prompt, run it as follows:
-
-    source <path>/2_drop-sales-tables.sql
-
 {% endcollapsible %}
 
 ## Configure the quote database {#config-ee-multidb-checkout}
@@ -334,8 +265,6 @@ This script removes foreign keys that refer to non-quote tables from quote table
 {% collapsible Click to drop foreign keys from quote tables %}
 
 Create the following script and give it a name like `3_foreign-key2.sql`:
-
-%%% ARE THESE TABLES IN MAGENTO DATABASE TBD
 
 {% highlight SQL %}
 use <your Magento main DB name>;
@@ -368,7 +297,7 @@ Run the following command from a command prompt:
 ## Drop sales and quote tables from the Magento database {#config-ee-multidb-drop}
 This script sales and quote tables from the Magento database. Replace <your main magento DB name> with the name of your Magento database.
 
-Create the following script and give it a name like `5_drop-tables.sql`:
+Create the following script and give it a name like `4_drop-quote-tables.sql`:
 
 {% highlight sql %}
 use <your Magento main DB name>;
@@ -450,7 +379,7 @@ Run the script as follows:
         source <path>/<script>.sql
     For example,
 
-        source /root/sql-scripts/5_drop-tables.sql
+        source /root/sql-scripts/4_drop-quote-tables.sql
 
 ## Update your deployment configuration {#config-ee-multidb-config}
 The final step in manually splitting databases is to add connection and resource information to Magento's deployment configuration, `env.php`. 
