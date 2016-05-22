@@ -73,7 +73,7 @@ To transfer the Magento software archive to your server:
 
 	For example,
 
-		cp /var/www/Magento-CE-2.0.0-rc2+Samples.tar.bz2 magento2
+		cp /var/www/Magento-CE-2.0.0+Samples.tar.bz2 magento2
 
 8.	Continue with the next section.
 
