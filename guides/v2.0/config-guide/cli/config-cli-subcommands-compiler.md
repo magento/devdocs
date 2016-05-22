@@ -40,7 +40,7 @@ In addition to the command arguments discussed here, see <a href="{{ site.gdeurl
 Use this command if you have one website and store. If you have multiple websites and stores, use the <a href="#config-cli-subcommands-run">multi-tenant compiler</a> instead.
 
 <div class="bs-callout bs-callout-warning">
-    <p>There is a known issue with the single-tenant compiler; it does not currently compile proxies. Therefore, if you're preparing to deploy to production, you must use the multi-tenant compiler.</p>
+    <p>There is a known issue with the single-tenant compiler; it does not currently compile proxies. Therefore, if you're preparing to deploy to production, you must use the multi-tenant compiler. A fix has been scheduled for the next minor version release. Please refer to the <a href="http://devdocs.magento.com/guides/v2.0/release-notes/ReleaseNotes2.1_RC1CE.html">Release Notes 2.1 RC1</a> for more details.</p>
 </div>
 
 Run the command as follows (there are no options):
