@@ -398,11 +398,15 @@ The final step in manually splitting databases is to add connection and resource
 
 {% collapsible Click to update the Magento deployment configuration %}
 
-Open `<your Magento install dir>/app/etc/env.php` in a text editor and update it using the guidelines discussed in the following sections.
+1.  Log in to your Magento server as, or switch to, the Magento file system owner.
+2.  Back up your deployment configuration:
 
-**Database connections**
+        cp <your Magento install dir>/app/etc/env.php <your Magento install dir>/app/etc/env.php.orig
+2.  Open `<your Magento install dir>/app/etc/env.php` in a text editor and update it using the guidelines discussed in the following sections.
 
-Locate the block starting with `'default'` (under `'connection'`) and add `'quote'` and `'sales'` sections. Replace sample values with values appropriate for your site.
+### Update database connections
+
+Locate the block starting with `'default'` (under `'connection'`) and add `'checkout'` and `'sales'` sections. Replace sample values with values appropriate for your site.
 
 {% highlight php startinline=true %}
  'default' => 
@@ -441,9 +445,8 @@ Locate the block starting with `'default'` (under `'connection'`) and add `'quot
     ),
 {% endhighlight %}
 
-**Resources**
-
-Locate the block starting with `'resource'` and add `'quote'` and `'sales'` sections to it as follows:
+### Update resources
+Locate the block starting with `'resource'` and add `'checkout'` and `'sales'` sections to it as follows:
 
 {% highlight php startinline=true %}
 
