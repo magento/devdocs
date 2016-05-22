@@ -110,7 +110,6 @@ This section discusses how to create and run SQL scripts that alter quote databa
 For more information, see:
 
 *	[Create sales database SQL scripts](#config-ee-multidb-sql-oms)
-*	[Run SQL scripts](#config-ee-multidb-sql-run)
 *   [Back up sales data](#sales-backup)
 
 ### Create sales database SQL scripts {#config-ee-multidb-sql-oms}
@@ -118,10 +117,10 @@ For more information, see:
 {% collapsible Click to create and run sales database SQL scripts %}
 Create the following SQL scripts in a location that is accessible by the user as whom you log in to your Magento server. For example, if you log in or run commands as `root`, you can create the scripts in the `/root/sql-scripts` directory.
 
-#### Remove foreign keys (first script)
+#### Remove foreign keys
 This script is the first of two that remove foreign keys that refer to non-sales tables from the sales database. 
 
-Create the following script and give it a name like `1_foreign1.sql`. 
+Create the following script and give it a name like `1_foreign-sales.sql`. Replace `<your main Magento DB name>` with the name of your Magento database.
 
 {% highlight sql %}
 use <your main Magento DB name>;
@@ -184,7 +183,8 @@ Run each script in the order in which you created it as follows:
 
     For example,
 
-        source /root/sql-scripts/1_foreign1.sql
+        source /root/sql-scripts/1_foreign-sales.sql
+3.  After the script run, enter `exit`.
 {% endcollapsible %}
 
 ### Back up sales data {#sales-backup}
@@ -264,7 +264,7 @@ This script removes foreign keys that refer to non-quote tables from quote table
 
 {% collapsible Click to drop foreign keys from quote tables %}
 
-Create the following script and give it a name like `3_foreign-key2.sql`:
+Create the following script and give it a name like `2_foreign-key-quote.sql`:
 
 {% highlight SQL %}
 use <your Magento main DB name>;
@@ -279,25 +279,35 @@ Run the script as follows:
 
         mysql -u root -p
 2.  At the `mysql>` prompt, run the script as follows:
-
+it`.
         source <path>/<script>.sql
     For example,
 
-        source /root/sql-scripts/3_foreign-key2.sql
+        source /root/sql-scripts/2_foreign-key-quote.sql
+3.  After the script runs, enter `exit`.
+{% endcollapsible %}
 
 ### Back up quote tables
+This section discusses how to back up quote tables from the main Magento database and restore them in your quote database.
+
+{% collapsible Click to back up and restore quote tables %}
+
 Run the following command from a command prompt:
 
     mysqldump -u <your database root user name> -p <your main Magento DB name> magento_customercustomattributes_sales_flat_quote magento_customercustomattributes_sales_flat_quote_address quote quote_address quote_address_item quote_item quote_item_option quote_payment quote_shipping_rate quote_id_mask > /<path>/quote.sql;
 
-### Import tables to the quote database
+### Restore tables to the quote database
 
     mysql -u root -p magento_quote < /<path>/quote.sql
+
+{% endcollapsible %}
 
 ## Drop sales and quote tables from the Magento database {#config-ee-multidb-drop}
 This script sales and quote tables from the Magento database. Replace <your main magento DB name> with the name of your Magento database.
 
-Create the following script and give it a name like `4_drop-quote-tables.sql`:
+{% collapsible Click to drop sales and quote tables %}
+
+Create the following script and give it a name like `3_drop-tables.sql`:
 
 {% highlight sql %}
 use <your Magento main DB name>;
@@ -379,10 +389,14 @@ Run the script as follows:
         source <path>/<script>.sql
     For example,
 
-        source /root/sql-scripts/4_drop-quote-tables.sql
+        source /root/sql-scripts/3_drop-tables.sql
+3.  After the script runs, enter `exit`.
+{% endcollapsible %}
 
 ## Update your deployment configuration {#config-ee-multidb-config}
 The final step in manually splitting databases is to add connection and resource information to Magento's deployment configuration, `env.php`. 
+
+{% collapsible Click to update the Magento deployment configuration %}
 
 Open `<your Magento install dir>/app/etc/env.php` in a text editor and update it using the guidelines discussed in the following sections.
 
@@ -448,7 +462,7 @@ Locate the block starting with `'resource'` and add `'quote'` and `'sales'` sect
       'connection' => 'sales',
     ),
 {% endhighlight %}
-
+{% endcollapsible %}
 
 #### Next step
 <a href="{{ site.gdeurl }}config-guide/multi-master/multi-master_verify.html">Verify split databases</a>
