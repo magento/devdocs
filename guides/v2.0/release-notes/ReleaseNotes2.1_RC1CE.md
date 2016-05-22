@@ -116,7 +116,7 @@ Before proceeding, please familiarize yourself with these prerequisites, then ru
 #####<b>Install using Composer</b>#####
 This Release Candidate is available from `repo.magento.com`. Before installing this Release Candidate using Composer,  familiarize yourself with the Composer metapackage  <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run 
 
-`composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=<2.1.0-rc1> <installation directory name>`
+	composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.1.0-rc1 <installation directory name>
 
 <h4><b>Upgrade existing installations</b></h4>
 <!-- If you installed Magento Community Edition 2.0.0 from an archive, you must perform some additional tasks before you can upgrade your installation. Current users of Magento 2.0.0/2.0.1/2.0.2/2.0.3/2.0.4/2.0.5/2.0.6 must first update the installer from the command line.  -->
