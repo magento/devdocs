@@ -29,7 +29,6 @@ You can configure the Magento application in any of the following ways:
 	*	[memcache]({{ site.gdeurl }}config-guide/memcache/memcache.html)
 	*	[Redis]({{ site.gdeurl }}config-guide/redis/redis-session.html)
 	*	[How to locate session files]({{ site.gdeurl }}config-guide/sessions.html)
-	*	Test
 
 *	<img src="{{ site.baseurl }}common/images/ee-only_small.png">
 
