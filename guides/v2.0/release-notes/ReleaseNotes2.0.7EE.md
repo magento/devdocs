@@ -57,26 +57,51 @@ New users can now complete a full installation of Magento Enterprise Edition 2.0
 3.	Follow the instructions to upgrade and verify your installation. If you need help, go to the **Support** tab of your Magento account, and **Open a Ticket**.
 
 
-<h4>Upgrade existing installations</h4>
-If you installed Magento Enterprise Edition 2.0.0 from an archive, you must perform some additional tasks before you can upgrade your installation. Current users of Magento 2.0.0 through 2.0.6 must first update the installer from the command line. Then, update the installation from the <a href="http://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html" target="_blank">Web Setup Wizard</a> or command line. 
+<h4><b>Upgrade existing installations</b></h4>
+
+This section discusses how to upgrade to Magento EE 2.0.7.
 
 
-#####<b>Upgrade an existing installation from the Setup Wizard</b>#####
+**Upgrade using the Setup Wizard**
+Use the instructions in [Start System Upgrade]({{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html). When prompted to choose a version, choose 2.0.7.
 
-1. Log in to the Admin panel with Administrator privileges.
+**Upgrade an existing installation from the GitHub repository**
+Developers who contribute to the CE codebase can <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento EE GitHub repository.
 
-2.	On the Admin sidebar, click **System**. Under **Tools**,  choose **Web Setup Wizard**.
+1.	Go to the <a href="{{ site.gdeurl }}install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.
 
-3.	Click  **System Upgrade**. Follow the on-screen instructions to complete the upgrade.
+2.	Follow the instructions to pull the updates from the repository and update using Composer.
 
-For more information, see <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">Upgrade the Magento installation and components</a>.
+**Upgrade using the command line**
+To upgrade to Magento EE 2.0.7 using the command line:
 
-#####<b>Magento Partners</b>#####
-Magento partners can download the release and the release notes in PDF format from the Partner Portal.
+1.	Log in to your Magento server as, or switch to, the Magento file system owner.
+2.	Change to the directory in which you installed the Magento software.
 
-1.	Log in to the <a href="https://magento.com/partners/become-a-partner" target="_blank">Partner Portal</a>.
-2.	Under Magento Enterprise Edition, choose **Magento Enterprise Edition 2.x**.
-3.	Find the **Magento Enterprise Edition 2.x Release**, and choose **Version 2.0.7**.
+	For example, `cd /var/www/html/magento2`
+2.	Enter the following command to disable the cache:
+
+		php bin/magento cache:disable
+2.	Enter the following commands in the order shown:
+
+		composer require <product> 2.0.7 --no-update
+		composer update
+
+	
+
+	To upgrade to Magento EE 2.0.7, enter:
+
+		composer require magento/product-enterprise-edition 2.0.7 --no-update
+		composer update
+	
+3.	If prompted, enter your [authentication keys]({{ site.gdeurl }}comp-mgr/prereq/prereq_auth-token.html).
+4. Update the database schema and data:
+
+		php bin/magento setup:upgrade
+5.	Enter the following command to enable the cache:
+
+		magento cache:enable
+
 
 <h3>Migration toolkits</h3>
 The <a href="{{ site.gdeurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ site.gdeurl }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
