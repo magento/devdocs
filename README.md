@@ -2,6 +2,8 @@
 
 Welcome! This site contains the latest Magento developer documentation for ongoing Magento 2.0 releases.
 
+Test
+
 To contribute, please fork the 2.0 branch and submit any PRs to this same branch as well.
 
 # Build this site using Jekyll

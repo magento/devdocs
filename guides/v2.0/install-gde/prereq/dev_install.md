@@ -34,12 +34,12 @@ The audience for this topic is anyone who contributes to the Magento codebase. I
 <h2 id="instgde-prereq-compose-clone">Clone the Magento repository</h2>
 This section discusses how to get current code by cloning the Magento GitHub's develop branch. You can clone either a release branch or the `develop` branch:
 
-*	Release branches like `2.0` or `.2.0.1` are more stable
+*	Release branches like `2.0` or `2.0.6` are more stable
 
 	You *must* use a released branch with the <a href="{{ site.gdeurl }}migration/bk-migration-guide.html">Data Migration Tool</a>.
 *	`develop` is more recent
 
-Currently, the `develop` branch is the default but you can checkout a release branch like `2.0.2` after cloning.
+Currently, the `develop` branch is the default but you can checkout a release branch like `2.0.6` after cloning.
 
 <h3 id="instgde-prereq-compose-clone-auth">Creating an authorization file</h3>
 The Magento 2 GitHub repository requires you to authenticate. The `composer install` commands fails if you do not. To authenticate, <a href="{{ site.gdeurl }}install-gde/prereq/connect-auth.html">generate authentication keys</a>, after which you create an `auth.json` file in the home directory of the Magento file system owner.
@@ -102,9 +102,9 @@ fatal: The remote end hung up unexpectedly</pre>
 
 		git checkout tags/<tag name> [-b <version>]
 
-	For example, to check out the 2.0.2 release tag in a new branch named `2.0.2`, enter
+	For example, to check out the 2.0.6 release tag in a new branch named `2.0.6`, enter
 
-		git checkout tags/2.0.2 -b 2.0.2
+		git checkout tags/2.0.6 -b 2.0.6
 
 4.	Continue with <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Update installation dependencies</a>.
 
@@ -146,9 +146,9 @@ fatal: The remote end hung up unexpectedly</pre>
 
 		git checkout tags/<tag name> [-b <version>]
 
-	For example, to check out the 2.0.2 release tag in a branch named `2.0.2`, enter
+	For example, to check out the 2.0.6 release tag in a branch named `2.0.6`, enter
 
-		git checkout tags/2.0.2 -b 2.0.2
+		git checkout tags/2.0.6 -b 2.0.6
 
 #### Next step
 

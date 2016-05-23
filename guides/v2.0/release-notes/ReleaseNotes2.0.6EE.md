@@ -16,7 +16,7 @@ We are pleased to present Magento Enterprise Edition 2.0.6. This release include
 </div>
 
 
-Backward-incompatible changes are documented in <a href="http://devdocs.magento.com/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
+Backward-incompatible changes are documented in <a href="{{ site.gdeurl }}release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
 
 
 
@@ -29,11 +29,11 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 
 <h3>Functional enhancements</h3>
 
-<!-- 52322 --> * Starting with Magento 2.0.6, Magento provides a more flexible way for you to set file ownership and permissions. Instead of setting permissions explicitly, you only need to make sure files and directories are writable for installation. We provide different suggestions for doing this, depending on whether you access your Magento server with one user account (typical of shared hosting) or two user accounts (typical of private hosting or having your own server). After installation, to further restrict access to files and directories, you can optionally create a file named `magento_umask` in your Magento root directory. By default, the `umask` is 002, which means that directories have 775 permissions and files have 664 permissions. For more details, see <a href="http://devdocs.magento.com/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system ownership and permissions</a>. 
+<!-- 52322 --> * Starting with Magento 2.0.6, Magento provides a more flexible way for you to set file ownership and permissions. Instead of setting permissions explicitly, you only need to make sure files and directories are writable for installation. We provide different suggestions for doing this, depending on whether you access your Magento server with one user account (typical of shared hosting) or two user accounts (typical of private hosting or having your own server). After installation, to further restrict access to files and directories, you can optionally create a file named `magento_umask` in your Magento root directory. By default, the `umask` is 002, which means that directories have 775 permissions and files have 664 permissions. For more details, see  <a href="{{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html">Magento file system ownership and permissions</a>. 
 
 
 
-<!-- 51809 -->* You can now use the Redis adapter to provide session storage in Magento 2.0.6. For more information, see <a href="http://devdocs.magento.com/guides/v2.0/config-guide/redis/config-redis.html">Redis for session storage</a>. 
+<!-- 51809 -->* You can now use the Redis adapter to provide session storage in Magento 2.0.6. For more information, see <a href="{{ site.gdeurl }}config-guide/redis/config-redis.html">Redis for session storage</a>. 
 
 
 <h4>Security enhancements</h4>
@@ -74,7 +74,7 @@ The following list provides an overview of the security issues fixed in this rel
 
 <h3>System requirements</h3>
 Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see 
-<a href="http://devdocs.magento.com/guides/v2.0/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
+<a href="{{ site.gdeurl }}install-gde/system-requirements.html" target="_blank">System Requirements</a>.
 
 
 <h3>Installation instructions</h3>
@@ -96,7 +96,7 @@ New users can now complete a full installation of Magento Enterprise Edition 2.0
 
 
 <h4>Upgrade existing installations</h4>
-If you installed Magento Enterprise Edition 2.0.0 from an archive, you must perform some additional tasks before you can upgrade your installation. Current users of Magento 2.0.0/2.0.1/2.0.2/2.0.3/2.0.4/2.0.5 must first update the installer from the command line. Then, update the installation from the <a href="http://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html" target="_blank">Web Setup Wizard</a> or command line. For detailed instructions, see the <a href="http://devdocs.magento.com/guides/v2.0/release-notes/tech_bull_201-upgrade.html" target="_blank">technical bulletin</a>.
+If you installed Magento Enterprise Edition 2.0.0 from an archive, you must perform some additional tasks before you can upgrade your installation. Current users of Magento 2.0.0/2.0.1/2.0.2/2.0.3/2.0.4/2.0.5 must first update the installer from the command line. Then, update the installation from the <a href="http://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html" target="_blank">Web Setup Wizard</a> or command line. For detailed instructions, see the <a href="{{ site.gdeurl }}release-notes/tech_bull_201-upgrade.html" target="_blank">technical bulletin</a>.
 
 
 #####<b>Upgrade an existing installation from the Setup Wizard</b>#####
@@ -107,7 +107,7 @@ If you installed Magento Enterprise Edition 2.0.0 from an archive, you must perf
 
 3.	Click  **System Upgrade**. Follow the onscreen instructions to complete the upgrade.
 
-For more information, see <a href="http://devdocs.magento.com/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html" target="_blank">Upgrade the Magento installation and components</a>.
+For more information, see <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">Upgrade the Magento installation and components</a>.
 
 #####<b>Magento Partners</b>#####
 Magento partners can download the release and the release notes in PDF format from the Partner Portal.
