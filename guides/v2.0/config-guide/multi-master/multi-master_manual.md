@@ -224,17 +224,13 @@ mysqldump -u <your database root user name> -p <your main magento DB name> seque
 ### Restore sales data {#sql-sales-restore}
 This script restores sales data in your quote database.
 
-If you are using an NDB database cluster:
+If you are using a [Network Database (NDB)](http://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html){:target="_blank"} cluster:
 
 1.  Convert tables from InnoDb to NDB type in dump files:
 
-        sed -ei 's/InnoDb/NDB/' <dumpfile>.sql
+        sed -ei 's/InnoDb/NDB/' <file name>.sql
 
-2.  Remove rows with FULLTEXT KEY from dumps because NDB tables don't support FULLTEXT:
-
-        TBD
-
-    salesarchive.sql
+2.  Remove rows with FULLTEXT KEY from dumps because NDB tables don't support FULLTEXT.
 
 Run the following commands:
 
@@ -295,6 +291,14 @@ This section discusses how to back up quote tables from the main Magento databas
 Run the following command from a command prompt:
 
     mysqldump -u <your database root user name> -p <your main Magento DB name> magento_customercustomattributes_sales_flat_quote magento_customercustomattributes_sales_flat_quote_address quote quote_address quote_address_item quote_item quote_item_option quote_payment quote_shipping_rate quote_id_mask > /<path>/quote.sql;
+
+If you are using a [Network Database (NDB)](http://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html){:target="_blank"} cluster:
+
+1.  Convert tables from InnoDb to NDB type in dump files:
+
+        sed -ei 's/InnoDb/NDB/' <file name>.sql
+
+2.  Remove rows with FULLTEXT KEY from dumps because NDB tables don't support FULLTEXT.
 
 ### Restore tables to the quote database
 
