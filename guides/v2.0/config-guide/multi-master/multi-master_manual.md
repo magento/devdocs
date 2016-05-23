@@ -9,6 +9,8 @@ menu_node:
 github_link: config-guide/multi-master/multi-master_manual.md
 ---
 
+Hi mom!!
+
 <img src="{{ site.baseurl }}common/images/ee-only_large.png">
 
 #### Contents
