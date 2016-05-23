@@ -4,6 +4,8 @@ Welcome! This site contains the latest Magento developer documentation for ongoi
 
 To contribute, please fork the 2.0 branch and submit any PRs to this same branch as well.
 
+In the new repo, hooray!!
+
 # Build this site using Jekyll
 To preview your work before submitting it to us, you can view the site locally using [Jekyll][jekyll].
 

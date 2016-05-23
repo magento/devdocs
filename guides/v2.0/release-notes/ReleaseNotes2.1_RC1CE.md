@@ -105,6 +105,10 @@ You can install Magento Community Edition 2.1 Release Candidate 1 (RC1) from eit
 
 This Release Candidate is for test purposes only. Do not install it in a production environment.
 
+<div class="bs-callout bs-callout-warning">
+    <p>We did not publish sample data for RC1. Do not attempt to install RC1 sample data or upgrade to RC1 if you already have sample data (you can, however, perform a fresh RC1 installation in a different location in your web server's docroot).</p>
+</div>
+
 #####<b>Install from GitHub</b>#####
 
 Before proceeding, please familiarize yourself with these prerequisites, then run
