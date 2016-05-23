@@ -15,8 +15,6 @@ github_link: cloud/bk-cloud.md
 Magento Enterprise Cloud Edition is a managed and automated high-availability hosting platform for
 Magento.
 
-Hi from the new repo!!
-
 You code, and we automatically put everything into production.
 
 ### No system administrator required
