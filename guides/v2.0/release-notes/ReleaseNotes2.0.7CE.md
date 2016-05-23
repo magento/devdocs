@@ -29,7 +29,7 @@ Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later support 
 <h3>Installation instructions</h3>
 
 <h4>New installations</h4>
-New users can now complete a full installation of Magento Community Edition 2.0.6 from an archive file on the <a href="https://www.magentocommerce.com/download" target="_blank">Download</a> page.
+New users can now complete a full installation of Magento Community Edition 2.0.7 from an archive file on the <a href="https://www.magentocommerce.com/download" target="_blank">Download</a> page.
 
 #####<b>Download a new installation</b>#####
 

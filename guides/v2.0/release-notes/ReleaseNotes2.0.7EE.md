@@ -42,7 +42,7 @@ Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports
 <h3>Installation instructions</h3>
 
 <h4>New installations</h4>
-New users can now complete a full installation of Magento Enterprise Edition 2.0.6 from an archive file.
+New users can now complete a full installation of Magento Enterprise Edition 2.0.7 from an archive file.
 
 #####<b>Download a new installation</b>#####
 1. Go to the <a href="https://www.magento.com/" target="_blank">Magento</a> website, and click **My Account**. Then, log in to your account. 
@@ -50,7 +50,7 @@ New users can now complete a full installation of Magento Enterprise Edition 2.0
 
 	a.	Click **Magento Enterprise Edition 2.x Release**.
 
-	b.	In the list, choose **Version 2.0.6**.
+	b.	In the list, choose **Version 2.0.7**.
 
 	c.	Click **Download**.
 
@@ -67,7 +67,7 @@ If you installed Magento Enterprise Edition 2.0.0 from an archive, you must perf
 
 2.	On the Admin sidebar, click **System**. Under **Tools**,  choose **Web Setup Wizard**.
 
-3.	Click  **System Upgrade**. Follow the onscreen instructions to complete the upgrade.
+3.	Click  **System Upgrade**. Follow the on-screen instructions to complete the upgrade.
 
 For more information, see <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">Upgrade the Magento installation and components</a>.
 
