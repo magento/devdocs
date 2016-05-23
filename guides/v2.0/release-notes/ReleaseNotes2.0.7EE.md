@@ -13,7 +13,7 @@ We are pleased to present Magento Enterprise Edition 2.0.7. This release include
 
 
 Backward-incompatible changes are documented in <a href="{{ site.gdeurl }}release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
-c
+
 
 <h3>Fixed issues</h3>
 
@@ -76,7 +76,7 @@ Magento partners can download the release and the release notes in PDF format fr
 
 1.	Log in to the <a href="https://magento.com/partners/become-a-partner" target="_blank">Partner Portal</a>.
 2.	Under Magento Enterprise Edition, choose **Magento Enterprise Edition 2.x**.
-3.	Find the **Magento Enterprise Edition 2.x Release**, and choose **Version 2.0.6**.
+3.	Find the **Magento Enterprise Edition 2.x Release**, and choose **Version 2.0.7**.
 
 <h3>Migration toolkits</h3>
 The <a href="{{ site.gdeurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ site.gdeurl }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
