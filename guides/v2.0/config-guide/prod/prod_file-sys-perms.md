@@ -71,6 +71,9 @@ To remove writable permissions to files and directories from the web server user
 
 1.	Log in to your Magento server.
 2.	Change to your Magento installation directory.
+3.	Enter the following command to change to production mode:
+
+		php bin/magento deploy:mode:set production
 3.	Enter the following commands:
 
 		find var vendor lib pub/static app/etc var/generation var/di var/view_preprocessed -type f -exec chmod g-w {} \;
