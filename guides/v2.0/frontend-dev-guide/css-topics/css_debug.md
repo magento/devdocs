@@ -80,6 +80,7 @@ npm update
 Add your theme to Grunt configuration. To do this, in the <code>dev/tools/grunt/configs/themes.js</code> file, add your theme to <code>module.exports</code> like following:
 <pre>
 module.exports = {
+    ...
     &lt;theme&gt;: {
         area: 'frontend',
         name: '&lt;Vendor&gt;/&lt;theme&gt;',
@@ -89,6 +90,7 @@ module.exports = {
             '&lt;path_to_file2&gt;'
         ],
         dsl: 'less'
+    ...
     },
 </pre>
 
