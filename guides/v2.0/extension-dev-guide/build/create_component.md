@@ -6,7 +6,7 @@ title: Name your component
 menu_title: Name your component
 menu_order: 7
 github_link: extension-dev-guide/build/create_component.md
-redirect_from: 
+redirect_from:
   - /guides/v1.0/extension-dev-guide/create_module.html
   - /guides/v2.0/extension-dev-guide/create_module.html
   - /guides/v2.0/extension-dev-guide/create_component.html
@@ -32,7 +32,7 @@ Before you continue, make sure you have completed all of the following tasks:
 ## Add the component's `module.xml` file {#module-xml}
 Declare the component itself by adding a module.xml file in the `/etc` folder of your component.
 
-A component declares itself (that is, defines its name and existence) in the `module.xml` file, located in the Magento install directory at `<ComponentName>/etc/`. 
+A component declares itself (that is, defines its name and existence) in the `module.xml` file, located in the Magento install directory at `<ComponentName>/etc/`.
 
 The smallest working module.xml file would look something like this:
 
@@ -43,10 +43,15 @@ The smallest working module.xml file would look something like this:
 
 ...where `name`  is the name of your component, and `setup_version` is your module's database schema version. Both of these attributes are required.
 
+<div class="bs-callout bs-callout-warning">
+<span class="glyphicon-class">
+  <p>Do not use "Ui" for your custom module name because the <code>%Vendor%_Ui</code> notation, required when specifying paths, might cause issues.</p></span>
+</div>
+
 ##Add the components `composer.json` file {#add-composer-json}
 `composer.json` provides a component name and also specifies component dependencies.
 
-In addition, the [Component Manager]({{ site.gdeurl }}comp-mgr/compman-start.html) looks for a `composer.json` in a component's root directory and can perform actions on the component and its dependencies. 
+In addition, the [Component Manager]({{ site.gdeurl }}comp-mgr/compman-start.html) looks for a `composer.json` in a component's root directory and can perform actions on the component and its dependencies.
 
 In particular:
 
