@@ -408,4 +408,7 @@ Messages similar to the following display to indicate a successful installation:
 </div>
 
 #### Next step
-[Set file system permissions after installing](#instgde-install-cli-magento-perms)
+*	If you have one user account to access the Magento server, see [Optionally set a umask]({{ site.gdeurl }}install-gde/install/post-install-umask.html).
+
+	This type of setup is typical for shared hosting.
+*	[Verify the installation]({{ site.gdeurl }}install-gde/install/verify.html).
