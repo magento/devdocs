@@ -12,13 +12,14 @@ github_link: config-guide/multi-master/multi-master_manual.md
 <img src="{{ site.baseurl }}common/images/ee-only_large.png">
 
 #### Contents
-*	[Overview of manual split database configuration](#config-ee-multidb-manual-over)
+*   [Overview of manual split database configuration](#config-ee-multidb-manual-over)
 *   [Back up the Magento system](#config-ee-multidb-backup)
-*	[Set up additional master databases](#config-ee-multidb-master-masters)
-*	[Configure the sales database](#config-ee-multidb-oms)
-*	[Configure the quote database](#config-ee-multidb-checkout)
+*   [Set up additional master databases](#config-ee-multidb-master-masters)
+*   [Configure the sales database](#config-ee-multidb-oms)
+*   [Configure the quote database](#config-ee-multidb-checkout)
 *   [Drop sales and quote tables from the Magento database](#config-ee-multidb-drop)
 *   [Update your deployment configuration](#config-ee-multidb-config)
+*   [Reference scripts](#split-db-ref)
 
 ## Overview of manual split database configuration {#config-ee-multidb-manual-over}
 If the Magento application is already in production or if you've already installed custom code or components, you might need to configure split databases manually. 
@@ -27,11 +28,12 @@ Before continuing, contact Magento Support to see if this is necessary in your c
 
 Manually splitting databases involves:
 
-*	Create the checkout and order management system (OMS) databases
-*	Run a series of SQL scripts that:
+*   Create the checkout and order management system (OMS) databases
+*   Run a series of SQL scripts that:
 
-	*	Drop foreign keys
-	*	Move tables from your main Magento database to the sales and quote databases
+    *   Drop foreign keys
+    *   Back up sales and quote databases
+    *   Move tables from your main Magento database to the sales and quote databases
 
 <div class="bs-callout bs-callout-warning">
     <p>If any custom code uses JOINs, you <em>cannot</em> use split databases. If in doubt, contact the authors of any custom code or extensions to make sure their code does not use JOINs.</p>
@@ -39,11 +41,11 @@ Manually splitting databases involves:
 
 This topic uses the following naming conventions:
 
-*	The main Magento database name is `magento` and its user name and password are both `magento`
-*	The sales database name is `magento_quote` and its user name and password are both `magento_quote`
+*   The main Magento database name is `magento` and its user name and password are both `magento`
+*   The sales database name is `magento_quote` and its user name and password are both `magento_quote`
 
     The sales database is also referred to as the *checkout* database.
-*	The quote database name is `magento_sales` and its user name and password are both `magento_sales`
+*   The quote database name is `magento_sales` and its user name and password are both `magento_sales`
 
     The quote database is also referred to as the order management system (*OMS*) database.
 
@@ -59,11 +61,11 @@ We strongly recommend you back up your current database and file system so you c
 
 To back up your system:
 
-1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{ site.gdeurl }}install-gde/prereq/apache-user.html).
-2.	Enter the following commands:
+1.  Log in to your Magento server as, or switch to, the [Magento file system owner]({{ site.gdeurl }}install-gde/prereq/apache-user.html).
+2.  Enter the following commands:
 
-		magento setup:backup --code --media --db
-3.	Continue with the next section.
+        magento setup:backup --code --media --db
+3.  Continue with the next section.
 {% endcollapsible %}
 
 ## Set up additional master databases {#config-ee-multidb-master-masters}
@@ -107,15 +109,26 @@ Create sales and OMS quote databases as follows:
 ## Configure the sales database {#config-ee-multidb-oms}
 This section discusses how to create and run SQL scripts that alter quote database tables and back up data from those tables.
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>This section contains scripts with specific database table names. If you've performed customizations or if you want to see a complete list of tables before you perform actions on them, see <a href="#split-db-ref">Reference scripts</a>.</p>
+</div>
+
 For more information, see:
 
-*	[Create sales database SQL scripts](#config-ee-multidb-sql-oms)
+*   [Create sales database SQL scripts](#config-ee-multidb-sql-oms)
 *   [Back up sales data](#sales-backup)
 
 ### Create sales database SQL scripts {#config-ee-multidb-sql-oms}
 
 {% collapsible Click to create and run sales database SQL scripts %}
 Create the following SQL scripts in a location that is accessible by the user as whom you log in to your Magento server. For example, if you log in or run commands as `root`, you can create the scripts in the `/root/sql-scripts` directory.
+
+Sales database table names start with:
+
+*   `salesrule_`
+*   `sales_`
+*   `magento_sales_`
+*   The `magento_customercustomattributes_sales_flat_order` is also affected
 
 #### Remove foreign keys
 This script is the first of two that remove foreign keys that refer to non-sales tables from the sales database. 
@@ -254,6 +267,12 @@ where
 
 ## Configure the quote database {#config-ee-multidb-checkout}
 This section discusses tasks required to drop foreign keys from sales database tables and move tables to the sales database.
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>This section contains scripts with specific database table names. If you've performed customizations or if you want to see a complete list of tables before you perform actions on them, see <a href="#split-db-ref">Reference scripts</a>.</p>
+</div>
+
+Quote database table names start with `quote`. The `magento_customercustomattributes_sales_flat_quote` and `magento_customercustomattributes_sales_flat_quote_address` tables are also affected
 
 ### Drop foreign keys from quote tables
 This script removes foreign keys that refer to non-quote tables from quote tables. Replace <your main magento DB name> with the name of your Magento database.
@@ -469,6 +488,131 @@ Locate the block starting with `'resource'` and add `'checkout'` and `'sales'` s
       'connection' => 'sales',
     ),
 {% endhighlight %}
+{% endcollapsible %}
+
+## Reference scripts {#split-db-ref}
+This section provides scripts you can run that print a complete list of affected tables without performing any actions on them. You can use them to see what tables are affected before you manually split databases, which can be useful if you use extensions that customize the Magento database schema.
+
+{% collapsible Click to view reference SQL scripts %}
+
+To use these scripts:
+
+1.  Create a `.sql` script with the contents of each script in this section.
+2.  Run each script from the `mysql>` prompt as `source <script name>`
+3.  Examine the output.
+4.  Copy the result of each script to another `.sql` script, removing the pipe characters (`|`).
+5.  Run each script from the `mysql>` prompt as `source <script name>`.
+
+    Running the script performs the actions in your main Magento database.
+
+### Remove foreign keys (sales tables)
+This script is the first of two that remove foreign keys that refer to non-sales tables from the sales database. 
+
+Create the following script and give it a name like `1_foreign1.sql`. Replace `<your main magento DB name>` with the name of your Magento database. In this topic, the sample database name is `magento`.
+
+{% highlight sql %}
+@magento_database='<your main magento DB name>'
+select concat(
+    'ALTER TABLE ',
+    replace(for_name, '@magento_database/', ''),
+    ' DROP FOREIGN KEY ',
+    replace(id, '@magento_database/', ''),
+    ';'
+    )
+from information_schema.INNODB_SYS_FOREIGN
+where for_name like  '@magento_database/|sales_%' escape '|'
+    and ref_name not like  '@magento_database/|sales_%' escape '|'
+union all
+select concat(
+    'ALTER TABLE ',
+    replace(for_name, '@magento_database/', ''),
+    ' DROP FOREIGN KEY ',
+    replace(id, '@magento_database/', ''),
+    ';'
+    )
+from information_schema.INNODB_SYS_FOREIGN
+where for_name like  '@magento_database/|magento_sales|_%' escape '|'
+    and ref_name not like  '@magento_database/|sales|_%' escape '|'
+;
+{% endhighlight %}
+
+### Remove foreign keys (quote tables)
+This script is the second of two that remove foreign keys that refer to non-quote tables from quote tables. Replace `<your main magento DB name>` with the name of your Magento database.
+
+Create the following script and give it a name like `2_foreign-key2.sql`:
+
+{% highlight sql %}
+SET @magento_database='magento_ee';
+select concat(
+    'ALTER TABLE ',
+    replace(for_name, '@magento_database/', ''),
+    ' DROP FOREIGN KEY ',
+    replace(id, '@magento_database/', ''),
+    ';'
+    )
+from information_schema.INNODB_SYS_FOREIGN
+where for_name like '@magento_database/%'
+    and ref_name like '@magento_database/sales\_%'
+union all
+select concat(
+    'ALTER TABLE ',
+    replace(for_name, '@magento_database/', ''),
+    ' DROP FOREIGN KEY ',
+    replace(id, '@magento_database/', ''),
+    ';'
+    )
+from information_schema.INNODB_SYS_FOREIGN
+where for_name like '@magento_database/%'
+    and ref_name like '@magento_database/magento_sales\_%'
+union all
+select concat(
+    'ALTER TABLE ',
+    replace(for_name, '@magento_database/', ''),
+    ' DROP FOREIGN KEY ',
+    replace(id, '@magento_database/', ''),
+    ';'
+    )
+from information_schema.INNODB_SYS_FOREIGN
+where for_name like '@magento_database>/%'
+    and ref_name like '@magento_database/magento_customercustomattributes\_%'
+;
+{% endhighlight %}
+
+### Drop sales tables
+
+{% highlight SQL %}
+SET @magento_database='<your main Magento DB name>';
+select ' SET foreign_key_checks = 0;' as querytext
+union all
+select
+    concat('DROP TABLE IF EXISTS ' , table_name, ';')
+from information_schema.tables
+where table_schema = '@magento_database'
+and table_name like 'sales/_%' escape '/'
+union all
+select
+    concat('DROP TABLE IF EXISTS ' , table_name, ';')
+from information_schema.tables
+where table_schema = '@magento_database'
+and table_name like 'magento_sales/_%' escape '/'
+union all
+select
+    concat('DROP TABLE IF EXISTS ' , table_name, ';')
+from information_schema.tables
+where table_schema = '@magento_database'
+and table_name like 'magento_customercustomattributes_sales_flat_order%' escape '/'
+union all
+select
+    concat('DROP TABLE IF EXISTS ' , table_name, ';')
+from information_schema.tables
+where table_schema = '@magento_database'
+and table_name like 'sequence/_%' escape '/'
+union all
+select 'SET foreign_key_checks = 1;';
+{% endhighlight %}
+
+### Drop quote tables
+Drop all tables that start with `quote_`.
 {% endcollapsible %}
 
 #### Next step
