@@ -62,17 +62,17 @@ New users can now complete a full installation of Magento Enterprise Edition 2.0
 This section discusses how to upgrade to Magento EE 2.0.7.
 
 
-**Upgrade using the Setup Wizard**
+#####<b>Upgrade using the Setup Wizard</b>#####
 Use the instructions in [Start System Upgrade]({{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html). When prompted to choose a version, choose 2.0.7.
 
-**Upgrade an existing installation from the GitHub repository**
+#####<b>Upgrade an existing installation from the GitHub repository</b>#####
 Developers who contribute to the CE codebase can <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento EE GitHub repository.
 
 1.	Go to the <a href="{{ site.gdeurl }}install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.
 
 2.	Follow the instructions to pull the updates from the repository and update using Composer.
 
-**Upgrade using the command line**
+#####<b>Upgrade using the command line</b>#####
 To upgrade to Magento EE 2.0.7 using the command line:
 
 1.	Log in to your Magento server as, or switch to, the Magento file system owner.
