@@ -31,6 +31,8 @@ Register modules with:
 
 where &lt;VendorName> is the name of the company providing the module and &lt;ModuleName> is the name of the module.
 
+Do not use "Ui" for your custom module name because the <code>%Vendor%_Ui</code> notation, required when specifying paths, might cause issues.
+
 ###Example
     use \Magento\Framework\Component\ComponentRegistrar;
     ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Magento_AdminNotification', __DIR__);
