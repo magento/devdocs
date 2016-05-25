@@ -100,7 +100,7 @@ To upgrade to Magento EE 2.0.7 using the command line:
 		php bin/magento setup:upgrade
 5.	Enter the following command to enable the cache:
 
-		magento cache:enable
+		php bin/magento cache:enable
 
 
 <h3>Migration toolkits</h3>
