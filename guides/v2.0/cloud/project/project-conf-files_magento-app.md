@@ -362,7 +362,7 @@ hooks:
         php ./vendor/magento/magento-cloud-configuration/magento-build.php
     # We run deploy hook after your application has been deployed and started.
     deploy: |
-        php ./vendormagento/magento-cloud/magento-cloud-configuration/magento-deploy.php
+        php ./vendor/magento/magento-cloud/magento-cloud-configuration/magento-deploy.php
 {% endhighlight %}
 
 ## `crons` {#cloud-yaml-platform-cron}
