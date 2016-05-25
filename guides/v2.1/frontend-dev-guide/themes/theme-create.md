@@ -6,11 +6,12 @@ title: Create a theme
 menu_title: Create a theme
 menu_order: 2
 github_link: frontend-dev-guide/themes/theme-create.md
+redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-create.html
 ---
 
 <h2 id="layout_theme_how-to_overview">What's in this topic</h2>
 
-This topic discusses how to create the files that make up a theme, how to add a logo to a theme, and how to size images. 
+This topic discusses how to create the files that make up a theme, how to add a logo to a theme, and how to size images.
 
 
 * TOC
@@ -20,7 +21,7 @@ This topic discusses how to create the files that make up a theme, how to add a 
 <p>A new theme you create is not applied for your store automatically. You need to apply it manually in the Admin panel. This procedure in described in the <a href="{{site.gdeurl21}}frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a> topic.</p>
 </div>
 
-## Prerequisites 
+## Prerequisites
 
 1. For the sake of compatibility, upgradability, and easy maintenance, do not modify the out of the box Magento themes. To customize the design of your Magento store, create a new custom theme.
 2. [Set]({{site.gdeurl21}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{site.gdeurl21}}config-guide/bootstrap/magento-modes.html). The application mode influences the way static files are cached by Magento. The recommendations about theme development we provide in this chapter are developer/default-mode specific.
@@ -31,7 +32,7 @@ To create the directory for your theme:
 
 1.	Go to `<your Magento install dir>/app/design/frontend`.
 
-3.	Create a new directory named according to your vendor name: `/app/design/frontend/<Vendor>`. 
+3.	Create a new directory named according to your vendor name: `/app/design/frontend/<Vendor>`.
 
 4.	Under the vendor directory, create a directory named according to your theme.
 
@@ -98,7 +99,7 @@ Example of a theme `composer.json`:
 }
 {% endhighlight %}
 
-You can find details about the Composer integration in the Magento system in <a href="{{site.gdeurl21}}extension-dev-guide/composer-integration.html">Composer integration</a>.
+You can find details about the Composer integration in the Magento system in <a href="{{site.gdeurl21}}extension-dev-guide/build/composer-integration.html">Composer integration</a>.
 
 ## Add registration.php {#fedg_create_theme_reg}
 
@@ -171,7 +172,7 @@ It is likely that your theme will also contain module-specific files, which are 
 <span class="glyphicon-class">
 <p>
 
-During theme development, when you change any files stored here, you need to clear <code>pub/static</code> and <code>var/view_preprocessed</code> directories, and then reload the pages. Otherwise the old versions of files are displayed on the storefront. 
+During theme development, when you change any files stored here, you need to clear <code>pub/static</code> and <code>var/view_preprocessed</code> directories, and then reload the pages. Otherwise the old versions of files are displayed on the storefront.
 
 </p></span>
 </div>
@@ -189,6 +190,7 @@ app/design/frontend/&lt;Vendor&gt;/
 │&nbsp;&nbsp;&nbsp;├──&nbsp;web/
 │&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──&nbsp;images
 │&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──&nbsp;logo.svg
+│&nbsp;&nbsp;&nbsp;├──&nbsp;registration.php
 │&nbsp;&nbsp;&nbsp;├──&nbsp;theme.xml
 │&nbsp;&nbsp;&nbsp;├──&nbsp;composer.json
 </pre>
@@ -199,7 +201,7 @@ app/design/frontend/&lt;Vendor&gt;/
 
 In the Magento application, the default format and name of a logo image is `logo.svg`. When you put a `logo.svg` image in the conventional location, which is `<theme_dir>/web/images` directory, it is automatically recognized as theme logo. It is displayed in your store page header once the theme is <a href="{{site.gdeurl21}}frontend-dev-guide/themes/theme-apply.html" target="_blank">applied</a>.
 
-In your custom theme, you can use a logo file with a different name and format, but you might need to declare it. 
+In your custom theme, you can use a logo file with a different name and format, but you might need to declare it.
 
 The necessity of declaration depends on whether your theme has a <a href="{{site.gdeurl21}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">parent</a> theme and its logo image. The following cases are possible:
 <ul>
@@ -207,7 +209,7 @@ The necessity of declaration depends on whether your theme has a <a href="{{site
 Your theme does not have a parent theme:
 <ul>
 <li> if your logo image name and format is default, <code>logo.svg</code>, there is no need to declare it; </li>
-<li>if you logo image name or format is not default, you need to <a href="#logo_declare">declare it in layout</a>.</li>
+<li>if your logo image name or format is not default, you need to <a href="#logo_declare">declare it in layout</a>.</li>
 </ul>
 </li>
 <li>Your theme has a parent theme:
@@ -220,7 +222,7 @@ Your theme does not have a parent theme:
 
 ## Declaring theme logo {#logo_declare}
 
-To declare a theme logo, add an <a href="{{site.gdeurl21}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> `<theme_dir>/Magento_Theme/layout/default.xml` layout. 
+To declare a theme logo, add an <a href="{{site.gdeurl21}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> `<theme_dir>/Magento_Theme/layout/default.xml` layout.
 
 For example, if your logo file is `my_logo.png` sized 300x300px, you need to declare it as follows:  
 
@@ -230,7 +232,7 @@ For example, if your logo file is `my_logo.png` sized 300x300px, you need to dec
         <referenceBlock name="logo">
             <arguments>
                 <argument name="logo_file" xsi:type="string">images/my_logo.png</argument>
-                <argument name="logo_img_width" xsi:type="number">300</argument> 
+                <argument name="logo_img_width" xsi:type="number">300</argument>
                 <argument name="logo_img_height" xsi:type="number">300</argument>
             </arguments>
         </referenceBlock>
@@ -246,17 +248,12 @@ To learn more about theme layouts, refer to the <a href="{{site.gdeurl21}}fronte
 ## What's next {#next}
 See the [Apply and configure a theme in Admin]({{site.gdeurl21}}frontend-dev-guide/themes/theme-apply.html) topic.
 
-<!--
+## Uninstall a theme
 
-Related topics:
+If your theme is a composer package, you can uninstall it using the [theme uninstall CLI command]({{site.gdeurl21}}install-gde/install/cli/install-cli-theme-uninstall.html).
 
-* <a href="{{site.gdeurl21}}frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a>
+If your theme is not a Composer package, you must uninstall it manually by doing the following:
 
-*	<a href="{{ site.gdeurl21 }}frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a>
-*	<a href="{{ site.gdeurl21 }}frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>
-*	<a href="{{ site.gdeurl21 }}frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a>
-*	<a href="{{ site.gdeurl21 }}frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>
-*	<a href="{{ site.gdeurl21 }}frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a>
-*	<a href="{{ site.gdeurl21 }}frontend-dev-guide/layouts/layout-override.html">Override a layout</a>
+* Update the parent node information in child's `theme.xml` to remove references to the theme.
 
--->
+* Remove theme code from the file system.

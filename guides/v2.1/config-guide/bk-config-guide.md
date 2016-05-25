@@ -31,6 +31,7 @@ You can configure the Magento application in any of the following ways:
 
 *	<img src="{{ site.baseurl }}common/images/ee-only_small.png">
 
+	*	<a href="{{ site.gdeurl21 }}config-guide/elasticsearch/es-overview.html">Install and configure Elasticsearch</a>
 	*	<a href="{{ site.gdeurl21 }}config-guide/solr/solr-overview.html">Install and configure Solr</a>
 	*	<a href="{{ site.gdeurl21 }}config-guide/multi-master/multi-master.html">Split databases</a>
 	*	<a href="{{ site.gdeurl21 }}config-guide/mq/rabbitmq-overview.html">Message queues</a>

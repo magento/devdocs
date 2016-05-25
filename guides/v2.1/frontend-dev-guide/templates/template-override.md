@@ -6,10 +6,11 @@ title: Templates basic concepts
 menu_title: Templates basic concepts
 menu_order: 3
 github_link: frontend-dev-guide/templates/template-override.md
+redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-override.html
 ---
 
 <h2>What's in this topic</h2>
-This topic discusses the main concepts of how default templates work in the Magento application. 
+This topic discusses the main concepts of how default templates work in the Magento application.
 The following topics are covered:
 
 * <a href="#template-layout">How templates are initiated</a>
@@ -22,8 +23,8 @@ The following topics are covered:
 <h2 id="template-layout">How templates are initiated</h2>
 
 Templates are usually initiated in layout files.
-Each layout block has an associated template. 
-The template is specified in the `template` attribute of the <block> layout instruction. 
+Each layout block has an associated template.
+The template is specified in the `template` attribute of the <block> layout instruction.
 For example, from <code><a href="{{site.mage2100url}}app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml" target="_blank">&lt;Magento_Catalog_module_dir&gt;/view/frontend/layout/catalog_category_view.xml</a></code>:
 
 <pre>
@@ -47,7 +48,7 @@ Here <code>&lt;path_to_templates&gt;</code> might have several levels of directo
 * `<Magento_Checkout_module_dir>/view/frontend/templates/cart.phtml`
 
 <h2 id="override">Templates overriding</h2>
-For template files with the same name, the following is true: 
+For template files with the same name, the following is true:
 theme templates override module templates, and those of a <a href="{{site.gdeurl21}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">child theme</a> override parent theme templates.
 
 This mechanism is the basis of the template customization concept in Magento application: to change the output defined by a certain default template, you need to overriding one in your custom theme.
@@ -57,11 +58,9 @@ Overriding templates is described with more details in the <a href="{{site.gdeur
 
 <h2 id="root">Root template</h2>
 
-In Magento there's a special template which serves as root template for all pages in the application: <code><a href="{{site.mage2100url}}&lt;Magento_Theme_module_dir&gt/view/base/templates/root.phtml" target="_blank">app/code/Magento/Theme/view/base/templates/root.phtml</a></code>
+In Magento there's a special template which serves as root template for all storefront pages in the application: `<Magento_Theme_module_dir>/view/base/templates/root.phtml`.
 
-Unlike other templates, `root.phtml` contains the `doctype` specification and contributes to <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> sections of all pages rendered by Magento application. 
-
-But similar to other templates, `root.phtml` can be overridden in a theme. 
+Unlike other templates, `root.phtml` contains the `doctype` specification and contributes to `<head>` and `<body>` sections of all pages rendered by Magento application. But similar to other templates, `root.phtml` can be overridden in a theme.
 
 
 
