@@ -25,7 +25,7 @@ Composer is required for developers who wish to contribute to the Magento 2 code
 
 ### Database
 
-MySQL 5.6 or 5.7 (Oracle or Percona)
+MySQL 5.6 (Oracle or Percona)
 	
 ### PHP 
 
