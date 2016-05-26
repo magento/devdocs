@@ -18,7 +18,7 @@ github_link: cloud/project/project-conf-files_routes.md
 *	[Route options](#cloud-yaml-routes-opts)
 *	[Simple routes](#cloud-yaml-routes-sample-simple) 
 *	[Wildcard routes](#cloud-yaml-routes-sample-wild) 
-*	[Redirects](#cloud-yaml-routes-sample-wild) 
+*	[Redirects](#cloud-yaml-routes-sample-redirects) 
 *	[List routes](#cloud-yaml-routes-setup) 
 
 ## `routes.yaml` overview {#cloud-yaml-routes-over}
@@ -150,7 +150,7 @@ you will see a route such as `https://*---add-theme-vmwklxcpbi6zq.na.magentosite
 
 [More information about caching]({{ site.gdeurl }}cloud/project/project-routes-more-cache.html).
 
-## Redirects {#cloud-yaml-routes-sample-wild}
+## Redirects {#cloud-yaml-routes-sample-redirects}
 As discussed in more detail in [redirects]({{ site.gdeurl }}cloud/project/project-routes-more-redir.html), you can set up complex redirection rules including *partial redirects* like the following:
 
 	http://www.{default}/:
