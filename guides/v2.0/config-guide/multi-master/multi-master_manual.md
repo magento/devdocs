@@ -35,18 +35,18 @@ Manually splitting databases involves:
     *   Move tables from your main Magento database to the sales and quote databases
 
 <div class="bs-callout bs-callout-warning">
-    <p>If any custom code uses JOINs, you <em>cannot</em> use split databases. If in doubt, contact the authors of any custom code or extensions to make sure their code does not use JOINs.</p>
+    <p>If any custom code uses JOINs with tables in the sales and quote databases, you <em>cannot</em> use split databases. If in doubt, contact the authors of any custom code or extensions to make sure their code does not use JOINs.</p>
 </div>
 
 This topic uses the following naming conventions:
 
 *   The main Magento database name is `magento` and its user name and password are both `magento`
-*   The sales database name is `magento_quote` and its user name and password are both `magento_quote`
+*   The quote database name is `magento_quote` and its user name and password are both `magento_quote`
 
-    The sales database is also referred to as the *checkout* database.
-*   The quote database name is `magento_sales` and its user name and password are both `magento_sales`
+    The quote database is also referred to as the *checkout* database.
+*   The sales database name is `magento_sales` and its user name and password are both `magento_sales`
 
-    The quote database is also referred to as the order management system (*OMS*) database.
+    The sales database is also referred to as the order management system (*OMS*) database.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">

@@ -49,8 +49,8 @@ Magento EE uses three master databases and a configurable number of slave databa
 Because of the way the split database performance solution is designed, your custom code and installed components *cannot* do any of the following:
 
 *	Write directly to the database (instead, you must use the Magento EE database interface)
-*	Use JOINs
-*	Use foreign keys to tables in the checkout, OMS, or main databases
+*	Use JOINs that affect the sales or quote databases
+*	Use foreign keys to tables in the checkout, sales, or main databases
 
 <div class="bs-callout bs-callout-warning">
     <p>Contact component developers to verify whether or not their components do any of the preceding. If so, you must choose only one of the following:</p>
@@ -76,7 +76,7 @@ This also means you can either:
 The split database requires you to set up three MySQL master databases on any host (all three on the Magento server, each database on a separate server, and so on). These are the *master* databases and they're used as follows:
 
 *	One master database for checkout tables
-*	One master database for order management system (OMS) tables
+*	One master database for sales tables (also referred to as *Order Management System*, or *OMS*, tales)
 *	One master database for the remainder of the Magento 2 application tables
 
 In addition, you can optionally set up any number of *slave* databases that serve as load balancers and backups.
