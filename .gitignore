@@ -30,8 +30,11 @@ ignore
 !_config.devdocs.yml
 /gen_public.bat
 /jk.bat
+/vagrant/.vagrant
+vendor
 *.bat
 *.sh
+!vagrant/bootstrap.sh
 Rakefile
 Gemfile
 Gemfile.lock
