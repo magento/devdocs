@@ -52,9 +52,9 @@ The [SSH protocol ](https://en.wikipedia.org/wiki/Secure_Shell){:target="_blank"
 You must create an SSH keypair on every machine with which you and your team expect to interact with Magento Enterprise Cloud Edition.
 
 ### Locate an existing SSH keypair
-An existing SSH keypair is typically located in the `.ssh` subdirectory of the user's home directory. For example, if you log in as `magento_user`, your SSH keys are typically located in:
+An existing SSH keypair is typically located in the `.ssh` subdirectory of the user's home directory. To see if you already have keys, enter the following command:
 
-    /home/magento_user/.ssh
+	ls ~/.ssh
 
 If you don't have SSH keys, continue with the next section.
 
