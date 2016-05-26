@@ -136,6 +136,11 @@ To install MySQL 5.6 on Ubuntu 12, use the following instructions from <a href="
 ## Installing and configuring MySQL 5.7 on CentOS {#instgde-prereq-mysql57-centos}
 This section discusses how to to install MySQL 5.7 on CentOS 6 or CentOS 7.
 
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Magento does not support MySQL 5.7 at this time. These instructions are provided for your convenience if you'd like to test MySQL 5.7.</p></span>
+</div>
+
 ### Get MySQL 5.7 for CentOS 7
 The following procedure is based on [How to Install Latest MySQL 5.7.9 on RHEL/CentOS 7/6/5 and Fedora 23/22/21](http://www.tecmint.com/install-latest-mysql-on-rhel-centos-and-fedora){:target="_blank"}.
 
