@@ -51,6 +51,14 @@ $(document).ready(function(){
 
 });
 
+//Allows for sticky menu
+$(document).scroll(function(){
+	if($(document).scrollTop()>66)
+		$("#subnav-wrap").addClass("sticky-nav-main");
+	else
+		$("#subnav-wrap").removeClass("sticky-nav-main");
+})
+
 //Function to get URL parameter values
 function getURLParameter(sParam) {
 		var sPageURL = window.location.search.substring(1);

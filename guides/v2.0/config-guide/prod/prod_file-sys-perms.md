@@ -71,16 +71,19 @@ To remove writable permissions to files and directories from the web server user
 
 1.	Log in to your Magento server.
 2.	Change to your Magento installation directory.
+3.	Enter the following command to change to production mode:
+
+		php bin/magento deploy:mode:set production
 3.	Enter the following commands:
 
-		find var vendor lib pub/static pub/media app/etc -type f -exec chmod g-w {} \;
-		find var vendor lib pub/static pub/media app/etc -type d -exec chmod g-w {} \;
+		find var vendor lib pub/static app/etc var/generation var/di var/view_preprocessed -type f -exec chmod g-w {} \;
+		find var vendor lib pub/static app/etc var/generation var/di var/view_preprocessed -type d -exec chmod g-w {} \;
 		chmod o-rwx app/etc/env.php
 		chmod u+x bin/magento
 
 	You can optionally enter all the preceding commands as one command:
 
-		find var vendor lib pub/static pub/media app/etc -type f -exec chmod g-w {} \; && find var vendor lib pub/static pub/media app/etc -type d -exec chmod g-w {} \; && chmod o-rwx app/etc/env.php && chmod u+x bin/magento
+		find pub/static app/etc var/generation var/di var/view_preprocessed -type f -exec chmod g-w {} \; && find pub/static app/etc var/generation var/di var/view_preprocessed -type d -exec chmod g-w {} \; && chmod o-rwx app/etc/env.php && chmod u+x bin/magento
 
 	<div class="bs-callout bs-callout-info" id="info">
   		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
@@ -115,80 +118,12 @@ If you use your own server (including a hosting provider's private server setup)
 		<p>The command-line user is also referred to as the <em>Magento file system owner</em>.</p>
 	</div>
 
-Because these users require access to the same files, we recommend you create a group to which they both belong.
+Because these users require access to the same files, we recommend you create a [shared group]({{ site.gdeurl }}install-gde/prereq/file-system-perms.html#mage-owner-about-group) to which they both belong.
 
-Complete the following tasks in the order shown:
+See one of the following sections:
 
-*	[About the shared group](#mage-owner-about-group)
-*	[Step 1: Create the command-line user and give the user a strong password](#mage-owner-create-user)
-*	[Step 2: Find the web server group](#install-update-depend-user-findgroup)
-*	[Step 3: Assign users to the group](#install-update-depend-user-assign)
 *	[Two Magento file system owners in developer or default mode](#mage-owner-two-devel)
 *	[Two Magento file system owners in production mode](#mage-owner-two-prod)
-
-### About the shared group {#mage-owner-about-group}
-To enable the web server to write files and directories in the Magento file system but to also maintain *ownership* by the Magento file system owner. This is necessary so both users can share access to Magento files. (This includes files created using the Magento Admin or other web-based utilities.)
-
-This section discusses how to create a new Magento file system owner and put that user in the web server's group. You can use an existing user account if you wish; we recommend the user have a strong password for security reasons.
-
-### Step 1: Create the command-line user and give the user a strong password {#mage-owner-create-user}
-This section discusses how to create the Magento file system owner. (The command-line user is also referred to as the *Magento file system owner*.)
-
-To create a user on CentOS or Ubuntu, enter the following command as a user with `root` privileges:
-
-	adduser <username>
-
-To give the user a password, enter the following command as a user with `root` privileges:
-
-	passwd <username>
-
-Follow the prompts on your screen to create a password for the user.
-
-<div class="bs-callout bs-callout-warning">
-    <p>If you don't have <code>root</code> privileges on your Magento server, you can use another local user account. Make sure the user has a strong password and continue with <a href="#install-update-depend-user-group">Put the Magento file system owner in the web server group</a>.</p>
-</div>
-
-For example, to create a user named `magento_user` and give the user a password, enter:
-
-	sudo adduser magento_user
-	sudo passwd magento_user
-
-<div class="bs-callout bs-callout-warning">
-    <p>Because the point of creating this user is to provide added security, make sure you create a <a href="https://en.wikipedia.org/wiki/Password_strength" target="_blank">strong password</a>.</p>
-</div>
-
-### Step 2: Find the web server user's group {#install-update-depend-user-findgroup}
-To find the web server user's group:
-
-*	CentOS: `egrep -i '^user|^group' /etc/httpd/conf/httpd.conf`
-
-	Typically, the user and group name are both `apache`
-*	Ubuntu: `ps aux | grep apache` to find the apache user, then `groups <apache user>` to find the group
-
-	Typically, the user name and the group name are both `www-data`
-
-### Step 3: Put the Magento file system owner in the web server's group {#install-update-depend-user-add2group}
-To put the Magento file system owner in the web server's primary group (assuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with `root` privileges:
-
-*	CentOS: `usermod -g apache <username>`
-*	Ubuntu: `usermod -g www-data <username>`
-
-For example, to add the user `magento_user` to the `apache` primary group on CentOS:
-
-	usermod -g apache magento_user
-
-To confirm your Magento user is a member of the web server group, enter the following command:
-
-	groups <user name>
-
-A sample result follows:
-
-	magento_user : apache
-
-To complete the task, restart the web server:
-
-*	Ubuntu: `service apache2 restart`
-*	CentOS: `service httpd restart`
 
 ### Set up two owners for default or developer mode {#mage-owner-two-devel}
 Files in the following directories must be writable by both users in developer and default mode:
@@ -234,15 +169,18 @@ To remove writable permissions to files and directories from the web server user
 
 1.	Log in to your Magento server.
 2.	Change to your Magento installation directory.
-3.	Enter the following commands:
+3.	As the Magento file system owner, enter the following command to change to production mode:
 
-		find var vendor lib pub/static pub/media app/etc -type f -exec chmod g-w {} \;
-		find var vendor lib pub/static pub/media app/etc -type d -exec chmod g-w {} \;
+		php bin/magento deploy:mode:set production
+3.	Enter the following commands as a user with `root` privileges:
+
+		find pub/static app/etc var/generation var/di var/view_preprocessed -type f -exec chmod g-w {} \;
+		find pub/static app/etc var/generation var/di var/view_preprocessed -type d -exec chmod g-w {} \;
 		chmod o-rwx app/etc/env.php
 
 	You can optionally enter all the preceding commands as one command:
 
-		find var vendor lib pub/static pub/media app/etc -type f -exec chmod g-w {} \; && find var vendor lib pub/static pub/media app/etc -type d -exec chmod g-w {} \; && chmod o-rwx app/etc/env.php
+		find pub/static app/etc var/generation var/di var/view_preprocessed -type f -exec chmod g-w {} \; && find pub/static app/etc var/generation var/di var/view_preprocessed -type d -exec chmod g-w {} \; && chmod o-rwx app/etc/env.php
 
 	<div class="bs-callout bs-callout-info" id="info">
   		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>

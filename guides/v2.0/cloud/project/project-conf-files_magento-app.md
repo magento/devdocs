@@ -202,7 +202,7 @@ application in MB.
   <p>The minimal recommended disk size is 256MB. If you see the error <code>UserError: Error building the project: Disk size may not be smaller than 128MB</code>, increase the size to 256MB.</p>
 </div>
 
-## `mounts` {#cloud-yaml-platform-disk}
+## `mounts` {#cloud-yaml-platform-mounts}
 `mounts` is an object whose keys are paths relative to the root of
 the application. It's in the form `volume_id[/subpath]`.
 
@@ -362,7 +362,7 @@ hooks:
         php ./vendor/magento/magento-cloud-configuration/magento-build.php
     # We run deploy hook after your application has been deployed and started.
     deploy: |
-        php ./vendormagento/magento-cloud/magento-cloud-configuration/magento-deploy.php
+        php ./vendor/magento/magento-cloud/magento-cloud-configuration/magento-deploy.php
 {% endhighlight %}
 
 ## `crons` {#cloud-yaml-platform-cron}
