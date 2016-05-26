@@ -2,7 +2,7 @@
 layout: default
 group: mtf-guide
 subgroup: 50_Entities
-title: Entities of the Magento Testing Framework
+title: Entities of the Functional Testing Framework
 menu_title: Page
 menu_order: 6
 github_link: mtf/mtf_entities/mtf_page.md
@@ -390,7 +390,7 @@ To use the `editForm` block from the Magento_NewModule we must follow:
 
 Enter in terminal:
 
-    php <magento2>/dev/tests/functional/utils/generate/page.php
+    php <magento2>/dev/tests/functional/utils/generate.php
 
 Now when you call `editForm` block from the `CatalogCategoryEdit` page, the `\Magento\NewModule\Test\Block\Adminhtml\Category\Edit\CategoryForm` class will be used.
 

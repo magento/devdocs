@@ -2,7 +2,7 @@
 layout: default
 group: mtf-guide
 subgroup: 40_Approach
-title: Create a test in the Magento Testing Framework
+title: Create a test in the Functional Testing Framework
 menu_title: New functional test. Practice
 menu_order: 3
 github_link: mtf/create_test/new_test.md
@@ -71,7 +71,7 @@ Create a synonym group (synonyms are a way to expand the scope of eligible match
 
 ### Test creation {#test-creation}
 
-#### Step 1. Check the MTF configuration and environment {#check-mtf}
+#### Step 1. Check the FTF configuration and environment {#check-mtf}
  
 * Adjust configuration. Learn how to [adjust a configuration][].
 
@@ -755,7 +755,7 @@ Let's code it!
 
 **Log in to Admin and open the Search Synonym page**
 
-In the MTF, the process of logging in doesn't require a special method and is performed automatically when any page from the Admin is opened. A method, which we will use, is an `open()` method of the `Magento/Mtf/Page/BackendPage` class. There is no need to add this class in `use`, because it is inherited from the `Magento/Search/Test/Page/Adminhtml/SynonymsIndex` class.
+In the FTF, the process of logging in doesn't require a special method and is performed automatically when any page from the Admin is opened. A method, which we will use, is an `open()` method of the `Magento/Mtf/Page/BackendPage` class. There is no need to add this class in `use`, because it is inherited from the `Magento/Search/Test/Page/Adminhtml/SynonymsIndex` class.
 
 {% highlight php startinline=1  %}
 
@@ -1029,7 +1029,7 @@ This block must be added to `SynonymsIndex` class. To do this:
 
 3) Launch the generating tool to update the page class:
 
-        php <magento2>/dev/tests/functional/utils/generate.php
+    php <magento2>/dev/tests/functional/utils/generate.php
 
 And now we can add `<constraint>` to each variation of a data set `<magento2>/dev/tests/functional/tests/app/Magento/Search/Test/TestCase/CreateSynonymEntityTest.xml`:
 
@@ -1112,17 +1112,17 @@ That's it!
 [Step 7]: #add-blocks-to-pages
 
 [develop branch]: https://github.com/magento/magento2
-[`\Magento\Backend\Test\Block\GridPageActions`]: {{site.mage2100url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/GridPageActions.php
-[`\Magento\Backend\Test\Block\FormPageActions`]: {{site.mage2100url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/GridPageActions.php
+[`\Magento\Backend\Test\Block\GridPageActions`]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/GridPageActions.php
+[`\Magento\Backend\Test\Block\FormPageActions`]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/GridPageActions.php
 [`\Magento\Mtf\Block\Form`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php
-[`\Magento\Mtf\Client\Element\SelectstoreElement`]: {{site.mage2100url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/SelectstoreElement.php
-[`\Magento\Backend\Test\Block\FormPageActions`]: {{site.mage2100url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/FormPageActions.php
-[`\Magento\Customer\Test\Constraint\AssertCustomerSuccessSaveMessage`]: {{site.mage2100url}}dev/tests/functional/tests/app/Magento/Customer/Test/Constraint/AssertCustomerSuccessSaveMessage.php
+[`\Magento\Mtf\Client\Element\SelectstoreElement`]: {{site.mage2000url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/SelectstoreElement.php
+[`\Magento\Backend\Test\Block\FormPageActions`]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/FormPageActions.php
+[`\Magento\Customer\Test\Constraint\AssertCustomerSuccessSaveMessage`]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Customer/Test/Constraint/AssertCustomerSuccessSaveMessage.php
 [up and running]: {{site.gdeurl21}}mtf/mtf_quickstart/mtf_quickstart_environmemt.html#mtf_quickstart_env_selenium
 
 <!-- ABBREVIATIONS -->
 
-*[MTF]: Magento Testing Framework
+*[FTF]: Functional Testing Framework
 *[CRUD]: Create Read Update Delete
 *[IDE]: Integrated Development Environment
 *[CLI]: Command Line Interface
