@@ -2,7 +2,7 @@
 layout: default
 group: mtf-guide
 subgroup: 40_Approach
-title: Create a test in the Magento Testing Framework
+title: Create a test in the Functional Testing Framework
 menu_title: New functional test. Theory
 menu_order: 2
 github_link: mtf/create_test/new_test.md
@@ -10,7 +10,7 @@ github_link: mtf/create_test/new_test.md
 
 <h2>New functional test: Theory</h2>
 
-The MTF helps to create a new test, you can extend an out-of-the-box test, or create a completely new test.
+The FTF helps to create a new test, you can extend an out-of-the-box test, or create a completely new test.
 
 <h3>Contents</h3>
 

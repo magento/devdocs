@@ -2,13 +2,13 @@
 layout: default
 group: mtf-guide
 subgroup: 20_Installation
-title: Installation of the Magento Testing Framework Entities
+title: Installation of the Functional Testing Framework Entities
 menu_title: INSTALLATION
 menu_node: parent
 github_link: mtf/mtf_installation.md
 ---
 <h2>Preface</h2>
-Well, you are on the way to install the Magento Testing Framework!
+Well, you are on the way to install the Functional Testing Framework!
 
 Follow the next three steps:
 
@@ -33,17 +33,17 @@ For more details about PHP verification, installation and configuration (<a href
     <p>In <code>php.ini</code> file, make sure <code>extension=php_openssl.dll</code> is not commented out.</p>
 </div>
 
-#### Check if the Magento Testing Framework has been already installed {#mtf_install_pre_mtf-check}
+#### Check if the Functional Testing Framework has been already installed {#mtf_install_pre_mtf-check}
 
 1. Find directory `<magento2>/dev/tests/functional/`.
-1. Find the `vendor` directory. If the directory exists, you already have the Magento Testing Framework installed in `vendor/magento/mtf`.
+1. Find the `vendor` directory. If the directory exists, you already have the Functional Testing Framework installed in `vendor/magento/mtf`.
 
 ## Perform the installation {#mtf_install_perform}
 
-The Magento Testing Framework requires Composer, which downloads libraries defined in `<magento2>/dev/tests/functional/composer.json`.
+The Functional Testing Framework requires Composer, which downloads libraries defined in `<magento2>/dev/tests/functional/composer.json`.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>If you're not sure that Composer is installed, see <a href="{{ site.gdeurl21 }}install-gde/prereq/dev_install.html#instgde-prereq-compose-install">Install Composer</a>.</p>
+  <p>If you're not sure that Composer is installed, see <a href="{{ site.gdeurl21 }}install-gde/prereq/dev_install.html">Install Composer</a>.</p>
 </div>
 
 1.    <a href="{{ site.gdeurl21 }}install-gde/basics/basics_login.html">Open a command prompt</a>.
@@ -59,9 +59,10 @@ The Magento Testing Framework requires Composer, which downloads libraries defin
 And run from this directory <code>php composer.phar install</code>.</p>
 </div>
 
+
 ## Check the installation {#mtf_install_check}
 
-### Find the Magento Testing Framework directory {#mtf_install_check_dir}
+### Find the Functional Testing Framework directory {#mtf_install_check_dir}
 
 Check whether the `vendor` directory exists in `<magento2>/dev/tests/functional/`.
 
@@ -73,8 +74,8 @@ Find the `mtf` directory.
     cd vendor/magento
     ls
 
-### Verify the Magento Testing Framework version {#mtf_install_check_verify}
+### Verify the Functional Testing Framework version {#mtf_install_check_verify}
 
-Open `<magento2>/dev/tests/functional/vendor/magento/mtf/CHANGELOG.md`. The latest version in `CHANGELOG.md` is version of the MTF you installed.
+Open `<magento2>/dev/tests/functional/vendor/magento/mtf/CHANGELOG.md`. The latest version in `CHANGELOG.md` is version of the FTF you installed.
 
-<h2 id="mtf_install_next">Next Steps</h2> <a href="{{ site.gdeurl21 }}mtf/mtf_quickstart/mtf_quickstart_config.html">Adjust MTF configuration </a>
+<h2 id="mtf_install_next">Next Steps</h2> <a href="{{ site.gdeurl21 }}mtf/mtf_quickstart/mtf_quickstart_config.html">Adjust FTF configuration </a>
