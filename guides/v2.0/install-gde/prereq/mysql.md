@@ -144,7 +144,7 @@ As a user with `root` privileges, enter the following commands in the order show
 	wget http://dev.mysql.com/get/mysql57-community-release-el7-7.noarch.rpm
 	yum -y localinstall mysql57-community-release-el7-7.noarch.rpm
 
-Continue with TBD.
+Continue with [Install and configure MySQL 5.7 on CentOS 6 or 7](#mysql57-centos-config).
 
 ### Get MySQL 5.7 for CentOS 6
 The following procedure is based on [How to Install Latest MySQL 5.7.9 on RHEL/CentOS 7/6/5 and Fedora 23/22/21](http://www.tecmint.com/install-latest-mysql-on-rhel-centos-and-fedora){:target="_blank"}.
@@ -154,7 +154,9 @@ As a user with `root` privileges, enter the following commands in the order show
 	wget http://dev.mysql.com/get/mysql57-community-release-el6-7.noarch.rpm
 	yum -y localinstall mysql57-community-release-el6-7.noarch.rpm
 
-### Install and configure MySQL 5.7 on CentOS 6 or 7
+Continue with the next section.
+
+### Install and configure MySQL 5.7 on CentOS 6 or 7 {#mysql57-centos-config}
 1.	Enter the following commands in the order shown:
 
 		yum -y install mysql-community-server
