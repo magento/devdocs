@@ -21,10 +21,6 @@ You can run a single test independently, many tests together (that is, a test su
 
 FTF does not contain tests. All functional tests are located in `<magento2 root dir>/dev/tests/functional/`. 
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The FTF performs functional testing only. For information about other types of tests, see the <a href="{{ site.gdeurl }}howdoi/mtf/mtf.html">Magento Testing Guide</a>.</p>
-</div>
-
 <h3 id="mtf_intro_extratools">What tools should I use to run tests with FTF?</h3>
 
 -   [PHPUnit][] (downloaded via composer during installation)
@@ -33,8 +29,7 @@ FTF does not contain tests. All functional tests are located in `<magento2 root 
 
 -   Web browser
 
-<h3 id="mtf_intro_mtf-output">What do I have as output after running tests with FTF?
-</h3>
+<h3 id="mtf_intro_mtf-output">What do I have as output after running tests with FTF?</h3>
 
 -   Tested application
 
