@@ -14,26 +14,31 @@ The default Magento Checkout consists of two steps:
  - Shipping Information
  - Review and Paymetns Information
 
-You can add a custom checkout step, it should be implemented as a UI component. For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. 
+You can add a custom checkout step, it should be implemented as a UI component. For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module.
 
 This topic describes how to create the frontend part of the component, implementing a checkout step, and how to add it to the checkout flow.
+
+**Contents**
+
+* TOC
+{:toc}
 
 ## Create the view part of the checkout step component
 
 To create the view part of the new checkout step:
 
-1. Add a module directory (not covered in this topic). See [Build your module]({{site.gdeurl21}}extension-dev-guide/build.html) for details). All custom files must be stored there. For your checkout customization to be applied correctly, your custom module should depend on the Magento_Checkout module.
+1. Add a module directory (not covered in this topic). See [Build your module]({{site.gdeurl21}}extension-dev-guide/build.html) for details). All custom files must be stored there. For your checkout customization to be applied correctly, your custom module should depend on the `Magento_Checkout` module. Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues.
 1. Create the `.js` file implementing the view model.
 2. Create an `.html` template for the component.
 
-Each step is described in details in the folowing paragraphs. 
+Each step is described in details in the folowing paragraphs.
 
 ### Add the JavaScript file implementing the new step {#component}
 
-A new checkout step must be implemented as UI component. That is, its JavaScript implementation must be a JavaScript module. 
+A new checkout step must be implemented as UI component. That is, its JavaScript implementation must be a JavaScript module.
 
 The file must be stored under the `<your_module_dir>/view` directory.
- 
+
 A sample `view/my-step-view.js` with comments follows:
 
 {%highlight js%}
@@ -54,18 +59,18 @@ define(
         'use strict';
         /**
         *
-        * mystep - is the name of the component's .html template, 
+        * mystep - is the name of the component's .html template,
         * your_module_dir - is the name of the your module directory.
-        * 
+        *
         */
         return Component.extend({
             defaults: {
                 template: 'your_module_dir/mystep'
             },
- 
+
             //add here your logic to display step,
             isVisible: ko.observable(true),
- 
+
             /**
 			*
 			* @returns {*}
@@ -82,9 +87,9 @@ define(
                     'Step Title',
                     //observable property with logic when display step or hide step
                     this.isVisible,
-                     
+
                     _.bind(this.navigate, this),
- 
+
                     /**
 					* sort order value
 					* 'sort order value' < 10: step displays before shipping step;
@@ -93,19 +98,19 @@ define(
 					*/
                     15
                 );
- 
+
                 return this;
             },
- 
+
             /**
 			* The navigate() method is responsible for navigation between checkout step
 			* during checkout. You can add custom logic, for example some conditions
-			* for switching to your custom step 
+			* for switching to your custom step
 			*/
             navigate: function () {
- 
+
             },
- 
+
             /**
 			* @returns void
 			*/
@@ -121,7 +126,7 @@ define(
 
 ### Add the .html template
 
-In the module directory, add the `.html` template for the component. It must be located under the '<your_module_dir>/view/frontend/web/template` directory.
+In the module directory, add the `.html` template for the component. It must be located under the `<your_module_dir>/view/frontend/web/template` directory.
 
 A sample `mystep.html` follows:
 {%highlight html%}
@@ -132,7 +137,7 @@ A sample `mystep.html` follows:
     <div id="checkout-step-title"
          class="step-content"
          data-role="content">
- 
+
         <form data-bind="submit: navigateToNextStep" novalidate="novalidate">
             <div class="actions-toolbar">
                 <div class="primary">
@@ -148,7 +153,7 @@ A sample `mystep.html` follows:
 
 ## Add your step to the Checkout page layout
 
-For the new step to be displayed on the page, you need to declare it in the Checkout page layout, which is defined in `checkout_index_index.xml`. 
+For the new step to be displayed on the page, you need to declare it in the Checkout page layout, which is defined in `checkout_index_index.xml`.
 
 So you need to add an [extending]({{site.gdeurl21}}frontend-dev-guide/layouts/layout-extend.html) `checkout_index_index.xml` layout file in the following location: `<your_module_dir>/view/frontend/layout/checkout_index_index.xml`
 
@@ -187,4 +192,3 @@ A sample `checkout_index_index.xml` follows:
     </body>
 </page>
 {%endhighlight xml%}
-

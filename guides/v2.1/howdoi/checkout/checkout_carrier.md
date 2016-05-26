@@ -23,17 +23,17 @@ To add new shipping carrier validations to the Magento checkout, do the followin
 More details about each step follow.
 
 ## Create validation rules {#rules}
-Shipping carrier validation rules declare which fields of the shipping address are required for the corresponding shipping method to be available. The validation itself is performed by the [validator](#validator). 
- 
+Shipping carrier validation rules declare which fields of the shipping address are required for the corresponding shipping method to be available. The validation itself is performed by the [validator](#validator).
+
 During checkout, if the shipping address fields declared in the rules are filled, the further validation of fields' values (for example, whether a carrier is available for the specified country) is carried on the server side.
 
-For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should [depend]({{site.gdeurl21}}extension-dev-guide/composer-integration.html) on the Magento_Checkout module.
+For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should [depend]({{site.gdeurl21}}extension-dev-guide/build/composer-integration.html) on the `Magento_Checkout` module. Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues.
 
-In your `<your_module_dir>/view/frontend/web/js/model` directory, create a `.js` file implementing the validation rules. 
+In your `<your_module_dir>/view/frontend/web/js/model` directory, create a `.js` file implementing the validation rules.
 
 The script must implement the `getRules()` method.
 
-For example, the FedEx shipping method requires only two fields of the shipping address to be filled: **Country** and **Zip Code**. This is how the validation rules for FedEx look: 
+For example, the FedEx shipping method requires only two fields of the shipping address to be filled: **Country** and **Zip Code**. This is how the validation rules for FedEx look:
 
     <Magento_Fedex_dir>/view/frontend/web/js/model/shipping-rates-validation-rules.js
 {%highlight js%}
@@ -59,7 +59,7 @@ define(
 
 ## Create validator {#validator}
 
-Create the validator `.js` script that checks if the fields defined by the validation rules are filled. The script must be located in the `<your_module_dir>/view/frontend/web/js/model` directory. 
+Create the validator `.js` script that checks if the fields defined by the validation rules are filled. The script must be located in the `<your_module_dir>/view/frontend/web/js/model` directory.
 
 A sample validator script follows:
 
@@ -125,9 +125,9 @@ define(
 
 ## Add the validation to the checkout layout {#layout}
 
-The last step is specifying the script you created on the previous step in the checkout page layout. 
+The last step is specifying the script you created on the previous step in the checkout page layout.
 
-In your custom module directory, create a new `<your_module_dir>/view/frontend/layout/checkout_index_index.xml` file. 
+In your custom module directory, create a new `<your_module_dir>/view/frontend/layout/checkout_index_index.xml` file.
 In this file, add the following:
 {% highlight xml%}
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">

@@ -71,4 +71,3 @@ Custom widget created using jQuery UI Widget Factory and decorated as AMD module
 </td>
 </tr>
 </table>
-
