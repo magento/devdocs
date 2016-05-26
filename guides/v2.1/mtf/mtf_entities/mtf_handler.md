@@ -2,7 +2,7 @@
 layout: default
 group: mtf-guide
 subgroup: 50_Entities
-title: Entities of the Magento Testing Framework
+title: Entities of the Functional Testing Framework
 menu_title: Handler
 menu_order: 3
 github_link: mtf/mtf_entities/mtf_handler.md
@@ -21,7 +21,7 @@ This topic focuses on handlers, and we'll discuss types of handlers as well as h
 
 ## Types of handlers {#mtf_handler_types}
 
-The MTF enables you to use any type of handler.
+The FTF enables you to use any type of handler.
 
 Magento uses the following handlers:
 
@@ -39,7 +39,7 @@ One fixture can have various handlers. When we create an entity in the test we d
 
 ### `config.xml` {#mtf_handler_configxml}
 
-The default configuration for handlers is set in <a href="{{site.mage2100url}}dev/tests/functional/etc/config.xml.dist"><code>&lt;magento2&gt;/dev/tests/functional/etc/config.xml.dist</code></a>.  Create a duplicate of the file, and keep both, but make changes to the new one, which is called `config.xml`:
+The default configuration for handlers is set in <a href="{{site.mage2000url}}dev/tests/functional/etc/config.xml.dist"><code>&lt;magento2&gt;/dev/tests/functional/etc/config.xml.dist</code></a>.  Create a duplicate of the file, and keep both, but make changes to the new one, which is called `config.xml`:
 
     cp config.xml.dist config.xml
 

@@ -83,7 +83,7 @@ Magento is <b>compatible with but not supported</b> for:
 
 Magento also provides an automated testing suite that includes test scripts for integration, functional areas, and performance. Components include PHPUnit for the unit test framework and Selenium for the functional test framework. 
 
-This framework is included in `Magento/mtf`. For more information, see <a href="{{ site.gdeurl21 }}mtf/mtf_introduction.html">Magento Testing Framework guide</a>.
+This framework is included in `Magento/mtf`. For more information, see <a href="{{ site.gdeurl21 }}mtf/mtf_introduction.html">Functional Testing Framework guide</a>.
 
 <h2>Related topics</h2>
 

@@ -2,7 +2,7 @@
 layout: default
 group: mtf-guide
 subgroup: 50_Entities
-title: Entities of the Magento Testing Framework
+title: Entities of the Functional Testing Framework
 menu_title: Test case
 menu_order: 9
 github_link: mtf/mtf_entities/mtf_testcase.md
@@ -15,9 +15,9 @@ github_link: mtf/mtf_entities/mtf_testcase.md
 
 ## Test case overview {#mtf_testcase_overview}
 
-The Magento Magento Testing Framework supports two types of functional tests:
+The Magento Functional Testing Framework supports two types of functional tests:
 
-- Injectable test: the main type of the MTF test that uses XML [data set][] files as inputs
+- Injectable test: the main type of the FTF test that uses XML [data set][] files as inputs
 - [Scenario test][]: supports a Magento modularity and enables you to inject one step into another test
 
 This topic discusses the injectable test only. 
@@ -133,8 +133,8 @@ __Step 7.__ If you want to perform any actions after constraints, use a [tearDow
 [processAssert()]:{{site.gdeurl21}}mtf/mtf_entities/mtf_constraint.html#mtf_constraint_assert
 [constraints]: {{site.gdeurl21}}mtf/mtf_entities/mtf_constraint.html
 [fixture]: {{site.gdeurl21}}mtf/mtf_entities/mtf_fixture.html
-[Magento\Catalog\Test\TestCase\Product\UpdateSimpleProductEntityTest]: {{site.mage2100url}}dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product/UpdateSimpleProductEntityTest.php
+[Magento\Catalog\Test\TestCase\Product\UpdateSimpleProductEntityTest]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product/UpdateSimpleProductEntityTest.php
 
 <!-- ABBREVIATIONS -->
 
-*[MTF]: Magento Testing Framework
+*[FTF]: Functional Testing Framework

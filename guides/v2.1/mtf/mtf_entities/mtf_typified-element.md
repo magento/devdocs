@@ -2,7 +2,7 @@
 layout: default
 group: mtf-guide
 subgroup: 50_Entities
-title: Entities of the Magento Testing Framework
+title: Entities of the Functional Testing Framework
 menu_title: Typified element
 menu_order: 5
 github_link: mtf/mtf_entities/mtf_typified-element.md
@@ -17,7 +17,7 @@ github_link: mtf/mtf_entities/mtf_typified-element.md
 
 A typified element is an element of the GUI (Select, Multiselect etc). Magento has custom typified elements with a special logic, for example: Customized Select, Suggest Dropdown, Store View Selector. Typified elements are often used as elements of a form or a grid.
 
-Magento Testing Framework (MTF) enables you to test any typified element.
+Functional Testing Framework (FTF) enables you to test any typified element.
 
 ![A typified element example in the browser]
 
@@ -29,7 +29,7 @@ This topic discusses how to create classes for a typified element and to use the
 
 ### General {#general}
 
-A typified element class in the MTF contains methods to be used in the test to manipulate typified elements in the Magento application. You can extend a [basic class](#basic_class) or a [Magento class](#magento_class) to cover your typified element.
+A typified element class in the FTF contains methods to be used in the test to manipulate typified elements in the Magento application. You can extend a [basic class](#basic_class) or a [Magento class](#magento_class) to cover your typified element.
 
 <div class="bs-callout bs-callout-tip">
   <p>The most important methods are <code>setValue()</code> and <code>getValue()</code>. These methods are required when you work with a form.</p>
@@ -49,7 +49,7 @@ Default typified elements are stored in the `<magento2>/dev/tests/functional/ven
 
 A root class for a typified element is the [`\Magento\Mtf\Client\Element\SimpleElement`][] class. This class implements [`ElementInterface`][] which contains methods such as `click()`, `doubleClick()`, `isVisible()`, `setValue()`, `getValue()`, `getText()`, `find()`, `dragAndDrop()`, `getElements()` etc.
 
-| UI element | MTF class | Notes|
+| UI element | FTF class | Notes|
 |---|---|---|
 | `<input type="checkbox" />`  |[`\Magento\Mtf\Client\Element\CheckboxElement`][]| Extends [SimpleElement][]  |
 | `<select multiple />`  |[`\Magento\Mtf\Client\Element\MultiselectElement`][]| Extends [SelectElement][]  |
@@ -62,7 +62,7 @@ A root class for a typified element is the [`\Magento\Mtf\Client\Element\SimpleE
 
 Magento custom typified elements are stored in the `<magento2>/dev/tests/functional/lib/Magento/Mtf/Client/Element` directory.
 
-| UI element | MTF class | Notes|
+| UI element | FTF class | Notes|
 |---|---|---|
 | `<div class="rule-tree" />`  | [`\Magento\Mtf\Client\Element\ConditionsElement`][]| Extends [SimpleElement][] |
 | `<div id="ui-datepicker-div" />` | [`\Magento\Mtf\Client\Element\DatepickerElement`][]   | Extends [SimpleElement][]   |
@@ -134,7 +134,7 @@ public function setValue($value)
 
 ## How to use {#use}
 
-Typified elements are used in the [MTF blocks][].
+Typified elements are used in the [FTF blocks][].
 Use a `find()` method to find an element. This method is declared in the [SimpleElement][] class:
 
 {%highlight php startinline=1%}
@@ -206,10 +206,10 @@ The following code is a corresponding mapping with the typified element `optgrou
 <!-- General -->
 [`ElementInterface`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/ElementInterface.php
 [form mapping]: {{site.gdeurl21}}mtf/mtf_entities/mtf_block.html#mtf_block_mapping
-[`\Magento\Mtf\Client\Element\OptgroupselectElement`]: {{site.mage2100url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/OptgroupselectElement.php
-[`<magento2>/dev/tests/functional/lib/Magento/Mtf/Client/Element`]: {{site.mage2100url}}dev/tests/functional/lib/Magento/Mtf/Client/Element
-[MTF blocks]: {{site.gdeurl21}}mtf/mtf_entities/mtf_block.html
-[\Magento\Catalog\Test\Block\Adminhtml\Category\Tree]: {{site.mage2100url}}dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Adminhtml/Category/Tree.php
+[`\Magento\Mtf\Client\Element\OptgroupselectElement`]: {{site.mage2000url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/OptgroupselectElement.php
+[`<magento2>/dev/tests/functional/lib/Magento/Mtf/Client/Element`]: {{site.mage2000url}}dev/tests/functional/lib/Magento/Mtf/Client/Element
+[FTF blocks]: {{site.gdeurl21}}mtf/mtf_entities/mtf_block.html
+[\Magento\Catalog\Test\Block\Adminhtml\Category\Tree]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Adminhtml/Category/Tree.php
 
 <!-- Basic classes -->
 [`\Magento\Mtf\Client\Element\SimpleElement`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SimpleElement.php
@@ -224,23 +224,23 @@ The following code is a corresponding mapping with the typified element `optgrou
 [`\Magento\Mtf\Client\Element\StrictselectElement`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/StrictselectElement.php
 
 <!-- Magento classes -->
-[`\Magento\Mtf\Client\Element\ConditionsElement`]: {{site.mage2100url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/ConditionsElement.php
-[`\Magento\Mtf\Client\Element\DatepickerElement`]: {{site.mage2100url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/DatepickerElement.php
-[`\Magento\Mtf\Client\Element\DropdownmultiselectElement`]: {{site.mage2100url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/DropdownmultiselectElement.php
-[`\Magento\Mtf\Client\Element\GlobalsearchElement`]: {{site.mage2100url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/GlobalsearchElement.php
-[`\Magento\Mtf\Client\Element\JquerytreeElement`]: {{site.mage2100url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/JquerytreeElement.php
-[`\Magento\Mtf\Client\Element\LiselectstoreElement`]: {{site.mage2100url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/LiselectstoreElement.php
-[`\Magento\Mtf\Client\Element\MultiselectgrouplistElement`]: {{site.mage2100url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/MultiselectgrouplistElement.php
-[`\Magento\Mtf\Client\Element\MultiselectlistElement`]: {{site.mage2100url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/MultiselectlistElement.php
-[`\Magento\Mtf\Client\Element\MultisuggestElement`]: {{site.mage2100url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/MultisuggestElement.php
-[`\Magento\Mtf\Client\Element\OptgroupselectElement`]: {{site.mage2100url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/OptgroupselectElement.php
-[`\Magento\Mtf\Client\Element\SelectstoreElement`]: {{site.mage2100url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/SelectstoreElement.php
-[`\Magento\Mtf\Client\Element\SimplifiedselectElement`]: {{site.mage2100url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/SimplifiedselectElement.php
-[`\Magento\Mtf\Client\Element\SuggestElement`]: {{site.mage2100url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/SuggestElement.php
-[SuggestElement]: {{site.mage2100url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/SuggestElement.php
-[`\Magento\Mtf\Client\Element\Tree`]: {{site.mage2100url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/Tree.php
-[Tree]: {{site.mage2100url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/Tree.php
-[`\Magento\Mtf\Client\Element\TreeElement`]: {{site.mage2100url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/TreeElement.php
+[`\Magento\Mtf\Client\Element\ConditionsElement`]: {{site.mage2000url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/ConditionsElement.php
+[`\Magento\Mtf\Client\Element\DatepickerElement`]: {{site.mage2000url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/DatepickerElement.php
+[`\Magento\Mtf\Client\Element\DropdownmultiselectElement`]: {{site.mage2000url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/DropdownmultiselectElement.php
+[`\Magento\Mtf\Client\Element\GlobalsearchElement`]: {{site.mage2000url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/GlobalsearchElement.php
+[`\Magento\Mtf\Client\Element\JquerytreeElement`]: {{site.mage2000url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/JquerytreeElement.php
+[`\Magento\Mtf\Client\Element\LiselectstoreElement`]: {{site.mage2000url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/LiselectstoreElement.php
+[`\Magento\Mtf\Client\Element\MultiselectgrouplistElement`]: {{site.mage2000url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/MultiselectgrouplistElement.php
+[`\Magento\Mtf\Client\Element\MultiselectlistElement`]: {{site.mage2000url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/MultiselectlistElement.php
+[`\Magento\Mtf\Client\Element\MultisuggestElement`]: {{site.mage2000url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/MultisuggestElement.php
+[`\Magento\Mtf\Client\Element\OptgroupselectElement`]: {{site.mage2000url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/OptgroupselectElement.php
+[`\Magento\Mtf\Client\Element\SelectstoreElement`]: {{site.mage2000url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/SelectstoreElement.php
+[`\Magento\Mtf\Client\Element\SimplifiedselectElement`]: {{site.mage2000url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/SimplifiedselectElement.php
+[`\Magento\Mtf\Client\Element\SuggestElement`]: {{site.mage2000url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/SuggestElement.php
+[SuggestElement]: {{site.mage2000url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/SuggestElement.php
+[`\Magento\Mtf\Client\Element\Tree`]: {{site.mage2000url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/Tree.php
+[Tree]: {{site.mage2000url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/Tree.php
+[`\Magento\Mtf\Client\Element\TreeElement`]: {{site.mage2000url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/TreeElement.php
 
 <!-- ABBREVIATIONS -->
-*[MTF]: Magento Testing Framework
+*[FTF]: Functional Testing Framework
