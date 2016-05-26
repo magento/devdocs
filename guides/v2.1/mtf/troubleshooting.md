@@ -2,7 +2,7 @@
 layout: default
 group: mtf-guide
 subgroup: 65_Troubleshooting
-title: Troubleshoot the Magento Testing Framework issues
+title: Troubleshoot the Functional Testing Framework issues
 menu_title: TROUBLESHOOTING
 menu_node: parent
 github_link: mtf/troubleshooting.md

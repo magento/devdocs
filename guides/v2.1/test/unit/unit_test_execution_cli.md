@@ -1,7 +1,7 @@
 ---
 layout: default
-group: test-guide
-subgroup: A_Running_Unit_Tests
+group: unit-testing
+subgroup: 20_Running_Unit_Tests
 title: Running Unit Tests in the CLI
 menu_title: Running Unit Tests in the CLI
 menu_node: parent

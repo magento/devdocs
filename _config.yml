@@ -59,5 +59,6 @@ incremental: true
 
 gems:
   - jekyll-redirect-from
+  - jekyll-last-modified-at
 
 exclude: ['scss','bin','node_modules', 'vendor']
