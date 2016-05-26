@@ -48,20 +48,23 @@ To merge an environment:
 		magento-cloud environment:merge master
 
 ## Optionally delete the environment {#tut-env-delete}
-This section discusses how to optionally delete a branch in any of the following ways:
+Before you delete an environment, make sure you don't need it anymore. You cannot recover a deleted environment later.
 
-*	Make the branch *inactive* but preserve its contents
-*	Delete the branch and its contents
+<div class="bs-callout bs-callout-info" id="info">
+  <p>You cannot delete the <code>master</code> environment of any project.</p>
+</div>
 
-### Make the environment inactive
-This section discusses how to make a branch inactive, which means it can't be used and it doesn't count toward your total of eight active branches. The branch's contents are preserved. You can activate it again by making a commit to it.
+You must be a [project administrator]({{ site.gdeurl }}cloud/admin/admin-user-admin.html#cloud-role-project), [environment administrator]({{ site.gdeurl }}cloud/admin/admin-user-admin.html#cloud-role-env), or [account owner]({{ site.gdeurl }}cloud/admin/admin-user-admin.html#cloud-role-acct-owner) to perform this task.
 
-To make a branch inactive:
+This section discusses how to optionally delete an environment in the following ways:
 
-1.	Check out the environment if you haven't already done so:
+*	Make the environment *inactive* but let it remain in the project
+*	Delete the environment entirely and remove it from the project
 
-		magento-cloud environment:checkout -e <environment ID>
+To delete a environment:
 
+1.	Log in to your project if you haven't already done so.
+2.	To delete the branch entirely (removing it from the project), check out the branch.
 2.	Delete the environment:
 
 		magento-cloud environment:delete <environment ID>
@@ -78,7 +81,22 @@ To make a branch inactive:
 
 		magento-cloud environment:delete --help
 
-3.	Wait for the environment to delete.
+3.	Answer the prompt:
+
+		Are you sure you want to delete the remote Git branch sampledata? [Y/n]
+
+	A `Y` answer makes the branch inactive but leaves it in the project.
+5.	Answer the prompt:
+
+		Delete the remote Git branch too? [Y/n]
+
+	A `Y` answer completely removes the branch from the project.
+		
+Wait for the environment to delete.
+
+
+
+		git push origin :<branch name>
 
 #### Related topic
 [Tutorial&mdash;Set Magento environment variables]({{ site.gdeurl }}cloud/env/environment-tutorial-set-mage-vars.html)
