@@ -55,7 +55,7 @@ redirect_from: /guides/v1.0/get-started/authentication/gs-authentication-token.h
    <tr>
       <td>Credentials</td>
       <td>
-         <p>The user name and password for a Magento account, so for customers the username is their email address.</p>
+         <p>The user name and password for a Magento account. For customers, the username is an email address.</p>
          <p>To specify these credentials in a JSON request body, include <code>-d '{"username":"&lt;USER-NAME&gt;", "password":"&lt;PASSWORD&gt;"}'</code> in the call.</p>
       </td>
    </tr>

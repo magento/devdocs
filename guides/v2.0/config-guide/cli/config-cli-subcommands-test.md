@@ -43,15 +43,15 @@ In addition to the command arguments discussed here, see <a href="{{ site.gdeurl
 <h2 id="config-cli-subcommands-tests-run">Running tests</h2>
 Command usage:
 
-	magento dev:tests:run [--all] <test>
+	magento dev:tests:run <test>
 
 To list the available test types, enter
 
 	magento dev:tests:run --help
 
-This gives you a list like
+This gives you a list similar to the following:
 
-    all, unit, integration, integration-all, static, static-all, integrity, legacy
+    all, unit, integration, integration-all, static, static-all, integrity, legacy, default
 
 For example, to run integration tests, enter
 
