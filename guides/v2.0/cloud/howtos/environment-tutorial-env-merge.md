@@ -1,14 +1,15 @@
 ---
 layout: default
 group: cloud
-subgroup: 08_env
+subgroup: 10_howto
 title: Tutorial&mdash;Merge an environment
 menu_title: Tutorial&mdash;Merge an environment
-menu_order: 105
+menu_order: 5
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: env-tut
-github_link: cloud/env/environment-tutorial-env-merge.md
+github_link: cloud/howtos/environment-tutorial-env-merge.md
+redirect_from: guides/v2.0/cloud/env/environment-tutorial-env-merge.html
 ---
 
 ## Tutorial&mdash;Merge an environment
