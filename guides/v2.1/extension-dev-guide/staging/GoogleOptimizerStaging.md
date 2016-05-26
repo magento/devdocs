@@ -10,6 +10,8 @@ level3_subgroup: staging_modules
 github_link: extension-dev-guide/staging/GoogleOptimizerStaging.md
 ---
 
+![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
+
 <h2>Contents</h2>
 
 * TOC

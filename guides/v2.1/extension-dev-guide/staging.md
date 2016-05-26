@@ -6,8 +6,9 @@ title: Staging in Magento 2 EE
 menu_title: Staging (EE only)
 menu_node: parent
 github_link: extension-dev-guide/staging.md
-
 ---
+
+![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
 
 General description of Staging
 

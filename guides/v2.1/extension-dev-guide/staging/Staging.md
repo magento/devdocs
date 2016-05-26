@@ -10,6 +10,8 @@ level3_subgroup: staging_modules
 github_link: extension-dev-guide/staging/Staging.md
 ---
 
+![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
+
 <h2>Contents</h2>
 
 * TOC
@@ -160,7 +162,6 @@ The lower expandable list in the form represent types of staging entities:
 Each one is a grid of corresponding entities assigned to the campaign.
 
 #### Remove a campaign
-
 Only empty campaign can be deleted, that is performed by the cron. In other words, if you delete all updates from the campaign, it will be deleted automatically according to the cron settings.
 
 ### An Update
@@ -288,5 +289,3 @@ The utility is used in staging module `Setup` only. It receives a configuration 
 #### Migration of attributes with range
 
 Each update attribute that contain time range is synchronized with dates of campaign. Attributes with time range are removed from the UI.
-
-### How to enable staging for custom entity
