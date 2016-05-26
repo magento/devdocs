@@ -6,6 +6,7 @@ title: Theme inheritance
 menu_title: Theme inheritance
 menu_order: 5
 github_link: frontend-dev-guide/themes/theme-inherit.md
+redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-inherit.html
 ---
 
 <h2 id="theme-inherit-over">What's in this topic</h2>
@@ -21,19 +22,22 @@ The fallback order is slightly different for static assets (CSS, JavaScript, fon
 For comprehensive information about developing theme components, see
 subsequent chapters in this guide.
 
-<h2>Set a parent theme</h2>
+* TOC
+{:toc}
+
+## Set a parent theme
 
 A parent theme is specified in the child theme `theme.xml` declaration file.
 
-Example: 
+Example:
 the Orange theme by OrangeCo inherits from the Magento Blank theme. The inheritance is declared in `app/design/frontend/OrangeCo/orange/theme.xml` as follows:
 
 {% highlight xml %}
 <theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/theme.xsd">
      <title>Orange</title>
-     <parent>Magento/blank</parent> 
+     <parent>Magento/blank</parent>
      <media>
-         <preview_image>media/preview.jpg</preview_image> 
+         <preview_image>media/preview.jpg</preview_image>
      </media>
  </theme>
 {% endhighlight xml %}
@@ -42,8 +46,11 @@ the Orange theme by OrangeCo inherits from the Magento Blank theme. The inherita
   <p>A parent and a child theme can belong to different vendors. For example, your custom theme can inherit from the Magento Blank theme.</p>
 </div>
 
+## Override view.xml file
 
-<h2 id="theme-inherit-static">Override static assets</h2>
+If your theme does not contain a `view.xml` configuration file, it will be inherited from the parent theme. If you add the `<you_theme_dir>/view.xml` file in your theme, it overrides the parent's file.
+
+## Override static assets {#theme-inherit-static}
 
 Static assets, or static view files, are styles, JavaScript, images, and fonts.
 
@@ -70,6 +77,7 @@ If module context is defined for a file:
 3. Module static view files for the `frontend` area: `<module_dir>/view/frontend/web/`
 4. Module static view files for the `base` area: `<module_dir>/view/base/web/`
 
+
 <u>Example</u>
 
 A company named OrangeCo created a theme named Orange. The theme files are located in `app/design/frontend/OrangeCo/orange`.
@@ -89,7 +97,7 @@ Once the Orange Winter theme is applied, the new holiday image overrides the one
 <img src="{{ site.baseurl }}common/images/inh-background2.jpg"/>
 
 
-<h2 id="theme-inherit-templates">Override templates</h2>
+## Override templates {#theme-inherit-templates}
 
 The fallback scheme for templates is the following (module context is always known for them):
 
@@ -113,9 +121,9 @@ To do this, they need to add an overriding template for the corresponding module
 Note, that the path to the template inside the `templates` directory in the theme corresponds to that in the module.
 Having changed the order or elements in the templates, OrangeCo got the minicart look like following:
 <p><img src="{{ site.baseurl }}common/images/inherit_mini2.png" alt="In the minishopping cart products are listed above the Go to Checkout button "></p>
-You can find out what exactly code changes are required to perform this and other tasks in the <a href="{{site.gdeurl21}}frontend-dev-guide/templates/template-sample.html">Illustration of customizing templates topic</a>. 
+You can find out what exactly code changes are required to perform this and other tasks in the <a href="{{site.gdeurl21}}frontend-dev-guide/templates/template-sample.html">Illustration of customizing templates topic</a>.
 
-<h2 id="theme-inherit-layout">Extend layouts</h2>
+## Extend layouts {#theme-inherit-layout}
 
 The layouts processing mechanism does not involve fallback. The system collects layout files in the following order:
 
@@ -139,15 +147,15 @@ To do this, they added an extending layout in `app/design/frontend/OrangeCo/oran
 {%highlight xml%}
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <remove name="report.bugs"/>
+        <referenceBlock name='report.bugs' remove='true'/>
     </body>
 </page>
 {%endhighlight xml%}
 
 
-For more information about extending layout refer to the <a href="{{ site.gdeurl21 }}frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a> article.
+For more information about extending layout refer to the <a href="{{site.gdeurl21}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a> article.
 
-<h3 id="theme-inherit-layout-over">Override layouts</h3>
+## Override layouts {#theme-inherit-layout-over}
 
 Though overriding layouts is not recommended, it is still possible, and might be a solution for certain customization tasks.
 To override the instructions from an ancestor theme layout file:
@@ -156,14 +164,4 @@ To override the instructions from an ancestor theme layout file:
 
 To override module layout instructions (base layout):
 
-
 * Create a layout file with the same name in the `<theme_dir>/<Vendor>_<Module>/layout/override/base` directory.
-
-
-
-
-
-
-
-
-

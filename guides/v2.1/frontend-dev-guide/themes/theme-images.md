@@ -12,6 +12,8 @@ github_link: frontend-dev-guide/themes/theme-images.md
 
 The properties of product images used on the storefront are stored in the `view.xml` configuration file. This topic provides all details about what properties are available and how to configure them.
 
+The properties for the images displayed on the product pages are defined by the gallery widget options. The options of the widget can be configured in the theme `view.xml` as well. For detail view the [Gallery widget]({{site.gdeurl21}}javascript-dev-guide/widgets/widget_gallery.html) topic.
+
 <h2 id="view_xml_structure">Configure image properties in view.xml</h2>
 
 The conventional location of `view.xml` for a theme is:
@@ -82,20 +84,20 @@ Can have any value, but in out-of-the- box Magento themes <code>id</code>'s are 
 <li><code>thumbnail</code> - corresponds to the Thumbnail Image role in the Magento Admin</li>
 </ul>
 
-The following picture illustrates how image roles for product images are specified in the Magento Admin:
-<img src="{{site.baseurl}}common/images/fdg_theme_bck.png" alt="Setting image role in Magento Admin">
-
       </td>
     </tr>
 </tbody>
 </table>
+
+The following picture illustrates how image roles for product images are specified in the Magento Admin:
+<img src="{{site.baseurl}}common/images/fdg_theme_bck.png" alt="Setting image role in Magento Admin">
 
 Image properties are defined by the corresponding elements, for example:
 
 {% highlight xml %}
 <images module="Magento_Catalog">
     <image id="unique_image_id" type="image">
-        <width>100</width> <!-- Image width in px --> 
+        <width>100</width> <!-- Image width in px -->
         <height>100</height> <!-- Image height in px -->
     </image>
 </images>
@@ -107,22 +109,28 @@ The following table contains the list of all properties which can be configured:
 <table>
   <tbody>
     <tr>
-      <th>Element</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Required</th>
+      <th>
+        Element
+      </th>
+      <th>
+        Type
+      </th>
+      <th>
+        Description
+      </th>
+      <th>
+        Required
+      </th>
     </tr>
     <tr>
       <td>
-        <code>
-          width
-        </code>
+        <code>width</code>
       </td>
       <td>
-integer
+        integer
       </td>
       <td>
- Image width in pixels.
+        Image width in pixels.
       </td>
       <td>
         Optional
@@ -130,15 +138,13 @@ integer
     </tr>
     <tr>
       <td>
-        <code>
-          height
-        </code>
+        <code>height</code>
       </td>
       <td>
-integer
+        integer
       </td>
       <td>
- Image height in pixels.
+        Image height in pixels.
       </td>
       <td>
         Optional
@@ -146,31 +152,15 @@ integer
     </tr>
     <tr>
       <td>
-        <code>
-          constrain
-        </code>
+        <code>constrain</code>
       </td>
       <td>
-boolean
+        boolean
       </td>
       <td>
-If set to <code>true</code>, images that are smaller than required by the configuration, are not enlarged. Default value: <code>true</code>.
-      </td>
-      <td>
-        Optional
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <code>
-          aspect_ratio
-        </code>
-      </td>
-      <td>
-boolean
-      </td>
-      <td>
-If set to <code>true</code>, proportions of images are not changed even if required by the configuration. Default value: <code>true</code>.
+        If set to <code>true</code>, images that are smaller than
+        required by the configuration, are not enlarged. Default
+        value: <code>true</code>.
       </td>
       <td>
         Optional
@@ -178,31 +168,15 @@ If set to <code>true</code>, proportions of images are not changed even if requi
     </tr>
     <tr>
       <td>
-        <code>
-          frame
-        </code>
+        <code>aspect_ratio</code>
       </td>
       <td>
-boolean
+        boolean
       </td>
       <td>
-If set to <code>true</code>, images are not cropped. Default value: <code>true</code>. Applied only if <code>aspect_ratio</code> is set to <code>true</code>.
-      </td>
-      <td>
-        Optional
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <code>
-          transparency
-        </code>
-      </td>
-      <td>
-boolean
-      </td>
-      <td>
-If set to <code>true</code>, the transparent background of images is saved. If is set to <code>false</code>, images have the white background (by default). You can set the color for the background using the <code>background</code> parameter. Default value: <code>true</code>.
+        If set to <code>true</code>, proportions of images are not
+        changed even if required by the configuration. Default
+        value: <code>true</code>.
       </td>
       <td>
         Optional
@@ -210,30 +184,65 @@ If set to <code>true</code>, the transparent background of images is saved. If i
     </tr>
     <tr>
       <td>
-        <code>
-          background
-        </code>
+        <code>frame</code>
       </td>
       <td>
-array
+        boolean
       </td>
       <td>
-The color for the images background. Not applied to images with transparency, if <code>transparency</code> is set to <code>true</code>.
+        If set to <code>true</code>, images are not cropped.
+        Default value: <code>true</code>. Applied only if
+        <code>aspect_ratio</code> is set to <code>true</code>.
       </td>
       <td>
         Optional
       </td>
     </tr>
-</tbody>
+    <tr>
+      <td>
+        <code>transparency</code>
+      </td>
+      <td>
+        boolean
+      </td>
+      <td>
+        If set to <code>true</code>, the transparent background of
+        images is saved. If is set to <code>false</code>, images
+        have the white background (by default). You can set the
+        color for the background using the <code>background</code>
+        parameter. Default value: <code>true</code>.
+      </td>
+      <td>
+        Optional
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>background</code>
+      </td>
+      <td>
+        string
+      </td>
+      <td>
+        The color for the images background. Not applied to images
+        with transparency, if <code>transparency</code> is set to
+        <code>true</code>. Format: "[, , ]", e.g.: "[255,
+        255, 255]".
+      </td>
+      <td>
+        Optional
+      </td>
+    </tr>
+  </tbody>
 </table>
 
-####Resize catalog images
+#### Resize catalog images
 The `magento catalog:images:resize` command enables you to resize images for display on your storefront; for example:
 
 * After you import products, which might have variable sized images
-* If images were resized or deleted manually from cache 
+* If images were resized or deleted manually from cache
 
-Each image assigned to a product must be resized in accordance with image metadata defined in a module's <a href="{{ site.gdeurl21 }}frontend-dev-guide/themes/theme-create.html#fedg_create_theme_how-to-images">`view.xml`</a> configuration file. After resizing an image, its resized copy is stored in the cache (`/pub/media/catalog/product/cache` directory). Magento serves storefront images from cache.
+Each image assigned to a product must be resized in accordance with image metadata defined in a module's <a href="{{site.gdeurl21}}frontend-dev-guide/themes/theme-create.html#fedg_create_theme_how-to-images">`view.xml`</a> configuration file. After resizing an image, its resized copy is stored in the cache (`/pub/media/catalog/product/cache` directory). Magento serves storefront images from cache.
 
 Generally, product images are cached while saving the product. However, sometimes you might need to re-create the product images cache using this command&mdash;for example, after you import products, if images were resized manually in the cache, or if the cache was manually cleared by mistake.
 

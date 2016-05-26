@@ -6,6 +6,7 @@ title: Add a custom breakpoint
 menu_order: 7
 menu_title: Add a custom breakpoint
 github_link: frontend-dev-guide/responsive-web-design/rwd-breakpoints.md
+redirect_from: frontend-dev-guide/css-topics/css-breakpoints.html
 ---
 
 <h2>What's in this topic</h2>
@@ -37,7 +38,7 @@ For example:
 
     @your__breakpoint: 1280px;
 
-For variables' naming rules see [Less coding standards]({{site.gdeurl21}}coding-standards/code-standard-less.html#variables).
+For variables' naming rules see [Less coding standards](http://devdocs.magento.com/guides/v2.0/coding-standards/code-standard-less.html#variables).
 
 ## Override `_responsive.less` from the library
 
@@ -48,7 +49,7 @@ To implement a new breakpoint, you need to edit the `.media-width()` mixin by ad
 To do this, take the following steps:
 
 1. Copy the `_responsive.less` file to your `<your_theme_dir>/web/css/source/lib/` directory from one of the following locations:
-	- `<your_parent_theme_dir>/web/css/source/lib/_responsive.less`: overriding `_responsive.less` in the parent theme. If there's no such file or no parent theme, use the other optin. 
+	- `<your_parent_theme_dir>/web/css/source/lib/_responsive.less`: overriding `_responsive.less` in the parent theme. If there's no such file or no parent theme, use the other option. 
 	- `<your_theme_dir>/web/css/source/lib/_responsive.less`: the library file.
 2. In your `_responsive.less`, add the `.media-width` mixin rule for your breakpoint in the corresponding section (desktop or mobile, depending on the type of breakpoint you add).
 

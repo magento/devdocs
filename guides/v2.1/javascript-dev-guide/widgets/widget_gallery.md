@@ -10,19 +10,19 @@ github_link: javascript-dev-guide/widgets/widget_gallery.md
 
 <h2>Overview</h2>
 
-The gallery jQuery widget implements a content area with images organized into preview and thumbnails blocks. 
+The gallery jQuery widget implements a content area with images organized into preview and thumbnails blocks.
 
 The following picture is an illustration of image displaying on the product page using the gallery widget:
 
 <img src="{{site.baseurl}}common/images/gallery_scr.png" width="650px" alt="A product page with preview and thumbnails">
 
-In addition, the [magnifier widget]({{site.gdeurl21}}widgets/widget_gallery_mg.md) can be used to demonstrate images in 100% scaled size in separate dedicated layer, and the gallery fullscreen mode can be used to navigate the entire full sized photo.
+In addition, the [magnifier widget]({{site.gdeurl21}}javascript-dev-guide/widgets/widget_gallery_mg.html) can be used to demonstrate images in 100% scaled size in separate dedicated layer, and the gallery fullscreen mode can be used to navigate the entire full sized photo.
 
 Gallery is displayed consistently across all supported browsers and is responsive &mdash; it sizes correctly on mobile devices and desktops.
 
 The gallery widget uses the <a href="http://fotorama.io/">Fotorama widget</a>.
 
-The important feature of the gallery widget implementation is the possibility to configure the widget options in the `view.xml` configuration file of a theme. 
+The important feature of the gallery widget implementation is the possibility to configure the widget options in the `view.xml` configuration file of a theme.
 
 The gallery widget source code is <a href="{{site.mage2100url}}lib/web/mage/gallery/gallery.js">lib/web/mage/gallery/gallery.js</a>
 
@@ -41,7 +41,7 @@ The gallery widget is initialized as described in [JavaScript initialization]({{
 
 Example of declarative initialization:
 
- `<Magento_Catalog_module_dir>/view/frontend/templates/product/view/gallery.phtml` 
+ `<Magento_Catalog_module_dir>/view/frontend/templates/product/view/gallery.phtml`
 
 {%highlight js%}
 <script type="text/x-magento-init">
@@ -132,9 +132,9 @@ The `thumb`, `img`, and `full` are full paths to proper image files.
 
 Set the caption for a specific image in the `data` field.
 Example of the runtime initialization with the `caption` option specified:
- 
+
 {%highlight js%}
-galleryInstance({ 
+galleryInstance({
     data: [
         {
             img: 'preview_number_one.jpg',
@@ -246,7 +246,7 @@ Display navigation arrows for thumbnails.
 
 #### `options/navtype` {#gallery_navtype}
 
-Sliding type of thumbnails. 
+Sliding type of thumbnails.
 
 **Possible values**:
 
@@ -300,7 +300,7 @@ Height of thumbnails.
 
 Sets the transition effect for slides changing.
 
-**Possible values**: 
+**Possible values**:
 
 * `slide`
 * `crossfade`
@@ -399,7 +399,7 @@ Height of thumbnails in the fullscreen view.
 
 Sets the transition effect for slides changing in the fullscreen view.
 
-**Possible values**: 
+**Possible values**:
 
 * `slide`
 * `crossfade`
@@ -432,17 +432,17 @@ Where the options are as follows:
  - `conditions`: compiled in [media query](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries) through and operand. For example: `"max-width": "767px"`
  - `options` - object of options that are applied
 
-## Configure gallery options in `view.xml` 
+## Configure gallery options in `view.xml`
 
-Gallery and magnifier options can be set in the `view.xml` configuration file of a theme. The file is conventionally located in `<theme_dir>/etc`. 
+Gallery and magnifier options can be set in the `view.xml` configuration file of a theme. The file is conventionally located in `<theme_dir>/etc`.
 
 The general gallery options are set as follows:
 
 {%highlight xml%}
 
 <var name="gallery">
-    <var name="%option1%">%option1_value%</var> 
-    <var name="%option2%">%option2_value%</var> 
+    <var name="%option1%">%option1_value%</var>
+    <var name="%option2%">%option2_value%</var>
 ...
 </var>
 
@@ -453,19 +453,19 @@ The fullscreen and breakpoints options are set in a similar way:
 {%highlight xml%}
 
 <var name="fullscreen">
-    <var name="%fullscreen_option1%">%option1_value%</var> 
-    <var name="%fullscreen_option2%">%option2_value%</var> 
+    <var name="%fullscreen_option1%">%option1_value%</var>
+    <var name="%fullscreen_option2%">%option2_value%</var>
 ...
 </var>
 <var name="breakpoints">
-    <var name="%breakpoints_option1%">%option1_value%</var> 
-    <var name="%breakpoints_option2%">%option2_value%</var> 
+    <var name="%breakpoints_option1%">%option1_value%</var>
+    <var name="%breakpoints_option2%">%option2_value%</var>
 ...
 </var>
 
 {%endhighlight%}
 
-For illustration of setting gallery option in `view.xml`, you can reference to the [view.xml of the Blank theme]({{site.mage2100url}}app/design/frontend/Magento/blank/etc/view.xml#L184). 
+For illustration of setting gallery option in `view.xml`, you can reference to the [view.xml of the Blank theme]({{site.mage2100url}}app/design/frontend/Magento/blank/etc/view.xml#L184).
 
 
 ## Gallery API {#gallery_api}
@@ -474,9 +474,9 @@ Gallery methods are placed in data storage of the `gallery` object. To initializ
 
 {% highlight php%}
 var api = $(element).data('gallery');
- 
+
 //or
- 
+
 var api = $('[data-gallery-role="gallery"]').data('gallery');
 
 {% endhighlight %}
@@ -505,7 +505,7 @@ All available methods are listed in the following paragraph.
 
 ### Methods {#gallery_methods}
 
-* [first](#gallery_first) 
+* [first](#gallery_first)
 * [last](#gallery_last)
 * [next](#gallery_next)
 * [prev](#gallery_prev)
@@ -518,12 +518,12 @@ All available methods are listed in the following paragraph.
 Displays the first preview image.
 
 #### `last()` {#gallery_last}
-    
+
 Displays the last preview image.
 
 #### `next()` {#gallery_next}
 
-Image ID is passed as an argument. Displays the next preview image. 
+Image ID is passed as an argument. Displays the next preview image.
 
 If the last image ID is passed, the behavior depends on whether [loop](#gallery_loop) is enabled:
 
@@ -531,8 +531,8 @@ If the last image ID is passed, the behavior depends on whether [loop](#gallery_
 * if loop is disabled, does not change the displayed image.
 
 #### `prev()` {#gallery_prev}
-    
-Displays the previous preview image. 
+
+Displays the previous preview image.
 
 If the first image ID is passed, the behavior depends on whether [loop](##gallery_loop) is enabled:
 
@@ -541,21 +541,21 @@ If the first image ID is passed, the behavior depends on whether [loop](##galler
 
 #### `seek()` {#gallery_seek}
 
-Displays the image with the specified `index`. 
+Displays the image with the specified `index`.
 
-Doesn't update preview if the argument is not valid. 
+Doesn't update preview if the argument is not valid.
 
 Behavior:
 
-* `seek(0)` does not display any preview 
-* `seek(1)` displays the first image. 
-* `seek(-1)` displays the last image. 
+* `seek(0)` does not display any preview
+* `seek(1)` displays the first image.
+* `seek(-1)` displays the last image.
 * If the argument is a number bigger than the number of items, or less than "-(number of items)" the gallery shows the modulus of the following division: total images number divided by the argument number.  
 
 
 #### `updateData()` {#gallery_updateData}
-   
-Add new items to the gallery. 
+
+Add new items to the gallery.
 
 Example:
 
