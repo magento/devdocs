@@ -14,8 +14,7 @@ This topic shows how to get started working on an environment:
 
 *	[Connect to the environment using Secure Shell (SSH)](#env-start-ssh)
 *	[Common commands](#env-start-comm)
-*	[SSH tunneling](#env-start-tunn)
-*	[Delete an environment](#env-delete)
+*	[SSH to an environment](#env-start-ssh)
 
 ## Connect to the environment using Secure Shell (SSH) {#env-start-ssh}
 Before you can use SSH to connect to an environment, you must add your [SSH public key]({{ site.gdeurl }}cloud/before/before-workspace.html#cloud-ssh-cli-ssh) to your account.
@@ -80,80 +79,33 @@ All commands are shown with required options only. Get help for any command by a
 `magento-cloud variable:set <name> <value>`
 :	Set a value for an environment variable in this environment
 
-## SSH tunneling {#env-start-tunn}
-Use SSH tunneling to connect to a service in your development site to Magento Enterprise Cloud Edition
-as if the service were local.
 
-### List existing tunnels
-You might want to check to see if any tunnels are already open using the following command:
+[SSH to an environment](#env-start-ssh)
+This section discusses how to SSH to an environment so you can run commands as if you were logged in to the environment itself.
 
-	magento-cloud tunnel:list
+### Step 1: Get started
 
-### List available apps in your project
-To build a tunnel, you must know the name of the app to which to tunnel. Use the following commands:
+{% include cloud/cli-get-started.md %}
 
-	cd <project directory>
-	magento-cloud project:list
-	magento-cloud apps
+### Step 2: Find the SSH URL
+To find the SSH URL, enter the following command:
 
-### Set up the SSH tunnel
-Use the following command:
+	magento-cloud environment:ssh --pipe -e <environment ID>
 
-	magento-cloud tunnel:open -e <environment ID> --app <app name>
-	
-For example, to open a tunnel to the `sprint5` branch in a project with an app named `mymagento`, enter
+### Step 3: SSH to the environment
+To SSH to the environment, use the SSH URL you found in the preceding step:
 
-	magento-cloud tunnel:open -e sprint5 --app mymagento
+	ssh <ssh url>
 
-Messages similar to the following display:
-
-	SSH tunnel opened on port 30003 to relationship: solr
-	SSH tunnel opened on port 30004 to relationship: redis
-	SSH tunnel opened on port 30005 to relationship: database
-	Logs are written to: /home/magento_user/.magento/tunnels.log
-
-	List tunnels with: platform tunnels
-	View tunnel details with: platform tunnel:info
-	Close tunnels with: platform tunnel:close
-
-### Get tunnel information
-To display information about your tunnel, enter:
-
-	magento-cloud tunnel:info -e <environment ID>
-
-### Connect to services {#cloud-ssh-tunnel-service}
+### Step 4: Enter commands
 Now you can connect to services as if they were running locally.
 
 For example, to connect to the database, use the following command:
 
 	mysql --host=127.0.0.1 --user='<database user name>' --pass='<user password>' --database='<name>' --port='<port>'
 
-Details about the service display if you use the `tunnel:info` command.
+You can find information like `<database user name>` in `<your Magento install dir>/app/etc/env.php`.
 
-## Delete an environment {#env-delete}
-Before you delete an environment, make sure you don't need it anymore. You cannot recover a deleted environment later.
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>You cannot delete the <code>master</code> environment of any project.</p>
-</div>
-
-You must be a [project administrator]({{ site.gdeurl }}cloud/admin/admin-user-admin.html#cloud-role-project), [environment administrator]({{ site.gdeurl }}cloud/admin/admin-user-admin.html#cloud-role-env), or [account owner]({{ site.gdeurl }}cloud/admin/admin-user-admin.html#cloud-role-acct-owner) to perform this task.
-
-To delete an environment using the command line:
-
-1.	List the projects:
-
-		magento-cloud project:list
-2.	List the environments in the specified project:
-
-		magento-cloud environment:list -p <project ID>
-2.	Delete the environment:
-
-		magento-cloud environment:delete -p <project ID> -e <environment name>
-3.	You are required to confirm the deletion.
-4.	*Optional*. Delete the branch:
-
-		git push origin <branch name>
 
 #### Related topics
 *	[Manage your environments]({{ site.gdeurl }}cloud/env/environments.html)

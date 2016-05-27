@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_admin
+subgroup: 20_admin
 title: Manage users
 menu_title: Manage users
 menu_order: 2

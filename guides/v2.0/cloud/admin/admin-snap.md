@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_admin
+subgroup: 20_admin
 title: Snapshot and restore
 menu_title: Snapshot and restore
 menu_order: 4

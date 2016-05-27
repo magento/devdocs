@@ -71,7 +71,7 @@ return [
 {%endhighlight%}
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Be sure to leave all the settings that do not start with <code>dh-</code> at their default values.</p>
+  <p>Be sure to leave all the settings that do not start with <code>db-</code> at their default values.</p>
 </div>
 
 ### Adjusting the PHPUnit configuration file
