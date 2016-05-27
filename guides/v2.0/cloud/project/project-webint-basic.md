@@ -163,7 +163,7 @@ For example, you can change the Magento Admin administrative password using envi
 	The following figure shows an example.
 
 	![Set environment variables]({{ site.baseurl }}common/images/cloud_env-var.png)
-4.	Click **Add Varible**.
+4.	Click **Add Variable**.
 5.	Wait while the environment deploys.
 
 ### Configure routes {#project-conf-env-route}
