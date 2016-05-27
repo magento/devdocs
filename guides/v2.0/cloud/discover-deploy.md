@@ -113,7 +113,7 @@ A last step allows you to run a deployment script. You can use this for example 
 When this script runs, you have access to all the services in your environment (Redis, database, and so on).
 
 The default Magento deployment hook is a CLI command that does the following:
-*	If Magento is not installed, it installs Magento with `bin/magento setup:install`, updates the deployment configuraton, `app/etc/env.php`, and the database for your specified environment (for example, Redis and website URLs).
+*	If Magento is not installed, it installs Magento with `bin/magento setup:install`, updates the deployment configuration, `app/etc/env.php`, and the database for your specified environment (for example, Redis and website URLs).
 *	If Magento is installed, performs any necessary upgrades.
 
 	The deployment script runs [`bin/magento setup:upgrade`]({{ page.baseurl }}install-gde/install/cli/install-cli-subcommands-db-upgr.html) to update the database schema and data (which is necessary after extension or core code updates), and also updates the [deployment configuration]({{ page.baseurl }}config-guide/config/config-php.html), `app/etc/env.php`, and the database for your environment. 
