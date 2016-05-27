@@ -73,7 +73,7 @@ Following is a definition of types:
 *	`library` for a library&mdash;such as a shared third-party library
 *	`component` for any type of component that must be installed in the Magento root directory (this is a relatively uncommon type)
 
-Actions are further divided between those available for *metapackages* (that is, an installable package that contains a group of differnt types) or *non-metapackages* (that is, a single type).
+Actions are further divided between those available for *metapackages* (that is, an installable package that contains a group of different types) or *non-metapackages* (that is, a single type).
 
 The following sections provide details:
 
