@@ -12,6 +12,7 @@ github_link: cloud/before/before-workspace.md
 #### Contents
 *	[Set up a Magento workspace](#cloud-first-workspace)
 *	[Install the CLI](#cloud-ssh-cli-cli-install)
+*	[Set up PHP](#cloud-first-php)
 *	[Enable Secure Shell (SSH)](#cloud-ssh-cli-ssh)
 
 ## Set up a Magento workspace {#cloud-first-workspace}
@@ -45,6 +46,25 @@ To install the Magento Enterprise Cloud Edition CLI:
 4.	Verify the `magento-cloud list` command is in your path by entering the following command:
 
 		magento-cloud list
+
+## Set up PHP {#cloud-first-php}
+When you're working with the Magento Cloud CLI, local environment settings come from the machine on which you're working, not from Magento Enterprise Cloud Edition. For example, certain things (like debugging) require a larger PHP `memory_limit` than most PHP distributions provide by default.
+
+Before working with your Cloud project, make sure you set the PHP `memory_limit` to at least `1G` for normal use or at least `2G` for debugging.
+
+To set `memory_limit`:
+
+1.	Find your `php.ini` file using the following command:
+
+		php --ini
+	Use the value of `Loaded Configuration File`.
+2.	Open `php.ini` in a text editor.
+3.	Change the value of `memory_limit` to at least `1G` for normal use or at least `2G` for debugging.
+4.	Save your changes to `php.ini` and exit the text editor.
+5.	Restart your web server:
+
+	*	CentOS: `service httpd restart`
+	*	Ubuntu: `service apache2 restart`
 
 ## Enable Secure Shell (SSH) {#cloud-ssh-cli-ssh}
 The [SSH protocol ](https://en.wikipedia.org/wiki/Secure_Shell){:target="_blank"} is designed to maintain a secure connection between two systems&mdash;in this case, your local working environment and your Magento Enterprise Cloud Edition Git project.

@@ -9,8 +9,6 @@
 		magento-cloud project:list
 4.	If necessary, clone a project.
 
-	git clone --branch master ovkr55dlacxke@git.us.magento.cloud:ovkr55dlacxke.git magento-2
-
 		magento-cloud project:get <project ID>
 4.	Change to a project directory.
 
