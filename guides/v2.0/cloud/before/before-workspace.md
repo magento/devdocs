@@ -121,9 +121,9 @@ To add a public SSH key:
 
 	![Account settings]({{ site.baseurl }}common/images/cloud_acct-settings.png){:width="650px"}
 5.	Expand **SSH Keys**.
-6.	On the next page, click **Add Public SSH Key** as the following figure shows.
+6.	On the next page, click **Add a public key** as the following figure shows.
 
-	![Add SSH public key to your account]({{ site.baseurl }}common/images/cloud_add-public-key.png){:width="650px"}
+	![Add an SSH public key to your account]({{ site.baseurl }}common/images/cloud_add-public-key.png){:width="650px"}
 7.	Follow the prompts on your screen to complete the task.
 
 #### Next steps
