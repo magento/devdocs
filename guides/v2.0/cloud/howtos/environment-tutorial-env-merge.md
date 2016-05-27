@@ -4,7 +4,7 @@ group: cloud
 subgroup: 10_howto
 title: Tutorial&mdash;Merge and delete an environment
 menu_title: Tutorial&mdash;Merge and delete an environment
-menu_order: 5
+menu_order: 7
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: env-tut

@@ -4,7 +4,7 @@ group: cloud
 subgroup: 10_howto
 title: Tutorial&mdash;Set Magento environment variables
 menu_title: Tutorial&mdash;Set Magento environment variables
-menu_order: 7
+menu_order: 6
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: env-tut
