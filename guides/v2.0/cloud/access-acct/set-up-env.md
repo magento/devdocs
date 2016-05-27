@@ -62,7 +62,7 @@ This is a one-time setup that was covered previously in this guide; skip this se
 
 {% endcollapsible %}
 
-### Set global Git varibles
+### Set global Git variables
 To set global Git variables required to commit or push to an environment (that is, Git branch), enter the following commands:
 
 	git config --global user.name "<your name>"

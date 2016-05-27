@@ -60,7 +60,7 @@ In the procedure that follows, make sure you *branch* a new environment; don't u
 
 	![Choose Fastly]({{ site.baseurl }}common/images/cloud_fastly_menu.png){:width="650px"}
 3.	In the right pane, expand **Full Page Cache**. 
-4.	Next to the **Caching Application** list, clear the **Use sytem value** check box.
+4.	Next to the **Caching Application** list, clear the **Use system value** check box.
 5.	From the **Caching Application** list, click **Fastly CDN** as the following figure shows.
 
 	![Choose Fastly]({{ site.baseurl }}common/images/cloud-fastly_enable-admin.png){:width="650px"}
