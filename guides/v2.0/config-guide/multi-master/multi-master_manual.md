@@ -236,14 +236,16 @@ mysqldump -u <your database root user name> -p <your main magento DB name> seque
 ### Restore sales data {#sql-sales-restore}
 This script restores sales data in your quote database.
 
+#### NDB requirement
 If you are using a [Network Database (NDB)](http://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html){:target="_blank"} cluster:
 
 1.  Convert tables from InnoDb to NDB type in dump files:
 
         sed -ei 's/InnoDb/NDB/' <file name>.sql
 
-2.  Remove rows with FULLTEXT KEY from dumps because NDB tables don't support FULLTEXT.
+2.  Remove rows with a FULLTEXT key from dumps because NDB tables don't support FULLTEXT.
 
+#### Restore the data
 Run the following commands:
 
 {% highlight sql %}
@@ -310,13 +312,14 @@ Run the following command from a command prompt:
 
     mysqldump -u <your database root user name> -p <your main Magento DB name> magento_customercustomattributes_sales_flat_quote magento_customercustomattributes_sales_flat_quote_address quote quote_address quote_address_item quote_item quote_item_option quote_payment quote_shipping_rate quote_id_mask > /<path>/quote.sql;
 
+### NDB requirement
 If you are using a [Network Database (NDB)](http://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html){:target="_blank"} cluster:
 
 1.  Convert tables from InnoDb to NDB type in dump files:
 
         sed -ei 's/InnoDb/NDB/' <file name>.sql
 
-2.  Remove rows with FULLTEXT KEY from dumps because NDB tables don't support FULLTEXT.
+2.  Remove rows with a FULLTEXT key from dumps because NDB tables don't support FULLTEXT.
 
 ### Restore tables to the quote database
 
@@ -498,6 +501,9 @@ This section provides scripts you can run that print a complete list of affected
 To use these scripts:
 
 1.  Create a `.sql` script with the contents of each script in this section.
+2.  In each script, replace `<your main magento DB name>` with the name of your Magento database. 
+
+    In this topic, the sample database name is `magento`.
 2.  Run each script from the `mysql>` prompt as `source <script name>`
 3.  Examine the output.
 4.  Copy the result of each script to another `.sql` script, removing the pipe characters (`|`).
@@ -507,8 +513,6 @@ To use these scripts:
 
 ### Remove foreign keys (sales tables)
 This script is the removes foreign keys that refer to non-sales tables from the sales database. 
-
-Replace `<your main magento DB name>` with the name of your Magento database. In this topic, the sample database name is `magento`.
 
 {% highlight sql %}
 select concat(
@@ -536,7 +540,7 @@ where for_name like  '<your main magento DB name>/|magento_sales|_%' escape '|'
 {% endhighlight %}
 
 ### Remove foreign keys (quote tables)
-This script removes foreign keys that refer to non-quote tables from quote tables. Replace `<your main magento DB name>` with the name of your Magento database. In this topic, the sample database name is `magento`.
+This script removes foreign keys that refer to non-quote tables from quote tables. 
 
 {% highlight sql %}
 select concat(
@@ -575,7 +579,7 @@ where for_name like '<your main magento DB name>/%'
 {% endhighlight %}
 
 ### Drop sales tables
-This script drops sales tables from the Magento database. Replace `<your main magento DB name>` with the name of your Magento database. In this topic, the sample database name is `magento`.
+This script drops sales tables from the Magento database. 
 
 {% highlight SQL %}
 use <your main magento DB name>;
