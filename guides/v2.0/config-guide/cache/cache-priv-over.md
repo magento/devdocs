@@ -44,7 +44,7 @@ Examples of uncacheable pages include the compare products, cart, checkout pages
 [Example]({{ site.mage2000url }}app/code/Magento/Paypal/view/frontend/layout/paypal_payflow_returnurl.xml){:target="_blank"}
 
 <div class="bs-callout bs-callout-warning">
-    <ul><li>Do not confiure content pages (that is, catalog, product and CMS pages) to be uncacheable. Doing so has an adverse affect on performance.</li>
+    <ul><li>Do not configure content pages (that is, catalog, product and CMS pages) to be uncacheable. Doing so has an adverse affect on performance.</li>
         <li>Caching a page for even a few seconds is helpful because HTTP requests occur on the scale of milliseconds.</li></ul>
 </div>
 
