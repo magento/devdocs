@@ -62,7 +62,13 @@ All commands are shown with required options only. Get help for any command by a
 :	List the environments in the current project (that is, the project that corresponds to the directory in which you run the command).
 
 `magento-cloud environment:branch <name> <parent branch>`
-:	Create a new branch (that is, environment)
+:	Create a new branch (that is, environment); the environment has both a name and an ID
+
+<div class="bs-callout bs-callout-info" id="info">
+   <p>The environment <em>name</em> is different from the environment <em>ID</em> only if you use spaces or capital letters in the environment name. An environment ID consists of all lowercase letters, numbers, and allowed symbols. Capital letters in an environment name are converted to lowercase in the ID; spaces in an environment name are converted to dashes.</p>
+   <p>An environment name <em>cannot</em> include characters reserved for your Linux shell or for regular expressions. Forbidden characters include curly braces (<code>{ }</code>), parentheses, asterisk (<code>*</code>), angle brackets (<code>&lt; ></code>), ampersand (<code>&</code>), percent (<code>%</code>), and other characters.</p>
+ </div>
+
 
 `magento-cloud environment:checkout <environment ID>`
 :	Check out an existing environment
