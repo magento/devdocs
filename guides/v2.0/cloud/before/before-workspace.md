@@ -57,6 +57,7 @@ To set `memory_limit`:
 1.	Find your `php.ini` file using the following command:
 
 		php --ini
+		
 	Use the value of `Loaded Configuration File`.
 2.	Open `php.ini` in a text editor.
 3.	Change the value of `memory_limit` to at least `1G` for normal use or at least `2G` for debugging.
