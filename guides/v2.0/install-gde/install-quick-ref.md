@@ -151,7 +151,7 @@ To run the Web Setup Wizard:
 	![Create a Magento administrator account]({{ site.baseurl }}common/images/install_qr_admin.png){:width="400px"}
 8.	Step 6: Install starts the installation when you click **Install Now**.
 
-	You can optionally expand **Console Log** to see installation messages while the installation is in progres.
+	You can optionally expand **Console Log** to see installation messages while the installation is in progress.
 
 	If errors display, see TBD.
 
