@@ -10,23 +10,16 @@ github_link: cloud/trouble/trouble_proj-startover.md
 ---
 
 ## Resolve issues with a new project
-TBD
+This topic discusses solutions to typical issues you might experience with a new project.
 
 ### Project has no code yet {#cloud-trouble-nocode}
-If "project has no code yet"
+If you didn't push code to the project because, for example, you didn't complete the setup wizard, the following message displays next to the project name:
 
-This covers what happens if you start the wizard, choose wrong option, or click Continue Later.
+![If the project has no code]({{ site.baseurl }}common/images/cloud_trouble_no-code.png)
 
-### Start over with a project {#cloud-trouble-startover}
-This covers starting over with a project that has a master branch only.
+Click the **This project has no code yet** link next to the project name to start the wizard again and see [First-time setup]({{ site.gdeurl }}cloud/access-acct/first-time-setup.html#cloud-first-email).
 
-@stevejwriter: change your code, commit it, and git push --force
-8:47
-@stevejwriter: there isn’t an automated way to delete all your data
-8:47
-@stevejwriter: although… you could change your service name(s) and app name(s) (and change back again if you want) - that will ensure all your data disappears
-8:48
-@stevejwriter: effectively, code is replaced on every git push. Data (static files in the app, mysql DBs, Redis caches etc.) is persistent.
+
 
 *	[TBD]({{ site.gdeurl }}#.html)
 *	[TBD]({{ site.gdeurl }}#.html)
