@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 07_project
-title: Use project branches
-menu_title: Use project branches
+title: Manage environments (branches)
+menu_title: Manage environments (branches)
 menu_order: 5
 menu_node: 
 level3_menu_node: level3child

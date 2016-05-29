@@ -70,6 +70,13 @@ To access projects and environments:
 3.	For example, to view your storefront, click the **Web Access** link.
 
 	For more information about using SSH, see [SSH to an environment]({{ site.gdeurl }}cloud/env/environments-start.html#env-start-ssh).
+4.	To clone the project using either the Magento Enterprise Cloud Edition CLI or Git, use the links in the field under the branch name.
+
+	The following figure shows an example.
+
+	![Clone the project]({{ site.baseurl }}common/images/cloud_project-clone.png)
+
+	Click either **CLI** or **Git** to display the appropriate clone command. Use the ![Copy to clipboard]({{ site.baseurl }}common/images/cloud_copy-to-clipboard.png) (Copy to clipboard) button to copy the command to the clipboard.
 
 ## Get started configuring your project {#project-conf}
 Configuring a project means:
