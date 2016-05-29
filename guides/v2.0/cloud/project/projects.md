@@ -15,7 +15,7 @@ A Magento Enterprise Cloud Edition *project* is a container for your *applicatio
 The project's `master` branch is your live deployment; that is, you work in Git branches (each branch corresponds on an environment) and, when you're done, you merge with the `master` branch, which deploys your applications to the cloud.
 
 ## Quick tour
-This section provides a quick tour of your project using the Web Interface.
+This section provides a quick tour of your project using the Web Interface. For more detailed information about the Web Interface, see TBD.
 
 ### Login
 Log in to your project using Bitbucket, GitHub, Google, or a e-mail address and password.
