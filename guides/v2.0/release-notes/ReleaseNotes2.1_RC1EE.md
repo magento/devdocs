@@ -179,7 +179,7 @@ To upgrade to a Release Candidate using the command line:
 		php bin/magento setup:upgrade
 5.	Enter the following command to enable the cache:
 
-		magento cache:enable
+		php bin/magento cache:enable
 
 
 
