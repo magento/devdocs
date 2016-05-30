@@ -14,7 +14,9 @@ github_link: config-guide/varnish/config-varnish-final.md
 Now that you're using the `default.vcl` generated for you by Magento, you can perform some final verifications to make sure Varnish is working.
 
 <h3 id="config-varnish-final-verify-headers">Verify HTTP response headers</h3>
-Use `curl` or another utility to view HTTP response headers when you visit any Magento page in a web browser.
+Use `curl` or another utility to view HTTP response headers when you visit any Magento page in a web browser. 
+
+First, make sure you are using Magento's [developer mode]({{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html##config-mode-change); otherwise, you won't see the headers.
 
 For example,
 

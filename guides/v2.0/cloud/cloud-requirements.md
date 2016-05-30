@@ -15,7 +15,7 @@ We require the following:
 
 *	[License](#cloud-require-lic)
 *	[Authentication](#cloud-require-auth)
-*	[SSH keys](#cloud-require-auth)
+*	[SSH keys](#cloud-require-ssh)
 *	[Source control with Git](#cloud-require-git)
 
 ## License {#cloud-require-lic}
@@ -32,7 +32,7 @@ Your Magento Enterprise Cloud Edition account must *authenticate* using any of t
 *	Google
 *	Create your own Cloud account
 
-## SSH keys {#cloud-require-auth}
+## SSH keys {#cloud-require-ssh}
 To clone a Magento reference project, you must upload SSH keys to `github.com`.
 
 ## Source control with Git {#cloud-require-git}

@@ -137,10 +137,3 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-pattern
    <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a>
    </li>
 </ul>
-
-
-
-
-
-
-

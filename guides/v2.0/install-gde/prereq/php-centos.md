@@ -89,7 +89,7 @@ Continue with one of the following sections:
 *	<a href="#instgde-prereq-php55-install-centos">PHP 5.5 on CentOS</a>
 
 ## PHP 7 on CentOS {#php-centos-7}
-There is more than one way to install PHP 7.0.2 or later on CentOS 6; the following is a suggestion only. Consult a reference for additional options.
+There is more than one way to install PHP 7.0.2 or later; the following is a suggestion only. Consult a reference for additional options.
 
 To upgrade to PHP 7.0.2 or later:
 
@@ -103,7 +103,7 @@ To upgrade to PHP 7.0.2 or later:
 		yum -y update
 2.	*CentOS 7*. Enter the following commands:
 
-		yum install http://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/ius-release-1.0-14.ius.centos7.noarch.rpm
+		yum install -y http://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/ius-release-1.0-14.ius.centos7.noarch.rpm
 		yum -y update
 3.	Enter the following command:
 
