@@ -14,11 +14,11 @@ github_link: cloud/project/project-webint-basic.md
 ## Basic project information {#project-basic}
 This topic discusses how to use the Web Interface to:
 
-*	Log in to the project
-*	Access your site
-*	Get started configuring the project
-*	Get started configuring an environment
-*	View project history
+*	[Log in](#project-login) to the project
+*	[Access](#project-access) your site
+*	Get started [configuring your project](#project-conf)
+*	Get started [configuring an environment](#project-conf-env)
+*	View [environment history](#project-conf-hist)
 
 ## Log in to your project {#project-login}
 The Web Interface URL for your project is available in the following ways:
@@ -27,6 +27,8 @@ The Web Interface URL for your project is available in the following ways:
 *	The Magento Enterprise Cloud Edition command-line interface (CLI)
 
 ### Find the project URL using the CLI
+
+{% collapsible Click to show/hide content %}
 To find the project URL using the CLI:
 
 1.	Log in to the machine on which your SSH keys are stored.
@@ -47,11 +49,15 @@ To find the project URL using the CLI:
 		| pwga254dhx97o | Magento 2    | https://us.magento.cloud/#/projects/pwga254dhx97o |
 		+---------------+--------------+---------------------------------------------------+
 4.	Enter the value in the URL column in a web browser.
+{% endcollapsible %}
 
-### Log in to your project
+### Log in to the project
 In a web browser, enter the project URL from your welcome e-mail or that you found using the CLI. When prompted, log in to your project using Bitbucket, GitHub, Google, or a e-mail address and password.
 
+{% collapsible Click to show/hide image %}
+
 ![Log in to a project]({{ site.baseurl }}common/images/cloud_project-login.png){:width="450px"}
+{% endcollapsible %}
 
 ## Access your project and environments {#project-access}
 The Web Interface provides several ways to access your project and environments:
@@ -61,12 +67,14 @@ The Web Interface provides several ways to access your project and environments:
 *	Clone the project using the Magento Enterprise Cloud Edition CLI
 *	Clone the project using Git
 
+{% collapsible Click to show/hide content %}
+
 To access projects and environments:
 
 1.	[Log in to your project](#project-login).
-2.	Hover the mouse pointer on **Access Project** as the following figure shows:
+2.	Hover the mouse pointer over **Access Project** as the following figure shows:
 
-	![Access your project by URL or SSH]({{ site.baseurl }}common/images/cloud_project-access.png)
+	![Access your project by URL or SSH]({{ site.baseurl }}common/images/cloud_project-access.png){:width="600px"}
 3.	For example, to view your storefront, click the **Web Access** link.
 
 	For more information about using SSH, see [SSH to an environment]({{ site.gdeurl }}cloud/env/environments-start.html#env-start-ssh).
@@ -74,9 +82,11 @@ To access projects and environments:
 
 	The following figure shows an example.
 
-	![Clone the project]({{ site.baseurl }}common/images/cloud_project-clone.png)
+	![Clone the project]({{ site.baseurl }}common/images/cloud_project-clone.png){:width="600px"}
 
 	Click either **CLI** or **Git** to display the appropriate clone command. Use the ![Copy to clipboard]({{ site.baseurl }}common/images/cloud_copy-to-clipboard.png) (Copy to clipboard) button to copy the command to the clipboard.
+
+{% endcollapsible %}
 
 ## Get started configuring your project {#project-conf}
 Configuring a project means:
@@ -84,6 +94,7 @@ Configuring a project means:
 *	Managing users
 *	Using a deploy key to pull code from a private repository
 
+{% collapsible Click to show/hide content %}
 To configure your project:
 
 1.	[Log in to your project](#project-login).
@@ -93,6 +104,8 @@ To configure your project:
 	*	[Manage users]({{ site.gdeurl }}cloud/admin/admin-user-admin.html)
 	*	[Pull code from a private Git repository]({{ site.gdeurl }}cloud/project/project-priv-repos.html)
 
+{% endcollapsible %}
+
 ## Get started configuring an environment {#project-conf-env}
 Configuring an enviornment means:
 
@@ -101,12 +114,13 @@ Configuring an enviornment means:
 *	Configuring routes
 *	Managing users
 
-To configure your project:
+{% collapsible Click to show/hide content %}
+To configure an environment:
 
 1.	[Log in to your project](#project-login).
 2.	Click **Configure environment** under the project name, as the following figure shows.
 
-	![Configure environment]({{ site.baseurl }}common/images/cloud_project-conf-env.png)
+	![Configure environment]({{ site.baseurl }}common/images/cloud_project-conf-env.png){:width="500px"}
 3.	See one of the following for more information:
 
 	*	[Environment settings](#project-conf-env-set)
@@ -158,3 +172,36 @@ As discussed in [routes.yaml]({{ site.gdeurl }}cloud/project/project-conf-files_
 The following figure shows an example.
 
 ![Configure a route]({{ site.baseurl }}common/images/cloud_routes.png)
+
+{% endcollapsible %}
+
+## View environment history {#project-conf-hist}
+An environment's history includes:
+
+*	Initial creation
+*	Snapshots
+*	Syncs and merges
+*	Code pushes
+
+{% collapsible Click to show/hide content %}
+To view an environment's history:
+
+1.	[Log in to your project](#project-login).
+2.	In the left pane, click the name of an environment.
+
+	The following figure shows a sample history.
+
+	![Sample environment history]({{ site.baseurl }}common/images/cloud_environment-history.png){:width="600px"}
+
+	The history shows, from oldest to newest:
+
+	*	Environment branched from `FeatureX`
+	*	Environment sync'd with the parent
+	*	Environment snapshot created
+
+		We recommend [creating a snapshot]({{ site.gdeurl }}#) TBD before you make any code changes.
+
+	*	Environment variable added
+	*	Environment snapshot created
+
+{% endcollapsible %}

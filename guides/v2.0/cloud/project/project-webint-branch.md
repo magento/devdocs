@@ -34,7 +34,7 @@ To add an environment:
 2.	In the left navigation bar, click the name of the parent environment.
 
 	Your new branch is cloned from this environment. Choose a parent environment that is similar to the environment you're about to create.
-3.	Click ![Create a branch]({{ site.baseurl }}common/images/cloud_branch-icon.png){:width="20px"}.
+3.	Click ![Create a branch]({{ site.baseurl }}common/images/cloud_branch-icon.png){:width="35px"}.
 4.	In the provided field, enter a branch name. In many cases, the environment name is the same as its ID.
 
 	<div class="bs-callout bs-callout-info" id="info">
@@ -80,7 +80,7 @@ To sync an environment with its parent:
 
 1.	[Log in to your project]({{ site.gdeurl }}cloud/project/project-webint-basic.html#project-login).
 2.	In the left pane, click the name of the branch you want to sync.
-3.	Click ![Sync an environment]({{ site.baseurl }}common/images/cloud_environment-sync.png){:width="20px"}.
+3.	Click ![Sync an environment]({{ site.baseurl }}common/images/cloud_environment-sync.png){:width="35px"}.
 
 	The following prompt displays:
 
@@ -94,6 +94,6 @@ To merge an environment with its parent:
 
 1.	[Log in to your project]({{ site.gdeurl }}cloud/project/project-webint-basic.html#project-login).
 2.	In the left pane, click the name of the branch you want to merge.
-3.	Click ![Merge an environment]({{ site.baseurl }}common/images/cloud_environment-merge.png){:width="20px"}.
+3.	Click ![Merge an environment]({{ site.baseurl }}common/images/cloud_environment-merge.png){:width="35px"}.
 4.	Click **Merge** to confirm the action.
 
