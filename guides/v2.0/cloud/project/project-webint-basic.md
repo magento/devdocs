@@ -205,3 +205,8 @@ To view an environment's history:
 	*	Environment snapshot created
 
 {% endcollapsible %}
+
+#### Related topics
+*	[Manage environments (branches)]({{ site.gdeurl }}cloud/project/project-webint-branch.html)
+*	[Project backup and restore (snapshot)]({{ site.gdeurl }}cloud/project/project-webint-snap.html)
+*	[Get started with a project]({{ site.gdeurl }}cloud/project/project-start.html)

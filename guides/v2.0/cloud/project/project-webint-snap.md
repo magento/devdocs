@@ -34,3 +34,7 @@ To restore an environment's snapshot:
 	![Take a snapshot of an environment]({{ site.baseurl }}common/images/cloud_snapshot-restore.png)
 4.	You are required to confirm the action.
 
+#### Related topics
+*	[Basic project information]({{ site.gdeurl }}cloud/project/project-webint-basic.html)
+*	[Manage environments (branches)]({{ site.gdeurl }}cloud/project/project-webint-branch.html)
+*	[Get started with a project]({{ site.gdeurl }}cloud/project/project-start.html)
