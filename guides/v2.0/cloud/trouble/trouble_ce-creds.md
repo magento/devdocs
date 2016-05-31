@@ -147,9 +147,7 @@ Append `/admin` to the URL and log in to the Magento Admin as follows:
 	<p>For security reasons, we strongly recommend you change your Magento Admin URI and administrator password. For step-by-step details, see <a href="{{ site.gdeurl }}cloud/env/environment-tutorial-set-mage-vars.html">Tutorial&mdash;Set Magento environment variables</a>.</p>
 </div>
 
-
-
-
-
-*	[TBD]({{ site.gdeurl }}#.html)
-*	[TBD]({{ site.gdeurl }}#.html)
+#### Related topics
+*	[Manage your projects]({{ site.gdeurl }}cloud/project/projects.html)
+*	[Manage your environments]({{ site.gdeurl }}cloud/env/environments.html)
+*	[How tos and tutorials]({{ site.gdeurl }}cloud/howto/how-to.html)
