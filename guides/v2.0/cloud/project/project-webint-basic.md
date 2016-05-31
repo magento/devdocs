@@ -199,7 +199,7 @@ To view an environment's history:
 	*	Environment sync'd with the parent
 	*	Environment snapshot created
 
-		We recommend [creating a snapshot]({{ site.gdeurl }}#) TBD before you make any code changes.
+		We recommend [creating a snapshot]({{ site.gdeurl }}cloud/project/project-webint-snap.html) before you make any code changes.
 
 	*	Environment variable added
 	*	Environment snapshot created

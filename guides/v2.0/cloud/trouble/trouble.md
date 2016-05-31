@@ -10,7 +10,7 @@ github_link: cloud/trouble/trouble.md
 ---
 
 ## Troubleshooting
-TBD
+The following topics discuss solutions to common issues with Magento Enterprise Cloud Edition:
 
-*	[TBD]({{ site.gdeurl }}#.html)
-*	[TBD]({{ site.gdeurl }}#.html)
+*	[Incorrect credentials]({{ site.gdeurl }}cloud/trouble/trouble_ce-creds.html)
+*	[Resolve issues with a new project]({{ site.gdeurl }}cloud/trouble/trouble_proj-startover.html)
