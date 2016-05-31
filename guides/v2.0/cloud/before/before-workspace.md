@@ -27,8 +27,10 @@ To be able to manage your projects, environments, and services, you must set up 
 
 This guide assumes you're working on a UNIX system or in a UNIX shell environment. On Windows, you can use a UNIX environment like Cygwin or you can use Putty. The tool you use is up to you.
 
-## Install the CLI (Command Line Interface) {#cloud-ssh-cli-cli-install}
+## Install the CLI (command-line interface) {#cloud-ssh-cli-cli-install}
 The CLI is equivalent to the Web Interface. It will help you manage your projects on Magento Enterprise Cloud Edition.
+
+{% collapsible Click to show/hide content %}
 
 To install the Magento Enterprise Cloud Edition CLI:
 
@@ -47,8 +49,12 @@ To install the Magento Enterprise Cloud Edition CLI:
 
 		magento-cloud list
 
+{% endcollapsible %}
+
 ## Set up PHP {#cloud-first-php}
 When you're working with the Magento Cloud CLI, local environment settings come from the machine on which you're working, not from Magento Enterprise Cloud Edition. For example, certain things (like debugging) require a larger PHP `memory_limit` than most PHP distributions provide by default.
+
+{% collapsible Click to show/hide content %}
 
 Before working with your Cloud project, make sure you set the PHP `memory_limit` to at least `1G` for normal use or at least `2G` for debugging.
 
@@ -67,8 +73,12 @@ To set `memory_limit`:
 	*	CentOS: `service httpd restart`
 	*	Ubuntu: `service apache2 restart`
 
+{% endcollapsible %}
+
 ## Enable Secure Shell (SSH) {#cloud-ssh-cli-ssh}
 The [SSH protocol ](https://en.wikipedia.org/wiki/Secure_Shell){:target="_blank"} is designed to maintain a secure connection between two systems&mdash;in this case, your local working environment and your Magento Enterprise Cloud Edition Git project.
+
+{% collapsible Click to show/hide content %}
 
 You must create an SSH keypair on every machine with which you and your team expect to interact with Magento Enterprise Cloud Edition.
 
@@ -121,10 +131,12 @@ To add a public SSH key:
 
 	![Account settings]({{ site.baseurl }}common/images/cloud_acct-settings.png){:width="650px"}
 5.	Expand **SSH Keys**.
-6.	On the next page, click **Add Public SSH Key** as the following figure shows.
+6.	On the next page, click **Add a public key** as the following figure shows.
 
-	![Add SSH public key to your account]({{ site.baseurl }}common/images/cloud_add-public-key.png){:width="650px"}
+	![Add an SSH public key to your account]({{ site.baseurl }}common/images/cloud_add-public-key.png){:width="650px"}
 7.	Follow the prompts on your screen to complete the task.
+
+{% endcollapsible %}
 
 #### Next steps
 *	[Create a sample Magento project from a template]({{ site.gdeurl }}cloud/access-acct/first-time-setup_template.html)

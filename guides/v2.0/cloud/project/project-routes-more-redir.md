@@ -71,7 +71,11 @@ Required, a partial (`"/destination"` or `"//destination"`) or full URL (`"http:
 
 ### `regexp` {#cloud-route-partial-regexp}
 Optional, defaults to `false`. Specifies whether the path key should be interpreted as
-   a PCRE regular expression. In the following example, a request to `http://example.com/regexp/a/b/c/match` redirects to `http://example.com/a/b/c`:
+   a PCRE regular expression. 
+
+{% collapsible Click to show/hide content %}
+
+In the following example, a request to `http://example.com/regexp/a/b/c/match` redirects to `http://example.com/a/b/c`:
 
 {% highlight yaml %}
 
@@ -84,8 +88,12 @@ http://{default}/:
           regexp: true
 {% endhighlight %}
 
+{% endcollapsible %}
+
 ### `prefix` {#cloud-route-partial-prefix}
 Specifies whether or not to redirect both the path and all its children or just the path itself. Defaults to `true`, but is not supported if `regexp` is `true`. 
+
+{% collapsible Click to show/hide content %}
 
 For example,
 
@@ -103,8 +111,12 @@ In the preceding example, if `partial` is set to `true`, `/from` redirects to `/
 
 If `partial` is set to `false`, `/from` triggers a redirect, but `/from/another/path` does not.
 
+{% endcollapsible %}
+
 ### `append_suffix` {#cloud-route-partial-append}
 Determines if the suffix is carried over with the redirect. Defaults to `true`, but not supported if `regexp` is `true` *or* if `prefix` is `false`.
+
+{% collapsible Click to show/hide content %}
 
 For example,
 
@@ -121,6 +133,8 @@ http://{default}/:
 The preceding example results in `/from/path/suffix` redirecting to just `/to`. 
 
 If `append_suffix` is set to its default value of `true`, `/from/path/suffix` redirects to `/to/path/suffix`.
+
+{% endcollapsible %}
 
 ### `code` {#cloud-route-partial-code}
 Specifies the HTTP status code. Valid status codes are [`301` (Moved Permanently)](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.2){:target="_blank"}, [`302`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.3){:target="_blank"}, [`307`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.8){:target="_blank"}, and [`308`](https://tools.ietf.org/html/rfc7238){:target="_blank"}. Defaults to `302`.

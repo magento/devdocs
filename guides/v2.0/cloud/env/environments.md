@@ -44,7 +44,9 @@ You can use the following command to create an active environment from an inacti
 ## Environment hierarchy {#cloud-env-hier}
 The `master` environment is ultimately the parent of all other environments. Every time you branch it or any other environment, you create a parent-child relationship between them.
 
-Each child environment can sync code, data, or both from its parent. Likewise, a child can merge code with its parent, which ends up redeploying the parent environment with the code changes of the child environment.
+Each child environment can sync code, data, or both from its parent. Syncing data to an environment results in a byte-for-byte copy of all services and media files.
+
+Likewise, a child can merge code with its parent, which ends up redeploying the parent environment with the code changes of the child environment.
 
 Child environments are typically used for development, staging, and testing.
 
