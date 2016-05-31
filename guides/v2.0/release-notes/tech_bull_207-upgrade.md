@@ -48,7 +48,7 @@ The following table summarizes what you need to do.
 </tr>
 
 <tr>
-	<td>Magento CE or EE 2.0.1 to 2.0.6 running PHP 5.6 or 7.x</td>
+	<td>Magento CE or EE 2.0.1 to 2.0.7 running PHP 5.6 or 7.x</td>
 	<td>Ignore this bulletin</td>
 </tr>
 
