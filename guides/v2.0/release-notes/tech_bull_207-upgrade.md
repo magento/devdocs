@@ -3,7 +3,7 @@ layout: default
 group: release-notes
 subgroup: Technical Bulletin
 title: Technical Bulletin
-menu_title: Updater patch for PHP 5.5 Magento 2.0.7 (June 1, 2016)
+menu_title: Updater patch for PHP 5.5.x Magento 2.0.7 (June 1, 2016)
 menu_node: 
 menu_order: 
 github_link: release-notes/tech_bull_207-upgrade.md
