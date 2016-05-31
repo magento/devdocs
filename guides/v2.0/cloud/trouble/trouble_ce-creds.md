@@ -20,12 +20,14 @@ The most common symptom of incorrect credentials is a deployment failure with an
 To see the error log:
 
 1.	[Log in to your project]({{ site.gdeurl }}cloud/project/project-webint-basic.html#project-login).
-2.	Click **failure** to view the log as the following figure shows.
+2.	Click **Failure** to view the log as the following figure shows.
 
-	![View the log for a failed deployment]({{ site.baseurl }}common/images/cloud_deploy-failure-creds.png)
+	![View the log for a failed deployment]({{ site.baseurl }}common/images/cloud_deploy-failure-creds.png){:width="600px"}
 
 ### Solution
-To resolve this issue, you must clone the project locally and update `auth.json` with the correct Magento EE [authorization keys]({{ site.gdeurl }}install-gde/prereq/connect-auth.html). Make sure you're using your own keys, and *not* [shared account keys](http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html){:target="_blank"}.
+To resolve this issue, you must clone the project locally and update `auth.json` with the correct Magento EE [authorization keys]({{ site.gdeurl }}install-gde/prereq/connect-auth.html) and run `composer update` to update project dependencies. After that, you can deploy your project successfully and get started with your development.
+
+Make sure you're using your own keys, and *not* [shared account keys](http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html){:target="_blank"}.
 
 #### Get started
 To get started:
@@ -64,7 +66,7 @@ To resolve the issue with credentials:
 
 	A snippet of messages for a successful deployment follows:
 
-{% collapsible Click to show/hide content %}
+{% collapsible Click to show/hide snippet %}
 
 {% highlight xml %}
  Building application 'mymagento' (runtime type: php:7.0, tree: e8450f9)
@@ -150,4 +152,4 @@ Append `/admin` to the URL and log in to the Magento Admin as follows:
 #### Related topics
 *	[Manage your projects]({{ site.gdeurl }}cloud/project/projects.html)
 *	[Manage your environments]({{ site.gdeurl }}cloud/env/environments.html)
-*	[How tos and tutorials]({{ site.gdeurl }}cloud/howto/how-to.html)
+*	[Tutorials]({{ site.gdeurl }}cloud/howtos/how-to.html)

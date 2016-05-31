@@ -22,4 +22,4 @@ Click the **This project has no code yet** link next to the project name to star
 #### Related topics
 *	[Manage your projects]({{ site.gdeurl }}cloud/project/projects.html)
 *	[Manage your environments]({{ site.gdeurl }}cloud/env/environments.html)
-*	[How tos and tutorials]({{ site.gdeurl }}cloud/howto/how-to.html)
+*	[Tutorials]({{ site.gdeurl }}cloud/howtos/how-to.html)
