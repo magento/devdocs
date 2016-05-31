@@ -22,6 +22,8 @@ This bulletin informs you of a known issue updating Magento 2.0.7. This bulletin
 
 Note: If you are using Magento version 2.0.7 **and** have PHP version 5.5.x installed, you must follow this bulletin and apply the patch. PHP 5.6- and 7.0- based installations are fine.
 
+For an introduction to the updater application, see <a href="{{ site.gdeurl }}comp-mgr/updater/update-updater.html">Update the updater application</a>.
+
 ### Issue: Upgrade failures
 
 Magento Community Edition (CE) and Enterprise Edition (EE) upgrades fail if your server runs PHP 5.5.x and you are trying to upgrade from 2.0.7 to a later version of Magento.
