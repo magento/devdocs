@@ -17,16 +17,22 @@ redirect_from: guides/v2.0/cloud/env/environment-tutorial-env-merge.html
 *	[Optionally delete the environment](#tut-env-delete)
 
 ## Tutorial&mdash;Merge an environment {#tut-env-merge}
-This tutorial shows how to merge changes from an environment to its parent, which in this case is the master branch. You can, for example, merge code, changes to themes, and so on.
+This tutorial shows how to merge changes from an environment to its parent, which in this case is the master branch. You can, for example, merge code updates, new components, changes to themes, and so on.
 
 You can them optionally delete the environment.
 
-This tutorial shows how to create a sample file and merge it. This tutorial assumes you're already working in an environment; if not, see [ Get started with an environment]({{ site.gdeurl }}cloud/env/environments-start.html#env-start-comm) to create one.
+This tutorial shows how to create a sample file and merge it. This tutorial assumes you're already working in an environment; if not, see [Get started with an environment]({{ site.gdeurl }}cloud/env/environments-start.html#env-start-comm) to create one.
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>You <em>cannot</em> merge environment variables because they are not code. You must set the value of environment variables in an environment.</p>
+</div>
+
+### Get started
 To get started:
 
 {% include cloud/cli-get-started.md %}
 
+### Merge an environment
 To merge an environment:
 
 1.	Add a file named `test.txt` to the environment root directory.
@@ -37,7 +43,9 @@ To merge an environment:
 
 		git add -A
 		git commit -m "<commit message>"
-		git push origin
+		git push origin <branch name>
+
+	Where `<branch name>` is the Git name of the environment (that is, the environment ID).
 
 9.	Merge with the parent environment:
 
@@ -94,9 +102,9 @@ To delete a environment:
 		
 Wait for the environment to delete.
 
-
-
-		git push origin :<branch name>
+<div class="bs-callout bs-callout-info" id="info">
+  <p>To activate the environment later, use the <code>magento-cloud environment:activate</code> command.</p>
+</div>
 
 #### Related topic
 [Tutorial&mdash;Set Magento environment variables]({{ site.gdeurl }}cloud/env/environment-tutorial-set-mage-vars.html)
