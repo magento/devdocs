@@ -11,11 +11,11 @@ redirect_from: /guides/v2.0/release-notes/tech_bull_jan_16.html
 ---
 
 ## Updater Patch for PHP 5.5 Magento 2.0.7 (June 1, 2016)
-This bulletin informs you of a known issue updating Magento 2.0.7. This bulletin applies to you if you are running:  
+This bulletin informs you of a known issue updating Magento 2.0.7. This bulletin applies if you are running:  
 
 * Magento CE or EE 2.0.7 
 
-**and**
+	**and**
 
 * PHP 5.5 
 
@@ -62,7 +62,7 @@ Use the following resolutions to ensure the success of future upgrades:
 *	[Download and install Updater patch for PHP 5.5 Magento 2.0.7](#resolution1)
 *	[Use Composer](#resolution2)
 
-### #### Resolution 1 (Download and install Patch) {#resolution1}
+##### Download and install patch {#resolution1}
 If your Magento server runs PHP 5.5.x and you want to upgrade your installation of 2.0.7 to a later version, you must apply the Updater patch for PHP 5.5 Magento 2.0.7  patch first.
 
 To apply this patch:
@@ -135,12 +135,12 @@ To apply this patch:
 	</tr>
 	</tbody>
 	</table>
-3.	We recommend you <a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">upgrade</a> to version 2.0.2.
 
 
 
 
-#### Resolution 2 (Use Composer) {#resolution2}
+
+##### Use Composer to install new updater code {#resolution2}
 
 
 To resolve this issue using Composer:
