@@ -63,7 +63,7 @@ Use the following resolutions to ensure the success of future upgrades:
 *	[Download and install Updater patch for PHP 5.5.x Magento 2.0.7](#resolution1)
 *	[Use Composer](#resolution2)
 
-##### Download and install patch {#resolution1}
+#### Download and install patch {#resolution1}
 If your Magento server runs PHP 5.5.x and you want to upgrade your installation of 2.0.7 to a later version, you must apply the Updater patch for PHP 5.5.x Magento 2.0.7  patch first.
 
 To apply this patch:
@@ -140,7 +140,7 @@ To apply this patch:
 
 
 
-##### Use Composer to install new updater code {#resolution2}
+#### Use Composer to install new updater code {#resolution2}
 
 
 To resolve this issue using Composer, see <a href="{{ site.gdeurl }}comp-mgr/updater/update-updater.html">Update the updater application</a>.
