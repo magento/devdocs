@@ -51,7 +51,7 @@ The following table summarizes what you need to do.
 
 <tr>
 	<td>PHP 5.5.x AND Updater 10.0.1</td>
-	<td>Download and install <code>Patch MDVA-449</code> </td>
+	<td>Download and install <code>Patch MDVA-449</code> as detailed in this bulletin. Note: You must apply <code>Patch MDVA-449</code>  whether you installed the Magento software using a <a href="{{ site.gdeurl }}install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html">Composer metapackage</a>.</td>
 </tr>
 
 <tr>
