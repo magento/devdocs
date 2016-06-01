@@ -71,10 +71,10 @@ The Updater application packaged with Magento version 2.0.7 (version 10.0.1) has
 
 Use the following resolutions to ensure the success of future upgrades:
 
-*	[Download and install patch ](#resolution1)
-*	[Use Composer](#resolution2)
+*	Download and install patch 
+*	Use Composer to install new Updater code
 
-<h4>Download and install patch</h4> {#resolution1}
+<h4>Download and install patch</h4> 
 If your Magento server runs PHP 5.5.x and Updater application v10.0.1,  apply this patch.
 
 To apply this patch:
@@ -151,7 +151,7 @@ To apply this patch:
 
 
 
-<h4>Use Composer to install new Updater code</h4> {#resolution2}
+<h4>Use Composer to install new Updater code</h4> 
 
 
 To resolve this issue using Composer, see <a href="{{ site.gdeurl }}comp-mgr/updater/update-updater.html">Update the Updater application</a>.
