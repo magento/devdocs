@@ -46,8 +46,7 @@ The following table summarizes what you need to do.
 
 <tr>
 	<td>Updater application  version 10.0.1 AND PHP 5.5.x</td>
-</tr>	
-<tr>
+	
 	<td>Apply the fix detailed in this bulletin.<p><strong>Note</strong>: You must apply the Updater patch for PHP 5.5.x Magento 2.0.7 patch whether you installed the Magento software using a <a href="{{ site.gdeurl }}install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html">Composer metapackage</a>.</p></td>
 </tr>
 <tr>
