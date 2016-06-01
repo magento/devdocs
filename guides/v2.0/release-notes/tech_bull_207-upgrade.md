@@ -19,7 +19,7 @@ This bulletin informs you of a known issue updating from Magento EE and CE envir
 
 * Updater application version 10.0.1. This version is shipped by default with Magento 2.0.7. 
 
-`Patch MDVA-449` supplies the fix for this potential upgrade issue. 
+`Patch magento2-updater-10.0.2` supplies the fix for this potential upgrade issue. 
 
 
 
@@ -28,7 +28,7 @@ This bulletin informs you of a known issue updating from Magento EE and CE envir
 Magento Community Edition (CE) and Enterprise Edition (EE) upgrades fail if your server runs PHP 5.5.x and Updater application version 10.0.1 and you  try to upgrade to a later version of Magento.
 
 
-Magento 2.0.7 by default ships with Updater application version 10.0.1.  If you have not changed the default Updater application version that shipped with 2.0.7 and are running PHP 5.5.x, you must follow this bulletin. Failure to install  `Patch MDVA-449` will complicate attempts to upgrade from this version of Magento to any future versions, including 2.1. Installations using PHP 5.6.x and 7.0.x do not need this patch.
+Magento 2.0.7 by default ships with Updater application version 10.0.1.  If you have not changed the default Updater application version that shipped with 2.0.7 and are running PHP 5.5.x, you must follow this bulletin. Failure to install  `Patch magento2-updater-10.0.2` will complicate attempts to upgrade from this version of Magento to any future versions, including 2.1. Installations using PHP 5.6.x and 7.0.x do not need this patch.
 
 
 Here is the issue you might encounter when running `update/cron.php`:
@@ -46,12 +46,12 @@ The following table summarizes what you need to do.
 
 <tr>
 	<td>PHP 5.5.x AND Magento 2.0.7</td>
-<td> Download and install <code>Patch MDVA-449</code> as detailed in this bulletin. Note: You must apply <code>Patch MDVA-449</code>  whether you installed the Magento software using a <a href="{{ site.gdeurl }}install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html">Composer metapackage</a>.</td>
+<td> Download and install <code>Patch magento2-updater-10.0.2</code> as detailed in this bulletin. Note: You must apply <code>Patch magento2-updater-10.0.2</code>  whether you installed the Magento software using a <a href="{{ site.gdeurl }}install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html">Composer metapackage</a>.</td>
 </tr>
 
 <tr>
 	<td>PHP 5.5.x AND Updater 10.0.1</td>
-	<td>Download and install <code>Patch MDVA-449</code> as detailed in this bulletin. Note: You must apply <code>Patch MDVA-449</code>  whether you installed the Magento software using a <a href="{{ site.gdeurl }}install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html">Composer metapackage</a>.</td>
+	<td>Download and install <code>Patch magento2-updater-10.0.2</code> as detailed in this bulletin. Note: You must apply <code>Patch magento2-updater-10.0.2</code>  whether you installed the Magento software using a <a href="{{ site.gdeurl }}install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html">Composer metapackage</a>.</td>
 </tr>
 
 <tr>
@@ -81,10 +81,10 @@ The following table summarizes what you need to do.
 4. Exit the text editor without making changes.
 
 <h4>Details</h4>
-The Updater application that is packaged with Magento version 2.0.7 (version 10.0.1) has a line of code that is not compatible with PHP version 5.5.x. To ensure the success of future upgrades, download and install `Patch MDVA-449`. 
+The Updater application that is packaged with Magento version 2.0.7 (version 10.0.1) has a line of code that is not compatible with PHP version 5.5.x. To ensure the success of future upgrades, download and install `Patch magento2-updater-10.0.2`. 
 
-<h4>Download and install Patch MDVA-449</h4> 
-If your Magento server runs PHP 5.5.x and Updater application 10.0.1,  apply `Patch MDVA-449`.
+<h4>Download and install Patch magento2-updater-10.0.2</h4> 
+If your Magento server runs PHP 5.5.x and Updater application 10.0.1,  apply `Patch magento2-updater-10.0.2`.
 
 To apply this patch:
 
@@ -100,7 +100,7 @@ To apply this patch:
 	<tr> 
 	<td>Magento CE</td>
 	<td><p><a href="http://www.magento.com/download" target="_blank">www.magento.com/download</a></p>
-		<p>Follow the instructions on your screen to download <code>Patch MDVA-449</code>.</p></td>
+		<p>Follow the instructions on your screen to download <code>Patch magento2-updater-10.0.2</code>.</p></td>
 	</tr>
 	<tr> 
 		<td>Magento EE merchant portal</td>
@@ -110,7 +110,7 @@ To apply this patch:
 		<li>Log in with your Magento user name and password.</li>
 		<li>In the left navigation bar, click <strong>Downloads</strong>.</li>
 		<li>Click <strong>Magento Enterprise Edition</strong> <strong>2.X</strong> > <strong>Magento Enterprise Edition 2.x Release</strong> > <strong>Support Patches</strong></li>
-		<li>Follow the instructions on your screen to download <code>Patch MDVA-449</code>.</li></ul>
+		<li>Follow the instructions on your screen to download <code>Patch magento2-updater-10.0.2</code>.</li></ul>
 
 	</li>
 	<li>Transfer the patch to your development system.</li></ol></td>
@@ -121,14 +121,14 @@ To apply this patch:
 		<ol><li>Log in to <a href="https://partners.magento.com/English/?rdir=/files.aspx" target="_blank">partners.magento.com</a></li>
 		<li>Click <strong>Magento Enterprise Edition</strong> > <strong>Magento Enterprise Edition 2.X</strong> > <strong>Magento Enterprise Edition 2.x Release</strong> > <strong>Support Patches</strong>.</li>
 		<li>In the left navigation bar, click <strong>Downloads</strong>.</li>
-		<li>Follow the instructions on your screen to download <code>Patch MDVA-449</code>.</li>
+		<li>Follow the instructions on your screen to download <code>Patch magento2-updater-10.0.2</code>.</li>
 	<li>Transfer the patch to your development system.</li></ol></td>
 		</tr>
 	</tbody>
 	</table>
 
 	<div class="bs-callout bs-callout-info" id="info">
-  		<p>Use <code>Patch MDVA-449</code> whether or not you installed optional sample data.</p>
+  		<p>Use <code>Patch magento2-updater-10.0.2</code> whether or not you installed optional sample data.</p>
 	</div>
 
 2.	Extract the patch in your Magento installation directory.
@@ -149,15 +149,15 @@ To apply this patch:
 			<td>.zip</td>
 			<td><code>unzip &lt;filename></code></td>
 		</tr>
-		<tr> 
-			<td>.tar.bz2</td>
-			<td><code>tar jxf &lt;filename></code></td>
-	</tr>
+		
 	</tbody>
 	</table>
 
+	After extraction, Magento creates the `magento2-updater-10.0.2` directory within the installation directory. 
 
+3. Copy the contents of the `magento-updater-10.0.2` directory to the  `update` directory by executing the command
 
+	`cp -r magento2-updater-10.0.2/*  update/`
 
 
 
