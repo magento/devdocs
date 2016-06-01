@@ -31,7 +31,7 @@ of configuration files and manage almost all aspects of operations that way.
 
 ### Seamless Bitbucket and GitHub integrations
 We have perfectly seamless integrations for both Bitbucket and Github. You can
-log in to platform with your Bitbucket or Github account. And you can have
+log in to Magento Enterprise Cloud Edition with your Bitbucket or Github account. And you can have
 Magento Enterprise Cloud Edition environments be automatically created for every pull-request or 
 branch you create and get feedback on deployments right there without 
 switching tools.
