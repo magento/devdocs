@@ -3,14 +3,14 @@ layout: default
 group: release-notes
 subgroup: Technical Bulletin
 title: Technical Bulletin
-menu_title: Required patch for PHP 5.5.x and Updater 10.0.1 environments (June 1, 2016)
+menu_title: Required patch for PHP 5.5.x and Setup Application environments (June 1, 2016)
 menu_node: 
 menu_order: 
 github_link: release-notes/tech_bull_207-upgrade.md
 redirect_from: /guides/v2.0/release-notes/tech_bull_jan_16.html
 ---
 
-<h2>Required patch for PHP 5.5.x and Updater 10.0.1 environments (June 1, 2016)</h2>
+<h2>Required patch for PHP 5.5.x and Setup application 10.0.1 environments (June 1, 2016)</h2>
 This bulletin informs you of a known issue updating from Magento EE and CE environments that run the following:   
 
 * PHP 5.5.x
@@ -23,12 +23,12 @@ This bulletin informs you of a known issue updating from Magento EE and CE envir
 
 
 
-<h3>Issue: Upgrade failure from Magento installations running PHP 5.5.x and Updater application 10.0.1</h3>
+<h3>Issue: Upgrade failure from Magento installations running PHP 5.5.x and Setup application 10.0.1</h3>
 
-Magento Community Edition (CE) and Enterprise Edition (EE) upgrades fail if your server runs PHP 5.5.x and Updater application version 10.0.1 and you  try to upgrade to a later version of Magento.
+Magento Community Edition (CE) and Enterprise Edition (EE) upgrades fail if your server runs PHP 5.5.x and Setup application (also referred to as the <i>Updater application</i>i>) version 10.0.1 and you  try to upgrade to a later version of Magento.
 
 
-Magento 2.0.7 by default ships with Updater application version 10.0.1.  If you have not changed the default Updater application version that shipped with 2.0.7 and are running PHP 5.5.x, you must follow this bulletin. Failure to install  `Patch magento2-updater-10.0.2` will complicate attempts to upgrade from this version of Magento to any future versions, including 2.1. Installations using PHP 5.6.x and 7.0.x do not need this patch.
+Magento 2.0.7 by default ships with Setup application version 10.0.1.  If you have not changed the default Setup application version that shipped with 2.0.7 and are running PHP 5.5.x, you must follow this bulletin. Failure to install  `Patch magento2-updater-10.0.2` will complicate attempts to upgrade from this version of Magento to any future versions, including 2.1. Installations using PHP 5.6.x and 7.0.x do not need this patch.
 
 
 Here is the issue you might encounter when running `update/cron.php`:
@@ -55,19 +55,19 @@ The following table summarizes what you need to do.
 </tr>
 
 <tr>
-	<td>PHP 5.6.x with any Magento and Updater version</td>
+	<td>PHP 5.6.x with any Magento and Setup application version</td>
 	<td>Ignore this bulletin</td>
 </tr>
 
 <tr>
-	<td>PHP 7.0.x with any Magento and Updater version</td>
+	<td>PHP 7.0.x with any Magento and Setup application version</td>
 	<td>Ignore this bulletin</td>
 </tr>
 
 </tbody>
 </table>
 
-<h4>How to determine which version of Updater you are running</h4> 
+<h4>How to determine which version of Setup application you are running</h4> 
 1. Log in to your Magento server as, or switch to, the Magento file system owner.
 
 2. Open the following file in a text editor:
@@ -81,14 +81,14 @@ The following table summarizes what you need to do.
 4. Exit the text editor without making changes.
 
 <h4>Details</h4>
-The Updater application that is packaged with Magento version 2.0.7 (version 10.0.1) has a line of code that is not compatible with PHP version 5.5.x. To ensure the success of future upgrades, download and install `Patch magento2-updater-10.0.2`. 
+The Setup application  that is packaged with Magento version 2.0.7 (version 10.0.1) has a line of code that is not compatible with PHP version 5.5.x. To ensure the success of future upgrades, download and install `Patch magento2-updater-10.0.2`. 
 
 <h4>Download and install Patch magento2-updater-10.0.2</h4> 
-If your Magento server runs PHP 5.5.x and Updater application 10.0.1,  apply `Patch magento2-updater-10.0.2`.
+If your Magento server runs PHP 5.5.x and Setup application  10.0.1,  apply `Patch magento2-updater-10.0.2`.
 
 To apply this patch:
 
-1.	Download one of the following patch archives. Patches are available in the following formats: `.zip`, `.tar.bz2`, `.tar.gz`
+1.	Download one of the following patch archives. Patches are available in the following formats: `.zip` and `.tar.gz`
 
 	<table>
 		
