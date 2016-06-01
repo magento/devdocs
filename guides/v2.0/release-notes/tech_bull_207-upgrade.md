@@ -31,12 +31,10 @@ Patch MDVA-449 supplies the fix for this potential upgrade issue.
 Magento Community Edition (CE) and Enterprise Edition (EE) upgrades fail if your server runs PHP 5.5.x and Updater application version 10.0.1 and you  try to upgrade to a later version of Magento.
 
 Here is the issue you might encounter when running `update/cron.php`:
-
  
 `PHP Parse error: syntax error, unexpected '.', expecting ')' in /home/user/public_html/update/app/code/Magento/Update/UpdateLoggerFactory.php on line 31 `
 
 The following table summarizes what you need to do.
-
 <table>
 	<tbody>
 <tr> 
@@ -65,9 +63,10 @@ The following table summarizes what you need to do.
 </tbody>
 </table>
 
+
+
 <h4>Details</h4>
 The Updater application packaged with Magento version 2.0.7 (version 10.0.1) has a line of code that is not compatible with PHP version 5.5.x. 
-
 
 Use the following resolutions to ensure the success of future upgrades:
 
