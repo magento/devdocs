@@ -72,23 +72,18 @@ The following table summarizes what you need to do.
 
 2. Open the following file in a text editor:
 
-	<your Magento install dir>/update/composer.json
+	<code><your Magento install dir>/update/composer.json</code>
 
 3. Look for the value of `"version"`. If the value of `"version"` is `"10.0.1"`, and you're using PHP 5.5.x, you must make the changes discussed in this bulletin. For example,
 
-	"version": "10.0.1"
+	<code>"version": "10.0.1"</code>
 
 4. Exit the text editor without making changes.
 
 <h4>Details</h4>
-The Updater application that is packaged with Magento version 2.0.7 (version 10.0.1) has a line of code that is not compatible with PHP version 5.5.x. 
+The Updater application that is packaged with Magento version 2.0.7 (version 10.0.1) has a line of code that is not compatible with PHP version 5.5.x. To ensure the success of future upgrades, download and install `Patch MDVA-449`. 
 
-Use the following resolutions to ensure the success of future upgrades:
-
-*	Download and install `Patch MDVA-449` 
-*	Use Composer to install new Updater code
-
-<h4>Download and install patch</h4> 
+<h4>Download and install Patch MDVA-449</h4> 
 If your Magento server runs PHP 5.5.x and Updater application 10.0.1,  apply `Patch MDVA-449`.
 
 To apply this patch:
@@ -163,11 +158,6 @@ To apply this patch:
 
 
 
-
-<h4>Use Composer to install new Updater code</h4> 
-
-
-To resolve this issue using Composer, see <a href="{{ site.gdeurl }}comp-mgr/updater/update-updater.html">Update the Updater application</a>.
 
 
 
