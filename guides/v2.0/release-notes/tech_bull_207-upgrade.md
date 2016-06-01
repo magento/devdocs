@@ -50,7 +50,7 @@ The following table summarizes what you need to do.
 
 <tr>
 	<td>PHP 5.5.x AND Updater 10.0.1</td>
-	<td>Download and install this patch.</td>
+	<td>Download and install this patch</td>
 </tr>
 
 <tr>
@@ -92,7 +92,7 @@ To apply this patch:
 	<tr> 
 	<td>Magento CE</td>
 	<td><p><a href="http://www.magento.com/download" target="_blank">www.magento.com/download</a></p>
-		<p>Follow the instructions on your screen to download <code>Patch MDVA-449.*</code></p></td>
+		<p>Follow the instructions on your screen to download <code>Patch MDVA-449.</code></p></td>
 	</tr>
 	<tr> 
 		<td>Magento EE merchant portal</td>
@@ -102,7 +102,7 @@ To apply this patch:
 		<li>Log in with your Magento user name and password.</li>
 		<li>In the left navigation bar, click <strong>Downloads</strong>.</li>
 		<li>Click <strong>Magento Enterprise Edition</strong> <strong>2.X</strong> > <strong>Magento Enterprise Edition 2.x Release</strong> > <strong>Support Patches</strong></li>
-		<li>Follow the instructions on your screen to download <code>Patch MDVA-449*</code></li></ul>
+		<li>Follow the instructions on your screen to download <code>Patch MDVA-449</code></li></ul>
 
 	</li>
 	<li>Transfer the patch to your development system.</li></ol></td>
@@ -113,7 +113,7 @@ To apply this patch:
 		<ol><li>Log in to <a href="https://partners.magento.com/English/?rdir=/files.aspx" target="_blank">partners.magento.com</a></li>
 		<li>Click <strong>Magento Enterprise Edition</strong> > <strong>Magento Enterprise Edition 2.X</strong> > <strong>Magento Enterprise Edition 2.x Release</strong> > <strong>Support Patches</strong>.</li>
 		<li>In the left navigation bar, click <strong>Downloads</strong>.</li>
-		<li>Follow the instructions on your screen to download <code>Patch MDVA-449.*</code></li>
+		<li>Follow the instructions on your screen to download <code>Patch MDVA-449.</code></li>
 	<li>Transfer the patch to your development system.</li></ol></td>
 		</tr>
 	</tbody>
