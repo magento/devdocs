@@ -44,15 +44,14 @@ The following table summarizes what you need to do.
 
 <tr>
 	<td>PHP 5.5.x AND Magento 2.0.7</td>
-
-	<td>Download and install this patch as detailed in this bulletin.<p><strong>Note</strong>: You must apply the Updater patch for PHP 5.5.x Magento 2.0.7 patch whether you installed the Magento software using a <a href="{{ site.gdeurl }}install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html">Composer metapackage</a>.</p></td>
+<td> Download and install this patch as detailed in this bulletin.<p><strong>Note</strong>: You must apply the Updater patch for PHP 5.5.x Magento 2.0.7 patch whether you installed the Magento software using a <a href="{{ site.gdeurl }}install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html">Composer metapackage</a>.</td>
 </tr>
 <tr>
 	<td>PHP 5.5.x AND Updater 10.0.1</td>
 	<td>Download and install this patch.</td>
 </tr>
 <tr>
-	<td>PHP 5.6.x with any Magento and Updater version/td>
+	<td>PHP 5.6.x with any Magento and Updater version</td>
 	<td>Ignore this bulletin</td>
 </tr>
 <tr>
