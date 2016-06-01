@@ -28,7 +28,7 @@ This bulletin informs you of a known issue updating from Magento EE and CE envir
 Magento Community Edition (CE) and Enterprise Edition (EE) upgrades fail if your server runs PHP 5.5.x and Updater application version 10.0.1 and you  try to upgrade to a later version of Magento.
 
 
-Magento 2.0.7 by default ships with Updater application version 10.0.1.  If you have not changed the default Updater application version that shipped with 2.0.7 and are running PHP5.5.x, you must follow this bulletin. Failure to install  `Patch MDVA-449` will complicate attempts to upgrade from this version of Magento. Installations using PHP 5.6.x and 7.0.x do not need this patch.
+Magento 2.0.7 by default ships with Updater application version 10.0.1.  If you have not changed the default Updater application version that shipped with 2.0.7 and are running PHP 5.5.x, you must follow this bulletin. Failure to install  `Patch MDVA-449` will complicate attempts to upgrade from this version of Magento to any future versions, including 2.1. Installations using PHP 5.6.x and 7.0.x do not need this patch.
 
 
 Here is the issue you might encounter when running `update/cron.php`:
@@ -72,16 +72,16 @@ The following table summarizes what you need to do.
 
 2. Open the following file in a text editor:
 
-`<your Magento install dir>/update/composer.json`
+	<your Magento install dir>/update/composer.json
 
 3. Look for the value of `"version"`. If the value of `"version"` is `"10.0.1"`, and you're using PHP 5.5.x, you must make the changes discussed in this bulletin. For example,
 
-`"version": "10.0.1"`
+	"version": "10.0.1"
 
 4. Exit the text editor without making changes.
 
 <h4>Details</h4>
-The Updater application packaged with Magento version 2.0.7 (version 10.0.1) has a line of code that is not compatible with PHP version 5.5.x. 
+The Updater application that is packaged with Magento version 2.0.7 (version 10.0.1) has a line of code that is not compatible with PHP version 5.5.x. 
 
 Use the following resolutions to ensure the success of future upgrades:
 
