@@ -22,13 +22,13 @@ This bulletin informs you of a known issue updating from Magento EE and CE envir
 Patch MDVA-449 supplies the fix for this potential upgrade issue. 
 
 <div class="bs-callout bs-callout-warning">
-    <p>Magento 2.0.7 by default ships with Updater application version 10.1.0. If you have not changed the default updater application version that shipped with 2.0.7 and are running PHP5.5.x, you must follow this bulletin. Failure to install this patch (MDVA-449) will complicate attempts to upgrade from this version of Magento. Installations running PHP 5.6.x- and 7.0.x- based installations do not need this patch.</p>
+    <p>Magento 2.0.7 by default ships with Updater application version 10.1.0. If you have not changed the default Updater application version that shipped with 2.0.7 and are running PHP5.5.x, you must follow this bulletin. Failure to install this patch (MDVA-449) will complicate attempts to upgrade from this version of Magento. Installations using PHP 5.6.x and 7.0.x do not need this patch.</p>
 </div>
 
 
 ### Issue: Upgrade failure from Magento installations running PHP 5.5.x and updater application v10.0.1
 
-Magento Community Edition (CE) and Enterprise Edition (EE) upgrades fail if your server runs PHP 5.5.x and updater application version 10.0.1 and you  try to upgrade to a later version of Magento.
+Magento Community Edition (CE) and Enterprise Edition (EE) upgrades fail if your server runs PHP 5.5.x and Updater application version 10.0.1 and you  try to upgrade to a later version of Magento.
 
 Here is the issue you might encounter when running `update/cron.php`:
 
@@ -45,20 +45,20 @@ The following table summarizes what you need to do.
 </tr>
 
 <tr>
-	<td>Updater application  version 10.0.1 AND PHP 5.5.x</td>
-	
-	<td>Apply the fix detailed in this bulletin.<p><strong>Note</strong>: You must apply the Updater patch for PHP 5.5.x Magento 2.0.7 patch whether you installed the Magento software using a <a href="{{ site.gdeurl }}install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html">Composer metapackage</a>.</p></td>
+	<td>PHP 5.5.x AND Magento 2.0.7</td>
+
+	<td>Download and install this patch as detailed in this bulletin.<p><strong>Note</strong>: You must apply the Updater patch for PHP 5.5.x Magento 2.0.7 patch whether you installed the Magento software using a <a href="{{ site.gdeurl }}install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html">Composer metapackage</a>.</p></td>
 </tr>
 <tr>
-	<td>Updater application version 10.0.1 AND PHP 5.6.x or 7.0.x</td>
+	<td>PHP 5.5.x AND Updater 10.0.1</td>
+	<td>Download and install this patch.</td>
+</tr>
+<tr>
+	<td>PHP 5.6.x with any Magento and Updater version/td>
 	<td>Ignore this bulletin</td>
 </tr>
 <tr>
-	<td>Updater application other than version 10.0.1 AND PHP 5.6.x or 7.0.x</td>
-	<td>Ignore this bulletin</td>
-</tr>
-<tr>
-	<td>Updater application  version 10.0.1 AND PHP 5.6.x or 7.0.x</td>
+	<td>PHP 7.0.x with any Magento and Updater version</td>
 	<td>Ignore this bulletin</td>
 </tr>
 
@@ -75,7 +75,7 @@ Use the following resolutions to ensure the success of future upgrades:
 *	[Use Composer](#resolution2)
 
 #### Download and install patch {#resolution1}
-If your Magento server runs PHP 5.5.x and updater application v10.0.1,  apply this patch.
+If your Magento server runs PHP 5.5.x and Updater application v10.0.1,  apply this patch.
 
 To apply this patch:
 
@@ -151,10 +151,10 @@ To apply this patch:
 
 
 
-#### Use Composer to install new updater code {#resolution2}
+#### Use Composer to install new Updater code {#resolution2}
 
 
-To resolve this issue using Composer, see <a href="{{ site.gdeurl }}comp-mgr/updater/update-updater.html">Update the updater application</a>.
+To resolve this issue using Composer, see <a href="{{ site.gdeurl }}comp-mgr/updater/update-updater.html">Update the Updater application</a>.
 
 
 
