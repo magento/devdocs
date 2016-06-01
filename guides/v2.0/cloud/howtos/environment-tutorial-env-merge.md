@@ -2,9 +2,9 @@
 layout: default
 group: cloud
 subgroup: 10_howto
-title: Tutorial&mdash;Merge and delete an environment
-menu_title: Tutorial&mdash;Merge and delete an environment
-menu_order: 7
+title: Merge and delete an environment
+menu_title: Merge and delete an environment
+menu_order: 12
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: env-tut
@@ -13,10 +13,10 @@ redirect_from: guides/v2.0/cloud/env/environment-tutorial-env-merge.html
 ---
 
 #### Contents
-*	[Tutorial&mdash;Merge an environment](#tut-env-merge)
+*	[Merge an environment](#tut-env-merge)
 *	[Optionally delete the environment](#tut-env-delete)
 
-## Tutorial&mdash;Merge an environment {#tut-env-merge}
+## Merge an environment {#tut-env-merge}
 This tutorial shows how to merge changes from an environment to its parent, which in this case is the master branch. You can, for example, merge code updates, new components, changes to themes, and so on.
 
 You can them optionally delete the environment.
@@ -107,4 +107,4 @@ Wait for the environment to delete.
 </div>
 
 #### Related topic
-[Tutorial&mdash;Set Magento environment variables]({{ site.gdeurl }}cloud/env/environment-tutorial-set-mage-vars.html)
+[Set Magento environment variables]({{ site.gdeurl }}cloud/env/environment-tutorial-set-mage-vars.html)

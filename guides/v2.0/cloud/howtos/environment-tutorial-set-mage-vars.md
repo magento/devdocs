@@ -2,9 +2,9 @@
 layout: default
 group: cloud
 subgroup: 10_howto
-title: Tutorial&mdash;Set Magento environment variables
-menu_title: Tutorial&mdash;Set Magento environment variables
-menu_order: 6
+title: Set Magento environment variables
+menu_title: Set Magento environment variables
+menu_order: 11
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: env-tut
@@ -75,4 +75,4 @@ To change the Admin URI and administrator password:
 		+----------------+---------------+-----------+------+
 
 #### Related topic
-[Tutorial&mdash;Merge an environment]({{ site.gdeurl }}cloud/env/environment-tutorial-env-merge.html)
+[Merge an environment]({{ site.gdeurl }}cloud/env/environment-tutorial-env-merge.html)

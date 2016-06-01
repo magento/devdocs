@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 10_howto
-title: Tutorial&mdash;Upgrade the Magento system software
-menu_title: Tutorial&mdash;Upgrade the Magento system software
+title: Upgrade the Magento system software
+menu_title: Upgrade the Magento system software
 menu_order: 2
 menu_node: 
 github_link: cloud/howtos/upgrade-magento.md
