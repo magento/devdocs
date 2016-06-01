@@ -35,6 +35,7 @@ Here is the issue you might encounter when running `update/cron.php`:
 `PHP Parse error: syntax error, unexpected '.', expecting ')' in /home/user/public_html/update/app/code/Magento/Update/UpdateLoggerFactory.php on line 31 `
 
 The following table summarizes what you need to do.
+
 <table>
 	<tbody>
 <tr> 
@@ -44,16 +45,19 @@ The following table summarizes what you need to do.
 
 <tr>
 	<td>PHP 5.5.x AND Magento 2.0.7</td>
-<td> Download and install this patch as detailed in this bulletin.<p><strong>Note</strong>: You must apply the Updater patch for PHP 5.5.x Magento 2.0.7 patch whether you installed the Magento software using a <a href="{{ site.gdeurl }}install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html">Composer metapackage</a>.</td>
+<td> Download and install this patch as detailed in this bulletin. Note: You must apply the Updater patch for PHP 5.5.x Magento 2.0.7 patch whether you installed the Magento software using a <a href="{{ site.gdeurl }}install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html">Composer metapackage</a>.</td>
 </tr>
+
 <tr>
 	<td>PHP 5.5.x AND Updater 10.0.1</td>
 	<td>Download and install this patch.</td>
 </tr>
+
 <tr>
 	<td>PHP 5.6.x with any Magento and Updater version</td>
 	<td>Ignore this bulletin</td>
 </tr>
+
 <tr>
 	<td>PHP 7.0.x with any Magento and Updater version</td>
 	<td>Ignore this bulletin</td>
@@ -61,8 +65,6 @@ The following table summarizes what you need to do.
 
 </tbody>
 </table>
-
-
 
 <h4>Details</h4>
 The Updater application packaged with Magento version 2.0.7 (version 10.0.1) has a line of code that is not compatible with PHP version 5.5.x. 
