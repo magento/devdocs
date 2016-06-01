@@ -405,15 +405,16 @@ schedule.
 
 `crons` supports the following:
 
-*	`spec`: The cron specification. For example: `*/20 * * * *`.
+*	`spec`: The cron specification. Magento requires cron to run every minute; our spec is `*/1 * * * *`.
 *	`cmd`: The command to execute.
 
-	Magento Enterprise Cloud Edition requires the following cron job:
+The Magento cron job follows:
 
-		*/5 * * * * <path-to-php-binary> -c <ini-file-path> <your Magento install dir>/bin/magento cron:run 
-		
-The minimum interval between cron runs is 5 minutes, even if you specify a smaller value.
-
+	crons:
+    cronrun:
+        spec: "*/1 * * * *"
+        cmd: "php bin/magento cron:run"
+        
 {% endcollapsible %}
 
 ## Configure PHP options {#cloud-yaml-platform-php}
