@@ -3,7 +3,7 @@ layout: default
 group: release-notes
 subgroup: Technical Bulletin
 title: Technical Bulletin
-menu_title: Required patch for PHP 5.5.x and Updater 10.0.1 environments (June 1, 2016)
+menu_title: Required patch for PHP 5.5.x and Updater environments (June 1, 2016)
 menu_node: 
 menu_order: 
 github_link: release-notes/tech_bull_207-upgrade.md
@@ -17,22 +17,22 @@ This bulletin informs you of a known issue updating from Magento EE and CE envir
 
 	**and**
 
-* updater application version 10.00.1. This version is shipped by default with Magento 2.0.7. 
+* updater application version 10.0.1. This version is shipped by default with Magento 2.0.7. 
 
-Patch MDVA-449 supplies the fix for this potential upgrade issue. 
+`Patch MDVA-449` supplies the fix for this potential upgrade issue. 
 
 <div class="bs-callout bs-callout-warning">
     <p>Magento 2.0.7 by default ships with Updater application version 10.1.0. If you have not changed the default Updater application version that shipped with 2.0.7 and are running PHP5.5.x, you must follow this bulletin. Failure to install this patch (MDVA-449) will complicate attempts to upgrade from this version of Magento. Installations using PHP 5.6.x and 7.0.x do not need this patch.</p>
 </div>
 
 
-<h3>Issue: Upgrade failure from Magento installations running PHP 5.5.x and Updater application v10.0.1</h3>
+<h3>Issue: Upgrade failure from Magento installations running PHP 5.5.x and Updater application 10.0.1</h3>
 
 Magento Community Edition (CE) and Enterprise Edition (EE) upgrades fail if your server runs PHP 5.5.x and Updater application version 10.0.1 and you  try to upgrade to a later version of Magento.
 
 Here is the issue you might encounter when running `update/cron.php`:
  
-`PHP Parse error: syntax error, unexpected '.', expecting ')' in /home/user/public_html/update/app/code/Magento/Update/UpdateLoggerFactory.php on line 31 `
+	PHP Parse error: syntax error, unexpected '.', expecting ')' in /home/user/public_html/update/app/code/Magento/Update/UpdateLoggerFactory.php on line 31 
 
 The following table summarizes what you need to do.
 
@@ -66,6 +66,19 @@ The following table summarizes what you need to do.
 </tbody>
 </table>
 
+<h4>How to determine which version of Updater you are running</h4> 
+1. Log in to your Magento server as, or switch to, the Magento file system owner.
+
+2. Open the following file in a text editor:
+
+	<your Magento install dir>/update/composer.json
+
+3. Look for the value of "version". If the value of "version" is "10.0.1", and you're using PHP 5.5, you must make the changes discussed in this bulletin. For example,
+
+	"version": "10.0.1"
+
+4. Exit the text editor without making changes.
+
 <h4>Details</h4>
 The Updater application packaged with Magento version 2.0.7 (version 10.0.1) has a line of code that is not compatible with PHP version 5.5.x. 
 
@@ -82,8 +95,7 @@ To apply this patch:
 1.	Download one of the following patch archives. Patches are available in the following formats: `.zip`, `.tar.bz2`, `.tar.gz`
 
 	<table>
-		<col width="30%">
-		<col width="70%">
+		
 	<tbody>
 	<tr> 
 		<th>Magento edition</th>
