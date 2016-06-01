@@ -10,7 +10,7 @@ github_link: release-notes/tech_bull_207-upgrade.md
 redirect_from: /guides/v2.0/release-notes/tech_bull_jan_16.html
 ---
 
-## Required patch for PHP 5.5.x and Updater 10.0.1 environments (June 1, 2016)
+<h2>Required patch for PHP 5.5.x and Updater 10.0.1 environments (June 1, 2016)</h2>
 This bulletin informs you of a known issue updating from Magento EE and CE environments that run the following:   
 
 * PHP 5.5.x
@@ -26,7 +26,7 @@ Patch MDVA-449 supplies the fix for this potential upgrade issue.
 </div>
 
 
-### Issue: Upgrade failure from Magento installations running PHP 5.5.x and updater application v10.0.1
+<h3>Issue: Upgrade failure from Magento installations running PHP 5.5.x and Updater application v10.0.1</h3>
 
 Magento Community Edition (CE) and Enterprise Edition (EE) upgrades fail if your server runs PHP 5.5.x and Updater application version 10.0.1 and you  try to upgrade to a later version of Magento.
 
@@ -65,7 +65,7 @@ The following table summarizes what you need to do.
 </tbody>
 </table>
 
-#### Details
+<h4>Details</h4>
 The Updater application packaged with Magento version 2.0.7 (version 10.0.1) has a line of code that is not compatible with PHP version 5.5.x. 
 
 
@@ -74,7 +74,7 @@ Use the following resolutions to ensure the success of future upgrades:
 *	[Download and install patch ](#resolution1)
 *	[Use Composer](#resolution2)
 
-#### Download and install patch {#resolution1}
+<h4>Download and install patch</h4> {#resolution1}
 If your Magento server runs PHP 5.5.x and Updater application v10.0.1,  apply this patch.
 
 To apply this patch:
@@ -151,7 +151,7 @@ To apply this patch:
 
 
 
-#### Use Composer to install new Updater code {#resolution2}
+<h4>Use Composer to install new Updater code</h4> {#resolution2}
 
 
 To resolve this issue using Composer, see <a href="{{ site.gdeurl }}comp-mgr/updater/update-updater.html">Update the Updater application</a>.
