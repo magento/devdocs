@@ -3,7 +3,7 @@ layout: default
 group: release-notes
 subgroup: Technical Bulletin
 title: Technical Bulletin
-menu_title: Required patch for PHP 5.5.x and Updater environments (June 1, 2016)
+menu_title: Required patch for PHP 5.5.x and Updater 10.0.1 environments (June 1, 2016)
 menu_node: 
 menu_order: 
 github_link: release-notes/tech_bull_207-upgrade.md
@@ -17,18 +17,19 @@ This bulletin informs you of a known issue updating from Magento EE and CE envir
 
 	**and**
 
-* updater application version 10.0.1. This version is shipped by default with Magento 2.0.7. 
+* Updater application version 10.0.1. This version is shipped by default with Magento 2.0.7. 
 
 `Patch MDVA-449` supplies the fix for this potential upgrade issue. 
 
-<div class="bs-callout bs-callout-warning">
-    <p>Magento 2.0.7 by default ships with Updater application version 10.1.0. If you have not changed the default Updater application version that shipped with 2.0.7 and are running PHP5.5.x, you must follow this bulletin. Failure to install this patch (MDVA-449) will complicate attempts to upgrade from this version of Magento. Installations using PHP 5.6.x and 7.0.x do not need this patch.</p>
-</div>
 
 
 <h3>Issue: Upgrade failure from Magento installations running PHP 5.5.x and Updater application 10.0.1</h3>
 
 Magento Community Edition (CE) and Enterprise Edition (EE) upgrades fail if your server runs PHP 5.5.x and Updater application version 10.0.1 and you  try to upgrade to a later version of Magento.
+
+
+Magento 2.0.7 by default ships with Updater application version 10.0.1.  If you have not changed the default Updater application version that shipped with 2.0.7 and are running PHP5.5.x, you must follow this bulletin. Failure to install  `Patch MDVA-449` will complicate attempts to upgrade from this version of Magento. Installations using PHP 5.6.x and 7.0.x do not need this patch.
+
 
 Here is the issue you might encounter when running `update/cron.php`:
  
@@ -45,12 +46,12 @@ The following table summarizes what you need to do.
 
 <tr>
 	<td>PHP 5.5.x AND Magento 2.0.7</td>
-<td> Download and install this patch as detailed in this bulletin. Note: You must apply the Updater patch for PHP 5.5.x Magento 2.0.7 patch whether you installed the Magento software using a <a href="{{ site.gdeurl }}install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html">Composer metapackage</a>.</td>
+<td> Download and install <code>Patch MDVA-449</code> as detailed in this bulletin. Note: You must apply <code>Patch MDVA-449</code>  whether you installed the Magento software using a <a href="{{ site.gdeurl }}install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html">Composer metapackage</a>.</td>
 </tr>
 
 <tr>
 	<td>PHP 5.5.x AND Updater 10.0.1</td>
-	<td>Download and install this patch</td>
+	<td>Download and install <code>Patch MDVA-449</code> </td>
 </tr>
 
 <tr>
@@ -71,11 +72,11 @@ The following table summarizes what you need to do.
 
 2. Open the following file in a text editor:
 
-	<your Magento install dir>/update/composer.json
+`<your Magento install dir>/update/composer.json`
 
-3. Look for the value of "version". If the value of "version" is "10.0.1", and you're using PHP 5.5, you must make the changes discussed in this bulletin. For example,
+3. Look for the value of `"version"`. If the value of `"version"` is `"10.0.1"`, and you're using PHP 5.5.x, you must make the changes discussed in this bulletin. For example,
 
-	"version": "10.0.1"
+`"version": "10.0.1"`
 
 4. Exit the text editor without making changes.
 
@@ -84,11 +85,11 @@ The Updater application packaged with Magento version 2.0.7 (version 10.0.1) has
 
 Use the following resolutions to ensure the success of future upgrades:
 
-*	Download and install patch 
+*	Download and install `Patch MDVA-449` 
 *	Use Composer to install new Updater code
 
 <h4>Download and install patch</h4> 
-If your Magento server runs PHP 5.5.x and Updater application v10.0.1,  apply this patch.
+If your Magento server runs PHP 5.5.x and Updater application 10.0.1,  apply `Patch MDVA-449`.
 
 To apply this patch:
 
@@ -104,7 +105,7 @@ To apply this patch:
 	<tr> 
 	<td>Magento CE</td>
 	<td><p><a href="http://www.magento.com/download" target="_blank">www.magento.com/download</a></p>
-		<p>Follow the instructions on your screen to download <code>Patch MDVA-449.</code></p></td>
+		<p>Follow the instructions on your screen to download <code>Patch MDVA-449</code>.</p></td>
 	</tr>
 	<tr> 
 		<td>Magento EE merchant portal</td>
@@ -114,7 +115,7 @@ To apply this patch:
 		<li>Log in with your Magento user name and password.</li>
 		<li>In the left navigation bar, click <strong>Downloads</strong>.</li>
 		<li>Click <strong>Magento Enterprise Edition</strong> <strong>2.X</strong> > <strong>Magento Enterprise Edition 2.x Release</strong> > <strong>Support Patches</strong></li>
-		<li>Follow the instructions on your screen to download <code>Patch MDVA-449</code></li></ul>
+		<li>Follow the instructions on your screen to download <code>Patch MDVA-449</code>.</li></ul>
 
 	</li>
 	<li>Transfer the patch to your development system.</li></ol></td>
@@ -125,14 +126,14 @@ To apply this patch:
 		<ol><li>Log in to <a href="https://partners.magento.com/English/?rdir=/files.aspx" target="_blank">partners.magento.com</a></li>
 		<li>Click <strong>Magento Enterprise Edition</strong> > <strong>Magento Enterprise Edition 2.X</strong> > <strong>Magento Enterprise Edition 2.x Release</strong> > <strong>Support Patches</strong>.</li>
 		<li>In the left navigation bar, click <strong>Downloads</strong>.</li>
-		<li>Follow the instructions on your screen to download <code>Patch MDVA-449.</code></li>
+		<li>Follow the instructions on your screen to download <code>Patch MDVA-449</code>.</li>
 	<li>Transfer the patch to your development system.</li></ol></td>
 		</tr>
 	</tbody>
 	</table>
 
 	<div class="bs-callout bs-callout-info" id="info">
-  		<p>Use the same patch whether or not you installed optional sample data.</p>
+  		<p>Use <code>Patch MDVA-449</code> whether or not you installed optional sample data.</p>
 	</div>
 
 2.	Extract the patch in your Magento installation directory.
