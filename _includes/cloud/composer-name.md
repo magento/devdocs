@@ -1,8 +1,10 @@
 <div markdown="1">
 
-To get the component's Composer name:
+This section discusses how to get a component's Composer name and its version from Magento Marketplace. Alternatively, you can find the name and version of *any* component (whether or not you purchased it on Marketplace) in the component's `composer.json` file. Open `composer.json` in a text editor and write down the values of `"name"` and `"version"`. 
 
-1.	Log in to Magento Marketplace with the user name and password you used to purchase the component.
+To get the component's Composer name from Magento Marketplace:
+
+1.	Log in to [Magento Marketplace](https://marketplace.magento.com){:target="_blank"} with the user name and password you used to purchase the component.
 2.	In the upper right corner, click **&lt;your user name>** > **My Account** as the following figure shows.
 
 	![Access your Marketplace account]({{ site.baseurl }}common/images/cloud_marketplace-account.png){:width="650px"}
@@ -18,4 +20,4 @@ To get the component's Composer name:
 
 		celebros/module-autocomplete1.0.0-ee_edition
 6.	Remove `-ee_edition` from the value.
-7.	Insert a colon between the name and the version before the version (in this example, `celebros/module-autocomplete:1.0.0`).
+7.	Replace the dash character between the name and version with a colon character (in this example, `celebros/module-autocomplete:1.0.0`).

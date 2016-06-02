@@ -24,6 +24,7 @@ This topic discusses how to install *components*, which can be any of the follow
 
 To install a component, you must:
 
+1.	Obtain the component from [Magento Marketplace](https://marketplace.magento.com){:target="_blank"} or elsewhere.
 1.	[Get the component's Composer name](#cloud-howto-comp-composer) and version from the Magento Marketplace invoice.
 2.	In your local Magento Enterprise Cloud Edition project, [update the Magento `composer.json`](#cloud-howto-comp-json) file with the name and version of the component.
 3.	[Push](#cloud-howto-comp-push) the changes to your environment.
@@ -66,6 +67,7 @@ To update `composer.json`:
 	For example,
 
 		composer require celebros/module-autocomplete:1.0.0
+4.	Wait for project dependencies to update.
 3.	Continue with the next section.
 
 {% endcollapsible %}

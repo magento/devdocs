@@ -46,10 +46,13 @@ To remove the component:
 3.  Enter the following command:
 
         composer remove <component-name>:<version>
-4.  Update dependencies:
 
-        composer update
-8.  Enter the following commands in the order shown to commit the changes and deploy the project:
+    If the following message displays, you don't need to do anything further:
+
+    	Package "<name>:<version>" listed for update is not installed. Ignoring.
+
+4.  Wait while dependencies are updated.
+5.  Enter the following commands in the order shown to commit the changes and deploy the project:
 
         git add -A
         git commit -m "<message>"
