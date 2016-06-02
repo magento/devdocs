@@ -28,7 +28,10 @@
 
 		magento-cloud environment:checkout <environment ID>
 
-	To create a new environment, use `magento-cloud environment:branch <environment name> <parent project ID>`
+	To create a new environment, use `magento-cloud environment:branch <environment name> <parent environment ID>`
+8.	Pull the latest code from the environment:
+
+		git pull origin <environment ID>
 7.  Create a [snapshot]({{ site.gdeurl }}cloud/admin/admin-snap.html) of the environment.
 
         magento-cloud snapshot:create -e <environment ID>

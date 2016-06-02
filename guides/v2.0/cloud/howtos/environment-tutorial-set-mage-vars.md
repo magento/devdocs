@@ -2,9 +2,9 @@
 layout: default
 group: cloud
 subgroup: 10_howto
-title: Tutorial&mdash;Set Magento environment variables
-menu_title: Tutorial&mdash;Set Magento environment variables
-menu_order: 6
+title: Set Magento environment variables
+menu_title: Set Magento environment variables
+menu_order: 11
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: env-tut
@@ -15,7 +15,7 @@ redirect_from: guides/v2.0/cloud/env/environment-tutorial-set-mage-vars.html
 ## Tutorial: change the Magento Admin URI and password {#cloud-env-vars-magento-admin-tut}
 For security reasons, we strongly recommend you change the Magento Admin URI and the administrator's password. This makes it harder for someone else to log in to the Magento Admin and change settings.
 
-Remember that environment variables are inherited from the parent environment to child environments. You should make these changes in the `master` environment so all other environments start with the same values.
+Environment variables are inherited from the parent environment to child environments. You should make these changes in the `master` environment so all other environments start with the same values.
 
 You can use the same tasks to change any variable discussed in the preceding section.
 
@@ -75,4 +75,4 @@ To change the Admin URI and administrator password:
 		+----------------+---------------+-----------+------+
 
 #### Related topic
-[Tutorial&mdash;Merge an environment]({{ site.gdeurl }}cloud/env/environment-tutorial-env-merge.html)
+[Merge an environment]({{ site.gdeurl }}cloud/env/environment-tutorial-env-merge.html)

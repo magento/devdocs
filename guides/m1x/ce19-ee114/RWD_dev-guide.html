@@ -589,13 +589,13 @@ skin/frontend/custompackage/customtheme/scss/module/
 skin/frontend/custompackage/customtheme/scss/override/
 skin/frontend/custompackage/customtheme/scss/vendor/</pre>
 The following files should now be located in <tt>skin/frontend/custompackage/customtheme/scss</tt>:<br />
-<pre>var.scss
-core.scss
+<pre>_var.scss
+_core.scss
 styles-ie8.scss
 styles.scss
 scaffold-forms.scss
-custom_core.scss
-framework.scss</pre></li>
+_custom_core.scss
+_framework.scss</pre></li>
 <li>If you're familiar with Magento theme development and you did <em>not</em> already copy Sass partials, copy <em>only</em> the Sass partials you want to override from <tt>rwd/default</tt> to <tt>skin/frontend/custompackage/customtheme/scss</tt>.</li></ul>
 <p>Now you can set up a fallback structure:</p>
 <ol>
@@ -606,9 +606,9 @@ The preceding causes Compass to look for Sass files in <tt>skin/frontend/rwd/ent
 <li>Following is what to do with copies of Sass files from <tt>rwd/default</tt>:<br />
         <ul>
             <li><tt>styles.scss</tt>, <tt>styles-ie8.scss</tt>: You must copy these files into your custom theme so that Compass knows which files to compile into CSS files.</li>
-            <li><tt>core.scss</tt>, <tt>framework.scss</tt>: You must copy these files into your custom theme so Compass looks in the <tt>custompackage/customtheme</tt> directory for any of the files imported by these two files.</li>
-            <li><tt>var.scss</tt>: You'll typically edit the values in this file for your custom theme.<br />
-			If you don't like the idea of editing this file and want to override its values with a <tt>_var_custom.scss</tt> file, make sure it gets imported immediately after <tt>var.scss</tt>.</li>
+            <li><tt>_core.scss</tt>, <tt>framework.scss</tt>: You must copy these files into your custom theme so Compass looks in the <tt>custompackage/customtheme</tt> directory for any of the files imported by these two files.</li>
+            <li><tt>_var.scss</tt>: You'll typically edit the values in this file for your custom theme.<br />
+			If you don't like the idea of editing this file and want to override its values with a <tt>_var_custom.scss</tt> file, make sure it gets imported immediately after <tt>_var.scss</tt>.</li>
         </ul>
     </li>
 

@@ -13,7 +13,7 @@ redirect_from: /guides/v1.0/architecture/archi_perspectives/present_layer.html
 
 
 <h2> Presentation layer</h2>
-When you interact with the Magento web interface, you are directly working with <i>presentation layer</i> code. The presentation layer contains both view elements (layouts, blocks, templates) and controllers, which process commands to and from the user interface). Presentation code controls web user interaction with the product and its appearance. You can extensively customize the user interface by using HTML, CSS, and .phtml files to modify elements of the presentation layer. 
+When you interact with the Magento web interface, you are directly working with <i>presentation layer</i> code. The presentation layer contains both view elements (layouts, blocks, templates) and controllers, which process commands to and from the user interface). Presentation code controls web user interaction with the product and its appearance. You can extensively customize the user interface by using HTML, CSS, and PHTML files to modify elements of the presentation layer. 
 
 
 
@@ -47,16 +47,16 @@ Magento generates the HTML for a page to display to a user from a tree of view e
 View elements fall into two main categories: Blocks and containers.
 
 
-* Blocks can generate dynamic content and can contain named child view elements that are similar to arguments being passed in. (The `as` attribute holds the child view element names for the parent block to reference them by.)
+* Blocks can generate dynamic content and can contain named child view elements that are similar to arguments being passed in. (The `as` attribute holds the child view element names for the parent block to reference them)
 
 * Containers collect an ordered group of children view elements.
 
 
-The brower forms a product web page by asking the view element tree to render itself into HTML. Containers and blocks emit HTML that encloses their children appropriately. Blocks can generate their content using static HTML, Knockout JS scripts, and PHTML.
+The browser forms a product web page by asking the view element tree to render itself into HTML. Containers and blocks emit HTML that encloses their children appropriately. Blocks can generate their content using static HTML, Knockout JS scripts, and PHTML.
 
 
 <h3>How Presentation code calls other layers</h3>
-Presentation code typically calls service contracts, particularly for a store front. However, presentation code is occasionally dependent on a specific implementation that requires the presentation code to directly call the <i>business logic</i> layer. For example, the Admin UI screens are often tightly linked a specific implementation and are not generic across implementations.
+Presentation code typically calls service contracts, particularly for a store front. However, presentation code is occasionally dependent on a specific implementation that requires the presentation code to directly call the <i>business logic</i> layer. For example, the Admin UI screens are often tightly linked to a specific implementation and are not generic across implementations.
 
 The View layer calls code from the Model to get information about the state of the application (for example, the price of a product). Typically, the way it accesses the Model is through service contracts. 
 
