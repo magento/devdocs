@@ -6,13 +6,20 @@ title: Locate templates, layouts, and styles
 menu_title: Locate templates, layouts, and styles
 menu_order: 6
 github_link: frontend-dev-guide/themes/debug-theme.md
+redirect_from: /guides/v1.0/frontend-dev-guide/themes/debug-theme.html
 ---
 
 <h2 id="debug-theme-intro">What's in this topic</h2>
 
 When you create a Magento theme, you might need to create override files for default theme and module view files. To do so, you must determine which template, layout, and style files Magento uses. This topic describes how to do this.
 
-<h2 id="debug-theme-templ">Locate templates</h2>
+**Contents**
+
+* TOC
+{:toc}
+
+
+## Locate templates {#debug-theme-templ}
 
 To locate the template that is responsible for a specific part of the storefront or Admin, you can use Magento built-in template hints.
 
@@ -48,7 +55,7 @@ A search through the app directory for occurrences of "minicart-wrapper" in `.ph
 Since it is not recommended to edit the default files, you need to add overriding files if you want to customize the template. For details about overriding templates please refer to <a href="{{site.gdeurl21}}frontend-dev-guide/templates/template-walkthrough.html">Customizing Theme Template</a>.
 
 
-<h2 id="debug-theme-layout" >Locate layouts</h2>
+## Locate layouts {#debug-theme-layout}
 Just like templates, layouts are saved on a per-module basis. You can easily locate the layout file by determining in which module the templates for the element you are interested in reside in. To locate the template, you can use Template Hints or text search in the app directory, as described previously .
 
 After you have determined the module, you can search for the layout in the following locations:
@@ -75,7 +82,7 @@ Let's search for the layout following the fallback scheme:
 After you located the necessary layout file, you can create your custom layout file with the corresponding name in your theme folder to add <a href="{{site.gdeurl21}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> or <a href="{{site.gdeurl21}}frontend-dev-guide/layouts/layout-override.html" target="_blank">overriding</a> content. Please see <a href="{{site.gdeurl21}}frontend-dev-guide/layouts/layout-overview.html">Customizing Theme Layouts</a> for more details.
 
 
-<h2 id="debug-theme-style">Locate styles</h2>
+## Locate styles {#debug-theme-style}
 To locate a CSS rule that is applied to a certain element, find the template for the page that contains the element. Or you can use browser debugging tools, to locate the class name.
 After you find the class name, use text search in the theme and module styles directories to locate the `.less` or `.css` file that defines the class. Perform the search according to the following fallback scheme:
 
@@ -83,8 +90,9 @@ After you find the class name, use text search in the theme and module styles di
 2. Theme styles `<current_theme_dir>/web/css/`
 2. Module theme styles `<current_theme_dir>/<Namespace>_<Module>/web/css/`
 3. Parent theme styles `<parent_theme_dir>/web/css/`
-4. Module styles for the `frontend` area `<module_dir>/view/frontend/web/css/`
-5. Module styles for the `base` area `<module_dir>/view/base/web/css/`
+4. Parent theme Module styles `<parent_theme_dir>/<Namespace>_<Module>/web/css/`
+5. Module styles for the `frontend` area `<module_dir>/view/frontend/web/css/`
+6. Module styles for the `base` area `<module_dir>/view/base/web/css/`
 
 Example:
 
