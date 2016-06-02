@@ -38,7 +38,6 @@ require(["jquery"], function($){
     // ...
 });
 
-
 // Modular ID (Magento module: Magento_ConfigurableProduct/js/configurable)
 require(["Magento_ConfigurableProduct/js/configurable"], function(Configurable){
     // ...
