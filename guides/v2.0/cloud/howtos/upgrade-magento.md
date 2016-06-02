@@ -4,7 +4,9 @@ group: cloud
 subgroup: 10_howto
 title: Upgrade the Magento system software
 menu_title: Upgrade the Magento system software
-menu_order: 2
+menu_order: 3
+level3_menu_node: level3child
+level3_subgroup: upgrade-update
 menu_node: 
 github_link: cloud/howtos/upgrade-magento.md
 ---
@@ -15,9 +17,18 @@ This topic discusses how to upgrade the Magento system software (for example, fr
 ### Get started
 To get started:
 
+{% collapsible Click to expand/collapse content %}
+
+To get started:
+
 {% include cloud/cli-get-started.md %}
 
+{% endcollapsible %}
+
 ### Upgrade the software
+
+{% collapsible Click to expand/collapse content %}
+
 To upgrade:
 
 1.	If you have not done so already, check out the environment to upgrade.
@@ -39,7 +50,9 @@ To upgrade:
 3.	Wait for the project to deploy.
 4.	Verify the version either by logging in to the Magento Admin (version displays toward the bottom of the page) or by entering the following command:
 
-		php <your project root dir>/bin/magento --version
+		php <your environment root dir>/bin/magento --version
+
+{% endcollapsible %}
 
 #### Related topic
 [Tutorial&mdash;Merge and delete an environment]({ site.gdeurl })cloud/howtos/environment-tutorial-env-merge.html)
