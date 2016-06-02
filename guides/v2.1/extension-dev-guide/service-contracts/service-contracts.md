@@ -5,7 +5,7 @@ subgroup: 99_Module Development
 title: Service contracts
 menu_title: Service contracts
 menu_order: 2
-github_link: extension-dev-guide/service-contracts/service-contracts.md
+github_link21: extension-dev-guide/service-contracts/service-contracts.md
 ---
 
 ##{{page.menu_title}}

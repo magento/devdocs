@@ -5,7 +5,7 @@ subgroup: 99_Module Development
 title: Routing
 menu_title: Routing
 menu_order: 11
-github_link: extension-dev-guide/routing.md
+github_link21: extension-dev-guide/routing.md
 ---
 
 ##{{page.menu_title}}

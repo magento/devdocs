@@ -6,7 +6,7 @@ title: Test your component
 menu_title: Test your component
 menu_order: 2
 menu_node:
-github_link: extension-dev-guide/validate/test-module.md
+github_link21: extension-dev-guide/validate/test-module.md
 
 ---
 

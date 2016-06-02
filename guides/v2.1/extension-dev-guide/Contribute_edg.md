@@ -5,7 +5,7 @@ subgroup: Contributor Guide
 title: Contribute to Magento DevDocs
 menu_title: Contribute to Magento DevDocs
 menu_order: 
-github_link: extension-dev-guide/Contribute_edg.md
+github_link21: extension-dev-guide/Contribute_edg.md
 
 ---
 

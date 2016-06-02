@@ -6,7 +6,7 @@ title: Build
 menu_title: Build
 menu_order: 1
 menu_node: parent
-github_link: extension-dev-guide/build/build.md
+github_link21: extension-dev-guide/build/build.md
 
 ---
 
