@@ -32,18 +32,19 @@ We recommend specifying JavaScript resources in the templates rather than in the
 
 JavaScript resources generated in Magento have IDs of two types:  a RequireJS ID and a Magento modular ID. For example JavaScript resources for configurable product will have the following IDs:
 
-<pre>// Regular ID
+{%highlight js%}
+// Regular ID
 require(["jquery"], function($){
     // ...
 });
 
-// Modular ID (Magento module: Magento_ConfigurableProduct, resource: js/configurable)
-require(["magento!Magento_ConfigurableProduct::js/configurable"], function(Configurable){
+// Modular ID (Magento module: Magento_ConfigurableProduct/js/configurable)
+require(["Magento_ConfigurableProduct/js/configurable"], function(Configurable){
     // ...
 });
-</pre>
 
-The modular ID has `magento!` prefix and is used for loading the JavaScript modules. The ID Normalizer plugin converts the modular IDs into the file paths that are used by RequireJS to load the JavaScript modules.
+{%endhighlight%}
+
 
 <h3 id="m2devgde-js-resources-dependencies">Specify dependencies between JavaScript resources</h3>
 Specifying all dependencies between JavaScript resources might be time consuming. To facilitate this task we implemented ability to build the dependencies via plugin: thus, you will need to specify only dependency of your resource on a plugin, and the latter will pick up all necessary dependencies on other resources automatically.
@@ -143,3 +144,4 @@ You can adjust RequireJS for your needs in two ways:
 
 *	Fallback mechanism: general rules on customizing URLs or paths for static view files apply to JavaScript, because JavaScript files are static view files
 *	Configuration files as described earlier in <a href="#m2devgde-js-resources-configrequirejs">Configure the RequireJS library</a>
+
