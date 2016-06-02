@@ -21,7 +21,7 @@ github_link: extension-dev-guide/staging/Staging.md
 
 ## Overview
 
-The Magento_Staging module enables you to work with the future campaigns in Magento EE.
+The Magento_Staging module enables you to work with the future [campaigns](#campaign) in Magento EE.
 
 With the Magento_Staging module you can:
 
@@ -30,9 +30,9 @@ With the Magento_Staging module you can:
     - Using API
 - Preview a future campaign in Admin
 
-Moreover, the Magento_Staging module is a framework for other staging modules. It declares basic scenarios over the content, while other staging modules perform them. (You can recognize staging modules by a name, each ends with “Staging” and starts with a name of a module, which it extends. For example, “Magento_CatalogStaging” module extends functionality of Magento_Catalog module.)
+Moreover, the Magento_Staging module is a framework for other [staging](#staging) modules. It declares basic scenarios over the content, while other staging modules perform them. (You can recognize a staging modules by name, each ends with “Staging” and starts with a name of a module, which it extends. For example, Magento_CatalogStaging module extends functionality of Magento_Catalog module.)
 
-You can work with the following entities out-of-the-box:
+You can work with the following entities out of the box:
 
 - Product
 - Category
@@ -45,48 +45,48 @@ And you can extend the list adding your own extension modules.
 
 ## Glossary
 
-**campaign**
-: a set of two or more scheduled updates with the same name and time period.
+<a name="campaign"><b>campaign</b></a>
+: a set of two or more scheduled updates with the same name and time period
 
-**staging**  
-: a set of functionality that enables you to schedule the store changes in Magento database. You can configure the particular state of the database to be applied in the future.
+<a name="staging"><b>staging</b></a>
+: a set of functionality that enables you to schedule the store changes in Magento database. You can configure the particular state of the database to be applied in the future
 
-**scheduled update, update**  
-: scheduled change of a Magento store entity.
+<a name="scheduled-update"><b>scheduled update</b></a>, <a name="update"><b>update</b></a>
+: scheduled change of a Magento store entity
 
-**permanent update**  
+<a name="permanent-update"><b>permanent update</b></a>
 : scheduled update that has start date and doesn’t have end date
 
-**temporary update**  
+<a name="temporary-update"><b>temporary update</b></a>
 : scheduled update that has a start date and an end date
 
 ## Dashboard
 
-The Magento_Staging module creates GUI dashboard of campaigns in Admin (*Content &gt; Staging Dashboard*).
+The Magento_Staging module creates a GUI dashboard of campaigns in Admin (*Content &gt; Staging Dashboard*).
 
 ### Usage
 
-Dashboard shows campaigns as a timeline and a grid. Both views represent same set of campaign attributes:
+The dashboard shows campaigns as a timeline and a grid. Both views represent the same set of [campaign](#campaign) attributes:
 
 - Name of campaign
 - Status of campaign
 - Number of included store objects (updates) in the campaign
-- Start time of campaign
-- End time of campaign
-- Campaign description
+- Start time
+- End time
+- [campaign](#campaign) description
 
 Available actions:
 
 - Preview, which enable you to see how store will look during the campaign.
-- Edit, which you can use to change the campaign attribute values. Also, Edit page shows you grids of all staging categories with included objects.
+- Edit, which you can use to change the [campaign](#campaign) attribute values. Also, Edit page shows you grids of all  [staging](#staging) categories with included objects.
 
 ### Customization
 
-You can customize grid using usual grid settings situated on the area above the grid; or manipulate directly the corresponding UI components.
+You can customize grid using standard grid settings located on the area above the grid; or manipulate directly the corresponding UI components.
 
 #### Timeline/Grid view UI components
 
-You can manipulate the timeline view and the grid view of a dashboard in the `app\code\Magento\Staging\view\adminhtml\ui_component\staging_update_grid.xml` configuration file as a simple grid with the following custom settings:
+You can manipulate the timeline view and the grid view of a dashboard in the `app\code\Magento\Staging\view\adminhtml\ui_component\staging_update_grid.xml` configuration file as a [simple grid](devdocs.magento.com/guides/v2.1/ui-components/ui-listing-grid.html) with the following custom settings:
 
 - in `listingToolbar`
     - `template` declares a legend for a timeline, which is an overloading template that provides a grid/timeline view switcher.
@@ -94,33 +94,33 @@ You can manipulate the timeline view and the grid view of a dashboard in the `ap
 - in `columns`
     - `component` declares a timeline component, which extends listing.
     - `recordTmpl` declares an overloading template for timeline records.
-    - `detailsTmpl` declares a template for a tooltip component, which provides campaign details.
+    - `detailsTmpl` declares a template for a tooltip component, which provides [campaign](#campaign) details.
 - in `column name="status"`
     - `component` extends selection column, sets a css class specified in a value.
-    - `updateTypesMap` declares an array that contains bound classes and values to a css style. Depending on the `value` (obtained from backend), a css class from the `className` is applied to a row with update.
+    - `updateTypesMap` declares an array that contains bound classes and values that indicate wich css class must be applied. Depending on the `value` (obtained from backend), a css class from the `className` is applied to a stripe with update.
 
-[Learn more about UI components.](http://devdocs.magento.com/guides/v2.1/ui-components/ui-component.html)
+[Learn more details about the timeline dashboard.](http://devdocs.magento.com/guides/v2.1/pattern-library/staging-patterns/TimelineDashboard/Timeline-Dashboard.html)
 
 ## Manage the future campaigns
 
-### A Campaign
+### Campaign
 
-A campaign enables you to manage entities' updates with the same start and end dates. Campaign has name and description.
+A [campaign](#campaign) enables you to manage entities' updates with the same start and end dates. Campaign has name and description.
 
 #### Create a campaign
 
-You can create a campaign from the dashboard using “Create a campaign” button. And, a campaign is created immediately after you created a new scheduled update for an store object. Later, when you want to add another updates to this campaign you can simply assign them to it.
+You can create a [campaign](#campaign) from the dashboard using the **Create a campaign** button. Also, a campaign is created immediately after you created a new  [scheduled update](#scheduled-update) for a store object. Later, when you want to add another updates to this campaign you can simply assign them to it.
 
 #### View a campaign
 
-You can view campaigns on the Staging Dashboard (**Admin** &gt; **Content** &gt; **Staging** &gt; **Dashboard**). If you click on any campaign, you will see pop-up window with general info:
+You can view campaigns on the dashboard (**Admin** &gt; **Content** &gt; **Staging** &gt; **Dashboard**). When you click on a campaign, a pop-up window with general campaign information is displayed:
 
 - Name
 - Status
 - Start
 - End
-
-And the number of objects (entities) that it includes. Also, it shows the list presenting how many objects of each type is assigned to the campaign.
+- Number of included objects (entities)
+- List presenting how many objects of each type is assigned to the campaign
 
 An edit form of a staged entity will show you campaigns, which it's been assigned to. And in a preview mode, you can watch a list of campaigns to select one or another.
 
@@ -139,7 +139,7 @@ What you cannot do is to create an order in a preview mode, use layered navigati
 
 #### Edit a campaign
 
-Each campaign is editable and can be managed using a unified edit form. To see the form, click on campaign then click `View/Edit` button.
+Each [campaign](#campaign) is editable and can be managed using a unified edit form. To see the form, click on campaign then click `View/Edit` button.
 
 A form contains **General** field set with:
 
@@ -150,7 +150,7 @@ A form contains **General** field set with:
 
 When you edit these fields, you change them for all entities assigned to the campaign.
 
-The lower expandable list in the form represent types of staging entities:
+The lower expandable list in the form represent types of [staging](#staging) entities:
 
 - Catalog Price Rules
 - Shopping Cart Price Rules
@@ -162,11 +162,11 @@ The lower expandable list in the form represent types of staging entities:
 Each one is a grid of corresponding entities assigned to the campaign.
 
 #### Remove a campaign
-Only empty campaign can be deleted, that is performed by the cron. In other words, if you delete all updates from the campaign, it will be deleted automatically according to the cron settings.
+Only empty [campaign](#campaign) can be deleted, that is performed by the cron. In other words, if you delete all updates from the campaign, it will be deleted automatically according to the cron settings.
 
 ### An Update
 
-The scheduled updates functionality is implemented in staging modules. The Magento_Staging module only distributes to other staging modules a Schedule Update form and a grid of future campaigns.
+The [scheduled updates](#scheduled-update) functionality is implemented in  [staging](#staging) modules. The Magento_Staging module only distributes to other staging modules a Schedule Update form and a grid of future campaigns.
 
 #### Create an update
 
@@ -188,15 +188,15 @@ To schedule an update, open an edit form for the one of these entities and click
 - Start Date (required)
 - End Date
 
-When you save an update, a new campaign is created with the name from the **Update Name** field and with dates you specified. If you left the **End Date** field empty, Magento creates a permanent campaign starting from the Start Date. If both dates are set, it is a temporary campaign.
+When you save an update, a new [campaign](#campaign) is created with the name from the **Update Name** field and with dates you specified. If you left the **End Date** field empty, Magento creates a permanent campaign starting from the Start Date. If both dates are set, it is a temporary campaign.
 
 There are several rules validating updates intersection:
 
 1.  Update can be created only in the future. You cannot create an update in a past.
 
-2.  Temporary updates cannot intersect with each other. For example, if you have update for "New Brand Snowboard" from December 23 till December 26, a period of another update for "New Brand Snowboard" cannot intersect the period from December 23 till December 26. In other words, one entity cannot have more than one temporary update scheduled to the same time.
+2.  Temporary updates cannot intersect with each other. For example, if you have update for "New Brand Snowboard" from December 23 till December 26, a period of another update for "New Brand Snowboard" cannot intersect the period from December 23 till December 26. In other words, one entity cannot have more than one [temporary update](#temporary-update) scheduled to the same time.
 
-3.  Permanent update cannot start during temporary update. For example, if you have update for "New Brand Snowboard" from December 23 till December 26, you cannot create permanent update starting during this period of time.
+3.  Permanent update cannot start during temporary update. For example, if you have update for "New Brand Snowboard" from December 23 till December 26, you cannot create [permanent update](#permanent-update) starting during this period of time.
 
 #### View/Edit/Copy an update
 
@@ -204,11 +204,11 @@ When you created an update for a Magento entity, a timeline appears in the Sched
 
 View/Edit option opens the Schedule Update form where you can add changes or just view the current state of the update. Also, this form is accessible from the Campaign Edit form.
 
-An update can be edited or assigned to another campaign. When you assign an update to another campaign, you copy it to the campaign you selected.
+An update can be edited or assigned to another campaign. When you assign an update to another campaign, you copy it to the [campaign](#campaign)you selected.
 
 #### Preview an update
 
-If you click Preview in front of campaign on the Scheduled Changes block or on the Schedule Update form of the Magento entity, you'll see how it looks on front-end with all update changes applied.
+If you click Preview in front of [campaign](#campaign) on the Scheduled Changes block or on the Schedule Update form of the Magento entity, you'll see how it looks on front-end with all update changes applied.
 
 #### Remove an update
 
@@ -266,7 +266,7 @@ For more Magento 2 developer documentation, see [Magento 2 Developer Documentati
 
 cron group configuration can be set in `develop/app/code/Magento/Staging/etc/crontab.xml`.
 
--   `staging_apply_version` – each period of time checks in a table of updates if any scheduled campaign has been started and if yes, it applies all scheduled updates for the campaign.
+-   `staging_apply_version` – each period of time checks in a table of updates if any [campaign](#campaign) has been started and if yes, it applies all [scheduled updates](#scheduled-update) for the campaign.
 
 -   `staging_remove_updates` – each period of time checks if a campaign contains any update, and if it is empty, deletes the campaign.
 
@@ -282,7 +282,7 @@ When update is applied, the indexer handles it according to the actual indexing 
 
 ### Data migration
 
-The Magento_Staging module includes a utility, which performs migration of scheme and data to staging modules from the extending modules. (For example, scheme and data migration from the Magento_Catalog module to the Magento_CatalogStaging module.)
+The Magento_Staging module includes a utility, which performs migration of scheme and data to [staging](#staging) modules from the extending modules. (For example, scheme and data migration from the Magento_Catalog module to the Magento_CatalogStaging module.)
 
 The utility is used in staging module `Setup` only. It receives a configuration from a staging module, changes schema and migrates data.
 
