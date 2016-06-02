@@ -21,7 +21,11 @@ Before you continue, you must:
 
 ### Find a component's Composer name {#update-composer-name}
 
+{% collapsible Click to expand/collapse content %}
+
 {% include cloud/composer-name.md %}
+
+{% endcollapsible %}
 
 ### Get started
 
@@ -62,4 +66,7 @@ To update components:
 {% endcollapsible %}
 
 #### Related topic
-[Tutorial&mdash;Merge and delete an environment]({ site.gdeurl })cloud/howtos/environment-tutorial-env-merge.html)
+*	[Install components]({{ site.gdeurl }}cloud/howtos/install-components.html)
+*	[Upgrade the Magento system software]({{ site.gdeurl }}cloud/howtos/upgrade-magento.html)
+*	[Install optional sample data]({{ site.gdeurl }}cloud/howtos/sample-data.html)
+*	[Merge and delete an environment]({{ site.gdeurl }}cloud/howtos/environment-tutorial-env-merge.html)

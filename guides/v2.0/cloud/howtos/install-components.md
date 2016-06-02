@@ -93,7 +93,7 @@ If there are errors, see [Component deployment failure]({{ site.gdeurl }}cloud/t
 
 To verify the component installed properly, you can check its functionality in the Magento Admin or you can make sure it is enabled as follows:
 
-1.	SSH to the environment on which the component is installed.
+1.	[SSH to the environment]({{ site.gdeurl }}cloud/env/environments-start.html#env-start-ssh) on which the component is installed.
 2.	Enter the following command:
 
 		vi app/etc/config.php
@@ -103,5 +103,8 @@ To verify the component installed properly, you can check its functionality in t
 
 {% endcollapsible %}
 
-#### Related topic
-[Tutorial&mdash;Merge and delete an environment]({ site.gdeurl })cloud/howtos/environment-tutorial-env-merge.html)
+#### Related topics
+*	[Update components]({{ site.gdeurl }}cloud/howtos/update-components.html)
+*	[Upgrade the Magento system software]({{ site.gdeurl }}cloud/howtos/upgrade-magento.html)
+*	[Install optional sample data]({{ site.gdeurl }}cloud/howtos/sample-data.html)
+*	[Merge and delete an environment]({{ site.gdeurl }}cloud/howtos/environment-tutorial-env-merge.html)

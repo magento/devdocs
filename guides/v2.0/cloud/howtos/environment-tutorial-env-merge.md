@@ -91,7 +91,7 @@ To delete a environment:
 
 3.	Answer the prompt:
 
-		Are you sure you want to delete the remote Git branch sampledata? [Y/n]
+		Are you sure you want to delete the remote Git branch deleteme? [Y/n]
 
 	A `Y` answer makes the branch inactive but leaves it in the project.
 5.	Answer the prompt:

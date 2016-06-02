@@ -34,3 +34,8 @@ To upgrade:
 4.	Verify the installation was successful by going to your storefront main page.
 
 	The URL displays on the command line under the heading `Environment routes:`.
+
+#### Related topics
+*	[Install components]({{ site.gdeurl }}cloud/howtos/install-components.html)
+*	[Update components]({{ site.gdeurl }}cloud/howtos/update-components.html)
+*	[Merge and delete an environment]({{ site.gdeurl }}cloud/howtos/environment-tutorial-env-merge.html)

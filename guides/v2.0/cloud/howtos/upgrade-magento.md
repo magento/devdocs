@@ -54,5 +54,8 @@ To upgrade:
 
 {% endcollapsible %}
 
-#### Related topic
-[Tutorial&mdash;Merge and delete an environment]({ site.gdeurl })cloud/howtos/environment-tutorial-env-merge.html)
+#### Related topics
+*	[Install components]({{ site.gdeurl }}cloud/howtos/install-components.html)
+*	[Update components]({{ site.gdeurl }}cloud/howtos/update-components.html)
+*	[Install optional sample data]({{ site.gdeurl }}cloud/howtos/sample-data.html)
+*	[Merge and delete an environment]({{ site.gdeurl }}cloud/howtos/environment-tutorial-env-merge.html)
