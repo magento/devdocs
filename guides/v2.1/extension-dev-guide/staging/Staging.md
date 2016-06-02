@@ -48,6 +48,12 @@ And you can extend the list adding your own extension modules.
 <a name="campaign"><b>campaign</b></a>
 : a set of two or more scheduled updates with the same name and time period
 
+<a name="temporary-campaign"><b>temporary campaign</b></a>
+: a set of two or more temporary updates with the same name and time period
+
+<a name="permanent-campaign"><b>permanent campaign</b></a>
+: a set of two or more permanent updates with the same name and time period
+
 <a name="staging"><b>staging</b></a>
 : a set of functionality that enables you to schedule the store changes in Magento database. You can configure the particular state of the database to be applied in the future
 
@@ -122,11 +128,11 @@ You can view campaigns on the dashboard (**Admin** &gt; **Content** &gt; **Stagi
 - Number of included objects (entities)
 - List presenting how many objects of each type is assigned to the campaign
 
-An edit form of a staged entity will show you campaigns, which it's been assigned to. And in a preview mode, you can watch a list of campaigns to select one or another.
+Also, you can view a campaign on edit form of a staged entity, which it is assigned to. And in a preview mode, you can watch a list of campaigns to select one or another.
 
 #### Preview a campaign
 
-You can preview scheduled elements on Front-End (as if it were live website) in order to make sure that all planned updates are correct before publishing.
+You can preview scheduled elements on storefront (as if it were live website) in order to make sure that all planned updates are correct before publishing.
 
 Staging preview enables you to use the following functionality:
 
@@ -135,13 +141,13 @@ Staging preview enables you to use the following functionality:
 - Change a website and a store view
 - Add product to cart and proceed with checkout till "Submit Order" step
 
-What you cannot do is to create an order in a preview mode, use layered navigation and search
+Note that you cannot create an order in a preview mode, use layered navigation and search.
 
 #### Edit a campaign
 
-Each [campaign](#campaign) is editable and can be managed using a unified edit form. To see the form, click on campaign then click `View/Edit` button.
+To edit a [campaign](#campaign), open the campaign and click the **View/Edit** button.
 
-A form contains **General** field set with:
+A form contains **General** field set with the following fields:
 
 - Name (required)
 - Description
@@ -164,9 +170,9 @@ Each one is a grid of corresponding entities assigned to the campaign.
 #### Remove a campaign
 Only empty [campaign](#campaign) can be deleted, that is performed by the cron. In other words, if you delete all updates from the campaign, it will be deleted automatically according to the cron settings.
 
-### An Update
+### Update
 
-The [scheduled updates](#scheduled-update) functionality is implemented in  [staging](#staging) modules. The Magento_Staging module only distributes to other staging modules a Schedule Update form and a grid of future campaigns.
+The [scheduled updates](#scheduled-update) functionality is implemented in [staging](#staging) modules. The Magento_Staging module only distributes to other staging modules a Schedule Update form and a grid of future campaigns.
 
 #### Create an update
 
@@ -181,38 +187,38 @@ You can schedule an update of Magento entity to be used in future. It is applica
     - Catalog Price Rules
     - Cart Price Rules
 
-To schedule an update, open an edit form for the one of these entities and click the Schedule New Update button. In the Schedule Update form, you can set:
+To schedule an update, open an edit form for the one of these entities and click the **Schedule New Update** button. In the Schedule Update form, you can set:
 
 - Update Name (required)
 - Description
 - Start Date (required)
 - End Date
 
-When you save an update, a new [campaign](#campaign) is created with the name from the **Update Name** field and with dates you specified. If you left the **End Date** field empty, Magento creates a permanent campaign starting from the Start Date. If both dates are set, it is a temporary campaign.
+When you save an update, a new [campaign](#campaign) is created with the name from the **Update Name** field and with dates you specified. If you leave the **End Date** field empty, Magento creates a [permanent campaign](#permanent-campaign) starting from the Start Date. If both dates are set, it is a [temporary campaign](#temporary-campaign).
 
 There are several rules validating updates intersection:
 
 1.  Update can be created only in the future. You cannot create an update in a past.
 
-2.  Temporary updates cannot intersect with each other. For example, if you have update for "New Brand Snowboard" from December 23 till December 26, a period of another update for "New Brand Snowboard" cannot intersect the period from December 23 till December 26. In other words, one entity cannot have more than one [temporary update](#temporary-update) scheduled to the same time.
+2.  Temporary updates cannot intersect with each other. For example, if you have an update for the "New Brand Snowboard" product from December 23 till December 26, a period of another update for "New Brand Snowboard" cannot intersect the period from December 23 till December 26. In other words, one entity cannot have more than one [temporary update](#temporary-update) scheduled to the same time.
 
-3.  Permanent update cannot start during temporary update. For example, if you have update for "New Brand Snowboard" from December 23 till December 26, you cannot create [permanent update](#permanent-update) starting during this period of time.
+3.  Permanent update cannot start during temporary update. For example, if you have an update for the "New Brand Snowboard" product from December 23 till December 26, you cannot create [permanent update](#permanent-update) starting during this period of time.
 
 #### View/Edit/Copy an update
 
-When you created an update for a Magento entity, a timeline appears in the Scheduled Changes block of the Edit form of that entity. The timeline shows the start dates and the names of campaigns in which the entity has updates. You can View/Edit or Preview the entity in each campaign.
+When you create an update for a Magento entity, a timeline appears in the Scheduled Changes block of the Edit form of that entity. The timeline shows the start dates and the names of campaigns in which the entity has updates. You can view, edit or preview the entity in each campaign.
 
-View/Edit option opens the Schedule Update form where you can add changes or just view the current state of the update. Also, this form is accessible from the Campaign Edit form.
+**View/Edit** option opens the Schedule Update form where you can add changes or just view the current state of the update. Also, this form is accessible from the Campaign Edit form.
 
-An update can be edited or assigned to another campaign. When you assign an update to another campaign, you copy it to the [campaign](#campaign)you selected.
+An update can be edited or assigned to another campaign. When you assign an update to another campaign, you actually create a copy of this update in the [campaign](#campaign).
 
 #### Preview an update
 
-If you click Preview in front of [campaign](#campaign) on the Scheduled Changes block or on the Schedule Update form of the Magento entity, you'll see how it looks on front-end with all update changes applied.
+If you click Preview in front of [campaign](#campaign) on the Scheduled Changes block or on the Schedule Update form of the Magento entity, you'll see how it looks on storefront with all update changes applied.
 
 #### Remove an update
 
-Each update can be removed from campaign. **Remove this update** button is available on the Schedule Update form of an entity. The options of how you can remove an update:
+Any update can be removed from campaign. **Remove this update** button is available on the Schedule Update form of an entity. The options of how you can remove an update:
 
 - Save as a new update
 - Move to Another Campaign
@@ -220,7 +226,7 @@ Each update can be removed from campaign. **Remove this update** button is avail
 
 ## Preview mode
 
-In this mode, the Magento_Staging module builds a view of a store for a specific future date. You can surf a store, add products to the cart, go to checkout, apply gift certificates and discounts, apply for a shipment. Payment methods and placing an order are not available in a preview mode.
+In this mode, the Magento_Staging module builds a view of a store for a specific future date. You can surf the storefront, add products to the cart, go to checkout, apply gift certificates and discounts, order shipment. Payment methods and placing an order are not available in a preview mode.
 
 ### Different websites
 
