@@ -6,7 +6,7 @@ title: How migration works
 menu_title: How migration works
 menu_node: 
 menu_order: 3
-github_link: migration/migration-overview-how.md
+github_link21: migration/migration-overview-how.md
 ---
 
 
@@ -21,13 +21,22 @@ This document uses the following terminology to discuss the Data Migration Tool:
   * Data: Migrates database assets in bulk
   * Delta: Migrates incremental changes (for example, orders and inventory)
 
-This guide provides information about migration using Data Migration Tool that can transfer and adapt data from Magento 1 to Magento 2 stores. The migration in overall is split into three phase (or "modes"). Migration of settings, migration of data and migration of delta. Each mode splits into steps. Every step responsible for transferring some particular data. (e.g. URL Rewrite step, EAV step, Settings step ...) At the beginning, when is run, step checks tables structure of Magento 1 and Magento 2 for their consistency. Then the actual data is transferred to Magento 2 and in the end this data is checked to ensure that everything was transferred properly.
+This guide provides information about migration using Data Migration Tool that can transfer and adapt data from Magento 1 to Magento 2 stores. The migration in overall is split into three phases (or "modes"): 
+
+*	Configuration settings
+*	Data 
+*	Delta (that is, changes since the last run) 
+
+Each mode is divided into steps, each of which is responsible for transferring particular data (for example, URL rewrite step, EAV step, settings step, and so on). At the begin of a run, a step checks the table structures of Magento 1 and Magento 2 for consistency. Then the actual data is transferred to Magento 2. In the end, this data is verified.
 
 This section previews your migration experience by providing a high-level overview of the Data Migration Tool. 
 
 <h4>Conceptual overview</h4>
+The data migration tool recognizes the differences in database structure between Magento 1.x versions. Most of these database structural differences are declared in *map files*. Each step in the process uses map files to transform data for use in your Magento 2 store.
 
-There are many differences between Magento 1 and Magento 2 in the structure and format of data that is stored in database. And each version of Magento 1, for example 1.8.0.0 or 1.9.0.0, has its own unique changes in data structure. The Data Migration Tool understands all these changes and can properly transform it for usage in Magento 2 store. Most of these differences are declared in *Map files*. Using the Map file a Step will know that, for example, a table from Magento 1 was renamed in Magento 2 and will be able to transfer data properly to destination table. In the case where there are no differences in data structure or data format the Data Migration Tool will transfer data as is to the Magento 2 database, including data from tables created by extensions. When differences are not declared in Map files then the Data Migration Tool will not start migration process and will display an error.
+For example, when you transform data from a Magento CE 1.8.0.0 database to Magento 2.0.4, the map file accounts for the fact that a table was renamed and renames it accordingly in the destination database. If there are no differences in data structure or data format, the Data Migration Tool transfers it as-is to the Magento 2 database, including data from tables created by extensions. 
+
+When differences are not declared in map files, then the Data Migration Tool displays an error and does not start.
 
 Mapping files are discussed in more detail in <a href="{{ site.gdeurl21 }}migration/migration-tool-internal-spec.html"> Data Migration Tool Internal Specification.</a>
 
