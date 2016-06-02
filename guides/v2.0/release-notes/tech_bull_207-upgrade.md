@@ -128,7 +128,7 @@ To apply this patch:
 	</table>
 
 	<div class="bs-callout bs-callout-info" id="info">
-  		<p>Use Patch <code>MDVA-449</code> whether or not you installed optional sample data.</p>
+  		<p>Use p atch <code>MDVA-449</code> whether or not you installed optional sample data.</p>
 	</div>
 
 2.	Extract the patch in your Magento installation directory.
