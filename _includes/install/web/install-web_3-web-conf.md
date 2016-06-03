@@ -36,11 +36,11 @@
 	</tr>
 	<tr>
 		<td>Apache Rewrites</td>
-		<td>Select this check box to use Apache rewrites. We support this option only if you enabled server rewrites when you installed <a href="{{ site.gdeurl21}}install-gde/prereq/apache.html">Apache</a>.</td>
+		<td>Select this check box to use Apache rewrites. We support this option only if you enabled server rewrites when you installed <a href="{{ site.gdeurl}}install-gde/prereq/apache.html">Apache</a>.</td>
 	</tr>
 	<tr>
 		<td>Encryption Key</td>
-		<td><p>Magento uses an encryption key to encrypt personally identifiable customer information in the database.</p>
+		<td><p>Magento uses an encryption key to encrypt <a href="#sens-data">sensitive data</a> in the database.</p>
 		<p>Click <strong>I want to use a Magento generated key</strong> to have Magento generate an encryption key for you.</p>
 		<p>Click <strong>I want to use my own encryption key</strong> if you already have an encryption key.</p></td>
 	</tr>
@@ -55,5 +55,4 @@
 	
 12.	Click **Next**.
 
-
-
+{% include install/sens-data.md %}

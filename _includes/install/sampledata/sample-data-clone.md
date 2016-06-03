@@ -8,11 +8,11 @@ If you're not a contributing developer, choose one of the other options displaye
 Contributing developers can use this method of installing sample data *only* if all of the following are true:
 
 *   You use Magento CE
-*   You <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">cloned the Magento 2 repository</a>.
+*   You <a href="{{ site.gdeurl21 }}install-gde/prereq/dev_install.html">cloned the Magento 2 repository</a>.
 
 <div class="bs-callout bs-callout-warning">
     <p>You can use sample data with either the <code>develop</code> branch (more current) or a released branch (such as <code>2.0</code> or <code>2.0.1</code> (more stable)). We recommend you use a released branch because it's more stable. If you're contributing code to the Magento 2 repository and you need the most recent code, use the <code>develop</code> branch.</p>
-    <p>Regardless of the branch you choose, you must <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">clone</a> the corresponding branch of the Magento 2 GitHub repository. For example, sample data for the <code>develop</code> branch can be used <em>only</em> with the Magento 2 <code>develop</code> branch.</p>
+    <p>Regardless of the branch you choose, you must <a href="{{ site.gdeurl21 }}install-gde/prereq/dev_install.html">clone</a> the corresponding branch of the Magento 2 GitHub repository. For example, sample data for the <code>develop</code> branch can be used <em>only</em> with the Magento 2 <code>develop</code> branch.</p>
 </div>
 
 See the following sections:
@@ -40,7 +40,7 @@ To clone the Magento sample data GitHub repository using the SSH protocol:
 
     Typically, for Ubuntu, it's `/var/www` and for CentOS it's `/var/www/html`.
 
-    Need <a href="{{ site.gdeurl }}install-gde/basics/basics_docroot.html">help locating the docroot?</a>
+    Need <a href="{{ site.gdeurl21 }}install-gde/basics/basics_docroot.html">help locating the docroot?</a>
 5.  Enter `git clone` and paste the value you obtained from step 1.
 
     An example follows:
@@ -111,11 +111,7 @@ To set file system permissions and ownership on the sample data repository:
 
 3.  Set permissions:
 
-        find . -type d -exec chmod 770 {} \; && find . -type f -exec chmod 660 {} \;
-    
-    If you must enter the commands as <code>sudo</code>, use:
-
-        sudo find . -type d -exec chmod 770 {} \; && sudo find . -type f -exec chmod 660 {} \;
+        find . -type d -exec chmod g+ws {} \;
 3.  Clear static files:
 
         cd <your Magento CE install dir>/var

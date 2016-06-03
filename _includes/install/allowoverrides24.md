@@ -1,4 +1,5 @@
-<h3 id="apache-rewrites2.4">Enable rewrites and .htaccess for Apache 2.4</h3>
+<div markdown="1">
+	
 <p>Use this section to enable Apache 2.4 rewrites and specify a setting for the <a href="http://httpd.apache.org/docs/current/howto/htaccess.html" target="_blank">distributed configuration file, <code>.htaccess</code></a></p>
 <p>Magento uses server rewrites and <code>.htaccess</code> to provide directory-level instructions for Apache.</p>
 <div class="bs-callout bs-callout-info" id="info">

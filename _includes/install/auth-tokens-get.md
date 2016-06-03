@@ -2,7 +2,7 @@
 
 To get your authentication keys:
 
-1.	If you haven't done so already, create an account on <a href="http://www.magentocommerce.com/magento-connect">Magento Connect</a>.
+1.	If you haven't done so already, create an account on <a href="https://marketplace.magento.com">Magento Marketplace</a>.
 
 	(It's the same as an account on `magento.com`.)
 

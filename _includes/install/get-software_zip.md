@@ -22,8 +22,9 @@ Archives are available in the following formats: `.zip`, `.tar.bz2`, `.tar.gz`
 	<td>Magento CE</td>
 	<td><p><a href="http://www.magento.com/download" target="_blank">www.magento.com/download</a></p>
 		<p>Choose either the software or the software and sample data:</p>
-		<ul><li><code>Magento-CE-2.0.0.*</code> (without sample data)</li>
-			<li><code>Magento-CE-2.0.0+Samples.*</code> (with sample data)</li></ul></td>
+		<ul><li><code>Magento-CE-&lt;version>.*</code> (without sample data)</li>
+			<li><code>Magento-CE-&lt;version>+Samples.*</code> (with sample data)</li>
+			<p><code>&lt;version/></code> is the three-digit release number (for example, <code>2.0.0</code>, <code>2.0.1</code>, and so on.)</p></ul></td>
 </tr>
 <tr> 
 	<td>Magento EE</td>
