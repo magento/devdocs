@@ -6,7 +6,7 @@ title: Get help with your deployment
 menu_title: Get help with your deployment
 menu_order: 50
 menu_node: 
-github_link: cloud/get-help.md
+github_link21: cloud/get-help.md
 ---
 
 ## Get help with your deployment {#help}

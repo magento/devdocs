@@ -6,7 +6,7 @@ title: Welcome to Magento Enterprise Cloud Edition
 menu_title: Welcome to Magento Enterprise Cloud Edition
 menu_order: 1
 menu_node: parent
-github_link: cloud/bk-cloud.md
+github_link21: cloud/bk-cloud.md
 ---
 
 ![This guide applies to Enterprise Cloud Edition only]({{ site.baseurl }}common/images/ee-only_large.png) 
@@ -36,8 +36,8 @@ as Bitbucket, GitHub, HipChat, Blackfire, and generic Webhooks that enable you
 to integrate with internal tooling with little effort.
 
 #### Related topics
-*	[Magento Enterprise Cloud Edition requirements]({{ site.gdeurl }}cloud/cloud-requirements.html)
-*	[Common terms]({{ site.gdeurl }}cloud/before/terms.html)
-*	[Architecture]({{ site.gdeurl }}cloud/discover-arch.html)
-*	[Workflow]({{ site.gdeurl }}cloud/discover-workflow.html)
+*	[Magento Enterprise Cloud Edition requirements]({{ site.gdeurl21 }}cloud/cloud-requirements.html)
+*	[Common terms]({{ site.gdeurl21 }}cloud/before/terms.html)
+*	[Architecture]({{ site.gdeurl21 }}cloud/discover-arch.html)
+*	[Workflow]({{ site.gdeurl21 }}cloud/discover-workflow.html)
 

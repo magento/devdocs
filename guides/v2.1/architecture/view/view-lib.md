@@ -5,7 +5,7 @@ subgroup: View library
 title: View library
 menu_title: View library
 menu_order: 
-github_link: architecture/view/view-lib.md
+github_link21: architecture/view/view-lib.md
 ---
 
 {{ Magento\_View Library }}

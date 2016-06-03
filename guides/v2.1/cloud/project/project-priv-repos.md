@@ -6,7 +6,7 @@ title: Pull code from a private Git repository
 menu_title: Pull code from a private Git repository
 menu_order: 600
 menu_node: 
-github_link: cloud/project/project-priv-repos.md
+github_link21: cloud/project/project-priv-repos.md
 ---
 
 ## Pull code from a private Git repository

@@ -5,7 +5,7 @@ subgroup:
 title: Language packages
 menu_title: Language packages
 menu_order: 
-github_link: architecture/arch_translations.md
+github_link21: architecture/arch_translations.md
 ---
 
 <h2 id="m2arch-translations-overview">Overview</h2>

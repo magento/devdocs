@@ -6,7 +6,7 @@ title: Set up a Magento workspace
 menu_title: Set up a Magento workspace
 menu_order: 2
 menu_node: 
-github_link: cloud/before/before-workspace.md
+github_link21: cloud/before/before-workspace.md
 ---
 
 #### Contents
@@ -91,8 +91,8 @@ If you don't have SSH keys, continue with the next section.
 
 If you already have SSH keys, you can skip the next section and continue with any of the following:
 
-*	[Create a sample Magento project from a template]({{ site.gdeurl }}cloud/access-acct/first-time-setup_template.html)
-*	[Import an existing Magento project]({{ site.gdeurl }}cloud/access-acct/first-time-setup_import.html)
+*	[Create a sample Magento project from a template]({{ site.gdeurl21 }}cloud/access-acct/first-time-setup_template.html)
+*	[Import an existing Magento project]({{ site.gdeurl21 }}cloud/access-acct/first-time-setup_import.html)
 
 ### Create a new SSH keypair
 Use the `ssh-keygen` command to create an SSH keypair. `ssh-keygen` is typically installed on Linux systems. 
@@ -139,6 +139,6 @@ To add a public SSH key:
 {% endcollapsible %}
 
 #### Next steps
-*	[Create a sample Magento project from a template]({{ site.gdeurl }}cloud/access-acct/first-time-setup_template.html)
-*	[Import an existing Magento project]({{ site.gdeurl }}cloud/access-acct/first-time-setup_import.html)
+*	[Create a sample Magento project from a template]({{ site.gdeurl21 }}cloud/access-acct/first-time-setup_template.html)
+*	[Import an existing Magento project]({{ site.gdeurl21 }}cloud/access-acct/first-time-setup_import.html)
 

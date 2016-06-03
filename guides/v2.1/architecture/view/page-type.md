@@ -5,7 +5,7 @@ subgroup: View library
 title: Page types
 menu_title: Page types
 menu_order: 
-github_link: architecture/view/page-type.md
+github_link21: architecture/view/page-type.md
 ---
 
 <h2 id="m2devgde-pagetype-intro">Introduction to page types</h2>

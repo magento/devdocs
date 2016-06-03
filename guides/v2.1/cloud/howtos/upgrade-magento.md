@@ -8,7 +8,7 @@ menu_order: 3
 level3_menu_node: level3child
 level3_subgroup: upgrade-update
 menu_node: 
-github_link: cloud/howtos/upgrade-magento.md
+github_link21: cloud/howtos/upgrade-magento.md
 ---
 
 ## How to upgrade the Magento system software {#cloud-howto-upgrade}
@@ -55,7 +55,7 @@ To upgrade:
 {% endcollapsible %}
 
 #### Related topics
-*	[Install components]({{ site.gdeurl }}cloud/howtos/install-components.html)
-*	[Update components]({{ site.gdeurl }}cloud/howtos/update-components.html)
-*	[Install optional sample data]({{ site.gdeurl }}cloud/howtos/sample-data.html)
-*	[Merge and delete an environment]({{ site.gdeurl }}cloud/howtos/environment-tutorial-env-merge.html)
+*	[Install components]({{ site.gdeurl21 }}cloud/howtos/install-components.html)
+*	[Update components]({{ site.gdeurl21 }}cloud/howtos/update-components.html)
+*	[Install optional sample data]({{ site.gdeurl21 }}cloud/howtos/sample-data.html)
+*	[Merge and delete an environment]({{ site.gdeurl21 }}cloud/howtos/environment-tutorial-env-merge.html)

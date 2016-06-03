@@ -6,7 +6,7 @@ title: Get started with a project
 menu_title: Get started with a project
 menu_order: 2
 menu_node: 
-github_link: cloud/project/project-start.md
+github_link21: cloud/project/project-start.md
 ---
 
 ## Get started with a project {#cloud-proj-start}
@@ -35,7 +35,7 @@ All commands are shown with required options only. Get help for any command by a
 ## Delete a project {#project-delete}
 Before you delete a project, make sure you don't need it anymore. You cannot recover a deleted project later.
 
-You must be a [project administrator]({{ site.gdeurl }}cloud/admin/admin-user-admin.html#cloud-role-project) or [account owner]({{ site.gdeurl }}cloud/admin/admin-user-admin.html#cloud-role-acct-owner) to perform this task.
+You must be a [project administrator]({{ site.gdeurl21 }}cloud/admin/admin-user-admin.html#cloud-role-project) or [account owner]({{ site.gdeurl21 }}cloud/admin/admin-user-admin.html#cloud-role-acct-owner) to perform this task.
 
 To delete a project using the command line:
 
@@ -48,8 +48,8 @@ To delete a project using the command line:
 3.	You are required to confirm the deletion.
 	
 #### Related topics
-*	[Get started with an environment]({{ site.gdeurl }}cloud/env/environments-start.html)
-*	[`.magento.app.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_magento-app.html)
-*	[`routes.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_routes.html)
-*	[`services.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_services.html)
+*	[Get started with an environment]({{ site.gdeurl21 }}cloud/env/environments-start.html)
+*	[`.magento.app.yaml`]({{ site.gdeurl21 }}cloud/project/project-conf-files_magento-app.html)
+*	[`routes.yaml`]({{ site.gdeurl21 }}cloud/project/project-conf-files_routes.html)
+*	[`services.yaml`]({{ site.gdeurl21 }}cloud/project/project-conf-files_services.html)
 

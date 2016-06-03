@@ -6,7 +6,7 @@ title: Architectural layers overview
 menu_title: Architectural layers
 menu_node: parent
 menu_order: 
-github_link: architecture/archi_perspectives/ALayers_intro.md
+github_link21: architecture/archi_perspectives/ALayers_intro.md
 ---
 
 

@@ -9,7 +9,7 @@ menu_order: 5
 level3_menu_node: level3child
 level3_subgroup: versioning
 
-github_link: architecture/release_types.md
+github_link21: architecture/release_types.md
 ---
 
 <h2 id="verpol">Release types and version numbers</h2>
@@ -92,9 +92,9 @@ The `x.y.z` numbers will change according to Semantic Versioning policy provisio
 
 
 <h3>Related topics</h3>
-<a href="{{ site.gdeurl }}architecture/back-compatibility.html">Backward compatibility</a>
+<a href="{{ site.gdeurl21 }}architecture/back-compatibility.html">Backward compatibility</a>
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>
+<a href="{{ site.gdeurl21 }}architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>
 
 
 

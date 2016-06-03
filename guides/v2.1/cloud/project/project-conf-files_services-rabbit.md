@@ -8,7 +8,7 @@ menu_order: 35
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: services
-github_link: cloud/project/project-conf-files_services-rabbit.md
+github_link21: cloud/project/project-conf-files_services-rabbit.md
 ---
 
 ## Set up the rabbitmq service
@@ -16,10 +16,10 @@ The Message Queue Framework (MQF) is a system within Magento Enterprise Edition 
 
 We support RabbitMQ version 3.5.
 
-[More information about RabbitMQ]({{ site.gdeurl }}config-guide/mq/rabbitmq-overview.html)
+[More information about RabbitMQ]({{ site.gdeurl21 }}config-guide/mq/rabbitmq-overview.html)
 
 ## Relationship
-The format exposed in the [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{ site.gdeurl }}cloud/env/environment-vars_cloud.html) follows:
+The format exposed in the [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{ site.gdeurl21 }}cloud/env/environment-vars_cloud.html) follows:
 
 {% highlight bash %}
 {
@@ -77,7 +77,7 @@ a service instance in one of the following ways:
 *   [Connect from your PHP application](#cloud-rabbitmq-conn-php)
 
 ### Connect from your local development environment {#cloud-rabbitmq-conn-loc}
-You can do this using [SSH tunneling]({{ site.gdeurl }}cloud/env/environments-start.html#env-start-tunn):
+You can do this using [SSH tunneling]({{ site.gdeurl21 }}cloud/env/environments-start.html#env-start-tunn):
 
 1.  Use `magento-cloud tunnel:open` to open a tunnel to the app.
 2.  Use the following command to pretty-print your

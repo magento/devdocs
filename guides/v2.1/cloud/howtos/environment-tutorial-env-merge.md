@@ -8,8 +8,7 @@ menu_order: 12
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: env-tut
-github_link: cloud/howtos/environment-tutorial-env-merge.md
-redirect_from: guides/v2.0/cloud/env/environment-tutorial-env-merge.html
+github_link21: cloud/howtos/environment-tutorial-env-merge.md
 ---
 
 #### Contents
@@ -21,7 +20,7 @@ This tutorial shows how to merge changes from an environment to its parent, whic
 
 You can them optionally delete the environment.
 
-This tutorial shows how to create a sample file and merge it. This tutorial assumes you're already working in an environment; if not, see [Get started with an environment]({{ site.gdeurl }}cloud/env/environments-start.html#env-start-comm) to create one.
+This tutorial shows how to create a sample file and merge it. This tutorial assumes you're already working in an environment; if not, see [Get started with an environment]({{ site.gdeurl21 }}cloud/env/environments-start.html#env-start-comm) to create one.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>You <em>cannot</em> merge environment variables because they are not code. You must set the value of environment variables in an environment.</p>
@@ -62,7 +61,7 @@ Before you delete an environment, make sure you don't need it anymore. You canno
   <p>You cannot delete the <code>master</code> environment of any project.</p>
 </div>
 
-You must be a [project administrator]({{ site.gdeurl }}cloud/admin/admin-user-admin.html#cloud-role-project), [environment administrator]({{ site.gdeurl }}cloud/admin/admin-user-admin.html#cloud-role-env), or [account owner]({{ site.gdeurl }}cloud/admin/admin-user-admin.html#cloud-role-acct-owner) to perform this task.
+You must be a [project administrator]({{ site.gdeurl21 }}cloud/admin/admin-user-admin.html#cloud-role-project), [environment administrator]({{ site.gdeurl21 }}cloud/admin/admin-user-admin.html#cloud-role-env), or [account owner]({{ site.gdeurl21 }}cloud/admin/admin-user-admin.html#cloud-role-acct-owner) to perform this task.
 
 This section discusses how to optionally delete an environment in the following ways:
 
@@ -107,4 +106,4 @@ Wait for the environment to delete.
 </div>
 
 #### Related topic
-[Set Magento environment variables]({{ site.gdeurl }}cloud/env/environment-tutorial-set-mage-vars.html)
+[Set Magento environment variables]({{ site.gdeurl21 }}cloud/env/environment-tutorial-set-mage-vars.html)

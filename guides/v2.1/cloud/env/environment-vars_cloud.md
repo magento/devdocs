@@ -8,7 +8,7 @@ menu_order: 75
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: vars
-github_link: cloud/env/environment-vars_cloud.md
+github_link21: cloud/env/environment-vars_cloud.md
 ---
 
 ## Magento Enterprise Cloud Edition environment variables {#cloud-env-vars-cloud}
@@ -59,7 +59,7 @@ For example, we use the **MAGENTO_CLOUD_RELATIONSHIPS** variable to retrieve env
 {% endhighlight %}
 
 #### Related topics
-*   [Magento application environment variables]({{ site.gdeurl }}cloud/env/environment-vars_magento.html)
-*   [`.magento.app.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_magento-app.html)
-*   [`services.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_services.html)
-*   [`routes.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_routes.html)
+*   [Magento application environment variables]({{ site.gdeurl21 }}cloud/env/environment-vars_magento.html)
+*   [`.magento.app.yaml`]({{ site.gdeurl21 }}cloud/project/project-conf-files_magento-app.html)
+*   [`services.yaml`]({{ site.gdeurl21 }}cloud/project/project-conf-files_services.html)
+*   [`routes.yaml`]({{ site.gdeurl21 }}cloud/project/project-conf-files_routes.html)

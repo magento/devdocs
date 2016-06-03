@@ -5,7 +5,7 @@ subgroup: Logical View
 title: Magento libraries
 menu_title: Magento libraries
 menu_order: 3
-github_link: architecture/components/arch_libraries.md
+github_link21: architecture/components/arch_libraries.md
 ---
 
 <h2 id="m2arch-libraries-overview">Overview</h2>

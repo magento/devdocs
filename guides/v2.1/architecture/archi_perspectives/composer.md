@@ -5,7 +5,7 @@ subgroup: Logical View
 title: Composer
 menu_title: Composer
 menu_order: 2
-github_link: architecture/archi_perspectives/composer.md
+github_link21: architecture/archi_perspectives/composer.md
 ---
 
 

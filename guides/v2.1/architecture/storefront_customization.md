@@ -5,7 +5,7 @@ subgroup: Architectural Basics
 title: Storefront customization strategies
 menu_title: Storefront customization strategies
 menu_order: 
-github_link: architecture/storefront_customization.md
+github_link21: architecture/storefront_customization.md
 
 ---
 

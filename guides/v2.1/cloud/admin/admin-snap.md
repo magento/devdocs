@@ -6,7 +6,7 @@ title: Snapshot and restore
 menu_title: Snapshot and restore
 menu_order: 4
 menu_node: 
-github_link: cloud/admin/admin-snap.md
+github_link21: cloud/admin/admin-snap.md
 ---
 
 #### Contents
@@ -21,7 +21,7 @@ stored on the mounted volumes.
 
 You can *restore* a snapshot up to 14 days after the snapshot was created.
 
-To create and restore snapshots, you must have [administrator privileges]({{ site.gdeurl }}cloud/admin/admin-user-admin.html) in the project.
+To create and restore snapshots, you must have [administrator privileges]({{ site.gdeurl21 }}cloud/admin/admin-user-admin.html) in the project.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>We advise you to make backups of your live environment before merging an environment 

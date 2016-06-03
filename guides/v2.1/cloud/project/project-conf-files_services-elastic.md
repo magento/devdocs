@@ -8,7 +8,7 @@ menu_order: 34
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: services
-github_link: cloud/project/project-conf-files_services-elastic.md
+github_link21: cloud/project/project-conf-files_services-elastic.md
 ---
 
 ## Set up the elasticsearch service
@@ -23,10 +23,10 @@ We support Elasticsearch version 1.7.
 
 ![This feature is supported in Magento 2.1 only]({{ site.baseurl }}common/images/2.1-only_small.png). Elasticsearch is supported in Magento 2.1.
 
-[More information about Elasticsearch]({{ site.gdeurl }}config-guide/elasticsearch/es-overview.html).
+[More information about Elasticsearch]({{ site.gdeurl21 }}config-guide/elasticsearch/es-overview.html).
 
 ## Relationship
-The format exposed in the [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{ site.gdeurl }}cloud/env/environment-vars_cloud.html) follows:
+The format exposed in the [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{ site.gdeurl21 }}cloud/env/environment-vars_cloud.html) follows:
 
 {% highlight bash %}
 {

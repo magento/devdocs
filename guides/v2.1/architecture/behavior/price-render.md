@@ -5,7 +5,7 @@ subgroup:
 title: How Magento renders prices
 menu_title: How Magento renders prices
 menu_order: 
-github_link: architecture/behavior/price-render.md
+github_link21: architecture/behavior/price-render.md
 ---
 
 <h2 id="m2devgde-pricerend-intro">Introduction to Magento price rendering</h2>

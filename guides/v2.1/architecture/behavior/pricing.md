@@ -5,7 +5,7 @@ subgroup:
 title: The pricing library
 menu_title: The pricing library
 menu_order: 
-github_link: architecture/behavior/pricing.md
+github_link21: architecture/behavior/pricing.md
 ---
 
 <h2 id="m2devgde-pricelib-intro">Introduction to the Magento pricing library</h2>

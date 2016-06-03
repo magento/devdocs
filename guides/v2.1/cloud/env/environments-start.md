@@ -6,7 +6,7 @@ title: Get started with an environment
 menu_title: Get started with an environment
 menu_order: 2
 menu_node: 
-github_link: cloud/env/environments-start.md
+github_link21: cloud/env/environments-start.md
 ---
 
 ## Get started with an environment {#cloud-env-start}
@@ -17,7 +17,7 @@ This topic shows how to get started working on an environment:
 *	[SSH to an environment](#env-start-ssh)
 
 ## Connect to the environment using Secure Shell (SSH) {#env-start-ssh}
-Before you can use SSH to connect to an environment, you must add your [SSH public key]({{ site.gdeurl }}cloud/before/before-workspace.html#cloud-ssh-cli-ssh) to your account.
+Before you can use SSH to connect to an environment, you must add your [SSH public key]({{ site.gdeurl21 }}cloud/before/before-workspace.html#cloud-ssh-cli-ssh) to your account.
 
 You can then connect using SSH in any of the following ways:
 
@@ -114,6 +114,6 @@ You can find information like `<database user name>` in `<your Magento install d
 
 
 #### Related topics
-*	[Manage your environments]({{ site.gdeurl }}cloud/env/environments.html)
-*	[Overview of environment variables]({{ site.gdeurl }}cloud/env/environment-vars_over.html)
-*	[Set Magento environment variables]({{ site.gdeurl }}cloud/env/environment-tutorial-set-mage-vars.html)
+*	[Manage your environments]({{ site.gdeurl21 }}cloud/env/environments.html)
+*	[Overview of environment variables]({{ site.gdeurl21 }}cloud/env/environment-vars_over.html)
+*	[Set Magento environment variables]({{ site.gdeurl21 }}cloud/env/environment-tutorial-set-mage-vars.html)

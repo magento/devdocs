@@ -5,7 +5,7 @@ subgroup: Architectural Basics
 title: Backward compatibility
 menu_title: Backward compatibility
 menu_order: 3
-github_link: architecture/back-compatibility.md
+github_link21: architecture/back-compatibility.md
 ---
 
 <h2>Backward compatibility</h2>

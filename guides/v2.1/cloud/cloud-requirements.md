@@ -6,7 +6,7 @@ title: Magento Enterprise Cloud Edition requirements
 menu_title: Magento Enterprise Cloud Edition requirements
 menu_order: 20
 menu_node: 
-github_link: cloud/cloud-requirements.md
+github_link21: cloud/cloud-requirements.md
 ---
 
 
@@ -22,7 +22,7 @@ We require the following:
 You must have all of the following to use Magento Enterprise Cloud Edition:
 
 *	An account
-*	An [authentication key]({{ site.gdeurl }}install-gde/prereq/connect-auth.html)
+*	An [authentication key]({{ site.gdeurl21 }}install-gde/prereq/connect-auth.html)
 
 ## Authentication {#cloud-require-auth}
 Your Magento Enterprise Cloud Edition account must *authenticate* using any of the following:

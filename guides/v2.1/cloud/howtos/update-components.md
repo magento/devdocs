@@ -8,7 +8,7 @@ menu_order: 5
 level3_menu_node: level3child
 level3_subgroup: upgrade-update
 menu_node: 
-github_link: cloud/howtos/update-components.md
+github_link21: cloud/howtos/update-components.md
 ---
 
 ## How update components {#cloud-howto-upcomp}
@@ -61,12 +61,12 @@ To update components:
 		git push origin <environment ID>
 9.	Wait for the project to deploy.
 
-	If there are errors, see [Component deployment failure]({{ site.gdeurl }}cloud/trouble/trouble_comp-deploy-fail.html).
+	If there are errors, see [Component deployment failure]({{ site.gdeurl21 }}cloud/trouble/trouble_comp-deploy-fail.html).
 
 {% endcollapsible %}
 
 #### Related topic
-*	[Install components]({{ site.gdeurl }}cloud/howtos/install-components.html)
-*	[Upgrade the Magento system software]({{ site.gdeurl }}cloud/howtos/upgrade-magento.html)
-*	[Install optional sample data]({{ site.gdeurl }}cloud/howtos/sample-data.html)
-*	[Merge and delete an environment]({{ site.gdeurl }}cloud/howtos/environment-tutorial-env-merge.html)
+*	[Install components]({{ site.gdeurl21 }}cloud/howtos/install-components.html)
+*	[Upgrade the Magento system software]({{ site.gdeurl21 }}cloud/howtos/upgrade-magento.html)
+*	[Install optional sample data]({{ site.gdeurl21 }}cloud/howtos/sample-data.html)
+*	[Merge and delete an environment]({{ site.gdeurl21 }}cloud/howtos/environment-tutorial-env-merge.html)

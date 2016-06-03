@@ -5,7 +5,7 @@ subgroup: Architectural Layers
 title: Service layer
 menu_title: Service layer
 menu_order: 2
-github_link: architecture/archi_perspectives/service_layer.md
+github_link21: architecture/archi_perspectives/service_layer.md
 ---
 
 <h2>Service layer</h2>

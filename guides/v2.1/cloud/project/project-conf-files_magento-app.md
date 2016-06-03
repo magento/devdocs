@@ -6,7 +6,7 @@ title: .magento.app.yaml
 menu_title: .magento.app.yaml
 menu_order: 11
 menu_node: 
-github_link: cloud/project/project-conf-files_magento-app.md
+github_link21: cloud/project/project-conf-files_magento-app.md
 ---
 
 #### Contents
@@ -44,7 +44,7 @@ must have a *unique name* in a project.
 {% collapsible Click to show/hide content %}
 
 `name` can consist only of lower case alphanumeric characters; that is, `a`&ndash;`z` and `0`&ndash;`9`. `name`
-is used in the [`routes.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_routes.html) to define the HTTP upstream
+is used in the [`routes.yaml`]({{ site.gdeurl21 }}cloud/project/project-conf-files_routes.html) to define the HTTP upstream
 (by default, `php:php`). 
 
 For example, if the value of `name` is `app`, you must use `app:php` in the upstream field. You can also use this name in multi-application relationships.
@@ -110,7 +110,7 @@ Example of valid options are:
 	cache: "arediscache:redis"
 	search: "searchengine:solr"
 
-See also [`services.yaml` documentation]({{ site.gdeurl }}cloud/project/project-conf-files_services.html) for a full list of currently supported service types and endpoints.
+See also [`services.yaml` documentation]({{ site.gdeurl21 }}cloud/project/project-conf-files_services.html) for a full list of currently supported service types and endpoints.
 
 {% endcollapsible %}
 
@@ -448,7 +448,7 @@ runtime:
         - sqlite3
 {% endhighlight %}
 
-To view the current list of PHP extensions, create an [SSH tunnel]({{ site.gdeurl }}cloud/env/environments-start.html#env-start-tunn) to your environment and enter the following command:
+To view the current list of PHP extensions, create an [SSH tunnel]({{ site.gdeurl21 }}cloud/env/environments-start.html#env-start-tunn) to your environment and enter the following command:
 
 	ls /etc/php5/mods-available
 
@@ -518,16 +518,16 @@ For example, if you need to increase the PHP memory limit:
 
 	memory_limit = 768M
 
-For a list of recommended PHP configuration settings, see [Set PHP configuration options]({{ site.gdeurl }}install-gde/prereq/php-centos.html#instgde-prereq-timezone).
+For a list of recommended PHP configuration settings, see [Set PHP configuration options]({{ site.gdeurl21 }}install-gde/prereq/php-centos.html#instgde-prereq-timezone).
 
 After pushing your file, you can check that the custom PHP configuration
-has been added to your environment [creating an SSH tunnel]({{ site.gdeurl }}cloud/env/environments-start.html#env-start-tunn) and entering:
+has been added to your environment [creating an SSH tunnel]({{ site.gdeurl21 }}cloud/env/environments-start.html#env-start-tunn) and entering:
 
 	cat /etc/php5/fpm/php.ini
 
 {% endcollapsible %}
 
 #### Related topics
-*	[Get started with a project]({{ site.gdeurl }}cloud/project/project-start.html)
-*	[`routes.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_routes.html)
-*	[`services.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_services.html)
+*	[Get started with a project]({{ site.gdeurl21 }}cloud/project/project-start.html)
+*	[`routes.yaml`]({{ site.gdeurl21 }}cloud/project/project-conf-files_routes.html)
+*	[`services.yaml`]({{ site.gdeurl21 }}cloud/project/project-conf-files_services.html)

@@ -5,7 +5,7 @@ subgroup: Architecture
 title: Process view
 menu_title: Process view
 menu_order: 3
-github_link: architecture/process_view.md
+github_link21: architecture/process_view.md
 ---
 
 <h2>Object connection overview</h2>

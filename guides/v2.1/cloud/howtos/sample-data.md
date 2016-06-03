@@ -6,7 +6,7 @@ title: Install optional sample data
 menu_title: Install optional sample data
 menu_order: 8
 menu_node: 
-github_link: cloud/howtos/sample-data.md
+github_link21: cloud/howtos/sample-data.md
 ---
 
 ## How to install optional sample data {#cloud-howto-samp}
@@ -36,6 +36,6 @@ To upgrade:
 	The URL displays on the command line under the heading `Environment routes:`.
 
 #### Related topics
-*	[Install components]({{ site.gdeurl }}cloud/howtos/install-components.html)
-*	[Update components]({{ site.gdeurl }}cloud/howtos/update-components.html)
-*	[Merge and delete an environment]({{ site.gdeurl }}cloud/howtos/environment-tutorial-env-merge.html)
+*	[Install components]({{ site.gdeurl21 }}cloud/howtos/install-components.html)
+*	[Update components]({{ site.gdeurl21 }}cloud/howtos/update-components.html)
+*	[Merge and delete an environment]({{ site.gdeurl21 }}cloud/howtos/environment-tutorial-env-merge.html)

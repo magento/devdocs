@@ -7,7 +7,7 @@ menu_title: Module relationships
 menu_order: 5
 level3_menu_node: level3child
 level3_subgroup: modules
-github_link: architecture/modules/mod_relationships.md
+github_link21: architecture/modules/mod_relationships.md
 ---
 
 <h2 id="m2arch-module-relationships-overview">Overview</h2>

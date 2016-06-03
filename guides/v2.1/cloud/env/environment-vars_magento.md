@@ -8,13 +8,13 @@ menu_order: 80
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: vars
-github_link: cloud/env/environment-vars_magento.md
+github_link21: cloud/env/environment-vars_magento.md
 ---
 
 #### Contents
 *   [Magento application environment variables](#cloud-env-vars-magento) 
 *   [Troubleshooting](#cloud-env-vars-tshoot)
-*   [Tutorial&mdash;Set Magento environment variables]({{ site.gdeurl }}cloud/env/environment-tutorial-set-mage-vars.html) 
+*   [Tutorial&mdash;Set Magento environment variables]({{ site.gdeurl21 }}cloud/env/environment-tutorial-set-mage-vars.html) 
 
 ## Magento application environment variables {#cloud-env-vars-magento}
 <!-- The Magento application enables you to customize the values of many settings, including payment processors, shipping methods, and so on.
@@ -54,26 +54,26 @@ The following table lists variables that you can override using environment vari
     <td>admin</td>
     </tr>
     <tr><td>APPLICATION_MODE</td>
-    <td>Determines whether or not Magento operates in <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a> or in <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>. During development, we recommend the default setting.</td>
+    <td>Determines whether or not Magento operates in <a href="{{ site.gdeurl21 }}config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a> or in <a href="{{ site.gdeurl21 }}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>. During development, we recommend the default setting.</td>
     <td>MAGENTO_DEVELOPER_MODE</td>
     </tr>
 </tbody>
 </table>
 
-For an example, see [Tutorial&mdash;Set Magento environment variables]({{ site.gdeurl }}cloud/env/environment-tutorial-set-mage-vars.html).
+For an example, see [Tutorial&mdash;Set Magento environment variables]({{ site.gdeurl21 }}cloud/env/environment-tutorial-set-mage-vars.html).
 
 ## Troubleshooting {#cloud-env-vars-tshoot}
 In the event something goes wrong and you can't access your environment after it deploys, try the following:
 
-*   [SSH to the environment]({{ site.gdeurl }}cloud/env/environments-start.html#env-start-tunn) and make sure [services]({{ site.gdeurl }}cloud/env/environments-start.html#cloud-ssh-tunnel-service) are running.
+*   [SSH to the environment]({{ site.gdeurl21 }}cloud/env/environments-start.html#env-start-tunn) and make sure [services]({{ site.gdeurl21 }}cloud/env/environments-start.html#cloud-ssh-tunnel-service) are running.
 *   Restore your snapshot: 
 
         magento-cloud snapshot:list
         magento-cloud snapshot:restore <snapshot>
 
 #### Related topics
-*   [Tutorial&mdash;Set Magento environment variables]({{ site.gdeurl }}cloud/env/environment-tutorial-set-mage-vars.html) 
-*   [Magento Cloud environment variables]({{ site.gdeurl }}cloud/env/environment-vars_cloud.html)
-*   [`.magento.app.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_magento-app.html)
-*   [`services.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_services.html)
-*   [`routes.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_routes.html)
+*   [Tutorial&mdash;Set Magento environment variables]({{ site.gdeurl21 }}cloud/env/environment-tutorial-set-mage-vars.html) 
+*   [Magento Cloud environment variables]({{ site.gdeurl21 }}cloud/env/environment-vars_cloud.html)
+*   [`.magento.app.yaml`]({{ site.gdeurl21 }}cloud/project/project-conf-files_magento-app.html)
+*   [`services.yaml`]({{ site.gdeurl21 }}cloud/project/project-conf-files_services.html)
+*   [`routes.yaml`]({{ site.gdeurl21 }}cloud/project/project-conf-files_routes.html)

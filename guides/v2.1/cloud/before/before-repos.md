@@ -6,7 +6,7 @@ title: Magento Enterprise Cloud Edition repositories
 menu_title: Magento Enterprise Cloud Edition repositories
 menu_order: 4
 menu_node: 
-github_link: cloud/before/before-repos.md
+github_link21: cloud/before/before-repos.md
 ---
 
 ## Magento Enterprise Cloud Edition repositories {#cloud-repos}
@@ -19,6 +19,6 @@ Especially if you already have a GitHub repository and workflows for code review
 Don't have a GitHub or Bitbucket repository? See the [GitHub](https://help.github.com/articles/create-a-repo){:target="_blank"} or [Bitbucket](https://confluence.atlassian.com/bitbucket/create-a-git-repository-759857290.html){:target="_blank"} documentation for more information.
 
 #### Related topics
-*	[Set up a Magento workspace]({{ site.gdeurl }}cloud/before/before-workspace.html)
-*	[Get started with an environment]({{ site.gdeurl }}cloud/env/environments-start.html)
+*	[Set up a Magento workspace]({{ site.gdeurl21 }}cloud/before/before-workspace.html)
+*	[Get started with an environment]({{ site.gdeurl21 }}cloud/env/environments-start.html)
 

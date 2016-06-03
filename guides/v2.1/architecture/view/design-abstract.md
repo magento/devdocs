@@ -5,7 +5,7 @@ subgroup: View library
 title: Design abstractions
 menu_title: Design abstractions
 menu_order: 
-github_link: architecture/view/design-abstract.md
+github_link21: architecture/view/design-abstract.md
 ---
 
 <h2 id="m2devgde-design-abstract-intro">Introduction</h2>

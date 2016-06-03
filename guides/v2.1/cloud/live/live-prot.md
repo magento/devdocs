@@ -6,7 +6,7 @@ title: Protective block
 menu_title: Protective block
 menu_order: 100
 menu_node: 
-github_link: cloud/live/live-prot.md
+github_link21: cloud/live/live-prot.md
 ---
 
 ## Protective block
@@ -57,7 +57,7 @@ the vulnerability.
 The protective block is there to protect you against known vulnerabilities
 in the software you deploy on Magento Enterprise Cloud Edition.
 
-However, you can opt out of the protective block by adding the following to [`.magento.app.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_magento-app.html):
+However, you can opt out of the protective block by adding the following to [`.magento.app.yaml`]({{ site.gdeurl21 }}cloud/project/project-conf-files_magento-app.html):
 
     preflight:
        enabled: false

@@ -6,7 +6,7 @@ title: Workflow
 menu_title: Workflow
 menu_order: 3
 menu_node: 
-github_link: cloud/discover-workflow.md
+github_link21: cloud/discover-workflow.md
 ---
 
 ## Workflow
@@ -21,7 +21,7 @@ single click, or a single command on the command-line.
 ### Use any methodology
 You can use any methodology you already have or you can invent new ones. For example, you can use a Development -> Staging -> Production workflow.
 
-As another example, if you are using an agile methodology such as scrum you can create [branches for every sprint]({{ site.gdeurl }}cloud/env/environments.html#cloud-env-work).
+As another example, if you are using an agile methodology such as scrum you can create [branches for every sprint]({{ site.gdeurl21 }}cloud/env/environments.html#cloud-env-work).
 
 From each sprint, you can have branches for every user story. All the stories
 become testable. You can continually merge to the sprint branch and validate
@@ -30,6 +30,6 @@ bottleneck, and you can just merge to master and put the whole sprint into
 production.
 
 #### Related topics
-*	[First-time setup]({{ site.gdeurl }}cloud/access-acct/first-time-setup.html)
-*	[Get started with a project]({{ site.gdeurl }}cloud/project/project-start.html)
-*	[Get started with an environment]({{ site.gdeurl }}cloud/env/environments-start.html)
+*	[First-time setup]({{ site.gdeurl21 }}cloud/access-acct/first-time-setup.html)
+*	[Get started with a project]({{ site.gdeurl21 }}cloud/project/project-start.html)
+*	[Get started with an environment]({{ site.gdeurl21 }}cloud/env/environments-start.html)

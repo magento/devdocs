@@ -6,7 +6,7 @@ title: Common terms
 menu_title: Common terms
 menu_order: 2
 menu_node: 
-github_link: cloud/before/terms.md
+github_link21: cloud/before/terms.md
 ---
 
 ## Common terms
@@ -22,9 +22,9 @@ You configure the details of your project using configuration files.
 Magento Enterprise Cloud Edition project configuration files
 :	A set of `yaml` files located in the project root directory that define the project. These files are the only way to configure or reconfigure the project. In particular,
 
-	*	[`<project root dir>/.magento.app.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_magento-app.html), which configures things like the project name, access roles, service relationships, web server configuration (such as docroot), disk space, mount points, and cron.
-	*	[`<project root dir>/.magento/routes.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_routes.html), which specifies routes for your environments, URL redirects, server side includes, caching, and so on.
-	*	[`<project root dir>/.magento/services.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_services.html), which defines available services and their disk space allocations.
+	*	[`<project root dir>/.magento.app.yaml`]({{ site.gdeurl21 }}cloud/project/project-conf-files_magento-app.html), which configures things like the project name, access roles, service relationships, web server configuration (such as docroot), disk space, mount points, and cron.
+	*	[`<project root dir>/.magento/routes.yaml`]({{ site.gdeurl21 }}cloud/project/project-conf-files_routes.html), which specifies routes for your environments, URL redirects, server side includes, caching, and so on.
+	*	[`<project root dir>/.magento/services.yaml`]({{ site.gdeurl21 }}cloud/project/project-conf-files_services.html), which defines available services and their disk space allocations.
 
 Environment
 :	A project's Git branch. You can use environments for development and testing, and use a standard Git workflow to synchronize (pull) and merge (push) to its parent. Merging an environment with the `master` enables you to deploy the changes to your live site.

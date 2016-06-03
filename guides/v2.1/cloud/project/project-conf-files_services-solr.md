@@ -8,7 +8,7 @@ menu_order: 33
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: services
-github_link: cloud/project/project-conf-files_services-solr.md
+github_link21: cloud/project/project-conf-files_services-solr.md
 ---
 
 ## Set up the solr service
@@ -19,12 +19,12 @@ recovery, centralized configuration, and more.
 
 Solr uses the Lucene Java search library for full-text indexing and search. Your applications interact with Solr using <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.5" target="_blank">HTTP POST</a> (in JSON, <a href="http://wiki.apache.org/solr/UpdateXmlMessages" target="_blank">XML</a>, CSV, or binary formats) to index documents and using <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.3" target="_blank">HTTP GET</a> to retrieve search results back as <a href="http://wiki.apache.org/solr/SolJSON?highlight=%28json%29%7C%28solr%29" target="_blank">JSON</a>, XML, or a variety of other formats (Python, Ruby, <a href="http://wiki.apache.org/solr/SolPHP?highlight=%28php%29%7C%28solr%29" target="_blank">PHP</a>, <a href="http://wiki.apache.org/solr/CSVResponseWriter?highlight=%28solr%29%7C%28csv%29" target="_blank">CSV</a>, binary, and so on). If you're a programmer, try the <a href="https://lucene.apache.org/solr/4_10_0/tutorial.html" target="_blank">Solr tutorial</a>. Whether you're a programmer or not, read the <a href="http://wiki.apache.org/solr/FAQ" target="_blank">Solr FAQ</a>.
 
-[More information about Solr]({{ site.gdeurl }}config-guide/solr/solr-overview.html).
+[More information about Solr]({{ site.gdeurl21 }}config-guide/solr/solr-overview.html).
 
 We support Solr version 4.10.
 
 ## Relationship
-The format exposed in the [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{ site.gdeurl }}cloud/env/environment-vars_cloud.html) follows:
+The format exposed in the [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{ site.gdeurl21 }}cloud/env/environment-vars_cloud.html) follows:
 
 {% highlight bash %}
 {

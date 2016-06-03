@@ -8,7 +8,7 @@ menu_order: 18
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: routes
-github_link: cloud/project/project-routes-more-redir.md
+github_link21: cloud/project/project-routes-more-redir.md
 ---
 
 #### Contents
@@ -32,7 +32,7 @@ Using whole-route redirects, you can define very basic routes in `routes.yaml`. 
 	    to: http://www.{default}/
 
 ## Partial redirects {#cloud-route-partial}
-In the [`.magento/routes.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_routes.html) file you can also add partial redirect rules
+In the [`.magento/routes.yaml`]({{ site.gdeurl21 }}cloud/project/project-conf-files_routes.html) file you can also add partial redirect rules
 to existing routes:
 
 	http://{default}/:

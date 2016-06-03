@@ -6,7 +6,7 @@ title: Reuse code across projects with Git submodules
 menu_title: Reuse code across projects with Git submodules
 menu_order: 200
 menu_node: 
-github_link: cloud/admin/admin-submodules.md
+github_link21: cloud/admin/admin-submodules.md
 ---
 
 ## Reuse code across projects with Git submodules
@@ -48,6 +48,6 @@ The following error displays if you access a Git URL like `git@github.com:...` b
 To resolve the issue, edit `.gitmodules` and replace `git@github.com:...` URLs with HTTPS URLs in the format: `https://github.com/...`.
 
 #### Related topic
-[Set up multiple applications]({{ site.gdeurl }}cloud/project/project-conf-multi.html#cloud-multi-app-submod)
+[Set up multiple applications]({{ site.gdeurl21 }}cloud/project/project-conf-multi.html#cloud-multi-app-submod)
 
 

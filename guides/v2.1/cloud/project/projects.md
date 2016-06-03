@@ -6,7 +6,7 @@ title: Manage your projects
 menu_title: Manage your projects
 menu_order: 1
 menu_node: parent
-github_link: cloud/project/projects.md
+github_link21: cloud/project/projects.md
 ---
 
 ## Manage your projects
@@ -17,9 +17,9 @@ The project's `master` branch corresponds to your live Magento store; that is, y
 ## Quick tour
 This section provides a quick tour of your project using the Web Interface. For more detailed information about the Web Interface, see:
 
-*	[Manage environments (branches)]({{ site.gdeurl }}cloud/project/project-webint-branch.html)
-*	[Project backup and restore (snapshot)]({{ site.gdeurl }}cloud/project/project-webint-snap.html)
-*	[Basic project information]({{ site.gdeurl }}cloud/project/project-webint-basic.html)
+*	[Manage environments (branches)]({{ site.gdeurl21 }}cloud/project/project-webint-branch.html)
+*	[Project backup and restore (snapshot)]({{ site.gdeurl21 }}cloud/project/project-webint-snap.html)
+*	[Basic project information]({{ site.gdeurl21 }}cloud/project/project-webint-basic.html)
 
 ### Login
 Log in to your project using Bitbucket, GitHub, Google, or a e-mail address and password.
@@ -32,21 +32,21 @@ Hovering the mouse pointer over **Access Site** shows how to access your site us
 ![Access your project]({{ site.baseurl }}common/images/cloud_project-access.png){:width="450px"}
 
 ### Configure environments
-Click **Configure environment** to create and manage [*environments*]({{ site.gdeurl }}cloud/env/environments.html), each of which corresponds to a Git branch.
+Click **Configure environment** to create and manage [*environments*]({{ site.gdeurl21 }}cloud/env/environments.html), each of which corresponds to a Git branch.
 
 ![Access your project]({{ site.baseurl }}common/images/cloud_project-env.png){:width="450px"}
 
-This displays the following page, which enables you to configure settings, [variables]({{ site.gdeurl }}cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-rel), [routes]({{ site.gdeurl }}cloud/project/project-conf-files_routes.html), and [users]({{ site.gdeurl }}cloud/admin/admin-user-admin.html).
+This displays the following page, which enables you to configure settings, [variables]({{ site.gdeurl21 }}cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-rel), [routes]({{ site.gdeurl21 }}cloud/project/project-conf-files_routes.html), and [users]({{ site.gdeurl21 }}cloud/admin/admin-user-admin.html).
 
 ![configure environments]({{ site.baseurl }}common/images/cloud_project-conf-env.png){:width="450px"}
 
 ### Configure the project
-Click ![edit project]({{ site.baseurl }}common/images/cloud_edit-project.png) (edit) to display [users]({{ site.gdeurl }}cloud/admin/admin-user-admin.html), [domains]({{ site.gdeurl }}cloud/admin/admin-project-settings.html), and [deploy keys]({{ site.gdeurl }}cloud/project/project-priv-repos.html) associated with the project.
+Click ![edit project]({{ site.baseurl }}common/images/cloud_edit-project.png) (edit) to display [users]({{ site.gdeurl21 }}cloud/admin/admin-user-admin.html), [domains]({{ site.gdeurl21 }}cloud/admin/admin-project-settings.html), and [deploy keys]({{ site.gdeurl21 }}cloud/project/project-priv-repos.html) associated with the project.
 
 ![configure project]({{ site.baseurl }}common/images/cloud_project-config.png){:width="450px"}
 
 ### Manage users
-The **Users** tab page enables you to add users to the project and to give them [privileges to access the project and environments]({{ site.gdeurl }}cloud/admin/admin-user-admin.html).
+The **Users** tab page enables you to add users to the project and to give them [privileges to access the project and environments]({{ site.gdeurl21 }}cloud/admin/admin-user-admin.html).
 
 ![Manage users]({{ site.baseurl }}common/images/cloud_project-config.png){:width="450px"}
 
@@ -65,7 +65,7 @@ Selecting the **Super user** check box grants project administrator privileges t
 </div>
 
 #### Related topics
-*	[Get started with a project]({{ site.gdeurl }}cloud/project/project-start.html)
-*	[`.magento.app.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_magento-app.html)
-*	[`routes.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_routes.html)
-*	[`services.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_services.html)
+*	[Get started with a project]({{ site.gdeurl21 }}cloud/project/project-start.html)
+*	[`.magento.app.yaml`]({{ site.gdeurl21 }}cloud/project/project-conf-files_magento-app.html)
+*	[`routes.yaml`]({{ site.gdeurl21 }}cloud/project/project-conf-files_routes.html)
+*	[`services.yaml`]({{ site.gdeurl21 }}cloud/project/project-conf-files_services.html)

@@ -8,7 +8,7 @@ menu_order: 71
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: vars
-github_link: cloud/env/environment-vars_over.md
+github_link21: cloud/env/environment-vars_over.md
 ---
 
 ## Environment variables {#cloud-env-set-vars}
@@ -58,8 +58,8 @@ To list current environment variables:
 		echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 --decode
 
 #### Related topics
-*   [Magento Cloud environment variables]({{ site.gdeurl }}cloud/env/environment-vars_cloud.html)
-*   [Magento application environment variables]({{ site.gdeurl }}cloud/env/environment-vars_magento.html)
-*   [`.magento.app.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_magento-app.html)
-*   [`services.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_services.html)
-*	[`routes.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_routes.html)
+*   [Magento Cloud environment variables]({{ site.gdeurl21 }}cloud/env/environment-vars_cloud.html)
+*   [Magento application environment variables]({{ site.gdeurl21 }}cloud/env/environment-vars_magento.html)
+*   [`.magento.app.yaml`]({{ site.gdeurl21 }}cloud/project/project-conf-files_magento-app.html)
+*   [`services.yaml`]({{ site.gdeurl21 }}cloud/project/project-conf-files_services.html)
+*	[`routes.yaml`]({{ site.gdeurl21 }}cloud/project/project-conf-files_routes.html)

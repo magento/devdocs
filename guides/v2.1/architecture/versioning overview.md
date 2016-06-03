@@ -9,13 +9,13 @@ menu_order: 2
 level3_menu_node: level3child
 level3_subgroup: versioning
 
-github_link: architecture/versioning_overview.md
+github_link21: architecture/versioning_overview.md
 
 ---
 
 <h2 id="verpol">Versioning policy overview</h2>
 
-Magento  uses  software versioning to indicate the compatibility of changes in the code. By comparing two versions of the same component, you can tell whether it has any <a href="{{ site.gdeurl }}architecture/back-compatibility.html">backward-incompatible</a> changes in the public API or other significant code changes.
+Magento  uses  software versioning to indicate the compatibility of changes in the code. By comparing two versions of the same component, you can tell whether it has any <a href="{{ site.gdeurl21 }}architecture/back-compatibility.html">backward-incompatible</a> changes in the public API or other significant code changes.
 
 Versioning also helps:
 
@@ -56,9 +56,9 @@ For PHP code, compatibility of `@api` can be tracked on the level of structural 
 
 
 <h3>Related topics</h3>
-<a href="{{ site.gdeurl }}architecture/back-compatibility.html">Backward compatibility</a>
+<a href="{{ site.gdeurl21 }}architecture/back-compatibility.html">Backward compatibility</a>
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>
+<a href="{{ site.gdeurl21 }}architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>
 
 
 

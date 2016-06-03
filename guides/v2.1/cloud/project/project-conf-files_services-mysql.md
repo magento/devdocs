@@ -8,7 +8,7 @@ menu_order: 31
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: services
-github_link: cloud/project/project-conf-files_services-mysql.md
+github_link21: cloud/project/project-conf-files_services-mysql.md
 ---
 
 ## Set up the mysql service
@@ -17,13 +17,13 @@ engine (equivalent to MySQL with InnoDB).
 
 We support MySQL version 10.0.
 
-To access the MariaDB database directly, [open an SSH tunnel]({{ site.gdeurl }}cloud/env/environments-start.html#env-start-tunn) and use the
+To access the MariaDB database directly, [open an SSH tunnel]({{ site.gdeurl21 }}cloud/env/environments-start.html#env-start-tunn) and use the
 following command: 
 
     mysql -h database.internal -u user
 
 ## Relationship
-The format exposed in the [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{ site.gdeurl }}cloud/env/environment-vars_cloud.html) follows:
+The format exposed in the [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{ site.gdeurl21 }}cloud/env/environment-vars_cloud.html) follows:
 
 {% highlight bash %}
 {
@@ -86,4 +86,4 @@ foreach ($relationships['database'] as $endpoint) {
 
 #### Notes
 *   There is a single MySQL user, so you can not use the [`DEFINER`](http://dev.mysql.com/doc/refman/5.6/en/show-grants.html){:target="_blank"} access control mechanism for stored procedures and views.
-*   MySQL errors such as `PDO Exception 'MySQL server has gone away` are usually simply the result of exhausting your existing disk space. Be sure you have sufficient space allocated to the service in [`.magento/services.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-disk).
+*   MySQL errors such as `PDO Exception 'MySQL server has gone away` are usually simply the result of exhausting your existing disk space. Be sure you have sufficient space allocated to the service in [`.magento/services.yaml`]({{ site.gdeurl21 }}cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-disk).

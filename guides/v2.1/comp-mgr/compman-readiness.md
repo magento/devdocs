@@ -6,7 +6,7 @@ title: Step 1. Readiness check
 menu_title: Step 1. Readiness check
 menu_node: 
 menu_order: 5
-github_link: comp-mgr/compman-readiness.md
+github_link21: comp-mgr/compman-readiness.md
 ---
 
 
@@ -24,7 +24,7 @@ See one of the following:
 *	<a href="#compman-readiness-fail">Failure</a>
 
 <h3 id="compman-readiness-success">Success</h3>
-The following figure shows an example of a successful readiness check. If all tests passed, click **Next** and continue with <a href="{{ site.gdeurl }}comp-mgr/compman-backup.html">Backup</a>.
+The following figure shows an example of a successful readiness check. If all tests passed, click **Next** and continue with <a href="{{ site.gdeurl21 }}comp-mgr/compman-backup.html">Backup</a>.
 
 <img src="{{ site.baseurl }}common/images/cman_readiness-success.png" width="700px" alt="If all readiness checks pass, click Next and continue with the next step">
 
@@ -35,10 +35,10 @@ Messages similar to the following display if any readiness check fails.
 
 In the event of failure, see one of the following sections:
 
-*	<a href="{{ site.gdeurl }}comp-mgr/trouble/cman/updater.html">Updater check failure</a>
-*	<a href="{{ site.gdeurl }}comp-mgr/trouble/cman/cron.html">Cron script check failure</a>
-*	<a href="{{ site.gdeurl }}comp-mgr/trouble/cman/component-depend.html">Component dependency check failure</a>
-*	<a href="{{ site.gdeurl }}comp-mgr/trouble/cman/php-version.html">PHP version readiness check issues</a>
-*	<a href="{{ site.gdeurl }}install-gde/trouble/php/tshoot_php-set.html">PHP settings errors</a>
-*	<a href="{{ site.gdeurl }}install-gde/system-requirements.html">PHP extensions check failure</a>
-*	<a href="{{ site.gdeurl }}comp-mgr/trouble/cman/doc.html">magento/theme-doc-blank failure</a>
+*	<a href="{{ site.gdeurl21 }}comp-mgr/trouble/cman/updater.html">Updater check failure</a>
+*	<a href="{{ site.gdeurl21 }}comp-mgr/trouble/cman/cron.html">Cron script check failure</a>
+*	<a href="{{ site.gdeurl21 }}comp-mgr/trouble/cman/component-depend.html">Component dependency check failure</a>
+*	<a href="{{ site.gdeurl21 }}comp-mgr/trouble/cman/php-version.html">PHP version readiness check issues</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/trouble/php/tshoot_php-set.html">PHP settings errors</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/system-requirements.html">PHP extensions check failure</a>
+*	<a href="{{ site.gdeurl21 }}comp-mgr/trouble/cman/doc.html">magento/theme-doc-blank failure</a>

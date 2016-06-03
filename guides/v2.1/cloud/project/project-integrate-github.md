@@ -8,7 +8,7 @@ menu_order: 110
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: integrate
-github_link: cloud/project/project-integrate-github.md
+github_link21: cloud/project/project-integrate-github.md
 ---
 
 #### Contents
@@ -132,5 +132,5 @@ To verify the integration works:
 
 
 #### Related topics
-*	[Get started with a project]({{ site.gdeurl }}cloud/project/project-start.html)
-*	[`.magento.app.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_magento-app.html)
+*	[Get started with a project]({{ site.gdeurl21 }}cloud/project/project-start.html)
+*	[`.magento.app.yaml`]({{ site.gdeurl21 }}cloud/project/project-conf-files_magento-app.html)

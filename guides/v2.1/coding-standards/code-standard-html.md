@@ -5,7 +5,7 @@ subgroup: Coding standards
 title: HTML style guide
 menu_title: HTML style guide
 menu_order: 8
-github_link: coding-standards/code-standard-html.md
+github_link21: coding-standards/code-standard-html.md
 ---
 
 This style guide defines Magento internal requirements for HTML code style for teams that develop LESS and CSS code. We recommend that developers who create Magento extensions and customizations also use these standards.

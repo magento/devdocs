@@ -5,13 +5,9 @@ subgroup: Architectural Basics
 title: Where is version information stored?
 menu_title: Where is version information stored?
 menu_order: 4
-
 level3_menu_node: level3child
 level3_subgroup: versioning
-
-
-github_link: architecture/versioning.md
-redirect_from: /guides/v1.0/architecture/version_store.html
+github_link21: architecture/versioning.md
 ---
 
 <h2 id="verpol">Where is version information stored?</h2>
@@ -48,9 +44,9 @@ Or you can use it to declare a dependency on a particular version of a component
 
 
 <h3>Related topics</h3>
-<a href="{{ site.gdeurl }}architecture/back-compatibility.html">Backward compatibility</a>
+<a href="{{ site.gdeurl21 }}architecture/back-compatibility.html">Backward compatibility</a>
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>
+<a href="{{ site.gdeurl21 }}architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>
 
 
 

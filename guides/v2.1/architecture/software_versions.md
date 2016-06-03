@@ -5,11 +5,8 @@ subgroup: Architectural Basics
 title: Magento 2.0 software versions
 menu_title: Magento 2.0 software versions
 menu_order: 3
-
 level3_menu_node: level3child
 level3_subgroup: versioning
-
-redirect_from: /guides/v1.0/architecture/software_versions.html
 ---
 
 <h2 id="verpol">Magento 2.0 software versions</h2>
@@ -60,9 +57,9 @@ Release versioning and semantic versioning work together. Patches change only th
 
 
 <h3>Related topics</h3>
-<a href="{{ site.gdeurl }}architecture/back-compatibility.html">Backward compatibility</a>
+<a href="{{ site.gdeurl21 }}architecture/back-compatibility.html">Backward compatibility</a>
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>
+<a href="{{ site.gdeurl21 }}architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>
 
 
 

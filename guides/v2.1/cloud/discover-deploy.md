@@ -6,7 +6,7 @@ title: Deployment process
 menu_title: Deployment process
 menu_order: 4
 menu_node: 
-github_link: cloud/discover-deploy.md
+github_link21: cloud/discover-deploy.md
 ---
 
 #### Contents
@@ -128,8 +128,8 @@ Because we also route SSH, you can also simply SSH to your cluster, where
 you have the same permissions to execute commands as the web server.
 
 #### Related topics
-*	[Get started with a project]({{ site.gdeurl }}cloud/project/project-start.html)
-*	[Get started with an environment]({{ site.gdeurl }}cloud/env/environments-start.html)
-*	[`.magento.app.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_magento-app.html)
-*	[`routes.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_routes.html)
-*	[`services.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_services.html)
+*	[Get started with a project]({{ site.gdeurl21 }}cloud/project/project-start.html)
+*	[Get started with an environment]({{ site.gdeurl21 }}cloud/env/environments-start.html)
+*	[`.magento.app.yaml`]({{ site.gdeurl21 }}cloud/project/project-conf-files_magento-app.html)
+*	[`routes.yaml`]({{ site.gdeurl21 }}cloud/project/project-conf-files_routes.html)
+*	[`services.yaml`]({{ site.gdeurl21 }}cloud/project/project-conf-files_services.html)

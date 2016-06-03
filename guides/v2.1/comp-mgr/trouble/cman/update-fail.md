@@ -6,7 +6,7 @@ title: Roll back after update failure
 menu_title: Roll back after update failure
 menu_node: 
 menu_order: 110
-github_link: comp-mgr/trouble/cman/update-fail.md
+github_link21: comp-mgr/trouble/cman/update-fail.md
 ---
 
 <h2 id="trouble-update-fail">Roll back after update failure</h2>

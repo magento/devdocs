@@ -6,13 +6,13 @@ title: Troubleshoot deployment
 menu_title: Troubleshoot deployment
 menu_order: 100
 menu_node: 
-github_link: cloud/access-acct/trouble.md
+github_link21: cloud/access-acct/trouble.md
 ---
 
 ## Troubleshoot deployment
-This topic discusses how to recover if you deployed the Magento application with the incorrect [authentication keys]({{ site.gdeurl }}install-gde/prereq/connect-auth.html). For example, you might have used the keys for another account or you might have used Magento Community Edition (CE) keys instead of Magento Enterprise Edition (EE) keys.
+This topic discusses how to recover if you deployed the Magento application with the incorrect [authentication keys]({{ site.gdeurl21 }}install-gde/prereq/connect-auth.html). For example, you might have used the keys for another account or you might have used Magento Community Edition (CE) keys instead of Magento Enterprise Edition (EE) keys.
 
-If you used the incorrect keys, deployment fails; to recover, you must clone the project, add the correct keys to `auth.json`, and push the change to the master branch. Before you begin, make sure you know your Magento EE [authentication keys]({{ site.gdeurl }}install-gde/prereq/connect-auth.html).
+If you used the incorrect keys, deployment fails; to recover, you must clone the project, add the correct keys to `auth.json`, and push the change to the master branch. Before you begin, make sure you know your Magento EE [authentication keys]({{ site.gdeurl21 }}install-gde/prereq/connect-auth.html).
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>In this section, we assume that your project has a <code>master</code> branch only (<code>master</code> is the default branch when you first create a project). </p>

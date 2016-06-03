@@ -5,7 +5,7 @@ subgroup: Logical View
 title: Magento filesystem
 menu_title: Magento filesystem
 menu_order: 3
-github_link: architecture/archi_perspectives/filesystem.md
+github_link21: architecture/archi_perspectives/filesystem.md
 ---
 
 

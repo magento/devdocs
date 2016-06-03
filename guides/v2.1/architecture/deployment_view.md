@@ -5,7 +5,7 @@ subgroup: Architecture
 title: Deployment view
 menu_title: Deployment view
 menu_order: 3
-github_link: architecture/deployment_view.md
+github_link21: architecture/deployment_view.md
 ---
 
 <h2>Components</h2>

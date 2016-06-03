@@ -6,7 +6,7 @@ title: Extensibility and modularity
 menu_title: 
 menu_node: 
 menu_order: 
-github_link: architecture/extensibility.md
+github_link21: architecture/extensibility.md
 ---
 
 <h2 id="m2arch-whatis-overview">Extensibility and modularity</h2>

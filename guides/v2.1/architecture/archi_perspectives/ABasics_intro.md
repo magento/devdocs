@@ -6,7 +6,7 @@ title: Architectural basics overview
 menu_title: Architectural basics
 menu_node: parent
 menu_order: 
-github_link: architecture/archi_perspectives/ABasics_intro.md
+github_link21: architecture/archi_perspectives/ABasics_intro.md
 ---
 
 

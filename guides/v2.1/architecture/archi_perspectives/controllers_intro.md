@@ -5,7 +5,7 @@ subgroup: Architectural Layers
 title: Magento Blocks and Controllers
 menu_title: Magento Blocks and Controllers
 menu_order: 
-github_link: architecture/archi_perspectives/controllers_intro.md
+github_link21: architecture/archi_perspectives/controllers_intro.md
 ---
 
 

@@ -5,8 +5,7 @@ subgroup: Coding standards
 title: DocBlock standard
 menu_title: DocBlock standard
 menu_order: 3
-github_link: coding-standards/docblock-standard-general.md
-redirect_from: /guides/v1.0/coding-standards/docblock-standard-general.html
+github_link21: coding-standards/docblock-standard-general.md
 ---
 
 <h2 id="m2devgde-code-DocBlock-intro">Overview</h2>

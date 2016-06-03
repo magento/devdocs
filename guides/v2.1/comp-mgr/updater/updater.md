@@ -6,10 +6,10 @@ title: Updater application
 menu_title: Updater application
 menu_node: 
 menu_order: 2
-github_link: comp-mgr/updater/updater.md
+github_link21: comp-mgr/updater/updater.md
 ---
 
 ## Updater application
 This topic is obsolete. Magento no longer has a separate updater application.
 
-If you are a contributing developer who installed the Magento application by cloning the GitHub repository, see instead [Update the Magento application]({{ site.gdeurl }}install-gde/install/cli/dev_update-magento.html).
+If you are a contributing developer who installed the Magento application by cloning the GitHub repository, see instead [Update the Magento application]({{ site.gdeurl21 }}install-gde/install/cli/dev_update-magento.html).

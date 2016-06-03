@@ -6,7 +6,7 @@ subgroup: Components
 title: Magento layouts 
 menu_title: Layouts 
 menu_order: 3
-github_link: architecture/components/layout_intro.md
+github_link21: architecture/components/layout_intro.md
 ---
 
 <h2 id="m2arch_layout_overview">Magento layouts</h2>  

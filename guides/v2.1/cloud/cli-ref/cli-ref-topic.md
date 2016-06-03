@@ -6,7 +6,7 @@ title: CLI command reference
 menu_title: CLI command reference
 menu_order: 1
 menu_node: parent
-github_link: cloud/cli-ref/cli-ref-topic.md
+github_link21: cloud/cli-ref/cli-ref-topic.md
 ---
 
 ## CLI command reference {#cloud-cli-ref}
@@ -28,7 +28,7 @@ TBD
 TBD
 
 ## `magento-cloud` command help {#cloud-cli-ref-help}
-Before you can use the `magento-cloud` command line, you must install it as discussed in [Set up Secure Shell (SSH) and command-line access]({{ site.gdeurl }}cloud/access-acct/setup-ssh.html#cloud-ssh-cli-cli-install).
+Before you can use the `magento-cloud` command line, you must install it as discussed in [Set up Secure Shell (SSH) and command-line access]({{ site.gdeurl21 }}cloud/access-acct/setup-ssh.html#cloud-ssh-cli-cli-install).
 
 ### Display all commands
 

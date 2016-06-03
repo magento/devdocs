@@ -5,13 +5,9 @@ subgroup: Architectural Basics
 title: Changes to classes and method versions
 menu_title: Changes to classes and method versions
 menu_order: 5
-
 level3_menu_node: level3child
 level3_subgroup: versioning
-
-
-github_link: architecture/versioning.md
-redirect_from: /guides/v1.0/architecture/version_store.html
+github_link21: architecture/versioning.md
 ---
 
 <h2>Changes to classes and method versions</h2>
@@ -46,9 +42,9 @@ The following table identifies typical Major, Minor and Patch level changes to i
 </table>
 
 <h3>Related topics</h3>
-<a href="{{ site.gdeurl }}architecture/versioning_overview.html">Versioning policy overview</a>
+<a href="{{ site.gdeurl21 }}architecture/versioning_overview.html">Versioning policy overview</a>
 
 
-<a href="{{ site.gdeurl }}architecture/software_versions.html">Magento 2.0 software versions</a>
+<a href="{{ site.gdeurl21 }}architecture/software_versions.html">Magento 2.0 software versions</a>
 
-<a href="{{ site.gdeurl }}architecture/version_store.html">Where is version information stored?</a>
+<a href="{{ site.gdeurl21 }}architecture/version_store.html">Where is version information stored?</a>

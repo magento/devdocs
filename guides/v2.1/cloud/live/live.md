@@ -6,7 +6,7 @@ title: Go live
 menu_title: Go live
 menu_order: 1
 menu_node: parent
-github_link: cloud/live/live.md
+github_link21: cloud/live/live.md
 ---
 
 ## Go live

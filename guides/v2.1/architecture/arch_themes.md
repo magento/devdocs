@@ -5,7 +5,7 @@ subgroup: Architecture
 title: Themes
 menu_title: Themes
 menu_order: 
-github_link: architecture/arch_themes.md
+github_link21: architecture/arch_themes.md
 ---
 
 <h2 id="m2arch-themes-overview">Overview</h2>

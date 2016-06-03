@@ -7,7 +7,7 @@ menu_title: Module overview
 menu_order: 3
 level3_menu_node: level3child
 level3_subgroup: modules
-github_link: architecture/components/modules/mod_intro.md
+github_link21: architecture/components/modules/mod_intro.md
 ---
 
 <h2 id="arch-modules-overview">Module overview</h2>

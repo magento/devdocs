@@ -6,7 +6,7 @@ title: Resolve issues with a new project
 menu_title: Resolve issues with a new project
 menu_order: 2
 menu_node: 
-github_link: cloud/trouble/trouble_proj-startover.md
+github_link21: cloud/trouble/trouble_proj-startover.md
 ---
 
 ## Resolve issues with a new project
@@ -17,9 +17,9 @@ If you didn't push code to the project because, for example, you didn't complete
 
 ![If the project has no code]({{ site.baseurl }}common/images/cloud_trouble_no-code.png)
 
-Click the **This project has no code yet** link next to the project name to start the wizard again and see [First-time setup]({{ site.gdeurl }}cloud/access-acct/first-time-setup.html#cloud-first-email).
+Click the **This project has no code yet** link next to the project name to start the wizard again and see [First-time setup]({{ site.gdeurl21 }}cloud/access-acct/first-time-setup.html#cloud-first-email).
 
 #### Related topics
-*	[Manage your projects]({{ site.gdeurl }}cloud/project/projects.html)
-*	[Manage your environments]({{ site.gdeurl }}cloud/env/environments.html)
-*	[Tutorials]({{ site.gdeurl }}cloud/howtos/how-to.html)
+*	[Manage your projects]({{ site.gdeurl21 }}cloud/project/projects.html)
+*	[Manage your environments]({{ site.gdeurl21 }}cloud/env/environments.html)
+*	[Tutorials]({{ site.gdeurl21 }}cloud/howtos/how-to.html)

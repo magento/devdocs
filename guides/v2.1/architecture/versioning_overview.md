@@ -9,13 +9,13 @@ menu_order: 2
 level3_menu_node: level3child
 level3_subgroup: versioning
 
-github_link: architecture/versioning_overview.md
+github_link21: architecture/versioning_overview.md
 
 ---
 
 <h2 id="verpol">Versioning policy overview</h2>
 
-Magento  uses <i>software versioning</i> to identify the compatibility of changes in the public code. By comparing two versions of the same component, you can tell whether it has any <a href="{{ site.gdeurl }}architecture/back-compatibility.html">backward-incompatible</a> changes in the public API or other significant code changes. 
+Magento  uses <i>software versioning</i> to identify the compatibility of changes in the public code. By comparing two versions of the same component, you can tell whether it has any <a href="{{ site.gdeurl21 }}architecture/back-compatibility.html">backward-incompatible</a> changes in the public API or other significant code changes. 
 
 Versioning also helps:
 
@@ -39,16 +39,16 @@ For PHP code, compatibility of <code>@api</code> can be tracked on the level of 
 
 
 <h3>Related topics</h3>
-<a href="{{ site.gdeurl }}architecture/versioning_spec_format.html">Supported versioning specifications and formats</a>
+<a href="{{ site.gdeurl21 }}architecture/versioning_spec_format.html">Supported versioning specifications and formats</a>
 
-<a href="{{ site.gdeurl }}architecture/software_versions.html">Magento 2.0 software versions</a>
+<a href="{{ site.gdeurl21 }}architecture/software_versions.html">Magento 2.0 software versions</a>
 
-<a href="{{ site.gdeurl }}architecture/version_store.html">Where is version information stored?</a>
+<a href="{{ site.gdeurl21 }}architecture/version_store.html">Where is version information stored?</a>
 
-<a href="{{ site.gdeurl }}architecture/change_table.html">Changes to classes and method versions</a>
+<a href="{{ site.gdeurl21 }}architecture/change_table.html">Changes to classes and method versions</a>
 
 
-<a href="{{ site.gdeurl }}architecture/back-compatibility.html">Backward compatibility</a>
+<a href="{{ site.gdeurl21 }}architecture/back-compatibility.html">Backward compatibility</a>
 
 
 

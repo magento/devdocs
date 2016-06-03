@@ -6,7 +6,7 @@ title: Manage your environments
 menu_title: Manage your environments
 menu_order: 1
 menu_node: parent
-github_link: cloud/env/environments.md
+github_link21: cloud/env/environments.md
 ---
 
 ## Overview of environments {#cloud-env-over}
@@ -106,5 +106,5 @@ The following table lists the commands used in the preceding example.
 </table>
 
 #### Related topics
-*	[Get started with an environment]({{ site.gdeurl }}cloud/env/environments-start.html)
-*	[Overview of environment variables]({{ site.gdeurl }}cloud/env/environment-vars_over.html)
+*	[Get started with an environment]({{ site.gdeurl21 }}cloud/env/environments-start.html)
+*	[Overview of environment variables]({{ site.gdeurl21 }}cloud/env/environment-vars_over.html)

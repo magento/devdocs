@@ -8,7 +8,7 @@ menu_order: 30
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: services
-github_link: cloud/project/project-conf-files_services.md
+github_link21: cloud/project/project-conf-files_services.md
 ---
 
 #### Contents
@@ -47,7 +47,7 @@ If you do not provide a `services.yaml` file, the following defaults are used:
 Usually you will see in our examples that we simply call the mysql: `mysql`. Note that you can have multiple instances of each service.
 
 <div class="bs-callout bs-callout-warning">
-    <p>Because we support multiple services of the same type (for example, multiple databases), changing the name of a service in <code>services.yaml</code> causes the existing service to be <em>permanently removed</em> before creating a new service with the new name you specify. <em>Renaming a service results in the loss of all of that service's data</em>. We strongly recommend you <a href="{{ site.gdeurl }}cloud/admin/admin-snap.html">snapshot your environment</a> before you change the name of an existing service.</p>
+    <p>Because we support multiple services of the same type (for example, multiple databases), changing the name of a service in <code>services.yaml</code> causes the existing service to be <em>permanently removed</em> before creating a new service with the new name you specify. <em>Renaming a service results in the loss of all of that service's data</em>. We strongly recommend you <a href="{{ site.gdeurl21 }}cloud/admin/admin-snap.html">snapshot your environment</a> before you change the name of an existing service.</p>
 </div>
 
 ### `type` {#cloud-yaml-services-type}
@@ -65,17 +65,17 @@ We support and deploy the following services for you:
 
 `disk` specifies the size of the persistent disk storage (in MB) allocated to the service. 
 
-For example, the current default storage amount per project is 5GB (meaning 5120MB), which you can distribute between your application and each of its services. (See [`.magento.app.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_magento-app.html).)
+For example, the current default storage amount per project is 5GB (meaning 5120MB), which you can distribute between your application and each of its services. (See [`.magento.app.yaml`]({{ site.gdeurl21 }}cloud/project/project-conf-files_magento-app.html).)
 
 ## Using the services
-For services to be available to an application in your project, you must specify [*relationships*]({{ site.gdeurl }}cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-rel) between applications and services in `.magento.app.yaml`.
+For services to be available to an application in your project, you must specify [*relationships*]({{ site.gdeurl21 }}cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-rel) between applications and services in `.magento.app.yaml`.
 
 #### Related topics
-*	[Get started with a project]({{ site.gdeurl }}cloud/project/project-start.html)
-*	[`.magento.app.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_magento-app.html)
-*	[Set up the mysql service]({{ site.gdeurl }}cloud/project/project-conf-files_services-mysql.html)
-*	[Set up the redis service]({{ site.gdeurl }}cloud/project/project-conf-files_services-redis.html)
-*	[Set up the solr service]({{ site.gdeurl }}cloud/project/project-conf-files_services-solr.html)
-*	[Set up the elasticsearch service]({{ site.gdeurl }}cloud/project/project-conf-files_services-elastic.html)
-*	[Set up the rabbitmq service]({{ site.gdeurl }}cloud/project/project-conf-files_services-rabbit.html)
-*	[`routes.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_routes.html)
+*	[Get started with a project]({{ site.gdeurl21 }}cloud/project/project-start.html)
+*	[`.magento.app.yaml`]({{ site.gdeurl21 }}cloud/project/project-conf-files_magento-app.html)
+*	[Set up the mysql service]({{ site.gdeurl21 }}cloud/project/project-conf-files_services-mysql.html)
+*	[Set up the redis service]({{ site.gdeurl21 }}cloud/project/project-conf-files_services-redis.html)
+*	[Set up the solr service]({{ site.gdeurl21 }}cloud/project/project-conf-files_services-solr.html)
+*	[Set up the elasticsearch service]({{ site.gdeurl21 }}cloud/project/project-conf-files_services-elastic.html)
+*	[Set up the rabbitmq service]({{ site.gdeurl21 }}cloud/project/project-conf-files_services-rabbit.html)
+*	[`routes.yaml`]({{ site.gdeurl21 }}cloud/project/project-conf-files_routes.html)

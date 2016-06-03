@@ -6,7 +6,7 @@ title: Manage users
 menu_title: Manage users
 menu_order: 2
 menu_node: 
-github_link: cloud/admin/admin-user-admin.md
+github_link21: cloud/admin/admin-user-admin.md
 ---
 
 #### Contents

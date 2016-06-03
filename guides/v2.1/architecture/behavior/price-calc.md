@@ -5,7 +5,7 @@ subgroup:
 title: How Magento calculates prices
 menu_title: How Magento calculates prices
 menu_order: 
-github_link: architecture/behavior/price-calc.md
+github_link21: architecture/behavior/price-calc.md
 ---
 
 <h2 id="m2devgde-pricecalc-intro">Introduction to the Magento pricing library</h2>

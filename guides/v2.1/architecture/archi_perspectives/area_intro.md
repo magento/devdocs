@@ -5,7 +5,7 @@ subgroup: Architectural Layers
 title: Magento Area
 menu_title: Magento Area
 menu_order: 
-github_link: architecture/archi_perspectives/area_intro.md
+github_link21: architecture/archi_perspectives/area_intro.md
 ---
 
 

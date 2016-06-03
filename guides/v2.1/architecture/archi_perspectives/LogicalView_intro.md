@@ -6,7 +6,7 @@ title: Logical view overview
 menu_title: Logical View
 menu_node: parent
 menu_order: 
-github_link: architecture/archi_perspectives/LogicalView_intro.md
+github_link21: architecture/archi_perspectives/LogicalView_intro.md
 ---
 
 

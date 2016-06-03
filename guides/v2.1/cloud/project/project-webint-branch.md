@@ -8,13 +8,13 @@ menu_order: 5
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: project
-github_link: cloud/project/project-webint-branch.md
+github_link21: cloud/project/project-webint-branch.md
 ---
 
 ## Manage environments (branches) {#project-branch}
 A Magento Enterprise Cloud Edition *environment* is a Git *branch* and you can manage your environments using either the Web Interface, the Magento Enterprise Cloud Edition CLI, or Git commands.
 
-For more information about managing environments using the CLI, see [Get started with an environment]({{ site.gdeurl }}cloud/env/environments-start.html).
+For more information about managing environments using the CLI, see [Get started with an environment]({{ site.gdeurl21 }}cloud/env/environments-start.html).
 
 This topic discusses how to use the Web Interface to:
 
@@ -25,13 +25,13 @@ This topic discusses how to use the Web Interface to:
 ## Add or delete an environment {#project-branch-add}
 This section discusses adding or deleting an environment (that is, a Git branch). You'll do your development in a branch and, when complete, merge (`git push`) the branch with its parent. Choose a parent branch that is related to the work you're going to do; for example, at the start of a sprint for developing Feature X, you'll probably choose the FeatureX branch as the parent.
 
-Deleting a branch by default makes the branch *inactive*. An inactive branch doesn't count against your total of eight possible project branches. You can either activate the branch later or you can [delete it entirely]({{ site.gdeurl }}cloud/howtos/environment-tutorial-env-merge.html##tut-env-delete) using the CLI.
+Deleting a branch by default makes the branch *inactive*. An inactive branch doesn't count against your total of eight possible project branches. You can either activate the branch later or you can [delete it entirely]({{ site.gdeurl21 }}cloud/howtos/environment-tutorial-env-merge.html##tut-env-delete) using the CLI.
 
 {% collapsible Click to add an environment %}
 
 To add an environment:
 
-1.	[Log in to your project]({{ site.gdeurl }}cloud/project/project-webint-basic.html#project-login).
+1.	[Log in to your project]({{ site.gdeurl21 }}cloud/project/project-webint-basic.html#project-login).
 2.	In the left navigation bar, click the name of the parent environment.
 
 	Your new branch is cloned from this environment. Choose a parent environment that is similar to the environment you're about to create.
@@ -54,7 +54,7 @@ To add an environment:
 	![Branch is deploying]({{ site.baseurl }}common/images/cloud_branch-success.png)
 7.	Continue with one of the following:
 
-	*	[Get started with an environment]({{ site.gdeurl }}cloud/env/environments-start.html)
+	*	[Get started with an environment]({{ site.gdeurl21 }}cloud/env/environments-start.html)
 	*	[How tos and tutorials]({{ site.baseurl }}cloud/howto/how-to.html)
 
 {% endcollapsible %}
@@ -63,7 +63,7 @@ To add an environment:
 
 To delete an environment and make it inactive:
 
-1.	[Log in to your project]({{ site.gdeurl }}cloud/project/project-webint-basic.html#project-login).
+1.	[Log in to your project]({{ site.gdeurl21 }}cloud/project/project-webint-basic.html#project-login).
 2.	In the left pane, click the name of the branch to delete.
 3.	Click **Configure environment** as the following figure shows.
 
@@ -86,7 +86,7 @@ Syncing an environment is the same as `git pull origin <parent>`. You sync to ge
 
 To sync an environment with its parent:
 
-1.	[Log in to your project]({{ site.gdeurl }}cloud/project/project-webint-basic.html#project-login).
+1.	[Log in to your project]({{ site.gdeurl21 }}cloud/project/project-webint-basic.html#project-login).
 2.	In the left pane, click the name of the branch you want to sync.
 3.	Click ![Sync an environment]({{ site.baseurl }}common/images/cloud_environment-sync.png){:width="30px"} (sync).
 
@@ -104,7 +104,7 @@ Merging an environment is the same as `git push origin`. You merge to push updat
 
 To merge an environment with its parent:
 
-1.	[Log in to your project]({{ site.gdeurl }}cloud/project/project-webint-basic.html#project-login).
+1.	[Log in to your project]({{ site.gdeurl21 }}cloud/project/project-webint-basic.html#project-login).
 2.	In the left pane, click the name of the branch you want to merge.
 3.	Click ![Merge an environment]({{ site.baseurl }}common/images/cloud_environment-merge.png){:width="30px"} (merge).
 4.	Click **Merge** to confirm the action.
@@ -112,6 +112,6 @@ To merge an environment with its parent:
 {% endcollapsible %}
 
 #### Related topics
-*	[Basic project information]({{ site.gdeurl }}cloud/project/project-webint-basic.html)
-*	[Project backup and restore (snapshot)]({{ site.gdeurl }}cloud/project/project-webint-snap.html)
-*	[Get started with a project]({{ site.gdeurl }}cloud/project/project-start.html)
+*	[Basic project information]({{ site.gdeurl21 }}cloud/project/project-webint-basic.html)
+*	[Project backup and restore (snapshot)]({{ site.gdeurl21 }}cloud/project/project-webint-snap.html)
+*	[Get started with a project]({{ site.gdeurl21 }}cloud/project/project-start.html)

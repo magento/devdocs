@@ -6,7 +6,7 @@ title: Architecture
 menu_title: Architecture
 menu_order: 2
 menu_node: 
-github_link: cloud/discover-arch.md
+github_link21: cloud/discover-arch.md
 ---
 
 ## Architecture
@@ -38,12 +38,12 @@ Magento Enterprise Cloud Edition uses:
 *	Operating system: Debian GNU/Linux 8 (jessie)
 *	Web server: nginx 1.8
 
-The preceding software is *not* upgradable but versions of [PHP]({{ site.gdeurl }}cloud/project/project-conf-files_magento-app.html), [MySQL]({{ site.gdeurl }}cloud/project/project-conf-files_services-mysql.html), [Solr]({{ site.gdeurl }}cloud/project/project-conf-files_services-solr.html), [Redis]({{ site.gdeurl }}cloud/project/project-conf-files_services-redis.html), [RabbitMQ]({{ site.gdeurl }}cloud/project/project-conf-files_services-rabbit.html), and [Elasticsearch]({{ site.gdeurl }}cloud/project/project-conf-files_services-elastic.html) are configurable.
+The preceding software is *not* upgradable but versions of [PHP]({{ site.gdeurl21 }}cloud/project/project-conf-files_magento-app.html), [MySQL]({{ site.gdeurl21 }}cloud/project/project-conf-files_services-mysql.html), [Solr]({{ site.gdeurl21 }}cloud/project/project-conf-files_services-solr.html), [Redis]({{ site.gdeurl21 }}cloud/project/project-conf-files_services-redis.html), [RabbitMQ]({{ site.gdeurl21 }}cloud/project/project-conf-files_services-rabbit.html), and [Elasticsearch]({{ site.gdeurl21 }}cloud/project/project-conf-files_services-elastic.html) are configurable.
 
 #### Related topics
-*	[Workflow]({{ site.gdeurl }}cloud/discover-workflow.html)
-*	[Deployment process]({{ site.gdeurl }}cloud/discover-deploy.html)
-*	[Tooling]({{ site.gdeurl }}cloud/discover-tools.html)
-*	[Magento Enterprise Cloud Edition requirements]({{ site.gdeurl }}cloud/cloud-requirements.html)
+*	[Workflow]({{ site.gdeurl21 }}cloud/discover-workflow.html)
+*	[Deployment process]({{ site.gdeurl21 }}cloud/discover-deploy.html)
+*	[Tooling]({{ site.gdeurl21 }}cloud/discover-tools.html)
+*	[Magento Enterprise Cloud Edition requirements]({{ site.gdeurl21 }}cloud/cloud-requirements.html)
 
 

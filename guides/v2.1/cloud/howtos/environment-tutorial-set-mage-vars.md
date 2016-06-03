@@ -8,8 +8,7 @@ menu_order: 11
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: env-tut
-github_link: cloud/howtos/environment-tutorial-set-mage-vars.md
-redirect_from: guides/v2.0/cloud/env/environment-tutorial-set-mage-vars.html
+github_link21: cloud/howtos/environment-tutorial-set-mage-vars.md
 ---
 
 ## Tutorial: change the Magento Admin URI and password {#cloud-env-vars-magento-admin-tut}
@@ -75,4 +74,4 @@ To change the Admin URI and administrator password:
 		+----------------+---------------+-----------+------+
 
 #### Related topic
-[Merge an environment]({{ site.gdeurl }}cloud/env/environment-tutorial-env-merge.html)
+[Merge an environment]({{ site.gdeurl21 }}cloud/env/environment-tutorial-env-merge.html)

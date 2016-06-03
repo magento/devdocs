@@ -9,7 +9,7 @@ menu_order: 2
 level3_menu_node: level3child
 level3_subgroup: versioning
 
-github_link: architecture/versioning_overview.md
+github_link21: architecture/versioning_overview.md
 
 ---
 
@@ -38,7 +38,7 @@ Stable release versions are in the format `MAJOR.MINOR.PATCH`, where:
 The pre-release version format is: `MAJOR.MINOR.PATCH-<alpha | beta | rc>n`, where `alpha`, `beta` or `rc` are stability indications, as described in the `version_compare()` specification, and
 `n` is an increment number to distinguish releases of the non-stable versions.
 
-If you are an extension developer, familiarize yourself about the types of code changes that will initiate a MAJOR-, MINOR-, or PATCH- level change. See <a href="{{ site.gdeurl }}architecture/change_table.html">Changes to classes and method versions</a>.
+If you are an extension developer, familiarize yourself about the types of code changes that will initiate a MAJOR-, MINOR-, or PATCH- level change. See <a href="{{ site.gdeurl21 }}architecture/change_table.html">Changes to classes and method versions</a>.
 
 <h3>Schema version formats</h3>
 
@@ -46,20 +46,20 @@ If you are an extension developer, familiarize yourself about the types of code 
 
 
 <h3>Related topics</h3>
-<a href="{{ site.gdeurl }}architecture/versioning_overview.html">Versioning policy overview</a>
+<a href="{{ site.gdeurl21 }}architecture/versioning_overview.html">Versioning policy overview</a>
 
 
-<a href="{{ site.gdeurl }}architecture/software_versions.html">Magento 2.0 software versions</a>
+<a href="{{ site.gdeurl21 }}architecture/software_versions.html">Magento 2.0 software versions</a>
 
-<a href="{{ site.gdeurl }}architecture/version_store.html">Where is version information stored?</a>
+<a href="{{ site.gdeurl21 }}architecture/version_store.html">Where is version information stored?</a>
 
-<a href="{{ site.gdeurl }}architecture/change_table.html">Changes to classes and method versions</a>
-
-
-<a href="{{ site.gdeurl }}architecture/back-compatibility.html">Backward compatibility</a>
+<a href="{{ site.gdeurl21 }}architecture/change_table.html">Changes to classes and method versions</a>
 
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>
+<a href="{{ site.gdeurl21 }}architecture/back-compatibility.html">Backward compatibility</a>
+
+
+<a href="{{ site.gdeurl21 }}architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>
 
 
 

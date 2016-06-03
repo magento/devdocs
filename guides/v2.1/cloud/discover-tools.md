@@ -6,7 +6,7 @@ title: Tooling
 menu_title: Tooling
 menu_order: 5
 menu_node: 
-github_link: cloud/discover-tools.md
+github_link21: cloud/discover-tools.md
 ---
 
 ## Tooling
@@ -37,6 +37,6 @@ branch you create and get feedback on deployments right there without
 switching tools.
 
 #### Related topics
-*	[Set up the Magento workspace]({{ site.gdeurl }}cloud/before/before-workspace.html)
-*	[Project quick tour]({{ site.gdeurl }}cloud/project/projects.html)
-*	[Magento Enterprise Cloud Edition repositories]({{ site.gdeurl }}cloud/before/before-repos.html)
+*	[Set up the Magento workspace]({{ site.gdeurl21 }}cloud/before/before-workspace.html)
+*	[Project quick tour]({{ site.gdeurl21 }}cloud/project/projects.html)
+*	[Magento Enterprise Cloud Edition repositories]({{ site.gdeurl21 }}cloud/before/before-repos.html)

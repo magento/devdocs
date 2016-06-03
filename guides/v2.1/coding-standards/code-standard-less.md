@@ -5,7 +5,7 @@ subgroup: Coding standards
 title: LESS coding standard
 menu_title: LESS coding standard
 menu_order: 7
-github_link: coding-standards/code-standard-less.md
+github_link21: coding-standards/code-standard-less.md
 ---
 
 This standard defines Magento internal requirements for code formatting and style for teams that develop LESS and CSS code.

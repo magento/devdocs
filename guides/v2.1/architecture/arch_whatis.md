@@ -6,7 +6,7 @@ title: What is Magento?
 menu_title: Introduction
 menu_node: parent
 menu_order: 1
-github_link: architecture/arch_whatis.md
+github_link21: architecture/arch_whatis.md
 ---
 
 <h2 id="m2arch-whatis-overview">What is Magento?</h2>

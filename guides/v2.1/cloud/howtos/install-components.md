@@ -8,7 +8,7 @@ menu_order: 4
 level3_menu_node: level3child
 level3_subgroup: upgrade-update
 menu_node: 
-github_link: cloud/howtos/install-components.md
+github_link21: cloud/howtos/install-components.md
 ---
 
 ## How install components {#cloud-howto-comp}
@@ -83,7 +83,7 @@ Enter the following commands in the order shown:
 	git commit -m "<message>"
 	git push origin <environment ID>
 
-If there are errors, see [Component deployment failure]({{ site.gdeurl }}cloud/trouble/trouble_comp-deploy-fail.html).
+If there are errors, see [Component deployment failure]({{ site.gdeurl21 }}cloud/trouble/trouble_comp-deploy-fail.html).
 
 {% endcollapsible %}
 
@@ -93,7 +93,7 @@ If there are errors, see [Component deployment failure]({{ site.gdeurl }}cloud/t
 
 To verify the component installed properly, you can check its functionality in the Magento Admin or you can make sure it is enabled as follows:
 
-1.	[SSH to the environment]({{ site.gdeurl }}cloud/env/environments-start.html#env-start-ssh) on which the component is installed.
+1.	[SSH to the environment]({{ site.gdeurl21 }}cloud/env/environments-start.html#env-start-ssh) on which the component is installed.
 2.	Enter the following command:
 
 		vi app/etc/config.php
@@ -104,7 +104,7 @@ To verify the component installed properly, you can check its functionality in t
 {% endcollapsible %}
 
 #### Related topics
-*	[Update components]({{ site.gdeurl }}cloud/howtos/update-components.html)
-*	[Upgrade the Magento system software]({{ site.gdeurl }}cloud/howtos/upgrade-magento.html)
-*	[Install optional sample data]({{ site.gdeurl }}cloud/howtos/sample-data.html)
-*	[Merge and delete an environment]({{ site.gdeurl }}cloud/howtos/environment-tutorial-env-merge.html)
+*	[Update components]({{ site.gdeurl21 }}cloud/howtos/update-components.html)
+*	[Upgrade the Magento system software]({{ site.gdeurl21 }}cloud/howtos/upgrade-magento.html)
+*	[Install optional sample data]({{ site.gdeurl21 }}cloud/howtos/sample-data.html)
+*	[Merge and delete an environment]({{ site.gdeurl21 }}cloud/howtos/environment-tutorial-env-merge.html)

@@ -6,7 +6,7 @@ title: git push details
 menu_title: git push details (remove or rewrite)
 menu_order: 100
 menu_node: 
-github_link: cloud/project/admin-git-push.md
+github_link21: cloud/project/admin-git-push.md
 ---
 
 # Step by step walk-through of `git push` output

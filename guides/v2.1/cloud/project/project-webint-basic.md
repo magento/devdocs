@@ -8,7 +8,7 @@ menu_order: 4
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: project
-github_link: cloud/project/project-webint-basic.md
+github_link21: cloud/project/project-webint-basic.md
 ---
 
 ## Basic project information {#project-basic}
@@ -77,7 +77,7 @@ To access projects and environments:
 	![Access your project by URL or SSH]({{ site.baseurl }}common/images/cloud_project-access.png){:width="600px"}
 3.	For example, to view your storefront, click the **Web Access** link.
 
-	For more information about using SSH, see [SSH to an environment]({{ site.gdeurl }}cloud/env/environments-start.html#env-start-ssh).
+	For more information about using SSH, see [SSH to an environment]({{ site.gdeurl21 }}cloud/env/environments-start.html#env-start-ssh).
 4.	To clone the project using either the Magento Enterprise Cloud Edition CLI or Git, use the links in the field under the branch name.
 
 	The following figure shows an example.
@@ -101,8 +101,8 @@ To configure your project:
 2.	Click ![configure your project]({{ site.baseurl }}common/images/cloud_edit-project.png) (Configure project) next to the project name.
 3.	See one of the following for more information:
 
-	*	[Manage users]({{ site.gdeurl }}cloud/admin/admin-user-admin.html)
-	*	[Pull code from a private Git repository]({{ site.gdeurl }}cloud/project/project-priv-repos.html)
+	*	[Manage users]({{ site.gdeurl21 }}cloud/admin/admin-user-admin.html)
+	*	[Pull code from a private Git repository]({{ site.gdeurl21 }}cloud/project/project-priv-repos.html)
 
 {% endcollapsible %}
 
@@ -126,7 +126,7 @@ To configure an environment:
 	*	[Environment settings](#project-conf-env-set)
 	*	[Set environment variables](#project-conf-env-var)
 	*	[Configure routes](#project-conf-env-route)
-	*	[Manage users]({{ site.gdeurl }}cloud/admin/admin-user-admin.html)
+	*	[Manage users]({{ site.gdeurl21 }}cloud/admin/admin-user-admin.html)
 
 ### Environment settings {#project-conf-env-set}
 The following table shows available environment settings.
@@ -152,7 +152,7 @@ The following table shows available environment settings.
 </table>
 
 ### Set environment variables {#project-conf-env-var}
-As discussed in [Overview of environment variables]({{ site.gdeurl }}cloud/env/environment-vars_over.html), environment variables are settings specific to an environment. Variables can be either text or JSON format.
+As discussed in [Overview of environment variables]({{ site.gdeurl21 }}cloud/env/environment-vars_over.html), environment variables are settings specific to an environment. Variables can be either text or JSON format.
 
 For example, you can change the Magento Admin administrative password using environment variables as follows:
 
@@ -167,7 +167,7 @@ For example, you can change the Magento Admin administrative password using envi
 5.	Wait while the environment deploys.
 
 ### Configure routes {#project-conf-env-route}
-As discussed in [routes.yaml]({{ site.gdeurl }}cloud/project/project-conf-files_routes.html), routes (or URLs) used to access your Magento storefront. See that section for details about what the options mean.
+As discussed in [routes.yaml]({{ site.gdeurl21 }}cloud/project/project-conf-files_routes.html), routes (or URLs) used to access your Magento storefront. See that section for details about what the options mean.
 
 The following figure shows an example.
 
@@ -199,7 +199,7 @@ To view an environment's history:
 	*	Environment sync'd with the parent
 	*	Environment snapshot created
 
-		We recommend [creating a snapshot]({{ site.gdeurl }}cloud/project/project-webint-snap.html) before you make any code changes.
+		We recommend [creating a snapshot]({{ site.gdeurl21 }}cloud/project/project-webint-snap.html) before you make any code changes.
 
 	*	Environment variable added
 	*	Environment snapshot created
@@ -207,6 +207,6 @@ To view an environment's history:
 {% endcollapsible %}
 
 #### Related topics
-*	[Manage environments (branches)]({{ site.gdeurl }}cloud/project/project-webint-branch.html)
-*	[Project backup and restore (snapshot)]({{ site.gdeurl }}cloud/project/project-webint-snap.html)
-*	[Get started with a project]({{ site.gdeurl }}cloud/project/project-start.html)
+*	[Manage environments (branches)]({{ site.gdeurl21 }}cloud/project/project-webint-branch.html)
+*	[Project backup and restore (snapshot)]({{ site.gdeurl21 }}cloud/project/project-webint-snap.html)
+*	[Get started with a project]({{ site.gdeurl21 }}cloud/project/project-start.html)
