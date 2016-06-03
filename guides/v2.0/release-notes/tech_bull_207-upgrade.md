@@ -3,14 +3,14 @@ layout: default
 group: release-notes
 subgroup: Technical Bulletin
 title: Technical Bulletin
-menu_title: Required patch for PHP 5.5.x and Setup Application environments (June 1, 2016)
+menu_title: Required patch for PHP 5.5.x and Setup Application environments (June 2, 2016)
 menu_node: 
 menu_order: 
 github_link: release-notes/tech_bull_207-upgrade.md
 redirect_from: /guides/v2.0/release-notes/tech_bull_jan_16.html
 ---
 
-<h2>Required patch for PHP 5.5.x and Setup application 10.0.1 environments (June 1, 2016)</h2>
+<h2>Required patch for PHP 5.5.x and Setup application 10.0.1 environments (June 2, 2016)</h2>
 This bulletin informs you of a known issue updating from Magento EE and CE environments that run the following:   
 
 * PHP 5.5.x
@@ -128,7 +128,7 @@ To apply this patch:
 	</table>
 
 	<div class="bs-callout bs-callout-info" id="info">
-  		<p>Use p atch <code>MDVA-449</code> whether or not you installed optional sample data.</p>
+  		<p>Use patch <code>MDVA-449</code> whether or not you installed optional sample data.</p>
 	</div>
 
 2.	Extract the patch in your Magento installation directory.
@@ -155,9 +155,15 @@ To apply this patch:
 
 	After extraction, Magento creates the `MDVA-449` directory within the installation directory. 
 
-3. Copy the contents of the `MDVA-449` directory to the  `update` directory by executing the command
+3. Copy the contents of the `MDVA-449` directory to the  `update` directory by executing this command:
 
-	`cp -r MDVA-449/*  update/`
+	`cp -R magento2-updater-10.0.2/*  update/`
+
+4. Now that you have copied over the patch related files to their appropriate locations, please remove unwanted file and directories by executing these commands:
+
+	`rm -rf magento2-updater-10.0.2/`
+
+	`rm -f MDVA-449.*`
 
 
 
