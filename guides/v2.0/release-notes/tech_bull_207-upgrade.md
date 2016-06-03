@@ -153,13 +153,13 @@ To apply this patch:
 	</tbody>
 	</table>
 
-	After extraction, Magento creates the `MDVA-449` directory within the installation directory. 
+	After extraction, Magento creates the `magento2-updater-10.0.2` directory within the installation directory. 
 
-3. Copy the contents of the `MDVA-449` directory to the  `update` directory by executing this command:
+3. Copy the contents of the `magento2-updater-10.0.2` directory to the  `update` directory by executing this command:
 
 	`cp -R magento2-updater-10.0.2/*  update/`
 
-4. Now that you have copied over the patch-related files to their appropriate locations, please remove unwanted file and directories by executing these commands:
+4. After copying all  patch-related files to their appropriate locations,  remove any unwanted files and directories by executing these commands:
 
 	`rm -rf magento2-updater-10.0.2/`
 
