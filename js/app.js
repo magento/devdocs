@@ -24,22 +24,4 @@ $(function() {
 		$(this).parent().toggleClass('expanded');
 	});
 
-	$('.dropdown .dropdown-toggle').on('click', function () {
-		var $this = $(this),
-			$dropdown = $this.parent();
-		$dropdown.toggleClass('open');
-	});
-
-	// Responsite site - for version switcher
-	function responsiveSite() {
-		var $w = $( window ).width();
-		if ( $w < 767 ) {
-			$('.version-switcher').appendTo($('#subnav-wrap'));
-		} else {
-			$('.version-switcher').appendTo($('#global-nav'));
-		}
-	};
-	responsiveSite();
-	$( window ).on('resize', responsiveSite );
-
 });
