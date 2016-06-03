@@ -230,25 +230,25 @@ In this mode, the Magento_Staging module builds a view of a store for a specific
 
 ### Different websites
 
-Preview mode is available for a multi website store. Switching between different website views are made in scope of Admin domain. Server builds a view of an open page only using its scheduled parameters. (Without redirection to another domain.)
+Preview mode is also available for a multi website store. Switching between different website views is available in scope of Admin domain. Server builds a view of an open page only using its scheduled parameters. (Without redirection to another domain.)
 
-Note that all websites must use only one type of a protocol: HTTP or HTTPS. It means that all websites must use HTTP or all sites – HTTPS. You cannot mix HTTP and HTTPS websites.
+Note that all websites must use the same type of the protocol: HTTP or HTTPS. You cannot mix HTTP and HTTPS websites.
 
 ### Share a link to preview
 
-You can generate link for a view and share it. Anyone who can access Admin area can open shared view.
+You can generate  a preview link and share it. Anyone with access to Admin can open the shared preview.
 
 ## Installation details
 
-Staging cannot be disabled during web installation
+Staging cannot be disabled during web installation.
 
 The Staging modules cannot be removed or disabled after they were installed.
 
 ## Module dependencies
 
-You can find the list of modules that have dependencies with the Magento_Staging module in the `require` object of the `composer.json` file. The file is located in the same directory as this `README` file.
+You can find the list of modules that have dependencies with the Magento_Staging module in the `require` object of the `composer.json` file. The file is located in the root directory of the module.
 
-## Extension Points
+## Extension points
 
 Extension points enable extension developers to interact with the Magento_Staging module. For more information about Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).
 
@@ -258,19 +258,19 @@ Extension points enable extension developers to interact with the Magento_Stagin
 
 ### UI components
 
-You can extend the UI components in the `Magento\Staging\view\adminhtml\ui_component` directory. For more information, see [UI Listing/Grid Component](http://devdocs.magento.com/guides/v2.1/ui-components/ui-listing-grid.html).
+You can extend the UI components in the `view/adminhtml/ui_component` directory. For more information, see [UI Listing/Grid Component](http://devdocs.magento.com/guides/v2.1/ui-components/ui-listing-grid.html).
 
 ### Layouts
 
-You can extend and override layouts in the `Magento\Staging\view\adminhtml\layout` directory. For more information about layouts, see the [Layout documentation](http://devdocs.magento.com/guides/v2.1/frontend-dev-guide/layouts/layout-overview.html).
+You can extend and override layouts in the `view/adminhtml/layout` directory. For more information about layouts, see the [Layout documentation](http://devdocs.magento.com/guides/v2.1/frontend-dev-guide/layouts/layout-overview.html).
 
 ## Additional information
 
-For more Magento 2 developer documentation, see [Magento 2 Developer Documentation](http://devdocs.magento.com). Also, there you can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
+You can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
 
 ### cron options
 
-cron group configuration can be set in `develop/app/code/Magento/Staging/etc/crontab.xml`.
+cron group configuration can be set in `etc/crontab.xml`.
 
 -   `staging_apply_version` – each period of time checks in a table of updates if any [campaign](#campaign) has been started and if yes, it applies all [scheduled updates](#scheduled-update) for the campaign.
 
@@ -282,16 +282,14 @@ cron group configuration can be set in `develop/app/code/Magento/Staging/etc/cro
 
 ### Indexes and indexing modes
 
-When update is applied, the indexer handles it according to the actual indexing mode. In a preview mode, indexing is not applied. Data are loaded for the open page only.
+When update is applied, the indexer handles it according to the actual indexing mode. In a preview mode, indexing is not applied. Data is loaded for the open page only.
 
 [Learn more about indexing in Magento.](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/indexing.html)
 
 ### Data migration
 
-The Magento_Staging module includes a utility, which performs migration of scheme and data to [staging](#staging) modules from the extending modules. (For example, scheme and data migration from the Magento_Catalog module to the Magento_CatalogStaging module.)
-
-The utility is used in staging module `Setup` only. It receives a configuration from a staging module, changes schema and migrates data.
+The Magento_Staging module uses the `\Magento\Staging\Setup\BasicSetup` class during installation. This class changes database schema and migrates data.
 
 #### Migration of attributes with range
 
-Each update attribute that contain time range is synchronized with dates of campaign. Attributes with time range are removed from the UI.
+Each update attribute that contains a time range is synchronized with dates of campaign. Attributes with time range are removed from the UI.
