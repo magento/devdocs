@@ -5,11 +5,14 @@ subgroup: 05_Command-line installation
 title: Install the Magento software
 menu_title: Install the Magento software
 menu_order: 4
-github_link21: install-gde/install/cli/install-cli-install.md
+github_link: install-gde/install/cli/install-cli-install.md
+redirect_from:
+  -  /guides/v1.0/install-gde/install/install-cli-install.html
+  -  /guides/v2.0/install-gde/install/install-cli-install.html
 ---
 
 <div class="bs-callout bs-callout-tip">
-  <p>Totally lost? Need a helping hand? Try our <a href="{{ site.gdeurl21 }}install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{ site.gdeurl21 }}install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
+  <p>Totally lost? Need a helping hand? Try our <a href="{{ site.gdeurl }}install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{ site.gdeurl }}install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
 </div>
   
 <h4>Contents</h4>
@@ -18,19 +21,20 @@ See one of the following sections:
 
 *	<a href="#instgde-install-cli-prereq">Before you start your installation</a>
 *	<a href="#instgde-install-cli-magento">Install the Magento software from the command line</a>
+*	[Set file system permissions after installing](#instgde-install-cli-magento-perms)
 
-See also <a href="{{ site.gdeurl21 }}install-gde/install/cli/install-cli-uninstall.html">Update, reinstall, uninstall</a>.
+See also <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall.html">Update, reinstall, uninstall</a>.
 
 
 <h2 id="instgde-install-cli-prereq">Before you start your installation</h2>
 
 Before you begin, make sure that:
 
-1.	Your system meets the requirements discussed in <a href="{{ site.gdeurl21 }}install-gde/system-requirements.html">Magento system requirements</a>.
-2.	You completed all prerequisite tasks discussed in <a href="{{ site.gdeurl21 }}install-gde/prereq/prereq-overview.html">Prerequisites</a>.
-3.	You took your first installation steps as discussed in <a href="{{ site.gdeurl21 }}install-gde/install/pre-install.html">Your install or upgrade path</a>.
-4.	After you log in to the Magento server, <a href="{{ site.gdeurl21 }}install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.
-5.	Review the information discussed in <a href="{{ site.gdeurl21 }}install-gde/install/cli/install-cli-subcommands.html">Get started with the command-line installation</a>.
+1.	Your system meets the requirements discussed in <a href="{{ site.gdeurl }}install-gde/system-requirements.html">Magento system requirements</a>.
+2.	You completed all prerequisite tasks discussed in <a href="{{ site.gdeurl }}install-gde/prereq/prereq-overview.html">Prerequisites</a>.
+3.	You took your first installation steps as discussed in <a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Your install or upgrade path</a>.
+4.	After you log in to the Magento server, <a href="{{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html">>switch to the Magento file system owner</a>.
+5.	Review the information discussed in <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands.html">Get started with the command-line installation</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -48,7 +52,7 @@ The installer is designed to be run multiple times if necessary so you can:
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <ul><li>By default, the installer doesn't overwrite the Magento database if you install the Magento software in the same database instance. You can use the optional <code>cleanup-database</code> parameter to change this behavior.</li>
-  <li>If you get errors during the installation, see <a href="{{ site.gdeurl21 }}install-gde/trouble/tshoot.html">Troubleshooting</a>.</li></ul></span>
+  <li>If you get errors during the installation, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot.html">Troubleshooting</a>.</li></ul></span>
 </div>
 
 <h2 id="instgde-cli-help-cmds">Installer help commands</h2>
@@ -78,7 +82,7 @@ You can run the following commands to find values for some required arguments:
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>If an error displays when you run these commands, make sure you updated installation dependencies as discussed in <a href="{{ site.gdeurl21 }}install-gde/install/prepare-install.html">Update installation dependencies</a>.</p></span>
+  <p>If an error displays when you run these commands, make sure you updated installation dependencies as discussed in <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Update installation dependencies</a>.</p></span>
 </div>
 
 	
@@ -127,7 +131,7 @@ The following table discusses the meanings of installation option names and valu
 		<td><p>--admin-password</p></td>
 		<td><p>Magento administrator user password.</p>
 			<p>The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character.</p>
-			<p>We recommend a longer, more complex password. Enclose the entire password string in single quotes and escape special characters with <code>/</code>. For example, <code>--admin-password='A0b9\%t_3\`g'</code></p></td>
+			<p>We recommend a longer, more complex password. Enclose the entire password string in single quotes. For example, <code>--admin-password='A0b9%t_3`g'</code></p></td>
 		<td><p>Yes</p></td>
 	</tr>
 		<tr>
@@ -146,7 +150,7 @@ The following table discusses the meanings of installation option names and valu
 		<td><p>--backend-frontname</p></td>
 		<td><p>Uniform Resource Identifier (<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.2" target="_blank">URI</a>) to access the Magento Admin or omit this parameter to let Magento generate a random URI for you.</p>
 			<p>We recommend a random URI for security purposes. A random URI is harder for hackers or malicious software to exploit.</p>
-			<p>The URI displays at the end of the installation. You can display it later at any time using the <a href="{{ site.gdeurl21 }}install-gde/install/install-cli-adminurl.html">magento info:adminuri</a> command.</p>
+			<p>The URI displays at the end of the installation. You can display it later at any time using the <a href="{{ site.gdeurl }}install-gde/install/install-cli-adminurl.html">magento info:adminuri</a> command.</p>
 			<p>If you choose to enter a value, we recommend you <em>not</em> use a common word like <code>admin</code>, <code>backend</code>, and so on. The Admin URI can contain alphanumeric values, the underscore character (<code>_</code>), and the dash character (<code>-</code>) only. It can be up to 255 characters in length.</p></td>
 		<td><p>No</p></td>
 	</tr>
@@ -236,21 +240,21 @@ The following table discusses the meanings of installation option names and valu
 	<!-- <tr> 
 		<td>enable_modules=&lt;list>}</td>
 		<td><p>Enable modules that are installed but disabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
-		<p>To enable and disable modules after installing Magento, see <a href="{{ site.gdeurl21 }}install-gde/install/cli/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
-		<p>For important information about module dependencies, see <a href="{{ site.gdeurl21 }}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</p></td>  
+		<p>To enable and disable modules after installing Magento, see <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
+		<p>For important information about module dependencies, see <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</p></td>  
 		<td>No</td>
 	</tr>
 	<tr>
 		<td>disable_modules=&lt;list>}</td>
 		<td><p>Disable modules that are installed and enabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
-		<p>To enable and disable modules after installing Magento, see <a href="{{ site.gdeurl21 }}install-gde/install/cli/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
-		<p>For important information about module dependencies, see <a href="{{ site.gdeurl21 }}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</p></td>
+		<p>To enable and disable modules after installing Magento, see <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
+		<p>For important information about module dependencies, see <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</p></td>
 		<td>No</td>
 	</tr> -->
 	<tr>
 		<td><p>--session-save</p></td>
 		<td><p>Use any of the following:</p>
-		<ul><li><code>db</code> to store session data in the <a href="{{ site.gdeurl21 }}config-guide/database/database.html">database</a>. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.</li>
+		<ul><li><code>db</code> to store session data in the <a href="{{ site.gdeurl }}config-guide/database/database.html">database</a>. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.</li>
 			
 			<li><code>files</code> to store session data in the file system. File-based session storage is appropriate unless the Magento file system access is slow or you have a clustered database.</li>
 	</ul></td>
@@ -284,7 +288,7 @@ The following table discusses the meanings of installation option names and valu
 	</tr> -->
 <tr>
 <td><p>--amqp-host</p></td>
-<td><p>Enterprise Edition only. Do not use the --amqp options unless you have already set up an installation of RabbitMQ. See <a href="{{ site.gdeurl21 }}install-gde/prereq/install-rabbitmq.html">RabbitMQ installation</a> for more information about .</p>
+<td><p>Enterprise Edition only. Do not use the --amqp options unless you have already set up an installation of RabbitMQ. See <a href="{{ site.gdeurl }}install-gde/prereq/install-rabbitmq.html">RabbitMQ installation</a> for more information about .</p>
 <p>The host name where RabbitMQ is installed.</p></td>
 <td><p>No</p></td>
 </tr>
@@ -308,7 +312,7 @@ The following table discusses the meanings of installation option names and valu
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>To enable or disable modules after installing Magento, see <a href="{{ site.gdeurl21 }}install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
+  <p>To enable or disable modules after installing Magento, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
   	</span>
 </div>
 
@@ -404,5 +408,7 @@ Messages similar to the following display to indicate a successful installation:
 </div>
 
 #### Next step
+*	If you have one user account to access the Magento server, see [Optionally set a umask]({{ site.gdeurl }}install-gde/install/post-install-umask.html).
 
-<a href="{{ site.gdeurl21 }}install-gde/install/verify.html">Verify the installation</a>.
+	This type of setup is typical for shared hosting.
+*	[Verify the installation]({{ site.gdeurl }}install-gde/install/verify.html).

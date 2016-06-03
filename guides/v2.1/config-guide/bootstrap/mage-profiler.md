@@ -6,7 +6,8 @@ title: Enable profiling (MAGE_PROFILER)
 menu_title: Enable profiling (MAGE_PROFILER)
 menu_order: 7
 menu_node: 
-github_link21: config-guide/bootstrap/mage-profiler.md
+github_link: config-guide/bootstrap/mage-profiler.md
+redirect_from: /guides/v1.0/config-guide/bootstrap/mage-profiler.html
 ---
 
 #### Contents
@@ -19,7 +20,7 @@ Magento profiling enables you to:
 
 *	Enable a built-in profiler
 
-	You can use a built-in built-in profiler with Magento to perform tasks such as analyzing performance. (The nature of profiling depends on the analytical tools you use. We support multiple formats, including HTML.)
+	You can use a built-in profiler with Magento to perform tasks such as analyzing performance. (The nature of profiling depends on the analytical tools you use. We support multiple formats, including HTML.)
 
 *	Displays dependency graphs on a Magento page. A *dependency graph* is a list of object dependencies and all of their all their dependencies, and all the dependencies for those dependencies, and so on.
 
@@ -44,4 +45,4 @@ Magento provides the base functionality in <a href="{{ site.mage2000url }}lib/in
 
 	<img src="{{ site.baseurl }}common/images/config_depend-graphs.png" width="650px">
 
-You can set the value of `MAGE_PROFILER` in any of the ways discussed in <a href="{{ site.gdeurl21 }}config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a>.
+You can set the value of `MAGE_PROFILER` in any of the ways discussed in <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a>.

@@ -6,7 +6,8 @@ title: System requirements
 menu_title: Magento system requirements
 menu_node: parent
 menu_order: 1
-github_link21: install-gde/system-requirements.md
+github_link: install-gde/system-requirements.md
+redirect_from: /guides/v1.0/install-gde/system-requirements.html
 ---
 
 ### Operating systems (Linux x86-64)
@@ -19,7 +20,7 @@ Composer is required for developers who wish to contribute to the Magento 2 code
 ### Web servers
 *	<a href="http://httpd.apache.org/download.cgi" target="_blank">Apache 2.2 or 2.4</a>
 	
-	In addition, the apache `mod_rewrite` module must be enabled. `mod_rewrite` enables the server to perform URL rewriting. For more information, see <a href="{{ site.gdeurl21 }}install-gde/prereq/apache.html">our Apache documentation</a>.
+	In addition, the apache `mod_rewrite` module must be enabled. `mod_rewrite` enables the server to perform URL rewriting. For more information, see <a href="{{ site.gdeurl }}install-gde/prereq/apache.html">our Apache documentation</a>.
 *	nginx 1.8 (or <a href="http://nginx.org/en/linux_packages.html#mainline" target="_blank">latest mainline version</a>)
 
 ### Database
@@ -30,9 +31,11 @@ MySQL 5.6 (Oracle or Percona)
 
 *	5.6.x
 *	5.5.x, where x is 22 or greater
-*	7.0.2 (supported by Magento version 2.0.1 and later only)
+*	7.0.2&ndash;7.0.6 except for 7.0.5 (supported by Magento version 2.0.1 and later only)
 
-Documentation: <a href="{{ site.gdeurl21 }}install-gde/prereq/php-centos.html" target="_blank">CentOS</a>, <a href="{{ site.gdeurl21 }}install-gde/prereq/php-ubuntu.html" target="_blank">Ubuntu</a>
+	There is a [known PHP issue](https://bugs.php.net/bug.php?id=71914){:target="_blank"} that affects our [code compiler]({{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler.html) when using PHP 7.0.5. We recommend you *not* use PHP 7.0.5; instead, use PHP 7.0.2&ndash;7.0.4 or 7.0.6.
+
+PHP documentation: <a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html" target="_blank">CentOS</a>, <a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html" target="_blank">Ubuntu</a>
 
 #### Required PHP extensions:
 
@@ -50,44 +53,47 @@ Documentation: <a href="{{ site.gdeurl21 }}install-gde/prereq/php-centos.html" t
 *	<a href="http://php.net/manual/en/book.xml.php" target="_blank">xml</a>
 *	<a href="http://php.net/manual/en/book.xsl.php" target="_blank">xsl</a>
 *	<a href="http://php.net/manual/en/book.zip.php" target="_blank">zip</a> 
-*	PHP 7 only: [json](http://php.net/manual/en/book.json.php){:target="_blank"}
+*	PHP 7 only: 
+
+	*	[json](http://php.net/manual/en/book.json.php){:target="_blank"}
+	*	[iconv](http://php.net/manual/en/book.iconv.php){:target="_blank"}
 
 #### PHP OPcache
-We strongly recommend you verify the  <a href="http://php.net/manual/en/intro.opcache.php" target="_blank">PHP OPcache</a> is enabled for performance reasons. The OPcache is enabled in many PHP distributions. To verify if it is installed, see our PHP documentation for <a href="{{ site.gdeurl21 }}install-gde/prereq/php-centos.html" target="_blank">CentOS</a> or <a href="{{ site.gdeurl21 }}install-gde/prereq/php-ubuntu.html" target="_blank">Ubuntu</a>.
+We strongly recommend you verify the  <a href="http://php.net/manual/en/intro.opcache.php" target="_blank">PHP OPcache</a> is enabled for performance reasons. The OPcache is enabled in many PHP distributions. To verify if it is installed, see our PHP documentation for <a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html" target="_blank">CentOS</a> or <a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html" target="_blank">Ubuntu</a>.
 
 If you must install it separately, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.
 
 #### PHP settings
 We recommend particular PHP configuration settings, such as `memory_limit`, that can avoid common problems when using Magento.
 
-For more information, see our recommendations for <a href="{{ site.gdeurl21 }}install-gde/prereq/php-centos.html#instgde-prereq-timezone">CentOS</a> and <a href="{{ site.gdeurl21 }}install-gde/prereq/php-ubuntu.html#instgde-prereq-timezone">Ubuntu</a>. 
+For more information, see our recommendations for <a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html#instgde-prereq-timezone">CentOS</a> and <a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html#instgde-prereq-timezone">Ubuntu</a>. 
 
 ### SSL
 *	A valid security certificate is required for HTTPS.
 *	Self-signed SSL certificates are not supported.
-*	PayPal: You must use <a href="{{ site.gdeurl21 }}install-gde/system-requirements_tls1-2.html">`libcurl`</a> version 7.34 or later for Transport Layer Security (TLS) version 1.2 support required by PayPal.
+*	PayPal: You must use <a href="{{ site.gdeurl }}install-gde/system-requirements_tls1-2.html">`libcurl`</a> version 7.34 or later for Transport Layer Security (TLS) version 1.2 support required by PayPal.
 
 ### Mail server
 Mail Transfer Agent (MTA) or an SMTP server
 
 ### Magento can utilize the following technologies:
-*	<a href="{{ site.gdeurl21 }}config-guide/redis/config-redis.html">Redis</a> version 3.0 for page caching
-*	<a href="{{ site.gdeurl21 }}config-guide/varnish/config-varnish.html">Varnish</a> version 3.5 or latest stable 4.x version for page caching
-*	<a href="{{ site.gdeurl21 }}config-guide/memcache/memcache.html">memcached</a> latest stable version for session storage with either `memcache` or `memcached` PHP extensions (latest stable version)
+*	<a href="{{ site.gdeurl }}config-guide/redis/config-redis.html">Redis</a> version 3.0 for page caching and session storage (the latter supported by Magento version 2.0.6 and later only)
+*	<a href="{{ site.gdeurl }}config-guide/varnish/config-varnish.html">Varnish</a> version 3.5 or latest stable 4.x version for page caching
+*	<a href="{{ site.gdeurl }}config-guide/memcache/memcache.html">memcached</a> latest stable version for session storage with either `memcache` or `memcached` PHP extensions (latest stable version)
 
 *	Magento Enterprise Edition (EE) only <img src="{{ site.baseurl }}common/images/ee-only_small.png">
 
 	*   Apache Solr 4.x
  
-    	<a href="{{ site.gdeurl21 }}config-guide/solr/solr-overview.html">Solr search</a> can be used as a search provider. Available for Magento Enterprise Edition (EE) only.
+    	<a href="{{ site.gdeurl }}config-guide/solr/solr-overview.html">Solr search</a> can be used as a search provider. Available for Magento Enterprise Edition (EE) only.
 
 	*	RabbitMQ 3.5
 
-		<a href="{{ site.gdeurl21 }}config-guide/mq/rabbitmq-overview.html">RabbitMQ</a> can be used to publish messages to queue and to define the consumers that receive the messages asynchronously. Available for Magento EE only.
+		<a href="{{ site.gdeurl }}config-guide/mq/rabbitmq-overview.html">RabbitMQ</a> can be used to publish messages to queue and to define the consumers that receive the messages asynchronously. Available for Magento EE only.
 
 	*	Three master databases 
 
-		These <a href="{{ site.gdeurl21 }}config-guide/multi-master/multi-master.html">master databases</a> provide scalability advantages for different functional areas of the Magento application: checkout, orders, and product data. Available for Magento EE only.
+		These <a href="{{ site.gdeurl }}config-guide/multi-master/multi-master.html">master databases</a> provide scalability advantages for different functional areas of the Magento application: checkout, orders, and product data. Available for Magento EE only.
 
 ### Optional but recommended:
 
@@ -95,11 +101,11 @@ Mail Transfer Agent (MTA) or an SMTP server
 
 <div class="bs-callout bs-callout-info" id="info">
 	<p>There is a known issue with <code>xdebug</code> that can affect Magento installations or access to the storefront or Magento Admin after installation.</p>
-	<p>For details, see <a href="{{ site.gdeurl21 }}install-gde/trouble/tshoot_install-issues.html#known-devbeta-xdebug">Known issue with xdebug</a>.</p>
+	<p>For details, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_install-issues.html#known-devbeta-xdebug">Known issue with xdebug</a>.</p>
 </div>
 
 *	PHPUnit (as a command-line tool) 4.1 or later
 
 ### Documentation
 
-<a href="{{ site.gdeurl21 }}install-gde/prereq/prereq-overview.html">Install Magento prerequisites</a>
+<a href="{{ site.gdeurl }}install-gde/prereq/prereq-overview.html">Install Magento prerequisites</a>

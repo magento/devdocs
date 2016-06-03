@@ -4,12 +4,14 @@ group: install_pre
 subgroup: Prerequisites
 title: PHP 5.5, 5.6, or 7.0&mdash;CentOS
 menu_title: PHP 5.5, 5.6, or 7.0&mdash;CentOS
-menu_order: 05
-github_link21: install-gde/prereq/php-centos.md
+menu_order: 22
+level3_menu_node: level3child
+level3_subgroup: php
+github_link: install-gde/prereq/php-centos.md
+redirect_from: /guides/v1.0/install-gde/prereq/php-centos.html
 ---
 
-
-<h4 id="instgde-php-prereq-contents">Contents</h4>
+#### Contents
 
 *	<a href="#php-support">PHP versions supported</a>
 *	<a href="#php-centos-help-beginner">Help if you're just starting out</a>
@@ -22,14 +24,15 @@ github_link21: install-gde/prereq/php-centos.md
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>If you must install both Apache and PHP, <a href="{{ site.gdeurl21 }}install-gde/prereq/apache.html">install Apache</a> first.</p></span>
+  <p>If you must install both Apache and PHP, <a href="{{ site.gdeurl }}install-gde/prereq/apache.html">install Apache</a> first.</p></span>
 </div>
 
 <h2 id="php-support">PHP versions supported</h2>
 
 Magento requires:
 
-*	PHP 7.0.2 (supported by Magento version 2.0.1 and later only)
+*	7.0.2&ndash;7.0.6 except for 7.0.5 (supported by Magento version 2.0.1 and later only)
+	There is a [known PHP issue](https://bugs.php.net/bug.php?id=71914){:target="_blank"} that affects our [code compiler]({{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler.html) when using PHP 7.0.5. We recommend you not use PHP 7.0.5; instead, use PHP 7.0.2&ndash;7.0.4 or 7.0.6.
 *	PHP 5.6.x
 *	PHP 5.5.x, where x is 22 or greater 
 
@@ -41,10 +44,10 @@ Magento requires:
 <h2 id="php-centos-help-beginner">Help if you're just starting out</h2>
 If you're new to all this and need some help getting started, we suggest the following:
 
-*	<a href="{{ site.gdeurl21 }}install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a>
-*	<a href="{{ site.gdeurl21 }}install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a>
-*	<a href="{{ site.gdeurl21 }}install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
-*	<a href="{{ site.gdeurl21 }}install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
+*	<a href="{{ site.gdeurl }}install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a>
+*	<a href="{{ site.gdeurl }}install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a>
+*	<a href="{{ site.gdeurl }}install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
+*	<a href="{{ site.gdeurl }}install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
 
 <h2 id="centos-verify-php">Verify PHP is installed</h2>
 To verify if PHP is installed already, enter `php -v`. If PHP is installed, messages similar to the following display:
@@ -59,7 +62,7 @@ To verify if PHP is installed already, enter `php -v`. If PHP is installed, mess
   <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
 </div>
 
-If PHP is installed, continue with the next prerequisite, <a href="{{ site.gdeurl21 }}install-gde/prereq/mysql.html">MySQL</a>.
+If PHP is installed, continue with the next prerequisite, <a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">MySQL</a>.
 
 ## CentOS repositories {#centos-php-repos}
 Linux systems provide software like PHP in one or more *repositories*. CentOS, unlike Ubuntu, has a set of [officially recommended repositories](https://wiki.centos.org/AdditionalResources/Repositories){:target="_blank"}. Other repositories are considered less safe for the reasons stated on the CentOS wiki.
@@ -86,11 +89,11 @@ Continue with one of the following sections:
 *	<a href="#instgde-prereq-php55-install-centos">PHP 5.5 on CentOS</a>
 
 ## PHP 7 on CentOS {#php-centos-7}
-There is more than one way to install PHP 7.0.2 or later on CentOS 6; the following is a suggestion only. Consult a reference for additional options.
+There is more than one way to install PHP 7.0.2 or later; the following is a suggestion only. Consult a reference for additional options.
 
 To upgrade to PHP 7.0.2 or later:
 
-1.	Enter the following commands in the order shown:
+1.	*CentOS 6*. Enter the following commands in the order shown:
 
 		yum -y update
 		yum -y install epel-release
@@ -98,7 +101,13 @@ To upgrade to PHP 7.0.2 or later:
 		wget https://centos6.iuscommunity.org/ius-release.rpm
 		rpm -Uvh ius-release*.rpm
 		yum -y update
-		yum -y install php70u php70u-pdo php70u-mysqlnd php70u-opcache php70u-xml php70u-mcrypt php70u-gd php70u-devel php70u-mysql php70u-intl php70u-mbstring php70u-bcmath php70u-json
+2.	*CentOS 7*. Enter the following commands:
+
+		yum install -y http://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/ius-release-1.0-14.ius.centos7.noarch.rpm
+		yum -y update
+3.	Enter the following command:
+
+		yum -y install php70u php70u-pdo php70u-mysqlnd php70u-opcache php70u-xml php70u-mcrypt php70u-gd php70u-devel php70u-mysql php70u-intl php70u-mbstring php70u-bcmath php70u-json php70u-iconv
 
 	<div class="bs-callout bs-callout-info" id="info">
   		<p>The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.</p>
@@ -200,9 +209,9 @@ To upgrade to PHP 5.5:
 
 #### Related topics
 
-*	<a href="{{ site.gdeurl21 }}install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a>
-*	<a href="{{ site.gdeurl21 }}install-gde/prereq/apache.html">Apache</a>
-*	<a href="{{ site.gdeurl21 }}install-gde/prereq/mysql.html">MySQL</a>
-*	<a href="{{ site.gdeurl21 }}install-gde/prereq/security.html">Configuring security options</a>
-*	<a href="{{ site.gdeurl21 }}install-gde/prereq/optional.html">Installing optional software</a>
-*	<a href="{{ site.gdeurl21 }}install-gde/install/pre-install.html">Ways to install the Magento software</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Apache</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">MySQL</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">Configuring security options</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Installing optional software</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Ways to install the Magento software</a>

@@ -6,14 +6,15 @@ title: Update the Magento application
 menu_title: Update the Magento application
 menu_order: 2
 menu_node: 
-github_link21: install-gde/install/cli/dev_update-magento.md
+github_link: install-gde/install/cli/dev_update-magento.md
+redirect_from: /guides/v2.0/install-gde/install/cli/instgde-install-magento-update-db
 ---
 
-This topic discusses how a contributing developer can update the Magento application without reinstalling it. To perform an upgrade if you're *not* a contributing developer, see <a href="{{ site.gdeurl21 }}comp-mgr/bk-compman-upgrade-guide.html">Updating the Magento application and components</a>.
+This topic discusses how a contributing developer can update the Magento application without reinstalling it. To perform an upgrade if you're *not* a contributing developer, see <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html">Updating the Magento application and components</a>.
 
 To update the Magento software if you're a contributing developer:
 
-1.	Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="{{ site.gdeurl21 }}install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.
+1.	Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
 3. Save any changes you made to `composer.json` because the following steps will overwrite it:
 
 		cd <your Magento install dir>
@@ -25,7 +26,7 @@ To update the Magento software if you're a contributing developer:
 
 	<div class="bs-callout bs-callout-info" id="info">
 		<span class="glyphicon-class">
-  			<p>If <code>git pull origin develop</code> fails, see <a href="{{ site.gdeurl21 }}install-gde/trouble/git/tshoot_git-pull-origin.html">troubleshooting</a>.</p> </span>
+  			<p>If <code>git pull origin develop</code> fails, see <a href="{{ site.gdeurl }}install-gde/trouble/git/tshoot_git-pull-origin.html">troubleshooting</a>.</p> </span>
 	</div>
 				
 3.	Diff and merge your `composer.json.old` with `composer.json` installed with the Magento software.

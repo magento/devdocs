@@ -6,7 +6,7 @@ title: Install, configure, verify memcached on Ubuntu
 menu_title: Install, configure, verify memcached on Ubuntu
 menu_order: 2
 menu_node: 
-github_link21: config-guide/memcache/memcache_ubuntu.md
+github_link: config-guide/memcache/memcache_ubuntu.md
 ---
 
 #### Contents
@@ -84,7 +84,12 @@ Create `cache-test.php` in the web server's docroot with the following contents:
 
 {% highlight php %}
 <?php
-$mem = new Memcache();
+if (class_exists('Memcache')) {
+    $meminstance = new Memcache();
+} else {
+    $meminstance = new Memcached();
+}
+
 $mem->addServer("<memcache host name or ip>", <memcache port>);
 
 $result = $mem->get("test");
@@ -137,4 +142,4 @@ Flush memcache storage and quit Telnet:
 <a href="http://www.darkcoding.net/software/memcached-list-all-keys/" target="_blank">Additional information about the Telnet test</a>
 
 #### Next step
-<a href="{{ site.gdeurl21 }}config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a>
+<a href="{{ site.gdeurl }}config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a>

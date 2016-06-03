@@ -6,7 +6,7 @@ title: Configure Magento to use memcached
 menu_title: Configure Magento to use memcached
 menu_order: 30
 menu_node: 
-github_link21: config-guide/memcache/memcache_magento.md
+github_link: config-guide/memcache/memcache_magento.md
 ---
 
 <h2 id="config-memcache-conf">Configure Magento to use memcached</h2>
@@ -34,7 +34,7 @@ To configure Magento to use memcache:
 
             'session' =>
                array (
-                  'save' => 'memcached’,
+                  'save' => 'memcached',
                   'save_path' => '<memcache ip or host>:<memcache port>'
             ),
             
