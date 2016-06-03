@@ -6,8 +6,7 @@ title: About Magento modes
 menu_title: About Magento modes
 menu_order: 3
 menu_node: 
-github_link: config-guide/bootstrap/magento-modes.md
-redirect_from: /guides/v1.0/config-guide/bootstrap/magento-modes.html
+github_link21: config-guide/bootstrap/magento-modes.md
 ---
 
 #### Contents
@@ -39,7 +38,7 @@ You can run Magento in any of the following *modes*:
 		<td><p>Intended for development only, this mode:</p>
 			<ul><li>Disables static view file caching</li>
 				<li>Provides verbose logging</li>
-				<li>Enables <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html##config-cli-subcommands-compile-overview">automatic code compilation</a></li>
+				<li>Enables <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-compiler-single.html##config-cli-subcommands-compile-overview">automatic code compilation</a></li>
 				<li>Enables enhanced debugging</li>
 				<li>Shows custom <code>X-Magento-*</code> HTTP request and response headers</li>
 				<li>Results in the slowest performance (because of the preceding)</li></ul></td>
@@ -63,7 +62,7 @@ In developer mode:
 *	An exception is thrown in the error handler, rather than being logged
 *	An exception is thrown when an event subscriber cannot be invoked
 
-For more information, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>.
+For more information, see <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>.
 
 <h2 id="mode-default">Default mode</h2>
 As its name implies, default mode is how the Magento software operates if no other mode is specified. Default mode enables you to deploy the Magento application on a single server without changing any settings. However, default mode is not optimized for production.
@@ -76,10 +75,10 @@ In default mode:
 *	Static view files are cached
 *	Default mode is not optimized for a production environment, primarily because of the adverse performance impact of static files being cached rather than materialized. In other words, creating static files and caching them has a greater performance impact than generating them using the static files creation tool.
 
-For more information, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>.
+For more information, see <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>.
 
 <h2 id="mode-production">Production mode</h2>
-You should run the Magento software in production mode when it's deployed to a production server. After optimizing the server environment (database, web server, and so on), you should run the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html">static view files deployment tool</a> to write static view files to the Magento `pub/static` directory.
+You should run the Magento software in production mode when it's deployed to a production server. After optimizing the server environment (database, web server, and so on), you should run the <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-static-view.html">static view files deployment tool</a> to write static view files to the Magento `pub/static` directory.
 
 This improves performance because static files don't go through the fallback mechanism; instead, URLs for static files are created as needed.
 
@@ -89,7 +88,7 @@ In production mode:
 *	Errors are logged to the file system and are never displayed to the user
 
 #### Next step
-To set a mode, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>.
+To set a mode, see <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>.
 
 #### Related topic
-To generate static view files for production mode, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
+To generate static view files for production mode, see <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>

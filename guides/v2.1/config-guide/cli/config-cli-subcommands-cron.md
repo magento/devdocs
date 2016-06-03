@@ -173,7 +173,7 @@ In addition, the `<group>` element supports the following options, all of which 
 	</tbody>
 </table>
 
-As an example, see <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/crontab.xml" target="_blank">Magento_Customer crontab.xml</a>
+As an example, see <a href="{{ site.mage2100url }}app/code/Magento/Customer/etc/crontab.xml" target="_blank">Magento_Customer crontab.xml</a>
 
 <h3 id="config-cli-cron-group-run">Run cron from the command line</h3>
 Command options:

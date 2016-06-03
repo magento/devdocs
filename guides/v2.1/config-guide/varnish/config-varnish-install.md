@@ -6,7 +6,7 @@ title: Install Varnish
 menu_title: Install Varnish
 menu_order: 5
 menu_node: 
-github_link: config-guide/varnish/config-varnish-install.md
+github_link21: config-guide/varnish/config-varnish-install.md
 ---
 
 <h2 id="config-varnish-install">Install Varnish</h2>
@@ -34,4 +34,4 @@ A sample follows:
 Make sure the version is at least 3.0.5 or any version of 4.x before continuing.
 
 ### Next step
-<a href="{{ site.gdeurl }}config-guide/varnish/config-varnish-configure.html">Configure Varnish and your web server</a>
+<a href="{{ site.gdeurl21 }}config-guide/varnish/config-varnish-configure.html">Configure Varnish and your web server</a>

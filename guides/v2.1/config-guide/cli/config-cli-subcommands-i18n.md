@@ -259,7 +259,7 @@ If the Magento application cannot find word or phrase in the `en_GB` package, it
 1.	`<vendorname>/en_CA_package`
 1.	`<vendorname>/en_US_package`
 
-Specifying all inheritances between the language packages might result in creating circular inheritance chains. Use <a href="{{ site.mage2000url }}dev/tests/static/testsuite/Magento/Test/Integrity/App/Language/CircularDependencyTest.php" target="_blank">Magento\Test\Integrity\App\Language\CircularDependencyTest</a> test to locate and fix such chains.
+Specifying all inheritances between the language packages might result in creating circular inheritance chains. Use <a href="{{ site.mage2100url }}dev/tests/static/testsuite/Magento/Test/Integrity/App/Language/CircularDependencyTest.php" target="_blank">Magento\Test\Integrity\App\Language\CircularDependencyTest</a> test to locate and fix such chains.
 
 <h3 id="m2devgde-xlate-severalpacks">Configure multiple packages for a language</h3>
 To help you to make your store more flexible, you can upload several language packages for the same language in your store. Thus, you can use different custom packages for different parts of your store because the system compiles a single package from all packages that are available for a language.

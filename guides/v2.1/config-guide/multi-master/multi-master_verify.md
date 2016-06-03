@@ -6,7 +6,7 @@ title: Verify split databases
 menu_title: Verify split databases
 menu_order: 5
 menu_node: 
-github_link: config-guide/multi-master/multi-master_verify.md
+github_link21: config-guide/multi-master/multi-master_verify.md
 ---
 
 <img src="{{ site.baseurl }}common/images/ee-only_large.png">
@@ -17,7 +17,7 @@ After configuration, the master databases are configured as follows:
 *	Magento quote database: 10 tables
 *	Magento sales database: 54 tables
 
-To verify your split databases are working properly, perform the following tasks and verify that data is added to the database tables using a database tool like <a href="{{ site.gdeurl }}install-gde/prereq/optional.html#install-optional-phpmyadmin" target="_blank">phpmyadmin</a>:
+To verify your split databases are working properly, perform the following tasks and verify that data is added to the database tables using a database tool like <a href="{{ site.gdeurl21 }}install-gde/prereq/optional.html#install-optional-phpmyadmin" target="_blank">phpmyadmin</a>:
 
 <table>
 <tbody>
@@ -39,9 +39,9 @@ To verify your split databases are working properly, perform the following tasks
 </table>
 
 <div class="bs-callout bs-callout-warning">
-    <p>You must back up the two additional database instances manually. Magento backs up only the main database instance. The <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-backup.html"><code>'magento setup:backup --db</code></a> command and Magento Admin options do not back up the additional tables.</p>
+    <p>You must back up the two additional database instances manually. Magento backs up only the main database instance. The <a href="{{ site.gdeurl21 }}install-gde/install/cli/install-cli-backup.html"><code>'magento setup:backup --db</code></a> command and Magento Admin options do not back up the additional tables.</p>
 </div>
 
 
 #### Next step (optional)
-<a href="{{ site.gdeurl }}config-guide/multi-master/multi-master_slavedb.html">Set up optional database replication</a>
+<a href="{{ site.gdeurl21 }}config-guide/multi-master/multi-master_slavedb.html">Set up optional database replication</a>

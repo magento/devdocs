@@ -6,7 +6,7 @@ title: Installation quick reference (tutorial)
 menu_title: Installation quick reference (tutorial)
 menu_node: parent
 menu_order: 1
-github_link: install-gde/install-quick-ref.md
+github_link21: install-gde/install-quick-ref.md
 ---
 
 We know it's challenging to install the Magento software. We'd like to help you by simplifying the process as much as possible.
@@ -29,17 +29,17 @@ We've broken the installation process into three main parts: getting started, in
 ## Precondition: How advanced are you?
 Do you know what a "terminal" application is? Do you know what operating system your server runs? Do you know what Apache is? 
 
-If not, see the <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">Installation overview</a>.
+If not, see the <a href="{{ site.gdeurl21 }}install-gde/bk-install-guide.html">Installation overview</a>.
 
 ## Installation part 1: Getting started
-1.	See the <a href="{{ site.gdeurl }}install-gde/system-requirements.html">system requirements</a>.
+1.	See the <a href="{{ site.gdeurl21 }}install-gde/system-requirements.html">system requirements</a>.
 2.	If your system lacks any requirements, see the prerequisites documentation:
 
-	*	<a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Apache</a>
-	*	<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP (Ubuntu)</a>
-	*	<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP (CentOS)</a>
-	*	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">MySQL</a>
-3.	Just as importantly, set up the <a href="{{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a> on the server.
+	*	<a href="{{ site.gdeurl21 }}install-gde/prereq/apache.html">Apache</a>
+	*	<a href="{{ site.gdeurl21 }}install-gde/prereq/php-ubuntu.html">PHP (Ubuntu)</a>
+	*	<a href="{{ site.gdeurl21 }}install-gde/prereq/php-centos.html">PHP (CentOS)</a>
+	*	<a href="{{ site.gdeurl21 }}install-gde/prereq/mysql.html">MySQL</a>
+3.	Just as importantly, set up the <a href="{{ site.gdeurl21 }}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a> on the server.
 4.	Switch to the Magento file system owner.
 
 ### Get the Magento software
@@ -48,10 +48,10 @@ When all prerequisites have been met, get the Magento software using Composer as
 	cd <web server docroot directory>
 	composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition
 
-You're required to authenticate; see <a href="{{ site.gdeurl }}install-gde/prereq/connect-auth.html">Get your authentication keys</a> for details. This downloads Magento code only; it doesn't install the software for you.
+You're required to authenticate; see <a href="{{ site.gdeurl21 }}install-gde/prereq/connect-auth.html">Get your authentication keys</a> for details. This downloads Magento code only; it doesn't install the software for you.
 
 <div class="bs-callout bs-callout-tip">
-	<p>Alternatively, you can also download a <a href="{{ site.gdeurl }}install-gde/install/get-software.html">Magento software archive</a>.</p>
+	<p>Alternatively, you can also download a <a href="{{ site.gdeurl21 }}install-gde/install/get-software.html">Magento software archive</a>.</p>
 </div>
 
 ### Set file system ownership and permissions
@@ -59,7 +59,7 @@ You're required to authenticate; see <a href="{{ site.gdeurl }}install-gde/prere
 {% include install/file-system-perms-before.md %}
 
 ## Installation part 2: Installing the Magento software
-You can choose to install the Magento software using either a <a href="{{ site.gdeurl }}install-gde/install/web/install-web.html">web-based Setup Wizard</a> or using the <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">command line</a>.
+You can choose to install the Magento software using either a <a href="{{ site.gdeurl21 }}install-gde/install/web/install-web.html">web-based Setup Wizard</a> or using the <a href="{{ site.gdeurl21 }}install-gde/install/cli/install-cli.html">command line</a>.
 
 The following example shows how to install using the command line with the following options:
 
@@ -89,12 +89,12 @@ The following example shows how to install using the command line with the follo
 		--admin-user=admin --admin-password=admin123 --language=en_US \
 		--currency=USD --timezone=America/Chicago --use-rewrites=1
 
-Optionally switch to <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html">developer mode</a>.
+Optionally switch to <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-mode.html">developer mode</a>.
 
 	cd <your Magento install dir>/bin
 	php magento deploy:mode:set developer
 
 ## Installation part 3: Post-installation
-*	<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a> was successful.
-*	<a href="{{ site.gdeurl }}install-gde/trouble/tshoot.html">Troubleshoot issues</a> if necessary.
-*	Learn about the <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade</a> for future updates.
+*	<a href="{{ site.gdeurl21 }}install-gde/install/verify.html">Verify the installation</a> was successful.
+*	<a href="{{ site.gdeurl21 }}install-gde/trouble/tshoot.html">Troubleshoot issues</a> if necessary.
+*	Learn about the <a href="{{ site.gdeurl21 }}comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade</a> for future updates.

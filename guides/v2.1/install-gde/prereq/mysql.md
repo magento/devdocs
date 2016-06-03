@@ -5,13 +5,8 @@ subgroup: Prerequisites
 title: MySQL
 menu_title: MySQL
 menu_order: 10
-github_link: install-gde/prereq/mysql.md
-redirect_from: /guides/v1.0/install-gde/prereq/mysql.html
+github_link21: install-gde/prereq/mysql.md
 ---
-
-<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
-<!-- Referring file: README.md owned by core -->
-
 
 #### Contents
 
@@ -25,10 +20,10 @@ redirect_from: /guides/v1.0/install-gde/prereq/mysql.html
 <h2 id="mysql-help-beginner">Help if you're just starting out</h2>
 If you're new to all this and need some help getting started, we suggest the following:
 
-*	<a href="{{ site.gdeurl }}install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a>
-*	<a href="{{ site.gdeurl }}install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a>
-*	<a href="{{ site.gdeurl }}install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
-*	<a href="{{ site.gdeurl }}install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
 
 
 <h2 id="instgde-prereq-mysql-intro">General guidelines</h2>
@@ -46,7 +41,7 @@ Magento _strongly_ recommends you observe the following standard when you set up
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>If your web server and database server are on different hosts, perform the tasks discussed in this topic on the database server host then see <a href="{{ site.gdeurl }}install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a>.</p></span>
+  <p>If your web server and database server are on different hosts, perform the tasks discussed in this topic on the database server host then see <a href="{{ site.gdeurl21 }}install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a>.</p></span>
 </div>
 
 <h2 id="instgde-prereq-mysql-ubuntu">Installing MySQL on Ubuntu</h2>
@@ -250,14 +245,14 @@ To configure a MySQL database instance:
 
 	If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.
 
-7.	If your web server and database server are on different hosts, perform the tasks discussed in this topic on the database server host then see <a href="{{ site.gdeurl }}install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a>.
+7.	If your web server and database server are on different hosts, perform the tasks discussed in this topic on the database server host then see <a href="{{ site.gdeurl21 }}install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a>.
 
 #### Related topics
 
-*	<a href="{{ site.gdeurl }}install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Installing optional software</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Apache</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP 5.5 or 5.4&mdash;CentOS</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">Configuring security options</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Ways to install the Magento software</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/prereq/optional.html">Installing optional software</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/prereq/apache.html">Apache</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/prereq/php-centos.html">PHP 5.5 or 5.4&mdash;CentOS</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/prereq/security.html">Configuring security options</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/install/pre-install.html">Ways to install the Magento software</a>

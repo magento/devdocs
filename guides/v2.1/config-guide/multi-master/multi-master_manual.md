@@ -6,7 +6,7 @@ title: Manually configure master databases
 menu_title: Manually configure master databases
 menu_order: 3
 menu_node: 
-github_link: config-guide/multi-master/multi-master_manual.md
+github_link21: config-guide/multi-master/multi-master_manual.md
 ---
 
 <img src="{{ site.baseurl }}common/images/ee-only_large.png">
@@ -20,7 +20,7 @@ github_link: config-guide/multi-master/multi-master_manual.md
 *   [Drop sales and quote tables from the Magento database](#config-ee-multidb-drop)
 *   [Update your deployment configuration](#config-ee-multidb-config)
 *   [Reference scripts](#split-db-ref)
-*   [Verify split databases]({{ site.gdeurl }}config-guide/multi-master/multi-master_verify.html)
+*   [Verify split databases]({{ site.gdeurl21 }}config-guide/multi-master/multi-master_verify.html)
 
 ## Overview of manual split database configuration {#config-ee-multidb-manual-over}
 If the Magento application is already in production or if you've already installed custom code or components, you might need to configure split databases manually. Before continuing, contact Magento Support to see if this is necessary in your case.
@@ -60,7 +60,7 @@ We strongly recommend you back up your current database and file system so you c
 
 To back up your system:
 
-1.  Log in to your Magento server as, or switch to, the [Magento file system owner]({{ site.gdeurl }}install-gde/prereq/apache-user.html).
+1.  Log in to your Magento server as, or switch to, the [Magento file system owner]({{ site.gdeurl21 }}install-gde/prereq/apache-user.html).
 2.  Enter the following commands:
 
         magento setup:backup --code --media --db
@@ -424,7 +424,7 @@ The final step in manually splitting databases is to add connection and resource
 
 {% collapsible Click to update the Magento deployment configuration %}
 
-1.  Log in to your Magento server as, or switch to, the [Magento file system owner]({{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html).
+1.  Log in to your Magento server as, or switch to, the [Magento file system owner]({{ site.gdeurl21 }}install-gde/prereq/file-sys-perms-over.html).
 2.  Back up your deployment configuration:
 
         cp <your Magento install dir>/app/etc/env.php <your Magento install dir>/app/etc/env.php.orig
@@ -617,4 +617,4 @@ Drop all tables that start with `quote_`.
 {% endcollapsible %}
 
 #### Next step
-<a href="{{ site.gdeurl }}config-guide/multi-master/multi-master_verify.html">Verify split databases</a>
+<a href="{{ site.gdeurl21 }}config-guide/multi-master/multi-master_verify.html">Verify split databases</a>

@@ -25,7 +25,7 @@ github_link21: config-guide/cli/config-cli-subcommands-compiler.md
 <li>Interception cache generation</li>
 <li>Repositories code generation (that is, generated code for APIs)</li>
 <li>Service data attributes generation (that is, generated extension classes for data objects)</li></ul>
-<p>You can find code compilation in classes in the <a href="{{ site.mage2000url }}setup/src/Magento/Setup/Module/Di/App/Task/Operation" target="_blank">\Magento\Setup\Module\Di\App\Task\Operation</a> namespace.</p> 
+<p>You can find code compilation in classes in the <a href="{{ site.mage2100url }}setup/src/Magento/Setup/Module/Di/App/Task/Operation" target="_blank">\Magento\Setup\Module\Di\App\Task\Operation</a> namespace.</p> 
 
 <div class="bs-callout bs-callout-warning">
     <p>In this release, the Magento software doesn't support the multi-tenant compiler (that is, the <code>magento setup:di:compile-multi-tenant</code> command.</p>

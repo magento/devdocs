@@ -6,7 +6,7 @@ title: Appendix&mdash;Magento file system ownership and appendix (legacy)
 menu_title: Appendix&mdash;Magento file system ownership and appendix (legacy)
 menu_node: parent
 menu_order: 100
-github_link: install-gde/install/legacy-file-system-perms.md
+github_link21: install-gde/install/legacy-file-system-perms.md
 ---
 
 #### Contents 
@@ -18,7 +18,7 @@ github_link: install-gde/install/legacy-file-system-perms.md
 ## Overview: Magento file system ownership and appendix (legacy) {#appendix-over}
 This topic is provided for convenience for anyone using Magento Community Edition (CE) or Magento Enterprise Edition (EE) versions 2.0.0&ndash;2.0.5. 
 
-In versions *before* 2.0.6, Magento explicitly set file system permissions when we created files, such as cache and static view files. Starting with 2.0.6, we do not set permissions explicitly. For more detail about file system ownership and permissions for version 2.0.6 and later, see [Overview of ownership and permissions]({{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html).
+In versions *before* 2.0.6, Magento explicitly set file system permissions when we created files, such as cache and static view files. Starting with 2.0.6, we do not set permissions explicitly. For more detail about file system ownership and permissions for version 2.0.6 and later, see [Overview of ownership and permissions]({{ site.gdeurl21 }}install-gde/prereq/file-sys-perms-over.html).
 
 ## Summary of file system permissions {#appendix-summary}
 This section summarizes the permissions Magento uses when creating files in the file system.
@@ -52,12 +52,12 @@ When you change to production mode, we set the following permissions on these di
 ## Set permissions before installing the Magento software {#appendix-install}
 Use the following steps:
 
-1.	If you haven't already done so, log in to your Magento server as, or switch to, the [Magento file system owner]({{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html).
+1.	If you haven't already done so, log in to your Magento server as, or switch to, the [Magento file system owner]({{ site.gdeurl21 }}install-gde/prereq/file-sys-perms-over.html).
 2.	Change to the Magento installation directory:
 
 		cd <web server docroot>/<magento2 base dir>
 
-	The base directory is typically a subdirectory named `magento2` under your web server's docroot. Need help locating the docroot? Click <a href="{{ site.gdeurl }}install-gde/basics/basics_docroot.html">here</a>.<br>
+	The base directory is typically a subdirectory named `magento2` under your web server's docroot. Need help locating the docroot? Click <a href="{{ site.gdeurl21 }}install-gde/basics/basics_docroot.html">here</a>.<br>
 
 	Examples:
 

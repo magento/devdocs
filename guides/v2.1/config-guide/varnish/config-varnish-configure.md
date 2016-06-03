@@ -6,7 +6,7 @@ title: Configure Varnish and your web server
 menu_title: Configure Varnish and your web server
 menu_order: 10
 menu_node: 
-github_link: config-guide/varnish/config-varnish-configure.md
+github_link21: config-guide/varnish/config-varnish-configure.md
 ---
 
 <h2 id="config-varnish-config-var">Configure Varnish and your web server</h2>
@@ -181,10 +181,10 @@ If you experience this error, edit `default.vcl` and add a timeout to the `backe
 <h2 id="config-varnish-verify-headers">Verify HTTP response headers</h2>
 Now you can verify that Varnish is serving pages by looking at HTML response headers returned from any Magento page.
 
-Before you can look at headers, you must set Magento for developer mode. There are several ways to do it, the simplest of which is to modify `.htaccess` in the Magento 2 root. You can also use the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html">`magento deploy:mode:set`</a> command.
+Before you can look at headers, you must set Magento for developer mode. There are several ways to do it, the simplest of which is to modify `.htaccess` in the Magento 2 root. You can also use the <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-mode.html">`magento deploy:mode:set`</a> command.
 
 #### Set Magento for developer mode
-To set Magento for developer mode, use the [`magento deploy:mode:set`]({{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html#config-mode-change) command.
+To set Magento for developer mode, use the [`magento deploy:mode:set`]({{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-mode.html#config-mode-change) command.
 
 #### Look at the Varnish log
 Make sure Varnish is running then enter the following command on the Varnish server:
@@ -230,4 +230,4 @@ Look for headers like the following:
 	X-Magento-Cache-Debug: HIT
 
 #### Next step
-<a href="{{ site.gdeurl }}config-guide/varnish/config-varnish-magento.html">Configure Magento to use Varnish</a>
+<a href="{{ site.gdeurl21 }}config-guide/varnish/config-varnish-magento.html">Configure Magento to use Varnish</a>

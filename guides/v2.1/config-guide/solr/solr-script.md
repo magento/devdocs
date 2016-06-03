@@ -6,7 +6,7 @@ title: Prepare Solr for production
 menu_title: Prepare Solr for production
 menu_order: 3
 menu_node: 
-github_link: config-guide/solr/solr-script.md
+github_link21: config-guide/solr/solr-script.md
 ---
 
 <img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only">

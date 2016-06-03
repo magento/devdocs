@@ -6,7 +6,7 @@ title: Use Redis for session storage
 menu_title: Use Redis for session storage
 menu_order: 10
 menu_node: 
-github_link: config-guide/redis/redis-session.md
+github_link21: config-guide/redis/redis-session.md
 ---
 
 #### Contents
@@ -14,7 +14,7 @@ github_link: config-guide/redis/redis-session.md
 *	<a href="#config-redis-config">Configure Magento to use Redis for session storage</a>
 
 <h2 id="reds-cache-prereq">Prerequisite</h2>
-Before you continue, install Redis as discussed in <a href="{{ site.gdeurl }}config-guide/redis/config-redis.html">Use Redis for page caching or session storage</a>.
+Before you continue, install Redis as discussed in <a href="{{ site.gdeurl21 }}config-guide/redis/config-redis.html">Use Redis for page caching or session storage</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -159,5 +159,5 @@ where
 
 #### Related topics
 
- *  <a href="{{ site.gdeurl }}config-guide/config/config-create.html">Create or extend configuration types</a>
- *  <a href="{{ site.gdeurl }}config-guide/config/config-php.html">Magento's deployment configuration</a>
+ *  <a href="{{ site.gdeurl21 }}config-guide/config/config-create.html">Create or extend configuration types</a>
+ *  <a href="{{ site.gdeurl21 }}config-guide/config/config-php.html">Magento's deployment configuration</a>

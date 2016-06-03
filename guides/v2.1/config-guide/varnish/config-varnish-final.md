@@ -6,7 +6,7 @@ title: Final verification
 menu_title: Final verification
 menu_order: 100
 menu_node: 
-github_link: config-guide/varnish/config-varnish-final.md
+github_link21: config-guide/varnish/config-varnish-final.md
 ---
 
 
@@ -16,7 +16,7 @@ Now that you're using the `default.vcl` generated for you by Magento, you can pe
 <h3 id="config-varnish-final-verify-headers">Verify HTTP response headers</h3>
 Use `curl` or another utility to view HTTP response headers when you visit any Magento page in a web browser. 
 
-First, make sure you are using Magento's [developer mode]({{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html##config-mode-change); otherwise, you won't see the headers.
+First, make sure you are using Magento's [developer mode]({{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-mode.html##config-mode-change); otherwise, you won't see the headers.
 
 For example,
 
@@ -70,9 +70,9 @@ Make sure the `<your Magento install dir>/var/page_cache` directory is empty:
 5.	If you cleared the `var/page_cache/` directory, restart Varnish.
 
 <div class="bs-callout bs-callout-info" id="info">
-	<p>If you encounter 503 (Backend Fetch Failed) errors, see <a href="{{ site.gdeurl }}config-guide/varnish/tshoot-varnish-503.html">Troubleshooting 503 (Service Unavailable) errors</a>.</p>
+	<p>If you encounter 503 (Backend Fetch Failed) errors, see <a href="{{ site.gdeurl21 }}config-guide/varnish/tshoot-varnish-503.html">Troubleshooting 503 (Service Unavailable) errors</a>.</p>
 </div>
 
 #### Next steps
-*	<a href="{{ site.gdeurl }}config-guide/varnish/use-varnish-cache.html">How Magento cache clearing works with Varnish</a>
-*	<a href="{{ site.gdeurl }}config-guide/varnish/use-varnish-cache-how.html">How Varnish caching works</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/varnish/use-varnish-cache.html">How Magento cache clearing works with Varnish</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/varnish/use-varnish-cache-how.html">How Varnish caching works</a>

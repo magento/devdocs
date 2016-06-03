@@ -8,7 +8,7 @@ level3_menu_node: level3parent
 level3_subgroup: umask
 menu_node:
 menu_order: 29
-github_link: install-gde/prereq/file-sys-perms-parent.md
+github_link21: install-gde/prereq/file-sys-perms-parent.md
 ---
 
 #### Contents
@@ -20,7 +20,7 @@ github_link: install-gde/prereq/file-sys-perms-parent.md
 ## The Magento file system owner
 
 <div class="bs-callout bs-callout-tip">
-  <p>Totally lost? Need a helping hand? Try our <a href="{{ site.gdeurl }}install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{ site.gdeurl }}install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
+  <p>Totally lost? Need a helping hand? Try our <a href="{{ site.gdeurl21 }}install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{ site.gdeurl21 }}install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
 </div>
 
 THIS TOPIC COVERS WHETHER TO CREATE ONE USER OR TWO

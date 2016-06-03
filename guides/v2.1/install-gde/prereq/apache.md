@@ -5,8 +5,7 @@ subgroup: Prerequisites
 title: Apache
 menu_title: Apache
 menu_order: 01
-github_link: install-gde/prereq/apache.md
-redirect_from: /guides/v1.0/install-gde/prereq/apache.html
+github_link21: install-gde/prereq/apache.md
 ---
 
 
@@ -26,10 +25,10 @@ Magento requires Apache 2.2.x or 2.4.x.
 <h2 id="apache-help-beginner">Help if you're just starting out</h2>
 If you're new to all this and need some help getting started, we suggest the following:
 
-*	<a href="{{ site.gdeurl }}install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a>
-*	<a href="{{ site.gdeurl }}install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a>
-*	<a href="{{ site.gdeurl }}install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
-*	<a href="{{ site.gdeurl }}install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
 
 <h2 id="apache-help-rewrite">Important: Apache rewrites and .htaccess</h2>
 This topic discusses how to enable Apache 2.2 rewrites and specify a setting for the <a href="http://httpd.apache.org/docs/current/howto/htaccess.html" target="_blank">distributed configuration file, <code>.htaccess</code></a>.
@@ -97,8 +96,8 @@ To install the default version of Apache (Ubuntu 14&mdash;Apache 2.4, Ubuntu 12&
 
 #### Next steps
 *	<a href="#403-apache">Solving 403 (Forbidden) errors</a>
-*	Continue with the next prerequisite (<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)
-*	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Determine your installation or upgrade path</a>
+*	Continue with the next prerequisite (<a href="{{ site.gdeurl21 }}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)
+*	<a href="{{ site.gdeurl21 }}install-gde/install/pre-install.html">Determine your installation or upgrade path</a>
 {% endcollapsible %}
 
 <h3 id="install-prereq-apache-ubuntu-upgrade">Upgrading Apache on Ubuntu 12</h3>
@@ -138,8 +137,8 @@ To upgrade to Apache 2.4:
 
 #### Next steps
 *	<a href="#403-apache">Solving 403 (Forbidden) errors</a>
-*	Continue with the next prerequisite (<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)
-*	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Determine your installation or upgrade path</a>
+*	Continue with the next prerequisite (<a href="{{ site.gdeurl21 }}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)
+*	<a href="{{ site.gdeurl21 }}install-gde/install/pre-install.html">Determine your installation or upgrade path</a>
 {% endcollapsible %}
 
 <h2 id="install-prereq-apache-centos">Installing Apache on CentOS 6 or 7</h2>
@@ -174,8 +173,8 @@ Installing and configuring Apache is basically a three-step process: install the
 
 #### Next steps
 *	<a href="#403-apache">Solving 403 (Forbidden) errors</a>
-*	Continue with the next prerequisite (<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)
-*	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Determine your installation or upgrade path</a>
+*	Continue with the next prerequisite (<a href="{{ site.gdeurl21 }}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)
+*	<a href="{{ site.gdeurl21 }}install-gde/install/pre-install.html">Determine your installation or upgrade path</a>
 {% endcollapsible %}
 
 <h2 id="403-apache">Solving 403 (Forbidden) errors</h2>
@@ -222,10 +221,10 @@ For example:
 
 #### Related topics:
 
-*	<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">MySQL</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">Configuring security options</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Installing optional software</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Determine your installation or upgrade path</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/prereq/mysql.html">MySQL</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/prereq/security.html">Configuring security options</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/prereq/optional.html">Installing optional software</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/install/pre-install.html">Determine your installation or upgrade path</a>
 

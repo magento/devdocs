@@ -6,7 +6,7 @@ title: Deployment steps
 menu_title: Deployment steps
 menu_node: 
 menu_order: 10
-github_link: config-guide/prod/prod_deploy.md
+github_link21: config-guide/prod/prod_deploy.md
 ---
 
 #### Contents
@@ -19,11 +19,11 @@ This topic provides guidelines and best practices for deploying a Magento site t
 
 Assumptions:
 
-*	Your *development* environment is behind a firewall with the Magento application in <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a>.
+*	Your *development* environment is behind a firewall with the Magento application in <a href="{{ site.gdeurl21 }}config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a>.
 *	All custom code is in source control.
 *	Your development environment is as similar as possible to production (same number of webnodes, same caching architecture, and so on)
 *	Your *production* environment is a separate set of servers in a secure environment.
-*	Your production environment runs the Magento application in <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a> with desired security options enabled.
+*	Your production environment runs the Magento application in <a href="{{ site.gdeurl21 }}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a> with desired security options enabled.
 *	Your production system has a working, live Magento installation.
 
 Deploying to production involves the following essential steps. Each set of steps is discussed in more detail in the sections that follow.
@@ -53,9 +53,9 @@ Your *development system* is a dedicated developer or build system where you per
 		rm -rf <your Magento install dir>/pub/static/*
 3.	Remove the Magento database and reinstall it with database schema and data from your implementation.
 
-	One way to do this is to run the <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-install.html">command-line installer</a> with the optional `--cleanup-database` command.
-4.	Use the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html">`magento setup:static-content:deploy`</a> command to deploy static view files.
-5.	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler.html">Compile code</a>.
+	One way to do this is to run the <a href="{{ site.gdeurl21 }}install-gde/install/cli/install-cli-install.html">command-line installer</a> with the optional `--cleanup-database` command.
+4.	Use the <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-static-view.html">`magento setup:static-content:deploy`</a> command to deploy static view files.
+5.	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-compiler.html">Compile code</a>.
 
 2.	Clean temporary files that shouldn't be in production.
 
@@ -66,17 +66,17 @@ Your *development system* is a dedicated developer or build system where you per
 
 Best practices in development:
 
-*	Use the Magento file system owner to run <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-bkg">cron</a>
-*	Log in, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a> to run commands, install or uninstall Magento, and so on
-*	Use the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html">`magento deploy:mode:set`</a> command to enable developer mode
-*	Periodically <a href="{{ site.gdeurl }}howdoi/php/php_clear-dirs.html">clean the cache and compiled code directories</a>
+*	Use the Magento file system owner to run <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-bkg">cron</a>
+*	Log in, or switch to, the <a href="{{ site.gdeurl21 }}install-gde/prereq/apache-user.html">Magento file system owner</a> to run commands, install or uninstall Magento, and so on
+*	Use the <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-mode.html">`magento deploy:mode:set`</a> command to enable developer mode
+*	Periodically <a href="{{ site.gdeurl21 }}howdoi/php/php_clear-dirs.html">clean the cache and compiled code directories</a>
 *	Set up your `robots.txt` to *prevent* search engines from indexing your development site. (You don't want search results to point to this site because it won't be available to customers.)
 
 <h2 id="checklist-prod">Production server checklist</h2>
 Make sure you do as many as possible of the following before continuing:
 
-*	Set up <a href="{{ site.gdeurl }}config-guide/redis/config-redis.html">Redis caching</a>
-*	Set up <a href="{{ site.gdeurl }}config-guide/varnish/config-varnish.html">Varnish web acceleration</a>
+*	Set up <a href="{{ site.gdeurl21 }}config-guide/redis/config-redis.html">Redis caching</a>
+*	Set up <a href="{{ site.gdeurl21 }}config-guide/varnish/config-varnish.html">Varnish web acceleration</a>
 
 	We *strongly recommend* Varnish for HTTP acceleration, including page caching.
 *	Set up a Content Delivery Network (CDN)
@@ -90,18 +90,18 @@ This section provides guidelines for deploying a Magento installation to product
 1.	Copy your development file system and database archives to the production system.
 2.	Extract the Magento 2 file system archive to an empty directory.
 4.	Set up persistent storage (for example, media, logs, cache, session, and so on).
-5.	Take your existing system offline by enabling maintenance mode using <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-maint.html#instgde-cli-maint">magento maintenance:enable</a>. *(DOWNTIME STARTS)*
-3.	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-install.html">Install the Magento software</a> in a clean database (optionally using the `--cleanup-database` option).
+5.	Take your existing system offline by enabling maintenance mode using <a href="{{ site.gdeurl21 }}install-gde/install/cli/install-cli-subcommands-maint.html#instgde-cli-maint">magento maintenance:enable</a>. *(DOWNTIME STARTS)*
+3.	<a href="{{ site.gdeurl21 }}install-gde/install/cli/install-cli-install.html">Install the Magento software</a> in a clean database (optionally using the `--cleanup-database` option).
 5.	Import database data from your development system.
 5.	Move your existing file system to an archive location.
 6.	Move the file system you copied from your production system to the Magento docroot.
-4.	Change to <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html#config-mode">production mode</a> and set file system permissions and ownership for <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html#config-mode-over-dirs-perm">production</a>.
+4.	Change to <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-mode.html#config-mode">production mode</a> and set file system permissions and ownership for <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-mode.html#config-mode-over-dirs-perm">production</a>.
 7.	Test everything thoroughly and carefully.
 8.	Switch DNS to the new server. *(DOWNTIME ENDS)*
 
 Best practices in production:
 
-*	Use <a href="{{ site.gdeurl }}config-guide/varnish/config-varnish.html">Varnish</a> to accelerate HTTP traffic, including providing page caching
-*	Use the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html">`magento deploy:mode:set`</a> command to enable production mode
+*	Use <a href="{{ site.gdeurl21 }}config-guide/varnish/config-varnish.html">Varnish</a> to accelerate HTTP traffic, including providing page caching
+*	Use the <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-mode.html">`magento deploy:mode:set`</a> command to enable production mode
 *	Use the `pub` directory as the Magento docroot to prevent running the Setup Wizard, Component Manager, or System Upgrade in production. (Set up virtual hosts to point to `<your Magento install dir>/pub`.)
 *	Set up your `robots.txt` to *allow* search engines to index your production site. 

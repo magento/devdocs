@@ -6,7 +6,7 @@ title: PHP settings errors
 menu_title: PHP settings errors
 menu_node:
 menu_order: 1
-github_link: install-gde/trouble/php/tshoot_php-set.md
+github_link21: install-gde/trouble/php/tshoot_php-set.md
 ---
 
 <h2 id="trouble-php-set">PHP settings errors</h2>
@@ -24,7 +24,7 @@ If you're upgrading the Magento 2 software, the following error can display duri
 
 To resolve the error:
 
-1.	Locate your `php.ini` using a [`phpinfo.php`]({{ site.gdeurl }}install-gde/prereq/optional.html#install-optional-phpinfo) page.
+1.	Locate your `php.ini` using a [`phpinfo.php`]({{ site.gdeurl21 }}install-gde/prereq/optional.html#install-optional-phpinfo) page.
 
 	(Sometimes you have a different `php.ini` for the PHP command line and the web server. The `php.ini` you must change displays as **Loaded Configuration File**)
 
@@ -68,7 +68,7 @@ To increase your PHP memory limit:
 
 <h3 id="trouble-php-xdebug">xdebug maximum function nesting level error</h3>
 
-See <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_xdebug.html">During installation, xdebug maximum function nesting level error</a>.
+See <a href="{{ site.gdeurl21 }}install-gde/trouble/tshoot_xdebug.html">During installation, xdebug maximum function nesting level error</a>.
 
 <h3 id="trouble-php-asptags">Errors display when you access a PHTML template</h3>
 Error text is typically:
@@ -76,7 +76,7 @@ Error text is typically:
     Parse error: syntax error, unexpected 'data' (T_STRING)
 
 #### Solution: Set <code>asp_tags = off</code> in <code>php.ini</code>
-Multiple templates have syntax for support abstract level on templates (use different templates engines like Twig) wrapped in `<% %>` tags, like this <a href="{{ site.mage2000url }}app/code/Magento/Catalog/view/adminhtml/templates/product/edit/base_image.phtml" target="_blank">template</a> for displaying a product image:
+Multiple templates have syntax for support abstract level on templates (use different templates engines like Twig) wrapped in `<% %>` tags, like this <a href="{{ site.mage2100url }}app/code/Magento/Catalog/view/adminhtml/templates/product/edit/base_image.phtml" target="_blank">template</a> for displaying a product image:
 
 {% highlight PHP %} 
 <?php
@@ -90,4 +90,4 @@ Multiple templates have syntax for support abstract level on templates (use diff
 
 More information about <a href="http://php.net/manual/en/ini.core.php#ini.asp-tags" target="_blank">asp_tags</a>. 
 
-Edit `php.ini` and set `asp_tags = off`. For more information, see <a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html#instgde-prereq-timezone">Set PHP configuration options</a>.
+Edit `php.ini` and set `asp_tags = off`. For more information, see <a href="{{ site.gdeurl21 }}install-gde/prereq/php-centos.html#instgde-prereq-timezone">Set PHP configuration options</a>.

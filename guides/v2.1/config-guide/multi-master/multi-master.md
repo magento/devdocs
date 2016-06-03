@@ -6,7 +6,7 @@ title: Split database performance solution (Enterprise Edition only)
 menu_title: Split database performance solution (Enterprise Edition only)
 menu_order: 1
 menu_node: parent
-github_link: config-guide/multi-master/multi-master.md
+github_link21: config-guide/multi-master/multi-master.md
 ---
 
 <img src="{{ site.baseurl }}common/images/ee-only_large.png">
@@ -15,10 +15,10 @@ github_link: config-guide/multi-master/multi-master.md
 *	<a href="#config-ee-multidb-over">Overview of the split database solution</a>
 *	[Configuration options](#config-ee-multidb-opts)
 *	<a href="#config-ee-multidb-prereq">Prerequisites</a>
-*	<a href="{{ site.gdeurl }}config-guide/multi-master/multi-master_masterdb.html">Automatically configure master databases</a>
-*	[Manually configure master databases]({{ site.gdeurl }}config-guide/multi-master/multi-master_manual.html)
-*	<a href="{{ site.gdeurl }}config-guide/multi-master/multi-master_verify.html">Verify split databases</a>
-*	<a href="{{ site.gdeurl }}config-guide/multi-master/multi-master_slavedb.html">Set up optional database replication</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/multi-master/multi-master_masterdb.html">Automatically configure master databases</a>
+*	[Manually configure master databases]({{ site.gdeurl21 }}config-guide/multi-master/multi-master_manual.html)
+*	<a href="{{ site.gdeurl21 }}config-guide/multi-master/multi-master_verify.html">Verify split databases</a>
+*	<a href="{{ site.gdeurl21 }}config-guide/multi-master/multi-master_slavedb.html">Set up optional database replication</a>
 
 <h2 id="config-ee-multidb-over">Overview of the split database solution</h2>
 *This feature is available in Magento Enterprise Edition (EE) only.*
@@ -64,12 +64,12 @@ This also means you can either:
 *	Configure the split database solution *before* putting Magento into production.
 
 	We recommend configuring split databases as soon as possible after you install the Magento software.
-*	[Manually configure]({{ site.gdeurl }}config-guide/multi-master/multi-master_manual.html) the split database solution.
+*	[Manually configure]({{ site.gdeurl21 }}config-guide/multi-master/multi-master_manual.html) the split database solution.
 
 	You must perform this task if you've already installed components or if Magento is already in production. (*Do not* update a production system; make the updates in a development system and synchronize the changes after you've tested them.)
 
 <div class="bs-callout bs-callout-warning">
-    <p>You must back up the two additional database instances manually. Magento backs up only the main database instance. The <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-backup.html"><code>'magento setup:backup --db</code></a> command and Magento Admin options do not back up the additional tables.</p>
+    <p>You must back up the two additional database instances manually. Magento backs up only the main database instance. The <a href="{{ site.gdeurl21 }}install-gde/install/cli/install-cli-backup.html"><code>'magento setup:backup --db</code></a> command and Magento Admin options do not back up the additional tables.</p>
 </div>
 
 <h2 id="config-ee-multidb-prereq">Prerequisites</h2>
@@ -93,5 +93,5 @@ In this guide, the three master databases are named:
 
 #### Next step
 
-*	If you have not installed components or put Magento into production: <a href="{{ site.gdeurl }}config-guide/multi-master/multi-master_masterdb.html">Automatically configure master databases</a>
+*	If you have not installed components or put Magento into production: <a href="{{ site.gdeurl21 }}config-guide/multi-master/multi-master_masterdb.html">Automatically configure master databases</a>
 *	If Magento is already in production or if you've already installed components: []()

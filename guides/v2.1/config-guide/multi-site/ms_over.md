@@ -6,13 +6,13 @@ title: Multiple websites or stores
 menu_title: Multiple websites or stores
 menu_order: 1
 menu_node: parent
-github_link: config-guide/multi-site/ms_over.md
+github_link21: config-guide/multi-site/ms_over.md
 ---
 
 #### Contents
 *	[Introduction to multiple Magento stores and websites](#ms-over)
-*	[Set up multiple websites with nginx]({{ site.gdeurl }}config-guide/multi-site/ms_nginx.html)
-*	[Set up multiple websites with Apache]({{ site.gdeurl }}config-guide/multi-site/ms_apache.html)
+*	[Set up multiple websites with nginx]({{ site.gdeurl21 }}config-guide/multi-site/ms_nginx.html)
+*	[Set up multiple websites with Apache]({{ site.gdeurl21 }}config-guide/multi-site/ms_apache.html)
 
 ## Introduction to multiple Magento stores and websites {#ms-over}
 One instance of the Magento software can enable you to start multiple websites or store views that use different:
@@ -57,5 +57,5 @@ To create websites and stores:
 5.	When you create your website or store view, make note of its unique identifier because you'll use it later.
 
 #### Related topics
-*	[Set up multiple websites with nginx]({{ site.gdeurl }}config-guide/multi-site/ms_nginx.html)
-*	[Set up multiple websites with Apache]({{ site.gdeurl }}config-guide/multi-site/ms_apache.html)
+*	[Set up multiple websites with nginx]({{ site.gdeurl21 }}config-guide/multi-site/ms_nginx.html)
+*	[Set up multiple websites with Apache]({{ site.gdeurl21 }}config-guide/multi-site/ms_apache.html)

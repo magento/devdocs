@@ -6,14 +6,14 @@ title: Cannot write to the var/generation directory
 menu_title: Cannot write to the var/generation directory
 menu_node: 
 menu_order: 9
-github_link: install-gde/trouble/tshoot_var-gen-perms.md
+github_link21: install-gde/trouble/tshoot_var-gen-perms.md
 ---
 
 
 <h2 id="trouble-install-gen">Cannot write to the <code>var/generation</code> directory</h2>
 
 ### Symptom
-After you successfully install Magento, exceptions display when you try to access the storefront or Admin. (You might have to <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html#config-mode">
+After you successfully install Magento, exceptions display when you try to access the storefront or Admin. (You might have to <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-mode.html#config-mode">
 enable developer mode</a> to see the exceptions.)
 
 Sample exceptions follow:
@@ -39,5 +39,5 @@ Magento recommends different ownership and permissions settings based on if you 
 Typically, you have one user on shared hosting and two users on private hosting (or if you have your own server). There could be exceptions to this, however.
  
 ### Suggestion
-Review our recommendations in [Overview of ownership and permissions]({{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html).
+Review our recommendations in [Overview of ownership and permissions]({{ site.gdeurl21 }}install-gde/prereq/file-sys-perms-over.html).
 

@@ -6,7 +6,7 @@ title: Configure Magento to use Varnish
 menu_title: Configure Magento to use Varnish
 menu_order: 15
 menu_node: 
-github_link: config-guide/varnish/config-varnish-magento.md
+github_link21: config-guide/varnish/config-varnish-magento.md
 ---
 
 <h2 id="config-varnish-magento">Configure Magento to use Varnish</h2>
@@ -67,4 +67,4 @@ To configure Magento to use Varnish:
 		service httpd restart
 
 #### Last step
-<a href="{{ site.gdeurl }}config-guide/varnish/config-varnish-final.html">Final verification</a>
+<a href="{{ site.gdeurl21 }}config-guide/varnish/config-varnish-final.html">Final verification</a>

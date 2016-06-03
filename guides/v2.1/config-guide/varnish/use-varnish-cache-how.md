@@ -6,7 +6,7 @@ title: How Varnish caching works
 menu_title: How Varnish caching works
 menu_order: 105
 menu_node: 
-github_link: config-guide/varnish/use-varnish-cache-how.md
+github_link21: config-guide/varnish/use-varnish-cache-how.md
 ---
 
 #### Contents
@@ -17,9 +17,9 @@ github_link: config-guide/varnish/use-varnish-cache-how.md
 <h2 id="config-varnish-cache-over">Overview of Varnish caching</h2>
 This topic discusses how Varnish caching works with Magento using:
 
-*	<a href="{{ site.mage2000url }}nginx.conf.sample" target="_blank">`nginx.conf.sample`</a> from the Magento 2 GitHub repository
+*	<a href="{{ site.mage2100url }}nginx.conf.sample" target="_blank">`nginx.conf.sample`</a> from the Magento 2 GitHub repository
 *	`.htaccess` distributed configuration file for Apache provided with Magento
-*	`default.vcl` configuration for Varnish generated using the <a href="{{ site.gdeurl }}config-guide/varnish/config-varnish-magento.html">Magento Admin</a>
+*	`default.vcl` configuration for Varnish generated using the <a href="{{ site.gdeurl21 }}config-guide/varnish/config-varnish-magento.html">Magento Admin</a>
 
 <div class="bs-callout bs-callout-info" id="info">
 	<p>This topic covers only the default options in the preceding list. There are many other ways to configure caching in complex scenarios (for example, using a Content Delivery Network); those methods are beyond the scope of this guide.</p>

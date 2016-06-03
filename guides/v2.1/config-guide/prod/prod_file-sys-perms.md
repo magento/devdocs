@@ -6,7 +6,7 @@ title: Magento ownership and permissions in development and production
 menu_title: Magento ownership and permissions in development and production
 menu_node:
 menu_order: 2
-github_link: config-guide/prod/prod_file-sys-perms.md
+github_link21: config-guide/prod/prod_file-sys-perms.md
 ---
 
 #### Contents
@@ -16,9 +16,9 @@ github_link: config-guide/prod/prod_file-sys-perms.md
 *	[Optionally set `magento_umask`](#mage-owner-umask)
 
 ## Overview of development and production file system ownership and permissions {#mage-owner}
-This section discusses how to set up the owner or owners of the Magento file system for a development and production system. Before you continue, review the concepts discussed in [Overview of file system ownership and permissions]({{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html).
+This section discusses how to set up the owner or owners of the Magento file system for a development and production system. Before you continue, review the concepts discussed in [Overview of file system ownership and permissions]({{ site.gdeurl21 }}install-gde/prereq/file-sys-perms-over.html).
 
-This topic focuses on Magento development and production systems. If you're installing Magento, see [Set pre-installation ownership and permissions]({{ site.gdeurl }}install-gde/prereq/file-system-perms.html).
+This topic focuses on Magento development and production systems. If you're installing Magento, see [Set pre-installation ownership and permissions]({{ site.gdeurl21 }}install-gde/prereq/file-system-perms.html).
 
 The sections that follow discuss requirements for one or two Magento file system owners. That means:
 
@@ -86,7 +86,7 @@ To remove writable permissions to files and directories from the web server user
 		find pub/static app/etc var/generation var/di var/view_preprocessed -type f -exec chmod g-w {} \; && find pub/static app/etc var/generation var/di var/view_preprocessed -type d -exec chmod g-w {} \; && chmod o-rwx app/etc/env.php && chmod u+x bin/magento
 
 	<div class="bs-callout bs-callout-info" id="info">
-  		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
+  		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{ site.gdeurl21 }}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
 	</div>
 
 #### Make files and directories writable:
@@ -99,7 +99,7 @@ To make files and directories writable so you can update components and upgrade 
 		chmod -R u+x .
 		
 	<div class="bs-callout bs-callout-info" id="info">
-  		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
+  		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{ site.gdeurl21 }}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
 	</div>
 {% endcollapsible %}
 
@@ -118,7 +118,7 @@ If you use your own server (including a hosting provider's private server setup)
 		<p>The command-line user is also referred to as the <em>Magento file system owner</em>.</p>
 	</div>
 
-Because these users require access to the same files, we recommend you create a [shared group]({{ site.gdeurl }}install-gde/prereq/file-system-perms.html#mage-owner-about-group) to which they both belong.
+Because these users require access to the same files, we recommend you create a [shared group]({{ site.gdeurl21 }}install-gde/prereq/file-system-perms.html#mage-owner-about-group) to which they both belong.
 
 See one of the following sections:
 
@@ -183,7 +183,7 @@ To remove writable permissions to files and directories from the web server user
 		find pub/static app/etc var/generation var/di var/view_preprocessed -type f -exec chmod g-w {} \; && find pub/static app/etc var/generation var/di var/view_preprocessed -type d -exec chmod g-w {} \; && chmod o-rwx app/etc/env.php
 
 	<div class="bs-callout bs-callout-info" id="info">
-  		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
+  		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{ site.gdeurl21 }}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
 	</div>
 
 #### Make files and directories writable:
@@ -202,7 +202,7 @@ To make files and directories writable so you can update components and upgrade 
 		find var vendor lib pub/static pub/media app/etc -type f -exec chmod g+w {} \; && find var vendor lib pub/static pub/media app/etc -type d -exec chmod g+w {} \; && chmod o+rwx app/etc/env.php
 
 	<div class="bs-callout bs-callout-info" id="info">
-  		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
+  		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{ site.gdeurl21 }}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
 	</div>
 {% endcollapsible %}
 
