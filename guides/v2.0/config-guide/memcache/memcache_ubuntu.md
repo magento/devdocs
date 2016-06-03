@@ -84,7 +84,12 @@ Create `cache-test.php` in the web server's docroot with the following contents:
 
 {% highlight php %}
 <?php
-$mem = new Memcache();
+if (class_exists('Memcache')) {
+    $meminstance = new Memcache();
+} else {
+    $meminstance = new Memcached();
+}
+
 $mem->addServer("<memcache host name or ip>", <memcache port>);
 
 $result = $mem->get("test");
