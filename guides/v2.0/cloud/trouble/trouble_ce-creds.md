@@ -140,13 +140,8 @@ To aqf7hrijhl52o@git.us.magento.cloud:aqf7hrijhl52o.git
 #### Verify the deployment
 To verify the deployment was successful, enter one of the URLs displayed under `Environment routes:` in a web browser.
 
-Append `/admin` to the URL and log in to the Magento Admin as follows:
-
-*	Username: `admin`
-*	Password: `admin12`
-
 <div class="bs-callout bs-callout-warning">
-	<p>For security reasons, we strongly recommend you change your Magento Admin URI and administrator password. For step-by-step details, see <a href="{{ site.gdeurl }}cloud/env/environment-tutorial-set-mage-vars.html">Tutorial&mdash;Set Magento environment variables</a>.</p>
+	<p>For security reasons, we strongly recommend you change your Magento Admin URI, administrator user name, and administrator password. For step-by-step details, see <a href="{{ site.gdeurl }}cloud/env/environment-tutorial-set-mage-vars.html">Set Magento environment variables</a>.</p>
 </div>
 
 #### Related topics

@@ -36,6 +36,17 @@ This section discusses how to remove the component from the root `composer.json`
 
 {% endcollapsible %}
 
+#### Clear `var` directories
+To clean up from the previous deployment, you must SSH to the environment and manually clear the contents of the Magento `var` directory.
+
+1.	Enter the following command to SSH to the current environment:
+
+		magento-cloud environment:ssh
+
+2.	Clear the `var` directory:
+
+		rm -rf var/*
+
 #### Remove the component
 
 {% collapsible Click to expand/collapse content %}
