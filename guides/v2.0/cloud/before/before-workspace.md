@@ -44,6 +44,9 @@ To install the Magento Enterprise Cloud Edition CLI:
 		source .bashrc
 
 	If the `source .bashrc` command fails, prepend the absolute file system path to your user home directory to `.bashrc`
+
+	For more information about the user shell profile, see [.bash_profile vs .bashrc](http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html){:target="_blank"}
+
 3.	Enter the operating system-specific command to add the CLI to your system `$PATH`.
 4.	Verify the `magento-cloud list` command is in your path by entering the following command:
 
