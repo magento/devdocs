@@ -109,21 +109,30 @@ The command syntax follows:
 
 Follow the prompts on your screen to complete the task.
 
+### Add a public SSH key to your account
 You can add SSH keys to your account in any of the following ways:
 
-*	Using the Magento Enterprise Cloud Edition CLI
-*	Using the Magento Enterprise Cloud Edition Web Interface when you create a new project
-*	Your account settings
+*	Using the [Magento Enterprise Cloud Edition CLI](#add-key-cli)
+*	Using the [Magento Enterprise Cloud Edition Web Interface](#add-key-web)
 
-### Add a public SSH key to your account
-As the account owner, log in to your Magento Enterprise Cloud Edition account and add a public SSH key. You must add the SSH key for the machine on which you will do the initial `git push` to add code to the project.
+#### Add a key using the CLI {#add-key-cli}
+To add an SSH key using the CLI:
 
-If you don't already have SSH keys on that machine, see [GitHub documentation](https://help.github.com/articles/generating-an-ssh-key){:target="_blank"} to create them.
+1.	If you haven't done so already, log in to the server on which your SSH keys are located.
+2.	Log in to your project:
 
-To add a public SSH key:
+		magento-cloud login
+3.	Add the key:
+
+		magento-cloud ssh-key:add <key value>
+
+#### Add a key using the Web Interface {#add-key-web}
+To add an SSH key using the Web Interface:
 
 1.	Copy your SSH public key to the clipboard.
-2.	Using the link in your welcome e-mail, access your Magento Enterprise Cloud Edition account.
+
+	If you don't already have SSH keys on that machine, see [GitHub documentation](https://help.github.com/articles/generating-an-ssh-key){:target="_blank"} to create them.
+	2.	Using the link in your welcome e-mail, access your Magento Enterprise Cloud Edition account.
 2.	Log in to your project using Bitbucket, GitHub, Google, or a user name and password.
 
 	![Log in to a project]({{ site.baseurl }}common/images/cloud_project-login.png){:width="500px"}
