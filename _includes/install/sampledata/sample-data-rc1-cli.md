@@ -1,46 +1,15 @@
 <div markdown="1">
 
-These instructions apply to you *only* if all of the following are true:
+These instructions apply to Magento Community Edition (CE) and Magento Enterprise Edition (EE) users *only* if all of the following are true:
 
-*	You're currently using a version of Magento *earlier than* 2.0.7
 *	You have installed optional sample data
+*	You're upgrading to Magento RC1 or RC2 from any earlier version using the command line
 
 To upgrade to Magento 2 RC1 with sample data, you must do all of the following:
 
 *	Apply file system permissions and ownership
 *	Require the `2.1.0-rc1` version of the Magento software and the `100.1.0-rc1` version of all sample data modules in `composer.json`
 
-### Apply file system permissions and ownership {#rc1-samp-ownership}
-Before you update Magento and sample data, you must apply current file system permission and ownership as the `root` user. Failure to do so will cause your upgrade to fail.
-
-For more information about file system ownership and permissions since the Magento 2.0.6 release, see [Overview of ownership and permissions]({{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html).
-
-#### One-user ownership and permissions
-If you run the Magento application as one user (which is typical of shared hosting environments), change file system permissions and ownership as follows:
-
-	cd <your Magento install dir>
-	find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
-	find var vendor pub/static pub/media app/etc -type d -exec chmod g+w {} \;
-	chmod u+x bin/magento
-
-To optionally enter all commands on one line, enter the following assuming Magento is installed in `/var/www/html/magento2`:
-
-	cd /var/www/html/magento2 && find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; && find var vendor pub/static pub/media app/etc -type d -exec chmod g+w {} \; && chmod u+x bin/magento
-
-#### Two-user ownership and permissions
-If you run the Magento application with two users, enter the following commands as the `root` user:
-
-	cd <your Magento install dir>
-	find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
-	find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
-	chown -R :<web server group> .
-	chmod u+x bin/magento
-
-To optionally enter all commands on one line, enter the following assuming Magento is installed in `/var/www/html/magento2` and the web server group name is 'apache':
-
-	cd /var/www/html/magento2 && find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; && find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; && chown -R :apache . && chmod u+x bin/magento
-
-### Upgrade the Magento application and sample data
 To upgrade to Magento 2 RC1 sample data using the command line:
 
 1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{ site.gdeurl }}install-gde/prereq/file-system-perms-over.html).
@@ -75,4 +44,4 @@ To upgrade to Magento 2 RC1 sample data using the command line:
 8.	After dependencies have updated, enter the following command from your Magento installation directory:
 
 		php bin/magento setup:upgrade
- 
+
