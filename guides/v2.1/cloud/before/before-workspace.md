@@ -6,7 +6,7 @@ title: Set up a Magento workspace
 menu_title: Set up a Magento workspace
 menu_order: 2
 menu_node: 
-github_link21: cloud/before/before-workspace.md
+github_link: cloud/before/before-workspace.md
 ---
 
 #### Contents
@@ -44,6 +44,9 @@ To install the Magento Enterprise Cloud Edition CLI:
 		source .bashrc
 
 	If the `source .bashrc` command fails, prepend the absolute file system path to your user home directory to `.bashrc`
+
+	For more information about the user shell profile, see [.bash_profile vs .bashrc](http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html){:target="_blank"}
+
 3.	Enter the operating system-specific command to add the CLI to your system `$PATH`.
 4.	Verify the `magento-cloud list` command is in your path by entering the following command:
 
@@ -91,8 +94,8 @@ If you don't have SSH keys, continue with the next section.
 
 If you already have SSH keys, you can skip the next section and continue with any of the following:
 
-*	[Create a sample Magento project from a template]({{ site.gdeurl21 }}cloud/access-acct/first-time-setup_template.html)
-*	[Import an existing Magento project]({{ site.gdeurl21 }}cloud/access-acct/first-time-setup_import.html)
+*	[Create a sample Magento project from a template]({{ site.gdeurl }}cloud/access-acct/first-time-setup_template.html)
+*	[Import an existing Magento project]({{ site.gdeurl }}cloud/access-acct/first-time-setup_import.html)
 
 ### Create a new SSH keypair
 Use the `ssh-keygen` command to create an SSH keypair. `ssh-keygen` is typically installed on Linux systems. 
@@ -109,21 +112,30 @@ The command syntax follows:
 
 Follow the prompts on your screen to complete the task.
 
+### Add a public SSH key to your account
 You can add SSH keys to your account in any of the following ways:
 
-*	Using the Magento Enterprise Cloud Edition CLI
-*	Using the Magento Enterprise Cloud Edition Web Interface when you create a new project
-*	Your account settings
+*	Using the [Magento Enterprise Cloud Edition CLI](#add-key-cli)
+*	Using the [Magento Enterprise Cloud Edition Web Interface](#add-key-web)
 
-### Add a public SSH key to your account
-As the account owner, log in to your Magento Enterprise Cloud Edition account and add a public SSH key. You must add the SSH key for the machine on which you will do the initial `git push` to add code to the project.
+#### Add a key using the CLI {#add-key-cli}
+To add an SSH key using the CLI:
 
-If you don't already have SSH keys on that machine, see [GitHub documentation](https://help.github.com/articles/generating-an-ssh-key){:target="_blank"} to create them.
+1.	If you haven't done so already, log in to the server on which your SSH keys are located.
+2.	Log in to your project:
 
-To add a public SSH key:
+		magento-cloud login
+3.	Add the key:
+
+		magento-cloud ssh-key:add <key value>
+
+#### Add a key using the Web Interface {#add-key-web}
+To add an SSH key using the Web Interface:
 
 1.	Copy your SSH public key to the clipboard.
-2.	Using the link in your welcome e-mail, access your Magento Enterprise Cloud Edition account.
+
+	If you don't already have SSH keys on that machine, see [GitHub documentation](https://help.github.com/articles/generating-an-ssh-key){:target="_blank"} to create them.
+	2.	Using the link in your welcome e-mail, access your Magento Enterprise Cloud Edition account.
 2.	Log in to your project using Bitbucket, GitHub, Google, or a user name and password.
 
 	![Log in to a project]({{ site.baseurl }}common/images/cloud_project-login.png){:width="500px"}
@@ -139,6 +151,6 @@ To add a public SSH key:
 {% endcollapsible %}
 
 #### Next steps
-*	[Create a sample Magento project from a template]({{ site.gdeurl21 }}cloud/access-acct/first-time-setup_template.html)
-*	[Import an existing Magento project]({{ site.gdeurl21 }}cloud/access-acct/first-time-setup_import.html)
+*	[Create a sample Magento project from a template]({{ site.gdeurl }}cloud/access-acct/first-time-setup_template.html)
+*	[Import an existing Magento project]({{ site.gdeurl }}cloud/access-acct/first-time-setup_import.html)
 
