@@ -2,9 +2,12 @@
 .site-header {
    background: #ef672f;
    height: 66px;
-   overflow: hidden;
    position: relative;
    z-index: 50;
+
+   @media (max-width:767px) {
+      overflow: hidden;
+   }
 }
 
 .site-header .logo {
