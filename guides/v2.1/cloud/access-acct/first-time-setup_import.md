@@ -6,7 +6,7 @@ title: Import an existing Magento project
 menu_title: Import an existing Magento project
 menu_order: 5
 menu_node: 
-github_link21: cloud/access-acct/first-time-setup_import.md
+github_link: cloud/access-acct/first-time-setup_import.md
 ---
 
 ## Import an existing Magento project {#cloud-first-empty}
@@ -15,9 +15,11 @@ This section discusses how to can start your Magento Enterprise Cloud Edition pr
 *	If you already have your Magento project in a Git repository, you'll add the Magento Enterprise Cloud Edition repository as a remote and continue working using your existing workflow.
 *	If your Magento project is *not* in a Git repository, you can create one and add Magento to it later.
 
-1.  If you followed the link from your [welcome e-mail]({{ site.gdeurl21 }}cloud/access-acct/first-time-setup.html#cloud-first-email), you might have to log in to your Magento Enterprise Cloud Edition project first.
+To access your project for the first time:
 
-  If necessary, click the **Projects** tab.
+1.  If you followed the link from your [welcome e-mail]({{ site.gdeurl }}cloud/access-acct/first-time-setup.html#cloud-first-email), you might have to log in to your Magento Enterprise Cloud Edition project first.
+
+    If necessary, click the **Projects** tab.
 2.	When prompted, enter a name for your project and click **Next**.
 3.	Click **Import your existing code** as the following figure shows.
 
@@ -63,7 +65,7 @@ We recommend you create these files before you push to your repository; otherwis
 
 More information:
 
-*	[`.magento.app.yaml`]({{ site.gdeurl21 }}cloud/project/project-conf-files_magento-app.html)
-*	[`.routes.yaml`]({{ site.gdeurl21 }}cloud/project/project-conf-files_routes.html)
-*	[`.services.yaml`]({{ site.gdeurl21 }}cloud/project/project-conf-files_services.html)
+*	[`.magento.app.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_magento-app.html)
+*	[`.routes.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_routes.html)
+*	[`.services.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_services.html)
 
