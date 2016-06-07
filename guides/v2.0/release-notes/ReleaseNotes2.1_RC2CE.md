@@ -1,5 +1,3 @@
-
-
 ---
 layout: default
 group: release-notes
