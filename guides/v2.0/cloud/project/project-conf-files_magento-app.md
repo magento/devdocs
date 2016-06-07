@@ -405,10 +405,10 @@ schedule.
 
 `crons` supports the following:
 
-*	`spec`: The cron specification. Magento requires cron to run every minute; our spec is `*/1 * * * *`.
+*	`spec`: The cron specification. Regardless of the setting, cron runs every 5 minutes.
 *	`cmd`: The command to execute.
 
-The Magento cron job follows:
+A sample Magento cron job follows:
 
 	crons:
     cronrun:
