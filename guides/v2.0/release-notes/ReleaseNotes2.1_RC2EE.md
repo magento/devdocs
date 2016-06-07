@@ -91,14 +91,14 @@ Magento 2.1 RC2 includes the following known issue:
 
 <!--- 51066 --> * Magento now returns available services in WSDL schema.  Previously, you could not process SOAP requests as expected. 
 
-<!--- 51440 --> * Fatal errors no longer occur when running CLI commands after compilation in some regression environments. (51440) 
+<!--- 51440 --> * Fatal errors no longer occur when running CLI commands after compilation in some regression environments. 
 
 <!--- 51407 --> * You can now save a product after applying an update for it. 
 
 
 <!--- 50768 --> * Newly created categories now appear as expected on the Navigation menu.
 
-<!--- 50755 --> * Reflected XSS (50755) 
+<!--- 50755 --> * Reflected XSS  
 
 <!--- 53829 --> * Magento no longer references empty targets in other targets.
 
@@ -181,7 +181,7 @@ Magento 2.1 RC2 includes the following known issue:
 
 <!--- 52340 --> * The `getList` method documentation has been enhanced. 
 
-<!--- 52000 --> * Error messages associated with `cron` processes are now more helpful. <a href="https://github.com/magento/magento2/issues/3189" target="_blank"> (GITHUB-3189)</a>(52000)
+<!--- 52000 --> * Error messages associated with `cron` processes are now more helpful. <a href="https://github.com/magento/magento2/issues/3189" target="_blank"> (GITHUB-3189)</a>
 
 <!--- 50898 --> * Magento now displays an appropriate  message when you add less than the required minimum items in your cart. 
 
