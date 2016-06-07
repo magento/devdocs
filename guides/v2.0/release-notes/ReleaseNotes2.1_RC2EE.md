@@ -4,7 +4,7 @@ group: release-notes
 subgroup: Release Notes
 title: Magento EE 2.1 Release Candidate 2 (RC2) Release Notes 
 menu_title: Magento EE 2.1 Release Candidate 2 (RC2) Release Notes 
-menu_order: 12
+menu_order: 17
 github_link: release-notes/ReleaseNotes2.1_RC2EE.md
 ---
 
@@ -46,7 +46,7 @@ Magento Enterprise Edition 2.1 includes several new and exciting features:
 
 
 <h3>Known issues</h3>
-Magento 2.1 RC2 includes the following known issues. Workarounds are noted when available. 
+Magento 2.1 RC2 includes the following known issue:
 
 
 <!--- 53536 -->Impossible to update Magento 2.0.x to Magento 2.1.x with Sample Data. 
@@ -54,343 +54,161 @@ Magento 2.1 RC2 includes the following known issues. Workarounds are noted when 
 
 
 <h3>Fixed issues</h3>
-
 <!--- P0 issues -->
 
-<!--- 51068 --> * Admin User sessions no longer expire prematurely in installations running Redis for session storage. Previously, you were directed back to the login page after logging in to the Admin panel, waiting a short period time (less than the Admin Session Lifetime value), and trying to navigate to the Dashboard. 
+<h4>Solr search</h4>
+<!--- 50915 --> * Solr search no longer produces a fatal error when you use it to perform an advanced search on products by Size. (50915) 
+
+<!--- 50701 --> * (50701) Solr search results now displays all products as expected in search results. 
+
+
+
+<h4>Checkout</h4>
+<!--- 53193 --> * Several address-related issues associated with Checkout have been resolved. (53193) 
+
+
+<!--- 53217 --> * Customers with an existing saved address can now add a new address during checkout. (53217)  
+
+<!--- 53464 --> * Clicking the Reorder button now loads products as expected when persistent shopping cart is enabled. (53464) 
+
+<!--- 53049 --> * The Go to Checkout button now works as expected. Previously, when you clicked the Go to Checkout button, Magento would display a login pop-up window. (53049) 
+
+<!--- 53307 --> * Checkout now works as expected when purchasing products during a persisted session. (53307)
+
+
+
+<h4>Bundle products</h4>
+
+<!--- 51194 --> * The Add Products to Option button now works as expected when you create a new update for a Bundle product. (51194)
+
+<!--- 52832 --> * Quotation marks can now be included in Bundle product names. (GITHUB-4414) (52832)
+
+
+
+
+<h4>Miscellaneous</h4>
+<!--- 51068 --> * Admin User sessions no longer expire prematurely in installations running Redis for session storage. Previously, you were directed back to the login page after logging in to the Admin panel, waiting a short period time (less than the Admin Session Lifetime value), and trying to navigate to the Dashboard. (51068)
 
 <!--- 51066 --> * Magento now returns available services in WSDL schema.  Previously, you could not process SOAP requests as expected. (51066)
 
-<!--- 51280 --> * Magento no longer duplicates a campaign each time you edit it. Previously, Magento would duplicate a campaign record whenever you selected it from its existing Scheduled Update. EE (51280) 
-
-<!--- 51443 --> * Product update is now applied as expected.  (51443) EE
-
-<!--- 51440 --> * Fatal errors no longer occur while running CLI commands after compilation on some regression environments. (51440) 
+<!--- 51440 --> * Fatal errors no longer occur when running CLI commands after compilation in some regression environments. (51440) 
 
 <!--- 51407 --> * You can now save a product after applying an update for it. (51407) 
 
-<!--- 51378 --> * Message serialization now complies with AMPQ specifications. (51378) 
 
-<!--- 50768 --> *  Newly created categories now appear as expected on the Navigation menu. (50768)
+<!--- 50768 --> * Newly created categories now appear as expected on the Navigation menu. (50768)
 
 <!--- 50755 --> * Reflected XSS (50755) 
 
-
-<!--- 53829 --> * Magento no longer references empty targets in other targets.(53829)
-
+<!--- 53829 --> * Magento no longer references empty targets in other targets. (53829)
 
 
-<!--- P1 issues -->
+<!--- 50987 --> * You can now run all integration tests in developer mode. (50987) 
 
-
-
-
-<!--- 50987 --> * You can now run all integration tests in  developer mode. (50987) 
-
-<!--- 50915 --> * Solr no longer produces a fatal error when you use it to perform an advanced search by Size. (50915) 
-
-
-<!--- 51278 --> * Magento no longer creates a new single update when you edit an  existing update. (51278) EE
-
-<!--- 51252 --> * You can now successfully save an update created for a category with a changed name. (51252) 
 
 <!--- 51238 --> * Category pages now display swatches of configurable products based on color swatch attribute. (51238) 
 
 
-<!--- 51231 --> * (51231) Invalid date when save special price date in future. Step To Reproduce:
-Create product with all required fields
-Go to Advanced Price
-Fill Special Price
-Set Special Price From and Special Price To to today date
-Save Product
-Open Product
-Go to Advanced Price
-Set Special Price From and Special Price To to tomorrow date
-Save Product
-Actual Result:
-Get error Invalid date
-Expected Result:
-Product saved success
+<!--- 51231 --> * Magento now successfully saves future special dates in the Advanced Price page. (51231)
 
-<!--- 51194 --> * (51194) In new update for Bundle product: click on Add Products to Option does not open modal window. Steps to reproduce:
-1. Create bundle product with some options
-2. Start to create update for this product
-3. Try to add options by clicking on 'Add Products to Option'
 
-(/) Expects result:
-- Modal is opened;
 
-(x) Actual result:
-- Modal is not opened. require('uiRegistry').get('catalogstaging_update_form.catalogstaging_update_form.bundle_data.modal') in console returns undefined.
 
-<!--- 51413 --> * (51413) Remove usages of DummyAttributeLoader. 
-
-<!--- 51751 --> * (51751)Unable to filter by date Product Reviews report. Log in to Admin
-Go to Reports > By Products
-Fill any data in "From" and "To" for Last Review
-Click Search button
- Following exception appears "Exception #0 (Magento\Framework\Exception\LocalizedException): Invalid attribute name: last_created"
- No exceptions appeared, reviews can be filtered by date
-
+<!--- 51751 --> * You can now filter entries in the Product Reviews report by date. (51751)
 
 <!--- 51731 --> * Catalog Price Rules are now applied as expected, depending upon the time frame  stated in the Price Rule. (51731) 
 
 
-<!--- 51519 --> * Category permissions set for a category are now applied as expected. (51519)  EE
+
+<!--- 51519 --> * The permissions set for a category are now applied as expected. (51519) 
 
 
-<!--- 51684 --> * (51684) When you run a command file with timestamp in name being created in var/generation. When you run a cli command it checks write access to var/generation folder by creating file under var/generation timestamp used as a name. This file not being removed.
 
-
-<!--- 51642 --> * After you install and enable a module, the System->Extensions->Integrations page lists the new Integration generated by the module. (GITHUB-4023) (51642) 
+<!--- 51642 --> * After you install and enable a module, the System > Extensions > Integrations page lists the new Integration generated by the module. (GITHUB-4023) (51642) 
 
 
 <!--- 51596 --> * Phrases with escaped slash characters are now translated. Previously, if a phrase were wrapped with single quotes, Magento would not display it correctly. (51596) 
 
-<!--- 50701 --> * (50701) Products are absent on storefront if used SOLR search adapter. 2. Create product
-3. Open Category in frontend
-Actual result: product is absent in category
- After run full reindex products appears on frontend EE
 
-<!--- 50898 --> * (50898) [Add Product to Cart with Minimum Qty Allowed Set] No error message when qty is less than minimum. Create new simple product and set minimum qty allowed equals 3
-Steps To Reproduce:
-go to product page on storefront
-set qty field to 1
-push "add to cart" button
-Expected Result:
-"The minimum you may purchase is 3." message appears
-Actual Result:
-"You added Simple Product to your shopping cart." message appears and there are 3 products in shopping car
-
-<!--- 52030 --> * (52030) Downloadable product show as out of stock in category page. Create downloadable product and assign it to category
-2. Open Category on frontend
- Actual result: Downloadable product show as Out Of Stock
+<!--- 52030 --> * Downloadable products are no longer shown as out of stock on the Category page. (52030) 
 
 
-<!--- 52000 --> * (52000) [Github][PR]impossible to see what is wrong with cron - unhelpful error message #3189. 
-
-<!--- 52438 --> * (52438) Admin Create Product scenario throwing error on Downloadable product
-
-<!--- 52117 --> * (52117) Customer group is not changed for logged in customer. Category cannot be opened as it is denied by permissions. Customer group change is applied for logged in customer instantly. For example, Create new customer for group General
-Enable category permissions in config (Stores -> Configuration -> Catalog -> Category Permissions)
-Create some category
-Set permissions DENY ALL for customer group Wholesale
+<!--- 52117 --> * Changes to Customer group are now immediately applied to logged-in customers.   (52117) 
 
 
-<!--- 52078 --> * (52078) Impossible to save product with custom options. Add all types of customizable options to simple product
-Click Save
-Actual
-Nothing happens, product is not saved, no error message
+<!--- 52078 --> *  You can now successfully save products with custom options. (52078)
 
 
-<!--- 52073 --> * (52073) Cannot run 'Admin Edit Product - Duration' scenario due to StackOverflowError. INTERNAL ONLY?
-
-<!--- 53352 --> * (53352) Create regenerate only if var folder exists. 
-
-<!--- 51181 --> * (51181) [GITHUB] Configurable product's last attribute with price zero results in error #3912. the product is not shown. The system.log displays the error message: main.CRITICAL: Configurable product "flowers" do not have sub-products [] []
-Expected Result
- the product is shown with a zero (0) price. The user can configure the product, and the correct price results.
+<!--- 51181 --> *  You can now configure a product whose last attribute has a price of zero, and the correct total price results. (GITHUB-3912) (51181)
 
 
-<!--- 52340 --> * (52340) Gift Message Data for Sales Order not available for retrieval using API. acceptable solution for now is to update documentation of ALL getList operations in the service layer. We need to explicitly specify there that getList operation will return only essential fields, for receiving detailed information, get method should be used. 
+<!--- 50257 --> *  Optional dropdown product attributes can now be left blank. (50257)
 
 
-<!--- 53220 --> * (53220) [Staging] Unable to create temporary update from permanent one. create simple product A
-add scheduled update A-A for this product with start date tomorrow (no end date)
-save update
-go to Content > Staging/Dashboard
-edit A-A update: put end date - day after tomorrow, save update. Update is displayed as temporary update on dashboard
-wait one minute (until cron works)
-refresh Staging Dashboard
- Actual result
-A-A update is displayed now as permanent (without end date)
-click to edit A-A update. Error appears: This update not exists
- Expected result
-It is possible to add end date to existing permanent update and it works correctly
+<!--- 51008 --> *  Magento now successfully migrates data when Google Analytics's "Content Experiments" is enabled. (51008)
 
-<!--- 50257 --> * (50257) Unable to unset optional dropdown product attribute. If an attribute is optional it should be possible for it to be blank. This is the case if an attribute option has never been selected. However, after selecting any of the options the admin user is unable to clear their selection, only select another option.
-Steps to reproduce:
-1. Add several attribute options to "manufacturer" attribute 
-2. Add "manufacturer" attribute to default attribute set 
-3. Create new product, select one of the options for manufacturer, save 
-4. Edit product
-Expected result:
-Admin user will see manufacturer dropdown with selected option and can select the "blank" value at the top of the dropdown to unset the manufacturer attribute.
-Actual result:
-Admin user will see manufacturer dropdown with selected option and does not find a "blank" value at the top of the dropdown. Therefore it is not possible to unset the manufacturer attribute.
+<!--- 53468 --> *  Cart now updates and lists rates for custom shipping methods as expected when you change the shipping address. (GITHUB-4679) (53468)
 
-<!--- 51008 --> * (51008) Unable to process data upgrade when Google Analytics's "Content Experiments" enabled. Install old version of Magento (2.0.2, for example)
-Go to Stores -> Configuration -> Sales -> Google API
-Enable Google Analytics
-Set "Enable Content Experiments" to "Yes"
-Save Config
-Checkout code to actual version of Magento
-Clean caches and run php bin/magento setup:upgrade (or php bin/magento setup:db-data:upgrade to go directly to data upgrade step)
- Expected result:
-Data migrated successfully
- Actual result:
-Exception was thrown: "Wrong request parameters"
+<!--- 53131 --> * You can now view configurable products when using sample data. (53131)
 
-<!--- 53468 --> * (53468) [Github] Cart custom shipping methods not updating when address changed #4679. Install Magento from develop branch.
-Enable custom shipping methods added through extension.
-Disable all built in shipping methods (i.e. UPS).
-Add an item to your cart from the store front end.
-Go to checkout.
-Shipping methods show "Sorry, no quotes are available for this order at this time"
-Enter an address.
-Expected result
-The shipping methods should update and list rates for the custom shipping methods.
-Actual result
-Shipping methods still shows "Sorry, no quotes are available for this order at this time"
-This was fixed for built in methods such as UPS, but does not work for custom shipping method
-
-<!--- 53131 --> * (53131) Cannot view configurable product when using sample data. 
-
-<!--- 51611 --> * (51611)Layered navigation include list of all product attributes. Install Magento with Sample Data
-2. Open Frontend
-3. Go to Men->Bottoms->Pants
-Actual Result: LN contain attributes without result and attributes that not relevant product attribute s
-
-<!--- 53193 --> * (53193) Selected address issue on Checkout. My billing and shipping address are the same
-
-<!--- 53217 --> * (53217) Error occurred during "save_in_address_book" processing" error during checkout with not saved address. (customer with exisiting saved address in account ttries to add a new address while ordering)
-
-<!--- 53464 --> * (53464) Reorder not load products. Open order
-Click reorder button
-Expected result:
- Block products has product
-Actual result:
- Products empty
- 
- When persistent shopping cart is enabled
+<!--- 51611 --> * Layered navigation now includes a list of all product attributes. (51611)
 
 
-<!--- 53307 --> * (53307) Checkout is broken when purchasing products on persisted session. Got to storefront as customer (check Remember me checkbox)
-2. Add product to cart
-3. Sign out
-4. Not you not logged in, but your persistence session is still active
-5. Add product to cart
-6. Try to Proceed to checkout through mini cart or shopping cart
-Actual result:
- Empty checkout page is displayed
- Order summary block is not working on cart page
-Expected result:
- Checkout can be performed
- Order summary block works
+<!--- 53397 --> * The `collectRates()` method now obtains the full address details for a registered customer. (53397)
 
-<!--- 53397 --> * (53397) \Magento\Quote\Model\ShippingMethodManagement::estimateByAddressId set not full address details. The collectRates() method can't obtain full address details for registered customer, when customer opens Checkout page with exists shipping address at first.
-
-<!--- 53049 --> * (53049) Unexpected login popup after clicking "Go to Checkout" button. Go to Storefront
-Add simple product to the shopping cart
-Open shopping cart page
-Click Go to Checkout button before Summary Block is fully loaded
- Checkout page is opened
- Checkout method popup is appeared
-
-<!--- 53398 --> * (53398) [Staging] CatalogRuleStaging autotests still fail. EE OMIT??
-
-<!--- 52963 --> * (52963) There is no ability to create future update for Downloadable product with links and file content. Go to Admin, Products > Catalog
-Open Downloadable product from preconditions
-Click Schedule New Update
-Create new Update for some future date
-Save
- Actual Result:
-Error message: "error: : Provided Downloadable link is not related to given product."
-Update is not saved
- Expected Result: Update is saved without any errors
-
-<!--- 53463 --> * (53463) Customer Addresses empty after order create. Steps to reproduce:
-Open Sales-> Order. Click Create New Order
-Select customer
-Select website2 store (even customer was registered in default website)
-Select product and place order
-Expected result:
- Order created
-Open Customers-> All Customers
-Expected result:
- customer with same email was created for website2
-Open customer from default website
-Click Addresses tab
-Expected result:
- Addresses exists
-Actuall result:
- Addresses disappears
-
-<!--- 52959 --> * (52959) [GITHUB] Add logo folder to list of allowed resources #4078. This change fixes an issue where the logo folder isn't an allowed resource! If you're using my S3 file storage extension or even just Magento's built-in database file then you'll find that you'll get a 404 error even though the file exists!
-
-<!--- 53119 --> * (53119) "Force Sign-In" is not clickable. Nothing happens when "Force Sign-In" button is clicked in the admin panel on customer edit page. See expected behavior in related testcase.
-
-<!--- 53019 --> * (53019) [Performance]: Unexpected calls are made if view product on storefront. Register customer on storefront
-Open category
-Open product
-Observe network calls in browser console
-Actual:
- Unexpected calls
-
-<!--- 53025 --> * (53025) Duplicating cms/page entity when cancel CMS Page "Shedule update" and save cms page. Go to existent page
-Create any scheduled update for that page
-Save current Cms Page
-Edit the same CMS Page and click on the same CMS Page Schedule Update
-Actual behaviour:
-
-Got error: 
-https://yadi.sk/i/tbmRjtPsrq3HY
-Item (Magento\Cms\Model\Page) with the same ID "9" already exists.
-Expected behaviour:
-
-Editable Cms Page Schedule Update without data
- 
-<!--- 53025 --> * (53536) Update does not exist when changing update End Time. Create entity (cms page, product, e.g.)
-Create schedule update for this entity without End Time
-Steps
-Go to created schedule update and add End Time.
-Click Save
-Expected Result
-
-Popup with update closed and success message appear
-Actual Result:
-
-Message: "Update (or link, if we are using downloadable product) does not exists" (EE)
-
-<!--- P2 GITHUB -->
+<!--- 53463 --> * The Customer Address tab is populated as expected after you create a new order. Previously, Magento did not list addresses on this tab when you'd create a new order. (53463) 
 
 
-<!--- 51903 --> * There is no ability to reorder product with required custom option(type = file) #4058 Magento 2 CE is installed from public GitHub
-Simple product with required custom option type=file is created
-Customer is created
-Steps to reproduce
-Go to Storefront as Customer from preconditions
-Open Simple product page
-Upload some file, e.g. image
-Add the product to cart
-Proceed to Checkout and place order
- Order successfully placed
-Go to My Account > My Orders
-Select last order and click "Reorder"
- Actual result
-File from for custom option is not presented/assigned
-Shopping cart is opened with error messages:
+<!--- 52959 --> * Logo folders have been added to the list of allowed resources. (GITHUB-4078) (52959)
 
-(GITHUB-4058)
+<!--- 53119 --> * The Force Sign-in button now works as expected. (53119) 
 
-<!--- 52832 --> * Bundle Products - error with quotation mark in product option name. While migrating products from Magento to Magento 2 we've encountered an error related to Bundle Products.
-Steps to reproduce
-Go to Magento admin panel.
-Crate a bundle product with quotation mark in it's name.
-Go to frontend and check if the quotation marks appears in product options dropdown, on bundle product page.
-Expected result
-Quotation marks will stay unchanged for bundle options names. 
-Example: Test Product 11" x 15"
-Screenshot:
-Actual result
-Quotation marks are being translated into HTML Entity & quot; 
-Example: Test Product 11 & quot; x 14 & quot;
-(GITHUB-4414) (52832)
+<!--- 53019 --> * Magento no longer makes unexpected calls when you view a product in the storefront.  (53019)
 
-<!--- 53362 --> * Gift Message information is now present as expected in the extension_attributes section when you request this list by Web API.  Previously, if you placed order with a Gift Message, and then performed WebAPI request to get the list of orders, Gift Message information would be absent in the extension_attributes section.(GITHUB-4309) (53362)
+
+<!--- 51903 --> * You can now reorder a product with a required custom option (type = file). Previously, if you tried to reorder a product under these conditions, you would encounter an error when opening the shopping cart.
+(GITHUB-4058) (51903)
+
+
+<!--- 53362 --> * Gift Message information is now present as expected in the `extension_attributes` when you request this list by Web API.  Previously, if you placed an order with a Gift Message, and then performed a Web API request to get the list of orders, Gift Message information would be absent in the `extension_attributes`.(GITHUB-4309) (53362)
 
 
 <!--- 52782 --> * The `getPassword()` and `getPasswordConfirm()` methods now return the `password` and `passwordconfirm` parameters as strings. (GITHUB-4355)(52782)
+
+
+
+<h4>Messages and documentation</h4>
+
+<!--- 52340 --> * The `getList` method documentation has been enhanced. (52340) 
+
+<!--- 52000 --> * Error messages associated with `cron` processes are now more helpful. (GITHUB-3189) (52000)
+
+<!--- 50898 --> * Magento now displays an appropriate  message when you add less than the required minimum items in your cart. (50898) 
+
+<!--- 51378 --> * Message serialization now complies with AMPQ specifications. (51378) 
+
+
+
+<h4>Staging</h4>
+
+<!--- 53536 --> * You can now successfully change an entity's Schedule Update End Time from none to a particular time. Previously, attempting to change an End Time from none to a specific time would result in an error. (Sample message: "Update (or link, if we are using downloadable product) does not exists".)  (53536) 
+
+
+<!--- 53025 --> * You can now edit the Schedule Update of a CMS page as expected. Previously, Magento would duplicate the page when you would click on the CMS Page Schedule Update button after editing it. (53025) 
+
+
+<!--- 53220 --> * You can now successfully add an end date to an existing permanent update. (53220)
+
+<!--- 51280 --> * Magento no longer duplicates a campaign each time you edit it. Previously, Magento would duplicate a campaign record whenever you selected it from its existing Scheduled Update.  (51280) 
+
+<!--- 51443 --> * Product update is now applied as expected in Catalog Staging.  (51443) 
+
+<!--- 51252 --> * You can now successfully save an update that was created for a category with a changed name. (51252) 
+
+
+<!--- 51278 --> * Magento no longer creates a new single update when you edit an existing update. (51278) 
+
+<!--- 52963 --> * You can now create and successfully save a future update for a downloadable product associated with links and file content. (52963)
 
 
 

@@ -4,7 +4,7 @@ group: release-notes
 subgroup: Release Notes
 title: Magento CE 2.1 Release Candidate 2 (RC2) Release Notes 
 menu_title: Magento CE 2.1 Release Candidate 2 (RC2) Release Notes 
-menu_order: 14
+menu_order: 16
 github_link: release-notes/ReleaseNotes2.1_RC2CE.md
 ---
 
@@ -50,7 +50,7 @@ Magento Community Edition 2.1, Release Candidate 2 includes the following known 
 
 <!--- P0 issues -->
 
-<!--- 51068 --> * Admin User sessions no longer expire prematurely in installations running Redis for session storage. Previously, you were directed back to the login page after logging in to the Admin panel, waiting a short period time (less than the Admin Session Lifetime value), and trying to navigate to the Dashboard. 
+<!--- 51068 --> * Admin User sessions no longer expire prematurely in installations running Redis for session storage. Previously, you were directed back to the login page after logging in to the Admin panel, waiting a short period time (less than the Admin Session Lifetime value), and trying to navigate to the Dashboard. (51068)
 
 <!--- 51066 --> * Magento now returns available services in WSDL schema.  Previously, you could not process SOAP requests as expected. (51066)
 
@@ -105,7 +105,7 @@ Magento Community Edition 2.1, Release Candidate 2 includes the following known 
 
 <!--- 52000 --> * Error messages associated with `cron` processes are now more helpful. (GITHUB-3189) (52000)
 
-<!--- 52117 --> * Changes to Customer group are now immediately applied to logged-in customers.  applied for logged in customer instantly. (52117) 
+<!--- 52117 --> * Changes to Customer group are now immediately applied to logged-in customers. (52117) 
 
 
 <!--- 52078 --> *  You can now successfully save products with custom options. (52078)
