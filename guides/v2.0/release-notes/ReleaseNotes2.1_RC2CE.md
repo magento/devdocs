@@ -35,10 +35,13 @@ Magento Community Edition 2.1 includes several new and exciting features:
 
 
 <h3>Known issues</h3>
-Magento Community Edition 2.1, Release Candidate 2 includes the following known issue: 
+Magento Community Edition 2.1, Release Candidate 2 includes the following known issues: 
 
 
-<!--- 53536 -->Impossible to update Magento 2.0.x to Magento 2.1.x with Sample Data. 
+<!--- 53169 --> * Magento does not apply the Cart Price or Catalog Price sales rules accordingly to the store  website's timezone, as expected.
+
+
+<!--- 53536 -->You cannot update from Magento 2.0.x to Magento 2.1.x with Sample Data. 
 
 
 
@@ -69,6 +72,8 @@ Magento Community Edition 2.1, Release Candidate 2 includes the following known 
 
 
 <h4>Miscellaneous</h4>
+<!--- 50755 --> * Reflected cross-site scripting (XSS) can no longer occur through the Authorizenet module’s redirect data.  
+
 <!--- 51068 --> * Admin User sessions no longer expire prematurely in installations running Redis for session storage. Previously, you were directed back to the login page after logging in to the Admin panel, waiting a short period time (less than the Admin Session Lifetime value), and trying to navigate to the Dashboard.
 
 <!--- 51066 --> * Magento now returns available services in WSDL schema.  Previously, you could not process SOAP requests as expected. 
@@ -80,7 +85,6 @@ Magento Community Edition 2.1, Release Candidate 2 includes the following known 
 
 <!--- 50768 --> * Newly created categories now appear as expected on the Navigation menu.
 
-<!--- 50755 --> * Reflected XSS  
 
 <!--- 53829 --> * Magento no longer references empty targets in other targets.
 
