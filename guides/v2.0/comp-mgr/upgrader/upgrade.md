@@ -35,11 +35,11 @@ The following error might display:
 	
 If the error displays, perform the following tasks:
 
-1.	Reset [file system ownership and permissions]({{ site.gdeurl }}install-gde/prereq/file-system-perms.html) as a user with `root` privileges.
+1.	Reset [file system ownership and permissions]({{ site.gdeurl }}install-gde/prereq/file-system-perms.html).
 
-	(If you use shared hosting and don't have `root` privileges, do it as your hosting user.)
+	*	If you run the Magento application with one user account, enter the commands as that user.
+	*	If you run the Magento application with two user accounts, you must enter the commands as `root`.
+
 2.	Clear the following directories and try to access your storefront again:
 
-		<your Magento install dir>/var/cache 
-		<your Magento install dir>/var/page_cache 
-		<your Magento install dir>/var/generation 
+		rm -rf var/cache/* var/page_cache/* var/generation/*

@@ -17,20 +17,16 @@ To upgrade to Magento 2 RC1 or RC2 sample data using the command line:
 4.	Enter one of the following commands to upgrade the Magento software version:
 
 		composer require <product> <version> --no-update
+		composer require <sample data module>:<version> --no-update
 
 	*	Magento CE:
 
 			composer require magento/product-community-edition 2.1.0-rc1 --no-update
+
+			composer require magento/module-bundle-sample-data:100.1.0-rc1 magento/module-widget-sample-data:100.1.0-rc1 magento/module-theme-sample-data:100.1.0-rc1 magento/module-catalog-sample-data:100.1.0-rc1 magento/module-customer-sample-data:100.1.0-rc1 magento/module-cms-sample-data:100.1.0-rc1  magento/module-catalog-rule-sample-data:100.1.0-rc1 magento/module-sales-rule-sample-data:100.1.0-rc1 magento/module-review-sample-data:100.1.0-rc1 magento/module-tax-sample-data:100.1.0-rc1 magento/module-sales-sample-data:100.1.0-rc1 magento/module-grouped-product-sample-data:100.1.0-rc1 magento/module-downloadable-sample-data:100.1.0-rc1 magento/module-msrp-sample-data:100.1.0-rc1 magento/module-configurable-sample-data:100.1.0-rc1 magento/module-product-links-sample-data:100.1.0-rc1 magento/module-wishlist-sample-data:100.1.0-rc1 magento/module-swatches-sample-data:100.1.0-rc1 magento/sample-data-media:100.1.0-rc1 magento/module-offline-shipping-sample-data:100.1.0-rc1 --no-update 
 	*	Magento EE:
 
 			composer require magento/product-enterprise-edition 2.1.0-rc1 --no-update
-4.	Enter one of the following commands to update `composer.json` to specify the correct version of all RC1 sample data modules:
-
-	*	Magento CE:
-
-			composer require magento/module-bundle-sample-data:100.1.0-rc1 magento/module-widget-sample-data:100.1.0-rc1 magento/module-theme-sample-data:100.1.0-rc1 magento/module-catalog-sample-data:100.1.0-rc1 magento/module-customer-sample-data:100.1.0-rc1 magento/module-cms-sample-data:100.1.0-rc1  magento/module-catalog-rule-sample-data:100.1.0-rc1 magento/module-sales-rule-sample-data:100.1.0-rc1 magento/module-review-sample-data:100.1.0-rc1 magento/module-tax-sample-data:100.1.0-rc1 magento/module-sales-sample-data:100.1.0-rc1 magento/module-grouped-product-sample-data:100.1.0-rc1 magento/module-downloadable-sample-data:100.1.0-rc1 magento/module-msrp-sample-data:100.1.0-rc1 magento/module-configurable-sample-data:100.1.0-rc1 magento/module-product-links-sample-data:100.1.0-rc1 magento/module-wishlist-sample-data:100.1.0-rc1 magento/module-swatches-sample-data:100.1.0-rc1 magento/sample-data-media:100.1.0-rc1 magento/module-offline-shipping-sample-data:100.1.0-rc1 --no-update 
-
-	*	Magento EE:
 
 			composer require magento/module-bundle-sample-data:100.1.0-rc1 magento/module-widget-sample-data:100.1.0-rc1 magento/module-theme-sample-data:100.1.0-rc1 magento/module-catalog-sample-data:100.1.0-rc1 magento/module-customer-sample-data:100.1.0-rc1 magento/module-cms-sample-data:100.1.0-rc1  magento/module-catalog-rule-sample-data:100.1.0-rc1 magento/module-sales-rule-sample-data:100.1.0-rc1 magento/module-review-sample-data:100.1.0-rc1 magento/module-tax-sample-data:100.1.0-rc1 magento/module-sales-sample-data:100.1.0-rc1 magento/module-grouped-product-sample-data:100.1.0-rc1 magento/module-downloadable-sample-data:100.1.0-rc1 magento/module-msrp-sample-data:100.1.0-rc1 magento/module-configurable-sample-data:100.1.0-rc1 magento/module-product-links-sample-data:100.1.0-rc1 magento/module-wishlist-sample-data:100.1.0-rc1 magento/module-swatches-sample-data:100.1.0-rc1 magento/sample-data-media:100.1.0-rc1 magento/module-offline-shipping-sample-data:100.1.0-rc1 magento/module-gift-card-sample-data:100.1.0-rc1 magento/module-customer-balance-sample-data:100.1.0-rc1 magento/module-target-rule-sample-data:100.1.0-rc1 magento/module-gift-registry-sample-data:100.1.0-rc1 magento/module-multiple-wishlist-sample-data:100.1.0-rc1 --no-update
 5.	Update dependencies:
@@ -45,7 +41,7 @@ To upgrade to Magento 2 RC1 or RC2 sample data using the command line:
 8.	Manually clear the following `var` directories:
 
 		rm -rf var/cache/* var/page_cache/* var/generation/*
-8.	Enter the following command from your Magento installation directory:
+8.	As the Magento file system owner, enter the following command from your Magento installation directory:
 
 		php bin/magento setup:upgrade
 
