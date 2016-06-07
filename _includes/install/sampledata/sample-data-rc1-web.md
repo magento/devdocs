@@ -27,7 +27,7 @@ To upgrade to Magento 2 EE RC1 or RC2 with sample data using the Setup Wizard:
 
 	*	If you run the Magento application with one user account, run the commands as that user.
 	*	If you run the Magento application with two user accounts, you must enter the commands as `root`.
-6.	Clear the following directories:
+6.	As the Magento file system owner, clear the following directories:
 
 		rm -rf var/cache/* var/page_cache/* var/generation/*
 6.	Complete your upgrade as discussed in [Start System Upgrade]({{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html).
