@@ -27,7 +27,7 @@ We welcome your participation in this process! Enterprise Edition customers can 
 This Release Candidate is available from `repo.magento.com` if you have an Enterprise Edition license or GitHub  if you have previously signed an agreement to access Magento Enterprise Edition 2.0 beta software on GitHub.
 
 
-Backward-incompatible changes are documented in <a href="http://devdocs.magento.com/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
+Backward-incompatible changes are documented in <a href="{{ site.gdeurl }}release-notes/backward-incompatible-changes-2.1.html" target="_blank">Magento 2.1 Backward Incompatible Changes</a>.
 
 <h3>Highlights</h3>
 
@@ -45,7 +45,7 @@ Magento Enterprise Edition 2.1 includes several new and exciting features:
  
 
 
-<h3>Known issues</h3>
+<h3>Known issue</h3>
 Magento 2.1 RC2 includes the following known issue:
 
 
@@ -57,158 +57,158 @@ Magento 2.1 RC2 includes the following known issue:
 <!--- P0 issues -->
 
 <h4>Solr search</h4>
-<!--- 50915 --> * Solr search no longer produces a fatal error when you use it to perform an advanced search on products by Size. (50915) 
+<!--- 50915 --> * Solr search no longer produces a fatal error when you use it to perform an advanced search on products by Size. 
 
-<!--- 50701 --> * (50701) Solr search results now displays all products as expected in search results. 
+<!--- 50701 --> * Solr search results now displays all products as expected in search results. 
 
 
 
 <h4>Checkout</h4>
-<!--- 53193 --> * Several address-related issues associated with Checkout have been resolved. (53193) 
+<!--- 53193 --> * Several address-related issues associated with Checkout have been resolved. 
 
 
-<!--- 53217 --> * Customers with an existing saved address can now add a new address during checkout. (53217)  
+<!--- 53217 --> * Customers with an existing saved address can now add a new address during checkout.  
 
-<!--- 53464 --> * Clicking the Reorder button now loads products as expected when persistent shopping cart is enabled. (53464) 
+<!--- 53464 --> * Clicking the Reorder button now loads products as expected when persistent shopping cart is enabled.
 
-<!--- 53049 --> * The Go to Checkout button now works as expected. Previously, when you clicked the Go to Checkout button, Magento would display a login pop-up window. (53049) 
+<!--- 53049 --> * The Go to Checkout button now works as expected. Previously, when you clicked the Go to Checkout button, Magento would display a login pop-up window. 
 
-<!--- 53307 --> * Checkout now works as expected when purchasing products during a persisted session. (53307)
+<!--- 53307 --> * Checkout now works as expected when purchasing products during a persisted session.
 
 
 
 <h4>Bundle products</h4>
 
-<!--- 51194 --> * The Add Products to Option button now works as expected when you create a new update for a Bundle product. (51194)
+<!--- 51194 --> * The Add Products to Option button now works as expected when you create a new update for a Bundle product.
 
-<!--- 52832 --> * Quotation marks can now be included in Bundle product names. (GITHUB-4414) (52832)
+<!--- 52832 --> * Quotation marks can now be included in Bundle product names. <a href="https://github.com/magento/magento2/issues/4414" target="_blank"> (GITHUB-4414)</a>
 
 
 
 
 <h4>Miscellaneous</h4>
-<!--- 51068 --> * Admin User sessions no longer expire prematurely in installations running Redis for session storage. Previously, you were directed back to the login page after logging in to the Admin panel, waiting a short period time (less than the Admin Session Lifetime value), and trying to navigate to the Dashboard. (51068)
+<!--- 51068 --> * Admin User sessions no longer expire prematurely in installations running Redis for session storage. Previously, you were directed back to the login page after logging in to the Admin panel, waiting a short period time (less than the Admin Session Lifetime value), and trying to navigate to the Dashboard.
 
-<!--- 51066 --> * Magento now returns available services in WSDL schema.  Previously, you could not process SOAP requests as expected. (51066)
+<!--- 51066 --> * Magento now returns available services in WSDL schema.  Previously, you could not process SOAP requests as expected. 
 
 <!--- 51440 --> * Fatal errors no longer occur when running CLI commands after compilation in some regression environments. (51440) 
 
-<!--- 51407 --> * You can now save a product after applying an update for it. (51407) 
+<!--- 51407 --> * You can now save a product after applying an update for it. 
 
 
-<!--- 50768 --> * Newly created categories now appear as expected on the Navigation menu. (50768)
+<!--- 50768 --> * Newly created categories now appear as expected on the Navigation menu.
 
 <!--- 50755 --> * Reflected XSS (50755) 
 
-<!--- 53829 --> * Magento no longer references empty targets in other targets. (53829)
+<!--- 53829 --> * Magento no longer references empty targets in other targets.
 
 
-<!--- 50987 --> * You can now run all integration tests in developer mode. (50987) 
+<!--- 50987 --> * You can now run all integration tests in developer mode. 
 
 
-<!--- 51238 --> * Category pages now display swatches of configurable products based on color swatch attribute. (51238) 
+<!--- 51238 --> * Category pages now display swatches of configurable products based on color swatch attribute. 
 
 
-<!--- 51231 --> * Magento now successfully saves future special dates in the Advanced Price page. (51231)
-
-
-
-
-<!--- 51751 --> * You can now filter entries in the Product Reviews report by date. (51751)
-
-<!--- 51731 --> * Catalog Price Rules are now applied as expected, depending upon the time frame  stated in the Price Rule. (51731) 
+<!--- 51231 --> * Magento now successfully saves future special dates in the Advanced Price page.
 
 
 
-<!--- 51519 --> * The permissions set for a category are now applied as expected. (51519) 
+
+<!--- 51751 --> * You can now filter entries in the Product Reviews report by date. 
+
+<!--- 51731 --> * Catalog Price Rules are now applied as expected, depending upon the time frame  stated in the Price Rule.  
 
 
 
-<!--- 51642 --> * After you install and enable a module, the System > Extensions > Integrations page lists the new Integration generated by the module. (GITHUB-4023) (51642) 
+<!--- 51519 --> * The permissions set for a category are now applied as expected.
 
 
-<!--- 51596 --> * Phrases with escaped slash characters are now translated. Previously, if a phrase were wrapped with single quotes, Magento would not display it correctly. (51596) 
+
+<!--- 51642 --> * After you install and enable a module, the System > Extensions > Integrations page lists the new Integration generated by the module. <a href="https://github.com/magento/magento2/issues/4023" target="_blank"> (GITHUB-4023)</a>
 
 
-<!--- 52030 --> * Downloadable products are no longer shown as out of stock on the Category page. (52030) 
+<!--- 51596 --> * Phrases with escaped slash characters are now translated. Previously, if a phrase were wrapped with single quotes, Magento would not display it correctly.
 
 
-<!--- 52117 --> * Changes to Customer group are now immediately applied to logged-in customers.   (52117) 
+<!--- 52030 --> * Downloadable products are no longer shown as out of stock on the Category page. 
 
 
-<!--- 52078 --> *  You can now successfully save products with custom options. (52078)
+<!--- 52117 --> * Changes to Customer group are now immediately applied to logged-in customers. 
 
 
-<!--- 51181 --> *  You can now configure a product whose last attribute has a price of zero, and the correct total price results. (GITHUB-3912) (51181)
+<!--- 52078 --> *  You can now successfully save products with custom options.
 
 
-<!--- 50257 --> *  Optional dropdown product attributes can now be left blank. (50257)
+<!--- 51181 --> *  You can now configure a product whose last attribute has a price of zero, and the correct total price results. <a href="https://github.com/magento/magento2/issues/3912" target="_blank"> (GITHUB-3912)</a> 
 
 
-<!--- 51008 --> *  Magento now successfully migrates data when Google Analytics's "Content Experiments" is enabled. (51008)
-
-<!--- 53468 --> *  Cart now updates and lists rates for custom shipping methods as expected when you change the shipping address. (GITHUB-4679) (53468)
-
-<!--- 53131 --> * You can now view configurable products when using sample data. (53131)
-
-<!--- 51611 --> * Layered navigation now includes a list of all product attributes. (51611)
+<!--- 50257 --> *  Optional dropdown product attributes can now be left blank.
 
 
-<!--- 53397 --> * The `collectRates()` method now obtains the full address details for a registered customer. (53397)
+<!--- 51008 --> *  Magento now successfully migrates data when Google Analytics's "Content Experiments" is enabled. 
 
-<!--- 53463 --> * The Customer Address tab is populated as expected after you create a new order. Previously, Magento did not list addresses on this tab when you'd create a new order. (53463) 
+<!--- 53468 --> *  Cart now updates and lists rates for custom shipping methods as expected when you change the shipping address. <a href="https://github.com/magento/magento2/issues/4679" target="_blank"> (GITHUB-4679)</a> 
+
+<!--- 53131 --> * You can now view configurable products when using sample data. 
+
+<!--- 51611 --> * Layered navigation now includes a list of all product attributes.
 
 
-<!--- 52959 --> * Logo folders have been added to the list of allowed resources. (GITHUB-4078) (52959)
+<!--- 53397 --> * The `collectRates()` method now obtains the full address details for a registered customer.
 
-<!--- 53119 --> * The Force Sign-in button now works as expected. (53119) 
+<!--- 53463 --> * The Customer Address tab is populated as expected after you create a new order. Previously, Magento did not list addresses on this tab when you'd create a new order. 
 
-<!--- 53019 --> * Magento no longer makes unexpected calls when you view a product in the storefront.  (53019)
+
+<!--- 52959 --> * Logo folders have been added to the list of allowed resources. <a href="https://github.com/magento/magento2/issues/4078" target="_blank"> (GITHUB-4078)</a> 
+
+<!--- 53119 --> * The Force Sign-in button now works as expected. 
+
+<!--- 53019 --> * Magento no longer makes unexpected calls when you view a product in the storefront. 
 
 
 <!--- 51903 --> * You can now reorder a product with a required custom option (type = file). Previously, if you tried to reorder a product under these conditions, you would encounter an error when opening the shopping cart.
-(GITHUB-4058) (51903)
+<a href="https://github.com/magento/magento2/issues/4058" target="_blank"> (GITHUB-4058)</a> 
 
 
-<!--- 53362 --> * Gift Message information is now present as expected in the `extension_attributes` when you request this list by Web API.  Previously, if you placed an order with a Gift Message, and then performed a Web API request to get the list of orders, Gift Message information would be absent in the `extension_attributes`.(GITHUB-4309) (53362)
+<!--- 53362 --> * Gift Message information is now present as expected in the `extension_attributes` when you request this list by Web API.  Previously, if you placed an order with a Gift Message, and then performed a Web API request to get the list of orders, Gift Message information would be absent in the `extension_attributes`. <a href="https://github.com/magento/magento2/issues/4039" target="_blank"> (GITHUB-4309)</a> 
 
 
-<!--- 52782 --> * The `getPassword()` and `getPasswordConfirm()` methods now return the `password` and `passwordconfirm` parameters as strings. (GITHUB-4355)(52782)
+<!--- 52782 --> * The `getPassword()` and `getPasswordConfirm()` methods now return the `password` and `passwordconfirm` parameters as strings. <a href="https://github.com/magento/magento2/issues/4355" target="_blank"> (GITHUB-4355)</a>
 
 
 
 <h4>Messages and documentation</h4>
 
-<!--- 52340 --> * The `getList` method documentation has been enhanced. (52340) 
+<!--- 52340 --> * The `getList` method documentation has been enhanced. 
 
-<!--- 52000 --> * Error messages associated with `cron` processes are now more helpful. (GITHUB-3189) (52000)
+<!--- 52000 --> * Error messages associated with `cron` processes are now more helpful. <a href="https://github.com/magento/magento2/issues/3189" target="_blank"> (GITHUB-3189)</a>(52000)
 
-<!--- 50898 --> * Magento now displays an appropriate  message when you add less than the required minimum items in your cart. (50898) 
+<!--- 50898 --> * Magento now displays an appropriate  message when you add less than the required minimum items in your cart. 
 
-<!--- 51378 --> * Message serialization now complies with AMPQ specifications. (51378) 
+<!--- 51378 --> * Message serialization now complies with AMPQ specifications. 
 
 
 
 <h4>Staging</h4>
 
-<!--- 53536 --> * You can now successfully change an entity's Schedule Update End Time from none to a particular time. Previously, attempting to change an End Time from none to a specific time would result in an error. (Sample message: "Update (or link, if we are using downloadable product) does not exists".)  (53536) 
+<!--- 53536 --> * You can now successfully change an entity's Schedule Update End Time from none to a particular time. Previously, attempting to change an End Time from none to a specific time would result in an error. (Sample message: "Update (or link, if we are using downloadable product) does not exists".) 
 
 
-<!--- 53025 --> * You can now edit the Schedule Update of a CMS page as expected. Previously, Magento would duplicate the page when you would click on the CMS Page Schedule Update button after editing it. (53025) 
+<!--- 53025 --> * You can now edit the Schedule Update of a CMS page as expected. Previously, Magento would duplicate the page when you would click on the CMS Page Schedule Update button after editing it. 
 
 
-<!--- 53220 --> * You can now successfully add an end date to an existing permanent update. (53220)
+<!--- 53220 --> * You can now successfully add an end date to an existing permanent update.
 
-<!--- 51280 --> * Magento no longer duplicates a campaign each time you edit it. Previously, Magento would duplicate a campaign record whenever you selected it from its existing Scheduled Update.  (51280) 
+<!--- 51280 --> * Magento no longer duplicates a campaign each time you edit it. Previously, Magento would duplicate a campaign record whenever you selected it from its existing Scheduled Update. 
 
-<!--- 51443 --> * Product update is now applied as expected in Catalog Staging.  (51443) 
+<!--- 51443 --> * Product update is now applied as expected in Catalog Staging. 
 
-<!--- 51252 --> * You can now successfully save an update that was created for a category with a changed name. (51252) 
+<!--- 51252 --> * You can now successfully save an update that was created for a category with a changed name. 
 
 
-<!--- 51278 --> * Magento no longer creates a new single update when you edit an existing update. (51278) 
+<!--- 51278 --> * Magento no longer creates a new single update when you edit an existing update.  
 
-<!--- 52963 --> * You can now create and successfully save a future update for a downloadable product associated with links and file content. (52963)
+<!--- 52963 --> * You can now create and successfully save a future update for a downloadable product associated with links and file content. 
 
 
 
