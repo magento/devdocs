@@ -27,6 +27,33 @@ Events can be dispatched using the [`Magento\Framework\Event\Manager`](https://g
 
 To dispatch an event, call the `dispatch` function of the event manager class and provide it with the name of the event you want to dispatch along with an array of data you wish to provide to observers.
 
+The following example shows you how to dispatch an event with and without an array of data.
+
+{% highlight php startinline=true %}
+
+namespace MyCompany\MyModule;
+
+class MyClass{
+  /**
+  * @var EventManager
+  */
+  private $eventManager;
+
+  __construct(EventManager $eventManager){
+    $this->eventManager = $eventManager;
+  }
+
+  public function something(){
+    $eventData = null;
+    // Code...
+    $this->eventManager->dispatch('my_module_event_before');
+    // More code that sets $eventData...
+    $this->eventManager->dispatch('my_module_event_after',['myEventData'=>$eventData]);
+  }
+}
+
+{% endhighlight  %}
+
 #### Creating new events
 
 Custom events can be dispatched by simply passing in a unique event name to the event manager when you call the `dispatch` function. Your unique event name is referenced in your module's `events.xml` file where you specify which observers will react to that event.
@@ -51,13 +78,34 @@ class MyObserver implements ObserverInterface
 {
   public function __construct()
   {
-    //Observer initialization code goes here
+    //Observer initialization code...
     //You can use dependency injection to get any class this observer may need.
   }
 
   public function execute(\Magento\Framework\Event\Observer $observer)
   {
-    //Observer execution code goes here
+    //Observer execution code...
+  }
+}
+{% endhighlight %}
+
+One of the more powerful feature of observers is that they are able to use parameters passed into the event when it was dispatched. Below is an example of an observer obtaining data passed in when the event was dispatched.
+
+{% highlight php startinline=true %}
+namespace MyCompany\MyModule\Observer;
+
+class AnotherObserver implements ObserverInterface
+{
+  public function __construct()
+  {
+    //Observer initialization code...
+    //You can use dependency injection to get any class this observer may need.
+  }
+
+  public function execute(\Magento\Framework\Event\Observer $observer)
+  {
+    $myEventData = $observer->getData('myEventData');
+    //Additional observer execution code...
   }
 }
 {% endhighlight %}
