@@ -78,10 +78,6 @@ The following entities have new forms and design:
 <p><strong>Important information:</strong> Customizations that were performed with the old forms of the listed entities will be lost.</p>
 </div>
 
-More info about forms customization in 2.1:
-
-* [Customize product creation form]({{site.gdeurl21}}howdoi/customize_product.html)
-
 ### Database Schema changes
 
 #### Staging (EE Only)
