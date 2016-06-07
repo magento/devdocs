@@ -41,7 +41,7 @@ Magento Community Edition 2.1, Release Candidate 2 includes the following known 
 <!--- 53169 --> * Magento does not apply the Cart Price or Catalog Price sales rules accordingly to the store  website's timezone, as expected.
 
 
-<!--- 53536 -->You cannot update from Magento 2.0.x to Magento 2.1.x with Sample Data. 
+<!--- 53536 -->* You cannot update from Magento 2.0.x to Magento 2.1.x with Sample Data. 
 
 
 
