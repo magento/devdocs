@@ -4,18 +4,25 @@
 layout: default
 group: release-notes
 subgroup: Release Notes
-title: Magento CE 2.1 Release Candidate 2 Release Notes 
-menu_title: Magento CE 2.1 Release Candidate 2 Release Notes 
+title: Magento CE 2.1 Release Candidate 2 (RC2) Release Notes 
+menu_title: Magento CE 2.1 Release Candidate 2 (RC2) Release Notes 
 menu_order: 14
-github_link: release-notes/ReleaseNotes2.1RC2CE.md
+github_link: release-notes/ReleaseNotes2.1_RC2CE.md
 ---
 
-<h2>Magento Community Edition 2.1, Release Candidate 2</h2>
-We are pleased to present Magento Community Edition 2.1, Release Candidate 2. This release candidate build is not intended for production purposes. Instead, it provides a preview of the new features and fixes that Magento 2.1 GA will contain.
+<h2>Magento Community Edition 2.1 Release Candidate 2 (RC2)</h2>
+We are pleased to present Magento 2.1 Release Candidate 1 (RC1). This release candidate build is not intended for production purposes. Instead, it provides the development community opportunities to: 
 
-This candidate release also offers the development community an opportunity to contribute to the Magento 2.1 code base by identifying unresolved issues. We welcome your participation in this process on GitHub! For more information on how to contribute on GitHub, see <a href="{{ site.gdeurl }}contributor-guide/contributing.html" target="_blank">Code contributions</a>. 
+* preview the new features and fixes that Magento 2.1 GA will contain
 
-This Release Candidate is available only on GitHub and `www.repo.magento.com`. 
+* contribute to the Magento 2.1 code base by identifying unresolved issues
+
+* test your 2.0 extensions against  2.1 
+
+We welcome your participation in this process!  Please open any Community Edition issues or Pull Requests on the Community Edition GitHub repository. For more information on how to provide feedback and contribute on GitHub, see <a href="{{ site.gdeurl }}contributor-guide/contributing.html" target="_blank">Code contributions</a>.
+
+Backward-incompatible changes are documented in <a href="http://devdocs.magento.com/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
+ 
 
 <h3>Highlights</h3>
 

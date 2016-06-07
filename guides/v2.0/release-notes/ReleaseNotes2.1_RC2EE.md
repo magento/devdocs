@@ -1,33 +1,34 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 ---
 layout: default
 group: release-notes
 subgroup: Release Notes
-title: Magento EE 2.1 Release Candidate 2 Release Notes 
-menu_title: Magento EE 2.1 Release Candidate 2 Release Notes 
+title: Magento EE 2.1 Release Candidate 2 (RC2) Release Notes 
+menu_title: Magento EE 2.1 Release Candidate 2 (RC2) Release Notes 
 menu_order: 12
-github_link: release-notes/ReleaseNotes2.1RC2EE.md
+github_link: release-notes/ReleaseNotes2.1_RC2EE.md
 ---
 
-<h2>Magento Enterprise Edition 2.1, Release Candidate 2</h2>
-We are pleased to present Magento 2.1 RC2. This release candidate build is not intended for production purposes. Instead, it provides a preview of the new features and fixes that Magento 2.1 GA will contain.
+<h2>Magento Enterprise Edition 2.1 Release Candidate 2 (RC2)</h2>
+We are pleased to present Magento 2.1 Release Candidate 2 (RC2). This release candidate build is not intended for production purposes. Instead, it provides the development community opportunities to: 
 
-This candidate release also offers the development community an opportunity to contribute to the Magento 2.1 code base by identifying unresolved issues. We welcome your participation in this process on GitHub! For more information on how to contribute on GitHub, see <a href="{{ site.gdeurl }}contributor-guide/contributing.html" target="_blank">Code contributions</a>. 
+* preview the new features and fixes that Magento 2.1 GA will contain
 
-This Release Candidate is available only on GitHub and `www.repo.magento.com`. 
+* contribute to the Magento 2.1 code base by identifying unresolved issues
+
+* test your 2.0 extensions against  2.1 
+
+We welcome your participation in this process! Enterprise Edition customers can provide feedback in these two ways: 
+
+* Enterprise Edition GitHub repository.  For more information on how to provide feedback and contribute on GitHub, see <a href="{{ site.gdeurl }}contributor-guide/contributing.html" target="_blank">Code contributions</a>. 
+
+* Email to DL-Magento-2.1-Feedback@magento.com.
+
+
+This Release Candidate is available from `repo.magento.com` if you have an Enterprise Edition license or GitHub  if you have previously signed an agreement to access Magento Enterprise Edition 2.0 beta software on GitHub.
+
+
+Backward-incompatible changes are documented in <a href="http://devdocs.magento.com/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
 
 <h3>Highlights</h3>
 
@@ -403,13 +404,9 @@ We do not support PHP 5.5.x.
 
 <h3>Installation instructions</h3>
 
-You can install Magento Enterprise Edition 2.1 Release Candidate 2 (RC1) using Composer. 
+You can install Magento Enterprise Edition 2.1 Release Candidate 2 (RC2) using Composer. 
 
 This Release Candidate is for test purposes only. Do not install it in a production environment.
-
-<div class="bs-callout bs-callout-warning">
-    <p>We did not publish sample data for RC2. Do not attempt to install RC2 sample data or upgrade to RC2 if you already have sample data (you can, however, perform a fresh RC2 installation in a different location in your web server's docroot).</p>
-</div>
 
 
 #####<b>Install using Composer</b>#####
@@ -451,12 +448,12 @@ To upgrade to a Release Candidate using the command line:
 		composer require <product> 2.1.0-rc2 --no-update
 		composer update
 
-	To upgrade to Magento CE 2.1 RC1, enter:
+	To upgrade to Magento CE 2.1 RC2, enter:
 
 		composer require magento/product-community-edition 2.1.0-rc2 --no-update
 		composer update
 
-	To upgrade to Magento EE 2.1 RC1, enter:
+	To upgrade to Magento EE 2.1 RC2, enter:
 
 		composer require magento/product-enterprise-edition 2.1.0-rc2 --no-update
 		composer update
@@ -468,6 +465,7 @@ To upgrade to a Release Candidate using the command line:
 5.	Enter the following command to enable the cache:
 
 		php bin/magento cache:enable
+
 <h3>Migration toolkits</h3>
 The <a href="{{ site.gdeurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ site.gdeurl }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
