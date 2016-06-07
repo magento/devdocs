@@ -89,7 +89,7 @@ The Staging modules introduce database schema changes for the following entities
 
 *	Products
 *	Categories
-*	Cms Pages and Blocks
+*	CMS Pages and Blocks
 * Cart and Catalog Price Rules
 
 These changes are applied only if Staging modules are installed. For extension modules (e.g. DownloadableProduct, ConfigurableProduct, Bundle etc.), relations between main entity tables were changed which may affect code that manages SQL queries directly.
@@ -104,8 +104,8 @@ In the 2.1 release, we introduce support for the persistence  of data interfaces
 
 * Product
 * Category
-* Cms Page
-* Cms Block
+* CMS Page
+* CMS Block
 * Sales Rule
 * Catalog Rule
 
