@@ -13,6 +13,9 @@ The Magento 2.0.x Release Notes have moved. Click one of the following links to 
 
 Magento Community Edition (CE) Release Notes
 
+*  <a href="{{ site.gdeurl }}release-notes/ReleaseNotes2.1_RC2CE.html" target="_blank">Version 2.1 Release Candidate (RC2)</a>
+
+
 *  <a href="{{ site.gdeurl }}release-notes/ReleaseNotes2.1_RC1CE.html" target="_blank">Version 2.1 Release Candidate (RC1)</a>
 
 
@@ -36,6 +39,8 @@ Magento Community Edition (CE) Release Notes
 
 
 Magento Enterprise Edition (EE) Release Notes
+
+*  <a href="{{ site.gdeurl }}release-notes/ReleaseNotes2.1_RC2EE.html" target="_blank">Version 2.1 Release Candidate (RC2)</a>
 
 *  <a href="{{ site.gdeurl }}release-notes/ReleaseNotes2.1_RC1EE.html" target="_blank">Version 2.1 Release Candidate (RC1)</a>
 
