@@ -5,7 +5,7 @@ subgroup: 15_UseUpgrade
 title: Start System Upgrade
 menu_title: Start System Upgrade
 menu_node: 
-menu_order: 2
+menu_order: 3
 github_link: comp-mgr/upgrader/upgrade-start.md
 ---
 
