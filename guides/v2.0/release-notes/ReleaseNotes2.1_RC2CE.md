@@ -177,7 +177,7 @@ Magento Community Edition 2.1, Release Candidate 2 includes the following known 
 
 <h3>Technology stack</h3>
 
-Our technology stack is built on PHP and MySQL. Magento 2.1 RC2 supports PHP 5.6 and 7.0.2, and MySQL 5.6.
+Our technology stack is built on PHP and MySQL. Magento 2.1 RC2 supports PHP 5.6 and 7.0.2–7.0.6 except for 7.0.5, and MySQL 5.6.
 
 We do not support PHP 5.5.x. 
 
