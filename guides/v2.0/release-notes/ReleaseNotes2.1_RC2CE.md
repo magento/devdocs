@@ -256,11 +256,6 @@ Developers who contribute to the CE codebase can <a href="{{ site.gdeurl }}comp-
 
 ## Upgrade to an RC with sample data {#upgrade-rc-samp}
 
-<div class="bs-callout bs-callout-warning">
-    <p>No additional tasks are required to upgrade to a Magento CE RC using the Setup Wizard. See <a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">Start System Upgrade</a>.</p>
-</div>
-
-
 {% include install/sampledata/sample-data-rc1-cli.md %}
 
 ## Migration toolkits
