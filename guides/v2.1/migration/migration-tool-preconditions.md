@@ -6,7 +6,7 @@ title: Preconditions
 menu_title: Preconditions
 menu_node: 
 menu_order: 1
-github_link: migration/migration-tool-preconditions.md
+github_link21: migration/migration-tool-preconditions.md
 ---
 
 ##Preconditions

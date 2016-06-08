@@ -5,7 +5,7 @@ subgroup: 02_Extension-Coding
 title: Working with the Architecture
 menu_title: Working with the Architecture
 menu_order: 2
-github_link: ext-best-practices/extension-coding/working-with-arch-bp.md
+github_link21: ext-best-practices/extension-coding/working-with-arch-bp.md
 
 ---
 
@@ -39,10 +39,10 @@ In addition to understanding fundamental programming designs/concepts, you are e
 
   For example:
 
-  - Instead of creating custom validators from scratch, implement the [`\Magento\Framework\Validator\ValidatorInterface`]({{site.mage2000url}}lib/internal/Magento/Framework/Validator/ValidatorInterface.php){:target="_blank"}.
+  - Instead of creating custom validators from scratch, implement the [`\Magento\Framework\Validator\ValidatorInterface`]({{site.mage2100url}}lib/internal/Magento/Framework/Validator/ValidatorInterface.php){:target="_blank"}.
   - Instantiating a database connection can be expensive and unneccessary. Magento provides resource models for performing SQL commands. (See [Persistence Layer]({{site.gdeurl21}}architecture/archi_perspectives/persist_layer.html))
   - Consider using Magento framework conventions instead of low-level or PHP functionality.
-  - Use the  [`Magento\Framework\Data\Collection`]({{site.mage2000url}}lib/internal/Magento/Framework/Data/Collection.php){:target="_blank"} class to retrieve a collection of filtered objects instead of directly querying the database.
+  - Use the  [`Magento\Framework\Data\Collection`]({{site.mage2100url}}lib/internal/Magento/Framework/Data/Collection.php){:target="_blank"} class to retrieve a collection of filtered objects instead of directly querying the database.
 
 ### Use dependency injection
   Direct class instantiation is not recommended because the class can be rewritten. If the class is created directly, any rewrites will not be applied and it breaks Magento's class rewrite capability. We encourage you to become familiar with how we use [dependency injection]({{site.gdeurl21}}extension-dev-guide/depend-inj.html) to get an instance of a class.

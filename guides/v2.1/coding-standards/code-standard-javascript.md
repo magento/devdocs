@@ -111,7 +111,7 @@ Use string concatenation:
       'Because Java was a competitor of C++ and aimed at professional programmers, ' +
       'Netscape also wanted a lightweight interpreted language that would complement Java ' +
       'by appealing to nonprofessional programmers, like Microsoft&#8217;s VB.[9] (see JavaScript and Java)';
-    
+
 ### Parentheses {#fedg_js-coding_codestyle_parens}
 Use sparingly and in general only where required by the syntax and semantics.
 
@@ -330,7 +330,7 @@ The following example is <b>correct</b>. Always use the more readable array lite
 <div class="bs-callout bs-callout-info" id="info">
    <p>The following example is <b>incorrect</b> because array constructors are error-prone due to their arguments.
    Because of this, if someone changes the code to pass one argument instead of two arguments, the array might not have the expected length.</p>
-   
+
    <script src="https://gist.github.com/xcomSteveJohnson/d7c6db5a7d0947e72b48.js"></script>
 </div>
 Object constructors don't have the same problems, but for readability and consistency object literals should be used.
@@ -403,7 +403,7 @@ The following code samples are equivalent:
 </table>
 <div class="bs-callout bs-callout-info" id="info2">
    <p>Here are some examples of non-obvious Boolean expressions results:</p>
-   
+
    <pre>Boolean('0') == true
 '0' != true</pre>
    <pre>0 != null
@@ -420,7 +420,7 @@ undefined != false</pre>
    <pre>Boolean({}) == true
 {} != true
 {} != false</pre>
-   
+
 
 </div>
 
@@ -708,7 +708,3 @@ Using only one var per scope (function) promotes readability.
     var foo = "bar,"
       num = 1,
       arr = [1, 2, 3];
-
-
-
-

@@ -6,7 +6,7 @@ title: Migrate using the data migration tool
 menu_title: Migrate using data migration tool
 menu_node: parent
 menu_order: 4
-github_link: migration/migration-migrate.md
+github_link21: migration/migration-migrate.md
 ---
 
 #### Contents

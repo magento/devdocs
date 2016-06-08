@@ -6,7 +6,7 @@ title: About component file structure
 menu_title: About component file structure
 menu_order: 10
 menu_node:
-github_link: extension-dev-guide/prepare/prepare_file-str.md
+github_link21: extension-dev-guide/prepare/prepare_file-str.md
 ---
 
 ##{{page.menu_title}}

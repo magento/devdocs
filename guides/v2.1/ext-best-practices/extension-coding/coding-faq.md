@@ -5,7 +5,7 @@ subgroup: 02_Extension-Coding
 title: Coding FAQ
 menu_title: Coding FAQ
 menu_order: 1000
-github_link: ext-best-practices/extension-coding/coding-faq.md
+github_link21: ext-best-practices/extension-coding/coding-faq.md
 ---
 ##{{page.menu_title}}
 {:.no_toc}

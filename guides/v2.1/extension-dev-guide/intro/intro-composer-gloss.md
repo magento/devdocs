@@ -6,7 +6,7 @@ title: Glossary of common terms
 menu_title: Glossary of common terms
 menu_order: 5
 menu_node:
-github_link: extension-dev-guide/intro/intro-composer-gloss.md
+github_link21: extension-dev-guide/intro/intro-composer-gloss.md
 ---
 
 ##{{page.menu_title}}

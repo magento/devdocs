@@ -6,7 +6,7 @@ title: Introduction to Composer
 menu_title: Introduction to Composer
 menu_order: 2
 menu_node:
-github_link: extension-dev-guide/intro/intro-composer.md
+github_link21: extension-dev-guide/intro/intro-composer.md
 ---
 
 {% include install/composer-overview.html %}
@@ -18,9 +18,9 @@ The key to developing any Magento component is its <a href="https://getcomposer.
 
 	*	If you installed Magento 2 using a metapackage, look at `<your Magento install dir>/composer.json`.
 	*	If you haven't installed Magento 2 yet, you can get a general idea by looking at an <a href="http://packages.magento.com/_packages/magento_product-community-edition-2.0.0-rc.zip" target="_blank">old metapackage</a> for Community Edition from `packages.magento.com`
-*	<a href="{{ site.mage2000url }}app/code/Magento/Customer/composer.json" target="_blank">Customer module</a>
-*	<a href="{{ site.mage2000url }}app/design/frontend/Magento/luma/composer.json" target="_blank">Luma theme</a>
-*	<a href="{{ site.mage2000url }}app/i18n/magento/en_us/composer.json" target="_blank">en_us language package</a>
+*	<a href="{{site.mage2100url}}app/code/Magento/Customer/composer.json" target="_blank">Customer module</a>
+*	<a href="{{site.mage2100url}}app/design/frontend/Magento/luma/composer.json" target="_blank">Luma theme</a>
+*	<a href="{{site.mage2100url}}app/i18n/magento/en_us/composer.json" target="_blank">en_us language package</a>
 
 ## For more information
 For more information about Composer, see the <a href="https://getcomposer.org/doc/00-intro.md" target="_blank">Composer documentation</a>.
