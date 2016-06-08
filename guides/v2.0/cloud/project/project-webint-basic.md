@@ -107,7 +107,7 @@ To configure your project:
 {% endcollapsible %}
 
 ## Get started configuring an environment {#project-conf-env}
-Configuring an enviornment means:
+Configuring an environment means:
 
 *	Environment settings
 *	Configuring environment variables
