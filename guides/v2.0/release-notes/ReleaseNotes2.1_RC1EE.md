@@ -99,13 +99,6 @@ This release includes fixes for the following GitHub issues:
 
 <!--- 40320 --> * Attribute 'setup_version' is missing for module error when defined as optional. <a href="https://github.com/magento/magento2/issues/1493" target="_blank">(GITHUB-1493)</a>
 
-
-
-
-
-
-
-
 <h3>Technology stack</h3>
 
 Our technology stack is built on PHP and MySQL. Magento 2.1 Release Candidate 1 (RC1) supports PHP 5.6, 7.0.2&mdash;7.0.4, and 7.0.6. It supports MySQL 5.6.
@@ -117,7 +110,13 @@ You can install Magento Enterprise Edition 2.1 Release Candidate 1 (RC1) using C
 
 This Release Candidate is for test purposes only. Do not install it in a production environment.
 
-### Install using Composer {#install-rc-composer}
+See one of the following sections:
+
+*	[Install using Composer](#install-rc-composer)
+*	[Upgrade existing installations](#upgrade-rc-nosamp)
+*	[Upgrade to an RC with sample data](#upgrade-rc-samp)
+
+## Install using Composer {#install-rc-composer}
 This Release Candidate is available from `repo.magento.com`. Before installing this Release Candidate using Composer,  familiarize yourself with these  <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run:
 
 		composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.1.0-rc2 <installation directory name>
@@ -142,15 +141,13 @@ Developers who contribute to the CE codebase can <a href="{{ site.gdeurl }}comp-
 2.	Follow the instructions to pull the updates from the repository and update using Composer.
 
 ### Upgrade using the command line
-To upgrade to a Release Candidate using the command line:
+
+{% collapsible To upgrade to a Release Candidate using the command line: %}
 
 1.	Log in to your Magento server as, or switch to, the Magento file system owner.
 2.	Change to the directory in which you installed the Magento software.
 
 	For example, `cd /var/www/html/magento2`
-2.	Enter the following command to disable the cache:
-
-		php bin/magento cache:disable
 2.	Enter the following commands in the order shown:
 
 		composer require <product> 2.1.0-rc1 --no-update
@@ -170,23 +167,12 @@ To upgrade to a Release Candidate using the command line:
 4. Update the database schema and data:
 
 		php bin/magento setup:upgrade
-5.	Enter the following command to enable the cache:
 
-		php bin/magento cache:enable
+{% endcollapsible %}
 
 ## Upgrade to an RC with sample data {#upgrade-rc-samp}
-If you installed optional Magento sample data, see one of the following sections:
-
-*	[Upgrade using the command line](#upgrade-rc-samp-cli)
-*	[Upgrade using the Setup Wizard](#upgrade-rc-samp-web)
-
-### Upgrade using the command line {#upgrade-rc-samp-cli}
 
 {% include install/sampledata/sample-data-rc1-cli.md %}
-
-### Upgrade using the Setup Wizard {#upgrade-rc-samp-web}
-
-{% include install/sampledata/sample-data-rc1-web.md %}
 
 
 

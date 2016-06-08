@@ -1,6 +1,6 @@
 ---
 layout: default 
-group: compman
+group: 
 subgroup: 15_UseUpgrade
 title: Upgrade Magento EE with sample data to RC1 or RC2
 menu_title: Upgrade Magento EE with sample data to RC1 or RC2

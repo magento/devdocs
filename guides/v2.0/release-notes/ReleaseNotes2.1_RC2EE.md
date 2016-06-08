@@ -257,15 +257,13 @@ Developers who contribute to the CE codebase can <a href="{{ site.gdeurl }}comp-
 2.	Follow the instructions to pull the updates from the repository and update using Composer.
 
 ### Upgrade using the command line
-To upgrade to a Release Candidate using the command line:
+
+{% collapsible To upgrade to a Release Candidate using the command line: %}
 
 1.	Log in to your Magento server as, or switch to, the Magento file system owner.
 2.	Change to the directory in which you installed the Magento software.
 
 	For example, `cd /var/www/html/magento2`
-2.	Enter the following command to disable the cache:
-
-		php bin/magento cache:disable
 2.	Enter the following commands in the order shown:
 
 		composer require <product> 2.1.0-rc2 --no-update
@@ -285,23 +283,12 @@ To upgrade to a Release Candidate using the command line:
 4. Update the database schema and data:
 
 		php bin/magento setup:upgrade
-5.	Enter the following command to enable the cache:
 
-		php bin/magento cache:enable
+{% endcollapsible %}
 
 ## Upgrade to an RC with sample data {#upgrade-rc-samp}
-If you installed optional Magento sample data, see one of the following sections:
-
-*	[Upgrade using the command line](#upgrade-rc-samp-cli)
-*	[Upgrade using the Setup Wizard](#upgrade-rc-samp-web)
-
-### Upgrade using the command line {#upgrade-rc-samp-cli}
 
 {% include install/sampledata/sample-data-rc1-cli.md %}
-
-### Upgrade using the Setup Wizard {#upgrade-rc-samp-web}
-
-{% include install/sampledata/sample-data-rc1-web.md %}
 
 ## Migration toolkits
 The <a href="{{ site.gdeurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ site.gdeurl }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.

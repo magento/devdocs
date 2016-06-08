@@ -98,8 +98,14 @@ We do not support PHP 5.5.
 You can install Magento Community Edition 2.1 Release Candidate 1 (RC1) from either Github or by using Composer. 
 This Release Candidate is for test purposes only. Do not install it in a production environment.
 
-### Install from GitHub
+See one of the following sections:
 
+*	[Install from GitHub](#install-rc-gh)
+*	[Install using Composer](#install-rc-composer)
+*	[Upgrade existing installations](#upgrade-rc-nosamp)
+*	[Upgrade to an RC with sample data](#upgrade-rc-samp)
+
+### Install from GitHub {#install-rc-gh}
 Before proceeding, please familiarize yourself with these prerequisites, then run
 
 `git clone git@github.com:magento/magento2.git`
@@ -131,15 +137,13 @@ Developers who contribute to the CE codebase can <a href="{{ site.gdeurl }}comp-
 2.	Follow the instructions to pull the updates from the repository and update using Composer.
 
 ### Upgrade using the command line
-To upgrade to a Release Candidate using the command line:
+
+{% collapsible To upgrade to a Release Candidate using the command line: %}
 
 1.	Log in to your Magento server as, or switch to, the Magento file system owner.
 2.	Change to the directory in which you installed the Magento software.
 
 	For example, `cd /var/www/html/magento2`
-2.	Enter the following command to disable the cache:
-
-		php bin/magento cache:disable
 2.	Enter the following commands in the order shown:
 
 		composer require <product> 2.1.0-rc1 --no-update
@@ -159,11 +163,14 @@ To upgrade to a Release Candidate using the command line:
 4. Update the database schema and data:
 
 		php bin/magento setup:upgrade
-5.	Enter the following command to enable the cache:
 
-		php bin/magento cache:enable
+{% endcollapsible %}
 
 ## Upgrade to an RC with sample data {#upgrade-rc-samp}
+
+<div class="bs-callout bs-callout-warning">
+    <p>No additional tasks are required to upgrade to a Magento CE RC using the Setup Wizard. See <a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">Start System Upgrade</a>.</p>
+</div>
 
 {% include install/sampledata/sample-data-rc1-cli.md %}
 
