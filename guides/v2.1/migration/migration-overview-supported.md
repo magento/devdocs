@@ -6,7 +6,7 @@ title: Versions supported
 menu_title: Versions supported
 menu_node: 
 menu_order: 2
-github_link: migration/migration-overview-supported.md
+github_link21: migration/migration-overview-supported.md
 ---
 
 <h2 id="migrate-overview-versions">Supported versions</h2>

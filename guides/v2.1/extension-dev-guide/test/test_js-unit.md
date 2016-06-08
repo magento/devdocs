@@ -5,7 +5,7 @@ subgroup: Testing
 title: JavaScript unit tests
 menu_title: JavaScript unit tests
 menu_order: 2
-github_link: extension-dev-guide/test/test_js-unit.md
+github_link21: extension-dev-guide/test/test_js-unit.md
 ---
 
 <p>Magento JavaScript unit tests use the external <a href="#test-library">JsTestDriver test library</a>. The tests are implemented through the external <a href="#jstestdriver-api">JsTestDriver API</a> and have their own <a href="#framework">jsunit.requirejsUtil framework</a>.</p>

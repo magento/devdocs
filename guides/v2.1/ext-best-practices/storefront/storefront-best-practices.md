@@ -6,7 +6,7 @@ title: Storefront UI best practices
 menu_title: Storefront
 menu_order: 1
 menu_node: parent
-github_link: ext-best-practices/storefront/storefront-best-practices.md
+github_link21: ext-best-practices/storefront/storefront-best-practices.md
 ---
 ##{{page.menu_title}}
 {:.no_toc}

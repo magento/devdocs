@@ -130,4 +130,3 @@ All pages should comply with the [Web Content Accessibility Guidelines (WCAG) 2.
 
 ## Microdata
 All crucial pages (like product page) should contain [microdata](https://www.w3.org/TR/microdata/). Please pay attention to this recommendation when adding new functionality.
-
