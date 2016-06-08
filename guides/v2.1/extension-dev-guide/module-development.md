@@ -6,7 +6,7 @@ title: Component development
 menu_title: Component development
 menu_order: 1
 menu_node: parent
-github_link: extension-dev-guide/module-development.md
+github_link21: extension-dev-guide/module-development.md
 
 ---
 

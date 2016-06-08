@@ -516,5 +516,3 @@ public function reorderChild($parentId, $childId, $position)
  * @see _insertChild() for position explanation
  */
 {% endhighlight %}
-
-
