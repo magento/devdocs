@@ -23,7 +23,7 @@ Events are dispatched by modules when certain actions are triggered. In addition
 
 #### Dispatching events
 
-Events can be dispatched using the [`Magento\Framework\Event\Manager`](https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Event/Manager.php){:target="_self"} class. This class can be obtained through [dependency injection]({{site.url}}extension-dev-guide/depend-inj.html) by defining the dependency in your constructor.
+Events can be dispatched using the [`Magento\Framework\Event\Manager`]({{site.mage2000url}}lib/internal/Magento/Framework/Event/Manager.php){:target="_self"} class. This class can be obtained through [dependency injection]({{site.gdeurl}}extension-dev-guide/depend-inj.html) by defining the dependency in your constructor.
 
 To dispatch an event, call the `dispatch` function of the event manager class and provide it with the name of the event you want to dispatch along with an array of data you wish to provide to observers.
 
@@ -68,7 +68,7 @@ Observers are a certain type of Magento class that can influence general behavio
 
 #### Creating an observer
 
-To create an observer, you must place your class file under your `<module-root>/Observer` directory. Your observer class should implement [`Magento\Framework\Event\ObserverInterface`](https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Event/ObserverInterface.php) and define its `execute` function.
+To create an observer, you must place your class file under your `<module-root>/Observer` directory. Your observer class should implement [`Magento\Framework\Event\ObserverInterface`]({{site.mage2000url}}lib/internal/Magento/Framework/Event/ObserverInterface.php) and define its `execute` function.
 
 Below is an example of the basic observer class structure:
 {% highlight php startinline=true %}
