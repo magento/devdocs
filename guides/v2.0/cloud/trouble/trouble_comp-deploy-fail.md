@@ -18,7 +18,7 @@ You can recover from a failed deployment in any of the following ways:
 *   Remove the component from your environment's `composer.json` and redeploy the environment
 
 ### Remove the component from `composer.json` and redeploy
-This section discusses how to remove the component from the root `composer.json` in your environment and reploy the environment:
+This section discusses how to remove the component from the root `composer.json` in your environment and redeploy the environment:
 
 #### Get started
 
