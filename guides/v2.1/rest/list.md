@@ -6,7 +6,6 @@ title: List of REST APIs by module
 menu_title: List of REST APIs by module
 menu_order: 3
 github_link: rest/list.md
-redirect_from: /guides/v1.0/rest/list.html
 ---
 
 <h2 id="list">List of REST APIs</h2>
