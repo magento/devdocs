@@ -45,6 +45,6 @@ Do you know what a "terminal" application is? Do you know what operating system 
 {% endcollapsible %}
 
 ## Deploy to production
-<a href="{{ site.gdeurl }}howdoi/deploy/prod.html">Deploy Magento to production</a>
+[Deploy Magento to production]({{ site.gdeurl }}howdoi/deploy/deploy-to-prod.html)
 
 *[Contributing developers]: A developer who contributes code to the Magento 2 CE codebase
