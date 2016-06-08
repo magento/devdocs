@@ -9,6 +9,25 @@ menu_order: 20
 github_link: comp-mgr/upgrader/upgrade.md
 ---
 
+## Clear `var` directories (upgrade with sample data only) {#compman-upgr-var}
+This section applies to you *only* if all of the following are true:
+
+*	You're upgrading to Magento Enterprise Edition (EE) 2.1 Release Candidate 1 (RC1) or RC2
+*	You installed sample data
+
+If the preceding are not true, skip this section and continue with [Step 4. Upgrade](#upgrade-finish).
+
+Before you continue your upgrade:
+
+1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html).
+2.	Change to your Magento installation directory.
+2.	Clear the `var/cache`, `var/page_cache`, and `var/generation` directories.
+
+	A sample command follows:
+
+		rm -rf var/cache/* var/page_cache/* var/generation/*
+3.	Continue with the next section.
+
 ## Step 4. Upgrade {#upgrade-finish}
 The components you're upgrading display. The following figure shows an example.
 

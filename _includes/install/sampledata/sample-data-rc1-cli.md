@@ -34,14 +34,17 @@ To upgrade to Magento 2 RC1 or RC2 sample data using the command line:
 		composer update
 6.	If prompted, enter your [authentication keys]({{ site.gdeurl }}install-gde/prereq/connect-auth.html).
 7.	Wait for dependencies to update.
-8.	After dependencies have updated, reset [file system ownership and permissions]({{ site.gdeurl }}install-gde/prereq/file-system-perms.html).
 
-	*	If you run the Magento application with one user account, enter the commands as that user.
-	*	If you run the Magento application with two user accounts, you must enter the commands as `root`.
-8.	Manually clear the following `var` directories:
+{% include install/sampledata/file-sys-perms-digest.md %}
+
+### Finish your upgrade
+After you've reset file system permissions:
+
+1.	If you haven't done so already, log in to your Magento server as, or switch to, the Magento file system owner.
+2.	Manually clear the following `var` directories:
 
 		rm -rf var/cache/* var/page_cache/* var/generation/*
-8.	As the Magento file system owner, enter the following command from your Magento installation directory:
+3.	Enter the following command from your Magento installation directory:
 
 		php bin/magento setup:upgrade
 
