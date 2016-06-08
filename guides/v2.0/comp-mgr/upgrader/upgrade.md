@@ -48,17 +48,26 @@ Messages similar to the following display in the Console Log:
 
 After the upgrade finishes, access your storefront.
 
-The following error might display:
+## Errors after upgrade
+After you finish your upgrade, errors might display.
 
-	We're sorry, an error has occurred while generating this email.
+*	On the main storefront page, the following error might display.
+
+		We're sorry, an error has occurred while generating this email.
+*	On a category page, the following error might display:
+
+		We can't find products matching the selection.
 	
-If the error displays, perform the following tasks:
+If any of the preceding errors display, perform all of the following tasks.
 
-1.	Reset [file system ownership and permissions]({{ site.gdeurl }}install-gde/prereq/file-system-perms.html).
+{% include install/sampledata/file-sys-perms-digest.md %}
 
-	*	If you run the Magento application with one user account, enter the commands as that user.
-	*	If you run the Magento application with two user accounts, you must enter the commands as `root`.
+### Clear `var` directories
+Clear the `var/cache`, 	`var/page_cache`, `var/generation`
 
-2.	Clear the following directories and try to access your storefront again:
+A sample command follows:
 
-		rm -rf var/cache/* var/page_cache/* var/generation/*
+	rm -rf var/cache/* var/page_cache/* var/generation/*
+
+### Access your storefront again
+After performing the preceding tasks, access your storefront again. If necessary, press Control+R to force the page to reload.

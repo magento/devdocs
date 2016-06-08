@@ -41,7 +41,10 @@ To upgrade to Magento 2 RC1 or RC2 sample data using the command line:
 After you've reset file system permissions:
 
 1.	If you haven't done so already, log in to your Magento server as, or switch to, the Magento file system owner.
-2.	Manually clear the following `var` directories:
+2.	Change to your Magento installation directory.
+2.	Manually clear the `var/cache`, `var/page_cache`, and `var/generation` directories.
+
+	A sample command follows:
 
 		rm -rf var/cache/* var/page_cache/* var/generation/*
 3.	Enter the following command from your Magento installation directory:
