@@ -7,6 +7,7 @@ menu_title: Deployment steps
 menu_node: 
 menu_order: 10
 github_link: config-guide/prod/prod_deploy.md
+redirect_from: /guides/v2.0/howdoi/deploy/deploy-to-prod.html
 ---
 
 #### Contents
