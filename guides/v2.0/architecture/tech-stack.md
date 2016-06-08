@@ -58,7 +58,7 @@ Magento’s highly modular structure includes the following open-source technolo
 * JQuery (primary JavaScript library)
 
 * RequireJS (library that helps load JavaScript resources on demand)
-* Knockout.js (simplifies JavaScript UIs with the Model-View-View model pattern)
+* Knockout.js (simplifies JavaScript UIs with the Model-View-View Model pattern)
 * Third-party libraries (Zend Framework 1, Zend Framework 2, Symfony)
 
 * Coding standards PSR-0 (autoloading standard), PSR-1 (basic coding standards), and PSR-2 (coding style guide), PSR-3, PSR-4
