@@ -1,7 +1,7 @@
 <div markdown="1">
 
 ### Apply file system permissions and ownership {#rc1-samp-ownership}
-Before you upgrade Magento and sample data, you must apply current file system permission and ownership as discussed in the following sections. Failure to do so will cause your upgrade to fail.
+As part of the sample data upgrade process, you must apply current file system permission and ownership as discussed in the following sections. Failure to do so will cause your upgrade to fail.
 
 For more information about file system ownership and permissions since the Magento 2.0.6 release, see [Overview of ownership and permissions]({{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html).
 
@@ -35,9 +35,3 @@ If you run the Magento application with two users, enter the following commands 
 To optionally enter all commands on one line, enter the following assuming Magento is installed in `/var/www/html/magento2` and the web server group name is `apache`:
 
 	cd /var/www/html/magento2 && find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; && find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; && chown -R :apache . && chmod u+x bin/magento
- 
- After you set file system permissions, manually clear the `var/cache`, `var/page_cache`, and `var/generation` directories.
-
-A sample command follows:
-
-	rm -rf var/cache/* var/page_cache/* var/generation/*
