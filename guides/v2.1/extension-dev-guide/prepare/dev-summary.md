@@ -6,6 +6,7 @@ title: Roadmap for developing and packaging components
 menu_title: Roadmap for developing and packaging components
 menu_order: 50
 menu_node:
+version: 2.1
 github_link21: extension-dev-guide/prepare/dev-summary.md
 ---
 

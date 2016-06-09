@@ -7,6 +7,7 @@ menu_title: PHP 5.5, 5.6, or 7.0&mdash;CentOS
 menu_order: 22
 level3_menu_node: level3child
 level3_subgroup: php
+version: 2.1
 github_link21: install-gde/prereq/php-centos.md
 ---
 

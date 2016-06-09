@@ -5,6 +5,7 @@ subgroup: Architectural Layers
 title: Service layer
 menu_title: Service layer
 menu_order: 2
+version: 2.1
 github_link21: architecture/archi_perspectives/service_layer.md
 ---
 

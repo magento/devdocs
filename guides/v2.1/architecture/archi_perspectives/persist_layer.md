@@ -5,6 +5,7 @@ subgroup: Architectural Layers
 title: Persistence layer
 menu_title: Persistence layer
 menu_order: 4
+version: 2.1
 github_link21: architecture/archi_perspectives/persist_layer.md
 ---
 

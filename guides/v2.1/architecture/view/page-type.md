@@ -5,6 +5,7 @@ subgroup: View library
 title: Page types
 menu_title: Page types
 menu_order: 
+version: 2.1
 github_link21: architecture/view/page-type.md
 ---
 

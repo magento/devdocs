@@ -6,6 +6,7 @@ title: Update installation dependencies
 menu_title: Update installation dependencies 
 menu_node:
 menu_order: 10
+version: 2.1
 github_link21: install-gde/install/prepare-install.md
 ---
 

@@ -5,6 +5,7 @@ subgroup: 99_Module Development
 title: Dependency injection
 menu_title: Dependency injection
 menu_order: 5
+version: 2.1
 github_link21: extension-dev-guide/depend-inj.md
 ---
 ##{{page.menu_title}}

@@ -5,6 +5,7 @@ subgroup: A_rest
 title: Generate local REST API reference
 menu_title: Generate local API reference
 menu_order: 5
+version: 2.1
 github_link: rest/generate-local.md
 
 ---

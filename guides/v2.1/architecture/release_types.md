@@ -9,6 +9,7 @@ menu_order: 5
 level3_menu_node: level3child
 level3_subgroup: versioning
 
+version: 2.1
 github_link21: architecture/release_types.md
 ---
 

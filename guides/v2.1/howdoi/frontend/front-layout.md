@@ -6,6 +6,7 @@ title: Layout development
 menu_title: Layout development
 menu_node: parent
 menu_order: 1
+version: 2.1
 github_link: howdoi/frontend/front-layout.md
 ---
 

@@ -5,6 +5,7 @@ subgroup: Coding standards
 title: DocBlock standard
 menu_title: DocBlock standard
 menu_order: 3
+version: 2.1
 github_link21: coding-standards/docblock-standard-general.md
 ---
 

@@ -6,6 +6,7 @@ title: Prerequisites
 menu_node: parent
 menu_title: Prerequisites
 menu_order: 1
+version: 2.1
 github_link21: install-gde/prereq/prereq-overview.md
 ---
  

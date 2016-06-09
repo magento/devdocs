@@ -6,6 +6,7 @@ title: Get help with your deployment
 menu_title: Get help with your deployment
 menu_order: 50
 menu_node: 
+version: 2.1
 github_link21: cloud/get-help.md
 ---
 

@@ -6,6 +6,7 @@ title: Create or update the deployment configuration
 menu_title: Create or update the deployment configuration
 menu_node: 
 menu_order: 9
+version: 2.1
 github_link21: install-gde/install/cli/install-cli-subcommands-deployment.md
 ---
 

@@ -5,6 +5,7 @@ subgroup: Logical View
 title: Magento libraries
 menu_title: Magento libraries
 menu_order: 3
+version: 2.1
 github_link21: architecture/components/arch_libraries.md
 ---
 

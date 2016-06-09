@@ -6,6 +6,7 @@ title: Step 6. Install
 menu_title: Step 6. Install
 menu_order: 15
 menu_node: 
+version: 2.1
 github_link21: install-gde/install/hosted/hosted_install_6_install.md
 ---
 

@@ -6,6 +6,7 @@ title: Install optional sample data
 menu_title: Install optional sample data
 menu_order: 8
 menu_node: 
+version: 2.1
 github_link21: cloud/howtos/sample-data.md
 ---
 

@@ -6,6 +6,7 @@ title: .magento.app.yaml
 menu_title: .magento.app.yaml
 menu_order: 11
 menu_node: 
+version: 2.1
 github_link21: cloud/project/project-conf-files_magento-app.md
 ---
 

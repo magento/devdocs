@@ -7,6 +7,7 @@ subgroup: Architectural Layers
 title: Magento Layout 
 menu_title: Magento Layout 
 menu_order: 
+version: 2.1
 github_link21: architecture/archi_perspectives/layout_intro.md
 ---
 

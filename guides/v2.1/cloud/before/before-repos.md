@@ -6,6 +6,7 @@ title: Magento Enterprise Cloud Edition repositories
 menu_title: Magento Enterprise Cloud Edition repositories
 menu_order: 4
 menu_node: 
+version: 2.1
 github_link21: cloud/before/before-repos.md
 ---
 

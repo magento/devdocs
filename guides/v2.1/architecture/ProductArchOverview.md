@@ -5,6 +5,7 @@ subgroup: Architecture
 title: Product Architecture Overview
 menu_title: Product Architecture Overview
 menu_order: 3
+version: 2.1
 github_link21: architecture/process_view.md
 ---
 <h2>Introduction</h2> 

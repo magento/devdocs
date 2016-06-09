@@ -5,6 +5,7 @@ subgroup: View library
 title: Design abstractions
 menu_title: Design abstractions
 menu_order: 
+version: 2.1
 github_link21: architecture/view/design-abstract.md
 ---
 

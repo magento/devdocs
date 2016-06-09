@@ -5,6 +5,7 @@ subgroup: 50_Entities
 title: Entities of the Functional Testing Framework
 menu_title: Scenario test
 menu_order: 10
+version: 2.1
 github_link: mtf/mtf_entities/mtf_scenariotest.md
 ---
 

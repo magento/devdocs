@@ -5,6 +5,7 @@ subgroup: 40_Approach
 title: Create a test in the Functional Testing Framework
 menu_title: New functional test. Theory
 menu_order: 2
+version: 2.1
 github_link: mtf/create_test/new_test.md
 ---
 

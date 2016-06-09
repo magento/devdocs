@@ -6,6 +6,7 @@ title: Back up and roll back the file system, media, and database
 menu_title: Back up and roll back the file system, media, and database
 menu_node: 
 menu_order: 100
+version: 2.1
 github_link21: install-gde/install/cli/install-cli-backup.md
 ---
 

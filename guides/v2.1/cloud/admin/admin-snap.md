@@ -6,6 +6,7 @@ title: Snapshot and restore
 menu_title: Snapshot and restore
 menu_order: 4
 menu_node: 
+version: 2.1
 github_link21: cloud/admin/admin-snap.md
 ---
 

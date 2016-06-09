@@ -5,6 +5,7 @@ subgroup: 05_Package
 title: Package a component
 menu_title: Package a component
 menu_order: 2
+version: 2.1
 github_link21: extension-dev-guide/package/package_module.md
 ---
 

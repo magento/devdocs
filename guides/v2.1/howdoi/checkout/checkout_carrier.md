@@ -5,6 +5,7 @@ subgroup: checkout
 title: Add custom shipping carrier validations
 menu_title: Add custom shipping carrier validations
 menu_order: 5
+version: 2.1
 github_link: howdoi/checkout/checkout_carrier.md
 ---
 <h2>What's in this topic</h2>

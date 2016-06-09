@@ -6,6 +6,7 @@ title: Final verification
 menu_title: Final verification
 menu_order: 100
 menu_node: 
+version: 2.1
 github_link21: config-guide/varnish/config-varnish-final.md
 ---
 

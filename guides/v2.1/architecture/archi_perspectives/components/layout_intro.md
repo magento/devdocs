@@ -6,6 +6,7 @@ subgroup: Components
 title: Magento layouts 
 menu_title: Layouts 
 menu_order: 3
+version: 2.1
 github_link21: architecture/components/layout_intro.md
 ---
 

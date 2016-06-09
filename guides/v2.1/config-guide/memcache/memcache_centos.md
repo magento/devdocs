@@ -6,6 +6,7 @@ title: Install, configure, verify memcached on CentOS
 menu_title: Install, configure, verify memcached on CentOS
 menu_order: 3
 menu_node: 
+version: 2.1
 github_link21: config-guide/memcache/memcache_ubuntu.md
 ---
 

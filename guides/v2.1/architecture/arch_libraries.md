@@ -5,6 +5,7 @@ subgroup: Architecture
 title: Libraries
 menu_title: Libraries
 menu_order: 
+version: 2.1
 github_link21: architecture/arch_libraries.md
 ---
 

@@ -5,6 +5,7 @@ subgroup: 03_Build
 title: URN schema validation
 menu_title: URN schema validation
 menu_order: 6
+version: 2.1
 github_link21: extension-dev-guide/build/XSD-XML-validation.md
 
 ---

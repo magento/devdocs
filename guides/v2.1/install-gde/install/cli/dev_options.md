@@ -6,6 +6,7 @@ title: Contributing developers&mdash;update, reinstall Magento
 menu_title: Contributing developers&mdash;update, reinstall Magento
 menu_order: 1
 menu_node: parent
+version: 2.1
 github_link21: install-gde/install/cli/dev_options.md
 ---
 

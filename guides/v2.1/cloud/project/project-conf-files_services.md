@@ -8,6 +8,7 @@ menu_order: 30
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: services
+version: 2.1
 github_link21: cloud/project/project-conf-files_services.md
 ---
 

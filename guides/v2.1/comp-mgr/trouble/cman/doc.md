@@ -6,6 +6,7 @@ title: magento/theme-doc-blank failure
 menu_title: magento/theme-doc-blank failure
 menu_node: 
 menu_order: 500
+version: 2.1
 github_link21: comp-mgr/trouble/cman/doc.md
 ---
 

@@ -6,6 +6,7 @@ title: Test your component
 menu_title: Test your component
 menu_order: 2
 menu_node:
+version: 2.1
 github_link21: extension-dev-guide/validate/test-module.md
 
 ---

@@ -6,6 +6,7 @@ title: (Contributor) Clone the Magento repository
 menu_title: (Contributor) Clone the Magento repository
 menu_order: 1
 menu_node: parent
+version: 2.1
 github_link21: install-gde/prereq/dev_install.md
 ---
 

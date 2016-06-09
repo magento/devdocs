@@ -5,6 +5,7 @@ subgroup: B_UI Library Listing/Grid Component
 title: Listing/Grid Component
 menu_title: Listing/Grid Component
 menu_node: parent
+version: 2.1
 github_link: ui-components/ui-listing-grid.md
 ---
 

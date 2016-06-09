@@ -5,6 +5,7 @@ subgroup: 01_Admin
 title: Admin FAQ
 menu_title: Admin FAQ
 menu_order: 1000
+version: 2.1
 github_link21: ext-best-practices/admin/ext-best-practices_admin_FAQ.md
 ---
 ##{{page.menu_title}}

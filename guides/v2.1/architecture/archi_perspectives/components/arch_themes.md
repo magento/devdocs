@@ -5,6 +5,7 @@ subgroup: Components
 title: Magento Themes 
 menu_title: Themes 
 menu_order: 8
+version: 2.1
 github_link21: architecture/components/arch_themes.md
 ---
 

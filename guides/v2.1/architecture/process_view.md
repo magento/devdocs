@@ -5,6 +5,7 @@ subgroup: Architecture
 title: Process view
 menu_title: Process view
 menu_order: 3
+version: 2.1
 github_link21: architecture/process_view.md
 ---
 

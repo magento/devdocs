@@ -5,6 +5,7 @@ subgroup: Coding standards
 title: PHP coding standard
 menu_title: PHP coding standard
 menu_order: 2
+version: 2.1
 github_link21: coding-standards/code-standard-php.md
 ---
 

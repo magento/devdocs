@@ -5,6 +5,7 @@ subgroup: checkout
 title: Add a custom payment method to checkout
 menu_title: Add a custom payment method to checkout
 menu_order: 3
+version: 2.1
 github_link: howdoi/checkout/checkout_payment.md
 ---
 

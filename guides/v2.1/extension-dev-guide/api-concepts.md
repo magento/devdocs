@@ -5,6 +5,7 @@ subgroup: 99_Module Development
 title: Public interfaces & APIs
 menu_title: Public interfaces & APIs
 menu_order: 3
+version: 2.1
 github_link21: extension-dev-guide/api-concepts.md
 ---
 

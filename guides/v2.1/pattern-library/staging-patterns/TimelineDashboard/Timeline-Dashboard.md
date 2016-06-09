@@ -6,6 +6,7 @@ title: Magento Admin Pattern Library
 menu_title: Timeline Dashboard
 menu_order: 1
 menu_node: 
+version: 2.1
 github_link: pattern-library/staging-patterns/TimelineDashboard/Timeline-Dashboard.md
 ---
 <img src="img/ee-only_large.png">

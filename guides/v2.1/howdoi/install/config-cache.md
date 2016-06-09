@@ -6,6 +6,7 @@ title: Configure caching options
 menu_title: Configure caching options
 menu_node: parent
 menu_order: 1
+version: 2.1
 github_link: howdoi/install/config-cache.md
 ---
 

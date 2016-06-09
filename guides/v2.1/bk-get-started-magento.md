@@ -5,6 +5,7 @@ title: Getting started with Magento
 menu_title: Getting started with Magento
 menu_order: 1
 menu_node:
+version: 2.1
 github_link: bk-get-started-magento.md
 ---
 

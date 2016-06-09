@@ -6,6 +6,7 @@ title: Manage your projects
 menu_title: Manage your projects
 menu_order: 1
 menu_node: parent
+version: 2.1
 github_link21: cloud/project/projects.md
 ---
 
