@@ -72,11 +72,11 @@ The following table summarizes what you need to do.
 
 2. Open the following file in a text editor:
 
-	<code><your Magento install dir>/update/composer.json
+	<your Magento install dir>/update/composer.json
 
 3. Look for the value of `"version"`. If the value of `"version"` is `"10.0.1"`, and you're using PHP 5.5.x, you must make the changes discussed in this bulletin. For example,
 
-	<code>"version": "10.0.1"</code>
+	"version": "10.0.1"
 
 4. Exit the text editor without making changes.
 
@@ -158,6 +158,10 @@ To apply this patch:
 3. Copy the contents of the `magento2-updater-10.0.2` directory to the  `update` directory by executing this command:
 
 	`cp -R magento2-updater-10.0.2/*  update/`
+
+	<div class="bs-callout bs-callout-tip">
+		<p>If you're prompted to overwrite files repeatedly, cancel the operation and try the following command: <code>yes | cp -rf magento2-updater-10.0.2/* update/</code>. Also see <a href="http://magento.stackexchange.com/questions/119865/magento-2-patch-mdva-449-ssh-command" target="_blank">this article on stackexchange</a>.</p>
+	</div>
 
 4. After copying all  patch-related files to their appropriate locations,  remove any unwanted files and directories by executing these commands:
 
