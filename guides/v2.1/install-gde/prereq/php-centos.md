@@ -63,7 +63,7 @@ If PHP is installed, continue with the next prerequisite, <a href="{{page.baseur
 ## CentOS repositories {#centos-php-repos}
 Linux systems provide software like PHP in one or more *repositories*. CentOS, unlike Ubuntu, has a set of [officially recommended repositories](https://wiki.centos.org/AdditionalResources/Repositories){:target="_blank"}. Other repositories are considered less safe for the reasons stated on the CentOS wiki.
 
-We're not aware that you can install PPHP 5.6 or 7.0 from a CentOS-recommended repository. Therefore, you must consider the following:
+We're not aware that you can install PHP 5.6 or 7.0 from a CentOS-recommended repository. Therefore, you must consider the following:
 
 *	If you're setting up a system that will be deployed in production, you should choose a hosting provider who uses repositories considered to be safe and reliable. 
 
