@@ -6,6 +6,7 @@ title: Upgrade the Data Migration Tool
 menu_title: Upgrade the Data Migration Tool
 menu_node: 
 menu_order: 3
+version: 2.1
 github_link21: migration/migration-tool-upgrade.md
 ---
 

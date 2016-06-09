@@ -5,6 +5,7 @@ subgroup: C_Listing/Grid Secondary Components
 title: Listing/Grid Secondary Components
 menu_title: Listing/Grid Secondary Components
 menu_node: parent
+version: 2.1
 github_link: ui-components/ui-secondary.md
 ---
 

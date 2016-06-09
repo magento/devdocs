@@ -6,6 +6,7 @@ title: Before you get started
 menu_title: Before you get started
 menu_order: 1
 menu_node: parent
+version: 2.1
 github_link21: cloud/before/before.md
 ---
 

@@ -5,6 +5,7 @@ subgroup: Coding standards
 title: JavaScript coding standard
 menu_title: JavaScript coding standard
 menu_order: 4
+version: 2.1
 github_link21: coding-standards/code-standard-javascript.md
 ---
 

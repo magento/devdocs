@@ -6,6 +6,7 @@ title: Data Migration Tool Internal Specification
 menu_title: Data Migration Tool Internal Specification
 menu_node: parent
 menu_order: 7
+version: 2.1
 github_link21: migration/migration-tool-internal-spec.md
 ---
 

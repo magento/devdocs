@@ -6,6 +6,7 @@ title: Set up multiple websites with Apache
 menu_title: Set up multiple websites with Apache
 menu_order: 9
 menu_node: 
+version: 2.1
 github_link21: config-guide/multi-site/ms_apache.md
 ---
 

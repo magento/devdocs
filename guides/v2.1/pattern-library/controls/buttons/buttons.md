@@ -6,6 +6,7 @@ title: Magento Admin Pattern Library
 menu_title: Buttons
 menu_order: 1
 menu_node: 
+version: 2.1
 github_link: pattern-library/controls/buttons/buttons.md
 ---
 <h2> Buttons </h2>

@@ -7,6 +7,7 @@ menu_title: Integration Test Setup
 menu_node: parent
 contributor_name: Vinai Kopp
 contributor_link: http://vinaikopp.com/
+version: 2.1
 github_link: test/integration/integration_test_setup.md
 ---
 

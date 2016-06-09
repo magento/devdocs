@@ -6,6 +6,7 @@ title: Magento Admin Pattern Library
 menu_title: Image Uploader
 menu_order: 2
 menu_node:
+version: 2.1
 github_link: pattern-library/getting-user-input/image_uploader/image_uploader.md
 ---
 

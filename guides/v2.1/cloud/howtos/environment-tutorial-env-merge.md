@@ -8,6 +8,7 @@ menu_order: 12
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: env-tut
+version: 2.1
 github_link21: cloud/howtos/environment-tutorial-env-merge.md
 ---
 

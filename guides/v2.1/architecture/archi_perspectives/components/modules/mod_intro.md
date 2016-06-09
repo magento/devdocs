@@ -7,6 +7,7 @@ menu_title: Module overview
 menu_order: 3
 level3_menu_node: level3child
 level3_subgroup: modules
+version: 2.1
 github_link21: architecture/components/modules/mod_intro.md
 ---
 

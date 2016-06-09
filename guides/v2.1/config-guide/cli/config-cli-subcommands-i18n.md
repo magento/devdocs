@@ -6,6 +6,7 @@ title: Translation dictionaries and language packages
 menu_title: Translation dictionaries and language packages
 menu_node: 
 menu_order: 250
+version: 2.1
 github_link21: config-guide/cli/config-cli-subcommands-i18n.md
 ---
 

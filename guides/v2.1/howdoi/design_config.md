@@ -6,6 +6,7 @@ title: Customize Design Configuration
 menu_title: Customize Design Configuration
 menu_node: parent 
 menu_order: 1
+version: 2.1
 github_link: howdoi/design_config.md
 
 ---

@@ -6,6 +6,7 @@ title:
 menu_title: Next&mdash;Installation part 2, installing
 menu_node: parent
 menu_order: 1
+version: 2.1
 github_link21: install-gde/continue-to-install.md
 ---
 

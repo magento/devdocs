@@ -5,6 +5,7 @@ subgroup: Coding standards
 title: LESS coding standard
 menu_title: LESS coding standard
 menu_order: 7
+version: 2.1
 github_link21: coding-standards/code-standard-less.md
 ---
 

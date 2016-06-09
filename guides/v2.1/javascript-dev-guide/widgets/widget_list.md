@@ -5,6 +5,7 @@ subgroup: 3_Widgets
 title: List widget
 menu_order: 7 
 menu_title: List widget
+version: 2.1
 github_link: javascript-dev-guide/widgets/widget_list.md
 ---
 <h2>Overview</h2>

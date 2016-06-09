@@ -5,6 +5,7 @@ subgroup: Prerequisites
 title: Set up a remote MySQL database connection
 menu_title: Set up a remote MySQL database connection
 menu_order: 20
+version: 2.1
 github_link21: install-gde/prereq/mysql_remote.md
 ---
 

@@ -6,6 +6,7 @@ title: Install by cloning repositories
 menu_title: Install by cloning repositories
 menu_node: 
 menu_order: 4
+version: 2.1
 github_link21: install-gde/install/web/install-web-sample-data-clone.md
 ---
 

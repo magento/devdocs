@@ -6,6 +6,7 @@ title: Creating a migration plan
 menu_title: Creating a migration plan
 menu_node: parent
 menu_order: 2
+version: 2.1
 github_link21: migration/migration-plan.md
 ---
 

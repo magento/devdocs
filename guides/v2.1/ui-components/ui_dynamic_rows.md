@@ -5,6 +5,7 @@ subgroup: F_UI Library Dynamic Rows Component
 title: Dynamic Rows Component
 menu_title: Dynamic Rows Component
 menu_node: parent
+version: 2.1
 github_link: ui-components/ui_dynamic_rows.md
 ---
 ## Overview

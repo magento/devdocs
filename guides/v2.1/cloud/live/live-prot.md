@@ -6,6 +6,7 @@ title: Protective block
 menu_title: Protective block
 menu_order: 100
 menu_node: 
+version: 2.1
 github_link21: cloud/live/live-prot.md
 ---
 

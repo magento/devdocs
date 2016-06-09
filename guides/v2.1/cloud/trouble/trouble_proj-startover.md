@@ -6,6 +6,7 @@ title: Resolve issues with a new project
 menu_title: Resolve issues with a new project
 menu_order: 2
 menu_node: 
+version: 2.1
 github_link21: cloud/trouble/trouble_proj-startover.md
 ---
 

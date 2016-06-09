@@ -5,6 +5,7 @@ subgroup: Architecture
 title: Deployment view
 menu_title: Deployment view
 menu_order: 3
+version: 2.1
 github_link21: architecture/deployment_view.md
 ---
 

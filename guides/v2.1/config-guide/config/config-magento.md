@@ -6,6 +6,7 @@ title: Magento configuration files
 menu_title: Magento configuration files
 menu_order: 1
 menu_node: parent
+version: 2.1
 github_link21: config-guide/config/config-magento.md
 ---
 

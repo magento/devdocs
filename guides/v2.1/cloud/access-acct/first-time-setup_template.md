@@ -6,6 +6,7 @@ title: Create a sample Magento project from a template
 menu_title: Create a sample Magento project from a template
 menu_order: 3
 menu_node: 
+version: 2.1
 github_link: cloud/access-acct/first-time-setup_template.md
 ---
 

@@ -6,6 +6,7 @@ title: Configure Redis
 menu_title: Configure Redis
 menu_order: 1
 menu_node: parent
+version: 2.1
 github_link21: config-guide/redis/config-redis.md
 ---
 

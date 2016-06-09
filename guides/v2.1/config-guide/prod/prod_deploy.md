@@ -6,6 +6,7 @@ title: Deployment steps
 menu_title: Deployment steps
 menu_node: 
 menu_order: 10
+version: 2.1
 github_link21: config-guide/prod/prod_deploy.md
 ---
 

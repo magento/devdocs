@@ -6,6 +6,7 @@ title: Maintenance mode options for upgrade
 menu_title: Maintenance mode options for upgrade
 menu_node: 
 menu_order: 200
+version: 2.1
 github_link21: comp-mgr/trouble/cman/maint-mode.md
 ---
 

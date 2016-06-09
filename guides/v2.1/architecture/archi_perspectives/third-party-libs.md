@@ -5,6 +5,7 @@ subgroup: Logical View
 title: Third-Party libraries
 menu_title: Third-party libraries
 menu_order: 5
+version: 2.1
 github_link21: architecture/archi_perspectives/third-party-libs.md
 ---
 

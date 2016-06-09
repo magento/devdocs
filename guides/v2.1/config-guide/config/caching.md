@@ -6,6 +6,7 @@ title: Caching
 menu_title: Caching
 menu_order: 1
 menu_node: parent
+version: 2.1
 github_link21: config-guide/config/caching.md
 ---
 

@@ -7,6 +7,7 @@ menu_title: Where is version information stored?
 menu_order: 4
 level3_menu_node: level3child
 level3_subgroup: versioning
+version: 2.1
 github_link21: architecture/versioning.md
 ---
 

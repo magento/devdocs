@@ -5,6 +5,7 @@ title: Release Notes redirect
 menu_title: Release Notes redirect
 menu_order: 1
 menu_node: 
+version: 2.1
 github_link: release-notes/bk-release-notes.md
 ---
 

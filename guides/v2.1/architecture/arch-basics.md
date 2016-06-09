@@ -5,6 +5,7 @@ subgroup:
 title: Technology stack
 menu_title: Technology stack
 menu_order: 
+version: 2.1
 github_link21: extension-dev-guide/arch-basics
 ---
 <h2>Architectural basics</h2>

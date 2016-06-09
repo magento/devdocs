@@ -6,6 +6,7 @@ title: Cascading style sheets (CSS)
 menu_title: Cascading style sheets (CSS)
 menu_order: 1
 menu_node: parent
+version: 2.1
 github_link: frontend-dev-guide/css-topics/css-overview.md
 ---
 

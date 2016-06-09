@@ -5,6 +5,7 @@ subgroup: A_Themes
 title: Apply and configure a theme in Admin
 menu_title: Apply and configure a theme in Admin
 menu_order: 4
+version: 2.1
 github_link: frontend-dev-guide/themes/theme-apply.md
 redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-apply.html
 ---

@@ -6,6 +6,7 @@ title: Configure the store
 menu_title: Configure the store
 menu_node: 
 menu_order: 20
+version: 2.1
 github_link21: install-gde/install/cli/install-cli-subcommands-store.md
 ---
 
