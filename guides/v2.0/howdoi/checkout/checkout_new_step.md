@@ -5,6 +5,7 @@ subgroup: checkout
 title: Add a new checkout step
 menu_title: Add a new checkout step
 menu_order: 1
+version: 2.0
 github_link: howdoi/checkout/checkout_new_step.md
 ---
 

@@ -5,6 +5,7 @@ subgroup: 03_Build
 title: Register your component
 menu_title: Register your component
 menu_order: 4
+version: 2.0
 github_link: extension-dev-guide/build/component-registration.md
 redirect_from:
   - /guides/v1.0/extension-dev-guide/build/component-registration.html

@@ -5,6 +5,7 @@ subgroup: Migration
 title: Code Migration
 menu_title: Code Migration
 menu_order: 3
+version: 2.0
 github_link: howdoi/migrate/migrate-code.md
 ---
 

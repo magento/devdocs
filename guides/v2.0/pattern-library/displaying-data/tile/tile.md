@@ -6,6 +6,7 @@ title: Admin Design Pattern Library
 menu_title: Tile
 menu_order: 1
 menu_node:
+version: 2.0
 github_link: pattern-library/displaying-data/tile/tile.md
 ---
 

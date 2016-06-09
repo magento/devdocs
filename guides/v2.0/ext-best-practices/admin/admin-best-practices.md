@@ -6,6 +6,7 @@ title: Admin
 menu_title: Admin
 menu_order: 1
 menu_node: parent
+version: 2.0
 github_link: ext-best-practices/admin/admin-best-practices.md
 ---
 

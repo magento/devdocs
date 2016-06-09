@@ -5,6 +5,7 @@ subgroup: Architecture
 title: Themes
 menu_title: Themes
 menu_order: 
+version: 2.0
 github_link: architecture/arch_themes.md
 redirect_from: /guides/v1.0/architecture/arch_themes.html
 ---

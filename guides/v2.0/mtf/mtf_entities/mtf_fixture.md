@@ -5,6 +5,7 @@ subgroup: 50_Entities
 title: Entities of the Functional Testing Framework
 menu_title: Fixture
 menu_order: 1
+version: 2.0
 github_link: mtf/mtf_entities/mtf_fixture.md
 ---
 

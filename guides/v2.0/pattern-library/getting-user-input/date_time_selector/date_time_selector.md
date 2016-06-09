@@ -6,6 +6,7 @@ title: Admin Design Pattern Library
 menu_title: Date and Time Selector
 menu_order: 3
 menu_node:
+version: 2.0
 github_link: pattern-library/getting-user-input/date_time_selector/date_time_selector.md
 ---
 

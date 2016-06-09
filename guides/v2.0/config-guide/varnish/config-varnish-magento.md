@@ -6,6 +6,7 @@ title: Configure Magento to use Varnish
 menu_title: Configure Magento to use Varnish
 menu_order: 15
 menu_node: 
+version: 2.0
 github_link: config-guide/varnish/config-varnish-magento.md
 ---
 

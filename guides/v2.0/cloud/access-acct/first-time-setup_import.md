@@ -6,6 +6,7 @@ title: Import an existing Magento project
 menu_title: Import an existing Magento project
 menu_order: 5
 menu_node: 
+version: 2.0
 github_link: cloud/access-acct/first-time-setup_import.md
 ---
 

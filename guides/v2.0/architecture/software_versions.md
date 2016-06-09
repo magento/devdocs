@@ -5,7 +5,8 @@ subgroup: Architectural Basics
 title: Magento 2.0 software versions
 menu_title: Magento 2.0 software versions
 menu_order: 3
-
+version: 2.0
+github_link: architecture/software_versions.md
 level3_menu_node: level3child
 level3_subgroup: versioning
 
@@ -15,9 +16,9 @@ redirect_from: /guides/v1.0/architecture/software_versions.html
 <h2 id="verpol">Magento 2.0 software versions</h2>
 
 
-Magento versioning policy addresses the concerns of two main types of users: 
+Magento versioning policy addresses the concerns of two main types of users:
 
-* <i>merchants</i>, who are focused on **product version numbers**. This product version number loosely corresponds to a platform version. 
+* <i>merchants</i>, who are focused on **product version numbers**. This product version number loosely corresponds to a platform version.
 
 * <i>extension developers</i>, who focus on **module version numbers**. Each  module is released in its own Composer package, which is identified with a module version number.
 
@@ -41,11 +42,11 @@ The Magento team changes the major version number when we make a change that wil
 <h3>Schema and data version numbers (extension developer focus)</h3>
 Schema and data version numbers are relevant only to developer-level discussions.  Magento uses these version numbers during the installation and upgrade process.
 
-Some modules contain tables of data, and these tables are assigned a schema version number. Changes to the table structure must be reflected in this schema version number. (Table structure changes can include the addition or deletion of a column, for example.) Changes to table data are captured in the data version number. 
+Some modules contain tables of data, and these tables are assigned a schema version number. Changes to the table structure must be reflected in this schema version number. (Table structure changes can include the addition or deletion of a column, for example.) Changes to table data are captured in the data version number.
 
 For information on the types of schema changes that affect a module’s schema version number, see section 2 of Introducing SchemaVer for semantic versioning of schemas.
 
-If you are developing an extension, specify the schema version of each module in its `module.xml` file. Magento stores this schema version of each module within the read-only `setup_module` table of the Magento database. 
+If you are developing an extension, specify the schema version of each module in its `module.xml` file. Magento stores this schema version of each module within the read-only `setup_module` table of the Magento database.
 
 If you are installing or upgrading Magento from the command line, you have the option to upgrade in stages: first upgrade only schemas of tables and then upgrade data. During the upgrade process, Magento tracks these version changes in the setup_module table by automatically updating from the version value in `etc/module.xml` file.
 
@@ -63,7 +64,3 @@ Release versioning and semantic versioning work together. Patches change only th
 <a href="{{ site.gdeurl }}architecture/back-compatibility.html">Backward compatibility</a>
 
 <a href="{{ site.gdeurl }}architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>
-
-
-
-

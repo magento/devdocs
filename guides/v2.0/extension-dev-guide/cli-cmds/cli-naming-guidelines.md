@@ -6,6 +6,7 @@ title: Command naming guidelines
 menu_title: Command naming guidelines
 menu_node:
 menu_order: 2
+version: 2.0
 github_link: extension-dev-guide/cli-cmds/cli-naming-guidelines.md
 redirect_from: /guides/v2.0/extension-dev-guide/cli-naming-guidelines.html
 ---

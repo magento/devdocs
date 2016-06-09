@@ -6,6 +6,7 @@ title: Reuse code across projects with Git submodules
 menu_title: Reuse code across projects with Git submodules
 menu_order: 200
 menu_node: 
+version: 2.0
 github_link: cloud/admin/admin-submodules.md
 ---
 

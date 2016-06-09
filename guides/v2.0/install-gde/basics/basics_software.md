@@ -6,6 +6,7 @@ title: What is the software that the Magento server needs to run?
 menu_title: What is the software that the Magento server needs to run?
 menu_node: 
 menu_order: 99 
+version: 2.0
 github_link: install-gde/basics/basics_software.md
 redirect_from: /guides/v1.0/install-gde/basics/basics_software.html
 ---

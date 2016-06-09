@@ -5,6 +5,7 @@ subgroup: View library
 title: Template engine
 menu_title: Template engine
 menu_order: 
+version: 2.0
 github_link: architecture/view/template-engine.md
 redirect_from: /guides/v1.0/architecture/view/template-engine.html
 ---

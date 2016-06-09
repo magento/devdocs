@@ -6,6 +6,7 @@ title: Set the Magento mode
 menu_title: Set the Magento mode
 menu_node: 
 menu_order: 200
+version: 2.0
 github_link: config-guide/cli/config-cli-subcommands-mode.md
 ---
 

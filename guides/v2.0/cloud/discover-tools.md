@@ -6,6 +6,7 @@ title: Tooling
 menu_title: Tooling
 menu_order: 5
 menu_node: 
+version: 2.0
 github_link: cloud/discover-tools.md
 ---
 

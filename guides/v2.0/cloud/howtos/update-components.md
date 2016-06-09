@@ -8,6 +8,7 @@ menu_order: 5
 level3_menu_node: level3child
 level3_subgroup: upgrade-update
 menu_node: 
+version: 2.0
 github_link: cloud/howtos/update-components.md
 ---
 

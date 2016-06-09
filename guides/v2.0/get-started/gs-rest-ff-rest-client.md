@@ -5,6 +5,7 @@ subgroup: Step 3. Use cURL to run the request
 title: Firefox REST client
 menu_title: Firefox REST client
 menu_order: 3
+version: 2.0
 github_link: get-started/gs-rest-ff-client.md
 redirect_from: /guides/v1.0/get-started/gs-rest-ff-client.html
 ---

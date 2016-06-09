@@ -5,6 +5,7 @@ subgroup: View library
 title: View library
 menu_title: View library
 menu_order: 
+version: 2.0
 github_link: architecture/view/view-lib.md
 redirect_from: /guides/v1.0/architecture/view/view-lib.html
 ---

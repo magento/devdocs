@@ -5,6 +5,7 @@ subgroup: Migration
 title: Migrate themes
 menu_title: Migrate themes
 menu_order: 1
+version: 2.0
 github_link: howdoi/migrate/migrate-themes.md
 ---
 

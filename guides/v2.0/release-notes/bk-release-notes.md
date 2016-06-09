@@ -4,6 +4,7 @@ group: release-notes
 title: Release Notes
 menu_title: List of Release Notes
 menu_order: 1
+version: 2.0
 github_link: release-notes/bk-release-notes.md
 redirect_from: /guides/v1.0/release-notes/bk-release-notes.html
 ---

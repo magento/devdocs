@@ -3,6 +3,7 @@ layout: default
 group: contributor
 subgroup: Contributor Guide
 
+version: 2.0
 github_link: contributor-guide/contributing_docs_suggested_topics.md
 
 ---

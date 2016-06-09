@@ -5,6 +5,7 @@ subgroup: View library
 title: Page assets
 menu_title: Page assets
 menu_order: 
+version: 2.0
 github_link: architecture/view/page-assets.md
 redirect_from: /guides/v1.0/architecture/view/page-assets.html
 ---

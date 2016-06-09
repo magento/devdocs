@@ -5,6 +5,7 @@ subgroup: 1_Javascript
 title: Locate JavaScript components
 menu_title: Locate JavaScript components
 menu_order: 4
+version: 2.0
 github_link: javascript-dev-guide/javascript/js_debug.md
 redirect_from:
   - guides/v2.0/frontend-dev-guide/javascript/js_debug.html

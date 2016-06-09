@@ -2,6 +2,7 @@
 layout: default
 group: testing
 title: Magento Testing Guide
+version: 2.0
 github_link: test/testing.md
 ---
 

@@ -6,6 +6,7 @@ title:
 menu_title: 
 menu_order: 1
 menu_node: parent
+version: 2.0
 github_link: architecture/areas/areas.md
 redirect_from: /guides/v1.0/architecture/areas/areas.html
 ---

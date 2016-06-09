@@ -5,6 +5,7 @@ subgroup: View library
 title: Static file processing
 menu_title: Static file processing
 menu_order: 
+version: 2.0
 github_link: architecture/view/static-process.md
 redirect_from: /guides/v1.0/architecture/view/static-process.html
 ---

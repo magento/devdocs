@@ -6,6 +6,7 @@ title: Create a cache type
 menu_title: Create a cache type
 menu_order: 500
 menu_node: 
+version: 2.0
 github_link: config-guide/config/caching-cache-type.md
 ---
 

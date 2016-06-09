@@ -5,6 +5,7 @@ subgroup: C_Templates
 title: Templates XSS security
 menu_title: Templates XSS security
 menu_order: 5
+version: 2.0
 github_link: frontend-dev-guide/templates/template-overview.md
 redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-security.html
 ---

@@ -6,6 +6,7 @@ title: Architecture
 menu_title: Architecture
 menu_order: 2
 menu_node: 
+version: 2.0
 github_link: cloud/discover-arch.md
 ---
 
