@@ -5,6 +5,7 @@ subgroup: 99_Module Development
 title: Code generation
 menu_title: Code generation
 menu_order: 8
+version: 2.1
 github_link21: extension-dev-guide/code-generation.md
 
 ---

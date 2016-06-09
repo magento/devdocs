@@ -5,6 +5,7 @@ subgroup: 07_conf
 title: Module configuration files
 menu_title: Module configuration files
 menu_order: 5
+version: 2.1
 github_link21: config-guide/config/config-files.md
 ---
 

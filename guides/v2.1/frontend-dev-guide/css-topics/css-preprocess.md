@@ -5,6 +5,7 @@ subgroup: D_CSS
 title: CSS preprocessing
 menu_order: 3
 menu_title: CSS preprocessing
+version: 2.1
 github_link: frontend-dev-guide/css-topics/css-preprocess.md
 ---
 

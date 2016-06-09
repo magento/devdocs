@@ -6,6 +6,7 @@ title: Other administrative tasks
 menu_title: Other administrative tasks
 menu_order: 1
 menu_node: parent
+version: 2.1
 github_link21: cloud/admin/administer.md
 ---
 

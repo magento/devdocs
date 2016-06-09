@@ -5,6 +5,7 @@ subgroup: 50_Entities
 title: Entities of the Functional Testing Framework
 menu_title: Data set
 menu_order: 8
+version: 2.1
 github_link: mtf/mtf_entities/mtf_dataset.md
 ---
 

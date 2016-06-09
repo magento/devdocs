@@ -6,6 +6,7 @@ title: git push details
 menu_title: git push details (remove or rewrite)
 menu_order: 100
 menu_node: 
+version: 2.1
 github_link21: cloud/project/admin-git-push.md
 ---
 

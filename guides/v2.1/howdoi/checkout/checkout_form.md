@@ -5,6 +5,7 @@ subgroup: checkout
 title: Add a new input form to checkout
 menu_title: Add a new input form to checkout
 menu_order: 8
+version: 2.1
 github_link: howdoi/checkout/checkout_form.md
 ---
 ## What's in this topic

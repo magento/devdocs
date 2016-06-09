@@ -7,6 +7,7 @@ menu_title: Writing Testable Code
 menu_node: parent
 contributor_name: Vinai Kopp
 contributor_link: http://vinaikopp.com/
+version: 2.1
 github_link: test/unit/writing_testable_code.md
 ---
 

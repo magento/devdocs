@@ -6,6 +6,7 @@ title: Magento Admin Pattern Library
 menu_title: Scheduled Changes Module
 menu_order: 2
 menu_node: 
+version: 2.1
 github_link: pattern-library/staging-patterns/ScheduledChangesModule/module.md
 ---
 <img src="img/ee-only_large.png">

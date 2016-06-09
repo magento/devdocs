@@ -5,6 +5,7 @@ subgroup: 65_Troubleshooting
 title: Troubleshoot the Functional Testing Framework issues
 menu_title: TROUBLESHOOTING
 menu_node: parent
+version: 2.1
 github_link: mtf/troubleshooting.md
 ---
 <h2 id="mtf_update">Known issues and their solutions</h2>

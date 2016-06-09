@@ -6,6 +6,7 @@ title: Cannot clone the Magento GitHub repository
 menu_title: Cannot clone the Magento GitHub repository
 menu_node:
 menu_order: 15
+version: 2.1
 github_link21: install-gde/trouble/git/tshoot_clone.md
 ---
 

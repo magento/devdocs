@@ -2,6 +2,7 @@
 layout: default
 menu_title: Feedback for Admin Panel Placement and Design
 menu_order: 1
+version: 2.1
 github_link21: ext-best-practices/admin/feedback-placement-and-design.md
 
 ---

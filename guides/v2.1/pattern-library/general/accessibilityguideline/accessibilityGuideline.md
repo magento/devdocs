@@ -6,6 +6,7 @@ title: Magento Admin Pattern Library
 menu_title: Accessibility Guideline
 menu_order: 
 menu_node: 
+version: 2.1
 github_link: pattern-library/general/accessibilityguideline/accessibilityGuideline.md
 ---
 <h2> Accessibility Guidelines </h2>

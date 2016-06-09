@@ -6,6 +6,7 @@ title: Magento mode switch
 menu_title: Magento mode switch
 menu_node: parent
 menu_order: 1
+version: 2.1
 github_link: howdoi/install/mode-switch.md
 ---
 

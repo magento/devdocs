@@ -5,6 +5,7 @@ subgroup: Architectural Layers
 title: Magento Web API endpoints
 menu_title: 
 menu_order: 
+version: 2.1
 github_link21: architecture/archi_perspectives/web_endpoints.md
 ---
 

@@ -6,6 +6,7 @@ title: Bookmark Component
 menu_title: Bookmark Component
 menu_node:
 menu_order: 9
+version: 2.1
 github_link: ui-components/ui-secondary-bookmark.md
 ---
 

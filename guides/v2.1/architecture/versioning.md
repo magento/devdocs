@@ -5,6 +5,7 @@ subgroup: Architectural Basics
 title: Versioning policy
 menu_title: Versioning policy
 menu_order: 4
+version: 2.1
 github_link21: architecture/versioning.md
 ---
 

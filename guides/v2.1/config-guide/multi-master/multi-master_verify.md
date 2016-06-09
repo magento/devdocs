@@ -6,6 +6,7 @@ title: Verify split databases
 menu_title: Verify split databases
 menu_order: 5
 menu_node: 
+version: 2.1
 github_link21: config-guide/multi-master/multi-master_verify.md
 ---
 

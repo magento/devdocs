@@ -5,6 +5,7 @@ subgroup: 1_Javascript
 title: Customizing JavaScript illustration
 menu_title: Customizing JavaScript illustration
 menu_order: 5
+version: 2.1
 github_link: javascript-dev-guide/javascript/js_practice.md
 ---
 

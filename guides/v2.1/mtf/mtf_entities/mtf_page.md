@@ -5,6 +5,7 @@ subgroup: 50_Entities
 title: Entities of the Functional Testing Framework
 menu_title: Page
 menu_order: 6
+version: 2.1
 github_link: mtf/mtf_entities/mtf_page.md
 ---
 

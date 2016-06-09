@@ -5,6 +5,7 @@ subgroup:
 title: How Magento calculates prices
 menu_title: How Magento calculates prices
 menu_order: 
+version: 2.1
 github_link21: architecture/behavior/price-calc.md
 ---
 

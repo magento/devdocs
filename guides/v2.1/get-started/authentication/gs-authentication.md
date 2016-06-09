@@ -6,6 +6,7 @@ title: Authentication
 menu_title: Authentication
 menu_order: 1
 menu_node: parent
+version: 2.1
 github_link: get-started/authentication/gs-authentication.md
 ---
 

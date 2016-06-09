@@ -6,6 +6,7 @@ title: Upload your component to the Magento Marketplace
 menu_title: Upload your component to the Magento Marketplace
 menu_order: 1
 menu_node: parent
+version: 2.1
 github_link: mktpl-quickstart/mktpl-intro.md
 ---
 

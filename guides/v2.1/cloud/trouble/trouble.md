@@ -6,6 +6,7 @@ title: Troubleshooting
 menu_title: Troubleshooting
 menu_order: 1
 menu_node: parent
+version: 2.1
 github_link21: cloud/trouble/trouble.md
 ---
 

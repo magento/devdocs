@@ -6,6 +6,7 @@ title: Overview of responsive web design in Magento
 menu_title: How to Make Your Theme Responsive and Mobile
 menu_order: 1
 menu_node: parent
+version: 2.1
 github_link: frontend-dev-guide/responsive-web-design/rwd_overview.md
 ---
 

@@ -5,6 +5,7 @@ subgroup: B_Authentication
 title: Session-based authentication
 menu_title: Session-based authentication
 menu_order: 3
+version: 2.1
 github_link: get-started/authentication/gs-authentication-session.md
 ---
 

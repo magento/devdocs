@@ -6,6 +6,7 @@ title: Installation overview
 menu_title: Installation overview
 menu_node: 
 menu_order: 1
+version: 2.1
 github_link21: install-gde/bk-install-guide.md
 ---
 

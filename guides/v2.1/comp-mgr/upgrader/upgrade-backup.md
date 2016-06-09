@@ -6,6 +6,7 @@ title: Step 3. Back up the file system and database
 menu_title: Step 3. Back up the file system and database
 menu_node: 
 menu_order: 15
+version: 2.1
 github_link21: comp-mgr/upgrader/upgrade-backup.md
 ---
 

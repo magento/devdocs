@@ -6,6 +6,7 @@ title: Workflow
 menu_title: Workflow
 menu_order: 3
 menu_node: 
+version: 2.1
 github_link21: cloud/discover-workflow.md
 ---
 

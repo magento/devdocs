@@ -5,6 +5,7 @@ subgroup: B_Authentication
 title: Token-based authentication
 menu_title: Token-based authentication
 menu_order: 1
+version: 2.1
 github_link: get-started/authentication/gs-authentication-token.md
 ---
 

@@ -5,6 +5,7 @@ subgroup: C_REST
 title: Review the response
 menu_title: Review the response
 menu_order: 3
+version: 2.1
 github_link: get-started/gs-web-api-response.md
 ---
 

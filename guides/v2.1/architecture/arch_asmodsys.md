@@ -5,6 +5,7 @@ subgroup: Architecture
 title: Magento as a modular system
 menu_title: Magento as a modular system
 menu_order: 
+version: 2.1
 github_link21: architecture/arch_asmodsys.md
 ---
 

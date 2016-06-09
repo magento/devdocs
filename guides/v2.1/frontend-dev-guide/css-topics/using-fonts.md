@@ -4,6 +4,7 @@ group: fedg
 subgroup: D_CSS
 title: Using custom fonts
 menu_order: 6
+version: 2.1
 github_link: frontend-dev-guide/css-topics/using-fonts.md
 ---
 <h2>What's in this topic</h2>

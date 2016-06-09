@@ -5,6 +5,7 @@ subgroup: D_UI Library Form Component
 title: Checkbox type field component
 menu_title: Checkbox type field component
 menu_node:
+version: 2.1
 github_link: ui-components/form_secondary/ui_fields_checkbox.md
 ---
 

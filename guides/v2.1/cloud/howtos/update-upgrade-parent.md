@@ -8,6 +8,7 @@ menu_order: 2
 menu_node: 
 level3_menu_node: level3parent
 level3_subgroup: upgrade-update
+version: 2.1
 github_link21: cloud/howtos/update-upgrade-parent.md
 ---
 

@@ -6,6 +6,7 @@ title: Uninstall themes
 menu_title: Uninstall themes
 menu_node: 
 menu_order: 200
+version: 2.1
 github_link21: install-gde/install/cli/install-cli-theme-uninstall.md
 ---
 

@@ -6,6 +6,7 @@ title: CLI command reference
 menu_title: CLI command reference
 menu_order: 1
 menu_node: parent
+version: 2.1
 github_link21: cloud/cli-ref/cli-ref-topic.md
 ---
 

@@ -6,6 +6,7 @@ title: Contribute to Magento 2
 menu_title: Contribute to Magento 2
 menu_order: 1
 menu_node: parent
+version: 2.1
 github_link: contributor-guide/contributing.md
 ---
 

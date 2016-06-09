@@ -6,6 +6,7 @@ title: Get started with an environment
 menu_title: Get started with an environment
 menu_order: 2
 menu_node: 
+version: 2.1
 github_link21: cloud/env/environments-start.md
 ---
 

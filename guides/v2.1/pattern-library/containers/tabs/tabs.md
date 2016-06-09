@@ -6,6 +6,7 @@ title: Magento Admin Pattern Library
 menu_title: Tabs
 menu_order: 3
 menu_node: 
+version: 2.1
 github_link: pattern-library/containers/tabs/tabs.md
 ---
 <h2> Tabs </h2>

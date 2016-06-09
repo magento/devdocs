@@ -6,6 +6,7 @@ title: Magento Marketplace example
 menu_title: Magento Marketplace example
 menu_order: 1
 menu_node: parent
+version: 2.1
 github_link21: comp-mgr/marketplace/marketplace.md
 ---
 

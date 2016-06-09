@@ -5,6 +5,7 @@ subgroup: B_Layouts
 title: Layout instructions
 menu_title: Layout instructions
 menu_order: 2
+version: 2.1
 github_link: frontend-dev-guide/layouts/xml-instructions.md
 ---
 <head>

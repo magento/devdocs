@@ -6,6 +6,7 @@ title: Installation quick reference (tutorial)
 menu_title: Installation quick reference (tutorial)
 menu_node: parent
 menu_order: 1
+version: 2.1
 github_link21: install-gde/install-quick-ref.md
 ---
 

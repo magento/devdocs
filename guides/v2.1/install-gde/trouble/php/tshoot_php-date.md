@@ -6,6 +6,7 @@ title: During installation, PHP date warning
 menu_title: During installation, PHP date warning
 menu_node: 
 menu_order: 20
+version: 2.1
 github_link21: install-gde/trouble/php/tshoot_php-date.md
 ---
 

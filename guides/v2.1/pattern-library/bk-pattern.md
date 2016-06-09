@@ -6,6 +6,7 @@ title: Magento Admin Pattern Library
 menu_title: Introduction
 menu_order: 
 menu_node: 
+version: 2.1
 github_link: pattern-library/bk-pattern.md
 ---
 <h3>What is a design pattern?</h3>

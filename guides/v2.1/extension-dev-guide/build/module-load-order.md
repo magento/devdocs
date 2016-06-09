@@ -5,6 +5,7 @@ subgroup: 03_Build
 title: Component load order
 menu_title: Component load order
 menu_order: 8
+version: 2.1
 github_link21: extension-dev-guide/build/module-load-order.md
 ---
 

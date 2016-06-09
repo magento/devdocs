@@ -5,6 +5,7 @@ subgroup: Coding standards
 title: jQuery widget coding standard
 menu_title: jQuery widget coding standard
 menu_order: 6
+version: 2.1
 github_link21: coding-standards/code-standard-jquery-widgets.md
 ---
 

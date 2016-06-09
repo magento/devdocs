@@ -5,6 +5,7 @@ subgroup: D_CSS
 title: Styles debugging
 menu_order: 4
 menu_title: Styles debugging
+version: 2.1
 github_link: frontend-dev-guide/css-topics/css_debug.md
 ---
 

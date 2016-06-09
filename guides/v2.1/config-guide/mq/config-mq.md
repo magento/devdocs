@@ -5,6 +5,7 @@ subgroup: 18_RabbitMQ
 title: Configure message queue topology
 menu_title: Configure message queue topology
 menu_order: 2
+version: 2.1
 github_link21: config-guide/mq/config-mq.md
 ---
 <div class="bs-callout bs-callout-warning">
