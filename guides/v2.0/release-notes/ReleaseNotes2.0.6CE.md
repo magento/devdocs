@@ -5,6 +5,7 @@ subgroup: Release Notes
 title: Magento CE 2.0.6 Release Notes 
 menu_title: Magento CE 2.0.6 Release Notes 
 menu_order: 11
+version: 2.0
 github_link: release-notes/ReleaseNotes2.0.6CE.md
 ---
 

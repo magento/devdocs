@@ -6,6 +6,7 @@ title: Step 5. Create Admin Account
 menu_title: Step 5. Create Admin Account
 menu_node: 
 menu_order: 6
+version: 2.0
 github_link: install-gde/install/web/install-web_5-create-admin.md
 ---
 

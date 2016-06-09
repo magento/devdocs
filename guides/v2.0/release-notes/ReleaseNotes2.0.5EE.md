@@ -5,6 +5,7 @@ subgroup: Release Notes
 title: Magento EE 2.0.5 Release Notes 
 menu_title: Magento EE 2.0.5 Release Notes 
 menu_order: 10
+version: 2.0
 github_link: release-notes/ReleaseNotes2.0.5EE.md
 ---
 

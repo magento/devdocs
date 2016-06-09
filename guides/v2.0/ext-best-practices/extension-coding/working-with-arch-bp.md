@@ -5,6 +5,7 @@ subgroup: 02_Extension-Coding
 title: Working with the Architecture
 menu_title: Working with the Architecture
 menu_order: 2
+version: 2.0
 github_link: ext-best-practices/extension-coding/working-with-arch-bp.md
 
 ---

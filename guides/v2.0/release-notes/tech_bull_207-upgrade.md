@@ -6,6 +6,7 @@ title: Technical Bulletin
 menu_title: Required patch for PHP 5.5.x and Setup Application environments (June 6, 2016)
 menu_node: 
 menu_order: 
+version: 2.0
 github_link: release-notes/tech_bull_207-upgrade.md
 redirect_from: 
 ---

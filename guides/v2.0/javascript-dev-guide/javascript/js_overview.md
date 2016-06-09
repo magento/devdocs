@@ -6,6 +6,7 @@ title: JavaScript
 menu_title: JavaScript
 menu_order: 1
 menu_node: parent
+version: 2.0
 github_link: javascript-dev-guide/javascript/js_overview.md
 redirect_from:
   - guides/v2.0/frontend-dev-guide/javascript/js_overview.html

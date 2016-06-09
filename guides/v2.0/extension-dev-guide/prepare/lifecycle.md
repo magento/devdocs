@@ -5,6 +5,7 @@ subgroup: 02_Prepare
 title: Extension Lifecycle
 menu_title: Extension lifecycle
 menu_order: 100
+version: 2.0
 github_link: extension-dev-guide/prepare/lifecycle.md
 ---
 

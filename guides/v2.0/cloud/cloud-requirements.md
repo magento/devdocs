@@ -6,6 +6,7 @@ title: Magento Enterprise Cloud Edition requirements
 menu_title: Magento Enterprise Cloud Edition requirements
 menu_order: 20
 menu_node: 
+version: 2.0
 github_link: cloud/cloud-requirements.md
 ---
 

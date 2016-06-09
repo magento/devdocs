@@ -6,6 +6,7 @@ title: First-time setup
 menu_title: First-time setup
 menu_order: 1
 menu_node: parent
+version: 2.0
 github_link: cloud/access-acct/first-time-setup.md
 ---
 

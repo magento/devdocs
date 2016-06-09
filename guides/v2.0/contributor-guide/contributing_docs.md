@@ -8,6 +8,7 @@ menu_order: 1
 menu_node: parent
 contributor_name: Staffan Palopää from Vaimo
 contributor_link: http://www.vaimo.com/
+version: 2.0
 github_link: contributor-guide/contributing_docs.md
 redirect_from: guides/v2.0/extension-dev-guide/Contribute_edg.md
 ---
@@ -131,7 +132,8 @@ The .md (Markdown) file's metadata is a set of key-value pairs (where the key is
     menu_title: Continue with your installation
     menu_node: parent
     menu_order: 1
-    github_link: install-gde/continue.md
+    version: 2.0
+github_link: install-gde/continue.md
     ---	
 
 ###Definitions
@@ -184,7 +186,8 @@ They still show up in alphabetical order, based on subgroup's name. Now change t
          </td>
       </tr>
        <tr>
-         <td>github_link: install-gde/continue.md</td>
+         <td>version: 2.0
+github_link: install-gde/continue.md</td>
          <td>Gives you the name and location of the source file in github.</td>
       </tr>
    </tbody>

@@ -7,6 +7,7 @@ menu_title: Running Integration Tests in the CLI
 menu_node: parent
 contributor_name: Vinai Kopp
 contributor_link: http://vinaikopp.com/
+version: 2.0
 github_link: test/integration/integration_test_execution.md
 ---
 

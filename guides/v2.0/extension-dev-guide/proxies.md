@@ -7,6 +7,7 @@ menu_title: Proxies
 menu_order: 7
 contributor_name: Classy Llama
 contributor_link: http://www.classyllama.com/
+version: 2.0
 github_link: extension-dev-guide/proxies.md
 ---
 ##{{page.menu_title}}

@@ -6,6 +6,7 @@ title:
 menu_title: 
 menu_node: 
 menu_order: 1
+version: 2.0
 github_link: howdoi/howdoi_template.md
 ---
 

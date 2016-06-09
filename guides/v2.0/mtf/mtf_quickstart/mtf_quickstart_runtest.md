@@ -5,6 +5,7 @@ subgroup: 30_Quickstart
 title: Quick start with the Functional Testing Framework
 menu_title: Test run
 menu_order: 3
+version: 2.0
 github_link: mtf/mtf_quickstart/mtf_quickstart_runtest.md
 redirect_from: /guides/v1.0/mtf/mtf_quickstart/mtf_quickstart_runtest.html
 ---

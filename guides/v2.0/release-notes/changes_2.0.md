@@ -5,6 +5,7 @@ subgroup: Breaking changes
 title: Magento 2.0 Backward Incompatible Changes
 menu_title: Backward incompatible changes
 menu_node: parent
+version: 2.0
 github_link: release-notes/changes_2.0.md
 ---
 <h2>Preface</h2>

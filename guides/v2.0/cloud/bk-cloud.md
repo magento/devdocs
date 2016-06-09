@@ -6,6 +6,7 @@ title: Welcome to Magento Enterprise Cloud Edition
 menu_title: Welcome to Magento Enterprise Cloud Edition
 menu_order: 1
 menu_node: parent
+version: 2.0
 github_link: cloud/bk-cloud.md
 ---
 

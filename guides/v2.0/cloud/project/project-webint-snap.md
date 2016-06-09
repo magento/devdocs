@@ -8,6 +8,7 @@ menu_order: 7
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: project
+version: 2.0
 github_link: cloud/project/project-webint-snap.md
 ---
 

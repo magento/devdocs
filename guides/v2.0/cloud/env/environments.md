@@ -6,6 +6,7 @@ title: Manage your environments
 menu_title: Manage your environments
 menu_order: 1
 menu_node: parent
+version: 2.0
 github_link: cloud/env/environments.md
 ---
 

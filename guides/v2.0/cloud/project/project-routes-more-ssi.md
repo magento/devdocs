@@ -8,6 +8,7 @@ menu_order: 20
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: routes
+version: 2.0
 github_link: cloud/project/project-routes-more-ssi.md
 ---
 

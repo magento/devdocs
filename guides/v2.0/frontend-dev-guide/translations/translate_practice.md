@@ -5,6 +5,7 @@ subgroup: G_Translate
 title: Create a translation dictionary for a theme
 menu_title: Create a translation dictionary for a theme, illustration
 menu_order: 2
+version: 2.0
 github_link: frontend-dev-guide/translations/translate_practice.md
 ---
 

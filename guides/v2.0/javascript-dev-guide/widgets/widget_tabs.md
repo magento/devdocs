@@ -5,6 +5,7 @@ subgroup: 3_Widgets
 title: Tabs widget
 menu_title: Tabs widget
 menu_order: 14
+version: 2.0
 github_link: javascript-dev-guide/widgets/widget_tabs.md
 redirect_from:
   - guides/v2.0/frontend-dev-guide/javascript/widget_tabs.html

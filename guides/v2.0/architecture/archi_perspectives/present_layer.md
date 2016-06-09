@@ -5,6 +5,7 @@ subgroup: Architectural Layers
 title: Presentation Layer
 menu_title: Presentation layer
 menu_order: 1
+version: 2.0
 github_link: architecture/archi_perspectives/present_layer.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/present_layer.html
 ---

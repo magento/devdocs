@@ -6,6 +6,7 @@ title: Customize Checkout
 menu_title: Customize Checkout
 menu_node: parent
 menu_order: 1
+version: 2.0
 github_link: howdoi/checkout/checkout_overview.md
 ---
 

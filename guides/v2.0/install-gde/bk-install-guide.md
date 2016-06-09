@@ -6,6 +6,7 @@ title: Installation overview
 menu_title: Installation overview
 menu_node: 
 menu_order: 1
+version: 2.0
 github_link: install-gde/bk-install-guide.md
 redirect_from: 
   - /guides/v1.0/install-gde/bk-install-guide.html

@@ -6,6 +6,7 @@ title: Extensibility and modularity
 menu_title: 
 menu_node: 
 menu_order: 
+version: 2.0
 github_link: architecture/extensibility.md
 ---
 

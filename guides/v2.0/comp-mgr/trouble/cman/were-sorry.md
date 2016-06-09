@@ -6,6 +6,7 @@ title: "Sorry, we can't take that action right now"
 menu_title: "Sorry, we can't take that action right now"
 menu_node: 
 menu_order: 2
+version: 2.0
 github_link: comp-mgr/trouble/cman/were-sorry.md
 ---
 

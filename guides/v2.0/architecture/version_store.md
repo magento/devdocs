@@ -10,6 +10,7 @@ level3_menu_node: level3child
 level3_subgroup: versioning
 
 
+version: 2.0
 github_link: architecture/versioning.md
 redirect_from: /guides/v1.0/architecture/version_store.html
 ---

@@ -6,6 +6,7 @@ title: Get started with a project
 menu_title: Get started with a project
 menu_order: 2
 menu_node: 
+version: 2.0
 github_link: cloud/project/project-start.md
 ---
 

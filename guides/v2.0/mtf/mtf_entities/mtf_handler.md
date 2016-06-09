@@ -5,6 +5,7 @@ subgroup: 50_Entities
 title: Entities of the Functional Testing Framework
 menu_title: Handler
 menu_order: 3
+version: 2.0
 github_link: mtf/mtf_entities/mtf_handler.md
 ---
 

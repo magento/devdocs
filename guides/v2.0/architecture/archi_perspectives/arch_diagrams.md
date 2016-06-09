@@ -5,6 +5,7 @@ subgroup: Architectural Basics
 title: Architectural diagrams
 menu_title: Architectural diagrams
 menu_order: 1
+version: 2.0
 github_link: architecture/archi_perspectives/arch_diagrams.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/arch_diagrams.html
 ---

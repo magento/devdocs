@@ -6,6 +6,7 @@ title: Code Contributions
 menu_title: Code Contributions
 menu_order: 1
 menu_node: parent
+version: 2.0
 github_link: contributor-guide/contributing.md
 redirect_from: /guides/v1.0/contributor-guide/contributing.html
 ---
