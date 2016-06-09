@@ -1791,7 +1791,7 @@ contributor_link: https://github.com/magento-hackathon
     </tr>
     <tr>
         <td>
-            Call center (phone) order creation - provides transparent control for administrators and front-end enhancements for customers during the shopping process. Changing product configurations, for all types of products, can be done by the call center sale representative on the Admin side as well as by the customer during the shopping process. Custom product choices and configurations can be changed directly during order creation, in the wish list, and the shopping cart
+            Call center (phone) order creation - provides transparent control for administrators and storefront enhancements for customers during the shopping process. Changing product configurations, for all types of products, can be done by the call center sale representative on the Admin side as well as by the customer during the shopping process. Custom product choices and configurations can be changed directly during order creation, in the wish list, and the shopping cart
             <ul>
                 <li>
                     Includes the ability to create new customers, or select existing customers and view their shopping cart, wish list, last ordered items, and compared products lists, as well as select addresses, give discounts and assign custom prices
@@ -1840,7 +1840,7 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td><a href="http://docs.magento.com/m2/ce/user_guide/customers/customer-account-create-order.html">Create re-orders for customers from the Admin panel</a>
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/customers/customer-account-create-order.html">Create reorders for customers from the Admin panel</a>
             
         </td>
         <td>
@@ -2507,7 +2507,7 @@ contributor_link: https://github.com/magento-hackathon
         </td>
     </tr>
     <tr>
-        <td><a href="http://docs.magento.com/m2/ce/user_guide/reports/product-reports.html">Best viewed products report</a>
+        <td><a href="http://docs.magento.com/m2/ce/user_guide/reports/product-reports.html">Best selling products report</a>
             
         </td>
         <td>
