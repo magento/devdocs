@@ -13,7 +13,7 @@ github_link: architecture/storefront_customization.md
 
 We can generalize about the range of storefront customizations that the Magento supports. This range spans the simplest customizations, which involve only small additions to the default Magento storefront settings, to a complete replacement of Magento-provided HTML and CSS. 
 
-These four levels of potential storefront customization are listed in order of increasing complexity. 
+These four levels of potential storefront customization are listed in order to increase complexity. 
 
 <h3>Extend Magento-Provided CSS</h3>
 Magento supplies a default theme and a LESS-based CSS set of styles. You can substantially change a storefront using CSS only.  This uncomplicated strategy might suit projects with a limited budget, or might interest developers who create different skins for a site. A small business enter this process of storefront customization by buying a third-party developed theme from Magento Marketplace to extend the default values.

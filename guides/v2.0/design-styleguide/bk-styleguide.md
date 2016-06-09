@@ -6,7 +6,7 @@ title: Admin Style Guide
 menu_title: Introduction
 menu_order: 1
 menu_node: 
-github_link: design-styleguide/bk_styleguide.md
+github_link: design-styleguide/bk-styleguide.md 
 ---
 
 <h3>What is a style guide?</h3>

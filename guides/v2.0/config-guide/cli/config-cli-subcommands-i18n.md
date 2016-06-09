@@ -369,7 +369,7 @@ Sample `language.xml`:
 <language xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/Language/package.xsd">
     <code>xx_YY</code>
     <vendor>examplecorp</vendor>
-    <package>xx_YY</package>
+    <package>xx_yy</package>
 </language>
 {% endhighlight %}
 

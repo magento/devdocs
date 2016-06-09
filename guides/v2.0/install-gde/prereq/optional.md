@@ -4,7 +4,7 @@ group: install_pre
 subgroup: Prerequisites
 title: Optional software
 menu_title: Optional software
-menu_order: 500
+menu_order: 400
 github_link: install-gde/prereq/optional.md
 redirect_from: /guides/v1.0/install-gde/prereq/optional.html
 ---

@@ -21,6 +21,8 @@ github_link: cloud/project/project-conf-files_services-elastic.md
 
 We support Elasticsearch version 1.7.
 
+![This feature is supported in Magento 2.1 only]({{ site.baseurl }}common/images/2.1-only_small.png). Elasticsearch is supported in Magento 2.1.
+
 [More information about Elasticsearch]({{ site.gdeurl }}config-guide/elasticsearch/es-overview.html).
 
 ## Relationship

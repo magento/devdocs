@@ -6,7 +6,7 @@ title:
 menu_title: 
 menu_node: 
 menu_order: 1
-github_link: PATH/PATH/FILENAME.md
+github_link: contributor-guide/basic_template.md
 ---
 
 <div class="bs-callout bs-callout-tip">

@@ -1,7 +1,7 @@
 ---
 layout: default
-group: test-guide
-subgroup: B4_Running_Integration_Tests
+group: integration-testing
+subgroup: 40_Running_Integration_Tests
 title: Running Integration Tests in PHPStorm
 menu_title: Running Integration Tests in PHPStorm
 menu_node: parent

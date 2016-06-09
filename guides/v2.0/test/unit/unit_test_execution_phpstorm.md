@@ -1,7 +1,7 @@
 ---
 layout: default
-group: test-guide
-subgroup: A3_Running_Unit_Tests
+group: unit-testing
+subgroup: 30_Running_Unit_Tests
 title: Running Unit Tests in PHPStorm
 menu_title: Running Unit Tests in PHPStorm
 menu_node: parent

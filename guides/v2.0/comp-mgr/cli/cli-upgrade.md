@@ -17,7 +17,8 @@ You can upgrade Magento from the command line if you installed the software usin
 
 <div class="bs-callout bs-callout-info" id="info">
  	<ul><li>If you cloned the Magento 2 GitHub repository, you <em>cannot</em> use this method to upgrade; instead, see <a href="{{ site.gdeurl }}install-gde/install/cli/dev_update-magento.html">Update the Magento application</a>.</li>
- 		<li>If you configured Magento use use <code>pub</code> as its root directory, see the next section.</li></ul>
+ 		<li>If you configured Magento use use <code>pub</code> as its root directory, see the next section.</li>
+ 		<li>If you're upgrading to Magento 2 Release Candidate 1 (RC1) or RC2 <em>and</em> you installed sample data, see <a href="{{ site.gdeurl }}comp-mgr/cli/cli-rc1-samp.html">Command-line Magento EE upgrade with sample data to RC1 or RC2</a> instead of this topic.</li></ul>
 </div>
 
 <div class="bs-callout bs-callout-warning">
@@ -46,14 +47,14 @@ To upgrade using the command line:
 		composer require <product> <version> --no-update
 		composer update
 
-	For example, to upgrade to Magento CE version 2.0.4, enter:
+	For example, to upgrade to Magento CE version 2.0.6, enter:
 
-		composer require magento/product-community-edition 2.0.4 --no-update
+		composer require magento/product-community-edition 2.0.6 --no-update
 		composer update
 
-	To upgrade to Magento EE version 2.0.4, enter:
+	To upgrade to Magento EE version 2.0.6, enter:
 
-		composer require magento/product-enterprise-edition 2.0.4 --no-update
+		composer require magento/product-enterprise-edition 2.0.6 --no-update
 		composer update
 	
 	<div class="bs-callout bs-callout-info" id="info">
@@ -64,9 +65,6 @@ To upgrade using the command line:
 4. Update the database schema and data:
 
 		php bin/magento setup:upgrade
-5.	Enable the Magento cache:
-
-		php bin/magento cache:enable
 6.	Access your storefront.
 
 	The following error might display:

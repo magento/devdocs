@@ -4,7 +4,7 @@ group: cloud
 subgroup: 07_project
 title: routes.yaml
 menu_title: routes.yaml
-menu_order: 15
+menu_order: 16
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: routes
@@ -18,7 +18,7 @@ github_link: cloud/project/project-conf-files_routes.md
 *	[Route options](#cloud-yaml-routes-opts)
 *	[Simple routes](#cloud-yaml-routes-sample-simple) 
 *	[Wildcard routes](#cloud-yaml-routes-sample-wild) 
-*	[Redirects](#cloud-yaml-routes-sample-wild) 
+*	[Redirects](#cloud-yaml-routes-sample-redirects) 
 *	[List routes](#cloud-yaml-routes-setup) 
 
 ## `routes.yaml` overview {#cloud-yaml-routes-over}
@@ -53,6 +53,8 @@ configurations. A route  template can look like this: `http://www.{default}/` or
 `https://{default}/blog`, where `{default}` is the fully qualified domain 
 name configured for the project. 
 
+{% collapsible Click to show/hide content %}
+
 If the domain is `example.com`, these 
 routes resolve: `http://www.example.com/` and 
 `https://example.com/blog` for the live environment (that is, the Master). 
@@ -70,6 +72,8 @@ For example, if the project ID is `mswy7hzcuhcjw` on a branch called `refactorcs
 
 <!-- Magento Enterprise Cloud Edition also supports [multiple applications]({{ site.gdeurl }}cloud/project/project-conf-multi.html) per project. Each project has a single `routes.yaml` file that defines which request is routed to which application. -->
 
+{% endcollapsible %}
+
 ## Route options {#cloud-yaml-routes-opts} 
 Each route can be configured separately with the following properties:
 
@@ -86,6 +90,9 @@ Each route can be configured separately with the following properties:
 * `redirects` controls [redirect rules]({{ site.gdeurl }}cloud/project/project-routes-more-redir.html) associated with the route.
 
 ## Simple routes {#cloud-yaml-routes-sample-simple}
+
+{% collapsible Click to show/hide content %}
+
 Following is a sample `routes.yaml` file:
 
 	"http://{default}/":
@@ -114,12 +121,16 @@ server responds directly to a request of the form `http://example.com/hello`,
 but it will issue a 301 redirect for `http://www.example.com/mypath` (to 
 `http://example.com/mypath`).
 
+{% endcollapsible %}
+
 ## Wildcard routes {#cloud-yaml-routes-sample-wild}
 Magento Enterprise Cloud Edition supports wildcard routes, so you can map multiple subdomains to the
 same application. This works both for redirect and upstream routes. You can
 simply prefix the route with a star (`*`), for example `*.example.com`, and
 `www.example.com`, `blog.example.com`, and `us.example.com` all get routed to the
 same application.
+
+{% collapsible Click to show/hide content %}
 
 For your live environment, this functions as a catch-all domain.
 
@@ -145,12 +156,14 @@ In this example, the route is defined as `http://*.{default}/` route, so both
 `http://bar---add-theme-vmwklxcpbi6zq.na.magentosite.cloud/` would work just fine.
 
 If you examine the routes of your application (for example by running
-`echo $PLATFORM_ROUTES | base64 --decode | json_pp` in an SSH session on your environment),
+`echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 --decode | json_pp` in an SSH session on your environment),
 you will see a route such as `https://*---add-theme-vmwklxcpbi6zq.na.magentosite.cloud/`
 
 [More information about caching]({{ site.gdeurl }}cloud/project/project-routes-more-cache.html).
 
-## Redirects {#cloud-yaml-routes-sample-wild}
+{% endcollapsible %}
+
+## Redirects {#cloud-yaml-routes-sample-redirects}
 As discussed in more detail in [redirects]({{ site.gdeurl }}cloud/project/project-routes-more-redir.html), you can set up complex redirection rules including *partial redirects* like the following:
 
 	http://www.{default}/:

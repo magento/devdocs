@@ -25,7 +25,7 @@ Magento provides the ability to add a custom form to any of the checkout steps: 
 
 [Set Magento to developer mode]({{site.gdeurl}}config-guide/cli/config-cli-subcommands-mode.html) while you perform all customizations and debugging.
 
-For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Instead, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should [depend]({{site.gdeurl}}extension-dev-guide/build/composer-integration.html) on the Magento_Checkout module.
+For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Instead, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should [depend]({{site.gdeurl}}extension-dev-guide/build/composer-integration.html) on the `Magento_Checkout` module. Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues. 
 
 ## Create the JS implementation of the form UI component {#component}
 

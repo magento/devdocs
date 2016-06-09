@@ -30,7 +30,7 @@ You have the following options:
 
 To change versions after cloning:
 
-1.	Log in to your Magento server as, or switch to, <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">the Magento file system owner</a>.
+1.	Log in to your Magento server as, or switch to, <a href="{{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html">the Magento file system owner</a>.
 2.	Use the following command to uninstall the Magento software:
 
 		php <your Magento clone dir>/bin/magento setup:uninstall
@@ -42,9 +42,9 @@ To change versions after cloning:
 
 		git checkout tags/<tag name>  [-b <branch name>]
 
-	For example, to check out the 2.0.2 release tag in a new branch named `2.0.2`, enter
+	For example, to check out the 2.0.6 release tag in a new branch named `2.0.6`, enter
 
-		git checkout tags/2.0.2 -b 2.0.2
+		git checkout tags/2.0.6 -b 2.0.6
 
 5.	Install the Magento software using the <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-install.html">command line</a> or <a href="{{ site.gdeurl }}install-gde/install/web/install-web.html">Setup Wizard</a>.
 
@@ -52,7 +52,7 @@ To change versions after cloning:
 
 To change versions after cloning:
 
-1.	Log in to your Magento server as, or switch to, <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">the Magento file system owner</a>.
+1.	Log in to your Magento server as, or switch to, <a href="{{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html">the Magento file system owner</a>.
 2.	Create a <a href="{{ site.gdeurl }}install-gde/prereq/mysql.html#instgde-prereq-mysql-config">new database instance</a> for your installation.
 2.	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-backup.html#instgde-cli-uninst-back">Back up</a> the Magento file system, database, and media files:
 

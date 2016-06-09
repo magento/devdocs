@@ -5,12 +5,16 @@ subgroup: 15_UseUpgrade
 title: Start System Upgrade
 menu_title: Start System Upgrade
 menu_node: 
-menu_order: 2
+menu_order: 3
 github_link: comp-mgr/upgrader/upgrade-start.md
 ---
 
 <h2 id="compman-prereq">Prerequisites</h2>
 Before continuing, complete all tasks discussed in <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.
+
+<div class="bs-callout bs-callout-warning">
+   	<p>If you're upgrading to either Release Candidate 1 (RC1) or RC2 with sample data, see <a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-rc1.html">Upgrade with sample data to RC1 or RC2</a> first.</p>   
+</div>
 
 ## Optional custom maintenance page
 During the time you're upgrading, your storefront is partially available. Users can see a list of files and so on but cannot shop or check out.
@@ -57,6 +61,6 @@ For suggested solutions to other causes indicated by this message, see <a href="
 #### Sample data
 The System Upgrade utility installs sample data for you but doesn't display it, if you:
 
-*	Used the [`magento sampledata:deploy`]({{ site.baseurl }}install-gde/install/cli/install-cli-sample-data-composer.html) command to download, but not installed sample data
+*	Used the [`magento sampledata:deploy`]({{ site.gdeurl }}install-gde/install/cli/install-cli-sample-data-composer.html) command to download, but not installed sample data
 *	You chose to update components at the same time as the Magento system software
 

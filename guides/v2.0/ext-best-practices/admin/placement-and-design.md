@@ -98,6 +98,7 @@ These are extensions which provide additional functionality to Magento that do n
 There will be a new, dedicated section designed for such exclusive extensions. When feature-level extensions are installed, those extensions will live under this section. The exact final name of this new section has not been decided (we welcome your feedback), but in the image below it is named Extensions.
 
 ![Feature Placement]({{site.baseurl}}common/images/ext-best-practices/feature-placement.png){:height="190px" width="350px"}
+
 <div class="bs-callout bs-callout-info" id="info">
   <p>The name and icon for this section is still TBD.</p>
   <p>This new section is a future proposal, and we welcome feedback about if and how advertisements should be displayed here.</p>

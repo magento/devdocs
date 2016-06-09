@@ -16,11 +16,22 @@
 4.	List environments in the project:
 
 		magento-cloud environment:list
+
+	<div class="bs-callout bs-callout-info" id="info">
+  		<p><code>magento-cloud environment:list</code> displays environment hierarchies whereas <code>git branch</code> displays does not. If you have any nested environments, use <code>magento-cloud environment:list</code>.</p>
+	</div>
+
+5.	Fetch origin branches:
+
+		git fetch origin
 6.	Check out an environment:
 
 		magento-cloud environment:checkout <environment ID>
 
-	To create a new environment, use `magento-cloud environment:branch <environment name> <parent project ID>`
+	To create a new environment, use `magento-cloud environment:branch <environment name> <parent environment ID>`
+8.	Pull updated code:
+
+		git pull origin <environment ID>
 7.  Create a [snapshot]({{ site.gdeurl }}cloud/admin/admin-snap.html) of the environment.
 
         magento-cloud snapshot:create -e <environment ID>

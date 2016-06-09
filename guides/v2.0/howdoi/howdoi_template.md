@@ -6,7 +6,7 @@ title:
 menu_title: 
 menu_node: 
 menu_order: 1
-github_link: howdoi/PATH/FILENAME.md
+github_link: howdoi/howdoi_template.md
 ---
 
 <!-- Author in Markdown but HTML also welcome -->

@@ -2,7 +2,7 @@
 layout: default
 group: mtf-guide
 subgroup: 40_Approach
-title: Create a test in the Magento Testing Framework
+title: Create a test in the Functional Testing Framework
 menu_title: New functional test. Practice
 menu_order: 3
 github_link: mtf/create_test/new_test.md
@@ -71,7 +71,7 @@ Create a synonym group (synonyms are a way to expand the scope of eligible match
 
 ### Test creation {#test-creation}
 
-#### Step 1. Check the MTF configuration and environment {#check-mtf}
+#### Step 1. Check the FTF configuration and environment {#check-mtf}
  
 * Adjust configuration. Learn how to [adjust a configuration][].
 
@@ -755,7 +755,7 @@ Let's code it!
 
 **Log in to Admin and open the Search Synonym page**
 
-In the MTF, the process of logging in doesn't require a special method and is performed automatically when any page from the Admin is opened. A method, which we will use, is an `open()` method of the `Magento/Mtf/Page/BackendPage` class. There is no need to add this class in `use`, because it is inherited from the `Magento/Search/Test/Page/Adminhtml/SynonymsIndex` class.
+In the FTF, the process of logging in doesn't require a special method and is performed automatically when any page from the Admin is opened. A method, which we will use, is an `open()` method of the `Magento/Mtf/Page/BackendPage` class. There is no need to add this class in `use`, because it is inherited from the `Magento/Search/Test/Page/Adminhtml/SynonymsIndex` class.
 
 {% highlight php startinline=1  %}
 
@@ -1122,7 +1122,7 @@ That's it!
 
 <!-- ABBREVIATIONS -->
 
-*[MTF]: Magento Testing Framework
+*[FTF]: Functional Testing Framework
 *[CRUD]: Create Read Update Delete
 *[IDE]: Integrated Development Environment
 *[CLI]: Command Line Interface

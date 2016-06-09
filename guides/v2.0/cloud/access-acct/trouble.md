@@ -14,6 +14,11 @@ This topic discusses how to recover if you deployed the Magento application with
 
 If you used the incorrect keys, deployment fails; to recover, you must clone the project, add the correct keys to `auth.json`, and push the change to the master branch. Before you begin, make sure you know your Magento EE [authentication keys]({{ site.gdeurl }}install-gde/prereq/connect-auth.html).
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>In this section, we assume that your project has a <code>master</code> branch only (<code>master</code> is the default branch when you first create a project). </p>
+</div>
+
+
 To redeploy with the correct authentication keys:
 
 1.	Log in to the machine that has your Magento Enterprise Cloud Edition SSH keys.

@@ -44,7 +44,9 @@ You can use the following command to create an active environment from an inacti
 ## Environment hierarchy {#cloud-env-hier}
 The `master` environment is ultimately the parent of all other environments. Every time you branch it or any other environment, you create a parent-child relationship between them.
 
-Each child environment can sync code, data, or both from its parent. Likewise, a child can merge code with its parent, which ends up redeploying the parent environment with the code changes of the child environment.
+Each child environment can sync code, data, or both from its parent. Syncing data to an environment results in a byte-for-byte copy of all services and media files.
+
+Likewise, a child can merge code with its parent, which ends up redeploying the parent environment with the code changes of the child environment.
 
 Child environments are typically used for development, staging, and testing.
 
@@ -89,16 +91,13 @@ The following table lists the commands used in the preceding example.
 	</tr>
 	<tr>
 		<td>Grant the contributor role to an environment</td>
-		<td><code>magento-cloud user:role <user e-mail> --level environment --environment test --role contributor</code></td>
+		<td><code>magento-cloud user:role &lt;user e-mail> --level environment --environment test --role contributor</code></td>
 	</tr>
 	<tr><td>Merge an environment</td>
-	<td><code>magento-cloud environment-merge Sprint-X</code></td>
+	<td><code>magento-cloud environment:merge Sprint-X</code></td>
 	</tr>
 	<tr><td>Sync QA with Sprint-X</td>
 	<td><code>magento-cloud environment:synchronize code data</code></td>
-	</tr>
-	<tr><td>Merge Sprint-X with the master branch</td>
-	<td><code>magento-cloud environment:merge Sprint-X</code></td>
 	</tr>
 	<tr><td>Merge Sprint-X with the master branch</td>
 	<td><code>magento-cloud environment:merge Sprint-X</code></td>

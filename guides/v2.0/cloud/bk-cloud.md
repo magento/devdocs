@@ -32,7 +32,7 @@ middleman between your code and deployment.
 
 ## Great integrations
 Magento Enterprise Cloud Edition comes out-of-the-box with great integrations for services such
-as Bitbucket, GitHub, HipChat, Blackfire, and generic Webhooks that enable you 
+as Bitbucket, GitHub, HipChat, Blackfire, and generic webhooks that enable you 
 to integrate with internal tooling with little effort.
 
 #### Related topics

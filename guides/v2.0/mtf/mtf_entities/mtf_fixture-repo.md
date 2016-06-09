@@ -2,7 +2,7 @@
 layout: default
 group: mtf-guide
 subgroup: 50_Entities
-title: Entities of the Magento Testing Framework
+title: Entities of the Functional Testing Framework
 menu_title: Fixture Repository
 menu_order: 2
 github_link: mtf/mtf_entities/mtf_fixture-repo.md
@@ -419,7 +419,7 @@ Let's see the `authorizenet` data set in action. Fields defined in repository ar
 
 ## Merging repositories {#mtf_repository_merge}
 
-The MTF enables you to split data sets among different modules. The configuration repository is a good example.
+The FTF enables you to split data sets among different modules. The configuration repository is a good example.
 
 Modules that require configuration adjustment store `ConfigData.xml` in their `Repository` directory. All `ConfigData.xml` repositories have reference to the `Config` repository class. See the example on the following screenshot:
 
@@ -514,7 +514,7 @@ Credentials are stored in an `*.xml` file that is specified in `phpunit.xml`.
 
 You can find a template for credentials in [`<magento2>/dev/tests/functional/credentials.xml.dist`]({{site.mage2000url}}dev/tests/functional/credentials.xml.dist).
 
-Credentials always should stay invisible for security reasons. The MTF implicitly pastes credentials during the test run only.
+Credentials always should stay invisible for security reasons. The FTF implicitly pastes credentials during the test run only.
 There are two ways to paste credentials:
 
 - **Using path**. If a field in a repository has a `name` that matches field `path` in `credentials.xml`, then the value of this field will be substituted for the value from `credential.xml` during the test.

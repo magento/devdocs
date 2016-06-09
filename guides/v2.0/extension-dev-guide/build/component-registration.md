@@ -2,11 +2,11 @@
 layout: default
 group: extension-dev-guide
 subgroup: 03_Build
-title: Register your component 
-menu_title: Register your component 
+title: Register your component
+menu_title: Register your component
 menu_order: 4
 github_link: extension-dev-guide/build/component-registration.md
-redirect_from: 
+redirect_from:
   - /guides/v1.0/extension-dev-guide/build/component-registration.html
   - /guides/v2.0/extension-dev-guide/component-registration.html
 ---
@@ -33,7 +33,9 @@ Register modules with:
      ComponentRegistrar::register(ComponentRegistrar::MODULE, '<VendorName_ModuleName>', __DIR__);
 
 where &lt;VendorName> is the name of the company providing the module and &lt;ModuleName> is the name of the module.
-     
+
+Do not use "Ui" for your custom module name because the <code>%Vendor%_Ui</code> notation, required when specifying paths, might cause issues.
+
 ###Example
     use \Magento\Framework\Component\ComponentRegistrar;
     ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Magento_AdminNotification', __DIR__);

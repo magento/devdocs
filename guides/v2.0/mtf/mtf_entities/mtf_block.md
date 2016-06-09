@@ -2,7 +2,7 @@
 layout: default
 group: mtf-guide
 subgroup: 50_Entities
-title: Entities of the Magento Testing Framework
+title: Entities of the Functional Testing Framework
 menu_title: Block
 menu_order: 4
 github_link: mtf/mtf_entities/mtf_block.md
@@ -195,7 +195,7 @@ For example, the <a href="{{site.mage2000url}}dev/tests/functional/tests/app/Mag
 
 ## Form mapping {#mtf_block_mapping}
 
-Often, you need to test a Magento block that contains a form. And of course, tests require entering data in the forms. The Magento Testing Framework (MTF)has a [Magento\Mtf\Block\Form][] class that enables you to fill the forms automatically. One of the advantages of using this class is that you can list elements that must be automatically filled. These elements can be grouped in separate XML files. In the MTF we call this process "a mapping". You can use mapping to transfer data to the block from the <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html">fixture</a>.
+Often, you need to test a Magento block that contains a form. And of course, tests require entering data in the forms. The Functional Testing Framework (FTF) has a [Magento\Mtf\Block\Form][] class that enables you to fill the forms automatically. One of the advantages of using this class is that you can list elements that must be automatically filled. These elements can be grouped in separate XML files. In the FTF we call this process "a mapping". You can use mapping to transfer data to the block from the <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html">fixture</a>.
 
 A mapping file is an XML file which has the same name and path as the block does, and contains fields that represent form fields. Field name in the mapping file shall match the one in the fixture.
 
@@ -484,4 +484,4 @@ public function getOptions(FixtureInterface $product)
 
 <!-- ABBREVIATIONS -->
 
-*[MTF]: Magento Testing Framework
+*[FTF]: Functional Testing Framework

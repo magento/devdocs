@@ -41,6 +41,8 @@ The following sections discuss properties in `.magento.app.yaml`.
 supports multiple applications in a project, so each application
 must have a *unique name* in a project. 
 
+{% collapsible Click to show/hide content %}
+
 `name` can consist only of lower case alphanumeric characters; that is, `a`&ndash;`z` and `0`&ndash;`9`. `name`
 is used in the [`routes.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_routes.html) to define the HTTP upstream
 (by default, `php:php`). 
@@ -51,8 +53,12 @@ For example, if the value of `name` is `app`, you must use `app:php` in the upst
   <p>If you change the name you should think about updating your other configuration files (<code>routes.yaml</code> or the different <code>.magento.app.yaml</code>, you will have in a multi-application project. Changing the name has no effect on your different services (such as databases).</p>
 </div>
 
+{% endcollapsible %}
+
 ## `type` and `build` {#cloud-yaml-platform-type}
 The `type`  and `build` properties are used to build and run the project. The only supported `type` currently is PHP.
+
+{% collapsible Click to show/hide content %}
 
 Supported versions:
 
@@ -68,9 +74,13 @@ Example:
     build:
         flavor: composer
 
+{% endcollapsible %}
+
 ## `access` {#cloud-yaml-platform-access}
 `access` defines the user roles who can log in using SSH to the
 environments to which they have access.
+
+{% collapsible Click to show/hide content %}
 
 Possible values are:
 
@@ -78,9 +88,13 @@ Possible values are:
 	ssh: contributor
 	ssh: viewer
 
+{% endcollapsible %}
+
 ## `relationships`  {#cloud-yaml-platform-rel}
 `relationships` defines how services are mapped in your
 application.
+
+{% collapsible Click to show/hide content %}
 
 The left-hand side is the name of the relationship as it will be exposed
 to the application in the `MAGENTO_CLOUD_RELATIONSHIPS` environment
@@ -98,8 +112,12 @@ Example of valid options are:
 
 See also [`services.yaml` documentation]({{ site.gdeurl }}cloud/project/project-conf-files_services.html) for a full list of currently supported service types and endpoints.
 
+{% endcollapsible %}
+
 ## `web` {#cloud-yaml-platform-web}
 `web` defines how your application is exposed to the web (in HTTP). Here we tell the web application how to serve content, from the front-controller script to a non-static request to an `index.php` file on the root. We support any directory structure so the static file can be in a sub directory, and the `index.php` file can be further down.
+
+{% collapsible Click to show/hide content %}
 
 `web` supports the following:
 
@@ -194,6 +212,8 @@ whitelist and and keep only the extensions you need:
       	# robots.txt.
 	      - /robots\.txt$
 
+{% endcollapsible %}
+
 ## `disk` {#cloud-yaml-platform-disk}
 `disk` defines the size of the persistent disk size of the
 application in MB.
@@ -202,9 +222,11 @@ application in MB.
   <p>The minimal recommended disk size is 256MB. If you see the error <code>UserError: Error building the project: Disk size may not be smaller than 128MB</code>, increase the size to 256MB.</p>
 </div>
 
-## `mounts` {#cloud-yaml-platform-disk}
+## `mounts` {#cloud-yaml-platform-mounts}
 `mounts` is an object whose keys are paths relative to the root of
 the application. It's in the form `volume_id[/subpath]`.
+
+{% collapsible Click to show/hide content %}
 
 The format is:
 
@@ -214,9 +236,13 @@ The format is:
   <p><code>shared</code> means that the volume is shared between your applications inside an environment. The <code>disk</code> key defines the size available for that <code>shared</code> volume.</p>
 </div>
 
+{% endcollapsible %}
+
 ## `dependencies` {#cloud-yaml-platform-dep}
 `dependencies` enables you to specify dependencies that your
 application might need during the build process.
+
+{% collapsible Click to show/hide content %}
 
 Magento Enterprise Cloud Edition supports dependencies on the following
 languages:
@@ -236,12 +262,16 @@ You can specify those dependencies as follows:
 	nodejs:
 	   grunt-cli: "~0.3"
 
+{% endcollapsible %}
+
 ## `hooks` {#cloud-yaml-platform-hooks}
 The `hooks` (also referred to as `deployment hooks`) enable you to define shell
 commands to run during the deployment process.
 
 They can be executed at various points in the lifecycle of the
 application.
+
+{% collapsible Click to show/hide content %}
 
 Possible hooks are:
 
@@ -362,23 +392,30 @@ hooks:
         php ./vendor/magento/magento-cloud-configuration/magento-build.php
     # We run deploy hook after your application has been deployed and started.
     deploy: |
-        php ./vendormagento/magento-cloud/magento-cloud-configuration/magento-deploy.php
+        php ./vendor/magento/magento-cloud/magento-cloud-configuration/magento-deploy.php
 {% endhighlight %}
+
+{% endcollapsible %}
 
 ## `crons` {#cloud-yaml-platform-cron}
 `crons` describes processes that are triggered on a
 schedule.
 
+{% collapsible Click to show/hide content %}
+
 `crons` supports the following:
 
-*	`spec`: The cron specification. For example: `*/20 * * * *`.
+*	`spec`: The cron specification. Regardless of the setting, cron runs every 5 minutes.
 *	`cmd`: The command to execute.
 
-	Magento Enterprise Cloud Edition requires the following cron job:
+A sample Magento cron job follows:
 
-		*/5 * * * * <path-to-php-binary> -c <ini-file-path> <your Magento install dir>/bin/magento cron:run 
-		
-The minimum interval between cron runs is 5 minutes, even if you specify a smaller value.
+	crons:
+    cronrun:
+        spec: "*/1 * * * *"
+        cmd: "php bin/magento cron:run"
+        
+{% endcollapsible %}
 
 ## Configure PHP options {#cloud-yaml-platform-php}
 You can choose which version of PHP you want to run in your `.magento.app.yaml` file:
@@ -389,6 +426,8 @@ type: php:5.6
 {% endhighlight %}
 
 We support PHP versions 5.5, 5.6, and 7.0.
+
+{% collapsible Click to show/hide content %}
 
 See one of the following sections for more information:
 
@@ -485,6 +524,8 @@ After pushing your file, you can check that the custom PHP configuration
 has been added to your environment [creating an SSH tunnel]({{ site.gdeurl }}cloud/env/environments-start.html#env-start-tunn) and entering:
 
 	cat /etc/php5/fpm/php.ini
+
+{% endcollapsible %}
 
 #### Related topics
 *	[Get started with a project]({{ site.gdeurl }}cloud/project/project-start.html)

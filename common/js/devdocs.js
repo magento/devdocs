@@ -40,7 +40,24 @@ $(document).ready(function(){
 	return false;
 	});
 
+	//All divs with classname "collapsible" will have jquery-ui accordion functionality
+	$(".collapsible").accordion({
+		collapsible: true,
+		active: false,
+		icons: { "header": "collapsible-ready", "activeHeader": "collapsible-active" },
+		header: ".collapsible-title",
+		heightStyle: "content"
+	});
+
 });
+
+//Allows for sticky menu
+$(document).scroll(function(){
+	if($(document).scrollTop()>66)
+		$("#subnav-wrap").addClass("sticky-nav-main");
+	else
+		$("#subnav-wrap").removeClass("sticky-nav-main");
+})
 
 //Function to get URL parameter values
 function getURLParameter(sParam) {

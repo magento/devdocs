@@ -23,7 +23,7 @@ During the installation, a  message similar to the following displays:
 
 Clear all directories and files under Magento's `var` subdirectory and install the Magento software again.
 
-As the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a> or as a user with `root` privileges, enter the following commands:
+As the <a href="{{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a> or as a user with `root` privileges, enter the following commands:
 
 	cd <your Magento install directory>/var
 	rm -rf cache/* di/* generation/* page_cache/*

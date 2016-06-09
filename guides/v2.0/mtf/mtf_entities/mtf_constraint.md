@@ -2,7 +2,7 @@
 layout: default
 group: mtf-guide
 subgroup: 50_Entities
-title: Entities of the Magento Testing Framework
+title: Entities of the Functional Testing Framework
 menu_title: Constraint
 menu_order: 7
 github_link: mtf/mtf_entities/mtf_constraint.md
@@ -15,7 +15,7 @@ github_link: mtf/mtf_entities/mtf_constraint.md
 
 ## Constraint overview {#mtf_constraint_overview}
 
-The Magento Testing Framework (MTF) constraint performs assertions after a test flow. A test flow is a set of test steps without assertions.
+The Functional Testing Framework (FTF) constraint performs assertions after a test flow. A test flow is a set of test steps without assertions.
 Each constraint name must be globally unique in Magento application and must be placed in the module to which it belongs. Constraints run automatically after test flow has finished.
 
 ![Constraints and test flow]({{site.baseurl}}common/images/mtf_constraint_flow.png)
@@ -47,7 +47,7 @@ The constraint PHP class must:
 
 ### Constraint arguments
 
-In the MTF, [data set][] values are shared with a test class and constraints. A node name in data set can be complex like `item1/item2/item3`. The argument name in `processAssert()` must be the same as the `item1` to transfer data from data set to constraint.
+In the FTF, [data set][] values are shared with a test class and constraints. A node name in data set can be complex like `item1/item2/item3`. The argument name in `processAssert()` must be the same as the `item1` to transfer data from data set to constraint.
  
 If a data set variable is used in the test, and is overwritten, it is transferred as altered to the constraint. Variables can be overwritten in the _injectable_ [test case][]  class in `test()`, `__inject()` and `__prepare()` methods, and then passed to the constraint class by `return`. Furthermore, any returned value of these methods can be used as an argument in constraint.
 

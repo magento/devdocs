@@ -15,7 +15,7 @@ This topic provides definitions for common terms.
 Project
 :	A container for your Magento cloud deployment, representing your Magento store. A project contains a live deployment and one or more *environments* that enable developers to work on features, fix bugs, or test your site.
 
-The project always has a `master` branch, which corresponds to your live store. In addition, you can create up to six other active branches for development and testing. (Additional branches are available for additional cost.) Branches are also referred to as *environments*.
+The project always has a `master` branch, which corresponds to your live site. In addition, you can create up to eight other active branches for development and testing. (Additional branches are available for additional cost.) Branches are also referred to as *environments*.
 
 You configure the details of your project using configuration files.
 
@@ -27,7 +27,7 @@ Magento Enterprise Cloud Edition project configuration files
 	*	[`<project root dir>/.magento/services.yaml`]({{ site.gdeurl }}cloud/project/project-conf-files_services.html), which defines available services and their disk space allocations.
 
 Environment
-:	A project branch that corresponds to a Magento website. You can use environments for development and testing, and use a standard Git workflow to synchronize (pull) and merge (push) to its parent. Merging an environment with the `master` enables you to deploy the changes to your live site.
+:	A project's Git branch. You can use environments for development and testing, and use a standard Git workflow to synchronize (pull) and merge (push) to its parent. Merging an environment with the `master` enables you to deploy the changes to your live site.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Manual tasks are required for live deployment.</p>
@@ -35,7 +35,4 @@ Environment
 
 Service
 :	Third-party software for your Magento store. For example, PHP, MySQL, Elasticsearch, Solr, Redis, Varnish, and Fastly are all examples of services. You configure services using `services.yaml` and use them in your environments for development, testing, and in your live deployment.
-
-Unlike other cloud providers, we bundle services with Magento Enterprise Cloud edition. You don't have to contract with someone else to provide services for you.
-
 
