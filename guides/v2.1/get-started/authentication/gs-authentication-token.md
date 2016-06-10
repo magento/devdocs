@@ -55,7 +55,7 @@ github_link: get-started/authentication/gs-authentication-token.md
    <tr>
       <td>Credentials</td>
       <td>
-         <p>The user name and password for a Magento account.</p>
+         <p>The user name and password for a Magento account. For customers, the username is an email address.</p>
          <p>To specify these credentials in a JSON request body, include <code>-d '{"username":"&lt;USER-NAME&gt;", "password":"&lt;PASSWORD&gt;"}'</code> in the call.</p>
       </td>
    </tr>
@@ -71,17 +71,17 @@ github_link: get-started/authentication/gs-authentication-token.md
 <p>For example:</p>
 <pre>curl -X POST "https://magento.host/index.php/rest/V1/integration/customer/token" \
      -H "Content-Type:application/xml" \
-     -d '&lt;login>&lt;username>user_example&lt;/username>&lt;password>123123q&lt;/password>&lt;/login>'</pre>
+     -d '&lt;login>&lt;username>customer@example.com&lt;/username>&lt;password>123123q&lt;/password>&lt;/login>'</pre>
 <a name="auth-request"></a>
 <h2>Authentication token request</h2>
 <p>To request an authentication token for a customer user for the REST web API:</p>
 <pre>curl -X POST "https://magento.host/index.php/rest/V1/integration/customer/token" \
      -H "Content-Type:application/json" \
-     -d '{"username":"user_example", "password":"123123q"}'</pre>
+     -d '{"username":"customer@example.com", "password":"123123q"}'</pre>
 <p>To request an authentication token for an admin user for the REST web API:</p>
 <pre>curl -X POST "https://magento.host/index.php/rest/V1/integration/admin/token" \
      -H "Content-Type:application/json" \
-     -d '{"username":"user_example", "password":"123123q"}'</pre>
+     -d '{"username":"customer@example.com", "password":"123123q"}'</pre>
 <a name="auth-response"></a>
 <h2>Authentication token response</h2>
 <p>A successful request returns a response body with the token, as follows:</p>
