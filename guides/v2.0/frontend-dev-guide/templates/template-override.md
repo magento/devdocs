@@ -52,7 +52,7 @@ Here <code>&lt;path_to_templates&gt;</code> might have several levels of directo
 For template files with the same name, the following is true: 
 theme templates override module templates, and those of a <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">child theme</a> override parent theme templates.
 
-This mechanism is the basis of the template customization concept in Magento application: to change the output defined by a certain default template, you need to overriding one in your custom theme.
+This mechanism is the basis of the template customization concept in Magento application: to change the output defined by a certain default template, you need to override one in your custom theme.
 
 Overriding templates is described with more details in the <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html#theme-inherit-templates" target="_blank">Theme Inheritance article</a>.
 
