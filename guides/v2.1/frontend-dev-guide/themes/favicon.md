@@ -18,7 +18,7 @@ This topic describes how to add custom favicons in your theme.
 
 ## General overview
 
-The default 16x16 favicon icon can be overriden by uploading a custom icon in the Admin, or by adding it manually in the specific location in the theme directory.
+The default 16x16 favicon icon can be overidden by uploading a custom icon in the Magento Admin, or by adding it manually in the specific location in the theme directory.
 The favicon uploaded in the Admin has a higher priority, and will be used in case both are added.
 
 If you want to have favicon icons of different sizes, you need to add them manually in the file system and define in layout. 
@@ -30,23 +30,25 @@ See the following sections for details about adding favicons.
 ## Adding a custom favicon in Admin
 
 To add a custom favicon in the Magento Admin, do the following:
-<ol>
-<li>Navigate to <b>CONTENT</b> > (<b>Design</b>) <b>Configuration</b>. </li>
-<li>In the scope grid, decide on which level you will configure the favicon and click <b>Edit</b>. 
 
-</li>
-<br>
-<li>Under the <b>Other Settings</b> title, expand the <b>HTML Head</b> options.</li>
-<li>Next to <b>Favicon Icon</b>, click <b>Upload</b>, and select the file.
-<div>
-    <img style="border: 1px solid #ABABAB" src="{{site.baseurl}}common/images/favicon_1.png">
-</div>
-<br>
-</li>
-<li>Click <b>Save Configuration</b> in the upper right corner to save the changes.</li>
-<li>If caching is enabled in your Admin, you get a notification that refreshing certain cache types is required. Do it, to see the chagnes applied.</li>
+1. Navigate to **CONTENT** > (**Design**) **Configuration**. 
+2. In the scope grid, decide on which level you will configure the favicon and click **Edit**     in the corresponding row.
+   
+   {% collapsible Click for illustration %}
+   <img style="border: 1px solid #ABABAB" src="{{site.baseurl}}common/images/favicon_2.png">
+   {% endcollapsible %}
+   
+3. Under the **Other Settings** title, expand the **HTML Head** options.
+4. Next to **Favicon Icon**, click **Upload**, and select the file.
+   	
+   {% collapsible Click for illustration %}
+   <img style="border: 1px solid #ABABAB" src="{{site.baseurl}}common/images/favicon_1.png">
+   {% endcollapsible %}
 
-</ol>
+5. Click **Save Configuration** in the upper right corner to save the changes.
+
+If caching is enabled in your Admin, you get a notification that refreshing certain cache types is required. Do it, to see the changes applied.
+
 The image you upload in Admin overrides the default favicon and is used as a favicon of 16x16 size.
 
 ## Add custom favicons manually
@@ -69,5 +71,8 @@ For example, if you added a `favicon-32x32.png` icon and want it to be used as a
 
 {%endhighlight%}
 
-For your changes to be applied, clear the follwin`pub/static` directory and .
+For your changes to be applied, clear the brower cache, and the following directories on the server: 
+
+- `pub/static`
+- all directories under `var`. Do not delete the `var/.htaceess` file.
 
