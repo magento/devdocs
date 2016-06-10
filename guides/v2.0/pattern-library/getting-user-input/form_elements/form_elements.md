@@ -6,7 +6,6 @@ title: Admin Design Pattern Library
 menu_title: Form Elements
 menu_order: 1
 menu_node:
-version: 2.0
 github_link: pattern-library/getting-user-input/form_elements/form_elements.md
 redirect_from: /guides/v1.0/pattern-library/getting-user-input/form_elements/form_elements.html
 ---
@@ -121,6 +120,7 @@ Often times a text field will be paired with a checkbox to enable some behavior 
 <h4>Text Field with Icon Trigger or Button</h4>
 A control may be placed inside (overlaid on) a text field to “trigger” a more sophisticated
 or robust interaction, as in the case of something like **date picker**. The icon should appear on the far right end of the field. Once a user has interacted with the control and a value is set, the value should display in the field, as well as the control (icon). This of course allows the user to edit the field if they so desire.
+
 
 <img src="img/date_pick.png">
 
