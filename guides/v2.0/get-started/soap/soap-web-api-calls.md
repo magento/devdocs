@@ -106,12 +106,9 @@ $opts = array(
         );
 $wsdlUrl = 'http://magento.ll/soap/default?wsdl=1&services=testModule1AllSoapAndRestV1';
 $serviceArgs = array("id"=>1);
- 
-$soapClient = new Zend\Soap\Client($wsdlUrl);
-$soapClient->setSoapVersion(SOAP_1_2);
- 
+
 $context = stream_context_create($opts);
-$soapClient->setStreamContext($context);
+$soapClient = new SoapClient($wsdlUrl, ['version' => SOAP_1_2, 'context' => $context]);
  
 $soapResponse = $soapClient->testModule1AllSoapAndRestV1Item($serviceArgs); ?>
 {% endhighlight %}
