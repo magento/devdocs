@@ -4,6 +4,7 @@ group: release-notes
 subgroup: Breaking changes
 title: Magento EE Backward Incompatible Changes
 menu_title: Magento EE
+version: 2.0
 github_link: release-notes/changes/ee_changes.md
 ---
 

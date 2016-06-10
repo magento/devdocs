@@ -5,6 +5,7 @@ subgroup: Web APIs
 title: Create an integration
 menu_title: Create an integration
 menu_order: 1
+version: 2.0
 github_link: howdoi/webapi/integration.md
 
 ---

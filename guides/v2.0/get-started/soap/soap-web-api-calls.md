@@ -5,6 +5,7 @@ subgroup: D_SOAP
 title: Consuming Services via SOAP
 menu_title: Consuming Services
 menu_order: 2
+version: 2.0
 github_link: get-started/soap/soap-web-api-calls.md
 redirect_from: /guides/v1.0/rest/soap/soap-web-api-calls.html
 

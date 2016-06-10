@@ -6,6 +6,7 @@ title: Admin Style Guide
 menu_title: Typography
 menu_order: 2
 menu_node: 
+version: 2.0
 github_link: design-styleguide/typography/typography.md
 ---
 

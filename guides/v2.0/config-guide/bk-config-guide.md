@@ -6,6 +6,7 @@ title: Configuration Guide
 menu_title: Introduction
 menu_order: 1
 menu_node: parent
+version: 2.0
 github_link: config-guide/bk-config-guide.md
 redirect_from: /guides/v1.0/config-guide/bk-config-guide.html
 ---

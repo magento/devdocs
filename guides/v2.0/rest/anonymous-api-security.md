@@ -6,6 +6,7 @@ title: Restricting access to anonymous web APIs
 menu_title: Restricting access to anonymous web APIs
 menu_node:
 menu_order: 6
+version: 2.0
 github_link: rest/anonymous-api-security.md
 ---
 

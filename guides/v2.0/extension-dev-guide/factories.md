@@ -7,6 +7,7 @@ menu_title: Instantiating objects with factories
 menu_order: 6
 contributor_name: Classy Llama
 contributor_link: http://www.classyllama.com/
+version: 2.0
 github_link: extension-dev-guide/factories.md
 ---
 ##{{page.menu_title}}

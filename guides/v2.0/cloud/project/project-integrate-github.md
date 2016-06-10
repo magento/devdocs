@@ -8,6 +8,7 @@ menu_order: 110
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: integrate
+version: 2.0
 github_link: cloud/project/project-integrate-github.md
 ---
 

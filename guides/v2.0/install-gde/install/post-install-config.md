@@ -6,6 +6,7 @@ title: Configure the Magento application
 menu_title: Configure the Magento application
 menu_node: parent
 menu_order: 2
+version: 2.0
 github_link: install-gde/install/post-install-config.md
 ---
 

@@ -5,6 +5,7 @@ subgroup: 99_Module Development
 title: Events and observers
 menu_title: Events and observers
 menu_order: 6
+version: 2.0
 github_link: extension-dev-guide/events-and-observers.md
 ---
 ##{{page.menu_title}}

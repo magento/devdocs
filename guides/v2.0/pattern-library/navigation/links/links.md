@@ -6,6 +6,7 @@ title: Admin Design Pattern Library
 menu_title: Links
 menu_order: 1
 menu_node: 
+version: 2.0
 github_link: pattern-library/navigation/links/links.md
 redirect_from: /guides/v1.0/pattern-library/navigation/links/links.html
 ---

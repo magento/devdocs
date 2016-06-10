@@ -5,6 +5,7 @@ subgroup: 01_Admin
 title: Admin Panel Placement and Design
 menu_title: Admin Panel Placement and Design
 menu_order: 1
+version: 2.0
 github_link: ext-best-practices/admin/placement-and-design.md
 
 ---

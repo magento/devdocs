@@ -6,6 +6,7 @@ title: Prerequisites
 menu_title: Prerequisites
 menu_order: 1
 menu_node: parent
+version: 2.0
 github_link: comp-mgr/prereq/prereq_compman.md
 ---
 

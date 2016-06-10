@@ -5,6 +5,7 @@ subgroup: B_Layouts
 title: Layout file types
 menu_title: Layout file types
 menu_order: 3
+version: 2.0
 github_link: frontend-dev-guide/layouts/layout-types.md
 redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-types.html
 ---

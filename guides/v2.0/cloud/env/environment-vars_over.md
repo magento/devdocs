@@ -8,6 +8,7 @@ menu_order: 71
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: vars
+version: 2.0
 github_link: cloud/env/environment-vars_over.md
 ---
 

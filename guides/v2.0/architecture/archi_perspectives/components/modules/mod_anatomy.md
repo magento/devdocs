@@ -6,6 +6,7 @@ title:
 menu_title: 
 menu_order: 
 
+version: 2.0
 github_link: architecture/archi_perspectives/components/modules/mod_anatomy.md
 redirect: /guides/v2.0/architecture/modules/mod_anatomy.html
 ---

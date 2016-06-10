@@ -5,6 +5,7 @@ subgroup: Architecture
 title: Process view
 menu_title: Process view
 menu_order: 3
+version: 2.0
 github_link: architecture/process_view.md
 redirect_from: /guides/v1.0/architecture/process_view.html
 ---

@@ -6,6 +6,7 @@ title: Admin Style Guide
 menu_title: Color
 menu_order: 1
 menu_node: 
+version: 2.0
 github_link: design-styleguide/color/color.md
 ---
 

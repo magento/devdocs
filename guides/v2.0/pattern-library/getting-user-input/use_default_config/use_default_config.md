@@ -6,6 +6,7 @@ title: Admin Design Pattern Library
 menu_title: Use Default Config
 menu_order: 4
 menu_node:
+version: 2.0
 github_link: pattern-library/getting-user-input/use_default_config/use_default_config.md
 ---
 

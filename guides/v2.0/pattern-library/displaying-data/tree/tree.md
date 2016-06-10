@@ -6,6 +6,7 @@ title: Admin Design Pattern Library
 menu_title: Tree
 menu_order: 3
 menu_node:
+version: 2.0
 github_link: pattern-library/displaying-data/tree/tree.md
 ---
 

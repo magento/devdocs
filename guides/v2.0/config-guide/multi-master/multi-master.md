@@ -6,6 +6,7 @@ title: Split database performance solution (Enterprise Edition only)
 menu_title: Split database performance solution (Enterprise Edition only)
 menu_order: 1
 menu_node: parent
+version: 2.0
 github_link: config-guide/multi-master/multi-master.md
 ---
 

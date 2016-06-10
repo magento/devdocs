@@ -6,6 +6,7 @@ title: Use memcached for session storage
 menu_title: Use memcached for session storage
 menu_order: 1
 menu_node: parent
+version: 2.0
 github_link: config-guide/memcache/memcache.md
 ---
 
