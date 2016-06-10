@@ -6,6 +6,7 @@ title: Create symlinks to LESS files
 menu_title: Create symlinks to LESS files
 menu_node: 
 menu_order: 350
+version: 2.1
 github_link21: config-guide/cli/config-cli-subcommands-less-sass.md
 ---
 

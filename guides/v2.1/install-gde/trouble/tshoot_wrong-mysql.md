@@ -6,6 +6,7 @@ title: During installation, Reflection Exception error
 menu_title: During installation, Reflection Exception error
 menu_node: 
 menu_order: 25
+version: 2.1
 github_link21: install-gde/trouble/tshoot_wrong-mysql.md
 ---
 

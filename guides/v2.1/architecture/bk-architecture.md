@@ -6,6 +6,7 @@ title: Architecture Guide
 menu_title: Get Started
 menu_order: 2
 menu_node: parent
+version: 2.1
 github_link21: architecture/bk-architecture.md
 ---
 

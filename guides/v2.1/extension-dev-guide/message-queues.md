@@ -5,6 +5,7 @@ subgroup: 99_Module Development
 title: Message Queues
 menu_title: Message Queues (Enterprise Edition Only)
 menu_order: 17
+version: 2.1
 github_link21: extension-dev-guide/message-queues.md
 
 ---

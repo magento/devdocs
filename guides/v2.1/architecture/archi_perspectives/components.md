@@ -5,6 +5,7 @@ subgroup: Logical View
 title: Magento Components 
 menu_title: Components
 menu_order: 1
+version: 2.1
 github_link21: architecture/archi_perspectives/components.md
 ---
 

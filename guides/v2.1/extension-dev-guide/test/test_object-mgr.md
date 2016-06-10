@@ -5,6 +5,7 @@ subgroup: Testing
 title: Object Manager helper
 menu_title: Object Manager helper
 menu_order: 3
+version: 2.1
 github_link21: extension-dev-guide/test/test_object-mgr.md
 ---
 

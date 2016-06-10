@@ -6,6 +6,7 @@ title: Magento Admin Pattern Library
 menu_title: Filters
 menu_order: 1
 menu_node:
+version: 2.1
 github_link: pattern-library/filters/data-table-filters/filtering.md
 ---
 

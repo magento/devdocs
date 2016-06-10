@@ -6,6 +6,7 @@ title: Enable profiling (MAGE_PROFILER)
 menu_title: Enable profiling (MAGE_PROFILER)
 menu_order: 7
 menu_node: 
+version: 2.1
 github_link21: config-guide/bootstrap/mage-profiler.md
 ---
 

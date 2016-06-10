@@ -6,6 +6,7 @@ title: Component types
 menu_title: Component types
 menu_order: 2
 menu_node: 
+version: 2.1
 github_link: mktpl-quickstart/dev-modtypes.md
 ---
 

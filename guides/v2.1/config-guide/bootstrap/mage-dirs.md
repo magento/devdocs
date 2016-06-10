@@ -6,6 +6,7 @@ title: Customize base directory paths (MAGE_DIRS)
 menu_title: Customize base directory paths (MAGE_DIRS)
 menu_order: 5
 menu_node: 
+version: 2.1
 github_link21: config-guide/bootstrap/mage-dirs.md
 ---
 

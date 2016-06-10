@@ -5,6 +5,7 @@ subgroup: 99_Module Development
 title: Indexing
 menu_title: Indexing
 menu_order: 12
+version: 2.1
 github_link21: extension-dev-guide/indexing.md
 ---
 

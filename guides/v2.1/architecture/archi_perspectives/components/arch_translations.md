@@ -5,6 +5,7 @@ subgroup: Components
 title: Language packages
 menu_title: Language packages
 menu_order: 9
+version: 2.1
 github_link21: architecture/components/arch_translations.md
 ---
 

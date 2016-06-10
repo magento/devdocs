@@ -6,6 +6,7 @@ title: Manage the indexers
 menu_title: Manage the indexers
 menu_node: 
 menu_order: 90
+version: 2.1
 github_link21: config-guide/cli/config-cli-subcommands-index.md
 ---
 

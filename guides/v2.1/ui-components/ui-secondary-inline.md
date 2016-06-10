@@ -6,6 +6,7 @@ title: Inline Edit Component
 menu_title: Inline Edit Component
 menu_node:
 menu_order: 8
+version: 2.1
 github_link: ui-components/ui-secondary-inline.md
 ---
 

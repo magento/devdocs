@@ -6,6 +6,7 @@ title: Glossary of common terms
 menu_title: Glossary of common terms
 menu_order: 5
 menu_node: 
+version: 2.1
 github_link: mktpl-quickstart/intro-composer-gloss.md
 ---
 

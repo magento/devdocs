@@ -6,6 +6,7 @@ title: Dependency reports
 menu_title: Dependency reports
 menu_node: 
 menu_order: 225
+version: 2.1
 github_link21: config-guide/cli/config-cli-subcommands-depen.md
 ---
 

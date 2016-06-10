@@ -6,6 +6,7 @@ title: How Magento cache clearing works with Varnish
 menu_title: How Magento cache clearing works with Varnish
 menu_order: 100
 menu_node: 
+version: 2.1
 github_link21: config-guide/varnish/use-varnish-cache.md
 ---
 

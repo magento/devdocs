@@ -5,6 +5,7 @@ subgroup: checkout
 title: Add custom input mask for ZIP code
 menu_title: Add custom input mask for ZIP code
 menu_order: 6
+version: 2.1
 github_link: howdoi/checkout/checkout_zip.md
 ---
 ## What's in this topic

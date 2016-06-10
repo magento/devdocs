@@ -6,6 +6,7 @@ title: Admin Style Guide
 menu_title: Iconography
 menu_order: 4
 menu_node:
+version: 2.1
 github_link: design-styleguide/iconography/iconography.md
 ---
 

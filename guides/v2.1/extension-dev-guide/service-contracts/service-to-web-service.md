@@ -7,6 +7,7 @@ menu_title: Configure services as web APIs
 menu_order: 13
 contributor_name: Classy Llama
 contributor_link: http://www.classyllama.com/
+version: 2.1
 github_link21: extension-dev-guide/service-contracts/service-to-web-service.md
 ---
 

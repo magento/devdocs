@@ -5,6 +5,7 @@ subgroup: 05_Command-line installation
 title: Install the Magento software
 menu_title: Install the Magento software
 menu_order: 4
+version: 2.1
 github_link21: install-gde/install/cli/install-cli-install.md
 ---
 

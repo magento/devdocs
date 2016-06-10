@@ -6,6 +6,7 @@ title:
 menu_title: 
 menu_order: 1
 menu_node: parent
+version: 2.1
 github_link21: architecture/areas/areas.md
 ---
 

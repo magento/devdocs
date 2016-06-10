@@ -6,6 +6,7 @@ title: PHP settings errors
 menu_title: PHP settings errors
 menu_node:
 menu_order: 1
+version: 2.1
 github_link21: install-gde/trouble/php/tshoot_php-set.md
 ---
 

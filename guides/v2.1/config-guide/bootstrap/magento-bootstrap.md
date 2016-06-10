@@ -6,6 +6,7 @@ title: Magento application initialization and bootstrap
 menu_title: Magento application initialization and bootstrap
 menu_order: 1
 menu_node: parent
+version: 2.1
 github_link21: config-guide/bootstrap/magento-bootstrap.md
 ---
 

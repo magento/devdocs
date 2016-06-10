@@ -6,6 +6,7 @@ title: Customize Product Creation Form
 menu_title: Customize Product Creation Form 
 menu_node: parent
 menu_order: 1
+version: 2.1
 github_link: howdoi/customize_product.md
 ---
 

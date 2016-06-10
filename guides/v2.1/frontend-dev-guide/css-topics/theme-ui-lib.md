@@ -4,6 +4,7 @@ group: fedg
 subgroup: D_CSS
 title: Magento UI library
 menu_order: 4
+version: 2.1
 github_link: frontend-dev-guide/css-topics/theme-ui-lib.md
 ---
 

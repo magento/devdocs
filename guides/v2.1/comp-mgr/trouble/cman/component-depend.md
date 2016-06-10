@@ -6,6 +6,7 @@ title: Resolve component dependencies
 menu_title: Resolve component dependencies
 menu_node: 
 menu_order: 150
+version: 2.1
 github_link21: comp-mgr/trouble/cman/component-depend.md
 ---
 

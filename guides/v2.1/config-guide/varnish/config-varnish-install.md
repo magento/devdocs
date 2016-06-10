@@ -6,6 +6,7 @@ title: Install Varnish
 menu_title: Install Varnish
 menu_order: 5
 menu_node: 
+version: 2.1
 github_link21: config-guide/varnish/config-varnish-install.md
 ---
 

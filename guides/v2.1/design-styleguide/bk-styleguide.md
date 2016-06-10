@@ -6,6 +6,7 @@ title: Admin Style Guide
 menu_title: Introduction
 menu_order: 1
 menu_node: 
+version: 2.1
 github_link: design-styleguide/bk-styleguide.md
 ---
 

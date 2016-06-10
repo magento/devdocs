@@ -6,6 +6,7 @@ title: For more information
 menu_title: For more information
 menu_order: 100
 menu_node: 
+version: 2.1
 github_link: mktpl-quickstart/intro-moreinfo.md
 ---
 

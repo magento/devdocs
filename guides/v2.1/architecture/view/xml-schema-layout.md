@@ -5,6 +5,7 @@ subgroup: View library
 title: XML layouts and schemas
 menu_title: XML layouts and schemas
 menu_order: 
+version: 2.1
 github_link21: architecture/view/xml-schema-layout.md
 ---
 

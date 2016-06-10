@@ -6,6 +6,7 @@ title: UI-select Component
 menu_title: UI-select Component
 menu_node:
 menu_order: 6
+version: 2.1
 github_link: ui-components/ui-secondary-uiselect.md
 ---
 

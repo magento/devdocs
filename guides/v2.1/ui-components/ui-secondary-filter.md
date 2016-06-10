@@ -6,6 +6,7 @@ title: Filter Component
 menu_title: Filter Component
 menu_node:
 menu_order: 1
+version: 2.1
 github_link: ui-components/ui-secondary-filter.md
 ---
 

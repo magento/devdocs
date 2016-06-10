@@ -5,6 +5,7 @@ subgroup: 01_Introduction
 title: Developer roadmap
 menu_title: Developer roadmap
 menu_order: 2
+version: 2.1
 github_link21: extension-dev-guide/intro/developers_roadmap.md
 ---
 

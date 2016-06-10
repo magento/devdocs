@@ -6,6 +6,7 @@ title: Magento Admin Pattern Library
 menu_title: Progress Indicator
 menu_order: 1
 menu_node: 
+version: 2.1
 github_link: pattern-library/feedbackToUser/progressIndicator/progressIndicator.md
 ---
 <h2>Progress Indicator</h2>

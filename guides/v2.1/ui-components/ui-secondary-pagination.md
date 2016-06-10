@@ -6,6 +6,7 @@ title: Pagination Component
 menu_title: Pagination Component
 menu_node:
 menu_order: 2
+version: 2.1
 github_link: ui-components/ui-secondary-pagination.md
 ---
 

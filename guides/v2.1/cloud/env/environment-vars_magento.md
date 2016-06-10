@@ -8,6 +8,7 @@ menu_order: 80
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: vars
+version: 2.1
 github_link21: cloud/env/environment-vars_magento.md
 ---
 

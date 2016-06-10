@@ -7,6 +7,7 @@ menu_title: Running Unit Tests in PHPStorm
 menu_node: parent
 contributor_name: Vinai Kopp
 contributor_link: http://vinaikopp.com/
+version: 2.1
 github_link: test/unit/unit_test_execution_phpstorm.md
 ---
 

@@ -5,6 +5,7 @@ subgroup:
 title: The pricing library
 menu_title: The pricing library
 menu_order: 
+version: 2.1
 github_link21: architecture/behavior/pricing.md
 ---
 

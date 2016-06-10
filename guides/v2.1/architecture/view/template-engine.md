@@ -5,6 +5,7 @@ subgroup: View library
 title: Template engine
 menu_title: Template engine
 menu_order: 
+version: 2.1
 github_link21: architecture/view/template-engine.md
 ---
 

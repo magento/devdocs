@@ -5,6 +5,7 @@ subgroup: 3_Widgets
 title: Navigation widget
 menu_order: 11
 menu_title: Navigation widget
+version: 2.1
 github_link: javascript-dev-guide/widgets/widget_navigation.md
 ---
 

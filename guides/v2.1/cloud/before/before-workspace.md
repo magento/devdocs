@@ -6,6 +6,7 @@ title: Set up a Magento workspace
 menu_title: Set up a Magento workspace
 menu_order: 2
 menu_node: 
+version: 2.1
 github_link: cloud/before/before-workspace.md
 ---
 

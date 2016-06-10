@@ -6,6 +6,7 @@ title: Storefront UI best practices
 menu_title: Storefront
 menu_order: 1
 menu_node: parent
+version: 2.1
 github_link21: ext-best-practices/storefront/storefront-best-practices.md
 ---
 ##{{page.menu_title}}

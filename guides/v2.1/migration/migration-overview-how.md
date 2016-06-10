@@ -6,6 +6,7 @@ title: How migration works
 menu_title: How migration works
 menu_node: 
 menu_order: 3
+version: 2.1
 github_link21: migration/migration-overview-how.md
 ---
 

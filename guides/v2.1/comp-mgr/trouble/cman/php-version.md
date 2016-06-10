@@ -6,6 +6,7 @@ title: PHP version readiness check issues
 menu_title: PHP version readiness check issues
 menu_node: 
 menu_order: 100
+version: 2.1
 github_link21: comp-mgr/trouble/cman/maint-mode.md
 ---
 

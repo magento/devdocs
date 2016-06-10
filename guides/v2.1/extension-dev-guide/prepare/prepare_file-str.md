@@ -6,6 +6,7 @@ title: About component file structure
 menu_title: About component file structure
 menu_order: 10
 menu_node:
+version: 2.1
 github_link21: extension-dev-guide/prepare/prepare_file-str.md
 ---
 

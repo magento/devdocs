@@ -6,6 +6,7 @@ title: Project directory structure
 menu_title: Project directory structure
 menu_order: 50
 menu_node: 
+version: 2.1
 github_link21: cloud/access-acct/first-time-setup_dir-structure.md
 ---
 

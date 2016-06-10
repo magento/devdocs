@@ -6,6 +6,7 @@ title: Installation fails; cannot create install.log
 menu_title: Installation fails; cannot create install.log
 menu_node: 
 menu_order: 400
+version: 2.1
 github_link21: install-gde/trouble/tshoot_install-log.md
 ---
 

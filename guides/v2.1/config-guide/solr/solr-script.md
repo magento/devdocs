@@ -6,6 +6,7 @@ title: Prepare Solr for production
 menu_title: Prepare Solr for production
 menu_order: 3
 menu_node: 
+version: 2.1
 github_link21: config-guide/solr/solr-script.md
 ---
 

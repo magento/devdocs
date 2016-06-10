@@ -4,6 +4,7 @@ group: fedg
 subgroup: D_CSS
 title: Include CSS 
 menu_order: 2
+version: 2.1
 github_link: frontend-dev-guide/css-topics/css-themes.md
 ---
 

@@ -6,6 +6,7 @@ title: ExportButton Component
 menu_title: Export Button Component
 menu_node:
 menu_order: 12
+version: 2.1
 github_link: ui-components/ui-export.md
 ---
 

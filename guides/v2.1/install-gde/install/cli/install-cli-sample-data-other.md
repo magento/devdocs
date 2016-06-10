@@ -6,6 +6,7 @@ title: Remove or update sample data
 menu_title: Remove or update sample data
 menu_node: 
 menu_order: 6
+version: 2.1
 github_link21: install-gde/install/cli/install-cli-sample-data-other.md
 ---
 

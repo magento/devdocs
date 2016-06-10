@@ -6,6 +6,7 @@ title: Set up scheduled tasks (cron)
 menu_title: Set up scheduled tasks (cron)
 menu_order: 10
 menu_node: 
+version: 2.1
 github_link21: install-gde/install/hosted/hosted_start_cron.md
 ---
 

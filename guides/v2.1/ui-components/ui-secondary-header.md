@@ -6,6 +6,7 @@ title: Sticky Header Component
 menu_title: Sticky Header Component
 menu_node:
 menu_order: 11
+version: 2.1
 github_link: ui-components/ui-secondary-header.md
 ---
 

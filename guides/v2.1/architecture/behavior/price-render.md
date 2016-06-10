@@ -5,6 +5,7 @@ subgroup:
 title: How Magento renders prices
 menu_title: How Magento renders prices
 menu_order: 
+version: 2.1
 github_link21: architecture/behavior/price-render.md
 ---
 

@@ -6,6 +6,7 @@ title: Summary of developing and packaging components
 menu_title: Summary of developing and packaging components
 menu_order: 10
 menu_node: 
+version: 2.1
 github_link: mktpl-quickstart/dev-summary.md
 ---
 
