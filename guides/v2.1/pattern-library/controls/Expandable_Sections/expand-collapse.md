@@ -7,7 +7,6 @@ menu_title: Expandable Sections
 menu_order: 3
 menu_node: 
 github_link: pattern-library/controls/Expandable_Sections/expand-collapse.md
-redirect_from: /guides/v1.0/pattern-library/controls/Expandable_Sections/expand-collapse.html
 ---
 <h2> Expandable Sections </h2>
 _(AKA Expand-Collapse, Collapsible panels)_
