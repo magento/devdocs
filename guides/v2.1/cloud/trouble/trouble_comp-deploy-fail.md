@@ -7,7 +7,7 @@ menu_title: Component deployment failure
 menu_order: 50
 menu_node: 
 version: 2.1
-github_link: cloud/trouble/trouble_comp-deploy-fail.md
+github_link21: cloud/trouble/trouble_comp-deploy-fail.md
 ---
 
 ## Component deployment failure
@@ -15,7 +15,7 @@ This topic discusses how to recover from a failed component deployment. Typical 
 
 You can recover from a failed deployment in any of the following ways:
 
-*   [Restore a snapshot]({{ site.gdeurl }}cloud/project/project-webint-snap.html) if you have one
+*   [Restore a snapshot]({{ site.gdeurl21 }}cloud/project/project-webint-snap.html) if you have one
 *   Remove the component from your environment's `composer.json` and redeploy the environment
 
 ### Remove the component from `composer.json` and redeploy
@@ -73,6 +73,6 @@ To remove the component:
 {% endcollapsible %}
 
 #### Related topics
-*	[Manage your projects]({{ site.gdeurl }}cloud/project/projects.html)
-*	[Manage your environments]({{ site.gdeurl }}cloud/env/environments.html)
-*	[Tutorials]({{ site.gdeurl }}cloud/howtos/how-to.html)
+*	[Manage your projects]({{ site.gdeurl21 }}cloud/project/projects.html)
+*	[Manage your environments]({{ site.gdeurl21 }}cloud/env/environments.html)
+*	[Tutorials]({{ site.gdeurl21 }}cloud/howtos/how-to.html)
