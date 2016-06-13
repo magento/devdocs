@@ -18,8 +18,8 @@ This topic describes how to add custom favicons.
 
 ## General overview
 
-The default 16x16 favicon can be overridden by uploading a custom icon in the Magento Admin, or by adding it manually in the specific location in a theme directory.
-The favicon uploaded in the Admin has a higher priority, and will be used in case both are added.
+Magento provides a default 16px x 16px favicon that you override by uploading a custom icon in the Magento Admin, or by adding it manually in a specific location in a theme directory.
+If both favicons exist, the one you uploaded in the Admin takes precedence.
 
 If you want to have favicons of different sizes, you need to add them manually in the file system and define in layout. 
 
@@ -32,16 +32,15 @@ See the following sections for details about adding favicons.
 To add a custom favicon in the Magento Admin, do the following:
 
 1. Navigate to **STORES** > (**Settings**) **Configuration**. 
-2. In the **Store View** drop-down in the top left corner, select on which level you will configure the favicon.
+2. In the **Store View** drop-down in the top left corner, select the scope for which you want to set a logo (a certain store view, the whole website, or default config).
 3. On the **Design** tab, expand the **HTML Head** options.
 4. Next to **Favicon Icon**, click **Choose file**, and select the file.
    <img style="border: 1px solid #ABABAB" src="{{site.baseurl}}common/images/favicon_1.png">
 
 5. Click **Save Config** in the upper right corner to save the changes.
 
-If caching is enabled in your Admin, you get a notification that refreshing certain cache types is required. Do it, to see the changes applied.
+If caching is enabled in your Admin, you get a notification that refreshing certain cache types is required. Click the link provided in the notification, and then click **Flush Magento Cache**.
 
-The icon you upload in Admin overrides the default favicon and is used as a favicon of 16x16 size.
 
 ## Add custom favicons manually
 
