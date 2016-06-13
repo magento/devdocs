@@ -7,7 +7,6 @@ menu_title: Locate templates, layouts, and styles
 menu_order: 6
 version: 2.1
 github_link: frontend-dev-guide/themes/debug-theme.md
-redirect_from: /guides/v1.0/frontend-dev-guide/themes/debug-theme.html
 ---
 
 <h2 id="debug-theme-intro">What's in this topic</h2>

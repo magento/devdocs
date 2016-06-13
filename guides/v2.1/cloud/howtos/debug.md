@@ -7,7 +7,7 @@ menu_title: Run a PHP debugger
 menu_order: 25
 menu_node: 
 version: 2.1
-github_link: cloud/howtos/debug.md
+github_link21: cloud/howtos/debug.md
 ---
 
 ## How to run a PHP debugger {#cloud-howto-debug}
@@ -59,6 +59,6 @@ To set up Xdebug:
 {% endcollapsible %}
 
 #### Related topics
-*	[Install components]({{ site.gdeurl }}cloud/howtos/install-components.html)
-*	[Update components]({{ site.gdeurl }}cloud/howtos/update-components.html)
-*	[Merge and delete an environment]({{ site.gdeurl }}cloud/howtos/environment-tutorial-env-merge.html)
+*	[Install components]({{ site.gdeurl21 }}cloud/howtos/install-components.html)
+*	[Update components]({{ site.gdeurl21 }}cloud/howtos/update-components.html)
+*	[Merge and delete an environment]({{ site.gdeurl21 }}cloud/howtos/environment-tutorial-env-merge.html)

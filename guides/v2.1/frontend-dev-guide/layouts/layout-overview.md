@@ -8,7 +8,6 @@ menu_order: 1
 menu_node: parent
 version: 2.1
 github_link: frontend-dev-guide/layouts/layout-overview.md
-redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-overview.html
 ---
 
 <h2>Introduction</h2>

@@ -7,7 +7,6 @@ menu_title: Test run
 menu_order: 3
 version: 2.1
 github_link: mtf/mtf_quickstart/mtf_quickstart_runtest.md
-redirect_from: /guides/v1.0/mtf/mtf_quickstart/mtf_quickstart_runtest.html
 ---
 <h2 id="mtf_quickstart_testrun">Test run</h2>
 

@@ -34,6 +34,7 @@ To change the `.js` implementation and template used for components rendering, y
                         ...
                     </argument>
                 </arguments>
+        </referenceBlock>
     </body>
 </page>
 {%endhighlight xml%}
