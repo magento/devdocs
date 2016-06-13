@@ -120,8 +120,8 @@ The Magento application processes layout files in the following order:
 
 ## Related topics
 
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-manage.html" target="_blank">Common layout customization tasks</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-override.html" target="_blank">Override a layout</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-practice.html" target="_blank">Customizing layout - step-by-step illustration</a>
+*	<a href="{{ site.gdeurl21 }}frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a>
+*	<a href="{{ site.gdeurl21 }}frontend-dev-guide/layouts/xml-manage.html" target="_blank">Common layout customization tasks</a>
+*	<a href="{{ site.gdeurl21 }}frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a>
+*	<a href="{{ site.gdeurl21 }}frontend-dev-guide/layouts/layout-override.html" target="_blank">Override a layout</a>
+*	<a href="{{ site.gdeurl21 }}frontend-dev-guide/layouts/layout-practice.html" target="_blank">Customizing layout - step-by-step illustration</a>

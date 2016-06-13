@@ -34,8 +34,8 @@ In client-side compilation mode, most of the stylesheet customizations display i
 
 This is required in the following cases:
 <ul>
-<li>If you change the <a href="{{site.gdeurl21}}frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms" target="_blank">root source files</a> that contain the <code>@magento-import</code> directive, or the <code>@import</code> directive where the imported file is specified without extension.</li>
-<li>If you rename, remove, or add a <code>.less</code> file imported with a <code>@magento-import</code> or <code>@import</code> directive but you did not correct the directives accordingly.</li>
+<li>If you change the <a href="{{site.gdeurl21}}frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms" target="_blank">root source files</a> that contain the <code>@magento_import</code> directive, or the <code>@import</code> directive where the imported file is specified without extension.</li>
+<li>If you rename, remove, or add a <code>.less</code> file imported with a <code>@magento_import</code> or <code>@import</code> directive but you did not correct the directives accordingly.</li>
 
 </ul>
 
