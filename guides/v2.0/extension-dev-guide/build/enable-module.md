@@ -5,6 +5,7 @@ subgroup: 03_Build
 title: Enable or disable your component
 menu_title: Enable or disable your component
 menu_order: 9
+version: 2.0
 github_link: extension-dev-guide/build/enable-module.md
 redirect_from: /guides/v2.0/extension-dev-guide/enable-module.html
 ---

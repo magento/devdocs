@@ -5,6 +5,7 @@ subgroup: checkout
 title: Add a custom shipping address renderer
 menu_title: Add a custom shipping address renderer
 menu_order: 9
+version: 2.0
 github_link: howdoi/checkout/checkout_address.md
 ---
 ## What's in this topic

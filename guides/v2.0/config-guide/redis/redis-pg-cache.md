@@ -6,6 +6,7 @@ title: Use Redis for page caching
 menu_title: Use Redis for page caching
 menu_order: 5
 menu_node: 
+version: 2.0
 github_link: config-guide/redis/redis-pg-cache.md
 ---
 

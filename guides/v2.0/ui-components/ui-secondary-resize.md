@@ -6,6 +6,7 @@ title: Resize Component
 menu_title: Resize Component
 menu_node:
 menu_order: 10
+version: 2.0
 github_link: ui-components/ui-secondary-resize.md
 redirect_from: /guides/v2.0/ui-library/ui-secondary-resize.html
 

@@ -5,6 +5,7 @@ subgroup: Testing
 title: JavaScript unit tests
 menu_title: JavaScript unit tests
 menu_order: 2
+version: 2.0
 github_link: extension-dev-guide/test/test_js-unit.md
 redirect_from: /guides/v1.0/extension-dev-guide/test/test_js-unit.html
 ---

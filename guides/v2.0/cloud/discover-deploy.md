@@ -6,6 +6,7 @@ title: Deployment process
 menu_title: Deployment process
 menu_order: 4
 menu_node: 
+version: 2.0
 github_link: cloud/discover-deploy.md
 ---
 

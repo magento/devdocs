@@ -5,6 +5,7 @@ subgroup: A_Overview
 title: Overview
 menu_title: Overview
 menu_node: parent
+version: 2.0
 github_link: ui-components/ui-component.md
 redirect_from: /guides/v2.0/ui-library/ui-library-component.html
 ---

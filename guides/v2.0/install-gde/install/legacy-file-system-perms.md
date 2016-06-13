@@ -6,6 +6,7 @@ title: Appendix&mdash;Magento file system ownership and appendix (legacy)
 menu_title: Appendix&mdash;Magento file system ownership and appendix (legacy)
 menu_node: parent
 menu_order: 100
+version: 2.0
 github_link: install-gde/install/legacy-file-system-perms.md
 ---
 

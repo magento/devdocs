@@ -5,6 +5,7 @@ subgroup: 99_Module Development
 title: Magento plug-ins
 menu_title: Magento plug-ins
 menu_order: 10
+version: 2.0
 github_link: extension-dev-guide/plugins.md
 redirect_from:
   - /guides/v1.0/extension-dev-guide/plugins.html

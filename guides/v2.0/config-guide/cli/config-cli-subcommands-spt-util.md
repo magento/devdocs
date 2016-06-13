@@ -6,6 +6,7 @@ title: Run the support utilities
 menu_title: Run the support utilities (Enterprise Edition only)
 menu_node: 
 menu_order: 900
+version: 2.0
 github_link: config-guide/cli/config-cli-subcommands-spt-util.md
 ---
 

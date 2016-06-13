@@ -6,6 +6,7 @@ title: Test your component
 menu_title: Test your component
 menu_order: 2
 menu_node: 
+version: 2.0
 github_link: extension-dev-guide/validate/test-module.md
 redirect_from: 
   - /guides/v2.0/mktpl-quickstart/dev-test.html

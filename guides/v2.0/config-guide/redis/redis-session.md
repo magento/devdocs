@@ -6,6 +6,7 @@ title: Use Redis for session storage
 menu_title: Use Redis for session storage
 menu_order: 10
 menu_node: 
+version: 2.0
 github_link: config-guide/redis/redis-session.md
 ---
 

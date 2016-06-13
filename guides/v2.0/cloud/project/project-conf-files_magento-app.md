@@ -6,6 +6,7 @@ title: .magento.app.yaml
 menu_title: .magento.app.yaml
 menu_order: 11
 menu_node: 
+version: 2.0
 github_link: cloud/project/project-conf-files_magento-app.md
 ---
 
@@ -405,10 +406,10 @@ schedule.
 
 `crons` supports the following:
 
-*	`spec`: The cron specification. Magento requires cron to run every minute; our spec is `*/1 * * * *`.
+*	`spec`: The cron specification. Regardless of the setting, cron runs every 5 minutes.
 *	`cmd`: The command to execute.
 
-The Magento cron job follows:
+A sample Magento cron job follows:
 
 	crons:
     cronrun:

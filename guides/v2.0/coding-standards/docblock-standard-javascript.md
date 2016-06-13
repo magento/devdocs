@@ -5,6 +5,7 @@ subgroup: Coding standards
 title: JavaScript DocBlock standard
 menu_title: JavaScript DocBlock standard
 menu_order: 5
+version: 2.0
 github_link: coding-standards/docblock-standard-javascript.md
 redirect_from: /guides/v1.0/coding-standards/docblock-standard-javascript.html
 ---

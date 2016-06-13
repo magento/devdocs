@@ -5,6 +5,7 @@ subgroup: 3_Widgets
 title: Modal widget
 menu_order: 10
 menu_title: Modal widget
+version: 2.0
 github_link: javascript-dev-guide/widgets/widget_modal.md
 redirect_from:
   - guides/v2.0/frontend-dev-guide/javascript/widget_modal.html

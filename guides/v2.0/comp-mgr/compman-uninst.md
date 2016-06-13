@@ -6,6 +6,7 @@ title: Uninstall
 menu_title: Uninstall
 menu_node: parent
 menu_order: 1
+version: 2.0
 github_link: comp-mgr/compman-uninst.md
 ---
 

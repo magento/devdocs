@@ -8,6 +8,7 @@ menu_order:
 menu_node: parent
 
 
+version: 2.0
 github_link: architecture/archi_perspectives/components/AComponents.md
 redirect_from: /guides/v1.0/architecture/components/AComponents.html
 ---

@@ -6,6 +6,7 @@ title: Step 1. Readiness check
 menu_title: Step 1. Readiness check
 menu_node: 
 menu_order: 5
+version: 2.0
 github_link: comp-mgr/compman-readiness.md
 ---
 

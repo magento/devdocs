@@ -6,6 +6,7 @@ title: Next&mdash;Choose how to install the Magento software
 menu_title: Next&mdash;Choose how to install the Magento software
 menu_node: parent
 menu_order: 1
+version: 2.0
 github_link: install-gde/continue.md
 redirect_from: 
   - /guides/v1.0/install-gde/continue.html

@@ -6,6 +6,7 @@ title: Common terms
 menu_title: Common terms
 menu_order: 2
 menu_node: 
+version: 2.0
 github_link: cloud/before/terms.md
 ---
 

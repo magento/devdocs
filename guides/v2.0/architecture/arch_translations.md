@@ -5,6 +5,7 @@ subgroup:
 title: Language packages
 menu_title: Language packages
 menu_order: 
+version: 2.0
 github_link: architecture/arch_translations.md
 redirect_from: /guides/v1.0/architecture/arch_translations.html
 ---

@@ -8,6 +8,7 @@ menu_order: 33
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: services
+version: 2.0
 github_link: cloud/project/project-conf-files_services-solr.md
 ---
 

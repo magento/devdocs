@@ -5,6 +5,7 @@ subgroup: 3_Widgets
 title: Magnifier widget 
 menu_order: 8
 menu_title: Magnifier widget 
+version: 2.0
 github_link: javascript-dev-guide/widgets/widget_gallery_mg.md
 ---
 

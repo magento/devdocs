@@ -6,6 +6,7 @@ title: PHP Development
 menu_title: PHP Development
 menu_node: parent
 menu_order: 1
+version: 2.0
 github_link: howdoi/php/php_devs.md
 ---
 

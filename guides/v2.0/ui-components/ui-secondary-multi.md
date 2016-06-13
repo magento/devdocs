@@ -6,6 +6,7 @@ title: Multiselect Component
 menu_title: Multiselect Component
 menu_node:
 menu_order: 7
+version: 2.0
 github_link: ui-components/ui-secondary-multi.md
 redirect_from: /guides/v2.0/ui-library/ui-secondary-multi.html
 

@@ -6,6 +6,7 @@ title: File Uploader Component
 menu_title: File Uploader Component
 menu_node:
 menu_order: 13
+version: 2.0
 github_link: ui-components/ui-secondary-uploader.md
 redirect_from: /guides/v2.0/ui-library/ui-secondary-uploader.html
 ---

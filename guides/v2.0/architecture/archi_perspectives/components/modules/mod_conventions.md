@@ -7,6 +7,7 @@ menu_title: Module conventions
 menu_order: 5
 level3_menu_node: level3child
 level3_subgroup: modules
+version: 2.0
 github_link: architecture/archi_perspectives/components/modules/mod_conventions.md
 redirect_from: /guides/v1.0/architecture/modules/mod_conventions.html
 ---
