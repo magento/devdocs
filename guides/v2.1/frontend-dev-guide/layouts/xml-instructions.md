@@ -186,7 +186,7 @@ Sample of usage in layout:
 This would add a new column to the page layout.
 
 
-<h2 id="fedg_xml-instrux_before-after">before and after attributes</h2>
+<h3 id="fedg_xml-instrux_before-after">before and after attributes</h3>
 <p>To help you to position elements in a specific order suitable for design, SEO, usability, or other requirements, Magento software provides the <code>before</code> and <code>after</code> layout attributes.</p>
 <p>These optional attributes can be used in layout XML files to control the order of elements in their common parent.
 

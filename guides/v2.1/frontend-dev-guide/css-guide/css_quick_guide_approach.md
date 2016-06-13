@@ -16,7 +16,7 @@ Let's say you created a new theme inheriting from Magento Blank or Luma, and cho
 - <a href="#simple_override">Simplest way to override parent styles (that is, override default Magento UI library variables)</a>
 - <a href="#structured_changes">Adding structured changes</a>
 	- <a href="#structured_extend">Extend component's styles</a>
-	- <a href="structured_override">Override component's styles</a>
+	- <a href="#structured_override">Override component's styles</a>
 
 
 <h2 id="simple_extend">Simplest way to extend parent styles</h2> 
