@@ -4,7 +4,7 @@ group: release-notes
 subgroup: Release Notes
 title: Magento EE 2.1 Release Candidate 3 (RC3) Release Notes 
 menu_title: Magento EE 2.1 Release Candidate 3 (RC3) Release Notes 
-menu_order: 17
+menu_order: 19
 version: 2.0
 github_link: release-notes/ReleaseNotes2.1_RC3EE.md
 ---
@@ -49,11 +49,6 @@ Magento Enterprise Edition 2.1 includes several new and exciting features:
 <h3>Known issues</h3>
 Magento 2.1 RC3 includes the following known issues:
 
-
-<!--- 53169 --> * Magento does not apply the Cart Price or Catalog Price sales rules accordingly to the store  website's timezone, as expected.
-
-
-<!--- 53536 -->* You cannot update from Magento 2.0.x to Magento 2.1.x with Sample Data. 
 
 
 
