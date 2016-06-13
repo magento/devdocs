@@ -4,9 +4,11 @@ group: release-notes
 subgroup: Third Party Licenses
 title: Third Party Licenses
 menu_title: Third Party Licenses
-menu_order: 1
+menu_order: 99
 github_link: release-notes/thirdparty.md
 ---
+
+This page contains links to license agreements of the third party components used within Magento products.  Click the **License** links to view the end user license agreement for the corresponding software.
 
 Name|Version|License Name|Available From|Link to License|Avalability
 ---|---|---|---|---|---
@@ -84,3 +86,4 @@ moment.js |2.8.1| MIT|[Source](http://momentjs.com)|[License](http://momentjs.co
 MutationObserver |-| BSD|[Source](http://polymer.github.io)|[License](http://polymer.github.io/LICENSE.txt)|EE/CE
 Underscore |1.8.2| MIT|[Source](http://underscorejs.org)|[License](https://github.com/jashkenas/underscore/blob/master/LICENSE)|EE/CE
 LinLibertineFont|-|GPL 2.0 and the Open Fonts License 1.0|[Source](http://www.linuxlibertine.org)|[License 1](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html) [License 2](http://scripts.sil.org/cms/scripts/page.php)|EE/CE
+Swagger || Apache 2|[Source](https://github.com/swagger-api/swagger-ui)|[License](http://swagger.io/license/)|EE/CE
