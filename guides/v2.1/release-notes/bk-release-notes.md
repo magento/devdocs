@@ -1,15 +1,26 @@
 ---
 layout: default
 group: release-notes
-title: Release Notes redirect
-menu_title: Release Notes redirect
+title: What's on this page
+menu_title: What's on this page
 menu_order: 1
 menu_node: 
 version: 2.1
 github_link: release-notes/bk-release-notes.md
 ---
 
-The Magento 2.0 GA Release Notes have moved. Click one of the following links to be redirected.
+## Magento Community Edition (CE) 2.1 Release Notes
 
-*   <a href="http://docs.magento.com/m2/ce/user_guide/magento/release-notes-ce-2.0.html" target="_blank">Magento CE Release Notes</a>
-*   <a href="http://docs.magento.com/m2/ee/user_guide/magento/release-notes-ee-2.0.html" target="_blank">Magento EE Release Notes</a>
+<a href="{{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.0CE.html" target="_blank">Version 2.1</a>
+
+## Magento Enterprise Edition (EE) Release Notes
+
+<a href="{{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.0EE.html" target="_blank">Version 2.1</a>
+
+## Backward-incompatible changes
+
+Link
+
+## Open Source Software license agreements
+
+<a href="{{ site.gdeurl21 }}release-notes/MagentoOSS.html">Magento Open Source Software license agreements</a>
