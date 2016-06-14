@@ -2,12 +2,10 @@
 
 These instructions apply to Magento Community Edition (CE) and Magento Enterprise Edition (EE) users *only* if all of the following are true:
 
-*	You have installed optional sample data
-*	You're upgrading to Magento RC1 or RC2 from any earlier version using the command line
+*	You installed optional sample data
+*	You're upgrading to Magento 2.1 (including a Release Candidate) from version 2.0.7 or earlier using the command line
 
-{% collapsible Click to expand/collapse content %}
-
-To upgrade to Magento 2 RC1 or RC2 sample data using the command line:
+{% collapsible To upgrade to Magento 2.1 with sample data using the command line: %}
 
 1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{ site.gdeurl }}install-gde/prereq/file-system-perms-over.html).
 2.	Change to the Magento installation directory.
