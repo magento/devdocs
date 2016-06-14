@@ -17,7 +17,7 @@ github_link: extension-dev-guide/staging/SalesRuleStaging.md
 * TOC
 {:toc}
 
-<h2>Magento_SalesRuleStaging module</h2>
+## Magento_SalesRuleStaging module
 
 ## Overview
 
@@ -36,7 +36,7 @@ The Magento_SalesRuleStaging module enables you to stage the following sales rul
 - Condition
 - Action
 
-This module depends on the Magento_SalesRule module and extends its functionality. It changes database structure of the Magento_SalesRule module and the way in which sales rules are managed.
+This module depends on the Magento_SalesRule module and extends its functionality. It changes the database structure of the Magento_SalesRule module and the way in which sales rules are managed.
  
 ### Installation Details
  
@@ -44,15 +44,15 @@ Do not uninstall the Magento_SalesRuleStaging module, because it makes irreversi
 
 ## Dependencies
 
-You can find the list of modules that have dependencies with the Magento_SalesRuleStaging module in the `require` object of the `composer.json` file located in the same directory as this `README` file.
+You can find the list of modules that have dependencies on the Magento_SalesRuleStaging module in the `require` section of the `composer.json` file. The file is located in the root directory of the module.
 
 ## Extension Points
 
 Extension points enable extension developers to interact with the Magento_SalesRuleStaging. However, the Magento_SalesRuleStaging module does not provide any specific extension points.
 
-For more information about Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).
+For more information about the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).
 
-[Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_SalesRuleStaging module.
+[The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_SalesRuleStaging module.
 
 ## Additional information
 

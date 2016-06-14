@@ -17,7 +17,7 @@ github_link: extension-dev-guide/staging/GiftMessageStaging.md
 * TOC
 {:toc}
 
-<h2>Magento_GiftMessageStaging module</h2>
+## Magento_GiftMessageStaging module
 
 ## Overview
 
@@ -29,12 +29,12 @@ The Magento_GiftMessageStaging module enables you to stage the "Allow Gift Messa
 
 ## Dependencies
 
-You can find the list of modules that have dependencies with the Magento_GiftMessageStaging module in the `require` object of the `composer.json` file. The file is located in the same directory as this `README` file.
+You can find the list of modules that have dependencies on the Magento_GiftMessageStaging module in the `require` section of the `composer.json` file. The file is located in the root directory of the module.
 
 ## Extension Points
 
-[Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.0/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_GiftMessageStaging module.
+[The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.0/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_GiftMessageStaging module.
 
 ## Additional information
 
-For more Magento 2 developer documentation, see [Magento 2 Developer Documentation](http://devdocs.magento.com). Also, there you can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
+You can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).

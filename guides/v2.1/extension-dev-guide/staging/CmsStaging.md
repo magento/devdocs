@@ -17,7 +17,7 @@ github_link: extension-dev-guide/staging/CmsStaging.md
 * TOC
 {:toc}
 
-<h2>Magento_CmsStaging module</h2>
+## Magento_CmsStaging module
 
 ## Overview
 
@@ -25,7 +25,7 @@ The Magento_CmsStaging module is a part of the staging functionality in Magento 
 
 ## Implementation Details
 
-The Magento_CmsStaging module changes the CMS Pages and CMS Blocks creation pages to make them compatible with the Magento Staging Framework. This module depends on the Magento_Cms module and extends its functionality. It changes database structure of the Magento_Cms module and the way in which CMS Pages/Blocks are managed.
+The Magento_CmsStaging module changes the CMS Pages and CMS Blocks creation pages to make them compatible with the Magento Staging Framework. This module depends on the Magento_Cms module and extends its functionality. It changes the database structure of the Magento_Cms module and the way in which CMS Pages/Blocks are managed.
 
 ### CMS Pages
 
@@ -40,7 +40,6 @@ You can stage the following parameters:
     - URL Key
     - Meta Keywords
     - Meta Description
-- Page in Websites
 - Design 
     - Layout
     - Layout Update XML
@@ -58,17 +57,17 @@ The following parameters can be staged:
 
 ### Installation Details
 
-The Magento_CmsStaging module makes irreversible changes in a database during installation. It means, that you cannot uninstall this module.
+The Magento_CmsStaging module makes irreversible changes in a database during installation. You cannot uninstall this module.
 
 ## Dependencies
 
-You can find the list of modules that have dependencies with the Magento_CmsStaging module in the `require` object of the `composer.json` file. The file is located in the same directory as this `README` file.
+You can find the list of modules that have dependencies on the Magento_CmsStaging module in the `require` section of the `composer.json` file. The file is located in the root directory of the module.
 
 ## Extension Points
 
-Extension points enable extension developers to interact with the Magento_CmsStaging module. For more information about Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).
+Extension points enable extension developers to interact with the Magento_CmsStaging module. For more information about the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).
 
-[Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_CmsStaging module.
+[The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_CmsStaging module.
 
 ### UI components
 
@@ -81,4 +80,4 @@ For more information about layouts, see the [Layout documentation](http://devdoc
 
 ## Additional information
 
-For more Magento 2 developer documentation, see [Magento 2 Developer Documentation](http://devdocs.magento.com). Also, there you can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
+You can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).

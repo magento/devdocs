@@ -17,7 +17,7 @@ github_link: extension-dev-guide/staging/CheckoutStaging.md
 * TOC
 {:toc}
 
-<h2>Magento_CheckoutStaging module</h2>
+## Magento_CheckoutStaging module
 
 ## Overview
 
@@ -39,18 +39,18 @@ Configuration options:
 
 ## Installation Details
 
-The Magento_CheckoutStaging module makes irreversible changes in a database during installation. It means, that you cannot uninstall this module.
+The Magento_CheckoutStaging module makes irreversible changes in a database during installation. You cannot uninstall this module.
 
 ## Dependencies
 
-You can find the list of modules that have dependencies with the Magento_CheckoutStaging module in the `require` object of the `composer.json` file. The file is located in the same directory as this `README` file.
+You can find the list of modules that have dependencies on the Magento_CheckoutStaging module in the `require` section of the `composer.json` file. The file is located in the root directory of the module.
 
 ## Extension Points
 
-Extension points enable extension developers to interact with the Magento_CheckoutStaging module. For more information about Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).
+Extension points enable extension developers to interact with the Magento_CheckoutStaging module. For more information about the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).
 
-[Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_CheckoutStaging module.
+[The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_CheckoutStaging module.
 
 ## Additional information
 
-For more Magento 2 developer documentation, see [Magento 2 Developer Documentation](http://devdocs.magento.com). Also, there you can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
+You can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).

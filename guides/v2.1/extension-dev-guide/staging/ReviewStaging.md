@@ -17,7 +17,7 @@ github_link: extension-dev-guide/staging/ReviewStaging.md
 * TOC
 {:toc}
 
-<h2>Magento_ReviewStaging module</h2>
+## Magento_ReviewStaging module
 
 ## Overview
 
@@ -33,13 +33,13 @@ NOTE You cannot create an update for a product review.
 
 ## Dependencies
 
-You can find the list of modules that have dependencies with the Magento_ReviewStaging module in the `require` object of the `composer.json` file. The file is located in the same directory as this `README` file.
+You can find the list of modules that have dependencies on the Magento_ReviewStaging module in the `require` section of the `composer.json` file. The file is located in the root directory of the module.
 
 ## Extension Points
 
-Extension points enable extension developers to interact with the Magento_ReviewStaging module. For more information about Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).
+Extension points enable extension developers to interact with the Magento_ReviewStaging module. For more information about the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).
 
-[Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_ReviewStaging module.
+[The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_ReviewStaging module.
 
 ### Layouts
 
@@ -48,4 +48,4 @@ For more information about layouts, see the [Layout documentation](http://devdoc
 
 ## Additional information
 
-For more Magento 2 developer documentation, see [Magento 2 Developer Documentation](http://devdocs.magento.com). Also, there you can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
+You can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).

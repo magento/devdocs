@@ -17,7 +17,7 @@ github_link: extension-dev-guide/staging/CatalogImportExportStaging.md
 * TOC
 {:toc}
 
-<h2>Magento_CatalogImportExportStaging module</h2>
+## Magento_CatalogImportExportStaging module
 
 ## Overview
 
@@ -27,19 +27,19 @@ The Magento_CatalogImportExportStaging module is a part of the staging functiona
 
 The Magento_CatalogImportExportStaging module:
 
- * adds plugin on `Magento\CatalogImportExport\Model\Import\Product::saveProductEntity` to add version and sequence information to product entity
- * listens to `catalog_product_import_bunch_delete_commit_before` event to delete values from sequence table when products being deleted
+ * adds a plugin on `Magento\CatalogImportExport\Model\Import\Product::saveProductEntity` to add version and sequence information to the product entity
+ * listens to the `catalog_product_import_bunch_delete_commit_before` event to delete values from the sequence table when products are being deleted
 
 ## Dependencies
 
-You can find the list of modules that have dependencies on Magento_CatalogImportExportStaging module, in the `require` section of the `composer.json` file located in the same directory as this `README.md` file.
+You can find the list of modules that have dependencies on the Magento_CatalogImportExportStaging module in the `require` section of the `composer.json` file. The file is located in the root directory of the module.
 
 ## Extension Points
 
 The Magento_CatalogImportExportStaging module does not provide any specific extension points. You can extend it using the Magento extension mechanism.
 
-For more information about Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.0/extension-dev-guide/plugins.html) and [Magento dependency injection](http://devdocs.magento.com/guides/v2.0/extension-dev-guide/depend-inj.html).
+For more information about the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.0/extension-dev-guide/plugins.html) and [Magento dependency injection](http://devdocs.magento.com/guides/v2.0/extension-dev-guide/depend-inj.html).
 
 ## Additional information
 
-For more Magento 2 developer documentation, see [Magento 2 Developer Documentation](http://devdocs.magento.com). Also, there you can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
+You can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).

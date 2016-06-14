@@ -17,7 +17,7 @@ github_link: extension-dev-guide/staging/MsrpStaging.md
 * TOC
 {:toc}
 
-<h2>Magento_MsrpStaging module</h2>
+## Magento_MsrpStaging module
 
 ## Overview
 
@@ -32,11 +32,11 @@ The Magento_MsrpStaging module extends the Magento_Msrp module to be used in sta
 
 ## Dependencies
 
-You can find the list of modules that have dependencies with the Magento_MsrpStaging module in the `require` object of the `composer.json` file. The file is located in the same directory as this `README` file.
+You can find the list of modules that have dependencies on the Magento_MsrpStaging module in the `require` section of the `composer.json` file. The file is located in the root directory of the module.
 
 ## Extension Points
 
-[Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_MsrpStaging module.
+[The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_MsrpStaging module.
 
 ## Additional information
 

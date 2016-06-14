@@ -17,7 +17,7 @@ github_link: extension-dev-guide/staging/Staging.md
 * TOC
 {:toc}
 
-<h2>Magento_Staging module</h2>
+## Magento_Staging module
 
 ## Overview
 
@@ -26,8 +26,8 @@ The Magento_Staging module enables you to work with the future [campaigns](#camp
 With the Magento_Staging module you can:
 
 - Manage future campaigns
-    - Using Staging Dashboard in Admin
-    - Using API
+    - Using the Staging Dashboard in Admin
+    - Using APIs
 - Preview a future campaign in Admin
 
 Moreover, the Magento_Staging module is a framework for other [staging](#staging) modules. It declares basic scenarios over the content, while other staging modules perform them. (You can recognize a staging modules by name, each ends with “Staging” and starts with a name of a module, which it extends. For example, Magento_CatalogStaging module extends functionality of Magento_Catalog module.)
@@ -83,12 +83,12 @@ The dashboard shows campaigns as a timeline and a grid. Both views represent the
 
 Available actions:
 
-- Preview, which enable you to see how store will look during the campaign.
-- Edit, which you can use to change the [campaign](#campaign) attribute values. Also, Edit page shows you grids of all  [staging](#staging) categories with included objects.
+- Preview, which enable you to see how a store will look during the campaign.
+- Edit, which you can use to change the [campaign](#campaign) attribute values. Also, the Edit page shows you grids of all  [staging](#staging) categories with included objects.
 
 ### Customization
 
-You can customize grid using standard grid settings located on the area above the grid; or manipulate directly the corresponding UI components.
+You can customize a grid using the standard grid settings located above the grid or by directly manipulating the corresponding UI components.
 
 #### Timeline/Grid view UI components
 
@@ -102,16 +102,16 @@ You can manipulate the timeline view and the grid view of a dashboard in the `ap
     - `recordTmpl` declares an overloading template for timeline records.
     - `detailsTmpl` declares a template for a tooltip component, which provides [campaign](#campaign) details.
 - in `column name="status"`
-    - `component` extends selection column, sets a css class specified in a value.
-    - `updateTypesMap` declares an array that contains bound classes and values that indicate wich css class must be applied. Depending on the `value` (obtained from backend), a css class from the `className` is applied to a stripe with update.
+    - `component` extends selection column, sets a CSS class specified in a value.
+    - `updateTypesMap` declares an array that contains bound classes and values that indicate which CSS class must be applied. Depending on the `value` (obtained from backend), a CSS class from the `className` is applied to a stripe with update.
 
 [Learn more details about the timeline dashboard.](http://devdocs.magento.com/guides/v2.1/pattern-library/staging-patterns/TimelineDashboard/Timeline-Dashboard.html)
 
-## Manage the future campaigns
+## Manage future campaigns
 
-### Campaign
+### Campaigns
 
-A [campaign](#campaign) enables you to manage entities' updates with the same start and end dates. Campaign has name and description.
+A [campaign](#campaign) enables you to manage entities' updates with the same start and end dates. A campaign has name and description.
 
 #### Create a campaign
 
@@ -128,7 +128,7 @@ You can view campaigns on the dashboard (**Admin** &gt; **Content** &gt; **Stagi
 - Number of included objects (entities)
 - List presenting how many objects of each type is assigned to the campaign
 
-Also, you can view a campaign on edit form of a staged entity, which it is assigned to. And in a preview mode, you can watch a list of campaigns to select one or another.
+Also, staged entity displays the campaigns it has been assigned to. In preview mode, you can select a campaign from the list of campaigns.
 
 #### Preview a campaign
 
@@ -181,7 +181,7 @@ You can schedule an update of Magento entity to be used in future. It is applica
 - Products
 - Content
     - Blocks
-    -  Pages
+    - Pages
 
 - Marketing
     - Catalog Price Rules
@@ -232,7 +232,8 @@ In this mode, the Magento_Staging module builds a view of a store for a specific
 
 Preview mode is also available for a multi website store. Switching between different website views is available in scope of Admin domain. Server builds a view of an open page only using its scheduled parameters. (Without redirection to another domain.)
 
-Note that all websites must use the same type of the protocol: HTTP or HTTPS. You cannot mix HTTP and HTTPS websites.
+NOTE All websites must use the same type of the protocol: HTTP or HTTPS. You cannot mix HTTP and HTTPS websites.
+NOTE **Product in Websites** tab is inactive in the Schedule Update form and cannot be edit.
 
 ### Share a link to preview
 
@@ -246,15 +247,15 @@ The Staging modules cannot be removed or disabled after they were installed.
 
 ## Module dependencies
 
-You can find the list of modules that have dependencies with the Magento_Staging module in the `require` object of the `composer.json` file. The file is located in the root directory of the module.
+You can find the list of modules that have dependencies on the Magento_Staging module in the `require` section of the `composer.json` file. The file is located in the root directory of the module.
 
 ## Extension points
 
-Extension points enable extension developers to interact with the Magento_Staging module. For more information about Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).
+Extension points enable extension developers to interact with the Magento_Staging module. For more information about the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).
 
 ### Public APIs
 
-[`magento2ee/app/code/Magento/Staging/Api`](https://github.corp.magento.com/magento2/magento2ee/tree/develop/app/code/Magento/Staging/Api)
+You can use public APIs from the [`magento2ee/app/code/Magento/Staging/Api`](https://github.corp.magento.com/magento2/magento2ee/tree/develop/app/code/Magento/Staging/Api)
 
 ### UI components
 

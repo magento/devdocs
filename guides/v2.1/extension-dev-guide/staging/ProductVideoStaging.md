@@ -17,23 +17,23 @@ github_link: extension-dev-guide/staging/ProductVideoStaging.md
 * TOC
 {:toc}
 
-<h2>Magento_ProductVideoStaging module</h2>
+## Magento_ProductVideoStaging module
 
 ## Overview
 
-The Magento_ProductVideoStaging module is a part of the staging functionality in Magento EE. It enables you to add a new video or remove existing one to a product update.
+The Magento_ProductVideoStaging module is a part of the staging functionality in Magento EE. It enables you to add or remove a video to a product update.
 
 ## Implementation Details
 
-The Magento_ProductVideoStaging module extends the Magento_ProductVideo functionality to be used in staging. It adds "Add Video" button to the Schedule Update form and supports a New Video form in staging mode.
+The Magento_ProductVideoStaging module extends the Magento_ProductVideo functionality to be used in staging. It adds an "Add Video" button to the Schedule Update form and supports a New Video form in staging mode.
 
 ## Dependencies
 
-You can find the list of modules that have dependencies with the Magento_ProductVideoStaging module in the `require` object of the `composer.json` file. The file is located in the same directory as this `README` file.
+You can find the list of modules that have dependencies on the Magento_ProductVideoStaging module in the `require` section of the `composer.json` file. The file is located in the root directory of the module.
 
 ## Extension Points
 
-Extension points enable extension developers to interact with the Magento_ProductVideoStaging module. [Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_ProductVideoStaging module.
+Extension points enable extension developers to interact with the Magento_ProductVideoStaging module. [The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_ProductVideoStaging module.
 
 ### Layouts
 
@@ -42,4 +42,4 @@ For more information about layouts, see the [Layout documentation](http://devdoc
 
 ## Additional information
 
-For more Magento 2 developer documentation, see [Magento 2 Developer Documentation](http://devdocs.magento.com). Also, there you can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
+You can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
