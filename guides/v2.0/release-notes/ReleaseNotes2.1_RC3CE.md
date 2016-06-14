@@ -45,7 +45,7 @@ Magento Community Edition 2.1, Release Candidate 3 includes the following known 
 
 <!--- P0 issues -->
 <h4>Checkout</h4>
-<
+
 
 
 <h4>Bundle products</h4>
