@@ -19,7 +19,7 @@ OrangeCo created a custom theme that inherits from the Magento basic Blank theme
 The following image illustrates how store pages look when the Blank theme is applied:
 
 <div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl }}common/images/practice_blank.png" alt="product page when Blank applied">
+<img src="{{ site.baseurl }}common/images/practice_blank21.png" alt="product page when Blank applied">
 </div>
 
 
@@ -76,4 +76,4 @@ To do this, they added an overriding <code>_theme.less</code> file in the <code>
 
 After the Grey theme is applied, store pages will look like following:
 
-<img src="{{ site.baseurl }}common/images/css_practice.png" alt="product page when Grey applied">
+<img src="{{ site.baseurl }}common/images/css_practice21.png" alt="product page when Grey applied">

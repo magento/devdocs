@@ -19,7 +19,7 @@ In the examples in this topic the <a href="{{site.gdeurl21}}frontend-dev-guide/c
 
 In our examples we will change the color and font of the primary buttons. The default view of the primary buttons can be illustrated by the **Create an Account** button view on the Admin login page:
 
-<img src="{{site.baseurl}}common/images/extend_less_screenshot0.png" alt="Admin login page with the default view of the primary buttons">
+<img src="{{site.baseurl}}common/images/extend_less_screenshot21.png" alt="Admin login page with the default view of the primary buttons">
 
 <h3>Contents</h3>
 - <a href="#first_step">First step: Create and apply a theme</a>
@@ -42,7 +42,7 @@ The following is an illustration of how the process of making simple changes loo
 <li>In your theme directory, add <code>web/css/source/_extend.less</code>.</li>
 <li>Change the color of the buttons by adding the following code in <code>_extend.less</code>:
 
-<img src="{{ site.baseurl }}common/images/extend_less_code_1.png" alt="Less code redefining the color of the primary buttons">
+<img src="{{ site.baseurl }}common/images/extend_less_code_121.png" alt="Less code redefining the color of the primary buttons"> </li>
 <li>Delete all files in the following directories:
 <ul>
 <li><code>pub/static/frontend/&lt;Your_Vendor&gt;/&lt;your_theme&gt;</code></li>
@@ -51,11 +51,11 @@ The following is an illustration of how the process of making simple changes loo
 </li>
 <li>Refresh the page, and view the changes applied. For example:
 
-<img src="{{ site.baseurl }}common/images/extend_less_screenshot1.png" alt="Less code redefining the color of the primary buttons">
+<img src="{{ site.baseurl }}common/images/extend_less_screenshot121.png" alt="Less code redefining the color of the primary buttons">
 </li>
 <li>Change the font of the buttons by adding the following code in <code>_extend.less</code>:
-
-<img src="{{ site.baseurl }}common/images/extend_less_code_2.png" alt="Less code redefining the font of the primary buttons">
+<br>
+<img src="{{ site.baseurl }}common/images/extend_less_code_221.png" alt="Less code redefining the font of the primary buttons">
 </li>
 <li>Delete all files in the following directories:
 <ul>
@@ -64,8 +64,8 @@ The following is an illustration of how the process of making simple changes loo
 </ul>
 </li>
 <li>Refresh the page, and view the changes applied. 
-
-<img src="{{ site.baseurl }}common/images/extend_less_screenshot2.png" alt="Admin login page where the font of the buttons was changed">
+<br>
+<img src="{{ site.baseurl }}common/images/extend_less_screenshot221.png" alt="Admin login page where the font of the buttons was changed">
 </li>
 </ol>
 If your Magento instance uses the server-side compilation mode, you need to manually clean sub-directories in <code>pub/static</code> and <code>var/view_preprocessed/less</code> to make your changes apply. You can automate this process by additionally installing Grunt, and using the built-in Grunt commands to watch the changes and clean the directories. The flow of making changes using Grunt is described in the following section.
@@ -85,15 +85,18 @@ If your Magento instance uses the server-side compilation mode, you need to manu
 Where <code>&lt;your_theme&gt;</code> is the code of your theme. Conventionally it should coincide with the theme directory name.
 </li>
 <li>Change the color of the buttons by adding the following code in <code>_extend.less</code>:
-<img src="{{ site.baseurl }}common/images/extend_less_code_1.png" alt="Less code redefining the color of the primary buttons">
+<br>
+<img src="{{ site.baseurl }}common/images/extend_less_code_121.png" alt="Less code redefining the color of the primary buttons">
 </li>
 <li>Refresh the page and view your changes applied:
-<img src="{{ site.baseurl }}common/images/extend_less_screenshot1.png" alt="Admin login page where the color of the button was changed">
+<img src="{{ site.baseurl }}common/images/extend_less_screenshot121.png" alt="Admin login page where the color of the button was changed">
 </li>
 <li>Change the font of the buttons by adding the following code in <code>_extend.less</code>:
+<br>
 <img src="{{ site.baseurl }}common/images/extend_less_code_2.png" alt="Less code redefining the font of the primary buttons">
 </li>
 <li>Refresh the page and view your changes applied:
+<br>
 <img src="{{ site.baseurl }}common/images/extend_less_screenshot2.png" alt="Admin login page where the font of the buttons was changed">
 </li>
 </ol>
@@ -120,11 +123,11 @@ Where <code>&lt;your_theme&gt;</code> is the code of your theme. Conventionally 
 </li>
 <li>Change the font of the buttons by adding the following code in <code>_extend.less</code>:
 
-<img src="{{ site.baseurl }}common/images/extend_less_code_2.png" alt="Less code redefining the font of the primary buttons">
+<img src="{{ site.baseurl }}common/images/extend_less_code_221.png" alt="Less code redefining the font of the primary buttons">
 </li>
 <li>Refresh the page and view your changes applied:
 
-<img src="{{ site.baseurl }}common/images/extend_less_screenshot2.png" alt="Admin login page where the font of the buttons was changed">
+<img src="{{ site.baseurl }}common/images/extend_less_screenshot221.png" alt="Admin login page where the font of the buttons was changed">
 </li>
 </ol>
 

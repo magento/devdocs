@@ -15,7 +15,7 @@ The gallery jQuery widget implements a content area with images organized into p
 
 The following picture is an illustration of image displaying on the product page using the gallery widget:
 
-<img src="{{site.baseurl}}common/images/gallery_scr.png" width="650px" alt="A product page with preview and thumbnails">
+<img src="{{site.baseurl}}common/images/gallery_scr21.png" width="650px" alt="A product page with preview and thumbnails">
 
 In addition, the [magnifier widget]({{site.gdeurl21}}javascript-dev-guide/widgets/widget_gallery_mg.html) can be used to demonstrate images in 100% scaled size in separate dedicated layer, and the gallery fullscreen mode can be used to navigate the entire full sized photo.
 
@@ -28,7 +28,7 @@ The important feature of the gallery widget implementation is the possibility to
 The gallery widget source code is <a href="{{site.mage2100url}}lib/web/mage/gallery/gallery.js">lib/web/mage/gallery/gallery.js</a>
 
 The gallery magnifier source is <a href="{{site.mage2100url}}lib/web/magnifier/magnify.js"> lib/web/magnifier/magnify.js</a>.
-
+##  ##
 
 
 <h3>Contents</h3>
