@@ -45,10 +45,10 @@ To change the products quantity, OrangeCo take the following steps:
 
 <li>Make the changes in the code. The following image illustrates which section of the file they change, the modified lines are highlighted:</li>
 </ol>
-<p><img src="{{site.baseurl}}common/images/rwd_pract1.png"></p>
+<p><img src="{{site.baseurl}}common/images/rwd_pract121.png"></p>
 
 After OrangeCo <a href="{{site.gdeurl21}}frontend-dev-guide/themes/theme-apply.html" target="_blank">applies their theme</a>, the catalog page of their store looks like following:
 
-<p><img src="{{site.baseurl}}common/images/rwd_practice.jpg"></p>
+<p><img src="{{site.baseurl}}common/images/rwd_practice21.jpg"></p>
 
 (compare to the <a href="{{site.gdeurl21}}frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_blank_ex" target="_blank">same page for the Blank theme</a>.)
