@@ -52,7 +52,7 @@ The default browser is **Mozilla Firefox**.
 
 If you want to use another browser for tests you have to specify it in `config.xml`.
 
-Copy `<server>` element from `<magento2>/dev/tests/functional/vendor/magento/mtf/etc/config.xml>` and paste it in `<magento2>/dev/tests/functional/config.xml` after `<install>` element.
+Copy `<server>` element from `<magento2>/dev/tests/functional/vendor/magento/mtf/etc/config.xml>` and paste it in `<magento2>/dev/tests/functional/etc/config.xml` after `<install>` element.
 
 Enter actual data in `<browserName>` and `<browser>` attributes.
 
