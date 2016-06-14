@@ -29,7 +29,7 @@ Here is a simple illustration of changing styles using the first approach: chang
 In the Blank theme, the buttons of the `.action.primary` class, so called *primary* buttons, are blue. The following image illustrates this:
 
 <div style="border: 1px solid #ABABAB">
-<img src="{{site.baseurl}}common/images/css_over1.png" alt="The default view of a product page, with the orange Add to Cart button">
+<img src="{{site.baseurl}}common/images/css_over121.png" alt="The default view of a product page, with the orange Add to Cart button">
 </div>
 
 OrangeCo wants to change the color of the primary buttons to orange. To achieve this, they do the following:
@@ -49,7 +49,7 @@ OrangeCo wants to change the color of the primary buttons to orange. To achieve 
 When OrangeCo <a href="{{site.gdeurl21}}frontend-dev-guide/themes/theme-apply.html" target="_blank">applies their theme</a>, the primary buttons will look like on the following image:
 
 <div style="border: 1px solid #ABABAB">
-<img src="{{site.baseurl}}common/images/css_over2.png" alt="The customized view of a product page, with the grey Add to Cart button">
+<img src="{{site.baseurl}}common/images/css_over221.png" alt="The customized view of a product page, with the grey Add to Cart button">
 </div>
 
 <h2 id="css_topics">What's in this chapter</h2>

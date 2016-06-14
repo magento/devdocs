@@ -43,13 +43,13 @@ A *container* exists for the sole purpose of assigning content structure to a pa
 
 The following figure shows an example:
 
-<img src="{{ site.baseurl }}common/images/layouts_containers_defn.jpg" />
+<img src="{{ site.baseurl }}common/images/layouts_containers_defn21.jpg" />
 
  A *block* represents each feature on a page and employs templates to generate the HTML to insert into its parent structural block. Examples of blocks include a category list, a mini cart, product tags, and product listing.
 
 The following figure shows an example:
 
-<img src="{{ site.baseurl }}common/images/layouts_block_defn.jpg"/>.
+<img src="{{ site.baseurl }}common/images/layouts_block_defn21.jpg"/>.
 
 ## Basic layouts
 
