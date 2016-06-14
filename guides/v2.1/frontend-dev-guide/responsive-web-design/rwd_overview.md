@@ -17,7 +17,7 @@ The out-of-the-box Magento Blank and Luma themes (Luma <a href="{{site.gdeurl21}
 
 The following image illustrates how the same page built on the Blank theme looks on mobile, tablet and desktop devices.
 
-<img src="{{site.baseurl}}common/images/css_responsive1.jpg">
+<img src="{{site.baseurl}}common/images/css_responsive121.jpg">
 
 
 We recommend using the Blank theme, as a starting point for your customizations. That is, your custom theme should <a href="{{site.gdeurl21}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherit</a> from Blank.
