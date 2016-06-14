@@ -66,86 +66,21 @@ Magento Community Edition 2.1, Release Candidate 3 includes the following known 
 
 <h3>Technology stack</h3>
 
-Our technology stack is built on PHP and MySQL. Magento 2.1 RC3 supports PHP 5.6 and 7.0.2–7.0.6 except for 7.0.5, and MySQL 5.6.
+Our technology stack is built on PHP and MySQL. Magento 2.1 RC3 supports:
 
-We do not support PHP 5.5.x. 
+* PHP 5.6
+* PHP 7.0.2+ (with the exception of 7.0.5, due to a PHP bug)
+* MySQL 5.6.
+
+We do not support PHP 5.5.x or 7.0.5. 
 
 
 ## Installation and upgrade instructions
 You can install Magento Community Edition 2.1 Release Candidate 3 (RC3) from either Github or by using Composer. 
 This Release Candidate is for test purposes only. Do not install it in a production environment.
 
-See one of the following sections:
+{% include install/releasenotes/ce_install_21rc.md %}
 
-*	[Install from GitHub](#install-rc-gh)
-*	[Install using Composer](#install-rc-composer)
-*	[Upgrade existing installations](#upgrade-rc-nosamp)
-*	[Upgrade to an RC with sample data](#upgrade-rc-samp)
-
-### Install from GitHub {#install-rc-gh}
-Before proceeding, please familiarize yourself with these prerequisites, then run
-
-`git clone git@github.com:magento/magento2.git`
-
-`git checkout tags/2.1.0-rc3 [-b 2.1.0-rc3]`
-
-### Install using Composer
-This Release Candidate is available from `repo.magento.com`. Before installing this Release Candidate using Composer,  familiarize yourself with the Composer metapackage  <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run 
-
-	composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.1.0-rc3 <installation directory name>
-
-## Upgrade existing installations {#upgrade-rc-nosamp}
-This section discusses how to upgrade to a Release Candidate *without* sample data.
-
-If you installed optional sample data, see [Upgrade to an RC with sample data](#upgrade-rc-samp) instead.
-
-<div class="bs-callout bs-callout-warning">
-    <p><em>Do not</em> upgrade to a Release Candidate on a production system. Upgrade to a Release Candidate on a development system only.</p>
-</div>
-
-### Upgrade using the Setup Wizard
-Use the instructions in [Start System Upgrade]({{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html). When prompted to choose a version, choose a Release Candidate.
-
-### Upgrade an existing installation from the GitHub repository
-Developers who contribute to the CE codebase can <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento CE GitHub repository.
-
-1.	Go to the <a href="{{ site.gdeurl }}install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.
-
-2.	Follow the instructions to pull the updates from the repository and update using Composer.
-
-### Upgrade using the command line
-
-{% collapsible To upgrade to a Release Candidate using the command line: %}
-
-1.	Log in to your Magento server as, or switch to, the Magento file system owner.
-2.	Change to the directory in which you installed the Magento software.
-
-	For example, `cd /var/www/html/magento2`
-2.	Enter the following commands in the order shown:
-
-		composer require <product> 2.1.0-rc3 --no-update
-		composer update
-
-	To upgrade to Magento CE 2.1 RC3, enter:
-
-		composer require magento/product-community-edition 2.1.0-rc3 --no-update
-		composer update
-
-	To upgrade to Magento EE 2.1 RC3, enter:
-
-		composer require magento/product-enterprise-edition 2.1.0-rc3 --no-update
-		composer update
-	
-3.	If prompted, enter your [authentication keys]({{ site.gdeurl }}comp-mgr/prereq/prereq_auth-token.html).
-4. Update the database schema and data:
-
-		php bin/magento setup:upgrade
-
-{% endcollapsible %}
-
-## Upgrade to an RC with sample data {#upgrade-rc-samp}
-
-{% include install/sampledata/sample-data-rc1-cli.md %}
 
 ## Migration toolkits
 The <a href="{{ site.gdeurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ site.gdeurl }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
