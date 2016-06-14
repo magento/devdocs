@@ -5,7 +5,7 @@ These instructions apply to Magento Community Edition (CE) and Magento Enterpris
 *	You installed optional sample data
 *	You're upgrading to Magento 2.1 (including a Release Candidate) from version 2.0.7 or earlier using the command line
 
-{% collapsible To upgrade to Magento 2.1 with sample data using the command line: %}
+{% collapsible To upgrade to Magento 2.1 with sample data: %}
 
 1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{ site.gdeurl }}install-gde/prereq/file-system-perms-over.html).
 2.	Change to the Magento installation directory.
