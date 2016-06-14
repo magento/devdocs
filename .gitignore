@@ -37,3 +37,4 @@ Gemfile
 Gemfile.lock
 /vagrant/.vagrant
 !/vagrant/bootstrap.sh
+vendor

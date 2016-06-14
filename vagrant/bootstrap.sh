@@ -32,4 +32,4 @@ cd /jekyll/devdocs
 bundle install
 
 # Run devdocs in Jekyll
-cd /jekyll/devdocs && jekyll serve --host=0.0.0.0
+cd /jekyll/devdocs && bundle exec jekyll serve --host=0.0.0.0
