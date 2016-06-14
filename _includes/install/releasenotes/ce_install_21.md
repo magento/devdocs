@@ -1,7 +1,7 @@
 <div markdown="1">
 
 ## Installation and upgrade instructions
-You can install Magento Community Edition 2.1 Release Candidate 1 (RC1), RC2, or RC3 from either Github or by using Composer. 
+You can install Magento Enterprise Edition 2.1 (including a Release Candidate) from either Github or by using Composer. 
 
 <div class="bs-callout bs-callout-warning">
     <p><em>Do not</em> install or upgrade to a Release Candidate on a production system. Upgrade to a Release Candidate on a development system only.</p>
@@ -12,7 +12,7 @@ See one of the following sections:
 *	[Install from GitHub](#install-rc-gh)
 *	[Install using Composer](#install-rc-composer)
 *	[Upgrade existing installations](#upgrade-rc-nosamp)
-*	[Upgrade to an RC with sample data](#upgrade-rc-samp)
+*	[Upgrade to Magento 2.1 with sample data](#upgrade-rc-samp)
 
 ### Install from GitHub {#install-rc-gh}
 Before proceeding, please familiarize yourself with these prerequisites, then run
@@ -78,11 +78,6 @@ This section discusses how to upgrade to Magento 2.1 (including a Release Candid
 		composer require magento/product-community-edition 2.1.0-rc3 --no-update
 		composer update
 
-	To upgrade to Magento EE 2.1 RC3, enter:
-
-		composer require magento/product-enterprise-edition 2.1.0-rc3 --no-update
-		composer update
-	
 3.	If prompted, enter your [authentication keys]({{ site.gdeurl }}comp-mgr/prereq/prereq_auth-token.html).
 4. Update the database schema and data:
 
@@ -90,7 +85,7 @@ This section discusses how to upgrade to Magento 2.1 (including a Release Candid
 
 {% endcollapsible %}
 
-## Upgrade to an RC with sample data {#upgrade-rc-samp}
+## Upgrade to Magento 2.1 with sample data {#upgrade-rc-samp}
 This section discusses how to upgrade Magento with optional sample data using the command line.
 
 <div class="bs-callout bs-callout-warning">

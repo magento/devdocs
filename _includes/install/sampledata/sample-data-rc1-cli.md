@@ -17,20 +17,16 @@ These instructions apply to Magento Community Edition (CE) and Magento Enterpris
 		composer require <product> <version> --no-update
 		composer require <sample data module-1>:<version> ... <sample data module-n>:<version> --no-update
 
-	*	Magento CE:
+	*	To upgrade Magento CE to 2.1 RC3:
 
-			composer require magento/product-community-edition 2.1.0-rc2 --no-update
+			composer require magento/product-community-edition 2.1.0-rc3 --no-update
 
-			composer require magento/module-bundle-sample-data:100.1.0-rc2 magento/module-widget-sample-data:100.1.0-rc2 magento/module-theme-sample-data:100.1.0-rc2 magento/module-catalog-sample-data:100.1.0-rc2 magento/module-customer-sample-data:100.1.0-rc2 magento/module-cms-sample-data:100.1.0-rc2  magento/module-catalog-rule-sample-data:100.1.0-rc2 magento/module-sales-rule-sample-data:100.1.0-rc2 magento/module-review-sample-data:100.1.0-rc2 magento/module-tax-sample-data:100.1.0-rc2 magento/module-sales-sample-data:100.1.0-rc2 magento/module-grouped-product-sample-data:100.1.0-rc2 magento/module-downloadable-sample-data:100.1.0-rc2 magento/module-msrp-sample-data:100.1.0-rc2 magento/module-configurable-sample-data:100.1.0-rc2 magento/module-product-links-sample-data:100.1.0-rc2 magento/module-wishlist-sample-data:100.1.0-rc2 magento/module-swatches-sample-data:100.1.0-rc2 magento/sample-data-media:100.1.0-rc2 magento/module-offline-shipping-sample-data:100.1.0-rc2 --no-update 
-	*	Magento EE:
+			composer require magento/module-bundle-sample-data:100.1.0-rc3 magento/module-widget-sample-data:100.1.0-rc3 magento/module-theme-sample-data:100.1.0-rc3 magento/module-catalog-sample-data:100.1.0-rc3 magento/module-customer-sample-data:100.1.0-rc3 magento/module-cms-sample-data:100.1.0-rc3  magento/module-catalog-rule-sample-data:100.1.0-rc3 magento/module-sales-rule-sample-data:100.1.0-rc3 magento/module-review-sample-data:100.1.0-rc3 magento/module-tax-sample-data:100.1.0-rc3 magento/module-sales-sample-data:100.1.0-rc3 magento/module-grouped-product-sample-data:100.1.0-rc3 magento/module-downloadable-sample-data:100.1.0-rc3 magento/module-msrp-sample-data:100.1.0-rc3 magento/module-configurable-sample-data:100.1.0-rc3 magento/module-product-links-sample-data:100.1.0-rc3 magento/module-wishlist-sample-data:100.1.0-rc3 magento/module-swatches-sample-data:100.1.0-rc3 magento/sample-data-media:100.1.0-rc3 magento/module-offline-shipping-sample-data:100.1.0-rc3 --no-update 
+	*	To Magento EE to 2.1 RC3:
 
-			composer require magento/product-enterprise-edition 2.1.0-rc2 --no-update
+			composer require magento/product-enterprise-edition 2.1.0-rc3 --no-update
 
-			composer require magento/module-bundle-sample-data:100.1.0-rc2 magento/module-widget-sample-data:100.1.0-rc2 magento/module-theme-sample-data:100.1.0-rc2 magento/module-catalog-sample-data:100.1.0-rc2 magento/module-customer-sample-data:100.1.0-rc2 magento/module-cms-sample-data:100.1.0-rc2  magento/module-catalog-rule-sample-data:100.1.0-rc2 magento/module-sales-rule-sample-data:100.1.0-rc2 magento/module-review-sample-data:100.1.0-rc2 magento/module-tax-sample-data:100.1.0-rc2 magento/module-sales-sample-data:100.1.0-rc2 magento/module-grouped-product-sample-data:100.1.0-rc2 magento/module-downloadable-sample-data:100.1.0-rc2 magento/module-msrp-sample-data:100.1.0-rc2 magento/module-configurable-sample-data:100.1.0-rc2 magento/module-product-links-sample-data:100.1.0-rc2 magento/module-wishlist-sample-data:100.1.0-rc2 magento/module-swatches-sample-data:100.1.0-rc2 magento/sample-data-media:100.1.0-rc2 magento/module-offline-shipping-sample-data:100.1.0-rc2 magento/module-gift-card-sample-data:100.1.0-rc2 magento/module-customer-balance-sample-data:100.1.0-rc2 magento/module-target-rule-sample-data:100.1.0-rc2 magento/module-gift-registry-sample-data:100.1.0-rc2 magento/module-multiple-wishlist-sample-data:100.1.0-rc2 --no-update
-
-	<div class="bs-callout bs-callout-info" id="info">
-  		<p>To upgrade to RC1, replace <code>-rc2</code> with <code>-rc1</code> in the preceding examples.</p>
-	</div>
+			composer require magento/module-bundle-sample-data:100.1.0-rc3 magento/module-widget-sample-data:100.1.0-rc3 magento/module-theme-sample-data:100.1.0-rc3 magento/module-catalog-sample-data:100.1.0-rc3 magento/module-customer-sample-data:100.1.0-rc3 magento/module-cms-sample-data:100.1.0-rc3  magento/module-catalog-rule-sample-data:100.1.0-rc3 magento/module-sales-rule-sample-data:100.1.0-rc3 magento/module-review-sample-data:100.1.0-rc3 magento/module-tax-sample-data:100.1.0-rc3 magento/module-sales-sample-data:100.1.0-rc3 magento/module-grouped-product-sample-data:100.1.0-rc3 magento/module-downloadable-sample-data:100.1.0-rc3 magento/module-msrp-sample-data:100.1.0-rc3 magento/module-configurable-sample-data:100.1.0-rc3 magento/module-product-links-sample-data:100.1.0-rc3 magento/module-wishlist-sample-data:100.1.0-rc3 magento/module-swatches-sample-data:100.1.0-rc3 magento/sample-data-media:100.1.0-rc3 magento/module-offline-shipping-sample-data:100.1.0-rc3 magento/module-gift-card-sample-data:100.1.0-rc3 magento/module-customer-balance-sample-data:100.1.0-rc3 magento/module-target-rule-sample-data:100.1.0-rc3 magento/module-gift-registry-sample-data:100.1.0-rc3 magento/module-multiple-wishlist-sample-data:100.1.0-rc3 --no-update
 
 5.	Update dependencies:
 	
