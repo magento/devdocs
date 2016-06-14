@@ -6,7 +6,8 @@ title:
 menu_title: 
 menu_order: 1
 menu_node: parent
-github_link: architecture/areas/areas.md
+version: 2.1
+github_link21: architecture/areas/areas.md
 ---
 
 <h2 id="m2devgde-area-intro">Introduction</h2>

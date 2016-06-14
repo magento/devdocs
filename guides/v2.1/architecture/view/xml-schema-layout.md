@@ -5,7 +5,8 @@ subgroup: View library
 title: XML layouts and schemas
 menu_title: XML layouts and schemas
 menu_order: 
-github_link: architecture/view/xml-schema-layout.md
+version: 2.1
+github_link21: architecture/view/xml-schema-layout.md
 ---
 
 <h2 id="m2devgde-xml-layout-intro">Overview</h2>

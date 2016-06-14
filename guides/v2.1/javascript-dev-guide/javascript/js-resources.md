@@ -5,10 +5,8 @@ subgroup: 1_Javascript
 title: Configure JavaScript resources
 menu_title: Configure JavaScript resources
 menu_order: 1
+version: 2.1
 github_link: javascript-dev-guide/javascript/js-resources.md
-redirect_from:
-  - guides/v2.0/config-guide/config/js-resources.html
-  - guides/v1.0/config-guide/config/js-resources.html
 ---
 
 <h2 id="m2devgde-js-resources-intro">Overview</h2>

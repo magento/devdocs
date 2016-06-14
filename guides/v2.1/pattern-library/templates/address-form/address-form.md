@@ -6,6 +6,7 @@ title: Magento Admin Pattern Library
 menu_title: Address Form
 menu_order: 1
 menu_node: 
+version: 2.1
 github_link: pattern-library/templates/address-form/address-form.md
 ---
 

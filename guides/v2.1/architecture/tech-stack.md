@@ -5,7 +5,8 @@ subgroup: Architectural Basics
 title: Technology stack
 menu_title: Technology stack
 menu_order: 2
-github_link: architecture/tech-stack.md
+version: 2.1
+github_link21: architecture/tech-stack.md
 ---
 <h2>Magento technology stack</h2>
 

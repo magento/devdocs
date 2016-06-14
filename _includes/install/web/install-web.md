@@ -17,7 +17,7 @@ Before you begin, make sure that:
 
 1.	Your system meets the requirements discussed in <a href="{{ site.gdeurl21 }}install-gde/system-requirements.html">Magento System Requirements</a>.
 2.	You completed all prerequisite tasks discussed in <a href="{{ site.gdeurl21 }}install-gde/prereq/prereq-overview.html">Prerequisites</a>.
-4.	After you log in to the Magento server, <a href="{{ site.gdeurl21 }}install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.
+4.	After you log in to the Magento server, <a href="{{ site.gdeurl21 }}install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.
 
 <h3 id="instgde-install-web-enable-mod">Enabling and disabling modules</h3>
 The Setup Wizard enables you to enable or disable modules before you install the Magento software. Before you do so, make sure you understand the following.

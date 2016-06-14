@@ -5,7 +5,8 @@ subgroup: 99_Module Development
 title: Dependency injection
 menu_title: Dependency injection
 menu_order: 5
-github_link: extension-dev-guide/depend-inj.md
+version: 2.1
+github_link21: extension-dev-guide/depend-inj.md
 ---
 ##{{page.menu_title}}
 {:.no_toc}
@@ -29,7 +30,7 @@ When using dependency injection, we encourage you to follow the  [dependency inv
 
 Since dependency management is the responsibility of the environment, some kind of object manager must be present in complex systems to avoid boilerplate code. The object manager is present only when composing objects, and in larger applications(such as Magento), composing objects is performed early in the bootstrapping process and boilerplate code is moved to the configuration of the object manager.
 
-In Magento, the object manager is represented by the appropriately named [Object Manager]({{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManagerInterface.php){:target="_blank"}.
+In Magento, the object manager is represented by the appropriately named [Object Manager]({{site.mage2100url}}lib/internal/Magento/Framework/ObjectManagerInterface.php){:target="_blank"}.
 
 ### Object Manager Configuration
 
@@ -65,7 +66,7 @@ All object manager configuration is located under the config node in the xml fil
 </config>
 {% endhighlight %}
 
-These configurations are validated by the XML Schema file called [`config.xsd`]({{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/etc/config.xsd){:target="_blank"}.
+These configurations are validated by the XML Schema file called [`config.xsd`]({{site.mage2100url}}lib/internal/Magento/Framework/ObjectManager/etc/config.xsd){:target="_blank"}.
 
 ##### Areas and application entry points
 {:.no_toc}
@@ -273,11 +274,11 @@ Parameters configured for a class type are automatically configured for all of i
 
 <script src="https://gist.github.com/xcomSteveJohnson/8ef9264be06fba085a03.js"></script>
 
-In the preceding example, [`Magento\Backend\Block\Context`]({{ site.mage2000url }}app/code/Magento/Backend/Block/Context.php){:target="_blank"} is a descendant of [`Magento\Framework\View\Element\Context`]({{ site.mage2000url }}lib/internal/Magento/Framework/View/Element/Context.php){:target="_blank"}.
+In the preceding example, [`Magento\Backend\Block\Context`]({{site.mage2100url}}app/code/Magento/Backend/Block/Context.php){:target="_blank"} is a descendant of [`Magento\Framework\View\Element\Context`]({{site.mage2100url}}lib/internal/Magento/Framework/View/Element/Context.php){:target="_blank"}.
 
-The first entry configures all instances of `Magento\Framework\View\Element\Context` as well as its children to pass in [`Magento\Core\Model\Url`]({{ site.mage2000url }}lib/internal/Magento/Framework/Url.php){:target="_blank"} as `$urlBuilder` in their constructors.
+The first entry configures all instances of `Magento\Framework\View\Element\Context` as well as its children to pass in [`Magento\Core\Model\Url`]({{site.mage2100url}}lib/internal/Magento/Framework/Url.php){:target="_blank"} as `$urlBuilder` in their constructors.
 
-The second entry overrides this and configures all instances of `Magento\Backend\Block\Context` to use [`Magento\Backend\Model\Url`]({{ site.mage2000url }}app/code/Magento/Backend/Model/Url.php){:target="_blank"} as the `$urlBuilder` instead.
+The second entry overrides this and configures all instances of `Magento\Backend\Block\Context` to use [`Magento\Backend\Model\Url`]({{site.mage2100url}}app/code/Magento/Backend/Model/Url.php){:target="_blank"} as the `$urlBuilder` instead.
 
 #### Object Lifestyle management
 
@@ -354,7 +355,7 @@ Method injection is usually used when an object needs to act on a dependency.
 
 **Newable:** Objects that can only be obtained by creating a new class instance every time. Transient objects, such as those that require external input from the user or database, fall into this category. Attempts to obtain these objects using dependency injections will return an undefined object.
 
-> For example a model object such as [`app/code/Magento/User/Model/User.php`]({{ site.mage2000url }}app/code/Magento/Catalog/Model/Product.php){:target="_blank"} cannot be used for dependency injection. You need to provide a product id or explicitly request a new, empty instance of that object, and since this cannot be done in the constructor signature, the object cannot be injected.
+> For example a model object such as [`app/code/Magento/User/Model/User.php`]({{site.mage2100url}}app/code/Magento/Catalog/Model/Product.php){:target="_blank"} cannot be used for dependency injection. You need to provide a product id or explicitly request a new, empty instance of that object, and since this cannot be done in the constructor signature, the object cannot be injected.
 
 ### Rules for using dependency injection
 

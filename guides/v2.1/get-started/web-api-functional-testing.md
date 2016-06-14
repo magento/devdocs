@@ -5,6 +5,7 @@ subgroup: A_Concepts
 title: Web API functional testing
 menu_title: Web API functional testing
 menu_order: 1
+version: 2.1
 github_link: get-started/web-api-functional-testing.md
 ---
 

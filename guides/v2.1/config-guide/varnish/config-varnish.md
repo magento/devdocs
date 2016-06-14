@@ -6,6 +6,7 @@ title: Configure and use Varnish
 menu_title: Configure and use Varnish
 menu_order: 1
 menu_node: parent
+version: 2.1
 github_link21: config-guide/varnish/config-varnish.md
 ---
 
@@ -37,7 +38,6 @@ Magento 2 supports Varnish versions 3.0.5 or later or any Varnish 4.x version.
 For more information about Varnish, see:
 
 *	<a href="https://en.wikipedia.org/wiki/Varnish_%28software%29" target="_blank">wikipedia</a>
-*	<a href="https://www.varnish-cache.org/about" target="_blank">About Varnish</a>
 *	<a href="https://www.varnish-software.com/book/4.0/chapters/Introduction.html#what-is-varnish" target="_blank">Introduction to Varnish</a>
 *	<a href="https://www.varnish-cache.org/docs/trunk/reference/varnishd.html#ref-varnishd-options" target="_blank">Varnish startup options</a>
 *	<a href="https://www.varnish-software.com/book/3/Tuning.html#threading-parameters" target="_blank">Varnish tuning parameters</a>
@@ -78,6 +78,8 @@ We know of the following issues with Varnish:
 	As an alternative, use SSL termination or an <a href="https://en.wikipedia.org/wiki/TLS_termination_proxy" target="_blank">SSL termination proxy</a>.
 
 *	If you manually delete the contents of the `<your Magento install dir>/var/cache` directory, you must restart Varnish.
+
+
 *	Possible error installing Magento:
 
 		Error 503 Service Unavailable

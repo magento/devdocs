@@ -6,6 +6,7 @@ title: Magento Admin Pattern Library
 menu_title: Sign In Form
 menu_order: 2
 menu_node: 
+version: 2.1
 github_link: pattern-library/templates/sign-in-form/sign-in-form.md
 ---
 

@@ -7,9 +7,9 @@
 @import 'partials/page-intro';
 @import 'partials/sidebar';
 @import 'partials/footer';
-@import 'partials/callouts';
 
 @import 'partials/home';
+@import 'partials/collapsible';
 
 @import 'partials/code';
 @import 'partials/highlight';
@@ -28,5 +28,5 @@
 
 
 .hide {
-	display: none;
+   display: none;
 }

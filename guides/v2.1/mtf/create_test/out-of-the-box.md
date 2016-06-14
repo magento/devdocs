@@ -5,6 +5,7 @@ subgroup: 40_Approach
 title: Create a test in the Functional Testing Framework
 menu_title: Out-of-the-box test
 menu_order: 1
+version: 2.1
 github_link: mtf/create_test/out-of-the-box.md
 ---
 

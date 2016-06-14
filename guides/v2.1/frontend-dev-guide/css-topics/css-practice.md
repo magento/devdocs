@@ -5,6 +5,7 @@ subgroup: D_CSS
 title: Customizing styles illustration
 menu_order: 5
 menu_title: Customizing styles illustration
+version: 2.1
 github_link: frontend-dev-guide/css-topics/css-practice.md
 ---
 

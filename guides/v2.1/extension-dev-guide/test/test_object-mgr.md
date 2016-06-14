@@ -5,7 +5,8 @@ subgroup: Testing
 title: Object Manager helper
 menu_title: Object Manager helper
 menu_order: 3
-github_link: extension-dev-guide/test/test_object-mgr.md
+version: 2.1
+github_link21: extension-dev-guide/test/test_object-mgr.md
 ---
 
 <p>Block and model class constructors declare many dependencies. The Magento system uses constructor dependency injection.</p>

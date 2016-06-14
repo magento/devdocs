@@ -6,6 +6,7 @@ title: System requirements
 menu_title: Magento system requirements
 menu_node: parent
 menu_order: 1
+version: 2.1
 github_link21: install-gde/system-requirements.md
 ---
 
@@ -29,10 +30,15 @@ MySQL 5.6 (Oracle or Percona)
 ### PHP 
 
 *	5.6.x
-*	5.5.x, where x is 22 or greater
-*	7.0.2 (supported by Magento version 2.0.1 and later only)
+*	7.0.2&ndash;7.0.6 except for 7.0.5
 
-Documentation: <a href="{{ site.gdeurl21 }}install-gde/prereq/php-centos.html" target="_blank">CentOS</a>, <a href="{{ site.gdeurl21 }}install-gde/prereq/php-ubuntu.html" target="_blank">Ubuntu</a>
+	There is a [known PHP issue](https://bugs.php.net/bug.php?id=71914){:target="_blank"} that affects our [code compiler]({{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-compiler.html) when using PHP 7.0.5. We recommend you *not* use PHP 7.0.5; instead, use PHP 7.0.2&ndash;7.0.4 or 7.0.6.
+
+<div class="bs-callout bs-callout-info" id="info">
+	<p>Magento 2.1.x no longer supports PHP 5.5.</p>
+</div>
+
+PHP documentation: <a href="{{ site.gdeurl21 }}install-gde/prereq/php-centos.html" target="_blank">CentOS</a>, <a href="{{ site.gdeurl21 }}install-gde/prereq/php-ubuntu.html" target="_blank">Ubuntu</a>
 
 #### Required PHP extensions:
 
@@ -50,7 +56,10 @@ Documentation: <a href="{{ site.gdeurl21 }}install-gde/prereq/php-centos.html" t
 *	<a href="http://php.net/manual/en/book.xml.php" target="_blank">xml</a>
 *	<a href="http://php.net/manual/en/book.xsl.php" target="_blank">xsl</a>
 *	<a href="http://php.net/manual/en/book.zip.php" target="_blank">zip</a> 
-*	PHP 7 only: [json](http://php.net/manual/en/book.json.php){:target="_blank"}
+*	PHP 7 only: 
+
+	*	[json](http://php.net/manual/en/book.json.php){:target="_blank"}
+	*	[iconv](http://php.net/manual/en/book.iconv.php){:target="_blank"}
 
 #### PHP OPcache
 We strongly recommend you verify the  <a href="http://php.net/manual/en/intro.opcache.php" target="_blank">PHP OPcache</a> is enabled for performance reasons. The OPcache is enabled in many PHP distributions. To verify if it is installed, see our PHP documentation for <a href="{{ site.gdeurl21 }}install-gde/prereq/php-centos.html" target="_blank">CentOS</a> or <a href="{{ site.gdeurl21 }}install-gde/prereq/php-ubuntu.html" target="_blank">Ubuntu</a>.
@@ -71,7 +80,7 @@ For more information, see our recommendations for <a href="{{ site.gdeurl21 }}in
 Mail Transfer Agent (MTA) or an SMTP server
 
 ### Magento can utilize the following technologies:
-*	<a href="{{ site.gdeurl21 }}config-guide/redis/config-redis.html">Redis</a> version 3.0 for page caching
+*	<a href="{{ site.gdeurl21 }}config-guide/redis/config-redis.html">Redis</a> version 3.0 for page caching and session storage (the latter supported by Magento version 2.0.6 and later only)
 *	<a href="{{ site.gdeurl21 }}config-guide/varnish/config-varnish.html">Varnish</a> version 3.5 or latest stable 4.x version for page caching
 *	<a href="{{ site.gdeurl21 }}config-guide/memcache/memcache.html">memcached</a> latest stable version for session storage with either `memcache` or `memcached` PHP extensions (latest stable version)
 

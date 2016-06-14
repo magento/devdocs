@@ -7,6 +7,7 @@ menu_title: Integration Test Setup
 menu_node: parent
 contributor_name: Vinai Kopp
 contributor_link: http://vinaikopp.com/
+version: 2.1
 github_link: test/integration/integration_test_setup.md
 ---
 
@@ -71,7 +72,7 @@ return [
 {%endhighlight%}
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Be sure to leave all the settings that do not start with <code>dh-</code> at their default values.</p>
+  <p>Be sure to leave all the settings that do not start with <code>db-</code> at their default values.</p>
 </div>
 
 ### Adjusting the PHPUnit configuration file

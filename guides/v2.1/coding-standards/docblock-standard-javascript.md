@@ -4,8 +4,9 @@ group: coding-standards
 subgroup: Coding standards
 title: JavaScript DocBlock standard
 menu_title: JavaScript DocBlock standard
-menu_order: 6
-github_link: coding-standards/docblock-standard-javascript.md
+menu_order: 5
+version: 2.1
+github_link21: coding-standards/docblock-standard-javascript.md
 ---
 
 <h2 id="frontend-dev-guide-javascript-js-coding-docblock-overview">Introduction</h2>
@@ -577,58 +578,3 @@ new&nbsp;project.MyClass()</pre></td>
 	</tr>
   </tbody>
 </table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

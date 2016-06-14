@@ -5,7 +5,8 @@ subgroup: 99_Module Development
 title: Service contract design patterns
 menu_title: Service contract design patterns
 menu_order: 4
-github_link: extension-dev-guide/service-contracts/design-patterns.md
+version: 2.1
+github_link21: extension-dev-guide/service-contracts/design-patterns.md
 ---
 
 ##{{page.menu_title}}

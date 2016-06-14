@@ -6,6 +6,7 @@ title: Back up and roll back the file system, media, and database
 menu_title: Back up and roll back the file system, media, and database
 menu_node: 
 menu_order: 100
+version: 2.1
 github_link21: install-gde/install/cli/install-cli-backup.md
 ---
 
@@ -16,6 +17,7 @@ See one of the following sections:
 
 *	<a href="#instgde-cli-uninst-back-over">Overview of backup</a>
 *	<a href="#instgde-cli-before">First steps</a>
+*	[Set ulimit for the web server user](#instgde-cli-ulimit)
 *	<a href="#instgde-cli-uninst-back">Back up</a>
 *	<a href="#instgde-cli-uninst-roll">Roll back</a>
 
@@ -33,6 +35,9 @@ After backing up, you can <a href="#instgde-cli-uninst-roll">roll back</a> at a 
 <h2 id="instgde-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
 In addition to the command arguments discussed here, see <a href="{{ site.gdeurl21 }}install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
+
+## Set ulimit for the web server user {#instgde-cli-ulimit}
+{% include install/ulimit.md %}
 
 <h2 id="instgde-cli-uninst-back">Backing up</h2>
 Command usage:

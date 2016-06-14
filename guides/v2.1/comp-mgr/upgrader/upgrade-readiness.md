@@ -6,6 +6,7 @@ title: Step 2. Readiness check
 menu_title: Step 2. Readiness check
 menu_node: 
 menu_order: 10
+version: 2.1
 github_link21: comp-mgr/upgrader/upgrade-readiness.md
 ---
 
@@ -38,6 +39,6 @@ In the event of failure, see one of the following sections:
 *	<a href="{{ site.gdeurl21 }}comp-mgr/trouble/cman/updater.html">Updater check failure</a>
 *	<a href="{{ site.gdeurl21 }}comp-mgr/trouble/cman/cron.html">Cron script check failure</a>
 *	<a href="{{ site.gdeurl21 }}comp-mgr/trouble/cman/component-depend.html">Component dependency check failure</a>
-*	<a href="{{ site.gdeurl21 }}install-gde/system-requirements.html">PHP version check failure</a>
+*	<a href="{{ site.gdeurl21 }}comp-mgr/trouble/cman/php-version.html">PHP version readiness check issues</a>
 *	<a href="{{ site.gdeurl21 }}install-gde/trouble/php/tshoot_php-set.html">PHP settings check failure</a>
 *	<a href="{{ site.gdeurl21 }}install-gde/system-requirements.html">PHP extensions check failure</a>

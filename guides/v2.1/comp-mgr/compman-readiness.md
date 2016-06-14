@@ -6,6 +6,7 @@ title: Step 1. Readiness check
 menu_title: Step 1. Readiness check
 menu_node: 
 menu_order: 5
+version: 2.1
 github_link21: comp-mgr/compman-readiness.md
 ---
 
@@ -38,7 +39,7 @@ In the event of failure, see one of the following sections:
 *	<a href="{{ site.gdeurl21 }}comp-mgr/trouble/cman/updater.html">Updater check failure</a>
 *	<a href="{{ site.gdeurl21 }}comp-mgr/trouble/cman/cron.html">Cron script check failure</a>
 *	<a href="{{ site.gdeurl21 }}comp-mgr/trouble/cman/component-depend.html">Component dependency check failure</a>
-*	<a href="{{ site.gdeurl21 }}install-gde/system-requirements.html">PHP version check failure</a>
-*	<a href="{{ site.gdeurl21 }}release-notes/known-issues.html#known-devbeta-xdebug">PHP settings check failure</a>
+*	<a href="{{ site.gdeurl21 }}comp-mgr/trouble/cman/php-version.html">PHP version readiness check issues</a>
+*	<a href="{{ site.gdeurl21 }}install-gde/trouble/php/tshoot_php-set.html">PHP settings errors</a>
 *	<a href="{{ site.gdeurl21 }}install-gde/system-requirements.html">PHP extensions check failure</a>
 *	<a href="{{ site.gdeurl21 }}comp-mgr/trouble/cman/doc.html">magento/theme-doc-blank failure</a>

@@ -5,7 +5,8 @@ subgroup: Logical View
 title: Magento Framework
 menu_title: Magento Framework
 menu_order: 4
-github_link: architecture/archi_perspectives/framework.md
+version: 2.1
+github_link21: architecture/archi_perspectives/framework.md
 ---
 
 

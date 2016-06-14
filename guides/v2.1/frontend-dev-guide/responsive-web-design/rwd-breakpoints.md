@@ -5,8 +5,8 @@ subgroup: E_rwd
 title: Add a custom breakpoint
 menu_order: 7
 menu_title: Add a custom breakpoint
+version: 2.1
 github_link: frontend-dev-guide/responsive-web-design/rwd-breakpoints.md
-redirect_from: guides/v2.1/frontend-dev-guide/css-topics/css-breakpoints.html
 ---
 
 <h2>What's in this topic</h2>

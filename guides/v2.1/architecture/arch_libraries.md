@@ -5,7 +5,8 @@ subgroup: Architecture
 title: Libraries
 menu_title: Libraries
 menu_order: 
-github_link: architecture/arch_libraries.md
+version: 2.1
+github_link21: architecture/arch_libraries.md
 ---
 
 <h2 id="m2arch-libraries-overview">Overview</h2>

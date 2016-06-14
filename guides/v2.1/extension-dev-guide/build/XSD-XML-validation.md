@@ -5,9 +5,11 @@ subgroup: 03_Build
 title: URN schema validation
 menu_title: URN schema validation
 menu_order: 6
-github_link: extension-dev-guide/build/XSD-XML-validation.md
+version: 2.1
+github_link21: extension-dev-guide/build/XSD-XML-validation.md
 
 ---
+
 ##{{page.menu_title}}
 
 
@@ -20,6 +22,10 @@ Magento supported URNs begin with `urn:magento`. Magento supports two XSD refere
 * Module XSD
 * Framework XSD
 
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You cannot change the XSD for any XML files provided with the Magento application.</p></span>
+</div>
 
 ###Module XSD
 
@@ -31,7 +37,7 @@ where
 
 *  `urn:magento` is the URN identifier
 *  `module` is the reference type identifier
-*  `Magento_Flow` is the name of the module. This must be exactly the same as the module specified by ComponentRegistrar in the [registration.php](component-registration.html) file.
+*  `Magento_Flow` is the name of the module. This must be exactly the same as the module specified by ComponentRegistrar in the [registration.php]({{ site.gdeurl21 }}extension-dev-guide/build/component-registration.html) file.
 * `flows/content.xsd` is the relative path to the module&#8217;s directory.
 
 

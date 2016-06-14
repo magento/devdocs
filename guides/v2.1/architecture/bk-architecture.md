@@ -6,7 +6,8 @@ title: Architecture Guide
 menu_title: Get Started
 menu_order: 2
 menu_node: parent
-github_link: architecture/bk-architecture.md
+version: 2.1
+github_link21: architecture/bk-architecture.md
 ---
 
 The Architecture Guide provides a relatively high-level introduction and view of the Magento product. 

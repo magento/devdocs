@@ -5,6 +5,7 @@ subgroup: 3_Widgets
 title: Loader widget
 menu_order: 8
 menu_title: Loader widget
+version: 2.1
 github_link: javascript-dev-guide/widgets/widget_loader.md
 ---
 

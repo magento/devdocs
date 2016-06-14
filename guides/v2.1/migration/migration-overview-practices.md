@@ -6,7 +6,8 @@ title: Best practices
 menu_title: Best practices
 menu_node: 
 menu_order: 1
-github_link: migration/migration-overview-practices.md
+version: 2.1
+github_link21: migration/migration-overview-practices.md
 ---
 
 <h2 id="migrate-overview-benchmarking">Best practices and benchmarking</h2>

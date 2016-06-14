@@ -6,7 +6,8 @@ title: Extension Coding
 menu_title: Extension Coding
 menu_order: 1
 menu_node: parent
-github_link: ext-best-practices/extension-coding/coding-best-practices.md
+version: 2.1
+github_link21: ext-best-practices/extension-coding/coding-best-practices.md
 ---
 ##{{page.menu_title}}
 {:.no_toc}

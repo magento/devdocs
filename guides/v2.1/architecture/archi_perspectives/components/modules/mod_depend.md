@@ -7,7 +7,8 @@ menu_title: Module dependencies
 menu_order: 6
 level3_menu_node: level3child
 level3_subgroup: modules
-github_link: architecture/components/modules/mod_depend.md
+version: 2.1
+github_link21: architecture/components/modules/mod_depend.md
 ---
 
 <h2 id="m2devgde-moddep-intro"> Module dependencies</h2>

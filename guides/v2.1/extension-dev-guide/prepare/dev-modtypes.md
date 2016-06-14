@@ -6,7 +6,8 @@ title: Component types and versioning
 menu_title: Component types and versioning
 menu_order: 2
 menu_node:
-github_link: extension-dev-guide/prepare/dev-modtypes.md
+version: 2.1
+github_link21: extension-dev-guide/prepare/dev-modtypes.md
 ---
 
 #### Contents

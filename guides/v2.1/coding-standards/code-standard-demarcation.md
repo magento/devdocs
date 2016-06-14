@@ -5,7 +5,8 @@ subgroup: Coding standards
 title: Code demarcation standard
 menu_title: Code demarcation standard
 menu_order: 1
-github_link: coding-standards/code-standard-demarcation.md
+version: 2.1
+github_link21: coding-standards/code-standard-demarcation.md
 ---
 
 <p>Magento core developers must follow the Magento code demarcation standard.</p>
@@ -19,22 +20,32 @@ github_link: coding-standards/code-standard-demarcation.md
    <li>Reinstate emphasis on decoupling HTML, CSS and JS from PHP classes.</li>
 </ul>
 <p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a> to interpret the "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NOT," "SHOULD," "SHOULD NOT," "RECOMMENDED," "MAY," and "OPTIONAL" keywords.</p>
-<h2>Semantics</h2>
-<h3>You must create non-user-oriented string literals from unabbreviated English words concatenated with a hyphen (<code>-</code>)</h3>
+
+<h2>Contents</h2>
+
+* TOC
+{:toc}
+
+
+## Semantics
+
+### For attribute names and values you must use meaningful unabbreviated lowercase words comprised of Latin characters concatenated with a hyphen (`-`)
 <ul>
    <li>Helps simplify and unify naming conventions that are used to apply visual styles to page elements.</li>
 </ul>
-<p><b>Acceptable PHTML file</b></p>
+
+**Acceptable**
 {% highlight html %}
-<section id="some-id">
+<section id="information-dialog-tree">
    <p> ... </p>
    <p> ... </p>
 </section>
-<a href="#some-id">Scroll to text</a></a>
+<a href="#information-dialog-tree">Scroll to text</a></a>
 {% endhighlight %}
-<p><b>Unacceptable PHTML file</b></p>
+
+**Unacceptable**
 {% highlight html %}
-<section id="загаловок">
+<section id="заголовок">
    <p> ... </p>
    <p> ... </p>
 </section>
@@ -44,12 +55,15 @@ github_link: coding-standards/code-standard-demarcation.md
 </section>
 <a href="#some_id">Scroll to text</a>
 {% endhighlight %}
-<h3>Semantic representation may rely on ID attribute</h3>
+
+### Semantic representation may rely on ID attribute
 <ul>
    <li>Forces engineers to think about reusable page components instead of unique singleton components.</li>
    <li>Reduces long-term maintenance efforts.</li>
 </ul>
-<p><b>Acceptable PHTML file</b></p>
+
+**Acceptable PHTML template**
+
 <p>The following acceptable example is terse and uses an Accessible Rich Internet Applications (ARIA) approach.</p>
 {% highlight html %}
 <ul>
@@ -63,7 +77,10 @@ github_link: coding-standards/code-standard-demarcation.md
 </div>
 <a href="#some-id">Scroll to text</a>
 {% endhighlight %}
-<p><b>Unacceptable combination of PHTML, JavaScript, and CSS files</b></p>
+
+
+**Unacceptable combination of PHTML, JavaScript, and CSS files**
+
 <p>The following unacceptable example replaces a single PHTML file with a combination of a PHTML, JavaScript, and CSS files.</p>
 <p><b>PHTML file</b></p>
 {% highlight html %}
@@ -73,37 +90,87 @@ github_link: coding-standards/code-standard-demarcation.md
    <li id="buttonId3" type="button">button 3</li>
 </ul>
 {% endhighlight %}
-<p><b>JavaScript file</b></p>
+
+**JavaScript file**
+
 {% highlight javascript %}
 $('#my-special-menu').on('click','li[id^="button"]', function() { ... })
 {% endhighlight %}
-<p><b>CSS file</b></p>
+
+**CSS file**
 {% highlight css %}
 #my-special-menu { ... }
 #my-special-menu > li { ... }
 {% endhighlight %}
-<h2>Code demarcation</h2>
-<h3>Visual representation must rely on only form element type attributes, HTML tags, CSS classes, or pseudo-classes</h3>
+
+### You must follow the separation of presentation and content methodology.
+
+The following list will help you make a distinction between the actual meaning of a document, and how this meaning is presented to its readers:
+
+**Content (Semantics)** includes:
+
+- logic
+- information
+- data
+- model
+- outline
+- message
+
+**Presentation** includes:
+
+- aesthetic
+- graphics
+- design
+- style
+- visualization
+- view
+
+### You must use semantic HTML markup only, and must not use presentation markup.
+
+
+**Acceptable**:
+
+{%highlight html%}
+<p>HTML has been created to <b>semantically</b> represent documents.</p>
+<p><strong>Warning:</strong> Following the procedure described below may irreparably damage your equipment.</p>
+{%endhighlight%}
+
+**Unacceptable**:
+
+{%highlight html%}
+<p>HTML has been created to <strong>semantically</strong> represent documents.</p>
+<p><b>Warning:</b> Following the procedure described below may irreparably damage your equipment.</p>
+{%endhighlight%}
+
+##Code demarcation 
+
+### Visual representation must rely only on HTML `class` attributes, CSS pseudo-classes and pseudo-elements, HTML tags, and form element's type attribute and form elements state attributes (example: `disabled`, `checked`).
+
+As the first option, you are required to use HTML class attributes. In case this option is not applicable then it is recommended to use HTML tags and form element's type attribute.
+
 <ul>
    <li>Enforces clean, strict separation between visual and business logic layers.</li>
    <li>Allows frontend and backend teams to work independently.</li>
    <li>Allows changing look and feel without affecting business functionality, and vice versa.</li>
    <li>Enables frontend teams to clean up old styles quickly and easily when refactoring.</li>
 </ul>
-<p><b>Acceptable CSS file</b></p>
+
+**Acceptable CSS selectors**
+
 {% highlight css %}
-section h1 { ... }
-ul > li.first { ... }
-.caution { ... }  // Actions such as delete, remove, which remove data from the site.
-.caution.link { ... } // if custom styles are needed
-.caution.button { ... } // if custom styles are needed
-form .field.password { ... }
+.notices-wrapper { ... }
+.page-header:after { ... }
+.payment-list:first-child { ... }
+.caution { ... }
+.caution.link { ... }
 form input[type="password"] { ... }
-section.content { ... }
-nav li { ... }
-nav li.active { ... }
+.control-text:focus { ... }
+a:hover { ... }
+nav li._active { ... }
 {% endhighlight %}
-<p><b>Unacceptable CSS file</b></p>
+
+**Unacceptable CSS selectors**
+
 {% highlight css %}
 #header { ... }
 [data-action="delete"] { ... }
@@ -113,7 +180,7 @@ section[role="main"] { ... }
 [role="menu] [role="menuitem"].active { ... }
 {% endhighlight %}
 
-<h3>You must not hard-code CSS styles in JavaScript files</h3>
+### You must not hard-code CSS styles in JavaScript files
 <div class="bs-callout bs-callout-info" id="info">
    <p>Exception: CSS attributes where values must be calculated beyond the css-topics/LESS code.</p>
 </div>
@@ -122,22 +189,26 @@ section[role="main"] { ... }
    <li>Improves style extensibility.</li>
    <li>Reduces long-term maintenance efforts by containing CSS styles in a single place.</li>
 </ul>
-<p><b>Acceptable JavaScript widget file</b></p>
+
+**Acceptable JavaScript widget file**
 {% highlight javascript %}
 ...
    options: {
       hOffset: 0,
-      myCustomElement: '[data-container="my-custom-element"]'
-   }
+      myCustomElement: '[data-container="my-custom-element"]',
+ hiddenClass: '_hidden'
+  }
 ...
-   this.element.toggleClass('hidden');
+   this.element.toggleClass(this.options.hiddenClass);
 ...
    this.options.hOffset = /* calculation based on dimensions of some DOM elements within a widget */
    this.element.find(this.options.myCustomElement).css({'margin-top', this.options.hOffset + 'px'})
 ...
 {% endhighlight %}
-<p><b>Unacceptable JavaScript file</b></p>
-{% highlight javascript %}
+
+**Unacceptable JavaScript file**
+
+{%highlight js%}
 this.element.on('click', function() {
    if ($(this).is(':visible')) {
       $(this).css({ visibility: 'hidden' });
@@ -145,77 +216,128 @@ this.element.on('click', function() {
       $(this).css({ visibility: 'visible' });
    }
 });
-{% endhighlight %}
+{%endhighlight%}
 
-
-
-<h3>You must not use inline CSS styles inside HTML tags</h3>
+### You must not use inline CSS styles inside HTML tags
 <ul>
 <li>Improves style extensibility allowing engineers to overload styles easier by toggling classes.</li>
 <li>Enforces clean, strict separation between visual presentation and markup.</li>
 <li>Enables frontend teams quickly and easily clean up old styles.</li></ul>
-<p><b>Acceptable PHTML file</b></p>
+
+**Acceptable PHTML template**
+
 {% highlight html %}
 <div class="no-display"> ... </div>
 {% endhighlight %}
-<p><b>Unacceptable PHTML file</b></p>
+
+**Unacceptable PHTML template**
+
 {% highlight html %}
 <div style="display: none;"> ... </div>
 {% endhighlight %}
-<h2>Business logic and JavaScript</h2>
-<h3>Business logic must rely on only the form, form element name attributes, or data attributes</h3>
+
+## Business logic and JavaScript
+
+### Business logic must rely on only the form, form element name attributes, or data attributes
+
 <ul>
 <li>Enforces clean, strict separation between visual and business logic layers.</li>
 <li>Allows frontend and backend teams to work independently.</li>
 <li>Allows changing business logic without affecting styling and vice versa.</li></ul>
-<p><b>Acceptable PHTML file</b></p>
+
+**Acceptable PHTML template**
+
 {% highlight html %}
-<div data-mage-init="{myWidget: [option1: 'hi']}"></div>
+<div data-action="delete" data-mage-init="{myWidget: [option1: 'string']}"></div>
+<div data-role="tooltip">More details</div>
 {% endhighlight %}
-<p><b>Acceptable JavaScript file</b></p>
+
+**Acceptable JavaScript file**
+
 {% highlight javascript %}
+options {
+ deleteAction:  '[data-action="delete"]',
+ tooltip: '[data-role="tooltip]'  
+}
 ...
-this.element.find('[data-action="delete"]').on( ... );
-this.element.on('click', '[data-action="delete"]', function() { ... });
+this.element.find(this.options.deleteAction).on( ... );
+this.element.on('click', this.options.deleteAction , function() { ... });
 ...
 // Globally initialized widgets
-$('[data-role="tooltip]').tooltip();  // Globally for ALL tooltip elements
+$( this.options.tooltip).tooltip();  // Globally for ALL tooltip elements
 ...
 {% endhighlight %}
-<p><b>Unacceptable PHTML file</b></p>
+
+**Unacceptable PHTML file**
+
 {% highlight html %}
 <div id="my-widget"></div>
 {% endhighlight %}
-<p><b>Unacceptable JavaScript file</b></p>
+
+**Unacceptable JavaScript file**
+
 {% highlight javascript %}
 $('#my-widget').doSomething();
 $('.parent').on('click', '.button', function() { ... });
 $('form').validate();
 $('[role="menu"]').navigation();
 {% endhighlight %}
-<h3>You must not select DOM elements based on HTML structure</h3>
+
+### You must assign HTML helper classes in JavaScript to modify presentation layer.
+
+HTML helper class names added in JavaScript REQUIRE underscore symbol ("_") at the beginning and must be written in lowercase.
+
+**Acceptable**
+
+{% highlight html %}
+<div class="tab-element _active">Content</div>
+<div class="sales-transactions _open">Content</div>
+<div class="billing-agreement _expanded">Content</div>
+<div class="sales-report _hidden">Content</div>
+{% endhighlight %}
+
+
+**Unacceptable**
+
+{% highlight html %}
+<div class="tab-element active">Content</div>
+<div class="sales-transactions open">Content</div>
+<div class="billing-agreement expanded">Content</div>
+<div class="sales-report hidden">Content</div>
+{% endhighlight %}
+
+
+### You must not select DOM elements based on HTML structure
 <ul>
 <li>Allows frontend teams to modify markup and themes without affecting business logic.</li></ul>
-<p><b>Acceptable JavaScript file</b></p>
+
+**Acceptable JavaScript file**
+
 {% highlight javascript %}
 this.element.find('[data-action="edit"]');
 this.elements.closest('[data-container]');
 {% endhighlight %}
-<p><b>Unacceptable JavaScript file</b></p>
+
+**Unacceptable JavaScript file**
+
 {% highlight javascript %}
 this.element.children().children().html('hello world');
 this.element.parent().find('[data-action="edit"]').data('entity_id');
 {% endhighlight %}
-<h3>You must use jQuery templates to insert recurring markup into DOM structure</h3>
+
+### You must use jQuery templates to insert recurring markup into DOM structure
 <ul>
 <li>Reinstates emphasis on jQuery templates. For more information, see JavaScript Coding Best Practices.</li>
 <li>Reduces long-term maintenance efforts by having markup code stored in one place.</li>
 <li>Simplifies frontend debugging efforts.</li></ul>
-<h3>You must not hard-code inline JavaScript in PHP classes</h3>
+
+### You must not hard-code inline JavaScript in PHP classes
 <ul>
 <li>Reduces long term maintenance by having frontend business logic stored in one place.</li>
 <li>Reduces the number of files to be modified.</li></ul>
-<p><b>Acceptable PHP file</b></p>
+
+**Acceptable PHP file**
+
 {% highlight php startinline=true %}
 ...
 public function getSelectorOptions()
@@ -224,13 +346,34 @@ public function getSelectorOptions()
 }
 ...
 {% endhighlight %}
-<p><b>Acceptable PHTML template</b></p>
+
+**Acceptable PHTML template**
+
 {% highlight php startinline=true %}
 ...
 <div data-mage-init="{treeSuggest: [<?php echo $this->getSelectorOptions(); ?>]}"></div>
 ...
 {% endhighlight %}
-<p><b>Unacceptable PHP file</b></p>
+
+or 
+
+**Acceptable PHTML template**
+
+{% highlight php startinline=true %}
+...
+<div data-role="treeSuggest"></div>
+<script type="text/x-magento-init">
+{
+    "[data-role='treeSuggest']": {
+        "treeSuggest": <?php echo $this->getSelectorOptions(); ?>
+    }
+}
+</script>
+...
+{% endhighlight %}
+
+**Unacceptable PHP file**
+
 {% highlight php startinline=true %}
 ...
 public function getAfterElementHtml()
@@ -241,17 +384,24 @@ jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 </script>
 ...
 {% endhighlight %}
-<p><b>Unacceptable PHTML file</b></p>
+
+**Unacceptable PHTML template**
+
 {% highlight php startinline=true %}
 <?php echo $this->getAfterElementHtml(); ?>
 {% endhighlight %}
-<h2>PHTML templates and PHP files</h2>
-<h3>You must not hard-code inline CSS styles in PHP classes</h3>
+
+
+## PHTML templates and PHP files
+
+### You must not hard-code inline CSS styles in PHP classes
 <ul>
 <li>Reduces long-term maintenance efforts by having styles stored in one place.</li>
 <li>Simplifies debugging and reduces number of files to be modified.</li>
 <li>Makes styles more extensible and easier to override when needed.</li></ul>
-<p><b>Acceptable PHP file</b></p>
+
+**Acceptable PHP file**
+
 {% highlight php startinline=true %}
 ...
 $fieldset->addField('new_category_parent', 'text', array(
@@ -262,7 +412,9 @@ $fieldset->addField('new_category_parent', 'text', array(
 ));
 ...
 {% endhighlight %}
-<p><b>Unacceptable PHP file</b></p>
+
+**Unacceptable PHP file**
+
 {% highlight php startinline=true %}
 ...
 $fieldset->addField('new_category_parent', 'text', array(
@@ -273,11 +425,14 @@ $fieldset->addField('new_category_parent', 'text', array(
 ));
 ...
 {% endhighlight %}
-<h3>You must not hard-code inline JavaScript in PHP classes</h3>
+
+### You must not hard-code inline JavaScript in PHP classes
 <ul>
 <li>Reduces long term maintenance by having frontend business logic stored in one place.</li>
 <li>Reduces the number of files to be modified.</li></ul>
-<p><b>Acceptable PHP file</b></p>
+
+**Acceptable PHP file**
+
 {% highlight php startinline=true %}
 ...
 public function getSelectorOptions()
@@ -286,13 +441,17 @@ public function getSelectorOptions()
 }
 ...
 {% endhighlight %}
-<p><b>Acceptable PHTML template</b></p>
+
+**Acceptable PHTML template**
+
 {% highlight php startinline=true %}
 ...
 <div data-mage-init="{treeSuggest: [<?php echo $this->getSelectorOptions(); ?>]}"></div>
 ...
 {% endhighlight %}
-<p><b>Unacceptable PHP file</b></p>
+
+**Unacceptable PHP file**
+
 {% highlight php startinline=true %}
 ...
 public function getAfterElementHtml()
@@ -303,15 +462,18 @@ jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 </script>
 ...
 {% endhighlight %}
-<p><b>Unacceptable PHTML file</b></p>
+
+**Unacceptable PHTML template**
 {% highlight php startinline=true %}
 <?php echo $this->getAfterElementHtml(); ?>
 {% endhighlight %}
-<h3>You must not hard-code HTML markup (used in the <BODY> tag) in PHP classes</h3>
+
+### You must not hard-code HTML markup (used in the `<body>` tag) in PHP classes
 <ul>
 <li>Reduces long-term maintenance efforts by having markup stored in one place.</li>
 <li>Reduces the number of files to be modified.</li></ul>
-<p><b>Acceptable PHP file</b></p>
+
+**Acceptable PHP file**
 <pre>
 public function getAttributeName($element)
 {
@@ -323,7 +485,8 @@ public function getAttributeId($element)
     return $element->getId();
 }
 </pre>
-<p><b>Acceptable PHTML file</b></p>
+
+**Acceptable PHTML template**
 
 {% highlight php startinline=true %}
 <span class="attribute-change-checkbox”>
@@ -338,8 +501,29 @@ public function getAttributeId($element)
 
 {% endhighlight %}
 
+**Unacceptable PHP file**
 
+{%highlight php%}
+...
+ public function getCheckbox($elementName){
+    $elementNameTag = $this->getAttributeName($elementName) ? 'name="' . $this->getAttributeName($elementName) . '"' : NULL;
+    $tpl = "<input type=\"checkbox\" {$elementNameTag} data-mage-init=\"{customToggleWidget: [elementSelector: \"input[name='someCustomName']\"]}\" />";
+    return $tpl;
+}
+...
+{%endhighlight%}
 
+**Unacceptable PHTML template**
 
+{%highlight php%}
+<span class="attribute-change-checkbox”>
+	<label>
+		<?php echo $this->getCheckbox($element)?>
+		<?php echo Mage::helper('Mage_Catalog_Helper_Data')->__('Change'); ?>
+	</label>
+</span>
+<!-- jQuery.hide() code can be either located in the widget itself OR can ask PHP Block class whether or not 'weight_and_type_switcher' should be visible. Based on this condition CSS can be applied to hide/show those elements. -->
+
+{%endhighlight%}
 
 

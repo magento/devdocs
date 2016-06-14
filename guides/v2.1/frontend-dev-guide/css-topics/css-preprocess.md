@@ -5,6 +5,7 @@ subgroup: D_CSS
 title: CSS preprocessing
 menu_order: 3
 menu_title: CSS preprocessing
+version: 2.1
 github_link: frontend-dev-guide/css-topics/css-preprocess.md
 ---
 
@@ -100,9 +101,9 @@ For each CSS file included in the layouts, LESS preprocessor does the following:
 The client-side compilation flow is similar to server-side. The difference is in the set of files, published to <code>pub/static</code> on the <a href="#compile_last">last step</a>. In the client-side mode, the following files are published to the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory:
 
 <ul>
-<li>root source (.less) files with resolved <code>@magento-import</code> directive </li>
-<li> <a href="http://en.wikipedia.org/wiki/Symbolic_link" target="_blank">symlinks</a> to the root source file that do not contain <code>@magento-import</code></li>
-<li>symlinks to the <code>.less</code> files included to the root source files using the imported by <code>@magento-import</code> and <code>@import</code> directives</li>
+<li>root source (.less) files with resolved <code>@magento_import</code> directive </li>
+<li> <a href="http://en.wikipedia.org/wiki/Symbolic_link" target="_blank">symlinks</a> to the root source file that do not contain <code>@magento_import</code></li>
+<li>symlinks to the <code>.less</code> files included to the root source files using the imported by <code>@magento_import</code> and <code>@import</code> directives</li>
 </ul>
 
 <h2 id="fedg_css-magento-import">The @magento_import directive</h2>
@@ -154,7 +155,7 @@ In the scope of static resources preprocessing, the built-in LESS preprocessor d
 <li>Searches for all <code>@magento_import</code> directives.</li>
 <li>Replaces the original <code>@magento_import</code> directives with the standard <code>@import</code> directives. The latter specify the paths to the particular files that correspond to the pattern specified in <code>@magento_import</code>.</li>
 </ol>
-Example of how <code>@magento-import</code> is used and processed in <code>&lt;Magento_Blank_theme_dir&gt;/web/css/styles-l.less</code>:
+Example of how <code>@magento_import</code> is used and processed in <code>&lt;Magento_Blank_theme_dir&gt;/web/css/styles-l.less</code>:
 
 <table>
    <tbody>

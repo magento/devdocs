@@ -4,7 +4,8 @@ group: ext-best-practices
 title: Best Practices for Extension Developers
 menu_title: Introduction
 menu_order: 1
-github_link: ext-best-practices/bk-ext-best-practices.md
+version: 2.1
+github_link21: ext-best-practices/bk-ext-best-practices.md
 
 ---
 

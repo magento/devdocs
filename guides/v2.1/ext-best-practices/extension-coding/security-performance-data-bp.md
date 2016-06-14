@@ -5,7 +5,8 @@ subgroup: 02_Extension-Coding
 title: Security, Performance, and Data Handling
 menu_title: Security, performance, and data handling
 menu_order: 3
-github_link: ext-best-practices/extension-coding/security-performance-data-bp.md
+version: 2.1
+github_link21: ext-best-practices/extension-coding/security-performance-data-bp.md
 
 ---
 
@@ -23,7 +24,7 @@ You should make sure that your extension handles data with care in order to prev
 ---
 
 ### Avoid using low-level functionality
-  The Magento application is made up of a variety of components that work together to perform different business functions. We discourage the use of low-level functionality such as the PHP `curl_*` functions and encourage the use of high-level components such as [`\Magento\Framework\HTTP\Adapter\Curl`]({{site.mage2000url}}lib/internal/Magento/Framework/HTTP/Adapter/Curl.php). The use of low-level functionality can make Magento behave in unexpected ways that effectively disable built-in protection mechanisms, introduce exploitable inconsistencies, or otherwise expose the application to attack.
+  The Magento application is made up of a variety of components that work together to perform different business functions. We discourage the use of low-level functionality such as the PHP `curl_*` functions and encourage the use of high-level components such as [`\Magento\Framework\HTTP\Adapter\Curl`]({{site.mage2100url}}lib/internal/Magento/Framework/HTTP/Adapter/Curl.php). The use of low-level functionality can make Magento behave in unexpected ways that effectively disable built-in protection mechanisms, introduce exploitable inconsistencies, or otherwise expose the application to attack.
 
   For a list of discouraged low-level functions, we suggest you look at the [list of forbidden functions](https://github.com/magento-ecg/coding-standard/blob/master/Ecg/Sniffs/Security/ForbiddenFunctionSniff.php){:target="_blank"} for [Magento's code sniffer](https://github.com/magento-ecg/coding-standard){:target="_blank"}.
 
@@ -32,7 +33,7 @@ You should make sure that your extension handles data with care in order to prev
   ```
   $GLOBALS, $_SERVER, $_GET, $_POST, $_FILES, $_COOKIE, $_SESSION, $_REQUEST, $_ENV
   ```
-  . Instead use the [`Magento\Framework\HTTP\PhpEnvironment\Request`]({{site.mage2000url}}lib/internal/Magento/Framework/HTTP/PhpEnvironment/Request.php){:target="_blank"} wrapper class to safely access these values.
+  . Instead use the [`Magento\Framework\HTTP\PhpEnvironment\Request`]({{site.mage2100url}}lib/internal/Magento/Framework/HTTP/PhpEnvironment/Request.php){:target="_blank"} wrapper class to safely access these values.
 
 ### Use the correct MySQL data types
   MySQL offers a range of numeric, string, and time data types. If you are storing a date, use a DATE or DATETIME field. Using an INTEGER or STRING can make SQL queries more complicated, if not impossible. It is often tempting to invent your own data formats; for example, storing serialized PHP objects in string. Database management may be easier, but MySQL will become a dumb data store and it may lead to problems later.
@@ -41,7 +42,7 @@ You should make sure that your extension handles data with care in order to prev
   Be sure to retrieve data from the correct object. For example, get SKU data from the Product instead of the Order object.
 
 ### Avoid raw SQL queries
-  Raw SQL queries can lead to potential security vulnerabilities and database portability issues. Use data adapter capabilities ([`Magento\Framework\DB\Adapter\Pdo\Mysql`]({{site.mage2000url}}lib/internal/Magento/Framework/DB/Adapter/Pdo/Mysql.php){:target="_blank"} by default) to build and execute queries and move all data access code to a resource model. Use prepared statements to make sure that queries are safe to execute.
+  Raw SQL queries can lead to potential security vulnerabilities and database portability issues. Use data adapter capabilities ([`Magento\Framework\DB\Adapter\Pdo\Mysql`]({{site.mage2100url}}lib/internal/Magento/Framework/DB/Adapter/Pdo/Mysql.php){:target="_blank"} by default) to build and execute queries and move all data access code to a resource model. Use prepared statements to make sure that queries are safe to execute.
 
 ### Use well-defined indexes
   Foreign keys should have indexes. If you're using a field in a WHERE clause of an SQL query you should have an index on it. Such indexes should cover multiple columns based on the queries needed. As a general rule of thumb, indexes should be applied to any column named in the WHERE clause of a SELECT query.

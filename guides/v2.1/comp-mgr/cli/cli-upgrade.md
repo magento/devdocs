@@ -1,11 +1,12 @@
 ---
 layout: default 
 group: compman
-subgroup: 14_cli-upgr
+subgroup: 13_cli-upgr
 title: Command-line upgrade
 menu_title: Command-line upgrade
 menu_node: parent
 menu_order: 1
+version: 2.1
 github_link21: comp-mgr/cli/cli-upgrade.md
 ---
 
@@ -37,44 +38,33 @@ If you use `pub` as your Magento root directory, you can do any of the following
 ## Upgrade using the command line {#upgrade-cli-upgr}
 To upgrade using the command line:
 
-1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{ site.gdeurl21 }}install-gde/prereq/apache-user.html).
+1.	Log in to your Magento server as, or switch to, the Magento file system owner.
 2.	Change to the directory in which you installed the Magento software.
 
 	For example, `cd /var/www/html/magento2`
-3.	If you're upgrading to Magento 2.1.0 from an earlier version, enter the following commands to prevent errors during upgrade:
-
-		php bin/magento cache:disable
-		rm -rf var/generation/* var/cache/*
 2.	Enter the following commands in the order shown:
 
 		composer require <product> <version> --no-update
 		composer update
 
-	For example, to upgrade to Magento CE version 2.0.4, enter:
+	For example, to upgrade to Magento CE version 2.0.6, enter:
 
-		composer require magento/product-community-edition 2.0.4 --no-update
+		composer require magento/product-community-edition 2.0.6 --no-update
 		composer update
 
-	To upgrade to Magento EE version 2.0.4, enter:
+	To upgrade to Magento EE version 2.0.6, enter:
 
-		composer require magento/product-enterprise-edition 2.0.4 --no-update
+		composer require magento/product-enterprise-edition 2.0.6 --no-update
 		composer update
 	
 	<div class="bs-callout bs-callout-info" id="info">
-  		<p>If an error displays about a missing <code>.gitignore</code> file, see the <a href="{{ site.gdeurl21 }}release-notes/tech_bull_201-upgrade.html#resolution2">Technical Bulletin (1/28/16)</a>.</p>
+  		<p>If an error displays about a missing <code>.gitignore</code> files, see the <a href="{{ site.gdeurl21 }}release-notes/tech_bull_201-upgrade.html#resolution2">Technical Bulletin (1/28/16)</a>.</p>
 	</div>
 
-3.	If prompted, enter your [authentication keys]({{ site.gdeurl21 }}).
-3. Enter the following commands to clean the cache, code generation, and dependency injection directories:
-
-		rm -rf var/cache/* var/di/* var/generation/*
-
+3.	If prompted, enter your [authentication keys]({{ site.gdeurl21 }}comp-mgr/prereq/prereq_auth-token.html).
 4. Update the database schema and data:
 
 		php bin/magento setup:upgrade
-5.	Enable the Magento cache:
-
-		php bin/magento cache:enable
 6.	Access your storefront.
 
 	The following error might display:
@@ -86,4 +76,6 @@ To upgrade using the command line:
 	1.	Reset [file system ownership and permissions]({{ site.gdeurl21 }}install-gde/prereq/file-system-perms.html) as a user with `root` privileges.
 	2.	Clear the following directories and try again:
 
-			<your Magento install dir>/var/cache <your Magento install dir>/var/page_cache <your Magento install dir>/var/generation 
+			<your Magento install dir>/var/cache 
+			<your Magento install dir>/var/page_cache 
+			<your Magento install dir>/var/generation 

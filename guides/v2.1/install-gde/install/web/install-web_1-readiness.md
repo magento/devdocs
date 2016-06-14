@@ -6,6 +6,7 @@ title: Step 1. Readiness check
 menu_title: Step 1. Readiness check
 menu_node: 
 menu_order: 2
+version: 2.1
 github_link21: install-gde/install/web/install-web_1-readiness.md
 ---
 

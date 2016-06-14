@@ -6,7 +6,8 @@ title: Prepare (development quick start)
 menu_title: Prepare (development quick start)
 menu_order: 1
 menu_node: parent
-github_link: extension-dev-guide/prepare.md
+version: 2.1
+github_link21: extension-dev-guide/prepare.md
 
 ---
 

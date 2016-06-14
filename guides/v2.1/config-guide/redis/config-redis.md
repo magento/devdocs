@@ -6,6 +6,7 @@ title: Configure Redis
 menu_title: Configure Redis
 menu_order: 1
 menu_node: parent
+version: 2.1
 github_link21: config-guide/redis/config-redis.md
 ---
 
@@ -47,7 +48,7 @@ Advantages of Redis include:
 
 <div class="bs-callout bs-callout-info" id="info">
    <span class="glyphicon-class">
-   <p>We recommend you use <a href="{{ site.gdeurl21 }}config-guide/memcache/memcache.html">memcached</a> for session storage. The Redis session handler in the <code>phpredis</code> PHP extension does not support session locking, which might cause issues with distributed systems and applications that rely on Ajax. We're actively working on a solution.</p></span>
+   <p>Starting in Magento 2.0.6, you can use either Redis or <a href="{{ site.gdeurl21 }}config-guide/memcache/memcache.html">memcached</a> for session storage. Earlier issues with the Redis session handler and session locking have been resolved.</p></span>
 </div>
 
 <h2 id="config-redis-install">Install Redis</h2>

@@ -5,6 +5,7 @@ subgroup: 05_Command-line installation
 title: Install the Magento software
 menu_title: Install the Magento software
 menu_order: 4
+version: 2.1
 github_link21: install-gde/install/cli/install-cli-install.md
 ---
 
@@ -18,6 +19,7 @@ See one of the following sections:
 
 *	<a href="#instgde-install-cli-prereq">Before you start your installation</a>
 *	<a href="#instgde-install-cli-magento">Install the Magento software from the command line</a>
+*	[Set file system permissions after installing](#instgde-install-cli-magento-perms)
 
 See also <a href="{{ site.gdeurl21 }}install-gde/install/cli/install-cli-uninstall.html">Update, reinstall, uninstall</a>.
 
@@ -29,7 +31,7 @@ Before you begin, make sure that:
 1.	Your system meets the requirements discussed in <a href="{{ site.gdeurl21 }}install-gde/system-requirements.html">Magento system requirements</a>.
 2.	You completed all prerequisite tasks discussed in <a href="{{ site.gdeurl21 }}install-gde/prereq/prereq-overview.html">Prerequisites</a>.
 3.	You took your first installation steps as discussed in <a href="{{ site.gdeurl21 }}install-gde/install/pre-install.html">Your install or upgrade path</a>.
-4.	After you log in to the Magento server, <a href="{{ site.gdeurl21 }}install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.
+4.	After you log in to the Magento server, <a href="{{ site.gdeurl21 }}install-gde/prereq/file-sys-perms-over.html">>switch to the Magento file system owner</a>.
 5.	Review the information discussed in <a href="{{ site.gdeurl21 }}install-gde/install/cli/install-cli-subcommands.html">Get started with the command-line installation</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -127,7 +129,7 @@ The following table discusses the meanings of installation option names and valu
 		<td><p>--admin-password</p></td>
 		<td><p>Magento administrator user password.</p>
 			<p>The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character.</p>
-			<p>We recommend a longer, more complex password. Enclose the entire password string in single quotes and escape special characters with <code>/</code>. For example, <code>--admin-password='A0b9\%t_3\`g'</code></p></td>
+			<p>We recommend a longer, more complex password. Enclose the entire password string in single quotes. For example, <code>--admin-password='A0b9%t_3`g'</code></p></td>
 		<td><p>Yes</p></td>
 	</tr>
 		<tr>
@@ -404,5 +406,7 @@ Messages similar to the following display to indicate a successful installation:
 </div>
 
 #### Next step
+*	If you have one user account to access the Magento server, see [Optionally set a umask]({{ site.gdeurl21 }}install-gde/install/post-install-umask.html).
 
-<a href="{{ site.gdeurl21 }}install-gde/install/verify.html">Verify the installation</a>.
+	This type of setup is typical for shared hosting.
+*	[Verify the installation]({{ site.gdeurl21 }}install-gde/install/verify.html).

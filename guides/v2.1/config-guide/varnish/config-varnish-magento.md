@@ -6,6 +6,7 @@ title: Configure Magento to use Varnish
 menu_title: Configure Magento to use Varnish
 menu_order: 15
 menu_node: 
+version: 2.1
 github_link21: config-guide/varnish/config-varnish-magento.md
 ---
 
@@ -53,6 +54,14 @@ To configure Magento to use Varnish:
 	<img src="{{ site.baseurl }}common/images/config_varnish_admin.png" alt="Configure Magento to use Varnish in the Admin">
 
 8.	Replace your existing <code>default.vcl</code> with the one you just exported.
+9.	We recommend you open `default.vcl` and change the value of `acl purge` to the IP address of the Varnish host. (You can specify multiple hosts on separate lines or you can use CIDR notation as well.)
+
+	For example,
+
+		acl purge {
+		   "localhost";
+		}
+		
 9.	Restart Varnish and your web server:
 
 		service varnish restart

@@ -6,6 +6,7 @@ title: Magento Admin Pattern Library
 menu_title: Links
 menu_order: 1
 menu_node: 
+version: 2.1
 github_link: pattern-library/navigation/links/links.md
 ---
 

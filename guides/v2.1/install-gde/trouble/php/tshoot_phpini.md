@@ -6,6 +6,7 @@ title: SQLSTATE[HY000] [2002] No such file or directory
 menu_title: SQLSTATE[HY000] [2002] No such file or directory 
 menu_node: 
 menu_order: 400
+version: 2.1
 github_link21: install-gde/trouble/php/tshoot_phpini.md
 ---
 

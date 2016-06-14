@@ -5,6 +5,7 @@ subgroup: 3_Widgets
 title: Collapsible widget
 menu_order: 4
 menu_title: Collapsible widget
+version: 2.1
 github_link: javascript-dev-guide/widgets/widget_collapsible.md
 ---
 

@@ -6,6 +6,7 @@ title: Magento Admin Pattern Library
 menu_title: Form Elements
 menu_order: 1
 menu_node:
+version: 2.1
 github_link: pattern-library/getting-user-input/form_elements/form_elements.md
 ---
 

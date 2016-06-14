@@ -6,6 +6,7 @@ title: Introduction
 menu_title: Introduction
 menu_order: 1
 menu_node: parent
+version: 2.1
 github_link: mktpl-quickstart/bk-marketplace-qs.md
 ---
 

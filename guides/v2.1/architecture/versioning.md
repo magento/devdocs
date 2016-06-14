@@ -5,7 +5,8 @@ subgroup: Architectural Basics
 title: Versioning policy
 menu_title: Versioning policy
 menu_order: 4
-github_link: architecture/versioning.md
+version: 2.1
+github_link21: architecture/versioning.md
 ---
 
 <h2 id="verpol">Versioning policy overview</h2>

@@ -5,6 +5,7 @@ subgroup: H_Using_UI
 title: Using UI components' client-side
 menu_title: Using UI components' client-side
 menu_node: parent
+version: 2.1
 github_link: ui-components/ui_components_js.md
 ---
 

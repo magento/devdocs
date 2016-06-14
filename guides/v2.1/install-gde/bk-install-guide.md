@@ -6,6 +6,7 @@ title: Installation overview
 menu_title: Installation overview
 menu_node: 
 menu_order: 1
+version: 2.1
 github_link21: install-gde/bk-install-guide.md
 ---
 
@@ -37,7 +38,7 @@ Use the following table to verify you have the correct prerequisites to install 
 			<p>(Don't forget to <a href="{{ site.gdeurl21 }}install-gde/prereq/apache.html#apache-help-rewrite">enable rewrites and <code>.htaccess</code></a>!)</p></td>
 	</tr>
 	<tr>
-		<td><p>PHP 5.6.x or 5.5.x (PHP 5.4 is not supported)</p>
+		<td><p>PHP 7.0.2, 5.6.x or 5.5.x (PHP 5.4 is not supported)</p>
 			<p>See <a href="{{ site.gdeurl21 }}install-gde/trouble/tshoot_install-issues.html#known-devrc-php">Known issue with certain PHP versions</a></p></td>
 		<td><p><code>php -v</code></p></td>
 		<td><a href="{{ site.gdeurl21 }}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a><br><a href="{{ site.gdeurl21 }}install-gde/prereq/php-centos.html">PHP CentOS</a></td>
@@ -73,4 +74,4 @@ UNIX systems require `root` privileges to install and configure software like a 
 
 You should *not* install the Magento software in the web server docroot as the `root` user because the web server might not be able to interact with those files. 
 
-You'll also need `root` privileges to create the <a href="{{ site.gdeurl21 }}install-gde/prereq/apache-user.html">Magento file system owner</a> and add that owner to the web server's group. You'll use the Magento file system owner to run any commands from the command line and to set up the Magento cron job, which schedules tasks for you.
+You'll also need `root` privileges to create the <a href="{{ site.gdeurl21 }}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a> and add that owner to the web server's group. You'll use the Magento file system owner to run any commands from the command line and to set up the Magento cron job, which schedules tasks for you.

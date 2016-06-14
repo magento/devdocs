@@ -2,14 +2,16 @@
 layout: default
 group: install_pre
 subgroup: Prerequisites
-title: PHP 5.5, 5.6, or 7.0&mdash;CentOS
-menu_title: PHP 5.5, 5.6, or 7.0&mdash;CentOS
-menu_order: 05
+title: PPHP 5.6 or 7.0&mdash;CentOS
+menu_title: PPHP 5.6 or 7.0&mdash;CentOS
+menu_order: 22
+level3_menu_node: level3child
+level3_subgroup: php
+version: 2.1
 github_link21: install-gde/prereq/php-centos.md
 ---
 
-
-<h4 id="instgde-php-prereq-contents">Contents</h4>
+#### Contents
 
 *	<a href="#php-support">PHP versions supported</a>
 *	<a href="#php-centos-help-beginner">Help if you're just starting out</a>
@@ -17,7 +19,6 @@ github_link21: install-gde/prereq/php-centos.md
 *	[CentOS repositories](#centos-php-repos)
 *	[PHP 7 on CentOS](#php-centos-7)
 *	<a href="#instgde-prereq-php56-install-centos">PHP 5.6 on CentOS</a>
-*	<a href="#instgde-prereq-php55-install-centos">PHP 5.5 on CentOS</a>
 *	<a href="#instgde-prereq-timezone">Set PHP configuration options</a>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -29,13 +30,12 @@ github_link21: install-gde/prereq/php-centos.md
 
 Magento requires:
 
-*	PHP 7.0.2 (supported by Magento version 2.0.1 and later only)
+*	7.0.2&ndash;7.0.6 except for 7.0.5 (supported by Magento version 2.0.1 and later only)
+	There is a [known PHP issue](https://bugs.php.net/bug.php?id=71914){:target="_blank"} that affects our [code compiler]({{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-compiler.html) when using PHP 7.0.5. We recommend you not use PHP 7.0.5; instead, use PHP 7.0.2&ndash;7.0.4 or 7.0.6.
 *	PHP 5.6.x
-*	PHP 5.5.x, where x is 22 or greater 
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Magento no longer supports PHP 5.4.</p></span>
+	<p>Magento 2.1.x no longer supports PHP 5.5.</p>
 </div>
 
 <h2 id="php-centos-help-beginner">Help if you're just starting out</h2>
@@ -64,7 +64,7 @@ If PHP is installed, continue with the next prerequisite, <a href="{{ site.gdeur
 ## CentOS repositories {#centos-php-repos}
 Linux systems provide software like PHP in one or more *repositories*. CentOS, unlike Ubuntu, has a set of [officially recommended repositories](https://wiki.centos.org/AdditionalResources/Repositories){:target="_blank"}. Other repositories are considered less safe for the reasons stated on the CentOS wiki.
 
-We're not aware that you can install PHP 5.5, 5.6, or 7.0 from a CentOS-recommended repository. Therefore, you must consider the following:
+We're not aware that you can install PPHP 5.6 or 7.0 from a CentOS-recommended repository. Therefore, you must consider the following:
 
 *	If you're setting up a system that will be deployed in production, you should choose a hosting provider who uses repositories considered to be safe and reliable. 
 
@@ -83,14 +83,13 @@ Continue with one of the following sections:
 
 *	[PHP 7 on CentOS](#php-centos-7)
 *	<a href="#instgde-prereq-php56-install-centos">PHP 5.6 on CentOS</a>
-*	<a href="#instgde-prereq-php55-install-centos">PHP 5.5 on CentOS</a>
 
 ## PHP 7 on CentOS {#php-centos-7}
-There is more than one way to install PHP 7.0.2 or later on CentOS 6; the following is a suggestion only. Consult a reference for additional options.
+There is more than one way to install PHP 7.0.2 or later; the following is a suggestion only. Consult a reference for additional options.
 
 To upgrade to PHP 7.0.2 or later:
 
-1.	Enter the following commands in the order shown:
+1.	*CentOS 6*. Enter the following commands in the order shown:
 
 		yum -y update
 		yum -y install epel-release
@@ -98,7 +97,13 @@ To upgrade to PHP 7.0.2 or later:
 		wget https://centos6.iuscommunity.org/ius-release.rpm
 		rpm -Uvh ius-release*.rpm
 		yum -y update
-		yum -y install php70u php70u-pdo php70u-mysqlnd php70u-opcache php70u-xml php70u-mcrypt php70u-gd php70u-devel php70u-mysql php70u-intl php70u-mbstring php70u-bcmath php70u-json
+2.	*CentOS 7*. Enter the following commands:
+
+		yum install -y http://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/ius-release-1.0-14.ius.centos7.noarch.rpm
+		yum -y update
+3.	Enter the following command:
+
+		yum -y install php70u php70u-pdo php70u-mysqlnd php70u-opcache php70u-xml php70u-mcrypt php70u-gd php70u-devel php70u-mysql php70u-intl php70u-mbstring php70u-bcmath php70u-json php70u-iconv
 
 	<div class="bs-callout bs-callout-info" id="info">
   		<p>The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.</p>
@@ -162,37 +167,6 @@ To upgrade to PHP 5.6:
 	</div>
 3.	<a href="#instgde-prereq-timezone">Set up PHP configuration options</a>.
 
-<h2 id="instgde-prereq-php55-install-centos">PHP 5.5 on CentOS</h2>
-There is more than one way to upgrade CentOS 6.5 to PHP 5.5; the following is a suggestion only. Consult a reference for additional options.
-
-To upgrade to PHP 5.5:
-
-1.	Enter the following commands in the order shown.
-
-		yum -y update
-		yum -y install epel-release
-		wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
-		wget https://centos6.iuscommunity.org/ius-release.rpm
-		rpm -Uvh ius-release*.rpm
-		yum -y update
-		yum -y install php55u php55u-opcache php55u-xml php55u-mcrypt php55u-gd php55u-devel php55u-mysql php55u-intl php55u-mbstring php55u-bcmath
-
-
-	<div class="bs-callout bs-callout-info" id="info">
-  		<p>The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.</p>
-	</div>
-2.	Enter the following command to verify the version:
-
-		php -v
-
-	The following messages display:
-
-		PHP 5.5.32 (cli) (built: Feb  4 2016 09:30:35)
-		Copyright (c) 1997-2015 The PHP Group
-		Zend Engine v2.5.0, Copyright (c) 1998-2015 Zend Technologies
-		with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2015, by Zend Technologies
-3.	Restart Apache: `service httpd restart`
-4.	Continue with the next section.
 
 <h2 id="instgde-prereq-timezone">Set PHP configuration options</h2>
 {% include install/php-config.html %}

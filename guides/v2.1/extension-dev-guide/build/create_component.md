@@ -5,7 +5,8 @@ subgroup: 03_Build
 title: Name your component
 menu_title: Name your component
 menu_order: 7
-github_link: extension-dev-guide/build/create_component.md
+version: 2.1
+github_link21: extension-dev-guide/build/create_component.md
 ---
 
 ##{{page.menu_title}}

@@ -6,6 +6,7 @@ title: Magento Admin Pattern Library
 menu_title: Static Content Container
 menu_order: 1
 menu_node: 
+version: 2.1
 github_link: pattern-library/containers/staticContentContainer/contentContainer.md
 ---
 <h2> Static Content Container </h2>

@@ -5,7 +5,8 @@ subgroup: Architectural Layers
 title: Domain layer
 menu_title: Domain layer
 menu_order: 3
-github_link: architecture/archi_perspectives/domain_layer.md
+version: 2.1
+github_link21: architecture/archi_perspectives/domain_layer.md
 ---
 
 

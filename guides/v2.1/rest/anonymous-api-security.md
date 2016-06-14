@@ -6,8 +6,9 @@ title: Restricting access to anonymous web APIs
 menu_title: Restricting access to anonymous web APIs
 menu_node:
 menu_order: 6
-github_link: release-notes/anonymous-api-security.md
----
+github_link: rest/anonymous-api-security.md
+version: 2.1
+
 
 <h2>Restricting access to anonymous web APIs</h2>
 
@@ -55,7 +56,7 @@ The following table lists the APIs that are no longer available to an anonymous 
 
 <div class="bs-callout bs-callout-warning">
     <p>Preventing anonymous access to these APIs could cause third-party integrations to fail. If a third-party integration calls any of these web APIs, it will receive an authentication error instead of the expected response. In this case, might need to disable this feature.</p>
-    <p>To disable this feature, log in to the Admin panel and navigate to <b>System > Configuration > Services > Magento Web API</b>. Then select <b>Yes</b> from the <b>Allow Anonymous Guest Access</b> menu.</p>
+    <p>To disable this feature, log in to the Admin panel and navigate to <b>Stores > Configuration > Services > Magento Web API</b>. Then select <b>Yes</b> from the <b>Allow Anonymous Guest Access</b> menu.</p>
 </div>
 
 

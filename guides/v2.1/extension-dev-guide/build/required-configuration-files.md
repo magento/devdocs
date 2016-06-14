@@ -5,7 +5,8 @@ subgroup: 03_Build
 title: Define your configuration files
 menu_title: Define your configuration files
 menu_order: 3
-github_link: extension-dev-guide/build/required-configuration-files.md
+version: 2.1
+github_link21: extension-dev-guide/build/required-configuration-files.md
 ---
 
 ##{{page.menu_title}}

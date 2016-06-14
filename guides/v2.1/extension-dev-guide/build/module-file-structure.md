@@ -5,7 +5,8 @@ subgroup: 03_Build
 title: Create your component file structure
 menu_title: Create your component file structure
 menu_order: 3
-github_link: extension-dev-guide/build/module-file-structure.md
+version: 2.1
+github_link21: extension-dev-guide/build/module-file-structure.md
 ---
 
 ##{{page.menu_title}}

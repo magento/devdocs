@@ -6,6 +6,7 @@ title: Grid search indexing
 menu_title: Grid search indexing
 menu_node: 
 menu_order: 1
+version: 2.1
 github_link: ui-components/ui-listing-grid-search.md
 ---
 

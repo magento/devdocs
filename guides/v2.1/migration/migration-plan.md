@@ -6,7 +6,8 @@ title: Creating a migration plan
 menu_title: Creating a migration plan
 menu_node: parent
 menu_order: 2
-github_link: migration/migration-plan.md
+version: 2.1
+github_link21: migration/migration-plan.md
 ---
 
   
@@ -67,7 +68,7 @@ Now that your Magento 2 site is up-to-date with Magento 1 and is functioning nor
 1. Put your Magento 1 system in maintenance mode (DOWNTIME STARTS).
 2. Press Control+C in the migration tool command window to stop incremental updates.
 3. Start your Magento 2 cron jobs.
-4. In your Magento 2 system, reindex the stock indexer. For more information, see the `<TBD>`.
+4. In your Magento 2 system, reindex the stock indexer. For more information, see the <a href="{{site.gdeurl21}}config-guide/cli/config-cli-subcommands-index.html">Configuration Guide</a>.
 5. Using a tool of your choice, hit pages in your Magento 2 system to cache pages in advance of customers using your storefront.
 6. Perform any final verification of your Magento 2 site.
 7. Change DNS, load balancers, and so on to point to new production hardware (DOWNTIME ENDS) 

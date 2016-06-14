@@ -2,7 +2,8 @@
 layout: default
 menu_title: Feedback for Admin Panel Placement and Design
 menu_order: 1
-github_link: ext-best-practices/admin/feedback-placement-and-design.md
+version: 2.1
+github_link21: ext-best-practices/admin/feedback-placement-and-design.md
 
 ---
 
@@ -11,7 +12,9 @@ github_link: ext-best-practices/admin/feedback-placement-and-design.md
 
 Please provide feedback for the article: [Admin Panel Placement and Design]({{site.gdeurl21}}/ext-best-practices/admin/placement-and-design.html) on this page via GitHub.
 
-You can leave feedback for specific sections by adding comments in GitHub to the corresponding line containing the section name below.
+You can leave high-level feedback for specific sections by clicking the Edit icon above, and adding comments beneath the relevant section name below.
+
+For more detailed comments, please create a Pull Request on the specific page.
 
 ###Article Sections
 

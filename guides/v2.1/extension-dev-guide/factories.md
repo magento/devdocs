@@ -7,7 +7,8 @@ menu_title: Instantiating objects with factories
 menu_order: 6
 contributor_name: Classy Llama
 contributor_link: http://www.classyllama.com/
-github_link: extension-dev-guide/factories.md
+version: 2.1
+github_link21: extension-dev-guide/factories.md
 ---
 ##{{page.menu_title}}
 
@@ -36,7 +37,7 @@ class Magento\Core\Model\Config\BaseFactory
 {% endhighlight %}
 
 ### Factories are generated classes
-Factories are always named identically to the classes they instantiate, suffixed with `Factory`.  (For example, `Magento\Cms\Model\BlockFactory` is responsible for objects of the class <a href="{{ site.mage2000url }}app/code/Magento/Cms/Model/Block.php" target="_blank">Magento\Cms\Model\Block</a>.)
+Factories are always named identically to the classes they instantiate, suffixed with `Factory`.  (For example, `Magento\Cms\Model\BlockFactory` is responsible for objects of the class <a href="{{site.mage2100url}}app/code/Magento/Cms/Model/Block.php" target="_blank">Magento\Cms\Model\Block</a>.)
 
 An important thing to understand about factories is that they are an automatically generated class type.  Factory classes do not need to be explicitly defined.  Simply reference a class name with `Factory` appended in a constructor, and Magento automatically generates the factory class if it does not already exist.  (See <a href="{{site.gdeurl21}}extension-dev-guide/code-generation.html">Code generation</a> for more information.)  
 

@@ -5,8 +5,8 @@ subgroup: 60_Update
 title: Update the Functional Testing Framework
 menu_title: UPDATE
 menu_node: parent
+version: 2.1
 github_link: mtf/mtf_update.md
-redirect_from: /guides/v1.0/mtf/mtf_update.html
 ---
 <h2 id="mtf_update">How to update</h2>
 

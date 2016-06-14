@@ -6,6 +6,7 @@ title: SOAP Reference
 menu_title: Overview
 menu_order: 1
 menu_node: parent
+version: 2.1
 github_link: soap/bk-soap.md
 ---
 Additional information about SOAP APIs will be published in a future sprint.
@@ -19,10 +20,12 @@ Additional information about SOAP APIs will be published in a future sprint.
   <ul>
   <li><code>default</code></li>
   <li>The assigned store code</li>
-  <li><code>all</code>. This value only applies to the CMS and Product modules. If this value is specified, the API call affects all the merchant's stores. <code>get</code>operations cannot be performed when you specify <code>all</code>.</li></ul>
+  <li><code>all</code>. This value only applies to the CMS and Product modules. If this value is specified, the API call affects all the merchant's stores. <code>get</code>operations cannot be performed when you specify <code>all</code>.</li>
+  </ul>
 </div>
 
 ## List of Service Names per Module
+The entire list can be retrieved here: `http://<magento_host>/soap/default?wsdl_list=1`
 
 ###Backend
 backendModuleServiceV1: `http://<magento_host>/soap/default?wsdl&services=backendModuleServiceV1`

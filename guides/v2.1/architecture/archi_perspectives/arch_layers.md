@@ -5,7 +5,8 @@ subgroup:
 title: Architecture layers
 menu_title: Architecture layers
 menu_order: 
-github_link: architecture/archi_perspectives/arch_layers.md
+version: 2.1
+github_link21: architecture/archi_perspectives/arch_layers.md
 ---
 
 

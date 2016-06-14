@@ -6,6 +6,7 @@ title: Configure and run cron
 menu_title: Configure and run cron
 menu_node: 
 menu_order: 100
+version: 2.1
 github_link21: config-guide/cli/config-cli-subcommands-cron.md
 ---
 
@@ -173,7 +174,7 @@ In addition, the `<group>` element supports the following options, all of which 
 	</tbody>
 </table>
 
-As an example, see <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/crontab.xml" target="_blank">Magento_Customer crontab.xml</a>
+As an example, see <a href="{{ site.mage2100url }}app/code/Magento/Customer/etc/crontab.xml" target="_blank">Magento_Customer crontab.xml</a>
 
 <h3 id="config-cli-cron-group-run">Run cron from the command line</h3>
 Command options:

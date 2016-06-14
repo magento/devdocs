@@ -5,6 +5,7 @@ subgroup: 3_Widgets
 title: DropdownDialog widget
 menu_order: 6
 menu_title: DropdownDialog widget
+version: 2.1
 github_link: javascript-dev-guide/widgets/widget_dialog.md
 ---
 <h2>Overview</h2>

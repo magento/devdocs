@@ -4,14 +4,15 @@ group: install_pre
 subgroup: Prerequisites
 title: Get your authentication keys
 menu_title: Get your authentication keys
-menu_order: 12
+menu_order: 25
 menu_node: 
+version: 2.1
 github_link21: install-gde/prereq/connect-auth.md
 ---
 
 #### Contents
 
-*	<a href="#auth-overview">Overview of Magento Connect authentication</a>
+*	<a href="#auth-overview">Overview of Magento Marketplace authentication</a>
 *	<a href="#auth-get">Get your authentication keys</a>
 
 {% include install/auth-tokens.md %}

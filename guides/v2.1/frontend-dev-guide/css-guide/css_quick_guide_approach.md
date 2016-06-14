@@ -5,6 +5,7 @@ subgroup: D_CSS_G
 title: Simple ways to customize a theme's styles
 menu_title: Simple ways to customize a theme's styles
 menu_order: 1
+version: 2.1
 github_link: frontend-dev-guide/css-guide/css_quick_guide_approach.md
 ---
 <h2>What's in this topic</h2>
@@ -15,7 +16,7 @@ Let's say you created a new theme inheriting from Magento Blank or Luma, and cho
 - <a href="#simple_override">Simplest way to override parent styles (that is, override default Magento UI library variables)</a>
 - <a href="#structured_changes">Adding structured changes</a>
 	- <a href="#structured_extend">Extend component's styles</a>
-	- <a href="structured_override">Override component's styles</a>
+	- <a href="#structured_override">Override component's styles</a>
 
 
 <h2 id="simple_extend">Simplest way to extend parent styles</h2> 

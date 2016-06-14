@@ -6,6 +6,7 @@ title: Magento application initialization and bootstrap
 menu_title: Magento application initialization and bootstrap
 menu_order: 1
 menu_node: parent
+version: 2.1
 github_link21: config-guide/bootstrap/magento-bootstrap.md
 ---
 
@@ -17,19 +18,19 @@ github_link21: config-guide/bootstrap/magento-bootstrap.md
 
 
 <h2 id="config-boot-overview">Overview of bootstrapping</h2>
-To run the Magento application, the following actions are implemented in <a href="{{ site.mage2000url }}index.php" target="_blank">index.php</a>:
+To run the Magento application, the following actions are implemented in <a href="{{ site.mage2100url }}index.php" target="_blank">index.php</a>:
 
 *	Include `<your Magento install dir>/app/bootstrap.php` which performs essential initialization routines, such as error handling, initializing the autoloader, setting profiling options, setting the default timezone, and so on.
-*	Create an instance of <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Bootstrap.php" target="_blank">\Magento\Framework\App\Bootstrap</a>. <!-- It requires initialization parameters to be specified in constructor.  Normally, the $_SERVER super-global variable is supposed to be passed there. -->
-*	Create a Magento application instance (<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/AppInterface.php" target="_blank">\Magento\Framework\AppInterface</a>).
+*	Create an instance of <a href="{{ site.mage2100url }}lib/internal/Magento/Framework/App/Bootstrap.php" target="_blank">\Magento\Framework\App\Bootstrap</a>. <!-- It requires initialization parameters to be specified in constructor.  Normally, the $_SERVER super-global variable is supposed to be passed there. -->
+*	Create a Magento application instance (<a href="{{ site.mage2100url }}lib/internal/Magento/Framework/AppInterface.php" target="_blank">\Magento\Framework\AppInterface</a>).
 *	Run Magento
 
 <h2 id="config-boot-logic">Bootstrap run logic</h2>
 
-<a href="{{ site.mage2000url }}app/bootstrap.php" target="_blank">The bootstrap object</a> uses the following algorithm to run the Magento application:
+<a href="{{ site.mage2100url }}app/bootstrap.php" target="_blank">The bootstrap object</a> uses the following algorithm to run the Magento application:
 
 1.	Initializes the error handler.
-2.	Creates the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager" target="_blank">object manager</a> and basic shared services that are used everywhere and are affected by the environment. The environment parameters are injected properly into these objects.
+2.	Creates the <a href="{{ site.mage2100url }}lib/internal/Magento/Framework/ObjectManager" target="_blank">object manager</a> and basic shared services that are used everywhere and are affected by the environment. The environment parameters are injected properly into these objects.
 3.	Asserts that maintenance mode is *not* enabled; otherwise, terminates.
 4.	Asserts that the Magento application is installed; otherwise, terminates.
 5.	Starts the Magento application.
@@ -76,7 +77,7 @@ We have the following entry point applications (that is, applications defined by
 *	<a href="#config-boot-entry-media">Media resource entry point</a>
 
 <h3 id="config-boot-entry-http">HTTP entry point</h3>
-<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Http" target="_blank">\Magento\Framework\App\Http</a> operates as follows:
+<a href="{{ site.mage2100url }}lib/internal/Magento/Framework/App/Http" target="_blank">\Magento\Framework\App\Http</a> operates as follows:
 
 1.	Determines the <a href="{{ site.gdeurl21 }}architecture/modules/mod_and_areas.html">application area</a>.
 2.	Starts the front controller and routing systems in order to find and execute a controller action.
@@ -92,7 +93,7 @@ We have the following entry point applications (that is, applications defined by
 	6.	On any other error, display a user-friendly "Service Unavailable" page with HTTP response 503 and generate an error report and display its ID on the page.
 
 <h3 id="config-boot-entry-static">Static resource entry point</h3>
-<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/StaticResource.php" target="_blank">\Magento\Framework\App\StaticResource</a> is an application for retrieving static resources (for example, CSS, JavaScript, and images). It postpones any actions with a static resource until the resource is requested.
+<a href="{{ site.mage2100url }}lib/internal/Magento/Framework/App/StaticResource.php" target="_blank">\Magento\Framework\App\StaticResource</a> is an application for retrieving static resources (for example, CSS, JavaScript, and images). It postpones any actions with a static resource until the resource is requested.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -108,7 +109,7 @@ When the request is redirected to the entry point, the Magento application parse
 	All future requests for the static resource are processed by the server the same as static files; that is, without involving the entry point. If it's necessary to synchronize published files with original ones, the `pub/static` directory should be removed; as a result, files are automatically republished with the next request.
 
 <h3 id="config-boot-entry-media">Media resource entry point</h3>
-<a href="{{ site.mage2000url }}app/code/Magento/MediaStorage/App/Media.php" target="_blank">Magento\MediaStorage\App\Media</a> retrieves media resources (that is, any files uploaded to media storage) from the database. It is used whenever the database is configured as a media storage.
+<a href="{{ site.mage2100url }}app/code/Magento/MediaStorage/App/Media.php" target="_blank">Magento\MediaStorage\App\Media</a> retrieves media resources (that is, any files uploaded to media storage) from the database. It is used whenever the database is configured as a media storage.
 
 `\Magento\Core\App\Media` attempts to find the media file in the configured database storage and write it into the `pub/static` directory, then return its contents. On error, it returns an HTTP 404 (Not Found) status code in the header with no contents.
 

@@ -5,7 +5,8 @@ subgroup: View library
 title: Template engine
 menu_title: Template engine
 menu_order: 
-github_link: architecture/view/template-engine.md
+version: 2.1
+github_link21: architecture/view/template-engine.md
 ---
 
 <h2 id="m2devgde-temp-eng-over">Introduction to the Magento template engine</h2>

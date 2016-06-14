@@ -5,6 +5,7 @@ subgroup: 3_Widgets
 title: Calendar widget
 menu_title: Calendar widget
 menu_order: 3
+version: 2.1
 github_link: javascript-dev-guide/widgets/widget_calendar.md
 ---
 

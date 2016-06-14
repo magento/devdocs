@@ -5,6 +5,7 @@ subgroup: checkout
 title: Customize the view of a checkout step
 menu_title: Customize the view of a checkout step
 menu_order: 2
+version: 2.1
 github_link: howdoi/checkout/checkout_customize.md
 ---
 
@@ -33,6 +34,7 @@ To change the `.js` implementation and template used for components rendering, y
                         ...
                     </argument>
                 </arguments>
+        </referenceBlock>
     </body>
 </page>
 {%endhighlight xml%}

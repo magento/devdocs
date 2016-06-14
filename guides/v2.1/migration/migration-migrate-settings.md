@@ -6,7 +6,8 @@ title: Migrate settings
 menu_title: Migrate settings
 menu_node:
 menu_order: 1
-github_link: migration/migration-migrate-settings.md
+version: 2.1
+github_link21: migration/migration-migrate-settings.md
 ---
 
   
@@ -18,8 +19,15 @@ If necessary, here is how to change how settings are migrated:
 1.	Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl21 }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
 2.	Change to the following directory:
 
-		`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc
-1. 	Enter the following command to create `settings.xml` from the provided sample:
+		<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<edition-to-edition>
+
+	For example, if Magento 2 is installed in `/var/www/html`, you'll find `settings.xml.dist` in one of the following directories:
+
+		/var/www/html/vendor/magento/data-migration-tool/etc/ce-to-ee
+		/var/www/html/vendor/magento/data-migration-tool/etc/ee-to-ee
+		/var/www/html/vendor/magento/data-migration-tool/etc/ce-to-ce
+
+3. 	Enter the following command to create `settings.xml` from the provided sample:
 
 		cp settings.xml.dist settings.xml
 2. Make your changes in `settings.xml`.

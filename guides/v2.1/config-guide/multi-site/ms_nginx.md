@@ -6,7 +6,8 @@ title: Set up multiple websites with nginx
 menu_title: Set up multiple websites with nginx
 menu_order: 2
 menu_node: 
-github_link: config-guide/multi-site/ms_nginx.md
+version: 2.1
+github_link21: config-guide/multi-site/ms_nginx.md
 ---
 
 #### Contents

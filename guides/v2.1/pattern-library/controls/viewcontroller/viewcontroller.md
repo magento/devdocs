@@ -6,6 +6,7 @@ title: Magento Admin Pattern Library
 menu_title: View Controller
 menu_order: 3
 menu_node: 
+version: 2.1
 github_link: pattern-library/controls/viewcontroller/viewcontroller.md
 ---
 <h2> View Controller </h2>

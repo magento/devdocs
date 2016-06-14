@@ -6,6 +6,7 @@ title: (Integrator) Get the Composer metapackage
 menu_title: (Integrator) Get the Composer metapackage
 menu_order: 1
 menu_node: parent
+version: 2.1
 github_link21: install-gde/prereq/integrator_install.md
 ---
 
@@ -20,7 +21,7 @@ github_link21: install-gde/prereq/integrator_install.md
 *	<a href="#instgde-prereq-compose-install">Install Composer</a>
 *	<a href="#integrator-first-composer-ce">Get the Magento CE metapackage</a>
 *	<a href="#integrator-first-composer-ee">Get the Magento EE metapackage</a>
-*	<a href="#instgde-prereq-compose-access">Set file system ownership and permissions</a>
+*	[Set pre-installation file system ownership and permissions](#perms-over) 
 
 <h2 id="int-aud">Intended audience</h2>
 The audience for this topic is anyone who downloads the Magento metapackage using `composer create-project`. If that isn't you, go back and <a href="{{ site.gdeurl21 }}install-gde/continue.html">choose another starting point</a>.
@@ -39,7 +40,7 @@ To do so, you start by creating a Composer project from our metapackage. The met
 To get started:
 
 1.	If you haven't done so already, <a href="{{ site.gdeurl21 }}install-gde/prereq/connect-auth.html">get your authentication keys</a>.
-1.	Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl21 }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+1.	Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl21 }}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
 2.	Change to the web server docroot directory, or to a directory you've configured as a virtual host docroot.
 3.	Enter the following command:
 
@@ -62,7 +63,7 @@ To get started:
 1.	Make sure you know your support portal user name and password.
 
 	If you don't remember it, contact Magento Support before you continue.
-1.	Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl21 }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+1.	Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl21 }}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
 2.	Change to the web server docroot directory, or to a directory you've configured as a virtual host docroot.
 3.	Enter the following command:
 
@@ -83,17 +84,7 @@ To get started:
 
 5.	Continue with the next section.
 
-<h2 id="instgde-prereq-compose-access">Set file system ownership and permissions</h2>
-The following sections discuss how to set file system ownership and permissions:
-
-*	<a href="#install-perms-import">Why we recommend you set file system permissions</a>
-*	<a href="#install-perms-set">File system permissions and ownership</a>
-
-<h3 id="install-perms-import">Why we recommend you set file system permissions</h3>
-{% include install/file-system-perms1-why.html %}
-
-<h3 id="install-perms-set">File system permissions and ownership</h3>
-{% include install/file-system-perms2-how.md %}
+{% include install/file-system-perms-before.md %}
 
 #### Next step
 Install the Magento software:

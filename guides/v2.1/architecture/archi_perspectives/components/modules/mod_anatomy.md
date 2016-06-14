@@ -6,7 +6,8 @@ title:
 menu_title: 
 menu_order: 
 
-github_link: architecture/components/modules/mod_anatomy.md
+version: 2.1
+github_link21: architecture/components/modules/mod_anatomy.md
 redirect: /guides/v2.0/architecture/modules/mod_anatomy.html
 ---
 

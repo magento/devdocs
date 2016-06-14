@@ -5,7 +5,8 @@ subgroup:
 title: Security overview
 menu_title: Security 
 menu_order: 
-github_link: architecture/security_intro.md
+version: 2.1
+github_link21: architecture/security_intro.md
 ---
 
 <h2 id="security_intro">Security overview</h2>

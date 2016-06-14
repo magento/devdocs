@@ -6,7 +6,8 @@ title: Introduction
 menu_title: Introduction
 menu_order: 1
 menu_node: parent
-github_link: extension-dev-guide/bk-extension-dev-guide.md
+version: 2.1
+github_link21: extension-dev-guide/bk-extension-dev-guide.md
 ---
 
 ##{{page.menu_title}}

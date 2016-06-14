@@ -6,6 +6,7 @@ title: How Magento cache clearing works with Varnish
 menu_title: How Magento cache clearing works with Varnish
 menu_order: 100
 menu_node: 
+version: 2.1
 github_link21: config-guide/varnish/use-varnish-cache.md
 ---
 
@@ -55,6 +56,6 @@ You can then purge Varnish hosts when you refresh the Magento cache (also referr
 
 To refresh the cache using the Admin, click **SYSTEM** > Tools > **Cache Management**, then click **Flush Magento Cache** at the top of the page. (You can also refresh individual cache types.)
 
-To refresh the cache using the command line, you typically use the <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean">`magento cache:clean [type]`</a> command as the <a href="{{ site.gdeurl21 }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+To refresh the cache using the command line, you typically use the <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean">`magento cache:clean [type]`</a> command as the <a href="{{ site.gdeurl21 }}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
 
 

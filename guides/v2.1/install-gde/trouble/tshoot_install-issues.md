@@ -6,6 +6,7 @@ title: Known issues that affect installation
 menu_title: Known issues that affect installation
 menu_node: 
 menu_order: 30 
+version: 2.1
 github_link21: install-gde/trouble/tshoot_install-issues.md
 ---
 

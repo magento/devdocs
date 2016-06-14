@@ -6,6 +6,7 @@ title: Enable or disable maintenance mode
 menu_title: Enable or disable maintenance mode
 menu_node: 
 menu_order: 10
+version: 2.1
 github_link21: install-gde/install/cli/install-cli-subcommands-maint.md
 ---
   

@@ -7,7 +7,8 @@ subgroup: Architectural Layers
 title: Magento Themes 
 menu_title: Magento Themes 
 menu_order: 1
-github_link: architecture/archi_perspectives/themes_intro.md
+version: 2.1
+github_link21: architecture/archi_perspectives/themes_intro.md
 ---
 
 

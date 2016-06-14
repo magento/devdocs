@@ -5,7 +5,8 @@ subgroup:
 title: Introduction
 menu_title: Introduction
 menu_order: 1
-github_link: extension-dev-guide/introduction.md
+version: 2.1
+github_link21: extension-dev-guide/introduction.md
 ---
 ##{{page.menu_title}}
 

@@ -6,6 +6,7 @@ title: During installation, fatal PDO error displays
 menu_title: During installation, fatal PDO error displays
 menu_node: 
 menu_order: 21
+version: 2.1
 github_link21: install-gde/trouble/php/tshoot_pdo.md
 ---
 

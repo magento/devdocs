@@ -5,12 +5,13 @@ subgroup: Coding standards
 title: LESS coding standard
 menu_title: LESS coding standard
 menu_order: 7
-github_link: coding-standards/code-standard-less.md
+version: 2.1
+github_link21: coding-standards/code-standard-less.md
 ---
 
 This standard defines Magento internal requirements for code formatting and style for teams that develop LESS and CSS code.
 
-Some parts of Magento code might not comply with this coding standard.
+Some parts of Magento code might not comply with this coding standard yet, but we are working to gradually improve this. 
 
 This coding standard is optional for third-party Magento developers.
 
@@ -132,7 +133,7 @@ Start each property declaration in a new line.
 
 #### Properties colon indents
 
-Do not add spaces before or after the colon that separates property names from values.
+Add space after but not before the colon that separates property names from values.
 
 **Correct**:
 
@@ -317,6 +318,8 @@ Class names should be lowercase, start with a letter (except helper classes), wo
 
 Helper class names should be lowercase and start with underscore ("_").
 
+Some parts of Magento code might not comply with this standard yet. You might still find helper names with no underscores. We are working to gradually remove the inconsistency.  
+ 
 **Example**:
 
     ._active {
@@ -459,10 +462,10 @@ Exceptions are pseudo elements and states.
         }
         .nav-list {
             ...
+            .nav-list-item {
+                ...
+            }
         }
-        .nav-list-item {
-            ...
-         }
     }
 
 **Incorrect**:

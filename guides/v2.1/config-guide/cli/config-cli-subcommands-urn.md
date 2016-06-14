@@ -6,6 +6,7 @@ title: URN highlighter
 menu_title: URN highlighter
 menu_node: 
 menu_order: 215
+version: 2.1
 github_link21: config-guide/cli/config-cli-subcommands-urn.md
 ---
 

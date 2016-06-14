@@ -7,7 +7,8 @@ menu_title: Modules and areas
 menu_order: 4
 level3_menu_node: level3child
 level3_subgroup: modules
-github_link: architecture/components/modules/mod_and_areas.md
+version: 2.1
+github_link21: architecture/components/modules/mod_and_areas.md
 ---
 
 <h2 id="m2arch-module-areas-overview"> Overview</h2>

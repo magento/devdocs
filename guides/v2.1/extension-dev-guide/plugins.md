@@ -5,7 +5,8 @@ subgroup: 99_Module Development
 title: Magento plug-ins
 menu_title: Magento plug-ins
 menu_order: 10
-github_link: extension-dev-guide/plugins.md
+version: 2.1
+github_link21: extension-dev-guide/plugins.md
 ---
 
 ##{{page.menu_title}}
@@ -67,7 +68,7 @@ Several conditions influence how plug-ins apply to the same class or interface:
 
        The before-listener also:
 
-       *   Does not require you to declare unused arguments from the original method. See [Magento\Framework\Interception\Interceptor.php]({{ site.mage2000url }}lib/internal/Magento/Framework/Interception/Interceptor.php#L118-L126){:target="_blank"} for details.
+       *   Does not require you to declare unused arguments from the original method. See [Magento\Framework\Interception\Interceptor.php]({{site.mage2100url}}lib/internal/Magento/Framework/Interception/Interceptor.php#L118-L126){:target="_blank"} for details.
        *   Returns nothing if it modifies no arguments.
 
    *  Change the values returned by an original method using the after-listener.

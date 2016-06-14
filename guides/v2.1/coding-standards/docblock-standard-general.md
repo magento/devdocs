@@ -4,8 +4,9 @@ group: coding-standards
 subgroup: Coding standards
 title: DocBlock standard
 menu_title: DocBlock standard
-menu_order: 5
-github_link: coding-standards/docblock-standard-general.md
+menu_order: 3
+version: 2.1
+github_link21: coding-standards/docblock-standard-general.md
 ---
 
 <h2 id="m2devgde-code-DocBlock-intro">Overview</h2>
@@ -516,5 +517,3 @@ public function reorderChild($parentId, $childId, $position)
  * @see _insertChild() for position explanation
  */
 {% endhighlight %}
-
-

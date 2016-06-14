@@ -5,7 +5,8 @@ subgroup: Architectural Basics
 title: Architectural diagrams
 menu_title: Architectural diagrams
 menu_order: 1
-github_link: architecture/archi_perspectives/arch_diagrams.md
+version: 2.1
+github_link21: architecture/archi_perspectives/arch_diagrams.md
 ---
 
 <h2 id="m2arch-whatis-overview">Architectural diagrams</h2>

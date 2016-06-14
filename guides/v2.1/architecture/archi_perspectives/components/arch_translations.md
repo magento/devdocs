@@ -5,7 +5,8 @@ subgroup: Components
 title: Language packages
 menu_title: Language packages
 menu_order: 9
-github_link: architecture/components/arch_translations.md
+version: 2.1
+github_link21: architecture/components/arch_translations.md
 ---
 
 <h2 id="m2arch-translations-overview">Language packages and translation</h2>

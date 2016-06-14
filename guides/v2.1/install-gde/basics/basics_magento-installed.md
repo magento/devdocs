@@ -6,6 +6,7 @@ title: Is the Magento software installed already?
 menu_title: Is the Magento software installed already?
 menu_node: 
 menu_order: 2
+version: 2.1
 github_link21: install-gde/basics/basics_magento-installed.md
 ---
 

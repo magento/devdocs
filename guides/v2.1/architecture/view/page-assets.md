@@ -5,7 +5,8 @@ subgroup: View library
 title: Page assets
 menu_title: Page assets
 menu_order: 
-github_link: architecture/view/page-assets.md
+version: 2.1
+github_link21: architecture/view/page-assets.md
 ---
 
 <h2 id="m2devgde-page-assets-intro">Introduction to page assets</h2>

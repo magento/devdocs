@@ -6,6 +6,7 @@ title: Install, configure, verify memcached on Ubuntu
 menu_title: Install, configure, verify memcached on Ubuntu
 menu_order: 2
 menu_node: 
+version: 2.1
 github_link21: config-guide/memcache/memcache_ubuntu.md
 ---
 
@@ -84,7 +85,12 @@ Create `cache-test.php` in the web server's docroot with the following contents:
 
 {% highlight php %}
 <?php
-$mem = new Memcache();
+if (class_exists('Memcache')) {
+    $meminstance = new Memcache();
+} else {
+    $meminstance = new Memcached();
+}
+
 $mem->addServer("<memcache host name or ip>", <memcache port>);
 
 $result = $mem->get("test");

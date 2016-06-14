@@ -6,7 +6,8 @@ title: Package
 menu_title: Package
 menu_order: 1
 menu_node: parent
-github_link: extension-dev-guide/package/package.md
+version: 2.1
+github_link21: extension-dev-guide/package/package.md
 
 ---
 

@@ -6,6 +6,7 @@ title: Templates overview
 menu_title: Templates
 menu_order: 1
 menu_node: parent
+version: 2.1
 github_link: frontend-dev-guide/templates/template-overview.md
 ---
 

@@ -5,8 +5,8 @@ subgroup: 10_Introduction
 title: Introduction to the Functional Testing Framework
 menu_title: INTRODUCTION
 menu_node: parent
+version: 2.1
 github_link: mtf/mtf_introduction.md
-redirect_from: /guides/v1.0/mtf/mtf_introduction.html
 ---
 
 <h2>Preface</h2>

@@ -27,7 +27,7 @@ The Setup Wizard uses the <a href="http://php.net/manual/en/function.sys-get-tem
 
 	If you don't know where `php.ini` is located:
 
-	1.	Log in as or switch to the <a href="{{ site.gdeurl21 }}install-gde/prereq/apache-user.html#install-update-depend-user-switch">switch to the Magento file system owner</a>.
+	1.	Log in as or switch to the <a href="{{ site.gdeurl21 }}install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.
 	2.	Create <a href="{{ site.gdeurl21 }}install-gde/prereq/optional.html#install-optional-phpinfo">phpinfo.php</a> in the web server's docroot.
 	3.	Access `phpinfo.php` in a web browser.
 

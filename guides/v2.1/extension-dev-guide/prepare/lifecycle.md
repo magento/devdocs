@@ -5,7 +5,8 @@ subgroup: 02_Prepare
 title: Extension Lifecycle
 menu_title: Extension lifecycle
 menu_order: 100
-github_link: extension-dev-guide/prepare/lifecycle.md
+version: 2.1
+github_link21: extension-dev-guide/prepare/lifecycle.md
 ---
 
 ##{{page.title}}
@@ -43,7 +44,7 @@ If the `schema_version` of the module is found in the `setup_modules` table, the
 
 For example, if you are installing version 2.0.0 of your module and there have been no previous installations of your module, then schema installation will proceed. Otherwise, schema installation will be skipped and your module will begin a [schema upgrade](#schema-upgrade).
 
-During a schema installation, the `install` function will be executed in the `InstallSchema` class implementing the [`\Magento\Framework\Setup\InstallSchemaInterface`]({{site.mage2000url}}lib/internal/Magento/Framework/Setup/InstallSchemaInterface.php){:target="_blank"}:
+During a schema installation, the `install` function will be executed in the `InstallSchema` class implementing the [`\Magento\Framework\Setup\InstallSchemaInterface`]({{site.mage2100url}}lib/internal/Magento/Framework/Setup/InstallSchemaInterface.php){:target="_blank"}:
 
 ~~~
 // File Location: <module_root_directory>/Setup/InstallSchema.php
@@ -67,7 +68,7 @@ If your module already has an earlier version installed in Magento, then it will
 
 For example, when a new 2.0.1 version of your module is installed over a previous 2.0.0 version, your module will perform a schema upgrade instead of a [schema installation](#schema-installation).
 
-During a schema upgrade, the `upgrade` function will be executed in the `UpgradeSchema` class implementing the  [`Magento\Framework\Setup\UpgradeSchemaInterface`]({{site.mage2000url}}lib/internal/Magento/Framework/Setup/UpgradeSchemaInterface.php){:target="_blank"}:
+During a schema upgrade, the `upgrade` function will be executed in the `UpgradeSchema` class implementing the  [`Magento\Framework\Setup\UpgradeSchemaInterface`]({{site.mage2100url}}lib/internal/Magento/Framework/Setup/UpgradeSchemaInterface.php){:target="_blank"}:
 
 ~~~
 // Location: <module_root_directory>/Setup/UpgradeSchema.php
@@ -88,7 +89,7 @@ class \<Vendor>\<Module>\Setup\UpgradeSchema implements \Magento\Framework\Setup
 
 You can create a class in your module that will be run every time after schema installation or upgrade. The purpose of running code in this final stage of schema initialization is usually to do final modifications to the database schema after it has been installed or updated.
 
-During this event, the `install` function will be executed in the `Recurring` class implementing the [`\Magento\Framework\Setup\InstallSchemaInterface`]({{site.mage2000url}}lib/internal/Magento/Framework/Setup/InstallSchemaInterface.php){:target="_blank"}:
+During this event, the `install` function will be executed in the `Recurring` class implementing the [`\Magento\Framework\Setup\InstallSchemaInterface`]({{site.mage2100url}}lib/internal/Magento/Framework/Setup/InstallSchemaInterface.php){:target="_blank"}:
 
 ~~~
 // Location: <module_root_directory>/Setup/Recurring.php
@@ -113,7 +114,7 @@ After your module's schema has been initialized, your module will go through the
 
 Just like with [schema installation](#schema-installation), this stage will run only during the initial installation of your module. The purpose of data installation is usually to populate the database with initial data for your module.
 
-During data installation, the `install` function will be executed in the `InstallData` class implementing the [`Magento\Framework\Setup\InstallDataInterface`]({{site.mage2000url}}lib/internal/Magento/Framework/Setup/InstallDataInterface.php){:target="_blank"}:
+During data installation, the `install` function will be executed in the `InstallData` class implementing the [`Magento\Framework\Setup\InstallDataInterface`]({{site.mage2100url}}lib/internal/Magento/Framework/Setup/InstallDataInterface.php){:target="_blank"}:
 
 ~~~
 // Location: <module_root_directory>/Setup/InstallData.php
@@ -135,7 +136,7 @@ class \<Vendor>\<Module>\Setup\InstallData implements \Magento\Framework\Setup\I
 
 Just like the [schema-upgrade](#schema-upgrade) stage, data upgrade only occurs when Magento detects a previous installation. The purpose of this stage is usually to fix data that has been corrupted or populate a new data field from a schema change.
 
-During a data upgrade, the `upgrade` function will be executed in the `UpgradeData` class implementing the  [`Magento\Framework\Setup\UpgradeDataInterface`]({{site.mage2000url}}lib/internal/Magento/Framework/Setup/UpgradeDataInterface.php){:target="_blank"}:
+During a data upgrade, the `upgrade` function will be executed in the `UpgradeData` class implementing the  [`Magento\Framework\Setup\UpgradeDataInterface`]({{site.mage2100url}}lib/internal/Magento/Framework/Setup/UpgradeDataInterface.php){:target="_blank"}:
 
 ~~~
 //<module_root_directory>/Setup/UpgradeData.php
@@ -156,7 +157,7 @@ class \<Vendor>\<Module>\Setup\UpgradeData implements \Magento\Framework\Setup\U
 
 You can create a class that will run after every data installation or upgrade. The purpose of the class is usually to do final modifications to the database store after data has been installed or updated.
 
-During this event, the `install` function will be executed in the `RecurringData` class implementing the [`Magento\Framework\Setup\InstallDataInterface`]({{site.mage2000url}}lib/internal/Magento/Framework/Setup/InstallDataInterface.php){:target="_blank"}:
+During this event, the `install` function will be executed in the `RecurringData` class implementing the [`Magento\Framework\Setup\InstallDataInterface`]({{site.mage2100url}}lib/internal/Magento/Framework/Setup/InstallDataInterface.php){:target="_blank"}:
 
 ~~~
 // Location: <module_root_directory>/Setup/RecurringData.php
@@ -175,7 +176,7 @@ class \<Vendor>\<Module>\Setup\RecurringData implements \Magento\Framework\Setup
 
 ### Setup resource models
 
-Magento provides [`ModuleDataSetupInterface`]({{site.mage2000url}}lib/internal/Magento/Framework/Setup/ModuleDataSetupInterface.php){:target="_blank"} and [`ModuleContextInterface`]({{site.mage2000url}}lib/internal/Magento/Framework/Setup/ModuleContextInterface.php){:target="_blank"} to assist with database manipulations. However, if the installation/upgrade is too complex, more classes may be created to handle all the logic. In these cases, you can pass the `ModuleDataSetupInterface` resource to other classes that may require DB manipulations.
+Magento provides [`ModuleDataSetupInterface`]({{site.mage2100url}}lib/internal/Magento/Framework/Setup/ModuleDataSetupInterface.php){:target="_blank"} and [`ModuleContextInterface`]({{site.mage2100url}}lib/internal/Magento/Framework/Setup/ModuleContextInterface.php){:target="_blank"} to assist with database manipulations. However, if the installation/upgrade is too complex, more classes may be created to handle all the logic. In these cases, you can pass the `ModuleDataSetupInterface` resource to other classes that may require DB manipulations.
 
 ~~~
 class InstallData implements InstallDataInterface
@@ -210,7 +211,7 @@ class InstallData implements InstallDataInterface
 
 ### Module context
 
-To add more logic to your install/upgrade classes, you can use the  [`ModuleContextInterface`]({{site.mage2000url}}lib/internal/Magento/Framework/Setup/ModuleContextInterface.php){:target="_blank"} provided by Magento. The context provides module information, such as current module version, to help add logic to your class.
+To add more logic to your install/upgrade classes, you can use the  [`ModuleContextInterface`]({{site.mage2100url}}lib/internal/Magento/Framework/Setup/ModuleContextInterface.php){:target="_blank"} provided by Magento. The context provides module information, such as current module version, to help add logic to your class.
 
 ~~~
 class \Magento\Cms\Setup\InstallData implements \Magento\Framework\Setup\UpgradeDataInterface
@@ -230,7 +231,7 @@ The uninstall event begins when you uninstall your module using the [Component M
 
 In this stage, your module should remove all traces of its existence in the database; e.g. dropping tables, deleting data, or restoring data.
 
-During this stage, the `uninstall` function will be executed in the `Uninstall` class implementing the [`Magento\Framework\Setup\UninstallInterface`]({{site.mage2000url}}lib/internal/Magento/Framework/Setup/UninstallInterface.php){:target="_blank"}:
+During this stage, the `uninstall` function will be executed in the `Uninstall` class implementing the [`Magento\Framework\Setup\UninstallInterface`]({{site.mage2100url}}lib/internal/Magento/Framework/Setup/UninstallInterface.php){:target="_blank"}:
 
 ~~~
 // Location: <module_root_directory>/Setup/Uninstall.php
