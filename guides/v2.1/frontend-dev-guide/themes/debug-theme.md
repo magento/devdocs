@@ -31,24 +31,24 @@ To enable template hints:
 
 3. In the **Debug** tab, set **Template Path Hints for storefront** to **Yes**. To enable path hints for Admin set **Template Path Hints for Admin** to **Yes**.
 4. To save the changes, click **Save Config** in the upper-right corner.
-<p><img src="{{ site.baseurl }}common/images/fdg_debug_theme.png" alt="Enabling template hints"></p>
+<p><img src="{{ site.baseurl }}common/images/fdg_debug_theme21.png" alt="Enabling template hints"></p>
 
 Now that you have enabled template hints, reload the page that you want to modify, and review the path for the template file or files that template hints show.
 
 For example, here is how a storefront category page looks with enabled template hints:
-<p><img src="{{ site.baseurl }}common/images/theme_debug2.png" alt="A storefront page with enabled template hints"></p>
+<p><img src="{{ site.baseurl }}common/images/theme_debug221.png" alt="A storefront page with enabled template hints"></p>
 
 In this example mini shopping cart page element is defined by the `<Magento_Checkout_module_dir>/view/frontend/templates/cart/minicart.phtml` template:
 
-<p><img src="{{ site.baseurl }}common/images/theme_debug3.png" alt="A hint with template name for minishopping cart"></p>
+<p><img src="{{ site.baseurl }}common/images/theme_debug321.png" alt="A hint with template name for minishopping cart"></p>
 (the template name is above the element)
 
 Here is how Customers page looks with enabled template hints in Admin:
-<p><img src="{{ site.baseurl }}common/images/theme_debug5.png" alt="Admin page with enabled template hints"></p>
+<p><img src="{{ site.baseurl }}common/images/theme_debug521.png" alt="Admin page with enabled template hints"></p>
 
 Alternatively, you can perform a text search in the file system by using system generated titles, CSS class names, block titles, labels, or links text as search terms.
 For example, using a browser debug tool, you can define that the minicart block css class is `minicart-wrapper`.
-<p><img src="{{ site.baseurl }}common/images/theme_debug4.png" alt="Firebug displaying html"></p>
+<p><img src="{{ site.baseurl }}common/images/theme_debug421.png" alt="Firebug displaying html"></p>
 
 A search through the app directory for occurrences of "minicart-wrapper" in `.phtml` files returns the `app/code/Magento/Checkout/view/frontend/templates/cart/minicart.phtml` template.
 

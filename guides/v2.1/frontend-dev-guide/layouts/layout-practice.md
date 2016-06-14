@@ -16,7 +16,7 @@ This article features a step-by-step illustration of how a real-life layout cust
 In their Orange theme, OrangeCo wants to transform the header links block to a drop-down, the way it is done in the Magento Luma theme:
 
 <div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl }}common/images/layout_transform.png">
+<img src="{{ site.baseurl }}common/images/layout_transform21.png">
 </div>
 
 To do this, they need to wrap the list of header links with a container and add a greeting with a drop-down arrow before the list.
@@ -24,13 +24,13 @@ To do this, they need to wrap the list of header links with a container and add 
 The Orange theme [inherits]({{site.gdeurl21}}frontend-dev-guide/themes/theme-inherit.html) from Blank, so by default the rendered header links look like following:
 
 <div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl }}common/images/layout_code_before1.png">
+<img src="{{ site.baseurl }}common/images/layout_code_before121.png">
 </div>
 
 Needed:
 
 <div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl }}common/images/layout_code_after.png">
+<img src="{{ site.baseurl }}common/images/layout_code_after21.png">
 </div>
 
 <br>
@@ -156,13 +156,13 @@ To move the links to the `header.links` block, OrangeCo adds an extending layout
 Now the customer links look like following:
 
 <div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl }}common/images/layout_screen2.png">
+<img src="{{ site.baseurl }}common/images/layout_screen221.png">
 </div>
 
 The last touch is adding styles:
 
 <div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl }}common/images/layout_screen3.png">
+<img src="{{ site.baseurl }}common/images/layout_screen321.png">
 </div>
 
 

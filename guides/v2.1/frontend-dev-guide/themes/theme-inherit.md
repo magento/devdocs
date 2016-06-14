@@ -88,13 +88,13 @@ Let's imagine OrangeCo needs to add some winter holidays decor. So it creates a 
 
 In the Orange theme there is a footer background image located at `app/design/frontend/OrangeCo/orange/web/images/background.jpg`.
 
-<img src="{{ site.baseurl }}common/images/inh-background1.jpg"/>
+<img src="{{ site.baseurl }}common/images/inh-background121.jpg"/>
 
 OrangeCo wants it to be replaced with a holiday one, so it places a new background image with exactly the same name and extension in `app/design/frontend/OrangeCo/orange_winter/web/images/background.jpg`
 
 Once the Orange Winter theme is applied, the new holiday image overrides the one from Orange, so on storefront the holiday background is visible.
 
-<img src="{{ site.baseurl }}common/images/inh-background2.jpg"/>
+<img src="{{ site.baseurl }}common/images/inh-background221.jpg"/>
 
 
 ## Override templates {#theme-inherit-templates}
@@ -112,7 +112,7 @@ For example, if you must override the `<Magento_Catalog_module_dir>/view/fronten
 
 <u>Example</u>
 By default, according to the module template, in the mini shopping cart products are listed under the Go to Checkout button:
-<p><img src="{{ site.baseurl }}common/images/inherit_mini1.png" alt="In the minishopping cart products are listed under the Go to Checkout button "></p>
+<p><img src="{{ site.baseurl }}common/images/inherit_mini121.png" alt="In the minishopping cart products are listed under the Go to Checkout button "></p>
 
 The order is defined in the `<Magento_Checkout_module_dir>/view/frontend/templates/cart/minicart.phtml` module template. The Blank theme does not override this template.
 OrangeCo decided they want the product list to be displayed before the Go to Checkout button.
@@ -120,7 +120,7 @@ To do this, they need to add an overriding template for the corresponding module
 `app/design/frontend/OrangeCo/orange/Magento_Checkout/templates/cart/minicart.phtml`
 Note, that the path to the template inside the `templates` directory in the theme corresponds to that in the module.
 Having changed the order or elements in the templates, OrangeCo got the minicart look like following:
-<p><img src="{{ site.baseurl }}common/images/inherit_mini2.png" alt="In the minishopping cart products are listed above the Go to Checkout button "></p>
+<p><img src="{{ site.baseurl }}common/images/inherit_mini221.png" alt="In the minishopping cart products are listed above the Go to Checkout button "></p>
 You can find out what exactly code changes are required to perform this and other tasks in the <a href="{{site.gdeurl21}}frontend-dev-guide/templates/template-sample.html">Illustration of customizing templates topic</a>.
 
 ## Extend layouts {#theme-inherit-layout}

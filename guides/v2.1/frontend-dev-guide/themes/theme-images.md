@@ -91,7 +91,7 @@ Can have any value, but in out-of-the- box Magento themes <code>id</code>'s are 
 </table>
 
 The following picture illustrates how image roles for product images are specified in the Magento Admin:
-<img src="{{site.baseurl}}common/images/fdg_theme_bck.png" alt="Setting image role in Magento Admin">
+<img src="{{site.baseurl}}common/images/fdg_theme_bck21.png" alt="Setting image role in Magento Admin">
 
 Image properties are defined by the corresponding elements, for example:
 
