@@ -188,19 +188,38 @@ Example: pass the image to the `logo` block.
 
 <h2 id="set_template">Set the template used by a block</h2>
 
-To set the template for a block, pass it using the `<argument>` instruction.
+There are two ways to set the template for a block:
 
-Example: change template of the page title block:
+- using the `template` attribute
+- using the `<argument>` instruction
+
+Both approaches are demonstrated in the following examples of changing the template of the page title block.
+
+**Example 1:**
+
+{%highlight xml%}
+ <referenceBlock name="page.main.title" template="%Namespace_Module::new_template.phtml%"/>
+{%endhighlight%}
+
+**Example 2:** 
 
 {%highlight xml%}
  <referenceBlock name="page.main.title">
         <arguments>
-            <argument name="template" xsi:type="string">Namespace_Module::title_new.phtml</argument>
+            <argument name="template" xsi:type="string">%Namespace_Module::new_template.phtml%</argument>
         </arguments>
  </referenceBlock>
 {%endhighlight%}
 
-The path to the template is specified relatively to the `view/<area>/templates/` directory of the module. The `<area>` corresponds to the area for which the layout file is used.
+In both example, the template is specified according to the following:
+
+ * `Namespace_Module:` defines the module the template belongs to. For example, `Magento_Catalog`.
+ * `new_template.phtml`: the path to the template relatively to the `templates` directory. It might be `<module_dir>/view/<area>/templates` or `<theme_dir>/<Namespace_Module>/templates`.
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Template values specified as attributes have higher priority during layout generation, than the ones specified using <code>&lt;argument&gt;</code>. It means, that if for a certain block, a template is set as attribute, it will override the value you specify in <code>&lt;argument&gt;</code> for the same block.</p>
+</div>
+
 
 <h2 id="layout_markup_modify-block">Modify block arguments</h2>
 

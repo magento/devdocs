@@ -35,6 +35,7 @@ The Blank theme implements the following <a href="{{site.gdeurl21}}frontend-dev-
   <li>1440px</li>
 </ul>
 
+You can change these breakpoints and add new ones in your custom theme. For instructions see the [Add a new breakpoint]({{site.gdeurl21}}frontend-dev-guide/responsive-web-design/rwd-breakpoints.html) topic.
 
 <h2>Mobile first</h2>
 

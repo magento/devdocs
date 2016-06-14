@@ -6,7 +6,7 @@ title: Templates customization walkthrough
 menu_title: Templates customization walkthrough
 menu_order: 2
 version: 2.1
-github_link: frontend-dev-guide/templates/template-overview.md
+github_link: frontend-dev-guide/templates/template-walkthrough.md
 ---
 
 ## What's in this topic

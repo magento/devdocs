@@ -45,7 +45,6 @@ To add a custom favicon in the Magento Admin, do the following:
 
 If caching is enabled in your Admin, you get a notification that refreshing certain cache types is required. Click the link provided in the notification, and then click **Flush Magento Cache**.
 
-The icon you upload in Admin overrides the default favicon and is used as a favicon of 16x16 size. 
 
 ## Add custom favicons manually
 

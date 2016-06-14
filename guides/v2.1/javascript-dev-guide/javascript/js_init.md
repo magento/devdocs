@@ -79,7 +79,7 @@ To initialize a JS component on a HTML element without direct access to the elem
     },
     // components initialized without binding to an element
     &quot;*&quot;: {
-        &quot;&lt;js_component3&quot;&gt;: ...
+        &quot;&lt;js_component3&gt;&quot;: ...
     }
 &lt;/script&gt;
 </pre>

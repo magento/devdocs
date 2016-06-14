@@ -25,7 +25,7 @@ The widget can be used for implementing prompt windows for both, Admin and store
 - <a href="#prompt_init">Initialize the prompt widget</a>
 - <a href="#prompt_options">Options</a>
 - <a href="#prompt_events">Events</a>
-- <a href="prompt_key_navigation">Keyboard navigation</a>
+- <a href="#prompt_key_navigation">Keyboard navigation</a>
 
 <h2 id="prompt_init">Initialize the prompt widget</h2>
 
