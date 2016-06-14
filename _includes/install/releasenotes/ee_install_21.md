@@ -20,7 +20,7 @@ where `<version>` is `2.1.0-rc1`, `2.1.0-rc2`, or `2.1.0-rc3`
 
 For example, to install 2.1 RC3 in the `magento2` directory:
 
-	composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.0.1-rc3
+	composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.0.1-rc3 magento2
 
 ## Upgrade existing installations {#upgrade-rc-nosamp}
 This section discusses how to upgrade to Magento version 2.1 (including a Release Candidate) *without* sample data.
