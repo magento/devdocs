@@ -1,26 +1,24 @@
 @import 'reset';
 @import 'variables';
+@import 'partials/buttons';
+@import 'partials/callouts';
+@import 'partials/code';
+@import 'partials/collapsible';
+@import 'partials/dropdown';
+@import 'partials/footer';
+@import 'partials/form';
+@import 'partials/highlight';
+@import 'partials/home';
 @import 'partials/layout';
-@import 'partials/typography';
-@import 'partials/site-header';
+@import 'partials/modal';
 @import 'partials/nav-main';
 @import 'partials/page-intro';
-@import 'partials/sidebar';
-@import 'partials/footer';
-
-@import 'partials/home';
-@import 'partials/collapsible';
-
-@import 'partials/code';
-@import 'partials/highlight';
 @import 'partials/search';
-
-@import 'partials/form';
-@import 'partials/buttons';
-@import 'partials/dropdown';
-@import 'partials/modal';
-@import 'partials/version-switcher';
+@import 'partials/sidebar';
+@import 'partials/site-header';
 @import 'partials/table';
+@import 'partials/typography';
+@import 'partials/version-switcher';
 
 
 // TODO: Remove this:
