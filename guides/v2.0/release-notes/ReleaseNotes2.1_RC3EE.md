@@ -184,7 +184,25 @@ Magento Enterprise Edition 2.1 includes several new and exciting features:
 <h3>Known issues</h3>
 Magento Enterprise Edition 2.1, Release Candidate 3 includes the following known issues: 
 
-<!--- 54445-->* Process of uninstalling modules unexpectedly stalls. Workaround: Ensure that your `<magento root>/var/composer_home/auth.json` file contains your authentication keys. 
+<!--- 54445-->* The process of uninstalling modules using command-line tools unexpectedly stalls. 
+**Workaround:** Ensure that your `<magento root>/var/composer_home/auth.json` file contains your authentication keys. You can create an `auth.json` file in one of two ways:
+
+**Method 1:** If you ran Composer commands from CLI before and specified your `repo.magento.com` credentials, you can copy the existing `auth.json` file from your home directory under `"~/.composer/"`
+
+
+**Method 2:** You can manually create the file using this format:
+
+<pre>
+{
+    "http-basic": {
+        "repo.magento.com": {
+            "username": "<your public key>",
+            "password": "<your private key>"
+        }
+    }
+}
+</pre>
+
 
 <!--- 54443-->* Magento is not successfully updating images to all staged store views, including server-side and default storefront images. 
 
