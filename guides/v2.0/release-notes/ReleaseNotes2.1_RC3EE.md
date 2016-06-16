@@ -72,14 +72,129 @@ Magento 2.1 RC3 includes the following known issues:
 <h4>Miscellaneous</h4>
 
 
+<h4>Performance enhancements</h4>
+<!--- 53530-->* Category page performance has significantly improved when categories contain more than 30000 items. 
+
+<!--- 53223-->* Setting the Merge CSS Files option to Yes no longer reduces product performance. <a href="https://github.com/magento/magento2/issues/4710" target="_blank">(GITHUB-4710)</a>
 
 
 <h4>Messages and documentation</h4>
 
+<!--- 52993-->* Media Uploader error messages now make it clear the SVG file format is not supported. <a href="https://github.com/magento/magento2/issues/2958" target="_blank">(GITHUB-2958)</a>
 
+<!--- 53008-->* The Swagger-generated docs for the REST API now display the property identifiers formatted as camelCaseFormat. <a href="https://github.com/magento/magento2/issues/4925" target="_blank">(GITHUB-4925)</a>
 
 
 <h4>Staging</h4>
+
+<!--- 54211 DUPLICATE-->
+
+<!--- 53424 -->  Changing the update start or end time on one entity no longer overwrites update settings on other stores. Previously, changing the update start or end time on one page would overwrite settings on other stores. 
+
+<!--- 54357-->* The product update preview now works as expected. 
+
+<!--- 50468-->* You can now filter products by Category ID as expected. 
+
+<h4>Google Tag Manager</h4>
+
+<!--- 53170-->* The Update Cart Quantity event now correctly observes add or remove cart actions. 
+
+<h4>Import/Export</h4>
+
+<!--- 54200-->* Magento now successfully imports products with  a "gift_message_available" parameter. Previously, Magento exported the wrong "gift_message_available" parameter, which resulted in a validation error. (54200)
+
+<h4>Miscellaneous</h4>
+
+
+<!--- 51753-->* You can now install Magento over an existing database while using different Admin email addresses.
+
+<!--- 52615-->* Using the Web Setup wizard to disable a module no longer results in a backup error. <a href="https://github.com/magento/magento2/issues/3562" target="_blank">(GITHUB-3562)</a>
+
+<!--- 54205-->* Magento no longer disables all cache types after you use the command-line interface to enable or disable modules. Previously, all cache types were disabled after you disabled or enabled  modules through the command line interface. 
+
+<!--- 54283-->* The ProductsList widget now returns the identities of the products displayed by this widget. 
+
+
+
+<!--- 52124-->* Magento now retains special prices as expected for grouped products. 
+
+
+<!--- 53121-->* You can now use a custom template to successfully create New Account email for a new customer. 
+
+<!--- 52165 internal only-->
+
+<!--- 52891-->* Magento now  displays the thousand separator for a product's price  price, weight, and custom option price fields. 
+
+<!--- 54262-->* You can now remove products from the shopping cart as expected. Previously, if the amount of products being removed exceeded half the amount of products in stock, Magento would throw an error. 
+
+<!--- 54191-->* You can now successfully save new order status. Previously, you could not save new order status when selecting Create New Status from the Go to Stores > Order Status menu. <a href="https://github.com/magento/magento2/issues/4146" target="_blank">(GITHUB-4146)</a>
+
+
+
+<!--- 54186-->* JavaScript validation now works as expected when you add a product to a shopping cart. Previously, if a validation error occurred during this task, Magento would still submit the form. 
+ 
+
+<!--- 54242-->*  Grid view pagination (as configured from Stores > Configuration > Catalog > Catalog >Storefront)  now works as expected. <a href="https://github.com/magento/magento2/issues/3861" target="_blank">(GITHUB-3861)</a>
+
+<!--- 53139-->*  Magento now correctly displays prices for products with several configurable price options. 
+
+<!--- 54182-->*  You can successfully complete an order with for a quantity of product that exceeds half of the product stock. 
+
+<!--- 54293-->*  You can now place an order using the Braintree Credit card as the payment method when 3D Secure Verification is enabled. 
+
+<!--- 54222-->*  You can now generate a new simple product without changing the names of already existing products.  <a href="https://github.com/magento/magento2/issues/4951" target="_blank">(GITHUB-4951)</a>
+
+<!--- 54255-->*  Magento now displays enhanced messages for cache management exceptions. 
+
+<!--- 54257-->*  The Stock Status attribute now works as expected during creation of configurable products. 
+
+
+<!--- 54120 internal only --> 
+
+<!--- 54231-->* You can successfully delete an Admin user without breaking integration if the Admin user shares the same ID as an integration user. Previously, if you deleted an Admin user who shared an ID with an integration user, the integration would be permanently broken. 
+
+
+<!--- 54051-->* Problems related to login when inline translation is enabled have been resolved.  <a href="https://github.com/magento/magento2/issues/4925" target="_blank">(GITHUB-4925)</a>
+
+<!--- 54172-->* Magento now generates URL rewrites for a new store view as expected during a mass update to a new website. 
+
+<!--- 53238-->* Magento no longer displays the Payflow Pro option for the Vault Provider field for countries where that option is unavailable. 
+
+<!--- 54214-->* Problems placing an order using the Payflow Pro payment method have been resolved. 
+
+
+<!--- 54031 internal only-->
+
+<!--- 53293 internal only-->
+
+<!--- 53474-->* Magento now enables caches by default when upgrading by the command-line interface.  <a href="https://github.com/magento/magento2/issues/4707" target="_blank">(GITHUB-4707)</a>
+
+
+<!--- 54043-->* Magento no longer prompts you to select a dropdown attribute when adding a product to the shopping cart if you have already selected one. <a href="https://github.com/magento/magento2/issues/4899" target="_blank">(GITHUB-4899)</a>
+
+
+<!--- 53034-->*  You can now drag values as expected when working in the Customizable Options window.
+
+
+<!--- 53366-->* Tax Report now displays records as expected. 
+
+
+
+
+<h4>Security enhancement</h4>
+
+
+<!--- 52867-->* Magento no longer discloses sensitive information about the server when an invalid URL has been requested. 
+
+
+<h3>Known issues</h3>
+Magento Community Edition 2.1, Release Candidate 3 includes the following known issues: 
+
+<!--- 54445-->* Process of uninstalling modules unexpectedly stalls. Workaround: Ensure that your `<magento root>/var/composer_home/auth.json` file contains your authentication keys. 
+
+<!--- 54443-->* Magento is not successfully updating images to all staged store views, including server-side and default storefront images. 
+
+<!--- 54320-->* The Category page displays former instead of the current price during scheduled updates. 
 
 
 <h3>Technology stack</h3>
