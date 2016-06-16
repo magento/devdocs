@@ -18,17 +18,23 @@ redirect_from:
 
 
 ### Overview
-A plugin, or interceptor, is a class that modifies the behavior of public class functions by intercepting a function call and running code before, after, or around that function call. This allows you to change, or *extend*, the behavior of original, public methods in any Magento class.
+A plugin, or interceptor, is a class that modifies the behavior of public class functions by intercepting a function call and running code before, after, or around that function call. This allows you to *substitute* or *extend* the behavior of original, public methods for any class or *interface*.
 
 Extensions that wish to intercept and change the behavior of a *public method* can create a `Plugin` class which are referred to as plugins.
 
 This interception approach reduces conflicts among extensions that change the behavior of the same class or method. Your `Plugin` class implementation changes the behavior of a class function, but it does not change the class itself. Because they can be called sequentially according to a configured sort order, these interceptors do not conflict with one another.
 
+<div class="bs-callout bs-callout-info" markdown="1">
+  Even though you can use plugins to substitute class behavior, the recommended strategy is to use [dependency injection and virtual types]({{ site.gdeurl }}extension-dev-guide/depend-inj.html#configuring-type).
+</div>
+
 #### Limitations
 
 Plugins cannot be used with any of the following:
 
-* Final methods / classes
+* Final methods
+* Final classes
+* Any class that contains at least one final public method
 * Non-public methods
 * Class methods (such as static methods)
 * `__construct`
@@ -45,8 +51,11 @@ You must specify these elements:
 * `type name`. A class, interface, or virtual type, which the plugin observes.
 * `plugin name`. An arbitrary plugin name that identifies a plugin. Also used to merge the configurations for the plugin.
 * `plugin type`. The name of a plugin's class or its virtual type. Use the following naming convention when you specify this element: `\Vendor\Module\Plugin\<ModelName>Plugin`.
+
+The following elements are optional:
+
 * `plugin sortOrder`. The order in which plugins that call the same method are run.
-* `plugin disabled`. To disable a plugin, set this element to `true`.
+* `plugin disabled`. To disable a plugin, set this element to `true`. The default value is `false`.
 
 ### Defining a plugin
 A plugin is used to extend or modify a public method's behavior by applying code before, after, or around that observed method.
@@ -100,10 +109,10 @@ class ProductPlugin
 #### Around methods
 Around methods are defined such that their code is run both before and after the observed method. This allows you to completely override a method. Around methods must have the same name as the observed method with 'around' as the prefix.
 
-Before the list of the original method's arguments, around methods receive a `Closure` that will allow a call to the next method in the chain. When the `Closure` is called, the next plugin or the observed function is called.
+Before the list of the original method's arguments, around methods receive a `callable` that will allow a call to the next method in the chain. When the `callable` is called, the next plugin or the observed function is called.
 
 <div class="bs-callout bs-callout-warning">
-  <p>If the around method does not call the <code>Closure</code>, it will prevent the execution of all the plugins next in the chain and the original method call.</p>
+  <p>If the around method does not call the <code>callable</code>, it will prevent the execution of all the plugins next in the chain and the original method call.</p>
 </div>
 
 Below is an example of an around method adding behavior before and after an observed method:
@@ -115,7 +124,7 @@ namespace My\Module\Plugin;
 
 class ProductPlugin
 {
-    public function aroundSave(\Magento\Catalog\Model\Product $subject, \Closure $proceed)
+    public function aroundSave(\Magento\Catalog\Model\Product $subject, \callable $proceed)
     {
         $this->doSmthBeforeProductIsSaved();
         $returnValue = $proceed();
@@ -159,17 +168,17 @@ The execution flow will be as follows:
 
   * `PluginA::beforeDispatch()`
   * `PluginB::beforeDispatch()`
-  * `PluginB::aroundDispatch()` (Only the first half until `Closure` is called)
+  * `PluginB::aroundDispatch()` (Only the first half until `callable` is called)
 
     * `PluginC::beforeDispatch()`
-    * `PluginC::aroundDispatch()` (Only the first half until `Closure` is called)
+    * `PluginC::aroundDispatch()` (Only the first half until `callable` is called)
 
       * `Action::dispatch()`
 
-    * `PluginC::aroundDispatch()` (Only the second half after `Closure` is called)
+    * `PluginC::aroundDispatch()` (Only the second half after `callable` is called)
     * `PluginC::afterDispatch()`
 
-  * `PluginB::aroundDispatch()` (Only the second half after `Closure` is called)
+  * `PluginB::aroundDispatch()` (Only the second half after `callable` is called)
   * `PluginB::afterDispatch()`
   * `PluginA::afterDispatch()`
 
