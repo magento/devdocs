@@ -59,7 +59,7 @@ Magento Community Edition 2.1 includes several new and exciting features:
 
 <h4>Cache</h4>
 
-<!--- 52923-->* Switching to Varnish causes category menu to force HTTPS links. default header is now standard "X-Forwarded-Proto<a href="https://github.com/magento/magento2/issues/4540" target="_blank">(GITHUB-4540)</a>
+<!--- 52923-->* Category menus now display as expected for installations using Varnish. <a href="https://github.com/magento/magento2/issues/4540" target="_blank">(GITHUB-4540)</a>
 
 <!--- 54228-->* Varnish cache is no longer disabled due to HTML requests. 
 
@@ -88,11 +88,9 @@ Magento Community Edition 2.1 includes several new and exciting features:
 
 
 
-
-
 <h4>Miscellaneous</h4>
 
-<!--- 51753-->* You can now re-install Magento and use a different Admin email address than you previously used.
+<!--- 51753-->* You can now re-install Magento and use a different Admin email address than you had previously used.
 
 <!--- 52615-->* Using the Web Setup wizard to disable a module no longer results in a backup error. <a href="https://github.com/magento/magento2/issues/3562" target="_blank">(GITHUB-3562)</a>
 
@@ -108,9 +106,9 @@ Magento Community Edition 2.1 includes several new and exciting features:
 
 <!--- 52891-->* Magento now  displays the thousand separator for a product's price  price, weight, and custom option price fields. 
 
-<!--- 54262-->* You can now remove products from the shopping cart as expected. Previously, if the quantity of products being removed exceeded half the amount of products in stock, Magento would throw an error. 
+<!--- 54262-->* You can now remove products from the shopping cart as expected. Previously, if the number of products being removed exceeded half the quantity of products in stock, Magento would throw an error. 
 
-<!--- 54182-->*  You can successfully complete an order with for a quantity of product that exceeds half of the product stock. 
+<!--- 54182-->*  You can successfully complete an order for a quantity of product that exceeds half of the product stock. 
 
 
 <!--- 54191-->* You can now successfully save new order status. Previously, you could not save new order status when selecting Create New Status from the Go to Stores > Order Status menu. <a href="https://github.com/magento/magento2/issues/4146" target="_blank">(GITHUB-4146)</a>
@@ -124,12 +122,10 @@ Magento Community Edition 2.1 includes several new and exciting features:
 <!--- 53139-->*  Magento now correctly displays prices for products with several configurable price options. 
 
 
-
 <!--- 54222-->*  You can now generate a new simple product without changing the names of already existing products.  <a href="https://github.com/magento/magento2/issues/4951" target="_blank">(GITHUB-4951)</a>
 
 
 <!--- 54257-->*  The Stock Status attribute now works as expected during creation of configurable products. 
-
 
 
 <!--- 54231-->* You can successfully delete an Admin user without breaking integration if the Admin user shares the same ID as an integration user. Previously, if you deleted an Admin user who shared an ID with an integration user, the integration would be permanently broken. 
@@ -140,7 +136,7 @@ Magento Community Edition 2.1 includes several new and exciting features:
 <!--- 54172-->* Magento now generates URL rewrites for a new store view as expected during a mass update to a new website. 
 
 
-<!--- 54043-->* Magento no longer prompts you to select a dropdown attribute when adding a product to the shopping cart if you have already selected one. <a href="https://github.com/magento/magento2/issues/4899" target="_blank">(GITHUB-4899)</a>
+<!--- 54043-->* Magento no longer prompts you to select a dropdown attribute when adding a product to the shopping cart if you have already selected an attribute. <a href="https://github.com/magento/magento2/issues/4899" target="_blank">(GITHUB-4899)</a>
 
 
 <!--- 53034-->*  You can now drag values as expected when working in the Customizable Options window.
@@ -174,14 +170,13 @@ Magento Community Edition 2.1, Release Candidate 3 includes the following known 
 {
     "http-basic": {
         "repo.magento.com": {
-            "username": "<your public key>",
-            "password": "<your private key>"
+            "username": "<public key>",
+            "password": "<private key>"
         }
     }
 }
 </pre>
 
-<!--- 54443-->* Magento is not successfully updating images to all staged store views, including server-side and default storefront images. 
 
 <!--- 54320-->* The Category page displays the former price instead of the current price during scheduled updates. 
 
@@ -204,7 +199,7 @@ We do not support PHP 5.5.x or 7.0.5.
 You can install Magento Community Edition 2.1 Release Candidate 3 (RC3) from either Github or by using Composer. 
 This Release Candidate is for test purposes only. Do not install it in a production environment.
 
-{% include install/releasenotes/ce_install_21rc.md %}
+{% include install/releasenotes/ce_install_21.md %}
 
 
 ## Migration toolkits
