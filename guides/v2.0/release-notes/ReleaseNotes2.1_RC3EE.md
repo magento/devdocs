@@ -185,7 +185,8 @@ Magento Enterprise Edition 2.1, Release Candidate 3 includes the following known
 
 **Method 2:** You can manually create the file using this format:
 
-<pre>
+<code>
+
 {
     "http-basic": {
         "repo.magento.com": {
@@ -194,7 +195,8 @@ Magento Enterprise Edition 2.1, Release Candidate 3 includes the following known
         }
     }
 }
-</pre>
+
+</code>
 
 
 
