@@ -109,13 +109,9 @@ To install PHP 5.6 or to upgrade from PHP 5.5 on Ubuntu 14:
 1.	Enter the following commands in the order shown:
 
 		apt-get -y update
-		add-apt-repository ppa:ondrej/php5-5.6
+		add-apt-repository ppa:ondrej/php
 		apt-get -y update
-		apt-get -y install php5 php5-mhash php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl php5-xsl php5-bcmath
-
-	<div class="bs-callout bs-callout-info" id="info">
-  		<p>The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.</p>
-	</div>
+		apt-get -y install php5.6 php5.6-mcrypt php5.6-curl php5.6-cli php5.6-mysql php5.6-gd php5.6-intl php5.6-xsl
 
 2.	Enter the following command to verify PHP 5.6 installed properly:
 
@@ -157,7 +153,7 @@ To install or upgrade to PHP 5.6 on Ubuntu 12:
 1.	Enter the following commands in the order shown:
 
 		apt-get -y update
-		add-apt-repository ppa:ondrej/php5-5.6
+		add-apt-repository ppa:ondrej/php
 		apt-get -y update
 		apt-get -y install php5 php5-mhash php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl php5-xsl php5-bcmath
 
