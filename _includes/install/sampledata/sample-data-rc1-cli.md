@@ -72,6 +72,15 @@ After you've reset file system permissions:
 
 {% include install/sampledata/file-sys-perms-digest.md %}
 
+
+### Disable maintenance mode {#upgrade-cli-maint}
+
+{% collapsible To take your store out of maintenance mode after a successful upgrade: %}
+
+Enter the following command:
+
+	php <your Magento install dir>/bin/magento magento maintenance:disable
+
 {% endcollapsible %}
 
 
