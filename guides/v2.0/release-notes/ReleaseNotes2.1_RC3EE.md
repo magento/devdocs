@@ -9,6 +9,8 @@ version: 2.0
 github_link: release-notes/ReleaseNotes2.1_RC3EE.md
 ---
 
+Hello
+
 <h2>Magento Enterprise Edition 2.1 Release Candidate 3 (RC3)</h2>
 We are pleased to present Magento 2.1 Release Candidate 3 (RC3). This release candidate build is not intended for production purposes. Instead, it provides the development community opportunities to: 
 
