@@ -46,44 +46,7 @@ Magento Enterprise Edition 2.1 includes several new and exciting features:
  
 
 
-<h3>Known issues</h3>
-Magento 2.1 RC3 includes the following known issues:
-
-
-
-
 <h3>Fixed issues</h3>
-<!--- P0 issues -->
-
-<h4>Solr search</h4>
-
-
-
-<h4>Checkout</h4>
-
-
-
-<h4>Bundle products</h4>
-
-
-
-
-
-<h4>Miscellaneous</h4>
-
-
-<h4>Performance enhancements</h4>
-<!--- 53530-->* Category page performance has significantly improved when categories contain more than 30000 items. 
-
-<!--- 53223-->* Setting the Merge CSS Files option to Yes no longer reduces product performance. <a href="https://github.com/magento/magento2/issues/4710" target="_blank">(GITHUB-4710)</a>
-
-
-<h4>Messages and documentation</h4>
-
-<!--- 52993-->* Media Uploader error messages now make it clear the SVG file format is not supported. <a href="https://github.com/magento/magento2/issues/2958" target="_blank">(GITHUB-2958)</a>
-
-<!--- 53008-->* The Swagger-generated docs for the REST API now display the property identifiers formatted as camelCaseFormat. <a href="https://github.com/magento/magento2/issues/4925" target="_blank">(GITHUB-4925)</a>
-
 
 <h4>Staging</h4>
 
@@ -99,9 +62,48 @@ Magento 2.1 RC3 includes the following known issues:
 
 <!--- 53170-->* The Update Cart Quantity event now correctly observes add or remove cart actions. 
 
+<h4>Security enhancement</h4>
+
+
+<!--- 52867-->* Magento no longer discloses sensitive information about the server when an invalid URL has been requested. 
+
+
+<h4>Performance enhancements</h4>
+<!--- 53530-->* Category page performance has significantly improved when categories contain more than 30000 items. 
+
+<!--- 53223-->* Setting the Merge CSS Files option to Yes no longer reduces product performance. <a href="https://github.com/magento/magento2/issues/4710" target="_blank">(GITHUB-4710)</a>
+
+
+
 <h4>Import/Export</h4>
 
 <!--- 54200-->* Magento now successfully imports products with  a "gift_message_available" parameter. Previously, Magento exported the wrong "gift_message_available" parameter, which resulted in a validation error. (54200)
+
+
+<h4>Varnish</h4>
+
+<!--- 52923-->* Switching to Varnish causes category menu to force HTTPS links. default header is now standard "X-Forwarded-Proto<a href="https://github.com/magento/magento2/issues/4540" target="_blank">(GITHUB-4540)</a>
+
+<!--- 54228-->* Varnish cache is no longer disabled due to HTML requests. 
+
+
+
+<h4>Messages and documentation</h4>
+<!--- 52993-->* Media Uploader error messages now make it clear the SVG file format is not supported. <a href="https://github.com/magento/magento2/issues/2958" target="_blank">(GITHUB-2958)</a>
+
+<!--- 53008-->* The Swagger-generated docs for the REST API now display the property identifiers formatted as camelCaseFormat. <a href="https://github.com/magento/magento2/issues/4925" target="_blank">(GITHUB-4925)</a>
+
+<!--- 54255-->*  Magento now displays enhanced messages for cache management exceptions. 
+
+
+<h4>Payment methods</h4>
+
+<!--- 53238-->* Magento no longer displays the Payflow Pro option for the Vault Provider field for countries where that option is unavailable. 
+
+<!--- 54214-->* Problems placing an order using the Payflow Pro payment method have been resolved. 
+
+<!--- 54293-->*  You can now place an order using the Braintree Credit card as the payment method when 3D Secure Verification is enabled. 
+
 
 <h4>Miscellaneous</h4>
 
@@ -180,15 +182,8 @@ Magento 2.1 RC3 includes the following known issues:
 
 
 
-
-<h4>Security enhancement</h4>
-
-
-<!--- 52867-->* Magento no longer discloses sensitive information about the server when an invalid URL has been requested. 
-
-
 <h3>Known issues</h3>
-Magento Community Edition 2.1, Release Candidate 3 includes the following known issues: 
+Magento Enterprise Edition 2.1, Release Candidate 3 includes the following known issues: 
 
 <!--- 54445-->* Process of uninstalling modules unexpectedly stalls. Workaround: Ensure that your `<magento root>/var/composer_home/auth.json` file contains your authentication keys. 
 
