@@ -52,14 +52,7 @@ These are the individual changes contained within an update.<br>
 <img src="img/Staging_Dashboard_0006_timeline_notes.jpg">
 <br>
 
-1. “Past” link in header of timeline is a link to the Change Log, a list of past updates, including both those with end dates and ‘permanent’ updates (without end dates). 
-
-2. ‘Permanent’ updates are collected in an Active Permanent Updates bar that appears at the top pf the timeline. This bar should display a # of updates relative to the “From” date set for the timeline. This text is a link that leads to a Change Log that only contains the Permanent Updates, unlike the change log associated with the “Past” link.
-
-3. The control to move the time line to the left is disabled when the “Past” column is in view. Once the timeline is scrolled to see upcoming events the control becomes active.
-
-4. The user can scroll the timeline to see upcoming updates by tapping the arrow on an update, scolling the timeline with scroll control, or the right arrow.
-
+1. The user can scroll the timeline to see upcoming updates by tapping the arrow on an update, scolling the timeline with scroll control, or the right arrow.
 
 
 #### Update schedule:
