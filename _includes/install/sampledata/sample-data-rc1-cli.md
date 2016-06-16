@@ -72,6 +72,12 @@ After you've reset file system permissions:
 
 {% include install/sampledata/file-sys-perms-digest.md %}
 
-{% endcollapsible %}
+
+### Disable maintenance mode {#upgrade-cli-maint}
+
+Enter the following command:
+
+	php <your Magento install dir>/bin/magento magento maintenance:disable
+
 
 
