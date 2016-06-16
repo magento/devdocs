@@ -25,10 +25,6 @@ Extensions that wish to intercept and change the behavior of a *public method* c
 
 This interception approach reduces conflicts among extensions that change the behavior of the same class or method. Your `Plugin` class implementation changes the behavior of a class function, but it does not change the class itself. Because they can be called sequentially according to a configured sort order, these interceptors do not conflict with one another.
 
-<div class="bs-callout bs-callout-info" markdown="1">
-  Even though you can use plugins to substitute class behavior, the recommended strategy is to use [dependency injection and virtual types]({{ site.gdeurl }}extension-dev-guide/depend-inj.html#configuring-type).
-</div>
-
 #### Limitations
 
 Plugins cannot be used with any of the following:
@@ -195,6 +191,7 @@ For example, the developer can disable a global plugin in the backend area by di
 ### Related topics
 
 *  [Dependency injection]({{ site.gdeurl }}extension-dev-guide/depend-inj.html)
+*  [Events and observers]({{site.gdeurl}}extension-dev-guide/events-and-observers.html)
 
 ### Related information
 
