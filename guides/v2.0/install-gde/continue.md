@@ -33,7 +33,7 @@ Consult the following table for how to get started.
 			<th>Get started link</th>
 		</tr>
 	<tr>
-		<td><p>Easy installation, no command line, have your own server</p></td>
+		<td><p>Easy installation, command line, have your own server</p></td>
 		<td><p>Some technical expertise, command line access to the Magento server.</p></td>
 		<td><ol><li>Downloads a compressed file that contains the Magento software.</li>
 			<li>Extracts it on the Magento server or asks a network administrator to do so.</li>
