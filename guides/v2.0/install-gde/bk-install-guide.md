@@ -6,6 +6,7 @@ title: Installation overview
 menu_title: Installation overview
 menu_node: 
 menu_order: 1
+version: 2.0
 github_link: install-gde/bk-install-guide.md
 redirect_from: 
   - /guides/v1.0/install-gde/bk-install-guide.html
@@ -40,7 +41,7 @@ Use the following table to verify you have the correct prerequisites to install 
 			<p>(Don't forget to <a href="{{ site.gdeurl }}install-gde/prereq/apache.html#apache-help-rewrite">enable rewrites and <code>.htaccess</code></a>!)</p></td>
 	</tr>
 	<tr>
-		<td><p>PHP 7.0.2, 5.6.x or 5.5.x (PHP 5.4 is not supported)</p>
+		<td><p>PHP 7.0.2–7.0.6 except for 7.0.5, 5.6.x or 5.5.x (PHP 5.4 is not supported)</p>
 			<p>See <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_install-issues.html#known-devrc-php">Known issue with certain PHP versions</a></p></td>
 		<td><p><code>php -v</code></p></td>
 		<td><a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a><br><a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP CentOS</a></td>

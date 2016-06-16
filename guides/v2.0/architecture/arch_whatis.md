@@ -6,6 +6,7 @@ title: What is Magento?
 menu_title: Introduction
 menu_node: parent
 menu_order: 1
+version: 2.0
 github_link: architecture/arch_whatis.md
 redirect_from: /guides/v1.0/architecture/arch_whatis.html
 ---

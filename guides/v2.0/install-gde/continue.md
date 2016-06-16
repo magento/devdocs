@@ -6,6 +6,7 @@ title: Next&mdash;Choose how to install the Magento software
 menu_title: Next&mdash;Choose how to install the Magento software
 menu_node: parent
 menu_order: 1
+version: 2.0
 github_link: install-gde/continue.md
 redirect_from: 
   - /guides/v1.0/install-gde/continue.html
@@ -32,7 +33,7 @@ Consult the following table for how to get started.
 			<th>Get started link</th>
 		</tr>
 	<tr>
-		<td><p>Easy installation, no command line, have your own server</p></td>
+		<td><p>Easy installation, command line, have your own server</p></td>
 		<td><p>Some technical expertise, command line access to the Magento server.</p></td>
 		<td><ol><li>Downloads a compressed file that contains the Magento software.</li>
 			<li>Extracts it on the Magento server or asks a network administrator to do so.</li>

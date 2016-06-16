@@ -4,6 +4,7 @@ group: release-notes
 subgroup: Breaking changes
 title: Magento CE Backward Incompatible Changes
 menu_title: Magento CE
+version: 2.0
 github_link: release-notes/changes/ce_changes.md
 ---
 

@@ -5,6 +5,7 @@ subgroup: Migration
 title: Data Migration
 menu_title: Data Migration
 menu_order: 4
+version: 2.0
 github_link: howdoi/migrate/migrate-data.md
 ---
 

@@ -6,6 +6,7 @@ title: Database caching
 menu_title: Database caching
 menu_order: 10
 menu_node: 
+version: 2.0
 github_link: config-guide/database/database.md
 ---
 

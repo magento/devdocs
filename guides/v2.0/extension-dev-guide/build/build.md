@@ -6,6 +6,7 @@ title: Build
 menu_title: Build
 menu_order: 1
 menu_node: parent
+version: 2.0
 github_link: extension-dev-guide/build/build.md
 redirect_from: /guides/v2.0/extension-dev-guide/build.html
 ---

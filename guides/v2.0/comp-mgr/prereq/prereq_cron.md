@@ -6,6 +6,7 @@ title: Set up cron for Component Manager and System Upgrade
 menu_title: Set up cron for Component Manager and System Upgrade
 menu_order: 3
 menu_node: 
+version: 2.0
 github_link: comp-mgr/prereq/prereq_cron.md
 redirect_from: /guides/v2.0/comp-mgr/prereq/prereq_compman-updater.html
 ---

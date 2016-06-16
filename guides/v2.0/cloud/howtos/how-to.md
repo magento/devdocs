@@ -6,6 +6,7 @@ title: Tutorials
 menu_title: Tutorials
 menu_order: 1
 menu_node: parent
+version: 2.0
 github_link: cloud/howtos/how-to.md
 ---
 
@@ -16,7 +17,16 @@ Have suggestions? Open [an issue](https://github.com/magento/devdocs/issues){:ta
 
 Current topics:
 
-*	[Tutorial&mdash;Upgrade the Magento system software]({{ site.gdeurl }}cloud/howtos/upgrade-magento.html)
-*	[Tutorial&mdash;Install optional sample data]({{ site.gdeurl }}cloud/howtos/sample-data.html)
-*	[Tutorial&mdash;Set Magento environment variables]({{ site.gdeurl }}cloud/howtos/environment-tutorial-set-mage-vars.html)
-*	[Tutorial&mdash;Merge and delete an environment]({{ site.gdeurl }}cloud/howtos/environment-tutorial-env-merge.html)
+*	Install components, upgrade, update
+
+	*	[Upgrade the Magento system software]({{ site.gdeurl }}cloud/howtos/upgrade-magento.html)
+	*	[Install components]({{ site.gdeurl }}cloud/howtos/install-components.html)
+	*	[Update components]({{ site.gdeurl }}cloud/howtos/update-components.html)
+
+*	Environments
+
+	*	[Set Magento environment variables]({{ site.gdeurl }}cloud/howtos/environment-tutorial-set-mage-vars.html)
+	*	[Merge and delete an environment]({{ site.gdeurl }}cloud/howtos/environment-tutorial-env-merge.html)
+	
+*	[Install optional sample data]({{ site.gdeurl }}cloud/howtos/sample-data.html)
+

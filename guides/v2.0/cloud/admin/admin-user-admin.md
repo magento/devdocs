@@ -6,6 +6,7 @@ title: Manage users
 menu_title: Manage users
 menu_order: 2
 menu_node: 
+version: 2.0
 github_link: cloud/admin/admin-user-admin.md
 ---
 
@@ -104,6 +105,6 @@ her details and register an account name and a password.
 
 To change Alice's role on the environment `development` to `admin`, use the following command:
 
-	platform user:role alice@example.com --level environment --environment development --role admin
+	magento-cloud user:role alice@example.com --level environment --environment development --role admin
 
-Use `platform list` to get the full list of commands.
+Use `magento-cloud list` to get the full list of commands.

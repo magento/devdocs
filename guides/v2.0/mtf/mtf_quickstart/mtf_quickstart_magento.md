@@ -5,6 +5,7 @@ subgroup: 30_Quickstart
 title: Quick start with the Functional Testing Framework
 menu_title: Prepare Magento application
 menu_order: 1
+version: 2.0
 github_link: mtf/mtf_quickstart/mtf_quickstart_magento.md
 ---
 
@@ -36,14 +37,12 @@ A Selenium web-driver cannot enter data to fields with WYSIWYG. This option disa
 
 ![Refresh Page Cache]({{site.baseurl}}common/images/mtf_cache_refresh.png)
 
-
 ## Change security settings
 
-Enable the Admin Account Sharing setting to avoid unpredictable logout during testing session. And disable the Secret Key in URL setting to open pages using direct URLs.
+Disable the Secret Key in URL setting to open pages using direct URLs.
 
 1. Follow **Stores &gt; Configuration &gt; Advanced &gt; Admin &gt; Security**.
-2. Set **Admin Account Sharing** to **Yes**.
-3. Set **Add Secret Key to URLs** to **No**.
+2. Set **Add Secret Key to URLs** to **No**.
 
 ![Change security settings]({{site.baseurl}}common/images/mtf_qstart_mag_secur.png){:width="650px"}
 

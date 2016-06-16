@@ -6,6 +6,7 @@ title: Verify the installation
 menu_title: Verify the installation
 menu_node: parent
 menu_order: 1
+version: 2.0
 github_link: install-gde/install/verify.md
 redirect_from: /guides/v1.0/install-gde/install/verify.html
 ---
@@ -35,7 +36,7 @@ The following figure shows a sample storefront page. If it displays as follows, 
 
 <p><img src="{{ site.baseurl }}common/images/install-success_store.png" width="450px" alt="Magento storefront which verifies a successful installation"></p>
 
-If the page displays unconfigured (no styles, only text), see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics</a>.
+If the page displays a 404 (Not Found) or unconfigured (no styles, only text), see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics</a>.
 
 <h2 id="instgde-verify-admin">Verify the Magento Admin</h2>
 

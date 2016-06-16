@@ -33,7 +33,7 @@ Do you know what a "terminal" application is? Do you know what operating system 
 *	<a href="{{ site.gdeurl }}install-gde/trouble/tshoot.html">Troubleshooting</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/post-install-config.html">Configuring</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/sample-data-after-magento.html">Optional sample data (after installing Magento)</a>
-*	[Magento in production]({{ site.gdeurl }}howdoi/deploy/prod.html)
+*	[Magento in production]({{ site.gdeurl }}howdoi/deploy/deploy-to-prod.html)
 {% endcollapsible %}
 
 ## Upgrade, update
@@ -45,6 +45,6 @@ Do you know what a "terminal" application is? Do you know what operating system 
 {% endcollapsible %}
 
 ## Deploy to production
-<a href="{{ site.gdeurl }}howdoi/deploy/prod.html">Deploy Magento to production</a>
+[Deploy Magento to production]({{ site.gdeurl }}howdoi/deploy/deploy-to-prod.html)
 
 *[Contributing developers]: A developer who contributes code to the Magento 2 CE codebase

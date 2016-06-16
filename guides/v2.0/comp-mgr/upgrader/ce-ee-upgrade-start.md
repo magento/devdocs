@@ -6,6 +6,7 @@ title: Upgrade from CE to EE
 menu_title: Upgrade from CE to EE
 menu_node: parent
 menu_order: 1
+version: 2.0
 github_link: comp-mgr/upgrader/ce-ee-upgrade-start.md
 ---
 

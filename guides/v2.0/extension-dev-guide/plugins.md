@@ -5,6 +5,7 @@ subgroup: 99_Module Development
 title: Plugins (Interceptors)
 menu_title: Plugins (Interceptors)
 menu_order: 10
+version: 2.0
 github_link: extension-dev-guide/plugins.md
 redirect_from:
   - /guides/v1.0/extension-dev-guide/plugins.html
@@ -196,5 +197,6 @@ For example, the developer can disable a global plugin in the backend area by di
 *  [Dependency injection]({{ site.gdeurl }}extension-dev-guide/depend-inj.html)
 
 ### Related information
+
 * [The Plugin Integration Test Kata](http://vinaikopp.com/2016/03/07/04_the_plugin_integration_test_kata){:target="_blank"} by Magento contributor [Vinai Kopp](http://vinaikopp.com/blog/list){:target="_blank"}
 * [The Around Interceptor Kata](http://vinaikopp.com/2016/02/22/03_the_around_interceptor_kata){:target="_blank"} by Magento contributor [Vinai Kopp](http://vinaikopp.com/blog/list){:target="_blank"}

@@ -5,6 +5,7 @@ subgroup: 1_Javascript
 title: Use custom JavaScript
 menu_order: 3
 menu_title: Use custom JavaScript
+version: 2.0
 github_link: javascript-dev-guide/javascript/custom_js.md
 redirect_from:
   - guides/v2.0/frontend-dev-guide/javascript/custom_js.html

@@ -5,6 +5,7 @@ subgroup: D_SOAP
 title: Consuming Services via SOAP
 menu_title: Consuming Services
 menu_order: 2
+version: 2.0
 github_link: get-started/soap/soap-web-api-calls.md
 redirect_from: /guides/v1.0/rest/soap/soap-web-api-calls.html
 
@@ -105,12 +106,9 @@ $opts = array(
         );
 $wsdlUrl = 'http://magento.ll/soap/default?wsdl=1&services=testModule1AllSoapAndRestV1';
 $serviceArgs = array("id"=>1);
- 
-$soapClient = new Zend\Soap\Client($wsdlUrl);
-$soapClient->setSoapVersion(SOAP_1_2);
- 
+
 $context = stream_context_create($opts);
-$soapClient->setStreamContext($context);
+$soapClient = new SoapClient($wsdlUrl, ['version' => SOAP_1_2, 'context' => $context]);
  
 $soapResponse = $soapClient->testModule1AllSoapAndRestV1Item($serviceArgs); ?>
 {% endhighlight %}

@@ -5,6 +5,7 @@ subgroup: Architectural Basics
 title: Architectural diagrams
 menu_title: Architectural diagrams
 menu_order: 1
+version: 2.0
 github_link: architecture/archi_perspectives/arch_diagrams.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/arch_diagrams.html
 ---
@@ -19,29 +20,7 @@ The following diagram illustrates the components of Magento, and shows the "laye
 
 <p><img src="{{ site.baseurl }}common/images/archi_diagrams_layers_alt4.jpg" alt="Magento architecture layers"></p>
 
-<h3 id="archi-topo">Topology</h3>
-
-The topology diagram illustrates a typical implementation. 
-
-[//]: # "The technologies that are required, and must be implemented, are indicated; be aware that this is the components of Magento, and shows the "layer" or tiers, for each component, including the Magento framework, 3rd party libraries, the supported database, and other technologies."
-
-*Diagram will be published in a later sprint.*
-
-<h3 id="archi-module">Module diagram</h3>
-
-The module diagram illustrates the various components and dependencies within a typical Magento module. 
-
-*Diagram will be published in a later sprint.*
-
-<h3 id="archi-builder">Online store front diagram</h3>
-
-The following diagram shows the perspective of a user who wants to build an online store front or application. 
-
-*Diagram will be published in a later sprint.*
-
-
-<h3 id="m2arch-related">Related topics</h3>
-
+#### Related topics
 * <a href="{{ site.gdeurl }}architecture/arch_asmodsys.html">Magento as a modular system</a>
 * <a href="{{ site.gdeurl }}architecture/archi_perspectives/ALayers_intro.html">Architecture layers overview</a>
 

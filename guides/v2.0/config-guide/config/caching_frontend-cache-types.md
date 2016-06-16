@@ -6,6 +6,7 @@ title: Associate cache frontends with cache types
 menu_title: Associate cache frontends with cache types
 menu_order: 2
 menu_node: 
+version: 2.0
 github_link: config-guide/config/caching_frontend-cache-types.md
 ---
 

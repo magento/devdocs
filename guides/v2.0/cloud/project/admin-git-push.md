@@ -6,6 +6,7 @@ title: git push details
 menu_title: git push details (remove or rewrite)
 menu_order: 100
 menu_node: 
+version: 2.0
 github_link: cloud/project/admin-git-push.md
 ---
 
@@ -20,7 +21,7 @@ This topic discusses a sample PHP project with a lot of data backends; and that 
 during its build process.
 
 In this example, a developer wants to work on a new feature so they created a new environment by
-running `platform environment:branch maximal`, where `maximal` is the name of the 
+running `magento-cloud environment:branch maximal`, where `maximal` is the name of the 
 branch.
 
 After modifying some files, the developer pushed the changes using:

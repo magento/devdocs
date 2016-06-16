@@ -6,6 +6,7 @@ title: Get started with an environment
 menu_title: Get started with an environment
 menu_order: 2
 menu_node: 
+version: 2.0
 github_link: cloud/env/environments-start.md
 ---
 
@@ -116,4 +117,4 @@ You can find information like `<database user name>` in `<your Magento install d
 #### Related topics
 *	[Manage your environments]({{ site.gdeurl }}cloud/env/environments.html)
 *	[Overview of environment variables]({{ site.gdeurl }}cloud/env/environment-vars_over.html)
-*	[Tutorial&mdash;Set Magento environment variables]({{ site.gdeurl }}cloud/env/environment-tutorial-set-mage-vars.html)
+*	[Set Magento environment variables]({{ site.gdeurl }}cloud/env/environment-tutorial-set-mage-vars.html)

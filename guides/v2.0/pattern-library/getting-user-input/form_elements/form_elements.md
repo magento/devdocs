@@ -121,6 +121,7 @@ Often times a text field will be paired with a checkbox to enable some behavior 
 A control may be placed inside (overlaid on) a text field to “trigger” a more sophisticated
 or robust interaction, as in the case of something like **date picker**. The icon should appear on the far right end of the field. Once a user has interacted with the control and a value is set, the value should display in the field, as well as the control (icon). This of course allows the user to edit the field if they so desire.
 
+
 <img src="img/date_pick.png">
 
 When an ancillary or sub-action must be performed using the data input (or selected from) a particular element a, “button” may be required to initiate the sub-action and should be located in close proximity to the form element. If the sub-action involves a single form field an icon should be used and should directly follow the form element.

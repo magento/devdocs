@@ -6,6 +6,7 @@ title: Create a sample Magento project from a template
 menu_title: Create a sample Magento project from a template
 menu_order: 3
 menu_node: 
+version: 2.0
 github_link: cloud/access-acct/first-time-setup_template.md
 ---
 
@@ -39,18 +40,14 @@ To set up a Magento project using a template:
 
 	*	Click **visit your site** to see your new Magento site.
 
-		To access the Magento Admin, add `/admin` to the end of the URL and log in as follows:
-
-		*	Username: `admin`
-		*	Password: `admin12`
-
 		<div class="bs-callout bs-callout-warning">
-    		<p>For security reasons, we strongly recommend you change your Magento Admin URI and administrator password. For step-by-step details, see <a href="{{ site.gdeurl }}cloud/env/environment-tutorial-set-mage-vars.html">Tutorial&mdash;Set Magento environment variables</a>.</p>
+    		<p>For security reasons, we strongly recommend you change your Magento Admin URI, administrator user name, and administrator password. For step-by-step details, see <a href="{{ site.gdeurl }}cloud/env/environment-tutorial-set-mage-vars.html">Tutorial&mdash;Set Magento environment variables</a>.</p>
 		</div>
 
 	*	Click **configure project** to start configuring the project.
 
 		See [Manage your projects]({{ site.gdeurl }}cloud/project/projects.html) for more information.
+	*	[Clone the project ]({{ site.gdeurl }}cloud/project/project-webint-basic.html#project-access)
 	*	Set up configuration files:
 
 		*	[`.magento.app.yml`]({{ site.gdeurl }}cloud/project/project-conf-files_magento-app.html)

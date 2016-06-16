@@ -6,6 +6,7 @@ title: DevDocs Contributor Bios
 menu_title: DevDocs Contributor Bios
 menu_node: 
 menu_order: 1
+version: 2.0
 github_link: howdoi/howdoi_bios.md
 ---
 

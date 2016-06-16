@@ -5,6 +5,7 @@ subgroup: Architecture
 title: Libraries
 menu_title: Libraries
 menu_order: 
+version: 2.0
 github_link: architecture/arch_libraries.md
 redirect_from: /guides/v1.0/architecture/arch_libraries.html
 ---

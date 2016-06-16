@@ -5,6 +5,7 @@ subgroup: 15_RabbitMQ
 title: Manage message queues with MySQL
 menu_title: MySQL message queues
 menu_order: 3
+version: 2.0
 github_link: config-guide/mq/manage-mysql.md
 ---
 

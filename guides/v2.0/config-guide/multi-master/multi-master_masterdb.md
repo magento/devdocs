@@ -6,6 +6,7 @@ title: Automatically configure master databases
 menu_title: Automatically configure master databases
 menu_order: 2
 menu_node: 
+version: 2.0
 github_link: config-guide/multi-master/multi-master_masterdb.md
 ---
 

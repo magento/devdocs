@@ -2,20 +2,21 @@
 layout: default
 group: cloud
 subgroup: 10_howto
-title: Tutorial&mdash;Set Magento environment variables
-menu_title: Tutorial&mdash;Set Magento environment variables
-menu_order: 6
+title: Set Magento environment variables
+menu_title: Set Magento environment variables
+menu_order: 11
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: env-tut
+version: 2.0
 github_link: cloud/howtos/environment-tutorial-set-mage-vars.md
 redirect_from: guides/v2.0/cloud/env/environment-tutorial-set-mage-vars.html
 ---
 
-## Tutorial: change the Magento Admin URI and password {#cloud-env-vars-magento-admin-tut}
-For security reasons, we strongly recommend you change the Magento Admin URI and the administrator's password. This makes it harder for someone else to log in to the Magento Admin and change settings.
+## Tutorial: change the Magento Admin URI, user name, and password {#cloud-env-vars-magento-admin-tut}
+For security reasons, we strongly recommend you change the Magento Admin URI, administrator user name, and the administrator's password. This makes it harder for someone else to log in to the Magento Admin and change settings.
 
-Remember that environment variables are inherited from the parent environment to child environments. You should make these changes in the `master` environment so all other environments start with the same values.
+Environment variables are inherited from the parent environment to child environments. You should make these changes in the `master` environment so all other environments start with the same values.
 
 You can use the same tasks to change any variable discussed in the preceding section.
 
@@ -28,14 +29,17 @@ To change the Admin URI and administrator password:
 1.  Set the variable values.
 
         magento-cloud variable:set <name> <value> -e <environment ID>
+2.  To set the administrator's user name to `meister_x2U8` in the `master` environment, enter:
 
-9.  For example, to set the administrator's password to `admin_A456` in an environment with ID `admin`, enter:
+        magento-cloud variable:set ADMIN_USERNAME meister_x2U8 -e master
+3.  Wait for the project to redeploy.
+2.  To set the administrator's password to `admin_A456`, enter:
 
-        magento-cloud variable:set ADMIN_PASSWORD admin_A456 -e admin
+        magento-cloud variable:set ADMIN_PASSWORD admin_A456 -e master
 6.  Wait while the project redeploys.
-7.  Set the Admin URI to `magento_A8v10`, enter:
+7.  To set the Admin URI to `magento_A8v10`, enter:
 
-        magento-cloud variable:set ADMIN_URL magento_A8v10 -e admin
+        magento-cloud variable:set ADMIN_URL magento_A8v10 -e master
 6.  Wait while the project redeploys.
 7.  Log in to the Magento Admin using the values you just changed.
 
@@ -75,4 +79,4 @@ To change the Admin URI and administrator password:
 		+----------------+---------------+-----------+------+
 
 #### Related topic
-[Tutorial&mdash;Merge an environment]({{ site.gdeurl }}cloud/env/environment-tutorial-env-merge.html)
+[Merge an environment]({{ site.gdeurl }}cloud/env/environment-tutorial-env-merge.html)

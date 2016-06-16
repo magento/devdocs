@@ -6,6 +6,7 @@ title: Admin Design Pattern Library
 menu_title: Introduction
 menu_order: 
 menu_node: 
+version: 2.0
 github_link: pattern-library/bk-pattern.md
 redirect_from: /guides/v1.0/pattern-library/bk-pattern.html
 ---

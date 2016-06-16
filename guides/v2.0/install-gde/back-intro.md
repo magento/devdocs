@@ -6,6 +6,7 @@ title: Go back to the Magento installation overview
 menu_title: Go back to the Magento installation overview
 menu_node: parent
 menu_order: 1
+version: 2.0
 github_link: install-gde/back-intro.md
 redirect_from: /guides/v1.0/install-gde/back-intro.html
 ---

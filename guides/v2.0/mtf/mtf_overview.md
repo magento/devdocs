@@ -6,6 +6,7 @@ title: Magento functional testing overview
 menu_title: Functional testing overview
 menu_node: parent
 menu_order: 1
+version: 2.0
 github_link: mtf/mtf_overview.md
 ---
 

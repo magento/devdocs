@@ -5,6 +5,7 @@ subgroup: Release Notes
 title: Magento EE 2.1 Release Candidate 1 (RC1) Release Notes 
 menu_title: Magento EE 2.1 Release Candidate 1 (RC1) Release Notes 
 menu_order: 16
+version: 2.0
 github_link: release-notes/ReleaseNotes2.1_RC1EE.md
 ---
 
@@ -99,65 +100,55 @@ This release includes fixes for the following GitHub issues:
 
 <!--- 40320 --> * Attribute 'setup_version' is missing for module error when defined as optional. <a href="https://github.com/magento/magento2/issues/1493" target="_blank">(GITHUB-1493)</a>
 
-
-
-
-
-
-
-
 <h3>Technology stack</h3>
 
-Our technology stack is built on PHP and MySQL. Magento 2.1 Release Candidate 1 (RC1) supports PHP 5.6, 7.0.2, and 7.0.6. It supports MySQL 5.6.
+Our technology stack is built on PHP and MySQL. Magento 2.1 Release Candidate 1 (RC1) supports PHP 5.6, 7.0.2&mdash;7.0.4, and 7.0.6. It supports MySQL 5.6.
 
 We do not support PHP 5.5. 
 
-
-<h3>Installation instructions</h3>
-
+## Installation and upgrade instructions
 You can install Magento Enterprise Edition 2.1 Release Candidate 1 (RC1) using Composer. 
 
 This Release Candidate is for test purposes only. Do not install it in a production environment.
 
-<div class="bs-callout bs-callout-warning">
-    <p>We did not publish sample data for RC1. Do not attempt to install RC1 sample data or upgrade to RC1 if you already have sample data (you can, however, perform a fresh RC1 installation in a different location in your web server's docroot).</p>
-</div>
+See one of the following sections:
 
+*	[Install using Composer](#install-rc-composer)
+*	[Upgrade existing installations](#upgrade-rc-nosamp)
+*	[Upgrade to an RC with sample data](#upgrade-rc-samp)
 
-#####<b>Install using Composer</b>#####
+## Install using Composer {#install-rc-composer}
 This Release Candidate is available from `repo.magento.com`. Before installing this Release Candidate using Composer,  familiarize yourself with these  <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run:
 
-		composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.1.0-rc1 <installation directory name>
+		composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.1.0-rc2 <installation directory name>
 
-<h4><b>Upgrade existing installations</b></h4>
-<!-- If you installed Magento Community Edition 2.0.0 from an archive, you must perform some additional tasks before you can upgrade your installation. Current users of Magento 2.0.0/2.0.1/2.0.2/2.0.3/2.0.4/2.0.5/2.0.6 must first update the installer from the command line.  -->
+## Upgrade existing installations {#upgrade-rc-nosamp}
+This section discusses how to upgrade to a Release Candidate *without* sample data.
 
-This section discusses how to upgrade to a Release Candidate.
+If you installed optional sample data, see [Upgrade to an RC with sample data](#upgrade-rc-samp) instead.
 
 <div class="bs-callout bs-callout-warning">
     <p><em>Do not</em> upgrade to a Release Candidate on a production system. Upgrade to a Release Candidate on a development system only.</p>
 </div>
 
-**Upgrade using the Setup Wizard**
+### Upgrade using the Setup Wizard
 Use the instructions in [Start System Upgrade]({{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html). When prompted to choose a version, choose a Release Candidate.
 
-**Upgrade an existing installation from the GitHub repository**
+### Upgrade an existing installation from the GitHub repository
 Developers who contribute to the CE codebase can <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento CE GitHub repository.
 
 1.	Go to the <a href="{{ site.gdeurl }}install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.
 
 2.	Follow the instructions to pull the updates from the repository and update using Composer.
 
-**Upgrade using the command line**
-To upgrade to a Release Candidate using the command line:
+### Upgrade using the command line
+
+{% collapsible To upgrade to a Release Candidate using the command line: %}
 
 1.	Log in to your Magento server as, or switch to, the Magento file system owner.
 2.	Change to the directory in which you installed the Magento software.
 
 	For example, `cd /var/www/html/magento2`
-2.	Enter the following command to disable the cache:
-
-		php bin/magento cache:disable
 2.	Enter the following commands in the order shown:
 
 		composer require <product> 2.1.0-rc1 --no-update
@@ -177,9 +168,12 @@ To upgrade to a Release Candidate using the command line:
 4. Update the database schema and data:
 
 		php bin/magento setup:upgrade
-5.	Enter the following command to enable the cache:
 
-		php bin/magento cache:enable
+{% endcollapsible %}
+
+## Upgrade to an RC with sample data {#upgrade-rc-samp}
+
+{% include install/sampledata/sample-data-rc1-cli.md %}
 
 
 

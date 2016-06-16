@@ -6,6 +6,7 @@ title: .magento.app.yaml
 menu_title: .magento.app.yaml
 menu_order: 11
 menu_node: 
+version: 2.0
 github_link: cloud/project/project-conf-files_magento-app.md
 ---
 
@@ -405,15 +406,16 @@ schedule.
 
 `crons` supports the following:
 
-*	`spec`: The cron specification. For example: `*/20 * * * *`.
+*	`spec`: The cron specification. Regardless of the setting, cron runs every 5 minutes.
 *	`cmd`: The command to execute.
 
-	Magento Enterprise Cloud Edition requires the following cron job:
+A sample Magento cron job follows:
 
-		*/5 * * * * <path-to-php-binary> -c <ini-file-path> <your Magento install dir>/bin/magento cron:run 
-		
-The minimum interval between cron runs is 5 minutes, even if you specify a smaller value.
-
+	crons:
+    cronrun:
+        spec: "*/1 * * * *"
+        cmd: "php bin/magento cron:run"
+        
 {% endcollapsible %}
 
 ## Configure PHP options {#cloud-yaml-platform-php}

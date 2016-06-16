@@ -5,8 +5,9 @@ subgroup: C_Templates
 title: Templates customization walkthrough
 menu_title: Templates customization walkthrough
 menu_order: 2
-github_link: frontend-dev-guide/templates/template-overview.md
-redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-overview.html
+version: 2.0
+github_link: frontend-dev-guide/templates/template-walkthrough.md
+redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-walkthrough.html
 ---
 
 ## What's in this topic

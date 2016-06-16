@@ -5,6 +5,7 @@ subgroup: Architectural Layers
 title: Magento Blocks and Controllers
 menu_title: Magento Blocks and Controllers
 menu_order: 
+version: 2.0
 github_link: architecture/archi_perspectives/controllers_intro.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/controllers_intro.html
 ---

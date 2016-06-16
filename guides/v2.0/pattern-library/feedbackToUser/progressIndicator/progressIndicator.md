@@ -6,6 +6,7 @@ title: Admin Design Pattern Library
 menu_title: Progress Indicator
 menu_order: 1
 menu_node: 
+version: 2.0
 github_link: pattern-library/feedbackToUser/progressIndicator/progressIndicator.md
 redirect_from: /guides/v1.0/pattern-library/feedbackToUser/progressIndicator/progressIndicator.html
 ---

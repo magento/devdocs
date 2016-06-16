@@ -5,6 +5,7 @@ subgroup: E_rwd
 title: CSS in responsive design
 menu_title: CSS in responsive design
 menu_order: 2
+version: 2.0
 github_link: frontend-dev-guide/responsive-web-design/rwd_css.md
 redirect_from: /guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_css.html
 ---

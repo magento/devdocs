@@ -6,6 +6,7 @@ title: Install and configure Solr
 menu_title: Install and configure Solr (Enterprise Edition only)
 menu_order: 1
 menu_node: parent
+version: 2.0
 github_link: config-guide/solr/solr-overview.md
 ---
 

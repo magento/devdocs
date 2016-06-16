@@ -5,6 +5,7 @@ subgroup: Migration
 title: Migrate extensions
 menu_title: Migrate extensions
 menu_order: 2
+version: 2.0
 github_link: howdoi/migrate/migrate-extensions.md
 ---
 
