@@ -162,7 +162,7 @@ Magento Community Edition 2.1 includes several new and exciting features:
 <h3>Known issues</h3>
 Magento Community Edition 2.1, Release Candidate 3 includes the following known issues: 
 
-<!--- 54445-->* Process of uninstalling modules unexpectedly stalls. Workaround: Ensure that your `<magento root>/var/composer_home/auth.json` file contains your authentication keys. 
+<!--- 54445-->* The process of uninstalling modules using command-line tools unexpectedly stalls. Workaround: Ensure that your `<magento root>/var/composer_home/auth.json` file contains your authentication keys. 
 
 <!--- 54443-->* Magento is not successfully updating images to all staged store views, including server-side and default storefront images. 
 
@@ -176,7 +176,8 @@ Magento Community Edition 2.1, Release Candidate 3 includes the following known 
 Our technology stack is built on PHP and MySQL. Magento 2.1 RC3 supports:
 
 * PHP 5.6
-* PHP 7.0.2+ (with the exception of 7.0.5, due to a PHP bug)
+* PHP 7.0.2
+* PHP 7.0.6 + up until 7.1
 * MySQL 5.6.
 
 We do not support PHP 5.5.x or 7.0.5. 

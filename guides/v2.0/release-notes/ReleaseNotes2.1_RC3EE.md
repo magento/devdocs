@@ -196,7 +196,8 @@ Magento Enterprise Edition 2.1, Release Candidate 3 includes the following known
 Our technology stack is built on PHP and MySQL. Magento 2.1 RC3 supports:
 
 * PHP 5.6
-* PHP 7.0.2+ (with the exception of 7.0.5, due to a PHP bug)
+* PHP 7.0.2
+* PHP 7.0.6 + up until 7.1
 * MySQL 5.6.
 
 We do not support PHP 5.5.x or 7.0.5. 
