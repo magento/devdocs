@@ -69,7 +69,7 @@ Magento Enterprise Edition 2.1 includes several new and exciting features:
 
 <!--- 50468-->* You can now filter products by Category ID as expected.
 
- 
+
 
 <h4>Google Tag Manager</h4>
 
@@ -185,7 +185,7 @@ Magento Enterprise Edition 2.1, Release Candidate 3 includes the following known
 
 **Method 2:** You can manually create the file using this format:
 
-<code>
+{% highlight php startinline=true %}
 
 {
     "http-basic": {
@@ -196,7 +196,7 @@ Magento Enterprise Edition 2.1, Release Candidate 3 includes the following known
     }
 }
 
-</code>
+{% endhighlight %}
 
 
 
