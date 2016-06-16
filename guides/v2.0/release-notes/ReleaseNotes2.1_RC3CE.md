@@ -166,7 +166,7 @@ Magento Community Edition 2.1, Release Candidate 3 includes the following known 
 
 **Method 2:** You can manually create the file using this format:
 
-<code>
+{% highlight php startinline=true %}
 
 {
     "http-basic": {
@@ -177,7 +177,7 @@ Magento Community Edition 2.1, Release Candidate 3 includes the following known 
     }
 }
 
-</code>
+{% endhighlight %}
 
 
 <!--- 54320-->* The Category page displays the former price instead of the current price during scheduled updates. 
