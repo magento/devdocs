@@ -79,5 +79,4 @@ Enter the following command:
 
 	php <your Magento install dir>/bin/magento magento maintenance:disable
 
-
-
+{% endcollapsible %}
