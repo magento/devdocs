@@ -26,13 +26,18 @@ Either upgrade PHP or restart Apache (Apache might not be using the same PHP ver
 ### Symptom: A 404 (Not Found) error displays.
 
 #### Solution
+Try the following:
 
-Likely an issue with the base URL you entered during the installation. You specify the base URL as the value of `--base-url=` when installing Magento from the command line or as the value of the **Your Store Address** field on the Web Configuration page of the web installer.
+*	Make sure [Apache server rewrites]({{ site.gdeurl }}install-gde/prereq/apache.html) are enabled.
+
+	If Apache server rewrites are set incorrectly, static files aren't served from the correct location.
+
+*	Likely an issue with the base URL you entered during the installation. You specify the base URL as the value of `--base-url=` when installing Magento from the command line or as the value of the **Your Store Address** field on the Web Configuration page of the web installer.
 	
-The base URL *must* start with the scheme (such as `http://`) and end with a trailing slash (/). Run the installer again with a valid value and try accessing Magento afterward.
+	The base URL *must* start with the scheme (such as `http://`) and end with a trailing slash (/). Run the installer again with a valid value and try accessing Magento afterward.
 
-To restart Apache:
+	To restart Apache:
 
-*	Ubuntu: `service apache2 restart`
-*	CentOS: `service httpd restart`
+	*	Ubuntu: `service apache2 restart`
+	*	CentOS: `service httpd restart`
 

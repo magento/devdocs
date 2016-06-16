@@ -5,6 +5,28 @@ These instructions apply to Magento Community Edition (CE) and Magento Enterpris
 *	You installed optional sample data
 *	You're upgrading to Magento 2.1 (including a Release Candidate) from version 2.0.7 or earlier using the command line
 
+### Put your store in maintenance mode {#upgrade-cli-maint}
+
+{% collapsible To put your store in maintenance mode for the upgrade: %}
+To prevent access to your store while it's being upgraded, put your store in maintenance mode.
+
+<div class="bs-callout bs-callout-info" id="info">
+  	<p>You can optionally create a <a href="{{ site.gdeurl }}comp-mgr/trouble/cman/maint-mode.html">custom maintenance mode page</a>.</p>
+</div>
+
+To enable maintenance mode:
+
+1.	Log in to your Magento server as, or switch to, the Magento file system owner.
+2.	Enter the following command:
+
+		php <your Magento install dir>/bin/magento magento maintenance:enable
+
+	For additional options, see [Enable or disable maintenance mode]({{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-maint.html).
+
+{% endcollapsible %}
+
+### Upgrade with sample data
+
 {% collapsible To upgrade to Magento 2.1 with sample data: %}
 
 1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{ site.gdeurl }}install-gde/prereq/file-system-perms-over.html).
