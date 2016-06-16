@@ -80,11 +80,16 @@ Magento Enterprise Edition 2.1 includes several new and exciting features:
 <!--- 54200-->* Magento now successfully imports products with  a "gift_message_available" parameter. Previously, Magento exported the wrong "gift_message_available" parameter, which resulted in a validation error. (54200)
 
 
-<h4>Varnish</h4>
+<h4>Cache</h4>
 
 <!--- 52923-->* Switching to Varnish causes category menu to force HTTPS links. default header is now standard "X-Forwarded-Proto<a href="https://github.com/magento/magento2/issues/4540" target="_blank">(GITHUB-4540)</a>
 
 <!--- 54228-->* Varnish cache is no longer disabled due to HTML requests. 
+
+<!--- 53474-->* Magento now enables caches by default when upgrading by the command-line interface.  <a href="https://github.com/magento/magento2/issues/4707" target="_blank">(GITHUB-4707)</a>
+
+<!--- 54205-->* Magento no longer disables all cache types after you use the command-line interface to enable or disable modules. Previously, all cache types were disabled after you disabled or enabled  modules through the command line interface. 
+
 
 
 
@@ -108,7 +113,7 @@ Magento Enterprise Edition 2.1 includes several new and exciting features:
 <h4>Miscellaneous</h4>
 
 
-<!--- 51753-->* You can now install Magento over an existing database while using different Admin email addresses.
+<!--- 51753-->* You can now re-install Magento and use a different Admin email address than you previously used.
 
 <!--- 52615-->* Using the Web Setup wizard to disable a module no longer results in a backup error. <a href="https://github.com/magento/magento2/issues/3562" target="_blank">(GITHUB-3562)</a>
 
@@ -117,13 +122,10 @@ Magento Enterprise Edition 2.1 includes several new and exciting features:
 <!--- 54283-->* The ProductsList widget now returns the identities of the products displayed by this widget. 
 
 
-
 <!--- 52124-->* Magento now retains special prices as expected for grouped products. 
 
 
 <!--- 53121-->* You can now use a custom template to successfully create New Account email for a new customer. 
-
-<!--- 52165 internal only-->
 
 <!--- 52891-->* Magento now  displays the thousand separator for a product's price  price, weight, and custom option price fields. 
 
@@ -132,26 +134,19 @@ Magento Enterprise Edition 2.1 includes several new and exciting features:
 <!--- 54191-->* You can now successfully save new order status. Previously, you could not save new order status when selecting Create New Status from the Go to Stores > Order Status menu. <a href="https://github.com/magento/magento2/issues/4146" target="_blank">(GITHUB-4146)</a>
 
 
-
 <!--- 54186-->* JavaScript validation now works as expected when you add a product to a shopping cart. Previously, if a validation error occurred during this task, Magento would still submit the form. 
  
-
 <!--- 54242-->*  Grid view pagination (as configured from Stores > Configuration > Catalog > Catalog >Storefront)  now works as expected. <a href="https://github.com/magento/magento2/issues/3861" target="_blank">(GITHUB-3861)</a>
 
 <!--- 53139-->*  Magento now correctly displays prices for products with several configurable price options. 
 
 <!--- 54182-->*  You can successfully complete an order with for a quantity of product that exceeds half of the product stock. 
 
-<!--- 54293-->*  You can now place an order using the Braintree Credit card as the payment method when 3D Secure Verification is enabled. 
-
 <!--- 54222-->*  You can now generate a new simple product without changing the names of already existing products.  <a href="https://github.com/magento/magento2/issues/4951" target="_blank">(GITHUB-4951)</a>
 
 <!--- 54255-->*  Magento now displays enhanced messages for cache management exceptions. 
 
 <!--- 54257-->*  The Stock Status attribute now works as expected during creation of configurable products. 
-
-
-<!--- 54120 internal only --> 
 
 <!--- 54231-->* You can successfully delete an Admin user without breaking integration if the Admin user shares the same ID as an integration user. Previously, if you deleted an Admin user who shared an ID with an integration user, the integration would be permanently broken. 
 
@@ -163,11 +158,6 @@ Magento Enterprise Edition 2.1 includes several new and exciting features:
 <!--- 53238-->* Magento no longer displays the Payflow Pro option for the Vault Provider field for countries where that option is unavailable. 
 
 <!--- 54214-->* Problems placing an order using the Payflow Pro payment method have been resolved. 
-
-
-<!--- 54031 internal only-->
-
-<!--- 53293 internal only-->
 
 <!--- 53474-->* Magento now enables caches by default when upgrading by the command-line interface.  <a href="https://github.com/magento/magento2/issues/4707" target="_blank">(GITHUB-4707)</a>
 
@@ -181,6 +171,15 @@ Magento Enterprise Edition 2.1 includes several new and exciting features:
 <!--- 53366-->* Tax Report now displays records as expected. 
 
 
+<!--- 52165 internal only-->
+
+<!--- 54120 internal only --> 
+
+<!--- 54031 internal only-->
+
+<!--- 53293 internal only-->
+
+
 
 <h3>Known issues</h3>
 Magento Enterprise Edition 2.1, Release Candidate 3 includes the following known issues: 
@@ -189,7 +188,7 @@ Magento Enterprise Edition 2.1, Release Candidate 3 includes the following known
 
 <!--- 54443-->* Magento is not successfully updating images to all staged store views, including server-side and default storefront images. 
 
-<!--- 54320-->* The Category page displays former instead of the current price during scheduled updates. 
+<!--- 54320-->* The Category page displays the former price instead of the current price during scheduled updates. 
 
 
 <h3>Technology stack</h3>

@@ -16,7 +16,7 @@ We are pleased to present Magento 2.1 Release Candidate 3 (RC3). This release ca
 
 * contribute to the Magento 2.1 code base by identifying unresolved issues
 
-* test your 2.0 extensions against  2.1 
+* test your 2.0 extensions against 2.1 
 
 We welcome your participation in this process!  Please open any Community Edition issues or Pull Requests on the Community Edition GitHub repository. For more information on how to provide feedback and contribute on GitHub, see <a href="{{ site.gdeurl }}contributor-guide/contributing.html" target="_blank">Code contributions</a>.
 
@@ -40,7 +40,6 @@ Magento Community Edition 2.1 includes several new and exciting features:
 
 <h4>Security enhancement</h4>
 
-
 <!--- 52867-->* Magento no longer discloses sensitive information about the server when an invalid URL has been requested. 
 
 
@@ -53,16 +52,21 @@ Magento Community Edition 2.1 includes several new and exciting features:
 
 <h4>Import/Export</h4>
 
-<!--- 54200-->* Magento now successfully imports products with  a "gift_message_available" parameter. Previously, Magento exported the wrong "gift_message_available" parameter, which resulted in a validation error. (54200)
+<!--- 54200-->* Magento now successfully imports products with  a "gift_message_available" parameter. Previously, Magento exported the wrong "gift_message_available" parameter, which resulted in a validation error.
 
 
 
 
-<h4>Varnish</h4>
+<h4>Cache</h4>
 
 <!--- 52923-->* Switching to Varnish causes category menu to force HTTPS links. default header is now standard "X-Forwarded-Proto<a href="https://github.com/magento/magento2/issues/4540" target="_blank">(GITHUB-4540)</a>
 
 <!--- 54228-->* Varnish cache is no longer disabled due to HTML requests. 
+
+<!--- 53474-->* Magento now enables caches by default when upgrading by the command-line interface.  <a href="https://github.com/magento/magento2/issues/4707" target="_blank">(GITHUB-4707)</a>
+
+<!--- 54205-->* Magento no longer disables all cache types after you use the command-line interface to enable or disable modules. Previously, all cache types were disabled after you disabled or enabled  modules through the command line interface. 
+
 
 
 
@@ -88,11 +92,10 @@ Magento Community Edition 2.1 includes several new and exciting features:
 
 <h4>Miscellaneous</h4>
 
-<!--- 51753-->* You can now install Magento over an existing database while using different Admin email addresses.
+<!--- 51753-->* You can now re-install Magento and use a different Admin email address than you previously used.
 
 <!--- 52615-->* Using the Web Setup wizard to disable a module no longer results in a backup error. <a href="https://github.com/magento/magento2/issues/3562" target="_blank">(GITHUB-3562)</a>
 
-<!--- 54205-->* Magento no longer disables all cache types after you use the command-line interface to enable or disable modules. Previously, all cache types were disabled after you disabled or enabled  modules through the command line interface. 
 
 <!--- 54283-->* The ProductsList widget now returns the identities of the products displayed by this widget. 
 
@@ -102,14 +105,15 @@ Magento Community Edition 2.1 includes several new and exciting features:
 
 <!--- 53121-->* You can now use a custom template to successfully create New Account email for a new customer. 
 
-<!--- 52165 internal only-->
 
 <!--- 52891-->* Magento now  displays the thousand separator for a product's price  price, weight, and custom option price fields. 
 
-<!--- 54262-->* You can now remove products from the shopping cart as expected. Previously, if the amount of products being removed exceeded half the amount of products in stock, Magento would throw an error. 
+<!--- 54262-->* You can now remove products from the shopping cart as expected. Previously, if the quantity of products being removed exceeded half the amount of products in stock, Magento would throw an error. 
+
+<!--- 54182-->*  You can successfully complete an order with for a quantity of product that exceeds half of the product stock. 
+
 
 <!--- 54191-->* You can now successfully save new order status. Previously, you could not save new order status when selecting Create New Status from the Go to Stores > Order Status menu. <a href="https://github.com/magento/magento2/issues/4146" target="_blank">(GITHUB-4146)</a>
-
 
 
 <!--- 54186-->* JavaScript validation now works as expected when you add a product to a shopping cart. Previously, if a validation error occurred during this task, Magento would still submit the form. 
@@ -119,7 +123,6 @@ Magento Community Edition 2.1 includes several new and exciting features:
 
 <!--- 53139-->*  Magento now correctly displays prices for products with several configurable price options. 
 
-<!--- 54182-->*  You can successfully complete an order with for a quantity of product that exceeds half of the product stock. 
 
 
 <!--- 54222-->*  You can now generate a new simple product without changing the names of already existing products.  <a href="https://github.com/magento/magento2/issues/4951" target="_blank">(GITHUB-4951)</a>
@@ -128,7 +131,6 @@ Magento Community Edition 2.1 includes several new and exciting features:
 <!--- 54257-->*  The Stock Status attribute now works as expected during creation of configurable products. 
 
 
-<!--- 54120 internal only --> 
 
 <!--- 54231-->* You can successfully delete an Admin user without breaking integration if the Admin user shares the same ID as an integration user. Previously, if you deleted an Admin user who shared an ID with an integration user, the integration would be permanently broken. 
 
@@ -136,14 +138,6 @@ Magento Community Edition 2.1 includes several new and exciting features:
 <!--- 54051-->* Problems related to login when inline translation is enabled have been resolved.  <a href="https://github.com/magento/magento2/issues/4925" target="_blank">(GITHUB-4925)</a>
 
 <!--- 54172-->* Magento now generates URL rewrites for a new store view as expected during a mass update to a new website. 
-
-
-
-<!--- 54031 internal only-->
-
-<!--- 53293 internal only-->
-
-<!--- 53474-->* Magento now enables caches by default when upgrading by the command-line interface.  <a href="https://github.com/magento/magento2/issues/4707" target="_blank">(GITHUB-4707)</a>
 
 
 <!--- 54043-->* Magento no longer prompts you to select a dropdown attribute when adding a product to the shopping cart if you have already selected one. <a href="https://github.com/magento/magento2/issues/4899" target="_blank">(GITHUB-4899)</a>
@@ -155,6 +149,13 @@ Magento Community Edition 2.1 includes several new and exciting features:
 <!--- 53366-->* Tax Report now displays records as expected. 
 
 
+<!--- 52165 internal only-->
+
+<!--- 54120 internal only --> 
+
+<!--- 54031 internal only-->
+
+<!--- 53293 internal only-->
 
 
 
@@ -165,7 +166,7 @@ Magento Community Edition 2.1, Release Candidate 3 includes the following known 
 
 <!--- 54443-->* Magento is not successfully updating images to all staged store views, including server-side and default storefront images. 
 
-<!--- 54320-->* The Category page displays former instead of the current price during scheduled updates. 
+<!--- 54320-->* The Category page displays the former price instead of the current price during scheduled updates. 
 
 
 
