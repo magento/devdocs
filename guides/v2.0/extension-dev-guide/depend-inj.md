@@ -29,7 +29,7 @@ When using dependency injection, we encourage you to follow the  [dependency inv
 
 ### Object manager overview
 
-Since dependency management is the responsibility of the environment, some kind of object manager must be present in complex systems to avoid boilerplate code. The object manager is present only when composing objects, and in larger applications(such as Magento), composing objects is performed early in the bootstrapping process and boilerplate code is moved to the configuration of the object manager.
+Since dependency management is the responsibility of the environment, some kind of object manager must be present in complex systems to avoid boilerplate code. The object manager is present only when composing objects, and in larger applications (such as Magento), composing objects is performed early in the bootstrapping process and boilerplate code is moved to the configuration of the object manager.
 
 In Magento, the object manager is represented by the appropriately named [Object Manager]({{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManagerInterface.php){:target="_blank"}.
 
