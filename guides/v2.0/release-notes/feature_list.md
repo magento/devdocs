@@ -1,6 +1,6 @@
 ---
 layout: default
-group: release-notes
+group: 
 subgroup: Magento Feature List
 title: Magento Feature List
 menu_title: Magento Features List
