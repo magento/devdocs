@@ -3,22 +3,28 @@ layout: default
 group: release-notes
 subgroup: Technical Bulletin
 title: Technical Bulletin
-menu_title: Upgrade Magento EE to version 2.1 (June 21, 2016)
+menu_title: Upgrade to Magento version 2.1 (June 21, 2016)
 menu_node: 
 menu_order: 2
 version: 2.0
 github_link: comp-mgr/release-notes/tech_bull_setup-wizard-upgrade.md
 ---
 
-![This topic applies to Enterprise Edition only]({{ site.baseurl }}common/images/ee-only_large.png)
+## Upgrade to Magento version 2.1
+These instructions apply to anyone upgrading to Magento Community Edition (CE) or Magento Enterprise Edition (EE) version 2.1 (including a Release Candidate). 
 
-## Upgrade Magento EE to version 2.1
-These instructions apply to you *only* if all of the following are true:
+See one of the following sections for more information:
 
-*	You're using Magento Enterprise Edition (EE)
-*	You're upgrading to Magento EE version 2.1 (including a Release Candidate) using the Web Setup Wizard
+*	[Upgrade to Magento CE or EE version 2.1 *without* sample data](#tb-upgr-nosamp)
+*	[Upgrade to Magento CE or EE version 2.1 with sample data](#tb-upgr-samp)
+*	[Enterprise Edition only: Web Setup Wizard upgrade to Magento EE version 2.1 with sample data](#tb-upgr-samp-wiz)
 
-### Get the patch
+### Upgrade to Magento CE or EE version 2.1 *without* sample data {#tb-upgr-nosamp}
+Upgrades to version 2.1 without sample data can fail because of an issue with the Magento `composer-installer` component. It doesn't correctly detect code changes and therefore doesn't update the cache and compiled code directories properly. As a result, fatal errors display during the upgrade.
+
+To address the issue, you must apply a patch.
+
+#### Get the patch
 Use the following instructions to get the patch named `MDVA-532.*`, then transfer it to your Magento server.
 
 {% collapsible To get the patch: %}
@@ -27,8 +33,8 @@ Use the following instructions to get the patch named `MDVA-532.*`, then transfe
 
 {% endcollapsible %}
 
-### Apply the patch
-As the [Magento file system owner]({{ site.gdeurl21 }}install-gde/prereq/file-sys-perms-over.html), extract the patch in your Magento installation directory.
+#### Apply the patch
+As the [Magento file system owner]({{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html), extract the patch in your Magento installation directory.
 
 {% collapsible To apply the patch: %}
 
@@ -40,12 +46,49 @@ For example, to change to the `magento_user` and extract `MDVA-532.zip` into `/v
 
 {% endcollapsible %}
 
-### Fix `composer.lock`
-Magento's `composer.lock` file specifies a non-existent component type; this issue prevents the upgrade with sample data from completing successfully.
+#### Complete your upgrade
+After applying the patch, complete your upgrade as follows:
 
-<div class="bs-callout bs-callout-warning">
-   	<p>This step is required <em>only</em> if you installed optional sample data. If you did not install sample data, you can skip this step.</p>   
-</div>
+*	[Command-line upgrade]({{ site.gdeurl }}comp-mgr/cli/cli-upgrade.html)
+*	[Start System Upgrade]({{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html)
+
+### Command-line upgrade to Magento CE or EE version 2.1 with sample data {#tb-upgr-samp}
+
+{%include install/sampledata/sample-data-rc1-cli.md %}
+
+### Enterprise Edition only: Web Setup Wizard upgrade to Magento EE version 2.1 with sample data {#tb-upgr-samp-wiz}
+Upgrades to version 2.1 with sample data can fail because of the following issues:
+
+*	An issue with the Magento `composer-installer` component. It doesn't correctly detect code changes and therefore doesn't update the cache and compiled code directories properly. As a result, fatal errors display during the upgrade.
+
+	We have a patch that resolves this issue.
+*	Magento's `composer.lock` file specifies a non-existent component type; this issue prevents the upgrade with sample data from completing successfully.
+
+	You can edit `composer.lock` to fix this issue.
+
+#### Get the patch
+Use the following instructions to get the patch named `MDVA-532.*`, then transfer it to your Magento server.
+
+{% collapsible To get the patch: %}
+
+{% include install/patch/get-patch-ee.md %}
+
+{% endcollapsible %}
+
+#### Apply the patch
+As the [Magento file system owner]({{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html), extract the patch in your Magento installation directory.
+
+{% collapsible To apply the patch: %}
+
+{% include install/patch/apply-patch.md %}
+
+For example, to change to the `magento_user` and extract `MDVA-532.zip` into `/var/www/magento2`, enter:
+
+	su magento_user && cd /var/www/magento2 && unzip MDVA-532.zip
+
+{% endcollapsible %}
+
+#### Fix `composer.lock`
 
 {% collapsible To fix composer.lock: %}
 
@@ -62,12 +105,12 @@ Magento's `composer.lock` file specifies a non-existent component type; this iss
 
 {% endcollapsible %}
 
-### Manually clear directories
+#### Manually clear directories
 Manually clear the `var/cache`, `var/page_cache`, and `var/generation` directories.
 
 A sample command follows:
 
 	rm -rf var/cache/* var/page_cache/* var/generation/*
 
-### Start the upgrade
+#### Start the upgrade
 Start your upgrade as discussed in [Start System Upgrade]({{ site.gdeurl21 }}comp-mgr/upgrader/upgrade-start.html).

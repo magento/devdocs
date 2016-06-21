@@ -3,7 +3,7 @@
 These instructions apply to Magento Community Edition (CE) and Magento Enterprise Edition (EE) users *only* if all of the following are true:
 
 *	You installed optional sample data
-*	You're upgrading to Magento 2.1 (including a Release Candidate) from version 2.0.7 or earlier using the command line
+*	You're upgrading to Magento 2.1 (including a Release Candidate) using the command line
 
 ### Put your store in maintenance mode {#upgrade-cli-maint}
 
