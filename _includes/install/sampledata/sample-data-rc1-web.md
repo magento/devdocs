@@ -23,8 +23,11 @@ To upgrade to Magento 2 EE RC1 or RC2 with sample data using the Setup Wizard:
 
 		"type": "magento2-module"
 5.	Save your changes to `composer.lock` and exit the text editor.
+6.	Manually clear the `var/cache`, `var/page_cache`, and `var/generation` directories.
 
-{% include install/sampledata/file-sys-perms-digest.md %}
+	A sample command follows:
+
+		rm -rf var/cache/* var/page_cache/* var/generation/*
 
 ### Finish the upgrade
 After you set file system permissions, complete your upgrade as discussed in [Start System Upgrade]({{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html).

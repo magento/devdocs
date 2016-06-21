@@ -178,9 +178,14 @@ Magento Community Edition 2.1, Release Candidate 2 includes the following known 
 
 <h3>Technology stack</h3>
 
-Our technology stack is built on PHP and MySQL. Magento 2.1 RC2 supports PHP 5.6 and 7.0.2–7.0.6 except for 7.0.5, and MySQL 5.6.
+Our technology stack is built on PHP and MySQL. Magento 2.1 RC3 supports:
 
-We do not support PHP 5.5.x. 
+* PHP 5.6
+* PHP 7.0.2
+* PHP 7.0.6 + up until 7.1
+* MySQL 5.6.
+
+We do not support PHP 5.5.x or 7.0.5.  
 
 
 ## Installation and upgrade instructions
@@ -199,7 +204,7 @@ Before proceeding, please familiarize yourself with these prerequisites, then ru
 
 `git clone git@github.com:magento/magento2.git`
 
-`git checkout tags/2.1.0-rc1 [-b 2.1.0-rc1]`
+`git checkout tags/2.1.0-rc2 [-b 2.1.0-rc2]`
 
 ### Install using Composer
 This Release Candidate is available from `repo.magento.com`. Before installing this Release Candidate using Composer,  familiarize yourself with the Composer metapackage  <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run 
@@ -235,17 +240,17 @@ Developers who contribute to the CE codebase can <a href="{{ site.gdeurl }}comp-
 	For example, `cd /var/www/html/magento2`
 2.	Enter the following commands in the order shown:
 
-		composer require <product> 2.1.0-rc1 --no-update
+		composer require <product> 2.1.0-rc2 --no-update
 		composer update
 
-	To upgrade to Magento CE 2.1 RC1, enter:
+	To upgrade to Magento CE 2.1 RC2, enter:
 
-		composer require magento/product-community-edition 2.1.0-rc1 --no-update
+		composer require magento/product-community-edition 2.1.0-rc2 --no-update
 		composer update
 
-	To upgrade to Magento EE 2.1 RC1, enter:
+	To upgrade to Magento EE 2.1 RC2, enter:
 
-		composer require magento/product-enterprise-edition 2.1.0-rc1 --no-update
+		composer require magento/product-enterprise-edition 2.1.0-rc2 --no-update
 		composer update
 	
 3.	If prompted, enter your [authentication keys]({{ site.gdeurl }}comp-mgr/prereq/prereq_auth-token.html).

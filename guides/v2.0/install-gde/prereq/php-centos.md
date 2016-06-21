@@ -116,11 +116,11 @@ To upgrade to PHP 7.0.2 or later:
 
 2.	Restart Apache: `service httpd restart`
 
-2.	Enter the following command to verify that PHP 5.6 is installed:
+2.	Enter the following command to verify that PHP 7.x is installed:
 
 		php -v
 
-	The following response indicates that PHP 5.6 is installed properly:
+	The following response indicates that PHP 7.0.3 is installed properly:
 
 		PHP 7.0.3 (cli) (built: Feb  4 2016 08:51:10) ( NTS )
 		Copyright (c) 1997-2016 The PHP Group
