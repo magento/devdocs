@@ -55,7 +55,7 @@ To get started:
   		<pre>file_get_contents(app/etc/NonComposerComponentRegistration.php): failed to open stream: No such file or directory</pre>
 	</div>
 
-4.	Continue with <a href="#instgde-prereq-compose-access">Set file system ownership and permissions</a>.
+4.	Continue with <a href="#perms-over">Set file system ownership and permissions</a>.
 
 <h2 id="integrator-first-composer-ee">Get the Magento EE metapackage</h2>
 To get started:
