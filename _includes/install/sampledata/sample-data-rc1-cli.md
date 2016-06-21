@@ -1,5 +1,7 @@
 <div markdown="1">
 
+This topic discusses how to upgrade to Magento 2.1 (including a Release Candidate) using the command line.
+
 These instructions apply to Magento Community Edition (CE) and Magento Enterprise Edition (EE) users *only* if all of the following are true:
 
 *	You installed optional sample data
