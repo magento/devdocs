@@ -3,7 +3,7 @@ layout: default
 group: release-notes
 subgroup: Technical Bulletin
 title: Technical Bulletin
-menu_title: Upgrade Magento EE with sample data to version 2.1 (June 21, 2016)
+menu_title: Upgrade Magento EE to version 2.1 (June 21, 2016)
 menu_node: 
 menu_order: 2
 version: 2.0
@@ -16,7 +16,7 @@ github_link: comp-mgr/release-notes/tech_bull_setup-wizard-upgrade-sample.md
 These instructions apply to you *only* if all of the following are true:
 
 *	You're using Magento Enterprise Edition (EE)
-*	You're upgrading to Magento EE version 2.1 (including a Release Candidate) from version 2.0.7 or earlier using the Web Setup Wizard
+*	You're upgrading to Magento EE version 2.1 (including a Release Candidate) using the Web Setup Wizard
 
 ### Get the patch
 Use the following instructions to get the patch named `MDVA-532.*`, then transfer it to your Magento server.
