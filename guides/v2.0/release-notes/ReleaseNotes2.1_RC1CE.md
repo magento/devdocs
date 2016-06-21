@@ -91,10 +91,14 @@ This release includes fixes for the following GitHub issues:
 
 <h3>Technology stack</h3>
 
-Our technology stack is built on PHP and MySQL. Magento 2.1 Release Candidate 1 (RC1) supports PHP 5.6, 7.0.2, and 7.0.6. It supports MySQL 5.6.
+Our technology stack is built on PHP and MySQL. Magento 2.1 RC3 supports:
 
-We do not support PHP 5.5. 
+* PHP 5.6
+* PHP 7.0.2
+* PHP 7.0.6 + up until 7.1
+* MySQL 5.6.
 
+We do not support PHP 5.5.x or 7.0.5. 
 ## Installation and upgrade instructions
 You can install Magento Community Edition 2.1 Release Candidate 1 (RC1) from either Github or by using Composer. 
 This Release Candidate is for test purposes only. Do not install it in a production environment.
