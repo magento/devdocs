@@ -84,4 +84,4 @@ moment.js |2.8.1| MIT|[Source](http://momentjs.com)|[License](http://momentjs.co
 MutationObserver |-| BSD|[Source](http://polymer.github.io)|[License](http://polymer.github.io/LICENSE.txt)
 Underscore |1.8.2| MIT|[Source](http://underscorejs.org)|[License](https://github.com/jashkenas/underscore/blob/master/LICENSE)
 LinLibertineFont|-|GPL 2.0 and the Open Fonts License 1.0|[Source](http://www.linuxlibertine.org)|[License 1](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html) [License 2](http://scripts.sil.org/cms/scripts/page.php)
-Swagger || Apache 2|[Source](https://github.com/swagger-api/swagger-ui)|[License](http://swagger.io/license/)
+Swagger |2.0| Apache 2|[Source](https://github.com/swagger-api/swagger-ui)|[License](http://swagger.io/license/)
