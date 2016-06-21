@@ -16,7 +16,6 @@ github_link: comp-mgr/release-notes/tech_bull_setup-wizard-upgrade-sample.md
 These instructions apply to you *only* if all of the following are true:
 
 *	You're using Magento Enterprise Edition (EE)
-*	You have installed optional sample data
 *	You're upgrading to Magento EE version 2.1 (including a Release Candidate) from version 2.0.7 or earlier using the Web Setup Wizard
 
 ### Get the patch
@@ -44,7 +43,7 @@ For example, to change to the `magento_user` and extract `MDVA-532.zip` into `/v
 ### Fix `composer.lock`
 Magento's `composer.lock` file specifies a non-existent component type; this issue prevents the upgrade from completing successfully.
 
-To fix `composer.lock`:
+{% collapsible To fix composer.lock: %}
 
 1.	As the Magento file system owner, open `<your Magento install dir>/composer.lock` in a text editor.
 2.	Change the following entry.
@@ -56,6 +55,8 @@ To fix `composer.lock`:
 	to:
 
 		"type": "magento2-module",
+
+{% endcollapsible %}
 
 ### Manually clear directories
 Manually clear the `var/cache`, `var/page_cache`, and `var/generation` directories.
