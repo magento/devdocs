@@ -7,12 +7,12 @@ menu_title: Upgrade Magento EE to version 2.1 (June 21, 2016)
 menu_node: 
 menu_order: 2
 version: 2.0
-github_link: comp-mgr/release-notes/tech_bull_setup-wizard-upgrade-sample.md
+github_link: comp-mgr/release-notes/tech_bull_setup-wizard-upgrade.md
 ---
 
 ![This topic applies to Enterprise Edition only]({{ site.baseurl }}common/images/ee-only_large.png)
 
-## Upgrade Magento EE with sample data to version 2.1
+## Upgrade Magento EE to version 2.1
 These instructions apply to you *only* if all of the following are true:
 
 *	You're using Magento Enterprise Edition (EE)
