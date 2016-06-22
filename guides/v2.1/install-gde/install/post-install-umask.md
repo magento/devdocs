@@ -1,14 +1,1 @@
----
-layout: default
-group: install
-subgroup: 05_umask
-title: Optionally set a umask
-menu_title: Optionally set a umask
-menu_node: parent
-menu_order: 5
-version: 2.1
-github_link21: install-gde/install/post-install-umask.md
----
-
-
-{% include install/file-system-umask.md %}
+../../../v2.0/install-gde/install/post-install-umask.md
