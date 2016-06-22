@@ -36,7 +36,7 @@ To enable maintenance mode:
 3.	Back up your current `composer.json`:
 
 		cp composer.json composer.json.bak
-4.	Enter one of the following commands to upgrade the Magento software version:
+4.	Enter the following commands to upgrade the Magento software version:
 
 		composer require <product> <version> --no-update
 		composer require <sample data module-1>:<version> ... <sample data module-n>:<version> --no-update
@@ -59,7 +59,7 @@ To enable maintenance mode:
 7.	Wait for dependencies to update.
 
 #### Finish your upgrade
-After you've reset file system permissions:
+After you've updated dependencies:
 
 1.	If you haven't done so already, log in to your Magento server as, or switch to, the Magento file system owner.
 2.	Change to your Magento installation directory.

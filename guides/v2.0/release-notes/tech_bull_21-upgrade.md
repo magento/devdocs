@@ -42,7 +42,7 @@ As the [Magento file system owner]({{ site.gdeurl }}install-gde/prereq/file-sys-
 
 For example, to change to the `magento_user` and extract `MDVA-532.zip` into `/var/www/magento2`, enter:
 
-	su magento_user && cd /var/www/magento2 && unzip MDVA-532.zip
+	su magento_user && cd /var/www/magento2 && unzip -o MDVA-532.zip
 
 {% endcollapsible %}
 
@@ -102,6 +102,7 @@ For example, to change to the `magento_user` and extract `MDVA-532.zip` into `/v
 	to:
 
 		"type": "magento2-module",
+3.	Save your changes to `composer.lock` and exit the text editor.
 
 {% endcollapsible %}
 

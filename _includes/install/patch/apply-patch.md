@@ -24,6 +24,5 @@ To apply a patch:
 </table>
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-   	<p>If you don't have command line access to your Magento server, extract the patch locally and transfer the files to the server using an FTP application.</p>   
+  	<p>If you don't have command line access to your Magento server, extract the patch locally and transfer the files to the server using an FTP application.</p>   
 </div>
