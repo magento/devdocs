@@ -203,6 +203,16 @@ This Release Candidate is for test purposes only. Do not install it in a product
 
 {% include install/releasenotes/ce_install_21.md %}
 
+### Upgrade an existing installation from the GitHub repository
+Developers who contribute to the CE codebase can <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento CE GitHub repository.
+
+1.	Go to the <a href="{{ site.gdeurl }}install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.
+
+2.	Follow the instructions to pull the updates from the repository and update using Composer.
+
+### Other upgrades
+Other types of upgrades are discussed in [Upgrade to Magento version 2.1 (June 22, 2016)]({{ site.gdeurl }}comp-mgr/release-notes/tech_bull_21-upgrade.html).
+
 
 ## Migration toolkits
 The <a href="{{ site.gdeurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ site.gdeurl }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.

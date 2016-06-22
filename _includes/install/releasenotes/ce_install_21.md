@@ -47,9 +47,6 @@ If you installed optional sample data, see [Upgrade to an RC with sample data](#
     <p><em>Do not</em> upgrade to a Release Candidate on a production system. Upgrade to a Release Candidate on a development system only.</p>
 </div>
 
-### Upgrade using the Setup Wizard
-Use the instructions in [Start System Upgrade]({{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html). When prompted to choose a version, choose a Release Candidate.
-
 ### Upgrade from the GitHub repository
 Developers who contribute to the CE codebase can <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento CE GitHub repository.
 
@@ -57,40 +54,6 @@ Developers who contribute to the CE codebase can <a href="{{ site.gdeurl }}comp-
 
 2.	Follow the instructions to pull the updates from the repository and update using Composer.
 
-### Upgrade using the command line
-This section discusses how to upgrade to Magento 2.1 (including a Release Candidate) using the command line.
-
-{% collapsible To upgrade to Magento 2.1 using the command line: %}
-
-1.	Log in to your Magento server as, or switch to, the Magento file system owner.
-2.	Change to the directory in which you installed the Magento software.
-
-	For example, `cd /var/www/html/magento2`
-2.	Enter the following commands in the order shown:
-
-		composer require <product> <version> --no-update
-		composer update
-
-	where `<version>` is `2.1.0-rc1`, `2.1.0-rc2`, or `2.1.0-rc3`
-
-	To upgrade to Magento CE 2.1 RC3, enter:
-
-		composer require magento/product-community-edition 2.1.0-rc3 --no-update
-		composer update
-
-3.	If prompted, enter your [authentication keys]({{ site.gdeurl }}comp-mgr/prereq/prereq_auth-token.html).
-4. Update the database schema and data:
-
-		php bin/magento setup:upgrade
-
-{% endcollapsible %}
-
-## Upgrade to Magento 2.1 with sample data {#upgrade-rc-samp}
-This section discusses how to upgrade Magento with optional sample data using the command line.
-
-<div class="bs-callout bs-callout-warning">
-    <p>There is a known issue with upgrading Magento with sample data using the Setup Wizard. We're actively working on a solution to this issue.</p>
-</div>
-
-{% include install/sampledata/sample-data-rc1-cli.md %}
+### Other upgrades
+Other upgrade instructions are discussed in [Upgrade to Magento version 2.1 (June 22, 2016)]({{ site.gdeurl }}comp-mgr/release-notes/tech_bull_21-upgrade.html).
 

@@ -223,6 +223,9 @@ This Release Candidate is for test purposes only. Do not install it in a product
 
 {% include install/releasenotes/ee_install_21.md %}
 
+### Upgrades
+To upgrade to Magento 2.1 (including a Release Candidate), see [Upgrade to Magento version 2.1 (June 22, 2016)]({{ site.gdeurl }}comp-mgr/release-notes/tech_bull_21-upgrade.html).
+
 
 
 ## Migration toolkits
