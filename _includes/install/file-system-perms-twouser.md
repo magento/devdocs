@@ -89,5 +89,5 @@ To set ownership and permissions before you install the Magento software:
 ### Next step
 After you have set file system ownership and permissions, continue with any of the following:
 
-*	[Command-line installation]({{ site.gdeurl21 }}install-gde/install/cli/install-cli.html)
-*	[Setup Wizard installation]({{ site.gdeurl21 }}install-gde/install/web/install-web.html)
+*	[Command-line installation]({{page.baseurl}}install-gde/install/cli/install-cli.html)
+*	[Setup Wizard installation]({{page.baseurl}}install-gde/install/web/install-web.html)

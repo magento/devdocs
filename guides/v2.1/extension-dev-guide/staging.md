@@ -19,4 +19,4 @@ The functionality is distributed among staging modules. The [Magento_Staging mod
 
 <!-- LINK DEFINITIONS -->
 
-[Magento_Staging module]: {{site.gdeurl21}}extension-dev-guide/staging/Staging.html
+[Magento_Staging module]: {{page.baseurl}}extension-dev-guide/staging/Staging.html

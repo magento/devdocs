@@ -44,7 +44,7 @@ One of the following displays:
 	</tr>
 	<tr>
 		<td><img src="{{ site.baseurl }}common/images/elastic_test-success.png"></td>
-		<td>Magento successfully connected to the Elasticsearch server. Continue with <a href="{{ site.gdeurl21 }}config-guide/elasticsearch/es-config-web-server.html">Secure communications between your web server and Elasticsearch</a>.</td>
+		<td>Magento successfully connected to the Elasticsearch server. Continue with <a href="{{page.baseurl}}config-guide/elasticsearch/es-config-web-server.html">Secure communications between your web server and Elasticsearch</a>.</td>
 	</tr>
 	<tr>
 		<td><img src="{{ site.baseurl }}common/images/elastic_test-fail.png"></td>
@@ -54,7 +54,7 @@ One of the following displays:
 				<li>If the Elasticsearch server is on a different host from Magento, log in to the Magento server and ping the Elasticsearch host. Resolve network connectivity issues and test the connection again.</li>
 				<li>Examine the command window in which you started Elasticsearch for stack traces and exceptions. You must resolve those before you continue.<br />
 	In particular, make sure you started Elasticsearch as a user with <code>root</code> privileges.</li>
-<li>Make sure that <a href="{{ site.gdeurl21 }}config-guide/elasticsearch/elasticsearch-overview.html#prereq-secy">UNIX firewall and SELinux</a> are both disabled, or set up rules to enable Elasticsearch and Magento to communicate with each other.</li>
+<li>Make sure that <a href="{{page.baseurl}}config-guide/elasticsearch/elasticsearch-overview.html#prereq-secy">UNIX firewall and SELinux</a> are both disabled, or set up rules to enable Elasticsearch and Magento to communicate with each other.</li>
 	<li>Verify the value of the <strong>Elasticsearch Server Hostname</strong> field. Make sure the server is available. You can try the server's IP address instead.</li>
 	<li>Use the command <code>netstat -an | grep <em>listen-port</em></code> command to verify that the port specified in the <strong>Elasticsearch Server Port</strong> field is not being used by another process.<br />
 	For example, to see if Elasticsearch is running on its default port, use the following command:
@@ -76,11 +76,11 @@ To refresh the cache using the Admin:
 		The following figure shows an example.<br />
 		<img src="{{ site.baseurl }}common/images/solr_refresh-cache.png" width="600px">
 
-To clean the cache using the command line, use the <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean">`magento cache:clean`</a> command.
+To clean the cache using the command line, use the <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean">`magento cache:clean`</a> command.
 
 To reindex using the command line:
 
-1.	Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl21 }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+1.	Log in to your Magento server as, or switch to, the <a href="{{page.baseurl}}install-gde/prereq/apache-user.html">Magento file system owner</a>.
 2.	Enter any of the following commands:
 
 	Enter the following command to reindex the catalog search index only:
@@ -94,5 +94,5 @@ To reindex using the command line:
 3.	Wait while the reindexing completes.
 
 <div class="bs-callout bs-callout-info" id="info">
-	<p>Unlike the cache, indexers are updated by a cron job. Make sure <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-cron.html">cron is enabled</a> before you start using Elasticsearch.</p>
+	<p>Unlike the cache, indexers are updated by a cron job. Make sure <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html">cron is enabled</a> before you start using Elasticsearch.</p>
 </div>

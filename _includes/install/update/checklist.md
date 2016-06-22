@@ -11,10 +11,10 @@ Before you continue, to avoid errors during your installation or update, make su
 </div>
 
 ### Magento file system owner and group {#magento-owner-group}
-The [Magento file system owner]({{ site.gdeurl21 }}install-gde/prereq/file-sys-perms-over.html">) group must have write access to Magento directories and files.
+The [Magento file system owner]({{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">) group must have write access to Magento directories and files.
 
 ### Cron jobs are running {#magento-cron}
-Magento requires three cron jobs, all running as the [Magento file system owner]({{ site.gdeurl21 }}install-gde/prereq/file-sys-perms-over.html).
+Magento requires three cron jobs, all running as the [Magento file system owner]({{page.baseurl}}install-gde/prereq/file-sys-perms-over.html).
 
 To verify your cron jobs are set up properly, enter the following command as a user with `root` privileges:
 
@@ -38,12 +38,12 @@ To see the error, you might need to click **System Messages** at the top of the 
 
 ![System Messages]({{ site.baseurl }}common/images/compman_sys-messages.png)
 
-For details, see [Set up cron]({{ site.gdeurl21 }}install-gde/install/post-install-config.html#post-install-cron).
+For details, see [Set up cron]({{page.baseurl}}install-gde/install/post-install-config.html#post-install-cron).
 
 ### File system permissions {#perms}
 For security reasons, Magento requires certain permissions on the file system. Permissions are different from [*ownership*](#magento-owner-group). Ownership determines *who* can perform actions on the file system; permissions determine *what* the user can do.
 
-Directories in the Magento file system must be writable by the [Magento file system owner's]({{ site.gdeurl21 }} install-gde/prereq/file-system-perms.html) group.
+Directories in the Magento file system must be writable by the [Magento file system owner's]({{page.baseurl}} install-gde/prereq/file-system-perms.html) group.
 
 To verify your file system permissions are set properly, either log in to the Magento server or use your hosting provider's file manager application.
 
@@ -94,4 +94,4 @@ To get more detailed information, you can optionally enter the following command
 
 Because Magento deploys static file assets to subdirectories of `pub`, it's a good idea to verify permissions and ownership there as well.
 
-For more information, see [File system permissions and ownership]({{ site.gdeurl21 }}install-gde/prereq/file-system-perms.html).
+For more information, see [File system permissions and ownership]({{page.baseurl}}install-gde/prereq/file-system-perms.html).

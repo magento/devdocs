@@ -9,15 +9,15 @@ See one of the following sections:
 *	<a href="#instgde-install-runagain">Running the Setup Wizard again</a>
 *	<a href="#instgde-install-reinstall">Updating or reinstalling the Magento software</a>
 
-This section discusses how to install the Magento software using a web-based wizard interface. To install Magento from the command line, see <a href="{{ site.gdeurl21 }}install-gde/install/install-cli.html">Install Magento software using the command line</a>.
+This section discusses how to install the Magento software using a web-based wizard interface. To install Magento from the command line, see <a href="{{page.baseurl}}install-gde/install/install-cli.html">Install Magento software using the command line</a>.
 
 <h2 id="instgde-install-prereq">Before you start your installation</h2>
 
 Before you begin, make sure that:
 
-1.	Your system meets the requirements discussed in <a href="{{ site.gdeurl21 }}install-gde/system-requirements.html">Magento System Requirements</a>.
-2.	You completed all prerequisite tasks discussed in <a href="{{ site.gdeurl21 }}install-gde/prereq/prereq-overview.html">Prerequisites</a>.
-4.	After you log in to the Magento server, <a href="{{ site.gdeurl21 }}install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.
+1.	Your system meets the requirements discussed in <a href="{{page.baseurl}}install-gde/system-requirements.html">Magento System Requirements</a>.
+2.	You completed all prerequisite tasks discussed in <a href="{{page.baseurl}}install-gde/prereq/prereq-overview.html">Prerequisites</a>.
+4.	After you log in to the Magento server, <a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.
 
 <h3 id="instgde-install-web-enable-mod">Enabling and disabling modules</h3>
 The Setup Wizard enables you to enable or disable modules before you install the Magento software. Before you do so, make sure you understand the following.

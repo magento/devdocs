@@ -24,4 +24,4 @@ A typical directory structure for three language packages follows:
 
 The only required directory for a language package is the top-level directory. Although not required, we recommend that the directory name match the [ISO](http://www.iso.org/iso/home/standards/language_codes.htm){:target="_blank"} code to identify the locale.
 
-For more information about language packages, see [Translation dictionaries and language packages]({{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-i18n.html).
+For more information about language packages, see [Translation dictionaries and language packages]({{page.baseurl}}config-guide/cli/config-cli-subcommands-i18n.html).

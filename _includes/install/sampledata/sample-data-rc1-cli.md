@@ -9,7 +9,7 @@ These instructions apply to Magento Community Edition (CE) and Magento Enterpris
 
 To upgrade to Magento 2 RC1 or RC2 sample data using the command line:
 
-1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{ site.gdeurl }}install-gde/prereq/file-system-perms-over.html).
+1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{page.baseurl}}install-gde/prereq/file-system-perms-over.html).
 2.	Change to the Magento installation directory.
 3.	Back up your current `composer.json`:
 
@@ -37,7 +37,7 @@ To upgrade to Magento 2 RC1 or RC2 sample data using the command line:
 5.	Update dependencies:
 	
 		composer update
-6.	If prompted, enter your [authentication keys]({{ site.gdeurl }}install-gde/prereq/connect-auth.html).
+6.	If prompted, enter your [authentication keys]({{page.baseurl}}install-gde/prereq/connect-auth.html).
 7.	Wait for dependencies to update.
 
 ### Finish your upgrade

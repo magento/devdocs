@@ -11,7 +11,7 @@ github_link: frontend-dev-guide/translations/translate_theory.md
 
 ## What's in this topic ##
 
-Your custom theme might contain new strings that are not present in the Magento out of the box themes. To ensure that your theme is displayed correctly with any language applied on a store view, you need to make sure that the unique strings of your theme are added to the translation <a href="{{site.gdeurl21}}frontend-dev-guide/translations/xlate.html#translate_terms">dictionary</a> when the <a href="{{site.gdeurl21}}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict" target="_blank">i18n tool</a> is run.
+Your custom theme might contain new strings that are not present in the Magento out of the box themes. To ensure that your theme is displayed correctly with any language applied on a store view, you need to make sure that the unique strings of your theme are added to the translation <a href="{{page.baseurl}}frontend-dev-guide/translations/xlate.html#translate_terms">dictionary</a> when the <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict" target="_blank">i18n tool</a> is run.
 Then when a new language package is created and used to translate a store view, all theme strings are translated as well.
 
 This topic describes how to add theme strings in a way that they get collected by the i18n tool and are added to the dictionary.
@@ -27,7 +27,7 @@ This topic describes how to add theme strings in a way that they get collected b
 
 <h2 id="add_strings_phtml">Strings added in .phtml templates</h2>
 
-To ensure that your new string is added to the dictionary and translated, use the `__('<your_string>')` method when outputting a string in a <a href="{{site.gdeurl21}}frontend-dev-guide/templates/template-overview.html" target="_blank">.phtml template</a>.
+To ensure that your new string is added to the dictionary and translated, use the `__('<your_string>')` method when outputting a string in a <a href="{{page.baseurl}}frontend-dev-guide/templates/template-overview.html" target="_blank">.phtml template</a>.
 
 For example:
 
@@ -45,10 +45,10 @@ In this example, the <i>'Hello %s'</i> string is added to the dictionary when th
 
 <h2 id="add_strings_email">Strings added in email templates</h2>
 
-If your theme contains <a href="{{site.gdeurl21}}frontend-dev-guide/templates/template-email.html#customize-email-theme" target="_blank">custom email templates</a>, their strings can be added to the dictionary as well.
-To make sure the strings of an email template are added to the dictionary, use the  {% raw %} {{trans}}  {% endraw %} <a href="{{site.gdeurl21}}frontend-dev-guide/templates/template-email.html#localization" target="_blank">directive</a>.
+If your theme contains <a href="{{page.baseurl}}frontend-dev-guide/templates/template-email.html#customize-email-theme" target="_blank">custom email templates</a>, their strings can be added to the dictionary as well.
+To make sure the strings of an email template are added to the dictionary, use the  {% raw %} {{trans}}  {% endraw %} <a href="{{page.baseurl}}frontend-dev-guide/templates/template-email.html#localization" target="_blank">directive</a>.
 
-Custom email templates <a href="{{site.gdeurl21}}frontend-dev-guide/templates/template-email.html#customize-email-admin" target="_blank">added using the Admin panel</a>, are not stored in the file system, and their stings are not added to the dictionary.
+Custom email templates <a href="{{page.baseurl}}frontend-dev-guide/templates/template-email.html#customize-email-admin" target="_blank">added using the Admin panel</a>, are not stored in the file system, and their stings are not added to the dictionary.
 
 <h2 id="add_strings_ui_html">Strings added in UI components' templates</h2>
 

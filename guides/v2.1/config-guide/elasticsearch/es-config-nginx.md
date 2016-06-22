@@ -196,4 +196,4 @@ This section discusses how to specify who can access the Elasticsearch server.
 {% include config/es-verify-proxy.md %}
 
 #### Next
-<a href="{{ site.gdeurl21 }}config-guide/elasticsearch/es-config-stopwords.html">Configure Elasticsearch stopwords</a>
+<a href="{{page.baseurl}}config-guide/elasticsearch/es-config-stopwords.html">Configure Elasticsearch stopwords</a>

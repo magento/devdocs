@@ -25,14 +25,14 @@ The following image is an illustration of the default view of the form on the **
 
 ## Overview
 
-In Magento version 2.1, the product creation form was completely refactored, and implemented using the [form UI component]({{site.gdeurl21}}ui-components/ui-form.html). 
+In Magento version 2.1, the product creation form was completely refactored, and implemented using the [form UI component]({{page.baseurl}}ui-components/ui-form.html). 
 
 Product attributes and attribute sets available in the form, can be customized and added under **STORES** > **Attributes** in the Admin. But you can also customize the form view and behavior in code. The following sections describe what files define the form and how they can be customized in your module.
 
 
 ## Prerequisites
 
-[Set Magento to developer mode]({{site.gdeurl21}}config-guide/cli/config-cli-subcommands-mode.html) while you perform all customizations and debugging.
+[Set Magento to developer mode]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html) while you perform all customizations and debugging.
 
 For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Instead, add your customizations in a separate module. 
 
@@ -229,5 +229,5 @@ For reference about setting conditions for displaying certain elements for certa
 
 ## Recommended reading:
 
- - [Form UI component]({{site.gdeurl21}}ui-components/ui-form.html)
- - [Dependency injection]({{site.gdeurl21}}extension-dev-guide/depend-inj.html)
+ - [Form UI component]({{page.baseurl}}ui-components/ui-form.html)
+ - [Dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html)

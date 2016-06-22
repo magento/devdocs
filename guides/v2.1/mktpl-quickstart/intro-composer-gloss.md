@@ -46,11 +46,11 @@ Merchants do not need to understand that, under the covers, some packages are sh
 </div>
 
 #### For more information
-*	<a href="{{ site.gdeurl21 }}extension-dev-guide/package_module.html#package-metapackage">metapackages</a>
-*	<a href="{{ site.gdeurl21 }}extension-dev-guide/composer-integration.html">component types in <code>composer.json</code></a>.
+*	<a href="{{page.baseurl}}extension-dev-guide/package_module.html#package-metapackage">metapackages</a>
+*	<a href="{{page.baseurl}}extension-dev-guide/composer-integration.html">component types in <code>composer.json</code></a>.
 
 <h3 id="gloss-compman">Component Manager</h3>
-Merchants use the <a href="{{ site.gdeurl21 }}comp-mgr/compman-start.html">Component Manager</a> (part of the Magento Admin) to do any of the following:
+Merchants use the <a href="{{page.baseurl}}comp-mgr/compman-start.html">Component Manager</a> (part of the Magento Admin) to do any of the following:
 
 *	Install, uninstall
 *	Update
@@ -58,4 +58,4 @@ Merchants use the <a href="{{ site.gdeurl21 }}comp-mgr/compman-start.html">Compo
 
 If you package and upload your components as discussed in this guide and in the <em>Marketplace User Guide</em>, merchants can easily update your components after you publish them.
 
-For details, see <a href="{{ site.gdeurl21 }}comp-mgr/compman-main-pg.html#compman-access-types">Supported actions for each component type</a>.
+For details, see <a href="{{page.baseurl}}comp-mgr/compman-main-pg.html#compman-access-types">Supported actions for each component type</a>.

@@ -12,7 +12,7 @@ See one of the following sections:
 *	[Upgrade to Magento 2.1 with sample data](#upgrade-rc-samp) 
 
 ### Install using Composer {#install-rc-composer}
-This Release Candidate is available from `repo.magento.com`. Before installing this Release Candidate using Composer,  familiarize yourself with these  <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run:
+This Release Candidate is available from `repo.magento.com`. Before installing this Release Candidate using Composer,  familiarize yourself with these  <a href="{{page.baseurl}}install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run:
 
 	composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=<version> <installation directory name>
 
@@ -32,7 +32,7 @@ If you installed optional sample data, see [Upgrade to an RC with sample data](#
 </div>
 
 ### Upgrade using the Setup Wizard
-Use the instructions in [Start System Upgrade]({{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html). When prompted to choose a version, choose a Release Candidate.
+Use the instructions in [Start System Upgrade]({{page.baseurl}}comp-mgr/upgrader/upgrade-start.html). When prompted to choose a version, choose a Release Candidate.
 
 ### Upgrade using the command line
 
@@ -52,7 +52,7 @@ Use the instructions in [Start System Upgrade]({{ site.gdeurl }}comp-mgr/upgrade
 		composer require magento/product-enterprise-edition 2.1.0-rc3 --no-update
 		composer update
 	
-3.	If prompted, enter your [authentication keys]({{ site.gdeurl }}comp-mgr/prereq/prereq_auth-token.html).
+3.	If prompted, enter your [authentication keys]({{page.baseurl}}comp-mgr/prereq/prereq_auth-token.html).
 4. Update the database schema and data:
 
 		php bin/magento setup:upgrade

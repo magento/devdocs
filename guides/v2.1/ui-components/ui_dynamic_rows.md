@@ -10,7 +10,7 @@ github_link: ui-components/ui_dynamic_rows.md
 ---
 ## Overview
 
-The dynamic-rows component is used to create a table where rows of configurable fields can be dynamically added and removed. For example, it can be used for displaying data from a certain [grid]({{site.gdeurl21}}ui-components/ui-listing-grid.html), where the number of records (rows) is not hardcoded. 
+The dynamic-rows component is used to create a table where rows of configurable fields can be dynamically added and removed. For example, it can be used for displaying data from a certain [grid]({{page.baseurl}}ui-components/ui-listing-grid.html), where the number of records (rows) is not hardcoded. 
 
 Following is an illustration of what such a table looks like:
 

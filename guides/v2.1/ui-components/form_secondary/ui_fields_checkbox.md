@@ -82,7 +82,7 @@ The Checkbox UI configuration file looks like following:
 </field>
 {%endhighlight%}
 
-Example of the Checkbox UI configuration in the scope of the [Form UI]({{site.gdeurl21}}ui-components/ui-form.html) configuration:
+Example of the Checkbox UI configuration in the scope of the [Form UI]({{page.baseurl}}ui-components/ui-form.html) configuration:
 
 {%highlight xml%}
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
