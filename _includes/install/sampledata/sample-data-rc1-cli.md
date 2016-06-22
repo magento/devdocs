@@ -7,7 +7,7 @@ These instructions apply to Magento Community Edition (CE) and Magento Enterpris
 *	You installed optional sample data
 *	You're upgrading to Magento 2.1 (including a Release Candidate) using the command line
 
-### Put your store in maintenance mode {#upgrade-cli-maint}
+#### Put your store in maintenance mode {#upgrade-cli-maint}
 
 {% collapsible To put your store in maintenance mode for the upgrade: %}
 To prevent access to your store while it's being upgraded, put your store in maintenance mode.
@@ -27,7 +27,7 @@ To enable maintenance mode:
 
 {% endcollapsible %}
 
-### Upgrade with sample data
+#### Upgrade with sample data
 
 {% collapsible To upgrade to Magento 2.1 with sample data: %}
 
@@ -58,7 +58,7 @@ To enable maintenance mode:
 6.	If prompted, enter your [authentication keys]({{ site.gdeurl }}install-gde/prereq/connect-auth.html).
 7.	Wait for dependencies to update.
 
-### Finish your upgrade
+#### Finish your upgrade
 After you've reset file system permissions:
 
 1.	If you haven't done so already, log in to your Magento server as, or switch to, the Magento file system owner.
@@ -74,8 +74,7 @@ After you've reset file system permissions:
 
 {% include install/sampledata/file-sys-perms-digest.md %}
 
-
-### Disable maintenance mode {#upgrade-cli-maint}
+#### Disable maintenance mode {#upgrade-cli-maint}
 
 Enter the following command:
 

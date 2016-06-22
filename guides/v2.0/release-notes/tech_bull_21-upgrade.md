@@ -57,7 +57,7 @@ After applying the patch, complete your upgrade as follows:
 {%include install/sampledata/sample-data-rc1-cli.md %}
 
 ### Enterprise Edition only: Web Setup Wizard upgrade to Magento EE version 2.1 with sample data {#tb-upgr-samp-wiz}
-Upgrades to version 2.1 with sample data can fail because of the following issues:
+Upgrades to Magento EE 2.1 with sample data can fail because of the following issues:
 
 *	An issue with the Magento `composer-installer` component. It doesn't correctly detect code changes and therefore doesn't update the cache and compiled code directories properly. As a result, fatal errors display during the upgrade.
 
@@ -113,4 +113,4 @@ A sample command follows:
 	rm -rf var/cache/* var/page_cache/* var/generation/*
 
 #### Start the upgrade
-Start your upgrade as discussed in [Start System Upgrade]({{ site.gdeurl21 }}comp-mgr/upgrader/upgrade-start.html).
+Start your upgrade as discussed in [Start System Upgrade]({{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html).
