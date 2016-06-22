@@ -1,21 +1,38 @@
-# Deploy devdocs locally
+# Overview of this Vagrant project
 
-You can deploy devdocs site locally using this vagrant project. Vagrant enables you to create a virtual machine with all the software needed to build the devdocs project on a virtual machine. The generated web-site is accessible through browser from your machine as localhost using IP: **127.0.0.1:4000** by default.
+You can deploy devdocs site locally using this vagrant project. Vagrant will do the following:
+ 
+ 1. Create a virtual machine with Ubuntu
+ 
+ 2. Install all the software needed
+ 
+ 3. Clone `devdocs` repo to the virtual machine in a shared folder (on VM: `/vagrant/devdocs`, on your machine: in the `vagrant/devdocs` directory)
+ 
+ 4. Run Jekyll to generate `magento.devdocs` website locally
+ 
+The generated web-site is accessible through browser from your machine as localhost using IP: **127.0.0.1:4000** by default.
 
 ## Setup
 
-1. Download or clone [devdocs repository](https://github.com/magento/devdocs).
-2. [Install VirtualBox](https://www.virtualbox.org/wiki/Downloads). 
-3. [Install Vagrant](https://www.vagrantup.com/).
+1. Download [`devdocs/vagrant` directory](https://github.com/magento/devdocs/vagrant).
 
-## Create VM and environment 
+2. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads). 
 
-1. Using a terminal, change a directory to `devdocs/vagrant` on your host. (The directory where this README is located.) 
- Example: `cd ~/devdocs/vagrant`
-2. Enter in your terminal `vagrant up`
-3. Wait for some time until vagrant created a virtual machine with ready-to-go environment.
+3. Install [Vagrant](https://www.vagrantup.com/).
 
-## Browse devdocs site
+## Run Vagrant
+
+1. In your terminal, open the downloaded directory `vagrant` on your host. (The directory where this README is located.)
+ 
+2. Enter `vagrant up`.
+
+3. Wait for some time while vagrant is creating a virtual machine, sets up environment, and runs Jekyll. You'll se the following test in your terminal:
+
+        Configuration file: /vagrant/devdocs/_config.yml
+        Server address: http://0.0.0.0:4000//
+        Server running... press ctrl-c to stop.
+
+## Browse magento.devdocs site locally
 
 In your browser, visit http://127.0.0.1:4000/
 
@@ -34,15 +51,15 @@ All commands must be run in the terminal from the directory that contains `Vagra
 
 ### Scripts
 
-- Stop Jekyll server. (Stops devdocs site generation.)
+- Stop Jekyll server. (Stops magento.devdocs site generation.)
 
         vagrant ssh -c "kill $(ps aux | grep '[j]ekyll' | awk '{print $2}')"
 
-- Run Jekyll server. (Generates devdocs site.)
+- Run Jekyll server. (Generates magento.devdocs site.)
  
         vagrant ssh -c 'cd /jekyll/devdocs; jekyll serve --host=0.0.0.0'
 
-- Reload Jekyll server. (Regenerates devdocs site.)
+- Reload Jekyll server. (Regenerates magento.devdocs site.)
 
         vagrant ssh -c "kill $(ps aux | grep '[j]ekyll' | awk '{print $2}'); cd /jekyll/devdocs; jekyll serve --host=0.0.0.0"
  
@@ -53,7 +70,7 @@ All commands must be run in the terminal from the directory that contains `Vagra
 
         vagrant ssh
 
-  To terminate the connection, run the command:
+  To terminate the SSH connection, run the command:
 
             exit
         
