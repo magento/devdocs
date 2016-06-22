@@ -29,7 +29,7 @@ Use the following instructions to get the patch named `MDVA-532.*`, then transfe
 
 {% collapsible To get the patch: %}
 
-{% include install/patch/get-patch-ee.md %}
+{% include install/patch/get-patch.md %}
 
 {% endcollapsible %}
 
