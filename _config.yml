@@ -64,4 +64,4 @@ gems:
   - jekyll-redirect-from
   - jekyll-last-modified-at
 
-exclude: ['scss','bin','node_modules', 'vendor']
+exclude: ['scss','bin','node_modules', 'vendor', 'guides/v2.2']
