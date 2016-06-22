@@ -23,7 +23,7 @@ github_link: extension-dev-guide/staging/CatalogRuleStaging.md
 
 The Magento_CatalogRuleStaging module is a part of the staging functionality in Magento EE. It enables you to add the catalog rule updates to existing store campaigns. In other words, you can add and/or remove catalog rules for some period of time. These updates are shown on the campaign dashboard.
 
-## Implementation Details
+## Implementation details
 
 The Magento_CatalogRuleStaging module changes a catalog rule creation page and the catalog rule related database tables to make them compatible with the Magento Staging Framework. This module depends on the Magento_CatalogRule module and extends its functionality. It changes the database structure of the Magento_CatalogRule module and the way in which catalog rules are managed. The Magento_CatalogRule module must be enabled.
 
@@ -43,7 +43,7 @@ The Magento_CatalogRuleStaging module enables you to stage the following catalog
 
 These attributes cannot be modified and are a part of the static Magento Catalog Rule form.
 
-### Installation Details
+### Installation details
 
 The Magento_CatalogRuleStaging module makes irreversible changes in a database during installation. You cannot uninstall this module.
 
@@ -51,7 +51,7 @@ The Magento_CatalogRuleStaging module makes irreversible changes in a database d
 
 You can find the list of modules that have dependencies on the Magento_CatalogRuleStaging module in the `require` section of the `composer.json` file. The file is located in the root directory of the module.
 
-## Extension Points
+## Extension points
 
 Extension points enable extension developers to interact with the Magento_CatalogRuleStaging module. You can interact with the Magento_CatalogRuleStaging module using the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).
 

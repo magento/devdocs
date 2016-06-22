@@ -23,7 +23,7 @@ github_link: extension-dev-guide/staging/SearchStaging.md
 
 The Magento_SearchStaging module is a part of the staging functionality in Magento EE. It disables searching in the staging preview mode.
 
-## Implementation Details
+## Implementation details
 
 The Magento_SearchStaging module extends the Magento_Search module functionality. It adds Search to the staging preview but disables the searching functionality.
 
@@ -31,7 +31,7 @@ The Magento_SearchStaging module extends the Magento_Search module functionality
 
 You can find the list of modules that have dependencies on the Magento_SearchStaging module in the `require` section of the `composer.json` file. The file is located in the root directory of the module.
 
-## Extension Points
+## Extension points
 
 Extension points enable extension developers to interact with the Magento_SearchStaging module. [The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_SearchStaging module.
 

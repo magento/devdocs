@@ -23,7 +23,7 @@ github_link: extension-dev-guide/staging/CmsStaging.md
 
 The Magento_CmsStaging module is a part of the staging functionality in Magento EE. It enables you to add the CMS Page and the CMS Block updates to the existing store campaigns. These updates are shown on the campaign dashboard.
 
-## Implementation Details
+## Implementation details
 
 The Magento_CmsStaging module changes the CMS Pages and CMS Blocks creation pages to make them compatible with the Magento Staging Framework. This module depends on the Magento_Cms module and extends its functionality. It changes the database structure of the Magento_Cms module and the way in which CMS Pages/Blocks are managed.
 
@@ -55,7 +55,7 @@ The following parameters can be staged:
 - Store View
 - Content (WYSIWYG)
 
-### Installation Details
+### Installation details
 
 The Magento_CmsStaging module makes irreversible changes in a database during installation. You cannot uninstall this module.
 
@@ -63,7 +63,7 @@ The Magento_CmsStaging module makes irreversible changes in a database during in
 
 You can find the list of modules that have dependencies on the Magento_CmsStaging module in the `require` section of the `composer.json` file. The file is located in the root directory of the module.
 
-## Extension Points
+## Extension points
 
 Extension points enable extension developers to interact with the Magento_CmsStaging module. For more information about the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).
 

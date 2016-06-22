@@ -23,11 +23,11 @@ github_link: extension-dev-guide/staging/ConfigurableProductStaging.md
 
 The Magento_ConfigurableProductStaging module is a part of the staging functionality in Magento EE. It enables you to add the Configurable Product updates to the existing store campaigns. In other words, you can change the Configurable Product attributes in campaigns. These updates are shown on the campaign dashboard.
 
-## Implementation Details
+## Implementation details
 
 The Magento_ConfigurableProductStaging module adds the "Configurations" tab and the configuration wizard to the Schedule Update form of a product.
 
-### Installation Details
+### Installation details
 
 The Magento_CmsStaging module makes irreversible changes in a database during installation. You cannot uninstall this module.
 
@@ -35,7 +35,7 @@ The Magento_CmsStaging module makes irreversible changes in a database during in
 
 You can find the list of modules that have dependencies on the Magento_ConfigurableProductStaging module in the `require` section of the `composer.json` file. The file is located in the root directory of the module.
 
-## Extension Points
+## Extension points
 
 Extension points enable extension developers to interact with the Magento_ConfigurableProductStaging module. For more information about the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).
 

@@ -23,7 +23,7 @@ github_link: extension-dev-guide/staging/CatalogImportExportStaging.md
 
 The Magento_CatalogImportExportStaging module is a part of the staging functionality in Magento EE. It extends the Magento_CatalogImportExport module functionality to be used in staging mode.
 
-## Implementation Details
+## Implementation details
 
 The Magento_CatalogImportExportStaging module:
 
@@ -34,7 +34,7 @@ The Magento_CatalogImportExportStaging module:
 
 You can find the list of modules that have dependencies on the Magento_CatalogImportExportStaging module in the `require` section of the `composer.json` file. The file is located in the root directory of the module.
 
-## Extension Points
+## Extension points
 
 The Magento_CatalogImportExportStaging module does not provide any specific extension points. You can extend it using the Magento extension mechanism.
 

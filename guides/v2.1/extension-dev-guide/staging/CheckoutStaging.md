@@ -24,7 +24,7 @@ github_link: extension-dev-guide/staging/CheckoutStaging.md
 The Magento_CheckoutStaging module is a part of the staging functionality in Magento EE.
 It extends the checkout functionality and enables you to use it in the staging preview mode.
 
-## Implementation Details
+## Implementation details
 
 The Magento_CheckoutStaging module extends the following Magento_Checkout module functionality to be used in the staging preview mode:
 
@@ -37,7 +37,7 @@ Configuration options:
 - The `preview_quota_lifetime` parameter in the `Magento/CheckoutStaging/etc/config.xml` sets the lifetime of the demo quote.
 - The `schedule` parameter in the `Magento/CheckoutStaging/etc/crontab.xml` sets a launch schedule of the cron.
 
-## Installation Details
+### Installation details
 
 The Magento_CheckoutStaging module makes irreversible changes in a database during installation. You cannot uninstall this module.
 
@@ -45,7 +45,7 @@ The Magento_CheckoutStaging module makes irreversible changes in a database duri
 
 You can find the list of modules that have dependencies on the Magento_CheckoutStaging module in the `require` section of the `composer.json` file. The file is located in the root directory of the module.
 
-## Extension Points
+## Extension points
 
 Extension points enable extension developers to interact with the Magento_CheckoutStaging module. For more information about the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).
 
