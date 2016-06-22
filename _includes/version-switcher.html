@@ -7,7 +7,7 @@
 
 	<ul class="dropdown-menu dropdown-menu-right">
 	{%for version in site.versions %}
-		<li><a class="dropdown-item" href="{{ version.url }}">Version {{ version.name }}</a></li>
+		<li><a class="dropdown-item" href="{{ site.baseurl }}{{ version.url }}">Version {{ version.name }}</a></li>
 	{% endfor %}
   </ul>
 
