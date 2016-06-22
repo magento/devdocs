@@ -81,7 +81,7 @@
 
 		<ul role="navigation">
 
-		{% assign categories = site.articles | group_by:"group" %}
+		{% assign categories = site.articles | where: "version", page.version | group_by:"group" %}
 
 		{% for node in categories %}
 
@@ -139,10 +139,10 @@
 									{% endif %}
 
 								{% endfor %}
-								
-								
-							
-							
+
+
+
+
 						{% else %}
 
 							{% for article in articles_sorted %}

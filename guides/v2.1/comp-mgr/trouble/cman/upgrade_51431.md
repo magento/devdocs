@@ -32,7 +32,7 @@ A snippet from this error follows:
 ## Solution
 To resolve these errors, perform the following tasks:
 
-1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{ site.gdeurl21 }}install-gde/prereq/apache-user.html).
+1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{page.baseurl}}install-gde/prereq/apache-user.html).
 
 	If you don't have access to the Magento server file system, connect to it using an FTP application.
 2.	Remove the following files so you can upgrade again:
@@ -43,15 +43,15 @@ To resolve these errors, perform the following tasks:
 		<your Magento install dir>/var/page_cache/*
 		<your Magento install dir>/var/generation/*
 
-3.	Run your upgrade again, making sure to complete _all tasks_ discussed in [Run System Upgrade]({{ site.gdeurl21 }}comp-mgr/upgrader/upgrade-start.html).
+3.	Run your upgrade again, making sure to complete _all tasks_ discussed in [Run System Upgrade]({{page.baseurl}}comp-mgr/upgrader/upgrade-start.html).
 
 
 ### `var/session` permissions failure {#compman-upgr-perms}
 If your Magento application is set to write session data to the `<your Magento install dir>/var/session` directory, you must set permissions on that directory before you upgrade.
 
-[How to find where Magento stores session files]({{ site.gdeurl21 }}config-guide/sessions.html).
+[How to find where Magento stores session files]({{page.baseurl}}config-guide/sessions.html).
 
-To verify whether or not sessions are stored in `<your Magento install dir>/var/session`, log in to your Magento server, or switch to, [Magento file system owner]({{ site.gdeurl21 }}install-gde/prereq/apache-user.html) and enter the following command:
+To verify whether or not sessions are stored in `<your Magento install dir>/var/session`, log in to your Magento server, or switch to, [Magento file system owner]({{page.baseurl}}install-gde/prereq/apache-user.html) and enter the following command:
 
 	ls <your Magento file install dir>/var/session
 
@@ -59,11 +59,11 @@ For example, if Magento is installed in `/var/www/magento2`, enter:
 
 	ls /var/www/magento2/var/session
 
-If there are files in that directory, you must set permissions; if there are no files in that directory, you can skip the remainder of this section and continue with [Step 4. Upgrade]({{ site.gdeurl21 }}comp-mgr/upgrader/upgrade.html).
+If there are files in that directory, you must set permissions; if there are no files in that directory, you can skip the remainder of this section and continue with [Step 4. Upgrade]({{page.baseurl}}comp-mgr/upgrader/upgrade.html).
 
 To set file system permissions before upgrade:
 
-1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{ site.gdeurl21 }}install-gde/prereq/apache-user.html).
+1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{page.baseurl}}install-gde/prereq/apache-user.html).
 2.	Enter the following command:
 
 		chmod -R 770 <your Magento install dir>/var/session

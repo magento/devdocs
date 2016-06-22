@@ -18,9 +18,9 @@ github_link21: config-guide/elasticsearch/es-overview.md
 *	<a href="#overview">Overview of Elasticsearch</a>
 *	<a href="#es-prereq">Prerequisites</a>
 *	<a href="#es-resources">Additional resources</a>
-*	[Configure nginx and Elasticsearch]({{ site.gdeurl21 }}config-guide/elasticsearch/es-config-nginx.html)
-*	[Configure Apache and Elasticsearch]({{ site.gdeurl21 }}config-guide/elasticsearch/es-config-apache.html)
-*	[Configure Elasticsearch stopwords]({{ site.gdeurl21 }}config-guide/elasticsearch/es-config-stopwords.html)
+*	[Configure nginx and Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/es-config-nginx.html)
+*	[Configure Apache and Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/es-config-apache.html)
+*	[Configure Elasticsearch stopwords]({{page.baseurl}}config-guide/elasticsearch/es-config-stopwords.html)
 
 <h2 id="overview">Overview of Elasticsearch</h2>
 In Magento 2.1 for the first time, you can use [Elasticsearch](https://www.elastic.co){:target="_blank"} for searching your catalog.
@@ -137,5 +137,5 @@ To install Elasticsearch:
 
 #### Next
 
-*	[Configure nginx and Elasticsearch]({{ site.gdeurl21 }}config-guide/elasticsearch/es-config-nginx.html)
-*	[Configure Apache and Elasticsearch]({{ site.gdeurl21 }}config-guide/elasticsearch/es-config-apache.html)
+*	[Configure nginx and Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/es-config-nginx.html)
+*	[Configure Apache and Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/es-config-apache.html)

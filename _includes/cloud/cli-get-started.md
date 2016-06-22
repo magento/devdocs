@@ -32,6 +32,6 @@
 8.	Pull updated code:
 
 		git pull origin <environment ID>
-7.  Create a [snapshot]({{ site.gdeurl }}cloud/admin/admin-snap.html) of the environment.
+7.  Create a [snapshot]({{page.baseurl}}cloud/admin/admin-snap.html) of the environment.
 
         magento-cloud snapshot:create -e <environment ID>

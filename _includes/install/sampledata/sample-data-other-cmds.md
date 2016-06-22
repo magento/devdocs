@@ -29,4 +29,4 @@ To prepare sample data for updating, enter the following command:
 
 	magento sampledata:reset
 
-After that, <a href="{{ site.gdeurl21 }}install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">update the Magento application</a>.
+After that, <a href="{{page.baseurl}}install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">update the Magento application</a>.

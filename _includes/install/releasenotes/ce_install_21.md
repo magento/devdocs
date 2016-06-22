@@ -28,7 +28,7 @@ where
 `[-b <version]` optionally checks out a new branch.
 
 ### Install using Composer {#install-rc-composer}
-This Release Candidate is available from `repo.magento.com`. Before installing this Release Candidate using Composer, familiarize yourself with the Composer metapackage  <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run 
+This Release Candidate is available from `repo.magento.com`. Before installing this Release Candidate using Composer, familiarize yourself with the Composer metapackage  <a href="{{page.baseurl}}install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run 
 
 	composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=<version> <installation directory name>
 
@@ -48,12 +48,12 @@ If you installed optional sample data, see [Upgrade to an RC with sample data](#
 </div>
 
 ### Upgrade using the Setup Wizard
-Use the instructions in [Start System Upgrade]({{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html). When prompted to choose a version, choose a Release Candidate.
+Use the instructions in [Start System Upgrade]({{page.baseurl}}comp-mgr/upgrader/upgrade-start.html). When prompted to choose a version, choose a Release Candidate.
 
 ### Upgrade from the GitHub repository
-Developers who contribute to the CE codebase can <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento CE GitHub repository.
+Developers who contribute to the CE codebase can <a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento CE GitHub repository.
 
-1.	Go to the <a href="{{ site.gdeurl }}install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.
+1.	Go to the <a href="{{page.baseurl}}install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.
 
 2.	Follow the instructions to pull the updates from the repository and update using Composer.
 
@@ -78,7 +78,7 @@ This section discusses how to upgrade to Magento 2.1 (including a Release Candid
 		composer require magento/product-community-edition 2.1.0-rc3 --no-update
 		composer update
 
-3.	If prompted, enter your [authentication keys]({{ site.gdeurl }}comp-mgr/prereq/prereq_auth-token.html).
+3.	If prompted, enter your [authentication keys]({{page.baseurl}}comp-mgr/prereq/prereq_auth-token.html).
 4. Update the database schema and data:
 
 		php bin/magento setup:upgrade

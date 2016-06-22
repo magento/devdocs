@@ -4,13 +4,13 @@
 Magento uses cron for two sets of tasks, and for each, cron can be run with a different configuration:
 
 *	The general cron job that reindexes indexers, generates e-mails, generates the sitemap, and so on, typically runs as the PHP command-line user's `php.ini`
-*	Two other cron jobs are used by the <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade utilities</a>. Those commands must use the web server's `php.ini`.
+*	Two other cron jobs are used by the <a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade utilities</a>. Those commands must use the web server's `php.ini`.
 
 If you're not experienced with running cron, you can run all commands with the web server's configuration; however, we leave the decision up to you.
 
 #### Find the web server configuration
 
-To find the web server configuration, run a <a href="{{ site.gdeurl }}install-gde/prereq/optional.html#install-optional-phpinfo">`phpinfo.php` file</a> in your web browser and look for the Loaded Configuration File as follows:
+To find the web server configuration, run a <a href="{{page.baseurl}}install-gde/prereq/optional.html#install-optional-phpinfo">`phpinfo.php` file</a> in your web browser and look for the Loaded Configuration File as follows:
 
 <img src="{{ site.baseurl }}common/images/config_phpini-webserver.png" width="700px">
 

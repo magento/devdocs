@@ -3,7 +3,7 @@
 ### Apply file system permissions and ownership {#rc1-samp-ownership}
 As part of the sample data upgrade process, you must apply current file system permission and ownership as discussed in the following sections. Failure to do so will cause your upgrade to fail.
 
-For more information about file system ownership and permissions since the Magento 2.0.6 release, see [Overview of ownership and permissions]({{ site.gdeurl }}install-gde/prereq/file-sys-perms-over.html).
+For more information about file system ownership and permissions since the Magento 2.0.6 release, see [Overview of ownership and permissions]({{page.baseurl}}install-gde/prereq/file-sys-perms-over.html).
 
 #### One-user ownership and permissions
 If you run the Magento application as one user (which is typical of shared hosting environments), change file system permissions and ownership as follows:

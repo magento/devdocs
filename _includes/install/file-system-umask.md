@@ -22,7 +22,7 @@ A common suggestion is to use a value of `022` in the `magento_umask` file, whic
 
 To set `magento_umask`:
 
-1.	Log in to your Magento server, or switch to, the [Magento file system owner]({{ site.gdeurl21 }}install-gde/prereq/file-sys-perms-over.html).
+1.	Log in to your Magento server, or switch to, the [Magento file system owner]({{page.baseurl}}install-gde/prereq/file-sys-perms-over.html).
 2.	Set the value of `magento_umask`:
 
 	1.	Use a text editor to create a new file `<your Magento install dir>/magento_umask`
