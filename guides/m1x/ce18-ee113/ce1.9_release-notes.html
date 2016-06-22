@@ -1,0 +1,271 @@
+---
+---
+<!DOCTYPE html> 
+<html lang=en>
+<head>
+	<meta charset=utf-8>
+
+	<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}common/css/stylesheet.css"/>
+	<link rel="stylesheet" href="{{ site.baseurl }}common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
+	<link rel="icon" href="{{ site.baseurl }}common/css/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="{{ site.baseurl }}common/css/favicon.ico" type="image/x-icon"> 
+	<title>Magento Community Edition (CE) Release Notes (1.9 and later)</title>
+
+</head>
+
+<body>
+<a name="top"></a>
+
+<img src="{{ site.baseurl }}common/images/m1x/m1xheader.png" width="1024" alt="header" />
+
+<!-- Title: Magento Community Edition (CE) 1.9 Release Notes -->
+<!-- URL: ce19-later-release-notes -->
+
+
+
+
+<h1>Magento Community Edition (CE) Release Notes (1.9 and later)</h1>
+
+<div class="toc"><h4 class="toc">Contents</h4>
+<p>These Release Notes contain the following information:</p>
+<ul class="level1"><li><a href="#upgrade">Important Upgrade Information</a></li>
+<li><a href="#ce19-patches">Recent Patches</a></li>
+<li><a href="http://merch.docs.magento.com/ce/user_guide/Magento_Community_Edition_User_Guide.html#magento/release-notes-ce-1.9.1.1.html" target="_blank">Magento CE 1.9.1.1 Release Notes</a></li>
+<li><a href="http://merch.docs.magento.com/ce/user_guide/Magento_Community_Edition_User_Guide.html#magento/release-notes-ce-1.9.1.html" target="_blank">Magento CE 1.9.1.0 Release Notes</a></li>
+<li><a href="#ce19-1901">Magento CE 1.9.0.1 Release Notes</a></li>
+<li><a href="#ce19-1900">Magento CE 1.9.0.0 Release Notes</a></li>
+<li><a href="#oss">Open Source Software Licensing Agreements</a></li>
+
+
+</ul></div>
+
+<h2 id="upgrade">Important Upgrade Information</h2>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Use CE 1.9.1.0 or later for <em>all new CE installations and upgrades</em> to get the latest fixes, features, and security updates.</span></div>
+
+
+<h2 id="ce19-1901">Magento CE 1.9.0.1 Release Notes</h2>
+<p>CE 1.9.0.1 resolved the following issues:</p>
+<ul><li><!-- https://jira.corp.x.com/browse/MPERF-5270 -->Customers can no longer apply a coupon from an inactive shopping cart price rule to a purchase.</li>
+<li>Customers using a smartphone or other small viewport can expand subcategories in the web store that uses the new responsive theme.</li></ul>
+
+
+<h2 id="ce19-patches">Recent Patches</h2>
+<p>We'd like to draw your attention to several new patches that were recently posted to the Partner Portal and Support Center. These patches deliver important improvements, such as enabling several concurrent administrators to work with the product catalog, and to make it easier to install community-created translation packages.</p>
+<p>Details about the patches follow. To install patches, see <a href="#ce19-patches-how-to-get">How to Get Patches For Magento EE</a>.</p>
+<ul class="level1"><li><a href="#ce19-patches-connect-general">General Magento Connect Patches</a></li>
+<li><a href="#ce19-patches-soap">Magento Install Page Displays After SOAP v2 Index Page Refresh</a></li>
+<li><a href="#ce19-patches-how-to-get">How to Get Patches For Magento EE</a></li> 
+</ul>
+
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Some of the patches discussed in this section have <code>EE_1.14.0.1</code> in the name. These patches were all tested against CE 1.9.x as well.</div>
+
+
+<h3 id="ce19-patches-connect-general">General Magento Connect Patches</h3>
+<p><em>Patch name</em>: SUPEE-3941</p>
+<ul class="level1"><li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4590" target="_blank">APPSTORE-4590</a> -->When you install a community-created translation package, the translation provided by the package overwrites any existing translations for the same items. This enables you to more easily install packages with translations. </li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4589" target="_blank">APPSTORE-4589</a>  -->To improve security, Magento Connect now uses HTTPS by default to download extensions, rather than FTP. </li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4557" target="_blank">APPSTORE-4557</a>  -->Extension developers can now create an extensions with a dash character in the name. Merchants can install those extensions without issues.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4575" target="_blank">APPSTORE-4575</a>  -->Magento administrators who attempt to install an extension with insufficient file system privileges are now informed. Typically, the Magento Admin Panel runs as the web server user. If this user has insufficient privileges to the <em>your Magento install dir</em><code>/app/code/community</code> directory structure, the Magento administrator sees an error message in the Magento Connect Manager.<br />
+To set file system permissions appropriately, see <a href="{{ site.m1xgdeurl }}install/installer-privileges_after.html#extensions" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</li></ul>
+
+<h3 id="ce19-patches-soap">Magento Install Page Displays After SOAP v2 Index Page Refresh</h3>
+<p><em>Patch name</em>: SUPEE-3762. <!-- <a href="https://jira.corp.x.com/browse/SUPEE-3762" target="_blank">SUPEE-3762</a>  -->Refreshing the SOAP v2 index page (<code>http://<em>your-magento-host-name</em>/index.php/api/v2_soap/index/</code>) results in all administrators and customers viewing the Magento installation page.</p>
+
+<h3 id="ce19-patches-how-to-get">How to Get Patches For Magento CE</h3>
+<p>This section discusses how to get patches referenced in these Release Notes. </p>
+<p>To get patches for Magento CE:</p>
+<ol><li>Log in to <a href="http://www.magentocommerce.com/download" target="_blank">www.magentocommerce.com/download</a>.</li>
+<li>In the left pane, click <strong>Downloads</strong>.</li>
+li>Scroll down to the Magento Community Edition Patches section.</li>
+<li>Follow the prompts on your screen to download a patch for your version of CE.</li>
+<li>Apply the patch as discussed in <a href="{{ site.m1xgdeurl }}other/ht_install-patches.html" target="_blank">How to Apply and Revert Magento Patches</a>.</li></ol>
+
+<h2 id="ce19-1900">Magento CE 1.9.0.0 Release Notes</h2>
+<p>See the following sections for information about changes in this release:</p>
+<ul class="level1"><li><a href="#ce19-1900-highlights">Highlights</a></li>
+<li><a href="#ce19-1900security">Security Enhancements</a></li>
+<li><a href="#ce19-1900-changes">Changes</a></li>
+<li><a href="#ce19-1900tax">Tax Calculation Fixes</a></li>
+<li><a href="#ce19-1900fixes">Fixes</a></li>
+</ul> 
+
+<h3 id="ce19-1900-highlights">Highlights</h3>
+<p>This section lists the key new features in Magento CE 1.9. For more information about these new features, see the <a href="http://www.magentocommerce.com/resources/magento-user-guide" target="_blank">Magento User Guide</a>.</p>
+<ul class="level1"><li>The default theme in Magento CE 1.9 uses <a href="https://en.wikipedia.org/wiki/Responsive_web_design" target="_blank">Responsive Web Design</a> principles to provide a better experience for users of mobile devices in particular. Benefits include:
+<ul class="level2"><li>You can get a tablet and smart phone friendly responsive site in about half the time as before, speeding time to market and freeing up resources for other projects.</li>
+<li>Your responsive site makes you better able to participate in the fast growing mobile commerce space, gives you the ability to more easily adapt to new opportunities, and is less expensive to maintain.  A responsive site also offers potential search engine optimization (SEO) benefits because it uses Google's preferred approach to mobile-optimizing sites.</li></ul>
+</li>
+<li>Cross-border trade: (Also referred to as <em>pricing consistency</em>.) We support European Union (EU) merchants operating across regions and geographies who want to show their customers a single price. Pricing is clean and uncluttered regardless of tax structures and rates that vary from country to country.<br />
+To enable cross-border trade in the Admin Panel, click <strong>System</strong> > <strong>Configuration</strong> > SALES > <strong>Tax</strong> > <strong>Calculation Settings</strong>, option <strong>Enable Cross Border Trade</strong>.</li>
+<li>Supports <a href="http://www.php.net/manual/en/migration54.changes.php" target="_blank">PHP 5.4</a>. For more information, see <a href="http://php.net/ChangeLog-5.php#5.4.0" target="blank">the PHP changelog</a>.</li>
+<li>The Zend Framework has been upgraded to <a href="http://framework.zend.com/changelog/1.12.3/" target="_blank">version 1.12.3</a></li>
+<li>Checkout improvements:
+<ul class="level2"><li>You can capture up to 18% more sales  by providing customers access to financing using the Bill Me Later service at no additional cost to you. </li>
+<li>You can offer your customers a smoother, more streamlined PayPal Express Checkout experience, which tries alternative payment options when a customer's credit card is rejected</li>
+<li>Improve the PayPal Express checkout experience by eliminating the following steps in the checkout process:
+<ul class="level3"><li>The order review page can be enabled or disabled</li>
+<li>Eliminate the necessity of clicking <strong>Update Order</strong> before <strong>Place Order</strong></li></ul>
+</li>
+</li>
+</ul>
+<p>(<em>Conversion</em> means helping customers stay interested and complete their purchases.)</p>
+</ul>
+ 
+<h3 id="ce19-1900security">Security Enhancements</h3>
+<ul class="level1"><li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4809" target="_blank">MPERF-4809</a>  -->Addressed a potential cross-site scripting (XSS) vulnerability while creating configurable product variants.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-3723" target="_blank">MPERF-3723</a>  -->Addressed a potential security issue that could result in displaying information about a different order to a customer.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-3114" target="_blank">MPERF-3114</a>  -->Users can no longer change the currency if the payment method PayPal Website Payments Standard is used.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-3076" target="_blank">MPERF-3076</a>  -->Removed an <code>.swf</code> file from the Magento distribution because of security issues.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-2119" target="_blank">MPERF-2119</a>  -->Improved file system security.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-2498" target="_blank">MPERF-2498</a>  -->Enhanced the security of action URLs, such as billing agreements.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-1899" target="_blank">MPERF-1899</a>  -->Addressed a potential session fixation vulnerability during checkout.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-2807" target="_blank">MPERF-2807</a>  -->Improved the security of the Magento randomness function.</li>
+</ul>
+
+<h3 id="ce19-1900-changes">Changes</h3>
+<ul class="level1"><li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4632" target="_blank">MPERF-4632</a>  -->A default setting for configurable and bundled products has changed. When you create a configurable or bundled product in the Admin Panel, click <strong>Manage</strong> > <strong>Products</strong>. Create a new configurable or bundled product and click the <strong>Design</strong> tab. The default option for <strong>Display Product Options In</strong> has changed to <strong>Product Info Column</strong>.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4870" target="_blank">MPERF-4870</a>  -->The Google Websites Optimizer has been disabled because it has been deprecated by Google. (In earlier EE versions, this option was available in the Admin Panel at <strong>System</strong> > <strong>Configuration</strong> > SALES > <strong>Google API</strong> > <strong>Google Website Optimizer</strong>).</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-2563" target="_blank">MPERF-2563</a>  -->Two new options to prevent <a href="http://en.wikipedia.org/wiki/Clickjacking" target="_blank">"clickjacking"</a> if you run Magento in a <code>frame</code> or <code>iframe</code>:
+<ul class="level2"><li>Enable frames only in the same domain.</li>
+<li>Enable frames.</li>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: For security reasons, Magento strongly recommends against running the Magento software in a frame.</span></div>
+
+<p>The options are available in the Admin Panel at <strong>System</strong> > <strong>Configuration</strong> > ADVANCED > <strong>Admin</strong> > <strong>Security</strong> and are named <strong>Allow Magento Backend to run in frame</strong> and <strong> Allow Magento Frontend to run in frame</strong>.</p>
+<p>Enabling the option causes the <a href="https://developer.mozilla.org/en-US/docs/HTTP/X-Frame-Options" target="_blank"><code>X-Frame-Options</code></a> request header to be sent.</p></ul>
+</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4970" target="_blank">MPERF-4970</a>  -->FedEx changed their endpoints for sandbox and production to the following:
+<ul class="level2"><li>Production: https://ws.fedex.com/web-services</li>
+<li>Sandbox: https://wsbeta.fedex.com/web-services</li></ul>
+<p>Because of these changes, Magento cannot retrieve shipping rate information or print shipping labels for FedEx unless this fix is applied.</p>
+</li>
+<!-- <li><a href="https://jira.corp.x.com/browse/MPERF-3769" target="_blank">MPERF-3769</a> Added address validation, which enables users to select from multiple matching addresses. For example, if a user enters a partial address or a common street name, they might be presented with matching addresses from which to choose.</li>
+ -->
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4620" target="_blank">MPERF-4620</a>.  -->CE 1.9 includes a fix that prevented some Discover credit cards from validating properly. The issue was that certain Discover credit card number ranges were not recognized as being valid. As a result of the fix, all Discover cards should validate properly.</p>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: This is <em>not</em> a security threat. No data has been compromised or misused. It affects only the ability to validate certain credit card number ranges as valid Discover card numbers.</span></div></li>
+<li>The default values for two configuration options changed. Both options can be found in the Admin Panel under <strong>System</strong> > <strong>Configuration</strong> > CATALOG > <strong>Catalog</strong> > <strong>Frontend</strong>. The new default values follow:
+<ul class="level2"><li><strong>Products per Page on Grid Allowed Values</strong> is now <strong>12, 24, 36</strong>.</li>
+<li><strong>Products per Page on Grid Default Value</strong> is now <strong>12</strong>.</li></ul>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-5142" target="_blank">MPERF-5142</a>.  -->On the New Rule page for shopping cart price rules (<strong>Rule Information</strong> tab page), explanatory text <strong>Usage limit enforced for logged in customers only</strong> was added to the <strong>Uses per customer field</strong>. This is to avoid confusion encountered by some Magento merchants.</li>
+<li>Changes to PayPal Express checkout:
+<ul class="level2"><li>Changes to both <strong>Proceed to Checkout</strong> and to <strong>Pay With PayPal</strong>:
+<ul class="level3"><li>Customers cannot edit their billing address on the PayPal site&mdash;in fact, the billing address does not display on the PayPal site.</li>
+<li>Magento CE uses the customer's PayPal address information, not the address information stored in Magento CE. The customer does not need to enter Magento CE or EE address information.</li>
+<li>When the customer is redirected to the PayPal site, they can click <strong>Change</strong> next to their payment method to change it.</li>
+<p>The Magento administrator can set billing address information in the Admin Panel as follows: <strong>System</strong> > <strong>Configuration</strong> > SALES > <strong>Payment Methods</strong>. For any payment method that includes Express Checkout, in Basic Settings, set the value of the <strong> Require Customer's Billing Address</strong> list.</p>
+</ul>
+</li>
+</ul>
+<ul class="level2"><li>Changes to <strong>Pay With PayPal</strong> only:
+<ul class="level3"><li>If the Magento administrator does not require the customer's billing address, the customer's billing address is set to the customer's PayPal <em>shipping</em> address.</li>
+<li>If the Magento requires the customer's billing address, the customer's billing address is set to the customer's PayPal <em>billing</em> address.</li>
+<li>On the PayPal site, the customer can click <strong>Change</strong> next to their shipping address to change it. The customer can choose any shipping address configured with PayPal.</li>
+<li>Because the customer's configured address in Magento is not used, the customer's shipping address stored in PayPal is never changed.</li></ul>
+</li></ul>
+<ul class="level2"><li>Changes to <strong>Proceed to Checkout</strong> only:
+<ul class="level3"><li>No <strong>Change</strong> link displays next to a customer's shipping address on the PayPal site.</li>
+<li>In the event of a shipping address mismatch between Magento and PayPal, the following message displays when the customer attempts to pay using PayPal:<br />
+<pre>The address you entered on <em>store-name</em> is different than your PayPal preferred shipping address. 
+Return to <em>store-name</em> if you'd like to change the shipping address</pre>
+The user can select the <strong>Use as preferred shipping address</strong> check box to instruct PayPal to change their shipping address.</li>
+</li></ul>
+</li></ul>
+</li>
+
+</ul>
+
+<h3 id="ce19-1900tax">Tax Calculation Fixes</h3>
+<ul class="level1"><!-- <li><a href="https://jira.corp.x.com/browse/MPERF-4818" target="_blank">MPERF-4818</a>. With cross-border trading enabled for a subset of websites, an order placed by an administrative user when product prices are calculated including taxes.<br /> 
+To enable cross-border trading: <strong>System</strong> > <strong>Configuration</strong> > SALES > <strong>Tax</strong> > Calculation Settings</strong>.<br />
+To enable product price display including tax: <strong>System</strong> > <strong>Configuration</strong> > SALES > <strong>Tax</strong> > <strong>Price Display Settings</strong>.</li> -->
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4832" target="_blank">MPERF-4832</a>  -->Fixed price and dynamic price bundled products where the price is configured to include tax display prices correctly regardless of tax settings. (For example, customer's default tax rate is different from the origin tax rate.) </li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4764" target="_blank">MPERF-4764</a>  -->Resolved a one-cent rounding issue when Fixed Product Tax (FPT) is enabled and the option <strong>Apply Discount to FPT</strong> is set to <strong>Yes</strong>. (These options are available in the Admin Panel by going to <strong>System</strong> > <strong>Configuration</strong> > SALES > <strong>Tax</strong> > <strong>Fixed Product Taxes</strong>.)</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4619" target="_blank">MPERF-4619</a>  -->Resolved issues with calculating the credit memo amount when FPT is discounted and the customer purchases more than one item.</li>
+</ul>
+
+<h3 id="ce19-1900fixes">Fixes</h3>
+<!-- Support, a list of all regressions fixed in this release can be found here: https://jira.corp.x.com/secure/Dashboard.jspa?selectPageId=14815 -->
+<p>Fixes in this release can be divided into the following categories:</p>
+<ul class="level1"><li><a href="#ce19-1900fixes-webstore">Web Store and Shopping Cart Fixes</a></li>
+<li><a href="#ce19-1900fixes-price-rules">Promotional Price Rule Fixes</a></li>
+<li><a href="#ce19-1900fixes-adminpanel">Administrative Ordering, Invoicing, Credit Memo Fixes</a></li>
+<li><a href="#ce19-1900fixes-importexport">Import Fixes</a></li>
+<li><a href="#ce19-1900fixes-payment">Payment Method Fixes</a></li>
+<li><a href="#ce19-1900fixes-other">Other Fixes</a></li></ul>
+
+<h4 id="ce19-1900fixes-webstore">Web Store and Shopping Cart Fixes</h4>
+<ul class="level1">
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4836" target="_blank">MPERF-4836</a>  -->A customer can update quantities of items in their mini shopping cart from their My Account page.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-3138" target="_blank">MPERF-3138</a>  -->The Minimum Advertised Price pop-up works properly in the web store. When the customer clicks <strong>Click for price</strong>, the price displays as expected.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4819" target="_blank">MPERF-4819</a>  -->The "customer since" date is correct.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-3767" target="_blank">MPERF-3767</a>  -->Switching stores when viewing a product with store-scoped URL keys works as expected.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-3928" target="_blank">MPERF-3928</a>  -->Setting <strong>System</strong> > <strong>Configuration</strong> > CATALOG > <strong>Inventory</strong>, option <strong>Display Out of Stock Products</strong> to <strong>Yes</strong> no longer causes all products to appear as out of stock.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-3280" target="_blank">MPERF-3280</a>  -->Entering accented characters in the zip code field during checkout results in a validation error instead of an exception message.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-3509" target="_blank">MPERF-3509</a>  -->Gift card codes are sent only after an item is purchased.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-343" target="_blank">MPERF-343</a>  -->A customer who attempts to log in as another customer with incorrect credentials is denied.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4753" target="_blank">MPERF-4753</a>  -->Resolved issues with applying a 100% discount to an order.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-3657" target="_blank">MPERF-3657</a>  -->Customers are no longer redirected to the home page when they have permission to view a category.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-1360" target="_blank">MPERF-1360</a>  -->Discount amount displays correctly for products with custom options.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-5232" target="_blank">MPERF-5232</a>  -->Issues with placing PayPal Payments Advanced or PayPal Payflow Link orders using Internet Explorer 9 have been resolved.</li>
+</ul>
+
+<h4 id="ce19-1900fixes-price-rules">Promotional Price Rule Fixes</h4>
+<p>The following fixes relate to administering and using shopping cart price rules and catalog price rules:</p>
+<ul class="level1"><li><!-- <a href="https://jira.corp.x.com/browse/MPERF-2535" target="_blank">MPERF-2535</a>  -->Shopping cart price rules apply properly to grouped products.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-3242" target="_blank">MPERF-3242</a>  -->Two catalog price rules applied to the same product work properly.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-3741" target="_blank">MPERF-3741</a>  -->The setting <strong>Stop Further Rules Processing</strong> is honored.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4901" target="_blank">MPERF-4901</a>  -->A user with read-only privileges in the Admin Panel cannot save changes to a price rule.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-2614" target="_blank">MPERF-2614</a>  -->Applying a shopping cart price rule does not display an exception.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-2518" target="_blank">MPERF-2518</a>  -->Coupon codes apply only to products eligible for the price rule.</li>
+<!-- <li><a href="https://jira.corp.x.com/browse/MPERF-3764" target="_blank">MPERF-3764</a> Corrected calculation issues when there are more than 1,000 catalog price rules.</li>
+ -->
+</ul>
+
+<h4 id="ce19-1900fixes-adminpanel">Administrative Ordering, Invoicing, Credit Memo Fixes</h4>
+<ul class="level1"><li><!-- <a href="https://jira.corp.x.com/browse/MPERF-2407" target="_blank">MPERF-2407</a>  -->An administrative user with access to only one website from which a product was deleted no longer sees a stack trace when attempting to create an RMA for that product. In other words, after a customer placed an order for a product on Website1, an administrator with privileges to all websites removes the product. Later, when an administrator with access to only Website1 attempts to create an RMA for the deleted product, that administrator no longer sees an error message; instead, they see an expected <code>Access Denied</code> message.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4606" target="_blank">MPERF-4606</a>  -->Resolved an issue with incorrectly calculating the amount of an invoice when some items were discounted by a shopping cart price rule.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4607" target="_blank">MPERF-4607</a>  -->Credit memo amount is calculated correctly when processing a partial invoice with a discount.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4041" target="_blank">MPERF-4041</a>  -->Making comments in a credit memo no longer returns items to stock. (Prerequisite: an administrator set <strong>System</strong> > <strong>Configuration</strong> > CATALOG > <strong>Inventory</strong> > <strong>Product Stock Options</strong>, option <strong>Automatically Return Credit Memo Item to Stock</strong> set to <strong>Yes</strong>.)</li>
+ 
+</ul>
+
+<h4 id="ce19-1900fixes-importexport">Import Fixes</h4>
+<ul class="level1"><li><!-- <a href="https://jira.corp.x.com/browse/MPERF-3702" target="_blank">MPERF-3702</a>  -->A product with a custom attribute set imports successfully.</li>
+</ul>
+
+<h4 id="ce19-1900fixes-payment">Payment Method Fixes</h4>
+<ul class="level1"><li><!-- <a href="https://jira.corp.x.com/browse/MPERF-3113" target="_blank">MPERF-3113</a>  -->If guest checkout is disabled, a customer must log in to check out with PayPal Express.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4827" target="_blank">MPERF-4827</a>  -->Eliminated errors in the logs when an administrator clicks <strong>System</strong> > <strong>Configuration</strong> > SALES > <strong>Payment Methods</strong>.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4894" target="_blank">MPERF-4894</a>  -->You can now use New Zealand dollars as the base currency with the eWAY Direct payment bridge.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4813" target="_blank">MPERF-4813</a>  -->Store credit is applied correctly when using Website Payments Pro Hosted Solution.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-2729" target="_blank">MPERF-2729</a>  -->If the merchant country is Germany (DE), disabled guest checkout for the express checkout method and PayPal Website Payments Standard.</li>
+</ul>
+
+<h4 id="ce19-1900fixes-other">Other Fixes</h4>
+<ul class="level1"><li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4815" target="_blank">MPERF-4815</a>  -->Categories on the web store now display with spaces between category names for cached and non-cached pages.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4792" target="_blank">MPERF-4792</a>  -->A customer can now initiate a return from the web store.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4749" target="_blank">MPERF-4749</a>  -->An administrative user can subscribe to low stock RSS feeds without errors.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-3273" target="_blank">MPERF-3273</a>  -->Category URLs work as expected, regardless of the setting of <strong>Create Custom Redirect for old URL</strong> for the category's URL key.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4247" target="_blank">MPERF-4247</a>  -->Setting <code>allow_url_fopen = Off</code> in <code>php.ini</code> has no effect on the CMS WYSIWYG editor.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4351" target="_blank">MPERF-4351</a>  -->No fatal error displays when a role-restricted user previews a newsletter in the Admin Panel.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4266" target="_blank">MPERF-4266</a>  -->Google Sitemap files now include the <code>.html</code> suffix for category and product URLs.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4267" target="_blank">MPERF-4267</a>  -->Customers can use advanced search on your web store if Magento EE is configured to use the default MySQL Fulltext search engine and the server uses MySQL 5.6.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-3511" target="_blank">MPERF-3511</a>  -->A role-restricted user can preview a newsletter in the Admin Panel to which the user has privileges.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-2805" target="_blank">MPERF-2805</a>  -->After synchronizing media files with the database, <code>media/customer/.htaccess</code> is present with the correct data. (Prerequisite: an administrator set <strong>System</strong> > <strong>Configuration</strong> > ADVANCED > <strong>System</strong> > <strong>Storage Configuration for Media</strong> set to <strong>Database</strong>).</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-3159" target="_blank">MPERF-3159</a>  -->cron now restarts indexers if they previously failed to run.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-2146" target="_blank">MPERF-2146</a>  -->You can save changes to a category that has more than 1,000 products.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-2492" target="_blank">MPERF-2492</a>  -->Deactivating one of several banners no longer causes exceptions in <code>system.log</code>.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-3025" target="_blank">MPERF-3025</a> --> Resolved issues with the WSDL cache.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-2246" target="_blank">MPERF-2246</a>  -->Improved the efficiency of product searches.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-3652" target="_blank">MPERF-3652</a>  -->Resolved issues with the DHL International shipping method.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-2221" target="_blank">MPERF-2221</a>  -->Resolved 404 (Not Found) errors in layered navigation.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4984" target="_blank">MPERF-4984</a>  -->Resolved a SQL error when attempting to assign a bundled product to another website.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-3749" target="_blank">MPERF-3749</a>  -->Rules-based product relations perform as expected after being saved.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-1838" target="_blank">MPERF-1838</a>  -->Resolved an issue with sending duplicate <code>Content-Type</code> headers when using <code>mod_fastcgi</code> with the Apache web server.</li>
+
+
+
+</ul>
+
+<h2 id="oss">Open Source Software Licensing Agreements</h2>
+<p>Some versions of Magento CE use open source software licensing. Following are license agreements for that software.</p>
+<p><strong>Touch punch</strong>: This code is dual licensed under the MIT or GPL Version 2 licenses and is therefore free to use, modify and/or distribute, but if you include Touch Punch in other software packages or plugins, please include an attribution to the original software and a link to this <a href="http://touchpunch.furf.com/" target="_blank">Touch Punch website</a>.</p>

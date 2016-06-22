@@ -1,0 +1,120 @@
+---
+---
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}common/css/stylesheet.css"/>
+	<link rel="stylesheet" href="{{ site.baseurl }}common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
+	<link rel="icon" href="{{ site.baseurl }}common/css/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="{{ site.baseurl }}common/css/favicon.ico" type="image/x-icon">
+	<title>How to Apply and Revert Magento Patches</title>
+
+</head>
+
+<body>
+	<img src="{{ site.baseurl }}common/images/m1x/m1xheader.png" width="1024" alt="header" />
+
+<a name="top"></a>
+
+<h1>How to Apply and Revert Magento Patches</h1>
+
+<div id="content">
+
+<!-- Title: How to Apply and Revert Magento Patches -->
+<!-- URL: apply-revert-magento-patches -->
+
+<h4 id="contents">Table of Contents</h4>
+<ul><li><a href="#overview">Overview</li>
+<li><a href="#detail">Need More Detail?</a></li>
+<li><a href="#get">How to Get Magento Patches</a></li>
+<li><a href="#apply">How to Apply a Magento Patch</a></li>
+<li><a href="#revert">How to Revert a Magento Patch</a></li>
+<li><a href="#trouble">Troubleshooting</a></li></ul>
+
+<h2 id="overview">Overview</h2>
+<p>This article discusses how to apply and revert Magento patches you get in any of the following ways:
+<ul><li>Magento Support</li>
+<li>Magento Enterprise Edition (EE) support portal</li>
+<li>(Magento partners) from the <a href="https://partners.magento.com" target="_blank">partner portal</a></li></ul>
+<p>If you don't already have a patch, <a href="http://support.magentocommerce.com/" target="_blank">contact Magento Support</a>.</p>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: This article assumes your patch file name ends in <code>.sh</code>. If your patch file name ends in <code>.patch</code> or something else, <a href="http://support.magentocommerce.com/" target="_blank">contact Magento Support</a> before proceeding.</div>
+
+<h2 id="detail">Need More Detail?</h2>
+<p>For more step-by-step details that are provided here, see one of the following:</p>
+<ul><li><a href="https://info.magento.com/rs/magentocommerce/images/Installing-a-Patch-for-Magento-Community-Edition.pdf" target="_blank">Magento CE patch instructions</a></li>
+<li><a href="https://info.magento.com/rs/magentocommerce/images/Installing-a-Patch-for-Magento-Enterprise-Edition.pdf" target="_blank">Magento EE patch instructions</a></li></ul>
+
+<h2 id="get">How to Get Magento Patches</h2>
+<p>Magento Support provides some patches for Magento CE and EE on magentocommerce.com. This section discusses how to get those patches.</p>
+<p>If Magento Support provided a patch to you, skip this section and continue with <a href="#apply">How to Apply a Magento Patch</a>.</p>
+<p>See one of the following sections for specific information about Magento CE or EE:</p>
+<ul><li><a href="#get-ce">Getting Magento CE Patches</a></li>
+<li><a href="#get-ee">Getting Magento EE Patches</a></li></ul>
+
+<h3 id="get-ce">Getting Magento CE Patches</h3>
+<p>To get patches for Magento CE:</p>
+<ol><li>Log in to <a href="https://www.magentocommerce.com/download" target="_blank">magentocommerce.com/download</a>.<br />
+(Click <strong>My Account</strong> in the upper right corner of the page.)<br />
+If you don't have an account, you can register for one; the account is free.</li>
+<li>In the Magento Community Edition Patches section, locate the patch to install.</li>
+<li>From the list next to the patch, choose your CE version.</li>
+<li>Click <strong>Download</strong>.</li>
+<li>After the patch downloads, continue with <a href="#apply">How to Apply a Magento Patch</a>.</li></ol>
+
+<h3 id="get-ee">Getting Magento EE Patches</h3>
+<p>To get patches for Magento EE:</p>
+<ol><li>Log in to <a href="https://www.magentocommerce.com" target="_blank">magentocommerce.com</a>.<br />
+(Click <strong>My Account</strong> in the upper right corner of the page.)</li>
+<li>Click <strong>Downloads</strong> in the left pane.</li>
+<li>Click <strong>Magento Enterprise Edition</strong> in the right pane.<br />
+The following figure shows an example.</br>
+<img src="{{ site.baseurl }}common/images/m1x/EE-spt-portal.png" height="554px" width="812px"></li>
+<li>Click <strong>Support Patches</strong>.</li>
+<li>Locate the patch to download.</li>
+<li>Click <strong>Download</strong> corresponding to the patch for the version of EE you're using.</li>
+<li>After the download completes, continue with the next section.</li></ol>
+
+<h2 id="apply">How to Apply a Magento Patch</h2>
+<p>To apply a Magento patch:</p>
+<ol><li>Transfer the patch <code>.sh</code> file to your Magento installation root directory.<br />
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: This article assumes your patch file name ends in <code>.sh</code>. If your patch file name ends in <code>.patch</code> or something else, <a href="http://support.magentocommerce.com/" target="_blank">contact Magento Support</a> before proceeding.</div>
+
+For example, <code>/var/www/html/magento</code>.</li>
+<li>Enter the following command as a user with sufficient privileges to write to Magento files (typically, the web server user or <code>root</code>):
+<pre>sh <em>patch-file-name</em>.sh</pre>
+A message such as the following displays to confirm the patch installed successfully:
+<pre>Patch was applied/reverted successfully.</pre></li>
+<li>To reapply ownership to the files changed by the patch:
+<ol><li>Find the web server user: <code>ps -o "user group command" -C httpd,apache2</code><br />
+The value in the USER column is the web server user name.<br />
+Typically, the Apache web server user on CentOS is <code>apache</code> and the Apache web server user on Ubuntu is <code>www-data</code>.</li>
+<li>As a user with <code>root</code> privileges, enter the following command from the Magento installation directory:
+<pre>chown -R <em>web-server-user-name</em> .</pre>
+For example, on Ubuntu where Apache usually runs as <code>www-data</code>, enter
+<pre>chown -R www-data .</pre></li></ol> 
+ </li>
+<li>Perform any other tasks as instructed by Magento Support.<br />
+(For example, some patches require you to stop external services, such as the Solr search engine.)</li></ol>
+
+<h3>Reverting the Patch</h3>
+<p>If applying the patch results in errors, <a href="http://support.magentocommerce.com/" target="_blank">contact Magento Support</a>. If you are instructed to do so, revert the patch:</p>
+<ol><li>Change to your Magento installation directory.</li>
+<li>Enter the following command as a user with sufficient privileges to write to Magento files (typically, the web server user or <code>root</code>):<br />
+<pre>sh <em>patch-file-name</em>.sh -R</pre></li></ol>
+
+<h2 id="trouble">Troubleshooting</h2>
+<p>If you get an error when you run the patch, use the following suggestions:</p>
+<ul><li>Verify the patch is located in your Magento installation root directory.<br />
+Ubuntu example: <code>/var/www/magento</code><br />
+CentOS example: <code>/var/www/html/magento</code></li>
+<li>Verify you're running the patch with sufficient privileges.<br />
+Typically, this means running it as the web server user or as a user with <code>root</code> privileges.</li>
+<li>Try running the patch again.<br />
+If problems persist, <a href="http://support.magentocommerce.com/" target="_blank">contact Magento Support</a>.</li>
+
+</body>
+</html>
