@@ -2,19 +2,19 @@
 
 Welcome! This site contains the latest Magento developer documentation for ongoing Magento 2.0 releases.
 
-Test
-
 To contribute, please fork the 2.0 branch and submit any PRs to this same branch as well.
 
 # Build this site using Jekyll
+
 To preview your work before submitting it to us, you can view the site locally using [Jekyll][jekyll].
 
 ## Update (May 10, 2016)
+
 The devdocs site now displays the last modified date of each topic on the right side of the page. This provides you a handy way of seeing what's new on our site.
 
-If you're currently building this site, you must update your Gemfile to include a new Gem, [`jekyll-last-modified-at`][jekyll-last-modified-at]. Otherwise, you cannot run Jekyll locally.
+If you're currently building this site, you must update your Gemfile to include a new gem, [`jekyll-last-modified-at`][jekyll-last-modified-at]. Otherwise, you cannot run Jekyll locally.
 
-To update your Gemfile, enter the following command at a command prompt:
+To update gems according to the changed Gemfile, enter the following command at a command prompt:
 
 	bundle install
 
@@ -33,23 +33,38 @@ $ sudo gem install bundler -n /usr/local/bin
 
 # Build this site
 
-To build this site using Jekyll:
+To build this site using Jekyll, enter:
 
 ```bash
 # Install dependencies
 $ bundle install
 
-# Visit http://localhost:4000 in your favorite browser!
-$ bin/jekyll serve
+# Build the site in the '/_site' directory.
+$ bundle exec jekyll build
 ```
 
-# Build this site using Vagrant
-To simplify the process of building this site locally using Jekyll, we enable you to run a ready-made Vagrant container that has everything you need.
+# Browse this site
+
+You can browse this site running a Jekyll development server at http://localhost:4000/:
+
+```bash
+# Install dependencies
+$ bundle install
+
+# Run the development server at http://localhost:4000/
+$ bundle exec jekyll serve
+```
+
+# Build this site using Vagrant (preferable for Windows users)
+
+If you don't want to install Jekyll on your host, you can create a virtual software environment and build this site there using [Vagrant][]. 
+
+To simplify the process, we enable you to run a ready-made Vagrant project that has everything you need.
 
 To use it, see the [Vagrant README](vagrant/README.md).
 
-
 # Questions
+
 If you have questions, open an issue and ask us. We're looking forward to hearing from you!
 
 *	[Follow @MagentoDevDocs][twitter]
@@ -59,8 +74,10 @@ If you have questions, open an issue and ask us. We're looking forward to hearin
 
 <!-- LINK DEFINITIONS -->
 
+[e-mail]: mailto:DL-Magento-Doc-Feedback@magento.com
 [jekyll]: https://jekyllrb.com
 [jekyll-last-modified-at]: https://rubygems.org/gems/jekyll-last-modified-at
 [twitter]: https://twitter.com/MagentoDevDocs
-[e-mail]: mailto:DL-Magento-Doc-Feedback@magento.com
+[Vagrant]: https://www.vagrantup.com/
+
 
