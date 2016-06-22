@@ -1,7 +1,7 @@
 ---
 layout: default
 group: release-notes
-subgroup: Breaking changes
+subgroup: 05_BC
 title: Magento 2.1 Backward Incompatible Changes
 menu_title: Version 2.1 incompatible changes
 version: 2.0

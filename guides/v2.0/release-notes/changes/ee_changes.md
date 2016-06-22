@@ -1,7 +1,7 @@
 ---
 layout: default
 group: release-notes
-subgroup: Breaking changes
+subgroup: 05_BC
 title: Magento EE Backward Incompatible Changes
 menu_title: Magento EE
 version: 2.0

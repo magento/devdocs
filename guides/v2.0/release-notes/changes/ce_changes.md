@@ -1,7 +1,7 @@
 ---
 layout: default
 group: release-notes
-subgroup: Breaking changes
+subgroup: 05_BC
 title: Magento CE Backward Incompatible Changes
 menu_title: Magento CE
 version: 2.0
