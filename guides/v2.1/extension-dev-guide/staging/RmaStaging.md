@@ -25,7 +25,7 @@ The Magento_RmaStaging module is a part of the staging functionality in Magento 
 
 RMA stands for a return merchandise authorization.
 
-## Implementation Details
+## Implementation details
 
 The Magento_RmaStaging module extends the following Magento_Rma module functionality to be used in staging mode:
 
@@ -35,7 +35,7 @@ The Magento_RmaStaging module extends the following Magento_Rma module functiona
 
 You can find the list of modules that have dependencies on the Magento_RmaStaging module in the `require` section of the `composer.json` file. The file is located in the root directory of the module.
 
-## Extension Points
+## Extension points
 
 Extension points enable extension developers to interact with the Magento_RmaStaging module. [The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_RmaStaging module.
 

@@ -23,7 +23,7 @@ github_link: extension-dev-guide/staging/SalesRuleStaging.md
 
 The Magento_SalesRuleStaging module is a part of the staging functionality in Magento EE. It enables you to add sales rule updates to existing store campaigns. In other words, you can add and/or remove sales rules for some period of time. These updates are shown on the campaign dashboard.
 
-## Implementation Details
+## Implementation details
 
 The Magento_SalesRuleStaging module changes the Cart Price Rules page and the sales rule related database tables to make them compatible with the Magento Staging Framework. 
 The Magento_SalesRuleStaging module enables you to stage the following sales rule attributes:
@@ -38,7 +38,7 @@ The Magento_SalesRuleStaging module enables you to stage the following sales rul
 
 This module depends on the Magento_SalesRule module and extends its functionality. It changes the database structure of the Magento_SalesRule module and the way in which sales rules are managed.
  
-### Installation Details
+### Installation details
  
 Do not uninstall the Magento_SalesRuleStaging module, because it makes irreversible changes in the database during installation. Also, the Magento_SalesRule module cannot be disabled.
 
@@ -46,7 +46,7 @@ Do not uninstall the Magento_SalesRuleStaging module, because it makes irreversi
 
 You can find the list of modules that have dependencies on the Magento_SalesRuleStaging module in the `require` section of the `composer.json` file. The file is located in the root directory of the module.
 
-## Extension Points
+## Extension points
 
 Extension points enable extension developers to interact with the Magento_SalesRuleStaging. However, the Magento_SalesRuleStaging module does not provide any specific extension points.
 

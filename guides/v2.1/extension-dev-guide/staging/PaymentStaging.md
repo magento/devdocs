@@ -23,7 +23,7 @@ github_link: extension-dev-guide/staging/PaymentStaging.md
 
 The Magento_PaymentStaging module is a part of the staging functionality in Magento EE. It extends the Magento_Payment module for the staging preview functionality.
 
-## Implementation Details
+## Implementation details
 
 The Magento_PaymentStaging module restricts functionality of the Magento_Payment module in the staging preview mode. It shows only offline payment methods that are enabled.
 
@@ -31,7 +31,7 @@ The Magento_PaymentStaging module restricts functionality of the Magento_Payment
 
 You can find the list of modules that have dependencies on the Magento_PaymentStaging module in the `require` section of the `composer.json` file. The file is located in the root directory of the module.
 
-## Extension Points
+## Extension points
 
 Extension points enable extension developers to interact with the Magento_PaymentStaging module. For more information about the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).
 

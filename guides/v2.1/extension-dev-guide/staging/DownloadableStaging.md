@@ -23,13 +23,13 @@ github_link: extension-dev-guide/staging/DownloadableStaging.md
 
 The Magento_DownloadableStaging module is a part of the staging functionality in Magento EE. It enables you to add the Downloadable Product updates to the existing store campaigns. In other words, you can change the Downloadable Product attributes in campaigns. These updates are shown on the campaign dashboard.
 
-## Implementation Details
+## Implementation details
 
 The Magento_DownloadableStaging module changes the Downloadable Product creation page to make them compatible with the Magento Staging Framework. This module extends the Magento_Downloadable module functionality to be used in staging.
 
 The Magento_DownloadableStaging module adds the "Downloadable information" tab to the Schedule Update form for a product.
 
-### Installation Details
+### Installation details
 
 The Magento_DownloadableStaging module makes irreversible changes in a database during installation. You cannot uninstall this module.
 
@@ -37,7 +37,7 @@ The Magento_DownloadableStaging module makes irreversible changes in a database 
 
 You can find the list of modules that have dependencies on the Magento_DownloadableStaging module in the `require` section of the `composer.json` file. The file is located in the root directory of the module.
 
-## Extension Points
+## Extension points
 
 Extension points enable extension developers to interact with the Magento_DownloadableStaging module.
 For more information about the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).

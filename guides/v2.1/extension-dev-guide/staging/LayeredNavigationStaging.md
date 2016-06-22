@@ -24,7 +24,7 @@ github_link: extension-dev-guide/staging/LayeredNavigationStaging.md
 The Magento_LayeredNavigationStaging module is a part of the staging functionality in Magento EE.
 It restricts functionality of the Magento_LayeredNavigationStaging module in the staging preview mode.
 
-## Implementation Details
+## Implementation details
 
 The Magento_LayeredNavigationStaging module disables the Magento_LayeredNavigation module functionality in the staging preview mode.
 
@@ -32,7 +32,7 @@ The Magento_LayeredNavigationStaging module disables the Magento_LayeredNavigati
 
 You can find the list of modules that have dependencies on the Magento_LayeredNavigationStaging module in the `require` section of the `composer.json` file. The file is located in the root directory of the module.
 
-## Extension Points
+## Extension points
 
 Extension points enable extension developers to interact with the Magento_LayeredNavigationStaging module. [The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_LayeredNavigationStaging module.
 

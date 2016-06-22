@@ -179,6 +179,7 @@ The [scheduled updates](#scheduled-update) functionality is implemented in [stag
 You can schedule an update of Magento entity to be used in future. It is applicable for:
 
 - Products
+- Categories
 - Content
     - Blocks
     - Pages

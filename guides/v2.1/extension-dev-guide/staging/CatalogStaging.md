@@ -23,7 +23,7 @@ github_link: extension-dev-guide/staging/CatalogStaging.md
 
 The Magento_CatalogStaging module is a part of the staging functionality in Magento EE. It enables you to add catalog updates to the existing store campaigns. In other words, you can change the category and product entity attributes in campaigns. These updates are shown on the campaign dashboard.
 
-## Implementation Details
+## Implementation details
 
 The Magento_CatalogStaging module extends the Magento_Catalog module functionality. It changes a category and product creation page, and related database tables to make them compatible with the Magento Staging Framework.
 
@@ -104,7 +104,7 @@ The following product attributes cannot be staged:
 - URL Key
 - SKU
 
-### Installation Details
+### Installation details
 
 The Magento_CatalogStaging module makes irreversible changes in a database during installation. You cannot uninstall this module.
 
@@ -112,7 +112,7 @@ The Magento_CatalogStaging module makes irreversible changes in a database durin
 
 You can find the list of modules that have dependencies on the Magento_CatalogStaging module in the `require` section of the `composer.json` file. The file is located in the root directory of the module.
 
-## Extension Points
+## Extension points
 
 Extension points enable extension developers to interact with the Magento_CatalogStaging module. You can interact with the Magento_CatalogStaging module using the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).
 

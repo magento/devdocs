@@ -23,7 +23,7 @@ github_link: extension-dev-guide/staging/GiftWrappingStaging.md
 
 The Magento_GiftWrappingStaging module is a part of the staging functionality in Magento EE. It allows to stage value of 'Allow Gift Wrapping' flag and price of the wrapping for each product update.
 
-## Implementation Details
+## Implementation details
 
 The Magento_GiftWrappingStaging module adds to the Schedule Update form of a product the following functionality:
 
@@ -34,7 +34,7 @@ The Magento_GiftWrappingStaging module adds to the Schedule Update form of a pro
 
 You can find the list of modules that have dependencies on the Magento_GiftWrappingStaging module in the `require` section of the `composer.json` file. The file is located in the root directory of the module.
 
-## Extension Points
+## Extension points
 
 [The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.0/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_GiftWrappingStaging module.
 
