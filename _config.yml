@@ -16,7 +16,10 @@ version: 2.1
 versions:
    -
       name: 2.0
-      url: http://devdocs.magento.com/guides/v2.0/
+      url: /guides/v2.0/
+   -
+      name: 2.1
+      url: /guides/v2.1/
 
 # 2.0.0 variables
 gdeurl: "/guides/v2.0/"
