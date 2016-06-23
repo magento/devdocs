@@ -1,9 +1,9 @@
 ---
 layout: default
 group: release-notes
-subgroup: Release Notes
+subgroup: 02_ReleaseNotes
 title: Magento EE 2.1.0 Release Notes 
-menu_title: Magento EE 2.1.0  Release Notes 
+menu_title: Magento EE 2.1.0 Release Notes 
 menu_order: 
 github_link21: release-notes/ReleaseNotes2.1.0EE.md
 ---
@@ -13,7 +13,6 @@ github_link21: release-notes/ReleaseNotes2.1.0EE.md
 
 ##Magento Enterprise Edition 2.1.0
 We are pleased to present Magento Enterprise Edition 2.1.0 General Availability. This release includes numerous functional fixes and enhancements. 
-
 
 Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}release-notes/backward-incompatible-changes-2.1.html).
 
