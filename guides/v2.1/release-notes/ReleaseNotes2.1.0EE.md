@@ -11,13 +11,13 @@ github_link21: release-notes/ReleaseNotes2.1.0EE.md
 *	TOC
 {:toc}
 
-<h2>Magento Enterprise Edition 2.1.0</h2>
+##Magento Enterprise Edition 2.1.0
 We are pleased to present Magento Enterprise Edition 2.1.0 General Availability. This release includes numerous functional fixes and enhancements. 
 
 
 Backward-incompatible changes are documented in <a href="{{ site.gdeurl }}release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
 
-<h3>Highlights</h3>
+###Highlights
 Magento Enterprise Edition 2.1.0 includes several new and exciting features:
 
 * **Content Staging and Preview**  improves sales and productivity by enabling merchants to bring fresh and exciting shopping experiences to market faster than ever before. Marketers and merchandisers can easily create, preview, and schedule a wide range of content updates without involving IT. They can make updates to products, categories, CMS content, promotions, and pricing, and can preview these changes by date or store view to ensure a flawless shopper experience. User-friendly dashboards provide visibility into all scheduled site changes so merchants can easily coordinate campaigns to maximize their sales impact. Updates are automatically published and removed at scheduled times for greater efficiency.
@@ -31,7 +31,7 @@ Magento Enterprise Edition 2.1.0 includes several new and exciting features:
  
 * **Improved management interfaces** make it faster and easier to search for information in the Admin, set up global search synonyms, and create new product, category, and CMS content.
  
-<h3>Security enhancements</h3>
+###Security enhancements
 This release includes enhancements to improve the security of your Magento application. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your Magento software to the latest version as soon as possible.
 
 <!--- 51806 --> *  Magento no longer permits an unauthenticated user to remotely execute code on the server using APIs.
@@ -63,11 +63,11 @@ This release includes enhancements to improve the security of your Magento appli
 <!--- 48529 --> *  Resolved an issue with tinymce that allowed an Admin tinymce Iframe to be referenced by base static UTL. 
 
 
-<h3>Fixed issues</h3>
+###Fixed issues
 
 
 
-<h4>Installation and upgrade</h4>
+####Installation and upgrade
 
 <!--- 51033 -->* System upgrades now ignore the contents of the Magento `var/session` directory.
 
@@ -118,7 +118,7 @@ This release includes enhancements to improve the security of your Magento appli
 
 
 
-<h4>Shopping</h4>
+####Shopping
 
 <!--- 51987-->* We've fixed the Add to Cart button translation. <a href="https://github.com/magento/magento2/issues/4181" target="_blank">(GITHUB-4181)</a> 
 
@@ -153,7 +153,7 @@ This release includes enhancements to improve the security of your Magento appli
 <!--- 52452-->* Shopping cart shipping estimation no longer fails randomly.
 
 
-<h4>API</h4>
+####API
 <!--- 50878 -->* The Oauth handshake now clearly indicates the SAAS platform with which the Magento store is doing the Oauth handshake. 
 
 <!--- 49699 -->*  You can now use the Web API to access Version Manager. 
@@ -194,7 +194,7 @@ This release includes enhancements to improve the security of your Magento appli
 
 
 
-<h4>JavaScript</h4>
+####JavaScript
 
 <!--- 50243 -->*  Attribute values are now consistently persisted after reloading a form. 
 
@@ -206,7 +206,7 @@ This release includes enhancements to improve the security of your Magento appli
 
 
 
-<h4>PHP</h4>
+####PHP
 <!--- 53524 -->*  PHP errors no longer occur when you run a cron script on installations running PHP5.5. <a href="https://github.com/magento/magento2/issues/4722" target="_blank">(GITHUB-4722)</a>
 
 <!--- 47677-->* Remi PHP 7.0.1 now works with Sample Data. 
@@ -215,7 +215,7 @@ This release includes enhancements to improve the security of your Magento appli
 
 
 
-<h4>Gift cards</h4>
+####Gift cards
 
 <!--- 52275 -->*  Merchants can now  edit Gift Card Product. 
 
@@ -229,7 +229,7 @@ This release includes enhancements to improve the security of your Magento appli
 
 
 
-<h4>Paypal</h4>
+####Paypal
 <!--- 49148 -->*  The Paypal button now displays as expected in the minicart. 
  
 <!--- 50557-->* The PayPal Express review rendering of tax block now works correctly.  <a href="https://github.com/magento/magento2/issues/3774" target="_blank">(GITHUB-3774)</a> 
@@ -269,7 +269,7 @@ This release includes enhancements to improve the security of your Magento appli
 
 
 
-<h4>Braintree</h4>
+####Braintree
 <!--- 48649-->* You can now change the quantity for an invoice. 
 
 <!--- 50309-->* You can now  create invoice of transaction with expired authorization. 
@@ -298,7 +298,7 @@ This release includes enhancements to improve the security of your Magento appli
 
 
 
-<h4>Integration</h4>
+####Integration
 
 <!--- 50857 -->*  You can now select API resources while creating an integration. 
 
@@ -317,7 +317,7 @@ This release includes enhancements to improve the security of your Magento appli
 
 
 
-<h4>Testing</h4>
+####Testing
 
 <!--- 52414 -->* We've fixed several integration test syntax errors. <a href="https://github.com/magento/magento2/issues/4343" target="_blank">(GITHUB-4343)</a> 
 
@@ -331,7 +331,7 @@ target="_blank">(GITHUB-4099)</a>
 
 
 
-<h4>Import/Export</h4>
+####Import/Export
 <!--- 47555-->* The Import error message you receive when an attribute exceeds maximum permitted length now inserts variable that defines the attribute name. <a href="https://github.com/magento/magento2/issues/2844" target="_blank">(GITHUB-2844)</a> 
 
 <!--- 46245-->* Magento no longer throws this error when you import or export when you have multiple websites and stores:  "URL key for specified store already exists."
@@ -361,7 +361,7 @@ target="_blank">(GITHUB-4099)</a>
  
 
 
-<h4>Search</h4>
+####Search
 <!--- 50915 -->* Solr search no longer produces a fatal error when you use it to perform an advanced search on products by Size. 
 
 <!--- 50701 -->* Solr search results now display all products as expected in search results. 
@@ -387,7 +387,7 @@ target="_blank">(GITHUB-4099)</a>
 
 
 
-<h4>Cloud</h4>
+####Cloud
 <!--- 52448 -->* Magento now correctly displays customer addresses.  
 
 <!--- 51072 -->* The storeview now reflects changes to the swatch attribute's property.  
@@ -395,7 +395,7 @@ target="_blank">(GITHUB-4099)</a>
 
 
 
-<h4>Checkout</h4>
+####Checkout
 <!--- 53193 -->* We've resolved several address-related issues associated with Checkout. 
 
 
@@ -424,7 +424,7 @@ target="_blank">(GITHUB-4099)</a>
 
 
 
-<h4>Bundle products</h4>
+####Bundle products
 
 <!--- 51194 -->* The Add Products to Option button now works as expected when you create a new update for a Bundle product. 
 
@@ -456,7 +456,7 @@ target="_blank">(GITHUB-4099)</a>
  
 <!--- 49546 -->*  Magento now successfully validates the price_type field during import and export. 
 
-<h4>Messages and documentation</h4>
+####Messages and documentation
 
 <!--- 52340 -->* The `getList` method documentation has been enhanced.
 
@@ -481,7 +481,7 @@ target="_blank">(GITHUB-4099)</a>
 
 
 
-<h4>Testing</h4>
+####Testing
 
 <!--- 52414 -->* We've fixed some integration test syntax errors. <a href="https://github.com/magento/magento2/issues/4343" target="_blank">(GITHUB-4343)</a> 
 
@@ -494,7 +494,7 @@ target="_blank">(GITHUB-4099)</a>
 
 
 
-<h4>Staging</h4>
+####Staging
 
 <!--- 53536 -->* You can now successfully change an entity's Schedule Update End Time from none to a particular time. Previously, attempting to change an End Time from none to a specific time would result in an error. (Sample message: "Update (or link, if we are using downloadable product) does not exists".) 
 
@@ -665,7 +665,7 @@ target="_blank">(GITHUB-4099)</a>
 
 
 
-<h4>Miscellaneous</h4>
+####Miscellaneous
 
 <!--- 53919 -->*  We changed the HTML header used for SSL offloading from SSL-OFFLOADED{:target="_blank"} to X-Forwarded-Proto: https{:target="_blank"} to be compatible with Varnish and for compatibility with load balancers.
 
@@ -1629,7 +1629,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 
 
-<h3>Known issues</h3>
+###Known issues
 Magento 2.1.0 GA includes the following known issues:
 
 <!--- 54447-->* A developer who attempts to upgrade the Magento EE software using the commands git pull followed by composer update sees the error Fatal error: Cannot use Composer\Installer as Installer because the name is already in use.
@@ -1646,7 +1646,7 @@ To work around this issue, run the following commands in the order shown:
 
 
 
-<h3>System requirements</h3>
+###System requirements
 Our technology stack is built on PHP and MySQL. Magento 2.1.0 supports:
 
 
@@ -1664,12 +1664,12 @@ For more information, <a href="{{ site.gdeurl21 }}install-gde/system-requirement
 
 
 
-<h3>Installation instructions</h3>
+###Installation instructions
 
 {% include install/releasenotes/ee_install_21.md %}
 
 
-<h3>Migration toolkits</h3>
+###Migration toolkits
 The <a href="{{ site.gdeurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ site.gdeurl21 }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
@@ -1677,15 +1677,3 @@ The <a href="https://github.com/magento/code-migration" target="_blank">Code Mig
 
 
 
-
-
-
-=======
-subgroup: 02_ReleaseNotes
-title: Magento 2.1 Release Notes 
-menu_title: Magento CE 2.1 Release Notes 
-menu_order: 5
-version: 2.1
-github_link: release-notes/ReleaseNotes2.1.0CE.html
----
->>>>>>> 57d9f4566c00b55619e6024980fe7dec6d1a5a94
