@@ -19,8 +19,11 @@ github_link: release-notes/bk-release-notes.md
 
 ### Backward-incompatible changes
 
-*	[Magento CE Backward Incompatible Changes between 2.0 and 2.1 branches]({{page.baseurl}}release-notes/backward_incomp_changes/ce_2.0-2.1.html)
-*	[Magento EE Backward Incompatible Changes between 2.0 and 2.1 branches]({{page.baseurl}}release-notes/backward_incomp_changes/ee_2.0-2.1.html)
+*	Overview of backward-incompatible changes between the 2.0 and 2.1 releases: [Magento 2.1 Backward Incompatible Changes]({{ page.baseurl }}release-notes/backward-incompatible-changes-2.1.html)
+*	Automatically generated list of backward-incompatible changes in Magento CE: [Magento CE Backward Incompatible Changes]({{ page.baseurl }}release-notes/ce_changes.html)
+*	Automatically generated list of backward-incompatible changes in Magento EE: [Magento EE Backward Incompatible Changes]({{ page.baseurl }}release-notes/ee_changes.html)
+*	[Automatically generated list of Magento CE backward-incompatible changes between 2.0 and 2.1 releases]({{page.baseurl}}release-notes/backward_incomp_changes/ce_2.0-2.1.html)
+*	[Automatically generated list of Magento EE backward-incompatible changes between 2.0 and 2.1 releases]({{page.baseurl}}release-notes/backward_incomp_changes/ee_2.0-2.1.html)
 
 ### Third-party license agreements
 
