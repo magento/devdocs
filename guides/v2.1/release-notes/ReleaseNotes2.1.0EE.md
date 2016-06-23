@@ -33,33 +33,7 @@ Magento Enterprise Edition 2.1.0 includes several new and exciting features:
 ###Security enhancements
 This release includes enhancements to improve the security of your Magento application. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your Magento software to the latest version as soon as possible.
 
-<!--- 51806 --> *  Magento no longer permits an unauthenticated user to remotely execute code on the server using APIs.
-
-<!--- 46026-->* Unauthenticated users can use Magento guest features to view order details without prior knowledge of information used to place the order. 
-
-<!--- 46478-->* You cannot bypass the frontend CAPTCHA feature. CAPTCHA is a security feature that tries to limit password guessing attempts.
-
-<!--- 51392-->* Only a registered customer can assign a guest cart to themselves. Previously, an anonymous user could modify the state (that is, set an active quote) of a registered customer. 
-
-<!--- 51370-->* Magento no longer discloses information about its internal path during installation. 
-
-<!--- 52338-->* A Cross-Site Request Forgery (CSRF) can no longer delete customer addresses.  
-
-<!--- 54255-->* Magento no longer uses Full Path Disclosure in cache management.
-
-<!--- 51808 --> *  Magento no longer allows authenticated customers to change other customers' account information using either SOAP or REST calls. Magento now confirms that the ID of the customer whose account is being edited matches the authentication token in use. 
-
-<!--- 46920 --> *  Resolved SQLi vulnerabilities with optional sample data. 
-
-<!--- 51390 --> *  A registered customer's private data of cannot be retrieved using Quote Web API by an anonymous user.
-
-<!--- 45887 --> *  Resolved a cross-site scripting (XSS) vulnerability on when creating a customer account.
-
-<!--- 51376 --> *  Resolved an issue where the Magento Admin URL is displayed to an unauthorized user.
-
-<!--- 50608 --> *  Magento no longer allows authenticated customers to change other customers' account information using either SOAP or REST calls. Magento now confirms that the ID of the customer whose account is being edited matches the authentication token in use.	[Github-3786](https://github.com/magento/magento2/issues/3786){:target="_blank"} 
- 
-<!--- 48529 --> *  Resolved an issue with tinymce that allowed an Admin tinymce Iframe to be referenced by base static UTL. 
+[Contact us](https://magento.com/company/contact-us){:target="_blank"} for more information.
 
 
 ###Fixed issues
