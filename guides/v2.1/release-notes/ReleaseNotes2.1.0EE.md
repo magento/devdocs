@@ -15,7 +15,7 @@ github_link21: release-notes/ReleaseNotes2.1.0EE.md
 We are pleased to present Magento Enterprise Edition 2.1.0 General Availability. This release includes numerous functional fixes and enhancements. 
 
 
-Backward-incompatible changes are documented in <a href="{{ site.gdeurl }}release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
+Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}release-notes/backward-incompatible-changes-2.1.html).
 
 ###Highlights
 Magento Enterprise Edition 2.1.0 includes several new and exciting features:
@@ -73,11 +73,11 @@ This release includes enhancements to improve the security of your Magento appli
 
 <!--- 51327 -->* You don't need to have a `composer.json` to run Magento CLI commands.
 
-<!--- 50794 -->* Addressed an issue that causes the following error on the Magento storefront when optional sample data is installed: "We're sorry, an error has occurred while generating this email"
+<!--- 50794 -->* Addressed an issue that caused the following error on the Magento storefront when optional sample data is installed: "We're sorry, an error has occurred while generating this email". 
 
 <!--- 52981 -->*  Magento upgrade now succeeds if you use a non-default MySQL listen port.  <a href="https://github.com/magento/magento2/issues/4548" target="_blank">(GITHUB-4548)</a>, <a href="https://github.com/magento/magento2/issues/2735" target="_blank">(GITHUB-2735)</a>, <a href="https://github.com/magento/magento2/issues/4275" target="_blank">(GITHUB-4275)</a>, <a href="https://github.com/magento/magento2/issues/3529" target="_blank">(GITHUB-3529)</a>
 
-<!--- 53232 -->*  Upgrading the Magento system software no longer results in the loss of data. <a href="https://github.com/magento/magento2/issues/4054" target="_blank">(GITHUB-4054)</a>, <a href="https://github.com/magento/magento2/issues/3951" target="_blank">(GITHUB-3951)</a>, <a href="https://github.com/magento/magento2/issues/3097" target="_blank">(GITHUB-3097)</a>, <a href="https://github.com/magento/magento2/issues/3249" target="_blank">(GITHUB-3249)</a>
+<!--- 53232 -->*  Resolved data loss issues during upgrade to version 2.0.4. <a href="https://github.com/magento/magento2/issues/4054" target="_blank">(GITHUB-4054)</a>, <a href="https://github.com/magento/magento2/issues/3951" target="_blank">(GITHUB-3951)</a>, <a href="https://github.com/magento/magento2/issues/3097" target="_blank">(GITHUB-3097)</a>, <a href="https://github.com/magento/magento2/issues/3249" target="_blank">(GITHUB-3249)</a>
 
 
 <!--- 51544 -->* Upgrading the Magento system software now correctly updates the product version.
@@ -88,7 +88,7 @@ This release includes enhancements to improve the security of your Magento appli
 
 <!--- 52187 -->* A user with limited access to the Magento Admin cannot run the Web Setup Wizard.
 
-<!--- 52973 -->* Installing optional sample data no longer throws an exception.
+<!--- 52973 -->* Installing optional sample data no longer throws the following exception: `efault: Notice: /Stage[magento_setup]/Magento::Setup::Magento_cli/Exec[Run Magento reindex]/returns: SQLSTATE[23000]: Integrity constraint violation: 1062`.
 
 <!--- 45608 -->* You can now successfully uninstall the Magento_CustomerBalanceSampleData module.
 
@@ -101,7 +101,7 @@ This release includes enhancements to improve the security of your Magento appli
 
 <!--- 50696 -->* Fixed issues with running integration tests on Microsoft Windows.
 
-<!--- 50848 -->* The magento setup:di:compile command no longer throws No tokens were provided exceptions when it encounters directories or empty files. <a href="https://github.com/magento/magento2/issues/3824" target="_blank">(GITHUB-3824)</a>
+<!--- 50848 -->* The `magento setup:di:compile` command no longer throws a `No tokens were provided` exceptions when it encounters directories or empty files. <a href="https://github.com/magento/magento2/issues/3824" target="_blank">(GITHUB-3824)</a>
 
 <!--- 51953 -->* Manually unselecting the DownloadableStaging during installation no longer throws a fatal error.
 
@@ -109,7 +109,7 @@ This release includes enhancements to improve the security of your Magento appli
 
 <!--- 46858-->* The Magento CLI `setup:config:set` now accepts  hyphens and dashes "-".  <a href="https://github.com/magento/magento2/issues/2700" target="_blank">(GITHUB-2700)</a>
 
-<!--- 47531-->* Running `setup:config:set` no longer deletes values in addition to running an update. <a href="https://github.com/magento/magento2/issues/2852" target="_blank">(GITHUB-2852)</a>
+<!--- 47531-->* Running `setup:config:set` updates the deployment configuration properly. <a href="https://github.com/magento/magento2/issues/2852" target="_blank">(GITHUB-2852)</a>
 
 <!--- 51779-->* Magento Community Edition 2.0.4 with Sample Data.tar.bz2 (204 MB) download now works. <a href="https://github.com/magento/magento2/issues/4090" target="_blank">(GITHUB-4090)</a>
 
@@ -1657,7 +1657,7 @@ Our technology stack is built on PHP and MySQL. Magento 2.1.0 supports:
 
 We do not support PHP 5.5.x or 7.0.5. 
 
-For more information, <a href="{{ site.gdeurl21 }}install-gde/system-requirements.html" target="_blank">System Requirements</a>.
+For more information, <a href="{{ page.baseurl21 }}install-gde/system-requirements.html" target="_blank">System Requirements</a>.
 
 
 
@@ -1670,7 +1670,7 @@ For more information, <a href="{{ site.gdeurl21 }}install-gde/system-requirement
 
 
 ###Migration toolkits
-The <a href="{{ site.gdeurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ site.gdeurl21 }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
+The <a href="{{ page.baseurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl21 }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
 
