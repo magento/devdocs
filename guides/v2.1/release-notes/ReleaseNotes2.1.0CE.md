@@ -383,15 +383,8 @@ target="_blank">(GITHUB-4099)</a>
 
 #### Search
 {:.no_toc}
-<!--- 50915 -->* Solr search no longer produces a fatal error when you use it to perform an advanced search on products by Size.
-
-<!--- 50701 -->* Solr search results now display all products as expected in search results.
-
 
 <!--- 51716-->* We've improved search performance.  
-
-<!--- 51538-->* Search phrases that incorporate spaces now work successfully in Solr advanced search.
-
 
 <!--- 52482-->* Magento no longer throws a fatal error if you use fewer than the minimal required characters in your search query.
 
@@ -401,8 +394,6 @@ target="_blank">(GITHUB-4099)</a>
 
 <!--- 53530-->* Performance of category pages significantly degrade when having around 3000 products or more in category.  
 
-
-<!--- 52975-->* Solr search results now display correct date formatting.
 
 <!--- 46044 -->* Synonyms now work as expected with Magento 2.x.  <a href="https://github.com/magento/magento2/issues/2519" target="_blank">(GITHUB-2519)</a>
 
