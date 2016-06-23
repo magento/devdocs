@@ -248,7 +248,7 @@ Next, declare the indexer in `Merchandizing/etc/indexer.xml`:
 
 <script src="https://gist.github.com/xcomSteveJohnson/5780857cdd5343cafacf.js"></script>
 
-Finally, declare the indexer view (`merchandizsing_popular_order`) that tracks sales (`Merchandizing/etc/mview.xml`):
+Finally, declare the indexer view (`merchandizing_popular_order`) that tracks sales (`Merchandizing/etc/mview.xml`):
 
 <script src="https://gist.github.com/xcomSteveJohnson/4313c5246b38ff8193df.js"></script>
 
