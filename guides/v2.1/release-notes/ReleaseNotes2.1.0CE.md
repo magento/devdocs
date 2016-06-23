@@ -38,6 +38,7 @@ This release includes enhancements to improve the security of your Magento appli
 
 
 #### Installation and upgrade
+{:.no_toc}
 
 <!--- 51033 -->* System upgrades now ignore the contents of the Magento `var/session` directory.
 
@@ -96,6 +97,7 @@ This release includes enhancements to improve the security of your Magento appli
 
 
 #### Shopping
+{:.no_toc}
 
 <!--- 51987-->* We've fixed the Add to Cart button translation. <a href="https://github.com/magento/magento2/issues/4181" target="_blank">(GITHUB-4181)</a>
 
@@ -150,6 +152,7 @@ This release includes enhancements to improve the security of your Magento appli
 
 
 #### Product
+{:.no_toc}
 <!--- 52030 -->* Downloadable products are no longer shown as out of stock on the Category page.
 
 <!--- 48153 -->*  You can now save a product that's been assigned to more than one website.
@@ -192,6 +195,7 @@ This release includes enhancements to improve the security of your Magento appli
 
 
 #### API
+{:.no_toc}
 <!--- 50878 -->* The Oauth handshake now clearly indicates the SAAS platform with which the Magento store is doing the Oauth handshake.
 
 <!--- 49699 -->*  You can now use the Web API to access Version Manager.
@@ -247,6 +251,7 @@ This release includes enhancements to improve the security of your Magento appli
 
 
 #### JavaScript
+{:.no_toc}
 
 <!--- 50243 -->*  Attribute values are now consistently persisted after reloading a form.
 
@@ -259,6 +264,7 @@ This release includes enhancements to improve the security of your Magento appli
 <!--- 49957-->*  RequireJS now uses the correct baseUrl in pre-generated assets when `pub` is web-root.  <a href="https://github.com/magento/magento2/issues/2711" target="_blank">(GITHUB-2711)</a>
 
 #### PHP
+{:.no_toc}
 <!--- 53524 -->*  PHP errors no longer occur when you run a cron script on installations running PHP5.5. <a href="https://github.com/magento/magento2/issues/4722" target="_blank">(GITHUB-4722)</a>
 
 <!--- 47677-->* Remi PHP 7.0.1 now works with Sample Data.
@@ -271,6 +277,7 @@ This release includes enhancements to improve the security of your Magento appli
 
 
 #### Paypal
+{:.no_toc}
 <!--- 49148 -->*  The Paypal button now displays as expected in the minicart.
 
 <!--- 50557-->* The PayPal Express review rendering of tax block now works correctly.  <a href="https://github.com/magento/magento2/issues/3774" target="_blank">(GITHUB-3774)</a>
@@ -310,6 +317,7 @@ This release includes enhancements to improve the security of your Magento appli
 
 
 #### Braintree
+{:.no_toc}
 
 <!--- 48649-->* You can now change the quantity for an invoice.
 
@@ -339,6 +347,7 @@ This release includes enhancements to improve the security of your Magento appli
 
 
 #### Integration
+{:.no_toc}
 
 <!--- 50857 -->*  You can now select API resources while creating an integration.
 
@@ -360,6 +369,7 @@ This release includes enhancements to improve the security of your Magento appli
 
 
 #### Testing
+{:.no_toc}
 
 <!--- 52414 -->* We've fixed several integration test syntax errors. <a href="https://github.com/magento/magento2/issues/4343" target="_blank">(GITHUB-4343)</a>
 
@@ -375,6 +385,7 @@ target="_blank">(GITHUB-4099)</a>
 
 
 #### Search
+{:.no_toc}
 <!--- 50915 -->* Solr search no longer produces a fatal error when you use it to perform an advanced search on products by Size.
 
 <!--- 50701 -->* Solr search results now display all products as expected in search results.
@@ -400,6 +411,7 @@ target="_blank">(GITHUB-4099)</a>
 
 
 #### Checkout
+{:.no_toc}
 <!--- 53193 -->* We've resolved several address-related issues associated with Checkout.
 
 
@@ -435,6 +447,7 @@ target="_blank">(GITHUB-4099)</a>
 
 
 #### Bundle products
+{:.no_toc}
 
 <!--- 51194 -->* The Add Products to Option button now works as expected when you create a new update for a Bundle product.
 
@@ -469,6 +482,7 @@ target="_blank">(GITHUB-4099)</a>
 
 
 #### Import/Export
+{:.no_toc}
 <!--- 47555-->* The Import error message you receive when an attribute exceeds maximum permitted length now inserts variable that defines the attribute name. <a href="https://github.com/magento/magento2/issues/2844" target="_blank">(GITHUB-2844)</a>
 
 <!--- 46245-->* Magento no longer throws this error when you import or export when you have multiple websites and stores:  "URL key for specified store already exists."
@@ -494,6 +508,7 @@ target="_blank">(GITHUB-4099)</a>
 
 
 #### Messages and documentation
+{:.no_toc}
 
 <!--- 52340 -->* The `getList` method documentation has been enhanced.
 
@@ -522,6 +537,7 @@ target="_blank">(GITHUB-4099)</a>
 
 
 #### Admin
+{:.no_toc}
 <!--- 50492 -->* You can now access the Web setup wizard from the Admin interface.
 
 <!--- 50377 -->* Magento now updates Attribute set after reloading a form.
@@ -584,6 +600,7 @@ target="_blank">(GITHUB-4099)</a>
 
 
 #### Storefront
+{:.no_toc}
 <!--- 48714 -->*  You can now add form elements via layout and use the htmlContent component.
 
 <!--- 53126 -->*  Multi-site cache now shows the correct site's content. <a href="https://github.com/magento/magento2/issues/4556" target="_blank">(GITHUB-4556)</a>
@@ -604,6 +621,7 @@ target="_blank">(GITHUB-4099)</a>
 
 
 #### Indexing
+{:.no_toc}
 <!--- 48507 -->*  Magento can now complete reindexing when the product flat indexer is turned on.
 
 <!--- 48790 -->*  The performance of reindexing operations after import many products has been improved.
@@ -611,6 +629,7 @@ target="_blank">(GITHUB-4099)</a>
 
 
 #### Varnish
+{:.no_toc}
 <!--- 54228 -->* Varnish cache is no longer disabled on most HTML requests.
 
 <!--- 53919 -->*  We changed the HTML header used for SSL offloading from SSL-OFFLOADED{:target="_blank"} to X-Forwarded-Proto: https{:target="_blank"} to be compatible with Varnish and for compatibility with load balancers.
@@ -628,6 +647,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 
 #### Miscellaneous
+{:.no_toc}
 
 <!--- 52650 -->*  We've corrected plugin sort order.
 
