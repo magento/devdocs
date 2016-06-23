@@ -9,7 +9,7 @@ GEMS=bundler
 sudo apt-get update
 
 # Install Ubuntu packages
-sudo apt-get install nodejs -y
+sudo apt-get install nodejs git -y
 
 # Install Ruby
 if [ ! -e $RVM_PATH ]; then
@@ -42,5 +42,4 @@ bundle install
 # To run Jekyll later, first enter `vagrant up && vagrant ssh`
 
 # bin/jekyll serve --host=0.0.0.0
-
 
