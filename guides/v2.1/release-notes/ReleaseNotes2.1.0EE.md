@@ -8,6 +8,9 @@ menu_order:
 github_link21: release-notes/ReleaseNotes2.1.0EE.md
 ---
 
+*	TOC
+{:toc}
+
 <h2>Magento Enterprise Edition 2.1.0</h2>
 We are pleased to present Magento Enterprise Edition 2.1.0 General Availability. This release includes numerous functional fixes and enhancements. 
 
@@ -28,7 +31,36 @@ Magento Enterprise Edition 2.1.0 includes several new and exciting features:
  
 * **Improved management interfaces** make it faster and easier to search for information in the Admin, set up global search synonyms, and create new product, category, and CMS content.
  
+<h3>Security enhancements</h3>
+This release includes enhancements to improve the security of your Magento application. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your Magento software to the latest version as soon as possible.
 
+<!--- 51806 --> *  Magento no longer permits an unauthenticated user to remotely execute code on the server using APIs.
+
+<!--- 46026-->* Unauthenticated users can use Magento guest features to view order details without prior knowledge of information used to place the order. 
+
+<!--- 46478-->* You cannot bypass the frontend CAPTCHA feature. CAPTCHA is a security feature that tries to limit password guessing attempts.
+
+<!--- 51392-->* Only a registered customer can assign a guest cart to themselves. Previously, an anonymous user could modify the state (that is, set an active quote) of a registered customer. 
+
+<!--- 51370-->* Magento no longer discloses information about its internal path during installation. 
+
+<!--- 52338-->* A Cross-Site Request Forgery (CSRF) can no longer delete customer addresses.  
+
+<!--- 54255-->* Magento no longer uses Full Path Disclosure in cache management.
+
+<!--- 51808 --> *  Magento no longer allows authenticated customers to change other customers' account information using either SOAP or REST calls. Magento now confirms that the ID of the customer whose account is being edited matches the authentication token in use. 
+
+<!--- 46920 --> *  Resolved SQLi vulnerabilities with optional sample data. 
+
+<!--- 51390 --> *  A registered customer's private data of cannot be retrieved using Quote Web API by an anonymous user.
+
+<!--- 45887 --> *  Resolved a cross-site scripting (XSS) vulnerability on when creating a customer account.
+
+<!--- 51376 --> *  Resolved an issue where the Magento Admin URL is displayed to an unauthorized user.
+
+<!--- 50608 --> *  Magento no longer allows authenticated customers to change other customers' account information using either SOAP or REST calls. Magento now confirms that the ID of the customer whose account is being edited matches the authentication token in use.	[Github-3786](https://github.com/magento/magento2/issues/3786){:target="_blank"} 
+ 
+<!--- 48529 --> *  Resolved an issue with tinymce that allowed an Admin tinymce Iframe to be referenced by base static UTL. 
 
 
 <h3>Fixed issues</h3>
@@ -631,55 +663,6 @@ target="_blank">(GITHUB-4099)</a>
 <!--- 51402-->* Fixed JavaScript errors that were occurring when you clicked Schedule New Update on the Product Edit page.  
 
 
-<h4>Security enhancements</h4>
-This release includes enhancements to improve the security of your Magento installation. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento installation to the latest version as soon as possible.
-
-<!--- 51806 --> *  Magento no longer permits an unauthenticated user to remotely execute code on the server through APIs.
-
-<!--- 46026-->* Unauthenticated users can use Magento guest features to view order details without prior knowledge of information used to place the order. 
-
-<!--- 46478-->* You can bypass the frontend CAPTCHA feature. CAPTCHA is a security feature that tries to limit password guessing attempts.
-
-<!--- 51392-->* Only a registered customer can assign a guest cart to himself. Previously, an anonymous user could modify the state (that is, set an active quote) of a registered customer. 
-
-
-<!--- 51370-->* Magento no longer discloses information about its internal path during installation. 
-
-<!--- 52338-->* Csrf delete the customer addresses.  
-
-<!--- 54255-->* Magento no longer uses Full Path Disclosure in cache management.
-
-<!--- 51808 --> *  Magento no longer allows authenticated customers to change other customers’ account information using either SOAP or REST calls. Magento now confirms that the ID of the customer whose account is being edited matches the authentication token in use. 
-
-<!--- 46920 --> *  SQLi Vulnerability. I’ve found a number of SQLi vulnerabilities in the Magento sample site, ‘LUMA'. An attacker could exploit this to potentially steal the entire database and compromise the underlying server. SECURITY
-
- <!--- 51390 --> *  Private Data of Registered Customer May Be Retrieved with Quote Web API by Anonymous SECURITY APPSEC-1408 (51390)
-
-
-<!--- 45887 --> *  Persistent XSS on Create User Account. SECURITY APPSEC-1263 (45887)
-
-<!--- 51376 --> *  Application Information disclosure on Update APPSEC-1404 SECURITY (51376)
-
-<!--- 50608 --> *  [Github-3786][Security] Magento no longer allows authenticated customers to change other customers’ account information using either SOAP or REST calls. Magento now confirms that the ID of the customer whose account is being edited matches the authentication token in use.	
- 
-
-<!--- 48529 --> *  Admin tinymce iframe should not be referenced by base static url. The iframe created by tinymce used frequently in the admin should not be referenced by the base static url. Doing so, so will cause a same origin policy security error. (48529)
-
-MAGETWO-45027 / APPSEC-1189 CSRF on Removing Item from Wishlist -> more info https://wiki.corp.magento.com/display/~pikaminski/APPSEC-1189+-+CSRF+on+Removing+Item+from+Wishlist
-
-
-MAGETWO-49109 / APPSEC-1330 Password length restriction based denial of service -> more info
-https://wiki.corp.magento.com/display/~pikaminski/APPSEC-1330+-++Password+length+restriction+based+denial+of+service
- 
-MAGETWO-50234 / APPSEC-1367 [DAST] Transmission of Private Resources into a New Sphere ('Resource Leak') -  INTERNAL REPORT, no need for public info
-MAGETWO-45159 / APPSEC-1174 Cookie set without secure flag INTERNAL REPORT
-MAGETWO-45026 / APPSEC-1186 Arbitrary email address spoofing via Gift Registry sharing - iSEC (09/15) – INTERNAL REPORT
-MAGETWO-38942 / APPSEC-583 iSEC-MAG-4 Connect: Password reset facilitates targeted denial of service attacks INTERNAL REPORT
-MAGETWO-37125 / APPSEC-326 iSEC-Magento-retest-02 - Password change does not require existing password for admin users ITNERNAL REPORT
-MAGETWO-37550 / APPSEC-984 iSec 05/15: Password brute-force (front-end)/weak passwords – INTERNAL REPORT
-MAGETWO-37698 / APPSEC-990 Password change link can be reused INTERNAL REPORT
-MAGETWO-29932 / APPSEC-527 iSEC-MagentoEE-02 Concurrent Account Login INTERNAL REPORT
-MAGETWO-45686 / APPSEC-1241 [ZAP-M2]: X-Frame-Options Header Not Set INTENRAL REPORT
 
 
 <h4>Miscellaneous</h4>
