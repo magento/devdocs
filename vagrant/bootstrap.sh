@@ -9,7 +9,7 @@ GEMS=bundler
 sudo apt-get update
 
 # Install Ubuntu packages
-sudo apt-get install nodejs -y
+sudo apt-get install nodejs git -y
 
 # Install Ruby
 if [ ! -e $RVM_PATH ]; then
@@ -37,4 +37,9 @@ git clone -b develop https://github.com/magento/devdocs.git
 # Install gems and dependencies from Gemfile
 cd /vagrant/devdocs
 bundle install
+
+# Run Jekyll to generate the devdocs site (optional; you can do it anytime)
+# To run Jekyll later, first enter `vagrant up && vagrant ssh`
+
+# bin/jekyll serve --host=0.0.0.0
 

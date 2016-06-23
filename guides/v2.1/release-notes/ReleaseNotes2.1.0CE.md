@@ -38,6 +38,7 @@ This release includes enhancements to improve the security of your Magento appli
 
 
 #### Installation and upgrade
+{:.no_toc}
 
 <!--- 51033 -->* System upgrades now ignore the contents of the Magento `var/session` directory.
 
@@ -96,6 +97,7 @@ This release includes enhancements to improve the security of your Magento appli
 
 
 #### Shopping
+{:.no_toc}
 
 <!--- 51987-->* We've fixed the Add to Cart button translation. <a href="https://github.com/magento/magento2/issues/4181" target="_blank">(GITHUB-4181)</a>
 
@@ -150,6 +152,7 @@ This release includes enhancements to improve the security of your Magento appli
 
 
 #### Product
+{:.no_toc}
 <!--- 52030 -->* Downloadable products are no longer shown as out of stock on the Category page.
 
 <!--- 48153 -->*  You can now save a product that's been assigned to more than one website.
@@ -192,6 +195,7 @@ This release includes enhancements to improve the security of your Magento appli
 
 
 #### API
+{:.no_toc}
 <!--- 50878 -->* The Oauth handshake now clearly indicates the SAAS platform with which the Magento store is doing the Oauth handshake.
 
 <!--- 49699 -->*  You can now use the Web API to access Version Manager.
@@ -247,6 +251,7 @@ This release includes enhancements to improve the security of your Magento appli
 
 
 #### JavaScript
+{:.no_toc}
 
 <!--- 50243 -->*  Attribute values are now consistently persisted after reloading a form.
 
@@ -259,6 +264,7 @@ This release includes enhancements to improve the security of your Magento appli
 <!--- 49957-->*  RequireJS now uses the correct baseUrl in pre-generated assets when `pub` is web-root.  <a href="https://github.com/magento/magento2/issues/2711" target="_blank">(GITHUB-2711)</a>
 
 #### PHP
+{:.no_toc}
 <!--- 53524 -->*  PHP errors no longer occur when you run a cron script on installations running PHP5.5. <a href="https://github.com/magento/magento2/issues/4722" target="_blank">(GITHUB-4722)</a>
 
 <!--- 47677-->* Remi PHP 7.0.1 now works with Sample Data.
@@ -271,6 +277,7 @@ This release includes enhancements to improve the security of your Magento appli
 
 
 #### Paypal
+{:.no_toc}
 <!--- 49148 -->*  The Paypal button now displays as expected in the minicart.
 
 <!--- 50557-->* The PayPal Express review rendering of tax block now works correctly.  <a href="https://github.com/magento/magento2/issues/3774" target="_blank">(GITHUB-3774)</a>
@@ -310,6 +317,7 @@ This release includes enhancements to improve the security of your Magento appli
 
 
 #### Braintree
+{:.no_toc}
 
 <!--- 48649-->* You can now change the quantity for an invoice.
 
@@ -339,6 +347,7 @@ This release includes enhancements to improve the security of your Magento appli
 
 
 #### Integration
+{:.no_toc}
 
 <!--- 50857 -->*  You can now select API resources while creating an integration.
 
@@ -360,6 +369,7 @@ This release includes enhancements to improve the security of your Magento appli
 
 
 #### Testing
+{:.no_toc}
 
 <!--- 52414 -->* We've fixed several integration test syntax errors. <a href="https://github.com/magento/magento2/issues/4343" target="_blank">(GITHUB-4343)</a>
 
@@ -375,6 +385,7 @@ target="_blank">(GITHUB-4099)</a>
 
 
 #### Search
+{:.no_toc}
 <!--- 50915 -->* Solr search no longer produces a fatal error when you use it to perform an advanced search on products by Size.
 
 <!--- 50701 -->* Solr search results now display all products as expected in search results.
@@ -400,6 +411,7 @@ target="_blank">(GITHUB-4099)</a>
 
 
 #### Checkout
+{:.no_toc}
 <!--- 53193 -->* We've resolved several address-related issues associated with Checkout.
 
 
@@ -435,6 +447,7 @@ target="_blank">(GITHUB-4099)</a>
 
 
 #### Bundle products
+{:.no_toc}
 
 <!--- 51194 -->* The Add Products to Option button now works as expected when you create a new update for a Bundle product.
 
@@ -469,6 +482,7 @@ target="_blank">(GITHUB-4099)</a>
 
 
 #### Import/Export
+{:.no_toc}
 <!--- 47555-->* The Import error message you receive when an attribute exceeds maximum permitted length now inserts variable that defines the attribute name. <a href="https://github.com/magento/magento2/issues/2844" target="_blank">(GITHUB-2844)</a>
 
 <!--- 46245-->* Magento no longer throws this error when you import or export when you have multiple websites and stores:  "URL key for specified store already exists."
@@ -493,94 +507,8 @@ target="_blank">(GITHUB-4099)</a>
 <!--- 53781-->* The Ajax loader now stops if you use an incorrect file type during import.
 
 
-
-
-
-
-#### Security enhancements
-This release includes enhancements to improve the security of your Magento installation. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento installation to the latest version as soon as possible.
-
-<!--- 51806 -->*  Magento – Unauthenticated Remote Code Execution SECURITY APPSEC-1420 (51806)
-
-<!--- 46026-->* Guest Order View / Protect Code. It appears to be possible to exploit the functionality of the sales/guest/view feature to view order details for certain orders without prior knowledge of information used to place the order. SECURITY
-
-<!--- 46478-->* Frontend CAPTCHA Bypass SECURITY
-
-<!--- 51392-->* Anonymous May Assign Quote to Registered Customer. Allow to modify state (set active quote) of registered customer for anonymous. That accessibility issue is potential security vulnerability.
-Solution:
-Allow assign guest cart only for registered customers to themself. SECURITY
-
-
-<!--- 51370-->* Application Information disclosure on Setup.The first vulnerability discloses the internal path where Magento is installed.
- SECURITY  
-
-<!--- 51370-->* Application Information disclosure on Setup. The first vulnerability discloses the internal path where Magento is installed.
-. SECURITY
-
-<!--- 52338-->* Csrf delete the customer addresses. SECURITY
-
-<!--- 54255-->* Full Path Disclosure in cache management. (x) File "/var/www/html/magento2ce/app/etc/env.php" cannot be opened Warning!fopen(/var/www/html/magento2ce/app/etc/env.php): failed to open stream: Permission denied
-(/) Functionality of disabling cahce should be hidden SECURITY
-
-<!--- 51808 -->*  Account Hijacking SECURITY APPSEC-1422 (51808)
-
-<!--- 46920 -->*  SQLi Vulnerability. I’ve found a number of SQLi vulnerabilities in the Magento sample site, ‘LUMA'. An attacker could exploit this to potentially steal the entire database and compromise the underlying server. SECURITY
-
-<!--- 51390 -->*  Private Data of Registered Customer May Be Retrieved with Quote Web API by Anonymous SECURITY APPSEC-1408 (51390)
-
-
-<!--- 45887 -->*  Persistent XSS on Create User Account. SECURITY APPSEC-1263 (45887)
-
-<!--- 51376 -->*  Application Information disclosure on Update APPSEC-1404 SECURITY (51376)
-
-<!--- 50608 -->*  [Github-3786][Security] Able to brute force API token access
- (50608)
-
-<!--- 48529 -->*  Admin tinymce iframe should not be referenced by base static url. The iframe created by tinymce used frequently in the admin should not be referenced by the base static url. Doing so, so will cause a same origin policy security error.
-
-<!--- 45027 -->* APPSEC-1189 CSRF on Removing Item from Wishlist -> more info https://wiki.corp.magento.com/display/~pikaminski/APPSEC-1189+-+CSRF+on+Removing+Item+from+Wishlist
-
-<!--- 49109 -->* APPSEC-1330 Password length restriction based denial of service -> more info
-https://wiki.corp.magento.com/display/~pikaminski/APPSEC-1330+-++Password+length+restriction+based+denial+of+service
-
-<!--- 50234 -->* APPSEC-1367 [DAST] Transmission of Private Resources into a New Sphere ('Resource Leak') -  INTERNAL REPORT, no need for public info
-
-<!--- 45159 -->* APPSEC-1174 Cookie set without secure flag INTERNAL REPORT
-
-<!--- 45026 -->* APPSEC-1186 Arbitrary email address spoofing via Gift Registry sharing - iSEC (09/15) – INTERNAL REPORT
-
-<!--- 38942 -->* APPSEC-583 iSEC-MAG-4 Connect: Password reset facilitates targeted denial of service attacks INTERNAL REPORT
-
-<!--- 37125 -->*  APPSEC-326 iSEC-Magento-retest-02 - Password change does not require existing password for admin users ITNERNAL REPORT
-
-<!--- 37550 -->* APPSEC-984 iSec 05/15: Password brute-force (front-end)/weak passwords – INTERNAL REPORT
-
-<!--- 37698 -->* APPSEC-990 Password change link can be reused INTERNAL REPORT
-
-<!--- 29932 -->* APPSEC-527 iSEC-MagentoEE-02 Concurrent Account Login INTERNAL REPORT
-
-<!--- 29932 -->* APPSEC-1241 [ZAP-M2]: X-Frame-Options Header Not Set INTENRAL REPORT
-
-
-
-
-
-<!--- 50955 -->* This page no longer contains an error/warning message that may disclose sensitive information such as the location of the file that produced the unhandled exception.
-
-<!--- 50755 -->* Reflected cross-site scripting (XSS) can no longer occur through the Authorize.net module’s redirect data.
-
-<!--- 45954-->* Stored XSS through custom options.
-
-<!--- 46855-->* Block Cache Exploit. As an authenticated admin user, it appears to be possible to abuse the block cache via the GUI to read and write entries you probably shouldn't be able to.
-Read Sensitive Information
-
-<!--- 52867-->* [APPSEC-1446] Sensitive server information disclosure upon specific URL requests. Magento discloses server sensitive information if invalid URL has been requested:
-
-<!--- 52371 -->*  Magento no longer exposes Marketplace credentials via URL.
-
-
-
 #### Messages and documentation
+{:.no_toc}
 
 <!--- 52340 -->* The `getList` method documentation has been enhanced.
 
@@ -609,6 +537,7 @@ Read Sensitive Information
 
 
 #### Admin
+{:.no_toc}
 <!--- 50492 -->* You can now access the Web setup wizard from the Admin interface.
 
 <!--- 50377 -->* Magento now updates Attribute set after reloading a form.
@@ -671,6 +600,7 @@ Read Sensitive Information
 
 
 #### Storefront
+{:.no_toc}
 <!--- 48714 -->*  You can now add form elements via layout and use the htmlContent component.
 
 <!--- 53126 -->*  Multi-site cache now shows the correct site's content. <a href="https://github.com/magento/magento2/issues/4556" target="_blank">(GITHUB-4556)</a>
@@ -691,6 +621,7 @@ Read Sensitive Information
 
 
 #### Indexing
+{:.no_toc}
 <!--- 48507 -->*  Magento can now complete reindexing when the product flat indexer is turned on.
 
 <!--- 48790 -->*  The performance of reindexing operations after import many products has been improved.
@@ -698,6 +629,7 @@ Read Sensitive Information
 
 
 #### Varnish
+{:.no_toc}
 <!--- 54228 -->* Varnish cache is no longer disabled on most HTML requests.
 
 <!--- 53919 -->*  We changed the HTML header used for SSL offloading from SSL-OFFLOADED{:target="_blank"} to X-Forwarded-Proto: https{:target="_blank"} to be compatible with Varnish and for compatibility with load balancers.
@@ -715,6 +647,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 
 #### Miscellaneous
+{:.no_toc}
 
 <!--- 52650 -->*  We've corrected plugin sort order.
 
