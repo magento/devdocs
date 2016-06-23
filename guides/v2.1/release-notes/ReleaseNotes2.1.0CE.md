@@ -379,9 +379,6 @@ This release includes enhancements to improve the security of your Magento appli
 <!--- 51715 -->*  CategoryTest integration test no longer fails on Travis builds. <a href="https://github.com/magento/magento2/issues/4099"
 target="_blank">(GITHUB-4099)</a>
 
-<!--- 49810-->*  The Magento\SharedCatalog\Test\TestCase\DeleteSharedCatalogTest no longer fails randomly.
-
-
 
 
 #### Search
