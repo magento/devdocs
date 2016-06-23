@@ -2,9 +2,9 @@
 layout: default
 group: release-notes
 subgroup: 05_BC
-title: Magento 2.1 Backward Incompatible Changes
-menu_title: Version 2.1 incompatible changes
-version: 2.0
+title: Magento 2.1 backward incompatible changes
+menu_title: Magento 2.1 backward incompatible changes
+version: 2.1
 github_link: release-notes/backward-incompatible-changes-2.1.md
 ---
 ##{{page.title}}
