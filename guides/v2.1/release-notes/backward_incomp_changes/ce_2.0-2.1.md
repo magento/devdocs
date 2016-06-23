@@ -1,6 +1,6 @@
 ---
 layout: default
-group: release-notes
+group: 
 subgroup: 05_BC
 title: Magento CE Backward Incompatible Changes between 2.0 and 2.1 branches
 menu_title: Magento CE changes between 2.0 and 2.1
