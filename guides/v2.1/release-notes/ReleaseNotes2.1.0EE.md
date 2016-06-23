@@ -1602,37 +1602,18 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 <!--- 48089-->* Undeclared dynamic property is no longer leaked in public space. <a href="https://github.com/magento/magento2/issues/2103" target="_blank">(GITHUB-2103)</a> 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ###Known issues
 Magento 2.1.0 GA includes the following known issues:
 
-<!--- 54447-->* A developer who attempts to upgrade the Magento EE software using the commands git pull followed by composer update sees the error Fatal error: Cannot use Composer\Installer as Installer because the name is already in use.
+<!--- 54095-->* When upgrading Magento CE or Magento EE with optional sample data, the upgrade might fail with the following exception:
+
+		2016-06-18 23:07:44 UTC] An error occurred while executing job "setup:upgrade {"command":"setup:upgrade"}": Could not complete setup:upgrade {"command":"setup:upgrade"} successfully: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'entity_id' in 'where clause', query was: (SELECT `t`.`value`, `t`.`attribute_id` FROM `catalog_category_entity_varchar` AS `t` WHERE (entity_id = '2') AND (`store_id` IN ('0')) ORDER BY `t`.`store_id` DESC
+
+		... more ...
+
+	Follow the prompts on your screen to roll back, then, before upgrading again, manually remove the contents of the `var/cache`, `var/generation`, and `var/page_cache` directories. After that, try your upgrade again.
+
+<!--- 54447-->* A developer who attempts to upgrade the Magento EE software using the commands `git pull` followed by `composer update` sees the error `Fatal error: Cannot use Composer\Installer as Installer because the name is already in use`.
 
 To work around this issue, run the following commands in the order shown:
 
