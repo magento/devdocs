@@ -19,7 +19,7 @@ versions:
       url: guides/v2.0/
    -
       name: 2.1
-      url: guides/v2.1/
+      url:
 
 # 2.0.0 variables
 gdeurl: "/guides/v2.0/"
