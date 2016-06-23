@@ -1,24 +1,27 @@
 # Deploy devdocs locally
 
-You can deploy devdocs site locally using this Vagrant container. Vagrant enables you to crun the software needed to build the devdocs project in a self-contained virtual machine. Our Vagrant project clones the devdocs repository. You can run Jekyll from the `/vagrant/devdocs` project root.
+You can deploy devdocs site locally using this Vagrant project. Vagrant enables you to run the software needed to build the devdocs project in a self-contained virtual machine (VM). Our Vagrant project clones the devdocs repository. You can then run Jekyll from the `/vagrant/devdocs` project root.
+
+# IMPORTANT
+If you previously used Vagrant to clone and update the devdocs site, we _strongly recommend_ you clone it again before making further updates. We recently renamed the `2.0` branch to `develop`. We'd prefer you to clone the repository again.
 
 ## Install required software
-Install the Virtual Box and Vagrant software for your operating system:
+Install the VirtualBox and Vagrant software for your operating system:
 
 1. [Install VirtualBox](https://www.virtualbox.org/wiki/Downloads). 
 3. [Install Vagrant](https://www.vagrantup.com/).
 
-## Customize the container
+## Customize the project
 
 You can change the following parameters in `Vagrantfile`:
 
 - `NAME` is a name of virtual machine (default: `magento.devdocs`).
 - `HOST_PORT` is a localhost port that enables you to observe the generated site from your host (default: `4000`). 
-- `RAM` is the amount of RAM used by the virtualVM (default: `1024` MB).
+- `RAM` is the amount of RAM used by the virtual VM (default: `1024` MB).
 - `CPU` is the maximum percentage of CPU used for the VM. (default: `50` percent).
 
-## Windows only: Run the UNIX shell and Virtual Box as Administrator
-To enable symlinks to work, Windows users must run both the UNIX shell (for example, Git Bash) and the Virtual Box application as administrator. The easiest way to do that is to modify the applications' shortcuts as follows:
+## Windows only: Run the UNIX shell and VirtualBox as Administrator
+To enable symlinks to work, Windows users must run both the UNIX shell (for example, Git Bash) and the VirtualBox application as administrator. The easiest way to do that is to modify the applications' shortcuts as follows:
 
 1.  Right-click the application on your desktop or under **Start** > **All Programs**
 2.  From the pop-up menu, click **Properties**.
@@ -31,23 +34,23 @@ To enable symlinks to work, Windows users must run both the UNIX shell (for exam
 1. Using a terminal, change to `devdocs/vagrant` on your host. (The directory where this README is located.) 
  Example: `cd ~/vagrant/devdocs`
 2. Enter `vagrant up`
-3. Wait for the container to initialize and clone the repository.
+3. Wait for the project to initialize and clone the repository.
 
     This command takes some time to complete the first time you run it.
 
 ## Enter Git commands and run Jekyll
-After your Vagrant container has started, enter `vagrant ssh` to connect to the container using SSH. From there, you can fork the devdocs repository and use any editor to make your changes.
+After your Vagrant project has started, enter `vagrant ssh` to connect to the project using SSH. From there, you can fork the devdocs repository and use any editor to make your changes.
 
 When you're ready to preview your changes, continue with the next section.
 
 ## Run Jekyll
 Use the following command to run Jekyll:
 
-    bundle exec jekyll serve --watch
+    bin/jekyll serve --host=0.0.0.0
 
 For additional command options, see [Basic Usage](https://jekyllrb.com/docs/usage).
 
-After Jekyll has started, to go `http://127.0.0.1:4000` in a web browser.
+After Jekyll has started, go to `http://127.0.0.1:4000` in a web browser.
 
 
 ## Useful CLI scripts and commands

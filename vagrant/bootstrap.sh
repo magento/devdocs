@@ -38,3 +38,9 @@ git clone -b develop https://github.com/magento/devdocs.git
 cd /vagrant/devdocs
 bundle install
 
+# Run Jekyll to generate the devdocs site (optional; you can do it anytime)
+# To run Jekyll later, first enter `vagrant up && vagrant ssh`
+
+# bin/jekyll serve --host=0.0.0.0
+
+
