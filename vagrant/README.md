@@ -12,10 +12,10 @@ Install the Virtual Box and Vagrant software for your operating system:
 
 You can change the following parameters in `Vagrantfile`:
 
-- `NAME` is a name of virtual machine (default: "magento.devdocs").
+- `NAME` is a name of virtual machine (default: `magento.devdocs`).
 - `HOST_PORT` is a localhost port that enables you to observe the generated site from your host (default: `4000`). 
 - `RAM` is the amount of RAM used by the virtualVM (default: `1024` MB).
-- `CPU` is a maximum percentage of CPU used for the VM. (default: `50` percent).
+- `CPU` is the maximum percentage of CPU used for the VM. (default: `50` percent).
 
 ## Windows only: Run the UNIX shell and Virtual Box as Administrator
 To enable symlinks to work, Windows users must run both the UNIX shell (for example, Git Bash) and the Virtual Box application as administrator. The easiest way to do that is to modify the applications' shortcuts as follows:
@@ -62,16 +62,16 @@ All commands must be run in the terminal from the directory that contains `Vagra
 
 - Run Jekyll server. (Generates devdocs site.)
  
-        vagrant ssh -c 'cd /jekyll/devdocs; jekyll serve --host=0.0.0.0'
+        vagrant ssh -c 'cd /vagrant/devdocs; jekyll serve --host=0.0.0.0'
 
 - Reload Jekyll server. (Regenerates devdocs site.)
 
-        vagrant ssh -c "kill $(ps aux | grep '[j]ekyll' | awk '{print $2}'); cd /jekyll/devdocs; jekyll serve --host=0.0.0.0"
+        vagrant ssh -c "kill $(ps aux | grep '[j]ekyll' | awk '{print $2}'); cd /vagrant/devdocs; jekyll serve --host=0.0.0.0"
  
     
 ### Commands
 
-- Connect to the running virtual machine. You can run Jekyll commands inside the virtual machine from the `/jekyll/devdocs` directory.
+- Connect to the running virtual machine. You can run Jekyll commands inside the virtual machine from the `/vagrant/devdocs` directory.
 
         vagrant ssh
 
