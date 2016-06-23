@@ -1,10 +1,18 @@
+# Author: jcalcaben@magento.com
+#
+# This custom plugin dynamically sets and injects the page.baseurl variable
+# based on the page's destination.
+# 
+#
+
 module PageBaseUrlGenerator
   class Generator < Jekyll::Generator
     def generate(site)
       pages = site.pages
       siteBaseUrl = site.baseurl
-      version = "2.1"
       for page in pages
+        version = "2.1"
+
         destination = page.path
         matcher = /guides\/v([\d\.]+)\/.*/.match(destination)
 
