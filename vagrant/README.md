@@ -1,32 +1,54 @@
 # Deploy devdocs locally
 
-You can deploy devdocs site locally using this vagrant project. Vagrant enables you to create a virtual machine with all the software needed to build the devdocs project on a virtual machine. The generated web-site is accessible through browser from your machine as localhost using IP: **127.0.0.1:4000** by default.
+You can deploy devdocs site locally using this Vagrant container. Vagrant enables you to crun the software needed to build the devdocs project in a self-contained virtual machine. Our Vagrant project clones the devdocs repository. You can run Jekyll from the `/vagrant/devdocs` project root.
 
-## Setup
+## Install required software
+Install the Virtual Box and Vagrant software for your operating system:
 
-1. Download or clone [devdocs repository](https://github.com/magento/devdocs).
-2. [Install VirtualBox](https://www.virtualbox.org/wiki/Downloads). 
+1. [Install VirtualBox](https://www.virtualbox.org/wiki/Downloads). 
 3. [Install Vagrant](https://www.vagrantup.com/).
 
-## Create VM and environment 
+## Customize the container
 
-1. Using a terminal, change a directory to `devdocs/vagrant` on your host. (The directory where this README is located.) 
- Example: `cd ~/devdocs/vagrant`
-2. Enter in your terminal `vagrant up`
-3. Wait for some time until vagrant created a virtual machine with ready-to-go environment.
-
-## Browse devdocs site
-
-In your browser, visit http://127.0.0.1:4000/
-
-## Customize environment
-
-You can change the following parameters in `Vagrantfile`
+You can change the following parameters in `Vagrantfile`:
 
 - `NAME` is a name of virtual machine (default: "magento.devdocs").
-- `HOST_PORT` is a localhost port that enables you to observe the generated site from your host (default: "4000"). 
-- `RAM` is a RAM size on virtual machine (default:  "1024" MB).
-- `CPU` is a maximum percentage of a CPU used on your machine for VM needs. (default: "50" percent)
+- `HOST_PORT` is a localhost port that enables you to observe the generated site from your host (default: `4000`). 
+- `RAM` is the amount of RAM used by the virtualVM (default: `1024` MB).
+- `CPU` is a maximum percentage of CPU used for the VM. (default: `50` percent).
+
+## Windows only: Run the UNIX shell and Virtual Box as Administrator
+To enable symlinks to work, Windows users must run both the UNIX shell (for example, Git Bash) and the Virtual Box application as administrator. The easiest way to do that is to modify the applications' shortcuts as follows:
+
+1.  Right-click the application on your desktop or under **Start** > **All Programs**
+2.  From the pop-up menu, click **Properties**.
+3.  In the Properties dialog box, click **Advanced**.
+4.  Select the **Run as administrator** check box.
+5.  Follow the prompts on your screen to save your changes.
+
+## Create the VM and environment 
+
+1. Using a terminal, change to `devdocs/vagrant` on your host. (The directory where this README is located.) 
+ Example: `cd ~/vagrant/devdocs`
+2. Enter `vagrant up`
+3. Wait for the container to initialize and clone the repository.
+
+    This command takes some time to complete the first time you run it.
+
+## Enter Git commands and run Jekyll
+After your Vagrant container has started, enter `vagrant ssh` to connect to the container using SSH. From there, you can fork the devdocs repository and use any editor to make your changes.
+
+When you're ready to preview your changes, continue with the next section.
+
+## Run Jekyll
+Use the following command to run Jekyll:
+
+    bundle exec jekyll serve --watch
+
+For additional command options, see [Basic Usage](https://jekyllrb.com/docs/usage).
+
+After Jekyll has started, to go `http://127.0.0.1:4000` in a web browser.
+
 
 ## Useful CLI scripts and commands
 
