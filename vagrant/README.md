@@ -3,7 +3,7 @@
 You can deploy devdocs site locally using this Vagrant project. Vagrant enables you to run the software needed to build the devdocs project in a self-contained virtual machine (VM). Our Vagrant project clones the devdocs repository. You can then run Jekyll from the `/vagrant/devdocs` project root.
 
 # IMPORTANT
-If you previously used Vagrant to clone and update the devdocs site, we _strongly recommend_ you clone it again before making further updates. We recently renamed the `2.0` branch to `develop`. We'd prefer you to clone the repository again.
+If you previously used Vagrant to clone and update the devdocs site, we _strongly recommend_ you clone it again using this Vagrant project before making further updates. We recently renamed the `2.0` branch to `develop`. We believe that having the old `2.0` branch in your Git history will cause issues.
 
 ## Install required software
 Install the VirtualBox and Vagrant software for your operating system:
@@ -15,7 +15,7 @@ Install the VirtualBox and Vagrant software for your operating system:
 
 You can change the following parameters in `Vagrantfile`:
 
-- `NAME` is a name of virtual machine (default: `magento.devdocs`).
+- `NAME` is a name of virtual machine (default: `magento-devdocs`).
 - `HOST_PORT` is a localhost port that enables you to observe the generated site from your host (default: `4000`). 
 - `RAM` is the amount of RAM used by the virtual VM (default: `1024` MB).
 - `CPU` is the maximum percentage of CPU used for the VM. (default: `50` percent).
@@ -31,7 +31,7 @@ To enable symlinks to work, Windows users must run both the UNIX shell (for exam
 
 ## Create the VM and environment 
 
-1. Using a terminal, change to `devdocs/vagrant` on your host. (The directory where this README is located.) 
+1. Using a terminal, change to `devdocs/vagrant` on your host (that is, the directory in which this README is located).
  Example: `cd ~/vagrant/devdocs`
 2. Enter `vagrant up`
 3. Wait for the project to initialize and clone the repository.
@@ -80,7 +80,7 @@ All commands must be run in the terminal from the directory that contains `Vagra
 
   To terminate the connection, run the command:
 
-            exit
+        exit
         
 - Shut down the running virtual machine
 
