@@ -2,8 +2,6 @@
 
 You can deploy devdocs site locally using this Vagrant project. Vagrant enables you to run the software needed to build the devdocs project in a self-contained virtual machine (VM). Our Vagrant project clones the devdocs repository. You can then run Jekyll from the `/vagrant/devdocs` project root.
 
-Hi
-
 # IMPORTANT
 If you previously used Vagrant to clone and update the devdocs site, we _strongly recommend_ you clone it again using this Vagrant project before making further updates. We recently renamed the `2.0` branch to `develop`. We believe that having the old `2.0` branch in your Git history will cause issues.
 
