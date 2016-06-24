@@ -14,7 +14,7 @@ github_link: comp-mgr/upgrader/upgrade-start.md
 Before continuing, complete all tasks discussed in <a href="{{page.baseurl}}comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.
 
 <div class="bs-callout bs-callout-warning">
-   	<p>If you're upgrading to either Release Candidate 1 (RC1) or RC2 with sample data, see <a href="{{page.baseurl}}comp-mgr/upgrader/upgrade-rc1.html">Upgrade with sample data to RC1 or RC2</a> first.</p>   
+   	<p>If you're upgrading to version 2.1, see <a href="{{ page.baseurl }}comp-mgr/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</p>   
 </div>
 
 ## Optional custom maintenance page
