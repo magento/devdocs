@@ -34,7 +34,7 @@ This guide provides best practices, guidelines, and tips for creating Magento ex
 
 ###Sections
 
-{% assign subgroup = site.articles | where:"group","ext-best-practices" | where: "menu_node","parent" | where: "guide_version", page.guide_version | sort: "menu_order" %}
+{% assign subgroup = site.pages | where: "guide_version", page.guide_version | where:"group","ext-best-practices" | where: "menu_node","parent" | sort: "menu_order" %}
 
 {% for node in subgroup %}
 *  [{{ node.menu_title }}]({{page.baseurl}}{{ node.github_link | replace: ".md",".html" }})

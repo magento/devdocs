@@ -24,7 +24,7 @@ For additional information on design topics for the Admin, read the [Admin Patte
 
 ###Articles
 
-{% assign subgroup = site.articles | where: "guide_version", page.guide_version | where:"group","ext-best-practices" | where: "subgroup","01_Admin" | where: "menu_node",null | sort: "menu_order" %}
+{% assign subgroup = site.pages | where: "guide_version", page.guide_version | where:"group","ext-best-practices" | where: "subgroup","01_Admin" | where: "menu_node",null | sort: "menu_order" %}
 
 {% for node in subgroup %}
 *  [{{ node.menu_title }}]({{page.baseurl}}{{ node.github_link | replace: ".md",".html" }})
