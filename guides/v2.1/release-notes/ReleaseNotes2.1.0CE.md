@@ -1282,8 +1282,8 @@ Our technology stack is built on PHP and MySQL. Magento 2.1.0 supports:
 
 * PHP 5.6
 * PHP 7.0.2
-* PHP 7.0.6 + up until 7.1
-* MySQL 5.6.
+* PHP 7.0.6 up to 7.1
+* MySQL 5.6
 
 We do not support PHP 5.5.x or 7.0.5.
 

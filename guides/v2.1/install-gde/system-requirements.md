@@ -30,7 +30,7 @@ MySQL 5.6 (Oracle or Percona)
 ### PHP 
 
 *	5.6.x
-*	7.0.2&ndash;7.0.6 except for 7.0.5
+*	7.0.6 up to 7.1
 
 	There is a [known PHP issue](https://bugs.php.net/bug.php?id=71914){:target="_blank"} that affects our [code compiler]({{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html) when using PHP 7.0.5. We recommend you *not* use PHP 7.0.5; instead, use PHP 7.0.2&ndash;7.0.4 or 7.0.6.
 
