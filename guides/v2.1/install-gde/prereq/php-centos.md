@@ -30,7 +30,7 @@ github_link21: install-gde/prereq/php-centos.md
 
 Magento requires:
 
-*	7.0.6 up to 7.1.0
+*	7.0.2, 7.0.6 up to 7.1.0
 *	PHP 5.6.x
 
 <div class="bs-callout bs-callout-info" id="info">

@@ -29,7 +29,7 @@ redirect_from: /guides/v1.0/install-gde/prereq/php-ubuntu.html
 <h2 id="php-support">PHP versions supported</h2>
 Magento requires:
 
-*	7.0.6 up to 7.1.0
+*	7.0.2, 7.0.6 up to 7.1.0
 *	PHP 5.6.x
 
 <div class="bs-callout bs-callout-info" id="info">
