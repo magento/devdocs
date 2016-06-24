@@ -4,7 +4,7 @@ group: release-notes
 subgroup: Third Party Licenses
 menu_title: Magento CE third-party licenses
 menu_order: 1
-version: 2.1
+version: 2.0
 github_link: release-notes/thirdparty_ce.md
 ---
 
