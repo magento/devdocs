@@ -14,24 +14,24 @@ To upgrade to Magento 2 RC1 or RC2 sample data using the command line:
 3.	Back up your current `composer.json`:
 
 		cp composer.json composer.json.bak
-4.	Enter one of the following commands to upgrade the Magento software version:
+4.	Enter one of the following commands to upgrade the Magento software version to 2.1.0 (GA release):
 
 		composer require <product> <version> --no-update
 		composer require <sample data module-1>:<version> ... <sample data module-n>:<version> --no-update
 
 	*	Magento CE:
 
-			composer require magento/product-community-edition 2.1.0-rc2 --no-update
+			composer require magento/product-community-edition 2.1.0 --no-update
 
-			composer require magento/module-bundle-sample-data:100.1.0-rc2 magento/module-widget-sample-data:100.1.0-rc2 magento/module-theme-sample-data:100.1.0-rc2 magento/module-catalog-sample-data:100.1.0-rc2 magento/module-customer-sample-data:100.1.0-rc2 magento/module-cms-sample-data:100.1.0-rc2  magento/module-catalog-rule-sample-data:100.1.0-rc2 magento/module-sales-rule-sample-data:100.1.0-rc2 magento/module-review-sample-data:100.1.0-rc2 magento/module-tax-sample-data:100.1.0-rc2 magento/module-sales-sample-data:100.1.0-rc2 magento/module-grouped-product-sample-data:100.1.0-rc2 magento/module-downloadable-sample-data:100.1.0-rc2 magento/module-msrp-sample-data:100.1.0-rc2 magento/module-configurable-sample-data:100.1.0-rc2 magento/module-product-links-sample-data:100.1.0-rc2 magento/module-wishlist-sample-data:100.1.0-rc2 magento/module-swatches-sample-data:100.1.0-rc2 magento/sample-data-media:100.1.0-rc2 magento/module-offline-shipping-sample-data:100.1.0-rc2 --no-update 
+			composer require magento/module-bundle-sample-data:100.1.0 magento/module-widget-sample-data:100.1.0 magento/module-theme-sample-data:100.1.0 magento/module-catalog-sample-data:100.1.0 magento/module-customer-sample-data:100.1.0 magento/module-cms-sample-data:100.1.0  magento/module-catalog-rule-sample-data:100.1.0 magento/module-sales-rule-sample-data:100.1.0 magento/module-review-sample-data:100.1.0 magento/module-tax-sample-data:100.1.0 magento/module-sales-sample-data:100.1.0 magento/module-grouped-product-sample-data:100.1.0 magento/module-downloadable-sample-data:100.1.0 magento/module-msrp-sample-data:100.1.0 magento/module-configurable-sample-data:100.1.0 magento/module-product-links-sample-data:100.1.0 magento/module-wishlist-sample-data:100.1.0 magento/module-swatches-sample-data:100.1.0 magento/sample-data-media:100.1.0 magento/module-offline-shipping-sample-data:100.1.0 --no-update 
 	*	Magento EE:
 
-			composer require magento/product-enterprise-edition 2.1.0-rc2 --no-update
+			composer require magento/product-enterprise-edition 2.1.0 --no-update
 
-			composer require magento/module-bundle-sample-data:100.1.0-rc2 magento/module-widget-sample-data:100.1.0-rc2 magento/module-theme-sample-data:100.1.0-rc2 magento/module-catalog-sample-data:100.1.0-rc2 magento/module-customer-sample-data:100.1.0-rc2 magento/module-cms-sample-data:100.1.0-rc2  magento/module-catalog-rule-sample-data:100.1.0-rc2 magento/module-sales-rule-sample-data:100.1.0-rc2 magento/module-review-sample-data:100.1.0-rc2 magento/module-tax-sample-data:100.1.0-rc2 magento/module-sales-sample-data:100.1.0-rc2 magento/module-grouped-product-sample-data:100.1.0-rc2 magento/module-downloadable-sample-data:100.1.0-rc2 magento/module-msrp-sample-data:100.1.0-rc2 magento/module-configurable-sample-data:100.1.0-rc2 magento/module-product-links-sample-data:100.1.0-rc2 magento/module-wishlist-sample-data:100.1.0-rc2 magento/module-swatches-sample-data:100.1.0-rc2 magento/sample-data-media:100.1.0-rc2 magento/module-offline-shipping-sample-data:100.1.0-rc2 magento/module-gift-card-sample-data:100.1.0-rc2 magento/module-customer-balance-sample-data:100.1.0-rc2 magento/module-target-rule-sample-data:100.1.0-rc2 magento/module-gift-registry-sample-data:100.1.0-rc2 magento/module-multiple-wishlist-sample-data:100.1.0-rc2 --no-update
+			composer require magento/module-bundle-sample-data:100.1.0 magento/module-widget-sample-data:100.1.0 magento/module-theme-sample-data:100.1.0 magento/module-catalog-sample-data:100.1.0 magento/module-customer-sample-data:100.1.0 magento/module-cms-sample-data:100.1.0  magento/module-catalog-rule-sample-data:100.1.0 magento/module-sales-rule-sample-data:100.1.0 magento/module-review-sample-data:100.1.0 magento/module-tax-sample-data:100.1.0 magento/module-sales-sample-data:100.1.0 magento/module-grouped-product-sample-data:100.1.0 magento/module-downloadable-sample-data:100.1.0 magento/module-msrp-sample-data:100.1.0 magento/module-configurable-sample-data:100.1.0 magento/module-product-links-sample-data:100.1.0 magento/module-wishlist-sample-data:100.1.0 magento/module-swatches-sample-data:100.1.0 magento/sample-data-media:100.1.0 magento/module-offline-shipping-sample-data:100.1.0 magento/module-gift-card-sample-data:100.1.0 magento/module-customer-balance-sample-data:100.1.0 magento/module-target-rule-sample-data:100.1.0 magento/module-gift-registry-sample-data:100.1.0 magento/module-multiple-wishlist-sample-data:100.1.0 --no-update
 
 	<div class="bs-callout bs-callout-info" id="info">
-  		<p>To upgrade to RC1, replace <code>-rc2</code> with <code>-rc1</code> in the preceding examples.</p>
+  		<p>To upgrade to a Release Candidate, append <code>-rc&lt;x></code> to the version of each module. For example, <code>-rc3</code>.</p>
 	</div>
 
 5.	Update dependencies:

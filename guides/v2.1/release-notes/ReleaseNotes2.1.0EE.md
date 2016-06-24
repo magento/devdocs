@@ -1621,17 +1621,18 @@ We do not support PHP 5.5.x or 7.0.5.
 
 For more information, <a href="{{ page.baseurl21 }}install-gde/system-requirements.html" target="_blank">System Requirements</a>.
 
+### Installation and upgrade instructions
 
+You can install Magento Enterprise Edition 2.1 General Availability (GA) using Composer. 
 
-
-
-
-###Installation instructions
 
 {% include install/releasenotes/ee_install_21.md %}
 
+### Upgrades
+To upgrade to Magento 2.1 (including a Release Candidate), see [Upgrade to Magento version 2.1 (June 22, 2016)]({{page.baseurl}}release-notes/tech_bull_21-upgrade.html).
 
-###Migration toolkits
+
+## Migration toolkits
 The <a href="{{ page.baseurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl21 }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
