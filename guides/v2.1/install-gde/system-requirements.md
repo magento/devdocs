@@ -32,8 +32,6 @@ MySQL 5.6 (Oracle or Percona)
 *	5.6.x
 *	7.0.6 up to 7.1
 
-	There is a [known PHP issue](https://bugs.php.net/bug.php?id=71914){:target="_blank"} that affects our [code compiler]({{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html) when using PHP 7.0.5. We recommend you *not* use PHP 7.0.5; instead, use PHP 7.0.2&ndash;7.0.4 or 7.0.6.
-
 <div class="bs-callout bs-callout-info" id="info">
 	<p>Magento 2.1.x no longer supports PHP 5.5.</p>
 </div>
