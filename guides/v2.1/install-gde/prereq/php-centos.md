@@ -30,8 +30,7 @@ github_link21: install-gde/prereq/php-centos.md
 
 Magento requires:
 
-*	7.0.2&ndash;7.0.6 except for 7.0.5 (supported by Magento version 2.0.1 and later only)
-	There is a [known PHP issue](https://bugs.php.net/bug.php?id=71914){:target="_blank"} that affects our [code compiler]({{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html) when using PHP 7.0.5. We recommend you not use PHP 7.0.5; instead, use PHP 7.0.2&ndash;7.0.4 or 7.0.6.
+*	7.0.6 up to 7.1.0
 *	PHP 5.6.x
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -87,7 +86,7 @@ Continue with one of the following sections:
 ## PHP 7 on CentOS {#php-centos-7}
 There is more than one way to install PHP 7.0.2 or later; the following is a suggestion only. Consult a reference for additional options.
 
-To upgrade to PHP 7.0.2 or later:
+To upgrade to PHP 7 or later:
 
 1.	*CentOS 6*. Enter the following commands in the order shown:
 
@@ -111,11 +110,11 @@ To upgrade to PHP 7.0.2 or later:
 
 2.	Restart Apache: `service httpd restart`
 
-2.	Enter the following command to verify that PHP 5.6 is installed:
+2.	Enter the following command to verify that PHP 7 is installed:
 
 		php -v
 
-	The following response indicates that PHP 5.6 is installed properly:
+	The following response indicates that PHP 7 is installed properly:
 
 		PHP 7.0.3 (cli) (built: Feb  4 2016 08:51:10) ( NTS )
 		Copyright (c) 1997-2016 The PHP Group

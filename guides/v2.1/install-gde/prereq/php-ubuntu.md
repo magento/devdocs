@@ -29,9 +29,7 @@ redirect_from: /guides/v1.0/install-gde/prereq/php-ubuntu.html
 <h2 id="php-support">PHP versions supported</h2>
 Magento requires:
 
-*	7.0.2&ndash;7.0.6 except for 7.0.5 
-
-	There is a [known PHP issue](https://bugs.php.net/bug.php?id=71914){:target="_blank"} that affects our [code compiler]({{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html) when using PHP 7.0.5. We recommend you not use PHP 7.0.5; instead, use PHP 7.0.2&ndash;7.0.4 or 7.0.6.
+*	7.0.6 up to 7.1.0
 *	PHP 5.6.x
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -83,11 +81,11 @@ If PHP is *not* installed, see one of the following sections:
   		<p>The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.</p>
 	</div>
 
-2.	Enter the following command to verify PHP 7.0.2 installed properly:
+2.	Enter the following command to verify PHP 7 installed properly:
 
 		php -v
 
-	Following is a sample response that indicates PHP 7.0.2 is installed:
+	Following is a sample response that indicates PHP 7 is installed:
 
 		PHP 7.0.4-6+deb.sury.org~trusty+1 (cli) ( NTS )
 		Copyright (c) 1997-2016 The PHP Group
