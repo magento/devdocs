@@ -12,8 +12,6 @@ github_link: install-gde/prereq/php-ubuntu.md
 redirect_from: /guides/v1.0/install-gde/prereq/php-ubuntu.html
 ---
 
-Hi mom!
-
 #### Contents
 
 *	<a href="#php-support">PHP versions supported</a>
