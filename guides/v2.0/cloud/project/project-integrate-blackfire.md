@@ -13,21 +13,26 @@ github_link: cloud/project/project-integrate-blackfire.md
 ---
 
 #### Contents
-*	[Register with Blackfire](#cloud-int-black) 
+*	[Get your Blackfire credentials](#cloud-int-black) 
 *	[Enable the Blackfire integration](#cloud-int-black-en)
 *	[Verify it's working](#cloud-int-black-verify)
 *	[Profile your site](#cloud-int-black-profile)
 
-## Register with Blackfire {#cloud-int-black}
-To register with Blackfire:
+## Get your Blackfire credentials {#cloud-int-black}
+Your project includes Blackfire credentials; to get them, view your project details using the Web Interface as follows:
 
-1.	[Sign up](https://blackfire.io/signup){:target="_blank"} for an account.
+1.	[Log in]({{ page.baseurl }}cloud/project/project-webint-basic.html#project-login) to your Magento Enterprise Cloud Edition project.
+2.	In the upper right corner, click **&lt;your name>** > **Settings** as the following figure shows.
 
-	Follow the prompts on your screen to complete the process.
-2.	Log in to your Blackfire account.
-3.	[Get your credentials](https://blackfire.io/account){:target="_blank"}.
-5.	Download the [Chrome](https://chrome.google.com/webstore/detail/blackfire-companion/miefikpgahefdbcgoiicnmpbeeomffld){:target="_blank"} extension.
-4.	Continue with the next section.
+	![Go to account settings]({{ site.baseurl }}common/images/cloud_acct-settings-option.png){:width="650px"}
+3.	On your account page, click **View Details** for your project as the following figure shows.
+
+	![View your project details]({{ site.baseurl }}common/images/cloud_blackfire-edit-details.png)
+4.	On your project details page, expand **Blackfire**.
+
+	Your Blackfire credentials display similar to the following.
+
+	![Your Blackfire credentials]({{ site.baseurl }}common/images/cloud_blackfire-account-info.png){:width="450px"}
 
 ## Enable the Blackfire integration {#cloud-int-black-en}
 We recommend you enable the Blackfire integration in an environment (that is, branch). You can optionally merge the environment with its parent after you know it's working.
