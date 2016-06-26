@@ -29,7 +29,7 @@ github_link: config-guide/cli/config-cli-subcommands-compiler.md
 <p>You can find code compilation in classes in the <a href="{{ site.mage2100url }}setup/src/Magento/Setup/Module/Di/App/Task/Operation" target="_blank">\Magento\Setup\Module\Di\App\Task\Operation</a> namespace.</p> 
 
 <div class="bs-callout bs-callout-warning">
-    <p>In this release, the Magento software doesn't support the multi-tenant compiler (that is, the <code>magento setup:di:compile-multi-tenant</code> command.</p>
+    <p>In this release, the Magento software doesn't support the multi-tenant compiler (that is, the <code>magento setup:di:compile-multi-tenant</code> command).</p>
 </div>
 
 <h2 id="config-cli-before">First steps</h2>
@@ -45,7 +45,7 @@ The following command enables all modules:
 
 Use the optional `[-c|--clear-static-content]` option to clear static content. This is necessary if you've previously enabled or disabled modules and you must clear static content previously generated for them.
 
-[More information about enabling modules]({{ site.gdeurl21 install-gde/install/cli/install-cli-subcommands-enable.html}}).
+[More information about enabling modules]({{ page.baseurl }}install-gde/install/cli/install-cli-subcommands-enable.html).
 
 <h2 id="config-cli-subcommands-single">Compile code</h2>
 Use this command to compile code. 

@@ -75,9 +75,8 @@ The following table summarizes the available commands. Commands are shown in sum
 		<td><p>Runs Magento cron jobs</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-compiler-single.html">magento setup:di:compile</a></td>
-		<td><p>Use if you have one instance of the Magento application.</p>
-			<p>Compiles all non-existent proxies and factories; and pre-compiles class definitions, inheritance information, and plugin definitions for one store and website.</p></td>
+		<td><a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-compiler.html">magento setup:di:compile</a></td>
+		<td><p>Compiles all non-existent proxies and factories; and pre-compiles class definitions, inheritance information, and plug-in definitions for one store and website.</p></td>
 	</tr>
 	<tr>
 		<td><a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-depen.html">magento info:dependencies:{show-modules|show-modules-circular|show-framework}e</a></td>
