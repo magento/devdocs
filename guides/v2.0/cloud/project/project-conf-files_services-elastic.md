@@ -24,7 +24,7 @@ We support Elasticsearch version 1.7.
 
 ![This feature is supported in Magento 2.1 only]({{ site.baseurl }}common/images/2.1-only_small.png). Elasticsearch is supported in Magento 2.1.
 
-[More information about Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/es-overview.html).
+[More information about Elasticsearch]({{ site.gdeurl21 }}config-guide/elasticsearch/es-overview.html).
 
 ## Relationship
 The format exposed in the [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{page.baseurl}}cloud/env/environment-vars_cloud.html) follows:
