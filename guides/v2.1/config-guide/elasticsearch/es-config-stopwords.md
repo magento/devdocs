@@ -17,13 +17,14 @@ github_link21: config-guide/elasticsearch/es-config-stopwords.md
 
 *	[What are stopwords?](#stopword-overview)
 *	[Configure stopwords](#config-stopwords)
+*	[Change the stopword directory](#config-stopword-dir)
 
 ## What are stopwords? {#stopword-overview}
 In general, *stopwords* are a language's most common words that search engines filter out after processing text. Originally, when disk space and memory were extremely limited, every kilobyte saved meant a significant improvement in performance. Therefore, search engines achieved performance gains by ignoring certain words and keeping the index small.
 
 Although we have more storage today, performance is still important. Elasticsearch, like other search engines, still use stopwords to improve performance.
 
-You must manage your Elasticsearch stopwords using `.csv` files located in the `<your Magento install dir>/vendor/magento/module-elasticsearch/etc/stopwords` directory. More information can be found later in this topic.
+You must manage your Elasticsearch stopwords using `.csv` files located in the `<your Magento install dir>/vendor/magento/module-elasticsearch/etc/stopwords` directory or the `<your Magento install dir>/app/code/Magento/Elasticsearch/etc/stopwords/` directory, depending on how you installed the Magento software.
 
 For more information about how Elasticsearch uses stopwords, see the following resources:
 
@@ -89,3 +90,32 @@ To add stopwords for a locale:
 
 			php <your Magento install dir>/bin/magento magento cache:clean config
 9.	Check the results by searching for terms on your storefront.
+
+## Change the stopword directory {#config-stopword-dir}
+This section discusses how to optionally change the default stopword directory from one of the following:
+
+*	`<your Magento install dir>/vendor/magento/module-elasticsearch/etc/stopwords` 
+*	`<your Magento install dir>/app/code/Magento/Elasticsearch/etc/stopwords/`
+
+The location depends on how you installed the Magento software. If you cloned the Magento 2 GitHub repository, the path is under `app/code`. If you installed a compressed archive or a metapackage, the path is under `vendor`.
+
+To change the directory:
+
+1.	As the Magento file system owner, open the Elasticsearch `di.xml` in a text editor.
+
+	If you cloned the repository, it's located at `app/code/Magento/Elasticsearch/etc/di.xml`
+
+	If you got an archive or the metapackage, it's located at `vendor/magento/module-elasticsearch/etc/di.xml`
+
+2.	Change the value of `fileDir` to the desired directory:
+
+{% highlight xml %}
+
+<type name="Magento\Elasticsearch\SearchAdapter\Query\Preprocessor\Stopwords">
+    <arguments>
+        <argument name="fileDir" xsi:type="string">app/code/Magento/Elasticsearch/etc/stopwords</argument>
+    </arguments>
+</type>
+{% endhighlight %}
+
+Save your changes to `di.xml` and exit the text editor.
