@@ -450,7 +450,7 @@ target="_blank">(GITHUB-4099)</a>
 
 <!--- 50898 -->* Magento now displays an appropriate  message when you add less than the required minimum items in your cart.
 
-<!--- 51378 -->* Message serialization now complies with AMPQ specifications.
+<!--- 51378 -->* Message serialization now complies with AMQP specifications.
 
 <!--- 48175 -->* We've improved the error message that users typically received during upgrade. The message now clearly states when a user must login first to `magento.com` before continuing the upgrade process. <a href="https://github.com/magento/magento2/issues/3059" target="_blank">(GITHUB-3059)</a>
 
