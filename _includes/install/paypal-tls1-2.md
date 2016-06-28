@@ -42,13 +42,12 @@ This issue is typically limited to CentOS 6 or earlier because [recommended pack
 
 You have the following options:
 
-*	(Recommended). Upgrade your Magento server to CentOS 7. 
+*	(Recommended). Upgrade your Magento server to CentOS 6.8 or later. 
 
-	Its recommended repositories support current versions of TLS with `libcurl`. Using CentOS 7 is the most secure way to continue operating your store and accepting PayPal.
+	Its recommended repositories support current versions of TLS with `libcurl`. Using CentOS 6.8 or later is the most secure way to continue operating your store and accepting PayPal.
 
-*	(Recommended; verify first.) According to [RedHat's bug 1289205](https://bugzilla.redhat.com/show_bug.cgi?id=1289205){:target="_blank"}, CentOS 6.8 (not released yet) will have a `libcurl` version that defaults to TLS 1.2. 
+	CentOS 6.8 has a `libcurl` version that defaults to TLS 1.2. 
 
-	Because Magento can't guarantee the accuracy of this information, we encourage you to use caution and to *thoroughly test* your system with CentOS 6.8 before deploying it in a live environment.
 *	(Less secure, *not recommended*). Upgrade to `libcurl` 7.34 or later on CentOS 6 using a non-recommended third-party repository.
 
 	One possible solution is to use the information on [serverfault](http://serverfault.com/questions/321321/upgrade-curl-to-latest-on-centos){:target="_blank"}.

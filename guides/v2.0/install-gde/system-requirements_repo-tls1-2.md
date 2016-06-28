@@ -46,7 +46,7 @@ To determine the version of `libcurl` you're running, enter the following comman
 
 If you're already running version 7.34 or later, no action is necessary.
 
-If the version is earlier than 7.34, upgrade your server to CentOS 6.8 or later.
+If the version is earlier than 7.34, upgrade your server to CentOS 6.8 or later. CentOS 6.8 has a `libcurl` version that defaults to TLS 1.2. CentOS 7 has a newer version of `libcurl` that also defaults to TLS 1.2.
 
 #### Mac OS {#solution-macos}
 Recent updates to the [OS X liip package](http://php-osx.liip.ch){:target="_blank"} should resolve the issue.
