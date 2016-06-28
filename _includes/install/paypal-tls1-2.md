@@ -38,7 +38,15 @@ To determine the version of `libcurl` you're running, enter the following comman
 If the version is earlier than 7.34, continue with the next section. If you're already running version 7.34 or later, no action is necessary.
 
 ### Solution
-This issue is typically limited to CentOS 6 or earlier because [recommended package repositories](https://wiki.centos.org/AdditionalResources/Repositories){:target="_blank"} don't provide `libcurl` version 7.34.
+The source of the issue is that the [`libcurl`](https://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html){:target="_blank"} library packaged with CentOS 6.6 and earlier use TLS 1.1 or earlier by default. 
+
+To determine the version of CentOS your server runs, enter the following command:
+
+	cat /etc/*release*
+
+If you're already running CentOS 6.8 or later, no action is necessary. According to the [CentOS 6.8 changelog](https://wiki.centos.org/Manuals/ReleaseNotes/CentOS6.8){:target="_blank"}, "various applications now support TLS 1.2, i.e. OpenLDAP, yum, stunnel, vsftpd, git, postfix and others. Also TLS 1.2 has been enabled by default in various packages".
+
+(CentOS 7 has a newer version of `libcurl` that also defaults to TLS 1.2.)
 
 You have the following options:
 
