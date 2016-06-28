@@ -24,7 +24,8 @@ pelago/emogrifier |0.1.1| MIT|[Source](https://github.com/jjriv/emogrifier)|[Lic
 tubalmartin/cssmin |2.4.8-p4| BSD-3-Clause|[Source](https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port)|
 braintree/braintree_php |3.7.0| MIT|[Source](https://github.com/braintree/braintree_php)|[License](https://github.com/braintree/braintree_php/blob/master/LICENSE)
 symfony/console|2.3|MIT|[Source](https://github.com/symfony/console)|[License](https://github.com/symfony/console/blob/master/LICENSE)
-symfony/config |2.1| MIT|[Source](https://github.com/symfony/config)|[License](https://github.com/symfony/config/blob/master/LICENSE)symfony/dependency-injection || MIT|[Source](https://github.com/symfony/dependency-injection)|[License](https://github.com/symfony/dependency-injection/blob/master/LICENSE)
+symfony/config || MIT|[Source](https://github.com/symfony/config)|[License](https://github.com/symfony/config/blob/master/LICENSE)
+symfony/dependency-injection || MIT|[Source](https://github.com/symfony/dependency-injection)|[License](https://github.com/symfony/dependency-injection/blob/master/LICENSE)
 symfony/event-dispatcher |2.1| MIT|[Source](https://github.com/symfony/event-dispatcher)|[License](https://github.com/symfony/event-dispatcher/blob/master/LICENSE)
 symfony/filesystem || MIT|[Source](https://github.com/symfony/filesystem)|[License](https://github.com/symfony/filesystem/blob/master/LICENSE)
 symfony/finder || MIT|[Source](https://github.com/symfony/finder)|[License](https://github.com/symfony/finder/blob/master/LICENSE)
