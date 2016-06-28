@@ -5,6 +5,7 @@ subgroup: 02_ReleaseNotes
 title: Magento CE 2.1.0 Release Notes
 menu_title: Magento CE 2.1.0  Release Notes
 menu_order:
+version: 2.1
 github_link: release-notes/ReleaseNotes2.1.0CE.md
 ---
 
@@ -1285,7 +1286,7 @@ For more information, <a href="{{page.baseurl}}install-gde/system-requirements.h
 
 ### Installation and upgrade instructions
 
-You can install Magento Community Edition 2.1.0 (General Availability) release either Github or by using Composer. 
+You can install Magento Community Edition 2.1.0 (General Availability) release either Github or by using Composer.
 
 {% include install/releasenotes/ce_install_21.md %}
 
