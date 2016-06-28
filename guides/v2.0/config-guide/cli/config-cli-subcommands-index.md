@@ -113,7 +113,7 @@ This command enables you to set the following indexer options:
 *	Update on save (`realtime`): Indexed data is updated as soon as a change is made in the Admin. (For example, the category products index is reindex after products are added to a category in the Admin.) This is the default.
 *	Update by schedule (`schedule`): Data is indexed according to the schedule set by your Magento cron job.
 
-<a href="{{page.baseurl}}architecture/index-cache/indexing.html">More information about indexing</a>.
+[More information about indexing]({{ page.baseurl }}extension-dev-guide/indexing.html)
 
 <h3 id="config-cli-subcommands-index-conf-show">Display the current configuration</h3>
 To view the current indexer configuration, enter
