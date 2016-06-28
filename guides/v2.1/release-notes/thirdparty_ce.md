@@ -13,10 +13,10 @@ This page contains links to license agreements of the third party components use
 Name|Version|License Name|Available From|Link to License
 ---|---|---|---|---
 Zend Framework|2.4.6|BSD-3-Clause|[Source](http://framework.zend.com/)|[License](http://framework.zend.com/license/new-bsd)
-colinmollenhour/credis |1.7| MIT|[Source](https://github.com/colinmollenhour/credis)|[License](https://github.com/colinmollenhour/credis/blob/master/LICENSE)
-colinmollenhour/php-redis-session-abstract |1.1| BSD-3-Clause|[Source](https://github.com/colinmollenhour/php-redis-session-abstract)|[License](https://github.com/colinmollenhour/php-redis-session-abstract#license)
-colinmollenhour/cache-backend-redis|1.9|BSD-3-Clause|[Source](https://github.com/colinmollenhour/Cm_Cache_Backend_Redis)|[License](https://github.com/colinmollenhour/Cm_Cache_Backend_Redis)
-colinmollenhour/cache-backend-file |1.4|BSD-3-Clause|[Source](https://github.com/colinmollenhour/Cm_Cache_Backend_File)|[License](https://github.com/colinmollenhour/Cm_Cache_Backend_File)
+colinmollenhour/credis || MIT|[Source](https://github.com/colinmollenhour/credis)|[License](https://github.com/colinmollenhour/credis/blob/master/LICENSE)
+colinmollenhour/php-redis-session-abstract || BSD-3-Clause|[Source](https://github.com/colinmollenhour/php-redis-session-abstract)|[License](https://github.com/colinmollenhour/php-redis-session-abstract#license)
+colinmollenhour/cache-backend-file |1.4| BSD-3-Clause|[Source](https://github.com/colinmollenhour/Cm_Cache_Backend_Redis)|[License](https://github.com/colinmollenhour/Cm_Cache_Backend_Redis/blob/master/Cm/Cache/Backend/Redis.php)
+colinmollenhour/cache-backend-redis |1.9| BSD-3-Clause|[Source](https://github.com/colinmollenhour/Cm_Cache_Backend_File)|[License](https://github.com/colinmollenhour/Cm_Cache_Backend_File/blob/master/File.php)
 composer/composer |1.0.0-beta1| MIT|[Source](https://github.com/composer/composer)|[License](https://github.com/composer/composer/blob/master/LICENSE)
 monolog/monolog |1.16.0| MIT|[Source](https://github.com/Seldaek/monolog)|[License](https://github.com/Seldaek/monolog/blob/master/LICENSE)
 oyejorge/less.php |1.7.0| Apache-2.0|[Source](https://github.com/oyejorge/less.php)|[License](https://github.com/oyejorge/less.php/blob/master/LICENSE)
