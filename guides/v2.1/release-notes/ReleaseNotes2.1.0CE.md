@@ -11,7 +11,13 @@ github_link21: release-notes/ReleaseNotes2.1.0CE.md
 * Table of Content
 {:toc}
 
-## Magento Community Edition 2.1.0
+## Magento Community Edition 2.1.0 -- Notes updated June 30, 2016
+
+<div class="bs-callout bs-callout-warning">
+    <p>Important: This version of the Magento Community Edition 2.1.0 Release Notes varies slightly from the version of the Release Notes that we published with GA. We have removed one Known Issue and one Fixed Issue. The code base has not changed.</p>
+</div>  
+
+
 We are pleased to present Magento Community Edition 2.1.0 General Availability. This release includes numerous functional fixes and enhancements.
 
 
@@ -680,8 +686,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 <!--- 48333-->* You can now create URLs that are shorter than three characters.  <a href="https://github.com/magento/magento2/issues/2910" target="_blank">(GITHUB-2910)</a>
 
 
-<!--- 50026-->* Magento correctly type casts SalesInvoiceRepository attributes.
-<a href="https://github.com/magento/magento2/issues/3605" target="_blank">(GITHUB-3605)</a>
+
 
 <!--- 52919-->*  You can now resend order emails from the Admin interface when using Async mail. <a href="https://github.com/magento/magento2/issues/4507" target="_blank">(GITHUB-4507)</a>
 
@@ -1263,12 +1268,6 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 <!--- 48089-->* Undeclared dynamic property is no longer leaked in public space. <a href="https://github.com/magento/magento2/issues/2103" target="_blank">(GITHUB-2103)</a>
 
 
-
-
-### Known issue
-Magento 2.1.0 GA includes the following known issue:
-
-<!--- 54591-->*  Magento does not current apply the Cart Price rules to total amount/item condition. <a href="https://github.com/magento/magento2/issues/5025" target="_blank">(GITHUB-5025)</a>
 
 ### System requirements
 Our technology stack is built on PHP and MySQL. Magento 2.1.0 supports:

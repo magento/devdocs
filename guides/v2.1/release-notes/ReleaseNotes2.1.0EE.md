@@ -11,8 +11,14 @@ github_link21: release-notes/ReleaseNotes2.1.0EE.md
 *	TOC
 {:toc}
 
-##Magento Enterprise Edition 2.1.0
+##Magento Enterprise Edition 2.1.0 -- Notes updated June 30, 2016
+<div class="bs-callout bs-callout-warning">
+    <p>Important: This version of the Magento Enterprise Edition 2.1.0 Release Notes varies slightly from the version of the Release Notes that we published with GA. We have removed one Known Issue and one Fixed Issue. The code base has not changed.</p>
+</div>
+   
+
 We are pleased to present Magento Enterprise Edition 2.1.0 General Availability. This release includes numerous functional fixes and enhancements.
+
 
 Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}release-notes/backward-incompatible-changes-2.1.html).
 
@@ -985,9 +991,6 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 <!--- 48333-->* You can now create URLs that are shorter than three characters.  <a href="https://github.com/magento/magento2/issues/2910" target="_blank">(GITHUB-2910)</a>
 
 
-<!--- 50026-->* Magento correctly type casts SalesInvoiceRepository attributes.
-<a href="https://github.com/magento/magento2/issues/3605" target="_blank">(GITHUB-3605)</a>
-
 <!--- 52919-->*  You can now resend order emails from the Admin interface when using Async mail. <a href="https://github.com/magento/magento2/issues/4507" target="_blank">(GITHUB-4507)</a>
 
 <!--- 53410-->*  `system.log` behavior has changed to reduce the number of distracting logged broken references. <a href="https://github.com/magento/magento2/issues/3507" target="_blank">(GITHUB-3507)</a>
@@ -1603,8 +1606,6 @@ To work around this issue, run the following commands in the order shown:
 
 
 <!--- 54512-->* You cannot currently remove a product or category from a campaign. Selecting Remove this Update > Move to Another Campaign results in the following error: "Something went wrong while removing the Magento\Catalog\Api\Data\ProductInterface."
-
-<!--- 54591-->*  Magento does not current apply the Cart Price rules to total amount/item condition. <a href="https://github.com/magento/magento2/issues/5025" target="_blank">(GITHUB-5025)</a>
 
 
 
