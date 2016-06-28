@@ -14,4 +14,4 @@ redirect_from: /guides/v2.0/install-gde/install/cli/install-cli-sample-data-cli.
 {% include install/sampledata/sample-data-composer.md %}
 
 ### Install the Magento software
-After sample data installation is complete, install the Magento software using the [command line]({{ page.baseurl }}nstall-gde/install/cli/install-cli.html).
+After sample data installation is complete, install the Magento software using the [command line]({{ page.baseurl }}install-gde/install/cli/install-cli.html).
