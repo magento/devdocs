@@ -13,10 +13,10 @@ This page contains links to license agreements of the third party components use
 Name|Version|License Name|Available From|Link to License
 ---|---|---|---|---
 Zend Framework|2.4.6|BSD-3-Clause|[Source](http://framework.zend.com/)|[License](http://framework.zend.com/license/new-bsd)
-colinmollenhour/credis |1.7| MIT|[Source](https://github.com/colinmollenhour/credis)|[License](https://github.com/colinmollenhour/credis/blob/master/LICENSE)
-colinmollenhour/php-redis-session-abstract |1.1| BSD-3-Clause|[Source](https://github.com/colinmollenhour/php-redis-session-abstract)|[License](https://github.com/colinmollenhour/php-redis-session-abstract#license)
-colinmollenhour/cache-backend-redis|1.9|BSD-3-Clause|[Source](https://github.com/colinmollenhour/Cm_Cache_Backend_Redis)|[License](https://github.com/colinmollenhour/Cm_Cache_Backend_Redis)
-colinmollenhour/cache-backend-file |1.4|BSD-3-Clause|[Source](https://github.com/colinmollenhour/Cm_Cache_Backend_File)|[License](https://github.com/colinmollenhour/Cm_Cache_Backend_File)
+colinmollenhour/credis || MIT|[Source](https://github.com/colinmollenhour/credis)|[License](https://github.com/colinmollenhour/credis/blob/master/LICENSE)
+colinmollenhour/php-redis-session-abstract || BSD-3-Clause|[Source](https://github.com/colinmollenhour/php-redis-session-abstract)|[License](https://github.com/colinmollenhour/php-redis-session-abstract#license)
+colinmollenhour/cache-backend-file |1.4| BSD-3-Clause|[Source](https://github.com/colinmollenhour/Cm_Cache_Backend_Redis)|[License](https://github.com/colinmollenhour/Cm_Cache_Backend_Redis/blob/master/Cm/Cache/Backend/Redis.php)
+colinmollenhour/cache-backend-redis |1.9| BSD-3-Clause|[Source](https://github.com/colinmollenhour/Cm_Cache_Backend_File)|[License](https://github.com/colinmollenhour/Cm_Cache_Backend_File/blob/master/File.php)
 composer/composer |1.0.0-beta1| MIT|[Source](https://github.com/composer/composer)|[License](https://github.com/composer/composer/blob/master/LICENSE)
 monolog/monolog |1.16.0| MIT|[Source](https://github.com/Seldaek/monolog)|[License](https://github.com/Seldaek/monolog/blob/master/LICENSE)
 oyejorge/less.php |1.7.0| Apache-2.0|[Source](https://github.com/oyejorge/less.php)|[License](https://github.com/oyejorge/less.php/blob/master/LICENSE)
@@ -24,8 +24,7 @@ pelago/emogrifier |0.1.1| MIT|[Source](https://github.com/jjriv/emogrifier)|[Lic
 tubalmartin/cssmin |2.4.8-p4| BSD-3-Clause|[Source](https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port)|
 braintree/braintree_php |3.7.0| MIT|[Source](https://github.com/braintree/braintree_php)|[License](https://github.com/braintree/braintree_php/blob/master/LICENSE)
 symfony/console|2.3|MIT|[Source](https://github.com/symfony/console)|[License](https://github.com/symfony/console/blob/master/LICENSE)
-symfony/config || MIT|[Source](https://github.com/symfony/config)|[License](https://github.com/symfony/config/blob/master/LICENSE)
-symfony/dependency-injection || MIT|[Source](https://github.com/symfony/dependency-injection)|[License](https://github.com/symfony/dependency-injection/blob/master/LICENSE)
+symfony/config |2.1| MIT|[Source](https://github.com/symfony/config)|[License](https://github.com/symfony/config/blob/master/LICENSE)symfony/dependency-injection || MIT|[Source](https://github.com/symfony/dependency-injection)|[License](https://github.com/symfony/dependency-injection/blob/master/LICENSE)
 symfony/event-dispatcher |2.1| MIT|[Source](https://github.com/symfony/event-dispatcher)|[License](https://github.com/symfony/event-dispatcher/blob/master/LICENSE)
 symfony/filesystem || MIT|[Source](https://github.com/symfony/filesystem)|[License](https://github.com/symfony/filesystem/blob/master/LICENSE)
 symfony/finder || MIT|[Source](https://github.com/symfony/finder)|[License](https://github.com/symfony/finder/blob/master/LICENSE)
