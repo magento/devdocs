@@ -19,9 +19,6 @@ We are pleased to present Magento Enterprise Edition 2.1.0 General Availability.
 
 Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}release-notes/backward-incompatible-changes-2.1.html).
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>This version of the Magento Enterprise Edition 2.1.0 Release Notes varies slightly from the version of the Release Notes that we published with GA. We have removed one Known Issue and one Fixed Issue. The code base has not changed.</p>
-</div>
 
 
 ###Highlights
@@ -46,7 +43,9 @@ This release includes enhancements to improve the security of your Magento appli
 
 ###Fixed issues
 
-
+<div class="bs-callout bs-callout-info" id="info">
+  <p>This version of the Magento Enterprise Edition 2.1.0 Release Notes varies slightly from the version of the Release Notes that we published with GA. We have removed one Known Issue and one Fixed Issue. The code base has not changed.</p>
+</div>
 
 #### Installation and upgrade
 {:.no_toc}
