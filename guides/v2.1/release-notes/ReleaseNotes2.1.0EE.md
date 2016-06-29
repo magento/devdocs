@@ -19,7 +19,9 @@ We are pleased to present Magento Enterprise Edition 2.1.0 General Availability.
 
 Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}release-notes/backward-incompatible-changes-2.1.html).
 
-
+<div class="bs-callout bs-callout-info" id="info">
+  <p>This version of the Magento Enterprise Edition 2.1.0 Release Notes varies slightly from the version of the Release Notes that we published with GA. We've marked these two changes in italics below.  The code base has not changed.</p>
+</div>
 
 ###Highlights
 Magento Enterprise Edition 2.1.0 includes several new and exciting features:
@@ -40,12 +42,25 @@ This release includes enhancements to improve the security of your Magento appli
 
 [Contact us](https://magento.com/company/contact-us){:target="_blank"} for more information.
 
+###Known issues
+Magento 2.1.0 GA includes the following known issues:
+
+<!--- 54447-->* A developer who attempts to upgrade the Magento EE software using the commands `git pull` followed by `composer update` sees the error `Fatal error: Cannot use Composer\Installer as Installer because the name is already in use`.
+
+To work around this issue, run the following commands in the order shown:
+
+    composer update magento/magento-composer-installer:0.1.11
+    composer update
+
+
+<!--- 54512-->* You cannot currently remove a product or category from a campaign. Selecting Remove this Update > Move to Another Campaign results in the following error: "Something went wrong while removing the Magento\Catalog\Api\Data\ProductInterface."
+
+* <i>Known issue removed.</i>
+
 
 ###Fixed issues
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>This version of the Magento Enterprise Edition 2.1.0 Release Notes varies slightly from the version of the Release Notes that we published with GA. We have removed one Known Issue and one Fixed Issue. The code base has not changed.</p>
-</div>
+
 
 #### Installation and upgrade
 {:.no_toc}
@@ -662,6 +677,9 @@ target="_blank">(GITHUB-4099)</a>
 
 #### Miscellaneous
 {:.no_toc}
+
+<i>Fixed issue removed.</i>
+
 
 <!--- 53919 -->*  We changed the HTML header used for SSL offloading from SSL-OFFLOADED{:target="_blank"} to X-Forwarded-Proto: https{:target="_blank"} to be compatible with Varnish and for compatibility with load balancers.
 
@@ -1595,18 +1613,6 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 <!--- 48089-->* Undeclared dynamic property is no longer leaked in public space. <a href="https://github.com/magento/magento2/issues/2103" target="_blank">(GITHUB-2103)</a>
 
 
-###Known issues
-Magento 2.1.0 GA includes the following known issues:
-
-<!--- 54447-->* A developer who attempts to upgrade the Magento EE software using the commands `git pull` followed by `composer update` sees the error `Fatal error: Cannot use Composer\Installer as Installer because the name is already in use`.
-
-To work around this issue, run the following commands in the order shown:
-
-    composer update magento/magento-composer-installer:0.1.11
-    composer update
-
-
-<!--- 54512-->* You cannot currently remove a product or category from a campaign. Selecting Remove this Update > Move to Another Campaign results in the following error: "Something went wrong while removing the Magento\Catalog\Api\Data\ProductInterface."
 
 
 
