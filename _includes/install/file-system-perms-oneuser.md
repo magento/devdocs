@@ -12,8 +12,8 @@ To set permissions before you install the Magento software:
 2.	If you have command-line access, enter the following commands in the order shown:
 
 		cd <your Magento install dir>
-		find var vendor pub/static pub/media app/etc -type f -exec chmod u+w {} \;
-		find var vendor pub/static pub/media app/etc -type d -exec chmod u+w {} \;
+		find var vendor pub/static pub/media app/etc var -type f -exec chmod u+w {} \;
+		find var vendor pub/static pub/media app/etc var -type d -exec chmod u+w {} \;
 		chmod u+x bin/magento
 
 	To optionally enter all commands on one line, enter the following assuming Magento is installed in `/var/www/html/magento2`:
