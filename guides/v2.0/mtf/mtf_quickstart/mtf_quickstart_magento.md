@@ -44,7 +44,7 @@ Disable the Secret Key in URL setting to open pages using direct URLs.
 1. Follow **Stores &gt; Configuration &gt; Advanced &gt; Admin &gt; Security**.
 2. Set **Add Secret Key to URLs** to **No**.
 
-![Change security settings]({{site.baseurl}}common/images/mtf_qstart_mag_secur.png){:width="650px"}
+![Change security settings]({{site.baseurl}}common/images/mtf_qstart_mag_secur_20.png){:width="650px"}
 
 <h2 id="mtf_install_pre">Next Steps</h2>
 
