@@ -13,7 +13,7 @@ github_link: release-notes/bk-release-notes.md
 
 <a href="{{page.baseurl}}release-notes/ReleaseNotes2.1.0CE.html" target="_blank">Version 2.1</a>
 
-### Magento Enterprise Edition (EE) Release Notes
+### Magento Enterprise Edition (EE) 2.1 Release Notes
 
 <a href="{{page.baseurl}}release-notes/ReleaseNotes2.1.0EE.html" target="_blank">Version 2.1</a>
 
