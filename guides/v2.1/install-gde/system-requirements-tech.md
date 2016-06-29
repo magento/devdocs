@@ -2,13 +2,12 @@
 layout: default
 group: install_pre
 subgroup: Getting Started
-title: System requirements
-menu_title: Magento system requirements
-menu_node: parent
-menu_order: 1
-version: 2.0
-github_link: install-gde/system-requirements.md
-redirect_from: /guides/v1.0/install-gde/system-requirements.html
+title: Magento tech stack requirements
+menu_title: Magento tech stack requirements
+menu_node: 
+menu_order: 2
+version: 2.1
+github_link: install-gde/system-requirements-tech.md
 ---
 
 ### Operating systems (Linux x86-64)
@@ -31,10 +30,11 @@ MySQL 5.6 (Oracle or Percona)
 ### PHP 
 
 *	5.6.x
-*	5.5.x, where x is 22 or greater
-*	7.0.2&ndash;7.0.6 except for 7.0.5 (supported by Magento version 2.0.1 and later only)
+*	7.0.6 up to 7.1
 
-	There is a [known PHP issue](https://bugs.php.net/bug.php?id=71914){:target="_blank"} that affects our [code compiler]({{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html) when using PHP 7.0.5. We recommend you *not* use PHP 7.0.5; instead, use PHP 7.0.2&ndash;7.0.4 or 7.0.6.
+<div class="bs-callout bs-callout-info" id="info">
+	<p>Magento 2.1.x no longer supports PHP 5.5.</p>
+</div>
 
 PHP documentation: <a href="{{page.baseurl}}install-gde/prereq/php-centos.html" target="_blank">CentOS</a>, <a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html" target="_blank">Ubuntu</a>
 
@@ -79,7 +79,7 @@ For more information, see our recommendations for <a href="{{page.baseurl}}insta
 	*	[More information about PayPal]({{page.baseurl}}install-gde/system-requirements_tls1-2.html)
 
 	*	[More information about `repo.magento.com`]({{ page.baseurl }}release-notes/tech_bull_tls-repo.html)
-
+	
 ### Mail server
 Mail Transfer Agent (MTA) or an SMTP server
 
