@@ -4,6 +4,7 @@ group: extension-dev-guide
 subgroup: 7_Staging
 title: Staging (Enterprise Edition only)
 menu_title: Staging (Enterprise Edition only)
+version: 2.1
 menu_node: parent
 github_link: extension-dev-guide/staging.md
 ---

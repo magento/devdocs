@@ -5,6 +5,7 @@ subgroup: 7_Staging
 title: Staging in Magento 2 EE
 menu_title: GoogleOptimizerStaging
 menu_order: 2
+version: 2.1
 level3_menu_node: level3child
 level3_subgroup: staging_modules
 github_link: extension-dev-guide/staging/GoogleOptimizerStaging.md
