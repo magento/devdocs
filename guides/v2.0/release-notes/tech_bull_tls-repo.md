@@ -10,7 +10,7 @@ version: 2.0
 github_link: release-notes/tech_bull_tls-repo.md
 ---
 
-## Transport Layer Security (TLS) requirement for repo.magento.com
+## Transport Layer Security (TLS) 1.1+ requirement for repo.magento.com
 {% include install/tls-repo.md %}
 
 ### Solution
