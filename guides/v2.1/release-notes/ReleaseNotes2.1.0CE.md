@@ -13,15 +13,15 @@ github_link21: release-notes/ReleaseNotes2.1.0CE.md
 
 ## Magento Community Edition 2.1.0 -- Notes updated June 30, 2016
 
-<div class="bs-callout bs-callout-warning">
-    <p>Important: This version of the Magento Community Edition 2.1.0 Release Notes varies slightly from the version of the Release Notes that we published with GA. We have removed one Known Issue and one Fixed Issue. The code base has not changed.</p>
-</div>  
-
 
 We are pleased to present Magento Community Edition 2.1.0 General Availability. This release includes numerous functional fixes and enhancements.
 
 
 Backward-incompatible changes are documented in <a href="{{page.baseurl}}release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>This version of the Magento Community Edition 2.1.0 Release Notes varies slightly from the version of the Release Notes that we published with GA. We have removed one Known Issue and one Fixed Issue. The code base has not changed.</p>
+</div>
 
 ### Highlights
 Magento Community Edition 2.1.0 includes several new and exciting features:
