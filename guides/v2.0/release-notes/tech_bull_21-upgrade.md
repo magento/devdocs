@@ -5,7 +5,7 @@ subgroup: Technical Bulletin
 title: Technical Bulletin
 menu_title: Upgrade to Magento version 2.1 (June 22, 2016)
 menu_node: 
-menu_order: 2
+menu_order: 3
 version: 2.0
 github_link: release-notes/tech_bull_21-upgrade.md
 ---

@@ -21,6 +21,7 @@ github_link: release-notes/bk-release-notes.md
 
 *	Overview of backward-incompatible changes between the 2.0 and 2.1 releases: [Magento 2.1 Backward Incompatible Changes]({{ page.baseurl }}release-notes/backward-incompatible-changes-2.1.html)
 
+
 ### Third-party license agreements
 
 *	[Magento CE third-party licenses]({{page.baseurl}}release-notes/thirdparty_ce.html)
