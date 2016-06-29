@@ -19,6 +19,3 @@ The following error displays if you attempt to run `composer create-project` to 
 Actions like saving your authentication credentials or synchronizing with Magento Marketplace fail with the following error:
 
 ![SSL connect error]({{ site.baseurl }}common/images/install_ssl-connect-error.png)
-
-### Solution
-See the [Transport Layer Security (TLS) requirement for repo.magento.com]({{ page.baseurl }}release-notes/tech_bull_tls-repo.html).
