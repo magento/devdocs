@@ -4,7 +4,7 @@ group: install_pre
 subgroup: Prerequisites
 title: RabbitMQ
 menu_title: RabbitMQ (Enterprise Edition)
-menu_order: 26
+menu_order: 50
 version: 2.0
 github_link: install-gde/prereq/install-rabbitmq.md
 ---
