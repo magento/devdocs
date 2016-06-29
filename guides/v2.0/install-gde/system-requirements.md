@@ -72,11 +72,13 @@ For more information, see our recommendations for <a href="{{page.baseurl}}insta
 ### SSL
 *	A valid security certificate is required for HTTPS.
 *	Self-signed SSL certificates are not supported.
-*	TLS 1.2: PayPal and `repo.magento.com` both require TLS 1.2.
+*	Transport Layer Security (TLS) requirement 
 
-	[More information about PayPal]({{page.baseurl}}install-gde/system-requirements_tls1-2.html)
+	PayPal and `repo.magento.com` both require TLS 1.1 or kater
 
-	[More information about `repo.magento.com`]({{ page.baseurl }}install-gde/system-requirements_repo-tls1-2.html)
+	*	[More information about PayPal]({{page.baseurl}}install-gde/system-requirements_tls1-2.html)
+
+	*	[More information about `repo.magento.com`]({{ page.baseurl }}release-notes/tech_bull_tls-repo.html)
 
 ### Mail server
 Mail Transfer Agent (MTA) or an SMTP server
