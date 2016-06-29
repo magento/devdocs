@@ -21,6 +21,9 @@ versions:
       name: 2.1
       url:
 
+# GitHub variables
+github: "https://github.com/magento/devdocs/tree/develop/guides/"
+
 # 2.0.0 variables
 gdeurl: "/guides/v2.0/"
 githuburl: "https://github.com/magento/devdocs/tree/2.0/guides/v2.0/"

@@ -7,7 +7,7 @@ menu_title: Configure Elasticsearch stopwords
 menu_order: 10
 menu_node: 
 version: 2.1
-github_link21: config-guide/elasticsearch/es-config-stopwords.md
+github_link: config-guide/elasticsearch/es-config-stopwords.md
 ---
 
 <img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only">
