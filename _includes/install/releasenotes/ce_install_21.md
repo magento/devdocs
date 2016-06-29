@@ -1,5 +1,5 @@
 <div markdown="1">
-
+ 
 ## Installation and upgrade instructions
 You can install Magento Enterprise Edition 2.1 (including a Release Candidate) from either Github or by using Composer. 
 
