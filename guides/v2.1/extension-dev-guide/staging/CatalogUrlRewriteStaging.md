@@ -17,7 +17,7 @@ github_link: extension-dev-guide/staging/CatalogUrlRewriteStaging.md
 * TOC
 {:toc}
 
-## Magento_CatalogUrlRewriteStaging</h2>
+## Magento_CatalogUrlRewriteStaging
 
 ## Overview
 
