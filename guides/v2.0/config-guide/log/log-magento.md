@@ -17,7 +17,7 @@ github_link: config-guide/log/log-magento.md
 *	[]()
 *	[]()
 
-## Monolog
+## Monolog {#config-log-monolog}
 Magento 2 complies with the PSR-3 standard. By default, Magento uses [Monolog](https://github.com/Seldaek/monolog){:target="_blank"}.
 
 Monolog is a popular PHP logging solution with a wide range of handlers that enable you to build advanced logging strategies. Following is a summary of how Monolog works.
@@ -36,7 +36,7 @@ Log messages can be processed in many different ways. For example, you can store
 
 Other channels can have a different set of handlers and logic.
 
-## Get started
+## Get started with logging {#config-log-start}
 To start working with a logger, you must to obtain a `\Psr\Logger\LoggerInterface` instance as follows:
 
 {% highlight php startinline=true %}
@@ -60,9 +60,6 @@ class SomeModel
  }
 {% endhighlight %}
 
-Here you can see that "SomeModel" receives a "\Psr\Logger\LoggerInterface" object via constructor injection.
-In a method "doSomething" if some error occurred the information about exception will be written to log by calling a method "critical" ($this->logger->critical($e);).
+The preceding example shows that `SomeModel` receives a `\Psr\Logger\LoggerInterface` object using constructor injection. In a method `doSomething`, if some error occurred, it's logged to a method `critical` (`$this->logger->critical($e);`).
 
-There are eight RFC 5424 levels (debug, info, notice, warning, error, critical, alert, emergency) available depending on the importance of a log message.
-
-This is all you need to know for writing to the application logs, just receive a logger instance and call appropriate method.
+[RFC 5424](https://tools.ietf.org/html/rfc5424){:target="_blank"} defines eight log levels levels (debug, info, notice, warning, error, critical, alert, and emergency).
