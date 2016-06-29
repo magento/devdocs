@@ -1,6 +1,6 @@
 ---
 layout: default
-group: SampleData
+group: install
 subgroup: T_SampleData
 title: Install using Composer
 menu_title: Install using Composer
