@@ -81,7 +81,7 @@
 
 		<ul role="navigation">
 
-		{% assign categories = site.articles | where: "version", page.version | group_by:"group" %}
+		{% assign categories = site.articles | where: "guide_version", page.guide_version | group_by:"group" %}
 
 		{% for node in categories %}
 

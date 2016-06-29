@@ -5,7 +5,8 @@ subgroup: 02_ReleaseNotes
 title: Magento EE 2.1.0 Release Notes
 menu_title: Magento EE 2.1.0 Release Notes
 menu_order:
-github_link21: release-notes/ReleaseNotes2.1.0EE.md
+version: 2.1
+github_link: release-notes/ReleaseNotes2.1.0EE.md
 ---
 
 *	TOC
@@ -1624,7 +1625,7 @@ For more information, <a href="{{ page.baseurl21 }}install-gde/system-requiremen
 
 ### Installation and upgrade instructions
 
-You can install Magento Enterprise Edition 2.1 General Availability (GA) using Composer. 
+You can install Magento Enterprise Edition 2.1 General Availability (GA) using Composer.
 
 
 {% include install/releasenotes/ee_install_21.md %}

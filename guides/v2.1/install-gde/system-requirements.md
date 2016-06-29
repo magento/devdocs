@@ -7,7 +7,7 @@ menu_title: Magento system requirements
 menu_node: parent
 menu_order: 1
 version: 2.1
-github_link21: install-gde/system-requirements.md
+github_link: install-gde/system-requirements.md
 ---
 
 ### Operating systems (Linux x86-64)
@@ -19,15 +19,15 @@ Composer is required for developers who wish to contribute to the Magento 2 code
 
 ### Web servers
 *	<a href="http://httpd.apache.org/download.cgi" target="_blank">Apache 2.2 or 2.4</a>
-	
+
 	In addition, the apache `mod_rewrite` module must be enabled. `mod_rewrite` enables the server to perform URL rewriting. For more information, see <a href="{{page.baseurl}}install-gde/prereq/apache.html">our Apache documentation</a>.
 *	nginx 1.8 (or <a href="http://nginx.org/en/linux_packages.html#mainline" target="_blank">latest mainline version</a>)
 
 ### Database
 
 MySQL 5.6 (Oracle or Percona)
-	
-### PHP 
+
+### PHP
 
 *	5.6.x
 *	7.0.6 up to 7.1
@@ -53,8 +53,8 @@ PHP documentation: <a href="{{page.baseurl}}install-gde/prereq/php-centos.html" 
 *	<a href="http://php.net/manual/en/book.soap.php" target="_blank">soap</a>
 *	<a href="http://php.net/manual/en/book.xml.php" target="_blank">xml</a>
 *	<a href="http://php.net/manual/en/book.xsl.php" target="_blank">xsl</a>
-*	<a href="http://php.net/manual/en/book.zip.php" target="_blank">zip</a> 
-*	PHP 7 only: 
+*	<a href="http://php.net/manual/en/book.zip.php" target="_blank">zip</a>
+*	PHP 7 only:
 
 	*	[json](http://php.net/manual/en/book.json.php){:target="_blank"}
 	*	[iconv](http://php.net/manual/en/book.iconv.php){:target="_blank"}
@@ -67,7 +67,7 @@ If you must install it separately, see the <a href="http://php.net/manual/en/opc
 #### PHP settings
 We recommend particular PHP configuration settings, such as `memory_limit`, that can avoid common problems when using Magento.
 
-For more information, see our recommendations for <a href="{{page.baseurl}}install-gde/prereq/php-centos.html#instgde-prereq-timezone">CentOS</a> and <a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html#instgde-prereq-timezone">Ubuntu</a>. 
+For more information, see our recommendations for <a href="{{page.baseurl}}install-gde/prereq/php-centos.html#instgde-prereq-timezone">CentOS</a> and <a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html#instgde-prereq-timezone">Ubuntu</a>.
 
 ### SSL
 *	A valid security certificate is required for HTTPS.
@@ -85,14 +85,14 @@ Mail Transfer Agent (MTA) or an SMTP server
 *	Magento Enterprise Edition (EE) only <img src="{{ site.baseurl }}common/images/ee-only_small.png">
 
 	*   Apache Solr 4.x
- 
+
     	<a href="{{page.baseurl}}config-guide/solr/solr-overview.html">Solr search</a> can be used as a search provider. Available for Magento Enterprise Edition (EE) only.
 
 	*	RabbitMQ 3.5
 
 		<a href="{{page.baseurl}}config-guide/mq/rabbitmq-overview.html">RabbitMQ</a> can be used to publish messages to queue and to define the consumers that receive the messages asynchronously. Available for Magento EE only.
 
-	*	Three master databases 
+	*	Three master databases
 
 		These <a href="{{page.baseurl}}config-guide/multi-master/multi-master.html">master databases</a> provide scalability advantages for different functional areas of the Magento application: checkout, orders, and product data. Available for Magento EE only.
 
