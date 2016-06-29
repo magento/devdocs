@@ -21,7 +21,7 @@ We suggest the following:
 You can also do any of the following:
 
 ### Install optional sample data
-If you haven't already installed optional sample data, you can <a href="{{page.baseurl}}install-gde/install/sample-data.html">install it now</a>.
+If you haven't already installed optional sample data, you can [install it now]({{ page.baseurl }}install-gde/install/sample-data-after-magento.html).
 
 ### Manage and upgrade components
 *	<a href="{{page.baseurl}}comp-mgr/compman-start.html">Component management (install, uninstall, enable, disable, update)</a>

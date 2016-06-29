@@ -11,7 +11,3 @@ github_link: install-gde/install/sample-data.md
 --- 
 
 {% include install/sampledata/sample-data-intro.md %}
-
-
-
-
