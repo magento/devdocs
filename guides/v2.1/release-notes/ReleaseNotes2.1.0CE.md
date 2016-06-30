@@ -21,7 +21,7 @@ Backward-incompatible changes are documented in <a href="{{page.baseurl}}release
 
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>This version of the Magento Community Edition 2.1.0 Release Notes varies from the version of the Release Notes that we published with the June 23, 2016 GA release. We've identified these two changes in italics below.  The code base has not changed.</p>
+  <p>This version of the Magento Community Edition 2.1.0 Release Notes varies from the version of the Release Notes that we published with the June 23, 2016 GA release. We've identified these  changes in italics below.  The code base has not changed.</p>
 </div>
 
 
