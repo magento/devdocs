@@ -71,14 +71,12 @@ To work around this issue, run the following commands in the order shown:
 
 <!--- 50794 -->* Addressed an issue that caused the following error on the Magento storefront when optional sample data is installed: "We're sorry, an error has occurred while generating this email".
 
-<!--- 52981 -->*  Magento upgrade now succeeds if you use a non-default MySQL listen port.  <a href="https://github.com/magento/magento2/issues/4548" target="_blank"> (GITHUB-4548)</a>, <a href="https://github.com/magento/magento2/issues/2735" target="_blank"> (GITHUB-2735)</a>, <a href="https://github.com/magento/magento2/issues/4275" target="_blank"> (GITHUB-4275)</a>, <a href="https://github.com/magento/magento2/issues/3529" target="_blank"> (GITHUB-3529)</a>
 
 <!--- 53232 -->*  Resolved data loss issues during upgrade to version 2.0.4. <a href="https://github.com/magento/magento2/issues/4054" target="_blank"> (GITHUB-4054)</a>, <a href="https://github.com/magento/magento2/issues/3951" target="_blank"> (GITHUB-3951)</a>, <a href="https://github.com/magento/magento2/issues/3097" target="_blank"> (GITHUB-3097)</a>, <a href="https://github.com/magento/magento2/issues/3249" target="_blank"> (GITHUB-3249)</a>
 
 
 <!--- 51544 -->* Upgrading the Magento system software now correctly updates the product version.
 
-<!--- 52981 -->* Fixed issues when upgrading to Magento 2.0.4. <a href="https://github.com/magento/magento2/issues/3951" target="_blank"> (GITHUB-3951)</a>
 
 <!--- 51693 -->* Improved performance of installations and upgrades by compressing packages on repo.magento.com
 
@@ -230,9 +228,9 @@ To work around this issue, run the following commands in the order shown:
 
 
 
-#### Paypal
+#### PayPal
 {:.no_toc}
-<!--- 49148 -->*  The Paypal button now displays as expected in the minicart.
+<!--- 49148 -->*  The PayPal button now displays as expected in the minicart.
 
 <!--- 50557-->* The PayPal Express review rendering of tax block now works correctly.  <a href="https://github.com/magento/magento2/issues/3774" target="_blank"> (GITHUB-3774)</a>
 
@@ -241,7 +239,7 @@ To work around this issue, run the following commands in the order shown:
 
 <!--- 47544-->* The "Learn More" link for Payments Pro now works correctly.
 
-<!--- 48469-->* The Get Credentials From Paypal and Sandbox credentials buttons are now rendered correctly.
+<!--- 48469-->* The Get Credentials From PayPal and Sandbox credentials buttons are now rendered correctly.
 
 <!--- 42103-->* Magento now clears the minicart as expected after you complete  an order using Paypal.
 
@@ -394,7 +392,6 @@ target="_blank"> (GITHUB-4099)</a>
 
 #### Cloud
 {:.no_toc}
-<!--- 52448 -->* Magento now correctly displays customer addresses.  
 
 <!--- 51072 -->* The storeview now reflects changes to the swatch attribute's property.  
 
@@ -447,7 +444,6 @@ target="_blank"> (GITHUB-4099)</a>
 
 <!--- 46695-->* Magento now saves the price for Bundle option items.
 
-<!--- 51134-->* Magento no longer duplicates options for bundle products when you save the product.
 
 <!--- 51255-->* You can now save duplicate Bundle products.
 
@@ -681,6 +677,8 @@ target="_blank"> (GITHUB-4099)</a>
 
 * <i>Fixed issue <a href="https://github.com/magento/magento2/issues/3605" target="_blank"> (GITHUB-3605)</a>  removed.</i>
 
+ <i>Fixed issue <a href="https://github.com/magento/magento2/issues/59" target="_blank"> (GITHUB-59)</a>  removed.</i>
+
 
 <!--- 53919 -->*  We changed the HTML header used for SSL offloading from SSL-OFFLOADED{:target="_blank"} to X-Forwarded-Proto: https{:target="_blank"} to be compatible with Varnish and for compatibility with load balancers.
 
@@ -795,7 +793,6 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 52284 -->* You can now insert more than two images using the WYSIWYG editor. <a href="https://github.com/magento/magento2/issues/4221" target="_blank"> (GITHUB-4221)</a>
 
-<!--- 52436 -->* Magento now displays categories that contain children categories. <a href="https://github.com/magento/magento2/issues/2121" target="_blank"> (GITHUB-2121)</a>
 
 <!--- 49877 -->* Don't omit the "callable" argument type hint. <a href="https://github.com/magento/magento2/issues/2026" target="_blank"> (GITHUB-2026)</a>
 
@@ -1003,23 +1000,17 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
  <a href="https://github.com/magento/magento2/issues/3406" target="_blank"> (GITHUB-3406)</a>
 
 
-<!--- 49957-->*  RequireJS now uses the correct baseUrl in pre-generated assets when `pub` is web-root.  <a href="https://github.com/magento/magento2/issues/2711" target="_blank"> (GITHUB-2711)</a>
-
-<!--- 48425-->* The allowed countries list for customer address in the Admin interface now uses all of the allowed countries set for the default store.  <a href="https://github.com/magento/magento2/issues/2946" target="_blank"> (GITHUB-2946)</a>
-
-<!--- 48393-->*  You no longer receive the "Undefined index: configurable_attribute" error message when you add a configurable product. <a href="https://github.com/magento/magento2/issues/3053" target="_blank"> (GITHUB-3053)</a>
 
 
-<!--- 48333-->* You can now create URLs that are shorter than three characters.  <a href="https://github.com/magento/magento2/issues/2910" target="_blank"> (GITHUB-2910)</a>
+
+
 
 
 <!--- 52919-->*  You can now resend order emails from the Admin interface when using Async mail. <a href="https://github.com/magento/magento2/issues/4507" target="_blank"> (GITHUB-4507)</a>
 
 <!--- 53410-->*  `system.log` behavior has changed to reduce the number of distracting logged broken references. <a href="https://github.com/magento/magento2/issues/3507" target="_blank"> (GITHUB-3507)</a>
 
-<!--- 53547-->*  Magento now paginates the product selection grid for reviews. <a href="https://github.com/magento/magento2/issues/4434" target="_blank"> (GITHUB-4434)</a>
 
-<!--- 54108-->*   Enabling inline translations no longer breaks order emails. <a href="https://github.com/magento/magento2/issues/4917" target="_blank"> (GITHUB-4917)</a>
 
 
 
@@ -1517,7 +1508,6 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 53316-->* The eWay capture transaction no longer closes after creating partial refund.  
 
-<!--- 52158-->* Fixed issue with data migration tool providing wrong URL addresses for products and categories. <a href="https://github.com/magento/magento2/issues/59" target="_blank">(GITHUB-59)</a>
 
 
 <!--- 52775-->* Magento now saves the values for product attributes of type "Multiple Select" during update.  <a href="https://github.com/magento/magento2/issues/4346" target="_blank"> (GITHUB-4346)</a>, <a href="https://github.com/magento/magento2/issues/4312" target="_blank"> (GITHUB-4312)</a>, <a href="https://github.com/magento/magento2/issues/4545" target="_blank"> (GITHUB-4545)</a>
@@ -1616,6 +1606,28 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 48089-->* Undeclared dynamic property is no longer leaked in public space. <a href="https://github.com/magento/magento2/issues/2103" target="_blank"> (GITHUB-2103)</a>
 
+
+
+
+
+
+
+<!--- 54108-->*  Fixed GitHub issue <a href="https://github.com/magento/magento2/issues/4917" target="_blank"> (GITHUB-4917)</a> removed.
+
+
+<!--- 53547-->*  Fixed GitHub issue <a href="https://github.com/magento/magento2/issues/4434" target="_blank"> (GITHUB-4434)</a> removed. 
+
+<!--- 48333-->* Fixed GitHub issue  <a href="https://github.com/magento/magento2/issues/2910" target="_blank"> (GITHUB-2910)</a> removed. 
+
+<!--- 48393-->*  Fixed GitHub issue  <a href="https://github.com/magento/magento2/issues/3053" target="_blank"> (GITHUB-3053)</a> removed.
+
+<!--- 48425-->* Fixed GitHub issue  <a href="https://github.com/magento/magento2/issues/2946" target="_blank"> (GITHUB-2946)</a> removed.
+
+<!--- 49957-->*  Fixed GitHub issue   <a href="https://github.com/magento/magento2/issues/2711" target="_blank"> (GITHUB-2711)</a> removed. 
+
+<!--- 52436 -->* Fixed GitHub issue <a href="https://github.com/magento/magento2/issues/2121" target="_blank"> (GITHUB-2121)</a> removed. 
+
+<!--- 52981 -->* Fixed GitHub issues  <a href="https://github.com/magento/magento2/issues/4548" target="_blank"> (GITHUB-4548)</a>, <a href="https://github.com/magento/magento2/issues/2735" target="_blank"> (GITHUB-2735)</a>, <a href="https://github.com/magento/magento2/issues/4275" target="_blank"> (GITHUB-4275)</a>, <a href="https://github.com/magento/magento2/issues/3529" target="_blank"> (GITHUB-3529)</a> removed. 
 
 
 
