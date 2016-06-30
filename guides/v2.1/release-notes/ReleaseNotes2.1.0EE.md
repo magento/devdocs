@@ -177,10 +177,10 @@ To work around this issue, run the following commands in the order shown:
 
 <!--- 47792-->* You can now successfully update product categories through the SOAP API.
 
-<!--- 50636-->* For all the appropriate REST calls with SearchCriteria filters, validate if response for search_criteria key is NOT null.
+<!--- 50636-->* Magento validates all the appropriate REST calls with SearchCriteria filters if the response to the `search_criteria` key is NOT null.
 
 
-<!--- 53152-->*  REST API GET /V1/categories calls now return all the categories you expect (all created in the product interface). <a href="https://github.com/magento/magento2/issues/4525" target="_blank"> (GITHUB-4525)</a>
+<!--- 53152-->*  REST API GET /V1/categories calls now return all the categories you expect (that is, all that are created in the product interface). <a href="https://github.com/magento/magento2/issues/4525" target="_blank"> (GITHUB-4525)</a>
 
 <!--- 53545-->* System > Integrations > Add New Integration now returns a populated  resources list.  <a href="https://github.com/magento/magento2/issues/4537" target="_blank"> (GITHUB-4537)</a>
 
@@ -241,14 +241,14 @@ To work around this issue, run the following commands in the order shown:
 
 <!--- 48469-->* The Get Credentials From PayPal and Sandbox credentials buttons are now rendered correctly.
 
-<!--- 42103-->* Magento now clears the minicart as expected after you complete  an order using Paypal.
+<!--- 42103-->* Magento now clears the minicart as expected after you complete  an order using PayPal.
 
 
 <!--- 51014-->* Magento now displays the relevant error message when Express Checkout fraud filters are triggered.
 
 <!--- 50910-->* Magento no longer disables the Continue button when you  submit an order with PayPal Payments Advanced.
 
-<!--- 51789-->* Magento now successfully generates the Paypal Settlement report.
+<!--- 51789-->* Magento now successfully generates the PayPal Settlement report.
 
 <!--- 51481-->* Magento now updates Shipping method  on the PayPal Order Review page.
 
@@ -294,7 +294,7 @@ To work around this issue, run the following commands in the order shown:
 <!--- 54233-->* Magento no longer displays this error when you save an order:
 "Order Saving error: Table 'magento.vault_payment_token_order_payment_link' doesn't exist."
 
-<!--- 54293-->* You can now place an order from  within Braintree if 3d secure enabled.
+<!--- 54293-->* You can now place an order from  within Braintree if 3D Secure Verification is enabled.
 
 
 
@@ -351,13 +351,13 @@ target="_blank"> (GITHUB-4099)</a>
 <!--- 52831-->* You can now re-import data. <a href="https://github.com/magento/magento2/issues/4315" target="_blank"> (GITHUB-4315)</a>  
 
 
-<!--- 52037-->* Magento changes the order in which products are displayed  after you export or import catalog.
+<!--- 52037-->* Magento changes the order in which products are displayed  after you export or import a catalog.
 
 <!--- 49676-->* You can now import cross-sells, up-sells and related products. <a href="https://github.com/magento/magento2/issues/3286" target="_blank"> (GITHUB-3286)</a>
 
 <!--- 53781-->* The Ajax loader now stops if you use an incorrect file type during import.
 
-<!--- 50817 -->*  The `console` command now flushes caches without error. Cache should be cleaned/flushed without errors.
+<!--- 50817 -->*  The `console` command now flushes caches without error. Cache should be flushed without errors.
 
 
 
@@ -543,7 +543,7 @@ target="_blank"> (GITHUB-4099)</a>
 <!--- 52159 -->*  You can now open Catalogs for which you've applied multiple updates.  
 
 
-<!--- 49574 -->*  Magento now displays an error message when you try to 'Save as a new update' using an end date that precedes the start date.
+<!--- 49574 -->*  Magento now displays an error message when you try to enter an end date that precedes the start date in the Save as a new update field.
 
 <!--- 48912 -->*  The Scheduled Changes grid now correctly sorts by date.
 
@@ -572,7 +572,7 @@ target="_blank"> (GITHUB-4099)</a>
 <!--- 51171-->* Magento now applies a custom design update to products on preview.
 
 
-<!--- 51615-->* You can now disable the 'Set product as new' setting after you've applied an update.
+<!--- 51615-->* You can now disable the Set product as new setting after you've applied an update.
 
 <!--- 51613-->* Data format for campaign start and end times are now presented in OS data format.
 
@@ -675,9 +675,7 @@ target="_blank"> (GITHUB-4099)</a>
 #### Miscellaneous
 {:.no_toc}
 
-* <i>Fixed issue <a href="https://github.com/magento/magento2/issues/3605" target="_blank"> (GITHUB-3605)</a>  removed.</i>
 
- <i>Fixed issue <a href="https://github.com/magento/magento2/issues/59" target="_blank"> (GITHUB-59)</a>  removed.</i>
 
 
 <!--- 53919 -->*  We changed the HTML header used for SSL offloading from SSL-OFFLOADED{:target="_blank"} to X-Forwarded-Proto: https{:target="_blank"} to be compatible with Varnish and for compatibility with load balancers.
@@ -689,7 +687,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
     <p>If you change the value of this field, you must regenerate your <code>.vcl</code> files.</p></span>
 </div>
 
-<!--- 51008 -->* Magento now successfully migrates data when Google Analytics's "Content Experiments" is enabled.
+<!--- 51008 -->* Magento now successfully migrates data when Google Analytics's Content Experiments is enabled.
 
 <!--- 47082-->* Category creation from product page no longer fails when Google Content Experiments is enabled.
 
@@ -714,7 +712,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 <!--- 52650 -->*  We've corrected plugin sort order.
 
 
-<!--- 52170 -->*  You can now create Downloadable products.
+<!--- 52170 -->*  You can now create downloadable products.
 
 
 <!--- 52371 -->*  Magento no longer exposes Marketplace credentials via URL.
@@ -738,7 +736,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 <!--- 48507 -->*  Magento can now complete reindexing when the product flat indexer is turned on.
 
 
-<!--- 48714 -->*  You can now add form elements via layout and use the htmlContent component.
+<!--- 48714 -->*  You can now add form elements via layout and use the `htmlContent` component.
 
 
 
@@ -946,7 +944,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 47009 -->*  Plugins/interceptors now work with early stage single instance objects in Developer mode. <a href="https://github.com/magento/magento2/issues/2674" target="_blank"> (GITHUB-2674)</a>
 
-<!--- 46808 -->* Admin order creation no longer fails when the "Include Tax In Order Total" option is set to yes. <a href="https://github.com/magento/magento2/issues/2675" target="_blank"> (GITHUB-2675)</a>
+<!--- 46808 -->* Admin order creation no longer fails when the "Include Tax In Order Total" option is set to YES. <a href="https://github.com/magento/magento2/issues/2675" target="_blank"> (GITHUB-2675)</a>
 
 <!--- 47639 -->* The `setup:di:compile` script now compiles all files as expected. <a href="https://github.com/magento/magento2/issues/2888" target="_blank"> (GITHUB-2888)</a>
 
@@ -996,7 +994,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 <!--- 52590-->*  You can now set the date picker time format  to 24 hour notation.  <a href="https://github.com/magento/magento2/issues/3856" target="_blank"> (GITHUB-3856)</a>, <a href="https://github.com/magento/magento2/issues/4243" target="_blank"> (GITHUB-4243)</a>
 
 
-<!--- 49805-->*  The creditmemo form no longer assumes that shipping amount excludes VAT when both catalog prices and shipping prices are set to 'including tax'.
+<!--- 49805-->*  The Credit Memo form no longer assumes that shipping amount excludes VAT when both catalog prices and shipping prices are set to 'including tax'.
  <a href="https://github.com/magento/magento2/issues/3406" target="_blank"> (GITHUB-3406)</a>
 
 
@@ -1127,7 +1125,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 51034-->* You can now create a simple product with custom options.
 
-<!--- 50988-->* The 'Create an Account' form now opens as expected after checkout has been completed for a customer who is not logged in.
+<!--- 50988-->* The Create an Account form now opens as expected after checkout has been completed for a customer who is not logged in.
 
 
 
@@ -1151,7 +1149,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 51191-->* Fixed issue with resetting password  after waiting an hour.
 
-<!--- 51186-->* Magento now provides an additional field in theAdmin and customer login forms that prevent web browsers from caching login credentials.
+<!--- 51186-->* Magento now provides an additional field in the Admin and customer login forms that prevent web browsers from caching login credentials.
 
 
 <!--- 51185-->* Magento now loads product image from product page when minification is enabled.
@@ -1506,7 +1504,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 
 
-<!--- 53316-->* The eWay capture transaction no longer closes after creating partial refund.  
+<!--- 53316-->* The eWay capture transaction no longer closes after creating a partial refund.  
 
 
 
@@ -1547,7 +1545,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 51929-->* The Web Setup Wizard now works when Magento is installed in `/pub`. <a href="https://github.com/magento/magento2/issues/4159" target="_blank"> (GITHUB-4159)</a>
 
-<!--- 52766-->* Fixed issue with template minification on the product front-end. <a href="https://github.com/magento/magento2/issues/4365" target="_blank"> (GITHUB-4365)</a>
+<!--- 52766-->* Fixed issue with template minification on the product frontend. <a href="https://github.com/magento/magento2/issues/4365" target="_blank"> (GITHUB-4365)</a>
 
 <!--- 53795-->* Added support for Chinese currency code for UPS shipping method. <a href="https://github.com/magento/magento2/issues/4578" target="_blank"> (GITHUB-4578)</a>
 
@@ -1601,7 +1599,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 
 
-<!--- 54051-->* You can now login on the product frontend when inline translation is enabled. <a href="https://github.com/magento/magento2/issues/4925" target="_blank"> (GITHUB-4925)</a>
+<!--- 54051-->* You can now log in on the product frontend when inline translation is enabled. <a href="https://github.com/magento/magento2/issues/4925" target="_blank"> (GITHUB-4925)</a>
 
 
 <!--- 48089-->* Undeclared dynamic property is no longer leaked in public space. <a href="https://github.com/magento/magento2/issues/2103" target="_blank"> (GITHUB-2103)</a>
@@ -1612,22 +1610,26 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 
 
-<!--- 54108-->*  Fixed GitHub issue <a href="https://github.com/magento/magento2/issues/4917" target="_blank"> (GITHUB-4917)</a> removed.
+*  <i>Fixed GitHub issue <a href="https://github.com/magento/magento2/issues/4917" target="_blank"> (GITHUB-4917)</a> removed.</i>
 
 
-<!--- 53547-->*  Fixed GitHub issue <a href="https://github.com/magento/magento2/issues/4434" target="_blank"> (GITHUB-4434)</a> removed. 
+*  <i>Fixed GitHub issue <a href="https://github.com/magento/magento2/issues/4434" target="_blank"> (GITHUB-4434)</a> removed.</i>
 
-<!--- 48333-->* Fixed GitHub issue  <a href="https://github.com/magento/magento2/issues/2910" target="_blank"> (GITHUB-2910)</a> removed. 
+* <i>Fixed GitHub issue  <a href="https://github.com/magento/magento2/issues/2910" target="_blank"> (GITHUB-2910)</a> removed.</i>
 
-<!--- 48393-->*  Fixed GitHub issue  <a href="https://github.com/magento/magento2/issues/3053" target="_blank"> (GITHUB-3053)</a> removed.
+*  <i>Fixed GitHub issue  <a href="https://github.com/magento/magento2/issues/3053" target="_blank"> (GITHUB-3053)</a> removed. </i>
 
-<!--- 48425-->* Fixed GitHub issue  <a href="https://github.com/magento/magento2/issues/2946" target="_blank"> (GITHUB-2946)</a> removed.
+* <i>Fixed GitHub issue  <a href="https://github.com/magento/magento2/issues/2946" target="_blank"> (GITHUB-2946)</a> removed. </i>
 
-<!--- 49957-->*  Fixed GitHub issue   <a href="https://github.com/magento/magento2/issues/2711" target="_blank"> (GITHUB-2711)</a> removed. 
+*  <i>Fixed GitHub issue   <a href="https://github.com/magento/magento2/issues/2711" target="_blank"> (GITHUB-2711)</a> removed.</i>
 
-<!--- 52436 -->* Fixed GitHub issue <a href="https://github.com/magento/magento2/issues/2121" target="_blank"> (GITHUB-2121)</a> removed. 
+* <i>Fixed GitHub issue <a href="https://github.com/magento/magento2/issues/2121" target="_blank"> (GITHUB-2121)</a> removed. </i>
 
-<!--- 52981 -->* Fixed GitHub issues  <a href="https://github.com/magento/magento2/issues/4548" target="_blank"> (GITHUB-4548)</a>, <a href="https://github.com/magento/magento2/issues/2735" target="_blank"> (GITHUB-2735)</a>, <a href="https://github.com/magento/magento2/issues/4275" target="_blank"> (GITHUB-4275)</a>, <a href="https://github.com/magento/magento2/issues/3529" target="_blank"> (GITHUB-3529)</a> removed. 
+* <i>Fixed issue <a href="https://github.com/magento/magento2/issues/3605" target="_blank"> (GITHUB-3605)</a>  removed.</i>
+
+* <i>Fixed issue <a href="https://github.com/magento/magento2/issues/59" target="_blank"> (GITHUB-59)</a>  removed.</i>
+
+* <i>Fixed GitHub issues <a href="https://github.com/magento/magento2/issues/4548" target="_blank"> (GITHUB-4548)</a>, <a href="https://github.com/magento/magento2/issues/2735" target="_blank"> (GITHUB-2735)</a>, <a href="https://github.com/magento/magento2/issues/4275" target="_blank"> (GITHUB-4275)</a>, <a href="https://github.com/magento/magento2/issues/3529" target="_blank"> (GITHUB-3529)</a> removed. </i>
 
 
 

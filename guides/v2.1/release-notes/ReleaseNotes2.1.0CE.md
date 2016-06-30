@@ -354,7 +354,7 @@ This release includes enhancements to improve the security of your Magento appli
 <!--- 54233-->* Magento no longer displays this error when you save an order:
 "Order Saving error: Table 'magento.vault_payment_token_order_payment_link' doesn't exist."
 
-<!--- 54293-->* You can now place an order from  within Braintree if 3d secure enabled.
+<!--- 54293-->* You can now place an order from  within Braintree if 3D Secure Verification is enabled.
 
 
 
