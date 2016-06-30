@@ -2,8 +2,8 @@
 layout: default
 group: install_pre
 subgroup: Getting Started
-title: TLS 1.2 requirements
-menu_title: TLS 1.2 requirements
+title: Transport Layer Security (TLS) requirements
+menu_title: Transport Layer Security (TLS) requirements
 menu_order: 100
 level3_menu_node: level3parent
 level3_subgroup: tls
