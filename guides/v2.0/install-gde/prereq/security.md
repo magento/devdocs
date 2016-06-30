@@ -4,7 +4,8 @@ group: install_pre
 subgroup: Prerequisites
 title: SELinux and iptables
 menu_title: SELinux and iptables
-menu_order: 25
+menu_order: 200
+version: 2.0
 github_link: install-gde/prereq/security.md
 redirect_from: /guides/v1.0/install-gde/prereq/security.html
 ---
@@ -54,9 +55,9 @@ Depending on your security requirements, you might find it necessary to open por
 
 #### Related topics:
 
-*	<a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Apache</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP 5.5 or 5.4&mdash;CentOS</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">MySQL</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Installing optional software</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Ways to install the Magento software</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/apache.html">Apache</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 5.5 or 5.4&mdash;CentOS</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/mysql.html">MySQL</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/optional.html">Installing optional software</a>
+*	<a href="{{page.baseurl}}install-gde/install/pre-install.html">Ways to install the Magento software</a>

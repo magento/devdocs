@@ -6,6 +6,7 @@ title: ExportButton Component
 menu_title: Export Button Component
 menu_node:
 menu_order: 12
+version: 2.0
 github_link: ui-components/ui-export.md
 redirect_from: /guides/v2.0/ui-library/ui-export.html
 
@@ -49,6 +50,6 @@ By default Magento allows CSV and Excel XML export data formats.
 
 To add new export format:
 
-* Add configuration data to ExportButton definition <a href="{{ site.gdeurl }}ui-library/ui-definition.html">`Magento/Ui/view/base/ui_component/etc/definition.xml`</a>
+* Add configuration data to ExportButton definition <a href="{{page.baseurl}}ui-library/ui-definition.html">`Magento/Ui/view/base/ui_component/etc/definition.xml`</a>
 * Add controller for new format processing `\Magento\Ui\Controller\Adminhtml\Export\GridToFoo`
 * Add converter `\Magento\Ui\Model\Export\ConvertToFoo`

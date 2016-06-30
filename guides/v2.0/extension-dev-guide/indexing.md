@@ -1,10 +1,11 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 6_Module Development 
+subgroup: 99_Module Development 
 title: Indexing
 menu_title: Indexing
-menu_order: 10
+menu_order: 12
+version: 2.0
 github_link: extension-dev-guide/indexing.md
 redirect_from: 
   - /guides/v1.0/architecture/index-cache/indexing.html
@@ -81,7 +82,7 @@ Each index can perform the following types of reindex operations:
 
 	Full reindexing can be caused by a variety of things, including creating a new web store or new customer group.
 
-	You can optionally fully reindex at any time using the <a href="#m2devgde-indexing-commandline">command line</a>.
+	You can optionally fully reindex at any time using the <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-index.html">command line</a>.
 
 *	Partial reindex, which means rebuilding the database tables only for the things that changed (for example, changing a single product attribute or price).
 
@@ -119,13 +120,13 @@ The following figure shows an example of setting indexers to Update by Schedule.
 
 <p><img src="{{ site.baseurl }}common/images/index_index-modes.png" width="600px" alt="Changing indexer modes"></p>
 
-You can also reindex from the <a href="#m2devgde-indexing-commandline">command line</a>.
+You can also reindex from the <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-index.html">command line</a>.
 
 <h3 id="m2devgde-indexing-how">How to reindex</h3>
 You can reindex in any of the following ways:
 
-*	Using a <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-bkg">cron job</a> (preferred because indexing runs every minute)
-*	Using the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex">`magento indexer:reindex [indexer]`</a> command, which reindexes selected indexers, or all indexers, one time only
+*	Using a <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-bkg">cron job</a> (preferred because indexing runs every minute)
+*	Using the <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex">`magento indexer:reindex [indexer]`</a> command, which reindexes selected indexers, or all indexers, one time only
 
 <h2 id="m2devgde-indexing-outofbox">Magento indexers</h2>
 Out of the box the Magento system has the following indexers implemented:
@@ -247,7 +248,7 @@ Next, declare the indexer in `Merchandizing/etc/indexer.xml`:
 
 <script src="https://gist.github.com/xcomSteveJohnson/5780857cdd5343cafacf.js"></script>
 
-Finally, declare the indexer view (`merchandizsing_popular_order`) that tracks sales (`Merchandizing/etc/mview.xml`):
+Finally, declare the indexer view (`merchandizing_popular_order`) that tracks sales (`Merchandizing/etc/mview.xml`):
 
 <script src="https://gist.github.com/xcomSteveJohnson/4313c5246b38ff8193df.js"></script>
 

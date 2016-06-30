@@ -8,7 +8,7 @@ In a command prompt, enter any of the following commands:
 *	`composer --help`
 *	`composer list --help`
 
-If command help displays, Composer is already installed; in that case, you can skip the next steps and continue with <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">Clone the Magento repository</a>.
+If command help displays, Composer is already installed.
 
 If an error displays, use the following steps to install Composer.
 
@@ -18,7 +18,7 @@ To install Composer:
 
 2.	Enter the following commands:
 
-	<pre>curl -sS https://getcomposer.org/installer | php
-	mv composer.phar /usr/local/bin/composer</pre>
-
+		curl -sS https://getcomposer.org/installer | php
+		mv composer.phar /usr/local/bin/composer
+		
 	For additional installation options, see the <a href="https://getcomposer.org/download/" target="_blank">Composer installation documentation</a>.

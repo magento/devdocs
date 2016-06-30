@@ -6,6 +6,7 @@ title: Download fails because of changes in Composer
 menu_title: Download fails because of changes in Composer
 menu_node: 
 menu_order: 300
+version: 2.0
 github_link: install-gde/trouble/tshoot_composer-fail.md
 ---
 
@@ -45,7 +46,7 @@ To work around it:
 			composer self-update
 
 2.	Delete your Magento 2 directory and subdirectories.
-3.	Try the download again using either <a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html">`composer create-project`</a> or <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">`git clone`</a>.
+3.	Try the download again using either <a href="{{page.baseurl}}install-gde/prereq/integrator_install.html">`composer create-project`</a> or <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">`git clone`</a>.
 4.	After successfully downloading the Magento software, update Composer:
 
 		composer self-update

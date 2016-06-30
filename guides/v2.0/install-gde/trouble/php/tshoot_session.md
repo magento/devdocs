@@ -6,6 +6,7 @@ title: During installation, exception SessionHandler::read()
 menu_title: During installation, exception SessionHandler::read()
 menu_node: 
 menu_order: 26
+version: 2.0
 github_link: install-gde/trouble/php/tshoot_session.md
 ---
 
@@ -21,8 +22,8 @@ in ../magento2/lib/internal/Magento/Framework/App/ErrorHandler.php:67
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
 	<p>This error occurs only in code versions earlier than September 28, 2015. If you installed code dated September 29 or later, this error should not occur.</p>
-	<p>For more information about configuration options for Redis, see <a href="{{ site.gdeurl }}config-guide/redis/config-redis.html">Configure Redis</a>.</p>
-	<p>For more information about specifying Redis using the command-line installer, see the <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-install.html">installation topic</a> or the <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-deployment.html#instgde-cli-subcommands-configphp">deployment configuration topic</a>.</p></span>
+	<p>For more information about configuration options for Redis, see <a href="{{page.baseurl}}config-guide/redis/config-redis.html">Configure Redis</a>.</p>
+	<p>For more information about specifying Redis using the command-line installer, see the <a href="{{page.baseurl}}install-gde/install/cli/install-cli-install.html">installation topic</a> or the <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-deployment.html#instgde-cli-subcommands-configphp">deployment configuration topic</a>.</p></span>
 </div>
 
 ### Solution:
@@ -31,7 +32,7 @@ This happens when your `session.save_handler` PHP parameter is set to some anoth
 
 Solutions:
 
-*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">Upgrade your Magento 2 code</a>
+*	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">Upgrade your Magento 2 code</a>
 *	Use the following workaround with existing code.
 
 ### Locate `php.ini`

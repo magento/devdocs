@@ -6,6 +6,7 @@ title: Construct a request
 menu_title: Construct a request
 menu_order: 1
 
+version: 2.0
 github_link: get-started/gs-web-api-request.md
 redirect_from: /guides/v1.0/get-started/gs-web-api-request.html
 ---
@@ -124,7 +125,7 @@ To configure a web API, developers define some of the elements of each API call 
       </td>
       <td><pre>Authorization:&nbsp;Bearer&nbsp;&lt;TOKEN&gt;</pre>
       <p>Where <code>&lt;TOKEN&gt;</code> is the authentication token returned by the Magento token service.
-See <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication.html">Authentication</a>.</p></td>
+See <a href="{{page.baseurl}}get-started/authentication/gs-authentication.html">Authentication</a>.</p></td>
    </tr>
    <tr>
       <td><pre>Accept</pre>
@@ -268,4 +269,4 @@ $response = $client->send($request);
 </ol>
 
 <h2>Next step</h2>
-<p>Run the web API call through a <a href="{{ site.gdeurl }}get-started/gs-curl.html">cURL command</a> or a REST client.</p>
+<p>Run the web API call through a <a href="{{page.baseurl}}get-started/gs-curl.html">cURL command</a> or a REST client.</p>

@@ -5,6 +5,7 @@ subgroup: 3_Widgets
 title: QuickSearch widget
 menu_order: 13
 menu_title: QuickSearch widget
+version: 2.0
 github_link: javascript-dev-guide/widgets/widget_quickSearch.md
 redirect_from:
   - guides/v2.0/frontend-dev-guide/javascript/widget_quickSearch.html
@@ -18,7 +19,7 @@ The quickSearch widget is a custom autocomplete widget that populates a list of 
 The suggest widget source is <a href="{{site.mage2000url}}app/code/Magento/Search/view/frontend/web/form-mini.js" target="_blank"><code>&lt;Magento_Search_module_dir&gt;/view/frontend/web/form-mini.js</code></a>.
 
 <h2 id="quicksearch_init">Initialize the quickSearch widget</h2>
-For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
+For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{page.baseurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
 
 
 <h2 id="quicksearch_options">Options</h2>

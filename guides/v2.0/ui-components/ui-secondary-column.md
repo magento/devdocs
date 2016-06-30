@@ -6,6 +6,7 @@ title: Column Component
 menu_title: Column Component
 menu_node:
 menu_order: 5
+version: 2.0
 github_link: ui-components/ui-secondary-column.md
 redirect_from: /guides/v2.0/ui-library/ui-secondary-column.html
 

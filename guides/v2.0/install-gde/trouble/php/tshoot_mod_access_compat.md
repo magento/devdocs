@@ -6,6 +6,7 @@ title: 503 (Service Unavailable) errors accessing Magento software in a web brow
 menu_title: 503 (Service Unavailable) errors accessing Magento software in a web browser
 menu_node: 
 menu_order: 3
+version: 2.0
 github_link: install-gde/trouble/php/tshoot_mod_access_compat.md
 redirect_from:
   -  /guides/v1.0/install-gde/trouble/tshoot_mod_access_compat.html
@@ -19,7 +20,7 @@ redirect_from:
 
 When you try to access your Magento Admin or storefront in a web browser, you get HTTP 503 (Service Unavailable) errors.
 
-To confirm this issue is not related to <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands.html#instgde-cli-maint-configphp">maintenance mode</a>, look in your Apache `error.log` for messages that include:
+To confirm this issue is not related to <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands.html#instgde-cli-maint-configphp">maintenance mode</a>, look in your Apache `error.log` for messages that include:
 
 	"Invalid command 'Order', perhaps misspelled or defined by a module not included in the server configuration". 
 

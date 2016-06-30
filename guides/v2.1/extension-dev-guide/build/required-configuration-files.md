@@ -1,0 +1,1 @@
+../../../v2.0/extension-dev-guide/build/required-configuration-files.md

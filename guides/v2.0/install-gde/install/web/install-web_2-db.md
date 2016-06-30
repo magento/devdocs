@@ -6,6 +6,7 @@ title: Step 2. Add a Database
 menu_title: Step 2. Add a Database
 menu_node: 
 menu_order: 3
+version: 2.0
 github_link: install-gde/install/web/install-web_2-db.md
 ---
 
@@ -15,4 +16,4 @@ github_link: install-gde/install/web/install-web_2-db.md
 {% include install/web/install-web_2-db.md %}
 
 #### Next step
-<a href="{{ site.gdeurl }}install-gde/install/web/install-web_3-web-conf.html">Step 3. Web configuration</a>
+<a href="{{page.baseurl}}install-gde/install/web/install-web_3-web-conf.html">Step 3. Web configuration</a>

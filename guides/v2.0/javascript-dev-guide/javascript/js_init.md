@@ -5,6 +5,7 @@ subgroup: 1_Javascript
 title: JavaScript initialization
 menu_title: JavaScript initialization
 menu_order: 2
+version: 2.0
 github_link: javascript-dev-guide/javascript/js_init.md
 redirect_from:
   - guides/v2.0/frontend-dev-guide/javascript/js_init.html
@@ -20,7 +21,6 @@ Do not add JavaScript inline. Instead use the approaches described further.
 
 <h2 id="init_phtml">Initialize a JS component in a PHTML template</h2>
 In Magento 2, there are two ways to initialize a JS component in a `.phtml` template: using the `data-mage-init` attribute and using the `<script>` tag. Both ways are described in the following sections.
-<!-- ADDLINK for JS component-->
 
 <h3 id="data_mage_init">Initialization using <code>data-mage-init</code></h3>
 
@@ -80,7 +80,7 @@ To initialize a JS component on a HTML element without direct access to the elem
     },
     // components initialized without binding to an element
     &quot;*&quot;: {
-        &quot;&lt;js_component3&quot;&gt;: ...
+        &quot;&lt;js_component3&gt;&quot;: ...
     }
 &lt;/script&gt;
 </pre>
@@ -109,7 +109,7 @@ The following is an illustration of widget initialization using <code>&lt;script
 
 <h2 id="widget_init">Widget initialization in JS</h2>
 
-To initialize a widget in JS code, use a notation similar to the following (the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_accordion.html" target="_blank">accordion</a> widget is initialized on the `#main-container` element as illustration):
+To initialize a widget in JS code, use a notation similar to the following (the <a href="{{page.baseurl}}frontend-dev-guide/javascript/widget_accordion.html" target="_blank">accordion</a> widget is initialized on the `#main-container` element as illustration):
 
 <pre>
 $("#main-container").accordion();
@@ -119,7 +119,7 @@ To initialize a widget with options, use notation similar to the following:
 
 <pre>
 $("#main-container").accordion({
-    header : "#title-1"
+    header : "#title-1",
     content : "#content-1",
     trigger : "#trigger-1,
     ajaxUrlElement: "a"

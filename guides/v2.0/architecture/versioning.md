@@ -5,13 +5,14 @@ subgroup: Architectural Basics
 title: Versioning policy
 menu_title: Versioning policy
 menu_order: 4
+version: 2.0
 github_link: architecture/versioning.md
 redirect_from: /guides/v1.0/architecture/versioning.html
 ---
 
 <h2 id="verpol">Versioning policy overview</h2>
 
-The Magento system and its components use the software (or "platform") version to indicate the compatibility of changes in the implementation (on the code level). By comparing two versions of the same component, one can tell whether it has any <a href="{{ site.gdeurl }}architecture/backward-compatibility.html">backwards-incompatible</a> changes in the public API or other significant code changes.
+The Magento system and its components use the software (or "platform") version to indicate the compatibility of changes in the implementation (on the code level). By comparing two versions of the same component, one can tell whether it has any <a href="{{page.baseurl}}architecture/backward-compatibility.html">backwards-incompatible</a> changes in the public API or other significant code changes.
 
 Magento software versioning complies with the following specifications:
 
@@ -239,9 +240,9 @@ The following steps demonstrate the packaging and backward compatibility story f
 </ol>
 
 <h3>Related topics</h3>
-<a href="{{ site.gdeurl }}architecture/backward-compatibility.html">Backward compatibility</a>
+<a href="{{page.baseurl}}architecture/backward-compatibility.html">Backward compatibility</a>
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>
+<a href="{{page.baseurl}}architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>
 
 
 

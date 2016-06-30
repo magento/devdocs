@@ -6,6 +6,7 @@ title: Creating a migration plan
 menu_title: Creating a migration plan
 menu_node: parent
 menu_order: 2
+version: 2.0
 github_link: migration/migration-plan.md
 redirect_from: /guides/v1.0/migration/migration-plan.html
 ---
@@ -44,7 +45,7 @@ To prepare for the migration, make sure you do all of the following:
   <li>Use the migration tool to migrate settings and websites.</li>
   <li>Copy your Magento 1.x media files to Magento 2.0. (You must copy these manually from  from magento1-root/media to magento2-root/pub/media directory)</li> 
   <li>Use Data Migration Tool to bulk copy your data from Magento 1 database to Magento 2 database. If some of your extensions have data you want to migrate, you might need to install these extensions adapted for Magento 2. In case the extensions have a different structure in Magento 2 database, use the mapping files provided with the Data Migration Tool.</li>
-  <li>Reindex all Magento 2.0 indexers. For details, see the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-index.html">Configuration Guide</a>.</li>
+  <li>Reindex all Magento 2.0 indexers. For details, see the <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-index.html">Configuration Guide</a>.</li>
   <li>Thoroughly test your Magento 2.0 site.</li>
 </ol>
 
@@ -68,7 +69,7 @@ Now that your Magento 2 site is up-to-date with Magento 1 and is functioning nor
 1. Put your Magento 1 system in maintenance mode (DOWNTIME STARTS).
 2. Press Control+C in the migration tool command window to stop incremental updates.
 3. Start your Magento 2 cron jobs.
-4. In your Magento 2 system, reindex the stock indexer. For more information, see the `<TBD>`.
+4. In your Magento 2 system, reindex the stock indexer. For more information, see the <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-index.html">Configuration Guide</a>.
 5. Using a tool of your choice, hit pages in your Magento 2 system to cache pages in advance of customers using your storefront.
 6. Perform any final verification of your Magento 2 site.
 7. Change DNS, load balancers, and so on to point to new production hardware (DOWNTIME ENDS) 

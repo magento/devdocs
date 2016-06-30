@@ -2,10 +2,11 @@
 layout: default
 group: pattern
 subgroup: Controls
-title: Magento Admin Pattern Library
+title: Admin Design Pattern Library
 menu_title: Button Bar
 menu_order: 2
 menu_node: 
+version: 2.0
 github_link: pattern-library/controls/button-bar/button-bar.md
 redirect_from: /guides/v1.0/pattern-library/controls/button-bar/button-bar.html
 ---

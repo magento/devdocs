@@ -6,6 +6,7 @@ title: Global features that support extensibility
 menu_title: Global features that support extensibility 
 menu_node: 
 menu_order:
+version: 2.0
 github_link: architecture/global_extensibility_features.md 
 
 ---
@@ -29,7 +30,7 @@ The concept of the <i>module</i> is the heart of Magento extension development, 
 If a module is self-contained, then you can modify or replace it without affecting other areas of the code. This <i>loose coupling</i> of software components reduces the ripple effects throughout your code base of changing code. 
 
 
- See the <a href="{{ site.gdeurl }}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for detailed instructions on how to create modules. 
+ See the <a href="{{page.baseurl}}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for detailed instructions on how to create modules. 
 
 <h3>Reliance on popular design patterns</h3>
 Reliance on known architectural and programming structures helps PHP developers orient themselves to the specific development issues that affect coding in a particular product ecosystem. This can reduce the learning curve for new Magento developers. 
@@ -43,7 +44,7 @@ Design patterns are time-tested, widely recognized software architecture constru
 Magento developers should familiarize themselves with our coding standards, best practices, and conventions, especially standards for PHP file formatting, coding style, and file naming conventions. Magento standards are based on Zend Framework Coding Standards. 
 
 
-See <a href="{{ site.gdeurl }}coding-standards/bk-coding-standards.html">Coding Standards</a> for guidelines and requirements. 
+See <a href="{{page.baseurl}}coding-standards/bk-coding-standards.html">Coding Standards</a> for guidelines and requirements. 
 
 
 <h3>Rich product ecosystem</h3>
@@ -91,7 +92,7 @@ Attribute types fall into three general categories:
 
 * <b>Extension attributes</b>  often use more complex data types than custom attributes. These attributes do not appear in the storefront. Extension attributes are introduced by modules.
 
-See <a href="{{ site.gdeurl }}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for information about using attributes.
+See <a href="{{page.baseurl}}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for information about using attributes.
 
 
 
@@ -99,16 +100,16 @@ See <a href="{{ site.gdeurl }}extension-dev-guide/bk-extension-dev-guide.html">P
 Magento or third-party services can be configured as a web API (REST or SOAP) with some simple XML. You can use these services to integrate your Magento installation into third-party applications, such as CRM (Customer Relationship Management), ERP (Enterprise Resource Planning) back office systems, and CMS (Content Management Systems). 
 
 
-See <a href="{{ site.gdeurl }}get-started/bk-get-started-api.html">Getting Started with Magento Web APIs</a> for more information. 
+See <a href="{{page.baseurl}}get-started/bk-get-started-api.html">Getting Started with Magento Web APIs</a> for more information. 
 
 <h3>Service contracts, dependency injection, and dependency inversion</h3>
 <i>Service contracts</i> provide a new way to access public API endpoints. These PHP interfaces offer robust, stable extension points to which clients can connect.  Service contracts define the endpoints that function as a module's public API. Defining these endpoints is an essential part of adding a module. 
 
-Service contracts are discussed throughout the Magento documentation set. See <a href="{{ site.gdeurl }}architecture/archi_perspectives/service_layer.html">Service layer</a> for a high-level introduction. See <a href="{{ site.gdeurl }}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for a more detailed discussion of service contracts and dependency injection. 
+Service contracts are discussed throughout the Magento documentation set. See <a href="{{page.baseurl}}architecture/archi_perspectives/service_layer.html">Service layer</a> for a high-level introduction. See <a href="{{page.baseurl}}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for a more detailed discussion of service contracts and dependency injection. 
 
 Magento implements <i>dependency injection</i> along with service contracts. Dependency injection provides a mechanism for changing a module's behavior without altering the client or understanding nitty-gritty details of implementation. Both dependency injection and its related concept dependency inversion support Magento's fundamental architectural principles of modularity and ease-of-extensibility. They strongly encourage basic coding practices that support the loose coupling of software modules. 
 
-See <a href="{{ site.gdeurl }}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for information on both dependency injection and service contracts. 
+See <a href="{{page.baseurl}}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for information on both dependency injection and service contracts. 
 
  
 <h3>Plug-ins</h3>
@@ -118,11 +119,11 @@ Plug-ins, like modules, are a mechanism for adding features to the core Magento 
 Plug-ins are also called <i>interceptors</i>.  Applications use the plug-in pattern to change method behavior without modifying the actual class. Plug-ins can typically intercept method processing before or after the method runs, or only when the method throws an exception. 
 
 
-See Plug-ins in  <a href="{{ site.gdeurl }}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for information on declaring and prioritizing plug-ins.
+See Plug-ins in  <a href="{{page.baseurl}}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for information on declaring and prioritizing plug-ins.
 
 
 <h3 id="m2arch-related">Related topics</h3>
-<a href="{{ site.gdeurl }}architecture/extensibility.html">Extensibility and modularity</a>
+<a href="{{page.baseurl}}architecture/extensibility.html">Extensibility and modularity</a>
 
 
 

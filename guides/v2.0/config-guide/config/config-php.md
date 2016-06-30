@@ -1,10 +1,11 @@
 ---
 layout: default
 group: config-guide
-subgroup: Magento configuration files
+subgroup: 07_conf
 title: Magento's deployment configuration
 menu_title: Magento's deployment configuration
 menu_order: 1
+version: 2.0
 github_link: config-guide/config/config-php.md
 redirect_from: /guides/v1.0/config-guide/config/config-php.html
 ---
@@ -29,16 +30,16 @@ On the next hierarchy level, items in each segment are ordered according to the 
 
 The following sections discusses the structure and contents of the deployment configuration&mdash;`config.php` and `env.php`.
 
-* <a href="#config-php-contents-config-php">Managing Installed Modules</a>
-* <a href="#config-php-contents-env-php">Environmental Configuration</a>
+* <a href="#config-php-contents-config-php">Manage installed modules</a>
+* <a href="#config-php-contents-env-php">Environmental configuration</a>
 
-<h3 id="config-php-contents-config-php">Managing Installed Modules</h3>
+<h3 id="config-php-contents-config-php">Manage installed modules</h3>
 `config.php` lists your installed components (modules, themes, and language packages). Magento provides both command-line and web-based utilities to manage components (install, uninstall, enable, disable, or upgrade).
 
 Examples:
 
-* Uninstall components: <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall.html">bin/magento setup:uninstall</a> 
-* Enable or disable components: <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:enable</a>, <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:disable</a>.
+* Uninstall components: <a href="{{page.baseurl}}install-gde/install/cli/install-cli-uninstall.html">bin/magento setup:uninstall</a> 
+* Enable or disable components: <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:enable</a>, <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:disable</a>.
 * Component Manager: coming soon
 * System Upgrade: coming soon
 
@@ -69,7 +70,7 @@ Disabled modules are not recognized by the Magento application; in other words, 
 
 The only practical difference of a module being disabled and being completely absent in the code base is that a disabled module is found by the autoloader, enabling its classes and constants to be reused in other code.
 
-<h3 id="config-php-contents-env-php">Environmental Configuration</h3>
+<h3 id="config-php-contents-env-php">Environmental configuration</h3>
 The following table provides details about each `env.php` segment and its structure.
 
 <table>
@@ -119,7 +120,7 @@ The following table provides details about each `env.php` segment and its struct
       <td><code>cache</code></td>
       <td><pre>__/cache
  |__/frontend
-   |__/See <a href="{{ site.gdeurl }}config-guide/config/caching_frontend-cache-types.html">frontend options</a></pre></td>
+   |__/See <a href="{{page.baseurl}}config-guide/config/caching_frontend-cache-types.html">frontend options</a></pre></td>
     </tr>
     <tr>
       <td>Installation date</td>
@@ -143,4 +144,4 @@ The following table provides details about each `env.php` segment and its struct
 </table>
 
 #### Related topic
-<a href="{{ site.gdeurl }}config-guide/config/config-files.html">Module configuration files</a>
+<a href="{{page.baseurl}}config-guide/config/config-files.html">Module configuration files</a>

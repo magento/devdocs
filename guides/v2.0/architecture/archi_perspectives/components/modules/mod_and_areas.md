@@ -7,7 +7,8 @@ menu_title: Modules and areas
 menu_order: 4
 level3_menu_node: level3child
 level3_subgroup: modules
-github_link: architecture/components/modules/mod_and_areas.md
+version: 2.0
+github_link: architecture/archi_perspectives/components/modules/mod_and_areas.md
 redirect_from: /guides/v1.0/architecture/modules/mod_and_areas.html
 ---
 
@@ -66,7 +67,7 @@ After the area name, the URI segment specifies the *full front name*. When an HT
 
 <h2 id="m2arch-module-related"> Related topics</h2>
 
-* <a href="{{ site.gdeurl }}architecture/archi_perspectives/components/modules/mod_intro.html">Module overview</a>
+* <a href="{{page.baseurl}}architecture/archi_perspectives/components/modules/mod_intro.html">Module overview</a>
 
 
 

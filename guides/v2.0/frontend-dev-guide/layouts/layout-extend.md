@@ -5,6 +5,7 @@ subgroup: B_Layouts
 title: Extend a layout
 menu_title: Extend a layout
 menu_order: 4
+version: 2.0
 github_link: frontend-dev-guide/layouts/layout-extend.md
 redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-extend.html
 ---
@@ -15,7 +16,7 @@ redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-extend.html
 Rather than copy extensive page layout or page configuration code and then modify what you want to change, in the Magento system, you only need to create an *extending layout file* that contains the changes you want. 
 
 
-To add an extending <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> or <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-gen" target="_blank">generic layout</a> file:
+To add an extending <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> or <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-gen" target="_blank">generic layout</a> file:
 
 2.	Put the layout file in the following location:
 <pre>
@@ -30,7 +31,7 @@ For example, to customize the layout defined in `<Magento_Catalog_module_dir>/vi
 
 <code>&lt;theme_dir&gt;/Magento_Catalog/layout/catalog_product_view.xml</code>
 
-To add an extending <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-page" target="_blank">page layout</a> file:
+To add an extending <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-page" target="_blank">page layout</a> file:
 
 2.	Put the file in the following location:
 <pre>
@@ -69,8 +70,8 @@ Where a `handle ID` is defined by the name of the corresponding layout file, and
 
 #### Related topics:
 
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-override.html" target="_blank">Override a layout</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html" target="_blank">XML instructions</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-create.html" target="_blank">Create a theme</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/theme-ui-lib.html" target="_blank">Magento UI library</a>
+*	<a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-override.html" target="_blank">Override a layout</a>
+*	<a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html" target="_blank">XML instructions</a>
+*	<a href="{{page.baseurl}}frontend-dev-guide/themes/theme-create.html" target="_blank">Create a theme</a>
+*	<a href="{{page.baseurl}}frontend-dev-guide/css-topics/theme-ui-lib.html" target="_blank">Magento UI library</a>
 

@@ -1,0 +1,1 @@
+../../v2.0/comp-mgr/compman-main-pg.md

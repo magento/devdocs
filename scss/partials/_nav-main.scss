@@ -2,7 +2,7 @@
 .nav-main {
    background: #31302b;
    clear: both;
-   z-index: 100;
+   z-index: 49;
    position: relative;
 }
 
@@ -137,6 +137,12 @@
 
 .nav-main nav .sub-site-name a {
    width: auto;
+}
+
+.sticky-nav-main {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 

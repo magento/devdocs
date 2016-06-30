@@ -6,6 +6,7 @@ title: Migrate settings
 menu_title: Migrate settings
 menu_node:
 menu_order: 1
+version: 2.0
 github_link: migration/migration-migrate-settings.md
 redirect_from: /guides/v1.0/migration/migration-migrate-settings.html
 ---
@@ -16,11 +17,18 @@ You should migrate settings first. This mode migrates stores; websites; and diff
 
 If necessary, here is how to change how settings are migrated:
 
-1.	Log in to your Magento server as, or switch to, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+1.	Log in to your Magento server as, or switch to, the <a href="{{page.baseurl}}install-gde/prereq/apache-user.html">Magento file system owner</a>.
 2.	Change to the following directory:
 
-		`<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc
-1. 	Enter the following command to create `settings.xml` from the provided sample:
+		<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<edition-to-edition>
+
+	For example, if Magento 2 is installed in `/var/www/html`, you'll find `settings.xml.dist` in one of the following directories:
+
+		/var/www/html/vendor/magento/data-migration-tool/etc/ce-to-ee
+		/var/www/html/vendor/magento/data-migration-tool/etc/ee-to-ee
+		/var/www/html/vendor/magento/data-migration-tool/etc/ce-to-ce
+
+3. 	Enter the following command to create `settings.xml` from the provided sample:
 
 		cp settings.xml.dist settings.xml
 2. Make your changes in `settings.xml`.
@@ -29,7 +37,7 @@ If necessary, here is how to change how settings are migrated:
 <h2 id="migrate-first">First steps</h2>
 {% include install/first-steps-cli.html %}
 
-In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
+In addition to the command arguments discussed here, see <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="migrate-data-cmd">Run the settings migration command</h2>
 To migrate settings, use the following command:
@@ -49,4 +57,4 @@ where
 
 ###Related topics
 
-* <a href="{{ site.gdeurl }}migration/migration-migrate-data.html">Migrate data</a>
+* <a href="{{page.baseurl}}migration/migration-migrate-data.html">Migrate data</a>

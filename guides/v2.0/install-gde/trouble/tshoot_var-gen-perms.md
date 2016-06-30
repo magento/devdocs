@@ -6,6 +6,7 @@ title: Cannot write to the var/generation directory
 menu_title: Cannot write to the var/generation directory
 menu_node: 
 menu_order: 9
+version: 2.0
 github_link: install-gde/trouble/tshoot_var-gen-perms.md
 ---
 
@@ -13,7 +14,7 @@ github_link: install-gde/trouble/tshoot_var-gen-perms.md
 <h2 id="trouble-install-gen">Cannot write to the <code>var/generation</code> directory</h2>
 
 ### Symptom
-After you successfully install Magento, exceptions display when you try to access the storefront or Admin. (You might have to <a href="{{ site.gdeurl }}http://devdocs.magento.com/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html#config-mode">
+After you successfully install Magento, exceptions display when you try to access the storefront or Admin. (You might have to <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html#config-mode">
 enable developer mode</a> to see the exceptions.)
 
 Sample exceptions follow:
@@ -34,27 +35,10 @@ Sample exceptions follow:
 	... more ...
 
 ### Details
-For security reasons, Magento recommends a particular set of file system ownership and permissions rules. These rules require you to give ownership and permissions to two users:
+Magento recommends different ownership and permissions settings based on if you use one user or two to run the Magento application.
 
-*	Web server user
-*	A local user on the Magento server
-
-In addition, Magento code creates files with permissions consistent with our recommendations. For details, see:
-
-*	<a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Create the Magento file system owner</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html#instgde-prereq-compose-access">Set file system ownership and permissions</a>
+Typically, you have one user on shared hosting and two users on private hosting (or if you have your own server). There could be exceptions to this, however.
  
 ### Suggestion
-First, make sure you completed all tasks discussed in the preceding section. In particular, make sure the Magento file system owner and the web server user share groups in one of the ways discussed in <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html#install-update-depend-user-group">Options for shared groups</a>.
-
-If that still does not resolve the issue, try setting the <a href="https://en.wikipedia.org/wiki/Setuid#setuid_and_setgid_on_directories" target="_blank">setgid bit</a> (set group-id bit) for problem directories, such as `var/generation`, as follows:
-
-1.	Identify the directory that does not allow write access.
-2.	As a user with `root` privileges (or with sufficient privileges to set permissions), enter the following command:
-
-		chmod g+s <directory-path>
-
-	For example, to set the sticky bit for the `/var/www/magento2/var/generation` directory, enter:
-
-		find /var/www/magento2/var/generation -type d -exec chmod g+s {} \;
+Review our recommendations in [Overview of ownership and permissions]({{page.baseurl}}install-gde/prereq/file-sys-perms-over.html).
 

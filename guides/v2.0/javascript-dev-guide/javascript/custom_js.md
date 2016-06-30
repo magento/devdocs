@@ -5,6 +5,7 @@ subgroup: 1_Javascript
 title: Use custom JavaScript
 menu_order: 3
 menu_title: Use custom JavaScript
+version: 2.0
 github_link: javascript-dev-guide/javascript/custom_js.md
 redirect_from:
   - guides/v2.0/frontend-dev-guide/javascript/custom_js.html
@@ -33,7 +34,7 @@ To use a custom implementation of an existing Magento JS component:
 var config = {
   "map": {
     "*": {
-      "<custom_component>": "<default_component>"
+      "<default_component>": "<custom_component>"
     }
   }
 };
@@ -99,7 +100,7 @@ Where the following notation is used:
 <li><code>mage.&lt;widget.name&gt;</code> - the name of the Magento widget that you extend.</li>
 </ul>
 
-For information about how to initialize your custom widget in a `.phtml` template, see the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.
+For information about how to initialize your custom widget in a `.phtml` template, see the <a href="{{page.baseurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.
 
 <h3 id="extend_js_component">Extend a default Ui component</h3>
 
@@ -141,7 +142,7 @@ define([
 {% endhighlight %}
 
 
-For information about how to initialize your custom JS component in a `.phtml` template, see the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.
+For information about how to initialize your custom JS component in a `.phtml` template, see the <a href="{{page.baseurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.
 
 <h2 id="disable_default_js">Disable default Magento JS</h2>
 
@@ -170,4 +171,4 @@ $(mage.apply);
 
 
 <h2>Related topics</h2>
-<a href="{{site.gdeurl}}config-guide/config/js-resources.html" target="_blank">JavaScript resources configuration</a>
+<a href="{{page.baseurl}}config-guide/config/js-resources.html" target="_blank">JavaScript resources configuration</a>

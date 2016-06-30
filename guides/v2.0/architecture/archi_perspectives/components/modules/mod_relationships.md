@@ -7,7 +7,8 @@ menu_title: Module relationships
 menu_order: 5
 level3_menu_node: level3child
 level3_subgroup: modules
-github_link: architecture/modules/mod_relationships.md
+version: 2.0
+github_link: architecture/archi_perspectives/modules/mod_relationships.md
 redirect_from: /guides/v1.0/architecture/modules/mod_relationships.html
 ---
 
@@ -46,7 +47,7 @@ A single module can have the following types of relationships with another modul
 
 <h2 id="m2arch-module-related"> Related topics</h2>
 
-* <a href="{{ site.gdeurl }}architecture/archi_perspectives/components/modules/mod_intro.html">Module overview</a>
+* <a href="{{page.baseurl}}architecture/archi_perspectives/components/modules/mod_intro.html">Module overview</a>
 
 
 

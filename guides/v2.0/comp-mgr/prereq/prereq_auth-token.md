@@ -1,17 +1,18 @@
 ---
 layout: default
 group: compman
-subgroup: B_prereq
+subgroup: 02_prereq
 title: Enter your authentication keys in the Admin
 menu_title: Enter your authentication keys in the Admin
 menu_order: 2
 menu_node: 
+version: 2.0
 github_link: comp-mgr/prereq/prereq_auth-token.md
 ---
 
 #### Contents
 
-*	<a href="#auth-overview">Overview of Magento Connect authentication</a>
+*	<a href="#auth-overview">Overview of Magento Marketplace authentication</a>
 *	<a href="#auth-get">Get your authentication tokens</a>
 *	<a href="#compman-token-admin">Enter the tokens in the Admin</a>
 

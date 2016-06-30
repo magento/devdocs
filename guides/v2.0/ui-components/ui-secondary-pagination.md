@@ -6,6 +6,7 @@ title: Pagination Component
 menu_title: Pagination Component
 menu_node:
 menu_order: 2
+version: 2.0
 github_link: ui-components/ui-secondary-pagination.md
 redirect_from: /guides/v2.0/ui-library/ui-secondary-pagination.html
 
@@ -17,7 +18,7 @@ The UI pagination component is a plugin for the listing component. Responsible f
 
 You can configure pagination in several ways:
 
-* Globally: using any module's <a href="{{ site.gdeurl }}ui-library/ui-definition.html">`view/*/ui_component/etc/definition.xml`</a> file. All settings declared in this file are applied to all component's instances.
+* Globally: using any module's <a href="{{page.baseurl}}ui-library/ui-definition.html">`view/*/ui_component/etc/definition.xml`</a> file. All settings declared in this file are applied to all component's instances.
 * Locally: using concrete component instance configuration, such as `<your module root dir>/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml`
 
 To enable pagination for the listing component, the pagination component is declared as a child of the listing component in component instance configuration.

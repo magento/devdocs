@@ -5,6 +5,7 @@ subgroup: View library
 title: Static file processing
 menu_title: Static file processing
 menu_order: 
+version: 2.0
 github_link: architecture/view/static-process.md
 redirect_from: /guides/v1.0/architecture/view/static-process.html
 ---
@@ -84,13 +85,13 @@ If the file is found, it is published in the following location:
 The path inside the `pub/static` directory coincides with the initial path in the `app/design` directory.
 
 <h2 id="publish-static-view-files">Static view file publication</h2>
-The Magento application has a *static view files publication command* that enables you to publish static view files in certain Magento <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html">modes</a>.
+The Magento application has a *static view files publication command* that enables you to publish static view files in certain Magento <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html">modes</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
  <p>Any files that you manually upload (for example, product images), are always stored in <code>pub/media</code>.</p>
 </div>
 
-To use the static view file publication tool, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html">deploy static view files</a>.
+To use the static view file publication tool, see <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html">deploy static view files</a>.
 
 <h2 id="css-files">CSS file publication</h2>
 <p>The publication flow for CSS files depends on whether CSS merging is enabled. The following sections describe the flow for both cases.</p>

@@ -5,6 +5,7 @@ subgroup: Architecture
 title: Themes
 menu_title: Themes
 menu_order: 
+version: 2.0
 github_link: architecture/arch_themes.md
 redirect_from: /guides/v1.0/architecture/arch_themes.html
 ---
@@ -16,13 +17,13 @@ Themes are located in the `/app/design/frontend/<Vendor>/` folder of a Magento i
 
 Themes are also divided by area, allowing you to define themes that customize either the storefront or Magento Admin.
 
-For detailed information about working with themes, refer to  <a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-general.html">Themes</a> in the Frontend Developers Guide.
+For detailed information about working with themes, refer to  <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-general.html">Themes</a> in the Frontend Developers Guide.
 
 <h2 id="m2arch-related">Related topics</h2>
 
-* <a href="{{ site.gdeurl }}architecture/arch_asmodsys.html">Magento as a modular system</a>
-* <a href="{{ site.gdeurl }}architecture/modules/mod_intro.html">Modules</a>
-* <a href="{{ site.gdeurl }}architecture/arch_libraries.html">Libraries</a>
-* <a href="{{ site.gdeurl }}architecture/arch_translations.html">Language packages</a>
+* <a href="{{page.baseurl}}architecture/arch_asmodsys.html">Magento as a modular system</a>
+* <a href="{{page.baseurl}}architecture/modules/mod_intro.html">Modules</a>
+* <a href="{{page.baseurl}}architecture/arch_libraries.html">Libraries</a>
+* <a href="{{page.baseurl}}architecture/arch_translations.html">Language packages</a>
 
 

@@ -6,6 +6,7 @@ title: SQLSTATE[HY000] [2002] No such file or directory
 menu_title: SQLSTATE[HY000] [2002] No such file or directory 
 menu_node: 
 menu_order: 400
+version: 2.0
 github_link: install-gde/trouble/php/tshoot_phpini.md
 ---
 
@@ -31,7 +32,7 @@ To determine whether or not you're using one instance of PHP:
 	
 	This determines the settings used by the PHP command-line interface (CLI). Note where `php.ini` is located.
 
-3.	If you haven't already done so, set up a <a href="{{ site.gdeurl }}install-gde/prereq/optional.html#install-optional-phpinfo">phpinfo.php</a> on your web server.
+3.	If you haven't already done so, set up a <a href="{{page.baseurl}}install-gde/prereq/optional.html#install-optional-phpinfo">phpinfo.php</a> on your web server.
 4.	Compare the value of **Loaded Configuration File** from `phpinfo.php` with the one from `php -i`. 
 
 	`phpinfo.php` shows the `php.ini` file used by your web server. If it's different from what's in PHP's `php.ini`, you must make *all* PHP settings consistent for both the PHP CLI and the web server.

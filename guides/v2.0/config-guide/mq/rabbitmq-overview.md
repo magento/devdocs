@@ -1,11 +1,12 @@
 ---
 layout: default
 group: config-guide
-subgroup: RabbitMQ
+subgroup: 15_RabbitMQ
 title: Message Queues
 menu_title:  Message Queues (Enterprise Edition only)
 menu_order: 1
 menu_node: parent
+version: 2.0
 github_link: config-guide/mq/rabbitmq-overview.md
 ---
 
@@ -29,8 +30,8 @@ The following diagram illustrates the Message Queue Framework.
 
 A basic message queue system can also be set up without using RabbitMQ. In this system, a MySQL adapter stores messages in the database. Three database tables (`queue`, `queue_message`, and `queue_message_status`) manage the message queue workload. Cron jobs ensure the consumers are able to receive messages. This solution is not very scalable. RabbitMQ should be used whenever possible.
 
-See <a href="{{ site.gdeurl }}config-guide/mq/config-mq.html">Configure message queues</a> for information about setting up the message queue system.
+See <a href="{{page.baseurl}}config-guide/mq/config-mq.html">Configure message queues</a> for information about setting up the message queue system.
 
 #### Related Topics
-*	<a href="{{ site.gdeurl }}config-guide/mq/config-mq.html">Configure message queues</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/install-rabbitmq.html">Install RabbitMQ</a>
+*	<a href="{{page.baseurl}}config-guide/mq/config-mq.html">Configure message queues</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/install-rabbitmq.html">Install RabbitMQ</a>

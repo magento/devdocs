@@ -5,6 +5,7 @@ subgroup:
 title: The pricing library
 menu_title: The pricing library
 menu_order: 
+version: 2.0
 github_link: architecture/behavior/pricing.md
 redirect_from: /guides/v1.0/architecture/behavior/pricing.html
 ---
@@ -100,7 +101,7 @@ Price type codes are discussed in <a href="#m2devgde-pricelib-def">Default price
 
 To specify what adjustments will be available for a product, add the corresponding adjustments to <code>AdjustmentPool</code> in the module's <code>di.xml</code>. An example of Catalog module price adjustments is shown in <a href="{{ site.mage2000url }}app/code/Magento/Catalog/etc/di.xml" target="_blank">di.xml</a>.
 
-[//]: # "Steve removed this topic that the link leads to for dev beta because it's incomplete: To learn more about dependency injection files structure, see <a href="{{ site.gdeurl }}extension-dev-guide/depend-inj.html">Dependency injection</a>."
+[//]: # "Steve removed this topic that the link leads to for dev beta because it's incomplete: To learn more about dependency injection files structure, see <a href="{{page.baseurl}}extension-dev-guide/depend-inj.html">Dependency injection</a>."
 
 
 <h2 id="m2devgde-pricelib-custom-price-render">Add price rendering to a layout</h2>
@@ -119,7 +120,7 @@ To configure price blocks displaying in layouts, you need to create a separate l
 
 The name of the layout handle is arbitrary. But if you want to use also default Magento layouts for pricing, name the handle (and so the layout file defining it)  `catalog_product_prices.xml`.
 
-To learn about locations of layouts in Magento application, see <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>.
+To learn about locations of layouts in Magento application, see <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>.
 
 For example, the Catalog module's <a href="{{ site.mage2000url }}app/code/Magento/Catalog/view/base/layout/catalog_product_prices.xml" target="_blank">catalog_product_prices.xml</a> defines the basis for a product entity, so its pricing layout handle defines default values: render classes, templates, price types and adjustments. These values can be overridden by settings for particular product types in the `catalog_product_prices.xml` layout handle of the corresponding module.
 

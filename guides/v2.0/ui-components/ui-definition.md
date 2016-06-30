@@ -5,6 +5,7 @@ subgroup: G_UI definition.xml
 title: definition.xml
 menu_title: definition.xml
 menu_node: parent
+version: 2.0
 github_link: ui-components/ui-definition.md
 redirect_from: /guides/v2.0/ui-library/ui-definition.html
 

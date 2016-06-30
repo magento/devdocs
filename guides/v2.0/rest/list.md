@@ -5,13 +5,14 @@ subgroup: A_rest
 title: List of REST APIs by module
 menu_title: List of REST APIs by module
 menu_order: 3
+version: 2.0
 github_link: rest/list.md
 redirect_from: /guides/v1.0/rest/list.html
 ---
 
 <h2 id="list">List of REST APIs</h2>
 
-Updated October 2, 2015. Additions since the last update are marked with asterisks (*).
+Updated March 31, 2016. Additions since the last update are marked with asterisks (*).
 
 <h3>Backend</h3>
 
@@ -63,7 +64,7 @@ Updated October 2, 2015. Additions since the last update are marked with asteris
     POST   /V1/products/attributes/:attributeCode/options
     DELETE /V1/products/attributes/:attributeCode/options/:optionId
     GET    /V1/products/media/types/:attributeSetName
-    * GET    /V1/products/:sku/media/:entryId
+    GET    /V1/products/:sku/media/:entryId
     POST   /V1/products/:sku/media
     PUT    /V1/products/:sku/media/:entryId
     DELETE /V1/products/:sku/media/:entryId
@@ -93,18 +94,23 @@ Updated October 2, 2015. Additions since the last update are marked with asteris
     POST   /V1/categories/:categoryId/products
     PUT    /V1/categories/:categoryId/products
     DELETE /V1/categories/:categoryId/products/:sku
+    * POST   /V1/products/:sku/websites
+    * PUT    /V1/products/:sku/websites
+    * DELETE /V1/products/:sku/websites/:websiteId
+
 
 <h3>CatalogInventory</h3>
 
     GET    /V1/stockItems/:productSku
-    * PUT    /V1/products/:productSku/stockItems/:itemId
+    PUT    /V1/products/:productSku/stockItems/:itemId
     GET    /V1/stockItems/lowStock/
     GET    /V1/stockStatuses/:productSku
 
 <h3>Checkout</h3>
 
-    POST   /V1/carts/:cartId/shipping-information
+    * POST   /V1/guest-carts/:cartId/shipping-information
     POST   /V1/carts/mine/shipping-information
+    POST   /V1/carts/:cartId/shipping-information
     POST   /V1/carts/:cartId/totals-information
     POST   /V1/guest-carts/:cartId/totals-information
     POST   /V1/carts/mine/totals-information
@@ -188,9 +194,9 @@ Updated October 2, 2015. Additions since the last update are marked with asteris
 
 <h3>Directory</h3>
 
-    * GET    /V1/directory/currency
-    * GET    /V1/directory/countries
-    * GET    /V1/directory/countries/:countryId
+    GET    /V1/directory/currency
+    GET    /V1/directory/countries
+    GET    /V1/directory/countries/:countryId
 
 <h3>Downloadable</h3>
 
@@ -234,36 +240,33 @@ Updated October 2, 2015. Additions since the last update are marked with asteris
 <h3>Quote</h3>
 
     GET    /V1/carts/:cartId
-    GET    /V1/carts
+    * GET    /V1/carts/search
     POST   /V1/carts/
     POST   /V1/customers/:customerId/carts
     PUT    /V1/carts/:cartId
     POST   /V1/carts/mine
     GET    /V1/carts/mine
+    * PUT    /V1/carts/mine
     PUT    /V1/carts/mine/order
     GET    /V1/guest-carts/:cartId
-    POST   /V1/guest-carts
-    PUT    /V1/guest-carts/:cartId
+    * POST   /V1/guest-carts
+    * PUT    /V1/guest-carts/:cartId
     PUT    /V1/guest-carts/:cartId/order
-    PUT    /V1/carts/:cartId/selected-shipping-method
-    GET    /V1/carts/:cartId/selected-shipping-method
     GET    /V1/carts/:cartId/shipping-methods
-    PUT    /V1/carts/mine/selected-shipping-method
-    GET    /V1/carts/mine/selected-shipping-method
+    POST   /V1/carts/:cartId/estimate-shipping-methods
+    POST   /V1/carts/:cartId/estimate-shipping-methods-by-address-id
     GET    /V1/carts/mine/shipping-methods
     POST   /V1/carts/mine/estimate-shipping-methods
     POST   /V1/carts/mine/estimate-shipping-methods-by-address-id
-    PUT    /V1/guest-carts/:cartId/selected-shipping-method
-    GET    /V1/guest-carts/:cartId/selected-shipping-method
     GET    /V1/guest-carts/:cartId/shipping-methods
     POST   /V1/guest-carts/:cartId/estimate-shipping-methods
     GET    /V1/carts/:cartId/items
-    POST   /V1/carts/items
-    PUT    /V1/carts/items/:itemId
+    POST   /V1/carts/:quoteId/items
+    PUT    /V1/carts/:cartId/items/:itemId
     DELETE /V1/carts/:cartId/items/:itemId
     GET    /V1/guest-carts/:cartId/items
-    POST   /V1/guest-carts/items
-    PUT    /V1/guest-carts/items/:itemId
+    POST   /V1/guest-carts/:cartId/items
+    PUT    /V1/guest-carts/:cartId/items/:itemId
     DELETE /V1/guest-carts/:cartId/items/:itemId
     GET    /V1/carts/mine/items
     POST   /V1/carts/mine/items
@@ -293,12 +296,6 @@ Updated October 2, 2015. Additions since the last update are marked with asteris
     GET    /V1/carts/mine/coupons
     PUT    /V1/carts/mine/coupons/:couponCode
     DELETE /V1/carts/mine/coupons
-    GET    /V1/carts/:cartId/shipping-address
-    POST   /V1/carts/:cartId/shipping-address
-    GET    /V1/guest-carts/:cartId/shipping-address
-    POST   /V1/guest-carts/:cartId/shipping-address
-    GET    /V1/carts/mine/shipping-address
-    POST   /V1/carts/mine/shipping-address
     PUT    /V1/carts/:cartId/order
     GET    /V1/carts/:cartId/totals
     PUT    /V1/guest-carts/:cartId/collect-totals
@@ -319,6 +316,8 @@ Updated October 2, 2015. Additions since the last update are marked with asteris
     GET    /V1/orders/:id/comments
     PUT    /V1/orders/create
     PUT    /V1/orders/:parent_id
+    * GET    /V1/orders/items/:id
+    * GET    /V1/orders/items
     GET    /V1/invoices/:id
     GET    /V1/invoices
     GET    /V1/invoices/:id/comments
@@ -349,19 +348,19 @@ Updated October 2, 2015. Additions since the last update are marked with asteris
 
 <h3>SalesRule</h3>
 
-    * GET    /V1/salesRules/:ruleId
-    * GET    /V1/salesRules/search
-    * POST   /V1/salesRules
-    * PUT    /V1/salesRules/:ruleId
-    * DELETE /V1/salesRules/:ruleId
-    * GET    /V1/coupons/:couponId
-    * GET    /V1/coupons/search
-    * POST   /V1/coupons
-    * PUT    /V1/coupons/:couponId
-    * DELETE /V1/coupons/:couponId
-    * POST   /V1/coupons/generate
-    * POST   /V1/coupons/deleteByIds
-    * POST   /V1/coupons/deleteByCodes
+    GET    /V1/salesRules/:ruleId
+    GET    /V1/salesRules/search
+    POST   /V1/salesRules
+    PUT    /V1/salesRules/:ruleId
+    DELETE /V1/salesRules/:ruleId
+    GET    /V1/coupons/:couponId
+    GET    /V1/coupons/search
+    POST   /V1/coupons
+    PUT    /V1/coupons/:couponId
+    DELETE /V1/coupons/:couponId
+    POST   /V1/coupons/generate
+    POST   /V1/coupons/deleteByIds
+    POST   /V1/coupons/deleteByCodes
 
 <h3>Search</h3>
 
@@ -369,10 +368,10 @@ Updated October 2, 2015. Additions since the last update are marked with asteris
 
 <h3>Store</h3>
 
-    * GET    /V1/store/storeViews
-    * GET    /V1/store/storeGroups
-    * GET    /V1/store/websites
-    * GET    /V1/store/storeConfigs
+    GET    /V1/store/storeViews
+    GET    /V1/store/storeGroups
+    GET    /V1/store/websites
+    GET    /V1/store/storeConfigs
 
 <h3>Tax</h3>
 
@@ -391,4 +390,3 @@ Updated October 2, 2015. Additions since the last update are marked with asteris
     PUT    /V1/taxClasses/:classId
     DELETE /V1/taxClasses/:taxClassId
     GET    /V1/taxClasses/search
-

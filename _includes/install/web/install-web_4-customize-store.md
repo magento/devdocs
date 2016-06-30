@@ -5,7 +5,7 @@
 <!-- 1.	To install optional sample data, select the **Use Sample Data** check box.
 
 	<div class="bs-callout bs-callout-info" id="info">
-  	<p>If the <strong>Use Sample Data</strong> check box is not available, see <a href="{{ site.gdeurl }}install-gde/install/sample-data.html">Enable optional Magento sample data</a>.</p>
+  	<p>If the <strong>Use Sample Data</strong> check box is not available, see <a href="{{page.baseurl}}install-gde/install/sample-data.html">Enable optional Magento sample data</a>.</p>
 	</div> -->
 
 1.	From the **Store Default Time Zone** list, click the name of your store's time zone.
@@ -16,7 +16,7 @@
 
 3.	Expand **Advanced Modules Configuration** to optionally enable or disable modules before you install the Magento software.
 
-	Before you enable or disable modules, review the information discussed in <a href="{{ site.gdeurl }}install-gde/install/web/install-web.html#instgde-install-web-enable-mod">Enabling and disabling modules</a>.
+	Before you enable or disable modules, review the information discussed in <a href="{{page.baseurl}}install-gde/install/web/install-web.html#instgde-install-web-enable-mod">Enabling and disabling modules</a>.
 
 	See one of the following sections for more information about enabling and disabling modules:
 
@@ -55,7 +55,7 @@ Click **Show details** to display details about the dependency error. You can th
 *	Resolve the issue by taking the action indicated by the message.
 		
 <div class="bs-callout bs-callout-warning">
-	<p>Use <strong>Skip dependency check for individual modules</strong> with caution. We recommend against it because a typical reason for this error is you manually edited the <a href="{{ site.gdeurl }}config-guide/config/config-php.html">deployment configuration</a>. Editing the deployment configuration is not recommended because future Magento software updates can undo your changes.</p>
+	<p>Use <strong>Skip dependency check for individual modules</strong> with caution. We recommend against it because a typical reason for this error is you manually edited the <a href="{{page.baseurl}}config-guide/config/config-php.html">deployment configuration</a>. Editing the deployment configuration is not recommended because future Magento software updates can undo your changes.</p>
 </div>
 
 

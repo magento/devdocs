@@ -6,6 +6,7 @@ title: JavaScript
 menu_title: JavaScript
 menu_order: 1
 menu_node: parent
+version: 2.0
 github_link: javascript-dev-guide/javascript/js_overview.md
 redirect_from:
   - guides/v2.0/frontend-dev-guide/javascript/js_overview.html
@@ -14,18 +15,18 @@ redirect_from:
 
 By default, the Magento application uses the <a href="http://requirejs.org/" target="_blank">RequireJS file and module loader</a> to optimize the time of loading pages with included JavaScript files, and to manage dependencies of JavaScript resources.
 
-You can follow the same approach when customizing Magento JavaScript, or <a href="{{site.gdeurl}}frontend-dev-guide/javascript/custom_js.html#disable_default_js" target="_blank">disable all the default scripts and their load by RequireJS</a>.
+You can follow the same approach when customizing Magento JavaScript, or <a href="{{page.baseurl}}frontend-dev-guide/javascript/custom_js.html#disable_default_js" target="_blank">disable all the default scripts and their load by RequireJS</a>.
 
-For information about how JS resources are located and configured, see <a href="{{site.gdeurl}}javascript-dev-guide/javascript/js-resources.html">Configure JavaScript</a>
+For information about how JS resources are located and configured, see <a href="{{page.baseurl}}javascript-dev-guide/javascript/js-resources.html">Configure JavaScript</a>
 
 <h2 id="#js_contents">What's in this chapter</h2>
 Topics of this chapter describe the following:
 
-- [JavaScript initialization]({{site.gdeurl}}frontend-dev-guide/javascript/js_init.html): how to initialize JavaScript components and widgets in JavaScript files and `.phtml` templates
-- [Use custom JavaScript]({{site.gdeurl}}frontend-dev-guide/javascript/custom_js.html): how to extend or replace default JavaScript components/widgets.
-- [Locate JavaScript]({{site.gdeurl}}frontend-dev-guide/javascript/js_debug.html) components: how to define which components (scripts) are used on a particular store page.
-- [Magento jQuery widgets]({{site.gdeurl}}frontend-dev-guide/javascript/jquery-widgets-about.html): Magento jQuery widget API documentation.
-- [Customizing JavaScript illustration]({{site.gdeurl}}frontend-dev-guide/javascript/js_practice.html): practical illustration of custom widgets related tasks.
+- [JavaScript initialization]({{page.baseurl}}frontend-dev-guide/javascript/js_init.html): how to initialize JavaScript components and widgets in JavaScript files and `.phtml` templates
+- [Use custom JavaScript]({{page.baseurl}}frontend-dev-guide/javascript/custom_js.html): how to extend or replace default JavaScript components/widgets.
+- [Locate JavaScript]({{page.baseurl}}frontend-dev-guide/javascript/js_debug.html) components: how to define which components (scripts) are used on a particular store page.
+- [Magento jQuery widgets]({{page.baseurl}}frontend-dev-guide/javascript/jquery-widgets-about.html): Magento jQuery widget API documentation.
+- [Customizing JavaScript illustration]({{page.baseurl}}frontend-dev-guide/javascript/js_practice.html): practical illustration of custom widgets related tasks.
 
 
 

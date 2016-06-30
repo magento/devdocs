@@ -6,6 +6,7 @@ title: Inline Edit Component
 menu_title: Inline Edit Component
 menu_node:
 menu_order: 8
+version: 2.0
 github_link: ui-components/ui-secondary-inline.md
 redirect_from: /guides/v2.0/ui-library/ui-secondary-inline.html
 
@@ -22,7 +23,7 @@ The Listing component can use the Inline Edit if it is configured and enabled.
 
 ####Implementation of Inline Edit
 
-Currently Inline Edit is not presented in definition.xml. It is used as a plugin for the Listing component. It can be configured in <a href="{{ site.gdeurl }}ui-library/ui-definition.html">definitions.xml</a> if necessary.
+Currently Inline Edit is not presented in definition.xml. It is used as a plugin for the Listing component. It can be configured in <a href="{{page.baseurl}}ui-library/ui-definition.html">definitions.xml</a> if necessary.
 
 To enable Inline Edit component for the grid, it is declared as a plugin for Listing component:
 
@@ -64,7 +65,7 @@ The configuration of the component can include:
 
     {% highlight XML%}
     <item name="clientConfig" xsi:type="array">
-        <item name="saveUrl" xsi:type="string">cms/page/inlineEdit</item>
+        <item name="saveUrl" xsi:type="url" path="cms/page/inlineEdit" />
         <item name="validateUrl" xsi:type="string">/path/to</item>
         <item name="validateBeforeSave" xsi:type="boolean">false</item>
     </item>

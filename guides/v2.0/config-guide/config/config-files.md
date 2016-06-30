@@ -1,10 +1,11 @@
 ---
 layout: default
 group: config-guide
-subgroup: Magento configuration files
+subgroup: 07_conf
 title: Module configuration files
 menu_title: Module configuration files
 menu_order: 5
+version: 2.0
 github_link: config-guide/config/config-files.md
 redirect_from: /guides/v1.0/config-guide/config/config-files.html
 ---
@@ -31,7 +32,7 @@ Following are common terms used in this topic:
 	<dt>Configuration stage</dt>
 	<dd>Stages are defined as <em>primary</em>, <em>global</em>, and <em>area</em>. Each stage determines when configuration type is loaded and merged with same-named configuration types. (For example, <code>module.xml</code> files are merged with other <code>module.xml</code> files.) For more information, see <a href="#config-files-loadmerge">Configuration load and merge</a>.</dd>
 	<dt>Configuration scope</dt>
-	<dd>Complementary to a configuration stages, a scope defines the configuration type model. For example, <code>adminhtml</code> is an area scope that is loaded with at the stage with other modules' <code>adminhtml</code> configurations. For more information, see <a href="{{ site.gdeurl }}architecture/modules/mod_and_areas.html">Modules and areas</a>.</dd>
+	<dd>Complementary to a configuration stages, a scope defines the configuration type model. For example, <code>adminhtml</code> is an area scope that is loaded with at the stage with other modules' <code>adminhtml</code> configurations. For more information, see <a href="{{page.baseurl}}architecture/modules/mod_and_areas.html">Modules and areas</a>.</dd>
 </dl>
 
 <h2 id="config-files-loadmerge">Configuration load and merge</h2>
@@ -78,7 +79,7 @@ The following table shows each configuration type and the Magento configuration 
 		</tr>
 		<tr>
 			<td><code>config.php</code> and <code>env.php</code></td>
-			<td><a href="{{ site.gdeurl }}config-guide/config/config-php.html">Deployment configuration</a></td>
+			<td><a href="{{page.baseurl}}config-guide/config/config-php.html">Deployment configuration</a></td>
 			<td>Loads into memory when Magento initializes</td>
 			<td>Has no object, cannot be customized</td>
 		</tr>
@@ -90,7 +91,7 @@ The following table shows each configuration type and the Magento configuration 
 		</tr>
 		<tr>
 			<td><code>di.xml</code></td>
-			<td><a href="{{ site.gdeurl }}extension-dev-guide/depend-inj.html">Dependency injection</a> configuration</td>
+			<td><a href="{{page.baseurl}}extension-dev-guide/depend-inj.html">Dependency injection</a> configuration</td>
 			<td>primary, global, area</td>
 			<td><a href=" {{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/Config/Config.php" target="_blank">\Magento\Framework\ObjectManager\Config</a></td>
 		</tr>
@@ -107,7 +108,7 @@ The following table shows each configuration type and the Magento configuration 
 		</tr> -->
 		<tr>
 			<td><code>routes.xml</code></td>
-			<td><a href="{{ site.gdeurl }}extension-dev-guide/routing.html">Route</a> configuration</td>
+			<td><a href="{{page.baseurl}}extension-dev-guide/routing.html">Route</a> configuration</td>
 			<td>area</td>
 			<td><a href=" {{ site.mage2000url }}lib/internal/Magento/Framework/App/Route/Config.php" target="_blank">Magento\Framework\App\Route\Config</a></td>
 		</tr>
@@ -132,5 +133,5 @@ You can interact with configuration files using interfaces under <a href="{{ sit
 
 #### Related topics
 
- *  <a href="{{ site.gdeurl }}config-guide/config/config-create.html">Create or extend configuration types</a>
- *  <a href="{{ site.gdeurl }}config-guide/config/config-php.html">Magento's deployment configuration</a>
+ *  <a href="{{page.baseurl}}config-guide/config/config-create.html">Create or extend configuration types</a>
+ *  <a href="{{page.baseurl}}config-guide/config/config-php.html">Magento's deployment configuration</a>

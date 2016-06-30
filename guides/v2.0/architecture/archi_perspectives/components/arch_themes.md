@@ -5,6 +5,7 @@ subgroup: Components
 title: Magento Themes 
 menu_title: Themes 
 menu_order: 8
+version: 2.0
 github_link: architecture/components/arch_themes.md
 redirect_from: /guides/v1.0/architecture/arch_perspective/themes_intro.html
 ---
@@ -18,9 +19,9 @@ A <i>theme</i> is a core Magento component whose primary purpose is to control t
 Themes within a Magento installation relate to each other through <i>inheritance</i>, allowing you to customize an existing theme by defining it as a parent theme whose settings can be inherited by any designated child themes. Themes are also divided by area, allowing you to define themes that customize either the storefront or Magento Admin.
 
 
-Magento 2.0 themes are also characterized by responsive web design. For more information on responsive design, see <a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/rwd_overview.html">Overview of responsive web design in Magento</a>.
+Magento 2.0 themes are also characterized by responsive web design. For more information on responsive design, see <a href="{{page.baseurl}}frontend-dev-guide/responsive-web-design/rwd_overview.html">Overview of responsive web design in Magento</a>.
 
-For detailed information about working with themes, refer to  <a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-general.html">Themes</a> in the Frontend Developers Guide.
+For detailed information about working with themes, refer to  <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-general.html">Themes</a> in the Frontend Developers Guide.
 
 <h3>Theme location</h3>
  The location of a theme in your Magento installation depends upon how you installed your theme. Magento knows to look in both `vendor` and  `app/design` for themes. In Magento 2.0, each module and theme contain a `registration.php` file, which defines location information. 
@@ -51,10 +52,10 @@ The standard Magento installation provides two default themes: Luma theme (demon
 
 <h2 id="m2arch-related">Related topics</h2>
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/components/modules/mod_intro.html">Modules</a>
+<a href="{{page.baseurl}}architecture/archi_perspectives/components/modules/mod_intro.html">Modules</a>
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/components/arch_libraries.html">Libraries</a>
+<a href="{{page.baseurl}}architecture/archi_perspectives/components/arch_libraries.html">Libraries</a>
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/components/arch_translations.html">Language packages</a>
+<a href="{{page.baseurl}}architecture/archi_perspectives/components/arch_translations.html">Language packages</a>
 
-<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-structure.html">Magento theme structure</a>
+<a href="{{page.baseurl}}frontend-dev-guide/themes/theme-structure.html">Magento theme structure</a>

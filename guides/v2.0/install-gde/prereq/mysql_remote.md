@@ -4,7 +4,8 @@ group: install_pre
 subgroup: Prerequisites
 title: Set up a remote MySQL database connection
 menu_title: Set up a remote MySQL database connection
-menu_order: 20
+menu_order: 175
+version: 2.0
 github_link: install-gde/prereq/mysql_remote.md
 ---
 
@@ -26,8 +27,8 @@ This topic discusses how to set up a connection from your Magento web node to a 
 ### Prerequisites
 Before you begin, you must:
 
-*	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">Install MySQL server</a> on the database server 
-*	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html#instgde-prereq-mysql-config">Create a database instance</a> on the database server
+*	<a href="{{page.baseurl}}install-gde/prereq/mysql.html">Install MySQL server</a> on the database server 
+*	<a href="{{page.baseurl}}install-gde/prereq/mysql.html#instgde-prereq-mysql-config">Create a database instance</a> on the database server
 *	Install the MySQL client on your Magento web node. Consult MySQL documentation for details.
 
 ### High availability
@@ -131,9 +132,9 @@ When you install the Magento software using either the command line or Setup Wiz
 
 #### Related topics
 
-*	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Installing optional software</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Apache</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP 5.5 or 5.4&mdash;CentOS</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">Configuring security options</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Ways to install the Magento software</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/optional.html">Installing optional software</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/apache.html">Apache</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 5.5 or 5.4&mdash;CentOS</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/security.html">Configuring security options</a>
+*	<a href="{{page.baseurl}}install-gde/install/pre-install.html">Ways to install the Magento software</a>

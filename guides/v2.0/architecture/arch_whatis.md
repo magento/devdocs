@@ -6,6 +6,7 @@ title: What is Magento?
 menu_title: Introduction
 menu_node: parent
 menu_order: 1
+version: 2.0
 github_link: architecture/arch_whatis.md
 redirect_from: /guides/v1.0/architecture/arch_whatis.html
 ---
@@ -55,13 +56,13 @@ Extend and customize the core components of your Magento store's PHP-, HTML5- an
 The Magento tech stack supplies a robust toolset for deploying large, distributed storefronts and for customizing the product for your particular needs. The Magento stack includes popular open-source technologies such as the Linux OS, Apache/Nginx server, MySQL, Zend, and Composer.
 
 
-For a comprehensive description of the Magento technology stack, see <a href="{{ site.gdeurl }}architecture/tech-stack.html">Magento Technology Stack</a>. 
+For a comprehensive description of the Magento technology stack, see <a href="{{page.baseurl}}architecture/tech-stack.html">Magento Technology Stack</a>. 
 
 
 
 <div class="bs-callout bs-callout-info" id="info">
 
-  <p>For more information about designing and extending the Magento components, refer to the <a href="{{ site.gdeurl }}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a>.</p>
+  <p>For more information about designing and extending the Magento components, refer to the <a href="{{page.baseurl}}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a>.</p>
 
 </div>
 

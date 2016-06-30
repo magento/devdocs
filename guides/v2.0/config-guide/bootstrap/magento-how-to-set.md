@@ -1,11 +1,12 @@
 ---
 layout: default
 group: config-guide
-subgroup: Bootstrap
+subgroup: 03_Bootstrap
 title: Set the value of bootstrap parameters
 menu_title: Set the value of bootstrap parameters
 menu_order: 2
 menu_node: 
+version: 2.0
 github_link: config-guide/bootstrap/magento-how-to-set.md
 redirect_from: /guides/v1.0/config-guide/bootstrap/magento-how-to-set.html
 ---
@@ -16,7 +17,7 @@ redirect_from: /guides/v1.0/config-guide/bootstrap/magento-how-to-set.html
 *	<a href="#mode-specify-web">Specifying a parameter value using your web server environment</a>
 
 <h2 id="config-bootparam-overview">Overview of setting bootstrap parameter values</h2>
-This topic discusses how to set the values of Magento application bootstrap parameters. <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-bootstrap.html">More information about Magento application bootstrapping</a>.
+This topic discusses how to set the values of Magento application bootstrap parameters. <a href="{{page.baseurl}}config-guide/bootstrap/magento-bootstrap.html">More information about Magento application bootstrapping</a>.
 
 The following table discusses the bootstrap parameters you can set:
 
@@ -29,12 +30,12 @@ The following table discusses the bootstrap parameters you can set:
 			<th>Description</th>
 		</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/bootstrap/mage-dirs.html">MAGE_DIRS</a></td>
+		<td><a href="{{page.baseurl}}config-guide/bootstrap/mage-dirs.html">MAGE_DIRS</a></td>
 		<td>Specifies custom directory and URL paths</td>
 	</tr>	
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/bootstrap/mage-profiler.html">MAGE_PROFILER</a></td>
-		<td>Enables an HTML profiler</td>
+		<td><a href="{{page.baseurl}}config-guide/bootstrap/mage-profiler.html">MAGE_PROFILER</a></td>
+		<td>Enables dependency graphs and HTML profiling</td>
 	</tr>
 
 	
@@ -44,7 +45,7 @@ The following table discusses the bootstrap parameters you can set:
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <ul><li>Not all bootstrap parameters are documented at this time.</li>
-  	<li>You now set the Magento mode (developer, default, production) using the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html">magento application</a> command.</li></ul></span>
+  	<li>You now set the Magento mode (developer, default, production) using the <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html"><code>magento deploy:mode:set {mode}</code></a> command.</li></ul></span>
 </div>
 
 <h2 id="mode-specify-var">Specifying a parameter value using an environment variable</h2>
@@ -62,6 +63,11 @@ Set the variable using a shell-specific command. Because shells have differing s
 bash shell example for CentOS:
 
 	export MAGE_PROFILER=firebug
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>If a <code>PHP Fatal error</code> displays in the browser after you set a profiler value, restart your web server. The reason might be related to PHP bytecode caching, which caches bytecodes and PHP classpaths.</p></span>
+</div>
 
 <h2 id="mode-specify-web">Specifying a parameter value</h2>
 This section discusses how to specify the mode for either Apache or nginx.
@@ -87,7 +93,7 @@ To set a variable:
 
 1.	Open any of the preceding files in a text editor and either add or uncomment the desired setting.
 
-	For example, to specify a <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html">mode</a>, uncomment the following:
+	For example, to specify a <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html">mode</a>, uncomment the following:
 
 		#   SetEnv MAGE_PROFILER firebug
 
@@ -140,7 +146,8 @@ To set a Magento bootstrap variable using your web server's environment:
 
 5.	Restart the web server:
 
-		service apache2 restart
+	*	Ubuntu: `service apache2 restart`
+	*	CentOS: `service httpd restart`
 
 <h4 id="mode-specify-centos">Specify a bootstrap variable for Apache on CentOS</h4>
 This section assumes you've already set up your virtual host. If you have not, consult a resource such as <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-centos-6" target="_blank">this digitalocean tutorial</a>.
@@ -166,6 +173,6 @@ After setting the mode, restart the web server:
 
 #### Related topics
 
-*	<a href="{{ site.gdeurl }}config-guide/bootstrap/mage-dirs.html">Customize base directory paths (MAGE_DIRS)</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>
-*	<a href="{{ site.gdeurl }}config-guide/bootstrap/mage-profiler.html">Enable an HTML profiler (MAGE_PROFILER)</a>
+*	<a href="{{page.baseurl}}config-guide/bootstrap/mage-dirs.html">Customize base directory paths (MAGE_DIRS)</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>
+*	<a href="{{page.baseurl}}config-guide/bootstrap/mage-profiler.html">Enable an dependency graphs and built-in profiler (MAGE_PROFILER)</a>

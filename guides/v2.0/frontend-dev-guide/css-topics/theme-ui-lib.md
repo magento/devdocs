@@ -4,6 +4,7 @@ group: fedg
 subgroup: D_CSS
 title: Magento UI library
 menu_order: 4
+version: 2.0
 github_link: frontend-dev-guide/css-topics/theme-ui-lib.md
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/theme-ui-lib.html
 ---
@@ -93,7 +94,7 @@ The following illustration shows a storefront product page containing some of th
 
 ## Predefined variables {#fedg_using-ui-lib_predef-vars}
 
-If your theme <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from any Magento out-of-the-box theme, for example Blank, you can easily customize any element of a store page without changing any CSS code or templates. Customization can be performed by simply changing in your theme the values of the predefined variables used in the UI library or parent theme mixins.
+If your theme <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from any Magento out-of-the-box theme, for example Blank, you can easily customize any element of a store page without changing any CSS code or templates. Customization can be performed by simply changing in your theme the values of the predefined variables used in the UI library or parent theme mixins.
 
 The complete list of these variables and their default values are stored in <a href="{{site.mage2000url}}lib/web/css/source/lib/variables" target="_blank"><code>lib/web/css/source/lib/variables</code></a>. This directory contains a set of files, corresponding to the set of UI library elements, and each of the files lists element-specific variables. For example, <a href="{{site.mage2000url}}lib/web/css/source/lib/variables/_breadcrumbs.less" target="_blank"><code>lib/web/css/source/lib/variables/_breadcrumbs.less</code></a> contains variables used in the `breadcrumbs()` mixin.
 
@@ -109,7 +110,7 @@ The following figure shows the product page shown earlier in this topic, after a
 
 ## Your custom variables {#fedg_using-ui-lib_vars}
 
-When naming custom variables, please follow the [Magento naming convention for the LESS variables]({{site.gdeurl}}coding-standards/code-standard-less.html#naming).
+When naming custom variables, please follow the [Magento naming convention for the LESS variables]({{page.baseurl}}coding-standards/code-standard-less.html#naming).
 
 ## Using mixins {#fedg_using-ui-lib_customize}
 

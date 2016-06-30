@@ -1,10 +1,11 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 6_Module Development
+subgroup: 99_Module Development
 title: Service contract design patterns
 menu_title: Service contract design patterns
 menu_order: 4
+version: 2.0
 github_link: extension-dev-guide/service-contracts/design-patterns.md
 redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-patterns.html
 ---
@@ -38,15 +39,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-pattern
    <code>CustomerSearchResultsInterface</code> returns an array of <code>CustomerInterface</code> data entities.
    In <code>GroupSearchResultsInterface</code>, the<code>getItems()</code> function returns an array of <code>GroupInterface</code> data entities.
 </p>
-<!--
-<h3 id="validation-rules">Validation rules</h3>
-<p class="q">Reviewer: What are patterns for validation rules interfaces?</p>
-<h3 id="validation-results">Validation results</h3>
-<p class="q">Reviewer: What are patterns for validation results interfaces?</p>
-<h3 id="attribute-metadata">Attribute metadata</h3>
-<p>Metadata interfaces provide information about what attributes are defined for an entity. This includes custom attributes.</p>
-<p class="q">Reviewer: What are patterns for attribute metadata interfaces?</p>
- -->
+
 <h2 id="service-interfaces">Service interfaces</h2>
 <p>Service interfaces include several interface subtypes:</p>
 <ul>
@@ -54,7 +47,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-pattern
    <li>Management interfaces</li>
    <li>Metadata interfaces</li>
 </ul>
-<p>For file names and coding standards, follow the defined <a href="{{ site.gdeurl }}coding-standards/code-standard-php.html">PHP coding standards</a>.</p>
+<p>For file names and coding standards, follow the defined <a href="{{page.baseurl}}coding-standards/code-standard-php.html">PHP coding standards</a>.</p>
 <p>Place service interfaces in the top-level <b>Api</b> directory for a module.</p>
 <h3 id="repository-interfaces">Repository interfaces</h3>
 <p>Repository interfaces provide access to persistent data entities.</p>
@@ -141,14 +134,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-pattern
 </table>
 <h3 id="related-topics">Related topics</h3>
 <ul>
-   <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
-   <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a>
+   <li><a href="{{page.baseurl}}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
+   <li><a href="{{page.baseurl}}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a>
    </li>
 </ul>
-
-
-
-
-
-
-

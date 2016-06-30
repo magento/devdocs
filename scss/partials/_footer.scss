@@ -17,22 +17,27 @@
 }
 #f-col-1 {
    float: left;
-   width: 14.2857%;
+   width: 22%;
 }
 #f-col-2 {
    float: left;
-   margin-left: 2.85714%;
-   width: 22.8571%;
+   margin-left: 2%;
+   width: 50%;
+}
+#f-col-2-1 {
+  float: left;
+  margin-left: 0;
+  width: 47%;
+}
+#f-col-2-2 {
+  float: left;
+  margin-left: 6%;
+  width: 47%;
 }
 #f-col-3 {
    float: left;
-   margin-left: 2.85714%;
-   width: 31.4286%;
-}
-#f-col-4 {
-   float: right;
-   margin-left: 2.85714%;
-   width: 22.8571%;
+   margin-left: 2%;
+   width: 24%;
 }
 #footer-wrap ul{
    padding: 0;
@@ -45,6 +50,20 @@
 }
 #footer-wrap a {
    text-decoration: none;
+}
+#footer-wrap .btn.copper {
+   border-radius: 3px;
+   border: none;
+   transition-duration: 0.7s;
+   -webkit-transition: 0.7s;
+   -moz-transition: 0.7s;
+   transition: 0.7s;
+   min-width: 200px;
+   text-shadow: none;
+   padding: 13px 20px;
+}
+#footer-wrap .btn.copper:hover {
+  color: #fff;
 }
 #footer-wrap {
    width: 100%;
@@ -170,8 +189,9 @@
 }
 #footer-wrap .footer #magento-com .contact-us p,
 #footer-wrap .footer #magento-com #newsletter p {
-   line-height: 24px;
-   font-size: 12px;
+   font-size: 13px;
+   line-height: 20px;
+   padding: 8px 0;
 }
 #footer-wrap .footer #magento-com .contact-us h4,
 #footer-wrap .footer #magento-com #newsletter h4 {
@@ -179,7 +199,6 @@
 }
 #footer-wrap .footer #magento-com .contact-us .outline,
 #footer-wrap .footer #magento-com #newsletter .outline {
-   background: none repeat scroll 0 0 #31302b;
    letter-spacing: 0;
    padding: 0 14px;
    text-transform: uppercase;
@@ -197,6 +216,7 @@
    box-shadow: inset 0 0 0 0 #ffffff;
    height: 42px;
    cursor: pointer;
+   text-shadow: none;
 }
 #footer-wrap .footer #magento-com .contact-us .outline:hover,
 #footer-wrap .footer #magento-com #newsletter .outline:hover {
@@ -214,8 +234,7 @@
 }
 #footer-wrap .footer #magento-com #newsletter .sb-email {
    position: relative;
-   width: 0;
-   min-width: 86px;
+   width: 100%;
    height: 42px;
    float: left;
    overflow: hidden;
@@ -225,22 +244,22 @@
    -webkit-backface-visibility: hidden;
 }
 #footer-wrap .footer #magento-com #newsletter .sb-email .sb-email-input {
-   position: absolute;
+   position: relative;
    top: 0;
    right: 0;
    border: none;
    outline: none;
    background: #ffffff;
-   width: 100%;
+   width: 55%;
    height: 42px;
    margin-right: 10px;
    z-index: 10;
    padding-left: 10px;
-   font: 700 14px/36px 'Open Sans', sans-serif;
-   text-transform: uppercase;
+   font: 13px/36px 'Open Sans', sans-serif;
+   text-transform: none;
    color: #676056;
-   border-radius: 0;
-   visibility: hidden;
+   max-width: 200px;
+   border-radius: 2px;
 }
 #footer-wrap .footer #magento-com #newsletter .sb-email.sb-email.sb-email-open .sb-email-input {
    visibility: visible;
@@ -336,15 +355,18 @@
    top: 53px;
    font-weight: bold;
 }
+#footer-wrap .footer #magento-com .nav {
+   margin: 20px 0 0;
+}
 #footer-wrap .footer #magento-com .nav a {
-   font: 700 14px/24px 'Open Sans', sans-serif;
+   font: 13px/28px 'Open Sans', sans-serif;
    letter-spacing: 1px;
-   color: #cac3b4;
-   text-transform: uppercase;
+   color: #ffffff;
+   text-transform: capitalize;
 }
 #footer-wrap .footer #magento-com .nav a:hover {
    background: none;
-   color: #ffffff;
+   color: #cac3b4;
    transition-duration: 0.1s;
    -webkit-transition: 0.1s;
 }
@@ -368,11 +390,11 @@
    overflow: hidden;
 }
 #footer-wrap .footer #social-network ul li {
-   float: left;
+   display: inline-block;
    margin: 0 0 0 10px;
    list-style: none;
 }
-#social-network ul li:first-child {
+#footer-wrap .footer #social-network ul li:first-child {
    margin: 0;
 }
 #social-network ul li a {
@@ -411,27 +433,32 @@
    background-position: 0 -30px;
 }
 #copyright {
-   font: 13px/13px 'Open Sans', sans-serif;
-   text-transform: uppercase;
-   color: #989287;
+   font: 13px/26px 'Open Sans', sans-serif;
+   text-transform: capitalize;
+   color: #7b756b;
    border-top: 1px solid #5a5955;
    padding: 30px 0;
    overflow: hidden;
+}
+#copyright .copyright-date {
+   float: left;
 }
 #copyright .nav {
    margin: 0;
    padding: 0;
 }
 #copyright li {
-   float: left;
+   display: inline-block;
    margin: 0 0 0 20px;
    line-height: 12px;
 }
 #copyright a {
-   color: #cac3b4;
-   font-size: 12px;
+   color: #fff;
+   font-size: 13px;
+   line-height: 26px;
 }
 #copyright a:hover {
-   text-decoration: underline;
+   color: #cac3b4;
+   text-decoration: none;
    background: none;
 }

@@ -1,10 +1,11 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: D_Entities
-title: Entities of the Magento Testing Framework
+subgroup: 50_Entities
+title: Entities of the Functional Testing Framework
 menu_title: Data set
 menu_order: 8
+version: 2.0
 github_link: mtf/mtf_entities/mtf_dataset.md
 ---
 
@@ -151,7 +152,7 @@ The `CreateSimpleProductEntityTestVariation1` variation contains the following `
 <tr><th>Fixture field</th><th>Description</th></tr>
 <tr>
 <td><code>url_key</code> </td>
-<td>field is assigned with <code>simple-product-%isolation%</code>. <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_fixture-repo.html#mtf_repo_isolation">More info about <code>%isolation%</code></a>.</td>
+<td>field is assigned with <code>simple-product-%isolation%</code>. <a href="{{page.baseurl}}mtf/mtf_entities/mtf_fixture-repo.html#mtf_repo_isolation">More info about <code>%isolation%</code></a>.</td>
 </tr>
 <tr>
 <td><code>name</code></td><td>field is assigned with <code>Simple Product %isolation%</code></td>
@@ -163,8 +164,8 @@ The `CreateSimpleProductEntityTestVariation1` variation contains the following `
 <td><code>price</code></td>
 <td>
 <ul>
-<li> <code>product/data/price/value</code> is processed by a <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">data source</a> <code>Magento\Catalog\Test\Fixture\Product\Price</code> and is assigned <code>10000</code></li>
-<li><code>product/data/price/dataset</code> is assigned with a data set <code>drop_down_with_one_option_fixed_price</code> from the <code>Magento\Catalog\Test\Repository\CatalogProductSimple\Price</code> repository. This data set is used by a <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_constraint.html">constraint</a>.</li>
+<li> <code>product/data/price/value</code> is processed by a <a href="{{page.baseurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">data source</a> <code>Magento\Catalog\Test\Fixture\Product\Price</code> and is assigned <code>10000</code></li>
+<li><code>product/data/price/dataset</code> is assigned with a data set <code>drop_down_with_one_option_fixed_price</code> from the <code>Magento\Catalog\Test\Repository\CatalogProductSimple\Price</code> repository. This data set is used by a <a href="{{page.baseurl}}mtf/mtf_entities/mtf_constraint.html">constraint</a>.</li>
 </ul>
 </td>
 </tr>
@@ -315,9 +316,9 @@ The `checkout_data` doesn't contain source and is assigned with values from the 
 
 ## Merge data sets {#merge}
 
-The MTF enables you to merge data sets from different modules. For example, if you create a new module that adds a menu option to an existing module, the MTF allows you to merge the new data with the existing data sets. As a result, you don't have to edit the existing module to include the new information, and your tests continue to work. If you decide to later remove the same new module, you don't need to clean the data sets in other modules.
+The FTF enables you to merge data sets from different modules. For example, if you create a new module that adds a menu option to an existing module, the FTF allows you to merge the new data with the existing data sets. As a result, you don't have to edit the existing module to include the new information, and your tests continue to work. If you decide to later remove the same new module, you don't need to clean the data sets in other modules.
    
-There are two options to merge data sets in the MTF:
+There are two options to merge data sets in the FTF:
  
 - add a new variation
 - extend an existing variation
@@ -380,7 +381,7 @@ For example, see how in `Magento/Catalog/Test/TestCase/Product/ValidateOrderOfPr
   
 ### Replace a variation {#replace_variation}
 
-You can replace one variation with another by using a `replace` attribute of the `variation` node:
+You can replace one variation with another by using a `replace` attribute of the `variation` node. A `replace` attribute contains variation that must be replaced by a variation from a `name` attribute. 
 
 {%highlight xml%}
 
@@ -388,19 +389,19 @@ You can replace one variation with another by using a `replace` attribute of the
 
 {%endhighlight xml%}
 
-After a merge of a data set with the variation that is mentioned, a test will use `CreateSuperNewCustomerBackendEntityTestVariation1` instead of `CreateSuperNewCustomerBackendEntityTestVariation1`.
+After a merge of a data set with the variation that is mentioned, a test will use `CreateSuperNewCustomerBackendEntityTestVariation1` instead of `CreateCustomerBackendEntityTestVariation1`.
 
 <!-- LINK DEFINITIONS -->
 
-[constraints]: {{site.gdeurl}}mtf/mtf_entities/mtf_constraint.html
-[constraint]: {{site.gdeurl}}mtf/mtf_entities/mtf_constraint.html
-[fixture]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html
-[data source]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source
+[constraints]: {{page.baseurl}}mtf/mtf_entities/mtf_constraint.html
+[constraint]: {{page.baseurl}}mtf/mtf_entities/mtf_constraint.html
+[fixture]: {{page.baseurl}}mtf/mtf_entities/mtf_fixture.html
+[data source]: {{page.baseurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source
 [InjectableFixture]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php
-[repository]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture-repo.html
-[test case]: {{site.gdeurl}}mtf/mtf_entities/mtf_testcase.html
-[fixture field from its repository]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_repositoy
+[repository]: {{page.baseurl}}mtf/mtf_entities/mtf_fixture-repo.html
+[test case]: {{page.baseurl}}mtf/mtf_entities/mtf_testcase.html
+[fixture field from its repository]: {{page.baseurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_repositoy
 
 <!-- ABBREVIATIONS -->
 
-*[MTF]: Magento Testing Framework
+*[FTF]: Functional Testing Framework

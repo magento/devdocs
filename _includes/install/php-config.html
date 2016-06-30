@@ -1,38 +1,62 @@
-<p>This section discusses how to:</p>
-<ul><li>Set the system time zone for PHP; otherwise, errors like the following display during the installation and time-related operations like cron might not work:<br>
-<pre>PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more messages follow]</pre></li>
-<li>Increase the PHP memory limit to at least 768MB for normal operation or 2GB for testing.</li>
-<li>Set <code>always_populate_raw_post_data = -1</code><br>
-<a href="http://php.net/manual/en/ini.core.php#ini.always-populate-raw-post-data" target="_blank">always_populate_raw_post_data</a> is deprecated in PHP 5.6. This setting causes PHP to always populate <code>$HTTP_RAW_POST_DATA</code> with raw POST data. Failure to set this properly in PHP 5.6 results in errors when connecting to the database.</li>
-<li>Disable <a href="http://php.net/manual/en/ini.core.php#ini.asp-tags" target="_blank">asp_tags</a>. If asp_tags are enabled, errors display when accessing PHTML templates.<br>
-<code>asp_tags</code> will be removed in PHP 7.</li></ul>
-<p>To set PHP options:</p>
-<ol><li>Locate <code>php.ini</code> by entering the following command:<br>
-<pre>php -i | grep "Loaded Configuration File"</pre>
-Typical locations follow:<br><br>
-Ubuntu: <code>/etc/php5/cli/php.ini</code><br>
-CentOS: <code>/etc/php.ini</code></li>
-<li>Open <code>php.ini</code> in a text editor.</li>
-<li>Locate your server's time zone in the available <a href="http://php.net/manual/en/timezones.php" target="_blank">time zone settings</a>.</li>
-<li>Locate the following setting and uncomment it if necessary:
-<pre>date.timezone =</pre></li>
-<li>Add the time zone setting you found in step 1.</li>
-<li>Change <code>memory_limit</code> to:<br><br>
-	<code>memory_limit = 768M</code> or more for normal operation<br>
-<code>memory_limit = 2G</code> or more for testing</li>
-<li><em>Required for PHP 5.6, recommended for PHP 5.5</em>. Locate <code>always_populate_raw_post_data</code>, uncomment it if necessary, and set it as follows:<br>
-<pre>always_populate_raw_post_data = -1</pre></li>
-<li>Locate the following setting:
-	<pre>asp_tags =</pre></li>
-<li>Make sure its value is set to <code>Off</code></li>
-<li>Save your changes and exit the text editor.</li>
-<li>Restart Apache:<br><br>
-Ubuntu: <code>service apache2 restart</code><br>
-CentOS: <code>service httpd restart</code></li></ol>
+<div markdown="1">
 
-<h3 id="prereq-php-redis">Optional: Configure caching alternatives</h3>
-<p>You can optionally specify alternatives to file system caching in <code>php.ini</code> by modifying the value of <code>session.save_handler</code>. Magento supports the following values:</p>
-<ul><li><code>files</code> (the default) for file system caching</li>
-	<li><code>db</code> for <a href="{{ site.gdeurl }}config-guide/database/database.html">database</a> caching</li>
-	<li><code>redis</code> for <a href="{{ site.gdeurl }}config-guide/redis/config-redis.html">Redis</a> caching</li>
-	<li>Any other custom cache type you set up; however, it's up to you to know how to specify it in <code>php.ini</code></li></ul>
+
+This section discusses how to:
+
+*	Set the system time zone for PHP; otherwise, errors like the following display during the installation and time-related operations like cron might not work:
+
+		PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more messages follow]
+*	Set [`always_populate_raw_post_data = -1`](http://php.net/manual/en/ini.core.php#ini.always-populate-raw-post-data){:target="_blank"}
+
+	`always_populate_raw_post_data` is deprecated in PHP 5.6 and is dropped in PHP 7.0.x. This setting causes PHP to always populate `$HTTP_RAW_POST_DAT` with raw POST data. Failure to set this properly in PHP 5.5 or 5.6 results in errors when connecting to the database.
+*	Set the PHP memory limit.
+
+	Our detailed recommendations are:
+
+	*	Compiling code, `768M`
+    *	Deploying static asses, `768M`
+    *	Installing and updating Magento components from Magento Marketplace, `1G`
+    *	Testing, `2G`
+*	Disable [`asp_tags`](http://php.net/manual/en/ini.core.php#ini.asp-tags){:target="_blank"}
+
+	If `asp_tags are` enabled, errors display when accessing PHTML templates.
+
+	`asp_tags` will be removed in PHP 7.
+
+To set PHP options:
+
+1.	Locate `php.ini` by entering the following command:
+
+		php --ini
+
+	Use the value of `Loaded Configuration File`.
+	
+	Typical locations follow:
+
+	*	Ubuntu: `/etc/php5/cli/php.ini`
+	*	CentOS: `/etc/php.ini`
+2.	Open `php.ini` in a text editor.
+3.	Locate your server's time zone in the available [time zone settings](http://php.net/manual/en/timezones.php){:target="_blank"}
+4.	Locate the following setting and uncomment it if necessary:
+
+		date.timezone =
+5.	Add the time zone setting you found in the preceding step.
+6.	Change the value of `memory_limit` to one of the values at the beginning of this section.
+
+	For example,
+
+		memory_limit=768M
+7.	_Required for PHP 5.6, recommended for PHP 5.5_. Locate `always_populate_raw_post_data`, uncomment it if necessary, and set it as follows:
+
+		always_populate_raw_post_data = -1
+8.	Locate the following setting:
+
+		asp_tags =
+9.	Make sure its value is set to `Off`.
+10.	Save your changes and exit the text editor.
+11.	Restart your web server:
+
+	*	Ubuntu: `service apache2 restart`
+	*	CentOS: `service httpd restart`
+	*	Ubuntu and CentOS: `service nginx restart`
+

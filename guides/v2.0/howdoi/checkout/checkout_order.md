@@ -5,6 +5,7 @@ subgroup: checkout
 title: Add custom validations before order placement
 menu_title: Add custom validations before order placement
 menu_order: 4
+version: 2.0
 github_link: howdoi/checkout/checkout_order.md
 ---
 <h2>What's in this topic</h2>
@@ -20,7 +21,7 @@ To add custom validations before the order placement action, you must do the fol
 
 ## Create the validator {#validator}
 
-For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should [depend]({{site.gdeurl}}extension-dev-guide/composer-integration.html) on the Magento_Checkout module.
+For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should [depend]({{page.baseurl}}extension-dev-guide/build/composer-integration.html) on the `Magento_Checkout` module. Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues. 
 
 In your custom module directory, create a `.js` file implementing the validator. It should be located under `<your_module_dir>/view/frontend/web/js/model` directory.
 

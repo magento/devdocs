@@ -5,6 +5,7 @@ subgroup: A_Themes
 title: Theme inheritance
 menu_title: Theme inheritance
 menu_order: 5
+version: 2.0
 github_link: frontend-dev-guide/themes/theme-inherit.md
 redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-inherit.html
 ---
@@ -22,7 +23,10 @@ The fallback order is slightly different for static assets (CSS, JavaScript, fon
 For comprehensive information about developing theme components, see
 subsequent chapters in this guide.
 
-<h2>Set a parent theme</h2>
+* TOC
+{:toc}
+
+## Set a parent theme
 
 A parent theme is specified in the child theme `theme.xml` declaration file.
 
@@ -43,8 +47,11 @@ the Orange theme by OrangeCo inherits from the Magento Blank theme. The inherita
   <p>A parent and a child theme can belong to different vendors. For example, your custom theme can inherit from the Magento Blank theme.</p>
 </div>
 
+## Override view.xml file
 
-<h2 id="theme-inherit-static">Override static assets</h2>
+If your theme does not contain a `view.xml` configuration file, it will be inherited from the parent theme. If you add the `<you_theme_dir>/view.xml` file in your theme, it overrides the parent's file.
+
+## Override static assets {#theme-inherit-static}
 
 Static assets, or static view files, are styles, JavaScript, images, and fonts.
 
@@ -54,16 +61,20 @@ The particular directories, where the system searches in the course of the fallb
 
 If module context is not defined for a file:
 
+1. Current theme static files for a specific locale (the locale set for the storefront): `<theme_dir>/web/i18n/<locale>`
 2. Current theme static files: `<theme_dir>/web/`
 2. Ancestor's static files, recursively, until a theme with no parent is reached:
-	 `<parent_theme_dir>/web/`
+- `<parent_theme_dir>/web/i18n/<locale>`
+- `<parent_theme_dir>/web/`
 3. Library static view files: `lib/web/`
 
 If module context is defined for a file:
 
+1. Current theme and current locale module static files:`<theme_dir>/web/i18n/<locale>/<Namespace>_<Module>`
 2. Current theme module static files `<theme_dir>/<Namespace>_<Module>/web/`. Example: `app/design/frontend/OrangeCorp/orange/Magento_Catalog/web/`
 3. Ancestor themes module static files, recursively, until a theme with no ancestor is reached:
-	`<parent_theme_dir>/<Namespace>_<Module>/web/`
+- `<parent_theme_dir>/web/i18n/<locale>/<Namespace>_<Module>`
+- `<parent_theme_dir>/<Namespace>_<Module>/web/`
 3. Module static view files for the `frontend` area: `<module_dir>/view/frontend/web/`
 4. Module static view files for the `base` area: `<module_dir>/view/base/web/`
 
@@ -87,7 +98,7 @@ Once the Orange Winter theme is applied, the new holiday image overrides the one
 <img src="{{ site.baseurl }}common/images/inh-background2.jpg"/>
 
 
-<h2 id="theme-inherit-templates">Override templates</h2>
+## Override templates {#theme-inherit-templates}
 
 The fallback scheme for templates is the following (module context is always known for them):
 
@@ -111,9 +122,9 @@ To do this, they need to add an overriding template for the corresponding module
 Note, that the path to the template inside the `templates` directory in the theme corresponds to that in the module.
 Having changed the order or elements in the templates, OrangeCo got the minicart look like following:
 <p><img src="{{ site.baseurl }}common/images/inherit_mini2.png" alt="In the minishopping cart products are listed above the Go to Checkout button "></p>
-You can find out what exactly code changes are required to perform this and other tasks in the <a href="{{site.gdeurl}}frontend-dev-guide/templates/template-sample.html">Illustration of customizing templates topic</a>. 
+You can find out what exactly code changes are required to perform this and other tasks in the <a href="{{page.baseurl}}frontend-dev-guide/templates/template-sample.html">Illustration of customizing templates topic</a>. 
 
-<h2 id="theme-inherit-layout">Extend layouts</h2>
+## Extend layouts {#theme-inherit-layout}
 
 The layouts processing mechanism does not involve fallback. The system collects layout files in the following order:
 
@@ -137,15 +148,15 @@ To do this, they added an extending layout in `app/design/frontend/OrangeCo/oran
 {%highlight xml%}
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <remove name="report.bugs"/>
+        <referenceBlock name='report.bugs' remove='true'/>
     </body>
 </page>
 {%endhighlight xml%}
 
 
-For more information about extending layout refer to the <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a> article.
+For more information about extending layout refer to the <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a> article.
 
-<h3 id="theme-inherit-layout-over">Override layouts</h3>
+## Override layouts {#theme-inherit-layout-over}
 
 Though overriding layouts is not recommended, it is still possible, and might be a solution for certain customization tasks.
 To override the instructions from an ancestor theme layout file:
@@ -153,7 +164,6 @@ To override the instructions from an ancestor theme layout file:
 * Create a layout file with the same name in the `<theme_dir>/<Vendor>_<Module>/layout/override/theme/<Vendor>/<ancestor_theme>` directory.
 
 To override module layout instructions (base layout):
-
 
 * Create a layout file with the same name in the `<theme_dir>/<Vendor>_<Module>/layout/override/base` directory.
 

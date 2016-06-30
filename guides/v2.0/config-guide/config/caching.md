@@ -1,11 +1,12 @@
 ---
 layout: default
 group: config-guide
-subgroup: Caching
+subgroup: 08_Caching
 title: Caching
 menu_title: Caching
 menu_order: 1
 menu_node: parent
+version: 2.0
 github_link: config-guide/config/caching.md
 redirect_from: /guides/v1.0/config-guide/config/caching.html
 ---
@@ -51,9 +52,9 @@ The preceding lists all cache types and shows they are all enabled.
 <h2 id="m2devgde-cache-more">More information about caching</h2>
 The following topics discuss how to set up caching:
 
-*	<a href="{{ site.gdeurl }}config-guide/config/caching-cache-type.html">Create a cache type</a>
-*	<a href="{{ site.gdeurl }}config-guide/config/config-create.html">Create or extend configuration types</a>
-*	<a href="{{ site.gdeurl }}config-guide/config/caching_frontend-cache-types.html">Associate cache frontends with cache types</a>
-*	<a href="{{ site.gdeurl }}config-guide/config/caching_low-level.html">Low-level cache options</a>
-*	<a href="{{ site.gdeurl }}config-guide/varnish/config-varnish.html">Configure and use Varnish</a>
-*	<a href="{{ site.gdeurl }}config-guide/redis/config-redis.html">Configure Redis</a>
+*	<a href="{{page.baseurl}}config-guide/config/caching-cache-type.html">Create a cache type</a>
+*	<a href="{{page.baseurl}}config-guide/config/config-create.html">Create or extend configuration types</a>
+*	<a href="{{page.baseurl}}config-guide/config/caching_frontend-cache-types.html">Associate cache frontends with cache types</a>
+*	<a href="{{page.baseurl}}config-guide/config/caching_low-level.html">Low-level cache options</a>
+*	<a href="{{page.baseurl}}config-guide/varnish/config-varnish.html">Configure and use Varnish</a>
+*	<a href="{{page.baseurl}}config-guide/redis/config-redis.html">Configure Redis</a>

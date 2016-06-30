@@ -1,11 +1,12 @@
 ---
 layout: default 
 group: compman
-subgroup: Enable/Disable
+subgroup: 06_en-dis
 title: Step 3. Enable/Disable
-menu_title: Step 3. Enable/Disable
-menu_node: 
+menu_title: Enable/Disable (Component Manager)
+menu_node: parent
 menu_order: 10
+version: 2.0
 github_link: comp-mgr/compman-enable-disable.md
 ---
 

@@ -5,12 +5,13 @@ subgroup: G_Translate
 title: Use translation dictionary to customize strings
 menu_title: Use translation dictionary to customize strings
 menu_order: 1
+version: 2.0
 github_link: frontend-dev-guide/translations/theme_dictionary.md
 ---
 
 <h2>What's in this topic</h2>
 
-This topic describes how default strings can be changed in your custom theme using <a href="{{site.gdeurl}}frontend-dev-guide/translations/xlate.html#translate_terms">translation dictionaries</a>. It also gives a short overview of the order in which translations are searched and applied by the Magento application.
+This topic describes how default strings can be changed in your custom theme using <a href="{{page.baseurl}}frontend-dev-guide/translations/xlate.html#translate_terms">translation dictionaries</a>. It also gives a short overview of the order in which translations are searched and applied by the Magento application.
 
 <h2>How Magento applies locales</h2>
 
@@ -39,14 +40,14 @@ The translations priority described earlier is applied for the default en_US loc
     "Card Verification Number",	"CVV"
     ...
 
-It is important to remember that if you generate a dictionary for your theme using the <a href="{{site.gdeurl}}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">i18n tool</a> with the conventional names and locations for the dictionary, the existing dictionary gets overwritten. 
+It is important to remember that if you generate a dictionary for your theme using the <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">i18n tool</a> with the conventional names and locations for the dictionary, the existing dictionary gets overwritten. 
 
 That is why the recommended flow for adding custom strings is the following:
 
-1. <a href="{{site.gdeurl}}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">Generate the dictionary</a> for your theme.
+1. <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">Generate the dictionary</a> for your theme.
 2. Change the necessary values in the right column, or add rows if the strings you want to replace are not in the dictionary. The i18n tool does not create a dictionary, if the theme files do not contain any strings for translation. In this case, add the file manually. 
 
-See the <a href="{{site.gdeurl}}frontend-dev-guide/translations/translate_practice.html">Create a translation dictionary for a theme</a> topic for the practical illustration of the  procedure.
+See the <a href="{{page.baseurl}}frontend-dev-guide/translations/translate_practice.html">Create a translation dictionary for a theme</a> topic for the practical illustration of the  procedure.
 
 
 
@@ -64,5 +65,5 @@ Continuing the <a href="#luma_example">previous example</a> with the Luma theme,
 The default values (keys) are used in the left column.
 
 ## Recommended reading ##
-- <a href="{{site.gdeurl}}frontend-dev-guide/translations/xlate.html">Translations overview</a>
--  <a href="{{site.gdeurl}}frontend-dev-guide/translations/translate_practice.html">Create a translation dictionary for a theme</a>
+- <a href="{{page.baseurl}}frontend-dev-guide/translations/xlate.html">Translations overview</a>
+-  <a href="{{page.baseurl}}frontend-dev-guide/translations/translate_practice.html">Create a translation dictionary for a theme</a>

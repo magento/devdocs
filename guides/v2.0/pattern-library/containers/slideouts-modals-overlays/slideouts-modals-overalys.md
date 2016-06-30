@@ -2,13 +2,14 @@
 layout: default
 group: pattern
 subgroup: Container
-title: Magento Admin Pattern Library
+title: Admin Design Pattern Library
 menu_title: Slide-out, Modals, and Overlays
 menu_order: 2
 menu_node:
-github_link: pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overlays.md
-
+version: 2.0
+github_link: pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.md
 ---
+
 <h2> Slide-out Panels, Modal Windows, and Overlays</h2>
 
 <h3> Contents </h3>
@@ -18,7 +19,7 @@ github_link: pattern-library/containers/slideouts-modals-overlays/slideouts-moda
 * <a href="#modals">Modals</a>
 * <a href="#overlays">Overlays</a>
 * <a href="#assets">Assets</a>
-
+* <a href="#implement">Technical Implementation</a>
 
 
 <h3 id="overview">Overview</h3>
@@ -219,10 +220,10 @@ The distance of the modal to the top of the browser should have a fixed distance
 
 **Implementation**
 Modal windows are implemented by the following Magento jQuery widgets:
-- <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_modal.html">modal</a>
-- <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_alert.html">alert</a> (extends modal)
-- <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_confirm.html">confirm</a> (extends modal)
-- <a href="{{site.gdeurl}}javascript-dev-guide/widgets/widget_prompt.html">propmt</a> (extends modal)
+- <a href="{{page.baseurl}}javascript-dev-guide/widgets/widget_modal.html">modal</a>
+- <a href="{{page.baseurl}}javascript-dev-guide/widgets/widget_alert.html">alert</a> (extends modal)
+- <a href="{{page.baseurl}}javascript-dev-guide/widgets/widget_confirm.html">confirm</a> (extends modal)
+- <a href="{{page.baseurl}}javascript-dev-guide/widgets/widget_prompt.html">propmt</a> (extends modal)
 
 
 <h3 id="overlays">Overlays</h3>
@@ -269,3 +270,6 @@ When field level validation is triggered resulting message should appear and per
 <a href="src/Slide-out-Panels.psd">Download Slide-out Panels PSD source</a>
 
 <a href="src/Modal.psd">Download Modal PSD source</a>
+
+<h3 id="implement">Technical Implementation</h3>
+Technically slideouts and modals are implemented using the [modal widget]({{page.baseurl}}javascript-dev-guide/widgets/widget_modal.html) or the [modal UI component]({{page.baseurl}}ui-components/ui-modal.html). 

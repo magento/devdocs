@@ -1,11 +1,12 @@
 ---
 layout: default 
 group: compman
-subgroup: U_UseUpgrade
+subgroup: 15_UseUpgrade
 title: Step 1. Select versions to upgrade
 menu_title: Step 1. Select versions to upgrade
 menu_node: 
 menu_order: 5
+version: 2.0
 github_link: comp-mgr/upgrader/upgrade-main-pg.md
 ---
 
@@ -18,7 +19,7 @@ github_link: comp-mgr/upgrader/upgrade-main-pg.md
 <h2 id="upgrade-access">System upgrade options</h2>
 To choose which components to upgrade:
 
-1.	After you <a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">run System Upgrade</a>, a page similar to the following displays:<br><br>
+1.	After you <a href="{{page.baseurl}}comp-mgr/upgrader/upgrade-start.html">run System Upgrade</a>, a page similar to the following displays:<br><br>
 	<img src="{{ site.baseurl }}common/images/upgr_step1-mock.png" width="750px" alt="System Upgrade automatically checks for core module updates and third-party modules if you wish">
 2.	You have the following options:
 	<table>
@@ -85,4 +86,4 @@ To upgrade components:
 
 		<img src="{{ site.baseurl }}common/images/upgr_comp_no.png" alt="Do not upgrade this component">
 
-3.	Click **Next** and continue with <a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-readiness.html">Step 2. Readiness check</a>
+3.	Click **Next** and continue with <a href="{{page.baseurl}}comp-mgr/upgrader/upgrade-readiness.html">Step 2. Readiness check</a>

@@ -5,6 +5,7 @@ subgroup: B_Layouts
 title: Common layout customization tasks
 menu_title: Common layout customization tasks
 menu_order: 6
+version: 2.0
 github_link: frontend-dev-guide/layouts/xml-manage.md
 redirect_from: /guides/v1.0/frontend-dev-guide/layouts/xml-manage.html
 ---
@@ -50,7 +51,7 @@ Change the layout of Advanced Search page from default "1-column" to "2-column w
 
 <h2 id="layout_markup_css">Include static resources (JavaScript, CSS, fonts)</h2>
 
-JavaScript, CSS and other static assets are added in the `<head>` section of a <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> file. The default look of a Magento store page `<head>` is defined by `app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml`. The recommended way to add CSS and JavaScript is to extend this file in your custom theme, and add the assets there.
+JavaScript, CSS and other static assets are added in the `<head>` section of a <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> file. The default look of a Magento store page `<head>` is defined by `app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml`. The recommended way to add CSS and JavaScript is to extend this file in your custom theme, and add the assets there.
 The following file is a sample of a file you must add:
 
 <code>&lt;theme_dir&gt;/Magento_Theme/layout/default_head_blocks.xml</code>
@@ -141,7 +142,7 @@ Use the following sample to create (declare) a container:
 
 <h2 id="ref_container">Reference a container</h2>
 
-To update a container use the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref" target="_blank">`<referenceContainer>`</a> instruction.
+To update a container use the <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref" target="_blank">`<referenceContainer>`</a> instruction.
 
 Example: add links to the page header panel.
 
@@ -157,7 +158,7 @@ Example: add links to the page header panel.
 
 <h2 id="xml-manage-block">Create a block</h2>
 
-Blocks are created (declared) using the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_block" target="_blank">`<block>`</a> instruction.
+Blocks are created (declared) using the <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_block" target="_blank">`<block>`</a> instruction.
 
 Example: add a block with a product SKU information.
 
@@ -174,7 +175,7 @@ Example: add a block with a product SKU information.
 
 <h2 id="xml-manage-ref-block">Reference a block</h2>
 
-To update a block use the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref" target="_blank">`<referenceBlock>`</a> instruction.
+To update a block use the <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref" target="_blank">`<referenceBlock>`</a> instruction.
 
 Example: pass the image to the `logo` block.
 
@@ -186,21 +187,40 @@ Example: pass the image to the `logo` block.
 </referenceBlock>
 {%endhighlight xml%}
 
-<h2 id="set_template">Set the template used by a block</h2>
+## Set the template used by a block {#set_template}
 
-To set the template for a block, pass it using the `<argument>` instruction.
+There are two ways to set the template for a block:
 
-Example: change template of the page title block:
+- using the `template` attribute
+- using the `<argument>` instruction
+
+Both approaches are demonstrated in the following examples of changing the template of the page title block.
+
+**Example 1:**
+
+{%highlight xml%}
+ <referenceBlock name="page.main.title" template="%Namespace_Module::new_template.phtml%"/>
+{%endhighlight%}
+
+**Example 2:** 
 
 {%highlight xml%}
  <referenceBlock name="page.main.title">
         <arguments>
-            <argument name="template" xsi:type="string">Namespace_Module::title_new.phtml</argument>
+            <argument name="template" xsi:type="string">%Namespace_Module::new_template.phtml%</argument>
         </arguments>
  </referenceBlock>
 {%endhighlight%}
 
-The path to the template is specified relatively to the `view/<area>/templates/` directory of the module. The `<area>` corresponds to the area for which the layout file is used.
+In both example, the template is specified according to the following:
+
+ * `Namespace_Module:` defines the module the template belongs to. For example, `Magento_Catalog`.
+ * `new_template.phtml`: the path to the template relatively to the `templates` directory. It might be `<module_dir>/view/<area>/templates` or `<theme_dir>/<Namespace_Module>/templates`.
+
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Template values specified as attributes have higher priority during layout generation, than the ones specified using <code>&lt;argument&gt;</code>. It means, that if for a certain block, a template is set as attribute, it will override the value you specify in <code>&lt;argument&gt;</code> for the same block.</p>
+</div>
 
 <h2 id="layout_markup_modify-block">Modify block arguments</h2>
 
@@ -239,8 +259,8 @@ Extending layout:
 
 There are two ways to access block object methods:
 
-- using the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#argument"><code>&lt;argument&gt;</code></a> instruction for `<block>` or `<referenceBlock>`
-- using the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_act"><code>&lt;action&gt;</code></a> instruction. This way is not recommended, but can be used for calling those methods, which are not refactored yet to be accessed through `<argument>`. 
+- using the <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#argument"><code>&lt;argument&gt;</code></a> instruction for `<block>` or `<referenceBlock>`
+- using the <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_act"><code>&lt;action&gt;</code></a> instruction. This way is not recommended, but can be used for calling those methods, which are not refactored yet to be accessed through `<argument>`. 
 
 Example 1: Set a CSS class and add an attribute for the product page using `<argument>`.
 
@@ -279,8 +299,8 @@ Extending layout:
 
 In layout files you can change the elements order on a page. This can be done using one of the following:
 
-* <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv" target="_blank">`<move>` instruction</a>: allows changing elements' order and parent.
-* <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_xml-instrux_before-after" target="_blank">`before` and `after` attributes of `<block>`</a>: allows changing elements' order within one parent.
+* <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv" target="_blank">`<move>` instruction</a>: allows changing elements' order and parent.
+* <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_xml-instrux_before-after" target="_blank">`before` and `after` attributes of `<block>`</a>: allows changing elements' order within one parent.
 
 <p></p>
 Example of `<move>` usage:
@@ -309,7 +329,7 @@ This would make the product page look like following:
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>To learn how to locate the layout file you need to customize, see <a href="{{site.gdeurl}}frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a>.</p></span>
+  <p>To learn how to locate the layout file you need to customize, see <a href="{{page.baseurl}}frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a>.</p></span>
 </div>
 
 <h2 id="layout_markup_remove_elements">Remove elements</h2>
@@ -353,11 +373,11 @@ In this file, reference the element having added the `remove` attribute:
 
 <h2 id="layout_markup_replace_elements">Replace elements</h2>
 
-To replace an element, <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_rem" target="_blank">remove it</a> and add a new one.
+To replace an element, <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_rem" target="_blank">remove it</a> and add a new one.
 
 
 #### Related topics:
 
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/theme-best-practices.html" target="_blank">Theme design best practices</a>
+*	<a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a>
+*	<a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a>
+

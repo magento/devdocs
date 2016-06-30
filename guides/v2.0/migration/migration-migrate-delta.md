@@ -6,6 +6,7 @@ title: Migrate changes
 menu_title: Migrate changes
 menu_node:
 menu_order: 3
+version: 2.0
 github_link: migration/migration-migrate-delta.md
 redirect_from: /guides/v1.0/migration/migration-migrate-delta.html
 ---
@@ -17,7 +18,7 @@ Incremental migration enables you to migrate only the changes made in Magento 1 
 <h2 id="migrate-first">First steps</h2>
 {% include install/first-steps-cli.html %}
 
-In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
+In addition to the command arguments discussed here, see <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="migrate-data-cmd">Run the incremental migration command</h2>
 To migrate incremental changes, use the following command:
@@ -37,8 +38,8 @@ where
   <p>Incremental migration runs continuously until you stop it by pressing CTRL+C.</p></span>
 </div>
 
-Please note that in this mode Data Migration Tool migrates data created only by Magento's own modules and is not responsible for the code or extensions made by third-party developers. If these extensions created some data in the storefront database and the merchant wants to have this data in Magento 2 - config files of Data Migration Tool should be created and modified. Please check <a href="{{ site.gdeurl }}migration/migration-tool-internal-spec.html"> Data Migration Tool Internal Specification</a> for more information.
+Please note that in this mode Data Migration Tool migrates data created only by Magento's own modules and is not responsible for the code or extensions made by third-party developers. If these extensions created some data in the storefront database and the merchant wants to have this data in Magento 2 - config files of Data Migration Tool should be created and modified. Please check <a href="{{page.baseurl}}migration/migration-tool-internal-spec.html"> Data Migration Tool Internal Specification</a> for more information.
 
 #### Related topics
 
-* <a href="{{ site.gdeurl }}migration/migration-manually.html">Data that needs to be migrated manually</a>
+* <a href="{{page.baseurl}}migration/migration-manually.html">Data that needs to be migrated manually</a>

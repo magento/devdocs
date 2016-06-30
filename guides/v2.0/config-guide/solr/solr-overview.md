@@ -1,11 +1,12 @@
 ---
 layout: default
 group: config-guide
-subgroup: Solr
+subgroup: 15_Solr
 title: Install and configure Solr
 menu_title: Install and configure Solr (Enterprise Edition only)
 menu_order: 1
 menu_node: parent
+version: 2.0
 github_link: config-guide/solr/solr-overview.md
 ---
 
@@ -17,8 +18,8 @@ github_link: config-guide/solr/solr-overview.md
 *	<a href="#overview">Overview</a>
 *	<a href="#dev">Assumptions for using Solr in a development environment</a>
 *	<a href="#prereq">Prerequisites</a>
-* 	<a href="{{ site.gdeurl }}config-guide/solr/solr-magento.html">Configure Solr and Magento</a>
-*	<a href="{{ site.gdeurl }}config-guide/solr/solr-script.html">Prepare Solr for production</a>
+* 	<a href="{{page.baseurl}}config-guide/solr/solr-magento.html">Configure Solr and Magento</a>
+*	<a href="{{page.baseurl}}config-guide/solr/solr-script.html">Prepare Solr for production</a>
 
 <h2 id="overview">Overview</h2>
 Magento Enterprise Edition (EE) version 2.x enables you to configure either of the following as a catalog search engine:
@@ -34,7 +35,6 @@ Solr enables you to provide your web store users with a powerful full-text searc
 See one of the following sections for more information:
 
 *	<a href="#overview-this-topic">Intended audience and purpose of this topic</a>
-*	<a href="#overview-example">Comparing the search options</a>
 *	<a href="#overview-solr">More information about the Solr solution</a>
 
 <h3 id="overview-this-topic">Intended audience and purpose of this topic</h3>
@@ -46,75 +46,7 @@ This topic discusses a simple Solr configuration that uses the example Solr conf
 		<p>The example Solr configuration is <em>not</em> intended to be used in a production site. It's for testing and development only. Because it's simple to use, it's a great way for you to learn more about Solr.</p>
 </div>
 
-<h3 id="overview-example">Comparing the search options</h3>
-The following table provides a quick comparison between Magento with the default MySQL full text search and Magento with Solr search.
 
-<table>
-<tbody>
-	<tr><th>Feature</th>
-	<th>Magento with MySQL full-text search</th>
-	<th>Magento with Solr search</th>
-</tr>
-<tr>
-	<td>Full text search</td>
-	<td>Yes and also supports two additional search modes:
-	<ul><li>Like</li>
-			<li>Combined (like and full text)</li></ul></td>
-	<td>Yes&dagger;</td>
-</tr>
-<tr>
-	<td>Search recommendations</td>
-	<td>Yes</td>
-	<td>Yes</td>
-</tr>
-<tr>
-	<td>Faceted search (used in layered navigation)</td>
-	<td>Yes</td>
-	<td>Yes</td>
-</tr>
-<tr>
-	<td>Range (such as price range)</td>
-	<td>Yes</td>
-	<td>Yes</td>
-</tr>
-<tr>
-	<td>Sort-by options (for example, sort by relevance)</td>
-	<td>Yes</td>
-	<td>Yes</td>
-</tr>
-<tr>
-	<td>Zero results tips or results correction</td>
-	<td>No</td>
-	<td>Yes</td>
-</tr>
-<tr>
-	<td>Suggestions</td>
-	<td>No</td>
-	<td>Yes</td>
-</tr>
-<tr>
-	<td>Clustering</td>
-	<td>No</td>
-	<td>Yes</td>
-</tr>
-<tr>
-	<td>Attribute weight based on attribute settings</td>
-	<td>Yes</td>
-	<td>Yes</td>
-</tr>
-<tr>
-	<td>Search localized characters</td>
-	<td>No</td>
-	<td>Yes</td>
-</tr>
-<tr>
-	<td>Word delimiter (for example, searching for <code>spider man</code> or <code>spiderman</code> return <code>spider-man</code>)</td>
-	<td>No</td>
-	<td>Yes</td>
-</tr>
-</tbody>
-</table>
-&dagger;&mdash;"Like" searching is supported by MySQL full text search but not by Solr. <!-- Defined by the <a href="http://doc4dev.net/doc/Magento/1/class-Mage_CatalogSearch_Model_Resource_Fulltext.html" target="_blank"><code>Mage_CatalogSearch_Model_Resource_Fulltext::prepareResult()</code></a> class, like searching joins each term in your search using LIKE statements combined by OR. Like searching is best used in stores that have simple products where users search for specific terms. -->
 
 <h3 id="overview-solr">More information about the Solr solution</h3>
 Solr runs as a standalone full-text search server in a servlet container such as Jetty (which is used by the Solr example configuration) and Tomcat.
@@ -257,5 +189,5 @@ To install Solr and Jetty:
 		tar -xvf solr-4.10.4.tgz
 
 #### Next step
-<a href="{{ site.gdeurl }}config-guide/solr/solr-magento.html">Configure Solr to work with Magento</a>
+<a href="{{page.baseurl}}config-guide/solr/solr-magento.html">Configure Solr to work with Magento</a>
 

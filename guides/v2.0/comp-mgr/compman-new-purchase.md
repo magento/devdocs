@@ -1,11 +1,12 @@
 ---
 layout: default 
 group: compman
-subgroup: New Purchase
+subgroup: 07_new
 title: Step 3. Component Install
-menu_title: Step 3. Component Install
-menu_node: 
+menu_title: Component Install (Component Manager)
+menu_node: parent
 menu_order: 1
+version: 2.0
 github_link: comp-mgr/compman-new-purchase.md
 ---
 
@@ -18,31 +19,59 @@ If the list of purchases is correct, click **Install**.
 
 Messages display in the Console Log as your new purchases are installed. Following is a sample of some of these messages:
 
-	[2015-12-02 17:56:07 CST] Job "maintenance_mode {"enable":true}" has been started
-	[2015-12-02 17:56:07 CST] Magento maintenance mode is enabled.
-	[2015-12-02 17:56:07 CST] Job "maintenance_mode {"enable":true}" has successfully completed
-	[2015-12-02 17:56:07 CST] Job "update {"components":{"magento/module-grouped-product-sample-data":{"name":"magento/module-grouped-product-sample-data","version":"100.0.2"},"magento/module-catalog-sample-data":{"name":"magento/module-catalog-sample-data","version":"100.0.2"},"magento/module-customer-sample-data":{"name":"magento/module-customer-sample-data","version":"100.0.2"},"magento/module-downloadable-sample-data":{"name":"magento/module-downloadable-sample-data","version":"100.0.2"},"magento/module-offline-shipping-sample-data":{"name":"magento/module-offline-shipping-sample-data","version":"100.0.2"},"magento/module-theme-sample-data": ... more
+{% highlight xml %}
+[2016-04-07 09:37:06 CDT] Job "maintenance_mode {"enable":true}" has been started
+[2016-04-07 09:37:06 CDT] Magento maintenance mode is enabled.
+[2016-04-07 09:37:06 CDT] Job "maintenance_mode {"enable":true}" has successfully completed
+[2016-04-07 09:37:06 CDT] Job "update {"components":{"addshoppers/magento2-connector":{"name":"addshoppers/magento2-connector","version":"2.0.1"},"addshoppers/purchase-sharing":{"name":"addshoppers/purchase-sharing","version":"2.0.1"},"fooman/printorderpdf-m2":{"name":"fooman/printorderpdf-m2","version":"2.0.2"}}}" has been started
+[2016-04-07 09:37:06 CDT] Starting composer update...
+[2016-04-07 09:37:07 CDT] ./composer.json has been updated
 
-	{"name":"magento/module-gift-registry-sample-data","version":"100.0.2"},"magento/module-multiple-wishlist-sample-data":{"name":"magento/module-multiple-wishlist-sample-data","version":"100.0.2"}}}" has been started
-	[2015-12-02 17:56:07 CST] Starting composer update...
-	[2015-12-02 17:56:07 CST] ./composer.json has been updated
+[2016-04-07 09:37:45 CDT] Loading composer repositories with package information
+Updating dependencies (including require-dev)
+- Installing addshoppers/magento2-connector (2.0.1)
+Downloading: Connecting... Downloading: 0%.............. Downloading: 10%................
+Downloading: 15% ............ 100%
 
-	[2015-12-02 17:58:43 CST] Loading composer repositories with package information
-	Updating dependencies (including require-dev)
-	- Installing magento/module-catalog-sample-data (100.0.2)
-	Downloading: Connecting... Downloading: 0% Downloading: 10% Downloading: 20% Downloading: 30% Downloading: 35% Downloading: 45% Downloading: 50% Downloading: 70% Downloading: 75% Downloading: 100%
+- Installing fooman/printorderpdf-m2 (2.0.2)
+Downloading: Connecting......... Downloading: 0% ............ Downloading: 40%........... Downloading: 75% ........... Downloading: 100%
 
-	- Installing magento/module-grouped-product-sample-data (100.0.2)
-	: Connecting... Downloading: 0%  Downloading: 5% Downloading: 10% Downloading: 15% Downloading: 100%
+Writing lock file
+Generating autoload files
 
-	... more ...
+[2016-04-07 09:37:45 CDT] Composer update completed successfully
+[2016-04-07 09:37:45 CDT] Job "update {"components":{"addshoppers/magento2-connector":{"name":"addshoppers/magento2-connector","version":"2.0.1"},"addshoppers/purchase-sharing":{"name":"addshoppers/purchase-sharing","version":"2.0.1"},"fooman/printorderpdf-m2":{"name":"fooman/printorderpdf-m2","version":"2.0.2"}}}" has successfully completed
+[2016-04-07 14:38:06 UTC] Job "setup:upgrade []" has started
+Cache cleared successfully
+File system cleanup:
+/var/www/html/magento2/var/generation/Composer
+/var/www/html/magento2/var/generation/Magento
+/var/www/html/magento2/var/generation/Symfony
+The directory '/var/www/html/magento2/var/di/' doesn't exist - skipping cleanup
+Updating modules:
+Schema creation/updates:
+Module 'Magento_Store':
 
-	[2015-12-02 17:58:43 CST] Composer update completed successfully
+... more ...
 
-	... more ...
+Module 'Magento_WishlistSampleData':
+Data install/update:
+Module 'Magento_Store':
+... more ...
+
+Please re-run Magento compile command
+
+[2016-04-07 14:38:14 UTC] Job "setup:upgrade {"command":"setup:upgrade"}" has been successfully completed
+[2016-04-07 14:38:14 UTC] Job "setup:static:regenerate []" has started
+
+[2016-04-07 14:38:15 UTC] Cleaning generated files...
+[2016-04-07 14:38:15 UTC] Clearing cache...
+[2016-04-07 14:38:15 UTC] Cleaning static view files
+[2016-04-07 14:38:15 UTC] Job "setup:static:regenerate []" has been successfully completed
+{% endhighlight %}
 
 When the installation is complete, a page similar to the following displays:
 
-<img src="{{ site.baseurl }}common/images/cman_new-purchases_finish.png">
+<img src="{{ site.baseurl }}common/images/cman_new-purchases_finish.png" width="300px">
 
 Click **Back to Setup Tool**.

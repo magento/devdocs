@@ -1,11 +1,12 @@
 ---
 layout: default
 group: config-guide
-subgroup: CM_Varnish
+subgroup: 09_Varnish
 title: Configure Varnish and your web server
 menu_title: Configure Varnish and your web server
 menu_order: 10
 menu_node: 
+version: 2.0
 github_link: config-guide/varnish/config-varnish-configure.md
 ---
 
@@ -35,7 +36,7 @@ To change the Apache 2.2 listen port:
 <h2 id="config-varnish-config-sysvcl">Modify the Varnish system configuration</h2>
 To modify the Varnish system configuration:
 
-1.	Open `/etc/sysconfig/varnish` in a text editor.
+1.	Open `/etc/sysconfig/varnish` (or `/etc/default/varnish` on Debian and Ubuntu) in a text editor.
 2.	Set the Varnish listen port to 80:
 
 		VARNISH_LISTEN_PORT=80
@@ -57,7 +58,7 @@ To modify the Varnish system configuration:
 		#             -s file,/var/lib/varnish/varnish_storage.bin,1G"
 
 
-4.	Save your changes to `/etc/sysconfig/varnish` and exit the text editor.
+4.	Save your changes to `/etc/sysconfig/varnish` (or `/etc/default/varnish` on Debian and Ubuntu) and exit the text editor.
 
 <h3 id="config-varnish-config-default">Modify <code>default.vcl</code></h3>
 This section discusses how to provide minimal configuration so Varnish returns HTTP response headers. This enables you to verify Varnish works before you configure Magento to use Varnish.
@@ -181,17 +182,10 @@ If you experience this error, edit `default.vcl` and add a timeout to the `backe
 <h2 id="config-varnish-verify-headers">Verify HTTP response headers</h2>
 Now you can verify that Varnish is serving pages by looking at HTML response headers returned from any Magento page.
 
-Before you can look at headers, you must set Magento for developer mode. There are several ways to do it, the simplest of which is to modify `.htaccess` in the Magento 2 root. You can also use the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html">`magento deploy:mode:set`</a> command.
+Before you can look at headers, you must set Magento for developer mode. There are several ways to do it, the simplest of which is to modify `.htaccess` in the Magento 2 root. You can also use the <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html">`magento deploy:mode:set`</a> command.
 
 #### Set Magento for developer mode
-To set Magento for developer mode using its `.htaccess` file:
-
-1.	Log in to the Magento server as, or switch to, the Magento file system owner.
-2.	Open `<your Magento install dir>/.htaccess` in a text editor.
-3.	Uncomment the following line:
-
-		SetEnv MAGE_MODE developer
-4.	Save your changes to `.htaccess` and exit the text editor.
+To set Magento for developer mode, use the [`magento deploy:mode:set`]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html#config-mode-change) command.
 
 #### Look at the Varnish log
 Make sure Varnish is running then enter the following command on the Varnish server:
@@ -237,4 +231,4 @@ Look for headers like the following:
 	X-Magento-Cache-Debug: HIT
 
 #### Next step
-<a href="{{ site.gdeurl }}config-guide/varnish/config-varnish-magento.html">Configure Magento to use Varnish</a>
+<a href="{{page.baseurl}}config-guide/varnish/config-varnish-magento.html">Configure Magento to use Varnish</a>

@@ -1,11 +1,12 @@
 ---
 layout: default
 group: config-guide
-subgroup: CM_Varnish
+subgroup: 09_Varnish
 title: How Magento cache clearing works with Varnish
 menu_title: How Magento cache clearing works with Varnish
 menu_order: 100
 menu_node: 
+version: 2.0
 github_link: config-guide/varnish/use-varnish-cache.md
 redirect_from: guides/v2.0/config-guide/varnish/config-use-varnish.html
 ---
@@ -42,7 +43,7 @@ After you've installed and configured Varnish to work with Magento, the followin
 	You should refresh the cache and also periodically delete everything in the `var/generation` and `var/di` directories. For information on refreshing the cache, see the next section.
 
 <h2 id="use-varnish-magento-purge">Configure Magento to purge Varnish</h2>
-Magento purges Varnish hosts after you configure Varnish hosts using the <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-deployment.html">`magento setup:config:set`</a> command. 
+Magento purges Varnish hosts after you configure Varnish hosts using the <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-deployment.html">`magento setup:config:set`</a> command. 
 
 You can use the optional parameter `--http-cache-hosts` parameter to specify a comma-separated list of Varnish hosts and listen ports. Configure all Varnish hosts, whether you have one or many. (Do not separate hosts with a space character.)
 
@@ -56,6 +57,6 @@ You can then purge Varnish hosts when you refresh the Magento cache (also referr
 
 To refresh the cache using the Admin, click **SYSTEM** > Tools > **Cache Management**, then click **Flush Magento Cache** at the top of the page. (You can also refresh individual cache types.)
 
-To refresh the cache using the command line, you typically use the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean">`magento cache:clean [type]`</a> command as the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+To refresh the cache using the command line, you typically use the <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean">`magento cache:clean [type]`</a> command as the <a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
 
 

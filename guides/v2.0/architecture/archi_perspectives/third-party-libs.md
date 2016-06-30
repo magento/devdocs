@@ -5,6 +5,7 @@ subgroup: Logical View
 title: Third-Party libraries
 menu_title: Third-party libraries
 menu_order: 5
+version: 2.0
 github_link: architecture/archi_perspectives/third-party-libs.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/third-party-libs.html
 ---
@@ -24,10 +25,10 @@ If you are extending your Magento storefront to interact with third-party applic
 
 <h3>Related topics</h3>
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/LogicalView_intro.html">Logical view</a>
+<a href="{{page.baseurl}}architecture/archi_perspectives/LogicalView_intro.html">Logical view</a>
 
 
-<a href="{{ site.gdeurl }}architecture/Framework/framework.html">Magento Framework</a>
+<a href="{{page.baseurl}}architecture/Framework/framework.html">Magento Framework</a>
 
 
 <a href="https://getcomposer.org/doc/00-intro.md" target="_blank">Composer</a> 

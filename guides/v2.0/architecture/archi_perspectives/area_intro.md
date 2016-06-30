@@ -5,6 +5,7 @@ subgroup: Architectural Layers
 title: Magento Area
 menu_title: Magento Area
 menu_order: 
+version: 2.0
 github_link: architecture/archi_perspectives/area_intro.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/area_intro.html
 ---
@@ -75,7 +76,7 @@ How do areas and modules interact?
 
 
 <h3 id="related">Related topics</h3>
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
+<a href="{{page.baseurl}}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
 
 Presentation Layer
 

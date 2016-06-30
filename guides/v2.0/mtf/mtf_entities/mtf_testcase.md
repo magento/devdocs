@@ -1,10 +1,11 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: D_Entities
-title: Entities of the Magento Testing Framework
+subgroup: 50_Entities
+title: Entities of the Functional Testing Framework
 menu_title: Test case
 menu_order: 9
+version: 2.0
 github_link: mtf/mtf_entities/mtf_testcase.md
 ---
 
@@ -15,9 +16,9 @@ github_link: mtf/mtf_entities/mtf_testcase.md
 
 ## Test case overview {#mtf_testcase_overview}
 
-The Magento Testing Framework supports two types of functional tests:
+The Magento Functional Testing Framework supports two types of functional tests:
 
-- Injectable test: the main type of the MTF test that uses XML [data set][] files as inputs
+- Injectable test: the main type of the FTF test that uses XML [data set][] files as inputs
 - [Scenario test][]: supports a Magento modularity and enables you to inject one step into another test
 
 This topic discusses the injectable test only. 
@@ -126,15 +127,15 @@ __Step 7.__ If you want to perform any actions after constraints, use a [tearDow
 
 <!-- LINK DEFINITIONS -->
 
-[data set]: {{site.gdeurl}}mtf/mtf_entities/mtf_dataset.html
-[variation]: {{site.gdeurl}}mtf/mtf_entities/mtf_dataset.html
+[data set]: {{page.baseurl}}mtf/mtf_entities/mtf_dataset.html
+[variation]: {{page.baseurl}}mtf/mtf_entities/mtf_dataset.html
 [Mtf\TestCase\Injectable]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/TestCase/Injectable.php
-[Scenario test]: {{site.gdeurl}}mtf/mtf_entities/mtf_scenariotest.html
-[processAssert()]:{{site.gdeurl}}mtf/mtf_entities/mtf_constraint.html#mtf_constraint_assert
-[constraints]: {{site.gdeurl}}mtf/mtf_entities/mtf_constraint.html
-[fixture]: {{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html
+[Scenario test]: {{page.baseurl}}mtf/mtf_entities/mtf_scenariotest.html
+[processAssert()]:{{page.baseurl}}mtf/mtf_entities/mtf_constraint.html#mtf_constraint_assert
+[constraints]: {{page.baseurl}}mtf/mtf_entities/mtf_constraint.html
+[fixture]: {{page.baseurl}}mtf/mtf_entities/mtf_fixture.html
 [Magento\Catalog\Test\TestCase\Product\UpdateSimpleProductEntityTest]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product/UpdateSimpleProductEntityTest.php
 
 <!-- ABBREVIATIONS -->
 
-*[MTF]: Magento Testing Framework
+*[FTF]: Functional Testing Framework

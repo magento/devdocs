@@ -8,6 +8,7 @@ menu_order:
 menu_node: parent
 
 
+version: 2.0
 github_link: architecture/archi_perspectives/components/AComponents.md
 redirect_from: /guides/v1.0/architecture/components/AComponents.html
 ---
@@ -23,17 +24,17 @@ Magento has several core components that are used to build custom web sites, app
 
 For more information about individual Magento components, see:
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/components/modules/mod_intro.html">Modules</a>
+<a href="{{page.baseurl}}architecture/archi_perspectives/components/modules/mod_intro.html">Modules</a>
 
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/components/arch_themes.html">Themes</a>
+<a href="{{page.baseurl}}architecture/archi_perspectives/components/arch_themes.html">Themes</a>
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/components/arch_translations.html">Language packages</a>
+<a href="{{page.baseurl}}architecture/archi_perspectives/components/arch_translations.html">Language packages</a>
 
 
 
 <h3>Related topics</h3>
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/LogicalView_intro.html">Logical view</a>
+<a href="{{page.baseurl}}architecture/archi_perspectives/LogicalView_intro.html">Logical view</a>
 
 
 

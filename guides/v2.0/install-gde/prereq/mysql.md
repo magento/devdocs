@@ -5,6 +5,7 @@ subgroup: Prerequisites
 title: MySQL
 menu_title: MySQL
 menu_order: 10
+version: 2.0
 github_link: install-gde/prereq/mysql.md
 redirect_from: /guides/v1.0/install-gde/prereq/mysql.html
 ---
@@ -17,17 +18,18 @@ redirect_from: /guides/v1.0/install-gde/prereq/mysql.html
 
 *	<a href="#mysql-help-beginner">Help if you're just starting out</a>
 *	<a href="#instgde-prereq-mysql-intro">General guidelines</a>
-*	<a href="#instgde-prereq-mysql-ubuntu">Installing and configuring MySQL on Ubuntu</a>
-*	<a href="#instgde-prereq-mysql-centos">Installing and configuring MySQL on CentOS</a>
+*	<a href="#instgde-prereq-mysql-ubuntu">Installing and configuring MySQL 5.6 on Ubuntu</a>
+*	[Installing and configuring MySQL 5.7 on CentOS](#instgde-prereq-mysql57-centos)
+*	<a href="#instgde-prereq-mysql-centos">Installing and configuring MySQL 5.6 on CentOS</a>
 *	<a href="#instgde-prereq-mysql-config">Configuring the Magento database instance</a>
 
 <h2 id="mysql-help-beginner">Help if you're just starting out</h2>
 If you're new to all this and need some help getting started, we suggest the following:
 
-*	<a href="{{ site.gdeurl }}install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a>
-*	<a href="{{ site.gdeurl }}install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a>
-*	<a href="{{ site.gdeurl }}install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
-*	<a href="{{ site.gdeurl }}install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
+*	<a href="{{page.baseurl}}install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a>
+*	<a href="{{page.baseurl}}install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a>
+*	<a href="{{page.baseurl}}install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
+*	<a href="{{page.baseurl}}install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
 
 
 <h2 id="instgde-prereq-mysql-intro">General guidelines</h2>
@@ -45,7 +47,7 @@ Magento _strongly_ recommends you observe the following standard when you set up
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>If your web server and database server are on different hosts, perform the tasks discussed in this topic on the database server host then see <a href="{{ site.gdeurl }}install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a>.</p></span>
+  <p>If your web server and database server are on different hosts, perform the tasks discussed in this topic on the database server host then see <a href="{{page.baseurl}}install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a>.</p></span>
 </div>
 
 <h2 id="instgde-prereq-mysql-ubuntu">Installing MySQL on Ubuntu</h2>
@@ -132,8 +134,59 @@ To install MySQL 5.6 on Ubuntu 12, use the following instructions from <a href="
 
 5.	<a href="#instgde-prereq-mysql-config">Configure the Magento database instance</a>.
 
-<h2 id="instgde-prereq-mysql-centos">Installing and configuring MySQL 5.6 on CentOS</h2>
+## Installing and configuring MySQL 5.7 on CentOS {#instgde-prereq-mysql57-centos}
+This section discusses how to to install MySQL 5.7 on CentOS 6 or CentOS 7.
 
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Magento does not support MySQL 5.7 at this time. These instructions are provided for your convenience if you'd like to test MySQL 5.7.</p></span>
+</div>
+
+### Get MySQL 5.7 for CentOS 7
+The following procedure is based on [How to Install Latest MySQL 5.7.9 on RHEL/CentOS 7/6/5 and Fedora 23/22/21](http://www.tecmint.com/install-latest-mysql-on-rhel-centos-and-fedora){:target="_blank"}.
+
+As a user with `root` privileges, enter the following commands in the order shown:
+
+	wget http://dev.mysql.com/get/mysql57-community-release-el7-7.noarch.rpm
+	yum -y localinstall mysql57-community-release-el7-7.noarch.rpm
+
+Continue with [Install and configure MySQL 5.7 on CentOS 6 or 7](#mysql57-centos-config).
+
+### Get MySQL 5.7 for CentOS 6
+The following procedure is based on [How to Install Latest MySQL 5.7.9 on RHEL/CentOS 7/6/5 and Fedora 23/22/21](http://www.tecmint.com/install-latest-mysql-on-rhel-centos-and-fedora){:target="_blank"}.
+
+As a user with `root` privileges, enter the following commands in the order shown:
+
+	wget http://dev.mysql.com/get/mysql57-community-release-el6-7.noarch.rpm
+	yum -y localinstall mysql57-community-release-el6-7.noarch.rpm
+
+Continue with the next section.
+
+### Install and configure MySQL 5.7 on CentOS 6 or 7 {#mysql57-centos-config}
+1.	Enter the following commands in the order shown:
+
+		yum -y install mysql-community-server
+		service mysqld start
+
+2.	Verify the version using the following command:
+
+		mysql --version
+
+	Sample output follows:
+
+		mysql  Ver 14.14 Distrib 5.7.12, for Linux (x86_64) using  EditLine wrapper
+
+3.	Enter the following command to get the temporary database `root` user password:
+
+		grep 'temporary password' /var/log/mysqld.log
+4.	Enter the following command to secure the installation:
+
+		mysql_secure_installation
+
+	Follow the prompts on your screen to set a new password and configure other options.
+5.	Configure MySQL 5.7 as discussed in [Configuring the Magento database instance](#instgde-prereq-mysql-config).
+
+<h2 id="instgde-prereq-mysql-centos">Installing and configuring MySQL 5.6 on CentOS</h2>
 The following procedure is based on <a href="http://sharadchhetri.com/2013/12/26/install-mysql-server-5-6-in-centos-6-x-and-red-hat-6-x-linux/" target="_blank">Install MySQL Server 5.6 in CentOS 6.x and Red Hat 6.x Linux</a>.
 
 1.	Install the MySQL database:
@@ -198,14 +251,14 @@ To configure a MySQL database instance:
 
 	If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.
 
-7.	If your web server and database server are on different hosts, perform the tasks discussed in this topic on the database server host then see <a href="{{ site.gdeurl }}install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a>.
+7.	If your web server and database server are on different hosts, perform the tasks discussed in this topic on the database server host then see <a href="{{page.baseurl}}install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a>.
 
 #### Related topics
 
-*	<a href="{{ site.gdeurl }}install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Installing optional software</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Apache</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP 5.5 or 5.4&mdash;CentOS</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">Configuring security options</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Ways to install the Magento software</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/optional.html">Installing optional software</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/apache.html">Apache</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 5.5 or 5.4&mdash;CentOS</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/security.html">Configuring security options</a>
+*	<a href="{{page.baseurl}}install-gde/install/pre-install.html">Ways to install the Magento software</a>

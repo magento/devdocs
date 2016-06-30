@@ -1,27 +1,14 @@
 ---
 layout: default 
 group: compman
-subgroup: C_UseCompMan
-title: Run the Component Manager
-menu_title: Run the Component Manager
-menu_node: parent
-menu_order: 1
+subgroup: 05_UseCompMan
+title: Start the Component Manager
+menu_title: Start the Component Manager
+menu_node: 
+menu_order: 2
+version: 2.0
 github_link: comp-mgr/compman-start.md
 ---
-
-<h2 id="compman-overview">Overview of the Component Manager</h2>
-This section discusses how to start the Component Manager, which updates or uninstalls Magento components:
-
-*	Modules (extend Magento capabilities)
-*	Themes (change the look and feel of your storefront and Admin)
-*	Language packages (localize the storefront and Admin)
-
-<div class="bs-callout bs-callout-warning">
-    <p>If you installed the Magento application by <a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">cloning the GitHub repository</a>, you <em>cannot</em> use the Component Manager utility to update components. Instead, you must <a href="{{ site.gdeurl }}install-gde/install/cli/dev_options.html">update them manually</a>.</p>
-</div>
-
-<h2 id="compman-prereq">Prerequisites</h2>
-Before continuing, complete all tasks discussed in <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.
 
 <h2 id="compman-access">Start the Component Manager from the Magento Admin</h2>
 To run the Component Manager:
@@ -30,9 +17,19 @@ To run the Component Manager:
 2.	Click **System** > **Web Setup Wizard**.
 	The following page displays.<br><br>
 	<img src="{{ site.baseurl }}common/images/cman_upgr_initial.png" width="650px" alt="Specify whether to manage components or upgrade Magento"><br><br>
-3.	Click **Component Manager** and continue with <a href="{{ site.gdeurl }}comp-mgr/compman-main-pg.html">Manage your components</a>.
+3.	Click **System Configuration**.
+4.	If you haven't already done so, enter your [authentication keys]({{page.baseurl}}install-gde/prereq/connect-auth.html) in the provided fields.
 
-	You have the following options from this page:
+	The following figure shows an example if you *have* already entered your keys.
 
-	*	To enter your authentication keys so you can use the Component Manager and System Upgrade utilities, see <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_auth-token.html">Enter your authentication keys in the Admin</a>.
-	*	To upgrade Magento instead, see <a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">Run System Upgrade</a>.
+	![Authentication keys entered in the Setup Wizard]({{ site.baseurl }}common/images/compman_auth-keys.png)
+
+	<div class="bs-callout bs-callout-warning">
+    	<p>For upgrade or update, you must use the same authentication keys you used to install the Magento software. For example, you <em>cannot</em> use Magento CE authentication keys to update or upgrade Magento EE or vice versa. You also <em>cannot</em> use:</p>
+    	<ul><li>Another user's authentication keys</li>
+    	<li><a href="http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html" target="_blank">Shared account</a> authentication keys</li></ul>   
+	</div>
+5.	Click **Save Config**.
+3.	Click **Component Manager** and continue with <a href="{{page.baseurl}}comp-mgr/compman-main-pg.html">Manage your components</a>.
+
+	To upgrade Magento system software instead, see <a href="{{page.baseurl}}comp-mgr/upgrader/upgrade-start.html">Run System Upgrade</a>.

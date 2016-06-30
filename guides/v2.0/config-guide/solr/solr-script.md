@@ -1,11 +1,12 @@
 ---
 layout: default
 group: config-guide
-subgroup: Solr
+subgroup: 15_Solr
 title: Prepare Solr for production
 menu_title: Prepare Solr for production
 menu_order: 3
 menu_node: 
+version: 2.0
 github_link: config-guide/solr/solr-script.md
 ---
 
@@ -19,7 +20,7 @@ After you've tested the Solr solution, you should perform the following tasks to
 *	Implement a custom web application deployed to a scalable application server
 *	Consider a dedicated Solr server, or at least deploying Solr to a different server than Magento
 *	Consider scalability by <a href="https://cwiki.apache.org/confluence/display/solr/SolrCloud" target="_blank">clustering Solr</a>
-*	<a href="http://wiki.apache.org/solr/" target="_blank">Apache Solr Wiki</a>Customize Solr</a>
+*	[Customize Solr](http://wiki.apache.org/solr){:target="_blank"}
 
 	<div class="bs-callout bs-callout-warning">
 		<p>Customize the Solr search engine at your own risk. Magento supports only the options displayed in the Admin. Customizing the Solr engine itself, while potentially useful, can cause issues with Magento. If you encounter problems with your customizations, do not contact Magento Support; instead, consult the resources available from the <a href="http://wiki.apache.org/solr/" target="_blank">Apache Solr Wiki</a>.</p>

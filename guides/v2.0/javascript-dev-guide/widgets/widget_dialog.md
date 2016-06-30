@@ -5,6 +5,7 @@ subgroup: 3_Widgets
 title: DropdownDialog widget
 menu_order: 6
 menu_title: DropdownDialog widget
+version: 2.0
 github_link: javascript-dev-guide/widgets/widget_dialog.md
 redirect_from:
   - guides/v2.0/frontend-dev-guide/javascript/widget_dialog.html
@@ -22,7 +23,7 @@ The dropdownDialog widget source is located in <a href="{{site.mage2000url}}lib/
 
 <h2 id="dialog_init">Initialize the dropdownDialog widget</h2>
 
-For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
+For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{page.baseurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
 
 <h2 id="dialog_options">Options</h2>
  

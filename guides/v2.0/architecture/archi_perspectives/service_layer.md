@@ -5,6 +5,7 @@ subgroup: Architectural Layers
 title: Service layer
 menu_title: Service layer
 menu_order: 2
+version: 2.0
 github_link: architecture/archi_perspectives/service_layer.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/service_layer.html
 ---
@@ -65,10 +66,10 @@ Another module can change this interface file by specifying a different class na
 
 
 <h3 id="related">Related topics</h3>
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
+<a href="{{page.baseurl}}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
 
 
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/ALayers_intro.html">Architectural layers overview</a>
+<a href="{{page.baseurl}}architecture/archi_perspectives/ALayers_intro.html">Architectural layers overview</a>
 
  

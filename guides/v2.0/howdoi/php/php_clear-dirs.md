@@ -1,11 +1,12 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 6_Module Development
+subgroup: 99_Module Development
 title: Clear directories during development
 menu_title: Clear directories during development
 menu_node: 
 menu_order: 200
+version: 2.0
 github_link: howdoi/php/php_clear-dirs.md
 ---
 
@@ -49,7 +50,7 @@ When you're developing Magento components (modules, themes, and language package
 	</tr>
 	<tr>
 		<td>var/generation</td>
-		<td>Contains <a href="{{ site.gdeurl }}extension-dev-guide/code-generation.html">generated code</a>.</td>
+		<td>Contains <a href="{{page.baseurl}}extension-dev-guide/code-generation.html">generated code</a>.</td>
 	</tr>
 	<tr>
 		<td>var/di</td>
@@ -78,7 +79,7 @@ The following table provides guidelines on what you should clear and when.
 	</tr>
 	<tr>
 		<td>Change any <code>di.xml</code></td>
-		<td>var/di, var/generation; also, run the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler.html">code compiler</a> again</td>
+		<td>var/di, var/generation; also, run the <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html">code compiler</a> again</td>
 	</tr>
 	<tr>
 		<td>Add, remove, enable, or disable modules</td>
@@ -100,7 +101,7 @@ The following table provides guidelines on what you should clear and when.
 </table>
 
 <h2 id="howdoi-clear-how">How to clear the directories</h2>
-To only clear directories and not perform other actions, log in to the Magento server as the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Magento file system owner</a> and clear directories using a command like the following:
+To only clear directories and not perform other actions, log in to the Magento server as the <a href="{{page.baseurl}}install-gde/prereq/apache-user.html">Magento file system owner</a> and clear directories using a command like the following:
 
 	rm -rf <your Magento install dir>/var/di/* <your Magento install dir>/var/generation/*
 
@@ -114,22 +115,22 @@ You can also use the following command-line tools clear some directories for you
 			<th>What it clears</th>
 		</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">magento setup:upgrade</a></td>
+		<td><a href="{{page.baseurl}}install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">magento setup:upgrade</a></td>
 		<td>Updates the Magento database schema and data.</td>
 		<td>var/di, var/generation</td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler.html">magento setup:di:compile</a></td>
+		<td><a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html">magento setup:di:compile</a></td>
 		<td>Generates code.</td>
 		<td>var/generation (after which compiles code again)</td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html">magento deploy:mode:set {mode}</a></td>
+		<td><a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html">magento deploy:mode:set {mode}</a></td>
 		<td>Changes from developer mode to production mode and vice versa.</td>
 		<td>var/di, var/generation, var/view_preprocessed</td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html">magento cache:clean [type]</a></td>
+		<td><a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cache.html">magento cache:clean [type]</a></td>
 		<td>Cleans the cache.</td>
 		<td>var/cache, var/page_cache</td>
 	</tr>

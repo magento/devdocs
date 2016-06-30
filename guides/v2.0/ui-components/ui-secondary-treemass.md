@@ -6,6 +6,7 @@ title: TreeMassAction Component
 menu_title: TreeMassAction Component
 menu_node:
 menu_order: 4
+version: 2.0
 github_link: ui-components/ui-secondary-treemass.md
 redirect_from: /guides/v2.0/ui-library/ui-secondary-treemass.html
 
@@ -86,7 +87,7 @@ Example:
 ####Configuration
 Component can be configured in two ways:
 
-* Globally: using any module's <a href="{{ site.gdeurl }}ui-library/ui-definition.html">`view/*/ui_component/etc/definition.xml`</a> file. All settings declared in this file are applied to all component's instances
+* Globally: using any module's <a href="{{page.baseurl}}ui-library/ui-definition.html">`view/*/ui_component/etc/definition.xml`</a> file. All settings declared in this file are applied to all component's instances
 * Locally: using concrete component instance configuration, such as `<your module root dir>/Magento/Catalog/view/adminhtml/ui_component/product_listing.xml`
 
 ####TreeMassAction JS Component Structure

@@ -6,6 +6,7 @@ title: Next&mdash;Choose how to install the Magento software
 menu_title: Next&mdash;Choose how to install the Magento software
 menu_node: parent
 menu_order: 1
+version: 2.0
 github_link: install-gde/continue.md
 redirect_from: 
   - /guides/v1.0/install-gde/continue.html
@@ -13,7 +14,7 @@ redirect_from:
 ---
 
 ## Let's get started!
-This Installation Guide helps you install the Magento software on a server that doesn't have Magento installed already. (Not sure? Go <a href="{{ site.gdeurl }}install-gde/basics/basics_magento-installed.html">here</a> first.)
+This Installation Guide helps you install the Magento software on a server that doesn't have Magento installed already. (Not sure? Go <a href="{{page.baseurl}}install-gde/basics/basics_magento-installed.html">here</a> first.)
 
 <h2 id="install-overview-audience">Choose how to install the Magento software</h2>
 Want an easy installation with a compressed software archive or do you use <a href="https://getcomposer.org/doc/00-intro.md" target="_blank">Composer</a> to download a metapackage or contribute code to the Magento 2 codebase?
@@ -32,13 +33,13 @@ Consult the following table for how to get started.
 			<th>Get started link</th>
 		</tr>
 	<tr>
-		<td><p>Easy installation, no command line, have your own server</p></td>
+		<td><p>Easy installation, command line, have your own server</p></td>
 		<td><p>Some technical expertise, command line access to the Magento server.</p></td>
 		<td><ol><li>Downloads a compressed file that contains the Magento software.</li>
 			<li>Extracts it on the Magento server or asks a network administrator to do so.</li>
 			<li>Installs the Magento software using the Setup Wizard or command line.</li></ol>
 		</td>
-		<td><p><a href="{{ site.gdeurl }}install-gde/prereq/zip_install.html">Easy installation (own server)</a></p></td>
+		<td><p><a href="{{page.baseurl}}install-gde/prereq/zip_install.html">Easy installation (own server)</a></p></td>
 	</tr>
 	<tr>
 		<td><p>Shared hosting, easy installation, no command line access</p></td>
@@ -47,7 +48,7 @@ Consult the following table for how to get started.
 			<li>Extracts it on the Magento server.</li>
 			<li>Installs the Magento software using the Setup Wizard.</li></ol>
 		</td>
-		<td><p><a href="{{ site.gdeurl }}install-gde/install/hosted/hosted_start.html">Easy installation (shared hosting)</a></p></td>
+		<td><p><a href="{{page.baseurl}}install-gde/install/hosted/hosted_start.html">Easy installation (shared hosting)</a></p></td>
 	</tr>
 	<tr>
 		<td><p>Integrator, packager</p></td>
@@ -55,7 +56,7 @@ Consult the following table for how to get started.
 		<td><ol><li>Creates a Composer <em>project</em> that contains the list of components to use.</li>
 			<li>Uses Composer to update package dependencies; uses <code>composer create-project</code> to get the Magento metapackage.</li>
 			<li>Installs the Magento software using either a command line or the Setup Wizard.</li></ol>
-		<td><p><a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html">Get the metapackage</a></p></td>
+		<td><p><a href="{{page.baseurl}}install-gde/prereq/integrator_install.html">Get the metapackage</a></p></td>
 	</td>
 
 	</tr>
@@ -65,7 +66,7 @@ Consult the following table for how to get started.
 		<td><ol><li>Clones the Magento 2 GitHub repository.</li>
 			<li>Uses Composer to update package dependencies.</li>
 			<li>Installs the Magento software using either a command line or the Setup Wizard.</li></ol>
-		<td><p><a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">Clone the Magento repository</a></p></td>
+		<td><p><a href="{{page.baseurl}}install-gde/prereq/dev_install.html">Clone the Magento repository</a></p></td>
 	</td>
 	</tr>
 	

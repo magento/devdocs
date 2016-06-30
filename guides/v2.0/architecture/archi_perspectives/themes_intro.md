@@ -7,6 +7,7 @@ subgroup: Architectural Layers
 title: Magento Themes 
 menu_title: Magento Themes 
 menu_order: 1
+version: 2.0
 github_link: architecture/archi_perspectives/themes_intro.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/themes_intro.html
 ---
@@ -84,7 +85,7 @@ Add override features rather than edit default theme files.
 
 Themes and layouts are discussed extensively in the 
 <h2 id="related">Related topics</h2>
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
+<a href="{{page.baseurl}}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
 
 Presentation Layer
 

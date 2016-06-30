@@ -1,10 +1,11 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: D_Entities
-title: Entities of the Magento Testing Framework
+subgroup: 50_Entities
+title: Entities of the Functional Testing Framework
 menu_title: Block
 menu_order: 4
+version: 2.0
 github_link: mtf/mtf_entities/mtf_block.md
 ---
 
@@ -15,7 +16,7 @@ github_link: mtf/mtf_entities/mtf_block.md
 
 ## Block overview {#mtf_block_overview}
 
-In functional tests we use Page Object Design Pattern. Under this pattern, a block is an area of the UI that a test interacts with, and a [page]({{site.gdeurl}}mtf/mtf_entities/mtf_page.html) is a container for blocks.
+In functional tests we use Page Object Design Pattern. Under this pattern, a block is an area of the UI that a test interacts with, and a [page]({{page.baseurl}}mtf/mtf_entities/mtf_page.html) is a container for blocks.
 
 The Page Object Design Pattern is used to avoid unnecessary duplication of code and to make tests easier to support.
 
@@ -195,7 +196,7 @@ For example, the <a href="{{site.mage2000url}}dev/tests/functional/tests/app/Mag
 
 ## Form mapping {#mtf_block_mapping}
 
-Often, you need to test a Magento block that contains a form. And of course, tests require entering data in the forms. The Magento Testing Framework (MTF)has a [Magento\Mtf\Block\Form][] class that enables you to fill the forms automatically. One of the advantages of using this class is that you can list elements that must be automatically filled. These elements can be grouped in separate XML files. In the MTF we call this process "a mapping". You can use mapping to transfer data to the block from the <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html">fixture</a>.
+Often, you need to test a Magento block that contains a form. And of course, tests require entering data in the forms. The Functional Testing Framework (FTF) has a [Magento\Mtf\Block\Form][] class that enables you to fill the forms automatically. One of the advantages of using this class is that you can list elements that must be automatically filled. These elements can be grouped in separate XML files. In the FTF we call this process "a mapping". You can use mapping to transfer data to the block from the <a href="{{page.baseurl}}mtf/mtf_entities/mtf_fixture.html">fixture</a>.
 
 A mapping file is an XML file which has the same name and path as the block does, and contains fields that represent form fields. Field name in the mapping file shall match the one in the fixture.
 
@@ -238,7 +239,7 @@ See a description of the nodes in the following table.
 <tr><td><code>fields</code> </td><td>The node containing mapping fields. </td><td><code>&lt;email&gt;</code>, <code>&lt;password /&gt;</code>.</td></tr>
 <tr><td><code>selector</code> </td><td>Value for the selector that is used to find the field. Default: <code>[name='group_name[field_node_name]']</code>. Default value is assigned automatically if the node is absent in the field. </td><td>For the <code>&lt;email&gt;</code>, the <code>[name='login[username]']</code>.<br/> For the <code>&lt;password /&gt;</code>, the <code>[name='login[password]']</code> that is the default value where <code>wrapper="login"</code>.</td></tr>
 <tr><td><code>strategy</code> </td><td>The strategy of the selection. Available values: <code>css selector</code>, <code>xpath</code>. Default: <code>css selector</code>. </td><td><code>css selector</code> as a default value.</td></tr>
-<tr><td><code>input</code> </td><td>Type of the input element. Available values: <ul><li><code>select</code></li> <li><code>checkbox</code></li> <li><a href="{{site.gdeurl}}mtf/mtf_entities/mtf_typified-element.html">&lt;typified element&gt;</a></li> <li><code>simple</code></li></ul> <code>simple</code> is for simple input element. Default: <code>simple</code>. Do not use <code>class</code> node, if you use <code>input</code> in the field. </td><td><code>simple</code> as a default value.</td></tr>
+<tr><td><code>input</code> </td><td>Type of the input element. Available values: <ul><li><code>select</code></li> <li><code>checkbox</code></li> <li><a href="{{page.baseurl}}mtf/mtf_entities/mtf_typified-element.html">&lt;typified element&gt;</a></li> <li><code>simple</code></li></ul> <code>simple</code> is for simple input element. Default: <code>simple</code>. Do not use <code>class</code> node, if you use <code>input</code> in the field. </td><td><code>simple</code> as a default value.</td></tr>
 <tr><td><code>class</code> </td><td>Class of the element. Applicable if non of the <code>input</code> options fits. Do not use <code>input</code>, if you use <code>class</code> in the field. </td><td>This node has not been used in the example.</td></tr>
 </tbody></table>
 
@@ -389,7 +390,7 @@ This page relates to the Magento_Catalog module and contains `ViewBlock`. This b
 #### Create a render {#mtf_block_render_create}
 Let's create render for the bundle product.
 
-**Step 1**. Create `Bundle/Test/Page/Product/CatalogProductView.xml` page to merge with the basic page `Catalog/Test/Page/Product/CatalogProductView.xml`. [Learn more about page merging]({{site.gdeurl}}mtf/mtf_entities/mtf_page.html#mtf_page_merge).
+**Step 1**. Create `Bundle/Test/Page/Product/CatalogProductView.xml` page to merge with the basic page `Catalog/Test/Page/Product/CatalogProductView.xml`. [Learn more about page merging]({{page.baseurl}}mtf/mtf_entities/mtf_page.html#mtf_page_merge).
 
 **Step 2**. In the `Bundle/Test/Page/Product/CatalogProductView.xml`, copy `page` node from the `Catalog/Test/Page/Product/CatalogProductView.xml` without `module` attribute
 
@@ -477,11 +478,11 @@ public function getOptions(FixtureInterface $product)
  
 <!-- LINK DEFINITIONS -->
  
-[page]: {{site.gdeurl}}mtf/mtf_entities/mtf_page.html
+[page]: {{page.baseurl}}mtf/mtf_entities/mtf_page.html
 [CatalogProductView.xml]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Bundle/Test/Page/Product/CatalogProductView.xml
 [Magento\Mtf\Block\Form]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php
 [Magento\Catalog\Test\Block\Product\View]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Product/View.php
 
 <!-- ABBREVIATIONS -->
 
-*[MTF]: Magento Testing Framework
+*[FTF]: Functional Testing Framework

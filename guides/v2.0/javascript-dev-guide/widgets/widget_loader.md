@@ -5,6 +5,7 @@ subgroup: 3_Widgets
 title: Loader widget
 menu_order: 8
 menu_title: Loader widget
+version: 2.0
 github_link: javascript-dev-guide/widgets/widget_loader.md
 redirect_from:
   - guides/v2.0/frontend-dev-guide/javascript/widget_loader.html
@@ -17,7 +18,7 @@ The Loader widget blocks page content (all content or a part of it). Its intende
 The Loader widget source is <a href="{{site.mage2000url}}lib/web/mage/loader.js" target="_blank">lib/web/mage/loader.js</a>.
 
 <h2 id="loader_init">Initialize the loader widget</h2>
-The loader widget is initialized as described in <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a>.
+The loader widget is initialized as described in <a href="{{page.baseurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a>.
 
 <h2 id="loader_options">Options</h2>
 The loader widget has the following options:

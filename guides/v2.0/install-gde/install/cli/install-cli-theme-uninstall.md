@@ -6,6 +6,7 @@ title: Uninstall themes
 menu_title: Uninstall themes
 menu_node: 
 menu_order: 200
+version: 2.0
 github_link: install-gde/install/cli/install-cli-theme-uninstall.md
 redirect_from:
   -  /guides/v1.0/install-gde/install/install-cli-theme-uninstall.html
@@ -27,7 +28,7 @@ Before you use this command, you must know the relative path to your theme. Them
 
 For example, the path to the Luma theme provided with Magento 2 is `frontend/Magento/luma`.
 
-For more information about themes, see <a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-structure.html">Magento theme structure</a>.
+For more information about themes, see <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-structure.html">Magento theme structure</a>.
 
 <h2 id="instgde-install-uninst-theme-over">Overview of uninstalling themes</h2>
 This section discusses how to uninstall one or more themes, optionally including the themes' code from the file system. You can create backups first so you can restore the data at a later time.
@@ -37,11 +38,11 @@ This command uninstalls *only* themes that are specified in `composer.json`; in 
 *	Updating the `parent` node information in `theme.xml` to remove references to the theme.
 *	Removing theme code from the file system.
 
-	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-inherit.html">More information about theme inheritance</a>.
+	<a href="{{page.baseurl}}frontend-dev-guide/themes/theme-inherit.html">More information about theme inheritance</a>.
 
 <h2 id="instgde-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
-In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
+In addition to the command arguments discussed here, see <a href="{{page.baseurl}}install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="instgde-install-uninst-theme-uninst">Uninstall themes</h2>
 Command usage:
@@ -52,7 +53,7 @@ where
 
 *	`{theme path}` is the relative path to the theme, starting with the area name. For example, the path to the Blank theme supplied with Magento 2 is `frontend/Magento/blank`.
 *	`--backup-code` backs up the Magento 2 codebase as discussed in the paragraphs that follow.
-*	`--clear-static-content` cleans generated <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">static view files</a>, which is necessary to cause static view files to display properly.
+*	`--clear-static-content` cleans generated <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">static view files</a>, which is necessary to cause static view files to display properly.
 
 The command performs the following tasks:
 
@@ -68,13 +69,13 @@ The command performs the following tasks:
 
 	The backup file name is `var/backups/<timestamp>_filesystem.tgz`
 
-	You can restore backups at any time using the <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">magento setup:rollback</a> command.
+	You can restore backups at any time using the <a href="{{page.baseurl}}install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">magento setup:rollback</a> command.
 
 8.	Removes themes from the `theme` database table.
 9.	Remove themes from code base using `composer remove`.
 10.	Cleans the cache.
 11.	Cleans generated classes
-12.	If `--clear-static-content` is specified, cleans <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a>.
+12.	If `--clear-static-content` is specified, cleans <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a>.
 
 For example, if you attempt to uninstall a theme that another theme depends on, the following message displays:
 
@@ -107,16 +108,16 @@ Messages similar to the following display:
 
 #### Related topics
 
-*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-install.html">Installing the Magento software using the command line</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-enable.html">Enable or disable modules</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall-mods.html">Uninstall modules</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-deployment.html">Create the deployment configuration</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-db.html">Create the Magento database schema</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-store.html">Configure the store</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-admin.html">Create a Magento administrator</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-backup.html">Back up the file system, media, and database</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall-langpk.html">Uninstall language packages</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a>
+*	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-install.html">Installing the Magento software using the command line</a>
+*	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-enable.html">Enable or disable modules</a>
+*	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-uninstall-mods.html">Uninstall modules</a>
+*	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-deployment.html">Create the deployment configuration</a>
+*	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a>
+*	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-db.html">Create the Magento database schema</a>
+*	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-store.html">Configure the store</a>
+*	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-admin.html">Create a Magento administrator</a>
+*	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-backup.html">Back up the file system, media, and database</a>
+*	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-uninstall-langpk.html">Uninstall language packages</a>
+*	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a>
+*	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a>
+*	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a>

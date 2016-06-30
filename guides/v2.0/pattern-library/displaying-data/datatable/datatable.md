@@ -2,7 +2,7 @@
 layout: default
 group: pattern
 subgroup: Displaying and Dealing with Data
-title: Magento Admin Pattern Library
+title: Admin Design Pattern Library
 menu_title: Data Table
 menu_order: 3
 menu_node:
@@ -74,7 +74,7 @@ The data-table will contain the following elements where applicable and as neede
 	<li>Settings, bookmarks and search</li>
 	<li>Filters</li>
 	<li>Column headers</li>
-	<li>Datat</li>
+	<li>Data</li>
 </ul>
 
 <h2>Modularity</h2>
@@ -205,7 +205,7 @@ The persistent header will reactivate when you scroll back up:
 <br />
 <br />
 
-For details about component's implementation see <a href="{{site.gdeurl}}ui-library/ui-secondary-header.html">Sticky Header Component</a>.
+For details about component's implementation see <a href="{{page.baseurl}}ui-library/ui-secondary-header.html">Sticky Header Component</a>.
 
 <h3>Multiple Data-tables on Page</h3>
 The header will stick to the first table until the user scrolls past the bottom of that table . The header will have the same behavior for each subsequent data-table.
@@ -344,66 +344,38 @@ Views can be named or deleted by clicking an edit icon. Refer to “Adding a cus
 <br />
 
 <h2 id="filters">Filters</h2>
-Users may filter specific columns within the table by selecting the Filter icon in the first row of the data table. This will open a dropdown containing the filters. An input option for each column that is visible in the table is presented that the user may filter the data by. Users enter criteria and click the “Apply” button, which will refresh the table to display only the results that match the filter criteria. Not all columns may be filtered (such as columns containing “check boxes” and “actions”). This filtering approach will support the following:
-This filtering approach will support the following:
-<ul>
-	<li>Allow multiple columns to be filtered.</li>
-	<li>Provides simple filter/search functionality.</li>
-	<li>Filters can be cleared by removing ‘filter tags’ which represent individual 
-		filters that have been applied.</li>
-</ul>
+Filters allow users to customize the display of information in an associated data-table. By entering desired parameters (for example, a date range) in the available filter input sections table returns a modified view, making visible only the records meeting the user-determined criteria.
 
-<strong>Examples:</strong>
+<h3>Advanced Filters</h3>
+To access the Advanced Filters the user may click/tap the "Filters" button found in the table controls area. When activated, the button transforms into a tab and displays the available filters in a 'drawer' which opens between the table contols and the table data. The available filters are determined by the columns present in the table; therefore, if the user customizes the column visibility of the table to show some columns and hide others, the corresponing filters for these columns will display or hide in the filter 'drawer'.
 <br />
 <br />
+<img src="img/filter_init.png">
 <br />
-<img src="img/datatable28.jpg">
-<br />
-<br />
-<br />
-<img src="img/datatable29.jpg">
+<br /> 
+**NOTE:** Not all columns may be filtered (i.e. "Actions" or checkbox select) and therefore will not be presented in the list of filters even though their columns are visible in the data-table.
 <br />
 <br />
-<br />
-<img src="img/datatable30.jpg">
-<br />
+<img src="img/filter_drawer.png">
 <br />
 <br />
-<strong>Step 1:</strong> User click on Filters icon in the data table.
+To apply filters, the user sets the desired parameters in the input fields of the appropriate filters. The action initiated by clicking/tapping the "Apply" button (found in the advanced filters area). When applied, the advanced filter 'drawer' closes and the data-table refreshes to display the filtered data. The applied filters are indicated to the user in the form of filter 'tags' that appear between the filter button and the table data. Filter 'tag' are listed in the order that they are applied and each individula 'tag' has a control for removing it.
 <br />
 <br />
-<br />
-<img src="img/datatable31.jpg">
-<br />
+<img src="img/filter_applied.png">
 <br />
 <br />
-<strong>Step 2:</strong> Filter dropdown expands. User adds filters. User clicks Apply Filters.
+
+<h3 id="remove">Removing Filters</h3>
+Users may remove a filter setting by clicking/tapping the remove control next to the filter 'tag'. Doing so removes the particular filter from the *query*, the table refreshes and the data excluded by that filter then appears in the table. The user can quickly remove all applied filters by clicking/tapping the "clear all" link that follows the list of 'filter tags'.
 <br />
 <br />
-<br />
-<img src="img/datatable32.jpg">
-<br />
-<br />
-<br />
-<strong>Step 3:</strong> Filter tags are shown and filters are applied. When the filters are applied and the table refreshes, the Active Filters row reveals only the ‘filter tags’. If all of the filter tags are removed the filter row disappear.
-<br />
-<br />
-<br />
-<img src="img/datatable33.jpg">
+<img src="img/filter_remove.png">
 <br />
 <br />
 <br />
 
-<strong>Example:</strong> User is editing filters.
-<br />
-<br />
-<br />
-<img src="img/datatable34.jpg">
-<br />
-<br />
-<br />
-
-
+<!---
 <h3>Quick Filters</h3>
 In some instances, pre-determined “quick filters” may be present in the form of links. These are filter shortcuts of common filtering attributes to assist users who may not readily consider filtering the table for results. Quick Filters are perhaps most useful for extracting ‘reports’ from tables.  These filters are elevated above the ‘advanced filters’.
 
@@ -432,7 +404,7 @@ Once user click on the quick filters, that quick filter is shown as a chip. The 
 <br />
 <br />
 <br />
-
+-->
 <h2 id="datatableviews">Data Table Views</h2>
 The data-table will support up to 30 columns, with up to 8 being visible by default. While there will be a default view for each data-table in the system, users will have the ability to show, hide, drag and change the order of columns. This interaction will include the ability to resize the width of columns.
 <ul>
@@ -490,7 +462,7 @@ As items are selected on the gird, a count for the number of items selected shou
 <br />
 <br />
 
-<h3 id="selecting">Select All</h3>
+<h3 id="selecting">Select</h3>
 For tables which require a select column:
 <ul>
 	<li>The select column will always be the first column appearing on the left side of 
@@ -517,6 +489,16 @@ Some data-tables will be used to display “settings” content. In these instan
 <br />
 <br />
 <br />
+<h3>Single Select Button</h3>
+The data table can also accomodate buttons in rows, and has a special case in the "Single Select" button.  This button functions not unlike a typical radio button control, but is used instead of the radio button when the task flow or experience in the Admin application are better served with the more implicit action of selecting a single choice from a data table. This provides greater visibility and imediate confirmation of the action to the user. The use of this should be carefully considered in the context of the experience to determine if it provides greater understanding to the user than radio buttons.
+<br />
+<br />
+<br />
+<img src="img/single_select_button.png">
+<br />
+<br />
+<br />
+
 
 <h2 id="editing">Editing</h2>
 Single item and multiple item edits are explained below.<br />

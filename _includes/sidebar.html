@@ -10,71 +10,70 @@
 <h4>Component Manager and System Upgrade Guide</h4>
 
 {% elsif page.group == "coding-standards" %}
-<h4>Coding standards</h4>
+<h4>Coding Standards</h4>
 
 {% elsif page.group == "rest" %}
-<h4>REST API reference</h4>
+<h4>REST API Reference</h4>
 
 {% elsif page.group == "contributor" %}
 <h4>Contributor Guide</h4>
 
 {% elsif page.group == "get-started" %}
-<h4>Getting started with web APIs</h4>
+<h4>Getting Started with Web APIs</h4>
 
 {% elsif page.group == "pattern" %}
-<h4>Admin pattern Library</h4>
+<h4>Admin Pattern Library</h4>
 
 {% elsif page.group == "mtf-guide" %}
-<h4>Testing framework guide</h4>
+<h4>Testing Framework Guide</h4>
 
 {% elsif page.group == "migration" %}
-<h4>Migration guide</h4>
+<h4>Migration Guide</h4>
 
 {% elsif page.group == "release-notes" %}
-<h4>Release Notes</h4>
+<h4>Release Information</h4>
 
 {% elsif page.group == "extension-dev-guide" %}
-<h4>PHP developer guide</h4>
+<h4>PHP Developer Guide</h4>
 
 {% elsif page.group == "arch-guide" %}
-<h4>Architecture guide</h4>
+<h4>Architecture Guide</h4>
 
 {% elsif page.group == "fedg" %}
-<h4>Frontend developer guide</h4>
+<h4>Frontend Developer Guide</h4>
 
 {% elsif page.group == "UI Library" %}
 <h4>UI Components</h4>
 
 {% elsif page.group == "jsdg" %}
-<h4>JavaScript developer guide</h4>
+<h4>JavaScript Developer Guide</h4>
 
 {% elsif page.group == "install2" %}
-<h4>Installation guide</h4>
+<h4>Installation Guide</h4>
 
 {% elsif page.group == "install_cli" %}
-<h4>Installation guide<br>Part 2: Installing</h4>
+<h4>Installation Guide<br>Part 2: Installing</h4>
 
-{% if page.group == "install_hosted" %}
+{% elsif page.group == "install_hosted" %}
 <h4>Newbie Installation Guide</h4>
-{% endif %}
 
 {% elsif page.group == "install_pre" %}
-<h4>Installation guide<br>Part 1: Getting started</h4>
+<h4>Installation Guide<br>Part 1: Getting started</h4>
 
 {% elsif page.group == "install" %}
-<h4>Installation guide<br>Part 3: Post-installation</h4>
+<h4>Installation Guide<br>Part 3: Post-installation</h4>
 
 {% elsif page.group == "install_wiz" %}
-<h4>Installation guide<br>Part 2: Installing</h4>
+<h4>Installation Guide<br>Part 2: Installing</h4>
 
 {% elsif page.group == "install_trouble" %}
-<h4>Installation guide<br>Part 3: Post-installation</h4>
+<h4>Installation Guide<br>Part 3: Post-installation</h4>
 
 {% elsif page.group == "config-guide" %}
-<h4>Configuration guide</h4>
+<h4>Configuration Guide</h4>
 
-{% elsif page.group == "quickstart" %}
-<h4>Marketplace quick start guide</h4>
+{% elsif page.group == "cloud" %}
+<h4>Magento Enterprise Cloud Guide</h4>
 {% endif %}
 
 
@@ -82,7 +81,7 @@
 
 		<ul role="navigation">
 
-		{% assign categories = site.articles | group_by:"group" %}
+		{% assign categories = site.articles | where: "guide_version", page.guide_version | group_by:"group" %}
 
 		{% for node in categories %}
 
@@ -140,10 +139,10 @@
 									{% endif %}
 
 								{% endfor %}
-								
-								
-							
-							
+
+
+
+
 						{% else %}
 
 							{% for article in articles_sorted %}

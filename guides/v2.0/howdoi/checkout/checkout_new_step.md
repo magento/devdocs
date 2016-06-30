@@ -5,6 +5,7 @@ subgroup: checkout
 title: Add a new checkout step
 menu_title: Add a new checkout step
 menu_order: 1
+version: 2.0
 github_link: howdoi/checkout/checkout_new_step.md
 ---
 
@@ -18,11 +19,16 @@ You can add a custom checkout step, it should be implemented as a UI component. 
 
 This topic describes how to create the frontend part of the component, implementing a checkout step, and how to add it to the checkout flow.
 
+**Contents**
+
+* TOC
+{:toc}
+
 ## Create the view part of the checkout step component
 
 To create the view part of the new checkout step:
 
-1. Add a module directory (not covered in this topic). See [Build your module]({{site.gdeurl}}extension-dev-guide/build.html) for details). All custom files must be stored there. For your checkout customization to be applied correctly, your custom module should depend on the Magento_Checkout module.
+1. Add a module directory (not covered in this topic). See [Build your module]({{page.baseurl}}extension-dev-guide/build.html) for details). All custom files must be stored there. For your checkout customization to be applied correctly, your custom module should depend on the `Magento_Checkout` module. Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues. 
 1. Create the `.js` file implementing the view model.
 2. Create an `.html` template for the component.
 
@@ -121,7 +127,7 @@ define(
 
 ### Add the .html template
 
-In the module directory, add the `.html` template for the component. It must be located under the '<your_module_dir>/view/frontend/web/template` directory.
+In the module directory, add the `.html` template for the component. It must be located under the `<your_module_dir>/view/frontend/web/template` directory.
 
 A sample `mystep.html` follows:
 {%highlight html%}
@@ -150,7 +156,7 @@ A sample `mystep.html` follows:
 
 For the new step to be displayed on the page, you need to declare it in the Checkout page layout, which is defined in `checkout_index_index.xml`. 
 
-So you need to add an [extending]({{site.gdeurl}}frontend-dev-guide/layouts/layout-extend.html) `checkout_index_index.xml` layout file in the following location: `<your_module_dir>/view/frontend/layout/checkout_index_index.xml`
+So you need to add an [extending]({{page.baseurl}}frontend-dev-guide/layouts/layout-extend.html) `checkout_index_index.xml` layout file in the following location: `<your_module_dir>/view/frontend/layout/checkout_index_index.xml`
 
 A sample `checkout_index_index.xml` follows:
 

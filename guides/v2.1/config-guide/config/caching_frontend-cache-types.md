@@ -1,0 +1,1 @@
+../../../v2.0/config-guide/config/caching_frontend-cache-types.md

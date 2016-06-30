@@ -5,6 +5,7 @@ subgroup:
 title: Architecture layers
 menu_title: Architecture layers
 menu_order: 
+version: 2.0
 github_link: architecture/archi_perspectives/arch_layers.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/arch_layers.html
 ---
@@ -119,7 +120,7 @@ The Magento Framework (`lib/internal/Magento/Framework/`) provides a robust rang
       </tr><tr>
          <td><code>Magento\Framework\Api</code>
          </td>
-         <td>Contains base classes for advanced functionality of extendable objects through the system (that is, objects that can be extended to add new data through Magento Connection extensions).</td>
+         <td>Contains base classes for advanced functionality of extendable objects through the system (that is, objects that can be extended to add new data through Magento Marketplace extensions).</td>
       </tr><tr>
          <td><code>Magento\Framework\Config</code>
          </td>
@@ -285,7 +286,7 @@ If you expect to return multiple items from a database query, then you would imp
 A simple resource model defines and interacts with a single table. However, some objects have a vast number of attributes, or they could have a set related objects that have varying numbers of attributes. In these cases, the objects are constructed using Entity-Attribute-Value (EAV) models. As a result, any model that uses an EAV resource has its attributes spread out over a number of MySQL tables. The `Customer` and `Catalog` resource models use EAV attributes.  
 
 <h2 id="related">Related topics</h2>
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
+<a href="{{page.baseurl}}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
 
 
  

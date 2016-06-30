@@ -2,10 +2,11 @@
 layout: default
 group: pattern
 subgroup: Controls
-title: Magento Admin Pattern Library
+title: Admin Design Pattern Library
 menu_title: Buttons
 menu_order: 1
 menu_node: 
+version: 2.0
 github_link: pattern-library/controls/buttons/buttons.md
 redirect_from: /guides/v1.0/pattern-library/controls/buttons/buttons.html
 ---

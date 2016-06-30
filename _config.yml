@@ -1,8 +1,9 @@
 # Site settings
 encoding: "utf-8"
 title: Magento 2 Developer Documentation
-email: mailto:DL-Magento-Doc-Feedback@ebay.com
-description: Magento 2 Developer Guide
+email: mailto:DL-Magento-Doc-Feedback@magento.com
+description: > # this means to ignore newlines until "baseurl:"
+  Magento 2 Developer Guide.
 baseurl: "/"
 # url: "https://github.com/magento/devdocs" # the base hostname & protocol for your site
 # twitter_username: magento
@@ -10,16 +11,51 @@ baseurl: "/"
 
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
+# Version Switcher
+version: 2.1
+versions:
+   -
+      name: 2.0
+      url: guides/v2.0/
+   -
+      name: 2.1
+      url:
+
+# GitHub variables
+github: "https://github.com/magento/devdocs/tree/develop/guides/"
+
+# 2.0.0 variables
 gdeurl: "/guides/v2.0/"
-githuburl: "https://github.com/magento/devdocs/tree/develop/guides/v2.0/"
+githuburl: "https://github.com/magento/devdocs/tree/2.0/guides/v2.0/"
+mage2000url: "https://github.com/magento/magento2/blob/2.0/"
+
+# 1.x variables
+m1xgdeurl: "/guides/m1x/"
+m1xgithuburl: "https://github.com/magento/devdocs/tree/m1x/guides/m1x/"
+
+# 2.1.0 variables
+gdeurl21: "/guides/v2.1/"
+githuburl21: "https://github.com/magento/devdocs/tree/2.1/guides/v2.1/"
+mage2100url: "https://github.com/magento/magento2/blob/2.1/"
+
+# 2.2.0 variables
+gdeurl22: "/guides/v2.2/"
+githuburl22: "https://github.com/magento/devdocs/tree/2.2/guides/v2.2/"
+mage2200url: "https://github.com/magento/magento2/blob/2.2/"
+
+# 2.3.0 variables
+
+gdeurl23: "/guides/v2.3/"
+githuburl23: "https://github.com/magento/devdocs/tree/2.3/guides/v2.3/"
+mage2300url: "https://github.com/magento/magento2/blob/2.3/"
+
+# Other variables
 namem2fedg: "Magento 2 Frontend Developer's Guide"
 namem2devgde: "Magento 2 Developer's Guide"
 namem2apiref: "Magento 2 API Reference"
 namem2install: "Magento 2 Installation Guide"
-mage2000url: "https://github.com/magento/magento2/blob/develop/"
+
 # toc_baseurl: "https://github.corp.ebay.com/pages/Magento/devdocs_internal"
-m1xgdeurl: "/guides/m1x/"
-m1xgithuburl: "https://github.com/magento/devdocs/tree/develop/guides/m1x/"
 
 # Build settings
 markdown: kramdown
@@ -29,5 +65,6 @@ incremental: true
 
 gems:
   - jekyll-redirect-from
+  - jekyll-last-modified-at
 
-exclude: ['scss','bin','node_modules']
+exclude: ['scss','bin','node_modules', 'vendor', 'guides/v2.2']

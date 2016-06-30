@@ -6,6 +6,7 @@ title: Migrate data
 menu_title: Migrate data
 menu_node:
 menu_order: 2
+version: 2.0
 github_link: migration/migration-migrate-data.md
 redirect_from: /guides/v1.0/migration/migration-migrate-data.html
 ---
@@ -24,7 +25,7 @@ After resolving issues, run the Data Migration Tool again.
 <h2 id="migrate-first">First steps</h2>
 {% include install/first-steps-cli.html %}
 
-In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
+In addition to the command arguments discussed here, see <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="migrate-data-cmd">Run the data migration command</h2>
 To migrate data, use the following command:
@@ -47,4 +48,4 @@ where
 
 ###Related topics
 
-* <a href="{{ site.gdeurl }}migration/migration-migrate-delta.html">Migrate changes</a>
+* <a href="{{page.baseurl}}migration/migration-migrate-delta.html">Migrate changes</a>

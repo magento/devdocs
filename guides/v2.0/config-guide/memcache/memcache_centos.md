@@ -1,11 +1,12 @@
 ---
 layout: default
 group: config-guide
-subgroup: Caching_mem
+subgroup: 10_mem
 title: Install, configure, verify memcached on CentOS
 menu_title: Install, configure, verify memcached on CentOS
 menu_order: 3
 menu_node: 
+version: 2.0
 github_link: config-guide/memcache/memcache_ubuntu.md
 ---
 
@@ -111,11 +112,13 @@ Create `cache-test.php` in your web server's docroot:
 
 {% highlight PHP %}
 <?php
-$meminstance = new Memcache();
-$meminstance->pconnect('<memcache host name or ip>', <memcache port>);
+if (class_exists('Memcache')) {
+    $meminstance = new Memcache();
+} else {
+    $meminstance = new Memcached();
+}
 
-mysql_connect("localhost", "memcache_test", "memcache_test") or die(mysql_error());
-mysql_select_db("memcache_test") or die(mysql_error());
+$meminstance->addServer('<memcache host name or ip>', <memcache port>);
 
 $query = "select id from example where name = 'new_data'";
 $querykey = "KEY" . md5($query);
@@ -123,14 +126,19 @@ $querykey = "KEY" . md5($query);
 $result = $meminstance->get($querykey);
 
 if (!$result) {
-   $result = mysql_fetch_array(mysql_query("select id from example where name = 'new_data'")) or die('mysql error');
-   $meminstance->set($querykey, $result, 0, 600);
-   print "got result from mysql\n";
-   return 0;
+   try {
+        $dbh = new PDO('mysql:host=localhost;dbname=memcache_test','memcache_test','memcache_test');
+        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $result = $dbh->query("select id from example where name = 'new_data'")->fetch();
+        $meminstance->set($querykey, $result, 0, 600);
+        print "got result from mysql\n";
+        return 0;
+    } catch (PDOException $e) {
+        die($e->getMessage());
+    }
 }
 print "got result from memcached\n";
 return 0;
-
 ?>
 {% endhighlight %}
 
@@ -171,4 +179,4 @@ Flush the memcache storage and quit Telnet:
 <a href="http://www.darkcoding.net/software/memcached-list-all-keys/" target="_blank">Additional information about the Telnet test</a>
 
 #### Next step
-<a href="{{ site.gdeurl }}config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a>
+<a href="{{page.baseurl}}config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a>

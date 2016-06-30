@@ -6,6 +6,7 @@ title: Configure a database and a database user
 menu_title: Configure a database and a database user
 menu_order: 2
 menu_node: 
+version: 2.0
 github_link: install-gde/install/hosted/hosted_start_db.md
 ---
 
@@ -39,4 +40,4 @@ To configure a MySQL database and database user:
 	<img src="{{ site.baseurl }}common/images/install-merch_db-user-privs.png" width="750px" alt="Give the database user all privileges to the database">
 
 #### Next step
-<a href="{{ site.gdeurl }}install-gde/install/hosted/hosted_start_php.html">Configure PHP</a>
+<a href="{{page.baseurl}}install-gde/install/hosted/hosted_start_php.html">Configure PHP</a>

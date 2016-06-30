@@ -5,6 +5,7 @@ subgroup: Logical View
 title: Magento libraries
 menu_title: Magento libraries
 menu_order: 3
+version: 2.0
 github_link: architecture/components/arch_libraries.md
 redirect_from: /guides/v1.0/architecture/arch_libraries.html
 ---
@@ -15,9 +16,9 @@ Magento uses the following types of libraries:
 *	Magento PHP libraries, which are discussed in the next section
 *	Magento UI libraries, which are located in the <a href="{{ site.mage2000url }}lib/web" target="_blank">lib/web</a> directory
 
-	For more information, see <a href="{{ site.mage2000url }}lib/web/css/docs/source/README.md" target="_blank">library documentation on GitHub</a> and <a href="{{ site.gdeurl }}architecture/view/view-lib.html">View Library</a>.
+	For more information, see <a href="{{ site.mage2000url }}lib/web/css/docs/source/README.md" target="_blank">library documentation on GitHub</a> and <a href="{{page.baseurl}}architecture/view/view-lib.html">View Library</a>.
 	
-*	<a href="{{ site.gdeurl }}architecture/archi_perspectives/third-party-libs.html">Third-party libraries</a>. These libraries include JavaScript libraries as well as PHP-based ones (including the Zend libraries).
+*	<a href="{{page.baseurl}}architecture/archi_perspectives/third-party-libs.html">Third-party libraries</a>. These libraries include JavaScript libraries as well as PHP-based ones (including the Zend libraries).
 
 	Third-party libraries are organized by vendor to be PSR-0 compliant.
 
@@ -32,8 +33,8 @@ For example:
 
 *	<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App" target="_blank">Magento\Framework\App</a> is a special PHP library that is aware of Magento as an application. It represents a greater level of abstraction and provides the following:
 
-	* <a href="{{ site.gdeurl }}architecture/modules/mod_and_areas.html">Application areas</a>
-	* <a href="{{ site.gdeurl}}extension-dev-guide/routing.html">Routing requests</a>
+	* <a href="{{page.baseurl}}architecture/modules/mod_and_areas.html">Application areas</a>
+	* <a href="{{page.baseurl}}extension-dev-guide/routing.html">Routing requests</a>
 	* Application state
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -43,11 +44,11 @@ For example:
 <h2 id="m2arch-related">Related topics</h2>
 
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/components/modules/mod_intro.html">Modules</a>
+<a href="{{page.baseurl}}architecture/archi_perspectives/components/modules/mod_intro.html">Modules</a>
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/components/arch_themes.html">Themes</a>
+<a href="{{page.baseurl}}architecture/archi_perspectives/components/arch_themes.html">Themes</a>
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/components/arch_translations.html">Language packages</a>
+<a href="{{page.baseurl}}architecture/archi_perspectives/components/arch_translations.html">Language packages</a>
 
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/third-party-libs.html">Third-party libraries</a>
+<a href="{{page.baseurl}}architecture/archi_perspectives/third-party-libs.html">Third-party libraries</a>

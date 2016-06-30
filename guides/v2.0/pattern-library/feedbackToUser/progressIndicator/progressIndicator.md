@@ -2,10 +2,11 @@
 layout: default
 group: pattern
 subgroup: Feedback to User
-title: Magento Admin Pattern Library
+title: Admin Design Pattern Library
 menu_title: Progress Indicator
 menu_order: 1
 menu_node: 
+version: 2.0
 github_link: pattern-library/feedbackToUser/progressIndicator/progressIndicator.md
 redirect_from: /guides/v1.0/pattern-library/feedbackToUser/progressIndicator/progressIndicator.html
 ---
@@ -33,11 +34,11 @@ The use of progress indicator should follow this guideline.
 * When a percentage of completion cannot be shown or the process is relatively short, use a spinner.
 
 <h3 id="when-not-to-use">When Not to Use</h3>
-* When process's progress communicate well enough on its own.
-* When process completes so quickly that it is distracting to show progress. If the task takes less 500ms. 
-* When the process wait for the user to complete the task. 
+* When process' progress communicates well enough on its own.
+* When process completes so quickly that it is distracting to show progress. If the task takes less than 500ms. 
+* When the process waits for the user to complete the task. 
 * When the user doesn't need to know something is happening
-* When the process operate in the background and doesn't block user activity, progress indicator can be use but not necessary.
+* When the process operates in the background and doesn't block user activity, progress indicator can be used but is not necessary.
 * When you can use content from the operation to visualize progress.
 
 <h3 id="behavior">Behavior</h3>

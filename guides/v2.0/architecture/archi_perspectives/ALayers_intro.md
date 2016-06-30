@@ -6,6 +6,7 @@ title: Architectural layers overview
 menu_title: Architectural layers
 menu_node: parent
 menu_order: 
+version: 2.0
 github_link: architecture/archi_perspectives/ALayers_intro.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/ALayers_intro.html
 ---
@@ -33,16 +34,16 @@ Layered application design offers many advantages, but users of Magento will app
 
 <h3>Related topics</h3>
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
+<a href="{{page.baseurl}}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
 
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/present_layer.html">Presentation layer</a>
+<a href="{{page.baseurl}}architecture/archi_perspectives/present_layer.html">Presentation layer</a>
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/service_layer.html">Service layer</a>
+<a href="{{page.baseurl}}architecture/archi_perspectives/service_layer.html">Service layer</a>
 
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/domain_layer.html">Domain layer</a>
+<a href="{{page.baseurl}}architecture/archi_perspectives/domain_layer.html">Domain layer</a>
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/persist_layer.html">Persistence layer</a>
+<a href="{{page.baseurl}}architecture/archi_perspectives/persist_layer.html">Persistence layer</a>
 
 

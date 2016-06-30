@@ -5,19 +5,15 @@ subgroup: B_Layouts
 title: Layout instructions
 menu_title: Layout instructions
 menu_order: 2
+version: 2.0
 github_link: frontend-dev-guide/layouts/xml-instructions.md
 ---
-<head>
-   <style>
-      table tr td, table tr th {border: 1px solid #ABABAB}
-   </style>
-</head>
 
 <h2 id="fedg_layout_xml-instruc_overview">What's in this topic</h2>
 
 
 Changing layout files is one of the two possible ways to customize page layout in Magento (the second way is altering templates). 
-To change the page wireframe, modify the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-page" target="_blank">page layout</a> files; all other customizations are performed in the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> or <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-gen" target="_blank">generic layout</a> files. 
+To change the page wireframe, modify the <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-page" target="_blank">page layout</a> files; all other customizations are performed in the <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> or <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-gen" target="_blank">generic layout</a> files. 
 
 Use layout instructions to:
 
@@ -27,7 +23,7 @@ Use layout instructions to:
 *  remove a page element
 <p></p>
 
-The basic set of instructions is the same for all types of layout files. This article describes these basic instructions; for details about how they are used in particular layout file type, please refer to the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html" target="_blank">Layout file types</a> article.
+The basic set of instructions is the same for all types of layout files. This article describes these basic instructions; for details about how they are used in particular layout file type, please refer to the <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-types.html" target="_blank">Layout file types</a> article.
 
 
 <h2 id="fedg_layout_xml-instruc_ex">Common layout instructions</h2>
@@ -40,6 +36,7 @@ Use the following layout instructions to customize your layout:
 *  <a href="#fedg_layout_xml-instruc_ex_act"><code>&lt;action></code></a>
 *  <a href="#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceBlock></code> and <code>&lt;referenceContainer></code></a>
 *  <a href="#fedg_layout_xml-instruc_ex_mv"><code>&lt;move></code></a>
+* <a href="#fedg_layout_xml-instruc_ex_rmv"><code>&lt;remove&gt;</code></a>
 *  <a href="#fedg_layout_xml-instruc_ex_upd"><code>&lt;update&gt;</code></a>
 *  <a href="#argument"><code>&lt;argument&gt;</code></a>
 
@@ -185,7 +182,7 @@ Sample of usage in layout:
 This would add a new column to the page layout.
 
 
-<h2 id="fedg_xml-instrux_before-after">before and after attributes</h2>
+<h3 id="fedg_xml-instrux_before-after">before and after attributes</h3>
 <p>To help you to position elements in a specific order suitable for design, SEO, usability, or other requirements, Magento software provides the <code>before</code> and <code>after</code> layout attributes.</p>
 <p>These optional attributes can be used in layout XML files to control the order of elements in their common parent.
 
@@ -282,7 +279,7 @@ Example:
 
 
 <p><code>&lt;action></code> child nodes are translated into block method arguments. Child nodes names are arbitrary. If there are two or more nodes with the same name under <code>&lt;action></code>, they are passed as one array.</p>
-<p>In the previous example, the value of <code>&lt;arg1></code> is passed as the first argument and <code>&lt;arg2></code> values are passed as <code>array('one', 'two')</code>. The list of all available methods depends on the block implementation (for example, the public method of the block class).</p>
+
 <table>
    <tbody>
       <tr>
@@ -362,7 +359,12 @@ Sets the declared block or container element as a child of another element in th
 <ul>
    <li><code>&lt;move></code> is skipped if the element to be moved is not defined.</li>
    <li>If the <code>as</code> attribute is not defined, the current value of the element alias is used. If that is not possible, the value of the <code>name</code> attribute is used instead.</li>
-   <li>During layout generation, the <code>&lt;move></code> instruction is processed before the <code>&lt;remove></code> instruction. This means if any elements are moved to the element scheduled for removal, they will be removed as well.</li>
+  <li>During layout generation, the <code>&lt;move&gt;</code>
+  instruction is processed before the removal (set using the <code>
+    remove</code> attribute). This means if any elements are moved
+    to the element scheduled for removal, they will be removed as
+    well.
+  </li>
 </ul>
 <table>
    <tbody>
@@ -399,6 +401,28 @@ Sets the declared block or container element as a child of another element in th
    </tbody>
 </table>
 
+<h3 id="fedg_layout_xml-instruc_ex_rmv">&lt;remove&gt;</h3>
+
+Is used only to remove the static resources linked in a page <code>&lt;head&gt;</code> section.
+For removing blocks or containers, use the <code>&lt;remove&gt;</code> attribute for <a href="#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceBlock&gt;</code> and <code>&lt;referenceContainer&gt;</code></a>.
+
+Example of usage:
+
+{%highlight xml%}
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+   <head>
+        <!-- Remove local resources -->
+        <remove src="css/styles-m.css" />
+        <remove src="my-js.js"/>
+        <remove src="Magento_Catalog::js/compare.js" />
+								
+	<!-- Remove external resources -->
+        <remove src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"/>
+        <remove src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"/>
+        <remove src="http://fonts.googleapis.com/css?family=Montserrat" /> 
+   </head>
+{%endhighlight xml%}
+
 <h3 id="fedg_layout_xml-instruc_ex_upd">&lt;update&gt;</h3>
 
 Includes a certain layout file.
@@ -409,7 +433,7 @@ Used as follows:
 <update handle="{name_of_handle_to_include}"/>
 {%endhighlight xml%}
 
-The specified <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html#handle" target="_blank">handle</a> is "included" and executed recursively.
+The specified <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-overview.html#handle" target="_blank">handle</a> is "included" and executed recursively.
 
 <h3 id="argument">&lt;argument&gt;</h3>
 Used to pass an argument.
@@ -463,7 +487,7 @@ To pass an argument that is an array use the following construction:
 </argument>
 {%endhighlight xml%}
 
-<p id="getter">Arguments values set in a layout file can be accessed in <a href="{{site.gdeurl}}frontend-dev-guide/templates/template-overview.html" target="_blank">templates</a> using the <code>get{ArgumentName}()</code> and <code>has{ArgumentName}()</code> methods. The latter returns a boolean defining whether there's any value set. 
+<p id="getter">Arguments values set in a layout file can be accessed in <a href="{{page.baseurl}}frontend-dev-guide/templates/template-overview.html" target="_blank">templates</a> using the <code>get{ArgumentName}()</code> and <code>has{ArgumentName}()</code> methods. The latter returns a boolean defining whether there's any value set. 
 <code>{ArgumentName}</code> is obtained from the <code>name</code> attribute the following way: for getting the value of <code>&lt;argument name="some_string"&gt;</code> the method name is <code>getSomeString()</code>.
 
 Example:

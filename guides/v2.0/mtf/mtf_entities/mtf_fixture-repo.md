@@ -1,10 +1,11 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: D_Entities
-title: Entities of the Magento Testing Framework
+subgroup: 50_Entities
+title: Entities of the Functional Testing Framework
 menu_title: Fixture Repository
 menu_order: 2
+version: 2.0
 github_link: mtf/mtf_entities/mtf_fixture-repo.md
 ---
 
@@ -26,7 +27,7 @@ In this topic you will learn how to create, use, and merge a repository.
 
 Let's create a repository for the Widget fixture `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml`.
 
-<a href="{{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html">More details about fixtures</a>.
+<a href="{{page.baseurl}}mtf/mtf_entities/mtf_fixture.html">More details about fixtures</a>.
 
 Assume that we have the following fixture:
 
@@ -134,7 +135,7 @@ To create a new CMS page link the user must enter data of all required fields. T
 
 This simple code contains a bit more complex logic, where <a href="#mtf_repository_create-field">the repository is applied to the fixture field</a>. Just to remind you, how this field is represented in the fixture: `<field name="widgetOptions" source="Magento\Widget\Test\Fixture\Widget\WidgetOptions" repository="Magento\Widget\Test\Repository\Widget\WidgetOptions" group="widget_options" />`.
 
-In brief, we reference another repository `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/WidgetOptions.xml`, and a <a href="{{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">source</a> that is `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget/WidgetOptions.php`.
+In brief, we reference another repository `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/WidgetOptions.xml`, and a <a href="{{page.baseurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">source</a> that is `<magento2>/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget/WidgetOptions.php`.
 
 The `WidgetOptions.xml` repository includes `cmsPageLink` data set:
 
@@ -419,13 +420,13 @@ Let's see the `authorizenet` data set in action. Fields defined in repository ar
 
 ## Merging repositories {#mtf_repository_merge}
 
-The MTF enables you to split data sets among different modules. The configuration repository is a good example.
+The FTF enables you to split data sets among different modules. The configuration repository is a good example.
 
 Modules that require configuration adjustment store `ConfigData.xml` in their `Repository` directory. All `ConfigData.xml` repositories have reference to the `Config` repository class. See the example on the following screenshot:
 
 <a href="{{site.baseurl}}common/images/mtf_repo_merge_ex.png"><img src="{{site.baseurl}}common/images/mtf_repo_merge_ex.png" /></a>
 
-As you can see, the `ConfigData.xml` of the `Authorizenet` module and the `ConfigData.xml` of <a href="https://github.com/magento/magento2/tree/master/app/code/Magento/Backend">the `Magento_Backend` module</a> have the same reference to the repository class; that is `Magento\Config\Test\Repository\ConfigData`.
+As you can see, the `ConfigData.xml` of the [`Magento_Authorizenet` module]({{site.mage2000url}}app/code/Magento/Authorizenet) and the `ConfigData.xml` of the [`Magento_Backend` module]({{site.mage2000url}}app/code/Magento/Backend) have the same reference to the repository class; that is `Magento\Config\Test\Repository\ConfigData`.
 
 `ConfigData.php` will be generated in `<magento2>/dev/tests/functional/generated/Magento/Config/Test/Repository`. This PHP repository will contain repository data sets from all Magento modules that have a `ConfigData.xml` repository.
 
@@ -489,7 +490,7 @@ Later you installed a new module Magento_CustomerNew module that changed Custome
 
 After the repository generation 
     
-    php <magento2>/dev/tests/functional/utils/generate/repository.php)
+    php <magento2>/dev/tests/functional/utils/generate.php
 
 you have the following code in the Customer repository (`<magento2>/dev/tests/functional/generated/Magento/Customer/Test/Repository/Customer.php`):
 
@@ -512,9 +513,9 @@ As you can see, a repository with the name `default` contains data from the `cus
 
 Credentials are stored in an `*.xml` file that is specified in `phpunit.xml`.
 
-You can find a template for credentials in <a href="https://github.com/magento/magento2/blob/master/dev/tests/functional/credentials.xml.dist"><code>&lt;magento2&gt;/dev/tests/functional/credentials.xml.dist</code></a>.
+You can find a template for credentials in [`<magento2>/dev/tests/functional/credentials.xml.dist`]({{site.mage2000url}}dev/tests/functional/credentials.xml.dist).
 
-Credentials always should stay invisible for security reasons. The MTF implicitly pastes credentials during the test run only.
+Credentials always should stay invisible for security reasons. The FTF implicitly pastes credentials during the test run only.
 There are two ways to paste credentials:
 
 - **Using path**. If a field in a repository has a `name` that matches field `path` in `credentials.xml`, then the value of this field will be substituted for the value from `credential.xml` during the test.

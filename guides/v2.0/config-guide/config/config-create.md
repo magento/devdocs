@@ -1,10 +1,11 @@
 ---
 layout: default
 group: config-guide
-subgroup: Magento configuration files
+subgroup: 07_conf
 title: Create or extend configuration types
 menu_title: Create or extend configuration types
 menu_order: 10
+version: 2.0
 github_link: config-guide/config/config-create.md
 redirect_from: /guides/v1.0/config-guide/config/config-create.html
 ---
@@ -86,5 +87,5 @@ Your IDE can validate your configuration files at both runtime and during develo
 
 #### Related topics
 
-*  <a href="{{ site.gdeurl }}config-guide/config/config-php.html">Module configuration files</a>
-*  <a href="{{ site.gdeurl }}config-guide/config/config-php.html">Magento's deployment configuration</a>
+*  <a href="{{page.baseurl}}config-guide/config/config-php.html">Module configuration files</a>
+*  <a href="{{page.baseurl}}config-guide/config/config-php.html">Magento's deployment configuration</a>

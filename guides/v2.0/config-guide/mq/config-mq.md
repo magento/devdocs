@@ -1,10 +1,11 @@
 ---
 layout: default
 group: config-guide
-subgroup: RabbitMQ
+subgroup: 15_RabbitMQ
 title: Configure message queue topology
 menu_title: Configure message queue topology
 menu_order: 2
+version: 2.0
 github_link: config-guide/mq/config-mq.md
 ---
 <div class="bs-callout bs-callout-warning">
@@ -151,6 +152,6 @@ The `bind` elements link topics to queues and exchanges, defining the message qu
 {% endhighlight %}
 
 #### Related Topics
-*	<a href="{{ site.gdeurl }}config-guide/mq/rabbitmq-overview.html">RabbitMQ Overview</a>
-*	<a href="{{ site.gdeurl }}config-guide/mq/manage-mysql.html">Manage message queues with MySQL</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/install-rabbitmq.html">Install RabbitMQ</a>
+*	<a href="{{page.baseurl}}config-guide/mq/rabbitmq-overview.html">RabbitMQ Overview</a>
+*	<a href="{{page.baseurl}}config-guide/mq/manage-mysql.html">Manage message queues with MySQL</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/install-rabbitmq.html">Install RabbitMQ</a>

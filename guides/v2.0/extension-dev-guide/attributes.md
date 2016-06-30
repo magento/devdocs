@@ -1,10 +1,11 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 6_Module Development
+subgroup: 99_Module Development
 title: EAV and extension attributes
 menu_title: EAV and extension attributes
-menu_order: 7
+menu_order: 9
+version: 2.0
 github_link: extension-dev-guide/attributes.md
 redirect_from: /guides/v1.0/extension-dev-guide/attributes.html
 
@@ -13,7 +14,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/attributes.html
 
 Magento provides two types of attributes that integrators can use to extend the functionality provided out-of-the-box:
 
-* Custom and EAV (Entity-Attribute-Value) attributes. Custom attributes are those added on behalf of a merchant. For example, a merchant might need to add attributes to describe products, such as shape or volume. A merchant can add these attributes on the admin panel, and these attributes can be displayed. See the merchant documentation for information about information about managing custom attributes.
+* Custom and EAV (Entity-Attribute-Value) attributes. Custom attributes are those added on behalf of a merchant. For example, a merchant might need to add attributes to describe products, such as shape or volume. A merchant can add these attributes on the admin panel, and these attributes can be displayed. See the merchant documentation for information about managing custom attributes.
 
 	Custom attributes are a subset of EAV attributes. Objects that use EAV attributes typically store values in several MySQL tables. The `Customer` and `Catalog` modules have the primary models that use EAV attributes. Other modules, such as `ConfigurableProduct`, `GiftMessage`, and `Tax`, use the EAV functionality for `Catalog`.
 
@@ -50,7 +51,7 @@ Use `ExtensibleDataInterface` to implement extension attributes. In your code, y
 
 <code>public function getExtensionAttributes();</code>
 
-Most likely, you'll want to extend interfaces defined in the `Api/Data` directory of an Magento module. 
+Most likely, you'll want to extend interfaces defined in the `Api/Data` directory of a Magento module. 
 
 <h3 id="declare">Declare extension attributes</h3>
 
@@ -82,7 +83,7 @@ where:
 <tbody>
 <tr>
 <td><p>for</p></td>
-<td><p>The fully-qualified type name with the namespace that processes the extensions. The value much be a type that implements `ExtensibleDataInterface`. The interface can be in a different module.</p> </td>
+<td><p>The fully-qualified type name with the namespace that processes the extensions. The value must be a type that implements `ExtensibleDataInterface`. The interface can be in a different module.</p> </td>
 <td><code>Magento\Quote\Api\Data\TotalsInterface</code></td>
 </tr>
 <tr>
@@ -148,7 +149,7 @@ When `getList()` is called, it returns a list of `ProductInterface`s. When it do
 
 <h3 id="ext-auth">Extension attribute authentication</h3>
 
-Individual fields that are defined as extension attributes can be restricted, based on existing permissions. This feature allows extension developers to restrict access to data. See <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication.html">Web API authentication overview</a> for general information about authentication in Magento.
+Individual fields that are defined as extension attributes can be restricted, based on existing permissions. This feature allows extension developers to restrict access to data. See <a href="{{page.baseurl}}get-started/authentication/gs-authentication.html">Web API authentication overview</a> for general information about authentication in Magento.
 
 The following [code sample]({{ site.mage2000url }}app/code/Magento/CatalogInventory/etc/extension_attributes.xml) defines `stock_item` as an extension attribute of the `CatalogInventory` module. `CatalogInventory` is treated as a “third-party extension”. Access to the inventory data is restricted because the quantity of in-stock item may be competitive information.
 
@@ -218,5 +219,5 @@ However, if an extension similar to the following has been defined, the interfac
 
 
 <h2 id="related">Related topics</h2>
-<a href="{{ site.gdeurl }}get-started/authentication/gs-authentication.html">Web API authentication overview</a>
+<a href="{{page.baseurl}}get-started/authentication/gs-authentication.html">Web API authentication overview</a>
 

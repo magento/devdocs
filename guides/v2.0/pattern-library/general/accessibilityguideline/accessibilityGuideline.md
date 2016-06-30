@@ -2,10 +2,11 @@
 layout: default
 group: pattern
 subgroup: General
-title: Magento Admin Pattern Library
+title: Admin Design Pattern Library
 menu_title: Accessibility Guideline
 menu_order: 
 menu_node: 
+version: 2.0
 github_link: pattern-library/general/accessibilityguideline/accessibilityGuideline.md
 redirect_from: /guides/v1.0/pattern-library/general/accessibilityguideline/accessibilityGuideline.html
 ---
@@ -92,7 +93,7 @@ Evaluate the design in grayscale. Make sure to use both shapes and color to diff
 
 Differentiate link text from other text.
 
-**12. Doo not use content that causes <a href="http://www.w3.org/WAI/WCAG20/quickref/Overview.php#seizure" target="blank"> seizures. </a>**
+**12. Do not use content that causes seizures.**
 
 <h3 id="content">Content</h3>
 **1. Ensure that link text makes sense by itself**
@@ -119,7 +120,7 @@ Don't override native accessibility features.
 
 Ensure form controls have descriptive labels and instructions. Pay close attention to form validation errors and recovery mechanisms.
 
-**4. Give users <a href="http://www.w3.org/WAI/WCAG20/quickref/Overview.php#time-limits" target="blank">enough time</a> to read and use content.**
+**4. Give users enough time to read and use content.**
 
 **5. Help users navigate and find content.**
 

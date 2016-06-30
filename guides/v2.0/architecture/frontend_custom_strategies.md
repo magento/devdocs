@@ -6,6 +6,7 @@ title: Ease of frontend customization
 menu_title: Ease of frontend customization 
 menu_node: 
 menu_order: 
+version: 2.0
 github_link: code-fundamentals/frontend_custom_strategies.md
 ---
 
@@ -20,13 +21,13 @@ Magento provides several tools to help you significantly jumpstart the storefron
 
 * Magento Blank Theme
 
-* <a href="{{ site.gdeurl }}ui-components/ui-component.html">Magento UI Library Components</a>
+* <a href="{{page.baseurl}}ui-components/ui-component.html">Magento UI Library Components</a>
 
-* <a href="{{ site.gdeurl }}pattern-library/bk-pattern.html">Magento Admin Pattern Library</a>
+* <a href="{{page.baseurl}}pattern-library/bk-pattern.html">Magento Admin Pattern Library</a>
 
 
 
-See <a href="{{ site.gdeurl }}frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a> for information on creating your own themes.  
+See <a href="{{page.baseurl}}frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a> for information on creating your own themes.  
 
  
 
@@ -42,11 +43,11 @@ Using Magento standard coding and styling tools can help:
 
 This component library contains standard reusable components for form features, such as fields and buttons, and navigation elements. The Magento UI library is a set of generic web components and Magento-specific patterns, which simplifies the process of Magento theme creation and customization.
 
-See <a href="{{ site.gdeurl }}ui-components/ui-component.html">Magento UI Library Components</a> for details about this library. 
+See <a href="{{page.baseurl}}ui-components/ui-component.html">Magento UI Library Components</a> for details about this library. 
 
 <h3>Magento Admin pattern library</h3>
 
-A <i>pattern library</i> is a collection of user interface (UI) design patterns that can be re-used in locations throughout your product installation. The <a href="{{ site.gdeurl }}pattern-library/bk-pattern.html">Magento Admin Pattern Library</a> defines examples of components that administrators working with the storefront can use. 
+A <i>pattern library</i> is a collection of user interface (UI) design patterns that can be re-used in locations throughout your product installation. The <a href="{{page.baseurl}}pattern-library/bk-pattern.html">Magento Admin Pattern Library</a> defines examples of components that administrators working with the storefront can use. 
 
 Form elements included in the Magento Admin pattern library include:
 
@@ -62,18 +63,18 @@ Users of the default Magento storefront encounter examples of these form element
 The Magento Admin Pattern library is built on the LESS preprocessor and implemented as a module. You can download a free, current version of this module from Magento Marketplace. 
 
 
-See <a href="{{ site.gdeurl }}pattern-library/bk-pattern.html">Magento Admin Pattern Library</a> for more information on using this library. 
+See <a href="{{page.baseurl}}pattern-library/bk-pattern.html">Magento Admin Pattern Library</a> for more information on using this library. 
 
 
 <h3 id="m2arch-related">Related topics</h3>
 
-<a href="{{ site.gdeurl }}architecture/extensibility.html">Extensibility and modularity</a>
+<a href="{{page.baseurl}}architecture/extensibility.html">Extensibility and modularity</a>
 
-<a href="{{ site.gdeurl }}architecture/global_extensibility_features.html">Global extensibility features</a>
+<a href="{{page.baseurl}}architecture/global_extensibility_features.html">Global extensibility features</a>
 
-<a href="{{ site.gdeurl }}pattern-library/bk-pattern.html">Magento Admin Pattern Library</a>
+<a href="{{page.baseurl}}pattern-library/bk-pattern.html">Magento Admin Pattern Library</a>
 
-<a href="{{ site.gdeurl }}ui-components/ui-component.html">Magento UI Library Components</a>
+<a href="{{page.baseurl}}ui-components/ui-component.html">Magento UI Library Components</a>
 
 
 

@@ -1,18 +1,20 @@
 ---
 layout: default
 group: config-guide
-subgroup: Redis
+subgroup: 09_Redis
 title: Configure Redis
 menu_title: Configure Redis
 menu_order: 1
 menu_node: parent
+version: 2.0
 github_link: config-guide/redis/config-redis.md
 ---
 
 #### Contents
 *	<a href="#config-redis-over">Overview of the Redis solution</a>
 *	<a href="#config-redis-install">Install Redis</a>
-*	<a href="#config-redis-config">Configure Magento to use Redis</a>
+*	<a href="{{page.baseurl}}config-guide/redis/redis-session.html">Redis for session storage</a>
+*	<a href="{{page.baseurl}}config-guide/redis/redis-pg-cache.html">Redis for page caching</a>
 *	<a href="#config-redis-info">For more information</a>
 
 <h2 id="config-redis-over">Overview of the Redis solution</h2>
@@ -46,7 +48,7 @@ Advantages of Redis include:
 
 <div class="bs-callout bs-callout-info" id="info">
    <span class="glyphicon-class">
-   <p>We recommend you use <a href="{{ site.gdeurl }}config-guide/memcache/memcache.html">memcached</a> for session storage. The Redis session handler in the <code>phpredis</code> PHP extension does not support session locking, which might cause issues with distributed systems and applications that rely on Ajax. We're actively working on a solution.</p></span>
+   <p>Starting in Magento 2.0.6, you can use either Redis or <a href="{{page.baseurl}}config-guide/memcache/memcache.html">memcached</a> for session storage. Earlier issues with the Redis session handler and session locking have been resolved.</p></span>
 </div>
 
 <h2 id="config-redis-install">Install Redis</h2>
@@ -57,68 +59,6 @@ Installing and configuring the Redis software is beyond the scope of this guide.
 *	<a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-redis" target="_blank">digitalocean</a>
 *	<a href="http://redis.io/documentation" target="_blank">Redis documentation page</a>
 
-<h2 id="config-redis-config">Configure Magento to use Redis</h2>
-Following is a sample configuration to add to `<your Magento install dir>app/etc/env.php`:
-
-	'cache' => [
-		'frontend' => [
-			'page_cache' => [
-				'backend' => 'Cm_Cache_Backend_Redis',
-				'backend_options' => [
-					'server' => '127.0.0.1', 
-					'port' => '6379',
-					'persistent' => '', 
-					'database' => 0, 
-					'password' => '', 
-					'force_standalone' => 0, 
-					'connect_retries' => 1, 
-		],
-
-where
-
-<table>
-<tbody>
-	<tr>
-		<th>Parameter</th>
-		<th>Meaning</th>
-	</tr>
-<tr>
-	<td>page_cache</td>
-	<td><p>Specify the segment name to use a particular segment or a default shortcut for all other caches.</p>
-		<p>The <code>default</code> cache segment enables you to configure all cache segments except for <code>page_cache</code>.</p></td>
-</tr>
-<tr>
-	<td>server</td>
-	<td>Absolute URL to your Redis server, or <code>127.0.0.1</code> if Redis is installed on the Magento server, or a an absolute path to a UNIX socket.</td>
-</tr>
-<tr>
-	<td>port</td>
-	<td>Redis server listen port</td>
-</tr>
-<tr>
-	<td>persistent</td>
-	<td><p>Specify a unique string to enable persistent connections. For example, <code>sess-db0</code>.</p>
-		<p>Note that there are <a href="https://github.com/nicolasff/phpredis/issues/70" target="_blank">known issues phpredis and php-fpm</a>.</p></td>
-</tr>
-<tr>
-	<td>database</td>
-	<td>Unique Redis database number, which is recommended to protect against data loss.</td>
-</tr>
-<tr>
-	<td>password</td>
-	<td>Specifies a password if your Redis server requires authentication.</td>
-</tr>
-<tr>
-	<td>force_standalone</td>
-	<td>Use <code>0</code> for phpredis or <code>1</code> for standalone PHP.</td>
-</tr>
-<tr>
-	<td>connect_retries</td>
-	<td>Reduces errors due to random connection failures. Specify <code>1</code> to not retry after the first failure.</td>
-</tr>
-</tbody>
-</table>
-
 <h2 id="config-redis-info">For more information</h2>
 You can find more information about configuring Redis from the following:
 
@@ -126,7 +66,7 @@ You can find more information about configuring Redis from the following:
 *	<a href="http://www.techytalk.info/configuring-cache-storage-backends-magento-2-redis/" target="_blank">TechyTalk</a>
 <!-- *	<a href="http://info2.magento.com/rs/magentoenterprise/images/MagentoECG-UsingRedisasaCacheBackendinMagento.pdf" target="_blank">Magento Expert Consulting Group (ECG) article <em>written for Magento 1.x</em> -->
 
-#### Related topics
+#### Next
 
- *  <a href="{{ site.gdeurl }}config-guide/config/config-create.html">Create or extend configuration types</a>
- *  <a href="{{ site.gdeurl }}config-guide/config/config-php.html">Magento's deployment configuration</a>
+*	<a href="{{page.baseurl}}config-guide/redis/redis-session.html">Redis for session storage</a>
+*	<a href="{{page.baseurl}}config-guide/redis/redis-pg-cache.html">Redis for page caching</a>

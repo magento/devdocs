@@ -6,6 +6,7 @@ title: Step 1. Readiness check
 menu_title: Step 1. Readiness check
 menu_node: 
 menu_order: 2
+version: 2.0
 github_link: install-gde/install/web/install-web_1-readiness.md
 ---
 
@@ -15,5 +16,5 @@ github_link: install-gde/install/web/install-web_1-readiness.md
 {% include install/web/install-web_1-readiness.md %}
 
 #### Next step
-<a href="{{ site.gdeurl }}install-gde/install/web/install-web_2-db.html">Step 2. Add a database</a>
+<a href="{{page.baseurl}}install-gde/install/web/install-web_2-db.html">Step 2. Add a database</a>
 

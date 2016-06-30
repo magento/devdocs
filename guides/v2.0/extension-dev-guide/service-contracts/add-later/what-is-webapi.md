@@ -49,7 +49,7 @@ Your module can use `webapi.xsd` or you can create a customized validation.
 
 #### Related Topics:
 
-*	<a href="{{ site.gdeurl }}config-guide/integration/cg-authorization.html">Authorizing Web API Requests</a>
-*	<a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a>
-*	<a href="{{ site.gdeurl }}get-started/gs-web-api-request.html">Step 2. Construct a request</a>
+*	<a href="{{page.baseurl}}config-guide/integration/cg-authorization.html">Authorizing Web API Requests</a>
+*	<a href="{{page.baseurl}}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a>
+*	<a href="{{page.baseurl}}get-started/gs-web-api-request.html">Step 2. Construct a request</a>
 
