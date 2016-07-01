@@ -619,4 +619,4 @@ Some examples:
 
 {%endhighlight%}
 
-All placeholders `%isolation%` will be replaced with [mt_rand()](http://php.net/manual/en/function.mt-rand.php) function during the test run.
+All placeholders `%isolation%` will be replaced with [`mt_rand()`](http://php.net/manual/en/function.mt-rand.php) function during the test run.
