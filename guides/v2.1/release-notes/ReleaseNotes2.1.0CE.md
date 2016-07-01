@@ -184,8 +184,6 @@ This release includes enhancements to improve the security of your Magento appli
 {:.no_toc}
 <!--- 50878 -->* The Oauth handshake now clearly indicates the SAAS platform with which the Magento store is doing the Oauth handshake.
 
-<!--- 49699 -->*  You can now use the Web API to access Version Manager.
-
 <!--- 46720 -->* The Orders API now exposes Shipping Address. <a href="https://github.com/magento/magento2/issues/2628" target="_blank"> (GITHUB-2628)</a>
 
 <!--- 52613 -->* The Credit Memo REST API now updates attributes as expected.  <a href="https://github.com/magento/magento2/issues/4329" target="_blank"> (GITHUB-4329)</a>
@@ -202,7 +200,7 @@ This release includes enhancements to improve the security of your Magento appli
 
 <!--- 50632-->* The title of the totals discount segment returned by the API is now correct.
 
-<!--- 49558,51009 -->* You can now use the SOAP API to add product attribute options text swatch or visual swatch.
+<!--- 49558, 51009 -->* You can now use the SOAP API to add product attribute options text swatch or visual swatch.
 
 <!--- 47850-->* Magento no longer creates customers when validation fails. <a href="https://github.com/magento/magento2/issues/2914" target="_blank"> (GITHUB-2914)</a>
 
@@ -231,8 +229,6 @@ This release includes enhancements to improve the security of your Magento appli
 <!--- 50864-->* You can now nest categories more than four levels deep.
 
 <!--- 49967 -->*  We've optimized `registry.js` performance.
-
-<!--- 51040-->* You can now  add a custom option to the new Update pop-up.
 
 
 
@@ -306,8 +302,6 @@ This release includes enhancements to improve the security of your Magento appli
 
 
 <!--- 53032-->* The PayPal Braintree popup now appears as expected when you click the Continue to PayPal button.
-
-<!--- 52420-->* In the Vault Provider field, Magento no longer displays the Payflow Pro option for countries that don't offer it.
 
 <!--- 54233-->* Magento no longer displays this error when you save an order:
 "Order Saving error: Table 'magento.vault_payment_token_order_payment_link' doesn't exist."
@@ -507,7 +501,6 @@ target="_blank"> (GITHUB-4099)</a>
 
 <!--- 52436 -->* Magento now displays categories that contain children categories. <a href="https://github.com/magento/magento2/issues/2121" target="_blank"> (GITHUB-2121)</a>
 
-<!--- 50716 -->* The Admin Action Log archive is now formatted as expected.
 
 <!--- 50193 -->* Layered Navigation now contains previously missing category filters.
 
@@ -531,7 +524,6 @@ target="_blank"> (GITHUB-4099)</a>
 
 <!--- 51231 -->* Magento now successfully saves future special dates in the Advanced Price page.
 
-<!--- 51519 -->* The permissions set for a category are now applied as expected.
 
 <!--- 52117 -->* Changes to Customer group are now immediately applied to logged-in customers.
 
@@ -777,7 +769,6 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 51074-->* Product images now switch as expected when  you click on a swatch.
 
-<!--- 51053-->* Quote are no longer lost after you  cancel an order with the Worldpay payment method.
 
 <!--- 50988-->* The Create an Account form now opens as expected after checkout has been completed for a customer who is not logged in.
 
@@ -877,10 +868,6 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 51955-->* Fixed invalid view ID and changelog name for the customer grid indexer.
 
-<!--- 51951-->* Magento no longer throws SQL errors when you clone a product with custom options when you have CatalogStaging enabled.
-
-<!--- 51915-->* Magento no longer removes a configurable product from the shopping cart when you add another product.
-
 <!--- 52176-->* New Accounts Report now correctly  calculates accounts for multiple websites.
 
 <!--- 52468-->* Fixed miscellaneous errors in cron log.
@@ -952,8 +939,6 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 <!--- 48722-->*  Improved export performance. <a href="https://github.com/magento/magento2/issues/3217" target="_blank">(GITHUB-3217)</a>
 
 <!--- 48520-->* Saving a category with an invalid URL (such as a duplicate of another category's) fails as expected.
-
-<!--- 48901-->* Assigning to an existing Staging edit no longer causes a 500 (Internal Server Error).
 
 <!--- 49446-->* You can now place an order with PayPal Secure Checkout if your site uses secure URLs.
 
@@ -1047,8 +1032,6 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 46014-->* Magento now displays error messages on the page where the error occurred.
 
-<!--- 52928-->* Fixed issue with rendering of the category permissions landing page  config control.
-<!--- 53178-->* Magento now caches catalog event statuses when event status changes.
 
 <!--- 54172-->* Magento now creates product URL rewrites as expected on mass update to a new website.
 
