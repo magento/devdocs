@@ -12,7 +12,7 @@ version: 2.0
 github_link: cloud/howtos/environment-tutorial-set-mage-vars.md
 redirect_from: 
   - guides/v2.0/cloud/cloud/howtos/environment-tutorial-set-mage-vars.html
-  - guides/v2.1/cloud/cloud/howtos/environment-tutorial-set-mage-vars.html
+  - guides/v2.1/cloud/howtos/environment-tutorial-set-mage-vars.html
 ---
 
 ## Tutorial: change the Magento Admin URI, user name, and password {#cloud-env-vars-magento-admin-tut}
