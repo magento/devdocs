@@ -108,4 +108,4 @@ Wait for the environment to delete.
 </div>
 
 #### Related topic
-[Set Magento environment variables]({{page.baseurl}}cloud/env/environment-tutorial-set-mage-vars.html)
+[Set Magento environment variables]({{page.baseurl}}cloud/howtos/environment-tutorial-set-mage-vars.html)
