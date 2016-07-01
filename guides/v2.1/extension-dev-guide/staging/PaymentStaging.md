@@ -18,7 +18,7 @@ github_link: extension-dev-guide/staging/PaymentStaging.md
 * TOC
 {:toc}
 
-## Magento Magento_PaymentStaging Module</h2>
+## Magento Magento_PaymentStaging Module
 
 ## Overview
 
