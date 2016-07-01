@@ -44,7 +44,7 @@ Example for Google Chrome:
 
 ### Run generator {#mtf_quickstart_env_generator}
 
-Generator generates [fixtures][], [repositories][], and [page objects][]. Once the FTF is initialized, all classes must be pre-generated to facilitate creating and running the tests. Modules in the FTF are processed by generator in the same order that they are processed during Magento loading.
+Generator generates [fixtures][], [repositories][], and [page objects][]. Once the FTF is initialized, all classes must be pre-generated to facilitate creating and running the tests. Modules in the FTF are processed by generator in alphabetical order.
 
 Enter in terminal:
 
