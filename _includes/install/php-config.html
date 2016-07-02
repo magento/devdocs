@@ -23,19 +23,30 @@ This section discusses how to:
 
 	`asp_tags` will be removed in PHP 7.
 
+<div class="bs-callout bs-callout-warning">
+    <p>To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and to the PHP web server plug-in's configuration. For more information, see the next section.</p>
+</div>
+
+### Find PHP configuration files
+To find the web server configuration, run a <a href="{{page.baseurl}}install-gde/prereq/optional.html#install-optional-phpinfo">`phpinfo.php` file</a> in your web browser and look for the Loaded Configuration File as follows:
+
+<img src="{{ site.baseurl }}common/images/config_phpini-webserver.png" width="700px">
+
+To locate the PHP command-line configuration, enter
+
+	php --ini
+
+Use the value of Loaded Configuration file.
+
+### Set PHP options
+
 To set PHP options:
 
-1.	Locate `php.ini` by entering the following command:
+1.	Locate `php.ini` for both the web server and the PHP command line as discussed in the preceding section.
 
-		php --ini
+	Make the following changes to _both_ configurations.
 
-	Use the value of `Loaded Configuration File`.
-	
-	Typical locations follow:
-
-	*	Ubuntu: `/etc/php5/cli/php.ini`
-	*	CentOS: `/etc/php.ini`
-2.	Open `php.ini` in a text editor.
+2.	Open a `php.ini` in a text editor.
 3.	Locate your server's time zone in the available [time zone settings](http://php.net/manual/en/timezones.php){:target="_blank"}
 4.	Locate the following setting and uncomment it if necessary:
 
@@ -54,9 +65,10 @@ To set PHP options:
 		asp_tags =
 9.	Make sure its value is set to `Off`.
 10.	Save your changes and exit the text editor.
+11.	Open the other `php.ini` and make the same changes in it.
 11.	Restart your web server:
 
-	*	Ubuntu: `service apache2 restart`
-	*	CentOS: `service httpd restart`
-	*	Ubuntu and CentOS: `service nginx restart`
+	*	Apache, Ubuntu: `service apache2 restart`
+	*	Apache, CentOS: `service httpd restart`
+	*	nginx, Ubuntu and CentOS: `service nginx restart`
 
