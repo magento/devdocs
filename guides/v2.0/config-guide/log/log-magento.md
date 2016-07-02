@@ -13,9 +13,8 @@ github_link: config-guide/log/log-magento.md
 
 #### Contents
 
-*	[]()
-*	[]()
-*	[]()
+*	[Monolog](#config-log-monolog)
+*	[Get started with logging](#config-log-start)
 
 ## Monolog {#config-log-monolog}
 Magento 2 complies with the PSR-3 standard. By default, Magento uses [Monolog](https://github.com/Seldaek/monolog){:target="_blank"}.
@@ -63,3 +62,6 @@ class SomeModel
 The preceding example shows that `SomeModel` receives a `\Psr\Logger\LoggerInterface` object using constructor injection. In a method `doSomething`, if some error occurred, it's logged to a method `critical` (`$this->logger->critical($e);`).
 
 [RFC 5424](https://tools.ietf.org/html/rfc5424){:target="_blank"} defines eight log levels levels (debug, info, notice, warning, error, critical, alert, and emergency).
+
+#### Next
+[Example&mdash;logging database activity]({{ page.baseurl }}config-guide/log/log-db.html)

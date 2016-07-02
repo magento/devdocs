@@ -13,9 +13,9 @@ github_link: config-guide/log/log-intro.md
 
 #### Contents
 
-*	[]()
-*	[]()
-*	[]()
+*	[Logging overview](#config-log-over)
+*	[Magento logging in more detail]({{ page.baseurl }}config-guide/log/log-magento.html)
+*	[Example&mdash;logging database activity]({{ page.baseurl }}config-guide/log/log-db.html)
 
 ## Logging overview {#config-log-over}
 Logs provide visibility into Magento system processes; for example, debugging information that assists you with understanding when an error occurred or what lead to the error.
@@ -37,4 +37,5 @@ The [PSR-3 standard](https://zendframework.github.io/zend-log/psr3){:target="_bl
 
 This provides the ability for the implementation to be replaced easily without worry that such replacement may break the application code. It also guarantees a custom component will work even when the Magento log implementation is changed in a future version of the system.
 
-
+#### Next
+[Magento logging in more detail]({{ page.baseurl }}config-guide/log/log-magento.html)
