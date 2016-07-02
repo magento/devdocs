@@ -2,8 +2,8 @@
 layout: default
 group: install_pre
 subgroup: Prerequisites
-title: PPHP 5.6 or 7.0&mdash;CentOS
-menu_title: PPHP 5.6 or 7.0&mdash;CentOS
+title: PHP 5.6 or 7.0&mdash;CentOS
+menu_title: PHP 5.6 or 7.0&mdash;CentOS
 menu_order: 22
 level3_menu_node: level3child
 level3_subgroup: php
