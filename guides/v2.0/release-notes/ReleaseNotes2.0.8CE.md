@@ -2,8 +2,8 @@
 layout: default
 group: release-notes
 subgroup: Release Notes
-title: Magento CE 2.0.8 Release Notes 
-menu_title: Magento CE 2.0.8 Release Notes 
+title: Magento CE 2.0.8 Release Notes
+menu_title: Magento CE 2.0.8 Release Notes
 menu_order: 14
 github_link: release-notes/ReleaseNotes2.0.8CE.md
 ---
@@ -26,13 +26,13 @@ Backward-incompatible changes are documented in <a href="{{ site.gdeurl }}releas
 
 <!--- 52612 -->* CLI is affected by the permissions configuration setting in server config.
 
- 
+
 <!--- 51072 -->* The storeview now reflects changes to the swatch attribute's property.  
 
 <!--- 53342 -->* Magento no longer duplicates URL keys during the creation of a configurable product.
 
 
-<!--- 46014 -->* Magento now displays error messages on the page where the error occurred. Previously, error messages invoked by actions on the login page were not displayed until you left that page. 
+<!--- 46014 -->* Magento now displays error messages on the page where the error occurred. Previously, error messages invoked by actions on the login page were not displayed until you left that page.
 
 <!--- 51072 -->* The storefront now reflects changes to the swatch attribute's property.  
 
@@ -114,18 +114,18 @@ Backward-incompatible changes are documented in <a href="{{ site.gdeurl }}releas
 <!--- 51803-->* The Select All check box on the Cache Management page now works as expected. <a href="https://github.com/magento/magento2/issues/4080" target="_blank">(GITHUB-3580)</a>, <a href="https://github.com/magento/magento2/issues/3580" target="_blank">(GITHUB-3580)</a>, <a href="https://github.com/magento/magento2/issues/4080" target="_blank">(GITHUB-4080)</a>
 
 
-<!--- 52923-->* Switching to Varnish no longer causes the Category menu to force HTTPS links. <a href="https://github.com/magento/magento2/issues/4540" target="_blank">(GITHUB-4540)</a> 
+<!--- 52923-->* Switching to Varnish no longer causes the Category menu to force HTTPS links. <a href="https://github.com/magento/magento2/issues/4540" target="_blank">(GITHUB-4540)</a>
 
 
 ###Known issue
 
-<!--- 49556 -->The POST V1/shipment and other APIs that include a list of items might return an error if an item's quantity (`qty`) is specified before its ID (`order_item_id`, for example). 
+<!--- 49556 -->The POST V1/shipment and other APIs that include a list of items might return an error if an item's quantity (`qty`) is specified before its ID (`order_item_id`, for example).
 
 **Workaround:** Make sure to specify an item's ID before specifying quantity. (49556)
 
 
 ###System requirements
-Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see 
+Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see
 <a href="{{ site.gdeurl }}install-gde/system-requirements.html" target="_blank">System Requirements</a>.
 
 
@@ -134,7 +134,7 @@ Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports
 <h4>New installations</h4>
 New users can now complete a full installation of Magento Community Edition 2.0.8 from an archive file on the <a href="https://www.magentocommerce.com/download" target="_blank">Download</a> page.
 
-#####<b>Download a new installation</b>#####
+#####Download a new installation#####
 
 1. Go to the <a href="https://www.magentocommerce.com/download" target="_blank">Magento Community Edition Download</a> page.
 
@@ -142,7 +142,7 @@ New users can now complete a full installation of Magento Community Edition 2.0.
 
 3.	Follow the Magento <a href="http://devdocs.magento.com/guides/v2.0/install-gde/prereq/integrator_install.html#integrator-first-composer-ce" target="_blank">installation instructions</a>.
 
-#####<b>Install a new installation with Composer</b>#####
+#####Install a new installation with Composer#####
 
 1. Go to the <a href="https://www.magentocommerce.com/download" target="_blank">Magento Community Edition Download</a> page.
 
@@ -151,21 +151,21 @@ New users can now complete a full installation of Magento Community Edition 2.0.
 3.	Follow the instructions to download Composer, and get the Magento CE metapackage.
 
 
-<h4><b>Upgrade existing installations</b></h4>
+<h4>Upgrade existing installations</h4>
 
 This section discusses how to upgrade to 2.0.8.
 
 
-#####<b>Upgrade using the Setup Wizard</b>#####
+#####Upgrade using the Setup Wizard#####
 Use the instructions in [Start System Upgrade]({{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html). When prompted to choose a version, choose 2.0.8.
 
-#####<b>Upgrade an existing installation from the GitHub repository</b>#####
+#####Upgrade an existing installation from the GitHub repository#####
 Developers who contribute to the CE codebase can <a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento CE GitHub repository.
 
 Go to the <a href="{{ site.gdeurl }}install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.
 Use the instructions in [Start System Upgrade]({{page.baseurl}}comp-mgr/upgrader/upgrade-start.html). When prompted to choose a version, choose 2.0.8.
 
-#####<b>Upgrade an existing installation from the GitHub repository</b>#####
+#####Upgrade an existing installation from the GitHub repository#####
 Developers who contribute to the CE codebase can <a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento CE GitHub repository.
 
 1.	Go to the <a href="{{page.baseurl}}install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.
@@ -173,7 +173,7 @@ Developers who contribute to the CE codebase can <a href="{{page.baseurl}}comp-m
 2.	Follow the instructions to pull the updates from the repository and update using Composer.
 
 
-#####<b>Upgrade using the command line</b>#####
+#####Upgrade using the command line#####
 To upgrade to 2.0.8 using the command line:
 
 1.	Log in to your Magento server as, or switch to, the Magento file system owner.
@@ -194,10 +194,8 @@ To upgrade to 2.0.8 using the command line:
 		composer update
 
 
-	
+
 3.	If prompted, enter your [authentication keys]({{ site.gdeurl }}comp-mgr/prereq/prereq_auth-token.html).
-3.	If prompted, enter your [authentication keys]({{page.baseurl}}comp-mgr/prereq/prereq_auth-token.html).
->>>>>>> 70118202d9d68f1f9f60eb972f29512e5034adba
 
 4. Update the database schema and data:
 
@@ -210,11 +208,3 @@ To upgrade to 2.0.8 using the command line:
 The <a href="{{ site.gdeurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ site.gdeurl }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
-
-
-
-
-
-
-
-
