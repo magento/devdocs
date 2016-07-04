@@ -41,7 +41,7 @@ To set up a Magento project using a template:
 	*	Click **visit your site** to see your new Magento site.
 
 		<div class="bs-callout bs-callout-warning">
-    		<p>For security reasons, we strongly recommend you change your Magento Admin URI, administrator user name, and administrator password. For step-by-step details, see <a href="{{page.baseurl}}cloud/env/environment-tutorial-set-mage-vars.html">Tutorial&mdash;Set Magento environment variables</a>.</p>
+    		<p>For security reasons, we strongly recommend you change your Magento Admin URI, administrator user name, and administrator password. For step-by-step details, see <a href="{{page.baseurl}}cloud/howtos/environment-tutorial-set-mage-vars.html">Tutorial&mdash;Set Magento environment variables</a>.</p>
 		</div>
 
 	*	Click **configure project** to start configuring the project.

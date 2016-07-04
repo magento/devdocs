@@ -74,7 +74,7 @@ For more information, see our recommendations for <a href="{{page.baseurl}}insta
 *	Self-signed SSL certificates are not supported.
 *	Transport Layer Security (TLS) requirement 
 
-	PayPal and `repo.magento.com` both require TLS 1.1 or kater
+	PayPal and `repo.magento.com` both require TLS 1.1 or later
 
 	*	[More information about PayPal]({{page.baseurl}}install-gde/system-requirements_tls1-2.html)
 

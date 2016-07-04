@@ -15,7 +15,7 @@ github_link: cloud/env/environment-vars_magento.md
 #### Contents
 *   [Magento application environment variables](#cloud-env-vars-magento) 
 *   [Troubleshooting](#cloud-env-vars-tshoot)
-*   [Tutorial&mdash;Set Magento environment variables]({{page.baseurl}}cloud/env/environment-tutorial-set-mage-vars.html) 
+*   [Tutorial&mdash;Set Magento environment variables]({{page.baseurl}}cloud/howtos/environment-tutorial-set-mage-vars.html) 
 
 ## Magento application environment variables {#cloud-env-vars-magento}
 <!-- The Magento application enables you to customize the values of many settings, including payment processors, shipping methods, and so on.
@@ -61,7 +61,7 @@ The following table lists variables that you can override using environment vari
 </tbody>
 </table>
 
-For an example, see [Tutorial&mdash;Set Magento environment variables]({{page.baseurl}}cloud/env/environment-tutorial-set-mage-vars.html).
+For an example, see [Tutorial&mdash;Set Magento environment variables]({{page.baseurl}}cloud/howtos/environment-tutorial-set-mage-vars.html).
 
 ## Troubleshooting {#cloud-env-vars-tshoot}
 In the event something goes wrong and you can't access your environment after it deploys, try the following:
@@ -73,7 +73,7 @@ In the event something goes wrong and you can't access your environment after it
         magento-cloud snapshot:restore <snapshot>
 
 #### Related topics
-*   [Tutorial&mdash;Set Magento environment variables]({{page.baseurl}}cloud/env/environment-tutorial-set-mage-vars.html) 
+*   [Tutorial&mdash;Set Magento environment variables]({{page.baseurl}}cloud/howtos/environment-tutorial-set-mage-vars.html) 
 *   [Magento Cloud environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
 *   [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
 *   [`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)

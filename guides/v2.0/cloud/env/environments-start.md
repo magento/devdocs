@@ -117,4 +117,4 @@ You can find information like `<database user name>` in `<your Magento install d
 #### Related topics
 *	[Manage your environments]({{page.baseurl}}cloud/env/environments.html)
 *	[Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html)
-*	[Set Magento environment variables]({{page.baseurl}}cloud/env/environment-tutorial-set-mage-vars.html)
+*	[Set Magento environment variables]({{page.baseurl}}cloud/howtos/environment-tutorial-set-mage-vars.html)

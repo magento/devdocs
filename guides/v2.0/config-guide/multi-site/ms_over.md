@@ -8,7 +8,9 @@ menu_order: 1
 menu_node: parent
 version: 2.0
 github_link: config-guide/multi-site/ms_over.md
-redirect_from: guides/v2.0/config-guide/bootstrap/mage-run.html
+redirect_from: 
+  - guides/v2.0/config-guide/bootstrap/mage-run.html
+  - guides/v2.1/config-guide/bootstrap/mage-run.html
 ---
 
 #### Contents
