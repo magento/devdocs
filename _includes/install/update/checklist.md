@@ -26,9 +26,9 @@ For example, if your Magento file system owner is named `magento_user`, enter:
 
 Results similar to the following should display:
 
-	*/1 * * * * /usr/bin/php -c /etc /var/www/html/magento2/bin/magento cron:run >> /var/www/html/magento2/var/log/magento-cron.log&
-	*/1 * * * * /usr/bin/php -c /etc /var/www/html/magento2/update/cron.php >> /var/www/html/magento2/var/log/updater.log&
-	*/1 * * * * /usr/bin/php -c /etc /var/www/html/magento2/bin/magento setup:cron:run >> /var/www/html/magento2/var/log/setup.log&
+	* * * * * /usr/bin/php /var/www/magento2/bin/magento cron:run | grep -v "Ran jobs by schedule" >> /var/www/magento2/var/log/magento.cron.log
+	* * * * * /usr/bin/php /var/www/magento2/update/cron.php >> /var/www/magento2/var/log/update.cron.log
+	* * * * * /usr/bin/php /var/www/magento2/bin/magento setup:cron:run >> /var/www/magento2/var/log/setup.cron.log
 
 Another symptom of cron not running is the following error in the Magento Admin:
 
@@ -54,36 +54,38 @@ For example, enter the following commands on a Linux system if the Magento appli
 A sample result follows:
 
 {% highlight xml %}
-total 200592
-drwxrwx---. 12 magento_user apache      4096 Apr  1 15:08 .
-drwxr-xr-x.  3 magento_user apache      4096 Jan 11 15:13 ..
-drwxrwx---.  4 magento_user apache      4096 Apr  1 15:08 app
-drwxrwx---.  2 magento_user apache      4096 Apr  1 15:08 bin
--rw-rw-rw-.  1 magento_user apache    438803 Apr  1 15:08 CHANGELOG.md
--rw-rw----.  1 magento_user apache      3008 Apr  1 15:00 composer.json
--rw-rw----.  1 magento_user apache    338028 Apr  1 15:08 composer.lock
--rw-rw-rw-.  1 magento_user apache      3425 Apr  1 15:08 CONTRIBUTING.md
--rw-rw-rw-.  1 magento_user apache     10011 Apr  1 15:08 CONTRIBUTOR_LICENSE_AGREEMENT.html
--rw-rw-rw-.  1 magento_user apache       631 Apr  1 15:08 COPYING.txt
-drwxrwx---.  4 magento_user apache      4096 Apr  1 15:08 dev
--rw-rw-rw-.  1 magento_user apache      2926 Apr  1 15:08 Gruntfile.js
--rw-rw-rw-.  1 magento_user apache      7592 Apr  1 15:08 .htaccess
--rw-rw-rw-.  1 magento_user apache      6419 Apr  1 15:08 .htaccess.sample
--rw-rw-rw-.  1 magento_user apache      1358 Apr  1 15:08 index.php
-drwxrwx---.  4 magento_user apache      4096 Apr  1 15:08 lib
--rw-rw-rw-.  1 magento_user apache     10376 Apr  1 15:08 LICENSE_AFL.txt
--rw-rw-rw-.  1 magento_user apache     10364 Apr  1 15:08 LICENSE.txt
--rw-rw-rw-.  1 magento_user apache      4108 Apr  1 15:08 nginx.conf.sample
--rw-rw-rw-.  1 magento_user apache      1427 Apr  1 15:08 package.json
--rw-rw-rw-.  1 magento_user apache      1659 Apr  1 15:08 .php_cs
--rw-rw-rw-.  1 magento_user apache       804 Apr  1 15:08 php.ini.sample
-drwxrwx---.  2 magento_user apache      4096 Apr  1 15:08 phpserver
-drwxrwx---.  6 magento_user apache      4096 Apr  1 15:08 pub
-drwxrwx---.  7 magento_user apache      4096 Apr  1 15:08 setup
--rw-rw-rw-.  1 magento_user apache      3731 Apr  1 15:08 .travis.yml
-drwxrwx---.  7 magento_user apache      4096 Jan 11 15:15 update
-drwxrwx---. 11 magento_user apache      4096 Apr  1 15:21 var
-drwxrwx---. 27 magento_user apache      4096 Apr  1 15:08 vendor
+total 1028
+drwxrwx---. 12 magento_user apache   4096 Jun  7 07:55 .
+drwxr-xr-x.  3 root         root     4096 May 11 14:29 ..
+drwxrwx---.  4 magento_user apache   4096 Jun  7 07:53 app
+drwxrwx---.  2 magento_user apache   4096 Jun  7 07:53 bin
+-rw-rw----.  1 magento_user apache 439792 Apr 27 21:23 CHANGELOG.md
+-rw-rw----.  1 magento_user apache   3422 Apr 27 21:23 composer.json
+-rw-rw----.  1 magento_user apache 425214 Apr 27 21:27 composer.lock
+-rw-rw----.  1 magento_user apache   3425 Apr 27 21:23 CONTRIBUTING.md
+-rw-rw----.  1 magento_user apache  10011 Apr 27 21:23 CONTRIBUTOR_LICENSE_AGREEMENT.html
+-rw-rw----.  1 magento_user apache    631 Apr 27 21:23 COPYING.txt
+drwxrwx---.  4 magento_user apache   4096 Jun  7 07:53 dev
+-rw-rw----.  1 magento_user apache   2926 Apr 27 21:23 Gruntfile.js
+-rw-rw----.  1 magento_user apache   7592 Apr 27 21:23 .htaccess
+-rw-rw----.  1 magento_user apache   6419 Apr 27 21:23 .htaccess.sample
+-rw-rw----.  1 magento_user apache   1358 Apr 27 21:23 index.php
+drwxrwx---.  4 magento_user apache   4096 Jun  7 07:53 lib
+-rw-rw----.  1 magento_user apache  10376 Apr 27 21:23 LICENSE_AFL.txt
+-rw-rw----.  1 magento_user apache  30634 Apr 27 21:23 LICENSE_EE.txt
+-rw-rw----.  1 magento_user apache  10364 Apr 27 21:23 LICENSE.txt
+-rw-rw----.  1 magento_user apache   4108 Apr 27 21:23 nginx.conf.sample
+-rw-rw----.  1 magento_user apache   1427 Apr 27 21:23 package.json
+-rw-rw----.  1 magento_user apache   1659 Apr 27 21:23 .php_cs
+-rw-rw----.  1 magento_user apache    804 Apr 27 21:23 php.ini.sample
+drwxrwx---.  2 magento_user apache   4096 Jun  7 07:53 phpserver
+drwxrwx---.  6 magento_user apache   4096 Jun  7 07:53 pub
+-rw-rw----.  1 magento_user apache   2207 Apr 27 21:23 README_EE.md
+drwxrwx---.  7 magento_user apache   4096 Jun  7 07:53 setup
+-rw-rw----.  1 magento_user apache   3731 Apr 27 21:23 .travis.yml
+drwxrwx---.  7 magento_user apache   4096 Jun  7 07:53 update
+drwxrws---. 11 magento_user apache   4096 Jun 13 16:05 var
+drwxrws---. 29 magento_user apache   4096 Jun  7 07:53 vendor
 {% endhighlight %}
 
 In the preceding example, the Magento file system owner is `magento_user`. Directories in the Magento file system have `drwxrwx---` permissions (775) and files have `-rw-rw-rw-` permissions (664).
