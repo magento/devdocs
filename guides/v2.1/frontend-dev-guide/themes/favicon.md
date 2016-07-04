@@ -5,6 +5,7 @@ subgroup: A_Themes
 title: Adding custom favicons
 menu_title:  Adding custom favicons
 menu_order: 7
+version: 2.1
 github_link: frontend-dev-guide/themes/favicon.md
 ---
 <h2 id="favicon-intro">What's in this topic</h2>
