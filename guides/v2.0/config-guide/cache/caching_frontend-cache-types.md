@@ -4,10 +4,13 @@ group: config-guide
 subgroup: 08_Caching
 title: Associate cache frontends with cache types
 menu_title: Associate cache frontends with cache types
-menu_order: 2
+menu_order: 3
 menu_node: 
+level3_menu_node: level3child
+level3_subgroup: cache-types
 version: 2.0
-github_link: config-guide/config/caching_frontend-cache-types.md
+github_link: config-guide/cache/caching_frontend-cache-types.md
+redirect_from: /guides/v2.0/config-guide/config/caching_frontend-cache-types.html
 ---
 
 #### Contents 
