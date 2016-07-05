@@ -20,7 +20,7 @@ redirect_from:
 ##Unit and Integration Tests {#test-unit}
 
 Run the PHPUnit based Magento unit and integration tests.
-For more information see the <a href="{{page.baseurl}}howdoi/mtf/mtf.html">Magento Testing Overview</a>
+For more information see the <a href="{{page.baseurl}}test/testing.html">Magento Testing Overview</a>
 
 ## Functional testing {#test-functional}
 For further testing with the Magento functional testing frameworks, see
