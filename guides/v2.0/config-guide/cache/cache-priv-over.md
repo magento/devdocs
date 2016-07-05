@@ -13,6 +13,10 @@ github_link: config-guide/cache/cache-priv-over.md
 ---
 
 #### Contents
+*	[Private and public caching overview](#config-cache-over)
+*	[Guidelines for public content](#config-cache-guide-cache)
+*	[Guidelines for private content](#config-cache-guide-uncache)
+*	[]()
 *	[]()
 *	[]()
 *	[]()
@@ -41,3 +45,25 @@ Server-side caching is particularly beneficial when the same request comes from 
 It's important to understand that Magento 2 does *not* use [Edge Side Includes (ESI)](https://en.wikipedia.org/wiki/Edge_Side_Includes) to render private content. ESI means the web server returns an HTML page that can be cached, but where parts of the page are replaced with an "include" reference (URL) that returns only the private content.
 
 Instead, we fetch public content (typically around 95% of the total content of the page), then rely on JavaScript and AJAX to inject the remaining private content. This is discussed in more detail in TBD.
+
+## Guidelines for public content {#config-cache-guide-cache}
+For content to be cacheable, it must meet the following criteria:
+
+*	Must use only the HTTP GET request method
+*	Must render only cacheable blocks
+*	Contains no sensitive or private data (session and customer [Data Transfer Objects (DTO)](https://en.wikipedia.org/wiki/Data_transfer_object){:target="_blank"} objects are empty)
+*	Current session (customer) and page should be written using JavaScript. For example, a related product listing should exclude items that are already in shopping cart
+*	All private content blocks must be marked as private using the `_isScopePrivate` attribute
+*	A cacheable block should render depersonalized content by default
+*	Models and blocks should identify themselves for invalidation support
+*	You should declare a custom HTTP context variable if you plan to show different public content on the same URL
+
+## Guidelines for private content {#config-cache-guide-uncache}
+For uncacheable content, keep the following in mind:
+
+*	Must use the HTTP POST request method to modify Magento state
+*	Specify an uncacheable block in the layout
+*	JavaScript in private content should not rely on [Document Object Model (DOM)](https://en.wikipedia.org/wiki/DOM_events){:target="_blank"} load events because this kind of content can be loaded after main page load event using a separate request
+
+#### Next
+TBD
