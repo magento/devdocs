@@ -16,7 +16,7 @@ github_link: mtf/mtf_entities/mtf_dataset.md
 
 ##Data set overview {#overview}
 
-A data set contains data used by a [test case] and [constraints].
+A data set contains data used by a [test case] and [constraints][constraint].
 A data set can have several variations.
 Each variation has constraints that are called at the end of the test flow.
 
@@ -378,22 +378,9 @@ For example, see how in `Magento/Catalog/Test/TestCase/Product/ValidateOrderOfPr
  {%highlight xml%}
  {%remote_markdown https://raw.githubusercontent.com/magento/magento2/develop/dev/tests/functional/tests/app/Magento/Bundle/Test/TestCase/ValidateOrderOfProductTypeTest.xml%}
   {%endhighlight xml%}
-  
-### Replace a variation {#replace_variation}
-
-You can replace one variation with another by using a `replace` attribute of the `variation` node. A `replace` attribute contains variation that must be replaced by a variation from a `name` attribute. 
-
-{%highlight xml%}
-
-<variation name="CreateSuperNewCustomerBackendEntityTestVariation1" replace="CreateCustomerBackendEntityTestVariation1" summary="Variation that replaces default CreateCustomerBackendEntityTestVariation1">
-
-{%endhighlight xml%}
-
-After a merge of a data set with the variation that is mentioned, a test will use `CreateSuperNewCustomerBackendEntityTestVariation1` instead of `CreateCustomerBackendEntityTestVariation1`.
 
 <!-- LINK DEFINITIONS -->
 
-[constraints]: {{page.baseurl}}mtf/mtf_entities/mtf_constraint.html
 [constraint]: {{page.baseurl}}mtf/mtf_entities/mtf_constraint.html
 [fixture]: {{page.baseurl}}mtf/mtf_entities/mtf_fixture.html
 [data source]: {{page.baseurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source

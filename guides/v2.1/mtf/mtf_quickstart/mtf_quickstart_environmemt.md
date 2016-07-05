@@ -1,1 +1,0 @@
-../../../v2.0/mtf/mtf_quickstart/mtf_quickstart_environmemt.md

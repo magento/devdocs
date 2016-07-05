@@ -5,9 +5,8 @@ subgroup: 30_Quickstart
 title: Quick start with the Functional Testing Framework
 menu_title: Prepare environment for test run
 menu_order: 2
-version: 2.0
+version: 2.1
 github_link: mtf/mtf_quickstart/mtf_quickstart_environmemt.md
-redirect_from: /guides/v1.0/mtf/mtf_quickstart/mtf_quickstart_environmemt.html
 ---
 <h2 id="mtf_quickstart_config">Prepare environment for test run</h2>
 
@@ -44,7 +43,7 @@ Example for Google Chrome:
 
 ### Run generator {#mtf_quickstart_env_generator}
 
-Generator generates [fixtures][], [repositories][], and [page objects][]. Once the FTF is initialized, all classes must be pre-generated to facilitate creating and running the tests. Modules in the FTF are processed by generator in alphabetical order.
+Generator generates [fixtures][], [repositories][], and [page objects][]. Once the FTF is initialized, all classes must be pre-generated to facilitate creating and running the tests. Modules in the FTF are processed by generator in the same order that they are processed during Magento loading.
 
 Enter in terminal:
 

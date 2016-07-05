@@ -436,79 +436,6 @@ To run the generator, enter the following command in your terminal:
 
 The preceding is an example of repository merging. Using the approach from the example you can merge repositories for any other fixture, not `Config` only.
 
-### Data set replacement {#dataset-replacement}
-
-You can modify your data set without changing the name of the data set. Simply use a `replace` attribute. For example,
- 
- {%highlight xml%}
- 
- <dataset name="customer_new_default" replace="default">
- 
- {%endhighlight%}
- 
- This node means that `customer_new_default` data set replaces `default` data set.
- 
- Let's see a use case example. Assume that the Customer fixture in the Magento_Customer module has a repository with the `default` data set:
- 
-  {%highlight xml%}
-  
- <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/mtf/Magento/Mtf/Repository/etc/repository.xsd">
-     <repository class="Magento\Customer\Test\Repository\Customer">
-         <dataset name="default">
-             <field name="firstname" xsi:type="string">John</field>
-             <field name="lastname" xsi:type="string">Doe</field>
-             <field name="group_id" xsi:type="array">
-                 <item name="dataset" xsi:type="string">General</item>
-             </field>
-             <field name="email" xsi:type="string">JohnDoe_%isolation%@example.com</field>
-             <field name="password" xsi:type="string">123123q</field>
-             <field name="password_confirmation" xsi:type="string">123123q</field>
-         </dataset>
-     </repository>
- </config>
-  
-  {%endhighlight%}
-  
-Later you installed a new module Magento_CustomerNew module that changed Customer fixture. You don't want to change the `default` data set name in the test. Instead, you can simply replace the `default` data set, without changing the name:
-
-  {%highlight xml%}
-  
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/mtf/Magento/Mtf/Repository/etc/repository.xsd">
-    <repository class="Magento\Customer\Test\Repository\Customer">
-        <dataset name="customer_new_default" replace="default">
-            <field name="firstname" xsi:type="string">John</field>
-            <field name="lastname" xsi:type="string">Doe</field>
-            <field name="email" xsi:type="string">JohnDoe_%isolation%@example.com</field>
-            <field name="new_field" xsi:type="string">Some value</field>
-            <field name="password" xsi:type="string">123123q</field>
-            <field name="password_confirmation" xsi:type="string">123123q</field>
-        </dataset>
-    </repository>
-</config>
-  
-  {%endhighlight%}
-
-After the repository generation 
-    
-    php <magento2>/dev/tests/functional/utils/generate.php
-
-you have the following code in the Customer repository (`<magento2>/dev/tests/functional/generated/Magento/Customer/Test/Repository/Customer.php`):
-
-  {%highlight php startinline=1%}
-  
-$this->_data['default'] = [
-  'firstname' => 'John',
-  'lastname' => 'Doe',
-  'email' => 'JohnDoe_%isolation%@example.com',
-  'new_field' => 'Some value',
-  'password' => '123123q',
-  'password_confirmation' => '123123q',
-];
-  
-  {%endhighlight%}
-
-As you can see, a repository with the name `default` contains data from the `customer_new_default` repository.
-
 ## Credentials and `%isolation%` in repository {#mtf_repository_credent_iso}
 
 Credentials are stored in an `*.xml` file that is specified in `phpunit.xml`.
@@ -519,7 +446,7 @@ Credentials always should stay invisible for security reasons. The FTF implicitl
 There are two ways to paste credentials:
 
 - **Using path**. If a field in a repository has a `name` that matches field `path` in `credentials.xml`, then the value of this field will be substituted for the value from `credential.xml` during the test.
-- **Using placeholder**. If a field in a repository has value wrapped in `% %` that matches the value of the `replace` field attribute in `credentials.xml`, then the value of this field will be substituted for the value from `credential.xml` during the test.
+- **Using placeholder**. If a field in a repository has value wrapped in `% %` that matches the value of the `replace` field attribute in `credentials.xml`, then the value of this field will be substituted with the value from `credential.xml` during the test.
 
 ### Example with substitution by <code>path</code> {#mtf_repo_credent_path}
 
@@ -619,4 +546,4 @@ Some examples:
 
 {%endhighlight%}
 
-All placeholders `%isolation%` will be replaced with [mt_rand()](http://php.net/manual/en/function.mt-rand.php) function during the test run.
+All placeholders `%isolation%` will be replaced with [`mt_rand()`](http://php.net/manual/en/function.mt-rand.php) function during the test run.
