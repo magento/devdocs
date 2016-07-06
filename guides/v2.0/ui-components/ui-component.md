@@ -41,8 +41,6 @@ Using UI component is as simple as adding the following code to the appropriate 
 
 All UI components have base declaration in <a href="{{page.baseurl}}ui-library/ui-definition.html">`Magento/Ui/view/base/ui_component/etc/definition.xml`</a>. 
 
-Any module can introduce its own set of custom components or modify initial configuration for existing components in a common to Magento way.
-
 UI components configuration reader searches through all active modules and read files:
 
 <a href="{{page.baseurl}}ui-library/ui-definition.html">`<your module root dir>/<vendor>/<module>/view/<area>/ui_component/etc/definition.xml`</a>
