@@ -64,7 +64,7 @@ For content to be cacheable, it must meet the following criteria:
 ## Guidelines for private content {#config-cache-guide-uncache}
 For uncacheable content, keep the following in mind:
 
-*	Must use the HTTP POST request method to modify Magento state
+*	Must use the HTTP POST request method to change state (for example, add items to a shopping cart)
 *	Specify an uncacheable block in the layout
 *	JavaScript in private content should not rely on [Document Object Model (DOM)](https://en.wikipedia.org/wiki/DOM_events){:target="_blank"} load events because this kind of content can be loaded after main page load event using a separate request
 
