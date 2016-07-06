@@ -26,12 +26,19 @@ It covers initializing JavaScript components in a `.phtml` template and jQuery w
 ## Initialize a JS component in a PHTML template {#init_phtml}
 Depending on your task, you might want to use declarative or imperative initialization. Both ways are described in the following sections.
 
+
 ### Declarative initialization
 
-Declarative JS component initialization allows preparing all the configuration in the backend `.php` files and outputting it to the page source using standard tools. 
+Declarative JS component initialization allows preparing all the configuration on the backend side and outputting it to the page source using standard tools. 
 
+In Magneto 2 there are two ways of declarative initialization:
 
-#### Declarative initialization on a DOM element {#data_mage_init}
+ - using the `data-mage-init` attribute
+ - using the `<scrtipt type="text/x-magento-init" />` tag
+
+Both ways are described further
+
+#### Declarative initialization using the `data-mage-init` attribute {#data_mage_init}
 
 Use the <code>data-mage-init</code> attribute to initialize a JS component on a certain HTML element. The following code sample is an illustration. Here a JS component is initialized on the `<nav/>` element:
 <pre>
@@ -77,7 +84,7 @@ return;
 Such a component does not require either <code>config</code> or <code>element</code>. The recommended way to declare such components is <a href="#init_script">using the &lt;script&gt; tag</a>.</li>
 </ul>
 
-#### Declarative initialization without binding to a DOM element
+#### Declarative initialization using the `<scrtipt type="text/x-magento-init" />` tag {decl_tag}
 
 To initialize a JS component on a HTML element without direct access to the element or with no relation to a certain element, use the `<script>` tag. 
 
@@ -101,7 +108,7 @@ Use the following syntax:
 
 Where:
 <ul>
-<li><code>&lt;element_selector&gt;</code> is a selector for the element on which the following JS components are initialized.</li>
+<li><code>&lt;element_selector&gt;</code> is a <a href="https://api.jquery.com/category/selectors/">selector</a> (in terms of jQuery) for the element on which the following JS components are initialized.</li>
 <li><code>&lt;js_component1&gt;</code> and <code>&lt;js_component2&gt;</code> are the JS components being initialized on the element with the selector specified as <code>&lt;element_selector&gt;</code>.</li>
 <li><code>&lt;js_component3&gt;</code> is the JS component initialized with no binding to an element.</li> 
 </ul>
@@ -128,17 +135,20 @@ Imperative initialization allows using raw JavaScript code on the pages and exec
 
 {%highlight html%}
 <script>
-require(['jquery', 'accordion'],
-    function ($) {
-        $("#main-container")
-            .accordion({
-                header : "#title-1",
-                content : "#content-1",
-                trigger : "#trigger-1",
+require([
+    'jquery',
+    'accordion'  // an alias for "mage/accordion"
+], function ($) {
+    $(function () { // to ensure that code evaluates on page load
+        $('[data-role=example]')  // we expect that page contains markup <tag data-role="example">..</tag>
+            .accordion({ // now we can use "accordion" as jQuery plugin
+                header:  '[data-role=header]',
+                content: '[data-role=content]',
+                trigger: '[data-role=trigger]',
                 ajaxUrlElement: "a"
             });
-    }
-);
+    });
+});
 </script>
 {%endhighlight%}
 
