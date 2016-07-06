@@ -19,7 +19,7 @@ redirect_from: /guides/v1.0/config-guide/bootstrap/mage-profiler.html
 <h2 id="dirs-introduction">Introduction to Magento profiling</h2>
 Magento profiling enables you to:
 
-*	Enable a built-in profiler
+*	Enable a built-in profiler.
 
 	You can use a built-in profiler with Magento to perform tasks such as analyzing performance. (The nature of profiling depends on the analytical tools you use. We support multiple formats, including HTML.)
 
