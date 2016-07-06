@@ -100,7 +100,7 @@ To set a variable:
 2.	Set the value of `MAGE_PROFILER` to any of the following:
 
 		firebug
-		csv
+		csvfile
 		<custom value>
 
 2.	Save your changes to `.htaccess`; you don't need to restart Apache for the change to take effect.

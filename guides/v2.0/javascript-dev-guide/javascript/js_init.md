@@ -17,12 +17,28 @@ redirect_from:
 This topic talks about how to initialize a JavaScript component in the Magento 2 application. 
 It covers initializing JavaScript components in a `.phtml` template and jQuery widget initialization in a JS script. We strongly recommend that you use the described approaches and do not add inline JavaScript.
 
-Do not add JavaScript inline. Instead use the approaches described further.
 
-<h2 id="init_phtml">Initialize a JS component in a PHTML template</h2>
-In Magento 2, there are two ways to initialize a JS component in a `.phtml` template: using the `data-mage-init` attribute and using the `<script>` tag. Both ways are described in the following sections.
+**Contents**
 
-<h3 id="data_mage_init">Initialization using <code>data-mage-init</code></h3>
+* TOC
+{:toc}
+
+## Initialize a JS component in a PHTML template {#init_phtml}
+Depending on your task, you might want to use declarative or imperative initialization. Both ways are described in the following sections.
+
+
+### Declarative initialization
+
+Declarative JS component initialization allows preparing all the configuration on the backend side and outputting it to the page source using standard tools. 
+
+In Magneto 2 there are two ways of declarative initialization:
+
+ - using the `data-mage-init` attribute
+ - using the `<scrtipt type="text/x-magento-init" />` tag
+
+Both ways are described further
+
+#### Declarative initialization using the `data-mage-init` attribute {#data_mage_init}
 
 Use the <code>data-mage-init</code> attribute to initialize a JS component on a certain HTML element. The following code sample is an illustration. Here a JS component is initialized on the `<nav/>` element:
 <pre>
@@ -31,7 +47,7 @@ Use the <code>data-mage-init</code> attribute to initialize a JS component on a 
 
 When initialized on a certain element, the script is called only for this particular element. It is not automatically initialized for other elements of this type on the page. 
 
-<h4 id="init_process">How the JS initialization using <code>data-mage-init</code> is processed</h4>
+##### How the JS initialization using `data-mage-init` is processed {#init_process}
 
 On DOM ready, the `data-mage-init` attribute is parsed to extract components' names and configuration to be applied to the element. 
 Depending on the type of the JS component initialized, processing is performed as follows:
@@ -68,48 +84,78 @@ return;
 Such a component does not require either <code>config</code> or <code>element</code>. The recommended way to declare such components is <a href="#init_script">using the &lt;script&gt; tag</a>.</li>
 </ul>
 
-<h3 id="init_script">Initialization using <code>&lt;script&gt;</code></h3>
-To initialize a JS component on a HTML element without direct access to the element or with no relation to a certain element, use the <code>&lt;script type=&quot;text/x-magento-init&quot;&gt;</code> tag. An illustration follows:
+#### Declarative initialization using the `<scrtipt type="text/x-magento-init" />` tag {decl_tag}
 
-<pre>
-&lt;script type=&quot;text/x-magento-init&quot;&gt;
+To initialize a JS component on a HTML element without direct access to the element or with no relation to a certain element, use the `<script>` tag. 
+
+Use the following syntax:
+
+{%highlight html%}
+<script type="text/x-magento-init">
+{
     // components initialized on the element defined by selector
-	&quot;&lt;element_selector&gt;&quot;: {
-		&quot;&lt;js_component1&gt;&quot;: ...,
-		&quot;&lt;js_component2&gt;&quot;: ...
+	"<element_selector>": {
+		"<js_component1>": ...,
+		"<js_component2>": ...
     },
     // components initialized without binding to an element
-    &quot;*&quot;: {
-        &quot;&lt;js_component3&gt;&quot;: ...
+    "*": {
+        "<js_component3>": ...
     }
-&lt;/script&gt;
-</pre>
+}
+</script>
+{%endhighlight%}
 
 Where:
 <ul>
-<li><code>&lt;element_selector&gt;</code> is a selector for the element on which the following JS components are initialized.</li>
+<li><code>&lt;element_selector&gt;</code> is a <a href="https://api.jquery.com/category/selectors/">selector</a> (in terms of jQuery) for the element on which the following JS components are initialized.</li>
 <li><code>&lt;js_component1&gt;</code> and <code>&lt;js_component2&gt;</code> are the JS components being initialized on the element with the selector specified as <code>&lt;element_selector&gt;</code>.</li>
 <li><code>&lt;js_component3&gt;</code> is the JS component initialized with no binding to an element.</li> 
 </ul>
 
-The following is an illustration of widget initialization using <code>&lt;script&gt;</code>. Here the accordion and navigation widgets are initialized on the element with the `#main-container` selector, and the `pageCache` script is initialized with no binding to any element.
+The following is a working code sample of widget initialization using `<script>`. Here the accordion and navigation widgets are initialized on the element with the `#main-container` selector, and the `pageCache` script is initialized with no binding to any element.
 
-<pre>
-&lt;script type=&quot;text/x-magento-init&quot;&gt;
-    &quot;#main-container&quot;: {
-        &quot;navigation&quot;: &lt;?php echo $block-&gt;getNavigationConfig(); ?&gt;,
-        &quot;accordion&quot;: &lt;?php echo $block-&gt;getNavigationAccordionConfig(); ?&gt;
+{%highlight html%}
+<script type="text/x-magento-init">
+{
+    "#main-container": {
+        "navigation": <?php echo $block->getNavigationConfig(); ?>,
+        "accordion": <?php echo $block->getNavigationAccordionConfig(); ?>
     },
-    &quot;*&quot;: {
-        &quot;pageCache&quot;: &lt;?php echo $block-&gt;getPageCacheConfig(); ?&gt;
+    "*": {
+        "pageCache": <?php echo $block->getPageCacheConfig(); ?>
     }
-&lt;/script&gt;
-</pre>
+}
+</script>
+{%endhighlight%}
+
+### Imperative initialization {#init_script}
+
+Imperative initialization allows using raw JavaScript code on the pages and executing particular business logic. Imperative initialization is performed using the `<script>` tag with the following syntax:
+
+{%highlight html%}
+<script>
+require([
+    'jquery',
+    'accordion'  // an alias for "mage/accordion"
+], function ($) {
+    $(function () { // to ensure that code evaluates on page load
+        $('[data-role=example]')  // we expect that page contains markup <tag data-role="example">..</tag>
+            .accordion({ // now we can use "accordion" as jQuery plugin
+                header:  '[data-role=header]',
+                content: '[data-role=content]',
+                trigger: '[data-role=trigger]',
+                ajaxUrlElement: "a"
+            });
+    });
+});
+</script>
+{%endhighlight%}
 
 
-<h2 id="widget_init">Widget initialization in JS</h2>
+## Widget initialization in JS {#widget_init}
 
-To initialize a widget in JS code, use a notation similar to the following (the <a href="{{page.baseurl}}frontend-dev-guide/javascript/widget_accordion.html" target="_blank">accordion</a> widget is initialized on the `#main-container` element as illustration):
+To initialize a widget in JS code, use a notation similar to the following (the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_accordion.html" target="_blank">accordion</a> widget is initialized on the `#main-container` element as illustration):
 
 <pre>
 $("#main-container").accordion();
