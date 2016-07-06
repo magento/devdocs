@@ -67,41 +67,41 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 
 
-<!--- 52437 -->* Magento now successfully processes password change requests from the Amin interface. Previously, when you clicked Save Account after changing your password, Magento would continue to display the " It's time to change your password" message. (52437)
+<!--- 52437 -->* Magento now successfully processes password change requests from the Amin interface. Previously, when you clicked Save Account after changing your password, Magento would continue to display the " It's time to change your password" message.
 
 
-<!--- 45651 -->* Magento displays simple products in groups when set to out of stock. Previously, Magento did not correctly display simple products in their associated groups when set to out of stock.  (45651)
+<!--- 45651 -->* Magento displays simple products in groups when set to out of stock. Previously, Magento did not correctly display simple products in their associated groups when set to out of stock. 
 
-<!--- 45402 -->* Magento no longer caches pages that contain a layout that includes a non-cacheable block. Previously, Magento would cache a page than contained a layout that included a non-cacheable block. (45402)
-
-
-<!--- 51079 -->* The Used in Product Listing option for attributes now works as expected. (51079)
+<!--- 45402 -->* Magento no longer caches pages that contain a layout that includes a non-cacheable block. Previously, Magento would cache a page than contained a layout that included a non-cacheable block.
 
 
-<!--- 50409-->* The order of attributes for a configurable product now corresponds to the order as specified server-side. Previously, Magento ordered attributes in the order of their creation. (50409)
+<!--- 51079 -->* The Used in Product Listing option for attributes now works as expected.
 
 
-<!--- 50076 -->* Magento now supports GLOB_BRACE on non-GNU Linux systems. <a href="https://github.com/magento/magento2/issues/3490" target="_blank">(GITHUB-3490)</a> (50076)
+<!--- 50409-->* The order of attributes for a configurable product now corresponds to the order as specified server-side. Previously, Magento ordered attributes in the order of their creation.
 
 
-<!--- 49769 -->* You can now assign permissions to URL rewrites from Marketing > SEO and Search. <a href="https://github.com/magento/magento2/issues/3194" target="_blank">(GITHUB-3194)</a>  (49769)
-
-<!--- 49716 -->* Magento no longer displays incorrect price in the shopping cart when using multiple  shipping addresses. (49716)
+<!--- 50076 -->* Magento now supports GLOB_BRACE on non-GNU Linux systems. <a href="https://github.com/magento/magento2/issues/3490" target="_blank">(GITHUB-3490)</a>
 
 
-<!--- 49212 -->* We've improved the implementation of the `Magento\Sales\Model\OrderRepository::getList()` function.  <a href="https://github.com/magento/magento2/issues/3018"" target="_blank">(GITHUB-3018)</a> (49212)
+<!--- 49769 -->* You can now assign permissions to URL rewrites from Marketing > SEO and Search. <a href="https://github.com/magento/magento2/issues/3194" target="_blank">(GITHUB-3194)</a> 
+
+<!--- 49716 -->* Magento no longer displays incorrect price in the shopping cart when using multiple  shipping addresses. 
 
 
-<!--- 48729 -->* You can now refresh statistics after deleting a product.  (48729)
+<!--- 49212 -->* We've improved the implementation of the `Magento\Sales\Model\OrderRepository::getList()` function.  <a href="https://github.com/magento/magento2/issues/3018"" target="_blank">(GITHUB-3018)</a> 
 
 
-<!--- 48386 -->* Scrolling now works as expected when using the Store View dropdown  menu in the Admin interface. <a href="https://github.com/magento/magento2/issues/2896" target="_blank">(GITHUB-2896)</a> (48386)
+<!--- 48729 -->* You can now refresh statistics after deleting a product. 
 
-<!--- 52629 -->* You can now refresh statistics after deleting a product. Previously, after  deleting a product that been ordered, you could not refresh lifetime statistics. (52629)
 
-<!--- 50144 -->* Magento now displays ampersands (&) correctly in attribute options. (50144)
+<!--- 48386 -->* Scrolling now works as expected when using the Store View dropdown  menu in the Admin interface. <a href="https://github.com/magento/magento2/issues/2896" target="_blank">(GITHUB-2896)</a> 
 
-<!--- 52512 -->* Newsletter subscriptions now work correctly when the Need to confirm option is set to yes during newsletter subscription configuration.  (52512)
+<!--- 52629 -->* You can now refresh statistics after deleting a product. Previously, after  deleting a product that been ordered, you could not refresh lifetime statistics. 
+
+<!--- 50144 -->* Magento now displays ampersands (&) correctly in attribute options.
+
+<!--- 52512 -->* Newsletter subscriptions now work correctly when the Need to confirm option is set to yes during newsletter subscription configuration.  
 
 <!--- 50522 -->* The WYSIWYG editor no longer removes HTML5 tags.
 
@@ -121,7 +121,7 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 <!--- 49556 -->The POST V1/shipment and other APIs that include a list of items might return an error if an item's quantity (`qty`) is specified before its ID (`order_item_id`, for example).
 
-**Workaround:** Make sure to specify an item's ID before specifying quantity. (49556)
+**Workaround:** Make sure to specify an item's ID before specifying quantity.
 
 
 ###System requirements
