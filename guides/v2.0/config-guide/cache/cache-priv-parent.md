@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: 08_Caching
-title: Private and public caching
-menu_title: Private and public caching
+title: Magento page caching
+menu_title: Magento page caching
 menu_order: 15
 menu_node: 
 level3_menu_node: level3parent

@@ -41,6 +41,10 @@ The preceding example keeps the page in cache for 10 seconds.
     <p>Caching a page for even a few seconds is helpful because HTTP requests occur on the scale of milliseconds.</p>
 </div> 
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Only HTTP <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.3" target="_blank">GET</a> and <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.4" target="_blank">HEAD</a> requests are cacheable. For more information about caching, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html" target="_blank">RFC-2616 section 13</a>.</p>
+</div>
+
 ## Uncacheable pages
 To create an uncacheable page, mark your block as uncacheable in the layout. Any page that has at least one uncacheable block is itself uncacheable (that is, the entire page).
 
