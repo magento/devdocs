@@ -6,7 +6,6 @@ title: After Migration
 menu_title: After Migration
 menu_node: parent
 menu_order: 6
-version: 2.0
 github_link: migration/migration-migrate-after.md
 redirect_from: /guides/v1.0/migration/migration-migrate-after.html
 ---

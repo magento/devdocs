@@ -6,7 +6,6 @@ title: Migrate settings
 menu_title: Migrate settings
 menu_node:
 menu_order: 1
-version: 2.0
 github_link: migration/migration-migrate-settings.md
 redirect_from: /guides/v1.0/migration/migration-migrate-settings.html
 ---
