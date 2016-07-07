@@ -6,7 +6,6 @@ title: Data that needs to be migrated manually
 menu_title: Data that needs to be migrated manually
 menu_node: parent
 menu_order: 5
-version: 2.0
 github_link: migration/migration-manually.md
 redirect_from: /guides/v1.0/migration/migration-manually.html
 ---
