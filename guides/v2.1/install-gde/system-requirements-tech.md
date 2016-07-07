@@ -2,8 +2,8 @@
 layout: default
 group: install_pre
 subgroup: Getting Started
-title: Magento tech stack requirements
-menu_title: Magento tech stack requirements
+title: Magento technology stack requirements
+menu_title: Magento technology stack requirements
 menu_node: 
 menu_order: 2
 version: 2.1
@@ -30,7 +30,7 @@ MySQL 5.6 (Oracle or Percona)
 ### PHP 
 
 *	5.6.x
-*	7.0.6 up to 7.1
+*	7.0.2, 7.0.6 up to 7.1
 
 <div class="bs-callout bs-callout-info" id="info">
 	<p>Magento 2.1.x no longer supports PHP 5.5.</p>
