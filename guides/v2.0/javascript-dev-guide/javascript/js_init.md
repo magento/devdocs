@@ -108,7 +108,7 @@ Use the following syntax:
 
 Where:
 <ul>
-<li><code>&lt;element_selector&gt;</code> is a <a href="https://api.jquery.com/category/selectors/">selector</a> (in terms of jQuery) for the element on which the following JS components are initialized.</li>
+<li><code>&lt;element_selector&gt;</code> is a <a href="https://api.jquery.com/category/selectors/">selector</a> (in terms of querySelectorAll) for the element on which the following JS components are initialized.</li>
 <li><code>&lt;js_component1&gt;</code> and <code>&lt;js_component2&gt;</code> are the JS components being initialized on the element with the selector specified as <code>&lt;element_selector&gt;</code>.</li>
 <li><code>&lt;js_component3&gt;</code> is the JS component initialized with no binding to an element.</li> 
 </ul>
